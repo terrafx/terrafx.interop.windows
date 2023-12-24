@@ -25,7 +25,7 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, uint>)(lpVtbl[1]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, uint>)(lpVtbl[1]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, uint>)(lpVtbl[2]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, uint>)(lpVtbl[2]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfLangBarItem.GetInfo" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     [VtblIndex(3)]
     public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pInfo);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pInfo);
     }
 
     /// <inheritdoc cref="ITfLangBarItem.GetStatus" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     [VtblIndex(4)]
     public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, uint*, int>)(lpVtbl[4]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pdwStatus);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, uint*, int>)(lpVtbl[4]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pdwStatus);
     }
 
     /// <inheritdoc cref="ITfLangBarItem.Show" />
@@ -67,15 +67,15 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     [VtblIndex(5)]
     public HRESULT Show(BOOL fShow)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), fShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), fShow);
     }
 
     /// <inheritdoc cref="ITfLangBarItem.GetTooltipString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] char** pbstrToolTip)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pbstrToolTip);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, char**, int>)(lpVtbl[6]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pbstrToolTip);
     }
 
     /// <include file='ITfLangBarItemBalloon.xml' path='doc/member[@name="ITfLangBarItemBalloon.OnClick"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     [VtblIndex(7)]
     public HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, TfLBIClick, POINT, RECT*, int>)(lpVtbl[7]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), click, pt, prcArea);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, TfLBIClick, POINT, RECT*, int>)(lpVtbl[7]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), click, pt, prcArea);
     }
 
     /// <include file='ITfLangBarItemBalloon.xml' path='doc/member[@name="ITfLangBarItemBalloon.GetPreferredSize"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     [VtblIndex(8)]
     public HRESULT GetPreferredSize([NativeTypeName("const SIZE *")] SIZE* pszDefault, SIZE* psz)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, SIZE*, SIZE*, int>)(lpVtbl[8]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pszDefault, psz);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, SIZE*, SIZE*, int>)(lpVtbl[8]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pszDefault, psz);
     }
 
     /// <include file='ITfLangBarItemBalloon.xml' path='doc/member[@name="ITfLangBarItemBalloon.GetBalloonInfo"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
     [VtblIndex(9)]
     public HRESULT GetBalloonInfo(TF_LBBALLOONINFO* pInfo)
     {
-        return ((delegate* unmanaged<ITfLangBarItemBalloon*, TF_LBBALLOONINFO*, int>)(lpVtbl[9]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pInfo);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemBalloon*, TF_LBBALLOONINFO*, int>)(lpVtbl[9]))((ITfLangBarItemBalloon*)Unsafe.AsPointer(ref this), pInfo);
     }
 
     public interface Interface : ITfLangBarItem.Interface
@@ -118,33 +118,33 @@ public unsafe partial struct ITfLangBarItemBalloon : ITfLangBarItemBalloon.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TF_LANGBARITEMINFO*, int> GetInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TF_LANGBARITEMINFO*, int> GetInfo;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStatus;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTooltipString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetTooltipString;
 
         [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;
 
         [NativeTypeName("HRESULT (const SIZE *, SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, SIZE*, int> GetPreferredSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, SIZE*, int> GetPreferredSize;
 
         [NativeTypeName("HRESULT (TF_LBBALLOONINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TF_LBBALLOONINFO*, int> GetBalloonInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TF_LBBALLOONINFO*, int> GetBalloonInfo;
     }
 }

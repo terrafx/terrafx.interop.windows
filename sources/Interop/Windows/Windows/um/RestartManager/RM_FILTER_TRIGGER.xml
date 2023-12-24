@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RM_FILTER_TRIGGER">
-    <summary>
-      <para>Describes the restart or shutdown actions for an application or service.</para>
-    </summary>
-    <seealso cref="RM_FILTER_INFO" />
+    <summary>Describes the restart or shutdown actions for an application or service.</summary>
   </member>
   <member name="RM_FILTER_TRIGGER.RmFilterTriggerInvalid">
-    <summary>
-      <para>An invalid filter trigger.</para>
-    </summary>
+    <summary>An invalid filter trigger.</summary>
   </member>
   <member name="RM_FILTER_TRIGGER.RmFilterTriggerFile">
-    <summary>
-      <para>Modifies the shutdown or restart actions for an application identified by its   executable filename.</para>
-    </summary>
+    <summary>Modifies the shutdown or restart actions for an application identified by its executable filename.</summary>
   </member>
   <member name="RM_FILTER_TRIGGER.RmFilterTriggerProcess">
-    <summary>
-      <para>Modifies the shutdown or restart actions for an application identified by a <see cref="RM_UNIQUE_PROCESS" /> structure.</para>
-    </summary>
+    <summary>Modifies the shutdown or restart actions for an application identified by a <see cref="RM_UNIQUE_PROCESS" /> structure.</summary>
   </member>
   <member name="RM_FILTER_TRIGGER.RmFilterTriggerService">
-    <summary>
-      <para>Modifies the shutdown or restart actions for a service identified by a service short name.</para>
-    </summary>
+    <summary>Modifies the shutdown or restart actions for a service identified by a service short name.</summary>
   </member>
 </doc>

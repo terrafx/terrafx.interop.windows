@@ -3,105 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11ClassInstance.GetClassLinkage">
-    <summary>
-      <para>Gets the <see cref="ID3D11ClassLinkage" /> object associated with the current HLSL class.</para>
-    </summary>
-    <param name="ppLinkage">
-      <para>Type: <b><see cref="ID3D11ClassLinkage" />**</b></para>
-      <para>A pointer to a <see cref="ID3D11ClassLinkage" /> interface pointer.</para>
-    </param>
-    <remarks>
-      <para>For more information about using the <see cref="ID3D11ClassInstance" /> interface, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl-dynamic-linking">Dynamic Linking</a>.</para>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso cref="ID3D11ClassInstance" />
+    <summary>Gets the <see cref="ID3D11ClassLinkage" /> object associated with the current HLSL class.</summary>
+    <param name="ppLinkage">A pointer to a <see cref="ID3D11ClassLinkage" /> interface pointer.</param>
   </member>
   <member name="ID3D11ClassInstance.GetDesc">
-    <summary>
-      <para>Gets a description of the current HLSL class.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D11_CLASS_INSTANCE_DESC" />*</b></para>
-      <para>A pointer to a <see cref="D3D11_CLASS_INSTANCE_DESC" /> structure that describes the current HLSL class.</para>
-    </param>
-    <remarks>
-      <para>For more information about using the <see cref="ID3D11ClassInstance" /> interface, see
-<a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl-dynamic-linking">Dynamic Linking</a>.</para>
-      <para>An instance is not restricted to being used for a single type in a single shader. An instance is flexible and can be used for any shader that used the same type name or instance name when the instance was generated.</para>
-      <list type="bullet">
-        <item>
-          <description>A created instance will work for any shader that contains a type of the same type name.
-For instance, a class instance created with the type name <b>DefaultShader</b> would work in any shader that contained a type <b>DefaultShader</b> even though several shaders could describe a different type.
-</description>
-        </item>
-        <item>
-          <description>A gotten instance maps directly to an instance name/index in a shader.
-A class instance acquired using GetClassInstance will work for any shader that contains a class instance of the name used to generate the runtime instance, the instance does not have to be the same type in all of the shaders it's used in.
-</description>
-        </item>
-      </list>
-      <para>An instance does not replace the importance of reflection for a particular shader since a gotten instance will not know its slot location and a created instance only specifies a type name.</para>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso cref="ID3D11ClassInstance" />
+    <summary>Gets a description of the current HLSL class.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D11_CLASS_INSTANCE_DESC" /> structure that describes the current HLSL class.</param>
   </member>
   <member name="ID3D11ClassInstance.GetInstanceName">
-    <summary>
-      <para>Gets the instance name of the current HLSL class.</para>
-    </summary>
-    <param name="pInstanceName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPSTR</a></b></para>
-      <para>The instance name of the current HLSL class.</para>
-    </param>
-    <param name="pBufferLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a>*</b></para>
-      <para>The length of the <i>pInstanceName</i> parameter.</para>
-    </param>
-    <remarks>
-      <para>GetInstanceName will return a valid name only for instances acquired using
-<see cref="ID3D11ClassLinkage.GetClassInstance" />.</para>
-      <para>For more information about using the <see cref="ID3D11ClassInstance" /> interface, see
-<a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl-dynamic-linking">Dynamic Linking</a>.</para>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso cref="ID3D11ClassInstance" />
+    <summary>Gets the instance name of the current HLSL class.</summary>
+    <param name="pInstanceName">The instance name of the current HLSL class.</param>
+    <param name="pBufferLength">The length of the <i>pInstanceName</i> parameter.</param>
   </member>
   <member name="ID3D11ClassInstance.GetTypeName">
-    <summary>
-      <para>Gets the type of the current HLSL class.</para>
-    </summary>
-    <param name="pTypeName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPSTR</a></b></para>
-      <para>Type of the current HLSL class.</para>
-    </param>
-    <param name="pBufferLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a>*</b></para>
-      <para>The length of the <i>pTypeName</i> parameter.</para>
-    </param>
-    <remarks>
-      <para>GetTypeName will return a valid name only for instances acquired using <see cref="ID3D11ClassLinkage.GetClassInstance" />.</para>
-      <para>For more information about using the <see cref="ID3D11ClassInstance" /> interface, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/overviews-direct3d-11-hlsl-dynamic-linking">Dynamic Linking</a>.</para>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso cref="ID3D11ClassInstance" />
+    <summary>Gets the type of the current HLSL class.</summary>
+    <param name="pTypeName">Type of the current HLSL class.</param>
+    <param name="pBufferLength">The length of the <i>pTypeName</i> parameter.</param>
   </member>
   <member name="ID3D11ClassInstance">
-    <summary>
-      <para>This interface encapsulates an HLSL class.</para>
-    </summary>
-    <remarks>
-      <para>This interface is created by calling <see cref="ID3D11ClassLinkage.CreateClassInstance" />. The interface is used when binding shader resources to the pipeline using APIs such as <see cref="ID3D11DeviceContext.VSSetShader" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11DeviceChild" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-shader-interfaces">Shader Interfaces</seealso>
+    <summary>This interface encapsulates an HLSL class.</summary>
   </member>
 </doc>

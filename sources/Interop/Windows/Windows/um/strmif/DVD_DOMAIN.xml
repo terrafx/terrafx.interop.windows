@@ -4,38 +4,23 @@
 <doc>
   <member name="DVD_DOMAIN">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Defines the DVD domains.</para>
     </summary>
-    <remarks>
-      <para>This enumeration is used in the <see cref="IDvdInfo2.GetCurrentDomain" /> method.</para>
-      <para>A domain is a logical space on a DVD disc. When the DVD Navigator is displaying the disc's main menu, it is said to be in the Video Manager domain. When it is displaying a menu specific to a title, it is in the Video Title Set domain. When it is playing video, it is the Title domain. When the user issues a Stop command, the Navigator goes into the Stop domain.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDvdInfo2.GetCurrentDomain" />
   </member>
   <member name="DVD_DOMAIN.DVD_DOMAIN_FirstPlay">
-    <summary>
-      <para>Performing default initialization of a DVD disc.</para>
-    </summary>
+    <summary>Performing default initialization of a DVD disc.</summary>
   </member>
   <member name="DVD_DOMAIN.DVD_DOMAIN_VideoManagerMenu">
-    <summary>
-      <para>Displaying menus for whole disc.</para>
-    </summary>
+    <summary>Displaying menus for whole disc.</summary>
   </member>
   <member name="DVD_DOMAIN.DVD_DOMAIN_VideoTitleSetMenu">
-    <summary>
-      <para>Displaying menus for current title set.</para>
-    </summary>
+    <summary>Displaying menus for current title set.</summary>
   </member>
   <member name="DVD_DOMAIN.DVD_DOMAIN_Title">
-    <summary>
-      <para>Displaying the current title.</para>
-    </summary>
+    <summary>Displaying the current title.</summary>
   </member>
   <member name="DVD_DOMAIN.DVD_DOMAIN_Stop">
-    <summary>
-      <para>The DVD Navigator is in the DVD Stop domain.</para>
-    </summary>
+    <summary>The DVD Navigator is in the DVD Stop domain.</summary>
   </member>
 </doc>

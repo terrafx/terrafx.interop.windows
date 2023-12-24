@@ -4,23 +4,14 @@
 <doc>
   <member name="WS_SECURITY_CONTEXT_SECURITY_BINDING_TEMPLATE">
     <summary>
-      <para>The security binding template for specifying the use of an application
-supplied security context security binding.  This security binding may
-be used only with message security. So, it is used in conjunction with another transport
-security binding that provides message protection. The security properties are
-used to establish the secure conversation.</para>
+      <para>The security binding template for specifying the use of an application supplied security context security binding. This security binding may be used only with message security. So, it is used in conjunction with another transport security binding that provides message protection. The security properties are used to establish the secure conversation.</para>
       <para>See also <see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING" /></para>
     </summary>
   </member>
   <member name="WS_SECURITY_CONTEXT_SECURITY_BINDING_TEMPLATE.securityContextMessageSecurityBinding">
-    <summary>
-      <para>Application provided security binding properties that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided security binding properties that cannot be represented in policy.</summary>
   </member>
   <member name="WS_SECURITY_CONTEXT_SECURITY_BINDING_TEMPLATE.securityProperties">
-    <summary>
-      <para>Application provided additional security properties for the service channel
-that cannot be represented in policy. Only policy specified security properties is used if no additional properties are specified here.</para>
-    </summary>
+    <summary>Application provided additional security properties for the service channel that cannot be represented in policy. Only policy specified security properties is used if no additional properties are specified here.</summary>
   </member>
 </doc>

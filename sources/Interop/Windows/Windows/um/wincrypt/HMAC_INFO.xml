@@ -3,36 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="HMAC_INFO">
-    <summary>
-      <para>The <b>HMAC_INFO</b> structure specifies the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> algorithm and the inner and outer strings that are to be used to calculate the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">HMAC</a> hash.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SecCrypto/alg-id">ALG_ID</seealso>
-    <seealso cref="CryptCreateHash" />
-    <seealso cref="CryptSetHashParam" />
+    <summary>The <b>HMAC_INFO</b> structure specifies the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> algorithm and the inner and outer strings that are to be used to calculate the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">HMAC</a> hash.</summary>
   </member>
   <member name="HMAC_INFO.HashAlgid">
-    <summary>
-      <para>Specifies the hash algorithm to be used.</para>
-    </summary>
+    <summary>Specifies the hash algorithm to be used.</summary>
   </member>
   <member name="HMAC_INFO.pbInnerString">
-    <summary>
-      <para>A pointer to the inner string to be used in the HMAC calculation. The default inner string is defined as the byte 0x36 repeated 64 times.</para>
-    </summary>
+    <summary>A pointer to the inner string to be used in the HMAC calculation. The default inner string is defined as the byte 0x36 repeated 64 times.</summary>
   </member>
   <member name="HMAC_INFO.cbInnerString">
-    <summary>
-      <para>The count of bytes in <b>pbInnerString</b>. The CSP uses the default inner string if <b>cbInnerString</b> is equal to zero.</para>
-    </summary>
+    <summary>The count of bytes in <b>pbInnerString</b>. The CSP uses the default inner string if <b>cbInnerString</b> is equal to zero.</summary>
   </member>
   <member name="HMAC_INFO.pbOuterString">
-    <summary>
-      <para>A pointer to the outer string to be used in the HMAC calculation. The default outer string is defined as the byte 0x5C repeated 64 times.</para>
-    </summary>
+    <summary>A pointer to the outer string to be used in the HMAC calculation. The default outer string is defined as the byte 0x5C repeated 64 times.</summary>
   </member>
   <member name="HMAC_INFO.cbOuterString">
-    <summary>
-      <para>The count of bytes in <b>pbOuterString</b>. The CSP uses the default outer string if <b>cbOuterString</b> is equal to zero.</para>
-    </summary>
+    <summary>The count of bytes in <b>pbOuterString</b>. The CSP uses the default outer string if <b>cbOuterString</b> is equal to zero.</summary>
   </member>
 </doc>

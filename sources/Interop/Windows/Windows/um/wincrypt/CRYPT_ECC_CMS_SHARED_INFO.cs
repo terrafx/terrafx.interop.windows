@@ -3,10 +3,12 @@
 // Ported from um/wincrypt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CRYPT_ECC_CMS_SHARED_INFO.xml' path='doc/member[@name="CRYPT_ECC_CMS_SHARED_INFO"]/*' />
-public unsafe partial struct CRYPT_ECC_CMS_SHARED_INFO
+public partial struct CRYPT_ECC_CMS_SHARED_INFO
 {
     /// <include file='CRYPT_ECC_CMS_SHARED_INFO.xml' path='doc/member[@name="CRYPT_ECC_CMS_SHARED_INFO.Algorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER Algorithm;
@@ -16,5 +18,12 @@ public unsafe partial struct CRYPT_ECC_CMS_SHARED_INFO
 
     /// <include file='CRYPT_ECC_CMS_SHARED_INFO.xml' path='doc/member[@name="CRYPT_ECC_CMS_SHARED_INFO.rgbSuppPubInfo"]/*' />
     [NativeTypeName("BYTE[4]")]
-    public fixed byte rgbSuppPubInfo[4];
+    public _rgbSuppPubInfo_e__FixedBuffer rgbSuppPubInfo;
+
+    /// <include file='_rgbSuppPubInfo_e__FixedBuffer.xml' path='doc/member[@name="_rgbSuppPubInfo_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _rgbSuppPubInfo_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

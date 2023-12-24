@@ -25,7 +25,7 @@ public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAuthenticateEx*, Guid*, void**, int>)(lpVtbl[0]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAuthenticateEx*, Guid*, void**, int>)(lpVtbl[0]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAuthenticateEx*, uint>)(lpVtbl[1]))((IAuthenticateEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAuthenticateEx*, uint>)(lpVtbl[1]))((IAuthenticateEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,47 +43,47 @@ public unsafe partial struct IAuthenticateEx : IAuthenticateEx.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAuthenticateEx*, uint>)(lpVtbl[2]))((IAuthenticateEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAuthenticateEx*, uint>)(lpVtbl[2]))((IAuthenticateEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IAuthenticate.Authenticate" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Authenticate(HWND* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword)
+    public HRESULT Authenticate(HWND* phwnd, [NativeTypeName("LPWSTR *")] char** pszUsername, [NativeTypeName("LPWSTR *")] char** pszPassword)
     {
-        return ((delegate* unmanaged<IAuthenticateEx*, HWND*, ushort**, ushort**, int>)(lpVtbl[3]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword);
+        return ((delegate* unmanaged[MemberFunction]<IAuthenticateEx*, HWND*, char**, char**, int>)(lpVtbl[3]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword);
     }
 
     /// <include file='IAuthenticateEx.xml' path='doc/member[@name="IAuthenticateEx.AuthenticateEx"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AuthenticateEx(HWND* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword, AUTHENTICATEINFO* pauthinfo)
+    public HRESULT AuthenticateEx(HWND* phwnd, [NativeTypeName("LPWSTR *")] char** pszUsername, [NativeTypeName("LPWSTR *")] char** pszPassword, AUTHENTICATEINFO* pauthinfo)
     {
-        return ((delegate* unmanaged<IAuthenticateEx*, HWND*, ushort**, ushort**, AUTHENTICATEINFO*, int>)(lpVtbl[4]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword, pauthinfo);
+        return ((delegate* unmanaged[MemberFunction]<IAuthenticateEx*, HWND*, char**, char**, AUTHENTICATEINFO*, int>)(lpVtbl[4]))((IAuthenticateEx*)Unsafe.AsPointer(ref this), phwnd, pszUsername, pszPassword, pauthinfo);
     }
 
     public interface Interface : IAuthenticate.Interface
     {
         [VtblIndex(4)]
-        HRESULT AuthenticateEx(HWND* phwnd, [NativeTypeName("LPWSTR *")] ushort** pszUsername, [NativeTypeName("LPWSTR *")] ushort** pszPassword, AUTHENTICATEINFO* pauthinfo);
+        HRESULT AuthenticateEx(HWND* phwnd, [NativeTypeName("LPWSTR *")] char** pszUsername, [NativeTypeName("LPWSTR *")] char** pszPassword, AUTHENTICATEINFO* pauthinfo);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *, LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, ushort**, ushort**, int> Authenticate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, char**, char**, int> Authenticate;
 
         [NativeTypeName("HRESULT (HWND *, LPWSTR *, LPWSTR *, AUTHENTICATEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, ushort**, ushort**, AUTHENTICATEINFO*, int> AuthenticateEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, char**, char**, AUTHENTICATEINFO*, int> AuthenticateEx;
     }
 }

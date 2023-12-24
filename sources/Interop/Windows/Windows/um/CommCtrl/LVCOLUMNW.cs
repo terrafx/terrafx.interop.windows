@@ -19,7 +19,7 @@ public unsafe partial struct LVCOLUMNW
 
     /// <include file='LVCOLUMNW.xml' path='doc/member[@name="LVCOLUMNW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='LVCOLUMNW.xml' path='doc/member[@name="LVCOLUMNW.cchTextMax"]/*' />
     public int cchTextMax;

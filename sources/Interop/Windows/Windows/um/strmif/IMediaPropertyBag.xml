@@ -4,17 +4,12 @@
 <doc>
   <member name="IMediaPropertyBag.EnumProperty">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>EnumProperty</code> method retrieves a property/value pair.</para>
     </summary>
-    <param name="iProperty">
-      <para>Index value of the pair.</para>
-    </param>
-    <param name="pvarPropertyName">
-      <para>Pointer to a <b>VARIANT</b> that receives the property's name.</para>
-    </param>
-    <param name="pvarPropertyValue">
-      <para>Pointer to a <b>VARIANT</b> that receives the property's value.</para>
-    </param>
+    <param name="iProperty">Index value of the pair.</param>
+    <param name="pvarPropertyName">Pointer to a <b>VARIANT</b> that receives the property's name.</param>
+    <param name="pvarPropertyValue">Pointer to a <b>VARIANT</b> that receives the property's value.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -22,67 +17,73 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_NO_MORE_ITEMS)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_NO_MORE_ITEMS)</b>
-            </para>
-          </description>
-          <description>
-            <para>Index out of range.</para>
-          </description>
-        </item>
+          <description>Index out of range.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The name is always a string. Set the variant type of the <i>pvarPropertyName</i> parameter to VT_EMPTY or VT_BSTR before calling this method.</para>
-      <para>The value can be a string (for INFO chunks) or an array of bytes (for DISP chunks). Set the variant type of the <i>pvarPropertyName</i> parameter to VT_EMPTY, VT_BSTR, or (VT_ARRAY | VT_UI1).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaPropertyBag Interface" />
   </member>
   <member name="IMediaPropertyBag">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IMediaPropertyBag</code> interface is exposed by the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/media-property-bag">Media Property Bag</a> object. The Media Property Bag is a specialized version of the standard COM property bag, designed for setting and retrieving INFO and DISP chunks in Audio-Video Interleaved (AVI) files.</para>
       <para>An INFO chunk contains meta-information about a file, such as author and copyright information. A DISP chunk contains data in Clipboard format. For more information, refer to the resource interchange file format (RIFF) specification.</para>
       <para>The media property bag stores the chunks as name/value pairs, as follows:</para>
@@ -93,8 +94,6 @@
         <item>
           <description>DISP chunks: The name is a string with the form DISP/0000000000, where 0000000000 is the 10-character decimal equivalent of a standard Clipboard format—for example, 0000000008 for CF_DIB. The value is an array of bytes that contains the display data.</description>
         </item>
-      </list>
-      <para>Use this interface with the <see cref="IPersistMediaPropertyBag" /> interface to retrieve INFO and DISP chunks from an AVI file.</para>
-    </summary>
+      </list>Use this interface with the <see cref="IPersistMediaPropertyBag" /> interface to retrieve INFO and DISP chunks from an AVI file.</summary>
   </member>
 </doc>

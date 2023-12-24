@@ -3,76 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontFallbackBuilder.AddMapping">
-    <summary>
-      <para>Appends a single mapping to the list. Call this once for each additional mapping.</para>
-    </summary>
-    <param name="ranges">
-      <para>Type: <b><see cref="DWRITE_UNICODE_RANGE" />*</b></para>
-      <para>Unicode ranges that apply to this mapping.</para>
-    </param>
-    <param name="rangesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Number of Unicode ranges.</para>
-    </param>
-    <param name="targetFamilyNames">
-      <para>Type: <b>const WCHAR**</b></para>
-      <para>List of target family name strings.</para>
-    </param>
-    <param name="targetFamilyNamesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Number of target family names.</para>
-    </param>
-    <param name="fontCollection">
-      <para>Type: <b><see cref="IDWriteFontCollection" /></b></para>
-      <para>Optional explicit font collection for this mapping.</para>
-    </param>
-    <param name="localeName">
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>Locale of the context.</para>
-    </param>
-    <param name="baseFamilyName">
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>Base family name to match against, if applicable.</para>
-    </param>
-    <param name="scale">
-      <para>Type: <b>FLOAT</b></para>
-      <para>Scale factor to multiply the result target font by.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefontfallbackbuilder">IDWriteFontFallbackBuilder</seealso>
+    <summary>Appends a single mapping to the list. Call this once for each additional mapping.</summary>
+    <param name="ranges">Unicode ranges that apply to this mapping.</param>
+    <param name="rangesCount">Number of Unicode ranges.</param>
+    <param name="targetFamilyNames">List of target family name strings.</param>
+    <param name="targetFamilyNamesCount">Number of target family names.</param>
+    <param name="fontCollection">Optional explicit font collection for this mapping.</param>
+    <param name="localeName">Locale of the context.</param>
+    <param name="baseFamilyName">Base family name to match against, if applicable.</param>
+    <param name="scale">Scale factor to multiply the result target font by.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFallbackBuilder.AddMappings">
-    <summary>
-      <para>Adds all the mappings from an existing font fallback object, which can be used to compose larger fallback definitions. A common scenario is to start with the system fallback from <see cref="IDWriteFactory2.GetSystemFontFallback" /> to cover the majority of Unicode characters, but then customize a few ranges with additional application-specific entries, either appending them first (to have priority over the system default) before calling <b>AddMappings</b>; or calling <b>AddMappings</b> first, and then appending custom ranges to fill in any custom gaps.</para>
-    </summary>
-    <param name="fontFallback">
-      <para>Type: <b><see cref="IDWriteFontFallback" />*</b></para>
-      <para>An existing font fallback object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefontfallbackbuilder">IDWriteFontFallbackBuilder</seealso>
+    <summary>Adds all the mappings from an existing font fallback object, which can be used to compose larger fallback definitions. A common scenario is to start with the system fallback from <see cref="IDWriteFactory2.GetSystemFontFallback" /> to cover the majority of Unicode characters, but then customize a few ranges with additional application-specific entries, either appending them first (to have priority over the system default) before calling <b>AddMappings</b>; or calling <b>AddMappings</b> first, and then appending custom ranges to fill in any custom gaps.</summary>
+    <param name="fontFallback">An existing font fallback object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFallbackBuilder.CreateFontFallback">
-    <summary>
-      <para>Creates the finalized fallback object from the mappings added.</para>
-    </summary>
-    <param name="fontFallback">
-      <para>Contains an address of a pointer to the created fallback list.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/win32/DirectWrite/idwritefontfallbackbuilder">IDWriteFontFallbackBuilder</seealso>
+    <summary>Creates the finalized fallback object from the mappings added.</summary>
+    <param name="fontFallback">Contains an address of a pointer to the created fallback list.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFallbackBuilder">
-    <summary>
-      <para>Allows you to create Unicode font fallback mappings and create a font fall back object from those mappings.</para>
-    </summary>
+    <summary>Allows you to create Unicode font fallback mappings and create a font fall back object from those mappings.</summary>
   </member>
 </doc>

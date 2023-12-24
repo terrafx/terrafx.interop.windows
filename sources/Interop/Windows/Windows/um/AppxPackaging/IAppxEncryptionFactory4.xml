@@ -3,35 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxEncryptionFactory4.EncryptPackage">
-    <summary>
-      <para>Creates an encrypted Windows app package from an unencrypted one.</para>
-    </summary>
-    <param name="inputStream">
-      <para>A readable stream from the app bundle to encrypt.</para>
-    </param>
-    <param name="outputStream">
-      <para>A writable stream for writing the resulting encrypted app bundle.</para>
-    </param>
-    <param name="settings">
-      <para>Settings for creating the bundle.</para>
-    </param>
-    <param name="keyInfo">
-      <para>Key info containing the base encryption key and key ID for encrypting the bundle. The base encryption key is used to derive the per file encryption keys. If this parameter is null, the global test key and key ID are used.</para>
-    </param>
-    <param name="exemptedFiles">
-      <para>Files exempted from the package writer.</para>
-    </param>
-    <param name="memoryLimit">
-      <para>The memory limit in bytes.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxEncryptionFactory4" />
+    <summary>Creates an encrypted Windows app package from an unencrypted one.</summary>
+    <param name="inputStream">A readable stream from the app bundle to encrypt.</param>
+    <param name="outputStream">A writable stream for writing the resulting encrypted app bundle.</param>
+    <param name="settings">Settings for creating the bundle.</param>
+    <param name="keyInfo">Key info containing the base encryption key and key ID for encrypting the bundle. The base encryption key is used to derive the per file encryption keys. If this parameter is null, the global test key and key ID are used.</param>
+    <param name="exemptedFiles">Files exempted from the package writer.</param>
+    <param name="memoryLimit">The memory limit in bytes.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxEncryptionFactory4">
-    <summary>
-      <para>Creates objects for encrypting Windows app packages and bundles.</para>
-    </summary>
+    <summary>Creates objects for encrypting Windows app packages and bundles.</summary>
   </member>
 </doc>

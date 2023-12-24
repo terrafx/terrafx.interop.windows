@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OPENFILENAME_NT4A">
+    <summary>
+      <para>The <b>OPENFILENAME_NT4</b> structure is identical to <see cref="OPENFILENAME" /> with _WIN32_WINNT set to 0x0400. It allows an application to take advantage of other post-Microsoft Windows NT 4.0 features while running on Microsoft Windows NT 4.0. Also, MFC42 applications must use <b>OPENFILENAME_NT4</b> to avoid heap corruption. This is because Microsoft Foundation Classes (MFC) has classes with embedded <b>OPENFILENAME</b> structures, and you must use the same structure size.</para>
+      <div>
+        <b>Note</b>  This structure is provided only for compatibility.</div>
+    </summary>
+  </member>
+  <member name="OPENFILENAME_NT4A.lStructSize"></member>
+  <member name="OPENFILENAME_NT4A.hwndOwner"></member>
+  <member name="OPENFILENAME_NT4A.hInstance"></member>
+  <member name="OPENFILENAME_NT4A.lpstrFilter"></member>
+  <member name="OPENFILENAME_NT4A.lpstrCustomFilter"></member>
+  <member name="OPENFILENAME_NT4A.nMaxCustFilter"></member>
+  <member name="OPENFILENAME_NT4A.nFilterIndex"></member>
+  <member name="OPENFILENAME_NT4A.lpstrFile"></member>
+  <member name="OPENFILENAME_NT4A.nMaxFile"></member>
+  <member name="OPENFILENAME_NT4A.lpstrFileTitle"></member>
+  <member name="OPENFILENAME_NT4A.nMaxFileTitle"></member>
+  <member name="OPENFILENAME_NT4A.lpstrInitialDir"></member>
+  <member name="OPENFILENAME_NT4A.lpstrTitle"></member>
+  <member name="OPENFILENAME_NT4A.Flags"></member>
+  <member name="OPENFILENAME_NT4A.nFileOffset"></member>
+  <member name="OPENFILENAME_NT4A.nFileExtension"></member>
+  <member name="OPENFILENAME_NT4A.lpstrDefExt"></member>
+  <member name="OPENFILENAME_NT4A.lCustData"></member>
+  <member name="OPENFILENAME_NT4A.lpfnHook"></member>
+  <member name="OPENFILENAME_NT4A.lpTemplateName"></member>
+  <member name="OPENFILENAME_NT4A">
+    <summary>
+      <para>The <b>OPENFILENAME_NT4</b> structure is identical to <see cref="OPENFILENAME" /> with _WIN32_WINNT set to 0x0400. It allows an application to take advantage of other post-Microsoft Windows NT 4.0 features while running on Microsoft Windows NT 4.0. Also, MFC42 applications must use <b>OPENFILENAME_NT4</b> to avoid heap corruption. This is because Microsoft Foundation Classes (MFC) has classes with embedded <b>OPENFILENAME</b> structures, and you must use the same structure size.</para>
+      <div>
+        <b>Note</b>  This structure is provided only for compatibility.</div>
+    </summary>
+  </member>
+  <member name="OPENFILENAME_NT4A.lStructSize"></member>
+  <member name="OPENFILENAME_NT4A.hwndOwner"></member>
+  <member name="OPENFILENAME_NT4A.hInstance"></member>
+  <member name="OPENFILENAME_NT4A.lpstrFilter"></member>
+  <member name="OPENFILENAME_NT4A.lpstrCustomFilter"></member>
+  <member name="OPENFILENAME_NT4A.nMaxCustFilter"></member>
+  <member name="OPENFILENAME_NT4A.nFilterIndex"></member>
+  <member name="OPENFILENAME_NT4A.lpstrFile"></member>
+  <member name="OPENFILENAME_NT4A.nMaxFile"></member>
+  <member name="OPENFILENAME_NT4A.lpstrFileTitle"></member>
+  <member name="OPENFILENAME_NT4A.nMaxFileTitle"></member>
+  <member name="OPENFILENAME_NT4A.lpstrInitialDir"></member>
+  <member name="OPENFILENAME_NT4A.lpstrTitle"></member>
+  <member name="OPENFILENAME_NT4A.Flags"></member>
+  <member name="OPENFILENAME_NT4A.nFileOffset"></member>
+  <member name="OPENFILENAME_NT4A.nFileExtension"></member>
+  <member name="OPENFILENAME_NT4A.lpstrDefExt"></member>
+  <member name="OPENFILENAME_NT4A.lCustData"></member>
+  <member name="OPENFILENAME_NT4A.lpfnHook"></member>
+  <member name="OPENFILENAME_NT4A.lpTemplateName"></member>
+</doc>

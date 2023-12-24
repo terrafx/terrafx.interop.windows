@@ -22,7 +22,7 @@ public unsafe partial struct CERT_SERVER_OCSP_RESPONSE_OPEN_PARA
 
     /// <include file='CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.pwszOcspDirectory"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pwszOcspDirectory;
+    public char* pwszOcspDirectory;
 
     /// <include file='CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.xml' path='doc/member[@name="CERT_SERVER_OCSP_RESPONSE_OPEN_PARA.pfnUpdateCallback"]/*' />
     [NativeTypeName("PFN_CERT_SERVER_OCSP_RESPONSE_UPDATE_CALLBACK")]

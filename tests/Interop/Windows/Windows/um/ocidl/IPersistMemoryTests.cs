@@ -19,32 +19,4 @@ public static unsafe partial class IPersistMemoryTests
     {
         Assert.That(typeof(IPersistMemory).GUID, Is.EqualTo(IID_IPersistMemory));
     }
-
-    /// <summary>Validates that the <see cref="IPersistMemory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPersistMemory>(), Is.EqualTo(sizeof(IPersistMemory)));
-    }
-
-    /// <summary>Validates that the <see cref="IPersistMemory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPersistMemory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPersistMemory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPersistMemory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPersistMemory), Is.EqualTo(4));
-        }
-    }
 }

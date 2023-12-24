@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TCPIP_OWNER_MODULE_INFO_CLASS">
-    <summary>
-      <para>The <b>TCPIP_OWNER_MODULE_INFO_CLASS</b> enumeration defines the type of module information structure passed to calls of the <b>GetOwnerModuleFromXXXEntry</b> family.</para>
-    </summary>
+    <summary>The <b>TCPIP_OWNER_MODULE_INFO_CLASS</b> enumeration defines the type of module information structure passed to calls of the <b>GetOwnerModuleFromXXXEntry</b> family.</summary>
   </member>
   <member name="TCPIP_OWNER_MODULE_INFO_CLASS.TCPIP_OWNER_MODULE_INFO_BASIC">
-    <summary>
-      <para>A <see cref="TCPIP_OWNER_MODULE_BASIC_INFO" /> structure is passed to the <b>GetOwnerModuleFromXXXEntry</b> function.</para>
-    </summary>
+    <summary>A <see cref="TCPIP_OWNER_MODULE_BASIC_INFO" /> structure is passed to the <b>GetOwnerModuleFromXXXEntry</b> function.</summary>
   </member>
 </doc>

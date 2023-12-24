@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_QUERY_SPARING_BUFFER">
-    <summary>
-      <para>Contains   defect management properties.</para>
-    </summary>
-    <seealso cref="DeviceIoControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_query_sparing_info">FSCTL_QUERY_SPARING_INFO</seealso>
+    <summary>Contains defect management properties.</summary>
   </member>
   <member name="FILE_QUERY_SPARING_BUFFER.SparingUnitBytes">
-    <summary>
-      <para>The size of a sparing packet and the underlying error check and correction (ECC) block size of the volume.</para>
-    </summary>
+    <summary>The size of a sparing packet and the underlying error check and correction (ECC) block size of the volume.</summary>
   </member>
   <member name="FILE_QUERY_SPARING_BUFFER.SoftwareSparing">
-    <summary>
-      <para>If <b>TRUE</b>, indicates that sparing behavior is software-based; if <b>FALSE</b>, it is hardware-based.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, indicates that sparing behavior is software-based; if <b>FALSE</b>, it is hardware-based.</summary>
   </member>
   <member name="FILE_QUERY_SPARING_BUFFER.TotalSpareBlocks">
-    <summary>
-      <para>The total number of blocks allocated for sparing.</para>
-    </summary>
+    <summary>The total number of blocks allocated for sparing.</summary>
   </member>
   <member name="FILE_QUERY_SPARING_BUFFER.FreeSpareBlocks">
-    <summary>
-      <para>The  number of blocks available for sparing.</para>
-    </summary>
+    <summary>The number of blocks available for sparing.</summary>
   </member>
 </doc>

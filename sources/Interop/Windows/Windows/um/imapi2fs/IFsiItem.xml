@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFsiItem.FileSystemName">
-    <summary>
-      <para>Retrieves the name of the item as modified to conform to the specified file system.</para>
-    </summary>
-    <param name="fileSystem">
-      <para>File system to which the name should conform. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</para>
-    </param>
-    <param name="pVal">
-      <para>String that contains the name of the item as it conforms to the specified file system. The name in the <see cref="IFsiItem.get_Name" /> property is modified if the characters used and its length do not meet the requirements of the specified file system type.</para>
-    </param>
+    <summary>Retrieves the name of the item as modified to conform to the specified file system.</summary>
+    <param name="fileSystem">File system to which the name should conform. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</param>
+    <param name="pVal">String that contains the name of the item as it conforms to the specified file system. The name in the <see cref="IFsiItem.get_Name" /> property is modified if the characters used and its length do not meet the requirements of the specified file system type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -19,42 +13,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
-          </description>
-          <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFsiItem" />
   </member>
   <member name="IFsiItem.FileSystemPath">
-    <summary>
-      <para>Retrieves the full path of the item as modified to conform to the specified file system.</para>
-    </summary>
-    <param name="fileSystem">
-      <para>File system to which the path should conform. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</para>
-    </param>
-    <param name="pVal">
-      <para>String that contains the full path of the item as it conforms to the specified file system. The path in the <see cref="IFsiItem.get_FullPath" /> property is modified if the characters used and its length do not meet the requirements of the specified file system type.</para>
-    </param>
+    <summary>Retrieves the full path of the item as modified to conform to the specified file system.</summary>
+    <param name="fileSystem">File system to which the path should conform. For possible values, see the <see cref="FsiFileSystems" /> enumeration type.</param>
+    <param name="pVal">String that contains the full path of the item as it conforms to the specified file system. The path in the <see cref="IFsiItem.get_FullPath" /> property is modified if the characters used and its length do not meet the requirements of the specified file system type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -62,39 +51,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_INVALID_PARAM</b>
-            </para>
-          </description>
-          <description>
-            <para>The value specified for parameter <i>%1!ls!</i> is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
+          <description>The value specified for parameter <i>%1!ls!</i> is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFsiItem" />
   </member>
   <member name="IFsiItem.get_CreationTime">
-    <summary>
-      <para>Retrieves the date and time that the directory or file item was created and added to the file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Date and time that the  directory or file item was created and added to the file system image, according to UTC time.</para>
-    </param>
+    <summary>Retrieves the date and time that the directory or file item was created and added to the file system image.</summary>
+    <param name="pVal">Date and time that the directory or file item was created and added to the file system image, according to UTC time.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -102,33 +88,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The creation date and time are propagated to the attributes that users see when listing the contents of a directory.</para>
-      <para>IMAPI does not support the extended attribute for <i>CreationTime</i>, and as a result, UDFS populates the <i>CreationTime</i> with the value expressed by the <i>LastAccessed</i> property from the file entry.</para>
-    </remarks>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.put_CreationTime" />
   </member>
   <member name="IFsiItem.get_FullPath">
-    <summary>
-      <para>Retrieves the full path of the file or directory item in the file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>String that contains the absolute path of the file or directory item in the file system image.</para>
-    </param>
+    <summary>Retrieves the full path of the file or directory item in the file system image.</summary>
+    <param name="pVal">String that contains the absolute path of the file or directory item in the file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -136,29 +113,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.get_Name" />
   </member>
   <member name="IFsiItem.get_IsHidden">
-    <summary>
-      <para>Determines if the item's hidden attribute is set in the file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Is VARIANT_TRUE if the hidden attribute of the item is marked in the file system image; otherwise, VARIANT_FALSE.</para>
-    </param>
+    <summary>Determines if the item's hidden attribute is set in the file system image.</summary>
+    <param name="pVal">Is VARIANT_TRUE if the hidden attribute of the item is marked in the file system image; otherwise, VARIANT_FALSE.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -166,64 +138,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.put_IsHidden" />
   </member>
   <member name="IFsiItem.get_LastAccessedTime">
-    <summary>
-      <para>Retrieves the date and time the directory or file item was last accessed in the file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Date and time that the item directory or file was last accessed in the file system image, according to UTC time.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
-    </returns>
-    <remarks>
-      <para>UDFS (UDF) uses the <i>LastAccessedTime</i> value for the <i>CreationTime</i>, as IMAPI does not currently support the <i>CreationTime</i> extended attribute.</para>
-      <para>CDFS (ISO 9660) sets the <i>LastAccessedTime</i> value retrieved by this method to 0, as only the recording time is stored within the File/Directory descriptor.</para>
-    </remarks>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.put_LastAccessedTime" />
+    <summary>Retrieves the date and time the directory or file item was last accessed in the file system image.</summary>
+    <param name="pVal">Date and time that the item directory or file was last accessed in the file system image, according to UTC time.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation.</returns>
   </member>
   <member name="IFsiItem.get_LastModifiedTime">
-    <summary>
-      <para>Retrieves the date and time that the directory or file item was last modified in the file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Date and time that the directory or file  item was last modified in the file system image, according to UTC time.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
-    </returns>
-    <remarks>
-      <para>When implementing this method, a few things should be taken into consideration:</para>
-      <para>UDFS (UDF) will use the value provided by <see cref="IFsiItem.put_LastModifiedTime" /> as both the <i>CreationTime</i> and <i>LastModifiedTime</i>.</para>
-      <para>CDFS (ISO 9660) uses the date/time of recording as the <i>CreationTime</i> and <i>LastModifiedTime</i>. As a result, CDFS sets the value of <i>LastModifiedTime</i> to 0.</para>
-    </remarks>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.put_LastModifiedTime" />
+    <summary>Retrieves the date and time that the directory or file item was last modified in the file system image.</summary>
+    <param name="pVal">Date and time that the directory or file item was last modified in the file system image, according to UTC time.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation.</returns>
   </member>
   <member name="IFsiItem.get_Name">
-    <summary>
-      <para>Retrieves the name of the directory or file item in the file system image.</para>
-    </summary>
-    <param name="pVal">
-      <para>String that contains the name of the file or directory item in the file system image.</para>
-    </param>
+    <summary>Retrieves the name of the directory or file item in the file system image.</summary>
+    <param name="pVal">String that contains the name of the file or directory item in the file system image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -231,32 +173,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To get the full path to the item, call the <see cref="IFsiItem.get_FullPath" /> method.</para>
-    </remarks>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.get_FullPath" />
   </member>
   <member name="IFsiItem.put_CreationTime">
-    <summary>
-      <para>Sets the date and time that the  directory or file item was created and added to the file system image.</para>
-    </summary>
-    <param name="newVal">
-      <para>Date and time that the directory or file item was created and added to the file system image, according to UTC time. Defaults to the time the item was added to the image.</para>
-    </param>
+    <summary>Sets the date and time that the directory or file item was created and added to the file system image.</summary>
+    <param name="newVal">Date and time that the directory or file item was created and added to the file system image, according to UTC time. Defaults to the time the item was added to the image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -264,43 +198,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_READONLY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>FileSystemImage object is in read only mode.<para>Value: 0xC0AAB102</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>FileSystemImage object is in read only mode.</para>
-            <para>Value: 0xC0AAB102</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate necessary memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate necessary memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>IMAPI does not support the extended attribute for <i>CreationTime</i>, and as a result, UDFS populates the <i>CreationTime</i> with the value expressed by the <i>LastAccessed</i> property from the file entry.</para>
-    </remarks>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.get_CreationTime" />
   </member>
   <member name="IFsiItem.put_IsHidden">
-    <summary>
-      <para>Determines if the item's hidden attribute is set in the file system image.</para>
-    </summary>
-    <param name="newVal">
-      <para>Set to VARIANT_TRUE to set the hidden attribute of the item in the file system image; otherwise, VARIANT_FALSE. The default is VARIANT_FALSE.</para>
-    </param>
+    <summary>Determines if the item's hidden attribute is set in the file system image.</summary>
+    <param name="newVal">Set to VARIANT_TRUE to set the hidden attribute of the item in the file system image; otherwise, VARIANT_FALSE. The default is VARIANT_FALSE.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -308,40 +235,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_READONLY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>FileSystemImage object is in read only mode.<para>Value: 0xC0AAB102</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>FileSystemImage object is in read only mode.</para>
-            <para>Value: 0xC0AAB102</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate necessary memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate necessary memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.get_IsHidden" />
   </member>
   <member name="IFsiItem.put_LastAccessedTime">
-    <summary>
-      <para>Sets the date and time that the  directory or file item was last accessed in the file system image.</para>
-    </summary>
-    <param name="newVal">
-      <para>Date and time that the directory or file  item was last accessed in the file system image, according to UTC time. Defaults to the time the item was added to the image.</para>
-    </param>
+    <summary>Sets the date and time that the directory or file item was last accessed in the file system image.</summary>
+    <param name="newVal">Date and time that the directory or file item was last accessed in the file system image, according to UTC time. Defaults to the time the item was added to the image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -349,44 +272,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_READONLY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>FileSystemImage object is in read only mode.<para>Value: 0xC0AAB102</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>FileSystemImage object is in read only mode.</para>
-            <para>Value: 0xC0AAB102</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate necessary memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate necessary memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>UDFS (UDF) uses the <i>LastAccessedTime</i> value for the <i>CreationTime</i>, as IMAPI does not currently support the <i>CreationTime</i> extended attribute.</para>
-      <para>CDFS (ISO 9660) sets the <i>LastAccessedTime</i> value to 0, as only the recording time is stored within the File/Directory descriptor.</para>
-    </remarks>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.get_LastAccessedTime" />
   </member>
   <member name="IFsiItem.put_LastModifiedTime">
-    <summary>
-      <para>Sets the date and time that the item was last modified in the file system image.</para>
-    </summary>
-    <param name="newVal">
-      <para>Date and time that the directory or file item was last modified in the file system image, according to UTC time.  Defaults to the time the item was added to the image.</para>
-    </param>
+    <summary>Sets the date and time that the item was last modified in the file system image.</summary>
+    <param name="newVal">Date and time that the directory or file item was last modified in the file system image, according to UTC time. Defaults to the time the item was added to the image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -394,45 +309,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_READONLY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>FileSystemImage object is in read only mode.<para>Value: 0xC0AAB102</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>FileSystemImage object is in read only mode.</para>
-            <para>Value: 0xC0AAB102</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate necessary memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate necessary memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The last modified time is propagated to the attribute  that users see when viewing the properties of a directory or a file.</para>
-      <para>When implementing this method, a few things should be taken into consideration:</para>
-      <para>UDFS (UDF) will use the value provided by <b>IFsiItem.put_LastModifiedTime</b> as both the <i>CreationTime</i> and <i>LastModifiedTime</i>.</para>
-      <para>CDFS (ISO 9660) uses the date/time of recording as the <i>CreationTime</i> and <i>LastModifiedTime</i>. As a result, CDFS sets the value of <i>LastModifiedTime</i> to 0.</para>
-    </remarks>
-    <seealso cref="IFsiItem" />
-    <seealso cref="IFsiItem.get_LastModifiedTime" />
   </member>
   <member name="IFsiItem">
     <summary>
       <para>Base interface containing properties common to both file and directory items.</para>
       <para>To access the properties of this interface, use the <see cref="IFsiFileItem" /> or <see cref="IFsiDirectoryItem" /> interface.</para>
     </summary>
-    <seealso cref="IFsiDirectoryItem" />
-    <seealso cref="IFsiFileItem" />
   </member>
 </doc>

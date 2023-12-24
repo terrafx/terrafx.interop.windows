@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STRING">
+    <summary>Used with the <see cref="RtlUnicodeStringToOemString" /> function.</summary>
+  </member>
+  <member name="STRING.Length">
+    <summary>The length of the buffer.</summary>
+  </member>
+  <member name="STRING.MaximumLength">
+    <summary>The maximum length of the buffer.</summary>
+  </member>
+  <member name="STRING.Buffer">
+    <summary>The address of the buffer.</summary>
+  </member>
+</doc>

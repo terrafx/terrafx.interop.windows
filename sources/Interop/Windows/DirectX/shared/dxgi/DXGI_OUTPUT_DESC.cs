@@ -3,16 +3,17 @@
 // Ported from shared/dxgi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC"]/*' />
-public unsafe partial struct DXGI_OUTPUT_DESC
+public partial struct DXGI_OUTPUT_DESC
 {
     /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.DeviceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort DeviceName[32];
+    public _DeviceName_e__FixedBuffer DeviceName;
 
     /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.DesktopCoordinates"]/*' />
     public RECT DesktopCoordinates;
@@ -25,4 +26,11 @@ public unsafe partial struct DXGI_OUTPUT_DESC
 
     /// <include file='DXGI_OUTPUT_DESC.xml' path='doc/member[@name="DXGI_OUTPUT_DESC.Monitor"]/*' />
     public HMONITOR Monitor;
+
+    /// <include file='_DeviceName_e__FixedBuffer.xml' path='doc/member[@name="_DeviceName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _DeviceName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FILE_FRAGMENT">
-    <summary>
-      <para>Represents a range of bytes in a font file.</para>
-    </summary>
-    <remarks>
-      <para>DWRITE_FILE_FRAGMENT is passed as input to <see cref="IDWriteRemoteFontFileStream.BeginDownload" />.</para>
-    </remarks>
+    <summary>Represents a range of bytes in a font file.</summary>
   </member>
   <member name="DWRITE_FILE_FRAGMENT.fileOffset">
-    <summary>
-      <para>Starting offset of the fragment from the beginning of the file.</para>
-    </summary>
+    <summary>Starting offset of the fragment from the beginning of the file.</summary>
   </member>
   <member name="DWRITE_FILE_FRAGMENT.fragmentSize">
-    <summary>
-      <para>Size of the file fragment, in bytes.</para>
-    </summary>
+    <summary>Size of the file fragment, in bytes.</summary>
   </member>
 </doc>

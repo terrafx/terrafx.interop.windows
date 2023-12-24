@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct VARIANT
 {
     /// <include file='VARIANT.xml' path='doc/member[@name="VARIANT.Anonymous"]/*' />
-    [NativeTypeName("tagVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/oaidl.h:478:5)")]
+    [NativeTypeName("__AnonymousRecord_oaidl_L478_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.vt"]/*' />
@@ -183,7 +183,7 @@ public unsafe partial struct VARIANT
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bstrVal"]/*' />
     [UnscopedRef]
-    public ref ushort* bstrVal
+    public ref char* bstrVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -348,7 +348,7 @@ public unsafe partial struct VARIANT
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbstrVal"]/*' />
     [UnscopedRef]
-    public ref ushort** pbstrVal
+    public ref char** pbstrVal
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -594,7 +594,7 @@ public unsafe partial struct VARIANT
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/oaidl.h:480:9)")]
+        [NativeTypeName("__AnonymousRecord_oaidl_L480_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.decVal"]/*' />
@@ -621,7 +621,7 @@ public unsafe partial struct VARIANT
             public ushort wReserved3;
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Anonymous"]/*' />
-            [NativeTypeName("tagVARIANT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/oaidl.h:486:13)")]
+            [NativeTypeName("__AnonymousRecord_oaidl_L486_C13")]
             public _Anonymous_e__Union Anonymous;
 
             /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
@@ -681,7 +681,7 @@ public unsafe partial struct VARIANT
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.bstrVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("BSTR")]
-                public ushort* bstrVal;
+                public char* bstrVal;
 
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.punkVal"]/*' />
                 [FieldOffset(0)]
@@ -748,7 +748,7 @@ public unsafe partial struct VARIANT
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pbstrVal"]/*' />
                 [FieldOffset(0)]
                 [NativeTypeName("BSTR *")]
-                public ushort** pbstrVal;
+                public char** pbstrVal;
 
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ppunkVal"]/*' />
                 [FieldOffset(0)]
@@ -831,7 +831,7 @@ public unsafe partial struct VARIANT
 
                 /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
                 [FieldOffset(0)]
-                [NativeTypeName("tagVARIANT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/oaidl.h:533:17)")]
+                [NativeTypeName("__AnonymousRecord_oaidl_L533_C17")]
                 public _Anonymous_e__Struct Anonymous;
 
                 /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

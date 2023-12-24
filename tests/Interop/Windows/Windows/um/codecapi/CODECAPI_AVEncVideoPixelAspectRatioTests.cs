@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoPixelAspectRatioTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoPixelAspectRatio).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoPixelAspectRatio));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoPixelAspectRatio" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoPixelAspectRatio>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoPixelAspectRatio)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoPixelAspectRatio" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoPixelAspectRatio).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoPixelAspectRatio" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoPixelAspectRatio), Is.EqualTo(1));
-    }
 }

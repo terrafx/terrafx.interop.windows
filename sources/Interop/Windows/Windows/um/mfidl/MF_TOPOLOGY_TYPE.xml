@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TOPOLOGY_TYPE">
-    <summary>
-      <para>Defines the type of a topology node.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines the type of a topology node.</summary>
   </member>
   <member name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_OUTPUT_NODE">
-    <summary>
-      <para>Output node. Represents a media sink in the topology.</para>
-    </summary>
+    <summary>Output node. Represents a media sink in the topology.</summary>
   </member>
   <member name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_SOURCESTREAM_NODE">
-    <summary>
-      <para>Source node. Represents a media stream in the topology.</para>
-    </summary>
+    <summary>Source node. Represents a media stream in the topology.</summary>
   </member>
   <member name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_TRANSFORM_NODE">
-    <summary>
-      <para>Transform node. Represents a Media Foundation Transform (MFT) in the topology.</para>
-    </summary>
+    <summary>Transform node. Represents a Media Foundation Transform (MFT) in the topology.</summary>
   </member>
   <member name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_TEE_NODE">
-    <summary>
-      <para>Tee node. A tee node does not hold a pointer to an object. Instead, it represents a fork in the stream. A tee node has one input and multiple outputs, and samples from the upstream node are delivered to all of the downstream nodes.</para>
-    </summary>
+    <summary>Tee node. A tee node does not hold a pointer to an object. Instead, it represents a fork in the stream. A tee node has one input and multiple outputs, and samples from the upstream node are delivered to all of the downstream nodes.</summary>
   </member>
   <member name="MF_TOPOLOGY_TYPE.MF_TOPOLOGY_MAX">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

@@ -19,7 +19,7 @@ public partial struct REASON_CONTEXT
     public uint Flags;
 
     /// <include file='REASON_CONTEXT.xml' path='doc/member[@name="REASON_CONTEXT.Reason"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/minwinbase.h:273:5)")]
+    [NativeTypeName("__AnonymousRecord_minwinbase_L273_C5")]
     public _Reason_e__Union Reason;
 
     /// <include file='_Reason_e__Union.xml' path='doc/member[@name="_Reason_e__Union"]/*' />
@@ -28,13 +28,13 @@ public partial struct REASON_CONTEXT
     {
         /// <include file='_Reason_e__Union.xml' path='doc/member[@name="_Reason_e__Union.Detailed"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/minwinbase.h:274:9)")]
+        [NativeTypeName("__AnonymousRecord_minwinbase_L274_C9")]
         public _Detailed_e__Struct Detailed;
 
         /// <include file='_Reason_e__Union.xml' path='doc/member[@name="_Reason_e__Union.SimpleReasonString"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* SimpleReasonString;
+        public char* SimpleReasonString;
 
         /// <include file='_Detailed_e__Struct.xml' path='doc/member[@name="_Detailed_e__Struct"]/*' />
         public unsafe partial struct _Detailed_e__Struct
@@ -52,7 +52,7 @@ public partial struct REASON_CONTEXT
 
             /// <include file='_Detailed_e__Struct.xml' path='doc/member[@name="_Detailed_e__Struct.ReasonStrings"]/*' />
             [NativeTypeName("LPWSTR *")]
-            public ushort** ReasonStrings;
+            public char** ReasonStrings;
         }
     }
 }

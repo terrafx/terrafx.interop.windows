@@ -19,32 +19,4 @@ public static unsafe partial class IDMLCommandRecorderTests
     {
         Assert.That(typeof(IDMLCommandRecorder).GUID, Is.EqualTo(IID_IDMLCommandRecorder));
     }
-
-    /// <summary>Validates that the <see cref="IDMLCommandRecorder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDMLCommandRecorder>(), Is.EqualTo(sizeof(IDMLCommandRecorder)));
-    }
-
-    /// <summary>Validates that the <see cref="IDMLCommandRecorder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDMLCommandRecorder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDMLCommandRecorder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDMLCommandRecorder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDMLCommandRecorder), Is.EqualTo(4));
-        }
-    }
 }

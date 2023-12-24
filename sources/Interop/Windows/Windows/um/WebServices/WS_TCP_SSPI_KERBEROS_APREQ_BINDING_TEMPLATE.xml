@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE">
-    <summary>
-      <para>Username/password security template information to be filled in by application.
-Associated with <see cref="WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE_TYPE" />.</para>
-    </summary>
+    <summary>Username/password security template information to be filled in by application. Associated with <see cref="WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE_TYPE" />.</summary>
   </member>
   <member name="WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE.channelProperties">
-    <summary>
-      <para>Application provided additional channel properties that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided additional channel properties that cannot be represented in policy.</summary>
   </member>
   <member name="WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE.securityProperties">
-    <summary>
-      <para>Application provided additional security properties that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided additional security properties that cannot be represented in policy.</summary>
   </member>
   <member name="WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE.sspiTransportSecurityBinding">
-    <summary>
-      <para>Application provided SSPI transport security information that cannot be represented
-in policy.</para>
-    </summary>
+    <summary>Application provided SSPI transport security information that cannot be represented in policy.</summary>
   </member>
   <member name="WS_TCP_SSPI_KERBEROS_APREQ_BINDING_TEMPLATE.kerberosApreqMessageSecurityBinding">
-    <summary>
-      <para>Application provided kerberos binding information that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided kerberos binding information that cannot be represented in policy.</summary>
   </member>
 </doc>

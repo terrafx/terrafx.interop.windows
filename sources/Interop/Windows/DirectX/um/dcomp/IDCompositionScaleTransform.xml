@@ -3,169 +3,46 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionScaleTransform.SetCenterX">
-    <summary>
-      <para>Changes the value of the CenterX property of a 2D scale transform.   The CenterX property specifies the x-coordinate of the point about which scaling is performed.</para>
-    </summary>
-    <param name="centerX">
-      <para>Type: <b>float</b></para>
-      <para>The new x-coordinate of the center point.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method fails if the <i>centerX</i> parameter is NaN, positive infinity, or negative infinity.</para>
-      <para>If the CenterX property was previously animated, this method removes the animation and sets the CenterX property to the specified static value.</para>
-    </remarks>
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449042(v=vs.85)">IDCompositionScaleTransform.SetCenterY</seealso>
+    <summary>Changes the value of the CenterX property of a 2D scale transform. The CenterX property specifies the x-coordinate of the point about which scaling is performed.</summary>
+    <param name="centerX">The new x-coordinate of the center point.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionScaleTransform.SetCenterX">
-    <summary>
-      <para>Animates the value of the CenterX property of a 2D scale transform. The CenterX property specifies the x-coordinate of the point about which scaling is performed.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation object that determines how the value of the CenterX property changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the CenterX property unless this method is called again. If the CenterX property was previously animated, calling this method replaces the previous animation with the new animation.</para>
-      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
-    </remarks>
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449042(v=vs.85)">IDCompositionScaleTransform.SetCenterY</seealso>
+    <summary>Animates the value of the CenterX property of a 2D scale transform. The CenterX property specifies the x-coordinate of the point about which scaling is performed.</summary>
+    <param name="animation">An animation object that determines how the value of the CenterX property changes over time. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionScaleTransform.SetCenterY">
-    <summary>
-      <para>Changes the value of the CenterY property of a 2D scale transform. The CenterY property specifies the y-coordinate of the point about which scaling is performed.</para>
-    </summary>
-    <param name="centerY">
-      <para>Type: <b>float</b></para>
-      <para>The new y-coordinate of the center point.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method fails if the <i>centerY</i> parameter is NaN, positive infinity, or negative infinity.</para>
-      <para>If the CenterY property was previously animated, this method removes the animation and sets the CenterY property to the specified static value.</para>
-    </remarks>
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449036(v=vs.85)">IDCompositionScaleTransform.SetCenterX</seealso>
+    <summary>Changes the value of the CenterY property of a 2D scale transform. The CenterY property specifies the y-coordinate of the point about which scaling is performed.</summary>
+    <param name="centerY">The new y-coordinate of the center point.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionScaleTransform.SetCenterY">
-    <summary>
-      <para>Animates the value of the CenterY property of a 2D scale transform. The CenterY property specifies the y-coordinate of the point about which scaling is performed.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation object that determines how the value of the CenterY property changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the CenterY property unless this method is called again. If the CenterY property was previously animated, calling this method replaces the previous animation with the new animation.</para>
-      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
-    </remarks>
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449036(v=vs.85)">IDCompositionScaleTransform.SetCenterX</seealso>
+    <summary>Animates the value of the CenterY property of a 2D scale transform. The CenterY property specifies the y-coordinate of the point about which scaling is performed.</summary>
+    <param name="animation">An animation object that determines how the value of the CenterY property changes over time. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionScaleTransform.SetScaleX">
-    <summary>
-      <para>Changes the value of the ScaleX property of a 2D scale transform. The ScaleX property specifies the scale factor along the x-axis.</para>
-    </summary>
-    <param name="scaleX">
-      <para>Type: <b>float</b></para>
-      <para>The new x-axis scale factor.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method fails if the <i>scaleX</i> parameter is NaN, positive infinity, or negative infinity.</para>
-      <para>If the ScaleX property was previously animated, this method removes the animation and sets the ScaleX property to the specified static value.</para>
-    </remarks>
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449055(v=vs.85)">IDCompositionScaleTransform.SetScaleY</seealso>
+    <summary>Changes the value of the ScaleX property of a 2D scale transform. The ScaleX property specifies the scale factor along the x-axis.</summary>
+    <param name="scaleX">The new x-axis scale factor.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionScaleTransform.SetScaleX">
-    <summary>
-      <para>Animates the value of the ScaleX property of a 2D scale transform. The ScaleX property specifies the scale factor along the x-axis.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation object that determines how the value of the ScaleX property changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the ScaleX property unless this method is called again. If the ScaleX property was previously animated, calling this method replaces the previous animation with the new animation.</para>
-      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
-    </remarks>
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449055(v=vs.85)">IDCompositionScaleTransform.SetScaleY</seealso>
+    <summary>Animates the value of the ScaleX property of a 2D scale transform. The ScaleX property specifies the scale factor along the x-axis.</summary>
+    <param name="animation">An animation object that determines how the value of the ScaleX property changes over time. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionScaleTransform.SetScaleY">
-    <summary>
-      <para>Changes the value of the ScaleY property of a 2D scale transform. The ScaleY property specifies the scale factor along the y-axis.</para>
-    </summary>
-    <param name="scaleY">
-      <para>Type: <b>float</b></para>
-      <para>The new y-axis scale factor.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method fails if the <i>scaleY</i> parameter is NaN, positive infinity, or negative infinity.</para>
-      <para>If the ScaleY property was previously animated, this method removes the animation and sets the ScaleY property to the specified static value.</para>
-    </remarks>
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449048(v=vs.85)">IDCompositionScaleTransform.SetScaleX</seealso>
+    <summary>Changes the value of the ScaleY property of a 2D scale transform. The ScaleY property specifies the scale factor along the y-axis.</summary>
+    <param name="scaleY">The new y-axis scale factor.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionScaleTransform.SetScaleY">
-    <summary>
-      <para>Animates the value of the ScaleY property of a 2D scale transform. The ScaleY property specifies the scale factor along the y-axis.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation object that determines how the value of the ScaleY property changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the ScaleY property unless this method is called again. If the ScaleY property was previously animated, calling this method replaces the previous animation with the new animation.</para>
-      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
-    </remarks>
-    <seealso cref="IDCompositionScaleTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449048(v=vs.85)">IDCompositionScaleTransform.SetScaleX</seealso>
+    <summary>Animates the value of the ScaleY property of a 2D scale transform. The ScaleY property specifies the scale factor along the y-axis.</summary>
+    <param name="animation">An animation object that determines how the value of the ScaleY property changes over time. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionScaleTransform">
-    <summary>
-      <para>Represents a 2D transformation that affects the scale of a visual along the x-axis and y-axis. The coordinate system is scaled from the specified center point.</para>
-    </summary>
-    <remarks>
-      <para>A scale transform represents the following 3-by-3 matrix:</para>
-      <para>
-        <img alt="Three-by-three scale matrix" src="https://docs.microsoft.com/windows/win32/api/dcompmages/scale_transform_3x3matrix.png" />
-      </para>
-      <para>The effect is to scale the coordinate system up or down and apply the corresponding translation such that the center point does not move.</para>
-    </remarks>
-    <seealso cref="IDCompositionTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionVisual.SetTransform</seealso>
+    <summary>Represents a 2D transformation that affects the scale of a visual along the x-axis and y-axis. The coordinate system is scaled from the specified center point.</summary>
   </member>
 </doc>

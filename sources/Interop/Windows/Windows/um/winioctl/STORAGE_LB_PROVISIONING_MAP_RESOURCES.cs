@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES"]/*' />
-public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
+public partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
 {
     /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Size"]/*' />
     [NativeTypeName("DWORD")]
@@ -25,7 +25,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte AvailableMappingResourcesValid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield1 & 0x1u);
         }
@@ -42,7 +42,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte UsedMappingResourcesValid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield1 >> 1) & 0x1u);
         }
@@ -59,7 +59,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield1 >> 2) & 0x3Fu);
         }
@@ -73,7 +73,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
 
     /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Reserved1"]/*' />
     [NativeTypeName("BYTE[3]")]
-    public fixed byte Reserved1[3];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     public byte _bitfield2;
 
@@ -82,7 +82,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte AvailableMappingResourcesScope
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield2 & 0x3u);
         }
@@ -99,7 +99,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte UsedMappingResourcesScope
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield2 >> 2) & 0x3u);
         }
@@ -116,7 +116,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     public byte Reserved2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield2 >> 4) & 0xFu);
         }
@@ -130,7 +130,7 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
 
     /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.Reserved3"]/*' />
     [NativeTypeName("BYTE[3]")]
-    public fixed byte Reserved3[3];
+    public _Reserved3_e__FixedBuffer Reserved3;
 
     /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.AvailableMappingResources"]/*' />
     [NativeTypeName("DWORDLONG")]
@@ -139,4 +139,18 @@ public unsafe partial struct STORAGE_LB_PROVISIONING_MAP_RESOURCES
     /// <include file='STORAGE_LB_PROVISIONING_MAP_RESOURCES.xml' path='doc/member[@name="STORAGE_LB_PROVISIONING_MAP_RESOURCES.UsedMappingResources"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong UsedMappingResources;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_Reserved3_e__FixedBuffer.xml' path='doc/member[@name="_Reserved3_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Reserved3_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

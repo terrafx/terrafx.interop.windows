@@ -4,23 +4,17 @@
 <doc>
   <member name="VIDEOENCODER_BITRATE_MODE">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>VIDEOENCODER_BITRATE_MODE</b> enumeration type defines the three types of bitrates supported by the <see cref="IEncoderAPI" /> interface.</para>
     </summary>
-    <seealso cref="IEncoderAPI" />
   </member>
   <member name="VIDEOENCODER_BITRATE_MODE.ConstantBitRate">
-    <summary>
-      <para>The bit rate used for encoding is constant.</para>
-    </summary>
+    <summary>The bit rate used for encoding is constant.</summary>
   </member>
   <member name="VIDEOENCODER_BITRATE_MODE.VariableBitRateAverage">
-    <summary>
-      <para>The bit rate used for encoding is variable with the specified bitrate used as a guaranteed average over a specified window. The default window size is considered to be five minutes.</para>
-    </summary>
+    <summary>The bit rate used for encoding is variable with the specified bitrate used as a guaranteed average over a specified window. The default window size is considered to be five minutes.</summary>
   </member>
   <member name="VIDEOENCODER_BITRATE_MODE.VariableBitRatePeak">
-    <summary>
-      <para>The <b>ENCAPIPARAM_BITRATE</b> value is the expected (not guaranteed) average bit rate over a given time period and that the <b>ENCAPIPARAM_PEAK_BITRATE</b> value is the peak which the bit rate must not exceed. The default window size is considered to be 500ms (which is traditionally equal to one GOP).</para>
-    </summary>
+    <summary>The <b>ENCAPIPARAM_BITRATE</b> value is the expected (not guaranteed) average bit rate over a given time period and that the <b>ENCAPIPARAM_PEAK_BITRATE</b> value is the peak which the bit rate must not exceed. The default window size is considered to be 500ms (which is traditionally equal to one GOP).</summary>
   </member>
 </doc>

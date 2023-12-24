@@ -25,7 +25,7 @@ public unsafe partial struct IBanneredBar : IBanneredBar.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBanneredBar*, Guid*, void**, int>)(lpVtbl[0]))((IBanneredBar*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBanneredBar*, Guid*, void**, int>)(lpVtbl[0]))((IBanneredBar*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBanneredBar : IBanneredBar.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBanneredBar*, uint>)(lpVtbl[1]))((IBanneredBar*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBanneredBar*, uint>)(lpVtbl[1]))((IBanneredBar*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBanneredBar : IBanneredBar.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBanneredBar*, uint>)(lpVtbl[2]))((IBanneredBar*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBanneredBar*, uint>)(lpVtbl[2]))((IBanneredBar*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBanneredBar.xml' path='doc/member[@name="IBanneredBar.SetIconSize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBanneredBar : IBanneredBar.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetIconSize([NativeTypeName("DWORD")] uint iIcon)
     {
-        return ((delegate* unmanaged<IBanneredBar*, uint, int>)(lpVtbl[3]))((IBanneredBar*)Unsafe.AsPointer(ref this), iIcon);
+        return ((delegate* unmanaged[MemberFunction]<IBanneredBar*, uint, int>)(lpVtbl[3]))((IBanneredBar*)Unsafe.AsPointer(ref this), iIcon);
     }
 
     /// <include file='IBanneredBar.xml' path='doc/member[@name="IBanneredBar.GetIconSize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IBanneredBar : IBanneredBar.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetIconSize([NativeTypeName("DWORD *")] uint* piIcon)
     {
-        return ((delegate* unmanaged<IBanneredBar*, uint*, int>)(lpVtbl[4]))((IBanneredBar*)Unsafe.AsPointer(ref this), piIcon);
+        return ((delegate* unmanaged[MemberFunction]<IBanneredBar*, uint*, int>)(lpVtbl[4]))((IBanneredBar*)Unsafe.AsPointer(ref this), piIcon);
     }
 
     /// <include file='IBanneredBar.xml' path='doc/member[@name="IBanneredBar.SetBitmap"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IBanneredBar : IBanneredBar.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetBitmap(HBITMAP hBitmap)
     {
-        return ((delegate* unmanaged<IBanneredBar*, HBITMAP, int>)(lpVtbl[5]))((IBanneredBar*)Unsafe.AsPointer(ref this), hBitmap);
+        return ((delegate* unmanaged[MemberFunction]<IBanneredBar*, HBITMAP, int>)(lpVtbl[5]))((IBanneredBar*)Unsafe.AsPointer(ref this), hBitmap);
     }
 
     /// <include file='IBanneredBar.xml' path='doc/member[@name="IBanneredBar.GetBitmap"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IBanneredBar : IBanneredBar.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetBitmap(HBITMAP* phBitmap)
     {
-        return ((delegate* unmanaged<IBanneredBar*, HBITMAP*, int>)(lpVtbl[6]))((IBanneredBar*)Unsafe.AsPointer(ref this), phBitmap);
+        return ((delegate* unmanaged[MemberFunction]<IBanneredBar*, HBITMAP*, int>)(lpVtbl[6]))((IBanneredBar*)Unsafe.AsPointer(ref this), phBitmap);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IBanneredBar : IBanneredBar.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetIconSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetIconSize;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetIconSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetIconSize;
 
         [NativeTypeName("HRESULT (HBITMAP) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HBITMAP, int> SetBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HBITMAP, int> SetBitmap;
 
         [NativeTypeName("HRESULT (HBITMAP *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HBITMAP*, int> GetBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HBITMAP*, int> GetBitmap;
     }
 }

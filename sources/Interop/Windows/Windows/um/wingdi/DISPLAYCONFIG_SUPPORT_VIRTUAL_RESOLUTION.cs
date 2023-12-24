@@ -18,14 +18,14 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.xml' path='doc/member[@name="DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3141:5)")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3141_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.disableMonitorVirtualResolution"]/*' />
     public uint disableMonitorVirtualResolution
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.disableMonitorVirtualResolution;
         }
@@ -41,7 +41,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -70,7 +70,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3143:9)")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3143_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />
@@ -88,7 +88,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
             public uint disableMonitorVirtualResolution
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -105,7 +105,7 @@ public partial struct DISPLAYCONFIG_SUPPORT_VIRTUAL_RESOLUTION
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

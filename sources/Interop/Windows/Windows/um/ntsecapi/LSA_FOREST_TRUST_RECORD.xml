@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_FOREST_TRUST_RECORD">
+    <summary>The <b>LSA_FOREST_TRUST_RECORD</b> structure represents a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Local Security Authority</a> forest trust record.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD.Flags">
+    <summary>Flags that control the behavior of the operation.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustType">
+    <summary>
+      <para>
+        <see cref="LSA_FOREST_TRUST_RECORD_TYPE" /> enumeration that indicates the type of the record. The following table shows the possible values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ForestTrustTopLevelName</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Record contains an included top-level name.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ForestTrustTopLevelNameEx</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Record contains an excluded top-level name.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ForestTrustDomainInfo</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Record contains an <see cref="LSA_FOREST_TRUST_DOMAIN_INFO" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ForestTrustRecordTypeLast</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Marks the end of an enumeration.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD.Time">
+    <summary>Time stamp of the record.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData.TopLevelName.case"></member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData.TopLevelName.case.ForestTrustTopLevelName"></member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData.TopLevelName.case.ForestTrustTopLevelNameEx"></member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData.DomainInfo.case"></member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData.DomainInfo.case.ForestTrustDomainInfo"></member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData.Data.default"></member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData"></member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData.TopLevelName">
+    <summary>Top-level name. This member is used only if the <b>ForestTrustType</b> member is <b>ForestTrustTopLevelName</b> or <b>ForestTrustTopLevelNameEx</b>.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData.DomainInfo">
+    <summary>Domain information. This member is used only if the <b>ForestTrustType</b> member is <b>ForestTrustDomainInfo</b>.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_RECORD.ForestTrustData.Data">
+    <summary>Binary data. This member is used for unrecognized entries after ForestTrustRecordTypeLast.</summary>
+  </member>
+</doc>

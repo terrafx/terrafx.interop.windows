@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFolderView.GetAutoArrange">
-    <summary>
-      <para>Gets the current state of the folder's Auto Arrange mode.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the folder is in Auto Arrange mode; S_FALSE if it is not.</para>
-    </returns>
+    <summary>Gets the current state of the folder's Auto Arrange mode.</summary>
+    <returns>Returns S_OK if the folder is in Auto Arrange mode; S_FALSE if it is not.</returns>
   </member>
   <member name="IFolderView.GetCurrentViewMode">
-    <summary>
-      <para>Gets an address containing a value representing the folder's current view mode.</para>
-    </summary>
+    <summary>Gets an address containing a value representing the folder's current view mode.</summary>
     <param name="pViewMode">
-      <para>Type: <b>UINT*</b></para>
       <para>A pointer to a memory location at which to store the folder's current view mode. The value at that address is one of the following <see cref="FOLDERVIEWMODE" /> values.</para>
       <h4>FVM_ICON</h4>
       <para>Medium icons</para>
@@ -33,228 +25,77 @@
       <h4>FVM_THUMBSTRIP</h4>
       <para>Filmstrip view</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="GetCurrentInfo" />
-    <seealso cref="IFolderView" />
-    <seealso cref="IFolderView.SetCurrentViewMode" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.GetDefaultSpacing">
-    <summary>
-      <para>Gets a pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure containing the default width (x) and height (y) measurements of an item, including the surrounding white space.</para>
-    </summary>
-    <param name="ppt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>Pointer to an existing structure to be filled with the default sizing dimensions of the items in the folder's view.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IFolderView" />
-    <seealso cref="IFolderView.GetSpacing" />
+    <summary>Gets a pointer to a <see cref="POINT" /> structure containing the default width (x) and height (y) measurements of an item, including the surrounding white space.</summary>
+    <param name="ppt">Pointer to an existing structure to be filled with the default sizing dimensions of the items in the folder's view.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.GetFocusedItem">
-    <summary>
-      <para>Gets the index of the item that currently has focus in the folder's view.</para>
-    </summary>
-    <param name="piItem">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to the index of the item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the index of the item that currently has focus in the folder's view.</summary>
+    <param name="piItem">A pointer to the index of the item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.GetFolder">
-    <summary>
-      <para>Gets the folder object.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>Reference to the desired IID to represent the folder.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>VOID**</b></para>
-      <para>When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IShellFolder" /> or a related interface. This can also be an <see cref="IShellItemArray" /> with a single element.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the folder object.</summary>
+    <param name="riid">Reference to the desired IID to represent the folder.</param>
+    <param name="ppv">When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="IShellFolder" /> or a related interface. This can also be an <see cref="IShellItemArray" /> with a single element.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.GetItemPosition">
-    <summary>
-      <para>Gets the position of an item in the folder's view.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>A pointer to an <see cref="ITEMIDLIST" /> interface.</para>
-    </param>
-    <param name="ppt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>A pointer to a structure that receives the position of the item's upper-left corner.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the position of an item in the folder's view.</summary>
+    <param name="pidl">A pointer to an <see cref="ITEMIDLIST" /> interface.</param>
+    <param name="ppt">A pointer to a structure that receives the position of the item's upper-left corner.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.GetSelectionMarkedItem">
-    <summary>
-      <para>Gets the index of an item in the folder's view which has been marked by using the SVSI_SELECTIONMARK in <see cref="IFolderView.SelectItem" />.</para>
-    </summary>
-    <param name="piItem">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to the index of the marked item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IFolderView" />
-    <seealso cref="IFolderView.SelectItem" />
+    <summary>Gets the index of an item in the folder's view which has been marked by using the SVSI_SELECTIONMARK in <see cref="IFolderView.SelectItem" />.</summary>
+    <param name="piItem">A pointer to the index of the marked item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.GetSpacing">
-    <summary>
-      <para>Gets a <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure containing the width (x) and height (y) dimensions, including the surrounding white space, of an item.</para>
-    </summary>
-    <param name="ppt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>A pointer to an existing structure to be filled with the current sizing dimensions of the items in the folder's view.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>As an example, consider an icon measuring 75 pixels by 70 pixels, with its upper-left corner located at pixel (0,0). Note that this measurement includes both the visible graphic and its surrounding buffer area. <b>IFolderView.GetSpacing</b> would return a pointer to a POINT structure containing an x value of 75 and a y value of 70. If you were using this information to avoid overlap, the next icon in line to the right would be placed with its upper-left corner at pixel (75,0). Similarly, the next icon below would be placed at pixel (0,70).</para>
-    </remarks>
-    <seealso cref="IFolderView" />
-    <seealso cref="IFolderView.GetDefaultSpacing" />
+    <summary>Gets a <see cref="POINT" /> structure containing the width (x) and height (y) dimensions, including the surrounding white space, of an item.</summary>
+    <param name="ppt">A pointer to an existing structure to be filled with the current sizing dimensions of the items in the folder's view.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.Item">
-    <summary>
-      <para>Gets the identifier of a specific item in the folder view, by index.</para>
-    </summary>
-    <param name="iItemIndex">
-      <para>Type: <b>int</b></para>
-      <para>The index of the item in the view.</para>
-    </param>
-    <param name="ppidl">
-      <para>Type: <b>PITEMID_CHILD*</b></para>
-      <para>The address of a pointer to a PIDL containing the item's identifier information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When no longer needed, the PIDL should be freed by calling <see cref="CoTaskMemFree" /></para>
-    </remarks>
-    <seealso cref="IFolderView" />
-    <seealso cref="IFolderView.Items" />
+    <summary>Gets the identifier of a specific item in the folder view, by index.</summary>
+    <param name="iItemIndex">The index of the item in the view.</param>
+    <param name="ppidl">The address of a pointer to a PIDL containing the item's identifier information.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.ItemCount">
-    <summary>
-      <para>Gets the number of items in the folder. This can be the number of all items, or a subset such as the number of selected items.</para>
-    </summary>
-    <param name="uFlags">
-      <para>Type: <b>UINT</b></para>
-      <para>Flags from the <see cref="_SVGIO" /> enumeration that limit the count to certain types of items.</para>
-    </param>
-    <param name="pcItems">
-      <para>Type: <b>int*</b></para>
-      <para>Pointer to an integer that receives the number of items (files and folders) displayed in the folder view.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the number of items in the folder. This can be the number of all items, or a subset such as the number of selected items.</summary>
+    <param name="uFlags">Flags from the <see cref="_SVGIO" /> enumeration that limit the count to certain types of items.</param>
+    <param name="pcItems">Pointer to an integer that receives the number of items (files and folders) displayed in the folder view.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.Items">
-    <summary>
-      <para>Gets the address of an enumeration object based on the collection of items in the folder view.</para>
-    </summary>
+    <summary>Gets the address of an enumeration object based on the collection of items in the folder view.</summary>
     <param name="uFlags">
-      <para>Type: <b>UINT</b></para>
-      <para>
-        <see cref="_SVGIO" /> values that limit the enumeration to certain types of items.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>Reference to the desired IID to represent the folder.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically an <see cref="IEnumIDList" />, <see cref="IDataObject" />, or <see cref="IShellItemArray" />. If an error occurs, this value is <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IFolderView" />
-    <seealso cref="IFolderView.Item" />
+      <see cref="_SVGIO" /> values that limit the enumeration to certain types of items.</param>
+    <param name="riid">Reference to the desired IID to represent the folder.</param>
+    <param name="ppv">When this method returns, contains the interface pointer requested in <i>riid</i>. This is typically an <see cref="IEnumIDList" />, <see cref="IDataObject" />, or <see cref="IShellItemArray" />. If an error occurs, this value is <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.SelectAndPositionItems">
-    <summary>
-      <para>Allows the selection and positioning of items visible in the folder's view.</para>
-    </summary>
-    <param name="cidl">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of items to select.</para>
-    </param>
-    <param name="apidl">
-      <para>Type: <b>PCUITEMID_CHILD_ARRAY*</b></para>
-      <para>A pointer to an array of size <i>cidl</i> that contains the PIDLs of the items.</para>
-    </param>
-    <param name="apt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>A pointer to an array of <i>cidl</i> structures containing the locations each corresponding element in <i>apidl</i> should be positioned.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>One of the <see cref="_SVSIF" /> constants that specifies the type of selection to apply.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="FOLDERVIEWOPTIONS" />
-    <seealso cref="IFolderView" />
-    <seealso cref="IFolderView.SelectItem" />
-    <seealso cref="SelectItem" />
+    <summary>Allows the selection and positioning of items visible in the folder's view.</summary>
+    <param name="cidl">The number of items to select.</param>
+    <param name="apidl">A pointer to an array of size <i>cidl</i> that contains the PIDLs of the items.</param>
+    <param name="apt">A pointer to an array of <i>cidl</i> structures containing the locations each corresponding element in <i>apidl</i> should be positioned.</param>
+    <param name="dwFlags">One of the <see cref="_SVSIF" /> constants that specifies the type of selection to apply.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.SelectItem">
-    <summary>
-      <para>Selects an item in the folder's view.</para>
-    </summary>
-    <param name="iItem">
-      <para>Type: <b>int</b></para>
-      <para>The index of the item to select in the folder's view.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>One of the <see cref="_SVSIF" /> constants that specify the type of selection to apply.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IFolderView" />
-    <seealso cref="IFolderView.GetSelectionMarkedItem" />
-    <seealso cref="IFolderView.SelectAndPositionItems" />
-    <seealso cref="SelectItem" />
+    <summary>Selects an item in the folder's view.</summary>
+    <param name="iItem">The index of the item to select in the folder's view.</param>
+    <param name="dwFlags">One of the <see cref="_SVSIF" /> constants that specify the type of selection to apply.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView.SetCurrentViewMode">
-    <summary>
-      <para>Sets the selected folder's view mode.</para>
-    </summary>
+    <summary>Sets the selected folder's view mode.</summary>
     <param name="ViewMode">
-      <para>Type: <b>UINT</b></para>
       <para>One of the following values from the <see cref="FOLDERVIEWMODE" /> enumeration.</para>
       <h4>FVM_ICON</h4>
       <para>Medium icons</para>
@@ -271,17 +112,9 @@
       <h4>FVM_THUMBSTRIP</h4>
       <para>Filmstrip view</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="CreateViewWindow" />
-    <seealso cref="IFolderView" />
-    <seealso cref="IFolderView.GetCurrentViewMode" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderView">
-    <summary>
-      <para>Exposes methods that retrieve information about a folder's display options, select specified items in that folder, and set the folder's view mode.</para>
-    </summary>
+    <summary>Exposes methods that retrieve information about a folder's display options, select specified items in that folder, and set the folder's view mode.</summary>
   </member>
 </doc>

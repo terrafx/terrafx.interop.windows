@@ -19,25 +19,4 @@ public static unsafe partial class FreeSpaceCategorizerTests
     {
         Assert.That(typeof(FreeSpaceCategorizer).GUID, Is.EqualTo(IID_FreeSpaceCategorizer));
     }
-
-    /// <summary>Validates that the <see cref="FreeSpaceCategorizer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FreeSpaceCategorizer>(), Is.EqualTo(sizeof(FreeSpaceCategorizer)));
-    }
-
-    /// <summary>Validates that the <see cref="FreeSpaceCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FreeSpaceCategorizer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FreeSpaceCategorizer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FreeSpaceCategorizer), Is.EqualTo(1));
-    }
 }

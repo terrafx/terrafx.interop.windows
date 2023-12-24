@@ -19,32 +19,4 @@ public static unsafe partial class ISystemDataPathsInteropTests
     {
         Assert.That(typeof(ISystemDataPathsInterop).GUID, Is.EqualTo(IID_ISystemDataPathsInterop));
     }
-
-    /// <summary>Validates that the <see cref="ISystemDataPathsInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISystemDataPathsInterop>(), Is.EqualTo(sizeof(ISystemDataPathsInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="ISystemDataPathsInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISystemDataPathsInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISystemDataPathsInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISystemDataPathsInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISystemDataPathsInterop), Is.EqualTo(4));
-        }
-    }
 }

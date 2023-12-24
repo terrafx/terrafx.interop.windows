@@ -118,7 +118,7 @@ public static partial class TRANSACTION
     [NativeTypeName("#define TRANSACTION_NOTIFY_COMMIT_FINALIZE 0x40000000")]
     public const int TRANSACTION_NOTIFY_COMMIT_FINALIZE = 0x40000000;
 
-    [NativeTypeName("#define TRANSACTION_OBJECT_PATH L\"\\\\Transaction\\\\\"")]
+    [NativeTypeName("#define TRANSACTION_OBJECT_PATH L\"\\Transaction\"")]
     public const string TRANSACTION_OBJECT_PATH = "\\Transaction\\";
 
     [NativeTypeName("#define TRANSACTION_OBJECT_NAME_LENGTH_IN_BYTES (sizeof(TRANSACTION_OBJECT_PATH)+(38*sizeof(WCHAR)))")]

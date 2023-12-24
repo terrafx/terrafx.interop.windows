@@ -27,7 +27,7 @@ public unsafe partial struct PROPSHEETHEADERA_V1
     public HINSTANCE hInstance;
 
     /// <include file='PROPSHEETHEADERA_V1.xml' path='doc/member[@name="PROPSHEETHEADERA_V1.Anonymous1"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERA_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:473:5)")]
+    [NativeTypeName("__AnonymousRecord_prsht_L473_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='PROPSHEETHEADERA_V1.xml' path='doc/member[@name="PROPSHEETHEADERA_V1.pszCaption"]/*' />
@@ -38,11 +38,11 @@ public unsafe partial struct PROPSHEETHEADERA_V1
     public uint nPages;
 
     /// <include file='PROPSHEETHEADERA_V1.xml' path='doc/member[@name="PROPSHEETHEADERA_V1.Anonymous2"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERA_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:473:5)")]
+    [NativeTypeName("__AnonymousRecord_prsht_L473_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='PROPSHEETHEADERA_V1.xml' path='doc/member[@name="PROPSHEETHEADERA_V1.Anonymous3"]/*' />
-    [NativeTypeName("_PROPSHEETHEADERA_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:473:5)")]
+    [NativeTypeName("__AnonymousRecord_prsht_L473_C5")]
     public _Anonymous3_e__Union Anonymous3;
 
     /// <include file='PROPSHEETHEADERA_V1.xml' path='doc/member[@name="PROPSHEETHEADERA_V1.pfnCallback"]/*' />

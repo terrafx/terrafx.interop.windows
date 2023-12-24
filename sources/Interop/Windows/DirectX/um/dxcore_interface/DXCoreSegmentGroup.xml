@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXCoreSegmentGroup">
+    <summary>Defines constants that specify an adapter's memory segment grouping.</summary>
+  </member>
+  <member name="DXCoreSegmentGroup.Local">
+    <summary>Specifies a grouping of segments that is considered local to the adapter, and represents the fastest memory available to the GPU. Your application should target the local segment group as the target size for its working set.</summary>
+  </member>
+  <member name="DXCoreSegmentGroup.NonLocal">
+    <summary>Specifies a grouping of segments that is considered non-local to the adapter, and may have slower performance than the local segment group.</summary>
+  </member>
+</doc>

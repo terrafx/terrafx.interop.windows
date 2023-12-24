@@ -25,7 +25,7 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFVideoRendererEffectControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoRendererEffectControl*, Guid*, void**, int>)(lpVtbl[0]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFVideoRendererEffectControl*, uint>)(lpVtbl[1]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoRendererEffectControl*, uint>)(lpVtbl[1]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFVideoRendererEffectControl*, uint>)(lpVtbl[2]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoRendererEffectControl*, uint>)(lpVtbl[2]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFVideoRendererEffectControl.xml' path='doc/member[@name="IMFVideoRendererEffectControl.OnAppServiceConnectionEstablished"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
     [VtblIndex(3)]
     public HRESULT OnAppServiceConnectionEstablished(IUnknown* pAppServiceConnection)
     {
-        return ((delegate* unmanaged<IMFVideoRendererEffectControl*, IUnknown*, int>)(lpVtbl[3]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this), pAppServiceConnection);
+        return ((delegate* unmanaged[MemberFunction]<IMFVideoRendererEffectControl*, IUnknown*, int>)(lpVtbl[3]))((IMFVideoRendererEffectControl*)Unsafe.AsPointer(ref this), pAppServiceConnection);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFVideoRendererEffectControl : IMFVideoRendererEff
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> OnAppServiceConnectionEstablished;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> OnAppServiceConnectionEstablished;
     }
 }

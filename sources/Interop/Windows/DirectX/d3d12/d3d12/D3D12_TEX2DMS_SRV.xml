@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TEX2DMS_SRV">
+    <summary>Describes the subresources from a multi sampled 2D texture to use in a shader-resource view.</summary>
+  </member>
+  <member name="D3D12_TEX2DMS_SRV.UnusedField_NothingToDefine">
+    <summary>Integer of any value. See remarks.</summary>
+  </member>
+</doc>

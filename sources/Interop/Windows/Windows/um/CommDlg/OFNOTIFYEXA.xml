@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="OFNOTIFYEXA">
+    <summary>Contains information about a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/cdn-includeitem">CDN_INCLUDEITEM</a> notification message.</summary>
+  </member>
+  <member name="OFNOTIFYEXA.hdr">
+    <summary>The <b>code</b> member of this structure identifies the notification message being sent.</summary>
+  </member>
+  <member name="OFNOTIFYEXA.lpOFN">
+    <summary>A pointer to an <see cref="OPENFILENAME" /> structure containing the values specified when the <b>Open</b> or <b>Save As</b> dialog box was created.</summary>
+  </member>
+  <member name="OFNOTIFYEXA.psf">
+    <summary>A pointer to the interface for the folder or shell name-space extension whose items are being enumerated.</summary>
+  </member>
+  <member name="OFNOTIFYEXA.pidl">
+    <summary>A pointer to an item identifier list that identifies an item in the container identified by the <b>psf</b> member. The item identifier is relative to the <b>psf</b> container.</summary>
+  </member>
+  <member name="OFNOTIFYEXA">
+    <summary>Contains information about a <a href="https://docs.microsoft.com//windows/desktop/dlgbox/cdn-includeitem">CDN_INCLUDEITEM</a> notification message.</summary>
+  </member>
+  <member name="OFNOTIFYEXA.hdr">
+    <summary>The <b>code</b> member of this structure identifies the notification message being sent.</summary>
+  </member>
+  <member name="OFNOTIFYEXA.lpOFN">
+    <summary>A pointer to an <see cref="OPENFILENAME" /> structure containing the values specified when the <b>Open</b> or <b>Save As</b> dialog box was created.</summary>
+  </member>
+  <member name="OFNOTIFYEXA.psf">
+    <summary>A pointer to the interface for the folder or shell name-space extension whose items are being enumerated.</summary>
+  </member>
+  <member name="OFNOTIFYEXA.pidl">
+    <summary>A pointer to an item identifier list that identifies an item in the container identified by the <b>psf</b> member. The item identifier is relative to the <b>psf</b> container.</summary>
+  </member>
+</doc>

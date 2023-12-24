@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_ENCRYPTED_BLOCK_INFO">
-    <summary>
-      <para>Specifies which bytes in a video surface are encrypted.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
-    <seealso cref="ID3D11VideoContext.SubmitDecoderBuffers" />
+    <summary>Specifies which bytes in a video surface are encrypted.</summary>
   </member>
   <member name="D3D11_ENCRYPTED_BLOCK_INFO.NumEncryptedBytesAtBeginning">
-    <summary>
-      <para>The number of bytes that are encrypted at the start of the buffer.</para>
-    </summary>
+    <summary>The number of bytes that are encrypted at the start of the buffer.</summary>
   </member>
   <member name="D3D11_ENCRYPTED_BLOCK_INFO.NumBytesInSkipPattern">
-    <summary>
-      <para>The number of bytes that are skipped after the first <b>NumEncryptedBytesAtBeginning</b> bytes, and then after each block of <b>NumBytesInEncryptPattern</b> bytes. Skipped bytes are not encrypted.</para>
-    </summary>
+    <summary>The number of bytes that are skipped after the first <b>NumEncryptedBytesAtBeginning</b> bytes, and then after each block of <b>NumBytesInEncryptPattern</b> bytes. Skipped bytes are not encrypted.</summary>
   </member>
   <member name="D3D11_ENCRYPTED_BLOCK_INFO.NumBytesInEncryptPattern">
-    <summary>
-      <para>The number of bytes that are encrypted after each block of skipped bytes.</para>
-    </summary>
+    <summary>The number of bytes that are encrypted after each block of skipped bytes.</summary>
   </member>
 </doc>

@@ -3,99 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_RENDER_TARGET_BLEND_DESC1">
-    <summary>
-      <para>Describes the blend state for a render target for a Direct3D 10.1 device</para>
-    </summary>
-    <remarks>
-      <para>To see how blending is done, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">Output-Merger Stage (Direct3D 10)</a>.</para>
-      <para>These are the default values for blend state.</para>
-      <list type="table">
-        <listheader>
-          <description>State</description>
-          <description>Default Value</description>
-        </listheader>
-        <item>
-          <description>BlendEnable</description>
-          <description>FALSE</description>
-        </item>
-        <item>
-          <description>SrcBlend</description>
-          <description>D3D10_BLEND_ONE</description>
-        </item>
-        <item>
-          <description>DestBlend</description>
-          <description>D3D10_BLEND_ZERO</description>
-        </item>
-        <item>
-          <description>BlendOp</description>
-          <description>D3D10_BLEND_OP_ADD</description>
-        </item>
-        <item>
-          <description>SrcBlendAlpha</description>
-          <description>D3D10_BLEND_ONE</description>
-        </item>
-        <item>
-          <description>DestBlendAlpha</description>
-          <description>D3D10_BLEND_ZERO</description>
-        </item>
-        <item>
-          <description>BlendOpAlpha</description>
-          <description>D3D10_BLEND_OP_ADD</description>
-        </item>
-        <item>
-          <description>RenderTargetWriteMask</description>
-          <description>D3D10_COLOR_WRITE_ENABLE_ALL</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-structures">Core Structures</seealso>
+    <summary>Describes the blend state for a render target for a Direct3D 10.1 device</summary>
   </member>
   <member name="D3D10_RENDER_TARGET_BLEND_DESC1.BlendEnable">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Enable (or disable) blending.</para>
-    </summary>
+    <summary>Enable (or disable) blending.</summary>
   </member>
   <member name="D3D10_RENDER_TARGET_BLEND_DESC1.SrcBlend">
-    <summary>
-      <para>Type: <b><see cref="D3D10_BLEND" /></b></para>
-      <para>This <see cref="blend option" /> specifies the first RGB data source and includes an optional pre-blend operation.</para>
-    </summary>
+    <summary>This <see cref="blend option" /> specifies the first RGB data source and includes an optional pre-blend operation.</summary>
   </member>
   <member name="D3D10_RENDER_TARGET_BLEND_DESC1.DestBlend">
-    <summary>
-      <para>Type: <b><see cref="D3D10_BLEND" /></b></para>
-      <para>This <see cref="blend option" /> specifies the second RGB data source and includes an optional pre-blend operation.</para>
-    </summary>
+    <summary>This <see cref="blend option" /> specifies the second RGB data source and includes an optional pre-blend operation.</summary>
   </member>
   <member name="D3D10_RENDER_TARGET_BLEND_DESC1.BlendOp">
-    <summary>
-      <para>Type: <b><see cref="D3D10_BLEND_OP" /></b></para>
-      <para>This <see cref="blend operation" /> defines how to combine the RGB data sources.</para>
-    </summary>
+    <summary>This <see cref="blend operation" /> defines how to combine the RGB data sources.</summary>
   </member>
   <member name="D3D10_RENDER_TARGET_BLEND_DESC1.SrcBlendAlpha">
-    <summary>
-      <para>Type: <b><see cref="D3D10_BLEND" /></b></para>
-      <para>This <see cref="blend option" /> specifies the first alpha data source and includes an optional pre-blend operation. Blend options that end in _COLOR are not allowed.</para>
-    </summary>
+    <summary>This <see cref="blend option" /> specifies the first alpha data source and includes an optional pre-blend operation. Blend options that end in _COLOR are not allowed.</summary>
   </member>
   <member name="D3D10_RENDER_TARGET_BLEND_DESC1.DestBlendAlpha">
-    <summary>
-      <para>Type: <b><see cref="D3D10_BLEND" /></b></para>
-      <para>This <see cref="blend option" /> specifies the second alpha data source and includes an optional pre-blend operation. Blend options that end in _COLOR are not allowed.</para>
-    </summary>
+    <summary>This <see cref="blend option" /> specifies the second alpha data source and includes an optional pre-blend operation. Blend options that end in _COLOR are not allowed.</summary>
   </member>
   <member name="D3D10_RENDER_TARGET_BLEND_DESC1.BlendOpAlpha">
-    <summary>
-      <para>Type: <b><see cref="D3D10_BLEND_OP" /></b></para>
-      <para>This <see cref="blend operation" /> defines how to combine the alpha data sources.</para>
-    </summary>
+    <summary>This <see cref="blend operation" /> defines how to combine the alpha data sources.</summary>
   </member>
   <member name="D3D10_RENDER_TARGET_BLEND_DESC1.RenderTargetWriteMask">
-    <summary>
-      <para>Type: <b>UINT8</b></para>
-      <para>A write mask.</para>
-    </summary>
+    <summary>A write mask.</summary>
   </member>
 </doc>

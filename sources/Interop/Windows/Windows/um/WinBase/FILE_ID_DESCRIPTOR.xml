@@ -3,19 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_ID_DESCRIPTOR">
-    <summary>
-      <para>Specifies the type of ID that is being used.</para>
-    </summary>
-    <seealso cref="FILE_ID_128" />
-    <seealso cref="FILE_ID_TYPE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
-    <seealso cref="OpenFileById" />
+    <summary>Specifies the type of ID that is being used.</summary>
   </member>
   <member name="FILE_ID_DESCRIPTOR.dwSize">
-    <summary>
-      <para>The size of this <b>FILE_ID_DESCRIPTOR</b></para>
-      <para>structure.</para>
-    </summary>
+    <summary>The size of this <b>FILE_ID_DESCRIPTOR</b>structure.</summary>
   </member>
   <member name="FILE_ID_DESCRIPTOR.Type">
     <summary>
@@ -25,74 +16,60 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FileIdType</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use the <b>FileId</b> member of the union.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use the <b>FileId</b> member of the union.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ObjectIdType</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use the <b>ObjectId</b> member of the union.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use the <b>ObjectId</b> member of the union.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ExtendedFileIdType</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use the <b>ExtendedFileId</b> member of the union.</para>
-            <para>
-              <b>Windows XP, Windows Server 2003, Windows Vista, Windows Server 2008, Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
+          <description>Use the <b>ExtendedFileId</b> member of the union. <para><b>Windows XP, Windows Server 2003, Windows Vista, Windows Server 2008, Windows 7 and Windows Server 2008 R2:  </b>This value is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="FILE_ID_DESCRIPTOR.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="FILE_ID_DESCRIPTOR.DUMMYUNIONNAME"></member>
   <member name="FILE_ID_DESCRIPTOR.DUMMYUNIONNAME.FileId">
-    <summary>
-      <para>The ID of the file to open.</para>
-    </summary>
+    <summary>The ID of the file to open.</summary>
   </member>
   <member name="FILE_ID_DESCRIPTOR.DUMMYUNIONNAME.ObjectId">
-    <summary>
-      <para>The ID of the object to open.</para>
-    </summary>
+    <summary>The ID of the object to open.</summary>
   </member>
   <member name="FILE_ID_DESCRIPTOR.DUMMYUNIONNAME.ExtendedFileId">
     <summary>

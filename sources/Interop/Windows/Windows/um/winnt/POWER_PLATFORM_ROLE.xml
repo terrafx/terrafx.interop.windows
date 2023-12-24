@@ -3,53 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POWER_PLATFORM_ROLE">
-    <summary>
-      <para>Indicates the OEM's preferred power management profile. These values are read from the
-Preferred_PM_Profile field of the Fixed ACPI Description Table (FADT). These values are returned by the
-<see cref="PowerDeterminePlatformRole" /> or <see cref="PowerDeterminePlatformRoleEx " />       function.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Power/power-management-enumeration-types">Power Management Enumeration Types</seealso>
-    <seealso cref="PowerDeterminePlatformRole" />
+    <summary>Indicates the OEM's preferred power management profile. These values are read from the Preferred_PM_Profile field of the Fixed ACPI Description Table (FADT). These values are returned by the<see cref="PowerDeterminePlatformRole" /> or <see cref="PowerDeterminePlatformRoleEx" /> function.</summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRoleUnspecified">
-    <summary>
-      <para>The OEM did not specify a specific role.</para>
-    </summary>
+    <summary>The OEM did not specify a specific role.</summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRoleDesktop">
-    <summary>
-      <para>The OEM specified a desktop role.</para>
-    </summary>
+    <summary>The OEM specified a desktop role.</summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRoleMobile">
-    <summary>
-      <para>The OEM specified a mobile role (for example, a laptop).</para>
-    </summary>
+    <summary>The OEM specified a mobile role (for example, a laptop).</summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRoleWorkstation">
-    <summary>
-      <para>The OEM specified a workstation role.</para>
-    </summary>
+    <summary>The OEM specified a workstation role.</summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRoleEnterpriseServer">
-    <summary>
-      <para>The OEM specified an enterprise server role.</para>
-    </summary>
+    <summary>The OEM specified an enterprise server role.</summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRoleSOHOServer">
-    <summary>
-      <para>The OEM specified a single office/home office (SOHO) server role.</para>
-    </summary>
+    <summary>The OEM specified a single office/home office (SOHO) server role.</summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRoleAppliancePC">
-    <summary>
-      <para>The OEM specified an appliance PC role.</para>
-    </summary>
+    <summary>The OEM specified an appliance PC role.</summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRolePerformanceServer">
-    <summary>
-      <para>The OEM specified a performance server role.</para>
-    </summary>
+    <summary>The OEM specified a performance server role.</summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRoleSlate">
     <summary>
@@ -59,8 +37,6 @@ Preferred_PM_Profile field of the Fixed ACPI Description Table (FADT). These val
     </summary>
   </member>
   <member name="POWER_PLATFORM_ROLE.PlatformRoleMaximum">
-    <summary>
-      <para>Values equal to or greater than this value indicate an out of range value.</para>
-    </summary>
+    <summary>Values equal to or greater than this value indicate an out of range value.</summary>
   </member>
 </doc>

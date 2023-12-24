@@ -4,47 +4,26 @@
 <doc>
   <member name="WS_SAML_MESSAGE_SECURITY_BINDING">
     <summary>
-      <para>The security binding subtype for specifying the use of a SAML
-assertion as a message security token.  The SAML token is expected to
-be presented to a service in a WS-Security header according to the
-bindingUsage specified.  This security binding may be included in a
-<see cref="security description" /> only on the
-server side.</para>
+      <para>The security binding subtype for specifying the use of a SAML assertion as a message security token. The SAML token is expected to be presented to a service in a WS-Security header according to the bindingUsage specified. This security binding may be included in a<see cref="security description" /> only on the server side.</para>
       <para>Only one instance of this binding may be present in a <see cref="security description" />.</para>
       <para>This security binding is not supported with the <see cref="WS_NAMEDPIPE_CHANNEL_BINDING" />.</para>
-      <para>For a <a href="https://docs.microsoft.com//windows/desktop/wsw/federation">federated security</a> scenario that
-involves getting a security token from an issuer and then presenting
-it to a service, one may use <see cref="WsRequestSecurityToken" /> together with the <see cref="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING" /> on
-the client side, and this binding on the server side.</para>
-      <para>The extent of validation performed on the received SAML depends on the
-authenticator specified.  If additional validation is required, the
-application may get the received SAML assertion using
-<see cref="WsGetMessageProperty" /> with the key <see cref="WS_MESSAGE_PROPERTY_SAML_ASSERTION" /></para>
-      <para>and do further processing.</para>
+      <para>For a <a href="https://docs.microsoft.com//windows/desktop/wsw/federation">federated security</a> scenario that involves getting a security token from an issuer and then presenting it to a service, one may use <see cref="WsRequestSecurityToken" /> together with the <see cref="WS_XML_TOKEN_MESSAGE_SECURITY_BINDING" /> on the client side, and this binding on the server side.</para>
+      <para>The extent of validation performed on the received SAML depends on the authenticator specified. If additional validation is required, the application may get the received SAML assertion using<see cref="WsGetMessageProperty" /> with the key <see cref="WS_MESSAGE_PROPERTY_SAML_ASSERTION" />and do further processing.</para>
       <para>With this security binding, no security binding properties may be specified:</para>
     </summary>
   </member>
   <member name="WS_SAML_MESSAGE_SECURITY_BINDING.binding">
-    <summary>
-      <para>The base type from which this security binding subtype and all other security binding subtypes derive.</para>
-    </summary>
+    <summary>The base type from which this security binding subtype and all other security binding subtypes derive.</summary>
   </member>
   <member name="WS_SAML_MESSAGE_SECURITY_BINDING.bindingUsage">
     <summary>
       <para>How the security token corresponding to this security binding should be bound to a message.</para>
       <para>Only <see cref="WS_SUPPORTING_MESSAGE_SECURITY_USAGE" /> is</para>
-      <para>supported.  With this usage, this security binding provides client
-authentication, but not message protection (such as signing,
-encryption, replay detection).  Thus, this binding must be used
-together with another security binding such as the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> that provides a protected
-channel.</para>
+      <para>supported. With this usage, this security binding provides client authentication, but not message protection (such as signing, encryption, replay detection). Thus, this binding must be used together with another security binding such as the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /> that provides a protected channel.</para>
       <para>To use this binding on HTTP without SSL, the security description property <b>WS_SECURITY_PROPERTY_TRANSPORT_PROTECTION_LEVEL</b> must be explicitly set to <b>WS_PROTECTION_LEVEL_NONE</b>. This is not supported on the client or on TCP.</para>
     </summary>
   </member>
   <member name="WS_SAML_MESSAGE_SECURITY_BINDING.authenticator">
-    <summary>
-      <para>The authenticator for validating incoming SAML tokens.  This field is
-required.</para>
-    </summary>
+    <summary>The authenticator for validating incoming SAML tokens. This field is required.</summary>
   </member>
 </doc>

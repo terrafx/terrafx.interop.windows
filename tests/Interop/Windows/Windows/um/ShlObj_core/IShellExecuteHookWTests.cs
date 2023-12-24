@@ -19,32 +19,4 @@ public static unsafe partial class IShellExecuteHookWTests
     {
         Assert.That(typeof(IShellExecuteHookW).GUID, Is.EqualTo(IID_IShellExecuteHookW));
     }
-
-    /// <summary>Validates that the <see cref="IShellExecuteHookW" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellExecuteHookW>(), Is.EqualTo(sizeof(IShellExecuteHookW)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellExecuteHookW" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellExecuteHookW).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellExecuteHookW" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellExecuteHookW), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellExecuteHookW), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,25 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11Buffer.GetDesc">
-    <summary>
-      <para>Get the properties of a buffer resource.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D11_BUFFER_DESC" />*</b></para>
-      <para>Pointer to a resource description (see <see cref="D3D11_BUFFER_DESC" />) filled in by the method.</para>
-    </param>
-    <seealso cref="ID3D11Buffer" />
+    <summary>Get the properties of a buffer resource.</summary>
+    <param name="pDesc">Pointer to a resource description (see <see cref="D3D11_BUFFER_DESC" />) filled in by the method.</param>
   </member>
   <member name="ID3D11Buffer">
-    <summary>
-      <para>A buffer interface accesses a buffer resource, which is unstructured memory. Buffers typically store vertex or index data.</para>
-    </summary>
-    <remarks>
-      <para>There are three types of buffers: vertex, index, or a shader-constant buffer. Create a buffer resource by calling <see cref="ID3D11Device.CreateBuffer" />.</para>
-      <para>A buffer must be bound to the pipeline before it can be accessed. Buffers can be bound to the input-assembler stage by calls to <see cref="ID3D11DeviceContext.IASetVertexBuffers" /> and <see cref="ID3D11DeviceContext.IASetIndexBuffer" />, to the stream-output stage by a call to <see cref="ID3D11DeviceContext.SOSetTargets" />, and to a shader stage by calling the appropriate shader method (such as <see cref="ID3D11DeviceContext.VSSetConstantBuffers" /> for example).</para>
-      <para>Buffers can be bound to multiple pipeline stages simultaneously for reading. A buffer can also be bound to a single pipeline stage for writing; however, the same buffer cannot be bound for reading and writing simultaneously.</para>
-    </remarks>
-    <seealso cref="ID3D11Resource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+    <summary>A buffer interface accesses a buffer resource, which is unstructured memory. Buffers typically store vertex or index data.</summary>
   </member>
 </doc>

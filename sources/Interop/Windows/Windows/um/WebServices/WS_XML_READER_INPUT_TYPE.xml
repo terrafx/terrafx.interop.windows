@@ -3,14 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_READER_INPUT_TYPE">
-    <summary>
-      <para>The type of <see cref="WS_XML_READER_INPUT" /> structure.</para>
-    </summary>
+    <summary>The type of <see cref="WS_XML_READER_INPUT" /> structure.</summary>
   </member>
-  <member name="WS_XML_READER_INPUT_TYPE.WS_XML_READER_INPUT_TYPE_BUFFER">
-    <summary></summary>
-  </member>
-  <member name="WS_XML_READER_INPUT_TYPE.WS_XML_READER_INPUT_TYPE_STREAM">
-    <summary></summary>
-  </member>
+  <member name="WS_XML_READER_INPUT_TYPE.WS_XML_READER_INPUT_TYPE_BUFFER"></member>
+  <member name="WS_XML_READER_INPUT_TYPE.WS_XML_READER_INPUT_TYPE_STREAM"></member>
 </doc>

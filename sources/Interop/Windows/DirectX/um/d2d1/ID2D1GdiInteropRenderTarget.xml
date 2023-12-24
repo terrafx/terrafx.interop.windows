@@ -3,60 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1GdiInteropRenderTarget.GetDC">
-    <summary>
-      <para>Retrieves the device context associated with this render target.</para>
-    </summary>
-    <param name="mode">
-      <para>Type: <b><see cref="D2D1_DC_INITIALIZE_MODE" /></b></para>
-      <para>A value that specifies whether the device context should be cleared.</para>
-    </param>
-    <param name="hdc">
-      <para>Type: <b>HDC*</b></para>
-      <para>When this method returns, contains the device context associated with this render target. You must allocate storage for this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>Calling this method flushes the render target.</para>
-      <para>This command can be called only after <see cref="BeginDraw" /> and before <see cref="EndDraw" />.</para>
-      <para>
-        <b>Note</b>  In Windows 7 and earlier, you should not call <b>GetDC</b> between <see cref="PushAxisAlignedClip" />/<see cref="PopAxisAlignedClip" /> commands or between <see cref="PushLayer" />/<see cref="PopLayer" />.  However, this restriction does not apply to Windows 8 and later.</para>
-      <para>
-        <see cref="ReleaseDC" /> must be called once for each call to <b>GetDC</b>.</para>
-    </remarks>
-    <seealso cref="ID2D1GdiInteropRenderTarget" />
+    <summary>Retrieves the device context associated with this render target.</summary>
+    <param name="mode">A value that specifies whether the device context should be cleared.</param>
+    <param name="hdc">When this method returns, contains the device context associated with this render target. You must allocate storage for this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1GdiInteropRenderTarget.ReleaseDC">
-    <summary>
-      <para>Indicates that drawing with the device context retrieved using the <see cref="GetDC" /> method is finished.</para>
-    </summary>
-    <param name="update">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>The modified region of the device context, or <b>NULL</b> to specify the entire render target.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>ReleaseDC</b> must be called once for each call to <see cref="GetDC" />.</para>
-    </remarks>
-    <seealso cref="ID2D1GdiInteropRenderTarget" />
+    <summary>Indicates that drawing with the device context retrieved using the <see cref="GetDC" /> method is finished.</summary>
+    <param name="update">The modified region of the device context, or <b>NULL</b> to specify the entire render target.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1GdiInteropRenderTarget">
-    <summary>
-      <para>Provides access to a device context that can accept GDI drawing commands.</para>
-    </summary>
-    <remarks>
-      <para>You don't create an <b>ID2D1GdiInteropRenderTarget</b> object directly; instead, you use the <see cref="QueryInterface" /> method of an existing render target instance to provide an <b>ID2D1GdiInteropRenderTarget</b> version of that render target.</para>
-      <para>Not all render targets support the <b>ID2D1GdiInteropRenderTarget</b> interface. The render target must be GDI-compatible (the <see cref="D2D1_RENDER_TARGET_USAGE_GDI_COMPATIBLE" /> flag was specified when creating the render target), use the <see cref="DXGI_FORMAT_B8G8R8A8_UNORM" /> pixel format, and use  the <see cref="D2D1_ALPHA_MODE_PREMULTIPLIED" /> or <b>D2D1_ALPHA_MODE_IGNORE</b>  alpha mode.</para>
-      <para>Note that the <see cref="QueryInterface" /> method always succeeds; if the render target doesn't support the <b>ID2D1GdiInteropRenderTarget</b> interface, calling <see cref="GetDC" /> will fail. (For render targets created through the <see cref="CreateCompatibleRenderTarget" /> method, the render target that created it must have these settings.)</para>
-      <para>To test whether a given render target supports the <b>ID2D1GdiInteropRenderTarget</b> interface, create a <see cref="D2D1_RENDER_TARGET_PROPERTIES " /> that specifies GDI compatibility and the appropriate pixel format, then call the render target's <see cref="IsSupported" /> method to see whether the render target is GDI-compatible.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-and-gdi-interoperation-overview">Direct2D and GDI Interoperability Overview</seealso>
-    <seealso cref="IUnknown" />
+    <summary>Provides access to a device context that can accept GDI drawing commands.</summary>
   </member>
 </doc>

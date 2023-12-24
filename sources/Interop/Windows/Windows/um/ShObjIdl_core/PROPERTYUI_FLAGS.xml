@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROPERTYUI_FLAGS">
-    <summary>
-      <para>Specifies property features.</para>
-    </summary>
+    <summary>Specifies property features.</summary>
   </member>
   <member name="PROPERTYUI_FLAGS.PUIF_DEFAULT">
-    <summary>
-      <para>There are no special features defined.</para>
-    </summary>
+    <summary>There are no special features defined.</summary>
   </member>
   <member name="PROPERTYUI_FLAGS.PUIF_RIGHTALIGN">
-    <summary>
-      <para>The property should be right aligned.</para>
-    </summary>
+    <summary>The property should be right aligned.</summary>
   </member>
   <member name="PROPERTYUI_FLAGS.PUIF_NOLABELININFOTIP">
-    <summary>
-      <para>The property should not display a label in the infotip.</para>
-    </summary>
+    <summary>The property should not display a label in the infotip.</summary>
   </member>
 </doc>

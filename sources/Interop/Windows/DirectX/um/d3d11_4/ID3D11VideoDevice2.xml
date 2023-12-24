@@ -3,26 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11VideoDevice2.CheckFeatureSupport">
-    <summary>
-      <para>Gets information about the features that are supported by the current video driver.</para>
-    </summary>
-    <param name="Feature">
-      <para>A member of the <see cref="D3D11_FEATURE_VIDEO" /> enumeration that specifies the feature to query for support.</para>
-    </param>
-    <param name="pFeatureSupportData">
-      <para>A structure that contains data that describes the configuration details of the feature for which support is requested and, upon the completion of the call, is populated with details about the level of support available. For information on the structure that is associated with each type of feature support request, see the field descriptions for <see cref="D3D11_FEATURE_VIDEO" />.</para>
-    </param>
-    <param name="FeatureSupportDataSize">
-      <para>The size of the structure passed to the <i>pFeatureSupportData</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> if successful; otherwise, returns <b>E_INVALIDARG</b> if an unsupported data type is passed to the <i>pFeatureSupportData</i> parameter or a size mismatch is detected for the <i>FeatureSupportDataSize</i> parameter.</para>
-    </returns>
-    <seealso cref="D3D11_FEATURE_VIDEO" />
+    <summary>Gets information about the features that are supported by the current video driver.</summary>
+    <param name="Feature">A member of the <see cref="D3D11_FEATURE_VIDEO" /> enumeration that specifies the feature to query for support.</param>
+    <param name="pFeatureSupportData">A structure that contains data that describes the configuration details of the feature for which support is requested and, upon the completion of the call, is populated with details about the level of support available. For information on the structure that is associated with each type of feature support request, see the field descriptions for <see cref="D3D11_FEATURE_VIDEO" />.</param>
+    <param name="FeatureSupportDataSize">The size of the structure passed to the <i>pFeatureSupportData</i> parameter.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise, returns <b>E_INVALIDARG</b> if an unsupported data type is passed to the <i>pFeatureSupportData</i> parameter or a size mismatch is detected for the <i>FeatureSupportDataSize</i> parameter.</returns>
   </member>
   <member name="ID3D11VideoDevice2">
-    <summary>
-      <para>Provides the video decoding and video processing capabilities of a Microsoft Direct3D 11 device. Adds the <see cref="CheckFeatureSupport" /> method for querying for decoding capabilities.</para>
-    </summary>
+    <summary>Provides the video decoding and video processing capabilities of a Microsoft Direct3D 11 device. Adds the <see cref="CheckFeatureSupport" /> method for querying for decoding capabilities.</summary>
   </member>
 </doc>

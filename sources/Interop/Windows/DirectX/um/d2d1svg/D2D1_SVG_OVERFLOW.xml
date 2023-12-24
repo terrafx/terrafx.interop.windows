@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_OVERFLOW">
-    <summary>
-      <para>Specifies a value for the SVG overflow property.</para>
-    </summary>
+    <summary>Specifies a value for the SVG overflow property.</summary>
   </member>
   <member name="D2D1_SVG_OVERFLOW.D2D1_SVG_OVERFLOW_VISIBLE">
-    <summary>
-      <para>The element is not clipped to its viewport.</para>
-    </summary>
+    <summary>The element is not clipped to its viewport.</summary>
   </member>
   <member name="D2D1_SVG_OVERFLOW.D2D1_SVG_OVERFLOW_HIDDEN">
-    <summary>
-      <para>The element is clipped to its viewport.</para>
-    </summary>
+    <summary>The element is clipped to its viewport.</summary>
   </member>
-  <member name="D2D1_SVG_OVERFLOW.D2D1_SVG_OVERFLOW_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SVG_OVERFLOW.D2D1_SVG_OVERFLOW_FORCE_DWORD"></member>
 </doc>

@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfMouseTrackerACP.AdviseMouseSink">
-    <summary>
-      <para>Called to install a mouse event sink.</para>
-    </summary>
-    <param name="range">
-      <para>Pointer to an <see cref="ITfRange" /> interface that specifies the range of text that the mouse sink is installed for.</para>
-    </param>
-    <param name="pSink">
-      <para>Pointer to the <see cref="ITfMouseSink" /> interface. The application must increment this object reference count and save the interface.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Pointer to a DWORD that receives a cookie that identifies the mouse event sink.</para>
-    </param>
+    <summary>Called to install a mouse event sink.</summary>
+    <param name="range">Pointer to an <see cref="ITfRange" /> interface that specifies the range of text that the mouse sink is installed for.</param>
+    <param name="pSink">Pointer to the <see cref="ITfMouseSink" /> interface. The application must increment this object reference count and save the interface.</param>
+    <param name="pdwCookie">Pointer to a DWORD that receives a cookie that identifies the mouse event sink.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,55 +14,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The application does not support mouse event sinks.</para>
-          </description>
-        </item>
+          <description>The application does not support mouse event sinks.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When this advise sink is installed, a mouse event that occurs over the range specified by <i>range</i> will result in the mouse event sink <see cref="ITfMouseSink.OnMouseEvent" /> method being called.</para>
-      <para>The value placed in <i>pdwCookie</i> will be saved by the caller and passed to the <see cref="ITfMouseTrackerACP.UnadviseMouseSink" /> method to remove the mouse event sink.</para>
-    </remarks>
-    <seealso cref="ITfMouseSink " />
-    <seealso cref="ITfMouseSink.OnMouseEvent " />
-    <seealso cref="ITfMouseTrackerACP" />
-    <seealso cref="ITfMouseTrackerACP.UnadviseMouseSink " />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfMouseTrackerACP.UnadviseMouseSink">
-    <summary>
-      <para>Called to remove a mouse event sink.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Specifies the mouse advise sink identifier. This value is obtained by a call to <see cref="ITfMouseTrackerACP.AdviseMouseSink" />.</para>
-    </param>
+    <summary>Called to remove a mouse event sink.</summary>
+    <param name="dwCookie">Specifies the mouse advise sink identifier. This value is obtained by a call to <see cref="ITfMouseTrackerACP.AdviseMouseSink" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -78,38 +63,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The application does not support mouse event sinks.</para>
-          </description>
-        </item>
+          <description>The application does not support mouse event sinks.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The application must release the <see cref="ITfMouseSink" /> supplied in the <b>ITfMouseTrackerACP.AdviseMouseSink</b> call associated with <i>dwCookie</i>.</para>
-    </remarks>
-    <seealso cref="ITfMouseSink " />
-    <seealso cref="ITfMouseTrackerACP" />
-    <seealso cref="ITfMouseTrackerACP.AdviseMouseSink " />
   </member>
   <member name="ITfMouseTrackerACP">
-    <summary>
-      <para>The <b>ITfMouseTrackerACP</b> interface is implemented by an application to support mouse event sinks. This interface is used by the TSF manager to add and remove mouse event sinks in an ACP-based application. The TSF manager obtains this interface by calling the application's ITextStoreACP.QueryInterface with IID_ITfMouseTrackerACP.</para>
-    </summary>
+    <summary>The <b>ITfMouseTrackerACP</b> interface is implemented by an application to support mouse event sinks. This interface is used by the TSF manager to add and remove mouse event sinks in an ACP-based application. The TSF manager obtains this interface by calling the application's ITextStoreACP.QueryInterface with IID_ITfMouseTrackerACP.</summary>
   </member>
 </doc>

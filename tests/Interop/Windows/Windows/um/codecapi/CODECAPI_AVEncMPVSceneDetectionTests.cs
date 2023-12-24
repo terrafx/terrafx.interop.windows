@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPVSceneDetectionTests
     {
         Assert.That(typeof(CODECAPI_AVEncMPVSceneDetection).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVSceneDetection));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVSceneDetection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVSceneDetection>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVSceneDetection)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVSceneDetection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPVSceneDetection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVSceneDetection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPVSceneDetection), Is.EqualTo(1));
-    }
 }

@@ -1,6 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
+DWRITE_BEGIN_INTERFACE
 DWRITE_DECLARE_INTERFACE
 DWRITE_MAKE_FONT_FEATURE_TAG
 DWRITE_MAKE_OPENTYPE_TAG
@@ -21,7 +22,7 @@ C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/dwrite.h
 --with-attribute
 DWRITE_FONT_SIMULATIONS=Flags
 DWRITE_SCRIPT_SHAPES=Flags
---with-type
-DWRITE_FONT_FEATURE_TAG=uint
 --with-librarypath
 DWriteCreateFactory=dwrite
+--with-type
+DWRITE_FONT_FEATURE_TAG=uint

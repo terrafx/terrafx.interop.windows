@@ -3,26 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CTL_ANY_SUBJECT_INFO">
-    <summary>
-      <para>The <b>CTL_ANY_SUBJECT_INFO</b> structure contains a <b>SubjectAlgorithm</b> to be matched in the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust list</a> (CTL) and the <b>SubjectIdentifier</b> to be matched in one of the CTL entries in calls to
-<see cref="CertFindSubjectInCTL" />.</para>
-    </summary>
-    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
-    <seealso cref="CTL_FIND_SUBJECT_PARA" />
-    <seealso cref="CertFindCTLInStore" />
-    <seealso cref="CertFindSubjectInCTL" />
+    <summary>The <b>CTL_ANY_SUBJECT_INFO</b> structure contains a <b>SubjectAlgorithm</b> to be matched in the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust list</a> (CTL) and the <b>SubjectIdentifier</b> to be matched in one of the CTL entries in calls to<see cref="CertFindSubjectInCTL" />.</summary>
   </member>
   <member name="CTL_ANY_SUBJECT_INFO.SubjectAlgorithm">
     <summary>
-      <para>
-        <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure containing the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) of an algorithm type and any associated additional parameters. The <b>pszObjId</b> can be set to <b>NULL</b> to exclude a <b>SubjectAlgorithm</b> comparison.</para>
-    </summary>
+      <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure containing the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifier</a> (OID) of an algorithm type and any associated additional parameters. The <b>pszObjId</b> can be set to <b>NULL</b> to exclude a <b>SubjectAlgorithm</b> comparison.</summary>
   </member>
   <member name="CTL_ANY_SUBJECT_INFO.SubjectIdentifier">
     <summary>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> containing a unique identifier of the subject.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> containing a unique identifier of the subject.</summary>
   </member>
 </doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DISCARD_REGION">
+    <summary>Describes details for the discard-resource operation.</summary>
+  </member>
+  <member name="D3D12_DISCARD_REGION.NumRects">
+    <summary>The number of rectangles in the array that the <b>pRects</b> member specifies.</summary>
+  </member>
+  <member name="D3D12_DISCARD_REGION.pRects">
+    <summary>An array of <b>D3D12_RECT</b> structures for the rectangles in the resource to discard. If <b>NULL</b>, <see cref="DiscardResource" /> discards the entire resource.</summary>
+  </member>
+  <member name="D3D12_DISCARD_REGION.FirstSubresource">
+    <summary>Index of the first subresource in the resource to discard.</summary>
+  </member>
+  <member name="D3D12_DISCARD_REGION.NumSubresources">
+    <summary>The number of subresources in the resource to discard.</summary>
+  </member>
+</doc>

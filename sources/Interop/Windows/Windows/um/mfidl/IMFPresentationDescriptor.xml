@@ -3,38 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFPresentationDescriptor.Clone">
-    <summary>
-      <para>Creates a copy of this presentation descriptor.</para>
-    </summary>
-    <param name="ppPresentationDescriptor">
-      <para>Receives a pointer to the <see cref="IMFPresentationDescriptor" /> interface of the new presentation descriptor. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method performs a shallow copy of the presentation descriptor. The stream descriptors are not cloned. Therefore, use caution when modifying the presentation presentation descriptor or its stream descriptors.</para>
-      <para>If the original presentation descriptor is from a media source, do not modify the presentation descriptor unless the source is stopped. If you use the presentation descriptor to configure a media sink, do not modify the presentation descriptor after the sink is configured.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFPresentationDescriptor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
+    <summary>Creates a copy of this presentation descriptor.</summary>
+    <param name="ppPresentationDescriptor">Receives a pointer to the <see cref="IMFPresentationDescriptor" /> interface of the new presentation descriptor. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPresentationDescriptor.DeselectStream">
-    <summary>
-      <para>Deselects a stream in the presentation.</para>
-    </summary>
-    <param name="dwDescriptorIndex">
-      <para>The stream number to deselect, indexed from zero. To find the number of streams in the presentation, call the <see cref="IMFPresentationDescriptor.GetStreamDescriptorCount" /> method.</para>
-    </param>
+    <summary>Deselects a stream in the presentation.</summary>
+    <param name="dwDescriptorIndex">The stream number to deselect, indexed from zero. To find the number of streams in the presentation, call the <see cref="IMFPresentationDescriptor.GetStreamDescriptorCount" /> method.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -42,105 +17,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>dwDescriptorIndex</i> is out of range.
-</description>
-        </item>
+            <i>dwDescriptorIndex</i> is out of range.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If a stream is deselected, no data is generated for that stream. To select the stream again, call <see cref="IMFPresentationDescriptor.SelectStream" />.</para>
-      <para>To query whether a stream is selected, call <see cref="IMFPresentationDescriptor.GetStreamDescriptorByIndex" />.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFPresentationDescriptor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
   </member>
   <member name="IMFPresentationDescriptor.GetStreamDescriptorByIndex">
-    <summary>
-      <para>Retrieves a stream descriptor for a stream in the presentation. The stream descriptor contains information about the stream.</para>
-    </summary>
-    <param name="dwIndex">
-      <para>Zero-based index of the stream. To find the number of streams in the presentation, call the <see cref="IMFPresentationDescriptor.GetStreamDescriptorCount" /> method.</para>
-    </param>
-    <param name="pfSelected">
-      <para>Receives a Boolean value. The value is <b>TRUE</b> if the stream is currently selected, or <b>FALSE</b> if the stream is currently deselected. If a stream is selected, the media source generates data for that stream when <see cref="IMFMediaSource.Start" /> is called. The media source will not generated data for deselected streams. To select a stream, call <see cref="IMFPresentationDescriptor.SelectStream" />.To deselect a stream, call <see cref="IMFPresentationDescriptor.DeselectStream" />.</para>
-    </param>
-    <param name="ppDescriptor">
-      <para>Receives a pointer to the stream descriptor's <see cref="IMFStreamDescriptor" /> interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFPresentationDescriptor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
+    <summary>Retrieves a stream descriptor for a stream in the presentation. The stream descriptor contains information about the stream.</summary>
+    <param name="dwIndex">Zero-based index of the stream. To find the number of streams in the presentation, call the <see cref="IMFPresentationDescriptor.GetStreamDescriptorCount" /> method.</param>
+    <param name="pfSelected">Receives a Boolean value. The value is <b>TRUE</b> if the stream is currently selected, or <b>FALSE</b> if the stream is currently deselected. If a stream is selected, the media source generates data for that stream when <see cref="IMFMediaSource.Start" /> is called. The media source will not generated data for deselected streams. To select a stream, call <see cref="IMFPresentationDescriptor.SelectStream" />.To deselect a stream, call <see cref="IMFPresentationDescriptor.DeselectStream" />.</param>
+    <param name="ppDescriptor">Receives a pointer to the stream descriptor's <see cref="IMFStreamDescriptor" /> interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPresentationDescriptor.GetStreamDescriptorCount">
-    <summary>
-      <para>Retrieves the number of stream descriptors in the presentation. Each stream descriptor contains information about one stream in the media source. To retrieve a stream descriptor, call the <see cref="IMFPresentationDescriptor.GetStreamDescriptorByIndex" /> method.</para>
-    </summary>
-    <param name="pdwDescriptorCount">
-      <para>Receives the number of stream descriptors.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFPresentationDescriptor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
+    <summary>Retrieves the number of stream descriptors in the presentation. Each stream descriptor contains information about one stream in the media source. To retrieve a stream descriptor, call the <see cref="IMFPresentationDescriptor.GetStreamDescriptorByIndex" /> method.</summary>
+    <param name="pdwDescriptorCount">Receives the number of stream descriptors.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPresentationDescriptor.SelectStream">
-    <summary>
-      <para>Selects a stream in the presentation.</para>
-    </summary>
-    <param name="dwDescriptorIndex">
-      <para>The stream number to select, indexed from zero. To find the number of streams in the presentation, call <see cref="IMFPresentationDescriptor.GetStreamDescriptorCount" />.</para>
-    </param>
+    <summary>Selects a stream in the presentation.</summary>
+    <param name="dwDescriptorIndex">The stream number to select, indexed from zero. To find the number of streams in the presentation, call <see cref="IMFPresentationDescriptor.GetStreamDescriptorCount" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -148,63 +67,35 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>dwDescriptorIndex</i> is out of range.
-</description>
-        </item>
+            <i>dwDescriptorIndex</i> is out of range.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If a stream is selected, the media source will generate data for that stream. The media source will not generated data for deselected streams. To deselect a stream, call <see cref="IMFPresentationDescriptor.DeselectStream" />.</para>
-      <para>To query whether a stream is selected, call <see cref="IMFPresentationDescriptor.GetStreamDescriptorByIndex" />.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFPresentationDescriptor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
   </member>
   <member name="IMFPresentationDescriptor">
-    <summary>
-      <para>Describes the details of a presentation. A <i>presentation</i> is a set of related media streams that share a common presentation time.</para>
-    </summary>
-    <remarks>
-      <para>Presentation descriptors are used to configure media sources and some media sinks. To get the presentation descriptor from a media source, call <see cref="IMFMediaSource.CreatePresentationDescriptor" />. To create a new presentation descriptor, call <see cref="MFCreatePresentationDescriptor" />.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFAttributes" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptor-attributes">Presentation Descriptor Attributes</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptors">Presentation Descriptors</seealso>
+    <summary>Describes the details of a presentation. A <i>presentation</i> is a set of related media streams that share a common presentation time.</summary>
   </member>
 </doc>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_TICKET_PROFILE">
+    <summary>
+      <para>The <b>KERB_TICKET_PROFILE</b> structure contains information about an interactive logon profile.</para>
+      <para>This structure is returned by<see cref="LsaLogonUser" />.</para>
+    </summary>
+  </member>
+  <member name="KERB_TICKET_PROFILE.Profile">
+    <summary>
+      <see cref="KERB_INTERACTIVE_PROFILE" /> structure containing logon information.</summary>
+  </member>
+  <member name="KERB_TICKET_PROFILE.SessionKey">
+    <summary>
+      <see cref="KERB_CRYPTO_KEY" /> structure containing the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">session key</a> for the Kerberos ticket.</summary>
+  </member>
+</doc>

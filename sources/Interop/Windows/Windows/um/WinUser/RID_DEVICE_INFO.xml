@@ -3,103 +3,75 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RID_DEVICE_INFO">
-    <summary>
-      <para>Defines the raw input data coming from any device.</para>
-    </summary>
-    <seealso cref="GetRawInputDeviceInfo" />
-    <seealso cref="RID_DEVICE_INFO_HID" />
-    <seealso cref="RID_DEVICE_INFO_KEYBOARD" />
-    <seealso cref="RID_DEVICE_INFO_MOUSE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/raw-input">Raw Input</seealso>
+    <summary>Defines the raw input data coming from any device.</summary>
   </member>
   <member name="RID_DEVICE_INFO.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size, in bytes, of the <b>RID_DEVICE_INFO</b> structure.</para>
-    </summary>
+    <summary>The size, in bytes, of the <b>RID_DEVICE_INFO</b> structure.</summary>
   </member>
   <member name="RID_DEVICE_INFO.dwType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The type of raw input data. This member can be one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>RIM_TYPEMOUSE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Data comes from a mouse.</para>
-          </description>
-        </item>
-        <item>
+          <description>Data comes from a mouse.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>RIM_TYPEKEYBOARD</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Data comes from a keyboard.</para>
-          </description>
-        </item>
-        <item>
+          <description>Data comes from a keyboard.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>RIM_TYPEHID</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Data comes from an HID that is not a keyboard or a mouse.</para>
-          </description>
-        </item>
+          <description>Data comes from an HID that is not a keyboard or a mouse.</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="RID_DEVICE_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="RID_DEVICE_INFO.DUMMYUNIONNAME"></member>
   <member name="RID_DEVICE_INFO.DUMMYUNIONNAME.mouse">
-    <summary>
-      <para>Type: <b><see cref="RID_DEVICE_INFO_MOUSE" /></b></para>
-      <para>If <b>dwType</b> is <b>RIM_TYPEMOUSE</b>, this is the <see cref="RID_DEVICE_INFO_MOUSE" /> structure that defines the mouse.</para>
-    </summary>
+    <summary>If <b>dwType</b> is <b>RIM_TYPEMOUSE</b>, this is the <see cref="RID_DEVICE_INFO_MOUSE" /> structure that defines the mouse.</summary>
   </member>
   <member name="RID_DEVICE_INFO.DUMMYUNIONNAME.keyboard">
-    <summary>
-      <para>Type: <b><see cref="RID_DEVICE_INFO_KEYBOARD" /></b></para>
-      <para>If <b>dwType</b> is <b>RIM_TYPEKEYBOARD</b>, this is the <see cref="RID_DEVICE_INFO_KEYBOARD" /> structure that defines the keyboard.</para>
-    </summary>
+    <summary>If <b>dwType</b> is <b>RIM_TYPEKEYBOARD</b>, this is the <see cref="RID_DEVICE_INFO_KEYBOARD" /> structure that defines the keyboard.</summary>
   </member>
   <member name="RID_DEVICE_INFO.DUMMYUNIONNAME.hid">
-    <summary>
-      <para>Type: <b><see cref="RID_DEVICE_INFO_HID" /></b></para>
-      <para>If <b>dwType</b> is <b>RIM_TYPEHID</b>, this is the <see cref="RID_DEVICE_INFO_HID" /> structure that defines the HID device.</para>
-    </summary>
+    <summary>If <b>dwType</b> is <b>RIM_TYPEHID</b>, this is the <see cref="RID_DEVICE_INFO_HID" /> structure that defines the HID device.</summary>
   </member>
 </doc>

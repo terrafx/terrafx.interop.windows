@@ -27,7 +27,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, Guid*, void**, int>)(lpVtbl[0]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, uint>)(lpVtbl[1]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, uint>)(lpVtbl[1]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, uint>)(lpVtbl[2]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, uint>)(lpVtbl[2]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.Initialize"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [VtblIndex(3)]
     public HRESULT Initialize(IMFCaptureEngineOnEventCallback* pEventCallback, IMFAttributes* pAttributes, IUnknown* pAudioSource, IUnknown* pVideoSource)
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, IMFCaptureEngineOnEventCallback*, IMFAttributes*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), pEventCallback, pAttributes, pAudioSource, pVideoSource);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, IMFCaptureEngineOnEventCallback*, IMFAttributes*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), pEventCallback, pAttributes, pAudioSource, pVideoSource);
     }
 
     /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.StartPreview"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [VtblIndex(4)]
     public HRESULT StartPreview()
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, int>)(lpVtbl[4]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, int>)(lpVtbl[4]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.StopPreview"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [VtblIndex(5)]
     public HRESULT StopPreview()
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, int>)(lpVtbl[5]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, int>)(lpVtbl[5]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.StartRecord"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [VtblIndex(6)]
     public HRESULT StartRecord()
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, int>)(lpVtbl[6]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, int>)(lpVtbl[6]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.StopRecord"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [VtblIndex(7)]
     public HRESULT StopRecord(BOOL bFinalize, BOOL bFlushUnprocessedSamples)
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, BOOL, BOOL, int>)(lpVtbl[7]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), bFinalize, bFlushUnprocessedSamples);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, BOOL, BOOL, int>)(lpVtbl[7]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), bFinalize, bFlushUnprocessedSamples);
     }
 
     /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.TakePhoto"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [VtblIndex(8)]
     public HRESULT TakePhoto()
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, int>)(lpVtbl[8]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, int>)(lpVtbl[8]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.GetSink"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [VtblIndex(9)]
     public HRESULT GetSink(MF_CAPTURE_ENGINE_SINK_TYPE mfCaptureEngineSinkType, IMFCaptureSink** ppSink)
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink**, int>)(lpVtbl[9]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), mfCaptureEngineSinkType, ppSink);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink**, int>)(lpVtbl[9]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), mfCaptureEngineSinkType, ppSink);
     }
 
     /// <include file='IMFCaptureEngine.xml' path='doc/member[@name="IMFCaptureEngine.GetSource"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
     [VtblIndex(10)]
     public HRESULT GetSource(IMFCaptureSource** ppSource)
     {
-        return ((delegate* unmanaged<IMFCaptureEngine*, IMFCaptureSource**, int>)(lpVtbl[10]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), ppSource);
+        return ((delegate* unmanaged[MemberFunction]<IMFCaptureEngine*, IMFCaptureSource**, int>)(lpVtbl[10]))((IMFCaptureEngine*)Unsafe.AsPointer(ref this), ppSource);
     }
 
     public interface Interface : IUnknown.Interface
@@ -143,36 +143,36 @@ public unsafe partial struct IMFCaptureEngine : IMFCaptureEngine.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFCaptureEngineOnEventCallback *, IMFAttributes *, IUnknown *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFCaptureEngineOnEventCallback*, IMFAttributes*, IUnknown*, IUnknown*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFCaptureEngineOnEventCallback*, IMFAttributes*, IUnknown*, IUnknown*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StartPreview;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StartPreview;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StopPreview;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StopPreview;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> StartRecord;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> StartRecord;
 
         [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, BOOL, int> StopRecord;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, BOOL, int> StopRecord;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> TakePhoto;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> TakePhoto;
 
         [NativeTypeName("HRESULT (MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink**, int> GetSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_CAPTURE_ENGINE_SINK_TYPE, IMFCaptureSink**, int> GetSink;
 
         [NativeTypeName("HRESULT (IMFCaptureSource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFCaptureSource**, int> GetSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFCaptureSource**, int> GetSource;
     }
 }

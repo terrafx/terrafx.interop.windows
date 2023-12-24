@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA">
-    <summary>
-      <para>The <b>CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA</b> structure contains information used to verify a message signature. It contains the signer index and signer public key. The signer public key can be the signer's <see cref="CERT_PUBLIC_KEY_INFO" /> structure, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate context</a>, or chain context.</para>
-    </summary>
-    <remarks>
-      <para>If <b>dwSignerType</b> is CMSG_VERIFY_SIGNER_NULL, the signature is expected to contain only the unencrypted hash octets.</para>
-    </remarks>
+    <summary>The <b>CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA</b> structure contains information used to verify a message signature. It contains the signer index and signer public key. The signer public key can be the signer's <see cref="CERT_PUBLIC_KEY_INFO" /> structure, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate context</a>, or chain context.</summary>
   </member>
   <member name="CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA.hCryptProv">
     <summary>
@@ -23,9 +16,7 @@
     </summary>
   </member>
   <member name="CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA.dwSignerIndex">
-    <summary>
-      <para>The index of the signer in the message.</para>
-    </summary>
+    <summary>The index of the signer in the message.</summary>
   </member>
   <member name="CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA.dwSignerType">
     <summary>
@@ -35,50 +26,66 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CMSG_VERIFY_SIGNER_PUBKEY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_VERIFY_SIGNER_PUBKEY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <see cref="CERT_PUBLIC_KEY_INFO" />
-            </para>
+            <see cref="CERT_PUBLIC_KEY_INFO" />
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <b>CMSG_VERIFY_SIGNER_CERT</b>
-          </description>
-          <description>
-            <para>
-              <see cref="CERT_CONTEXT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CMSG_VERIFY_SIGNER_CHAIN</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_VERIFY_SIGNER_CERT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <see cref="CERT_CHAIN_CONTEXT" />
-            </para>
+            <see cref="CERT_CONTEXT" />
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <b>CMSG_VERIFY_SIGNER_NULL</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_VERIFY_SIGNER_CHAIN</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="CERT_CHAIN_CONTEXT" />
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_VERIFY_SIGNER_NULL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
             <b>NULL</b>
           </description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CMSG_CTRL_VERIFY_SIGNATURE_EX_PARA.pvSigner">
-    <summary>
-      <para>A pointer to a <see cref="CERT_PUBLIC_KEY_INFO" /> structure, a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate context</a>, a chain context, or <b>NULL</b> depending on the value of <b>dwSignerType</b>.</para>
-    </summary>
+    <summary>A pointer to a <see cref="CERT_PUBLIC_KEY_INFO" /> structure, a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate context</a>, a chain context, or <b>NULL</b> depending on the value of <b>dwSignerType</b>.</summary>
   </member>
 </doc>

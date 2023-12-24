@@ -3,22 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMINVOKECOMMANDINFO">
-    <summary>
-      <para>Contains information needed by <see cref="IContextMenu.InvokeCommand" /> to invoke a shortcut menu command.</para>
-    </summary>
-    <remarks>
-      <para>Although the <see cref="IContextMenu.InvokeCommand" /> declaration specifies a <b>CMINVOKECOMMANDINFO</b> structure for the <i>pici</i> parameter, it can also accept a <see cref="CMINVOKECOMMANDINFOEX" /> structure. If you are implementing this method, you must inspect <b>cbSize</b> to determine which structure has been passed.</para>
-    </remarks>
+    <summary>Contains information needed by <see cref="IContextMenu.InvokeCommand" /> to invoke a shortcut menu command.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFO.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFO.fMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Zero, or one or more of the following flags.</para>
       <h4>CMIC_MASK_HOTKEY</h4>
       <para>The <b>dwHotKey</b> member is valid.</para>
@@ -36,7 +27,7 @@
       <para>
         <b>Windows Vista and later.</b> The implementation of <see cref="IContextMenu.InvokeCommand" /> should be synchronous, not returning before it is complete. Since this is recommended, calling applications that specify this flag cannot guarantee that this request will be honored if they are not familiar with the implementation of the verb that they are invoking.</para>
       <h4>CMIC_MASK_SHIFT_DOWN</h4>
-      <para>The SHIFT key is pressed.  Use this instead of polling the current state of the keyboard that may have changed since the verb was invoked.</para>
+      <para>The SHIFT key is pressed. Use this instead of polling the current state of the keyboard that may have changed since the verb was invoked.</para>
       <h4>CMIC_MASK_CONTROL_DOWN</h4>
       <para>The CTRL key is pressed. Use this instead of polling the current state of the keyboard that may have changed since the verb was invoked.</para>
       <h4>CMIC_MASK_FLAG_LOG_USAGE</h4>
@@ -46,70 +37,47 @@
     </summary>
   </member>
   <member name="CMINVOKECOMMANDINFO.hwnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that is the owner of the shortcut menu. An extension can also use this handle as the owner of any message boxes or dialog boxes it displays.</para>
-    </summary>
+    <summary>A handle to the window that is the owner of the shortcut menu. An extension can also use this handle as the owner of any message boxes or dialog boxes it displays.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFO.lpVerb">
     <summary>
-      <para>Type: <b>LPCSTR</b></para>
       <para>The address of a null-terminated string that specifies the language-independent name of the command to carry out. This member is typically a string when a command is being activated by an application. The system provides predefined constant values for the following command strings.</para>
       <list type="table">
         <listheader>
           <description>Constant</description>
           <description>Command string</description>
         </listheader>
-        <item>
+        <listheader>
           <description>CMDSTR_RUNAS</description>
           <description>"RunAs"</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>CMDSTR_PRINT</description>
           <description>"Print"</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>CMDSTR_PREVIEW</description>
           <description>"Preview"</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>CMDSTR_OPEN</description>
           <description>"Open"</description>
-        </item>
-      </list>
-      <para>This is not a fixed set; new canonical verbs can be invented by context menu handlers and applications can invoke them.</para>
-      <para>If a canonical verb exists and a menu handler does not implement the canonical verb, it must return a failure code to enable the next handler to be able to handle this verb. Failing to do this will break functionality in the system including <see cref="ShellExecute" />.</para>
-      <para>Alternatively, rather than a pointer, this parameter can be <see cref="MAKEINTRESOURCE" />(offset) where <i>offset</i> is the menu-identifier offset of the command to carry out. Implementations can use the <see cref="IS_INTRESOURCE" /> macro to detect that this alternative is being employed. The Shell uses this alternative when the user chooses a menu command.</para>
-    </summary>
+        </listheader>
+      </list> <para>This is not a fixed set; new canonical verbs can be invented by context menu handlers and applications can invoke them.</para><para>If a canonical verb exists and a menu handler does not implement the canonical verb, it must return a failure code to enable the next handler to be able to handle this verb. Failing to do this will break functionality in the system including <see cref="ShellExecute" />.</para><para>Alternatively, rather than a pointer, this parameter can be <see cref="MAKEINTRESOURCE" />(offset) where <i>offset</i> is the menu-identifier offset of the command to carry out. Implementations can use the <see cref="IS_INTRESOURCE" /> macro to detect that this alternative is being employed. The Shell uses this alternative when the user chooses a menu command.</para></summary>
   </member>
   <member name="CMINVOKECOMMANDINFO.lpParameters">
-    <summary>
-      <para>Type: <b>LPCSTR</b></para>
-      <para>An optional string containing parameters that are passed to the command. The format of this string is determined by the command that is to be invoked. This member is always <b>NULL</b> for menu items inserted by a Shell extension.</para>
-    </summary>
+    <summary>An optional string containing parameters that are passed to the command. The format of this string is determined by the command that is to be invoked. This member is always <b>NULL</b> for menu items inserted by a Shell extension.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFO.lpDirectory">
-    <summary>
-      <para>Type: <b>LPCSTR</b></para>
-      <para>An optional working directory name. This member is always <b>NULL</b> for menu items inserted by a Shell extension.</para>
-    </summary>
+    <summary>An optional working directory name. This member is always <b>NULL</b> for menu items inserted by a Shell extension.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFO.nShow">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>A set of SW_ values to pass to the <see cref="ShowWindow" /> function if the command displays a window or starts an application.</para>
-    </summary>
+    <summary>A set of SW_ values to pass to the <see cref="ShowWindow" /> function if the command displays a window or starts an application.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFO.dwHotKey">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>An optional keyboard shortcut to assign to any application activated by the command. If the <b>fMask</b> parameter does not specify <b>CMIC_MASK_HOTKEY</b>, this member is ignored.</para>
-    </summary>
+    <summary>An optional keyboard shortcut to assign to any application activated by the command. If the <b>fMask</b> parameter does not specify <b>CMIC_MASK_HOTKEY</b>, this member is ignored.</summary>
   </member>
   <member name="CMINVOKECOMMANDINFO.hIcon">
-    <summary>
-      <para>Type: <b>HANDLE</b></para>
-      <para>An icon to use for any application activated by the command. If the <b>fMask</b> member does not specify <b>CMIC_MASK_ICON</b>, this member is ignored.</para>
-    </summary>
+    <summary>An icon to use for any application activated by the command. If the <b>fMask</b> member does not specify <b>CMIC_MASK_ICON</b>, this member is ignored.</summary>
   </member>
 </doc>

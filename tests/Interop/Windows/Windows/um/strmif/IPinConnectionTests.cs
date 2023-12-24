@@ -19,32 +19,4 @@ public static unsafe partial class IPinConnectionTests
     {
         Assert.That(typeof(IPinConnection).GUID, Is.EqualTo(IID_IPinConnection));
     }
-
-    /// <summary>Validates that the <see cref="IPinConnection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPinConnection>(), Is.EqualTo(sizeof(IPinConnection)));
-    }
-
-    /// <summary>Validates that the <see cref="IPinConnection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPinConnection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPinConnection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPinConnection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPinConnection), Is.EqualTo(4));
-        }
-    }
 }

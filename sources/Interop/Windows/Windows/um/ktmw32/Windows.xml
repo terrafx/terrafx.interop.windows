@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.CommitComplete">
-    <summary>
-      <para>Indicates that a resource manager (RM) has finished committing a transaction that was requested by the transaction manager (TM).</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment for which the commit operation is completed.</para>
-    </param>
+    <summary>Indicates that a resource manager (RM) has finished committing a transaction that was requested by the transaction manager (TM).</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment for which the commit operation is completed.</param>
     <param name="TmVirtualClock">
       <para>The latest virtual clock value received for this transaction. If you specify <b>NULL</b>, the virtual clock value is not changed. See <see cref="LARGE_INTEGER" />.</para>
       <para>To change the virtual clock value, this value must be greater than the current value returned in the COMMIT notification.</para>
@@ -18,39 +14,22 @@
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="CreateEnlistment" />
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.CommitEnlistment">
-    <summary>
-      <para>Commits the transaction associated with this enlistment handle. This function is used by communication
-resource managers (sometimes called superior transaction managers).</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment to commit.</para>
-    </param>
+    <summary>Commits the transaction associated with this enlistment handle. This function is used by communication resource managers (sometimes called superior transaction managers).</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment to commit.</param>
     <param name="TmVirtualClock">
-      <para>A pointer to the latest virtual clock value received for this enlistment. If you specify
-<b>NULL</b>, the virtual clock value is not changed.</para>
-      <para>To change the virtual clock value, this value must be greater than the current value returned by a
-subordinate TM.</para>
+      <para>A pointer to the latest virtual clock value received for this enlistment. If you specify<b>NULL</b>, the virtual clock value is not changed.</para>
+      <para>To change the virtual clock value, this value must be greater than the current value returned by a subordinate TM.</para>
     </param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is 0 (zero). To get extended error information, call the
-<see cref="GetLastError" /> function.</para>
+      <para>If the function fails, the return value is 0 (zero). To get extended error information, call the<see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="CommitComplete" />
-    <seealso cref="CreateEnlistment" />
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.CommitTransaction">
-    <summary>
-      <para>Requests that the specified transaction be committed.</para>
-    </summary>
+    <summary>Requests that the specified transaction be committed.</summary>
     <param name="TransactionHandle">
       <para>A handle to the transaction to be committed.</para>
       <para>This handle must have been opened with the TRANSACTION_COMMIT access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Ktm/ktm-security-and-access-rights">KTM Security and Access Rights</a>.</para>
@@ -60,19 +39,9 @@ subordinate TM.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>You can commit any transaction handle that has been opened or created using the TRANSACTION_COMMIT permission; any application can commit a transaction, not just the creator.</para>
-      <para>This function can only be called if the transaction is still active, not prepared, pre-prepared, or rolled back.</para>
-    </remarks>
-    <seealso cref="CreateTransaction" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="OpenTransaction" />
-    <seealso cref="RollbackTransaction" />
   </member>
   <member name="Windows.CommitTransactionAsync">
-    <summary>
-      <para>Requests that the specified transaction be committed.</para>
-    </summary>
+    <summary>Requests that the specified transaction be committed.</summary>
     <param name="TransactionHandle">
       <para>A handle to the transaction to be committed.</para>
       <para>This handle must have been opened with the TRANSACTION_COMMIT access right. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Ktm/ktm-security-and-access-rights">KTM Security and Access Rights</a>.</para>
@@ -82,31 +51,13 @@ subordinate TM.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="CreateTransaction" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="OpenTransaction" />
-    <seealso cref="RollbackTransaction" />
   </member>
   <member name="Windows.CreateEnlistment">
-    <summary>
-      <para>Creates an enlistment, sets its initial state, and opens a handle to the enlistment with the specified
-access.</para>
-    </summary>
-    <param name="lpEnlistmentAttributes">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a></para>
-      <para>structure that contains the security attributes for the enlistment manager.  Specify
-<b>NULL</b> to obtain the default attributes.</para>
-    </param>
-    <param name="ResourceManagerHandle">
-      <para>A handle to the resource manager (RM) to enlist.</para>
-    </param>
-    <param name="TransactionHandle">
-      <para>A handle to the transaction in which the RM is enlisting.</para>
-    </param>
-    <param name="NotificationMask">
-      <para>The notifications this RM is requesting for the <i>TransactionHandle</i> parameter. For
-a list of valid values, see <a href="https://docs.microsoft.com//windows/desktop/Ktm/notification-mask">NOTIFICATION_MASK</a>.</para>
-    </param>
+    <summary>Creates an enlistment, sets its initial state, and opens a handle to the enlistment with the specified access.</summary>
+    <param name="lpEnlistmentAttributes">A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a>structure that contains the security attributes for the enlistment manager. Specify<b>NULL</b> to obtain the default attributes.</param>
+    <param name="ResourceManagerHandle">A handle to the resource manager (RM) to enlist.</param>
+    <param name="TransactionHandle">A handle to the transaction in which the RM is enlisting.</param>
+    <param name="NotificationMask">The notifications this RM is requesting for the <i>TransactionHandle</i> parameter. For a list of valid values, see <a href="https://docs.microsoft.com//windows/desktop/Ktm/notification-mask">NOTIFICATION_MASK</a>.</param>
     <param name="CreateOptions">
       <para>Any optional enlistment instructions.</para>
       <list type="table">
@@ -114,76 +65,34 @@ a list of valid values, see <a href="https://docs.microsoft.com//windows/desktop
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ENLISTMENT_SUPERIOR</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Enlist as a superior transaction manager.</para>
-          </description>
-        </item>
+          <description>Enlist as a superior transaction manager.</description>
+        </listheader>
       </list>
     </param>
-    <param name="EnlistmentKey">
-      <para>A pointer to a user-defined structure used by the RM that is returned when a notification is sent in the
-<see cref="TRANSACTION_NOTIFICATION" /> structure. This is
-typically used to associate a private structure  with this specific transaction.</para>
-    </param>
+    <param name="EnlistmentKey">A pointer to a user-defined structure used by the RM that is returned when a notification is sent in the<see cref="TRANSACTION_NOTIFICATION" /> structure. This is typically used to associate a private structure with this specific transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the enlistment.</para>
-      <para>If the function fails, the return value is <b>INVALID_HANDLE_VALUE</b>. To get extended
-error information, call the <see cref="GetLastError" /> function.</para>
-      <para>The following list identifies the  possible error codes:</para>
+      <para>If the function fails, the return value is <b>INVALID_HANDLE_VALUE</b>. To get extended error information, call the <see cref="GetLastError" /> function.</para>
+      <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>
-        <b>Windows Vista:  </b>Any attempt to enlist during the pre-prepare phase or later will fail.</para>
-      <para>If you do not specify within your notification mask that you accept a single-phase commit request, KTM always
-performs a two-phase commit operation.</para>
-      <para>Keep the following notification rules in mind when enlisting in transactions:</para>
-      <list type="bullet">
-        <item>
-          <description>The RM must always request rollback notification.</description>
-        </item>
-        <item>
-          <description>If the RM requests prepare notification, it must also request commit notification.</description>
-        </item>
-        <item>
-          <description>If the RM requests a single-phase commit operation, it must also specify prepare and commit
-notifications.</description>
-        </item>
-        <item>
-          <description>The only time an RM is not required to request commit notifications is when it is requesting at least a
-pair of prepare and rollback notifications.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="CommitComplete" />
-    <seealso cref="CommitEnlistment" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/notification-mask">NOTIFICATION_MASK</seealso>
-    <seealso cref="OpenEnlistment" />
-    <seealso cref="TRANSACTION_NOTIFICATION" />
   </member>
   <member name="Windows.CreateResourceManager">
-    <summary>
-      <para>Creates a new resource manager (RM) object, and associates the RM with a transaction manager (TM).</para>
-    </summary>
-    <param name="lpResourceManagerAttributes">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> structure that contains the security attributes for the resource manager.  Specify <b>NULL</b> to obtain the default attributes.</para>
-    </param>
-    <param name="ResourceManagerId">
-      <para>A pointer the resource manager GUID. This parameter is required and must not be <b>NULL</b>.</para>
-    </param>
+    <summary>Creates a new resource manager (RM) object, and associates the RM with a transaction manager (TM).</summary>
+    <param name="lpResourceManagerAttributes">A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> structure that contains the security attributes for the resource manager. Specify <b>NULL</b> to obtain the default attributes.</param>
+    <param name="ResourceManagerId">A pointer the resource manager GUID. This parameter is required and must not be <b>NULL</b>.</param>
     <param name="CreateOptions">
       <para>Any optional attributes for the new RM.</para>
       <list type="table">
@@ -191,55 +100,35 @@ pair of prepare and rollback notifications.</description>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RESOURCE_MANAGER_VOLATILE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RESOURCE_MANAGER_VOLATILE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Indicates that the RM is volatile, and does not perform recovery.</para>
-          </description>
-        </item>
+          <description>Indicates that the RM is volatile, and does not perform recovery.</description>
+        </listheader>
       </list>
     </param>
-    <param name="TmHandle">
-      <para>A handle to the TM that will manage the transactions for this RM.</para>
-    </param>
-    <param name="Description">
-      <para>A description for this RM.</para>
-    </param>
+    <param name="TmHandle">A handle to the TM that will manage the transactions for this RM.</param>
+    <param name="Description">A description for this RM.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the RM.</para>
       <para>If the function fails, the return value is INVALID_HANDLE_VALUE. To get extended error information, call the <see cref="GetLastError" /> function.</para>
-      <para>The following list identifies the  possible error codes:</para>
+      <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>Immediately after calling this function, you must call <see cref="RecoverResourceManager" />.</para>
-      <para>An RM is an endpoint for TM notifications regarding transactions that the RM has enlisted in.</para>
-      <para>RMs are typically persistent, meaning that after a system failure, they must be reopened  to perform certain operations. Volatile, or transient, RMs can be created by calling the <b>CreateResourceManager</b> function and by specifying RESOURCE_MANAGER_VOLATILE.  Volatile RMs do not perform recovery operations, but do require notifications about a transaction.</para>
-      <para>You can create a volatile RM on a durable TM, but you cannot create a durable RM on a volatile TM.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="OpenResourceManager" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</seealso>
-    <seealso cref="SetResourceManagerCompletionPort" />
   </member>
   <member name="Windows.CreateTransaction">
-    <summary>
-      <para>Creates a new transaction object.</para>
-    </summary>
+    <summary>Creates a new transaction object.</summary>
     <param name="lpTransactionAttributes">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a></para>
-      <para>structure that determines whether the returned handle can be inherited by child processes. If this parameter is
-<b>NULL</b>, the handle cannot be inherited.</para>
-      <para>The <b>lpSecurityDescriptor</b> member of the structure specifies a
-<a href="https://docs.microsoft.com//windows/desktop/winstation/desktop-security-and-access-rights">security descriptor</a> for the new
-event. If <i>lpTransactionAttributes</i> is <b>NULL</b>, the object gets
-a default security descriptor. The access control lists (ACL) in the default security descriptor for a
-transaction come from the primary or impersonation token of the creator.</para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a>structure that determines whether the returned handle can be inherited by child processes. If this parameter is<b>NULL</b>, the handle cannot be inherited.</para>
+      <para>The <b>lpSecurityDescriptor</b> member of the structure specifies a<a href="https://docs.microsoft.com//windows/desktop/winstation/desktop-security-and-access-rights">security descriptor</a> for the new event. If <i>lpTransactionAttributes</i> is <b>NULL</b>, the object gets a default security descriptor. The access control lists (ACL) in the default security descriptor for a transaction come from the primary or impersonation token of the creator.</para>
     </param>
-    <param name="UOW">
-      <para>Reserved. Must be zero (0).</para>
-    </param>
+    <param name="UOW">Reserved. Must be zero (0).</param>
     <param name="CreateOptions">
       <para>Any optional transaction instructions.</para>
       <list type="table">
@@ -247,59 +136,37 @@ transaction come from the primary or impersonation token of the creator.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRANSACTION_DO_NOT_PROMOTE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRANSACTION_DO_NOT_PROMOTE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The transaction cannot be distributed.</para>
-          </description>
-        </item>
+          <description>The transaction cannot be distributed.</description>
+        </listheader>
       </list>
     </param>
-    <param name="IsolationLevel">
-      <para>Reserved; specify zero (0).</para>
-    </param>
-    <param name="IsolationFlags">
-      <para>Reserved; specify zero (0).</para>
-    </param>
+    <param name="IsolationLevel">Reserved; specify zero (0).</param>
+    <param name="IsolationFlags">Reserved; specify zero (0).</param>
     <param name="Timeout">
       <para>The time-out interval, in milliseconds. If a nonzero value is specified, the transaction will be aborted when the interval elapses if it has not already reached the prepared state.</para>
       <para>Specify zero (0) or INFINITE to provide an infinite time-out.</para>
     </param>
-    <param name="Description">
-      <para>A user-readable description of the transaction.</para>
-    </param>
+    <param name="Description">A user-readable description of the transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the transaction.</para>
-      <para>If the function fails, the return value is <b>INVALID_HANDLE_VALUE</b>. To get extended
-error information, call the <see cref="GetLastError" /> function.</para>
+      <para>If the function fails, the return value is <b>INVALID_HANDLE_VALUE</b>. To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>Use the <see cref="CloseHandle" /> function to close the transaction
-handle. If the last transaction handle is closed before a client  calls the
-<see cref="CommitTransaction" /> function with the transaction
-handle, then  KTM rolls back the transaction.</para>
-      <para>If the transaction might need to be promotable to a distributed transaction, then you must grant the Distributed Transaction Coordinator (DTC)  access rights to enlist in the transaction.  To do this, the  <i>lpTransactionAttributes</i> parameter needs to contain an access control entry with the DTC’s SID (S-1-5-80-2818357584-3387065753-4000393942-342927828-138088443) and the TRANSACTION_ENLIST right. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/ms684146(v=vs.85)">Distributed Transaction Coordinator</a> and <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/access-control-components">Access Control Components</a>.</para>
-    </remarks>
-    <seealso cref="CommitTransaction" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/ms684146(v=vs.85)">Distributed Transaction Coordinator</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="RollbackTransaction" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</seealso>
-    <seealso cref="SetTransactionInformation" />
   </member>
   <member name="Windows.CreateTransactionManager">
-    <summary>
-      <para>Creates a new transaction manager (TM) object and returns a handle with the specified access.</para>
-    </summary>
-    <param name="lpTransactionAttributes">
-      <para>The transaction <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> (ACLs) for the TM object.</para>
-    </param>
-    <param name="LogFileName">
-      <para>The log file stream name.  If the stream does not exist in the log, it is created. To create a volatile TM, this parameter must be <b>NULL</b> and <i>CreateOptions</i> must specify TRANSACTION_MANAGER_VOLATILE, this transaction manager is considered volatile.</para>
-    </param>
+    <summary>Creates a new transaction manager (TM) object and returns a handle with the specified access.</summary>
+    <param name="lpTransactionAttributes">The transaction <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> (ACLs) for the TM object.</param>
+    <param name="LogFileName">The log file stream name. If the stream does not exist in the log, it is created. To create a volatile TM, this parameter must be <b>NULL</b> and <i>CreateOptions</i> must specify TRANSACTION_MANAGER_VOLATILE, this transaction manager is considered volatile.</param>
     <param name="CreateOptions">
       <para>Any optional attributes for the new TM.</para>
       <list type="table">
@@ -307,405 +174,177 @@ handle, then  KTM rolls back the transaction.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRANSACTION_MANAGER_VOLATILE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRANSACTION_MANAGER_VOLATILE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Indicates that the TM is volatile, and does not perform recovery.</para>
-          </description>
-        </item>
+          <description>Indicates that the TM is volatile, and does not perform recovery.</description>
+        </listheader>
       </list>
     </param>
-    <param name="CommitStrength">
-      <para>Reserved; specify zero.</para>
-    </param>
+    <param name="CommitStrength">Reserved; specify zero.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the transaction manager.</para>
       <para>If the function fails, the return value is INVALID_HANDLE_VALUE. To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>Immediately after calling this function, you must call <see cref="RecoverTransactionManager" />.</para>
-      <para>If your transaction manager is volatile, all your your resource managers must also be volatile.</para>
-      <para>You must call <see cref="RecoverTransactionManager" /> after creating a TM in order for the TM to function correctly.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="OpenTransactionManager" />
-    <seealso cref="RecoverTransactionManager" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</seealso>
   </member>
   <member name="Windows.GetCurrentClockTransactionManager">
-    <summary>
-      <para>Obtains a virtual clock value from a transaction manager.</para>
-    </summary>
-    <param name="TransactionManagerHandle">
-      <para>A handle to the transaction manager to obtain a virtual clock value for.</para>
-    </param>
-    <param name="TmVirtualClock">
-      <para>The latest virtual clock value for the transaction manager. See <see cref="LARGE_INTEGER" />.</para>
-    </param>
+    <summary>Obtains a virtual clock value from a transaction manager.</summary>
+    <param name="TransactionManagerHandle">A handle to the transaction manager to obtain a virtual clock value for.</param>
+    <param name="TmVirtualClock">The latest virtual clock value for the transaction manager. See <see cref="LARGE_INTEGER" />.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="CommitComplete" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="PrepareComplete" />
-    <seealso cref="PreprepareComplete" />
-    <seealso cref="ReadOnlyEnlistment" />
-    <seealso cref="RollbackComplete" />
-    <seealso cref="RollbackEnlistment" />
-    <seealso cref="SinglePhaseReject" />
   </member>
   <member name="Windows.GetEnlistmentId">
-    <summary>
-      <para>Obtains the identifier (ID) for the specified enlistment.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment.</para>
-    </param>
-    <param name="EnlistmentId">
-      <para>A pointer to a variables that receives the ID of the enlistment.</para>
-    </param>
+    <summary>Obtains the identifier (ID) for the specified enlistment.</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment.</param>
+    <param name="EnlistmentId">A pointer to a variables that receives the ID of the enlistment.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.GetEnlistmentRecoveryInformation">
-    <summary>
-      <para>Retrieves an opaque structure of recovery data from KTM.  Recovery information is stored in a log on behalf of a resource manager (RM) by calling the <see cref="SetEnlistmentRecoveryInformation" /> function.  After a failure, the RM can use the <b>GetEnlistmentRecoveryInformation</b> function to retrieve the information.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment.</para>
-    </param>
-    <param name="BufferSize">
-      <para>The size of the <i>Buffer</i> parameter, in bytes.</para>
-    </param>
-    <param name="Buffer">
-      <para>A pointer to a buffer that receives the enlistment recovery information.</para>
-    </param>
-    <param name="BufferUsed">
-      <para>A pointer to a variable that receives the actual number of bytes returned in the <i>Buffer</i> parameter.</para>
-    </param>
+    <summary>Retrieves an opaque structure of recovery data from KTM. Recovery information is stored in a log on behalf of a resource manager (RM) by calling the <see cref="SetEnlistmentRecoveryInformation" /> function. After a failure, the RM can use the <b>GetEnlistmentRecoveryInformation</b> function to retrieve the information.</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment.</param>
+    <param name="BufferSize">The size of the <i>Buffer</i> parameter, in bytes.</param>
+    <param name="Buffer">A pointer to a buffer that receives the enlistment recovery information.</param>
+    <param name="BufferUsed">A pointer to a variable that receives the actual number of bytes returned in the <i>Buffer</i> parameter.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>This call cannot be used with volatile transaction managers.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="SetEnlistmentRecoveryInformation" />
   </member>
   <member name="Windows.GetNotificationResourceManager">
-    <summary>
-      <para>Requests and receives a notification for a resource manager (RM). This function is used by the RM
-register to receive notifications when a transaction changes state.</para>
-    </summary>
-    <param name="ResourceManagerHandle">
-      <para>A handle  to the resource manager.</para>
-    </param>
-    <param name="TransactionNotification">
-      <para>A pointer to a <see cref="TRANSACTION_NOTIFICATION" /></para>
-      <para>structure that receives the first available notification.</para>
-    </param>
-    <param name="NotificationLength">
-      <para>The size of the <i>TransactionNotification</i> buffer, in bytes.</para>
-    </param>
-    <param name="dwMilliseconds">
-      <para>The time, in milliseconds, for which the calling application is blocking while waiting for the notification
-to become available. If no notifications are available when the timeout expires,
-<b>ERROR_TIMEOUT</b> is returned.</para>
-    </param>
-    <param name="ReturnLength">
-      <para>A pointer to a variable that receives the actual size of the notification received by the
-<i>TransactionNotification</i> parameter.</para>
-    </param>
+    <summary>Requests and receives a notification for a resource manager (RM). This function is used by the RM register to receive notifications when a transaction changes state.</summary>
+    <param name="ResourceManagerHandle">A handle to the resource manager.</param>
+    <param name="TransactionNotification">A pointer to a <see cref="TRANSACTION_NOTIFICATION" />structure that receives the first available notification.</param>
+    <param name="NotificationLength">The size of the <i>TransactionNotification</i> buffer, in bytes.</param>
+    <param name="dwMilliseconds">The time, in milliseconds, for which the calling application is blocking while waiting for the notification to become available. If no notifications are available when the timeout expires,<b>ERROR_TIMEOUT</b> is returned.</param>
+    <param name="ReturnLength">A pointer to a variable that receives the actual size of the notification received by the<i>TransactionNotification</i> parameter.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero (0). To get extended error information, call the
-<see cref="GetLastError" /> function.</para>
+      <para>If the function fails, the return value is zero (0). To get extended error information, call the<see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>All resource managers must register to receive <b>TRANSACTION_NOTIFY_PREPREPARE</b>,
-<b>TRANSACTION_NOTIFY_PREPARE</b>, and <b>TRANSACTION_NOTIFY_COMMIT</b></para>
-      <para>notifications, even if they subsequently call
-<see cref="ReadOnlyEnlistment" /> to mark an enlistment as
-read-only. Resource managers can support <b>TRANSACTION_NOTIFY_SINGLE_PHASE_COMMIT</b>, but
-they must also support the multi-phase pre-prepare, prepare, and commit notifications. For the list of all
-notifications that resource managers can receive, see
-<see cref="TRANSACTION_NOTIFICATION" />.</para>
-    </remarks>
-    <seealso cref="CreateEnlistment" />
-    <seealso cref="GetNotificationResourceManagerAsync" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/notification-mask">NOTIFICATION_MASK</seealso>
-    <seealso cref="SetResourceManagerCompletionPort" />
-    <seealso cref="TRANSACTION_NOTIFICATION" />
-    <seealso cref="TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT" />
   </member>
   <member name="Windows.GetNotificationResourceManagerAsync">
-    <summary>
-      <para>Requests and receives asynchronous notification for a resource manager (RM). This function is used by
-the RM register to receive notifications when a transaction changes state.</para>
-    </summary>
-    <param name="ResourceManagerHandle">
-      <para>A handle  to the resource manager.</para>
-    </param>
-    <param name="TransactionNotification">
-      <para>A pointer to a
-<see cref="TRANSACTION_NOTIFICATION" /> structure that
-receives the first available notification.</para>
-    </param>
-    <param name="TransactionNotificationLength">
-      <para>The size of the <i>TransactionNotification</i> buffer, in bytes.</para>
-    </param>
-    <param name="ReturnLength">
-      <para>A pointer to a variable that receives the actual size of the notification received by the
-<i>TransactionNotification</i> parameter.</para>
-    </param>
-    <param name="lpOverlapped">
-      <para>A pointer to an <see cref="OVERLAPPED" /> structure that is
-required for asynchronous operation.</para>
-    </param>
+    <summary>Requests and receives asynchronous notification for a resource manager (RM). This function is used by the RM register to receive notifications when a transaction changes state.</summary>
+    <param name="ResourceManagerHandle">A handle to the resource manager.</param>
+    <param name="TransactionNotification">A pointer to a<see cref="TRANSACTION_NOTIFICATION" /> structure that receives the first available notification.</param>
+    <param name="TransactionNotificationLength">The size of the <i>TransactionNotification</i> buffer, in bytes.</param>
+    <param name="ReturnLength">A pointer to a variable that receives the actual size of the notification received by the<i>TransactionNotification</i> parameter.</param>
+    <param name="lpOverlapped">A pointer to an <see cref="OVERLAPPED" /> structure that is required for asynchronous operation.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero (0). To get extended error information, call the
-<see cref="GetLastError" /> function.</para>
+      <para>If the function fails, the return value is zero (0). To get extended error information, call the<see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>All resource managers must register to receive <b>TRANSACTION_NOTIFY_PREPREPARE</b>,
-<b>TRANSACTION_NOTIFY_PREPARE</b>, and <b>TRANSACTION_NOTIFY_COMMIT</b></para>
-      <para>notifications, even if they subsequently call
-<see cref="ReadOnlyEnlistment" /> to mark an enlistment as
-read-only. Resource managers can support <b>TRANSACTION_NOTIFY_SINGLE_PHASE_COMMIT</b>, but
-they must also support the multi-phase pre-prepare, prepare, and commit notifications. For the list of all
-notifications that resource managers can receive, see
-<see cref="TRANSACTION_NOTIFICATION" />.</para>
-      <para>Resource managers (RM) may want to call this function more than once to provide multiple buffers for KTM to
-use when delivering notifications. The number of calls to this function depends on how much load your RM is
-carrying.</para>
-      <para>This function must be called after the
-<see cref="SetResourceManagerCompletionPort" /></para>
-      <para>function is called.</para>
-    </remarks>
-    <seealso cref="CreateEnlistment" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/notification-mask">NOTIFICATION_MASK</seealso>
-    <seealso cref="SetResourceManagerCompletionPort" />
-    <seealso cref="TRANSACTION_NOTIFICATION" />
-    <seealso cref="TRANSACTION_NOTIFICATION_RECOVERY_ARGUMENT" />
   </member>
   <member name="Windows.GetTransactionId">
-    <summary>
-      <para>Obtains the identifier (ID) for the specified transaction.</para>
-    </summary>
-    <param name="TransactionHandle">
-      <para>A handle to the transaction.</para>
-    </param>
-    <param name="TransactionId">
-      <para>A pointer to a variable that receives the ID of the transaction.</para>
-    </param>
+    <summary>Obtains the identifier (ID) for the specified transaction.</summary>
+    <param name="TransactionHandle">A handle to the transaction.</param>
+    <param name="TransactionId">A pointer to a variable that receives the ID of the transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.GetTransactionInformation">
-    <summary>
-      <para>Returns the requested information about the specified transaction.</para>
-    </summary>
-    <param name="TransactionHandle">
-      <para>A handle to the transaction. The handle must have  the TRANSACTION_QUERY_INFORMATION permission to retrieve the information.</para>
-    </param>
-    <param name="Outcome">
-      <para>A pointer to a buffer that receives the current outcome of the transaction. If the call to the <b>GetTransactionInformation</b> function is successful, this value will be one of the <see cref="TRANSACTION_OUTCOME" /> enumeration values.</para>
-    </param>
-    <param name="IsolationLevel">
-      <para>Reserved.</para>
-    </param>
-    <param name="IsolationFlags">
-      <para>Reserved.</para>
-    </param>
-    <param name="Timeout">
-      <para>A pointer to a variable that receives the timeout value, in milliseconds, for this transaction.</para>
-    </param>
-    <param name="BufferLength">
-      <para>The size of the <i>Description</i> parameter, in bytes. The buffer length value cannot be longer than the value of MAX_TRANSACTION_DESCRIPTION_LENGTH.</para>
-    </param>
-    <param name="Description">
-      <para>A pointer to a buffer that receives the user-defined description of the transaction.</para>
-    </param>
+    <summary>Returns the requested information about the specified transaction.</summary>
+    <param name="TransactionHandle">A handle to the transaction. The handle must have the TRANSACTION_QUERY_INFORMATION permission to retrieve the information.</param>
+    <param name="Outcome">A pointer to a buffer that receives the current outcome of the transaction. If the call to the <b>GetTransactionInformation</b> function is successful, this value will be one of the <see cref="TRANSACTION_OUTCOME" /> enumeration values.</param>
+    <param name="IsolationLevel">Reserved.</param>
+    <param name="IsolationFlags">Reserved.</param>
+    <param name="Timeout">A pointer to a variable that receives the timeout value, in milliseconds, for this transaction.</param>
+    <param name="BufferLength">The size of the <i>Description</i> parameter, in bytes. The buffer length value cannot be longer than the value of MAX_TRANSACTION_DESCRIPTION_LENGTH.</param>
+    <param name="Description">A pointer to a buffer that receives the user-defined description of the transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is zero. To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="CreateTransaction" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="SetTransactionInformation" />
   </member>
   <member name="Windows.GetTransactionManagerId">
-    <summary>
-      <para>Obtains an identifier for the specified transaction manager.</para>
-    </summary>
-    <param name="TransactionManagerHandle">
-      <para>A handle to the transaction manager.</para>
-    </param>
-    <param name="TransactionManagerId">
-      <para>A pointer to a variable that receives the identifier for the transaction manager.</para>
-    </param>
+    <summary>Obtains an identifier for the specified transaction manager.</summary>
+    <param name="TransactionManagerHandle">A handle to the transaction manager.</param>
+    <param name="TransactionManagerId">A pointer to a variable that receives the identifier for the transaction manager.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="OpenTransactionManager" />
   </member>
   <member name="Windows.OpenEnlistment">
-    <summary>
-      <para>Opens an existing enlistment object, and returns a handle to the enlistment.</para>
-    </summary>
-    <param name="dwDesiredAccess">
-      <para>The access requested for this enlistment. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/enlistment-access-masks">Enlistment Access Masks</a> for a list of valid values.</para>
-    </param>
-    <param name="ResourceManagerHandle">
-      <para>A handle to the resource manager.</para>
-    </param>
-    <param name="EnlistmentId">
-      <para>The enlistment identifier.</para>
-    </param>
+    <summary>Opens an existing enlistment object, and returns a handle to the enlistment.</summary>
+    <param name="dwDesiredAccess">The access requested for this enlistment. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/enlistment-access-masks">Enlistment Access Masks</a> for a list of valid values.</param>
+    <param name="ResourceManagerHandle">A handle to the resource manager.</param>
+    <param name="EnlistmentId">The enlistment identifier.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the enlistment.</para>
       <para>If the function fails, the return value is INVALID_HANDLE_VALUE. To get extended error information, call the <see cref="GetLastError" /> function.</para>
-      <para>The following list identifies the  possible error codes:</para>
+      <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="CreateEnlistment" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/enlistment-access-masks">Enlistment Access Masks</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.OpenResourceManager">
-    <summary>
-      <para>Opens an existing resource manager (RM).</para>
-    </summary>
-    <param name="dwDesiredAccess">
-      <para>The access requested for the RM. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/resource-manager-access-masks">Resource Manager Access Masks</a> for a list of valid values.</para>
-    </param>
-    <param name="TmHandle">
-      <para>A handle to the transaction manager.</para>
-    </param>
-    <param name="ResourceManagerId">
-      <para>The identifier  for this resource manager.</para>
-    </param>
+    <summary>Opens an existing resource manager (RM).</summary>
+    <param name="dwDesiredAccess">The access requested for the RM. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/resource-manager-access-masks">Resource Manager Access Masks</a> for a list of valid values.</param>
+    <param name="TmHandle">A handle to the transaction manager.</param>
+    <param name="ResourceManagerId">The identifier for this resource manager.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the resource manager.</para>
       <para>If the function fails, the return value is INVALID_HANDLE_VALUE. To get extended error information, call the <see cref="GetLastError" /> function.</para>
-      <para>The following list identifies the  possible error codes:</para>
+      <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>Immediately after calling this function, you must call <see cref="RecoverResourceManager" />.</para>
-    </remarks>
-    <seealso cref="CreateResourceManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/resource-manager-access-masks">Resource Manager Access Masks</seealso>
   </member>
   <member name="Windows.OpenTransaction">
-    <summary>
-      <para>Opens an existing transaction.</para>
-    </summary>
-    <param name="dwDesiredAccess">
-      <para>The access to the transaction object. You must have read and write access to work with a transaction. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/transaction-access-masks">Transaction Access Masks</a> for a list of valid values.</para>
-    </param>
-    <param name="TransactionId">
-      <para>The GUID that identifies the transaction to be opened. This is commonly referred to as  a unit of work for the transaction.</para>
-    </param>
+    <summary>Opens an existing transaction.</summary>
+    <param name="dwDesiredAccess">The access to the transaction object. You must have read and write access to work with a transaction. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/transaction-access-masks">Transaction Access Masks</a> for a list of valid values.</param>
+    <param name="TransactionId">The GUID that identifies the transaction to be opened. This is commonly referred to as a unit of work for the transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the transaction.</para>
       <para>If the function fails, the return value is INVALID_HANDLE_VALUE. To get extended error information, call the <see cref="GetLastError" /> function.</para>
-      <para>The following list identifies the  possible error codes:</para>
+      <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>Clients close the transaction handle by using the <see cref="CloseHandle" /> function. If the last transaction handle is closed without anyone calling the <see cref="CommitTransaction" /> function on the transaction, then the KTM implicitly rolls back the transaction.</para>
-    </remarks>
-    <seealso cref="CommitTransaction" />
-    <seealso cref="CreateTransaction" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="RollbackTransaction" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/transaction-access-masks">Transaction Access Masks</seealso>
   </member>
   <member name="Windows.OpenTransactionManager">
-    <summary>
-      <para>Opens an existing transaction manager.</para>
-    </summary>
-    <param name="LogFileName">
-      <para>The name of the log stream.  This stream must exist within a CLFS log file.</para>
-    </param>
-    <param name="DesiredAccess">
-      <para>The access requested. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/transaction-manager-access-masks">Transaction Manager Access Masks</a> for a list of valid values.</para>
-    </param>
-    <param name="OpenOptions">
-      <para>Reserved; specify zero.</para>
-    </param>
+    <summary>Opens an existing transaction manager.</summary>
+    <param name="LogFileName">The name of the log stream. This stream must exist within a CLFS log file.</param>
+    <param name="DesiredAccess">The access requested. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/transaction-manager-access-masks">Transaction Manager Access Masks</a> for a list of valid values.</param>
+    <param name="OpenOptions">Reserved; specify zero.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the transaction manager.</para>
       <para>If the function fails, the return value is INVALID_HANDLE_VALUE. To get extended error information, call the <see cref="GetLastError" /> function.</para>
-      <para>The following list identifies the  possible error codes:</para>
+      <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>Immediately after calling this function, you must call <see cref="RecoverTransactionManager" />.</para>
-      <para>The <i>LogFileName</i> must be specified using the NT file format. For example: <i>??&lt;drive&gt;:&lt;path&gt;</i>. Do not use the .BLF extension.</para>
-    </remarks>
-    <seealso cref="CreateTransactionManager" />
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="OpenTransactionManagerById" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/transaction-manager-access-masks">Transaction Manager Access Masks</seealso>
   </member>
   <member name="Windows.OpenTransactionManagerById">
-    <summary>
-      <para>Opens an existing transaction manager.</para>
-    </summary>
-    <param name="TransactionManagerId">
-      <para>The identifier of the transaction to open.</para>
-    </param>
-    <param name="DesiredAccess">
-      <para>The access requested. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/transaction-manager-access-masks">Transaction Manager Access Masks</a> for a list of valid values.</para>
-    </param>
-    <param name="OpenOptions">
-      <para>Reserved; specify zero.</para>
-    </param>
+    <summary>Opens an existing transaction manager.</summary>
+    <param name="TransactionManagerId">The identifier of the transaction to open.</param>
+    <param name="DesiredAccess">The access requested. See <a href="https://docs.microsoft.com//windows/desktop/Ktm/transaction-manager-access-masks">Transaction Manager Access Masks</a> for a list of valid values.</param>
+    <param name="OpenOptions">Reserved; specify zero.</param>
     <returns>
       <para>If the function succeeds, the return value is a handle to the transaction manager.</para>
       <para>If the function fails, the return value is INVALID_HANDLE_VALUE. To get extended error information, call the <see cref="GetLastError" /> function.</para>
-      <para>The following list identifies the  possible error codes:</para>
+      <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>Immediately after calling this function, you must call <see cref="RecoverTransactionManager" />.</para>
-    </remarks>
-    <seealso cref="CreateTransactionManager" />
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="OpenTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/transaction-manager-access-masks">Transaction Manager Access Masks</seealso>
   </member>
   <member name="Windows.PrepareComplete">
-    <summary>
-      <para>Indicates that the resource manager (RM) has completed all processing necessary to guarantee that a commit or abort operation will succeed for the specified transaction.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment.</para>
-    </param>
+    <summary>Indicates that the resource manager (RM) has completed all processing necessary to guarantee that a commit or abort operation will succeed for the specified transaction.</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment.</param>
     <param name="TmVirtualClock">
       <para>The latest virtual clock value received for this prepare complete notification. If you specify <b>NULL</b>, the virtual clock value is not changed. See <see cref="LARGE_INTEGER" />.</para>
       <para>To change the virtual clock value, this value must be greater than the current value returned in the COMMIT notification.</para>
@@ -715,42 +354,20 @@ carrying.</para>
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso cref="GetNotificationResourceManager" />
-    <seealso cref="GetNotificationResourceManagerAsync" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="PrePrepareComplete" />
   </member>
   <member name="Windows.PrepareEnlistment">
-    <summary>
-      <para>Prepares the transaction associated with this enlistment handle. This function is used by
-communication resource managers (sometimes called superior transaction managers).</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment for which the prepare operation has completed.</para>
-    </param>
-    <param name="TmVirtualClock">
-      <para>A pointer to the latest virtual clock value received for this transaction.</para>
-    </param>
+    <summary>Prepares the transaction associated with this enlistment handle. This function is used by communication resource managers (sometimes called superior transaction managers).</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment for which the prepare operation has completed.</param>
+    <param name="TmVirtualClock">A pointer to the latest virtual clock value received for this transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero (0). To get extended error information, call the
-<see cref="GetLastError" /> function.</para>
+      <para>If the function fails, the return value is zero (0). To get extended error information, call the<see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="PrePrepareEnlistment" />
-    <seealso cref="ReadOnlyEnlistment" />
-    <seealso cref="SinglePhaseReject" />
   </member>
   <member name="Windows.PrePrepareComplete">
-    <summary>
-      <para>Signals that this resource manager has completed its prepare work, so that other resource managers can now begin their prepare operations.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment.</para>
-    </param>
+    <summary>Signals that this resource manager has completed its prepare work, so that other resource managers can now begin their prepare operations.</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment.</param>
     <param name="TmVirtualClock">
       <para>The latest virtual clock value received for this prepare operation. If you specify <b>NULL</b>, the virtual clock value is not changed. See <see cref="LARGE_INTEGER" />.</para>
       <para>To change the virtual clock value, this value must be greater than the current value returned in the COMMIT notification.</para>
@@ -760,42 +377,20 @@ communication resource managers (sometimes called superior transaction managers)
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso cref="GetNotificationResourceManager" />
-    <seealso cref="GetNotificationResourceManagerAsync" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="PrepareComplete" />
   </member>
   <member name="Windows.PrePrepareEnlistment">
-    <summary>
-      <para>Pre-prepares the transaction associated with this enlistment handle. This function is used by
-communication resource managers (sometimes called superior transaction managers).</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment for which the prepare operation has completed.</para>
-    </param>
-    <param name="TmVirtualClock">
-      <para>A pointer to the latest virtual clock value received for this transaction.</para>
-    </param>
+    <summary>Pre-prepares the transaction associated with this enlistment handle. This function is used by communication resource managers (sometimes called superior transaction managers).</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment for which the prepare operation has completed.</param>
+    <param name="TmVirtualClock">A pointer to the latest virtual clock value received for this transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero (0). To get extended error information, call the
-<see cref="GetLastError" /> function.</para>
+      <para>If the function fails, the return value is zero (0). To get extended error information, call the<see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="PrepareEnlistment" />
-    <seealso cref="ReadOnlyEnlistment" />
-    <seealso cref="SinglePhaseReject" />
   </member>
   <member name="Windows.ReadOnlyEnlistment">
-    <summary>
-      <para>Requests  that the specified enlistment be converted to a read-only enlistment. A read-only enlistment cannot participate in the outcome of the transaction  and is not durably recorded for recovery.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment.</para>
-    </param>
+    <summary>Requests that the specified enlistment be converted to a read-only enlistment. A read-only enlistment cannot participate in the outcome of the transaction and is not durably recorded for recovery.</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment.</param>
     <param name="TmVirtualClock">
       <para>The latest virtual clock value received for this enlistment. If you specify <b>NULL</b>, the virtual clock value is not changed. See <see cref="LARGE_INTEGER" />.</para>
       <para>To change the virtual clock value, this value must be greater than the current value returned in the COMMIT notification.</para>
@@ -805,264 +400,131 @@ communication resource managers (sometimes called superior transaction managers)
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>If a resource manager no longer needs to participate in a transaction without rolling  back the transaction, it should call  <b>ReadOnlyEnlistment</b> prior to closing the enlistment handle.</para>
-    </remarks>
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="ReadOnlyEnlistment" />
   </member>
   <member name="Windows.RecoverEnlistment">
-    <summary>
-      <para>Recovers an enlistment's state.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment.</para>
-    </param>
-    <param name="EnlistmentKey">
-      <para>The key to the enlistment to be recovered.</para>
-    </param>
+    <summary>Recovers an enlistment's state.</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment.</param>
+    <param name="EnlistmentKey">The key to the enlistment to be recovered.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.RecoverResourceManager">
-    <summary>
-      <para>Recovers a resource manager's state from its log file.</para>
-    </summary>
-    <param name="ResourceManagerHandle">
-      <para>A handle to the resource manager.</para>
-    </param>
+    <summary>Recovers a resource manager's state from its log file.</summary>
+    <param name="ResourceManagerHandle">A handle to the resource manager.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.RecoverTransactionManager">
-    <summary>
-      <para>Recovers a transaction manager's state from  its log file.</para>
-    </summary>
-    <param name="TransactionManagerHandle">
-      <para>A handle to the transaction manager.</para>
-    </param>
+    <summary>Recovers a transaction manager's state from its log file.</summary>
+    <param name="TransactionManagerHandle">A handle to the transaction manager.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>This function must be called after you call <see cref="CreateTransactionManager" />.</para>
-    </remarks>
-    <seealso cref="CreateTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.RenameTransactionManager">
-    <summary>
-      <para>Renames a transaction manager (TM) object. This function can only be used on named TM
-handles. A new <b>GUID</b> for the TM is selected and can be retrieved using the
-<see cref="GetTransactionManagerID" /> function.</para>
-    </summary>
-    <param name="LogFileName">
-      <para>The name of the log stream.  This stream must exist within a CLFS log file.</para>
-    </param>
-    <param name="ExistingTransactionManagerGuid">
-      <para>A value that specifies the current name of the TM.</para>
-    </param>
+    <summary>Renames a transaction manager (TM) object. This function can only be used on named TM handles. A new <b>GUID</b> for the TM is selected and can be retrieved using the<see cref="GetTransactionManagerID" /> function.</summary>
+    <param name="LogFileName">The name of the log stream. This stream must exist within a CLFS log file.</param>
+    <param name="ExistingTransactionManagerGuid">A value that specifies the current name of the TM.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero (0). To get extended error information, call the
-<see cref="GetLastError" /> function.</para>
+      <para>If the function fails, the return value is zero (0). To get extended error information, call the<see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="GetTransactionManagerID" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.RollbackComplete">
-    <summary>
-      <para>Indicates that the resource manager (RM) has successfully completed rolling back a transaction.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle the enlistment.</para>
-    </param>
-    <param name="TmVirtualClock">
-      <para>The latest virtual clock value received for this transaction. See <see cref="LARGE_INTEGER" />.</para>
-    </param>
+    <summary>Indicates that the resource manager (RM) has successfully completed rolling back a transaction.</summary>
+    <param name="EnlistmentHandle">A handle the enlistment.</param>
+    <param name="TmVirtualClock">The latest virtual clock value received for this transaction. See <see cref="LARGE_INTEGER" />.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>If the RM was not able to successfully roll back a transaction, the RM should request a full rollback by calling the <see cref="RollbackTransaction" /> function.</para>
-    </remarks>
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.RollbackEnlistment">
-    <summary>
-      <para>Rolls back the specified transaction that is associated with an enlistment. This function cannot be called for read-only enlistments.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment.</para>
-    </param>
-    <param name="TmVirtualClock">
-      <para>The latest virtual clock value received for this enlistment. See <see cref="LARGE_INTEGER" />.</para>
-    </param>
+    <summary>Rolls back the specified transaction that is associated with an enlistment. This function cannot be called for read-only enlistments.</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment.</param>
+    <param name="TmVirtualClock">The latest virtual clock value received for this enlistment. See <see cref="LARGE_INTEGER" />.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>This function is used by an RM to roll back a transaction in which it is enlisted. All work associated with the transaction is rolled back.</para>
-      <para>Rollbacks are allowed by enlistments at any time before it issues a prepare complete notification.</para>
-    </remarks>
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="ReadOnlyEnlistment" />
   </member>
   <member name="Windows.RollbackTransaction">
     <summary>
-      <para>Requests that the specified transaction be rolled back.  This function is synchronous.</para>
+      <code> Requests that the specified transaction be rolled back. This function is synchronous.</code>
     </summary>
-    <param name="TransactionHandle">
-      <para>A handle to the transaction.</para>
-    </param>
+    <param name="TransactionHandle">A handle to the transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is zero. To get extended error information, call the <see cref="GetLastError" /> function. The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="CommitTransaction" />
-    <seealso cref="CreateTransaction" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="OpenTransaction" />
   </member>
   <member name="Windows.RollbackTransactionAsync">
-    <summary>
-      <para>Requests that the specified transaction be rolled back.  This function returns asynchronously.</para>
-    </summary>
-    <param name="TransactionHandle">
-      <para>A handle to the transaction.</para>
-    </param>
+    <summary>Requests that the specified transaction be rolled back. This function returns asynchronously.</summary>
+    <param name="TransactionHandle">A handle to the transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero, and <see cref="GetLastError" /> returns ERROR_IO_PENDING.</para>
       <para>If the function fails, the return value is zero. To get extended error information, call the <see cref="GetLastError" /> function. The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="CommitTransaction" />
-    <seealso cref="CreateTransaction" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
-    <seealso cref="OpenTransaction" />
   </member>
   <member name="Windows.RollforwardTransactionManager">
-    <summary>
-      <para>Recovers information only to the specified virtual clock value.</para>
-    </summary>
-    <param name="TransactionManagerHandle">
-      <para>A handle to the transaction manager.</para>
-    </param>
-    <param name="TmVirtualClock">
-      <para>A pointer to the latest virtual clock value received for this transaction.</para>
-    </param>
+    <summary>Recovers information only to the specified virtual clock value.</summary>
+    <param name="TransactionManagerHandle">A handle to the transaction manager.</param>
+    <param name="TmVirtualClock">A pointer to the latest virtual clock value received for this transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is 0 (zero). To get extended error information, call the
-<see cref="GetLastError" /> function.</para>
+      <para>If the function fails, the return value is 0 (zero). To get extended error information, call the<see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.SetEnlistmentRecoveryInformation">
-    <summary>
-      <para>Sets an opaque, user-defined structure of recovery data from KTM.  Recovery information is stored in a log on behalf of a resource manager (RM) by calling <b>SetEnlistmentRecoveryInformation</b>.  After a failure, the RM can use <see cref="GetEnlistmentRecoveryInformation" /> to retrieve the information.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment.</para>
-    </param>
-    <param name="BufferSize">
-      <para>The size of <i>Buffer</i>, in bytes.</para>
-    </param>
-    <param name="Buffer">
-      <para>The recovery information.</para>
-    </param>
+    <summary>Sets an opaque, user-defined structure of recovery data from KTM. Recovery information is stored in a log on behalf of a resource manager (RM) by calling <b>SetEnlistmentRecoveryInformation</b>. After a failure, the RM can use <see cref="GetEnlistmentRecoveryInformation" /> to retrieve the information.</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment.</param>
+    <param name="BufferSize">The size of <i>Buffer</i>, in bytes.</param>
+    <param name="Buffer">The recovery information.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>This call cannot be used with volatile transaction managers.</para>
-      <para>The information that is provided by the user may not be durably stored in the log at the completion of this operation, but it will be durably stored by the end of the next commit operation for this enlistment.</para>
-    </remarks>
-    <seealso cref="GetEnlistmentRecoveryInformation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.SetResourceManagerCompletionPort">
-    <summary>
-      <para>Associates the specified I/O completion port with the specified resource manager (RM). This port receives all notifications for the RM.</para>
-    </summary>
-    <param name="ResourceManagerHandle">
-      <para>A handle to the resource manager.</para>
-    </param>
-    <param name="IoCompletionPortHandle">
-      <para>A handle to the I/O completion port.</para>
-    </param>
-    <param name="CompletionKey">
-      <para>The user-defined identifier. Typically, it is used to associate the receive notification with a specific resource manager.</para>
-    </param>
+    <summary>Associates the specified I/O completion port with the specified resource manager (RM). This port receives all notifications for the RM.</summary>
+    <param name="ResourceManagerHandle">A handle to the resource manager.</param>
+    <param name="IoCompletionPortHandle">A handle to the I/O completion port.</param>
+    <param name="CompletionKey">The user-defined identifier. Typically, it is used to associate the receive notification with a specific resource manager.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <remarks>
-      <para>This function must be used in conjunction with the <see cref="GetNotificationResourceManagerAsync" /> function, which provides the buffers that KTM uses to deliver notifications asynchronously. These functions provide a different way to receive notifications from KTM. You can use these two functions instead of the <see cref="GetNotificationResourceManager" /> function.</para>
-      <para>This function must be called before calling <see cref="GetNotificationResourceManagerAsync" />.</para>
-    </remarks>
-    <seealso cref="GetNotificationResourceManager" />
-    <seealso cref="GetNotificationResourceManagerAsync" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.SetTransactionInformation">
-    <summary>
-      <para>Sets the transaction information for the specified transaction.</para>
-    </summary>
-    <param name="TransactionHandle">
-      <para>A handle to the transaction. The handle must have the TRANSACTION_SET_INFORMATION permission to set the transaction information.</para>
-    </param>
-    <param name="IsolationLevel">
-      <para>Reserved; specify zero.</para>
-    </param>
-    <param name="IsolationFlags">
-      <para>Reserved.</para>
-    </param>
-    <param name="Timeout">
-      <para>The timeout value, in milliseconds, for this transaction.</para>
-    </param>
-    <param name="Description">
-      <para>The user-defined description of this transaction.</para>
-    </param>
+    <summary>Sets the transaction information for the specified transaction.</summary>
+    <param name="TransactionHandle">A handle to the transaction. The handle must have the TRANSACTION_SET_INFORMATION permission to set the transaction information.</param>
+    <param name="IsolationLevel">Reserved; specify zero.</param>
+    <param name="IsolationFlags">Reserved.</param>
+    <param name="Timeout">The timeout value, in milliseconds, for this transaction.</param>
+    <param name="Description">The user-defined description of this transaction.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
       <para>If the function fails, the return value is 0 (zero). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="CreateTransaction" />
-    <seealso cref="GetTransactionInformation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
   <member name="Windows.SinglePhaseReject">
-    <summary>
-      <para>Indicates that the resource manager (RM) is refusing a single-phase request. When a transaction manager (TM) receives this call, it initiates a two-phase commit and sends a prepare request to all enlisted RMs.</para>
-    </summary>
-    <param name="EnlistmentHandle">
-      <para>A handle to the enlistment.</para>
-    </param>
+    <summary>Indicates that the resource manager (RM) is refusing a single-phase request. When a transaction manager (TM) receives this call, it initiates a two-phase commit and sends a prepare request to all enlisted RMs.</summary>
+    <param name="EnlistmentHandle">A handle to the enlistment.</param>
     <param name="TmVirtualClock">
       <para>The latest virtual clock value received from the single-phase request notification. If you specify <b>NULL</b>, the virtual clock value is not changed. See <see cref="LARGE_INTEGER" />.</para>
       <para>To change the virtual clock value, this value must be greater than the current value returned in the COMMIT notification.</para>
@@ -1072,7 +534,5 @@ handles. A new <b>GUID</b> for the TM is selected and can be retrieved using the
       <para>If the function fails, the return value is zero (0). To get extended error information, call the <see cref="GetLastError" /> function.</para>
       <para>The following list identifies the possible error codes:</para>
     </returns>
-    <seealso cref="GetCurrentClockTransactionManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Ktm/kernel-transaction-manager-functions">Kernel Transaction Manager Functions</seealso>
   </member>
 </doc>

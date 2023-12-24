@@ -3,10 +3,15 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='BULK_SECURITY_TEST_DATA.xml' path='doc/member[@name="BULK_SECURITY_TEST_DATA"]/*' />
-public unsafe partial struct BULK_SECURITY_TEST_DATA
+public partial struct BULK_SECURITY_TEST_DATA
 {
     /// <include file='BULK_SECURITY_TEST_DATA.xml' path='doc/member[@name="BULK_SECURITY_TEST_DATA.DesiredAccess"]/*' />
     [NativeTypeName("ACCESS_MASK")]
@@ -14,5 +19,25 @@ public unsafe partial struct BULK_SECURITY_TEST_DATA
 
     /// <include file='BULK_SECURITY_TEST_DATA.xml' path='doc/member[@name="BULK_SECURITY_TEST_DATA.SecurityIds"]/*' />
     [NativeTypeName("DWORD[1]")]
-    public fixed uint SecurityIds[1];
+    public _SecurityIds_e__FixedBuffer SecurityIds;
+
+    /// <include file='_SecurityIds_e__FixedBuffer.xml' path='doc/member[@name="_SecurityIds_e__FixedBuffer"]/*' />
+    public partial struct _SecurityIds_e__FixedBuffer
+    {
+        public uint e0;
+
+        [UnscopedRef]
+        public ref uint this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<uint> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

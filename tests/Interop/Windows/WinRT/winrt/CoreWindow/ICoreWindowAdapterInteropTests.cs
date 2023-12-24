@@ -19,32 +19,4 @@ public static unsafe partial class ICoreWindowAdapterInteropTests
     {
         Assert.That(typeof(ICoreWindowAdapterInterop).GUID, Is.EqualTo(IID_ICoreWindowAdapterInterop));
     }
-
-    /// <summary>Validates that the <see cref="ICoreWindowAdapterInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICoreWindowAdapterInterop>(), Is.EqualTo(sizeof(ICoreWindowAdapterInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="ICoreWindowAdapterInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICoreWindowAdapterInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICoreWindowAdapterInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICoreWindowAdapterInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICoreWindowAdapterInterop), Is.EqualTo(4));
-        }
-    }
 }

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CoordinateSpace">
+    <summary>The <b>CoordinateSpace</b> enumeration specifies coordinate spaces. This enumeration is used by the<see cref="Graphics.TransformPoints" /> method, which converts points from one coordinate space to another. For more information about coordinate spaces, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-types-of-coordinate-systems-about">Types of Coordinate Systems</a>.</summary>
+  </member>
+  <member name="CoordinateSpace.CoordinateSpaceWorld">
+    <summary>Specifies the world coordinate space.</summary>
+  </member>
+  <member name="CoordinateSpace.CoordinateSpacePage">
+    <summary>Specifies the page coordinate space.</summary>
+  </member>
+  <member name="CoordinateSpace.CoordinateSpaceDevice">
+    <summary>Specifies the device coordinate space.</summary>
+  </member>
+</doc>

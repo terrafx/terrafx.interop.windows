@@ -73,4 +73,7 @@ public enum CV_CFL_LANG
 
     /// <include file='CV_CFL_LANG.xml' path='doc/member[@name="CV_CFL_LANG.CV_CFL_RUST"]/*' />
     CV_CFL_RUST = 0x15,
+
+    /// <include file='CV_CFL_LANG.xml' path='doc/member[@name="CV_CFL_LANG.CV_CFL_GO"]/*' />
+    CV_CFL_GO = 0x16,
 }

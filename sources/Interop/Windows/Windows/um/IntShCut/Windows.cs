@@ -15,7 +15,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TranslateURLW"]/*' />
     [DllImport("url", ExactSpelling = true)]
-    public static extern HRESULT TranslateURLW([NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("__unaligned PWSTR *")] ushort** ppszTranslatedURL);
+    public static extern HRESULT TranslateURLW([NativeTypeName("PCWSTR")] char* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PWSTR *")] char** ppszTranslatedURL);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLAssociationDialogA"]/*' />
     [DllImport("url", ExactSpelling = true)]
@@ -23,7 +23,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.URLAssociationDialogW"]/*' />
     [DllImport("url", ExactSpelling = true)]
-    public static extern HRESULT URLAssociationDialogW(HWND hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] ushort* pcszFile, [NativeTypeName("PCWSTR")] ushort* pcszURL, [NativeTypeName("PWSTR")] ushort* pszAppBuf, uint ucAppBufLen);
+    public static extern HRESULT URLAssociationDialogW(HWND hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] char* pcszFile, [NativeTypeName("PCWSTR")] char* pcszURL, [NativeTypeName("PWSTR")] char* pszAppBuf, uint ucAppBufLen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MIMEAssociationDialogA"]/*' />
     [DllImport("url", ExactSpelling = true)]
@@ -31,18 +31,18 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MIMEAssociationDialogW"]/*' />
     [DllImport("url", ExactSpelling = true)]
-    public static extern HRESULT MIMEAssociationDialogW(HWND hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] ushort* pcszFile, [NativeTypeName("PCWSTR")] ushort* pcszMIMEContentType, [NativeTypeName("PWSTR")] ushort* pszAppBuf, uint ucAppBufLen);
+    public static extern HRESULT MIMEAssociationDialogW(HWND hwndParent, [NativeTypeName("DWORD")] uint dwInFlags, [NativeTypeName("PCWSTR")] char* pcszFile, [NativeTypeName("PCWSTR")] char* pcszMIMEContentType, [NativeTypeName("PWSTR")] char* pszAppBuf, uint ucAppBufLen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.InetIsOffline"]/*' />
     [DllImport("url", ExactSpelling = true)]
     public static extern BOOL InetIsOffline([NativeTypeName("DWORD")] uint dwFlags);
 
     [NativeTypeName("#define TranslateURL TranslateURLW")]
-    public static delegate*<ushort*, uint, ushort**, HRESULT> TranslateURL => &TranslateURLW;
+    public static delegate*<char*, uint, char**, HRESULT> TranslateURL => &TranslateURLW;
 
     [NativeTypeName("#define URLAssociationDialog URLAssociationDialogW")]
-    public static delegate*<HWND, uint, ushort*, ushort*, ushort*, uint, HRESULT> URLAssociationDialog => &URLAssociationDialogW;
+    public static delegate*<HWND, uint, char*, char*, char*, uint, HRESULT> URLAssociationDialog => &URLAssociationDialogW;
 
     [NativeTypeName("#define MIMEAssociationDialog MIMEAssociationDialogW")]
-    public static delegate*<HWND, uint, ushort*, ushort*, ushort*, uint, HRESULT> MIMEAssociationDialog => &MIMEAssociationDialogW;
+    public static delegate*<HWND, uint, char*, char*, char*, uint, HRESULT> MIMEAssociationDialog => &MIMEAssociationDialogW;
 }

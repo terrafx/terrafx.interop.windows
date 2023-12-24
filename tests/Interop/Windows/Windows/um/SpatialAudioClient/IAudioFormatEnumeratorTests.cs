@@ -19,32 +19,4 @@ public static unsafe partial class IAudioFormatEnumeratorTests
     {
         Assert.That(typeof(IAudioFormatEnumerator).GUID, Is.EqualTo(IID_IAudioFormatEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IAudioFormatEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioFormatEnumerator>(), Is.EqualTo(sizeof(IAudioFormatEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioFormatEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioFormatEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioFormatEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioFormatEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioFormatEnumerator), Is.EqualTo(4));
-        }
-    }
 }

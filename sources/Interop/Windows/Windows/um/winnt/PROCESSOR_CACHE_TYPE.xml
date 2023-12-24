@@ -3,31 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESSOR_CACHE_TYPE">
-    <summary>
-      <para>Represents the type of processor cache identified in the corresponding <see cref="CACHE_DESCRIPTOR" /> structure.</para>
-    </summary>
-    <seealso cref="CACHE_DESCRIPTOR" />
-    <seealso cref="GetLogicalProcessorInformation" />
-    <seealso cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION" />
+    <summary>Represents the type of processor cache identified in the corresponding <see cref="CACHE_DESCRIPTOR" /> structure.</summary>
   </member>
   <member name="PROCESSOR_CACHE_TYPE.CacheUnified">
-    <summary>
-      <para>The cache is unified.</para>
-    </summary>
+    <summary>The cache is unified.</summary>
   </member>
   <member name="PROCESSOR_CACHE_TYPE.CacheInstruction">
-    <summary>
-      <para>The cache is for processor instructions.</para>
-    </summary>
+    <summary>The cache is for processor instructions.</summary>
   </member>
   <member name="PROCESSOR_CACHE_TYPE.CacheData">
-    <summary>
-      <para>The cache is for data.</para>
-    </summary>
+    <summary>The cache is for data.</summary>
   </member>
   <member name="PROCESSOR_CACHE_TYPE.CacheTrace">
-    <summary>
-      <para>The cache is for traces.</para>
-    </summary>
+    <summary>The cache is for traces.</summary>
   </member>
 </doc>

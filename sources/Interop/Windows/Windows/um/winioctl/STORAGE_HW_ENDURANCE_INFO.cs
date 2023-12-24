@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO"]/*' />
-public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
+public partial struct STORAGE_HW_ENDURANCE_INFO
 {
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.ValidFields"]/*' />
     [NativeTypeName("DWORD")]
@@ -19,7 +19,7 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
     public uint GroupId;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.Flags"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2959:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L2959_C5")]
     public _Flags_e__Struct Flags;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.LifePercentage"]/*' />
@@ -28,11 +28,11 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.BytesReadCount"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte BytesReadCount[16];
+    public _BytesReadCount_e__FixedBuffer BytesReadCount;
 
     /// <include file='STORAGE_HW_ENDURANCE_INFO.xml' path='doc/member[@name="STORAGE_HW_ENDURANCE_INFO.ByteWriteCount"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte ByteWriteCount[16];
+    public _ByteWriteCount_e__FixedBuffer ByteWriteCount;
 
     /// <include file='_Flags_e__Struct.xml' path='doc/member[@name="_Flags_e__Struct"]/*' />
     public partial struct _Flags_e__Struct
@@ -44,7 +44,7 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
         public uint Shared
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x1u;
             }
@@ -61,7 +61,7 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 1) & 0x7FFFFFFFu;
             }
@@ -72,5 +72,19 @@ public unsafe partial struct STORAGE_HW_ENDURANCE_INFO
                 _bitfield = (_bitfield & ~(0x7FFFFFFFu << 1)) | ((value & 0x7FFFFFFFu) << 1);
             }
         }
+    }
+
+    /// <include file='_BytesReadCount_e__FixedBuffer.xml' path='doc/member[@name="_BytesReadCount_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _BytesReadCount_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_ByteWriteCount_e__FixedBuffer.xml' path='doc/member[@name="_ByteWriteCount_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ByteWriteCount_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

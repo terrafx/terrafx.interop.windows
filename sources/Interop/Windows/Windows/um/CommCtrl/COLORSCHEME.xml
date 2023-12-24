@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COLORSCHEME">
-    <summary>
-      <para>Contains information for the drawing of buttons in a toolbar or rebar.</para>
-    </summary>
+    <summary>Contains information for the drawing of buttons in a toolbar or rebar.</summary>
   </member>
   <member name="COLORSCHEME.dwSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="COLORSCHEME.clrBtnHighlight">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value that represents the highlight color of the buttons. Use
-<b>CLR_DEFAULT</b> for the default highlight color.</para>
-    </summary>
+    <summary>The <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value that represents the highlight color of the buttons. Use<b>CLR_DEFAULT</b> for the default highlight color.</summary>
   </member>
   <member name="COLORSCHEME.clrBtnShadow">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value that represents the shadow color of the buttons. Use
-<b>CLR_DEFAULT</b> for the default shadow color.</para>
-    </summary>
+    <summary>The <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value that represents the shadow color of the buttons. Use<b>CLR_DEFAULT</b> for the default shadow color.</summary>
   </member>
 </doc>

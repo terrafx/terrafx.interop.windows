@@ -21,32 +21,4 @@ public static unsafe partial class IMFNetResourceFilterTests
     {
         Assert.That(typeof(IMFNetResourceFilter).GUID, Is.EqualTo(IID_IMFNetResourceFilter));
     }
-
-    /// <summary>Validates that the <see cref="IMFNetResourceFilter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFNetResourceFilter>(), Is.EqualTo(sizeof(IMFNetResourceFilter)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetResourceFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFNetResourceFilter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetResourceFilter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFNetResourceFilter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFNetResourceFilter), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMP12MuxSysAudioLockTests
     {
         Assert.That(typeof(CODECAPI_AVEncMP12MuxSysAudioLock).GUID, Is.EqualTo(IID_CODECAPI_AVEncMP12MuxSysAudioLock));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMP12MuxSysAudioLock" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMP12MuxSysAudioLock>(), Is.EqualTo(sizeof(CODECAPI_AVEncMP12MuxSysAudioLock)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMP12MuxSysAudioLock" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMP12MuxSysAudioLock).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMP12MuxSysAudioLock" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMP12MuxSysAudioLock), Is.EqualTo(1));
-    }
 }

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12VideoProcessor.GetInputStreamDescs">
+    <summary>Gets the input stream descriptions provided when the video processor was created with a call to <see cref="ID3D12VideoDevice.CreateVideoProcessor" />.</summary>
+    <param name="NumInputStreamDescs">The size of the array pointed to by <i>pInputStreamDescs</i>. Get the number of input stream descriptions associated with the video processor by calling <see cref="ID3DVideoProcessor.GetNumInputStreamDescs" />.</param>
+    <param name="pInputStreamDescs">An array of <see cref="D3D12_VIDEO_PROCESS_INPUT_STREAM_DESC" /> structures that is populated with the input stream descriptions associated with the video processor.</param>
+    <returns>This method returns HRESULT.</returns>
+  </member>
+  <member name="ID3D12VideoProcessor.GetNodeMask">
+    <summary>The node mask specifying the physical adapter on which the video processor will be used.</summary>
+    <returns>This method returns a UINT.</returns>
+  </member>
+  <member name="ID3D12VideoProcessor.GetNumInputStreamDescs">
+    <summary>Gets the number of input stream descriptions provided when the video processor was created with a call to <see cref="ID3D12VideoDevice.CreateVideoProcessor" />.</summary>
+    <returns>This method returns UINT. Use this value to determine the correct size of the array you pass in the <i>pInputStreamDescs</i> parameter to <see cref="ID3D12VideoProcessor.GetInputStreamDescs" />.</returns>
+  </member>
+  <member name="ID3D12VideoProcessor.GetOutputStreamDesc">
+    <summary>Gets the output stream description provided when the video processor was created with a call to <see cref="ID3D12VideoDevice.CreateVideoProcessor" />.</summary>
+    <returns>This method returns <see cref="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC" />.</returns>
+  </member>
+  <member name="ID3D12VideoProcessor">
+    <summary>Provides methods for getting information about the parameters to the call to <see cref="ID3D12VideoDevice.CreateVideoProcessor" /> that created the video processor.</summary>
+  </member>
+</doc>

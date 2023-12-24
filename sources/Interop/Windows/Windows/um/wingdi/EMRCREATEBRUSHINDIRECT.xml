@@ -3,24 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRCREATEBRUSHINDIRECT">
-    <summary>
-      <para>The <b>EMRCREATEBRUSHINDIRECT</b> structure contains members for the <see cref="CreateBrushIndirect" /> enhanced metafile record.</para>
-    </summary>
-    <seealso cref="CreateBrushIndirect" />
-    <seealso cref="LOGBRUSH" />
-    <seealso cref="LOGBRUSH32" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRCREATEBRUSHINDIRECT</b> structure contains members for the <see cref="CreateBrushIndirect" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRCREATEBRUSHINDIRECT.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRCREATEBRUSHINDIRECT.ihBrush">
-    <summary>
-      <para>Index of brush in handle table.</para>
-    </summary>
+    <summary>Index of brush in handle table.</summary>
   </member>
   <member name="EMRCREATEBRUSHINDIRECT.lb">
     <summary>

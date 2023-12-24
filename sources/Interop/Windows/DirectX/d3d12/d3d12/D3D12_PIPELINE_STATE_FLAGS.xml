@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_PIPELINE_STATE_FLAGS">
+    <summary>Flags to control pipeline state.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_FLAGS.D3D12_PIPELINE_STATE_FLAG_NONE">
+    <summary>Indicates no flags.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_FLAGS.D3D12_PIPELINE_STATE_FLAG_TOOL_DEBUG">
+    <summary>Indicates that the pipeline state should be compiled with additional information to assist debugging. This can only be set on WARP devices.</summary>
+  </member>
+</doc>

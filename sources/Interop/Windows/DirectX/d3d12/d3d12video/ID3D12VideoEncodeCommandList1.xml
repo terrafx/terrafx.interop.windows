@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12VideoEncodeCommandList1.ExecuteExtensionCommand">
+    <summary>Records a command to execute a video extension command into an encode command list.</summary>
+    <param name="pExtensionCommand">Pointer to an <see cref="ID3D12VideoExtensionCommand" /> representing the video extension command to execute. The caller is responsible for maintaining object lifetime until command execution is complete.</param>
+    <param name="pExecutionParameters">A pointer to the execution parameters structure, which is defined by the command. The parameters structure must match the parameters enumerated by a call to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> with the feature value of <see cref="D3D12_FEATURE_VIDEO_EXTENSION_COMMAND_PARAMETERS" /> and a parameter stage value of <see cref="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_EXECUTION" />.</param>
+    <param name="ExecutionParametersSizeInBytes">The size of the <i>pExecutionParameters</i> parameter structure, in bytes.</param>
+  </member>
+  <member name="ID3D12VideoEncodeCommandList1.InitializeExtensionCommand">
+    <summary>Records a command to initializes or re-initializes a video extension command into a video encode command list.</summary>
+    <param name="pExtensionCommand">Pointer to an <see cref="ID3D12VideoExtensionCommand" /> representing the video extension command to initialize. The caller is responsible for maintaining object lifetime until command execution is complete.</param>
+    <param name="pInitializationParameters">A pointer to the creation parameters structure, which is defined by the command. The parameters structure must match the parameters enumerated by a call to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> with the feature value of <see cref="D3D12_FEATURE_VIDEO_EXTENSION_COMMAND_PARAMETERS" /> and a parameter stage value of <see cref="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_INITIALIZATION" />.</param>
+    <param name="InitializationParametersSizeInBytes">The size of the <i>pInitializationParameters</i> parameter structure, in bytes.</param>
+  </member>
+  <member name="ID3D12VideoEncodeCommandList1">
+    <summary>Encapsulates a list of graphics commands for video decoding. This interface inherits from <see cref="ID3D12VideoEncodeCommandList" /> and adds support for video extension commands.</summary>
+  </member>
+</doc>

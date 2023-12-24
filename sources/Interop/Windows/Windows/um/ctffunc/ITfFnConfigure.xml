@@ -3,35 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnConfigure.Show">
-    <summary>
-      <para>Called when the user opens the Text Services control panel application, selects the text service from the list and presses the Properties pushbutton.</para>
-    </summary>
-    <param name="hwndParent">
-      <para>Handle of the parent window. The text service typically uses this as the parent or owner window when creating a dialog box.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies the identifier of the language selected in the Text Services control panel application.</para>
-    </param>
-    <param name="rguidProfile">
-      <para>Contains a GUID value that specifies the language profile identifier that the text service is under. This is the value specified in <see cref="ITfInputProcessorProfiles.AddLanguageProfile" /> when the profile was added.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method should not return until the user closes the dialog box or property sheet.</para>
-    </remarks>
-    <seealso cref="ITfFnConfigure" />
-    <seealso cref="ITfInputProcessorProfiles.AddLanguageProfile " />
+    <summary>Called when the user opens the Text Services control panel application, selects the text service from the list and presses the Properties pushbutton.</summary>
+    <param name="hwndParent">Handle of the parent window. The text service typically uses this as the parent or owner window when creating a dialog box.</param>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies the identifier of the language selected in the Text Services control panel application.</param>
+    <param name="rguidProfile">Contains a GUID value that specifies the language profile identifier that the text service is under. This is the value specified in <see cref="ITfInputProcessorProfiles.AddLanguageProfile" /> when the profile was added.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfFnConfigure">
     <summary>
       <para>The <b>ITfFnConfigure</b> interface is implemented by a text service to enable the Text Services control panel application to allow the text service to display a configuration dialog box.</para>
       <para>The Text Services control panel application obtains an instance of this interface by calling <see cref="CoCreateInstance" /> with the class identifier passed to <see cref="ITfInputProcessorProfiles.Register" /> and IID_ITfFnConfigure.</para>
     </summary>
-    <seealso cref="CoCreateInstance" />
-    <seealso cref="ITfFunctionProvider.GetFunction " />
-    <seealso cref="ITfInputProcessorProfiles.Register " />
-    <seealso cref="IUnknown" />
   </member>
 </doc>

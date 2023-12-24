@@ -3,80 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TS_STATUS">
-    <summary>
-      <para>The <b>TS_STATUS</b> structure contains document status data.</para>
-    </summary>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms629192(v=vs.85)">TF_STATUS</a> structure contains document status data.</para>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms629192(v=vs.85)">TF_STATUS</a> is an alias for <b>TS_STATUS</b>.</para>
-      <para>
-        <b>dwDynamicFlags</b> contains a set of flags that can be changed by an app at run time. For example, an app can enable a check box for the user to reset the status of documentation. This member can contain zero, or one or more of the following values.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
-        </listheader>
-        <item>
-          <description>TF_SD_LOADING</description>
-          <description>The document is loading.</description>
-        </item>
-        <item>
-          <description>TF_SD_READONLY</description>
-          <description>The document is read-only.</description>
-        </item>
-        <item>
-          <description>TS_SD_UIINTEGRATIONENABLE</description>
-          <description>
-            <b>Starting with Windows 8.1:</b> The text control owning the document sets this flag to indicate its support of Input Method Editor (IME) UI integration. When specified, the IME should attempt to align the candidate window below the text box instead of floating near the cursor.<b>Note</b>  Not all IMEs respond to this flag. IME candidate lists are positioned on the screen with sufficient size to allow basic text input. In some cases, the IME may enforce a reasonable minimum size.  An IME might also choose to adjust the candidate window and keyboard input behavior to provide a better user experience, such as using a horizontal candidate list and allowing some keys such as up arrow and down arrow to be sent to the app for scenarios such as suggestion list navigation.
-</description>
-        </item>
-        <item>
-          <description>TF_SD_TKBAUTOCORRECTENABLE</description>
-          <description>
-            <b>Starting with Windows 8.1:</b> The document supports autocorrection provided by the touch keyboard. This support can change during the lifetime of the control.</description>
-        </item>
-        <item>
-          <description>TF_SD_TKBPREDICTIONENABLE</description>
-          <description>
-            <b>Starting with Windows 8.1:</b> The document supports text suggestions provided by the touch keyboard. This support can change during the lifetime of the control.</description>
-        </item>
-      </list>
-      <para>
-        <b>dwStaticFlags</b> contains a set of flags that cannot be changed at run time. This member can contain zero, or one or more of the following values.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
-        </listheader>
-        <item>
-          <description>TF_SS_DISJOINTSEL</description>
-          <description>The document supports multiple selections.</description>
-        </item>
-        <item>
-          <description>TF_SS_REGIONS</description>
-          <description>The document can contain multiple regions.</description>
-        </item>
-        <item>
-          <description>TF_SS_TRANSITORY</description>
-          <description>The document is expected to have a short usage cycle.</description>
-        </item>
-        <item>
-          <description>TF_SS_TKBAUTOCORRECTENABLE</description>
-          <description>
-            <b>Starting with Windows 8:</b> The document supports autocorrection provided by the touch keyboard.</description>
-        </item>
-        <item>
-          <description>TF_SS_TKBPREDICTIONENABLE</description>
-          <description>
-            <b>Starting with Windows 8:</b> The document supports text suggestions provided by the touch keyboard.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ITextStoreACP.GetStatus " />
-    <seealso cref="ITextStoreACPSink.OnStatusChange " />
-    <seealso cref="ITextStoreAnchor.GetStatus " />
-    <seealso cref="ITextStoreAnchorSink.OnStatusChange " />
+    <summary>The <b>TS_STATUS</b> structure contains document status data.</summary>
   </member>
   <member name="TS_STATUS.dwDynamicFlags">
     <summary>
@@ -86,14 +13,14 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>TS_SD_LOADING</description>
           <description>The document is loading.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TS_SD_READONLY</description>
           <description>The document is read-only.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -105,32 +32,32 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>TS_SS_DISJOINTSEL</description>
           <description>The document supports multiple selections.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TS_SS_REGIONS</description>
           <description>The document can contain multiple regions.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TS_SS_TRANSITORY</description>
           <description>The document is expected to have a short usage cycle.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TS_SS_NOHIDDENTEXT</description>
           <description>The document will never contain hidden text.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TS_SS_TKBAUTOCORRECTENABLE</description>
           <description>
             <b>Starting with Windows 8:</b> The document supports autocorrection provided by the touch keyboard.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>TS_SS_TKBPREDICTIONENABLE</description>
           <description>
             <b>Starting with Windows 8:</b> The document supports text suggestions provided by the touch keyboard.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>

@@ -3,154 +3,94 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="URL_SCHEME">
-    <summary>
-      <para>Used to specify URL schemes.</para>
-    </summary>
+    <summary>Used to specify URL schemes.</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_INVALID">
-    <summary>
-      <para>An invalid scheme.</para>
-    </summary>
+    <summary>An invalid scheme.</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_UNKNOWN">
-    <summary>
-      <para>An unknown scheme.</para>
-    </summary>
+    <summary>An unknown scheme.</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_FTP">
-    <summary>
-      <para>FTP (ftp:).</para>
-    </summary>
+    <summary>FTP (ftp:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_HTTP">
-    <summary>
-      <para>HTTP (http:).</para>
-    </summary>
+    <summary>HTTP (http:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_GOPHER">
-    <summary>
-      <para>Gopher (gopher:).</para>
-    </summary>
+    <summary>Gopher (gopher:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_MAILTO">
-    <summary>
-      <para>Mail-to (mailto:).</para>
-    </summary>
+    <summary>Mail-to (mailto:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_NEWS">
-    <summary>
-      <para>Usenet news (news:).</para>
-    </summary>
+    <summary>Usenet news (news:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_NNTP">
-    <summary>
-      <para>Usenet news with NNTP (nntp:).</para>
-    </summary>
+    <summary>Usenet news with NNTP (nntp:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_TELNET">
-    <summary>
-      <para>Telnet (telnet:).</para>
-    </summary>
+    <summary>Telnet (telnet:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_WAIS">
-    <summary>
-      <para>Wide Area Information Server (wais:).</para>
-    </summary>
+    <summary>Wide Area Information Server (wais:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_FILE">
-    <summary>
-      <para>File (file:).</para>
-    </summary>
+    <summary>File (file:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_MK">
-    <summary>
-      <para>URL moniker (mk:).</para>
-    </summary>
+    <summary>URL moniker (mk:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_HTTPS">
-    <summary>
-      <para>URL HTTPS (https:).</para>
-    </summary>
+    <summary>URL HTTPS (https:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_SHELL">
-    <summary>
-      <para>Shell (shell:).</para>
-    </summary>
+    <summary>Shell (shell:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_SNEWS">
-    <summary>
-      <para>NNTP news postings with SSL (snews:).</para>
-    </summary>
+    <summary>NNTP news postings with SSL (snews:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_LOCAL">
-    <summary>
-      <para>Local (local:).</para>
-    </summary>
+    <summary>Local (local:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_JAVASCRIPT">
-    <summary>
-      <para>JavaScript (javascript:).</para>
-    </summary>
+    <summary>JavaScript (javascript:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_VBSCRIPT">
-    <summary>
-      <para>VBScript (vbscript:).</para>
-    </summary>
+    <summary>VBScript (vbscript:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_ABOUT">
-    <summary>
-      <para>About (about:).</para>
-    </summary>
+    <summary>About (about:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_RES">
-    <summary>
-      <para>Res (res:).</para>
-    </summary>
+    <summary>Res (res:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_MSSHELLROOTED">
-    <summary>
-      <para>Internet Explorer 6 and later only. Shell-rooted (ms-shell-rooted:)</para>
-    </summary>
+    <summary>Internet Explorer 6 and later only. Shell-rooted (ms-shell-rooted:)</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_MSSHELLIDLIST">
-    <summary>
-      <para>Internet Explorer 6 and later only. Shell ID-list (ms-shell-idlist:).</para>
-    </summary>
+    <summary>Internet Explorer 6 and later only. Shell ID-list (ms-shell-idlist:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_MSHELP">
-    <summary>
-      <para>Internet Explorer 6 and later only. MSHelp (hcp:).</para>
-    </summary>
+    <summary>Internet Explorer 6 and later only. MSHelp (hcp:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_MSSHELLDEVICE">
-    <summary>
-      <para>Not supported.</para>
-    </summary>
+    <summary>Not supported.</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_WILDCARD">
-    <summary>
-      <para>Internet Explorer 7 and later only. Wildcard (*:).</para>
-    </summary>
+    <summary>Internet Explorer 7 and later only. Wildcard (*:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_SEARCH_MS">
-    <summary>
-      <para>Windows Vista and later only. Search-MS (search-ms:).</para>
-    </summary>
+    <summary>Windows Vista and later only. Search-MS (search-ms:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_SEARCH">
-    <summary>
-      <para>Windows Vista with SP1 and later only. Search (search:).</para>
-    </summary>
+    <summary>Windows Vista with SP1 and later only. Search (search:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_KNOWNFOLDER">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. Known folder (knownfolder:).</para>
-    </summary>
+      <b>Windows 7 and later</b>. Known folder (knownfolder:).</summary>
   </member>
   <member name="URL_SCHEME.URL_SCHEME_MAXVALUE">
-    <summary>
-      <para>The highest legitimate value in the enumeration, used for validation purposes.</para>
-    </summary>
+    <summary>The highest legitimate value in the enumeration, used for validation purposes.</summary>
   </member>
 </doc>

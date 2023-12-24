@@ -3,30 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMUPDOWN">
-    <summary>
-      <para>Contains information specific to up-down control notification messages. It is identical to and replaces the
-<b>NM_UPDOWN</b> structure.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/udn-deltapos">UDN_DELTAPOS</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/wm-notify">WM_NOTIFY</seealso>
+    <summary>Contains information specific to up-down control notification messages. It is identical to and replaces the<b>NM_UPDOWN</b> structure.</summary>
   </member>
   <member name="NMUPDOWN.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="NMUPDOWN.iPos">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Signed integer value that represents the up-down control's current position.</para>
-    </summary>
+    <summary>Signed integer value that represents the up-down control's current position.</summary>
   </member>
   <member name="NMUPDOWN.iDelta">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Signed integer value that represents the proposed change in the up-down control's position.</para>
-    </summary>
+    <summary>Signed integer value that represents the proposed change in the up-down control's position.</summary>
   </member>
 </doc>

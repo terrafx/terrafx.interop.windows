@@ -3,35 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BSMINFO">
-    <summary>
-      <para>Contains information about a window that denied a request from <see cref="BroadcastSystemMessageEx" />.</para>
-    </summary>
-    <seealso cref="BroadcastSystemMessageEx" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/messages-and-message-queues">Messages and Message Queues</seealso>
+    <summary>Contains information about a window that denied a request from <see cref="BroadcastSystemMessageEx" />.</summary>
   </member>
   <member name="BSMINFO.cbSize">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="BSMINFO.hdesk">
-    <summary>
-      <para>Type: <b>HDESK</b></para>
-      <para>A desktop handle to the window specified by
-<b>hwnd</b>. This value is returned only if <see cref="BroadcastSystemMessageEx" /> specifies <b>BSF_RETURNHDESK</b> and <b>BSF_QUERY</b>.</para>
-    </summary>
+    <summary>A desktop handle to the window specified by<b>hwnd</b>. This value is returned only if <see cref="BroadcastSystemMessageEx" /> specifies <b>BSF_RETURNHDESK</b> and <b>BSF_QUERY</b>.</summary>
   </member>
   <member name="BSMINFO.hwnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that denied the request. This value is returned if <see cref="BroadcastSystemMessageEx" /> specifies <b>BSF_QUERY</b>.</para>
-    </summary>
+    <summary>A handle to the window that denied the request. This value is returned if <see cref="BroadcastSystemMessageEx" /> specifies <b>BSF_QUERY</b>.</summary>
   </member>
   <member name="BSMINFO.luid">
-    <summary>
-      <para>Type: <b>LUID</b></para>
-      <para>A locally unique identifier (LUID) for the window.</para>
-    </summary>
+    <summary>A locally unique identifier (LUID) for the window.</summary>
   </member>
 </doc>

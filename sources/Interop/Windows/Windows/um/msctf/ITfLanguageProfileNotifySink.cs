@@ -25,7 +25,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfLanguageProfileNotifySink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, uint>)(lpVtbl[1]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLanguageProfileNotifySink*, uint>)(lpVtbl[1]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, uint>)(lpVtbl[2]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLanguageProfileNotifySink*, uint>)(lpVtbl[2]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfLanguageProfileNotifySink.xml' path='doc/member[@name="ITfLanguageProfileNotifySink.OnLanguageChange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
     [VtblIndex(3)]
     public HRESULT OnLanguageChange([NativeTypeName("LANGID")] ushort langid, BOOL* pfAccept)
     {
-        return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, ushort, BOOL*, int>)(lpVtbl[3]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), langid, pfAccept);
+        return ((delegate* unmanaged[MemberFunction]<ITfLanguageProfileNotifySink*, ushort, BOOL*, int>)(lpVtbl[3]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this), langid, pfAccept);
     }
 
     /// <include file='ITfLanguageProfileNotifySink.xml' path='doc/member[@name="ITfLanguageProfileNotifySink.OnLanguageChanged"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
     [VtblIndex(4)]
     public HRESULT OnLanguageChanged()
     {
-        return ((delegate* unmanaged<ITfLanguageProfileNotifySink*, int>)(lpVtbl[4]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLanguageProfileNotifySink*, int>)(lpVtbl[4]))((ITfLanguageProfileNotifySink*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfLanguageProfileNotifySink : ITfLanguageProfileNo
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, BOOL*, int> OnLanguageChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, BOOL*, int> OnLanguageChange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnLanguageChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnLanguageChanged;
     }
 }

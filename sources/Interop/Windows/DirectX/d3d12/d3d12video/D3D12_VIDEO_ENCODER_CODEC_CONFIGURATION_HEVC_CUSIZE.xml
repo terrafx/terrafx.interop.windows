@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE">
+    <summary>Specifies possible values for luma coding block sizes for HEVC.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE.D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE_8x8">
+    <summary>Luma coding block of pixel size 8.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE.D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE_16x16">
+    <summary>Luma coding block of pixel size 16.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE.D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE_32x32">
+    <summary>Luma coding block of pixel size 32.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE.D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_HEVC_CUSIZE_64x64">
+    <summary>Luma coding block of pixel size 64.</summary>
+  </member>
+</doc>

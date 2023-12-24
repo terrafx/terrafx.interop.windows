@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_HEAP_DESC">
+    <summary>Describes a <see cref="ID3D12VideoEncoderHeap" />. Pass this structure into <see cref="ID3D12VideoDevice3.CreateVideoEncoderHeap" /> to create an instance of <b>ID3D12VideoEncoderHeap</b>.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_HEAP_DESC.NodeMask">
+    <summary>The node mask specifying the physical adapter on which the video processor will be used. For single GPU operation, set this to zero. If there are multiple GPU nodes, set a bit to identify the node, i.e. the device's physical adapter, to which the command queue applies. Each bit in the mask corresponds to a single node. Only 1 bit may be set.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_HEAP_DESC.Flags">
+    <summary>A bitwise or combination of values from the <see cref="D3D12_VIDEO_ENCODER_HEAP_FLAGS" /> enumeration specifying encoder heap creation options.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_HEAP_DESC.EncodeCodec">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_CODEC" /> specifying the codec of the associated encoder object.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_HEAP_DESC.EncodeProfile">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_PROFILE_DESC" /> specifying the profile for the selected codec in the associated encoder object.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_HEAP_DESC.EncodeLevel">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_LEVEL_SETTING" /> specifying the level for the selected codec in the associated encoder object.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_HEAP_DESC.ResolutionsListCount">
+    <summary>The count of resolutions requested to be supported present in the <i>pResolutionList</i> field.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_HEAP_DESC.pResolutionList">
+    <summary>Pointer to an array of <see cref="D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC" /> specifying the list of resolutions requested to be supported.</summary>
+  </member>
+</doc>

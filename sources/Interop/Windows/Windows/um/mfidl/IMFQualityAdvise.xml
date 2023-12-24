@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFQualityAdvise.DropTime">
-    <summary>
-      <para>Drops samples over a specified interval of time.</para>
-    </summary>
-    <param name="hnsAmountToDrop">
-      <para>Amount of time to drop, in 100-nanosecond units. This value is always absolute. If the method is called multiple times, do not add the times from previous calls.</para>
-    </param>
+    <summary>Drops samples over a specified interval of time.</summary>
+    <param name="hnsAmountToDrop">Amount of time to drop, in 100-nanosecond units. This value is always absolute. If the method is called multiple times, do not add the times from previous calls.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,42 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_DROPTIME_NOT_SUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_DROPTIME_NOT_SUPPORTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The object does not support this method.</para>
-          </description>
-        </item>
+          <description>The object does not support this method.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Ideally the quality manager can prevent a renderer from falling behind. But if this does occur, then simply lowering quality does not guarantee the renderer will ever catch up. As a result, audio and video might fall out of sync. To correct this problem, the quality manager can call <b>DropTime</b> to request that the renderer drop samples quickly over a specified time interval. After that period, the renderer stops dropping samples.</para>
-      <para>This method is primarily intended for the video renderer. Dropped audio samples cause audio glitching, which is not desirable.</para>
-      <para>If a component does not support this method, it should return MF_E_DROPTIME_NOT_SUPPORTED.</para>
-    </remarks>
-    <seealso cref="IMFQualityAdvise" />
   </member>
   <member name="IMFQualityAdvise.GetDropMode">
-    <summary>
-      <para>Retrieves the current drop mode.</para>
-    </summary>
-    <param name="peDropMode">
-      <para>Receives the drop mode, specified as a member of the <see cref="MF_QUALITY_DROP_MODE" /> enumeration.</para>
-    </param>
+    <summary>Retrieves the current drop mode.</summary>
+    <param name="peDropMode">Receives the drop mode, specified as a member of the <see cref="MF_QUALITY_DROP_MODE" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -59,27 +49,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFQualityAdvise" />
   </member>
   <member name="IMFQualityAdvise.GetQualityLevel">
-    <summary>
-      <para>Retrieves the current quality level.</para>
-    </summary>
-    <param name="peQualityLevel">
-      <para>Receives the quality level, specified as a member of the <see cref="MF_QUALITY_LEVEL" /> enumeration.</para>
-    </param>
+    <summary>Retrieves the current quality level.</summary>
+    <param name="peQualityLevel">Receives the quality level, specified as a member of the <see cref="MF_QUALITY_LEVEL" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -87,27 +74,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFQualityAdvise" />
   </member>
   <member name="IMFQualityAdvise.SetDropMode">
-    <summary>
-      <para>Sets the drop mode. In drop mode, a component drops samples, more or less aggressively depending on the level of the drop mode.</para>
-    </summary>
-    <param name="eDropMode">
-      <para>Requested drop mode, specified as a member of the <see cref="MF_QUALITY_DROP_MODE" /> enumeration.</para>
-    </param>
+    <summary>Sets the drop mode. In drop mode, a component drops samples, more or less aggressively depending on the level of the drop mode.</summary>
+    <param name="eDropMode">Requested drop mode, specified as a member of the <see cref="MF_QUALITY_DROP_MODE" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -115,40 +99,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_MORE_DROP_MODES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_MORE_DROP_MODES</b>
-            </para>
-          </description>
-          <description>
-            <para>The component does not support the specified mode or any higher modes.</para>
-          </description>
-        </item>
+          <description>The component does not support the specified mode or any higher modes.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If this method is called on a media source, the media source might switch between thinned and non-thinned output. If that occurs, the affected streams will send an <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamthinmode">MEStreamThinMode</a> event to indicate the transition. The operation is asynchronous; after <b>SetDropMode</b> returns, you might receive samples that were queued before the transition. The MEStreamThinMode event marks the exact point in the stream where the transition occurs.</para>
-    </remarks>
-    <seealso cref="IMFQualityAdvise" />
   </member>
   <member name="IMFQualityAdvise.SetQualityLevel">
-    <summary>
-      <para>Sets the quality level. The quality level determines how the component consumes or produces samples.</para>
-    </summary>
-    <param name="eQualityLevel">
-      <para>Requested quality level, specified as a member of the <see cref="MF_QUALITY_LEVEL" /> enumeration.</para>
-    </param>
+    <summary>Sets the quality level. The quality level determines how the component consumes or produces samples.</summary>
+    <param name="eQualityLevel">Requested quality level, specified as a member of the <see cref="MF_QUALITY_LEVEL" /> enumeration.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -156,29 +136,32 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NO_MORE_QUALITY_LEVELS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NO_MORE_QUALITY_LEVELS</b>
-            </para>
-          </description>
-          <description>
-            <para>The component does not support the specified quality level or any levels below it.</para>
-          </description>
-        </item>
+          <description>The component does not support the specified quality level or any levels below it.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFQualityAdvise" />
   </member>
   <member name="IMFQualityAdvise">
     <summary>
@@ -186,10 +169,5 @@
       <para>This interface is exposed by pipeline components that can adjust their quality. Typically it is exposed by decoders and stream sinks. For example, the enhanced video renderer (EVR) implements this interface. However, media sources can also implement this interface.</para>
       <para>To get a pointer to this interface from a media source, call <see cref="IMFGetService.GetService" /> with the service identifier MF_QUALITY_SERVICES. For all other pipeline objects (transforms and media sinks), call <b>QueryInterface</b>.</para>
     </summary>
-    <remarks>
-      <para>The quality manager typically obtains this interface when the quality manager's <see cref="IMFQualityManager.NotifyTopology" /> method is called.</para>
-    </remarks>
-    <seealso cref="IMFQualityManager" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

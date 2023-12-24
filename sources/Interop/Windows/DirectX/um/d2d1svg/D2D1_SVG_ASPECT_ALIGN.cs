@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_ASPECT_ALIGN.xml' path='doc/member[@name="D2D1_SVG_ASPECT_ALIGN"]/*' />
-public enum D2D1_SVG_ASPECT_ALIGN : uint
+public enum D2D1_SVG_ASPECT_ALIGN
 {
     /// <include file='D2D1_SVG_ASPECT_ALIGN.xml' path='doc/member[@name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_NONE"]/*' />
     D2D1_SVG_ASPECT_ALIGN_NONE = 0,
@@ -39,5 +39,5 @@ public enum D2D1_SVG_ASPECT_ALIGN : uint
     D2D1_SVG_ASPECT_ALIGN_X_MAX_Y_MAX = 9,
 
     /// <include file='D2D1_SVG_ASPECT_ALIGN.xml' path='doc/member[@name="D2D1_SVG_ASPECT_ALIGN.D2D1_SVG_ASPECT_ALIGN_FORCE_DWORD"]/*' />
-    D2D1_SVG_ASPECT_ALIGN_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_ASPECT_ALIGN_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

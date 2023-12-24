@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="AsyncStatus">
+    <summary>Represents the status for an asynchronous operation.</summary>
+  </member>
+  <member name="AsyncStatus.Started">
+    <summary>The operation is in progress.</summary>
+  </member>
+  <member name="AsyncStatus.Completed">
+    <summary>The operation has completed without error.</summary>
+  </member>
+  <member name="AsyncStatus.Canceled">
+    <summary>The client has initiated a cancellation of the operation.</summary>
+  </member>
+  <member name="AsyncStatus.Error">
+    <summary>The operation has completed with an error. No results are available.</summary>
+  </member>
+</doc>

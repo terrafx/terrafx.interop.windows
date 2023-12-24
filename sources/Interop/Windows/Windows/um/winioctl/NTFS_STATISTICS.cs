@@ -33,7 +33,7 @@ public partial struct NTFS_STATISTICS
     public uint MftWriteBytes;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.MftWritesUserLevel"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:11944:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L11960_C5")]
     public _MftWritesUserLevel_e__Struct MftWritesUserLevel;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.MftWritesFlushForLogFileFull"]/*' />
@@ -57,7 +57,7 @@ public partial struct NTFS_STATISTICS
     public uint Mft2WriteBytes;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.Mft2WritesUserLevel"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:11957:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L11973_C5")]
     public _Mft2WritesUserLevel_e__Struct Mft2WritesUserLevel;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.Mft2WritesFlushForLogFileFull"]/*' />
@@ -117,7 +117,7 @@ public partial struct NTFS_STATISTICS
     public ushort BitmapWritesUserRequest;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.BitmapWritesUserLevel"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:11982:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L11998_C5")]
     public _BitmapWritesUserLevel_e__Struct BitmapWritesUserLevel;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.MftBitmapReads"]/*' />
@@ -149,7 +149,7 @@ public partial struct NTFS_STATISTICS
     public ushort MftBitmapWritesUserRequest;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.MftBitmapWritesUserLevel"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:11997:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12013_C5")]
     public _MftBitmapWritesUserLevel_e__Struct MftBitmapWritesUserLevel;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.UserIndexReads"]/*' />
@@ -185,7 +185,7 @@ public partial struct NTFS_STATISTICS
     public uint LogFileWriteBytes;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.Allocate"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:12018:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12034_C5")]
     public _Allocate_e__Struct Allocate;
 
     /// <include file='NTFS_STATISTICS.xml' path='doc/member[@name="NTFS_STATISTICS.DiskResourcesExhausted"]/*' />

@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RECTL">
-    <summary>
-      <para>The RECTL structure defines a rectangle by the coordinates of its upper-left and lower-right corners.</para>
-    </summary>
-    <remarks>
-      <para>The RECTL structure is identical to the <see cref="RECT" /> structure.</para>
-    </remarks>
-    <seealso cref="RECT" />
+    <summary>The RECTL structure defines a rectangle by the coordinates of its upper-left and lower-right corners.</summary>
   </member>
   <member name="RECTL.left">
-    <summary>
-      <para>Specifies the <i>x</i>-coordinate of the upper-left corner of the rectangle.</para>
-    </summary>
+    <summary>Specifies the <i>x</i>-coordinate of the upper-left corner of the rectangle.</summary>
   </member>
   <member name="RECTL.top">
-    <summary>
-      <para>Specifies the <i>y</i>-coordinate of the upper-left corner of the rectangle.</para>
-    </summary>
+    <summary>Specifies the <i>y</i>-coordinate of the upper-left corner of the rectangle.</summary>
   </member>
   <member name="RECTL.right">
-    <summary>
-      <para>Specifies the <i>x</i>-coordinate of the lower-right corner of the rectangle.</para>
-    </summary>
+    <summary>Specifies the <i>x</i>-coordinate of the lower-right corner of the rectangle.</summary>
   </member>
   <member name="RECTL.bottom">
-    <summary>
-      <para>Specifies the <i>y</i>-coordinate of the lower-right corner of the rectangle.</para>
-    </summary>
+    <summary>Specifies the <i>y</i>-coordinate of the lower-right corner of the rectangle.</summary>
   </member>
 </doc>

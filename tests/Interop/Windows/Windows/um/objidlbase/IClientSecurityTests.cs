@@ -19,32 +19,4 @@ public static unsafe partial class IClientSecurityTests
     {
         Assert.That(typeof(IClientSecurity).GUID, Is.EqualTo(IID_IClientSecurity));
     }
-
-    /// <summary>Validates that the <see cref="IClientSecurity" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IClientSecurity>(), Is.EqualTo(sizeof(IClientSecurity)));
-    }
-
-    /// <summary>Validates that the <see cref="IClientSecurity" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IClientSecurity).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IClientSecurity" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IClientSecurity), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IClientSecurity), Is.EqualTo(4));
-        }
-    }
 }

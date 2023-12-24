@@ -19,32 +19,4 @@ public static unsafe partial class IAsyncManagerTests
     {
         Assert.That(typeof(IAsyncManager).GUID, Is.EqualTo(IID_IAsyncManager));
     }
-
-    /// <summary>Validates that the <see cref="IAsyncManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAsyncManager>(), Is.EqualTo(sizeof(IAsyncManager)));
-    }
-
-    /// <summary>Validates that the <see cref="IAsyncManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAsyncManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAsyncManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAsyncManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAsyncManager), Is.EqualTo(4));
-        }
-    }
 }

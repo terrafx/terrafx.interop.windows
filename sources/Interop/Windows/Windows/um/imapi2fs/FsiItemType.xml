@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FsiItemType">
-    <summary>
-      <para>Defines values for the file system item that was found using the <see cref="IFileSystemImage.Exists" /> method.</para>
-    </summary>
-    <seealso cref="IFileSystemImage.Exists" />
+    <summary>Defines values for the file system item that was found using the <see cref="IFileSystemImage.Exists" /> method.</summary>
   </member>
   <member name="FsiItemType.FsiItemNotFound">
-    <summary>
-      <para>The specified item was not found.</para>
-    </summary>
+    <summary>The specified item was not found.</summary>
   </member>
   <member name="FsiItemType.FsiItemDirectory">
-    <summary>
-      <para>The specified item is a directory.</para>
-    </summary>
+    <summary>The specified item is a directory.</summary>
   </member>
   <member name="FsiItemType.FsiItemFile">
-    <summary>
-      <para>The specified item is a file.</para>
-    </summary>
+    <summary>The specified item is a file.</summary>
   </member>
 </doc>

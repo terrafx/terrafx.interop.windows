@@ -19,32 +19,4 @@ public static unsafe partial class IObjectArrayTests
     {
         Assert.That(typeof(IObjectArray).GUID, Is.EqualTo(IID_IObjectArray));
     }
-
-    /// <summary>Validates that the <see cref="IObjectArray" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IObjectArray>(), Is.EqualTo(sizeof(IObjectArray)));
-    }
-
-    /// <summary>Validates that the <see cref="IObjectArray" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IObjectArray).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IObjectArray" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IObjectArray), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IObjectArray), Is.EqualTo(4));
-        }
-    }
 }

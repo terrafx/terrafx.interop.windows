@@ -3,57 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXCEPINFO">
-    <summary>
-      <para>Describes an exception that occurred during <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a>.</para>
-    </summary>
-    <remarks>
-      <para>Use the <b>pfnDeferredFillIn</b> field to enable an object to defer filling in the <b>bstrDescription</b>, <b>bstrHelpFile</b>, and <b>dwHelpContext</b> fields until they are needed. This field might be used, for example, if loading the string for the error is a time-consuming operation. To use deferred fill-in, the object puts a function pointer in this slot and does not fill any of the other fields except <b>wCode</b>, which is required.</para>
-      <para>To get additional information, the caller passes the <b>EXCEPINFO</b> structure back to the <b>pexcepinfo</b> callback function, which fills in the additional information. When the ActiveX object and the ActiveX client are in different processes, the ActiveX object calls <b>pfnDeferredFillIn</b> before returning to the controller.</para>
-    </remarks>
+    <summary>Describes an exception that occurred during <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a>.</summary>
   </member>
   <member name="EXCEPINFO.wCode">
-    <summary>
-      <para>The error code. Error codes should be greater than 1000. Either this field or the scode field must be filled in; the other must be set to 0.</para>
-    </summary>
+    <summary>The error code. Error codes should be greater than 1000. Either this field or the scode field must be filled in; the other must be set to 0.</summary>
   </member>
   <member name="EXCEPINFO.wReserved">
-    <summary>
-      <para>Reserved. Should be 0.</para>
-    </summary>
+    <summary>Reserved. Should be 0.</summary>
   </member>
   <member name="EXCEPINFO.bstrSource">
-    <summary>
-      <para>The name of the exception source. Typically, this is an application name. This field should be filled in by the implementer of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>.</para>
-    </summary>
+    <summary>The name of the exception source. Typically, this is an application name. This field should be filled in by the implementer of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>.</summary>
   </member>
   <member name="EXCEPINFO.bstrDescription">
-    <summary>
-      <para>The exception description to display. If no description is available, use null.</para>
-    </summary>
+    <summary>The exception description to display. If no description is available, use null.</summary>
   </member>
   <member name="EXCEPINFO.bstrHelpFile">
-    <summary>
-      <para>The fully qualified help file path. If no Help is available, use null.</para>
-    </summary>
+    <summary>The fully qualified help file path. If no Help is available, use null.</summary>
   </member>
   <member name="EXCEPINFO.dwHelpContext">
-    <summary>
-      <para>The help context ID.</para>
-    </summary>
+    <summary>The help context ID.</summary>
   </member>
   <member name="EXCEPINFO.pvReserved">
-    <summary>
-      <para>Reserved. Must be null.</para>
-    </summary>
+    <summary>Reserved. Must be null.</summary>
   </member>
   <member name="EXCEPINFO.pfnDeferredFillIn">
-    <summary>
-      <para>Provides deferred fill-in. If deferred fill-in is not desired, this field should be set to null.</para>
-    </summary>
+    <summary>Provides deferred fill-in. If deferred fill-in is not desired, this field should be set to null.</summary>
   </member>
   <member name="EXCEPINFO.scode">
-    <summary>
-      <para>A return value that describes the error. Either this field or wCode (but not both) must be filled in; the other must be set to 0. (16-bit Windows versions only.)</para>
-    </summary>
+    <summary>A return value that describes the error. Either this field or wCode (but not both) must be filled in; the other must be set to 0. (16-bit Windows versions only.)</summary>
   </member>
 </doc>

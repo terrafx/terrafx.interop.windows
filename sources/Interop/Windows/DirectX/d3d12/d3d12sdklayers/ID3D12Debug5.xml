@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Debug5.SetEnableAutoName">
+    <summary>Configures the auto-naming of objects.</summary>
+    <param name="Enable">
+      <code>true</code> to enable auto-naming; <code>false</code> to disable auto-naming.</param>
+  </member>
+  <member name="ID3D12Debug5">
+    <summary>Adds to the debug layer the ability to configure the auto-naming of objects.</summary>
+  </member>
+</doc>

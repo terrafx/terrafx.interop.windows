@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_BUFFER_RTV">
+    <summary>Describes the elements in a buffer resource to use in a render-target view.</summary>
+  </member>
+  <member name="D3D12_BUFFER_RTV.FirstElement">
+    <summary>Number of elements between the beginning of the buffer and the first element to access.</summary>
+  </member>
+  <member name="D3D12_BUFFER_RTV.NumElements">
+    <summary>The total number of elements in the view.</summary>
+  </member>
+</doc>

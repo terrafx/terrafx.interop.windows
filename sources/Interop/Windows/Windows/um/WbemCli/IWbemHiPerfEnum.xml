@@ -3,101 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWbemHiPerfEnum.AddObjects">
-    <summary>
-      <para>The <b>IWbemHiPerfEnum.AddObjects</b> method adds the supplied instance objects to the enumerator.</para>
-    </summary>
-    <param name="lFlags">
-      <para>Reserved. This parameter must be 0.</para>
-    </param>
-    <param name="uNumObjects">
-      <para>Number of items in the object and the number of identifiers in the parameter.</para>
-    </param>
-    <param name="apIds">
-      <para>Pointer to an array of integers that contains a unique identifier for each object in the object array.</para>
-    </param>
-    <param name="apObj">
-      <para>Pointer to an array of instance objects to add to the enumerator.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>If an identifier already exists, <b>WBEM_E_FAILED</b> is returned. The refresher identifiers can be used to remove objects later.</para>
-    </remarks>
-    <seealso cref="IWbemHiPerfEnum" />
+    <summary>The <b>IWbemHiPerfEnum.AddObjects</b> method adds the supplied instance objects to the enumerator.</summary>
+    <param name="lFlags">Reserved. This parameter must be 0.</param>
+    <param name="uNumObjects">Number of items in the object and the number of identifiers in the parameter.</param>
+    <param name="apIds">Pointer to an array of integers that contains a unique identifier for each object in the object array.</param>
+    <param name="apObj">Pointer to an array of instance objects to add to the enumerator.</param>
+    <returns>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemHiPerfEnum.GetObjects">
-    <summary>
-      <para>The
-<b>IWbemHiPerfEnum.GetObjects</b> method retrieves objects currently residing in the enumerator.</para>
-    </summary>
-    <param name="lFlags">
-      <para>Integer that contains the flags.</para>
-    </param>
-    <param name="uNumObjects">
-      <para>Size of the array passed to this method in the <i>apObj</i> parameter.</para>
-    </param>
-    <param name="apObj">
-      <para>Pointer that holds the reference to an array of
-<see cref="IWbemObjectAccess" /> objects, which contains the returned objects. The array must be big enough to hold all objects in the enumerator.</para>
-    </param>
-    <param name="puReturned">
-      <para>Pointer to a <b>ULONG</b> used to return the number of objects placed in the array.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <remarks>
-      <para>The array must be large enough to hold all objects, or <i>puReturned</i> is filled with the number of returned objects, and <b>WBEM_E_BUFFER_TOO_SMALL</b> is returned.</para>
-    </remarks>
-    <seealso cref="IWbemHiPerfEnum" />
+    <summary>The<b>IWbemHiPerfEnum.GetObjects</b> method retrieves objects currently residing in the enumerator.</summary>
+    <param name="lFlags">Integer that contains the flags.</param>
+    <param name="uNumObjects">Size of the array passed to this method in the <i>apObj</i> parameter.</param>
+    <param name="apObj">Pointer that holds the reference to an array of<see cref="IWbemObjectAccess" /> objects, which contains the returned objects. The array must be big enough to hold all objects in the enumerator.</param>
+    <param name="puReturned">Pointer to a <b>ULONG</b> used to return the number of objects placed in the array.</param>
+    <returns>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemHiPerfEnum.RemoveAll">
-    <summary>
-      <para>The
-<b>IWbemHiPerfEnum.RemoveAll</b> method empties all objects from the enumerator.</para>
-    </summary>
-    <param name="lFlags">
-      <para>Reserved. This parameter must be 0 (zero).</para>
-    </param>
-    <returns>
-      <para>This method returns <b>WBEM_S_NO_ERROR</b> if successful.</para>
-    </returns>
+    <summary>The<b>IWbemHiPerfEnum.RemoveAll</b> method empties all objects from the enumerator.</summary>
+    <param name="lFlags">Reserved. This parameter must be 0 (zero).</param>
+    <returns>This method returns <b>WBEM_S_NO_ERROR</b> if successful.</returns>
   </member>
   <member name="IWbemHiPerfEnum.RemoveObjects">
-    <summary>
-      <para>The
-<b>IWbemHiPerfEnum.RemoveObjects</b> method removes objects (identified by their refresher identifiers) from a refresher.</para>
-    </summary>
-    <param name="lFlags">
-      <para>Reserved. This parameter must be 0 (zero).</para>
-    </param>
-    <param name="uNumObjects">
-      <para>Number of objects to remove.</para>
-    </param>
-    <param name="apIds">
-      <para>Pointer to an array of integers that contains the refresher identifiers of the objects to remove.</para>
-    </param>
-    <returns>
-      <para>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</para>
-    </returns>
-    <seealso cref="IWbemHiPerfEnum" />
+    <summary>The<b>IWbemHiPerfEnum.RemoveObjects</b> method removes objects (identified by their refresher identifiers) from a refresher.</summary>
+    <param name="lFlags">Reserved. This parameter must be 0 (zero).</param>
+    <param name="uNumObjects">Number of objects to remove.</param>
+    <param name="apIds">Pointer to an array of integers that contains the refresher identifiers of the objects to remove.</param>
+    <returns>This method returns an <b>HRESULT</b> indicating the status of the method call. The following list lists the value contained within an <b>HRESULT</b>.</returns>
   </member>
   <member name="IWbemHiPerfEnum">
     <summary>
-      <para>The
-<b>IWbemHiPerfEnum</b> interface is used in refresher operations to provide rapid access to enumerations of instance objects. WMI provides an implementation of this interface, which it passes to providers when
-<see cref="IWbemHiPerfProvider.CreateRefreshableEnum" /> is called, and it returns to clients when
-<see cref="IWbemConfigureRefresher.AddEnum" /> is called.</para>
-      <para>Client applications can call only the
-<see cref="GetObjects" /> method of this interface. Attempts by client applications to call the other
-<b>IWbemHiPerfEnum</b> methods return WBEM_E_ACCESS_DENIED. Providers call these other methods to update the enumerators whenever a client calls
-<see cref="Refresh" />.
-<b>Note</b>  This interface is not implemented by the user or by a provider under any circumstances. The implementation provided by WMI is the only one supported.</para>
+      <para>The<b>IWbemHiPerfEnum</b> interface is used in refresher operations to provide rapid access to enumerations of instance objects. WMI provides an implementation of this interface, which it passes to providers when<see cref="IWbemHiPerfProvider.CreateRefreshableEnum" /> is called, and it returns to clients when<see cref="IWbemConfigureRefresher.AddEnum" /> is called.</para>
+      <para>Client applications can call only the<see cref="GetObjects" /> method of this interface. Attempts by client applications to call the other<b>IWbemHiPerfEnum</b> methods return WBEM_E_ACCESS_DENIED. Providers call these other methods to update the enumerators whenever a client calls<see cref="Refresh" />.</para>
+      <div>
+        <b>Note</b>  This interface is not implemented by the user or by a provider under any circumstances. The implementation provided by WMI is the only one supported.</div>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-performance-data-in-c--">Accessing Performance Data in C++</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/accessing-wmi-preinstalled-performance-classes">Accessing WMI Preinstalled Performance Classes</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/com-api-for-wmi">COM API for WMI</seealso>
-    <seealso cref="IWbemRefresher" />
   </member>
 </doc>

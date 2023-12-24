@@ -18,7 +18,7 @@ public unsafe partial struct CRYPT_TIMESTAMP_RESPONSE
 
     /// <include file='CRYPT_TIMESTAMP_RESPONSE.xml' path='doc/member[@name="CRYPT_TIMESTAMP_RESPONSE.rgFreeText"]/*' />
     [NativeTypeName("LPWSTR *")]
-    public ushort** rgFreeText;
+    public char** rgFreeText;
 
     /// <include file='CRYPT_TIMESTAMP_RESPONSE.xml' path='doc/member[@name="CRYPT_TIMESTAMP_RESPONSE.FailureInfo"]/*' />
     public CRYPT_BIT_BLOB FailureInfo;

@@ -19,32 +19,4 @@ public static unsafe partial class IAppxBundleManifestPackageInfo3Tests
     {
         Assert.That(typeof(IAppxBundleManifestPackageInfo3).GUID, Is.EqualTo(IID_IAppxBundleManifestPackageInfo3));
     }
-
-    /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfo3" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxBundleManifestPackageInfo3>(), Is.EqualTo(sizeof(IAppxBundleManifestPackageInfo3)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfo3" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxBundleManifestPackageInfo3).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfo3" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxBundleManifestPackageInfo3), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxBundleManifestPackageInfo3), Is.EqualTo(4));
-        }
-    }
 }

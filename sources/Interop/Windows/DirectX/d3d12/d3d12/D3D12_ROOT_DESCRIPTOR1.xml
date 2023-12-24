@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_ROOT_DESCRIPTOR1">
+    <summary>Describes descriptors inline in the root signature version 1.1 that appear in shaders.</summary>
+  </member>
+  <member name="D3D12_ROOT_DESCRIPTOR1.ShaderRegister">
+    <summary>The shader register.</summary>
+  </member>
+  <member name="D3D12_ROOT_DESCRIPTOR1.RegisterSpace">
+    <summary>The register space.</summary>
+  </member>
+  <member name="D3D12_ROOT_DESCRIPTOR1.Flags">
+    <summary>Specifies the <see cref="D3D12_ROOT_DESCRIPTOR_FLAGS" /> that determine the volatility of descriptors and the data they reference.</summary>
+  </member>
+</doc>

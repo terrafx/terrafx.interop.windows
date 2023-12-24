@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILEPATHS_SIGNERINFO">
+    <summary>The <b>FILEPATHS_SINGNERINFO</b> structure stores source and target path information, and also file signature information. The setup functions send<b>FILEPATHS_SIGNERINFO</b> as a parameter in several of the notifications sent to callback routines. For more information, see<a href="https://docs.microsoft.com//windows/desktop/SetupApi/notifications">Notifications</a>.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Target">
+    <summary>Path to the target file.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Source">
+    <summary>Path to the source file. This member is not used when the<see cref="FILEPATHS" /> structure is used with a file delete operation.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Win32Error">
+    <summary>If an error occurs, this member is the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>. If no error has occurred, it is NO_ERROR.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Flags">
+    <summary>
+      <para>Additional information that depends on the notification sent with the<b>FILEPATHS_SIGNERINFO</b> structure.</para>
+      <para>For<a href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-copyerror">SPFILENOTIFY_COPYERROR</a> notifications, <b>Flags</b> specifies dialog box behavior and can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NOBROWSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not offer the user the option to browse.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NOSKIP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not offer the user the option to skip the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_WARNIFSKIP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Inform the user that skipping the file may affect the installation.</description>
+        </listheader>
+      </list> <para>For<a href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-fileopdelayed">SPFILENOTIFY_FILEOPDELAYED</a> notifications, <b>Flags</b> specifies the type of file operation delayed and can be one of the following values.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FILEOP_COPY</b></term></listheader></list></description><description>A file copy operation was delayed.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FILEOP_DELETE</b></term></listheader></list></description><description>A file delete operation was delayed.</description></listheader></list></summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.DigitalSigner">
+    <summary>Digital signer of the file.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Version">
+    <summary>Version of the file.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.CatalogFile">
+    <summary>Catalog file.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO">
+    <summary>The <b>FILEPATHS_SINGNERINFO</b> structure stores source and target path information, and also file signature information. The setup functions send<b>FILEPATHS_SIGNERINFO</b> as a parameter in several of the notifications sent to callback routines. For more information, see<a href="https://docs.microsoft.com//windows/desktop/SetupApi/notifications">Notifications</a>.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Target">
+    <summary>Path to the target file.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Source">
+    <summary>Path to the source file. This member is not used when the<see cref="FILEPATHS" /> structure is used with a file delete operation.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Win32Error">
+    <summary>If an error occurs, this member is the <a href="https://docs.microsoft.com//windows/desktop/Debug/system-error-codes">system error code</a>. If no error has occurred, it is NO_ERROR.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Flags">
+    <summary>
+      <para>Additional information that depends on the notification sent with the<b>FILEPATHS_SIGNERINFO</b> structure.</para>
+      <para>For<a href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-copyerror">SPFILENOTIFY_COPYERROR</a> notifications, <b>Flags</b> specifies dialog box behavior and can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NOBROWSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not offer the user the option to browse.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NOSKIP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not offer the user the option to skip the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_WARNIFSKIP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Inform the user that skipping the file may affect the installation.</description>
+        </listheader>
+      </list> <para>For<a href="https://docs.microsoft.com//windows/desktop/SetupApi/spfilenotify-fileopdelayed">SPFILENOTIFY_FILEOPDELAYED</a> notifications, <b>Flags</b> specifies the type of file operation delayed and can be one of the following values.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FILEOP_COPY</b></term></listheader></list></description><description>A file copy operation was delayed.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FILEOP_DELETE</b></term></listheader></list></description><description>A file delete operation was delayed.</description></listheader></list></summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.DigitalSigner">
+    <summary>Digital signer of the file.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.Version">
+    <summary>Version of the file.</summary>
+  </member>
+  <member name="FILEPATHS_SIGNERINFO.CatalogFile">
+    <summary>Catalog file.</summary>
+  </member>
+</doc>

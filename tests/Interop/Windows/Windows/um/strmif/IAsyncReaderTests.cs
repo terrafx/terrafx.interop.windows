@@ -19,32 +19,4 @@ public static unsafe partial class IAsyncReaderTests
     {
         Assert.That(typeof(IAsyncReader).GUID, Is.EqualTo(IID_IAsyncReader));
     }
-
-    /// <summary>Validates that the <see cref="IAsyncReader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAsyncReader>(), Is.EqualTo(sizeof(IAsyncReader)));
-    }
-
-    /// <summary>Validates that the <see cref="IAsyncReader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAsyncReader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAsyncReader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAsyncReader), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAsyncReader), Is.EqualTo(4));
-        }
-    }
 }

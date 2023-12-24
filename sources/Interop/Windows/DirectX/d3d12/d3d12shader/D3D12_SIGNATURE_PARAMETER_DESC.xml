@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC">
+    <summary>Describes a shader signature.</summary>
+  </member>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC.SemanticName">
+    <summary>A per-parameter string that identifies how the data will be used. For more info, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">Semantics</a>.</summary>
+  </member>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC.SemanticIndex">
+    <summary>Semantic index that modifies the semantic. Used to differentiate different parameters that use the same semantic.</summary>
+  </member>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC.Register">
+    <summary>The register that will contain this variable's data.</summary>
+  </member>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC.SystemValueType">
+    <summary>A <see cref="D3D_NAME" />-typed value that identifies a predefined string that determines the functionality of certain pipeline stages.</summary>
+  </member>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC.ComponentType">
+    <summary>A <see cref="D3D_REGISTER_COMPONENT_TYPE" />-typed value that identifies the per-component-data type that is stored in a register. Each register can store up to four-components of data.</summary>
+  </member>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC.Mask">
+    <summary>Mask which indicates which components of a register are used.</summary>
+  </member>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC.ReadWriteMask">
+    <summary>Mask which indicates whether a given component is never written (if the signature is an output signature) or always read (if the signature is an input signature).</summary>
+  </member>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC.Stream">
+    <summary>Indicates which stream the geometry shader is using for the signature parameter.</summary>
+  </member>
+  <member name="D3D12_SIGNATURE_PARAMETER_DESC.MinPrecision">
+    <summary>A <see cref="D3D_MIN_PRECISION" />-typed value that indicates the minimum desired interpolation precision. For more info, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/using-hlsl-minimum-precision">Using HLSL minimum precision</a>.</summary>
+  </member>
+</doc>

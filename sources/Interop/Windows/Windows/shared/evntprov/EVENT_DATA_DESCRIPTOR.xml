@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EVENT_DATA_DESCRIPTOR">
+    <summary>
+      <para>The <b>EVENT_DATA_DESCRIPTOR</b> structure defines a block of data that will be used in an ETW event.</para>
+      <para>This structure is typically initialized using the<see cref="EventDataDescCreate" />function.</para>
+    </summary>
+  </member>
+  <member name="EVENT_DATA_DESCRIPTOR.Ptr">
+    <summary>
+      <para>A pointer to the data.</para>
+      <blockquote>[!Important] This is a 64-bit unsigned integer value in both 32-bit and 64-bit architectures. To properly set this value, cast your data pointer to an unsigned integer before assigning it to the <code>Ptr</code> field, e.g.<code>EventDataDescriptor.Ptr = (UINT_PTR)dataPointer;</code>, or use the<see cref="EventDataDescCreate" />function.</blockquote>
+    </summary>
+  </member>
+  <member name="EVENT_DATA_DESCRIPTOR.Size">
+    <summary>The size of the data in bytes.</summary>
+  </member>
+  <member name="EVENT_DATA_DESCRIPTOR.DUMMYUNIONNAME"></member>
+  <member name="EVENT_DATA_DESCRIPTOR.DUMMYUNIONNAME.Reserved"></member>
+  <member name="EVENT_DATA_DESCRIPTOR.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
+  <member name="EVENT_DATA_DESCRIPTOR.DUMMYUNIONNAME.DUMMYSTRUCTNAME.Type">
+    <summary>
+      <para>Specifies the use of this data in the event. This can be one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <para>
+              <b>EVENT_DATA_DESCRIPTOR_TYPE_NONE</b> (0)</para>
+            <para>Normal event data.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>EVENT_DATA_DESCRIPTOR_TYPE_EVENT_METADATA</b> (1)</para>
+            <para>TraceLogging event decoding information.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>EVENT_DATA_DESCRIPTOR_TYPE_PROVIDER_METADATA</b> (2)</para>
+            <para>Manually-attached provider traits. For use with operating systems that do not support attaching provider traits via EventSetInformation. This data will be ignored if provider traits have been configured via <code>EventSetInformation</code>.</para>
+          </description>
+        </item>
+        <item>
+          <description>
+            <para>
+              <b>EVENT_DATA_DESCRIPTOR_TYPE_TIMESTAMP_OVERRIDE</b> (3)</para>
+            <para>64-bit event timestamp override. For use when relogging. Note that logging events out of timestamp order may lead to event ordering issues during trace processing.</para>
+          </description>
+        </item>
+      </list>
+      <para>Note that this field will be ignored unless the event provider has been configured to respect the <code>Type</code> field by calling the<see cref="EventSetInformation" />API with the <code>EventProviderSetTraits</code> or <code>EventProviderUseDescriptorType</code>operation.</para>
+    </summary>
+  </member>
+  <member name="EVENT_DATA_DESCRIPTOR.DUMMYUNIONNAME.DUMMYSTRUCTNAME.Reserved1">
+    <summary>Not used. Set to 0.</summary>
+  </member>
+  <member name="EVENT_DATA_DESCRIPTOR.DUMMYUNIONNAME.DUMMYSTRUCTNAME.Reserved2">
+    <summary>Not used. Set to 0.</summary>
+  </member>
+</doc>

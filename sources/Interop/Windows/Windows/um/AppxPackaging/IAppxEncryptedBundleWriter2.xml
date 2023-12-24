@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxEncryptedBundleWriter2.AddExternalPackageReference">
-    <summary>
-      <para>Adds a reference within the encrypted package bundle to an external app package.</para>
-    </summary>
-    <param name="fileName">
-      <para>The name of the payload file. The file name path must be relative to the root of the package.</para>
-    </param>
-    <param name="inputStream">
-      <para>An <see cref="IStream" /> that provides the contents of <i>fileName</i>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxEncryptedBundleWriter2" />
+    <summary>Adds a reference within the encrypted package bundle to an external app package.</summary>
+    <param name="fileName">The name of the payload file. The file name path must be relative to the root of the package.</param>
+    <param name="inputStream">An <see cref="IStream" /> that provides the contents of <i>fileName</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxEncryptedBundleWriter2">
-    <summary>
-      <para>Provides a write-only object model for encrypted bundle packages.</para>
-    </summary>
+    <summary>Provides a write-only object model for encrypted bundle packages.</summary>
   </member>
 </doc>

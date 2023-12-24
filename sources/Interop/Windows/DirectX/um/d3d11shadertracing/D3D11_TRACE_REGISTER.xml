@@ -3,48 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TRACE_REGISTER">
-    <summary>
-      <para>Describes a trace register.</para>
-    </summary>
-    <remarks>
-      <para>The following register types do not require an index:</para>
-      <list type="bullet">
-        <item>
-          <description>input PrimitiveID</description>
-        </item>
-        <item>
-          <description>output oDepth</description>
-        </item>
-        <item>
-          <description>immediate32</description>
-        </item>
-        <item>
-          <description>NULL register</description>
-        </item>
-        <item>
-          <description>output control point ID (this is actually an input; it defines the output that the thread controls)</description>
-        </item>
-        <item>
-          <description>input fork instance ID</description>
-        </item>
-        <item>
-          <description>input join instance ID</description>
-        </item>
-        <item>
-          <description>input domain point register</description>
-        </item>
-        <item>
-          <description>cycle counter</description>
-        </item>
-      </list>
-      <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.
-</remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-structures">Shader Structures</seealso>
+    <summary>Describes a trace register.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER.RegType">
-    <summary>
-      <para>A <see cref="D3D11_TRACE_REGISTER_TYPE" />-typed value that identifies the type of register that the shader-trace object uses.</para>
-    </summary>
+    <summary>A <see cref="D3D11_TRACE_REGISTER_TYPE" />-typed value that identifies the type of register that the shader-trace object uses.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER.Index1D">
     <summary>
@@ -69,7 +31,7 @@
           <description>resource r[Index1D]</description>
         </item>
         <item>
-          <description>input patch constant register: vpc[Index1D] </description>
+          <description>input patch constant register: vpc[Index1D]</description>
         </item>
         <item>
           <description>unordered access view: u[Index1D]</description>
@@ -103,9 +65,7 @@
     </summary>
   </member>
   <member name="D3D11_TRACE_REGISTER.OperandIndex">
-    <summary>
-      <para>The index of the operand, which starts from 0.</para>
-    </summary>
+    <summary>The index of the operand, which starts from 0.</summary>
   </member>
   <member name="D3D11_TRACE_REGISTER.Flags">
     <summary>
@@ -115,10 +75,10 @@
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>D3D11_TRACE_REGISTER_FLAGS_RELATIVE_INDEXING (0x1)</description>
           <description>Access to the register is part of the relative indexing of a register.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>

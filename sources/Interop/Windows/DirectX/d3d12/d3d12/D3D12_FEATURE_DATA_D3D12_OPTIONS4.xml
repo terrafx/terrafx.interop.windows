@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS4">
+    <summary>Indicates the level of support for 64KB-aligned MSAA textures, cross-API sharing, and native 16-bit shader operations.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS4.MSAA64KBAlignedTextureSupported">
+    <summary>Indicates whether 64KB-aligned MSAA textures are supported.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS4.SharedResourceCompatibilityTier">
+    <summary>Indicates the tier of cross-API sharing support.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS4.Native16BitShaderOpsSupported">
+    <summary>Indicates native 16-bit shader operations are supported. These operations require shader model 6_2. For more information, see the <a href="https://github.com/microsoft/directxshadercompiler/wiki/16-bit-scalar-types">16-Bit Scalar Types</a> HLSL reference.</summary>
+  </member>
+</doc>

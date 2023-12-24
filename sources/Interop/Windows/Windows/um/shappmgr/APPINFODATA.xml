@@ -3,129 +3,67 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPINFODATA">
-    <summary>
-      <para>Provides information about a published application to the Add/Remove Programs Control Panel utility.</para>
-    </summary>
-    <seealso cref="IAppPublisher" />
-    <seealso cref="IPublishedApp.GetPublishedAppInfo" />
+    <summary>Provides information about a published application to the Add/Remove Programs Control Panel utility.</summary>
   </member>
   <member name="APPINFODATA.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A value of type <b>DWORD</b> that specifies the size of the <b>APPINFODATA</b> data structure. This field is set by the Add/Remove Program executable code.</para>
-    </summary>
+    <summary>A value of type <b>DWORD</b> that specifies the size of the <b>APPINFODATA</b> data structure. This field is set by the Add/Remove Program executable code.</summary>
   </member>
   <member name="APPINFODATA.dwMask">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A value of type <b>DWORD</b> that specifies the bitmask that indicates which items in the structure are desired or valid. Implementations of <see cref="GetAppInfo" /> should inspect this value for bits that are set and attempt to provide values corresponding to those bits. Implementations should also return with bits set for only those members that are being returned.</para>
-    </summary>
+    <summary>A value of type <b>DWORD</b> that specifies the bitmask that indicates which items in the structure are desired or valid. Implementations of <see cref="GetAppInfo" /> should inspect this value for bits that are set and attempt to provide values corresponding to those bits. Implementations should also return with bits set for only those members that are being returned.</summary>
   </member>
   <member name="APPINFODATA.pszDisplayName">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to a string that contains the application display name. Memory for this string must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</para>
-    </summary>
+    <summary>A pointer to a string that contains the application display name. Memory for this string must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</summary>
   </member>
   <member name="APPINFODATA.pszVersion">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
-  <member name="APPINFODATA.pszPublisher">
-    <summary></summary>
-  </member>
+  <member name="APPINFODATA.pszPublisher"></member>
   <member name="APPINFODATA.pszProductID">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszRegisteredOwner">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszRegisteredCompany">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszLanguage">
     <summary>
-      <para>Type: <b>LPWSTR</b></para>
       <para>Not applicable to published applications.</para>
-      <para>Type: <b>LPWSTR</b></para>
       <para>Not applicable to published applications.</para>
     </summary>
   </member>
   <member name="APPINFODATA.pszSupportUrl">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A URL to support information. This string is displayed as a link with the application name in Control Panel Add/Remove Programs. Memory for this string must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</para>
-    </summary>
+    <summary>A URL to support information. This string is displayed as a link with the application name in Control Panel Add/Remove Programs. Memory for this string must be allocated using <see cref="CoTaskMemAlloc" /> and freed using <see cref="CoTaskMemFree" />.</summary>
   </member>
   <member name="APPINFODATA.pszSupportTelephone">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszHelpLink">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszInstallLocation">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszInstallSource">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszInstallDate">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszContact">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszComments">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszImage">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszReadmeUrl">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
   <member name="APPINFODATA.pszUpdateInfoUrl">
-    <summary>
-      <para>Type: <b>LPWSTR</b></para>
-      <para>Not applicable to published applications.</para>
-    </summary>
+    <summary>Not applicable to published applications.</summary>
   </member>
 </doc>

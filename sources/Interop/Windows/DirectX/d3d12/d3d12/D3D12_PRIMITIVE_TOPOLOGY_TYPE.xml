@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_PRIMITIVE_TOPOLOGY_TYPE">
+    <summary>Specifies how the pipeline interprets geometry or hull shader input primitives.</summary>
+  </member>
+  <member name="D3D12_PRIMITIVE_TOPOLOGY_TYPE.D3D12_PRIMITIVE_TOPOLOGY_TYPE_UNDEFINED">
+    <summary>The shader has not been initialized with an input primitive type.</summary>
+  </member>
+  <member name="D3D12_PRIMITIVE_TOPOLOGY_TYPE.D3D12_PRIMITIVE_TOPOLOGY_TYPE_POINT">
+    <summary>Interpret the input primitive as a point.</summary>
+  </member>
+  <member name="D3D12_PRIMITIVE_TOPOLOGY_TYPE.D3D12_PRIMITIVE_TOPOLOGY_TYPE_LINE">
+    <summary>Interpret the input primitive as a line.</summary>
+  </member>
+  <member name="D3D12_PRIMITIVE_TOPOLOGY_TYPE.D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE">
+    <summary>Interpret the input primitive as a triangle.</summary>
+  </member>
+  <member name="D3D12_PRIMITIVE_TOPOLOGY_TYPE.D3D12_PRIMITIVE_TOPOLOGY_TYPE_PATCH">
+    <summary>Interpret the input primitive as a control point patch.</summary>
+  </member>
+</doc>

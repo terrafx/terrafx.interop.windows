@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RESOURCE_COORDINATE">
+    <summary>Describes the coordinates of a resource.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_COORDINATE.X">
+    <summary>The x-coordinate of the resource.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_COORDINATE.Y">
+    <summary>The y-coordinate of the resource.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_COORDINATE.Z">
+    <summary>The z-coordinate of the resource.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_COORDINATE.SubresourceIndex">
+    <summary>The index of the subresource for the resource.</summary>
+  </member>
+</doc>

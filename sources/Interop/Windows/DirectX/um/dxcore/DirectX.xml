@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.DXCoreCreateAdapterFactory">
+    <summary>Creates a DXCore adapter factory, which you can use to generate further DXCore objects. For programming guidance, and code examples, see <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore-enum-adapters">Using DXCore to enumerate adapters</a>.</summary>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppvFactory</i>. This is expected to be the interface identifier (IID) of <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nn-dxcore_interface-idxcoreadapterfactory">IDXCoreAdapterFactory</a>.</param>
+    <param name="ppvFactory">The address of a pointer to an interface with the IID specified in the <i>riid</i> parameter. Upon successful return, <i>*ppvFactory</i> (the dereferenced address) contains a pointer to the DXCore factory created.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_NOINTERFACE|An invalid value was provided for <i>riid</i>.| |E_POINTER|<code>nullptr</code> was provided for <i>ppvFactory</i>.|</para>
+    </returns>
+  </member>
+</doc>

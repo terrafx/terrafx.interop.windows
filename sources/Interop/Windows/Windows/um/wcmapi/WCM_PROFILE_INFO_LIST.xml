@@ -3,30 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_PROFILE_INFO_LIST">
-    <summary>
-      <para>The <b>WCM_PROFILE_INFO_LIST</b> structure contains a list of profiles in preferred order.</para>
-    </summary>
-    <seealso cref="WCM_PROFILE_INFO" />
+    <summary>The <b>WCM_PROFILE_INFO_LIST</b> structure contains a list of profiles in preferred order.</summary>
   </member>
   <member name="WCM_PROFILE_INFO_LIST.dwNumberOfItems">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of profiles in the list.</para>
-    </summary>
+    <summary>The number of profiles in the list.</summary>
   </member>
-  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo.unique">
-    <summary></summary>
-  </member>
-  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo.size_is">
-    <summary></summary>
-  </member>
-  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo.size_is.dwNumberOfItems">
-    <summary></summary>
-  </member>
+  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo.unique"></member>
+  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo.size_is"></member>
+  <member name="WCM_PROFILE_INFO_LIST.ProfileInfo.size_is.dwNumberOfItems"></member>
   <member name="WCM_PROFILE_INFO_LIST.ProfileInfo">
-    <summary>
-      <para>Type: <b><see cref="WCM_PROFILE_INFO" />[1]</b></para>
-      <para>Information about each profile.</para>
-    </summary>
+    <summary>Information about each profile.</summary>
   </member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, uint>)(lpVtbl[1]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, uint>)(lpVtbl[1]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, uint>)(lpVtbl[2]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, uint>)(lpVtbl[2]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleWindow.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, HWND*, int>)(lpVtbl[3]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, HWND*, int>)(lpVtbl[3]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnterMode);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
     /// <include file='IOleInPlaceActiveObject.xml' path='doc/member[@name="IOleInPlaceActiveObject.TranslateAccelerator"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [VtblIndex(5)]
     public HRESULT TranslateAccelerator([NativeTypeName("LPMSG")] MSG* lpmsg)
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, MSG*, int>)(lpVtbl[5]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), lpmsg);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, MSG*, int>)(lpVtbl[5]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), lpmsg);
     }
 
     /// <include file='IOleInPlaceActiveObject.xml' path='doc/member[@name="IOleInPlaceActiveObject.OnFrameWindowActivate"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [VtblIndex(6)]
     public HRESULT OnFrameWindowActivate(BOOL fActivate)
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[6]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[6]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
     }
 
     /// <include file='IOleInPlaceActiveObject.xml' path='doc/member[@name="IOleInPlaceActiveObject.OnDocWindowActivate"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [VtblIndex(7)]
     public HRESULT OnDocWindowActivate(BOOL fActivate)
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[7]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[7]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fActivate);
     }
 
     /// <include file='IOleInPlaceActiveObject.xml' path='doc/member[@name="IOleInPlaceActiveObject.ResizeBorder"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [VtblIndex(8)]
     public HRESULT ResizeBorder([NativeTypeName("LPCRECT")] RECT* prcBorder, IOleInPlaceUIWindow* pUIWindow, BOOL fFrameWindow)
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, RECT*, IOleInPlaceUIWindow*, BOOL, int>)(lpVtbl[8]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), prcBorder, pUIWindow, fFrameWindow);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, RECT*, IOleInPlaceUIWindow*, BOOL, int>)(lpVtbl[8]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), prcBorder, pUIWindow, fFrameWindow);
     }
 
     /// <include file='IOleInPlaceActiveObject.xml' path='doc/member[@name="IOleInPlaceActiveObject.EnableModeless"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
     [VtblIndex(9)]
     public HRESULT EnableModeless(BOOL fEnable)
     {
-        return ((delegate* unmanaged<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[9]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnable);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceActiveObject*, BOOL, int>)(lpVtbl[9]))((IOleInPlaceActiveObject*)Unsafe.AsPointer(ref this), fEnable);
     }
 
     public interface Interface : IOleWindow.Interface
@@ -124,33 +124,33 @@ public unsafe partial struct IOleInPlaceActiveObject : IOleInPlaceActiveObject.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (LPMSG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAccelerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, int> TranslateAccelerator;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> OnFrameWindowActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> OnFrameWindowActivate;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> OnDocWindowActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> OnDocWindowActivate;
 
         [NativeTypeName("HRESULT (LPCRECT, IOleInPlaceUIWindow *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, IOleInPlaceUIWindow*, BOOL, int> ResizeBorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, IOleInPlaceUIWindow*, BOOL, int> ResizeBorder;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> EnableModeless;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> EnableModeless;
     }
 }

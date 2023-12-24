@@ -3,87 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHFILEINFO">
-    <summary>
-      <para>Contains information about a file object.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with the <see cref="SHGetFileInfo" /> function.</para>
-      <blockquote>
-        <para>[!NOTE]
-The shellapi.h header defines SHFILEINFO as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>Contains information about a file object.</summary>
   </member>
   <member name="SHFILEINFO.hIcon">
-    <summary>
-      <para>Type: <b>HICON</b></para>
-      <para>A handle to the icon that represents the file. You are responsible for destroying this handle with <see cref="DestroyIcon" /> when you no longer need it.</para>
-    </summary>
+    <summary>A handle to the icon that represents the file. You are responsible for destroying this handle with <see cref="DestroyIcon" /> when you no longer need it.</summary>
   </member>
   <member name="SHFILEINFO.iIcon">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The index of the icon image within the system image list.</para>
-    </summary>
+    <summary>The index of the icon image within the system image list.</summary>
   </member>
   <member name="SHFILEINFO.dwAttributes">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>An array of values that indicates the attributes of the file object. For information about these values, see the <see cref="IShellFolder.GetAttributesOf" /> method.</para>
-    </summary>
+    <summary>An array of values that indicates the attributes of the file object. For information about these values, see the <see cref="IShellFolder.GetAttributesOf" /> method.</summary>
   </member>
   <member name="SHFILEINFO.szDisplayName">
-    <summary>
-      <para>Type: <b>TCHAR[MAX_PATH]</b></para>
-      <para>A string that contains the name of the file as it appears in the Windows Shell, or the path and file name of the file that contains the icon representing the file.</para>
-    </summary>
+    <summary>A string that contains the name of the file as it appears in the Windows Shell, or the path and file name of the file that contains the icon representing the file.</summary>
   </member>
   <member name="SHFILEINFO.szTypeName">
-    <summary>
-      <para>Type: <b>TCHAR[80]</b></para>
-      <para>A string that describes the type of file.</para>
-    </summary>
+    <summary>A string that describes the type of file.</summary>
   </member>
   <member name="SHFILEINFO">
-    <summary>
-      <para>Contains information about a file object.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with the <see cref="SHGetFileInfo" /> function.</para>
-      <blockquote>
-        <para>[!NOTE]
-The shellapi.h header defines SHFILEINFO as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>Contains information about a file object.</summary>
   </member>
   <member name="SHFILEINFO.hIcon">
-    <summary>
-      <para>Type: <b>HICON</b></para>
-      <para>A handle to the icon that represents the file. You are responsible for destroying this handle with <see cref="DestroyIcon" /> when you no longer need it.</para>
-    </summary>
+    <summary>A handle to the icon that represents the file. You are responsible for destroying this handle with <see cref="DestroyIcon" /> when you no longer need it.</summary>
   </member>
   <member name="SHFILEINFO.iIcon">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The index of the icon image within the system image list.</para>
-    </summary>
+    <summary>The index of the icon image within the system image list.</summary>
   </member>
   <member name="SHFILEINFO.dwAttributes">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>An array of values that indicates the attributes of the file object. For information about these values, see the <see cref="IShellFolder.GetAttributesOf" /> method.</para>
-    </summary>
+    <summary>An array of values that indicates the attributes of the file object. For information about these values, see the <see cref="IShellFolder.GetAttributesOf" /> method.</summary>
   </member>
   <member name="SHFILEINFO.szDisplayName">
-    <summary>
-      <para>Type: <b>TCHAR[MAX_PATH]</b></para>
-      <para>A string that contains the name of the file as it appears in the Windows Shell, or the path and file name of the file that contains the icon representing the file.</para>
-    </summary>
+    <summary>A string that contains the name of the file as it appears in the Windows Shell, or the path and file name of the file that contains the icon representing the file.</summary>
   </member>
   <member name="SHFILEINFO.szTypeName">
-    <summary>
-      <para>Type: <b>TCHAR[80]</b></para>
-      <para>A string that describes the type of file.</para>
-    </summary>
+    <summary>A string that describes the type of file.</summary>
   </member>
 </doc>

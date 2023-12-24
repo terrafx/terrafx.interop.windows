@@ -19,32 +19,4 @@ public static unsafe partial class IOverlayTests
     {
         Assert.That(typeof(IOverlay).GUID, Is.EqualTo(IID_IOverlay));
     }
-
-    /// <summary>Validates that the <see cref="IOverlay" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IOverlay>(), Is.EqualTo(sizeof(IOverlay)));
-    }
-
-    /// <summary>Validates that the <see cref="IOverlay" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IOverlay).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IOverlay" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IOverlay), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IOverlay), Is.EqualTo(4));
-        }
-    }
 }

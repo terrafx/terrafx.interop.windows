@@ -3,151 +3,46 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFileDialogEvents.OnFileOk">
-    <summary>
-      <para>Called just before the dialog is about to return with a result.</para>
-    </summary>
-    <param name="pfd">
-      <para>Type: <b><see cref="IFileDialog" />*</b></para>
-      <para>A pointer to the interface that represents the dialog.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Implementations should return <b>S_OK</b> to accept the current result in the dialog or <b>S_FALSE</b> to refuse it. In the case of <b>S_FALSE</b>, the dialog should remain open.</para>
-    </returns>
-    <remarks>
-      <para>When this method is called, the <see cref="IFileDialog.GetResult" /> and <see cref="GetResults" /> methods can be called.</para>
-      <para>The application can use this callback method to perform additional validation before the dialog closes, or to prevent the dialog from closing. If the application prevents the dialog from closing, it should display a UI to indicate a cause. To obtain a parent <b>HWND</b> for the UI, obtain the <see cref="IOleWindow" /> interface through <see cref="IFileDialog.QueryInterface" /> and call <see cref="IOleWindow.GetWindow" />.</para>
-      <para>An application can also use this method to perform all of its work surrounding the opening or saving of files.</para>
-    </remarks>
+    <summary>Called just before the dialog is about to return with a result.</summary>
+    <param name="pfd">A pointer to the interface that represents the dialog.</param>
+    <returns>Implementations should return <b>S_OK</b> to accept the current result in the dialog or <b>S_FALSE</b> to refuse it. In the case of <b>S_FALSE</b>, the dialog should remain open.</returns>
   </member>
   <member name="IFileDialogEvents.OnFolderChange">
-    <summary>
-      <para>Called when the user navigates to a new folder.</para>
-    </summary>
-    <param name="pfd">
-      <para>Type: <b><see cref="IFileDialog" />*</b></para>
-      <para>A pointer to the interface that represents the dialog.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>IFileDialogEvents.OnFolderChange</b> is called when the dialog is opened.</para>
-    </remarks>
-    <seealso cref="IFileDialog.GetFolder" />
-    <seealso cref="IFileDialogEvents" />
-    <seealso cref="IFileDialogEvents.OnFolderChanging" />
+    <summary>Called when the user navigates to a new folder.</summary>
+    <param name="pfd">A pointer to the interface that represents the dialog.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogEvents.OnFolderChanging">
-    <summary>
-      <para>Called before <see cref="IFileDialogEvents.OnFolderChange" />. This allows the implementer to stop navigation to a particular location.</para>
-    </summary>
-    <param name="pfd">
-      <para>Type: <b><see cref="IFileDialog" />*</b></para>
-      <para>A pointer to the interface that represents the dialog.</para>
-    </param>
-    <param name="psiFolder">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to an interface that represents the folder to which the dialog is about to navigate.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. A return value of S_OK or E_NOTIMPL indicates that the folder change can proceed.</para>
-    </returns>
-    <remarks>
-      <para>The calling application can call <see cref="IFileDialog.SetFolder" /> during this callback to redirect navigation to an alternate folder. The actual navigation does not occur until <b>IFileDialogEvents.OnFolderChanging</b> has returned.</para>
-      <para>If the calling application simply prevents navigation to a particular folder, UI should be displayed with an explanation of the restriction. To obtain a parent <b>HWND</b> for the UI, obtain the <see cref="IOleWindow" /> interface through <see cref="IFileDialog" /> and call <see cref="IOleWindow.GetWindow" />.</para>
-    </remarks>
+    <summary>Called before <see cref="IFileDialogEvents.OnFolderChange" />. This allows the implementer to stop navigation to a particular location.</summary>
+    <param name="pfd">A pointer to the interface that represents the dialog.</param>
+    <param name="psiFolder">A pointer to an interface that represents the folder to which the dialog is about to navigate.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. A return value of S_OK or E_NOTIMPL indicates that the folder change can proceed.</returns>
   </member>
   <member name="IFileDialogEvents.OnOverwrite">
-    <summary>
-      <para>Called from the save dialog when the user chooses to overwrite a file.</para>
-    </summary>
-    <param name="pfd">
-      <para>Type: <b><see cref="IFileDialog" />*</b></para>
-      <para>A pointer to the interface that represents the dialog.</para>
-    </param>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the interface that represents the item that will be overwritten.</para>
-    </param>
-    <param name="pResponse">
-      <para>Type: <b><see cref="FDE_OVERWRITE_RESPONSE" />*</b></para>
-      <para>A pointer to a value from the <see cref="FDE_OVERWRITE_RESPONSE" /> enumeration indicating the response to the potential overwrite action.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>The implementer should return E_NOTIMPL if this method is not implemented; S_OK or an appropriate error code otherwise.</para>
-    </returns>
-    <remarks>
-      <para>The <b>FOS_OVERWRITEPROMPT</b> flag must be set through <see cref="IFileDialog.SetOptions" /> before this method is called.</para>
-    </remarks>
+    <summary>Called from the save dialog when the user chooses to overwrite a file.</summary>
+    <param name="pfd">A pointer to the interface that represents the dialog.</param>
+    <param name="psi">A pointer to the interface that represents the item that will be overwritten.</param>
+    <param name="pResponse">A pointer to a value from the <see cref="FDE_OVERWRITE_RESPONSE" /> enumeration indicating the response to the potential overwrite action.</param>
+    <returns>The implementer should return E_NOTIMPL if this method is not implemented; S_OK or an appropriate error code otherwise.</returns>
   </member>
   <member name="IFileDialogEvents.OnSelectionChange">
-    <summary>
-      <para>Called when the user changes the selection in the dialog's view.</para>
-    </summary>
-    <param name="pfd">
-      <para>Type: <b><see cref="IFileDialog" />*</b></para>
-      <para>A pointer to the interface that represents the dialog.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when the user changes the selection in the dialog's view.</summary>
+    <param name="pfd">A pointer to the interface that represents the dialog.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogEvents.OnShareViolation">
-    <summary>
-      <para>Enables an application to respond to sharing violations that arise from Open or Save operations.</para>
-    </summary>
-    <param name="pfd">
-      <para>Type: <b><see cref="IFileDialog" />*</b></para>
-      <para>A pointer to the interface that represents the dialog.</para>
-    </param>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the interface that represents the item that has the sharing violation.</para>
-    </param>
-    <param name="pResponse">
-      <para>Type: <b><see cref="FDE_SHAREVIOLATION_RESPONSE" />*</b></para>
-      <para>A pointer to a value from the <see cref="FDE_SHAREVIOLATION_RESPONSE" /> enumeration indicating the response to the sharing violation.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>The implementer should return E_NOTIMPL if this method is not implemented; S_OK or an appropriate error code otherwise.</para>
-    </returns>
-    <remarks>
-      <para>The <b>FOS_SHAREAWARE</b> flag must be set through <see cref="IFileDialog.SetOptions" /> before this method is called.</para>
-      <para>A sharing violation could possibly arise when the application attempts to open a file, because the file could have been locked between the time that the dialog tested it and the application opened it.</para>
-    </remarks>
+    <summary>Enables an application to respond to sharing violations that arise from Open or Save operations.</summary>
+    <param name="pfd">A pointer to the interface that represents the dialog.</param>
+    <param name="psi">A pointer to the interface that represents the item that has the sharing violation.</param>
+    <param name="pResponse">A pointer to a value from the <see cref="FDE_SHAREVIOLATION_RESPONSE" /> enumeration indicating the response to the sharing violation.</param>
+    <returns>The implementer should return E_NOTIMPL if this method is not implemented; S_OK or an appropriate error code otherwise.</returns>
   </member>
   <member name="IFileDialogEvents.OnTypeChange">
-    <summary>
-      <para>Called when the dialog is opened to notify the application of the initial chosen filetype.</para>
-    </summary>
-    <param name="pfd">
-      <para>Type: <b><see cref="IFileDialog" />*</b></para>
-      <para>A pointer to the interface that represents the dialog.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called when the dialog is opened to notify the application of the initially chosen filetype. If the application has code in <see cref="IFileDialogEvents" /> that responds to type changes, it can respond to the type. For example, it could hide certain controls. The application controls the initial file type and could do its own checks, so this method is provided as a convenience.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb775958(v=vs.85)">IFileDialog.GetFileTypeIndex</seealso>
-    <seealso cref="IFileDialogEvents" />
+    <summary>Called when the dialog is opened to notify the application of the initial chosen filetype.</summary>
+    <param name="pfd">A pointer to the interface that represents the dialog.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileDialogEvents">
-    <summary>
-      <para>Exposes methods that allow notification of events within a common file dialog.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <b>IFileDialogEvents</b> is implemented by an application that is a client of the common file dialog browser. Methods that are not implemented should return E_NOTIMPL. An example of <b>IFileDialogEvents</b> can be found in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940349(v=vs.85)">Common File Dialog</a> SDK sample.
-</remarks>
+    <summary>Exposes methods that allow notification of events within a common file dialog.</summary>
   </member>
 </doc>

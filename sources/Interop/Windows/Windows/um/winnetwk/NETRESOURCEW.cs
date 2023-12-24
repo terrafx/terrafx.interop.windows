@@ -26,17 +26,17 @@ public unsafe partial struct NETRESOURCEW
 
     /// <include file='NETRESOURCEW.xml' path='doc/member[@name="NETRESOURCEW.lpLocalName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpLocalName;
+    public char* lpLocalName;
 
     /// <include file='NETRESOURCEW.xml' path='doc/member[@name="NETRESOURCEW.lpRemoteName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpRemoteName;
+    public char* lpRemoteName;
 
     /// <include file='NETRESOURCEW.xml' path='doc/member[@name="NETRESOURCEW.lpComment"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpComment;
+    public char* lpComment;
 
     /// <include file='NETRESOURCEW.xml' path='doc/member[@name="NETRESOURCEW.lpProvider"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpProvider;
+    public char* lpProvider;
 }

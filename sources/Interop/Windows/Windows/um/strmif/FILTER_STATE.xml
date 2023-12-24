@@ -4,26 +4,17 @@
 <doc>
   <member name="FILTER_STATE">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies a filter's state or the state of the filter graph.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/data-flow-in-the-filter-graph">Data Flow in the Filter Graph</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IMediaControl.GetState" />
-    <seealso cref="IMediaFilter.GetState" />
   </member>
   <member name="FILTER_STATE.State_Stopped">
-    <summary>
-      <para>Stopped. The filter is not processing data.</para>
-    </summary>
+    <summary>Stopped. The filter is not processing data.</summary>
   </member>
   <member name="FILTER_STATE.State_Paused">
-    <summary>
-      <para>Paused. The filter is processing data, but not rendering it.</para>
-    </summary>
+    <summary>Paused. The filter is processing data, but not rendering it.</summary>
   </member>
   <member name="FILTER_STATE.State_Running">
-    <summary>
-      <para>Running. The filter is processing and rendering data.</para>
-    </summary>
+    <summary>Running. The filter is processing and rendering data.</summary>
   </member>
 </doc>

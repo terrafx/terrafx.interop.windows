@@ -4,40 +4,30 @@
 <doc>
   <member name="DVD_MenuAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>DVD_MenuAttributes</b> structure contains information about a DVD menu. The <see cref="IDvdInfo2.GetTitleAttributes" /> method fills in a DVD_MenuAttributes structure for a specified stream.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="DVD_MenuAttributes.fCompatibleRegion">
     <summary>
       <para>An array of <b>TRUE</b>/<b>FALSE</b> values indicating with which DVD regions the disc's authored region is compatible. The eight array indexes (numbered 0-7) correspond to the eight DVD regions (numbered 1-8). This array is only filled in when the menu being queried is the Video Manager Menu (the main menu for the entire disc).</para>
-      <para>
-        <b>Important</b>  A value of 0 (<b>FALSE</b>) indicates that the region is compatible (permitted). A value of 1 (<b>TRUE</b>) indicates that the region is not compatible. This member should have been named <i>fIncompatibleRegion</i>.</para>
+      <div>
+        <b>Important</b>  A value of 0 (<b>FALSE</b>) indicates that the region is compatible (permitted). A value of 1 (<b>TRUE</b>) indicates that the region is not compatible. This member should have been named <i>fIncompatibleRegion</i>.</div>
     </summary>
   </member>
   <member name="DVD_MenuAttributes.VideoAttributes">
-    <summary>
-      <para>A <see cref="DVD_VideoAttributes" /> structure containing the video attributes of the menu. This applies to both a VMGM and VTSM.</para>
-    </summary>
+    <summary>A <see cref="DVD_VideoAttributes" /> structure containing the video attributes of the menu. This applies to both a VMGM and VTSM.</summary>
   </member>
   <member name="DVD_MenuAttributes.fAudioPresent">
-    <summary>
-      <para>A variable of type BOOL indicating whether the menu has an audio stream.</para>
-    </summary>
+    <summary>A variable of type BOOL indicating whether the menu has an audio stream.</summary>
   </member>
   <member name="DVD_MenuAttributes.AudioAttributes">
-    <summary>
-      <para>A <see cref="DVD_AudioAttributes" /> structure containing information about the menu's audio stream. This structure will only be filled in if <i>fAudioPresent</i> is <b>TRUE</b>.</para>
-    </summary>
+    <summary>A <see cref="DVD_AudioAttributes" /> structure containing information about the menu's audio stream. This structure will only be filled in if <i>fAudioPresent</i> is <b>TRUE</b>.</summary>
   </member>
   <member name="DVD_MenuAttributes.fSubpicturePresent">
-    <summary>
-      <para>A variable of type BOOL indicating whether the menu has a subpicture stream.</para>
-    </summary>
+    <summary>A variable of type BOOL indicating whether the menu has a subpicture stream.</summary>
   </member>
   <member name="DVD_MenuAttributes.SubpictureAttributes">
-    <summary>
-      <para>A <see cref="DVD_SubpictureAttributes" /> structure containing information about the menu's subpicture stream. This structure will only be filled in if <i>fSubpicturePresent</i> is <b>TRUE</b>.</para>
-    </summary>
+    <summary>A <see cref="DVD_SubpictureAttributes" /> structure containing information about the menu's subpicture stream. This structure will only be filled in if <i>fSubpicturePresent</i> is <b>TRUE</b>.</summary>
   </member>
 </doc>

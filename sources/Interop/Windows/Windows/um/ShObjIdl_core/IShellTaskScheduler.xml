@@ -3,23 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellTaskScheduler.AddTask">
-    <summary>
-      <para>Adds a task to the scheduler's background queue.</para>
-    </summary>
-    <param name="prt">
-      <para>Type: <b><see cref="IRunnableTask" />*</b></para>
-      <para>A pointer to an instance of an <see cref="IRunnableTask" /> interface representing the task to add to the queue.</para>
-    </param>
-    <param name="rtoid">
-      <para>Type: <b>REFTASKOWNERID</b></para>
-      <para>A GUID identifying the owner of the task. This information can be used to group tasks for later <see cref="counting" /> or <see cref="removal" /> by owner.</para>
-    </param>
-    <param name="lParam">
-      <para>Type: <b>DWORD_PTR</b></para>
-      <para>A pointer to a user-defined <b>DWORD</b> value allowing the task to be identified within the tasks owned by <i>rtoid</i>. This is used to identify single tasks or to subgroup them, for instance associating the task with a particular item such as an item in a ListView. This parameter can be zero.</para>
-    </param>
+    <summary>Adds a task to the scheduler's background queue.</summary>
+    <param name="prt">A pointer to an instance of an <see cref="IRunnableTask" /> interface representing the task to add to the queue.</param>
+    <param name="rtoid">A GUID identifying the owner of the task. This information can be used to group tasks for later <see cref="counting" /> or <see cref="removal" /> by owner.</param>
+    <param name="lParam">A pointer to a user-defined <b>DWORD</b> value allowing the task to be identified within the tasks owned by <i>rtoid</i>. This is used to identify single tasks or to subgroup them, for instance associating the task with a particular item such as an item in a ListView. This parameter can be zero.</param>
     <param name="dwPriority">
-      <para>Type: <b>DWORD</b></para>
       <para>One of the following values assigning the task's priority. Response to this priority depends on the cooperation of the other tasks being executed. New tasks are inserted in the queue in priority order. If a task of a low priority is currently under execution when a higher priority task is added, the scheduler attempts to suspend the task under execution. That lower priority task is resumed when the higher priority task(s) are completed.</para>
       <h4>ITSAT_DEFAULT_PRIORITY</h4>
       <para>Accept the default priority assigned to the task by the scheduler.</para>
@@ -28,63 +16,29 @@
       <h4>ITSAT_MIN_PRIORITY</h4>
       <para>Low priority.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellTaskScheduler.CountTasks">
-    <summary>
-      <para>Counts tasks with the same owner ID in the scheduler's queue.</para>
-    </summary>
-    <param name="rtoid">
-      <para>Type: <b>REFTASKOWNERID</b></para>
-      <para>A GUID identifying the owner of the tasks. Supplying a specific ID will count only those tasks tagged with that owner ID. To count all items in the queue, pass TOID_NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Counts tasks with the same owner ID in the scheduler's queue.</summary>
+    <param name="rtoid">A GUID identifying the owner of the tasks. Supplying a specific ID will count only those tasks tagged with that owner ID. To count all items in the queue, pass TOID_NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellTaskScheduler.RemoveTasks">
-    <summary>
-      <para>Removes tasks from the scheduler's background queue.</para>
-    </summary>
-    <param name="rtoid">
-      <para>Type: <b>REFTASKOWNERID</b></para>
-      <para>A GUID identifying the owner of the tasks to remove.</para>
-    </param>
-    <param name="lParam">
-      <para>Type: <b>DWORD_PTR</b></para>
-      <para>A pointer to a user-defined <b>DWORD</b> value that allows the task to be identified within the tasks owned by <i>rtoid</i>. Set this value to 0 to remove all tasks for the owner specified by <i>rtoid</i>.</para>
-    </param>
+    <summary>Removes tasks from the scheduler's background queue.</summary>
+    <param name="rtoid">A GUID identifying the owner of the tasks to remove.</param>
+    <param name="lParam">A pointer to a user-defined <b>DWORD</b> value that allows the task to be identified within the tasks owned by <i>rtoid</i>. Set this value to 0 to remove all tasks for the owner specified by <i>rtoid</i>.</param>
     <param name="bWaitIfRunning">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> if you want a currently running task to complete before removing it, <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+      <b>TRUE</b> if you want a currently running task to complete before removing it, <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellTaskScheduler.Status">
-    <summary>
-      <para>Sets the release status and background thread timeout for the current task.</para>
-    </summary>
+    <summary>Sets the release status and background thread timeout for the current task.</summary>
     <param name="dwReleaseStatus">
-      <para>Type: <b>DWORD</b></para>
       <para>The following flag or 0.</para>
       <h4>ITSSFLAG_KILL_ON_DESTROY</h4>
       <para>Immediately cease execution of the current task when the <see cref="IShellTaskScheduler" /> instance is released.</para>
     </param>
-    <param name="dwThreadTimeout">
-      <para>Type: <b>DWORD</b></para>
-      <para>Not used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="dwThreadTimeout">Not used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

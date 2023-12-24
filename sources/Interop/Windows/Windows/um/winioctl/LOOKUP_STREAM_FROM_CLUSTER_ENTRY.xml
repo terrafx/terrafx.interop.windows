@@ -3,187 +3,134 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY">
-    <summary>
-      <para>Returned from the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_lookup_stream_from_cluster">FSCTL_LOOKUP_STREAM_FROM_CLUSTER</a> control
-code. Zero or more of these structures follow the
-<see cref="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT" /></para>
-      <para>structure in the output buffer returned.</para>
-    </summary>
-    <remarks>
-      <para>The name in the <b>FileName</b> member can be very long and in a format not recognized by
-a customer with the stream name and attribute type name following the filename. While it's appropriate to log the
-entire filename for diagnostic purposes, if it is to be presented to an end-user it should be reformatted to be
-more understandable (for example, remove the attribute type name and if the <b>Flags</b></para>
-      <para>member has any flag other than <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA</b> set then
-an appropriate message should be displayed.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_lookup_stream_from_cluster">FSCTL_LOOKUP_STREAM_FROM_CLUSTER</seealso>
-    <seealso cref="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Returned from the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_lookup_stream_from_cluster">FSCTL_LOOKUP_STREAM_FROM_CLUSTER</a> control code. Zero or more of these structures follow the<see cref="LOOKUP_STREAM_FROM_CLUSTER_OUTPUT" />structure in the output buffer returned.</summary>
   </member>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.OffsetToNext">
-    <summary>
-      <para>Offset in bytes from the beginning of this structure to the next
-<b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY</b></para>
-      <para>structure returned. If there are no more entries, this value is zero.</para>
-    </summary>
+    <summary>Offset in bytes from the beginning of this structure to the next<b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY</b>structure returned. If there are no more entries, this value is zero.</summary>
   </member>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.Flags">
     <summary>
-      <para>Flags describing characteristics about this stream. The value will consist of one or more of these values.
-At least one of the <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_*</b> values that fall
-within the <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK</b> (0xff000000) will be set;
-one or more of the other flag values may be set.</para>
+      <para>Flags describing characteristics about this stream. The value will consist of one or more of these values. At least one of the <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_*</b> values that fall within the <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_MASK</b> (0xff000000) will be set; one or more of the other flag values may be set.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_PAGE_FILE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The stream is part of the system pagefile.</para>
-          </description>
-        </item>
-        <item>
+          <description>The stream is part of the system pagefile.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_DENY_DEFRAG_SET</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The stream is locked from defragmentation. The <b>HandleInfo</b> member of the
-<see cref="MARK_HANDLE_INFO" /> structure for this stream has
-the <b>MARK_HANDLE_PROTECT_CLUSTERS</b> flag set.</para>
-          </description>
-        </item>
-        <item>
+          <description>The stream is locked from defragmentation. The <b>HandleInfo</b> member of the [MARK_HANDLE_INFO structure](ns-winioctl-mark_handle_info.md) for this stream has the <b>MARK_HANDLE_PROTECT_CLUSTERS</b> flag set.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_FS_SYSTEM_FILE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The stream is part of a file that is internal to the filesystem.</para>
-          </description>
-        </item>
-        <item>
+          <description>The stream is part of a file that is internal to the filesystem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_FLAG_TXF_SYSTEM_FILE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The stream is part of a file that is internal to TxF.</para>
-          </description>
-        </item>
-        <item>
+          <description>The stream is part of a file that is internal to TxF.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_DATA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x01000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The stream is part of a $DATA attribute for the file (data stream).</para>
-          </description>
-        </item>
-        <item>
+          <description>The stream is part of a $DATA attribute for the file (data stream).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_INDEX</b>
-                </description>
-              </item>
-              <item>
-                <description>0x02000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x02000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The stream is part of the $INDEX_ALLOCATION attribute for the file.</para>
-          </description>
-        </item>
-        <item>
+          <description>The stream is part of the $INDEX_ALLOCATION attribute for the file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>LOOKUP_STREAM_FROM_CLUSTER_ENTRY_ATTRIBUTE_SYSTEM</b>
-                </description>
-              </item>
-              <item>
-                <description>0x03000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x03000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The stream is part of another attribute for the file.</para>
-          </description>
-        </item>
+          <description>The stream is part of another attribute for the file.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.Reserved">
-    <summary>
-      <para>This value is reserved and is currently zero.</para>
-    </summary>
+    <summary>This value is reserved and is currently zero.</summary>
   </member>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.Cluster">
-    <summary>
-      <para>This is the cluster that this entry refers to. It will be one of the clusters passed in the input
-structure.</para>
-    </summary>
+    <summary>This is the cluster that this entry refers to. It will be one of the clusters passed in the input structure.</summary>
   </member>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_ENTRY.FileName">
-    <summary>
-      <para>A <b>NULL</b>-terminated Unicode string containing the path of the object relative to
-the root of the volume. This string will refer to the attribute or stream represented by the cluster. This
-string is not limited by <b>MAX_PATH</b> and may be up to 32,768 characters (65,536 bytes) in
-length. Not all of the filenames returned can be opened; some are internal to NTFS and always opened
-exclusively. The string returned includes the full path including filename, stream name, and attribute type name
-in the form
-"<i>full</i>\<i>path</i>\<i>to</i>\<i>file</i>\<i>filename.ext</i>:<i>streamname</i>:<i>typename</i>".</para>
-    </summary>
+    <summary>A <b>NULL</b>-terminated Unicode string containing the path of the object relative to the root of the volume. This string will refer to the attribute or stream represented by the cluster. This string is not limited by <b>MAX_PATH</b> and may be up to 32,768 characters (65,536 bytes) in length. Not all of the filenames returned can be opened; some are internal to NTFS and always opened exclusively. The string returned includes the full path including filename, stream name, and attribute type name in the form "<i>full</i>\<i>path</i>\<i>to</i>\<i>file</i>\<i>filename.ext</i>:<i>streamname</i>:<i>typename</i>".</summary>
   </member>
 </doc>

@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_ENVELOPED_ENCODE_INFO">
-    <summary>
-      <para>The <b>CMSG_ENVELOPED_ENCODE_INFO</b> structure contains information needed to encode an enveloped message. It is passed to
-<see cref="CryptMsgOpenToEncode" /> if the <i>dwMsgType</i> parameter is CMSG_ENVELOPED.</para>
-    </summary>
-    <seealso cref="CERT_INFO" />
-    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <summary>The <b>CMSG_ENVELOPED_ENCODE_INFO</b> structure contains information needed to encode an enveloped message. It is passed to<see cref="CryptMsgOpenToEncode" /> if the <i>dwMsgType</i> parameter is CMSG_ENVELOPED.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.hCryptProv">
     <summary>
@@ -28,39 +21,37 @@
     <summary>
       <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the signature algorithm type and any associated additional parameters in encoded form.</para>
       <para>The <b>pszObjId</b> member of the structure specifies the algorithm used to encrypt the message contents.</para>
-      <para>The following encryption algorithms require an encoded eight byte <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">initialization vector</a> (IV) in the <b>Parameters</b> member of structure. For details, see
-<see cref="CryptSetKeyParam" />.</para>
+      <para>The following encryption algorithms require an encoded eight byte <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">initialization vector</a> (IV) in the <b>Parameters</b> member of structure. For details, see<see cref="CryptSetKeyParam" />.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CALG_DES</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_DES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>szOID_OIWSEC_desCBC</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>szOID_OIWSEC_desCBC</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CALG_3DES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>CALG_3DES</b>
-          </description>
-          <description>
-            <para>szOID_RSA_DES_EDE3_CBC</para>
-          </description>
-        </item>
-      </list>
-      <para>If the <b>cbData</b> member of the <b>Parameters</b> member is zero, an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Abstract Syntax Notation One</a> (ASN.1) encoded OCTET STRING containing the IV is generated using
-<see cref="CryptGenRandom" />.</para>
-      <para>The szOID_RSA_RC2CBC (CALG_RC2) algorithm requires the <b>pbData</b> member of <b>Parameters</b> to be an encoded
-<see cref="CRYPT_RC2_CBC_PARAMETERS" /> structure. If the <b>cbData</b> member of the <b>Parameters</b> member is zero, an ASN.1 encoded CRYPT_RC2_CBC_PARAMETERS is generated with a default value of 40 for the <b>dwVersion</b> member. This sets the default key length to 40 bits. This default key length can be overridden with <b>pvEncryptionAuxInfo</b> pointing to a
-<see cref="CMSG_RC2_AUX_INFO" /> structure containing the desired key length.</para>
-      <para>
-        <b>Note</b>  On decryption, if an IV exists,
-<see cref="CryptSetKeyParam" /> is called with the IV before decryption begins.</para>
-    </summary>
+          <description>szOID_RSA_DES_EDE3_CBC</description>
+        </listheader>
+      </list> <para>If the <b>cbData</b> member of the <b>Parameters</b> member is zero, an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Abstract Syntax Notation One</a> (ASN.1) encoded OCTET STRING containing the IV is generated using<see cref="CryptGenRandom" />.</para><para>The szOID_RSA_RC2CBC (CALG_RC2) algorithm requires the <b>pbData</b> member of <b>Parameters</b> to be an encoded<see cref="CRYPT_RC2_CBC_PARAMETERS" /> structure. If the <b>cbData</b> member of the <b>Parameters</b> member is zero, an ASN.1 encoded CRYPT_RC2_CBC_PARAMETERS is generated with a default value of 40 for the <b>dwVersion</b> member. This sets the default key length to 40 bits. This default key length can be overridden with <b>pvEncryptionAuxInfo</b> pointing to a<see cref="CMSG_RC2_AUX_INFO" /> structure containing the desired key length.</para><div><b>Note</b>  On decryption, if an IV exists, <see cref="CryptSetKeyParam" /> is called with the IV before decryption begins.</div></summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.pvEncryptionAuxInfo">
     <summary>
@@ -70,101 +61,96 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RC2</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RC2</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <see cref="CMSG_RC2_AUX_INFO" />
-            </para>
+            <see cref="CMSG_RC2_AUX_INFO" />
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <b>RC4</b>
-          </description>
-          <description>
-            <para>
-              <see cref="CMSG_RC4_AUX_INFO" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP3 or compatible</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RC4</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <see cref="CMSG_SP3_COMPATIBLE_AUX_INFO" />
-            </para>
+            <see cref="CMSG_RC4_AUX_INFO" />
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <b>All other encryption algorithms</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP3 or compatible</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>
+            <see cref="CMSG_SP3_COMPATIBLE_AUX_INFO" />
+          </description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>All other encryption algorithms</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
             <b>NULL</b>
           </description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.cRecipients">
-    <summary>
-      <para>Number of elements in the <b>rgpRecipients</b> or <b>rgCmsRecipients</b> array.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgpRecipients</b> or <b>rgCmsRecipients</b> array.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.rgpRecipients">
-    <summary>
-      <para>An array of pointers to
-<see cref="CERT_INFO" /> structures, each containing a recipient's certificate Issuer, SerialNumber, and SubjectPublicKeyInfo. This array can only be used for recipients identified by their Issuer and serial number. If <b>rgpRecipients</b> is not <b>NULL</b>, <b>rgCmsRecipients</b> must be <b>NULL</b>.</para>
-    </summary>
+    <summary>An array of pointers to<see cref="CERT_INFO" /> structures, each containing a recipient's certificate Issuer, SerialNumber, and SubjectPublicKeyInfo. This array can only be used for recipients identified by their Issuer and serial number. If <b>rgpRecipients</b> is not <b>NULL</b>, <b>rgCmsRecipients</b> must be <b>NULL</b>.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.rgCmsRecipients">
-    <summary>
-      <para>Optional. An array of pointers to <see cref="CMSG_RECIPIENT_ENCODE_INFO" /> structures containing recipient information. If <b>rgCmsRecipients</b> is not <b>NULL</b>, <b>rgpRecipients</b> must be <b>NULL</b>. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</para>
-    </summary>
+    <summary>Optional. An array of pointers to <see cref="CMSG_RECIPIENT_ENCODE_INFO" /> structures containing recipient information. If <b>rgCmsRecipients</b> is not <b>NULL</b>, <b>rgpRecipients</b> must be <b>NULL</b>. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.cCertEncoded">
-    <summary>
-      <para>Optional. A <b>DWORD</b> value that indicates the number of encoded certificates in the <b>rgCertEncoded</b> array. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</para>
-    </summary>
+    <summary>Optional. A <b>DWORD</b> value that indicates the number of encoded certificates in the <b>rgCertEncoded</b> array. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.rgCertEncoded">
-    <summary>
-      <para>Optional. Array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_BLOB</a> structures. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</para>
-    </summary>
+    <summary>Optional. Array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_BLOB</a> structures. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.cCrlEncoded">
-    <summary>
-      <para>Optional. A <b>DWORD</b> value that indicates the number of encoded <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation lists</a> (CRLs) in the <b>rgCRLEncoded</b> array. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</para>
-    </summary>
+    <summary>Optional. A <b>DWORD</b> value that indicates the number of encoded <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation lists</a> (CRLs) in the <b>rgCRLEncoded</b> array. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.rgCrlEncoded">
-    <summary>
-      <para>Optional. An array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRL_BLOB</a> structures. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</para>
-    </summary>
+    <summary>Optional. An array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRL_BLOB</a> structures. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.cAttrCertEncoded">
-    <summary>
-      <para>Optional. A <b>DWORD</b> value that indicates the number of encoded certificate attributes in the <b>rgAttrCertEncoded</b> array. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</para>
-    </summary>
+    <summary>Optional. A <b>DWORD</b> value that indicates the number of encoded certificate attributes in the <b>rgAttrCertEncoded</b> array. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.rgAttrCertEncoded">
-    <summary>
-      <para>Optional. An array of <see cref="CRYPT_ATTRIBUTE" /> structures. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this member.</para>
-    </summary>
+    <summary>Optional. An array of <see cref="CRYPT_ATTRIBUTE" /> structures. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this member.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.cUnprotectedAttr">
-    <summary>
-      <para>Optional. A <b>DWORD</b> value that indicates the number of unprotected attributes in the <b>rgUnprotectedAttr</b> array. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</para>
-    </summary>
+    <summary>Optional. A <b>DWORD</b> value that indicates the number of unprotected attributes in the <b>rgUnprotectedAttr</b> array. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</summary>
   </member>
   <member name="CMSG_ENVELOPED_ENCODE_INFO.rgUnprotectedAttr">
-    <summary>
-      <para>Optional. An array of <see cref="CRYPT_ATTRIBUTE" /> structures. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</para>
-    </summary>
+    <summary>Optional. An array of <see cref="CRYPT_ATTRIBUTE" /> structures. CMSG_ENVELOPED_ENCODE_INFO_HAS_CMS_FIELDS must be defined to reference this field.</summary>
   </member>
 </doc>

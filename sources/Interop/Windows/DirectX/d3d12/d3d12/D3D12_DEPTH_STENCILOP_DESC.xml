@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DEPTH_STENCILOP_DESC">
+    <summary>Describes stencil operations that can be performed based on the results of stencil test.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCILOP_DESC.StencilFailOp">
+    <summary>A <see cref="D3D12_STENCIL_OP" />-typed value that identifies the stencil operation to perform when stencil testing fails.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCILOP_DESC.StencilDepthFailOp">
+    <summary>A <see cref="D3D12_STENCIL_OP" />-typed value that identifies the stencil operation to perform when stencil testing passes and depth testing fails.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCILOP_DESC.StencilPassOp">
+    <summary>A <see cref="D3D12_STENCIL_OP" />-typed value that identifies the stencil operation to perform when stencil testing and depth testing both pass.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCILOP_DESC.StencilFunc">
+    <summary>A <see cref="D3D12_COMPARISON_FUNC" />-typed value that identifies the function that compares stencil data against existing stencil data.</summary>
+  </member>
+</doc>

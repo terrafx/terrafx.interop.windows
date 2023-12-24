@@ -4,518 +4,162 @@
 <doc>
   <member name="IAMExtDevice.Calibrate">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Calibrate</code> method calibrates an external device's transport mechanism.</para>
       <para>This method is not implemented.</para>
     </summary>
-    <param name="hEvent">
-      <para>Handle to an event. The event is signaled when the action is complete.</para>
-    </param>
+    <param name="hEvent">Handle to an event. The event is signaled when the action is complete.</param>
     <param name="Mode">
       <para>Specifies a value that activates or deactivates the calibration process:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_ACTIVE</description>
           <description>Activates the calibration process.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_INACTIVE</description>
           <description>Deactivates the calibration process.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>NULL</b>
           </description>
           <description>No action; return the calibration status in <i>pStatus</i>.</description>
-        </item>
+        </listheader>
       </list>
     </param>
     <param name="pStatus">
       <para>Pointer to a <b>long</b> integer that receives one of the following values:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>OATRUE</description>
           <description>Calibration is active.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>OAFALSE</description>
           <description>Calibration is inactive.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use this method on certain external devices that require calibration; for example, rewinding a tape and resetting the counter, or computing the frame offset for a timecode reader.</para>
-      <para>Filters for various external devices can implement this method differently, depending on the calibration that the device needs. This method assumes the <see cref="IMediaEventSink" /> interface has already established an event sink, or that another event signaling method has been established.</para>
-      <h3>DV Implementation</h3>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> and UVC drivers do not support this method. The method returns E_NOTIMPL.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtDevice Interface" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtDevice.GetCapability">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCapability</code> method retrieves the capabilities of the external device.</para>
     </summary>
-    <param name="Capability">
-      <para>Specifies the capability to check. See Remarks for more information.</para>
-    </param>
-    <param name="pValue">
-      <para>Pointer to a variable that receives a <b>long</b> integer. See Remarks for more information.</para>
-    </param>
-    <param name="pdblValue">
-      <para>Pointer to a variable that receives a <b>double</b>. See Remarks for more information.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>Capability</i> parameter is a flag that specifies which capability to check. The method returns the result either in the <i>pValue</i> parameter or in the <i>pdblValue</i> parameter, depending on the capability flag.</para>
-      <para>For the following flags, the method returns the value OATRUE or OAFALSE in the <i>pValue</i> parameter. The value OATRUE indicates that the capability is present, while the value OAFALSE indicates it is absent.</para>
-      <list type="table">
-        <listheader>
-          <description>Capability flag
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>ED_DEVCAP_AUDIO_INPUTS</description>
-          <description>Device accepts audio input.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_CAN_MONITOR_SOURCES</description>
-          <description>Device can send any input to the monitored output, regardless of the input that is currently selected.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_CAN_PREVIEW</description>
-          <description>Device can preview.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_CAN_RECORD</description>
-          <description>Device can record.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_CAN_RECORD_STROBE</description>
-          <description>Device can strobe record. This capability applies to multitrack devices that can record to selected tracks.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_CAN_SAVE</description>
-          <description>Device can save data.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_CTLTRK_READ</description>
-          <description>Device can read control tracks.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_HAS_AUDIO</description>
-          <description>Device has audio.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_HAS_VIDEO</description>
-          <description>Device has video.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_INDEX_READ</description>
-          <description>Device can read index marks.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_NEEDS_CALIBRATING</description>
-          <description>Device needs calibrating. See <see cref="IAMExtDevice.Calibrate" />.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_TIMECODE_READ</description>
-          <description>Device can read SMPTE time code.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_TIMECODE_WRITE</description>
-          <description>Device can set SMPTE time code.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_USES_FILES</description>
-          <description>Device has a built-in file system.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_VIDEO_INPUTS</description>
-          <description>Device accepts video input.</description>
-        </item>
-      </list>
-      <para>For the following flags, the method returns a defined constant in the <i>pValue</i> parameter.</para>
-      <para>ED_DEVCAP_DEVICE_TYPE: Returns the device type.</para>
-      <list type="table">
-        <listheader>
-          <description>Returned Constant
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>ED_DEVTYPE_ATR</description>
-          <description>Audio tape recorder</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_CG</description>
-          <description>Character generator</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_DDR</description>
-          <description>Digital disk recorder</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_DVE</description>
-          <description>Digital video effects unit</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_GPI</description>
-          <description>General purpose interface trigger</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_KEYER</description>
-          <description>Video keyer</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_LASERDISK</description>
-          <description>Laserdisc</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_MIXER_AUDIO</description>
-          <description>Audio mixer</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_MIXER_VIDEO</description>
-          <description>Video mixer</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_ROUTER</description>
-          <description>Video router</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_TBC</description>
-          <description>Timebase corrector</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_TCG</description>
-          <description>Timecode generator/reader</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_VCR</description>
-          <description>VCR, or camcorder with full VCR capabilities</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_WIPEGEN</description>
-          <description>Video wipe generator</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_JOYSTICK</description>
-          <description>Joystick</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_KEYBOARD</description>
-          <description>Keyboard</description>
-        </item>
-      </list>
-      <para>ED_DEVCAP_SYNC_ACCURACY: Returns an indication of the device's synchronization accuracy.</para>
-      <list type="table">
-        <listheader>
-          <description>Returned Constant
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>ED_SYNCACC_PRECISE</description>
-          <description>Device has precise accuracy.</description>
-        </item>
-        <item>
-          <description>ED_SYNCACC_FRAME</description>
-          <description>Device is frame accurate.</description>
-        </item>
-        <item>
-          <description>ED_SYNCACC_ROUGH</description>
-          <description>Device is less than frame accurate.</description>
-        </item>
-      </list>
-      <para>ED_DEVCAP_NORMAL_RATE: Returns the device's normal frame rate.</para>
-      <list type="table">
-        <listheader>
-          <description>Returned Constant
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>ED_RATE_24</description>
-          <description>24 frames per second (fps)</description>
-        </item>
-        <item>
-          <description>ED_RATE_25</description>
-          <description>25 fps</description>
-        </item>
-        <item>
-          <description>ED_RATE_2997</description>
-          <description>29.97 fps</description>
-        </item>
-        <item>
-          <description>ED_RATE_30</description>
-          <description>30 fps</description>
-        </item>
-      </list>
-      <para>ED_DEVCAP_SEEK_TYPE: Returns an indication of the device's seeking accuracy.</para>
-      <list type="table">
-        <listheader>
-          <description>Returned Constant
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>ED_SEEK_PERFECT</description>
-          <description>Device can seek within one video frame without a signal break.</description>
-        </item>
-        <item>
-          <description>ED_SEEK_FAST</description>
-          <description>Device can seek quickly, with a short break in the signal.</description>
-        </item>
-        <item>
-          <description>ED_SEEK_SLOW</description>
-          <description>Device seeks slowly; such as tape transport.</description>
-        </item>
-      </list>
-      <para>For the following flags, the method returns a numeric value in the <i>pValue</i> parameter.</para>
-      <list type="table">
-        <listheader>
-          <description>Capability Flag
-</description>
-          <description>Returned Value
-</description>
-        </listheader>
-        <item>
-          <description>ED_DEVCAP_EXTERNAL_DEVICE_ID</description>
-          <description>Manufacturer-specific identifier.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_PREROLL</description>
-          <description>Device preroll time.</description>
-        </item>
-        <item>
-          <description>ED_DEVCAP_POSTROLL</description>
-          <description>Device postroll time.</description>
-        </item>
-      </list>
-      <para>In Windows XP Service Pack 2 and later, the following additional flags are supported for ED_DEVCAP_DEVICE_TYPE.</para>
-      <list type="table">
-        <listheader>
-          <description>Returned Constant</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>ED_DEVTYPE_CAMERA_STORAGE</description>
-          <description>Storage for still images or short video files.</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_DTV</description>
-          <description>Digital television with serial bus interface.</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_PC_VIRTUAL</description>
-          <description>Virtual or emulated device on a computer.</description>
-        </item>
-      </list>
-      <para>To use these constants, include the header file Xprtdefs.h.</para>
-      <h3>DV Implementation</h3>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> and UVC drivers support the following behaviors.</para>
-      <para>The ED_DEVCAP_NORMAL_RATE flag returns the frame rate.</para>
-      <list type="table">
-        <listheader>
-          <description>Returned Constant</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>ED_RATE_25</description>
-          <description>25 fps (default PAL frame rate)</description>
-        </item>
-        <item>
-          <description>ED_RATE_2997</description>
-          <description>29.997 fps (default NTSC frame rate)</description>
-        </item>
-      </list>
-      <para>For MSDV only, the ED_DEVCAP_DEVICE_TYPE flag returns the device type. Possible values are shown in the following table.  For UVC devices, use the <a href="https://docs.microsoft.com//windows/previous-versions/windows/desktop/api/vidcap/nn-vidcap-ikstopologyinfo">IKsTopologyInfo</a> interface instead.</para>
-      <list type="table">
-        <listheader>
-          <description>Returned Constant</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>ED_DEVTYPE_CAMERA</description>
-          <description>Simple camera that can record or pause-record, but lacks full VCR capabilities.</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_DVHS</description>
-          <description>Device supports D-VHS format.</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_UNKNOWN</description>
-          <description>Unknown device type.</description>
-        </item>
-        <item>
-          <description>ED_DEVTYPE_VCR</description>
-          <description>Device has full VCR capabilities.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtDevice Interface" />
+    <param name="Capability">Specifies the capability to check. See Remarks for more information.</param>
+    <param name="pValue">Pointer to a variable that receives a <b>long</b> integer. See Remarks for more information.</param>
+    <param name="pdblValue">Pointer to a variable that receives a <b>double</b>. See Remarks for more information.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtDevice.get_DevicePort">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_DevicePort</code> method retrieves the communication port to which the external device is connected.</para>
     </summary>
     <param name="pDevicePort">
       <para>Pointer to a <b>long</b> integer that receives one of the following values, indicating the port to which the device is connected:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>DEV_PORT_1394</description>
           <description>IEEE 1394 Bus</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_ARTI</description>
           <description>ARTI driver</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_COM1</description>
           <description>COM1</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_COM2</description>
           <description>COM2</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_COM3</description>
           <description>COM3</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_COM4</description>
           <description>COM4</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_DIAQ</description>
           <description>Diaquest driver</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_SIM</description>
           <description>Simulation port</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_USB</description>
           <description>Universal Serial Bus</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtDevice Interface" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtDevice.get_DevicePower">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_DevicePower</code> method retrieves the external device's power mode.</para>
     </summary>
     <param name="pPowerMode">
       <para>Pointer to a <b>long</b> integer that receives one of the following values, indicating the device's power mode.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>ED_POWER_OFF</description>
-          <description>Power is off.</description>
-        </item>
-        <item>
-          <description>ED_POWER_ON</description>
-          <description>Power if on.</description>
-        </item>
-        <item>
-          <description>ED_POWER_STANDBY</description>
-          <description>Device is in standby mode.</description>
-        </item>
-      </list>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In Windows XP Service Pack 2 and later, the following additional power mode is defined.</para>
-      <list type="table">
-        <listheader>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>ED_POWER_DEVICE_DEPENDENT</description>
-          <description>Power is on with limited functions.</description>
-        </item>
+        <listheader>
+          <description>ED_POWER_OFF</description>
+          <description>Power is off.</description>
+        </listheader>
+        <listheader>
+          <description>ED_POWER_ON</description>
+          <description>Power if on.</description>
+        </listheader>
+        <listheader>
+          <description>ED_POWER_STANDBY</description>
+          <description>Device is in standby mode.</description>
+        </listheader>
       </list>
-      <para>To use this constant, include the header file Xprtdefs.h.</para>
-      <h3>DV and MPEG Camcorder Implementation</h3>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/msdv-driver">MSDV</a> and UVC drivers return ED_POWER_ON when the camcorder is on. If the camcorder is off or in standby mode, the DV driver is not loaded, so this method is not available. If the camcorder is removed unexpectedly, the method can return ERROR_GEN_FAILURE.</para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mstape-driver">MSTape</a> supports both ED_POWER_OFF and ED_POWER_ON, but not ED_POWER_STANDBY.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtDevice Interface" />
-    <seealso cref="IAMExtDevice.put_DevicePower" />
+    </param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtDevice.get_ExternalDeviceID">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_ExternalDeviceID</code> method retrieves the model number of the external device.</para>
     </summary>
-    <param name="ppszData">
-      <para>Pointer to an <b>LPOLESTR</b> that receives the manufacturer-specific identification as a string. The caller must release the string by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtDevice Interface" />
+    <param name="ppszData">Pointer to an <b>LPOLESTR</b> that receives the manufacturer-specific identification as a string. The caller must release the string by calling <see cref="CoTaskMemFree" />.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtDevice.get_ExternalDeviceVersion">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_ExternalDeviceVersion</code> retrieves the version number of the external device's operating software.</para>
     </summary>
-    <param name="ppszData">
-      <para>Pointer to an <b>LPOLESTR</b> that receives the manufacturer-specific operating software version number as a string. The caller must release the string by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtDevice Interface" />
+    <param name="ppszData">Pointer to an <b>LPOLESTR</b> that receives the manufacturer-specific operating software version number as a string. The caller must release the string by calling <see cref="CoTaskMemFree" />.</param>
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtDevice.put_DevicePort">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_DevicePort</code> method assigns the communication port to which the external device is connected.</para>
       <para>This method is not implemented.</para>
     </summary>
@@ -523,96 +167,84 @@
       <para>Specifies the port to which the device will connect. Use one of the following values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>DEV_PORT_1394</description>
           <description>IEEE 1394 Bus</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_ARTI</description>
           <description>ARTI driver</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_COM1</description>
           <description>COM1</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_COM2</description>
           <description>COM2</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_COM3</description>
           <description>COM3</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_COM4</description>
           <description>COM4</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_DIAQ</description>
           <description>Diaquest driver</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_MIN</description>
           <description>DEV_PORT_SIM</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_SIM</description>
           <description>Simulation port (used for "no hardware" simulation)</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>DEV_PORT_USB</description>
           <description>Universal serial bus</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtDevice Interface" />
-    <seealso cref="IAMExtDevice.get_DevicePort" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtDevice.put_DevicePower">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_DevicePower</code> method assigns the external device's power mode to either on, off, or standby.</para>
     </summary>
     <param name="PowerMode">
       <para>Specifies the device's power mode. Use one of the following values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>ED_POWER_OFF</description>
           <description>Off</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_POWER_ON</description>
           <description>On</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>ED_POWER_STANDBY</description>
           <description>Standby</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMExtDevice Interface" />
-    <seealso cref="IAMExtDevice.get_DevicePower" />
+    <returns>When this method succeeds, it returns S_OK. Otherwise it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMExtDevice">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IAMExtDevice</b> interface controls an external device, such as a DV camera or video tape recoder (VTR).</para>
       <para>This interface controls basic device functions. Several other interfaces exist for controlling more specific functionality in a device:</para>
       <list type="bullet">
@@ -638,12 +270,5 @@
         </item>
       </list>
     </summary>
-    <remarks>
-      <para>The DV device drivers require some additional constants that are defined in the header file Xprtdefs.h.</para>
-      <para>For Windows Driver Model (WDM) devices, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wdm-video-capture-filter">WDM Video Capture Filter</a> automatically exposes this interface if the WDM driver supports the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/propsetid-ext-device">PROPSETID_EXT_DEVICE</a> property set. For more information, see the <a href="https://docs.microsoft.com//windows-hardware/drivers/gettingstarted/">Windows Driver Kit (WDK)</a> documentation.</para>
-      <h3>Hardware Requirements</h3>
-      <para>To control an external VCR, certain hardware requirements are recommended. VCRs with an RS-422 serial interface require a special serial port card or an external RS-232-to-RS-422 adapter. In addition, for best performance, your computer should have a serial port card built with a 16550 high-performance UART (Universal Asynchronous Receiver/Transmitter) to sustain higher baud rates, such as 38.4 baud.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
   </member>
 </doc>

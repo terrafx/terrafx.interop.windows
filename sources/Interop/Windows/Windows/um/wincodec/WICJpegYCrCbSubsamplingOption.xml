@@ -3,39 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICJpegYCrCbSubsamplingOption">
-    <summary>
-      <para>Specifies the JPEG YCrCB subsampling options.</para>
-    </summary>
-    <remarks>
-      <para>The native JPEG encoder uses <b>WICJpegYCrCbSubsampling420</b>.</para>
-    </remarks>
+    <summary>Specifies the JPEG YCrCB subsampling options.</summary>
   </member>
   <member name="WICJpegYCrCbSubsamplingOption.WICJpegYCrCbSubsamplingDefault">
-    <summary>
-      <para>The default subsampling option.</para>
-    </summary>
+    <summary>The default subsampling option.</summary>
   </member>
   <member name="WICJpegYCrCbSubsamplingOption.WICJpegYCrCbSubsampling420">
-    <summary>
-      <para>Subsampling option that uses both horizontal and vertical decimation.</para>
-    </summary>
+    <summary>Subsampling option that uses both horizontal and vertical decimation.</summary>
   </member>
   <member name="WICJpegYCrCbSubsamplingOption.WICJpegYCrCbSubsampling422">
-    <summary>
-      <para>Subsampling option that uses horizontal decimation  .</para>
-    </summary>
+    <summary>Subsampling option that uses horizontal decimation .</summary>
   </member>
   <member name="WICJpegYCrCbSubsamplingOption.WICJpegYCrCbSubsampling444">
-    <summary>
-      <para>Subsampling option that uses no decimation.</para>
-    </summary>
+    <summary>Subsampling option that uses no decimation.</summary>
   </member>
   <member name="WICJpegYCrCbSubsamplingOption.WICJpegYCrCbSubsampling440">
-    <summary>
-      <para>Subsampling option that uses 2x vertical downsampling only. This option is only available in Windows 8.1 and later.</para>
-    </summary>
+    <summary>Subsampling option that uses 2x vertical downsampling only. This option is only available in Windows 8.1 and later.</summary>
   </member>
-  <member name="WICJpegYCrCbSubsamplingOption.WICJPEGYCRCBSUBSAMPLING_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICJpegYCrCbSubsamplingOption.WICJPEGYCRCBSUBSAMPLING_FORCE_DWORD"></member>
 </doc>

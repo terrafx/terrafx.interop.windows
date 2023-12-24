@@ -7,7 +7,7 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class TRANSACTIONMANAGER
 {
-    [NativeTypeName("#define TRANSACTIONMANAGER_OBJECT_PATH L\"\\\\TransactionManager\\\\\"")]
+    [NativeTypeName("#define TRANSACTIONMANAGER_OBJECT_PATH L\"\\TransactionManager\"")]
     public const string TRANSACTIONMANAGER_OBJECT_PATH = "\\TransactionManager\\";
 
     [NativeTypeName("#define TRANSACTIONMANAGER_OBJECT_NAME_LENGTH_IN_BYTES (sizeof(TRANSACTIONMANAGER_OBJECT_PATH)+(38*sizeof(WCHAR)))")]

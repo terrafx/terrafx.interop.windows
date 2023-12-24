@@ -3,81 +3,96 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RBHITTESTINFO">
-    <summary>
-      <para>Contains information specific to a hit test operation. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/rb-hittest">RB_HITTEST</a> message.</para>
-    </summary>
+    <summary>Contains information specific to a hit test operation. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/rb-hittest">RB_HITTEST</a> message.</summary>
   </member>
   <member name="RBHITTESTINFO.pt">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that describes the point to be hit tested, in client coordinates.</para>
-    </summary>
+      <see cref="POINT" /> structure that describes the point to be hit tested, in client coordinates.</summary>
   </member>
   <member name="RBHITTESTINFO.flags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Member that receives a flag value indicating the rebar band's component located at the point described by <b>pt</b>. This member will be one of the following:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>RBHT_CAPTION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RBHT_CAPTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The point was in the rebar band's caption.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The point was in the rebar band's caption.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RBHT_CHEVRON</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The point was in the rebar band's chevron (version 5.80 and greater).</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RBHT_CHEVRON</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RBHT_CLIENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The point was in the rebar band's client area.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The point was in the rebar band's chevron (version 5.80 and greater).</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RBHT_GRABBER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The point was in the rebar band's gripper.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>RBHT_CLIENT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RBHT_NOWHERE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The point was not in a rebar band.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The point was in the rebar band's client area.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>RBHT_SPLITTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>RBHT_GRABBER</b>
-          </description>
-          <description>
-            <para>The point was in the rebar band's gripper.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RBHT_NOWHERE</b>
-          </description>
-          <description>
-            <para>The point was not in a rebar band.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>RBHT_SPLITTER</b>
-          </description>
-          <description>
-            <para>The point was in the rebar band's splitter.</para>
-          </description>
-        </item>
+          <description>The point was in the rebar band's splitter.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="RBHITTESTINFO.iBand">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Member that receives the rebar band's index at the point described by <b>pt</b>. This value will be the zero-based index of the band, or -1 if no band was at the hit-tested point.</para>
-    </summary>
+    <summary>Member that receives the rebar band's index at the point described by <b>pt</b>. This value will be the zero-based index of the band, or -1 if no band was at the hit-tested point.</summary>
   </member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IIPDVDecTests
     {
         Assert.That(typeof(IIPDVDec).GUID, Is.EqualTo(IID_IIPDVDec));
     }
-
-    /// <summary>Validates that the <see cref="IIPDVDec" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IIPDVDec>(), Is.EqualTo(sizeof(IIPDVDec)));
-    }
-
-    /// <summary>Validates that the <see cref="IIPDVDec" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IIPDVDec).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IIPDVDec" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IIPDVDec), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IIPDVDec), Is.EqualTo(4));
-        }
-    }
 }

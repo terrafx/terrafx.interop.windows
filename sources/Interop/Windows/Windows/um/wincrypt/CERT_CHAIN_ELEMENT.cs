@@ -33,5 +33,5 @@ public unsafe partial struct CERT_CHAIN_ELEMENT
 
     /// <include file='CERT_CHAIN_ELEMENT.xml' path='doc/member[@name="CERT_CHAIN_ELEMENT.pwszExtendedErrorInfo"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszExtendedErrorInfo;
+    public char* pwszExtendedErrorInfo;
 }

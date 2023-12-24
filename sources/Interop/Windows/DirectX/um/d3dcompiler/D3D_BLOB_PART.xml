@@ -3,115 +3,91 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D_BLOB_PART">
-    <summary>
-      <para>Values that identify parts of the content of an arbitrary length data buffer.</para>
-    </summary>
-    <remarks>
-      <para>These values are passed to the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dgetblobpart">D3DGetBlobPart</a> or  <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dsetblobpart">D3DSetBlobPart</a> function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-enums">Enumerations</seealso>
+    <summary>Values that identify parts of the content of an arbitrary length data buffer.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_INPUT_SIGNATURE_BLOB">
-    <summary>
-      <para>The blob part is an input signature.</para>
-    </summary>
+    <summary>The blob part is an input signature.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_OUTPUT_SIGNATURE_BLOB">
-    <summary>
-      <para>The blob part is an output signature.</para>
-    </summary>
+    <summary>The blob part is an output signature.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_INPUT_AND_OUTPUT_SIGNATURE_BLOB">
-    <summary>
-      <para>The blob part is an input and output signature.</para>
-    </summary>
+    <summary>The blob part is an input and output signature.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_PATCH_CONSTANT_SIGNATURE_BLOB">
-    <summary>
-      <para>The blob part is a patch constant signature.</para>
-    </summary>
+    <summary>The blob part is a patch constant signature.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_ALL_SIGNATURE_BLOB">
-    <summary>
-      <para>The blob part is all signature.</para>
-    </summary>
+    <summary>The blob part is all signature.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_DEBUG_INFO">
-    <summary>
-      <para>The blob part is debug information.</para>
-    </summary>
+    <summary>The blob part is debug information.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_LEGACY_SHADER">
-    <summary>
-      <para>The blob part is a legacy shader.</para>
-    </summary>
+    <summary>The blob part is a legacy shader.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_XNA_PREPASS_SHADER">
-    <summary>
-      <para>The blob part is an XNA prepass shader.</para>
-    </summary>
+    <summary>The blob part is an XNA prepass shader.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_XNA_SHADER">
-    <summary>
-      <para>The blob part is an XNA shader.</para>
-    </summary>
+    <summary>The blob part is an XNA shader.</summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_PDB">
     <summary>
       <para>The blob part is program database (PDB) information.</para>
-      <para>
-        <b>Note</b>  This value is supported by the D3dcompiler_44.dll or later version of the file.</para>
+      <div>
+        <b>Note</b>  This value is supported by the D3dcompiler_44.dll or later version of the file.</div>
     </summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_PRIVATE_DATA">
     <summary>
       <para>The blob part is private data.</para>
-      <para>
-        <b>Note</b>  This value is supported by the D3dcompiler_44.dll or later version of the file.</para>
+      <div>
+        <b>Note</b>  This value is supported by the D3dcompiler_44.dll or later version of the file.</div>
     </summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_ROOT_SIGNATURE">
     <summary>
       <para>The blob part is a root signature. Refer to <a href="https://docs.microsoft.com//windows/desktop/direct3d12/specifying-root-signatures-in-hlsl">Specifying Root Signatures in HLSL</a> for more information on using Direct3D12 with HLSL.</para>
-      <para>
-        <b>Note</b>  This value is supported by the D3dcompiler_47.dll or later version of the file.</para>
+      <div>
+        <b>Note</b>  This value is supported by the D3dcompiler_47.dll or later version of the file.</div>
     </summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_DEBUG_NAME">
     <summary>
       <para>The blob part is the debug name of the shader. If the application does not specify the debug name itself, an auto-generated name matching the PDB file of the shader is provided instead.</para>
-      <para>
-        <b>Note</b>  This value is supported by the D3dcompiler_47.dll as available on the Windows 10 Fall Creators Update and its SDK, or later version of the file.</para>
+      <div>
+        <b>Note</b>  This value is supported by the D3dcompiler_47.dll as available on the Windows 10 Fall Creators Update and its SDK, or later version of the file.</div>
     </summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_TEST_ALTERNATE_SHADER">
     <summary>
       <para>The blob part is a test alternate shader.</para>
-      <para>
-        <b>Note</b>  This value identifies a test part and is only produced by special compiler versions. Therefore, this part type is typically not present in shaders.</para>
+      <div>
+        <b>Note</b>  This value identifies a test part and is only produced by special compiler versions. Therefore, this part type is typically not present in shaders.</div>
     </summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_TEST_COMPILE_DETAILS">
     <summary>
       <para>The blob part is test compilation details.</para>
-      <para>
-        <b>Note</b>  This value identifies a test part and is only produced by special compiler versions. Therefore, this part type is typically not present in shaders.</para>
+      <div>
+        <b>Note</b>  This value identifies a test part and is only produced by special compiler versions. Therefore, this part type is typically not present in shaders.</div>
     </summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_TEST_COMPILE_PERF">
     <summary>
       <para>The blob part is test compilation performance.</para>
-      <para>
-        <b>Note</b>  This value identifies a test part and is only produced by special compiler versions. Therefore, this part type is typically not present in shaders.</para>
+      <div>
+        <b>Note</b>  This value identifies a test part and is only produced by special compiler versions. Therefore, this part type is typically not present in shaders.</div>
     </summary>
   </member>
   <member name="D3D_BLOB_PART.D3D_BLOB_TEST_COMPILE_REPORT">
     <summary>
       <para>The blob part is a test compilation report.</para>
-      <para>
-        <b>Note</b>  This value identifies a test part and is only produced by special compiler versions. Therefore, this part type is typically not present in shaders.</para>
-      <para>
-        <b>Note</b>  This value is supported by the D3dcompiler_44.dll or later version of the file.</para>
+      <div>
+        <b>Note</b>  This value identifies a test part and is only produced by special compiler versions. Therefore, this part type is typically not present in shaders.</div>
+      <div>
+        <b>Note</b>  This value is supported by the D3dcompiler_44.dll or later version of the file.</div>
     </summary>
   </member>
 </doc>

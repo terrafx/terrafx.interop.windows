@@ -10,5 +10,5 @@ public unsafe partial struct UNIVERSAL_NAME_INFOW
 {
     /// <include file='UNIVERSAL_NAME_INFOW.xml' path='doc/member[@name="UNIVERSAL_NAME_INFOW.lpUniversalName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpUniversalName;
+    public char* lpUniversalName;
 }

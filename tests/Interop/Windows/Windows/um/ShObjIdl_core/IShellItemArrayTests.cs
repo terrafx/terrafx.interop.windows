@@ -19,32 +19,4 @@ public static unsafe partial class IShellItemArrayTests
     {
         Assert.That(typeof(IShellItemArray).GUID, Is.EqualTo(IID_IShellItemArray));
     }
-
-    /// <summary>Validates that the <see cref="IShellItemArray" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellItemArray>(), Is.EqualTo(sizeof(IShellItemArray)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellItemArray" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellItemArray).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellItemArray" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellItemArray), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellItemArray), Is.EqualTo(4));
-        }
-    }
 }

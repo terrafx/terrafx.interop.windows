@@ -3,10 +3,12 @@
 // Ported from um/CommCtrl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA"]/*' />
-public unsafe partial struct NMCBEENDEDITA
+public partial struct NMCBEENDEDITA
 {
     /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.hdr"]/*' />
     public NMHDR hdr;
@@ -19,8 +21,15 @@ public unsafe partial struct NMCBEENDEDITA
 
     /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.szText"]/*' />
     [NativeTypeName("char[260]")]
-    public fixed sbyte szText[260];
+    public _szText_e__FixedBuffer szText;
 
     /// <include file='NMCBEENDEDITA.xml' path='doc/member[@name="NMCBEENDEDITA.iWhy"]/*' />
     public int iWhy;
+
+    /// <include file='_szText_e__FixedBuffer.xml' path='doc/member[@name="_szText_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _szText_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

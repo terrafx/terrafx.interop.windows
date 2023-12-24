@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_HASHED_ENCODE_INFO">
-    <summary>
-      <para>The <b>CMSG_HASHED_ENCODE_INFO</b> structure is used with <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hashed</a> messages. It is passed to
-the <see cref="CryptMsgOpenToEncode" /> function if the <b>CryptMsgOpenToEncode</b> function's <i>dwMsgType</i> parameter is <b>CMSG_ENVELOPED</b>.</para>
-    </summary>
-    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
+    <summary>The <b>CMSG_HASHED_ENCODE_INFO</b> structure is used with <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hashed</a> messages. It is passed to the <see cref="CryptMsgOpenToEncode" /> function if the <b>CryptMsgOpenToEncode</b> function's <i>dwMsgType</i> parameter is <b>CMSG_ENVELOPED</b>.</summary>
   </member>
   <member name="CMSG_HASHED_ENCODE_INFO.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CMSG_HASHED_ENCODE_INFO.hCryptProv">
     <summary>
@@ -24,13 +18,9 @@ the <see cref="CryptMsgOpenToEncode" /> function if the <b>CryptMsgOpenToEncode<
     </summary>
   </member>
   <member name="CMSG_HASHED_ENCODE_INFO.HashAlgorithm">
-    <summary>
-      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the hash algorithm type and any associated additional parameters.</para>
-    </summary>
+    <summary>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the hash algorithm type and any associated additional parameters.</summary>
   </member>
   <member name="CMSG_HASHED_ENCODE_INFO.pvHashAuxInfo">
-    <summary>
-      <para>This member is currently not used and must be set to <b>NULL</b>.</para>
-    </summary>
+    <summary>This member is currently not used and must be set to <b>NULL</b>.</summary>
   </member>
 </doc>

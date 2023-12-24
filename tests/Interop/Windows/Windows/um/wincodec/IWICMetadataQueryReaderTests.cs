@@ -19,32 +19,4 @@ public static unsafe partial class IWICMetadataQueryReaderTests
     {
         Assert.That(typeof(IWICMetadataQueryReader).GUID, Is.EqualTo(IID_IWICMetadataQueryReader));
     }
-
-    /// <summary>Validates that the <see cref="IWICMetadataQueryReader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICMetadataQueryReader>(), Is.EqualTo(sizeof(IWICMetadataQueryReader)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICMetadataQueryReader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICMetadataQueryReader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICMetadataQueryReader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICMetadataQueryReader), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICMetadataQueryReader), Is.EqualTo(4));
-        }
-    }
 }

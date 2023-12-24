@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SecPkgContext_EapKeyBlock">
-    <summary>
-      <para>The <b>SecPkgContext_EapKeyBlock</b> structure contains key data used by the EAP TLS Authentication Protocol. For information about the EAP TLS Authentication Protocol, see <a href="https://www.ietf.org/rfc/rfc2716.txt">http://www.ietf.org/rfc/rfc2716.txt</a>.</para>
-    </summary>
+    <summary>The <b>SecPkgContext_EapKeyBlock</b> structure contains key data used by the EAP TLS Authentication Protocol. For information about the EAP TLS Authentication Protocol, see <a href="https://www.ietf.org/rfc/rfc2716.txt">http://www.ietf.org/rfc/rfc2716.txt</a>.</summary>
   </member>
   <member name="SecPkgContext_EapKeyBlock.rgbKeys">
-    <summary>
-      <para>An array of 128 bytes that contain key data used by the EAP TLS Authentication Protocol.</para>
-    </summary>
+    <summary>An array of 128 bytes that contain key data used by the EAP TLS Authentication Protocol.</summary>
   </member>
   <member name="SecPkgContext_EapKeyBlock.rgbIVs">
-    <summary>
-      <para>An array of 64 bytes that contain initialization vector data used by the EAP TLS Authentication Protocol.</para>
-    </summary>
+    <summary>An array of 64 bytes that contain initialization vector data used by the EAP TLS Authentication Protocol.</summary>
   </member>
 </doc>

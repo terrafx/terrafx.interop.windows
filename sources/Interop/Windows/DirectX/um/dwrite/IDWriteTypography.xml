@@ -3,56 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTypography.AddFontFeature">
-    <summary>
-      <para>Adds an OpenType font feature.</para>
-    </summary>
-    <param name="fontFeature">
-      <para>Type: <b><see cref="DWRITE_FONT_FEATURE" /></b></para>
-      <para>A structure that contains the OpenType name identifier and the execution parameter for the font feature being added.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTypography" />
+    <summary>Adds an OpenType font feature.</summary>
+    <param name="fontFeature">A structure that contains the OpenType name identifier and the execution parameter for the font feature being added.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTypography.GetFontFeature">
-    <summary>
-      <para>Gets the font feature at the specified index.</para>
-    </summary>
-    <param name="fontFeatureIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>The zero-based index of the font feature to retrieve.</para>
-    </param>
-    <param name="fontFeature">
-      <para>Type: <b><see cref="DWRITE_FONT_FEATURE" />*</b></para>
-      <para>When this method returns, contains the font feature which is at the specified index.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>A single run of text can be associated with more than one typographic feature. The <see cref="IDWriteTypography" /> object holds a list of these font features.</para>
-    </remarks>
-    <seealso cref="IDWriteTypography" />
+    <summary>Gets the font feature at the specified index.</summary>
+    <param name="fontFeatureIndex">The zero-based index of the font feature to retrieve.</param>
+    <param name="fontFeature">When this method returns, contains the font feature which is at the specified index.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTypography.GetFontFeatureCount">
-    <summary>
-      <para>Gets the number of OpenType font features for the current font.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of font features for the current text format.</para>
-    </returns>
-    <remarks>
-      <para>A single run of text can be associated with more than one typographic feature. The <see cref="IDWriteTypography" /> object holds a list of these font features.</para>
-    </remarks>
-    <seealso cref="IDWriteTypography" />
+    <summary>Gets the number of OpenType font features for the current font.</summary>
+    <returns>The number of font features for the current text format.</returns>
   </member>
   <member name="IDWriteTypography">
-    <summary>
-      <para>Represents a font typography setting.</para>
-    </summary>
+    <summary>Represents a font typography setting.</summary>
   </member>
 </doc>

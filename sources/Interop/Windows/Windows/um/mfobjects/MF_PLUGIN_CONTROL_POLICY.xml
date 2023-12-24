@@ -3,28 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_PLUGIN_CONTROL_POLICY">
-    <summary>
-      <para>Defines policy settings for the <see cref="IMFPluginControl2.SetPolicy" /> method.</para>
-    </summary>
-    <seealso cref="IMFPluginControl2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines policy settings for the <see cref="IMFPluginControl2.SetPolicy" /> method.</summary>
   </member>
   <member name="MF_PLUGIN_CONTROL_POLICY.MF_PLUGIN_CONTROL_POLICY_USE_ALL_PLUGINS">
-    <summary>
-      <para>Enumerate all registered sources and transforms.</para>
-    </summary>
+    <summary>Enumerate all registered sources and transforms.</summary>
   </member>
   <member name="MF_PLUGIN_CONTROL_POLICY.MF_PLUGIN_CONTROL_POLICY_USE_APPROVED_PLUGINS">
-    <summary>
-      <para>Enumerate only approved sources and transforms. Third-party components are excluded unless the component is registered with a valid merit value, or the component was registered locally by the application.</para>
-    </summary>
+    <summary>Enumerate only approved sources and transforms. Third-party components are excluded unless the component is registered with a valid merit value, or the component was registered locally by the application.</summary>
   </member>
   <member name="MF_PLUGIN_CONTROL_POLICY.MF_PLUGIN_CONTROL_POLICY_USE_WEB_PLUGINS">
-    <summary>
-      <para>Restrict enumeration to components intended for use in a web browser.</para>
-    </summary>
+    <summary>Restrict enumeration to components intended for use in a web browser.</summary>
   </member>
-  <member name="MF_PLUGIN_CONTROL_POLICY.MF_PLUGIN_CONTROL_POLICY_USE_WEB_PLUGINS_EDGEMODE">
-    <summary></summary>
-  </member>
+  <member name="MF_PLUGIN_CONTROL_POLICY.MF_PLUGIN_CONTROL_POLICY_USE_WEB_PLUGINS_EDGEMODE"></member>
 </doc>

@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFSESSION_GETFULLTOPOLOGY_FLAGS">
-    <summary>
-      <para>Defines flags for the <see cref="IMFMediaSession.GetFullTopology" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</seealso>
+    <summary>Defines flags for the <see cref="IMFMediaSession.GetFullTopology" /> method.</summary>
   </member>
   <member name="MFSESSION_GETFULLTOPOLOGY_FLAGS.MFSESSION_GETFULLTOPOLOGY_CURRENT">
-    <summary>
-      <para>Get the full topology for the presentation that the Media Session is currently playing.</para>
-    </summary>
+    <summary>Get the full topology for the presentation that the Media Session is currently playing.</summary>
   </member>
 </doc>

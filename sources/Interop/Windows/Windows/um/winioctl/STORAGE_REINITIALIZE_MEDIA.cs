@@ -23,7 +23,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
     public uint TimeoutInSeconds;
 
     /// <include file='STORAGE_REINITIALIZE_MEDIA.xml' path='doc/member[@name="STORAGE_REINITIALIZE_MEDIA.SanitizeOption"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:5502:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L5502_C5")]
     public _SanitizeOption_e__Struct SanitizeOption;
 
     /// <include file='_SanitizeOption_e__Struct.xml' path='doc/member[@name="_SanitizeOption_e__Struct"]/*' />
@@ -36,7 +36,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
         public uint SanitizeMethod
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0xFu;
             }
@@ -53,7 +53,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
         public uint DisallowUnrestrictedSanitizeExit
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 4) & 0x1u;
             }
@@ -70,7 +70,7 @@ public partial struct STORAGE_REINITIALIZE_MEDIA
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 5) & 0x7FFFFFFu;
             }

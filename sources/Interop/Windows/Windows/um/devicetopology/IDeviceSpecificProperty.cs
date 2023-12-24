@@ -25,7 +25,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeviceSpecificProperty*, Guid*, void**, int>)(lpVtbl[0]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceSpecificProperty*, Guid*, void**, int>)(lpVtbl[0]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeviceSpecificProperty*, uint>)(lpVtbl[1]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeviceSpecificProperty*, uint>)(lpVtbl[1]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeviceSpecificProperty*, uint>)(lpVtbl[2]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeviceSpecificProperty*, uint>)(lpVtbl[2]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty.GetType"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
     [VtblIndex(3)]
     public HRESULT GetType([NativeTypeName("VARTYPE *")] ushort* pVType)
     {
-        return ((delegate* unmanaged<IDeviceSpecificProperty*, ushort*, int>)(lpVtbl[3]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), pVType);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceSpecificProperty*, ushort*, int>)(lpVtbl[3]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), pVType);
     }
 
     /// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty.GetValue"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
     [VtblIndex(4)]
     public HRESULT GetValue(void* pvValue, [NativeTypeName("DWORD *")] uint* pcbValue)
     {
-        return ((delegate* unmanaged<IDeviceSpecificProperty*, void*, uint*, int>)(lpVtbl[4]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), pvValue, pcbValue);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceSpecificProperty*, void*, uint*, int>)(lpVtbl[4]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), pvValue, pcbValue);
     }
 
     /// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty.SetValue"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
     [VtblIndex(5)]
     public HRESULT SetValue(void* pvValue, [NativeTypeName("DWORD")] uint cbValue, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
     {
-        return ((delegate* unmanaged<IDeviceSpecificProperty*, void*, uint, Guid*, int>)(lpVtbl[5]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), pvValue, cbValue, pguidEventContext);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceSpecificProperty*, void*, uint, Guid*, int>)(lpVtbl[5]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), pvValue, cbValue, pguidEventContext);
     }
 
     /// <include file='IDeviceSpecificProperty.xml' path='doc/member[@name="IDeviceSpecificProperty.Get4BRange"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
     [VtblIndex(6)]
     public HRESULT Get4BRange([NativeTypeName("LONG *")] int* plMin, [NativeTypeName("LONG *")] int* plMax, [NativeTypeName("LONG *")] int* plStepping)
     {
-        return ((delegate* unmanaged<IDeviceSpecificProperty*, int*, int*, int*, int>)(lpVtbl[6]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), plMin, plMax, plStepping);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceSpecificProperty*, int*, int*, int*, int>)(lpVtbl[6]))((IDeviceSpecificProperty*)Unsafe.AsPointer(ref this), plMin, plMax, plStepping);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IDeviceSpecificProperty : IDeviceSpecificProperty.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (VARTYPE *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, ushort*, int> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> GetType;
 
         [NativeTypeName("HRESULT (void *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint*, int> GetValue;
 
         [NativeTypeName("HRESULT (void *, DWORD, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, Guid*, int> SetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, Guid*, int> SetValue;
 
         [NativeTypeName("HRESULT (LONG *, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int*, int> Get4BRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int*, int> Get4BRange;
     }
 }

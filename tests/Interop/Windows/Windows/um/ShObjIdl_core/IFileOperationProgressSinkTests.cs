@@ -19,32 +19,4 @@ public static unsafe partial class IFileOperationProgressSinkTests
     {
         Assert.That(typeof(IFileOperationProgressSink).GUID, Is.EqualTo(IID_IFileOperationProgressSink));
     }
-
-    /// <summary>Validates that the <see cref="IFileOperationProgressSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFileOperationProgressSink>(), Is.EqualTo(sizeof(IFileOperationProgressSink)));
-    }
-
-    /// <summary>Validates that the <see cref="IFileOperationProgressSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFileOperationProgressSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFileOperationProgressSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFileOperationProgressSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFileOperationProgressSink), Is.EqualTo(4));
-        }
-    }
 }

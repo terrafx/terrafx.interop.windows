@@ -27,7 +27,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItems*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItems*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItems*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItems*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItems*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItems*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetFrameCount"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
     [VtblIndex(3)]
     public HRESULT GetFrameCount([NativeTypeName("UINT16 *")] ushort* frameCount)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[3]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), frameCount);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[3]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), frameCount);
     }
 
     /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetItemCount"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
     [VtblIndex(4)]
     public HRESULT GetItemCount([NativeTypeName("UINT16 *")] ushort* itemCount)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[4]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), itemCount);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[4]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), itemCount);
     }
 
     /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetMaxItemCount"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
     [VtblIndex(5)]
     public HRESULT GetMaxItemCount([NativeTypeName("UINT16 *")] ushort* maxItemCount)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[5]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), maxItemCount);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItems*, ushort*, int>)(lpVtbl[5]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), maxItemCount);
     }
 
     /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetMaxValueBufferLength"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
     [VtblIndex(6)]
     public HRESULT GetMaxValueBufferLength([NativeTypeName("UINT32 *")] uint* maxValueBufferLength)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItems*, uint*, int>)(lpVtbl[6]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), maxValueBufferLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItems*, uint*, int>)(lpVtbl[6]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), maxValueBufferLength);
     }
 
     /// <include file='ISpatialAudioMetadataItems.xml' path='doc/member[@name="ISpatialAudioMetadataItems.GetInfo"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
     [VtblIndex(7)]
     public HRESULT GetInfo(SpatialAudioMetadataItemsInfo* info)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItems*, SpatialAudioMetadataItemsInfo*, int>)(lpVtbl[7]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), info);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItems*, SpatialAudioMetadataItemsInfo*, int>)(lpVtbl[7]))((ISpatialAudioMetadataItems*)Unsafe.AsPointer(ref this), info);
     }
 
     public interface Interface : IUnknown.Interface
@@ -110,27 +110,27 @@ public unsafe partial struct ISpatialAudioMetadataItems : ISpatialAudioMetadataI
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> GetFrameCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> GetFrameCount;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> GetItemCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> GetItemCount;
 
         [NativeTypeName("HRESULT (UINT16 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> GetMaxItemCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> GetMaxItemCount;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMaxValueBufferLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMaxValueBufferLength;
 
         [NativeTypeName("HRESULT (SpatialAudioMetadataItemsInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SpatialAudioMetadataItemsInfo*, int> GetInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SpatialAudioMetadataItemsInfo*, int> GetInfo;
     }
 }

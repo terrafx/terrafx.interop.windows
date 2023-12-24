@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMKEY">
-    <summary>
-      <para>Contains information used with key notification messages.</para>
-    </summary>
+    <summary>Contains information used with key notification messages.</summary>
   </member>
   <member name="NMKEY.hdr">
-    <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>An <see cref="NMHDR" /> structure that contains additional information about this notification.</para>
-    </summary>
+    <summary>An <see cref="NMHDR" /> structure that contains additional information about this notification.</summary>
   </member>
   <member name="NMKEY.nVKey">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A virtual key code of the key that caused the event.</para>
-    </summary>
+    <summary>A virtual key code of the key that caused the event.</summary>
   </member>
   <member name="NMKEY.uFlags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags associated with the key. These are the same flags that are passed in the high word of the
-<i>lParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a> message.</para>
-    </summary>
+    <summary>Flags associated with the key. These are the same flags that are passed in the high word of the<i>lParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a> message.</summary>
   </member>
 </doc>

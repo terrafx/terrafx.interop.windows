@@ -19,32 +19,4 @@ public static unsafe partial class IFileSystemBindDataTests
     {
         Assert.That(typeof(IFileSystemBindData).GUID, Is.EqualTo(IID_IFileSystemBindData));
     }
-
-    /// <summary>Validates that the <see cref="IFileSystemBindData" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFileSystemBindData>(), Is.EqualTo(sizeof(IFileSystemBindData)));
-    }
-
-    /// <summary>Validates that the <see cref="IFileSystemBindData" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFileSystemBindData).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFileSystemBindData" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFileSystemBindData), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFileSystemBindData), Is.EqualTo(4));
-        }
-    }
 }

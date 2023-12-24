@@ -3,181 +3,203 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MCGRIDINFO">
-    <summary>
-      <para>Contains information about part of a calendar control.</para>
-    </summary>
+    <summary>Contains information about part of a calendar control.</summary>
   </member>
   <member name="MCGRIDINFO.cbSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Size of this structure, in bytes.</para>
-    </summary>
+    <summary>Size of this structure, in bytes.</summary>
   </member>
   <member name="MCGRIDINFO.dwPart">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>The part of the calendar control for which information is being requested. One of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MCGIP_CALENDARCONTROL</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIP_CALENDARCONTROL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The entire calendar control, which may include up to 12 calendars.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The entire calendar control, which may include up to 12 calendars.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIP_NEXT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The next button.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCGIP_NEXT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIP_PREV</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The previous button.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The next button.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIP_FOOTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The footer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCGIP_PREV</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIP_CALENDAR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One specific calendar. Used with <b>iCalendar</b> and <b>pszName</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The previous button.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIP_CALENDARHEADER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Calendar header. Used with <b>iCalendar</b> and <b>pszName</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCGIP_FOOTER</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIP_CALENDARBODY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Calendar body. Used with <b>iCalendar</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The footer.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIP_CALENDARROW</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A given calendar row. Used with <b>iCalendar</b> and <b>iRow</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCGIP_CALENDAR</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIP_CALENDARCELL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One specific calendar. Used with <b>iCalendar</b> and <b>pszName</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCGIP_CALENDARHEADER</b>
-          </description>
-          <description>
-            <para>Calendar header. Used with <b>iCalendar</b> and <b>pszName</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCGIP_CALENDARBODY</b>
-          </description>
-          <description>
-            <para>Calendar body. Used with <b>iCalendar</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCGIP_CALENDARROW</b>
-          </description>
-          <description>
-            <para>A given calendar row.  Used with <b>iCalendar</b> and <b>iRow</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCGIP_CALENDARCELL</b>
-          </description>
-          <description>
-            <para>A given calendar cell. Used with <b>iCalendar</b>, <b>iRow</b>, <b>iCol</b>, <b>bSelected</b> and <b>pszName</b>.</para>
-          </description>
-        </item>
+          <description>A given calendar cell. Used with <b>iCalendar</b>, <b>iRow</b>, <b>iCol</b>, <b>bSelected</b> and <b>pszName</b>.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MCGRIDINFO.dwFlags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Indicates what information is to be filled in. A combination of one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MCGIF_DATE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIF_DATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>stStart</b> and <b>stEnd</b>.
-</description>
-        </item>
-        <item>
+            <b>stStart</b> and <b>stEnd</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCGIF_RECT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIF_RECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>rc</b>.
-</description>
-        </item>
-        <item>
+            <b>rc</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCGIF_NAME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCGIF_NAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>pszName</b>.
-</description>
-        </item>
+            <b>pszName</b>.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MCGRIDINFO.iCalendar">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>If <b>dwPart</b> is MCGIP_CALENDAR, MCGIP_CALENDARHEADER, MCGIP_CALENDARBODY, MCGIP_CALENDARROW, or MCGIP_CALENDARCELL, this member specifies the index of the calendar for which to retrieve information. For those parts, this must be a valid value even if there is only one calendar that is currently in the control.</para>
-    </summary>
+    <summary>If <b>dwPart</b> is MCGIP_CALENDAR, MCGIP_CALENDARHEADER, MCGIP_CALENDARBODY, MCGIP_CALENDARROW, or MCGIP_CALENDARCELL, this member specifies the index of the calendar for which to retrieve information. For those parts, this must be a valid value even if there is only one calendar that is currently in the control.</summary>
   </member>
   <member name="MCGRIDINFO.iRow">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>If <b>dwPart</b> is MCGIP_CALENDARROW, specifies the row for which to return information.</para>
-    </summary>
+    <summary>If <b>dwPart</b> is MCGIP_CALENDARROW, specifies the row for which to return information.</summary>
   </member>
   <member name="MCGRIDINFO.iCol">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>If <b>dwPart</b> is MCGIP_CALENDARCELL, specifies the column of the cell for which to return information. The <b>iRow</b> member provides the row of the cell for which to return information.</para>
-    </summary>
+    <summary>If <b>dwPart</b> is MCGIP_CALENDARCELL, specifies the column of the cell for which to return information. The <b>iRow</b> member provides the row of the cell for which to return information.</summary>
   </member>
   <member name="MCGRIDINFO.bSelected">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>If <b>dwPart</b> is MCGIP_CALENDARCELL, indicates if the cell described by <b>iRow</b> and <b>iCol</b> is currently selected.</para>
-    </summary>
+    <summary>If <b>dwPart</b> is MCGIP_CALENDARCELL, indicates if the cell described by <b>iRow</b> and <b>iCol</b> is currently selected.</summary>
   </member>
   <member name="MCGRIDINFO.stStart">
-    <summary>
-      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
-      <para>Returns the start date specified by iCalendar. Used only when <b>dwFlags</b> contains MCGIF_DATE.</para>
-    </summary>
+    <summary>Returns the start date specified by iCalendar. Used only when <b>dwFlags</b> contains MCGIF_DATE.</summary>
   </member>
   <member name="MCGRIDINFO.stEnd">
-    <summary>
-      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
-      <para>Returns the end date specified by iCalendar. Used only when <b>dwFlags</b> contains MCGIF_DATE.</para>
-    </summary>
+    <summary>Returns the end date specified by iCalendar. Used only when <b>dwFlags</b> contains MCGIF_DATE.</summary>
   </member>
   <member name="MCGRIDINFO.rc">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>Returns the rectangle of the part specified in <b>dwPart</b>. Set only if <b>dwFlags</b> contains MCGIF_RECT.</para>
-    </summary>
+    <summary>Returns the rectangle of the part specified in <b>dwPart</b>. Set only if <b>dwFlags</b> contains MCGIF_RECT.</summary>
   </member>
   <member name="MCGRIDINFO.pszName">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PWSTR</a></b></para>
       <para>Pointer to a string for which <b>cchName</b> is the length. Set only if <b>dwFlags</b> contains MCGIF_NAME, and only for the following parts, as described in the <b>dwPart</b> member.</para>
       <list type="bullet">
         <item>
@@ -193,9 +215,6 @@
     </summary>
   </member>
   <member name="MCGRIDINFO.cchName">
-    <summary>
-      <para>Type: <b>size_t</b></para>
-      <para>Length of <b>pszName</b>, in characters.</para>
-    </summary>
+    <summary>Length of <b>pszName</b>, in characters.</summary>
   </member>
 </doc>

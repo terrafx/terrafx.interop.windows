@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SRV_DIMENSION">
+    <summary>Identifies the type of resource that will be viewed as a shader resource.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_UNKNOWN">
+    <summary>The type is unknown.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_BUFFER">
+    <summary>The resource is a buffer.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_TEXTURE1D">
+    <summary>The resource is a 1D texture.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_TEXTURE1DARRAY">
+    <summary>The resource is an array of 1D textures.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_TEXTURE2D">
+    <summary>The resource is a 2D texture.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_TEXTURE2DARRAY">
+    <summary>The resource is an array of 2D textures.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_TEXTURE2DMS">
+    <summary>The resource is a multisampling 2D texture.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_TEXTURE2DMSARRAY">
+    <summary>The resource is an array of multisampling 2D textures.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_TEXTURE3D">
+    <summary>The resource is a 3D texture.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_TEXTURECUBE">
+    <summary>The resource is a cube texture.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_TEXTURECUBEARRAY">
+    <summary>The resource is an array of cube textures.</summary>
+  </member>
+  <member name="D3D12_SRV_DIMENSION.D3D12_SRV_DIMENSION_RAYTRACING_ACCELERATION_STRUCTURE">
+    <summary>The resource is a raytracing acceleration structure.</summary>
+  </member>
+</doc>

@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_LOGOTYPE_AUDIO">
-    <summary>
-      <para>The <b>CERT_LOGOTYPE_AUDIO</b> structure contains information about an audio logotype.</para>
-    </summary>
-    <seealso cref="CERT_LOGOTYPE_DATA" />
+    <summary>The <b>CERT_LOGOTYPE_AUDIO</b> structure contains information about an audio logotype.</summary>
   </member>
   <member name="CERT_LOGOTYPE_AUDIO.LogotypeDetails">
-    <summary>
-      <para>A <see cref="CERT_LOGOTYPE_DETAILS" /> structure that contains additional information about the audio data.</para>
-    </summary>
+    <summary>A <see cref="CERT_LOGOTYPE_DETAILS" /> structure that contains additional information about the audio data.</summary>
   </member>
   <member name="CERT_LOGOTYPE_AUDIO.pLogotypeAudioInfo">
-    <summary>
-      <para>The address of a <see cref="CERT_LOGOTYPE_AUDIO_INFO" /> structure that contains the audio information.</para>
-    </summary>
+    <summary>The address of a <see cref="CERT_LOGOTYPE_AUDIO_INFO" /> structure that contains the audio information.</summary>
   </member>
 </doc>

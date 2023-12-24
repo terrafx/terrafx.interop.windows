@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_COMMAND_SIGNATURE_DESC">
+    <summary>Describes the arguments (parameters) of a command signature.</summary>
+  </member>
+  <member name="D3D12_COMMAND_SIGNATURE_DESC.ByteStride">
+    <summary>Specifies the size of each command in the drawing buffer, in bytes.</summary>
+  </member>
+  <member name="D3D12_COMMAND_SIGNATURE_DESC.NumArgumentDescs">
+    <summary>Specifies the number of arguments in the command signature.</summary>
+  </member>
+  <member name="D3D12_COMMAND_SIGNATURE_DESC.pArgumentDescs">
+    <summary>An array of <see cref="D3D12_INDIRECT_ARGUMENT_DESC" /> structures, containing details of the arguments, including whether the argument is a vertex buffer, constant, constant buffer view, shader resource view, or unordered access view.</summary>
+  </member>
+  <member name="D3D12_COMMAND_SIGNATURE_DESC.NodeMask">
+    <summary>For single GPU operation, set this to zero. If there are multiple GPU nodes, set bits to identify the nodes (the device's physical adapters) for which the command signature is to apply. Each bit in the mask corresponds to a single node. Refer to <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</summary>
+  </member>
+</doc>

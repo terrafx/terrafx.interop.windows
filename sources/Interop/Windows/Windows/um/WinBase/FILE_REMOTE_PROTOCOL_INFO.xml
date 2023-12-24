@@ -3,36 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_REMOTE_PROTOCOL_INFO">
-    <summary>
-      <para>Contains file remote protocol information. This structure is returned from the
-<see cref="GetFileInformationByHandleEx" /> function when
-<b>FileRemoteProtocolInfo</b> is passed in the <i>FileInformationClass</i></para>
-      <para>parameter.</para>
-    </summary>
-    <remarks>
-      <para>The <b>FILE_REMOTE_PROTOCOL_INFO</b></para>
-      <para>structure is valid only for use with the
-<see cref="GetFileInformationByHandleEx" /> function.</para>
-    </remarks>
-    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
-    <seealso cref="GetFileInformationByHandleEx" />
+    <summary>Contains file remote protocol information. This structure is returned from the<see cref="GetFileInformationByHandleEx" /> function when<b>FileRemoteProtocolInfo</b> is passed in the <i>FileInformationClass</i>parameter.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.StructureVersion">
-    <summary>
-      <para>Version of this structure. This member should be set to 2 if the communication is between
-computers running Windows 8, Windows Server 2012, or later and 1 otherwise.</para>
-    </summary>
+    <summary>Version of this structure. This member should be set to 2 if the communication is between computers running Windows 8, Windows Server 2012, or later and 1 otherwise.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.StructureSize">
-    <summary>
-      <para>Size of this structure. This member should be set to
-<code>sizeof(FILE_REMOTE_PROTOCOL_INFO)</code>.</para>
-    </summary>
+    <summary>Size of this structure. This member should be set to<code>sizeof(FILE_REMOTE_PROTOCOL_INFO)</code>.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.Protocol">
     <summary>
-      <para>Remote protocol (<b>WNNC_NET_*</b>) defined in Wnnc.h or
-Ntifs.h.</para>
+      <para>Remote protocol (<b>WNNC_NET_*</b>) defined in Wnnc.h or Ntifs.h.</para>
       <h4>WNNC_NET_MSNET (0x00010000)</h4>
       <h4>WNNC_NET_SMB (0x00020000)</h4>
       <h4>WNNC_NET_LANMAN (0x00020000)</h4>
@@ -104,24 +85,16 @@ Ntifs.h.</para>
     </summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolMajorVersion">
-    <summary>
-      <para>Major version of the remote protocol.</para>
-    </summary>
+    <summary>Major version of the remote protocol.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolMinorVersion">
-    <summary>
-      <para>Minor version of the remote protocol.</para>
-    </summary>
+    <summary>Minor version of the remote protocol.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolRevision">
-    <summary>
-      <para>Revision of the remote protocol.</para>
-    </summary>
+    <summary>Revision of the remote protocol.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.Reserved">
-    <summary>
-      <para>Should be set to zero. Do not use this member.</para>
-    </summary>
+    <summary>Should be set to zero. Do not use this member.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.Flags">
     <summary>
@@ -131,164 +104,117 @@ Ntifs.h.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>REMOTE_PROTOCOL_FLAG_LOOPBACK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The remote protocol is using a loopback.</para>
-          </description>
-        </item>
-        <item>
+          <description>The remote protocol is using a loopback.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>REMOTE_PROTOCOL_FLAG_OFFLINE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The remote protocol is using an offline cache.</para>
-          </description>
-        </item>
-        <item>
+          <description>The remote protocol is using an offline cache.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>REMOTE_PROTOCOL_INFO_FLAG_PERSISTENT_HANDLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The remote protocol is using a persistent handle.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This flag is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
-        <item>
+          <description>The remote protocol is using a persistent handle.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This flag is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>REMOTE_PROTOCOL_INFO_FLAG_PRIVACY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x8</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The remote protocol is using privacy. This is only supported if the
-<b>StructureVersion</b> member is 2 or higher.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This flag is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
-        <item>
+          <description>The remote protocol is using privacy. This is only supported if the <b>StructureVersion</b> member is 2 or higher.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This flag is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>REMOTE_PROTOCOL_INFO_FLAG_INTEGRITY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The remote protocol is using integrity so the data is signed. This is only supported if the
-<b>StructureVersion</b> member is 2 or higher.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This flag is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
-        <item>
+          <description>The remote protocol is using integrity so the data is signed. This is only supported if the <b>StructureVersion</b> member is 2 or higher.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This flag is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>REMOTE_PROTOCOL_INFO_FLAG_MUTUAL_AUTH</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The remote protocol is using mutual authentication using Kerberos. This is only supported if the
-<b>StructureVersion</b> member is 2 or higher.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>This flag is not supported before Windows 8 and Windows Server 2012.</para>
-          </description>
-        </item>
+          <description>The remote protocol is using mutual authentication using Kerberos. This is only supported if the <b>StructureVersion</b> member is 2 or higher.<para><b>Windows 7 and Windows Server 2008 R2:  </b>This flag is not supported before Windows 8 and Windows Server 2012.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.GenericReserved">
-    <summary>
-      <para>Protocol-generic information structure.</para>
-    </summary>
+    <summary>Protocol-generic information structure.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.GenericReserved.Reserved">
-    <summary>
-      <para>Should be set to zero. Do not use this member.</para>
-    </summary>
+    <summary>Should be set to zero. Do not use this member.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecificReserved">
-    <summary>
-      <para>Protocol-specific information structure.</para>
-    </summary>
+    <summary>Protocol-specific information structure.</summary>
   </member>
   <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecificReserved.Reserved">
-    <summary>
-      <para>Should be set to zero. Do not use this member.</para>
-    </summary>
+    <summary>Should be set to zero. Do not use this member.</summary>
   </member>
-  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific">
-    <summary></summary>
-  </member>
-  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2">
-    <summary></summary>
-  </member>
-  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Server">
-    <summary></summary>
-  </member>
-  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Server.Capabilities">
-    <summary></summary>
-  </member>
-  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Share">
-    <summary></summary>
-  </member>
-  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Share.Capabilities">
-    <summary></summary>
-  </member>
-  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Share.CachingFlags">
-    <summary></summary>
-  </member>
-  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Reserved">
-    <summary></summary>
-  </member>
+  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific"></member>
+  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2"></member>
+  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Server"></member>
+  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Server.Capabilities"></member>
+  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Share"></member>
+  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Share.Capabilities"></member>
+  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Smb2.Share.CachingFlags"></member>
+  <member name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific.Reserved"></member>
 </doc>

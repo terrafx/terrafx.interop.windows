@@ -7,11 +7,9 @@
       <para>Performs a convolution of the <i>FilterTensor</i> with the <i>InputTensor</i>. This operator supports a number of standard convolution configurations. These standard configurations include forward and backward (transposed) convolution by setting the <i>Direction</i> and <i>Mode</i> fields, as well as depth-wise convolution by setting the <i>GroupCount</i> field.</para>
       <para>A summary of the steps involved: perform the convolution into the output tensor; reshape the bias to the same dimension sizes as the output tensor; add the reshaped bias tensor to the output tensor.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</seealso>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.InputTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>A tensor containing the input data. The expected dimensions of the <i>InputTensor</i> are:</para>
       <list type="bullet">
         <item>
@@ -31,7 +29,6 @@
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.FilterTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>A tensor containing the filter data. The expected dimensions of the <i>FilterTensor</i> are:</para>
       <list type="bullet">
         <item>
@@ -51,7 +48,6 @@
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.BiasTensor">
     <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>An optional tensor containing the bias data. The bias tensor is a tensor containing data which is broadcasted across the output tensor at the end of the convolution which is added to the result. The expected dimensions of the <i>BiasTensor</i> are:</para>
       <list type="bullet">
         <item>
@@ -72,7 +68,6 @@
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.OutputTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>A tensor to write the results to. The expected dimensions of the <i>OutputTensor</i> are:</para>
       <list type="bullet">
         <item>
@@ -91,63 +86,33 @@
     </summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.Mode">
-    <summary>
-      <para>Type: <see cref="DML_CONVOLUTION_MODE" /></para>
-      <para>The mode to use for the convolution operation. <see cref="DML_CONVOLUTION_MODE_CROSS_CORRELATION" /> is the behavior for required for typical inference scenarios. In contrast, <see cref="DML_CONVOLUTION_MODE_CONVOLUTION" /> flips the order of elements in each filter kernel along each spatial dimension.</para>
-    </summary>
+    <summary>The mode to use for the convolution operation. <see cref="DML_CONVOLUTION_MODE_CROSS_CORRELATION" /> is the behavior for required for typical inference scenarios. In contrast, <see cref="DML_CONVOLUTION_MODE_CONVOLUTION" /> flips the order of elements in each filter kernel along each spatial dimension.</summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.Direction">
-    <summary>
-      <para>Type: <see cref="DML_CONVOLUTION_DIRECTION" /></para>
-      <para>The direction of the convolution operation. <see cref="DML_CONVOLUTION_DIRECTION_FORWARD" /> is the primary form of convolution used for inference where a combination of <see cref="DML_CONVOLUTION_DIRECTION_FORWARD" /> and <see cref="DML_CONVOLUTION_DIRECTION_BACKWARD" /> are used during training.</para>
-    </summary>
+    <summary>The direction of the convolution operation. <see cref="DML_CONVOLUTION_DIRECTION_FORWARD" /> is the primary form of convolution used for inference where a combination of <see cref="DML_CONVOLUTION_DIRECTION_FORWARD" /> and <see cref="DML_CONVOLUTION_DIRECTION_BACKWARD" /> are used during training.</summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.DimensionCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of spatial dimensions for the convolution operation. Spatial dimensions are the lower dimensions of the convolution <i>FilterTensor</i>. For example, the width and height dimension are spatial dimensions of a 4D convolution filter tensor. This value also determines the size of the <i>Strides</i>, <i>Dilations</i>, <i>StartPadding</i>, <i>EndPadding</i>, and <i>OutputPadding</i> arrays. It should be set to 2 when <i>InputTensor.DimensionCount</i> is 4, and 3 when <i>InputTensor.DimensionCount</i> is 5.</para>
-    </summary>
+    <summary>The number of spatial dimensions for the convolution operation. Spatial dimensions are the lower dimensions of the convolution <i>FilterTensor</i>. For example, the width and height dimension are spatial dimensions of a 4D convolution filter tensor. This value also determines the size of the <i>Strides</i>, <i>Dilations</i>, <i>StartPadding</i>, <i>EndPadding</i>, and <i>OutputPadding</i> arrays. It should be set to 2 when <i>InputTensor.DimensionCount</i> is 4, and 3 when <i>InputTensor.DimensionCount</i> is 5.</summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.Strides">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>An array containing the strides of the convolution operation. These strides are applied to the convolution filter. They are separate from the tensor strides included in <see cref="DML_TENSOR_DESC" />.</para>
-    </summary>
+    <summary>An array containing the strides of the convolution operation. These strides are applied to the convolution filter. They are separate from the tensor strides included in <see cref="DML_TENSOR_DESC" />.</summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.Dilations">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>An array containing the dilations of the convolution operation. Dilations are strides applied to the elements of the filter kernel. This has the effect of simulating a larger filter kernel by padding the internal filter kernel elements with zeros.</para>
-    </summary>
+    <summary>An array containing the dilations of the convolution operation. Dilations are strides applied to the elements of the filter kernel. This has the effect of simulating a larger filter kernel by padding the internal filter kernel elements with zeros.</summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.StartPadding">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>An array containing the padding values to be applied to the beginning of each spatial dimension of the filter and input tensor of the convolution operation. The start padding values are interpreted according to the <i>Direction</i> field.</para>
-    </summary>
+    <summary>An array containing the padding values to be applied to the beginning of each spatial dimension of the filter and input tensor of the convolution operation. The start padding values are interpreted according to the <i>Direction</i> field.</summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.EndPadding">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>An array containing the padding values to be applied to the end of each spatial dimension of the filter and input tensor of the convolution operation. The end padding values are interpreted according to the <i>Direction</i> field.</para>
-    </summary>
+    <summary>An array containing the padding values to be applied to the end of each spatial dimension of the filter and input tensor of the convolution operation. The end padding values are interpreted according to the <i>Direction</i> field.</summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.OutputPadding">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>An array containing the output padding of the convolution operation. <i>OutputPadding</i> applies a zero padding to the result of the convolution. This padding is applied to the end of each spatial dimension of the output tensor.</para>
-    </summary>
+    <summary>An array containing the output padding of the convolution operation. <i>OutputPadding</i> applies a zero padding to the result of the convolution. This padding is applied to the end of each spatial dimension of the output tensor.</summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.GroupCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of groups which to divide the convolution operation up into. This can be used to achieve depth-wise convolution by setting <i>GroupCount</i> equal to the input channel count, and <i>Direction</i> equal to <see cref="DML_CONVOLUTION_DIRECTION_FORWARD" />. This divides the convolution up into a separate convolution per input channel.</para>
-    </summary>
+    <summary>The number of groups which to divide the convolution operation up into. This can be used to achieve depth-wise convolution by setting <i>GroupCount</i> equal to the input channel count, and <i>Direction</i> equal to <see cref="DML_CONVOLUTION_DIRECTION_FORWARD" />. This divides the convolution up into a separate convolution per input channel.</summary>
   </member>
   <member name="DML_CONVOLUTION_OPERATOR_DESC.FusedActivation">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_OPERATOR_DESC" />*</b></para>
-      <para>An optional fused activation layer to apply after the convolution.</para>
-    </summary>
+    <summary>An optional fused activation layer to apply after the convolution. For more info, see <a href="https://docs.microsoft.com//windows/ai/directml/dml-fused-activations">Using fused operators for improved performance</a>.</summary>
   </member>
 </doc>

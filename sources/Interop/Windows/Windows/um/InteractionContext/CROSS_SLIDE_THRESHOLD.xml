@@ -3,42 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CROSS_SLIDE_THRESHOLD">
-    <summary>
-      <para>Specifies the cross-slide behavior thresholds.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ns-interactioncontext-cross_slide_parameter">CROSS_SLIDE_PARAMETER</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getcrossslideparameterinteractioncontext">GetCrossSlideParameterInteractionContext</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/enumerations">Interaction Context Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setcrossslideparametersinteractioncontext">SetCrossSlideParametersInteractionContext</seealso>
+    <summary>Specifies the cross-slide behavior thresholds.</summary>
   </member>
   <member name="CROSS_SLIDE_THRESHOLD.CROSS_SLIDE_THRESHOLD_SELECT_START">
-    <summary>
-      <para>Selection start.</para>
-    </summary>
+    <summary>Selection start.</summary>
   </member>
   <member name="CROSS_SLIDE_THRESHOLD.CROSS_SLIDE_THRESHOLD_SPEED_BUMP_START">
-    <summary>
-      <para>Speed bump start.</para>
-    </summary>
+    <summary>Speed bump start.</summary>
   </member>
   <member name="CROSS_SLIDE_THRESHOLD.CROSS_SLIDE_THRESHOLD_SPEED_BUMP_END">
-    <summary>
-      <para>Speed bump end.</para>
-    </summary>
+    <summary>Speed bump end.</summary>
   </member>
   <member name="CROSS_SLIDE_THRESHOLD.CROSS_SLIDE_THRESHOLD_REARRANGE_START">
-    <summary>
-      <para>Rearrange (drag and drop) start.</para>
-    </summary>
+    <summary>Rearrange (drag and drop) start.</summary>
   </member>
   <member name="CROSS_SLIDE_THRESHOLD.CROSS_SLIDE_THRESHOLD_COUNT">
-    <summary>
-      <para>The number of thresholds specified.</para>
-    </summary>
+    <summary>The number of thresholds specified.</summary>
   </member>
   <member name="CROSS_SLIDE_THRESHOLD.CROSS_SLIDE_THRESHOLD_MAX">
-    <summary>
-      <para>Maximum number of interactions exceeded.</para>
-    </summary>
+    <summary>Maximum number of interactions exceeded.</summary>
   </member>
 </doc>

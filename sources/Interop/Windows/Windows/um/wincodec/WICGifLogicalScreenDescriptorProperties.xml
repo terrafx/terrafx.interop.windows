@@ -3,39 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICGifLogicalScreenDescriptorProperties">
-    <summary>
-      <para>Specifies the logical screen descriptor properties for Graphics Interchange Format (GIF) metadata.</para>
-    </summary>
+    <summary>Specifies the logical screen descriptor properties for Graphics Interchange Format (GIF) metadata.</summary>
   </member>
   <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenSignature">
-    <summary>
-      <para>[VT_UI1 | VT_VECTOR] Indicates the signature property.</para>
-    </summary>
+    <summary>[VT_UI1 | VT_VECTOR] Indicates the signature property.</summary>
   </member>
   <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorWidth">
-    <summary>
-      <para>[VT_UI2] Indicates the width in pixels.</para>
-    </summary>
+    <summary>[VT_UI2] Indicates the width in pixels.</summary>
   </member>
   <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorHeight">
-    <summary>
-      <para>[VT_UI2] Indicates the height in pixels.</para>
-    </summary>
+    <summary>[VT_UI2] Indicates the height in pixels.</summary>
   </member>
   <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorGlobalColorTableFlag">
-    <summary>
-      <para>[VT_BOOL] Indicates the  global color table flag. <b>TRUE</b> if a global color table is present; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>[VT_BOOL] Indicates the global color table flag. <b>TRUE</b> if a global color table is present; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorColorResolution">
-    <summary>
-      <para>[VT_UI1] Indicates the color resolution in bits per pixel.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates the color resolution in bits per pixel.</summary>
   </member>
   <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorSortFlag">
-    <summary>
-      <para>[VT_BOOL] Indicates the sorted color table flag. <b>TRUE</b> if the table is sorted; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>[VT_BOOL] Indicates the sorted color table flag. <b>TRUE</b> if the table is sorted; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorGlobalColorTableSize">
     <summary>
@@ -44,16 +30,10 @@
     </summary>
   </member>
   <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorBackgroundColorIndex">
-    <summary>
-      <para>[VT_UI1] Indicates the index within the color table to use for the background (pixels not defined in the image).</para>
-    </summary>
+    <summary>[VT_UI1] Indicates the index within the color table to use for the background (pixels not defined in the image).</summary>
   </member>
   <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorPixelAspectRatio">
-    <summary>
-      <para>[VT_UI1] Indicates the factor used to compute an approximation of the aspect ratio.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates the factor used to compute an approximation of the aspect ratio.</summary>
   </member>
-  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICGifLogicalScreenDescriptorProperties.WICGifLogicalScreenDescriptorProperties_FORCE_DWORD"></member>
 </doc>

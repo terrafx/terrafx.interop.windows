@@ -3,181 +3,61 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION">
-    <summary>
-      <para>The
-<b>ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION</b> structure is used by the
-<see cref="QueryActCtxW" /> function.</para>
-    </summary>
-    <remarks>
-      <para>If
-<see cref="QueryActCtxW" /> is called with the AssemblyDetailedInformationInActivationContext option, and the function succeeds, the information in the returned buffer is in the form of the
-<b>ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION</b> structure.</para>
-      <code>PACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION pAssemblyInfo = NULL;
-ACTIVATION_CONTEXT_QUERY_INDEX QueryIndex;
-BOOL fSuccess = FALSE;
-SIZE_T cbRequired;
-HANDLE hActCtx = INVALID_HANDLE_VALUE;
-BYTE bTemporaryBuffer[512];
-PVOID pvDataBuffer = (PVOID)bTemporaryBuffer;
-SIZE_T cbAvailable = sizeof(bTemporaryBuffer);
-
-// Request the first file in the root assembly
-QueryIndex.ulAssemblyIndex = 1;
-QueryIndex.ulFileIndexInAssembly = 0;
-
-if (GetCurrentActCtx(&amp;amp;amp;amp;amp;amp;hActCtx)) {
-
-    // Attempt to use our stack-based buffer first - if that's not large
-    // enough, allocate from the heap and try again.
-    fSuccess = QueryActCtxW(
-        0,
-        hActCtx,
-        (PVOID)&amp;amp;amp;amp;amp;amp;QueryIndex,
-        AssemblyDetailedInformationInActivationContext,
-        pvDataBuffer,
-        cbAvailable,
-        &amp;amp;amp;amp;amp;amp;cbRequired);
-
-    // Failed, because the buffer was too small.
-    if (!fSuccess &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (GetLastError() == ERROR_INSUFFICIENT_BUFFER)) {
-
-        // Allocate what we need from the heap - fail if there isn't enough
-        // memory to do so.
-        pvDataBuffer = HeapAlloc(GetProcessHeap(), 0, cbRequired);
-        if (pvDataBuffer == NULL) {
-            fSuccess = FALSE;
-            goto DoneQuerying;
-        }
-        cbAvailable = cbRequired;
-
-        // If this fails again, exit out.
-        fSuccess = QueryActCtxW(
-            0,
-            hActCtx,
-            (PVOID)&amp;amp;amp;amp;amp;amp;QueryIndex,
-            AssemblyDetailedInformationInActivationContext,
-            pvDataBuffer,
-            cbAvailable,
-            &amp;amp;amp;amp;amp;amp;cbRequired);
-
-    }
-
-    if (fSuccess) {
-        // Now that we've found the assembly info, cast our target buffer back to
-        // the assembly info pointer.  Use pAssemblyInfo-&gt;lpFileName
-        pAssemblyInfo = (PACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION)pvDataBuffer;
-    }
-}
-
-DoneQuerying:
-    if (hActCtx != INVALID_HANDLE_VALUE)
-        ReleaseActCtx(hActCtx);
-
-    if (pvDataBuffer &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (pvDataBuffer != bTemporaryBuffer)) {
-        HeapFree(GetProcessHeap(), 0, pvDataBuffer);
-        pvDataBuffer = 0;
-    }
-
-</code>
-    </remarks>
+    <summary>The<b>ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION</b> structure is used by the<see cref="QueryActCtxW" /> function.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulFlags">
-    <summary>
-      <para>This value is always 0.</para>
-    </summary>
+    <summary>This value is always 0.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulEncodedAssemblyIdentityLength">
-    <summary>
-      <para>Length of the encoded assembly identity in bytes.</para>
-    </summary>
+    <summary>Length of the encoded assembly identity in bytes.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulManifestPathType">
-    <summary>
-      <para>This value always a constant.</para>
-    </summary>
+    <summary>This value always a constant.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulManifestPathLength">
-    <summary>
-      <para>Length of the assembly manifest path in bytes.</para>
-    </summary>
+    <summary>Length of the assembly manifest path in bytes.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.liManifestLastWriteTime">
-    <summary>
-      <para>The last time the manifest was written. This is in the form of a
-<b>FILETIME</b> data structure.</para>
-    </summary>
+    <summary>The last time the manifest was written. This is in the form of a<b>FILETIME</b> data structure.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulPolicyPathType">
-    <summary>
-      <para>This value always a constant.</para>
-    </summary>
+    <summary>This value always a constant.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulPolicyPathLength">
-    <summary>
-      <para>Length of the publisher policy path in bytes.</para>
-    </summary>
+    <summary>Length of the publisher policy path in bytes.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.liPolicyLastWriteTime">
-    <summary>
-      <para>The last time the policy was written. This is in the form of a
-<b>FILETIME</b> data structure.</para>
-    </summary>
+    <summary>The last time the policy was written. This is in the form of a<b>FILETIME</b> data structure.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulMetadataSatelliteRosterIndex">
-    <summary>
-      <para>Metadata satellite roster index.</para>
-    </summary>
+    <summary>Metadata satellite roster index.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulManifestVersionMajor">
-    <summary>
-      <para>Major version of the assembly queried by
-<see cref="QueryActCtxW" />. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/SbsCs/assembly-versions">Assembly Versions</a>.</para>
-    </summary>
+    <summary>Major version of the assembly queried by<see cref="QueryActCtxW" />. For more information, see<a href="https://docs.microsoft.com//windows/desktop/SbsCs/assembly-versions">Assembly Versions</a>.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulManifestVersionMinor">
-    <summary>
-      <para>Minor version of the assembly queried by
-<see cref="QueryActCtxW" />. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/SbsCs/assembly-versions">Assembly Versions</a>.</para>
-    </summary>
+    <summary>Minor version of the assembly queried by<see cref="QueryActCtxW" />. For more information, see<a href="https://docs.microsoft.com//windows/desktop/SbsCs/assembly-versions">Assembly Versions</a>.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulPolicyVersionMajor">
-    <summary>
-      <para>Major version of any policy, if one exists.</para>
-    </summary>
+    <summary>Major version of any policy, if one exists.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulPolicyVersionMinor">
-    <summary>
-      <para>Minor version of any policy, if one exists.</para>
-    </summary>
+    <summary>Minor version of any policy, if one exists.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulAssemblyDirectoryNameLength">
-    <summary>
-      <para>Length of the assembly directory name in bytes.</para>
-    </summary>
+    <summary>Length of the assembly directory name in bytes.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.lpAssemblyEncodedAssemblyIdentity">
-    <summary>
-      <para>Pointer to a null-terminated string that contains a textually-encoded format of the assembly's identity.</para>
-    </summary>
+    <summary>Pointer to a null-terminated string that contains a textually-encoded format of the assembly's identity.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.lpAssemblyManifestPath">
-    <summary>
-      <para>Pointer to a null-terminated string that indicates the original path to this assembly's manifest.</para>
-    </summary>
+    <summary>Pointer to a null-terminated string that indicates the original path to this assembly's manifest.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.lpAssemblyPolicyPath">
-    <summary>
-      <para>Pointer to a null-terminated string that indicates the path of whatever policy assembly was used to determine that this version of the assembly should be loaded. If this member is null, no policy was used to decide to load this version.</para>
-    </summary>
+    <summary>Pointer to a null-terminated string that indicates the path of whatever policy assembly was used to determine that this version of the assembly should be loaded. If this member is null, no policy was used to decide to load this version.</summary>
   </member>
   <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.lpAssemblyDirectoryName">
-    <summary>
-      <para>Pointer to a null-terminated string that indicates the folder from which this assembly was loaded.</para>
-    </summary>
+    <summary>Pointer to a null-terminated string that indicates the folder from which this assembly was loaded.</summary>
   </member>
-  <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulFileCount">
-    <summary></summary>
-  </member>
+  <member name="ACTIVATION_CONTEXT_ASSEMBLY_DETAILED_INFORMATION.ulFileCount"></member>
 </doc>

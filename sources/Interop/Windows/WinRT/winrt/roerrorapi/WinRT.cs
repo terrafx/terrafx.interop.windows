@@ -20,7 +20,7 @@ public static unsafe partial class WinRT
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoResolveRestrictedErrorInfoReference"]/*' />
     [DllImport("combase", ExactSpelling = true)]
-    public static extern HRESULT RoResolveRestrictedErrorInfoReference([NativeTypeName("PCWSTR")] ushort* reference, IRestrictedErrorInfo** ppRestrictedErrorInfo);
+    public static extern HRESULT RoResolveRestrictedErrorInfoReference([NativeTypeName("PCWSTR")] char* reference, IRestrictedErrorInfo** ppRestrictedErrorInfo);
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.SetRestrictedErrorInfo"]/*' />
     [DllImport("combase", ExactSpelling = true)]
@@ -32,7 +32,7 @@ public static unsafe partial class WinRT
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoOriginateErrorW"]/*' />
     [DllImport("combase", ExactSpelling = true)]
-    public static extern BOOL RoOriginateErrorW(HRESULT error, uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
+    public static extern BOOL RoOriginateErrorW(HRESULT error, uint cchMax, [NativeTypeName("PCWSTR")] char* message);
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoOriginateError"]/*' />
     [DllImport("combase", ExactSpelling = true)]
@@ -40,7 +40,7 @@ public static unsafe partial class WinRT
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoTransformErrorW"]/*' />
     [DllImport("combase", ExactSpelling = true)]
-    public static extern BOOL RoTransformErrorW(HRESULT oldError, HRESULT newError, uint cchMax, [NativeTypeName("PCWSTR")] ushort* message);
+    public static extern BOOL RoTransformErrorW(HRESULT oldError, HRESULT newError, uint cchMax, [NativeTypeName("PCWSTR")] char* message);
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.RoTransformError"]/*' />
     [DllImport("combase", ExactSpelling = true)]
@@ -67,7 +67,7 @@ public static unsafe partial class WinRT
     }
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.OriginateError"]/*' />
-    public static BOOL OriginateError(HRESULT error, uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
+    public static BOOL OriginateError(HRESULT error, uint cchMax, [NativeTypeName("PCWSTR")] char* message)
     {
         if ((((HRESULT)(error)) >= 0))
         {
@@ -89,7 +89,7 @@ public static unsafe partial class WinRT
     }
 
     /// <include file='WinRT.xml' path='doc/member[@name="WinRT.TransformError"]/*' />
-    public static BOOL TransformError(HRESULT oldError, HRESULT newError, uint cchMax, [NativeTypeName("PCWSTR")] ushort* message)
+    public static BOOL TransformError(HRESULT oldError, HRESULT newError, uint cchMax, [NativeTypeName("PCWSTR")] char* message)
     {
         if ((oldError == newError) || ((((HRESULT)(oldError)) >= 0) && (((HRESULT)(newError)) >= 0)))
         {

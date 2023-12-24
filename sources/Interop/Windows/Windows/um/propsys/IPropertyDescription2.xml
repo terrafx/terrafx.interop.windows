@@ -3,34 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyDescription2.GetImageReferenceForValue">
-    <summary>
-      <para>Gets the image reference associated with a property value.</para>
-    </summary>
-    <param name="propvar">
-      <para>Type: <b>REFPROPVARIANT</b></para>
-      <para>The <see cref="PROPVARIANT" /> for which to get an image.</para>
-    </param>
-    <param name="ppszImageRes">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>A pointer to a buffer that receives, when this method returns successfully, a string of the form &lt;dll name&gt;,-&lt;resid&gt; that is suitable to be passed to <see cref="PathParseIconLocation" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the image reference associated with a property value.</summary>
+    <param name="propvar">The <see cref="PROPVARIANT" /> for which to get an image.</param>
+    <param name="ppszImageRes">A pointer to a buffer that receives, when this method returns successfully, a string of the form &lt;dll name&gt;,-&lt;resid&gt; that is suitable to be passed to <see cref="PathParseIconLocation" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription2">
-    <summary>
-      <para>Exposes methods that enumerate and retrieve individual property description details.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IPropertyDescription" /> interface, from which it inherits.</para>
-      <para>To obtain this interface, call <see cref="PSGetPropertyDescription" />, <see cref="PSGetPropertyDescriptionByName" />, or <see cref="IPropertyDescriptionList.GetAt" />.</para>
-      <para>Only one property description exists for each property in the system.</para>
-      <h3>When to Implement</h3>
-      <para>Do not implement this interface. There is only one implementation of <see cref="IPropertyDescription" /> in the system; it is provided by the Shell.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Exposes methods that enumerate and retrieve individual property description details.</summary>
   </member>
 </doc>

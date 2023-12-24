@@ -19,32 +19,4 @@ public static unsafe partial class IMFTrackedSampleTests
     {
         Assert.That(typeof(IMFTrackedSample).GUID, Is.EqualTo(IID_IMFTrackedSample));
     }
-
-    /// <summary>Validates that the <see cref="IMFTrackedSample" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTrackedSample>(), Is.EqualTo(sizeof(IMFTrackedSample)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTrackedSample" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTrackedSample).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTrackedSample" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTrackedSample), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTrackedSample), Is.EqualTo(4));
-        }
-    }
 }

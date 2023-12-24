@@ -3,10 +3,12 @@
 // Ported from um/minwinbase.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WIN32_FIND_DATAW.xml' path='doc/member[@name="WIN32_FIND_DATAW"]/*' />
-public unsafe partial struct WIN32_FIND_DATAW
+public partial struct WIN32_FIND_DATAW
 {
     /// <include file='WIN32_FIND_DATAW.xml' path='doc/member[@name="WIN32_FIND_DATAW.dwFileAttributes"]/*' />
     [NativeTypeName("DWORD")]
@@ -39,9 +41,23 @@ public unsafe partial struct WIN32_FIND_DATAW
 
     /// <include file='WIN32_FIND_DATAW.xml' path='doc/member[@name="WIN32_FIND_DATAW.cFileName"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort cFileName[260];
+    public _cFileName_e__FixedBuffer cFileName;
 
     /// <include file='WIN32_FIND_DATAW.xml' path='doc/member[@name="WIN32_FIND_DATAW.cAlternateFileName"]/*' />
     [NativeTypeName("WCHAR[14]")]
-    public fixed ushort cAlternateFileName[14];
+    public _cAlternateFileName_e__FixedBuffer cAlternateFileName;
+
+    /// <include file='_cFileName_e__FixedBuffer.xml' path='doc/member[@name="_cFileName_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _cFileName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_cAlternateFileName_e__FixedBuffer.xml' path='doc/member[@name="_cAlternateFileName_e__FixedBuffer"]/*' />
+    [InlineArray(14)]
+    public partial struct _cAlternateFileName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

@@ -3,19 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAUDIO2_BUFFER">
-    <summary>
-      <para>Represents an audio data buffer, used with <see cref="IXAudio2SourceVoice.SubmitSourceBuffer" />.</para>
-    </summary>
-    <remarks>
-      <para>XAudio2 audio data is interleaved, data from each channel is adjacent for a particular sample number. For example if there was a 4 channel wave playing into an XAudio2 source voice, the audio data would be a sample of channel 0, a sample of channel 1, a sample of channel 2, a sample of channel 3, and then the next sample of channels 0, 1, 2, 3, etc.</para>
-      <para>The <b>AudioBytes</b> and <b>pAudioData</b> members of <b>XAUDIO2_BUFFER</b> correspond to the size in bytes and contents of the 'data' RIFF chunk of the file being played. The contents of the chunk may need to be byte swapped when loading the file on Xbox 360.</para>
-      <para>Memory allocated to hold a <b>XAUDIO2_BUFFER</b> or <see cref="XAUDIO2_BUFFER_WMA" /> structure can be freed as soon as the <see cref="IXAudio2SourceVoice.SubmitSourceBuffer" /> call it is passed to returns. The data the structure points to (<b>pAudioData</b> and <b>pDecodedPacketCumulativeBytes</b>, respectively) can't be freed until the buffer completes (as signaled by the <see cref="IXAudio2VoiceCallback.OnBufferEnd" /> callback) or the voice is stopped or destroyed.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--build-a-basic-audio-processing-graph">How to: Build a Basic Audio Processing Graph</seealso>
-    <seealso cref="IXAudio2SourceVoice.SubmitSourceBuffer" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">XAudio2 Structures</seealso>
+    <summary>Represents an audio data buffer, used with <see cref="IXAudio2SourceVoice.SubmitSourceBuffer" />.</summary>
   </member>
   <member name="XAUDIO2_BUFFER.Flags">
     <summary>
@@ -25,20 +13,18 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>XAUDIO2_END_OF_STREAM</description>
-          <description>Indicates that there cannot be any buffers in the queue
-after this buffer. The only effect of this flag is to suppress debug output warnings caused
-by starvation of the buffer queue. </description>
-        </item>
+          <description>Indicates that there cannot be any buffers in the queue after this buffer. The only effect of this flag is to suppress debug output warnings caused by starvation of the buffer queue. </description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="XAUDIO2_BUFFER.AudioBytes">
     <summary>
       <para>Size of the audio data, in bytes. Must be no larger than XAUDIO2_MAX_BUFFER_BYTES (defined in xaudio2.h) for PCM data and no larger than XMA_READBUFFER_MAX_BYTES (defined in xma2defs.h) for XMA data.</para>
-      <para>
-        <b>Note</b>  XMA buffers submitted to an XAudio2 voice using <see cref="IXAudio2SourceVoice.SubmitSourceBuffer" /> must contain complete XMA blocks. A complete XMA block must be equal in size to the <b>XMA2WAVEFORMATEX.BytesPerBlock</b> value, except for the last XMA block in a file, which may be shorter but will still be considered complete.</para>
+      <div>
+        <b>Note</b>  XMA buffers submitted to an XAudio2 voice using <see cref="IXAudio2SourceVoice.SubmitSourceBuffer" /> must contain complete XMA blocks. A complete XMA block must be equal in size to the <b>XMA2WAVEFORMATEX.BytesPerBlock</b> value, except for the last XMA block in a file, which may be shorter but will still be considered complete.</div>
     </summary>
   </member>
   <member name="XAUDIO2_BUFFER.pAudioData">
@@ -48,12 +34,9 @@ by starvation of the buffer queue. </description>
         <listheader>
           <description>Xbox 360</description>
         </listheader>
-        <item>
-          <description>
-            <para>The memory allocated for a buffer containing XMA data must have a block alignment of 2048. This is accomplished using
-<b>XPhysicalAlloc</b> with the <i>ulAlignment</i> argument set to 2048.</para>
-          </description>
-        </item>
+        <listheader>
+          <description>The memory allocated for a buffer containing XMA data must have a block alignment of 2048. This is accomplished using <b>XPhysicalAlloc</b> with the <i>ulAlignment</i> argument set to 2048.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -64,30 +47,18 @@ by starvation of the buffer queue. </description>
     </summary>
   </member>
   <member name="XAUDIO2_BUFFER.PlayLength">
-    <summary>
-      <para>Length of the region to be played, in samples. A value of zero means to play the entire buffer, and, in this case, <i>PlayBegin</i> must be zero as well.
-For ADPCM data this value must be a multiple of <b>wSamplesPerBlock</b> in the <b>ADPCMWAVEFORMAT</b> structure that contains this <b>XAUDIO2_BUFFER</b> structure.</para>
-    </summary>
+    <summary>Length of the region to be played, in samples. A value of zero means to play the entire buffer, and, in this case, <i>PlayBegin</i> must be zero as well. For ADPCM data this value must be a multiple of <b>wSamplesPerBlock</b> in the <b>ADPCMWAVEFORMAT</b> structure that contains this <b>XAUDIO2_BUFFER</b> structure.</summary>
   </member>
   <member name="XAUDIO2_BUFFER.LoopBegin">
-    <summary>
-      <para>First sample of the region to be looped. The value of <i>LoopBegin</i> must be less than <i>PlayBegin</i> + <i>PlayLength</i>. <i>LoopBegin</i> can be less than <i>PlayBegin</i>. <i>LoopBegin</i> must be 0 if <i>LoopCount</i> is 0.</para>
-    </summary>
+    <summary>First sample of the region to be looped. The value of <i>LoopBegin</i> must be less than <i>PlayBegin</i> + <i>PlayLength</i>. <i>LoopBegin</i> can be less than <i>PlayBegin</i>. <i>LoopBegin</i> must be 0 if <i>LoopCount</i> is 0.</summary>
   </member>
   <member name="XAUDIO2_BUFFER.LoopLength">
-    <summary>
-      <para>Length of the loop region, in samples. The value of <i>LoopBegin</i>+<i>LoopLength</i> must be greater than <i>PlayBegin</i> and less than <i>PlayBegin</i> + <i>PlayLength</i>. <i>LoopLength</i> must be zero if LoopCount is 0. If <i>LoopCount</i> is not 0 then a loop length of zero indicates the entire sample should be looped.
-For ADPCM data this value must be a multiple of <b>wSamplesPerBlock</b> in the <b>ADPCMWAVEFORMAT</b> structure that contains this <b>XAUDIO2_BUFFER</b> structure.</para>
-    </summary>
+    <summary>Length of the loop region, in samples. The value of <i>LoopBegin</i>+<i>LoopLength</i> must be greater than <i>PlayBegin</i> and less than <i>PlayBegin</i> + <i>PlayLength</i>. <i>LoopLength</i> must be zero if LoopCount is 0. If <i>LoopCount</i> is not 0 then a loop length of zero indicates the entire sample should be looped. For ADPCM data this value must be a multiple of <b>wSamplesPerBlock</b> in the <b>ADPCMWAVEFORMAT</b> structure that contains this <b>XAUDIO2_BUFFER</b> structure.</summary>
   </member>
   <member name="XAUDIO2_BUFFER.LoopCount">
-    <summary>
-      <para>Number of times to loop through the loop region. This value can be between 0 and XAUDIO2_MAX_LOOP_COUNT. If <i>LoopCount</i> is zero no looping is performed and <i>LoopBegin</i> and <i>LoopLength</i> must be 0. To loop forever, set <i>LoopCount</i> to XAUDIO2_LOOP_INFINITE.</para>
-    </summary>
+    <summary>Number of times to loop through the loop region. This value can be between 0 and XAUDIO2_MAX_LOOP_COUNT. If <i>LoopCount</i> is zero no looping is performed and <i>LoopBegin</i> and <i>LoopLength</i> must be 0. To loop forever, set <i>LoopCount</i> to XAUDIO2_LOOP_INFINITE.</summary>
   </member>
   <member name="XAUDIO2_BUFFER.pContext">
-    <summary>
-      <para>Context value to be passed back in callbacks to the client. This may be NULL.</para>
-    </summary>
+    <summary>Context value to be passed back in callbacks to the client. This may be NULL.</summary>
   </member>
 </doc>

@@ -18,29 +18,29 @@ public unsafe partial struct CRYPT_PROVUI_DATA
 
     /// <include file='CRYPT_PROVUI_DATA.xml' path='doc/member[@name="CRYPT_PROVUI_DATA.pYesButtonText"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pYesButtonText;
+    public char* pYesButtonText;
 
     /// <include file='CRYPT_PROVUI_DATA.xml' path='doc/member[@name="CRYPT_PROVUI_DATA.pNoButtonText"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pNoButtonText;
+    public char* pNoButtonText;
 
     /// <include file='CRYPT_PROVUI_DATA.xml' path='doc/member[@name="CRYPT_PROVUI_DATA.pMoreInfoButtonText"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pMoreInfoButtonText;
+    public char* pMoreInfoButtonText;
 
     /// <include file='CRYPT_PROVUI_DATA.xml' path='doc/member[@name="CRYPT_PROVUI_DATA.pAdvancedLinkText"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pAdvancedLinkText;
+    public char* pAdvancedLinkText;
 
     /// <include file='CRYPT_PROVUI_DATA.xml' path='doc/member[@name="CRYPT_PROVUI_DATA.pCopyActionText"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pCopyActionText;
+    public char* pCopyActionText;
 
     /// <include file='CRYPT_PROVUI_DATA.xml' path='doc/member[@name="CRYPT_PROVUI_DATA.pCopyActionTextNoTS"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pCopyActionTextNoTS;
+    public char* pCopyActionTextNoTS;
 
     /// <include file='CRYPT_PROVUI_DATA.xml' path='doc/member[@name="CRYPT_PROVUI_DATA.pCopyActionTextNotSigned"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pCopyActionTextNotSigned;
+    public char* pCopyActionTextNotSigned;
 }

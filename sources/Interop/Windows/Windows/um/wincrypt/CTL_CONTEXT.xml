@@ -4,23 +4,10 @@
 <doc>
   <member name="CTL_CONTEXT">
     <summary>
-      <para>The <b>CTL_CONTEXT</b> structure contains both the encoded and decoded representations of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">CTL</a>. It also contains an opened <b>HCRYPTMSG</b> handle to the decoded, cryptographically signed message containing the
-<see cref="CTL_INFO" /> as its <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">inner content</a>.</para>
-      <para>CryptoAPI
-<a href="https://docs.microsoft.com//windows/desktop/SecCrypto/cryptography-functions">low-level message functions</a> can be used to extract additional signer information.</para>
-      <para>A <b>CTL_CONTEXT</b> returned by any CryptoAPI function must be freed by calling the
-<see cref="CertFreeCTLContext" /> function.</para>
+      <para>The <b>CTL_CONTEXT</b> structure contains both the encoded and decoded representations of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">CTL</a>. It also contains an opened <b>HCRYPTMSG</b> handle to the decoded, cryptographically signed message containing the<see cref="CTL_INFO" /> as its <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">inner content</a>.</para>
+      <para>CryptoAPI<a href="https://docs.microsoft.com//windows/desktop/SecCrypto/cryptography-functions">low-level message functions</a> can be used to extract additional signer information.</para>
+      <para>A <b>CTL_CONTEXT</b> returned by any CryptoAPI function must be freed by calling the<see cref="CertFreeCTLContext" /> function.</para>
     </summary>
-    <seealso cref="CTL_INFO" />
-    <seealso cref="CertAddCTLContextToStore" />
-    <seealso cref="CertAddEncodedCTLToStore" />
-    <seealso cref="CertCreateCTLContext" />
-    <seealso cref="CertEnumCTLsInStore" />
-    <seealso cref="CertFindCTLInStore" />
-    <seealso cref="CertFindSubjectInCTL" />
-    <seealso cref="CertFreeCTLContext" />
-    <seealso cref="CryptMsgGetAndVerifySigner" />
-    <seealso cref="CryptMsgSignCTL" />
   </member>
   <member name="CTL_CONTEXT.dwMsgAndCertEncodingType">
     <summary>
@@ -38,39 +25,24 @@
     </summary>
   </member>
   <member name="CTL_CONTEXT.pbCtlEncoded">
-    <summary>
-      <para>A pointer to the encoded CTL.</para>
-    </summary>
+    <summary>A pointer to the encoded CTL.</summary>
   </member>
   <member name="CTL_CONTEXT.cbCtlEncoded">
-    <summary>
-      <para>The size, in bytes, of the encoded CTL.</para>
-    </summary>
+    <summary>The size, in bytes, of the encoded CTL.</summary>
   </member>
   <member name="CTL_CONTEXT.pCtlInfo">
-    <summary>
-      <para>A pointer to
-<see cref="CTL_INFO" /> structure contain the CTL information.</para>
-    </summary>
+    <summary>A pointer to<see cref="CTL_INFO" /> structure contain the CTL information.</summary>
   </member>
   <member name="CTL_CONTEXT.hCertStore">
-    <summary>
-      <para>A handle to the certificate store.</para>
-    </summary>
+    <summary>A handle to the certificate store.</summary>
   </member>
   <member name="CTL_CONTEXT.hCryptMsg">
-    <summary>
-      <para>Open <b>HCRYPTMSG</b> handle to a decoded, cryptographic-signed message containing the <see cref="CTL_INFO" /> as its <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">inner content</a>.</para>
-    </summary>
+    <summary>Open <b>HCRYPTMSG</b> handle to a decoded, cryptographic-signed message containing the <see cref="CTL_INFO" /> as its <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">inner content</a>.</summary>
   </member>
   <member name="CTL_CONTEXT.pbCtlContent">
-    <summary>
-      <para>The encoded <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">inner content</a> of the signed message.</para>
-    </summary>
+    <summary>The encoded <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">inner content</a> of the signed message.</summary>
   </member>
   <member name="CTL_CONTEXT.cbCtlContent">
-    <summary>
-      <para>Count, in bytes, of <b>pbCtlContent</b>.</para>
-    </summary>
+    <summary>Count, in bytes, of <b>pbCtlContent</b>.</summary>
   </member>
 </doc>

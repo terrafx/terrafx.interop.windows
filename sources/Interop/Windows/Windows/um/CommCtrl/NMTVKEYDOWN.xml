@@ -3,29 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMTVKEYDOWN">
-    <summary>
-      <para>Contains information about a keyboard event in a tree-view control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tvn-keydown">TVN_KEYDOWN</a> notification code. The structure is identical to the
-<b>TV_KEYDOWN</b> structure, but it has been renamed to follow current naming conventions.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/wm-notify">WM_NOTIFY</seealso>
+    <summary>Contains information about a keyboard event in a tree-view control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tvn-keydown">TVN_KEYDOWN</a> notification code. The structure is identical to the<b>TV_KEYDOWN</b> structure, but it has been renamed to follow current naming conventions.</summary>
   </member>
   <member name="NMTVKEYDOWN.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about this notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about this notification.</summary>
   </member>
   <member name="NMTVKEYDOWN.wVKey">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">WORD</a></b></para>
-      <para>Virtual key code.</para>
-    </summary>
+    <summary>Virtual key code.</summary>
   </member>
   <member name="NMTVKEYDOWN.flags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Always zero.</para>
-    </summary>
+    <summary>Always zero.</summary>
   </member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpVoice*, Guid*, void**, int>)(lpVtbl[0]))((ISpVoice*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, Guid*, void**, int>)(lpVtbl[0]))((ISpVoice*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpVoice*, uint>)(lpVtbl[1]))((ISpVoice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, uint>)(lpVtbl[1]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpVoice*, uint>)(lpVtbl[2]))((ISpVoice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, uint>)(lpVtbl[2]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifySink" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetNotifySink(ISpNotifySink* pNotifySink)
     {
-        return ((delegate* unmanaged<ISpVoice*, ISpNotifySink*, int>)(lpVtbl[3]))((ISpVoice*)Unsafe.AsPointer(ref this), pNotifySink);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, ISpNotifySink*, int>)(lpVtbl[3]))((ISpVoice*)Unsafe.AsPointer(ref this), pNotifySink);
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifyWindowMessage" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetNotifyWindowMessage(HWND hWnd, uint Msg, WPARAM wParam, LPARAM lParam)
     {
-        return ((delegate* unmanaged<ISpVoice*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[4]))((ISpVoice*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, HWND, uint, WPARAM, LPARAM, int>)(lpVtbl[4]))((ISpVoice*)Unsafe.AsPointer(ref this), hWnd, Msg, wParam, lParam);
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifyCallbackFunction" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetNotifyCallbackFunction([NativeTypeName("SPNOTIFYCALLBACK *")] delegate* unmanaged<WPARAM, LPARAM, void> pfnCallback, WPARAM wParam, LPARAM lParam)
     {
-        return ((delegate* unmanaged<ISpVoice*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int>)(lpVtbl[5]))((ISpVoice*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int>)(lpVtbl[5]))((ISpVoice*)Unsafe.AsPointer(ref this), pfnCallback, wParam, lParam);
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifyCallbackInterface" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT SetNotifyCallbackInterface(ISpNotifyCallback* pSpCallback, WPARAM wParam, LPARAM lParam)
     {
-        return ((delegate* unmanaged<ISpVoice*, ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[6]))((ISpVoice*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, ISpNotifyCallback*, WPARAM, LPARAM, int>)(lpVtbl[6]))((ISpVoice*)Unsafe.AsPointer(ref this), pSpCallback, wParam, lParam);
     }
 
     /// <inheritdoc cref="ISpNotifySource.SetNotifyWin32Event" />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT SetNotifyWin32Event()
     {
-        return ((delegate* unmanaged<ISpVoice*, int>)(lpVtbl[7]))((ISpVoice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, int>)(lpVtbl[7]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpNotifySource.WaitForNotifyEvent" />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT WaitForNotifyEvent([NativeTypeName("DWORD")] uint dwMilliseconds)
     {
-        return ((delegate* unmanaged<ISpVoice*, uint, int>)(lpVtbl[8]))((ISpVoice*)Unsafe.AsPointer(ref this), dwMilliseconds);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, uint, int>)(lpVtbl[8]))((ISpVoice*)Unsafe.AsPointer(ref this), dwMilliseconds);
     }
 
     /// <inheritdoc cref="ISpNotifySource.GetNotifyEventHandle" />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(9)]
     public HANDLE GetNotifyEventHandle()
     {
-        return ((HANDLE)(((delegate* unmanaged<ISpVoice*, void*>)(lpVtbl[9]))((ISpVoice*)Unsafe.AsPointer(ref this))));
+        return ((HANDLE)(((delegate* unmanaged[MemberFunction]<ISpVoice*, void*>)(lpVtbl[9]))((ISpVoice*)Unsafe.AsPointer(ref this))));
     }
 
     /// <inheritdoc cref="ISpEventSource.SetInterest" />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT SetInterest([NativeTypeName("ULONGLONG")] ulong ullEventInterest, [NativeTypeName("ULONGLONG")] ulong ullQueuedInterest)
     {
-        return ((delegate* unmanaged<ISpVoice*, ulong, ulong, int>)(lpVtbl[10]))((ISpVoice*)Unsafe.AsPointer(ref this), ullEventInterest, ullQueuedInterest);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, ulong, ulong, int>)(lpVtbl[10]))((ISpVoice*)Unsafe.AsPointer(ref this), ullEventInterest, ullQueuedInterest);
     }
 
     /// <inheritdoc cref="ISpEventSource.GetEvents" />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetEvents([NativeTypeName("ULONG")] uint ulCount, SPEVENT* pEventArray, [NativeTypeName("ULONG *")] uint* pulFetched)
     {
-        return ((delegate* unmanaged<ISpVoice*, uint, SPEVENT*, uint*, int>)(lpVtbl[11]))((ISpVoice*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, uint, SPEVENT*, uint*, int>)(lpVtbl[11]))((ISpVoice*)Unsafe.AsPointer(ref this), ulCount, pEventArray, pulFetched);
     }
 
     /// <inheritdoc cref="ISpEventSource.GetInfo" />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT GetInfo(SPEVENTSOURCEINFO* pInfo)
     {
-        return ((delegate* unmanaged<ISpVoice*, SPEVENTSOURCEINFO*, int>)(lpVtbl[12]))((ISpVoice*)Unsafe.AsPointer(ref this), pInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, SPEVENTSOURCEINFO*, int>)(lpVtbl[12]))((ISpVoice*)Unsafe.AsPointer(ref this), pInfo);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetOutput"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT SetOutput(IUnknown* pUnkOutput, BOOL fAllowFormatChanges)
     {
-        return ((delegate* unmanaged<ISpVoice*, IUnknown*, BOOL, int>)(lpVtbl[13]))((ISpVoice*)Unsafe.AsPointer(ref this), pUnkOutput, fAllowFormatChanges);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, IUnknown*, BOOL, int>)(lpVtbl[13]))((ISpVoice*)Unsafe.AsPointer(ref this), pUnkOutput, fAllowFormatChanges);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetOutputObjectToken"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT GetOutputObjectToken(ISpObjectToken** ppObjectToken)
     {
-        return ((delegate* unmanaged<ISpVoice*, ISpObjectToken**, int>)(lpVtbl[14]))((ISpVoice*)Unsafe.AsPointer(ref this), ppObjectToken);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, ISpObjectToken**, int>)(lpVtbl[14]))((ISpVoice*)Unsafe.AsPointer(ref this), ppObjectToken);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetOutputStream"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT GetOutputStream(ISpStreamFormat** ppStream)
     {
-        return ((delegate* unmanaged<ISpVoice*, ISpStreamFormat**, int>)(lpVtbl[15]))((ISpVoice*)Unsafe.AsPointer(ref this), ppStream);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, ISpStreamFormat**, int>)(lpVtbl[15]))((ISpVoice*)Unsafe.AsPointer(ref this), ppStream);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Pause"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT Pause()
     {
-        return ((delegate* unmanaged<ISpVoice*, int>)(lpVtbl[16]))((ISpVoice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, int>)(lpVtbl[16]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Resume"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT Resume()
     {
-        return ((delegate* unmanaged<ISpVoice*, int>)(lpVtbl[17]))((ISpVoice*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, int>)(lpVtbl[17]))((ISpVoice*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetVoice"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT SetVoice(ISpObjectToken* pToken)
     {
-        return ((delegate* unmanaged<ISpVoice*, ISpObjectToken*, int>)(lpVtbl[18]))((ISpVoice*)Unsafe.AsPointer(ref this), pToken);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, ISpObjectToken*, int>)(lpVtbl[18]))((ISpVoice*)Unsafe.AsPointer(ref this), pToken);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetVoice"]/*' />
@@ -179,15 +179,15 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT GetVoice(ISpObjectToken** ppToken)
     {
-        return ((delegate* unmanaged<ISpVoice*, ISpObjectToken**, int>)(lpVtbl[19]))((ISpVoice*)Unsafe.AsPointer(ref this), ppToken);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, ISpObjectToken**, int>)(lpVtbl[19]))((ISpVoice*)Unsafe.AsPointer(ref this), ppToken);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Speak"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(20)]
-    public HRESULT Speak([NativeTypeName("LPCWSTR")] ushort* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber)
+    public HRESULT Speak([NativeTypeName("LPCWSTR")] char* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber)
     {
-        return ((delegate* unmanaged<ISpVoice*, ushort*, uint, uint*, int>)(lpVtbl[20]))((ISpVoice*)Unsafe.AsPointer(ref this), pwcs, dwFlags, pulStreamNumber);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, char*, uint, uint*, int>)(lpVtbl[20]))((ISpVoice*)Unsafe.AsPointer(ref this), pwcs, dwFlags, pulStreamNumber);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SpeakStream"]/*' />
@@ -195,23 +195,23 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(21)]
     public HRESULT SpeakStream(IStream* pStream, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber)
     {
-        return ((delegate* unmanaged<ISpVoice*, IStream*, uint, uint*, int>)(lpVtbl[21]))((ISpVoice*)Unsafe.AsPointer(ref this), pStream, dwFlags, pulStreamNumber);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, IStream*, uint, uint*, int>)(lpVtbl[21]))((ISpVoice*)Unsafe.AsPointer(ref this), pStream, dwFlags, pulStreamNumber);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetStatus"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] ushort** ppszLastBookmark)
+    public HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] char** ppszLastBookmark)
     {
-        return ((delegate* unmanaged<ISpVoice*, SPVOICESTATUS*, ushort**, int>)(lpVtbl[22]))((ISpVoice*)Unsafe.AsPointer(ref this), pStatus, ppszLastBookmark);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, SPVOICESTATUS*, char**, int>)(lpVtbl[22]))((ISpVoice*)Unsafe.AsPointer(ref this), pStatus, ppszLastBookmark);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.Skip"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(23)]
-    public HRESULT Skip([NativeTypeName("LPCWSTR")] ushort* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped)
+    public HRESULT Skip([NativeTypeName("LPCWSTR")] char* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped)
     {
-        return ((delegate* unmanaged<ISpVoice*, ushort*, int, uint*, int>)(lpVtbl[23]))((ISpVoice*)Unsafe.AsPointer(ref this), pItemType, lNumItems, pulNumSkipped);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, char*, int, uint*, int>)(lpVtbl[23]))((ISpVoice*)Unsafe.AsPointer(ref this), pItemType, lNumItems, pulNumSkipped);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetPriority"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(24)]
     public HRESULT SetPriority(SPVPRIORITY ePriority)
     {
-        return ((delegate* unmanaged<ISpVoice*, SPVPRIORITY, int>)(lpVtbl[24]))((ISpVoice*)Unsafe.AsPointer(ref this), ePriority);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, SPVPRIORITY, int>)(lpVtbl[24]))((ISpVoice*)Unsafe.AsPointer(ref this), ePriority);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetPriority"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(25)]
     public HRESULT GetPriority(SPVPRIORITY* pePriority)
     {
-        return ((delegate* unmanaged<ISpVoice*, SPVPRIORITY*, int>)(lpVtbl[25]))((ISpVoice*)Unsafe.AsPointer(ref this), pePriority);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, SPVPRIORITY*, int>)(lpVtbl[25]))((ISpVoice*)Unsafe.AsPointer(ref this), pePriority);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetAlertBoundary"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(26)]
     public HRESULT SetAlertBoundary(SPEVENTENUM eBoundary)
     {
-        return ((delegate* unmanaged<ISpVoice*, SPEVENTENUM, int>)(lpVtbl[26]))((ISpVoice*)Unsafe.AsPointer(ref this), eBoundary);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, SPEVENTENUM, int>)(lpVtbl[26]))((ISpVoice*)Unsafe.AsPointer(ref this), eBoundary);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetAlertBoundary"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(27)]
     public HRESULT GetAlertBoundary(SPEVENTENUM* peBoundary)
     {
-        return ((delegate* unmanaged<ISpVoice*, SPEVENTENUM*, int>)(lpVtbl[27]))((ISpVoice*)Unsafe.AsPointer(ref this), peBoundary);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, SPEVENTENUM*, int>)(lpVtbl[27]))((ISpVoice*)Unsafe.AsPointer(ref this), peBoundary);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetRate"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(28)]
     public HRESULT SetRate([NativeTypeName("long")] int RateAdjust)
     {
-        return ((delegate* unmanaged<ISpVoice*, int, int>)(lpVtbl[28]))((ISpVoice*)Unsafe.AsPointer(ref this), RateAdjust);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, int, int>)(lpVtbl[28]))((ISpVoice*)Unsafe.AsPointer(ref this), RateAdjust);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetRate"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(29)]
     public HRESULT GetRate([NativeTypeName("long *")] int* pRateAdjust)
     {
-        return ((delegate* unmanaged<ISpVoice*, int*, int>)(lpVtbl[29]))((ISpVoice*)Unsafe.AsPointer(ref this), pRateAdjust);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, int*, int>)(lpVtbl[29]))((ISpVoice*)Unsafe.AsPointer(ref this), pRateAdjust);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetVolume"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(30)]
     public HRESULT SetVolume(ushort usVolume)
     {
-        return ((delegate* unmanaged<ISpVoice*, ushort, int>)(lpVtbl[30]))((ISpVoice*)Unsafe.AsPointer(ref this), usVolume);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, ushort, int>)(lpVtbl[30]))((ISpVoice*)Unsafe.AsPointer(ref this), usVolume);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetVolume"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(31)]
     public HRESULT GetVolume(ushort* pusVolume)
     {
-        return ((delegate* unmanaged<ISpVoice*, ushort*, int>)(lpVtbl[31]))((ISpVoice*)Unsafe.AsPointer(ref this), pusVolume);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, ushort*, int>)(lpVtbl[31]))((ISpVoice*)Unsafe.AsPointer(ref this), pusVolume);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.WaitUntilDone"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(32)]
     public HRESULT WaitUntilDone([NativeTypeName("ULONG")] uint msTimeout)
     {
-        return ((delegate* unmanaged<ISpVoice*, uint, int>)(lpVtbl[32]))((ISpVoice*)Unsafe.AsPointer(ref this), msTimeout);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, uint, int>)(lpVtbl[32]))((ISpVoice*)Unsafe.AsPointer(ref this), msTimeout);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SetSyncSpeakTimeout"]/*' />
@@ -291,7 +291,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(33)]
     public HRESULT SetSyncSpeakTimeout([NativeTypeName("ULONG")] uint msTimeout)
     {
-        return ((delegate* unmanaged<ISpVoice*, uint, int>)(lpVtbl[33]))((ISpVoice*)Unsafe.AsPointer(ref this), msTimeout);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, uint, int>)(lpVtbl[33]))((ISpVoice*)Unsafe.AsPointer(ref this), msTimeout);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.GetSyncSpeakTimeout"]/*' />
@@ -299,7 +299,7 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(34)]
     public HRESULT GetSyncSpeakTimeout([NativeTypeName("ULONG *")] uint* pmsTimeout)
     {
-        return ((delegate* unmanaged<ISpVoice*, uint*, int>)(lpVtbl[34]))((ISpVoice*)Unsafe.AsPointer(ref this), pmsTimeout);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, uint*, int>)(lpVtbl[34]))((ISpVoice*)Unsafe.AsPointer(ref this), pmsTimeout);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.SpeakCompleteEvent"]/*' />
@@ -307,23 +307,23 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
     [VtblIndex(35)]
     public HANDLE SpeakCompleteEvent()
     {
-        return ((HANDLE)(((delegate* unmanaged<ISpVoice*, void*>)(lpVtbl[35]))((ISpVoice*)Unsafe.AsPointer(ref this))));
+        return ((HANDLE)(((delegate* unmanaged[MemberFunction]<ISpVoice*, void*>)(lpVtbl[35]))((ISpVoice*)Unsafe.AsPointer(ref this))));
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.IsUISupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(36)]
-    public HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
+    public HRESULT IsUISupported([NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported)
     {
-        return ((delegate* unmanaged<ISpVoice*, ushort*, void*, uint, BOOL*, int>)(lpVtbl[36]))((ISpVoice*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, char*, void*, uint, BOOL*, int>)(lpVtbl[36]))((ISpVoice*)Unsafe.AsPointer(ref this), pszTypeOfUI, pvExtraData, cbExtraData, pfSupported);
     }
 
     /// <include file='ISpVoice.xml' path='doc/member[@name="ISpVoice.DisplayUI"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(37)]
-    public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)
+    public HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData)
     {
-        return ((delegate* unmanaged<ISpVoice*, HWND, ushort*, ushort*, void*, uint, int>)(lpVtbl[37]))((ISpVoice*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
+        return ((delegate* unmanaged[MemberFunction]<ISpVoice*, HWND, char*, char*, void*, uint, int>)(lpVtbl[37]))((ISpVoice*)Unsafe.AsPointer(ref this), hwndParent, pszTitle, pszTypeOfUI, pvExtraData, cbExtraData);
     }
 
     public interface Interface : ISpEventSource.Interface
@@ -350,16 +350,16 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
         HRESULT GetVoice(ISpObjectToken** ppToken);
 
         [VtblIndex(20)]
-        HRESULT Speak([NativeTypeName("LPCWSTR")] ushort* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
+        HRESULT Speak([NativeTypeName("LPCWSTR")] char* pwcs, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
 
         [VtblIndex(21)]
         HRESULT SpeakStream(IStream* pStream, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG *")] uint* pulStreamNumber);
 
         [VtblIndex(22)]
-        HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] ushort** ppszLastBookmark);
+        HRESULT GetStatus(SPVOICESTATUS* pStatus, [NativeTypeName("LPWSTR *")] char** ppszLastBookmark);
 
         [VtblIndex(23)]
-        HRESULT Skip([NativeTypeName("LPCWSTR")] ushort* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped);
+        HRESULT Skip([NativeTypeName("LPCWSTR")] char* pItemType, [NativeTypeName("long")] int lNumItems, [NativeTypeName("ULONG *")] uint* pulNumSkipped);
 
         [VtblIndex(24)]
         HRESULT SetPriority(SPVPRIORITY ePriority);
@@ -398,127 +398,127 @@ public unsafe partial struct ISpVoice : ISpVoice.Interface, INativeGuid
         HANDLE SpeakCompleteEvent();
 
         [VtblIndex(36)]
-        HRESULT IsUISupported([NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported);
+        HRESULT IsUISupported([NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData, BOOL* pfSupported);
 
         [VtblIndex(37)]
-        HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData);
+        HRESULT DisplayUI(HWND hwndParent, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszTypeOfUI, void* pvExtraData, [NativeTypeName("ULONG")] uint cbExtraData);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISpNotifySink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpNotifySink*, int> SetNotifySink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpNotifySink*, int> SetNotifySink;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, WPARAM, LPARAM, int> SetNotifyWindowMessage;
 
         [NativeTypeName("HRESULT (SPNOTIFYCALLBACK *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, delegate* unmanaged<WPARAM, LPARAM, void>, WPARAM, LPARAM, int> SetNotifyCallbackFunction;
 
         [NativeTypeName("HRESULT (ISpNotifyCallback *, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpNotifyCallback*, WPARAM, LPARAM, int> SetNotifyCallbackInterface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SetNotifyWin32Event;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SetNotifyWin32Event;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> WaitForNotifyEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> WaitForNotifyEvent;
 
         [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> GetNotifyEventHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> GetNotifyEventHandle;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, ulong, int> SetInterest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, ulong, int> SetInterest;
 
         [NativeTypeName("HRESULT (ULONG, SPEVENT *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, SPEVENT*, uint*, int> GetEvents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, SPEVENT*, uint*, int> GetEvents;
 
         [NativeTypeName("HRESULT (SPEVENTSOURCEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPEVENTSOURCEINFO*, int> GetInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPEVENTSOURCEINFO*, int> GetInfo;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, int> SetOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, BOOL, int> SetOutput;
 
         [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetOutputObjectToken;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpObjectToken**, int> GetOutputObjectToken;
 
         [NativeTypeName("HRESULT (ISpStreamFormat **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpStreamFormat**, int> GetOutputStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpStreamFormat**, int> GetOutputStream;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Resume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Resume;
 
         [NativeTypeName("HRESULT (ISpObjectToken *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpObjectToken*, int> SetVoice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpObjectToken*, int> SetVoice;
 
         [NativeTypeName("HRESULT (ISpObjectToken **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISpObjectToken**, int> GetVoice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISpObjectToken**, int> GetVoice;
 
         [NativeTypeName("HRESULT (LPCWSTR, DWORD, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> Speak;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint*, int> Speak;
 
         [NativeTypeName("HRESULT (IStream *, DWORD, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, uint, uint*, int> SpeakStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, uint, uint*, int> SpeakStream;
 
         [NativeTypeName("HRESULT (SPVOICESTATUS *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPVOICESTATUS*, ushort**, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPVOICESTATUS*, char**, int> GetStatus;
 
         [NativeTypeName("HRESULT (LPCWSTR, long, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, uint*, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, uint*, int> Skip;
 
         [NativeTypeName("HRESULT (SPVPRIORITY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPVPRIORITY, int> SetPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPVPRIORITY, int> SetPriority;
 
         [NativeTypeName("HRESULT (SPVPRIORITY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPVPRIORITY*, int> GetPriority;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPVPRIORITY*, int> GetPriority;
 
         [NativeTypeName("HRESULT (SPEVENTENUM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPEVENTENUM, int> SetAlertBoundary;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPEVENTENUM, int> SetAlertBoundary;
 
         [NativeTypeName("HRESULT (SPEVENTENUM *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPEVENTENUM*, int> GetAlertBoundary;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPEVENTENUM*, int> GetAlertBoundary;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetRate;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetRate;
 
         [NativeTypeName("HRESULT (USHORT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, int> SetVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, int> SetVolume;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> GetVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> GetVolume;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> WaitUntilDone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> WaitUntilDone;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetSyncSpeakTimeout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetSyncSpeakTimeout;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSyncSpeakTimeout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSyncSpeakTimeout;
 
         [NativeTypeName("HANDLE () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*> SpeakCompleteEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*> SpeakCompleteEvent;
 
         [NativeTypeName("HRESULT (LPCWSTR, void *, ULONG, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, void*, uint, BOOL*, int> IsUISupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, void*, uint, BOOL*, int> IsUISupported;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, LPCWSTR, void *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ushort*, ushort*, void*, uint, int> DisplayUI;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, char*, char*, void*, uint, int> DisplayUI;
     }
 }

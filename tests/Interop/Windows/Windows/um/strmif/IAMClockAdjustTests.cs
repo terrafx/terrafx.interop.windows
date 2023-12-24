@@ -19,32 +19,4 @@ public static unsafe partial class IAMClockAdjustTests
     {
         Assert.That(typeof(IAMClockAdjust).GUID, Is.EqualTo(IID_IAMClockAdjust));
     }
-
-    /// <summary>Validates that the <see cref="IAMClockAdjust" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMClockAdjust>(), Is.EqualTo(sizeof(IAMClockAdjust)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMClockAdjust" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMClockAdjust).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMClockAdjust" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMClockAdjust), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMClockAdjust), Is.EqualTo(4));
-        }
-    }
 }

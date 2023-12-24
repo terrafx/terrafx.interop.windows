@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_COLOR_SPACE_TYPE">
+    <summary>Specifies color space types.</summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>RGB</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>0-255</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.709</description>
+        </listheader>
+      </list> <para>This is the standard definition for sRGB.</para><blockquote>[!NOTE] This is intended to be implemented with sRGB gamma (linear segment + 2.4 power), which is approximately aligned with a gamma 2.2 curve.</blockquote><para>This is usually used with 8 or 10 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_FULL_G10_NONE_P709">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>RGB</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>0-255</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>1.0</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.709</description>
+        </listheader>
+      </list> <para>This is the standard definition for scRGB, and is usually used with 16 bit integer, 16 bit floating point, or 32 bit floating point color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_STUDIO_G22_NONE_P709">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>RGB</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.709</description>
+        </listheader>
+      </list> <para>This is the standard definition for ITU-R Recommendation BT.709. Note that due to the inclusion of a linear segment, the transfer curve looks similar to a pure exponential gamma of 1.9.</para><code> This is usually used with 8 or 10 bit color channels.</code></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_STUDIO_G22_NONE_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>RGB</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RESERVED">
+    <summary>Reserved.</summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_FULL_G22_NONE_P709_X601">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>0-255</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.709</description>
+        </listheader>
+        <listheader>
+          <description>Transfer Matrix</description>
+          <description>BT.601</description>
+        </listheader>
+      </list> <para>This definition is commonly used for JPG, and is usually used with 8, 10, or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_G22_LEFT_P601">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.601</description>
+        </listheader>
+      </list> <para>This definition is commonly used for MPEG2, and is usually used with 8, 10, or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_FULL_G22_LEFT_P601">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>0-255</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.601</description>
+        </listheader>
+      </list> <para>This is sometimes used for H.264 camera capture, and is usually used with 8, 10, or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_G22_LEFT_P709">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.709</description>
+        </listheader>
+      </list> <para>This definition is commonly used for H.264 and HEVC, and is usually used with 8, 10, or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_FULL_G22_LEFT_P709">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>0-255</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.709</description>
+        </listheader>
+      </list> <para>This is sometimes used for H.264 camera capture, and is usually used with 8, 10, or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_G22_LEFT_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This definition may be used by HEVC, and is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_FULL_G22_LEFT_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>0-255</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_FULL_G2084_NONE_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>RGB</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>0-255</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2084</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_G2084_LEFT_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2084</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_STUDIO_G2084_NONE_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>RGB</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2084</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_G22_TOPLEFT_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_G2084_TOPLEFT_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCbCr</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2084</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>RGB</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>0-255</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.2</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_GHLG_TOPLEFT_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCBCR</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>HLG</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_FULL_GHLG_TOPLEFT_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCBCR</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>0-255</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>HLG</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_STUDIO_G24_NONE_P709">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>RGB</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.4</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.709</description>
+        </listheader>
+      </list> <para>This is usually used with 8, 10, or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_RGB_STUDIO_G24_NONE_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>RGB</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.4</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Image</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_G24_LEFT_P709">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCBCR</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.4</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.709</description>
+        </listheader>
+      </list> <para>This is usually used with 8, 10, or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_G24_LEFT_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCBCR</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.4</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_YCBCR_STUDIO_G24_TOPLEFT_P2020">
+    <summary>
+      <list type="table">
+        <listheader>
+          <description>
+            <b>Property</b>
+          </description>
+          <description>
+            <b>Value</b>
+          </description>
+        </listheader>
+        <listheader>
+          <description>Colorspace</description>
+          <description>YCBCR</description>
+        </listheader>
+        <listheader>
+          <description>Range</description>
+          <description>16-235</description>
+        </listheader>
+        <listheader>
+          <description>Gamma</description>
+          <description>2.4</description>
+        </listheader>
+        <listheader>
+          <description>Siting</description>
+          <description>Video</description>
+        </listheader>
+        <listheader>
+          <description>Primaries</description>
+          <description>BT.2020</description>
+        </listheader>
+      </list> <para>This is usually used with 10 or 12 bit color channels.</para></summary>
+  </member>
+  <member name="DXGI_COLOR_SPACE_TYPE.DXGI_COLOR_SPACE_CUSTOM">
+    <summary>A custom color definition is used.</summary>
+  </member>
+</doc>

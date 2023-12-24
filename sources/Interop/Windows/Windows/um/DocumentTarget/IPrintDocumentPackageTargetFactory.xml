@@ -3,35 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPrintDocumentPackageTargetFactory.CreateDocumentPackageTargetForPrintJob">
-    <summary>
-      <para>Acts as the entry point for creating an <see cref="IPrintDocumentPackageTarget" /> object.</para>
-    </summary>
-    <param name="printerName">
-      <para>The name of the target printer.</para>
-    </param>
+    <summary>Acts as the entry point for creating an <see cref="IPrintDocumentPackageTarget" /> object.</summary>
+    <param name="printerName">The name of the target printer.</param>
     <param name="jobName">
       <para>The name to apply to the job.</para>
-      <para>
-        <b>Note</b>  Job name strings longer than 63 characters will be truncated to 63 characters and a terminating <b>NULL</b>.</para>
+      <div>
+        <b>Note</b>  Job name strings longer than 63 characters will be truncated to 63 characters and a terminating <b>NULL</b>.</div>
     </param>
-    <param name="jobOutputStream">
-      <para>The job content. The application must set the seek pointer to the beginning before specifying the job output stream.</para>
-    </param>
-    <param name="jobPrintTicketStream">
-      <para>A pointer to the <b>IStream</b> interface that is used by the caller to write the job-level print ticket that will be associated with this job.</para>
-    </param>
-    <param name="docPackageTarget">
-      <para>The target output.</para>
-    </param>
-    <returns>
-      <para>If the <b>CreateDocumentPackageTargetForPrintJob</b> method completes successfully, it returns an S_OK. Otherwise it returns the appropriate HRESULT error code.</para>
-    </returns>
-    <seealso cref="IPrintDocumentPackageTarget" />
-    <seealso cref="IPrintDocumentPackageTargetFactory" />
-  </member>
-  <member name="IPrintDocumentPackageTargetFactory">
-    <summary>
-      <para>Used with <see cref="IPrintDocumentPackageTarget" /> for starting a print job.</para>
-    </summary>
+    <param name="jobOutputStream">The job content. The application must set the seek pointer to the beginning before specifying the job output stream.</param>
+    <param name="jobPrintTicketStream">A pointer to the <b>IStream</b> interface that is used by the caller to write the job-level print ticket that will be associated with this job.</param>
+    <param name="docPackageTarget">The target output.</param>
+    <returns>If the <b>CreateDocumentPackageTargetForPrintJob</b> method completes successfully, it returns an S_OK. Otherwise it returns the appropriate HRESULT error code.</returns>
   </member>
 </doc>

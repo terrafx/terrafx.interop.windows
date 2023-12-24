@@ -25,7 +25,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDisplayAttributeInfo*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint>)(lpVtbl[1]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDisplayAttributeInfo*, uint>)(lpVtbl[1]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint>)(lpVtbl[2]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDisplayAttributeInfo*, uint>)(lpVtbl[2]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfDisplayAttributeInfo.xml' path='doc/member[@name="IEnumTfDisplayAttributeInfo.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfDisplayAttributeInfo** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, IEnumTfDisplayAttributeInfo**, int>)(lpVtbl[3]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDisplayAttributeInfo*, IEnumTfDisplayAttributeInfo**, int>)(lpVtbl[3]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumTfDisplayAttributeInfo.xml' path='doc/member[@name="IEnumTfDisplayAttributeInfo.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfDisplayAttributeInfo** rgInfo, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint, ITfDisplayAttributeInfo**, uint*, int>)(lpVtbl[4]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), ulCount, rgInfo, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDisplayAttributeInfo*, uint, ITfDisplayAttributeInfo**, uint*, int>)(lpVtbl[4]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), ulCount, rgInfo, pcFetched);
     }
 
     /// <include file='IEnumTfDisplayAttributeInfo.xml' path='doc/member[@name="IEnumTfDisplayAttributeInfo.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, int>)(lpVtbl[5]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDisplayAttributeInfo*, int>)(lpVtbl[5]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfDisplayAttributeInfo.xml' path='doc/member[@name="IEnumTfDisplayAttributeInfo.Skip"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<IEnumTfDisplayAttributeInfo*, uint, int>)(lpVtbl[6]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDisplayAttributeInfo*, uint, int>)(lpVtbl[6]))((IEnumTfDisplayAttributeInfo*)Unsafe.AsPointer(ref this), ulCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumTfDisplayAttributeInfo : IEnumTfDisplayAttribu
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfDisplayAttributeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfDisplayAttributeInfo**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfDisplayAttributeInfo**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, ITfDisplayAttributeInfo **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfDisplayAttributeInfo**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfDisplayAttributeInfo**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
     }
 }

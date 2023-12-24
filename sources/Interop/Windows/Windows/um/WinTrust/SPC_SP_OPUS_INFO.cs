@@ -10,7 +10,7 @@ public unsafe partial struct SPC_SP_OPUS_INFO
 {
     /// <include file='SPC_SP_OPUS_INFO.xml' path='doc/member[@name="SPC_SP_OPUS_INFO.pwszProgramName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszProgramName;
+    public char* pwszProgramName;
 
     /// <include file='SPC_SP_OPUS_INFO.xml' path='doc/member[@name="SPC_SP_OPUS_INFO.pMoreInfo"]/*' />
     [NativeTypeName("struct SPC_LINK_ *")]

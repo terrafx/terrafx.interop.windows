@@ -25,7 +25,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISurrogateService*, Guid*, void**, int>)(lpVtbl[0]))((ISurrogateService*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISurrogateService*, Guid*, void**, int>)(lpVtbl[0]))((ISurrogateService*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISurrogateService*, uint>)(lpVtbl[1]))((ISurrogateService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISurrogateService*, uint>)(lpVtbl[1]))((ISurrogateService*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISurrogateService*, uint>)(lpVtbl[2]))((ISurrogateService*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISurrogateService*, uint>)(lpVtbl[2]))((ISurrogateService*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.Init"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface, IN
     [VtblIndex(3)]
     public HRESULT Init([NativeTypeName("const GUID &")] Guid* rguidProcessID, IProcessLock* pProcessLock, BOOL* pfApplicationAware)
     {
-        return ((delegate* unmanaged<ISurrogateService*, Guid*, IProcessLock*, BOOL*, int>)(lpVtbl[3]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidProcessID, pProcessLock, pfApplicationAware);
+        return ((delegate* unmanaged[MemberFunction]<ISurrogateService*, Guid*, IProcessLock*, BOOL*, int>)(lpVtbl[3]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidProcessID, pProcessLock, pfApplicationAware);
     }
 
     /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.ApplicationLaunch"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface, IN
     [VtblIndex(4)]
     public HRESULT ApplicationLaunch([NativeTypeName("const GUID &")] Guid* rguidApplID, ApplicationType appType)
     {
-        return ((delegate* unmanaged<ISurrogateService*, Guid*, ApplicationType, int>)(lpVtbl[4]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID, appType);
+        return ((delegate* unmanaged[MemberFunction]<ISurrogateService*, Guid*, ApplicationType, int>)(lpVtbl[4]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID, appType);
     }
 
     /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.ApplicationFree"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface, IN
     [VtblIndex(5)]
     public HRESULT ApplicationFree([NativeTypeName("const GUID &")] Guid* rguidApplID)
     {
-        return ((delegate* unmanaged<ISurrogateService*, Guid*, int>)(lpVtbl[5]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID);
+        return ((delegate* unmanaged[MemberFunction]<ISurrogateService*, Guid*, int>)(lpVtbl[5]))((ISurrogateService*)Unsafe.AsPointer(ref this), rguidApplID);
     }
 
     /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.CatalogRefresh"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface, IN
     [VtblIndex(6)]
     public HRESULT CatalogRefresh([NativeTypeName("ULONG")] uint ulReserved)
     {
-        return ((delegate* unmanaged<ISurrogateService*, uint, int>)(lpVtbl[6]))((ISurrogateService*)Unsafe.AsPointer(ref this), ulReserved);
+        return ((delegate* unmanaged[MemberFunction]<ISurrogateService*, uint, int>)(lpVtbl[6]))((ISurrogateService*)Unsafe.AsPointer(ref this), ulReserved);
     }
 
     /// <include file='ISurrogateService.xml' path='doc/member[@name="ISurrogateService.ProcessShutdown"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface, IN
     [VtblIndex(7)]
     public HRESULT ProcessShutdown(ShutdownType shutdownType)
     {
-        return ((delegate* unmanaged<ISurrogateService*, ShutdownType, int>)(lpVtbl[7]))((ISurrogateService*)Unsafe.AsPointer(ref this), shutdownType);
+        return ((delegate* unmanaged[MemberFunction]<ISurrogateService*, ShutdownType, int>)(lpVtbl[7]))((ISurrogateService*)Unsafe.AsPointer(ref this), shutdownType);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct ISurrogateService : ISurrogateService.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, IProcessLock *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IProcessLock*, BOOL*, int> Init;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IProcessLock*, BOOL*, int> Init;
 
         [NativeTypeName("HRESULT (const GUID &, ApplicationType) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ApplicationType, int> ApplicationLaunch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, ApplicationType, int> ApplicationLaunch;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> ApplicationFree;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> ApplicationFree;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> CatalogRefresh;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> CatalogRefresh;
 
         [NativeTypeName("HRESULT (ShutdownType) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ShutdownType, int> ProcessShutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ShutdownType, int> ProcessShutdown;
     }
 }

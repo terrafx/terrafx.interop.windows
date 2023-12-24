@@ -19,32 +19,4 @@ public static unsafe partial class ISpTranscriptTests
     {
         Assert.That(typeof(ISpTranscript).GUID, Is.EqualTo(IID_ISpTranscript));
     }
-
-    /// <summary>Validates that the <see cref="ISpTranscript" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpTranscript>(), Is.EqualTo(sizeof(ISpTranscript)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpTranscript" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpTranscript).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpTranscript" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpTranscript), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpTranscript), Is.EqualTo(4));
-        }
-    }
 }

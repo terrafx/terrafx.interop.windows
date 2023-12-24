@@ -15,22 +15,22 @@ public unsafe struct _Locator
     private static void** InitVtbl()
     {
         var vtbl = (void**)RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(_Locator), sizeof(void*) * 1);
-        vtbl[0] = (delegate* unmanaged<_Locator*, ushort*, IRoSimpleMetaDataBuilder*, int>)&Locate;
+        vtbl[0] = (delegate* unmanaged<_Locator*, char*, IRoSimpleMetaDataBuilder*, int>)&Locate;
         return vtbl;
     }
 
     public void** lpVtbl;
 
-    public delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> _fn;
+    public delegate*<char*, IRoSimpleMetaDataBuilder*, int> _fn;
 
-    public _Locator(delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> fn)
+    public _Locator(delegate*<char*, IRoSimpleMetaDataBuilder*, int> fn)
     {
         lpVtbl = Vtbl;
         _fn = fn;
     }
 
     [UnmanagedCallersOnly]
-    private static int Locate(_Locator* @this, ushort* name, IRoSimpleMetaDataBuilder* pushMetaData)
+    private static int Locate(_Locator* @this, char* name, IRoSimpleMetaDataBuilder* pushMetaData)
     {
         return @this->_fn(name, pushMetaData);
     }

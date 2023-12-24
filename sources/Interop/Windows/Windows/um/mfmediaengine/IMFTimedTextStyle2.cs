@@ -25,7 +25,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle2*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle2*, Guid*, void**, int>)(lpVtbl[0]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle2*, uint>)(lpVtbl[1]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle2*, uint>)(lpVtbl[1]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle2*, uint>)(lpVtbl[2]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle2*, uint>)(lpVtbl[2]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2.GetRuby"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, 
     [VtblIndex(3)]
     public HRESULT GetRuby(IMFTimedTextRuby** ruby)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextRuby**, int>)(lpVtbl[3]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), ruby);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle2*, IMFTimedTextRuby**, int>)(lpVtbl[3]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), ruby);
     }
 
     /// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2.GetBouten"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, 
     [VtblIndex(4)]
     public HRESULT GetBouten(IMFTimedTextBouten** bouten)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle2*, IMFTimedTextBouten**, int>)(lpVtbl[4]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), bouten);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle2*, IMFTimedTextBouten**, int>)(lpVtbl[4]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), bouten);
     }
 
     /// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2.IsTextCombined"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, 
     [VtblIndex(5)]
     public HRESULT IsTextCombined(BOOL* value)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle2*, BOOL*, int>)(lpVtbl[5]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle2*, BOOL*, int>)(lpVtbl[5]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMFTimedTextStyle2.xml' path='doc/member[@name="IMFTimedTextStyle2.GetFontAngleInDegrees"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, 
     [VtblIndex(6)]
     public HRESULT GetFontAngleInDegrees(double* value)
     {
-        return ((delegate* unmanaged<IMFTimedTextStyle2*, double*, int>)(lpVtbl[6]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMFTimedTextStyle2*, double*, int>)(lpVtbl[6]))((IMFTimedTextStyle2*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IMFTimedTextStyle2 : IMFTimedTextStyle2.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFTimedTextRuby **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFTimedTextRuby**, int> GetRuby;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFTimedTextRuby**, int> GetRuby;
 
         [NativeTypeName("HRESULT (IMFTimedTextBouten **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFTimedTextBouten**, int> GetBouten;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFTimedTextBouten**, int> GetBouten;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsTextCombined;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsTextCombined;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetFontAngleInDegrees;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetFontAngleInDegrees;
     }
 }

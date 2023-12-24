@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RAYTRACING_AABB">
+    <summary>Represents an axis-aligned bounding box (AABB) used as raytracing geometry.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_AABB.MinX">
+    <summary>The minimum X coordinate of the box.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_AABB.MinY">
+    <summary>The minimum Y coordinate of the box.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_AABB.MinZ">
+    <summary>The minimum Z coordinate of the box.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_AABB.MaxX">
+    <summary>The maximum X coordinate of the box.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_AABB.MaxY">
+    <summary>The maximum Y coordinate of the box.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_AABB.MaxZ">
+    <summary>The maximum Z coordinate of the box.</summary>
+  </member>
+</doc>

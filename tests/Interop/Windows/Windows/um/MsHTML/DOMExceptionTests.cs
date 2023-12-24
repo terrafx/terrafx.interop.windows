@@ -19,25 +19,4 @@ public static unsafe partial class DOMExceptionTests
     {
         Assert.That(typeof(DOMException).GUID, Is.EqualTo(IID_DOMException));
     }
-
-    /// <summary>Validates that the <see cref="DOMException" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMException>(), Is.EqualTo(sizeof(DOMException)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMException" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMException).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMException" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMException), Is.EqualTo(1));
-    }
 }

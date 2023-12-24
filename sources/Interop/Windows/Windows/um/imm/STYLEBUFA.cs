@@ -3,10 +3,12 @@
 // Ported from um/imm.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STYLEBUFA.xml' path='doc/member[@name="STYLEBUFA"]/*' />
-public unsafe partial struct STYLEBUFA
+public partial struct STYLEBUFA
 {
     /// <include file='STYLEBUFA.xml' path='doc/member[@name="STYLEBUFA.dwStyle"]/*' />
     [NativeTypeName("DWORD")]
@@ -14,5 +16,12 @@ public unsafe partial struct STYLEBUFA
 
     /// <include file='STYLEBUFA.xml' path='doc/member[@name="STYLEBUFA.szDescription"]/*' />
     [NativeTypeName("CHAR[32]")]
-    public fixed sbyte szDescription[32];
+    public _szDescription_e__FixedBuffer szDescription;
+
+    /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _szDescription_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

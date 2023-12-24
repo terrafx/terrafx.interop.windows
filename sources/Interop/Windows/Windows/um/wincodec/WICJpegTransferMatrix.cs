@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICJpegTransferMatrix.xml' path='doc/member[@name="WICJpegTransferMatrix"]/*' />
-public enum WICJpegTransferMatrix : uint
+public enum WICJpegTransferMatrix
 {
     /// <include file='WICJpegTransferMatrix.xml' path='doc/member[@name="WICJpegTransferMatrix.WICJpegTransferMatrixIdentity"]/*' />
     WICJpegTransferMatrixIdentity = 0,

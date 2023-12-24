@@ -25,7 +25,7 @@ public unsafe partial struct IShellIconOverlay : IShellIconOverlay.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellIconOverlay*, Guid*, void**, int>)(lpVtbl[0]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlay*, Guid*, void**, int>)(lpVtbl[0]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellIconOverlay : IShellIconOverlay.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellIconOverlay*, uint>)(lpVtbl[1]))((IShellIconOverlay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlay*, uint>)(lpVtbl[1]))((IShellIconOverlay*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellIconOverlay : IShellIconOverlay.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellIconOverlay*, uint>)(lpVtbl[2]))((IShellIconOverlay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlay*, uint>)(lpVtbl[2]))((IShellIconOverlay*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellIconOverlay.xml' path='doc/member[@name="IShellIconOverlay.GetOverlayIndex"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellIconOverlay : IShellIconOverlay.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetOverlayIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIndex)
     {
-        return ((delegate* unmanaged<IShellIconOverlay*, ITEMIDLIST*, int*, int>)(lpVtbl[3]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), pidl, pIndex);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlay*, ITEMIDLIST*, int*, int>)(lpVtbl[3]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), pidl, pIndex);
     }
 
     /// <include file='IShellIconOverlay.xml' path='doc/member[@name="IShellIconOverlay.GetOverlayIconIndex"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellIconOverlay : IShellIconOverlay.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetOverlayIconIndex([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, int* pIconIndex)
     {
-        return ((delegate* unmanaged<IShellIconOverlay*, ITEMIDLIST*, int*, int>)(lpVtbl[4]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), pidl, pIconIndex);
+        return ((delegate* unmanaged[MemberFunction]<IShellIconOverlay*, ITEMIDLIST*, int*, int>)(lpVtbl[4]))((IShellIconOverlay*)Unsafe.AsPointer(ref this), pidl, pIconIndex);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IShellIconOverlay : IShellIconOverlay.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int*, int> GetOverlayIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, int*, int> GetOverlayIndex;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int*, int> GetOverlayIconIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, int*, int> GetOverlayIconIndex;
     }
 }

@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OLECMDTEXTF">
-    <summary>
-      <para>Specifies the type of information that an object should store in the <see cref="OLECMDTEXT" /> structure passed in <see cref="IOleCommandTarget.QueryStatus" />. One value from this enumeration is stored the <b>cmdtextf</b> member of the <b>OLECMDTEXT</b> structure to indicate the desired information.</para>
-    </summary>
-    <seealso cref="IOleCommandTarget.QueryStatus" />
-    <seealso cref="OLECMDTEXT" />
+    <summary>Specifies the type of information that an object should store in the <see cref="OLECMDTEXT" /> structure passed in <see cref="IOleCommandTarget.QueryStatus" />. One value from this enumeration is stored the <b>cmdtextf</b> member of the <b>OLECMDTEXT</b> structure to indicate the desired information.</summary>
   </member>
   <member name="OLECMDTEXTF.OLECMDTEXTF_NONE">
-    <summary>
-      <para>No extra information is requested.</para>
-    </summary>
+    <summary>No extra information is requested.</summary>
   </member>
   <member name="OLECMDTEXTF.OLECMDTEXTF_NAME">
-    <summary>
-      <para>The object should provide the localized name of the command.</para>
-    </summary>
+    <summary>The object should provide the localized name of the command.</summary>
   </member>
   <member name="OLECMDTEXTF.OLECMDTEXTF_STATUS">
-    <summary>
-      <para>The object should provide a localized status string for the command.</para>
-    </summary>
+    <summary>The object should provide a localized status string for the command.</summary>
   </member>
 </doc>

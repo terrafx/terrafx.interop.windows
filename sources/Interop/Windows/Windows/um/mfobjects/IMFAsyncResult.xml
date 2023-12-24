@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFAsyncResult.GetObject">
-    <summary>
-      <para>Returns an object associated with the asynchronous operation. The type of object, if any, depends on the asynchronous method that was called.</para>
-    </summary>
-    <param name="ppObject">
-      <para>Receives a pointer to the object's <b>IUnknown</b> interface. If no object is associated with the operation, this parameter receives the value <b>NULL</b>. If the value is not <b>NULL</b>, the caller must release the interface.</para>
-    </param>
+    <summary>Returns an object associated with the asynchronous operation. The type of object, if any, depends on the asynchronous method that was called.</summary>
+    <param name="ppObject">Receives a pointer to the object's <b>IUnknown</b> interface. If no object is associated with the operation, this parameter receives the value <b>NULL</b>. If the value is not <b>NULL</b>, the caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,52 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no object associated with this asynchronous result.</para>
-          </description>
-        </item>
+          <description>There is no object associated with this asynchronous result.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Typically, this object is used by the component that implements the asynchronous method. It provides a way for the function that invokes the callback to pass information to the asynchronous <b>End...</b> method that completes the operation.</para>
-      <para>If you are implementing an asynchronous method, you can set the object through the <i>punkObject</i> parameter of the <see cref="MFCreateAsyncResult" /> function.</para>
-      <para>If the asynchronous result object's internal <b>IUnknown</b> pointer is <b>NULL</b>, the method returns <b>E_POINTER</b>.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</seealso>
-    <seealso cref="IMFAsyncResult" />
   </member>
   <member name="IMFAsyncResult.GetState">
-    <summary>
-      <para>Returns the state object specified by the caller in the asynchronous <b>Begin</b> method.</para>
-    </summary>
-    <param name="ppunkState">
-      <para>Receives a pointer to the state object's <b>IUnknown</b> interface. If the value is not <b>NULL</b>, the caller must release the interface.</para>
-    </param>
+    <summary>Returns the state object specified by the caller in the asynchronous <b>Begin</b> method.</summary>
+    <param name="ppunkState">Receives a pointer to the state object's <b>IUnknown</b> interface. If the value is not <b>NULL</b>, the caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -69,70 +49,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no state object associated with this asynchronous result.</para>
-          </description>
-        </item>
+          <description>There is no state object associated with this asynchronous result.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The caller of the asynchronous method specifies the state object, and can use it for any caller-defined purpose. The state object can be <b>NULL</b>. If the state object is <b>NULL</b>, <b>GetState</b> returns <b>E_POINTER</b>.</para>
-      <para>If you are implementing an asynchronous method, set the state object on the through the <i>punkState</i> parameter of the <see cref="MFCreateAsyncResult" /> function.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</seealso>
-    <seealso cref="IMFAsyncResult" />
   </member>
   <member name="IMFAsyncResult.GetStateNoAddRef">
-    <summary>
-      <para>Returns the state object specified by the caller in the asynchronous <b>Begin</b> method, without incrementing the object's reference count.</para>
-    </summary>
-    <returns>
-      <para>Returns a pointer to the state object's <b>IUnknown</b> interface, or <b>NULL</b> if no object was set. This pointer does not have an outstanding reference count. If you store this pointer, you must call <b>AddRef</b> on the pointer.</para>
-    </returns>
-    <remarks>
-      <para>This method cannot be called remotely.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</seealso>
-    <seealso cref="IMFAsyncResult" />
+    <summary>Returns the state object specified by the caller in the asynchronous <b>Begin</b> method, without incrementing the object's reference count.</summary>
+    <returns>Returns a pointer to the state object's <b>IUnknown</b> interface, or <b>NULL</b> if no object was set. This pointer does not have an outstanding reference count. If you store this pointer, you must call <b>AddRef</b> on the pointer.</returns>
   </member>
   <member name="IMFAsyncResult.GetStatus">
-    <summary>
-      <para>Returns the status of the asynchronous operation.</para>
-    </summary>
+    <summary>Returns the status of the asynchronous operation.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -140,39 +89,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The operation completed successfully.</para>
-          </description>
-        </item>
+          <description>The operation completed successfully.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</seealso>
-    <seealso cref="IMFAsyncResult" />
   </member>
   <member name="IMFAsyncResult.SetStatus">
-    <summary>
-      <para>Sets the status of the asynchronous operation.</para>
-    </summary>
-    <param name="hrStatus">
-      <para>The status of the asynchronous operation.</para>
-    </param>
+    <summary>Sets the status of the asynchronous operation.</summary>
+    <param name="hrStatus">The status of the asynchronous operation.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -180,52 +114,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If you implement an asynchronous method, call <b>SetStatus</b> to set the status code for the operation.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</seealso>
-    <seealso cref="IMFAsyncResult" />
   </member>
   <member name="IMFAsyncResult">
-    <summary>
-      <para>Provides information about the result of an asynchronous operation.</para>
-    </summary>
-    <remarks>
-      <para>Use this interface to complete an asynchronous operation. You get a pointer to this interface when your callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. To complete the operation, pass the <b>IMFAsyncResult</b> pointer to the <b>End...</b> method that corresponds to the <b>Begin...</b> method that starts the operation. For example, if the asynchronous method is named <b>BeginRead</b>, call the <b>EndRead</b> method. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/calling-asynchronous-methods">Calling Asynchronous Methods</a>.</para>
-      <para>If you are implementing an asynchronous method, call <see cref="MFCreateAsyncResult" /> to create an instance of this object. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/writing-an-asynchronous-method">Writing an Asynchronous Method</a>.</para>
-      <para>Any custom implementation of this interface must inherit the <see cref="MFASYNCRESULT" /> structure.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/asynchronous-callback-methods">Asynchronous Callback Methods</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Provides information about the result of an asynchronous operation.</summary>
   </member>
 </doc>

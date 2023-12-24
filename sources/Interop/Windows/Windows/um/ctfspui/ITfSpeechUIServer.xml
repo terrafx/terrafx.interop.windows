@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfSpeechUIServer.Initialize">
-    <summary>
-      <para>Initializes the speech-related user interface elements on the TSF language bar.</para>
-    </summary>
+    <summary>Initializes the speech-related user interface elements on the TSF language bar.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -13,30 +11,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The standard speech text service usually initializes the speech-related user interface on the TSF language bar. When a TSF-enabled application, that does not use the speech text service, requires use of the <see cref="ITfSpeechUIServer" /> interface, it initializes the user interface with this method.</para>
-    </remarks>
-    <seealso cref="ITfSpeechUIServer " />
   </member>
   <member name="ITfSpeechUIServer.ShowUI">
-    <summary>
-      <para>Sets the visibility state of the speech-related user interface elements on the TSF language bar.</para>
-    </summary>
-    <param name="fShow">
-      <para>Specifies whether to show (TRUE) or not show (FALSE) the speech-related user interface elements.</para>
-    </param>
+    <summary>Sets the visibility state of the speech-related user interface elements on the TSF language bar.</summary>
+    <param name="fShow">Specifies whether to show (TRUE) or not show (FALSE) the speech-related user interface elements.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -44,33 +36,26 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfSpeechUIServer " />
   </member>
   <member name="ITfSpeechUIServer.UpdateBalloon">
-    <summary>
-      <para>Sets the style and text of the speech balloon on the TSF language bar.</para>
-    </summary>
-    <param name="style">
-      <para>Contains a <see cref="TfLBBalloonStyle" /> element that specifies the balloon style.</para>
-    </param>
-    <param name="pch">
-      <para>Pointer to a zero-terminated Unicode string that contains the text to show in the balloon.</para>
-    </param>
-    <param name="cch">
-      <para>Specifies the number of characters in the string of the <i>pch</i> parameter.</para>
-    </param>
+    <summary>Sets the style and text of the speech balloon on the TSF language bar.</summary>
+    <param name="style">Contains a <see cref="TfLBBalloonStyle" /> element that specifies the balloon style.</param>
+    <param name="pch">Pointer to a zero-terminated Unicode string that contains the text to show in the balloon.</param>
+    <param name="cch">Specifies the number of characters in the string of the <i>pch</i> parameter.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -78,42 +63,22 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfSpeechUIServer " />
-    <seealso cref="TfLBBalloonStyle " />
   </member>
   <member name="ITfSpeechUIServer">
-    <summary>
-      <para>The <b>ITfSpeechUIServer</b> interface manages the speech-related user interface on the TSF language bar.</para>
-    </summary>
-    <remarks>
-      <para>The user interface elements on the TSF language bar managed by this interface include the microphone button, the speech configuration menu button, the dictation button, the command button, and the speech balloon. The standard speech text service usually manages these user interface elements in an application, including initialization. This type of application does not require the <b>ITfSpeechUIServer</b> interface.</para>
-      <para>An application that does not use the speech text service might require use of the features provided by the speech-related interface elements. In that case, the following code example shows how an application can obtain a pointer to the <b>ITfSpeechUIServer</b> interface by calling the <see cref="CoCreateInstance" /> function with the CLSID_SpeechUIServer <b>CLSID</b>.</para>
-      <code>
-HRESULT hr;
-ITfSpeechUIServer* piSpeechUIServer;
-
-hr = CoCreateInstance(CLSID_SpeechUIServer,
-                      NULL,
-                      CLSCTX_INPROC_SERVER,
-                      IID_ITfSpeechUIServer,
-                      (void**)&amp;amp;amp;amp;amp;amp;piSpeechUIServer);
-
-</code>
-      <para>Subsequently, the application can use the <see cref="ITfSpeechUIServer.Initialize" /> method to initialize the user interface and the other methods of the <b>ITfSpeechUIServer</b> interface to manage the user interface.</para>
-    </remarks>
-    <seealso cref="CoCreateInstance" />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfSpeechUIServer</b> interface manages the speech-related user interface on the TSF language bar.</summary>
   </member>
 </doc>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE">
+    <summary>
+      <para>Provides detail about the adapter architecture, so that your application can better optimize for certain adapter properties.</para>
+      <div>
+        <b>Note</b>  This structure has been superseded by the <see cref="D3D12_FEATURE_DATA_ARCHITECTURE1" /> structure. If your application targets Windows 10, version 1703 (Creators' Update) or higher, then use <b>D3D12_FEATURE_DATA_ARCHITECTURE1</b> (and <see cref="D3D12_FEATURE_ARCHITECTURE1" />) instead.</div>
+    </summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE.NodeIndex">
+    <summary>In multi-adapter operation, this indicates which physical adapter of the device is relevant. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.<b>NodeIndex</b> is filled out by the application before calling <see cref="CheckFeatureSupport" />, as the application can retrieve details about the architecture of each adapter.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE.TileBasedRenderer">
+    <summary>Specifies whether the hardware and driver support a tile-based renderer. The runtime sets this member to <b>TRUE</b> if the hardware and driver support a tile-based renderer.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE.UMA">
+    <summary>Specifies whether the hardware and driver support UMA. The runtime sets this member to <b>TRUE</b> if the hardware and driver support UMA.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE.CacheCoherentUMA">
+    <summary>Specifies whether the hardware and driver support cache-coherent UMA. The runtime sets this member to <b>TRUE</b> if the hardware and driver support cache-coherent UMA.</summary>
+  </member>
+</doc>

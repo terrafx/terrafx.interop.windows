@@ -19,25 +19,4 @@ public static unsafe partial class DocWrapTests
     {
         Assert.That(typeof(DocWrap).GUID, Is.EqualTo(IID_DocWrap));
     }
-
-    /// <summary>Validates that the <see cref="DocWrap" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DocWrap>(), Is.EqualTo(sizeof(DocWrap)));
-    }
-
-    /// <summary>Validates that the <see cref="DocWrap" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DocWrap).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DocWrap" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DocWrap), Is.EqualTo(1));
-    }
 }

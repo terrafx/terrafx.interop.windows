@@ -3,83 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_SHADER_DEBUG_REGTYPE">
-    <summary>
-      <para>Shader register types.</para>
-    </summary>
-    <remarks>
-      <para>The <b>D3D10_SHADER_DEBUG_REGTYPE</b> enumeration is used to specify register types
-in <see cref="D3D10_SHADER_DEBUG_INPUT_INFO" /> and <see cref="D3D10_SHADER_DEBUG_OUTPUTREG_INFO" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-enums">Shader Enumerations</seealso>
+    <summary>Shader register types.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_INPUT">
-    <summary>
-      <para>Input register.</para>
-    </summary>
+    <summary>Input register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_OUTPUT">
-    <summary>
-      <para>Output register.</para>
-    </summary>
+    <summary>Output register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_CBUFFER">
-    <summary>
-      <para>Constant buffer register.</para>
-    </summary>
+    <summary>Constant buffer register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_TBUFFER">
-    <summary>
-      <para>Texture buffer register.</para>
-    </summary>
+    <summary>Texture buffer register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_TEMP">
-    <summary>
-      <para>Temporary register.</para>
-    </summary>
+    <summary>Temporary register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_TEMPARRAY">
-    <summary>
-      <para>Array of temporary registers.</para>
-    </summary>
+    <summary>Array of temporary registers.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_TEXTURE">
-    <summary>
-      <para>Texture register.</para>
-    </summary>
+    <summary>Texture register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_SAMPLER">
-    <summary>
-      <para>Sampler register.</para>
-    </summary>
+    <summary>Sampler register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_IMMEDIATECBUFFER">
-    <summary>
-      <para>Immediate constant buffer register.</para>
-    </summary>
+    <summary>Immediate constant buffer register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_LITERAL">
-    <summary>
-      <para>Literal register.</para>
-    </summary>
+    <summary>Literal register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_UNUSED">
-    <summary>
-      <para>Unused register.</para>
-    </summary>
+    <summary>Unused register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D11_SHADER_DEBUG_REG_INTERFACE_POINTERS">
-    <summary>
-      <para>Interface register.</para>
-    </summary>
+    <summary>Interface register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D11_SHADER_DEBUG_REG_UAV">
-    <summary>
-      <para>Unordered Access View (UAV) register.</para>
-    </summary>
+    <summary>Unordered Access View (UAV) register.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_REGTYPE.D3D10_SHADER_DEBUG_REG_FORCE_DWORD">
-    <summary>
-      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</para>
-    </summary>
+    <summary>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</summary>
   </member>
 </doc>

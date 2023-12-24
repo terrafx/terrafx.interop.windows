@@ -3,17 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPreviousVersionsInfo.AreSnapshotsAvailable">
-    <summary>
-      <para>Queries for the availability of a Windows Server 2003 volume image recorded by the system at an earlier time.</para>
-    </summary>
+    <summary>Queries for the availability of a Windows Server 2003 volume image recorded by the system at an earlier time.</summary>
     <param name="pszPath">
-      <para>Type: <b>LPCWSTR</b></para>
       <para>A null-terminated Unicode string containing the fully qualified path to a file or folder on the volume in question.</para>
-      <para>
-        <b>Note</b>  Only paths to files and folders stored on a Windows Server 2003 volume are currently supported.</para>
+      <div>
+        <b>Note</b>  Only paths to files and folders stored on a Windows Server 2003 volume are currently supported.</div>
     </param>
     <param name="fOkToBeSlow">
-      <para>Type: <b>BOOL</b></para>
       <para>A boolean value specifying whether a server should be contacted to determine the availability of stored volume images. For more details, see the Remarks section.</para>
       <h4>TRUE</h4>
       <para>Contact the server if the results are not already cached.</para>
@@ -21,7 +17,6 @@
       <para>Do not contact the server. Use cached results instead.</para>
     </param>
     <param name="pfAvailable">
-      <para>Type: <b>BOOL*</b></para>
       <para>A pointer to a boolean variable containing the result. This value is valid only if the method call succeeds; otherwise, it is undefined.</para>
       <h4>TRUE</h4>
       <para>At least one stored image of the volume where the file or folder named in <i>pszPath</i> resides is available.</para>
@@ -29,77 +24,41 @@
       <para>No volume images are stored.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns standard error values, including, but not limited to, the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_PENDING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_PENDING</b>
-            </para>
-          </description>
-          <description>
-            <i>fOkToBeSlow</i> is <b>FALSE</b> and the result is not currently cached.
-</description>
-        </item>
+            <i>fOkToBeSlow</i> is <b>FALSE</b> and the result is not currently cached.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <b>IPreviousVersionsInfo.AreSnapshotsAvailable</b> is called on a file or folder, the result does not indicate that rollback information is available for that specific file or folder, merely that a snapshot of the entire volume is available. This result is cached and subsequent calls inquiring about anything stored on that same volume access the cached results—with little performance overhead—instead of recontacting the server.</para>
-      <para>Once the server's response is cached in memory, subsequent calls do not contact the server even if <i>fOkToBeSlow</i> is <b>TRUE</b>. If <i>fOkToBeSlow</i> is <b>FALSE</b> and the server's response is not already cached from a previous call, the method returns E_PENDING. In that case, set <i>fOkToBeSlow</i> to <b>TRUE</b> and call <b>IPreviousVersionsInfo.AreSnapshotsAvailable</b> again to contact the server.</para>
-      <para>For better performance, a UI thread calling this method should always set <i>fOkToBeSlow</i> to <b>FALSE</b>. If the method returns E_PENDING, follow these steps.</para>
-      <list type="bullet">
-        <item>
-          <description>Create another instance of <see cref="IPreviousVersionsInfo" /> on a background thread.</description>
-        </item>
-        <item>
-          <description>Call <b>IPreviousVersionsInfo.AreSnapshotsAvailable</b> with <i>fOkToBeSlow</i> set to <b>TRUE</b>.</description>
-        </item>
-        <item>
-          <description>Signal the original UI thread to call <b>IPreviousVersionsInfo.AreSnapshotsAvailable</b> again. The results are then pulled from the cache.</description>
-        </item>
-      </list>
-    </remarks>
   </member>
   <member name="IPreviousVersionsInfo">
-    <summary>
-      <para>Exposes a method that checks for previous versions of server files or folders, stored for the purpose of reversion by the <i>shadow copies</i> technology provided with Windows Server 2003.</para>
-    </summary>
-    <remarks>
-      <para>The CLSID, IID, and definition for this interface are shown in the following example.</para>
-      <code>// {596AB062-B4D2-4215-9F74-E9109B0A8153}
-const CLSID CLSID_PreviousVersions = {0x596AB062, 0xB4D2, 0x4215,
-                             {0x9F, 0x74, 0xE9, 0x10, 0x9B, 0x0A, 0x81, 0x53}};
-
-// {76e54780-ad74-48e3-a695-3ba9a0aff10d}
-const IID IID_IPreviousVersionsInfo = {0x76E54780, 0xAD74, 0x48E3,
-                             {0xA6, 0x95, 0x3B, 0xA9, 0xA0, 0xAF, 0xF1, 0x0D}};
-
-MIDL_INTERFACE("76e54780-ad74-48e3-a695-3ba9a0aff10d")
-IPreviousVersionsInfo : public IUnknown
-{
-public:
-    virtual HRESULT STDMETHODCALLTYPE AreSnapshotsAvailable(
-        /* [string][in] */ LPCWSTR pszPath,
-        /* [in] */ BOOL fOkToBeSlow,
-        /* [retval][out] */ BOOL *pfAvailable) = 0;
-};
-</code>
-      <para>Note that the shadow copies technology does not store entire copies of older versions unless they are deleted; only the changed bits are stored.</para>
-    </remarks>
+    <summary>Exposes a method that checks for previous versions of server files or folders, stored for the purpose of reversion by the <i>shadow copies</i> technology provided with Windows Server 2003.</summary>
   </member>
 </doc>

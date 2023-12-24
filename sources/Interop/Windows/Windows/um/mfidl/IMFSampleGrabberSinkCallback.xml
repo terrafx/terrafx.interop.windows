@@ -3,44 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSampleGrabberSinkCallback.OnProcessSample">
-    <summary>
-      <para>Called when the sample-grabber sink receives a new media sample.</para>
-    </summary>
-    <param name="guidMajorMediaType">
-      <para>The major type that specifies the format of the data. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Major Media Types</a>.</para>
-    </param>
-    <param name="dwSampleFlags">
-      <para>Reserved.</para>
-    </param>
-    <param name="llSampleTime">
-      <para>The presentation time for this sample, in 100-nanosecond units.
-If the sample does not have a presentation time, the value of this parameter is <b>_I64_MAX</b>.</para>
-    </param>
-    <param name="llSampleDuration">
-      <para>The duration of the sample, in 100-nanosecond units.
-If the sample does not have a duration, the value of this parameter is <b>_I64_MAX</b>.</para>
-    </param>
-    <param name="pSampleBuffer">
-      <para>A pointer to a buffer that contains the sample data.</para>
-    </param>
-    <param name="dwSampleSize">
-      <para>Size of the <i>pSampleBuffer</i> buffer, in bytes.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If you use the sample-grabber sink in a playback topology, this method should return quickly, or it might interfere with playback. Do not block the thread, wait on events, or perform other lengthy operations inside this method.</para>
-    </remarks>
-    <seealso cref="IMFSampleGrabberSinkCallback" />
+    <summary>Called when the sample-grabber sink receives a new media sample.</summary>
+    <param name="guidMajorMediaType">The major type that specifies the format of the data. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Major Media Types</a>.</param>
+    <param name="dwSampleFlags">Reserved.</param>
+    <param name="llSampleTime">The presentation time for this sample, in 100-nanosecond units. If the sample does not have a presentation time, the value of this parameter is <b>_I64_MAX</b>.</param>
+    <param name="llSampleDuration">The duration of the sample, in 100-nanosecond units. If the sample does not have a duration, the value of this parameter is <b>_I64_MAX</b>.</param>
+    <param name="pSampleBuffer">A pointer to a buffer that contains the sample data.</param>
+    <param name="dwSampleSize">Size of the <i>pSampleBuffer</i> buffer, in bytes.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSampleGrabberSinkCallback.OnSetPresentationClock">
-    <summary>
-      <para>Called when the presentation clock is set on the sample-grabber sink.</para>
-    </summary>
-    <param name="pPresentationClock">
-      <para>Pointer to the presentation clock's <see cref="IMFPresentationClock" /> interface.</para>
-    </param>
+    <summary>Called when the presentation clock is set on the sample-grabber sink.</summary>
+    <param name="pPresentationClock">Pointer to the presentation clock's <see cref="IMFPresentationClock" /> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -48,27 +22,23 @@ If the sample does not have a duration, the value of this parameter is <b>_I64_M
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method should return quickly, or it might interfere with playback. Do not block the thread, wait on events, or perform other lengthy operations inside this method.</para>
-    </remarks>
-    <seealso cref="IMFSampleGrabberSinkCallback" />
   </member>
   <member name="IMFSampleGrabberSinkCallback.OnShutdown">
-    <summary>
-      <para>Called when the sample-grabber sink is shut down.</para>
-    </summary>
+    <summary>Called when the sample-grabber sink is shut down.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -76,56 +46,22 @@ If the sample does not have a duration, the value of this parameter is <b>_I64_M
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is called when the sink's <see cref="IMFMediaSink.Shutdown" /> method is called.</para>
-      <para>The <b>OnShutdown</b> method should return quickly, or it might interfere with playback. Do not block the thread, wait on events, or perform other lengthy operations inside this method.</para>
-    </remarks>
-    <seealso cref="IMFSampleGrabberSinkCallback" />
   </member>
   <member name="IMFSampleGrabberSinkCallback">
-    <summary>
-      <para>Callback interface to get media data from the sample-grabber sink.</para>
-    </summary>
-    <remarks>
-      <para>The sample-grabber sink enables an application to get data from the Media Foundation pipeline without implementing a custom media sink. To use the sample-grabber sink, the application must perform the following steps:</para>
-      <list type="number">
-        <item>
-          <description>
-            <para>Implement the <b>IMFSampleGrabberSinkCallback</b> interface.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Call <see cref="MFCreateSampleGrabberSinkActivate" />, passing in the <b>IMFSampleGrabberSinkCallback</b> interface pointer. This function returns an <see cref="IMFActivate" /> object.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Create a topology that includes an output node with the sink's <see cref="IMFActivate" /> object.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Pass this topology to the Media Session.</para>
-          </description>
-        </item>
-      </list>
-      <para>During playback, the sample-grabber sink calls methods on the application's callback.</para>
-      <para>You cannot use the sample-grabber sink to get protected content.</para>
-    </remarks>
-    <seealso cref="IMFClockStateSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Callback interface to get media data from the sample-grabber sink.</summary>
   </member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IItemNameLimitsTests
     {
         Assert.That(typeof(IItemNameLimits).GUID, Is.EqualTo(IID_IItemNameLimits));
     }
-
-    /// <summary>Validates that the <see cref="IItemNameLimits" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IItemNameLimits>(), Is.EqualTo(sizeof(IItemNameLimits)));
-    }
-
-    /// <summary>Validates that the <see cref="IItemNameLimits" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IItemNameLimits).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IItemNameLimits" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IItemNameLimits), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IItemNameLimits), Is.EqualTo(4));
-        }
-    }
 }

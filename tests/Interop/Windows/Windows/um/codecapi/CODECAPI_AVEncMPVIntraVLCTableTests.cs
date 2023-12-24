@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPVIntraVLCTableTests
     {
         Assert.That(typeof(CODECAPI_AVEncMPVIntraVLCTable).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVIntraVLCTable));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVIntraVLCTable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVIntraVLCTable>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVIntraVLCTable)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVIntraVLCTable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPVIntraVLCTable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVIntraVLCTable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPVIntraVLCTable), Is.EqualTo(1));
-    }
 }

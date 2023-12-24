@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Debug2.SetGPUBasedValidationFlags">
+    <summary>This method configures the level of GPU-based validation that the debug device is to perform at runtime.</summary>
+    <param name="Flags">Specifies the level of GPU-based validation to perform at runtime.</param>
+  </member>
+  <member name="ID3D12Debug2">
+    <summary>Adds configurable levels of GPU-based validation to the debug layer.</summary>
+  </member>
+</doc>

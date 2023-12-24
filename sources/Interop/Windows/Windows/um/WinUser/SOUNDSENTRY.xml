@@ -6,97 +6,72 @@
     <summary>
       <para>Contains information about the SoundSentry accessibility feature. When the SoundSentry feature is on, the computer displays a visual indication only when a sound is generated.</para>
       <para>
-        <b>Windows 95/98:</b>  The visual indication is displayed
-when a sound is generated through the computer's internal
-speaker.</para>
+        <b>Windows 95/98:</b> The visual indication is displayed when a sound is generated through the computer's internal speaker.</para>
       <para>
-        <b>Windows NT/2000:</b>  The visual indication is displayed
-when a sound is generated through either the multimedia
-sound services or through the computer's speaker.</para>
+        <b>Windows NT/2000:</b> The visual indication is displayed when a sound is generated through either the multimedia sound services or through the computer's speaker.</para>
     </summary>
-    <remarks>
-      <para>An application uses a <b>SOUNDSENTRY</b> structure when calling the <see cref="SystemParametersInfo" /> function with the <i>uiAction</i> parameter set to <b>SPI_GETSOUNDSENTRY</b> or <b>SPI_SETSOUNDSENTRY</b>. When using <b>SPI_GETSOUNDSENTRY</b>, an application must specify the <b>cbSize</b> member of the <b>SOUNDSENTRY</b> structure; the <b>SystemParametersInfo</b> function fills the remaining members. An application must specify the <b>cbSize</b>, <b>dwFlags</b>, and <b>iWindowsEffect</b> members when using the <b>SPI_SETSOUNDSENTRY</b> value.</para>
-      <blockquote>
-        <para>[!NOTE]
-The winuser.h header defines SOUNDSENTRY as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinAuto/accessibility-structures">Accessibility Structures</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd373647(v=vs.85)">SoundSentryProc</seealso>
-    <seealso cref="SystemParametersInfo" />
   </member>
   <member name="SOUNDSENTRY.cbSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Specifies the size, in bytes, of this structure.</para>
-    </summary>
+    <summary>Specifies the size, in bytes, of this structure.</summary>
   </member>
   <member name="SOUNDSENTRY.dwFlags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>A set of bit flags that specify properties of the SoundSentry feature. The following bit-flag values are defined:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSF_AVAILABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, the SoundSentry feature is available.</para>
-          </description>
-        </item>
-        <item>
+          <description>If this flag is set, the SoundSentry feature is available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSF_INDICATOR</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This flag is not implemented.</para>
-          </description>
-        </item>
-        <item>
+          <description>This flag is not implemented.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSF_SOUNDSENTRYON</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, the SoundSentry feature is on.</para>
-          </description>
-        </item>
+          <description>If this flag is set, the SoundSentry feature is on.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SOUNDSENTRY.iFSTextEffect">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the visual signal to present when a text-mode application generates a sound while running in a full-screen virtual machine. This member can be one of the following values:</para>
       <list type="table">
@@ -104,82 +79,70 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSTF_BORDER</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the screen border (that is, the overscan area), which is unavailable on some displays.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the screen border (that is, the overscan area), which is unavailable on some displays.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSTF_CHARS</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash characters in the corner of the screen.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash characters in the corner of the screen.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSTF_DISPLAY</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the entire display.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the entire display.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSTF_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No visual signal</para>
-          </description>
-        </item>
-      </list>
-      <para>
-        <b>Windows NT/2000:</b> This member is reserved for future use. It must be set to zero.</para>
-    </summary>
+          <description>No visual signal</description>
+        </listheader>
+      </list> <para><b>Windows NT/2000:</b> This member is reserved for future use. It must be set to zero.</para></summary>
   </member>
   <member name="SOUNDSENTRY.iFSTextEffectMSec">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the duration, in milliseconds, of the visual signal that is displayed when a full-screen, text-mode application generates a sound.</para>
       <para>
@@ -188,7 +151,6 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
   </member>
   <member name="SOUNDSENTRY.iFSTextEffectColorBits">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the RGB value of the color to be used when displaying the visual signal shown when a full-screen, text-mode application generates a sound.</para>
       <para>
@@ -197,7 +159,6 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
   </member>
   <member name="SOUNDSENTRY.iFSGrafEffect">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the visual signal to present when a graphics-mode application generates a sound while running in a full-screen virtual machine. This member can be one of the following values:</para>
       <list type="table">
@@ -205,48 +166,40 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSGF_DISPLAY</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the entire display.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the entire display.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSGF_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No visual signal.</para>
-          </description>
-        </item>
-      </list>
-      <para>
-        <b>Windows NT/2000:</b> This member is reserved for future use. It must be set to zero.</para>
-    </summary>
+          <description>No visual signal.</description>
+        </listheader>
+      </list> <para><b>Windows NT/2000:</b> This member is reserved for future use. It must be set to zero.</para></summary>
   </member>
   <member name="SOUNDSENTRY.iFSGrafEffectMSec">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the duration, in milliseconds, of the visual signal that is displayed when a full-screen, graphics-mode application generates a sound.</para>
       <para>
@@ -255,7 +208,6 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
   </member>
   <member name="SOUNDSENTRY.iFSGrafEffectColor">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the RGB value of the color to be used when displaying the visual signal shown when a full-screen, graphics-mode application generates a sound.</para>
       <para>
@@ -264,104 +216,92 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
   </member>
   <member name="SOUNDSENTRY.iWindowsEffect">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Specifies the visual signal to display when a sound is generated by a Windows-based application or an MS-DOS application running in a window. This member can be one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_CUSTOM</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use a custom visual signal.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use a custom visual signal.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_DISPLAY</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the entire display.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the entire display.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No visual signal.</para>
-          </description>
-        </item>
-        <item>
+          <description>No visual signal.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_TITLE</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the title bar of the active window.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the title bar of the active window.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_WINDOW</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the active window.</para>
-          </description>
-        </item>
+          <description>Flash the active window.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SOUNDSENTRY.iWindowsEffectMSec">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the duration, in milliseconds, of the visual signal that is displayed when a Win32-based application (or an application running in a window) generates a sound.</para>
       <para>
@@ -369,112 +309,81 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
     </summary>
   </member>
   <member name="SOUNDSENTRY.lpszWindowsEffectDLL">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
-      <para>This member is reserved for future use. It should be set to <b>NULL</b>.</para>
-    </summary>
+    <summary>This member is reserved for future use. It should be set to <b>NULL</b>.</summary>
   </member>
   <member name="SOUNDSENTRY.iWindowsEffectOrdinal">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>This member is reserved for future use. It must be set to zero.</para>
-    </summary>
+    <summary>This member is reserved for future use. It must be set to zero.</summary>
   </member>
   <member name="SOUNDSENTRY">
     <summary>
       <para>Contains information about the SoundSentry accessibility feature. When the SoundSentry feature is on, the computer displays a visual indication only when a sound is generated.</para>
       <para>
-        <b>Windows 95/98:</b>  The visual indication is displayed
-when a sound is generated through the computer's internal
-speaker.</para>
+        <b>Windows 95/98:</b> The visual indication is displayed when a sound is generated through the computer's internal speaker.</para>
       <para>
-        <b>Windows NT/2000:</b>  The visual indication is displayed
-when a sound is generated through either the multimedia
-sound services or through the computer's speaker.</para>
+        <b>Windows NT/2000:</b> The visual indication is displayed when a sound is generated through either the multimedia sound services or through the computer's speaker.</para>
     </summary>
-    <remarks>
-      <para>An application uses a <b>SOUNDSENTRY</b> structure when calling the <see cref="SystemParametersInfo" /> function with the <i>uiAction</i> parameter set to <b>SPI_GETSOUNDSENTRY</b> or <b>SPI_SETSOUNDSENTRY</b>. When using <b>SPI_GETSOUNDSENTRY</b>, an application must specify the <b>cbSize</b> member of the <b>SOUNDSENTRY</b> structure; the <b>SystemParametersInfo</b> function fills the remaining members. An application must specify the <b>cbSize</b>, <b>dwFlags</b>, and <b>iWindowsEffect</b> members when using the <b>SPI_SETSOUNDSENTRY</b> value.</para>
-      <blockquote>
-        <para>[!NOTE]
-The winuser.h header defines SOUNDSENTRY as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinAuto/accessibility-structures">Accessibility Structures</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd373647(v=vs.85)">SoundSentryProc</seealso>
-    <seealso cref="SystemParametersInfo" />
   </member>
   <member name="SOUNDSENTRY.cbSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Specifies the size, in bytes, of this structure.</para>
-    </summary>
+    <summary>Specifies the size, in bytes, of this structure.</summary>
   </member>
   <member name="SOUNDSENTRY.dwFlags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>A set of bit flags that specify properties of the SoundSentry feature. The following bit-flag values are defined:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSF_AVAILABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, the SoundSentry feature is available.</para>
-          </description>
-        </item>
-        <item>
+          <description>If this flag is set, the SoundSentry feature is available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSF_INDICATOR</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This flag is not implemented.</para>
-          </description>
-        </item>
-        <item>
+          <description>This flag is not implemented.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSF_SOUNDSENTRYON</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, the SoundSentry feature is on.</para>
-          </description>
-        </item>
+          <description>If this flag is set, the SoundSentry feature is on.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SOUNDSENTRY.iFSTextEffect">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the visual signal to present when a text-mode application generates a sound while running in a full-screen virtual machine. This member can be one of the following values:</para>
       <list type="table">
@@ -482,82 +391,70 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSTF_BORDER</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the screen border (that is, the overscan area), which is unavailable on some displays.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the screen border (that is, the overscan area), which is unavailable on some displays.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSTF_CHARS</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash characters in the corner of the screen.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash characters in the corner of the screen.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSTF_DISPLAY</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the entire display.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the entire display.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSTF_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No visual signal</para>
-          </description>
-        </item>
-      </list>
-      <para>
-        <b>Windows NT/2000:</b> This member is reserved for future use. It must be set to zero.</para>
-    </summary>
+          <description>No visual signal</description>
+        </listheader>
+      </list> <para><b>Windows NT/2000:</b> This member is reserved for future use. It must be set to zero.</para></summary>
   </member>
   <member name="SOUNDSENTRY.iFSTextEffectMSec">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the duration, in milliseconds, of the visual signal that is displayed when a full-screen, text-mode application generates a sound.</para>
       <para>
@@ -566,7 +463,6 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
   </member>
   <member name="SOUNDSENTRY.iFSTextEffectColorBits">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the RGB value of the color to be used when displaying the visual signal shown when a full-screen, text-mode application generates a sound.</para>
       <para>
@@ -575,7 +471,6 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
   </member>
   <member name="SOUNDSENTRY.iFSGrafEffect">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the visual signal to present when a graphics-mode application generates a sound while running in a full-screen virtual machine. This member can be one of the following values:</para>
       <list type="table">
@@ -583,48 +478,40 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSGF_DISPLAY</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the entire display.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the entire display.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSGF_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No visual signal.</para>
-          </description>
-        </item>
-      </list>
-      <para>
-        <b>Windows NT/2000:</b> This member is reserved for future use. It must be set to zero.</para>
-    </summary>
+          <description>No visual signal.</description>
+        </listheader>
+      </list> <para><b>Windows NT/2000:</b> This member is reserved for future use. It must be set to zero.</para></summary>
   </member>
   <member name="SOUNDSENTRY.iFSGrafEffectMSec">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the duration, in milliseconds, of the visual signal that is displayed when a full-screen, graphics-mode application generates a sound.</para>
       <para>
@@ -633,7 +520,6 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
   </member>
   <member name="SOUNDSENTRY.iFSGrafEffectColor">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the RGB value of the color to be used when displaying the visual signal shown when a full-screen, graphics-mode application generates a sound.</para>
       <para>
@@ -642,104 +528,92 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
   </member>
   <member name="SOUNDSENTRY.iWindowsEffect">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Specifies the visual signal to display when a sound is generated by a Windows-based application or an MS-DOS application running in a window. This member can be one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_CUSTOM</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use a custom visual signal.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use a custom visual signal.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_DISPLAY</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the entire display.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the entire display.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No visual signal.</para>
-          </description>
-        </item>
-        <item>
+          <description>No visual signal.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_TITLE</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the title bar of the active window.</para>
-          </description>
-        </item>
-        <item>
+          <description>Flash the title bar of the active window.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SSWF_WINDOW</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flash the active window.</para>
-          </description>
-        </item>
+          <description>Flash the active window.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SOUNDSENTRY.iWindowsEffectMSec">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>
         <b>Windows 95/98:</b> Specifies the duration, in milliseconds, of the visual signal that is displayed when a Win32-based application (or an application running in a window) generates a sound.</para>
       <para>
@@ -747,15 +621,9 @@ The winuser.h header defines SOUNDSENTRY as an alias which automatically selects
     </summary>
   </member>
   <member name="SOUNDSENTRY.lpszWindowsEffectDLL">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
-      <para>This member is reserved for future use. It should be set to <b>NULL</b>.</para>
-    </summary>
+    <summary>This member is reserved for future use. It should be set to <b>NULL</b>.</summary>
   </member>
   <member name="SOUNDSENTRY.iWindowsEffectOrdinal">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>This member is reserved for future use. It must be set to zero.</para>
-    </summary>
+    <summary>This member is reserved for future use. It must be set to zero.</summary>
   </member>
 </doc>

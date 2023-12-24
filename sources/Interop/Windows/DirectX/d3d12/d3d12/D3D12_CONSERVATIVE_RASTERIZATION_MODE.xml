@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_CONSERVATIVE_RASTERIZATION_MODE">
+    <summary>Identifies whether conservative rasterization is on or off.</summary>
+  </member>
+  <member name="D3D12_CONSERVATIVE_RASTERIZATION_MODE.D3D12_CONSERVATIVE_RASTERIZATION_MODE_OFF">
+    <summary>Conservative rasterization is off.</summary>
+  </member>
+  <member name="D3D12_CONSERVATIVE_RASTERIZATION_MODE.D3D12_CONSERVATIVE_RASTERIZATION_MODE_ON">
+    <summary>Conservative rasterization is on.</summary>
+  </member>
+</doc>

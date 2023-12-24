@@ -25,7 +25,7 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IContextMenuSite*, Guid*, void**, int>)(lpVtbl[0]))((IContextMenuSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IContextMenuSite*, Guid*, void**, int>)(lpVtbl[0]))((IContextMenuSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IContextMenuSite*, uint>)(lpVtbl[1]))((IContextMenuSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContextMenuSite*, uint>)(lpVtbl[1]))((IContextMenuSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IContextMenuSite*, uint>)(lpVtbl[2]))((IContextMenuSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IContextMenuSite*, uint>)(lpVtbl[2]))((IContextMenuSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IContextMenuSite.xml' path='doc/member[@name="IContextMenuSite.DoContextMenuPopup"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface, INat
     [VtblIndex(3)]
     public HRESULT DoContextMenuPopup(IUnknown* punkContextMenu, uint fFlags, POINT pt)
     {
-        return ((delegate* unmanaged<IContextMenuSite*, IUnknown*, uint, POINT, int>)(lpVtbl[3]))((IContextMenuSite*)Unsafe.AsPointer(ref this), punkContextMenu, fFlags, pt);
+        return ((delegate* unmanaged[MemberFunction]<IContextMenuSite*, IUnknown*, uint, POINT, int>)(lpVtbl[3]))((IContextMenuSite*)Unsafe.AsPointer(ref this), punkContextMenu, fFlags, pt);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IContextMenuSite : IContextMenuSite.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT, POINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, POINT, int> DoContextMenuPopup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, POINT, int> DoContextMenuPopup;
     }
 }

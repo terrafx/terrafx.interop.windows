@@ -10,12 +10,6 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    [DllImport("comctl32", EntryPoint = "CreateToolbarEx", ExactSpelling = true, SetLastError = true)]
-    public static extern HWND CreateToolbarEx32(HWND hwnd, [NativeTypeName("DWORD")] uint ws, uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON32* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, uint uStructSize);
-
-    [DllImport("comctl32", EntryPoint = "CreateToolbarEx", ExactSpelling = true, SetLastError = true)]
-    public static extern HWND CreateToolbarEx64(HWND hwnd, [NativeTypeName("DWORD")] uint ws, uint wID, int nBitmaps, HINSTANCE hBMInst, [NativeTypeName("UINT_PTR")] nuint wBMID, [NativeTypeName("LPCTBBUTTON")] TBBUTTON64* lpButtons, int iNumButtons, int dxButton, int dyButton, int dxBitmap, int dyBitmap, uint uStructSize);
-
     public static BOOL FlatSB_GetScrollPropPtr(HWND param0, int propIndex, nint* param2)
     {
         if (sizeof(nint) == 4)
@@ -116,7 +110,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out TTTOOLINFOA value);
-            return (uint)((byte*)(&value.lpszText) - ((byte*)(&value))) + (uint)(sizeof(ushort*));
+            return (uint)((byte*)(&value.lpszText) - ((byte*)(&value))) + (uint)(sizeof(char*));
         }
     }
 
@@ -126,7 +120,7 @@ public static unsafe partial class Windows
         get
         {
             Unsafe.SkipInit(out TTTOOLINFOW value);
-            return (uint)((byte*)(&value.lpszText) - ((byte*)(&value))) + (uint)(sizeof(ushort*));
+            return (uint)((byte*)(&value.lpszText) - ((byte*)(&value))) + (uint)(sizeof(char*));
         }
     }
 

@@ -21,9 +21,9 @@ public unsafe partial struct SPSHORTCUTPAIR
 
     /// <include file='SPSHORTCUTPAIR.xml' path='doc/member[@name="SPSHORTCUTPAIR.pszDisplay"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDisplay;
+    public char* pszDisplay;
 
     /// <include file='SPSHORTCUTPAIR.xml' path='doc/member[@name="SPSHORTCUTPAIR.pszSpoken"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSpoken;
+    public char* pszSpoken;
 }

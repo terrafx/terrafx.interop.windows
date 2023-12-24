@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoInverseTelecineEnableTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoInverseTelecineEnable).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoInverseTelecineEnable));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInverseTelecineEnable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoInverseTelecineEnable>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoInverseTelecineEnable)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInverseTelecineEnable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoInverseTelecineEnable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInverseTelecineEnable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoInverseTelecineEnable), Is.EqualTo(1));
-    }
 }

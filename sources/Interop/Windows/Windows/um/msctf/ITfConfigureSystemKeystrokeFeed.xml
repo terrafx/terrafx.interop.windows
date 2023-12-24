@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfConfigureSystemKeystrokeFeed.DisableSystemKeystrokeFeed">
-    <summary>
-      <para>Prevents the TSF manager from processing keystrokes.</para>
-    </summary>
+    <summary>Prevents the TSF manager from processing keystrokes.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -13,29 +11,23 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>By default, the TSF manager will process keystrokes and pass them to the text services. An application prevents this by calling this method. Typically, this method is called when text service input is inappropriate, for example when a menu is displayed.</para>
-      <para>Calls to this method are cumulative, so every call to this method requires a subsequent call to <see cref="ITfConfigureSystemKeystrokeFeed.EnableSystemKeystrokeFeed" />.</para>
-    </remarks>
-    <seealso cref="ITfConfigureSystemKeystrokeFeed interface" />
-    <seealso cref="ITfConfigureSystemKeystrokeFeed.EnableSystemKeystrokeFeed" />
   </member>
   <member name="ITfConfigureSystemKeystrokeFeed.EnableSystemKeystrokeFeed">
-    <summary>
-      <para>Enables the TSF manager to process keystrokes after being disabled by DisableSystemKeystrokeFeed.</para>
-    </summary>
+    <summary>Enables the TSF manager to process keystrokes after being disabled by DisableSystemKeystrokeFeed.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -43,40 +35,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>There was no corresponding call to DisableSystemKeystrokeFeed.</para>
-          </description>
-        </item>
+          <description>There was no corresponding call to DisableSystemKeystrokeFeed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>By default, the TSF manager will process keystrokes and pass them to the text services. An application prevents this by calling <b>DisableSystemKeystrokeFeed</b> .</para>
-      <para>Calls to <b>DisableSystemKeystrokeFeed</b> are cumulative, so every call to <b>DisableSystemKeystrokeFeed</b> requires a subsequent call to <b>EnableSystemKeystrokeFeed</b>. Calling <b>EnableSystemKeystrokeFeed</b> will not enable keystroke processing if <b>DisableSystemKeystrokeFeed</b> is called more than once.</para>
-    </remarks>
-    <seealso cref="ITfConfigureSystemKeystrokeFeed interface" />
-    <seealso cref="ITfConfigureSystemKeystrokeFeed.DisableSystemKeystrokeFeed" />
   </member>
   <member name="ITfConfigureSystemKeystrokeFeed">
-    <summary>
-      <para>The <b>ITfConfigureSystemKeystrokeFeed</b> interface is implemented by the TSF manager to enable and disable the processing of keystrokes. This interface is obtained by calling the TSF manager's <b>ITfThreadMgr.QueryInterface</b> with IID_ITfConfigureSystemKeystrokeFeed.</para>
-    </summary>
-    <seealso cref="ITfThreadMgr " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfConfigureSystemKeystrokeFeed</b> interface is implemented by the TSF manager to enable and disable the processing of keystrokes. This interface is obtained by calling the TSF manager's <b>ITfThreadMgr.QueryInterface</b> with IID_ITfConfigureSystemKeystrokeFeed.</summary>
   </member>
 </doc>

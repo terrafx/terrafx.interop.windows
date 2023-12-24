@@ -19,32 +19,4 @@ public static unsafe partial class IDxDiagContainerTests
     {
         Assert.That(typeof(IDxDiagContainer).GUID, Is.EqualTo(IID_IDxDiagContainer));
     }
-
-    /// <summary>Validates that the <see cref="IDxDiagContainer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDxDiagContainer>(), Is.EqualTo(sizeof(IDxDiagContainer)));
-    }
-
-    /// <summary>Validates that the <see cref="IDxDiagContainer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDxDiagContainer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDxDiagContainer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDxDiagContainer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDxDiagContainer), Is.EqualTo(4));
-        }
-    }
 }

@@ -20,7 +20,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
     public uint id;
 
     /// <include file='DISPLAYCONFIG_PATH_SOURCE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_SOURCE_INFO.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2954:5)")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L2954_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DISPLAYCONFIG_PATH_SOURCE_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_PATH_SOURCE_INFO.statusFlags"]/*' />
@@ -42,7 +42,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
     public uint cloneGroupId
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.cloneGroupId;
         }
@@ -58,7 +58,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
     public uint sourceModeInfoIdx
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.sourceModeInfoIdx;
         }
@@ -81,7 +81,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DISPLAYCONFIG_PATH_SOURCE_INFO::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2957:9)")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L2957_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -94,7 +94,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
             public uint cloneGroupId
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFFFFu;
                 }
@@ -111,7 +111,7 @@ public partial struct DISPLAYCONFIG_PATH_SOURCE_INFO
             public uint sourceModeInfoIdx
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0xFFFFu;
                 }

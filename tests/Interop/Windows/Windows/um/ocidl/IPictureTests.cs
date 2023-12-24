@@ -19,32 +19,4 @@ public static unsafe partial class IPictureTests
     {
         Assert.That(typeof(IPicture).GUID, Is.EqualTo(IID_IPicture));
     }
-
-    /// <summary>Validates that the <see cref="IPicture" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPicture>(), Is.EqualTo(sizeof(IPicture)));
-    }
-
-    /// <summary>Validates that the <see cref="IPicture" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPicture).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPicture" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPicture), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPicture), Is.EqualTo(4));
-        }
-    }
 }

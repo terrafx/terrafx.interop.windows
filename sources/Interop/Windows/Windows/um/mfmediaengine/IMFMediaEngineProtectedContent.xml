@@ -3,114 +3,41 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngineProtectedContent.GetRequiredProtections">
-    <summary>
-      <para>Gets the content protections that must be applied in frame-server mode.</para>
-    </summary>
-    <param name="pFrameProtectionFlags">
-      <para>Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineProtectedContent" />
+    <summary>Gets the content protections that must be applied in frame-server mode.</summary>
+    <param name="pFrameProtectionFlags">Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineProtectedContent.SetApplicationCertificate">
-    <summary>
-      <para>Sets the application's certificate.</para>
-    </summary>
-    <param name="pbBlob">
-      <para>A pointer to a buffer that contains the certificate in X.509 format, followed by the application identifier signed with a SHA-256 signature using the private key from the certificate.</para>
-    </param>
-    <param name="cbBlob">
-      <para>The size of the <i>pbBlob</i> buffer, in bytes.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call this method to access protected video content in frame-server mode.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineProtectedContent" />
+    <summary>Sets the application's certificate.</summary>
+    <param name="pbBlob">A pointer to a buffer that contains the certificate in X.509 format, followed by the application identifier signed with a SHA-256 signature using the private key from the certificate.</param>
+    <param name="cbBlob">The size of the <i>pbBlob</i> buffer, in bytes.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineProtectedContent.SetContentProtectionManager">
-    <summary>
-      <para>Sets the content protection manager (CPM).</para>
-    </summary>
-    <param name="pCPM">
-      <para>A pointer to the <see cref="IMFContentProtectionManager" /> interface, implemented by the caller.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The Media Engine uses the CPM to handle events related to protected content, such as license acquisition.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineProtectedContent" />
+    <summary>Sets the content protection manager (CPM).</summary>
+    <param name="pCPM">A pointer to the <see cref="IMFContentProtectionManager" /> interface, implemented by the caller.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineProtectedContent.SetOPMWindow">
-    <summary>
-      <para>Specifies the window that should receive output link protections.</para>
-    </summary>
-    <param name="hwnd">
-      <para>A handle to the window.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In frame-server mode, call this method to specify the destination window for protected video content. The Media Engine uses this window to set link protections, using the <a href="https://docs.microsoft.com//windows/desktop/medfound/output-protection-manager">Output Protection Manager</a> (OPM).</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineProtectedContent" />
+    <summary>Specifies the window that should receive output link protections.</summary>
+    <param name="hwnd">A handle to the window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineProtectedContent.ShareResources">
-    <summary>
-      <para>Enables the Media Engine to access protected content while in frame-server mode.</para>
-    </summary>
-    <param name="pUnkDeviceContext">
-      <para>A pointer to the Direct3D 11 device content. The Media Engine queries this pointer for the <see cref="ID3D11VideoContext" /> interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In frame-server mode, this method enables the Media Engine to share protected content with the Direct3D 11 device.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineProtectedContent" />
+    <summary>Enables the Media Engine to access protected content while in frame-server mode.</summary>
+    <param name="pUnkDeviceContext">A pointer to the Direct3D 11 device content. The Media Engine queries this pointer for the <see cref="ID3D11VideoContext" /> interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineProtectedContent.TransferVideoFrame">
-    <summary>
-      <para>Copies a protected video frame to a DXGI surface.</para>
-    </summary>
-    <param name="pDstSurf">
-      <para>A pointer to the <see cref="IUnknown" /> interface of the destination surface.</para>
-    </param>
-    <param name="pSrc">
-      <para>A pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle.</para>
-    </param>
-    <param name="pDst">
-      <para>A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle.</para>
-    </param>
-    <param name="pBorderClr">
-      <para>A pointer to an <see cref="MFARGB" /> structure that specifies the border color.</para>
-    </param>
-    <param name="pFrameProtectionFlags">
-      <para>Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS" /> enumeration. These flags indicate which content protections the application must apply before presenting the surface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For protected content, call this method instead of the <see cref="IMFMediaEngine.TransferVideoFrame" /> method.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineProtectedContent" />
+    <summary>Copies a protected video frame to a DXGI surface.</summary>
+    <param name="pDstSurf">A pointer to the <see cref="IUnknown" /> interface of the destination surface.</param>
+    <param name="pSrc">A pointer to an <see cref="MFVideoNormalizedRect" /> structure that specifies the source rectangle.</param>
+    <param name="pDst">A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle.</param>
+    <param name="pBorderClr">A pointer to an <see cref="MFARGB" /> structure that specifies the border color.</param>
+    <param name="pFrameProtectionFlags">Receives a bitwise <b>OR</b> of zero or more flags from the <see cref="MF_MEDIA_ENGINE_FRAME_PROTECTION_FLAGS" /> enumeration. These flags indicate which content protections the application must apply before presenting the surface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaEngineProtectedContent">
-    <summary>
-      <para>Enables the Media Engine to play protected video content.</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call <see cref="QueryInterface" /> on the Media Engine.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Enables the Media Engine to play protected video content.</summary>
   </member>
 </doc>

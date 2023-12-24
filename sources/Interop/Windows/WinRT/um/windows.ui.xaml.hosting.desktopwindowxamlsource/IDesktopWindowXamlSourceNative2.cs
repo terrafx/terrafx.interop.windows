@@ -28,7 +28,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative2*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[1]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[1]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[2]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative2*, uint>)(lpVtbl[2]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDesktopWindowXamlSourceNative.AttachToWindow" />
@@ -54,7 +54,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
     [VtblIndex(3)]
     public HRESULT AttachToWindow(HWND parentWnd)
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), parentWnd);
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative2*, HWND, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), parentWnd);
     }
 
     /// <inheritdoc cref="IDesktopWindowXamlSourceNative.get_WindowHandle" />
@@ -62,7 +62,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
     [VtblIndex(4)]
     public HRESULT get_WindowHandle(HWND* hWnd)
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, HWND*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), hWnd);
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative2*, HWND*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), hWnd);
     }
 
     /// <include file='IDesktopWindowXamlSourceNative2.xml' path='doc/member[@name="IDesktopWindowXamlSourceNative2.PreTranslateMessage"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
     [VtblIndex(5)]
     public HRESULT PreTranslateMessage([NativeTypeName("const MSG *")] MSG* message, BOOL* result)
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int>)(lpVtbl[5]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), message, result);
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative2*, MSG*, BOOL*, int>)(lpVtbl[5]))((IDesktopWindowXamlSourceNative2*)Unsafe.AsPointer(ref this), message, result);
     }
 
     public interface Interface : IDesktopWindowXamlSourceNative.Interface
@@ -83,21 +83,21 @@ public unsafe partial struct IDesktopWindowXamlSourceNative2 : IDesktopWindowXam
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> AttachToWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> AttachToWindow;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> get_WindowHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> get_WindowHandle;
 
         [NativeTypeName("HRESULT (const MSG *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, BOOL*, int> PreTranslateMessage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, BOOL*, int> PreTranslateMessage;
     }
 }

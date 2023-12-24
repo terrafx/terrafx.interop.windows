@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FSCTL_QUERY_REGION_INFO_INPUT">
-    <summary>
-      <para>Contains the storage tier regions from the storage stack for a particular volume.</para>
-    </summary>
+    <summary>Contains the storage tier regions from the storage stack for a particular volume.</summary>
   </member>
   <member name="FSCTL_QUERY_REGION_INFO_INPUT.Version">
-    <summary>
-      <para>The size of this structure serves as the version.  Set it to <b>sizeof</b>(<b>FSCTL_QUERY_REGION_INFO_INPUT</b>).</para>
-    </summary>
+    <summary>The size of this structure serves as the version. Set it to <b>sizeof</b>(<b>FSCTL_QUERY_REGION_INFO_INPUT</b>).</summary>
   </member>
   <member name="FSCTL_QUERY_REGION_INFO_INPUT.Size">
-    <summary>
-      <para>The size of this structure in bytes.</para>
-    </summary>
+    <summary>The size of this structure in bytes.</summary>
   </member>
   <member name="FSCTL_QUERY_REGION_INFO_INPUT.Flags">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="FSCTL_QUERY_REGION_INFO_INPUT.NumberOfTierIds">
-    <summary>
-      <para>Number of entries in <b>TierIds</b>, 0 to request IDs for the entire volume.</para>
-    </summary>
+    <summary>Number of entries in <b>TierIds</b>, 0 to request IDs for the entire volume.</summary>
   </member>
   <member name="FSCTL_QUERY_REGION_INFO_INPUT.TierIds">
-    <summary>
-      <para>Array of storage tiers (represented by GUID values) for which to return information.</para>
-    </summary>
+    <summary>Array of storage tiers (represented by GUID values) for which to return information.</summary>
   </member>
 </doc>

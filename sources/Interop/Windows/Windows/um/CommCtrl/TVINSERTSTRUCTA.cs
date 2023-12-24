@@ -19,7 +19,7 @@ public partial struct TVINSERTSTRUCTA
     public HTREEITEM hInsertAfter;
 
     /// <include file='TVINSERTSTRUCTA.xml' path='doc/member[@name="TVINSERTSTRUCTA.Anonymous"]/*' />
-    [NativeTypeName("tagTVINSERTSTRUCTA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/CommCtrl.h:5001:5)")]
+    [NativeTypeName("__AnonymousRecord_CommCtrl_L5001_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.itemex"]/*' />

@@ -3,28 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYMBOL_INFO">
-    <summary>
-      <para>Contains symbol information.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psym_enumeratesymbols_callback">SymEnumSymbolsProc</seealso>
-    <seealso cref="SymFromAddr" />
-    <seealso cref="SymFromName" />
-    <seealso cref="SymGetTypeFromName" />
+    <summary>Contains symbol information.</summary>
   </member>
   <member name="SYMBOL_INFO.SizeOfStruct">
-    <summary>
-      <para>The size of the structure, in bytes. This member must be set to <code>sizeof(SYMBOL_INFO)</code>. Note that the total size of the data is the <code>SizeOfStruct + (MaxNameLen - 1) * sizeof(TCHAR)</code>. The reason to subtract one is that the first character in the name is accounted for in the size of the structure.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. This member must be set to <code>sizeof(SYMBOL_INFO)</code>. Note that the total size of the data is the <code>SizeOfStruct + (MaxNameLen - 1) * sizeof(TCHAR)</code>. The reason to subtract one is that the first character in the name is accounted for in the size of the structure.</summary>
   </member>
   <member name="SYMBOL_INFO.TypeIndex">
-    <summary>
-      <para>A unique value that identifies the type data that describes the symbol.  This value does not persist between sessions.</para>
-    </summary>
+    <summary>A unique value that identifies the type data that describes the symbol. This value does not persist between sessions.</summary>
   </member>
   <member name="SYMBOL_INFO.Reserved">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
   <member name="SYMBOL_INFO.Index">
     <summary>
@@ -34,13 +22,12 @@
   </member>
   <member name="SYMBOL_INFO.Size">
     <summary>
-      <para>The symbol size, in bytes. This value is meaningful only if the module symbols are from a pdb file;  otherwise, this value is typically zero and should be ignored.</para>
+      <para>The symbol size, in bytes (or bits, if the symbol is a bitfield member).</para>
+      <para>This value is meaningful only if the module symbols are from a pdb file; otherwise, this value is typically zero and should be ignored.</para>
     </summary>
   </member>
   <member name="SYMBOL_INFO.ModBase">
-    <summary>
-      <para>The base address of the module that contains the symbol.</para>
-    </summary>
+    <summary>The base address of the module that contains the symbol.</summary>
   </member>
   <member name="SYMBOL_INFO.Flags">
     <summary>
@@ -50,313 +37,272 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_CLR_TOKEN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a CLR token.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a CLR token.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_CONSTANT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a constant.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a constant.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_EXPORT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is from the export table.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is from the export table.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_FORWARDER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a forwarder.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a forwarder.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_FRAMEREL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Offsets are frame relative.</para>
-          </description>
-        </item>
-        <item>
+          <description>Offsets are frame relative.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_FUNCTION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a known function.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a known function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_ILREL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol address is an offset relative to the beginning of the intermediate language block. This applies to managed code only.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol address is an offset relative to the beginning of the intermediate language block. This applies to managed code only.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_LOCAL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a local variable.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a local variable.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_METADATA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00020000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is managed metadata.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is managed metadata.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_PARAMETER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a parameter.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a parameter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_REGISTER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a register. The <b>Register</b> member is used.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a register. The <b>Register</b> member is used.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_REGREL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Offsets are register relative.</para>
-          </description>
-        </item>
-        <item>
+          <description>Offsets are register relative.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_SLOT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00008000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a managed code slot.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a managed code slot. 							</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_THUNK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a thunk.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a thunk. 							</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_TLSREL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00004000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is an offset into the TLS data area.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is an offset into the TLS data area. 							</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_VALUEPRESENT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The <b>Value</b> member is used.</para>
-          </description>
-        </item>
-        <item>
+          <description>The <b>Value</b> member is used.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_VIRTUAL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a virtual symbol created by the
-<see cref="SymAddSymbol" /> function.</para>
-          </description>
-        </item>
+          <description>The symbol is a virtual symbol created by the <see cref="SymAddSymbol" /> function. 							</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SYMBOL_INFO.Value">
-    <summary>
-      <para>The value of a constant.</para>
-    </summary>
+    <summary>The value of a constant.</summary>
   </member>
   <member name="SYMBOL_INFO.Address">
-    <summary>
-      <para>The virtual address of the start of the symbol.</para>
-    </summary>
+    <summary>The virtual address of the start of the symbol.</summary>
   </member>
   <member name="SYMBOL_INFO.Register">
-    <summary>
-      <para>The register.</para>
-    </summary>
+    <summary>The register.</summary>
   </member>
   <member name="SYMBOL_INFO.Scope">
     <summary>
@@ -365,55 +311,28 @@
     </summary>
   </member>
   <member name="SYMBOL_INFO.Tag">
-    <summary>
-      <para>The PDB classification. These values are defined in Dbghelp.h in the <a href="https://docs.microsoft.com//previous-versions/visualstudio/visual-studio-2010/bkedss5f(v=vs.100)">SymTagEnum</a> enumeration type.</para>
-    </summary>
+    <summary>The PDB classification. These values are defined in Dbghelp.h in the <a href="https://docs.microsoft.com//previous-versions/visualstudio/visual-studio-2010/bkedss5f(v=vs.100)">SymTagEnum</a> enumeration type.</summary>
   </member>
   <member name="SYMBOL_INFO.NameLen">
-    <summary>
-      <para>The length of the name, in characters, not including the null-terminating character.</para>
-    </summary>
+    <summary>The length of the name, in characters, not including the null-terminating character.</summary>
   </member>
   <member name="SYMBOL_INFO.MaxNameLen">
-    <summary>
-      <para>The size of the <b>Name</b> buffer, in characters. If this member is 0, the <b>Name</b> member is not used.</para>
-    </summary>
+    <summary>The size of the <b>Name</b> buffer, in characters. If this member is 0, the <b>Name</b> member is not used.</summary>
   </member>
   <member name="SYMBOL_INFO.Name">
-    <summary>
-      <para>The name of the symbol. The name can be undecorated if the SYMOPT_UNDNAME option is used with the
-<see cref="SymSetOptions" /> function.</para>
-    </summary>
+    <summary>The name of the symbol. The name can be undecorated if the SYMOPT_UNDNAME option is used with the<see cref="SymSetOptions" /> function.</summary>
   </member>
   <member name="SYMBOL_INFO">
-    <summary>
-      <para>Contains symbol information.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The dbghelp.h header defines SYMBOL_INFO as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psym_enumeratesymbols_callback">SymEnumSymbolsProc</seealso>
-    <seealso cref="SymFromAddr" />
-    <seealso cref="SymFromName" />
-    <seealso cref="SymGetTypeFromName" />
+    <summary>Contains symbol information.</summary>
   </member>
   <member name="SYMBOL_INFO.SizeOfStruct">
-    <summary>
-      <para>The size of the structure, in bytes. This member must be set to <code>sizeof(SYMBOL_INFO)</code>. Note that the total size of the data is the <code>SizeOfStruct + (MaxNameLen - 1) * sizeof(TCHAR)</code>. The reason to subtract one is that the first character in the name is accounted for in the size of the structure.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. This member must be set to <code>sizeof(SYMBOL_INFO)</code>. Note that the total size of the data is the <code>SizeOfStruct + (MaxNameLen - 1) * sizeof(TCHAR)</code>. The reason to subtract one is that the first character in the name is accounted for in the size of the structure.</summary>
   </member>
   <member name="SYMBOL_INFO.TypeIndex">
-    <summary>
-      <para>A unique value that identifies the type data that describes the symbol.  This value does not persist between sessions.</para>
-    </summary>
+    <summary>A unique value that identifies the type data that describes the symbol. This value does not persist between sessions.</summary>
   </member>
   <member name="SYMBOL_INFO.Reserved">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
   <member name="SYMBOL_INFO.Index">
     <summary>
@@ -422,14 +341,10 @@ The dbghelp.h header defines SYMBOL_INFO as an alias which automatically selects
     </summary>
   </member>
   <member name="SYMBOL_INFO.Size">
-    <summary>
-      <para>The symbol size, in bytes. This value is meaningful only if the module symbols are from a pdb file;  otherwise, this value is typically zero and should be ignored.</para>
-    </summary>
+    <summary>The symbol size, in bytes. This value is meaningful only if the module symbols are from a pdb file; otherwise, this value is typically zero and should be ignored.</summary>
   </member>
   <member name="SYMBOL_INFO.ModBase">
-    <summary>
-      <para>The base address of the module that contains the symbol.</para>
-    </summary>
+    <summary>The base address of the module that contains the symbol.</summary>
   </member>
   <member name="SYMBOL_INFO.Flags">
     <summary>
@@ -439,313 +354,272 @@ The dbghelp.h header defines SYMBOL_INFO as an alias which automatically selects
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_CLR_TOKEN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a CLR token.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a CLR token.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_CONSTANT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a constant.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a constant.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_EXPORT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is from the export table.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is from the export table.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_FORWARDER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a forwarder.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a forwarder.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_FRAMEREL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Offsets are frame relative.</para>
-          </description>
-        </item>
-        <item>
+          <description>Offsets are frame relative.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_FUNCTION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a known function.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a known function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_ILREL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol address is an offset relative to the beginning of the intermediate language block. This applies to managed code only.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol address is an offset relative to the beginning of the intermediate language block. This applies to managed code only.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_LOCAL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a local variable.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a local variable.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_METADATA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00020000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00020000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is managed metadata.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is managed metadata.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_PARAMETER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a parameter.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a parameter.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_REGISTER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a register. The <b>Register</b> member is used.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a register. The <b>Register</b> member is used.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_REGREL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Offsets are register relative.</para>
-          </description>
-        </item>
-        <item>
+          <description>Offsets are register relative.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_SLOT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00008000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a managed code slot.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a managed code slot. 							</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_THUNK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a thunk.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is a thunk. 							</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_TLSREL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00004000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is an offset into the TLS data area.</para>
-          </description>
-        </item>
-        <item>
+          <description>The symbol is an offset into the TLS data area. 							</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_VALUEPRESENT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The <b>Value</b> member is used.</para>
-          </description>
-        </item>
-        <item>
+          <description>The <b>Value</b> member is used.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SYMFLAG_VIRTUAL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The symbol is a virtual symbol created by the
-<see cref="SymAddSymbol" /> function.</para>
-          </description>
-        </item>
+          <description>The symbol is a virtual symbol created by the <see cref="SymAddSymbol" /> function. 							</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SYMBOL_INFO.Value">
-    <summary>
-      <para>The value of a constant.</para>
-    </summary>
+    <summary>The value of a constant.</summary>
   </member>
   <member name="SYMBOL_INFO.Address">
-    <summary>
-      <para>The virtual address of the start of the symbol.</para>
-    </summary>
+    <summary>The virtual address of the start of the symbol.</summary>
   </member>
   <member name="SYMBOL_INFO.Register">
-    <summary>
-      <para>The register.</para>
-    </summary>
+    <summary>The register.</summary>
   </member>
   <member name="SYMBOL_INFO.Scope">
     <summary>
@@ -754,24 +628,15 @@ The dbghelp.h header defines SYMBOL_INFO as an alias which automatically selects
     </summary>
   </member>
   <member name="SYMBOL_INFO.Tag">
-    <summary>
-      <para>The PDB classification. These values are defined in Dbghelp.h in the <a href="https://docs.microsoft.com//previous-versions/visualstudio/visual-studio-2010/bkedss5f(v=vs.100)">SymTagEnum</a> enumeration type.</para>
-    </summary>
+    <summary>The PDB classification. These values are defined in Dbghelp.h in the <a href="https://docs.microsoft.com//previous-versions/visualstudio/visual-studio-2010/bkedss5f(v=vs.100)">SymTagEnum</a> enumeration type.</summary>
   </member>
   <member name="SYMBOL_INFO.NameLen">
-    <summary>
-      <para>The length of the name, in characters, not including the null-terminating character.</para>
-    </summary>
+    <summary>The length of the name, in characters, not including the null-terminating character.</summary>
   </member>
   <member name="SYMBOL_INFO.MaxNameLen">
-    <summary>
-      <para>The size of the <b>Name</b> buffer, in characters. If this member is 0, the <b>Name</b> member is not used.</para>
-    </summary>
+    <summary>The size of the <b>Name</b> buffer, in characters. If this member is 0, the <b>Name</b> member is not used.</summary>
   </member>
   <member name="SYMBOL_INFO.Name">
-    <summary>
-      <para>The name of the symbol. The name can be undecorated if the SYMOPT_UNDNAME option is used with the
-<see cref="SymSetOptions" /> function.</para>
-    </summary>
+    <summary>The name of the symbol. The name can be undecorated if the SYMOPT_UNDNAME option is used with the<see cref="SymSetOptions" /> function.</summary>
   </member>
 </doc>

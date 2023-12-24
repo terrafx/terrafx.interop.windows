@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA">
+    <summary>Defines picture control subregions as slices for multiple codecs.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA.DataSize">
+    <summary>The data size of the provided picture control subregions layout structure.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA.pSlicesPartition_H264">
+    <summary>A Defines subregions as slices for H.264 encoding.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_SUBREGIONS_LAYOUT_DATA.pSlicesPartition_HEVC">
+    <summary>A Defines subregions as slices for HEVC encoding.</summary>
+  </member>
+</doc>

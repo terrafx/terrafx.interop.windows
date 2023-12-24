@@ -3,59 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS">
-    <summary>
-      <para>Describes the capabilities of a Microsoft Direct3D 11 video processor.</para>
-    </summary>
-    <remarks>
-      <para>The video processor stores state information for each input stream. These states persist between blits. With each blit, the application selects which streams to enable or disable. Disabling a stream does not affect the state information for that stream.</para>
-      <para>The <b>MaxStreamStates</b> member gives the maximum number of stream states that can be saved. The <b>MaxInputStreams</b> member gives the maximum number of streams that can be enabled during a blit. These two values can differ.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
-    <seealso cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" />
+    <summary>Describes the capabilities of a Microsoft Direct3D 11 video processor.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS.DeviceCaps">
-    <summary>
-      <para>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_DEVICE_CAPS" />  enumeration.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_DEVICE_CAPS" /> enumeration.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS.FeatureCaps">
-    <summary>
-      <para>A bitwise <b>OR</b> of zero or more flags from the   <see cref="D3D11_VIDEO_PROCESSOR_FEATURE_CAPS" /> enumeration.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_FEATURE_CAPS" /> enumeration.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS.FilterCaps">
-    <summary>
-      <para>A bitwise <b>OR</b> of zero or more flags from the  <see cref="D3D11_VIDEO_PROCESSPR_FILTER_CAPS" /> enumeration.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSPR_FILTER_CAPS" /> enumeration.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS.InputFormatCaps">
-    <summary>
-      <para>A bitwise <b>OR</b> of zero or more flags from the  <see cref="D3D11_VIDEO_PROCESSOR_FORMAT_CAPS" /> enumeration.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_FORMAT_CAPS" /> enumeration.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS.AutoStreamCaps">
-    <summary>
-      <para>A bitwise <b>OR</b> of zero or more flags from the  <see cref="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS" /> enumeration.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS" /> enumeration.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS.StereoCaps">
-    <summary>
-      <para>A bitwise <b>OR</b> of zero or more flags from the   <see cref="D3D11_VIDEO_PROCESSOR_STEREO_CAPS" /> enumeration.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of zero or more flags from the <see cref="D3D11_VIDEO_PROCESSOR_STEREO_CAPS" /> enumeration.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS.RateConversionCapsCount">
-    <summary>
-      <para>The number of frame-rate conversion capabilities. To enumerate the frame-rate conversion capabilities, call the <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorRateConversionCaps" /> method.</para>
-    </summary>
+    <summary>The number of frame-rate conversion capabilities. To enumerate the frame-rate conversion capabilities, call the <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorRateConversionCaps" /> method.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS.MaxInputStreams">
-    <summary>
-      <para>The maximum number of input streams that can be enabled at the same time.</para>
-    </summary>
+    <summary>The maximum number of input streams that can be enabled at the same time.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_CAPS.MaxStreamStates">
-    <summary>
-      <para>The maximum number of input streams for which the device can store state data.</para>
-    </summary>
+    <summary>The maximum number of input streams for which the device can store state data.</summary>
   </member>
 </doc>

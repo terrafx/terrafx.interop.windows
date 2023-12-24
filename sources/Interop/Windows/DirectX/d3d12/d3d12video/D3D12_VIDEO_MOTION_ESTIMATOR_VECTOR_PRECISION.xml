@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION">
+    <summary>Defines vector precision values for video motion estimation.</summary>
+  </member>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION.D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_QUARTER_PEL">
+    <summary>The vector precision is quarter-pixel motion.</summary>
+  </member>
+</doc>

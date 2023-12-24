@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPVQScaleTypeTests
     {
         Assert.That(typeof(CODECAPI_AVEncMPVQScaleType).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVQScaleType));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQScaleType" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVQScaleType>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVQScaleType)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQScaleType" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPVQScaleType).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVQScaleType" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPVQScaleType), Is.EqualTo(1));
-    }
 }

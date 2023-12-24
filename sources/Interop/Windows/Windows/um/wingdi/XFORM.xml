@@ -3,56 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XFORM">
-    <summary>
-      <para>The <b>XFORM</b> structure specifies a world-space to page-space transformation.</para>
-    </summary>
-    <remarks>
-      <para>The following list describes how the members are used for each operation.</para>
-      <list type="table">
-        <listheader>
-          <description>Operation</description>
-          <description>eM11</description>
-          <description>eM12</description>
-          <description>eM21</description>
-          <description>eM22</description>
-        </listheader>
-        <item>
-          <description>Rotation</description>
-          <description>Cosine</description>
-          <description>Sine</description>
-          <description>Negative sine</description>
-          <description>Cosine</description>
-        </item>
-        <item>
-          <description>Scaling</description>
-          <description>Horizontal scaling component</description>
-          <description>Not used</description>
-          <description>Not used</description>
-          <description>Vertical Scaling Component</description>
-        </item>
-        <item>
-          <description>Shear</description>
-          <description>Not used</description>
-          <description>Horizontal Proportionality Constant</description>
-          <description>Vertical Proportionality Constant</description>
-          <description>Not used</description>
-        </item>
-        <item>
-          <description>Reflection</description>
-          <description>Horizontal Reflection Component</description>
-          <description>Not used</description>
-          <description>Not used</description>
-          <description>Vertical Reflection Component</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/coordinate-space-and-transformation-structures">Coordinate Space and Transformation Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/coordinate-spaces-and-transformations">Coordinate Spaces and Transformations Overview</seealso>
-    <seealso cref="ExtCreateRegion" />
-    <seealso cref="GetWorldTransform" />
-    <seealso cref="ModifyWorldTransform" />
-    <seealso cref="PlayEnhMetaFile" />
-    <seealso cref="SetWorldTransform" />
+    <summary>The <b>XFORM</b> structure specifies a world-space to page-space transformation.</summary>
   </member>
   <member name="XFORM.eM11">
     <summary>
@@ -62,18 +13,18 @@
           <description>Operation</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Scaling</description>
           <description>Horizontal scaling component</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>Rotation</description>
           <description>Cosine of rotation angle</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>Reflection</description>
           <description>Horizontal component</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -85,14 +36,14 @@
           <description>Operation</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Shear</description>
           <description>Horizontal proportionality constant</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>Rotation</description>
           <description>Sine of the rotation angle</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -104,14 +55,14 @@
           <description>Operation</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Shear</description>
           <description>Vertical proportionality constant</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>Rotation</description>
           <description>Negative sine of the rotation angle</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -123,29 +74,25 @@
           <description>Operation</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Scaling</description>
           <description>Vertical scaling component</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>Rotation</description>
           <description>Cosine of rotation angle</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>Reflection</description>
           <description>Vertical reflection component</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="XFORM.eDx">
-    <summary>
-      <para>The horizontal translation component, in logical units.</para>
-    </summary>
+    <summary>The horizontal translation component, in logical units.</summary>
   </member>
   <member name="XFORM.eDy">
-    <summary>
-      <para>The vertical translation component, in logical units.</para>
-    </summary>
+    <summary>The vertical translation component, in logical units.</summary>
   </member>
 </doc>

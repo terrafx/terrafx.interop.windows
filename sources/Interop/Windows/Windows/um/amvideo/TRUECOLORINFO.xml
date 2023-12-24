@@ -4,22 +4,14 @@
 <doc>
   <member name="TRUECOLORINFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>TRUECOLORINFO</b> structure contains color palette and bitmask information for a video image.</para>
     </summary>
-    <remarks>
-      <para>This structure is not used for some RGB formats. For more information about which fields are valid under different circumstances, see the Platform SDK documentation for <b>BITMAPINFO</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfo">VIDEOINFO</seealso>
   </member>
   <member name="TRUECOLORINFO.dwBitMasks">
-    <summary>
-      <para>Array of color masks (one per color element).</para>
-    </summary>
+    <summary>Array of color masks (one per color element).</summary>
   </member>
   <member name="TRUECOLORINFO.bmiColors">
-    <summary>
-      <para>Array of palette colors.</para>
-    </summary>
+    <summary>Array of palette colors.</summary>
   </member>
 </doc>

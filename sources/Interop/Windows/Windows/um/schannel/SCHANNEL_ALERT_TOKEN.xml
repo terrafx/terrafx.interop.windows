@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SCHANNEL_ALERT_TOKEN">
-    <summary>
-      <para>Generates a <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/secure-sockets-layer-protocol">Secure Sockets Layer Protocol</a> (SSL) or Transport Layer Security Protocol (TLS) alert to be sent to the target of a call to either the <see cref="InitializeSecurityContext (Schannel)" /> function or the <see cref="AcceptSecurityContext (Schannel)" />  function.</para>
-    </summary>
-    <remarks>
-      <para>Add an alert message to a client context by using this structure as the value of the <i>pInput</i> parameter in a call to the <see cref="ApplyControlToken" /> function.</para>
-    </remarks>
+    <summary>Generates a <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/secure-sockets-layer-protocol">Secure Sockets Layer Protocol</a> (SSL) or Transport Layer Security Protocol (TLS) alert to be sent to the target of a call to either the <see cref="InitializeSecurityContext (Schannel)" /> function or the <see cref="AcceptSecurityContext (Schannel)" /> function.</summary>
   </member>
   <member name="SCHANNEL_ALERT_TOKEN.dwTokenType">
-    <summary>
-      <para>Specifies the type of this structure. Set the value of this member to <b>SCHANNEL_ALERT</b>.</para>
-    </summary>
+    <summary>Specifies the type of this structure. Set the value of this member to <b>SCHANNEL_ALERT</b>.</summary>
   </member>
   <member name="SCHANNEL_ALERT_TOKEN.dwAlertType">
     <summary>
@@ -23,46 +16,42 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TLS1_ALERT_WARNING</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The message is a warning.</para>
-          </description>
-        </item>
-        <item>
+          <description>The message is a warning.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TLS1_ALERT_FATAL</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The message is a fatal error. The connection is closed immediately.</para>
-          </description>
-        </item>
+          <description>The message is a fatal error. The connection is closed immediately.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SCHANNEL_ALERT_TOKEN.dwAlertNumber">
     <summary>
-      <para>One of the alert messages defined by the TLS protocol specification. For descriptions of the defined messages, see  <a href="http://tools.ietf.org/html/rfc5246#section-7.2">RFC 5246</a>,  <a href="http://tools.ietf.org/html/rfc4346#section-7.2">RFC 4346</a>, or  <a href="http://tools.ietf.org/html/rfc2246#section-7.2">RFC 2246</a>. This member must be one of the following values.</para>
+      <para>One of the alert messages defined by the TLS protocol specification. For descriptions of the defined messages, see <a href="http://tools.ietf.org/html/rfc5246#section-7.2">RFC 5246</a>, <a href="http://tools.ietf.org/html/rfc4346#section-7.2">RFC 4346</a>, or <a href="http://tools.ietf.org/html/rfc2246#section-7.2">RFC 2246</a>. This member must be one of the following values.</para>
       <h4>TLS1_ALERT_CLOSE_NOTIFY (0)</h4>
       <h4>TLS1_ALERT_UNEXPECTED_MESSAGE (10)</h4>
       <h4>TLS1_ALERT_BAD_RECORD_MAC (20)</h4>

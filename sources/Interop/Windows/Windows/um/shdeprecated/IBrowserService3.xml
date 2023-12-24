@@ -3,58 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IBrowserService3.IEParseDisplayNameEx">
-    <summary>
-      <para>Deprecated. Parses a URL into a pointer to an item identifier list (PIDL).</para>
-    </summary>
-    <param name="uiCP">
-      <para>Type: <b>UINT</b></para>
-      <para>The code page (for example, CP_ACP, the system default code page).</para>
-    </param>
-    <param name="pwszPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the URL to parse, as a Unicode string.</para>
-    </param>
+    <summary>Deprecated. Parses a URL into a pointer to an item identifier list (PIDL).</summary>
+    <param name="uiCP">The code page (for example, CP_ACP, the system default code page).</param>
+    <param name="pwszPath">A pointer to a buffer containing the URL to parse, as a Unicode string.</param>
     <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>The following value, if desired.</para>
       <h4>IEPDN_BINDINGUI (0x00000001)</h4>
       <para>Display a UI element during binding.</para>
     </param>
-    <param name="ppidlOut">
-      <para>Type: <b>LPITEMIDLIST*</b></para>
-      <para>The PIDL created from the parsed URL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method replaces <see cref="IEParseDisplayName" />.</para>
-    </remarks>
+    <param name="ppidlOut">The PIDL created from the parsed URL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService3._PositionViewWindow">
-    <summary>
-      <para>Deprecated. Used in view size negotiations. This method is called by <see cref="_UpdateViewRectSize" /> after determining the available dimensions.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the view window.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b>LPRECT</b></para>
-      <para>A pointer to a <see cref="RECT" /> structure that contains the available dimensions.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Used in view size negotiations. This method is called by <see cref="_UpdateViewRectSize" /> after determining the available dimensions.</summary>
+    <param name="hwnd">The handle of the view window.</param>
+    <param name="prc">A pointer to a <see cref="RECT" /> structure that contains the available dimensions.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService3">
-    <summary>
-      <para>Deprecated. The methods exposed by this interface are analogous to virtual protected methods in normal C++ inheritance. The inheritance hierarchy of the objects spans multiple  DLLs. The hierarchy is made up of a base class and several derived classes that correspond to controls, including CLSID_WebBrowser and the user's desktop. Objects not in the hierarchy should not implement this interface, nor use most of its methods.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IBrowserService" /> and <see cref="IBrowserService2" /> interfaces, from which it inherits.</para>
-    </remarks>
+    <summary>Deprecated. The methods exposed by this interface are analogous to virtual protected methods in normal C++ inheritance. The inheritance hierarchy of the objects spans multiple DLLs. The hierarchy is made up of a base class and several derived classes that correspond to controls, including CLSID_WebBrowser and the user's desktop. Objects not in the hierarchy should not implement this interface, nor use most of its methods.</summary>
   </member>
 </doc>

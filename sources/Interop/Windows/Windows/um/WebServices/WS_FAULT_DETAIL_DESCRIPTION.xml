@@ -3,17 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_FAULT_DETAIL_DESCRIPTION">
-    <summary>
-      <para>A description of the detail element of a fault message.</para>
-    </summary>
-    <remarks>
-      <para>The fault description defines the action of the fault message
-along with a description of the detail element that is
-contained within the fault.</para>
-      <para>The fault description can be used to set and get the
-fault detail element stored within a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-error">WS_ERROR</a> object
-using <see cref="WsSetFaultErrorDetail" /> and <see cref="WsGetFaultErrorDetail" />.</para>
-    </remarks>
+    <summary>A description of the detail element of a fault message.</summary>
   </member>
   <member name="WS_FAULT_DETAIL_DESCRIPTION.action">
     <summary>
@@ -22,9 +12,6 @@ using <see cref="WsSetFaultErrorDetail" /> and <see cref="WsGetFaultErrorDetail"
     </summary>
   </member>
   <member name="WS_FAULT_DETAIL_DESCRIPTION.detailElementDescription">
-    <summary>
-      <para>The description of the fault detail of the fault.  This
-field must be specified (it may not be <b>NULL</b>).</para>
-    </summary>
+    <summary>The description of the fault detail of the fault. This field must be specified (it may not be <b>NULL</b>).</summary>
   </member>
 </doc>

@@ -182,14 +182,14 @@ public static unsafe partial class Windows
         => fn((hwnd), WM_COMPACTING, (WPARAM)(uint)(compactRatio), 0);
 
     /* void Cls_OnWinIniChange(HWND hwnd, LPCTSTR lpszSectionName) */
-    public static LRESULT HANDLE_WM_WININICHANGE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, ushort*, void> fn)
+    public static LRESULT HANDLE_WM_WININICHANGE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, char*, void> fn)
     {
-        fn((hwnd), (ushort*)(lParam));
+        fn((hwnd), (char*)(lParam));
         return 0;
     }
 
-    public static void FORWARD_WM_WININICHANGE(HWND hwnd, ushort* lpszSectionName, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => fn((hwnd), WM_WININICHANGE, 0u, (LPARAM)(ushort*)(lpszSectionName));
+    public static void FORWARD_WM_WININICHANGE(HWND hwnd, char* lpszSectionName, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
+        => fn((hwnd), WM_WININICHANGE, 0u, (LPARAM)(char*)(lpszSectionName));
 
     /* void Cls_OnSysColorChange(HWND hwnd) */
     public static LRESULT HANDLE_WM_SYSCOLORCHANGE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, void> fn)
@@ -249,14 +249,14 @@ public static unsafe partial class Windows
         => fn((hwnd), WM_SPOOLERSTATUS, (WPARAM)(status), MAKELPARAM((cJobInQueue), 0));
 
     /* void Cls_OnDevModeChange(HWND hwnd, LPCTSTR lpszDeviceName) */
-    public static LRESULT HANDLE_WM_DEVMODECHANGE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, ushort*, void> fn)
+    public static LRESULT HANDLE_WM_DEVMODECHANGE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, char*, void> fn)
     {
-        fn((hwnd), (ushort*)(lParam));
+        fn((hwnd), (char*)(lParam));
         return 0;
     }
 
-    public static void FORWARD_WM_DEVMODECHANGE(HWND hwnd, ushort* lpszDeviceName, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => fn((hwnd), WM_DEVMODECHANGE, 0u, (LPARAM)(ushort*)(lpszDeviceName));
+    public static void FORWARD_WM_DEVMODECHANGE(HWND hwnd, char* lpszDeviceName, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
+        => fn((hwnd), WM_DEVMODECHANGE, 0u, (LPARAM)(char*)(lpszDeviceName));
 
     /* void Cls_OnTimeChange(HWND hwnd) */
     public static LRESULT HANDLE_WM_TIMECHANGE(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, void> fn)
@@ -376,21 +376,21 @@ public static unsafe partial class Windows
         => fn((hwnd), WM_ENABLE, (WPARAM)(BOOL)(fEnable), 0);
 
     /* void Cls_OnSetText(HWND hwnd, LPCTSTR lpszText) */
-    public static LRESULT HANDLE_WM_SETTEXT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, ushort*, void> fn)
+    public static LRESULT HANDLE_WM_SETTEXT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, char*, void> fn)
     {
-        fn((hwnd), (ushort*)(lParam));
+        fn((hwnd), (char*)(lParam));
         return 0;
     }
 
-    public static void FORWARD_WM_SETTEXT(HWND hwnd, ushort* lpszText, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => fn((hwnd), WM_SETTEXT, 0u, (LPARAM)(ushort*)(lpszText));
+    public static void FORWARD_WM_SETTEXT(HWND hwnd, char* lpszText, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
+        => fn((hwnd), WM_SETTEXT, 0u, (LPARAM)(char*)(lpszText));
 
     /* INT Cls_OnGetText(HWND hwnd, int cchTextMax, LPTSTR lpszText) */
-    public static LRESULT HANDLE_WM_GETTEXT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, ushort*, int> fn)
-        => (LRESULT)(uint)(int)fn((hwnd), (int)(wParam), (ushort*)(lParam));
+    public static LRESULT HANDLE_WM_GETTEXT(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, char*, int> fn)
+        => (LRESULT)(uint)(int)fn((hwnd), (int)(wParam), (char*)(lParam));
 
-    public static int FORWARD_WM_GETTEXT(HWND hwnd, int cchTextMax, ushort* lpszText, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
-        => (int)(uint)fn((hwnd), WM_GETTEXT, (WPARAM)(int)(cchTextMax), (LPARAM)(ushort*)(lpszText));
+    public static int FORWARD_WM_GETTEXT(HWND hwnd, int cchTextMax, char* lpszText, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
+        => (int)(uint)fn((hwnd), WM_GETTEXT, (WPARAM)(int)(cchTextMax), (LPARAM)(char*)(lpszText));
 
     /* INT Cls_OnGetTextLength(HWND hwnd) */
     public static LRESULT HANDLE_WM_GETTEXTLENGTH(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int> fn)
@@ -1071,13 +1071,13 @@ public static unsafe partial class Windows
         => fn((hwnd), WM_HSCROLLCLIPBOARD, (WPARAM)(HWND)(hwndCBViewer), MAKELPARAM((code), (nuint)(pos)));
 
     /* void Cls_OnAskCBFormatName(HWND hwnd, int cchMax, LPTSTR rgchName) */
-    public static LRESULT HANDLE_WM_ASKCBFORMATNAME(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, ushort*, void> fn)
+    public static LRESULT HANDLE_WM_ASKCBFORMATNAME(HWND hwnd, WPARAM wParam, LPARAM lParam, delegate*<HWND, int, char*, void> fn)
     {
-        fn((hwnd), (int)(wParam), (ushort*)(lParam));
+        fn((hwnd), (int)(wParam), (char*)(lParam));
         return 0;
     }
 
-    public static void FORWARD_WM_ASKCBFORMATNAME(HWND hwnd, int cchMax, ushort* rgchName, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
+    public static void FORWARD_WM_ASKCBFORMATNAME(HWND hwnd, int cchMax, char* rgchName, delegate*<HWND, uint, WPARAM, LPARAM, LRESULT> fn)
         => fn((hwnd), WM_ASKCBFORMATNAME, (WPARAM)(int)(cchMax), (LPARAM)(rgchName));
 
     /* void Cls_OnChangeCBChain(HWND hwnd, HWND hwndRemove, HWND hwndNext) */
@@ -1432,11 +1432,11 @@ public static unsafe partial class Windows
 
     public static BOOL Static_Enable(HWND hwndCtl, BOOL fEnable) => EnableWindow((hwndCtl), (fEnable));
 
-    public static int Static_GetText(HWND hwndCtl, ushort* lpch, int cchMax) => GetWindowText((hwndCtl), (lpch), (cchMax));
+    public static int Static_GetText(HWND hwndCtl, char* lpch, int cchMax) => GetWindowText((hwndCtl), (lpch), (cchMax));
 
     public static int Static_GetTextLength(HWND hwndCtl) => GetWindowTextLength(hwndCtl);
 
-    public static BOOL Static_SetText(HWND hwndCtl, ushort* lpsz) => SetWindowText((hwndCtl), (lpsz));
+    public static BOOL Static_SetText(HWND hwndCtl, char* lpsz) => SetWindowText((hwndCtl), (lpsz));
 
     public static HICON Static_SetIcon(HWND hwndCtl, HICON hIcon) => ((HICON)(nuint)SNDMSG((hwndCtl), STM_SETICON, (WPARAM)(HICON)(hIcon), 0));
 
@@ -1446,11 +1446,11 @@ public static unsafe partial class Windows
 
     public static BOOL Button_Enable(HWND hwndCtl, BOOL fEnable) => EnableWindow((hwndCtl), (fEnable));
 
-    public static int Button_GetText(HWND hwndCtl, ushort* lpch, int cchMax) => GetWindowText((hwndCtl), (lpch), (cchMax));
+    public static int Button_GetText(HWND hwndCtl, char* lpch, int cchMax) => GetWindowText((hwndCtl), (lpch), (cchMax));
 
     public static int Button_GetTextLength(HWND hwndCtl) => GetWindowTextLength(hwndCtl);
 
-    public static BOOL Button_SetText(HWND hwndCtl, ushort* lpsz) => SetWindowText((hwndCtl), (lpsz));
+    public static BOOL Button_SetText(HWND hwndCtl, char* lpsz) => SetWindowText((hwndCtl), (lpsz));
 
     public static int Button_GetCheck(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), BM_GETCHECK, 0u, 0));
 
@@ -1466,20 +1466,20 @@ public static unsafe partial class Windows
 
     public static BOOL Edit_Enable(HWND hwndCtl, BOOL fEnable) => EnableWindow((hwndCtl), (fEnable));
 
-    public static int Edit_GetText(HWND hwndCtl, ushort* lpch, int cchMax) => GetWindowText((hwndCtl), (lpch), (cchMax));
+    public static int Edit_GetText(HWND hwndCtl, char* lpch, int cchMax) => GetWindowText((hwndCtl), (lpch), (cchMax));
 
     public static int Edit_GetTextLength(HWND hwndCtl) => GetWindowTextLength(hwndCtl);
 
-    public static BOOL Edit_SetText(HWND hwndCtl, ushort* lpsz) => SetWindowText((hwndCtl), (lpsz));
+    public static BOOL Edit_SetText(HWND hwndCtl, char* lpsz) => SetWindowText((hwndCtl), (lpsz));
 
     public static void Edit_LimitText(HWND hwndCtl, int cchMax) => SNDMSG((hwndCtl), EM_LIMITTEXT, (WPARAM)(cchMax), 0);
 
     public static int Edit_GetLineCount(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), EM_GETLINECOUNT, 0u, 0));
 
-    public static int Edit_GetLine(HWND hwndCtl, int line, ushort* lpch, int cchMax)
+    public static int Edit_GetLine(HWND hwndCtl, int line, char* lpch, int cchMax)
     {
         *((int*)(lpch)) = (cchMax);
-        return ((int)(uint)SNDMSG((hwndCtl), EM_GETLINE, (WPARAM)(int)(line), (LPARAM)(ushort*)(lpch)));
+        return ((int)(uint)SNDMSG((hwndCtl), EM_GETLINE, (WPARAM)(int)(line), (LPARAM)(char*)(lpch)));
     }
 
     public static void Edit_GetRect(HWND hwndCtl, RECT* lprc) => SNDMSG((hwndCtl), EM_GETRECT, 0u, (LPARAM)(RECT*)(lprc));
@@ -1492,7 +1492,7 @@ public static unsafe partial class Windows
 
     public static void Edit_SetSel(HWND hwndCtl, WPARAM ichStart, LPARAM ichEnd) => SNDMSG((hwndCtl), EM_SETSEL, (ichStart), (ichEnd));
 
-    public static void Edit_ReplaceSel(HWND hwndCtl, ushort* lpszReplace) => SNDMSG((hwndCtl), EM_REPLACESEL, 0u, (LPARAM)(ushort*)(lpszReplace));
+    public static void Edit_ReplaceSel(HWND hwndCtl, char* lpszReplace) => SNDMSG((hwndCtl), EM_REPLACESEL, 0u, (LPARAM)(char*)(lpszReplace));
 
     public static BOOL Edit_GetModify(HWND hwndCtl) => ((BOOL)(uint)SNDMSG((hwndCtl), EM_GETMODIFY, 0u, 0));
 
@@ -1530,9 +1530,9 @@ public static unsafe partial class Windows
 
     public static ushort Edit_GetPasswordChar(HWND hwndCtl) => ((ushort)(uint)SNDMSG((hwndCtl), EM_GETPASSWORDCHAR, 0u, 0));
 
-    public static void Edit_SetWordBreakProc(HWND hwndCtl, delegate* unmanaged<ushort*, int, int, int, int> lpfnWordBreak) => SNDMSG((hwndCtl), EM_SETWORDBREAKPROC, 0u, (LPARAM)(delegate* unmanaged<ushort*, int, int, int, int>)(lpfnWordBreak));
+    public static void Edit_SetWordBreakProc(HWND hwndCtl, delegate* unmanaged<char*, int, int, int, int> lpfnWordBreak) => SNDMSG((hwndCtl), EM_SETWORDBREAKPROC, 0u, (LPARAM)(delegate* unmanaged<char*, int, int, int, int>)(lpfnWordBreak));
 
-    public static delegate* unmanaged<ushort*, int, int, int, int> Edit_GetWordBreakProc(HWND hwndCtl) => ((delegate* unmanaged<ushort*, int, int, int, int>)SNDMSG((hwndCtl), EM_GETWORDBREAKPROC, 0u, 0));
+    public static delegate* unmanaged<char*, int, int, int, int> Edit_GetWordBreakProc(HWND hwndCtl) => ((delegate* unmanaged<char*, int, int, int, int>)SNDMSG((hwndCtl), EM_GETWORDBREAKPROC, 0u, 0));
 
     /****** ScrollBar control message APIs ***************************************/
 
@@ -1557,9 +1557,9 @@ public static unsafe partial class Windows
 
     public static BOOL ListBox_ResetContent(HWND hwndCtl) => ((BOOL)(uint)SNDMSG((hwndCtl), LB_RESETCONTENT, 0u, 0));
 
-    public static int ListBox_AddString(HWND hwndCtl, ushort* lpsz) => ((int)(uint)SNDMSG((hwndCtl), LB_ADDSTRING, 0u, (LPARAM)(ushort*)(lpsz)));
+    public static int ListBox_AddString(HWND hwndCtl, char* lpsz) => ((int)(uint)SNDMSG((hwndCtl), LB_ADDSTRING, 0u, (LPARAM)(char*)(lpsz)));
 
-    public static int ListBox_InsertString(HWND hwndCtl, int index, ushort* lpsz) => ((int)(uint)SNDMSG((hwndCtl), LB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(ushort*)(lpsz)));
+    public static int ListBox_InsertString(HWND hwndCtl, int index, char* lpsz) => ((int)(uint)SNDMSG((hwndCtl), LB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(char*)(lpsz)));
 
     public static int ListBox_AddItemData(HWND hwndCtl, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), LB_ADDSTRING, 0u, (LPARAM)(data)));
 
@@ -1569,13 +1569,13 @@ public static unsafe partial class Windows
 
     public static int ListBox_GetTextLen(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), LB_GETTEXTLEN, (WPARAM)(int)(index), 0));
 
-    public static int ListBox_GetText(HWND hwndCtl, int index, ushort* lpszBuffer) => ((int)(uint)SNDMSG((hwndCtl), LB_GETTEXT, (WPARAM)(int)(index), (LPARAM)(ushort*)(lpszBuffer)));
+    public static int ListBox_GetText(HWND hwndCtl, int index, char* lpszBuffer) => ((int)(uint)SNDMSG((hwndCtl), LB_GETTEXT, (WPARAM)(int)(index), (LPARAM)(char*)(lpszBuffer)));
 
     public static LRESULT ListBox_GetItemData(HWND hwndCtl, int index) => ((LRESULT)(nuint)SNDMSG((hwndCtl), LB_GETITEMDATA, (WPARAM)(int)(index), 0));
 
     public static int ListBox_SetItemData(HWND hwndCtl, int index, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), LB_SETITEMDATA, (WPARAM)(int)(index), (LPARAM)(data)));
 
-    public static int ListBox_FindString(HWND hwndCtl, int indexStart, ushort* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(ushort*)(lpszFind)));
+    public static int ListBox_FindString(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
 
     public static int ListBox_FindItemData(HWND hwndCtl, int indexStart, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
 
@@ -1587,7 +1587,7 @@ public static unsafe partial class Windows
 
     public static int ListBox_SetCurSel(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), LB_SETCURSEL, (WPARAM)(int)(index), 0));
 
-    public static int ListBox_SelectString(HWND hwndCtl, int indexStart, ushort* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), LB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(ushort*)(lpszFind)));
+    public static int ListBox_SelectString(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), LB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
 
     public static int ListBox_SelectItemData(HWND hwndCtl, int indexStart, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), LB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
 
@@ -1615,23 +1615,23 @@ public static unsafe partial class Windows
 
     public static int ListBox_GetCaretIndex(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), LB_GETCARETINDEX, 0u, 0));
 
-    public static int ListBox_FindStringExact(HWND hwndCtl, int indexStart, ushort* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRINGEXACT, (WPARAM)(int)(indexStart), (LPARAM)(ushort*)(lpszFind)));
+    public static int ListBox_FindStringExact(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), LB_FINDSTRINGEXACT, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
 
     public static int ListBox_SetItemHeight(HWND hwndCtl, int index, ushort cy) => ((int)(uint)SNDMSG((hwndCtl), LB_SETITEMHEIGHT, (WPARAM)(int)(index), MAKELPARAM((cy), 0)));
 
     public static int ListBox_GetItemHeight(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), LB_GETITEMHEIGHT, (WPARAM)(int)(index), 0));
 
-    public static int ListBox_Dir(HWND hwndCtl, uint attrs, ushort* lpszFileSpec) => ((int)(uint)SNDMSG((hwndCtl), LB_DIR, (WPARAM)(uint)(attrs), (LPARAM)(ushort*)(lpszFileSpec)));
+    public static int ListBox_Dir(HWND hwndCtl, uint attrs, char* lpszFileSpec) => ((int)(uint)SNDMSG((hwndCtl), LB_DIR, (WPARAM)(uint)(attrs), (LPARAM)(char*)(lpszFileSpec)));
 
     /****** ComboBox control message APIs ****************************************/
 
     public static BOOL ComboBox_Enable(HWND hwndCtl, BOOL fEnable) => EnableWindow((hwndCtl), (fEnable));
 
-    public static int ComboBox_GetText(HWND hwndCtl, ushort* lpch, int cchMax) => GetWindowText((hwndCtl), (lpch), (cchMax));
+    public static int ComboBox_GetText(HWND hwndCtl, char* lpch, int cchMax) => GetWindowText((hwndCtl), (lpch), (cchMax));
 
     public static int ComboBox_GetTextLength(HWND hwndCtl) => GetWindowTextLength(hwndCtl);
 
-    public static BOOL ComboBox_SetText(HWND hwndCtl, ushort* lpsz) => SetWindowText((hwndCtl), (lpsz));
+    public static BOOL ComboBox_SetText(HWND hwndCtl, char* lpsz) => SetWindowText((hwndCtl), (lpsz));
 
     public static int ComboBox_LimitText(HWND hwndCtl, int cchLimit) => ((int)(uint)SNDMSG((hwndCtl), CB_LIMITTEXT, (WPARAM)(int)(cchLimit), 0));
 
@@ -1643,9 +1643,9 @@ public static unsafe partial class Windows
 
     public static int ComboBox_ResetContent(HWND hwndCtl) => ((int)(uint)SNDMSG((hwndCtl), CB_RESETCONTENT, 0u, 0));
 
-    public static int ComboBox_AddString(HWND hwndCtl, ushort* lpsz) => ((int)(uint)SNDMSG((hwndCtl), CB_ADDSTRING, 0u, (LPARAM)(ushort*)(lpsz)));
+    public static int ComboBox_AddString(HWND hwndCtl, char* lpsz) => ((int)(uint)SNDMSG((hwndCtl), CB_ADDSTRING, 0u, (LPARAM)(char*)(lpsz)));
 
-    public static int ComboBox_InsertString(HWND hwndCtl, int index, ushort* lpsz) => ((int)(uint)SNDMSG((hwndCtl), CB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(ushort*)(lpsz)));
+    public static int ComboBox_InsertString(HWND hwndCtl, int index, char* lpsz) => ((int)(uint)SNDMSG((hwndCtl), CB_INSERTSTRING, (WPARAM)(int)(index), (LPARAM)(char*)(lpsz)));
 
     public static int ComboBox_AddItemData(HWND hwndCtl, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), CB_ADDSTRING, 0u, (LPARAM)(data)));
 
@@ -1655,13 +1655,13 @@ public static unsafe partial class Windows
 
     public static int ComboBox_GetLBTextLen(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), CB_GETLBTEXTLEN, (WPARAM)(int)(index), 0));
 
-    public static int ComboBox_GetLBText(HWND hwndCtl, int index, ushort* lpszBuffer) => ((int)(uint)SNDMSG((hwndCtl), CB_GETLBTEXT, (WPARAM)(int)(index), (LPARAM)(ushort*)(lpszBuffer)));
+    public static int ComboBox_GetLBText(HWND hwndCtl, int index, char* lpszBuffer) => ((int)(uint)SNDMSG((hwndCtl), CB_GETLBTEXT, (WPARAM)(int)(index), (LPARAM)(char*)(lpszBuffer)));
 
     public static LRESULT ComboBox_GetItemData(HWND hwndCtl, int index) => ((LRESULT)(nuint)SNDMSG((hwndCtl), CB_GETITEMDATA, (WPARAM)(int)(index), 0));
 
     public static int ComboBox_SetItemData(HWND hwndCtl, int index, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), CB_SETITEMDATA, (WPARAM)(int)(index), (LPARAM)(data)));
 
-    public static int ComboBox_FindString(HWND hwndCtl, int indexStart, ushort* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(ushort*)(lpszFind)));
+    public static int ComboBox_FindString(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
 
     public static int ComboBox_FindItemData(HWND hwndCtl, int indexStart, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
 
@@ -1669,15 +1669,15 @@ public static unsafe partial class Windows
 
     public static int ComboBox_SetCurSel(HWND hwndCtl, int index) => ((int)(uint)SNDMSG((hwndCtl), CB_SETCURSEL, (WPARAM)(int)(index), 0));
 
-    public static int ComboBox_SelectString(HWND hwndCtl, int indexStart, ushort* lpszSelect) => ((int)(uint)SNDMSG((hwndCtl), CB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(ushort*)(lpszSelect)));
+    public static int ComboBox_SelectString(HWND hwndCtl, int indexStart, char* lpszSelect) => ((int)(uint)SNDMSG((hwndCtl), CB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszSelect)));
 
     public static int ComboBox_SelectItemData(HWND hwndCtl, int indexStart, LPARAM data) => ((int)(uint)SNDMSG((hwndCtl), CB_SELECTSTRING, (WPARAM)(int)(indexStart), (LPARAM)(data)));
 
-    public static int ComboBox_Dir(HWND hwndCtl, uint attrs, ushort* lpszFileSpec) => ((int)(uint)SNDMSG((hwndCtl), CB_DIR, (WPARAM)(uint)(attrs), (LPARAM)(ushort*)(lpszFileSpec)));
+    public static int ComboBox_Dir(HWND hwndCtl, uint attrs, char* lpszFileSpec) => ((int)(uint)SNDMSG((hwndCtl), CB_DIR, (WPARAM)(uint)(attrs), (LPARAM)(char*)(lpszFileSpec)));
 
     public static BOOL ComboBox_ShowDropdown(HWND hwndCtl, BOOL fShow) => ((BOOL)(uint)SNDMSG((hwndCtl), CB_SHOWDROPDOWN, (WPARAM)(BOOL)(fShow), 0));
 
-    public static int ComboBox_FindStringExact(HWND hwndCtl, int indexStart, ushort* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRINGEXACT, (WPARAM)(int)(indexStart), (LPARAM)(ushort*)(lpszFind)));
+    public static int ComboBox_FindStringExact(HWND hwndCtl, int indexStart, char* lpszFind) => ((int)(uint)SNDMSG((hwndCtl), CB_FINDSTRINGEXACT, (WPARAM)(int)(indexStart), (LPARAM)(char*)(lpszFind)));
 
     public static BOOL ComboBox_GetDroppedState(HWND hwndCtl) => ((BOOL)(uint)SNDMSG((hwndCtl), CB_GETDROPPEDSTATE, 0u, 0));
 

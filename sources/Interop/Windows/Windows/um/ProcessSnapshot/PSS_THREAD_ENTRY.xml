@@ -3,108 +3,63 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSS_THREAD_ENTRY">
-    <summary>
-      <para>Holds thread information  returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a><b>PssWalkSnapshot</b>.</para>
-    </summary>
-    <remarks>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a> returns a <b>PSS_THREAD_ENTRY</b> structure when the  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_walk_information_class">PSS_WALK_INFORMATION_CLASS</a> member that the caller provides it is <b>PSS_WALK_THREADS</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+    <summary>Holds thread information returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a><b>PssWalkSnapshot</b>.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.ExitStatus">
-    <summary>
-      <para>The exit code of the process. If the process has not exited, this is set to <b>STILL_ACTIVE</b> (259).</para>
-    </summary>
+    <summary>The exit code of the process. If the process has not exited, this is set to <b>STILL_ACTIVE</b> (259).</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.TebBaseAddress">
-    <summary>
-      <para>The address of the thread environment block (TEB). Reserved for use by the operating system.</para>
-    </summary>
+    <summary>The address of the thread environment block (TEB). Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.ProcessId">
-    <summary>
-      <para>The process ID.</para>
-    </summary>
+    <summary>The process ID.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.ThreadId">
-    <summary>
-      <para>The thread ID.</para>
-    </summary>
+    <summary>The thread ID.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.AffinityMask">
-    <summary>
-      <para>The affinity mask of the process.</para>
-    </summary>
+    <summary>The affinity mask of the process.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.Priority">
-    <summary>
-      <para>The thread’s dynamic priority level.</para>
-    </summary>
+    <summary>The thread’s dynamic priority level.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.BasePriority">
-    <summary>
-      <para>The base priority level of the process.</para>
-    </summary>
+    <summary>The base priority level of the process.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.LastSyscallFirstArgument">
-    <summary>
-      <para>Reserved for use by the operating system.</para>
-    </summary>
+    <summary>Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.LastSyscallNumber">
-    <summary>
-      <para>Reserved for use by the operating system.</para>
-    </summary>
+    <summary>Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.CreateTime">
-    <summary>
-      <para>The time the thread was created. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>The time the thread was created. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.ExitTime">
-    <summary>
-      <para>If the thread exited, the time of the exit. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>If the thread exited, the time of the exit. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.KernelTime">
-    <summary>
-      <para>The amount of time the thread spent executing in kernel mode. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>The amount of time the thread spent executing in kernel mode. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.UserTime">
-    <summary>
-      <para>The amount of time the thread spent executing in user mode. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>The amount of time the thread spent executing in user mode. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.Win32StartAddress">
-    <summary>
-      <para>A pointer to the thread procedure for thread.</para>
-    </summary>
+    <summary>A pointer to the thread procedure for thread.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.CaptureTime">
-    <summary>
-      <para>The capture time of this thread. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>The capture time of this thread. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.Flags">
-    <summary>
-      <para>Flags about the thread. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_thread_flags">PSS_THREAD_FLAGS</a>.</para>
-    </summary>
+    <summary>Flags about the thread. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_thread_flags">PSS_THREAD_FLAGS</a>.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.SuspendCount">
-    <summary>
-      <para>The    count of times the thread suspended.</para>
-    </summary>
+    <summary>The count of times the thread suspended.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.SizeOfContextRecord">
-    <summary>
-      <para>The size of <i>ContextRecord</i>, in bytes.</para>
-    </summary>
+    <summary>The size of <i>ContextRecord</i>, in bytes.</summary>
   </member>
   <member name="PSS_THREAD_ENTRY.ContextRecord">
-    <summary>
-      <para>A pointer to the context record if thread context information was captured. The pointer is valid for the lifetime of the walk marker passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</para>
-    </summary>
+    <summary>A pointer to the context record if thread context information was captured. The pointer is valid for the lifetime of the walk marker passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</summary>
   </member>
 </doc>

@@ -3,24 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPrint.GetPageInfo">
-    <summary>
-      <para>Retrieves the number of a document's first page and the total number of pages.</para>
-    </summary>
-    <param name="pnFirstPage">
-      <para>A pointer to a variable that receives the page number of the first page. This parameter can be <b>NULL</b>, indicating that the caller is not interested in this number. If <see cref="IPrint.SetInitialPageNum" /> has been called, this parameter should contain the same value passed to that method. Otherwise, the value is the document's internal first page number.</para>
-    </param>
-    <param name="pcPages">
-      <para>A pointer to a variable that receives the total number of pages in this document. This parameter can be <b>NULL</b>, indicating that the caller is not interested in this number.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_UNEXPECTED and S_OK.</para>
-    </returns>
-    <seealso cref="IPrint" />
+    <summary>Retrieves the number of a document's first page and the total number of pages.</summary>
+    <param name="pnFirstPage">A pointer to a variable that receives the page number of the first page. This parameter can be <b>NULL</b>, indicating that the caller is not interested in this number. If <see cref="IPrint.SetInitialPageNum" /> has been called, this parameter should contain the same value passed to that method. Otherwise, the value is the document's internal first page number.</param>
+    <param name="pcPages">A pointer to a variable that receives the total number of pages in this document. This parameter can be <b>NULL</b>, indicating that the caller is not interested in this number.</param>
+    <returns>This method can return the standard return values E_UNEXPECTED and S_OK.</returns>
   </member>
   <member name="IPrint.Print">
-    <summary>
-      <para>Prints an object on the specified printer, using the specified job requirements.</para>
-    </summary>
+    <summary>Prints an object on the specified printer, using the specified job requirements.</summary>
     <param name="grfFlags">
       <para>A bitfield specifying print options from the <b>PRINTFLAG</b> enumeration.</para>
       <h4>PRINTFLAG_MAYBOTHERUSER (1)</h4>
@@ -31,27 +20,13 @@
       <h4>PRINTFLAG_FORCEPROPERTIES (32)</h4>
       <h4>PRINTFLAG_PRINTTOFILE (64)</h4>
     </param>
-    <param name="pptd">
-      <para>A pointer to a <see cref="DVTARGETDEVICE" /> structure that describes the target print device.</para>
-    </param>
-    <param name="ppPageSet">
-      <para>A pointer to a <see cref="PAGESET" /> pointer variable that receives a pointer to the structure that indicates which pages are to be printed.</para>
-    </param>
-    <param name="pstgmOptions">
-      <para>A pointer to object-specific printing options in a serialized OLE property set. This parameter can be <b>NULL</b> on input or return.</para>
-    </param>
-    <param name="pcallback">
-      <para>A pointer to the <see cref="IContinueCallback" /> interface on the view site, which is to be periodically polled at human-response speeds to determine whether printing should be abandoned. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="nFirstPage">
-      <para>The page number of the first page to be printed. This value overrides any value previously passed to <see cref="IPrint.SetInitialPageNum" />.</para>
-    </param>
-    <param name="pcPagesPrinted">
-      <para>A pointer to a variable that receives the actual number of pages that were successfully printed.</para>
-    </param>
-    <param name="pnLastPage">
-      <para>A pointer to a variable that receives the page number of the last page that was printed.</para>
-    </param>
+    <param name="pptd">A pointer to a <see cref="DVTARGETDEVICE" /> structure that describes the target print device.</param>
+    <param name="ppPageSet">A pointer to a <see cref="PAGESET" /> pointer variable that receives a pointer to the structure that indicates which pages are to be printed.</param>
+    <param name="pstgmOptions">A pointer to object-specific printing options in a serialized OLE property set. This parameter can be <b>NULL</b> on input or return.</param>
+    <param name="pcallback">A pointer to the <see cref="IContinueCallback" /> interface on the view site, which is to be periodically polled at human-response speeds to determine whether printing should be abandoned. This parameter can be <b>NULL</b>.</param>
+    <param name="nFirstPage">The page number of the first page to be printed. This value overrides any value previously passed to <see cref="IPrint.SetInitialPageNum" />.</param>
+    <param name="pcPagesPrinted">A pointer to a variable that receives the actual number of pages that were successfully printed.</param>
+    <param name="pnLastPage">A pointer to a variable that receives the page number of the last page that was printed.</param>
     <returns>
       <para>This method can return the standard return value E_UNEXPECTED, as well as the following values.</para>
       <list type="table">
@@ -59,72 +34,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PRINT_E_CANCELED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The print process was canceled before completion. *<i>pcPagesPrinted</i> indicates the number of pages that were in fact successfully printed before this error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>PRINT_E_CANCELED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>PRINT_E_NOSUCHPAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The print process was canceled before completion. *<i>pcPagesPrinted</i> indicates the number of pages that were in fact successfully printed before this error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>PRINT_E_NOSUCHPAGE</b>
-            </para>
-          </description>
-          <description>
-            <para>A page specified in **<i>ppPageSet</i> or <i>nFirstPage</i> does not exist.</para>
-          </description>
-        </item>
+          <description>A page specified in **<i>ppPageSet</i> or <i>nFirstPage</i> does not exist.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The printer on which the object is to be printed is indicated by the <see cref="DVTARGETDEVICE" /> structure pointed to by <i>pptd</i>. The <see cref="DEVMODE" /> structure in the target device indicates whole-job printer-specific options, such as number of copies, paper size, and print quality. The <b>DEVMODE</b> structure may also contain orientation information in the <b>dmOrientation</b> member (this is indicated in the <b>dmFields</b> member). If present, then this paper orientation should be used; if absent, then natural orientation as determined by the object content is to be used.</para>
-      <para>Due to the possibility of user input, the parameters <i>pptd</i> and <i>ppPageSet</i> are both [in,out] structures. In the absence of user interaction (that is, if the PRINTFLAG_PROMPTUSER flag is not set), both the target device and the page set will necessarily be the same for input and output. However, if the user is prompted for print options, then the object returns target device and page-set information appropriate to what the user has actually chosen.</para>
-      <para>The <i>pstgmOptions</i> parameter is also [in,out]. On exit, the object should write to *<i>pstgmOptions</i> any object-specific information that it would need to reproduce this exact print job. Examples might include whether the user selected "sheet, notes, or both" in a spreadsheet application. The data passed is in the format of a serialized property set. The data is normally useful only when passed back in a subsequent call to the same object. Because a subsequent call may specify different user interaction flags, target device, or other settings, the caller can cause the document to be printed multiple times in the same way in slightly different printing contexts.</para>
-    </remarks>
-    <seealso cref="IPrint" />
   </member>
   <member name="IPrint.SetInitialPageNum">
-    <summary>
-      <para>Sets the page number of the first page of a document.</para>
-    </summary>
-    <param name="nFirstPage">
-      <para>The page number of the first page.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <remarks>
-      <para>Setting the first page to a negative number is valid. This may be useful in printing a portion of the document with page numbers that specify an offset from the usual pagination.</para>
-      <para>Not all implementations permit the initial page number to be set, as some implementations simply lack the information as to how the page number should be presented in the final output.</para>
-    </remarks>
-    <seealso cref="IPrint" />
+    <summary>Sets the page number of the first page of a document.</summary>
+    <param name="nFirstPage">The page number of the first page.</param>
+    <returns>This method can return the standard return values E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IPrint">
-    <summary>
-      <para>Enables compound documents in general and active documents in particular to support programmatic printing.</para>
-    </summary>
-    <remarks>
-      <para>After a document is loaded, containers and other clients can call <see cref="IPrint.Print" /> to instruct a document to print itself, specifying printing control flags, the target device, the particular pages to print, and other options. The client can control the continuation of printing by calling the <see cref="IContinueCallback" /> interface.</para>
-      <para>An object that implements <b>IPrint</b> registers itself with the <b>Printable</b> key stored under its CLSID as follows:</para>
-      <para>
-        <b>HKEY_CLASSES_ROOT\CLSID{...}\Printable</b>
-      </para>
-      <para>Callers determine whether a particular object class supports programmatic printing of its persistent state by looking in the registry for this key.</para>
-    </remarks>
+    <summary>Enables compound documents in general and active documents in particular to support programmatic printing.</summary>
   </member>
 </doc>

@@ -139,7 +139,7 @@ public static partial class CRYPTNET
     [NativeTypeName("#define CRYPTNET_PRE_FETCH_RETRIEVAL_TIMEOUT_SECONDS_DEFAULT (5 * 60)")]
     public const int CRYPTNET_PRE_FETCH_RETRIEVAL_TIMEOUT_SECONDS_DEFAULT = (5 * 60);
 
-    [NativeTypeName("#define CRYPTNET_CRL_PRE_FETCH_CONFIG_REGPATH CERT_CHAIN_CONFIG_REGPATH L\"\\\\CrlPreFetch\"")]
+    [NativeTypeName("#define CRYPTNET_CRL_PRE_FETCH_CONFIG_REGPATH CERT_CHAIN_CONFIG_REGPATH L\"\\CrlPreFetch\"")]
     public const string CRYPTNET_CRL_PRE_FETCH_CONFIG_REGPATH = "Software\\Microsoft\\Cryptography\\OID\\EncodingType 0\\CertDllCreateCertificateChainEngine\\Config\\CrlPreFetch";
 
     [NativeTypeName("#define CRYPTNET_CRL_PRE_FETCH_PROCESS_NAME_LIST_VALUE_NAME L\"ProcessNameList\"")]

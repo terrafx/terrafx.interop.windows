@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROPVAR_COMPARE_UNIT">
+    <summary>These flags are associated with certain <see cref="PROPVARIANT" /> structure comparisons.</summary>
+  </member>
+  <member name="PROPVAR_COMPARE_UNIT.PVCU_DEFAULT">
+    <summary>The default unit.</summary>
+  </member>
+  <member name="PROPVAR_COMPARE_UNIT.PVCU_SECOND">
+    <summary>The second comparison unit.</summary>
+  </member>
+  <member name="PROPVAR_COMPARE_UNIT.PVCU_MINUTE">
+    <summary>The minute comparison unit.</summary>
+  </member>
+  <member name="PROPVAR_COMPARE_UNIT.PVCU_HOUR">
+    <summary>The hour comparison unit.</summary>
+  </member>
+  <member name="PROPVAR_COMPARE_UNIT.PVCU_DAY">
+    <summary>The day comparison unit.</summary>
+  </member>
+  <member name="PROPVAR_COMPARE_UNIT.PVCU_MONTH">
+    <summary>The month comparison unit.</summary>
+  </member>
+  <member name="PROPVAR_COMPARE_UNIT.PVCU_YEAR">
+    <summary>The year comparison unit.</summary>
+  </member>
+</doc>

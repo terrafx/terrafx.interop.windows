@@ -7,76 +7,47 @@
       <para>Contains encoding statistics from the Digital Living Network Alliance (DLNA) media sink.</para>
       <para>This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mp2dlna-statistics">MF_MP2DLNA_STATISTICS</a> attribute.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cBytesWritten">
-    <summary>
-      <para>Total number of bytes written to the byte stream.</para>
-    </summary>
+    <summary>Total number of bytes written to the byte stream.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.fPAL">
-    <summary>
-      <para>If <b>TRUE</b>, the video stream is a PAL format. Otherwise, the video stream is an NTSC format.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, the video stream is a PAL format. Otherwise, the video stream is an NTSC format.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.fccVideo">
-    <summary>
-      <para>A FOURCC code that specifies the video format.</para>
-    </summary>
+    <summary>A FOURCC code that specifies the video format.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.dwVideoWidth">
-    <summary>
-      <para>The width of the video frame, in pixels.</para>
-    </summary>
+    <summary>The width of the video frame, in pixels.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.dwVideoHeight">
-    <summary>
-      <para>The height of the video frame, in pixels.</para>
-    </summary>
+    <summary>The height of the video frame, in pixels.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cVideoFramesReceived">
-    <summary>
-      <para>The number of video frames received.</para>
-    </summary>
+    <summary>The number of video frames received.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cVideoFramesEncoded">
-    <summary>
-      <para>The number of video frames that have been encoded.</para>
-    </summary>
+    <summary>The number of video frames that have been encoded.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cVideoFramesSkipped">
-    <summary>
-      <para>The number of video frames that have been skipped.</para>
-    </summary>
+    <summary>The number of video frames that have been skipped.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cBlackVideoFramesEncoded">
-    <summary>
-      <para>The number of black frames that have been encoded.</para>
-    </summary>
+    <summary>The number of black frames that have been encoded.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cVideoFramesDuplicated">
-    <summary>
-      <para>The number of duplicated video frames.</para>
-    </summary>
+    <summary>The number of duplicated video frames.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cAudioSamplesPerSec">
-    <summary>
-      <para>The audio sample rate, in samples per second.</para>
-    </summary>
+    <summary>The audio sample rate, in samples per second.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cAudioChannels">
-    <summary>
-      <para>The number of audio channels.</para>
-    </summary>
+    <summary>The number of audio channels.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cAudioBytesReceived">
-    <summary>
-      <para>The total amount of audio data received, in bytes.</para>
-    </summary>
+    <summary>The total amount of audio data received, in bytes.</summary>
   </member>
   <member name="MFMPEG2DLNASINKSTATS.cAudioFramesEncoded">
-    <summary>
-      <para>The number of audio frames that have been encoded.</para>
-    </summary>
+    <summary>The number of audio frames that have been encoded.</summary>
   </member>
 </doc>

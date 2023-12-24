@@ -25,7 +25,7 @@ public unsafe partial struct IMFCameraControlDefaults : IMFCameraControlDefaults
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCameraControlDefaults*, Guid*, void**, int>)(lpVtbl[0]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlDefaults*, Guid*, void**, int>)(lpVtbl[0]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFCameraControlDefaults : IMFCameraControlDefaults
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCameraControlDefaults*, uint>)(lpVtbl[1]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlDefaults*, uint>)(lpVtbl[1]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFCameraControlDefaults : IMFCameraControlDefaults
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCameraControlDefaults*, uint>)(lpVtbl[2]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlDefaults*, uint>)(lpVtbl[2]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCameraControlDefaults.xml' path='doc/member[@name="IMFCameraControlDefaults.GetType"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFCameraControlDefaults : IMFCameraControlDefaults
     [VtblIndex(3)]
     public new MF_CAMERA_CONTROL_CONFIGURATION_TYPE GetType()
     {
-        return ((delegate* unmanaged<IMFCameraControlDefaults*, MF_CAMERA_CONTROL_CONFIGURATION_TYPE>)(lpVtbl[3]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlDefaults*, MF_CAMERA_CONTROL_CONFIGURATION_TYPE>)(lpVtbl[3]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCameraControlDefaults.xml' path='doc/member[@name="IMFCameraControlDefaults.GetRangeInfo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFCameraControlDefaults : IMFCameraControlDefaults
     [VtblIndex(4)]
     public HRESULT GetRangeInfo(MF_CAMERA_CONTROL_RANGE_INFO* rangeInfo)
     {
-        return ((delegate* unmanaged<IMFCameraControlDefaults*, MF_CAMERA_CONTROL_RANGE_INFO*, int>)(lpVtbl[4]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this), rangeInfo);
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlDefaults*, MF_CAMERA_CONTROL_RANGE_INFO*, int>)(lpVtbl[4]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this), rangeInfo);
     }
 
     /// <include file='IMFCameraControlDefaults.xml' path='doc/member[@name="IMFCameraControlDefaults.LockControlData"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFCameraControlDefaults : IMFCameraControlDefaults
     [VtblIndex(5)]
     public HRESULT LockControlData(void** control, [NativeTypeName("ULONG *")] uint* controlSize, void** data, [NativeTypeName("ULONG *")] uint* dataSize)
     {
-        return ((delegate* unmanaged<IMFCameraControlDefaults*, void**, uint*, void**, uint*, int>)(lpVtbl[5]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this), control, controlSize, data, dataSize);
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlDefaults*, void**, uint*, void**, uint*, int>)(lpVtbl[5]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this), control, controlSize, data, dataSize);
     }
 
     /// <include file='IMFCameraControlDefaults.xml' path='doc/member[@name="IMFCameraControlDefaults.UnlockControlData"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFCameraControlDefaults : IMFCameraControlDefaults
     [VtblIndex(6)]
     public HRESULT UnlockControlData()
     {
-        return ((delegate* unmanaged<IMFCameraControlDefaults*, int>)(lpVtbl[6]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlDefaults*, int>)(lpVtbl[6]))((IMFCameraControlDefaults*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IMFCameraControlDefaults : IMFCameraControlDefaults
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("MF_CAMERA_CONTROL_CONFIGURATION_TYPE () __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, MF_CAMERA_CONTROL_CONFIGURATION_TYPE> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, MF_CAMERA_CONTROL_CONFIGURATION_TYPE> GetType;
 
         [NativeTypeName("HRESULT (MF_CAMERA_CONTROL_RANGE_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_CAMERA_CONTROL_RANGE_INFO*, int> GetRangeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_CAMERA_CONTROL_RANGE_INFO*, int> GetRangeInfo;
 
         [NativeTypeName("HRESULT (void **, ULONG *, void **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void**, uint*, void**, uint*, int> LockControlData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void**, uint*, void**, uint*, int> LockControlData;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UnlockControlData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UnlockControlData;
     }
 }

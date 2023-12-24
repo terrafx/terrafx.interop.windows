@@ -18,7 +18,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x81, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -30,7 +30,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x82, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -55,7 +55,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -68,7 +68,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x83, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -80,7 +80,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -93,7 +93,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x84, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -105,7 +105,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -118,7 +118,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x85, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -130,7 +130,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -143,7 +143,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x86, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -155,7 +155,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -168,7 +168,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x87, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -180,7 +180,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -193,7 +193,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x88, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -205,7 +205,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -218,7 +218,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x89, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -230,7 +230,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -243,7 +243,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x8A, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -255,7 +255,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -268,7 +268,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x8B, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -280,7 +280,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -293,7 +293,7 @@ public static partial class PIN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x8C, 0x42, 0x6C, 0xFB,
                 0x53, 0x03,
                 0xD1, 0x11,
@@ -305,7 +305,7 @@ public static partial class PIN
                 0xCC,
                 0x16,
                 0xBA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RESOURCE_ALIASING_BARRIER">
+    <summary>Describes the transition between usages of two different resources that have mappings into the same heap.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_ALIASING_BARRIER.pResourceBefore">
+    <summary>A pointer to the <see cref="ID3D12Resource" /> object that represents the before resource used in the transition.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_ALIASING_BARRIER.pResourceAfter">
+    <summary>A pointer to the <see cref="ID3D12Resource" /> object that represents the after resource used in the transition.</summary>
+  </member>
+</doc>

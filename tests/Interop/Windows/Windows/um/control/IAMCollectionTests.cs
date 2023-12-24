@@ -19,32 +19,4 @@ public static unsafe partial class IAMCollectionTests
     {
         Assert.That(typeof(IAMCollection).GUID, Is.EqualTo(IID_IAMCollection));
     }
-
-    /// <summary>Validates that the <see cref="IAMCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMCollection>(), Is.EqualTo(sizeof(IAMCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMCollection), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, uint>)(lpVtbl[1]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, uint>)(lpVtbl[1]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, uint>)(lpVtbl[2]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, uint>)(lpVtbl[2]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_compiland"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(3)]
     public HRESULT get_compiland(IDiaSymbol** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, IDiaSymbol**, int>)(lpVtbl[3]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_addressSection"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(4)]
     public HRESULT get_addressSection([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[4]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, uint*, int>)(lpVtbl[4]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_addressOffset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(5)]
     public HRESULT get_addressOffset([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[5]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, uint*, int>)(lpVtbl[5]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_relativeVirtualAddress"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(6)]
     public HRESULT get_relativeVirtualAddress([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[6]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, uint*, int>)(lpVtbl[6]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_virtualAddress"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(7)]
     public HRESULT get_virtualAddress([NativeTypeName("ULONGLONG *")] ulong* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, ulong*, int>)(lpVtbl[7]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, ulong*, int>)(lpVtbl[7]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_length"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(8)]
     public HRESULT get_length([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[8]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, uint*, int>)(lpVtbl[8]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_notPaged"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(9)]
     public HRESULT get_notPaged(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[9]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[9]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_code"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(10)]
     public HRESULT get_code(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[10]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[10]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_initializedData"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(11)]
     public HRESULT get_initializedData(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[11]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[11]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_uninitializedData"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(12)]
     public HRESULT get_uninitializedData(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[12]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[12]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_remove"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(13)]
     public HRESULT get_remove(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[13]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[13]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_comdat"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(14)]
     public HRESULT get_comdat(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[14]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[14]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_discardable"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(15)]
     public HRESULT get_discardable(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[15]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[15]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_notCached"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(16)]
     public HRESULT get_notCached(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[16]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[16]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_share"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(17)]
     public HRESULT get_share(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[17]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[17]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_execute"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(18)]
     public HRESULT get_execute(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[18]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[18]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_read"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(19)]
     public HRESULT get_read(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[19]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[19]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_write"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(20)]
     public HRESULT get_write(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[20]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[20]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_dataCrc"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(21)]
     public HRESULT get_dataCrc([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[21]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, uint*, int>)(lpVtbl[21]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_relocationsCrc"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(22)]
     public HRESULT get_relocationsCrc([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[22]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, uint*, int>)(lpVtbl[22]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_compilandId"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(23)]
     public HRESULT get_compilandId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, uint*, int>)(lpVtbl[23]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, uint*, int>)(lpVtbl[23]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSectionContrib.xml' path='doc/member[@name="IDiaSectionContrib.get_code16bit"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
     [VtblIndex(24)]
     public HRESULT get_code16bit(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[24]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSectionContrib*, BOOL*, int>)(lpVtbl[24]))((IDiaSectionContrib*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     public interface Interface : IUnknown.Interface
@@ -295,78 +295,78 @@ public unsafe partial struct IDiaSectionContrib : IDiaSectionContrib.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDiaSymbol **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaSymbol**, int> get_compiland;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaSymbol**, int> get_compiland;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_addressSection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_addressSection;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_addressOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_addressOffset;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_relativeVirtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_relativeVirtualAddress;
 
         [NativeTypeName("HRESULT (ULONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> get_virtualAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> get_virtualAddress;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_length;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_length;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_notPaged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_notPaged;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_code;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_code;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_initializedData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_initializedData;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_uninitializedData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_uninitializedData;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_remove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_remove;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_comdat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_comdat;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_discardable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_discardable;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_notCached;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_notCached;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_share;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_share;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_execute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_execute;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_read;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_read;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_write;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_write;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_dataCrc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_dataCrc;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_relocationsCrc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_relocationsCrc;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_compilandId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_compilandId;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_code16bit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_code16bit;
     }
 }

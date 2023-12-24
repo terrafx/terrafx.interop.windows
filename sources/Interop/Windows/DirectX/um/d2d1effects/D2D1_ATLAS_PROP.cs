@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_ATLAS_PROP.xml' path='doc/member[@name="D2D1_ATLAS_PROP"]/*' />
-public enum D2D1_ATLAS_PROP : uint
+public enum D2D1_ATLAS_PROP
 {
     /// <include file='D2D1_ATLAS_PROP.xml' path='doc/member[@name="D2D1_ATLAS_PROP.D2D1_ATLAS_PROP_INPUT_RECT"]/*' />
     D2D1_ATLAS_PROP_INPUT_RECT = 0,
@@ -15,5 +15,5 @@ public enum D2D1_ATLAS_PROP : uint
     D2D1_ATLAS_PROP_INPUT_PADDING_RECT = 1,
 
     /// <include file='D2D1_ATLAS_PROP.xml' path='doc/member[@name="D2D1_ATLAS_PROP.D2D1_ATLAS_PROP_FORCE_DWORD"]/*' />
-    D2D1_ATLAS_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_ATLAS_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

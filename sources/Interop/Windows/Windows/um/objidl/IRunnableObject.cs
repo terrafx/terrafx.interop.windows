@@ -25,7 +25,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRunnableObject*, Guid*, void**, int>)(lpVtbl[0]))((IRunnableObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRunnableObject*, Guid*, void**, int>)(lpVtbl[0]))((IRunnableObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRunnableObject*, uint>)(lpVtbl[1]))((IRunnableObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunnableObject*, uint>)(lpVtbl[1]))((IRunnableObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRunnableObject*, uint>)(lpVtbl[2]))((IRunnableObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunnableObject*, uint>)(lpVtbl[2]))((IRunnableObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.GetRunningClass"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetRunningClass([NativeTypeName("LPCLSID")] Guid* lpClsid)
     {
-        return ((delegate* unmanaged<IRunnableObject*, Guid*, int>)(lpVtbl[3]))((IRunnableObject*)Unsafe.AsPointer(ref this), lpClsid);
+        return ((delegate* unmanaged[MemberFunction]<IRunnableObject*, Guid*, int>)(lpVtbl[3]))((IRunnableObject*)Unsafe.AsPointer(ref this), lpClsid);
     }
 
     /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.Run"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface, INativ
     [VtblIndex(4)]
     public HRESULT Run([NativeTypeName("LPBINDCTX")] IBindCtx* pbc)
     {
-        return ((delegate* unmanaged<IRunnableObject*, IBindCtx*, int>)(lpVtbl[4]))((IRunnableObject*)Unsafe.AsPointer(ref this), pbc);
+        return ((delegate* unmanaged[MemberFunction]<IRunnableObject*, IBindCtx*, int>)(lpVtbl[4]))((IRunnableObject*)Unsafe.AsPointer(ref this), pbc);
     }
 
     /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.IsRunning"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface, INativ
     [VtblIndex(5)]
     public BOOL IsRunning()
     {
-        return ((delegate* unmanaged<IRunnableObject*, int>)(lpVtbl[5]))((IRunnableObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunnableObject*, int>)(lpVtbl[5]))((IRunnableObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.LockRunning"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface, INativ
     [VtblIndex(6)]
     public HRESULT LockRunning(BOOL fLock, BOOL fLastUnlockCloses)
     {
-        return ((delegate* unmanaged<IRunnableObject*, BOOL, BOOL, int>)(lpVtbl[6]))((IRunnableObject*)Unsafe.AsPointer(ref this), fLock, fLastUnlockCloses);
+        return ((delegate* unmanaged[MemberFunction]<IRunnableObject*, BOOL, BOOL, int>)(lpVtbl[6]))((IRunnableObject*)Unsafe.AsPointer(ref this), fLock, fLastUnlockCloses);
     }
 
     /// <include file='IRunnableObject.xml' path='doc/member[@name="IRunnableObject.SetContainedObject"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SetContainedObject(BOOL fContained)
     {
-        return ((delegate* unmanaged<IRunnableObject*, BOOL, int>)(lpVtbl[7]))((IRunnableObject*)Unsafe.AsPointer(ref this), fContained);
+        return ((delegate* unmanaged[MemberFunction]<IRunnableObject*, BOOL, int>)(lpVtbl[7]))((IRunnableObject*)Unsafe.AsPointer(ref this), fContained);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IRunnableObject : IRunnableObject.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCLSID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetRunningClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetRunningClass;
 
         [NativeTypeName("HRESULT (LPBINDCTX) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, int> Run;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBindCtx*, int> Run;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsRunning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsRunning;
 
         [NativeTypeName("HRESULT (BOOL, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, BOOL, int> LockRunning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, BOOL, int> LockRunning;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetContainedObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetContainedObject;
     }
 }

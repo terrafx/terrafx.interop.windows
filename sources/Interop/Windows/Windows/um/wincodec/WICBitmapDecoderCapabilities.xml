@@ -3,37 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICBitmapDecoderCapabilities">
-    <summary>
-      <para>Specifies the capabilities of the decoder.</para>
-    </summary>
-    <seealso cref="IWICBitmapDecoder" />
+    <summary>Specifies the capabilities of the decoder.</summary>
   </member>
   <member name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilitySameEncoder">
-    <summary>
-      <para>Decoder recognizes the image was encoded with an encoder produced by the same vendor.</para>
-    </summary>
+    <summary>Decoder recognizes the image was encoded with an encoder produced by the same vendor.</summary>
   </member>
   <member name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilityCanDecodeAllImages">
-    <summary>
-      <para>Decoder can decode all the images within an image container.</para>
-    </summary>
+    <summary>Decoder can decode all the images within an image container.</summary>
   </member>
   <member name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilityCanDecodeSomeImages">
-    <summary>
-      <para>Decoder can decode some of the images within an image container.</para>
-    </summary>
+    <summary>Decoder can decode some of the images within an image container.</summary>
   </member>
   <member name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilityCanEnumerateMetadata">
-    <summary>
-      <para>Decoder can enumerate the metadata blocks within a container format.</para>
-    </summary>
+    <summary>Decoder can enumerate the metadata blocks within a container format.</summary>
   </member>
   <member name="WICBitmapDecoderCapabilities.WICBitmapDecoderCapabilityCanDecodeThumbnail">
-    <summary>
-      <para>Decoder can find and decode a thumbnail.</para>
-    </summary>
+    <summary>Decoder can find and decode a thumbnail.</summary>
   </member>
-  <member name="WICBitmapDecoderCapabilities.WICBITMAPDECODERCAPABILITIES_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICBitmapDecoderCapabilities.WICBITMAPDECODERCAPABILITIES_FORCE_DWORD"></member>
 </doc>

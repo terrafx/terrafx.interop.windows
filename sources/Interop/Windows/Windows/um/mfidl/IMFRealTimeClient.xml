@@ -3,65 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFRealTimeClient.RegisterThreads">
-    <summary>
-      <para>Notifies the object to register its worker threads with the Multimedia Class Scheduler Service (MMCSS).</para>
-    </summary>
-    <param name="dwTaskIndex">
-      <para>The MMCSS task identifier.</para>
-    </param>
-    <param name="wszClass">
-      <para>The name of the MMCSS task.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The object's worker threads should register themselves with MMCSS by calling <see cref="AvSetMmThreadCharacteristics" />, using the task name and identifier specified in this method.</para>
-    </remarks>
-    <seealso cref="IMFRealTimeClient" />
+    <summary>Notifies the object to register its worker threads with the Multimedia Class Scheduler Service (MMCSS).</summary>
+    <param name="dwTaskIndex">The MMCSS task identifier.</param>
+    <param name="wszClass">The name of the MMCSS task.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFRealTimeClient.SetWorkQueue">
-    <summary>
-      <para>Specifies the work queue for the topology branch that contains this object.</para>
-    </summary>
-    <param name="dwWorkQueueId">
-      <para>The identifier of the work queue, or the value <b>MFASYNC_CALLBACK_QUEUE_UNDEFINED</b>. See Remarks.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An application can register a branch of the topology to use a private work queue. The Media Session notifies any pipeline object that supports <see cref="IMFRealTimeClient" /> by calling <b>SetWorkQueue</b> with the application's work queue identifier.</para>
-      <para>When the application unregisters the topology branch, the Media Session calls <b>SetWorkQueue</b> again with the value <b>MFASYNC_CALLBACK_QUEUE_UNDEFINED</b>.</para>
-    </remarks>
-    <seealso cref="IMFRealTimeClient" />
-    <seealso cref="IMFWorkQueueServices.BeginRegisterTopologyWorkQueuesWithMMCSS" />
+    <summary>Specifies the work queue for the topology branch that contains this object.</summary>
+    <param name="dwWorkQueueId">The identifier of the work queue, or the value <b>MFASYNC_CALLBACK_QUEUE_UNDEFINED</b>. See Remarks.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFRealTimeClient.UnregisterThreads">
-    <summary>
-      <para>Notifies the object to unregister its worker threads from the Multimedia Class Scheduler Service (MMCSS).</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The object's worker threads should unregister themselves from MMCSS by calling <see cref="AvRevertMmThreadCharacteristics" />.</para>
-    </remarks>
-    <seealso cref="IMFRealTimeClient" />
+    <summary>Notifies the object to unregister its worker threads from the Multimedia Class Scheduler Service (MMCSS).</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFRealTimeClient">
     <summary>
       <para>Notifies a pipeline object to register itself with the Multimedia Class Scheduler Service (MMCSS).</para>
       <para>Any pipeline object that creates worker threads should implement this interface.</para>
     </summary>
-    <remarks>
-      <para>Media Foundation provides a mechanism for applications to associate branches in the topology with MMCSS tasks. A topology branch is defined by a source node in the topology and all of the nodes downstream from it. An application registers a topology branch with MMCSS by setting the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-toponode-workqueue-id-attribute">MF_TOPONODE_WORKQUEUE_ID</a> attribute on the source node and then calling <see cref="IMFWorkQueueServices.BeginRegisterTopologyWorkQueuesWithMMCSS" />.</para>
-      <para>When the application registers a topology branch with MMCSS, the Media Session queries every pipeline object in that branch for the <b>IMFRealTimeClient</b> interface. If the object exposes the interface, the Media Session calls <see cref="RegisterThreads" />.</para>
-      <para>When the application unregisters the topology branch, the Media Session calls <see cref="UnregisterThreads" />.</para>
-      <para>If a pipeline object creates its own worker threads but does not implement this interface, it can cause priority inversions in the Media Foundation pipeline, because high-priority processing threads might be blocked while waiting for the component to process data on a thread with lower priority.</para>
-      <para>Pipeline objects that do not create worker threads do not need to implement this interface.</para>
-      <para>In Windows 8, this interface is extended with <see cref="IMFRealTimeClientEx" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

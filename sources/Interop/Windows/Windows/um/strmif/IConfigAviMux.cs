@@ -25,7 +25,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IConfigAviMux*, Guid*, void**, int>)(lpVtbl[0]))((IConfigAviMux*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IConfigAviMux*, Guid*, void**, int>)(lpVtbl[0]))((IConfigAviMux*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IConfigAviMux*, uint>)(lpVtbl[1]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IConfigAviMux*, uint>)(lpVtbl[1]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IConfigAviMux*, uint>)(lpVtbl[2]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IConfigAviMux*, uint>)(lpVtbl[2]))((IConfigAviMux*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux.SetMasterStream"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT SetMasterStream([NativeTypeName("LONG")] int iStream)
     {
-        return ((delegate* unmanaged<IConfigAviMux*, int, int>)(lpVtbl[3]))((IConfigAviMux*)Unsafe.AsPointer(ref this), iStream);
+        return ((delegate* unmanaged[MemberFunction]<IConfigAviMux*, int, int>)(lpVtbl[3]))((IConfigAviMux*)Unsafe.AsPointer(ref this), iStream);
     }
 
     /// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux.GetMasterStream"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetMasterStream([NativeTypeName("LONG *")] int* pStream)
     {
-        return ((delegate* unmanaged<IConfigAviMux*, int*, int>)(lpVtbl[4]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pStream);
+        return ((delegate* unmanaged[MemberFunction]<IConfigAviMux*, int*, int>)(lpVtbl[4]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pStream);
     }
 
     /// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux.SetOutputCompatibilityIndex"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT SetOutputCompatibilityIndex(BOOL fOldIndex)
     {
-        return ((delegate* unmanaged<IConfigAviMux*, BOOL, int>)(lpVtbl[5]))((IConfigAviMux*)Unsafe.AsPointer(ref this), fOldIndex);
+        return ((delegate* unmanaged[MemberFunction]<IConfigAviMux*, BOOL, int>)(lpVtbl[5]))((IConfigAviMux*)Unsafe.AsPointer(ref this), fOldIndex);
     }
 
     /// <include file='IConfigAviMux.xml' path='doc/member[@name="IConfigAviMux.GetOutputCompatibilityIndex"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetOutputCompatibilityIndex(BOOL* pfOldIndex)
     {
-        return ((delegate* unmanaged<IConfigAviMux*, BOOL*, int>)(lpVtbl[6]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pfOldIndex);
+        return ((delegate* unmanaged[MemberFunction]<IConfigAviMux*, BOOL*, int>)(lpVtbl[6]))((IConfigAviMux*)Unsafe.AsPointer(ref this), pfOldIndex);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IConfigAviMux : IConfigAviMux.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetMasterStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetMasterStream;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetMasterStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetMasterStream;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetOutputCompatibilityIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetOutputCompatibilityIndex;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetOutputCompatibilityIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetOutputCompatibilityIndex;
     }
 }

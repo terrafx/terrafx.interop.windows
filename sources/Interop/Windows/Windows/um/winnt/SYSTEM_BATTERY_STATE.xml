@@ -3,76 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEM_BATTERY_STATE">
-    <summary>
-      <para>Contains information about the current state of the system battery.</para>
-    </summary>
-    <seealso cref="CallNtPowerInformation" />
+    <summary>Contains information about the current state of the system battery.</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.AcOnLine">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the system battery charger is currently operating on external
-power.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the system battery charger is currently operating on external power.</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.BatteryPresent">
-    <summary>
-      <para>If this member is <b>TRUE</b>, at least one battery is present in the system.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, at least one battery is present in the system.</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.Charging">
-    <summary>
-      <para>If this member is <b>TRUE</b>, a battery is currently charging.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, a battery is currently charging.</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.Discharging">
-    <summary>
-      <para>If this member is <b>TRUE</b>, a battery is currently discharging.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, a battery is currently discharging.</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.Spare1">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
-  <member name="SYSTEM_BATTERY_STATE.Tag">
-    <summary></summary>
-  </member>
+  <member name="SYSTEM_BATTERY_STATE.Tag"></member>
   <member name="SYSTEM_BATTERY_STATE.MaxCapacity">
-    <summary>
-      <para>The theoretical capacity of the battery when new.</para>
-    </summary>
+    <summary>The theoretical capacity of the battery when new.</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.RemainingCapacity">
-    <summary>
-      <para>The estimated remaining capacity of the battery.</para>
-    </summary>
+    <summary>The estimated remaining capacity of the battery.</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.Rate">
-    <summary>
-      <para>The current rate of discharge of the battery, in mW. A nonzero, positive rate indicates charging; a
-negative rate indicates discharging. Some batteries report only discharging rates. This value should be treated
-as a <b>LONG</b> as it can contain negative values (with the high bit set).</para>
-    </summary>
+    <summary>The current rate of discharge of the battery, in mW. A nonzero, positive rate indicates charging; a negative rate indicates discharging. Some batteries report only discharging rates. This value should be treated as a <b>LONG</b> as it can contain negative values (with the high bit set).</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.EstimatedTime">
-    <summary>
-      <para>The estimated time remaining on the battery, in seconds.</para>
-    </summary>
+    <summary>The estimated time remaining on the battery, in seconds.</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.DefaultAlert1">
-    <summary>
-      <para>The manufacturer's suggestion of a capacity, in mWh, at which a low battery alert should occur. Definitions
-of low vary from manufacturer to manufacturer. In general, a warning state will occur before a low state, but
-you should not assume that it always will. To reduce risk of data loss, this value is usually used as the
-default setting for the critical battery alarm.</para>
-    </summary>
+    <summary>The manufacturer's suggestion of a capacity, in mWh, at which a low battery alert should occur. Definitions of low vary from manufacturer to manufacturer. In general, a warning state will occur before a low state, but you should not assume that it always will. To reduce risk of data loss, this value is usually used as the default setting for the critical battery alarm.</summary>
   </member>
   <member name="SYSTEM_BATTERY_STATE.DefaultAlert2">
-    <summary>
-      <para>The manufacturer's suggestion of a capacity, in mWh, at which a warning battery alert should occur.
-Definitions of warning vary from manufacturer to manufacturer. In general, a warning state will occur before a
-low state, but you should not assume that it always will. To reduce risk of data loss, this value is usually
-used as the default setting for the low battery alarm.</para>
-    </summary>
+    <summary>The manufacturer's suggestion of a capacity, in mWh, at which a warning battery alert should occur. Definitions of warning vary from manufacturer to manufacturer. In general, a warning state will occur before a low state, but you should not assume that it always will. To reduce risk of data loss, this value is usually used as the default setting for the low battery alarm.</summary>
   </member>
 </doc>

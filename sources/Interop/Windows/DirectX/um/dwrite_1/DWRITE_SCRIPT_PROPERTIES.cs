@@ -33,7 +33,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
     public uint restrictCaretToClusters
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -50,7 +50,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
     public uint usesWordDividers
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 1) & 0x1u;
         }
@@ -67,7 +67,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
     public uint isDiscreteWriting
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 2) & 0x1u;
         }
@@ -84,7 +84,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
     public uint isBlockWriting
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 3) & 0x1u;
         }
@@ -101,7 +101,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
     public uint isDistributedWithinCluster
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 4) & 0x1u;
         }
@@ -118,7 +118,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
     public uint isConnectedWriting
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 5) & 0x1u;
         }
@@ -135,7 +135,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
     public uint isCursiveWriting
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 6) & 0x1u;
         }
@@ -152,7 +152,7 @@ public partial struct DWRITE_SCRIPT_PROPERTIES
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 7) & 0x1FFFFFFu;
         }

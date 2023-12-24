@@ -16,5 +16,5 @@ public unsafe partial struct LSA_UNICODE_STRING
 
     /// <include file='LSA_UNICODE_STRING.xml' path='doc/member[@name="LSA_UNICODE_STRING.Buffer"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* Buffer;
+    public char* Buffer;
 }

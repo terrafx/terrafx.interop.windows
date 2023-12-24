@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_PKCS12_PBE_PARAMS">
-    <summary>
-      <para>The <b>CRYPT_PKCS12_PBE_PARAMS</b> structure contains parameters used to create an encryption key, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">initialization vector</a> (IV), or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">Message Authentication Code</a> (MAC) key for a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">PKCS #12</a> password based encryption algorithm.</para>
-    </summary>
-    <remarks>
-      <para>The buffer that contains the salt immediately follows the <b>CRYPT_PKCS12_PBE_PARAMS</b> structure.</para>
-      <para>The <see cref="NCryptExportKey" /> and <see cref="NCryptImportKey" /> functions consume the <b>CRYPT_PKCS12_PBE_PARAMS</b> structure as an <see cref="NCryptBuffer" /> structure in the <i>pParameterList</i> parameter.</para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">PKCS #12</a> standard recommends a value of 1024 or greater for the <b>iIterations</b> member.</para>
-    </remarks>
+    <summary>The <b>CRYPT_PKCS12_PBE_PARAMS</b> structure contains parameters used to create an encryption key, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/i-gly">initialization vector</a> (IV), or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">Message Authentication Code</a> (MAC) key for a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">PKCS #12</a> password based encryption algorithm.</summary>
   </member>
   <member name="CRYPT_PKCS12_PBE_PARAMS.iIterations">
-    <summary>
-      <para>An integer that specifies the number of hashes of the password and salt that are used to create the key.</para>
-    </summary>
+    <summary>An integer that specifies the number of hashes of the password and salt that are used to create the key.</summary>
   </member>
   <member name="CRYPT_PKCS12_PBE_PARAMS.cbSalt">
-    <summary>
-      <para>An integer that specifies the size, in bytes, of the salt used to create the key.</para>
-    </summary>
+    <summary>An integer that specifies the size, in bytes, of the salt used to create the key.</summary>
   </member>
 </doc>

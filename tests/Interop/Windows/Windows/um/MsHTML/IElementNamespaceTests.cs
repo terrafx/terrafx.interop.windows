@@ -19,32 +19,4 @@ public static unsafe partial class IElementNamespaceTests
     {
         Assert.That(typeof(IElementNamespace).GUID, Is.EqualTo(IID_IElementNamespace));
     }
-
-    /// <summary>Validates that the <see cref="IElementNamespace" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IElementNamespace>(), Is.EqualTo(sizeof(IElementNamespace)));
-    }
-
-    /// <summary>Validates that the <see cref="IElementNamespace" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IElementNamespace).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IElementNamespace" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IElementNamespace), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IElementNamespace), Is.EqualTo(4));
-        }
-    }
 }

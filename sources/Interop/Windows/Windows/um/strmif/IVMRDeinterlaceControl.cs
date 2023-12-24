@@ -25,7 +25,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, uint>)(lpVtbl[1]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, uint>)(lpVtbl[1]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, uint>)(lpVtbl[2]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, uint>)(lpVtbl[2]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRDeinterlaceControl.xml' path='doc/member[@name="IVMRDeinterlaceControl.GetNumberOfDeinterlaceModes"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [VtblIndex(3)]
     public HRESULT GetNumberOfDeinterlaceModes(VMRVideoDesc* lpVideoDescription, [NativeTypeName("LPDWORD")] uint* lpdwNumDeinterlaceModes, [NativeTypeName("LPGUID")] Guid* lpDeinterlaceModes)
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, VMRVideoDesc*, uint*, Guid*, int>)(lpVtbl[3]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), lpVideoDescription, lpdwNumDeinterlaceModes, lpDeinterlaceModes);
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, VMRVideoDesc*, uint*, Guid*, int>)(lpVtbl[3]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), lpVideoDescription, lpdwNumDeinterlaceModes, lpDeinterlaceModes);
     }
 
     /// <include file='IVMRDeinterlaceControl.xml' path='doc/member[@name="IVMRDeinterlaceControl.GetDeinterlaceModeCaps"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [VtblIndex(4)]
     public HRESULT GetDeinterlaceModeCaps([NativeTypeName("LPGUID")] Guid* lpDeinterlaceMode, VMRVideoDesc* lpVideoDescription, VMRDeinterlaceCaps* lpDeinterlaceCaps)
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, Guid*, VMRVideoDesc*, VMRDeinterlaceCaps*, int>)(lpVtbl[4]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), lpDeinterlaceMode, lpVideoDescription, lpDeinterlaceCaps);
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, Guid*, VMRVideoDesc*, VMRDeinterlaceCaps*, int>)(lpVtbl[4]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), lpDeinterlaceMode, lpVideoDescription, lpDeinterlaceCaps);
     }
 
     /// <include file='IVMRDeinterlaceControl.xml' path='doc/member[@name="IVMRDeinterlaceControl.GetDeinterlaceMode"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [VtblIndex(5)]
     public HRESULT GetDeinterlaceMode([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("LPGUID")] Guid* lpDeinterlaceMode)
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int>)(lpVtbl[5]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), dwStreamID, lpDeinterlaceMode);
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, uint, Guid*, int>)(lpVtbl[5]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), dwStreamID, lpDeinterlaceMode);
     }
 
     /// <include file='IVMRDeinterlaceControl.xml' path='doc/member[@name="IVMRDeinterlaceControl.SetDeinterlaceMode"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [VtblIndex(6)]
     public HRESULT SetDeinterlaceMode([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("LPGUID")] Guid* lpDeinterlaceMode)
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int>)(lpVtbl[6]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), dwStreamID, lpDeinterlaceMode);
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, uint, Guid*, int>)(lpVtbl[6]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), dwStreamID, lpDeinterlaceMode);
     }
 
     /// <include file='IVMRDeinterlaceControl.xml' path='doc/member[@name="IVMRDeinterlaceControl.GetDeinterlacePrefs"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [VtblIndex(7)]
     public HRESULT GetDeinterlacePrefs([NativeTypeName("LPDWORD")] uint* lpdwDeinterlacePrefs)
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, uint*, int>)(lpVtbl[7]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), lpdwDeinterlacePrefs);
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, uint*, int>)(lpVtbl[7]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), lpdwDeinterlacePrefs);
     }
 
     /// <include file='IVMRDeinterlaceControl.xml' path='doc/member[@name="IVMRDeinterlaceControl.SetDeinterlacePrefs"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [VtblIndex(8)]
     public HRESULT SetDeinterlacePrefs([NativeTypeName("DWORD")] uint dwDeinterlacePrefs)
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, uint, int>)(lpVtbl[8]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), dwDeinterlacePrefs);
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, uint, int>)(lpVtbl[8]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), dwDeinterlacePrefs);
     }
 
     /// <include file='IVMRDeinterlaceControl.xml' path='doc/member[@name="IVMRDeinterlaceControl.GetActualDeinterlaceMode"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
     [VtblIndex(9)]
     public HRESULT GetActualDeinterlaceMode([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("LPGUID")] Guid* lpDeinterlaceMode)
     {
-        return ((delegate* unmanaged<IVMRDeinterlaceControl*, uint, Guid*, int>)(lpVtbl[9]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), dwStreamID, lpDeinterlaceMode);
+        return ((delegate* unmanaged[MemberFunction]<IVMRDeinterlaceControl*, uint, Guid*, int>)(lpVtbl[9]))((IVMRDeinterlaceControl*)Unsafe.AsPointer(ref this), dwStreamID, lpDeinterlaceMode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IVMRDeinterlaceControl : IVMRDeinterlaceControl.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (VMRVideoDesc *, LPDWORD, LPGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VMRVideoDesc*, uint*, Guid*, int> GetNumberOfDeinterlaceModes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VMRVideoDesc*, uint*, Guid*, int> GetNumberOfDeinterlaceModes;
 
         [NativeTypeName("HRESULT (LPGUID, VMRVideoDesc *, VMRDeinterlaceCaps *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, VMRVideoDesc*, VMRDeinterlaceCaps*, int> GetDeinterlaceModeCaps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, VMRVideoDesc*, VMRDeinterlaceCaps*, int> GetDeinterlaceModeCaps;
 
         [NativeTypeName("HRESULT (DWORD, LPGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetDeinterlaceMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> GetDeinterlaceMode;
 
         [NativeTypeName("HRESULT (DWORD, LPGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> SetDeinterlaceMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> SetDeinterlaceMode;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetDeinterlacePrefs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetDeinterlacePrefs;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetDeinterlacePrefs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetDeinterlacePrefs;
 
         [NativeTypeName("HRESULT (DWORD, LPGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> GetActualDeinterlaceMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> GetActualDeinterlaceMode;
     }
 }

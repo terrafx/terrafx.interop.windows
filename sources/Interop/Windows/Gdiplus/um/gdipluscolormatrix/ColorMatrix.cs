@@ -3,12 +3,21 @@
 // Ported from um/gdipluscolormatrix.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='ColorMatrix.xml' path='doc/member[@name="ColorMatrix"]/*' />
-public unsafe partial struct ColorMatrix
+public partial struct ColorMatrix
 {
     /// <include file='ColorMatrix.xml' path='doc/member[@name="ColorMatrix.m"]/*' />
-    [NativeTypeName("Gdiplus::REAL[5][5]")]
-    public fixed float m[5 * 5];
+    [NativeTypeName("REAL[5][5]")]
+    public _m_e__FixedBuffer m;
+
+    /// <include file='_m_e__FixedBuffer.xml' path='doc/member[@name="_m_e__FixedBuffer"]/*' />
+    [InlineArray(5 * 5)]
+    public partial struct _m_e__FixedBuffer
+    {
+        public float e0_0;
+    }
 }

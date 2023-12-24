@@ -19,32 +19,4 @@ public static unsafe partial class ICorrelationVectorInformationTests
     {
         Assert.That(typeof(ICorrelationVectorInformation).GUID, Is.EqualTo(IID_ICorrelationVectorInformation));
     }
-
-    /// <summary>Validates that the <see cref="ICorrelationVectorInformation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICorrelationVectorInformation>(), Is.EqualTo(sizeof(ICorrelationVectorInformation)));
-    }
-
-    /// <summary>Validates that the <see cref="ICorrelationVectorInformation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICorrelationVectorInformation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICorrelationVectorInformation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICorrelationVectorInformation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICorrelationVectorInformation), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSourceReaderEx.AddTransformForStream">
-    <summary>
-      <para>Adds a transform, such as an audio or video effect, to a stream.</para>
-    </summary>
+    <summary>Adds a transform, such as an audio or video effect, to a stream.</summary>
     <param name="dwStreamIndex">
       <para>The stream to configure. The value can be any of the following.</para>
       <list type="table">
@@ -13,52 +11,50 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
+          <description>The first audio stream.</description>
+        </listheader>
       </list>
     </param>
     <param name="pTransformOrActivate">
@@ -79,79 +75,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDMEDIATYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The transform does not support the current stream format, and no conversion was possible. See Remarks for more information.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDMEDIATYPE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid request.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The transform does not support the current stream format, and no conversion was possible. See Remarks for more information.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDSTREAMNUMBER</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid request.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDSTREAMNUMBER</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwStreamIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The <i>dwStreamIndex</i> parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method attempts to add the transform at the end of the current processing chain.</para>
-      <para>To use this method, make the following sequence of calls:</para>
-      <list type="number">
-        <item>
-          <description>Call <see cref="IMFSourceReader.SetCurrentMediaType" /> to set the output type that you want for the stream. In this step, you can specify a media type that contains only the major type and subtype GUIDs. For example, to get 32-bit RGB output, set a major type of <b>MFMediaType_Video</b> and a subtype of <b>MFVideoFormat_RGB32</b>. (For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Media Type GUIDs</a>.)</description>
-        </item>
-        <item>
-          <description>Call <b>AddTransformForStream</b>. If the Source Reader successfully connects the transform, it sets the output type on the transform.</description>
-        </item>
-        <item>
-          <description>Call <see cref="IMFSourceReader.GetCurrentMediaType" /> to get the output type from the transform. This method returns a media type with a complete format description.</description>
-        </item>
-        <item>
-          <description>Optionally, if you want to modify the output type, call <see cref="IMFSourceReader.SetCurrentMediaType" /> again to set a complete media type on the transform.</description>
-        </item>
-      </list>
-      <para>The <b>AddTransformForStream</b> method will not insert a decoder into the processing chain. If the native stream format is encoded, and the transform requires an uncompressed format, call <see cref="SetCurrentMediaType" /> to set the uncompressed format (step 1 in the previous list). However, the method will insert a video processor to convert between RGB and YUV formats, if required.</para>
-      <para>The method fails if the source reader was configured with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-readwrite-disable-converters">MF_READWRITE_DISABLE_CONVERTERS</a> or <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-source-reader-enable-video-processing">MF_SOURCE_READER_ENABLE_VIDEO_PROCESSING</a> attributes.</para>
-      <para>In asynchronous mode, the method also fails if a sample request is pending. In that case, wait for the <see cref="OnReadSample" /> callback to be invoked before calling the method. For more information about using the Source Reader in asynchronous mode, see <see cref="IMFSourceReader.ReadSample" />.</para>
-      <para>You can add a transform at any time during streaming. However, the method does not flush or drain the pipeline before inserting the transform. Therefore, if data is already in the pipeline, the next sample is not guaranteed to have the transform applied.</para>
-    </remarks>
-    <seealso cref="IMFSourceReaderEx" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
   </member>
   <member name="IMFSourceReaderEx.GetTransformForStream">
-    <summary>
-      <para>Gets a pointer to a Media Foundation transform (MFT) for a specified stream.</para>
-    </summary>
+    <summary>Gets a pointer to a Media Foundation transform (MFT) for a specified stream.</summary>
     <param name="dwStreamIndex">
       <para>The stream to query for the MFT. The value can be any of the following.</para>
       <list type="table">
@@ -159,63 +137,55 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
+          <description>The first audio stream.</description>
+        </listheader>
       </list>
     </param>
-    <param name="dwTransformIndex">
-      <para>The zero-based index of the MFT to retrieve.</para>
-    </param>
-    <param name="pGuidCategory">
-      <para>Receives a GUID that specifies the category of the MFT. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-category">MFT_CATEGORY</a>.</para>
-    </param>
-    <param name="ppTransform">
-      <para>Receives a pointer to the <see cref="IMFTransform" /> interface of the MFT. The caller must release the interface.</para>
-    </param>
+    <param name="dwTransformIndex">The zero-based index of the MFT to retrieve.</param>
+    <param name="pGuidCategory">Receives a GUID that specifies the category of the MFT. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-category">MFT_CATEGORY</a>.</param>
+    <param name="ppTransform">Receives a pointer to the <see cref="IMFTransform" /> interface of the MFT. The caller must release the interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -223,93 +193,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwTransformIndex</i> parameter is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDSTREAMNUMBER</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>dwTransformIndex</i> parameter is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDSTREAMNUMBER</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwStreamIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The <i>dwStreamIndex</i> parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You can use this method to configure an MFT after it is inserted into the processing chain. Do not use the pointer returned in <i>ppTransform</i> to set media types on the MFT or to process data. In particular, calling any of the following <see cref="IMFTransform" /> methods could have unexpected results.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="AddInputStreams" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="DeleteInputStream" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ProcessEvent" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ProcessInput" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ProcessMessage" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ProcessOutput" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="SetInputType" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="SetOutputType" />
-          </description>
-        </item>
-      </list>
-      <para>If a decoder is present, it appears at index position zero.</para>
-      <para>To avoid losing any data, you should drain the source reader before calling this method. For more information, see <a href="https://docs.microsoft.com//windows/desktop/medfound/processing-media-data-with-the-source-reader">Draining the Data Pipeline</a>.</para>
-    </remarks>
-    <seealso cref="IMFSourceReaderEx" />
   </member>
   <member name="IMFSourceReaderEx.RemoveAllTransformsForStream">
-    <summary>
-      <para>Removes all of the Media Foundation transforms (MFTs) for a specified stream, with the exception of the decoder.</para>
-    </summary>
+    <summary>Removes all of the Media Foundation transforms (MFTs) for a specified stream, with the exception of the decoder.</summary>
     <param name="dwStreamIndex">
       <para>The stream for which to remove the MFTs. The value can be any of the following.</para>
       <list type="table">
@@ -317,52 +243,50 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0–0xFFFFFFFB</para>
-          </description>
-          <description>
-            <para>The zero-based index of a stream.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>0–0xFFFFFFFB</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The zero-based index of a stream.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_VIDEO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFC</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFC</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first video stream.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first video stream.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>
                     <b>MF_SOURCE_READER_FIRST_AUDIO_STREAM</b>
                   </b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFD</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFD</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first audio stream.</para>
-          </description>
-        </item>
+          <description>The first audio stream.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -372,54 +296,50 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid request.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDSTREAMNUMBER</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid request.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDSTREAMNUMBER</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwStreamIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The <i>dwStreamIndex</i> parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Calling this method can reset the current output type for the stream. To get the new output type, call <see cref="IMFSourceReader.GetCurrentMediaType" />.</para>
-      <para>In asynchronous mode, this method fails if a sample request is pending. In that case, wait for the <see cref="OnReadSample" /> callback to be invoked before calling the method. For more information about using the Source Reader in asynchronous mode, see <see cref="IMFSourceReader.ReadSample" />.</para>
-    </remarks>
-    <seealso cref="IMFSourceReaderEx" />
   </member>
   <member name="IMFSourceReaderEx.SetNativeMediaType">
-    <summary>
-      <para>Sets the native media type for a stream on the media source.</para>
-    </summary>
-    <param name="dwStreamIndex"></param>
-    <param name="pMediaType">
-      <para>A pointer to the <see cref="IMFMediaType" /> interface of the media type.</para>
-    </param>
+    <summary>Sets the native media type for a stream on the media source.</summary>
+    <param name="pMediaType">A pointer to the <see cref="IMFMediaType" /> interface of the media type.</param>
     <param name="pdwStreamFlags">
       <para>Receives a bitwise <b>OR</b> of zero or more of the following flags.</para>
       <list type="table">
@@ -427,22 +347,30 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MF_SOURCE_READERF_ALLEFFECTSREMOVED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_SOURCE_READERF_ALLEFFECTSREMOVED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>All effects were removed from the stream.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>All effects were removed from the stream.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_SOURCE_READERF_CURRENTMEDIATYPECHANGED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>MF_SOURCE_READERF_CURRENTMEDIATYPECHANGED</b>
-          </description>
-          <description>
-            <para>The current output type changed.</para>
-          </description>
-        </item>
+          <description>The current output type changed.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -452,55 +380,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid request.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>
+                    <b>MF_E_INVALIDSTREAMNUMBER</b>
+                  </b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid request.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>
-                <b>MF_E_INVALIDSTREAMNUMBER</b>
-              </b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwStreamIndex</i> parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The <i>dwStreamIndex</i> parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method sets the output type that is produced by the media source. Unlike the <see cref="IMFSourceReader.SetCurrentMediaType" /> method, this method does not insert any decoders, video processors, or other transforms. The media source must support the specified media type natively. To get a list of supported types from the media source, call <see cref="IMFSourceReader.GetNativeMediaType" />.</para>
-      <para>In asynchronous mode, this method fails if a sample request is pending. In that case, wait for the <see cref="OnReadSample" /> callback to be invoked before calling the method. For more information about using the Source Reader in asynchronous mode, see <see cref="IMFSourceReader.ReadSample" />.</para>
-      <para>This method can trigger a change in the output format for the stream. If so, the <b>MF_SOURCE_READERF_CURRENTMEDIATYPECHANGED</b> flag is returned in the  <i>pdwStreamFlags</i> parameter. The method might also cause the Source Reader to remove any effects that were added by the <see cref="IMFSourceReaderEx.AddTransformForStream" /> method. If this occurs, the  <b>MF_SOURCE_READERF_ALLEFFECTSREMOVED</b> flag is returned in <i>pdwStreamFlags</i>.</para>
-      <para>This method is useful with audio and video capture devices, because a device might support several output formats. This method enables the application to choose the device format before decoders and other transforms are added.</para>
-    </remarks>
-    <seealso cref="IMFSourceReaderEx" />
   </member>
   <member name="IMFSourceReaderEx">
     <summary>
       <para>Extends the <see cref="IMFSourceReader" /> interface.</para>
       <para>The <a href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</a> implements this interface in Windows 8. To get a pointer to this interface, call <see cref="QueryInterface" /> on the Source Reader.</para>
     </summary>
-    <seealso cref="IMFSourceReader" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
   </member>
 </doc>

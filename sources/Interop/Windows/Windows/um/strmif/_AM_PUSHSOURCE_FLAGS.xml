@@ -4,34 +4,21 @@
 <doc>
   <member name="_AM_PUSHSOURCE_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Indicates the behavior of a live source filter.</para>
     </summary>
-    <remarks>
-      <para>If no flags are set (the default case), the source filter is assumed to be live and not to perform any rate matching on its own.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCECAPS_INTERNAL_RM">
-    <summary>
-      <para>The filter uses its own rate-matching mechanism; the renderer should therefore not attempt to match rates with this filter.</para>
-    </summary>
+    <summary>The filter uses its own rate-matching mechanism; the renderer should therefore not attempt to match rates with this filter.</summary>
   </member>
   <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCECAPS_NOT_LIVE">
-    <summary>
-      <para>The filter is not live. Do not treat it as a live source, even though it exposes the <see cref="IAMPushSource" /> interface.</para>
-    </summary>
+    <summary>The filter is not live. Do not treat it as a live source, even though it exposes the <see cref="IAMPushSource" /> interface.</summary>
   </member>
   <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCECAPS_PRIVATE_CLOCK">
-    <summary>
-      <para>The filter time stamps the samples using a private clock. The clock is not available to the rest of the graph through <see cref="IReferenceClock" />.</para>
-    </summary>
+    <summary>The filter time stamps the samples using a private clock. The clock is not available to the rest of the graph through <see cref="IReferenceClock" />.</summary>
   </member>
   <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCEREQS_USE_STREAM_CLOCK">
-    <summary>
-      <para>Reserved; do not use.</para>
-    </summary>
+    <summary>Reserved; do not use.</summary>
   </member>
-  <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCEREQS_USE_CLOCK_CHAIN">
-    <summary></summary>
-  </member>
+  <member name="_AM_PUSHSOURCE_FLAGS.AM_PUSHSOURCEREQS_USE_CLOCK_CHAIN"></member>
 </doc>

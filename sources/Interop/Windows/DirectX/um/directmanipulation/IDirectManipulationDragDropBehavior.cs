@@ -28,7 +28,7 @@ public unsafe partial struct IDirectManipulationDragDropBehavior : IDirectManipu
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectManipulationDragDropBehavior*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDragDropBehavior*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDirectManipulationDragDropBehavior : IDirectManipu
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectManipulationDragDropBehavior*, uint>)(lpVtbl[1]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDragDropBehavior*, uint>)(lpVtbl[1]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDirectManipulationDragDropBehavior : IDirectManipu
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectManipulationDragDropBehavior*, uint>)(lpVtbl[2]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDragDropBehavior*, uint>)(lpVtbl[2]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectManipulationDragDropBehavior.xml' path='doc/member[@name="IDirectManipulationDragDropBehavior.SetConfiguration"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDirectManipulationDragDropBehavior : IDirectManipu
     [VtblIndex(3)]
     public HRESULT SetConfiguration(DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION configuration)
     {
-        return ((delegate* unmanaged<IDirectManipulationDragDropBehavior*, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION, int>)(lpVtbl[3]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this), configuration);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDragDropBehavior*, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION, int>)(lpVtbl[3]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this), configuration);
     }
 
     /// <include file='IDirectManipulationDragDropBehavior.xml' path='doc/member[@name="IDirectManipulationDragDropBehavior.GetStatus"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDirectManipulationDragDropBehavior : IDirectManipu
     [VtblIndex(4)]
     public HRESULT GetStatus(DIRECTMANIPULATION_DRAG_DROP_STATUS* status)
     {
-        return ((delegate* unmanaged<IDirectManipulationDragDropBehavior*, DIRECTMANIPULATION_DRAG_DROP_STATUS*, int>)(lpVtbl[4]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this), status);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationDragDropBehavior*, DIRECTMANIPULATION_DRAG_DROP_STATUS*, int>)(lpVtbl[4]))((IDirectManipulationDragDropBehavior*)Unsafe.AsPointer(ref this), status);
     }
 
     public interface Interface : IUnknown.Interface
@@ -78,18 +78,18 @@ public unsafe partial struct IDirectManipulationDragDropBehavior : IDirectManipu
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION, int> SetConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_DRAG_DROP_CONFIGURATION, int> SetConfiguration;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_DRAG_DROP_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_DRAG_DROP_STATUS*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_DRAG_DROP_STATUS*, int> GetStatus;
     }
 }

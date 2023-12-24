@@ -16,7 +16,7 @@ public static partial class Windows
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x27, 0xA4, 0xFA, 0x3E,
                 0x2F, 0x27,
                 0xD2, 0x11,
@@ -28,7 +28,7 @@ public static partial class Windows
                 0x7A,
                 0x77,
                 0x82
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

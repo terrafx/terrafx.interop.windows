@@ -3,10 +3,12 @@
 // Ported from shared/hidpi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='HIDP_CAPS.xml' path='doc/member[@name="HIDP_CAPS"]/*' />
-public unsafe partial struct HIDP_CAPS
+public partial struct HIDP_CAPS
 {
     /// <include file='HIDP_CAPS.xml' path='doc/member[@name="HIDP_CAPS.Usage"]/*' />
     [NativeTypeName("USAGE")]
@@ -27,7 +29,7 @@ public unsafe partial struct HIDP_CAPS
 
     /// <include file='HIDP_CAPS.xml' path='doc/member[@name="HIDP_CAPS.Reserved"]/*' />
     [NativeTypeName("USHORT[17]")]
-    public fixed ushort Reserved[17];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='HIDP_CAPS.xml' path='doc/member[@name="HIDP_CAPS.NumberLinkCollectionNodes"]/*' />
     public ushort NumberLinkCollectionNodes;
@@ -58,4 +60,11 @@ public unsafe partial struct HIDP_CAPS
 
     /// <include file='HIDP_CAPS.xml' path='doc/member[@name="HIDP_CAPS.NumberFeatureDataIndices"]/*' />
     public ushort NumberFeatureDataIndices;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(17)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public ushort e0;
+    }
 }

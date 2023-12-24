@@ -3,53 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_CONTEXT_TYPE">
-    <summary>
-      <para>Specifies the context in which a query occurs.</para>
-    </summary>
-    <remarks>
-      <para>This enum is used by the following:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="D3D11_QUERY_DESC1" /> structure
-</description>
-        </item>
-        <item>
-          <description>A CD3D11_QUERY_DESC1 constructor.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="ID3D11DeviceContext3.Flush1" /> method
-</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
-    <seealso cref="D3D11_QUERY_DESC1" />
+    <summary>Specifies the context in which a query occurs.</summary>
   </member>
   <member name="D3D11_CONTEXT_TYPE.D3D11_CONTEXT_TYPE_ALL">
-    <summary>
-      <para>The query can occur in all contexts.</para>
-    </summary>
+    <summary>The query can occur in all contexts.</summary>
   </member>
   <member name="D3D11_CONTEXT_TYPE.D3D11_CONTEXT_TYPE_3D">
-    <summary>
-      <para>The query occurs in the context of a 3D command queue.</para>
-    </summary>
+    <summary>The query occurs in the context of a 3D command queue.</summary>
   </member>
   <member name="D3D11_CONTEXT_TYPE.D3D11_CONTEXT_TYPE_COMPUTE">
-    <summary>
-      <para>The query occurs in the context of a 3D compute queue.</para>
-    </summary>
+    <summary>The query occurs in the context of a 3D compute queue.</summary>
   </member>
   <member name="D3D11_CONTEXT_TYPE.D3D11_CONTEXT_TYPE_COPY">
-    <summary>
-      <para>The query occurs in the context of a 3D copy queue.</para>
-    </summary>
+    <summary>The query occurs in the context of a 3D copy queue.</summary>
   </member>
   <member name="D3D11_CONTEXT_TYPE.D3D11_CONTEXT_TYPE_VIDEO">
-    <summary>
-      <para>The query occurs in the context of video.</para>
-    </summary>
+    <summary>The query occurs in the context of video.</summary>
   </member>
 </doc>

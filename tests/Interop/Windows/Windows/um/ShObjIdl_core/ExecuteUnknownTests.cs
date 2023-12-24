@@ -19,25 +19,4 @@ public static unsafe partial class ExecuteUnknownTests
     {
         Assert.That(typeof(ExecuteUnknown).GUID, Is.EqualTo(IID_ExecuteUnknown));
     }
-
-    /// <summary>Validates that the <see cref="ExecuteUnknown" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ExecuteUnknown>(), Is.EqualTo(sizeof(ExecuteUnknown)));
-    }
-
-    /// <summary>Validates that the <see cref="ExecuteUnknown" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ExecuteUnknown).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ExecuteUnknown" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ExecuteUnknown), Is.EqualTo(1));
-    }
 }

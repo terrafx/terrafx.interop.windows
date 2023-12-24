@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAGS">
+    <summary>Specifies the usage of the associated video extension command parameter.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAGS.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAG_NONE">
+    <summary>None. Set for simple data type parameters.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAGS.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAG_READ">
+    <summary>The resource parameter is read. This flag is for <b>ID3D12Resource</b> only and is not valid for simple data type parameters.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAGS.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_FLAG_WRITE">
+    <summary>The resource parameter is written. This flag is for <b>ID3D12Resource</b> only and is not valid for simple data type parameters.</summary>
+  </member>
+</doc>

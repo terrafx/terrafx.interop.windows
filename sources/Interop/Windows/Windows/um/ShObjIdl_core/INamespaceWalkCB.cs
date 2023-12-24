@@ -25,7 +25,7 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INamespaceWalkCB*, Guid*, void**, int>)(lpVtbl[0]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalkCB*, Guid*, void**, int>)(lpVtbl[0]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INamespaceWalkCB*, uint>)(lpVtbl[1]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalkCB*, uint>)(lpVtbl[1]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INamespaceWalkCB*, uint>)(lpVtbl[2]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalkCB*, uint>)(lpVtbl[2]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INamespaceWalkCB.xml' path='doc/member[@name="INamespaceWalkCB.FoundItem"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
     [VtblIndex(3)]
     public HRESULT FoundItem(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
     {
-        return ((delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[3]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
     }
 
     /// <include file='INamespaceWalkCB.xml' path='doc/member[@name="INamespaceWalkCB.EnterFolder"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
     [VtblIndex(4)]
     public HRESULT EnterFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
     {
-        return ((delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[4]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[4]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
     }
 
     /// <include file='INamespaceWalkCB.xml' path='doc/member[@name="INamespaceWalkCB.LeaveFolder"]/*' />
@@ -67,15 +67,15 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
     [VtblIndex(5)]
     public HRESULT LeaveFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl)
     {
-        return ((delegate* unmanaged<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[5]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalkCB*, IShellFolder*, ITEMIDLIST*, int>)(lpVtbl[5]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), psf, pidl);
     }
 
     /// <include file='INamespaceWalkCB.xml' path='doc/member[@name="INamespaceWalkCB.InitializeProgressDialog"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel)
+    public HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] char** ppszTitle, [NativeTypeName("LPWSTR *")] char** ppszCancel)
     {
-        return ((delegate* unmanaged<INamespaceWalkCB*, ushort**, ushort**, int>)(lpVtbl[6]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalkCB*, char**, char**, int>)(lpVtbl[6]))((INamespaceWalkCB*)Unsafe.AsPointer(ref this), ppszTitle, ppszCancel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -90,31 +90,31 @@ public unsafe partial struct INamespaceWalkCB : INamespaceWalkCB.Interface, INat
         HRESULT LeaveFolder(IShellFolder* psf, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl);
 
         [VtblIndex(6)]
-        HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] ushort** ppszTitle, [NativeTypeName("LPWSTR *")] ushort** ppszCancel);
+        HRESULT InitializeProgressDialog([NativeTypeName("LPWSTR *")] char** ppszTitle, [NativeTypeName("LPWSTR *")] char** ppszCancel);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, int> FoundItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellFolder*, ITEMIDLIST*, int> FoundItem;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, int> EnterFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellFolder*, ITEMIDLIST*, int> EnterFolder;
 
         [NativeTypeName("HRESULT (IShellFolder *, LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellFolder*, ITEMIDLIST*, int> LeaveFolder;
 
         [NativeTypeName("HRESULT (LPWSTR *, LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, ushort**, int> InitializeProgressDialog;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, char**, int> InitializeProgressDialog;
     }
 }

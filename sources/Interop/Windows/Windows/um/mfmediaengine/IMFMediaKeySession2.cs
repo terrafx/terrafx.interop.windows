@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, uint>)(lpVtbl[1]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, uint>)(lpVtbl[1]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, uint>)(lpVtbl[2]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, uint>)(lpVtbl[2]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFMediaKeySession.GetError" />
@@ -51,23 +51,23 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [VtblIndex(3)]
     public HRESULT GetError(ushort* code, [NativeTypeName("DWORD *")] uint* systemCode)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, ushort*, uint*, int>)(lpVtbl[3]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), code, systemCode);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, ushort*, uint*, int>)(lpVtbl[3]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), code, systemCode);
     }
 
     /// <inheritdoc cref="IMFMediaKeySession.get_KeySystem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** keySystem)
+    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** keySystem)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, ushort**, int>)(lpVtbl[4]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), keySystem);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, char**, int>)(lpVtbl[4]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), keySystem);
     }
 
     /// <inheritdoc cref="IMFMediaKeySession.get_SessionId" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT get_SessionId([NativeTypeName("BSTR *")] ushort** sessionId)
+    public HRESULT get_SessionId([NativeTypeName("BSTR *")] char** sessionId)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, ushort**, int>)(lpVtbl[5]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), sessionId);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, char**, int>)(lpVtbl[5]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), sessionId);
     }
 
     /// <inheritdoc cref="IMFMediaKeySession.Update" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [VtblIndex(6)]
     public HRESULT Update([NativeTypeName("const BYTE *")] byte* key, [NativeTypeName("DWORD")] uint cb)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, byte*, uint, int>)(lpVtbl[6]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), key, cb);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, byte*, uint, int>)(lpVtbl[6]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), key, cb);
     }
 
     /// <inheritdoc cref="IMFMediaKeySession.Close" />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [VtblIndex(7)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, int>)(lpVtbl[7]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, int>)(lpVtbl[7]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaKeySession2.xml' path='doc/member[@name="IMFMediaKeySession2.get_KeyStatuses"]/*' />
@@ -91,23 +91,23 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [VtblIndex(8)]
     public HRESULT get_KeyStatuses(MFMediaKeyStatus** pKeyStatusesArray, uint* puSize)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, MFMediaKeyStatus**, uint*, int>)(lpVtbl[8]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), pKeyStatusesArray, puSize);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, MFMediaKeyStatus**, uint*, int>)(lpVtbl[8]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), pKeyStatusesArray, puSize);
     }
 
     /// <include file='IMFMediaKeySession2.xml' path='doc/member[@name="IMFMediaKeySession2.Load"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT Load([NativeTypeName("BSTR")] ushort* bstrSessionId, BOOL* pfLoaded)
+    public HRESULT Load([NativeTypeName("BSTR")] char* bstrSessionId, BOOL* pfLoaded)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, ushort*, BOOL*, int>)(lpVtbl[9]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), bstrSessionId, pfLoaded);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, char*, BOOL*, int>)(lpVtbl[9]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), bstrSessionId, pfLoaded);
     }
 
     /// <include file='IMFMediaKeySession2.xml' path='doc/member[@name="IMFMediaKeySession2.GenerateRequest"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GenerateRequest([NativeTypeName("BSTR")] ushort* initDataType, [NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb)
+    public HRESULT GenerateRequest([NativeTypeName("BSTR")] char* initDataType, [NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, ushort*, byte*, uint, int>)(lpVtbl[10]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), initDataType, pbInitData, cb);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, char*, byte*, uint, int>)(lpVtbl[10]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), initDataType, pbInitData, cb);
     }
 
     /// <include file='IMFMediaKeySession2.xml' path='doc/member[@name="IMFMediaKeySession2.get_Expiration"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [VtblIndex(11)]
     public HRESULT get_Expiration(double* dblExpiration)
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, double*, int>)(lpVtbl[11]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), dblExpiration);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, double*, int>)(lpVtbl[11]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this), dblExpiration);
     }
 
     /// <include file='IMFMediaKeySession2.xml' path='doc/member[@name="IMFMediaKeySession2.Remove"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [VtblIndex(12)]
     public HRESULT Remove()
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, int>)(lpVtbl[12]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, int>)(lpVtbl[12]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaKeySession2.xml' path='doc/member[@name="IMFMediaKeySession2.Shutdown"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
     [VtblIndex(13)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFMediaKeySession2*, int>)(lpVtbl[13]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySession2*, int>)(lpVtbl[13]))((IMFMediaKeySession2*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IMFMediaKeySession.Interface
@@ -140,10 +140,10 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
         HRESULT get_KeyStatuses(MFMediaKeyStatus** pKeyStatusesArray, uint* puSize);
 
         [VtblIndex(9)]
-        HRESULT Load([NativeTypeName("BSTR")] ushort* bstrSessionId, BOOL* pfLoaded);
+        HRESULT Load([NativeTypeName("BSTR")] char* bstrSessionId, BOOL* pfLoaded);
 
         [VtblIndex(10)]
-        HRESULT GenerateRequest([NativeTypeName("BSTR")] ushort* initDataType, [NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb);
+        HRESULT GenerateRequest([NativeTypeName("BSTR")] char* initDataType, [NativeTypeName("const BYTE *")] byte* pbInitData, [NativeTypeName("DWORD")] uint cb);
 
         [VtblIndex(11)]
         HRESULT get_Expiration(double* dblExpiration);
@@ -159,45 +159,45 @@ public unsafe partial struct IMFMediaKeySession2 : IMFMediaKeySession2.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (USHORT *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, int> GetError;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, uint*, int> GetError;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_KeySystem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_KeySystem;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_SessionId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_SessionId;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> Update;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> Update;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
 
         [NativeTypeName("HRESULT (MFMediaKeyStatus **, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFMediaKeyStatus**, uint*, int> get_KeyStatuses;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFMediaKeyStatus**, uint*, int> get_KeyStatuses;
 
         [NativeTypeName("HRESULT (BSTR, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, BOOL*, int> Load;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, BOOL*, int> Load;
 
         [NativeTypeName("HRESULT (BSTR, const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, byte*, uint, int> GenerateRequest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, byte*, uint, int> GenerateRequest;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> get_Expiration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> get_Expiration;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Remove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Remove;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
     }
 }

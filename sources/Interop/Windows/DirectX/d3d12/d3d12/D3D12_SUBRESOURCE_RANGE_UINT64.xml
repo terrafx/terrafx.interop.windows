@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SUBRESOURCE_RANGE_UINT64">
+    <summary>Describes a subresource memory range.</summary>
+  </member>
+  <member name="D3D12_SUBRESOURCE_RANGE_UINT64.Subresource">
+    <summary>The index of the subresource.</summary>
+  </member>
+  <member name="D3D12_SUBRESOURCE_RANGE_UINT64.Range">
+    <summary>A memory range within the subresource.</summary>
+  </member>
+</doc>

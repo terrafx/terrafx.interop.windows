@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12FunctionReflection.GetConstantBufferByIndex">
+    <summary>Gets a constant buffer by index for a function.</summary>
+    <param name="BufferIndex">Zero-based index.</param>
+    <returns>A pointer to a <see cref="ID3D12ShaderReflectionConstantBuffer" /> interface that represents the constant buffer.</returns>
+  </member>
+  <member name="ID3D12FunctionReflection.GetConstantBufferByName">
+    <summary>Gets a constant buffer by name for a function.</summary>
+    <param name="Name">The constant-buffer name.</param>
+    <returns>A pointer to a <see cref="ID3D12ShaderReflectionConstantBuffer" /> interface that represents the constant buffer.</returns>
+  </member>
+  <member name="ID3D12FunctionReflection.GetDesc">
+    <summary>Fills the function descriptor structure for the function.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D12_FUNCTION_DESC" /> structure that receives a description of the function.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12FunctionReflection.GetFunctionParameter">
+    <summary>Gets the function parameter reflector.</summary>
+    <param name="ParameterIndex">The zero-based index of the function parameter reflector to retrieve.</param>
+    <returns>A pointer to a <see cref="ID3D12FunctionParameterReflection" /> interface that represents the function parameter reflector.</returns>
+  </member>
+  <member name="ID3D12FunctionReflection.GetResourceBindingDesc">
+    <summary>Gets a description of how a resource is bound to a function.</summary>
+    <param name="ResourceIndex">A zero-based resource index.</param>
+    <param name="pDesc">A pointer to a <see cref="D3D12_SHADER_INPUT_BIND_DESC" /> structure that describes input binding of the resource.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12FunctionReflection.GetResourceBindingDescByName">
+    <summary>Gets a description of how a resource is bound to a function.</summary>
+    <param name="Name">The constant-buffer name of the resource.</param>
+    <param name="pDesc">A pointer to a <see cref="D3D12_SHADER_INPUT_BIND_DESC" /> structure that describes input binding of the resource.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12FunctionReflection.GetVariableByName">
+    <summary>Gets a variable by name.</summary>
+    <param name="Name">A pointer to a string containing the variable name.</param>
+    <returns>Returns a <see cref="ID3D12ShaderReflectionVariable Interface" /> interface.</returns>
+  </member>
+  <member name="ID3D12FunctionReflection">
+    <summary>
+      <para>A function-reflection interface accesses function info.<div><b>Note</b>  This interface is part of the HLSL shader linking technology that you can use on all Direct3D 12 platforms to create precompiled HLSL functions, package them into libraries, and link them into full shaders at run time.</div></para>
+    </summary>
+  </member>
+</doc>

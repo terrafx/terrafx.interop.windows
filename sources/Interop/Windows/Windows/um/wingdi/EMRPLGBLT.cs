@@ -3,10 +3,7 @@
 // Ported from um/wingdi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -94,24 +91,9 @@ public partial struct EMRPLGBLT
     public uint cbBitsMask;
 
     /// <include file='_aptlDest_e__FixedBuffer.xml' path='doc/member[@name="_aptlDest_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
     public partial struct _aptlDest_e__FixedBuffer
     {
         public POINTL e0;
-        public POINTL e1;
-        public POINTL e2;
-
-        [UnscopedRef]
-        public ref POINTL this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<POINTL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FONT_FEATURE_TAG">
-    <summary>
-      <para>A value that indicates the typographic feature of text supplied by the font.</para>
-    </summary>
+    <summary>A value that indicates the typographic feature of text supplied by the font.</summary>
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_ALTERNATIVE_FRACTIONS">
     <summary>
@@ -78,9 +76,7 @@
     </summary>
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_DEFAULT">
-    <summary>
-      <para>The default.</para>
-    </summary>
+    <summary>The default.</summary>
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_DISCRETIONARY_LIGATURES">
     <summary>
@@ -91,7 +87,7 @@
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_EXPERT_FORMS">
     <summary>
-      <para>Replaces standard forms in Japanese fonts with corresponding forms preferred by typographers.  For example, a user would invoke this feature to replace kanji character U+5516 with U+555E.</para>
+      <para>Replaces standard forms in Japanese fonts with corresponding forms preferred by typographers. For example, a user would invoke this feature to replace kanji character U+5516 with U+555E.</para>
       <para>
         <b>Equivalent OpenType tag:</b> 'expt'</para>
     </summary>
@@ -226,7 +222,7 @@
     <summary>
       <para>Positions mark glyphs with respect to base glyphs. For example, in Arabic script positioning the Hamza above the Yeh.</para>
       <para>
-        <b>Equivalent OpenType tag: </b> 'mark'</para>
+        <b>Equivalent OpenType tag:</b> 'mark'</para>
     </summary>
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_MATHEMATICAL_GREEK">
@@ -240,7 +236,7 @@
     <summary>
       <para>Positions marks with respect to other marks. Required in various non-Latin scripts like Arabic. For example, in Arabic, the ligaturised mark Ha with Hamza above it can also be obtained by positioning these marks relative to one another.</para>
       <para>
-        <b>Equivalent OpenType tag:</b>  'mkmk'</para>
+        <b>Equivalent OpenType tag:</b> 'mkmk'</para>
     </summary>
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_ALTERNATE_ANNOTATION_FORMS">
@@ -252,7 +248,7 @@
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_NLC_KANJI_FORMS">
     <summary>
-      <para>Used to access  glyphs made from glyph shapes defined by the National Language Council (NLC) of Japan for a number of JIS characters in 2000.</para>
+      <para>Used to access glyphs made from glyph shapes defined by the National Language Council (NLC) of Japan for a number of JIS characters in 2000.</para>
       <para>
         <b>Equivalent OpenType tag:</b> 'nlck'</para>
     </summary>
@@ -552,14 +548,10 @@
     </summary>
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_VERTICAL_WRITING">
-    <summary>
-      <para>Indicates that the font is displayed vertically.</para>
-    </summary>
+    <summary>Indicates that the font is displayed vertically.</summary>
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_VERTICAL_ALTERNATES_AND_ROTATION">
-    <summary>
-      <para>Replaces normal figures with figures adjusted for vertical display.</para>
-    </summary>
+    <summary>Replaces normal figures with figures adjusted for vertical display.</summary>
   </member>
   <member name="DWRITE_FONT_FEATURE_TAG.DWRITE_FONT_FEATURE_TAG_SLASHED_ZERO">
     <summary>

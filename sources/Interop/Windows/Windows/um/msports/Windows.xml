@@ -4,15 +4,9 @@
 <doc>
   <member name="Windows.ComDBClaimNextFreePort">
     <summary>
-      <para>
-        <b>ComDBClaimNextFreePort</b> returns the lowest COM port number that is not already in use.</para>
-    </summary>
-    <param name="HComDB">
-      <para>Handle to the COM port database that is returned by <see cref="ComDBOpen" />.</para>
-    </param>
-    <param name="ComNumber">
-      <para>Pointer to the COM port number that the routine returns to the caller. This pointer must be non-NULL. A port number is an integer that ranges from 1 to COMDB_MAX_PORTS_ARBITRATED.</para>
-    </param>
+      <b>ComDBClaimNextFreePort</b> returns the lowest COM port number that is not already in use.</summary>
+    <param name="HComDB">Handle to the COM port database that is returned by <see cref="ComDBOpen" />.</param>
+    <param name="ComNumber">Pointer to the COM port number that the routine returns to the caller. This pointer must be non-NULL. A port number is an integer that ranges from 1 to COMDB_MAX_PORTS_ARBITRATED.</param>
     <returns>
       <para>
         <b>ComDBClaimNextFreePort</b> returns one of the following status values.</para>
@@ -21,95 +15,88 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_SUCCESS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The routine successfully returned a COM port number.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The routine successfully returned a COM port number.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_CANTWRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The routine could not write to the database.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_CANTWRITE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified COM port database handle is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The routine could not write to the database.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NO_LOG_SPACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The database cannot arbitrate any more port numbers.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified COM port database handle is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_Xxx</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_NO_LOG_SPACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The database cannot arbitrate any more port numbers.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_Xxx</b>
-            </para>
-          </description>
-          <description>
-            <para>An internal error occurred; call <b>GetLastError</b> to get extended error information.</para>
-          </description>
-        </item>
+          <description>An internal error occurred; call <b>GetLastError</b> to get extended error information.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <i>Claiming</i> a COM port number in the COM port database logs the port number as "in use". Note that the database does not contain information about the caller or device that claims a port number.</para>
-      <para>
-        <b>ComDBClaimNextFreePort</b> runs in user mode.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//previous-versions/ff546481(v=vs.85)">Obtaining and Releasing a COM Port Number</a>.</para>
-    </remarks>
-    <seealso cref="ComDBClaimPort" />
-    <seealso cref="ComDBReleasePort" />
   </member>
   <member name="Windows.ComDBClaimPort">
     <summary>
-      <para>
-        <b>ComDBClaimPort</b> logs an unused COM port number as "in use" in the COM port database.</para>
-    </summary>
-    <param name="HComDB">
-      <para>Handle to the COM port database that is returned by <see cref="ComDBOpen" />.</para>
-    </param>
-    <param name="ComNumber">
-      <para>Specifies which COM port number the caller attempts to claim. A port number is an integer that can range from 1 to COMDB_MAX_PORTS_ARBITRATED.</para>
-    </param>
-    <param name="ForceClaim">
-      <para>Reserved for internal use only.</para>
-    </param>
-    <param name="Forced">
-      <para>Reserved for internal use only.</para>
-    </param>
+      <b>ComDBClaimPort</b> logs an unused COM port number as "in use" in the COM port database.</summary>
+    <param name="HComDB">Handle to the COM port database that is returned by <see cref="ComDBOpen" />.</param>
+    <param name="ComNumber">Specifies which COM port number the caller attempts to claim. A port number is an integer that can range from 1 to COMDB_MAX_PORTS_ARBITRATED.</param>
+    <param name="ForceClaim">Reserved for internal use only.</param>
+    <param name="Forced">Reserved for internal use only.</param>
     <returns>
       <para>
         <b>ComDBClaimPort</b> returns one of the following status values.</para>
@@ -118,86 +105,85 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_SUCCESS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The COM port number was not in use and is now logged as "in use".</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The COM port number was not in use and is now logged as "in use".</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_CANTWRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The routine could not write to the database.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_CANTWRITE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One of the following is true: The specified handle to the COM port database is not valid. The specified port number is greater than COMDB_MAX_PORTS_ARBITRATED.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The routine could not write to the database.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SHARING_VIOLATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified port number is already in use.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One of the following is true: The specified handle to the COM port database is not valid. The specified port number is greater than COMDB_MAX_PORTS_ARBITRATED.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_Xxx</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_SHARING_VIOLATION</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified port number is already in use.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_Xxx</b>
-            </para>
-          </description>
-          <description>
-            <para>An internal error occurred; call <b>GetLastError</b> to get extended error information.</para>
-          </description>
-        </item>
+          <description>An internal error occurred; call <b>GetLastError</b> to get extended error information.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <i>Claiming</i> a COM port number in the COM port database logs the port number as "in use". Note that the database does not contain information about the caller or device that claims a port number.</para>
-      <para>
-        <b>ComDBClaimPort</b> runs in user mode.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//previous-versions/ff546481(v=vs.85)">Obtaining and Releasing a COM Port Number</a>.</para>
-    </remarks>
-    <seealso cref="ComDBClaimNextFreePort" />
-    <seealso cref="ComDBReleasePort" />
   </member>
   <member name="Windows.ComDBClose">
     <summary>
-      <para>
-        <b>ComDBClose</b> closes a handle to the COM port database.</para>
-    </summary>
-    <param name="HComDB">
-      <para>Handle to the COM port database that was returned by <see cref="ComDBOpen" />.</para>
-    </param>
+      <b>ComDBClose</b> closes a handle to the COM port database.</summary>
+    <param name="HComDB">Handle to the COM port database that was returned by <see cref="ComDBOpen" />.</param>
     <returns>
       <para>
         <b>ComDBClose</b> returns one of the following status values.</para>
@@ -206,50 +192,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_SUCCESS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The COM port database was closed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The COM port database was closed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified COM port database handle is not valid.</para>
-          </description>
-        </item>
+          <description>The specified COM port database handle is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To open the COM port database, call <b>ComDBOpen</b>.</para>
-      <para>
-        <b>ComDBOpen</b> is called from user mode.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//previous-versions/ff546481(v=vs.85)">Opening and Closing the COM Port Database</a>.</para>
-    </remarks>
-    <seealso cref="ComDBOpen" />
   </member>
   <member name="Windows.ComDBGetCurrentPortUsage">
     <summary>
-      <para>
-        <b>ComDBGetCurrentPortUsage</b> returns information about the COM port numbers that are currently logged as "in use" in the COM port database.</para>
-    </summary>
-    <param name="HComDB">
-      <para>Handle to the COM port database that was returned by <see cref="ComDBOpen" />.</para>
-    </param>
-    <param name="Buffer">
-      <para>Pointer to a caller-allocated buffer in which the routine returns information about COM port number. See the Remarks section for more information.</para>
-    </param>
-    <param name="BufferSize">
-      <para>Specifies the size, in bytes, of a caller-allocated buffer at <i>Buffer</i>.</para>
-    </param>
+      <b>ComDBGetCurrentPortUsage</b> returns information about the COM port numbers that are currently logged as "in use" in the COM port database.</summary>
+    <param name="HComDB">Handle to the COM port database that was returned by <see cref="ComDBOpen" />.</param>
+    <param name="Buffer">Pointer to a caller-allocated buffer in which the routine returns information about COM port number. See the Remarks section for more information.</param>
+    <param name="BufferSize">Specifies the size, in bytes, of a caller-allocated buffer at <i>Buffer</i>.</param>
     <param name="ReportType">
       <para>Specifies one of the following flags.</para>
       <list type="table">
@@ -257,27 +232,17 @@
           <description>Flag</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>CDB_REPORT_BITS</para>
-          </description>
-          <description>
-            <para>The routine returns a bit array at <i>Buffer</i> that specifies port number usage.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>CDB_REPORT_BYTES</para>
-          </description>
-          <description>
-            <para>The routine returns a byte array at <i>Buffer</i> that specifies port number usage.</para>
-          </description>
-        </item>
+        <listheader>
+          <description>CDB_REPORT_BITS</description>
+          <description>The routine returns a bit array at <i>Buffer</i> that specifies port number usage.</description>
+        </listheader>
+        <listheader>
+          <description>CDB_REPORT_BYTES</description>
+          <description>The routine returns a byte array at <i>Buffer</i> that specifies port number usage.</description>
+        </listheader>
       </list>
     </param>
-    <param name="MaxPortsReported">
-      <para>Pointer to the value that the routine uses to return the number of ports for which the routine returns information at <i>Buffer</i>. See the Remarks section for more information.</para>
-    </param>
+    <param name="MaxPortsReported">Pointer to the value that the routine uses to return the number of ports for which the routine returns information at <i>Buffer</i>. See the Remarks section for more information.</param>
     <returns>
       <para>
         <b>ComDBGetCurrentPortUsage</b> returns one of the following status values.</para>
@@ -286,67 +251,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_SUCCESS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The routine successfully returned port number usage information.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The routine successfully returned port number usage information.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One of the following is true: The specified handle to the COM port database is not valid. Both <i>Buffer</i> and <i>MaxPortsReports</i> are <b>NULL</b>. <i>ReportType</i> is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One of the following is true: The specified handle to the COM port database is not valid. Both <i>Buffer</i> and <i>MaxPortsReports</i> are <b>NULL</b>. <i>ReportType</i> is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</para>
-          </description>
-        </item>
+          <description>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>By setting <i>Buffer</i> to <b>NULL</b> and <i>MaxPortsReported</i> to a valid pointer, a caller can determine the current COM port database size, which is the number of COM port numbers that are currently arbitrated in the database. In this case, the routine sets *<i>MaxPortsReported</i> to the database size. <i>ReportType</i> is not used.</para>
-      <para>If <i>Buffer</i> is non-<b>NULL</b> and <i>ReportType</i> is valid, the routine does the following:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>If <i>ReportType</i> is CDB_REPORT_BITS, the routine returns a bit array that specifies port number usage. Each bit in the output buffer corresponds to a port number. Using a zero-based index, bit zero of byte zero at <i>Buffer</i> corresponds to COM1, bit 1 corresponds to COM2, and so on. A bit value of 1 indicates that the port number is in use and a value of zero indicates the port number is not in use. The number of port numbers for which the routine returns usage information is the minimum of the current database size and the number of bits in the buffer (<i>BufferSize</i>*8). If <i>MaxPortsReported</i> is non-<b>NULL</b>, the routine also sets *<i>MaxPortsReported</i> to the number of port numbers for which the routine returns usage information. If BufferSize is zero, no port usage information is returned and *<i>MaxPortsReported</i> is set to zero.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>If <i>ReportType</i> is CDB_REPORT_BYTES, the routine returns a byte array that specifies port number usage. Each byte in the returned information corresponds to a different port number. Using a zero-based index, byte zero at <i>Buffer</i> corresponds to COM1, byte 1 corresponds to COM2, and so on. A byte value of 1 indicates the port number is in use and a value of zero indicates the port number is not in use. The number of port numbers for which the routine returns usage information is the minimum of the current database size and <i>BufferSize</i>. The routine does not set *<i>MaxPortsReported</i>. If <i>BufferSize</i> is zero, no port usage information is returned.</para>
-          </description>
-        </item>
-      </list>
-      <b>ComDBGetCurrentPortUsage</b> runs in user mode.
-</remarks>
-    <seealso cref="ComDBClaimNextFreePort" />
-    <seealso cref="ComDBClaimPort" />
-    <seealso cref="ComDBResizeDatabase" />
   </member>
   <member name="Windows.ComDBOpen">
     <summary>
-      <para>
-        <b>ComDBOpen</b> returns a handle to the COM port database.</para>
-    </summary>
-    <param name="PHComDB">
-      <para>Pointer, if the routine succeeds, to a handle to the COM port database. Otherwise, the routine sets <i>*PHComDB</i> to <b>HCOMDB_INVALID_HANDLE_VALUE</b>. <i>PHComDB</i> must be non-NULL.</para>
-    </param>
+      <b>ComDBOpen</b> returns a handle to the COM port database.</summary>
+    <param name="PHComDB">Pointer, if the routine succeeds, to a handle to the COM port database. Otherwise, the routine sets <i>*PHComDB</i> to <b>HCOMDB_INVALID_HANDLE_VALUE</b>. <i>PHComDB</i> must be non-NULL.</param>
     <returns>
       <para>
         <b>ComDBOpen</b> returns one of the following status values.</para>
@@ -355,47 +302,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_SUCCESS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The COM port database was successfully opened.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The COM port database was successfully opened.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_ACCESS_DENIED</b>
-            </para>
-          </description>
-          <description>
-            <para>The routine could not open the database. To get extended error information, call <b>GetLastError</b>.</para>
-          </description>
-        </item>
+          <description>The routine could not open the database. To get extended error information, call <b>GetLastError</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To close the COM port database, call <see cref="ComDBClose" /> and supply the handle that was returned by <b>ComDBOpen</b>.</para>
-      <para>
-        <b>ComDBOpen</b> is called from user mode.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//previous-versions/ff546481(v=vs.85)">Opening and Closing the COM Port Database</a>.</para>
-    </remarks>
-    <seealso cref="ComDBClose" />
   </member>
   <member name="Windows.ComDBReleasePort">
     <summary>
-      <para>
-        <b>ComDBReleasePort</b> releases a COM port number in the COM port database.</para>
-    </summary>
-    <param name="HComDB">
-      <para>Handle to the COM port database that was returned by <see cref="ComDBOpen" />.</para>
-    </param>
-    <param name="ComNumber">
-      <para>Specifies the COM port number to release. A port number is an integer that ranges from one to COMDB_MAX_PORTS_ARBITRATED.</para>
-    </param>
+      <b>ComDBReleasePort</b> releases a COM port number in the COM port database.</summary>
+    <param name="HComDB">Handle to the COM port database that was returned by <see cref="ComDBOpen" />.</param>
+    <param name="ComNumber">Specifies the COM port number to release. A port number is an integer that ranges from one to COMDB_MAX_PORTS_ARBITRATED.</param>
     <returns>
       <para>
         <b>ComDBReleasePort</b> returns one of the following status values.</para>
@@ -404,69 +342,62 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_SUCCESS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The COM port number was released.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The COM port number was released.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_CANTWRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The routine could not write to the database.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_CANTWRITE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One of the following is true: The specified handle to the COM port database is not valid. The specified port number is not in the COM port database.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The routine could not write to the database.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the following is true: The specified handle to the COM port database is not valid. The specified port number is not in the COM port database.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</para>
-          </description>
-        </item>
+          <description>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <i>Releasing</i> a COM port number means to log the port number as "not in use".</para>
-      <para>
-        <b>ComDBReleasePort</b> runs in user mode.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//previous-versions/ff546481(v=vs.85)">Obtaining and Releasing a COM Port Number</a>.</para>
-    </remarks>
-    <seealso cref="ComDBClaimNextFreePort" />
-    <seealso cref="ComDBClaimPort" />
   </member>
   <member name="Windows.ComDBResizeDatabase">
     <summary>
-      <para>
-        <b>ComDBResizeDatabase</b> resizes the COM port database.</para>
-    </summary>
-    <param name="HComDB">
-      <para>Handle to the COM port database that was returned by <see cref="ComDBOpen" />.</para>
-    </param>
-    <param name="NewSize">
-      <para>Specifies a new size for the COM port database, where the database size is the number of port numbers currently arbitrated in the database. This value must be an integer multiple of 1024, must be greater than the current size, and must be less than or equal to COMDB_MAX_PORTS_ARBITRATED.</para>
-    </param>
+      <b>ComDBResizeDatabase</b> resizes the COM port database.</summary>
+    <param name="HComDB">Handle to the COM port database that was returned by <see cref="ComDBOpen" />.</param>
+    <param name="NewSize">Specifies a new size for the COM port database, where the database size is the number of port numbers currently arbitrated in the database. This value must be an integer multiple of 1024, must be greater than the current size, and must be less than or equal to COMDB_MAX_PORTS_ARBITRATED.</param>
     <returns>
       <para>
         <b>ComDBResizeDatabase</b> returns one of the following status values.</para>
@@ -475,80 +406,76 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_SUCCESS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The database was successfully resized.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_BAD_LENGTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The database was successfully resized.</para>
-          </description>
-        </item>
-        <item>
+            <i>NewSize</i> is less than or equal to the current database size, or it is greater than COMDB_MAX_PORTS_ARBITRATED.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_BAD_LENGTH</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_CANTWRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The routine could not write to the database.</description>
+        </listheader>
+        <listheader>
           <description>
-            <i>NewSize</i> is less than or equal to the current database size, or it is greater than COMDB_MAX_PORTS_ARBITRATED.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_CANTWRITE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One of the following is true: The specified handle to the COM port database is not valid. <i>NewSize</i> is not a multiple of 1024.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The routine could not write to the database.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
-          </description>
-          <description>
-            <para>One of the following is true: The specified handle to the COM port database is not valid. <i>NewSize</i> is not a multiple of 1024.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</para>
-          </description>
-        </item>
+          <description>The routine could not access the database. To get extended error information, call <b>GetLastError</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Use <see cref="ComDBGetCurrentPortUsage" /> to obtain the current database size.</para>
-      <para>
-        <b>ComDBResizeDatabase</b> runs in user mode.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//previous-versions/ff546481(v=vs.85)">Resizing the COM Port Database</a>.</para>
-    </remarks>
-    <seealso cref="ComDBGetCurrentPortUsage" />
   </member>
   <member name="Windows.SerialDisplayAdvancedSettings">
     <summary>
-      <para>
-        <b>SerialDisplayAdvancedSettings</b> displays the system-supplied advanced settings dialog box for a specified COM port device.</para>
-    </summary>
-    <param name="ParentHwnd">
-      <para>Handle to the parent window for the advanced settings dialog box.</para>
-    </param>
-    <param name="DeviceInfoSet">
-      <para>Specifies the device information set that includes the device instance specified by <i>DeviceInfoData</i>.</para>
-    </param>
-    <param name="DeviceInfoData">
-      <para>Pointer to the device instance in the specified device information set. The routine displays the advanced settings dialog box for this device.</para>
-    </param>
+      <b>SerialDisplayAdvancedSettings</b> displays the system-supplied advanced settings dialog box for a specified COM port device.</summary>
+    <param name="ParentHwnd">Handle to the parent window for the advanced settings dialog box.</param>
+    <param name="DeviceInfoSet">Specifies the device information set that includes the device instance specified by <i>DeviceInfoData</i>.</param>
+    <param name="DeviceInfoData">Pointer to the device instance in the specified device information set. The routine displays the advanced settings dialog box for this device.</param>
     <returns>
       <para>
         <b>SerialDisplayAdvancedSettings</b> returns one of the following status values.</para>
@@ -557,65 +484,67 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_SUCCESS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_SUCCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The advanced settings dialog box was successfully displayed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The advanced settings dialog box was successfully displayed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One of the following occurred: The specified device information set is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The routine could not open the specified device's hardware registry key.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One of the following occurred: The specified device information set is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_DATA</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The name of the port is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_ACCESS_DENIED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The routine could not open the specified device's hardware registry key.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INVALID_DATA</b>
-            </para>
-          </description>
-          <description>
-            <para>The name of the port is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_ACCESS_DENIED</b>
-            </para>
-          </description>
-          <description>
-            <para>The routine could not display the dialog box.</para>
-          </description>
-        </item>
+          <description>The routine could not display the dialog box.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>SerialDisplayAdvancedSettings</b> displays the system-supplied advanced settings dialog box for a specified device. If you supply a custom dialog box, this routine displays it; otherwise, the routine displays the default dialog box.</para>
-      <para>
-        <b>SerialDisplayAdvancedSettings</b> runs in user mode.</para>
-      <para>For more information, see <a href="https://docs.microsoft.com//previous-versions/ff546508(v=vs.85)">Installing an Advanced Properties Page for a COM Port</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff546956(v=vs.85)">PPORT_ADVANCED_DIALOG</seealso>
   </member>
 </doc>

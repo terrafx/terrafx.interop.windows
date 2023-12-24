@@ -25,7 +25,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, Guid*, void**, int>)(lpVtbl[0]))((IGraphBuilder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IGraphBuilder*, uint>)(lpVtbl[1]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, uint>)(lpVtbl[1]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IGraphBuilder*, uint>)(lpVtbl[2]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, uint>)(lpVtbl[2]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IFilterGraph.AddFilter" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] ushort* pName)
+    public HRESULT AddFilter(IBaseFilter* pFilter, [NativeTypeName("LPCWSTR")] char* pName)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, IBaseFilter*, ushort*, int>)(lpVtbl[3]))((IGraphBuilder*)Unsafe.AsPointer(ref this), pFilter, pName);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, IBaseFilter*, char*, int>)(lpVtbl[3]))((IGraphBuilder*)Unsafe.AsPointer(ref this), pFilter, pName);
     }
 
     /// <inheritdoc cref="IFilterGraph.RemoveFilter" />
@@ -59,7 +59,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT RemoveFilter(IBaseFilter* pFilter)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, IBaseFilter*, int>)(lpVtbl[4]))((IGraphBuilder*)Unsafe.AsPointer(ref this), pFilter);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, IBaseFilter*, int>)(lpVtbl[4]))((IGraphBuilder*)Unsafe.AsPointer(ref this), pFilter);
     }
 
     /// <inheritdoc cref="IFilterGraph.EnumFilters" />
@@ -67,15 +67,15 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT EnumFilters(IEnumFilters** ppEnum)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, IEnumFilters**, int>)(lpVtbl[5]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, IEnumFilters**, int>)(lpVtbl[5]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <inheritdoc cref="IFilterGraph.FindFilterByName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] ushort* pName, IBaseFilter** ppFilter)
+    public HRESULT FindFilterByName([NativeTypeName("LPCWSTR")] char* pName, IBaseFilter** ppFilter)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, ushort*, IBaseFilter**, int>)(lpVtbl[6]))((IGraphBuilder*)Unsafe.AsPointer(ref this), pName, ppFilter);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, char*, IBaseFilter**, int>)(lpVtbl[6]))((IGraphBuilder*)Unsafe.AsPointer(ref this), pName, ppFilter);
     }
 
     /// <inheritdoc cref="IFilterGraph.ConnectDirect" />
@@ -83,7 +83,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT ConnectDirect(IPin* ppinOut, IPin* ppinIn, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, IPin*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[7]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppinOut, ppinIn, pmt);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, IPin*, IPin*, AM_MEDIA_TYPE*, int>)(lpVtbl[7]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppinOut, ppinIn, pmt);
     }
 
     /// <inheritdoc cref="IFilterGraph.Reconnect" />
@@ -91,7 +91,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT Reconnect(IPin* ppin)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, IPin*, int>)(lpVtbl[8]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppin);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, IPin*, int>)(lpVtbl[8]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppin);
     }
 
     /// <inheritdoc cref="IFilterGraph.Disconnect" />
@@ -99,7 +99,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT Disconnect(IPin* ppin)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, IPin*, int>)(lpVtbl[9]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppin);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, IPin*, int>)(lpVtbl[9]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppin);
     }
 
     /// <inheritdoc cref="IFilterGraph.SetDefaultSyncSource" />
@@ -107,7 +107,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT SetDefaultSyncSource()
     {
-        return ((delegate* unmanaged<IGraphBuilder*, int>)(lpVtbl[10]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, int>)(lpVtbl[10]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.Connect"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT Connect(IPin* ppinOut, IPin* ppinIn)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, IPin*, IPin*, int>)(lpVtbl[11]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppinOut, ppinIn);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, IPin*, IPin*, int>)(lpVtbl[11]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppinOut, ppinIn);
     }
 
     /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.Render"]/*' />
@@ -123,23 +123,23 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT Render(IPin* ppinOut)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, IPin*, int>)(lpVtbl[12]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppinOut);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, IPin*, int>)(lpVtbl[12]))((IGraphBuilder*)Unsafe.AsPointer(ref this), ppinOut);
     }
 
     /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.RenderFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT RenderFile([NativeTypeName("LPCWSTR")] ushort* lpcwstrFile, [NativeTypeName("LPCWSTR")] ushort* lpcwstrPlayList)
+    public HRESULT RenderFile([NativeTypeName("LPCWSTR")] char* lpcwstrFile, [NativeTypeName("LPCWSTR")] char* lpcwstrPlayList)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, ushort*, ushort*, int>)(lpVtbl[13]))((IGraphBuilder*)Unsafe.AsPointer(ref this), lpcwstrFile, lpcwstrPlayList);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, char*, char*, int>)(lpVtbl[13]))((IGraphBuilder*)Unsafe.AsPointer(ref this), lpcwstrFile, lpcwstrPlayList);
     }
 
     /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.AddSourceFilter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT AddSourceFilter([NativeTypeName("LPCWSTR")] ushort* lpcwstrFileName, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter)
+    public HRESULT AddSourceFilter([NativeTypeName("LPCWSTR")] char* lpcwstrFileName, [NativeTypeName("LPCWSTR")] char* lpcwstrFilterName, IBaseFilter** ppFilter)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, ushort*, ushort*, IBaseFilter**, int>)(lpVtbl[14]))((IGraphBuilder*)Unsafe.AsPointer(ref this), lpcwstrFileName, lpcwstrFilterName, ppFilter);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, char*, char*, IBaseFilter**, int>)(lpVtbl[14]))((IGraphBuilder*)Unsafe.AsPointer(ref this), lpcwstrFileName, lpcwstrFilterName, ppFilter);
     }
 
     /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.SetLogFile"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT SetLogFile([NativeTypeName("DWORD_PTR")] nuint hFile)
     {
-        return ((delegate* unmanaged<IGraphBuilder*, nuint, int>)(lpVtbl[15]))((IGraphBuilder*)Unsafe.AsPointer(ref this), hFile);
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, nuint, int>)(lpVtbl[15]))((IGraphBuilder*)Unsafe.AsPointer(ref this), hFile);
     }
 
     /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.Abort"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT Abort()
     {
-        return ((delegate* unmanaged<IGraphBuilder*, int>)(lpVtbl[16]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, int>)(lpVtbl[16]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IGraphBuilder.xml' path='doc/member[@name="IGraphBuilder.ShouldOperationContinue"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT ShouldOperationContinue()
     {
-        return ((delegate* unmanaged<IGraphBuilder*, int>)(lpVtbl[17]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphBuilder*, int>)(lpVtbl[17]))((IGraphBuilder*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IFilterGraph.Interface
@@ -175,10 +175,10 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
         HRESULT Render(IPin* ppinOut);
 
         [VtblIndex(13)]
-        HRESULT RenderFile([NativeTypeName("LPCWSTR")] ushort* lpcwstrFile, [NativeTypeName("LPCWSTR")] ushort* lpcwstrPlayList);
+        HRESULT RenderFile([NativeTypeName("LPCWSTR")] char* lpcwstrFile, [NativeTypeName("LPCWSTR")] char* lpcwstrPlayList);
 
         [VtblIndex(14)]
-        HRESULT AddSourceFilter([NativeTypeName("LPCWSTR")] ushort* lpcwstrFileName, [NativeTypeName("LPCWSTR")] ushort* lpcwstrFilterName, IBaseFilter** ppFilter);
+        HRESULT AddSourceFilter([NativeTypeName("LPCWSTR")] char* lpcwstrFileName, [NativeTypeName("LPCWSTR")] char* lpcwstrFilterName, IBaseFilter** ppFilter);
 
         [VtblIndex(15)]
         HRESULT SetLogFile([NativeTypeName("DWORD_PTR")] nuint hFile);
@@ -194,57 +194,57 @@ public unsafe partial struct IGraphBuilder : IGraphBuilder.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IBaseFilter *, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, ushort*, int> AddFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, char*, int> AddFilter;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, int> RemoveFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, int> RemoveFilter;
 
         [NativeTypeName("HRESULT (IEnumFilters **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumFilters**, int> EnumFilters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumFilters**, int> EnumFilters;
 
         [NativeTypeName("HRESULT (LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IBaseFilter**, int> FindFilterByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IBaseFilter**, int> FindFilterByName;
 
         [NativeTypeName("HRESULT (IPin *, IPin *, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, IPin*, AM_MEDIA_TYPE*, int> ConnectDirect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, IPin*, AM_MEDIA_TYPE*, int> ConnectDirect;
 
         [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, int> Reconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, int> Reconnect;
 
         [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, int> Disconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, int> Disconnect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SetDefaultSyncSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SetDefaultSyncSource;
 
         [NativeTypeName("HRESULT (IPin *, IPin *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, IPin*, int> Connect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, IPin*, int> Connect;
 
         [NativeTypeName("HRESULT (IPin *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, int> Render;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, int> Render;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> RenderFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> RenderFile;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, IBaseFilter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, IBaseFilter**, int> AddSourceFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, IBaseFilter**, int> AddSourceFilter;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, int> SetLogFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, int> SetLogFile;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Abort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Abort;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ShouldOperationContinue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ShouldOperationContinue;
     }
 }

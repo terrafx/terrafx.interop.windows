@@ -19,25 +19,4 @@ public static unsafe partial class HTMLStyleMediaTests
     {
         Assert.That(typeof(HTMLStyleMedia).GUID, Is.EqualTo(IID_HTMLStyleMedia));
     }
-
-    /// <summary>Validates that the <see cref="HTMLStyleMedia" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLStyleMedia>(), Is.EqualTo(sizeof(HTMLStyleMedia)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLStyleMedia" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLStyleMedia).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLStyleMedia" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLStyleMedia), Is.EqualTo(1));
-    }
 }

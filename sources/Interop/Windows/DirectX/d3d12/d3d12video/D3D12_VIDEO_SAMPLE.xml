@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_SAMPLE">
+    <summary>Describes the width, height, format, and color space of a picture buffer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_SAMPLE.Width">
+    <summary>The width of the sample.</summary>
+  </member>
+  <member name="D3D12_VIDEO_SAMPLE.Height">
+    <summary>The height of the sample.</summary>
+  </member>
+  <member name="D3D12_VIDEO_SAMPLE.Format">
+    <summary>A <see cref="D3D12_VIDEO_FORMAT" /> structure describing the format and colorspace of the sample.</summary>
+  </member>
+</doc>

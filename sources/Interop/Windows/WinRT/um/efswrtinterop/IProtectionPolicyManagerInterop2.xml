@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IProtectionPolicyManagerInterop2.RequestAccessForAppWithAuditingInfoForWindowAsync">
+    <summary>
+      <div>
+        <b>Note</b> Windows Information Protection (WIP) policy can be applied on Windows 10, version 1607.</div>Request access to enterprise-protected content for a specific target app.</summary>
+    <param name="appWindow">A handle to the current window.</param>
+    <param name="sourceIdentity">The enterprise identity to which the content is protected. This is an email address or domain that is managed.</param>
+    <param name="appPackageFamilyName">The enterprise identity to which the content is being disclosed. This is an email address or domain.</param>
+    <param name="auditInfoUnk">An audit info object; an instance of <a href="https://docs.microsoft.com//uwp/api/Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo">ProtectionPolicyAuditInfo</a>.</param>
+    <param name="riid">Reference to the identifier of the interface describing the type of interface pointer to return in <i>asyncOperation</i>.</param>
+    <param name="asyncOperation">An with a value of the <a href="https://docs.microsoft.com//uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult">ProtectionPolicyEvaluationResult</a> enumeration that is the result of the request.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IProtectionPolicyManagerInterop2.RequestAccessForAppWithMessageForWindowAsync">
+    <summary>
+      <div>
+        <b>Note</b>  Windows Information Protection (WIP) policy can be applied on Windows 10, version 1607.</div>Request access to enterprise-protected content for a specific target app.</summary>
+    <param name="appWindow">A handle to the current window.</param>
+    <param name="sourceIdentity">The enterprise identity to which the content is protected. This is an email address or domain that is managed.</param>
+    <param name="appPackageFamilyName">The enterprise identity to which the content is being disclosed. This is an email address or domain.</param>
+    <param name="auditInfoUnk">An audit info object; an instance of <a href="https://docs.microsoft.com//uwp/api/Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo">ProtectionPolicyAuditInfo</a>.</param>
+    <param name="messageFromApp">A message that will be displayed in the consent dialog so that the user can make a consent decision.</param>
+    <param name="riid">Reference to the identifier of the interface describing the type of interface pointer to return in <i>asyncOperation</i>.</param>
+    <param name="asyncOperation">An with a value of the <a href="https://docs.microsoft.com//uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult">ProtectionPolicyEvaluationResult</a> enumeration that is the result of the request.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IProtectionPolicyManagerInterop2.RequestAccessForAppWithWindowAsync">
+    <summary>
+      <div>
+        <b>Note</b>  Windows Information Protection (WIP) policy can be applied on Windows 10, version 1607.</div>Request access to enterprise-protected content for a specific target app.</summary>
+    <param name="appWindow">A handle to the current window.</param>
+    <param name="sourceIdentity">The enterprise identity to which the content is protected. This is an email address or domain that is managed.</param>
+    <param name="appPackageFamilyName">The enterprise identity to which the content is being disclosed. This is an email address or domain.</param>
+    <param name="riid">Reference to the identifier of the interface describing the type of interface pointer to return in <i>asyncOperation</i>.</param>
+    <param name="asyncOperation">An with a value of the <a href="https://docs.microsoft.com//uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult">ProtectionPolicyEvaluationResult</a> enumeration that is the result of the request.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IProtectionPolicyManagerInterop2.RequestAccessWithAuditingInfoForWindowAsync">
+    <summary>
+      <div>
+        <b>Note</b>  Windows Information Protection (WIP) policy can be applied on Windows 10, version 1607.</div>Request access to enterprise protected content for an identity.</summary>
+    <param name="appWindow">A handle to the current window.</param>
+    <param name="sourceIdentity">The enterprise identity to which the content is protected. This is an email address or domain that is managed.</param>
+    <param name="targetIdentity">The enterprise identity to which the content is being disclosed. This is an email address or domain.</param>
+    <param name="auditInfoUnk">An audit info object; an instance of <a href="https://docs.microsoft.com//uwp/api/Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo">ProtectionPolicyAuditInfo</a>.</param>
+    <param name="riid">Reference to the identifier of the interface describing the type of interface pointer to return in <i>asyncOperation</i>.</param>
+    <param name="asyncOperation">An with a value of the <a href="https://docs.microsoft.com//uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult">ProtectionPolicyEvaluationResult</a> enumeration that is the result of the request.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IProtectionPolicyManagerInterop2.RequestAccessWithMessageForWindowAsync">
+    <summary>Request access to enterprise protected content for an identity.</summary>
+    <param name="appWindow">A handle to the current window.</param>
+    <param name="sourceIdentity">The enterprise identity to which the content is protected. This is an email address or domain that is managed.</param>
+    <param name="targetIdentity">The enterprise identity to which the content is being disclosed. This is an email address or domain.</param>
+    <param name="auditInfoUnk">An audit info object; an instance of <a href="https://docs.microsoft.com//uwp/api/Windows.Security.EnterpriseData.ProtectionPolicyAuditInfo">ProtectionPolicyAuditInfo</a>.</param>
+    <param name="messageFromApp">A message that will be displayed in the consent dialog so that the user can make a consent decision.</param>
+    <param name="riid">Reference to the identifier of the interface describing the type of interface pointer to return in <i>asyncOperation</i>.</param>
+    <param name="asyncOperation">An with a value of the <a href="https://docs.microsoft.com//uwp/api/windows.security.enterprisedata.protectionpolicyevaluationresult">ProtectionPolicyEvaluationResult</a> enumeration that is the result of the request.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IProtectionPolicyManagerInterop2">
+    <summary>
+      <div>
+        <b>Note</b>  Windows Information Protection (WIP) policy can be applied on Windows 10, version 1607.</div>Manages enterprise protection policy on protected content.</summary>
+  </member>
+</doc>

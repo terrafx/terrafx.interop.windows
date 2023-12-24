@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_LOGOTYPE_REFERENCE">
-    <summary>
-      <para>The <b>CERT_LOGOTYPE_REFERENCE</b> structure contains logotype reference information.</para>
-    </summary>
+    <summary>The <b>CERT_LOGOTYPE_REFERENCE</b> structure contains logotype reference information.</summary>
   </member>
   <member name="CERT_LOGOTYPE_REFERENCE.cHashedUrl">
-    <summary>
-      <para>The number of elements in the <b>rgHashedUrl</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgHashedUrl</b> array.</summary>
   </member>
   <member name="CERT_LOGOTYPE_REFERENCE.rgHashedUrl">
-    <summary>
-      <para>An array of <see cref="CERT_HASHED_URL" /> structures that contain the hashed URL of the logotype. The <b>cHashedUrl</b> member contains the number of elements in this array.</para>
-    </summary>
+    <summary>An array of <see cref="CERT_HASHED_URL" /> structures that contain the hashed URL of the logotype. The <b>cHashedUrl</b> member contains the number of elements in this array.</summary>
   </member>
 </doc>

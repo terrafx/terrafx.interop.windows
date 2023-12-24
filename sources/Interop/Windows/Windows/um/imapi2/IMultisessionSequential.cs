@@ -25,7 +25,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, Guid*, void**, int>)(lpVtbl[0]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, Guid*, void**, int>)(lpVtbl[0]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, uint>)(lpVtbl[1]))((IMultisessionSequential*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, uint>)(lpVtbl[1]))((IMultisessionSequential*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, uint>)(lpVtbl[2]))((IMultisessionSequential*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, uint>)(lpVtbl[2]))((IMultisessionSequential*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, uint*, int>)(lpVtbl[3]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, uint*, int>)(lpVtbl[3]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="IMultisession.get_IsSupportedOnCurrentMediaState" />
@@ -83,7 +83,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(7)]
     public HRESULT get_IsSupportedOnCurrentMediaState([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, short*, int>)(lpVtbl[7]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, short*, int>)(lpVtbl[7]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IMultisession.put_InUse" />
@@ -91,7 +91,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(8)]
     public HRESULT put_InUse([NativeTypeName("VARIANT_BOOL")] short value)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, short, int>)(lpVtbl[8]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, short, int>)(lpVtbl[8]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IMultisession.get_InUse" />
@@ -99,7 +99,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(9)]
     public HRESULT get_InUse([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, short*, int>)(lpVtbl[9]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, short*, int>)(lpVtbl[9]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IMultisession.get_ImportRecorder" />
@@ -107,7 +107,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(10)]
     public HRESULT get_ImportRecorder(IDiscRecorder2** value)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, IDiscRecorder2**, int>)(lpVtbl[10]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, IDiscRecorder2**, int>)(lpVtbl[10]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMultisessionSequential.xml' path='doc/member[@name="IMultisessionSequential.get_IsFirstDataSession"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(11)]
     public HRESULT get_IsFirstDataSession([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, short*, int>)(lpVtbl[11]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, short*, int>)(lpVtbl[11]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMultisessionSequential.xml' path='doc/member[@name="IMultisessionSequential.get_StartAddressOfPreviousSession"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(12)]
     public HRESULT get_StartAddressOfPreviousSession([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, int*, int>)(lpVtbl[12]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, int*, int>)(lpVtbl[12]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMultisessionSequential.xml' path='doc/member[@name="IMultisessionSequential.get_LastWrittenAddressOfPreviousSession"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(13)]
     public HRESULT get_LastWrittenAddressOfPreviousSession([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, int*, int>)(lpVtbl[13]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, int*, int>)(lpVtbl[13]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMultisessionSequential.xml' path='doc/member[@name="IMultisessionSequential.get_NextWritableAddress"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(14)]
     public HRESULT get_NextWritableAddress([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, int*, int>)(lpVtbl[14]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, int*, int>)(lpVtbl[14]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IMultisessionSequential.xml' path='doc/member[@name="IMultisessionSequential.get_FreeSectorsOnMedia"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
     [VtblIndex(15)]
     public HRESULT get_FreeSectorsOnMedia([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IMultisessionSequential*, int*, int>)(lpVtbl[15]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IMultisessionSequential*, int*, int>)(lpVtbl[15]))((IMultisessionSequential*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IMultisession.Interface
@@ -172,51 +172,51 @@ public unsafe partial struct IMultisessionSequential : IMultisessionSequential.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_IsSupportedOnCurrentMediaState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_IsSupportedOnCurrentMediaState;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_InUse;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_InUse;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_InUse;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_InUse;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2**, int> get_ImportRecorder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2**, int> get_ImportRecorder;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_IsFirstDataSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_IsFirstDataSession;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_StartAddressOfPreviousSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_StartAddressOfPreviousSession;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_LastWrittenAddressOfPreviousSession;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_LastWrittenAddressOfPreviousSession;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_NextWritableAddress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_NextWritableAddress;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_FreeSectorsOnMedia;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_FreeSectorsOnMedia;
     }
 }

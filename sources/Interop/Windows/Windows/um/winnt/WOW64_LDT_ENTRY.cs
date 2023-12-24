@@ -20,7 +20,7 @@ public partial struct WOW64_LDT_ENTRY
     public ushort BaseLow;
 
     /// <include file='WOW64_LDT_ENTRY.xml' path='doc/member[@name="WOW64_LDT_ENTRY.HighWord"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:9597:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L9600_C5")]
     public _HighWord_e__Union HighWord;
 
     /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union"]/*' />
@@ -29,12 +29,12 @@ public partial struct WOW64_LDT_ENTRY
     {
         /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bytes"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:9598:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L9601_C9")]
         public _Bytes_e__Struct Bytes;
 
         /// <include file='_HighWord_e__Union.xml' path='doc/member[@name="_HighWord_e__Union.Bits"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:9604:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L9607_C9")]
         public _Bits_e__Struct Bits;
 
         /// <include file='_Bytes_e__Struct.xml' path='doc/member[@name="_Bytes_e__Struct"]/*' />
@@ -63,7 +63,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint BaseMid
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFFu;
                 }
@@ -80,7 +80,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint Type
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 8) & 0x1Fu;
                 }
@@ -97,7 +97,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint Dpl
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 13) & 0x3u;
                 }
@@ -114,7 +114,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint Pres
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 15) & 0x1u;
                 }
@@ -131,7 +131,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint LimitHi
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0xFu;
                 }
@@ -148,7 +148,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint Sys
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 20) & 0x1u;
                 }
@@ -165,7 +165,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint Reserved_0
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 21) & 0x1u;
                 }
@@ -182,7 +182,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint Default_Big
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 22) & 0x1u;
                 }
@@ -199,7 +199,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint Granularity
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 23) & 0x1u;
                 }
@@ -216,7 +216,7 @@ public partial struct WOW64_LDT_ENTRY
             public uint BaseHi
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 24) & 0xFFu;
                 }

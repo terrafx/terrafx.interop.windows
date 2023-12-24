@@ -24,7 +24,7 @@ public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflection
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D10_SHADER_TYPE_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflectionType*, D3D10_SHADER_TYPE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D10ShaderReflectionType.xml' path='doc/member[@name="ID3D10ShaderReflectionType.GetMemberTypeByIndex"]/*' />
@@ -32,7 +32,7 @@ public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflection
     [VtblIndex(1)]
     public ID3D10ShaderReflectionType* GetMemberTypeByIndex(uint Index)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflectionType*, uint, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='ID3D10ShaderReflectionType.xml' path='doc/member[@name="ID3D10ShaderReflectionType.GetMemberTypeByName"]/*' />
@@ -40,7 +40,7 @@ public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflection
     [VtblIndex(2)]
     public ID3D10ShaderReflectionType* GetMemberTypeByName([NativeTypeName("LPCSTR")] sbyte* Name)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflectionType*, sbyte*, ID3D10ShaderReflectionType*>)(lpVtbl[2]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflectionType*, sbyte*, ID3D10ShaderReflectionType*>)(lpVtbl[2]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Name);
     }
 
     /// <include file='ID3D10ShaderReflectionType.xml' path='doc/member[@name="ID3D10ShaderReflectionType.GetMemberTypeName"]/*' />
@@ -49,7 +49,7 @@ public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflection
     [return: NativeTypeName("LPCSTR")]
     public sbyte* GetMemberTypeName(uint Index)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflectionType*, uint, sbyte*>)(lpVtbl[3]))((ID3D10ShaderReflectionType*)Unsafe.AsPointer(ref this), Index);
     }
 
     public interface Interface
@@ -72,15 +72,15 @@ public unsafe partial struct ID3D10ShaderReflectionType : ID3D10ShaderReflection
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D10_SHADER_TYPE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_SHADER_TYPE_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_SHADER_TYPE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10ShaderReflectionType *(UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID3D10ShaderReflectionType*> GetMemberTypeByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID3D10ShaderReflectionType*> GetMemberTypeByIndex;
 
         [NativeTypeName("ID3D10ShaderReflectionType *(LPCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, ID3D10ShaderReflectionType*> GetMemberTypeByName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, ID3D10ShaderReflectionType*> GetMemberTypeByName;
 
         [NativeTypeName("LPCSTR (UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, sbyte*> GetMemberTypeName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, sbyte*> GetMemberTypeName;
     }
 }

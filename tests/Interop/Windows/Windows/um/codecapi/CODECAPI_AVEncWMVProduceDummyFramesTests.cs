@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncWMVProduceDummyFramesTests
     {
         Assert.That(typeof(CODECAPI_AVEncWMVProduceDummyFrames).GUID, Is.EqualTo(IID_CODECAPI_AVEncWMVProduceDummyFrames));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncWMVProduceDummyFrames" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncWMVProduceDummyFrames>(), Is.EqualTo(sizeof(CODECAPI_AVEncWMVProduceDummyFrames)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncWMVProduceDummyFrames" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncWMVProduceDummyFrames).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncWMVProduceDummyFrames" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncWMVProduceDummyFrames), Is.EqualTo(1));
-    }
 }

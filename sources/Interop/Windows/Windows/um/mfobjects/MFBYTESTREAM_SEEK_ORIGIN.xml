@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFBYTESTREAM_SEEK_ORIGIN">
-    <summary>
-      <para>Specifies the origin for a seek request.</para>
-    </summary>
-    <seealso cref="IMFByteStream.Seek" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the origin for a seek request.</summary>
   </member>
   <member name="MFBYTESTREAM_SEEK_ORIGIN.msoBegin">
-    <summary>
-      <para>The seek position is specified relative to the start of the stream.</para>
-    </summary>
+    <summary>The seek position is specified relative to the start of the stream.</summary>
   </member>
   <member name="MFBYTESTREAM_SEEK_ORIGIN.msoCurrent">
-    <summary>
-      <para>The seek position is specified relative to the current read/write position in the stream.</para>
-    </summary>
+    <summary>The seek position is specified relative to the current read/write position in the stream.</summary>
   </member>
 </doc>

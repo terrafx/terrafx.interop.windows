@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="QITAB">
-    <summary>
-      <para>Used by the <see cref="QISearch" /> function to describe a single interface.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  Prior to Windows Vista, <b>QITAB</b> was not declared in a public header file. To use it in those cases, you must use define it yourself as it is given here. Under Windows Vista, <b>QITAB</b> is included in Shlwapi.h and this is not necessary.</para>
-      <para>To mark the end of a <b>QITAB</b> table, set the <b>piid</b> member to <b>NULL</b> and the <b>dwOffset</b> member to 0. See the <see cref="QISearch" /> function for an example of how to use this structure.</para>
-    </remarks>
+    <summary>Used by the <see cref="QISearch" /> function to describe a single interface.</summary>
   </member>
   <member name="QITAB.piid">
-    <summary>
-      <para>Type: <b>const IID*</b></para>
-      <para>A pointer to the IID of the interface represented by this structure.</para>
-    </summary>
+    <summary>A pointer to the IID of the interface represented by this structure.</summary>
   </member>
   <member name="QITAB.dwOffset">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The offset, in bytes, from the base of the object to the start of the interface.</para>
-    </summary>
+    <summary>The offset, in bytes, from the base of the object to the start of the interface.</summary>
   </member>
 </doc>

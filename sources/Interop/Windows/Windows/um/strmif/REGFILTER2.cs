@@ -21,7 +21,7 @@ public unsafe partial struct REGFILTER2
     public uint dwMerit;
 
     /// <include file='REGFILTER2.xml' path='doc/member[@name="REGFILTER2.Anonymous"]/*' />
-    [NativeTypeName("REGFILTER2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/strmif.h:5314:36)")]
+    [NativeTypeName("__AnonymousRecord_strmif_L5314_C36")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.cPins"]/*' />
@@ -74,12 +74,12 @@ public unsafe partial struct REGFILTER2
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("REGFILTER2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/strmif.h:5316:24)")]
+        [NativeTypeName("__AnonymousRecord_strmif_L5316_C24")]
         public _Anonymous1_e__Struct Anonymous1;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("REGFILTER2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/strmif.h:5321:24)")]
+        [NativeTypeName("__AnonymousRecord_strmif_L5321_C24")]
         public _Anonymous2_e__Struct Anonymous2;
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS2">
+    <summary>Indicates the level of support that the adapter provides for depth-bounds tests and programmable sample positions.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS2.DepthBoundsTestSupported">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-structs-and-classes">SAL</a>: <code><i>Out</i></code></para>
+      <para>On return, contains true if depth-bounds tests are supported; otherwise, false.</para>
+    </summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS2.ProgrammableSamplePositionsTier">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-structs-and-classes">SAL</a>: <code><i>Out</i></code></para>
+      <para>On return, contains a value that indicates the level of support offered for programmable sample positions.</para>
+    </summary>
+  </member>
+</doc>

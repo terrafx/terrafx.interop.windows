@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TEX3D_RTV">
+    <summary>Describes the subresources from a 3D texture to use in a render-target view.</summary>
+  </member>
+  <member name="D3D12_TEX3D_RTV.MipSlice">
+    <summary>The index of the mipmap level to use mip slice.</summary>
+  </member>
+  <member name="D3D12_TEX3D_RTV.FirstWSlice">
+    <summary>First depth level to use.</summary>
+  </member>
+  <member name="D3D12_TEX3D_RTV.WSize">
+    <summary>Number of depth levels to use in the render-target view, starting from <b>FirstWSlice</b>. A value of -1 indicates all of the slices along the w axis, starting from <b>FirstWSlice</b>.</summary>
+  </member>
+</doc>

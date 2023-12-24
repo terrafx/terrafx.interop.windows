@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID">
-    <summary>
-      <para>Identifies the properties for requesting a security token from an issuer.  It is used with <see cref="WsRequestSecurityToken" /> as part of the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY*" /> parameter.</para>
-    </summary>
+    <summary>Identifies the properties for requesting a security token from an issuer. It is used with <see cref="WsRequestSecurityToken" /> as part of the <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY*" /> parameter.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_APPLIES_TO">
-    <summary>
-      <para>A pointer to a <see cref="WS_ENDPOINT_ADDRESS" /> structure containing the address of the service ('relying party') to whom the requested
-token will be presented.
-.</para>
-    </summary>
+    <summary>A pointer to a <see cref="WS_ENDPOINT_ADDRESS" /> structure containing the address of the service ('relying party') to whom the requested token will be presented. .</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_TRUST_VERSION">
     <summary>
@@ -22,97 +16,48 @@ token will be presented.
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_SECURE_CONVERSATION_VERSION">
     <summary>
-      <para>A <see cref="WS_SECURE_CONVERSATION_VERSION" /> value that
-specifies the version of WS-SecureConversation to use when <see cref="WS_REQUEST_SECURITY_TOKEN_ACTION_NEW_CONTEXT" /></para>
-      <para>or <b>WS_REQUEST_SECURITY_TOKEN_ACTION_RENEW_CONTEXT</b> are specified.</para>
+      <para>A <see cref="WS_SECURE_CONVERSATION_VERSION" /> value that specifies the version of WS-SecureConversation to use when <see cref="WS_REQUEST_SECURITY_TOKEN_ACTION_NEW_CONTEXT" />or <b>WS_REQUEST_SECURITY_TOKEN_ACTION_RENEW_CONTEXT</b> are specified.</para>
       <para>If this property is not specified, it defaults to <see cref="WS_SECURE_CONVERSATION_VERSION_FEBRUARY_2005" />.</para>
     </summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_ISSUED_TOKEN_TYPE">
-    <summary>
-      <para>A pointer to a <see cref="WS_XML_STRING" /> structure that specifies the type of the security token to be issued.  If this property is not specified,
-the corresponding element is not generated in the request security token message, and the
-issuer is assumed to know the token type required.</para>
-    </summary>
+    <summary>A pointer to a <see cref="WS_XML_STRING" /> structure that specifies the type of the security token to be issued. If this property is not specified, the corresponding element is not generated in the request security token message, and the issuer is assumed to know the token type required.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_REQUEST_ACTION">
-    <summary>
-      <para>A <see cref="WS_REQUEST_SECURITY_TOKEN_ACTION" /> value that specifies the action to be used with the request. The default is <b>WS_REQUEST_SECURITY_TOKEN_ACTION_ISSUE</b>.</para>
-    </summary>
+    <summary>A <see cref="WS_REQUEST_SECURITY_TOKEN_ACTION" /> value that specifies the action to be used with the request. The default is <b>WS_REQUEST_SECURITY_TOKEN_ACTION_ISSUE</b>.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_EXISTING_TOKEN">
-    <summary>
-      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-security-token">WS_SECURITY_TOKEN</a> structure that,
-if specified, instead of requesting a new token, the provided token is renewed by requesting a new token based on
-the existing one. The old token becomes invalid if this operation succeeds.
-Only supported with <see cref="WS_REQUEST_SECURITY_TOKEN_ACTION_RENEW_CONTEXT" />.</para>
-    </summary>
+    <summary>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-security-token">WS_SECURITY_TOKEN</a> structure that, if specified, instead of requesting a new token, the provided token is renewed by requesting a new token based on the existing one. The old token becomes invalid if this operation succeeds. Only supported with <see cref="WS_REQUEST_SECURITY_TOKEN_ACTION_RENEW_CONTEXT" />.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_ISSUED_TOKEN_KEY_TYPE">
     <summary>
-      <para>A <see cref="WS_SECURITY_KEY_TYPE" /> value that specifies the type of the cryptographic key to be requested for the
-issued security token.                      This must be set to <b>WS_SECURITY_KEY_TYPE_NONE</b> or <b>WS_SECURITY_KEY_TYPE_SYMMETRIC</b>.</para>
-      <para>The value <see cref="WS_SECURITY_KEY_TYPE_NONE" /> specifies a bearer token without
-proof-of-possession keys. Such tokens will not produce a signature when used to secure a message.</para>
-      <para>If this property is not specified, the corresponding key type element is not emitted in token requests.
-Not emitting the key type in token requests results in the implied default of symmetric keys for the
-issued token, as defined in the WS-Trust specification.</para>
+      <para>A <see cref="WS_SECURITY_KEY_TYPE" /> value that specifies the type of the cryptographic key to be requested for the issued security token. This must be set to <b>WS_SECURITY_KEY_TYPE_NONE</b> or <b>WS_SECURITY_KEY_TYPE_SYMMETRIC</b>.</para>
+      <para>The value <see cref="WS_SECURITY_KEY_TYPE_NONE" /> specifies a bearer token without proof-of-possession keys. Such tokens will not produce a signature when used to secure a message.</para>
+      <para>If this property is not specified, the corresponding key type element is not emitted in token requests. Not emitting the key type in token requests results in the implied default of symmetric keys for the issued token, as defined in the WS-Trust specification.</para>
     </summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_ISSUED_TOKEN_KEY_SIZE">
-    <summary>
-      <para>A <b>ULONG</b> that specifies the size (in bits) of the cryptographic key to be requested
-in the issued security token.  This property may be specified only for
-issued tokens with symmetric keys.  If this property is not specified,
-the corresponding key size element is not emitted in token requests.</para>
-    </summary>
+    <summary>A <b>ULONG</b> that specifies the size (in bits) of the cryptographic key to be requested in the issued security token. This property may be specified only for issued tokens with symmetric keys. If this property is not specified, the corresponding key size element is not emitted in token requests.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_ISSUED_TOKEN_KEY_ENTROPY">
-    <summary>
-      <para>A <see cref="WS_SECURITY_KEY_ENTROPY_MODE" /> value that specifies how entropy is contributed to the cryptographic key of the
-issued token.  This property may be specified only for issued tokens
-with symmetric keys.  If this property is not specified, the mode <b>WS_SECURITY_KEY_ENTROPY_MODE_SERVER_ONLY</b> is used.</para>
-    </summary>
+    <summary>A <see cref="WS_SECURITY_KEY_ENTROPY_MODE" /> value that specifies how entropy is contributed to the cryptographic key of the issued token. This property may be specified only for issued tokens with symmetric keys. If this property is not specified, the mode <b>WS_SECURITY_KEY_ENTROPY_MODE_SERVER_ONLY</b> is used.</summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_LOCAL_REQUEST_PARAMETERS">
     <summary>
-      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> that contains
-the additional primary parameters to be included verbatim in request
-security token messages.  Each such parameter must be a top-level
-element in the supplied XML buffer.  If this property is not specified, such
-parameters are not emitted. The buffer is serialized into the RequestSecurityToken element
-when requesting a security token.</para>
-      <para>Unlike <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_SERVICE_REQUEST_PARAMETERS" />, local request
-parameters are defined by the client as a means to add parameters to the token request.</para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> that contains the additional primary parameters to be included verbatim in request security token messages. Each such parameter must be a top-level element in the supplied XML buffer. If this property is not specified, such parameters are not emitted. The buffer is serialized into the RequestSecurityToken element when requesting a security token.</para>
+      <para>Unlike <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_SERVICE_REQUEST_PARAMETERS" />, local request parameters are defined by the client as a means to add parameters to the token request.</para>
     </summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_SERVICE_REQUEST_PARAMETERS">
     <summary>
-      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> that contains
-the service parameters to include in request security token
-messages, supplied as an XML buffer. Each such parameter must be a
-top-level element in the supplied XML buffer. If this is property not specified, such
-parameters are not emitted.</para>
-      <para>If <see cref="WS_TRUST_VERSION_FEBRUARY_2005" /> is specified this buffer is serialized
-into the RequestSecurityToken element following the
-<see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_LOCAL_REQUEST_PARAMETERS" />.</para>
-      <para>If <see cref="WS_TRUST_VERSION_1_3" /> is specified this buffer is serialized into the
-RequestSecurityToken/SecondaryParameters element.</para>
-      <para>Service request parameters are instructions regarding how to issue a token. They are obtained from the service,
-usually by means of metadata import. In that case, this parameter may be obtained
-from the out.RequestSecurityTokenTemplate field of the <see cref="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT" />.</para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> that contains the service parameters to include in request security token messages, supplied as an XML buffer. Each such parameter must be a top-level element in the supplied XML buffer. If this is property not specified, such parameters are not emitted.</para>
+      <para>If <see cref="WS_TRUST_VERSION_FEBRUARY_2005" /> is specified this buffer is serialized into the RequestSecurityToken element following the<see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_LOCAL_REQUEST_PARAMETERS" />.</para>
+      <para>If <see cref="WS_TRUST_VERSION_1_3" /> is specified this buffer is serialized into the RequestSecurityToken/SecondaryParameters element.</para>
+      <para>Service request parameters are instructions regarding how to issue a token. They are obtained from the service, usually by means of metadata import. In that case, this parameter may be obtained from the out.RequestSecurityTokenTemplate field of the <see cref="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT" />.</para>
     </summary>
   </member>
   <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_MESSAGE_PROPERTIES">
-    <summary>
-      <para>The set of <see cref="WS_MESSAGE_PROPERTIES" /> to be specified
-while creating the two messages with <see cref="WsCreateMessage" /> and are to
-be used for the security token obtaining exchange.  If this property
-is not specified, the request and reply messages are created with the
-default message properties.</para>
-    </summary>
+    <summary>The set of <see cref="WS_MESSAGE_PROPERTIES" /> to be specified while creating the two messages with <see cref="WsCreateMessage" /> and are to be used for the security token obtaining exchange. If this property is not specified, the request and reply messages are created with the default message properties.</summary>
   </member>
-  <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_BEARER_KEY_TYPE_VERSION">
-    <summary></summary>
-  </member>
+  <member name="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ID.WS_REQUEST_SECURITY_TOKEN_PROPERTY_BEARER_KEY_TYPE_VERSION"></member>
 </doc>

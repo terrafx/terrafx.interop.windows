@@ -19,32 +19,4 @@ public static unsafe partial class IMFReadWriteClassFactoryTests
     {
         Assert.That(typeof(IMFReadWriteClassFactory).GUID, Is.EqualTo(IID_IMFReadWriteClassFactory));
     }
-
-    /// <summary>Validates that the <see cref="IMFReadWriteClassFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFReadWriteClassFactory>(), Is.EqualTo(sizeof(IMFReadWriteClassFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFReadWriteClassFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFReadWriteClassFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFReadWriteClassFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFReadWriteClassFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFReadWriteClassFactory), Is.EqualTo(4));
-        }
-    }
 }

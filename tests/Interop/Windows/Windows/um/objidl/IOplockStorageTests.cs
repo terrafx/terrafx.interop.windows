@@ -19,32 +19,4 @@ public static unsafe partial class IOplockStorageTests
     {
         Assert.That(typeof(IOplockStorage).GUID, Is.EqualTo(IID_IOplockStorage));
     }
-
-    /// <summary>Validates that the <see cref="IOplockStorage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IOplockStorage>(), Is.EqualTo(sizeof(IOplockStorage)));
-    }
-
-    /// <summary>Validates that the <see cref="IOplockStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IOplockStorage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IOplockStorage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IOplockStorage), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IOplockStorage), Is.EqualTo(4));
-        }
-    }
 }

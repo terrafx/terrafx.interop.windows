@@ -4,120 +4,55 @@
 <doc>
   <member name="IAMDevMemoryAllocator.Alloc">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</para>
-      <para>Allocates a memory buffer.</para>
-    </summary>
-    <param name="ppBuffer">
-      <para>Pointer that will receive the address of the allocated memory buffer.</para>
-    </param>
-    <param name="pdwcbBuffer">
-      <para>Pointer to a <b>DWORD</b> whose input value is the number of bytes to allocate and whose output value is the actual number of bytes allocated.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if the desired quantity of memory was allocated, S_FALSE if memory was unavailable.</para>
-    </returns>
-    <remarks>
-      <para>Call this method to allocate a block of memory from the available pool.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMDevMemoryAllocator Interface" />
-    <seealso cref="IAMDevMemoryAllocator.Free" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</div>Allocates a memory buffer.</summary>
+    <param name="ppBuffer">Pointer that will receive the address of the allocated memory buffer.</param>
+    <param name="pdwcbBuffer">Pointer to a <b>DWORD</b> whose input value is the number of bytes to allocate and whose output value is the actual number of bytes allocated.</param>
+    <returns>Returns S_OK if the desired quantity of memory was allocated, S_FALSE if memory was unavailable.</returns>
   </member>
   <member name="IAMDevMemoryAllocator.CheckMemory">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</para>
-      <para>Tests whether the specific instance (device) of the allocator allocated a memory pointer.</para>
-    </summary>
-    <param name="pBuffer">
-      <para>Pointer to the allocated memory buffer's address.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if the on-board allocator allocated the memory, or S_FALSE if not. Memory that is on the particular device but not allocated will also return S_FALSE.</para>
-    </returns>
-    <remarks>
-      <para>The hardware filter typically uses this method to test whether the pointer actually points to on-board memory.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMDevMemoryAllocator Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</div>Tests whether the specific instance (device) of the allocator allocated a memory pointer.</summary>
+    <param name="pBuffer">Pointer to the allocated memory buffer's address.</param>
+    <returns>Returns S_OK if the on-board allocator allocated the memory, or S_FALSE if not. Memory that is on the particular device but not allocated will also return S_FALSE.</returns>
   </member>
   <member name="IAMDevMemoryAllocator.Free">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</para>
-      <para>Frees the previously allocated memory.</para>
-    </summary>
-    <param name="pBuffer">
-      <para>Pointer to the allocated memory.</para>
-    </param>
-    <returns>
-      <para>Returns E_INVALIDARG if the specified allocator didn't allocate the memory (that is, <see cref="CheckMemory" /> fails).</para>
-    </returns>
-    <remarks>
-      <para>This method frees a block of memory from the pool.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMDevMemoryAllocator Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</div>Frees the previously allocated memory.</summary>
+    <param name="pBuffer">Pointer to the allocated memory.</param>
+    <returns>Returns E_INVALIDARG if the specified allocator didn't allocate the memory (that is, <see cref="CheckMemory" /> fails).</returns>
   </member>
   <member name="IAMDevMemoryAllocator.GetDevMemoryObject">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</para>
-      <para>Retrieves an <b>IUnknown</b> interface pointer to a device memory control object that can be aggregated with a custom allocator.</para>
-    </summary>
-    <param name="ppUnkInnner">
-      <para>Address of a pointer to the newly created control object's own <b>IUnknown</b>. This inner <b>IUnknown</b> interface should be released when the outer object is destroyed. The custom allocator should call the <b>QueryInterface</b> method on this pointer to obtain the <see cref="IAMDevMemoryControl" /> interface.</para>
-    </param>
-    <param name="pUnkOuter">
-      <para>Pointer to the custom allocator's own <b>IUnknown</b> interface. This interface aggregates the device memory control object inside the custom allocator.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The device memory control object is necessary to aggregate with the custom allocator, because renderers that require the use of on-board memory will query for <see cref="IAMDevMemoryControl" /> when they receive a new allocator, to verify that the memory is from the same device. This occurs because the hardware filter will receive an <see cref="IMemAllocator" /> object, which might or might not use the on-board memory. To decide if it is a compatible allocator, the object would query for the <b>IAMDevMemoryControl</b> interface to access specific methods. The <b>IAMDevMemoryControl</b> creates an aggregated object that implements the methods of <b>IAMDevMemoryControl</b> (these are often hardware-specific).</para>
-      <para>See COM documentation for rules on how the outer object implements aggregation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMDevMemoryAllocator Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</div>Retrieves an <b>IUnknown</b> interface pointer to a device memory control object that can be aggregated with a custom allocator.</summary>
+    <param name="ppUnkInnner">Address of a pointer to the newly created control object's own <b>IUnknown</b>. This inner <b>IUnknown</b> interface should be released when the outer object is destroyed. The custom allocator should call the <b>QueryInterface</b> method on this pointer to obtain the <see cref="IAMDevMemoryControl" /> interface.</param>
+    <param name="pUnkOuter">Pointer to the custom allocator's own <b>IUnknown</b> interface. This interface aggregates the device memory control object inside the custom allocator.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IAMDevMemoryAllocator.GetInfo">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</para>
-      <para>Retrieves information about the memory capabilities.</para>
-    </summary>
-    <param name="pdwcbTotalFree">
-      <para>Pointer to the total free memory size.</para>
-    </param>
-    <param name="pdwcbLargestFree">
-      <para>Pointer to the returned largest free memory size.</para>
-    </param>
-    <param name="pdwcbTotalMemory">
-      <para>Pointer to the returned total memory size.</para>
-    </param>
-    <param name="pdwcbMinimumChunk">
-      <para>Pointer to the returned minimum chunk size, giving granularity and alignment rules.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>Use this method to find out the total amount of memory available. This method returns values for the entire on-board memory that is available on that device. If multiple filters (devices) share the memory, it will return the amount available to that specific device, which might be a portion of the total amount of on-board memory. This amount will be implementation-specific. For example, the on-board memory manager on the codec might be able to access all 32 megabytes (MB) of memory on the card. However, individual pin implementations of <see cref="IAMDevMemoryAllocator" /> only report a portion of this memory.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMDevMemoryAllocator Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMDevMemoryAllocator</b> interface is deprecated.</div>Retrieves information about the memory capabilities.</summary>
+    <param name="pdwcbTotalFree">Pointer to the total free memory size.</param>
+    <param name="pdwcbLargestFree">Pointer to the returned largest free memory size.</param>
+    <param name="pdwcbTotalMemory">Pointer to the returned total memory size.</param>
+    <param name="pdwcbMinimumChunk">Pointer to the returned minimum chunk size, giving granularity and alignment rules.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IAMDevMemoryAllocator">
     <summary>
-      <para>
-        <b>Note</b>  This interface is no longer supported by the AVI Splitter.</para>
-      <para>
-        <b>Note</b>  This interface was defined to support older hardware decoders that required AVI files to be read into directly hardware memory. The interface enables the AVI parser to allocate memory from the downstream filter but still provide its own allocator.</para>
-      <para>Implement this interface when your pin must support the creation of on-board memory allocators. Source filters that are aware of on-board memory and need to create their own allocators should query for this interface, request an amount of memory and then create an allocator (aggregating the device memory control object). Source filters that don't need to create their own allocator could just use the allocator of the downstream pin (which also aggregates the device memory control object). The hardware-based filter can confirm the usage of its on-board memory by calling methods on the aggregated allocator.</para>
-      <para>Use this interface when applications need to control the memory of codecs with on-board memory.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface is no longer supported by the AVI Splitter.</div>
+      <div>
+        <b>Note</b>  This interface was defined to support older hardware decoders that required AVI files to be read into directly hardware memory. The interface enables the AVI parser to allocate memory from the downstream filter but still provide its own allocator.</div>Implement this interface when your pin must support the creation of on-board memory allocators. Source filters that are aware of on-board memory and need to create their own allocators should query for this interface, request an amount of memory and then create an allocator (aggregating the device memory control object). Source filters that don't need to create their own allocator could just use the allocator of the downstream pin (which also aggregates the device memory control object). The hardware-based filter can confirm the usage of its on-board memory by calling methods on the aggregated allocator.<para>Use this interface when applications need to control the memory of codecs with on-board memory.</para></summary>
   </member>
 </doc>

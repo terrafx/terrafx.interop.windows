@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="VIEWSTATUS">
-    <summary>
-      <para>Specifies the opacity of the object and the drawing aspects supported by the object.</para>
-    </summary>
-    <seealso cref="IViewObjectEx.GetViewStatus" />
+    <summary>Specifies the opacity of the object and the drawing aspects supported by the object.</summary>
   </member>
   <member name="VIEWSTATUS.VIEWSTATUS_OPAQUE">
     <summary>
@@ -21,23 +18,15 @@
     </summary>
   </member>
   <member name="VIEWSTATUS.VIEWSTATUS_DVASPECTOPAQUE">
-    <summary>
-      <para>The object supports DVASPECT_OPAQUE. All <see cref="IViewObjectEx" /> methods taking a drawing aspect as a parameter can be called with this aspect.</para>
-    </summary>
+    <summary>The object supports DVASPECT_OPAQUE. All <see cref="IViewObjectEx" /> methods taking a drawing aspect as a parameter can be called with this aspect.</summary>
   </member>
   <member name="VIEWSTATUS.VIEWSTATUS_DVASPECTTRANSPARENT">
-    <summary>
-      <para>The object supports DVASPECT_TRANSPARENT. All <see cref="IViewObjectEx" /> methods taking a drawing aspect as a parameter can be called with this aspect.</para>
-    </summary>
+    <summary>The object supports DVASPECT_TRANSPARENT. All <see cref="IViewObjectEx" /> methods taking a drawing aspect as a parameter can be called with this aspect.</summary>
   </member>
   <member name="VIEWSTATUS.VIEWSTATUS_SURFACE">
-    <summary>
-      <para>The object supports a 2-dimensional surface.</para>
-    </summary>
+    <summary>The object supports a 2-dimensional surface.</summary>
   </member>
   <member name="VIEWSTATUS.VIEWSTATUS_3DSURFACE">
-    <summary>
-      <para>The object supports a 3-dimensional surface.</para>
-    </summary>
+    <summary>The object supports a 3-dimensional surface.</summary>
   </member>
 </doc>

@@ -3,64 +3,34 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_FILE_COPY_PARAMS">
-    <summary>
-      <para>The
-<b>SP_FILE_COPY_PARAMS</b> structure describes a single file copy operation.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The setupapi.h header defines SP_FILE_COPY_PARAMS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
+    <summary>The<b>SP_FILE_COPY_PARAMS</b> structure describes a single file copy operation.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.cbSize">
-    <summary>
-      <para>Size of the structure, in bytes. Set to the value: <code>sizeof(SP_FILE_COPY_PARAMS)</code>.</para>
-    </summary>
+    <summary>Size of the structure, in bytes. Set to the value: <code>sizeof(SP_FILE_COPY_PARAMS)</code>.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.QueueHandle">
-    <summary>
-      <para>Handle to a setup file queue, as returned by
-<see cref="SetupOpenFileQueue" />.</para>
-    </summary>
+    <summary>Handle to a setup file queue, as returned by<see cref="SetupOpenFileQueue" />.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourceRootPath">
-    <summary>
-      <para>Optional pointer to the root of the source for this copy, such as A:.</para>
-    </summary>
+    <summary>Optional pointer to the root of the source for this copy, such as A:.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourcePath">
-    <summary>
-      <para>Optional pointer to the path relative to <b>SourceRootPath</b> where the file can be found.</para>
-    </summary>
+    <summary>Optional pointer to the path relative to <b>SourceRootPath</b> where the file can be found.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourceFilename">
-    <summary>
-      <para>File name part of the file to be copied.</para>
-    </summary>
+    <summary>File name part of the file to be copied.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourceDescription">
-    <summary>
-      <para>Optional pointer to a description of the source media to be used during disk prompts.</para>
-    </summary>
+    <summary>Optional pointer to a description of the source media to be used during disk prompts.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourceTagfile">
-    <summary>
-      <para>Optional pointer to a tag file whose presence at <b>SourceRootPath</b> indicates the presence of the source media. If not specified, the file itself will be used as the tag file if required.</para>
-    </summary>
+    <summary>Optional pointer to a tag file whose presence at <b>SourceRootPath</b> indicates the presence of the source media. If not specified, the file itself will be used as the tag file if required.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.TargetDirectory">
-    <summary>
-      <para>Directory where the file is to be copied.</para>
-    </summary>
+    <summary>Directory where the file is to be copied.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.TargetFilename">
-    <summary>
-      <para>Optional pointer to the name of the target file. If not specified, the target file will have the same name as the source file.</para>
-    </summary>
+    <summary>Optional pointer to the name of the target file. If not specified, the target file will have the same name as the source file.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.CopyStyle">
     <summary>
@@ -70,201 +40,226 @@ The setupapi.h header defines SP_FILE_COPY_PARAMS as an alias which automaticall
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>SP_COPY_DELETESOURCE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_DELETESOURCE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Delete the source file upon successful copy. The caller is not notified if the deletion fails.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_REPLACEONLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Copy the file only if doing so would overwrite a file at the destination path. The caller is not notified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NEWER_OR_SAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Examine each file being copied to see if its version resources indicate that it is either the same version or not newer than an existing copy on the target. <para>The file version information used during version checks is that specified in the <b>dwFileVersionMS</b> and <b>dwFileVersionLS</b> members of a<see cref="VS_FIXEDFILEINFO" /> structure, as filled in by the version functions. If one of the files does not have version resources, or if they have identical version information, the source file is considered newer.</para><para>If the source file is not equal in version or newer, and <i>CopyMsgHandler</i> is specified, the caller is notified and may cancel the copy. If <i>CopyMsgHandler</i> is not specified, the file is not copied.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NEWER_ONLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Examine each file being copied to see if its version resources indicate that it is not newer than an existing copy on the target. If the source file is newer but not equal in version to the existing target, the file is copied.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NOOVERWRITE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Check whether the target file exists, and if so, notify the caller who may veto the copy. If <i>CopyMsgHandler</i> is not specified, the file is not overwritten.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NODECOMP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not decompress the file. When this flag is set, the target file is not given the uncompressed form of the source name (if appropriate). For example, copying f:\x86\cmd.ex_ to \\install\temp results in a target file of \\install\temp\cmd.ex_. If the SP_COPY_NODECOMP flag was not specified, the file would be decompressed and the target would be called \\install\temp\cmd.exe. The file name part of <i>DestinationName</i>, if specified, is stripped and replaced with the file name of the source file. When SP_COPY_NODECOMP is specified, no language or version information can be checked.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_LANGUAGEAWARE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Examine each file being copied to see if its language differs from the language of any existing file already on the target. If so, and <i>CopyMsgHandler</i> is specified, the caller is notified and may cancel the copy. If <i>CopyMsgHandler</i> is not specified, the file is not copied.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_SOURCE_ABSOLUTE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Delete the source file upon successful copy. The caller is not notified if the deletion fails.</para>
-          </description>
-        </item>
-        <item>
+            <i>SourceFile</i> is a full source path. Do not look it up in the SourceDisksNames section of the INF file.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>SP_COPY_REPLACEONLY</b>
-          </description>
-          <description>
-            <para>Copy the file only if doing so would overwrite a file at the destination path. The caller is not notified.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_NEWER_OR_SAME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_SOURCEPATH_ABSOLUTE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Examine each file being copied to see if its version resources indicate that it is either the same version or not newer than an existing copy on the target.</para>
-            <para>The file version information used during version checks is that specified in the <b>dwFileVersionMS</b> and <b>dwFileVersionLS</b> members of a
-<see cref="VS_FIXEDFILEINFO" /> structure, as filled in by the version functions. If one of the files does not have version resources, or if they have identical version information, the source file is considered newer.</para>
-            <para>If the source file is not equal in version or newer, and <i>CopyMsgHandler</i> is specified, the caller is notified and may cancel the copy. If <i>CopyMsgHandler</i> is not specified, the file is not copied.</para>
+            <i>SourcePathRoot</i> is the full path part of the source file. Ignore the relative source specified in the SourceDisksNames section of the INF file for the source media where the file is located. This flag is ignored if SP_COPY_SOURCE_ABSOLUTE is specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_FORCE_IN_USE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>If the target exists, behave as if it is in-use and queue the file for copying on the next system reboot.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>SP_COPY_NEWER_ONLY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_IN_USE_NEEDS_REBOOT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>If the file was in-use during the copy operation, alert the user that the system needs to be rebooted.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Examine each file being copied to see if its version resources indicate that it is not newer than an existing copy on the target. If the source file is newer but not equal in version to the existing target, the file is copied.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NOSKIP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Do not give the user the option to skip a file.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>SP_COPY_NOOVERWRITE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_FORCE_NOOVERWRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Check whether the target file exists, and if so, the file is not overwritten. The caller is not notified.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Check whether the target file exists, and if so, notify the caller who may veto the copy. If <i>CopyMsgHandler</i> is not specified, the file is not overwritten.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_FORCE_NEWER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Examine each file being copied to see if its version resources (or time stamps for non-image files) indicate that it is not newer than an existing copy on the target. If the file being copied is not newer, the file is not copied. The caller is not notified.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>SP_COPY_NODECOMP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_WARNIFSKIP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Do not decompress the file. When this flag is set, the target file is not given the uncompressed form of the source name (if appropriate). For example, copying f:\x86\cmd.ex_ to \install\temp results in a target file of \install\temp\cmd.ex_. If the SP_COPY_NODECOMP flag was not specified, the file would be decompressed and the target would be called \install\temp\cmd.exe. The file name part of <i>DestinationName</i>, if specified, is stripped and replaced with the file name of the source file. When SP_COPY_NODECOMP is specified, no language or version information can be checked.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_LANGUAGEAWARE</b>
-          </description>
-          <description>
-            <para>Examine each file being copied to see if its language differs from the language of any existing file already on the target. If so, and <i>CopyMsgHandler</i> is specified, the caller is notified and may cancel the copy. If <i>CopyMsgHandler</i> is not specified, the file is not copied.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_SOURCE_ABSOLUTE</b>
-          </description>
-          <description>
-            <i>SourceFile</i> is a full source path. Do not look it up in the SourceDisksNames section of the INF file.
-</description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_SOURCEPATH_ABSOLUTE</b>
-          </description>
-          <description>
-            <i>SourcePathRoot</i> is the full path part of the source file. Ignore the relative source specified in the SourceDisksNames section of the INF file for the source media where the file is located. This flag is ignored if SP_COPY_SOURCE_ABSOLUTE is specified.
-</description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_FORCE_IN_USE</b>
-          </description>
-          <description>
-            <para>If the target exists, behave as if it is in-use and queue the file for copying on the next system reboot.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_IN_USE_NEEDS_REBOOT</b>
-          </description>
-          <description>
-            <para>If the file was in-use during the copy operation, alert the user that the system needs to be rebooted.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_NOSKIP</b>
-          </description>
-          <description>
-            <para>Do not give the user the option to skip a file.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_FORCE_NOOVERWRITE</b>
-          </description>
-          <description>
-            <para>Check whether the target file exists, and if so, the file is not overwritten. The caller is not notified.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_FORCE_NEWER</b>
-          </description>
-          <description>
-            <para>Examine each file being copied to see if its version resources (or time stamps for non-image files) indicate that it is not newer than an existing copy on the target. If the file being copied is not newer, the file is not copied. The caller is not notified.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_WARNIFSKIP</b>
-          </description>
-          <description>
-            <para>If the user tries to skip a file, warn them that skipping a file may affect the installation. (Used for system-critical files.)</para>
-          </description>
-        </item>
+          <description>If the user tries to skip a file, warn them that skipping a file may affect the installation. (Used for system-critical files.)</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.LayoutInf">
-    <summary>
-      <para>Handle to the INF to use to obtain source information.</para>
-    </summary>
+    <summary>Handle to the INF to use to obtain source information.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SecurityDescriptor">
-    <summary>
-      <para>An optional Security Descriptor String specifying the ACL to apply to the file.</para>
-    </summary>
+    <summary>An optional Security Descriptor String specifying the ACL to apply to the file.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS">
-    <summary>
-      <para>The
-<b>SP_FILE_COPY_PARAMS</b> structure describes a single file copy operation.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The setupapi.h header defines SP_FILE_COPY_PARAMS as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
+    <summary>The<b>SP_FILE_COPY_PARAMS</b> structure describes a single file copy operation.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.cbSize">
-    <summary>
-      <para>Size of the structure, in bytes. Set to the value: <code>sizeof(SP_FILE_COPY_PARAMS)</code>.</para>
-    </summary>
+    <summary>Size of the structure, in bytes. Set to the value: <code>sizeof(SP_FILE_COPY_PARAMS)</code>.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.QueueHandle">
-    <summary>
-      <para>Handle to a setup file queue, as returned by
-<see cref="SetupOpenFileQueue" />.</para>
-    </summary>
+    <summary>Handle to a setup file queue, as returned by<see cref="SetupOpenFileQueue" />.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourceRootPath">
-    <summary>
-      <para>Optional pointer to the root of the source for this copy, such as A:.</para>
-    </summary>
+    <summary>Optional pointer to the root of the source for this copy, such as A:.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourcePath">
-    <summary>
-      <para>Optional pointer to the path relative to <b>SourceRootPath</b> where the file can be found.</para>
-    </summary>
+    <summary>Optional pointer to the path relative to <b>SourceRootPath</b> where the file can be found.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourceFilename">
-    <summary>
-      <para>File name part of the file to be copied.</para>
-    </summary>
+    <summary>File name part of the file to be copied.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourceDescription">
-    <summary>
-      <para>Optional pointer to a description of the source media to be used during disk prompts.</para>
-    </summary>
+    <summary>Optional pointer to a description of the source media to be used during disk prompts.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SourceTagfile">
-    <summary>
-      <para>Optional pointer to a tag file whose presence at <b>SourceRootPath</b> indicates the presence of the source media. If not specified, the file itself will be used as the tag file if required.</para>
-    </summary>
+    <summary>Optional pointer to a tag file whose presence at <b>SourceRootPath</b> indicates the presence of the source media. If not specified, the file itself will be used as the tag file if required.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.TargetDirectory">
-    <summary>
-      <para>Directory where the file is to be copied.</para>
-    </summary>
+    <summary>Directory where the file is to be copied.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.TargetFilename">
-    <summary>
-      <para>Optional pointer to the name of the target file. If not specified, the target file will have the same name as the source file.</para>
-    </summary>
+    <summary>Optional pointer to the name of the target file. If not specified, the target file will have the same name as the source file.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.CopyStyle">
     <summary>
@@ -274,140 +269,195 @@ The setupapi.h header defines SP_FILE_COPY_PARAMS as an alias which automaticall
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>SP_COPY_DELETESOURCE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_DELETESOURCE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Delete the source file upon successful copy. The caller is not notified if the deletion fails.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_REPLACEONLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Copy the file only if doing so would overwrite a file at the destination path. The caller is not notified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NEWER_OR_SAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Examine each file being copied to see if its version resources indicate that it is either the same version or not newer than an existing copy on the target. <para>The file version information used during version checks is that specified in the <b>dwFileVersionMS</b> and <b>dwFileVersionLS</b> members of a<see cref="VS_FIXEDFILEINFO" /> structure, as filled in by the version functions. If one of the files does not have version resources, or if they have identical version information, the source file is considered newer.</para><para>If the source file is not equal in version or newer, and <i>CopyMsgHandler</i> is specified, the caller is notified and may cancel the copy. If <i>CopyMsgHandler</i> is not specified, the file is not copied.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NEWER_ONLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Examine each file being copied to see if its version resources indicate that it is not newer than an existing copy on the target. If the source file is newer but not equal in version to the existing target, the file is copied.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NOOVERWRITE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Check whether the target file exists, and if so, notify the caller who may veto the copy. If <i>CopyMsgHandler</i> is not specified, the file is not overwritten.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NODECOMP</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Do not decompress the file. When this flag is set, the target file is not given the uncompressed form of the source name (if appropriate). For example, copying f:\x86\cmd.ex_ to \\install\temp results in a target file of \\install\temp\cmd.ex_. If the SP_COPY_NODECOMP flag was not specified, the file would be decompressed and the target would be called \\install\temp\cmd.exe. The file name part of <i>DestinationName</i>, if specified, is stripped and replaced with the file name of the source file. When SP_COPY_NODECOMP is specified, no language or version information can be checked.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_LANGUAGEAWARE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Examine each file being copied to see if its language differs from the language of any existing file already on the target. If so, and <i>CopyMsgHandler</i> is specified, the caller is notified and may cancel the copy. If <i>CopyMsgHandler</i> is not specified, the file is not copied.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_SOURCE_ABSOLUTE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Delete the source file upon successful copy. The caller is not notified if the deletion fails.</para>
-          </description>
-        </item>
-        <item>
+            <i>SourceFile</i> is a full source path. Do not look it up in the SourceDisksNames section of the INF file.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>SP_COPY_REPLACEONLY</b>
-          </description>
-          <description>
-            <para>Copy the file only if doing so would overwrite a file at the destination path. The caller is not notified.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_NEWER_OR_SAME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_SOURCEPATH_ABSOLUTE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Examine each file being copied to see if its version resources indicate that it is either the same version or not newer than an existing copy on the target.</para>
-            <para>The file version information used during version checks is that specified in the <b>dwFileVersionMS</b> and <b>dwFileVersionLS</b> members of a
-<see cref="VS_FIXEDFILEINFO" /> structure, as filled in by the version functions. If one of the files does not have version resources, or if they have identical version information, the source file is considered newer.</para>
-            <para>If the source file is not equal in version or newer, and <i>CopyMsgHandler</i> is specified, the caller is notified and may cancel the copy. If <i>CopyMsgHandler</i> is not specified, the file is not copied.</para>
+            <i>SourcePathRoot</i> is the full path part of the source file. Ignore the relative source specified in the SourceDisksNames section of the INF file for the source media where the file is located. This flag is ignored if SP_COPY_SOURCE_ABSOLUTE is specified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_FORCE_IN_USE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>If the target exists, behave as if it is in-use and queue the file for copying on the next system reboot.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>SP_COPY_NEWER_ONLY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_IN_USE_NEEDS_REBOOT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>If the file was in-use during the copy operation, alert the user that the system needs to be rebooted.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Examine each file being copied to see if its version resources indicate that it is not newer than an existing copy on the target. If the source file is newer but not equal in version to the existing target, the file is copied.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_NOSKIP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Do not give the user the option to skip a file.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>SP_COPY_NOOVERWRITE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_FORCE_NOOVERWRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Check whether the target file exists, and if so, the file is not overwritten. The caller is not notified.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Check whether the target file exists, and if so, notify the caller who may veto the copy. If <i>CopyMsgHandler</i> is not specified, the file is not overwritten.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_FORCE_NEWER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Examine each file being copied to see if its version resources (or time stamps for non-image files) indicate that it is not newer than an existing copy on the target. If the file being copied is not newer, the file is not copied. The caller is not notified.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>SP_COPY_NODECOMP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SP_COPY_WARNIFSKIP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Do not decompress the file. When this flag is set, the target file is not given the uncompressed form of the source name (if appropriate). For example, copying f:\x86\cmd.ex_ to \install\temp results in a target file of \install\temp\cmd.ex_. If the SP_COPY_NODECOMP flag was not specified, the file would be decompressed and the target would be called \install\temp\cmd.exe. The file name part of <i>DestinationName</i>, if specified, is stripped and replaced with the file name of the source file. When SP_COPY_NODECOMP is specified, no language or version information can be checked.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_LANGUAGEAWARE</b>
-          </description>
-          <description>
-            <para>Examine each file being copied to see if its language differs from the language of any existing file already on the target. If so, and <i>CopyMsgHandler</i> is specified, the caller is notified and may cancel the copy. If <i>CopyMsgHandler</i> is not specified, the file is not copied.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_SOURCE_ABSOLUTE</b>
-          </description>
-          <description>
-            <i>SourceFile</i> is a full source path. Do not look it up in the SourceDisksNames section of the INF file.
-</description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_SOURCEPATH_ABSOLUTE</b>
-          </description>
-          <description>
-            <i>SourcePathRoot</i> is the full path part of the source file. Ignore the relative source specified in the SourceDisksNames section of the INF file for the source media where the file is located. This flag is ignored if SP_COPY_SOURCE_ABSOLUTE is specified.
-</description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_FORCE_IN_USE</b>
-          </description>
-          <description>
-            <para>If the target exists, behave as if it is in-use and queue the file for copying on the next system reboot.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_IN_USE_NEEDS_REBOOT</b>
-          </description>
-          <description>
-            <para>If the file was in-use during the copy operation, alert the user that the system needs to be rebooted.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_NOSKIP</b>
-          </description>
-          <description>
-            <para>Do not give the user the option to skip a file.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_FORCE_NOOVERWRITE</b>
-          </description>
-          <description>
-            <para>Check whether the target file exists, and if so, the file is not overwritten. The caller is not notified.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_FORCE_NEWER</b>
-          </description>
-          <description>
-            <para>Examine each file being copied to see if its version resources (or time stamps for non-image files) indicate that it is not newer than an existing copy on the target. If the file being copied is not newer, the file is not copied. The caller is not notified.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SP_COPY_WARNIFSKIP</b>
-          </description>
-          <description>
-            <para>If the user tries to skip a file, warn them that skipping a file may affect the installation. (Used for system-critical files.)</para>
-          </description>
-        </item>
+          <description>If the user tries to skip a file, warn them that skipping a file may affect the installation. (Used for system-critical files.)</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.LayoutInf">
-    <summary>
-      <para>Handle to the INF to use to obtain source information.</para>
-    </summary>
+    <summary>Handle to the INF to use to obtain source information.</summary>
   </member>
   <member name="SP_FILE_COPY_PARAMS.SecurityDescriptor">
-    <summary>
-      <para>An optional Security Descriptor String specifying the ACL to apply to the file.</para>
-    </summary>
+    <summary>An optional Security Descriptor String specifying the ACL to apply to the file.</summary>
   </member>
 </doc>

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Device5.CheckDriverMatchingIdentifier">
+    <summary>Reports the compatibility of serialized data, such as a serialized raytracing acceleration structure resulting from a call to <see cref="CopyRaytracingAccelerationStructure" /> with mode <see cref="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_COPY_MODE_SERIALIZE" />, with the current device/driver.</summary>
+    <param name="SerializedDataType">The type of the serialized data. For more information, see <see cref="D3D12_SERIALIZED_DATA_TYPE" />.</param>
+    <param name="pIdentifierToCheck">Identifier from the header of the serialized data to check with the driver. For more information, see <see cref="D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER" />.</param>
+    <returns>The returned compatibility status. For more information, see <see cref="D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS" />.</returns>
+  </member>
+  <member name="ID3D12Device5.CreateLifetimeTracker">
+    <summary>Creates a lifetime tracker associated with an application-defined callback; the callback receives notifications when the lifetime of a tracked object is changed.</summary>
+    <param name="pOwner">A pointer to an <b>ID3D12LifetimeOwner</b> interface representing the application-defined callback.</param>
+    <param name="riid">A reference to the interface identifier (IID) of the interface to return in <i>ppvTracker</i>.</param>
+    <param name="ppvTracker">A pointer to a memory block that receives the requested interface pointer to the created object.</param>
+  </member>
+  <member name="ID3D12Device5.CreateMetaCommand">
+    <summary>Creates an instance of the specified meta command.</summary>
+    <param name="CommandId">A reference to the globally unique identifier (GUID) of the meta command that you wish to instantiate.</param>
+    <param name="NodeMask">For single-adapter operation, set this to zero. If there are multiple adapter nodes, set a bit to identify the node (one of the device's physical adapters) to which the meta command applies. Each bit in the mask corresponds to a single node. Only one bit must be set. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</param>
+    <param name="pCreationParametersData">An optional pointer to a constant structure containing the values of the parameters for creating the meta command.</param>
+    <param name="CreationParametersDataSizeInBytes">A <a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">SIZE_T</a> containing the size of the structure pointed to by <i>pCreationParametersData</i>, if set, otherwise 0.</param>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppMetaCommand</i>. This is expected to be the GUID of <see cref="ID3D12MetaCommand" />.</param>
+    <param name="ppMetaCommand">A pointer to a memory block that receives a pointer to the meta command. This is the address of a pointer to an <see cref="ID3D12MetaCommand" />, representing the meta command created.</param>
+    <returns>
+      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
+      <list type="table">
+        <listheader>
+          <description>Return value</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>DXGI_ERROR_UNSUPPORTED</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The current hardware does not support the algorithm being requested</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="ID3D12Device5.CreateStateObject">
+    <summary>Creates an <see cref="ID3D12StateObject" />.</summary>
+    <param name="pDesc">The description of the state object to create.</param>
+    <param name="riid">The GUID of the interface to create. Use <i>__uuidof(ID3D12StateObject)</i>.</param>
+    <param name="ppStateObject">The returned state object.</param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise, returns one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>E_INVALIDARG if one of the input parameters is invalid.</description>
+        </item>
+        <item>
+          <description>E_OUTOFMEMORY if sufficient memory is not available to create the handle.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> topic.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ID3D12Device5.EnumerateMetaCommandParameters">
+    <summary>Queries reflection metadata about the parameters of the specified meta command.</summary>
+    <param name="CommandId">A reference to the globally unique identifier (GUID) of the meta command whose parameters you wish to be returned in <i>pParameterDescs</i>.</param>
+    <param name="Stage">A <see cref="D3D12_META_COMMAND_PARAMETER_STAGE" /> specifying the stage of the parameters that you wish to be included in the query.</param>
+    <param name="pTotalStructureSizeInBytes">An optional pointer to a <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a> containing the size of the structure containing the parameter values, which you pass when creating/initializing/executing the meta command, as appropriate.</param>
+    <param name="pParameterCount">A pointer to a <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a> containing the number of parameters to query for. This field determines the size of the <i>pParameterDescs</i> array, unless <i>pParameterDescs</i> is <b>nullptr</b>.</param>
+    <param name="pParameterDescs">An optional pointer to an array of <see cref="D3D12_META_COMMAND_PARAMETER_DESC" /> containing the descriptions of the parameters. Pass <b>nullptr</b> to have the parameter count returned in <i>pParameterCount</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ID3D12Device5.EnumerateMetaCommands">
+    <summary>Queries reflection metadata about available meta commands.</summary>
+    <param name="pNumMetaCommands">A pointer to a <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a> containing the number of meta commands to query for. This field determines the size of the <i>pDescs</i> array, unless <i>pDescs</i> is <b>nullptr</b>.</param>
+    <param name="pDescs">An optional pointer to an array of <see cref="D3D12_META_COMMAND_DESC" /> containing the descriptions of the available meta commands. Pass <code>nullptr</code> to have the number of available meta commands returned in <i>pNumMetaCommands</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
+  </member>
+  <member name="ID3D12Device5.GetRaytracingAccelerationStructurePrebuildInfo">
+    <summary>Query the driver for resource requirements to build an acceleration structure.</summary>
+    <param name="pDesc">
+      <para>Description of the acceleration structure build. This structure is shared with <see cref="BuildRaytracingAccelerationStructure" />. For more information, see <see cref="D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS" />.</para>
+      <para>The implementation is allowed to look at all the CPU parameters in this struct and nested structs. It may not inspect/dereference any GPU virtual addresses, other than to check to see if a pointer is NULL or not, such as the optional transform in <see cref="D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC" />, without dereferencing it. In other words, the calculation of resource requirements for the acceleration structure does not depend on the actual geometry data (such as vertex positions), rather it can only depend on overall properties, such as the number of triangles, number of instances etc.</para>
+    </param>
+    <param name="pInfo">The result of the query.</param>
+  </member>
+  <member name="ID3D12Device5.RemoveDevice">
+    <summary>You can call <b>RemoveDevice</b> to indicate to the Direct3D 12 runtime that the GPU device encountered a problem, and can no longer be used. Doing so will cause all devices' monitored fences to be signaled. Your application typically doesn't need to explicitly call <b>RemoveDevice</b>.</summary>
+  </member>
+  <member name="ID3D12Device5">
+    <summary>
+      <para>Represents a virtual adapter.</para>
+      <para>This interface extends <see cref="ID3D12Device4" />.</para>
+      <blockquote>[!NOTE] This interface, introduced in Windows 10, version 1809, is the latest version of the <see cref="ID3D12Device" /> interface. Applications targeting Windows 10, version 1809 and later should use this interface instead of earlier versions.</blockquote>
+    </summary>
+  </member>
+</doc>

@@ -4,14 +4,11 @@
 <doc>
   <member name="IDMOVideoOutputOptimizations.GetCurrentOperationMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentOperationMode</code> method retrieves the optimization features in effect.</para>
     </summary>
-    <param name="ulOutputStreamIndex">
-      <para>Zero-based index of an output stream on the DMO.</para>
-    </param>
-    <param name="pdwEnabledFeatures">
-      <para>Pointer to a variable that receives the current features. The returned value is a bitwise combination of zero or more flags from the <see cref="DMO_VIDEO_OUTPUT_STREAM_FLAGS" /> enumeration.</para>
-    </param>
+    <param name="ulOutputStreamIndex">Zero-based index of an output stream on the DMO.</param>
+    <param name="pdwEnabledFeatures">Pointer to a variable that receives the current features. The returned value is a bitwise combination of zero or more flags from the <see cref="DMO_VIDEO_OUTPUT_STREAM_FLAGS" /> enumeration.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -19,50 +16,53 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream index</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDMOVideoOutputOptimizations Interface" />
   </member>
   <member name="IDMOVideoOutputOptimizations.GetCurrentSampleRequirements">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentSampleRequirements</code> method retrieves the optimization features required to process the next sample, given the features already agreed to by the application.</para>
     </summary>
-    <param name="ulOutputStreamIndex">
-      <para>Zero-based index of an output stream on the DMO.</para>
-    </param>
-    <param name="pdwRequestedFeatures">
-      <para>Pointer to a variable that receives the required features. The returned value is a bitwise combination of zero or more flags from the <see cref="DMO_VIDEO_OUTPUT_STREAM_FLAGS" /> enumeration.</para>
-    </param>
+    <param name="ulOutputStreamIndex">Zero-based index of an output stream on the DMO.</param>
+    <param name="pdwRequestedFeatures">Pointer to a variable that receives the required features. The returned value is a bitwise combination of zero or more flags from the <see cref="DMO_VIDEO_OUTPUT_STREAM_FLAGS" /> enumeration.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -70,55 +70,53 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream index</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>After an application calls the <see cref="IDMOVideoOutputOptimizations.SetOperationMode" /> method, it must provide all the features it has agreed to. However, the DMO might not require every feature on every sample. This method enables the DMO to waive an agreed-upon feature for one sample.</para>
-      <para>Before processing a sample, the application can call this method. If the DMO does not require a given feature in order to process the next sample, it omits the corresponding flag from the <i>pdwRequestedFeatures</i> parameter. For the next sample only, the application can ignore the feature. The results of this method are valid only for the next call to the <see cref="IMediaObject.ProcessOutput" /> method.</para>
-      <para>The DMO will return only the flags that were agreed to in the <b>SetOperationMode</b> method. In other words, you cannot dynamically enable new features with this method.</para>
-    </remarks>
-    <seealso cref="IDMOVideoOutputOptimizations Interface" />
   </member>
   <member name="IDMOVideoOutputOptimizations.QueryOperationModePreferences">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>QueryOperationModePreferences</code> method retrieves the DMO's preferred optimization features.</para>
     </summary>
-    <param name="ulOutputStreamIndex">
-      <para>Zero-based index of an output stream on the DMO.</para>
-    </param>
-    <param name="pdwRequestedCapabilities">
-      <para>Pointer to a variable that receives the DMO's requested features. The returned value is a bitwise combination of zero or more flags from the <see cref="DMO_VIDEO_OUTPUT_STREAM_FLAGS" /> enumeration.</para>
-    </param>
+    <param name="ulOutputStreamIndex">Zero-based index of an output stream on the DMO.</param>
+    <param name="pdwRequestedCapabilities">Pointer to a variable that receives the DMO's requested features. The returned value is a bitwise combination of zero or more flags from the <see cref="DMO_VIDEO_OUTPUT_STREAM_FLAGS" /> enumeration.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -126,50 +124,53 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream index</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDMOVideoOutputOptimizations Interface" />
   </member>
   <member name="IDMOVideoOutputOptimizations.SetOperationMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetOperationMode</code> method notifies the DMO of the optimization features that are in effect.</para>
     </summary>
-    <param name="ulOutputStreamIndex">
-      <para>Zero-based index of an output stream on the DMO.</para>
-    </param>
-    <param name="dwEnabledFeatures">
-      <para>Bitwise combination of zero or more flags from the <see cref="DMO_VIDEO_OUTPUT_STREAM_FLAGS" /> enumeration.</para>
-    </param>
+    <param name="ulOutputStreamIndex">Zero-based index of an output stream on the DMO.</param>
+    <param name="dwEnabledFeatures">Bitwise combination of zero or more flags from the <see cref="DMO_VIDEO_OUTPUT_STREAM_FLAGS" /> enumeration.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -177,79 +178,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Invalid argument</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Before calling this method, call the <see cref="IDMOVideoOutputOptimizations.QueryOperationModePreferences" /> method to determine which features the DMO requests. Then call this method to inform the DMO which of those features you are providing. If you are not providing any of them, it is not necessary to call this method. The DMO does not assume that any of them will be provided.</para>
-      <para>The application must provide all the features it has agreed to. For some features, however, the DMO might not require the feature on every sample. To determine if the DMO can dispense with any features on the next sample, call the <see cref="IDMOVideoOutputOptimizations.GetCurrentSampleRequirements" /> method. In effect, this enables the DMO to waive an agreed-upon feature for one sample.</para>
-      <para>Before streaming begins, subsequent calls to this method override earlier calls. To set multiple features, you must do so in a single method call. Once streaming begins, this method returns an error. Streaming begins when the applications calls <see cref="IMediaObject.ProcessInput" /> on at least one input stream.</para>
-      <para>When streaming ends, the application can renegotiate the features. Streaming ends if the application calls the <see cref="IMediaObject.Flush" /> method, or if the application calls <see cref="IMediaObject.Discontinuity" /> on all the input streams and then processes all of the remaining output.</para>
-    </remarks>
-    <seealso cref="IDMOVideoOutputOptimizations Interface" />
   </member>
   <member name="IDMOVideoOutputOptimizations">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IDMOVideoOutputOptimizations</code> interface supports video optimizations on a Microsoft DirectX Media Object (DMO).</para>
     </summary>
-    <remarks>
-      <para>This interface enables an application to negotiate with a DMO about video output optimizations. A DMO exposes this interface when it can perform optimizations that require support from the application. The application can query the DMO for its preferred features, and then agree (or not agree) to provide them. The DMO must process output even if the application rejects the optimizations.</para>
-      <para>For example, a video decoder might generate an output frame by applying deltas to the previous output frame. When queried, it requests that the application supply the previous frame in the output buffer. The application can agree to this request or not.</para>
-      <para>Video optimizations are negotiated separately for each output stream.</para>
-      <para>The following pseudo-code shows how an application might negotiate with the DMO:</para>
-      <code>IDMOVideoOutputOptimizations *pVidOpt;
-// Query the DMO for IDMOVideoOutputOptimizations (not shown).
-
-BOOL  bWantsPreviousBuffer = FALSE;
-DWORD wFlags;
-pVidOpt-&gt;QueryOperationModePreferences(0,&amp;amp;amp;amp;amp;amp;dwFlags);
-
-if (dwFlags &amp;amp;amp;amp;amp;amp; DMO_VOSF_NEEDS_PREVIOUS_SAMPLE)
-{
-    // Agree to the request.
-    pVidOpt-&gt;SetOperationMode(0, DMO_VOSF_NEEDS_PREVIOUS_SAMPLE);
-    bWantsPreviousBuffer = TRUE;
-}
-
-// Processing loop
-while (there is input).
-{
-    ProcessInput(0, ...);
-    if (bWantsPreviousBuffer)
-        pDMO-&gt;ProcessOutput(0, ...) // Use the same buffer as last time.
-    else
-        pDMO-&gt;ProcessOutput(0, ...) // OK to use a new buffer.
-}
-</code>
-    </remarks>
   </member>
 </doc>

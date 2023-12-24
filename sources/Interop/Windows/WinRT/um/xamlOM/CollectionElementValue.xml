@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CollectionElementValue">
+    <summary>Represents an element in a collection.</summary>
+  </member>
+  <member name="CollectionElementValue.Index">
+    <summary>The collection index where the element was found.</summary>
+  </member>
+  <member name="CollectionElementValue.ValueType">
+    <summary>The type of the element object.</summary>
+  </member>
+  <member name="CollectionElementValue.Value">
+    <summary>The value of the element.</summary>
+  </member>
+  <member name="CollectionElementValue.MetadataBits">
+    <summary>A bit field representing <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/xamlom/ne-xamlom-metadatabit">MetadataBit</a>s.</summary>
+  </member>
+</doc>

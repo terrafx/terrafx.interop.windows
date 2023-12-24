@@ -4,14 +4,11 @@
 <doc>
   <member name="_DMO_VIDEO_OUTPUT_STREAM_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DMO_VIDEO_OUTPUT_STREAM_FLAGS</code> enumeration defines flags that describe requested features, for video optimizations.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-enumerated-types">DMO Enumerated Types</seealso>
-    <seealso cref="IDMOVideoOutputOptimizations" />
   </member>
   <member name="_DMO_VIDEO_OUTPUT_STREAM_FLAGS.DMO_VOSF_NEEDS_PREVIOUS_SAMPLE">
-    <summary>
-      <para>Requests that every output buffer passed to the DMO contain the previous data that was generated.</para>
-    </summary>
+    <summary>Requests that every output buffer passed to the DMO contain the previous data that was generated.</summary>
   </member>
 </doc>

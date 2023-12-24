@@ -25,7 +25,7 @@ public unsafe partial struct IShellExecuteHookA : IShellExecuteHookA.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellExecuteHookA*, Guid*, void**, int>)(lpVtbl[0]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellExecuteHookA*, Guid*, void**, int>)(lpVtbl[0]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellExecuteHookA : IShellExecuteHookA.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellExecuteHookA*, uint>)(lpVtbl[1]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellExecuteHookA*, uint>)(lpVtbl[1]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IShellExecuteHookA : IShellExecuteHookA.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellExecuteHookA*, uint>)(lpVtbl[2]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellExecuteHookA*, uint>)(lpVtbl[2]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellExecuteHookA.xml' path='doc/member[@name="IShellExecuteHookA.Execute"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] void* pei)
+    public HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] SHELLEXECUTEINFOA* pei)
     {
-        return ((delegate* unmanaged<IShellExecuteHookA*, void*, int>)(lpVtbl[3]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this), pei);
+        return ((delegate* unmanaged[MemberFunction]<IShellExecuteHookA*, SHELLEXECUTEINFOA*, int>)(lpVtbl[3]))((IShellExecuteHookA*)Unsafe.AsPointer(ref this), pei);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] void* pei);
+        HRESULT Execute([NativeTypeName("LPSHELLEXECUTEINFOA")] SHELLEXECUTEINFOA* pei);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPSHELLEXECUTEINFOA) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int> Execute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SHELLEXECUTEINFOA*, int> Execute;
     }
 }

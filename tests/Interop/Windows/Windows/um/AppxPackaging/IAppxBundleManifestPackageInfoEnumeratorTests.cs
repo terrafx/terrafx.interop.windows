@@ -21,32 +21,4 @@ public static unsafe partial class IAppxBundleManifestPackageInfoEnumeratorTests
     {
         Assert.That(typeof(IAppxBundleManifestPackageInfoEnumerator).GUID, Is.EqualTo(IID_IAppxBundleManifestPackageInfoEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfoEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxBundleManifestPackageInfoEnumerator>(), Is.EqualTo(sizeof(IAppxBundleManifestPackageInfoEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfoEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxBundleManifestPackageInfoEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxBundleManifestPackageInfoEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxBundleManifestPackageInfoEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxBundleManifestPackageInfoEnumerator), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IUIAnimationVariableChangeHandler2Tests
     {
         Assert.That(typeof(IUIAnimationVariableChangeHandler2).GUID, Is.EqualTo(IID_IUIAnimationVariableChangeHandler2));
     }
-
-    /// <summary>Validates that the <see cref="IUIAnimationVariableChangeHandler2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUIAnimationVariableChangeHandler2>(), Is.EqualTo(sizeof(IUIAnimationVariableChangeHandler2)));
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationVariableChangeHandler2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUIAnimationVariableChangeHandler2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationVariableChangeHandler2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUIAnimationVariableChangeHandler2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUIAnimationVariableChangeHandler2), Is.EqualTo(4));
-        }
-    }
 }

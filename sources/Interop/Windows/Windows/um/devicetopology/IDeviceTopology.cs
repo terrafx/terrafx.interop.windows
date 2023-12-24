@@ -25,7 +25,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeviceTopology*, Guid*, void**, int>)(lpVtbl[0]))((IDeviceTopology*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, Guid*, void**, int>)(lpVtbl[0]))((IDeviceTopology*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeviceTopology*, uint>)(lpVtbl[1]))((IDeviceTopology*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, uint>)(lpVtbl[1]))((IDeviceTopology*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeviceTopology*, uint>)(lpVtbl[2]))((IDeviceTopology*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, uint>)(lpVtbl[2]))((IDeviceTopology*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetConnectorCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetConnectorCount(uint* pCount)
     {
-        return ((delegate* unmanaged<IDeviceTopology*, uint*, int>)(lpVtbl[3]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pCount);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, uint*, int>)(lpVtbl[3]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pCount);
     }
 
     /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetConnector"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetConnector(uint nIndex, IConnector** ppConnector)
     {
-        return ((delegate* unmanaged<IDeviceTopology*, uint, IConnector**, int>)(lpVtbl[4]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppConnector);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, uint, IConnector**, int>)(lpVtbl[4]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppConnector);
     }
 
     /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetSubunitCount"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetSubunitCount(uint* pCount)
     {
-        return ((delegate* unmanaged<IDeviceTopology*, uint*, int>)(lpVtbl[5]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pCount);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, uint*, int>)(lpVtbl[5]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pCount);
     }
 
     /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetSubunit"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetSubunit(uint nIndex, ISubunit** ppSubunit)
     {
-        return ((delegate* unmanaged<IDeviceTopology*, uint, ISubunit**, int>)(lpVtbl[6]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppSubunit);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, uint, ISubunit**, int>)(lpVtbl[6]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nIndex, ppSubunit);
     }
 
     /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetPartById"]/*' />
@@ -83,15 +83,15 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     [VtblIndex(7)]
     public HRESULT GetPartById(uint nId, IPart** ppPart)
     {
-        return ((delegate* unmanaged<IDeviceTopology*, uint, IPart**, int>)(lpVtbl[7]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nId, ppPart);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, uint, IPart**, int>)(lpVtbl[7]))((IDeviceTopology*)Unsafe.AsPointer(ref this), nId, ppPart);
     }
 
     /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetDeviceId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)
+    public HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] char** ppwstrDeviceId)
     {
-        return ((delegate* unmanaged<IDeviceTopology*, ushort**, int>)(lpVtbl[8]))((IDeviceTopology*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, char**, int>)(lpVtbl[8]))((IDeviceTopology*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
     }
 
     /// <include file='IDeviceTopology.xml' path='doc/member[@name="IDeviceTopology.GetSignalPath"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
     [VtblIndex(9)]
     public HRESULT GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts)
     {
-        return ((delegate* unmanaged<IDeviceTopology*, IPart*, IPart*, BOOL, IPartsList**, int>)(lpVtbl[9]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pIPartFrom, pIPartTo, bRejectMixedPaths, ppParts);
+        return ((delegate* unmanaged[MemberFunction]<IDeviceTopology*, IPart*, IPart*, BOOL, IPartsList**, int>)(lpVtbl[9]))((IDeviceTopology*)Unsafe.AsPointer(ref this), pIPartFrom, pIPartTo, bRejectMixedPaths, ppParts);
     }
 
     public interface Interface : IUnknown.Interface
@@ -120,7 +120,7 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
         HRESULT GetPartById(uint nId, IPart** ppPart);
 
         [VtblIndex(8)]
-        HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
+        HRESULT GetDeviceId([NativeTypeName("LPWSTR *")] char** ppwstrDeviceId);
 
         [VtblIndex(9)]
         HRESULT GetSignalPath(IPart* pIPartFrom, IPart* pIPartTo, BOOL bRejectMixedPaths, IPartsList** ppParts);
@@ -130,33 +130,33 @@ public unsafe partial struct IDeviceTopology : IDeviceTopology.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetConnectorCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetConnectorCount;
 
         [NativeTypeName("HRESULT (UINT, IConnector **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IConnector**, int> GetConnector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IConnector**, int> GetConnector;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSubunitCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSubunitCount;
 
         [NativeTypeName("HRESULT (UINT, ISubunit **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ISubunit**, int> GetSubunit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ISubunit**, int> GetSubunit;
 
         [NativeTypeName("HRESULT (UINT, IPart **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IPart**, int> GetPartById;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPart**, int> GetPartById;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDeviceId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDeviceId;
 
         [NativeTypeName("HRESULT (IPart *, IPart *, BOOL, IPartsList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPart*, IPart*, BOOL, IPartsList**, int> GetSignalPath;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPart*, IPart*, BOOL, IPartsList**, int> GetSignalPath;
     }
 }

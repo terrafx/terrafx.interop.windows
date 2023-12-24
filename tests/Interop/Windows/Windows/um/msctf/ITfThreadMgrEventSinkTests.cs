@@ -19,32 +19,4 @@ public static unsafe partial class ITfThreadMgrEventSinkTests
     {
         Assert.That(typeof(ITfThreadMgrEventSink).GUID, Is.EqualTo(IID_ITfThreadMgrEventSink));
     }
-
-    /// <summary>Validates that the <see cref="ITfThreadMgrEventSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfThreadMgrEventSink>(), Is.EqualTo(sizeof(ITfThreadMgrEventSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfThreadMgrEventSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfThreadMgrEventSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfThreadMgrEventSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfThreadMgrEventSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfThreadMgrEventSink), Is.EqualTo(4));
-        }
-    }
 }

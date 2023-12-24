@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICPngItxtProperties.xml' path='doc/member[@name="WICPngItxtProperties"]/*' />
-public enum WICPngItxtProperties : uint
+public enum WICPngItxtProperties
 {
     /// <include file='WICPngItxtProperties.xml' path='doc/member[@name="WICPngItxtProperties.WICPngItxtKeyword"]/*' />
     WICPngItxtKeyword = 0x1,

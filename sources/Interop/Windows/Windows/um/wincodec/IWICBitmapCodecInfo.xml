@@ -3,286 +3,111 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICBitmapCodecInfo.DoesSupportAnimation">
-    <summary>
-      <para>Retrieves a value indicating whether the codec supports animation.</para>
-    </summary>
-    <param name="pfSupportAnimation">
-      <para>Type: <b>BOOL*</b></para>
-      <para>Receives <b>TRUE</b> if the codec supports images with timing information; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves a value indicating whether the codec supports animation.</summary>
+    <param name="pfSupportAnimation">Receives <b>TRUE</b> if the codec supports images with timing information; otherwise, <b>FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.DoesSupportChromakey">
-    <summary>
-      <para>Retrieves a value indicating whether the codec supports chromakeys.</para>
-    </summary>
-    <param name="pfSupportChromakey">
-      <para>Type: <b>BOOL*</b></para>
-      <para>Receives <b>TRUE</b> if the codec supports chromakeys; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves a value indicating whether the codec supports chromakeys.</summary>
+    <param name="pfSupportChromakey">Receives <b>TRUE</b> if the codec supports chromakeys; otherwise, <b>FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.DoesSupportLossless">
-    <summary>
-      <para>Retrieves a value indicating whether the codec supports lossless formats.</para>
-    </summary>
-    <param name="pfSupportLossless">
-      <para>Type: <b>BOOL*</b></para>
-      <para>Receives <b>TRUE</b> if the codec supports lossless formats; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves a value indicating whether the codec supports lossless formats.</summary>
+    <param name="pfSupportLossless">Receives <b>TRUE</b> if the codec supports lossless formats; otherwise, <b>FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.DoesSupportMultiframe">
-    <summary>
-      <para>Retrieves a value indicating whether the codec supports multi frame images.</para>
-    </summary>
-    <param name="pfSupportMultiframe">
-      <para>Type: <b>BOOL*</b></para>
-      <para>Receives <b>TRUE</b> if the codec supports multi frame images; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves a value indicating whether the codec supports multi frame images.</summary>
+    <param name="pfSupportMultiframe">Receives <b>TRUE</b> if the codec supports multi frame images; otherwise, <b>FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.GetColorManagementVersion">
-    <summary>
-      <para>Retrieves the color management version number the codec supports.</para>
-    </summary>
-    <param name="cchColorManagementVersion">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the version buffer. Use <code>0</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="wzColorManagementVersion">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>Receives the color management version number. Use <code>NULL</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="pcchActual">
-      <para>Type: <b>UINT*</b></para>
-      <para>The actual buffer size needed to retrieve the full color management version number.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The usage pattern for this method is a two call process.
-The first call retrieves the buffer size needed to retrieve the full color management version number by calling it with <i>cchColorManagementVersion</i> set to <code>0</code> and <i>wzColorManagementVersion</i> set to <code>NULL</code>.
-This call sets <i>pcchActual</i> to the buffer size needed.
-Once the needed buffer size is determined, a second <b>GetColorManagementVersion</b> call with <i>cchColorManagementVersion</i> set to the buffer size and <i>wzColorManagementVersion</i> set to a buffer of the appropriate size will retrieve the pixel formats.</para>
-    </remarks>
+    <summary>Retrieves the color management version number the codec supports.</summary>
+    <param name="cchColorManagementVersion">The size of the version buffer. Use <code>0</code> on first call to determine needed buffer size.</param>
+    <param name="wzColorManagementVersion">Receives the color management version number. Use <code>NULL</code> on first call to determine needed buffer size.</param>
+    <param name="pcchActual">The actual buffer size needed to retrieve the full color management version number.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.GetContainerFormat">
-    <summary>
-      <para>Retrieves the container GUID associated with the codec.</para>
-    </summary>
-    <param name="pguidContainerFormat">
-      <para>Type: <b>GUID*</b></para>
-      <para>Receives the container GUID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the container GUID associated with the codec.</summary>
+    <param name="pguidContainerFormat">Receives the container GUID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.GetDeviceManufacturer">
-    <summary>
-      <para>Retrieves the name of the device manufacture associated with the codec.</para>
-    </summary>
-    <param name="cchDeviceManufacturer">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the device manufacture's name. Use <code>0</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="wzDeviceManufacturer">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>Receives the device manufacture's name. Use <code>NULL</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="pcchActual">
-      <para>Type: <b>UINT*</b></para>
-      <para>The actual buffer size needed to retrieve the device manufacture's name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The usage pattern for this method is a two call process.
-The first call retrieves the buffer size needed to retrieve the full color management version number by calling it with <i>cchDeviceManufacturer</i> set to <code>0</code> and <i>wzDeviceManufacturer</i> set to <code>NULL</code>.
-This call sets <i>pcchActual</i> to the buffer size needed.
-Once the needed buffer size is determined, a second <b>GetDeviceManufacturer</b> call with <i>cchDeviceManufacturer</i> set to the buffer size and <i>wzDeviceManufacturer</i> set to a buffer of the appropriate size will retrieve the pixel formats.</para>
-    </remarks>
+    <summary>Retrieves the name of the device manufacture associated with the codec.</summary>
+    <param name="cchDeviceManufacturer">The size of the device manufacture's name. Use <code>0</code> on first call to determine needed buffer size.</param>
+    <param name="wzDeviceManufacturer">Receives the device manufacture's name. Use <code>NULL</code> on first call to determine needed buffer size.</param>
+    <param name="pcchActual">The actual buffer size needed to retrieve the device manufacture's name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.GetDeviceModels">
-    <summary>
-      <para>Retrieves a comma delimited list of device models associated with the codec.</para>
-    </summary>
-    <param name="cchDeviceModels">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the device models buffer. Use <code>0</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="wzDeviceModels">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>Receives a comma delimited list of device model names associated with the codec. Use <code>NULL</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="pcchActual">
-      <para>Type: <b>UINT*</b></para>
-      <para>The actual buffer size needed to retrieve all of the device model names.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The usage pattern for this method is a two call process.
-The first call retrieves the buffer size needed to retrieve the full color management version number by calling it with <i>cchDeviceModels</i> set to <code>0</code> and <i>wzDeviceModels</i> set to <code>NULL</code>.
-This call sets <i>pcchActual</i> to the buffer size needed.
-Once the needed buffer size is determined, a second <b>GetDeviceModels</b> call with <i>cchDeviceModels</i> set to the buffer size and <i>wzDeviceModels</i> set to a buffer of the appropriate size will retrieve the pixel formats.</para>
-    </remarks>
+    <summary>Retrieves a comma delimited list of device models associated with the codec.</summary>
+    <param name="cchDeviceModels">The size of the device models buffer. Use <code>0</code> on first call to determine needed buffer size.</param>
+    <param name="wzDeviceModels">Receives a comma delimited list of device model names associated with the codec. Use <code>NULL</code> on first call to determine needed buffer size.</param>
+    <param name="pcchActual">The actual buffer size needed to retrieve all of the device model names.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.GetFileExtensions">
-    <summary>
-      <para>Retrieves a comma delimited list of the file name extensions associated with the codec.</para>
-    </summary>
-    <param name="cchFileExtensions">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the file name extension buffer. Use <code>0</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="wzFileExtensions">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>Receives a comma delimited list  of file name extensions associated with the codec. Use <code>NULL</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="pcchActual">
-      <para>Type: <b>UINT*</b></para>
-      <para>The actual buffer size needed to retrieve all file name extensions associated with the codec.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default extension for an image encoder is the first item in the list of returned extensions.</para>
-      <para>The usage pattern for this method is a two call process.
-The first call retrieves the buffer size needed to retrieve the full color management version number by calling it with <i>cchFileExtensions</i> set to <code>0</code> and <i>wzFileExtensions</i> set to <code>NULL</code>.
-This call sets <i>pcchActual</i> to the buffer size needed.
-Once the needed buffer size is determined, a second <b>GetFileExtensions</b> call with <i>cchFileExtensions</i> set to the buffer size and <i>wzFileExtensions</i> set to a buffer of the appropriate size will retrieve the pixel formats.</para>
-    </remarks>
+    <summary>Retrieves a comma delimited list of the file name extensions associated with the codec.</summary>
+    <param name="cchFileExtensions">The size of the file name extension buffer. Use <code>0</code> on first call to determine needed buffer size.</param>
+    <param name="wzFileExtensions">Receives a comma delimited list of file name extensions associated with the codec. Use <code>NULL</code> on first call to determine needed buffer size.</param>
+    <param name="pcchActual">The actual buffer size needed to retrieve all file name extensions associated with the codec.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.GetMimeTypes">
-    <summary>
-      <para>Retrieves a comma delimited sequence of mime types associated with the codec.</para>
-    </summary>
-    <param name="cchMimeTypes">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the mime types buffer.  Use <code>0</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="wzMimeTypes">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>Receives the mime types associated with the codec. Use <code>NULL</code> on first call to determine needed buffer size.</para>
-    </param>
-    <param name="pcchActual">
-      <para>Type: <b>UINT*</b></para>
-      <para>The actual buffer size needed to retrieve all mime types associated with the codec.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The usage pattern for this method is a two call process.
-The first call retrieves the buffer size needed to retrieve the full color management version number by calling it with <i>cchMimeTypes</i> set to <code>0</code> and <i>wzMimeTypes</i> set to <code>NULL</code>.
-This call sets <i>pcchActual</i> to the buffer size needed.
-Once the needed buffer size is determined, a second <b>GetMimeTypes</b> call with <i>cchMimeTypes</i> set to the buffer size and <i>wzMimeTypes</i> set to a buffer of the appropriate size will retrieve the pixel formats.</para>
-    </remarks>
+    <summary>Retrieves a comma delimited sequence of mime types associated with the codec.</summary>
+    <param name="cchMimeTypes">The size of the mime types buffer. Use <code>0</code> on first call to determine needed buffer size.</param>
+    <param name="wzMimeTypes">Receives the mime types associated with the codec. Use <code>NULL</code> on first call to determine needed buffer size.</param>
+    <param name="pcchActual">The actual buffer size needed to retrieve all mime types associated with the codec.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.GetPixelFormats">
-    <summary>
-      <para>Retrieves the pixel formats the codec supports.</para>
-    </summary>
-    <param name="cFormats">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the <i>pguidPixelFormats</i> array. Use <code>0</code> on first call to determine the needed array size.</para>
-    </param>
-    <param name="pguidPixelFormats">
-      <para>Type: <b>GUID*</b></para>
-      <para>Receives the supported pixel formats. Use <code>NULL</code> on first call to determine needed array size.</para>
-    </param>
-    <param name="pcActual">
-      <para>Type: <b>UINT*</b></para>
-      <para>The array size needed to retrieve all supported pixel formats.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The usage pattern for this method is a two call process.
-The first call retrieves the array size needed to retrieve all the supported pixel formats by calling it with <i>cFormats</i> set to <code>0</code> and <i>pguidPixelFormats</i> set to <code>NULL</code>.
-This call sets <i>pcActual</i> to the array size needed.
-Once the needed array size is determined, a second <b>GetPixelFormats</b> call with <i>pguidPixelFormats</i> set to an array of the appropriate size will retrieve the pixel formats.</para>
-    </remarks>
+    <summary>Retrieves the pixel formats the codec supports.</summary>
+    <param name="cFormats">The size of the <i>pguidPixelFormats</i> array. Use <code>0</code> on first call to determine the needed array size.</param>
+    <param name="pguidPixelFormats">Receives the supported pixel formats. Use <code>NULL</code> on first call to determine needed array size.</param>
+    <param name="pcActual">The array size needed to retrieve all supported pixel formats.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapCodecInfo.MatchesMimeType">
-    <summary>
-      <para>Retrieves a value indicating whether the given mime type matches the mime type of the codec.</para>
-    </summary>
-    <param name="wzMimeType">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The mime type to compare.</para>
-    </param>
-    <param name="pfMatches">
-      <para>Type: <b>BOOL*</b></para>
-      <para>Receives <b>TRUE</b> if the mime types match; otherwise, <b>FALSE</b>.</para>
-    </param>
+    <summary>Retrieves a value indicating whether the given mime type matches the mime type of the codec.</summary>
+    <param name="wzMimeType">The mime type to compare.</param>
+    <param name="pfMatches">Receives <b>TRUE</b> if the mime types match; otherwise, <b>FALSE</b>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The operation was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The operation was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The codec does not implement this method.</para>
-          </description>
-        </item>
+          <description>The codec does not implement this method.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  The Windows provided codecs do not implement this method and return E_NOTIMPL.</para>
-    </remarks>
   </member>
   <member name="IWICBitmapCodecInfo">
-    <summary>
-      <para>Exposes methods that provide information about a particular codec.</para>
-    </summary>
-    <seealso cref="IWICBitmapDecoderInfo" />
-    <seealso cref="IWICBitmapEncoderInfo" />
-    <seealso cref="IWICComponentInfo" />
+    <summary>Exposes methods that provide information about a particular codec.</summary>
   </member>
 </doc>

@@ -3,188 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.CloseHandle">
-    <summary>
-      <para>Closes an open object handle.</para>
-    </summary>
-    <param name="hObject">
-      <para>A valid handle to an open object.</para>
-    </param>
+    <summary>Closes an open object handle.</summary>
+    <param name="hObject">A valid handle to an open object.</param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
-      <para>If the application is running under a debugger,  the function will throw an exception if it receives either a  handle value that is not valid  or a pseudo-handle value. This can happen if you close a handle twice, or if you  call
-<b>CloseHandle</b> on a handle returned by the
-<see cref="FindFirstFile" /> function instead of calling the <see cref="FindClose" /> function.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
+      <para>If the application is running under a debugger, the function will throw an exception if it receives either a handle value that is not valid or a pseudo-handle value. This can happen if you close a handle twice, or if you call<b>CloseHandle</b> on a handle returned by the<see cref="FindFirstFile" /> function instead of calling the <see cref="FindClose" /> function.</para>
     </returns>
-    <remarks>
-      <para>The
-<b>CloseHandle</b> function closes handles to the following objects:</para>
-      <list type="bullet">
-        <item>
-          <description>Access token</description>
-        </item>
-        <item>
-          <description>Communications device</description>
-        </item>
-        <item>
-          <description>Console input</description>
-        </item>
-        <item>
-          <description>Console screen buffer</description>
-        </item>
-        <item>
-          <description>Event</description>
-        </item>
-        <item>
-          <description>File</description>
-        </item>
-        <item>
-          <description>File mapping</description>
-        </item>
-        <item>
-          <description>I/O completion port</description>
-        </item>
-        <item>
-          <description>Job</description>
-        </item>
-        <item>
-          <description>Mailslot</description>
-        </item>
-        <item>
-          <description>Memory resource notification</description>
-        </item>
-        <item>
-          <description>Mutex</description>
-        </item>
-        <item>
-          <description>Named pipe</description>
-        </item>
-        <item>
-          <description>Pipe</description>
-        </item>
-        <item>
-          <description>Process</description>
-        </item>
-        <item>
-          <description>Semaphore</description>
-        </item>
-        <item>
-          <description>Thread</description>
-        </item>
-        <item>
-          <description>Transaction</description>
-        </item>
-        <item>
-          <description>Waitable timer</description>
-        </item>
-      </list>
-      <para>The documentation for the functions that create these objects indicates that <b>CloseHandle</b> should be used when you are finished with the object, and what happens to pending operations on the object after the handle is closed. In general, <b>CloseHandle</b> invalidates the specified object handle, decrements the object's handle count, and performs object retention checks. After the last handle to an object is closed, the object is removed from the system. For a summary of the creator functions for these objects, see <a href="https://docs.microsoft.com//windows/desktop/SysInfo/kernel-objects">Kernel Objects</a>.</para>
-      <para>Generally, an application should call <b>CloseHandle</b> once for each handle it opens. It is usually not necessary to call <b>CloseHandle</b> if a function that uses a handle fails with ERROR_INVALID_HANDLE, because this error usually indicates that the handle is already invalidated. However, some functions use ERROR_INVALID_HANDLE to indicate that the object itself is no longer valid. For example, a function that attempts to use a handle to a file on a network might fail with ERROR_INVALID_HANDLE if the network connection is severed, because the file object is no longer available. In this case, the application should close the handle.</para>
-      <para>If a handle is transacted, all handles bound to a transaction should be closed before the transaction is committed. If a transacted handle was opened by calling <see cref="CreateFileTransacted" /> with the FILE_FLAG_DELETE_ON_CLOSE flag, the file is not deleted until the application closes the handle and calls <see cref="CommitTransaction" />. For more information about transacted objects, see <a href="https://docs.microsoft.com//windows/desktop/Ktm/programming-model">Working With Transactions</a>.</para>
-      <para>Closing a thread handle does not terminate the associated thread or remove the thread object. Closing a process handle does not terminate the associated process or remove the process object. To remove a thread object, you must terminate the thread, then close all handles to the thread. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/terminating-a-thread">Terminating a Thread</a>. To remove a process object, you must terminate the process, then close all handles to the process. For more information, see <a href="https://docs.microsoft.com//windows/desktop/ProcThread/terminating-a-process">Terminating a Process</a>.</para>
-      <para>Closing a handle to a file mapping can succeed even when there are file views that are still open. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Memory/closing-a-file-mapping-object">Closing a File Mapping Object</a>.</para>
-      <para>Do not use the <b>CloseHandle</b>  function to close a socket. Instead, use  the <see cref="closesocket" /> function, which releases all resources associated with the socket including the handle to the socket object. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WinSock/graceful-shutdown-linger-options-and-socket-closure-2">Socket Closure</a>.</para>
-      <para>Do not use the <b>CloseHandle</b>  function to close a handle to an open registry key. Instead, use  the <see cref="RegCloseKey" /> function. <b>CloseHandle</b> does not close the handle to the registry key, but does not return an error to indicate this failure.</para>
-      <h4>Examples</h4>
-      <code>dwPriorityClass = 0;
-hProcess = OpenProcess( PROCESS_ALL_ACCESS, FALSE, pe32.th32ProcessID );
-if( hProcess == NULL )
-    printError( TEXT("OpenProcess") );
-else
-{
-    dwPriorityClass = GetPriorityClass( hProcess );
-    if( !dwPriorityClass )
-    printError( TEXT("GetPriorityClass") );
-    CloseHandle( hProcess );
-}
-</code>
-      <para>To see this example in context, see
-<a href="https://docs.microsoft.com//windows/desktop/ToolHelp/taking-a-snapshot-and-viewing-processes">Taking a Snapshot and Viewing Processes</a>.</para>
-    </remarks>
-    <seealso cref="CreateFile" />
-    <seealso cref="CreateFileTransacted" />
-    <seealso cref="DeleteFile" />
-    <seealso cref="FindClose" />
-    <seealso cref="FindFirstFile" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/handle-and-object-functions">Handle and
-Object Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/kernel-objects">Kernel Objects</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/object-interface">Object Interface</seealso>
   </member>
   <member name="Windows.CompareObjectHandles">
-    <summary>
-      <para>Compares two object handles to determine if they refer to the same underlying kernel object.</para>
-    </summary>
-    <param name="hFirstObjectHandle">
-      <para>The first object handle to compare.</para>
-    </param>
-    <param name="hSecondObjectHandle">
-      <para>The second object handle to compare.</para>
-    </param>
-    <returns>
-      <para>A Boolean value that indicates if the two handles refer to the same underlying kernel object. TRUE if the same, otherwise FALSE.</para>
-    </returns>
-    <remarks>
-      <para>The <b>CompareObjectHandles</b> function is useful to determine if two kernel handles refer to the same kernel object without imposing a requirement that specific access rights be granted to either handle in order to perform the comparison.  For example, if a process desires to determine whether a process handle is a handle to the current process, a call to <b>CompareObjectHandles</b> (GetCurrentProcess (), hProcess) can be used to determine if hProcess refers to the current process.  Notably, this does not require the use of object-specific access rights, whereas in this example, calling <see cref="GetProcessId" /> to check the process IDs of two process handles imposes a requirement that the handles grant PROCESS_QUERY_LIMITED_INFORMATION access. However it is legal for a process handle to not have that access right granted depending on how the handle is intended to be used.</para>
-      <h4>Examples</h4>
-      <para>The following code sample creates three handles, two of which refer to the same object, then compares them to show that identical underlying kernel objects will return TRUE, while non-identical objects will return FALSE.</para>
-      <code>#include &lt;windows.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;wchar.h&gt;
-
-HANDLE Event1;
-HANDLE Event2;
-HANDLE Event3;
-
-    // Create a handle to a named event.
-Event1 = CreateEventW (NULL, TRUE, FALSE, L"{75A520B7-2C11-4809-B43A-0D31FB1FDD19}");
-if (Event1 == NULL) {    ExitProcess (0);    }
-
-    // Create a handle to the same event.
-Event2 = CreateEventW (NULL, TRUE, FALSE, L"{75A520B7-2C11-4809-B43A-0D31FB1FDD19}");
-if (Event2 == NULL) {    ExitProcess (0);    }
-
-    // Create a handle to an anonymous, unnamed event.
-Event3 = CreateEventW (NULL, TRUE, FALSE, NULL);
-if (Event3 == NULL) {    ExitProcess (0);    }
-
-    // Compare two handles to the same kernel object.
-if (CompareObjectHandles (Event1, Event2) != FALSE)
-    {    // This message should be printed by the program.
-        wprintf (L"Event1 and Event2 refer to the same underlying event object.\n");
-    }
-
-    // Compare two handles to different kernel objects.
-if (CompareObjectHandles (Event1, Event3) == FALSE)
-    {    // This message should be printed by the program.
-        wprintf (L"Event1 and Event3 refer to different underlying event objects.  (Error %lu)\n", GetLastError ());
-    }
-
-    // Compare two handles to different kernel objects, each of a different type of kernel object.
-    // The comparison is legal to make, though the function will always return FALSE and indicate
-    // a last error status of ERROR_NOT_SAME_OBJECT.
-if (CompareObjectHandles (Event1, GetCurrentProcess ()) == FALSE)
-    {    // This message should be printed by the program.
-        wprintf (L"Event1 and the current process refer to different underlying kernel objects.  (Error %lu)\n", GetLastError ());
-    }
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/handle-and-object-functions">Handle and Object Functions</seealso>
+    <summary>Compares two object handles to determine if they refer to the same underlying kernel object.</summary>
+    <param name="hFirstObjectHandle">The first object handle to compare.</param>
+    <param name="hSecondObjectHandle">The second object handle to compare.</param>
+    <returns>A Boolean value that indicates if the two handles refer to the same underlying kernel object. TRUE if the same, otherwise FALSE.</returns>
   </member>
   <member name="Windows.DuplicateHandle">
-    <summary>
-      <para>Duplicates an object handle.</para>
-    </summary>
+    <summary>Duplicates an object handle.</summary>
     <param name="hSourceProcessHandle">
       <para>A handle to the process with the handle to be duplicated.</para>
-      <para>The handle must have the PROCESS_DUP_HANDLE access right. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</para>
+      <para>The handle must have the PROCESS_DUP_HANDLE access right. For more information, see<a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>.</para>
     </param>
-    <param name="hSourceHandle">
-      <para>The handle to be duplicated. This is an open object handle that is valid in the context of the source process. For a list of objects whose handles can be duplicated, see the following Remarks section.</para>
-    </param>
+    <param name="hSourceHandle">The handle to be duplicated. This is an open object handle that is valid in the context of the source process. For a list of objects whose handles can be duplicated, see the following Remarks section.</param>
     <param name="hTargetProcessHandle">
       <para>A handle to the process that is to receive the duplicated handle. The handle must have the PROCESS_DUP_HANDLE access right.</para>
       <para>This parameter is optional and can be specified as NULL if the <b>DUPLICATE_CLOSE_SOURCE</b> flag is set in <i>Options</i>.</para>
@@ -211,316 +50,45 @@ if (CompareObjectHandles (Event1, GetCurrentProcess ()) == FALSE)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DUPLICATE_CLOSE_SOURCE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Closes the source handle. This occurs regardless of any error status returned.</para>
-          </description>
-        </item>
-        <item>
+          <description>Closes the source handle. This occurs regardless of any error status returned.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>DUPLICATE_SAME_ACCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Ignores the <i>dwDesiredAccess</i> parameter. The duplicate handle has the same access as the source handle.</para>
-          </description>
-        </item>
+          <description>Ignores the <i>dwDesiredAccess</i> parameter. The duplicate handle has the same access as the source handle.</description>
+        </listheader>
       </list>
     </param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>The duplicate handle refers to the same object as the original handle. Therefore, any changes to the object are reflected through both handles. For example, if you duplicate a file handle, the current file position is always the same for both handles. For  file handles to have different file positions, use the <see cref="CreateFile" /> function to create file handles that share access to the same file.</para>
-      <para>
-        <b>DuplicateHandle</b> can be called by either the source process or the target process (or a process that is both the source and target process). For example, a process can use
-<b>DuplicateHandle</b> to create a noninheritable duplicate of an inheritable handle, or a handle with different access than the original handle.</para>
-      <para>The source process uses the
-<see cref="GetCurrentProcess" /> function to get a handle to itself. This handle is a pseudo handle, but <b>DuplicateHandle</b> converts it to a real process handle. To get the target process handle, it may be necessary to use some form of interprocess communication (for example, a named pipe or shared memory) to communicate the process identifier to the source process. The source process can use this identifier in the
-<see cref="OpenProcess" /> function to obtain a handle to the target process.</para>
-      <para>If the process that calls
-<b>DuplicateHandle</b> is not also the target process, the source process must use interprocess communication to pass the value of the duplicate handle to the target process.</para>
-      <para>
-        <b>DuplicateHandle</b> can be used to duplicate a handle between a 32-bit process and a 64-bit process. The resulting handle is appropriately sized to work in the target process. For more information, see <a href="https://docs.microsoft.com//windows/desktop/WinProg64/process-interoperability">Process Interoperability</a>.</para>
-      <para>
-        <b>DuplicateHandle</b> can duplicate handles to the following types of objects.</para>
-      <list type="table">
-        <listheader>
-          <description>Object</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>Access token</description>
-          <description>The handle is returned by the
-<see cref="CreateRestrictedToken" />,
-<see cref="DuplicateToken" />,
-<see cref="DuplicateTokenEx" />,
-<see cref="OpenProcessToken" />, or
-<see cref="OpenThreadToken" /> function.</description>
-        </item>
-        <item>
-          <description>Change notification</description>
-          <description>The handle is returned by the <see cref="FindFirstChangeNotification" /> function.</description>
-        </item>
-        <item>
-          <description>Communications device</description>
-          <description>The handle is returned by the
-<see cref="CreateFile" /> function.</description>
-        </item>
-        <item>
-          <description>Console input</description>
-          <description>The handle is returned by the
-<see cref="CreateFile" /> function when CONIN$ is specified, or by the
-<a href="https://docs.microsoft.com//windows/console/getstdhandle">GetStdHandle</a> function when STD_INPUT_HANDLE is specified. Console handles can be duplicated for use only in the same process.</description>
-        </item>
-        <item>
-          <description>Console screen buffer</description>
-          <description>The handle is returned by the <see cref="CreateFile" /> function when CONOUT$ is specified, or by the <a href="https://docs.microsoft.com//windows/console/getstdhandle">GetStdHandle</a> function when STD_OUTPUT_HANDLE is specified. Console handles can be duplicated for use only in the same process.</description>
-        </item>
-        <item>
-          <description>Desktop</description>
-          <description>The handle is returned by the
-<see cref="GetThreadDesktop" /> function.</description>
-        </item>
-        <item>
-          <description>Event</description>
-          <description>The handle is returned by the
-<see cref="CreateEvent" /> or
-<see cref="OpenEvent" /> function.</description>
-        </item>
-        <item>
-          <description>File</description>
-          <description>The handle is returned by the
-<see cref="CreateFile" /> function.</description>
-        </item>
-        <item>
-          <description>File mapping</description>
-          <description>The handle is returned by the
-<see cref="CreateFileMapping" /> function.</description>
-        </item>
-        <item>
-          <description>Job</description>
-          <description>The handle is returned by the
-<see cref="CreateJobObject" /> function.</description>
-        </item>
-        <item>
-          <description>Mailslot</description>
-          <description>The handle is returned by the
-<see cref="CreateMailslot" /> function.</description>
-        </item>
-        <item>
-          <description>Mutex</description>
-          <description>The handle is returned by the
-<see cref="CreateMutex" /> or
-[OpenMutex](../synchapi/nf-synchapi-openmutexw.md) function.</description>
-        </item>
-        <item>
-          <description>Pipe</description>
-          <description>A named pipe handle is returned by the
-<see cref="CreateNamedPipe" /> or
-<see cref="CreateFile" /> function. An anonymous pipe handle is returned by the
-<see cref="CreatePipe" /> function.</description>
-        </item>
-        <item>
-          <description>Process</description>
-          <description>The handle is returned by the
-<see cref="CreateProcess" />,
-<see cref="GetCurrentProcess" />, or
-<see cref="OpenProcess" /> function.</description>
-        </item>
-        <item>
-          <description>Registry key</description>
-          <description>The handle is returned by the
-<see cref="RegCreateKey" />,
-<see cref="RegCreateKeyEx" />,
-<see cref="RegOpenKey" />, or
-<see cref="RegOpenKeyEx" /> function. Note that registry key handles returned by the
-<see cref="RegConnectRegistry" /> function cannot be used in a call to
-<b>DuplicateHandle</b>. </description>
-        </item>
-        <item>
-          <description>Semaphore</description>
-          <description>The handle is returned by the
-<see cref="CreateSemaphore" /> or
-<see cref="OpenSemaphore" /> function.</description>
-        </item>
-        <item>
-          <description>Thread</description>
-          <description>The handle is returned by the
-<see cref="CreateProcess" />,
-<see cref="CreateThread" />,
-<see cref="CreateRemoteThread" />, or
-<see cref="GetCurrentThread" /> function</description>
-        </item>
-        <item>
-          <description>Timer</description>
-          <description>The handle is returned by the
-<see cref="CreateWaitableTimerW" /> or <see cref="OpenWaitableTimerW" /> function.</description>
-        </item>
-        <item>
-          <description>Transaction</description>
-          <description>The handle is returned by the <see cref="CreateTransaction" /> function.</description>
-        </item>
-        <item>
-          <description>Window station</description>
-          <description>The handle is returned by the
-<see cref="GetProcessWindowStation" /> function.</description>
-        </item>
-      </list>
-      <para>You should not use
-<b>DuplicateHandle</b> to duplicate handles to the following objects:</para>
-      <list type="bullet">
-        <item>
-          <description>I/O completion ports. No error is returned, but the duplicate handle cannot be used.</description>
-        </item>
-        <item>
-          <description>Sockets. No error is returned, but the duplicate handle may not be recognized by Winsock at the target process. Also, using <b>DuplicateHandle</b> interferes with internal reference counting on the underlying object. To duplicate a socket handle, use the <see cref="WSADuplicateSocket" /> function.</description>
-        </item>
-        <item>
-          <description>Pseudo-handles other than the ones returned by the <see cref="GetCurrentProcess" /> or <see cref="GetCurrentThread" /> functions.</description>
-        </item>
-      </list>
-      <para>The <i>dwDesiredAccess</i> parameter specifies the new handle's access rights. All objects support the <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/standard-access-rights">standard access rights</a>. Objects may also support additional access rights depending on the object type. For more information, see the following topics:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/winstation/desktop-security-and-access-rights">Desktop Security and Access Rights</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/FileIO/file-security-and-access-rights">File Security and Access Rights</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/Memory/file-mapping-security-and-access-rights">File-Mapping Security and Access Rights</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/ProcThread/job-object-security-and-access-rights">Job Object Security and Access Rights</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/ProcThread/process-security-and-access-rights">Process Security and Access Rights</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/SysInfo/registry-key-security-and-access-rights">Registry Key Security and Access Rights</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-object-security-and-access-rights">Synchronization Object Security and Access Rights</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/ProcThread/thread-security-and-access-rights">Thread Security and Access Rights</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/winstation/window-station-security-and-access-rights">Window-Station Security and Access Rights</a>
-          </description>
-        </item>
-      </list>
-      <para>In some cases, the new handle can have more access rights than the original handle. However, in other cases,
-<b>DuplicateHandle</b> cannot create a handle with more access rights than the original. For example, a file handle created with the GENERIC_READ access right cannot be duplicated so that it has both the GENERIC_READ and GENERIC_WRITE access right.</para>
-      <para>Normally the target process closes a duplicated handle when that process is finished using the handle. To close a duplicated handle from the source process,  call <b>DuplicateHandle</b> with the following parameters:</para>
-      <list type="bullet">
-        <item>
-          <description>Set <i>hSourceProcessHandle</i> to the target process from the <b>DuplicateHandle</b> call that created the handle.</description>
-        </item>
-        <item>
-          <description>Set <i>hSourceHandle</i> to the duplicated handle to close.</description>
-        </item>
-        <item>
-          <description>Set <i>hTargetProcessHandle</i> to <b>NULL</b>.</description>
-        </item>
-        <item>
-          <description>Set <i>dwOptions</i> to DUPLICATE_CLOSE_SOURCE.</description>
-        </item>
-      </list>
-      <h4>Examples</h4>
-      <para>The following example creates a mutex, duplicates a handle to the mutex, and passes it to another thread. Duplicating the handle ensures that the reference count is increased so that the mutex object will not be destroyed until both threads have closed the handle.</para>
-      <code>#include &lt;windows.h&gt;
-
-DWORD CALLBACK ThreadProc(PVOID pvParam);
-
-int main()
-{
-    HANDLE hMutex = CreateMutex(NULL, FALSE, NULL);
-    HANDLE hMutexDup, hThread;
-    DWORD dwThreadId;
-
-    DuplicateHandle(GetCurrentProcess(),
-                    hMutex,
-                    GetCurrentProcess(),
-                    &amp;amp;amp;amp;amp;amp;hMutexDup,
-                    0,
-                    FALSE,
-                    DUPLICATE_SAME_ACCESS);
-
-    hThread = CreateThread(NULL, 0, ThreadProc,
-        (LPVOID) hMutexDup, 0, &amp;amp;amp;amp;amp;amp;dwThreadId);
-
-    // Perform work here, closing the handle when finished with the
-    // mutex. If the reference count is zero, the object is destroyed.
-    CloseHandle(hMutex);
-
-    // Wait for the worker thread to terminate and clean up.
-    WaitForSingleObject(hThread, INFINITE);
-    CloseHandle(hThread);
-    return 0;
-}
-
-DWORD CALLBACK ThreadProc(PVOID pvParam)
-{
-    HANDLE hMutex = (HANDLE)pvParam;
-
-    // Perform work here, closing the handle when finished with the
-    // mutex. If the reference count is zero, the object is destroyed.
-    CloseHandle(hMutex);
-    return 0;
-}
-
-</code>
-    </remarks>
-    <seealso cref="CloseHandle" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/handle-inheritance">Handle Inheritance</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/handle-and-object-functions">Handle and
-Object Functions</seealso>
   </member>
   <member name="Windows.GetHandleInformation">
-    <summary>
-      <para>Retrieves certain properties of an object handle.</para>
-    </summary>
+    <summary>Retrieves certain properties of an object handle.</summary>
     <param name="hObject">
       <para>A handle to an object whose information is to be retrieved.</para>
       <para>You can specify a handle to one of the following types of objects: access token, console input buffer, console screen buffer, event, file, file mapping, job, mailslot, mutex, pipe, printer, process, registry key, semaphore, serial communication device, socket, thread, or waitable timer.</para>
@@ -532,66 +100,50 @@ Object Functions</seealso>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HANDLE_FLAG_INHERIT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, a child process created with the <i>bInheritHandles</i> parameter of
-<see cref="CreateProcess" /> set to <b>TRUE</b> will inherit the object handle.</para>
-          </description>
-        </item>
-        <item>
+          <description>If this flag is set, a child process created with the <i>bInheritHandles</i> parameter of <see cref="CreateProcess" /> set to <b>TRUE</b> will inherit the object handle.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HANDLE_FLAG_PROTECT_FROM_CLOSE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, calling the
-<see cref="CloseHandle" /> function will not close the object handle.</para>
-          </description>
-        </item>
+          <description>If this flag is set, calling the <see cref="CloseHandle" /> function will not close the object handle.</description>
+        </listheader>
       </list>
     </param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <seealso cref="CloseHandle" />
-    <seealso cref="CreateProcess" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/handle-and-object-functions">Handle and
-Object Functions</seealso>
-    <seealso cref="SetHandleInformation" />
   </member>
   <member name="Windows.SetHandleInformation">
-    <summary>
-      <para>Sets certain properties of an object handle.</para>
-    </summary>
+    <summary>Sets certain properties of an object handle.</summary>
     <param name="hObject">
       <para>A handle to an object whose information is to be set.</para>
       <para>You can specify a handle to one of the following types of objects: access token, console input buffer, console screen buffer, event, file, file mapping, job, mailslot, mutex, pipe, printer, process, registry key, semaphore, serial communication device, socket, thread, or waitable timer.</para>
     </param>
-    <param name="dwMask">
-      <para>A mask that specifies the bit flags to be changed. Use the same constants shown in the description of <i>dwFlags</i>.</para>
-    </param>
+    <param name="dwMask">A mask that specifies the bit flags to be changed. Use the same constants shown in the description of <i>dwFlags</i>.</param>
     <param name="dwFlags">
       <para>Set of bit flags that specifies properties of the object handle. This parameter can be 0 or one or more of the following values.</para>
       <list type="table">
@@ -599,55 +151,41 @@ Object Functions</seealso>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HANDLE_FLAG_INHERIT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, a child process created with the <i>bInheritHandles</i> parameter of
-<see cref="CreateProcess" /> set to <b>TRUE</b> will inherit the object handle.</para>
-          </description>
-        </item>
-        <item>
+          <description>If this flag is set, a child process created with the <i>bInheritHandles</i> parameter of <see cref="CreateProcess" /> set to <b>TRUE</b> will inherit the object handle.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>HANDLE_FLAG_PROTECT_FROM_CLOSE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, calling the
-<see cref="CloseHandle" /> function will not close the object handle.</para>
-          </description>
-        </item>
+          <description>If this flag is set, calling the <see cref="CloseHandle" /> function will not close the object handle.</description>
+        </listheader>
       </list>
     </param>
     <returns>
       <para>If the function succeeds, the return value is nonzero.</para>
-      <para>If the function fails, the return value is zero. To get extended error information, call
-<see cref="GetLastError" />.</para>
+      <para>If the function fails, the return value is zero. To get extended error information, call<see cref="GetLastError" />.</para>
     </returns>
-    <remarks>
-      <para>To set or clear the associated bit flag in <i>dwFlags</i>, you must set a change mask bit flag in <i>dwMask</i>.</para>
-    </remarks>
-    <seealso cref="CloseHandle" />
-    <seealso cref="CreateProcess" />
-    <seealso cref="GetHandleInformation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/SysInfo/handle-and-object-functions">Handle and Object Functions</seealso>
   </member>
 </doc>

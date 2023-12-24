@@ -9,426 +9,222 @@
       <para>When a variant refers to another variant by using the VT_VARIANT | VT_BYREF vartype, the variant being referred to cannot also be of type VT_VARIANT | VT_BYREF. VARIANTs can be passed by value, even if VARIANTARGs cannot.</para>
     </summary>
   </member>
-  <member name="VARIANT.__VARIANT_NAME_1">
-    <summary></summary>
-  </member>
+  <member name="VARIANT.__VARIANT_NAME_1"></member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2">
     <summary>
-      <para>
-        <b>Type: <b>struct __tagVARIANT</b></b>
-      </para>
+      <b>Type: <b>struct __tagVARIANT</b></b>
     </summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.vt">
     <summary>
-      <para>
-        <b>Type: <b>VARTYPE</b></b>
-      </para>
-      <para>The type of data in the union.</para>
-    </summary>
+      <b>Type: <b>VARTYPE</b></b>The type of data in the union.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.wReserved1">
     <summary>
-      <para>
-        <b>Type: <b>WORD</b></b>
-      </para>
-      <para>Reserved.</para>
-    </summary>
+      <b>Type: <b>WORD</b></b>Reserved.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.wReserved2">
     <summary>
-      <para>
-        <b>Type: <b>WORD</b></b>
-      </para>
-      <para>Reserved.</para>
-    </summary>
+      <b>Type: <b>WORD</b></b>Reserved.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.wReserved3">
     <summary>
-      <para>
-        <b>Type: <b>WORD</b></b>
-      </para>
-      <para>Reserved.</para>
-    </summary>
+      <b>Type: <b>WORD</b></b>Reserved.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3">
     <summary>
       <h6>__VARIANT_NAME_2.__VARIANT_NAME_3.bool</h6>
       <para>
-        <b>Type: <b>_VARIANT_BOOL</b></b>
-      </para>
-      <para>A 16-bit Boolean value. A value of 0xFFFF (all bits 1) indicates true; a value of 0 (all bits 0) indicates false. No other values are valid.</para>
+        <b>Type: <b>_VARIANT_BOOL</b></b>A 16-bit Boolean value. A value of 0xFFFF (all bits 1) indicates true; a value of 0 (all bits 0) indicates false. No other values are valid.</para>
       <h6>__VARIANT_NAME_2.__VARIANT_NAME_3.pbool</h6>
       <para>
-        <b>Type: <b>_VARIANT_BOOL*</b></b>
-      </para>
-      <para>A reference to a 16-bit Boolean value.</para>
+        <b>Type: <b>_VARIANT_BOOL*</b></b>A reference to a 16-bit Boolean value.</para>
     </summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.llVal">
     <summary>
-      <para>
-        <b>Type: <b>LONGLONG</b></b>
-      </para>
-      <para>An 8-byte integer value.</para>
-    </summary>
+      <b>Type: <b>LONGLONG</b></b>An 8-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.lVal">
     <summary>
-      <para>
-        <b>Type: <b>LONG</b></b>
-      </para>
-      <para>A 4-byte integer value.</para>
-    </summary>
+      <b>Type: <b>LONG</b></b>A 4-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.bVal">
     <summary>
-      <para>
-        <b>Type: <b>BYTE</b></b>
-      </para>
-      <para>An unsigned 1-byte character.</para>
-    </summary>
+      <b>Type: <b>BYTE</b></b>An unsigned 1-byte character.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.iVal">
     <summary>
-      <para>
-        <b>Type: <b>SHORT</b></b>
-      </para>
-      <para>A 2-byte integer value.</para>
-    </summary>
+      <b>Type: <b>SHORT</b></b>A 2-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.fltVal">
     <summary>
-      <para>
-        <b>Type: <b>FLOAT</b></b>
-      </para>
-      <para>A 4-byte real value.</para>
-    </summary>
+      <b>Type: <b>FLOAT</b></b>A 4-byte real value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.dblVal">
     <summary>
-      <para>
-        <b>Type: <b>DOUBLE</b></b>
-      </para>
-      <para>An 8-byte real value.</para>
-    </summary>
+      <b>Type: <b>DOUBLE</b></b>An 8-byte real value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.boolVal">
     <summary>
-      <para>
-        <b>Type: <b>VARIANT_BOOL</b></b>
-      </para>
-      <para>A 16-bit Boolean value. A value of 0xFFFF (all bits 1) indicates true; a value of 0 (all bits 0) indicates false. No other values are valid.</para>
-    </summary>
+      <b>Type: <b>VARIANT_BOOL</b></b>A 16-bit Boolean value. A value of 0xFFFF (all bits 1) indicates true; a value of 0 (all bits 0) indicates false. No other values are valid.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.scode">
     <summary>
-      <para>
-        <b>Type: <b>SCODE</b></b>
-      </para>
-      <para>An SCODE value.</para>
-    </summary>
+      <b>Type: <b>SCODE</b></b>An SCODE value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.cyVal">
     <summary>
-      <para>
-        <b>Type: <b>CY</b></b>
-      </para>
-      <para>A currency value.</para>
-    </summary>
+      <b>Type: <b>CY</b></b>A currency value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.date">
     <summary>
       <para>
-        <b>Type: <b>DATE</b></b>
-      </para>
-      <para>A date and time value. Dates are represented as double-precision numbers, where midnight, January 1, 1900 is 2.0, January 2, 1900 is 3.0, and so on.</para>
+        <b>Type: <b>DATE</b></b>A date and time value. Dates are represented as double-precision numbers, where midnight, January 1, 1900 is 2.0, January 2, 1900 is 3.0, and so on.</para>
       <para>The date can be converted to and from an MS-DOS representation using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-varianttimetodosdatetime">VariantTimeToDosDateTime</a>.</para>
     </summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.bstrVal">
     <summary>
-      <para>
-        <b>Type: <b>BSTR</b></b>
-      </para>
-      <para>A string value.</para>
-    </summary>
+      <b>Type: <b>BSTR</b></b>A string value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.punkVal">
     <summary>
-      <para>
-        <b>Type: <b>IUnknown*</b></b>
-      </para>
-      <para>A pointer to an object that implements the <see cref="IUnknown" /> interface.</para>
-    </summary>
+      <b>Type: <b>IUnknown*</b></b>A pointer to an object that implements the <see cref="IUnknown" /> interface.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pdispVal">
     <summary>
-      <para>
-        <b>Type: <b>IDispatch*</b></b>
-      </para>
-      <para>A pointer to an object was specified.</para>
-    </summary>
+      <b>Type: <b>IDispatch*</b></b>A pointer to an object was specified.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.parray">
     <summary>
-      <para>
-        <b>Type: <b>SAFEARRAY*</b></b>
-      </para>
-      <para>A safe array descriptor, which describes the dimensions, size, and in-memory location of the array.</para>
-    </summary>
+      <b>Type: <b>SAFEARRAY*</b></b>A safe array descriptor, which describes the dimensions, size, and in-memory location of the array.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pbVal">
     <summary>
-      <para>
-        <b>Type: <b>BYTE*</b></b>
-      </para>
-      <para>A reference to an unsigned 1-byte character.</para>
-    </summary>
+      <b>Type: <b>BYTE*</b></b>A reference to an unsigned 1-byte character.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.piVal">
     <summary>
-      <para>
-        <b>Type: <b>SHORT*</b></b>
-      </para>
-      <para>A reference to a 2-byte integer value.</para>
-    </summary>
+      <b>Type: <b>SHORT*</b></b>A reference to a 2-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.plVal">
     <summary>
-      <para>
-        <b>Type: <b>LONG*</b></b>
-      </para>
-      <para>A reference to a 4-byte integer value.</para>
-    </summary>
+      <b>Type: <b>LONG*</b></b>A reference to a 4-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pllVal">
     <summary>
-      <para>
-        <b>Type: <b>LONGLONG*</b></b>
-      </para>
-      <para>A reference to an 8-byte integer value.</para>
-    </summary>
+      <b>Type: <b>LONGLONG*</b></b>A reference to an 8-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pfltVal">
     <summary>
-      <para>
-        <b>Type: <b>FLOAT*</b></b>
-      </para>
-      <para>A reference to a 4-byte real value.</para>
-    </summary>
+      <b>Type: <b>FLOAT*</b></b>A reference to a 4-byte real value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pdblVal">
     <summary>
-      <para>
-        <b>Type: <b>DOUBLE*</b></b>
-      </para>
-      <para>A reference to an 8-byte real value.</para>
-    </summary>
+      <b>Type: <b>DOUBLE*</b></b>A reference to an 8-byte real value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pboolVal">
     <summary>
-      <para>
-        <b>Type: <b>VARIANT_BOOL*</b></b>
-      </para>
-      <para>A reference to a 16-bit Boolean value.</para>
-    </summary>
+      <b>Type: <b>VARIANT_BOOL*</b></b>A reference to a 16-bit Boolean value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pscode">
     <summary>
-      <para>
-        <b>Type: <b>SCODE*</b></b>
-      </para>
-      <para>A reference to an SCODE value.</para>
-    </summary>
+      <b>Type: <b>SCODE*</b></b>A reference to an SCODE value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pcyVal">
     <summary>
-      <para>
-        <b>Type: <b>CY*</b></b>
-      </para>
-      <para>A reference to a currency value.</para>
-    </summary>
+      <b>Type: <b>CY*</b></b>A reference to a currency value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pdate">
     <summary>
-      <para>
-        <b>Type: <b>DATE*</b></b>
-      </para>
-      <para>A reference to a date and time value. Dates are represented as double-precision numbers, where midnight, January 1, 1900 is 2.0, January 2, 1900 is 3.0, and so on.</para>
-    </summary>
+      <b>Type: <b>DATE*</b></b>A reference to a date and time value. Dates are represented as double-precision numbers, where midnight, January 1, 1900 is 2.0, January 2, 1900 is 3.0, and so on.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pbstrVal">
     <summary>
-      <para>
-        <b>Type: <b>BSTR*</b></b>
-      </para>
-      <para>A reference to a string value.</para>
-    </summary>
+      <b>Type: <b>BSTR*</b></b>A reference to a string value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.ppunkVal">
     <summary>
-      <para>
-        <b>Type: <b>IUnknown**</b></b>
-      </para>
-      <para>A reference to an <see cref="IUnknown" /> interface pointer.</para>
-    </summary>
+      <b>Type: <b>IUnknown**</b></b>A reference to an <see cref="IUnknown" /> interface pointer.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.ppdispVal">
     <summary>
-      <para>
-        <b>Type: <b>IDispatch**</b></b>
-      </para>
-      <para>A reference to an object pointer.</para>
-    </summary>
+      <b>Type: <b>IDispatch**</b></b>A reference to an object pointer.</summary>
   </member>
-  <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pparray">
-    <summary></summary>
-  </member>
-  <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pvarVal">
-    <summary></summary>
-  </member>
+  <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pparray"></member>
+  <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pvarVal"></member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.byref">
     <summary>
-      <para>
-        <b>Type: <b>PVOID</b></b>
-      </para>
-      <para>A generic value.</para>
-    </summary>
+      <b>Type: <b>PVOID</b></b>A generic value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.cVal">
     <summary>
-      <para>
-        <b>Type: <b>CHAR</b></b>
-      </para>
-      <para>A 1-byte character value.</para>
-    </summary>
+      <b>Type: <b>CHAR</b></b>A 1-byte character value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.uiVal">
     <summary>
-      <para>
-        <b>Type: <b>USHORT</b></b>
-      </para>
-      <para>An unsigned 2-byte integer value.</para>
-    </summary>
+      <b>Type: <b>USHORT</b></b>An unsigned 2-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.ulVal">
     <summary>
-      <para>
-        <b>Type: <b>ULONG</b></b>
-      </para>
-      <para>An unsigned 4-byte integer value.</para>
-    </summary>
+      <b>Type: <b>ULONG</b></b>An unsigned 4-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.ullVal">
     <summary>
-      <para>
-        <b>Type: <b>ULONGLONG</b></b>
-      </para>
-      <para>An unsigned 8-byte integer value.</para>
-    </summary>
+      <b>Type: <b>ULONGLONG</b></b>An unsigned 8-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.intVal">
     <summary>
-      <para>
-        <b>Type: <b>INT</b></b>
-      </para>
-      <para>An integer value.</para>
-    </summary>
+      <b>Type: <b>INT</b></b>An integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.uintVal">
     <summary>
-      <para>
-        <b>Type: <b>UINT</b></b>
-      </para>
-      <para>An unsigned integer value.</para>
-    </summary>
+      <b>Type: <b>UINT</b></b>An unsigned integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pdecVal">
     <summary>
-      <para>
-        <b>Type: <b>DECIMAL*</b></b>
-      </para>
-      <para>A decimal value, which is stored as 96-bit (12-byte) unsigned integers scaled by a variable power of 10.</para>
-    </summary>
+      <b>Type: <b>DECIMAL*</b></b>A decimal value, which is stored as 96-bit (12-byte) unsigned integers scaled by a variable power of 10.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pcVal">
     <summary>
-      <para>
-        <b>Type: <b>CHAR*</b></b>
-      </para>
-      <para>A reference to a 1-byte character value.</para>
-    </summary>
+      <b>Type: <b>CHAR*</b></b>A reference to a 1-byte character value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.puiVal">
     <summary>
-      <para>
-        <b>Type: <b>USHORT*</b></b>
-      </para>
-      <para>A reference to an unsigned 2-byte integer value.</para>
-    </summary>
+      <b>Type: <b>USHORT*</b></b>A reference to an unsigned 2-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pulVal">
     <summary>
-      <para>
-        <b>Type: <b>ULONG*</b></b>
-      </para>
-      <para>A reference to an unsigned 4-byte integer value.</para>
-    </summary>
+      <b>Type: <b>ULONG*</b></b>A reference to an unsigned 4-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pullVal">
     <summary>
-      <para>
-        <b>Type: <b>ULONGLONG*</b></b>
-      </para>
-      <para>A reference to an unsigned 8-byte integer value.</para>
-    </summary>
+      <b>Type: <b>ULONGLONG*</b></b>A reference to an unsigned 8-byte integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.pintVal">
     <summary>
-      <para>
-        <b>Type: <b>INT*</b></b>
-      </para>
-      <para>A reference to an integer value.</para>
-    </summary>
+      <b>Type: <b>INT*</b></b>A reference to an integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.puintVal">
     <summary>
-      <para>
-        <b>Type: <b>UINT*</b></b>
-      </para>
-      <para>A reference to an unsigned integer value.</para>
-    </summary>
+      <b>Type: <b>UINT*</b></b>A reference to an unsigned integer value.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.__VARIANT_NAME_4">
     <summary>
-      <para>
-        <b>Type: <b>struct __tagBRECORD</b></b>
-      </para>
+      <b>Type: <b>struct __tagBRECORD</b></b>
     </summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.__VARIANT_NAME_4.pvRecord">
     <summary>
-      <para>
-        <b>Type: <b>PVOID</b></b>
-      </para>
-      <para>A reference to a database record.</para>
-    </summary>
+      <b>Type: <b>PVOID</b></b>A reference to a database record.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.__VARIANT_NAME_2.__VARIANT_NAME_3.__VARIANT_NAME_4.pRecInfo">
     <summary>
-      <para>
-        <b>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-irecordinfo">IRecordInfo</a>*</b></b>
-      </para>
-      <para>A reference to a UDT.</para>
-    </summary>
+      <b>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-irecordinfo">IRecordInfo</a>*</b></b>A reference to a UDT.</summary>
   </member>
   <member name="VARIANT.__VARIANT_NAME_1.decVal">
     <summary>
-      <para>
-        <b>Type: <b>DECIMAL</b></b>
-      </para>
-      <para>A decimal value.</para>
-    </summary>
+      <b>Type: <b>DECIMAL</b></b>A decimal value.</summary>
   </member>
 </doc>

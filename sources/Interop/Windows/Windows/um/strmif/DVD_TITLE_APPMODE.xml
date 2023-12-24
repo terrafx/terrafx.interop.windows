@@ -4,26 +4,17 @@
 <doc>
   <member name="DVD_TITLE_APPMODE">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Indicates whether a DVD title is a karaoke title. This enumeration is a member of the <see cref="DVD_TitleAttributes" /> structure, which is filled when an application calls the <see cref="IDvdInfo2.GetTitleAttributes" /> method.</para>
     </summary>
-    <remarks>
-      <para>When the DVD Navigator encounters a karaoke title on a disc, it goes into "karaoke mode" and informs the audio decoder. The decoder must respond by initially muting the three auxiliary channels. Applications can then selectively control the volume and mixing configuration of these channels using the karaoke-related methods in the <see cref="IDvdControl2" /> interface For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/playing-karaoke-audio-streams">Playing Karaoke Audio Streams</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="DVD_TITLE_APPMODE.DVD_AppMode_Not_Specified">
-    <summary>
-      <para>The disc does not provide any application mode information about this title.</para>
-    </summary>
+    <summary>The disc does not provide any application mode information about this title.</summary>
   </member>
   <member name="DVD_TITLE_APPMODE.DVD_AppMode_Karaoke">
-    <summary>
-      <para>Title contains karaoke content.</para>
-    </summary>
+    <summary>Title contains karaoke content.</summary>
   </member>
   <member name="DVD_TITLE_APPMODE.DVD_AppMode_Other">
-    <summary>
-      <para>Title contains a type of content that the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator Filter</a> does not recognize, so the application should treat the title as a regular DVD-Video title.</para>
-    </summary>
+    <summary>Title contains a type of content that the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator Filter</a> does not recognize, so the application should treat the title as a regular DVD-Video title.</summary>
   </member>
 </doc>

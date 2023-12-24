@@ -3,11 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICDBurnExt.GetSupportedActionTypes">
-    <summary>
-      <para>Determines the supported data type for a CD writing extension.</para>
-    </summary>
+    <summary>Determines the supported data type for a CD writing extension.</summary>
     <param name="pdwActions">
-      <para>Type: <b>CDBE_ACTIONS*</b></para>
       <para>One of the following values indicating the supported type.</para>
       <h4>CDBE_TYPE_MUSIC (0x00000001)</h4>
       <para>0x00000001. Music files are supported. The CD writing extension is invoked for the <b>Copy to audio CD</b> task in the My Music folder.</para>
@@ -16,9 +13,6 @@
       <h4>CDBE_TYPE_ALL ((int)0xFFFFFFFF)</h4>
       <para>(int)0xFFFFFFFF. All files are supported. The CD writing extension is invoked for the <b>Copy to audio CD</b> task in the My Music folder.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

@@ -3,40 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMPATIBILITY_CONTEXT_ELEMENT">
-    <summary>
-      <para>The <b>COMPATIBILITY_CONTEXT_ELEMENT</b> structure is used by the <see cref="QueryActCtxW" /> function as part of the <see cref="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION" /> structure.</para>
-    </summary>
+    <summary>The <b>COMPATIBILITY_CONTEXT_ELEMENT</b> structure is used by the <see cref="QueryActCtxW" /> function as part of the <see cref="ACTIVATION_CONTEXT_COMPATIBILITY_INFORMATION" /> structure.</summary>
   </member>
   <member name="COMPATIBILITY_CONTEXT_ELEMENT.Id">
     <summary>
-      <para>This is a <b>GUID</b> that specifies a version of  Windows.</para>
+      <para>This is a <b>GUID</b> that specifies a version of Windows.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>{e2011457-1546-43c5-a5fe-008deee3d3f0}</para>
+            <list type="bullet">
+              <listheader>
+                <term>{e2011457-1546-43c5-a5fe-008deee3d3f0}</term>
+              </listheader>
+            </list>
           </description>
+          <description>Windows Vista</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Windows Vista</para>
+            <list type="bullet">
+              <listheader>
+                <term>{35138b9a-5d96-4fbd-8e2d-a2440225f93a}</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>{35138b9a-5d96-4fbd-8e2d-a2440225f93a}</para>
-          </description>
-          <description>
-            <para>Windows 7</para>
-          </description>
-        </item>
+          <description>Windows 7</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="COMPATIBILITY_CONTEXT_ELEMENT.Type">
-    <summary>
-      <para>A value of the <see cref="ACTCTX_COMPATIBILITY_ELEMENT_TYPE" /> enumeration that describes the compatibility elements in the application manifest.</para>
-    </summary>
+    <summary>A value of the <see cref="ACTCTX_COMPATIBILITY_ELEMENT_TYPE" /> enumeration that describes the compatibility elements in the application manifest.</summary>
   </member>
 </doc>

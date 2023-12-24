@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12PipelineLibrary.GetSerializedSize">
+    <summary>Returns the amount of memory required to serialize the current contents of the database.</summary>
+    <returns>This method returns a SIZE_T object, containing the size required in bytes.</returns>
+  </member>
+  <member name="ID3D12PipelineLibrary.LoadComputePipeline">
+    <summary>Retrieves the requested PSO from the library. The input desc is matched against the data in the current library database, and remembered in order to prevent duplication of PSO contents.</summary>
+    <param name="pName">The unique name of the PSO.</param>
+    <param name="pDesc">Specifies a description of the required PSO in a <see cref="D3D12_COMPUTE_PIPELINE_STATE_DESC" /> structure. This input description is matched against the data in the current library database, and stored in order to prevent duplication of PSO contents.</param>
+    <param name="riid">Specifies a REFIID for the <see cref="ID3D12PipelineState" /> object. Typically set this, and the following parameter, with the macro <code>IID_PPV_ARGS(&amp;PSO1)</code>, where <i>PSO1</i> is the name of the object.</param>
+    <param name="ppPipelineState">Specifies a pointer that will reference the returned PSO.</param>
+    <returns>This method returns an HRESULT success or error code, which can include E_INVALIDARG if the name doesn’t exist, or if the input description doesn’t match the data in the library, and E_OUTOFMEMORY if unable to allocate the return PSO.</returns>
+  </member>
+  <member name="ID3D12PipelineLibrary.LoadGraphicsPipeline">
+    <summary>Retrieves the requested PSO from the library.</summary>
+    <param name="pName">The unique name of the PSO.</param>
+    <param name="pDesc">Specifies a description of the required PSO in a <see cref="D3D12_GRAPHICS_PIPELINE_STATE_DESC" /> structure. This input description is matched against the data in the current library database, and stored in order to prevent duplication of PSO contents.</param>
+    <param name="riid">Specifies a REFIID for the <see cref="ID3D12PipelineState" /> object. Typically set this, and the following parameter, with the macro <code>IID_PPV_ARGS(&amp;PSO1)</code>, where <i>PSO1</i> is the name of the object.</param>
+    <param name="ppPipelineState">Specifies a pointer that will reference the returned PSO.</param>
+    <returns>This method returns an HRESULT success or error code, which can include E_INVALIDARG if the name doesn’t exist, or if the input description doesn’t match the data in the library, and E_OUTOFMEMORY if unable to allocate the return PSO.</returns>
+  </member>
+  <member name="ID3D12PipelineLibrary.Serialize">
+    <summary>Writes the contents of the library to the provided memory, to be provided back to the runtime at a later time.</summary>
+    <param name="pData">Specifies a pointer to the data. This memory must be readable and writable up to the input size. This data can be saved and provided to <see cref="CreatePipelineLibrary" /> at a later time, including future instances of this or other processes. The data becomes invalidated if the runtime or driver is updated, and is not portable to other hardware or devices.</param>
+    <param name="DataSizeInBytes">The size provided must be at least the size returned from <see cref="GetSerializedSize" />.</param>
+    <returns>This method returns an HRESULT success or error code, including E_INVALIDARG if the buffer provided isn’t big enough.</returns>
+  </member>
+  <member name="ID3D12PipelineLibrary.StorePipeline">
+    <summary>Adds the input PSO to an internal database with the corresponding name.</summary>
+    <param name="pName">Specifies a unique name for the library. Overwriting is not supported.</param>
+    <param name="pPipeline">Specifies the <see cref="ID3D12PipelineState" /> to add.</param>
+    <returns>This method returns an HRESULT success or error code, including E_INVALIDARG if the name already exists, E_OUTOFMEMORY if unable to allocate storage in the library.</returns>
+  </member>
+  <member name="ID3D12PipelineLibrary">
+    <summary>Manages a pipeline library, in particular loading and retrieving individual PSOs.</summary>
+  </member>
+</doc>

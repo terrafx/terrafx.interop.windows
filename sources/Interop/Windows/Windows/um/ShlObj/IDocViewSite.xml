@@ -3,16 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDocViewSite.OnSetTitle">
-    <summary>
-      <para>Sets or retrieves the title of the site object.</para>
-    </summary>
-    <param name="pvTitle">
-      <para>Type: <b>VARIANTARG*</b></para>
-      <para>Specifies the view title.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets or retrieves the title of the site object.</summary>
+    <param name="pvTitle">Specifies the view title.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

@@ -10,11 +10,11 @@ public unsafe partial struct OPENASINFO
 {
     /// <include file='OPENASINFO.xml' path='doc/member[@name="OPENASINFO.pcszFile"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcszFile;
+    public char* pcszFile;
 
     /// <include file='OPENASINFO.xml' path='doc/member[@name="OPENASINFO.pcszClass"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcszClass;
+    public char* pcszClass;
 
     /// <include file='OPENASINFO.xml' path='doc/member[@name="OPENASINFO.oaifInFlags"]/*' />
     [NativeTypeName("OPEN_AS_INFO_FLAGS")]

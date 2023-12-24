@@ -21,7 +21,7 @@ public partial struct LSA_FOREST_TRUST_RECORD2
     public LARGE_INTEGER Time;
 
     /// <include file='LSA_FOREST_TRUST_RECORD2.xml' path='doc/member[@name="LSA_FOREST_TRUST_RECORD2.ForestTrustData"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ntsecapi.h:2727:5)")]
+    [NativeTypeName("__AnonymousRecord_ntsecapi_L2743_C5")]
     public _ForestTrustData_e__Union ForestTrustData;
 
     /// <include file='_ForestTrustData_e__Union.xml' path='doc/member[@name="_ForestTrustData_e__Union"]/*' />

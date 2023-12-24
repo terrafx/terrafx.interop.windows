@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CACHE_RELATIONSHIP.xml' path='doc/member[@name="CACHE_RELATIONSHIP"]/*' />
-public unsafe partial struct CACHE_RELATIONSHIP
+public partial struct CACHE_RELATIONSHIP
 {
     /// <include file='CACHE_RELATIONSHIP.xml' path='doc/member[@name="CACHE_RELATIONSHIP.Level"]/*' />
     public byte Level;
@@ -32,14 +32,14 @@ public unsafe partial struct CACHE_RELATIONSHIP
 
     /// <include file='CACHE_RELATIONSHIP.xml' path='doc/member[@name="CACHE_RELATIONSHIP.Reserved"]/*' />
     [NativeTypeName("BYTE[18]")]
-    public fixed byte Reserved[18];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='CACHE_RELATIONSHIP.xml' path='doc/member[@name="CACHE_RELATIONSHIP.GroupCount"]/*' />
     [NativeTypeName("WORD")]
     public ushort GroupCount;
 
     /// <include file='CACHE_RELATIONSHIP.xml' path='doc/member[@name="CACHE_RELATIONSHIP.Anonymous"]/*' />
-    [NativeTypeName("_CACHE_RELATIONSHIP::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:13506:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13526_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.GroupMask"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct CACHE_RELATIONSHIP
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref AsSpan(int.MaxValue)[index];
+                    return ref Unsafe.Add(ref e0, index);
                 }
             }
 
@@ -85,5 +85,12 @@ public unsafe partial struct CACHE_RELATIONSHIP
             [UnscopedRef]
             public Span<GROUP_AFFINITY> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
         }
+    }
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(18)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

@@ -10,33 +10,18 @@
     </summary>
   </member>
   <member name="DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC.ATensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the A data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, M, K }</code>.</para>
-    </summary>
+    <summary>A tensor containing the A data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, M, K }</code>.</summary>
   </member>
   <member name="DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC.AZeroPointTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the ATensor zero point data. The expected dimensions of the <code>AZeroPointTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, 1, M, 1 }</code> if per-row quantization is required. These zero point values are used for dequantizing the <i>ATensor</i> values.</para>
-    </summary>
+    <summary>An optional tensor containing the ATensor zero point data. The expected dimensions of the <code>AZeroPointTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, 1, M, 1 }</code> if per-row quantization is required. These zero point values are used for dequantizing the <i>ATensor</i> values.</summary>
   </member>
   <member name="DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC.BTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the B data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, K, N }</code>.</para>
-    </summary>
+    <summary>A tensor containing the B data. This tensor's dimensions should be <code>{ BatchCount, ChannelCount, K, N }</code>.</summary>
   </member>
   <member name="DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC.BZeroPointTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional tensor containing the <i>BTensor</i> zero point data. The expected dimensions of the <code>BZeroPointTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, 1, 1, N }</code> if per column quantization is required. These zero point values are used for dequantizing the BTensor values.</para>
-    </summary>
+    <summary>An optional tensor containing the <i>BTensor</i> zero point data. The expected dimensions of the <code>BZeroPointTensor</code> are <code>{ 1, 1, 1, 1 }</code> if per tensor quantization is required, or <code>{ 1, 1, 1, N }</code> if per column quantization is required. These zero point values are used for dequantizing the BTensor values.</summary>
   </member>
   <member name="DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor with which to write the results to. This tensor's dimensions are <code>{ BatchCount, ChannelCount, M, N }</code>.</para>
-    </summary>
+    <summary>A tensor with which to write the results to. This tensor's dimensions are <code>{ BatchCount, ChannelCount, M, N }</code>.</summary>
   </member>
 </doc>

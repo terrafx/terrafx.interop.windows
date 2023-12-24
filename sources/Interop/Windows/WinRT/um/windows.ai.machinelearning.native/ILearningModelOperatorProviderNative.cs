@@ -26,7 +26,7 @@ public unsafe partial struct ILearningModelOperatorProviderNative : ILearningMod
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelOperatorProviderNative*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ILearningModelOperatorProviderNative : ILearningMod
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, uint>)(lpVtbl[1]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelOperatorProviderNative*, uint>)(lpVtbl[1]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ILearningModelOperatorProviderNative : ILearningMod
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, uint>)(lpVtbl[2]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelOperatorProviderNative*, uint>)(lpVtbl[2]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILearningModelOperatorProviderNative.xml' path='doc/member[@name="ILearningModelOperatorProviderNative.GetRegistry"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ILearningModelOperatorProviderNative : ILearningMod
     [VtblIndex(3)]
     public HRESULT GetRegistry(IMLOperatorRegistry** ppOperatorRegistry)
     {
-        return ((delegate* unmanaged<ILearningModelOperatorProviderNative*, IMLOperatorRegistry**, int>)(lpVtbl[3]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this), ppOperatorRegistry);
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelOperatorProviderNative*, IMLOperatorRegistry**, int>)(lpVtbl[3]))((ILearningModelOperatorProviderNative*)Unsafe.AsPointer(ref this), ppOperatorRegistry);
     }
 
     public interface Interface : IUnknown.Interface
@@ -65,15 +65,15 @@ public unsafe partial struct ILearningModelOperatorProviderNative : ILearningMod
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMLOperatorRegistry **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMLOperatorRegistry**, int> GetRegistry;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMLOperatorRegistry**, int> GetRegistry;
     }
 }

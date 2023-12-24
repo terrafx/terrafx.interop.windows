@@ -19,32 +19,4 @@ public static unsafe partial class IMFCameraControlMonitorTests
     {
         Assert.That(typeof(IMFCameraControlMonitor).GUID, Is.EqualTo(IID_IMFCameraControlMonitor));
     }
-
-    /// <summary>Validates that the <see cref="IMFCameraControlMonitor" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFCameraControlMonitor>(), Is.EqualTo(sizeof(IMFCameraControlMonitor)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFCameraControlMonitor" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFCameraControlMonitor).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFCameraControlMonitor" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFCameraControlMonitor), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFCameraControlMonitor), Is.EqualTo(4));
-        }
-    }
 }

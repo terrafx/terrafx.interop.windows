@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MEMORY_EXHAUSTION_INFO">
-    <summary>
-      <para>Allows applications to configure a process to terminate if an allocation fails to commit memory. This structure is used by the <a href="https://docs.microsoft.com//previous-versions/mt767996(v=vs.85)">PROCESS_INFORMATION_CLASS</a> class.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/mt767996(v=vs.85)">PROCESS_INFORMATION_CLASS </seealso>
-    <seealso cref="PROCESS_MEMORY_EXHAUSTION_TYPE" />
+    <summary>Allows applications to configure a process to terminate if an allocation fails to commit memory. This structure is used by the <a href="https://docs.microsoft.com//previous-versions/mt767996(v=vs.85)">PROCESS_INFORMATION_CLASS</a> class.</summary>
   </member>
   <member name="PROCESS_MEMORY_EXHAUSTION_INFO.Version">
-    <summary>
-      <para>Version should be set to <b>PME_CURRENT_VERSION</b>.</para>
-    </summary>
+    <summary>Version should be set to <b>PME_CURRENT_VERSION</b>.</summary>
   </member>
   <member name="PROCESS_MEMORY_EXHAUSTION_INFO.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="PROCESS_MEMORY_EXHAUSTION_INFO.Type">
     <summary>
@@ -33,16 +25,14 @@
           <description>Function</description>
           <description> Setting</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Enable</description>
-          <description>PME_FAILFAST_ON_COMMIT_FAIL_ENABLE
-</description>
-        </item>
-        <item>
+          <description>PME_FAILFAST_ON_COMMIT_FAIL_ENABLE</description>
+        </listheader>
+        <listheader>
           <description>Disable</description>
-          <description>PME_FAILFAST_ON_COMMIT_FAIL_DISABLE
-</description>
-        </item>
+          <description>PME_FAILFAST_ON_COMMIT_FAIL_DISABLE</description>
+        </listheader>
       </list>
     </summary>
   </member>

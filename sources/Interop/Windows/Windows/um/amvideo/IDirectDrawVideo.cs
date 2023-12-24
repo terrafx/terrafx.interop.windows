@@ -26,7 +26,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, Guid*, void**, int>)(lpVtbl[0]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, uint>)(lpVtbl[1]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, uint>)(lpVtbl[1]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, uint>)(lpVtbl[2]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, uint>)(lpVtbl[2]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.GetSwitches"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetSwitches([NativeTypeName("DWORD *")] uint* pSwitches)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, uint*, int>)(lpVtbl[3]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pSwitches);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, uint*, int>)(lpVtbl[3]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pSwitches);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.SetSwitches"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(4)]
     public HRESULT SetSwitches([NativeTypeName("DWORD")] uint Switches)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, uint, int>)(lpVtbl[4]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), Switches);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, uint, int>)(lpVtbl[4]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), Switches);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.GetCaps"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetCaps([NativeTypeName("DDCAPS *")] DDCAPS_DX7* pCaps)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, DDCAPS_DX7*, int>)(lpVtbl[5]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pCaps);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, DDCAPS_DX7*, int>)(lpVtbl[5]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pCaps);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.GetEmulatedCaps"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetEmulatedCaps([NativeTypeName("DDCAPS *")] DDCAPS_DX7* pCaps)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, DDCAPS_DX7*, int>)(lpVtbl[6]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pCaps);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, DDCAPS_DX7*, int>)(lpVtbl[6]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pCaps);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.GetSurfaceDesc"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(7)]
     public HRESULT GetSurfaceDesc(DDSURFACEDESC* pSurfaceDesc)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, DDSURFACEDESC*, int>)(lpVtbl[7]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pSurfaceDesc);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, DDSURFACEDESC*, int>)(lpVtbl[7]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pSurfaceDesc);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.GetFourCCCodes"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(8)]
     public HRESULT GetFourCCCodes([NativeTypeName("DWORD *")] uint* pCount, [NativeTypeName("DWORD *")] uint* pCodes)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, uint*, uint*, int>)(lpVtbl[8]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pCount, pCodes);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, uint*, uint*, int>)(lpVtbl[8]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pCount, pCodes);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.SetDirectDraw"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(9)]
     public HRESULT SetDirectDraw([NativeTypeName("LPDIRECTDRAW")] IDirectDraw* pDirectDraw)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, IDirectDraw*, int>)(lpVtbl[9]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pDirectDraw);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, IDirectDraw*, int>)(lpVtbl[9]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pDirectDraw);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.GetDirectDraw"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(10)]
     public HRESULT GetDirectDraw([NativeTypeName("LPDIRECTDRAW *")] IDirectDraw** ppDirectDraw)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, IDirectDraw**, int>)(lpVtbl[10]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), ppDirectDraw);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, IDirectDraw**, int>)(lpVtbl[10]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), ppDirectDraw);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.GetSurfaceType"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(11)]
     public HRESULT GetSurfaceType([NativeTypeName("DWORD *")] uint* pSurfaceType)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, uint*, int>)(lpVtbl[11]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pSurfaceType);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, uint*, int>)(lpVtbl[11]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), pSurfaceType);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.SetDefault"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(12)]
     public HRESULT SetDefault()
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, int>)(lpVtbl[12]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, int>)(lpVtbl[12]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.UseScanLine"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(13)]
     public HRESULT UseScanLine([NativeTypeName("long")] int UseScanLine)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, int, int>)(lpVtbl[13]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseScanLine);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, int, int>)(lpVtbl[13]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseScanLine);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.CanUseScanLine"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(14)]
     public HRESULT CanUseScanLine([NativeTypeName("long *")] int* UseScanLine)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, int*, int>)(lpVtbl[14]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseScanLine);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, int*, int>)(lpVtbl[14]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseScanLine);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.UseOverlayStretch"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(15)]
     public HRESULT UseOverlayStretch([NativeTypeName("long")] int UseOverlayStretch)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, int, int>)(lpVtbl[15]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseOverlayStretch);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, int, int>)(lpVtbl[15]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseOverlayStretch);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.CanUseOverlayStretch"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(16)]
     public HRESULT CanUseOverlayStretch([NativeTypeName("long *")] int* UseOverlayStretch)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, int*, int>)(lpVtbl[16]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseOverlayStretch);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, int*, int>)(lpVtbl[16]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseOverlayStretch);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.UseWhenFullScreen"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(17)]
     public HRESULT UseWhenFullScreen([NativeTypeName("long")] int UseWhenFullScreen)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, int, int>)(lpVtbl[17]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseWhenFullScreen);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, int, int>)(lpVtbl[17]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseWhenFullScreen);
     }
 
     /// <include file='IDirectDrawVideo.xml' path='doc/member[@name="IDirectDrawVideo.WillUseFullScreen"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
     [VtblIndex(18)]
     public HRESULT WillUseFullScreen([NativeTypeName("long *")] int* UseWhenFullScreen)
     {
-        return ((delegate* unmanaged<IDirectDrawVideo*, int*, int>)(lpVtbl[18]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseWhenFullScreen);
+        return ((delegate* unmanaged[MemberFunction]<IDirectDrawVideo*, int*, int>)(lpVtbl[18]))((IDirectDrawVideo*)Unsafe.AsPointer(ref this), UseWhenFullScreen);
     }
 
     public interface Interface : IUnknown.Interface
@@ -230,60 +230,60 @@ public unsafe partial struct IDirectDrawVideo : IDirectDrawVideo.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSwitches;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSwitches;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetSwitches;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetSwitches;
 
         [NativeTypeName("HRESULT (DDCAPS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDCAPS_DX7*, int> GetCaps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDCAPS_DX7*, int> GetCaps;
 
         [NativeTypeName("HRESULT (DDCAPS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDCAPS_DX7*, int> GetEmulatedCaps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDCAPS_DX7*, int> GetEmulatedCaps;
 
         [NativeTypeName("HRESULT (DDSURFACEDESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DDSURFACEDESC*, int> GetSurfaceDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DDSURFACEDESC*, int> GetSurfaceDesc;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetFourCCCodes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetFourCCCodes;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDraw*, int> SetDirectDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDraw*, int> SetDirectDraw;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAW *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDraw**, int> GetDirectDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDraw**, int> GetDirectDraw;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSurfaceType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSurfaceType;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SetDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SetDefault;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> UseScanLine;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> UseScanLine;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> CanUseScanLine;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> CanUseScanLine;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> UseOverlayStretch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> UseOverlayStretch;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> CanUseOverlayStretch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> CanUseOverlayStretch;
 
         [NativeTypeName("HRESULT (long) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> UseWhenFullScreen;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> UseWhenFullScreen;
 
         [NativeTypeName("HRESULT (long *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> WillUseFullScreen;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> WillUseFullScreen;
     }
 }

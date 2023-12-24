@@ -4,33 +4,23 @@
 <doc>
   <member name="DVD_KaraokeAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DVD_KaraokeAttributes</code> structure contains information about a karaoke audio stream. The <see cref="IDvdInfo2.GetKaraokeAttributes" /> method fills in a <code>DVD_KaraokeAttributes</code> structure for a specified stream.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="DVD_KaraokeAttributes.bVersion">
-    <summary>
-      <para>Version number. The current karaoke version is 1.0.</para>
-    </summary>
+    <summary>Version number. The current karaoke version is 1.0.</summary>
   </member>
   <member name="DVD_KaraokeAttributes.fMasterOfCeremoniesInGuideVocal1">
-    <summary>
-      <para>If <b>TRUE</b>, the "Guide Vocal 1" channel contains the "Master of Ceremonies" content.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, the "Guide Vocal 1" channel contains the "Master of Ceremonies" content.</summary>
   </member>
   <member name="DVD_KaraokeAttributes.fDuet">
-    <summary>
-      <para>A Boolean value indicating whether the song is intended to be sung as a duet.</para>
-    </summary>
+    <summary>A Boolean value indicating whether the song is intended to be sung as a duet.</summary>
   </member>
   <member name="DVD_KaraokeAttributes.ChannelAssignment">
-    <summary>
-      <para>A <see cref="DVD_KARAOKE_ASSIGNMENT" /> value indicating the speaker configuration into which all the channels will be mixed.</para>
-    </summary>
+    <summary>A <see cref="DVD_KARAOKE_ASSIGNMENT" /> value indicating the speaker configuration into which all the channels will be mixed.</summary>
   </member>
   <member name="DVD_KaraokeAttributes.wChannelContents">
-    <summary>
-      <para>An array of valid <see cref="DVD_KARAOKE_CONTENTS" /> values that identifies the content on each channel.</para>
-    </summary>
+    <summary>An array of valid <see cref="DVD_KARAOKE_CONTENTS" /> values that identifies the content on each channel.</summary>
   </member>
 </doc>

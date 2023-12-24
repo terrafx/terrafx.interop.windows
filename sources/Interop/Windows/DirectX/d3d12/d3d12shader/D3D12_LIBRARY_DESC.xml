@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_LIBRARY_DESC">
+    <summary>Describes a library.</summary>
+  </member>
+  <member name="D3D12_LIBRARY_DESC.Creator">
+    <summary>The name of the originator of the library.</summary>
+  </member>
+  <member name="D3D12_LIBRARY_DESC.Flags">
+    <summary>A combination of <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-constants">D3DCOMPILE Constants</a> that are combined by using a bitwise OR operation. The resulting value specifies how the compiler compiles.</summary>
+  </member>
+  <member name="D3D12_LIBRARY_DESC.FunctionCount">
+    <summary>The number of functions exported from the library.</summary>
+  </member>
+</doc>

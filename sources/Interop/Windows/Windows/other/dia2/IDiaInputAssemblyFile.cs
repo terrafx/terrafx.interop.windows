@@ -25,7 +25,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, Guid*, void**, int>)(lpVtbl[0]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInputAssemblyFile*, Guid*, void**, int>)(lpVtbl[0]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint>)(lpVtbl[1]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaInputAssemblyFile*, uint>)(lpVtbl[1]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint>)(lpVtbl[2]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaInputAssemblyFile*, uint>)(lpVtbl[2]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_uniqueId"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
     [VtblIndex(3)]
     public HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[3]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[3]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_index"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
     [VtblIndex(4)]
     public HRESULT get_index([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[4]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[4]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_timestamp"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
     [VtblIndex(5)]
     public HRESULT get_timestamp([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[5]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInputAssemblyFile*, uint*, int>)(lpVtbl[5]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_pdbAvailableAtILMerge"]/*' />
@@ -75,15 +75,15 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
     [VtblIndex(6)]
     public HRESULT get_pdbAvailableAtILMerge(BOOL* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, BOOL*, int>)(lpVtbl[6]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInputAssemblyFile*, BOOL*, int>)(lpVtbl[6]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_fileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_fileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, ushort**, int>)(lpVtbl[7]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInputAssemblyFile*, char**, int>)(lpVtbl[7]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaInputAssemblyFile.xml' path='doc/member[@name="IDiaInputAssemblyFile.get_version"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
     [VtblIndex(8)]
     public HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
     {
-        return ((delegate* unmanaged<IDiaInputAssemblyFile*, uint, uint*, byte*, int>)(lpVtbl[8]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
+        return ((delegate* unmanaged[MemberFunction]<IDiaInputAssemblyFile*, uint, uint*, byte*, int>)(lpVtbl[8]))((IDiaInputAssemblyFile*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
     }
 
     public interface Interface : IUnknown.Interface
@@ -109,7 +109,7 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         HRESULT get_pdbAvailableAtILMerge(BOOL* pRetVal);
 
         [VtblIndex(7)]
-        HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_fileName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(8)]
         HRESULT get_version([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData);
@@ -119,30 +119,30 @@ public unsafe partial struct IDiaInputAssemblyFile : IDiaInputAssemblyFile.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_uniqueId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_uniqueId;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_index;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_index;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_timestamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_timestamp;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_pdbAvailableAtILMerge;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_pdbAvailableAtILMerge;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_fileName;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> get_version;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, byte*, int> get_version;
     }
 }

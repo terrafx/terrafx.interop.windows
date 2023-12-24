@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_GUID_AVEncCommonFormatDVD_DashVRTest
     {
         Assert.That(typeof(CODECAPI_GUID_AVEncCommonFormatDVD_DashVR).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVEncCommonFormatDVD_DashVR));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncCommonFormatDVD_DashVR" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_GUID_AVEncCommonFormatDVD_DashVR>(), Is.EqualTo(sizeof(CODECAPI_GUID_AVEncCommonFormatDVD_DashVR)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncCommonFormatDVD_DashVR" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_GUID_AVEncCommonFormatDVD_DashVR).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVEncCommonFormatDVD_DashVR" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_GUID_AVEncCommonFormatDVD_DashVR), Is.EqualTo(1));
-    }
 }

@@ -11,13 +11,13 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION"]/*' />
-public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
+public partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
 {
     /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.header"]/*' />
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.Anonymous"]/*' />
-    [NativeTypeName("_DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3228:5)")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3228_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.specializationType"]/*' />
@@ -28,13 +28,13 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
 
     /// <include file='DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.xml' path='doc/member[@name="DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION.specializationApplicationName"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort specializationApplicationName[128];
+    public _specializationApplicationName_e__FixedBuffer specializationApplicationName;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.isSpecializationEnabled"]/*' />
     public uint isSpecializationEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.isSpecializationEnabled;
         }
@@ -50,7 +50,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -79,7 +79,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3230:9)")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3230_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />
@@ -97,7 +97,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
             public uint isSpecializationEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -114,7 +114,7 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }
@@ -126,5 +126,12 @@ public unsafe partial struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION
                 }
             }
         }
+    }
+
+    /// <include file='_specializationApplicationName_e__FixedBuffer.xml' path='doc/member[@name="_specializationApplicationName_e__FixedBuffer"]/*' />
+    [InlineArray(128)]
+    public partial struct _specializationApplicationName_e__FixedBuffer
+    {
+        public char e0;
     }
 }

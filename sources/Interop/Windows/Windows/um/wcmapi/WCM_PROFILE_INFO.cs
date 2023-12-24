@@ -4,21 +4,29 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO"]/*' />
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct WCM_PROFILE_INFO
+public partial struct WCM_PROFILE_INFO
 {
     /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO.strProfileName"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort strProfileName[256];
+    public _strProfileName_e__FixedBuffer strProfileName;
 
     /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO.AdapterGUID"]/*' />
     public Guid AdapterGUID;
 
     /// <include file='WCM_PROFILE_INFO.xml' path='doc/member[@name="WCM_PROFILE_INFO.Media"]/*' />
     public WCM_MEDIA_TYPE Media;
+
+    /// <include file='_strProfileName_e__FixedBuffer.xml' path='doc/member[@name="_strProfileName_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _strProfileName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

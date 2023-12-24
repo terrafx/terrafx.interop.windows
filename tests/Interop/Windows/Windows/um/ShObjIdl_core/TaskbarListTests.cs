@@ -19,25 +19,4 @@ public static unsafe partial class TaskbarListTests
     {
         Assert.That(typeof(TaskbarList).GUID, Is.EqualTo(IID_TaskbarList));
     }
-
-    /// <summary>Validates that the <see cref="TaskbarList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TaskbarList>(), Is.EqualTo(sizeof(TaskbarList)));
-    }
-
-    /// <summary>Validates that the <see cref="TaskbarList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TaskbarList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TaskbarList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TaskbarList), Is.EqualTo(1));
-    }
 }

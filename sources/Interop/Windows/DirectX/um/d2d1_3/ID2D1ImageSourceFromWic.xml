@@ -3,118 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1ImageSourceFromWic.EnsureCached">
-    <summary>
-      <para>Ensures that a specified region of the image source cache is populated.
-This method can be used to minimize glitches by performing expensive work to populate caches outside of a rendering loop.
-This method can also be used to speculatively load image data before it is needed by drawing routines.</para>
-    </summary>
-    <param name="rectangleToFill">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-u">D2D1_RECT_U</a>*</b></para>
-      <para>Specifies the region of the image, in pixels, that should be populated in the cache. By default, this is the entire extent of the image.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This API loads image data into caches of image sources, if that data was not already cached.  It does not trim pre-existing caches, if any.
-More areas within the cache can be populated than actually requested.</para>
-      <para>The provided region must be constructed to include the scale with which the image source will subsequently be drawn.
-These coordinates must be provided in local coordinates.
-This means that they must be adjusted prior to calling the API according to the DPI and other relevant transforms,
-which can include the world transform and brush transforms.</para>
-      <para>This operation is only supported when the image source has been initialized using the D2D1_IMAGE_SOURCE_LOADING_OPTIONS_CACHE_ON_DEMAND option.</para>
-    </remarks>
-    <seealso cref="ID2D1ImageSourceFromWic" />
+    <summary>Ensures that a specified region of the image source cache is populated. This method can be used to minimize glitches by performing expensive work to populate caches outside of a rendering loop. This method can also be used to speculatively load image data before it is needed by drawing routines.</summary>
+    <param name="rectangleToFill">Specifies the region of the image, in pixels, that should be populated in the cache. By default, this is the entire extent of the image.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1ImageSourceFromWic.EnsureCached">
-    <summary>
-      <para>Ensures that a specified region of the image source cache is populated.
-This method can be used to minimize glitches by performing expensive work to populate caches outside of a rendering loop.
-This method can also be used to speculatively load image data before it is needed by drawing routines.</para>
-    </summary>
-    <param name="rectangleToFill">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-u">D2D1_RECT_U</a></b></para>
-      <para>Specifies the region of the image, in pixels, that should be populated in the cache. By default, this is the entire extent of the image.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This API loads image data into caches of image sources, if that data was not already cached.  It does not trim pre-existing caches, if any.
-More areas within the cache can be populated than actually requested.</para>
-      <para>The provided region must be constructed to include the scale with which the image source will subsequently be drawn.
-These coordinates must be provided in local coordinates.
-This means that they must be adjusted prior to calling the API according to the DPI and other relevant transforms,
-which can include the world transform and brush transforms.</para>
-      <para>This operation is only supported when the image source has been initialized using the D2D1_IMAGE_SOURCE_LOADING_OPTIONS_CACHE_ON_DEMAND option.</para>
-    </remarks>
-    <seealso cref="ID2D1ImageSourceFromWic" />
+    <summary>Ensures that a specified region of the image source cache is populated. This method can be used to minimize glitches by performing expensive work to populate caches outside of a rendering loop. This method can also be used to speculatively load image data before it is needed by drawing routines.</summary>
+    <param name="rectangleToFill">Specifies the region of the image, in pixels, that should be populated in the cache. By default, this is the entire extent of the image.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1ImageSourceFromWic.GetSource">
-    <summary>
-      <para>Retrieves the underlying bitmap image source from the Windows Imaging Component (WIC).</para>
-    </summary>
-    <param name="wicBitmapSource">
-      <para>Type: <b><see cref="IWICBitmapSource" />**</b></para>
-      <para>On return contains the bitmap image source.</para>
-    </param>
-    <seealso cref="ID2D1ImageSourceFromWic" />
+    <summary>Retrieves the underlying bitmap image source from the Windows Imaging Component (WIC).</summary>
+    <param name="wicBitmapSource">On return contains the bitmap image source.</param>
   </member>
   <member name="ID2D1ImageSourceFromWic.TrimCache">
-    <summary>
-      <para>This method trims the populated regions of the image source cache to just the specified rectangle.</para>
-    </summary>
-    <param name="rectangleToPreserve">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-u">D2D1_RECT_U</a>*</b></para>
-      <para>Specifies the region of the image, in pixels, which should be preserved in the image source cache.
-Regions which are outside of the rectangle are evicted from the cache. By default, this is an empty rectangle,
-meaning that the entire image is evicted from the cache.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The provided region must be constructed to include the scale at which the image source will be drawn at.  These coordinates must be provided in local coordinates.
-This means that they must be adjusted prior to calling the API according to the DPI and other relevant transforms, which can include the world transform and brush transforms.</para>
-      <para>This method will fail if on-demand caching was not requested when the image source was created.</para>
-      <para>As with <see cref="ID2D1Device.ClearResources" />, the caller can need to subsequently issue a D3D flush before memory usage is reduced.</para>
-      <para>This operation is only supported when the image source has been initialized using the D2D1_IMAGE_SOURCE_LOADING_OPTIONS_CACHE_ON_DEMAND option.</para>
-    </remarks>
-    <seealso cref="ID2D1ImageSourceFromWic" />
+    <summary>This method trims the populated regions of the image source cache to just the specified rectangle.</summary>
+    <param name="rectangleToPreserve">Specifies the region of the image, in pixels, which should be preserved in the image source cache. Regions which are outside of the rectangle are evicted from the cache. By default, this is an empty rectangle, meaning that the entire image is evicted from the cache.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1ImageSourceFromWic.TrimCache">
-    <summary>
-      <para>This method trims the populated regions of the image source cache to just the specified rectangle.</para>
-    </summary>
-    <param name="rectangleToPreserve">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-u">D2D1_RECT_U</a></b></para>
-      <para>Specifies the region of the image, in pixels, which should be preserved in the image source cache.
-Regions which are outside of the rectangle are evicted from the cache. By default, this is an empty rectangle,
-meaning that the entire image is evicted from the cache.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The provided region must be constructed to include the scale at which the image source will be drawn at.  These coordinates must be provided in local coordinates.
-This means that they must be adjusted prior to calling the API according to the DPI and other relevant transforms, which can include the world transform and brush transforms.</para>
-      <para>This method will fail if on-demand caching was not requested when the image source was created.</para>
-      <para>As with <see cref="ID2D1Device.ClearResources" />, the caller can need to subsequently issue a D3D flush before memory usage is reduced.</para>
-      <para>This operation is only supported when the image source has been initialized using the D2D1_IMAGE_SOURCE_LOADING_OPTIONS_CACHE_ON_DEMAND option.</para>
-    </remarks>
-    <seealso cref="ID2D1ImageSourceFromWic" />
+    <summary>This method trims the populated regions of the image source cache to just the specified rectangle.</summary>
+    <param name="rectangleToPreserve">Specifies the region of the image, in pixels, which should be preserved in the image source cache. Regions which are outside of the rectangle are evicted from the cache. By default, this is an empty rectangle, meaning that the entire image is evicted from the cache.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID2D1ImageSourceFromWic">
-    <summary>
-      <para>Produces 2D pixel data that has been sourced from WIC.</para>
-    </summary>
-    <remarks>
-      <para>Create an an instance of ID2D1ImageSourceFromWic
-using <see cref="ID2D1DeviceContext2.CreateImageSourceFromWic" />.</para>
-    </remarks>
+    <summary>Produces 2D pixel data that has been sourced from WIC.</summary>
   </member>
 </doc>

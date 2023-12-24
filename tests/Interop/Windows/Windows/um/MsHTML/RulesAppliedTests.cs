@@ -19,25 +19,4 @@ public static unsafe partial class RulesAppliedTests
     {
         Assert.That(typeof(RulesApplied).GUID, Is.EqualTo(IID_RulesApplied));
     }
-
-    /// <summary>Validates that the <see cref="RulesApplied" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<RulesApplied>(), Is.EqualTo(sizeof(RulesApplied)));
-    }
-
-    /// <summary>Validates that the <see cref="RulesApplied" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(RulesApplied).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="RulesApplied" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(RulesApplied), Is.EqualTo(1));
-    }
 }

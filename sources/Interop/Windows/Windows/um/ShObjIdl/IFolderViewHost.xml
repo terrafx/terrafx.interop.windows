@@ -3,29 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFolderViewHost.Initialize">
-    <summary>
-      <para>Initializes the object that hosts an <see cref="IFolderView" /> object.</para>
-    </summary>
-    <param name="hwndParent">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the window that contains the <see cref="IFolderViewHost" /> object.</para>
-    </param>
-    <param name="pdo">
-      <para>Type: <b><see cref="IDataObject" />*</b></para>
-      <para>The address of a pointer to a data object.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>The address of a pointer to a <b>RECT</b> structure that specifies the dimensions of the folder view.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initializes the object that hosts an <see cref="IFolderView" /> object.</summary>
+    <param name="hwndParent">The handle of the window that contains the <see cref="IFolderViewHost" /> object.</param>
+    <param name="pdo">The address of a pointer to a data object.</param>
+    <param name="prc">The address of a pointer to a <b>RECT</b> structure that specifies the dimensions of the folder view.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderViewHost">
-    <summary>
-      <para>Exposes a method that hosts an <see cref="IFolderView" /> object in a window.</para>
-    </summary>
+    <summary>Exposes a method that hosts an <see cref="IFolderView" /> object in a window.</summary>
   </member>
 </doc>

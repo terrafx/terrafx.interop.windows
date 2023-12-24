@@ -4,23 +4,17 @@
 <doc>
   <member name="IMFPMediaItem.GetCharacteristics">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Gets various flags that describe the media item.</para>
     </summary>
-    <param name="pCharacteristics">
-      <para>Receives a bitwise <b>OR</b> of flags from the <see cref="_MFP_MEDIAITEM_CHARACTERISTICS" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pCharacteristics">Receives a bitwise <b>OR</b> of flags from the <see cref="_MFP_MEDIAITEM_CHARACTERISTICS" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.GetDuration">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Gets the duration of the media item.</para>
     </summary>
     <param name="guidPositionType">
@@ -30,111 +24,57 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MFP_POSITIONTYPE_100NS</b>
-          </description>
-          <description>
-            <para>100-nanosecond units.</para>
-            <para>The value returned in <i>pvDurationValue</i> is a <b>LARGE_INTEGER</b>.</para>
             <list type="bullet">
-              <item>
-                <description>Variant type (<b>vt</b>): VT_I8</description>
-              </item>
-              <item>
-                <description>Variant member: <b>hVal</b></description>
-              </item>
+              <listheader>
+                <term>
+                  <b>MFP_POSITIONTYPE_100NS</b>
+                </term>
+              </listheader>
             </list>
           </description>
-        </item>
+          <description>100-nanosecond units. <para>The value returned in <i>pvDurationValue</i> is a <b>LARGE_INTEGER</b>.</para><list type="bullet"><item><description>Variant type (<b>vt</b>): VT_I8</description></item><item><description>Variant member: <b>hVal</b></description></item></list></description>
+        </listheader>
       </list>
     </param>
-    <param name="pvDurationValue">
-      <para>Pointer to a <b>PROPVARIANT</b> that receives the duration.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The method returns the total duration of the content, regardless of any values set through <see cref="IMFPMediaItem.SetStartStopPosition" />.</para>
-      <h4>Examples</h4>
-      <code>#include &lt;propvarutil.h&gt;
-
-HRESULT GetPlaybackDuration(IMFPMediaItem *pItem, ULONGLONG *phnsDuration)
-{
-    PROPVARIANT var;
-
-    HRESULT hr = pItem-&gt;GetDuration(MFP_POSITIONTYPE_100NS, &amp;amp;amp;amp;amp;amp;var);
-
-    if (SUCCEEDED(hr))
-    {
-        hr = PropVariantToUInt64(var, phnsDuration);
-        PropVariantClear(&amp;amp;amp;amp;amp;amp;var);
-    }
-
-    return hr;
-}
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-get-the-playback-duration">How to Get the Playback Duration</seealso>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pvDurationValue">Pointer to a <b>PROPVARIANT</b> that receives the duration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.GetMediaPlayer">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Gets a pointer to the MFPlay player object that created the media item.</para>
     </summary>
-    <param name="ppMediaPlayer">
-      <para>Receives a pointer to the player object's <see cref="IMFPMediaPlayer" /> interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="ppMediaPlayer">Receives a pointer to the player object's <see cref="IMFPMediaPlayer" /> interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.GetMetadata">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Gets a property store that contains metadata for the source, such as author or title.</para>
     </summary>
-    <param name="ppMetadataStore">
-      <para>Receives a pointer to the <b>IPropertyStore</b> interface of a read-only property store. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="ppMetadataStore">Receives a pointer to the <b>IPropertyStore</b> interface of a read-only property store. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.GetNumberOfStreams">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Gets the number of streams (audio, video, and other) in the media item.</para>
     </summary>
-    <param name="pdwStreamCount">
-      <para>Receives the number of streams.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pdwStreamCount">Receives the number of streams.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.GetObject">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Gets the object that was used to create the media item.</para>
     </summary>
-    <param name="ppIUnknown">
-      <para>Receives a pointer to the object's <b>IUnknown</b> interface. The caller must release the interface.</para>
-    </param>
+    <param name="ppIUnknown">Receives a pointer to the object's <b>IUnknown</b> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -142,113 +82,77 @@ HRESULT GetPlaybackDuration(IMFPMediaItem *pItem, ULONGLONG *phnsDuration)
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The media item was created from a URL, not from an object.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_NOTFOUND</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The media item was created from a URL, not from an object.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <see cref="IMFPMediaPlayer.Shutdown" /> method was called.</para>
-          </description>
-        </item>
+          <description>The <see cref="IMFPMediaPlayer.Shutdown" /> method was called.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The object pointer is set if the application uses <see cref="IMFPMediaPlayer.CreateMediaItemFromObject" /> to create the media item. Otherwise, <b>GetObject</b> returns  MF_E_NOTFOUND.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
   </member>
   <member name="IMFPMediaItem.GetPresentationAttribute">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Queries the media item for a presentation attribute.</para>
     </summary>
     <param name="guidMFAttribute">
       <para>GUID that identifies the attribute value to query.</para>
       <para>For a list of presentation attributes, see <a href="https://docs.microsoft.com//windows/desktop/medfound/presentation-descriptor-attributes">Presentation Descriptor Attributes</a>.</para>
     </param>
-    <param name="pvValue">
-      <para>Pointer to a <b>PROPVARIANT</b> that receives the value. The method fills the <b>PROPVARIANT</b> with a copy of the stored value. Call <b>PropVariantClear</b> to free the memory allocated by the method.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Presentation attributes describe the presentation as a whole. To get an attribute that applies to an individual stream within the presentation, call <see cref="IMFPMediaItem.GetStreamAttribute" />.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pvValue">Pointer to a <b>PROPVARIANT</b> that receives the value. The method fills the <b>PROPVARIANT</b> with a copy of the stored value. Call <b>PropVariantClear</b> to free the memory allocated by the method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.GetStartStopPosition">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Gets the start and stop times for the media item.</para>
     </summary>
-    <param name="pguidStartPositionType">
-      <para>Receives the unit of time for the start position. See Remarks. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="pvStartValue">
-      <para>Receives the start position. The meaning and data type of this parameter are indicated by the <i>pguidStartPositionType</i> parameter. The  <i>pvStartValue</i> parameter must be <b>NULL</b> if <i>pguidStartPositionType</i> is <b>NULL</b>, and cannot be <b>NULL</b> otherwise.</para>
-    </param>
-    <param name="pguidStopPositionType">
-      <para>Receives the unit of time for the stop position. See Remarks. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="pvStopValue">
-      <para>Stop position. The meaning and data type of this parameter are indicated by the <i>pguidStopPositionType</i> parameter. The <i>pvStopValue</i>  parameter must be <b>NULL</b> if <i>pguidStopPositionType</i> is <b>NULL</b>, and cannot be <b>NULL</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>pguidStartPositionType</i> and <i>pguidStopPositionType</i> parameters receive the units of time that are used. Currently, the only supported value is <b>MFP_POSITIONTYPE_100NS</b>.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>MFP_POSITIONTYPE_100NS</description>
-          <description>100-nanosecond units. The time parameter (<i>pvStartValue</i> or <i>pvStopValue</i>) uses the following data type:<list type="bullet"><item><description>Variant type (<b>vt</b>): VT_I8</description></item><item><description>Variant member: <b>hVal</b></description></item></list></description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-a-file-clip">How to Play a File Clip</seealso>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pguidStartPositionType">Receives the unit of time for the start position. See Remarks. This parameter can be <b>NULL</b>.</param>
+    <param name="pvStartValue">Receives the start position. The meaning and data type of this parameter are indicated by the <i>pguidStartPositionType</i> parameter. The <i>pvStartValue</i> parameter must be <b>NULL</b> if <i>pguidStartPositionType</i> is <b>NULL</b>, and cannot be <b>NULL</b> otherwise.</param>
+    <param name="pguidStopPositionType">Receives the unit of time for the stop position. See Remarks. This parameter can be <b>NULL</b>.</param>
+    <param name="pvStopValue">Stop position. The meaning and data type of this parameter are indicated by the <i>pguidStopPositionType</i> parameter. The <i>pvStopValue</i> parameter must be <b>NULL</b> if <i>pguidStopPositionType</i> is <b>NULL</b>, and cannot be <b>NULL</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.GetStreamAttribute">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Queries the media item for a stream attribute.</para>
     </summary>
-    <param name="dwStreamIndex">
-      <para>Zero-based index of the stream. To get the number of streams, call <see cref="IMFPMediaItem.GetNumberOfStreams" />.</para>
-    </param>
+    <param name="dwStreamIndex">Zero-based index of the stream. To get the number of streams, call <see cref="IMFPMediaItem.GetNumberOfStreams" />.</param>
     <param name="guidMFAttribute">
       <para>GUID that identifies the attribute value to query. Possible values are listed in the following topics:</para>
       <list type="bullet">
@@ -264,27 +168,16 @@ HRESULT GetPlaybackDuration(IMFPMediaItem *pItem, ULONGLONG *phnsDuration)
         </item>
       </list>
     </param>
-    <param name="pvValue">
-      <para>Pointer to a <b>PROPVARIANT</b> that receives the value. The method fills the <b>PROPVARIANT</b> with a copy of the stored value. Call <b>PropVariantClear</b> to free the memory allocated by this method.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Stream attributes describe an individual stream (audio, video, or other) within the presentation. To get an attribute that applies to the entire presentation, call <see cref="IMFPMediaItem.GetPresentationAttribute" />.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pvValue">Pointer to a <b>PROPVARIANT</b> that receives the value. The method fills the <b>PROPVARIANT</b> with a copy of the stored value. Call <b>PropVariantClear</b> to free the memory allocated by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.GetStreamSelection">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Queries whether a stream is selected to play.</para>
     </summary>
-    <param name="dwStreamIndex">
-      <para>Zero-based index of the stream. To get the number of streams, call <see cref="IMFPMediaItem.GetNumberOfStreams" />.</para>
-    </param>
+    <param name="dwStreamIndex">Zero-based index of the stream. To get the number of streams, call <see cref="IMFPMediaItem.GetNumberOfStreams" />.</param>
     <param name="pfEnabled">
       <para>Receives a Boolean value.</para>
       <list type="table">
@@ -292,42 +185,41 @@ HRESULT GetPlaybackDuration(IMFPMediaItem *pItem, ULONGLONG *phnsDuration)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRUE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream is selected. During playback, this stream will play.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The stream is selected. During playback, this stream will play.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>FALSE</b>
-          </description>
-          <description>
-            <para>The stream is not selected. During playback, this stream will not play.</para>
-          </description>
-        </item>
+          <description>The stream is not selected. During playback, this stream will not play.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To select or deselect a stream, call <see cref="IMFPMediaItem.SetStreamSelection" />.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.GetURL">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Gets the URL that was used to create the media item.</para>
     </summary>
-    <param name="ppwszURL">
-      <para>Receives a pointer to a null-terminated string that contains the URL. The caller must free the string by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
+    <param name="ppwszURL">Receives a pointer to a null-terminated string that contains the URL. The caller must free the string by calling <see cref="CoTaskMemFree" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -335,112 +227,81 @@ HRESULT GetPlaybackDuration(IMFPMediaItem *pItem, ULONGLONG *phnsDuration)
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>No URL is associated with this media item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_NOTFOUND</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_SHUTDOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>No URL is associated with this media item.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_SHUTDOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The <see cref="IMFPMediaPlayer.Shutdown" /> method was called.</para>
-          </description>
-        </item>
+          <description>The <see cref="IMFPMediaPlayer.Shutdown" /> method was called.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method applies when the application calls  <see cref="IMFPMediaPlayer.CreateMediaItemFromURL" /> to create a media item. If the application calls <see cref="IMFPMediaPlayer.CreateMediaItemFromObject" /> to create a media item, the  <b>GetURL</b> method for that media item returns  <b>MF_E_NOTFOUND</b>.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso cref="IMFPMediaPlayer.CreateMediaItemFromURL" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
   </member>
   <member name="IMFPMediaItem.GetUserData">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Gets the application-defined value stored in the media item.</para>
     </summary>
-    <param name="pdwUserData">
-      <para>Receives the application-defined value for the media item.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>You can assign this value when you first create the media item, by specifying it in the <i>dwUserData</i> parameter of the <see cref="IMFPMediaPlayer.CreateMediaItemFromURL" /> or <see cref="IMFPMediaPlayer.CreateMediaItemFromObject" /> method. To update the value, call <see cref="IMFPMediaItem.SetUserData" />.</para>
-      <para>This method can be called after the player object is shut down.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pdwUserData">Receives the application-defined value for the media item.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.HasAudio">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Queries whether the media item contains an audio stream.</para>
     </summary>
-    <param name="pfHasAudio">
-      <para>Receives the value <b>TRUE</b> if the media item contains at least one audio stream, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <param name="pfSelected">
-      <para>Receives the value <b>TRUE</b> if at least one audio stream is selected, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To select or deselect streams before playback starts, call <see cref="IMFPMediaItem.SetStreamSelection" />.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pfHasAudio">Receives the value <b>TRUE</b> if the media item contains at least one audio stream, or <b>FALSE</b> otherwise.</param>
+    <param name="pfSelected">Receives the value <b>TRUE</b> if at least one audio stream is selected, or <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.HasVideo">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Queries whether the media item contains a video stream.</para>
     </summary>
-    <param name="pfHasVideo">
-      <para>Receives the value <b>TRUE</b> if the media item contains at least one video stream, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <param name="pfSelected">
-      <para>Receives the value <b>TRUE</b> if at least one video stream is selected, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To select or deselect streams before playback starts, call <see cref="IMFPMediaItem.SetStreamSelection" />.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="pfHasVideo">Receives the value <b>TRUE</b> if the media item contains at least one video stream, or <b>FALSE</b> otherwise.</param>
+    <param name="pfSelected">Receives the value <b>TRUE</b> if at least one video stream is selected, or <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.IsProtected">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
-      <para>Queries whether the media item contains protected content.
-<b>Note</b>  Currently <see cref="IMFPMediaPlayer" /> does not support playing protected content.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
+      <para>Queries whether the media item contains protected content.</para>
+      <div>
+        <b>Note</b>  Currently <see cref="IMFPMediaPlayer" /> does not support playing protected content.</div>
     </summary>
     <param name="pfProtected">
       <para>Receives one of the following values.</para>
@@ -449,48 +310,44 @@ HRESULT GetPlaybackDuration(IMFPMediaItem *pItem, ULONGLONG *phnsDuration)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRUE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The media item contains protected content. Attempting to play this media item will cause a playback error.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The media item contains protected content. Attempting to play this media item will cause a playback error.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>FALSE</b>
-          </description>
-          <description>
-            <para>The media item does not contain protected content.</para>
-          </description>
-        </item>
+          <description>The media item does not contain protected content.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.SetStartStopPosition">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Sets the start and stop time for the media item.</para>
     </summary>
-    <param name="pguidStartPositionType">
-      <para>Unit of time for the start position. See Remarks. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="pvStartValue">
-      <para>Start position. The meaning and data type of this parameter are indicated by the <i>pguidStartPositionType</i> parameter. The  <i>pvStartValue</i> parameter must be <b>NULL</b> if <i>pguidStartPositionType</i> is <b>NULL</b>, and cannot be <b>NULL</b> otherwise.</para>
-    </param>
-    <param name="pguidStopPositionType">
-      <para>Unit of time for the stop position. See Remarks. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="pvStopValue">
-      <para>Stop position. The meaning and data type of this parameter are indicated by the <i>pguidStopPositionType</i> parameter. The <i>pvStopValue</i>  parameter must be <b>NULL</b> if <i>pguidStopPositionType</i> is <b>NULL</b>, and cannot be <b>NULL</b> otherwise.</para>
-    </param>
+    <param name="pguidStartPositionType">Unit of time for the start position. See Remarks. This parameter can be <b>NULL</b>.</param>
+    <param name="pvStartValue">Start position. The meaning and data type of this parameter are indicated by the <i>pguidStartPositionType</i> parameter. The <i>pvStartValue</i> parameter must be <b>NULL</b> if <i>pguidStartPositionType</i> is <b>NULL</b>, and cannot be <b>NULL</b> otherwise.</param>
+    <param name="pguidStopPositionType">Unit of time for the stop position. See Remarks. This parameter can be <b>NULL</b>.</param>
+    <param name="pvStopValue">Stop position. The meaning and data type of this parameter are indicated by the <i>pguidStopPositionType</i> parameter. The <i>pvStopValue</i> parameter must be <b>NULL</b> if <i>pguidStopPositionType</i> is <b>NULL</b>, and cannot be <b>NULL</b> otherwise.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -498,148 +355,52 @@ HRESULT GetPlaybackDuration(IMFPMediaItem *pItem, ULONGLONG *phnsDuration)
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid argument.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_OUT_OF_RANGE</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid start or stop time. Any of the following can cause this error:</para>
             <list type="bullet">
-              <item>
-                <description>Time less than zero.</description>
-              </item>
-              <item>
-                <description>Time greater than the total duration of the media item.</description>
-              </item>
-              <item>
-                <description>Stop time less than start time.</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
             </list>
           </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_OUT_OF_RANGE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid start or stop time. Any of the following can cause this error:<list type="bullet"><item><description>Time less than zero.</description></item><item><description>Time greater than the total duration of the media item.</description></item><item><description>Stop time less than start time.</description></item></list></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>By default, a media item plays from the beginning to the end of the file. This method adjusts the start time and/or  the stop time:</para>
-      <list type="bullet">
-        <item>
-          <description>To set the start time, pass non-<b>NULL</b> values for <i>pguidStartPositionType</i> and <i>pvStartValue</i>.</description>
-        </item>
-        <item>
-          <description>To set the stop time, pass non-<b>NULL</b> values for <i>pguidStopPositionType</i> and <i>pvStopValue</i>.</description>
-        </item>
-      </list>
-      <para>The <i>pguidStartPositionType</i> and <i>pguidStopPositionType</i> parameters give the units of time that are used. Currently, the only supported value is <b>MFP_POSITIONTYPE_100NS</b>.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>
-            <b>MFP_POSITIONTYPE_100NS</b>
-          </description>
-          <description>100-nanosecond units. The time parameter (<i>pvStartValue</i> or <i>pvStopValue</i>) uses the following data type:<list type="bullet"><item><description>Variant type (<b>vt</b>): <b>VT_I8</b></description></item><item><description>Variant member: <b>hVal</b></description></item></list><para>To clear a previously set time, use an empty <b>PROPVARIANT</b> (<b>VT_EMPTY</b>).</para></description>
-        </item>
-      </list>
-      <para>The adjusted start and stop times are used the next time that <see cref="IMFPMediaPlayer.SetMediaItem" /> is called with this media item. If the media item is already set on the player, the change does not happen unless you call <b>SetMediaItem</b> again.</para>
-      <h4>Examples</h4>
-      <code>HRESULT PlayMediaClip(
-    IMFPMediaPlayer *pPlayer,
-    PCWSTR pszURL,
-    LONGLONG    hnsStart,
-    LONGLONG    hnsEnd
-    )
-{
-    IMFPMediaItem *pItem = NULL;
-    PROPVARIANT varStart, varEnd;
-
-    ULONGLONG hnsDuration = 0;
-
-    HRESULT hr = pPlayer-&gt;CreateMediaItemFromURL(pszURL, TRUE, 0, &amp;amp;amp;amp;amp;amp;pItem);
-    if (FAILED(hr))
-    {
-        goto done;
-    }
-
-    hr = GetPlaybackDuration(pItem, &amp;amp;amp;amp;amp;amp;hnsDuration);
-    if (FAILED(hr))
-    {
-        goto done;
-    }
-
-    if ((ULONGLONG)hnsEnd &gt; hnsDuration)
-    {
-        hnsEnd = hnsDuration;
-    }
-
-    hr = InitPropVariantFromInt64(hnsStart, &amp;amp;amp;amp;amp;amp;varStart);
-    if (FAILED(hr))
-    {
-        goto done;
-    }
-
-    hr = InitPropVariantFromInt64(hnsEnd, &amp;amp;amp;amp;amp;amp;varEnd);
-    if (FAILED(hr))
-    {
-        goto done;
-    }
-
-    hr = pItem-&gt;SetStartStopPosition(
-        &amp;amp;amp;amp;amp;amp;MFP_POSITIONTYPE_100NS,
-        &amp;amp;amp;amp;amp;amp;varStart,
-        &amp;amp;amp;amp;amp;amp;MFP_POSITIONTYPE_100NS,
-        &amp;amp;amp;amp;amp;amp;varEnd
-        );
-    if (FAILED(hr))
-    {
-        goto done;
-    }
-
-    hr = pPlayer-&gt;SetMediaItem(pItem);
-
-done:
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pItem);
-    return hr;
-}
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/how-to-play-a-file-clip">How to Play a File Clip</seealso>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
   </member>
   <member name="IMFPMediaItem.SetStreamSelection">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Selects or deselects a stream.</para>
     </summary>
-    <param name="dwStreamIndex">
-      <para>Zero-based index of the stream. To get the number of streams, call <see cref="IMFPMediaItem.GetNumberOfStreams" />.</para>
-    </param>
+    <param name="dwStreamIndex">Zero-based index of the stream. To get the number of streams, call <see cref="IMFPMediaItem.GetNumberOfStreams" />.</param>
     <param name="fEnabled">
       <para>Specify whether to select or deselect the stream.</para>
       <list type="table">
@@ -647,48 +408,47 @@ done:
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRUE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The stream is selected. During playback, this stream will play.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The stream is selected. During playback, this stream will play.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>FALSE</b>
-          </description>
-          <description>
-            <para>The stream is not selected. During playback, this stream will not play.</para>
-          </description>
-        </item>
+          <description>The stream is not selected. During playback, this stream will not play.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>You can use this method to change which streams are selected. The change goes into effect the next time that <see cref="IMFPMediaPlayer.SetMediaItem" /> is called with this media item. If the media item is already set on the player, the change does not happen unless you call <b>SetMediaItem</b> again with this media item.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.SetStreamSink">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Sets a media sink for the media item. A <i>media sink</i> is an object that consumes the data from one or more streams.</para>
     </summary>
-    <param name="dwStreamIndex">
-      <para>Zero-based index of a stream on the media source. The media sink will receive the data from this stream.</para>
-    </param>
+    <param name="dwStreamIndex">Zero-based index of a stream on the media source. The media sink will receive the data from this stream.</param>
     <param name="pMediaSink">
       <para>
         <b>IUnknown</b> pointer that specifies the media sink. Pass in one of the following:</para>
       <list type="bullet">
         <item>
-          <description>A pointer to a stream sink. Every media sink contains one or more <i>stream sinks</i>. Each stream sink receives the data from one stream. The stream sink must expose the  <see cref="IMFStreamSink" /> interface.</description>
+          <description>A pointer to a stream sink. Every media sink contains one or more <i>stream sinks</i>. Each stream sink receives the data from one stream. The stream sink must expose the <see cref="IMFStreamSink" /> interface.</description>
         </item>
         <item>
           <description>A pointer to an activation object that creates the media sink. The activation object must expose the <see cref="IMFActivate" /> interface. The media item uses the first stream sink on the media sink (that is, the stream sink at index 0).</description>
@@ -699,42 +459,21 @@ done:
         </item>
       </list>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>By default, the MFPlay player object renders audio streams to the <a href="https://docs.microsoft.com//windows/desktop/medfound/streaming-audio-renderer">Streaming Audio Renderer</a> (SAR) and video streams to the <a href="https://docs.microsoft.com//windows/desktop/medfound/enhanced-video-renderer">Enhanced Video Renderer</a> (EVR). You can use the <b>SetStreamSink</b> method to provide a different media sink for an audio or video stream; or to support other stream types besides audio and video. You can also use it to configure the SAR or EVR before they are used.</para>
-      <para>Call this method before calling <see cref="IMFPMediaPlayer.SetMediaItem" />. Calling this method after <b>SetMediaItem</b> has no effect, unless you stop playback and call <b>SetMediaItem</b> again.</para>
-      <para>To reset the media item to use the default media sink, set <i>pMediaSink</i> to <b>NULL</b>.</para>
-      <h3>Remote Playback Optimizations</h3>
-      <para>If the application is running over Remote Desktop, and you call this method with a non-NULL value for an audio or video stream, MFPlay disables remote playback optimizations. This remark applies only to audio and video streams. It does not apply to streams that contain some other data type, such as text.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-sinks">Media Sinks</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFPMediaItem.SetUserData">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Stores an application-defined value in the media item.</para>
     </summary>
-    <param name="dwUserData">
-      <para>The application-defined value.</para>
-    </param>
-    <returns>
-      <para>This method can return one of these values.</para>
-    </returns>
-    <remarks>
-      <para>This method can be called after the player object is shut down.</para>
-    </remarks>
-    <seealso cref="IMFPMediaItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
+    <param name="dwUserData">The application-defined value.</param>
+    <returns>This method can return one of these values.</returns>
   </member>
   <member name="IMFPMediaItem">
     <summary>
-      <para>
-        <b>Note</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Note</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Represents a media item. A <i>media item</i> is an abstraction for a source of media data, such as a video file. Use this interface to get information about the source, or to change certain playback settings, such as the start and stop times. To get a pointer to this interface, call one of the following methods:</para>
       <list type="bullet">
         <item>
@@ -749,7 +488,5 @@ done:
         </item>
       </list>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
   </member>
 </doc>

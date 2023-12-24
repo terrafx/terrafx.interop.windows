@@ -3,51 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISK_PERFORMANCE">
-    <summary>
-      <para>Provides disk performance information. It is used by the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_performance">IOCTL_DISK_PERFORMANCE</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_performance">IOCTL_DISK_PERFORMANCE</seealso>
+    <summary>Provides disk performance information. It is used by the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_performance">IOCTL_DISK_PERFORMANCE</a> control code.</summary>
   </member>
   <member name="DISK_PERFORMANCE.BytesRead">
-    <summary>
-      <para>The number of bytes read.</para>
-    </summary>
+    <summary>The number of bytes read.</summary>
   </member>
   <member name="DISK_PERFORMANCE.BytesWritten">
-    <summary>
-      <para>The number of bytes written.</para>
-    </summary>
+    <summary>The number of bytes written.</summary>
   </member>
   <member name="DISK_PERFORMANCE.ReadTime">
-    <summary>
-      <para>The time it takes to complete a read.</para>
-    </summary>
+    <summary>The time it takes to complete a read.</summary>
   </member>
   <member name="DISK_PERFORMANCE.WriteTime">
-    <summary>
-      <para>The time it takes to complete a write.</para>
-    </summary>
+    <summary>The time it takes to complete a write.</summary>
   </member>
   <member name="DISK_PERFORMANCE.IdleTime">
-    <summary>
-      <para>The idle time.</para>
-    </summary>
+    <summary>The idle time.</summary>
   </member>
   <member name="DISK_PERFORMANCE.ReadCount">
-    <summary>
-      <para>The number of read operations.</para>
-    </summary>
+    <summary>The number of read operations.</summary>
   </member>
   <member name="DISK_PERFORMANCE.WriteCount">
-    <summary>
-      <para>The number of write operations.</para>
-    </summary>
+    <summary>The number of write operations.</summary>
   </member>
   <member name="DISK_PERFORMANCE.QueueDepth">
-    <summary>
-      <para>The depth of the queue.</para>
-    </summary>
+    <summary>The depth of the queue.</summary>
   </member>
   <member name="DISK_PERFORMANCE.SplitCount">
     <summary>
@@ -62,9 +42,7 @@
     </summary>
   </member>
   <member name="DISK_PERFORMANCE.StorageDeviceNumber">
-    <summary>
-      <para>The unique number for a device that identifies it to the storage manager that is indicated in the <b>StorageManagerName</b> member.</para>
-    </summary>
+    <summary>The unique number for a device that identifies it to the storage manager that is indicated in the <b>StorageManagerName</b> member.</summary>
   </member>
   <member name="DISK_PERFORMANCE.StorageManagerName">
     <summary>

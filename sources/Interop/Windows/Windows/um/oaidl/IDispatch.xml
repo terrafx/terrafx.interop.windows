@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDispatch.GetIDsOfNames">
-    <summary>
-      <para>Maps a single member and an optional set of argument names to a corresponding set of integer DISPIDs, which can be used on subsequent calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">Invoke</a>. The dispatch function <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-dispgetidsofnames">DispGetIDsOfNames</a> provides a standard implementation of <b>GetIDsOfNames</b>.</para>
-    </summary>
-    <param name="riid">
-      <para>Reserved for future use. Must be IID_NULL.</para>
-    </param>
-    <param name="rgszNames">
-      <para>The array of names to be mapped.</para>
-    </param>
-    <param name="cNames">
-      <para>The count of the names to be mapped.</para>
-    </param>
-    <param name="lcid">
-      <para>The locale context in which to interpret the names.</para>
-    </param>
-    <param name="rgDispId">
-      <para>Caller-allocated array, each element of which contains an identifier (ID) corresponding to one of the names passed in the rgszNames array. The first element represents the member name. The subsequent elements represent each of the member's parameters.</para>
-    </param>
+    <summary>Maps a single member and an optional set of argument names to a corresponding set of integer DISPIDs, which can be used on subsequent calls to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">Invoke</a>. The dispatch function <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-dispgetidsofnames">DispGetIDsOfNames</a> provides a standard implementation of <b>GetIDsOfNames</b>.</summary>
+    <param name="riid">Reserved for future use. Must be IID_NULL.</param>
+    <param name="rgszNames">The array of names to be mapped.</param>
+    <param name="cNames">The count of the names to be mapped.</param>
+    <param name="lcid">The locale context in which to interpret the names.</param>
+    <param name="rgDispId">Caller-allocated array, each element of which contains an identifier (ID) corresponding to one of the names passed in the rgszNames array. The first element represents the member name. The subsequent elements represent each of the member's parameters.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -28,103 +16,62 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Out of memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DISP_E_UNKNOWNNAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more of the specified names were not known. The returned array of DISPIDs contains DISPID_UNKNOWN for each entry that corresponds to an unknown name.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Out of memory.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DISP_E_UNKNOWNLCID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DISP_E_UNKNOWNNAME</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more of the specified names were not known. The returned array of DISPIDs contains DISPID_UNKNOWN for each entry that corresponds to an unknown name.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DISP_E_UNKNOWNLCID</b>
-            </para>
-          </description>
-          <description>
-            <para>The locale identifier (LCID) was not recognized.</para>
-          </description>
-        </item>
+          <description>The locale identifier (LCID) was not recognized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> implementation can associate any positive integer ID value with a given name. Zero is reserved for the default, or <b>Value</b> property; –1 is reserved to indicate an unknown name; and other negative values are defined for other purposes. For example, if <b>GetIDsOfNames</b> is called, and the implementation does not recognize one or more of the names, it returns DISP_E_UNKNOWNNAME, and the <i>rgDispId</i> array contains DISPID_UNKNOWN for the entries that correspond to the unknown names.</para>
-      <para>The member and parameter DISPIDs must remain constant for the lifetime of the object. This allows a client to obtain the DISPIDs once, and cache them for later use.</para>
-      <para>When <b>GetIDsOfNames</b> is called with more than one name, the first name (<i>rgszNames</i>[0]) corresponds to the member name, and subsequent names correspond to the names of the member's parameters.</para>
-      <para>The same name may map to different DISPIDs, depending on context. For example, a name may have a DISPID when it is used as a member name with a particular interface, a different ID as a member of a different interface, and different mapping for each time it appears as a parameter.</para>
-      <para>
-        <b>GetIDsOfNames</b> is used when an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> client binds to names at run time. To bind at compile time instead, an <b>IDispatch</b> client can map names to DISPIDs by using the type information interfaces described in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/type-description-interfaces">Type Description Interfaces</a>. This allows a client to bind to members at compile time and avoid calling <b>GetIDsOfNames</b> at run time. For a description of binding at compile time, see Type Description Interfaces.</para>
-      <para>The implementation of <b>GetIDsOfNames</b> is case insensitive. Users that need case-sensitive name mapping should use type information interfaces to map names to DISPIDs, rather than call <b>GetIDsOfNames</b>.</para>
-      <para>
-        <b>Caution</b>  You cannot use this method to access values that have been added dynamically, such as values added through JavaScript. Instead, use the GetDispID of the IDispatchEx interface. For more information, see the <a href="https://msdn.microsoft.com/library/sky96ah7(vs.94).aspx">IDispatchEx interface</a>.</para>
-      <h4>Examples</h4>
-      <para>The following code from the Lines sample file Lines.cpp implements the <b>GetIDsOfNames</b> member function for the CLine class. The ActiveX or OLE object uses the standard implementation, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-dispgetidsofnames">DispGetIDsOfNames</a>. This implementation relies on <b>DispGetIdsOfNames</b> to validate input arguments. To help minimize security risks, include code that performs more robust validation of the input arguments.</para>
-      <code>STDMETHODIMP
-CLine.GetIDsOfNames(
-      REFIID riid,
-      OLECHAR ** rgszNames,
-      UINT cNames,
-      LCID lcid,
-      DISPID * rgDispId)
-{
-      return DispGetIDsOfNames(m_ptinfo, rgszNames, cNames, rgDispId);
-}
-</code>
-      <para>The following code might appear in an ActiveX client that calls <b>GetIDsOfNames</b> to get the DISPID of the <b>CLine</b><b>Color</b> property.</para>
-      <code>HRESULT hresult;
-IDispatch * pdisp = (IDispatch *)NULL;
-DISPID dispid;
-OLECHAR * szMember = "color";
-
-// Code that sets a pointer to the dispatch (pdisp) is omitted.
-
-hresult = pdisp-&gt;GetIDsOfNames(
-   IID_NULL,
-   &amp;amp;amp;amp;amp;amp;szMember,
-   1, LOCALE_SYSTEM_DEFAULT,
-   &amp;amp;amp;amp;amp;amp;dispid);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-createstddispatch">CreateStdDispatch</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-dispgetidsofnames">DispGetIDsOfNames</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
   </member>
   <member name="IDispatch.GetTypeInfo">
-    <summary>
-      <para>Retrieves the type information for an object, which can then be used to get the type information for an interface.</para>
-    </summary>
-    <param name="iTInfo">
-      <para>The type information to return. Pass 0 to retrieve type information for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> implementation.</para>
-    </param>
-    <param name="lcid">
-      <para>The locale identifier for the type information. An object may be able to return different type information for different languages. This is important for classes that support localized member names. For classes that do not support localized member names, this parameter can be ignored.</para>
-    </param>
-    <param name="ppTInfo">
-      <para>The requested type information object.</para>
-    </param>
+    <summary>Retrieves the type information for an object, which can then be used to get the type information for an interface.</summary>
+    <param name="iTInfo">The type information to return. Pass 0 to retrieve type information for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> implementation.</param>
+    <param name="lcid">The locale identifier for the type information. An object may be able to return different type information for different languages. This is important for classes that support localized member names. For classes that do not support localized member names, this parameter can be ignored.</param>
+    <param name="ppTInfo">The requested type information object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -132,43 +79,36 @@ hresult = pdisp-&gt;GetIDsOfNames(
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>DISP_E_BADINDEX
-</b>
-                </description>
-              </item>
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
             </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>iTInfo</i> parameter was not 0.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DISP_E_BADINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>The <i>iTInfo</i> parameter was not 0.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
-    <seealso cref="IWebBrowser2" />
   </member>
   <member name="IDispatch.GetTypeInfoCount">
-    <summary>
-      <para>Retrieves the number of type information interfaces that an object provides (either 0 or 1).</para>
-    </summary>
-    <param name="pctinfo">
-      <para>The number of type information interfaces provided by the object. If the object provides type information, this number is 1; otherwise the number is 0.</para>
-    </param>
+    <summary>Retrieves the number of type information interfaces that an object provides (either 0 or 1).</summary>
+    <param name="pctinfo">The number of type information interfaces provided by the object. If the object provides type information, this number is 1; otherwise the number is 0.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -176,54 +116,34 @@ hresult = pdisp-&gt;GetIDsOfNames(
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>E_NOTIMPL
-</b>
-                </description>
-              </item>
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
             </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
+          <description>Failure.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The method may return zero, which indicates that the object does not provide any type information. In this case, the object may still be programmable through <b>IDispatch</b> or a VTBL, but does not provide run-time type information for browsers, compilers, or other programming tools that access type information. This can be useful for hiding an object from browsers.</para>
-      <h4>Examples</h4>
-      <para>This code from the Lines sample file Lines.cpp implements the <b>GetTypeInfoCount</b> member function for the <b>CLines</b> class (ActiveX or OLE object).</para>
-      <code>STDMETHODIMP
-CLines.GetTypeInfoCount(UINT * pctinfo)
-{
-   if (pctinfo == NULL) {
-      return E_INVALIDARG;
-}
-   *pctinfo = 1;
-   return NOERROR;
-}
-</code>
-    </remarks>
-    <seealso cref="IAccessible" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
   </member>
   <member name="IDispatch">
-    <summary>
-      <para>Exposes objects, methods and properties to programming tools and other applications that support Automation. COM components implement the <b>IDispatch</b> interface to enable access by Automation clients, such as Visual Basic.</para>
-    </summary>
+    <summary>Exposes objects, methods and properties to programming tools and other applications that support Automation. COM components implement the <b>IDispatch</b> interface to enable access by Automation clients, such as Visual Basic.</summary>
   </member>
 </doc>

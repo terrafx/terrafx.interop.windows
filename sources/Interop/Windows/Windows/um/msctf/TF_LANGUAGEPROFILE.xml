@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_LANGUAGEPROFILE">
-    <summary>
-      <para>The <b>TF_LANGUAGEPROFILE</b> structure contains information about a language profile.</para>
-    </summary>
-    <seealso cref="IEnumTfLanguageProfiles.Next " />
+    <summary>The <b>TF_LANGUAGEPROFILE</b> structure contains information about a language profile.</summary>
   </member>
   <member name="TF_LANGUAGEPROFILE.clsid">
-    <summary>
-      <para>Specifies the class identifier of the text service within the language profile.</para>
-    </summary>
+    <summary>Specifies the class identifier of the text service within the language profile.</summary>
   </member>
   <member name="TF_LANGUAGEPROFILE.langid">
-    <summary>
-      <para>Specifies the language identifier of the profile.</para>
-    </summary>
+    <summary>Specifies the language identifier of the profile.</summary>
   </member>
   <member name="TF_LANGUAGEPROFILE.catid">
-    <summary>
-      <para>Specifies the identifier of the category that the text service belongs to.</para>
-    </summary>
+    <summary>Specifies the identifier of the category that the text service belongs to.</summary>
   </member>
   <member name="TF_LANGUAGEPROFILE.fActive">
-    <summary>
-      <para>A Boolean value, when <b>TRUE</b>, indicates that the language is activated.</para>
-    </summary>
+    <summary>A Boolean value, when <b>TRUE</b>, indicates that the language is activated.</summary>
   </member>
   <member name="TF_LANGUAGEPROFILE.guidProfile">
-    <summary>
-      <para>Specifies the identifier of the language profile.</para>
-    </summary>
+    <summary>Specifies the identifier of the language profile.</summary>
   </member>
 </doc>

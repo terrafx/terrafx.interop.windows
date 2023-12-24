@@ -19,32 +19,4 @@ public static unsafe partial class ID2D1DCRenderTargetTests
     {
         Assert.That(typeof(ID2D1DCRenderTarget).GUID, Is.EqualTo(IID_ID2D1DCRenderTarget));
     }
-
-    /// <summary>Validates that the <see cref="ID2D1DCRenderTarget" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID2D1DCRenderTarget>(), Is.EqualTo(sizeof(ID2D1DCRenderTarget)));
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1DCRenderTarget" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID2D1DCRenderTarget).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1DCRenderTarget" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID2D1DCRenderTarget), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID2D1DCRenderTarget), Is.EqualTo(4));
-        }
-    }
 }

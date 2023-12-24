@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_INPUT_CLASSIFICATION">
+    <summary>Identifies the type of data contained in an input slot.</summary>
+  </member>
+  <member name="D3D12_INPUT_CLASSIFICATION.D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA">
+    <summary>Input data is per-vertex data.</summary>
+  </member>
+  <member name="D3D12_INPUT_CLASSIFICATION.D3D12_INPUT_CLASSIFICATION_PER_INSTANCE_DATA">
+    <summary>Input data is per-instance data.</summary>
+  </member>
+</doc>

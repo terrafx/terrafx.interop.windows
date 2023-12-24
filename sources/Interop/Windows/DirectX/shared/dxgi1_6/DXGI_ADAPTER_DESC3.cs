@@ -3,16 +3,17 @@
 // Ported from shared/dxgi1_6.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_ADAPTER_DESC3.xml' path='doc/member[@name="DXGI_ADAPTER_DESC3"]/*' />
-public unsafe partial struct DXGI_ADAPTER_DESC3
+public partial struct DXGI_ADAPTER_DESC3
 {
     /// <include file='DXGI_ADAPTER_DESC3.xml' path='doc/member[@name="DXGI_ADAPTER_DESC3.Description"]/*' />
     [NativeTypeName("WCHAR[128]")]
-    public fixed ushort Description[128];
+    public _Description_e__FixedBuffer Description;
 
     /// <include file='DXGI_ADAPTER_DESC3.xml' path='doc/member[@name="DXGI_ADAPTER_DESC3.VendorId"]/*' />
     public uint VendorId;
@@ -49,4 +50,11 @@ public unsafe partial struct DXGI_ADAPTER_DESC3
 
     /// <include file='DXGI_ADAPTER_DESC3.xml' path='doc/member[@name="DXGI_ADAPTER_DESC3.ComputePreemptionGranularity"]/*' />
     public DXGI_COMPUTE_PREEMPTION_GRANULARITY ComputePreemptionGranularity;
+
+    /// <include file='_Description_e__FixedBuffer.xml' path='doc/member[@name="_Description_e__FixedBuffer"]/*' />
+    [InlineArray(128)]
+    public partial struct _Description_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

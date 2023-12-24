@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12ShaderCacheSession.FindValue">
+    <summary>
+      <para>Looks up an entry in the cache whose key exactly matches the provided key.</para>
+      <para>Call the function twice. The first time to retrieve the value's size, and the second time to retrieve the data. In-memory temporary storage makes this calling pattern performant.</para>
+    </summary>
+    <param name="pKey">The key of the entry to look up.</param>
+    <param name="KeySize">The size of the key, in bytes.</param>
+    <param name="pValue">A pointer to a memory block that receives the cached entry.</param>
+    <param name="pValueSize">A pointer to a <b>UINT</b> that receives the size of the cached entry, in bytes.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| | DXGI_ERROR_CACHE_HASH_COLLISION | There's an entry with the same hash as the provided key, but the key doesn't exactly match. | | DXGI_ERROR_NOT_FOUND | The entry isn't present. |</para>
+    </returns>
+  </member>
+  <member name="ID3D12ShaderCacheSession.GetDesc">
+    <summary>Retrieves the description used to create the cache session.</summary>
+    <returns>A <see cref="D3D12_SHADER_CACHE_SESSION_DESC" /> structure representing the description used to create the cache session.</returns>
+  </member>
+  <member name="ID3D12ShaderCacheSession.SetDeleteOnDestroy">
+    <summary>
+      <para>When all cache session objects corresponding to a given cache are destroyed, the cache is cleared.</para>
+      <para>See <b>Remarks</b> for the ways in which a disk cache can be cleared.</para>
+    </summary>
+  </member>
+  <member name="ID3D12ShaderCacheSession.StoreValue">
+    <summary>Adds an entry to the cache.</summary>
+    <param name="pKey">The key of the entry to add.</param>
+    <param name="KeySize">The size of the key, in bytes.</param>
+    <param name="pValue">A pointer to a memory block containing the entry to add.</param>
+    <param name="ValueSize">The size of the entry to add, in bytes.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| | DXGI_ERROR_ALREADY_EXISTS | There's an entry with the same key. | | DXGI_ERROR_CACHE_HASH_COLLISION | There's an entry with the same hash as the provided key, but the key doesn't match. | | DXGI_ERROR_CACHE_FULL | Adding this entry would cause the cache to become larger than its maximum size. |</para>
+    </returns>
+  </member>
+  <member name="ID3D12ShaderCacheSession">
+    <summary>Represents a shader cache session.</summary>
+  </member>
+</doc>

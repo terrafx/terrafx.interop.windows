@@ -19,32 +19,4 @@ public static unsafe partial class ISyncMgrConflictFolderTests
     {
         Assert.That(typeof(ISyncMgrConflictFolder).GUID, Is.EqualTo(IID_ISyncMgrConflictFolder));
     }
-
-    /// <summary>Validates that the <see cref="ISyncMgrConflictFolder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISyncMgrConflictFolder>(), Is.EqualTo(sizeof(ISyncMgrConflictFolder)));
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrConflictFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISyncMgrConflictFolder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrConflictFolder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISyncMgrConflictFolder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISyncMgrConflictFolder), Is.EqualTo(4));
-        }
-    }
 }

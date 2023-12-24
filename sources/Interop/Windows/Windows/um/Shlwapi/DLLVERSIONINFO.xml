@@ -5,39 +5,24 @@
   <member name="DLLVERSIONINFO">
     <summary>
       <para>Receives DLL-specific version information. It is used with the <a href="https://docs.microsoft.com//windows/desktop/api/shlwapi/nc-shlwapi-dllgetversionproc">DllGetVersion</a> function.</para>
-      <para>
-        <b>Note</b>  In place of this structure, you can use the <see cref="DLLVERSIONINFO2" /> structure.</para>
+      <div>
+        <b>Note</b>  In place of this structure, you can use the <see cref="DLLVERSIONINFO2" /> structure.</div>
     </summary>
-    <seealso cref="DLLVERSIONINFO2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/shlwapi/nc-shlwapi-dllgetversionproc">DllGetVersion</seealso>
   </member>
   <member name="DLLVERSIONINFO.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the structure, in bytes. This member must be filled in before calling the function.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. This member must be filled in before calling the function.</summary>
   </member>
   <member name="DLLVERSIONINFO.dwMajorVersion">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The major version of the DLL. For instance, if the DLL's version is 4.0.950, this value will be 4.</para>
-    </summary>
+    <summary>The major version of the DLL. For instance, if the DLL's version is 4.0.950, this value will be 4.</summary>
   </member>
   <member name="DLLVERSIONINFO.dwMinorVersion">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The minor version of the DLL. For instance, if the DLL's version is 4.0.950, this value will be 0.</para>
-    </summary>
+    <summary>The minor version of the DLL. For instance, if the DLL's version is 4.0.950, this value will be 0.</summary>
   </member>
   <member name="DLLVERSIONINFO.dwBuildNumber">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The build number of the DLL. For instance, if the DLL's version is 4.0.950, this value will be 950.</para>
-    </summary>
+    <summary>The build number of the DLL. For instance, if the DLL's version is 4.0.950, this value will be 950.</summary>
   </member>
   <member name="DLLVERSIONINFO.dwPlatformID">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Identifies the platform for which the DLL was built. This can be one of the following values.</para>
       <h4>DLLVER_PLATFORM_WINDOWS (0x00000001)</h4>
       <para>The DLL was built for earlier Windows platforms such as Windows 95.</para>

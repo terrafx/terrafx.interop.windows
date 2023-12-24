@@ -25,7 +25,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfCompartmentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfCompartmentMgr*, uint>)(lpVtbl[1]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentMgr*, uint>)(lpVtbl[1]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfCompartmentMgr*, uint>)(lpVtbl[2]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentMgr*, uint>)(lpVtbl[2]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfCompartmentMgr.xml' path='doc/member[@name="ITfCompartmentMgr.GetCompartment"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetCompartment([NativeTypeName("const GUID &")] Guid* rguid, ITfCompartment** ppcomp)
     {
-        return ((delegate* unmanaged<ITfCompartmentMgr*, Guid*, ITfCompartment**, int>)(lpVtbl[3]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), rguid, ppcomp);
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentMgr*, Guid*, ITfCompartment**, int>)(lpVtbl[3]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), rguid, ppcomp);
     }
 
     /// <include file='ITfCompartmentMgr.xml' path='doc/member[@name="ITfCompartmentMgr.ClearCompartment"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface, IN
     [VtblIndex(4)]
     public HRESULT ClearCompartment([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const GUID &")] Guid* rguid)
     {
-        return ((delegate* unmanaged<ITfCompartmentMgr*, uint, Guid*, int>)(lpVtbl[4]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), tid, rguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentMgr*, uint, Guid*, int>)(lpVtbl[4]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), tid, rguid);
     }
 
     /// <include file='ITfCompartmentMgr.xml' path='doc/member[@name="ITfCompartmentMgr.EnumCompartments"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface, IN
     [VtblIndex(5)]
     public HRESULT EnumCompartments(IEnumGUID** ppEnum)
     {
-        return ((delegate* unmanaged<ITfCompartmentMgr*, IEnumGUID**, int>)(lpVtbl[5]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartmentMgr*, IEnumGUID**, int>)(lpVtbl[5]))((ITfCompartmentMgr*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ITfCompartmentMgr : ITfCompartmentMgr.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, ITfCompartment **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ITfCompartment**, int> GetCompartment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, ITfCompartment**, int> GetCompartment;
 
         [NativeTypeName("HRESULT (TfClientId, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, int> ClearCompartment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, int> ClearCompartment;
 
         [NativeTypeName("HRESULT (IEnumGUID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumGUID**, int> EnumCompartments;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumGUID**, int> EnumCompartments;
     }
 }

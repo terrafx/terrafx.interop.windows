@@ -16,7 +16,7 @@ namespace TerraFX.Interop.Windows;
 [NativeInheritance("IMFAsyncResult")]
 public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGuid
 {
-    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_MFASYNCRESULT));
+    static Guid* INativeGuid.NativeGuid => (Guid*)Unsafe.AsPointer(ref Unsafe.AsRef(in IID_tagMFASYNCRESULT));
 
     public void** lpVtbl;
 
@@ -41,7 +41,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<MFASYNCRESULT*, Guid*, void**, int>)(lpVtbl[0]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<MFASYNCRESULT*, Guid*, void**, int>)(lpVtbl[0]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -50,7 +50,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<MFASYNCRESULT*, uint>)(lpVtbl[1]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<MFASYNCRESULT*, uint>)(lpVtbl[1]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -59,7 +59,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<MFASYNCRESULT*, uint>)(lpVtbl[2]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<MFASYNCRESULT*, uint>)(lpVtbl[2]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFAsyncResult.GetState" />
@@ -67,7 +67,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetState(IUnknown** ppunkState)
     {
-        return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[3]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppunkState);
+        return ((delegate* unmanaged[MemberFunction]<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[3]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppunkState);
     }
 
     /// <inheritdoc cref="IMFAsyncResult.GetStatus" />
@@ -75,7 +75,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetStatus()
     {
-        return ((delegate* unmanaged<MFASYNCRESULT*, int>)(lpVtbl[4]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<MFASYNCRESULT*, int>)(lpVtbl[4]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFAsyncResult.SetStatus" />
@@ -83,7 +83,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT SetStatus(HRESULT hrStatus)
     {
-        return ((delegate* unmanaged<MFASYNCRESULT*, HRESULT, int>)(lpVtbl[5]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), hrStatus);
+        return ((delegate* unmanaged[MemberFunction]<MFASYNCRESULT*, HRESULT, int>)(lpVtbl[5]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), hrStatus);
     }
 
     /// <inheritdoc cref="IMFAsyncResult.GetObject" />
@@ -91,7 +91,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetObject(IUnknown** ppObject)
     {
-        return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[6]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppObject);
+        return ((delegate* unmanaged[MemberFunction]<MFASYNCRESULT*, IUnknown**, int>)(lpVtbl[6]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this), ppObject);
     }
 
     /// <inheritdoc cref="IMFAsyncResult.GetStateNoAddRef" />
@@ -99,7 +99,7 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGui
     [VtblIndex(7)]
     public IUnknown* GetStateNoAddRef()
     {
-        return ((delegate* unmanaged<MFASYNCRESULT*, IUnknown*>)(lpVtbl[7]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<MFASYNCRESULT*, IUnknown*>)(lpVtbl[7]))((MFASYNCRESULT*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IMFAsyncResult.Interface
@@ -110,27 +110,27 @@ public unsafe partial struct MFASYNCRESULT : MFASYNCRESULT.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> GetState;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetStatus;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, int> SetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, int> SetStatus;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> GetObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> GetObject;
 
         [NativeTypeName("IUnknown *() __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*> GetStateNoAddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*> GetStateNoAddRef;
     }
 }

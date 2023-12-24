@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISpatialInteractionManagerInterop.GetForWindow">
+    <summary>Retrieves a <a href="https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionmanager">SpatialInteractionManager</a> object bound to the active application.</summary>
+    <param name="window">Handle to the window of the active application.</param>
+    <param name="riid">The GUID of the <a href="https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionmanager">SpatialInteractionManager</a> object.</param>
+    <param name="spatialInteractionManager">Address of a pointer to a <a href="https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionmanager">SpatialInteractionManager</a> object.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISpatialInteractionManagerInterop">
+    <summary>Enables interoperability with a Universal Windows Platform (UWP) <a href="https://docs.microsoft.com//uwp/api/windows.ui.input.spatial.spatialinteractionmanager">SpatialInteractionManager</a> object, and provides access to <b>SpatialInteractionManager</b> members for accessing user input from hands, motion controllers, and system voice commands.</summary>
+  </member>
+</doc>

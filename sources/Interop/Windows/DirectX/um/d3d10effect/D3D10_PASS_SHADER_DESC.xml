@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_PASS_SHADER_DESC">
-    <summary>
-      <para>Describes an effect variable that contains a shader.</para>
-    </summary>
-    <remarks>
-      <para>To get a shader description, call a method like <see cref="ID3D10EffectPass.GetVertexShaderDesc" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-structures">Effect Structures (Direct3D 10)</seealso>
+    <summary>Describes an effect variable that contains a shader.</summary>
   </member>
   <member name="D3D10_PASS_SHADER_DESC.pShaderVariable">
-    <summary>
-      <para>Type: <b><see cref="ID3D10EffectShaderVariable" />*</b></para>
-      <para>A pointer to the variable that the shader came from. If it is an inline shader assignment, the returned interface will be an anonymous shader variable, which is not retrievable any other way.  Its name in the variable description will be "$Anonymous". If there is no assignment of this type in the pass block, this will point to a shader variable that returns false when IsValid is called.</para>
-    </summary>
+    <summary>A pointer to the variable that the shader came from. If it is an inline shader assignment, the returned interface will be an anonymous shader variable, which is not retrievable any other way. Its name in the variable description will be "$Anonymous". If there is no assignment of this type in the pass block, this will point to a shader variable that returns false when IsValid is called.</summary>
   </member>
   <member name="D3D10_PASS_SHADER_DESC.ShaderIndex">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A zero-based array index; otherwise 0.</para>
-    </summary>
+    <summary>A zero-based array index; otherwise 0.</summary>
   </member>
 </doc>

@@ -19,25 +19,4 @@ public static unsafe partial class HTMLScreenTests
     {
         Assert.That(typeof(HTMLScreen).GUID, Is.EqualTo(IID_HTMLScreen));
     }
-
-    /// <summary>Validates that the <see cref="HTMLScreen" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLScreen>(), Is.EqualTo(sizeof(HTMLScreen)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLScreen" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLScreen).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLScreen" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLScreen), Is.EqualTo(1));
-    }
 }

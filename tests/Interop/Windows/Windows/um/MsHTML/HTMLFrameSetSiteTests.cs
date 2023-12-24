@@ -19,25 +19,4 @@ public static unsafe partial class HTMLFrameSetSiteTests
     {
         Assert.That(typeof(HTMLFrameSetSite).GUID, Is.EqualTo(IID_HTMLFrameSetSite));
     }
-
-    /// <summary>Validates that the <see cref="HTMLFrameSetSite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLFrameSetSite>(), Is.EqualTo(sizeof(HTMLFrameSetSite)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLFrameSetSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLFrameSetSite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLFrameSetSite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLFrameSetSite), Is.EqualTo(1));
-    }
 }

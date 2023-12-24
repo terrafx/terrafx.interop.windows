@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_OPACITY_MASK_CONTENT.xml' path='doc/member[@name="D2D1_OPACITY_MASK_CONTENT"]/*' />
-public enum D2D1_OPACITY_MASK_CONTENT : uint
+public enum D2D1_OPACITY_MASK_CONTENT
 {
     /// <include file='D2D1_OPACITY_MASK_CONTENT.xml' path='doc/member[@name="D2D1_OPACITY_MASK_CONTENT.D2D1_OPACITY_MASK_CONTENT_GRAPHICS"]/*' />
     D2D1_OPACITY_MASK_CONTENT_GRAPHICS = 0,
@@ -18,5 +18,5 @@ public enum D2D1_OPACITY_MASK_CONTENT : uint
     D2D1_OPACITY_MASK_CONTENT_TEXT_GDI_COMPATIBLE = 2,
 
     /// <include file='D2D1_OPACITY_MASK_CONTENT.xml' path='doc/member[@name="D2D1_OPACITY_MASK_CONTENT.D2D1_OPACITY_MASK_CONTENT_FORCE_DWORD"]/*' />
-    D2D1_OPACITY_MASK_CONTENT_FORCE_DWORD = 0xffffffff,
+    D2D1_OPACITY_MASK_CONTENT_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

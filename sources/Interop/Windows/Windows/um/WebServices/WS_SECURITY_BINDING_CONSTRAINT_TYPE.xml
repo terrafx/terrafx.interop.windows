@@ -3,48 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SECURITY_BINDING_CONSTRAINT_TYPE">
-    <summary>
-      <para>The values in this enumeration are used to identify the sub-types of <see cref="WS_SECURITY_BINDING_CONSTRAINT" />.</para>
-    </summary>
+    <summary>The values in this enumeration are used to identify the sub-types of <see cref="WS_SECURITY_BINDING_CONSTRAINT" />.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT_TYPE.WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT_TYPE">
-    <summary>
-      <para>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT" /> structure.</para>
-    </summary>
+    <summary>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT" /> structure.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT_TYPE.WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT_TYPE">
-    <summary>
-      <para>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT" /> structure.</para>
-    </summary>
+    <summary>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_CONSTRAINT" /> structure.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT_TYPE.WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT_TYPE">
-    <summary>
-      <para>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT" /> structure.</para>
-    </summary>
+    <summary>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_HTTP_HEADER_AUTH_SECURITY_BINDING_CONSTRAINT" /> structure.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT_TYPE.WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT_TYPE">
-    <summary>
-      <para>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</para>
-    </summary>
+    <summary>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_USERNAME_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT_TYPE.WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT_TYPE">
-    <summary>
-      <para>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</para>
-    </summary>
+    <summary>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT_TYPE.WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT_TYPE">
-    <summary>
-      <para>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</para>
-    </summary>
+    <summary>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_ISSUED_TOKEN_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT_TYPE.WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT_TYPE">
-    <summary>
-      <para>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</para>
-    </summary>
+    <summary>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_CERT_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</summary>
   </member>
   <member name="WS_SECURITY_BINDING_CONSTRAINT_TYPE.WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT_TYPE">
-    <summary>
-      <para>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</para>
-    </summary>
+    <summary>This value is used in the type field of <see cref="WS_SECURITY_BINDING_CONSTRAINT" /> to identify a <see cref="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_CONSTRAINT" /> structure.</summary>
   </member>
 </doc>

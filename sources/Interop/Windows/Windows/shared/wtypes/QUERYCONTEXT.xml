@@ -3,35 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="QUERYCONTEXT">
-    <summary>
-      <para>Contains a list of attributes used to look up a class implementation.</para>
-    </summary>
-    <seealso cref="CLSCTX" />
-    <seealso cref="CoInstall" />
+    <summary>Contains a list of attributes used to look up a class implementation.</summary>
   </member>
   <member name="QUERYCONTEXT.dwContext">
-    <summary>
-      <para>The execution context.</para>
-    </summary>
+    <summary>The execution context.</summary>
   </member>
   <member name="QUERYCONTEXT.Platform">
-    <summary>
-      <para>The operating system platform and processor architecture. For more information, see <see cref="CSPLATFORM" />.</para>
-    </summary>
+    <summary>The operating system platform and processor architecture. For more information, see <see cref="CSPLATFORM" />.</summary>
   </member>
   <member name="QUERYCONTEXT.Locale">
-    <summary>
-      <para>The locale identifier. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifier-constants-and-strings">Language Identifier Constants and Strings</a>.</para>
-    </summary>
+    <summary>The locale identifier. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifier-constants-and-strings">Language Identifier Constants and Strings</a>.</summary>
   </member>
   <member name="QUERYCONTEXT.dwVersionHi">
-    <summary>
-      <para>The high version number.</para>
-    </summary>
+    <summary>The high version number.</summary>
   </member>
   <member name="QUERYCONTEXT.dwVersionLo">
-    <summary>
-      <para>The low version number.</para>
-    </summary>
+    <summary>The low version number.</summary>
   </member>
 </doc>

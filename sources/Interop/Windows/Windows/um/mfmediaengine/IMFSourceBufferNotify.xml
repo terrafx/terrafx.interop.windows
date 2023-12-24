@@ -3,40 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSourceBufferNotify.OnAbort">
-    <summary>
-      <para>Used to indicate that the source buffer has been aborted.</para>
-    </summary>
-    <seealso cref="IMFSourceBufferNotify" />
+    <summary>Used to indicate that the source buffer has been aborted.</summary>
   </member>
   <member name="IMFSourceBufferNotify.OnError">
-    <summary>
-      <para>Used to indicate that an error has occurred with the  source buffer.</para>
-    </summary>
-    <param name="hr"></param>
-    <seealso cref="IMFSourceBufferNotify" />
+    <summary>Used to indicate that an error has occurred with the source buffer.</summary>
   </member>
   <member name="IMFSourceBufferNotify.OnUpdate">
-    <summary>
-      <para>Used to indicate that the source buffer is updating.</para>
-    </summary>
-    <seealso cref="IMFSourceBufferNotify" />
+    <summary>Used to indicate that the source buffer is updating.</summary>
   </member>
   <member name="IMFSourceBufferNotify.OnUpdateEnd">
-    <summary>
-      <para>Used to indicate that the source buffer has finished updating.</para>
-    </summary>
-    <seealso cref="IMFSourceBufferNotify" />
+    <summary>Used to indicate that the source buffer has finished updating.</summary>
   </member>
   <member name="IMFSourceBufferNotify.OnUpdateStart">
-    <summary>
-      <para>Used to indicate that the source buffer has started updating.</para>
-    </summary>
-    <seealso cref="IMFSourceBufferNotify" />
+    <summary>Used to indicate that the source buffer has started updating.</summary>
   </member>
   <member name="IMFSourceBufferNotify">
-    <summary>
-      <para>Provides functionality for raising events associated with <see cref="IMFSourceBuffer" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Provides functionality for raising events associated with <see cref="IMFSourceBuffer" />.</summary>
   </member>
 </doc>

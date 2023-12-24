@@ -3,20 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMC_TAGGED_CERT_REQUEST">
-    <summary>
-      <para>The <b>CMC_TAGGED_CERT_REQUEST</b> structure is used in the
-<see cref="CMC_TAGGED_REQUEST" /> structure.</para>
-    </summary>
+    <summary>The <b>CMC_TAGGED_CERT_REQUEST</b> structure is used in the<see cref="CMC_TAGGED_REQUEST" /> structure.</summary>
   </member>
   <member name="CMC_TAGGED_CERT_REQUEST.dwBodyPartID">
     <summary>
-      <para>
-        <b>DWORD</b> identifying the tagged <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate request</a>.</para>
-    </summary>
+      <b>DWORD</b> identifying the tagged <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate request</a>.</summary>
   </member>
   <member name="CMC_TAGGED_CERT_REQUEST.SignedCertRequest">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DER_BLOB</a> structure that contains a signed request for a certificate.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DER_BLOB</a> structure that contains a signed request for a certificate.</summary>
   </member>
 </doc>

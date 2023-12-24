@@ -26,7 +26,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICastingController*, Guid*, void**, int>)(lpVtbl[0]))((ICastingController*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICastingController*, Guid*, void**, int>)(lpVtbl[0]))((ICastingController*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICastingController*, uint>)(lpVtbl[1]))((ICastingController*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICastingController*, uint>)(lpVtbl[1]))((ICastingController*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICastingController*, uint>)(lpVtbl[2]))((ICastingController*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICastingController*, uint>)(lpVtbl[2]))((ICastingController*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.Initialize"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface, 
     [VtblIndex(3)]
     public HRESULT Initialize(IUnknown* castingEngine, IUnknown* castingSource)
     {
-        return ((delegate* unmanaged<ICastingController*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((ICastingController*)Unsafe.AsPointer(ref this), castingEngine, castingSource);
+        return ((delegate* unmanaged[MemberFunction]<ICastingController*, IUnknown*, IUnknown*, int>)(lpVtbl[3]))((ICastingController*)Unsafe.AsPointer(ref this), castingEngine, castingSource);
     }
 
     /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.Connect"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface, 
     [VtblIndex(4)]
     public HRESULT Connect()
     {
-        return ((delegate* unmanaged<ICastingController*, int>)(lpVtbl[4]))((ICastingController*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICastingController*, int>)(lpVtbl[4]))((ICastingController*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.Disconnect"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface, 
     [VtblIndex(5)]
     public HRESULT Disconnect()
     {
-        return ((delegate* unmanaged<ICastingController*, int>)(lpVtbl[5]))((ICastingController*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICastingController*, int>)(lpVtbl[5]))((ICastingController*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.Advise"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface, 
     [VtblIndex(6)]
     public HRESULT Advise(ICastingEventHandler* eventHandler, [NativeTypeName("DWORD *")] uint* cookie)
     {
-        return ((delegate* unmanaged<ICastingController*, ICastingEventHandler*, uint*, int>)(lpVtbl[6]))((ICastingController*)Unsafe.AsPointer(ref this), eventHandler, cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICastingController*, ICastingEventHandler*, uint*, int>)(lpVtbl[6]))((ICastingController*)Unsafe.AsPointer(ref this), eventHandler, cookie);
     }
 
     /// <include file='ICastingController.xml' path='doc/member[@name="ICastingController.UnAdvise"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ICastingController : ICastingController.Interface, 
     [VtblIndex(7)]
     public HRESULT UnAdvise([NativeTypeName("DWORD")] uint cookie)
     {
-        return ((delegate* unmanaged<ICastingController*, uint, int>)(lpVtbl[7]))((ICastingController*)Unsafe.AsPointer(ref this), cookie);
+        return ((delegate* unmanaged[MemberFunction]<ICastingController*, uint, int>)(lpVtbl[7]))((ICastingController*)Unsafe.AsPointer(ref this), cookie);
     }
 
     public interface Interface : IUnknown.Interface
@@ -109,27 +109,27 @@ public unsafe partial struct ICastingController : ICastingController.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IUnknown*, int> Initialize;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Connect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Connect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Disconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Disconnect;
 
         [NativeTypeName("HRESULT (ICastingEventHandler *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICastingEventHandler*, uint*, int> Advise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICastingEventHandler*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> UnAdvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> UnAdvise;
     }
 }

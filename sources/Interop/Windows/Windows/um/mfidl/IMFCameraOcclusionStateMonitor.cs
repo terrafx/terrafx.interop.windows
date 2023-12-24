@@ -25,7 +25,7 @@ public unsafe partial struct IMFCameraOcclusionStateMonitor : IMFCameraOcclusion
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCameraOcclusionStateMonitor*, Guid*, void**, int>)(lpVtbl[0]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraOcclusionStateMonitor*, Guid*, void**, int>)(lpVtbl[0]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFCameraOcclusionStateMonitor : IMFCameraOcclusion
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCameraOcclusionStateMonitor*, uint>)(lpVtbl[1]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraOcclusionStateMonitor*, uint>)(lpVtbl[1]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFCameraOcclusionStateMonitor : IMFCameraOcclusion
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCameraOcclusionStateMonitor*, uint>)(lpVtbl[2]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraOcclusionStateMonitor*, uint>)(lpVtbl[2]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCameraOcclusionStateMonitor.xml' path='doc/member[@name="IMFCameraOcclusionStateMonitor.Start"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFCameraOcclusionStateMonitor : IMFCameraOcclusion
     [VtblIndex(3)]
     public HRESULT Start()
     {
-        return ((delegate* unmanaged<IMFCameraOcclusionStateMonitor*, int>)(lpVtbl[3]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraOcclusionStateMonitor*, int>)(lpVtbl[3]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCameraOcclusionStateMonitor.xml' path='doc/member[@name="IMFCameraOcclusionStateMonitor.Stop"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFCameraOcclusionStateMonitor : IMFCameraOcclusion
     [VtblIndex(4)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IMFCameraOcclusionStateMonitor*, int>)(lpVtbl[4]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraOcclusionStateMonitor*, int>)(lpVtbl[4]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCameraOcclusionStateMonitor.xml' path='doc/member[@name="IMFCameraOcclusionStateMonitor.GetSupportedStates"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IMFCameraOcclusionStateMonitor : IMFCameraOcclusion
     [return: NativeTypeName("DWORD")]
     public uint GetSupportedStates()
     {
-        return ((delegate* unmanaged<IMFCameraOcclusionStateMonitor*, uint>)(lpVtbl[5]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraOcclusionStateMonitor*, uint>)(lpVtbl[5]))((IMFCameraOcclusionStateMonitor*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IMFCameraOcclusionStateMonitor : IMFCameraOcclusion
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Start;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetSupportedStates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetSupportedStates;
     }
 }

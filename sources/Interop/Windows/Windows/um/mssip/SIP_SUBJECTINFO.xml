@@ -3,90 +3,52 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SIP_SUBJECTINFO">
-    <summary>
-      <para>The <b>SIP_SUBJECTINFO</b> structure specifies subject information data to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP) APIs.</para>
-    </summary>
-    <remarks>
-      <para>Upon first use of the <b>SIP_SUBJECTINFO</b> structure, initialize the entire structure to binary zero. Do not initialize the structure between SIP function calls.</para>
-      <para>Subjects include, but are not limited to, portable executable images (.exe), cabinet (.cab) images, flat files, and catalog files. Each subject type uses a different subset of its data for hash calculation and requires a different procedure for storage and retrieval. Therefore each subject type has a unique subject interface package specification.</para>
-    </remarks>
+    <summary>The <b>SIP_SUBJECTINFO</b> structure specifies subject information data to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP) APIs.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.pgSubjectType">
-    <summary>
-      <para>A pointer to a <b>GUID</b> structure that identifies the subject type.</para>
-    </summary>
+    <summary>A pointer to a <b>GUID</b> structure that identifies the subject type.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.hFile">
-    <summary>
-      <para>A file handle that represents the subject. If the storage type of the subject is a file, set <i>hFile</i> to <b>INVALID_HANDLE_VALUE</b> and set the <i>pwsFileName</i> parameter to the name of the file.</para>
-    </summary>
+    <summary>A file handle that represents the subject. If the storage type of the subject is a file, set <i>hFile</i> to <b>INVALID_HANDLE_VALUE</b> and set the <i>pwsFileName</i> parameter to the name of the file.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.pwsFileName">
-    <summary>
-      <para>A pointer to a null-terminated Unicode string that contains the file name of the subject.</para>
-    </summary>
+    <summary>A pointer to a null-terminated Unicode string that contains the file name of the subject.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.pwsDisplayName">
-    <summary>
-      <para>A pointer to a null-terminated Unicode string that contains the display name of
-the subject.</para>
-    </summary>
+    <summary>A pointer to a null-terminated Unicode string that contains the display name of the subject.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.dwReserved1">
-    <summary>
-      <para>This member is reserved for future use.</para>
-    </summary>
+    <summary>This member is reserved for future use.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.dwIntVersion">
-    <summary>
-      <para>This member is reserved. Do not modify  this member. It is used by the SIP to pass the internal version number
-between get and verify functions.</para>
-    </summary>
+    <summary>This member is reserved. Do not modify this member. It is used by the SIP to pass the internal version number between get and verify functions.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.hProv">
-    <summary>
-      <para>An <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/hcryptprov">HCRYPTPROV</a> handle to the cryptography provider.</para>
-    </summary>
+    <summary>An <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/hcryptprov">HCRYPTPROV</a> handle to the cryptography provider.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.DigestAlgorithm">
-    <summary>
-      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the identifier for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> algorithm used to hash the file.</para>
-    </summary>
+    <summary>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that contains the identifier for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> algorithm used to hash the file.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.dwFlags">
-    <summary>
-      <para>A value that modifies the behavior of the functions that use this structure. For more information about possible values for this member, see the <i>dwFlags</i> parameter of <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/signersignex">SignerSignEx</a>.</para>
-    </summary>
+    <summary>A value that modifies the behavior of the functions that use this structure. For more information about possible values for this member, see the <i>dwFlags</i> parameter of <a href="https://docs.microsoft.com//windows/desktop/SecCrypto/signersignex">SignerSignEx</a>.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.dwEncodingType">
-    <summary>
-      <para>A value that specifies the encoding type used for the file. Currently, only <b>X509_ASN_ENCODING</b> and <b>PKCS_7_ASN_ENCODING</b> are being used; however, additional encoding types may be added in the future. For either current encoding type, use: <b>X509_ASN_ENCODING</b> | <b>PKCS_7_ASN_ENCODING</b>.</para>
-    </summary>
+    <summary>A value that specifies the encoding type used for the file. Currently, only <b>X509_ASN_ENCODING</b> and <b>PKCS_7_ASN_ENCODING</b> are being used; however, additional encoding types may be added in the future. For either current encoding type, use: <b>X509_ASN_ENCODING</b> | <b>PKCS_7_ASN_ENCODING</b>.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.dwReserved2">
-    <summary>
-      <para>This member is reserved  for future use.</para>
-    </summary>
+    <summary>This member is reserved for future use.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.fdwCAPISettings">
-    <summary>
-      <para>This member is not used.</para>
-    </summary>
+    <summary>This member is not used.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.fdwSecuritySettings">
-    <summary>
-      <para>This member is not used.</para>
-    </summary>
+    <summary>This member is not used.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.dwIndex">
-    <summary>
-      <para>The message index of the last call to <b>CryptSIPGetSignedDataMsg</b>. operation.</para>
-    </summary>
+    <summary>The message index of the last call to <b>CryptSIPGetSignedDataMsg</b>. operation.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.dwUnionChoice">
     <summary>
@@ -96,112 +58,94 @@ between get and verify functions.</para>
           <description>Defined constant/value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MSSIP_ADDINFO_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>There is no additional information about the subject.</para>
-          </description>
-        </item>
-        <item>
+          <description>There is no additional information about the subject.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MSSIP_ADDINFO_FLAT</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The additional information is a flat file.</para>
-          </description>
-        </item>
-        <item>
+          <description>The additional information is a flat file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MSSIP_ADDINFO_CATMEMBER</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The additional information is a catalog member.</para>
-          </description>
-        </item>
-        <item>
+          <description>The additional information is a catalog member.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MSSIP_ADDINFO_BLOB</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The additional information is a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The additional information is a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MSSIP_ADDINFO_NONMSSIP</b>
-                </description>
-              </item>
-              <item>
-                <description>500</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>500</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The additional information is in a user defined format.</para>
-          </description>
-        </item>
+          <description>The additional information is in a user defined format.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SIP_SUBJECTINFO.psFlat">
-    <summary>
-      <para>An <see cref="MS_ADDINFO_FLAT" /> structure that contains additional information for flat file subject types.</para>
-    </summary>
+    <summary>An <see cref="MS_ADDINFO_FLAT" /> structure that contains additional information for flat file subject types.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.psCatMember">
-    <summary>
-      <para>An <see cref="MS_ADDINFO_CATALOGMEMBER" /> structure that contains additional information for catalog member subject types.</para>
-    </summary>
+    <summary>An <see cref="MS_ADDINFO_CATALOGMEMBER" /> structure that contains additional information for catalog member subject types.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.psBlob">
-    <summary>
-      <para>An <see cref="MS_ADDINFO_BLOB" /> structure that contains additional information for BLOB subject types.</para>
-    </summary>
+    <summary>An <see cref="MS_ADDINFO_BLOB" /> structure that contains additional information for BLOB subject types.</summary>
   </member>
   <member name="SIP_SUBJECTINFO.pClientData">
-    <summary>
-      <para>A pointer to SIP-specific data.</para>
-    </summary>
+    <summary>A pointer to SIP-specific data.</summary>
   </member>
 </doc>

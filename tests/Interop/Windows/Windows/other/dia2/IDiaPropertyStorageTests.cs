@@ -19,32 +19,4 @@ public static unsafe partial class IDiaPropertyStorageTests
     {
         Assert.That(typeof(IDiaPropertyStorage).GUID, Is.EqualTo(IID_IDiaPropertyStorage));
     }
-
-    /// <summary>Validates that the <see cref="IDiaPropertyStorage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaPropertyStorage>(), Is.EqualTo(sizeof(IDiaPropertyStorage)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaPropertyStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaPropertyStorage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaPropertyStorage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaPropertyStorage), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaPropertyStorage), Is.EqualTo(4));
-        }
-    }
 }

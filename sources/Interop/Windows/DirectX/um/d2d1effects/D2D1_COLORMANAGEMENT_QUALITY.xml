@@ -3,27 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_COLORMANAGEMENT_QUALITY">
-    <summary>
-      <para>The quality level of the transform for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-management">Color management effect</a>.</para>
-    </summary>
+    <summary>The quality level of the transform for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-management">Color management effect</a>.</summary>
   </member>
   <member name="D2D1_COLORMANAGEMENT_QUALITY.D2D1_COLORMANAGEMENT_QUALITY_PROOF">
-    <summary>
-      <para>The lowest quality mode. This mode requires feature level 9_1 or above.</para>
-    </summary>
+    <summary>The lowest quality mode. This mode requires feature level 9_1 or above.</summary>
   </member>
   <member name="D2D1_COLORMANAGEMENT_QUALITY.D2D1_COLORMANAGEMENT_QUALITY_NORMAL">
-    <summary>
-      <para>Normal quality mode. This mode requires feature level 9_1 or above.</para>
-    </summary>
+    <summary>Normal quality mode. This mode requires feature level 9_1 or above.</summary>
   </member>
   <member name="D2D1_COLORMANAGEMENT_QUALITY.D2D1_COLORMANAGEMENT_QUALITY_BEST">
-    <summary>
-      <para>The best quality mode. This mode requires feature level 10_0 or above, as well as floating point precision buffers.
-This mode supports floating point precision as well as extended range as defined in the ICC v4.3 specification.</para>
-    </summary>
+    <summary>The best quality mode. This mode requires feature level 10_0 or above, as well as floating point precision buffers. This mode supports floating point precision as well as extended range as defined in the ICC v4.3 specification.</summary>
   </member>
-  <member name="D2D1_COLORMANAGEMENT_QUALITY.D2D1_COLORMANAGEMENT_QUALITY_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_COLORMANAGEMENT_QUALITY.D2D1_COLORMANAGEMENT_QUALITY_FORCE_DWORD"></member>
 </doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_MIP_REGION">
+    <summary>Describes the dimensions of a mip region.</summary>
+  </member>
+  <member name="D3D12_MIP_REGION.Width">
+    <summary>The width of the mip region.</summary>
+  </member>
+  <member name="D3D12_MIP_REGION.Height">
+    <summary>The height of the mip region.</summary>
+  </member>
+  <member name="D3D12_MIP_REGION.Depth">
+    <summary>The depth of the mip region.</summary>
+  </member>
+</doc>

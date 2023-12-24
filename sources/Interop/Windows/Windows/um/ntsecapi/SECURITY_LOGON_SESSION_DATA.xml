@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SECURITY_LOGON_SESSION_DATA">
+    <summary>
+      <para>The <b>SECURITY_LOGON_SESSION_DATA</b> structure contains information about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</para>
+      <para>This structure is used by the<see cref="LsaGetLogonSessionData" /> function.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.Size">
+    <summary>The size of the structure, in bytes.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.LogonId">
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">locally unique identifier</a> (LUID) that identifies a logon session.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.UserName">
+    <summary>An<see cref="LSA_UNICODE_STRING" /> structure that contains the account name of the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security principal</a> that owns the logon session.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.LogonDomain">
+    <summary>An <see cref="LSA_UNICODE_STRING" /> structure that contains the name of the domain used to authenticate the owner of the logon session.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.AuthenticationPackage">
+    <summary>An <see cref="LSA_UNICODE_STRING" /> structure that contains the name of the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">authentication package</a> used to authenticate the owner of the logon session.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.LogonType">
+    <summary>A<see cref="SECURITY_LOGON_TYPE" /> value that identifies the logon method.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.Session">
+    <summary>A Terminal Services session identifier. This member may be zero.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.Sid">
+    <summary>A pointer to the user's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID).</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.LogonTime">
+    <summary>The time the session owner logged on.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.LogonServer">
+    <summary>An <see cref="LSA_UNICODE_STRING" /> structure that contains the name of the server used to authenticate the owner of the logon session.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.DnsDomainName">
+    <summary>An <see cref="LSA_UNICODE_STRING" /> structure that contains the DNS name for the owner of the logon session.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.Upn">
+    <summary>An <see cref="LSA_UNICODE_STRING" /> structure that contains the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/u-gly">user principal name</a> (UPN) for the owner of the logon session.</summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.UserFlags">
+    <summary>
+      <para>The user flags for the logon session.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LOGON_OPTIMIZED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The logon is an optimized logon session.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LOGON_WINLOGON</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The logon was created for Winlogon.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LOGON_PKINIT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Kerberos PKINIT extension was used to authenticate the user in this logon session.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LOGON_NOT_OPTIMIZED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Optimized logon has been disabled for this account.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.LastLogonInfo">
+    <summary>
+      <para>An <see cref="LSA_LAST_INTER_LOGON_INFO" /> structure that contains the information on the last logon session.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.LogonScript">
+    <summary>
+      <para>An <see cref="LSA_UNICODE_STRING" /> structure that contains the script used for logging on.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.ProfilePath">
+    <summary>
+      <para>An <see cref="LSA_UNICODE_STRING" /> structure that contains the path to the user's profile.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.HomeDirectory">
+    <summary>
+      <para>An <see cref="LSA_UNICODE_STRING" /> structure that contains the home directory for the logon session.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.HomeDirectoryDrive">
+    <summary>
+      <para>An <see cref="LSA_UNICODE_STRING" /> structure that contains the drive location of the home directory of the logon session.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.LogoffTime">
+    <summary>
+      <para>The time stamp of when the session user logged off.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.KickOffTime">
+    <summary>
+      <para>The time that the logon session must end.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.PasswordLastSet">
+    <summary>
+      <para>The time when the user last changed the password. <b>Note</b> It is up to the Authentication Package to initialize this value and it may not be initialized.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.PasswordCanChange">
+    <summary>
+      <para>The password can be changed during the logon session.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+  <member name="SECURITY_LOGON_SESSION_DATA.PasswordMustChange">
+    <summary>
+      <para>The password must be changed during the logon session.</para>
+      <para>
+        <b>Windows Server 2003 R2, Windows XP with SP1 and earlier, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
+    </summary>
+  </member>
+</doc>

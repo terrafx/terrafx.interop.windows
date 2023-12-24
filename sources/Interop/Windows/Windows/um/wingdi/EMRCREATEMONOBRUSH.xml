@@ -3,49 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRCREATEMONOBRUSH">
-    <summary>
-      <para>The <b>EMRCREATEMONOBRUSH</b> structure contains members for the <see cref="CreatePatternBrush" /> (when passed a monochrome bitmap) or <see cref="CreateDIBPatternBrush" /> (when passed a monochrome DIB) enhanced metafile records.</para>
-    </summary>
-    <seealso cref="BITMAPINFO" />
-    <seealso cref="CreateDIBPatternBrush" />
-    <seealso cref="CreatePatternBrush" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="RGB" />
+    <summary>The <b>EMRCREATEMONOBRUSH</b> structure contains members for the <see cref="CreatePatternBrush" /> (when passed a monochrome bitmap) or <see cref="CreateDIBPatternBrush" /> (when passed a monochrome DIB) enhanced metafile records.</summary>
   </member>
   <member name="EMRCREATEMONOBRUSH.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRCREATEMONOBRUSH.ihBrush">
-    <summary>
-      <para>Index of brush in handle table.</para>
-    </summary>
+    <summary>Index of brush in handle table.</summary>
   </member>
   <member name="EMRCREATEMONOBRUSH.iUsage">
-    <summary>
-      <para>Value specifying whether the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure was provided and, if so, whether <b>bmiColors</b> contains explicit red, green, blue (RGB) values or indices. The <b>iUsage</b> member must be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</para>
-    </summary>
+    <summary>Value specifying whether the <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure was provided and, if so, whether <b>bmiColors</b> contains explicit red, green, blue (RGB) values or indices. The <b>iUsage</b> member must be either the DIB_PAL_COLORS or DIB_RGB_COLORS value.</summary>
   </member>
   <member name="EMRCREATEMONOBRUSH.offBmi">
-    <summary>
-      <para>Offset to <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Offset to <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRCREATEMONOBRUSH.cbBmi">
-    <summary>
-      <para>Size of <see cref="BITMAPINFO" /> structure.</para>
-    </summary>
+    <summary>Size of <see cref="BITMAPINFO" /> structure.</summary>
   </member>
   <member name="EMRCREATEMONOBRUSH.offBits">
-    <summary>
-      <para>Offset to bitmap bits.</para>
-    </summary>
+    <summary>Offset to bitmap bits.</summary>
   </member>
   <member name="EMRCREATEMONOBRUSH.cbBits">
-    <summary>
-      <para>Size of bitmap bits.</para>
-    </summary>
+    <summary>Size of bitmap bits.</summary>
   </member>
 </doc>

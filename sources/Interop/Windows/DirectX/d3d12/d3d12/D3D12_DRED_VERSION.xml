@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DRED_VERSION">
+    <summary>Defines constants that specify a version of Device Removed Extended Data (DRED), as used by the <see cref="D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA structure" />.</summary>
+  </member>
+  <member name="D3D12_DRED_VERSION.D3D12_DRED_VERSION_1_0">
+    <summary>Specifies DRED version 1.0.</summary>
+  </member>
+  <member name="D3D12_DRED_VERSION.D3D12_DRED_VERSION_1_1">
+    <summary>Specifies DRED version 1.1.</summary>
+  </member>
+</doc>

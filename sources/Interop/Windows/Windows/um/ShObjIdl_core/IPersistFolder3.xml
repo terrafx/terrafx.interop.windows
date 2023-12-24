@@ -3,58 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPersistFolder3.GetFolderTargetInfo">
-    <summary>
-      <para>Provides the location and attributes of a folder shortcut's target folder.</para>
-    </summary>
-    <param name="ppfti">
-      <para>Type: <b><see cref="PERSIST_FOLDER_TARGET_INFO" />*</b></para>
-      <para>A pointer to a <see cref="PERSIST_FOLDER_TARGET_INFO" /> structure used to return the target folder's location and attributes.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="PERSIST_FOLDER_TARGET_INFO" /> structure might not be initialized by the caller. <b>GetFolderTargetInfo</b> must assign values to all members of the structure before returning it to the caller.</para>
-    </remarks>
+    <summary>Provides the location and attributes of a folder shortcut's target folder.</summary>
+    <param name="ppfti">A pointer to a <see cref="PERSIST_FOLDER_TARGET_INFO" /> structure used to return the target folder's location and attributes.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPersistFolder3.InitializeEx">
-    <summary>
-      <para>Initializes a folder and specifies its location in the namespace. If the folder is a shortcut, this method also specifies the location of the target folder.</para>
-    </summary>
-    <param name="pbc">
-      <para>Type: <b><see cref="IBindCtx" />*</b></para>
-      <para>A pointer to an <see cref="IBindCtx" /> object that provides the bind context. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="pidlRoot">
-      <para>Type: <b>LPCITEMIDLIST</b></para>
-      <para>A pointer to a fully qualified PIDL that specifies the absolute location of a folder or folder shortcut. The calling application is responsible for allocating and freeing this PIDL.</para>
-    </param>
+    <summary>Initializes a folder and specifies its location in the namespace. If the folder is a shortcut, this method also specifies the location of the target folder.</summary>
+    <param name="pbc">A pointer to an <see cref="IBindCtx" /> object that provides the bind context. This parameter can be <b>NULL</b>.</param>
+    <param name="pidlRoot">A pointer to a fully qualified PIDL that specifies the absolute location of a folder or folder shortcut. The calling application is responsible for allocating and freeing this PIDL.</param>
     <param name="ppfti">
-      <para>Type: <b>const <see cref="PERSIST_FOLDER_TARGET_INFO" />*</b></para>
       <para>A pointer to a <see cref="PERSIST_FOLDER_TARGET_INFO" /> structure that specifies the location of the target folder and its attributes.</para>
       <para>If <i>ppfti</i> points to a valid structure, <i>pidlRoot</i> represents a folder shortcut.</para>
       <para>If <i>ppfti</i> is set to <b>NULL</b>, <i>pidlRoot</i> represents a normal folder. In that case, <b>InitializeEx</b> should behave as if <see cref="Initialize" /> had been called.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This function is an extended version of <see cref="IPersistFolder.Initialize" />. It allows the Shell to initialize folder shortcuts as well as normal folders.</para>
-    </remarks>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPersistFolder3">
-    <summary>
-      <para>Extends the <see cref="IPersistFolder" /> and <see cref="IPersistFolder2" /> interfaces by allowing a folder object to implement nondefault handling of folder shortcuts.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IPersist" />, <see cref="IPersistFolder" />, and <see cref="IPersistFolder2" /> interfaces, from which it inherits.</para>
-      <para>In Windows versions earlier than Windows Vista, this interface was declared in Shlobj.h.</para>
-      <h3>When to Implement</h3>
-      <para>Namespace extensions implement this interface if they need to perform nondefault handling of folder shortcuts.</para>
-      <h3>When to Use</h3>
-      <para>Applications do not normally use this interface directly.</para>
-    </remarks>
+    <summary>Extends the <see cref="IPersistFolder" /> and <see cref="IPersistFolder2" /> interfaces by allowing a folder object to implement nondefault handling of folder shortcuts.</summary>
   </member>
 </doc>

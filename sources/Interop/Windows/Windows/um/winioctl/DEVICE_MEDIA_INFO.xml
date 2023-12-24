@@ -3,57 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEVICE_MEDIA_INFO">
-    <summary>
-      <para>Provides information about the media supported by a device.</para>
-    </summary>
-    <seealso cref="GET_MEDIA_TYPES" />
-    <seealso cref="LARGE_INTEGER" />
-    <seealso cref="MEDIA_TYPE" />
-    <seealso cref="STORAGE_BUS_TYPE" />
-    <seealso cref="STORAGE_MEDIA_TYPE" />
+    <summary>Provides information about the media supported by a device.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific">
-    <summary>
-      <para>A union that contains the following members.</para>
-    </summary>
+    <summary>A union that contains the following members.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.DiskInfo">
-    <summary>
-      <para>A structure that contains the following members.</para>
-    </summary>
+    <summary>A structure that contains the following members.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.DiskInfo.Cylinders">
-    <summary>
-      <para>The number of cylinders on this disk.</para>
-    </summary>
+    <summary>The number of cylinders on this disk.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.DiskInfo.MediaType">
-    <summary>
-      <para>The media type. This member can be one of the values from the
-<see cref="STORAGE_MEDIA_TYPE" /> or
-<see cref="MEDIA_TYPE" /> enumeration types.</para>
-    </summary>
+    <summary>The media type. This member can be one of the values from the<see cref="STORAGE_MEDIA_TYPE" /> or<see cref="MEDIA_TYPE" /> enumeration types.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.DiskInfo.TracksPerCylinder">
-    <summary>
-      <para>The number of tracks per cylinder.</para>
-    </summary>
+    <summary>The number of tracks per cylinder.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.DiskInfo.SectorsPerTrack">
-    <summary>
-      <para>The number of sectors per track.</para>
-    </summary>
+    <summary>The number of sectors per track.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.DiskInfo.BytesPerSector">
-    <summary>
-      <para>The number of bytes per sector.</para>
-    </summary>
+    <summary>The number of bytes per sector.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.DiskInfo.NumberMediaSides">
-    <summary>
-      <para>The number of sides of the disk that can contain data. This member is 1 for one-sided media or 2 for
-two-sided media.</para>
-    </summary>
+    <summary>The number of sides of the disk that can contain data. This member is 1 for one-sided media or 2 for two-sided media.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.DiskInfo.MediaCharacteristics">
     <summary>
@@ -67,42 +41,25 @@ two-sided media.</para>
     </summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.RemovableDiskInfo">
-    <summary>
-      <para>A structure that contains the following members.</para>
-    </summary>
+    <summary>A structure that contains the following members.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.RemovableDiskInfo.Cylinders">
-    <summary>
-      <para>The number of cylinders on this disk.</para>
-    </summary>
+    <summary>The number of cylinders on this disk.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.RemovableDiskInfo.MediaType">
-    <summary>
-      <para>The media type. This member can be one of the values from the
-<see cref="STORAGE_MEDIA_TYPE" /> or
-<see cref="MEDIA_TYPE" /> enumeration types.</para>
-    </summary>
+    <summary>The media type. This member can be one of the values from the<see cref="STORAGE_MEDIA_TYPE" /> or<see cref="MEDIA_TYPE" /> enumeration types.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.RemovableDiskInfo.TracksPerCylinder">
-    <summary>
-      <para>The number of tracks per cylinder.</para>
-    </summary>
+    <summary>The number of tracks per cylinder.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.RemovableDiskInfo.SectorsPerTrack">
-    <summary>
-      <para>The number of sectors per track.</para>
-    </summary>
+    <summary>The number of sectors per track.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.RemovableDiskInfo.BytesPerSector">
-    <summary>
-      <para>The number of bytes per sector.</para>
-    </summary>
+    <summary>The number of bytes per sector.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.RemovableDiskInfo.NumberMediaSides">
-    <summary>
-      <para>The number of sides of the disk that can contain data. This member is 1 for one-sided media or 2 for
-two-sided media.</para>
-    </summary>
+    <summary>The number of sides of the disk that can contain data. This member is 1 for one-sided media or 2 for two-sided media.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.RemovableDiskInfo.MediaCharacteristics">
     <summary>
@@ -116,16 +73,10 @@ two-sided media.</para>
     </summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.TapeInfo">
-    <summary>
-      <para>A structure that contains the following members.</para>
-    </summary>
+    <summary>A structure that contains the following members.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.TapeInfo.MediaType">
-    <summary>
-      <para>The media type. This member can be one of the values from the
-<see cref="STORAGE_MEDIA_TYPE" /> or
-<see cref="MEDIA_TYPE" /> enumeration types.</para>
-    </summary>
+    <summary>The media type. This member can be one of the values from the<see cref="STORAGE_MEDIA_TYPE" /> or<see cref="MEDIA_TYPE" /> enumeration types.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.TapeInfo.MediaCharacteristics">
     <summary>
@@ -139,34 +90,21 @@ two-sided media.</para>
     </summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.TapeInfo.CurrentBlockSize">
-    <summary>
-      <para>The current block size, in bytes.</para>
-    </summary>
+    <summary>The current block size, in bytes.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.TapeInfo.BusType">
-    <summary>
-      <para>The type of bus to which the tape drive is connected. This members can be one of the
-<see cref="STORAGE_BUS_TYPE" /> enumeration values.</para>
-    </summary>
+    <summary>The type of bus to which the tape drive is connected. This members can be one of the<see cref="STORAGE_BUS_TYPE" /> enumeration values.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.TapeInfo.BusSpecificData">
-    <summary>
-      <para>A union that contains the following members.</para>
-    </summary>
+    <summary>A union that contains the following members.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.TapeInfo.BusSpecificData.ScsiInformation">
-    <summary>
-      <para>A structure that contains the following members.</para>
-    </summary>
+    <summary>A structure that contains the following members.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.TapeInfo.BusSpecificData.ScsiInformation.MediumType">
-    <summary>
-      <para>The SCSI-specific medium type.</para>
-    </summary>
+    <summary>The SCSI-specific medium type.</summary>
   </member>
   <member name="DEVICE_MEDIA_INFO.DeviceSpecific.TapeInfo.BusSpecificData.ScsiInformation.DensityCode">
-    <summary>
-      <para>The SCSI-specific current operating density for read/write operations.</para>
-    </summary>
+    <summary>The SCSI-specific current operating density for read/write operations.</summary>
   </member>
 </doc>

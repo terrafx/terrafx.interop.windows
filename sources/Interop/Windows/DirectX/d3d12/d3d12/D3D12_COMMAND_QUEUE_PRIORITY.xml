@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_COMMAND_QUEUE_PRIORITY">
+    <summary>Defines priority levels for a command queue.</summary>
+  </member>
+  <member name="D3D12_COMMAND_QUEUE_PRIORITY.D3D12_COMMAND_QUEUE_PRIORITY_NORMAL">
+    <summary>Normal priority.</summary>
+  </member>
+  <member name="D3D12_COMMAND_QUEUE_PRIORITY.D3D12_COMMAND_QUEUE_PRIORITY_HIGH">
+    <summary>High priority.</summary>
+  </member>
+  <member name="D3D12_COMMAND_QUEUE_PRIORITY.D3D12_COMMAND_QUEUE_PRIORITY_GLOBAL_REALTIME">
+    <summary>Global realtime priority.</summary>
+  </member>
+</doc>

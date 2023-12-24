@@ -14,7 +14,7 @@ public unsafe partial struct WINTRUST_CERT_INFO
 
     /// <include file='WINTRUST_CERT_INFO.xml' path='doc/member[@name="WINTRUST_CERT_INFO.pcwszDisplayName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcwszDisplayName;
+    public char* pcwszDisplayName;
 
     /// <include file='WINTRUST_CERT_INFO.xml' path='doc/member[@name="WINTRUST_CERT_INFO.psCertContext"]/*' />
     public CERT_CONTEXT* psCertContext;

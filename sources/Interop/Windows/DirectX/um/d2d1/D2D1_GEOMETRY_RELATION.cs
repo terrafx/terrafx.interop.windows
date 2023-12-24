@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION"]/*' />
-public enum D2D1_GEOMETRY_RELATION : uint
+public enum D2D1_GEOMETRY_RELATION
 {
     /// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_UNKNOWN"]/*' />
     D2D1_GEOMETRY_RELATION_UNKNOWN = 0,
@@ -24,5 +24,5 @@ public enum D2D1_GEOMETRY_RELATION : uint
     D2D1_GEOMETRY_RELATION_OVERLAP = 4,
 
     /// <include file='D2D1_GEOMETRY_RELATION.xml' path='doc/member[@name="D2D1_GEOMETRY_RELATION.D2D1_GEOMETRY_RELATION_FORCE_DWORD"]/*' />
-    D2D1_GEOMETRY_RELATION_FORCE_DWORD = 0xffffffff,
+    D2D1_GEOMETRY_RELATION_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

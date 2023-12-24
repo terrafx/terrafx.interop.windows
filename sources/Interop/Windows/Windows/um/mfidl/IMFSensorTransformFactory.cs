@@ -27,7 +27,7 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSensorTransformFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorTransformFactory*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSensorTransformFactory*, uint>)(lpVtbl[1]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorTransformFactory*, uint>)(lpVtbl[1]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSensorTransformFactory*, uint>)(lpVtbl[2]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorTransformFactory*, uint>)(lpVtbl[2]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSensorTransformFactory.xml' path='doc/member[@name="IMFSensorTransformFactory.GetFactoryAttributes"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
     [VtblIndex(3)]
     public HRESULT GetFactoryAttributes(IMFAttributes** ppAttributes)
     {
-        return ((delegate* unmanaged<IMFSensorTransformFactory*, IMFAttributes**, int>)(lpVtbl[3]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), ppAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorTransformFactory*, IMFAttributes**, int>)(lpVtbl[3]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), ppAttributes);
     }
 
     /// <include file='IMFSensorTransformFactory.xml' path='doc/member[@name="IMFSensorTransformFactory.InitializeFactory"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
     [VtblIndex(4)]
     public HRESULT InitializeFactory([NativeTypeName("DWORD")] uint dwMaxTransformCount, IMFCollection* pSensorDevices, IMFAttributes* pAttributes)
     {
-        return ((delegate* unmanaged<IMFSensorTransformFactory*, uint, IMFCollection*, IMFAttributes*, int>)(lpVtbl[4]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), dwMaxTransformCount, pSensorDevices, pAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorTransformFactory*, uint, IMFCollection*, IMFAttributes*, int>)(lpVtbl[4]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), dwMaxTransformCount, pSensorDevices, pAttributes);
     }
 
     /// <include file='IMFSensorTransformFactory.xml' path='doc/member[@name="IMFSensorTransformFactory.GetTransformCount"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
     [VtblIndex(5)]
     public HRESULT GetTransformCount([NativeTypeName("DWORD *")] uint* pdwCount)
     {
-        return ((delegate* unmanaged<IMFSensorTransformFactory*, uint*, int>)(lpVtbl[5]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), pdwCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorTransformFactory*, uint*, int>)(lpVtbl[5]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
     /// <include file='IMFSensorTransformFactory.xml' path='doc/member[@name="IMFSensorTransformFactory.GetTransformInformation"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
     [VtblIndex(6)]
     public HRESULT GetTransformInformation([NativeTypeName("DWORD")] uint TransformIndex, Guid* pguidTransformId, IMFAttributes** ppAttributes, IMFCollection** ppStreamInformation)
     {
-        return ((delegate* unmanaged<IMFSensorTransformFactory*, uint, Guid*, IMFAttributes**, IMFCollection**, int>)(lpVtbl[6]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), TransformIndex, pguidTransformId, ppAttributes, ppStreamInformation);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorTransformFactory*, uint, Guid*, IMFAttributes**, IMFCollection**, int>)(lpVtbl[6]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), TransformIndex, pguidTransformId, ppAttributes, ppStreamInformation);
     }
 
     /// <include file='IMFSensorTransformFactory.xml' path='doc/member[@name="IMFSensorTransformFactory.CreateTransform"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
     [VtblIndex(7)]
     public HRESULT CreateTransform([NativeTypeName("const GUID &")] Guid* guidSensorTransformID, IMFAttributes* pAttributes, IMFDeviceTransform** ppDeviceMFT)
     {
-        return ((delegate* unmanaged<IMFSensorTransformFactory*, Guid*, IMFAttributes*, IMFDeviceTransform**, int>)(lpVtbl[7]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), guidSensorTransformID, pAttributes, ppDeviceMFT);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorTransformFactory*, Guid*, IMFAttributes*, IMFDeviceTransform**, int>)(lpVtbl[7]))((IMFSensorTransformFactory*)Unsafe.AsPointer(ref this), guidSensorTransformID, pAttributes, ppDeviceMFT);
     }
 
     public interface Interface : IUnknown.Interface
@@ -110,27 +110,27 @@ public unsafe partial struct IMFSensorTransformFactory : IMFSensorTransformFacto
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetFactoryAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes**, int> GetFactoryAttributes;
 
         [NativeTypeName("HRESULT (DWORD, IMFCollection *, IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFCollection*, IMFAttributes*, int> InitializeFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFCollection*, IMFAttributes*, int> InitializeFactory;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTransformCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTransformCount;
 
         [NativeTypeName("HRESULT (DWORD, GUID *, IMFAttributes **, IMFCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, IMFAttributes**, IMFCollection**, int> GetTransformInformation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, IMFAttributes**, IMFCollection**, int> GetTransformInformation;
 
         [NativeTypeName("HRESULT (const GUID &, IMFAttributes *, IMFDeviceTransform **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IMFAttributes*, IMFDeviceTransform**, int> CreateTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IMFAttributes*, IMFDeviceTransform**, int> CreateTransform;
     }
 }

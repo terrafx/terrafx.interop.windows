@@ -4,35 +4,14 @@
 <doc>
   <member name="MFP_MF_EVENT">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Event structure for the <b>MFP_EVENT_TYPE_MF</b> event. The MFPlay player object uses this event to forward certain events from the Media Foundation pipeline to the application.</para>
     </summary>
-    <remarks>
-      <para>To get a pointer to this structure, cast the <i>pEventHeader</i> parameter of the <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> method. You can use the <see cref="MFP_GET_MF_EVENT" /> macro for this purpose.</para>
-      <para>If <b>MFEventType</b> is <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamsinkformatchanged">MEStreamSinkFormatChanged</a>, the following property may be stored in the event property store, which can be accessed through the <b>header.pPropertyStore</b> member.</para>
-      <list type="table">
-        <listheader>
-          <description>Property</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd375565(v=vs.85)">MFP_PKEY_StreamIndex</a>
-          </description>
-          <description>The index of the stream whose format changed. </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFPMediaPlayerCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/using-mfplay-for-audio-video-playback">Using MFPlay for Audio/Video Playback</seealso>
   </member>
   <member name="MFP_MF_EVENT.header">
     <summary>
-      <para>
-        <see cref="MFP_EVENT_HEADER" /> structure that contains data common to all <see cref="IMFPMediaPlayer" /> events.</para>
-    </summary>
+      <see cref="MFP_EVENT_HEADER" /> structure that contains data common to all <see cref="IMFPMediaPlayer" /> events.</summary>
   </member>
   <member name="MFP_MF_EVENT.MFEventType">
     <summary>
@@ -42,59 +21,55 @@
           <description>Event</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstarted">MEBufferingStarted</a>
           </description>
           <description>The source has started buffering data.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <a href="https://docs.microsoft.com//windows/desktop/medfound/mebufferingstopped">MEBufferingStopped</a>
           </description>
           <description>The source has stopped buffering data.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <a href="https://docs.microsoft.com//windows/desktop/medfound/meextendedtype">MEExtendedType</a>
           </description>
           <description>Custom event type.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <a href="https://docs.microsoft.com//windows/desktop/medfound/mereconnectend">MEReconnectEnd</a>
           </description>
           <description>The source has completed an attempt to reconnect to the server.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <a href="https://docs.microsoft.com//windows/desktop/medfound/mereconnectstart">MEReconnectStart</a>
           </description>
           <description>The source is attempting to reconnect to the server.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <a href="https://docs.microsoft.com//windows/desktop/medfound/merendererevent">MERendererEvent</a>
           </description>
           <description>Event sent by a renderer, such as the <a href="https://docs.microsoft.com//windows/desktop/medfound/enhanced-video-renderer">Enhanced Video Renderer</a> (EVR).</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <a href="https://docs.microsoft.com//windows/desktop/medfound/mestreamsinkformatchanged">MEStreamSinkFormatChanged</a>
           </description>
           <description>A stream format has changed.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MFP_MF_EVENT.pMFMediaEvent">
-    <summary>
-      <para>Pointer to the <see cref="IMFMediaEvent" /> interface of the Media Foundation event.</para>
-    </summary>
+    <summary>Pointer to the <see cref="IMFMediaEvent" /> interface of the Media Foundation event.</summary>
   </member>
   <member name="MFP_MF_EVENT.pMediaItem">
-    <summary>
-      <para>Pointer to the <see cref="IMFPMediaItem" /> interface of the current media item.</para>
-    </summary>
+    <summary>Pointer to the <see cref="IMFPMediaItem" /> interface of the current media item.</summary>
   </member>
 </doc>

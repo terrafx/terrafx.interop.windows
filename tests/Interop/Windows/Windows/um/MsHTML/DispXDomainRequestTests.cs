@@ -19,32 +19,4 @@ public static unsafe partial class DispXDomainRequestTests
     {
         Assert.That(typeof(DispXDomainRequest).GUID, Is.EqualTo(IID_DispXDomainRequest));
     }
-
-    /// <summary>Validates that the <see cref="DispXDomainRequest" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispXDomainRequest>(), Is.EqualTo(sizeof(DispXDomainRequest)));
-    }
-
-    /// <summary>Validates that the <see cref="DispXDomainRequest" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispXDomainRequest).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispXDomainRequest" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispXDomainRequest), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispXDomainRequest), Is.EqualTo(4));
-        }
-    }
 }

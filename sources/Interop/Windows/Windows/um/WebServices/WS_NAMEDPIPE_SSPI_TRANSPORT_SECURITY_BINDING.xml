@@ -27,17 +27,12 @@
           <description>
             <see cref="WS_SECURITY_BINDING_PROPERTY_ALLOWED_IMPERSONATION_LEVEL" /> (client side only)</description>
         </item>
-      </list>This type derives from the base type <see cref="WS_SECURITY_BINDING" />. For an instance of this type, the type selector field <b>bindingType</b> must have the value <see cref="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING_TYPE" />.
-</summary>
+      </list>This type derives from the base type <see cref="WS_SECURITY_BINDING" />. For an instance of this type, the type selector field <b>bindingType</b> must have the value <see cref="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING_TYPE" />.</summary>
   </member>
   <member name="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING.binding">
-    <summary>
-      <para>The <see cref="base type" /> from which this security binding subtype and all other security binding subtypes derive.</para>
-    </summary>
+    <summary>The <see cref="base type" /> from which this security binding subtype and all other security binding subtypes derive.</summary>
   </member>
   <member name="WS_NAMEDPIPE_SSPI_TRANSPORT_SECURITY_BINDING.clientCredential">
-    <summary>
-      <para>The <see cref="WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL" /> structure to be used to authenticate the client. This is required on the client and must not be specified on the server.</para>
-    </summary>
+    <summary>The <see cref="WS_WINDOWS_INTEGRATED_AUTH_CREDENTIAL" /> structure to be used to authenticate the client. This is required on the client and must not be specified on the server.</summary>
   </member>
 </doc>

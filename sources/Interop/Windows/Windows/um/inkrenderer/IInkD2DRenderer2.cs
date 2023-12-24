@@ -25,7 +25,7 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInkD2DRenderer2*, Guid*, void**, int>)(lpVtbl[0]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInkD2DRenderer2*, Guid*, void**, int>)(lpVtbl[0]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInkD2DRenderer2*, uint>)(lpVtbl[1]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInkD2DRenderer2*, uint>)(lpVtbl[1]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInkD2DRenderer2*, uint>)(lpVtbl[2]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInkD2DRenderer2*, uint>)(lpVtbl[2]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInkD2DRenderer2.xml' path='doc/member[@name="IInkD2DRenderer2.Draw"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface, INat
     [VtblIndex(3)]
     public HRESULT Draw(IUnknown* pD2D1DeviceContext, IUnknown* pInkStrokeIterable, INK_HIGH_CONTRAST_ADJUSTMENT highContrastAdjustment)
     {
-        return ((delegate* unmanaged<IInkD2DRenderer2*, IUnknown*, IUnknown*, INK_HIGH_CONTRAST_ADJUSTMENT, int>)(lpVtbl[3]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this), pD2D1DeviceContext, pInkStrokeIterable, highContrastAdjustment);
+        return ((delegate* unmanaged[MemberFunction]<IInkD2DRenderer2*, IUnknown*, IUnknown*, INK_HIGH_CONTRAST_ADJUSTMENT, int>)(lpVtbl[3]))((IInkD2DRenderer2*)Unsafe.AsPointer(ref this), pD2D1DeviceContext, pInkStrokeIterable, highContrastAdjustment);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IInkD2DRenderer2 : IInkD2DRenderer2.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, IUnknown *, INK_HIGH_CONTRAST_ADJUSTMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IUnknown*, INK_HIGH_CONTRAST_ADJUSTMENT, int> Draw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IUnknown*, INK_HIGH_CONTRAST_ADJUSTMENT, int> Draw;
     }
 }

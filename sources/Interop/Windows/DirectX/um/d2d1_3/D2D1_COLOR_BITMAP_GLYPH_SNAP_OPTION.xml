@@ -3,22 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION">
-    <summary>
-      <para>Specifies the pixel snapping policy when rendering color bitmap glyphs.</para>
-    </summary>
+    <summary>Specifies the pixel snapping policy when rendering color bitmap glyphs.</summary>
   </member>
   <member name="D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION.D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION_DEFAULT">
-    <summary>
-      <para>Color bitmap glyph positions are snapped to the nearest pixel if the bitmap
-resolution matches that of the device context.</para>
-    </summary>
+    <summary>Color bitmap glyph positions are snapped to the nearest pixel if the bitmap resolution matches that of the device context.</summary>
   </member>
   <member name="D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION.D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION_DISABLE">
-    <summary>
-      <para>Color bitmap glyph positions are not snapped.</para>
-    </summary>
+    <summary>Color bitmap glyph positions are not snapped.</summary>
   </member>
-  <member name="D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION.D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION.D2D1_COLOR_BITMAP_GLYPH_SNAP_OPTION_FORCE_DWORD"></member>
 </doc>

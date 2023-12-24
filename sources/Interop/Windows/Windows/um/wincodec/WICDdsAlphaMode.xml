@@ -3,38 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICDdsAlphaMode">
-    <summary>
-      <para>Specifies the the meaning of pixel color component values contained in the DDS image.</para>
-    </summary>
-    <seealso cref="IWICDdsDecoder.GetParameters" />
-    <seealso cref="WICDdsParameters" />
+    <summary>Specifies the the meaning of pixel color component values contained in the DDS image.</summary>
   </member>
   <member name="WICDdsAlphaMode.WICDdsAlphaModeUnknown">
-    <summary>
-      <para>Alpha behavior is unspecified and must be determined by the reader.</para>
-    </summary>
+    <summary>Alpha behavior is unspecified and must be determined by the reader.</summary>
   </member>
   <member name="WICDdsAlphaMode.WICDdsAlphaModeStraight">
-    <summary>
-      <para>The alpha data is straight.</para>
-    </summary>
+    <summary>The alpha data is straight.</summary>
   </member>
   <member name="WICDdsAlphaMode.WICDdsAlphaModePremultiplied">
-    <summary>
-      <para>The alpha data is premultiplied.</para>
-    </summary>
+    <summary>The alpha data is premultiplied.</summary>
   </member>
   <member name="WICDdsAlphaMode.WICDdsAlphaModeOpaque">
-    <summary>
-      <para>The alpha data is opaque (UNORM value of 1). This can be used by a compliant reader as a performance optimization. For example, blending operations can be converted to copies.</para>
-    </summary>
+    <summary>The alpha data is opaque (UNORM value of 1). This can be used by a compliant reader as a performance optimization. For example, blending operations can be converted to copies.</summary>
   </member>
   <member name="WICDdsAlphaMode.WICDdsAlphaModeCustom">
-    <summary>
-      <para>The alpha channel contains custom data that is not alpha.</para>
-    </summary>
+    <summary>The alpha channel contains custom data that is not alpha.</summary>
   </member>
-  <member name="WICDdsAlphaMode.WICDDSALPHAMODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICDdsAlphaMode.WICDDSALPHAMODE_FORCE_DWORD"></member>
 </doc>

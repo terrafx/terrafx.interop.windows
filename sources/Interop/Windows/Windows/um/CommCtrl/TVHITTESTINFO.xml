@@ -3,129 +3,167 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TVHITTESTINFO">
-    <summary>
-      <para>Contains information used to determine the location of a point relative to a tree-view control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tvm-hittest">TVM_HITTEST</a> message. The structure is identical to the
-<b>TV_HITTESTINFO</b> structure, but it has been renamed to follow current naming conventions.</para>
-    </summary>
+    <summary>Contains information used to determine the location of a point relative to a tree-view control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tvm-hittest">TVM_HITTEST</a> message. The structure is identical to the<b>TV_HITTESTINFO</b> structure, but it has been renamed to follow current naming conventions.</summary>
   </member>
   <member name="TVHITTESTINFO.pt">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>Client coordinates of the point to test.</para>
-    </summary>
+    <summary>Client coordinates of the point to test.</summary>
   </member>
   <member name="TVHITTESTINFO.flags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Variable that receives information about the results of a hit test. This member can be one or more of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TVHT_ABOVE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_ABOVE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Above the client area.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Above the client area.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_BELOW</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Below the client area.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TVHT_BELOW</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_NOWHERE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>In the client area, but below the last item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Below the client area.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_ONITEM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>On the bitmap or label associated with an item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TVHT_NOWHERE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_ONITEMBUTTON</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>On the button associated with an item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>In the client area, but below the last item.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_ONITEMICON</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>On the bitmap associated with an item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TVHT_ONITEM</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_ONITEMINDENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>In the indentation associated with an item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>On the bitmap or label associated with an item.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_ONITEMLABEL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>On the label (string) associated with an item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TVHT_ONITEMBUTTON</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_ONITEMRIGHT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>In the area to the right of an item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>On the button associated with an item.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_ONITEMSTATEICON</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>On the state icon for a tree-view item that is in a user-defined state.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TVHT_ONITEMICON</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_TOLEFT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>To the left of the client area.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>On the bitmap associated with an item.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TVHT_TORIGHT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TVHT_ONITEMINDENT</b>
-          </description>
-          <description>
-            <para>In the indentation associated with an item.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TVHT_ONITEMLABEL</b>
-          </description>
-          <description>
-            <para>On the label (string) associated with an item.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TVHT_ONITEMRIGHT</b>
-          </description>
-          <description>
-            <para>In the area to the right of an item.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TVHT_ONITEMSTATEICON</b>
-          </description>
-          <description>
-            <para>On the state icon for a tree-view item that is in a user-defined state.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TVHT_TOLEFT</b>
-          </description>
-          <description>
-            <para>To the left of the client area.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TVHT_TORIGHT</b>
-          </description>
-          <description>
-            <para>To the right of the client area.</para>
-          </description>
-        </item>
+          <description>To the right of the client area.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="TVHITTESTINFO.hItem">
-    <summary>
-      <para>Type: <b>HTREEITEM</b></para>
-      <para>Handle to the item that occupies the point.</para>
-    </summary>
+    <summary>Handle to the item that occupies the point.</summary>
   </member>
 </doc>

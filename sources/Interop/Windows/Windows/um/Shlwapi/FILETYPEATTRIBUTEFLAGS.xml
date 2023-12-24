@@ -3,138 +3,62 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILETYPEATTRIBUTEFLAGS">
-    <summary>
-      <para>Indicates <b>FILETYPEATTRIBUTEFLAGS</b> constants that are used in the EditFlags value of a file association <a href="https://docs.microsoft.com//windows/desktop/shell/fa-progids">PROGID</a> registry key.</para>
-    </summary>
-    <remarks>
-      <para>These flags represent possible attributes stored in the EditFlags value of a ProgID registration. The EditFlags data is a single REG_DWORD.</para>
-      <para>The following example shows the <b><b>FTA_NoRemove</b></b> (0x00000010) and <b><b>FTA_NoNewVerb</b></b> (0x00000020) attributes assigned to the .myp file type.</para>
-      <code>
-        <b>HKEY_CLASSES_ROOT</b>
-        <b>.myp</b>
-
-(Default) = MyProgram.1
-<b>MyProgram.1</b>
-
-(Default) = MyProgram Application
-<b>EditFlags</b> = 0x00000030</code>\
-<para>APIs such as <see cref="IQueryAssociations.GetData" /> can retrieve that EditFlags data. Compare the numerical equivalents of these <b>FILETYPEATTRIBUTEFLAGS</b> flags against that retrieved value to determine which flags are set.</para><para>The following example demonstrates the use of <see cref="IQueryAssociations.GetData" /> to determine if those values are set.</para><code>IQueryAssociations *passoc;
-
-HRESULT hr = AssocCreate(CLSID_QueryAssociations, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;passoc));
-if (SUCCEEDED(hr))
-{
-    hr = passoc-&gt;Init(NULL, pszType, NULL, NULL);
-    if (SUCCEEDED(hr))
-    {
-        DWORD dwEditFlags;
-        ULONG cb = sizeof(dwEditFlags);
-
-        hr = passoc-&gt;GetData(NULL, ASSOCDATA_EDITFLAGS, NULL, &amp;amp;amp;amp;amp;amp;dwEditFlags, &amp;amp;amp;amp;amp;amp;cb);
-        if (SUCCEEDED(hr))
-        {
-            if (dwEditFlags &amp;amp;amp;amp;amp;amp; 0x00000010) // FTA_NoRemove
-            {
-                // ...
-            }
-            if (dwEditFlags &amp;amp;amp;amp;amp;amp; 0x00000020)  // FTA_NoNewVerb
-            {
-                // ...
-            }
-        }
-    }
-    passoc-&gt;Release();
-}
-</code><para>To set an EditFlags attribute, you can use the <see cref="RegSetValueEx" /> or <see cref="SHSetValue" /> functions. First use <see cref="IQueryAssociations.GetData" /> to retrieve the current set of attributes as shown in the example above, add the desired <b>FILETYPEATTRIBUTEFLAGS</b> to that value, then write that value back to the registry using one of the two set functions.</para></remarks>
+    <summary>Indicates <b>FILETYPEATTRIBUTEFLAGS</b> constants that are used in the EditFlags value of a file association <a href="https://docs.microsoft.com//windows/desktop/shell/fa-progids">PROGID</a> registry key.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_None">
-    <summary>
-      <para>No <see cref="FILETYPEATTRIBUTEFLAGS" /> options set.</para>
-    </summary>
+    <summary>No <see cref="FILETYPEATTRIBUTEFLAGS" /> options set.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_Exclude">
-    <summary>
-      <para>Excludes the file type.</para>
-    </summary>
+    <summary>Excludes the file type.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_Show">
-    <summary>
-      <para>Shows file types, such as folders, that are not associated with a file name extension.</para>
-    </summary>
+    <summary>Shows file types, such as folders, that are not associated with a file name extension.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_HasExtension">
-    <summary>
-      <para>Indicates that the file type has a file name extension.</para>
-    </summary>
+    <summary>Indicates that the file type has a file name extension.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoEdit">
-    <summary>
-      <para>Prohibits editing of the registry entries associated with this file type, the addition of new entries, and the deletion or modification of existing entries.</para>
-    </summary>
+    <summary>Prohibits editing of the registry entries associated with this file type, the addition of new entries, and the deletion or modification of existing entries.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoRemove">
-    <summary>
-      <para>Prohibits deletion of the registry entries associated with this file type.</para>
-    </summary>
+    <summary>Prohibits deletion of the registry entries associated with this file type.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoNewVerb">
-    <summary>
-      <para>Prohibits the addition of new <a href="https://docs.microsoft.com//windows/desktop/shell/fa-verbs">verbs</a> to the file type.</para>
-    </summary>
+    <summary>Prohibits the addition of new <a href="https://docs.microsoft.com//windows/desktop/shell/fa-verbs">verbs</a> to the file type.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoEditVerb">
-    <summary>
-      <para>Prohibits the modification or deletion of canonical <a href="https://docs.microsoft.com//windows/desktop/shell/fa-verbs">verbs</a> such as <b>open</b> and <b>print</b>.</para>
-    </summary>
+    <summary>Prohibits the modification or deletion of canonical <a href="https://docs.microsoft.com//windows/desktop/shell/fa-verbs">verbs</a> such as <b>open</b> and <b>print</b>.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoRemoveVerb">
-    <summary>
-      <para>Prohibits the deletion of canonical verbs such as <b>open</b> and <b>print</b>.</para>
-    </summary>
+    <summary>Prohibits the deletion of canonical verbs such as <b>open</b> and <b>print</b>.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoEditDesc">
-    <summary>
-      <para>Prohibits the modification or deletion of the description of the file type.</para>
-    </summary>
+    <summary>Prohibits the modification or deletion of the description of the file type.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoEditIcon">
-    <summary>
-      <para>Prohibits the modification or deletion of the <a href="https://docs.microsoft.com//windows/desktop/shell/icon">icon</a> assigned to the file type.</para>
-    </summary>
+    <summary>Prohibits the modification or deletion of the <a href="https://docs.microsoft.com//windows/desktop/shell/icon">icon</a> assigned to the file type.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoEditDflt">
-    <summary>
-      <para>Prohibits the modification of the <a href="https://docs.microsoft.com//windows/desktop/shell/fa-verbs">default verb</a>.</para>
-    </summary>
+    <summary>Prohibits the modification of the <a href="https://docs.microsoft.com//windows/desktop/shell/fa-verbs">default verb</a>.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoEditVerbCmd">
-    <summary>
-      <para>Prohibits the modification of the <a href="https://docs.microsoft.com//windows/desktop/shell/fa-verbs">commands</a> associated with verbs.</para>
-    </summary>
+    <summary>Prohibits the modification of the <a href="https://docs.microsoft.com//windows/desktop/shell/fa-verbs">commands</a> associated with verbs.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoEditVerbExe">
-    <summary>
-      <para>Prohibits the modification or deletion of verbs.</para>
-    </summary>
+    <summary>Prohibits the modification or deletion of verbs.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoDDE">
-    <summary>
-      <para>Prohibits the modification or deletion of the entries related to DDE.</para>
-    </summary>
+    <summary>Prohibits the modification or deletion of the entries related to DDE.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_NoEditMIME">
-    <summary>
-      <para>Prohibits the modification or deletion of the content type and default extension entries.</para>
-    </summary>
+    <summary>Prohibits the modification or deletion of the content type and default extension entries.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_OpenIsSafe">
-    <summary>
-      <para>Indicates that the file type's <b>open</b> verb can be safely invoked for downloaded files. This flag  applies only to safe file types, as identified by <see cref="AssocIsDangerous" />. To improve the user experience and reduce unnecessary user prompts when downloading and activating items, file type owners should specify this flag and applications that download and activate files should respect this flag.</para>
-    </summary>
+    <summary>Indicates that the file type's <b>open</b> verb can be safely invoked for downloaded files. This flag applies only to safe file types, as identified by <see cref="AssocIsDangerous" />. To improve the user experience and reduce unnecessary user prompts when downloading and activating items, file type owners should specify this flag and applications that download and activate files should respect this flag.</summary>
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_AlwaysUnsafe">
     <summary>
-      <para>Prevents the <b>Never ask me</b> check box from being enabled. Use of this flag means <b>FTA_OpenIsSafe</b> is not respected and <see cref="AssocIsDangerous" /> always returns TRUE.
-If your file type can execute code, you should always use this flag or ensure that the file type handlers mitigate risks, for example, by producing warning prompts before running the code.</para>
+      <para>Prevents the <b>Never ask me</b> check box from being enabled. Use of this flag means <b>FTA_OpenIsSafe</b> is not respected and <see cref="AssocIsDangerous" /> always returns TRUE. If your file type can execute code, you should always use this flag or ensure that the file type handlers mitigate risks, for example, by producing warning prompts before running the code.</para>
       <para>The user can override this attribute through the <b>File Type</b> dialog box.</para>
     </summary>
   </member>
@@ -153,8 +77,6 @@ If your file type can execute code, you should always use this flag or ensure th
   </member>
   <member name="FILETYPEATTRIBUTEFLAGS.FTA_AlwaysUseDirectInvoke">
     <summary>
-      <para>
-        <b>Introduced in Windows 8</b>. Ensures that the verbs for the file type are invoked with a URI instead of a downloaded version of the file. Use this flag only if you've registered the file type's verb to support DirectInvoke through the SupportedProtocols or UseUrl registration.</para>
-    </summary>
+      <b>Introduced in Windows 8</b>. Ensures that the verbs for the file type are invoked with a URI instead of a downloaded version of the file. Use this flag only if you've registered the file type's verb to support DirectInvoke through the SupportedProtocols or UseUrl registration.</summary>
   </member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IExplorerBrowserEvents*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IExplorerBrowserEvents*, Guid*, void**, int>)(lpVtbl[0]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IExplorerBrowserEvents*, uint>)(lpVtbl[1]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExplorerBrowserEvents*, uint>)(lpVtbl[1]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IExplorerBrowserEvents*, uint>)(lpVtbl[2]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExplorerBrowserEvents*, uint>)(lpVtbl[2]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents.OnNavigationPending"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
     [VtblIndex(3)]
     public HRESULT OnNavigationPending([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
     {
-        return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[3]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
+        return ((delegate* unmanaged[MemberFunction]<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[3]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
     }
 
     /// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents.OnViewCreated"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
     [VtblIndex(4)]
     public HRESULT OnViewCreated(IShellView* psv)
     {
-        return ((delegate* unmanaged<IExplorerBrowserEvents*, IShellView*, int>)(lpVtbl[4]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), psv);
+        return ((delegate* unmanaged[MemberFunction]<IExplorerBrowserEvents*, IShellView*, int>)(lpVtbl[4]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), psv);
     }
 
     /// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents.OnNavigationComplete"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
     [VtblIndex(5)]
     public HRESULT OnNavigationComplete([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
     {
-        return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[5]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
+        return ((delegate* unmanaged[MemberFunction]<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[5]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
     }
 
     /// <include file='IExplorerBrowserEvents.xml' path='doc/member[@name="IExplorerBrowserEvents.OnNavigationFailed"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
     [VtblIndex(6)]
     public HRESULT OnNavigationFailed([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder)
     {
-        return ((delegate* unmanaged<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[6]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
+        return ((delegate* unmanaged[MemberFunction]<IExplorerBrowserEvents*, ITEMIDLIST*, int>)(lpVtbl[6]))((IExplorerBrowserEvents*)Unsafe.AsPointer(ref this), pidlFolder);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IExplorerBrowserEvents : IExplorerBrowserEvents.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> OnNavigationPending;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, int> OnNavigationPending;
 
         [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, int> OnViewCreated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellView*, int> OnViewCreated;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> OnNavigationComplete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, int> OnNavigationComplete;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, int> OnNavigationFailed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, int> OnNavigationFailed;
     }
 }

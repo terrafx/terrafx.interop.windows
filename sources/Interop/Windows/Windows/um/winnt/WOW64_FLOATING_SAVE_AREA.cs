@@ -3,10 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WOW64_FLOATING_SAVE_AREA.xml' path='doc/member[@name="WOW64_FLOATING_SAVE_AREA"]/*' />
-public unsafe partial struct WOW64_FLOATING_SAVE_AREA
+public partial struct WOW64_FLOATING_SAVE_AREA
 {
     /// <include file='WOW64_FLOATING_SAVE_AREA.xml' path='doc/member[@name="WOW64_FLOATING_SAVE_AREA.ControlWord"]/*' />
     [NativeTypeName("DWORD")]
@@ -38,9 +40,16 @@ public unsafe partial struct WOW64_FLOATING_SAVE_AREA
 
     /// <include file='WOW64_FLOATING_SAVE_AREA.xml' path='doc/member[@name="WOW64_FLOATING_SAVE_AREA.RegisterArea"]/*' />
     [NativeTypeName("BYTE[80]")]
-    public fixed byte RegisterArea[80];
+    public _RegisterArea_e__FixedBuffer RegisterArea;
 
     /// <include file='WOW64_FLOATING_SAVE_AREA.xml' path='doc/member[@name="WOW64_FLOATING_SAVE_AREA.Cr0NpxState"]/*' />
     [NativeTypeName("DWORD")]
     public uint Cr0NpxState;
+
+    /// <include file='_RegisterArea_e__FixedBuffer.xml' path='doc/member[@name="_RegisterArea_e__FixedBuffer"]/*' />
+    [InlineArray(80)]
+    public partial struct _RegisterArea_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

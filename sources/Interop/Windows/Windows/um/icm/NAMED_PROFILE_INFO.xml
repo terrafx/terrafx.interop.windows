@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NAMED_PROFILE_INFO">
+    <summary>The <b>NAMED_PROFILE_INFO</b> structure is used to store information about a named color profile.</summary>
+  </member>
+  <member name="NAMED_PROFILE_INFO.dwFlags">
+    <summary>Not currently used by the default CMM.</summary>
+  </member>
+  <member name="NAMED_PROFILE_INFO.dwCount">
+    <summary>Total number of named colors in the profile.</summary>
+  </member>
+  <member name="NAMED_PROFILE_INFO.dwCountDevCoordinates">
+    <summary>Total number of device coordinates for each named color.</summary>
+  </member>
+  <member name="NAMED_PROFILE_INFO.szPrefix">
+    <summary>Pointer to a string containing the prefix for each color name.</summary>
+  </member>
+  <member name="NAMED_PROFILE_INFO.szSuffix">
+    <summary>Pointer to a string containing the suffix for each color name.</summary>
+  </member>
+</doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFClockStateSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFClockStateSink*, Guid*, void**, int>)(lpVtbl[0]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFClockStateSink*, uint>)(lpVtbl[1]))((IMFClockStateSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFClockStateSink*, uint>)(lpVtbl[1]))((IMFClockStateSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFClockStateSink*, uint>)(lpVtbl[2]))((IMFClockStateSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFClockStateSink*, uint>)(lpVtbl[2]))((IMFClockStateSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockStart"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IN
     [VtblIndex(3)]
     public HRESULT OnClockStart([NativeTypeName("MFTIME")] long hnsSystemTime, [NativeTypeName("LONGLONG")] long llClockStartOffset)
     {
-        return ((delegate* unmanaged<IMFClockStateSink*, long, long, int>)(lpVtbl[3]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime, llClockStartOffset);
+        return ((delegate* unmanaged[MemberFunction]<IMFClockStateSink*, long, long, int>)(lpVtbl[3]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime, llClockStartOffset);
     }
 
     /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockStop"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IN
     [VtblIndex(4)]
     public HRESULT OnClockStop([NativeTypeName("MFTIME")] long hnsSystemTime)
     {
-        return ((delegate* unmanaged<IMFClockStateSink*, long, int>)(lpVtbl[4]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFClockStateSink*, long, int>)(lpVtbl[4]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
     /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockPause"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IN
     [VtblIndex(5)]
     public HRESULT OnClockPause([NativeTypeName("MFTIME")] long hnsSystemTime)
     {
-        return ((delegate* unmanaged<IMFClockStateSink*, long, int>)(lpVtbl[5]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFClockStateSink*, long, int>)(lpVtbl[5]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
     /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockRestart"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IN
     [VtblIndex(6)]
     public HRESULT OnClockRestart([NativeTypeName("MFTIME")] long hnsSystemTime)
     {
-        return ((delegate* unmanaged<IMFClockStateSink*, long, int>)(lpVtbl[6]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFClockStateSink*, long, int>)(lpVtbl[6]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime);
     }
 
     /// <include file='IMFClockStateSink.xml' path='doc/member[@name="IMFClockStateSink.OnClockSetRate"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IN
     [VtblIndex(7)]
     public HRESULT OnClockSetRate([NativeTypeName("MFTIME")] long hnsSystemTime, float flRate)
     {
-        return ((delegate* unmanaged<IMFClockStateSink*, long, float, int>)(lpVtbl[7]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime, flRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFClockStateSink*, long, float, int>)(lpVtbl[7]))((IMFClockStateSink*)Unsafe.AsPointer(ref this), hnsSystemTime, flRate);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IMFClockStateSink : IMFClockStateSink.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFTIME, LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, long, int> OnClockStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, long, int> OnClockStart;
 
         [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> OnClockStop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> OnClockStop;
 
         [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> OnClockPause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> OnClockPause;
 
         [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> OnClockRestart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> OnClockRestart;
 
         [NativeTypeName("HRESULT (MFTIME, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, float, int> OnClockSetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, float, int> OnClockSetRate;
     }
 }

@@ -3,20 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_LOGOTYPE_AUDIO_INFO">
-    <summary>
-      <para>The <b>CERT_LOGOTYPE_AUDIO_INFO</b> structure contains more detailed information about an audio logotype.</para>
-    </summary>
-    <seealso cref="CERT_LOGOTYPE_AUDIO" />
+    <summary>The <b>CERT_LOGOTYPE_AUDIO_INFO</b> structure contains more detailed information about an audio logotype.</summary>
   </member>
   <member name="CERT_LOGOTYPE_AUDIO_INFO.dwFileSize">
-    <summary>
-      <para>The size, in octets, of the audio.</para>
-    </summary>
+    <summary>The size, in octets, of the audio.</summary>
   </member>
   <member name="CERT_LOGOTYPE_AUDIO_INFO.dwPlayTime">
-    <summary>
-      <para>The length of play time, in milliseconds, of the audio.</para>
-    </summary>
+    <summary>The length of play time, in milliseconds, of the audio.</summary>
   </member>
   <member name="CERT_LOGOTYPE_AUDIO_INFO.dwChannels">
     <summary>
@@ -26,41 +19,43 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>1</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
+          <description>The audio file is monaural.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The audio file is monaural.</para>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The audio file is stereo.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>2</para>
+            <list type="bullet">
+              <listheader>
+                <term>4</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The audio file is stereo.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>4</para>
-          </description>
-          <description>
-            <para>The audio file contains four channels.</para>
-          </description>
-        </item>
+          <description>The audio file contains four channels.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CERT_LOGOTYPE_AUDIO_INFO.dwSampleRate">
-    <summary>
-      <para>The sample rate of the audio, in samples per second. This member is optional and may be zero.</para>
-    </summary>
+    <summary>The sample rate of the audio, in samples per second. This member is optional and may be zero.</summary>
   </member>
   <member name="CERT_LOGOTYPE_AUDIO_INFO.pwszLanguage">
-    <summary>
-      <para>The address of a null-terminated IA5 string that contains the RFC 3066 language identifier that specifies the language of the audio. This member is optional and may be <b>NULL</b>.</para>
-    </summary>
+    <summary>The address of a null-terminated IA5 string that contains the RFC 3066 language identifier that specifies the language of the audio. This member is optional and may be <b>NULL</b>.</summary>
   </member>
 </doc>

@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_ASPECT_SCALING.xml' path='doc/member[@name="D2D1_SVG_ASPECT_SCALING"]/*' />
-public enum D2D1_SVG_ASPECT_SCALING : uint
+public enum D2D1_SVG_ASPECT_SCALING
 {
     /// <include file='D2D1_SVG_ASPECT_SCALING.xml' path='doc/member[@name="D2D1_SVG_ASPECT_SCALING.D2D1_SVG_ASPECT_SCALING_MEET"]/*' />
     D2D1_SVG_ASPECT_SCALING_MEET = 0,
@@ -15,5 +15,5 @@ public enum D2D1_SVG_ASPECT_SCALING : uint
     D2D1_SVG_ASPECT_SCALING_SLICE = 1,
 
     /// <include file='D2D1_SVG_ASPECT_SCALING.xml' path='doc/member[@name="D2D1_SVG_ASPECT_SCALING.D2D1_SVG_ASPECT_SCALING_FORCE_DWORD"]/*' />
-    D2D1_SVG_ASPECT_SCALING_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_ASPECT_SCALING_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

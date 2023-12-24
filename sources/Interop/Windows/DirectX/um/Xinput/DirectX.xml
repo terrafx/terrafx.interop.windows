@@ -3,91 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.XInputEnable">
-    <summary>
-      <para>Sets the reporting state of XInput.</para>
-    </summary>
-    <param name="enable">
-      <para>If enable is <b>FALSE</b>, XInput will only send neutral data in response to <see cref="XInputGetState" /> (all buttons up, axes centered, and triggers at 0). <see cref="XInputSetState" /> calls will be registered but not sent to the device. Sending any value other than <b>FALSE </b> will restore reading and writing functionality to normal.</para>
-    </param>
-    <remarks>
-      <para>This function is meant to be called when an application gains or loses focus (such as via <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-activateapp">WM_ACTIVATEAPP</a>). Using this function, you will not have to change the XInput query loop in your application as neutral data will always be reported if XInput is disabled.</para>
-      <para>In a controller that supports vibration effects:</para>
-      <list type="bullet">
-        <item>
-          <description>Passing <b>FALSE</b> will stop any vibration effects currently playing. In this state, calls to <see cref="XInputSetState" /> will be registered, but not passed to the device.</description>
-        </item>
-        <item>
-          <description>Passing <b>TRUE</b> will pass the last vibration request (even if it is 0) sent to <see cref="XInputSetState" /> to the device.</description>
-        </item>
-      </list>
-      <h3>Platform Requirements</h3>
-      <para>Windows 8 (XInput 1.4), DirectX SDK (XInput 1.3)</para>
-    </remarks>
-    <seealso cref="XINPUT_GAMEPAD" />
-    <seealso cref="XINPUT_STATE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/functions">XInput Functions</seealso>
-    <seealso cref="XInputGetState" />
-    <seealso cref="XInputSetState" />
+    <summary>Sets the reporting state of XInput.</summary>
+    <param name="enable">If enable is <b>FALSE</b>, XInput will only send neutral data in response to <see cref="XInputGetState" /> (all buttons up, axes centered, and triggers at 0). <see cref="XInputSetState" /> calls will be registered but not sent to the device. Sending any value other than <b>FALSE</b> will restore reading and writing functionality to normal.</param>
   </member>
   <member name="DirectX.XInputGetAudioDeviceIds">
-    <summary>
-      <para>Retrieves the sound rendering and sound capture audio device IDs that are associated with the headset connected to the specified controller.</para>
-    </summary>
-    <param name="dwUserIndex">
-      <para>Index of the gamer associated with the device.</para>
-    </param>
-    <param name="pRenderDeviceId">
-      <para>Windows Core Audio device ID string for render (speakers).</para>
-    </param>
-    <param name="pRenderCount">
-      <para>Size, in wide-chars, of the render device ID string buffer.</para>
-    </param>
-    <param name="pCaptureDeviceId">
-      <para>Windows Core Audio device ID string for capture (microphone).</para>
-    </param>
-    <param name="pCaptureCount">
-      <para>Size, in wide-chars, of capture device ID string buffer.</para>
-    </param>
+    <summary>Retrieves the sound rendering and sound capture audio device IDs that are associated with the headset connected to the specified controller.</summary>
+    <param name="dwUserIndex">Index of the gamer associated with the device.</param>
+    <param name="pRenderDeviceId">Windows Core Audio device ID string for render (speakers).</param>
+    <param name="pRenderCount">Size, in wide-chars, of the render device ID string buffer.</param>
+    <param name="pCaptureDeviceId">Windows Core Audio device ID string for capture (microphone).</param>
+    <param name="pCaptureCount">Size, in wide-chars, of capture device ID string buffer.</param>
     <returns>
       <para>If the function successfully retrieves the device IDs for render and capture, the return code is <b>ERROR_SUCCESS</b>.</para>
       <para>If there is no headset connected to the controller, the function will also retrieve <b>ERROR_SUCCESS</b> with <b>NULL</b> as the values for <i>pRenderDeviceId</i> and <i>pCaptureDeviceId</i>.</para>
       <para>If the controller port device is not physically connected, the function will return <b>ERROR_DEVICE_NOT_CONNECTED</b>.</para>
       <para>If the function fails, it will return a valid Win32 error code.</para>
     </returns>
-    <remarks>
-      <para>Callers must allocate the memory for the buffers passed to <b>XInputGetAudioDeviceIds</b>. The resulting strings can be of arbitrary length.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 8 (XInput 1.4)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-apis-in-windows-vista">Core Audio APIs</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/functions">XInput Functions</seealso>
-    <seealso cref="XInputGetDSoundAudioDeviceGuids" />
   </member>
   <member name="DirectX.XInputGetBatteryInformation">
-    <summary>
-      <para>Retrieves the battery type and charge status of a wireless controller.</para>
-    </summary>
-    <param name="dwUserIndex">
-      <para>Index of the signed-in gamer associated with the device. Can be a value in the range 0–XUSER_MAX_COUNT − 1.</para>
-    </param>
-    <param name="devType">
-      <para>Specifies which device associated with this user index should be queried. Must be <b>BATTERY_DEVTYPE_GAMEPAD</b> or <b>BATTERY_DEVTYPE_HEADSET</b>.</para>
-    </param>
-    <param name="pBatteryInformation">
-      <para>Pointer to an <see cref="XINPUT_BATTERY_INFORMATION" /> structure that receives the battery information.</para>
-    </param>
-    <returns>
-      <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/functions">XInput Functions</seealso>
+    <summary>Retrieves the battery type and charge status of a wireless controller.</summary>
+    <param name="dwUserIndex">Index of the signed-in gamer associated with the device. Can be a value in the range 0–XUSER_MAX_COUNT − 1.</param>
+    <param name="devType">Specifies which device associated with this user index should be queried. Must be <b>BATTERY_DEVTYPE_GAMEPAD</b> or <b>BATTERY_DEVTYPE_HEADSET</b>.</param>
+    <param name="pBatteryInformation">Pointer to an <see cref="XINPUT_BATTERY_INFORMATION" /> structure that receives the battery information.</param>
+    <returns>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>.</returns>
   </member>
   <member name="DirectX.XInputGetCapabilities">
-    <summary>
-      <para>Retrieves the capabilities and features of a connected controller.</para>
-    </summary>
-    <param name="dwUserIndex">
-      <para>Index of the user's controller. Can be a value in the range 0–3. For information about how this value is determined and how the value maps to indicators on the controller, see <a href="https://docs.microsoft.com//windows/desktop/xinput/getting-started-with-xinput">Multiple Controllers</a>.</para>
-    </param>
+    <summary>Retrieves the capabilities and features of a connected controller.</summary>
+    <param name="dwUserIndex">Index of the user's controller. Can be a value in the range 0–3. For information about how this value is determined and how the value maps to indicators on the controller, see <a href="https://docs.microsoft.com//windows/desktop/xinput/getting-started-with-xinput">Multiple Controllers</a>.</param>
     <param name="dwFlags">
       <para>Input flags that identify the controller type. If this value is 0, then the capabilities of all controllers connected to the system are returned. Currently, only one value is supported:</para>
       <list type="table">
@@ -95,131 +37,62 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <b>XINPUT_FLAG_GAMEPAD</b>
           </description>
           <description>Limit query to devices of Xbox 360 Controller type.</description>
-        </item>
-      </list>
-      <para>Any value of <i>dwflags</i> other than the above or 0 is illegal and will result in an error break when debugging.</para>
-    </param>
-    <param name="pCapabilities">
-      <para>Pointer to an <see cref="XINPUT_CAPABILITIES" /> structure that receives the controller capabilities.</para>
-    </param>
+        </listheader>
+      </list> <para>Any value of <i>dwflags</i> other than the above or 0 is illegal and will result in an error break when debugging.</para></param>
+    <param name="pCapabilities">Pointer to an <see cref="XINPUT_CAPABILITIES" /> structure that receives the controller capabilities.</param>
     <returns>
       <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>.</para>
       <para>If the controller is not connected, the return value is <b>ERROR_DEVICE_NOT_CONNECTED</b>.</para>
       <para>If the function fails, the return value is an error code defined in WinError.h. The function does not use <i>SetLastError</i> to set the calling thread's last-error code.</para>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  The legacy XINPUT 9.1.0 version (included in Windows Vista and later) always returned a fixed set of capabilities regardless of attached device.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 8 (XInput 1.4), DirectX SDK (XInput 1.3), Windows Vista (XInput 9.1.0)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/functions">XInput Functions</seealso>
-    <seealso cref="XInputGetState" />
-    <seealso cref="XInputSetState" />
   </member>
   <member name="DirectX.XInputGetDSoundAudioDeviceGuids">
-    <summary>
-      <para>Gets the sound rendering and sound capture device GUIDs that are associated with the headset connected to the specified controller.</para>
-    </summary>
-    <param name="dwUserIndex">
-      <para>[in] Index of the user's controller. It can be a value in the range 0–3. For information about how this value is determined and how the value maps to indicators on the controller, see <a href="https://docs.microsoft.com//windows/desktop/xinput/getting-started-with-xinput">Multiple Controllers</a>.</para>
-    </param>
-    <param name="pDSoundRenderGuid">
-      <para>[out] Pointer that receives the GUID of the headset sound rendering device.</para>
-    </param>
-    <param name="pDSoundCaptureGuid">
-      <para>[out] Pointer that receives the GUID of the headset sound capture device.</para>
-    </param>
+    <summary>Gets the sound rendering and sound capture device GUIDs that are associated with the headset connected to the specified controller.</summary>
+    <param name="dwUserIndex">[in] Index of the user's controller. It can be a value in the range 0–3. For information about how this value is determined and how the value maps to indicators on the controller, see <a href="https://docs.microsoft.com//windows/desktop/xinput/getting-started-with-xinput">Multiple Controllers</a>.</param>
+    <param name="pDSoundRenderGuid">[out] Pointer that receives the GUID of the headset sound rendering device.</param>
+    <param name="pDSoundCaptureGuid">[out] Pointer that receives the GUID of the headset sound capture device.</param>
     <returns>
       <para>If the function successfully retrieves the device IDs for render and capture, the return code is <b>ERROR_SUCCESS</b>.</para>
       <para>If there is no headset connected to the controller, the function also retrieves <b>ERROR_SUCCESS</b> with <b>GUID_NULL</b> as the values for <i>pDSoundRenderGuid</i> and <i>pDSoundCaptureGuid</i>.</para>
       <para>If the controller port device is not physically connected, the function returns <b>ERROR_DEVICE_NOT_CONNECTED</b>.</para>
       <para>If the function fails, it returns a valid Win32 error code.</para>
     </returns>
-    <remarks>
-      <para>Use of legacy <a href="https://docs.microsoft.com//previous-versions/windows/desktop/ee416960(v=vs.85)">DirectSound</a> is not recommended, and DirectSound is not available for Windows Store apps.</para>
-      <para>
-        <b>Note</b>  <b>XInputGetDSoundAudioDeviceGuids</b> is deprecated because it isn't supported by Windows 8 (XInput 1.4).</para>
-      <h3>Platform Requirements</h3>
-      <para>DirectX SDK (XInput 1.3), Windows Vista (XInput 9.1.0)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/functions">XInput Functions</seealso>
-    <seealso cref="XInputGetState" />
   </member>
   <member name="DirectX.XInputGetKeystroke">
-    <summary>
-      <para>Retrieves a gamepad input event.</para>
-    </summary>
-    <param name="dwUserIndex">
-      <para>[in] Index of the signed-in gamer associated with the device. Can be a value in the range 0–XUSER_MAX_COUNT − 1, or XUSER_INDEX_ANY to fetch the next available input event from any user.</para>
-    </param>
-    <param name="dwReserved">
-      <para>[in] Reserved</para>
-    </param>
-    <param name="pKeystroke">
-      <para>[out] Pointer to an <see cref="XINPUT_KEYSTROKE" /> structure that receives an input event.</para>
-    </param>
+    <summary>Retrieves a gamepad input event.</summary>
+    <param name="dwUserIndex">[in] Index of the signed-in gamer associated with the device. Can be a value in the range 0–XUSER_MAX_COUNT − 1, or XUSER_INDEX_ANY to fetch the next available input event from any user.</param>
+    <param name="dwReserved">[in] Reserved</param>
+    <param name="pKeystroke">[out] Pointer to an <see cref="XINPUT_KEYSTROKE" /> structure that receives an input event.</param>
     <returns>
       <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>.</para>
       <para>If no new keys have been pressed, the return value is <b>ERROR_EMPTY</b>.</para>
       <para>If the controller is not connected or the user has not activated it, the return value is <b>ERROR_DEVICE_NOT_CONNECTED</b>. See the Remarks section below.</para>
       <para>If the function fails, the return value is an error code defined in Winerror.h. The function does not use <see cref="SetLastError" /> to set the calling thread's last-error code.</para>
     </returns>
-    <remarks>
-      <para>Wireless controllers are not considered active upon system startup, and calls to any of the <i>XInput</i> functions before a wireless controller is made active return <b>ERROR_DEVICE_NOT_CONNECTED</b>. Game titles must examine the return code and be prepared to handle this condition. Wired controllers are automatically activated when they are inserted. Wireless controllers are activated when the user presses the START or Xbox Guide button to power on the controller.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 8 (XInput 1.4), DirectX SDK (XInput 1.3)</para>
-    </remarks>
-    <seealso cref="XINPUT_KEYSTROKE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/functions">XInput Functions</seealso>
   </member>
   <member name="DirectX.XInputGetState">
-    <summary>
-      <para>Retrieves the current state of the specified controller.</para>
-    </summary>
-    <param name="dwUserIndex">
-      <para>Index of the user's controller. Can be a value from 0 to 3. For information about how this value is determined and how the value maps to indicators on the controller, see <a href="https://docs.microsoft.com//windows/desktop/xinput/getting-started-with-xinput">Multiple Controllers</a>.</para>
-    </param>
-    <param name="pState">
-      <para>Pointer to an <see cref="XINPUT_STATE" /> structure that receives the current state of the controller.</para>
-    </param>
+    <summary>Retrieves the current state of the specified controller.</summary>
+    <param name="dwUserIndex">Index of the user's controller. Can be a value from 0 to 3. For information about how this value is determined and how the value maps to indicators on the controller, see <a href="https://docs.microsoft.com//windows/desktop/xinput/getting-started-with-xinput">Multiple Controllers</a>.</param>
+    <param name="pState">Pointer to an <see cref="XINPUT_STATE" /> structure that receives the current state of the controller.</param>
     <returns>
       <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>.</para>
       <para>If the controller is not connected, the return value is <b>ERROR_DEVICE_NOT_CONNECTED</b>.</para>
       <para>If the function fails, the return value is an error code defined in Winerror.h. The function does not use <b>SetLastError</b> to set the calling thread's last-error code.</para>
     </returns>
-    <remarks>
-      <para>When <b>XInputGetState</b> is used to retrieve controller data, the left and right triggers are each reported separately. For legacy reasons, when DirectInput retrieves controller data, the two triggers share the same axis. The legacy behavior is noticeable in the current Game Device Control Panel, which uses DirectInput for controller state.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 8 (XInput 1.4), DirectX SDK (XInput 1.3), Windows Vista (XInput 9.1.0)</para>
-    </remarks>
-    <seealso cref="XINPUT_GAMEPAD" />
-    <seealso cref="XINPUT_STATE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/functions">XInput Functions</seealso>
-    <seealso cref="XInputSetState" />
   </member>
   <member name="DirectX.XInputSetState">
-    <summary>
-      <para>Sends data to a connected controller. This function is used to activate the vibration function of a controller.</para>
-    </summary>
-    <param name="dwUserIndex">
-      <para>Index of the user's controller. Can be a value from 0 to 3. For information about how this value is determined and how the value maps to indicators on the controller, see <a href="https://docs.microsoft.com//windows/desktop/xinput/getting-started-with-xinput">Multiple Controllers</a>.</para>
-    </param>
-    <param name="pVibration">
-      <para>Pointer to an <see cref="XINPUT_VIBRATION" /> structure containing the vibration information to send to the controller.</para>
-    </param>
+    <summary>Sends data to a connected controller. This function is used to activate the vibration function of a controller.</summary>
+    <param name="dwUserIndex">Index of the user's controller. Can be a value from 0 to 3. For information about how this value is determined and how the value maps to indicators on the controller, see <a href="https://docs.microsoft.com//windows/desktop/xinput/getting-started-with-xinput">Multiple Controllers</a>.</param>
+    <param name="pVibration">Pointer to an <see cref="XINPUT_VIBRATION" /> structure containing the vibration information to send to the controller.</param>
     <returns>
       <para>If the function succeeds, the return value is <b>ERROR_SUCCESS</b>.</para>
       <para>If the controller is not connected, the return value is <b>ERROR_DEVICE_NOT_CONNECTED</b>.</para>
       <para>If the function fails, the return value is an error code defined in WinError.h. The function does not use <i>SetLastError</i> to set the calling thread's last-error code.</para>
     </returns>
-    <seealso cref="XINPUT_VIBRATION" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xinput/functions">XInput Functions</seealso>
-    <seealso cref="XInputGetState" />
   </member>
 </doc>

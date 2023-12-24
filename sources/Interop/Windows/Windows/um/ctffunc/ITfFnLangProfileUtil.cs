@@ -25,7 +25,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFnLangProfileUtil*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLangProfileUtil*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFnLangProfileUtil*, uint>)(lpVtbl[1]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLangProfileUtil*, uint>)(lpVtbl[1]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFnLangProfileUtil*, uint>)(lpVtbl[2]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLangProfileUtil*, uint>)(lpVtbl[2]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort**, int>)(lpVtbl[3]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLangProfileUtil*, char**, int>)(lpVtbl[3]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnLangProfileUtil.xml' path='doc/member[@name="ITfFnLangProfileUtil.RegisterActiveProfiles"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
     [VtblIndex(4)]
     public HRESULT RegisterActiveProfiles()
     {
-        return ((delegate* unmanaged<ITfFnLangProfileUtil*, int>)(lpVtbl[4]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLangProfileUtil*, int>)(lpVtbl[4]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfFnLangProfileUtil.xml' path='doc/member[@name="ITfFnLangProfileUtil.IsProfileAvailableForLang"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
     [VtblIndex(5)]
     public HRESULT IsProfileAvailableForLang([NativeTypeName("LANGID")] ushort langid, BOOL* pfAvailable)
     {
-        return ((delegate* unmanaged<ITfFnLangProfileUtil*, ushort, BOOL*, int>)(lpVtbl[5]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), langid, pfAvailable);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLangProfileUtil*, ushort, BOOL*, int>)(lpVtbl[5]))((ITfFnLangProfileUtil*)Unsafe.AsPointer(ref this), langid, pfAvailable);
     }
 
     public interface Interface : ITfFunction.Interface
@@ -83,21 +83,21 @@ public unsafe partial struct ITfFnLangProfileUtil : ITfFnLangProfileUtil.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RegisterActiveProfiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RegisterActiveProfiles;
 
         [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, BOOL*, int> IsProfileAvailableForLang;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, BOOL*, int> IsProfileAvailableForLang;
     }
 }

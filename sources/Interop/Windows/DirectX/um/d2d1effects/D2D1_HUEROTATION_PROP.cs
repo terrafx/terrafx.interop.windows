@@ -6,11 +6,11 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_HUEROTATION_PROP.xml' path='doc/member[@name="D2D1_HUEROTATION_PROP"]/*' />
-public enum D2D1_HUEROTATION_PROP : uint
+public enum D2D1_HUEROTATION_PROP
 {
     /// <include file='D2D1_HUEROTATION_PROP.xml' path='doc/member[@name="D2D1_HUEROTATION_PROP.D2D1_HUEROTATION_PROP_ANGLE"]/*' />
     D2D1_HUEROTATION_PROP_ANGLE = 0,
 
     /// <include file='D2D1_HUEROTATION_PROP.xml' path='doc/member[@name="D2D1_HUEROTATION_PROP.D2D1_HUEROTATION_PROP_FORCE_DWORD"]/*' />
-    D2D1_HUEROTATION_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_HUEROTATION_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

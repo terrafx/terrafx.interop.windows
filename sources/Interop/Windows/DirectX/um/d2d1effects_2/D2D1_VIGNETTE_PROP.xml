@@ -3,29 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_VIGNETTE_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/vignette-effect">Vignette effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/vignette-effect">Vignette effect</a>.</summary>
   </member>
   <member name="D2D1_VIGNETTE_PROP.D2D1_VIGNETTE_PROP_COLOR">
-    <summary>
-      <para>The D2D1_VIGNETTE_PROP_COLOR property is an RGB triplet that specifies the color to fade the image's edges to. The default color is black.</para>
-    </summary>
+    <summary>The D2D1_VIGNETTE_PROP_COLOR property is an RGB triplet that specifies the color to fade the image's edges to. The default color is black.</summary>
   </member>
   <member name="D2D1_VIGNETTE_PROP.D2D1_VIGNETTE_PROP_TRANSITION_SIZE">
-    <summary>
-      <para>The D2D1_VIGNETTE_PROP_TRANSITION_SIZE property is a float value that specifies the size of the vignette region as a percentage of the full image region.
-A size of 0 means the unfaded region is the entire image, while a size of 1 means the faded region is the entire source image.
-The allowed range is 0.0 to 1.0.  The default value is 0.1.</para>
-    </summary>
+    <summary>The D2D1_VIGNETTE_PROP_TRANSITION_SIZE property is a float value that specifies the size of the vignette region as a percentage of the full image region.<br />A size of 0 means the unfaded region is the entire image, while a size of 1 means the faded region is the entire source image. The allowed range is 0.0 to 1.0. The default value is 0.1.</summary>
   </member>
   <member name="D2D1_VIGNETTE_PROP.D2D1_VIGNETTE_PROP_STRENGTH">
-    <summary>
-      <para>The D2D1_VIGNETTE_PROP_STRENGTH property is a float value that specifies how much the vignette color bleeds in for a given transition size.
-The allowed range is 0.0 to 1.0.  The default value is 0.5.</para>
-    </summary>
+    <summary>The D2D1_VIGNETTE_PROP_STRENGTH property is a float value that specifies how much the vignette color bleeds in for a given transition size. The allowed range is 0.0 to 1.0. The default value is 0.5.</summary>
   </member>
-  <member name="D2D1_VIGNETTE_PROP.D2D1_VIGNETTE_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_VIGNETTE_PROP.D2D1_VIGNETTE_PROP_FORCE_DWORD"></member>
 </doc>

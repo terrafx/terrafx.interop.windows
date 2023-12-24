@@ -9,7 +9,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_CHANGE_TYPE.xml' path='doc/member[@name="D2D1_CHANGE_TYPE"]/*' />
 [Flags]
-public enum D2D1_CHANGE_TYPE : uint
+public enum D2D1_CHANGE_TYPE
 {
     /// <include file='D2D1_CHANGE_TYPE.xml' path='doc/member[@name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_NONE"]/*' />
     D2D1_CHANGE_TYPE_NONE = 0,
@@ -24,5 +24,5 @@ public enum D2D1_CHANGE_TYPE : uint
     D2D1_CHANGE_TYPE_GRAPH = 3,
 
     /// <include file='D2D1_CHANGE_TYPE.xml' path='doc/member[@name="D2D1_CHANGE_TYPE.D2D1_CHANGE_TYPE_FORCE_DWORD"]/*' />
-    D2D1_CHANGE_TYPE_FORCE_DWORD = 0xffffffff,
+    D2D1_CHANGE_TYPE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

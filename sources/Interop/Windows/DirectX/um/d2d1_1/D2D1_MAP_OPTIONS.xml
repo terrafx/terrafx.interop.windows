@@ -3,36 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_MAP_OPTIONS">
-    <summary>
-      <para>Specifies how the memory to be mapped from the corresponding <see cref="ID2D1Bitmap1" /> should be treated.</para>
-    </summary>
-    <remarks>
-      <para>The <b>D2D1_MAP_OPTIONS_READ</b> option can be used only if the bitmap was created with the <b>D2D1_BITMAP_OPTIONS_CPU_READ</b> flag.</para>
-      <para>These flags will be not be able to be used on bitmaps created by the <see cref="ID2D1DeviceContext" />. However, the ID2D1SourceTransform will receive bitmaps for which these flags are valid.</para>
-      <para>
-        <b>D2D1_MAP_OPTIONS_DISCARD</b> can only be used with <b>D2D1_MAP_OPTIONS_WRITE</b>.  Both of these options are only available through the effect author API, not through the Direct2D rendering API.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap1.Map" />
+    <summary>Specifies how the memory to be mapped from the corresponding <see cref="ID2D1Bitmap1" /> should be treated.</summary>
   </member>
-  <member name="D2D1_MAP_OPTIONS.D2D1_MAP_OPTIONS_NONE">
-    <summary></summary>
-  </member>
+  <member name="D2D1_MAP_OPTIONS.D2D1_MAP_OPTIONS_NONE"></member>
   <member name="D2D1_MAP_OPTIONS.D2D1_MAP_OPTIONS_READ">
-    <summary>
-      <para>Allow CPU Read access.</para>
-    </summary>
+    <summary>Allow CPU Read access.</summary>
   </member>
   <member name="D2D1_MAP_OPTIONS.D2D1_MAP_OPTIONS_WRITE">
-    <summary>
-      <para>Allow CPU Write access.</para>
-    </summary>
+    <summary>Allow CPU Write access.</summary>
   </member>
   <member name="D2D1_MAP_OPTIONS.D2D1_MAP_OPTIONS_DISCARD">
-    <summary>
-      <para>Discard the previous contents of the resource when it is mapped.</para>
-    </summary>
+    <summary>Discard the previous contents of the resource when it is mapped.</summary>
   </member>
-  <member name="D2D1_MAP_OPTIONS.D2D1_MAP_OPTIONS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_MAP_OPTIONS.D2D1_MAP_OPTIONS_FORCE_DWORD"></member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class ICredentialProviderEventsTests
     {
         Assert.That(typeof(ICredentialProviderEvents).GUID, Is.EqualTo(IID_ICredentialProviderEvents));
     }
-
-    /// <summary>Validates that the <see cref="ICredentialProviderEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICredentialProviderEvents>(), Is.EqualTo(sizeof(ICredentialProviderEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="ICredentialProviderEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICredentialProviderEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICredentialProviderEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICredentialProviderEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICredentialProviderEvents), Is.EqualTo(4));
-        }
-    }
 }

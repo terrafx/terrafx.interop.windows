@@ -21,32 +21,4 @@ public static unsafe partial class IMFCaptureSinkTests
     {
         Assert.That(typeof(IMFCaptureSink).GUID, Is.EqualTo(IID_IMFCaptureSink));
     }
-
-    /// <summary>Validates that the <see cref="IMFCaptureSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFCaptureSink>(), Is.EqualTo(sizeof(IMFCaptureSink)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFCaptureSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFCaptureSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFCaptureSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFCaptureSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFCaptureSink), Is.EqualTo(4));
-        }
-    }
 }

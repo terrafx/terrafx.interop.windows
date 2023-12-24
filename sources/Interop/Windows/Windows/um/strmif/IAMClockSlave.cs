@@ -25,7 +25,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMClockSlave*, Guid*, void**, int>)(lpVtbl[0]))((IAMClockSlave*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMClockSlave*, Guid*, void**, int>)(lpVtbl[0]))((IAMClockSlave*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMClockSlave*, uint>)(lpVtbl[1]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMClockSlave*, uint>)(lpVtbl[1]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMClockSlave*, uint>)(lpVtbl[2]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMClockSlave*, uint>)(lpVtbl[2]))((IAMClockSlave*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMClockSlave.xml' path='doc/member[@name="IAMClockSlave.SetErrorTolerance"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT SetErrorTolerance([NativeTypeName("DWORD")] uint dwTolerance)
     {
-        return ((delegate* unmanaged<IAMClockSlave*, uint, int>)(lpVtbl[3]))((IAMClockSlave*)Unsafe.AsPointer(ref this), dwTolerance);
+        return ((delegate* unmanaged[MemberFunction]<IAMClockSlave*, uint, int>)(lpVtbl[3]))((IAMClockSlave*)Unsafe.AsPointer(ref this), dwTolerance);
     }
 
     /// <include file='IAMClockSlave.xml' path='doc/member[@name="IAMClockSlave.GetErrorTolerance"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetErrorTolerance([NativeTypeName("DWORD *")] uint* pdwTolerance)
     {
-        return ((delegate* unmanaged<IAMClockSlave*, uint*, int>)(lpVtbl[4]))((IAMClockSlave*)Unsafe.AsPointer(ref this), pdwTolerance);
+        return ((delegate* unmanaged[MemberFunction]<IAMClockSlave*, uint*, int>)(lpVtbl[4]))((IAMClockSlave*)Unsafe.AsPointer(ref this), pdwTolerance);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAMClockSlave : IAMClockSlave.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetErrorTolerance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetErrorTolerance;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetErrorTolerance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetErrorTolerance;
     }
 }

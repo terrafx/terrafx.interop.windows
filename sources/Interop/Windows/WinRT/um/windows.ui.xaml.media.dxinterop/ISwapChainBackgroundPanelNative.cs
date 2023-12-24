@@ -29,7 +29,7 @@ public unsafe partial struct ISwapChainBackgroundPanelNative : ISwapChainBackgro
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISwapChainBackgroundPanelNative*, Guid*, void**, int>)(lpVtbl[0]))((ISwapChainBackgroundPanelNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISwapChainBackgroundPanelNative*, Guid*, void**, int>)(lpVtbl[0]))((ISwapChainBackgroundPanelNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -38,7 +38,7 @@ public unsafe partial struct ISwapChainBackgroundPanelNative : ISwapChainBackgro
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISwapChainBackgroundPanelNative*, uint>)(lpVtbl[1]))((ISwapChainBackgroundPanelNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISwapChainBackgroundPanelNative*, uint>)(lpVtbl[1]))((ISwapChainBackgroundPanelNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -47,7 +47,7 @@ public unsafe partial struct ISwapChainBackgroundPanelNative : ISwapChainBackgro
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISwapChainBackgroundPanelNative*, uint>)(lpVtbl[2]))((ISwapChainBackgroundPanelNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISwapChainBackgroundPanelNative*, uint>)(lpVtbl[2]))((ISwapChainBackgroundPanelNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISwapChainBackgroundPanelNative.xml' path='doc/member[@name="ISwapChainBackgroundPanelNative.SetSwapChain"]/*' />
@@ -55,7 +55,7 @@ public unsafe partial struct ISwapChainBackgroundPanelNative : ISwapChainBackgro
     [VtblIndex(3)]
     public HRESULT SetSwapChain(IDXGISwapChain* swapChain)
     {
-        return ((delegate* unmanaged<ISwapChainBackgroundPanelNative*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainBackgroundPanelNative*)Unsafe.AsPointer(ref this), swapChain);
+        return ((delegate* unmanaged[MemberFunction]<ISwapChainBackgroundPanelNative*, IDXGISwapChain*, int>)(lpVtbl[3]))((ISwapChainBackgroundPanelNative*)Unsafe.AsPointer(ref this), swapChain);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,15 +68,15 @@ public unsafe partial struct ISwapChainBackgroundPanelNative : ISwapChainBackgro
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDXGISwapChain *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDXGISwapChain*, int> SetSwapChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDXGISwapChain*, int> SetSwapChain;
     }
 }

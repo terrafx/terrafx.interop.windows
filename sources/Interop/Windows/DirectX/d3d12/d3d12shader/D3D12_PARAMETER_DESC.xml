@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_PARAMETER_DESC">
+    <summary>Describes a function parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.Name">
+    <summary>The name of the function parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.SemanticName">
+    <summary>The HLSL <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-semantics">semantic</a> that is associated with this function parameter. This name includes the index, for example, SV_Target[n].</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.Type">
+    <summary>A <see cref="D3D_SHADER_VARIABLE_TYPE" />-typed value that identifies the variable type for the parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.Class">
+    <summary>A <see cref="D3D_SHADER_VARIABLE_CLASS" />-typed value that identifies the variable class for the parameter as one of scalar, vector, matrix, object, and so on.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.Rows">
+    <summary>The number of rows for a matrix parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.Columns">
+    <summary>The number of columns for a matrix parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.InterpolationMode">
+    <summary>A <see cref="D3D_INTERPOLATION_MODE" />-typed value that identifies the interpolation mode for the parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.Flags">
+    <summary>A combination of <see cref="D3D_PARAMETER_FLAGS" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies semantic flags for the parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.FirstInRegister">
+    <summary>The first input register for this parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.FirstInComponent">
+    <summary>The first input register component for this parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.FirstOutRegister">
+    <summary>The first output register for this parameter.</summary>
+  </member>
+  <member name="D3D12_PARAMETER_DESC.FirstOutComponent">
+    <summary>The first output register component for this parameter.</summary>
+  </member>
+</doc>

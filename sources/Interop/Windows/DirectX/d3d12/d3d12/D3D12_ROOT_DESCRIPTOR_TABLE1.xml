@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_ROOT_DESCRIPTOR_TABLE1">
+    <summary>Describes the root signature 1.1 layout of a descriptor table as a collection of descriptor ranges that are all relative to a single base descriptor handle.</summary>
+  </member>
+  <member name="D3D12_ROOT_DESCRIPTOR_TABLE1.NumDescriptorRanges">
+    <summary>The number of descriptor ranges in the table layout.</summary>
+  </member>
+  <member name="D3D12_ROOT_DESCRIPTOR_TABLE1.pDescriptorRanges">
+    <summary>An array of <see cref="D3D12_DESCRIPTOR_RANGE1" /> structures that describe the descriptor ranges.</summary>
+  </member>
+</doc>

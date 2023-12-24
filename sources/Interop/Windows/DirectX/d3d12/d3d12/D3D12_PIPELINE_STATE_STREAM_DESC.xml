@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_PIPELINE_STATE_STREAM_DESC">
+    <summary>Describes a pipeline state stream.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_STREAM_DESC.SizeInBytes">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//cpp/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>Specifies the size of the opaque data structure pointed to by the pPipelineStateSubobjectStream member, in bytes.</para>
+    </summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_STREAM_DESC.pPipelineStateSubobjectStream">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//cpp/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In_reads</i>(<i>Inexpressible</i>("Dependentonsizeofsubobjects"))</code></para>
+      <para>Specifies the address of a data structure that describes as a bytestream an arbitrary pipeline state subobject.</para>
+    </summary>
+  </member>
+</doc>

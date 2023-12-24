@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_NAME_INFO">
-    <summary>
-      <para>The <b>CERT_NAME_INFO</b> structure contains subject or issuer names. The information is represented as an array of
-<see cref="CERT_RDN" /> structures.</para>
-    </summary>
-    <seealso cref="CERT_RDN" />
-    <seealso cref="CryptDecodeObject" />
-    <seealso cref="CryptEncodeObject" />
+    <summary>The <b>CERT_NAME_INFO</b> structure contains subject or issuer names. The information is represented as an array of<see cref="CERT_RDN" /> structures.</summary>
   </member>
   <member name="CERT_NAME_INFO.cRDN">
-    <summary>
-      <para>Number of elements in the <b>rgRDN</b> array.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgRDN</b> array.</summary>
   </member>
   <member name="CERT_NAME_INFO.rgRDN">
-    <summary>
-      <para>Array of pointers to
-<see cref="CERT_RDN" /> structures.</para>
-    </summary>
+    <summary>Array of pointers to<see cref="CERT_RDN" /> structures.</summary>
   </member>
 </doc>

@@ -3,58 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1InkStyle.GetNibShape">
-    <summary>
-      <para>Retrieves the pre-transform nib shape for this style.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_INK_NIB_SHAPE" /></b></para>
-      <para>Returns the pre-transform nib shape for this style.</para>
-    </returns>
-    <seealso cref="ID2D1InkStyle" />
+    <summary>Retrieves the pre-transform nib shape for this style.</summary>
+    <returns>Returns the pre-transform nib shape for this style.</returns>
   </member>
   <member name="ID2D1InkStyle.GetNibTransform">
-    <summary>
-      <para>Retrieves the transform to be applied to this style's nib shape.</para>
-    </summary>
-    <param name="transform">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>When this method returns, contains a pointer to the transform to be applied to this style's nib shape.</para>
-    </param>
-    <seealso cref="ID2D1InkStyle" />
+    <summary>Retrieves the transform to be applied to this style's nib shape.</summary>
+    <param name="transform">When this method returns, contains a pointer to the transform to be applied to this style's nib shape.</param>
   </member>
   <member name="ID2D1InkStyle.SetNibShape">
-    <summary>
-      <para>Sets the pre-transform nib shape for this style.</para>
-    </summary>
-    <param name="nibShape">
-      <para>Type: <b><see cref="D2D1_INK_NIB_SHAPE" /></b></para>
-      <para>The pre-transform nib shape to use in this style.</para>
-    </param>
-    <seealso cref="ID2D1InkStyle" />
+    <summary>Sets the pre-transform nib shape for this style.</summary>
+    <param name="nibShape">The pre-transform nib shape to use in this style.</param>
   </member>
   <member name="ID2D1InkStyle.SetNibTransform">
-    <summary>
-      <para>Sets the transform to apply to this style's nib shape.</para>
-    </summary>
-    <param name="transform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transform to apply to this style’s nib shape. Note that the translation components of the transform matrix are ignored for the purposes of rendering.</para>
-    </param>
-    <seealso cref="ID2D1InkStyle" />
+    <summary>Sets the transform to apply to this style's nib shape.</summary>
+    <param name="transform">The transform to apply to this style’s nib shape. Note that the translation components of the transform matrix are ignored for the purposes of rendering.</param>
   </member>
   <member name="ID2D1InkStyle.SetNibTransform">
-    <summary>
-      <para>Sets the transform to apply to this style's nib shape.</para>
-    </summary>
-    <param name="transform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transform to apply to this style’s nib shape. Note that the translation components of the transform matrix are ignored for the purposes of rendering.</para>
-    </param>
-    <seealso cref="ID2D1InkStyle" />
+    <summary>Sets the transform to apply to this style's nib shape.</summary>
+    <param name="transform">The transform to apply to this style’s nib shape. Note that the translation components of the transform matrix are ignored for the purposes of rendering.</param>
   </member>
   <member name="ID2D1InkStyle">
-    <summary>
-      <para>Represents a collection of style properties to be used by methods like <see cref="ID2D1DeviceContext2.DrawInk" /> when rendering ink. The ink style defines the nib (pen tip) shape and transform.</para>
-    </summary>
+    <summary>Represents a collection of style properties to be used by methods like <see cref="ID2D1DeviceContext2.DrawInk" /> when rendering ink. The ink style defines the nib (pen tip) shape and transform.</summary>
   </member>
 </doc>

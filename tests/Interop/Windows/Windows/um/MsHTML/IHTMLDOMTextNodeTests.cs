@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLDOMTextNodeTests
     {
         Assert.That(typeof(IHTMLDOMTextNode).GUID, Is.EqualTo(IID_IHTMLDOMTextNode));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLDOMTextNode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLDOMTextNode>(), Is.EqualTo(sizeof(IHTMLDOMTextNode)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLDOMTextNode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLDOMTextNode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLDOMTextNode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLDOMTextNode), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLDOMTextNode), Is.EqualTo(4));
-        }
-    }
 }

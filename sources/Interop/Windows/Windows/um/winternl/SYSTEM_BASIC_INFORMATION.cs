@@ -8,11 +8,11 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SYSTEM_BASIC_INFORMATION.xml' path='doc/member[@name="SYSTEM_BASIC_INFORMATION"]/*' />
-public unsafe partial struct SYSTEM_BASIC_INFORMATION
+public partial struct SYSTEM_BASIC_INFORMATION
 {
     /// <include file='SYSTEM_BASIC_INFORMATION.xml' path='doc/member[@name="SYSTEM_BASIC_INFORMATION.Reserved1"]/*' />
     [NativeTypeName("BYTE[24]")]
-    public fixed byte Reserved1[24];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='SYSTEM_BASIC_INFORMATION.xml' path='doc/member[@name="SYSTEM_BASIC_INFORMATION.Reserved2"]/*' />
     [NativeTypeName("PVOID[4]")]
@@ -21,6 +21,13 @@ public unsafe partial struct SYSTEM_BASIC_INFORMATION
     /// <include file='SYSTEM_BASIC_INFORMATION.xml' path='doc/member[@name="SYSTEM_BASIC_INFORMATION.NumberOfProcessors"]/*' />
     [NativeTypeName("CCHAR")]
     public sbyte NumberOfProcessors;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(24)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
 
     /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
     public unsafe partial struct _Reserved2_e__FixedBuffer

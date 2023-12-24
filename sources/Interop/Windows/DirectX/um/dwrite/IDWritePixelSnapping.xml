@@ -3,48 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWritePixelSnapping.GetCurrentTransform">
-    <summary>
-      <para>Gets a transform that maps abstract coordinates to DIPs.</para>
-    </summary>
-    <param name="clientDrawingContext">
-      <para>Type: <b>void*</b></para>
-      <para>The drawing context passed to <see cref="IDWriteTextLayout.Draw" />.</para>
-    </param>
-    <param name="transform">
-      <para>Type: <b><see cref="DWRITE_MATRIX" />*</b></para>
-      <para>When this method returns, contains a structure which has transform information for  pixel snapping.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWritePixelSnapping" />
+    <summary>Gets a transform that maps abstract coordinates to DIPs.</summary>
+    <param name="clientDrawingContext">The drawing context passed to <see cref="IDWriteTextLayout.Draw" />.</param>
+    <param name="transform">When this method returns, contains a structure which has transform information for pixel snapping.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWritePixelSnapping.GetPixelsPerDip">
-    <summary>
-      <para>Gets the number of physical pixels per DIP.</para>
-    </summary>
-    <param name="clientDrawingContext">
-      <para>Type: <b>void*</b></para>
-      <para>The drawing context passed to <see cref="IDWriteTextLayout.Draw" />.</para>
-    </param>
-    <param name="pixelsPerDip">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>When this method returns, contains the number of physical pixels per DIP.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Because a DIP (device-independent pixel) is 1/96 inch,
-the <i>pixelsPerDip</i> value is the number of logical pixels per inch divided by 96.</para>
-    </remarks>
-    <seealso cref="IDWritePixelSnapping" />
+    <summary>Gets the number of physical pixels per DIP.</summary>
+    <param name="clientDrawingContext">The drawing context passed to <see cref="IDWriteTextLayout.Draw" />.</param>
+    <param name="pixelsPerDip">When this method returns, contains the number of physical pixels per DIP.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWritePixelSnapping">
-    <summary>
-      <para>Defines the pixel snapping properties such as pixels per DIP(device-independent pixel) and the current transform matrix of a text renderer.</para>
-    </summary>
+    <summary>Defines the pixel snapping properties such as pixels per DIP(device-independent pixel) and the current transform matrix of a text renderer.</summary>
   </member>
 </doc>

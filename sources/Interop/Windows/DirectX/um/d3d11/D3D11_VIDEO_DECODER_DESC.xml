@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_DECODER_DESC">
-    <summary>
-      <para>Describes a video stream for a Microsoft Direct3D 11 video decoder or video processor.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Describes a video stream for a Microsoft Direct3D 11 video decoder or video processor.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_DESC.Guid">
-    <summary>
-      <para>The decoding profile. To get the list of profiles supported by the device, call the <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" /> method.</para>
-    </summary>
+    <summary>The decoding profile. To get the list of profiles supported by the device, call the <see cref="ID3D11VideoDevice.GetVideoDecoderProfile" /> method.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_DESC.SampleWidth">
-    <summary>
-      <para>The width of the video frame, in pixels.</para>
-    </summary>
+    <summary>The width of the video frame, in pixels.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_DESC.SampleHeight">
-    <summary>
-      <para>The height of the video frame, in pixels.</para>
-    </summary>
+    <summary>The height of the video frame, in pixels.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_DESC.OutputFormat">
-    <summary>
-      <para>The output surface format, specified as a <see cref="DXGI_FORMAT" /> value.</para>
-    </summary>
+    <summary>The output surface format, specified as a <see cref="DXGI_FORMAT" /> value.</summary>
   </member>
 </doc>

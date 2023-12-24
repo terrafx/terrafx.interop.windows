@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SECURITY_TIMESTAMP_USAGE">
-    <summary>
-      <para>With message security and mixed-mode security, this defines when a
-timestamp element should be generated and demanded in the WS-Security
-header.</para>
-    </summary>
+    <summary>With message security and mixed-mode security, this defines when a timestamp element should be generated and demanded in the WS-Security header.</summary>
   </member>
   <member name="WS_SECURITY_TIMESTAMP_USAGE.WS_SECURITY_TIMESTAMP_USAGE_ALWAYS">
-    <summary>
-      <para>Always generate a timestamp in each outgoing message and demand a
-timestamp be present in each incoming message, whether those messages
-are requests or replies.</para>
-    </summary>
+    <summary>Always generate a timestamp in each outgoing message and demand a timestamp be present in each incoming message, whether those messages are requests or replies.</summary>
   </member>
   <member name="WS_SECURITY_TIMESTAMP_USAGE.WS_SECURITY_TIMESTAMP_USAGE_NEVER">
-    <summary>
-      <para>Do not use timestamps in requests or replies.  It is an error to
-specify this value when a mixed-mode message signature is required in
-the WS-Security header.</para>
-    </summary>
+    <summary>Do not use timestamps in requests or replies. It is an error to specify this value when a mixed-mode message signature is required in the WS-Security header.</summary>
   </member>
   <member name="WS_SECURITY_TIMESTAMP_USAGE.WS_SECURITY_TIMESTAMP_USAGE_REQUESTS_ONLY">
-    <summary>
-      <para>Generate and demand timestamps in client to server request messages,
-but not in server to client reply messages.  This value may be used in
-mixed-mode security.</para>
-    </summary>
+    <summary>Generate and demand timestamps in client to server request messages, but not in server to client reply messages. This value may be used in mixed-mode security.</summary>
   </member>
 </doc>

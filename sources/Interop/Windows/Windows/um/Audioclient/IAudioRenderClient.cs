@@ -25,7 +25,7 @@ public unsafe partial struct IAudioRenderClient : IAudioRenderClient.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioRenderClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioRenderClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioRenderClient : IAudioRenderClient.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioRenderClient*, uint>)(lpVtbl[1]))((IAudioRenderClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioRenderClient*, uint>)(lpVtbl[1]))((IAudioRenderClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioRenderClient : IAudioRenderClient.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioRenderClient*, uint>)(lpVtbl[2]))((IAudioRenderClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioRenderClient*, uint>)(lpVtbl[2]))((IAudioRenderClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioRenderClient.xml' path='doc/member[@name="IAudioRenderClient.GetBuffer"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioRenderClient : IAudioRenderClient.Interface, 
     [VtblIndex(3)]
     public HRESULT GetBuffer([NativeTypeName("UINT32")] uint NumFramesRequested, byte** ppData)
     {
-        return ((delegate* unmanaged<IAudioRenderClient*, uint, byte**, int>)(lpVtbl[3]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), NumFramesRequested, ppData);
+        return ((delegate* unmanaged[MemberFunction]<IAudioRenderClient*, uint, byte**, int>)(lpVtbl[3]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), NumFramesRequested, ppData);
     }
 
     /// <include file='IAudioRenderClient.xml' path='doc/member[@name="IAudioRenderClient.ReleaseBuffer"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioRenderClient : IAudioRenderClient.Interface, 
     [VtblIndex(4)]
     public HRESULT ReleaseBuffer([NativeTypeName("UINT32")] uint NumFramesWritten, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IAudioRenderClient*, uint, uint, int>)(lpVtbl[4]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), NumFramesWritten, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IAudioRenderClient*, uint, uint, int>)(lpVtbl[4]))((IAudioRenderClient*)Unsafe.AsPointer(ref this), NumFramesWritten, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAudioRenderClient : IAudioRenderClient.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte**, int> GetBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte**, int> GetBuffer;
 
         [NativeTypeName("HRESULT (UINT32, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> ReleaseBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> ReleaseBuffer;
     }
 }

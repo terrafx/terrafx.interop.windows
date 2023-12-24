@@ -25,7 +25,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertyChange*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyChange*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChange*, Guid*, void**, int>)(lpVtbl[0]))((IPropertyChange*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertyChange*, uint>)(lpVtbl[1]))((IPropertyChange*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChange*, uint>)(lpVtbl[1]))((IPropertyChange*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertyChange*, uint>)(lpVtbl[2]))((IPropertyChange*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChange*, uint>)(lpVtbl[2]))((IPropertyChange*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IObjectWithPropertyKey.SetPropertyKey" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key)
     {
-        return ((delegate* unmanaged<IPropertyChange*, PROPERTYKEY*, int>)(lpVtbl[3]))((IPropertyChange*)Unsafe.AsPointer(ref this), key);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChange*, PROPERTYKEY*, int>)(lpVtbl[3]))((IPropertyChange*)Unsafe.AsPointer(ref this), key);
     }
 
     /// <inheritdoc cref="IObjectWithPropertyKey.GetPropertyKey" />
@@ -59,7 +59,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetPropertyKey(PROPERTYKEY* pkey)
     {
-        return ((delegate* unmanaged<IPropertyChange*, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyChange*)Unsafe.AsPointer(ref this), pkey);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChange*, PROPERTYKEY*, int>)(lpVtbl[4]))((IPropertyChange*)Unsafe.AsPointer(ref this), pkey);
     }
 
     /// <include file='IPropertyChange.xml' path='doc/member[@name="IPropertyChange.ApplyToPropVariant"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface, INativ
     [VtblIndex(5)]
     public HRESULT ApplyToPropVariant([NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvarIn, PROPVARIANT* ppropvarOut)
     {
-        return ((delegate* unmanaged<IPropertyChange*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyChange*)Unsafe.AsPointer(ref this), propvarIn, ppropvarOut);
+        return ((delegate* unmanaged[MemberFunction]<IPropertyChange*, PROPVARIANT*, PROPVARIANT*, int>)(lpVtbl[5]))((IPropertyChange*)Unsafe.AsPointer(ref this), propvarIn, ppropvarOut);
     }
 
     public interface Interface : IObjectWithPropertyKey.Interface
@@ -80,21 +80,21 @@ public unsafe partial struct IPropertyChange : IPropertyChange.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> SetPropertyKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, int> SetPropertyKey;
 
         [NativeTypeName("HRESULT (PROPERTYKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, int> GetPropertyKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, int> GetPropertyKey;
 
         [NativeTypeName("HRESULT (const PROPVARIANT &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, PROPVARIANT*, int> ApplyToPropVariant;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, PROPVARIANT*, int> ApplyToPropVariant;
     }
 }

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TEX2D_ARRAY_UAV">
+    <summary>Describes an array of unordered-access 2D texture resources.</summary>
+  </member>
+  <member name="D3D12_TEX2D_ARRAY_UAV.MipSlice">
+    <summary>The mipmap slice index.</summary>
+  </member>
+  <member name="D3D12_TEX2D_ARRAY_UAV.FirstArraySlice">
+    <summary>The zero-based index of the first array slice to be accessed.</summary>
+  </member>
+  <member name="D3D12_TEX2D_ARRAY_UAV.ArraySize">
+    <summary>The number of slices in the array.</summary>
+  </member>
+  <member name="D3D12_TEX2D_ARRAY_UAV.PlaneSlice">
+    <summary>The index (plane slice number) of the plane to use in an array of textures.</summary>
+  </member>
+</doc>

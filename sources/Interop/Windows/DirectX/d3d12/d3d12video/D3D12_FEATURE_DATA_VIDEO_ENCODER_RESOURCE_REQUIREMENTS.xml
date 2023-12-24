@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS">
+    <summary>Provides data for calls to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> when the feature specified is <see cref="D3D12_FEATURE_VIDEO_ENCODER_RESOURCE_REQUIREMENTS" />. Retrieves values indicating resource requirements for video encoding with the specified encoding configuration.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS.NodeIndex">
+    <summary>In multi-adapter operation, this indicates which physical adapter of the device this operation applies to.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS.Codec">
+    <summary>A member of the <see cref="D3D12_VIDEO_ENCODER_CODEC" /> enumeration specifying the codec for which resource requirements are being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS.Profile">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_PROFILE_DESC" /> structure specifying the profile for which resource requirements are being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS.InputFormat">
+    <summary>A <see cref="DXGI_FORMAT" /> structure representing the input format for which resource requirements are being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS.PictureTargetResolution">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC" /> structure representing the resolution for which resource requirements are being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS.IsSupported">
+    <summary>Receives a boolean value indicating if the specified parameters are supported.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS.CompressedBitstreamBufferAccessAlignment">
+    <summary>Receives a UINT indicating the alignment required in bytes for the resource to be passed in <see cref="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM.pBuffer" /> and <b>D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM.Offset</b>. If no alignment is required, 1 should is returned to indicate 1 byte (trivial) alignment.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS.EncoderMetadataBufferAccessAlignment">
+    <summary>Receives a UINT indicating the alignment required in bytes for the resource to be passed in D3D12_VIDEO_ENCODER_OUTPUT_ARGUMENTS.pEncoderOutputMetadata. If no alignment required, 1 should be reported to convey 1 byte (trivial) alignment.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOURCE_REQUIREMENTS.MaxEncoderOutputMetadataBufferSize">
+    <summary>Receives a UINT indicating the maximum size in bytes needed for the <see cref="ID3D12Resource" /> that will be allocated by the host and used as output in the <see cref="EncodeFrame" /> for output encoder metadata based on the input arguments.</summary>
+  </member>
+</doc>

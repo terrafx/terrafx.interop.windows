@@ -3,22 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_TURBULENCE_NOISE">
-    <summary>
-      <para>The turbulence noise mode for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/turbulence">Turbulence effect</a>.
-Indicates whether to generate a bitmap based on Fractal Noise or the Turbulence function.</para>
-    </summary>
+    <summary>The turbulence noise mode for the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/turbulence">Turbulence effect</a>. Indicates whether to generate a bitmap based on Fractal Noise or the Turbulence function.</summary>
   </member>
   <member name="D2D1_TURBULENCE_NOISE.D2D1_TURBULENCE_NOISE_FRACTAL_SUM">
-    <summary>
-      <para>Computes a sum of the octaves, shifting the output range from [-1, 1], to [0, 1].</para>
-    </summary>
+    <summary>Computes a sum of the octaves, shifting the output range from [-1, 1], to [0, 1].</summary>
   </member>
   <member name="D2D1_TURBULENCE_NOISE.D2D1_TURBULENCE_NOISE_TURBULENCE">
-    <summary>
-      <para>Computes a sum of the absolute value of each octave.</para>
-    </summary>
+    <summary>Computes a sum of the absolute value of each octave.</summary>
   </member>
-  <member name="D2D1_TURBULENCE_NOISE.D2D1_TURBULENCE_NOISE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_TURBULENCE_NOISE.D2D1_TURBULENCE_NOISE_FORCE_DWORD"></member>
 </doc>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D2D1_3DTRANSFORM_PROP">
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/3d-transform">3D transform effect</a>.</summary>
+  </member>
+  <member name="D2D1_3DTRANSFORM_PROP.D2D1_3DTRANSFORM_PROP_INTERPOLATION_MODE">
+    <summary>
+      <para>The interpolation mode the effect uses on the image. There are 5 scale modes that range in quality and speed.</para>
+      <para>Type is D2D1_3DTRANSFORM_INTERPOLATION_MODE.</para>
+      <para>Default value is D2D1_3DTRANSFORM_INTERPOLATION_MODE_LINEAR.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DTRANSFORM_PROP.D2D1_3DTRANSFORM_PROP_BORDER_MODE">
+    <summary>
+      <para>The mode used to calculate the border of the image, soft or hard. See Border modes for more info.</para>
+      <para>Type is D2D1_BORDER_MODE.</para>
+      <para>Default value is D2D1_BORDER_MODE_SOFT.</para>
+    </summary>
+  </member>
+  <member name="D2D1_3DTRANSFORM_PROP.D2D1_3DTRANSFORM_PROP_TRANSFORM_MATRIX">
+    <summary>
+      <para>A 4x4 transform matrix applied to the projection plane. The following matrix calculation is used to map points from one 3D coordinate system to the transformed 2D coordinate system.</para>
+      <img alt="3D Depth Matrix" src="https://docs.microsoft.com/windows/win32/api/d2d1effects/images/3d_transform_matrix1.png" />Where:<list type="table"><listheader><description>X, Y, Z = Input projection plane coordinates</description></listheader><listheader><description>M<sub>x,y</sub> = Transform Matrix elements</description></listheader><listheader><description>X’, Y’, Z’ =Output projection plane coordinates</description></listheader></list><para>The individual matrix elements are not bounded and are unitless.</para><para>Type is D2D1_MATRIX_4X4_F.</para><para>Default value is Matrix4x4F(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1).</para></summary>
+  </member>
+  <member name="D2D1_3DTRANSFORM_PROP.D2D1_3DTRANSFORM_PROP_FORCE_DWORD"></member>
+</doc>

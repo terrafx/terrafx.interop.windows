@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE">
+    <summary>Indicates the debug parameter type used by <see cref="ID3D12DebugCommandList1.SetDebugParameter" /> and <see cref="ID3D12DebugCommandList1.GetDebugParameter" />.</summary>
+  </member>
+  <member name="D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE.D3D12_DEBUG_COMMAND_LIST_PARAMETER_GPU_BASED_VALIDATION_SETTINGS">
+    <summary>Indicates the parameter is type <see cref="D3D12_DEBUG_COMMAND_LIST_GPU_BASED_VALIDATION_SETTINGS" />.</summary>
+  </member>
+</doc>

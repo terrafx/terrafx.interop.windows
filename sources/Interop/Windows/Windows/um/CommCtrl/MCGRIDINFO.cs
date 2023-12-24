@@ -42,7 +42,7 @@ public unsafe partial struct MCGRIDINFO
 
     /// <include file='MCGRIDINFO.xml' path='doc/member[@name="MCGRIDINFO.pszName"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* pszName;
+    public char* pszName;
 
     /// <include file='MCGRIDINFO.xml' path='doc/member[@name="MCGRIDINFO.cchName"]/*' />
     [NativeTypeName("size_t")]

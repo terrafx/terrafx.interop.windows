@@ -4,20 +4,14 @@
 <doc>
   <member name="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE">
     <summary>
-      <para>The security binding template for specifying the use of Windows SSPI
-protocol based transport security.</para>
+      <para>The security binding template for specifying the use of Windows SSPI protocol based transport security.</para>
       <para>See also <see cref="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING" />.</para>
     </summary>
   </member>
   <member name="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE.securityBindingProperties">
-    <summary>
-      <para>Application provided security binding properties that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided security binding properties that cannot be represented in policy.</summary>
   </member>
   <member name="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING_TEMPLATE.clientCredential">
-    <summary>
-      <para>The Windows credential to be used to obtain this security token.  This
-is required on the client and must not be specified on the server.</para>
-    </summary>
+    <summary>The Windows credential to be used to obtain this security token. This is required on the client and must not be specified on the server.</summary>
   </member>
 </doc>

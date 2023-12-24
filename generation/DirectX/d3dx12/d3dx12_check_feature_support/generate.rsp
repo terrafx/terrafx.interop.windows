@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+CD3DX12FeatureSupport
+--file
+d3dx12-d3dx12_check_feature_support.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/d3dx12/d3dx12_check_feature_support
+--test-output
+../../../../tests/Interop/Windows/DirectX/d3dx12/d3dx12_check_feature_support
+--traverse
+../../../include/d3dx12/d3dx12_check_feature_support.h

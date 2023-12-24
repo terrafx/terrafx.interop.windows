@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_CONSTANT_BUFFER_VIEW_DESC">
+    <summary>Describes a constant buffer to view.</summary>
+  </member>
+  <member name="D3D12_CONSTANT_BUFFER_VIEW_DESC.BufferLocation">
+    <summary>The D3D12_GPU_VIRTUAL_ADDRESS of the constant buffer. D3D12_GPU_VIRTUAL_ADDRESS is a typedef'd alias of UINT64.</summary>
+  </member>
+  <member name="D3D12_CONSTANT_BUFFER_VIEW_DESC.SizeInBytes">
+    <summary>The size in bytes of the constant buffer.</summary>
+  </member>
+</doc>

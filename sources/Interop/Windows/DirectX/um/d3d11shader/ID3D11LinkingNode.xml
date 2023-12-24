@@ -4,14 +4,7 @@
 <doc>
   <member name="ID3D11LinkingNode">
     <summary>
-      <para>A linking-node interface is used for shader linking. <b>Note</b>  This interface is part of the HLSL shader linking technology that you can use on all Direct3D 11 platforms to create precompiled HLSL functions, package them into libraries, and link them into full shaders at run time.</para>
+      <para>A linking-node interface is used for shader linking. <div><b>Note</b>  This interface is part of the HLSL shader linking technology that you can use on all Direct3D 11 platforms to create precompiled HLSL functions, package them into libraries, and link them into full shaders at run time.</div></para>
     </summary>
-    <remarks>
-      <para>To get a linking-node interface, call <see cref="ID3D11FunctionLinkingGraph.SetInputSignature" />, <see cref="ID3D11FunctionLinkingGraph.SetOutputSignature" />, or <see cref="ID3D11FunctionLinkingGraph.CallFunction" />.</para>
-      <para>
-        <b>Note</b>  <b>ID3D11LinkingNode</b> requires the D3dcompiler_47.dll or a later version of the DLL.</para>
-    </remarks>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-shader-interfaces">Shader Interfaces</seealso>
   </member>
 </doc>

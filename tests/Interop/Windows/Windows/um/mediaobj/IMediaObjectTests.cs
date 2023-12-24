@@ -19,32 +19,4 @@ public static unsafe partial class IMediaObjectTests
     {
         Assert.That(typeof(IMediaObject).GUID, Is.EqualTo(IID_IMediaObject));
     }
-
-    /// <summary>Validates that the <see cref="IMediaObject" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMediaObject>(), Is.EqualTo(sizeof(IMediaObject)));
-    }
-
-    /// <summary>Validates that the <see cref="IMediaObject" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMediaObject).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMediaObject" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMediaObject), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMediaObject), Is.EqualTo(4));
-        }
-    }
 }

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IGamutMapModelPlugIn.Initialize">
+    <summary>Initializes a gamut map model profile (GMMP) by using the specified source and destination gamut boundary descriptions and optional source and destination device model plug-ins.</summary>
+    <param name="bstrXml">A string that contains the BSTR XML GMMP profile. This is little-endian Unicode XML, but without the leading bytes to tag it as such. Also, the encoding keyword in the XML may not reflect this format.</param>
+    <param name="pSrcPlugIn">A pointer to a source <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nn-wcsplugin-idevicemodelplugin">IDeviceModelPlugIn</a>. If <b>NULL</b>, it indicates the source device model profile is not a plug-in profile.</param>
+    <param name="pDestPlugIn">A pointer to a destination <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nn-wcsplugin-idevicemodelplugin">IDeviceModelPlugIn</a>. If <b>NULL</b>, it indicates the destination device model profile is not a plug-in profile.</param>
+    <param name="pSrcGBD">A pointer to a source <see cref="GamutBoundaryDescription" />.</param>
+    <param name="pDestGBD">A pointer to a destination <see cref="GamutBoundaryDescription" />.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IGamutMapModelPlugIn.SourceToDestinationAppearanceColors">
+    <summary>Returns the appropriate gamut-mapped appearance colors in response to the specified number of colors and the colors.</summary>
+    <param name="cColors">The number of colors in the <i>pXYZColors</i> and <i>pDeviceValues</i> arrays.</param>
+    <param name="pInputColors">A pointer to the array of incoming colors to be gamut mapped.</param>
+    <param name="pOutputColors">A pointer to the array of outgoing colors.</param>
+    <returns>
+      <para>If this function succeeds, the return value is S_OK.</para>
+      <para>If this function fails, the return value is E_FAIL.</para>
+    </returns>
+  </member>
+  <member name="IGamutMapModelPlugIn">
+    <summary>
+      <para>Describes the methods that are defined for the <b>IGamutMapModelPlugIn</b> Component Object Model (COM) interface.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-igamutmapmodelplugin-initialize">IGamutMapModelPlugIn.Initialize</a>
+          </description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wcsplugin/nf-wcsplugin-igamutmapmodelplugin-sourcetodestinationappearancecolors">IGamutMapModelPlugIn.SourceToDestinationAppearanceColors</a>
+          </description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

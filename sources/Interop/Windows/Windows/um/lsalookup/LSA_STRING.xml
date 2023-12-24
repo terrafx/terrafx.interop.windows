@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_STRING">
+    <summary>The <b>LSA_STRING</b> structure is used by <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Local Security Authority</a> (LSA) functions to specify an ANSI string.</summary>
+  </member>
+  <member name="LSA_STRING.Length">
+    <summary>
+      <para>Specifies the length, in bytes, of the string in <b>Buffer</b>. This value does not include the terminating null character, if any.</para>
+      <para>When the <b>Length</b> structure member is zero and the <b>MaximumLength</b> structure member is 1, the <b>Buffer</b> structure member must not be an empty string or contain solely a null character.</para>
+      <para>
+        <b>Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>When the <b>Length</b> structure member is zero and the <b>MaximumLength</b> structure member is 1, the <b>Buffer</b> structure member can be an empty string or contain solely a null character. This behavior changed beginning with Windows Server 2008 R2 and Windows 7 with SP1.</para>
+    </summary>
+  </member>
+  <member name="LSA_STRING.MaximumLength">
+    <summary>
+      <para>Specifies the total size, in bytes, of <b>Buffer</b>. Up to <b>MaximumLength</b> bytes may be written into the buffer without trampling memory.</para>
+      <para>When the <b>Length</b> structure member is zero and the <b>MaximumLength</b> structure member is 1, the <b>Buffer</b> structure member must not be an empty string or contain solely a null character.</para>
+      <para>
+        <b>Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>When the <b>Length</b> structure member is zero and the <b>MaximumLength</b> structure member is 1, the <b>Buffer</b> structure member can be an empty string or contain solely a null character. This behavior changed beginning with Windows Server 2008 R2 and Windows 7 with SP1.</para>
+    </summary>
+  </member>
+  <member name="LSA_STRING.Buffer">
+    <summary>
+      <para>Pointer to an array of characters. Note that strings returned by the LSA may not be null-terminated.</para>
+      <para>When the <b>Length</b> structure member is zero and the <b>MaximumLength</b> structure member is 1, the <b>Buffer</b> structure member must not be an empty string or contain solely a null character.</para>
+      <para>
+        <b>Windows 7, Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>When the <b>Length</b> structure member is zero and the <b>MaximumLength</b> structure member is 1, the <b>Buffer</b> structure member can be an empty string or contain solely a null character. This behavior changed beginning with Windows Server 2008 R2 and Windows 7 with SP1.</para>
+    </summary>
+  </member>
+</doc>

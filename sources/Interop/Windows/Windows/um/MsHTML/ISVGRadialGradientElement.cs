@@ -25,7 +25,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, Guid*, void**, int>)(lpVtbl[0]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, uint>)(lpVtbl[1]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, uint>)(lpVtbl[1]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, uint>)(lpVtbl[2]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, uint>)(lpVtbl[2]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, uint*, int>)(lpVtbl[3]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, uint*, int>)(lpVtbl[3]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.putref_cx"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(7)]
     public HRESULT putref_cx(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[7]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.get_cx"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(8)]
     public HRESULT get_cx(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[8]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.putref_cy"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(9)]
     public HRESULT putref_cy(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[9]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[9]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.get_cy"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(10)]
     public HRESULT get_cy(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[10]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[10]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.putref_r"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(11)]
     public HRESULT putref_r(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[11]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[11]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.get_r"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(12)]
     public HRESULT get_r(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[12]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[12]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.putref_fx"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(13)]
     public HRESULT putref_fx(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[13]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.get_fx"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(14)]
     public HRESULT get_fx(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[14]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.putref_fy"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(15)]
     public HRESULT putref_fy(ISVGAnimatedLength* v)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[15]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength*, int>)(lpVtbl[15]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGRadialGradientElement.xml' path='doc/member[@name="ISVGRadialGradientElement.get_fy"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
     [VtblIndex(16)]
     public HRESULT get_fy(ISVGAnimatedLength** p)
     {
-        return ((delegate* unmanaged<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGRadialGradientElement*, ISVGAnimatedLength**, int>)(lpVtbl[16]))((ISVGRadialGradientElement*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -195,54 +195,54 @@ public unsafe partial struct ISVGRadialGradientElement : ISVGRadialGradientEleme
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_cx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_cx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_cx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_cx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_cy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_cy;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_cy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_cy;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_r;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_r;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_r;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_r;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_fx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_fx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_fx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_fx;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength*, int> putref_fy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength*, int> putref_fy;
 
         [NativeTypeName("HRESULT (ISVGAnimatedLength **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISVGAnimatedLength**, int> get_fy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISVGAnimatedLength**, int> get_fy;
     }
 }

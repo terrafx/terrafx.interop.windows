@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_META_COMMAND_DESC">
+    <summary>Describes a meta command.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_DESC.Id">
+    <summary>A <see cref="GUID" /> uniquely identifying the meta command.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_DESC.Name">
+    <summary>The meta command name.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_DESC.InitializationDirtyState">
+    <summary>Declares the command list states that are modified by the call to initialize the meta command. If all state bits are set, then that's equivalent to calling <see cref="ID3D12GraphicsCommandList.ClearState" />.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_DESC.ExecutionDirtyState">
+    <summary>Declares the command list states that are modified by the call to execute the meta command. If all state bits are set, then that's equivalent to calling <see cref="ID3D12GraphicsCommandList.ClearState" />.</summary>
+  </member>
+</doc>

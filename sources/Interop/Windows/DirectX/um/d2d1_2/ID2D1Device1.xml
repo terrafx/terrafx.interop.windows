@@ -3,55 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Device1.GetRenderingPriority">
-    <summary>
-      <para>Retrieves the current rendering priority of the device.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_RENDERING_PRIORITY" /></b></para>
-      <para>The current rendering priority of the device.</para>
-    </returns>
-    <seealso cref="ID2D1Device1" />
+    <summary>Retrieves the current rendering priority of the device.</summary>
+    <returns>The current rendering priority of the device.</returns>
   </member>
   <member name="ID2D1Device1.SetRenderingPriority">
-    <summary>
-      <para>Sets the priority of Direct2D rendering operations performed on any device context associated with the device.</para>
-    </summary>
-    <param name="renderingPriority">
-      <para>Type: <b><see cref="D2D1_RENDERING_PRIORITY" /></b></para>
-      <para>The desired rendering priority for the device and associated contexts.</para>
-    </param>
+    <summary>Sets the priority of Direct2D rendering operations performed on any device context associated with the device.</summary>
+    <param name="renderingPriority">The desired rendering priority for the device and associated contexts.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Calling this method affects the rendering priority of all device contexts associated with the device. This method can be called at any time, but is not guaranteed to take effect until the beginning of the next frame. The recommended usage is to call this method outside of <see cref="BeginDraw" /> and <see cref="EndDraw" /> blocks. Cycling this property frequently within drawing blocks will effectively reduce the benefits of any throttling that is applied.</para>
-    </remarks>
-    <seealso cref="ID2D1Device1" />
   </member>
   <member name="ID2D1Device1">
-    <summary>
-      <para>Represents a resource domain whose objects and device contexts can be used together. This interface performs all the same functions as the existing <see cref="ID2D1Device" /> interface. It also enables control of the device's rendering priority.</para>
-    </summary>
-    <seealso cref="ID2D1Device" />
-    <seealso cref="ID2D1Factory2.CreateDevice" />
+    <summary>Represents a resource domain whose objects and device contexts can be used together. This interface performs all the same functions as the existing <see cref="ID2D1Device" /> interface. It also enables control of the device's rendering priority.</summary>
   </member>
 </doc>

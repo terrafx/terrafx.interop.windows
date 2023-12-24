@@ -3,82 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_FAULT">
-    <summary>
-      <para>A Fault is a value carried in the body of a message which conveys a
-processing failure.  Faults are modeled using the <b>WS_FAULT</b> structure.</para>
-    </summary>
+    <summary>A Fault is a value carried in the body of a message which conveys a processing failure. Faults are modeled using the <b>WS_FAULT</b> structure.</summary>
   </member>
   <member name="WS_FAULT.code">
     <summary>
       <para>The head of the list of fault codes which identifies the type of fault.</para>
-      <para>The fault codes are ordered from most generic to most specific.
-There must be at least one fault code.  The first fault code
-must correspond to a fault code defined by SOAP.
-For <see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, only the most specific fault code
-is serialized (the first one in the list).</para>
-      <para>If the namespace URI of the first fault code is the empty string,
-then the first fault code will be transformed as follows
-when the fault is serialized, as follows:</para>
+      <para>The fault codes are ordered from most generic to most specific. There must be at least one fault code. The first fault code must correspond to a fault code defined by SOAP. For <see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, only the most specific fault code is serialized (the first one in the list).</para>
+      <para>If the namespace URI of the first fault code is the empty string, then the first fault code will be transformed as follows when the fault is serialized, as follows:</para>
       <list type="bullet">
         <item>
-          <description>The appropriate SOAP namespace will be used based on the
-<see cref="WS_ENVELOPE_VERSION" />.
-</description>
+          <description>The appropriate SOAP namespace will be used based on the <see cref="WS_ENVELOPE_VERSION" />.</description>
         </item>
         <item>
-          <description>If the local name is "Sender" when using
-<see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, then "Client" will be used instead.
-</description>
+          <description>If the local name is "Sender" when using <see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, then "Client" will be used instead.</description>
         </item>
         <item>
-          <description>If the local name is "Receiver" when using
-<see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, then "Server" will be used instead.
-</description>
+          <description>If the local name is "Receiver" when using <see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, then "Server" will be used instead.</description>
         </item>
-      </list>
-      <para>These transformations allow a SOAP fault code
-to be specified without having to worry about which SOAP version is used.</para>
-    </summary>
+      </list>These transformations allow a SOAP fault code to be specified without having to worry about which SOAP version is used.</summary>
   </member>
   <member name="WS_FAULT.reasons">
-    <summary>
-      <para>The text describing the fault.  This is an array to allow for different
-languages.</para>
-    </summary>
+    <summary>The text describing the fault. This is an array to allow for different languages.</summary>
   </member>
   <member name="WS_FAULT.reasonCount">
     <summary>
-      <para>The number of reasons in the reasons array.  This would be more than one
-if the text was represented in multiple languages.  There must be at
-least one fault reason.</para>
+      <para>The number of reasons in the reasons array. This would be more than one if the text was represented in multiple languages. There must be at least one fault reason.</para>
       <para>For <see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, only the first reason is serialized.</para>
     </summary>
   </member>
   <member name="WS_FAULT.actor">
-    <summary>
-      <para>The name of the processor that caused the fault.  If the string is zero
-length, then it's assumed to be the endpoint.</para>
-    </summary>
+    <summary>The name of the processor that caused the fault. If the string is zero length, then it's assumed to be the endpoint.</summary>
   </member>
   <member name="WS_FAULT.node">
     <summary>
-      <para>The location of the processor that caused the fault.  If the string is zero
-length, then it's assumed to be the endpoint.</para>
+      <para>The location of the processor that caused the fault. If the string is zero length, then it's assumed to be the endpoint.</para>
       <para>For <see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, this value is not serialized.</para>
     </summary>
   </member>
   <member name="WS_FAULT.detail">
     <summary>
-      <para>The fault detail allows for XML content to be included along with the fault.  If
-there is no detail, then this field may be <b>NULL</b>.</para>
-      <para>For <see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, this should only be used if the fault
-does not relate to processing of a header of the message.  Faults relating to
-headers should use a custom header to relay information about the fault.</para>
-      <para>If there is detail for the fault, the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> should contain
-an element that corresponds to the detail element of a SOAP fault.  The
-fault-specific XML content is contained within the detail element.
-The local name and namespace of the element are ignored; they are replaced with
-the appropriate element name according to the <see cref="WS_ENVELOPE_VERSION" /> when the detail element is written.</para>
+      <para>The fault detail allows for XML content to be included along with the fault. If there is no detail, then this field may be <b>NULL</b>.</para>
+      <para>For <see cref="WS_ENVELOPE_VERSION_SOAP_1_1" />, this should only be used if the fault does not relate to processing of a header of the message. Faults relating to headers should use a custom header to relay information about the fault.</para>
+      <para>If there is detail for the fault, the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> should contain an element that corresponds to the detail element of a SOAP fault. The fault-specific XML content is contained within the detail element. The local name and namespace of the element are ignored; they are replaced with the appropriate element name according to the <see cref="WS_ENVELOPE_VERSION" /> when the detail element is written.</para>
     </summary>
   </member>
 </doc>

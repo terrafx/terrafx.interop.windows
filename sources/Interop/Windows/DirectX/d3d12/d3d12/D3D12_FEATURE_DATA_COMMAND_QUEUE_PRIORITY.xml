@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY">
+    <summary>Details the adapter's support for prioritization of different command queue types.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY.CommandListType">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-structs-and-classes">SAL</a>: <code><i>In</i></code></para>
+      <para>The type of the command list you're interested in.</para>
+    </summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY.Priority">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-structs-and-classes">SAL</a>: <code><i>In</i></code></para>
+      <para>The priority level you're interested in.</para>
+    </summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY.PriorityForTypeIsSupported">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-structs-and-classes">SAL</a>: <code><i>Out</i></code></para>
+      <para>On return, contains true if the specfied command list type supports the specified priority level; otherwise, false.</para>
+    </summary>
+  </member>
+</doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_MEMCPY_DEST">
+    <summary>Describes the destination of a memory copy operation.</summary>
+  </member>
+  <member name="D3D12_MEMCPY_DEST.pData">
+    <summary>A pointer to a memory block that receives the copied data.</summary>
+  </member>
+  <member name="D3D12_MEMCPY_DEST.RowPitch">
+    <summary>The row pitch, or width, or physical size, in bytes, of the subresource data.</summary>
+  </member>
+  <member name="D3D12_MEMCPY_DEST.SlicePitch">
+    <summary>The slice pitch, or width, or physical size, in bytes, of the subresource data.</summary>
+  </member>
+</doc>

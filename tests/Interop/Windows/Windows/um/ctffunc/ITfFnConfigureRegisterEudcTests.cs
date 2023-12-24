@@ -19,32 +19,4 @@ public static unsafe partial class ITfFnConfigureRegisterEudcTests
     {
         Assert.That(typeof(ITfFnConfigureRegisterEudc).GUID, Is.EqualTo(IID_ITfFnConfigureRegisterEudc));
     }
-
-    /// <summary>Validates that the <see cref="ITfFnConfigureRegisterEudc" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfFnConfigureRegisterEudc>(), Is.EqualTo(sizeof(ITfFnConfigureRegisterEudc)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnConfigureRegisterEudc" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfFnConfigureRegisterEudc).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnConfigureRegisterEudc" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfFnConfigureRegisterEudc), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfFnConfigureRegisterEudc), Is.EqualTo(4));
-        }
-    }
 }

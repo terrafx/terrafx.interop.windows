@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IUIViewSettingsInterop.GetForWindow">
+    <summary>Gets an <a href="https://docs.microsoft.com//uwp/api/Windows.UI.ViewManagement.UIViewSettings">UIViewSettings</a> object for the window of the active application.</summary>
+    <param name="hwnd">Handle to the window of the active application.</param>
+    <param name="riid">
+      <para>The GUID for the resource interface.</para>
+      <para>The REFIID, or GUID, of the interface to the resource can be obtained by using the __uuidof() macro. For example:</para>
+      <para>
+        <code>__uuidof(UIViewSettings)</code>
+      </para>
+    </param>
+    <param name="ppv">Address of a pointer to a <a href="https://docs.microsoft.com//uwp/api/Windows.UI.ViewManagement.UIViewSettings">UIViewSettings</a> object.</param>
+    <returns>If this function succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
+  </member>
+  <member name="IUIViewSettingsInterop">
+    <summary>Enables interoperability with a WinRT <a href="https://docs.microsoft.com//uwp/api/Windows.UI.ViewManagement.UIViewSettings">UIViewSettings</a> object which represents UI states and behaviors associated with the device mode (Tablet or Desktop) and input device type.</summary>
+  </member>
+</doc>

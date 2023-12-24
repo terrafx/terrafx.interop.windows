@@ -18,23 +18,23 @@ public unsafe partial struct PropertyChainValue
 
     /// <include file='PropertyChainValue.xml' path='doc/member[@name="PropertyChainValue.Type"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* Type;
+    public char* Type;
 
     /// <include file='PropertyChainValue.xml' path='doc/member[@name="PropertyChainValue.DeclaringType"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* DeclaringType;
+    public char* DeclaringType;
 
     /// <include file='PropertyChainValue.xml' path='doc/member[@name="PropertyChainValue.ValueType"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* ValueType;
+    public char* ValueType;
 
     /// <include file='PropertyChainValue.xml' path='doc/member[@name="PropertyChainValue.ItemType"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* ItemType;
+    public char* ItemType;
 
     /// <include file='PropertyChainValue.xml' path='doc/member[@name="PropertyChainValue.Value"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* Value;
+    public char* Value;
 
     /// <include file='PropertyChainValue.xml' path='doc/member[@name="PropertyChainValue.Overridden"]/*' />
     public BOOL Overridden;
@@ -45,7 +45,7 @@ public unsafe partial struct PropertyChainValue
 
     /// <include file='PropertyChainValue.xml' path='doc/member[@name="PropertyChainValue.PropertyName"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* PropertyName;
+    public char* PropertyName;
 
     /// <include file='PropertyChainValue.xml' path='doc/member[@name="PropertyChainValue.PropertyChainIndex"]/*' />
     [NativeTypeName("unsigned int")]

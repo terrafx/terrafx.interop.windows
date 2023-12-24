@@ -25,7 +25,7 @@ public unsafe partial struct ICreateDevEnum : ICreateDevEnum.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICreateDevEnum*, Guid*, void**, int>)(lpVtbl[0]))((ICreateDevEnum*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICreateDevEnum*, Guid*, void**, int>)(lpVtbl[0]))((ICreateDevEnum*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICreateDevEnum : ICreateDevEnum.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICreateDevEnum*, uint>)(lpVtbl[1]))((ICreateDevEnum*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICreateDevEnum*, uint>)(lpVtbl[1]))((ICreateDevEnum*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICreateDevEnum : ICreateDevEnum.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICreateDevEnum*, uint>)(lpVtbl[2]))((ICreateDevEnum*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICreateDevEnum*, uint>)(lpVtbl[2]))((ICreateDevEnum*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICreateDevEnum.xml' path='doc/member[@name="ICreateDevEnum.CreateClassEnumerator"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICreateDevEnum : ICreateDevEnum.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT CreateClassEnumerator([NativeTypeName("const IID &")] Guid* clsidDeviceClass, IEnumMoniker** ppEnumMoniker, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ICreateDevEnum*, Guid*, IEnumMoniker**, uint, int>)(lpVtbl[3]))((ICreateDevEnum*)Unsafe.AsPointer(ref this), clsidDeviceClass, ppEnumMoniker, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ICreateDevEnum*, Guid*, IEnumMoniker**, uint, int>)(lpVtbl[3]))((ICreateDevEnum*)Unsafe.AsPointer(ref this), clsidDeviceClass, ppEnumMoniker, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ICreateDevEnum : ICreateDevEnum.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IEnumMoniker **, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IEnumMoniker**, uint, int> CreateClassEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IEnumMoniker**, uint, int> CreateClassEnumerator;
     }
 }

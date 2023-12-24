@@ -18,7 +18,7 @@ public static partial class MSV1_0
     [NativeTypeName("#define MSV1_0_PACKAGE_NAMEW_LENGTH sizeof(MSV1_0_PACKAGE_NAMEW) - sizeof(WCHAR)")]
     public const ulong MSV1_0_PACKAGE_NAMEW_LENGTH = 76 - 2;
 
-    [NativeTypeName("#define MSV1_0_SUBAUTHENTICATION_KEY \"SYSTEM\\\\CurrentControlSet\\\\Control\\\\Lsa\\\\MSV1_0\"")]
+    [NativeTypeName("#define MSV1_0_SUBAUTHENTICATION_KEY \"SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0\"")]
     public static ReadOnlySpan<byte> MSV1_0_SUBAUTHENTICATION_KEY => "SYSTEM\\CurrentControlSet\\Control\\Lsa\\MSV1_0"u8;
 
     [NativeTypeName("#define MSV1_0_SUBAUTHENTICATION_VALUE \"Auth\"")]

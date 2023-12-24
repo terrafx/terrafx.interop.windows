@@ -29,7 +29,7 @@ public unsafe partial struct DDSURFACEDESC
     public uint dwWidth;
 
     /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.Anonymous1"]/*' />
-    [NativeTypeName("_DDSURFACEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:2236:5)")]
+    [NativeTypeName("__AnonymousRecord_ddraw_L2236_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.dwBackBufferCount"]/*' />
@@ -37,7 +37,7 @@ public unsafe partial struct DDSURFACEDESC
     public uint dwBackBufferCount;
 
     /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.Anonymous2"]/*' />
-    [NativeTypeName("_DDSURFACEDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:2242:5)")]
+    [NativeTypeName("__AnonymousRecord_ddraw_L2242_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='DDSURFACEDESC.xml' path='doc/member[@name="DDSURFACEDESC.dwAlphaBitDepth"]/*' />

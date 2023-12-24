@@ -19,25 +19,4 @@ public static unsafe partial class AppxPackageEditorTests
     {
         Assert.That(typeof(AppxPackageEditor).GUID, Is.EqualTo(IID_AppxPackageEditor));
     }
-
-    /// <summary>Validates that the <see cref="AppxPackageEditor" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AppxPackageEditor>(), Is.EqualTo(sizeof(AppxPackageEditor)));
-    }
-
-    /// <summary>Validates that the <see cref="AppxPackageEditor" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AppxPackageEditor).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AppxPackageEditor" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AppxPackageEditor), Is.EqualTo(1));
-    }
 }

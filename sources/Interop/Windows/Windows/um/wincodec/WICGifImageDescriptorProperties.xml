@@ -3,44 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICGifImageDescriptorProperties">
-    <summary>
-      <para>Specifies the image descriptor metadata properties for  Graphics Interchange Format (GIF) frames.</para>
-    </summary>
+    <summary>Specifies the image descriptor metadata properties for Graphics Interchange Format (GIF) frames.</summary>
   </member>
   <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorLeft">
-    <summary>
-      <para>[VT_UI2] Indicates the X offset at which to locate this frame within the logical screen.</para>
-    </summary>
+    <summary>[VT_UI2] Indicates the X offset at which to locate this frame within the logical screen.</summary>
   </member>
   <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorTop">
-    <summary>
-      <para>[VT_UI2] Indicates the Y offset at which to locate this frame within the logical screen.</para>
-    </summary>
+    <summary>[VT_UI2] Indicates the Y offset at which to locate this frame within the logical screen.</summary>
   </member>
   <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorWidth">
-    <summary>
-      <para>[VT_UI2] Indicates width of this frame, in pixels.</para>
-    </summary>
+    <summary>[VT_UI2] Indicates width of this frame, in pixels.</summary>
   </member>
   <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorHeight">
-    <summary>
-      <para>[VT_UI2] Indicates height of this frame, in pixels.</para>
-    </summary>
+    <summary>[VT_UI2] Indicates height of this frame, in pixels.</summary>
   </member>
   <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorLocalColorTableFlag">
-    <summary>
-      <para>[VT_BOOL] Indicates the local color table flag. <b>TRUE</b> if global color table is present; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>[VT_BOOL] Indicates the local color table flag. <b>TRUE</b> if global color table is present; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorInterlaceFlag">
-    <summary>
-      <para>[VT_BOOL] Indicates the interlace flag. <b>TRUE</b> if image is interlaced; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>[VT_BOOL] Indicates the interlace flag. <b>TRUE</b> if image is interlaced; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorSortFlag">
-    <summary>
-      <para>[VT_BOOL] Indicates the sorted color table flag. <b>TRUE</b> if the color table is sorted from most frequently to least frequently used color; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>[VT_BOOL] Indicates the sorted color table flag. <b>TRUE</b> if the color table is sorted from most frequently to least frequently used color; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorLocalColorTableSize">
     <summary>
@@ -48,7 +32,5 @@
       <para>To calculate the actual size of the color table, raise 2 to the value of the field + 1.</para>
     </summary>
   </member>
-  <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICGifImageDescriptorProperties.WICGifImageDescriptorProperties_FORCE_DWORD"></member>
 </doc>

@@ -3,31 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11VideoProcessor.GetContentDesc">
-    <summary>
-      <para>Gets the content description that was used to create the video processor.</para>
-    </summary>
-    <param name="pDesc">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_CONTENT_DESC" /> structure that receives the content description.</para>
-    </param>
-    <seealso cref="ID3D11VideoProcessor" />
+    <summary>Gets the content description that was used to create the video processor.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_CONTENT_DESC" /> structure that receives the content description.</param>
   </member>
   <member name="ID3D11VideoProcessor.GetRateConversionCaps">
-    <summary>
-      <para>Gets the rate conversion capabilities of the video processor.</para>
-    </summary>
-    <param name="pCaps">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" /> structure that receives the rate conversion capabilities.</para>
-    </param>
-    <seealso cref="ID3D11VideoProcessor" />
+    <summary>Gets the rate conversion capabilities of the video processor.</summary>
+    <param name="pCaps">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_RATE_CONVERSION_CAPS" /> structure that receives the rate conversion capabilities.</param>
   </member>
   <member name="ID3D11VideoProcessor">
-    <summary>
-      <para>Represents a video processor for Microsoft Direct3D 11.</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
-    <seealso cref="ID3D11DeviceChild" />
+    <summary>Represents a video processor for Microsoft Direct3D 11.</summary>
   </member>
 </doc>

@@ -3,13 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROPPRG">
-    <summary>
-      <para>This structure contains information from a .pif file. It is used by <see cref="PifMgr_GetProperties" />.</para>
-    </summary>
+    <summary>This structure contains information from a .pif file. It is used by <see cref="PifMgr_GetProperties" />.</summary>
   </member>
   <member name="PROPPRG.flPrg">
     <summary>
-      <para>Type: <b>WORD</b></para>
       <para>Flags that describe how the program will run.</para>
       <h4>PRG_DEFAULT</h4>
       <para>Use the default options.</para>
@@ -19,7 +16,6 @@
   </member>
   <member name="PROPPRG.flPrgInit">
     <summary>
-      <para>Type: <b>WORD</b></para>
       <para>Flags that specify the initial conditions for the application.</para>
       <h4>PRGINIT_DEFAULT</h4>
       <para>Use the default options.</para>
@@ -44,50 +40,28 @@
     </summary>
   </member>
   <member name="PROPPRG.achTitle">
-    <summary>
-      <para>Type: <b>__wchar_t</b></para>
-      <para>A null-terminated string that contains the title.</para>
-    </summary>
+    <summary>A null-terminated string that contains the title.</summary>
   </member>
   <member name="PROPPRG.achCmdLine">
-    <summary>
-      <para>Type: <b>__wchar_t</b></para>
-      <para>A null-terminated string that contains the command line, including arguments.</para>
-    </summary>
+    <summary>A null-terminated string that contains the command line, including arguments.</summary>
   </member>
   <member name="PROPPRG.achWorkDir">
-    <summary>
-      <para>Type: <b>__wchar_t</b></para>
-      <para>A null-terminated string that contains the working directory.</para>
-    </summary>
+    <summary>A null-terminated string that contains the working directory.</summary>
   </member>
   <member name="PROPPRG.wHotKey">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>The key code of the .pif file's hotkey.</para>
-    </summary>
+    <summary>The key code of the .pif file's hotkey.</summary>
   </member>
   <member name="PROPPRG.achIconFile">
-    <summary>
-      <para>Type: <b>__wchar_t</b></para>
-      <para>A null-terminated string that contains the name of the file that contains the icon.</para>
-    </summary>
+    <summary>A null-terminated string that contains the name of the file that contains the icon.</summary>
   </member>
   <member name="PROPPRG.wIconIndex">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>The index of the icon in the file specified by <b>achIconFile</b>.</para>
-    </summary>
+    <summary>The index of the icon in the file specified by <b>achIconFile</b>.</summary>
   </member>
   <member name="PROPPRG.dwEnhModeFlags">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="PROPPRG.dwRealModeFlags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Flags that specify the real mode options.</para>
       <h4>RMOPT_MOUSE</h4>
       <para>Requires a real-mode mouse.</para>
@@ -106,15 +80,9 @@
     </summary>
   </member>
   <member name="PROPPRG.achOtherFile">
-    <summary>
-      <para>Type: <b>__wchar_t</b></para>
-      <para>A null-terminated string that contains the name of the "other" file in the directory.</para>
-    </summary>
+    <summary>A null-terminated string that contains the name of the "other" file in the directory.</summary>
   </member>
   <member name="PROPPRG.achPIFFile">
-    <summary>
-      <para>Type: <b>__wchar_t</b></para>
-      <para>A null-terminated string that contains the name of the .pif file in the directory.</para>
-    </summary>
+    <summary>A null-terminated string that contains the name of the .pif file in the directory.</summary>
   </member>
 </doc>

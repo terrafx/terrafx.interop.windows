@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_OPAQUE_INFO">
-    <summary>
-      <para>The
-<b>MIB_OPAQUE_INFO</b> structure contains information returned from a MIB opaque query.</para>
-    </summary>
-    <seealso cref="MIB_OPAQUE_QUERY" />
+    <summary>The<b>MIB_OPAQUE_INFO</b> structure contains information returned from a MIB opaque query.</summary>
   </member>
   <member name="MIB_OPAQUE_INFO.dwId">
-    <summary>
-      <para>The type of information returned.</para>
-    </summary>
+    <summary>The type of information returned.</summary>
   </member>
   <member name="MIB_OPAQUE_INFO.ullAlign">
-    <summary>
-      <para>The number of bytes that align the information returned.</para>
-    </summary>
+    <summary>The number of bytes that align the information returned.</summary>
   </member>
   <member name="MIB_OPAQUE_INFO.rgbyData">
-    <summary>
-      <para>A pointer to the information returned from the opaque query.</para>
-    </summary>
+    <summary>A pointer to the information returned from the opaque query.</summary>
   </member>
 </doc>

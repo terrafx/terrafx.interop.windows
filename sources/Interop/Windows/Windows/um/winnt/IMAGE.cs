@@ -1407,13 +1407,13 @@ public static partial class IMAGE
     [NativeTypeName("#define IMAGE_ARCHIVE_START_SIZE 8")]
     public const int IMAGE_ARCHIVE_START_SIZE = 8;
 
-    [NativeTypeName("#define IMAGE_ARCHIVE_START \"!<arch>\\n\"")]
+    [NativeTypeName("#define IMAGE_ARCHIVE_START \"!<arch>\n\"")]
     public static ReadOnlySpan<byte> IMAGE_ARCHIVE_START => "!<arch>\n"u8;
 
-    [NativeTypeName("#define IMAGE_ARCHIVE_END \"`\\n\"")]
+    [NativeTypeName("#define IMAGE_ARCHIVE_END \"`\n\"")]
     public static ReadOnlySpan<byte> IMAGE_ARCHIVE_END => "`\n"u8;
 
-    [NativeTypeName("#define IMAGE_ARCHIVE_PAD \"\\n\"")]
+    [NativeTypeName("#define IMAGE_ARCHIVE_PAD \"\n\"")]
     public static ReadOnlySpan<byte> IMAGE_ARCHIVE_PAD => "\n"u8;
 
     [NativeTypeName("#define IMAGE_ARCHIVE_LINKER_MEMBER \"/               \"")]

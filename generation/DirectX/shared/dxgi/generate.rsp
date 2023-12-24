@@ -24,5 +24,3 @@ DXGI_SWAP_CHAIN_FLAG=Flags
 --with-librarypath
 CreateDXGIFactory=dxgi
 CreateDXGIFactory1=dxgi
---with-type
-DXGI_ADAPTER_FLAG=uint

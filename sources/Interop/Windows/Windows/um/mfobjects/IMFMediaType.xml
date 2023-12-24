@@ -3,38 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaType.FreeRepresentation">
-    <summary>
-      <para>Frees memory that was allocated by the <see cref="IMFMediaType.GetRepresentation" /> method.</para>
-    </summary>
-    <param name="guidRepresentation">
-      <para>GUID that was passed to the <see cref="GetRepresentation" /> method.</para>
-    </param>
-    <param name="pvRepresentation">
-      <para>Pointer to the buffer that was returned by the <see cref="GetRepresentation" /> method.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaType" />
+    <summary>Frees memory that was allocated by the <see cref="IMFMediaType.GetRepresentation" /> method.</summary>
+    <param name="guidRepresentation">GUID that was passed to the <see cref="GetRepresentation" /> method.</param>
+    <param name="pvRepresentation">Pointer to the buffer that was returned by the <see cref="GetRepresentation" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaType.GetMajorType">
-    <summary>
-      <para>Gets the major type of the format.</para>
-    </summary>
-    <param name="pguidMajorType">
-      <para>Receives the major type <b>GUID</b>. The major type describes the broad category of the format, such as audio or video. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Major Media Types</a>.</para>
-    </param>
+    <summary>Gets the major type of the format.</summary>
+    <param name="pguidMajorType">Receives the major type <b>GUID</b>. The major type describes the broad category of the format, such as audio or video. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Major Media Types</a>.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -42,46 +18,35 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_ATTRIBUTENOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_ATTRIBUTENOTFOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The major type is not set.</para>
-          </description>
-        </item>
+          <description>The major type is not set.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is equivalent to getting the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-major-type-attribute">MF_MT_MAJOR_TYPE</a> attribute from the media type.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaType" />
   </member>
   <member name="IMFMediaType.GetRepresentation">
-    <summary>
-      <para>Retrieves an alternative representation of the media type. Currently only the DirectShow <b>AM_MEDIA_TYPE</b> structure is supported.</para>
-    </summary>
+    <summary>Retrieves an alternative representation of the media type. Currently only the DirectShow <b>AM_MEDIA_TYPE</b> structure is supported.</summary>
     <param name="guidRepresentation">
       <para>GUID that specifies the representation to retrieve. The following values are defined.</para>
       <list type="table">
@@ -89,43 +54,57 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>AM_MEDIA_TYPE_REPRESENTATION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AM_MEDIA_TYPE_REPRESENTATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Convert the media type to a DirectShow <b>AM_MEDIA_TYPE</b> structure. The method selects the most appropriate format structure (<b>pbFormat</b>).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Convert the media type to a DirectShow <b>AM_MEDIA_TYPE</b> structure. The method selects the most appropriate format structure (<b>pbFormat</b>).</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_MFVideoFormat</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Convert the media type to a DirectShow <b>AM_MEDIA_TYPE</b> structure with an <see cref="MFVIDEOFORMAT" /> format structure.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>FORMAT_MFVideoFormat</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_VideoInfo</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Convert the media type to a DirectShow <b>AM_MEDIA_TYPE</b> structure with a <b>VIDEOINFOHEADER</b> format structure.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Convert the media type to a DirectShow <b>AM_MEDIA_TYPE</b> structure with an <see cref="MFVIDEOFORMAT" /> format structure.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FORMAT_VideoInfo2</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>FORMAT_VideoInfo</b>
-          </description>
-          <description>
-            <para>Convert the media type to a DirectShow <b>AM_MEDIA_TYPE</b> structure with a <b>VIDEOINFOHEADER</b> format structure.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>FORMAT_VideoInfo2</b>
-          </description>
-          <description>
-            <para>Convert the media type to a DirectShow <b>AM_MEDIA_TYPE</b> structure with a <b>VIDEOINFOHEADER2</b> format structure.</para>
-          </description>
-        </item>
+          <description>Convert the media type to a DirectShow <b>AM_MEDIA_TYPE</b> structure with a <b>VIDEOINFOHEADER2</b> format structure.</description>
+        </listheader>
       </list>
     </param>
-    <param name="ppvRepresentation">
-      <para>Receives a pointer to a structure that contains the representation. The method allocates the memory for the structure. The caller must release the memory by calling <see cref="IMFMediaType.FreeRepresentation" />.</para>
-    </param>
+    <param name="ppvRepresentation">Receives a pointer to a structure that contains the representation. The method allocates the memory for the structure. The caller must release the memory by calling <see cref="IMFMediaType.FreeRepresentation" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -133,98 +112,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_ATTRIBUTENOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The details of the media type do not match the requested representation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_ATTRIBUTENOTFOUND</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDMEDIATYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The media type is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The details of the media type do not match the requested representation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_UNSUPPORTED_REPRESENTATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDMEDIATYPE</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_UNSUPPORTED_REPRESENTATION</b>
-            </para>
-          </description>
-          <description>
-            <para>The media type does not support the requested representation.</para>
-          </description>
-        </item>
+          <description>The media type does not support the requested representation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If you request a specific format structure in the <i>guidRepresentation</i> parameter, such as <b>VIDEOINFOHEADER</b>, you might lose some of the format information.</para>
-      <para>You can also use the <see cref="MFInitAMMediaTypeFromMFMediaType" /> function to convert a Media Foundation media type into a DirectShow media type.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaType" />
-    <seealso cref="MFVIDEOFORMAT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
   </member>
   <member name="IMFMediaType.IsCompressedFormat">
-    <summary>
-      <para>Queries whether the media type is a temporally compressed format.Temporal compression uses information from previously decoded samples when decompressing the current sample.</para>
-    </summary>
-    <param name="pfCompressed">
-      <para>Receives a Boolean value. The value is <b>TRUE</b> if the format uses temporal compression, or <b>FALSE</b> if the format does not use temporal compression.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method returns <b>FALSE</b> in <i>pfCompressed</i> if the media type's <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-all-samples-independent-attribute">MF_MT_ALL_SAMPLES_INDEPENDENT</a> attribute is <b>TRUE</b>. If the <b>MF_MT_ALL_SAMPLES_INDEPENDENT</b> attribute is <b>FALSE</b> or not set, the method returns <b>TRUE</b>.</para>
-      <para>If the method returns <b>TRUE</b> in <i>pfCompressed</i>, it is a hint that the format has temporal compression applied to it. If the method returns <b>FALSE</b>, the format does not use temporal compression, although it might use intra-frame compression.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFMediaType" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
+    <summary>Queries whether the media type is a temporally compressed format.Temporal compression uses information from previously decoded samples when decompressing the current sample.</summary>
+    <param name="pfCompressed">Receives a Boolean value. The value is <b>TRUE</b> if the format uses temporal compression, or <b>FALSE</b> if the format does not use temporal compression.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFMediaType.IsEqual">
-    <summary>
-      <para>Compares two media types and determines whether they are identical. If they are not identical, the method indicates how the two formats differ.</para>
-    </summary>
-    <param name="pIMediaType">
-      <para>Pointer to the <see cref="IMFMediaType" /> interface of the media type to compare.</para>
-    </param>
+    <summary>Compares two media types and determines whether they are identical. If they are not identical, the method indicates how the two formats differ.</summary>
+    <param name="pIMediaType">Pointer to the <see cref="IMFMediaType" /> interface of the media type to compare.</param>
     <param name="pdwFlags">
       <para>Receives a bitwise <b>OR</b> of zero or more flags, indicating the degree of similarity between the two media types. The following flags are defined.</para>
       <list type="table">
@@ -232,76 +178,66 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MF_MEDIATYPE_EQUAL_MAJOR_TYPES</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The major types are the same. The major type is specified by the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-major-type-attribute">MF_MT_MAJOR_TYPE</a> attribute.</para>
-          </description>
-        </item>
-        <item>
+          <description>The major types are the same. The major type is specified by the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-major-type-attribute">MF_MT_MAJOR_TYPE</a> attribute.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MF_MEDIATYPE_EQUAL_FORMAT_TYPES</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The subtypes are the same, or neither media type has a subtype. The subtype is specified by the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-subtype-attribute">MF_MT_SUBTYPE</a> attribute.</para>
-          </description>
-        </item>
-        <item>
+          <description>The subtypes are the same, or neither media type has a subtype. The subtype is specified by the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-subtype-attribute">MF_MT_SUBTYPE</a> attribute.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MF_MEDIATYPE_EQUAL_FORMAT_DATA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The attributes in one of the media types are a  subset of the attributes in the other, and the values of these attributes match, excluding the value of the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-user-data-attribute">MF_MT_USER_DATA</a>, <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-min">MF_MT_FRAME_RATE_RANGE_MIN</a>,  and <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-max">MF_MT_FRAME_RATE_RANGE_MAX</a> attributes.</para>
-            <para>Specifically, the method takes the media type with the smaller number of attributes and checks whether each attribute from that type is present in the other media type and has the same value (not including <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-user-data-attribute">MF_MT_USER_DATA</a>, <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-min">MF_MT_FRAME_RATE_RANGE_MIN</a>,  and <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-max">MF_MT_FRAME_RATE_RANGE_MAX</a>).</para>
-            <para>To perform other comparisons, use the <see cref="IMFAttributes.Compare" /> method. For example, the <b>Compare</b> method can test for identical attributes, or test the intersection of the two attribute sets. For more information, see <see cref="MF_ATTRIBUTES_MATCH_TYPE" />.</para>
-          </description>
-        </item>
-        <item>
+          <description>The attributes in one of the media types are a subset of the attributes in the other, and the values of these attributes match, excluding the value of the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-user-data-attribute">MF_MT_USER_DATA</a>, <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-min">MF_MT_FRAME_RATE_RANGE_MIN</a>, and <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-max">MF_MT_FRAME_RATE_RANGE_MAX</a> attributes.<para>Specifically, the method takes the media type with the smaller number of attributes and checks whether each attribute from that type is present in the other media type and has the same value (not including <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-user-data-attribute">MF_MT_USER_DATA</a>, <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-min">MF_MT_FRAME_RATE_RANGE_MIN</a>, and <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-frame-rate-range-max">MF_MT_FRAME_RATE_RANGE_MAX</a>).</para><para>To perform other comparisons, use the <see cref="IMFAttributes.Compare" /> method. For example, the <b>Compare</b> method can test for identical attributes, or test the intersection of the two attribute sets. For more information, see <see cref="MF_ATTRIBUTES_MATCH_TYPE" />.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MF_MEDIATYPE_EQUAL_FORMAT_USER_DATA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The user data is identical, or neither media type contains user data. User data is specified by the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-user-data-attribute">MF_MT_USER_DATA</a> attribute.</para>
-          </description>
-        </item>
+          <description>The user data is identical, or neither media type contains user data. User data is specified by the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-mt-user-data-attribute">MF_MT_USER_DATA</a> attribute.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -311,74 +247,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The types are not equal. Examine the <i>pdwFlags</i> parameter to determine how the types differ.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The types are not equal. Examine the <i>pdwFlags</i> parameter to determine how the types differ.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The types are equal.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The types are equal.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or both media types are invalid.</para>
-          </description>
-        </item>
+          <description>One or both media types are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Both of the media types must have a major type, or the method returns <b>E_INVALIDARG</b>.</para>
-      <para>If the method succeeds and all of the comparison flags are set in <i>pdwFlags</i>, the return value is <b>S_OK</b>. If the method succeeds but one or more comparison flags are not set, the method returns <b>S_FALSE</b>.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFAttributes.Compare" />
-    <seealso cref="IMFMediaType" />
   </member>
   <member name="IMFMediaType">
-    <summary>
-      <para>Represents a description of a media format.</para>
-    </summary>
-    <remarks>
-      <para>To create a new media type, call <see cref="MFCreateMediaType" />.</para>
-      <para>All of the information in a media type is stored as attributes. To clone a media type, call <see cref="IMFAttributes.CopyAllItems" />.</para>
-      <para>This interface is available on the following platforms if the Windows Media Format 11 SDK redistributable components are installed:</para>
-      <list type="bullet">
-        <item>
-          <description>Windows XP with Service Pack 2 (SP2) and later.</description>
-        </item>
-        <item>
-          <description>Windows XP Media Center Edition 2005 with KB900325 (Windows XP Media Center Edition 2005) and KB925766 (October 2006 Update Rollup for Windows XP Media Center Edition) installed.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFAttributes" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-type-attributes">Media Type Attributes</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-types">Media Types</seealso>
+    <summary>Represents a description of a media format.</summary>
   </member>
 </doc>

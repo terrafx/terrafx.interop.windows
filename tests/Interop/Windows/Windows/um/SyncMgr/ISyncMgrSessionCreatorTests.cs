@@ -19,32 +19,4 @@ public static unsafe partial class ISyncMgrSessionCreatorTests
     {
         Assert.That(typeof(ISyncMgrSessionCreator).GUID, Is.EqualTo(IID_ISyncMgrSessionCreator));
     }
-
-    /// <summary>Validates that the <see cref="ISyncMgrSessionCreator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISyncMgrSessionCreator>(), Is.EqualTo(sizeof(ISyncMgrSessionCreator)));
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrSessionCreator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISyncMgrSessionCreator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISyncMgrSessionCreator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISyncMgrSessionCreator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISyncMgrSessionCreator), Is.EqualTo(4));
-        }
-    }
 }

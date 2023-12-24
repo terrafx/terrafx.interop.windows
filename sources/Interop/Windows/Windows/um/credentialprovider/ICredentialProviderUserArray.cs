@@ -27,7 +27,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICredentialProviderUserArray*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderUserArray*, Guid*, void**, int>)(lpVtbl[0]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICredentialProviderUserArray*, uint>)(lpVtbl[1]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderUserArray*, uint>)(lpVtbl[1]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICredentialProviderUserArray*, uint>)(lpVtbl[2]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderUserArray*, uint>)(lpVtbl[2]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICredentialProviderUserArray.xml' path='doc/member[@name="ICredentialProviderUserArray.SetProviderFilter"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
     [VtblIndex(3)]
     public HRESULT SetProviderFilter([NativeTypeName("const GUID &")] Guid* guidProviderToFilterTo)
     {
-        return ((delegate* unmanaged<ICredentialProviderUserArray*, Guid*, int>)(lpVtbl[3]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), guidProviderToFilterTo);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderUserArray*, Guid*, int>)(lpVtbl[3]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), guidProviderToFilterTo);
     }
 
     /// <include file='ICredentialProviderUserArray.xml' path='doc/member[@name="ICredentialProviderUserArray.GetAccountOptions"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
     [VtblIndex(4)]
     public HRESULT GetAccountOptions(CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS* credentialProviderAccountOptions)
     {
-        return ((delegate* unmanaged<ICredentialProviderUserArray*, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS*, int>)(lpVtbl[4]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), credentialProviderAccountOptions);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderUserArray*, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS*, int>)(lpVtbl[4]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), credentialProviderAccountOptions);
     }
 
     /// <include file='ICredentialProviderUserArray.xml' path='doc/member[@name="ICredentialProviderUserArray.GetCount"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
     [VtblIndex(5)]
     public HRESULT GetCount([NativeTypeName("DWORD *")] uint* userCount)
     {
-        return ((delegate* unmanaged<ICredentialProviderUserArray*, uint*, int>)(lpVtbl[5]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), userCount);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderUserArray*, uint*, int>)(lpVtbl[5]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), userCount);
     }
 
     /// <include file='ICredentialProviderUserArray.xml' path='doc/member[@name="ICredentialProviderUserArray.GetAt"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
     [VtblIndex(6)]
     public HRESULT GetAt([NativeTypeName("DWORD")] uint userIndex, ICredentialProviderUser** user)
     {
-        return ((delegate* unmanaged<ICredentialProviderUserArray*, uint, ICredentialProviderUser**, int>)(lpVtbl[6]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), userIndex, user);
+        return ((delegate* unmanaged[MemberFunction]<ICredentialProviderUserArray*, uint, ICredentialProviderUser**, int>)(lpVtbl[6]))((ICredentialProviderUserArray*)Unsafe.AsPointer(ref this), userIndex, user);
     }
 
     public interface Interface : IUnknown.Interface
@@ -99,24 +99,24 @@ public unsafe partial struct ICredentialProviderUserArray : ICredentialProviderU
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetProviderFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetProviderFilter;
 
         [NativeTypeName("HRESULT (CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS*, int> GetAccountOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CREDENTIAL_PROVIDER_ACCOUNT_OPTIONS*, int> GetAccountOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (DWORD, ICredentialProviderUser **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ICredentialProviderUser**, int> GetAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ICredentialProviderUser**, int> GetAt;
     }
 }

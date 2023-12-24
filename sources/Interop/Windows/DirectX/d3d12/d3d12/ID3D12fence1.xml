@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Fence1">
+    <summary>
+      <para>Represents a fence. This interface extends <see cref="ID3D12Fence" />, and supports the retrieval of the flags used to create the original fence. This new feature is useful primarily for opening shared fences.</para>
+      <div>
+        <b>Note</b>  <b>ID3D12Fence1</b> was introduced in the Windows 10 Fall Creators Update, and is the latest version of the <see cref="ID3D12Fence" /> interface. Applications targeting Windows 10 Fall Creators Update and later should use <b>ID3D12Fence1</b> instead of earlier versions.</div>
+    </summary>
+  </member>
+</doc>

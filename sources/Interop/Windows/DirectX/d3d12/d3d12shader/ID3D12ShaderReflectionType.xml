@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12ShaderReflectionType.GetBaseClass">
+    <summary>Gets an <see cref="ID3D12ShaderReflectionType Interface" /> interface containing the variable base class type.</summary>
+    <returns>Returns A pointer to a <see cref="ID3D12ShaderReflectionType Interface" />.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.GetDesc">
+    <summary>Gets the description of a shader-reflection-variable type.</summary>
+    <param name="pDesc">A pointer to a shader-type description (see <see cref="D3D12_SHADER_TYPE_DESC" />).</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.GetInterfaceByIndex">
+    <summary>Gets an interface by index.</summary>
+    <param name="uIndex">Zero-based index.</param>
+    <returns>A pointer to a <see cref="ID3D12ShaderReflectionType Interface" />.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.GetMemberTypeByIndex">
+    <summary>Gets a shader-reflection-variable type by index.</summary>
+    <param name="Index">Zero-based index.</param>
+    <returns>A pointer to a <see cref="ID3D12ShaderReflectionType Interface" />.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.GetMemberTypeByName">
+    <summary>Gets a shader-reflection-variable type by name.</summary>
+    <param name="Name">Member name.</param>
+    <returns>A pointer to a <see cref="ID3D12ShaderReflectionType Interface" />.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.GetMemberTypeName">
+    <summary>Gets a shader-reflection-variable type.</summary>
+    <param name="Index">Zero-based index.</param>
+    <returns>The variable type.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.GetNumInterfaces">
+    <summary>Gets the number of interfaces.</summary>
+    <returns>Returns the number of interfaces.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.GetSubType">
+    <summary>Gets the base class of a class.</summary>
+    <returns>Returns a pointer to an <see cref="ID3D12ShaderReflectionType" /> containing the base class type. Returns <b>NULL</b> if the class does not have a base class.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.ImplementsInterface">
+    <summary>Indicates whether a class type implements an interface.</summary>
+    <param name="pBase">A pointer to a <see cref="ID3D12ShaderReflectionType Interface" />.</param>
+    <returns>Returns S_OK if the interface is implemented; otherwise return S_FALSE.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.IsEqual">
+    <summary>Indicates whether two <see cref="ID3D12ShaderReflectionType Interface" /> pointers have the same underlying type.</summary>
+    <param name="pType">A pointer to a <see cref="ID3D12ShaderReflectionType Interface" />.</param>
+    <returns>Returns S_OK if the pointers have the same underlying type; otherwise returns S_FALSE.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType.IsOfType">
+    <summary>Indicates whether a variable is of the specified type.</summary>
+    <param name="pType">A pointer to a <see cref="ID3D12ShaderReflectionType Interface" />.</param>
+    <returns>Returns S_OK if object being queried is equal to or inherits from the type in the <i>pType</i> parameter; otherwise returns S_FALSE.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionType">
+    <summary>This shader-reflection interface provides access to variable type.</summary>
+  </member>
+</doc>

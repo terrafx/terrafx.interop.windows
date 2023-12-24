@@ -3,49 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFT_REGISTRATION_INFO">
-    <summary>
-      <para>Contains parameters for the <see cref="IMFLocalMFTRegistration.RegisterMFTs" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Contains parameters for the <see cref="IMFLocalMFTRegistration.RegisterMFTs" /> method.</summary>
   </member>
   <member name="MFT_REGISTRATION_INFO.clsid">
-    <summary>
-      <para>CLSID of the Media Foundation transform (MFT) to register.</para>
-    </summary>
+    <summary>CLSID of the Media Foundation transform (MFT) to register.</summary>
   </member>
   <member name="MFT_REGISTRATION_INFO.guidCategory">
-    <summary>
-      <para>GUID that specifies the category of the MFT. For a list of MFT categories, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-category">MFT_CATEGORY</a>.</para>
-    </summary>
+    <summary>GUID that specifies the category of the MFT. For a list of MFT categories, see <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-category">MFT_CATEGORY</a>.</summary>
   </member>
   <member name="MFT_REGISTRATION_INFO.uiFlags">
-    <summary>
-      <para>Bitwise <b>OR</b> of zero or more flags from the <see cref="_MFT_ENUM_FLAG" /> enumeration.</para>
-    </summary>
+    <summary>Bitwise <b>OR</b> of zero or more flags from the <see cref="_MFT_ENUM_FLAG" /> enumeration.</summary>
   </member>
   <member name="MFT_REGISTRATION_INFO.pszName">
-    <summary>
-      <para>Wide-character string that contains the friendly name of the MFT.</para>
-    </summary>
+    <summary>Wide-character string that contains the friendly name of the MFT.</summary>
   </member>
   <member name="MFT_REGISTRATION_INFO.cInTypes">
-    <summary>
-      <para>Number of elements in the <b>pInTypes</b> array.</para>
-    </summary>
+    <summary>Number of elements in the <b>pInTypes</b> array.</summary>
   </member>
   <member name="MFT_REGISTRATION_INFO.pInTypes">
-    <summary>
-      <para>Pointer to an array of <see cref="MFT_REGISTER_TYPE_INFO" /> structures. Each member of the array specifies an input format that the MFT supports. If this member is <b>NULL</b>, the <b>cInTypes</b> member must be zero.</para>
-    </summary>
+    <summary>Pointer to an array of <see cref="MFT_REGISTER_TYPE_INFO" /> structures. Each member of the array specifies an input format that the MFT supports. If this member is <b>NULL</b>, the <b>cInTypes</b> member must be zero.</summary>
   </member>
   <member name="MFT_REGISTRATION_INFO.cOutTypes">
-    <summary>
-      <para>Number of elements in the <b>pOutTypes</b> array.</para>
-    </summary>
+    <summary>Number of elements in the <b>pOutTypes</b> array.</summary>
   </member>
   <member name="MFT_REGISTRATION_INFO.pOutTypes">
-    <summary>
-      <para>Pointer to an array of <see cref="MFT_REGISTER_TYPE_INFO" /> structures. Each member of the array defines an output format that the MFT supports. If this member is <b>NULL</b>, the <b>cOutTypes</b> member must be zero.</para>
-    </summary>
+    <summary>Pointer to an array of <see cref="MFT_REGISTER_TYPE_INFO" /> structures. Each member of the array defines an output format that the MFT supports. If this member is <b>NULL</b>, the <b>cOutTypes</b> member must be zero.</summary>
   </member>
 </doc>

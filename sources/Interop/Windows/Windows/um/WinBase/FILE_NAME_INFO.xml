@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_NAME_INFO">
-    <summary>
-      <para>Receives the file name. Used for any handles. Use only when calling
-<see cref="GetFileInformationByHandleEx" />.</para>
-    </summary>
-    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
-    <seealso cref="GetFileInformationByHandleEx" />
+    <summary>Receives the file name. Used for any handles. Use only when calling<see cref="GetFileInformationByHandleEx" />.</summary>
   </member>
   <member name="FILE_NAME_INFO.FileNameLength">
-    <summary>
-      <para>The size of the <b>FileName</b> string, in bytes.</para>
-    </summary>
+    <summary>The size of the <b>FileName</b> string, in bytes.</summary>
   </member>
   <member name="FILE_NAME_INFO.FileName">
-    <summary>
-      <para>The file name that is returned.</para>
-    </summary>
+    <summary>The file name that is returned.</summary>
   </member>
 </doc>

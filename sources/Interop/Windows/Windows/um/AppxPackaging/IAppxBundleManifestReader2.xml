@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxBundleManifestReader2.GetOptionalBundles">
-    <summary>
-      <para>Retrieves an object that represents the &lt;OptionalBundles&gt; element under the root &lt;Bundle&gt; element.</para>
-    </summary>
-    <param name="optionalBundles">
-      <para>The optional bundle.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxBundleManifestReader2" />
+    <summary>Retrieves an object that represents the &lt;OptionalBundles&gt; element under the root &lt;Bundle&gt; element.</summary>
+    <param name="optionalBundles">The optional bundle.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxBundleManifestReader2">
-    <summary>
-      <para>Provides a read-only object model for manifests of bundle packages.</para>
-    </summary>
-    <seealso cref="IAppxBundleManifestReader" />
+    <summary>Provides a read-only object model for manifests of bundle packages.</summary>
   </member>
 </doc>

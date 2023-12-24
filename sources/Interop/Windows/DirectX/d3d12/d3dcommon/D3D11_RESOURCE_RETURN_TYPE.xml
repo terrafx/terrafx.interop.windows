@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_RESOURCE_RETURN_TYPE">
+    <summary>
+      <para>Indicates return value type.</para>
+      <blockquote>[!NOTE] For programming with Direct3D 10, this API has a type alias that begins <code>D3D10_</code> instead of <code>D3D_</code>. These Direct3D 10 type aliases are defined in <code>d3d10.h</code>, <code>d3d10misc.h</code>, and <code>d3d10shader.h</code>.</blockquote>
+    </summary>
+  </member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D_RETURN_TYPE_UNORM"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D_RETURN_TYPE_SNORM"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D_RETURN_TYPE_SINT"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D_RETURN_TYPE_UINT"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D_RETURN_TYPE_FLOAT"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D_RETURN_TYPE_MIXED"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D_RETURN_TYPE_DOUBLE"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D_RETURN_TYPE_CONTINUED"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D10_RETURN_TYPE_UNORM"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D10_RETURN_TYPE_SNORM"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D10_RETURN_TYPE_SINT"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D10_RETURN_TYPE_UINT"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D10_RETURN_TYPE_FLOAT"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D10_RETURN_TYPE_MIXED"></member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D11_RETURN_TYPE_UNORM">
+    <summary>Return type is UNORM.</summary>
+  </member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D11_RETURN_TYPE_SNORM">
+    <summary>Return type is SNORM.</summary>
+  </member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D11_RETURN_TYPE_SINT">
+    <summary>Return type is SINT.</summary>
+  </member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D11_RETURN_TYPE_UINT">
+    <summary>Return type is UINT.</summary>
+  </member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D11_RETURN_TYPE_FLOAT">
+    <summary>Return type is FLOAT.</summary>
+  </member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D11_RETURN_TYPE_MIXED">
+    <summary>Return type is unknown.</summary>
+  </member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D11_RETURN_TYPE_DOUBLE">
+    <summary>Return type is DOUBLE.</summary>
+  </member>
+  <member name="D3D11_RESOURCE_RETURN_TYPE.D3D11_RETURN_TYPE_CONTINUED">
+    <summary>Return type is a multiple-dword type, such as a double or uint64, and the component is continued from the previous component that was declared. The first component represents the lower bits.</summary>
+  </member>
+</doc>

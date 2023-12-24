@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION">
-    <summary>
-      <para>This type description is used with template APIs to describe
-the templates generated accordingly to input policy setting.</para>
-    </summary>
+    <summary>This type description is used with template APIs to describe the templates generated accordingly to input policy setting.</summary>
   </member>
   <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION.securityBindingProperties">
-    <summary>
-      <para>Specifies the security binding properties according to the specific policy.</para>
-    </summary>
+    <summary>Specifies the security binding properties according to the specific policy.</summary>
   </member>
   <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING_POLICY_DESCRIPTION.bindingUsage">
-    <summary>
-      <para>Specifies the message security binding usage.</para>
-    </summary>
+    <summary>Specifies the message security binding usage.</summary>
   </member>
 </doc>

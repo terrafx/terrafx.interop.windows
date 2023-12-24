@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS">
+    <summary>Describes the multi-sampling image quality levels for a given format and sample count.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS.Format">
+    <summary>A <see cref="DXGI_FORMAT" />-typed value for the format to return info about.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS.SampleCount">
+    <summary>The number of multi-samples per pixel to return info about.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS.Flags">
+    <summary>Flags to control quality levels, as a bitwise-OR'd combination of <see cref="D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS" /> enumeration constants. The resulting value specifies options for determining quality levels.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_MULTISAMPLE_QUALITY_LEVELS.NumQualityLevels">
+    <summary>The number of quality levels.</summary>
+  </member>
+</doc>

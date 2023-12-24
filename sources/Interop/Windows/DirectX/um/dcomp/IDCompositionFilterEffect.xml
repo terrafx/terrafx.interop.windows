@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionFilterEffect.SetInput">
-    <summary>
-      <para>Sets the the input at an index to the specified filter effect.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>Specifies the index the to apply the filter effect at.</para>
-    </param>
+    <summary>Sets the the input at an index to the specified filter effect.</summary>
+    <param name="index">Specifies the index the to apply the filter effect at.</param>
     <param name="input">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>The filter effect to apply.
-The following effects are available:</para>
+      <para>The filter effect to apply. The following effects are available:</para>
       <list type="bullet">
         <item>
           <description>
@@ -87,22 +80,13 @@ The following effects are available:</para>
         </item>
       </list>
     </param>
-    <param name="flags">
-      <para>Type: <b>UINT</b></para>
-      <para>Flags to apply to the filter effect.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionFilterEffect" />
+    <param name="flags">Flags to apply to the filter effect.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionFilterEffect">
     <summary>
       <para>Represents a filter effect.</para>
       <para>IDCompositionFilterEffect exposes a subset of Direct2D's image <a href="https://docs.microsoft.com//windows/desktop/Direct2D/effects-overview">effects</a> through DirectComposition for use in CSS filters in the browser platform.</para>
     </summary>
-    <seealso cref="IDCompositionEffect" />
-    <seealso cref="IDCompositionVisual.SetEffect" />
   </member>
 </doc>

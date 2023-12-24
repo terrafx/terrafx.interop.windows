@@ -25,7 +25,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, Guid*, void**, int>)(lpVtbl[0]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, uint>)(lpVtbl[1]))((IFileSystemImage3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, uint>)(lpVtbl[1]))((IFileSystemImage3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, uint>)(lpVtbl[2]))((IFileSystemImage3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, uint>)(lpVtbl[2]))((IFileSystemImage3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, uint*, int>)(lpVtbl[3]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, uint*, int>)(lpVtbl[3]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_Root" />
@@ -83,7 +83,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(7)]
     public HRESULT get_Root(IFsiDirectoryItem** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, IFsiDirectoryItem**, int>)(lpVtbl[7]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, IFsiDirectoryItem**, int>)(lpVtbl[7]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_SessionStartBlock" />
@@ -91,7 +91,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(8)]
     public HRESULT get_SessionStartBlock([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int*, int>)(lpVtbl[8]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int*, int>)(lpVtbl[8]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_SessionStartBlock" />
@@ -99,7 +99,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(9)]
     public HRESULT put_SessionStartBlock([NativeTypeName("LONG")] int newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int, int>)(lpVtbl[9]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int, int>)(lpVtbl[9]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_FreeMediaBlocks" />
@@ -107,7 +107,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(10)]
     public HRESULT get_FreeMediaBlocks([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int*, int>)(lpVtbl[10]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int*, int>)(lpVtbl[10]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_FreeMediaBlocks" />
@@ -115,7 +115,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(11)]
     public HRESULT put_FreeMediaBlocks([NativeTypeName("LONG")] int newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int, int>)(lpVtbl[11]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int, int>)(lpVtbl[11]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.SetMaxMediaBlocksFromDevice" />
@@ -123,7 +123,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(12)]
     public HRESULT SetMaxMediaBlocksFromDevice(IDiscRecorder2* discRecorder)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, IDiscRecorder2*, int>)(lpVtbl[12]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), discRecorder);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, IDiscRecorder2*, int>)(lpVtbl[12]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), discRecorder);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_UsedBlocks" />
@@ -131,31 +131,31 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(13)]
     public HRESULT get_UsedBlocks([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int*, int>)(lpVtbl[13]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int*, int>)(lpVtbl[13]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_VolumeName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT get_VolumeName([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_VolumeName([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort**, int>)(lpVtbl[14]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char**, int>)(lpVtbl[14]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_VolumeName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT put_VolumeName([NativeTypeName("BSTR")] ushort* newVal)
+    public HRESULT put_VolumeName([NativeTypeName("BSTR")] char* newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort*, int>)(lpVtbl[15]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char*, int>)(lpVtbl[15]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_ImportedVolumeName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT get_ImportedVolumeName([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_ImportedVolumeName([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort**, int>)(lpVtbl[16]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char**, int>)(lpVtbl[16]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_BootImageOptions" />
@@ -163,7 +163,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(17)]
     public HRESULT get_BootImageOptions(IBootOptions** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, IBootOptions**, int>)(lpVtbl[17]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, IBootOptions**, int>)(lpVtbl[17]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_BootImageOptions" />
@@ -171,7 +171,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(18)]
     public HRESULT put_BootImageOptions(IBootOptions* newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, IBootOptions*, int>)(lpVtbl[18]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, IBootOptions*, int>)(lpVtbl[18]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_FileCount" />
@@ -179,7 +179,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(19)]
     public HRESULT get_FileCount([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int*, int>)(lpVtbl[19]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int*, int>)(lpVtbl[19]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_DirectoryCount" />
@@ -187,23 +187,23 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(20)]
     public HRESULT get_DirectoryCount([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int*, int>)(lpVtbl[20]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int*, int>)(lpVtbl[20]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_WorkingDirectory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(21)]
-    public HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_WorkingDirectory([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort**, int>)(lpVtbl[21]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char**, int>)(lpVtbl[21]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_WorkingDirectory" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(22)]
-    public HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] ushort* newVal)
+    public HRESULT put_WorkingDirectory([NativeTypeName("BSTR")] char* newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort*, int>)(lpVtbl[22]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char*, int>)(lpVtbl[22]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_ChangePoint" />
@@ -211,7 +211,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(23)]
     public HRESULT get_ChangePoint([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int*, int>)(lpVtbl[23]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int*, int>)(lpVtbl[23]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_StrictFileSystemCompliance" />
@@ -219,7 +219,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(24)]
     public HRESULT get_StrictFileSystemCompliance([NativeTypeName("VARIANT_BOOL *")] short* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, short*, int>)(lpVtbl[24]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, short*, int>)(lpVtbl[24]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_StrictFileSystemCompliance" />
@@ -227,7 +227,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(25)]
     public HRESULT put_StrictFileSystemCompliance([NativeTypeName("VARIANT_BOOL")] short newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, short, int>)(lpVtbl[25]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, short, int>)(lpVtbl[25]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_UseRestrictedCharacterSet" />
@@ -235,7 +235,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(26)]
     public HRESULT get_UseRestrictedCharacterSet([NativeTypeName("VARIANT_BOOL *")] short* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, short*, int>)(lpVtbl[26]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, short*, int>)(lpVtbl[26]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_UseRestrictedCharacterSet" />
@@ -243,7 +243,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(27)]
     public HRESULT put_UseRestrictedCharacterSet([NativeTypeName("VARIANT_BOOL")] short newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, short, int>)(lpVtbl[27]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, short, int>)(lpVtbl[27]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_FileSystemsToCreate" />
@@ -251,7 +251,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(28)]
     public HRESULT get_FileSystemsToCreate(FsiFileSystems* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, FsiFileSystems*, int>)(lpVtbl[28]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, FsiFileSystems*, int>)(lpVtbl[28]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_FileSystemsToCreate" />
@@ -259,7 +259,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(29)]
     public HRESULT put_FileSystemsToCreate(FsiFileSystems newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, int>)(lpVtbl[29]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, FsiFileSystems, int>)(lpVtbl[29]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_FileSystemsSupported" />
@@ -267,7 +267,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(30)]
     public HRESULT get_FileSystemsSupported(FsiFileSystems* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, FsiFileSystems*, int>)(lpVtbl[30]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, FsiFileSystems*, int>)(lpVtbl[30]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_UDFRevision" />
@@ -275,7 +275,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(31)]
     public HRESULT put_UDFRevision([NativeTypeName("LONG")] int newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int, int>)(lpVtbl[31]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int, int>)(lpVtbl[31]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_UDFRevision" />
@@ -283,7 +283,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(32)]
     public HRESULT get_UDFRevision([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int*, int>)(lpVtbl[32]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int*, int>)(lpVtbl[32]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_UDFRevisionsSupported" />
@@ -291,7 +291,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(33)]
     public HRESULT get_UDFRevisionsSupported(SAFEARRAY** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, SAFEARRAY**, int>)(lpVtbl[33]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, SAFEARRAY**, int>)(lpVtbl[33]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.ChooseImageDefaults" />
@@ -299,7 +299,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(34)]
     public HRESULT ChooseImageDefaults(IDiscRecorder2* discRecorder)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, IDiscRecorder2*, int>)(lpVtbl[34]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), discRecorder);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, IDiscRecorder2*, int>)(lpVtbl[34]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), discRecorder);
     }
 
     /// <inheritdoc cref="IFileSystemImage.ChooseImageDefaultsForMediaType" />
@@ -307,7 +307,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(35)]
     public HRESULT ChooseImageDefaultsForMediaType(IMAPI_MEDIA_PHYSICAL_TYPE value)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, IMAPI_MEDIA_PHYSICAL_TYPE, int>)(lpVtbl[35]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, IMAPI_MEDIA_PHYSICAL_TYPE, int>)(lpVtbl[35]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_ISO9660InterchangeLevel" />
@@ -315,7 +315,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(36)]
     public HRESULT put_ISO9660InterchangeLevel([NativeTypeName("LONG")] int newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int, int>)(lpVtbl[36]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int, int>)(lpVtbl[36]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_ISO9660InterchangeLevel" />
@@ -323,7 +323,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(37)]
     public HRESULT get_ISO9660InterchangeLevel([NativeTypeName("LONG *")] int* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int*, int>)(lpVtbl[37]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int*, int>)(lpVtbl[37]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_ISO9660InterchangeLevelsSupported" />
@@ -331,7 +331,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(38)]
     public HRESULT get_ISO9660InterchangeLevelsSupported(SAFEARRAY** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, SAFEARRAY**, int>)(lpVtbl[38]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, SAFEARRAY**, int>)(lpVtbl[38]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.CreateResultImage" />
@@ -339,23 +339,23 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(39)]
     public HRESULT CreateResultImage(IFileSystemImageResult** resultStream)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, IFileSystemImageResult**, int>)(lpVtbl[39]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), resultStream);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, IFileSystemImageResult**, int>)(lpVtbl[39]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), resultStream);
     }
 
     /// <inheritdoc cref="IFileSystemImage.Exists" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(40)]
-    public HRESULT Exists([NativeTypeName("BSTR")] ushort* fullPath, FsiItemType* itemType)
+    public HRESULT Exists([NativeTypeName("BSTR")] char* fullPath, FsiItemType* itemType)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort*, FsiItemType*, int>)(lpVtbl[40]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fullPath, itemType);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char*, FsiItemType*, int>)(lpVtbl[40]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fullPath, itemType);
     }
 
     /// <inheritdoc cref="IFileSystemImage.CalculateDiscIdentifier" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(41)]
-    public HRESULT CalculateDiscIdentifier([NativeTypeName("BSTR *")] ushort** discIdentifier)
+    public HRESULT CalculateDiscIdentifier([NativeTypeName("BSTR *")] char** discIdentifier)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort**, int>)(lpVtbl[41]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), discIdentifier);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char**, int>)(lpVtbl[41]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), discIdentifier);
     }
 
     /// <inheritdoc cref="IFileSystemImage.IdentifyFileSystemsOnDisc" />
@@ -363,7 +363,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(42)]
     public HRESULT IdentifyFileSystemsOnDisc(IDiscRecorder2* discRecorder, FsiFileSystems* fileSystems)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, IDiscRecorder2*, FsiFileSystems*, int>)(lpVtbl[42]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), discRecorder, fileSystems);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, IDiscRecorder2*, FsiFileSystems*, int>)(lpVtbl[42]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), discRecorder, fileSystems);
     }
 
     /// <inheritdoc cref="IFileSystemImage.GetDefaultFileSystemForImport" />
@@ -371,7 +371,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(43)]
     public HRESULT GetDefaultFileSystemForImport(FsiFileSystems fileSystems, FsiFileSystems* importDefault)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, FsiFileSystems*, int>)(lpVtbl[43]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fileSystems, importDefault);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, FsiFileSystems, FsiFileSystems*, int>)(lpVtbl[43]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fileSystems, importDefault);
     }
 
     /// <inheritdoc cref="IFileSystemImage.ImportFileSystem" />
@@ -379,7 +379,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(44)]
     public HRESULT ImportFileSystem(FsiFileSystems* importedFileSystem)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, FsiFileSystems*, int>)(lpVtbl[44]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), importedFileSystem);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, FsiFileSystems*, int>)(lpVtbl[44]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), importedFileSystem);
     }
 
     /// <inheritdoc cref="IFileSystemImage.ImportSpecificFileSystem" />
@@ -387,7 +387,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(45)]
     public HRESULT ImportSpecificFileSystem(FsiFileSystems fileSystemToUse)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, int>)(lpVtbl[45]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fileSystemToUse);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, FsiFileSystems, int>)(lpVtbl[45]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fileSystemToUse);
     }
 
     /// <inheritdoc cref="IFileSystemImage.RollbackToChangePoint" />
@@ -395,7 +395,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(46)]
     public HRESULT RollbackToChangePoint([NativeTypeName("LONG")] int changePoint)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int, int>)(lpVtbl[46]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), changePoint);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int, int>)(lpVtbl[46]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), changePoint);
     }
 
     /// <inheritdoc cref="IFileSystemImage.LockInChangePoint" />
@@ -403,47 +403,47 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(47)]
     public HRESULT LockInChangePoint()
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, int>)(lpVtbl[47]))((IFileSystemImage3*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, int>)(lpVtbl[47]))((IFileSystemImage3*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IFileSystemImage.CreateDirectoryItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(48)]
-    public HRESULT CreateDirectoryItem([NativeTypeName("BSTR")] ushort* name, IFsiDirectoryItem** newItem)
+    public HRESULT CreateDirectoryItem([NativeTypeName("BSTR")] char* name, IFsiDirectoryItem** newItem)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort*, IFsiDirectoryItem**, int>)(lpVtbl[48]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), name, newItem);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char*, IFsiDirectoryItem**, int>)(lpVtbl[48]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), name, newItem);
     }
 
     /// <inheritdoc cref="IFileSystemImage.CreateFileItem" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(49)]
-    public HRESULT CreateFileItem([NativeTypeName("BSTR")] ushort* name, IFsiFileItem** newItem)
+    public HRESULT CreateFileItem([NativeTypeName("BSTR")] char* name, IFsiFileItem** newItem)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort*, IFsiFileItem**, int>)(lpVtbl[49]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), name, newItem);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char*, IFsiFileItem**, int>)(lpVtbl[49]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), name, newItem);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_VolumeNameUDF" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(50)]
-    public HRESULT get_VolumeNameUDF([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_VolumeNameUDF([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort**, int>)(lpVtbl[50]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char**, int>)(lpVtbl[50]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_VolumeNameJoliet" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(51)]
-    public HRESULT get_VolumeNameJoliet([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_VolumeNameJoliet([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort**, int>)(lpVtbl[51]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char**, int>)(lpVtbl[51]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_VolumeNameISO9660" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(52)]
-    public HRESULT get_VolumeNameISO9660([NativeTypeName("BSTR *")] ushort** pVal)
+    public HRESULT get_VolumeNameISO9660([NativeTypeName("BSTR *")] char** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, ushort**, int>)(lpVtbl[52]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, char**, int>)(lpVtbl[52]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_StageFiles" />
@@ -451,7 +451,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(53)]
     public HRESULT get_StageFiles([NativeTypeName("VARIANT_BOOL *")] short* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, short*, int>)(lpVtbl[53]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, short*, int>)(lpVtbl[53]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_StageFiles" />
@@ -459,7 +459,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(54)]
     public HRESULT put_StageFiles([NativeTypeName("VARIANT_BOOL")] short newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, short, int>)(lpVtbl[54]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, short, int>)(lpVtbl[54]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.get_MultisessionInterfaces" />
@@ -467,7 +467,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(55)]
     public HRESULT get_MultisessionInterfaces(SAFEARRAY** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, SAFEARRAY**, int>)(lpVtbl[55]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, SAFEARRAY**, int>)(lpVtbl[55]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage.put_MultisessionInterfaces" />
@@ -475,7 +475,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(56)]
     public HRESULT put_MultisessionInterfaces(SAFEARRAY* newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, SAFEARRAY*, int>)(lpVtbl[56]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, SAFEARRAY*, int>)(lpVtbl[56]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage2.get_BootImageOptionsArray" />
@@ -483,7 +483,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(57)]
     public HRESULT get_BootImageOptionsArray(SAFEARRAY** pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, SAFEARRAY**, int>)(lpVtbl[57]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, SAFEARRAY**, int>)(lpVtbl[57]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <inheritdoc cref="IFileSystemImage2.put_BootImageOptionsArray" />
@@ -491,7 +491,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(58)]
     public HRESULT put_BootImageOptionsArray(SAFEARRAY* newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, SAFEARRAY*, int>)(lpVtbl[58]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, SAFEARRAY*, int>)(lpVtbl[58]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <include file='IFileSystemImage3.xml' path='doc/member[@name="IFileSystemImage3.get_CreateRedundantUdfMetadataFiles"]/*' />
@@ -499,7 +499,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(59)]
     public HRESULT get_CreateRedundantUdfMetadataFiles([NativeTypeName("VARIANT_BOOL *")] short* pVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, short*, int>)(lpVtbl[59]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, short*, int>)(lpVtbl[59]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), pVal);
     }
 
     /// <include file='IFileSystemImage3.xml' path='doc/member[@name="IFileSystemImage3.put_CreateRedundantUdfMetadataFiles"]/*' />
@@ -507,7 +507,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(60)]
     public HRESULT put_CreateRedundantUdfMetadataFiles([NativeTypeName("VARIANT_BOOL")] short newVal)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, short, int>)(lpVtbl[60]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, short, int>)(lpVtbl[60]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), newVal);
     }
 
     /// <include file='IFileSystemImage3.xml' path='doc/member[@name="IFileSystemImage3.ProbeSpecificFileSystem"]/*' />
@@ -515,7 +515,7 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
     [VtblIndex(61)]
     public HRESULT ProbeSpecificFileSystem(FsiFileSystems fileSystemToProbe, [NativeTypeName("VARIANT_BOOL *")] short* isAppendable)
     {
-        return ((delegate* unmanaged<IFileSystemImage3*, FsiFileSystems, short*, int>)(lpVtbl[61]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fileSystemToProbe, isAppendable);
+        return ((delegate* unmanaged[MemberFunction]<IFileSystemImage3*, FsiFileSystems, short*, int>)(lpVtbl[61]))((IFileSystemImage3*)Unsafe.AsPointer(ref this), fileSystemToProbe, isAppendable);
     }
 
     public interface Interface : IFileSystemImage2.Interface
@@ -534,189 +534,189 @@ public unsafe partial struct IFileSystemImage3 : IFileSystemImage3.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IFsiDirectoryItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IFsiDirectoryItem**, int> get_Root;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IFsiDirectoryItem**, int> get_Root;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_SessionStartBlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_SessionStartBlock;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_SessionStartBlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_SessionStartBlock;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_FreeMediaBlocks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_FreeMediaBlocks;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_FreeMediaBlocks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_FreeMediaBlocks;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2*, int> SetMaxMediaBlocksFromDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2*, int> SetMaxMediaBlocksFromDevice;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_UsedBlocks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_UsedBlocks;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_VolumeName;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_VolumeName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_VolumeName;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_ImportedVolumeName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_ImportedVolumeName;
 
         [NativeTypeName("HRESULT (IBootOptions **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBootOptions**, int> get_BootImageOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBootOptions**, int> get_BootImageOptions;
 
         [NativeTypeName("HRESULT (IBootOptions *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBootOptions*, int> put_BootImageOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBootOptions*, int> put_BootImageOptions;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_FileCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_FileCount;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_DirectoryCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_DirectoryCount;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_WorkingDirectory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_WorkingDirectory;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_WorkingDirectory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_WorkingDirectory;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_ChangePoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_ChangePoint;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_StrictFileSystemCompliance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_StrictFileSystemCompliance;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_StrictFileSystemCompliance;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_StrictFileSystemCompliance;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_UseRestrictedCharacterSet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_UseRestrictedCharacterSet;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_UseRestrictedCharacterSet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_UseRestrictedCharacterSet;
 
         [NativeTypeName("HRESULT (FsiFileSystems *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems*, int> get_FileSystemsToCreate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FsiFileSystems*, int> get_FileSystemsToCreate;
 
         [NativeTypeName("HRESULT (FsiFileSystems) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems, int> put_FileSystemsToCreate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FsiFileSystems, int> put_FileSystemsToCreate;
 
         [NativeTypeName("HRESULT (FsiFileSystems *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems*, int> get_FileSystemsSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FsiFileSystems*, int> get_FileSystemsSupported;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_UDFRevision;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_UDFRevision;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_UDFRevision;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_UDFRevision;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_UDFRevisionsSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_UDFRevisionsSupported;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2*, int> ChooseImageDefaults;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2*, int> ChooseImageDefaults;
 
         [NativeTypeName("HRESULT (IMAPI_MEDIA_PHYSICAL_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_MEDIA_PHYSICAL_TYPE, int> ChooseImageDefaultsForMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_MEDIA_PHYSICAL_TYPE, int> ChooseImageDefaultsForMediaType;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_ISO9660InterchangeLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_ISO9660InterchangeLevel;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_ISO9660InterchangeLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_ISO9660InterchangeLevel;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_ISO9660InterchangeLevelsSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_ISO9660InterchangeLevelsSupported;
 
         [NativeTypeName("HRESULT (IFileSystemImageResult **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IFileSystemImageResult**, int> CreateResultImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IFileSystemImageResult**, int> CreateResultImage;
 
         [NativeTypeName("HRESULT (BSTR, FsiItemType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, FsiItemType*, int> Exists;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, FsiItemType*, int> Exists;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> CalculateDiscIdentifier;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> CalculateDiscIdentifier;
 
         [NativeTypeName("HRESULT (IDiscRecorder2 *, FsiFileSystems *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiscRecorder2*, FsiFileSystems*, int> IdentifyFileSystemsOnDisc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiscRecorder2*, FsiFileSystems*, int> IdentifyFileSystemsOnDisc;
 
         [NativeTypeName("HRESULT (FsiFileSystems, FsiFileSystems *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems, FsiFileSystems*, int> GetDefaultFileSystemForImport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FsiFileSystems, FsiFileSystems*, int> GetDefaultFileSystemForImport;
 
         [NativeTypeName("HRESULT (FsiFileSystems *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems*, int> ImportFileSystem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FsiFileSystems*, int> ImportFileSystem;
 
         [NativeTypeName("HRESULT (FsiFileSystems) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems, int> ImportSpecificFileSystem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FsiFileSystems, int> ImportSpecificFileSystem;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> RollbackToChangePoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> RollbackToChangePoint;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> LockInChangePoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> LockInChangePoint;
 
         [NativeTypeName("HRESULT (BSTR, IFsiDirectoryItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IFsiDirectoryItem**, int> CreateDirectoryItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IFsiDirectoryItem**, int> CreateDirectoryItem;
 
         [NativeTypeName("HRESULT (BSTR, IFsiFileItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IFsiFileItem**, int> CreateFileItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IFsiFileItem**, int> CreateFileItem;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeNameUDF;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_VolumeNameUDF;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeNameJoliet;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_VolumeNameJoliet;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_VolumeNameISO9660;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_VolumeNameISO9660;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_StageFiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_StageFiles;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_StageFiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_StageFiles;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_MultisessionInterfaces;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_MultisessionInterfaces;
 
         [NativeTypeName("HRESULT (SAFEARRAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY*, int> put_MultisessionInterfaces;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY*, int> put_MultisessionInterfaces;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_BootImageOptionsArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_BootImageOptionsArray;
 
         [NativeTypeName("HRESULT (SAFEARRAY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY*, int> put_BootImageOptionsArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY*, int> put_BootImageOptionsArray;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_CreateRedundantUdfMetadataFiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_CreateRedundantUdfMetadataFiles;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_CreateRedundantUdfMetadataFiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_CreateRedundantUdfMetadataFiles;
 
         [NativeTypeName("HRESULT (FsiFileSystems, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FsiFileSystems, short*, int> ProbeSpecificFileSystem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FsiFileSystems, short*, int> ProbeSpecificFileSystem;
     }
 }

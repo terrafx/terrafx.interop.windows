@@ -19,25 +19,4 @@ public static unsafe partial class ShellLinkObjectTests
     {
         Assert.That(typeof(ShellLinkObject).GUID, Is.EqualTo(IID_ShellLinkObject));
     }
-
-    /// <summary>Validates that the <see cref="ShellLinkObject" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ShellLinkObject>(), Is.EqualTo(sizeof(ShellLinkObject)));
-    }
-
-    /// <summary>Validates that the <see cref="ShellLinkObject" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ShellLinkObject).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ShellLinkObject" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ShellLinkObject), Is.EqualTo(1));
-    }
 }

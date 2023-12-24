@@ -4,40 +4,27 @@
 <doc>
   <member name="IVideoFrameStep.CancelStep">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>CancelStep</code> method cancels the previous <see cref="IVideoFrameStep.Step" /> operation.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK if the <b>Step</b> operation was successfully canceled, or E_FAIL otherwise.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVideoFrameStep Interface" />
+    <returns>Returns S_OK if the <b>Step</b> operation was successfully canceled, or E_FAIL otherwise.</returns>
   </member>
   <member name="IVideoFrameStep.CanStep">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>CanStep</code> method determines the stepping capabilities of the specified filter.</para>
     </summary>
-    <param name="bMultiple">
-      <para>If <i>bMultiple</i> is zero and the method returns S_OK, the graph can step one frame at a time. If <i>bMultiple</i> if greater than zero and the method returns S_OK, the graph can step <i>bMultiple</i> frames at a time.</para>
-    </param>
-    <param name="pStepObject">
-      <para>Pointer to an interface on the filter that will control the stepping operation. Specify <b>NULL</b> to perform frame stepping using the renderer filter in the graph. If the graph includes a custom filter that implements the frame stepping, then <i>pStepObject</i> should specify that filter's <see cref="IBaseFilter" /> interface.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if the object can step or E_INVALIDARG if <i>pStepObject</i> is invalid.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVideoFrameStep Interface" />
+    <param name="bMultiple">If <i>bMultiple</i> is zero and the method returns S_OK, the graph can step one frame at a time. If <i>bMultiple</i> if greater than zero and the method returns S_OK, the graph can step <i>bMultiple</i> frames at a time.</param>
+    <param name="pStepObject">Pointer to an interface on the filter that will control the stepping operation. Specify <b>NULL</b> to perform frame stepping using the renderer filter in the graph. If the graph includes a custom filter that implements the frame stepping, then <i>pStepObject</i> should specify that filter's <see cref="IBaseFilter" /> interface.</param>
+    <returns>Returns S_OK if the object can step or E_INVALIDARG if <i>pStepObject</i> is invalid.</returns>
   </member>
   <member name="IVideoFrameStep.Step">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Step</code> method causes the filter graph to step forward by the specified number of frames.</para>
     </summary>
-    <param name="dwFrames">
-      <para>Specifies the number of frames to skip. If <i>dwFrames</i> is 1, the graph steps forward one frame. If <i>dwFrames</i> is a number <i>n</i> greater than 1, the graph skips <i>n</i> - 1 frames and shows the <i>n</i>th frame.</para>
-    </param>
-    <param name="pStepObject">
-      <para>Pointer to an interface on the filter that will control the stepping operation, or <b>NULL</b>. Specify <b>NULL</b> to perform the frame stepping using the renderer filter in the graph. If non-<b>NULL</b>, the object must implement the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ikspropertyset">IKsPropertySet</a> interface and support the AM_KSPROPSETID_FrameStep property. (For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/frame-stepping-property-set">Frame Stepping Property Set</a>.) If the graph includes a custom filter that implements the frame stepping, <i>pStepObject</i> can specify a pointer to that filter.</para>
-    </param>
+    <param name="dwFrames">Specifies the number of frames to skip. If <i>dwFrames</i> is 1, the graph steps forward one frame. If <i>dwFrames</i> is a number <i>n</i> greater than 1, the graph skips <i>n</i> - 1 frames and shows the <i>n</i>th frame.</param>
+    <param name="pStepObject">Pointer to an interface on the filter that will control the stepping operation, or <b>NULL</b>. Specify <b>NULL</b> to perform the frame stepping using the renderer filter in the graph. If non-<b>NULL</b>, the object must implement the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ikspropertyset">IKsPropertySet</a> interface and support the AM_KSPROPSETID_FrameStep property. (For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/frame-stepping-property-set">Frame Stepping Property Set</a>.) If the graph includes a custom filter that implements the frame stepping, <i>pStepObject</i> can specify a pointer to that filter.</param>
     <returns>
       <para>Returns an <b>HRESULT</b>. Possible values include the following.</para>
       <list type="table">
@@ -45,50 +32,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_FRAME_STEP_UNSUPPORTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Frame stepping is not supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_FRAME_STEP_UNSUPPORTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Frame stepping is not supported.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pStepObject</i> parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The <i>pStepObject</i> parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When the step operation is complete, this method sends an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-step-complete">EC_STEP_COMPLETE</a> event notification to the filter graph manager, which will pass it to the application's event loop and set the filter graph to a paused state.</para>
-      <para>The frames step in real time, which means that if the movie is playing at 30 frames per second, calling <b>IVideoFrameStep.Step</b> with <i>dwFrames</i> set to 60 would take 2 seconds to execute. All methods in this interface are asynchronous, so control returns to the application immediately.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVideoFrameStep Interface" />
   </member>
   <member name="IVideoFrameStep">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IVideoFrameStep</code> interface steps through a video stream. This interface enables Microsoft® DirectShow® applications, including DVD players, to step through a video stream as slowly as one frame at a time. Obtain the interface through the filter graph manager, which controls the frame stepping process in conjunction with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer Filter</a> or the Video Renderer Filter. Backward frame stepping is not supported.</para>
-      <para>
-        <b>Note</b>  For frame stepping to work with a hardware decoder, the decoder must support the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/frame-stepping-property-set">Frame Stepping Property Set</a>.</para>
+      <div>
+        <b>Note</b>  For frame stepping to work with a hardware decoder, the decoder must support the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/frame-stepping-property-set">Frame Stepping Property Set</a>.</div>
     </summary>
   </member>
 </doc>

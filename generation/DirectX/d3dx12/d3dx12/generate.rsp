@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--define-macro
+D3DX12_NO_STATE_OBJECT_HELPERS
+--file
+d3dx12-d3dx12.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/d3dx12/d3dx12
+--test-output
+../../../../tests/Interop/Windows/DirectX/d3dx12/d3dx12
+--traverse
+../../../include/d3dx12/d3dx12.h

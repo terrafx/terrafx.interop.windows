@@ -3,90 +3,34 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IQueryAssociations.GetData">
-    <summary>
-      <para>Searches for and retrieves file or protocol association-related binary data from the registry.</para>
-    </summary>
-    <param name="flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/shell/assocf_str">ASSOCF</a></b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/win32/shell/assocf_str">ASSOCF</a> value that can be used to control the search.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b><see cref="ASSOCDATA" /></b></para>
-      <para>The <see cref="ASSOCDATA" /> value that specifies the type of data that is to be returned.</para>
-    </param>
-    <param name="pszExtra">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to an optional, null-terminated Unicode string with information about the location of the data. It is normally set to a Shell verb such as <b>open</b>. Set this parameter to <b>NULL</b> if it is not used.</para>
-    </param>
-    <param name="pvOut">
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to a value that, when this method returns successfully, receives the requested data value.</para>
-    </param>
-    <param name="pcbOut">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to a value that, when this method is called, holds the size of <i>pvOut</i>, in bytes. When this method returns successfully, the value contains the size of the data actually retrieved.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IQueryAssociations" />
+    <summary>Searches for and retrieves file or protocol association-related binary data from the registry.</summary>
+    <param name="flags">The <a href="https://docs.microsoft.com//windows/win32/shell/assocf_str">ASSOCF</a> value that can be used to control the search.</param>
+    <param name="data">The <see cref="ASSOCDATA" /> value that specifies the type of data that is to be returned.</param>
+    <param name="pszExtra">A pointer to an optional, null-terminated Unicode string with information about the location of the data. It is normally set to a Shell verb such as <b>open</b>. Set this parameter to <b>NULL</b> if it is not used.</param>
+    <param name="pvOut">A pointer to a value that, when this method returns successfully, receives the requested data value.</param>
+    <param name="pcbOut">A pointer to a value that, when this method is called, holds the size of <i>pvOut</i>, in bytes. When this method returns successfully, the value contains the size of the data actually retrieved.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IQueryAssociations.GetEnum">
-    <summary>
-      <para>This method is not implemented.</para>
-    </summary>
-    <param name="flags">
-      <para>TBD</para>
-    </param>
-    <param name="assocenum">
-      <para>TBD</para>
-    </param>
-    <param name="pszExtra">
-      <para>TBD</para>
-    </param>
-    <param name="riid">
-      <para>TBD</para>
-    </param>
-    <param name="ppvOut">
-      <para>TBD</para>
-    </param>
-    <returns>
-      <para>This method does not return a value.</para>
-    </returns>
+    <summary>This method is not implemented.</summary>
+    <param name="flags">TBD</param>
+    <param name="assocenum">TBD</param>
+    <param name="pszExtra">TBD</param>
+    <param name="riid">TBD</param>
+    <param name="ppvOut">TBD</param>
+    <returns>This method does not return a value.</returns>
   </member>
   <member name="IQueryAssociations.GetKey">
-    <summary>
-      <para>Searches for and retrieves a file or protocol association-related key from the registry.</para>
-    </summary>
-    <param name="flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/shell/assocf_str">ASSOCF</a></b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/win32/shell/assocf_str">ASSOCF</a> value that can be used to control the search.</para>
-    </param>
-    <param name="key">
-      <para>Type: <b><see cref="ASSOCKEY" /></b></para>
-      <para>The <see cref="ASSOCKEY" /> value that specifies the type of key that is to be returned.</para>
-    </param>
-    <param name="pszExtra">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to an optional null-terminated Unicode string with information about the location of the key. It is normally set to a Shell verb such as <b>open</b>. Set this parameter to <b>NULL</b> if it is not used.</para>
-    </param>
-    <param name="phkeyOut">
-      <para>Type: <b>HKEY*</b></para>
-      <para>A pointer to the key's HKEY value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IQueryAssociations" />
+    <summary>Searches for and retrieves a file or protocol association-related key from the registry.</summary>
+    <param name="flags">The <a href="https://docs.microsoft.com//windows/win32/shell/assocf_str">ASSOCF</a> value that can be used to control the search.</param>
+    <param name="key">The <see cref="ASSOCKEY" /> value that specifies the type of key that is to be returned.</param>
+    <param name="pszExtra">A pointer to an optional null-terminated Unicode string with information about the location of the key. It is normally set to a Shell verb such as <b>open</b>. Set this parameter to <b>NULL</b> if it is not used.</param>
+    <param name="phkeyOut">A pointer to the key's HKEY value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IQueryAssociations.GetString">
-    <summary>
-      <para>Searches for and retrieves a file or protocol association-related string from the registry.</para>
-    </summary>
+    <summary>Searches for and retrieves a file or protocol association-related string from the registry.</summary>
     <param name="flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/shell/assocf_str">ASSOCF</a></b></para>
       <para>A flag that can be used to control the search. It can be any combination of the following <a href="https://docs.microsoft.com//windows/win32/shell/assocf_str">ASSOCF</a> values.</para>
       <list type="bullet">
         <item>
@@ -121,54 +65,40 @@
         </item>
       </list>
     </param>
-    <param name="str">
-      <para>Type: <b><see cref="ASSOCSTR" /></b></para>
-      <para>An <see cref="ASSOCSTR" /> value that specifies the type of string that is to be returned.</para>
-    </param>
-    <param name="pszExtra">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to an optional, null-terminated Unicode string with information about the location of the string. It is typically set to a Shell verb such as <b>open</b>. Set this parameter to <b>NULL</b> if it is not used.</para>
-    </param>
-    <param name="pszOut">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>A pointer to a null-terminated Unicode string used to return the requested string. Set this parameter to <b>NULL</b> to retrieve the required buffer size.</para>
-    </param>
+    <param name="str">An <see cref="ASSOCSTR" /> value that specifies the type of string that is to be returned.</param>
+    <param name="pszExtra">A pointer to an optional, null-terminated Unicode string with information about the location of the string. It is typically set to a Shell verb such as <b>open</b>. Set this parameter to <b>NULL</b> if it is not used.</param>
+    <param name="pszOut">A pointer to a null-terminated Unicode string used to return the requested string. Set this parameter to <b>NULL</b> to retrieve the required buffer size.</param>
     <param name="pcchOut">
-      <para>Type: <b>DWORD*</b></para>
       <para>A pointer to a value that, on entry, is set to the number of characters in the <i>pwszOut</i> buffer. When the function returns successfully, it points to the number of characters placed in the buffer.</para>
       <para>If the <see cref="ASSOCF_NOTRUNCATE" /> flag is set in <i>flags</i> and the buffer specified in <i>pwszOut</i> is too small, the function returns E_POINTER and <i>pcchOut</i> points to the required size of the buffer.</para>
       <para>If <i>pwszOut</i> is <b>NULL</b>, the function returns S_FALSE and <i>pcchOut</i> points to the required size of the buffer.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns a standard COM error value, including the following:</para>
       <list type="table">
         <listheader>
           <description>Error</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>Success.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_POINTER</description>
           <description>The <i>pwszOut</i> buffer is too small to hold the entire string.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>S_FALSE</description>
           <description>
             <i>pwszOut</i> is <b>NULL</b>. <i>pcchOut</i> contains the required buffer size.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IQueryAssociations.Init">
-    <summary>
-      <para>Initializes the <see cref="IQueryAssociations" /> interface and sets the root key to the appropriate ProgID.</para>
-    </summary>
+    <summary>Initializes the <see cref="IQueryAssociations" /> interface and sets the root key to the appropriate ProgID.</summary>
     <param name="flags">
-      <para>Type: <b><see cref="ASSOCF" /></b></para>
       <para>A flag that specifies how the search is to be initialized. It is typically set to zero, but it can also take one of the following <see cref="ASSOCF" /> values.</para>
       <list type="bullet">
         <item>
@@ -189,7 +119,6 @@
       </list>
     </param>
     <param name="pszAssoc">
-      <para>Type: <b>LPCWSTR</b></para>
       <para>A Unicode string that is used to determine the root key. If a value is specified for <i>hkProgid</i>, set this parameter to <b>NULL</b>. Four types of string can be used:</para>
       <h4>File name extension</h4>
       <para>A file name extension, such as .txt.</para>
@@ -200,38 +129,10 @@
       <h4>Executable name</h4>
       <para>The name of an application's .exe file. The <see cref="ASSOCF_OPEN_BYEXENAME" /> flag must be set in <i>flags</i>.</para>
     </param>
-    <param name="hkProgid">
-      <para>Type: <b>HKEY</b></para>
-      <para>The HKEY value of the subkey that is used as a root key. The search looks only below this key. If a value is specified for <i>pwszAssoc</i>, set this parameter to <b>NULL</b>.</para>
-    </param>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method initializes the interface, and is also called each time you need to specify a new root key. You can use <i>pwszAssoc</i> to specify a string, such as a file name extension or its associated ProgID, that identifies the root key. You can also specify the root key's HKEY value. <b>Init</b> will then use this information to locate the root key in the registry. Subsequent calls to the other <see cref="IQueryAssociations" /> methods will use it as their starting point and search for the information in the root key's subkeys.</para>
-    </remarks>
-    <seealso cref="IQueryAssociations" />
+    <param name="hkProgid">The HKEY value of the subkey that is used as a root key. The search looks only below this key. If a value is specified for <i>pwszAssoc</i>, set this parameter to <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IQueryAssociations">
-    <summary>
-      <para>Exposes methods that simplify the process of retrieving information stored in the registry in association with defining a file type or protocol and associating it with an application.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>This interface is exposed by the Shell or by namespace extensions to simplify handling file and protocol associations. You should not implement this interface.</para>
-      <h3>When to Use</h3>
-      <para>Use this interface if you need information from the registry related to file or protocol associations. For example, you can use this interface to retrieve information associated with a file name extension such as the command string of one of its verbs.</para>
-      <para>A complete registry path or HKEY value is not required. Instead, you can retrieve information based on criteria such as the file name extension or executable name. For a discussion of file associations, see <a href="https://docs.microsoft.com//windows/desktop/shell/fa-file-types">File Types</a>.</para>
-      <para>You can also retrieve an application's name using this interface. Use method <see cref="IQueryAssociations.GetString" />. Set the <i>str</i> parameter to <see cref="ASSOCSTR_FRIENDLYAPPNAME" />.</para>
-      <para>To use this interface, you must first retrieve a pointer to it. Typically, you retrieve an <see cref="QueryInterface" /> pointer by calling a Shell object's <see cref="IShellFolder.GetUIObjectOf" /> method. You can also retrieve an interface pointer by calling <see cref="AssocCreate" /> (set <i>clsid</i> to CLSID_QueryAssociations). Initialize the interface with <see cref="IQueryAssociations.Init" />. This method sets the root key that will be used when you call any of the remaining three methods to retrieve information from the registry. They will look only below the root key. You must release the interface when you no longer need it.</para>
-      <para>The <b>IQueryAssociations</b> interface is useful if you need to repeatedly query the registry for information. Once the interface is initialized, the overhead of calling the various methods is relatively small. There are also several related functions, listed in the See Also section, that allow you to retrieve the same information from the registry with a single function call. While they are simpler to use, they cause the overhead of creating and initializing <b>IQueryAssociations</b> each time they are called. Because of this, they are best suited for single use.</para>
-    </remarks>
-    <seealso cref="AssocQueryKey" />
-    <seealso cref="AssocQueryString" />
-    <seealso cref="AssocQueryStringByKey" />
+    <summary>Exposes methods that simplify the process of retrieving information stored in the registry in association with defining a file type or protocol and associating it with an application.</summary>
   </member>
 </doc>

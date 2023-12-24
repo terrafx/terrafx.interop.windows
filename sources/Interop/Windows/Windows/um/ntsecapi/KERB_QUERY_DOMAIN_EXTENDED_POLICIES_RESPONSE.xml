@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE">
+    <summary>Contains the results of querying for the extended policies of the specified domain. You must have the <b>SeTcbPrivilege</b> privilege set.</summary>
+  </member>
+  <member name="KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE.MessageType">
+    <summary>A value of the <see cref="KERB_PROTOCOL_MESSAGE_TYPE" /> enumeration that lists the types of messages that can be sent to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> authentication package by calling the <see cref="LsaCallAuthenticationPackage" /> function. This member must be set to <b>KerbQueryDomainExtendedPoliciesMessage</b>.</summary>
+  </member>
+  <member name="KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE.Flags">
+    <summary>
+      <para>Contains flags used for the extended policies.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE_FLAG_DAC_DISABLED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The Dynamic Access Control (DAC) is disabled so you can't get the extended policies.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE.ExtendedPolicies">
+    <summary>The 	name of the domain that you are querying for the extended policies.</summary>
+  </member>
+  <member name="KERB_QUERY_DOMAIN_EXTENDED_POLICIES_RESPONSE.DsFlags">
+    <summary>Flags that represent the requirements. These flags are returned from the <see cref="DsGetDcName" /> function.</summary>
+  </member>
+</doc>

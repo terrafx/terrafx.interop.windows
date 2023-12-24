@@ -25,7 +25,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDMOQualityControl*, Guid*, void**, int>)(lpVtbl[0]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDMOQualityControl*, Guid*, void**, int>)(lpVtbl[0]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDMOQualityControl*, uint>)(lpVtbl[1]))((IDMOQualityControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDMOQualityControl*, uint>)(lpVtbl[1]))((IDMOQualityControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDMOQualityControl*, uint>)(lpVtbl[2]))((IDMOQualityControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDMOQualityControl*, uint>)(lpVtbl[2]))((IDMOQualityControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDMOQualityControl.xml' path='doc/member[@name="IDMOQualityControl.SetNow"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface, 
     [VtblIndex(3)]
     public HRESULT SetNow([NativeTypeName("REFERENCE_TIME")] long rtNow)
     {
-        return ((delegate* unmanaged<IDMOQualityControl*, long, int>)(lpVtbl[3]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), rtNow);
+        return ((delegate* unmanaged[MemberFunction]<IDMOQualityControl*, long, int>)(lpVtbl[3]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), rtNow);
     }
 
     /// <include file='IDMOQualityControl.xml' path='doc/member[@name="IDMOQualityControl.SetStatus"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface, 
     [VtblIndex(4)]
     public HRESULT SetStatus([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IDMOQualityControl*, uint, int>)(lpVtbl[4]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IDMOQualityControl*, uint, int>)(lpVtbl[4]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     /// <include file='IDMOQualityControl.xml' path='doc/member[@name="IDMOQualityControl.GetStatus"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface, 
     [VtblIndex(5)]
     public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IDMOQualityControl*, uint*, int>)(lpVtbl[5]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IDMOQualityControl*, uint*, int>)(lpVtbl[5]))((IDMOQualityControl*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IDMOQualityControl : IDMOQualityControl.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> SetNow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> SetNow;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetStatus;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStatus;
     }
 }

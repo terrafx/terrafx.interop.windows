@@ -14,6 +14,7 @@ public unsafe partial struct WS_METADATA_ENDPOINT
     public WS_ENDPOINT_ADDRESS endpointAddress;
 
     /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.endpointPolicy"]/*' />
+    [NativeTypeName("WS_POLICY*")]
     public IntPtr endpointPolicy;
 
     /// <include file='WS_METADATA_ENDPOINT.xml' path='doc/member[@name="WS_METADATA_ENDPOINT.portName"]/*' />

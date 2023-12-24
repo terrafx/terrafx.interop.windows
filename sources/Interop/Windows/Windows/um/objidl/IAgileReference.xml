@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAgileReference.Resolve">
-    <summary>
-      <para>Gets the interface ID of an agile reference to an object.</para>
-    </summary>
-    <param name="pp">
-      <para>The interface ID of the interface to be retrieved from the agile reference. It is not required to be the same as the registered interface.</para>
-    </param>
-    <param name="unnamedParam2">
-      <para>On successful completion, *<i>ppvObjectReference</i> is a pointer to the interface specified by <i>riid</i>.</para>
-    </param>
+    <summary>Gets the interface ID of an agile reference to an object.</summary>
+    <param name="pp">The interface ID of the interface to be retrieved from the agile reference. It is not required to be the same as the registered interface.</param>
+    <param name="unnamedParam2">On successful completion, *<i>ppvObjectReference</i> is a pointer to the interface specified by <i>riid</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,40 +13,32 @@
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>S_OK</para>
+            <list type="bullet">
+              <listheader>
+                <term>S_OK</term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_NOINTERFACE</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>E_NOINTERFACE</para>
-          </description>
-          <description>
-            <para>The requested interface isn't implemented on the registered object.</para>
-          </description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>Call the <see cref="RoGetAgileReference" /> function to create an agile reference to an object. Call the <b>Resolve</b> method to localize the object into the apartment in which <b>Resolve</b> is called.</para>
-    </remarks>
-    <seealso cref="IAgileReference" />
-    <seealso cref="RoGetAgileReference" />
+          <description>The requested interface isn't implemented on the registered object.</description>
+        </listheader>
+      </list> </returns>
   </member>
   <member name="IAgileReference.Resolve">
-    <summary>
-      <para>Gets the interface ID of an agile reference to an object.</para>
-    </summary>
-    <param name="">
-      <para>The interface ID of the interface to be retrieved from the agile reference. It is not required to be the same as the registered interface.</para>
-    </param>
-    <param name="ppvObjectReference">
-      <para>On successful completion, *<i>ppvObjectReference</i> is a pointer to the interface specified by <i>riid</i>.</para>
-    </param>
+    <summary>Gets the interface ID of an agile reference to an object.</summary>
+    <param name="">The interface ID of the interface to be retrieved from the agile reference. It is not required to be the same as the registered interface.</param>
+    <param name="ppvObjectReference">On successful completion, *<i>ppvObjectReference</i> is a pointer to the interface specified by <i>riid</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -60,38 +46,30 @@
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>S_OK</para>
+            <list type="bullet">
+              <listheader>
+                <term>S_OK</term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_NOINTERFACE</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>E_NOINTERFACE</para>
-          </description>
-          <description>
-            <para>The requested interface isn't implemented on the registered object.</para>
-          </description>
-        </item>
+          <description>The requested interface isn't implemented on the registered object.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call the <see cref="RoGetAgileReference" /> function to create an agile reference to an object. Call the <b>Resolve</b> method to localize the object into the apartment in which <b>Resolve</b> is called.</para>
-    </remarks>
-    <seealso cref="IAgileReference" />
-    <seealso cref="RoGetAgileReference" />
   </member>
   <member name="IAgileReference">
-    <summary>
-      <para>Enables retrieving an agile reference to an object.</para>
-    </summary>
-    <remarks>
-      <para>Call the <see cref="RoGetAgileReference" /> function to create an agile reference to an object.</para>
-    </remarks>
-    <seealso cref="IUnknown" />
-    <seealso cref="RoGetAgileReference" />
+    <summary>Enables retrieving an agile reference to an object.</summary>
   </member>
 </doc>

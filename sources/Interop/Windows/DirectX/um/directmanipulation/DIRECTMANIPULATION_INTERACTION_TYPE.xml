@@ -3,44 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DIRECTMANIPULATION_INTERACTION_TYPE">
-    <summary>
-      <para>Defines gestures recognized by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+    <summary>Defines gestures recognized by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</summary>
   </member>
   <member name="DIRECTMANIPULATION_INTERACTION_TYPE.DIRECTMANIPULATION_INTERACTION_BEGIN">
-    <summary>
-      <para>Marks the beginning of an interaction.</para>
-    </summary>
+    <summary>Marks the beginning of an interaction.</summary>
   </member>
   <member name="DIRECTMANIPULATION_INTERACTION_TYPE.DIRECTMANIPULATION_INTERACTION_TYPE_MANIPULATION">
-    <summary>
-      <para>A compound gesture that supports translation, rotation and scaling.</para>
-    </summary>
+    <summary>A compound gesture that supports translation, rotation and scaling.</summary>
   </member>
   <member name="DIRECTMANIPULATION_INTERACTION_TYPE.DIRECTMANIPULATION_INTERACTION_TYPE_GESTURE_TAP">
-    <summary>
-      <para>A tap gesture.</para>
-    </summary>
+    <summary>A tap gesture.</summary>
   </member>
   <member name="DIRECTMANIPULATION_INTERACTION_TYPE.DIRECTMANIPULATION_INTERACTION_TYPE_GESTURE_HOLD">
-    <summary>
-      <para>A hold gesture.</para>
-    </summary>
+    <summary>A hold gesture.</summary>
   </member>
   <member name="DIRECTMANIPULATION_INTERACTION_TYPE.DIRECTMANIPULATION_INTERACTION_TYPE_GESTURE_CROSS_SLIDE">
-    <summary>
-      <para>Select or move through slide or swipe gestures.</para>
-    </summary>
+    <summary>Select or move through slide or swipe gestures.</summary>
   </member>
   <member name="DIRECTMANIPULATION_INTERACTION_TYPE.DIRECTMANIPULATION_INTERACTION_TYPE_GESTURE_PINCH_ZOOM">
-    <summary>
-      <para>A zoom gesture.</para>
-    </summary>
+    <summary>A zoom gesture.</summary>
   </member>
   <member name="DIRECTMANIPULATION_INTERACTION_TYPE.DIRECTMANIPULATION_INTERACTION_END">
-    <summary>
-      <para>Marks the end of an interaction.</para>
-    </summary>
+    <summary>Marks the end of an interaction.</summary>
   </member>
 </doc>

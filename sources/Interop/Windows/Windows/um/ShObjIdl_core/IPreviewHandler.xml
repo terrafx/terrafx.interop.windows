@@ -3,186 +3,107 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPreviewHandler.DoPreview">
-    <summary>
-      <para>Directs the preview handler to load data from the source specified in an earlier Initialize method call, and to begin rendering to the previewer window.</para>
-    </summary>
+    <summary>Directs the preview handler to load data from the source specified in an earlier Initialize method call, and to begin rendering to the previewer window.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The operation completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The operation completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_PREVIEWHANDLER_DRM_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Blocked by digital rights management.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_PREVIEWHANDLER_DRM_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_PREVIEWHANDLER_NOAUTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Blocked by file permissions.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Blocked by digital rights management.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_PREVIEWHANDLER_NOTFOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Item was not found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_PREVIEWHANDLER_NOAUTH</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_PREVIEWHANDLER_CORRUPT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Blocked by file permissions.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_PREVIEWHANDLER_NOTFOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>Item was not found.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_PREVIEWHANDLER_CORRUPT</b>
-            </para>
-          </description>
-          <description>
-            <para>Item was corrupt.</para>
-          </description>
-        </item>
+          <description>Item was corrupt.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the previewer window has not yet been created, then it must be created after this method has been called. The preview handler is responsible for painting the area specified in <see cref="IPreviewHandler.SetWindow" /> or <see cref="IPreviewHandler.SetRect" />.  If these methods are called while the preview handler is rendering, the window must be reparented/resized without stopping or restarting the rendering of the item.</para>
-      <para>This method should be called only after <see cref="IPreviewHandler.SetWindow" /> has been called.</para>
-      <para>Additionally, this method should be called only after <see cref="Initialize" />, <see cref="Initialize" />, or <see cref="Initialize" /> has been called.</para>
-      <para>
-        <b>Note</b>  Do not actually create the previewer window until this method has been called.</para>
-    </remarks>
   </member>
   <member name="IPreviewHandler.QueryFocus">
-    <summary>
-      <para>Directs the preview handler to return the <b>HWND</b> from calling the <see cref="GetFocus Function" />.</para>
-    </summary>
-    <param name="phwnd">
-      <para>Type: <b>HWND*</b></para>
-      <para>When this method returns, contains a pointer to the HWND returned from calling the <see cref="GetFocus Function" /> from the preview handler's foreground thread.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is necessary because <see cref="GetFocus Function" /> can only succeed if the focus is on a window created by the calling thread. This method is used by the host to manage the tabbing order and to support tabbing into and out of the preview handler's windows.</para>
-    </remarks>
+    <summary>Directs the preview handler to return the <b>HWND</b> from calling the <see cref="GetFocus Function" />.</summary>
+    <param name="phwnd">When this method returns, contains a pointer to the HWND returned from calling the <see cref="GetFocus Function" /> from the preview handler's foreground thread.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPreviewHandler.SetFocus">
-    <summary>
-      <para>Directs the preview handler to set focus to itself.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method should query the state of the <b>SHIFT</b> key to decide whether to set focus to its first tab stop or its last tab stop. This is necessary because the <b>IPreviewHandler.SetFocus</b> can only succeed if the focus is being set to a window created by the calling thread.</para>
-      <para>This is the extent of accelerator keys coming down from the host to the preview handler; no other accelerators are passed down. <see cref="IPreviewHandler.TranslateAccelerator" /> is only used for messages from the preview handler's message pump up to the <see cref="IPreviewHandler" /> object.</para>
-    </remarks>
+    <summary>Directs the preview handler to set focus to itself.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPreviewHandler.SetRect">
-    <summary>
-      <para>Directs the preview handler to change the area within the parent hwnd that it draws into.</para>
-    </summary>
-    <param name="prc">
-      <para>Type: <b>const <see cref="RECT" />*</b></para>
-      <para>A pointer to a <b>RECT</b> to be used for the preview.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If called before the preview handler window has been created, the new <b>RECT</b>  replaces the <b>RECT</b> previously received in the <see cref="IPreviewHandler.SetWindow" /> call.</para>
-      <para>If called after the preview handler window has been created, the preview handler window must be resized.</para>
-      <para>If the preview handler is already rendering, then the preview must be resized without interrupting the render process.</para>
-    </remarks>
+    <summary>Directs the preview handler to change the area within the parent hwnd that it draws into.</summary>
+    <param name="prc">A pointer to a <b>RECT</b> to be used for the preview.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPreviewHandler.SetWindow">
-    <summary>
-      <para>Sets the parent window of the previewer window, as well as the area within the parent to be used for the previewer window.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the parent window.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b>const <see cref="RECT" />*</b></para>
-      <para>A pointer to a <b>RECT</b> defining the area for the previewer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The preview handler is responsible for painting the entire area defined by <i>prc</i>. If the previewer window has been created, the preview handler must associate the previewer window to the new parent <i>hwnd</i> and resize the previewer window to the area defined by <i>prc</i>. If the previewer window has not yet been created, the preview handler must remember this information for when the previewer window is created in <see cref="IPreviewHandler.DoPreview" />.</para>
-      <para>
-        <b>Note</b>  It is preferred that this information be stored prior to calling <see cref="IPreviewHandler.DoPreview" />. Doing so increases performance at setup time for any cases where the preview does not start.</para>
-    </remarks>
+    <summary>Sets the parent window of the previewer window, as well as the area within the parent to be used for the previewer window.</summary>
+    <param name="hwnd">A handle to the parent window.</param>
+    <param name="prc">A pointer to a <b>RECT</b> defining the area for the previewer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPreviewHandler.TranslateAccelerator">
-    <summary>
-      <para>Directs the preview handler to handle a keystroke passed up from the message pump of the process in which the preview handler is running.</para>
-    </summary>
-    <param name="pmsg">
-      <para>Type: <b><see cref="MSG" />*</b></para>
-      <para>A pointer to a window message.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the keystroke message can be processed by the preview handler, the handler will process it and return <b>S_OK</b>.  If the preview handler cannot process the keystroke message, it will offer it to the host using <see cref="TranslateAccelerator" />.  If the host processes the message, this method will return <b>S_OK</b>.  If the host does not process the message, this method will return <b>S_FALSE</b>.</para>
-    </returns>
-    <remarks>
-      <para>This function will only be called from the message pump of the process in which the preview handler is running. This function allows forwarding keystroke messages from the message pump to the host using <see cref="TranslateAccelerator" />.</para>
-      <para>When the preview handler receives a message (a keystroke) from its message pump, it is responsible for forwarding it to its host.</para>
-      <para>When <see cref="IObjectWithSite.SetSite" /> is called on the preview handler, a reference to the preview handler's host is passed in.  The object should immediately <see cref="QueryInterface" /> that site for <see cref="IPreviewHandlerFrame" />, and store that pointer.</para>
-      <para>The preview handler then has the option to call <see cref="GetWindowContext" /> to get an accelerator table to filter keystrokes. The preview can then compare keystrokes against that accelerator table using <see cref="IsAccelerator" /> and only call <b>IPreviewHandler.TranslateAccelerator</b> for keystrokes that match.  This can cause a modest performance increase.  The preview handler must release the accelerator table using <see cref="DestroyAcceleratorTable" /> function.</para>
-      <para>It is also acceptable for the preview handler to avoid using the table altogether and call <b>IPreviewHandler.TranslateAccelerator</b> for every keystroke. Note that all preview handlers running in low-integrity processes must use this method.</para>
-      <para>When a tab key is pressed, if a preview handler has more than one tab stop it is responsible for moving keyboard focus within those tab stops.  If the current keyboard focus is on one of those tab stops, and advancing the keyboard focus would move it to another previewer tab stop, the previewer should call SetFocus on the next tab stop.  Otherwise the tab key should be forwarded to the host to handle tabbing out of the previewer.</para>
-    </remarks>
+    <summary>Directs the preview handler to handle a keystroke passed up from the message pump of the process in which the preview handler is running.</summary>
+    <param name="pmsg">A pointer to a window message.</param>
+    <returns>If the keystroke message can be processed by the preview handler, the handler will process it and return <b>S_OK</b>. If the preview handler cannot process the keystroke message, it will offer it to the host using <see cref="TranslateAccelerator" />. If the host processes the message, this method will return <b>S_OK</b>. If the host does not process the message, this method will return <b>S_FALSE</b>.</returns>
   </member>
   <member name="IPreviewHandler.Unload">
-    <summary>
-      <para>Directs the preview handler to cease rendering a preview and to release all resources that have been allocated based on the item passed in during the initialization.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When called, the preview window will be destroyed.</para>
-      <para>This method should be called only after <see cref="Initialize" />, <see cref="Initialize" />, or <see cref="Initialize" /> has been called. All resources associated with this initialization will be released. Prior to calling <see cref="IPreviewHandler.DoPreview" />, this preview handler will be re-initialized with a call to one of the initialization interfaces and a call to <see cref="IPreviewHandler.SetWindow" />.</para>
-    </remarks>
+    <summary>Directs the preview handler to cease rendering a preview and to release all resources that have been allocated based on the item passed in during the initialization.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPreviewHandler">
-    <summary>
-      <para>Exposes methods for the display of rich previews.</para>
-    </summary>
-    <remarks>
-      <para>Preview handlers can be built in managed code. Typically, all preview handlers are hosted together in a surrogate process called prevhost.exe. There is one instance of this process for preview handlers running at normal integrity level, and another instance for preview handlers running at low integrity level. If you want to implement your handler in managed code, your handler should not run inside either of these shared processes. Instead, arrange for your handler to get a new instance of prevhost.exe by creating a new AppID entry in the registry (specifying prevhost.exe as the DllSurrogate value) and then setting that as the AppID value in the registry value for your handler's class ID. This will ensure that a unique prevhost.exe instance is created for your handler, instead of the common instances used by the other handlers.</para>
-    </remarks>
+    <summary>Exposes methods for the display of rich previews.</summary>
   </member>
 </doc>

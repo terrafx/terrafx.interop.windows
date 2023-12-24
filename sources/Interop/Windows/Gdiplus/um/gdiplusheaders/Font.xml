@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Font.Clone">
+    <summary>The <b>Font.Clone</b> method creates a new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object based on this<b>Font</b> object.</summary>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object.</returns>
+  </member>
+  <member name="Font.Font">
+    <summary>Creates a <b>Font.Font</b> object based on a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object, a size, a font style, and a unit of measurement.</summary>
+    <param name="family">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that specifies information such as the string that identifies the font family and the font family's text metrics measured in design units.</param>
+    <param name="emSize">Real number that specifies the em size of the font measured in the units specified in the<i>unit</i> parameter.</param>
+    <param name="style">Optional. Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise<b>OR</b> applied to two or more of these elements. For example, FontStyleBold | FontStyleUnderline | FontStyleStrikeout sets the style as a combination of the three styles. The default value is FontStyleRegular.</param>
+    <param name="unit">Optional. Element of the <see cref="Unit" /> enumeration that specifies the unit of measurement for the font size. The default value is UnitPoint.</param>
+  </member>
+  <member name="Font.Font">
+    <summary>Creates a <b>Font.Font</b> object based on a font family, a size, a font style, a unit of measurement, and a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontcollection">FontCollection</a> object.</summary>
+    <param name="familyName">Name of the font family.</param>
+    <param name="emSize">Real number that specifies the em size of the font measured in the units specified in the<i>unit</i> parameter.</param>
+    <param name="style">Optional. Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise<b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold</code> | <code>FontStyleUnderline</code> | <code>FontStyleStrikeout</code> sets the style as a combination of the three styles. The default value is <code>FontStyleRegular</code>.</param>
+    <param name="unit">Optional. Element of the <see cref="Unit" /> enumeration that specifies the unit of measurement for the font size. The default value is <code>UnitPoint</code>.</param>
+    <param name="fontCollection">Optional. Pointer to a<b>FontCollection</b> object that specifies a user-defined group of fonts. If the value of this parameter is <b>NULL</b>, the system font collection is used. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="Font.Font">
+    <summary>Creates a <b>Font.Font</b> object based on the Windows Graphics Device Interface (GDI) font object that is currently selected into a specified device context. This constructor is provided for compatibility with GDI.</summary>
+    <param name="hdc">Handle to a Windows device context that has a font selected. A handle is a number that Windows uses internally to reference an object.</param>
+  </member>
+  <member name="Font.Font">
+    <summary>Creates a <b>Font.Font</b> object indirectly from a Windows Graphics Device Interface (GDI) logical font by using a handle to a GDI <b>LOGFONT</b> structure.</summary>
+    <param name="hdc">Handle to a Windows device context. A handle is a number that Windows uses internally to reference an object.</param>
+    <param name="hfont">Handle to a logical font.</param>
+  </member>
+  <member name="Font.Font">
+    <summary>Creates a <b>Font.Font</b> object directly from a Windows Graphics Device Interface (GDI) logical font. The GDI logical font is a<b>LOGFONTA</b> structure, which is the one-byte character version of a logical font. This constructor is provided for compatibility with GDI.</summary>
+    <param name="hdc">Handle to a Windows device context. A handle is a number that Windows uses internally to reference an object.</param>
+    <param name="logfont">Pointer to a<b>LOGFONTA</b> structure variable that contains attributes of the font. The<b>LOGFONTA</b> structure is the one-byte character version of the logical font.</param>
+  </member>
+  <member name="Font.Font">
+    <summary>Creates a <b>Font.Font</b> object directly from a Windows Graphics Device Interface (GDI) logical font. The GDI logical font is a<b>LOGFONTW</b> structure, which is the wide character version of a logical font. This constructor is provided for compatibility with GDI.</summary>
+    <param name="hdc">Handle to a Windows device context. A handle is a number that Windows uses internally to reference an object.</param>
+    <param name="logfont">Pointer to a<b>LOGFONTW</b> structure variable that contains attributes of the font. The<b>LOGFONTW</b> structure is the wide character version of the logical font.</param>
+  </member>
+  <member name="Font.GetFamily">
+    <summary>The <b>Font.GetFamily</b> method gets the font family on which this font is based.</summary>
+    <param name="family">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that receives the font family.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Font.GetHeight">
+    <summary>The <b>Font.GetHeight</b> method gets the line spacing of this font in the current unit of a specified <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object. The line spacing is the vertical distance between the base lines of two consecutive lines of text. Thus, the line spacing includes the blank space between lines along with the height of the character itself.</summary>
+    <param name="graphics">Pointer to a <b>Graphics</b> object whose unit and vertical resolution are used in the height calculation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Font.GetHeight">
+    <summary>The <b>Font.GetHeight</b> method gets the line spacing, in pixels, of this font. The line spacing is the vertical distance between the base lines of two consecutive lines of text. Thus, the line spacing includes the blank space between lines along with the height of the character itself.</summary>
+    <param name="dpi">Real number that specifies the vertical resolution, in dots per inch, of the device that displays the font.</param>
+    <returns>This method returns the line spacing of the font in pixels.</returns>
+  </member>
+  <member name="Font.GetLastStatus">
+    <summary>The <b>Font.GetLastStatus</b> method returns a value that indicates the nature of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>Font.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object have failed, then <b>Font.GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object has failed, then <b>Font.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="Font.GetLogFontA">
+    <summary>The <b>Font.GetLogFontA</b> method uses a<b>LOGFONTA</b> structure to get the attributes of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object.</summary>
+    <param name="g">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains attributes of the display device.</param>
+    <param name="logfontA">Pointer to a<b>LOGFONTA</b> structure variable that receives the font attributes.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Font.GetLogFontW">
+    <summary>The <b>Font.GetLogFontW</b> method uses a<b>LOGFONTW</b> structure to get the attributes of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object.</summary>
+    <param name="g">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains attributes of the video display.</param>
+    <param name="logfontW">Pointer to a<b>LOGFONTW</b> structure variable that receives the font attributes.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Font.GetSize">
+    <summary>The <b>Font.GetSize</b> method returns the font size (commonly called the em size) of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object. The size is in the units of this<b>Font</b> object.</summary>
+    <returns>The method returns the font size. The size is in the units of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object.</returns>
+  </member>
+  <member name="Font.GetStyle">
+    <summary>The <b>Font.GetStyle</b> method gets the style of this font's typeface.</summary>
+    <returns>This method returns a value that is an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise<b>OR</b> applied to two or more elements of the <b>FontStyle</b> enumeration.</returns>
+  </member>
+  <member name="Font.GetUnit">
+    <summary>The <b>Font.GetUnit</b> method returns the unit of measure of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object.</summary>
+    <returns>This method returns one of the elements of the <see cref="Unit" /> enumeration.</returns>
+  </member>
+  <member name="Font.IsAvailable">
+    <summary>The <b>Font.IsAvailable</b> method determines whether this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-font">Font</a> object was created successfully.</summary>
+    <returns>If the font was constructed successfully, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+</doc>

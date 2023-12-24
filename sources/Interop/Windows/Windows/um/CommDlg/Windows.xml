@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.CDSIZEOF_STRUCT">
+    <summary>Gets the size of a struct up to the specified member</summary>
+    <param name="structname">The struct for which a size will be calculated</param>
+    <param name="member">The member at which to stop calculating size</param>
+  </member>
+  <member name="Windows.CommDlgExtendedError">
+    <summary>Returns a common dialog box error code. This code indicates the most recent error to occur during the execution of one of the common dialog box functions.</summary>
+    <returns>
+      <para>If the most recent call to a common dialog box function succeeded, the return value is undefined. If the common dialog box function returned <b>FALSE</b> because the user closed or canceled the dialog box, the return value is zero. Otherwise, the return value is a nonzero error code.</para>
+      <para>The <b>CommDlgExtendedError</b> function can return general error codes for any of the common dialog box functions. In addition, there are error codes that are returned only for a specific common dialog box. All of these error codes are defined in Cderr.h. The following general error codes can be returned for any of the common dialog box functions.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code/value</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_DIALOGFAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFF</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The dialog box could not be created. The common dialog box function's call to the <see cref="DialogBox" /> function failed. For example, this error occurs if the common dialog box call specifies an invalid window handle.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_FINDRESFAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0006</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The common dialog box function failed to find a specified resource.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_INITIALIZATION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The common dialog box function failed during initialization. This error often occurs when sufficient memory is not available.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_LOADRESFAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0007</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The common dialog box function failed to load a specified resource.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_LOADSTRFAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0005</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The common dialog box function failed to load a specified string.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_LOCKRESFAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The common dialog box function failed to lock a specified resource.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_MEMALLOCFAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0009</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The common dialog box function was unable to allocate memory for internal structures.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_MEMLOCKFAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x000A</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The common dialog box function was unable to lock the memory associated with a handle.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_NOHINSTANCE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>ENABLETEMPLATE</b> flag was set in the <b>Flags</b> member of the initialization structure for the corresponding common dialog box, but you failed to provide a corresponding instance handle.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_NOHOOK</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x000B</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>ENABLEHOOK</b> flag was set in the <b>Flags</b> member of the initialization structure for the corresponding common dialog box, but you failed to provide a pointer to a corresponding hook procedure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_NOTEMPLATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0003</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>ENABLETEMPLATE</b> flag was set in the <b>Flags</b> member of the initialization structure for the corresponding common dialog box, but you failed to provide a corresponding template.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_REGISTERMSGFAIL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x000C</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="RegisterWindowMessage" /> function returned an error code when it was called by the common dialog box function.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDERR_STRUCTSIZE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <b>lStructSize</b> member of the initialization structure for the corresponding common dialog box is invalid.</description>
+        </listheader>
+      </list> <para>The following error codes can be returned for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> function.</para><list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_CREATEICFAILURE</b></term></listheader><listheader><term>0x100A</term></listheader></list></description><description>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> function failed when it attempted to create an information context.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_DEFAULTDIFFERENT</b></term></listheader><listheader><term>0x100C</term></listheader></list></description><description>You called the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> function with the <b>DN_DEFAULTPRN</b> flag specified in the <b>wDefault</b> member of the <see cref="DEVNAMES" /> structure, but the printer described by the other structure members did not match the current default printer. This error occurs when you store the <b>DEVNAMES</b> structure, and the user changes the default printer by using the Control Panel.<para>To use the printer described by the <see cref="DEVNAMES" /> structure, clear the <b>DN_DEFAULTPRN</b> flag and call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> again.</para><para>To use the default printer, replace the <see cref="DEVNAMES" /> structure (and the structure, if one exists) with <b>NULL</b>; and call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> again.</para></description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_DNDMMISMATCH</b></term></listheader><listheader><term>0x1009</term></listheader></list></description><description>The data in the <see cref="DEVMODE" /> and <see cref="DEVNAMES" /> structures describes two different printers.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_GETDEVMODEFAIL</b></term></listheader><listheader><term>0x1005</term></listheader></list></description><description>The printer driver failed to initialize a <see cref="DEVMODE" /> structure.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_INITFAILURE</b></term></listheader><listheader><term>0x1006</term></listheader></list></description><description>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> function failed during initialization, and there is no more specific extended error code to describe the failure. This is the generic default error code for the function.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_LOADDRVFAILURE</b></term></listheader><listheader><term>0x1004</term></listheader></list></description><description>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> function failed to load the device driver for the specified printer.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_NODEFAULTPRN</b></term></listheader><listheader><term>0x1008</term></listheader></list></description><description>A default printer does not exist.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_NODEVICES</b></term></listheader><listheader><term>0x1007</term></listheader></list></description><description>No printer drivers were found.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_PARSEFAILURE</b></term></listheader><listheader><term>0x1002</term></listheader></list></description><description>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> function failed to parse the strings in the [devices] section of the WIN.INI file.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_PRINTERNOTFOUND</b></term></listheader><listheader><term>0x100B</term></listheader></list></description><description>The [devices] section of the WIN.INI file did not contain an entry for the requested printer.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_RETDEFFAILURE</b></term></listheader><listheader><term>0x1003</term></listheader></list></description><description>The PD_RETURNDEFAULT flag was specified in the <b>Flags</b> member of the <see cref="PRINTDLG" /> structure, but the 							<b>hDevMode</b> or <b>hDevNames</b> member was not <b>NULL</b>.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>PDERR_SETUPFAILURE</b></term></listheader><listheader><term>0x1001</term></listheader></list></description><description>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646940(v=vs.85)">PrintDlg</a> function failed to load the required resources.</description></listheader></list> <para>The following error codes can be returned for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646914(v=vs.85)">ChooseFont</a> function.</para><list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CFERR_MAXLESSTHANMIN</b></term></listheader><listheader><term>0x2002</term></listheader></list></description><description>The size specified in the <b>nSizeMax</b> member of the <see cref="CHOOSEFONT" /> structure is less than the size specified in the 							<b>nSizeMin</b> member.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CFERR_NOFONTS</b></term></listheader><listheader><term>0x2001</term></listheader></list></description><description>No fonts exist.</description></listheader></list> <para>The following error codes can be returned for the <see cref="GetOpenFileName" /> and <see cref="GetSaveFileName" /> functions.</para><list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FNERR_BUFFERTOOSMALL</b></term></listheader><listheader><term>0x3003</term></listheader></list></description><description>The buffer pointed to by the <b>lpstrFile</b> member of the <see cref="OPENFILENAME" /> structure is too small for the file name specified by the user. The first two bytes of the 							<b>lpstrFile</b> buffer contain an integer value specifying the size required to receive the full name, in 							characters.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FNERR_INVALIDFILENAME</b></term></listheader><listheader><term>0x3002</term></listheader></list></description><description>A file name is invalid.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FNERR_SUBCLASSFAILURE</b></term></listheader><listheader><term>0x3001</term></listheader></list></description><description>An attempt to subclass a list box failed because sufficient memory was not available.</description></listheader></list> <para>The following error code can be returned for the <see cref="FindText" /> and <see cref="ReplaceText" /> functions.</para><list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>FRERR_BUFFERLENGTHZERO</b></term></listheader><listheader><term>0x4001</term></listheader></list></description><description>A member of the <see cref="FINDREPLACE" /> structure points to an invalid buffer.</description></listheader></list></returns>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_GetFilePathA">
+    <summary>
+      <para>ASCII version of <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getfilepath">CommDlg_OpenSave_GetFilePath</a></para>
+      <blockquote>[!WARNING] Apps should generally call <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getfilepath">CommDlg_OpenSave_GetFilePath</a> instead of calling this method directly.</blockquote>
+    </summary>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_GetFilePathW">
+    <summary>
+      <para>Wide string version of <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getfilepath">CommDlg_OpenSave_GetFilePath</a></para>
+      <blockquote>[!WARNING] Apps should generally call <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getfilepath">CommDlg_OpenSave_GetFilePath</a> instead of calling this method directly.</blockquote>
+    </summary>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_GetFolderIDList">
+    <summary>Retrieves the address of the item identifier list corresponding to the folder that an Explorer-style Open or Save As dialog box currently has open.</summary>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_GetFolderPathA">
+    <summary>
+      <para>ASCII version of <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getfolderpath">CommDlg_OpenSave_GetFolderPath</a></para>
+      <blockquote>[!WARNING] Apps should generally call <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getfolderpath">CommDlg_OpenSave_GetFolderPath</a> instead of calling this method directly.</blockquote>
+    </summary>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_GetFolderPathW">
+    <summary>
+      <para>Wide string version of <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getfolderpath">CommDlg_OpenSave_GetFolderPath</a></para>
+      <blockquote>[!WARNING] Apps should generally call <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getfolderpath">CommDlg_OpenSave_GetFolderPath</a> instead of calling this method directly.</blockquote>
+    </summary>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_GetSpecA">
+    <summary>
+      <para>ASCII version of <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getspec">CommDlg_OpenSave_GetSpec</a></para>
+      <blockquote>[!WARNING] Apps should generally call <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getspec">CommDlg_OpenSave_GetSpec</a> instead of calling this method directly.</blockquote>
+    </summary>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_GetSpecW">
+    <summary>
+      <para>Wide string version of <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getspec">CommDlg_OpenSave_GetSpec</a></para>
+      <blockquote>[!WARNING] Apps should generally call <a href="https://docs.microsoft.com/windows/win32/dlgbox/cdm-getspec">CommDlg_OpenSave_GetSpec</a> instead of calling this method directly.</blockquote>
+    </summary>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_HideControl">
+    <summary>Hides the specified control in an Explorer-style Open or Save As dialog box.</summary>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_SetControlText">
+    <summary>Sets the text for the specified control in an Explorer-style Open or Save As dialog box.</summary>
+  </member>
+  <member name="Windows.CommDlg_OpenSave_SetDefExt">
+    <summary>Sets the default file name extension for an Explorer-style Open or Save As dialog box.</summary>
+  </member>
+  <member name="Windows.FindText">
+    <summary>Creates a system-defined modeless <b>Find</b> dialog box that lets the user specify a string to search for and options to use when searching for text in a document.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with or to close the dialog box.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function. <b>CommDlgExtendedError</b> may return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.FindTextA">
+    <summary>Creates a system-defined modeless <b>Find</b> dialog box that lets the user specify a string to search for and options to use when searching for text in a document.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with or to close the dialog box.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function. <b>CommDlgExtendedError</b> may return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.FindTextW">
+    <summary>Creates a system-defined modeless <b>Find</b> dialog box that lets the user specify a string to search for and options to use when searching for text in a document.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with or to close the dialog box.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function. <b>CommDlgExtendedError</b> may return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.FindText">
+    <summary>Creates a system-defined modeless <b>Find</b> dialog box that lets the user specify a string to search for and options to use when searching for text in a document.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with or to close the dialog box.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function. <b>CommDlgExtendedError</b> may return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.FindTextA">
+    <summary>Creates a system-defined modeless <b>Find</b> dialog box that lets the user specify a string to search for and options to use when searching for text in a document.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with or to close the dialog box.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function. <b>CommDlgExtendedError</b> may return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.FindTextW">
+    <summary>Creates a system-defined modeless <b>Find</b> dialog box that lets the user specify a string to search for and options to use when searching for text in a document.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with or to close the dialog box.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function. <b>CommDlgExtendedError</b> may return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.GetFileTitle">
+    <summary>Retrieves the name of the specified file.</summary>
+    <param name="unnamedParam1">The name and location of a file.</param>
+    <param name="Buf">The buffer that receives the name of the file.</param>
+    <param name="cchSize">The length, in characters, of the buffer pointed to by the <i>lpszTitle</i> parameter.</param>
+    <returns>
+      <para>If the function succeeds, the return value is zero.</para>
+      <para>If the file name is invalid, the return value is unknown. If there is an error, the return value is a negative number.</para>
+      <para>If the buffer pointed to by the <i>lpszTitle</i> parameter is too small, the return value is a positive integer that specifies the required buffer size, in characters. The required buffer size includes the terminating null character.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetFileTitleA">
+    <summary>Retrieves the name of the specified file.</summary>
+    <param name="unnamedParam1">The name and location of a file.</param>
+    <param name="Buf">The buffer that receives the name of the file.</param>
+    <param name="cchSize">The length, in characters, of the buffer pointed to by the <i>lpszTitle</i> parameter.</param>
+    <returns>
+      <para>If the function succeeds, the return value is zero.</para>
+      <para>If the file name is invalid, the return value is unknown. If there is an error, the return value is a negative number.</para>
+      <para>If the buffer pointed to by the <i>lpszTitle</i> parameter is too small, the return value is a positive integer that specifies the required buffer size, in characters. The required buffer size includes the terminating null character.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetFileTitleW">
+    <summary>Retrieves the name of the specified file.</summary>
+    <param name="unnamedParam1">The name and location of a file.</param>
+    <param name="Buf">The buffer that receives the name of the file.</param>
+    <param name="cchSize">The length, in characters, of the buffer pointed to by the <i>lpszTitle</i> parameter.</param>
+    <returns>
+      <para>If the function succeeds, the return value is zero.</para>
+      <para>If the file name is invalid, the return value is unknown. If there is an error, the return value is a negative number.</para>
+      <para>If the buffer pointed to by the <i>lpszTitle</i> parameter is too small, the return value is a positive integer that specifies the required buffer size, in characters. The required buffer size includes the terminating null character.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetFileTitle">
+    <summary>Retrieves the name of the specified file.</summary>
+    <param name="unnamedParam1">The name and location of a file.</param>
+    <param name="Buf">The buffer that receives the name of the file.</param>
+    <param name="cchSize">The length, in characters, of the buffer pointed to by the <i>lpszTitle</i> parameter.</param>
+    <returns>
+      <para>If the function succeeds, the return value is zero.</para>
+      <para>If the file name is invalid, the return value is unknown. If there is an error, the return value is a negative number.</para>
+      <para>If the buffer pointed to by the <i>lpszTitle</i> parameter is too small, the return value is a positive integer that specifies the required buffer size, in characters. The required buffer size includes the terminating null character.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetFileTitleA">
+    <summary>Retrieves the name of the specified file.</summary>
+    <param name="unnamedParam1">The name and location of a file.</param>
+    <param name="Buf">The buffer that receives the name of the file.</param>
+    <param name="cchSize">The length, in characters, of the buffer pointed to by the <i>lpszTitle</i> parameter.</param>
+    <returns>
+      <para>If the function succeeds, the return value is zero.</para>
+      <para>If the file name is invalid, the return value is unknown. If there is an error, the return value is a negative number.</para>
+      <para>If the buffer pointed to by the <i>lpszTitle</i> parameter is too small, the return value is a positive integer that specifies the required buffer size, in characters. The required buffer size includes the terminating null character.</para>
+    </returns>
+  </member>
+  <member name="Windows.GetFileTitleW">
+    <summary>Retrieves the name of the specified file.</summary>
+    <param name="unnamedParam1">The name and location of a file.</param>
+    <param name="Buf">The buffer that receives the name of the file.</param>
+    <param name="cchSize">The length, in characters, of the buffer pointed to by the <i>lpszTitle</i> parameter.</param>
+    <returns>
+      <para>If the function succeeds, the return value is zero.</para>
+      <para>If the file name is invalid, the return value is unknown. If there is an error, the return value is a negative number.</para>
+      <para>If the buffer pointed to by the <i>lpszTitle</i> parameter is too small, the return value is a positive integer that specifies the required buffer size, in characters. The required buffer size includes the terminating null character.</para>
+    </returns>
+  </member>
+  <member name="Windows.ReplaceText">
+    <summary>Creates a system-defined modeless dialog box that lets the user specify a string to search for and a replacement string, as well as options to control the find and replace operations.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with the dialog box or close it.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function, which can return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.ReplaceTextA">
+    <summary>Creates a system-defined modeless dialog box that lets the user specify a string to search for and a replacement string, as well as options to control the find and replace operations.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with the dialog box or close it.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function, which can return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.ReplaceTextW">
+    <summary>Creates a system-defined modeless dialog box that lets the user specify a string to search for and a replacement string, as well as options to control the find and replace operations.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with the dialog box or close it.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function, which can return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.ReplaceText">
+    <summary>Creates a system-defined modeless dialog box that lets the user specify a string to search for and a replacement string, as well as options to control the find and replace operations.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with the dialog box or close it.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function, which can return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.ReplaceTextA">
+    <summary>Creates a system-defined modeless dialog box that lets the user specify a string to search for and a replacement string, as well as options to control the find and replace operations.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with the dialog box or close it.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function, which can return one of the following error codes:</para>
+    </returns>
+  </member>
+  <member name="Windows.ReplaceTextW">
+    <summary>Creates a system-defined modeless dialog box that lets the user specify a string to search for and a replacement string, as well as options to control the find and replace operations.</summary>
+    <param name="unnamedParam1">A pointer to a <see cref="FINDREPLACE" /> structure that contains information used to initialize the dialog box. The dialog box uses this structure to send information about the user's input to your application. For more information, see the following Remarks section.</param>
+    <returns>
+      <para>If the function succeeds, the return value is the window handle to the dialog box. You can use the window handle to communicate with the dialog box or close it.</para>
+      <para>If the function fails, the return value is <b>NULL</b>. To get extended error information, call the <see cref="CommDlgExtendedError" /> function, which can return one of the following error codes:</para>
+    </returns>
+  </member>
+</doc>

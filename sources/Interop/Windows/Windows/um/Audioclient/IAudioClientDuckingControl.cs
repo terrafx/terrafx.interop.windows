@@ -27,7 +27,7 @@ public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingCon
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioClientDuckingControl*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioClientDuckingControl*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingCon
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioClientDuckingControl*, uint>)(lpVtbl[1]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioClientDuckingControl*, uint>)(lpVtbl[1]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingCon
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioClientDuckingControl*, uint>)(lpVtbl[2]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioClientDuckingControl*, uint>)(lpVtbl[2]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioClientDuckingControl.xml' path='doc/member[@name="IAudioClientDuckingControl.SetDuckingOptionsForCurrentStream"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingCon
     [VtblIndex(3)]
     public HRESULT SetDuckingOptionsForCurrentStream(AUDIO_DUCKING_OPTIONS options)
     {
-        return ((delegate* unmanaged<IAudioClientDuckingControl*, AUDIO_DUCKING_OPTIONS, int>)(lpVtbl[3]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this), options);
+        return ((delegate* unmanaged[MemberFunction]<IAudioClientDuckingControl*, AUDIO_DUCKING_OPTIONS, int>)(lpVtbl[3]))((IAudioClientDuckingControl*)Unsafe.AsPointer(ref this), options);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IAudioClientDuckingControl : IAudioClientDuckingCon
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AUDIO_DUCKING_OPTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AUDIO_DUCKING_OPTIONS, int> SetDuckingOptionsForCurrentStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AUDIO_DUCKING_OPTIONS, int> SetDuckingOptionsForCurrentStream;
     }
 }

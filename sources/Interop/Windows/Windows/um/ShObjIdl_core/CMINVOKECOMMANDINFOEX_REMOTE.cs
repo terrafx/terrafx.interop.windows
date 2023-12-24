@@ -44,19 +44,19 @@ public unsafe partial struct CMINVOKECOMMANDINFOEX_REMOTE
 
     /// <include file='CMINVOKECOMMANDINFOEX_REMOTE.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX_REMOTE.lpVerbWString"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpVerbWString;
+    public char* lpVerbWString;
 
     /// <include file='CMINVOKECOMMANDINFOEX_REMOTE.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX_REMOTE.lpParametersW"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpParametersW;
+    public char* lpParametersW;
 
     /// <include file='CMINVOKECOMMANDINFOEX_REMOTE.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX_REMOTE.lpDirectoryW"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpDirectoryW;
+    public char* lpDirectoryW;
 
     /// <include file='CMINVOKECOMMANDINFOEX_REMOTE.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX_REMOTE.lpTitleW"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpTitleW;
+    public char* lpTitleW;
 
     /// <include file='CMINVOKECOMMANDINFOEX_REMOTE.xml' path='doc/member[@name="CMINVOKECOMMANDINFOEX_REMOTE.ptInvoke"]/*' />
     public POINT ptInvoke;

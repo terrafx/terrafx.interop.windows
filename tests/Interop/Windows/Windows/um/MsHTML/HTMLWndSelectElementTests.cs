@@ -19,25 +19,4 @@ public static unsafe partial class HTMLWndSelectElementTests
     {
         Assert.That(typeof(HTMLWndSelectElement).GUID, Is.EqualTo(IID_HTMLWndSelectElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLWndSelectElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLWndSelectElement>(), Is.EqualTo(sizeof(HTMLWndSelectElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLWndSelectElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLWndSelectElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLWndSelectElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLWndSelectElement), Is.EqualTo(1));
-    }
 }

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM">
+    <summary>Represents the histogram output buffer for a single component.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM.Offset">
+    <summary>The offset location in <i>pBuffer</i> to write the component histogram. Must be 256-byte aligned. Set to zero when a component is disabled.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM.pBuffer">
+    <summary>And <see cref="ID3D12Resource" /> representing the target buffer for hardware to write the components histogram. Set to a nullptr when the component histogram is disabled.</summary>
+  </member>
+</doc>

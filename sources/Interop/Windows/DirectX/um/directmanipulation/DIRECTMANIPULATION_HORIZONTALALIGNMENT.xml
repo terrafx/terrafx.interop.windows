@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT">
-    <summary>
-      <para>Defines the horizontal alignment options for content within a viewport.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+    <summary>Defines the horizontal alignment options for content within a viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_NONE">
-    <summary>
-      <para>No alignment. The object can be positioned anywhere within the viewport.</para>
-    </summary>
+    <summary>No alignment. The object can be positioned anywhere within the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_LEFT">
-    <summary>
-      <para>Align object along the left side of the viewport.</para>
-    </summary>
+    <summary>Align object along the left side of the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_CENTER">
-    <summary>
-      <para>Align object to the center of the viewport.</para>
-    </summary>
+    <summary>Align object to the center of the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_RIGHT">
-    <summary>
-      <para>Align object along the right side of the viewport.</para>
-    </summary>
+    <summary>Align object along the right side of the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_HORIZONTALALIGNMENT.DIRECTMANIPULATION_HORIZONTALALIGNMENT_UNLOCKCENTER">
-    <summary>
-      <para>Content zooms around the center point of the contacts, instead of being locked with the horizontal alignment.</para>
-    </summary>
+    <summary>Content zooms around the center point of the contacts, instead of being locked with the horizontal alignment.</summary>
   </member>
 </doc>

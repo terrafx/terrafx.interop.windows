@@ -3,22 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT">
-    <summary>
-      <para>A security binding constraint that corresponds to the
-<see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING" />.</para>
-    </summary>
+    <summary>A security binding constraint that corresponds to the<see cref="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING" />.</summary>
   </member>
   <member name="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingConstraint">
     <summary>
       <para>The base binding constraint that this binding constraint derives from.</para>
-      <para>There are no binding-specific properties are defined for this binding constraint
-at this time.</para>
+      <para>There are no binding-specific properties are defined for this binding constraint at this time.</para>
     </summary>
   </member>
   <member name="WS_KERBEROS_APREQ_MESSAGE_SECURITY_BINDING_CONSTRAINT.bindingUsage">
-    <summary>
-      <para>This specifies how the security token corresponding to this security
-binding should be attached to a message.</para>
-    </summary>
+    <summary>This specifies how the security token corresponding to this security binding should be attached to a message.</summary>
   </member>
 </doc>

@@ -3,20 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAccessibilityDockingServiceCallback.Undocked">
-    <summary>
-      <para>Undocks the accessibility window so that it will not be automatically moved to its previous location.</para>
-    </summary>
-    <param name="undockReason">
-      <para>Specifies the reason why the accessibility application's window was undocked.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAccessibilityDockingServiceCallback" />
+    <summary>Undocks the accessibility window so that it will not be automatically moved to its previous location.</summary>
+    <param name="undockReason">Specifies the reason why the accessibility application's window was undocked.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAccessibilityDockingServiceCallback">
-    <summary>
-      <para>Receives Accessibility Window Docking events.</para>
-    </summary>
+    <summary>Receives Accessibility Window Docking events.</summary>
   </member>
 </doc>

@@ -3,8 +3,6 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -12,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct AUTO_SCROLL_DATA
+public partial struct AUTO_SCROLL_DATA
 {
     /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.iNextSample"]/*' />
     public int iNextSample;
@@ -30,28 +28,21 @@ public unsafe partial struct AUTO_SCROLL_DATA
 
     /// <include file='AUTO_SCROLL_DATA.xml' path='doc/member[@name="AUTO_SCROLL_DATA.dwTimes"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint dwTimes[3];
+    public _dwTimes_e__FixedBuffer dwTimes;
 
     /// <include file='_pts_e__FixedBuffer.xml' path='doc/member[@name="_pts_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(3)]
     public partial struct _pts_e__FixedBuffer
     {
         public POINT e0;
-        public POINT e1;
-        public POINT e2;
+    }
 
-        [UnscopedRef]
-        public ref POINT this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<POINT> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
+    /// <include file='_dwTimes_e__FixedBuffer.xml' path='doc/member[@name="_dwTimes_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(3)]
+    public partial struct _dwTimes_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

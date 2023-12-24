@@ -31,7 +31,7 @@ public unsafe partial struct PROCESS_HEAP_ENTRY
     public ushort wFlags;
 
     /// <include file='PROCESS_HEAP_ENTRY.xml' path='doc/member[@name="PROCESS_HEAP_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("_PROCESS_HEAP_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/minwinbase.h:249:5)")]
+    [NativeTypeName("__AnonymousRecord_minwinbase_L249_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Block"]/*' />
@@ -62,23 +62,30 @@ public unsafe partial struct PROCESS_HEAP_ENTRY
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Block"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/minwinbase.h:250:9)")]
+        [NativeTypeName("__AnonymousRecord_minwinbase_L250_C9")]
         public _Block_e__Struct Block;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Region"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/minwinbase.h:254:9)")]
+        [NativeTypeName("__AnonymousRecord_minwinbase_L254_C9")]
         public _Region_e__Struct Region;
 
         /// <include file='_Block_e__Struct.xml' path='doc/member[@name="_Block_e__Struct"]/*' />
-        public unsafe partial struct _Block_e__Struct
+        public partial struct _Block_e__Struct
         {
             /// <include file='_Block_e__Struct.xml' path='doc/member[@name="_Block_e__Struct.hMem"]/*' />
             public HANDLE hMem;
 
             /// <include file='_Block_e__Struct.xml' path='doc/member[@name="_Block_e__Struct.dwReserved"]/*' />
             [NativeTypeName("DWORD[3]")]
-            public fixed uint dwReserved[3];
+            public _dwReserved_e__FixedBuffer dwReserved;
+
+            /// <include file='_dwReserved_e__FixedBuffer.xml' path='doc/member[@name="_dwReserved_e__FixedBuffer"]/*' />
+            [InlineArray(3)]
+            public partial struct _dwReserved_e__FixedBuffer
+            {
+                public uint e0;
+            }
         }
 
         /// <include file='_Region_e__Struct.xml' path='doc/member[@name="_Region_e__Struct"]/*' />

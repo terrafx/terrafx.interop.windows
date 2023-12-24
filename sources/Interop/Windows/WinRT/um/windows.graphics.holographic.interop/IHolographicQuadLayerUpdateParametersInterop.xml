@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IHolographicQuadLayerUpdateParametersInterop.CommitDirect3D12Resource">
+    <summary>The <b>CommitDirect3D12Resource</b> method commits a Direct3D 12 buffer for presentation on outputs associated with any <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographiccamera">HolographicCamera</a> to which the quad layer is attached. The buffer must have been created by calling <see cref="CreateDirect3D12ContentBufferResource" /> or <see cref="CreateDirect3D12HardwareProtectedContentBufferResource" /> on the same <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicquadlayer">HolographicQuadLayer</a> corresponding to this update parameters object, and the buffer must have been acquired by your application prior to rendering.</summary>
+    <param name="pColorResourceToCommit">The Direct3D 12 texture resource with content to display when rendering the <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicquadlayer">HolographicQuadLayer</a> corresponding to this update parameters object. The content will also be displayed during any subsequent frames, until another content buffer update is provided for this <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicquadlayer">HolographicQuadLayer</a>.</param>
+    <param name="pColorResourceFence">A fence used to signal app work completion on the content buffer resource indicated by <i>pColorResourceToCommit</i>. Completion of this fence at the value indicated by <i>colorResourceFenceSignalValue</i> signals transfer of control of the content buffer resource from your application to the platform in the GPU work queue. The platform relies upon this fence, and the value indicated in <i>colorResourceFenceSignalValue</i>, to queue work on the GPU that reads from the content buffer.</param>
+    <param name="colorResourceFenceSignalValue">The value used to signal work completion on <i>pColorResourceFence</i>. The platform relies upon this fence value to queue work on the GPU that reads from the content buffer.</param>
+    <returns>
+      <b>S_OK</b> if successful, otherwise returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> error code indicating the reason for failure. Also see <a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">COM Error Codes (UI, Audio, DirectX, Codec)</a>.</returns>
+  </member>
+  <member name="IHolographicQuadLayerUpdateParametersInterop">
+    <summary>
+      <para>The <b>IHolographicQuadLayerUpdateParametersInterop</b> interface is a nano-COM interface, used to commit Direct3D 12 buffer resources for quad layer rendering in the corresponding <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicframe">HolographicFrame</a>.</para>
+      <para>The interface allows COM interop with the <a href="https://docs.microsoft.com//uwp/api/windows.graphics.holographic.holographicquadlayerupdateparameters">HolographicQuadLayerUpdateParameters</a> class for applications that use Direct3D 12 for holographic rendering. Nano-COM allows Direct3D 12 objects to be used directly as parameters for API calls, rather than going through a container object.</para>
+    </summary>
+  </member>
+</doc>

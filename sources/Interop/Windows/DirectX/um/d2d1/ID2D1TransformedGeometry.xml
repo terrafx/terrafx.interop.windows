@@ -3,35 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1TransformedGeometry.GetSourceGeometry">
-    <summary>
-      <para>Retrieves the source geometry of this transformed geometry object.</para>
-    </summary>
-    <param name="sourceGeometry">
-      <para>Type: <b><see cref="ID2D1Geometry" />**</b></para>
-      <para>When this method returns, contains a pointer to a pointer to the source geometry for this transformed geometry object. This parameter is passed uninitialized.</para>
-    </param>
-    <seealso cref="ID2D1TransformedGeometry" />
+    <summary>Retrieves the source geometry of this transformed geometry object.</summary>
+    <param name="sourceGeometry">When this method returns, contains a pointer to a pointer to the source geometry for this transformed geometry object. This parameter is passed uninitialized.</param>
   </member>
   <member name="ID2D1TransformedGeometry.GetTransform">
-    <summary>
-      <para>Retrieves the matrix used to transform the <see cref="ID2D1TransformedGeometry" /> object's source geometry.</para>
-    </summary>
-    <param name="transform">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>A pointer that receives the matrix used to transform the <see cref="ID2D1TransformedGeometry" /> object's source geometry. You must allocate storage for this parameter.</para>
-    </param>
-    <seealso cref="ID2D1TransformedGeometry" />
+    <summary>Retrieves the matrix used to transform the <see cref="ID2D1TransformedGeometry" /> object's source geometry.</summary>
+    <param name="transform">A pointer that receives the matrix used to transform the <see cref="ID2D1TransformedGeometry" /> object's source geometry. You must allocate storage for this parameter.</param>
   </member>
   <member name="ID2D1TransformedGeometry">
-    <summary>
-      <para>Represents a geometry that has been transformed.</para>
-    </summary>
-    <remarks>
-      <para>Using an <b>ID2D1TransformedGeometry</b> rather than transforming a geometry by using a render target's transform enables you to transform a geometry without transforming its stroke.</para>
-      <h3>Creating ID2D1TransformedGeometry Objects</h3>
-      <para>To create an <b>ID2D1TransformedGeometry</b>, call the <see cref="ID2D1Factory.CreateTransformedGeometry" /> method.</para>
-      <para>Direct2D geometries are immutable and device-independent resources created by <see cref="ID2D1Factory" />.  In general, you should create geometries once and retain them for the life of the application, or until they need to be modified. For more information about device-independent and device-dependent resources, see  the <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.</para>
-    </remarks>
-    <seealso cref="ID2D1Geometry" />
+    <summary>Represents a geometry that has been transformed.</summary>
   </member>
 </doc>

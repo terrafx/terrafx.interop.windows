@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='Blur.xml' path='doc/member[@name="Blur"]/*' />
-[NativeTypeName("struct Blur : Effect")]
+[NativeTypeName("struct Blur : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct Blur
 {
@@ -48,7 +48,7 @@ public unsafe partial struct Blur
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::BlurParams *")] BlurParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const BlurParams *")] BlurParams* parameters)
     {
         uint size = 8;
 

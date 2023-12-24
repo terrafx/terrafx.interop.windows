@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MS_ADDINFO_CATALOGMEMBER">
-    <summary>
-      <para>The <b>MS_ADDINFO_CATALOGMEMBER</b> structure provides additional information for catalog member subject types.</para>
-    </summary>
+    <summary>The <b>MS_ADDINFO_CATALOGMEMBER</b> structure provides additional information for catalog member subject types.</summary>
   </member>
   <member name="MS_ADDINFO_CATALOGMEMBER.cbStruct">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="MS_ADDINFO_CATALOGMEMBER.pStore">
-    <summary>
-      <para>A <see cref="CRYPTCATSTORE" /> structure that contains a catalog file store.</para>
-    </summary>
+    <summary>A <see cref="CRYPTCATSTORE" /> structure that contains a catalog file store.</summary>
   </member>
   <member name="MS_ADDINFO_CATALOGMEMBER.pMember">
-    <summary>
-      <para>A <see cref="CRYPTCATMEMBER" /> structure that contains a catalog member.</para>
-    </summary>
+    <summary>A <see cref="CRYPTCATMEMBER" /> structure that contains a catalog member.</summary>
   </member>
 </doc>

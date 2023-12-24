@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DirectX.D3D12CreateDevice">
+    <summary>Creates a device that represents the display adapter.</summary>
+    <param name="pAdapter">
+      <para>A pointer to the video adapter to use when creating a <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-intro">device</a>. Pass <b>NULL</b> to use the default adapter, which is the first adapter that is enumerated by <see cref="IDXGIFactory1.EnumAdapters" />.</para>
+      <div>
+        <b>Note</b>  Don't mix the use of DXGI 1.0 (<see cref="IDXGIFactory" />) and DXGI 1.1 (<see cref="IDXGIFactory1" />) in an application. Use <b>IDXGIFactory</b> or <b>IDXGIFactory1</b>, but not both in an application.</div>
+    </param>
+    <param name="MinimumFeatureLevel">The minimum <see cref="D3D_FEATURE_LEVEL" /> required for successful device creation.</param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the device interface. This parameter, and <i>ppDevice</i>, can be addressed with the single macro<see cref="IID_PPV_ARGS" />.</param>
+    <param name="ppDevice">A pointer to a memory block that receives a pointer to the device. Pass <b>NULL</b> to test if device creation would succeed, but to not actually create the device. If <b>NULL</b> is passed and device creation would succeed, <b>S_FALSE</b> is returned.</param>
+    <returns>
+      <para>This method can return one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</para>
+      <para>Possible return values include those documented for <see cref="CreateDXGIFactory1" /> and <see cref="IDXGIFactory.EnumAdapters" />.</para>
+      <para>If <b>ppDevice</b> is <b>NULL</b> and the function succeeds, <b>S_FALSE</b> is returned, rather than <b>S_OK</b>.</para>
+    </returns>
+  </member>
+  <member name="DirectX.D3D12CreateRootSignatureDeserializer">
+    <summary>Deserializes a root signature so you can determine the layout definition (<see cref="D3D12_ROOT_SIGNATURE_DESC" />).</summary>
+    <param name="pSrcData">A pointer to the source data for the serialized root signature.</param>
+    <param name="SrcDataSizeInBytes">The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</param>
+    <param name="pRootSignatureDeserializerInterface">The globally unique identifier (<b>GUID</b>) for the root signature deserializer interface. See remarks.</param>
+    <param name="ppRootSignatureDeserializer">A pointer to a memory block that receives a pointer to the root signature deserializer.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="DirectX.D3D12CreateVersionedRootSignatureDeserializer">
+    <summary>Generates an interface that can return the deserialized data structure, via <see cref="GetUnconvertedRootSignatureDesc" />.</summary>
+    <param name="pSrcData">A pointer to the source data for the serialized root signature.</param>
+    <param name="SrcDataSizeInBytes">The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</param>
+    <param name="pRootSignatureDeserializerInterface">The globally unique identifier (<b>GUID</b>) for the root signature deserializer interface. See remarks.</param>
+    <param name="ppRootSignatureDeserializer">A pointer to a memory block that receives a pointer to the root signature deserializer.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="DirectX.D3D12GetDebugInterface">
+    <summary>
+      <para>Gets a debug interface.</para>
+      <para>Use <see cref="D3D12GetInterface" /> to directly access newer interfaces, especially downlevel.</para>
+    </summary>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the debug interface. The <b>REFIID</b>, or <b>GUID</b>, of the debug interface can be obtained by using the __uuidof() macro. For example, __uuidof(<see cref="ID3D12Debug" />) will get the <b>GUID</b> of the debug interface.</param>
+    <param name="ppvDebug">The debug interface, as a pointer to pointer to void. See<see cref="ID3D12Debug" /> and<see cref="ID3D12DebugDevice" />.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="DirectX.D3D12GetInterface">
+    <summary>Selects an SDK version at runtime when the system is in Windows Developer Mode. Supports debug, tools, <a href="https://docs.microsoft.com//windows/win32/direct3d12/use-dred">DRED</a>, and SDK configuration interfaces.</summary>
+    <param name="rclsid">
+      <para>The CLSID associated with the data and code that will be used to create the object.</para>
+      <para>The following CLSIDs are defined.</para>
+      <list type="bullet">
+        <item>
+          <description>DEFINE_GUID(CLSID_D3D12Debug, 0xf2352aeb, 0xdd84, 0x49fe, 0xb9, 0x7b, 0xa9, 0xdc, 0xfd, 0xcc, 0x1b, 0x4f);</description>
+        </item>
+        <item>
+          <description>DEFINE_GUID(CLSID_D3D12Tools, 0xe38216b1, 0x3c8c, 0x4833, 0xaa, 0x09, 0x0a, 0x06, 0xb6, 0x5d, 0x96, 0xc8);</description>
+        </item>
+        <item>
+          <description>DEFINE_GUID(CLSID_D3D12DeviceRemovedExtendedData, 0x4a75bbc4, 0x9ff4, 0x4ad8, 0x9f, 0x18, 0xab, 0xae, 0x84, 0xdc, 0x5f, 0xf2);</description>
+        </item>
+        <item>
+          <description>DEFINE_GUID(CLSID_D3D12SDKConfiguration, 0x7cda6aca, 0xa03e, 0x49c8, 0x94, 0x58, 0x03, 0x34, 0xd2, 0x0e, 0x07, 0xce);</description>
+        </item>
+      </list>
+      <para>They correspond, respectively, to the following interfaces.</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="ID3D12Debug interface" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D12Tools interface" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D12DeviceRemovedExtendedDataSettings interface" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D12SDKConfiguration interface" />
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the SDK configuration interface. The <b>REFIID</b>, or <b>GUID</b>, of the interface can be obtained by using the <code>__uuidof</code> macro. For example, <code>__uuidof(ID3D12SDKConfiguration)</code> will retrieve the <b>GUID</b> of the debug interface.</param>
+    <param name="ppvDebug">The <code>out</code> parameter that contains the requested interface on return (for example, the SDK configuration interface), as a pointer to pointer to void. See <see cref="ID3D12SDKConfiguration" />.</param>
+    <returns>If the function succeeds, then it returns <b>S_OK</b>. Otherwise, it returns one of the <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a>.</returns>
+  </member>
+  <member name="DirectX.D3D12SerializeRootSignature">
+    <summary>Serializes a root signature version 1.0 that can be passed to <see cref="ID3D12Device.CreateRootSignature" />.</summary>
+    <param name="pRootSignature">The description of the root signature, as a pointer to a <see cref="D3D12_ROOT_SIGNATURE_DESC" /> structure.</param>
+    <param name="Version">A <see cref="D3D_ROOT_SIGNATURE_VERSION" />-typed value that specifies the version of root signature.</param>
+    <param name="ppBlob">A pointer to a memory block that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the serialized root signature.</param>
+    <param name="ppErrorBlob">A pointer to a memory block that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access serializer error messages, or <b>NULL</b> if there are no errors.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="DirectX.D3D12SerializeVersionedRootSignature">
+    <summary>Serializes a root signature of any version that can be passed to <see cref="ID3D12Device.CreateRootSignature" />.</summary>
+    <param name="pRootSignature">Specifies a <see cref="D3D12_VERSIONED_ROOT_SIGNATURE_DESC" /> that contains a description of any version of a root signature.</param>
+    <param name="ppBlob">A pointer to a memory block that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the serialized root signature.</param>
+    <param name="ppErrorBlob">A pointer to a memory block that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access serializer error messages, or <b>NULL</b> if there are no errors.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+</doc>

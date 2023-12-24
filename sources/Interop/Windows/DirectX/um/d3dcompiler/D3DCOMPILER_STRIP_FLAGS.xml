@@ -3,46 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3DCOMPILER_STRIP_FLAGS">
-    <summary>
-      <para>Strip flag options.</para>
-    </summary>
-    <remarks>
-      <para>These flags are used by <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dstripshader">D3DStripShader</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-enums">Enumerations</seealso>
+    <summary>Strip flag options.</summary>
   </member>
   <member name="D3DCOMPILER_STRIP_FLAGS.D3DCOMPILER_STRIP_REFLECTION_DATA">
-    <summary>
-      <para>Remove reflection data.</para>
-    </summary>
+    <summary>Remove reflection data.</summary>
   </member>
   <member name="D3DCOMPILER_STRIP_FLAGS.D3DCOMPILER_STRIP_DEBUG_INFO">
-    <summary>
-      <para>Remove debug information.</para>
-    </summary>
+    <summary>Remove debug information.</summary>
   </member>
   <member name="D3DCOMPILER_STRIP_FLAGS.D3DCOMPILER_STRIP_TEST_BLOBS">
-    <summary>
-      <para>Remove test blob data.</para>
-    </summary>
+    <summary>Remove test blob data.</summary>
   </member>
   <member name="D3DCOMPILER_STRIP_FLAGS.D3DCOMPILER_STRIP_PRIVATE_DATA">
     <summary>
-      <para>
-        <b>Note</b>  This value is supported by the D3dcompiler_44.dll or later version of the file.</para>
-      <para>Remove private data.</para>
-    </summary>
+      <div>
+        <b>Note</b>  This value is supported by the D3dcompiler_44.dll or later version of the file.</div>Remove private data.</summary>
   </member>
   <member name="D3DCOMPILER_STRIP_FLAGS.D3DCOMPILER_STRIP_ROOT_SIGNATURE">
     <summary>
-      <para>
-        <b>Note</b>  This value is supported by the D3dcompiler_47.dll or later version of the file.</para>
-      <para>Remove the root signature. Refer to <a href="https://docs.microsoft.com//windows/desktop/direct3d12/specifying-root-signatures-in-hlsl">Specifying Root Signatures in HLSL</a> for more information on using Direct3D12 with HLSL.</para>
-    </summary>
+      <div>
+        <b>Note</b>  This value is supported by the D3dcompiler_47.dll or later version of the file.</div>Remove the root signature. Refer to <a href="https://docs.microsoft.com//windows/desktop/direct3d12/specifying-root-signatures-in-hlsl">Specifying Root Signatures in HLSL</a> for more information on using Direct3D12 with HLSL.</summary>
   </member>
   <member name="D3DCOMPILER_STRIP_FLAGS.D3DCOMPILER_STRIP_FORCE_DWORD">
-    <summary>
-      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</para>
-    </summary>
+    <summary>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</summary>
   </member>
 </doc>

@@ -6,59 +6,31 @@
     <summary>
       <para>Computes backpropagation gradients for <see cref="local response normalization" />.</para>
       <para>The data type and size of all tensors must be the same.</para>
-      <blockquote>
-        <para>[!IMPORTANT]
-This API is available as part of the DirectML standalone redistributable package (see <a href="https://www.nuget.org/packages/microsoft.ai.directml/">Microsoft.AI.DirectML</a> version 1.5 and later. Also see <a href="https://docs.microsoft.com//windows/ai/directml/dml-version-history">DirectML version history</a>.</para>
-      </blockquote>
     </summary>
   </member>
   <member name="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor containing the input data. This tensor's <i>Sizes</i> should be <code>{ BatchCount, ChannelCount, Height, Width }</code>.</para>
-    </summary>
+    <summary>The tensor containing the input data. This tensor's <i>Sizes</i> should be <code>{ BatchCount, ChannelCount, Height, Width }</code>.</summary>
   </member>
   <member name="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC.InputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer.</para>
-    </summary>
+    <summary>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer.</summary>
   </member>
   <member name="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC.OutputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An output tensor containing the backpropagated gradients.</para>
-    </summary>
+    <summary>An output tensor containing the backpropagated gradients.</summary>
   </member>
   <member name="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC.CrossChannel">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/api/winprog/windows-data-types.md">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> if the LRN layer sums across channels; <b>FALSE</b> if the LRN layer sums across spatial dimensions.</para>
-    </summary>
+      <b>TRUE</b> if the LRN layer sums across channels; <b>FALSE</b> if the LRN layer sums across spatial dimensions.</summary>
   </member>
   <member name="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC.LocalSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/api/winprog/windows-data-types.md">UINT</a></b></para>
-      <para>The maximum number of elements to sum over per dimension (the local region is clipped so that all elements are within bounds). If <i>CrossChannel</i> is <b>TRUE</b>, then this is the width and height of the local region. If <i>CrossChannel</i> is <b>FALSE</b>, then this is the number of elements in the local region. This value must be at least 1.</para>
-    </summary>
+    <summary>The maximum number of elements to sum over per dimension (the local region is clipped so that all elements are within bounds). If <i>CrossChannel</i> is <b>TRUE</b>, then this is the width and height of the local region. If <i>CrossChannel</i> is <b>FALSE</b>, then this is the number of elements in the local region. This value must be at least 1.</summary>
   </member>
   <member name="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC.Alpha">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/api/winprog/windows-data-types.md">FLOAT</a></b></para>
-      <para>The value of the scaling parameter. We recommend a value of 0.0001 as default.</para>
-    </summary>
+    <summary>The value of the scaling parameter. We recommend a value of 0.0001 as default.</summary>
   </member>
   <member name="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC.Beta">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/api/winprog/windows-data-types.md">FLOAT</a></b></para>
-      <para>The value of the exponent. We recommend a value of 0.75 as default.</para>
-    </summary>
+    <summary>The value of the exponent. We recommend a value of 0.75 as default.</summary>
   </member>
   <member name="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC.Bias">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/api/winprog/windows-data-types.md">FLOAT</a></b></para>
-      <para>The value of bias. We recommend a value of 1 as default.</para>
-    </summary>
+    <summary>The value of bias. We recommend a value of 1 as default.</summary>
   </member>
 </doc>

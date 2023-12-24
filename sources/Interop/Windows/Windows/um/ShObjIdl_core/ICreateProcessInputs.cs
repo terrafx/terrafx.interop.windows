@@ -25,7 +25,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, Guid*, void**, int>)(lpVtbl[0]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, Guid*, void**, int>)(lpVtbl[0]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, uint>)(lpVtbl[1]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, uint>)(lpVtbl[1]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, uint>)(lpVtbl[2]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, uint>)(lpVtbl[2]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.GetCreateFlags"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
     [VtblIndex(3)]
     public HRESULT GetCreateFlags([NativeTypeName("DWORD *")] uint* pdwCreationFlags)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, uint*, int>)(lpVtbl[3]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pdwCreationFlags);
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, uint*, int>)(lpVtbl[3]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pdwCreationFlags);
     }
 
     /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetCreateFlags"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
     [VtblIndex(4)]
     public HRESULT SetCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, uint, int>)(lpVtbl[4]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwCreationFlags);
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, uint, int>)(lpVtbl[4]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwCreationFlags);
     }
 
     /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.AddCreateFlags"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
     [VtblIndex(5)]
     public HRESULT AddCreateFlags([NativeTypeName("DWORD")] uint dwCreationFlags)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, uint, int>)(lpVtbl[5]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwCreationFlags);
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, uint, int>)(lpVtbl[5]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwCreationFlags);
     }
 
     /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetHotKey"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
     [VtblIndex(6)]
     public HRESULT SetHotKey([NativeTypeName("WORD")] ushort wHotKey)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, ushort, int>)(lpVtbl[6]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), wHotKey);
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, ushort, int>)(lpVtbl[6]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), wHotKey);
     }
 
     /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.AddStartupFlags"]/*' />
@@ -83,23 +83,23 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
     [VtblIndex(7)]
     public HRESULT AddStartupFlags([NativeTypeName("DWORD")] uint dwStartupInfoFlags)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, uint, int>)(lpVtbl[7]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwStartupInfoFlags);
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, uint, int>)(lpVtbl[7]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), dwStartupInfoFlags);
     }
 
     /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetTitle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle)
+    public HRESULT SetTitle([NativeTypeName("LPCWSTR")] char* pszTitle)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, ushort*, int>)(lpVtbl[8]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszTitle);
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, char*, int>)(lpVtbl[8]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszTitle);
     }
 
     /// <include file='ICreateProcessInputs.xml' path='doc/member[@name="ICreateProcessInputs.SetEnvironmentVariableW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue)
+    public HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszValue)
     {
-        return ((delegate* unmanaged<ICreateProcessInputs*, ushort*, ushort*, int>)(lpVtbl[9]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszName, pszValue);
+        return ((delegate* unmanaged[MemberFunction]<ICreateProcessInputs*, char*, char*, int>)(lpVtbl[9]))((ICreateProcessInputs*)Unsafe.AsPointer(ref this), pszName, pszValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -120,43 +120,43 @@ public unsafe partial struct ICreateProcessInputs : ICreateProcessInputs.Interfa
         HRESULT AddStartupFlags([NativeTypeName("DWORD")] uint dwStartupInfoFlags);
 
         [VtblIndex(8)]
-        HRESULT SetTitle([NativeTypeName("LPCWSTR")] ushort* pszTitle);
+        HRESULT SetTitle([NativeTypeName("LPCWSTR")] char* pszTitle);
 
         [VtblIndex(9)]
-        HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* pszName, [NativeTypeName("LPCWSTR")] ushort* pszValue);
+        HRESULT SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] char* pszName, [NativeTypeName("LPCWSTR")] char* pszValue);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCreateFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCreateFlags;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetCreateFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetCreateFlags;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> AddCreateFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> AddCreateFlags;
 
         [NativeTypeName("HRESULT (WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, int> SetHotKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, int> SetHotKey;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> AddStartupFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> AddStartupFlags;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetTitle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetTitle;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetEnvironmentVariableW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetEnvironmentVariableW;
     }
 }

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SHADER_COMPONENT_MAPPING">
+    <summary>Specifies how memory gets routed by a shader resource view (SRV).</summary>
+  </member>
+  <member name="D3D12_SHADER_COMPONENT_MAPPING.D3D12_SHADER_COMPONENT_MAPPING_FROM_MEMORY_COMPONENT_0">
+    <summary>Indicates return component 0 (red).</summary>
+  </member>
+  <member name="D3D12_SHADER_COMPONENT_MAPPING.D3D12_SHADER_COMPONENT_MAPPING_FROM_MEMORY_COMPONENT_1">
+    <summary>Indicates return component 1 (green).</summary>
+  </member>
+  <member name="D3D12_SHADER_COMPONENT_MAPPING.D3D12_SHADER_COMPONENT_MAPPING_FROM_MEMORY_COMPONENT_2">
+    <summary>Indicates return component 2 (blue).</summary>
+  </member>
+  <member name="D3D12_SHADER_COMPONENT_MAPPING.D3D12_SHADER_COMPONENT_MAPPING_FROM_MEMORY_COMPONENT_3">
+    <summary>Indicates return component 3 (alpha).</summary>
+  </member>
+  <member name="D3D12_SHADER_COMPONENT_MAPPING.D3D12_SHADER_COMPONENT_MAPPING_FORCE_VALUE_0">
+    <summary>Indicates forcing the resulting value to 0.</summary>
+  </member>
+  <member name="D3D12_SHADER_COMPONENT_MAPPING.D3D12_SHADER_COMPONENT_MAPPING_FORCE_VALUE_1">
+    <summary>Indicates forcing the resulting value 1. The value of forcing 1 is either 0x1 or 1.0f depending on the format type for that component in the source format.</summary>
+  </member>
+</doc>

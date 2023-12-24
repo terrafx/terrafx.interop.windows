@@ -33,7 +33,7 @@ public partial struct FPO_DATA
     public ushort cbProlog
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)(_bitfield & 0xFFu);
         }
@@ -50,7 +50,7 @@ public partial struct FPO_DATA
     public ushort cbRegs
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 8) & 0x7u);
         }
@@ -67,7 +67,7 @@ public partial struct FPO_DATA
     public ushort fHasSEH
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 11) & 0x1u);
         }
@@ -84,7 +84,7 @@ public partial struct FPO_DATA
     public ushort fUseBP
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 12) & 0x1u);
         }
@@ -101,7 +101,7 @@ public partial struct FPO_DATA
     public ushort reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 13) & 0x1u);
         }
@@ -118,7 +118,7 @@ public partial struct FPO_DATA
     public ushort cbFrame
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 14) & 0x3u);
         }

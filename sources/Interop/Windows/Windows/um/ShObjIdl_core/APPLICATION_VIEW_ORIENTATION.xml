@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPLICATION_VIEW_ORIENTATION">
-    <summary>
-      <para>Defines the set of display orientation modes for a window (app view). Used by <see cref="IApplicationDesignModeSettings2.GetApplicationViewOrientation" /> and
-<see cref="IApplicationDesignModeSettings2.SetApplicationViewOrientation" />.</para>
-    </summary>
-    <seealso cref="IApplicationDesignModeSettings2.GetApplicationViewOrientation" />
-    <seealso cref="IApplicationDesignModeSettings2.SetApplicationViewOrientation" />
+    <summary>Defines the set of display orientation modes for a window (app view). Used by <see cref="IApplicationDesignModeSettings2.GetApplicationViewOrientation" /> and<see cref="IApplicationDesignModeSettings2.SetApplicationViewOrientation" />.</summary>
   </member>
   <member name="APPLICATION_VIEW_ORIENTATION.AVO_LANDSCAPE">
-    <summary>
-      <para>The window is in landscape orientation, with the display width greater than the height.</para>
-    </summary>
+    <summary>The window is in landscape orientation, with the display width greater than the height.</summary>
   </member>
   <member name="APPLICATION_VIEW_ORIENTATION.AVO_PORTRAIT">
-    <summary>
-      <para>The window is in portrait orientation, with the display height greater than the width.</para>
-    </summary>
+    <summary>The window is in portrait orientation, with the display height greater than the width.</summary>
   </member>
 </doc>

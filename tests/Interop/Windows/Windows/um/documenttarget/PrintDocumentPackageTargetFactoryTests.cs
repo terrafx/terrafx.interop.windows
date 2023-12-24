@@ -19,25 +19,4 @@ public static unsafe partial class PrintDocumentPackageTargetFactoryTests
     {
         Assert.That(typeof(PrintDocumentPackageTargetFactory).GUID, Is.EqualTo(CLSID_PrintDocumentPackageTargetFactory));
     }
-
-    /// <summary>Validates that the <see cref="PrintDocumentPackageTargetFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<PrintDocumentPackageTargetFactory>(), Is.EqualTo(sizeof(PrintDocumentPackageTargetFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="PrintDocumentPackageTargetFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(PrintDocumentPackageTargetFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="PrintDocumentPackageTargetFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(PrintDocumentPackageTargetFactory), Is.EqualTo(1));
-    }
 }

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DxcBuffer">
+    <summary>Structure for supplying bytes or text input to Dxc APIs.</summary>
+  </member>
+  <member name="DxcBuffer.Ptr">
+    <summary>A pointer to the start of the buffer.</summary>
+  </member>
+  <member name="DxcBuffer.Size">
+    <summary>The size of the buffer, in bytes.</summary>
+  </member>
+  <member name="DxcBuffer.Encoding">
+    <summary>The encoding of the buffer. Use Encoding == 0 for non-text bytes, ANSI text, or unknown with byte-order mark (BOM).</summary>
+  </member>
+</doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IAudioMidrangeTests
     {
         Assert.That(typeof(IAudioMidrange).GUID, Is.EqualTo(IID_IAudioMidrange));
     }
-
-    /// <summary>Validates that the <see cref="IAudioMidrange" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioMidrange>(), Is.EqualTo(sizeof(IAudioMidrange)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioMidrange" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioMidrange).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioMidrange" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioMidrange), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioMidrange), Is.EqualTo(4));
-        }
-    }
 }

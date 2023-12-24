@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SHADER_VERSION_TYPE">
+    <summary>Enumerates the types of shaders that Direct3D recognizes.<br />Used to encode the <b>Version</b> member of the <see cref="D3D12_SHADER_DESC" /> structure.</summary>
+  </member>
+  <member name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_PIXEL_SHADER">
+    <summary>Pixel shader.</summary>
+  </member>
+  <member name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_VERTEX_SHADER">
+    <summary>Vertex shader.</summary>
+  </member>
+  <member name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_GEOMETRY_SHADER">
+    <summary>Geometry shader.</summary>
+  </member>
+  <member name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_HULL_SHADER">
+    <summary>Hull shader.</summary>
+  </member>
+  <member name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_DOMAIN_SHADER">
+    <summary>Domain shader.</summary>
+  </member>
+  <member name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_COMPUTE_SHADER">
+    <summary>Compute shader.</summary>
+  </member>
+  <member name="D3D12_SHADER_VERSION_TYPE.D3D12_SHVER_RESERVED0">
+    <summary>Indicates the end of the enumeration.</summary>
+  </member>
+</doc>

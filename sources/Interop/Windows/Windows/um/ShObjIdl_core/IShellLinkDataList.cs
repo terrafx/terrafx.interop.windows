@@ -25,7 +25,7 @@ public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellLinkDataList*, Guid*, void**, int>)(lpVtbl[0]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkDataList*, Guid*, void**, int>)(lpVtbl[0]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellLinkDataList*, uint>)(lpVtbl[1]))((IShellLinkDataList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkDataList*, uint>)(lpVtbl[1]))((IShellLinkDataList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellLinkDataList*, uint>)(lpVtbl[2]))((IShellLinkDataList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkDataList*, uint>)(lpVtbl[2]))((IShellLinkDataList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellLinkDataList.xml' path='doc/member[@name="IShellLinkDataList.AddDataBlock"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface, 
     [VtblIndex(3)]
     public HRESULT AddDataBlock(void* pDataBlock)
     {
-        return ((delegate* unmanaged<IShellLinkDataList*, void*, int>)(lpVtbl[3]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), pDataBlock);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkDataList*, void*, int>)(lpVtbl[3]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), pDataBlock);
     }
 
     /// <include file='IShellLinkDataList.xml' path='doc/member[@name="IShellLinkDataList.CopyDataBlock"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface, 
     [VtblIndex(4)]
     public HRESULT CopyDataBlock([NativeTypeName("DWORD")] uint dwSig, void** ppDataBlock)
     {
-        return ((delegate* unmanaged<IShellLinkDataList*, uint, void**, int>)(lpVtbl[4]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwSig, ppDataBlock);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkDataList*, uint, void**, int>)(lpVtbl[4]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwSig, ppDataBlock);
     }
 
     /// <include file='IShellLinkDataList.xml' path='doc/member[@name="IShellLinkDataList.RemoveDataBlock"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface, 
     [VtblIndex(5)]
     public HRESULT RemoveDataBlock([NativeTypeName("DWORD")] uint dwSig)
     {
-        return ((delegate* unmanaged<IShellLinkDataList*, uint, int>)(lpVtbl[5]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwSig);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkDataList*, uint, int>)(lpVtbl[5]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwSig);
     }
 
     /// <include file='IShellLinkDataList.xml' path='doc/member[@name="IShellLinkDataList.GetFlags"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface, 
     [VtblIndex(6)]
     public HRESULT GetFlags([NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IShellLinkDataList*, uint*, int>)(lpVtbl[6]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkDataList*, uint*, int>)(lpVtbl[6]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
     /// <include file='IShellLinkDataList.xml' path='doc/member[@name="IShellLinkDataList.SetFlags"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface, 
     [VtblIndex(7)]
     public HRESULT SetFlags([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IShellLinkDataList*, uint, int>)(lpVtbl[7]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellLinkDataList*, uint, int>)(lpVtbl[7]))((IShellLinkDataList*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IShellLinkDataList : IShellLinkDataList.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, int> AddDataBlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, int> AddDataBlock;
 
         [NativeTypeName("HRESULT (DWORD, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void**, int> CopyDataBlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void**, int> CopyDataBlock;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveDataBlock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveDataBlock;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetFlags;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetFlags;
     }
 }

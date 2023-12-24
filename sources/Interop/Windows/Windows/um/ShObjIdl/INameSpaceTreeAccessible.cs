@@ -25,7 +25,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INameSpaceTreeAccessible*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeAccessible*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INameSpaceTreeAccessible*, uint>)(lpVtbl[1]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeAccessible*, uint>)(lpVtbl[1]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INameSpaceTreeAccessible*, uint>)(lpVtbl[2]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeAccessible*, uint>)(lpVtbl[2]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible.OnGetDefaultAccessibilityAction"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] ushort** pbstrDefaultAction)
+    public HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] char** pbstrDefaultAction)
     {
-        return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, ushort**, int>)(lpVtbl[3]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pbstrDefaultAction);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeAccessible*, IShellItem*, char**, int>)(lpVtbl[3]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pbstrDefaultAction);
     }
 
     /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible.OnDoDefaultAccessibilityAction"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
     [VtblIndex(4)]
     public HRESULT OnDoDefaultAccessibilityAction(IShellItem* psi)
     {
-        return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, int>)(lpVtbl[4]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeAccessible*, IShellItem*, int>)(lpVtbl[4]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi);
     }
 
     /// <include file='INameSpaceTreeAccessible.xml' path='doc/member[@name="INameSpaceTreeAccessible.OnGetAccessibilityRole"]/*' />
@@ -67,13 +67,13 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
     [VtblIndex(5)]
     public HRESULT OnGetAccessibilityRole(IShellItem* psi, VARIANT* pvarRole)
     {
-        return ((delegate* unmanaged<INameSpaceTreeAccessible*, IShellItem*, VARIANT*, int>)(lpVtbl[5]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pvarRole);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeAccessible*, IShellItem*, VARIANT*, int>)(lpVtbl[5]))((INameSpaceTreeAccessible*)Unsafe.AsPointer(ref this), psi, pvarRole);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] ushort** pbstrDefaultAction);
+        HRESULT OnGetDefaultAccessibilityAction(IShellItem* psi, [NativeTypeName("BSTR *")] char** pbstrDefaultAction);
 
         [VtblIndex(4)]
         HRESULT OnDoDefaultAccessibilityAction(IShellItem* psi);
@@ -86,21 +86,21 @@ public unsafe partial struct INameSpaceTreeAccessible : INameSpaceTreeAccessible
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, ushort**, int> OnGetDefaultAccessibilityAction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, char**, int> OnGetDefaultAccessibilityAction;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> OnDoDefaultAccessibilityAction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> OnDoDefaultAccessibilityAction;
 
         [NativeTypeName("HRESULT (IShellItem *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, VARIANT*, int> OnGetAccessibilityRole;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, VARIANT*, int> OnGetAccessibilityRole;
     }
 }

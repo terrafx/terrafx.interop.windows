@@ -17,7 +17,7 @@ public unsafe partial struct TOOLBARITEM
 
     /// <include file='TOOLBARITEM.xml' path='doc/member[@name="TOOLBARITEM.pwszItem"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszItem;
+    public char* pwszItem;
 
     /// <include file='TOOLBARITEM.xml' path='doc/member[@name="TOOLBARITEM.fShow"]/*' />
     public BOOL fShow;

@@ -3,74 +3,29 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IInitializeSpy.PostInitialize">
-    <summary>
-      <para>Performs initialization steps required after calling the <see cref="CoInitializeEx" /> function.</para>
-    </summary>
-    <param name="hrCoInit">
-      <para>The value returned by <see cref="CoInitializeEx" />.</para>
-    </param>
-    <param name="dwCoInit">
-      <para>The apartment type passed to <see cref="CoInitializeEx" />, specified as a member of the <see cref="COINIT" /> enumeration.</para>
-    </param>
-    <param name="dwNewThreadAptRefs">
-      <para>The number of times <see cref="CoInitializeEx" /> has been called on this thread.</para>
-    </param>
-    <returns>
-      <para>This method returns the value that it intends the <see cref="CoInitializeEx" /> call to return to its caller. For more information, see the Remarks section.</para>
-    </returns>
-    <remarks>
-      <para>The return value from <b>PostInitialize</b> is intended to be the returned <b>HRESULT</b> from the call to <see cref="CoInitializeEx" />. This is always the case for a single active registration on this thread.</para>
-      <para>For cases where there are multiple registrations active on this thread, the returned <b>HRESULT</b> is arrived at by chaining of the various <b>PostInitialize</b> methods as follows: The COM determined <b>HRESULT</b> will be passed as the <i>hrCoInit</i> parameter to the first <b>PostInitialize</b> method called. The <b>HRESULT</b> from that <b>PostInitialize</b> call will be passed as the <i>hrCoInit</i> parameter to the next <b>PostInitialize</b> call. This chaining continues leading to the <b>HRESULT</b> from the last <b>PostInitialize</b> call being returned as the <b>HRESULT</b> from the call to <see cref="CoInitializeEx" />.</para>
-    </remarks>
-    <seealso cref="CoInitializeEx" />
-    <seealso cref="IInitializeSpy" />
+    <summary>Performs initialization steps required after calling the <see cref="CoInitializeEx" /> function.</summary>
+    <param name="hrCoInit">The value returned by <see cref="CoInitializeEx" />.</param>
+    <param name="dwCoInit">The apartment type passed to <see cref="CoInitializeEx" />, specified as a member of the <see cref="COINIT" /> enumeration.</param>
+    <param name="dwNewThreadAptRefs">The number of times <see cref="CoInitializeEx" /> has been called on this thread.</param>
+    <returns>This method returns the value that it intends the <see cref="CoInitializeEx" /> call to return to its caller. For more information, see the Remarks section.</returns>
   </member>
   <member name="IInitializeSpy.PostUninitialize">
-    <summary>
-      <para>Performs cleanup steps required after calling the <see cref="CoUninitialize" /> function.</para>
-    </summary>
-    <param name="dwNewThreadAptRefs">
-      <para>The number of calls to <see cref="CoUninitialize" /> remaining on this thread.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="CoUninitialize" />
-    <seealso cref="IInitializeSpy" />
+    <summary>Performs cleanup steps required after calling the <see cref="CoUninitialize" /> function.</summary>
+    <param name="dwNewThreadAptRefs">The number of calls to <see cref="CoUninitialize" /> remaining on this thread.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IInitializeSpy.PreInitialize">
-    <summary>
-      <para>Performs initialization steps required before calling the <see cref="CoInitializeEx" /> function.</para>
-    </summary>
-    <param name="dwCoInit">
-      <para>The apartment type passed to <see cref="CoInitializeEx" />, specified as a member of the <see cref="COINIT" /> enumeration.</para>
-    </param>
-    <param name="dwCurThreadAptRefs">
-      <para>The number of times <see cref="CoInitializeEx" /> has been called on this thread.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="CoInitializeEx" />
-    <seealso cref="IInitializeSpy" />
+    <summary>Performs initialization steps required before calling the <see cref="CoInitializeEx" /> function.</summary>
+    <param name="dwCoInit">The apartment type passed to <see cref="CoInitializeEx" />, specified as a member of the <see cref="COINIT" /> enumeration.</param>
+    <param name="dwCurThreadAptRefs">The number of times <see cref="CoInitializeEx" /> has been called on this thread.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IInitializeSpy.PreUninitialize">
-    <summary>
-      <para>Performs cleanup steps required before calling the <see cref="CoUninitialize" /> function.</para>
-    </summary>
-    <param name="dwCurThreadAptRefs">
-      <para>The number of times <see cref="CoInitializeEx" /> has been called on this thread.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="CoUninitialize" />
-    <seealso cref="IInitializeSpy" />
+    <summary>Performs cleanup steps required before calling the <see cref="CoUninitialize" /> function.</summary>
+    <param name="dwCurThreadAptRefs">The number of times <see cref="CoInitializeEx" /> has been called on this thread.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IInitializeSpy">
-    <summary>
-      <para>Performs initialization or cleanup when entering or exiting a COM apartment.</para>
-    </summary>
-    <seealso cref="CoRegisterInitializeSpy" />
+    <summary>Performs initialization or cleanup when entering or exiting a COM apartment.</summary>
   </member>
 </doc>

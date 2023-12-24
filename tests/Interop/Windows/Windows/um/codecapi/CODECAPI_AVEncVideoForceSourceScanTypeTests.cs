@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoForceSourceScanTypeTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoForceSourceScanType).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoForceSourceScanType));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoForceSourceScanType" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoForceSourceScanType>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoForceSourceScanType)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoForceSourceScanType" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoForceSourceScanType).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoForceSourceScanType" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoForceSourceScanType), Is.EqualTo(1));
-    }
 }

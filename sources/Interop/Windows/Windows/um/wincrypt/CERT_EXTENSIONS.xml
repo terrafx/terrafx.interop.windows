@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_EXTENSIONS">
-    <summary>
-      <para>The <b>CERT_EXTENSIONS</b> structure contains an array of extensions.</para>
-    </summary>
-    <seealso cref="CERT_EXTENSION" />
+    <summary>The <b>CERT_EXTENSIONS</b> structure contains an array of extensions.</summary>
   </member>
   <member name="CERT_EXTENSIONS.cExtension">
-    <summary>
-      <para>Number of elements in the array <b>rgExtension</b>.</para>
-    </summary>
+    <summary>Number of elements in the array <b>rgExtension</b>.</summary>
   </member>
   <member name="CERT_EXTENSIONS.rgExtension">
-    <summary>
-      <para>Array of structures, each holding information of type <see cref="CERT_EXTENSION" /> about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a> or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">CRL</a>.</para>
-    </summary>
+    <summary>Array of structures, each holding information of type <see cref="CERT_EXTENSION" /> about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a> or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">CRL</a>.</summary>
   </member>
 </doc>

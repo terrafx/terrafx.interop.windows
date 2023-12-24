@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D_PARAMETER_FLAGS">
+    <summary>Indicates semantic flags for function parameters.</summary>
+  </member>
+  <member name="D3D_PARAMETER_FLAGS.D3D_PF_NONE">
+    <summary>The parameter has no semantic flags.</summary>
+  </member>
+  <member name="D3D_PARAMETER_FLAGS.D3D_PF_IN">
+    <summary>Indicates an input parameter.</summary>
+  </member>
+  <member name="D3D_PARAMETER_FLAGS.D3D_PF_OUT">
+    <summary>Indicates an output parameter.</summary>
+  </member>
+  <member name="D3D_PARAMETER_FLAGS.D3D_PF_FORCE_DWORD">
+    <summary>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. This value is not used.</summary>
+  </member>
+</doc>

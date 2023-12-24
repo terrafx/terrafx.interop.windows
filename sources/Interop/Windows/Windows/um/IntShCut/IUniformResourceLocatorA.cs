@@ -25,7 +25,7 @@ public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUniformResourceLocatorA*, Guid*, void**, int>)(lpVtbl[0]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUniformResourceLocatorA*, Guid*, void**, int>)(lpVtbl[0]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUniformResourceLocatorA*, uint>)(lpVtbl[1]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUniformResourceLocatorA*, uint>)(lpVtbl[1]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUniformResourceLocatorA*, uint>)(lpVtbl[2]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUniformResourceLocatorA*, uint>)(lpVtbl[2]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUniformResourceLocatorA.xml' path='doc/member[@name="IUniformResourceLocatorA.SetURL"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA
     [VtblIndex(3)]
     public HRESULT SetURL([NativeTypeName("LPCSTR")] sbyte* pcszURL, [NativeTypeName("DWORD")] uint dwInFlags)
     {
-        return ((delegate* unmanaged<IUniformResourceLocatorA*, sbyte*, uint, int>)(lpVtbl[3]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), pcszURL, dwInFlags);
+        return ((delegate* unmanaged[MemberFunction]<IUniformResourceLocatorA*, sbyte*, uint, int>)(lpVtbl[3]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), pcszURL, dwInFlags);
     }
 
     /// <include file='IUniformResourceLocatorA.xml' path='doc/member[@name="IUniformResourceLocatorA.GetURL"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA
     [VtblIndex(4)]
     public HRESULT GetURL([NativeTypeName("LPSTR *")] sbyte** ppszURL)
     {
-        return ((delegate* unmanaged<IUniformResourceLocatorA*, sbyte**, int>)(lpVtbl[4]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), ppszURL);
+        return ((delegate* unmanaged[MemberFunction]<IUniformResourceLocatorA*, sbyte**, int>)(lpVtbl[4]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), ppszURL);
     }
 
     /// <include file='IUniformResourceLocatorA.xml' path='doc/member[@name="IUniformResourceLocatorA.InvokeCommand"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA
     [VtblIndex(5)]
     public HRESULT InvokeCommand([NativeTypeName("PURLINVOKECOMMANDINFOA")] URLINVOKECOMMANDINFOA* purlici)
     {
-        return ((delegate* unmanaged<IUniformResourceLocatorA*, URLINVOKECOMMANDINFOA*, int>)(lpVtbl[5]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), purlici);
+        return ((delegate* unmanaged[MemberFunction]<IUniformResourceLocatorA*, URLINVOKECOMMANDINFOA*, int>)(lpVtbl[5]))((IUniformResourceLocatorA*)Unsafe.AsPointer(ref this), purlici);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IUniformResourceLocatorA : IUniformResourceLocatorA
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCSTR, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, uint, int> SetURL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, uint, int> SetURL;
 
         [NativeTypeName("HRESULT (LPSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte**, int> GetURL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte**, int> GetURL;
 
         [NativeTypeName("HRESULT (PURLINVOKECOMMANDINFOA) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, URLINVOKECOMMANDINFOA*, int> InvokeCommand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, URLINVOKECOMMANDINFOA*, int> InvokeCommand;
     }
 }

@@ -3,6 +3,7 @@
 // Ported from DXSampleHelper.h in https://github.com/Microsoft/DirectX-Graphics-Samples
 // Original source is Copyright © Microsoft. All rights reserved. Licensed under the MIT License (MIT).
 
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
@@ -15,11 +16,7 @@ namespace TerraFX.Samples.DirectX;
 
 public static unsafe class DXSampleHelper
 {
-    public static string GetAssetsPath()
-    {
-        var entryAssembly = Assembly.GetEntryAssembly()!;
-        return Path.GetDirectoryName(entryAssembly.Location)!;
-    }
+    public static string GetAssetsPath() => Path.GetDirectoryName(AppContext.BaseDirectory)!;
 
     public static byte[] ReadDataFromFile(string filename)
     {
@@ -48,7 +45,7 @@ public static unsafe class DXSampleHelper
     {
         fixed (char* pName = name)
         {
-            _ = pObject->SetName((ushort*)pName);
+            _ = pObject->SetName(pName);
         }
     }
 

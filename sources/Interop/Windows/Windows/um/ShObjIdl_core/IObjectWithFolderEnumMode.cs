@@ -25,7 +25,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IObjectWithFolderEnumMode*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithFolderEnumMode*, Guid*, void**, int>)(lpVtbl[0]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IObjectWithFolderEnumMode*, uint>)(lpVtbl[1]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithFolderEnumMode*, uint>)(lpVtbl[1]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IObjectWithFolderEnumMode*, uint>)(lpVtbl[2]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithFolderEnumMode*, uint>)(lpVtbl[2]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IObjectWithFolderEnumMode.xml' path='doc/member[@name="IObjectWithFolderEnumMode.SetMode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
     [VtblIndex(3)]
     public HRESULT SetMode(FOLDER_ENUM_MODE feMode)
     {
-        return ((delegate* unmanaged<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE, int>)(lpVtbl[3]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), feMode);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE, int>)(lpVtbl[3]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), feMode);
     }
 
     /// <include file='IObjectWithFolderEnumMode.xml' path='doc/member[@name="IObjectWithFolderEnumMode.GetMode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
     [VtblIndex(4)]
     public HRESULT GetMode(FOLDER_ENUM_MODE* pfeMode)
     {
-        return ((delegate* unmanaged<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE*, int>)(lpVtbl[4]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), pfeMode);
+        return ((delegate* unmanaged[MemberFunction]<IObjectWithFolderEnumMode*, FOLDER_ENUM_MODE*, int>)(lpVtbl[4]))((IObjectWithFolderEnumMode*)Unsafe.AsPointer(ref this), pfeMode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IObjectWithFolderEnumMode : IObjectWithFolderEnumMo
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (FOLDER_ENUM_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FOLDER_ENUM_MODE, int> SetMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FOLDER_ENUM_MODE, int> SetMode;
 
         [NativeTypeName("HRESULT (FOLDER_ENUM_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FOLDER_ENUM_MODE*, int> GetMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FOLDER_ENUM_MODE*, int> GetMode;
     }
 }

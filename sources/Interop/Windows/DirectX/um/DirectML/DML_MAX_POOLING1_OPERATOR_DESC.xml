@@ -3,68 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_MAX_POOLING1_OPERATOR_DESC">
-    <summary>
-      <para>Computes the maximum value across the elements within the sliding window over the input tensor, and optionally returns the indices of the maximum values selected.</para>
-    </summary>
-    <remarks>
-      <para>When <i>OutputIndicesTensor</i> is set to NULL, this operator is equivalent to <see cref="DML_MAX_POOLING_OPERATOR_DESC" />.</para>
-      <para>A newer version of this operator, <see cref="DML_MAX_POOLING2_OPERATOR_DESC" />, was introduced in <code>DML_FEATURE_LEVEL_2_1</code>.</para>
-    </remarks>
+    <summary>Computes the maximum value across the elements within the sliding window over the input tensor, and optionally returns the indices of the maximum values selected.</summary>
   </member>
   <member name="DML_MAX_POOLING1_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An input tensor of <i>Sizes</i><code>{ BatchCount, ChannelCount, Height, Width }</code> if <i>InputTensor.DimensionCount</i> is 4, and <code>{ BatchCount, ChannelCount, Depth, Height, Weight } </code>if <i>InputTensor.DimensionCount</i> is 5.</para>
-    </summary>
+    <summary>An input tensor of <i>Sizes</i><code>{ BatchCount, ChannelCount, Height, Width }</code> if <i>InputTensor.DimensionCount</i> is 4, and <code>{ BatchCount, ChannelCount, Depth, Height, Weight }</code>if <i>InputTensor.DimensionCount</i> is 5.</summary>
   </member>
   <member name="DML_MAX_POOLING1_OPERATOR_DESC.OutputTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>An output tensor to write the results to. The sizes of the output tensor can be computed as follows.</para>
-      <code>OutputTensor-&gt;Sizes[0] = InputTensor-&gt;Sizes[0];
-OutputTensor-&gt;Sizes[1] = InputTensor-&gt;Sizes[1];
-
-for (UINT i = 0; i &lt; DimensionCount; ++i) {
-  UINT PaddedSize = InputTensor-&gt;Sizes[i + 2] + StartPadding[i] + EndPadding[i];
-  OutputTensor-&gt;Sizes[i + 2] = (PaddedSize - WindowSizes[i]) / Strides[i] + 1;
-}
-</code>
+      <code>OutputTensor-&gt;Sizes[0] = InputTensor-&gt;Sizes[0]; OutputTensor-&gt;Sizes[1] = InputTensor-&gt;Sizes[1]; for (UINT i = 0; i &lt; DimensionCount; ++i) { UINT PaddedSize = InputTensor-&gt;Sizes[i + 2] + StartPadding[i] + EndPadding[i]; OutputTensor-&gt;Sizes[i + 2] = (PaddedSize - WindowSizes[i]) / Strides[i] + 1; }</code>
     </summary>
   </member>
   <member name="DML_MAX_POOLING1_OPERATOR_DESC.OutputIndicesTensor">
-    <summary>
-      <para>Type: _Maybenull_ <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An optional output tensor of indices to the input tensor <i>InputTensor</i> of the maximum values produced and stored in the <i>OutputTensor</i>. These index values are zero-based and treat the input tensor as a contiguous one-dimensional array. When multiple elements within the sliding window have the same value, the later equal values are ignored and the index points to the first value encountered. Both the <i>OutputTensor</i> and <i>OutputIndicesTensor</i> have the same tensor sizes.</para>
-    </summary>
+    <summary>An optional output tensor of indices to the input tensor <i>InputTensor</i> of the maximum values produced and stored in the <i>OutputTensor</i>. These index values are zero-based and treat the input tensor as a contiguous one-dimensional array. When multiple elements within the sliding window have the same value, the later equal values are ignored and the index points to the first value encountered. Both the <i>OutputTensor</i> and <i>OutputIndicesTensor</i> have the same tensor sizes.</summary>
   </member>
   <member name="DML_MAX_POOLING1_OPERATOR_DESC.DimensionCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of spatial dimensions of the input tensor <i>InputTensor</i>, which also corresponds to the number of dimensions of the sliding window <i>WindowSize</i>. This value also determines the size of the <i>Strides</i>, <i>StartPadding</i>, and <i>EndPadding</i> arrays. It should be set to 2 when <i>InputTensor</i> is 4D, and 3 when it's a 5D tensor.</para>
-    </summary>
+    <summary>The number of spatial dimensions of the input tensor <i>InputTensor</i>, which also corresponds to the number of dimensions of the sliding window <i>WindowSize</i>. This value also determines the size of the <i>Strides</i>, <i>StartPadding</i>, and <i>EndPadding</i> arrays. It should be set to 2 when <i>InputTensor</i> is 4D, and 3 when it's a 5D tensor.</summary>
   </member>
   <member name="DML_MAX_POOLING1_OPERATOR_DESC.Strides">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>The strides for the sliding window dimensions of sizes <code>{ Height, Width }</code> when the <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
-    </summary>
+    <summary>The strides for the sliding window dimensions of sizes <code>{ Height, Width }</code> when the <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</summary>
   </member>
   <member name="DML_MAX_POOLING1_OPERATOR_DESC.WindowSize">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>The dimensions of the sliding window in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
-    </summary>
+    <summary>The dimensions of the sliding window in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</summary>
   </member>
   <member name="DML_MAX_POOLING1_OPERATOR_DESC.StartPadding">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>The number of padding elements to be applied to the beginning of each spatial dimension of the input tensor <i>InputTensor</i>. The values are in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
-    </summary>
+    <summary>The number of padding elements to be applied to the beginning of each spatial dimension of the input tensor <i>InputTensor</i>. The values are in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</summary>
   </member>
   <member name="DML_MAX_POOLING1_OPERATOR_DESC.EndPadding">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>The number of padding elements to be applied to the end of each spatial dimension of the input tensor <i>InputTensor</i>. The values are in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</para>
-    </summary>
+    <summary>The number of padding elements to be applied to the end of each spatial dimension of the input tensor <i>InputTensor</i>. The values are in <code>{ Height, Width }</code> when <i>DimensionCount</i> is set to 2, or <code>{ Depth, Height, Width }</code> when set to 3.</summary>
   </member>
 </doc>

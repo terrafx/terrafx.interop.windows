@@ -3,50 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyDescriptionAliasInfo.GetAdditionalSortByAliases">
-    <summary>
-      <para>Gets the address of a pointer to the <see cref="IPropertyDescriptionList" /> interface, which contains additional sort column values.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the identifier of the requested <see cref="IPropertyDescriptionList" /> interface.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns successfully, contains the address of a pointer to an <see cref="IPropertyDescriptionList" /> interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The following is an example usage for this method. When sorting by System.Author: System.DateModified, System.DateCreated, and System.ItemNameDisplay may be used as secondary sort columns.  This ensures a unique sort order (for System.Author) and is used to provide a more consistent user experience.</para>
-      <para>Calling applications include any UI that wants the secondary sort columns for a given property.</para>
-    </remarks>
-    <seealso cref="IPropertyDescriptionAliasInfo" />
-    <seealso cref="IPropertyDescriptionAliasInfo.GetSortByAlias" />
+    <summary>Gets the address of a pointer to the <see cref="IPropertyDescriptionList" /> interface, which contains additional sort column values.</summary>
+    <param name="riid">A reference to the identifier of the requested <see cref="IPropertyDescriptionList" /> interface.</param>
+    <param name="ppv">When this method returns successfully, contains the address of a pointer to an <see cref="IPropertyDescriptionList" /> interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescriptionAliasInfo.GetSortByAlias">
-    <summary>
-      <para>Gets the address of a pointer to the <see cref="IPropertyDescription" /> interface containing the primary sort column.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the identifier of the requested <see cref="IPropertyDescription" /> interface.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns successfully, contains the address of a pointer to the <see cref="IPropertyDescription" /> interface for the calling object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IPropertyDescriptionAliasInfo" />
-    <seealso cref="IPropertyDescriptionAliasInfo.GetAdditionalSortByAliases" />
+    <summary>Gets the address of a pointer to the <see cref="IPropertyDescription" /> interface containing the primary sort column.</summary>
+    <param name="riid">A reference to the identifier of the requested <see cref="IPropertyDescription" /> interface.</param>
+    <param name="ppv">When this method returns successfully, contains the address of a pointer to the <see cref="IPropertyDescription" /> interface for the calling object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescriptionAliasInfo">
-    <summary>
-      <para>Exposes methods to get the "sort by" columns properties for an item. This interface is used by UI objects that want to retrieve the primary or secondary sort columns for a given property.</para>
-    </summary>
+    <summary>Exposes methods to get the "sort by" columns properties for an item. This interface is used by UI objects that want to retrieve the primary or secondary sort columns for a given property.</summary>
   </member>
 </doc>

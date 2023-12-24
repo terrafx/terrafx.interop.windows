@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerEventHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[1]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[1]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[2]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerEventHandler*, uint>)(lpVtbl[2]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTimerEventHandler.xml' path='doc/member[@name="IUIAnimationTimerEventHandler.OnPreUpdate"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
     [VtblIndex(3)]
     public HRESULT OnPreUpdate()
     {
-        return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, int>)(lpVtbl[3]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerEventHandler*, int>)(lpVtbl[3]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTimerEventHandler.xml' path='doc/member[@name="IUIAnimationTimerEventHandler.OnPostUpdate"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
     [VtblIndex(4)]
     public HRESULT OnPostUpdate()
     {
-        return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, int>)(lpVtbl[4]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerEventHandler*, int>)(lpVtbl[4]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationTimerEventHandler.xml' path='doc/member[@name="IUIAnimationTimerEventHandler.OnRenderingTooSlow"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
     [VtblIndex(5)]
     public HRESULT OnRenderingTooSlow([NativeTypeName("UINT32")] uint framesPerSecond)
     {
-        return ((delegate* unmanaged<IUIAnimationTimerEventHandler*, uint, int>)(lpVtbl[5]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), framesPerSecond);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationTimerEventHandler*, uint, int>)(lpVtbl[5]))((IUIAnimationTimerEventHandler*)Unsafe.AsPointer(ref this), framesPerSecond);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IUIAnimationTimerEventHandler : IUIAnimationTimerEv
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnPreUpdate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnPreUpdate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnPostUpdate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnPostUpdate;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnRenderingTooSlow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnRenderingTooSlow;
     }
 }

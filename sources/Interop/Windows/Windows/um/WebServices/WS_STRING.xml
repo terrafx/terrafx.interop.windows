@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_STRING">
-    <summary>
-      <para>An array of Unicode characters and a length.</para>
-    </summary>
-    <remarks>
-      <para>The string is not required to be zero terminated.  If it is
-zero terminated, then the terminating character is not included
-in the length.</para>
-      <para>The macro <see cref="WS_STRING_VALUE" /> can be used to initialize
-this structure if the string is a constant string.</para>
-    </remarks>
+    <summary>An array of Unicode characters and a length.</summary>
   </member>
   <member name="WS_STRING.length">
-    <summary>
-      <para>The number of characters in the string.</para>
-    </summary>
+    <summary>The number of characters in the string.</summary>
   </member>
   <member name="WS_STRING.chars">
-    <summary>
-      <para>The array of characters that make up the string.</para>
-    </summary>
+    <summary>The array of characters that make up the string.</summary>
   </member>
 </doc>

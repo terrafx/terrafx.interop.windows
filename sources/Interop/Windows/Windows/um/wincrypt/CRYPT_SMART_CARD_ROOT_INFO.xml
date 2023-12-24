@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_SMART_CARD_ROOT_INFO">
-    <summary>
-      <para>The <b>CRYPT_SMART_CARD_ROOT_INFO</b> structure contains the smart card and session IDs associated with a certificate context. The certificate propagation service uses this structure to transfer smart card data between a smart card and a virtual root certificate store on a computer.</para>
-    </summary>
-    <remarks>
-      <para>The <b>luid</b> member value comes from the <b>AuthenticationId</b> member of the <see cref="TOKEN_STATISTICS" /> structure retrieved by calling the <see cref="GetTokenInformation" /> function.</para>
-      <para>A certificate context can include an array of multiple <b>CRYPT_SMART_CARD_ROOT_INFO</b> structures, one for each <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">locally unique identifier</a> (<see cref="LUID" />) that the certificate propagation service has added to a root certificate.</para>
-    </remarks>
+    <summary>The <b>CRYPT_SMART_CARD_ROOT_INFO</b> structure contains the smart card and session IDs associated with a certificate context. The certificate propagation service uses this structure to transfer smart card data between a smart card and a virtual root certificate store on a computer.</summary>
   </member>
   <member name="CRYPT_SMART_CARD_ROOT_INFO.rgbCardID">
-    <summary>
-      <para>An array of bytes that specify the smart card IDs retrieved by using the <see cref="CryptGetProvParam" /> function with the <i>dwParam</i> parameter set to <b>PP_SMARTCARD_GUID</b>.</para>
-    </summary>
+    <summary>An array of bytes that specify the smart card IDs retrieved by using the <see cref="CryptGetProvParam" /> function with the <i>dwParam</i> parameter set to <b>PP_SMARTCARD_GUID</b>.</summary>
   </member>
   <member name="CRYPT_SMART_CARD_ROOT_INFO.luid">
-    <summary>
-      <para>A <see cref="ROOT_INFO_LUID" /> structure that specifies a session authentication ID from an access token.</para>
-    </summary>
+    <summary>A <see cref="ROOT_INFO_LUID" /> structure that specifies a session authentication ID from an access token.</summary>
   </member>
 </doc>

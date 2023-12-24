@@ -19,32 +19,4 @@ public static unsafe partial class ISVGExternalResourcesRequiredTests
     {
         Assert.That(typeof(ISVGExternalResourcesRequired).GUID, Is.EqualTo(IID_ISVGExternalResourcesRequired));
     }
-
-    /// <summary>Validates that the <see cref="ISVGExternalResourcesRequired" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGExternalResourcesRequired>(), Is.EqualTo(sizeof(ISVGExternalResourcesRequired)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGExternalResourcesRequired" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGExternalResourcesRequired).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGExternalResourcesRequired" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGExternalResourcesRequired), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGExternalResourcesRequired), Is.EqualTo(4));
-        }
-    }
 }

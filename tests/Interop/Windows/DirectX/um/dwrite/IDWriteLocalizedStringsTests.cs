@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteLocalizedStringsTests
     {
         Assert.That(typeof(IDWriteLocalizedStrings).GUID, Is.EqualTo(IID_IDWriteLocalizedStrings));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteLocalizedStrings" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteLocalizedStrings>(), Is.EqualTo(sizeof(IDWriteLocalizedStrings)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteLocalizedStrings" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteLocalizedStrings).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteLocalizedStrings" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteLocalizedStrings), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteLocalizedStrings), Is.EqualTo(4));
-        }
-    }
 }

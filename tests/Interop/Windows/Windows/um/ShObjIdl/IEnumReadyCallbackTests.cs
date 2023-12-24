@@ -19,32 +19,4 @@ public static unsafe partial class IEnumReadyCallbackTests
     {
         Assert.That(typeof(IEnumReadyCallback).GUID, Is.EqualTo(IID_IEnumReadyCallback));
     }
-
-    /// <summary>Validates that the <see cref="IEnumReadyCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEnumReadyCallback>(), Is.EqualTo(sizeof(IEnumReadyCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IEnumReadyCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEnumReadyCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEnumReadyCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEnumReadyCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEnumReadyCallback), Is.EqualTo(4));
-        }
-    }
 }

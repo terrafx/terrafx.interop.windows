@@ -3,68 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_POLICY_PROPERTY_ID">
-    <summary>
-      <para>Identifies each policy property and its associated
-value.</para>
-    </summary>
+    <summary>Identifies each policy property and its associated value.</summary>
   </member>
   <member name="WS_POLICY_PROPERTY_ID.WS_POLICY_PROPERTY_STATE">
     <summary>
-      <para>This property is used with <see cref="WsGetPolicyProperty" />.
-It is of type <see cref="WS_POLICY_STATE" />.</para>
+      <para>This property is used with <see cref="WsGetPolicyProperty" />. It is of type <see cref="WS_POLICY_STATE" />.</para>
       <para>The current state of the policy object.</para>
     </summary>
   </member>
   <member name="WS_POLICY_PROPERTY_ID.WS_POLICY_PROPERTY_MAX_ALTERNATIVES">
     <summary>
-      <para>This property is used with <see cref="WsCreateMetadata" /> when
-specifying <see cref="WS_METADATA_PROPERTY_POLICY_PROPERTIES" /> as part of the <see cref="WS_METADATA_PROPERTY*" /> parameter.  It is of type <b>ULONG</b>.</para>
-      <para>This property controls the maximum number of alternatives
-allowed for a given <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-policy">WS_POLICY</a> object.</para>
-      <para>When a policy is processed, the amount of memory allocated
-and CPU consumed is proportional to the number of policy
-alternatives present in the policy, not to the actual size
-of the policy.  Even a small policy may contain a large number
-of alternatives due to the expansion of different permutations
-of assertions.  Setting this property to a large
-value may lead to excessive processing or memory consumption.</para>
+      <para>This property is used with <see cref="WsCreateMetadata" /> when specifying <see cref="WS_METADATA_PROPERTY_POLICY_PROPERTIES" /> as part of the <see cref="WS_METADATA_PROPERTY*" /> parameter. It is of type <b>ULONG</b>.</para>
+      <para>This property controls the maximum number of alternatives allowed for a given <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-policy">WS_POLICY</a> object.</para>
+      <para>When a policy is processed, the amount of memory allocated and CPU consumed is proportional to the number of policy alternatives present in the policy, not to the actual size of the policy. Even a small policy may contain a large number of alternatives due to the expansion of different permutations of assertions. Setting this property to a large value may lead to excessive processing or memory consumption.</para>
       <para>The default value is 32.</para>
     </summary>
   </member>
   <member name="WS_POLICY_PROPERTY_ID.WS_POLICY_PROPERTY_MAX_DEPTH">
     <summary>
-      <para>This property is used with <see cref="WsCreateMetadata" /> when
-specifying <see cref="WS_METADATA_PROPERTY_POLICY_PROPERTIES" />.
-It is of type <b>ULONG</b>.</para>
-      <para>This property controls the maximum depth of any policy that is
-read and processed.  The maximum depth of a policy is defined as the maximum
-number of levels of nested container elements (<b>Policy</b>, <b>All</b>, <b>ExactlyOne</b>)
-when considering the policy and any policies that it references.</para>
-      <para>A small amount of stack space is consumed for each level of
-policy that is processed.  Setting this value to a large
-value may lead to stack overflow for a policy that is
-deeply nested or contains a cyclic reference.</para>
+      <para>This property is used with <see cref="WsCreateMetadata" /> when specifying <see cref="WS_METADATA_PROPERTY_POLICY_PROPERTIES" />. It is of type <b>ULONG</b>.</para>
+      <para>This property controls the maximum depth of any policy that is read and processed. The maximum depth of a policy is defined as the maximum number of levels of nested container elements (<b>Policy</b>, <b>All</b>, <b>ExactlyOne</b>) when considering the policy and any policies that it references.</para>
+      <para>A small amount of stack space is consumed for each level of policy that is processed. Setting this value to a large value may lead to stack overflow for a policy that is deeply nested or contains a cyclic reference.</para>
       <para>The default value is 32.</para>
     </summary>
   </member>
   <member name="WS_POLICY_PROPERTY_ID.WS_POLICY_PROPERTY_MAX_EXTENSIONS">
     <summary>
-      <para>This property is used with <see cref="WsCreateMetadata" /> when
-specifying <see cref="WS_METADATA_PROPERTY_POLICY_PROPERTIES" />.
-It is of type <b>ULONG</b>.</para>
-      <para>This property controls the maximum number of policy extensions
-(unknown assertions) allowed for a given <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-policy">WS_POLICY</a> object.
-Policy extensions can be retrieved by supplying <see cref="WS_POLICY_EXTENSION" /></para>
-      <para>array in <see cref="WS_POLICY_CONSTRAINTS" /> structure when using the
-<see cref="WsMatchPolicyAlternative" /> API.</para>
+      <para>This property is used with <see cref="WsCreateMetadata" /> when specifying <see cref="WS_METADATA_PROPERTY_POLICY_PROPERTIES" />. It is of type <b>ULONG</b>.</para>
+      <para>This property controls the maximum number of policy extensions (unknown assertions) allowed for a given <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-policy">WS_POLICY</a> object. Policy extensions can be retrieved by supplying <see cref="WS_POLICY_EXTENSION" />array in <see cref="WS_POLICY_CONSTRAINTS" /> structure when using the<see cref="WsMatchPolicyAlternative" /> API.</para>
       <para>The default value is 8.</para>
-      <para>When a policy is processed, the amount of memory allocated
-and CPU consumed is proportional to the number of policy
-alternatives present in the policy, not to the actual size
-of the policy.  Even a small policy may contain a large number
-of alternatives due to the expansion of different permutations
-of assertions.  Setting this property to a large
-value may lead to excessive processing or memory consumption.</para>
+      <para>When a policy is processed, the amount of memory allocated and CPU consumed is proportional to the number of policy alternatives present in the policy, not to the actual size of the policy. Even a small policy may contain a large number of alternatives due to the expansion of different permutations of assertions. Setting this property to a large value may lead to excessive processing or memory consumption.</para>
     </summary>
   </member>
 </doc>

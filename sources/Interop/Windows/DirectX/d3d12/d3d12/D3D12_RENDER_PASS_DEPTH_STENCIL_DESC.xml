@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RENDER_PASS_DEPTH_STENCIL_DESC">
+    <summary>Describes a binding (fixed for the duration of the render pass) to a depth stencil view (DSV), as well as its beginning and ending access characteristics.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_DEPTH_STENCIL_DESC.cpuDescriptor">
+    <summary>A <see cref="D3D12_CPU_DESCRIPTOR_HANDLE" />. The CPU descriptor handle corresponding to the depth stencil view (DSV).</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_DEPTH_STENCIL_DESC.DepthBeginningAccess">
+    <summary>A <see cref="D3D12_RENDER_PASS_BEGINNING_ACCESS" />. The access to the depth buffer requested at the transition into a render pass.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_DEPTH_STENCIL_DESC.StencilBeginningAccess">
+    <summary>A <see cref="D3D12_RENDER_PASS_BEGINNING_ACCESS" />. The access to the stencil buffer requested at the transition into a render pass.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_DEPTH_STENCIL_DESC.DepthEndingAccess">
+    <summary>A <see cref="D3D12_RENDER_PASS_ENDING_ACCESS" />. The access to the depth buffer requested at the transition out of a render pass.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_DEPTH_STENCIL_DESC.StencilEndingAccess">
+    <summary>A <see cref="D3D12_RENDER_PASS_ENDING_ACCESS" />. The access to the stencil buffer requested at the transition out of a render pass.</summary>
+  </member>
+</doc>

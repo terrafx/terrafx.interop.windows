@@ -19,32 +19,4 @@ public static unsafe partial class IObjectWithAppUserModelIDTests
     {
         Assert.That(typeof(IObjectWithAppUserModelID).GUID, Is.EqualTo(IID_IObjectWithAppUserModelID));
     }
-
-    /// <summary>Validates that the <see cref="IObjectWithAppUserModelID" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IObjectWithAppUserModelID>(), Is.EqualTo(sizeof(IObjectWithAppUserModelID)));
-    }
-
-    /// <summary>Validates that the <see cref="IObjectWithAppUserModelID" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IObjectWithAppUserModelID).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IObjectWithAppUserModelID" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IObjectWithAppUserModelID), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IObjectWithAppUserModelID), Is.EqualTo(4));
-        }
-    }
 }

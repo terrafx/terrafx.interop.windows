@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR">
-    <summary>
-      <para>The <b>CRYPT_ENROLLMENT_NAME_VALUE_PAIR</b> structure is used to create certificate requests on behalf of a user.</para>
-    </summary>
+    <summary>The <b>CRYPT_ENROLLMENT_NAME_VALUE_PAIR</b> structure is used to create certificate requests on behalf of a user.</summary>
   </member>
   <member name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR.pwszName">
-    <summary>
-      <para>Name of a certificate requester.</para>
-    </summary>
+    <summary>Name of a certificate requester.</summary>
   </member>
   <member name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR.pwszValue">
-    <summary>
-      <para>Name of the user for whom the certificate is being requested.</para>
-    </summary>
+    <summary>Name of the user for whom the certificate is being requested.</summary>
   </member>
 </doc>

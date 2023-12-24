@@ -14,7 +14,7 @@ public unsafe partial struct GCP_RESULTSW
 
     /// <include file='GCP_RESULTSW.xml' path='doc/member[@name="GCP_RESULTSW.lpOutString"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpOutString;
+    public char* lpOutString;
 
     /// <include file='GCP_RESULTSW.xml' path='doc/member[@name="GCP_RESULTSW.lpOrder"]/*' />
     public uint* lpOrder;
@@ -31,7 +31,7 @@ public unsafe partial struct GCP_RESULTSW
 
     /// <include file='GCP_RESULTSW.xml' path='doc/member[@name="GCP_RESULTSW.lpGlyphs"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpGlyphs;
+    public char* lpGlyphs;
 
     /// <include file='GCP_RESULTSW.xml' path='doc/member[@name="GCP_RESULTSW.nGlyphs"]/*' />
     public uint nGlyphs;

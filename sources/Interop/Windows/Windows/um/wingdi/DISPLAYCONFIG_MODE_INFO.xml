@@ -3,44 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_MODE_INFO">
-    <summary>
-      <para>The DISPLAYCONFIG_MODE_INFO structure contains either source mode or target mode information.</para>
-    </summary>
-    <seealso cref="DISPLAYCONFIG_MODE_INFO_TYPE" />
-    <seealso cref="DISPLAYCONFIG_SOURCE_MODE" />
-    <seealso cref="DISPLAYCONFIG_TARGET_MODE" />
+    <summary>The DISPLAYCONFIG_MODE_INFO structure contains either source mode or target mode information.</summary>
   </member>
   <member name="DISPLAYCONFIG_MODE_INFO.infoType">
-    <summary>
-      <para>A value that indicates whether the <b>DISPLAYCONFIG_MODE_INFO</b> structure represents source or target mode information. If <b>infoType</b> is DISPLAYCONFIG_MODE_INFO_TYPE_TARGET, the <i>targetMode</i> parameter value contains a valid DISPLAYCONFIG_TARGET_MODE structure describing the specified target. If <b>infoType</b> is DISPLAYCONFIG_MODE_INFO_TYPE_SOURCE, the <i>sourceMode</i> parameter value contains a valid DISPLAYCONFIG_SOURCE_MODE structure describing the specified source.</para>
-    </summary>
+    <summary>A value that indicates whether the <b>DISPLAYCONFIG_MODE_INFO</b> structure represents source or target mode information. If <b>infoType</b> is DISPLAYCONFIG_MODE_INFO_TYPE_TARGET, the <i>targetMode</i> parameter value contains a valid DISPLAYCONFIG_TARGET_MODE structure describing the specified target. If <b>infoType</b> is DISPLAYCONFIG_MODE_INFO_TYPE_SOURCE, the <i>sourceMode</i> parameter value contains a valid DISPLAYCONFIG_SOURCE_MODE structure describing the specified source.</summary>
   </member>
   <member name="DISPLAYCONFIG_MODE_INFO.id">
-    <summary>
-      <para>The source or target identifier on the specified adapter that this path relates to.</para>
-    </summary>
+    <summary>The source or target identifier on the specified adapter that this path relates to.</summary>
   </member>
   <member name="DISPLAYCONFIG_MODE_INFO.adapterId">
-    <summary>
-      <para>The identifier of the adapter that this source or target mode information relates to.</para>
-    </summary>
+    <summary>The identifier of the adapter that this source or target mode information relates to.</summary>
   </member>
-  <member name="DISPLAYCONFIG_MODE_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="DISPLAYCONFIG_MODE_INFO.DUMMYUNIONNAME"></member>
   <member name="DISPLAYCONFIG_MODE_INFO.DUMMYUNIONNAME.targetMode">
-    <summary>
-      <para>A valid <see cref="DISPLAYCONFIG_TARGET_MODE" /> structure that describes the specified target only when <b>infoType</b> is DISPLAYCONFIG_MODE_INFO_TYPE_TARGET.</para>
-    </summary>
+    <summary>A valid <see cref="DISPLAYCONFIG_TARGET_MODE" /> structure that describes the specified target only when <b>infoType</b> is DISPLAYCONFIG_MODE_INFO_TYPE_TARGET.</summary>
   </member>
   <member name="DISPLAYCONFIG_MODE_INFO.DUMMYUNIONNAME.sourceMode">
-    <summary>
-      <para>A valid <see cref="DISPLAYCONFIG_SOURCE_MODE" /> structure that describes the specified source only when <b>infoType</b> is DISPLAYCONFIG_MODE_INFO_TYPE_SOURCE.</para>
-    </summary>
+    <summary>A valid <see cref="DISPLAYCONFIG_SOURCE_MODE" /> structure that describes the specified source only when <b>infoType</b> is DISPLAYCONFIG_MODE_INFO_TYPE_SOURCE.</summary>
   </member>
   <member name="DISPLAYCONFIG_MODE_INFO.DUMMYUNIONNAME.desktopImageInfo">
     <summary>
-      <para>A <see cref="DISPLAYCONFIG_DESKTOP_IMAGE_INFO" /> structure that describes information about the desktop image only when <b>infoType</b> is DISPLAYCONFIG_MODE_INFO_TYPE_.</para>
+      <para>A <see cref="DISPLAYCONFIG_DESKTOP_IMAGE_INFO" /> structure that describes information about the desktop image only when <b>infoType</b> is <see cref="DISPLAYCONFIG_MODE_INFO_TYPE_DESKTOP_IMAGE" />.</para>
       <para>Supported starting in Windows 10.</para>
     </summary>
   </member>

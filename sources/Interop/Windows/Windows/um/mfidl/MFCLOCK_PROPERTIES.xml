@@ -3,37 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFCLOCK_PROPERTIES">
-    <summary>
-      <para>Defines the properties of a clock.</para>
-    </summary>
-    <seealso cref="IMFClock.GetProperties" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Defines the properties of a clock.</summary>
   </member>
   <member name="MFCLOCK_PROPERTIES.qwCorrelationRate">
-    <summary>
-      <para>The interval at which the clock correlates its clock time with the system time, in 100-nanosecond units. If the value is zero, the correlation is made whenever the <see cref="IMFClock.GetCorrelatedTime" /> method is called.</para>
-    </summary>
+    <summary>The interval at which the clock correlates its clock time with the system time, in 100-nanosecond units. If the value is zero, the correlation is made whenever the <see cref="IMFClock.GetCorrelatedTime" /> method is called.</summary>
   </member>
   <member name="MFCLOCK_PROPERTIES.guidClockId">
-    <summary>
-      <para>The unique identifier of the underlying device that provides the time. If two clocks have the same unique identifier, they are based on the same device. If the underlying device is not shared between two clocks, the value can be <b>GUID_NULL</b>.</para>
-    </summary>
+    <summary>The unique identifier of the underlying device that provides the time. If two clocks have the same unique identifier, they are based on the same device. If the underlying device is not shared between two clocks, the value can be <b>GUID_NULL</b>.</summary>
   </member>
   <member name="MFCLOCK_PROPERTIES.dwClockFlags">
-    <summary>
-      <para>A bitwise <b>OR</b> of flags from the <see cref="MFCLOCK_RELATIONAL_FLAGS" /> enumeration.</para>
-    </summary>
+    <summary>A bitwise <b>OR</b> of flags from the <see cref="MFCLOCK_RELATIONAL_FLAGS" /> enumeration.</summary>
   </member>
   <member name="MFCLOCK_PROPERTIES.qwClockFrequency">
-    <summary>
-      <para>The clock frequency in Hz. A value of <b>MFCLOCK_FREQUENCY_HNS</b> means that the clock has a frequency of 10 MHz (100-nanosecond ticks), which is the standard <a href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</a> time unit in Media Foundation. If the <see cref="IMFClock.GetClockCharacteristics" /> method returns the <b>MFCLOCK_CHARACTERISTICS_FLAG_FREQUENCY_10MHZ</b> flag, the value of this field must be <b>MFCLOCK_FREQUENCY_HNS</b>.</para>
-    </summary>
+    <summary>The clock frequency in Hz. A value of <b>MFCLOCK_FREQUENCY_HNS</b> means that the clock has a frequency of 10 MHz (100-nanosecond ticks), which is the standard <a href="https://docs.microsoft.com//windows/desktop/medfound/mftime">MFTIME</a> time unit in Media Foundation. If the <see cref="IMFClock.GetClockCharacteristics" /> method returns the <b>MFCLOCK_CHARACTERISTICS_FLAG_FREQUENCY_10MHZ</b> flag, the value of this field must be <b>MFCLOCK_FREQUENCY_HNS</b>.</summary>
   </member>
   <member name="MFCLOCK_PROPERTIES.dwClockTolerance">
-    <summary>
-      <para>The amount of inaccuracy that may be present on the clock, in parts per billion (ppb). For example, an inaccuracy of 50 ppb means the clock might drift up to 50 seconds per billion seconds of real time. If the tolerance is not known, the value is <b>MFCLOCK_TOLERANCE_UNKNOWN</b>. This constant is equal to 50 parts per million (ppm).</para>
-    </summary>
+    <summary>The amount of inaccuracy that may be present on the clock, in parts per billion (ppb). For example, an inaccuracy of 50 ppb means the clock might drift up to 50 seconds per billion seconds of real time. If the tolerance is not known, the value is <b>MFCLOCK_TOLERANCE_UNKNOWN</b>. This constant is equal to 50 parts per million (ppm).</summary>
   </member>
   <member name="MFCLOCK_PROPERTIES.dwClockJitter">
     <summary>
@@ -45,30 +30,42 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MFCLOCK_JITTER_ISR</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MFCLOCK_JITTER_ISR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Jitter due to time stamping during the device driver's ISR.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Jitter due to time stamping during the device driver's ISR.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MFCLOCK_JITTER_DPC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Jitter due to time stamping during the deferred procedure call (DPC) processing.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MFCLOCK_JITTER_DPC</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MFCLOCK_JITTER_PASSIVE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Jitter due to time stamping during the deferred procedure call (DPC) processing.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MFCLOCK_JITTER_PASSIVE</b>
-          </description>
-          <description>
-            <para>Jitter due to dropping to normal thread execution before time stamping.</para>
-          </description>
-        </item>
+          <description>Jitter due to dropping to normal thread execution before time stamping.</description>
+        </listheader>
       </list>
     </summary>
   </member>

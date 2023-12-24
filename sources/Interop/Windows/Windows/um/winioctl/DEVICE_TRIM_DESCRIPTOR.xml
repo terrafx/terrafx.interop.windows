@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEVICE_TRIM_DESCRIPTOR">
-    <summary>
-      <para>Used in conjunction with the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request to
-retrieve the trim descriptor data for a device.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <summary>Used in conjunction with the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> request to retrieve the trim descriptor data for a device.</summary>
   </member>
   <member name="DEVICE_TRIM_DESCRIPTOR.Version">
-    <summary>
-      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to
-the structure.</para>
-    </summary>
+    <summary>Contains the size of this structure, in bytes. The value of this member will change as members are added to the structure.</summary>
   </member>
   <member name="DEVICE_TRIM_DESCRIPTOR.Size">
-    <summary>
-      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this
-structure.</para>
-    </summary>
+    <summary>Specifies the total size of the data returned, in bytes. This may include data that follows this structure.</summary>
   </member>
   <member name="DEVICE_TRIM_DESCRIPTOR.TrimEnabled">
-    <summary>
-      <para>Specifies whether trim is enabled for the device.</para>
-    </summary>
+    <summary>Specifies whether trim is enabled for the device.</summary>
   </member>
 </doc>

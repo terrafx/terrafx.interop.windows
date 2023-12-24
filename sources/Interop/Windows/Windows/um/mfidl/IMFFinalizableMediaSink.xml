@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFFinalizableMediaSink.BeginFinalize">
-    <summary>
-      <para>Notifies the media sink to asynchronously take any steps it needs to finish its tasks.</para>
-    </summary>
-    <param name="pCallback">
-      <para>Pointer to the <see cref="IMFAsyncCallback" /> interface of an asynchronous object. The caller must implement this interface.</para>
-    </param>
-    <param name="punkState">
-      <para>Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</para>
-    </param>
+    <summary>Notifies the media sink to asynchronously take any steps it needs to finish its tasks.</summary>
+    <param name="pCallback">Pointer to the <see cref="IMFAsyncCallback" /> interface of an asynchronous object. The caller must implement this interface.</param>
+    <param name="punkState">Pointer to the <b>IUnknown</b> interface of a state object, defined by the caller. This parameter can be <b>NULL</b>. You can use this object to hold state information. The object is returned to the caller when the callback is invoked.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -19,31 +13,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Many archive media sinks have steps they need to do at the end of archiving to complete their file operations, such as updating the header (for some formats) or flushing all pending writes to disk. In some cases, this may include expensive operations such as indexing the content. <b>BeginFinalize</b> is an asynchronous way to initiate final tasks.</para>
-      <para>When the finalize operation is complete, the callback object's <see cref="IMFAsyncCallback.Invoke" /> method is called. At that point, the application should call <see cref="IMFFinalizableMediaSink.EndFinalize" /> to complete the asynchronous request.</para>
-    </remarks>
-    <seealso cref="IMFFinalizableMediaSink" />
   </member>
   <member name="IMFFinalizableMediaSink.EndFinalize">
-    <summary>
-      <para>Completes an asynchronous finalize operation.</para>
-    </summary>
-    <param name="pResult">
-      <para>Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</para>
-    </param>
+    <summary>Completes an asynchronous finalize operation.</summary>
+    <param name="pResult">Pointer to the <see cref="IMFAsyncResult" /> interface. Pass in the same pointer that your callback object received in the <see cref="IMFAsyncCallback.Invoke" /> method.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -51,32 +38,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method after the <see cref="IMFFinalizableMediaSink.BeginFinalize" /> method completes asynchronously.</para>
-    </remarks>
-    <seealso cref="IMFFinalizableMediaSink" />
   </member>
   <member name="IMFFinalizableMediaSink">
     <summary>
       <para>Optionally supported by media sinks to perform required tasks before shutdown. This interface is typically exposed by archive sinks—that is, media sinks that write to a file. It is used to perform tasks such as flushing data to disk or updating a file header.</para>
       <para>To get a pointer to this interface, call <b>QueryInterface</b> on the media sink.</para>
     </summary>
-    <remarks>
-      <para>If a media sink exposes this interface, the Media Session will call <see cref="BeginFinalize" /> on the sink before the session closes.</para>
-    </remarks>
-    <seealso cref="IMFMediaSink" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

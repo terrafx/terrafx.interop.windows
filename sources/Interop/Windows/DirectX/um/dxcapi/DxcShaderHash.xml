@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DxcShaderHash">
+    <summary>Hash digest type for ShaderHash.</summary>
+  </member>
+  <member name="DxcShaderHash.Flags">
+    <summary>One of <b>DXC_HASHFLAG_Xxx</b>.</summary>
+  </member>
+  <member name="DxcShaderHash.HashDigest[16]">
+    <summary>The hash digest.</summary>
+  </member>
+</doc>

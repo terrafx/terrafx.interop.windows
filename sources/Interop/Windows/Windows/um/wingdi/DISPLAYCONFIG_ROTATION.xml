@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_ROTATION">
-    <summary>
-      <para>The DISPLAYCONFIG_ROTATION enumeration specifies the clockwise rotation of the display.</para>
-    </summary>
+    <summary>The DISPLAYCONFIG_ROTATION enumeration specifies the clockwise rotation of the display.</summary>
   </member>
   <member name="DISPLAYCONFIG_ROTATION.DISPLAYCONFIG_ROTATION_IDENTITY">
-    <summary>
-      <para>Indicates that rotation is 0 degrees—landscape mode.</para>
-    </summary>
+    <summary>Indicates that rotation is 0 degrees—landscape mode.</summary>
   </member>
   <member name="DISPLAYCONFIG_ROTATION.DISPLAYCONFIG_ROTATION_ROTATE90">
-    <summary>
-      <para>Indicates that rotation is 90 degrees clockwise—portrait mode.</para>
-    </summary>
+    <summary>Indicates that rotation is 90 degrees clockwise—portrait mode.</summary>
   </member>
   <member name="DISPLAYCONFIG_ROTATION.DISPLAYCONFIG_ROTATION_ROTATE180">
-    <summary>
-      <para>Indicates that rotation is 180 degrees clockwise—inverted landscape mode.</para>
-    </summary>
+    <summary>Indicates that rotation is 180 degrees clockwise—inverted landscape mode.</summary>
   </member>
   <member name="DISPLAYCONFIG_ROTATION.DISPLAYCONFIG_ROTATION_ROTATE270">
-    <summary>
-      <para>Indicates that rotation is 270 degrees clockwise—inverted portrait mode.</para>
-    </summary>
+    <summary>Indicates that rotation is 270 degrees clockwise—inverted portrait mode.</summary>
   </member>
   <member name="DISPLAYCONFIG_ROTATION.DISPLAYCONFIG_ROTATION_FORCE_UINT32">
-    <summary>
-      <para>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</para>
-    </summary>
+    <summary>Forces this enumeration to compile to 32 bits in size. Without this value, some compilers would allow this enumeration to compile to a size other than 32 bits. You should not use this value.</summary>
   </member>
 </doc>

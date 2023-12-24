@@ -3,38 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="KF_CATEGORY">
-    <summary>
-      <para>Value that represent a category by which a folder registered with the Known Folder system can be classified.</para>
-    </summary>
-    <remarks>
-      <para>The <b>KF_CATEGORY</b> type is defined in Shobjidl.h as shown here.</para>
-      <code>typedef DWORD KF_CATEGORY;
-</code>
-    </remarks>
-    <seealso cref="IKnownFolder.GetCategory" />
-    <seealso cref="KNOWNFOLDER_DEFINITION" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Value that represent a category by which a folder registered with the Known Folder system can be classified.</summary>
   </member>
   <member name="KF_CATEGORY.KF_CATEGORY_VIRTUAL">
-    <summary>
-      <para>Virtual folders are not part of the file system, which is to say that they have no path. For example, <b>Control Panel</b> and <b>Printers</b> are virtual folders. A number of features such as folder path and redirection do not apply to this category.</para>
-    </summary>
+    <summary>Virtual folders are not part of the file system, which is to say that they have no path. For example, <b>Control Panel</b> and <b>Printers</b> are virtual folders. A number of features such as folder path and redirection do not apply to this category.</summary>
   </member>
   <member name="KF_CATEGORY.KF_CATEGORY_FIXED">
-    <summary>
-      <para>Fixed file system folders are not managed by the Shell and are usually given a permanent path when the system is installed. For example, the <b>Windows</b> and <b>Program Files</b> folders are fixed folders. A number of features such as redirection do not apply to this category.</para>
-    </summary>
+    <summary>Fixed file system folders are not managed by the Shell and are usually given a permanent path when the system is installed. For example, the <b>Windows</b> and <b>Program Files</b> folders are fixed folders. A number of features such as redirection do not apply to this category.</summary>
   </member>
   <member name="KF_CATEGORY.KF_CATEGORY_COMMON">
-    <summary>
-      <para>Common folders are those file system folders used for sharing data and settings, accessible by all users of a system. For example, all users share a common <b>Documents</b> folder as well as their per-user <b>Documents</b> folder.</para>
-    </summary>
+    <summary>Common folders are those file system folders used for sharing data and settings, accessible by all users of a system. For example, all users share a common <b>Documents</b> folder as well as their per-user <b>Documents</b> folder.</summary>
   </member>
   <member name="KF_CATEGORY.KF_CATEGORY_PERUSER">
     <summary>
       <para>Per-user folders are those stored under each user's profile and accessible only by that user. For example, <code>%USERPROFILE%\Pictures</code>. This category of folder usually supports many features including aliasing, redirection and customization.</para>
-      <para>
-        <b>Note</b>  The user profile root folder (<a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">FOLDERID_Profile</a>) does not support redirection.</para>
+      <div>
+        <b>Note</b>  The user profile root folder (<a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">FOLDERID_Profile</a>) does not support redirection.</div>
     </summary>
   </member>
 </doc>

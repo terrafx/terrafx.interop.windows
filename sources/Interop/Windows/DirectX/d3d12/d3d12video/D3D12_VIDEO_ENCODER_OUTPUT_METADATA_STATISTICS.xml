@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS">
+    <summary>Represents encoding statistics about an <see cref="ID3D12VideoEncodeCommandList2.EncodeFrame" /> operation.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS.AverageQP">
+    <summary>Output field that receives the average QP value used for encoding this frame.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS.IntraCodingUnitsCount">
+    <summary>Output field that receives the number of intra-coded coding units used in this frame.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS.InterCodingUnitsCount">
+    <summary>Output field that receives the number of inter-coded coding units used in this frame.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS.SkipCodingUnitsCount">
+    <summary>Output field that receives the number of skip coding units used in this frame.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS.AverageMotionEstimationXDirection">
+    <summary>Output field that receives the average motion vector shift in X direction.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_OUTPUT_METADATA_STATISTICS.AverageMotionEstimationYDirection">
+    <summary>Output field that receives the average motion vector shift in Y direction.</summary>
+  </member>
+</doc>

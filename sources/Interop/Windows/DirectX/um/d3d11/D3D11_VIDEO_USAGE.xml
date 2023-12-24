@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_USAGE">
-    <summary>
-      <para>Specifies the intended use for a video processor.</para>
-    </summary>
-    <seealso cref="D3D11_VIDEO_PROCESSOR_CONTENT_DESC" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
+    <summary>Specifies the intended use for a video processor.</summary>
   </member>
   <member name="D3D11_VIDEO_USAGE.D3D11_VIDEO_USAGE_PLAYBACK_NORMAL">
-    <summary>
-      <para>Normal video playback. The graphics driver should expose a set of capabilities that are appropriate for real-time video playback.</para>
-    </summary>
+    <summary>Normal video playback. The graphics driver should expose a set of capabilities that are appropriate for real-time video playback.</summary>
   </member>
   <member name="D3D11_VIDEO_USAGE.D3D11_VIDEO_USAGE_OPTIMAL_SPEED">
     <summary>

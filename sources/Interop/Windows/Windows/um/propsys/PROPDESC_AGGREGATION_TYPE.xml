@@ -3,51 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROPDESC_AGGREGATION_TYPE">
-    <summary>
-      <para>Describes how property values are displayed when multiple items are selected. For a particular property, PROPDESC_AGGREGATION_TYPE describes how the property should be displayed when multiple items that have a value for the property are selected, such as whether the values should be summed, or averaged, or just displayed with the default "Multiple Values" string.</para>
-    </summary>
-    <remarks>
-      <para>These values are defined in propsys.h and propsys.idl.</para>
-    </remarks>
+    <summary>Describes how property values are displayed when multiple items are selected. For a particular property, PROPDESC_AGGREGATION_TYPE describes how the property should be displayed when multiple items that have a value for the property are selected, such as whether the values should be summed, or averaged, or just displayed with the default "Multiple Values" string.</summary>
   </member>
   <member name="PROPDESC_AGGREGATION_TYPE.PDAT_DEFAULT">
-    <summary>
-      <para>Display the string "Multiple Values".</para>
-    </summary>
+    <summary>Display the string "Multiple Values".</summary>
   </member>
   <member name="PROPDESC_AGGREGATION_TYPE.PDAT_FIRST">
-    <summary>
-      <para>Display the first value in the selection.</para>
-    </summary>
+    <summary>Display the first value in the selection.</summary>
   </member>
   <member name="PROPDESC_AGGREGATION_TYPE.PDAT_SUM">
-    <summary>
-      <para>Display the sum of the selected values. This flag is never returned for data types <b>VT_LPWSTR</b>, <b>VT_BOOL</b>, and <b>VT_FILETIME</b>.</para>
-    </summary>
+    <summary>Display the sum of the selected values. This flag is never returned for data types <b>VT_LPWSTR</b>, <b>VT_BOOL</b>, and <b>VT_FILETIME</b>.</summary>
   </member>
   <member name="PROPDESC_AGGREGATION_TYPE.PDAT_AVERAGE">
-    <summary>
-      <para>Display the numerical average of the selected values. This flag is never returned for data types <b>VT_LPWSTR</b>, <b>VT_BOOL</b>, and <b>VT_FILETIME</b>.</para>
-    </summary>
+    <summary>Display the numerical average of the selected values. This flag is never returned for data types <b>VT_LPWSTR</b>, <b>VT_BOOL</b>, and <b>VT_FILETIME</b>.</summary>
   </member>
   <member name="PROPDESC_AGGREGATION_TYPE.PDAT_DATERANGE">
-    <summary>
-      <para>Display the date range of the selected values. This flag is returned only for values of the <b>VT_FILETIME</b> data type.</para>
-    </summary>
+    <summary>Display the date range of the selected values. This flag is returned only for values of the <b>VT_FILETIME</b> data type.</summary>
   </member>
   <member name="PROPDESC_AGGREGATION_TYPE.PDAT_UNION">
-    <summary>
-      <para>Display a concatenated string of all the values. The order of individual values in the string is undefined. The concatenated string omits duplicate values; if a value occurs more than once, it appears only once in the concatenated string.</para>
-    </summary>
+    <summary>Display a concatenated string of all the values. The order of individual values in the string is undefined. The concatenated string omits duplicate values; if a value occurs more than once, it appears only once in the concatenated string.</summary>
   </member>
   <member name="PROPDESC_AGGREGATION_TYPE.PDAT_MAX">
-    <summary>
-      <para>Display the highest of the selected values.</para>
-    </summary>
+    <summary>Display the highest of the selected values.</summary>
   </member>
   <member name="PROPDESC_AGGREGATION_TYPE.PDAT_MIN">
-    <summary>
-      <para>Display the lowest of the selected values.</para>
-    </summary>
+    <summary>Display the lowest of the selected values.</summary>
   </member>
 </doc>

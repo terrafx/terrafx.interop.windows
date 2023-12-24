@@ -19,32 +19,4 @@ public static unsafe partial class IMFAudioStreamVolumeTests
     {
         Assert.That(typeof(IMFAudioStreamVolume).GUID, Is.EqualTo(IID_IMFAudioStreamVolume));
     }
-
-    /// <summary>Validates that the <see cref="IMFAudioStreamVolume" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFAudioStreamVolume>(), Is.EqualTo(sizeof(IMFAudioStreamVolume)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFAudioStreamVolume" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFAudioStreamVolume).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFAudioStreamVolume" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFAudioStreamVolume), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFAudioStreamVolume), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,30 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_INFO">
-    <summary>
-      <para>The <b>CMSG_RECIPIENT_ENCRYPTED_KEY_INFO</b> structure contains information used for an individual key agreement recipient.</para>
-    </summary>
+    <summary>The <b>CMSG_RECIPIENT_ENCRYPTED_KEY_INFO</b> structure contains information used for an individual key agreement recipient.</summary>
   </member>
   <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_INFO.RecipientId">
     <summary>
-      <para>
-        <see cref="CERT_ID" /> structure identifying the recipient. Currently, only the ISSUER_SERIAL_NUMBER or KEYID choices in the <b>CERT_ID</b> structure are valid.</para>
-    </summary>
+      <see cref="CERT_ID" /> structure identifying the recipient. Currently, only the ISSUER_SERIAL_NUMBER or KEYID choices in the <b>CERT_ID</b> structure are valid.</summary>
   </member>
   <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_INFO.EncryptedKey">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains the encrypted content encryption key.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DATA_BLOB</a> structure that contains the encrypted content encryption key.</summary>
   </member>
   <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_INFO.Date">
-    <summary>
-      <para>Optional. When present, this member specifies which of the recipient's previously distributed UKMs was used by the sender. Only applicable to KEYID choice in the <b>RecipientId </b><see cref="CERT_ID" /> structure.</para>
-    </summary>
+    <summary>Optional. When present, this member specifies which of the recipient's previously distributed UKMs was used by the sender. Only applicable to KEYID choice in the <b>RecipientId</b><see cref="CERT_ID" /> structure.</summary>
   </member>
   <member name="CMSG_RECIPIENT_ENCRYPTED_KEY_INFO.pOtherAttr">
-    <summary>
-      <para>Optional pointer to a
-<see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" /> structure containing additional information. Only applicable to KEYID choice in the <b>RecipientId </b><see cref="CERT_ID" /> structure.</para>
-    </summary>
+    <summary>Optional pointer to a<see cref="CRYPT_ATTRIBUTE_TYPE_VALUE" /> structure containing additional information. Only applicable to KEYID choice in the <b>RecipientId</b><see cref="CERT_ID" /> structure.</summary>
   </member>
 </doc>

@@ -4,14 +4,11 @@
 <doc>
   <member name="IDDrawExclModeVideo.GetDDrawObject">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDDrawObject</code> method retrieves the DirectDraw object being used by the Overlay Mixer filter.</para>
     </summary>
-    <param name="ppDDrawObject">
-      <para>Address of a pointer to the <b>IDirectDraw</b> interface that the Overlay Mixer is using.</para>
-    </param>
-    <param name="pbUsingExternal">
-      <para>Pointer to a variable that receives a Boolean value. It receives the value <b>TRUE</b> if the Overlay Mixer is using a DirectDraw object specified by <see cref="IDDrawExclModeVideo.SetDDrawObject" />, or <b>FALSE</b> otherwise.</para>
-    </param>
+    <param name="ppDDrawObject">Address of a pointer to the <b>IDirectDraw</b> interface that the Overlay Mixer is using.</param>
+    <param name="pbUsingExternal">Pointer to a variable that receives a Boolean value. It receives the value <b>TRUE</b> if the Overlay Mixer is using a DirectDraw object specified by <see cref="IDDrawExclModeVideo.SetDDrawObject" />, or <b>FALSE</b> otherwise.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -19,54 +16,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Argument is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>A DirectDraw error code</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Argument is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>A DirectDraw error code</b>
-            </para>
-          </description>
-          <description>
-            <para>A DirectDraw error is encountered when trying to set the specified surface on the Overlay Mixer.</para>
-          </description>
-        </item>
+          <description>A DirectDraw error is encountered when trying to set the specified surface on the Overlay Mixer.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the filter graph has not set a DirectDraw object and the Overlay Mixer has not yet allocated one, then <i>pDDrawObject</i> will be set to <b>NULL</b> and <i>pbUsingExternal</i> will be set to <b>FALSE</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideo Interface" />
   </member>
   <member name="IDDrawExclModeVideo.GetDDrawSurface">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDDrawSurface</code> method retrieves the DirectDraw surface being used by the Overlay Mixer.</para>
     </summary>
-    <param name="ppDDrawSurface">
-      <para>Address of a pointer to the <b>IDirectDrawSurface</b> interface that is being used by the Overlay Mixer.</para>
-    </param>
-    <param name="pbUsingExternal">
-      <para>Pointer to a variable that receives a Boolean value. It receives the value <b>TRUE</b> if the Overlay Mixer is using a DirectDraw surface specified by <see cref="IDDrawExclModeVideo.SetDDrawSurface" />, or <b>FALSE</b> otherwise.</para>
-    </param>
+    <param name="ppDDrawSurface">Address of a pointer to the <b>IDirectDrawSurface</b> interface that is being used by the Overlay Mixer.</param>
+    <param name="pbUsingExternal">Pointer to a variable that receives a Boolean value. It receives the value <b>TRUE</b> if the Overlay Mixer is using a DirectDraw surface specified by <see cref="IDDrawExclModeVideo.SetDDrawSurface" />, or <b>FALSE</b> otherwise.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -74,60 +69,54 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Argument is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>A DirectDraw error code</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Argument is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>A DirectDraw error code</b>
-            </para>
-          </description>
-          <description>
-            <para>A DirectDraw error is encountered when trying to set the specified surface on the Overlay Mixer.</para>
-          </description>
-        </item>
+          <description>A DirectDraw error is encountered when trying to set the specified surface on the Overlay Mixer.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the filter graph has not set a DirectDraw surface and the Overlay Mixer has not yet allocated one, then <i>pDDrawSurface</i> will be set to <b>NULL</b> and <i>pdUsingExternal</i> will be set to <b>FALSE</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideo Interface" />
   </member>
   <member name="IDDrawExclModeVideo.GetNativeVideoProps">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetNativeVideoProps</code> method retrieves the current video size and picture aspect ratio of the Overlay Mixer's primary stream.</para>
     </summary>
-    <param name="pdwVideoWidth">
-      <para>Address of variable that receives the width of the video.</para>
-    </param>
-    <param name="pdwVideoHeight">
-      <para>Address of variable that receives the height of the video.</para>
-    </param>
-    <param name="pdwPictAspectRatioX">
-      <para>Address of variable that receives the x-axis aspect ratio.</para>
-    </param>
-    <param name="pdwPictAspectRatioY">
-      <para>Address of variable that receives the y-axis aspect ratio.</para>
-    </param>
+    <param name="pdwVideoWidth">Address of variable that receives the width of the video.</param>
+    <param name="pdwVideoHeight">Address of variable that receives the height of the video.</param>
+    <param name="pdwPictAspectRatioX">Address of variable that receives the x-axis aspect ratio.</param>
+    <param name="pdwPictAspectRatioY">Address of variable that receives the y-axis aspect ratio.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -135,44 +124,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Argument is invalid.</para>
-          </description>
-        </item>
+          <description>Argument is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The filter graph should look for the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-video-size-changed">EC_VIDEO_SIZE_CHANGED</a> event, and on its receipt call this method to adjust the aspect ratio and position.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideo Interface" />
   </member>
   <member name="IDDrawExclModeVideo.SetCallbackInterface">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetCallbackInterface</code> method retrieves a pointer to the callback interface of the Overlay Mixer so that the calling application can be notified about adjustments to the display during video playback.</para>
     </summary>
-    <param name="pCallback">
-      <para>Pointer to the object that implements the <see cref="IDDrawExclModeVideoCallback" /> interface. If <i>pCallback</i> is <b>NULL</b>, the callback interface is set to <b>NULL</b> and no more callbacks are made. If there was a previous callback interface, it is released and no more callbacks are made to it. If <i>pCallback</i> is not <b>NULL</b> and this method returns S_OK, then the reference count of the object <i>pCallback</i> points to is incremented.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Must be zero.</para>
-    </param>
+    <param name="pCallback">Pointer to the object that implements the <see cref="IDDrawExclModeVideoCallback" /> interface. If <i>pCallback</i> is <b>NULL</b>, the callback interface is set to <b>NULL</b> and no more callbacks are made. If there was a previous callback interface, it is released and no more callbacks are made to it. If <i>pCallback</i> is not <b>NULL</b> and this method returns S_OK, then the reference count of the object <i>pCallback</i> points to is incremented.</param>
+    <param name="dwFlags">Must be zero.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -180,41 +165,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Argument is invalid.</para>
-          </description>
-        </item>
+          <description>Argument is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An application should use this method to get notification about the overlay size, position, or color key change happening, so that it can hide or show the video, or adjust the video at the start, end, or during playback. By calling this method, an application can access the <see cref="IDDrawExclModeVideoCallback" /> interface and pass the pointer to that interface to the Overlay Mixer.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideo Interface" />
   </member>
   <member name="IDDrawExclModeVideo.SetDDrawObject">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetDDrawObject</code> method sets the DirectDraw object to be used in subsequent drawing.</para>
     </summary>
-    <param name="pDDrawObject">
-      <para>Pointer to the <b>IDirectDraw</b> interface on the object to use.</para>
-    </param>
+    <param name="pDDrawObject">Pointer to the <b>IDirectDraw</b> interface on the object to use.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -222,51 +205,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Argument is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>A DirectDraw error code</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Argument is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>A DirectDraw error code</b>
-            </para>
-          </description>
-          <description>
-            <para>A DirectDraw error is encountered when trying to set the specified surface on the Overlay Mixer.</para>
-          </description>
-        </item>
+          <description>A DirectDraw error is encountered when trying to set the specified surface on the Overlay Mixer.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A game application can use this method to share its DirectDraw object with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer</a> filter, so that the video can be drawn in a specified surface, as set in <see cref="IDDrawExclModeVideo.SetDDrawSurface" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideo Interface" />
   </member>
   <member name="IDDrawExclModeVideo.SetDDrawSurface">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetDDrawSurface</code> method specifies the DirectDraw surface to be used in subsequent drawing.</para>
     </summary>
-    <param name="pDDrawSurface">
-      <para>Pointer to the <b>IDirectDrawSurface</b> interface on the surface to use.</para>
-    </param>
+    <param name="pDDrawSurface">Pointer to the <b>IDirectDrawSurface</b> interface on the surface to use.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
       <para>The current DirectShow implementation return values include the following.</para>
@@ -275,57 +258,51 @@
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>S_OK</para>
+            <list type="bullet">
+              <listheader>
+                <term>S_OK</term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_INVALIDARG</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Argument is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>E_INVALIDARG</para>
+            <list type="bullet">
+              <listheader>
+                <term>A DirectDraw error code</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Argument is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>A DirectDraw error code</para>
-          </description>
-          <description>
-            <para>A DirectDraw error is encountered when trying to set the specified surface on the Overlay Mixer.</para>
-          </description>
-        </item>
+          <description>A DirectDraw error is encountered when trying to set the specified surface on the Overlay Mixer.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A game application can use this to share its DirectDraw surface with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer</a> filter so that the video can be drawn in a specified surface. This surface must be associated with the object specified in <see cref="IDDrawExclModeVideo.SetDDrawObject" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideo Interface" />
   </member>
   <member name="IDDrawExclModeVideo.SetDrawParameters">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetDrawParameters</code> method specifies which part of the original video will appear at which position of the screen.</para>
     </summary>
-    <param name="prcSource">
-      <para>Pointer to the <b>RECT</b> structure of the original video.</para>
-    </param>
-    <param name="prcTarget">
-      <para>Pointer to the <b>RECT</b> that indicates where the video will appear on the screen.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IDDrawExclModeVideo Interface" />
-    <seealso cref="IDDrawExclModeVideoCallback Interface" />
+    <param name="prcSource">Pointer to the <b>RECT</b> structure of the original video.</param>
+    <param name="prcTarget">Pointer to the <b>RECT</b> that indicates where the video will appear on the screen.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IDDrawExclModeVideo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IDDrawExclModeVideo</code> interface enables video playback in DirectDraw exclusive full-screen mode. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/overlay-mixer-filter">Overlay Mixer Filter</a> implements this interface. Game applications can use DirectDraw in exclusive full-screen mode and continue playing video. For example, the video can be in the background and graphics can be used on top of it. The application passes in a DirectDraw object and primary surface, and these are passed to the Overlay Mixer filter in the filter graph.</para>
       <para>The DVD graph builder object uses <code>IDDrawExclModeVideo</code> to play DVD content while in DirectDraw exclusive full-screen mode. This interface can also be used alone to play MPEG-1 or AVI videos in games.</para>
     </summary>

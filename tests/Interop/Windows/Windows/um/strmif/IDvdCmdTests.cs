@@ -19,32 +19,4 @@ public static unsafe partial class IDvdCmdTests
     {
         Assert.That(typeof(IDvdCmd).GUID, Is.EqualTo(IID_IDvdCmd));
     }
-
-    /// <summary>Validates that the <see cref="IDvdCmd" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDvdCmd>(), Is.EqualTo(sizeof(IDvdCmd)));
-    }
-
-    /// <summary>Validates that the <see cref="IDvdCmd" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDvdCmd).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDvdCmd" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDvdCmd), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDvdCmd), Is.EqualTo(4));
-        }
-    }
 }

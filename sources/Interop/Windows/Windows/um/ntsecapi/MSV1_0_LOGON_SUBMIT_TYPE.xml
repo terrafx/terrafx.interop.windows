@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE">
+    <summary>The <b>MSV1_0_LOGON_SUBMIT_TYPE</b> enumeration indicates the kind of logon being requested.</summary>
+  </member>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE.MsV1_0InteractiveLogon">
+    <summary>Requests an interactive user logon. This dispatch routine handles NTLM interactive logons initiated by<see cref="LsaLogonUser" /> or<see cref="LogonUser" />.</summary>
+  </member>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE.MsV1_0Lm20Logon">
+    <summary>Requests the second half of an NTLM 2.0 protocol logon. The first half of this type of logon is performed by calling<see cref="LsaCallAuthenticationPackage" /> with the <b>MsV1_0Lm20ChallengeRequest</b> message. For more information see,<see cref="MSV1_0_PROTOCOL_MESSAGE_TYPE" />.</summary>
+  </member>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE.MsV1_0NetworkLogon">
+    <summary>Requests a network logon. The only difference between this dispatch routine and <b>MsV1_0Lm20Logon</b> is that <b>MsV1_0NetworkLogon</b> uses a <b>ParameterControl</b> member.</summary>
+  </member>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE.MsV1_0SubAuthLogon">
+    <summary>Requests the second half of an NTLM 2.0 protocol logon using a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subauthentication package</a>. When MSV1_0 initializes itself, it checks a registry key to determine whether it should load a subauthentication package. For more information about subauthentication packages used with MSV1_0, see the subauthentication sample included in the Platform SDK.</summary>
+  </member>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE.MsV1_0WorkstationUnlockLogon">
+    <summary>
+      <para>Requests a logon unlock of a workstation.</para>
+      <para>
+        <b>Note</b>  Windows Server 2003Windows XPThis constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE.MsV1_0S4ULogon">
+    <summary>
+      <para>Requests a service for user (S4U) logon.</para>
+      <para>
+        <b>Note</b>  Windows Server 2003 with SP2Windows VistaWindows Server 2003Windows XPThis constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE.MsV1_0VirtualLogon">
+    <summary>
+      <para>Requests a logon from a remote session.</para>
+      <para>
+        <b>Note</b>  Windows Server 2003 with SP2Windows VistaWindows Server 2003Windows XPThis constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE.MsV1_0NoElevationLogon">
+    <summary>
+      <para>Requests a logon that doesn't allow for elevation of privileges.</para>
+      <para>
+        <b>Note</b>  Windows Server 2008 R2Windows 7Windows Server 2003 with SP2Windows VistaWindows Server 2003Windows XPThis constant is not supported.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_LOGON_SUBMIT_TYPE.MsV1_0LuidLogon"></member>
+</doc>

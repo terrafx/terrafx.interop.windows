@@ -4,34 +4,23 @@
 <doc>
   <member name="CompressionCaps">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Indicates video compression capabilities.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IAMVideoCompression Interface" />
   </member>
   <member name="CompressionCaps.CompressionCaps_CanQuality">
-    <summary>
-      <para>Video compressor supports the <see cref="IAMVideoCompression.put_Quality" /> and <see cref="IAMVideoCompression.get_Quality" /> methods.</para>
-    </summary>
+    <summary>Video compressor supports the <see cref="IAMVideoCompression.put_Quality" /> and <see cref="IAMVideoCompression.get_Quality" /> methods.</summary>
   </member>
   <member name="CompressionCaps.CompressionCaps_CanCrunch">
-    <summary>
-      <para>Video compressor can compress video to a specified data rate. If the compressor has this capability then the output pins media type will contain the data rate in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure's <b>dwBitRate</b> member. The only way to set the data rate is to set <b>dwBitRate</b>.</para>
-    </summary>
+    <summary>Video compressor can compress video to a specified data rate. If the compressor has this capability then the output pins media type will contain the data rate in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure's <b>dwBitRate</b> member. The only way to set the data rate is to set <b>dwBitRate</b>.</summary>
   </member>
   <member name="CompressionCaps.CompressionCaps_CanKeyFrame">
-    <summary>
-      <para>Video compressor supports the <see cref="IAMVideoCompression.put_KeyFrameRate" /> and <see cref="IAMVideoCompression.get_KeyFrameRate" /> methods.</para>
-    </summary>
+    <summary>Video compressor supports the <see cref="IAMVideoCompression.put_KeyFrameRate" /> and <see cref="IAMVideoCompression.get_KeyFrameRate" /> methods.</summary>
   </member>
   <member name="CompressionCaps.CompressionCaps_CanBFrame">
-    <summary>
-      <para>Video compressor supports the <see cref="IAMVideoCompression.put_PFramesPerKeyFrame" /> and <see cref="IAMVideoCompression.get_PFramesPerKeyFrame" /> methods.</para>
-    </summary>
+    <summary>Video compressor supports the <see cref="IAMVideoCompression.put_PFramesPerKeyFrame" /> and <see cref="IAMVideoCompression.get_PFramesPerKeyFrame" /> methods.</summary>
   </member>
   <member name="CompressionCaps.CompressionCaps_CanWindow">
-    <summary>
-      <para>Video compressor supports the <see cref="IAMVideoCompression.put_WindowSize" /> and <see cref="IAMVideoCompression.get_WindowSize" /> methods.</para>
-    </summary>
+    <summary>Video compressor supports the <see cref="IAMVideoCompression.put_WindowSize" /> and <see cref="IAMVideoCompression.get_WindowSize" /> methods.</summary>
   </member>
 </doc>

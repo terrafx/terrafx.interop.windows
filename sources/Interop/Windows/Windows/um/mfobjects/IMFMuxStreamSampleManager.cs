@@ -27,7 +27,7 @@ public unsafe partial struct IMFMuxStreamSampleManager : IMFMuxStreamSampleManag
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMuxStreamSampleManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamSampleManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMuxStreamSampleManager : IMFMuxStreamSampleManag
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMuxStreamSampleManager*, uint>)(lpVtbl[1]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamSampleManager*, uint>)(lpVtbl[1]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMuxStreamSampleManager : IMFMuxStreamSampleManag
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMuxStreamSampleManager*, uint>)(lpVtbl[2]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamSampleManager*, uint>)(lpVtbl[2]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMuxStreamSampleManager.xml' path='doc/member[@name="IMFMuxStreamSampleManager.GetStreamCount"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMuxStreamSampleManager : IMFMuxStreamSampleManag
     [VtblIndex(3)]
     public HRESULT GetStreamCount([NativeTypeName("DWORD *")] uint* pdwMuxStreamCount)
     {
-        return ((delegate* unmanaged<IMFMuxStreamSampleManager*, uint*, int>)(lpVtbl[3]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), pdwMuxStreamCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamSampleManager*, uint*, int>)(lpVtbl[3]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), pdwMuxStreamCount);
     }
 
     /// <include file='IMFMuxStreamSampleManager.xml' path='doc/member[@name="IMFMuxStreamSampleManager.GetSample"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFMuxStreamSampleManager : IMFMuxStreamSampleManag
     [VtblIndex(4)]
     public HRESULT GetSample([NativeTypeName("DWORD")] uint dwMuxStreamIndex, IMFSample** ppSample)
     {
-        return ((delegate* unmanaged<IMFMuxStreamSampleManager*, uint, IMFSample**, int>)(lpVtbl[4]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppSample);
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamSampleManager*, uint, IMFSample**, int>)(lpVtbl[4]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this), dwMuxStreamIndex, ppSample);
     }
 
     /// <include file='IMFMuxStreamSampleManager.xml' path='doc/member[@name="IMFMuxStreamSampleManager.GetStreamConfiguration"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IMFMuxStreamSampleManager : IMFMuxStreamSampleManag
     [return: NativeTypeName("ULONGLONG")]
     public ulong GetStreamConfiguration()
     {
-        return ((delegate* unmanaged<IMFMuxStreamSampleManager*, ulong>)(lpVtbl[5]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMuxStreamSampleManager*, ulong>)(lpVtbl[5]))((IMFMuxStreamSampleManager*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -90,21 +90,21 @@ public unsafe partial struct IMFMuxStreamSampleManager : IMFMuxStreamSampleManag
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStreamCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStreamCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFSample **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFSample**, int> GetSample;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFSample**, int> GetSample;
 
         [NativeTypeName("ULONGLONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong> GetStreamConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong> GetStreamConfiguration;
     }
 }

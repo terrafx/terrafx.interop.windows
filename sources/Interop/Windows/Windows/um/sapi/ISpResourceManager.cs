@@ -25,7 +25,7 @@ public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpResourceManager*, Guid*, void**, int>)(lpVtbl[0]))((ISpResourceManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpResourceManager*, Guid*, void**, int>)(lpVtbl[0]))((ISpResourceManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpResourceManager*, uint>)(lpVtbl[1]))((ISpResourceManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpResourceManager*, uint>)(lpVtbl[1]))((ISpResourceManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpResourceManager*, uint>)(lpVtbl[2]))((ISpResourceManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpResourceManager*, uint>)(lpVtbl[2]))((ISpResourceManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IServiceProvider.QueryService" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface, 
     [VtblIndex(3)]
     public HRESULT QueryService([NativeTypeName("const GUID &")] Guid* guidService, [NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidService, riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpResourceManager*, Guid*, Guid*, void**, int>)(lpVtbl[3]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidService, riid, ppvObject);
     }
 
     /// <include file='ISpResourceManager.xml' path='doc/member[@name="ISpResourceManager.SetObject"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface, 
     [VtblIndex(4)]
     public HRESULT SetObject([NativeTypeName("const GUID &")] Guid* guidServiceId, IUnknown* pUnkObject)
     {
-        return ((delegate* unmanaged<ISpResourceManager*, Guid*, IUnknown*, int>)(lpVtbl[4]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidServiceId, pUnkObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpResourceManager*, Guid*, IUnknown*, int>)(lpVtbl[4]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidServiceId, pUnkObject);
     }
 
     /// <include file='ISpResourceManager.xml' path='doc/member[@name="ISpResourceManager.GetObject"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface, 
     [VtblIndex(5)]
     public HRESULT GetObject([NativeTypeName("const GUID &")] Guid* guidServiceId, [NativeTypeName("const IID &")] Guid* ObjectCLSID, [NativeTypeName("const IID &")] Guid* ObjectIID, BOOL fReleaseWhenLastExternalRefReleased, void** ppObject)
     {
-        return ((delegate* unmanaged<ISpResourceManager*, Guid*, Guid*, Guid*, BOOL, void**, int>)(lpVtbl[5]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidServiceId, ObjectCLSID, ObjectIID, fReleaseWhenLastExternalRefReleased, ppObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpResourceManager*, Guid*, Guid*, Guid*, BOOL, void**, int>)(lpVtbl[5]))((ISpResourceManager*)Unsafe.AsPointer(ref this), guidServiceId, ObjectCLSID, ObjectIID, fReleaseWhenLastExternalRefReleased, ppObject);
     }
 
     public interface Interface : IServiceProvider.Interface
@@ -83,21 +83,21 @@ public unsafe partial struct ISpResourceManager : ISpResourceManager.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, void**, int> QueryService;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, void**, int> QueryService;
 
         [NativeTypeName("HRESULT (const GUID &, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetObject;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, const IID &, BOOL, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, Guid*, BOOL, void**, int> GetObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, Guid*, BOOL, void**, int> GetObject;
     }
 }

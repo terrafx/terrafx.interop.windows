@@ -27,7 +27,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItemsBuffer*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItemsBuffer*, uint>)(lpVtbl[1]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItemsBuffer*, uint>)(lpVtbl[2]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpatialAudioMetadataItemsBuffer.xml' path='doc/member[@name="ISpatialAudioMetadataItemsBuffer.AttachToBuffer"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
     [VtblIndex(3)]
     public HRESULT AttachToBuffer(byte* buffer, [NativeTypeName("UINT32")] uint bufferLength)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, byte*, uint, int>)(lpVtbl[3]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this), buffer, bufferLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItemsBuffer*, byte*, uint, int>)(lpVtbl[3]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this), buffer, bufferLength);
     }
 
     /// <include file='ISpatialAudioMetadataItemsBuffer.xml' path='doc/member[@name="ISpatialAudioMetadataItemsBuffer.AttachToPopulatedBuffer"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
     [VtblIndex(4)]
     public HRESULT AttachToPopulatedBuffer(byte* buffer, [NativeTypeName("UINT32")] uint bufferLength)
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, byte*, uint, int>)(lpVtbl[4]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this), buffer, bufferLength);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItemsBuffer*, byte*, uint, int>)(lpVtbl[4]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this), buffer, bufferLength);
     }
 
     /// <include file='ISpatialAudioMetadataItemsBuffer.xml' path='doc/member[@name="ISpatialAudioMetadataItemsBuffer.DetachBuffer"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
     [VtblIndex(5)]
     public HRESULT DetachBuffer()
     {
-        return ((delegate* unmanaged<ISpatialAudioMetadataItemsBuffer*, int>)(lpVtbl[5]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioMetadataItemsBuffer*, int>)(lpVtbl[5]))((ISpatialAudioMetadataItemsBuffer*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct ISpatialAudioMetadataItemsBuffer : ISpatialAudioMet
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> AttachToBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> AttachToBuffer;
 
         [NativeTypeName("HRESULT (BYTE *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> AttachToPopulatedBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> AttachToPopulatedBuffer;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DetachBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DetachBuffer;
     }
 }

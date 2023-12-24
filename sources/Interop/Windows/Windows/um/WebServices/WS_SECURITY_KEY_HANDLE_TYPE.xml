@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SECURITY_KEY_HANDLE_TYPE">
-    <summary>
-      <para>The types of security keys.</para>
-    </summary>
+    <summary>The types of security keys.</summary>
   </member>
   <member name="WS_SECURITY_KEY_HANDLE_TYPE.WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE_TYPE">
-    <summary>
-      <para>Type ID for <see cref="WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE" />.</para>
-    </summary>
+    <summary>Type ID for <see cref="WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE" />.</summary>
   </member>
   <member name="WS_SECURITY_KEY_HANDLE_TYPE.WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE_TYPE">
-    <summary>
-      <para>Type ID for <see cref="WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE" />.</para>
-    </summary>
+    <summary>Type ID for <see cref="WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE" />.</summary>
   </member>
   <member name="WS_SECURITY_KEY_HANDLE_TYPE.WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE_TYPE">
-    <summary>
-      <para>Type ID for <see cref="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE" />.</para>
-    </summary>
+    <summary>Type ID for <see cref="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE" />.</summary>
   </member>
 </doc>

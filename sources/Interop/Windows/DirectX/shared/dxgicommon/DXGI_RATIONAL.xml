@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_RATIONAL">
+    <summary>Represents a rational number.</summary>
+  </member>
+  <member name="DXGI_RATIONAL.Numerator">
+    <summary>An unsigned integer value representing the top of the rational number.</summary>
+  </member>
+  <member name="DXGI_RATIONAL.Denominator">
+    <summary>An unsigned integer value representing the bottom of the rational number.</summary>
+  </member>
+</doc>

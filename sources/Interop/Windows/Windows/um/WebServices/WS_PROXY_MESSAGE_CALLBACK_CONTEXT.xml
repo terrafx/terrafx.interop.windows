@@ -4,20 +4,14 @@
 <doc>
   <member name="WS_PROXY_MESSAGE_CALLBACK_CONTEXT">
     <summary>
-      <para>Specifies the callback function and state for an application that wishes
-to associate or inspect headers in an input or an output message respectively.</para>
-      <para>See also, <see cref="WS_CALL_PROPERTY_SEND_MESSAGE_CONTEXT" /> and
-<b>WS_CALL_PROPERTY_RECEIVE_MESSAGE_CONTEXT</b>.</para>
+      <para>Specifies the callback function and state for an application that wishes to associate or inspect headers in an input or an output message respectively.</para>
+      <para>See also, <see cref="WS_CALL_PROPERTY_SEND_MESSAGE_CONTEXT" /> and<br /><b>WS_CALL_PROPERTY_RECEIVE_MESSAGE_CONTEXT</b>.</para>
     </summary>
   </member>
   <member name="WS_PROXY_MESSAGE_CALLBACK_CONTEXT.callback">
-    <summary>
-      <para>application specific callback for handling the message.</para>
-    </summary>
+    <summary>application specific callback for handling the message.</summary>
   </member>
   <member name="WS_PROXY_MESSAGE_CALLBACK_CONTEXT.state">
-    <summary>
-      <para>Application specific state that would be made available to the callback upon its invocation.</para>
-    </summary>
+    <summary>Application specific state that would be made available to the callback upon its invocation.</summary>
   </member>
 </doc>

@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSensorGroup.CreateMediaSource">
-    <summary>
-      <para>Creates an <see cref="IMFMediaSource" /> that virtualizes the sensor group. The term "device" in this context could refer to a physical device or a software media source. The source can represent a sensor group that actually contains multiple sensor devices, or it could contain only a single device, but still behaves as a sensor group.</para>
-    </summary>
-    <param name="ppSource">
-      <para>Receives a pointer to the created media source.</para>
-    </param>
+    <summary>Creates an <see cref="IMFMediaSource" /> that virtualizes the sensor group. The term "device" in this context could refer to a physical device or a software media source. The source can represent a sensor group that actually contains multiple sensor devices, or it could contain only a single device, but still behaves as a sensor group.</summary>
+    <param name="ppSource">Receives a pointer to the created media source.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,27 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorGroup" />
   </member>
   <member name="IMFSensorGroup.GetDefaultSensorDeviceIndex">
-    <summary>
-      <para>Retrieves the index of the default device in the sensor group.</para>
-    </summary>
-    <param name="pdwIndex">
-      <para>If the call succeeds, <i>pdwIndex</i> receives the index of the default device.</para>
-    </param>
+    <summary>Retrieves the index of the default device in the sensor group.</summary>
+    <param name="pdwIndex">If the call succeeds, <i>pdwIndex</i> receives the index of the default device.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -44,51 +37,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>pdwIndex</i> parameter is null.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>pdwIndex</i> parameter is null.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
-          </description>
-          <description>
-            <para>The sensor group has not been initialized.</para>
-          </description>
-        </item>
+          <description>The sensor group has not been initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The term "device" in this context could refer to a physical device, a custom media source, or a frame provider.</para>
-      <para>If this <see cref="SetDefaultSensorDevice" /> has not been called, the first device in the Sensor Group (i.e. index 0) will be returned.</para>
-    </remarks>
-    <seealso cref="IMFSensorGroup" />
   </member>
   <member name="IMFSensorGroup.GetFlags">
-    <summary>
-      <para>Gets the flags set for the sensor group.</para>
-    </summary>
-    <param name="pFlags">
-      <para>The flags set for the sensor group</para>
-    </param>
+    <summary>Gets the flags set for the sensor group.</summary>
+    <param name="pFlags">The flags set for the sensor group</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -96,43 +86,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
-          </description>
-          <description>
-            <para>The sensor group has not been initialized.</para>
-          </description>
-        </item>
+          <description>The sensor group has not been initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Currently, no flags are defined for Sensor Groups.</para>
-    </remarks>
-    <seealso cref="IMFSensorGroup" />
   </member>
   <member name="IMFSensorGroup.GetSensorDevice">
-    <summary>
-      <para>Gets the <see cref="IMFSensorDevice" /> corresponding to a device in the sensor group.</para>
-    </summary>
-    <param name="dwIndex">
-      <para>The 0-based index of the device to be retrieved.  The index must be between 0 and the value returned by <see cref="GetSensorDeviceCount" /> - 1.</para>
-    </param>
-    <param name="ppDevice">
-      <para>If the call is successful, <i>ppDevice</i> will contain the retrieved sensor device.</para>
-    </param>
+    <summary>Gets the <see cref="IMFSensorDevice" /> corresponding to a device in the sensor group.</summary>
+    <param name="dwIndex">The 0-based index of the device to be retrieved. The index must be between 0 and the value returned by <see cref="GetSensorDeviceCount" /> - 1.</param>
+    <param name="ppDevice">If the call is successful, <i>ppDevice</i> will contain the retrieved sensor device.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -140,60 +124,60 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>ppDevice</i> parameter is null.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_INDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>the <i>dwIndex</i> parameter is not in the valid range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>ppDevice</i> parameter is null.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALID_INDEX</b>
-            </para>
-          </description>
-          <description>
-            <para>the <i>dwIndex</i> parameter is not in the valid range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
-          </description>
-          <description>
-            <para>The sensor group has not been initialized.</para>
-          </description>
-        </item>
+          <description>The sensor group has not been initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The term "device" in this context could refer to a physical device, a custom media source, or a frame provider.</para>
-    </remarks>
-    <seealso cref="IMFSensorGroup" />
   </member>
   <member name="IMFSensorGroup.GetSensorDeviceCount">
-    <summary>
-      <para>Gets the number of devices that are virtualized by the sensor group.</para>
-    </summary>
-    <param name="pdwCount">
-      <para>The number of devices in the sensor group.</para>
-    </param>
+    <summary>Gets the number of devices that are virtualized by the sensor group.</summary>
+    <param name="pdwCount">The number of devices in the sensor group.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -201,50 +185,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>pdwCount</i> parameter is null.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>pdwCount</i> parameter is null.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
-          </description>
-          <description>
-            <para>The sensor group has not been initialized.</para>
-          </description>
-        </item>
+          <description>The sensor group has not been initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The term "device" in this context could refer to a physical device, a custom media source, or a frame provider.</para>
-    </remarks>
-    <seealso cref="IMFSensorGroup" />
   </member>
   <member name="IMFSensorGroup.GetSensorGroupAttributes">
-    <summary>
-      <para>Gets the <see cref="IMFAttributes" /> for the sensor group. The returned object is a live reference to the internal attribute store.</para>
-    </summary>
-    <param name="ppAttributes">
-      <para>The <see cref="IMFAttributes" /> interface representing the internal attribute store of the sensor group.</para>
-    </param>
+    <summary>Gets the <see cref="IMFAttributes" /> for the sensor group. The returned object is a live reference to the internal attribute store.</summary>
+    <param name="ppAttributes">The <see cref="IMFAttributes" /> interface representing the internal attribute store of the sensor group.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -252,57 +234,50 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>ppAttributes</i> parameter is null.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>ppAttributes</i> parameter is null.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
-          </description>
-          <description>
-            <para>The sensor group has not been initialized.</para>
-          </description>
-        </item>
+          <description>The sensor group has not been initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The caller may optionally use this attribute store to query for attributes set on the sensor group or modify/add attributes to the sensor group.  Modification of this attribute set is not persisted and will only be valid for the instance of the <see cref="IMFSensorGroup" />.</para>
-      <para>This attribute store can be used to add runtime attributes for the <see cref="IMFMediaSource" /> that can be created using the <see cref="IMFSensorGroup.CreateMediaSource" /> method.</para>
-    </remarks>
-    <seealso cref="IMFSensorGroup" />
   </member>
   <member name="IMFSensorGroup.GetSymbolicLink">
-    <summary>
-      <para>Gets the symbolic link name of the sensor group.</para>
-    </summary>
-    <param name="SymbolicLink">
-      <para>Buffer of <i>cchSymbolicLink</i> characters where the symbolic link name will be written.  The buffer must be large enough to account for the null terminator.</para>
-    </param>
-    <param name="cchSymbolicLink">
-      <para>Number of characters available in <i>SymbolicLink</i> buffer.</para>
-    </param>
-    <param name="pcchWritten">
-      <para>Output parameter containing the number of characters written to <i>SymbolicLink</i>.  This includes the null terminator.  If <i>SymbolicLink</i> is null and <i>cchSymbolicLink</i> is 0, <i>pcchWritten</i> will contain the number of characters needed (including the null terminator) to store the symbolic link name.</para>
-    </param>
+    <summary>Gets the symbolic link name of the sensor group.</summary>
+    <param name="SymbolicLink">Buffer of <i>cchSymbolicLink</i> characters where the symbolic link name will be written. The buffer must be large enough to account for the null terminator.</param>
+    <param name="cchSymbolicLink">Number of characters available in <i>SymbolicLink</i> buffer.</param>
+    <param name="pcchWritten">Output parameter containing the number of characters written to <i>SymbolicLink</i>. This includes the null terminator. If <i>SymbolicLink</i> is null and <i>cchSymbolicLink</i> is 0, <i>pcchWritten</i> will contain the number of characters needed (including the null terminator) to store the symbolic link name.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -310,47 +285,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The buffer provided in the <i>SymbolicLink</i> parameter is not large enough to contain the symbolic link name, including the null terminator.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The buffer provided in the <i>SymbolicLink</i> parameter is not large enough to contain the symbolic link name, including the null terminator.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
-          </description>
-          <description>
-            <para>The sensor group has not been initialized.</para>
-          </description>
-        </item>
+          <description>The sensor group has not been initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorGroup" />
   </member>
   <member name="IMFSensorGroup.SetDefaultSensorDeviceIndex">
-    <summary>
-      <para>Configures one of the devices in the sensor group as the default device.</para>
-    </summary>
-    <param name="dwIndex">
-      <para>0-based index of the device to be set as default.  The index must be between 0 and the value returned by <see cref="GetSensorDeviceCount" /> - 1.</para>
-    </param>
+    <summary>Configures one of the devices in the sensor group as the default device.</summary>
+    <param name="dwIndex">0-based index of the device to be set as default. The index must be between 0 and the value returned by <see cref="GetSensorDeviceCount" /> - 1.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -358,47 +334,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALID_INDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>the <i>dwIndex</i> parameter is not in the valid range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MF_E_INVALID_INDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_INITIALIZED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>the <i>dwIndex</i> parameter is not in the valid range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_INITIALIZED</b>
-            </para>
-          </description>
-          <description>
-            <para>The sensor group has not been initialized.</para>
-          </description>
-        </item>
+          <description>The sensor group has not been initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The term "device" in this context could refer to a physical device, a custom media source, or a frame provider.</para>
-      <para>If this method is not called, the first device in the Sensor Group (i.e. the device with index 0) will be used.</para>
-    </remarks>
-    <seealso cref="IMFSensorGroup" />
   </member>
   <member name="IMFSensorGroup">
-    <summary>
-      <para>Represents a group of sensor devices from which an <see cref="IMFMediaSource" /> can be created. The term "device" in this context could refer to a physical device, a custom media source, or a frame provider. A sensor group may actually contain multiple sensor devices, or it could contain only a single device, but it still behaves as a sensor group.</para>
-    </summary>
+    <summary>Represents a group of sensor devices from which an <see cref="IMFMediaSource" /> can be created. The term "device" in this context could refer to a physical device, a custom media source, or a frame provider. A sensor group may actually contain multiple sensor devices, or it could contain only a single device, but it still behaves as a sensor group.</summary>
   </member>
 </doc>

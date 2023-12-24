@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Region.Clone">
+    <summary>The <b>Region.Clone</b> method makes a copy of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object and returns the address of the new<b>Region</b> object.</summary>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</returns>
+  </member>
+  <member name="Region.Complement">
+    <summary>The <b>Region.Complement</b> method updates this region to the portion of the specified path's interior that does not intersect this region.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that specifies the path to use to update this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Complement">
+    <summary>The <b>Region.Complement</b> method updates this region to the portion of the specified rectangle's interior that does not intersect this region.</summary>
+    <param name="rect">Reference to a rectangle to use to update this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Complement">
+    <summary>The <b>Region.Complement</b> method updates this region to the portion of the specified rectangle's interior that does not intersect this region.</summary>
+    <param name="rect">Reference to a rectangle to use to update this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Complement">
+    <summary>The <b>Region.Complement</b> method updates this region to the portion of another region that does not intersect this region.</summary>
+    <param name="region">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object to use to update this<b>Region</b> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Equals">
+    <summary>The <b>Region.Equals</b> method determines whether this region is equal to a specified region.</summary>
+    <param name="region">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object to test against this<b>Region</b> object.</param>
+    <param name="g">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the region that is specified by the<i>region</i> parameter.</param>
+    <returns>If this region is identical to the specified region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.Exclude">
+    <summary>The <b>Region.Exclude</b> method updates this region to the portion of itself that does not intersect the specified path's interior.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that specifies the path to use to update this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Exclude">
+    <summary>The <b>Region.Exclude</b> method updates this region to the portion of itself that does not intersect the specified rectangle's interior.</summary>
+    <param name="rect">Reference to a rectangle to use to update this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Exclude">
+    <summary>The <b>Region.Exclude</b> method updates this region to the portion of itself that does not intersect the specified rectangle's interior.</summary>
+    <param name="rect">Reference to a rectangle to use to update this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Exclude">
+    <summary>The <b>Region.Exclude</b> method updates this region to the portion of itself that does not intersect another region.</summary>
+    <param name="region">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object to use to update this<b>Region</b> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.FromHRGN">
+    <summary>The <b>Region.FromHRGN</b> method creates a Windows GDI+<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object from a Windows Graphics Device Interface (GDI)  region.</summary>
+    <param name="hRgn">Handle to an existing GDI region.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</returns>
+  </member>
+  <member name="Region.GetBounds">
+    <summary>The <b>Region.GetBounds</b> method gets a rectangle that encloses this region.</summary>
+    <param name="rect">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that receives the enclosing rectangle.</param>
+    <param name="g">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the rectangle.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.GetBounds">
+    <summary>The <b>Region.GetBounds</b> method gets a rectangle that encloses this region.</summary>
+    <param name="rect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that receives the enclosing rectangle.</param>
+    <param name="g">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the rectangle.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.GetData">
+    <summary>The <b>Region.GetData</b> method gets data that describes this region.</summary>
+    <param name="buffer">Pointer to an array of<b>BYTE</b> values that receives the region data.</param>
+    <param name="bufferSize">Integer that specifies the size, in bytes, of the<i>buffer</i> array. The size of the<i>buffer</i> array can be greater than or equal to the number of bytes required to store the region data. The exact number of bytes required can be determined by calling the<see cref="Region.GetDataSize" /> method.</param>
+    <param name="sizeFilled">Optional. Pointer to an<b>INT</b> that receives the number of bytes of data actually received by the<i>buffer</i> array. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.GetDataSize">
+    <summary>The <b>Region.GetDataSize</b> method gets the number of bytes of data that describes this region.</summary>
+    <returns>This method returns the number of bytes of region data.</returns>
+  </member>
+  <member name="Region.GetHRGN">
+    <summary>The <b>Region.GetHRGN</b> method creates a Windows Graphics Device Interface (GDI) region from this region.</summary>
+    <param name="g">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region.</param>
+    <returns>This method returns a Windows handle to a GDI region that is created from this region.</returns>
+  </member>
+  <member name="Region.GetLastStatus">
+    <summary>The <b>Region.GetLastStatus</b> method returns a value that indicates the nature of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>Region.GetLastStatus</b> method returns an element of the<see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object have failed since the previous call to <b>Region.GetLastStatus</b>, then <b>Region.GetLastStatus</b> returns <b>Ok</b>.</para>
+      <para>If at least one method invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object has failed since the previous call to <b>Region.GetLastStatus</b>, then <b>Region.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="Region.GetRegionScans">
+    <summary>The <b>Region.GetRegionScans</b> method gets an array of rectangles that approximate this region. The region is transformed by a specified matrix before the rectangles are calculated.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that is used to transform the region.</param>
+    <param name="rects">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> objects that receives the rectangles.</param>
+    <param name="count">Pointer to an <b>INT</b> that receives a value that indicates the number of rectangles that approximate this region. The value is valid even if <b>rects</b> is a <b>NULL</b> pointer.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.GetRegionScans">
+    <summary>The <b>Region.GetRegionScans</b> method gets an array of rectangles that approximate this region. The region is transformed by a specified matrix before the rectangles are calculated.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that is used to transform the region.</param>
+    <param name="rects">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> objects that receives the rectangles.</param>
+    <param name="count">Pointer to an INT that receives a value that indicates the number of rectangles that approximate this region. The value is valid even if<i>rects</i> is a <b>NULL</b> pointer.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.GetRegionScansCount">
+    <summary>The <b>Region.GetRegionScansCount</b> method gets the number of rectangles that approximate this region. The region is transformed by a specified matrix before the rectangles are calculated.</summary>
+    <param name="matrix">Pointer to a matrix that is used to transform the region.</param>
+    <returns>This method returns an integer that indicates the number of rectangles that approximate this region.</returns>
+  </member>
+  <member name="Region.Intersect">
+    <summary>The <b>Region.Intersect</b> method updates this region to the portion of itself that intersects the specified path's interior.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that specifies the path to use to update this region.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Intersect">
+    <summary>The <b>Region.Intersect</b> method updates this region to the portion of itself that intersects the specified rectangle's interior.</summary>
+    <param name="rect">Reference to a rectangle to use to update this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Intersect">
+    <summary>The <b>Region.Intersect</b> method updates this region to the portion of itself that intersects the specified rectangle's interior.</summary>
+    <param name="rect">Reference to a rectangle to use to update this region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Intersect">
+    <summary>The <b>Region.Intersect</b> method updates this region to the portion of itself that intersects another region.</summary>
+    <param name="region">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object to use to update this<b>Region</b> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.IsEmpty">
+    <summary>The <b>Region.IsEmpty</b> method determines whether this region is empty.</summary>
+    <param name="g">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region.</param>
+    <returns>If this region is empty, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.IsInfinite">
+    <summary>The <b>Region.IsInfinite</b> method determines whether this region is infinite.</summary>
+    <param name="g">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region.</param>
+    <returns>If this region is infinite, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.IsVisible">
+    <summary>The <b>Region.IsVisible</b> method determines whether a point is inside this region.</summary>
+    <param name="point">Reference to a point to test.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the point. The default value is <b>NULL</b>.</param>
+    <returns>If the point is inside this region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.IsVisible">
+    <summary>The <b>Region.IsVisible</b> method determines whether a point is inside this region.</summary>
+    <param name="point">Reference to a point to test.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the point. The default value is <b>NULL</b>.</param>
+    <returns>If the point is inside this region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.IsVisible">
+    <summary>The <b>Region.IsVisible</b> method determines whether a rectangle intersects this region.</summary>
+    <param name="rect">Reference to a rectangle to test.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the rectangle. The default value is <b>NULL</b>.</param>
+    <returns>If the rectangle intersects this region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.IsVisible">
+    <summary>The <b>Region.IsVisible</b> method determines whether a rectangle intersects this region.</summary>
+    <param name="rect">Reference to a rectangle to test.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the rectangle. The default value is <b>NULL</b>.</param>
+    <returns>If the rectangle intersects this region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.IsVisible">
+    <summary>The <b>Region.IsVisible</b> method determines whether a point is inside this region.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the point to test.</param>
+    <param name="y">Integer that specifies the y-coordinate of the point to test.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the point. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.IsVisible">
+    <summary>The <b>Region.IsVisible</b> method determines whether a rectangle intersects this region.</summary>
+    <param name="x">Integer that specifies the x-coordinate of the upper-left corner of the rectangle to test.</param>
+    <param name="y">Integer that specifies the y-coordinate of the upper-left corner of the rectangle to test.</param>
+    <param name="width">Integer that specifies the width of the rectangle to test.</param>
+    <param name="height">Integer that specifies the height of the rectangle to test.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the rectangle. The default value is <b>NULL</b>.</param>
+    <returns>If the rectangle intersects this region, the method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.IsVisible">
+    <summary>The <b>Region.IsVisible</b> method determines whether a point is inside this region.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the point to test.</param>
+    <param name="y">Real number that specifies the y-coordinate of the point to test.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the point. The default value is <b>NULL</b>.</param>
+    <returns>If the point is inside this region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.IsVisible">
+    <summary>The <b>Region.IsVisible</b> method determines whether a rectangle intersects this region.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the upper-left corner of the rectangle to test.</param>
+    <param name="y">Real number that specifies the y-coordinate of the upper-left corner of the rectangle to test.</param>
+    <param name="width">Real number that specifies the width of the rectangle to test.</param>
+    <param name="height">Real number that specifies the height of the rectangle to test.</param>
+    <param name="g">Optional. Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> object that contains the world and page transformations required to calculate the device coordinates of this region and the rectangle. The default value is <b>NULL</b>.</param>
+    <returns>If the rectangle intersects this region, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="Region.MakeEmpty">
+    <summary>The <b>Region.MakeEmpty</b> method updates this region to an empty region. In other words, the region occupies no space on the display device.</summary>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.MakeInfinite">
+    <summary>The <b>Region.MakeInfinite</b> method updates this region to an infinite region.</summary>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Region">
+    <summary>Creates a region that is defined by data obtained from another region.</summary>
+    <param name="regionData">Pointer to an array of bytes that specifies a region. The data contained in the bytes is obtained from another region by using the<see cref="Region.GetData" /> method.</param>
+    <param name="size">Integer that specifies the number of bytes in the<i>regionData</i> array.</param>
+  </member>
+  <member name="Region.Region">
+    <summary>Creates a region that is defined by a path (a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object) and has a fill mode that is contained in the <b>GraphicsPath</b> object.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that specifies the path.</param>
+  </member>
+  <member name="Region.Region">
+    <summary>Creates a region that is defined by a rectangle.</summary>
+    <param name="rect">Reference to a rectangle.</param>
+  </member>
+  <member name="Region.Region">
+    <summary>Creates a region that is defined by a rectangle.</summary>
+    <param name="rect">Reference to a rectangle.</param>
+  </member>
+  <member name="Region.Region">
+    <summary>Creates a region that is infinite. This is the default constructor.</summary>
+    <param name="region">TBD</param>
+  </member>
+  <member name="Region.Region">
+    <summary>Creates a region that is infinite. This is the default constructor.</summary>
+    <param name="nativeRegion">TBD</param>
+  </member>
+  <member name="Region.Region">
+    <summary>Creates a region that is identical to the region that is specified by a handle to a Windows Graphics Device Interface (GDI) region.</summary>
+    <param name="hRgn">Handle to an existing GDI region.</param>
+  </member>
+  <member name="Region.Region">
+    <summary>Creates a region that is infinite. This is the default constructor.</summary>
+  </member>
+  <member name="Region.Transform">
+    <summary>The <b>Region.Transform</b> method transforms this region by multiplying each of its data points by a specified matrix.</summary>
+    <param name="matrix">Pointer to a matrix that specifies the transformation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Translate">
+    <summary>The <b>Region.Translate</b> method offsets this region by specified amounts in the horizontal and vertical directions.</summary>
+    <param name="dx">Integer that specifies the amount to shift the region in the x direction.</param>
+    <param name="dy">Integer that specifies the amount to shift the region in the y direction.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Translate">
+    <summary>The <b>Region.Translate</b> method offsets this region by specified amounts in the horizontal and vertical directions.</summary>
+    <param name="dx">Integer that specifies the amount to shift the region in the x direction.</param>
+    <param name="dy">Integer that specifies the amount to shift the region in the y direction.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Union">
+    <summary>The <b>Region.Union</b> method updates this region to all portions (intersecting and nonintersecting) of itself and all portions of the specified path's interior.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that specifies the path to use to update this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-region">Region</a> object.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Union">
+    <summary>The <b>Region.Union</b> method updates this region to all portions (intersecting and nonintersecting) of itself and all portions of the specified rectangle's interior.</summary>
+    <param name="rect">Reference to a rectangle to use to update this region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Union">
+    <summary>The Region.Union method updates this region to all portions (intersecting and nonintersecting) of itself and all portions of the specified rectangle's interior.</summary>
+    <param name="rect">Reference to a rectangle to use to update this region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Union">
+    <summary>The <b>Region.Union</b> method updates this region to all portions (intersecting and nonintersecting) of itself and all portions of another region.</summary>
+    <param name="region">Pointer to a<b>Region</b> object to use to update this region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Xor">
+    <summary>The <b>Region.Xor</b> method updates this region to the nonintersecting portions of itself and the specified path's interior.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> that specifies the path to use to update this region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Xor">
+    <summary>The <b>Region.Xor</b> method updates this region to the nonintersecting portions of itself and the specified rectangle's interior.</summary>
+    <param name="rect">Reference to a rectangle to use to update this region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Xor">
+    <summary>The <b>Region.Xor</b> method updates this region to the nonintersecting portions of itself and the specified rectangle's interior.</summary>
+    <param name="rect">Reference to a rectangle to use to update this region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Region.Xor">
+    <summary>The <b>Region.Xor</b> method updates this region to the nonintersecting portions of itself and another region.</summary>
+    <param name="region">Pointer to a region to use to update this region.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

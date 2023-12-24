@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_MFT_PROCESS_OUTPUT_FLAGS">
-    <summary>
-      <para>Defines flags for processing output samples in a Media Foundation transform (MFT).</para>
-    </summary>
-    <seealso cref="IMFTransform.ProcessOutput" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Defines flags for processing output samples in a Media Foundation transform (MFT).</summary>
   </member>
   <member name="_MFT_PROCESS_OUTPUT_FLAGS.MFT_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER">
-    <summary>
-      <para>Do not produce output for streams in which the <b>pSample</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure is <b>NULL</b>. This flag is not valid unless the MFT has marked the output stream with the MFT_OUTPUT_STREAM_DISCARDABLE or MFT_OUTPUT_STREAM_LAZY_READ flag. For more information, see <see cref="IMFTransform.GetOutputStreamInfo" />.</para>
-    </summary>
+    <summary>Do not produce output for streams in which the <b>pSample</b> member of the <see cref="MFT_OUTPUT_DATA_BUFFER" /> structure is <b>NULL</b>. This flag is not valid unless the MFT has marked the output stream with the MFT_OUTPUT_STREAM_DISCARDABLE or MFT_OUTPUT_STREAM_LAZY_READ flag. For more information, see <see cref="IMFTransform.GetOutputStreamInfo" />.</summary>
   </member>
   <member name="_MFT_PROCESS_OUTPUT_FLAGS.MFT_PROCESS_OUTPUT_REGENERATE_LAST_OUTPUT">
     <summary>

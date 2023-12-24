@@ -21,32 +21,4 @@ public static unsafe partial class IAudioSystemEffectsPropertyStoreTests
     {
         Assert.That(typeof(IAudioSystemEffectsPropertyStore).GUID, Is.EqualTo(IID_IAudioSystemEffectsPropertyStore));
     }
-
-    /// <summary>Validates that the <see cref="IAudioSystemEffectsPropertyStore" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioSystemEffectsPropertyStore>(), Is.EqualTo(sizeof(IAudioSystemEffectsPropertyStore)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioSystemEffectsPropertyStore" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioSystemEffectsPropertyStore).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioSystemEffectsPropertyStore" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioSystemEffectsPropertyStore), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioSystemEffectsPropertyStore), Is.EqualTo(4));
-        }
-    }
 }

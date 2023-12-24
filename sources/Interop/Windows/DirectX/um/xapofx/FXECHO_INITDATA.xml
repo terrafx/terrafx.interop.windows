@@ -3,21 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FXECHO_INITDATA">
-    <summary>
-      <para>Initialization parameters for use with the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapofx-overview">FXECHO XAPOFX</a>.</para>
-    </summary>
-    <remarks>
-      <para>Use of this structure is optional. The default <b>MaxDelay</b> is <b>FXECHO_DEFAULT_DELAY</b>.</para>
-      <para>
-        <b>Note</b>  The DirectX SDK versions of XAUDIO2 don't support this functionality.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+    <summary>Initialization parameters for use with the <a href="https://docs.microsoft.com//windows/desktop/xaudio2/xapofx-overview">FXECHO XAPOFX</a>.</summary>
   </member>
   <member name="FXECHO_INITDATA.MaxDelay">
-    <summary>
-      <para>Maximum delay (all channels) in milliseconds. This must be within <b>FXECHO_MIN_DELAY</b> and <b>FXECHO_MAX_DELAY</b>.</para>
-    </summary>
+    <summary>Maximum delay (all channels) in milliseconds. This must be within <b>FXECHO_MIN_DELAY</b> and <b>FXECHO_MAX_DELAY</b>.</summary>
   </member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IInternalUnknownTests
     {
         Assert.That(typeof(IInternalUnknown).GUID, Is.EqualTo(IID_IInternalUnknown));
     }
-
-    /// <summary>Validates that the <see cref="IInternalUnknown" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInternalUnknown>(), Is.EqualTo(sizeof(IInternalUnknown)));
-    }
-
-    /// <summary>Validates that the <see cref="IInternalUnknown" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInternalUnknown).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInternalUnknown" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInternalUnknown), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInternalUnknown), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,115 +3,43 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1StrokeStyle.GetDashCap">
-    <summary>
-      <para>Gets a value that specifies how the ends of each dash are drawn.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
-      <para>A value that specifies how the ends of each dash are drawn.</para>
-    </returns>
-    <seealso cref="ID2D1StrokeStyle" />
+    <summary>Gets a value that specifies how the ends of each dash are drawn.</summary>
+    <returns>A value that specifies how the ends of each dash are drawn.</returns>
   </member>
   <member name="ID2D1StrokeStyle.GetDashes">
-    <summary>
-      <para>Copies the dash pattern to the specified array.</para>
-    </summary>
-    <param name="dashes">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>A pointer to an array that will receive the dash pattern. The array must be able to contain at least as many elements as specified by <i>dashesCount</i>. You must allocate storage for this array.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of dashes to copy. If this value is less than the number of dashes in the stroke style's dashes array, the returned dashes are truncated to <i>dashesCount</i>. If this value is greater than the number of dashes in the stroke style's dashes array, the extra dashes are set to 0.0f. To obtain the actual number of dashes in the stroke style's dashes array, use the <see cref="GetDashesCount" /> method.</para>
-    </param>
-    <remarks>
-      <para>The dashes are specified in units that are a multiple of the stroke width, with subsequent members of the array indicating the dashes and gaps between dashes: the first entry indicates a filled dash, the second a gap, and so on.</para>
-    </remarks>
-    <seealso cref="ID2D1StrokeStyle" />
+    <summary>Copies the dash pattern to the specified array.</summary>
+    <param name="dashes">A pointer to an array that will receive the dash pattern. The array must be able to contain at least as many elements as specified by <i>dashesCount</i>. You must allocate storage for this array.</param>
+    <param name="dashesCount">The number of dashes to copy. If this value is less than the number of dashes in the stroke style's dashes array, the returned dashes are truncated to <i>dashesCount</i>. If this value is greater than the number of dashes in the stroke style's dashes array, the extra dashes are set to 0.0f. To obtain the actual number of dashes in the stroke style's dashes array, use the <see cref="GetDashesCount" /> method.</param>
   </member>
   <member name="ID2D1StrokeStyle.GetDashesCount">
-    <summary>
-      <para>Retrieves the number of entries in the dashes array.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of entries in the dashes array if the stroke is dashed; otherwise, 0.</para>
-    </returns>
-    <seealso cref="ID2D1StrokeStyle" />
+    <summary>Retrieves the number of entries in the dashes array.</summary>
+    <returns>The number of entries in the dashes array if the stroke is dashed; otherwise, 0.</returns>
   </member>
   <member name="ID2D1StrokeStyle.GetDashOffset">
-    <summary>
-      <para>Retrieves a value that specifies how far in the dash sequence the stroke will start.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>FLOAT</b></para>
-      <para>A value that specifies how far in the dash sequence the stroke will start.</para>
-    </returns>
-    <seealso cref="ID2D1StrokeStyle" />
+    <summary>Retrieves a value that specifies how far in the dash sequence the stroke will start.</summary>
+    <returns>A value that specifies how far in the dash sequence the stroke will start.</returns>
   </member>
   <member name="ID2D1StrokeStyle.GetDashStyle">
-    <summary>
-      <para>Gets a value that describes the stroke's dash pattern.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_DASH_STYLE" /></b></para>
-      <para>A value that describes the predefined dash pattern used, or <see cref="D2D1_DASH_STYLE_CUSTOM" /> if a custom dash style is used.</para>
-    </returns>
-    <remarks>
-      <para>If a custom dash style is specified, the dash pattern is described by the dashes array, which can be retrieved by calling the <see cref="GetDashes" /> method.</para>
-    </remarks>
-    <seealso cref="ID2D1StrokeStyle" />
+    <summary>Gets a value that describes the stroke's dash pattern.</summary>
+    <returns>A value that describes the predefined dash pattern used, or <see cref="D2D1_DASH_STYLE_CUSTOM" /> if a custom dash style is used.</returns>
   </member>
   <member name="ID2D1StrokeStyle.GetEndCap">
-    <summary>
-      <para>Retrieves the type of shape used at the end of a stroke.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
-      <para>The type of shape used at the end of a stroke.</para>
-    </returns>
-    <seealso cref="ID2D1StrokeStyle" />
+    <summary>Retrieves the type of shape used at the end of a stroke.</summary>
+    <returns>The type of shape used at the end of a stroke.</returns>
   </member>
   <member name="ID2D1StrokeStyle.GetLineJoin">
-    <summary>
-      <para>Retrieves the type of joint used at the vertices of a shape's outline.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_LINE_JOIN" /></b></para>
-      <para>A value that specifies the type of joint used at the vertices of a shape's outline.</para>
-    </returns>
-    <seealso cref="ID2D1StrokeStyle" />
+    <summary>Retrieves the type of joint used at the vertices of a shape's outline.</summary>
+    <returns>A value that specifies the type of joint used at the vertices of a shape's outline.</returns>
   </member>
   <member name="ID2D1StrokeStyle.GetMiterLimit">
-    <summary>
-      <para>Retrieves the limit on the ratio of the miter length to half the stroke's thickness.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>FLOAT</b></para>
-      <para>A positive number greater than or equal to 1.0f that describes the limit on the ratio of the miter length to half the stroke's thickness.</para>
-    </returns>
-    <seealso cref="ID2D1StrokeStyle" />
+    <summary>Retrieves the limit on the ratio of the miter length to half the stroke's thickness.</summary>
+    <returns>A positive number greater than or equal to 1.0f that describes the limit on the ratio of the miter length to half the stroke's thickness.</returns>
   </member>
   <member name="ID2D1StrokeStyle.GetStartCap">
-    <summary>
-      <para>Retrieves the type of shape used at the beginning of a stroke.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_CAP_STYLE" /></b></para>
-      <para>The type of shape used at the beginning of a stroke.</para>
-    </returns>
-    <seealso cref="ID2D1StrokeStyle" />
+    <summary>Retrieves the type of shape used at the beginning of a stroke.</summary>
+    <returns>The type of shape used at the beginning of a stroke.</returns>
   </member>
   <member name="ID2D1StrokeStyle">
-    <summary>
-      <para>Describes the caps, miter limit, line join, and dash information for a stroke.</para>
-    </summary>
-    <remarks>
-      <h3>Creating ID2D1StrokeStyle Objects</h3>
-      <para>To create a stroke style, use the <a href="https://docs.microsoft.com//windows/win32/Direct2D/id2d1factory-createstrokestyle">ID2D1Factory.CreateStrokeStyle</a> method.</para>
-      <para>A stroke style is a device-independent resource; you can create it once then retain it for the life of your application. For more information about resources, see the <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/id2d1factory-createstrokestyle">ID2D1Factory.CreateStrokeStyle</seealso>
-    <seealso cref="ID2D1Resource" />
+    <summary>Describes the caps, miter limit, line join, and dash information for a stroke.</summary>
   </member>
 </doc>

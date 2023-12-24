@@ -3,20 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_FAULT_REASON">
-    <summary>
-      <para>Contains an explanation of the fault.</para>
-    </summary>
+    <summary>Contains an explanation of the fault.</summary>
   </member>
   <member name="WS_FAULT_REASON.text">
-    <summary>
-      <para>Text describing the fault.</para>
-    </summary>
+    <summary>Text describing the fault.</summary>
   </member>
   <member name="WS_FAULT_REASON.lang">
     <summary>
       <para>The language identifier that identifies the language of the text.</para>
-      <para>The identifier is serialized using the xml:lang attribute, and has
-values that follow <a href="https://www.ietf.org/rfc/rfc3066.txt">RFC3066.txt</a>.</para>
+      <para>The identifier is serialized using the xml:lang attribute, and has values that follow <a href="https://www.ietf.org/rfc/rfc3066.txt">RFC3066.txt</a>.</para>
     </summary>
   </member>
 </doc>

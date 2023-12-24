@@ -3,46 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT">
-    <summary>
-      <para>Specifies indices for arrays of per component histogram information.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS" /> is the flags enumeration used by <see cref="D3D11_FEATURE_DATA_VIDEO_DECODER_HISTOGRAM" /> to allow you to specify one or more components for which histogram data is queried.</para>
-    </remarks>
+    <summary>Specifies indices for arrays of per component histogram information.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT.D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_Y">
-    <summary>
-      <para>If the format is a YUV format, indicates a histogram for the Y component.</para>
-    </summary>
+    <summary>If the format is a YUV format, indicates a histogram for the Y component.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT.D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_U">
-    <summary>
-      <para>If the format is a YUV format, indicates a histogram for the U component.</para>
-    </summary>
+    <summary>If the format is a YUV format, indicates a histogram for the U component.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT.D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_V">
-    <summary>
-      <para>If the format is a YUV format, indicates a histogram for the V component.</para>
-    </summary>
+    <summary>If the format is a YUV format, indicates a histogram for the V component.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT.D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_R">
-    <summary>
-      <para>If the format is an RGB/BGR format, indicates a histogram for the R component.</para>
-    </summary>
+    <summary>If the format is an RGB/BGR format, indicates a histogram for the R component.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT.D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_G">
-    <summary>
-      <para>If the format is an RGB/BGR format, indicates a histogram for the G component.</para>
-    </summary>
+    <summary>If the format is an RGB/BGR format, indicates a histogram for the G component.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT.D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_B">
-    <summary>
-      <para>If the format is an RGB/BGR format, indicates a histogram for the B component.</para>
-    </summary>
+    <summary>If the format is an RGB/BGR format, indicates a histogram for the B component.</summary>
   </member>
   <member name="D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT.D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_A">
-    <summary>
-      <para>If the format has an alpha channel, indicates a histogram for the A component.</para>
-    </summary>
+    <summary>If the format has an alpha channel, indicates a histogram for the A component.</summary>
   </member>
 </doc>

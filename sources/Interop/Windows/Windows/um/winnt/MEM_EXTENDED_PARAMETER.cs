@@ -15,18 +15,18 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct MEM_EXTENDED_PARAMETER
 {
     /// <include file='MEM_EXTENDED_PARAMETER.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER.Anonymous1"]/*' />
-    [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:14094:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14115_C5")]
     public _Anonymous1_e__Struct Anonymous1;
 
     /// <include file='MEM_EXTENDED_PARAMETER.xml' path='doc/member[@name="MEM_EXTENDED_PARAMETER.Anonymous2"]/*' />
-    [NativeTypeName("MEM_EXTENDED_PARAMETER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:14099:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14120_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct.Type"]/*' />
     public ulong Type
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous1.Type;
         }
@@ -42,7 +42,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
     public ulong Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous1.Reserved;
         }
@@ -119,7 +119,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         public ulong Type
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0xFFUL;
             }
@@ -136,7 +136,7 @@ public unsafe partial struct MEM_EXTENDED_PARAMETER
         public ulong Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 8) & 0xFFFFFFUL;
             }

@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS">
-    <summary>
-      <para>The <b>AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS</b> structure holds additional Authenticode policy information for chain verification of files.</para>
-    </summary>
+    <summary>The <b>AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS</b> structure holds additional Authenticode policy information for chain verification of files.</summary>
   </member>
   <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_STATUS.fCommercial">
-    <summary>
-      <para>BOOL flag. If <b>TRUE</b>, a signer has been verified by a CA as meeting certain minimum financial standards.</para>
-    </summary>
+    <summary>BOOL flag. If <b>TRUE</b>, a signer has been verified by a CA as meeting certain minimum financial standards.</summary>
   </member>
 </doc>

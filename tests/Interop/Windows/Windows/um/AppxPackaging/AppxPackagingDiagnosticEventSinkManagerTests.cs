@@ -19,25 +19,4 @@ public static unsafe partial class AppxPackagingDiagnosticEventSinkManagerTests
     {
         Assert.That(typeof(AppxPackagingDiagnosticEventSinkManager).GUID, Is.EqualTo(IID_AppxPackagingDiagnosticEventSinkManager));
     }
-
-    /// <summary>Validates that the <see cref="AppxPackagingDiagnosticEventSinkManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AppxPackagingDiagnosticEventSinkManager>(), Is.EqualTo(sizeof(AppxPackagingDiagnosticEventSinkManager)));
-    }
-
-    /// <summary>Validates that the <see cref="AppxPackagingDiagnosticEventSinkManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AppxPackagingDiagnosticEventSinkManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AppxPackagingDiagnosticEventSinkManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AppxPackagingDiagnosticEventSinkManager), Is.EqualTo(1));
-    }
 }

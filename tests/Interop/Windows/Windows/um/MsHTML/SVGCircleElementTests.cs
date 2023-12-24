@@ -19,25 +19,4 @@ public static unsafe partial class SVGCircleElementTests
     {
         Assert.That(typeof(SVGCircleElement).GUID, Is.EqualTo(IID_SVGCircleElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGCircleElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGCircleElement>(), Is.EqualTo(sizeof(SVGCircleElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGCircleElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGCircleElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGCircleElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGCircleElement), Is.EqualTo(1));
-    }
 }

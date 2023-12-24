@@ -27,7 +27,7 @@ public unsafe partial struct ITensorStaticsNative : ITensorStaticsNative.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITensorStaticsNative*, Guid*, void**, int>)(lpVtbl[0]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITensorStaticsNative*, Guid*, void**, int>)(lpVtbl[0]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ITensorStaticsNative : ITensorStaticsNative.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITensorStaticsNative*, uint>)(lpVtbl[1]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITensorStaticsNative*, uint>)(lpVtbl[1]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct ITensorStaticsNative : ITensorStaticsNative.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITensorStaticsNative*, uint>)(lpVtbl[2]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITensorStaticsNative*, uint>)(lpVtbl[2]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITensorStaticsNative.xml' path='doc/member[@name="ITensorStaticsNative.CreateFromD3D12Resource"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ITensorStaticsNative : ITensorStaticsNative.Interfa
     [VtblIndex(3)]
     public HRESULT CreateFromD3D12Resource(ID3D12Resource* value, [NativeTypeName("long long *")] long* shape, int shapeCount, IUnknown** result)
     {
-        return ((delegate* unmanaged<ITensorStaticsNative*, ID3D12Resource*, long*, int, IUnknown**, int>)(lpVtbl[3]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), value, shape, shapeCount, result);
+        return ((delegate* unmanaged[MemberFunction]<ITensorStaticsNative*, ID3D12Resource*, long*, int, IUnknown**, int>)(lpVtbl[3]))((ITensorStaticsNative*)Unsafe.AsPointer(ref this), value, shape, shapeCount, result);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct ITensorStaticsNative : ITensorStaticsNative.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ID3D12Resource *, long long *, int, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, long*, int, IUnknown**, int> CreateFromD3D12Resource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, long*, int, IUnknown**, int> CreateFromD3D12Resource;
     }
 }

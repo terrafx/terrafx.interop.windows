@@ -3,15 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_GENUS_TYPE">
-    <summary>
-      <para>Contains constants used to distinguish between classes and instances.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WmiSdk/wmi-system-properties">WMI System Properties</seealso>
+    <summary>Contains constants used to distinguish between classes and instances.</summary>
   </member>
-  <member name="WBEM_GENUS_TYPE.WBEM_GENUS_CLASS">
-    <summary></summary>
-  </member>
-  <member name="WBEM_GENUS_TYPE.WBEM_GENUS_INSTANCE">
-    <summary></summary>
-  </member>
+  <member name="WBEM_GENUS_TYPE.WBEM_GENUS_CLASS"></member>
+  <member name="WBEM_GENUS_TYPE.WBEM_GENUS_INSTANCE"></member>
 </doc>

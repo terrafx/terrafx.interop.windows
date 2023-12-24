@@ -25,7 +25,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioClock*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioClock*, Guid*, void**, int>)(lpVtbl[0]))((IAudioClock*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioClock*, uint>)(lpVtbl[1]))((IAudioClock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioClock*, uint>)(lpVtbl[1]))((IAudioClock*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioClock*, uint>)(lpVtbl[2]))((IAudioClock*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioClock*, uint>)(lpVtbl[2]))((IAudioClock*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioClock.xml' path='doc/member[@name="IAudioClock.GetFrequency"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetFrequency([NativeTypeName("UINT64 *")] ulong* pu64Frequency)
     {
-        return ((delegate* unmanaged<IAudioClock*, ulong*, int>)(lpVtbl[3]))((IAudioClock*)Unsafe.AsPointer(ref this), pu64Frequency);
+        return ((delegate* unmanaged[MemberFunction]<IAudioClock*, ulong*, int>)(lpVtbl[3]))((IAudioClock*)Unsafe.AsPointer(ref this), pu64Frequency);
     }
 
     /// <include file='IAudioClock.xml' path='doc/member[@name="IAudioClock.GetPosition"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetPosition([NativeTypeName("UINT64 *")] ulong* pu64Position, [NativeTypeName("UINT64 *")] ulong* pu64QPCPosition)
     {
-        return ((delegate* unmanaged<IAudioClock*, ulong*, ulong*, int>)(lpVtbl[4]))((IAudioClock*)Unsafe.AsPointer(ref this), pu64Position, pu64QPCPosition);
+        return ((delegate* unmanaged[MemberFunction]<IAudioClock*, ulong*, ulong*, int>)(lpVtbl[4]))((IAudioClock*)Unsafe.AsPointer(ref this), pu64Position, pu64QPCPosition);
     }
 
     /// <include file='IAudioClock.xml' path='doc/member[@name="IAudioClock.GetCharacteristics"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
     {
-        return ((delegate* unmanaged<IAudioClock*, uint*, int>)(lpVtbl[5]))((IAudioClock*)Unsafe.AsPointer(ref this), pdwCharacteristics);
+        return ((delegate* unmanaged[MemberFunction]<IAudioClock*, uint*, int>)(lpVtbl[5]))((IAudioClock*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IAudioClock : IAudioClock.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetFrequency;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetFrequency;
 
         [NativeTypeName("HRESULT (UINT64 *, UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, ulong*, int> GetPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, ulong*, int> GetPosition;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCharacteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCharacteristics;
     }
 }

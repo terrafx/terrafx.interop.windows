@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRUSTED_DOMAIN_NAME_INFO">
+    <summary>The <b>TRUSTED_DOMAIN_NAME_INFO</b> structure is used to query or set the name of a trusted domain. The<see cref="LsaQueryTrustedDomainInfo" /> and<see cref="LsaSetTrustedDomainInformation" /> functions use this structure when their <i>InformationClass</i> parameters are set to <b>TrustedDomainNameInformation</b>.</summary>
+  </member>
+  <member name="TRUSTED_DOMAIN_NAME_INFO.Name">
+    <summary>An<see cref="LSA_UNICODE_STRING" /> structure that contains the name of a trusted domain.</summary>
+  </member>
+</doc>

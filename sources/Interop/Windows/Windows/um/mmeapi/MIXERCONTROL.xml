@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MIXERCONTROL">
+    <summary>The <b>MIXERCONTROL</b> structure describes the state and metrics of a single control for an audio line.</summary>
+  </member>
+  <member name="MIXERCONTROL.cbStruct">
+    <summary>Size, in bytes, of the <b>MIXERCONTROL</b> structure.</summary>
+  </member>
+  <member name="MIXERCONTROL.dwControlID">
+    <summary>Audio mixer-defined identifier that uniquely refers to the control described by the <b>MIXERCONTROL</b> structure. This identifier can be in any format supported by the mixer device. An application should use this identifier only as an abstract handle. No two controls for a single mixer device can ever have the same control identifier.</summary>
+  </member>
+  <member name="MIXERCONTROL.dwControlType">
+    <summary>
+      <para>Class of the control for which the identifier is specified in <b>dwControlID</b>. An application must use this information to display the appropriate control for input from the user. An application can also display tailored graphics based on the control class or search for a particular control class on a specific line. If an application does not know about a control class, this control must be ignored. There are eight control class classifications, each with one or more standard control types:</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Descriptions</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_CUSTOM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_CUSTOM</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_FADER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_BASS MIXERCONTROL_CONTROLTYPE_EQUALIZER MIXERCONTROL_CONTROLTYPE_FADER MIXERCONTROL_CONTROLTYPE_TREBLE MIXERCONTROL_CONTROLTYPE_VOLUME</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_LIST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_MIXER MIXERCONTROL_CONTROLTYPE_MULTIPLESELECT MIXERCONTROL_CONTROLTYPE_MUX MIXERCONTROL_CONTROLTYPE_SINGLESELECT</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_METER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_BOOLEANMETER MIXERCONTROL_CONTROLTYPE_PEAKMETER MIXERCONTROL_CONTROLTYPE_SIGNEDMETER MIXERCONTROL_CONTROLTYPE_UNSIGNEDMETER</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_NUMBER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_DECIBELS MIXERCONTROL_CONTROLTYPE_PERCENT MIXERCONTROL_CONTROLTYPE_SIGNED MIXERCONTROL_CONTROLTYPE_UNSIGNED</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_SLIDER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_PAN MIXERCONTROL_CONTROLTYPE_QSOUNDPAN MIXERCONTROL_CONTROLTYPE_SLIDER</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_SWITCH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_BOOLEAN MIXERCONTROL_CONTROLTYPE_BUTTON MIXERCONTROL_CONTROLTYPE_LOUDNESS MIXERCONTROL_CONTROLTYPE_MONO MIXERCONTROL_CONTROLTYPE_MUTE MIXERCONTROL_CONTROLTYPE_ONOFF MIXERCONTROL_CONTROLTYPE_STEREOENH</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_TIME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_MICROTIME MIXERCONTROL_CONTROLTYPE_MILLITIME</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="MIXERCONTROL.fdwControl">
+    <summary>
+      <para>Status and support flags for the audio line control. The following values are defined:</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CONTROLF_DISABLED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control is disabled, perhaps due to other settings for the mixer hardware, and cannot be used. An application can read current settings from a disabled control, but it cannot apply settings.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CONTROLF_MULTIPLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control has two or more settings per channel. An equalizer, for example, requires this flag because each frequency band can be set to a different value. An equalizer that affects both channels of a stereo line in a uniform fashion will also specify the MIXERCONTROL_CONTROLF_UNIFORM flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CONTROLF_UNIFORM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control acts on all channels of a multichannel line in a uniform fashion. For example, a control that mutes both channels of a stereo line would set this flag. Most MIXERCONTROL_CONTROLTYPE_MUX and MIXERCONTROL_CONTROLTYPE_MIXER controls also specify the MIXERCONTROL_CONTROLF_UNIFORM flag.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="MIXERCONTROL.cMultipleItems">
+    <summary>Number of items per channel that make up a MIXERCONTROL_CONTROLF_MULTIPLE control. This number is always two or greater for multiple-item controls. If the control is not a multiple-item control, do not use this member; it will be zero.</summary>
+  </member>
+  <member name="MIXERCONTROL.szShortName">
+    <summary>Short string that describes the audio line control specified by <b>dwControlID</b>. This description should be appropriate to use as a concise label for the control.</summary>
+  </member>
+  <member name="MIXERCONTROL.szName">
+    <summary>String that describes the audio line control specified by <b>dwControlID</b>. This description should be appropriate to use as a complete description for the control.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds">
+    <summary>Union of boundary types.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME"></member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME.lMinimum">
+    <summary>Minimum signed value for a control that has a signed boundary nature. This member cannot be used in conjunction with <b>dwMinimum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME.lMaximum">
+    <summary>Maximum signed value for a control that has a signed boundary nature. This member cannot be used in conjunction with <b>dwMaximum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME2"></member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME2.dwMinimum">
+    <summary>Minimum unsigned value for a control that has an unsigned boundary nature. This member cannot be used in conjunction with <b>lMinimum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME2.dwMaximum">
+    <summary>Maximum unsigned value for a control that has an unsigned boundary nature. This member cannot be used in conjunction with <b>lMaximum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.dwReserved">
+    <summary>Reserved; do not use.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics">
+    <summary>Union of boundary metrics.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics.cSteps">
+    <summary>Number of discrete ranges within the union specified for a control specified by the <b>Bounds</b> member. This member overlaps with the other members of the <b>Metrics</b> structure member and cannot be used in conjunction with those members.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics.cbCustomData">
+    <summary>Size, in bytes, required to contain the state of a custom control class. This member is appropriate only for the MIXERCONTROL_CONTROLTYPE_CUSTOM control class.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics.dwReserved">
+    <summary>Reserved; do not use.</summary>
+  </member>
+  <member name="MIXERCONTROL">
+    <summary>The <b>MIXERCONTROL</b> structure describes the state and metrics of a single control for an audio line.</summary>
+  </member>
+  <member name="MIXERCONTROL.cbStruct">
+    <summary>Size, in bytes, of the <b>MIXERCONTROL</b> structure.</summary>
+  </member>
+  <member name="MIXERCONTROL.dwControlID">
+    <summary>Audio mixer-defined identifier that uniquely refers to the control described by the <b>MIXERCONTROL</b> structure. This identifier can be in any format supported by the mixer device. An application should use this identifier only as an abstract handle. No two controls for a single mixer device can ever have the same control identifier.</summary>
+  </member>
+  <member name="MIXERCONTROL.dwControlType">
+    <summary>
+      <para>Class of the control for which the identifier is specified in <b>dwControlID</b>. An application must use this information to display the appropriate control for input from the user. An application can also display tailored graphics based on the control class or search for a particular control class on a specific line. If an application does not know about a control class, this control must be ignored. There are eight control class classifications, each with one or more standard control types:</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Descriptions</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_CUSTOM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_CUSTOM</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_FADER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_BASS MIXERCONTROL_CONTROLTYPE_EQUALIZER MIXERCONTROL_CONTROLTYPE_FADER MIXERCONTROL_CONTROLTYPE_TREBLE MIXERCONTROL_CONTROLTYPE_VOLUME</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_LIST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_MIXER MIXERCONTROL_CONTROLTYPE_MULTIPLESELECT MIXERCONTROL_CONTROLTYPE_MUX MIXERCONTROL_CONTROLTYPE_SINGLESELECT</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_METER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_BOOLEANMETER MIXERCONTROL_CONTROLTYPE_PEAKMETER MIXERCONTROL_CONTROLTYPE_SIGNEDMETER MIXERCONTROL_CONTROLTYPE_UNSIGNEDMETER</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_NUMBER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_DECIBELS MIXERCONTROL_CONTROLTYPE_PERCENT MIXERCONTROL_CONTROLTYPE_SIGNED MIXERCONTROL_CONTROLTYPE_UNSIGNED</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_SLIDER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_PAN MIXERCONTROL_CONTROLTYPE_QSOUNDPAN MIXERCONTROL_CONTROLTYPE_SLIDER</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_SWITCH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_BOOLEAN MIXERCONTROL_CONTROLTYPE_BUTTON MIXERCONTROL_CONTROLTYPE_LOUDNESS MIXERCONTROL_CONTROLTYPE_MONO MIXERCONTROL_CONTROLTYPE_MUTE MIXERCONTROL_CONTROLTYPE_ONOFF MIXERCONTROL_CONTROLTYPE_STEREOENH</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_TIME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_MICROTIME MIXERCONTROL_CONTROLTYPE_MILLITIME</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="MIXERCONTROL.fdwControl">
+    <summary>
+      <para>Status and support flags for the audio line control. The following values are defined:</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CONTROLF_DISABLED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control is disabled, perhaps due to other settings for the mixer hardware, and cannot be used. An application can read current settings from a disabled control, but it cannot apply settings.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CONTROLF_MULTIPLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control has two or more settings per channel. An equalizer, for example, requires this flag because each frequency band can be set to a different value. An equalizer that affects both channels of a stereo line in a uniform fashion will also specify the MIXERCONTROL_CONTROLF_UNIFORM flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CONTROLF_UNIFORM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control acts on all channels of a multichannel line in a uniform fashion. For example, a control that mutes both channels of a stereo line would set this flag. Most MIXERCONTROL_CONTROLTYPE_MUX and MIXERCONTROL_CONTROLTYPE_MIXER controls also specify the MIXERCONTROL_CONTROLF_UNIFORM flag.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="MIXERCONTROL.cMultipleItems">
+    <summary>Number of items per channel that make up a MIXERCONTROL_CONTROLF_MULTIPLE control. This number is always two or greater for multiple-item controls. If the control is not a multiple-item control, do not use this member; it will be zero.</summary>
+  </member>
+  <member name="MIXERCONTROL.szShortName">
+    <summary>Short string that describes the audio line control specified by <b>dwControlID</b>. This description should be appropriate to use as a concise label for the control.</summary>
+  </member>
+  <member name="MIXERCONTROL.szName">
+    <summary>String that describes the audio line control specified by <b>dwControlID</b>. This description should be appropriate to use as a complete description for the control.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds">
+    <summary>Union of boundary types.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME"></member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME.lMinimum">
+    <summary>Minimum signed value for a control that has a signed boundary nature. This member cannot be used in conjunction with <b>dwMinimum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME.lMaximum">
+    <summary>Maximum signed value for a control that has a signed boundary nature. This member cannot be used in conjunction with <b>dwMaximum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME2"></member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME2.dwMinimum">
+    <summary>Minimum unsigned value for a control that has an unsigned boundary nature. This member cannot be used in conjunction with <b>lMinimum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME2.dwMaximum">
+    <summary>Maximum unsigned value for a control that has an unsigned boundary nature. This member cannot be used in conjunction with <b>lMaximum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.dwReserved">
+    <summary>Reserved; do not use.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics">
+    <summary>Union of boundary metrics.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics.cSteps">
+    <summary>Number of discrete ranges within the union specified for a control specified by the <b>Bounds</b> member. This member overlaps with the other members of the <b>Metrics</b> structure member and cannot be used in conjunction with those members.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics.cbCustomData">
+    <summary>Size, in bytes, required to contain the state of a custom control class. This member is appropriate only for the MIXERCONTROL_CONTROLTYPE_CUSTOM control class.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics.dwReserved">
+    <summary>Reserved; do not use.</summary>
+  </member>
+  <member name="MIXERCONTROL">
+    <summary>The <b>MIXERCONTROL</b> structure describes the state and metrics of a single control for an audio line.</summary>
+  </member>
+  <member name="MIXERCONTROL.cbStruct">
+    <summary>Size, in bytes, of the <b>MIXERCONTROL</b> structure.</summary>
+  </member>
+  <member name="MIXERCONTROL.dwControlID">
+    <summary>Audio mixer-defined identifier that uniquely refers to the control described by the <b>MIXERCONTROL</b> structure. This identifier can be in any format supported by the mixer device. An application should use this identifier only as an abstract handle. No two controls for a single mixer device can ever have the same control identifier.</summary>
+  </member>
+  <member name="MIXERCONTROL.dwControlType">
+    <summary>
+      <para>Class of the control for which the identifier is specified in <b>dwControlID</b>. An application must use this information to display the appropriate control for input from the user. An application can also display tailored graphics based on the control class or search for a particular control class on a specific line. If an application does not know about a control class, this control must be ignored. There are eight control class classifications, each with one or more standard control types:</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Descriptions</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_CUSTOM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_CUSTOM</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_FADER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_BASS MIXERCONTROL_CONTROLTYPE_EQUALIZER MIXERCONTROL_CONTROLTYPE_FADER MIXERCONTROL_CONTROLTYPE_TREBLE MIXERCONTROL_CONTROLTYPE_VOLUME</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_LIST</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_MIXER MIXERCONTROL_CONTROLTYPE_MULTIPLESELECT MIXERCONTROL_CONTROLTYPE_MUX MIXERCONTROL_CONTROLTYPE_SINGLESELECT</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_METER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_BOOLEANMETER MIXERCONTROL_CONTROLTYPE_PEAKMETER MIXERCONTROL_CONTROLTYPE_SIGNEDMETER MIXERCONTROL_CONTROLTYPE_UNSIGNEDMETER</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_NUMBER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_DECIBELS MIXERCONTROL_CONTROLTYPE_PERCENT MIXERCONTROL_CONTROLTYPE_SIGNED MIXERCONTROL_CONTROLTYPE_UNSIGNED</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_SLIDER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_PAN MIXERCONTROL_CONTROLTYPE_QSOUNDPAN MIXERCONTROL_CONTROLTYPE_SLIDER</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_SWITCH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_BOOLEAN MIXERCONTROL_CONTROLTYPE_BUTTON MIXERCONTROL_CONTROLTYPE_LOUDNESS MIXERCONTROL_CONTROLTYPE_MONO MIXERCONTROL_CONTROLTYPE_MUTE MIXERCONTROL_CONTROLTYPE_ONOFF MIXERCONTROL_CONTROLTYPE_STEREOENH</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CT_CLASS_TIME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>MIXERCONTROL_CONTROLTYPE_MICROTIME MIXERCONTROL_CONTROLTYPE_MILLITIME</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="MIXERCONTROL.fdwControl">
+    <summary>
+      <para>Status and support flags for the audio line control. The following values are defined:</para>
+      <list type="table">
+        <listheader>
+          <description>Name</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CONTROLF_DISABLED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control is disabled, perhaps due to other settings for the mixer hardware, and cannot be used. An application can read current settings from a disabled control, but it cannot apply settings.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CONTROLF_MULTIPLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control has two or more settings per channel. An equalizer, for example, requires this flag because each frequency band can be set to a different value. An equalizer that affects both channels of a stereo line in a uniform fashion will also specify the MIXERCONTROL_CONTROLF_UNIFORM flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MIXERCONTROL_CONTROLF_UNIFORM</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The control acts on all channels of a multichannel line in a uniform fashion. For example, a control that mutes both channels of a stereo line would set this flag. Most MIXERCONTROL_CONTROLTYPE_MUX and MIXERCONTROL_CONTROLTYPE_MIXER controls also specify the MIXERCONTROL_CONTROLF_UNIFORM flag.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="MIXERCONTROL.cMultipleItems">
+    <summary>Number of items per channel that make up a MIXERCONTROL_CONTROLF_MULTIPLE control. This number is always two or greater for multiple-item controls. If the control is not a multiple-item control, do not use this member; it will be zero.</summary>
+  </member>
+  <member name="MIXERCONTROL.szShortName">
+    <summary>Short string that describes the audio line control specified by <b>dwControlID</b>. This description should be appropriate to use as a concise label for the control.</summary>
+  </member>
+  <member name="MIXERCONTROL.szName">
+    <summary>String that describes the audio line control specified by <b>dwControlID</b>. This description should be appropriate to use as a complete description for the control.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds">
+    <summary>Union of boundary types.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME"></member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME.lMinimum">
+    <summary>Minimum signed value for a control that has a signed boundary nature. This member cannot be used in conjunction with <b>dwMinimum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME.lMaximum">
+    <summary>Maximum signed value for a control that has a signed boundary nature. This member cannot be used in conjunction with <b>dwMaximum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME2"></member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME2.dwMinimum">
+    <summary>Minimum unsigned value for a control that has an unsigned boundary nature. This member cannot be used in conjunction with <b>lMinimum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.DUMMYSTRUCTNAME2.dwMaximum">
+    <summary>Maximum unsigned value for a control that has an unsigned boundary nature. This member cannot be used in conjunction with <b>lMaximum</b>.</summary>
+  </member>
+  <member name="MIXERCONTROL.Bounds.dwReserved">
+    <summary>Reserved; do not use.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics">
+    <summary>Union of boundary metrics.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics.cSteps">
+    <summary>Number of discrete ranges within the union specified for a control specified by the <b>Bounds</b> member. This member overlaps with the other members of the <b>Metrics</b> structure member and cannot be used in conjunction with those members.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics.cbCustomData">
+    <summary>Size, in bytes, required to contain the state of a custom control class. This member is appropriate only for the MIXERCONTROL_CONTROLTYPE_CUSTOM control class.</summary>
+  </member>
+  <member name="MIXERCONTROL.Metrics.dwReserved">
+    <summary>Reserved; do not use.</summary>
+  </member>
+</doc>

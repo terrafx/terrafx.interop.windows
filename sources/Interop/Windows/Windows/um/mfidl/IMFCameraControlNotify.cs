@@ -25,7 +25,7 @@ public unsafe partial struct IMFCameraControlNotify : IMFCameraControlNotify.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCameraControlNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlNotify*, Guid*, void**, int>)(lpVtbl[0]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFCameraControlNotify : IMFCameraControlNotify.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCameraControlNotify*, uint>)(lpVtbl[1]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlNotify*, uint>)(lpVtbl[1]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFCameraControlNotify : IMFCameraControlNotify.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCameraControlNotify*, uint>)(lpVtbl[2]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCameraControlNotify*, uint>)(lpVtbl[2]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCameraControlNotify.xml' path='doc/member[@name="IMFCameraControlNotify.OnChange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFCameraControlNotify : IMFCameraControlNotify.Int
     [VtblIndex(3)]
     public void OnChange([NativeTypeName("const GUID &")] Guid* controlSet, [NativeTypeName("UINT32")] uint id)
     {
-        ((delegate* unmanaged<IMFCameraControlNotify*, Guid*, uint, void>)(lpVtbl[3]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this), controlSet, id);
+        ((delegate* unmanaged[MemberFunction]<IMFCameraControlNotify*, Guid*, uint, void>)(lpVtbl[3]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this), controlSet, id);
     }
 
     /// <include file='IMFCameraControlNotify.xml' path='doc/member[@name="IMFCameraControlNotify.OnError"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFCameraControlNotify : IMFCameraControlNotify.Int
     [VtblIndex(4)]
     public void OnError(HRESULT hrStatus)
     {
-        ((delegate* unmanaged<IMFCameraControlNotify*, HRESULT, void>)(lpVtbl[4]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this), hrStatus);
+        ((delegate* unmanaged[MemberFunction]<IMFCameraControlNotify*, HRESULT, void>)(lpVtbl[4]))((IMFCameraControlNotify*)Unsafe.AsPointer(ref this), hrStatus);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IMFCameraControlNotify : IMFCameraControlNotify.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (const GUID &, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void> OnChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void> OnChange;
 
         [NativeTypeName("void (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, void> OnError;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, void> OnError;
     }
 }

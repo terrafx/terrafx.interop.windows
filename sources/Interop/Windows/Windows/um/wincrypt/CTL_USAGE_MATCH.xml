@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CTL_USAGE_MATCH">
-    <summary>
-      <para>The <b>CTL_USAGE_MATCH</b> structure provides parameters for finding <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust lists</a> (CTL) used to build a certificate chain.</para>
-    </summary>
+    <summary>The <b>CTL_USAGE_MATCH</b> structure provides parameters for finding <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust lists</a> (CTL) used to build a certificate chain.</summary>
   </member>
   <member name="CTL_USAGE_MATCH.dwType">
     <summary>
@@ -15,30 +13,36 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>USAGE_MATCH_TYPE_AND</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>USAGE_MATCH_TYPE_AND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>AND</b> logic
-</description>
-        </item>
-        <item>
+            <b>AND</b> logic</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>USAGE_MATCH_TYPE_OR</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>USAGE_MATCH_TYPE_OR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>OR</b> logic
-</description>
-        </item>
-      </list>
-      <para>Default usage match logic is USAGE_MATCH_TYPE_AND.</para>
-    </summary>
+            <b>OR</b> logic</description>
+        </listheader>
+      </list> <para>Default usage match logic is USAGE_MATCH_TYPE_AND.</para></summary>
   </member>
   <member name="CTL_USAGE_MATCH.Usage">
     <summary>
-      <para>
-        <see cref="CTL_USAGE" /> structure that includes an array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifiers</a> (OIDs) a CTL must match in order to be valid.</para>
-    </summary>
+      <see cref="CTL_USAGE" /> structure that includes an array of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">object identifiers</a> (OIDs) a CTL must match in order to be valid.</summary>
   </member>
 </doc>

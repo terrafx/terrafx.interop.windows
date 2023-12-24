@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DVEXTENTINFO">
-    <summary>
-      <para>Represents the sizing data used in <see cref="IViewObjectEx.GetNaturalExtent" />.</para>
-    </summary>
-    <seealso cref="DVEXTENTMODE" />
-    <seealso cref="IViewObjectEx.GetNaturalExtent" />
+    <summary>Represents the sizing data used in <see cref="IViewObjectEx.GetNaturalExtent" />.</summary>
   </member>
   <member name="DVEXTENTINFO.cb">
-    <summary>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="DVEXTENTINFO.dwExtentMode">
-    <summary>
-      <para>Indicates whether the sizing mode is content or integral sizing. See the <see cref="DVEXTENTMODE" /> enumeration for possible values.</para>
-    </summary>
+    <summary>Indicates whether the sizing mode is content or integral sizing. See the <see cref="DVEXTENTMODE" /> enumeration for possible values.</summary>
   </member>
   <member name="DVEXTENTINFO.sizelProposed">
-    <summary>
-      <para>The proposed size in content sizing or the preferred size in integral sizing.</para>
-    </summary>
+    <summary>The proposed size in content sizing or the preferred size in integral sizing.</summary>
   </member>
 </doc>

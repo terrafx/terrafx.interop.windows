@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ImageType">
+    <summary>The <b>ImageType</b> enumeration indicates whether an image is a bitmap or a metafile. The<see cref="Image.GetType" /> method returns an element of this enumeration.</summary>
+  </member>
+  <member name="ImageType.ImageTypeUnknown">
+    <summary>Indicates that the image type is not known.</summary>
+  </member>
+  <member name="ImageType.ImageTypeBitmap">
+    <summary>Indicates a bitmap image.</summary>
+  </member>
+  <member name="ImageType.ImageTypeMetafile">
+    <summary>Indicates a metafile image.</summary>
+  </member>
+</doc>

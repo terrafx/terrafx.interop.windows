@@ -3,48 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_FILL_MODE">
-    <summary>
-      <para>Specifies how the intersecting areas of geometries or figures are combined to form the area of the composite geometry.</para>
-    </summary>
-    <remarks>
-      <para>Use the <b>D2D1_FILL_MODE</b> enumeration when creating an <see cref="ID2D1GeometryGroup" /> with the <see cref="CreateGeometryGroup" /> method, or when modifying the fill mode of an <see cref="ID2D1SimplifiedGeometrySink" /> with the <see cref="ID2D1SimplifiedGeometrySink.SetFillMode" />  method.</para>
-      <para>Direct2D fills the interior of a path by using one of the two fill modes specified by this enumeration: <b>D2D1_FILL_MODE_ALTERNATE</b> (alternate) or <b>D2D1_FILL_MODE_WINDING</b> (winding). Because the modes determine how to fill the interior of a closed shape, all shapes are treated as closed when they are filled.  If there is a gap in a segment in a shape, draw an imaginary line to close it.</para>
-      <para>To see the difference between the winding and alternate fill modes, assume that you have four circles with the same center and a different radius, as shown in the following illustration. The first one has the radius of 25, the second 50, the third 75, and the fourth 100.</para>
-      <para>
-        <img alt="Illustration of four concentric circles with different radius values" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/fillmode_not_filled_01.png" />
-      </para>
-      <para>The following  illustration shows the shape filled by using the alternate fill mode. Notice that the center and third ring are not filled. This is because a ray drawn from any point in either of those two rings passes through an even number of segments.</para>
-      <para>
-        <img alt="Illustration of concentric circles with the second and fourth rings filled" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/fillmode_01.png" />
-      </para>
-      <para>The following illustration explains this process.</para>
-      <para>
-        <img alt="Illustration of concentric circles with points in the second and third rings and two arbitrary rays extending from each point" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/fillmode_03.png" />
-      </para>
-      <para>The following illustration shows how the same shape is filled when the winding fill mode is specified.</para>
-      <para>
-        <img alt="Illustration of concentric circles with all rings filled" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/fillmode_02.png" />
-      </para>
-      <para>Notice that all the rings are filled. This is because all the segments run in the same direction, so a ray drawn from any point will cross one or more segments, and the sum of the crossings will not equal zero.</para>
-      <para>The following illustration explains this process. The red arrows represent the direction in which the segments are drawn and the black arrow represents an arbitrary ray that runs from a point in the innermost ring. Starting with a value of zero, for each segment that the ray crosses, a value of one is added for every clockwise intersection. All points lie in the fill region in this illustration, because the count does not equal zero.</para>
-      <para>
-        <img alt="Illustration of concentric circles with a ray from within the first ring that crosses all four rings" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/fillmode_04.png" />
-      </para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-geometries-overview">Geometries Overview</seealso>
-    <seealso cref="ID2D1Factory.CreateGeometryGroup" />
+    <summary>Specifies how the intersecting areas of geometries or figures are combined to form the area of the composite geometry.</summary>
   </member>
   <member name="D2D1_FILL_MODE.D2D1_FILL_MODE_ALTERNATE">
-    <summary>
-      <para>Determines whether a point is in the fill region by drawing a ray from that point to infinity in any direction, and then counting the number of path segments within the given shape that the ray crosses. If this number is odd, the point is in the fill region; if even, the point is outside the fill region.</para>
-    </summary>
+    <summary>Determines whether a point is in the fill region by drawing a ray from that point to infinity in any direction, and then counting the number of path segments within the given shape that the ray crosses. If this number is odd, the point is in the fill region; if even, the point is outside the fill region.</summary>
   </member>
   <member name="D2D1_FILL_MODE.D2D1_FILL_MODE_WINDING">
-    <summary>
-      <para>Determines whether a point is in the fill region of the path by drawing a ray from that point to infinity in any direction, and then examining the places where a segment of the shape crosses the ray. Starting with a count of zero, add one each time a segment crosses the ray from left to right and subtract one each time a path segment crosses the ray from right to left,  as long as left and right are seen from the perspective of the ray. After counting the crossings, if the result is zero, then the point is outside the path. Otherwise, it is inside the path.</para>
-    </summary>
+    <summary>Determines whether a point is in the fill region of the path by drawing a ray from that point to infinity in any direction, and then examining the places where a segment of the shape crosses the ray. Starting with a count of zero, add one each time a segment crosses the ray from left to right and subtract one each time a path segment crosses the ray from right to left, as long as left and right are seen from the perspective of the ray. After counting the crossings, if the result is zero, then the point is outside the path. Otherwise, it is inside the path.</summary>
   </member>
-  <member name="D2D1_FILL_MODE.D2D1_FILL_MODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_FILL_MODE.D2D1_FILL_MODE_FORCE_DWORD"></member>
 </doc>

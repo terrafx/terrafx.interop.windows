@@ -19,32 +19,4 @@ public static unsafe partial class IURLSearchHookTests
     {
         Assert.That(typeof(IURLSearchHook).GUID, Is.EqualTo(IID_IURLSearchHook));
     }
-
-    /// <summary>Validates that the <see cref="IURLSearchHook" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IURLSearchHook>(), Is.EqualTo(sizeof(IURLSearchHook)));
-    }
-
-    /// <summary>Validates that the <see cref="IURLSearchHook" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IURLSearchHook).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IURLSearchHook" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IURLSearchHook), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IURLSearchHook), Is.EqualTo(4));
-        }
-    }
 }

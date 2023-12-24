@@ -19,32 +19,4 @@ public static unsafe partial class ICanvasTextMetricsTests
     {
         Assert.That(typeof(ICanvasTextMetrics).GUID, Is.EqualTo(IID_ICanvasTextMetrics));
     }
-
-    /// <summary>Validates that the <see cref="ICanvasTextMetrics" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICanvasTextMetrics>(), Is.EqualTo(sizeof(ICanvasTextMetrics)));
-    }
-
-    /// <summary>Validates that the <see cref="ICanvasTextMetrics" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICanvasTextMetrics).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICanvasTextMetrics" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICanvasTextMetrics), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICanvasTextMetrics), Is.EqualTo(4));
-        }
-    }
 }

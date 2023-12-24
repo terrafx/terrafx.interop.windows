@@ -21,32 +21,4 @@ public static unsafe partial class IMFSampleOutputStreamTests
     {
         Assert.That(typeof(IMFSampleOutputStream).GUID, Is.EqualTo(IID_IMFSampleOutputStream));
     }
-
-    /// <summary>Validates that the <see cref="IMFSampleOutputStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSampleOutputStream>(), Is.EqualTo(sizeof(IMFSampleOutputStream)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSampleOutputStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSampleOutputStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSampleOutputStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSampleOutputStream), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSampleOutputStream), Is.EqualTo(4));
-        }
-    }
 }

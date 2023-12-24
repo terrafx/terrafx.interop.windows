@@ -3,28 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFCameraOcclusionStateReportCallback.OnOcclusionStateReport">
-    <summary>
-      <para>Called by the system when the camera occlusion state changes.</para>
-    </summary>
-    <param name="occlusionStateReport">
-      <para>An <see cref="IMFCameraOcclusionStateReport" /> that can be used to obtain the new camera occlusion state.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</para>
-    </returns>
-    <remarks>
-      <para>Register the callback interface by calling <see cref="MFCreateCameraOcclusionStateMonitor" />.</para>
-    </remarks>
-    <seealso cref="MFCreateCameraOcclusionStateMonitor" />
-    <seealso cref="IMFCameraOcclusionStateReport" />
+    <summary>Called by the system when the camera occlusion state changes.</summary>
+    <param name="occlusionStateReport">An <see cref="IMFCameraOcclusionStateReport" /> that can be used to obtain the new camera occlusion state.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
   </member>
   <member name="IMFCameraOcclusionStateReportCallback">
-    <summary>
-      <para>Implemented by applications to receive camera occlusion state change notifications.</para>
-    </summary>
-    <remarks>
-      <para>Register the callback interface when you create the camera occlusion state monitor with a call to <see cref="MFCreateCameraOcclusionStateMonitor" />.</para>
-    </remarks>
-    <seealso cref="MFCreateCameraOcclusionStateMonitor" />
+    <summary>Implemented by applications to receive camera occlusion state change notifications.</summary>
   </member>
 </doc>

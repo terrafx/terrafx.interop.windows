@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_DECODE_SUB_SAMPLE_MAPPING_BLOCK">
+    <summary>This structure is unused.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_SUB_SAMPLE_MAPPING_BLOCK.ClearSize">
+    <summary>This field is unused.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_SUB_SAMPLE_MAPPING_BLOCK.EncryptedSize">
+    <summary>This field is unused.</summary>
+  </member>
+</doc>

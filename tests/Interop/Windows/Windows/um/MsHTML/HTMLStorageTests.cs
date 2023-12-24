@@ -19,25 +19,4 @@ public static unsafe partial class HTMLStorageTests
     {
         Assert.That(typeof(HTMLStorage).GUID, Is.EqualTo(IID_HTMLStorage));
     }
-
-    /// <summary>Validates that the <see cref="HTMLStorage" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLStorage>(), Is.EqualTo(sizeof(HTMLStorage)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLStorage" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLStorage).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLStorage" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLStorage), Is.EqualTo(1));
-    }
 }

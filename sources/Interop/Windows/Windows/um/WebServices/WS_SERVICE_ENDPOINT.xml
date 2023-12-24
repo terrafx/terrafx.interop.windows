@@ -3,54 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SERVICE_ENDPOINT">
-    <summary>
-      <para>Represents an individual endpoint on a service host. The properties on the endpoint
-are used to specify the address, binding and contract.</para>
-    </summary>
+    <summary>Represents an individual endpoint on a service host. The properties on the endpoint are used to specify the address, binding and contract.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT.address">
-    <summary>
-      <para>The URL address on which the endpoint is going to listen.</para>
-    </summary>
+    <summary>The URL address on which the endpoint is going to listen.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT.channelBinding">
-    <summary>
-      <para>The binding for the channel/listener.</para>
-    </summary>
+    <summary>The binding for the channel/listener.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT.channelType">
-    <summary>
-      <para>The <see cref="type of channel" /> being hosted by the endpoint.</para>
-    </summary>
+    <summary>The <see cref="type of channel" /> being hosted by the endpoint.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT.securityDescription">
-    <summary>
-      <para>A description of the security required for this channel. This can be <b>NULL</b> if no security is required.</para>
-    </summary>
+    <summary>A description of the security required for this channel. This can be <b>NULL</b> if no security is required.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT.contract">
-    <summary>
-      <para>The contract of the endpoint.</para>
-    </summary>
+    <summary>The contract of the endpoint.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT.authorizationCallback">
-    <summary>
-      <para>Authorization callback for the service endpoint.</para>
-    </summary>
+    <summary>Authorization callback for the service endpoint.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT.properties">
-    <summary>
-      <para>An array of properties to configure the service endpoint.</para>
-    </summary>
+    <summary>An array of properties to configure the service endpoint.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT.propertyCount">
-    <summary>
-      <para>Number of elements in the WS_SERVICE_ENDPOINT_PROPERTY array.</para>
-    </summary>
+    <summary>Number of elements in the WS_SERVICE_ENDPOINT_PROPERTY array.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT.channelProperties">
     <summary>
-      <para>Channel properties associated with the endpoint. An application should be careful in modifying default values. For example, modifying send/receive timeouts may result in unexpected behavior and cause the client to fail.</para>
+      <code> Channel properties associated with the endpoint. An application should be careful in modifying default values. For example, modifying send/receive timeouts may result in unexpected behavior and cause the client to fail.</code>
     </summary>
   </member>
 </doc>

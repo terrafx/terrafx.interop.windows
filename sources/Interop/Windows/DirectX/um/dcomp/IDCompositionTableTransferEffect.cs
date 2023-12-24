@@ -26,7 +26,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint>)(lpVtbl[1]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint>)(lpVtbl[1]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint>)(lpVtbl[2]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint>)(lpVtbl[2]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDCompositionFilterEffect.SetInput" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(3)]
     public HRESULT SetInput(uint index, IUnknown* input, uint flags)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, input, flags);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint, IUnknown*, uint, int>)(lpVtbl[3]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, input, flags);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetRedTable"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(4)]
     public HRESULT SetRedTable([NativeTypeName("const float *")] float* tableValues, uint count)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int>)(lpVtbl[4]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), tableValues, count);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, float*, uint, int>)(lpVtbl[4]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), tableValues, count);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetGreenTable"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(5)]
     public HRESULT SetGreenTable([NativeTypeName("const float *")] float* tableValues, uint count)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int>)(lpVtbl[5]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), tableValues, count);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, float*, uint, int>)(lpVtbl[5]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), tableValues, count);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetBlueTable"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(6)]
     public HRESULT SetBlueTable([NativeTypeName("const float *")] float* tableValues, uint count)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int>)(lpVtbl[6]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), tableValues, count);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, float*, uint, int>)(lpVtbl[6]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), tableValues, count);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetAlphaTable"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(7)]
     public HRESULT SetAlphaTable([NativeTypeName("const float *")] float* tableValues, uint count)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, float*, uint, int>)(lpVtbl[7]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), tableValues, count);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, float*, uint, int>)(lpVtbl[7]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), tableValues, count);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetRedDisable"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(8)]
     public HRESULT SetRedDisable(BOOL redDisable)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[8]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), redDisable);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[8]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), redDisable);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetGreenDisable"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(9)]
     public HRESULT SetGreenDisable(BOOL greenDisable)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[9]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), greenDisable);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[9]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), greenDisable);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetBlueDisable"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(10)]
     public HRESULT SetBlueDisable(BOOL blueDisable)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[10]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), blueDisable);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[10]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), blueDisable);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetAlphaDisable"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(11)]
     public HRESULT SetAlphaDisable(BOOL alphaDisable)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[11]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), alphaDisable);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[11]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), alphaDisable);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetClampOutput"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(12)]
     public HRESULT SetClampOutput(BOOL clampOutput)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[12]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), clampOutput);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, BOOL, int>)(lpVtbl[12]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), clampOutput);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetRedTableValue"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(13)]
     public HRESULT SetRedTableValue(uint index, IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int>)(lpVtbl[13]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int>)(lpVtbl[13]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, animation);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetRedTableValue"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(14)]
     public HRESULT SetRedTableValue(uint index, float value)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[14]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[14]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetGreenTableValue"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(15)]
     public HRESULT SetGreenTableValue(uint index, IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int>)(lpVtbl[15]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int>)(lpVtbl[15]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, animation);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetGreenTableValue"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(16)]
     public HRESULT SetGreenTableValue(uint index, float value)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[16]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[16]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetBlueTableValue"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(17)]
     public HRESULT SetBlueTableValue(uint index, IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int>)(lpVtbl[17]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int>)(lpVtbl[17]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, animation);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetBlueTableValue"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(18)]
     public HRESULT SetBlueTableValue(uint index, float value)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[18]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[18]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetAlphaTableValue"]/*' />
@@ -180,7 +180,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(19)]
     public HRESULT SetAlphaTableValue(uint index, IDCompositionAnimation* animation)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int>)(lpVtbl[19]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, animation);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint, IDCompositionAnimation*, int>)(lpVtbl[19]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, animation);
     }
 
     /// <include file='IDCompositionTableTransferEffect.xml' path='doc/member[@name="IDCompositionTableTransferEffect.SetAlphaTableValue"]/*' />
@@ -188,7 +188,7 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
     [VtblIndex(20)]
     public HRESULT SetAlphaTableValue(uint index, float value)
     {
-        return ((delegate* unmanaged<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[20]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionTableTransferEffect*, uint, float, int>)(lpVtbl[20]))((IDCompositionTableTransferEffect*)Unsafe.AsPointer(ref this), index, value);
     }
 
     public interface Interface : IDCompositionFilterEffect.Interface
@@ -249,66 +249,66 @@ public unsafe partial struct IDCompositionTableTransferEffect : IDCompositionTab
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT, IUnknown *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, uint, int> SetInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, uint, int> SetInput;
 
         [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> SetRedTable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> SetRedTable;
 
         [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> SetGreenTable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> SetGreenTable;
 
         [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> SetBlueTable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> SetBlueTable;
 
         [NativeTypeName("HRESULT (const float *, UINT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> SetAlphaTable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> SetAlphaTable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetRedDisable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetRedDisable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetGreenDisable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetGreenDisable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetBlueDisable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetBlueDisable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetAlphaDisable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetAlphaDisable;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetClampOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetClampOutput;
 
         [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDCompositionAnimation*, int> SetRedTableValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDCompositionAnimation*, int> SetRedTableValue;
 
         [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, int> SetRedTableValue1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, int> SetRedTableValue1;
 
         [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDCompositionAnimation*, int> SetGreenTableValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDCompositionAnimation*, int> SetGreenTableValue;
 
         [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, int> SetGreenTableValue1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, int> SetGreenTableValue1;
 
         [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDCompositionAnimation*, int> SetBlueTableValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDCompositionAnimation*, int> SetBlueTableValue;
 
         [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, int> SetBlueTableValue1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, int> SetBlueTableValue1;
 
         [NativeTypeName("HRESULT (UINT, IDCompositionAnimation *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDCompositionAnimation*, int> SetAlphaTableValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDCompositionAnimation*, int> SetAlphaTableValue;
 
         [NativeTypeName("HRESULT (UINT, float) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, int> SetAlphaTableValue1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, int> SetAlphaTableValue1;
     }
 }

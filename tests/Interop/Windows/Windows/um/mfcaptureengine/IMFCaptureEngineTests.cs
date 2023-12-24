@@ -21,32 +21,4 @@ public static unsafe partial class IMFCaptureEngineTests
     {
         Assert.That(typeof(IMFCaptureEngine).GUID, Is.EqualTo(IID_IMFCaptureEngine));
     }
-
-    /// <summary>Validates that the <see cref="IMFCaptureEngine" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFCaptureEngine>(), Is.EqualTo(sizeof(IMFCaptureEngine)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFCaptureEngine" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFCaptureEngine).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFCaptureEngine" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFCaptureEngine), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFCaptureEngine), Is.EqualTo(4));
-        }
-    }
 }

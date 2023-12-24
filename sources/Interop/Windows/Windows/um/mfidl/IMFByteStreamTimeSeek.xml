@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFByteStreamTimeSeek.GetTimeSeekResult">
-    <summary>
-      <para>Gets the result of a time-based seek.</para>
-    </summary>
-    <param name="pqwStartTime">
-      <para>Receives the new position after the seek, in 100-nanosecond units.</para>
-    </param>
-    <param name="pqwStopTime">
-      <para>Receives the stop time, in 100-nanosecond units. If the stop time is unknown, the value is zero.</para>
-    </param>
-    <param name="pqwDuration">
-      <para>Receives the total duration of the file, in 100-nanosecond units. If the duration is unknown, the value is –1.</para>
-    </param>
+    <summary>Gets the result of a time-based seek.</summary>
+    <param name="pqwStartTime">Receives the new position after the seek, in 100-nanosecond units.</param>
+    <param name="pqwStopTime">Receives the stop time, in 100-nanosecond units. If the stop time is unknown, the value is zero.</param>
+    <param name="pqwDuration">Receives the total duration of the file, in 100-nanosecond units. If the duration is unknown, the value is –1.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,72 +14,44 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>The byte stream does not support time-based seeking, or no data is available.</para>
-          </description>
-        </item>
+          <description>The byte stream does not support time-based seeking, or no data is available.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method returns the server response from a previous time-based seek.</para>
-      <para>
-        <b>Note</b>  This method normally cannot be invoked until some data
-is read from the byte stream, because the <see cref="IMFByteStreamTimeSeek.TimeSeek" />       method does not send a server request immediately.</para>
-    </remarks>
-    <seealso cref="IMFByteStreamTimeSeek" />
   </member>
   <member name="IMFByteStreamTimeSeek.IsTimeSeekSupported">
-    <summary>
-      <para>Queries whether the byte stream supports time-based seeking.</para>
-    </summary>
-    <param name="pfTimeSeekIsSupported">
-      <para>Receives the value <b>TRUE</b> if the byte stream supports time-based seeking, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFByteStreamTimeSeek" />
+    <summary>Queries whether the byte stream supports time-based seeking.</summary>
+    <param name="pfTimeSeekIsSupported">Receives the value <b>TRUE</b> if the byte stream supports time-based seeking, or <b>FALSE</b> otherwise.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFByteStreamTimeSeek.TimeSeek">
-    <summary>
-      <para>Seeks to a new position in the byte stream.</para>
-    </summary>
-    <param name="qwTimePosition">
-      <para>The new position, in 100-nanosecond units.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the byte stream reads from a server, it might cache the seek request until the next read request. Therefore, the byte stream might not send a request to the server immediately.</para>
-    </remarks>
-    <seealso cref="IMFByteStreamTimeSeek" />
+    <summary>Seeks to a new position in the byte stream.</summary>
+    <param name="qwTimePosition">The new position, in 100-nanosecond units.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFByteStreamTimeSeek">
-    <summary>
-      <para>Seeks a byte stream by time position.</para>
-    </summary>
-    <remarks>
-      <para>A byte stream can implement this interface if it supports time-based seeking. For example, a byte stream that reads data from a server  might implement the interface. Typically, a local file-based byte stream would not implement it.</para>
-      <para>To get a pointer to this interface, call <see cref="QueryInterface" /> on the byte stream object.</para>
-    </remarks>
-    <seealso cref="IMFByteStream" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Seeks a byte stream by time position.</summary>
   </member>
 </doc>

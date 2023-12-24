@@ -3,171 +3,55 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellFolderViewDual.get_Application">
-    <summary>
-      <para>Gets the application object.</para>
-    </summary>
-    <param name="ppid">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>**</b></para>
-      <para>The application object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Gets the application object.</summary>
+    <param name="ppid">The application object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual.get_FocusedItem">
-    <summary>
-      <para>Gets the FolderItem object that represents the item that has input focus.</para>
-    </summary>
-    <param name="ppid">
-      <para>Type: <b><see cref="FolderItem" />**</b></para>
-      <para>The FolderItem object with input focus.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Gets the FolderItem object that represents the item that has input focus.</summary>
+    <param name="ppid">The FolderItem object with input focus.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual.get_Folder">
-    <summary>
-      <para>Gets the Folder object that represents the view.</para>
-    </summary>
-    <param name="ppid">
-      <para>Type: <b><see cref="Folder" />**</b></para>
-      <para>The folder object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Gets the Folder object that represents the view.</summary>
+    <param name="ppid">The folder object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual.get_Parent">
-    <summary>
-      <para>Not implemented.</para>
-    </summary>
-    <param name="ppid">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>**</b></para>
-      <para>The application object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Not implemented.</summary>
+    <param name="ppid">The application object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual.get_Script">
-    <summary>
-      <para>Gets the scripting object for the view.</para>
-    </summary>
-    <param name="ppDisp">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>**</b></para>
-      <para>The scripting object for the view. This represents the scripting automation model.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Gets the scripting object for the view.</summary>
+    <param name="ppDisp">The scripting object for the view. This represents the scripting automation model.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual.get_ViewOptions">
-    <summary>
-      <para>Gets a set of flags that indicate the current options of the view.</para>
-    </summary>
-    <param name="plViewOptions">
-      <para>Type: <b>long*</b></para>
-      <para>The set of flags that indicate the current options of the view.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Gets a set of flags that indicate the current options of the view.</summary>
+    <param name="plViewOptions">The set of flags that indicate the current options of the view.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual.PopupItemMenu">
-    <summary>
-      <para>Creates a shortcut menu for the specified item and returns the selected command string.</para>
-    </summary>
-    <param name="pfi">
-      <para>Type: <b><see cref="FolderItem" />*</b></para>
-      <para>The FolderItem for which to create a shortcut menu.</para>
-    </param>
-    <param name="vx">
-      <para>Type: <b>VARIANT</b></para>
-      <para>Optional.</para>
-    </param>
-    <param name="vy">
-      <para>Type: <b>VARIANT</b></para>
-      <para>Optional.</para>
-    </param>
-    <param name="pbs">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/bstr">BSTR</a>*</b></para>
-      <para>The command string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Creates a shortcut menu for the specified item and returns the selected command string.</summary>
+    <param name="pfi">The FolderItem for which to create a shortcut menu.</param>
+    <param name="vx">Optional.</param>
+    <param name="vy">Optional.</param>
+    <param name="pbs">The command string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual.SelectedItems">
-    <summary>
-      <para>Gets a FolderItems object that represents all of the selected items in the view.</para>
-    </summary>
-    <param name="ppid">
-      <para>Type: <b><see cref="FolderItems" />**</b></para>
-      <para>The FolderItems object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Gets a FolderItems object that represents all of the selected items in the view.</summary>
+    <param name="ppid">The FolderItems object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual.SelectItem">
-    <summary>
-      <para>Sets the selection state of an item in the view.</para>
-    </summary>
-    <param name="pvfi">
-      <para>Type: <b>VARIANT*</b></para>
-      <para>A VARIANT object.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Type: <b>int</b></para>
-      <para>The flags representing the state of the object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellFolderViewDual" />
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Sets the selection state of an item in the view.</summary>
+    <param name="pvfi">A VARIANT object.</param>
+    <param name="dwFlags">The flags representing the state of the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellFolderViewDual">
-    <summary>
-      <para>Exposes methods that modify the view and select items in the current folder.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
-    <seealso cref="IShellFolderViewDual2" />
-    <seealso cref="IShellFolderViewDual3" />
+    <summary>Exposes methods that modify the view and select items in the current folder.</summary>
   </member>
 </doc>

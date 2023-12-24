@@ -13,7 +13,7 @@ public static unsafe partial class DirectX
 {
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateW"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
-    public static extern HRESULT DirectDrawEnumerateW([NativeTypeName("LPDDENUMCALLBACKW")] delegate* unmanaged<Guid*, ushort*, ushort*, void*, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
+    public static extern HRESULT DirectDrawEnumerateW([NativeTypeName("LPDDENUMCALLBACKW")] delegate* unmanaged<Guid*, char*, char*, void*, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateA"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
@@ -21,7 +21,7 @@ public static unsafe partial class DirectX
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateExW"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
-    public static extern HRESULT DirectDrawEnumerateExW([NativeTypeName("LPDDENUMCALLBACKEXW")] delegate* unmanaged<Guid*, ushort*, ushort*, void*, HMONITOR, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HRESULT DirectDrawEnumerateExW([NativeTypeName("LPDDENUMCALLBACKEXW")] delegate* unmanaged<Guid*, char*, char*, void*, HMONITOR, BOOL> lpCallback, [NativeTypeName("LPVOID")] void* lpContext, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.DirectDrawEnumerateExA"]/*' />
     [DllImport("ddraw", ExactSpelling = true)]
@@ -61,10 +61,10 @@ public static unsafe partial class DirectX
     public const uint FOURCC_DXT5 = (((uint)((byte)('D')) | ((uint)((byte)('X')) << 8) | ((uint)((byte)('T')) << 16) | ((uint)((byte)('5')) << 24)));
 
     [NativeTypeName("#define DirectDrawEnumerate DirectDrawEnumerateW")]
-    public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, BOOL>, void*, HRESULT> DirectDrawEnumerate => &DirectDrawEnumerateW;
+    public static delegate*<delegate* unmanaged<Guid*, char*, char*, void*, BOOL>, void*, HRESULT> DirectDrawEnumerate => &DirectDrawEnumerateW;
 
     [NativeTypeName("#define DirectDrawEnumerateEx DirectDrawEnumerateExW")]
-    public static delegate*<delegate* unmanaged<Guid*, ushort*, ushort*, void*, HMONITOR, BOOL>, void*, uint, HRESULT> DirectDrawEnumerateEx => &DirectDrawEnumerateExW;
+    public static delegate*<delegate* unmanaged<Guid*, char*, char*, void*, HMONITOR, BOOL>, void*, uint, HRESULT> DirectDrawEnumerateEx => &DirectDrawEnumerateExW;
 
     [NativeTypeName("#define REGSTR_KEY_DDHW_DESCRIPTION \"Description\"")]
     public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DESCRIPTION => "Description"u8;
@@ -72,7 +72,7 @@ public static unsafe partial class DirectX
     [NativeTypeName("#define REGSTR_KEY_DDHW_DRIVERNAME \"DriverName\"")]
     public static ReadOnlySpan<byte> REGSTR_KEY_DDHW_DRIVERNAME => "DriverName"u8;
 
-    [NativeTypeName("#define REGSTR_PATH_DDHW \"Hardware\\\\DirectDrawDrivers\"")]
+    [NativeTypeName("#define REGSTR_PATH_DDHW \"Hardware\\DirectDrawDrivers\"")]
     public static ReadOnlySpan<byte> REGSTR_PATH_DDHW => "Hardware\\DirectDrawDrivers"u8;
 
     [NativeTypeName("#define DD_ROP_SPACE (256/32)")]

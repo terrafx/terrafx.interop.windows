@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12GraphicsCommandList1.AtomicCopyBufferUINT64">
+    <summary>
+      <para>Atomically copies a primary data element of type UINT64 from one resource to another, along with optional dependent resources.</para>
+      <para>These 'dependent resources' are so-named because they depend upon the primary data element to locate them, typically the key element is an address, index, or other handle that refers to one or more the dependent resources indirectly.</para>
+      <para>This function supports a primary data element of type UINT64 (64bit). A different version of this function, <see cref="AtomicCopyBufferUINT" />, supports a primary data element of type UINT (32bit).</para>
+    </summary>
+    <param name="pDstBuffer">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values?view=vs-2015">SAL</a>: <code><i>In</i></code></para>
+      <para>The resource that the UINT64 primary data element is copied into.</para>
+    </param>
+    <param name="DstOffset">An offset into the destination resource buffer that specifies where the primary data element is copied into, in bytes. This offset combined with the base address of the resource buffer must result in a memory address that's naturally aligned for UINT64 values.</param>
+    <param name="pSrcBuffer">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>The resource that the UINT64 primary data element is copied from. This data is typically an address, index, or other handle that shader code can use to locate the most-recent version of latency-sensitive information.</para>
+    </param>
+    <param name="SrcOffset">An offset into the source resource buffer that specifies where the primary data element is copied from, in bytes. This offset combined with the base address of the resource buffer must result in a memory address that's naturally aligned for UINT64 values.</param>
+    <param name="Dependencies">The number of dependent resources.</param>
+    <param name="ppDependentResources">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In_reads</i>(Dependencies)</code></para>
+      <para>An array of resources that contain the dependent elements of the data payload.</para>
+    </param>
+    <param name="pDependentSubresourceRanges">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In_reads</i>(Dependencies)</code></para>
+      <para>An array of subresource ranges that specify the dependent elements of the data payload. These elements are completely updated before the primary data element is itself atomically copied. This ensures that the entire operation is logically atomic; that is, the primary data element never refers to an incomplete data payload.</para>
+    </param>
+  </member>
+  <member name="ID3D12GraphicsCommandList1.OMSetDepthBounds">
+    <summary>This method enables you to change the depth bounds dynamically.</summary>
+    <param name="Min">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>Specifies the minimum depth bounds. The default value is 0. NaN values silently convert to 0.</para>
+    </param>
+    <param name="Max">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>Specifies the maximum depth bounds. The default value is 1. NaN values silently convert to 0.</para>
+    </param>
+  </member>
+  <member name="ID3D12GraphicsCommandList1.ResolveSubresourceRegion">
+    <summary>Copy a region of a multisampled or compressed resource into a non-multisampled or non-compressed resource.</summary>
+    <param name="pDstResource">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>Destination resource. Must be created with the <b>D3D11_USAGE_DEFAULT</b> flag and must be single-sampled unless its to be resolved from a compressed resource (<b>D3D12_RESOLVE_MODE_DECOMPRESS</b>); in this case it must have the same sample count as the compressed source.</para>
+    </param>
+    <param name="DstSubresource">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>A zero-based index that identifies the destination subresource. Use <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12calcsubresource">D3D12CalcSubresource</a> to calculate the subresource index if the parent resource is complex.</para>
+    </param>
+    <param name="DstX">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>The X coordinate of the left-most edge of the destination region. The width of the destination region is the same as the width of the source rect.</para>
+    </param>
+    <param name="DstY">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>The Y coordinate of the top-most edge of the destination region. The height of the destination region is the same as the height of the source rect.</para>
+    </param>
+    <param name="pSrcResource">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>Source resource. Must be multisampled or compressed.</para>
+    </param>
+    <param name="SrcSubresource">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>A zero-based index that identifies the source subresource.</para>
+    </param>
+    <param name="pSrcRect">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In_opt</i></code></para>
+      <para>Specifies the rectangular region of the source resource to be resolved. Passing NULL for <i>pSrcRect</i> specifies that the entire subresource is to be resolved.</para>
+    </param>
+    <param name="Format">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>A DXGI_FORMAT that specifies how the source and destination resource formats are consolidated.</para>
+    </param>
+    <param name="ResolveMode">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>Specifies the operation used to resolve the source samples.</para>
+      <para>When using the <b>D3D12_RESOLVE_MODE_DECOMPRESS</b> operation, the sample count can be larger than 1 as long as the source and destination have the same sample count, and source and destination may specify the same resource as long as the source rect aligns with the destination X and Y coordinates, in which case decompression occurs in place.</para>
+      <para>When using the <b>D3D12_RESOLVE_MODE_MIN</b>, <b>D3D12_RESOLVE_MODE_MAX</b>, or <b>D3D12_RESOLVE_MODE_AVERAGE</b> operation, the destination must have a sample count of 1.</para>
+    </param>
+  </member>
+  <member name="ID3D12GraphicsCommandList1.SetSamplePositions">
+    <summary>This method configures the sample positions used by subsequent draw, copy, resolve, and similar operations.</summary>
+    <param name="NumSamplesPerPixel">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>Specifies the number of samples to take, per pixel. This value can be 1, 2, 4, 8, or 16, otherwise the SetSamplePosition call is dropped. The number of samples must match the sample count configured in the PSO at draw time, otherwise the behavior is undefined.</para>
+    </param>
+    <param name="NumPixels">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>Specifies the number of pixels that sample patterns are being specified for. This value can be either 1 or 4, otherwise the SetSamplePosition call is dropped. A value of 1 configures a single sample pattern to be used for each pixel; a value of 4 configures separate sample patterns for each pixel in a 2x2 pixel grid which is repeated over the render-target or viewport space, aligned to even coordinates.</para>
+      <para>Note that the maximum number of combined samples can't exceed 16, otherwise the call is dropped. If NumPixels is set to 4, NumSamplesPerPixel can specify no more than 4 samples.</para>
+    </param>
+    <param name="pSamplePositions">
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In_reads</i>(NumSamplesPerPixel*NumPixels)</code></para>
+      <para>Specifies an array of D3D12_SAMPLE_POSITION elements. The size of the array is NumPixels * NumSamplesPerPixel. If NumPixels is set to 4, then the first group of sample positions corresponds to the upper-left pixel in the 2x2 grid of pixels; the next group of sample positions corresponds to the upper-right pixel, the next group to the lower-left pixel, and the final group to the lower-right pixel.</para>
+      <para>If centroid interpolation is used during rendering, the order of positions for each pixel determines centroid-sampling priority. That is, the first covered sample in the order specified is chosen as the centroid sample location.</para>
+    </param>
+  </member>
+  <member name="ID3D12GraphicsCommandList1.SetViewInstanceMask">
+    <summary>Set a mask that controls which view instances are enabled for subsequent draws.</summary>
+    <param name="Mask">A mask that specifies which views are enabled or disabled. If bit <i>i</i> starting from the least-significant bit is set, view instance <i>i</i> is enabled.</param>
+  </member>
+  <member name="ID3D12GraphicsCommandList1">
+    <summary>
+      <para>Encapsulates a list of graphics commands for rendering, extending the interface to support programmable sample positions, atomic copies for implementing late-latch techniques, and optional depth-bounds testing.</para>
+      <div>
+        <b>Note</b>  This interface, introduced in the Windows 10 Creators Update, is the latest version of the <see cref="ID3D12GraphicsCommandList" /> interface. Applications targetting Windows 10 Creators Update should use this interface instead of <b>ID3D12GraphicsCommandList</b>.</div>
+    </summary>
+  </member>
+</doc>

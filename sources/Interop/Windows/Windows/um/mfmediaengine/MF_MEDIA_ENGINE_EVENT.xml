@@ -3,35 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_EVENT">
-    <summary>
-      <para>Defines event codes for the Media Engine.</para>
-    </summary>
-    <remarks>
-      <para>The application receives Media Engine events through the <see cref="IMFMediaEngineNotify.EventNotify" /> method. The <b>EventNotify</b> method includes two event parameters, <i>param1</i> and <i>param2</i>. The meaning of the parameters depends on the event code. If the event description does not list any parameters, ignore the values of <i>param1</i> and <i>param2</i>.</para>
-      <para>Values below 1000 correspond to events defined in HTML 5 for media elements.</para>
-    </remarks>
-    <seealso cref="IMFMediaEngineNotify.EventNotify" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines event codes for the Media Engine.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADSTART">
-    <summary>
-      <para>The Media Engine has started to load the source. See <see cref="IMFMediaEngine.Load" />.</para>
-    </summary>
+    <summary>The Media Engine has started to load the source. See <see cref="IMFMediaEngine.Load" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PROGRESS">
-    <summary>
-      <para>The Media Engine is loading the source.</para>
-    </summary>
+    <summary>The Media Engine is loading the source.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SUSPEND">
-    <summary>
-      <para>The Media Engine has suspended a load operation.</para>
-    </summary>
+    <summary>The Media Engine has suspended a load operation.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_ABORT">
-    <summary>
-      <para>The Media Engine cancelled a load operation that was in progress.</para>
-    </summary>
+    <summary>The Media Engine cancelled a load operation that was in progress.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_ERROR">
     <summary>
@@ -41,105 +25,71 @@
           <description>Event Parameter</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <i>param1</i>
           </description>
           <description>A member of the <see cref="MF_MEDIA_ENGINE_ERR" /> enumeration.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <i>param2</i>
           </description>
           <description>An <b>HRESULT</b> error code, or zero.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_EMPTIED">
-    <summary>
-      <para>The Media Engine has switched to the <b>MF_MEDIA_ENGINE_NETWORK_EMPTY</b> state. This can occur when the <see cref="IMFMediaEngine.Load" /> method is called, or if an error occurs during the <b>Load</b> method. See <see cref="IMFMediaEngine.GetNetworkState" />.</para>
-    </summary>
+    <summary>The Media Engine has switched to the <b>MF_MEDIA_ENGINE_NETWORK_EMPTY</b> state. This can occur when the <see cref="IMFMediaEngine.Load" /> method is called, or if an error occurs during the <b>Load</b> method. See <see cref="IMFMediaEngine.GetNetworkState" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_STALLED">
-    <summary>
-      <para>The <see cref="Load" /> algorithm is stalled, waiting for data.</para>
-    </summary>
+    <summary>The <see cref="Load" /> algorithm is stalled, waiting for data.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PLAY">
-    <summary>
-      <para>The Media Engine is switching to the playing state. See <see cref="IMFMediaEngine.Play" />.</para>
-    </summary>
+    <summary>The Media Engine is switching to the playing state. See <see cref="IMFMediaEngine.Play" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PAUSE">
-    <summary>
-      <para>The media engine has paused. See <see cref="IMFMediaEngine.Pause" />.</para>
-    </summary>
+    <summary>The media engine has paused. See <see cref="IMFMediaEngine.Pause" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADEDMETADATA">
-    <summary>
-      <para>The Media Engine has loaded enough source data to determine the duration and dimensions  of the source.</para>
-    </summary>
+    <summary>The Media Engine has loaded enough source data to determine the duration and dimensions of the source.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_LOADEDDATA">
-    <summary>
-      <para>The Media Engine has loaded enough data to render some content (for example, a video frame).</para>
-    </summary>
+    <summary>The Media Engine has loaded enough data to render some content (for example, a video frame).</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_WAITING">
-    <summary>
-      <para>Playback has stopped because the next frame is not available.</para>
-    </summary>
+    <summary>Playback has stopped because the next frame is not available.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PLAYING">
-    <summary>
-      <para>Playback has started. See <see cref="IMFMediaEngine.Play" />.</para>
-    </summary>
+    <summary>Playback has started. See <see cref="IMFMediaEngine.Play" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_CANPLAY">
-    <summary>
-      <para>Playback can start, but the Media Engine might need to stop to buffer more data.</para>
-    </summary>
+    <summary>Playback can start, but the Media Engine might need to stop to buffer more data.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_CANPLAYTHROUGH">
-    <summary>
-      <para>The Media Engine can probably play through to the end of the resource, without stopping to buffer data.</para>
-    </summary>
+    <summary>The Media Engine can probably play through to the end of the resource, without stopping to buffer data.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SEEKING">
-    <summary>
-      <para>The Media Engine has started seeking to a new playback position. See <see cref="IMFMediaEngine.SetCurrentTime" />.</para>
-    </summary>
+    <summary>The Media Engine has started seeking to a new playback position. See <see cref="IMFMediaEngine.SetCurrentTime" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SEEKED">
-    <summary>
-      <para>The Media Engine has seeked to a new playback position. See <see cref="IMFMediaEngine.SetCurrentTime" />.</para>
-    </summary>
+    <summary>The Media Engine has seeked to a new playback position. See <see cref="IMFMediaEngine.SetCurrentTime" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_TIMEUPDATE">
-    <summary>
-      <para>The playback position has changed. See <see cref="IMFMediaEngine.GetCurrentTime" />.</para>
-    </summary>
+    <summary>The playback position has changed. See <see cref="IMFMediaEngine.GetCurrentTime" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_ENDED">
-    <summary>
-      <para>Playback has reached the end of the source. This event is not sent if the <see cref="GetLoop" /> is <b>TRUE</b>.</para>
-    </summary>
+    <summary>Playback has reached the end of the source. This event is not sent if the <see cref="GetLoop" /> is <b>TRUE</b>.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_RATECHANGE">
-    <summary>
-      <para>The playback rate has changed. See <see cref="IMFMediaEngine.SetPlaybackRate" />.</para>
-    </summary>
+    <summary>The playback rate has changed. See <see cref="IMFMediaEngine.SetPlaybackRate" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DURATIONCHANGE">
-    <summary>
-      <para>The duration of the media source has changed. See <see cref="IMFMediaEngine.GetDuration" />.</para>
-    </summary>
+    <summary>The duration of the media source has changed. See <see cref="IMFMediaEngine.GetDuration" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_VOLUMECHANGE">
-    <summary>
-      <para>The audio volume changed. See <see cref="IMFMediaEngine.SetVolume" />.</para>
-    </summary>
+    <summary>The audio volume changed. See <see cref="IMFMediaEngine.SetVolume" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_FORMATCHANGE">
     <summary>
@@ -149,55 +99,41 @@
           <description>Event Parameter</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <i>param1</i>
           </description>
           <description>Zero if the video format changed, 1 if the audio format changed.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <i>param2</i>
           </description>
           <description>Zero.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_PURGEQUEUEDEVENTS">
-    <summary>
-      <para>The Media Engine flushed any pending events from its     queue.</para>
-    </summary>
+    <summary>The Media Engine flushed any pending events from its 	queue.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_TIMELINE_MARKER">
-    <summary>
-      <para>The playback position reached a timeline marker. See <see cref="IMFMediaEngineEx.SetTimelineMarkerTimer" />.</para>
-    </summary>
+    <summary>The playback position reached a timeline marker. See <see cref="IMFMediaEngineEx.SetTimelineMarkerTimer" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_BALANCECHANGE">
-    <summary>
-      <para>The audio balance changed. See <see cref="IMFMediaEngineEx.SetBalance" />.</para>
-    </summary>
+    <summary>The audio balance changed. See <see cref="IMFMediaEngineEx.SetBalance" />.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DOWNLOADCOMPLETE">
-    <summary>
-      <para>The Media Engine has finished downloading the source data.</para>
-    </summary>
+    <summary>The Media Engine has finished downloading the source data.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_BUFFERINGSTARTED">
-    <summary>
-      <para>The media source has started to buffer data.</para>
-    </summary>
+    <summary>The media source has started to buffer data.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_BUFFERINGENDED">
-    <summary>
-      <para>The media source has stopped buffering data.</para>
-    </summary>
+    <summary>The media source has stopped buffering data.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_FRAMESTEPCOMPLETED">
-    <summary>
-      <para>The <see cref="IMFMediaEngineEx.FrameStep" /> method completed.</para>
-    </summary>
+    <summary>The <see cref="IMFMediaEngineEx.FrameStep" /> method completed.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE">
     <summary>
@@ -207,27 +143,22 @@
           <description>Event Parameter</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <i>param1</i>
           </description>
           <description>A handle to a waitable event, of type <b>HANDLE</b>.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <i>param2</i>
           </description>
           <description>Zero.</description>
-        </item>
-      </list>
-      <para>If Media Engine is created with the <b>MF_MEDIA_ENGINE_WAITFORSTABLE_STATE</b> flag, the Media Engine sends the <b>MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE</b> event at the start of the <see cref="Load" /> algorithm. The <i>param1</i> parameter is a handle to a waitable event. The <b>Load</b> thread waits for the application to signal the event by calling <see cref="SetEvent" />.</para>
-      <para>If the Media Engine is not created with the <b>MF_MEDIA_ENGINE_WAITFORSTABLE_STATE</b>, it does not send this event, and the <see cref="Load" /> thread does not wait to be signalled.</para>
-    </summary>
+        </listheader>
+      </list> <para>If Media Engine is created with the <b>MF_MEDIA_ENGINE_WAITFORSTABLE_STATE</b> flag, the Media Engine sends the <b>MF_MEDIA_ENGINE_EVENT_NOTIFYSTABLESTATE</b> event at the start of the <see cref="Load" /> algorithm. The <i>param1</i> parameter is a handle to a waitable event. The <b>Load</b> thread waits for the application to signal the event by calling <see cref="SetEvent" />.</para><para>If the Media Engine is not created with the <b>MF_MEDIA_ENGINE_WAITFORSTABLE_STATE</b>, it does not send this event, and the <see cref="Load" /> thread does not wait to be signalled.</para></summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_FIRSTFRAMEREADY">
-    <summary>
-      <para>The first frame of the media source is ready to render.</para>
-    </summary>
+    <summary>The first frame of the media source is ready to render.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_TRACKSCHANGE">
     <summary>
@@ -237,27 +168,17 @@
   </member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_OPMINFO">
     <summary>
-      <para>Raised when there is new information about the <a href="https://docs.microsoft.com//windows/desktop/medfound/output-protection-manager">Output Protection Manager</a>  (OPM).</para>
+      <para>Raised when there is new information about the <a href="https://docs.microsoft.com//windows/desktop/medfound/output-protection-manager">Output Protection Manager</a> (OPM).</para>
       <para>This event will be raised when an OPM failure occurs, but ITA allows fallback without the OPM. In this case, constriction can be applied.</para>
       <para>This event will not be raised when there is an OPM failure and the fallback also fails. For example, if ITA blocks playback entirely when OPM cannot be established.</para>
       <para>Supported in Windows 8.1 and later.</para>
     </summary>
   </member>
-  <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_RESOURCELOST">
-    <summary></summary>
-  </member>
-  <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DELAYLOADEVENT_CHANGED">
-    <summary></summary>
-  </member>
+  <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_RESOURCELOST"></member>
+  <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_DELAYLOADEVENT_CHANGED"></member>
   <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_STREAMRENDERINGERROR">
-    <summary>
-      <para>Raised when one of the component streams of a media stream fails. This event is only raised if the media stream contains other component streams that did not fail.</para>
-    </summary>
+    <summary>Raised when one of the component streams of a media stream fails. This event is only raised if the media stream contains other component streams that did not fail.</summary>
   </member>
-  <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SUPPORTEDRATES_CHANGED">
-    <summary></summary>
-  </member>
-  <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_AUDIOENDPOINTCHANGE">
-    <summary></summary>
-  </member>
+  <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_SUPPORTEDRATES_CHANGED"></member>
+  <member name="MF_MEDIA_ENGINE_EVENT.MF_MEDIA_ENGINE_EVENT_AUDIOENDPOINTCHANGE"></member>
 </doc>

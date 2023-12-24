@@ -19,32 +19,4 @@ public static unsafe partial class IPackageDebugSettingsTests
     {
         Assert.That(typeof(IPackageDebugSettings).GUID, Is.EqualTo(IID_IPackageDebugSettings));
     }
-
-    /// <summary>Validates that the <see cref="IPackageDebugSettings" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPackageDebugSettings>(), Is.EqualTo(sizeof(IPackageDebugSettings)));
-    }
-
-    /// <summary>Validates that the <see cref="IPackageDebugSettings" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPackageDebugSettings).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPackageDebugSettings" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPackageDebugSettings), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPackageDebugSettings), Is.EqualTo(4));
-        }
-    }
 }

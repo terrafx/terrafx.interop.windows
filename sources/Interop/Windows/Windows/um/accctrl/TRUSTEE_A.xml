@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRUSTEE_A">
+    <summary>
+      <para>The <b>TRUSTEE</b> structure identifies the user account, group account, or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a> to which an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE) applies. The structure can use a name or a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) to identify the trustee.</para>
+      <para>Access control functions, such as<see cref="SetEntriesInAcl" /> and<see cref="GetExplicitEntriesFromAcl" />, use this structure to identify the logon account associated with the access control or audit control information in an <see cref="EXPLICIT_ACCESS" /> structure.</para>
+    </summary>
+  </member>
+  <member name="TRUSTEE_A.pMultipleTrustee">
+    <summary>A pointer to a <b>TRUSTEE</b> structure that identifies a server account that can impersonate the user identified by the <b>ptstrName</b> member. This member is not currently supported and must be <b>NULL</b>.</summary>
+  </member>
+  <member name="TRUSTEE_A.MultipleTrusteeOperation">
+    <summary>A value of the<see cref="MULTIPLE_TRUSTEE_OPERATION" /> enumeration type. Currently, this member must be NO_MULTIPLE_TRUSTEE.</summary>
+  </member>
+  <member name="TRUSTEE_A.TrusteeForm">
+    <summary>A value from the<see cref="TRUSTEE_FORM" /> enumeration type that indicates the type of data pointed to by the <b>ptstrName</b> member.</summary>
+  </member>
+  <member name="TRUSTEE_A.TrusteeType">
+    <summary>A value from the<see cref="TRUSTEE_TYPE" /> enumeration type that indicates whether the trustee is a user account, a group account, or an unknown account type.</summary>
+  </member>
+  <member name="TRUSTEE_A.ptstrName.case"></member>
+  <member name="TRUSTEE_A.ptstrName.case.TRUSTEE_IS_NAME"></member>
+  <member name="TRUSTEE_A.pSid"></member>
+  <member name="TRUSTEE_A.pSid.case"></member>
+  <member name="TRUSTEE_A.pSid.case.TRUSTEE_IS_SID"></member>
+  <member name="TRUSTEE_A.pObjectsAndSid"></member>
+  <member name="TRUSTEE_A.pObjectsAndSid.case"></member>
+  <member name="TRUSTEE_A.pObjectsAndSid.case.TRUSTEE_IS_OBJECTS_AND_SID"></member>
+  <member name="TRUSTEE_A.pObjectsAndName"></member>
+  <member name="TRUSTEE_A.pObjectsAndName.case"></member>
+  <member name="TRUSTEE_A.pObjectsAndName.case.TRUSTEE_IS_OBJECTS_AND_NAME"></member>
+  <member name="TRUSTEE_A.ptstrName">
+    <summary>
+      <para>A pointer to a buffer that identifies the trustee and, optionally, contains information about object-specific ACEs. The type of data depends on the value of the <b>TrusteeForm</b> member.</para>
+      <para>This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUSTEE_IS_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A pointer to a <b>null</b>-terminated string that contains the name of the trustee.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUSTEE_IS_OBJECTS_AND_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A pointer to an <see cref="OBJECTS_AND_NAME" /> structure that contains the name of the trustee and the names of the object types in an object-specific ACE.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUSTEE_IS_OBJECTS_AND_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A pointer to an <see cref="OBJECTS_AND_SID" /> structure that contains the SID of the trustee and the GUIDs of the object types in an object-specific ACE.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUSTEE_IS_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description> Pointer to the SID of the trustee.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="TRUSTEE_A">
+    <summary>
+      <para>The <b>TRUSTEE</b> structure identifies the user account, group account, or <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a> to which an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE) applies. The structure can use a name or a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifier</a> (SID) to identify the trustee.</para>
+      <para>Access control functions, such as<see cref="SetEntriesInAcl" /> and<see cref="GetExplicitEntriesFromAcl" />, use this structure to identify the logon account associated with the access control or audit control information in an <see cref="EXPLICIT_ACCESS" /> structure.</para>
+    </summary>
+  </member>
+  <member name="TRUSTEE_A.pMultipleTrustee">
+    <summary>A pointer to a <b>TRUSTEE</b> structure that identifies a server account that can impersonate the user identified by the <b>ptstrName</b> member. This member is not currently supported and must be <b>NULL</b>.</summary>
+  </member>
+  <member name="TRUSTEE_A.MultipleTrusteeOperation">
+    <summary>A value of the<see cref="MULTIPLE_TRUSTEE_OPERATION" /> enumeration type. Currently, this member must be NO_MULTIPLE_TRUSTEE.</summary>
+  </member>
+  <member name="TRUSTEE_A.TrusteeForm">
+    <summary>A value from the<see cref="TRUSTEE_FORM" /> enumeration type that indicates the type of data pointed to by the <b>ptstrName</b> member.</summary>
+  </member>
+  <member name="TRUSTEE_A.TrusteeType">
+    <summary>A value from the<see cref="TRUSTEE_TYPE" /> enumeration type that indicates whether the trustee is a user account, a group account, or an unknown account type.</summary>
+  </member>
+  <member name="TRUSTEE_A.ptstrName.case"></member>
+  <member name="TRUSTEE_A.ptstrName.case.TRUSTEE_IS_NAME"></member>
+  <member name="TRUSTEE_A.pSid"></member>
+  <member name="TRUSTEE_A.pSid.case"></member>
+  <member name="TRUSTEE_A.pSid.case.TRUSTEE_IS_SID"></member>
+  <member name="TRUSTEE_A.pObjectsAndSid"></member>
+  <member name="TRUSTEE_A.pObjectsAndSid.case"></member>
+  <member name="TRUSTEE_A.pObjectsAndSid.case.TRUSTEE_IS_OBJECTS_AND_SID"></member>
+  <member name="TRUSTEE_A.pObjectsAndName"></member>
+  <member name="TRUSTEE_A.pObjectsAndName.case"></member>
+  <member name="TRUSTEE_A.pObjectsAndName.case.TRUSTEE_IS_OBJECTS_AND_NAME"></member>
+  <member name="TRUSTEE_A.ptstrName">
+    <summary>
+      <para>A pointer to a buffer that identifies the trustee and, optionally, contains information about object-specific ACEs. The type of data depends on the value of the <b>TrusteeForm</b> member.</para>
+      <para>This member can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUSTEE_IS_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A pointer to a <b>null</b>-terminated string that contains the name of the trustee.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUSTEE_IS_OBJECTS_AND_NAME</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A pointer to an <see cref="OBJECTS_AND_NAME" /> structure that contains the name of the trustee and the names of the object types in an object-specific ACE.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUSTEE_IS_OBJECTS_AND_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A pointer to an <see cref="OBJECTS_AND_SID" /> structure that contains the SID of the trustee and the GUIDs of the object types in an object-specific ACE.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUSTEE_IS_SID</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description> Pointer to the SID of the trustee.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+</doc>

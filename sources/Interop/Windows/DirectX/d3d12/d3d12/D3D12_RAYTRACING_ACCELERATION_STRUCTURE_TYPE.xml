@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE">
+    <summary>Specifies the type of a raytracing acceleration structure.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE.D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL">
+    <summary>Top-level acceleration structure.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE.D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL">
+    <summary>Bottom-level acceleration structure.</summary>
+  </member>
+</doc>

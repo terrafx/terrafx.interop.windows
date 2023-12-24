@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS">
+    <summary>Represents video encoder rate control structure definitions for a <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL" /> structure.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS.DataSize">
+    <summary>The data size of the provided rate control structure.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS.pConfiguration_CQP">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP" /> structure representing the rate control structure definition for constant quantization parameter mode.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS.pConfiguration_CBR">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL_CBR" /> structure representing the rate control structure definition for constant bitrate mode.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS.pConfiguration_VBR">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL_VBR" /> structure representing the rate control structure definition for variable bitrate mode.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CONFIGURATION_PARAMS.pConfiguration_QVBR">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL_QVBR" /> structure representing the rate control structure definition for constant quality target with constrained bitrate mode.</summary>
+  </member>
+</doc>

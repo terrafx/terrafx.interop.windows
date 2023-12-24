@@ -16,7 +16,7 @@ public unsafe partial struct HDITEMW
 
     /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='HDITEMW.xml' path='doc/member[@name="HDITEMW.hbm"]/*' />
     public HBITMAP hbm;

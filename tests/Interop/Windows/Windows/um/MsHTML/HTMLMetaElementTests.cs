@@ -19,25 +19,4 @@ public static unsafe partial class HTMLMetaElementTests
     {
         Assert.That(typeof(HTMLMetaElement).GUID, Is.EqualTo(IID_HTMLMetaElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLMetaElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLMetaElement>(), Is.EqualTo(sizeof(HTMLMetaElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMetaElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLMetaElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMetaElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLMetaElement), Is.EqualTo(1));
-    }
 }

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_BLEND_DESC">
+    <summary>Describes the blend state.</summary>
+  </member>
+  <member name="D3D12_BLEND_DESC.AlphaToCoverageEnable">
+    <summary>Specifies whether to use alpha-to-coverage as a multisampling technique when setting a pixel to a render target. For more info about using alpha-to-coverage, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-blend-state">Alpha-To-Coverage</a>.</summary>
+  </member>
+  <member name="D3D12_BLEND_DESC.IndependentBlendEnable">
+    <summary>
+      <para>Specifies whether to enable independent blending in simultaneous render targets. Set to <b>TRUE</b> to enable independent blending. If set to <b>FALSE</b>, only the <b>RenderTarget</b>[0] members are used; <b>RenderTarget</b>[1..7] are ignored.</para>
+      <para>See the <b>Remarks</b> section for restrictions.</para>
+    </summary>
+  </member>
+  <member name="D3D12_BLEND_DESC.RenderTarget">
+    <summary>An array of <see cref="D3D12_RENDER_TARGET_BLEND_DESC" /> structures that describe the blend states for render targets; these correspond to the eight render targets that can be bound to the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage">output-merger stage</a> at one time.</summary>
+  </member>
+</doc>

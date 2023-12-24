@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_RETRIEVE_TKT_REQUEST">
+    <summary>
+      <para>The <b>KERB_RETRIEVE_TKT_REQUEST</b> structure contains information used to retrieve a ticket.</para>
+      <para>It is used by<see cref="LsaCallAuthenticationPackage" />.The Kerberos ticket is defined in Internet <a href="http://www.ietf.org/rfc/rfc4120.txt">RFC 4120</a>. For more information, see <a href="https://www.ietf.org/">http://www.ietf.org</a>.</para>
+    </summary>
+  </member>
+  <member name="KERB_RETRIEVE_TKT_REQUEST.MessageType">
+    <summary>
+      <see cref="KERB_PROTOCOL_MESSAGE_TYPE" /> value indicating the type of request being made. This member must be set to <b>KerbRetrieveEncodedTicketMessage</b>.</summary>
+  </member>
+  <member name="KERB_RETRIEVE_TKT_REQUEST.LogonId">
+    <summary>
+      <see cref="LUID" /> structure containing the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a> identifier. This can be zero for the current user's logon session. If not zero, the caller must have the SeTcbPrivilege privilege set. If this fails, the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> authentication package sets the <i>ProtocolStatus</i> parameter of <see cref="LsaCallAuthenticationPackage" /> to STATUS_ACCESS_DENIED.</summary>
+  </member>
+  <member name="KERB_RETRIEVE_TKT_REQUEST.TargetName">
+    <summary>
+      <see cref="UNICODE_STRING" /> containing the name of the target service.</summary>
+  </member>
+  <member name="KERB_RETRIEVE_TKT_REQUEST.TicketFlags">
+    <summary>
+      <para>Contains flags specifying uses for the retrieved ticket. If <b>TicketFlags</b> is set to zero and if there is a matching ticket found in the cache, then that ticket will be returned, regardless of its flag values. If there is no match in the cache, a new ticket with the default flag values will be requested.</para>
+      <para>If this member is not set to zero, the returned ticket will not be cached.</para>
+    </summary>
+  </member>
+  <member name="KERB_RETRIEVE_TKT_REQUEST.CacheOptions">
+    <summary>
+      <para>Indicates options for searching the cache. Set this member to zero to indicate that the cache should be searched and if no ticket if found, a new ticket should be requested.</para>
+      <para>If this member is not set to zero, the returned ticket will not be cached.</para>
+      <para>
+        <b>CacheOptions</b> can contain the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_RETRIEVE_TICKET_DONT_USE_CACHE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Always request a new ticket; do not search the cache. <para>If a ticket is obtained, the Kerberos authentication package returns STATUS_SUCCESS in the <i>ProtocolStatus</i> parameter of the <see cref="LsaCallAuthenticationPackage" /> function.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_RETRIEVE_TICKET_USE_CREDHANDLE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use the <b>CredentialsHandle</b> member instead of <b>LogonId</b> to identify the logon session. The credential handle is used as the client credential for which the ticket is retrieved<para><b>Note</b>  This option is not available for 32-bit Windows-based applications running on 64-bit Windows.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_RETRIEVE_TICKET_USE_CACHE_ONLY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Return only a previously cached ticket. <para>If such a ticket is not found, the Kerberos authentication package returns STATUS_OBJECT_NAME_NOT_FOUND in the <i>ProtocolStatus</i> parameter of the <see cref="LsaCallAuthenticationPackage" /> function.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_RETRIEVE_TICKET_AS_KERB_CRED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>8</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Return the ticket as a Kerberos credential. The Kerberos ticket is defined in Internet <a href="http://www.ietf.org/rfc/rfc4120.txt">RFC 4120</a> as KRB_CRED. For more information, see <a href="https://www.ietf.org/">http://www.ietf.org</a>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_RETRIEVE_TICKET_WITH_SEC_CRED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Not implemented.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_RETRIEVE_TICKET_CACHE_TICKET</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>20</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Return the ticket that is currently in the cache. If the ticket is not in the cache, it is requested and then cached. This flag should not be used with the KERB_RETRIEVE_TICKET_DONT_USE_CACHE flag. <para><b>Windows XP with SP1 and earlier and Windows Server 2003:  </b>This option is not available.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_RETRIEVE_TICKET_MAX_LIFETIME</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>40</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Return a fresh ticket with maximum allowed time by the policy. The ticker is cached afterwards. Use of this flag implies that KERB_RETRIEVE_TICKET_USE_CACHE_ONLY is not set and KERB_RETRIEVE_TICKET_CACHE_TICKET is set. <para><b>Windows Vista, Windows Server 2008, Windows XP with SP1 and earlier and Windows Server 2003:  </b>This option is not available.</para></description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_RETRIEVE_TKT_REQUEST.EncryptionType">
+    <summary>
+      <para>Specifies the type of encryption to use for the requested ticket. If this member is not set to zero, the returned ticket will not be cached.</para>
+      <para>This member can have one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_DES_CBC_CRC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use <a href="https://docs.microsoft.com//windows/desktop/SecGloss/d-gly">DES</a> encryption in <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cipher-block-chaining</a> mode with a CRC-32 checksum.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_DES_CBC_MD4</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use DES encryption in cipher-block-chaining mode with a MD4 checksum.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_DES_CBC_MD5</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use DES encryption in cipher-block-chaining mode with a MD5 checksum.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_NULL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use no encryption.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_RC4_HMAC_NT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use the RC4 <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">stream cipher</a> with a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a>-based <a href="https://docs.microsoft.com//windows/desktop/SecGloss/m-gly">Message Authentication Code</a> (MAC), as used by Windows.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_ETYPE_RC4_MD4</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Use the RC4 stream cipher with the MD4 hash function.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>&gt;127</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Values greater than 127 are reserved for local values and may change without notice.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_RETRIEVE_TKT_REQUEST.CredentialsHandle">
+    <summary>An SSPI credentials handle used in place of a logon session identifier.</summary>
+  </member>
+</doc>

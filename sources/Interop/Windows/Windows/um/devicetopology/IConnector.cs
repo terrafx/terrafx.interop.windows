@@ -25,7 +25,7 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IConnector*, Guid*, void**, int>)(lpVtbl[0]))((IConnector*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, Guid*, void**, int>)(lpVtbl[0]))((IConnector*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IConnector*, uint>)(lpVtbl[1]))((IConnector*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, uint>)(lpVtbl[1]))((IConnector*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IConnector*, uint>)(lpVtbl[2]))((IConnector*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, uint>)(lpVtbl[2]))((IConnector*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetType"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetType(ConnectorType* pType)
     {
-        return ((delegate* unmanaged<IConnector*, ConnectorType*, int>)(lpVtbl[3]))((IConnector*)Unsafe.AsPointer(ref this), pType);
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, ConnectorType*, int>)(lpVtbl[3]))((IConnector*)Unsafe.AsPointer(ref this), pType);
     }
 
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetDataFlow"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetDataFlow(DataFlow* pFlow)
     {
-        return ((delegate* unmanaged<IConnector*, DataFlow*, int>)(lpVtbl[4]))((IConnector*)Unsafe.AsPointer(ref this), pFlow);
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, DataFlow*, int>)(lpVtbl[4]))((IConnector*)Unsafe.AsPointer(ref this), pFlow);
     }
 
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.ConnectTo"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT ConnectTo(IConnector* pConnectTo)
     {
-        return ((delegate* unmanaged<IConnector*, IConnector*, int>)(lpVtbl[5]))((IConnector*)Unsafe.AsPointer(ref this), pConnectTo);
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, IConnector*, int>)(lpVtbl[5]))((IConnector*)Unsafe.AsPointer(ref this), pConnectTo);
     }
 
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.Disconnect"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Disconnect()
     {
-        return ((delegate* unmanaged<IConnector*, int>)(lpVtbl[6]))((IConnector*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, int>)(lpVtbl[6]))((IConnector*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.IsConnected"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT IsConnected(BOOL* pbConnected)
     {
-        return ((delegate* unmanaged<IConnector*, BOOL*, int>)(lpVtbl[7]))((IConnector*)Unsafe.AsPointer(ref this), pbConnected);
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, BOOL*, int>)(lpVtbl[7]))((IConnector*)Unsafe.AsPointer(ref this), pbConnected);
     }
 
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetConnectedTo"]/*' />
@@ -91,23 +91,23 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetConnectedTo(IConnector** ppConTo)
     {
-        return ((delegate* unmanaged<IConnector*, IConnector**, int>)(lpVtbl[8]))((IConnector*)Unsafe.AsPointer(ref this), ppConTo);
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, IConnector**, int>)(lpVtbl[8]))((IConnector*)Unsafe.AsPointer(ref this), ppConTo);
     }
 
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetConnectorIdConnectedTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId)
+    public HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] char** ppwstrConnectorId)
     {
-        return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[9]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrConnectorId);
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, char**, int>)(lpVtbl[9]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrConnectorId);
     }
 
     /// <include file='IConnector.xml' path='doc/member[@name="IConnector.GetDeviceIdConnectedTo"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId)
+    public HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] char** ppwstrDeviceId)
     {
-        return ((delegate* unmanaged<IConnector*, ushort**, int>)(lpVtbl[10]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
+        return ((delegate* unmanaged[MemberFunction]<IConnector*, char**, int>)(lpVtbl[10]))((IConnector*)Unsafe.AsPointer(ref this), ppwstrDeviceId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -131,46 +131,46 @@ public unsafe partial struct IConnector : IConnector.Interface, INativeGuid
         HRESULT GetConnectedTo(IConnector** ppConTo);
 
         [VtblIndex(9)]
-        HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrConnectorId);
+        HRESULT GetConnectorIdConnectedTo([NativeTypeName("LPWSTR *")] char** ppwstrConnectorId);
 
         [VtblIndex(10)]
-        HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] ushort** ppwstrDeviceId);
+        HRESULT GetDeviceIdConnectedTo([NativeTypeName("LPWSTR *")] char** ppwstrDeviceId);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ConnectorType *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, ConnectorType*, int> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, ConnectorType*, int> GetType;
 
         [NativeTypeName("HRESULT (DataFlow *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DataFlow*, int> GetDataFlow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DataFlow*, int> GetDataFlow;
 
         [NativeTypeName("HRESULT (IConnector *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IConnector*, int> ConnectTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IConnector*, int> ConnectTo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Disconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Disconnect;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsConnected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsConnected;
 
         [NativeTypeName("HRESULT (IConnector **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IConnector**, int> GetConnectedTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IConnector**, int> GetConnectedTo;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetConnectorIdConnectedTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetConnectorIdConnectedTo;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDeviceIdConnectedTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDeviceIdConnectedTo;
     }
 }

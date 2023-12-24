@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICRawToneCurvePoint">
-    <summary>
-      <para>Represents a raw image tone curve point.</para>
-    </summary>
+    <summary>Represents a raw image tone curve point.</summary>
   </member>
   <member name="WICRawToneCurvePoint.Input">
-    <summary>
-      <para>Type: <b>double</b></para>
-      <para>The tone curve input.</para>
-    </summary>
+    <summary>The tone curve input.</summary>
   </member>
   <member name="WICRawToneCurvePoint.Output">
-    <summary>
-      <para>Type: <b>double</b></para>
-      <para>The tone curve output.</para>
-    </summary>
+    <summary>The tone curve output.</summary>
   </member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IEnumConnectionPointsTests
     {
         Assert.That(typeof(IEnumConnectionPoints).GUID, Is.EqualTo(IID_IEnumConnectionPoints));
     }
-
-    /// <summary>Validates that the <see cref="IEnumConnectionPoints" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEnumConnectionPoints>(), Is.EqualTo(sizeof(IEnumConnectionPoints)));
-    }
-
-    /// <summary>Validates that the <see cref="IEnumConnectionPoints" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEnumConnectionPoints).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEnumConnectionPoints" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEnumConnectionPoints), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEnumConnectionPoints), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMPOSITION_FRAME_STATS">
-    <summary>
-      <para>Describes timing and composition statistics for a compositor frame.</para>
-    </summary>
+    <summary>Describes timing and composition statistics for a compositor frame.</summary>
   </member>
   <member name="COMPOSITION_FRAME_STATS.startTime">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>The time the frame started.</para>
-    </summary>
+    <summary>The time the frame started.</summary>
   </member>
   <member name="COMPOSITION_FRAME_STATS.targetTime">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>The frame's target time.</para>
-    </summary>
+    <summary>The frame's target time.</summary>
   </member>
   <member name="COMPOSITION_FRAME_STATS.framePeriod">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>The amount of time the frame took.</para>
-    </summary>
+    <summary>The amount of time the frame took.</summary>
   </member>
 </doc>

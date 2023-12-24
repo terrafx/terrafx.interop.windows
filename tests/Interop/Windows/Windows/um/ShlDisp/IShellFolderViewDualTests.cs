@@ -19,32 +19,4 @@ public static unsafe partial class IShellFolderViewDualTests
     {
         Assert.That(typeof(IShellFolderViewDual).GUID, Is.EqualTo(IID_IShellFolderViewDual));
     }
-
-    /// <summary>Validates that the <see cref="IShellFolderViewDual" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellFolderViewDual>(), Is.EqualTo(sizeof(IShellFolderViewDual)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellFolderViewDual" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellFolderViewDual).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellFolderViewDual" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellFolderViewDual), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellFolderViewDual), Is.EqualTo(4));
-        }
-    }
 }

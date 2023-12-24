@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PrimaryXYZColors">
+    <summary>This structure contains eight primary colors in XYZ coordinates.</summary>
+  </member>
+  <member name="PrimaryXYZColors.red">
+    <summary>Red primary.</summary>
+  </member>
+  <member name="PrimaryXYZColors.yellow">
+    <summary>Yellow primary.</summary>
+  </member>
+  <member name="PrimaryXYZColors.green">
+    <summary>Green primary.</summary>
+  </member>
+  <member name="PrimaryXYZColors.cyan">
+    <summary>Cyan primary.</summary>
+  </member>
+  <member name="PrimaryXYZColors.blue">
+    <summary>Blue primary.</summary>
+  </member>
+  <member name="PrimaryXYZColors.magenta">
+    <summary>Magenta primary.</summary>
+  </member>
+  <member name="PrimaryXYZColors.black">
+    <summary>Black primary.</summary>
+  </member>
+  <member name="PrimaryXYZColors.white">
+    <summary>White primary.</summary>
+  </member>
+</doc>

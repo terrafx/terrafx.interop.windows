@@ -19,32 +19,4 @@ public static unsafe partial class IDedupReadFileCallbackTests
     {
         Assert.That(typeof(IDedupReadFileCallback).GUID, Is.EqualTo(IID_IDedupReadFileCallback));
     }
-
-    /// <summary>Validates that the <see cref="IDedupReadFileCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDedupReadFileCallback>(), Is.EqualTo(sizeof(IDedupReadFileCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IDedupReadFileCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDedupReadFileCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDedupReadFileCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDedupReadFileCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDedupReadFileCallback), Is.EqualTo(4));
-        }
-    }
 }

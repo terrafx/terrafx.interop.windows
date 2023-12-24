@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDXCoreAdapterList.GetAdapter">
+    <summary>Retrieves a specific adapter by index from a DXCore adapter list object. For programming guidance, and code examples, see <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore-enum-adapters">Using DXCore to enumerate adapters</a>.</summary>
+    <param name="index">A zero-based index, identifying an adapter instance within the DXCore adapter list.</param>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppvAdapter</i>. This is expected to be the interface identifier (IID) of <see cref="IDXCoreAdapter" />.</param>
+    <param name="ppvAdapter">The address of a pointer to an interface with the IID specified in the <i>riid</i> parameter. Upon successful return, <i>*ppvAdapter</i> (the dereferenced address) contains a pointer to the the DXCore adapter created.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |DXGI_ERROR_DEVICE_REMOVED|The <i>index</i> is valid, but the adapter is no longer in a valid state.| |E_INVALIDARG|The provided <i>index</i> is not valid.| |E_NOINTERFACE|An invalid value was provided for <i>riid</i>.| |E_POINTER|<code>nullptr</code> was provided for <i>ppvAdapter</i>.|</para>
+    </returns>
+  </member>
+  <member name="IDXCoreAdapterList.GetAdapterCount">
+    <summary>Retrieves the number of adapters in a DXCore adapter list object. For programming guidance, and code examples, see <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore-enum-adapters">Using DXCore to enumerate adapters</a>.</summary>
+    <returns>Returns the number of adapter items in the list.</returns>
+  </member>
+  <member name="IDXCoreAdapterList.GetFactory">
+    <summary>Retrieves an <see cref="IDXCoreAdapterFactory" /> interface pointer to the DXCore adapter factory object. For programming guidance, and code examples, see <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore-enum-adapters">Using DXCore to enumerate adapters</a>.</summary>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppvFactory</i>. This is expected to be the interface identifier (IID) of <see cref="IDXCoreAdapterFactory" />.</param>
+    <param name="ppvFactory">The address of a pointer to an interface with the IID specified in the <i>riid</i> parameter. Upon successful return, <i>*ppvFactory</i> (the dereferenced address) contains a pointer to the existing DXCore adapter factory object. Before returning, the function increments the reference count on the factory object's <see cref="IDXCoreAdapterFactory" /> interface.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_NOINTERFACE|An invalid value was provided for <i>riid</i>.| |E_POINTER|<code>nullptr</code> was provided for <i>ppvFactory</i>.|</para>
+    </returns>
+  </member>
+  <member name="IDXCoreAdapterList.IsAdapterPreferenceSupported">
+    <summary>Determines whether a specified <see cref="DXCoreAdapterPreference" /> value is understood by the current operating system (OS). You can call <b>IsAdapterPreferenceSupported</b> before calling <see cref="IDXCoreAdapterList.Sort" />.</summary>
+    <param name="preference">A <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/ne-dxcore_interface-dxcoreadapterpreference">DXCoreAdapterPreference</a> value that will be checked to see whether it's supported by the OS.</param>
+    <returns>Returns <code>true</code> if the sort type is understood by the current OS. Otherwise, returns <code>false</code>.</returns>
+  </member>
+  <member name="IDXCoreAdapterList.IsStale">
+    <summary>Determines whether changes to this system have resulted in this DXCore adapter list object becoming out of date. For programming guidance, and code examples, see <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore-enum-adapters">Using DXCore to enumerate adapters</a>.</summary>
+    <returns>Returns <code>true</code> if, since generating the list, changes to system conditions have occurred that would cause this adapter list to become stale. Otherwise, returns <code>false</code>.</returns>
+  </member>
+  <member name="IDXCoreAdapterList.Sort">
+    <summary>Sorts a DXCore adapter list object based on a provided input array of sort criteria, where array items earlier in the array of criteria are given a higher weight. <b>Sort</b> helps you to more easily find your ideal adapter in an adapter list.</summary>
+    <param name="numPreferences">The number of elements that are in the array pointed to by the <i>preferences</i> parameter.</param>
+    <param name="preferences">A pointer to a constant array of <see cref="DXCoreAdapterPreference" /> values, representing sort criteria.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_INVALIDARG|The <i>numPreferences</i> argument is zero, or the <i>preferences</i> argument is <code>nullptr</code>.|</para>
+    </returns>
+  </member>
+  <member name="IDXCoreAdapterList">
+    <summary>The <b>IDXCoreAdapterList</b> interface implements methods for retrieving adapter items from a generated list, as well as details about the list. <b>IDXCoreAdapterList</b> inherits from the <see cref="IUnknown" /> interface. For programming guidance, and code examples, see <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore-enum-adapters">Using DXCore to enumerate adapters</a>.</summary>
+  </member>
+</doc>

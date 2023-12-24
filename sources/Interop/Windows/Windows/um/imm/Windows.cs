@@ -15,7 +15,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmInstallIMEW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
-    public static extern HKL ImmInstallIMEW([NativeTypeName("LPCWSTR")] ushort* lpszIMEFileName, [NativeTypeName("LPCWSTR")] ushort* lpszLayoutText);
+    public static extern HKL ImmInstallIMEW([NativeTypeName("LPCWSTR")] char* lpszIMEFileName, [NativeTypeName("LPCWSTR")] char* lpszLayoutText);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetDefaultIMEWnd"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
@@ -27,7 +27,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetDescriptionW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
-    public static extern uint ImmGetDescriptionW(HKL param0, [NativeTypeName("LPWSTR")] ushort* lpszDescription, uint uBufLen);
+    public static extern uint ImmGetDescriptionW(HKL param0, [NativeTypeName("LPWSTR")] char* lpszDescription, uint uBufLen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetIMEFileNameA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
@@ -35,7 +35,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetIMEFileNameW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
-    public static extern uint ImmGetIMEFileNameW(HKL param0, [NativeTypeName("LPWSTR")] ushort* lpszFileName, uint uBufLen);
+    public static extern uint ImmGetIMEFileNameW(HKL param0, [NativeTypeName("LPWSTR")] char* lpszFileName, uint uBufLen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetProperty"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
@@ -120,7 +120,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetGuideLineW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint ImmGetGuideLineW(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] ushort* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
+    public static extern uint ImmGetGuideLineW(HIMC param0, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPWSTR")] char* lpBuf, [NativeTypeName("DWORD")] uint dwBufLen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetConversionStatus"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
@@ -178,7 +178,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetConversionListW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint ImmGetConversionListW(HKL param0, HIMC param1, [NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpDst, [NativeTypeName("DWORD")] uint dwBufLen, uint uFlag);
+    public static extern uint ImmGetConversionListW(HKL param0, HIMC param1, [NativeTypeName("LPCWSTR")] char* lpSrc, [NativeTypeName("LPCANDIDATELIST")] CANDIDATELIST* lpDst, [NativeTypeName("DWORD")] uint dwBufLen, uint uFlag);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmNotifyIME"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
@@ -226,7 +226,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmRegisterWordW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
-    public static extern BOOL ImmRegisterWordW(HKL param0, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] ushort* lpszRegister);
+    public static extern BOOL ImmRegisterWordW(HKL param0, [NativeTypeName("LPCWSTR")] char* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] char* lpszRegister);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmUnregisterWordA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
@@ -234,7 +234,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmUnregisterWordW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
-    public static extern BOOL ImmUnregisterWordW(HKL param0, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] ushort* lpszUnregister);
+    public static extern BOOL ImmUnregisterWordW(HKL param0, [NativeTypeName("LPCWSTR")] char* lpszReading, [NativeTypeName("DWORD")] uint param2, [NativeTypeName("LPCWSTR")] char* lpszUnregister);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmGetRegisterWordStyleA"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
@@ -250,7 +250,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmEnumRegisterWordW"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
-    public static extern uint ImmEnumRegisterWordW(HKL param0, [NativeTypeName("REGISTERWORDENUMPROCW")] delegate* unmanaged<ushort*, uint, ushort*, void*, int> param1, [NativeTypeName("LPCWSTR")] ushort* lpszReading, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPCWSTR")] ushort* lpszRegister, [NativeTypeName("LPVOID")] void* param5);
+    public static extern uint ImmEnumRegisterWordW(HKL param0, [NativeTypeName("REGISTERWORDENUMPROCW")] delegate* unmanaged<char*, uint, char*, void*, int> param1, [NativeTypeName("LPCWSTR")] char* lpszReading, [NativeTypeName("DWORD")] uint param3, [NativeTypeName("LPCWSTR")] char* lpszRegister, [NativeTypeName("LPVOID")] void* param5);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ImmDisableIME"]/*' />
     [DllImport("imm32", ExactSpelling = true)]
@@ -285,13 +285,13 @@ public static unsafe partial class Windows
     public const int IMEMENUITEM_STRING_SIZE = 80;
 
     [NativeTypeName("#define ImmInstallIME ImmInstallIMEW")]
-    public static delegate*<ushort*, ushort*, HKL> ImmInstallIME => &ImmInstallIMEW;
+    public static delegate*<char*, char*, HKL> ImmInstallIME => &ImmInstallIMEW;
 
     [NativeTypeName("#define ImmGetDescription ImmGetDescriptionW")]
-    public static delegate*<HKL, ushort*, uint, uint> ImmGetDescription => &ImmGetDescriptionW;
+    public static delegate*<HKL, char*, uint, uint> ImmGetDescription => &ImmGetDescriptionW;
 
     [NativeTypeName("#define ImmGetIMEFileName ImmGetIMEFileNameW")]
-    public static delegate*<HKL, ushort*, uint, uint> ImmGetIMEFileName => &ImmGetIMEFileNameW;
+    public static delegate*<HKL, char*, uint, uint> ImmGetIMEFileName => &ImmGetIMEFileNameW;
 
     [NativeTypeName("#define ImmGetCompositionString ImmGetCompositionStringW")]
     public static delegate*<HIMC, uint, void*, uint, int> ImmGetCompositionString => &ImmGetCompositionStringW;
@@ -306,7 +306,7 @@ public static unsafe partial class Windows
     public static delegate*<HIMC, uint, CANDIDATELIST*, uint, uint> ImmGetCandidateList => &ImmGetCandidateListW;
 
     [NativeTypeName("#define ImmGetGuideLine ImmGetGuideLineW")]
-    public static delegate*<HIMC, uint, ushort*, uint, uint> ImmGetGuideLine => &ImmGetGuideLineW;
+    public static delegate*<HIMC, uint, char*, uint, uint> ImmGetGuideLine => &ImmGetGuideLineW;
 
     [NativeTypeName("#define ImmGetCompositionFont ImmGetCompositionFontW")]
     public static delegate*<HIMC, LOGFONTW*, BOOL> ImmGetCompositionFont => &ImmGetCompositionFontW;
@@ -321,22 +321,22 @@ public static unsafe partial class Windows
     public static delegate*<HKL, HIMC, uint, void*, LRESULT> ImmEscape => &ImmEscapeW;
 
     [NativeTypeName("#define ImmGetConversionList ImmGetConversionListW")]
-    public static delegate*<HKL, HIMC, ushort*, CANDIDATELIST*, uint, uint, uint> ImmGetConversionList => &ImmGetConversionListW;
+    public static delegate*<HKL, HIMC, char*, CANDIDATELIST*, uint, uint, uint> ImmGetConversionList => &ImmGetConversionListW;
 
     [NativeTypeName("#define ImmIsUIMessage ImmIsUIMessageW")]
     public static delegate*<HWND, uint, WPARAM, LPARAM, BOOL> ImmIsUIMessage => &ImmIsUIMessageW;
 
     [NativeTypeName("#define ImmRegisterWord ImmRegisterWordW")]
-    public static delegate*<HKL, ushort*, uint, ushort*, BOOL> ImmRegisterWord => &ImmRegisterWordW;
+    public static delegate*<HKL, char*, uint, char*, BOOL> ImmRegisterWord => &ImmRegisterWordW;
 
     [NativeTypeName("#define ImmUnregisterWord ImmUnregisterWordW")]
-    public static delegate*<HKL, ushort*, uint, ushort*, BOOL> ImmUnregisterWord => &ImmUnregisterWordW;
+    public static delegate*<HKL, char*, uint, char*, BOOL> ImmUnregisterWord => &ImmUnregisterWordW;
 
     [NativeTypeName("#define ImmGetRegisterWordStyle ImmGetRegisterWordStyleW")]
     public static delegate*<HKL, uint, STYLEBUFW*, uint> ImmGetRegisterWordStyle => &ImmGetRegisterWordStyleW;
 
     [NativeTypeName("#define ImmEnumRegisterWord ImmEnumRegisterWordW")]
-    public static delegate*<HKL, delegate* unmanaged<ushort*, uint, ushort*, void*, int>, ushort*, uint, ushort*, void*, uint> ImmEnumRegisterWord => &ImmEnumRegisterWordW;
+    public static delegate*<HKL, delegate* unmanaged<char*, uint, char*, void*, int>, char*, uint, char*, void*, uint> ImmEnumRegisterWord => &ImmEnumRegisterWordW;
 
     [NativeTypeName("#define ImmGetImeMenuItems ImmGetImeMenuItemsW")]
     public static delegate*<HIMC, uint, uint, IMEMENUITEMINFOW*, IMEMENUITEMINFOW*, uint, uint> ImmGetImeMenuItems => &ImmGetImeMenuItemsW;

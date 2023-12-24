@@ -21,32 +21,4 @@ public static unsafe partial class IMFSignedLibraryTests
     {
         Assert.That(typeof(IMFSignedLibrary).GUID, Is.EqualTo(IID_IMFSignedLibrary));
     }
-
-    /// <summary>Validates that the <see cref="IMFSignedLibrary" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSignedLibrary>(), Is.EqualTo(sizeof(IMFSignedLibrary)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSignedLibrary" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSignedLibrary).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSignedLibrary" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSignedLibrary), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSignedLibrary), Is.EqualTo(4));
-        }
-    }
 }

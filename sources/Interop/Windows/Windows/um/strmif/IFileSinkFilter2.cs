@@ -25,7 +25,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFileSinkFilter2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFileSinkFilter2*, Guid*, void**, int>)(lpVtbl[0]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFileSinkFilter2*, uint>)(lpVtbl[1]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSinkFilter2*, uint>)(lpVtbl[1]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFileSinkFilter2*, uint>)(lpVtbl[2]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFileSinkFilter2*, uint>)(lpVtbl[2]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IFileSinkFilter.SetFileName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetFileName([NativeTypeName("LPCOLESTR")] ushort* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
+    public HRESULT SetFileName([NativeTypeName("LPCOLESTR")] char* pszFileName, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IFileSinkFilter2*, ushort*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pszFileName, pmt);
+        return ((delegate* unmanaged[MemberFunction]<IFileSinkFilter2*, char*, AM_MEDIA_TYPE*, int>)(lpVtbl[3]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pszFileName, pmt);
     }
 
     /// <inheritdoc cref="IFileSinkFilter.GetCurFile" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] ushort** ppszFileName, AM_MEDIA_TYPE* pmt)
+    public HRESULT GetCurFile([NativeTypeName("LPOLESTR *")] char** ppszFileName, AM_MEDIA_TYPE* pmt)
     {
-        return ((delegate* unmanaged<IFileSinkFilter2*, ushort**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
+        return ((delegate* unmanaged[MemberFunction]<IFileSinkFilter2*, char**, AM_MEDIA_TYPE*, int>)(lpVtbl[4]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), ppszFileName, pmt);
     }
 
     /// <include file='IFileSinkFilter2.xml' path='doc/member[@name="IFileSinkFilter2.SetMode"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface, INat
     [VtblIndex(5)]
     public HRESULT SetMode([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IFileSinkFilter2*, uint, int>)(lpVtbl[5]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IFileSinkFilter2*, uint, int>)(lpVtbl[5]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     /// <include file='IFileSinkFilter2.xml' path='doc/member[@name="IFileSinkFilter2.GetMode"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetMode([NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IFileSinkFilter2*, uint*, int>)(lpVtbl[6]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IFileSinkFilter2*, uint*, int>)(lpVtbl[6]))((IFileSinkFilter2*)Unsafe.AsPointer(ref this), pdwFlags);
     }
 
     public interface Interface : IFileSinkFilter.Interface
@@ -91,24 +91,24 @@ public unsafe partial struct IFileSinkFilter2 : IFileSinkFilter2.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCOLESTR, const AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, AM_MEDIA_TYPE*, int> SetFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, AM_MEDIA_TYPE*, int> SetFileName;
 
         [NativeTypeName("HRESULT (LPOLESTR *, AM_MEDIA_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, AM_MEDIA_TYPE*, int> GetCurFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, AM_MEDIA_TYPE*, int> GetCurFile;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetMode;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMode;
     }
 }

@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PARAMDESCEX">
-    <summary>
-      <para>Contains information about the default value of a parameter.</para>
-    </summary>
+    <summary>Contains information about the default value of a parameter.</summary>
   </member>
   <member name="PARAMDESCEX.cBytes">
-    <summary>
-      <para>The size of the structure.</para>
-    </summary>
+    <summary>The size of the structure.</summary>
   </member>
   <member name="PARAMDESCEX.varDefaultValue">
-    <summary>
-      <para>The default value of the parameter.</para>
-    </summary>
+    <summary>The default value of the parameter.</summary>
   </member>
 </doc>

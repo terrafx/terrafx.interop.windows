@@ -17,5 +17,5 @@ public unsafe partial struct CERT_KEYGEN_REQUEST_INFO
 
     /// <include file='CERT_KEYGEN_REQUEST_INFO.xml' path='doc/member[@name="CERT_KEYGEN_REQUEST_INFO.pwszChallengeString"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszChallengeString;
+    public char* pwszChallengeString;
 }

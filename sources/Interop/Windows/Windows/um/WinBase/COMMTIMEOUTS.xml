@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COMMTIMEOUTS">
+    <summary>Contains the time-out parameters for a communications device. The parameters determine the behavior of <see cref="ReadFile" />,<see cref="WriteFile" />,<see cref="ReadFileEx" />, and<see cref="WriteFileEx" /> operations on the device.</summary>
+  </member>
+  <member name="COMMTIMEOUTS.ReadIntervalTimeout">
+    <summary>
+      <para>The maximum time allowed to elapse before the arrival of the next byte on the communications line, in milliseconds. If the interval between the arrival of any two bytes exceeds this amount, the<see cref="ReadFile" /> operation is completed and any buffered data is returned. A value of zero indicates that interval time-outs are not used.</para>
+      <para>A value of <b>MAXDWORD</b>, combined with zero values for both the<b>ReadTotalTimeoutConstant</b> and <b>ReadTotalTimeoutMultiplier</b>members, specifies that the read operation is to return immediately with the bytes that have already been received, even if no bytes have been received.</para>
+    </summary>
+  </member>
+  <member name="COMMTIMEOUTS.ReadTotalTimeoutMultiplier">
+    <summary>The multiplier used to calculate the total time-out period for read operations, in milliseconds. For each read operation, this value is multiplied by the requested number of bytes to be read.</summary>
+  </member>
+  <member name="COMMTIMEOUTS.ReadTotalTimeoutConstant">
+    <summary>
+      <para>A constant used to calculate the total time-out period for read operations, in milliseconds. For each read operation, this value is added to the product of the <b>ReadTotalTimeoutMultiplier</b>member and the requested number of bytes.</para>
+      <para>A value of zero for both the <b>ReadTotalTimeoutMultiplier</b> and<b>ReadTotalTimeoutConstant</b> members indicates that total time-outs are not used for read operations.</para>
+    </summary>
+  </member>
+  <member name="COMMTIMEOUTS.WriteTotalTimeoutMultiplier">
+    <summary>The multiplier used to calculate the total time-out period for write operations, in milliseconds. For each write operation, this value is multiplied by the number of bytes to be written.</summary>
+  </member>
+  <member name="COMMTIMEOUTS.WriteTotalTimeoutConstant">
+    <summary>
+      <para>A constant used to calculate the total time-out period for write operations, in milliseconds. For each write operation, this value is added to the product of the <b>WriteTotalTimeoutMultiplier</b>member and the number of bytes to be written.</para>
+      <para>A value of zero for both the <b>WriteTotalTimeoutMultiplier</b> and<b>WriteTotalTimeoutConstant</b> members indicates that total time-outs are not used for write operations.</para>
+    </summary>
+  </member>
+</doc>

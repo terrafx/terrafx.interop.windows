@@ -3,10 +3,12 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGEHLP_DEFERRED_SYMBOL_LOADW64.xml' path='doc/member[@name="IMAGEHLP_DEFERRED_SYMBOL_LOADW64"]/*' />
-public unsafe partial struct IMAGEHLP_DEFERRED_SYMBOL_LOADW64
+public partial struct IMAGEHLP_DEFERRED_SYMBOL_LOADW64
 {
     /// <include file='IMAGEHLP_DEFERRED_SYMBOL_LOADW64.xml' path='doc/member[@name="IMAGEHLP_DEFERRED_SYMBOL_LOADW64.SizeOfStruct"]/*' />
     [NativeTypeName("DWORD")]
@@ -26,7 +28,7 @@ public unsafe partial struct IMAGEHLP_DEFERRED_SYMBOL_LOADW64
 
     /// <include file='IMAGEHLP_DEFERRED_SYMBOL_LOADW64.xml' path='doc/member[@name="IMAGEHLP_DEFERRED_SYMBOL_LOADW64.FileName"]/*' />
     [NativeTypeName("WCHAR[261]")]
-    public fixed ushort FileName[261];
+    public _FileName_e__FixedBuffer FileName;
 
     /// <include file='IMAGEHLP_DEFERRED_SYMBOL_LOADW64.xml' path='doc/member[@name="IMAGEHLP_DEFERRED_SYMBOL_LOADW64.Reparse"]/*' />
     [NativeTypeName("BOOLEAN")]
@@ -38,4 +40,11 @@ public unsafe partial struct IMAGEHLP_DEFERRED_SYMBOL_LOADW64
     /// <include file='IMAGEHLP_DEFERRED_SYMBOL_LOADW64.xml' path='doc/member[@name="IMAGEHLP_DEFERRED_SYMBOL_LOADW64.Flags"]/*' />
     [NativeTypeName("DWORD")]
     public uint Flags;
+
+    /// <include file='_FileName_e__FixedBuffer.xml' path='doc/member[@name="_FileName_e__FixedBuffer"]/*' />
+    [InlineArray(261)]
+    public partial struct _FileName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

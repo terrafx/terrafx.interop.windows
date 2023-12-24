@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_PAINT_TYPE.xml' path='doc/member[@name="D2D1_SVG_PAINT_TYPE"]/*' />
-public enum D2D1_SVG_PAINT_TYPE : uint
+public enum D2D1_SVG_PAINT_TYPE
 {
     /// <include file='D2D1_SVG_PAINT_TYPE.xml' path='doc/member[@name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_NONE"]/*' />
     D2D1_SVG_PAINT_TYPE_NONE = 0,
@@ -30,5 +30,5 @@ public enum D2D1_SVG_PAINT_TYPE : uint
     D2D1_SVG_PAINT_TYPE_URI_CURRENT_COLOR = 6,
 
     /// <include file='D2D1_SVG_PAINT_TYPE.xml' path='doc/member[@name="D2D1_SVG_PAINT_TYPE.D2D1_SVG_PAINT_TYPE_FORCE_DWORD"]/*' />
-    D2D1_SVG_PAINT_TYPE_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_PAINT_TYPE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

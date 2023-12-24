@@ -3,587 +3,341 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Factory1.CreateDevice">
-    <summary>
-      <para>Creates a <see cref="ID2D1Device" /> object.</para>
-    </summary>
-    <param name="dxgiDevice">
-      <para>Type: <b><see cref="IDXGIDevice" />*</b></para>
-      <para>The <see cref="IDXGIDevice" /> object used when creating  the <see cref="ID2D1Device" />.</para>
-    </param>
-    <param name="d2dDevice">
-      <para>Type: <b><see cref="ID2D1Device" />**</b></para>
-      <para>The requested <see cref="ID2D1Device" /> object.</para>
-    </param>
+    <summary>Creates a <see cref="ID2D1Device" /> object.</summary>
+    <param name="dxgiDevice">The <see cref="IDXGIDevice" /> object used when creating the <see cref="ID2D1Device" />.</param>
+    <param name="d2dDevice">The requested <see cref="ID2D1Device" /> object.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUTOFVIDEOMEMORY</description>
           <description>Direct3D does not have enough display memory to perform the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> device defines a resource domain in which a set of Direct2D objects and Direct2D device contexts can be used together.  Each call to <see cref="CreateDevice" /> returns a unique <see cref="ID2D1Device" /> object, even if you pass the same <see cref="IDXGIDevice" /> multiple times.</para>
-    </remarks>
-    <seealso cref="ID2D1Device" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.GetDevice" />
-    <seealso cref="ID2D1Factory1" />
   </member>
   <member name="ID2D1Factory1.CreateDrawingStateBlock">
-    <summary>
-      <para>Creates a new drawing state block, this can be used in subsequent
-SaveDrawingState and RestoreDrawingState operations on the render target.</para>
-    </summary>
-    <param name="drawingStateDescription">
-      <para>Type: <b>const <see cref="D2D1_DRAWING_STATE_DESCRIPTION1" />*</b></para>
-      <para>The drawing state description structure.</para>
-    </param>
-    <param name="textRenderingParams">
-      <para>Type: <b><see cref="IDWriteRenderingParams" />*</b></para>
-      <para>The DirectWrite rendering params interface.</para>
-    </param>
-    <param name="drawingStateBlock">
-      <para>Type: <b><see cref="ID2D1DrawingStateBlock1" />**</b></para>
-      <para>The address of the newly created drawing state block.</para>
-    </param>
+    <summary>Creates a new drawing state block, this can be used in subsequent SaveDrawingState and RestoreDrawingState operations on the render target.</summary>
+    <param name="drawingStateDescription">The drawing state description structure.</param>
+    <param name="textRenderingParams">The DirectWrite rendering params interface.</param>
+    <param name="drawingStateBlock">The address of the newly created drawing state block.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
-          <description>Direct2D could not allocate sufficient memory to complete the call.
-</description>
-        </item>
-        <item>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1Factory1" />
   </member>
   <member name="ID2D1Factory1.CreateDrawingStateBlock">
-    <summary>
-      <para>Creates a new drawing state block, this can be used in subsequent
-SaveDrawingState and RestoreDrawingState operations on the render target.</para>
-    </summary>
-    <param name="drawingStateDescription">
-      <para>Type: <b>const <see cref="D2D1_DRAWING_STATE_DESCRIPTION1" /></b></para>
-      <para>The drawing state description structure.</para>
-    </param>
-    <param name="drawingStateBlock">
-      <para>Type: <b><see cref="ID2D1DrawingStateBlock1" />**</b></para>
-      <para>The address of the newly created drawing state block.</para>
-    </param>
+    <summary>Creates a new drawing state block, this can be used in subsequent SaveDrawingState and RestoreDrawingState operations on the render target.</summary>
+    <param name="drawingStateDescription">The drawing state description structure.</param>
+    <param name="drawingStateBlock">The address of the newly created drawing state block.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
-          <description>Direct2D could not allocate sufficient memory to complete the call.
-</description>
-        </item>
-        <item>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1Factory1" />
   </member>
   <member name="ID2D1Factory1.CreateDrawingStateBlock">
-    <summary>
-      <para>Creates a new drawing state block, this can be used in subsequent
-SaveDrawingState and RestoreDrawingState operations on the render target.</para>
-    </summary>
-    <param name="drawingStateBlock">
-      <para>Type: <b><see cref="ID2D1DrawingStateBlock1" />**</b></para>
-      <para>The address of the newly created drawing state block.</para>
-    </param>
+    <summary>Creates a new drawing state block, this can be used in subsequent SaveDrawingState and RestoreDrawingState operations on the render target.</summary>
+    <param name="drawingStateBlock">The address of the newly created drawing state block.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
-          <description>Direct2D could not allocate sufficient memory to complete the call.
-</description>
-        </item>
-        <item>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1Factory1" />
   </member>
   <member name="ID2D1Factory1.CreateGdiMetafile">
-    <summary>
-      <para>Creates a new <see cref="ID2D1GdiMetafile" /> object that you can use to replay metafile content.</para>
-    </summary>
-    <param name="metafileStream">
-      <para>Type: <b>IStream*</b></para>
-      <para>A stream object that has the metafile data.</para>
-    </param>
-    <param name="metafile">
-      <para>Type: <b><see cref="ID2D1GdiMetafile" />**</b></para>
-      <para>The address of the newly created GDI metafile object.</para>
-    </param>
+    <summary>Creates a new <see cref="ID2D1GdiMetafile" /> object that you can use to replay metafile content.</summary>
+    <param name="metafileStream">A stream object that has the metafile data.</param>
+    <param name="metafile">The address of the newly created GDI metafile object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1Factory1" />
   </member>
   <member name="ID2D1Factory1.CreatePathGeometry">
-    <summary>
-      <para>Creates an <see cref="ID2D1PathGeometry1" /> object.</para>
-    </summary>
-    <param name="pathGeometry">
-      <para>Type: <b>const **</b></para>
-      <para>When this method returns, contains the address of a pointer to the newly created path geometry.</para>
-    </param>
+    <summary>Creates an <see cref="ID2D1PathGeometry1" /> object.</summary>
+    <param name="pathGeometry">When this method returns, contains the address of a pointer to the newly created path geometry.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1Factory1" />
-    <seealso cref="ID2D1PathGeometry1" />
   </member>
   <member name="ID2D1Factory1.CreateStrokeStyle">
-    <summary>
-      <para>Creates a <see cref="ID2D1StrokeStyle1" /> object.</para>
-    </summary>
-    <param name="strokeStyleProperties">
-      <para>Type: <b>const <see cref="D2D1_STROKE_STYLE_PROPERTIES1" />*</b></para>
-      <para>The stroke style properties to apply.</para>
-    </param>
-    <param name="dashes">
-      <para>Type: <b>const <see cref="FLOAT" />*</b></para>
-      <para>An array of widths for the dashes and gaps.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b><see cref="UINT" /></b></para>
-      <para>The size of the dash array.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: <b>const <see cref="ID2D1StrokeStyle1" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the  newly created stroke style.</para>
-    </param>
+    <summary>Creates a <see cref="ID2D1StrokeStyle1" /> object.</summary>
+    <param name="strokeStyleProperties">The stroke style properties to apply.</param>
+    <param name="dashes">An array of widths for the dashes and gaps.</param>
+    <param name="dashesCount">The size of the dash array.</param>
+    <param name="strokeStyle">When this method returns, contains the address of a pointer to the newly created stroke style.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>It is valid to specify a dash array only if D2D1_DASH_STYLE_CUSTOM is also specified.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory1" />
-    <seealso cref="ID2D1StrokeStyle1" />
   </member>
   <member name="ID2D1Factory1.CreateStrokeStyle">
-    <summary>
-      <para>Creates a <see cref="ID2D1StrokeStyle1" /> object.</para>
-    </summary>
-    <param name="strokeStyleProperties">
-      <para>Type: <b>const <see cref="D2D1_STROKE_STYLE_PROPERTIES1" /></b></para>
-      <para>The stroke style properties to apply.</para>
-    </param>
-    <param name="dashes">
-      <para>Type: <b>const <see cref="FLOAT" />*</b></para>
-      <para>An array of widths for the dashes and gaps.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b><see cref="UINT" /></b></para>
-      <para>The size of the dash array.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: <b>const <see cref="ID2D1StrokeStyle1" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the  newly created stroke style.</para>
-    </param>
+    <summary>Creates a <see cref="ID2D1StrokeStyle1" /> object.</summary>
+    <param name="strokeStyleProperties">The stroke style properties to apply.</param>
+    <param name="dashes">An array of widths for the dashes and gaps.</param>
+    <param name="dashesCount">The size of the dash array.</param>
+    <param name="strokeStyle">When this method returns, contains the address of a pointer to the newly created stroke style.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>It is valid to specify a dash array only if D2D1_DASH_STYLE_CUSTOM is also specified.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory1" />
-    <seealso cref="ID2D1StrokeStyle1" />
   </member>
   <member name="ID2D1Factory1.GetEffectProperties">
-    <summary>
-      <para>Retrieves the properties of an effect.</para>
-    </summary>
-    <param name="effectId">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The ID of the effect to retrieve properties from.</para>
-    </param>
-    <param name="properties">
-      <para>Type: <b><see cref="ID2D1Properties" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the property interface that can be used to query the metadata of the effect.</para>
-    </param>
+    <summary>Retrieves the properties of an effect.</summary>
+    <param name="effectId">The ID of the effect to retrieve properties from.</param>
+    <param name="properties">When this method returns, contains the address of a pointer to the property interface that can be used to query the metadata of the effect.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_EFFECT_IS_NOT_REGISTERED</description>
           <description>The requested effect could not be found.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The returned effect properties will have all the mutable properties for the effect set to a default of <b>NULL</b>, or an  empty value.</para>
-      <list type="bullet">
-        <item>
-          <description>Value types will be zero-filled.</description>
-        </item>
-        <item>
-          <description>Blob and string types will be zero-length.</description>
-        </item>
-        <item>
-          <description>Array types will have length 1 and the element of the array will conform to the previous rules.</description>
-        </item>
-      </list>
-      <para>This method cannot be used to return the properties for any effect not visible to <see cref="ID2D1DeviceContext.CreateEffect" />.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory1" />
-    <seealso cref="ID2D1Factory1.GetRegisteredEffects" />
-    <seealso cref="ID2D1Factory1.RegisterEffect" />
   </member>
   <member name="ID2D1Factory1.GetRegisteredEffects">
-    <summary>
-      <para>Returns the class IDs of the currently registered effects and global effects on this factory.</para>
-    </summary>
-    <param name="effects">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/com/clsid">CLSID</a>*</b></para>
-      <para>When this method returns, contains an array of effects. <b>NULL</b> if no effects are retrieved.</para>
-    </param>
-    <param name="effectsCount">
-      <para>Type: <b><see cref="UINT32" /></b></para>
-      <para>The capacity of the <i>effects</i> array.</para>
-    </param>
-    <param name="effectsReturned">
-      <para>Type: <b><see cref="UINT32" />*</b></para>
-      <para>When this method returns, contains the  number of effects copied into <i>effects</i>.</para>
-    </param>
-    <param name="effectsRegistered">
-      <para>Type: <b><see cref="UINT32" />*</b></para>
-      <para>When this method returns, contains the number of effects currently registered in the system.</para>
-    </param>
+    <summary>Returns the class IDs of the currently registered effects and global effects on this factory.</summary>
+    <param name="effects">When this method returns, contains an array of effects. <b>NULL</b> if no effects are retrieved.</param>
+    <param name="effectsCount">The capacity of the <i>effects</i> array.</param>
+    <param name="effectsReturned">When this method returns, contains the number of effects copied into <i>effects</i>.</param>
+    <param name="effectsRegistered">When this method returns, contains the number of effects currently registered in the system.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER)</description>
           <description>
             <i>effectsRegistered</i> is larger than <i>effectCount</i>.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The set of class IDs will be atomically returned by the API. The set will not be interrupted by other threads registering or unregistering effects.</para>
-      <para>If <i>effectsRegistered</i> is larger than <i>effectCount</i>, the supplied array will still be filled to capacity with the current set of registered effects. This method returns the CLSIDs for all global effects and all effects registered to this factory.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory1" />
-    <seealso cref="ID2D1Factory1.RegisterEffect" />
   </member>
   <member name="ID2D1Factory1.RegisterEffectFromStream">
-    <summary>
-      <para>Registers an effect within the factory instance with the property XML specified as a stream.</para>
-    </summary>
-    <param name="classId">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The identifier of the effect to be registered.</para>
-    </param>
-    <param name="propertyXml">
-      <para>Type: <b>IStream</b></para>
-      <para>A list of the effect properties, types, and metadata.</para>
-    </param>
+    <summary>Registers an effect within the factory instance with the property XML specified as a stream.</summary>
+    <param name="classId">The identifier of the effect to be registered.</param>
+    <param name="propertyXml">A list of the effect properties, types, and metadata.</param>
     <param name="bindings">
-      <para>Type: <b>const <see cref="D2D1_PROPERTY_BINDING" />*</b></para>
       <para>An array of properties and methods.</para>
-      <para>This binds a property by name to a particular method implemented by the effect author to handle the property.
-The name must be found in the corresponding <i>propertyXml</i>.</para>
+      <para>This binds a property by name to a particular method implemented by the effect author to handle the property. The name must be found in the corresponding <i>propertyXml</i>.</para>
     </param>
-    <param name="bindingsCount">
-      <para>Type: <b><see cref="UINT32" /></b></para>
-      <para>The number of bindings in the binding array.</para>
-    </param>
-    <param name="effectFactory">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1/nc-d2d1_1-pd2d1_effect_factory">PD2D1_EFFECT_FACTORY</a></b></para>
-      <para>The static factory that is used to create the corresponding effect.</para>
-    </param>
+    <param name="bindingsCount">The number of bindings in the binding array.</param>
+    <param name="effectFactory">The static factory that is used to create the corresponding effect.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
-          <description>Direct2D could not allocate sufficient memory to complete the call.
-</description>
-        </item>
-        <item>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Direct2D effects must define their properties at registration time via registration XML. An effect declares several required system properties,
-and can also declare custom properties. See <a href="https://docs.microsoft.com//windows/desktop/Direct2D/custom-effects">Custom effects</a></para>
-      <para>for more information about formatting the <i>propertyXml</i> parameter.</para>
-      <para>
-        <see cref="RegisterEffect" /> is both atomic and reference counted. To unregister an effect,
-call <see cref="UnregisterEffect" /> with the  <i>classId</i> of the effect.</para>
-      <para>
-        <b>Important</b>  <see cref="RegisterEffect" /> does not hold a reference to the DLL or executable file in which
-the effect is contained. The application must independently  make sure that the lifetime of the DLL or executable file completely contains all instances of each registered and created effect.</para>
-      <para>Aside from the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">built-in effects</a> that are globally registered, this API registers effects only for this factory, derived device,
-and device context interfaces.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory1" />
-    <seealso cref="ID2D1Factory1.UnregisterEffect" />
   </member>
   <member name="ID2D1Factory1.RegisterEffectFromString">
-    <summary>
-      <para>Registers an effect within the factory instance with the property XML specified as a string.</para>
-    </summary>
-    <param name="classId">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The identifier of the effect to be registered.</para>
-    </param>
-    <param name="propertyXml">
-      <para>Type: <b><see cref="PCWSTR" /></b></para>
-      <para>A list of the effect properties, types, and metadata.</para>
-    </param>
+    <summary>Registers an effect within the factory instance with the property XML specified as a string.</summary>
+    <param name="classId">The identifier of the effect to be registered.</param>
+    <param name="propertyXml">A list of the effect properties, types, and metadata.</param>
     <param name="bindings">
-      <para>Type: <b>const <see cref="D2D1_PROPERTY_BINDING" />*</b></para>
       <para>An array of properties and methods.</para>
-      <para>This binds a property by name to a particular method implemented by the effect author to handle the property.
-The name must be found in the corresponding <i>propertyXml</i>.</para>
+      <para>This binds a property by name to a particular method implemented by the effect author to handle the property. The name must be found in the corresponding <i>propertyXml</i>.</para>
     </param>
-    <param name="bindingsCount">
-      <para>Type: <b><see cref="UINT32" /></b></para>
-      <para>The number of bindings in the binding array.</para>
-    </param>
-    <param name="effectFactory">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/api/d2d1_1/nc-d2d1_1-pd2d1_effect_factory">PD2D1_EFFECT_FACTORY</a></b></para>
-      <para>The static factory that is used to create the corresponding effect.</para>
-    </param>
+    <param name="bindingsCount">The number of bindings in the binding array.</param>
+    <param name="effectFactory">The static factory that is used to create the corresponding effect.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
-          <description>Direct2D could not allocate sufficient memory to complete the call.
-</description>
-        </item>
-        <item>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Direct2D effects must define their properties at registration time via registration XML. An effect declares several required system properties,
-and can also declare custom properties. See <a href="https://docs.microsoft.com//windows/desktop/Direct2D/custom-effects">Custom effects</a></para>
-      <para>for more information about formatting the <i>propertyXml</i> parameter.</para>
-      <para>
-        <b>RegisterEffect</b> is both atomic and reference counted. To unregister an effect,
-call <see cref="UnregisterEffect" /> with the  <i>classId</i> of the effect.</para>
-      <para>
-        <b>Important</b>  <b>RegisterEffect</b> does not hold a reference to the DLL or executable file in which
-the effect is contained. The application must independently  make sure that the lifetime of the DLL or executable file completely contains all instances of each registered and created effect.</para>
-      <para>Aside from the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">built-in effects</a> that are globally registered, this API registers effects only for
-this factory and derived device and device context interfaces.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory1" />
-    <seealso cref="ID2D1Factory1.UnregisterEffect" />
   </member>
   <member name="ID2D1Factory1.UnregisterEffect">
-    <summary>
-      <para>Unregisters an  effect within the factory instance that corresponds to the <i>classId</i> provided.</para>
-    </summary>
-    <param name="classId">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The identifier of the effect to be unregistered.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>D2DERR_EFFECT_IS_NOT_REGISTERED if the effect is not registered, S_OK otherwise.</para>
-    </returns>
-    <remarks>
-      <para>In order for the effect to be fully unloaded, you must call <b>UnregisterEffect</b> the same number of times that you have registered the effect.</para>
-      <para>The <b>UnregisterEffect</b> method unregisters only those effects that are registered on the same factory. It cannot be used to unregister a built-in effect.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory1" />
-    <seealso cref="ID2D1Factory1.RegisterEffect" />
+    <summary>Unregisters an effect within the factory instance that corresponds to the <i>classId</i> provided.</summary>
+    <param name="classId">The identifier of the effect to be unregistered.</param>
+    <returns>D2DERR_EFFECT_IS_NOT_REGISTERED if the effect is not registered, S_OK otherwise.</returns>
   </member>
   <member name="ID2D1Factory1">
-    <summary>
-      <para>Creates Direct2D resources.</para>
-    </summary>
-    <remarks>
-      <para>The <b>ID2D1Factory1</b> interface is used to create devices, register and unregister effects, and enumerate effects properties. Effects are registered and unregistered globally. The registration APIs are placed on this interface for convenience.</para>
-    </remarks>
-    <seealso cref="ID2D1Device" />
-    <seealso cref="ID2D1Factory" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/multi-threaded-direct2d-apps">Multithreaded Direct2D Apps</seealso>
+    <summary>Creates Direct2D resources.</summary>
   </member>
 </doc>

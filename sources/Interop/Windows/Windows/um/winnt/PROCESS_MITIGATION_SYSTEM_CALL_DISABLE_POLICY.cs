@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
 {
     /// <include file='PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY.Anonymous"]/*' />
-    [NativeTypeName("_PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12593:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12601_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
     public uint DisallowWin32kSystemCalls
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.DisallowWin32kSystemCalls;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
     public uint AuditDisallowWin32kSystemCalls
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.AuditDisallowWin32kSystemCalls;
         }
@@ -61,11 +61,43 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
         }
     }
 
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisallowFsctlSystemCalls"]/*' />
+    public uint DisallowFsctlSystemCalls
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            return Anonymous.Anonymous.DisallowFsctlSystemCalls;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.DisallowFsctlSystemCalls = value;
+        }
+    }
+
+    /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditDisallowFsctlSystemCalls"]/*' />
+    public uint AuditDisallowFsctlSystemCalls
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        readonly get
+        {
+            return Anonymous.Anonymous.AuditDisallowFsctlSystemCalls;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set
+        {
+            Anonymous.Anonymous.AuditDisallowFsctlSystemCalls = value;
+        }
+    }
+
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -88,7 +120,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12595:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L12603_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -101,7 +133,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
             public uint DisallowWin32kSystemCalls
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -118,7 +150,7 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
             public uint AuditDisallowWin32kSystemCalls
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -130,20 +162,54 @@ public partial struct PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY
                 }
             }
 
-            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
-            [NativeTypeName("DWORD : 30")]
-            public uint ReservedFlags
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DisallowFsctlSystemCalls"]/*' />
+            [NativeTypeName("DWORD : 1")]
+            public uint DisallowFsctlSystemCalls
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
-                    return (_bitfield >> 2) & 0x3FFFFFFFu;
+                    return (_bitfield >> 2) & 0x1u;
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 set
                 {
-                    _bitfield = (_bitfield & ~(0x3FFFFFFFu << 2)) | ((value & 0x3FFFFFFFu) << 2);
+                    _bitfield = (_bitfield & ~(0x1u << 2)) | ((value & 0x1u) << 2);
+                }
+            }
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.AuditDisallowFsctlSystemCalls"]/*' />
+            [NativeTypeName("DWORD : 1")]
+            public uint AuditDisallowFsctlSystemCalls
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                readonly get
+                {
+                    return (_bitfield >> 3) & 0x1u;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0x1u << 3)) | ((value & 0x1u) << 3);
+                }
+            }
+
+            /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.ReservedFlags"]/*' />
+            [NativeTypeName("DWORD : 28")]
+            public uint ReservedFlags
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                readonly get
+                {
+                    return (_bitfield >> 4) & 0xFFFFFFFu;
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                set
+                {
+                    _bitfield = (_bitfield & ~(0xFFFFFFFu << 4)) | ((value & 0xFFFFFFFu) << 4);
                 }
             }
         }

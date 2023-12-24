@@ -19,32 +19,4 @@ public static unsafe partial class ITfEditTransactionSinkTests
     {
         Assert.That(typeof(ITfEditTransactionSink).GUID, Is.EqualTo(IID_ITfEditTransactionSink));
     }
-
-    /// <summary>Validates that the <see cref="ITfEditTransactionSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfEditTransactionSink>(), Is.EqualTo(sizeof(ITfEditTransactionSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfEditTransactionSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfEditTransactionSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfEditTransactionSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfEditTransactionSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfEditTransactionSink), Is.EqualTo(4));
-        }
-    }
 }

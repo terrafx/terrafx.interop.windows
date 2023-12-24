@@ -3,32 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION">
-    <summary>
-      <para>Defines values that indicate the current state of the write operation when using the <see cref="IDiscFormat2TrackAtOnceEventArgs" /> interface.</para>
-    </summary>
-    <seealso cref="DDiscFormat2TrackAtOnceEvents.Update" />
+    <summary>Defines values that indicate the current state of the write operation when using the <see cref="IDiscFormat2TrackAtOnceEventArgs" /> interface.</summary>
   </member>
   <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_UNKNOWN">
-    <summary>
-      <para>Indicates an unknown state.</para>
-    </summary>
+    <summary>Indicates an unknown state.</summary>
   </member>
   <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_PREPARING">
-    <summary>
-      <para>Preparing to write the track.</para>
-    </summary>
+    <summary>Preparing to write the track.</summary>
   </member>
   <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_WRITING">
-    <summary>
-      <para>Writing the track.</para>
-    </summary>
+    <summary>Writing the track.</summary>
   </member>
   <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_FINISHING">
-    <summary>
-      <para>Closing the track or closing the session.</para>
-    </summary>
+    <summary>Closing the track or closing the session.</summary>
   </member>
-  <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_VERIFYING">
-    <summary></summary>
-  </member>
+  <member name="IMAPI_FORMAT2_TAO_WRITE_ACTION.IMAPI_FORMAT2_TAO_WRITE_ACTION_VERIFYING"></member>
 </doc>

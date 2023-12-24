@@ -3,82 +3,38 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontFace5.Equals">
-    <summary>
-      <para>Performs an equality comparison between the font face object on which <b>Equals</b> is being called and the font face object passed as a parameter.</para>
-    </summary>
-    <param name="fontFace">
-      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
-      <para>A pointer to a font face object to compare with the font face object on which <b>Equals</b> is being called.</para>
-    </param>
+    <summary>Performs an equality comparison between the font face object on which <b>Equals</b> is being called and the font face object passed as a parameter.</summary>
+    <param name="fontFace">A pointer to a font face object to compare with the font face object on which <b>Equals</b> is being called.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
-      <para>
-        <code>true</code> if the font face objects are equal. Otherwise, <code>false</code>.</para>
-    </returns>
-    <seealso cref="IDWriteFontFace" />
+      <code>true</code> if the font face objects are equal. Otherwise, <code>false</code>.</returns>
   </member>
   <member name="IDWriteFontFace5.GetFontAxisValueCount">
-    <summary>
-      <para>Retrieves the number of axes defined by the font face. This includes both static and variable axes (see <see cref="DWRITE_FONT_AXIS_RANGE" />).</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
-      <para>The number of axes defined by the font face.</para>
-    </returns>
-    <seealso cref="DWRITE_FONT_AXIS_RANGE" />
+    <summary>Retrieves the number of axes defined by the font face. This includes both static and variable axes (see <see cref="DWRITE_FONT_AXIS_RANGE" />).</summary>
+    <returns>The number of axes defined by the font face.</returns>
   </member>
   <member name="IDWriteFontFace5.GetFontAxisValues">
-    <summary>
-      <para>Retrieves the list of axis values used by the font.</para>
-    </summary>
-    <param name="fontAxisValues">
-      <para>Type: <b><see cref="DWRITE_FONT_AXIS_VALUE" />*</b></para>
-      <para>A pointer to an array of <b>DWRITE_FONT_AXIS_VALUE</b> structures into which <b>GetFontAxisValues</b> writes the list of font axis values. You're responsible for managing the size and the lifetime of this array. Call <see cref="GetFontAxisValueCount" /> to determine the size of array to allocate.</para>
-    </param>
-    <param name="fontAxisValueCount">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">UINT32</a></b></para>
-      <para>The maximum number of font axis values to write into the memory block pointed to by <code>fontAxisValues</code>.</para>
-    </param>
+    <summary>Retrieves the list of axis values used by the font.</summary>
+    <param name="fontAxisValues">A pointer to an array of <b>DWRITE_FONT_AXIS_VALUE</b> structures into which <b>GetFontAxisValues</b> writes the list of font axis values. You're responsible for managing the size and the lifetime of this array. Call <see cref="GetFontAxisValueCount" /> to determine the size of array to allocate.</param>
+    <param name="fontAxisValueCount">The maximum number of font axis values to write into the memory block pointed to by <code>fontAxisValues</code>.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-      <para>|Return value|Description|
-|-|-|
-|E_INVALIDARG|<code>fontAxisValueCount</code> doesn't match the value returned by <b>GetFontAxisValueCount</b>.|</para>
+      <para>|Return value|Description| |-|-| |E_INVALIDARG|<code>fontAxisValueCount</code> doesn't match the value returned by <b>GetFontAxisValueCount</b>.|</para>
     </returns>
-    <remarks>
-      <para>The values are returned in the canonical order defined by the font, clamped to the actual range supported. It's not necessarily the same axis value array that you passed to <b>CreateFontFace</b>.</para>
-    </remarks>
   </member>
   <member name="IDWriteFontFace5.GetFontResource">
-    <summary>
-      <para>Retrieves the underlying font resource for this font face. You can use that to query information about the resource, or to recreate a new font face instance with different axis values.</para>
-    </summary>
-    <param name="fontResource">
-      <para>Type: <b><see cref="IDWriteFontResource" />**</b></para>
-      <para>The address of a pointer to an <see cref="IDWriteFontResource" /> interface. On successful completion, the function sets the pointer to a newly created font resource object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
-    </returns>
+    <summary>Retrieves the underlying font resource for this font face. You can use that to query information about the resource, or to recreate a new font face instance with different axis values.</summary>
+    <param name="fontResource">The address of a pointer to an <see cref="IDWriteFontResource" /> interface. On successful completion, the function sets the pointer to a newly created font resource object.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</returns>
   </member>
   <member name="IDWriteFontFace5.HasVariations">
-    <summary>
-      <para>Determines whether this font face's resource supports any variable axes. When <code>true</code>, at least one <see cref="DWRITE_FONT_AXIS_RANGE" /> in the font resource has a non-empty range (<i>maxValue</i> &gt; <i>minValue</i>).</para>
-    </summary>
+    <summary>Determines whether this font face's resource supports any variable axes. When <code>true</code>, at least one <see cref="DWRITE_FONT_AXIS_RANGE" /> in the font resource has a non-empty range (<i>maxValue</i> &gt; <i>minValue</i>).</summary>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOL</a></b></para>
-      <para>
-        <code>true</code> if the font face's resource supports any variable axes. Otherwise, <code>false</code>.</para>
-    </returns>
-    <seealso cref="DWRITE_FONT_AXIS_RANGE" />
+      <code>true</code> if the font face's resource supports any variable axes. Otherwise, <code>false</code>.</returns>
   </member>
   <member name="IDWriteFontFace5">
     <summary>
       <para>Represents an absolute reference to a font face. This interface contains font face type, appropriate file references, and face identification data. It adds new facilities such as comparing two font faces, retrieving font axis values, and retrieving the underlying font resource.</para>
       <para>This interface extends <see cref="IDWriteFontFace4" />. Various font data such as metrics, names, and glyph outlines are obtained from <b>IDWriteFontFace</b>.</para>
     </summary>
-    <seealso cref="IDWriteFontFace4" />
   </member>
 </doc>

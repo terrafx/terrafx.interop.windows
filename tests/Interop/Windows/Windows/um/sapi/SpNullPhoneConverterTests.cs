@@ -19,25 +19,4 @@ public static unsafe partial class SpNullPhoneConverterTests
     {
         Assert.That(typeof(SpNullPhoneConverter).GUID, Is.EqualTo(CLSID_SpNullPhoneConverter));
     }
-
-    /// <summary>Validates that the <see cref="SpNullPhoneConverter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpNullPhoneConverter>(), Is.EqualTo(sizeof(SpNullPhoneConverter)));
-    }
-
-    /// <summary>Validates that the <see cref="SpNullPhoneConverter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpNullPhoneConverter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpNullPhoneConverter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpNullPhoneConverter), Is.EqualTo(1));
-    }
 }

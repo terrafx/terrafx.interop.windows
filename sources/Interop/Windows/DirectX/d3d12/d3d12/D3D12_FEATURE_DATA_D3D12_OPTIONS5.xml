@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS5">
+    <summary>Indicates the level of support that the adapter provides for render passes, ray tracing, and shader-resource view tier 3 tiled resources.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS5.SRVOnlyTiledResourceTier3">
+    <summary>A boolean value indicating whether the options require shader-resource view tier 3 tiled resource support. For more information, see <see cref="D3D12_TILED_RESOURCES_TIER" />.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS5.RenderPassesTier">
+    <summary>
+      <para>The extent to which a device driver and/or the hardware efficiently supports render passes. See <see cref="D3D12_RENDERPASS_TIER" />.</para>
+      <h4>RaytracingTier</h4>
+      <para>Specifies the level of ray tracing support on the graphics device. See <see cref="D3D12_RAYTRACING_TIER" />.</para>
+    </summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS5.RaytracingTier"></member>
+</doc>

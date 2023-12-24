@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_HEADER_NAME">
-    <summary>
-      <para>Represents an HTTP request header name.</para>
-    </summary>
+    <summary>Represents an HTTP request header name.</summary>
   </member>
   <member name="WINHTTP_HEADER_NAME.pwszName">
-    <summary>
-      <para>Type: IN <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">PCWSTR</a></b></para>
-      <para>A wide string containing a name.</para>
-    </summary>
+    <summary>A wide string containing a name.</summary>
   </member>
   <member name="WINHTTP_HEADER_NAME.pszName">
-    <summary>
-      <para>Type: IN <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">PCSTR</a></b></para>
-      <para>A narrow string containing a name.</para>
-    </summary>
+    <summary>A narrow string containing a name.</summary>
   </member>
 </doc>

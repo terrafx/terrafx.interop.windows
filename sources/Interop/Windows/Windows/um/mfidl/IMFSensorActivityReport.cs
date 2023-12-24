@@ -27,7 +27,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSensorActivityReport*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivityReport*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSensorActivityReport*, uint>)(lpVtbl[1]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivityReport*, uint>)(lpVtbl[1]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,23 +45,23 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSensorActivityReport*, uint>)(lpVtbl[2]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivityReport*, uint>)(lpVtbl[2]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSensorActivityReport.xml' path='doc/member[@name="IMFSensorActivityReport.GetFriendlyName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetFriendlyName([NativeTypeName("LPWSTR")] ushort* FriendlyName, [NativeTypeName("ULONG")] uint cchFriendlyName, [NativeTypeName("ULONG *")] uint* pcchWritten)
+    public HRESULT GetFriendlyName([NativeTypeName("LPWSTR")] char* FriendlyName, [NativeTypeName("ULONG")] uint cchFriendlyName, [NativeTypeName("ULONG *")] uint* pcchWritten)
     {
-        return ((delegate* unmanaged<IMFSensorActivityReport*, ushort*, uint, uint*, int>)(lpVtbl[3]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), FriendlyName, cchFriendlyName, pcchWritten);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivityReport*, char*, uint, uint*, int>)(lpVtbl[3]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), FriendlyName, cchFriendlyName, pcchWritten);
     }
 
     /// <include file='IMFSensorActivityReport.xml' path='doc/member[@name="IMFSensorActivityReport.GetSymbolicLink"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("ULONG")] uint cchSymbolicLink, [NativeTypeName("ULONG *")] uint* pcchWritten)
+    public HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] char* SymbolicLink, [NativeTypeName("ULONG")] uint cchSymbolicLink, [NativeTypeName("ULONG *")] uint* pcchWritten)
     {
-        return ((delegate* unmanaged<IMFSensorActivityReport*, ushort*, uint, uint*, int>)(lpVtbl[4]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivityReport*, char*, uint, uint*, int>)(lpVtbl[4]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), SymbolicLink, cchSymbolicLink, pcchWritten);
     }
 
     /// <include file='IMFSensorActivityReport.xml' path='doc/member[@name="IMFSensorActivityReport.GetProcessCount"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
     [VtblIndex(5)]
     public HRESULT GetProcessCount([NativeTypeName("ULONG *")] uint* pcCount)
     {
-        return ((delegate* unmanaged<IMFSensorActivityReport*, uint*, int>)(lpVtbl[5]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), pcCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivityReport*, uint*, int>)(lpVtbl[5]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), pcCount);
     }
 
     /// <include file='IMFSensorActivityReport.xml' path='doc/member[@name="IMFSensorActivityReport.GetProcessActivity"]/*' />
@@ -77,16 +77,16 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
     [VtblIndex(6)]
     public HRESULT GetProcessActivity([NativeTypeName("ULONG")] uint Index, IMFSensorProcessActivity** ppProcessActivity)
     {
-        return ((delegate* unmanaged<IMFSensorActivityReport*, uint, IMFSensorProcessActivity**, int>)(lpVtbl[6]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), Index, ppProcessActivity);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivityReport*, uint, IMFSensorProcessActivity**, int>)(lpVtbl[6]))((IMFSensorActivityReport*)Unsafe.AsPointer(ref this), Index, ppProcessActivity);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetFriendlyName([NativeTypeName("LPWSTR")] ushort* FriendlyName, [NativeTypeName("ULONG")] uint cchFriendlyName, [NativeTypeName("ULONG *")] uint* pcchWritten);
+        HRESULT GetFriendlyName([NativeTypeName("LPWSTR")] char* FriendlyName, [NativeTypeName("ULONG")] uint cchFriendlyName, [NativeTypeName("ULONG *")] uint* pcchWritten);
 
         [VtblIndex(4)]
-        HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] ushort* SymbolicLink, [NativeTypeName("ULONG")] uint cchSymbolicLink, [NativeTypeName("ULONG *")] uint* pcchWritten);
+        HRESULT GetSymbolicLink([NativeTypeName("LPWSTR")] char* SymbolicLink, [NativeTypeName("ULONG")] uint cchSymbolicLink, [NativeTypeName("ULONG *")] uint* pcchWritten);
 
         [VtblIndex(5)]
         HRESULT GetProcessCount([NativeTypeName("ULONG *")] uint* pcCount);
@@ -99,24 +99,24 @@ public unsafe partial struct IMFSensorActivityReport : IMFSensorActivityReport.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetFriendlyName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint*, int> GetFriendlyName;
 
         [NativeTypeName("HRESULT (LPWSTR, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, int> GetSymbolicLink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint*, int> GetSymbolicLink;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetProcessCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetProcessCount;
 
         [NativeTypeName("HRESULT (ULONG, IMFSensorProcessActivity **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFSensorProcessActivity**, int> GetProcessActivity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFSensorProcessActivity**, int> GetProcessActivity;
     }
 }

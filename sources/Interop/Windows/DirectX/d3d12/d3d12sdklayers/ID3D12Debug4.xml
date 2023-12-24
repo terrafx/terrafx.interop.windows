@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Debug4.DisableDebugLayer">
+    <summary>
+      <para>Disables the debug layer.</para>
+      <para>
+        <b>DisableDebugLayer</b> takes effect only when all <see cref="ID3D12Device" /> objects (for a given adapter) have been released. See <b>Remarks</b> for <see cref="D3D12CreateDevice" />.</para>
+    </summary>
+  </member>
+  <member name="ID3D12Debug4">
+    <summary>Adds the ability to disable the debug layer.</summary>
+  </member>
+</doc>

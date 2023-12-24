@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MetafileType">
+    <summary>The <b>MetafileType</b> enumeration specifies types of metafiles. The<see cref="MetafileHeader.GetType" /> method returns an element of this enumeration.</summary>
+  </member>
+  <member name="MetafileType.MetafileTypeInvalid">
+    <summary>Specifies a metafile format that is not recognized in GDI+.</summary>
+  </member>
+  <member name="MetafileType.MetafileTypeWmf">
+    <summary>Specifies a WMF file. Such a file contains only GDI records.</summary>
+  </member>
+  <member name="MetafileType.MetafileTypeWmfPlaceable">
+    <summary>Specifies a WMF file that has a placeable metafile header in front of it.</summary>
+  </member>
+  <member name="MetafileType.MetafileTypeEmf">
+    <summary>Specifies an EMF file. Such a file contains only GDI records.</summary>
+  </member>
+  <member name="MetafileType.MetafileTypeEmfPlusOnly">
+    <summary>Specifies an EMF+ file. Such a file contains only GDI+ records and must be displayed by using GDI+. Displaying the records using GDI may cause unpredictable results.</summary>
+  </member>
+  <member name="MetafileType.MetafileTypeEmfPlusDual">
+    <summary>Specifies an EMF+ Dual file. Such a file contains GDI+ records along with alternative GDI records and can be displayed by using either GDI or GDI+. Displaying the records using GDI may cause some quality degradation.</summary>
+  </member>
+</doc>

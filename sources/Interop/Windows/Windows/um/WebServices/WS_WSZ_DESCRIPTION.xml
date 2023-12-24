@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_WSZ_DESCRIPTION">
-    <summary>
-      <para>This type description is used with <see cref="WS_WSZ_TYPE" /> and is optional.
-It is used to specify constraints on the set of values
-which can be deserialized.</para>
-    </summary>
+    <summary>This type description is used with <see cref="WS_WSZ_TYPE" /> and is optional. It is used to specify constraints on the set of values which can be deserialized.</summary>
   </member>
   <member name="WS_WSZ_DESCRIPTION.minCharCount">
-    <summary>
-      <para>Specifies the minimum number of characters (not including the terminating '\0' character).</para>
-    </summary>
+    <summary>Specifies the minimum number of characters (not including the terminating '\0' character).</summary>
   </member>
   <member name="WS_WSZ_DESCRIPTION.maxCharCount">
-    <summary>
-      <para>Specifies the maximum number of characters (not including the terminating '\0' character).</para>
-    </summary>
+    <summary>Specifies the maximum number of characters (not including the terminating '\0' character).</summary>
   </member>
 </doc>

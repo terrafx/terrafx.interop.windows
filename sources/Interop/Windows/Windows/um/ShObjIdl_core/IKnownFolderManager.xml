@@ -3,334 +3,158 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IKnownFolderManager.FindFolderFromIDList">
-    <summary>
-      <para>Gets an object that represents a known folder based on an IDList. The object allows you to query certain folder properties, get the current path of the folder, redirect the folder to another location, and get the path of the folder as an <see cref="ITEMIDLIST" />.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>A pointer to the IDList.</para>
-    </param>
-    <param name="ppkf">
-      <para>Type: <b><see cref="IKnownFolder" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the <see cref="IKnownFolder" /> object that represents the known folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IKnownFolderManager" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Gets an object that represents a known folder based on an IDList. The object allows you to query certain folder properties, get the current path of the folder, redirect the folder to another location, and get the path of the folder as an <see cref="ITEMIDLIST" />.</summary>
+    <param name="pidl">A pointer to the IDList.</param>
+    <param name="ppkf">When this method returns, contains the address of a pointer to the <see cref="IKnownFolder" /> object that represents the known folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolderManager.FindFolderFromPath">
-    <summary>
-      <para>Gets an object that represents a known folder based on a file system path. The object allows you to query certain folder properties, get the current path of the folder, redirect the folder to another location, and get the path of the folder as an <see cref="ITEMIDLIST" />.</para>
-    </summary>
-    <param name="pszPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to a null-terminated Unicode string of length MAX_PATH that contains a path to a known folder.</para>
-    </param>
+    <summary>Gets an object that represents a known folder based on a file system path. The object allows you to query certain folder properties, get the current path of the folder, redirect the folder to another location, and get the path of the folder as an <see cref="ITEMIDLIST" />.</summary>
+    <param name="pszPath">Pointer to a null-terminated Unicode string of length MAX_PATH that contains a path to a known folder.</param>
     <param name="mode">
-      <para>Type: <b><see cref="FFFP_MODE" /></b></para>
       <para>One of the following values that specify the precision of the match of path and known folder:</para>
       <h4>FFFP_EXACTMATCH</h4>
       <para>Retrieve only the specific known folder for the given file path.</para>
       <h4>FFFP_NEARESTPARENTMATCH</h4>
       <para>If an exact match is not found for the given file path, retrieve the first known folder that matches one of its parent folders walking up the parent tree.</para>
     </param>
-    <param name="ppkf">
-      <para>Type: <b><see cref="IKnownFolder" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the <see cref="IKnownFolder" /> object that represents the known folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IKnownFolderManager" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <param name="ppkf">When this method returns, contains the address of a pointer to the <see cref="IKnownFolder" /> object that represents the known folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolderManager.FolderIdFromCsidl">
-    <summary>
-      <para>Gets the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is the equivalent of a legacy <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> value.</para>
-    </summary>
-    <param name="nCsidl">
-      <para>Type: <b>int</b></para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> value.</para>
-    </param>
-    <param name="pfid">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>*</b></para>
-      <para>When this method returns, contains a pointer to the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>. This pointer is passed uninitialized.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To call this method, the caller must have at least User privileges.</para>
-    </remarks>
-    <seealso cref="IKnownFolderManager" />
-    <seealso cref="IKnownFolderManager.FolderIdToCsidl" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Gets the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is the equivalent of a legacy <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> value.</summary>
+    <param name="nCsidl">The <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> value.</param>
+    <param name="pfid">When this method returns, contains a pointer to the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>. This pointer is passed uninitialized.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolderManager.FolderIdToCsidl">
-    <summary>
-      <para>Gets the legacy <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> value that is the equivalent of a given <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>.</para>
-    </summary>
-    <param name="rfid">
-      <para>Type: <b>REFKNOWNFOLDERID</b></para>
-      <para>Reference to the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>.</para>
-    </param>
-    <param name="pnCsidl">
-      <para>Type: <b>int*</b></para>
-      <para>When this method returns, contains a pointer to the <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> value. This pointer is passed uninitialized.</para>
-    </param>
+    <summary>Gets the legacy <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> value that is the equivalent of a given <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>.</summary>
+    <param name="rfid">Reference to the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>.</param>
+    <param name="pnCsidl">When this method returns, contains a pointer to the <a href="https://docs.microsoft.com//windows/desktop/shell/csidl">CSIDL</a> value. This pointer is passed uninitialized.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Among other things, this value can indicate that the <i>rfid</i> parameter references a <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is not present on the system. Not all <b>KNOWNFOLDERID</b> values are present on all systems. Use <see cref="IKnownFolderManager.GetFolderIds" /> to retrieve the set of <b>KNOWNFOLDERID</b> values for the current system.</para>
-          </description>
-        </item>
+          <description>Among other things, this value can indicate that the <i>rfid</i> parameter references a <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is not present on the system. Not all <b>KNOWNFOLDERID</b> values are present on all systems. Use <see cref="IKnownFolderManager.GetFolderIds" /> to retrieve the set of <b>KNOWNFOLDERID</b> values for the current system.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To call this method, the caller must have at least User privileges.</para>
-    </remarks>
-    <seealso cref="IKnownFolderManager" />
-    <seealso cref="IKnownFolderManager.FolderIdFromCsidl" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
   </member>
   <member name="IKnownFolderManager.GetFolder">
-    <summary>
-      <para>Gets an object that represents a known folder identified by its <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>. The object allows you to query certain folder properties, get the current path of the folder, redirect the folder to another location, and get the path of the folder as an <see cref="ITEMIDLIST" />.</para>
-    </summary>
-    <param name="rfid">
-      <para>Type: <b>REFKNOWNFOLDERID</b></para>
-      <para>Reference to the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>.</para>
-    </param>
-    <param name="ppkf">
-      <para>Type: <b><see cref="IKnownFolder" />**</b></para>
-      <para>When this method returns, contains an interface pointer to the <see cref="IKnownFolder" /> object that represents the folder.</para>
-    </param>
+    <summary>Gets an object that represents a known folder identified by its <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>. The object allows you to query certain folder properties, get the current path of the folder, redirect the folder to another location, and get the path of the folder as an <see cref="ITEMIDLIST" />.</summary>
+    <param name="rfid">Reference to the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>.</param>
+    <param name="ppkf">When this method returns, contains an interface pointer to the <see cref="IKnownFolder" /> object that represents the folder.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Among other things, this value can indicate that the <i>rfid</i> parameter references a <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is not present on the system. Not all <b>KNOWNFOLDERID</b> values are present on all systems. Use <see cref="IKnownFolderManager.GetFolderIds" /> to retrieve the set of <b>KNOWNFOLDERID</b> values for the current system.</para>
-          </description>
-        </item>
+          <description>Among other things, this value can indicate that the <i>rfid</i> parameter references a <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is not present on the system. Not all <b>KNOWNFOLDERID</b> values are present on all systems. Use <see cref="IKnownFolderManager.GetFolderIds" /> to retrieve the set of <b>KNOWNFOLDERID</b> values for the current system.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To call this method, the caller must have at least User privileges.</para>
-      <h3>When to Use</h3>
-      <para>Use this method when you know exactly which known folder you are looking for and want to access it directly.</para>
-    </remarks>
-    <seealso cref="IKnownFolderManager" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
   </member>
   <member name="IKnownFolderManager.GetFolderByName">
-    <summary>
-      <para>Gets an object that represents a known folder identified by its canonical name. The object allows you to query certain folder properties, get the current path of the folder, redirect the folder to another location, and get the path of the folder as an <see cref="ITEMIDLIST" />.</para>
-    </summary>
-    <param name="pszCanonicalName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the non-localized, canonical name for the known folder, stored as a null-terminated Unicode string. If this folder is a <see cref="common" /> or <see cref="per-user" /> folder, this value is also used as the value name of the "User Shell Folders" registry settings. This value is retrieved through the <b>pszName</b> member of the folder's <see cref="KNOWNFOLDER_DEFINITION" /> structure.</para>
-    </param>
-    <param name="ppkf">
-      <para>Type: <b><see cref="IKnownFolder" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the <see cref="IKnownFolder" /> object that represents the known folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <h3>When to Use</h3>
-      <para>Use this method when you know exactly which known folder you are looking for and want to access it directly.</para>
-    </remarks>
-    <seealso cref="IKnownFolderManager" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Gets an object that represents a known folder identified by its canonical name. The object allows you to query certain folder properties, get the current path of the folder, redirect the folder to another location, and get the path of the folder as an <see cref="ITEMIDLIST" />.</summary>
+    <param name="pszCanonicalName">A pointer to the non-localized, canonical name for the known folder, stored as a null-terminated Unicode string. If this folder is a <see cref="common" /> or <see cref="per-user" /> folder, this value is also used as the value name of the "User Shell Folders" registry settings. This value is retrieved through the <b>pszName</b> member of the folder's <see cref="KNOWNFOLDER_DEFINITION" /> structure.</param>
+    <param name="ppkf">When this method returns, contains the address of a pointer to the <see cref="IKnownFolder" /> object that represents the known folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolderManager.GetFolderIds">
-    <summary>
-      <para>Gets an array of all registered known folder IDs. This can be used in enumerating all known folders.</para>
-    </summary>
-    <param name="ppKFId">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a>**</b></para>
-      <para>When this method returns, contains a pointer to an array of all <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values registered with the system. Use <see cref="CoTaskMemFree" /> to free these resources when they are no longer needed.</para>
-    </param>
-    <param name="pCount">
-      <para>Type: <b>UINT*</b></para>
-      <para>When this method returns, contains a pointer to the number of <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values in the array at <i>ppKFId</i>. The [in] functionality of this parameter is not used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The caller of this method must have User privileges.</para>
-      <para>You can use <see cref="StringFromCLSID" /> or <see cref="StringFromGUID2" /> to convert the retrieved <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values to strings.</para>
-    </remarks>
-    <seealso cref="IKnownFolderManager" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Gets an array of all registered known folder IDs. This can be used in enumerating all known folders.</summary>
+    <param name="ppKFId">When this method returns, contains a pointer to an array of all <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values registered with the system. Use <see cref="CoTaskMemFree" /> to free these resources when they are no longer needed.</param>
+    <param name="pCount">When this method returns, contains a pointer to the number of <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values in the array at <i>ppKFId</i>. The [in] functionality of this parameter is not used.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolderManager.Redirect">
-    <summary>
-      <para>Redirects folder requests for common and per-user folders.</para>
-    </summary>
-    <param name="rfid">
-      <para>Type: <b>REFKNOWNFOLDERID</b></para>
-      <para>A reference to the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> of the folder to be redirected.</para>
-    </param>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the parent window used to display copy engine progress UI dialogs when <see cref="KF_REDIRECT_WITH_UI" /> is passed in the <i>flags</i> parameter. If no progress dialog is needed, this value can be <b>NULL</b>.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b><see cref="KF_REDIRECT_FLAGS" /></b></para>
-      <para>The <see cref="KF_REDIRECT_FLAGS" /> options for redirection.</para>
-    </param>
-    <param name="pszTargetPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the new path for the folder. This is a null-terminated Unicode string. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="cFolders">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values in the array at <i>pExclusion</i>.</para>
-    </param>
-    <param name="pExclusion">
-      <para>Type: <b>KNOWNFOLDERID const*</b></para>
-      <para>Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values that refer to subfolders of <i>rfid</i> that should be excluded from the redirection. If no subfolders are excluded, this value can be <b>NULL</b>.</para>
-    </param>
-    <param name="ppszError">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to a null-terminated Unicode string that contains an error message if one was generated. This value can be <b>NULL</b>.</para>
-    </param>
+    <summary>Redirects folder requests for common and per-user folders.</summary>
+    <param name="rfid">A reference to the <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> of the folder to be redirected.</param>
+    <param name="hwnd">The handle of the parent window used to display copy engine progress UI dialogs when <see cref="KF_REDIRECT_WITH_UI" /> is passed in the <i>flags</i> parameter. If no progress dialog is needed, this value can be <b>NULL</b>.</param>
+    <param name="flags">The <see cref="KF_REDIRECT_FLAGS" /> options for redirection.</param>
+    <param name="pszTargetPath">A pointer to the new path for the folder. This is a null-terminated Unicode string. This value can be <b>NULL</b>.</param>
+    <param name="cFolders">The number of <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values in the array at <i>pExclusion</i>.</param>
+    <param name="pExclusion">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values that refer to subfolders of <i>rfid</i> that should be excluded from the redirection. If no subfolders are excluded, this value can be <b>NULL</b>.</param>
+    <param name="ppszError">When this method returns, contains the address of a pointer to a null-terminated Unicode string that contains an error message if one was generated. This value can be <b>NULL</b>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Among other things, this value can indicate that the <i>rfid</i> parameter references a <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is not present on the system. Not all <b>KNOWNFOLDERID</b> values are present on all systems. Use <see cref="IKnownFolderManager.GetFolderIds" /> to retrieve the set of <b>KNOWNFOLDERID</b> values for the current system.</para>
-          </description>
-        </item>
+          <description>Among other things, this value can indicate that the <i>rfid</i> parameter references a <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is not present on the system. Not all <b>KNOWNFOLDERID</b> values are present on all systems. Use <see cref="IKnownFolderManager.GetFolderIds" /> to retrieve the set of <b>KNOWNFOLDERID</b> values for the current system.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IKnownFolderManager" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
   </member>
   <member name="IKnownFolderManager.RegisterFolder">
-    <summary>
-      <para>Adds a new known folder to the registry. Used particularly by independent software vendors (ISVs) that are adding one of their own folders to the known folder system.</para>
-    </summary>
-    <param name="rfid">
-      <para>Type: <b>REFKNOWNFOLDERID</b></para>
-      <para>A <b>GUID</b> that represents the known folder.</para>
-    </param>
-    <param name="pKFD">
-      <para>Type: <b>const KNOWNFOLDER_DEFINITION*</b></para>
-      <para>A pointer to a valid <see cref="KNOWNFOLDER_DEFINITION" /> structure that provides the details of the new folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  This method updates <b>HKEY_LOCAL_MACHINE</b> and therefore needs to be run in the context of an administrator. Setup programs need administrator privileges to register or unregister a known folder.</para>
-      <para>
-        <b>IKnownFolderManager.RegisterFolder</b> attempts to verify that the new <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> does not refer to a file system path already pointed to by an existing <b>KNOWNFOLDERID</b>. If the new <b>KNOWNFOLDERID</b> is found to do so, this method fails.</para>
-      <para>Multiple <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> values for the same file system path can cause several issues, such as conflicts in the Desktop.ini file that lead to confusion as to what language or properties to show for the folder. Multiple <b>KNOWNFOLDERID</b> values can also cause confusion as to the address bar path or what tasks to show for the folder in Windows Explorer.</para>
-      <para>You can suppress the display of the <b>Customize</b> page of your known folder's Properties window. To do so, set the following registry REG_DWORD value:</para>
-      <code>
-        <b>HKEY_LOCAL_MACHINE</b>
-        <b>Software</b>
-        <b>Microsoft</b>
-        <b>Windows</b>
-        <b>CurrentVersion</b>
-        <b>Explorer</b>
-        <b>FolderDescriptions</b>
-        <i>Folder GUID</i>
-        <b>PropertyBag</b>
-        <b>NoCustomize</b> = 0x00000001 (1)</code>
-    </remarks>
-    <seealso cref="IKnownFolderManager" />
-    <seealso cref="IKnownFolderManager.UnregisterFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Adds a new known folder to the registry. Used particularly by independent software vendors (ISVs) that are adding one of their own folders to the known folder system.</summary>
+    <param name="rfid">A <b>GUID</b> that represents the known folder.</param>
+    <param name="pKFD">A pointer to a valid <see cref="KNOWNFOLDER_DEFINITION" /> structure that provides the details of the new folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IKnownFolderManager.UnregisterFolder">
-    <summary>
-      <para>Remove a known folder from the registry, which makes it unknown to the known folder system. This method does not remove the folder itself.</para>
-    </summary>
+    <summary>Remove a known folder from the registry, which makes it unknown to the known folder system. This method does not remove the folder itself.</summary>
     <param name="rfid">
-      <para>Type: <b>REFKNOWNFOLDERID</b></para>
-      <para>
-        <b>GUID</b> or <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that represents the known folder.</para>
-    </param>
+      <b>GUID</b> or <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that represents the known folder.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Among other things, this value can indicate that the <i>rfid</i> parameter references a <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is not present on the system. Not all <b>KNOWNFOLDERID</b> values are present on all systems. Use <see cref="IKnownFolderManager.GetFolderIds" /> to retrieve the set of <b>KNOWNFOLDERID</b> values known to the current system.</para>
-          </description>
-        </item>
+          <description>Among other things, this value can indicate that the <i>rfid</i> parameter references a <a href="https://docs.microsoft.com//windows/desktop/shell/knownfolderid">KNOWNFOLDERID</a> that is not present on the system. Not all <b>KNOWNFOLDERID</b> values are present on all systems. Use <see cref="IKnownFolderManager.GetFolderIds" /> to retrieve the set of <b>KNOWNFOLDERID</b> values known to the current system.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  This method updates <b>HKEY_LOCAL_MACHINE</b> and needs to be run in the context of an administrator. Setup programs need administrator privileges to register or unregister a known folder.</para>
-    </remarks>
-    <seealso cref="IKnownFolderManager" />
-    <seealso cref="IKnownFolderManager.RegisterFolder" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
   </member>
   <member name="IKnownFolderManager">
-    <summary>
-      <para>Exposes methods that create, enumerate or manage existing known folders.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Exposes methods that create, enumerate or manage existing known folders.</summary>
   </member>
 </doc>

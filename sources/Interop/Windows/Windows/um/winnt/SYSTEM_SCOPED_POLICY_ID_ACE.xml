@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEM_SCOPED_POLICY_ID_ACE">
-    <summary>
-      <para>The <b>SYSTEM_SCOPED_POLICY_ID_ACE</b> structure defines an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE) for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">system access control list</a> (SACL) that specifies the scoped policy identifier for a securable object.</para>
-    </summary>
+    <summary>The <b>SYSTEM_SCOPED_POLICY_ID_ACE</b> structure defines an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access control entry</a> (ACE) for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">system access control list</a> (SACL) that specifies the scoped policy identifier for a securable object.</summary>
   </member>
   <member name="SYSTEM_SCOPED_POLICY_ID_ACE.Header">
-    <summary>
-      <para>An <see cref="ACE_HEADER" /> structure that specifies the size and type of the ACE. The structure also contains flags that control inheritance of the ACE by child objects. The <b>AceType</b> member of the <b>ACE_HEADER</b> structure must be set to <b>SYSTEM_SCOPED_POLICY_ID_ACE</b>, and the <b>AceSize</b> member must be set to the total number of bytes allocated for the <b>SYSTEM_SCOPED_POLICY_ID_ACE</b> structure.</para>
-    </summary>
+    <summary>An <see cref="ACE_HEADER" /> structure that specifies the size and type of the ACE. The structure also contains flags that control inheritance of the ACE by child objects. The <b>AceType</b> member of the <b>ACE_HEADER</b> structure must be set to <b>SYSTEM_SCOPED_POLICY_ID_ACE</b>, and the <b>AceSize</b> member must be set to the total number of bytes allocated for the <b>SYSTEM_SCOPED_POLICY_ID_ACE</b> structure.</summary>
   </member>
   <member name="SYSTEM_SCOPED_POLICY_ID_ACE.Mask">
-    <summary>
-      <para>The access policy associated with the SACL that contains this ACE.</para>
-    </summary>
+    <summary>The access policy associated with the SACL that contains this ACE.</summary>
   </member>
   <member name="SYSTEM_SCOPED_POLICY_ID_ACE.SidStart">
-    <summary>
-      <para>Specifies the first <b>DWORD</b> of a <see cref="SID" />.</para>
-    </summary>
+    <summary>Specifies the first <b>DWORD</b> of a <see cref="SID" />.</summary>
   </member>
 </doc>

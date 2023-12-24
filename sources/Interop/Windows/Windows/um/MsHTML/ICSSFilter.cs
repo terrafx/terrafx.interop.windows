@@ -25,7 +25,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICSSFilter*, Guid*, void**, int>)(lpVtbl[0]))((ICSSFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICSSFilter*, Guid*, void**, int>)(lpVtbl[0]))((ICSSFilter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICSSFilter*, uint>)(lpVtbl[1]))((ICSSFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICSSFilter*, uint>)(lpVtbl[1]))((ICSSFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICSSFilter*, uint>)(lpVtbl[2]))((ICSSFilter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICSSFilter*, uint>)(lpVtbl[2]))((ICSSFilter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICSSFilter.xml' path='doc/member[@name="ICSSFilter.SetSite"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetSite(ICSSFilterSite* pSink)
     {
-        return ((delegate* unmanaged<ICSSFilter*, ICSSFilterSite*, int>)(lpVtbl[3]))((ICSSFilter*)Unsafe.AsPointer(ref this), pSink);
+        return ((delegate* unmanaged[MemberFunction]<ICSSFilter*, ICSSFilterSite*, int>)(lpVtbl[3]))((ICSSFilter*)Unsafe.AsPointer(ref this), pSink);
     }
 
     /// <include file='ICSSFilter.xml' path='doc/member[@name="ICSSFilter.OnAmbientPropertyChange"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT OnAmbientPropertyChange([NativeTypeName("LONG")] int dispid)
     {
-        return ((delegate* unmanaged<ICSSFilter*, int, int>)(lpVtbl[4]))((ICSSFilter*)Unsafe.AsPointer(ref this), dispid);
+        return ((delegate* unmanaged[MemberFunction]<ICSSFilter*, int, int>)(lpVtbl[4]))((ICSSFilter*)Unsafe.AsPointer(ref this), dispid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ICSSFilter : ICSSFilter.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ICSSFilterSite *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICSSFilterSite*, int> SetSite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICSSFilterSite*, int> SetSite;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> OnAmbientPropertyChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> OnAmbientPropertyChange;
     }
 }

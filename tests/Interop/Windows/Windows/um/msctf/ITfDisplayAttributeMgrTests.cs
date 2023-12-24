@@ -19,32 +19,4 @@ public static unsafe partial class ITfDisplayAttributeMgrTests
     {
         Assert.That(typeof(ITfDisplayAttributeMgr).GUID, Is.EqualTo(IID_ITfDisplayAttributeMgr));
     }
-
-    /// <summary>Validates that the <see cref="ITfDisplayAttributeMgr" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfDisplayAttributeMgr>(), Is.EqualTo(sizeof(ITfDisplayAttributeMgr)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfDisplayAttributeMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfDisplayAttributeMgr).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfDisplayAttributeMgr" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfDisplayAttributeMgr), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfDisplayAttributeMgr), Is.EqualTo(4));
-        }
-    }
 }

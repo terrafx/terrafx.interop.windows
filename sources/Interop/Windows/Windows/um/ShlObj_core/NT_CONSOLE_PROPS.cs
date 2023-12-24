@@ -3,8 +3,6 @@
 // Ported from um/ShlObj_core.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -12,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct NT_CONSOLE_PROPS
+public partial struct NT_CONSOLE_PROPS
 {
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.dbh"]/*' />
     public DATABLOCK_HEADER dbh;
@@ -53,7 +51,7 @@ public unsafe partial struct NT_CONSOLE_PROPS
 
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.FaceName"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort FaceName[32];
+    public _FaceName_e__FixedBuffer FaceName;
 
     /// <include file='NT_CONSOLE_PROPS.xml' path='doc/member[@name="NT_CONSOLE_PROPS.uCursorSize"]/*' />
     public uint uCursorSize;
@@ -83,39 +81,19 @@ public unsafe partial struct NT_CONSOLE_PROPS
     [NativeTypeName("COLORREF[16]")]
     public _ColorTable_e__FixedBuffer ColorTable;
 
+    /// <include file='_FaceName_e__FixedBuffer.xml' path='doc/member[@name="_FaceName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(32)]
+    public partial struct _FaceName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
     /// <include file='_ColorTable_e__FixedBuffer.xml' path='doc/member[@name="_ColorTable_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(16)]
     public partial struct _ColorTable_e__FixedBuffer
     {
         public COLORREF e0;
-        public COLORREF e1;
-        public COLORREF e2;
-        public COLORREF e3;
-        public COLORREF e4;
-        public COLORREF e5;
-        public COLORREF e6;
-        public COLORREF e7;
-        public COLORREF e8;
-        public COLORREF e9;
-        public COLORREF e10;
-        public COLORREF e11;
-        public COLORREF e12;
-        public COLORREF e13;
-        public COLORREF e14;
-        public COLORREF e15;
-
-        [UnscopedRef]
-        public ref COLORREF this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<COLORREF> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

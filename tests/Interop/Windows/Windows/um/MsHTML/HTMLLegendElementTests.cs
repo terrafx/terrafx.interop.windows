@@ -19,25 +19,4 @@ public static unsafe partial class HTMLLegendElementTests
     {
         Assert.That(typeof(HTMLLegendElement).GUID, Is.EqualTo(IID_HTMLLegendElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLLegendElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLLegendElement>(), Is.EqualTo(sizeof(HTMLLegendElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLLegendElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLLegendElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLLegendElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLLegendElement), Is.EqualTo(1));
-    }
 }

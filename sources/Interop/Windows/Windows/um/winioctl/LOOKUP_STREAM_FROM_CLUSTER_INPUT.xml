@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_INPUT">
-    <summary>
-      <para>Passed as input to the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_lookup_stream_from_cluster">FSCTL_LOOKUP_STREAM_FROM_CLUSTER</a> control
-code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_lookup_stream_from_cluster">FSCTL_LOOKUP_STREAM_FROM_CLUSTER</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Passed as input to the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_lookup_stream_from_cluster">FSCTL_LOOKUP_STREAM_FROM_CLUSTER</a> control code.</summary>
   </member>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_INPUT.Flags">
-    <summary>
-      <para>Flags for the operation. Currently no flags are defined.</para>
-    </summary>
+    <summary>Flags for the operation. Currently no flags are defined.</summary>
   </member>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_INPUT.NumberOfClusters">
-    <summary>
-      <para>Number of clusters in the following array of clusters. The input buffer must be large enough to contain
-this number or the operation will fail.</para>
-    </summary>
+    <summary>Number of clusters in the following array of clusters. The input buffer must be large enough to contain this number or the operation will fail.</summary>
   </member>
   <member name="LOOKUP_STREAM_FROM_CLUSTER_INPUT.Cluster">
-    <summary>
-      <para>An array of one or more clusters to look up.</para>
-    </summary>
+    <summary>An array of one or more clusters to look up.</summary>
   </member>
 </doc>

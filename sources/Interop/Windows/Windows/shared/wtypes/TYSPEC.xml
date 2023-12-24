@@ -3,71 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TYSPEC">
-    <summary>
-      <para>Specifies a mapping for a class ID.</para>
-    </summary>
-    <remarks>
-      <para>The TYSPEC enumeration and uCLSSPEC union provide mappings to a class ID. Note that TYSPEC_CLSID is the only supported value.</para>
-      <code>    typedef union switch(DWORD tyspec)
-        {
-        case TYSPEC_CLSID:
-            CLSID   clsid;
-        case TYSPEC_FILEEXT:
-            LPOLESTR pFileExt;
-        case TYSPEC_MIMETYPE:
-            LPOLESTR pMimeType;
-        case TYSPEC_PROGID:
-            LPOLESTR pProgId;
-        case TYSPEC_FILENAME:
-            LPOLESTR pFileName;
-        case TYSPEC_PACKAGENAME:
-            struct {
-            LPOLESTR pPackageName;
-            GUID     PolicyId;
-            } ByName;
-        case TYSPEC_OBJECTID:
-            struct {
-            GUID     ObjectId;
-            GUID     PolicyId;
-            } ByObjectId;
-    } uCLSSPEC;
-</code>
-    </remarks>
-    <seealso cref="CoInstall" />
+    <summary>Specifies a mapping for a class ID.</summary>
   </member>
   <member name="TYSPEC.TYSPEC_CLSID">
-    <summary>
-      <para>A CLSID.</para>
-    </summary>
+    <summary>A CLSID.</summary>
   </member>
   <member name="TYSPEC.TYSPEC_FILEEXT">
-    <summary>
-      <para>A file name extension.</para>
-    </summary>
+    <summary>A file name extension.</summary>
   </member>
   <member name="TYSPEC.TYSPEC_MIMETYPE">
-    <summary>
-      <para>A MIME type.</para>
-    </summary>
+    <summary>A MIME type.</summary>
   </member>
   <member name="TYSPEC.TYSPEC_FILENAME">
-    <summary>
-      <para>A file name.</para>
-    </summary>
+    <summary>A file name.</summary>
   </member>
   <member name="TYSPEC.TYSPEC_PROGID">
-    <summary>
-      <para>A PROGID.</para>
-    </summary>
+    <summary>A PROGID.</summary>
   </member>
   <member name="TYSPEC.TYSPEC_PACKAGENAME">
-    <summary>
-      <para>A package name.</para>
-    </summary>
+    <summary>A package name.</summary>
   </member>
   <member name="TYSPEC.TYSPEC_OBJECTID">
-    <summary>
-      <para>An object ID.</para>
-    </summary>
+    <summary>An object ID.</summary>
   </member>
 </doc>

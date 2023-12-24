@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IBlockingLock.Lock">
-    <summary>
-      <para>Requests a lock on a shared resource.</para>
-    </summary>
-    <param name="dwTimeout">
-      <para>The time interval after which the attempted lock operation fails.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IBlockingLock" />
+    <summary>Requests a lock on a shared resource.</summary>
+    <param name="dwTimeout">The time interval after which the attempted lock operation fails.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IBlockingLock.Unlock">
-    <summary>
-      <para>Releases a lock on a shared resource.</para>
-    </summary>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IBlockingLock" />
+    <summary>Releases a lock on a shared resource.</summary>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IBlockingLock">
-    <summary>
-      <para>Provides a semaphore that can be used to provide temporarily exclusive access to a shared resource such as a file.</para>
-    </summary>
+    <summary>Provides a semaphore that can be used to provide temporarily exclusive access to a shared resource such as a file.</summary>
   </member>
 </doc>

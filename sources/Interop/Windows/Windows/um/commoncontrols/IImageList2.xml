@@ -3,565 +3,375 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IImageList2.DiscardImages">
-    <summary>
-      <para>Discards images from list, as specified.</para>
-    </summary>
-    <param name="iFirstImage">
-      <para>Type: <b>int</b></para>
-      <para>An index of first image to discard.</para>
-    </param>
-    <param name="iLastImage">
-      <para>Type: <b>int</b></para>
-      <para>An index of last image to discard.</para>
-    </param>
+    <summary>Discards images from list, as specified.</summary>
+    <param name="iFirstImage">An index of first image to discard.</param>
+    <param name="iLastImage">An index of last image to discard.</param>
     <param name="dwFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Discard images flags. <b>ILDI_STANDBY</b> and <b>ILDI_PURGE</b> are mutually exclusive. <b>ILDI_RESETACCESS</b> can be combined with either. One or more of the following are valid.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILDI_PURGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Discard and purge.</para>
-          </description>
-        </item>
-        <item>
+          <description>Discard and purge.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILDI_STANDBY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Discard to standby list.</para>
-          </description>
-        </item>
-        <item>
+          <description>Discard to standby list.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILDI_RESETACCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Reset the "has been accessed" flag.</para>
-          </description>
-        </item>
-        <item>
+          <description>Reset the "has been accessed" flag.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILDI_QUERYACCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Ask whether access flag is set (but do not reset).</para>
-          </description>
-        </item>
+          <description>Ask whether access flag is set (but do not reset).</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.ForceImagePresent">
-    <summary>
-      <para>Forces an image present, as specified.</para>
-    </summary>
-    <param name="iImage">
-      <para>Type: <b>int</b></para>
-      <para>An index of image to force present.</para>
-    </param>
+    <summary>Forces an image present, as specified.</summary>
+    <param name="iImage">An index of image to force present.</param>
     <param name="dwFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Force image flags. One of the following is valid.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILFIP_ALWAYS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Always get the image (can be slow).</para>
-          </description>
-        </item>
-        <item>
+          <description>Always get the image (can be slow).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILFIP_FROMSTANDBY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Only get if on standby.</para>
-          </description>
-        </item>
+          <description>Only get if on standby.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.GetCallback">
-    <summary>
-      <para>Gets an image list callback object.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>Reference to a desired IID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>Contains the address of a pointer to a callback object.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets an image list callback object.</summary>
+    <param name="riid">Reference to a desired IID.</param>
+    <param name="ppv">Contains the address of a pointer to a callback object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.GetOriginalSize">
-    <summary>
-      <para>Gets the original size of a specified image.</para>
-    </summary>
-    <param name="iImage">
-      <para>Type: <b>int</b></para>
-      <para>The index of desired image.</para>
-    </param>
+    <summary>Gets the original size of a specified image.</summary>
+    <param name="iImage">The index of desired image.</param>
     <param name="dwFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Flags for getting original size. One of the following is valid.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILGOS_ALWAYS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Always get the original size (can be slow).</para>
-          </description>
-        </item>
-        <item>
+          <description>Always get the original size (can be slow).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILGOS_FROMSTANDBY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Only get if present or on standby.</para>
-          </description>
-        </item>
+          <description>Only get if present or on standby.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pcx">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to the x-axis count.</para>
-    </param>
-    <param name="pcy">
-      <para>Type: <b>int*</b></para>
-      <para>A pointer to the y-axis count.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="pcx">A pointer to the x-axis count.</param>
+    <param name="pcy">A pointer to the y-axis count.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.GetStatistics">
-    <summary>
-      <para>Gets an image list statistics structure.</para>
-    </summary>
-    <param name="pils">
-      <para>Type: <b><see cref="IMAGELISTSTATS" />*</b></para>
-      <para>A pointer to the <see cref="IMAGELISTSTATS" /> structure.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets an image list statistics structure.</summary>
+    <param name="pils">A pointer to the <see cref="IMAGELISTSTATS" /> structure.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.Initialize">
-    <summary>
-      <para>Initializes an image list.</para>
-    </summary>
-    <param name="cx">
-      <para>Type: <b>int</b></para>
-      <para>Width, in pixels, of each image.</para>
-    </param>
-    <param name="cy">
-      <para>Type: <b>int</b></para>
-      <para>Height, in pixels, of each image.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A combination of <a href="https://docs.microsoft.com//windows/desktop/Controls/ilc-constants">Image List Creation Flags</a>.</para>
-    </param>
-    <param name="cInitial">
-      <para>Type: <b>int</b></para>
-      <para>Number of images that the image list initially contains.</para>
-    </param>
-    <param name="cGrow">
-      <para>Type: <b>int</b></para>
-      <para>Number of new images that the image list can contain.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initializes an image list.</summary>
+    <param name="cx">Width, in pixels, of each image.</param>
+    <param name="cy">Height, in pixels, of each image.</param>
+    <param name="flags">A combination of <a href="https://docs.microsoft.com//windows/desktop/Controls/ilc-constants">Image List Creation Flags</a>.</param>
+    <param name="cInitial">Number of images that the image list initially contains.</param>
+    <param name="cGrow">Number of new images that the image list can contain.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.PreloadImages">
-    <summary>
-      <para>Preloads images, as specified.</para>
-    </summary>
-    <param name="pimldp">
-      <para>Type: <b><see cref="IMAGELISTDRAWPARAMS" />*</b></para>
-      <para>A pointer to an <see cref="IMAGELISTDRAWPARAMS" /> structure containing information about an image list draw operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Preloads images, as specified.</summary>
+    <param name="pimldp">A pointer to an <see cref="IMAGELISTDRAWPARAMS" /> structure containing information about an image list draw operation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.Replace2">
-    <summary>
-      <para>Replaces an image in an image list.</para>
-    </summary>
-    <param name="i">
-      <para>Type: <b>int</b></para>
-      <para>The index of the image to replace.</para>
-    </param>
-    <param name="hbmImage">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HBITMAP</a></b></para>
-      <para>A handle to the bitmap that contains the image.</para>
-    </param>
-    <param name="hbmMask">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HBITMAP</a></b></para>
-      <para>A handle to the bitmap that contains the mask. If no mask is used with the image list, this parameter is ignored.</para>
-    </param>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the <see cref="IUnknown" /> interface.</para>
-    </param>
+    <summary>Replaces an image in an image list.</summary>
+    <param name="i">The index of the image to replace.</param>
+    <param name="hbmImage">A handle to the bitmap that contains the image.</param>
+    <param name="hbmMask">A handle to the bitmap that contains the mask. If no mask is used with the image list, this parameter is ignored.</param>
+    <param name="punk">A pointer to the <see cref="IUnknown" /> interface.</param>
     <param name="dwFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Specifies how the mask is applied to the image as one or a bitwise combination of the following decoration flags.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILR_DEFAULT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Not used.</para>
-          </description>
-        </item>
-        <item>
+          <description>Not used.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILR_HORIZONTAL_LEFT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Horizontally align to left.</para>
-          </description>
-        </item>
-        <item>
+          <description>Horizontally align to left.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILR_HORIZONTAL_CENTER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Horizontally center.</para>
-          </description>
-        </item>
-        <item>
+          <description>Horizontally center.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILR_HORIZONTAL_RIGHT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Horizontally align to right.</para>
-          </description>
-        </item>
-        <item>
+          <description>Horizontally align to right.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILR_VERTICAL_TOP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Vertically align to top.</para>
-          </description>
-        </item>
-        <item>
+          <description>Vertically align to top.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILR_VERTICAL_CENTER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Vertically align to center.</para>
-          </description>
-        </item>
-        <item>
+          <description>Vertically align to center.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILR_VERTICAL_BOTTOM</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Vertically align to bottom.</para>
-          </description>
-        </item>
-        <item>
+          <description>Vertically align to bottom.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILR_SCALE_CLIP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Do nothing.</para>
-          </description>
-        </item>
-        <item>
+          <description>Do nothing.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ILR_SCALE_ASPECTRATIO</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Scale.</para>
-          </description>
-        </item>
+          <description>Scale.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.ReplaceFromImageList">
-    <summary>
-      <para>Replaces an image in one image list with an image from another image list.</para>
-    </summary>
-    <param name="i">
-      <para>Type: <b>int</b></para>
-      <para>The index of the destination image in the image list. This is the image that is overwritten by the new image.</para>
-    </param>
-    <param name="pil">
-      <para>Type: <b><see cref="IImageList" />*</b></para>
-      <para>A pointer to the source image list.</para>
-    </param>
-    <param name="iSrc">
-      <para>Type: <b>int</b></para>
-      <para>The index of the source image in the image list pointed to by <i>pil</i>.</para>
-    </param>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the <see cref="IUnknown" /> interface.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>Not used; must be 0.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Replaces an image in one image list with an image from another image list.</summary>
+    <param name="i">The index of the destination image in the image list. This is the image that is overwritten by the new image.</param>
+    <param name="pil">A pointer to the source image list.</param>
+    <param name="iSrc">The index of the source image in the image list pointed to by <i>pil</i>.</param>
+    <param name="punk">A pointer to the <see cref="IUnknown" /> interface.</param>
+    <param name="dwFlags">Not used; must be 0.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.Resize">
-    <summary>
-      <para>Resizes the current image.</para>
-    </summary>
-    <param name="cxNewIconSize">
-      <para>Type: <b>int</b></para>
-      <para>The x-axis count, in pixels, for the new size.</para>
-    </param>
-    <param name="cyNewIconSize">
-      <para>Type: <b>int</b></para>
-      <para>The y-axis count, in pixels, for the new size.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Resizes the current image.</summary>
+    <param name="cxNewIconSize">The x-axis count, in pixels, for the new size.</param>
+    <param name="cyNewIconSize">The y-axis count, in pixels, for the new size.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.SetCallback">
-    <summary>
-      <para>Sets an image list callback.</para>
-    </summary>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the callback interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets an image list callback.</summary>
+    <param name="punk">A pointer to the callback interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2.SetOriginalSize">
-    <summary>
-      <para>Sets the original size of a specified image.</para>
-    </summary>
-    <param name="iImage">
-      <para>Type: <b>int</b></para>
-      <para>An index of desired image.</para>
-    </param>
-    <param name="cx">
-      <para>Type: <b>int</b></para>
-      <para>The x-axis count.</para>
-    </param>
-    <param name="cy">
-      <para>Type: <b>int</b></para>
-      <para>The y-axis count.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the original size of a specified image.</summary>
+    <param name="iImage">An index of desired image.</param>
+    <param name="cx">The x-axis count.</param>
+    <param name="cy">The y-axis count.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IImageList2">
-    <summary>
-      <para>Extends <see cref="IImageList" /> by providing additional methods for manipulating and interacting with image lists.</para>
-    </summary>
+    <summary>Extends <see cref="IImageList" /> by providing additional methods for manipulating and interacting with image lists.</summary>
   </member>
 </doc>

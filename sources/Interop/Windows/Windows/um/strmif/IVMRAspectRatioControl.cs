@@ -25,7 +25,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRAspectRatioControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRAspectRatioControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRAspectRatioControl*, uint>)(lpVtbl[1]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRAspectRatioControl*, uint>)(lpVtbl[1]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRAspectRatioControl*, uint>)(lpVtbl[2]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRAspectRatioControl*, uint>)(lpVtbl[2]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRAspectRatioControl.xml' path='doc/member[@name="IVMRAspectRatioControl.GetAspectRatioMode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
     [VtblIndex(3)]
     public HRESULT GetAspectRatioMode([NativeTypeName("LPDWORD")] uint* lpdwARMode)
     {
-        return ((delegate* unmanaged<IVMRAspectRatioControl*, uint*, int>)(lpVtbl[3]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), lpdwARMode);
+        return ((delegate* unmanaged[MemberFunction]<IVMRAspectRatioControl*, uint*, int>)(lpVtbl[3]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), lpdwARMode);
     }
 
     /// <include file='IVMRAspectRatioControl.xml' path='doc/member[@name="IVMRAspectRatioControl.SetAspectRatioMode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
     [VtblIndex(4)]
     public HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint dwARMode)
     {
-        return ((delegate* unmanaged<IVMRAspectRatioControl*, uint, int>)(lpVtbl[4]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), dwARMode);
+        return ((delegate* unmanaged[MemberFunction]<IVMRAspectRatioControl*, uint, int>)(lpVtbl[4]))((IVMRAspectRatioControl*)Unsafe.AsPointer(ref this), dwARMode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IVMRAspectRatioControl : IVMRAspectRatioControl.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetAspectRatioMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetAspectRatioMode;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetAspectRatioMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetAspectRatioMode;
     }
 }

@@ -3,145 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICFormatConverter.CanConvert">
-    <summary>
-      <para>Determines if the source pixel format can be converted to the destination pixel format.</para>
-    </summary>
-    <param name="srcPixelFormat">
-      <para>Type: <b>REFWICPixelFormatGUID</b></para>
-      <para>The source pixel format.</para>
-    </param>
-    <param name="dstPixelFormat">
-      <para>Type: <b>REFWICPixelFormatGUID</b></para>
-      <para>The destination pixel format.</para>
-    </param>
-    <param name="pfCanConvert">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A pointer that receives a value indicating whether the source pixel format can be converted to the destination pixel format.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IWICFormatConverter" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-codec-native-pixel-formats">Native Pixel Formats</seealso>
+    <summary>Determines if the source pixel format can be converted to the destination pixel format.</summary>
+    <param name="srcPixelFormat">The source pixel format.</param>
+    <param name="dstPixelFormat">The destination pixel format.</param>
+    <param name="pfCanConvert">A pointer that receives a value indicating whether the source pixel format can be converted to the destination pixel format.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICFormatConverter.Initialize">
-    <summary>
-      <para>Initializes the format converter.</para>
-    </summary>
-    <param name="pISource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The input bitmap to convert</para>
-    </param>
-    <param name="dstFormat">
-      <para>Type: <b>REFWICPixelFormatGUID</b></para>
-      <para>The destination pixel format GUID.</para>
-    </param>
-    <param name="dither">
-      <para>Type: <b><see cref="WICBitmapDitherType" /></b></para>
-      <para>The <see cref="WICBitmapDitherType" /> used for conversion.</para>
-    </param>
-    <param name="pIPalette">
-      <para>Type: <b><see cref="IWICPalette" />*</b></para>
-      <para>The palette to use for conversion.</para>
-    </param>
-    <param name="alphaThresholdPercent">
-      <para>Type: <b>double</b></para>
-      <para>The alpha threshold to use for conversion.</para>
-    </param>
-    <param name="paletteTranslate">
-      <para>Type: <b><see cref="WICBitmapPaletteType" /></b></para>
-      <para>The palette translation type to use for conversion.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If you do not have a predefined palette, you must first create one. Use <see cref="InitializeFromBitmap" /> to create the palette object, then pass it in along with your other parameters.</para>
-      <para>
-        <i>dither</i>, <i>pIPalette</i>, <i>alphaThresholdPercent</i>, and <i>paletteTranslate</i> are used to mitigate color loss when converting to a reduced bit-depth format. For conversions that do not need these settings, the following parameters values should be used: <i>dither</i> set to <b>WICBitmapDitherTypeNone</b>, <i>pIPalette</i> set to <b>NULL</b>, <i>alphaThresholdPercent</i> set to <b>0.0f</b>, and <i>paletteTranslate</i> set to <b>WICBitmapPaletteTypeCustom</b>.</para>
-      <para>The basic algorithm involved when using an ordered dither requires a fixed palette, found in the <see cref="WICBitmapPaletteType" /> enumeration, in a specific order.</para>
-      <para>Often, the actual palette provided for the output may have a different ordering or some slight variation in the actual colors. This is the case when using the Microsoft Windows palette which has slight differences among versions of Windows.To provide for this, a palette and a palette translation are given to the format converter. The <i>pIPalette</i> is the actual destination palette to be used and the <i>paletteTranslate</i> is a fixed palette. Once the conversion is complete, the colors are mapped from the fixed palette to the actual colors in <i>pIPalette</i> using a nearest color matching algorithm.</para>
-      <para>If colors in <i>pIPalette</i> do not closely match those in <i>paletteTranslate</i>, the mapping may produce undesirable results.</para>
-      <para>
-        <b>WICBitmapDitherTypeOrdered4x4</b> can be useful in format conversions from 8-bit formats to 5- or 6-bit formats as there is no way to accurately convert color data.</para>
-      <para>
-        <b>WICBitmapDitherTypeErrorDiffusion</b> selects the error diffusion algorithm and may be used with any palette. If an arbitrary palette is provided, <b>WICBitmapPaletteCustom</b> should be passed in as the <i>paletteTranslate</i>. Error diffusion often provides superior results compared to the ordered dithering algorithms especially when combined with the optimized palette generation functionality on the <see cref="IWICPalette" />.</para>
-      <para>When converting a bitmap which has an alpha channel, such as a Portable Network Graphics (PNG), to 8bpp, the alpha channel is normally ignored. Any pixels which were transparent in the original bitmap show up as black in the final output because both transparent and black have pixel values of zero in the respective formats.</para>
-      <para>Some 8bpp content can contains an alpha color; for instance, the Graphics Interchange Format (GIF) format allows for a single palette entry to be used as a transparent color.
-For this type of content, <i>alphaThresholdPercent</i>  specifies what percentage of transparency should map to the transparent color. Because the alpha value is directly proportional to the opacity (not transparency) of a pixel, the <i>alphaThresholdPercent</i> indicates what level of opacity is mapped to the fully transparent color.</para>
-      <para>For instance, 9.8% implies that any pixel with an alpha value of less than 25 will be mapped to the transparent color. A value of 100% maps all pixels which are not fully opaque to the transparent color. Note that the palette should provide a transparent color. If it does not, the 'transparent' color will be the one closest to zero - often black.</para>
-      <h4>Examples</h4>
-      <para>The following example converts an image frame to a 32bppPBGRA format with no dithering or alpha threshold. Direct2D requires bitmap sources to be in the a 32bppPBGRA format for rendering. For a full sample demonstrating the use of the <see cref="IWICFormatConverter" />, see the <a href="https://docs.microsoft.com//windows/win32/wic/-wic-sample-d2d-viewer">WIC Image Viewer Using Direct2D Sample</a>.</para>
-      <code>HRESULT hr = S_OK;
-
-IWICBitmapDecoder *pIDecoder = NULL;
-IWICBitmapFrameDecode *pIDecoderFrame  = NULL;
-IWICFormatConverter *pIFormatConverter = NULL;
-
-// Create the decoder.
-hr = m_pIWICFactory-&gt;CreateDecoderFromFilename(
-   L"turtle.jpg",                  // Image to be decoded
-   NULL,                           // Do not prefer a particular vendor
-   GENERIC_READ,                   // Desired read access to the file
-   WICDecodeMetadataCacheOnDemand, // Cache metadata when needed
-   &amp;amp;amp;amp;amp;amp;pIDecoder                      // Pointer to the decoder
-   );
-
-// Retrieve the first bitmap frame.
-if (SUCCEEDED(hr))
-{
-   hr = pIDecoder-&gt;GetFrame(0, &amp;amp;amp;amp;amp;amp;pIDecoderFrame);
-}
-
-
-// Create the flip/rotator.
-if (SUCCEEDED(hr))
-{
-   hr = m_pIWICFactory-&gt;CreateFormatConverter(&amp;amp;amp;amp;amp;amp;pIFormatConverter);
-}
-
-// Initialize the format converter.
-if (SUCCEEDED(hr))
-{
-   hr = pIFormatConverter-&gt;Initialize(
-       pIDecoderFrame,                  // Input source to convert
-       GUID_WICPixelFormat32bppPBGRA,   // Destination pixel format
-       WICBitmapDitherTypeNone,         // Specified dither pattern
-       NULL,                            // Specify a particular palette
-       0.f,                             // Alpha threshold
-       WICBitmapPaletteTypeCustom       // Palette translation type
-       );
-}
-//Create render target and D2D bitmap from IWICBitmapSource
-if (SUCCEEDED(hr))
-{
-   hr = CreateDeviceResources(hWnd);
-}
-
-if (SUCCEEDED(hr))
-{
-   // Need to release the previous D2DBitmap if there is one
-   SafeRelease(&amp;amp;amp;amp;amp;amp;m_pD2DBitmap);
-   hr = m_pRT-&gt;CreateBitmapFromWicBitmap(pIFormatConverter, NULL, &amp;amp;amp;amp;amp;amp;m_pD2DBitmap);
-}
-
-SafeRelease(&amp;amp;amp;amp;amp;amp;pIFormatConverter);
-SafeRelease(&amp;amp;amp;amp;amp;amp;pIDecoderFrame);
-SafeRelease(&amp;amp;amp;amp;amp;amp;pIDecoder);
-
-</code>
-    </remarks>
+    <summary>Initializes the format converter.</summary>
+    <param name="pISource">The input bitmap to convert</param>
+    <param name="dstFormat">The destination pixel format GUID.</param>
+    <param name="dither">The <see cref="WICBitmapDitherType" /> used for conversion.</param>
+    <param name="pIPalette">The palette to use for conversion.</param>
+    <param name="alphaThresholdPercent">The alpha threshold to use for conversion.</param>
+    <param name="paletteTranslate">The palette translation type to use for conversion.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICFormatConverter">
-    <summary>
-      <para>Represents an <see cref="IWICBitmapSource" /> that converts the image data from one pixel format to another, handling dithering and halftoning to indexed formats, palette translation and alpha thresholding.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/dotnet/netframework-3.0/ms771770(v=vs.85)">AITCodec Sample CODEC</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-howtowriteacodec">How to Write a WIC-Enabled CODEC</seealso>
-    <seealso cref="IWICBitmapSource" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-guids-clsids">WIC GUIDs and CLSIDs</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wic/-wic-about-windows-imaging-codec">Windows Imaging Component Overview</seealso>
+    <summary>Represents an <see cref="IWICBitmapSource" /> that converts the image data from one pixel format to another, handling dithering and halftoning to indexed formats, palette translation and alpha thresholding.</summary>
   </member>
 </doc>

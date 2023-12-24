@@ -3,61 +3,38 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWMWINDOWATTRIBUTE">
-    <summary>
-      <para>Flags used by the <see cref="DwmGetWindowAttribute" /> and <see cref="DwmSetWindowAttribute" /> functions to specify window attributes for Desktop Window Manager (DWM) non-client rendering. For programming guidance, and code examples, see <a href="https://docs.microsoft.com//windows/desktop/dwm/composition-ovw#controlling-non-client-region-rendering">Controlling non-client region rendering</a>.</para>
-    </summary>
-    <seealso cref="DwmGetWindowAttribute function" />
-    <seealso cref="DwmSetWindowAttribute function" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/dwm/composition-ovw">Enable and control DWM composition</seealso>
+    <summary>Options used by the <see cref="DwmGetWindowAttribute" /> and <see cref="DwmSetWindowAttribute" /> functions.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_NCRENDERING_ENABLED">
-    <summary>
-      <para>Use with <see cref="DwmGetWindowAttribute" />. Discovers whether non-client rendering is enabled. The retrieved value is of type <b>BOOL</b>. <b>TRUE</b> if non-client rendering is enabled; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>Use with <see cref="DwmGetWindowAttribute" />. Discovers whether non-client rendering is enabled. The retrieved value is of type <b>BOOL</b>. <b>TRUE</b> if non-client rendering is enabled; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_NCRENDERING_POLICY">
-    <summary>
-      <para>Use with <see cref="DwmSetWindowAttribute" />. Sets the non-client rendering policy. The <i>pvAttribute</i> parameter points to a value from the <see cref="DWMNCRENDERINGPOLICY" /> enumeration.</para>
-    </summary>
+    <summary>Use with <see cref="DwmSetWindowAttribute" />. Sets the non-client rendering policy. The <i>pvAttribute</i> parameter points to a value from the <see cref="DWMNCRENDERINGPOLICY" /> enumeration.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_TRANSITIONS_FORCEDISABLED">
-    <summary>
-      <para>Use with <see cref="DwmSetWindowAttribute" />. Enables or forcibly disables DWM transitions. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> to disable transitions, or <b>FALSE</b> to enable transitions.</para>
-    </summary>
+    <summary>Use with <see cref="DwmSetWindowAttribute" />. Enables or forcibly disables DWM transitions. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> to disable transitions, or <b>FALSE</b> to enable transitions.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_ALLOW_NCPAINT">
-    <summary>
-      <para>Use with <see cref="DwmSetWindowAttribute" />. Enables content rendered in the non-client area to be visible on the frame drawn by DWM. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> to enable content rendered in the non-client area to be visible on the frame; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>Use with <see cref="DwmSetWindowAttribute" />. Enables content rendered in the non-client area to be visible on the frame drawn by DWM. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> to enable content rendered in the non-client area to be visible on the frame; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_CAPTION_BUTTON_BOUNDS">
-    <summary>
-      <para>Use with <see cref="DwmGetWindowAttribute" />. Retrieves the bounds of the caption button area in the window-relative space. The retrieved value is of type <see cref="RECT" />. If the window is minimized or otherwise not visible to the user, then the value of the <b>RECT</b> retrieved is undefined. You should check whether the retrieved <b>RECT</b> contains a boundary that you can work with, and if it doesn't then you can conclude that the window is minimized or otherwise not visible.</para>
-    </summary>
+    <summary>Use with <see cref="DwmGetWindowAttribute" />. Retrieves the bounds of the caption button area in the window-relative space. The retrieved value is of type <see cref="RECT" />. If the window is minimized or otherwise not visible to the user, then the value of the <b>RECT</b> retrieved is undefined. You should check whether the retrieved <b>RECT</b> contains a boundary that you can work with, and if it doesn't then you can conclude that the window is minimized or otherwise not visible.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_NONCLIENT_RTL_LAYOUT">
-    <summary>
-      <para>Use with <see cref="DwmSetWindowAttribute" />. Specifies whether non-client content is right-to-left (RTL) mirrored. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> if the non-client content is right-to-left (RTL) mirrored; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>Use with <see cref="DwmSetWindowAttribute" />. Specifies whether non-client content is right-to-left (RTL) mirrored. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> if the non-client content is right-to-left (RTL) mirrored; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_FORCE_ICONIC_REPRESENTATION">
-    <summary>
-      <para>Use with <see cref="DwmSetWindowAttribute" />. Forces the window to display an iconic thumbnail or peek representation (a static bitmap), even if a live or snapshot representation of the window is available. This value is normally set during a window's creation, and not changed throughout the window's lifetime. Some scenarios, however, might require the value to change over time. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> to require a iconic thumbnail or peek representation; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>Use with <see cref="DwmSetWindowAttribute" />. Forces the window to display an iconic thumbnail or peek representation (a static bitmap), even if a live or snapshot representation of the window is available. This value is normally set during a window's creation, and not changed throughout the window's lifetime. Some scenarios, however, might require the value to change over time. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> to require a iconic thumbnail or peek representation; otherwise, <b>FALSE</b>.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_FLIP3D_POLICY">
-    <summary>
-      <para>Use with <see cref="DwmSetWindowAttribute" />. Sets how Flip3D treats the window. The <i>pvAttribute</i> parameter points to a value from the <see cref="DWMFLIP3DWINDOWPOLICY" /> enumeration.</para>
-    </summary>
+    <summary>Use with <see cref="DwmSetWindowAttribute" />. Sets how Flip3D treats the window. The <i>pvAttribute</i> parameter points to a value from the <see cref="DWMFLIP3DWINDOWPOLICY" /> enumeration.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_EXTENDED_FRAME_BOUNDS">
-    <summary>
-      <para>Use with <see cref="DwmGetWindowAttribute" />. Retrieves the extended frame bounds rectangle in screen space. The retrieved value is of type <see cref="RECT" />.</para>
-    </summary>
+    <summary>Use with <see cref="DwmGetWindowAttribute" />. Retrieves the extended frame bounds rectangle in screen space. The retrieved value is of type <see cref="RECT" />.</summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_HAS_ICONIC_BITMAP">
     <summary>
-      <para>Use with <see cref="DwmSetWindowAttribute" />. The window will provide a bitmap for use by DWM as an iconic thumbnail or peek representation (a static bitmap) for the window. <b>DWMWA_HAS_ICONIC_BITMAP</b> can be specified with <b>DWMWA_FORCE_ICONIC_REPRESENTATION</b>. <b>DWMWA_HAS_ICONIC_BITMAP</b> normally is set during a window's creation and not changed throughout the window's lifetime. Some scenarios, however, might require the value to change over time. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>.  <b>TRUE</b> to inform DWM that the window will provide an iconic thumbnail or peek representation; otherwise, <b>FALSE</b>.</para>
+      <para>Use with <see cref="DwmSetWindowAttribute" />. The window will provide a bitmap for use by DWM as an iconic thumbnail or peek representation (a static bitmap) for the window. <b>DWMWA_HAS_ICONIC_BITMAP</b> can be specified with <b>DWMWA_FORCE_ICONIC_REPRESENTATION</b>. <b>DWMWA_HAS_ICONIC_BITMAP</b> normally is set during a window's creation and not changed throughout the window's lifetime. Some scenarios, however, might require the value to change over time. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> to inform DWM that the window will provide an iconic thumbnail or peek representation; otherwise, <b>FALSE</b>.</para>
       <para>
         <b>Windows Vista and earlier: </b>This value is not supported.</para>
     </summary>
@@ -108,13 +85,52 @@
   <member name="DWMWINDOWATTRIBUTE.DWMWA_USE_HOSTBACKDROPBRUSH">
     <summary>
       <para>Use with <see cref="DwmSetWindowAttribute" />. Enables a non-UWP window to use host backdrop brushes. If this flag is set, then a Win32 app that calls <a href="https://docs.microsoft.com//uwp/api/windows.ui.composition">Windows.UI.Composition</a> APIs can build transparency effects using the host backdrop brush (see <a href="https://docs.microsoft.com//uwp/api/windows.ui.composition.compositor.createhostbackdropbrush">Compositor.CreateHostBackdropBrush</a>). The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> to enable host backdrop brushes for the window, or <b>FALSE</b> to disable it.</para>
-      <para>
-        <b>Windows 10 and earlier: </b>This value is not supported.</para>
+      <para>This value is supported starting with Windows 11 Build 22000.</para>
+    </summary>
+  </member>
+  <member name="DWMWINDOWATTRIBUTE.DWMWA_USE_IMMERSIVE_DARK_MODE">
+    <summary>
+      <para>Use with <see cref="DwmSetWindowAttribute" />. Allows the window frame for this window to be drawn in dark mode colors when the dark mode system setting is enabled. For compatibility reasons, all windows default to light mode regardless of the system setting. The <i>pvAttribute</i> parameter points to a value of type <b>BOOL</b>. <b>TRUE</b> to honor dark mode for the window, <b>FALSE</b> to always use light mode.</para>
+      <para>This value is supported starting with Windows 11 Build 22000.</para>
+    </summary>
+  </member>
+  <member name="DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE">
+    <summary>
+      <para>Use with <see cref="DwmSetWindowAttribute" />. Specifies the rounded corner preference for a window. The <i>pvAttribute</i> parameter points to a value of type <see cref="DWM_WINDOW_CORNER_PREFERENCE" />.</para>
+      <para>This value is supported starting with Windows 11 Build 22000.</para>
+    </summary>
+  </member>
+  <member name="DWMWINDOWATTRIBUTE.DWMWA_BORDER_COLOR">
+    <summary>
+      <para>Use with <see cref="DwmSetWindowAttribute" />. Specifies the color of the window border. The <i>pvAttribute</i> parameter points to a value of type <a href="https://docs.microsoft.com//windows/win32/gdi/colorref">COLORREF</a>. The app is responsible for changing the border color according to state changes, such as a change in window activation.</para>
+      <para>This value is supported starting with Windows 11 Build 22000.</para>
+    </summary>
+  </member>
+  <member name="DWMWINDOWATTRIBUTE.DWMWA_CAPTION_COLOR">
+    <summary>
+      <para>Use with <see cref="DwmSetWindowAttribute" />. Specifies the color of the caption. The <i>pvAttribute</i> parameter points to a value of type <a href="https://docs.microsoft.com//windows/win32/gdi/colorref">COLORREF</a>.</para>
+      <para>This value is supported starting with Windows 11 Build 22000.</para>
+    </summary>
+  </member>
+  <member name="DWMWINDOWATTRIBUTE.DWMWA_TEXT_COLOR">
+    <summary>
+      <para>Use with <see cref="DwmSetWindowAttribute" />. Specifies the color of the caption text. The <i>pvAttribute</i> parameter points to a value of type <a href="https://docs.microsoft.com//windows/win32/gdi/colorref">COLORREF</a>.</para>
+      <para>This value is supported starting with Windows 11 Build 22000.</para>
+    </summary>
+  </member>
+  <member name="DWMWINDOWATTRIBUTE.DWMWA_VISIBLE_FRAME_BORDER_THICKNESS">
+    <summary>
+      <para>Use with <see cref="DwmGetWindowAttribute" />. Retrieves the width of the outer border that the DWM would draw around this window. The value can vary depending on the DPI of the window. The <i>pvAttribute</i> parameter points to a value of type <b>UINT</b>.</para>
+      <para>This value is supported starting with Windows 11 Build 22000.</para>
+    </summary>
+  </member>
+  <member name="DWMWINDOWATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE">
+    <summary>
+      <para>Use with <see cref="DwmGetWindowAttribute" /> or <see cref="DwmSetWindowAttribute" />. Retrieves or specifies the system-drawn backdrop material of a window, including behind the non-client area. The <i>pvAttribute</i> parameter points to a value of type <see cref="DWM_SYSTEMBACKDROP_TYPE" />.</para>
+      <para>This value is supported starting with Windows 11 Build 22621.</para>
     </summary>
   </member>
   <member name="DWMWINDOWATTRIBUTE.DWMWA_LAST">
-    <summary>
-      <para>The maximum recognized <b>DWMWINDOWATTRIBUTE</b> value, used for validation purposes.</para>
-    </summary>
+    <summary>The maximum recognized <b>DWMWINDOWATTRIBUTE</b> value, used for validation purposes.</summary>
   </member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleUndoUnit*, Guid*, void**, int>)(lpVtbl[0]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoUnit*, Guid*, void**, int>)(lpVtbl[0]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleUndoUnit*, uint>)(lpVtbl[1]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoUnit*, uint>)(lpVtbl[1]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleUndoUnit*, uint>)(lpVtbl[2]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoUnit*, uint>)(lpVtbl[2]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.Do"]/*' />
@@ -51,15 +51,15 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Do(IOleUndoManager* pUndoManager)
     {
-        return ((delegate* unmanaged<IOleUndoUnit*, IOleUndoManager*, int>)(lpVtbl[3]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pUndoManager);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoUnit*, IOleUndoManager*, int>)(lpVtbl[3]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pUndoManager);
     }
 
     /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstr)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pBstr)
     {
-        return ((delegate* unmanaged<IOleUndoUnit*, ushort**, int>)(lpVtbl[4]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pBstr);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoUnit*, char**, int>)(lpVtbl[4]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pBstr);
     }
 
     /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.GetUnitType"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetUnitType([NativeTypeName("CLSID *")] Guid* pClsid, [NativeTypeName("LONG *")] int* plID)
     {
-        return ((delegate* unmanaged<IOleUndoUnit*, Guid*, int*, int>)(lpVtbl[5]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pClsid, plID);
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoUnit*, Guid*, int*, int>)(lpVtbl[5]))((IOleUndoUnit*)Unsafe.AsPointer(ref this), pClsid, plID);
     }
 
     /// <include file='IOleUndoUnit.xml' path='doc/member[@name="IOleUndoUnit.OnNextAdd"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT OnNextAdd()
     {
-        return ((delegate* unmanaged<IOleUndoUnit*, int>)(lpVtbl[6]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleUndoUnit*, int>)(lpVtbl[6]))((IOleUndoUnit*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -84,7 +84,7 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
         HRESULT Do(IOleUndoManager* pUndoManager);
 
         [VtblIndex(4)]
-        HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pBstr);
+        HRESULT GetDescription([NativeTypeName("BSTR *")] char** pBstr);
 
         [VtblIndex(5)]
         HRESULT GetUnitType([NativeTypeName("CLSID *")] Guid* pClsid, [NativeTypeName("LONG *")] int* plID);
@@ -97,24 +97,24 @@ public unsafe partial struct IOleUndoUnit : IOleUndoUnit.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleUndoManager *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleUndoManager*, int> Do;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleUndoManager*, int> Do;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (CLSID *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int*, int> GetUnitType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int*, int> GetUnitType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnNextAdd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnNextAdd;
     }
 }

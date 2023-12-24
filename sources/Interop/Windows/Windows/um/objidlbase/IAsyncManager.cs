@@ -25,7 +25,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncManager*, Guid*, void**, int>)(lpVtbl[0]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAsyncManager*, uint>)(lpVtbl[1]))((IAsyncManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAsyncManager*, uint>)(lpVtbl[1]))((IAsyncManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAsyncManager*, uint>)(lpVtbl[2]))((IAsyncManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAsyncManager*, uint>)(lpVtbl[2]))((IAsyncManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAsyncManager.xml' path='doc/member[@name="IAsyncManager.CompleteCall"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT CompleteCall(HRESULT Result)
     {
-        return ((delegate* unmanaged<IAsyncManager*, HRESULT, int>)(lpVtbl[3]))((IAsyncManager*)Unsafe.AsPointer(ref this), Result);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncManager*, HRESULT, int>)(lpVtbl[3]))((IAsyncManager*)Unsafe.AsPointer(ref this), Result);
     }
 
     /// <include file='IAsyncManager.xml' path='doc/member[@name="IAsyncManager.GetCallContext"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetCallContext([NativeTypeName("const IID &")] Guid* riid, void** pInterface)
     {
-        return ((delegate* unmanaged<IAsyncManager*, Guid*, void**, int>)(lpVtbl[4]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, pInterface);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncManager*, Guid*, void**, int>)(lpVtbl[4]))((IAsyncManager*)Unsafe.AsPointer(ref this), riid, pInterface);
     }
 
     /// <include file='IAsyncManager.xml' path='doc/member[@name="IAsyncManager.GetState"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetState([NativeTypeName("ULONG *")] uint* pulStateFlags)
     {
-        return ((delegate* unmanaged<IAsyncManager*, uint*, int>)(lpVtbl[5]))((IAsyncManager*)Unsafe.AsPointer(ref this), pulStateFlags);
+        return ((delegate* unmanaged[MemberFunction]<IAsyncManager*, uint*, int>)(lpVtbl[5]))((IAsyncManager*)Unsafe.AsPointer(ref this), pulStateFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IAsyncManager : IAsyncManager.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, int> CompleteCall;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, int> CompleteCall;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetCallContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetCallContext;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetState;
     }
 }

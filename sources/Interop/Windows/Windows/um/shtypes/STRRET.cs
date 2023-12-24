@@ -17,12 +17,12 @@ public unsafe partial struct STRRET
     public uint uType;
 
     /// <include file='STRRET.xml' path='doc/member[@name="STRRET.Anonymous"]/*' />
-    [NativeTypeName("_STRRET::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/shtypes.h:285:36)")]
+    [NativeTypeName("__AnonymousRecord_shtypes_L285_C36")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pOleStr"]/*' />
     [UnscopedRef]
-    public ref ushort* pOleStr
+    public ref char* pOleStr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -49,7 +49,7 @@ public unsafe partial struct STRRET
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.cStr[0], 260);
+            return Anonymous.cStr;
         }
     }
 
@@ -60,7 +60,7 @@ public unsafe partial struct STRRET
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pOleStr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* pOleStr;
+        public char* pOleStr;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.uOffset"]/*' />
         [FieldOffset(0)]
@@ -69,6 +69,13 @@ public unsafe partial struct STRRET
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cStr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("char[260]")]
-        public fixed sbyte cStr[260];
+        public _cStr_e__FixedBuffer cStr;
+
+        /// <include file='_cStr_e__FixedBuffer.xml' path='doc/member[@name="_cStr_e__FixedBuffer"]/*' />
+        [InlineArray(260)]
+        public partial struct _cStr_e__FixedBuffer
+        {
+            public sbyte e0;
+        }
     }
 }

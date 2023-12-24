@@ -3,59 +3,58 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRIVILEGE_SET">
-    <summary>
-      <para>The <b>PRIVILEGE_SET</b> structure specifies a set of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">privileges</a>. It is also used to indicate which, if any, privileges are held by a user or group requesting access to an object.</para>
-    </summary>
-    <remarks>
-      <para>A privilege is used to control access to an object or service more strictly than is typical with discretionary access control. A system manager uses privileges to control which users are able to manipulate system resources. An application uses privileges when it changes a system-wide resource, such as when it changes the system time or shuts down the system.</para>
-    </remarks>
-    <seealso cref="LUID" />
-    <seealso cref="LUID_AND_ATTRIBUTES" />
-    <seealso cref="PrivilegeCheck" />
+    <summary>The <b>PRIVILEGE_SET</b> structure specifies a set of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">privileges</a>. It is also used to indicate which, if any, privileges are held by a user or group requesting access to an object.</summary>
   </member>
   <member name="PRIVILEGE_SET.PrivilegeCount">
-    <summary>
-      <para>Specifies the number of privileges in the privilege set.</para>
-    </summary>
+    <summary>Specifies the number of privileges in the privilege set.</summary>
   </member>
   <member name="PRIVILEGE_SET.Control">
-    <summary>
-      <para>Specifies a control flag related to the privileges. The PRIVILEGE_SET_ALL_NECESSARY control flag is currently defined. It indicates that all of the specified privileges must be held by the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">process</a> requesting access. If this flag is not set, the presence of any privileges in the user's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access token</a> grants the access.</para>
-    </summary>
+    <summary>Specifies a control flag related to the privileges. The PRIVILEGE_SET_ALL_NECESSARY control flag is currently defined. It indicates that all of the specified privileges must be held by the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">process</a> requesting access. If this flag is not set, the presence of any privileges in the user's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">access token</a> grants the access.</summary>
   </member>
   <member name="PRIVILEGE_SET.Privilege">
     <summary>
-      <para>Specifies an array of
-<see cref="LUID_AND_ATTRIBUTES" /> structures describing the set's privileges. The following attributes are defined for privileges.</para>
+      <para>Specifies an array of<see cref="LUID_AND_ATTRIBUTES" /> structures describing the set's privileges. The following attributes are defined for privileges.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>SE_PRIVILEGE_ENABLED_BY_DEFAULT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SE_PRIVILEGE_ENABLED_BY_DEFAULT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The privilege is enabled by default.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The privilege is enabled by default.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SE_PRIVILEGE_ENABLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The privilege is enabled.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>SE_PRIVILEGE_ENABLED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SE_PRIVILEGE_USED_FOR_ACCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The privilege is enabled.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>SE_PRIVILEGE_USED_FOR_ACCESS</b>
-          </description>
-          <description>
-            <para>The privilege was used to gain access to an object or service. This flag is used to identify the relevant privileges in a set passed by a client application that may contain unnecessary privileges.</para>
-          </description>
-        </item>
+          <description>The privilege was used to gain access to an object or service. This flag is used to identify the relevant privileges in a set passed by a client application that may contain unnecessary privileges.</description>
+        </listheader>
       </list>
     </summary>
   </member>

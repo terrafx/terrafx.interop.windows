@@ -19,32 +19,4 @@ public static unsafe partial class ISpRecoGrammar2Tests
     {
         Assert.That(typeof(ISpRecoGrammar2).GUID, Is.EqualTo(IID_ISpRecoGrammar2));
     }
-
-    /// <summary>Validates that the <see cref="ISpRecoGrammar2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpRecoGrammar2>(), Is.EqualTo(sizeof(ISpRecoGrammar2)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpRecoGrammar2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpRecoGrammar2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpRecoGrammar2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpRecoGrammar2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpRecoGrammar2), Is.EqualTo(4));
-        }
-    }
 }

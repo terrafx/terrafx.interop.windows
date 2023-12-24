@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 {
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Anonymous1"]/*' />
-    [NativeTypeName("_IP_ADAPTER_ADDRESSES_LH::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:287:5)")]
+    [NativeTypeName("__AnonymousRecord_IPTypes_L287_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Next"]/*' />
@@ -43,26 +43,26 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.DnsSuffix"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* DnsSuffix;
+    public char* DnsSuffix;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Description"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* Description;
+    public char* Description;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.FriendlyName"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* FriendlyName;
+    public char* FriendlyName;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.PhysicalAddress"]/*' />
     [NativeTypeName("BYTE[8]")]
-    public fixed byte PhysicalAddress[8];
+    public _PhysicalAddress_e__FixedBuffer PhysicalAddress;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.PhysicalAddressLength"]/*' />
     [NativeTypeName("ULONG")]
     public uint PhysicalAddressLength;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Anonymous2"]/*' />
-    [NativeTypeName("_IP_ADAPTER_ADDRESSES_LH::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:305:5)")]
+    [NativeTypeName("__AnonymousRecord_IPTypes_L305_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Mtu"]/*' />
@@ -82,7 +82,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.ZoneIndices"]/*' />
     [NativeTypeName("ULONG[16]")]
-    public fixed uint ZoneIndices[16];
+    public _ZoneIndices_e__FixedBuffer ZoneIndices;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.FirstPrefix"]/*' />
     [NativeTypeName("PIP_ADAPTER_PREFIX_XP")]
@@ -138,7 +138,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Dhcpv6ClientDuid"]/*' />
     [NativeTypeName("BYTE[130]")]
-    public fixed byte Dhcpv6ClientDuid[130];
+    public _Dhcpv6ClientDuid_e__FixedBuffer Dhcpv6ClientDuid;
 
     /// <include file='IP_ADAPTER_ADDRESSES_LH.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_LH.Dhcpv6ClientDuidLength"]/*' />
     [NativeTypeName("ULONG")]
@@ -200,7 +200,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint DdnsEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.DdnsEnabled;
         }
@@ -216,7 +216,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint RegisterAdapterSuffix
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.RegisterAdapterSuffix;
         }
@@ -232,7 +232,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Dhcpv4Enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Dhcpv4Enabled;
         }
@@ -248,7 +248,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint ReceiveOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.ReceiveOnly;
         }
@@ -264,7 +264,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint NoMulticast
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.NoMulticast;
         }
@@ -280,7 +280,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Ipv6OtherStatefulConfig
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Ipv6OtherStatefulConfig;
         }
@@ -296,7 +296,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint NetbiosOverTcpipEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.NetbiosOverTcpipEnabled;
         }
@@ -312,7 +312,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Ipv4Enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Ipv4Enabled;
         }
@@ -328,7 +328,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Ipv6Enabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Ipv6Enabled;
         }
@@ -344,7 +344,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
     public uint Ipv6ManagedAddressConfigurationSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.Ipv6ManagedAddressConfigurationSupported;
         }
@@ -367,7 +367,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IP_ADAPTER_ADDRESSES_LH::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:289:9)")]
+        [NativeTypeName("__AnonymousRecord_IPTypes_L289_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -394,7 +394,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IP_ADAPTER_ADDRESSES_LH::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:307:9)")]
+        [NativeTypeName("__AnonymousRecord_IPTypes_L307_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -407,7 +407,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint DdnsEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -424,7 +424,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint RegisterAdapterSuffix
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -441,7 +441,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Dhcpv4Enabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -458,7 +458,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint ReceiveOnly
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -475,7 +475,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint NoMulticast
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -492,7 +492,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Ipv6OtherStatefulConfig
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x1u;
                 }
@@ -509,7 +509,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint NetbiosOverTcpipEnabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 6) & 0x1u;
                 }
@@ -526,7 +526,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Ipv4Enabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 7) & 0x1u;
                 }
@@ -543,7 +543,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Ipv6Enabled
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 8) & 0x1u;
                 }
@@ -560,7 +560,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
             public uint Ipv6ManagedAddressConfigurationSupported
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 9) & 0x1u;
                 }
@@ -572,5 +572,26 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_LH
                 }
             }
         }
+    }
+
+    /// <include file='_PhysicalAddress_e__FixedBuffer.xml' path='doc/member[@name="_PhysicalAddress_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _PhysicalAddress_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_ZoneIndices_e__FixedBuffer.xml' path='doc/member[@name="_ZoneIndices_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ZoneIndices_e__FixedBuffer
+    {
+        public uint e0;
+    }
+
+    /// <include file='_Dhcpv6ClientDuid_e__FixedBuffer.xml' path='doc/member[@name="_Dhcpv6ClientDuid_e__FixedBuffer"]/*' />
+    [InlineArray(130)]
+    public partial struct _Dhcpv6ClientDuid_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

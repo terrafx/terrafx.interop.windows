@@ -3,144 +3,119 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioSessionControl2.GetProcessId">
-    <summary>
-      <para>The <b>GetProcessId</b> method retrieves the process identifier of the audio session.</para>
-    </summary>
-    <param name="pRetVal">
-      <para>Pointer to a <b>DWORD</b> variable that receives the process identifier of the audio session.</para>
-    </param>
+    <summary>The <b>GetProcessId</b> method retrieves the process identifier of the audio session.</summary>
+    <param name="pRetVal">Pointer to a <b>DWORD</b> variable that receives the process identifier of the audio session.</param>
     <returns>
-      <para>If the method succeeds, it returns S_OK.
-If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>E_POINTER</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_POINTER</term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>pRetVal</i> is <b>NULL</b>.
-</description>
-        </item>
-        <item>
+            <i>pRetVal</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>AUDCLNT_S_NO_SINGLE_PROCESS</para>
+            <list type="bullet">
+              <listheader>
+                <term>AUDCLNT_S_NO_SINGLE_PROCESS</term>
+              </listheader>
+            </list>
           </description>
+          <description> The session spans more than one process. In this case, <i>pRetVal</i> receives the initial identifier of the process that created the session. To use this value , include the following definition:<para><code>#define AUDCLNT_S_NO_SINGLE_PROCESS AUDCLNT_SUCCESS (0x00d)</code></para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The session spans more than one process. In this case, <i>pRetVal</i> receives the initial  identifier of the process that created the session. To use this value , include the following definition:</para>
-            <para>
-              <code>#define AUDCLNT_S_NO_SINGLE_PROCESS            AUDCLNT_SUCCESS (0x00d)</code>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>AUDCLNT_E_DEVICE_INVALIDATED</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>AUDCLNT_E_DEVICE_INVALIDATED</para>
-          </description>
-          <description>
-            <para>The audio session is disconnected on the default audio device.</para>
-          </description>
-        </item>
+          <description>The audio session is disconnected on the default audio device.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method overwrites the value that was passed by the application in <i>pRetVal</i>.</para>
-      <para>
-        <b>GetProcessId</b> checks whether the audio session has been disconnected on the default device or if the session has switched to another stream. In the case of stream
-switching, this method transfers state information for the new stream to the session. State information includes volume controls, metadata information (display name, icon path), and the session's property store.</para>
-    </remarks>
-    <seealso cref="IAudioSessionControl2" />
   </member>
   <member name="IAudioSessionControl2.GetSessionIdentifier">
-    <summary>
-      <para>The <b>GetSessionIdentifier</b> method retrieves the audio session identifier.</para>
-    </summary>
-    <param name="pRetVal">
-      <para>Pointer to the address of a null-terminated, wide-character string that  receives the audio session identifier. The string is allocated by this method and must be released by the caller by calling <b>CoTaskMemFree</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</para>
-    </param>
+    <summary>The <b>GetSessionIdentifier</b> method retrieves the audio session identifier.</summary>
+    <param name="pRetVal">Pointer to the address of a null-terminated, wide-character string that receives the audio session identifier. The string is allocated by this method and must be released by the caller by calling <b>CoTaskMemFree</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</param>
     <returns>
-      <para>If the method succeeds, it returns S_OK.
-If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>E_POINTER</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_POINTER</term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>pRetVal</i> is <b>NULL</b>.
-</description>
-        </item>
-        <item>
+            <i>pRetVal</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>AUDCLNT_E_DEVICE_INVALIDATED</para>
+            <list type="bullet">
+              <listheader>
+                <term>AUDCLNT_E_DEVICE_INVALIDATED</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The audio session is disconnected on the default audio device.</para>
-          </description>
-        </item>
+          <description>The audio session is disconnected on the default audio device.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Each audio session is identified by an identifier string.  This session identifier string is not unique across all instances. If there are two
-instances of the application playing, both instances will have the same session identifier. The identifier retrieved by <b>GetSessionIdentifier</b> is different from the session instance identifier, which is unique across all sessions. To get the session instance identifier, call <see cref="IAudioSessionControl2.GetSessionInstanceIdentifier" />.</para>
-      <para>
-        <b>GetSessionIdentifier</b> checks whether the session has been disconnected on the default device. It retrieves the identifier string that is cached by the audio client for the device. If the session identifier is not found, this method retrieves it from the audio engine.</para>
-    </remarks>
-    <seealso cref="IAudioSessionControl2" />
   </member>
   <member name="IAudioSessionControl2.GetSessionInstanceIdentifier">
-    <summary>
-      <para>The <b>GetSessionInstanceIdentifier</b> method retrieves the identifier of the audio session instance.</para>
-    </summary>
-    <param name="pRetVal">
-      <para>Pointer to the address of a null-terminated, wide-character string that receives the identifier of a particular instance of the audio session. The string is allocated by this method and must be released by the caller by calling <b>CoTaskMemFree</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</para>
-    </param>
+    <summary>The <b>GetSessionInstanceIdentifier</b> method retrieves the identifier of the audio session instance.</summary>
+    <param name="pRetVal">Pointer to the address of a null-terminated, wide-character string that receives the identifier of a particular instance of the audio session. The string is allocated by this method and must be released by the caller by calling <b>CoTaskMemFree</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</param>
     <returns>
-      <para>If the method succeeds, it returns S_OK.
-If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>E_POINTER</para>
+            <list type="bullet">
+              <listheader>
+                <term>E_POINTER</term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>pRetVal</i> is <b>NULL</b>.
-</description>
-        </item>
-        <item>
+            <i>pRetVal</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>AUDCLNT_E_DEVICE_INVALIDATED</para>
+            <list type="bullet">
+              <listheader>
+                <term>AUDCLNT_E_DEVICE_INVALIDATED</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The audio session is disconnected on the default audio device.</para>
-          </description>
-        </item>
+          <description>The audio session is disconnected on the default audio device.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Each audio session instance is identified by a unique string.  This  string represents a particular instance of the audio session and, unlike the session identifier, is unique across all instances. If there are two
-instances of the application playing, they will have different session instance identifiers. The identifier retrieved by <b>GetSessionInstanceIdentifier</b> is different from the session  identifier, which is shared by all session instances. To get the session  identifier, call <see cref="IAudioSessionControl2.GetSessionIdentifier" />.</para>
-      <para>
-        <b>GetSessionInstanceIdentifier</b> checks whether the session has been disconnected on the default device. It retrieves the identifier string that is cached by the audio client for the device. If the session instance identifier is not found, this method retrieves it from the audio engine. For example code about getting a session instance identifier, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/getting-ducking-events-from-a-communication-device">Getting Ducking Events from a Communication Device</a>.</para>
-    </remarks>
-    <seealso cref="IAudioSessionControl2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-communication-device">Using a Communication Device</seealso>
   </member>
   <member name="IAudioSessionControl2.IsSystemSoundsSession">
-    <summary>
-      <para>The <b>IsSystemSoundsSession</b> method indicates whether the session is a system sounds session.</para>
-    </summary>
+    <summary>The <b>IsSystemSoundsSession</b> method indicates whether the session is a system sounds session.</summary>
     <returns>
       <para>The possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -148,155 +123,67 @@ instances of the application playing, they will have different session instance 
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The session is a system sounds session.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The session is a system sounds session.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The session is not a system sounds session.</para>
-          </description>
-        </item>
+          <description>The session is not a system sounds session.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAudioSessionControl2" />
   </member>
   <member name="IAudioSessionControl2.SetDuckingPreference">
-    <summary>
-      <para>The <b>SetDuckingPreference</b> method enables or disables the default stream attenuation experience (auto-ducking) provided by the system.</para>
-    </summary>
-    <param name="optOut">
-      <para>A <b>BOOL</b> variable that enables or disables system auto-ducking.</para>
-    </param>
+    <summary>The <b>SetDuckingPreference</b> method enables or disables the default stream attenuation experience (auto-ducking) provided by the system.</summary>
+    <param name="optOut">A <b>BOOL</b> variable that enables or disables system auto-ducking.</param>
     <returns>
-      <para>If the method succeeds, it returns S_OK.
-If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
+      <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
         <listheader>
           <description>Return value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>AUDCLNT_E_DEVICE_INVALIDATED</para>
+            <list type="bullet">
+              <listheader>
+                <term>AUDCLNT_E_DEVICE_INVALIDATED</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The audio session is disconnected on the default audio device.</para>
-          </description>
-        </item>
+          <description>The audio session is disconnected on the default audio device.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>By default, the system adjusts the volume for all currently playing sounds when the system starts a communication session and receives a new communication stream on the default communication device. For more information about this feature, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-communication-device">Using a Communication Device</a>.</para>
-      <para>If the application passes <b>TRUE</b> in <i>optOut</i>, the system disables the <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/stream-attenuation">Default Ducking Experience</a>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/disabling-the-ducking-experience">Disabling the Default Ducking Experience</a>.</para>
-      <para>To provide a custom implementation, the application needs to get notifications from the system when it opens or closes the communication stream. To receive the notifications, the application must call this method before registering itself by calling <b>IAudioSessionManager2.RegisterForDuckNotification</b>. For more information and example code, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/getting-ducking-events-from-a-communication-device">Getting Ducking Events</a>.</para>
-      <para>If the application passes <b>FALSE</b> in <i>optOut</i>, the application provides the default stream attenuation experience provided by the system.</para>
-      <para>We recommend that the application call <b>SetDuckingPreference</b> during stream creation.  However, this method can be called dynamically during the session to change the initial preference.</para>
-    </remarks>
-    <seealso cref="IAudioSessionControl2" />
   </member>
   <member name="IAudioSessionControl2">
     <summary>
-      <para>The     <b>IAudioSessionControl2</b> interface can be used by a client to get information about the audio session.</para>
-      <para>To get a reference to the <b>IAudioSessionControl2</b> interface, the application must call <b>IAudioSessionControl.QueryInterface</b> to request the interface pointer from the stream object's  <see cref="IAudioSessionControl" /> interface. There are two ways an application  can get a pointer to the <b>IAudioSessionControl</b> interface:</para>
+      <para>The <b>IAudioSessionControl2</b> interface can be used by a client to get information about the audio session.</para>
+      <para>To get a reference to the <b>IAudioSessionControl2</b> interface, the application must call <b>IAudioSessionControl.QueryInterface</b> to request the interface pointer from the stream object's <see cref="IAudioSessionControl" /> interface. There are two ways an application can get a pointer to the <b>IAudioSessionControl</b> interface:</para>
       <list type="bullet">
         <item>
-          <description>
-            <para>By calling  <see cref="IAudioClient.GetService" /> on the audio client after opening a stream on the device. The audio client opens a stream for rendering or capturing, and associates it with an audio session by calling <see cref="IAudioClient.Initialize" />.</para>
-          </description>
+          <description>By calling <see cref="IAudioClient.GetService" /> on the audio client after opening a stream on the device. The audio client opens a stream for rendering or capturing, and associates it with an audio session by calling <see cref="IAudioClient.Initialize" />.</description>
         </item>
         <item>
-          <description>
-            <para>By calling <see cref="IAudioSessionManager.GetAudioSessionControl" /> for an existing audio session without opening the stream.</para>
-          </description>
+          <description>By calling <see cref="IAudioSessionManager.GetAudioSessionControl" /> for an existing audio session without opening the stream.</description>
         </item>
-      </list>When the application wants to release the <b>IAudioSessionControl2</b> interface instance, the application must call the interface's <b>Release</b> method from the same thread as the call to <see cref="IAudioClient.GetService" /> that created the object.
-<para>The application thread that uses this interface must be initialized for COM. For more information about COM initialization, see the description of the <b>CoInitializeEx</b> function in the Windows SDK documentation.</para></summary>
-    <remarks>
-      <para>This interface supports  custom implementations for <i>stream attenuation</i> or <i>ducking</i>, a new feature in Windows 7. An application playing a media stream can make it behave differently when a new communication stream is opened on the default communication device. For example, the original media stream can be paused while the new communication stream is open. For more information about this feature, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/stream-attenuation">Default Ducking Experience</a>.</para>
-      <para>An application can use this interface to perform the following tasks:</para>
-      <list type="bullet">
-        <item>
-          <description>Specify that it wants to opt out of the default stream attenuation experience provided by the system.</description>
-        </item>
-        <item>
-          <description>Get the audio session identifier that is associated with the stream. The identifier is required during the notification registration. The application can register itself to receive ducking notifications from the system.</description>
-        </item>
-        <item>
-          <description>Check whether the stream associated with the audio session  is a system sound.</description>
-        </item>
-      </list>
-      <h4>Examples</h4>
-      <para>The following example code shows how to get a reference to the <b>IAudioSessionControl2</b> interface and call its methods to determine whether the stream associated with the audio session is a system sound.</para>
-      <code>HRESULT SetDuckingForSystemSounds()
-{
-
-    HRESULT hr = S_OK;
-
-    IMMDevice* pDevice = NULL;
-    IMMDeviceEnumerator* pEnumerator = NULL;
-    IAudioSessionControl* pSessionControl = NULL;
-    IAudioSessionControl2* pSessionControl2 = NULL;
-    IAudioSessionManager* pSessionManager = NULL;
-
-    CHECK_HR( hr = CoInitialize(NULL));
-
-    // Create the device enumerator.
-    CHECK_HR( hr = CoCreateInstance(
-        __uuidof(MMDeviceEnumerator),
-        NULL, CLSCTX_ALL,
-        __uuidof(IMMDeviceEnumerator),
-        (void**)&amp;amp;amp;amp;amp;amp;pEnumerator));
-
-    // Get the default audio device.
-    CHECK_HR( hr = pEnumerator-&gt;GetDefaultAudioEndpoint(
-                    eRender, eConsole, &amp;amp;amp;amp;amp;amp;pDevice));
-
-    // Get the audio client.
-    CHECK_HR( hr = pDevice-&gt;Activate(
-        __uuidof(IID_IAudioSessionManager), CLSCTX_ALL,
-        NULL, (void**)&amp;amp;amp;amp;amp;amp;pSessionManager));
-
-    // Get a reference to the session manager.
-    CHECK_HR( hr = pSessionManager-&gt;GetAudioSessionControl (GUID_NULL, FALSE, &amp;amp;amp;amp;amp;amp;pSessionControl));
-
-    // Get the extended session control interface pointer.
-    CHECK_HR( hr = pSessionControl-&gt;QueryInterface(
-        __uuidof(IAudioSessionControl2), (void**) &amp;amp;amp;amp;amp;amp;pSessionControl2));
-
-    // Check whether this is a system sound.
-    CHECK_HR( hr = pSessionControl2-&gt;IsSystemSoundsSession());
-
-    // If it is a system sound, opt out of the default
-    // stream attenuation experience.
-    CHECK_HR( hr = pSessionControl2-&gt;SetDuckingPreference(TRUE));
-
-done:
-
-    // Clean up.
-    SAFE_RELEASE(pSessionControl2);
-    SAFE_RELEASE(pSessionControl);
-    SAFE_RELEASE(pEnumerator);
-    SAFE_RELEASE(pDevice);
-
-
-    return hr;
-}
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso cref="IAudioSessionControl" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-communication-device">Using a Communication Device</seealso>
+      </list>When the application wants to release the <b>IAudioSessionControl2</b> interface instance, the application must call the interface's <b>Release</b> method from the same thread as the call to <see cref="IAudioClient.GetService" /> that created the object.<para>The application thread that uses this interface must be initialized for COM. For more information about COM initialization, see the description of the <b>CoInitializeEx</b> function in the Windows SDK documentation.</para></summary>
   </member>
 </doc>

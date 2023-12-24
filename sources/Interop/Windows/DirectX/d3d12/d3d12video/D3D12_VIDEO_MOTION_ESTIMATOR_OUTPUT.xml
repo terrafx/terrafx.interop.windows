@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT">
+    <summary>Specifies the output parameters for calls to <see cref="ID3D12VideoEncodeCommandList.EstimateMotion" />.</summary>
+  </member>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_OUTPUT.pMotionVectorHeap">
+    <summary>An <see cref="ID3D12VideoMotionVectorHeap" /> containing the resolved motion estimation vectors. Motion vectors are resolved to a <see cref="DXGI_FORMAT_R16G16_SINT" /> 2D texture. The resolved data is a signed 16-byte integer with quarter PEL units with the X vector component stored in the R component and the Y vector component stored in the G component. Motion vectors are stored in a 2D layout that corresponds to the pixel layout of the original input textures.</summary>
+  </member>
+</doc>

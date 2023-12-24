@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SHADER_BUFFER_DESC">
+    <summary>Describes a shader constant-buffer.</summary>
+  </member>
+  <member name="D3D12_SHADER_BUFFER_DESC.Name">
+    <summary>The name of the buffer.</summary>
+  </member>
+  <member name="D3D12_SHADER_BUFFER_DESC.Type">
+    <summary>A <see cref="D3D_CBUFFER_TYPE" />-typed value that indicates the intended use of the constant data.</summary>
+  </member>
+  <member name="D3D12_SHADER_BUFFER_DESC.Variables">
+    <summary>The number of unique variables.</summary>
+  </member>
+  <member name="D3D12_SHADER_BUFFER_DESC.Size">
+    <summary>The size of the buffer, in bytes.</summary>
+  </member>
+  <member name="D3D12_SHADER_BUFFER_DESC.uFlags">
+    <summary>A combination of <see cref="D3D_SHADER_CBUFFER_FLAGS" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies properties for the shader constant-buffer.</summary>
+  </member>
+</doc>

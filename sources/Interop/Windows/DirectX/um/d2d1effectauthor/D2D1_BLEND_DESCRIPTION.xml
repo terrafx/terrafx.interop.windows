@@ -3,48 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_BLEND_DESCRIPTION">
-    <summary>
-      <para>Defines a blend description to be used in a particular blend transform.</para>
-    </summary>
-    <remarks>
-      <para>This description closely matches the <see cref="D3D11_BLEND_DESC" /> struct with some omissions and the addition of the blend factor in the description.</para>
-    </remarks>
-    <seealso cref="D2D1_BLEND" />
-    <seealso cref="D2D1_BLEND_OPERATION" />
+    <summary>Defines a blend description to be used in a particular blend transform.</summary>
   </member>
   <member name="D2D1_BLEND_DESCRIPTION.sourceBlend">
-    <summary>
-      <para>Specifies the first RGB data source and includes an optional preblend operation.</para>
-    </summary>
+    <summary>Specifies the first RGB data source and includes an optional preblend operation.</summary>
   </member>
   <member name="D2D1_BLEND_DESCRIPTION.destinationBlend">
-    <summary>
-      <para>Specifies the second RGB data source and includes an optional preblend operation.</para>
-    </summary>
+    <summary>Specifies the second RGB data source and includes an optional preblend operation.</summary>
   </member>
   <member name="D2D1_BLEND_DESCRIPTION.blendOperation">
-    <summary>
-      <para>Specifies how to combine the RGB data sources.</para>
-    </summary>
+    <summary>Specifies how to combine the RGB data sources.</summary>
   </member>
   <member name="D2D1_BLEND_DESCRIPTION.sourceBlendAlpha">
-    <summary>
-      <para>Specifies the first alpha data source and includes an optional preblend operation. Blend options that end in _COLOR are not allowed.</para>
-    </summary>
+    <summary>Specifies the first alpha data source and includes an optional preblend operation. Blend options that end in _COLOR are not allowed.</summary>
   </member>
   <member name="D2D1_BLEND_DESCRIPTION.destinationBlendAlpha">
-    <summary>
-      <para>Specifies the second alpha data source and includes an optional preblend operation. Blend options that end in _COLOR are not allowed.</para>
-    </summary>
+    <summary>Specifies the second alpha data source and includes an optional preblend operation. Blend options that end in _COLOR are not allowed.</summary>
   </member>
   <member name="D2D1_BLEND_DESCRIPTION.blendOperationAlpha">
-    <summary>
-      <para>Specifies how to combine the alpha data sources.</para>
-    </summary>
+    <summary>Specifies how to combine the alpha data sources.</summary>
   </member>
   <member name="D2D1_BLEND_DESCRIPTION.blendFactor">
-    <summary>
-      <para>Parameters to the blend operations. The blend must use <b>D2D1_BLEND_BLEND_FACTOR</b> for this to be used.</para>
-    </summary>
+    <summary>Parameters to the blend operations. The blend must use <b>D2D1_BLEND_BLEND_FACTOR</b> for this to be used.</summary>
   </member>
 </doc>

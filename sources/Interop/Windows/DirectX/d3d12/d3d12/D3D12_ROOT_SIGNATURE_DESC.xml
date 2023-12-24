@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_ROOT_SIGNATURE_DESC">
+    <summary>Describes the layout of a root signature version 1.0.</summary>
+  </member>
+  <member name="D3D12_ROOT_SIGNATURE_DESC.NumParameters">
+    <summary>The number of slots in the root signature. This number is also the number of elements in the <i>pParameters</i> array.</summary>
+  </member>
+  <member name="D3D12_ROOT_SIGNATURE_DESC.pParameters">
+    <summary>An array of <see cref="D3D12_ROOT_PARAMETER" /> structures for the slots in the root signature.</summary>
+  </member>
+  <member name="D3D12_ROOT_SIGNATURE_DESC.NumStaticSamplers">
+    <summary>Specifies the number of static samplers.</summary>
+  </member>
+  <member name="D3D12_ROOT_SIGNATURE_DESC.pStaticSamplers">
+    <summary>Pointer to one or more <see cref="D3D12_STATIC_SAMPLER_DESC" /> structures.</summary>
+  </member>
+  <member name="D3D12_ROOT_SIGNATURE_DESC.Flags">
+    <summary>A combination of <see cref="D3D12_ROOT_SIGNATURE_FLAGS" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for the root signature layout.</summary>
+  </member>
+</doc>

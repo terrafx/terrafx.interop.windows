@@ -19,32 +19,4 @@ public static unsafe partial class IAudioClockAdjustmentTests
     {
         Assert.That(typeof(IAudioClockAdjustment).GUID, Is.EqualTo(IID_IAudioClockAdjustment));
     }
-
-    /// <summary>Validates that the <see cref="IAudioClockAdjustment" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioClockAdjustment>(), Is.EqualTo(sizeof(IAudioClockAdjustment)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioClockAdjustment" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioClockAdjustment).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioClockAdjustment" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioClockAdjustment), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioClockAdjustment), Is.EqualTo(4));
-        }
-    }
 }

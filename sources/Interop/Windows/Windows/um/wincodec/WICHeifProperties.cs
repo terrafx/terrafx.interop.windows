@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties"]/*' />
 [SupportedOSPlatform("windows10.0.17763.0")]
-public enum WICHeifProperties : uint
+public enum WICHeifProperties
 {
     /// <include file='WICHeifProperties.xml' path='doc/member[@name="WICHeifProperties.WICHeifOrientation"]/*' />
     WICHeifOrientation = 0x1,

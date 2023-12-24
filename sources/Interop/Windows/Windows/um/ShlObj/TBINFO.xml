@@ -3,19 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TBINFO">
-    <summary>
-      <para>Used with the <a href="https://docs.microsoft.com//windows/desktop/shell/sfvm-getbuttoninfo">SFVM_GETBUTTONINFO</a> notification to specify the number of buttons to add to the toolbar, as well as how they're added.</para>
-    </summary>
+    <summary>Used with the <a href="https://docs.microsoft.com//windows/desktop/shell/sfvm-getbuttoninfo">SFVM_GETBUTTONINFO</a> notification to specify the number of buttons to add to the toolbar, as well as how they're added.</summary>
   </member>
   <member name="TBINFO.cbuttons">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The number of buttons.</para>
-    </summary>
+    <summary>The number of buttons.</summary>
   </member>
   <member name="TBINFO.uFlags">
     <summary>
-      <para>Type: <b>UINT</b></para>
       <para>One of the following flags.</para>
       <h4>TBIF_APPEND (0)</h4>
       <para>Add the new buttons after the existing buttons.</para>

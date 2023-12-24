@@ -14,7 +14,7 @@ public unsafe partial struct XML_ERROR
 
     /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._pchBuf"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* _pchBuf;
+    public char* _pchBuf;
 
     /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._cchBuf"]/*' />
     [NativeTypeName("unsigned int")]
@@ -26,11 +26,11 @@ public unsafe partial struct XML_ERROR
 
     /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._pszFound"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* _pszFound;
+    public char* _pszFound;
 
     /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._pszExpected"]/*' />
     [NativeTypeName("BSTR")]
-    public ushort* _pszExpected;
+    public char* _pszExpected;
 
     /// <include file='XML_ERROR.xml' path='doc/member[@name="XML_ERROR._reserved1"]/*' />
     [NativeTypeName("DWORD")]

@@ -21,32 +21,4 @@ public static unsafe partial class IMFByteStreamTimeSeekTests
     {
         Assert.That(typeof(IMFByteStreamTimeSeek).GUID, Is.EqualTo(IID_IMFByteStreamTimeSeek));
     }
-
-    /// <summary>Validates that the <see cref="IMFByteStreamTimeSeek" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFByteStreamTimeSeek>(), Is.EqualTo(sizeof(IMFByteStreamTimeSeek)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFByteStreamTimeSeek" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFByteStreamTimeSeek).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFByteStreamTimeSeek" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFByteStreamTimeSeek), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFByteStreamTimeSeek), Is.EqualTo(4));
-        }
-    }
 }

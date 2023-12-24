@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncDDHeadphoneModeTests
     {
         Assert.That(typeof(CODECAPI_AVEncDDHeadphoneMode).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDHeadphoneMode));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDHeadphoneMode" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDHeadphoneMode>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDHeadphoneMode)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDHeadphoneMode" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncDDHeadphoneMode).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDHeadphoneMode" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncDDHeadphoneMode), Is.EqualTo(1));
-    }
 }

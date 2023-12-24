@@ -19,25 +19,4 @@ public static unsafe partial class SVGMatrixTests
     {
         Assert.That(typeof(SVGMatrix).GUID, Is.EqualTo(IID_SVGMatrix));
     }
-
-    /// <summary>Validates that the <see cref="SVGMatrix" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGMatrix>(), Is.EqualTo(sizeof(SVGMatrix)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGMatrix" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGMatrix).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGMatrix" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGMatrix), Is.EqualTo(1));
-    }
 }

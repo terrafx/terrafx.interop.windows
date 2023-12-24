@@ -33,10 +33,7 @@ public partial class DXPanel : Panel
                 return;
             }
 
-            if (_dxSample is not null)
-            {
-                _dxSample.OnDestroy();
-            }
+            _dxSample?.OnDestroy();
 
             if (value is not null)
             {
@@ -79,17 +76,11 @@ public partial class DXPanel : Panel
     }
 
     private void DXPanel_ClientSizeChanged(object? sender, EventArgs eventArgs)
-    {
-        _dxSample?.OnWindowSizeChanged(ClientSize);
-    }
+        => _dxSample?.OnWindowSizeChanged(ClientSize);
 
     private void DXPanel_KeyUp(object sender, KeyEventArgs eventArgs)
-    {
-        _dxSample?.OnKeyUp(eventArgs.KeyValue);
-    }
+        => _dxSample?.OnKeyUp(eventArgs.KeyValue);
 
     private void DXPanel_KeyDown(object sender, KeyEventArgs eventArgs)
-    {
-        _dxSample?.OnKeyDown(eventArgs.KeyValue);
-    }
+        => _dxSample?.OnKeyDown(eventArgs.KeyValue);
 }

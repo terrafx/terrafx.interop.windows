@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaSource*, uint>)(lpVtbl[1]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, uint>)(lpVtbl[1]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaSource*, uint>)(lpVtbl[2]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, uint>)(lpVtbl[2]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFMediaEventGenerator.GetEvent" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetEvent([NativeTypeName("DWORD")] uint dwFlags, IMFMediaEvent** ppEvent)
     {
-        return ((delegate* unmanaged<IMFMediaSource*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaSource*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, uint, IMFMediaEvent**, int>)(lpVtbl[3]))((IMFMediaSource*)Unsafe.AsPointer(ref this), dwFlags, ppEvent);
     }
 
     /// <inheritdoc cref="IMFMediaEventGenerator.BeginGetEvent" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT BeginGetEvent(IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFMediaSource*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pCallback, punkState);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[4]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pCallback, punkState);
     }
 
     /// <inheritdoc cref="IMFMediaEventGenerator.EndGetEvent" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT EndGetEvent(IMFAsyncResult* pResult, IMFMediaEvent** ppEvent)
     {
-        return ((delegate* unmanaged<IMFMediaSource*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pResult, ppEvent);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, IMFAsyncResult*, IMFMediaEvent**, int>)(lpVtbl[5]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pResult, ppEvent);
     }
 
     /// <inheritdoc cref="IMFMediaEventGenerator.QueueEvent" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT QueueEvent([NativeTypeName("MediaEventType")] uint met, [NativeTypeName("const GUID &")] Guid* guidExtendedType, HRESULT hrStatus, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvValue)
     {
-        return ((delegate* unmanaged<IMFMediaSource*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaSource*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, uint, Guid*, HRESULT, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMediaSource*)Unsafe.AsPointer(ref this), met, guidExtendedType, hrStatus, pvValue);
     }
 
     /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.GetCharacteristics"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT GetCharacteristics([NativeTypeName("DWORD *")] uint* pdwCharacteristics)
     {
-        return ((delegate* unmanaged<IMFMediaSource*, uint*, int>)(lpVtbl[7]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pdwCharacteristics);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, uint*, int>)(lpVtbl[7]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pdwCharacteristics);
     }
 
     /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.CreatePresentationDescriptor"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT CreatePresentationDescriptor(IMFPresentationDescriptor** ppPresentationDescriptor)
     {
-        return ((delegate* unmanaged<IMFMediaSource*, IMFPresentationDescriptor**, int>)(lpVtbl[8]))((IMFMediaSource*)Unsafe.AsPointer(ref this), ppPresentationDescriptor);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, IMFPresentationDescriptor**, int>)(lpVtbl[8]))((IMFMediaSource*)Unsafe.AsPointer(ref this), ppPresentationDescriptor);
     }
 
     /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.Start"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT Start(IMFPresentationDescriptor* pPresentationDescriptor, [NativeTypeName("const GUID *")] Guid* pguidTimeFormat, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* pvarStartPosition)
     {
-        return ((delegate* unmanaged<IMFMediaSource*, IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pPresentationDescriptor, pguidTimeFormat, pvarStartPosition);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMediaSource*)Unsafe.AsPointer(ref this), pPresentationDescriptor, pguidTimeFormat, pvarStartPosition);
     }
 
     /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.Stop"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IMFMediaSource*, int>)(lpVtbl[10]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, int>)(lpVtbl[10]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.Pause"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT Pause()
     {
-        return ((delegate* unmanaged<IMFMediaSource*, int>)(lpVtbl[11]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, int>)(lpVtbl[11]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSource.xml' path='doc/member[@name="IMFMediaSource.Shutdown"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFMediaSource*, int>)(lpVtbl[12]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSource*, int>)(lpVtbl[12]))((IMFMediaSource*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IMFMediaEventGenerator.Interface
@@ -151,42 +151,42 @@ public unsafe partial struct IMFMediaSource : IMFMediaSource.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IMFMediaEvent **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFMediaEvent**, int> GetEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFMediaEvent**, int> GetEvent;
 
         [NativeTypeName("HRESULT (IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncCallback*, IUnknown*, int> BeginGetEvent;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, IMFMediaEvent **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, IMFMediaEvent**, int> EndGetEvent;
 
         [NativeTypeName("HRESULT (MediaEventType, const GUID &, HRESULT, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, HRESULT, PROPVARIANT*, int> QueueEvent;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCharacteristics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCharacteristics;
 
         [NativeTypeName("HRESULT (IMFPresentationDescriptor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationDescriptor**, int> CreatePresentationDescriptor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationDescriptor**, int> CreatePresentationDescriptor;
 
         [NativeTypeName("HRESULT (IMFPresentationDescriptor *, const GUID *, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int> Start;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationDescriptor*, Guid*, PROPVARIANT*, int> Start;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
     }
 }

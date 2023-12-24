@@ -25,7 +25,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, Guid*, void**, int>)(lpVtbl[0]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, uint>)(lpVtbl[1]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, uint>)(lpVtbl[1]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, uint>)(lpVtbl[2]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, uint>)(lpVtbl[2]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.Initialize" />
@@ -51,7 +51,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(3)]
     public HRESULT Initialize(HWND hwndParent, RECT* prc, [NativeTypeName("NSTCSTYLE")] uint nsctsFlags)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, HWND, RECT*, uint, int>)(lpVtbl[3]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), hwndParent, prc, nsctsFlags);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, HWND, RECT*, uint, int>)(lpVtbl[3]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), hwndParent, prc, nsctsFlags);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.TreeAdvise" />
@@ -59,7 +59,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(4)]
     public HRESULT TreeAdvise(IUnknown* punk, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IUnknown*, uint*, int>)(lpVtbl[4]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), punk, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IUnknown*, uint*, int>)(lpVtbl[4]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), punk, pdwCookie);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.TreeUnadvise" />
@@ -67,7 +67,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(5)]
     public HRESULT TreeUnadvise([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, uint, int>)(lpVtbl[5]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, uint, int>)(lpVtbl[5]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.AppendRoot" />
@@ -75,7 +75,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(6)]
     public HRESULT AppendRoot(IShellItem* psiRoot, [NativeTypeName("SHCONTF")] uint grfEnumFlags, [NativeTypeName("NSTCROOTSTYLE")] uint grfRootStyle, IShellItemFilter* pif)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItem*, uint, uint, IShellItemFilter*, int>)(lpVtbl[6]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psiRoot, grfEnumFlags, grfRootStyle, pif);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItem*, uint, uint, IShellItemFilter*, int>)(lpVtbl[6]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psiRoot, grfEnumFlags, grfRootStyle, pif);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.InsertRoot" />
@@ -83,7 +83,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(7)]
     public HRESULT InsertRoot(int iIndex, IShellItem* psiRoot, [NativeTypeName("SHCONTF")] uint grfEnumFlags, [NativeTypeName("NSTCROOTSTYLE")] uint grfRootStyle, IShellItemFilter* pif)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, int, IShellItem*, uint, uint, IShellItemFilter*, int>)(lpVtbl[7]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), iIndex, psiRoot, grfEnumFlags, grfRootStyle, pif);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, int, IShellItem*, uint, uint, IShellItemFilter*, int>)(lpVtbl[7]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), iIndex, psiRoot, grfEnumFlags, grfRootStyle, pif);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.RemoveRoot" />
@@ -91,7 +91,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(8)]
     public HRESULT RemoveRoot(IShellItem* psiRoot)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItem*, int>)(lpVtbl[8]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psiRoot);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItem*, int>)(lpVtbl[8]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psiRoot);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.RemoveAllRoots" />
@@ -99,7 +99,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(9)]
     public HRESULT RemoveAllRoots()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, int>)(lpVtbl[9]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, int>)(lpVtbl[9]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.GetRootItems" />
@@ -107,7 +107,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(10)]
     public HRESULT GetRootItems(IShellItemArray** ppsiaRootItems)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItemArray**, int>)(lpVtbl[10]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), ppsiaRootItems);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItemArray**, int>)(lpVtbl[10]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), ppsiaRootItems);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.SetItemState" />
@@ -115,7 +115,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(11)]
     public HRESULT SetItemState(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE")] uint nstcisFlags)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItem*, uint, uint, int>)(lpVtbl[11]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, nstcisMask, nstcisFlags);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItem*, uint, uint, int>)(lpVtbl[11]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, nstcisMask, nstcisFlags);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.GetItemState" />
@@ -123,7 +123,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(12)]
     public HRESULT GetItemState(IShellItem* psi, [NativeTypeName("NSTCITEMSTATE")] uint nstcisMask, [NativeTypeName("NSTCITEMSTATE *")] uint* pnstcisFlags)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItem*, uint, uint*, int>)(lpVtbl[12]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, nstcisMask, pnstcisFlags);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItem*, uint, uint*, int>)(lpVtbl[12]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, nstcisMask, pnstcisFlags);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.GetSelectedItems" />
@@ -131,7 +131,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(13)]
     public HRESULT GetSelectedItems(IShellItemArray** psiaItems)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItemArray**, int>)(lpVtbl[13]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psiaItems);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItemArray**, int>)(lpVtbl[13]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psiaItems);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.GetItemCustomState" />
@@ -139,7 +139,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(14)]
     public HRESULT GetItemCustomState(IShellItem* psi, int* piStateNumber)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItem*, int*, int>)(lpVtbl[14]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, piStateNumber);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItem*, int*, int>)(lpVtbl[14]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, piStateNumber);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.SetItemCustomState" />
@@ -147,7 +147,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(15)]
     public HRESULT SetItemCustomState(IShellItem* psi, int iStateNumber)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItem*, int, int>)(lpVtbl[15]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, iStateNumber);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItem*, int, int>)(lpVtbl[15]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, iStateNumber);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.EnsureItemVisible" />
@@ -155,15 +155,15 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(16)]
     public HRESULT EnsureItemVisible(IShellItem* psi)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItem*, int>)(lpVtbl[16]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItem*, int>)(lpVtbl[16]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.SetTheme" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetTheme([NativeTypeName("LPCWSTR")] ushort* pszTheme)
+    public HRESULT SetTheme([NativeTypeName("LPCWSTR")] char* pszTheme)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, ushort*, int>)(lpVtbl[17]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), pszTheme);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, char*, int>)(lpVtbl[17]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), pszTheme);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.GetNextItem" />
@@ -171,7 +171,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(18)]
     public HRESULT GetNextItem(IShellItem* psi, NSTCGNI nstcgi, IShellItem** ppsiNext)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItem*, NSTCGNI, IShellItem**, int>)(lpVtbl[18]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, nstcgi, ppsiNext);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItem*, NSTCGNI, IShellItem**, int>)(lpVtbl[18]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, nstcgi, ppsiNext);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.HitTest" />
@@ -179,7 +179,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(19)]
     public HRESULT HitTest(POINT* ppt, IShellItem** ppsiOut)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, POINT*, IShellItem**, int>)(lpVtbl[19]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), ppt, ppsiOut);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, POINT*, IShellItem**, int>)(lpVtbl[19]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), ppt, ppsiOut);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.GetItemRect" />
@@ -187,7 +187,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(20)]
     public HRESULT GetItemRect(IShellItem* psi, RECT* prect)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, IShellItem*, RECT*, int>)(lpVtbl[20]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, prect);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, IShellItem*, RECT*, int>)(lpVtbl[20]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), psi, prect);
     }
 
     /// <inheritdoc cref="INameSpaceTreeControl.CollapseAll" />
@@ -195,7 +195,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(21)]
     public HRESULT CollapseAll()
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, int>)(lpVtbl[21]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, int>)(lpVtbl[21]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INameSpaceTreeControl2.xml' path='doc/member[@name="INameSpaceTreeControl2.SetControlStyle"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(22)]
     public HRESULT SetControlStyle([NativeTypeName("NSTCSTYLE")] uint nstcsMask, [NativeTypeName("NSTCSTYLE")] uint nstcsStyle)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, uint, uint, int>)(lpVtbl[22]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), nstcsMask, nstcsStyle);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, uint, uint, int>)(lpVtbl[22]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), nstcsMask, nstcsStyle);
     }
 
     /// <include file='INameSpaceTreeControl2.xml' path='doc/member[@name="INameSpaceTreeControl2.GetControlStyle"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(23)]
     public HRESULT GetControlStyle([NativeTypeName("NSTCSTYLE")] uint nstcsMask, [NativeTypeName("NSTCSTYLE *")] uint* pnstcsStyle)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, uint, uint*, int>)(lpVtbl[23]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), nstcsMask, pnstcsStyle);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, uint, uint*, int>)(lpVtbl[23]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), nstcsMask, pnstcsStyle);
     }
 
     /// <include file='INameSpaceTreeControl2.xml' path='doc/member[@name="INameSpaceTreeControl2.SetControlStyle2"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(24)]
     public HRESULT SetControlStyle2(NSTCSTYLE2 nstcsMask, NSTCSTYLE2 nstcsStyle)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, NSTCSTYLE2, NSTCSTYLE2, int>)(lpVtbl[24]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), nstcsMask, nstcsStyle);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, NSTCSTYLE2, NSTCSTYLE2, int>)(lpVtbl[24]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), nstcsMask, nstcsStyle);
     }
 
     /// <include file='INameSpaceTreeControl2.xml' path='doc/member[@name="INameSpaceTreeControl2.GetControlStyle2"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
     [VtblIndex(25)]
     public HRESULT GetControlStyle2(NSTCSTYLE2 nstcsMask, NSTCSTYLE2* pnstcsStyle)
     {
-        return ((delegate* unmanaged<INameSpaceTreeControl2*, NSTCSTYLE2, NSTCSTYLE2*, int>)(lpVtbl[25]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), nstcsMask, pnstcsStyle);
+        return ((delegate* unmanaged[MemberFunction]<INameSpaceTreeControl2*, NSTCSTYLE2, NSTCSTYLE2*, int>)(lpVtbl[25]))((INameSpaceTreeControl2*)Unsafe.AsPointer(ref this), nstcsMask, pnstcsStyle);
     }
 
     public interface Interface : INameSpaceTreeControl.Interface
@@ -249,81 +249,81 @@ public unsafe partial struct INameSpaceTreeControl2 : INameSpaceTreeControl2.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, RECT *, NSTCSTYLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, RECT*, uint, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, RECT*, uint, int> Initialize;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint*, int> TreeAdvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint*, int> TreeAdvise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> TreeUnadvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> TreeUnadvise;
 
         [NativeTypeName("HRESULT (IShellItem *, SHCONTF, NSTCROOTSTYLE, IShellItemFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, uint, uint, IShellItemFilter*, int> AppendRoot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, uint, uint, IShellItemFilter*, int> AppendRoot;
 
         [NativeTypeName("HRESULT (int, IShellItem *, SHCONTF, NSTCROOTSTYLE, IShellItemFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IShellItem*, uint, uint, IShellItemFilter*, int> InsertRoot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IShellItem*, uint, uint, IShellItemFilter*, int> InsertRoot;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> RemoveRoot;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> RemoveRoot;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RemoveAllRoots;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RemoveAllRoots;
 
         [NativeTypeName("HRESULT (IShellItemArray **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItemArray**, int> GetRootItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItemArray**, int> GetRootItems;
 
         [NativeTypeName("HRESULT (IShellItem *, NSTCITEMSTATE, NSTCITEMSTATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, uint, uint, int> SetItemState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, uint, uint, int> SetItemState;
 
         [NativeTypeName("HRESULT (IShellItem *, NSTCITEMSTATE, NSTCITEMSTATE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, uint, uint*, int> GetItemState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, uint, uint*, int> GetItemState;
 
         [NativeTypeName("HRESULT (IShellItemArray **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItemArray**, int> GetSelectedItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItemArray**, int> GetSelectedItems;
 
         [NativeTypeName("HRESULT (IShellItem *, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int*, int> GetItemCustomState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int*, int> GetItemCustomState;
 
         [NativeTypeName("HRESULT (IShellItem *, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int, int> SetItemCustomState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int, int> SetItemCustomState;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> EnsureItemVisible;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> EnsureItemVisible;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetTheme;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetTheme;
 
         [NativeTypeName("HRESULT (IShellItem *, NSTCGNI, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, NSTCGNI, IShellItem**, int> GetNextItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, NSTCGNI, IShellItem**, int> GetNextItem;
 
         [NativeTypeName("HRESULT (POINT *, IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, IShellItem**, int> HitTest;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, IShellItem**, int> HitTest;
 
         [NativeTypeName("HRESULT (IShellItem *, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, RECT*, int> GetItemRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, RECT*, int> GetItemRect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CollapseAll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CollapseAll;
 
         [NativeTypeName("HRESULT (NSTCSTYLE, NSTCSTYLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> SetControlStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> SetControlStyle;
 
         [NativeTypeName("HRESULT (NSTCSTYLE, NSTCSTYLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetControlStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetControlStyle;
 
         [NativeTypeName("HRESULT (NSTCSTYLE2, NSTCSTYLE2) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, NSTCSTYLE2, NSTCSTYLE2, int> SetControlStyle2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, NSTCSTYLE2, NSTCSTYLE2, int> SetControlStyle2;
 
         [NativeTypeName("HRESULT (NSTCSTYLE2, NSTCSTYLE2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, NSTCSTYLE2, NSTCSTYLE2*, int> GetControlStyle2;
+        public delegate* unmanaged[MemberFunction]<TSelf*, NSTCSTYLE2, NSTCSTYLE2*, int> GetControlStyle2;
     }
 }

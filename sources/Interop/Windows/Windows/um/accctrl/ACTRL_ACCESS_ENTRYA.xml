@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACTRL_ACCESS_ENTRYA">
+    <summary>Contains access-control information for a specified trustee. This structure stores information equivalent to the access-control information stored in an <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/ace">ACE</a>.</summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.Trustee">
+    <summary>A <see cref="TRUSTEE" /> structure that identifies the user, group, or program (such as a service) to which the access-control entry applies.</summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.fAccessFlags">
+    <summary>
+      <para>Indicates how the access rights specified by the <b>Access</b> and <b>ProvSpecificAccess</b> members apply to the trustee. This member can be one of the following values. If you are using this structure with the COM implementation of <see cref="IAccessControl" />, this member must be ACTRL_ACCESS_ALLOWED or ACTRL_ACCESS_DENIED.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_ACCESS_ALLOWED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The rights are allowed.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The rights are denied.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_AUDIT_SUCCESS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The system generates audit messages for failed attempts to use the rights.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_AUDIT_FAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The system generates audit messages for successful attempts to use the rights.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.Access">
+    <summary>
+      <para>A bitmask that specifies the access rights that the entry allows, denies, or audits for the trustee.</para>
+      <para>This member must use the provider-independent access flags, such as ACTRL_READ_CONTROL, rather than access flags such as READ_CONTROL. The provider for the object type converts these provider-independent flags to the corresponding provider-specific flags.</para>
+      <para>If you are using this structure with the COM implementation of <see cref="IAccessControl" />, this member must be COM_RIGHTS_EXECUTE.</para>
+      <h4>ACTRL_SYSTEM_ACCESS</h4>
+      <h4>ACTRL_DELETE</h4>
+      <h4>ACTRL_READ_CONTROL</h4>
+      <h4>ACTRL_CHANGE_ACCESS</h4>
+      <h4>ACTRL_CHANGE_OWNER</h4>
+      <h4>ACTRL_SYNCHRONIZE</h4>
+      <h4>ACTRL_STD_RIGHTS_ALL</h4>
+      <h4>ACTRL_STD_RIGHT_REQUIRED</h4>
+      <h4>COM_RIGHTS_EXECUTE</h4>
+      <h4>COM_RIGHTS_EXECUTE_LOCAL</h4>
+      <h4>COM_RIGHTS_EXECUTE_REMOTE</h4>
+      <h4>COM_RIGHTS_ACTIVATE_LOCAL</h4>
+      <h4>COM_RIGHTS_ACTIVATE_REMOTE</h4>
+    </summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.ProvSpecificAccess">
+    <summary>A bitmask that specifies access rights specific to the provider type. The functions that use the <b>ACTRL_ACCESS_ENTRY</b> structure pass these bits on to the provider without interpreting them. In most cases, this member should be 0.</summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.Inheritance">
+    <summary>
+      <para>A set of bit flags that determines whether other containers or objects can inherit the access-control entry from the primary object to which the access list is attached. If you are using this structure with the COM implementation of <see cref="IAccessControl" />, this value must be NO_INHERITANCE, which indicates that the access-control entry is not inheritable. Otherwise, this value can be NO_INHERITANCE or it can be a combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONTAINER_INHERIT_ACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Other containers that are contained by the primary object inherit the entry.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>INHERIT_ONLY_ACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ACE does not apply to the primary object to which the ACL is attached, but objects contained by the primary object inherit the entry.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>NO_PROPAGATE_INHERIT_ACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The OBJECT_INHERIT_ACE and CONTAINER_INHERIT_ACE flags are not propagated to an inherited entry.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OBJECT_INHERIT_ACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Noncontainer objects contained by the primary object inherit the entry.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SUB_CONTAINERS_AND_OBJECTS_INHERIT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x3</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Both containers and noncontainer objects that are contained by the primary object inherit the entry. This flag corresponds to the combination of the CONTAINER_INHERIT_ACE and OBJECT_INHERIT_ACE flags.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SUB_CONTAINERS_ONLY_INHERIT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Other containers that are contained by the primary object inherit the entry. This flag corresponds to the CONTAINER_INHERIT_ACE flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SUB_OBJECTS_ONLY_INHERIT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Noncontainer objects contained by the primary object inherit the entry. This flag corresponds to the OBJECT_INHERIT_ACE flag.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.lpInheritProperty">
+    <summary>A pointer to a null-terminated string that identifies the object types that can inherit the entry. If you are using this structure with the COM implementation of <see cref="IAccessControl" />, this member must be <b>NULL</b>.</summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA">
+    <summary>Contains access-control information for a specified trustee. This structure stores information equivalent to the access-control information stored in an <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/ace">ACE</a>.</summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.Trustee">
+    <summary>A <see cref="TRUSTEE" /> structure that identifies the user, group, or program (such as a service) to which the access-control entry applies.</summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.fAccessFlags">
+    <summary>
+      <para>Indicates how the access rights specified by the <b>Access</b> and <b>ProvSpecificAccess</b> members apply to the trustee. This member can be one of the following values. If you are using this structure with the COM implementation of <see cref="IAccessControl" />, this member must be ACTRL_ACCESS_ALLOWED or ACTRL_ACCESS_DENIED.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_ACCESS_ALLOWED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The rights are allowed.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_ACCESS_DENIED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The rights are denied.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_AUDIT_SUCCESS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The system generates audit messages for failed attempts to use the rights.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_AUDIT_FAILURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The system generates audit messages for successful attempts to use the rights.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.Access">
+    <summary>
+      <para>A bitmask that specifies the access rights that the entry allows, denies, or audits for the trustee.</para>
+      <para>This member must use the provider-independent access flags, such as ACTRL_READ_CONTROL, rather than access flags such as READ_CONTROL. The provider for the object type converts these provider-independent flags to the corresponding provider-specific flags.</para>
+      <para>If you are using this structure with the COM implementation of <see cref="IAccessControl" />, this member must be COM_RIGHTS_EXECUTE.</para>
+      <h4>ACTRL_SYSTEM_ACCESS</h4>
+      <h4>ACTRL_DELETE</h4>
+      <h4>ACTRL_READ_CONTROL</h4>
+      <h4>ACTRL_CHANGE_ACCESS</h4>
+      <h4>ACTRL_CHANGE_OWNER</h4>
+      <h4>ACTRL_SYNCHRONIZE</h4>
+      <h4>ACTRL_STD_RIGHTS_ALL</h4>
+      <h4>ACTRL_STD_RIGHT_REQUIRED</h4>
+      <h4>COM_RIGHTS_EXECUTE</h4>
+      <h4>COM_RIGHTS_EXECUTE_LOCAL</h4>
+      <h4>COM_RIGHTS_EXECUTE_REMOTE</h4>
+      <h4>COM_RIGHTS_ACTIVATE_LOCAL</h4>
+      <h4>COM_RIGHTS_ACTIVATE_REMOTE</h4>
+    </summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.ProvSpecificAccess">
+    <summary>A bitmask that specifies access rights specific to the provider type. The functions that use the <b>ACTRL_ACCESS_ENTRY</b> structure pass these bits on to the provider without interpreting them. In most cases, this member should be 0.</summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.Inheritance">
+    <summary>
+      <para>A set of bit flags that determines whether other containers or objects can inherit the access-control entry from the primary object to which the access list is attached. If you are using this structure with the COM implementation of <see cref="IAccessControl" />, this value must be NO_INHERITANCE, which indicates that the access-control entry is not inheritable. Otherwise, this value can be NO_INHERITANCE or it can be a combination of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONTAINER_INHERIT_ACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Other containers that are contained by the primary object inherit the entry.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>INHERIT_ONLY_ACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The ACE does not apply to the primary object to which the ACL is attached, but objects contained by the primary object inherit the entry.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>NO_PROPAGATE_INHERIT_ACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The OBJECT_INHERIT_ACE and CONTAINER_INHERIT_ACE flags are not propagated to an inherited entry.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OBJECT_INHERIT_ACE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Noncontainer objects contained by the primary object inherit the entry.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SUB_CONTAINERS_AND_OBJECTS_INHERIT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x3</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Both containers and noncontainer objects that are contained by the primary object inherit the entry. This flag corresponds to the combination of the CONTAINER_INHERIT_ACE and OBJECT_INHERIT_ACE flags.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SUB_CONTAINERS_ONLY_INHERIT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Other containers that are contained by the primary object inherit the entry. This flag corresponds to the CONTAINER_INHERIT_ACE flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SUB_OBJECTS_ONLY_INHERIT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Noncontainer objects contained by the primary object inherit the entry. This flag corresponds to the OBJECT_INHERIT_ACE flag.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="ACTRL_ACCESS_ENTRYA.lpInheritProperty">
+    <summary>
+      <para>A pointer to a null-terminated string that identifies the object types that can inherit the entry. If you are using this structure with the COM implementation of <see cref="IAccessControl" />, this member must be <b>NULL</b>.</para>
+      <h5>- Access.ACTRL_CHANGE_ACCESS</h5>
+      <h5>- Access.ACTRL_CHANGE_OWNER</h5>
+      <h5>- Access.ACTRL_DELETE</h5>
+      <h5>- Access.ACTRL_READ_CONTROL</h5>
+      <h5>- Access.ACTRL_STD_RIGHTS_ALL</h5>
+      <h5>- Access.ACTRL_STD_RIGHT_REQUIRED</h5>
+      <h5>- Access.ACTRL_SYNCHRONIZE</h5>
+      <h5>- Access.ACTRL_SYSTEM_ACCESS</h5>
+      <h5>- Access.COM_RIGHTS_ACTIVATE_LOCAL</h5>
+      <h5>- Access.COM_RIGHTS_ACTIVATE_REMOTE</h5>
+      <h5>- Access.COM_RIGHTS_EXECUTE</h5>
+      <h5>- Access.COM_RIGHTS_EXECUTE_LOCAL</h5>
+      <h5>- Access.COM_RIGHTS_EXECUTE_REMOTE</h5>
+    </summary>
+  </member>
+</doc>

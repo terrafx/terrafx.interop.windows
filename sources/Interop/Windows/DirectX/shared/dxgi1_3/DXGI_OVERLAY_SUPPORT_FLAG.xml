@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_OVERLAY_SUPPORT_FLAG">
-    <summary>
-      <para>Specifies overlay support to check for in a call to <see cref="IDXGIOutput3.CheckOverlaySupport" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+    <summary>Specifies overlay support to check for in a call to <see cref="IDXGIOutput3.CheckOverlaySupport" />.</summary>
   </member>
   <member name="DXGI_OVERLAY_SUPPORT_FLAG.DXGI_OVERLAY_SUPPORT_FLAG_DIRECT">
-    <summary>
-      <para>Direct overlay support.</para>
-    </summary>
+    <summary>Direct overlay support.</summary>
   </member>
   <member name="DXGI_OVERLAY_SUPPORT_FLAG.DXGI_OVERLAY_SUPPORT_FLAG_SCALING">
-    <summary>
-      <para>Scaling overlay support.</para>
-    </summary>
+    <summary>Scaling overlay support.</summary>
   </member>
 </doc>

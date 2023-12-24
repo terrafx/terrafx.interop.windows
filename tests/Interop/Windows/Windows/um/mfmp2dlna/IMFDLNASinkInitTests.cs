@@ -19,32 +19,4 @@ public static unsafe partial class IMFDLNASinkInitTests
     {
         Assert.That(typeof(IMFDLNASinkInit).GUID, Is.EqualTo(IID_IMFDLNASinkInit));
     }
-
-    /// <summary>Validates that the <see cref="IMFDLNASinkInit" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFDLNASinkInit>(), Is.EqualTo(sizeof(IMFDLNASinkInit)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFDLNASinkInit" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFDLNASinkInit).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFDLNASinkInit" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFDLNASinkInit), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFDLNASinkInit), Is.EqualTo(4));
-        }
-    }
 }

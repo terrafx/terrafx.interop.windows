@@ -19,32 +19,4 @@ public static unsafe partial class ISupportAllowLowerTrustActivationTests
     {
         Assert.That(typeof(ISupportAllowLowerTrustActivation).GUID, Is.EqualTo(IID_ISupportAllowLowerTrustActivation));
     }
-
-    /// <summary>Validates that the <see cref="ISupportAllowLowerTrustActivation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISupportAllowLowerTrustActivation>(), Is.EqualTo(sizeof(ISupportAllowLowerTrustActivation)));
-    }
-
-    /// <summary>Validates that the <see cref="ISupportAllowLowerTrustActivation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISupportAllowLowerTrustActivation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISupportAllowLowerTrustActivation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISupportAllowLowerTrustActivation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISupportAllowLowerTrustActivation), Is.EqualTo(4));
-        }
-    }
 }

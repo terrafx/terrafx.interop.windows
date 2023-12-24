@@ -3,50 +3,34 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_CONNECTION_COST">
-    <summary>
-      <para>The <b>WCM_CONNECTION_COST</b> enumerated type determines the connection cost type and flags.</para>
-    </summary>
+    <summary>The <b>WCM_CONNECTION_COST</b> enumerated type determines the connection cost type and flags.</summary>
   </member>
   <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_UNKNOWN">
-    <summary>
-      <para>Connection cost information is not available.</para>
-    </summary>
+    <summary>Connection cost information is not available.</summary>
   </member>
   <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_UNRESTRICTED">
-    <summary>
-      <para>The connection is unlimited and has unrestricted usage constraints.</para>
-    </summary>
+    <summary>The connection is unlimited and has unrestricted usage constraints.</summary>
   </member>
   <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_FIXED">
-    <summary>
-      <para>Usage counts toward a fixed allotment of data which the user has already paid for (or agreed to pay for).</para>
-    </summary>
+    <summary>Usage counts toward a fixed allotment of data which the user has already paid for (or agreed to pay for).</summary>
   </member>
   <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_VARIABLE">
-    <summary>
-      <para>The connection cost is on a per-byte basis.</para>
-    </summary>
+    <summary>The connection cost is on a per-byte basis.</summary>
   </member>
   <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_OVERDATALIMIT">
-    <summary>
-      <para>The connection has exceeded its data limit.</para>
-    </summary>
+    <summary>The connection has exceeded its data limit.</summary>
   </member>
   <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_CONGESTED">
-    <summary>
-      <para>The connection is throttled due to high traffic.</para>
-    </summary>
+    <summary>The connection is throttled due to high traffic.</summary>
   </member>
   <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_ROAMING">
     <summary>
       <para>The connection is outside of the home network.</para>
-      <para>
-        <b>Note</b>  The <b>WCM_CONNECTION_COST_ROAMING</b> value comes directly from  the connection source. Attempts to set it directly will fail.</para>
+      <div>
+        <b>Note</b>  The <b>WCM_CONNECTION_COST_ROAMING</b> value comes directly from the connection source. Attempts to set it directly will fail.</div>
     </summary>
   </member>
   <member name="WCM_CONNECTION_COST.WCM_CONNECTION_COST_APPROACHINGDATALIMIT">
-    <summary>
-      <para>The connection is approaching its data limit.</para>
-    </summary>
+    <summary>The connection is approaching its data limit.</summary>
   </member>
 </doc>

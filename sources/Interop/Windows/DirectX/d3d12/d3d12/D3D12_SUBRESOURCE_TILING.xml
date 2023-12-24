@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SUBRESOURCE_TILING">
+    <summary>Describes a tiled subresource volume.</summary>
+  </member>
+  <member name="D3D12_SUBRESOURCE_TILING.WidthInTiles">
+    <summary>The width in tiles of the subresource.</summary>
+  </member>
+  <member name="D3D12_SUBRESOURCE_TILING.HeightInTiles">
+    <summary>The height in tiles of the subresource.</summary>
+  </member>
+  <member name="D3D12_SUBRESOURCE_TILING.DepthInTiles">
+    <summary>The depth in tiles of the subresource.</summary>
+  </member>
+  <member name="D3D12_SUBRESOURCE_TILING.StartTileIndexInOverallResource">
+    <summary>The index of the tile in the overall tiled subresource to start with.</summary>
+  </member>
+</doc>

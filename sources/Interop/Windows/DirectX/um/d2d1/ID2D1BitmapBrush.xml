@@ -3,138 +3,38 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1BitmapBrush.GetBitmap">
-    <summary>
-      <para>Gets the bitmap source that this brush uses to paint.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />**</b></para>
-      <para>When this method returns, contains the address to a pointer to the bitmap with which this brush paints.</para>
-    </param>
-    <seealso cref="ID2D1BitmapBrush" />
+    <summary>Gets the bitmap source that this brush uses to paint.</summary>
+    <param name="bitmap">When this method returns, contains the address to a pointer to the bitmap with which this brush paints.</param>
   </member>
   <member name="ID2D1BitmapBrush.GetExtendModeX">
-    <summary>
-      <para>Gets the method by which the brush horizontally tiles those areas that extend past its bitmap.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>A value that specifies how the brush horizontally tiles those areas that extend past its bitmap.</para>
-    </returns>
-    <remarks>
-      <para>Like all brushes, <see cref="ID2D1BitmapBrush" /> defines an infinite plane of content. Because bitmaps are finite, it relies on an extend mode to determine how the plane is filled horizontally and vertically.</para>
-    </remarks>
-    <seealso cref="ID2D1BitmapBrush" />
-    <seealso cref="ID2D1BitmapBrush.SetExtendModeX" />
+    <summary>Gets the method by which the brush horizontally tiles those areas that extend past its bitmap.</summary>
+    <returns>A value that specifies how the brush horizontally tiles those areas that extend past its bitmap.</returns>
   </member>
   <member name="ID2D1BitmapBrush.GetExtendModeY">
-    <summary>
-      <para>Gets the method by which the brush vertically tiles those areas that extend past its bitmap.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>A value that specifies how the brush vertically tiles those areas that extend past its bitmap.</para>
-    </returns>
-    <remarks>
-      <para>Like all brushes, <see cref="ID2D1BitmapBrush" /> defines an infinite plane of content.</para>
-      <para>Because bitmaps are finite, it relies on an extend mode to determine how the plane is filled horizontally and vertically.</para>
-    </remarks>
-    <seealso cref="ID2D1BitmapBrush" />
-    <seealso cref="ID2D1BitmapBrush.SetExtendModeY" />
+    <summary>Gets the method by which the brush vertically tiles those areas that extend past its bitmap.</summary>
+    <returns>A value that specifies how the brush vertically tiles those areas that extend past its bitmap.</returns>
   </member>
   <member name="ID2D1BitmapBrush.GetInterpolationMode">
-    <summary>
-      <para>Gets the interpolation method used when the brush bitmap is scaled or rotated.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_BITMAP_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation method used when the brush bitmap is scaled or rotated.</para>
-    </returns>
-    <remarks>
-      <para>This method gets the interpolation mode of a bitmap, which is specified by the <see cref="D2D1_BITMAP_INTERPOLATION_MODE" /> enumeration type.   <b>D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR</b> represents nearest neighbor filtering. It looks up the bitmap pixel nearest to the current rendering pixel and chooses its exact color. <b>D2D1_BITMAP_INTERPOLATION_MODE_LINEAR</b> represents linear filtering, and  interpolates a color from the four nearest bitmap pixels.</para>
-      <para>The interpolation mode of a bitmap also affects subpixel translations. In a subpixel translation, linear interpolation positions the bitmap more precisely to the application request, but blurs the bitmap in the process.</para>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_INTERPOLATION_MODE" />
-    <seealso cref="ID2D1BitmapBrush" />
-    <seealso cref="ID2D1BitmapBrush.SetInterpolationMode" />
+    <summary>Gets the interpolation method used when the brush bitmap is scaled or rotated.</summary>
+    <returns>The interpolation method used when the brush bitmap is scaled or rotated.</returns>
   </member>
   <member name="ID2D1BitmapBrush.SetBitmap">
-    <summary>
-      <para>Specifies the bitmap source that this brush uses to paint.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap source used by the brush.</para>
-    </param>
-    <remarks>
-      <para>This method specifies the bitmap source that this brush uses to paint. The bitmap is not resized or rescaled automatically to fit the geometry that it fills. The bitmap stays at its native size. To resize or translate the bitmap, use the <see cref="SetTransform" /> method to apply  a transform to the brush.</para>
-      <para>The native size of a bitmap is the width and height in bitmap pixels, divided by the bitmap DPI. This native size forms the base tile of the brush. To tile a subregion of the bitmap, you must generate a new bitmap containing this subregion and use <b>SetBitmap</b> to apply it to the brush.</para>
-    </remarks>
-    <seealso cref="ID2D1BitmapBrush" />
+    <summary>Specifies the bitmap source that this brush uses to paint.</summary>
+    <param name="bitmap">The bitmap source used by the brush.</param>
   </member>
   <member name="ID2D1BitmapBrush.SetExtendModeX">
-    <summary>
-      <para>Specifies how the brush horizontally tiles those areas that extend past its bitmap.</para>
-    </summary>
-    <param name="extendModeX">
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>A value that specifies how the brush horizontally tiles those areas that extend past its bitmap.</para>
-    </param>
-    <remarks>
-      <para>Sometimes, the  bitmap for a bitmap brush doesn't completely fill the area being painted. When this happens, Direct2D uses the brush's horizontal (<b>SetExtendModeX</b>) and vertical (<see cref="SetExtendModeY" />) extend mode settings to determine how to fill the remaining area.</para>
-      <para>The following illustration shows the results from  every  possible combination of the extend modes for an <see cref="ID2D1BitmapBrush" />: <see cref="D2D1_EXTEND_MODE_CLAMP" /> (CLAMP), <b>D2D1_EXTEND_MODE_WRAP</b> (WRAP), and <b>D2D1_EXTEND_MIRROR</b> (MIRROR).</para>
-      <para>
-        <img alt="Illustration of a bitmap and the resulting images from various extend modes" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/bitmapwrap_clamp_mirror.png" />
-      </para>
-    </remarks>
-    <seealso cref="ID2D1BitmapBrush" />
-    <seealso cref="ID2D1BitmapBrush.GetExtendModeX" />
+    <summary>Specifies how the brush horizontally tiles those areas that extend past its bitmap.</summary>
+    <param name="extendModeX">A value that specifies how the brush horizontally tiles those areas that extend past its bitmap.</param>
   </member>
   <member name="ID2D1BitmapBrush.SetExtendModeY">
-    <summary>
-      <para>Specifies how the brush vertically tiles those areas that extend past its bitmap.</para>
-    </summary>
-    <param name="extendModeY">
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>A value that specifies how the brush vertically tiles those areas that extend past its bitmap.</para>
-    </param>
-    <remarks>
-      <para>Sometimes, the  bitmap for a bitmap brush doesn't completely fill the area being painted. When this happens, Direct2D uses the brush's horizontal (<see cref="SetExtendModeX" />) and vertical (<b>SetExtendModeY</b>) extend mode settings to determine how to fill the remaining area.</para>
-      <para>The following illustration shows the results from  every  possible combination of the extend modes for an <see cref="ID2D1BitmapBrush" />: <see cref="D2D1_EXTEND_MODE_CLAMP" /> (CLAMP), <b>D2D1_EXTEND_MODE_WRAP</b> (WRAP), and <b>D2D1_EXTEND_MIRROR</b> (MIRROR).</para>
-      <para>
-        <img alt="Illustration of a bitmap and the resulting images from various extend modes" src="https://docs.microsoft.com/windows/win32/api/d2d1mages/bitmapwrap_clamp_mirror.png" />
-      </para>
-    </remarks>
-    <seealso cref="ID2D1BitmapBrush" />
-    <seealso cref="ID2D1BitmapBrush.GetExtendModeY" />
+    <summary>Specifies how the brush vertically tiles those areas that extend past its bitmap.</summary>
+    <param name="extendModeY">A value that specifies how the brush vertically tiles those areas that extend past its bitmap.</param>
   </member>
   <member name="ID2D1BitmapBrush.SetInterpolationMode">
-    <summary>
-      <para>Specifies the interpolation mode used when the brush bitmap is scaled or rotated.</para>
-    </summary>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_BITMAP_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode used when the brush bitmap is scaled or rotated.</para>
-    </param>
-    <remarks>
-      <para>This method sets the interpolation mode for a bitmap, which is an enum value that is specified in the <see cref="D2D1_BITMAP_INTERPOLATION_MODE" /> enumeration type.   D2D1_BITMAP_INTERPOLATION_MODE_NEAREST_NEIGHBOR represents nearest neighbor filtering. It looks up the nearest bitmap pixel to the current rendering pixel and chooses its exact color. D2D1_BITMAP_INTERPOLATION_MODE_LINEAR represents linear filtering, and  interpolates a color from the four nearest bitmap pixels.</para>
-      <para>The interpolation mode of a bitmap also affects subpixel translations. In a subpixel translation, bilinear interpolation positions the bitmap more precisely to the application requests, but blurs the bitmap in the process.</para>
-    </remarks>
-    <seealso cref="ID2D1BitmapBrush" />
-    <seealso cref="ID2D1BitmapBrush.GetInterpolationMode" />
+    <summary>Specifies the interpolation mode used when the brush bitmap is scaled or rotated.</summary>
+    <param name="interpolationMode">The interpolation mode used when the brush bitmap is scaled or rotated.</param>
   </member>
   <member name="ID2D1BitmapBrush">
-    <summary>
-      <para>Paints an area with a bitmap.</para>
-    </summary>
-    <remarks>
-      <para>A bitmap brush is used to fill a geometry with a bitmap. Like all brushes, it defines an infinite plane of content. Because bitmaps are finite, the brush relies on an "extend mode" to determine how the plane is filled horizontally and vertically.</para>
-      <h3>Creating ID2D1BitmapBrush Objects</h3>
-      <para>To create a bitmap brush, use the <a href="https://docs.microsoft.com//windows/win32/Direct2D/id2d1rendertarget-createbitmapbrush">ID2D1RenderTarget.CreateBitmapBrush</a> method.</para>
-      <para>An <b>ID2D1BitmapBrush</b> is a device-dependent resource: your application should create bitmap brushes after it initializes the render target with which the bitmap brush will be used, and recreate the bitmap brush whenever the render target needs recreated. (For more information about resources, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-brushes-overview">Brushes Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to-create-a-bitmap-brush">How to Create a Bitmap Brush</seealso>
-    <seealso cref="ID2D1Brush" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/opacity-masks-overview">Opacity Masks Overview</seealso>
+    <summary>Paints an area with a bitmap.</summary>
   </member>
 </doc>

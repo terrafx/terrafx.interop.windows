@@ -3,7 +3,6 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -14,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct DVD_TitleAttributes
 {
     /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.Anonymous"]/*' />
-    [NativeTypeName("tagDVD_TitleMainAttributes::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/strmif.h:22382:5)")]
+    [NativeTypeName("__AnonymousRecord_strmif_L22382_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DVD_TitleAttributes.xml' path='doc/member[@name="DVD_TitleAttributes.VideoAttributes"]/*' />
@@ -76,107 +75,23 @@ public partial struct DVD_TitleAttributes
     }
 
     /// <include file='_AudioAttributes_e__FixedBuffer.xml' path='doc/member[@name="_AudioAttributes_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
     public partial struct _AudioAttributes_e__FixedBuffer
     {
         public DVD_AudioAttributes e0;
-        public DVD_AudioAttributes e1;
-        public DVD_AudioAttributes e2;
-        public DVD_AudioAttributes e3;
-        public DVD_AudioAttributes e4;
-        public DVD_AudioAttributes e5;
-        public DVD_AudioAttributes e6;
-        public DVD_AudioAttributes e7;
-
-        [UnscopedRef]
-        public ref DVD_AudioAttributes this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<DVD_AudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
     /// <include file='_MultichannelAudioAttributes_e__FixedBuffer.xml' path='doc/member[@name="_MultichannelAudioAttributes_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
     public partial struct _MultichannelAudioAttributes_e__FixedBuffer
     {
         public DVD_MultichannelAudioAttributes e0;
-        public DVD_MultichannelAudioAttributes e1;
-        public DVD_MultichannelAudioAttributes e2;
-        public DVD_MultichannelAudioAttributes e3;
-        public DVD_MultichannelAudioAttributes e4;
-        public DVD_MultichannelAudioAttributes e5;
-        public DVD_MultichannelAudioAttributes e6;
-        public DVD_MultichannelAudioAttributes e7;
-
-        [UnscopedRef]
-        public ref DVD_MultichannelAudioAttributes this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<DVD_MultichannelAudioAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
     /// <include file='_SubpictureAttributes_e__FixedBuffer.xml' path='doc/member[@name="_SubpictureAttributes_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
     public partial struct _SubpictureAttributes_e__FixedBuffer
     {
         public DVD_SubpictureAttributes e0;
-        public DVD_SubpictureAttributes e1;
-        public DVD_SubpictureAttributes e2;
-        public DVD_SubpictureAttributes e3;
-        public DVD_SubpictureAttributes e4;
-        public DVD_SubpictureAttributes e5;
-        public DVD_SubpictureAttributes e6;
-        public DVD_SubpictureAttributes e7;
-        public DVD_SubpictureAttributes e8;
-        public DVD_SubpictureAttributes e9;
-        public DVD_SubpictureAttributes e10;
-        public DVD_SubpictureAttributes e11;
-        public DVD_SubpictureAttributes e12;
-        public DVD_SubpictureAttributes e13;
-        public DVD_SubpictureAttributes e14;
-        public DVD_SubpictureAttributes e15;
-        public DVD_SubpictureAttributes e16;
-        public DVD_SubpictureAttributes e17;
-        public DVD_SubpictureAttributes e18;
-        public DVD_SubpictureAttributes e19;
-        public DVD_SubpictureAttributes e20;
-        public DVD_SubpictureAttributes e21;
-        public DVD_SubpictureAttributes e22;
-        public DVD_SubpictureAttributes e23;
-        public DVD_SubpictureAttributes e24;
-        public DVD_SubpictureAttributes e25;
-        public DVD_SubpictureAttributes e26;
-        public DVD_SubpictureAttributes e27;
-        public DVD_SubpictureAttributes e28;
-        public DVD_SubpictureAttributes e29;
-        public DVD_SubpictureAttributes e30;
-        public DVD_SubpictureAttributes e31;
-
-        [UnscopedRef]
-        public ref DVD_SubpictureAttributes this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<DVD_SubpictureAttributes> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 32);
     }
 }

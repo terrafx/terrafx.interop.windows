@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAsyncInfo.Cancel">
+    <summary>Requests cancellation of the asynchronous operation already in progress.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IAsyncInfo.Close">
+    <summary>Closes the asynchronous work object. Call this method after the results of the operation have been consumed but before calling <see cref="Release" />.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IAsyncInfo.ErrorCode">
+    <summary>
+      <para>Retrieves the termination status of the asynchronous operation.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IAsyncInfo.get_ErrorCode">
+    <summary>
+      <para>Retrieves the termination status of the asynchronous operation.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IAsyncInfo.get_Id">
+    <summary>
+      <para>Retrieves the identifier of the asynchronous operation.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IAsyncInfo.Id">
+    <summary>
+      <para>Retrieves the identifier of the asynchronous operation.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IAsyncInfo.get_Status">
+    <summary>
+      <para>Gets a value that indicates the status of the asynchronous operation.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IAsyncInfo.Status">
+    <summary>
+      <para>Gets a value that indicates the status of the asynchronous operation.</para>
+      <para>This property is read-only.</para>
+    </summary>
+  </member>
+  <member name="IAsyncInfo">
+    <summary>Provides support for asynchronous operations.</summary>
+  </member>
+</doc>

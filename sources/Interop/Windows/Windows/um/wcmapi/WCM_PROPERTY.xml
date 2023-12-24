@@ -3,43 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_PROPERTY">
-    <summary>
-      <para>The <b>WCM_PROPERTY</b> enumerated type specifies a property of a connection.</para>
-    </summary>
+    <summary>The <b>WCM_PROPERTY</b> enumerated type specifies a property of a connection.</summary>
   </member>
   <member name="WCM_PROPERTY.wcm_global_property_domain_policy">
-    <summary>
-      <para>Domain policy.</para>
-    </summary>
+    <summary>Domain policy.</summary>
   </member>
   <member name="WCM_PROPERTY.wcm_global_property_minimize_policy">
-    <summary>
-      <para>Minimize policy.</para>
-    </summary>
+    <summary>Minimize policy.</summary>
   </member>
   <member name="WCM_PROPERTY.wcm_global_property_roaming_policy">
-    <summary>
-      <para>Roaming policy.</para>
-    </summary>
+    <summary>Roaming policy.</summary>
   </member>
   <member name="WCM_PROPERTY.wcm_global_property_powermanagement_policy">
-    <summary>
-      <para>Power management policy.</para>
-    </summary>
+    <summary>Power management policy.</summary>
   </member>
   <member name="WCM_PROPERTY.wcm_intf_property_connection_cost">
-    <summary>
-      <para>The cost level and flags for the connection</para>
-    </summary>
+    <summary>The cost level and flags for the connection</summary>
   </member>
   <member name="WCM_PROPERTY.wcm_intf_property_dataplan_status">
-    <summary>
-      <para>The plan data associated with the new cost.</para>
-    </summary>
+    <summary>The plan data associated with the new cost.</summary>
   </member>
   <member name="WCM_PROPERTY.wcm_intf_property_hotspot_profile">
-    <summary>
-      <para>The hotspot profile.</para>
-    </summary>
+    <summary>The hotspot profile.</summary>
   </member>
 </doc>

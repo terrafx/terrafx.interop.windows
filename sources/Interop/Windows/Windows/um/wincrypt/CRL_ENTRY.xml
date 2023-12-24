@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRL_ENTRY">
-    <summary>
-      <para>The <b>CRL_ENTRY</b> structure contains information about a single revoked certificate. It is a member of a <see cref="CRL_INFO" /> structure.</para>
-    </summary>
-    <seealso cref="CERT_EXTENSION" />
-    <seealso cref="CRL_INFO" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</seealso>
+    <summary>The <b>CRL_ENTRY</b> structure contains information about a single revoked certificate. It is a member of a <see cref="CRL_INFO" /> structure.</summary>
   </member>
   <member name="CRL_ENTRY.SerialNumber">
     <summary>
       <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains the serial number of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">revoked certificate</a>.</para>
-      <para>Leading 0x00 or 0xFF bytes are removed. For more information, see
-<see cref="CertCompareIntegerBlob" />.</para>
+      <para>Leading 0x00 or 0xFF bytes are removed. For more information, see<see cref="CertCompareIntegerBlob" />.</para>
     </summary>
   </member>
   <member name="CRL_ENTRY.RevocationDate">
-    <summary>
-      <para>Date that the certificate was revoked. Time is UTC-time encoded as an eight-byte date/time precise to seconds with a two digit year (that is, YYMMDDHHMMSS plus 2 bytes). The date is interpreted as a date between the years 1968 and 2067.</para>
-    </summary>
+    <summary>Date that the certificate was revoked. Time is UTC-time encoded as an eight-byte date/time precise to seconds with a two digit year (that is, YYMMDDHHMMSS plus 2 bytes). The date is interpreted as a date between the years 1968 and 2067.</summary>
   </member>
   <member name="CRL_ENTRY.cExtension">
-    <summary>
-      <para>Number of elements in the <b>rgExtension</b> member array of extensions.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgExtension</b> member array of extensions.</summary>
   </member>
   <member name="CRL_ENTRY.rgExtension">
-    <summary>
-      <para>Array of pointers to
-<see cref="CERT_EXTENSION" /> structures, each providing information about the revoked certificate.</para>
-    </summary>
+    <summary>Array of pointers to<see cref="CERT_EXTENSION" /> structures, each providing information about the revoked certificate.</summary>
   </member>
 </doc>

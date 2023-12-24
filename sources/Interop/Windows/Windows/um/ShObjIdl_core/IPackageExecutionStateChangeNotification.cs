@@ -25,7 +25,7 @@ public unsafe partial struct IPackageExecutionStateChangeNotification : IPackage
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, Guid*, void**, int>)(lpVtbl[0]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPackageExecutionStateChangeNotification*, Guid*, void**, int>)(lpVtbl[0]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPackageExecutionStateChangeNotification : IPackage
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, uint>)(lpVtbl[1]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPackageExecutionStateChangeNotification*, uint>)(lpVtbl[1]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IPackageExecutionStateChangeNotification : IPackage
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, uint>)(lpVtbl[2]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPackageExecutionStateChangeNotification*, uint>)(lpVtbl[2]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPackageExecutionStateChangeNotification.xml' path='doc/member[@name="IPackageExecutionStateChangeNotification.OnStateChanged"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] ushort* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState)
+    public HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] char* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState)
     {
-        return ((delegate* unmanaged<IPackageExecutionStateChangeNotification*, ushort*, PACKAGE_EXECUTION_STATE, int>)(lpVtbl[3]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this), pszPackageFullName, pesNewState);
+        return ((delegate* unmanaged[MemberFunction]<IPackageExecutionStateChangeNotification*, char*, PACKAGE_EXECUTION_STATE, int>)(lpVtbl[3]))((IPackageExecutionStateChangeNotification*)Unsafe.AsPointer(ref this), pszPackageFullName, pesNewState);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] ushort* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState);
+        HRESULT OnStateChanged([NativeTypeName("LPCWSTR")] char* pszPackageFullName, PACKAGE_EXECUTION_STATE pesNewState);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, PACKAGE_EXECUTION_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, PACKAGE_EXECUTION_STATE, int> OnStateChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, PACKAGE_EXECUTION_STATE, int> OnStateChanged;
     }
 }

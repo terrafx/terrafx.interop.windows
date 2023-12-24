@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICBitmapClipper.Initialize">
-    <summary>
-      <para>Initializes the bitmap clipper with the provided parameters.</para>
-    </summary>
-    <param name="pISource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>he input bitmap source.</para>
-    </param>
-    <param name="prc">
-      <para>Type: <b>const <see cref="WICRect" />*</b></para>
-      <para>The rectangle of the bitmap source to clip.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initializes the bitmap clipper with the provided parameters.</summary>
+    <param name="pISource">he input bitmap source.</param>
+    <param name="prc">The rectangle of the bitmap source to clip.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapClipper">
-    <summary>
-      <para>Exposes methods that produce a clipped version of the input bitmap for a specified rectangular region of interest.</para>
-    </summary>
+    <summary>Exposes methods that produce a clipped version of the input bitmap for a specified rectangular region of interest.</summary>
   </member>
 </doc>

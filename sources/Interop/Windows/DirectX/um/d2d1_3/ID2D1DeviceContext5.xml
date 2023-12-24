@@ -3,95 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1DeviceContext5.CreateColorContextFromDxgiColorSpace">
-    <summary>
-      <para>Creates a color context from a DXGI color space type. It is only valid to use this with the Color Management Effect in 'Best' mode.</para>
-    </summary>
-    <param name="colorSpace">
-      <para>Type: <b>DXGI_COLOR_SPACE_TYPE</b></para>
-      <para>The color space to create the color context from.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b>ID2D1ColorContext1**</b></para>
-      <para>The created color context.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext5" />
+    <summary>Creates a color context from a DXGI color space type. It is only valid to use this with the Color Management Effect in 'Best' mode.</summary>
+    <param name="colorSpace">The color space to create the color context from.</param>
+    <param name="colorContext">The created color context.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1DeviceContext5.CreateColorContextFromSimpleColorProfile">
-    <summary>
-      <para>Creates a color context from a simple color profile. It is only valid to use this with the Color Management Effect in 'Best' mode.</para>
-    </summary>
-    <param name="simpleProfile">
-      <para>Type: <b>const <see cref="D2D1_SIMPLE_COLOR_PROFILE" />*</b></para>
-      <para>The simple color profile to create the color context from.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b>ID2D1ColorContext1**</b></para>
-      <para>The created color context.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext5" />
+    <summary>Creates a color context from a simple color profile. It is only valid to use this with the Color Management Effect in 'Best' mode.</summary>
+    <param name="simpleProfile">The simple color profile to create the color context from.</param>
+    <param name="colorContext">The created color context.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1DeviceContext5.CreateColorContextFromSimpleColorProfile">
-    <summary>
-      <para>Creates a color context from a simple color profile. It is only valid to use this with the Color Management Effect in 'Best' mode.</para>
-    </summary>
-    <param name="simpleProfile">
-      <para>Type: <b>const <see cref="D2D1_SIMPLE_COLOR_PROFILE" /></b></para>
-      <para>The simple color profile to create the color context from.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b>ID2D1ColorContext1**</b></para>
-      <para>The created color context.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext5" />
+    <summary>Creates a color context from a simple color profile. It is only valid to use this with the Color Management Effect in 'Best' mode.</summary>
+    <param name="simpleProfile">The simple color profile to create the color context from.</param>
+    <param name="colorContext">The created color context.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1DeviceContext5.CreateSvgDocument">
-    <summary>
-      <para>Creates an SVG document from a stream.</para>
-    </summary>
-    <param name="inputXmlStream">
-      <para>Type: <b>IStream*</b></para>
-      <para>An input stream containing the SVG XML document. If null, an empty document is created.</para>
-    </param>
-    <param name="viewportSize">
-      <para>Type: <b>D2D1_SIZE_F</b></para>
-      <para>Size of the initial viewport of the document.</para>
-    </param>
-    <param name="svgDocument">
-      <para>Type: <b>ID2D1SvgDocument**</b></para>
-      <para>When this method returns, contains a pointer to the created SVG document.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext5" />
+    <summary>Creates an SVG document from a stream.</summary>
+    <param name="inputXmlStream">An input stream containing the SVG XML document. If null, an empty document is created.</param>
+    <param name="viewportSize">Size of the initial viewport of the document.</param>
+    <param name="svgDocument">When this method returns, contains a pointer to the created SVG document.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1DeviceContext5.DrawSvgDocument">
-    <summary>
-      <para>Draws an SVG document.</para>
-    </summary>
-    <param name="svgDocument">
-      <para>Type: <b>ID2D1SvgDocument*</b></para>
-      <para>The SVG document to draw.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext5" />
+    <summary>Draws an SVG document.</summary>
+    <param name="svgDocument">The SVG document to draw.</param>
   </member>
   <member name="ID2D1DeviceContext5">
-    <summary>
-      <para>This interface performs all the same functions as the <see cref="ID2D1DeviceContext4" /> interface,
-plus it enables the creation of color contexts and Svg documents.</para>
-    </summary>
+    <summary>This interface performs all the same functions as the <see cref="ID2D1DeviceContext4" /> interface, plus it enables the creation of color contexts and Svg documents.</summary>
   </member>
 </doc>

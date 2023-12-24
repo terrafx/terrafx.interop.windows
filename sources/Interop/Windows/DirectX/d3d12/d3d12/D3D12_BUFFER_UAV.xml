@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_BUFFER_UAV">
+    <summary>Describes the elements in a buffer to use in a unordered-access view.</summary>
+  </member>
+  <member name="D3D12_BUFFER_UAV.FirstElement">
+    <summary>The zero-based index of the first element to be accessed.</summary>
+  </member>
+  <member name="D3D12_BUFFER_UAV.NumElements">
+    <summary>The number of elements in the resource. For structured buffers, this is the number of structures in the buffer.</summary>
+  </member>
+  <member name="D3D12_BUFFER_UAV.StructureByteStride">
+    <summary>The size of each element in the buffer structure (in bytes) when the buffer represents a structured buffer.</summary>
+  </member>
+  <member name="D3D12_BUFFER_UAV.CounterOffsetInBytes">
+    <summary>The counter offset, in bytes.</summary>
+  </member>
+  <member name="D3D12_BUFFER_UAV.Flags">
+    <summary>A <see cref="D3D12_BUFFER_UAV_FLAGS" />-typed value that specifies the view options for the resource.</summary>
+  </member>
+</doc>

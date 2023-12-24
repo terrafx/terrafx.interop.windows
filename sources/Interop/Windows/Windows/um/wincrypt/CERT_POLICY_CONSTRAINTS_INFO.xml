@@ -3,32 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_POLICY_CONSTRAINTS_INFO">
-    <summary>
-      <para>The <b>CERT_POLICY_CONSTRAINTS_INFO</b> structure contains established policies for accepting certificates as trusted.</para>
-    </summary>
+    <summary>The <b>CERT_POLICY_CONSTRAINTS_INFO</b> structure contains established policies for accepting certificates as trusted.</summary>
   </member>
   <member name="CERT_POLICY_CONSTRAINTS_INFO.fRequireExplicitPolicy">
     <summary>
-      <para>
-        <b>BOOL</b> flag indicating whether explicit policy information is required.</para>
-    </summary>
+      <b>BOOL</b> flag indicating whether explicit policy information is required.</summary>
   </member>
   <member name="CERT_POLICY_CONSTRAINTS_INFO.dwRequireExplicitPolicySkipCerts">
     <summary>
-      <para>
-        <b>DWORD</b> indicating the number of required explicit policy certificates.</para>
-    </summary>
+      <b>DWORD</b> indicating the number of required explicit policy certificates.</summary>
   </member>
   <member name="CERT_POLICY_CONSTRAINTS_INFO.fInhibitPolicyMapping">
     <summary>
-      <para>
-        <b>BOOL</b> flag indicating whether policy mapping is inhibited.</para>
-    </summary>
+      <b>BOOL</b> flag indicating whether policy mapping is inhibited.</summary>
   </member>
   <member name="CERT_POLICY_CONSTRAINTS_INFO.dwInhibitPolicyMappingSkipCerts">
     <summary>
-      <para>
-        <b>DWORD</b> indicating the number of policy mapping certificates to be skipped.</para>
-    </summary>
+      <b>DWORD</b> indicating the number of policy mapping certificates to be skipped.</summary>
   </member>
 </doc>

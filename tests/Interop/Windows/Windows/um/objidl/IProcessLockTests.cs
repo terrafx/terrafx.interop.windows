@@ -19,32 +19,4 @@ public static unsafe partial class IProcessLockTests
     {
         Assert.That(typeof(IProcessLock).GUID, Is.EqualTo(IID_IProcessLock));
     }
-
-    /// <summary>Validates that the <see cref="IProcessLock" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IProcessLock>(), Is.EqualTo(sizeof(IProcessLock)));
-    }
-
-    /// <summary>Validates that the <see cref="IProcessLock" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IProcessLock).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IProcessLock" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IProcessLock), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IProcessLock), Is.EqualTo(4));
-        }
-    }
 }

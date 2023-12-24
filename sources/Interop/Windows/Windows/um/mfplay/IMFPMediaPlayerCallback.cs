@@ -25,7 +25,7 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFPMediaPlayerCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayerCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayerCallback*, uint>)(lpVtbl[1]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayerCallback*, uint>)(lpVtbl[1]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFPMediaPlayerCallback*, uint>)(lpVtbl[2]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayerCallback*, uint>)(lpVtbl[2]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMediaPlayerCallback.xml' path='doc/member[@name="IMFPMediaPlayerCallback.OnMediaPlayerEvent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
     [VtblIndex(3)]
     public void OnMediaPlayerEvent(MFP_EVENT_HEADER* pEventHeader)
     {
-        ((delegate* unmanaged<IMFPMediaPlayerCallback*, MFP_EVENT_HEADER*, void>)(lpVtbl[3]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this), pEventHeader);
+        ((delegate* unmanaged[MemberFunction]<IMFPMediaPlayerCallback*, MFP_EVENT_HEADER*, void>)(lpVtbl[3]))((IMFPMediaPlayerCallback*)Unsafe.AsPointer(ref this), pEventHeader);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFPMediaPlayerCallback : IMFPMediaPlayerCallback.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (MFP_EVENT_HEADER *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFP_EVENT_HEADER*, void> OnMediaPlayerEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFP_EVENT_HEADER*, void> OnMediaPlayerEvent;
     }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IMFHttpDownloadSessionTests
     {
         Assert.That(typeof(IMFHttpDownloadSession).GUID, Is.EqualTo(IID_IMFHttpDownloadSession));
     }
-
-    /// <summary>Validates that the <see cref="IMFHttpDownloadSession" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFHttpDownloadSession>(), Is.EqualTo(sizeof(IMFHttpDownloadSession)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFHttpDownloadSession" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFHttpDownloadSession).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFHttpDownloadSession" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFHttpDownloadSession), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFHttpDownloadSession), Is.EqualTo(4));
-        }
-    }
 }

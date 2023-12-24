@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SmoothingMode">
+    <summary>The <b>SmoothingMode</b> enumeration specifies the type of smoothing (antialiasing) that is applied to lines and curves. This enumeration is used by the <see cref="Graphics.GetSmoothingMode" /> and <see cref="Graphics.SetSmoothingMode" /> methods of the<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusgraphics/nl-gdiplusgraphics-graphics">Graphics</a> class.</summary>
+  </member>
+  <member name="SmoothingMode.SmoothingModeInvalid">
+    <summary>Reserved.</summary>
+  </member>
+  <member name="SmoothingMode.SmoothingModeDefault">
+    <summary>Specifies that smoothing is not applied.</summary>
+  </member>
+  <member name="SmoothingMode.SmoothingModeHighSpeed">
+    <summary>Specifies that smoothing is not applied.</summary>
+  </member>
+  <member name="SmoothingMode.SmoothingModeHighQuality">
+    <summary>Specifies that smoothing is applied using an 8 X 4 box filter.</summary>
+  </member>
+  <member name="SmoothingMode.SmoothingModeNone">
+    <summary>Specifies that smoothing is not applied.</summary>
+  </member>
+  <member name="SmoothingMode.SmoothingModeAntiAlias">
+    <summary>Specifies that smoothing is applied using an 8 X 4 box filter.</summary>
+  </member>
+  <member name="SmoothingMode.SmoothingModeAntiAlias8x4">
+    <summary>Specifies that smoothing is applied using an 8 X 4 box filter.</summary>
+  </member>
+  <member name="SmoothingMode.SmoothingModeAntiAlias8x8">
+    <summary>Specifies that smoothing is applied using an 8 X 8 box filter.</summary>
+  </member>
+</doc>

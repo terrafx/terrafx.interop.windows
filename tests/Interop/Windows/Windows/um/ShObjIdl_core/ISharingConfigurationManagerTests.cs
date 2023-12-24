@@ -19,32 +19,4 @@ public static unsafe partial class ISharingConfigurationManagerTests
     {
         Assert.That(typeof(ISharingConfigurationManager).GUID, Is.EqualTo(IID_ISharingConfigurationManager));
     }
-
-    /// <summary>Validates that the <see cref="ISharingConfigurationManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISharingConfigurationManager>(), Is.EqualTo(sizeof(ISharingConfigurationManager)));
-    }
-
-    /// <summary>Validates that the <see cref="ISharingConfigurationManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISharingConfigurationManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISharingConfigurationManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISharingConfigurationManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISharingConfigurationManager), Is.EqualTo(4));
-        }
-    }
 }

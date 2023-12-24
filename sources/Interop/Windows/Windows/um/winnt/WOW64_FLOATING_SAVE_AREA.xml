@@ -3,11 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WOW64_FLOATING_SAVE_AREA">
-    <summary>
-      <para>Represents the 80387 save area on WOW64. Refer to the header file WinNT.h for the definition of this structure.</para>
-    </summary>
-    <seealso cref="WOW64_CONTEXT" />
-    <seealso cref="Wow64GetThreadContext" />
-    <seealso cref="Wow64SetThreadContext" />
+    <summary>Represents the 80387 save area on WOW64. Refer to the header file WinNT.h for the definition of this structure.</summary>
   </member>
 </doc>

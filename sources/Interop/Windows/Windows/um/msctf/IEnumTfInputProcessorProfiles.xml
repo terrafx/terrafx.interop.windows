@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumTfInputProcessorProfiles.Clone">
-    <summary>
-      <para>The <b>IEnumTfInputProcessorProfiles.Clone</b> method creates a copy of the enumerator object.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>[out] A pointer to an <see cref="IEnumTfInputProcessorProfiles" /> interface.</para>
-    </param>
+    <summary>The <b>IEnumTfInputProcessorProfiles.Clone</b> method creates a copy of the enumerator object.</summary>
+    <param name="ppEnum">[out] A pointer to an <see cref="IEnumTfInputProcessorProfiles" /> interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,52 +12,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfInputProcessorProfiles.Next">
-    <summary>
-      <para>The <b>IEnumTfInputProcessorProfiles.Next</b> method obtains, from the current position, the specified number of elements in the enumeration sequence.</para>
-    </summary>
-    <param name="ulCount">
-      <para>[in] Specifies the number of elements to obtain.</para>
-    </param>
-    <param name="pProfile">
-      <para>[out] Pointer to an array of <see cref="TF_INPUTPROCESSORPROFILE" /> structures. This array must be at least <i>ulCount</i> elements in size.</para>
-    </param>
-    <param name="pcFetch">
-      <para>[out] Pointer to a ULONG value that receives the number of elements actually obtained. This value can be less than the number of items requested. This parameter can be <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>IEnumTfInputProcessorProfiles.Next</b> method obtains, from the current position, the specified number of elements in the enumeration sequence.</summary>
+    <param name="ulCount">[in] Specifies the number of elements to obtain.</param>
+    <param name="pProfile">[out] Pointer to an array of <see cref="TF_INPUTPROCESSORPROFILE" /> structures. This array must be at least <i>ulCount</i> elements in size.</param>
+    <param name="pcFetch">[out] Pointer to a ULONG value that receives the number of elements actually obtained. This value can be less than the number of items requested. This parameter can be <b>NULL</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -69,43 +63,47 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfInputProcessorProfiles.Reset">
-    <summary>
-      <para>The <see cref="IEnumTfInputProcessorProfiles.Reset" /> method resets the enumerator object by moving the current position to the beginning of the enumeration sequence.</para>
-    </summary>
+    <summary>The <see cref="IEnumTfInputProcessorProfiles.Reset" /> method resets the enumerator object by moving the current position to the beginning of the enumeration sequence.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -113,26 +111,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfInputProcessorProfiles.Skip">
-    <summary>
-      <para>The <see cref="IEnumTfInputProcessorProfiles.Skip" /> method moves the current position forward in the enumeration sequence by the specified number of elements.</para>
-    </summary>
-    <param name="ulCount">
-      <para>[in] Contains the number of elements to skip.</para>
-    </param>
+    <summary>The <see cref="IEnumTfInputProcessorProfiles.Skip" /> method moves the current position forward in the enumeration sequence by the specified number of elements.</summary>
+    <param name="ulCount">[in] Contains the number of elements to skip.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -140,33 +136,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The method reached the end of the enumeration before the specified number of elements could be skipped.</para>
-          </description>
-        </item>
+          <description>The method reached the end of the enumeration before the specified number of elements could be skipped.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfInputProcessorProfiles">
-    <summary>
-      <para>The <b>IEnumTfInputProcessorProfiles</b> interface is implemented by TSF manager and used by applications or textservices. This interface can be retrieved by <see cref="ITfInputProcessorProfileMgr.EnumProfiles" /> and enumerates the registered profiles.</para>
-    </summary>
-    <seealso cref="ITfInputProcessorProfiles " />
+    <summary>The <b>IEnumTfInputProcessorProfiles</b> interface is implemented by TSF manager and used by applications or textservices. This interface can be retrieved by <see cref="ITfInputProcessorProfileMgr.EnumProfiles" /> and enumerates the registered profiles.</summary>
   </member>
 </doc>

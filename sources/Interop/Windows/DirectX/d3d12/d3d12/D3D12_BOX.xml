@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_BOX">
+    <summary>Describes a 3D box.</summary>
+  </member>
+  <member name="D3D12_BOX.left">
+    <summary>The x position of the left hand side of the box.</summary>
+  </member>
+  <member name="D3D12_BOX.top">
+    <summary>The y position of the top of the box.</summary>
+  </member>
+  <member name="D3D12_BOX.front">
+    <summary>The z position of the front of the box.</summary>
+  </member>
+  <member name="D3D12_BOX.right">
+    <summary>The x position of the right hand side of the box, plus 1. This means that <code>right - left</code> equals the width of the box.</summary>
+  </member>
+  <member name="D3D12_BOX.bottom">
+    <summary>The y position of the bottom of the box, plus 1. This means that <code>bottom - top</code> equals the height of the box.</summary>
+  </member>
+  <member name="D3D12_BOX.back">
+    <summary>The z position of the back of the box, plus 1. This means that <code>back - front</code> equals the depth of the box.</summary>
+  </member>
+</doc>

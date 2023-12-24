@@ -19,25 +19,4 @@ public static unsafe partial class HTMLSemanticElementTests
     {
         Assert.That(typeof(HTMLSemanticElement).GUID, Is.EqualTo(IID_HTMLSemanticElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLSemanticElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLSemanticElement>(), Is.EqualTo(sizeof(HTMLSemanticElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLSemanticElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLSemanticElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLSemanticElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLSemanticElement), Is.EqualTo(1));
-    }
 }

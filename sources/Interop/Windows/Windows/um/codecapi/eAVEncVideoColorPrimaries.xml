@@ -4,54 +4,35 @@
 <doc>
   <member name="eAVEncVideoColorPrimaries">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the color primaries of the video. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoinputcolorprimaries-property">AVEncVideoInputColorPrimaries</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputcolorprimaries-property">AVEncVideoOutputColorPrimaries</a> properties.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_SameAsSource">
-    <summary>
-      <para>Use the same primaries as the input video. This flag applies to the <b>AVEncVideoOutputColorPrimaries</b> property only.</para>
-    </summary>
+    <summary>Use the same primaries as the input video. This flag applies to the <b>AVEncVideoOutputColorPrimaries</b> property only.</summary>
   </member>
   <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_Reserved">
-    <summary>
-      <para>Reserved. Do not use.</para>
-    </summary>
+    <summary>Reserved. Do not use.</summary>
   </member>
   <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_BT709">
-    <summary>
-      <para>ITU-R BT.709 (including sRGB and scRGB).</para>
-    </summary>
+    <summary>ITU-R BT.709 (including sRGB and scRGB).</summary>
   </member>
   <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_BT470_2_SysM">
-    <summary>
-      <para>ITU-R.BT.470-4 System M (NTSC).</para>
-    </summary>
+    <summary>ITU-R.BT.470-4 System M (NTSC).</summary>
   </member>
   <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_BT470_2_SysBG">
-    <summary>
-      <para>ITU-R.BT.470-4 System B,G (NTSC).</para>
-    </summary>
+    <summary>ITU-R.BT.470-4 System B,G (NTSC).</summary>
   </member>
   <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_SMPTE170M">
-    <summary>
-      <para>SMPTE 170M.</para>
-    </summary>
+    <summary>SMPTE 170M.</summary>
   </member>
   <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_SMPTE240M">
-    <summary>
-      <para>SMPTE 240M.</para>
-    </summary>
+    <summary>SMPTE 240M.</summary>
   </member>
   <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_EBU3231">
-    <summary>
-      <para>EBU 3213.</para>
-    </summary>
+    <summary>EBU 3213.</summary>
   </member>
   <member name="eAVEncVideoColorPrimaries.eAVEncVideoColorPrimaries_SMPTE_C">
-    <summary>
-      <para>SPMTE C (NTSC).</para>
-    </summary>
+    <summary>SPMTE C (NTSC).</summary>
   </member>
 </doc>

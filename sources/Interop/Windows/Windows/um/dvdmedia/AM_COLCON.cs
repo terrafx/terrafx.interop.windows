@@ -17,7 +17,7 @@ public partial struct AM_COLCON
     public byte emph1col
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield1 & 0xFu);
         }
@@ -34,7 +34,7 @@ public partial struct AM_COLCON
     public byte emph2col
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield1 >> 4) & 0xFu);
         }
@@ -53,7 +53,7 @@ public partial struct AM_COLCON
     public byte backcol
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield2 & 0xFu);
         }
@@ -70,7 +70,7 @@ public partial struct AM_COLCON
     public byte patcol
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield2 >> 4) & 0xFu);
         }
@@ -89,7 +89,7 @@ public partial struct AM_COLCON
     public byte emph1con
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield3 & 0xFu);
         }
@@ -106,7 +106,7 @@ public partial struct AM_COLCON
     public byte emph2con
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield3 >> 4) & 0xFu);
         }
@@ -125,7 +125,7 @@ public partial struct AM_COLCON
     public byte backcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield4 & 0xFu);
         }
@@ -142,7 +142,7 @@ public partial struct AM_COLCON
     public byte patcon
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield4 >> 4) & 0xFu);
         }

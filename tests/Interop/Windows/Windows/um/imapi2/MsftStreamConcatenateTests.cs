@@ -19,25 +19,4 @@ public static unsafe partial class MsftStreamConcatenateTests
     {
         Assert.That(typeof(MsftStreamConcatenate).GUID, Is.EqualTo(CLSID_MsftStreamConcatenate));
     }
-
-    /// <summary>Validates that the <see cref="MsftStreamConcatenate" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftStreamConcatenate>(), Is.EqualTo(sizeof(MsftStreamConcatenate)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftStreamConcatenate" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftStreamConcatenate).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftStreamConcatenate" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftStreamConcatenate), Is.EqualTo(1));
-    }
 }

@@ -21,32 +21,4 @@ public static unsafe partial class IVirtualSurfaceImageSourceNativeTests
     {
         Assert.That(typeof(IVirtualSurfaceImageSourceNative).GUID, Is.EqualTo(IID_IVirtualSurfaceImageSourceNative));
     }
-
-    /// <summary>Validates that the <see cref="IVirtualSurfaceImageSourceNative" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVirtualSurfaceImageSourceNative>(), Is.EqualTo(sizeof(IVirtualSurfaceImageSourceNative)));
-    }
-
-    /// <summary>Validates that the <see cref="IVirtualSurfaceImageSourceNative" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVirtualSurfaceImageSourceNative).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVirtualSurfaceImageSourceNative" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVirtualSurfaceImageSourceNative), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVirtualSurfaceImageSourceNative), Is.EqualTo(4));
-        }
-    }
 }

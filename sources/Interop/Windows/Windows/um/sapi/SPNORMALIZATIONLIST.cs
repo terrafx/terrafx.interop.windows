@@ -14,5 +14,5 @@ public unsafe partial struct SPNORMALIZATIONLIST
 
     /// <include file='SPNORMALIZATIONLIST.xml' path='doc/member[@name="SPNORMALIZATIONLIST.ppszzNormalizedList"]/*' />
     [NativeTypeName("WCHAR **")]
-    public ushort** ppszzNormalizedList;
+    public char** ppszzNormalizedList;
 }

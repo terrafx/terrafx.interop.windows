@@ -3,39 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SECURITY_DESCRIPTION">
-    <summary>
-      <para>The top-level structure used to specify the security requirements for
-a <see cref="channel" /> (on the client side) or a <see cref="listener" /> (on the server side).</para>
-    </summary>
-    <remarks>
-      <para>The figure below illustrates the structure of a security description.</para>
-      <para>.:image type="content" source="images/SecurityDescription.png" border="false" alt-text="Diagram of the elements in a security description. A Channel-wide Settings Bag,  a Security Binding, and the properties of the Security Binding.".:</para>
-    </remarks>
+    <summary>The top-level structure used to specify the security requirements for a <see cref="channel" /> (on the client side) or a <see cref="listener" /> (on the server side).</summary>
   </member>
   <member name="WS_SECURITY_DESCRIPTION.securityBindings">
-    <summary>
-      <para>The array of pointers to security bindings.  The set of security
-bindings supplies determines the kind of security applied to the
-channel.  Each security binding specifies one security token.</para>
-    </summary>
+    <summary>The array of pointers to security bindings. The set of security bindings supplies determines the kind of security applied to the channel. Each security binding specifies one security token.</summary>
   </member>
   <member name="WS_SECURITY_DESCRIPTION.securityBindingCount">
-    <summary>
-      <para>The count of elements in the securityBindings array.</para>
-    </summary>
+    <summary>The count of elements in the securityBindings array.</summary>
   </member>
   <member name="WS_SECURITY_DESCRIPTION.properties">
-    <summary>
-      <para>The array of properties specifying the optional channel-wide security
-settings.  Each <see cref="WS_SECURITY_PROPERTY" /> in the array is a key-value
-pair and must use a key defined in <see cref="WS_SECURITY_PROPERTY_ID" />.  This field can be <b>NULL</b>,
-and if it is <b>NULL</b>, the default value will be used for each security
-channel setting.</para>
-    </summary>
+    <summary>The array of properties specifying the optional channel-wide security settings. Each <see cref="WS_SECURITY_PROPERTY" /> in the array is a key-value pair and must use a key defined in <see cref="WS_SECURITY_PROPERTY_ID" />. This field can be <b>NULL</b>, and if it is <b>NULL</b>, the default value will be used for each security channel setting.</summary>
   </member>
   <member name="WS_SECURITY_DESCRIPTION.propertyCount">
-    <summary>
-      <para>The count of elements in the properties array.</para>
-    </summary>
+    <summary>The count of elements in the properties array.</summary>
   </member>
 </doc>

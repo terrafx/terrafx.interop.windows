@@ -19,32 +19,4 @@ public static unsafe partial class IDiaSectionContribTests
     {
         Assert.That(typeof(IDiaSectionContrib).GUID, Is.EqualTo(IID_IDiaSectionContrib));
     }
-
-    /// <summary>Validates that the <see cref="IDiaSectionContrib" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaSectionContrib>(), Is.EqualTo(sizeof(IDiaSectionContrib)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaSectionContrib" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaSectionContrib).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaSectionContrib" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaSectionContrib), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaSectionContrib), Is.EqualTo(4));
-        }
-    }
 }

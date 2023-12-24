@@ -14,5 +14,5 @@ public unsafe partial struct WS_STRING
 
     /// <include file='WS_STRING.xml' path='doc/member[@name="WS_STRING.chars"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* chars;
+    public char* chars;
 }

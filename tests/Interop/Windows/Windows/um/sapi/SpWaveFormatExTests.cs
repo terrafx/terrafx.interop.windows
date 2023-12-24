@@ -19,25 +19,4 @@ public static unsafe partial class SpWaveFormatExTests
     {
         Assert.That(typeof(SpWaveFormatEx).GUID, Is.EqualTo(CLSID_SpWaveFormatEx));
     }
-
-    /// <summary>Validates that the <see cref="SpWaveFormatEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpWaveFormatEx>(), Is.EqualTo(sizeof(SpWaveFormatEx)));
-    }
-
-    /// <summary>Validates that the <see cref="SpWaveFormatEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpWaveFormatEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpWaveFormatEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpWaveFormatEx), Is.EqualTo(1));
-    }
 }

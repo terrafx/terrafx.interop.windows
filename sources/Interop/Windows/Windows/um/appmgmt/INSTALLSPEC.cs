@@ -14,22 +14,22 @@ public unsafe partial struct INSTALLSPEC
 {
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.AppName"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/appmgmt.h:39:5)")]
+    [NativeTypeName("__AnonymousRecord_appmgmt_L39_C5")]
     public _AppName_e__Struct AppName;
 
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.FileExt"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("WCHAR *")]
-    public ushort* FileExt;
+    public char* FileExt;
 
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.ProgId"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("WCHAR *")]
-    public ushort* ProgId;
+    public char* ProgId;
 
     /// <include file='INSTALLSPEC.xml' path='doc/member[@name="INSTALLSPEC.COMClass"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/appmgmt.h:46:5)")]
+    [NativeTypeName("__AnonymousRecord_appmgmt_L46_C5")]
     public _COMClass_e__Struct COMClass;
 
     /// <include file='_AppName_e__Struct.xml' path='doc/member[@name="_AppName_e__Struct"]/*' />
@@ -37,7 +37,7 @@ public unsafe partial struct INSTALLSPEC
     {
         /// <include file='_AppName_e__Struct.xml' path='doc/member[@name="_AppName_e__Struct.Name"]/*' />
         [NativeTypeName("WCHAR *")]
-        public ushort* Name;
+        public char* Name;
 
         /// <include file='_AppName_e__Struct.xml' path='doc/member[@name="_AppName_e__Struct.GPOId"]/*' />
         public Guid GPOId;

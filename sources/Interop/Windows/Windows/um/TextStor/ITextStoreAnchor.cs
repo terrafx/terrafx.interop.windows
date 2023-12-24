@@ -25,7 +25,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint>)(lpVtbl[1]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint>)(lpVtbl[1]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint>)(lpVtbl[2]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint>)(lpVtbl[2]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.AdviseSink"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(3)]
     public HRESULT AdviseSink([NativeTypeName("const IID &")] Guid* riid, IUnknown* punk, [NativeTypeName("DWORD")] uint dwMask)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, Guid*, IUnknown*, uint, int>)(lpVtbl[3]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), riid, punk, dwMask);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, Guid*, IUnknown*, uint, int>)(lpVtbl[3]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), riid, punk, dwMask);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.UnadviseSink"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(4)]
     public HRESULT UnadviseSink(IUnknown* punk)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, IUnknown*, int>)(lpVtbl[4]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), punk);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, IUnknown*, int>)(lpVtbl[4]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), punk);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RequestLock"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(5)]
     public HRESULT RequestLock([NativeTypeName("DWORD")] uint dwLockFlags, HRESULT* phrSession)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, HRESULT*, int>)(lpVtbl[5]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwLockFlags, phrSession);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, HRESULT*, int>)(lpVtbl[5]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwLockFlags, phrSession);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetStatus"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetStatus(TS_STATUS* pdcs)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, TS_STATUS*, int>)(lpVtbl[6]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pdcs);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, TS_STATUS*, int>)(lpVtbl[6]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pdcs);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.QueryInsert"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(7)]
     public HRESULT QueryInsert(IAnchor* paTestStart, IAnchor* paTestEnd, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaResultStart, IAnchor** ppaResultEnd)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, IAnchor*, uint, IAnchor**, IAnchor**, int>)(lpVtbl[7]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paTestStart, paTestEnd, cch, ppaResultStart, ppaResultEnd);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, IAnchor*, IAnchor*, uint, IAnchor**, IAnchor**, int>)(lpVtbl[7]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paTestStart, paTestEnd, cch, ppaResultStart, ppaResultEnd);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetSelection"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(8)]
     public HRESULT GetSelection([NativeTypeName("ULONG")] uint ulIndex, [NativeTypeName("ULONG")] uint ulCount, TS_SELECTION_ANCHOR* pSelection, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, uint, TS_SELECTION_ANCHOR*, uint*, int>)(lpVtbl[8]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ulIndex, ulCount, pSelection, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, uint, TS_SELECTION_ANCHOR*, uint*, int>)(lpVtbl[8]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ulIndex, ulCount, pSelection, pcFetched);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.SetSelection"]/*' />
@@ -99,23 +99,23 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(9)]
     public HRESULT SetSelection([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TS_SELECTION_ANCHOR *")] TS_SELECTION_ANCHOR* pSelection)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, TS_SELECTION_ANCHOR*, int>)(lpVtbl[9]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ulCount, pSelection);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, TS_SELECTION_ANCHOR*, int>)(lpVtbl[9]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ulCount, pSelection);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor)
+    public HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, ushort*, uint, uint*, BOOL, int>)(lpVtbl[10]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cchReq, pcch, fUpdateAnchor);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, char*, uint, uint*, BOOL, int>)(lpVtbl[10]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cchReq, pcch, fUpdateAnchor);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.SetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch)
+    public HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, ushort*, uint, int>)(lpVtbl[11]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cch);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, char*, uint, int>)(lpVtbl[11]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pchText, cch);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetFormattedText"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(12)]
     public HRESULT GetFormattedText(IAnchor* paStart, IAnchor* paEnd, IDataObject** ppDataObject)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, IAnchor*, IDataObject**, int>)(lpVtbl[12]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paStart, paEnd, ppDataObject);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, IAnchor*, IAnchor*, IDataObject**, int>)(lpVtbl[12]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paStart, paEnd, ppDataObject);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetEmbedded"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(13)]
     public HRESULT GetEmbedded([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paPos, [NativeTypeName("const GUID &")] Guid* rguidService, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, Guid*, Guid*, IUnknown**, int>)(lpVtbl[13]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paPos, rguidService, riid, ppunk);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, IAnchor*, Guid*, Guid*, IUnknown**, int>)(lpVtbl[13]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paPos, rguidService, riid, ppunk);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.InsertEmbedded"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(14)]
     public HRESULT InsertEmbedded([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, IDataObject* pDataObject)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, IDataObject*, int>)(lpVtbl[14]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pDataObject);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, IDataObject*, int>)(lpVtbl[14]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, paStart, paEnd, pDataObject);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RequestSupportedAttrs"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(15)]
     public HRESULT RequestSupportedAttrs([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, uint, Guid*, int>)(lpVtbl[15]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, cFilterAttrs, paFilterAttrs);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, uint, Guid*, int>)(lpVtbl[15]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, cFilterAttrs, paFilterAttrs);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RequestAttrsAtPosition"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(16)]
     public HRESULT RequestAttrsAtPosition(IAnchor* paPos, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, uint, Guid*, uint, int>)(lpVtbl[16]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paPos, cFilterAttrs, paFilterAttrs, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, IAnchor*, uint, Guid*, uint, int>)(lpVtbl[16]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paPos, cFilterAttrs, paFilterAttrs, dwFlags);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RequestAttrsTransitioningAtPosition"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(17)]
     public HRESULT RequestAttrsTransitioningAtPosition(IAnchor* paPos, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, uint, Guid*, uint, int>)(lpVtbl[17]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paPos, cFilterAttrs, paFilterAttrs, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, IAnchor*, uint, Guid*, uint, int>)(lpVtbl[17]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paPos, cFilterAttrs, paFilterAttrs, dwFlags);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.FindNextAttrTransition"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(18)]
     public HRESULT FindNextAttrTransition(IAnchor* paStart, IAnchor* paHalt, [NativeTypeName("ULONG")] uint cFilterAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paFilterAttrs, [NativeTypeName("DWORD")] uint dwFlags, BOOL* pfFound, [NativeTypeName("LONG *")] int* plFoundOffset)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor*, IAnchor*, uint, Guid*, uint, BOOL*, int*, int>)(lpVtbl[18]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paStart, paHalt, cFilterAttrs, paFilterAttrs, dwFlags, pfFound, plFoundOffset);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, IAnchor*, IAnchor*, uint, Guid*, uint, BOOL*, int*, int>)(lpVtbl[18]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), paStart, paHalt, cFilterAttrs, paFilterAttrs, dwFlags, pfFound, plFoundOffset);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.RetrieveRequestedAttrs"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(19)]
     public HRESULT RetrieveRequestedAttrs([NativeTypeName("ULONG")] uint ulCount, TS_ATTRVAL* paAttrVals, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, TS_ATTRVAL*, uint*, int>)(lpVtbl[19]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ulCount, paAttrVals, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, TS_ATTRVAL*, uint*, int>)(lpVtbl[19]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ulCount, paAttrVals, pcFetched);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetStart"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(20)]
     public HRESULT GetStart(IAnchor** ppaStart)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor**, int>)(lpVtbl[20]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ppaStart);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, IAnchor**, int>)(lpVtbl[20]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ppaStart);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetEnd"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(21)]
     public HRESULT GetEnd(IAnchor** ppaEnd)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, IAnchor**, int>)(lpVtbl[21]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ppaEnd);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, IAnchor**, int>)(lpVtbl[21]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), ppaEnd);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetActiveView"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(22)]
     public HRESULT GetActiveView([NativeTypeName("TsViewCookie *")] uint* pvcView)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint*, int>)(lpVtbl[22]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pvcView);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint*, int>)(lpVtbl[22]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pvcView);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetAnchorFromPoint"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(23)]
     public HRESULT GetAnchorFromPoint([NativeTypeName("TsViewCookie")] uint vcView, [NativeTypeName("const POINT *")] POINT* ptScreen, [NativeTypeName("DWORD")] uint dwFlags, IAnchor** ppaSite)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, POINT*, uint, IAnchor**, int>)(lpVtbl[23]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, ptScreen, dwFlags, ppaSite);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, POINT*, uint, IAnchor**, int>)(lpVtbl[23]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, ptScreen, dwFlags, ppaSite);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetTextExt"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(24)]
     public HRESULT GetTextExt([NativeTypeName("TsViewCookie")] uint vcView, IAnchor* paStart, IAnchor* paEnd, RECT* prc, BOOL* pfClipped)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, RECT*, BOOL*, int>)(lpVtbl[24]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, paStart, paEnd, prc, pfClipped);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, IAnchor*, IAnchor*, RECT*, BOOL*, int>)(lpVtbl[24]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, paStart, paEnd, prc, pfClipped);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetScreenExt"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(25)]
     public HRESULT GetScreenExt([NativeTypeName("TsViewCookie")] uint vcView, RECT* prc)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, RECT*, int>)(lpVtbl[25]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, prc);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, RECT*, int>)(lpVtbl[25]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, prc);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.GetWnd"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(26)]
     public HRESULT GetWnd([NativeTypeName("TsViewCookie")] uint vcView, HWND* phwnd)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, HWND*, int>)(lpVtbl[26]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, phwnd);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, HWND*, int>)(lpVtbl[26]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), vcView, phwnd);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.QueryInsertEmbedded"]/*' />
@@ -243,15 +243,15 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(27)]
     public HRESULT QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, Guid*, FORMATETC*, BOOL*, int>)(lpVtbl[27]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, Guid*, FORMATETC*, BOOL*, int>)(lpVtbl[27]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), pguidService, pFormatEtc, pfInsertable);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.InsertTextAtSelection"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(28)]
-    public HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd)
+    public HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, ushort*, uint, IAnchor**, IAnchor**, int>)(lpVtbl[28]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, pchText, cch, ppaStart, ppaEnd);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, char*, uint, IAnchor**, IAnchor**, int>)(lpVtbl[28]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, pchText, cch, ppaStart, ppaEnd);
     }
 
     /// <include file='ITextStoreAnchor.xml' path='doc/member[@name="ITextStoreAnchor.InsertEmbeddedAtSelection"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
     [VtblIndex(29)]
     public HRESULT InsertEmbeddedAtSelection([NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, IAnchor** ppaStart, IAnchor** ppaEnd)
     {
-        return ((delegate* unmanaged<ITextStoreAnchor*, uint, IDataObject*, IAnchor**, IAnchor**, int>)(lpVtbl[29]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, pDataObject, ppaStart, ppaEnd);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreAnchor*, uint, IDataObject*, IAnchor**, IAnchor**, int>)(lpVtbl[29]))((ITextStoreAnchor*)Unsafe.AsPointer(ref this), dwFlags, pDataObject, ppaStart, ppaEnd);
     }
 
     public interface Interface : IUnknown.Interface
@@ -286,10 +286,10 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
         HRESULT SetSelection([NativeTypeName("ULONG")] uint ulCount, [NativeTypeName("const TS_SELECTION_ANCHOR *")] TS_SELECTION_ANCHOR* pSelection);
 
         [VtblIndex(10)]
-        HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor);
+        HRESULT GetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cchReq, [NativeTypeName("ULONG *")] uint* pcch, BOOL fUpdateAnchor);
 
         [VtblIndex(11)]
-        HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch);
+        HRESULT SetText([NativeTypeName("DWORD")] uint dwFlags, IAnchor* paStart, IAnchor* paEnd, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch);
 
         [VtblIndex(12)]
         HRESULT GetFormattedText(IAnchor* paStart, IAnchor* paEnd, IDataObject** ppDataObject);
@@ -340,7 +340,7 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
         HRESULT QueryInsertEmbedded([NativeTypeName("const GUID *")] Guid* pguidService, [NativeTypeName("const FORMATETC *")] FORMATETC* pFormatEtc, BOOL* pfInsertable);
 
         [VtblIndex(28)]
-        HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] ushort* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd);
+        HRESULT InsertTextAtSelection([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const WCHAR *")] char* pchText, [NativeTypeName("ULONG")] uint cch, IAnchor** ppaStart, IAnchor** ppaEnd);
 
         [VtblIndex(29)]
         HRESULT InsertEmbeddedAtSelection([NativeTypeName("DWORD")] uint dwFlags, IDataObject* pDataObject, IAnchor** ppaStart, IAnchor** ppaEnd);
@@ -350,93 +350,93 @@ public unsafe partial struct ITextStoreAnchor : ITextStoreAnchor.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, uint, int> AdviseSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, uint, int> AdviseSink;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> UnadviseSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> UnadviseSink;
 
         [NativeTypeName("HRESULT (DWORD, HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HRESULT*, int> RequestLock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, HRESULT*, int> RequestLock;
 
         [NativeTypeName("HRESULT (TS_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TS_STATUS*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TS_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (IAnchor *, IAnchor *, ULONG, IAnchor **, IAnchor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor*, IAnchor*, uint, IAnchor**, IAnchor**, int> QueryInsert;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor*, IAnchor*, uint, IAnchor**, IAnchor**, int> QueryInsert;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, TS_SELECTION_ANCHOR *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, TS_SELECTION_ANCHOR*, uint*, int> GetSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, TS_SELECTION_ANCHOR*, uint*, int> GetSelection;
 
         [NativeTypeName("HRESULT (ULONG, const TS_SELECTION_ANCHOR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TS_SELECTION_ANCHOR*, int> SetSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TS_SELECTION_ANCHOR*, int> SetSelection;
 
         [NativeTypeName("HRESULT (DWORD, IAnchor *, IAnchor *, WCHAR *, ULONG, ULONG *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, ushort*, uint, uint*, BOOL, int> GetText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAnchor*, IAnchor*, char*, uint, uint*, BOOL, int> GetText;
 
         [NativeTypeName("HRESULT (DWORD, IAnchor *, IAnchor *, const WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, ushort*, uint, int> SetText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAnchor*, IAnchor*, char*, uint, int> SetText;
 
         [NativeTypeName("HRESULT (IAnchor *, IAnchor *, IDataObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor*, IAnchor*, IDataObject**, int> GetFormattedText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor*, IAnchor*, IDataObject**, int> GetFormattedText;
 
         [NativeTypeName("HRESULT (DWORD, IAnchor *, const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAnchor*, Guid*, Guid*, IUnknown**, int> GetEmbedded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAnchor*, Guid*, Guid*, IUnknown**, int> GetEmbedded;
 
         [NativeTypeName("HRESULT (DWORD, IAnchor *, IAnchor *, IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, IDataObject*, int> InsertEmbedded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAnchor*, IAnchor*, IDataObject*, int> InsertEmbedded;
 
         [NativeTypeName("HRESULT (DWORD, ULONG, const TS_ATTRID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, Guid*, int> RequestSupportedAttrs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, Guid*, int> RequestSupportedAttrs;
 
         [NativeTypeName("HRESULT (IAnchor *, ULONG, const TS_ATTRID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor*, uint, Guid*, uint, int> RequestAttrsAtPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor*, uint, Guid*, uint, int> RequestAttrsAtPosition;
 
         [NativeTypeName("HRESULT (IAnchor *, ULONG, const TS_ATTRID *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor*, uint, Guid*, uint, int> RequestAttrsTransitioningAtPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor*, uint, Guid*, uint, int> RequestAttrsTransitioningAtPosition;
 
         [NativeTypeName("HRESULT (IAnchor *, IAnchor *, ULONG, const TS_ATTRID *, DWORD, BOOL *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor*, IAnchor*, uint, Guid*, uint, BOOL*, int*, int> FindNextAttrTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor*, IAnchor*, uint, Guid*, uint, BOOL*, int*, int> FindNextAttrTransition;
 
         [NativeTypeName("HRESULT (ULONG, TS_ATTRVAL *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TS_ATTRVAL*, uint*, int> RetrieveRequestedAttrs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TS_ATTRVAL*, uint*, int> RetrieveRequestedAttrs;
 
         [NativeTypeName("HRESULT (IAnchor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor**, int> GetStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor**, int> GetStart;
 
         [NativeTypeName("HRESULT (IAnchor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAnchor**, int> GetEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAnchor**, int> GetEnd;
 
         [NativeTypeName("HRESULT (TsViewCookie *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetActiveView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetActiveView;
 
         [NativeTypeName("HRESULT (TsViewCookie, const POINT *, DWORD, IAnchor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, POINT*, uint, IAnchor**, int> GetAnchorFromPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, POINT*, uint, IAnchor**, int> GetAnchorFromPoint;
 
         [NativeTypeName("HRESULT (TsViewCookie, IAnchor *, IAnchor *, RECT *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IAnchor*, IAnchor*, RECT*, BOOL*, int> GetTextExt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IAnchor*, IAnchor*, RECT*, BOOL*, int> GetTextExt;
 
         [NativeTypeName("HRESULT (TsViewCookie, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, RECT*, int> GetScreenExt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, RECT*, int> GetScreenExt;
 
         [NativeTypeName("HRESULT (TsViewCookie, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HWND*, int> GetWnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, HWND*, int> GetWnd;
 
         [NativeTypeName("HRESULT (const GUID *, const FORMATETC *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, FORMATETC*, BOOL*, int> QueryInsertEmbedded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, FORMATETC*, BOOL*, int> QueryInsertEmbedded;
 
         [NativeTypeName("HRESULT (DWORD, const WCHAR *, ULONG, IAnchor **, IAnchor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, uint, IAnchor**, IAnchor**, int> InsertTextAtSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, uint, IAnchor**, IAnchor**, int> InsertTextAtSelection;
 
         [NativeTypeName("HRESULT (DWORD, IDataObject *, IAnchor **, IAnchor **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDataObject*, IAnchor**, IAnchor**, int> InsertEmbeddedAtSelection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDataObject*, IAnchor**, IAnchor**, int> InsertEmbeddedAtSelection;
     }
 }

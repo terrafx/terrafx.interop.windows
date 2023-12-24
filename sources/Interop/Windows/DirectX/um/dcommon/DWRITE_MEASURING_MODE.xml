@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_MEASURING_MODE">
-    <summary>
-      <para>Indicates the measuring method used for text layout.</para>
-    </summary>
+    <summary>Indicates the measuring method used for text layout.</summary>
   </member>
   <member name="DWRITE_MEASURING_MODE.DWRITE_MEASURING_MODE_NATURAL">
-    <summary>
-      <para>Specifies that text is measured using glyph ideal metrics whose values are independent to the current display resolution.</para>
-    </summary>
+    <summary>Specifies that text is measured using glyph ideal metrics whose values are independent to the current display resolution.</summary>
   </member>
   <member name="DWRITE_MEASURING_MODE.DWRITE_MEASURING_MODE_GDI_CLASSIC">
-    <summary>
-      <para>Specifies that text is measured using glyph display-compatible metrics whose values tuned for the current display resolution.</para>
-    </summary>
+    <summary>Specifies that text is measured using glyph display-compatible metrics whose values tuned for the current display resolution.</summary>
   </member>
   <member name="DWRITE_MEASURING_MODE.DWRITE_MEASURING_MODE_GDI_NATURAL">
-    <summary>
-      <para>Specifies that text is measured using the same glyph display metrics as text measured by GDI using a font created with CLEARTYPE_NATURAL_QUALITY.</para>
-    </summary>
+    <summary>Specifies that text is measured using the same glyph display metrics as text measured by GDI using a font created with CLEARTYPE_NATURAL_QUALITY.</summary>
   </member>
 </doc>

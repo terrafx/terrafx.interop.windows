@@ -19,32 +19,4 @@ public static unsafe partial class IBindHostTests
     {
         Assert.That(typeof(IBindHost).GUID, Is.EqualTo(IID_IBindHost));
     }
-
-    /// <summary>Validates that the <see cref="IBindHost" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBindHost>(), Is.EqualTo(sizeof(IBindHost)));
-    }
-
-    /// <summary>Validates that the <see cref="IBindHost" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBindHost).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBindHost" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBindHost), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBindHost), Is.EqualTo(4));
-        }
-    }
 }

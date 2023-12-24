@@ -1099,6 +1099,18 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_CLOUD_FILE_US_MESSAGE_TIMEOUT 475L")]
     public const int ERROR_CLOUD_FILE_US_MESSAGE_TIMEOUT = 475;
 
+    [NativeTypeName("#define ERROR_NOT_A_DEV_VOLUME 476L")]
+    public const int ERROR_NOT_A_DEV_VOLUME = 476;
+
+    [NativeTypeName("#define ERROR_FS_GUID_MISMATCH 477L")]
+    public const int ERROR_FS_GUID_MISMATCH = 477;
+
+    [NativeTypeName("#define ERROR_CANT_ATTACH_TO_DEV_VOLUME 478L")]
+    public const int ERROR_CANT_ATTACH_TO_DEV_VOLUME = 478;
+
+    [NativeTypeName("#define ERROR_INVALID_CONFIG_VALUE 479L")]
+    public const int ERROR_INVALID_CONFIG_VALUE = 479;
+
     [NativeTypeName("#define ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT 480L")]
     public const int ERROR_PNP_QUERY_REMOVE_DEVICE_TIMEOUT = 480;
 
@@ -1194,6 +1206,18 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_BLOCK_SHARED 514L")]
     public const int ERROR_BLOCK_SHARED = 514;
+
+    [NativeTypeName("#define ERROR_VOLUME_UPGRADE_NOT_NEEDED 515L")]
+    public const int ERROR_VOLUME_UPGRADE_NOT_NEEDED = 515;
+
+    [NativeTypeName("#define ERROR_VOLUME_UPGRADE_PENDING 516L")]
+    public const int ERROR_VOLUME_UPGRADE_PENDING = 516;
+
+    [NativeTypeName("#define ERROR_VOLUME_UPGRADE_DISABLED 517L")]
+    public const int ERROR_VOLUME_UPGRADE_DISABLED = 517;
+
+    [NativeTypeName("#define ERROR_VOLUME_UPGRADE_DISABLED_TILL_OS_DOWNGRADE_EXPIRED 518L")]
+    public const int ERROR_VOLUME_UPGRADE_DISABLED_TILL_OS_DOWNGRADE_EXPIRED = 518;
 
     [NativeTypeName("#define ERROR_ARITHMETIC_OVERFLOW 534L")]
     public const int ERROR_ARITHMETIC_OVERFLOW = 534;
@@ -4231,6 +4255,9 @@ public static partial class ERROR
     [NativeTypeName("#define ERROR_SYSTEM_INTEGRITY_REPUTATION_UNATTAINABLE 4581L")]
     public const int ERROR_SYSTEM_INTEGRITY_REPUTATION_UNATTAINABLE = 4581;
 
+    [NativeTypeName("#define ERROR_SYSTEM_INTEGRITY_REPUTATION_EXPLICIT_DENY_FILE 4582L")]
+    public const int ERROR_SYSTEM_INTEGRITY_REPUTATION_EXPLICIT_DENY_FILE = 4582;
+
     [NativeTypeName("#define ERROR_DEPENDENT_RESOURCE_EXISTS 5001L")]
     public const int ERROR_DEPENDENT_RESOURCE_EXISTS = 5001;
 
@@ -6708,6 +6735,18 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED 8653L")]
     public const int ERROR_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED = 8653;
+
+    [NativeTypeName("#define ERROR_POLICY_CONTROLLED_ACCOUNT 8654L")]
+    public const int ERROR_POLICY_CONTROLLED_ACCOUNT = 8654;
+
+    [NativeTypeName("#define ERROR_LAPS_LEGACY_SCHEMA_MISSING 8655L")]
+    public const int ERROR_LAPS_LEGACY_SCHEMA_MISSING = 8655;
+
+    [NativeTypeName("#define ERROR_LAPS_SCHEMA_MISSING 8656L")]
+    public const int ERROR_LAPS_SCHEMA_MISSING = 8656;
+
+    [NativeTypeName("#define ERROR_LAPS_ENCRYPTION_REQUIRES_2016_DFL 8657L")]
+    public const int ERROR_LAPS_ENCRYPTION_REQUIRES_2016_DFL = 8657;
 
     [NativeTypeName("#define ERROR_IPSEC_QM_POLICY_EXISTS 13000L")]
     public const int ERROR_IPSEC_QM_POLICY_EXISTS = 13000;
@@ -9855,6 +9894,9 @@ public static partial class ERROR
 
     [NativeTypeName("#define ERROR_VHD_MISSING_CHANGE_TRACKING_INFORMATION _NDIS_ERROR_TYPEDEF_(0xC03A0030L)")]
     public const uint ERROR_VHD_MISSING_CHANGE_TRACKING_INFORMATION = (uint)(0xC03A0030);
+
+    [NativeTypeName("#define ERROR_VHD_UNEXPECTED_ID _NDIS_ERROR_TYPEDEF_(0xC03A0034L)")]
+    public const uint ERROR_VHD_UNEXPECTED_ID = (uint)(0xC03A0034);
 
     [NativeTypeName("#define ERROR_QUERY_STORAGE_ERROR _NDIS_ERROR_TYPEDEF_(0x803A0001L)")]
     public const uint ERROR_QUERY_STORAGE_ERROR = (uint)(0x803A0001);

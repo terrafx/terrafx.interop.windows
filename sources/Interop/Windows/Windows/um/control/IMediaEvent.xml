@@ -4,11 +4,10 @@
 <doc>
   <member name="IMediaEvent.CancelDefaultHandling">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>CancelDefaultHandling</code> method cancels the Filter Graph Manager's default handling for a specified event. The event notification is passed to the application.</para>
     </summary>
-    <param name="lEvCode">
-      <para>Event code for which to cancel default handling.</para>
-    </param>
+    <param name="lEvCode">Event code for which to cancel default handling.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
       <list type="table">
@@ -16,80 +15,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>No default handling for this event.</para>
-          </description>
-        </item>
+          <description>No default handling for this event.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To restore the default handling for an event, call the <see cref="IMediaEvent.RestoreDefaultHandling" /> method with the event code.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEvent Interface" />
   </member>
   <member name="IMediaEvent.FreeEventParams">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>FreeEventParams</code> method frees resources associated with the parameters of an event.</para>
     </summary>
-    <param name="lEvCode">
-      <para>Event code.</para>
-    </param>
-    <param name="lParam1">
-      <para>First event parameter.</para>
-    </param>
-    <param name="lParam2">
-      <para>Second event parameter.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>After you call the <see cref="IMediaEvent.GetEvent" /> method to retrieve an event notification, you must call <code>FreeEventParams</code>. This method frees any resources that were allocated for the event parameters. Pass in the same variables used for the <b>GetEvent</b> call.</para>
-      <h4>Examples</h4>
-      <code>
-hr = pEvent-&gt;GetEvent(&amp;amp;amp;amp;amp;amp;evCode, &amp;amp;amp;amp;amp;amp;param1, &amp;amp;amp;amp;amp;amp;param2, 0);
-// Handle the event (not shown).
-hr = pEvent-&gt;FreeEventParams(evCode, param1, param2);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEvent Interface" />
-    <seealso cref="IMediaEventEx" />
+    <param name="lEvCode">Event code.</param>
+    <param name="lParam1">First event parameter.</param>
+    <param name="lParam2">Second event parameter.</param>
+    <returns>Returns S_OK.</returns>
   </member>
   <member name="IMediaEvent.GetEvent">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetEvent</code> method retrieves the next event notification from the event queue.</para>
     </summary>
-    <param name="lEventCode">
-      <para>Pointer to a variable that receives the event code.</para>
-    </param>
-    <param name="lParam1">
-      <para>Pointer to a variable that receives the first event parameter.</para>
-    </param>
-    <param name="lParam2">
-      <para>Pointer to a variable that receives the second event parameter.</para>
-    </param>
-    <param name="msTimeout">
-      <para>Time-out interval, in milliseconds. Use INFINITE to block until there is an event.</para>
-    </param>
+    <param name="lEventCode">Pointer to a variable that receives the event code.</param>
+    <param name="lParam1">Pointer to a variable that receives the first event parameter.</param>
+    <param name="lParam2">Pointer to a variable that receives the second event parameter.</param>
+    <param name="msTimeout">Time-out interval, in milliseconds. Use INFINITE to block until there is an event.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
       <list type="table">
@@ -97,70 +68,47 @@ hr = pEvent-&gt;FreeEventParams(evCode, param1, param2);
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ABORT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_ABORT</b>
-            </para>
-          </description>
-          <description>
-            <para>Timeout expired.</para>
-          </description>
-        </item>
+          <description>Timeout expired.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If no event is on the queue, this method waits up to <i>msTimeout</i> milliseconds for an event to arrive. Avoid using a time-out interval of INFINITE, because threads cannot process any messages while waiting in <code>GetEvent</code>. If you call <code>GetEvent</code> from the same thread that processes Windows messages, specify only small wait times, in order to remain responsive to user input.</para>
-      <para>After calling <code>GetEvent</code>, call the <see cref="IMediaEvent.FreeEventParams" /> method to release any resources allocated for the event parameters.</para>
-      <para>For a list of notification codes and event parameter values, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/event-notification-codes">Event Notification Codes</a>.</para>
-      <para>Because this method removes the event from the filter graph event queue, there is no way for multiple clients to monitor events from the same graph.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEvent Interface" />
-    <seealso cref="IMediaEventEx" />
   </member>
   <member name="IMediaEvent.GetEventHandle">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetEventHandle</code> method retrieves a handle to a manual-reset event that remains signaled while the queue contains event notifications.</para>
     </summary>
-    <param name="hEvent">
-      <para>Pointer to a variable that receives the event handle.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>The Filter Graph Manager keeps a manual-reset event that reflects the state of the event queue. If the queue contains event notifications, the manual-reset event is signaled. If the queue is empty, the <see cref="IMediaEvent.GetEvent" /> method resets the event.</para>
-      <para>An application can use this event to determine the state of the queue. First call <code>GetEventHandle</code> to obtain a handle to the event. Wait for the event to be signaled, using a function such as <see cref="WaitForSingleObject" />. When the event is signaled, call the <see cref="IMediaEvent.GetEvent" /> method to retrieve the next event notification from the queue. The Filter Graph Manager keeps the event signaled until the queue is empty; then it resets the event.</para>
-      <para>Do not close the event handle returned by this method, because the event handle is used internally by the filter graph. Also, do not use the handle after you release the Filter Graph Manager, because the handle becomes invalid after the Filter Graph Manager is destroyed. (To avoid this error, it is a good idea to duplicate the handle by calling <see cref="DuplicateHandle" />, and use the duplicate instead of the original handle. Close the duplicate handle when you are finished.)</para>
-      <para>For Automation compatibility, this method takes a pointer to an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/oaevent">OAEVENT</a> type. In C++, declare a variable of type <b>HANDLE</b> and cast it an <b>OAEVENT</b> pointer, as follows:</para>
-      <code>
-HANDLE hEvent;
-GetEventHandle( (OAEVENT*) &amp;amp;amp;amp;amp;amp;hEvent );
-
-</code>
-      <para>Another way for applications to monitor the event queue is by calling the <see cref="IMediaEventEx.SetNotifyWindow" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEvent Interface" />
+    <param name="hEvent">Pointer to a variable that receives the event handle.</param>
+    <returns>Returns S_OK.</returns>
   </member>
   <member name="IMediaEvent.RestoreDefaultHandling">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>RestoreDefaultHandling</code> method restores the Filter Graph Manager's default handling for a specified event.</para>
     </summary>
-    <param name="lEvCode">
-      <para>Event code for which to restore default handling.</para>
-    </param>
+    <param name="lEvCode">Event code for which to restore default handling.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -168,44 +116,40 @@ GetEventHandle( (OAEVENT*) &amp;amp;amp;amp;amp;amp;hEvent );
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>No default handling for this event.</para>
-          </description>
-        </item>
+          <description>No default handling for this event.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>By default, the Filter Graph Manager handles some events (such as <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-repaint">EC_REPAINT</a>) without passing them to the application. If you call the <see cref="IMediaEvent.CancelDefaultHandling" /> method to override the default handling for an event, you can restore the default behavior by calling <code>RestoreDefaultHandling</code> with the same event code.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEvent Interface" />
   </member>
   <member name="IMediaEvent.WaitForCompletion">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>WaitForCompletion</code> method waits for the filter graph to render all available data. The filter graph must be running or the method fails.</para>
     </summary>
-    <param name="msTimeout">
-      <para>Time-out interval, in milliseconds. Pass zero to return immediately. Pass the value INFINITE to block indefinitely.</para>
-    </param>
-    <param name="pEvCode">
-      <para>Pointer to a variable that receives an event code. See Remarks for more information.</para>
-    </param>
+    <param name="msTimeout">Time-out interval, in milliseconds. Pass zero to return immediately. Pass the value INFINITE to block indefinitely.</param>
+    <param name="pEvCode">Pointer to a variable that receives an event code. See Remarks for more information.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -213,69 +157,51 @@ GetEventHandle( (OAEVENT*) &amp;amp;amp;amp;amp;amp;hEvent );
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ABORT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Time-out expired.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_ABORT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_WRONG_STATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Time-out expired.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_WRONG_STATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The filter graph is not running.</para>
-          </description>
-        </item>
+          <description>The filter graph is not running.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method blocks until the time-out expires, or one of the following events occurs:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-complete">EC_COMPLETE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-errorabort">EC_ERRORABORT</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-userabort">EC_USERABORT</a>
-          </description>
-        </item>
-      </list>
-      <para>During the wait, the method discards all other event notifications.</para>
-      <para>If the return value is S_OK, the <i>pEvCode</i> parameter receives the event code that ended the wait. When the method returns, the filter graph is still running. The application can pause or stop the graph, as appropriate.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEvent Interface" />
   </member>
   <member name="IMediaEvent">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IMediaEvent</code> interface contains methods for retrieving event notifications and for overriding the Filter Graph Manager's default handling of events. The <see cref="IMediaEventEx" /> interface inherits this interface and extends it.</para>
       <para>The Filter Graph Manager implements this interface. Applications can use it to respond to events that occur in the filter graph, such as the end of a stream or a rendering error. Filters post events to the filter graph using the <see cref="IMediaEventSink" /> interface.</para>
       <para>For more information about event notification, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/event-notification-in-directshow">Event Notification in DirectShow</a>. For a list of system-defined event notifications, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/event-notification-codes">Event Notification Codes</a>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
   </member>
 </doc>

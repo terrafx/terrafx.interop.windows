@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRED_PROTECTION_TYPE">
-    <summary>
-      <para>The <b>CRED_PROTECTION_TYPE</b> enumeration specifies the security context in which credentials are encrypted when using the <see cref="CredProtect" /> function.</para>
-    </summary>
+    <summary>The <b>CRED_PROTECTION_TYPE</b> enumeration specifies the security context in which credentials are encrypted when using the <see cref="CredProtect" /> function.</summary>
   </member>
   <member name="CRED_PROTECTION_TYPE.CredUnprotected">
-    <summary>
-      <para>The credentials are not encrypted.</para>
-    </summary>
+    <summary>The credentials are not encrypted.</summary>
   </member>
   <member name="CRED_PROTECTION_TYPE.CredUserProtection">
-    <summary>
-      <para>The credentials are encrypted and can be decrypted only in the security context in which they were encrypted or in the security context of a trusted component.</para>
-    </summary>
+    <summary>The credentials are encrypted and can be decrypted only in the security context in which they were encrypted or in the security context of a trusted component.</summary>
   </member>
   <member name="CRED_PROTECTION_TYPE.CredTrustedProtection">
-    <summary>
-      <para>The credentials are encrypted and can only be decrypted by a trusted component.</para>
-    </summary>
+    <summary>The credentials are encrypted and can only be decrypted by a trusted component.</summary>
   </member>
-  <member name="CRED_PROTECTION_TYPE.CredForSystemProtection">
-    <summary></summary>
-  </member>
+  <member name="CRED_PROTECTION_TYPE.CredForSystemProtection"></member>
 </doc>

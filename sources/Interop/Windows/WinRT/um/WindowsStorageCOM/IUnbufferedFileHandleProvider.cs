@@ -28,7 +28,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, Guid*, void**, int>)(lpVtbl[0]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUnbufferedFileHandleProvider*, Guid*, void**, int>)(lpVtbl[0]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, uint>)(lpVtbl[1]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUnbufferedFileHandleProvider*, uint>)(lpVtbl[1]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, uint>)(lpVtbl[2]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUnbufferedFileHandleProvider*, uint>)(lpVtbl[2]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUnbufferedFileHandleProvider.xml' path='doc/member[@name="IUnbufferedFileHandleProvider.OpenUnbufferedFileHandle"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
     [VtblIndex(3)]
     public HRESULT OpenUnbufferedFileHandle(IUnbufferedFileHandleOplockCallback* oplockBreakCallback, [NativeTypeName("DWORD_PTR *")] nuint* fileHandle)
     {
-        return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, IUnbufferedFileHandleOplockCallback*, nuint*, int>)(lpVtbl[3]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this), oplockBreakCallback, fileHandle);
+        return ((delegate* unmanaged[MemberFunction]<IUnbufferedFileHandleProvider*, IUnbufferedFileHandleOplockCallback*, nuint*, int>)(lpVtbl[3]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this), oplockBreakCallback, fileHandle);
     }
 
     /// <include file='IUnbufferedFileHandleProvider.xml' path='doc/member[@name="IUnbufferedFileHandleProvider.CloseUnbufferedFileHandle"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
     [VtblIndex(4)]
     public HRESULT CloseUnbufferedFileHandle()
     {
-        return ((delegate* unmanaged<IUnbufferedFileHandleProvider*, int>)(lpVtbl[4]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUnbufferedFileHandleProvider*, int>)(lpVtbl[4]))((IUnbufferedFileHandleProvider*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -78,18 +78,18 @@ public unsafe partial struct IUnbufferedFileHandleProvider : IUnbufferedFileHand
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnbufferedFileHandleOplockCallback *, DWORD_PTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnbufferedFileHandleOplockCallback*, nuint*, int> OpenUnbufferedFileHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnbufferedFileHandleOplockCallback*, nuint*, int> OpenUnbufferedFileHandle;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CloseUnbufferedFileHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CloseUnbufferedFileHandle;
     }
 }

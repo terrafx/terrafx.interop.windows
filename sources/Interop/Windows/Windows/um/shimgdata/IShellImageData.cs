@@ -25,7 +25,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellImageData*, Guid*, void**, int>)(lpVtbl[0]))((IShellImageData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, Guid*, void**, int>)(lpVtbl[0]))((IShellImageData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellImageData*, uint>)(lpVtbl[1]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint>)(lpVtbl[1]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellImageData*, uint>)(lpVtbl[2]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint>)(lpVtbl[2]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.Decode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Decode([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("ULONG")] uint cxDesired, [NativeTypeName("ULONG")] uint cyDesired)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint, uint, uint, int>)(lpVtbl[3]))((IShellImageData*)Unsafe.AsPointer(ref this), dwFlags, cxDesired, cyDesired);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint, uint, uint, int>)(lpVtbl[3]))((IShellImageData*)Unsafe.AsPointer(ref this), dwFlags, cxDesired, cyDesired);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.Draw"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(4)]
     public HRESULT Draw(HDC hdc, [NativeTypeName("LPRECT")] RECT* prcDest, [NativeTypeName("LPRECT")] RECT* prcSrc)
     {
-        return ((delegate* unmanaged<IShellImageData*, HDC, RECT*, RECT*, int>)(lpVtbl[4]))((IShellImageData*)Unsafe.AsPointer(ref this), hdc, prcDest, prcSrc);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, HDC, RECT*, RECT*, int>)(lpVtbl[4]))((IShellImageData*)Unsafe.AsPointer(ref this), hdc, prcDest, prcSrc);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.NextFrame"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(5)]
     public HRESULT NextFrame()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[5]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[5]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.NextPage"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(6)]
     public HRESULT NextPage()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[6]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[6]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.PrevPage"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(7)]
     public HRESULT PrevPage()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[7]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[7]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsTransparent"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(8)]
     public HRESULT IsTransparent()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[8]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[8]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsAnimated"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(9)]
     public HRESULT IsAnimated()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[9]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[9]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsVector"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(10)]
     public HRESULT IsVector()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[10]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[10]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsMultipage"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(11)]
     public HRESULT IsMultipage()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[11]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[11]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsEditable"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(12)]
     public HRESULT IsEditable()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[12]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[12]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsPrintable"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(13)]
     public HRESULT IsPrintable()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[13]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[13]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.IsDecoded"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(14)]
     public HRESULT IsDecoded()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[14]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[14]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetCurrentPage"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(15)]
     public HRESULT GetCurrentPage([NativeTypeName("ULONG *")] uint* pnPage)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[15]))((IShellImageData*)Unsafe.AsPointer(ref this), pnPage);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint*, int>)(lpVtbl[15]))((IShellImageData*)Unsafe.AsPointer(ref this), pnPage);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetPageCount"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(16)]
     public HRESULT GetPageCount([NativeTypeName("ULONG *")] uint* pcPages)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[16]))((IShellImageData*)Unsafe.AsPointer(ref this), pcPages);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint*, int>)(lpVtbl[16]))((IShellImageData*)Unsafe.AsPointer(ref this), pcPages);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.SelectPage"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(17)]
     public HRESULT SelectPage([NativeTypeName("ULONG")] uint iPage)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint, int>)(lpVtbl[17]))((IShellImageData*)Unsafe.AsPointer(ref this), iPage);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint, int>)(lpVtbl[17]))((IShellImageData*)Unsafe.AsPointer(ref this), iPage);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetSize"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(18)]
     public HRESULT GetSize(SIZE* pSize)
     {
-        return ((delegate* unmanaged<IShellImageData*, SIZE*, int>)(lpVtbl[18]))((IShellImageData*)Unsafe.AsPointer(ref this), pSize);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, SIZE*, int>)(lpVtbl[18]))((IShellImageData*)Unsafe.AsPointer(ref this), pSize);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetRawDataFormat"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(19)]
     public HRESULT GetRawDataFormat(Guid* pDataFormat)
     {
-        return ((delegate* unmanaged<IShellImageData*, Guid*, int>)(lpVtbl[19]))((IShellImageData*)Unsafe.AsPointer(ref this), pDataFormat);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, Guid*, int>)(lpVtbl[19]))((IShellImageData*)Unsafe.AsPointer(ref this), pDataFormat);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetPixelFormat"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(20)]
     public HRESULT GetPixelFormat([NativeTypeName("PixelFormat *")] uint* pFormat)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[20]))((IShellImageData*)Unsafe.AsPointer(ref this), pFormat);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint*, int>)(lpVtbl[20]))((IShellImageData*)Unsafe.AsPointer(ref this), pFormat);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetDelay"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(21)]
     public HRESULT GetDelay([NativeTypeName("DWORD *")] uint* pdwDelay)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint*, int>)(lpVtbl[21]))((IShellImageData*)Unsafe.AsPointer(ref this), pdwDelay);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint*, int>)(lpVtbl[21]))((IShellImageData*)Unsafe.AsPointer(ref this), pdwDelay);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetProperties"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(22)]
     public HRESULT GetProperties([NativeTypeName("DWORD")] uint dwMode, IPropertySetStorage** ppPropSet)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint, IPropertySetStorage**, int>)(lpVtbl[22]))((IShellImageData*)Unsafe.AsPointer(ref this), dwMode, ppPropSet);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint, IPropertySetStorage**, int>)(lpVtbl[22]))((IShellImageData*)Unsafe.AsPointer(ref this), dwMode, ppPropSet);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.Rotate"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(23)]
     public HRESULT Rotate([NativeTypeName("DWORD")] uint dwAngle)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint, int>)(lpVtbl[23]))((IShellImageData*)Unsafe.AsPointer(ref this), dwAngle);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint, int>)(lpVtbl[23]))((IShellImageData*)Unsafe.AsPointer(ref this), dwAngle);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.Scale"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(24)]
     public HRESULT Scale([NativeTypeName("ULONG")] uint cx, [NativeTypeName("ULONG")] uint cy, [NativeTypeName("InterpolationMode")] uint hints)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint, uint, uint, int>)(lpVtbl[24]))((IShellImageData*)Unsafe.AsPointer(ref this), cx, cy, hints);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint, uint, uint, int>)(lpVtbl[24]))((IShellImageData*)Unsafe.AsPointer(ref this), cx, cy, hints);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.DiscardEdit"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(25)]
     public HRESULT DiscardEdit()
     {
-        return ((delegate* unmanaged<IShellImageData*, int>)(lpVtbl[25]))((IShellImageData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, int>)(lpVtbl[25]))((IShellImageData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.SetEncoderParams"]/*' />
@@ -235,15 +235,15 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(26)]
     public HRESULT SetEncoderParams(IPropertyBag* pbagEnc)
     {
-        return ((delegate* unmanaged<IShellImageData*, IPropertyBag*, int>)(lpVtbl[26]))((IShellImageData*)Unsafe.AsPointer(ref this), pbagEnc);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, IPropertyBag*, int>)(lpVtbl[26]))((IShellImageData*)Unsafe.AsPointer(ref this), pbagEnc);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.DisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(27)]
-    public HRESULT DisplayName([NativeTypeName("LPWSTR")] ushort* wszName, uint cch)
+    public HRESULT DisplayName([NativeTypeName("LPWSTR")] char* wszName, uint cch)
     {
-        return ((delegate* unmanaged<IShellImageData*, ushort*, uint, int>)(lpVtbl[27]))((IShellImageData*)Unsafe.AsPointer(ref this), wszName, cch);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, char*, uint, int>)(lpVtbl[27]))((IShellImageData*)Unsafe.AsPointer(ref this), wszName, cch);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetResolution"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(28)]
     public HRESULT GetResolution([NativeTypeName("ULONG *")] uint* puResolutionX, [NativeTypeName("ULONG *")] uint* puResolutionY)
     {
-        return ((delegate* unmanaged<IShellImageData*, uint*, uint*, int>)(lpVtbl[28]))((IShellImageData*)Unsafe.AsPointer(ref this), puResolutionX, puResolutionY);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, uint*, uint*, int>)(lpVtbl[28]))((IShellImageData*)Unsafe.AsPointer(ref this), puResolutionX, puResolutionY);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.GetEncoderParams"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(29)]
     public HRESULT GetEncoderParams(Guid* pguidFmt, [NativeTypeName("EncoderParameters **")] byte** ppEncParams)
     {
-        return ((delegate* unmanaged<IShellImageData*, Guid*, byte**, int>)(lpVtbl[29]))((IShellImageData*)Unsafe.AsPointer(ref this), pguidFmt, ppEncParams);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, Guid*, byte**, int>)(lpVtbl[29]))((IShellImageData*)Unsafe.AsPointer(ref this), pguidFmt, ppEncParams);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.RegisterAbort"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(30)]
     public HRESULT RegisterAbort(IShellImageDataAbort* pAbort, IShellImageDataAbort** ppAbortPrev)
     {
-        return ((delegate* unmanaged<IShellImageData*, IShellImageDataAbort*, IShellImageDataAbort**, int>)(lpVtbl[30]))((IShellImageData*)Unsafe.AsPointer(ref this), pAbort, ppAbortPrev);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, IShellImageDataAbort*, IShellImageDataAbort**, int>)(lpVtbl[30]))((IShellImageData*)Unsafe.AsPointer(ref this), pAbort, ppAbortPrev);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.CloneFrame"]/*' />
@@ -275,7 +275,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(31)]
     public HRESULT CloneFrame([NativeTypeName("Image **")] byte** ppImg)
     {
-        return ((delegate* unmanaged<IShellImageData*, byte**, int>)(lpVtbl[31]))((IShellImageData*)Unsafe.AsPointer(ref this), ppImg);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, byte**, int>)(lpVtbl[31]))((IShellImageData*)Unsafe.AsPointer(ref this), ppImg);
     }
 
     /// <include file='IShellImageData.xml' path='doc/member[@name="IShellImageData.ReplaceFrame"]/*' />
@@ -283,7 +283,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
     [VtblIndex(32)]
     public HRESULT ReplaceFrame([NativeTypeName("Image *")] byte* pImg)
     {
-        return ((delegate* unmanaged<IShellImageData*, byte*, int>)(lpVtbl[32]))((IShellImageData*)Unsafe.AsPointer(ref this), pImg);
+        return ((delegate* unmanaged[MemberFunction]<IShellImageData*, byte*, int>)(lpVtbl[32]))((IShellImageData*)Unsafe.AsPointer(ref this), pImg);
     }
 
     public interface Interface : IUnknown.Interface
@@ -361,7 +361,7 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
         HRESULT SetEncoderParams(IPropertyBag* pbagEnc);
 
         [VtblIndex(27)]
-        HRESULT DisplayName([NativeTypeName("LPWSTR")] ushort* wszName, uint cch);
+        HRESULT DisplayName([NativeTypeName("LPWSTR")] char* wszName, uint cch);
 
         [VtblIndex(28)]
         HRESULT GetResolution([NativeTypeName("ULONG *")] uint* puResolutionX, [NativeTypeName("ULONG *")] uint* puResolutionY);
@@ -383,102 +383,102 @@ public unsafe partial struct IShellImageData : IShellImageData.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, ULONG, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> Decode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> Decode;
 
         [NativeTypeName("HRESULT (HDC, LPRECT, LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, RECT*, RECT*, int> Draw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, RECT*, RECT*, int> Draw;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> NextFrame;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> NextFrame;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> NextPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> NextPage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> PrevPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> PrevPage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsTransparent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsTransparent;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsAnimated;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsAnimated;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsVector;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsVector;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsMultipage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsMultipage;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsEditable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsEditable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsPrintable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsPrintable;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsDecoded;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsDecoded;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCurrentPage;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetPageCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetPageCount;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SelectPage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SelectPage;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetRawDataFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetRawDataFormat;
 
         [NativeTypeName("HRESULT (PixelFormat *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetPixelFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetPixelFormat;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetDelay;
 
         [NativeTypeName("HRESULT (DWORD, IPropertySetStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IPropertySetStorage**, int> GetProperties;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPropertySetStorage**, int> GetProperties;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Rotate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Rotate;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, InterpolationMode) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> Scale;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> Scale;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DiscardEdit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DiscardEdit;
 
         [NativeTypeName("HRESULT (IPropertyBag *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyBag*, int> SetEncoderParams;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyBag*, int> SetEncoderParams;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> DisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> DisplayName;
 
         [NativeTypeName("HRESULT (ULONG *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, int> GetResolution;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, int> GetResolution;
 
         [NativeTypeName("HRESULT (GUID *, EncoderParameters **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, byte**, int> GetEncoderParams;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, byte**, int> GetEncoderParams;
 
         [NativeTypeName("HRESULT (IShellImageDataAbort *, IShellImageDataAbort **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellImageDataAbort*, IShellImageDataAbort**, int> RegisterAbort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellImageDataAbort*, IShellImageDataAbort**, int> RegisterAbort;
 
         [NativeTypeName("HRESULT (Image **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, int> CloneFrame;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, int> CloneFrame;
 
         [NativeTypeName("HRESULT (Image *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, int> ReplaceFrame;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, int> ReplaceFrame;
     }
 }

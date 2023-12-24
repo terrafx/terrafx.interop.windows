@@ -17,7 +17,7 @@ public unsafe partial struct CERT_ALT_NAME_ENTRY
     public uint dwAltNameChoice;
 
     /// <include file='CERT_ALT_NAME_ENTRY.xml' path='doc/member[@name="CERT_ALT_NAME_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("_CERT_ALT_NAME_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:3968:5)")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L3972_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pOtherName"]/*' />
@@ -33,7 +33,7 @@ public unsafe partial struct CERT_ALT_NAME_ENTRY
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszRfc822Name"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszRfc822Name
+    public ref char* pwszRfc822Name
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -44,7 +44,7 @@ public unsafe partial struct CERT_ALT_NAME_ENTRY
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszDNSName"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszDNSName
+    public ref char* pwszDNSName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -66,7 +66,7 @@ public unsafe partial struct CERT_ALT_NAME_ENTRY
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszURL"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszURL
+    public ref char* pwszURL
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -109,12 +109,12 @@ public unsafe partial struct CERT_ALT_NAME_ENTRY
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszRfc822Name"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* pwszRfc822Name;
+        public char* pwszRfc822Name;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszDNSName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* pwszDNSName;
+        public char* pwszDNSName;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.DirectoryName"]/*' />
         [FieldOffset(0)]
@@ -124,7 +124,7 @@ public unsafe partial struct CERT_ALT_NAME_ENTRY
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszURL"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* pwszURL;
+        public char* pwszURL;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.IPAddress"]/*' />
         [FieldOffset(0)]

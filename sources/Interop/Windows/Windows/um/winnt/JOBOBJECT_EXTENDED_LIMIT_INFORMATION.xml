@@ -3,50 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION">
-    <summary>
-      <para>Contains basic and extended limit information for a job object.</para>
-    </summary>
-    <remarks>
-      <para>The system tracks the value of <b>PeakProcessMemoryUsed</b> and <b>PeakJobMemoryUsed</b> constantly. This allows you know the peak memory usage of each job. You can use this information to establish a memory limit using the <b>JOB_OBJECT_LIMIT_PROCESS_MEMORY</b> or <b>JOB_OBJECT_LIMIT_JOB_MEMORY</b> value.</para>
-      <para>Note that the job memory and process memory limits are very similar in operation, but they are independent. You could set a job-wide limit of 100 MB with a per-process limit of 10 MB. In this scenario, no single process could commit more than 10 MB, and the set of processes associated with a job could never exceed 100 MB.</para>
-      <para>To register for notifications  that a job has exceeded its peak memory limit while allowing processes to continue to commit memory, use the <see cref="SetInformationJobObject" /> function with the <b>JobObjectNotificationLimitInformation</b> information class.</para>
-    </remarks>
-    <seealso cref="JOBOBJECT_BASIC_LIMIT_INFORMATION" />
-    <seealso cref="JOBOBJECT_NOTIFICATION_LIMIT_INFORMATION" />
-    <seealso cref="QueryInformationJobObject" />
-    <seealso cref="SetInformationJobObject" />
+    <summary>Contains basic and extended limit information for a job object.</summary>
   </member>
   <member name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.BasicLimitInformation">
-    <summary>
-      <para>A
-<see cref="JOBOBJECT_BASIC_LIMIT_INFORMATION" /> structure that contains basic limit information.</para>
-    </summary>
+    <summary>A<see cref="JOBOBJECT_BASIC_LIMIT_INFORMATION" /> structure that contains basic limit information.</summary>
   </member>
   <member name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.IoInfo">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.ProcessMemoryLimit">
-    <summary>
-      <para>If the <b>LimitFlags</b> member of the
-<see cref="JOBOBJECT_BASIC_LIMIT_INFORMATION" /> structure specifies the <b>JOB_OBJECT_LIMIT_PROCESS_MEMORY</b> value, this member specifies the limit for the virtual memory that can be committed by a process. Otherwise, this member is ignored.</para>
-    </summary>
+    <summary>If the <b>LimitFlags</b> member of the<see cref="JOBOBJECT_BASIC_LIMIT_INFORMATION" /> structure specifies the <b>JOB_OBJECT_LIMIT_PROCESS_MEMORY</b> value, this member specifies the limit for the virtual memory that can be committed by a process. Otherwise, this member is ignored.</summary>
   </member>
   <member name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.JobMemoryLimit">
-    <summary>
-      <para>If the <b>LimitFlags</b> member of the
-<see cref="JOBOBJECT_BASIC_LIMIT_INFORMATION" /> structure specifies the <b>JOB_OBJECT_LIMIT_JOB_MEMORY</b> value, this member specifies the limit for the virtual memory that can be committed for the job. Otherwise, this member is ignored.</para>
-    </summary>
+    <summary>If the <b>LimitFlags</b> member of the<see cref="JOBOBJECT_BASIC_LIMIT_INFORMATION" /> structure specifies the <b>JOB_OBJECT_LIMIT_JOB_MEMORY</b> value, this member specifies the limit for the virtual memory that can be committed for the job. Otherwise, this member is ignored.</summary>
   </member>
   <member name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.PeakProcessMemoryUsed">
-    <summary>
-      <para>The peak memory used by any process ever associated with the job.</para>
-    </summary>
+    <summary>The peak memory used by any process ever associated with the job.</summary>
   </member>
   <member name="JOBOBJECT_EXTENDED_LIMIT_INFORMATION.PeakJobMemoryUsed">
-    <summary>
-      <para>The peak memory usage of all processes currently associated with the job.</para>
-    </summary>
+    <summary>The peak memory usage of all processes currently associated with the job.</summary>
   </member>
 </doc>

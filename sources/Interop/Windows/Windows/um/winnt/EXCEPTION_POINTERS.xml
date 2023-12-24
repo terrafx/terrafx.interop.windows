@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXCEPTION_POINTERS">
-    <summary>
-      <para>Contains an exception record with a machine-independent description of an exception and a context record with a machine-dependent description of the processor context at the time of the exception.</para>
-    </summary>
-    <seealso cref="CONTEXT" />
-    <seealso cref="EXCEPTION_RECORD" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/getexceptioninformation">GetExceptionInformation</seealso>
+    <summary>Contains an exception record with a machine-independent description of an exception and a context record with a machine-dependent description of the processor context at the time of the exception.</summary>
   </member>
   <member name="EXCEPTION_POINTERS.ExceptionRecord">
-    <summary>
-      <para>A pointer to an
-<see cref="EXCEPTION_RECORD" /> structure that contains a machine-independent description of the exception.</para>
-    </summary>
+    <summary>A pointer to an<see cref="EXCEPTION_RECORD" /> structure that contains a machine-independent description of the exception.</summary>
   </member>
   <member name="EXCEPTION_POINTERS.ContextRecord">
-    <summary>
-      <para>A pointer to a
-<see cref="CONTEXT" /> structure that contains a processor-specific description of the state of the processor at the time of the exception.</para>
-    </summary>
+    <summary>A pointer to a<see cref="CONTEXT" /> structure that contains a processor-specific description of the state of the processor at the time of the exception.</summary>
   </member>
 </doc>

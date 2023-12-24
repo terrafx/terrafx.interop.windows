@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_INDEX_BUFFER_STRIP_CUT_VALUE">
+    <summary>When using triangle strip primitive topology, vertex positions are interpreted as vertices of a continuous triangle “strip”. There is a special index value that represents the desire to have a discontinuity in the strip, the cut index value. This enum lists the supported cut values.</summary>
+  </member>
+  <member name="D3D12_INDEX_BUFFER_STRIP_CUT_VALUE.D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_DISABLED">
+    <summary>Indicates that there is no cut value.</summary>
+  </member>
+  <member name="D3D12_INDEX_BUFFER_STRIP_CUT_VALUE.D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_0xFFFF">
+    <summary>Indicates that 0xFFFF should be used as the cut value.</summary>
+  </member>
+  <member name="D3D12_INDEX_BUFFER_STRIP_CUT_VALUE.D3D12_INDEX_BUFFER_STRIP_CUT_VALUE_0xFFFFFFFF">
+    <summary>Indicates that 0xFFFFFFFF should be used as the cut value.</summary>
+  </member>
+</doc>

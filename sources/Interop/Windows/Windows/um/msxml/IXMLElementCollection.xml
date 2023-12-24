@@ -3,44 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IXMLElementCollection.get_length">
-    <summary>
-      <para>Retrieves the number of elements in the collection.</para>
-    </summary>
-    <param name="p">
-      <para>The number of elements in the collection.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is implemented in MSXML 1.0. It is no longer supported by Microsoft in current versions of MSXML. This documentation is provided for informational purposes only.</para>
-    </remarks>
-    <seealso cref="IXMLElementCollection" />
+    <summary>Retrieves the number of elements in the collection.</summary>
+    <param name="p">The number of elements in the collection.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IXMLElementCollection.item">
-    <summary>
-      <para>Retrieves the child elements from a collection using their index, name, or both.</para>
-    </summary>
-    <param name="var1">
-      <para>A valid index numeric value (within the length of <see cref="IXMLElementCollection" />) or the name of an element in the XML hierarchy.</para>
-    </param>
-    <param name="var2">
-      <para>A valid index numeric value (within the length of <see cref="IXMLElementCollection" />) or the name of an element in the XML hierarchy.</para>
-    </param>
-    <param name="ppDisp">
-      <para>TBD</para>
-    </param>
-    <returns>
-      <para>Returns an <b>IDispatch</b> pointer to an addressable memory location where the collection is retrievable.</para>
-    </returns>
-    <remarks>
-      <para>This method is implemented in MSXML 1.0. It is no longer supported by Microsoft in current versions of MSXML. This documentation is provided for informational purposes only.</para>
-    </remarks>
-    <seealso cref="IXMLElementCollection" />
+    <summary>Retrieves the child elements from a collection using their index, name, or both.</summary>
+    <param name="var1">A valid index numeric value (within the length of <see cref="IXMLElementCollection" />) or the name of an element in the XML hierarchy.</param>
+    <param name="var2">A valid index numeric value (within the length of <see cref="IXMLElementCollection" />) or the name of an element in the XML hierarchy.</param>
+    <param name="ppDisp">TBD</param>
+    <returns>Returns an <b>IDispatch</b> pointer to an addressable memory location where the collection is retrievable.</returns>
   </member>
   <member name="IXMLElementCollection">
-    <summary>
-      <para>The <b>IXMLElementCollection</b> interface supports collection of XML elements for indexed access.</para>
-    </summary>
+    <summary>The <b>IXMLElementCollection</b> interface supports collection of XML elements for indexed access.</summary>
   </member>
 </doc>

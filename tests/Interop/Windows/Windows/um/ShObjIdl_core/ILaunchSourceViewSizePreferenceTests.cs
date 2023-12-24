@@ -19,32 +19,4 @@ public static unsafe partial class ILaunchSourceViewSizePreferenceTests
     {
         Assert.That(typeof(ILaunchSourceViewSizePreference).GUID, Is.EqualTo(IID_ILaunchSourceViewSizePreference));
     }
-
-    /// <summary>Validates that the <see cref="ILaunchSourceViewSizePreference" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ILaunchSourceViewSizePreference>(), Is.EqualTo(sizeof(ILaunchSourceViewSizePreference)));
-    }
-
-    /// <summary>Validates that the <see cref="ILaunchSourceViewSizePreference" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ILaunchSourceViewSizePreference).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ILaunchSourceViewSizePreference" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ILaunchSourceViewSizePreference), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ILaunchSourceViewSizePreference), Is.EqualTo(4));
-        }
-    }
 }

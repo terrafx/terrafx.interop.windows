@@ -3,27 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTimedTextBinary.GetData">
-    <summary>
-      <para>Gets the data content of the timed-text object.</para>
-    </summary>
-    <param name="data">
-      <para>Type: <b>const BYTE**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the data content of the timed-text object.</para>
-    </param>
-    <param name="length">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to a variable that receives the length in bytes of the data content.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTimedTextBinary" />
+    <summary>Gets the data content of the timed-text object.</summary>
+    <param name="data">A pointer to a memory block that receives a pointer to the data content of the timed-text object.</param>
+    <param name="length">A pointer to a variable that receives the length in bytes of the data content.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTimedTextBinary">
-    <summary>
-      <para>Represents the data content of a timed-text object.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Represents the data content of a timed-text object.</summary>
   </member>
 </doc>

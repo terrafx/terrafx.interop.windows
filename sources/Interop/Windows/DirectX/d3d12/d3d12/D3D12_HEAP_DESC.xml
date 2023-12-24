@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_HEAP_DESC">
+    <summary>Describes a heap.</summary>
+  </member>
+  <member name="D3D12_HEAP_DESC.SizeInBytes">
+    <summary>The size, in bytes, of the heap. To avoid wasting memory, applications should pass <i>SizeInBytes</i> values which are multiples of the effective <i>Alignment</i>; but non-aligned <i>SizeInBytes</i> is also supported, for convenience. To find out how large a heap must be to support textures with undefined layouts and adapter-specific sizes, call <see cref="ID3D12Device.GetResourceAllocationInfo" />.</summary>
+  </member>
+  <member name="D3D12_HEAP_DESC.Properties">
+    <summary>A <see cref="D3D12_HEAP_PROPERTIES" /> structure that describes the heap properties.</summary>
+  </member>
+  <member name="D3D12_HEAP_DESC.Alignment">
+    <summary>
+      <para>The alignment value for the heap. Valid values:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>0</description>
+          <description>An alias for 64KB.</description>
+        </listheader>
+        <listheader>
+          <description>D3D12_DEFAULT_RESOURCE_PLACEMENT_ALIGNMENT</description>
+          <description>#defined as 64KB.</description>
+        </listheader>
+        <listheader>
+          <description>D3D12_DEFAULT_MSAA_RESOURCE_PLACEMENT_ALIGNMENT</description>
+          <description>#defined as 4MB. An application must decide whether the heap will contain multi-sample anti-aliasing (MSAA), in which case, the application must choose D3D12_DEFAULT_MSAA_RESOURCE_PLACEMENT_ALIGNMENT.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="D3D12_HEAP_DESC.Flags">
+    <summary>A combination of <see cref="D3D12_HEAP_FLAGS" />-typed values that are combined by using a bitwise-OR operation. The resulting value identifies heap options. When creating heaps to support adapters with resource heap tier 1, an application must choose some flags.</summary>
+  </member>
+</doc>

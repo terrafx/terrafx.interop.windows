@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_AUTOPROXY_OPTIONS">
-    <summary>
-      <para>The <b>WINHTTP_AUTOPROXY_OPTIONS</b> structure is used to indicate to the <see cref="WinHttpGetProxyForURL" /> function whether to specify the URL of the Proxy Auto-Configuration (PAC) file or to automatically locate the URL with DHCP or DNS queries to the network.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinHttp/winhttp-versions">WinHTTP Versions</seealso>
+    <summary>The <b>WINHTTP_AUTOPROXY_OPTIONS</b> structure is used to indicate to the <see cref="WinHttpGetProxyForURL" /> function whether to specify the URL of the Proxy Auto-Configuration (PAC) file or to automatically locate the URL with DHCP or DNS queries to the network.</summary>
   </member>
   <member name="WINHTTP_AUTOPROXY_OPTIONS.dwFlags">
     <summary>
@@ -16,116 +13,162 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <item>
+        <listheader>
+          <listheader>
             <description>
-              <b>WINHTTP_AUTOPROXY_ALLOW_AUTOCONFIG</b>
+              <list type="bullet">
+                <listheader>
+                  <term>
+                    <b>WINHTTP_AUTOPROXY_ALLOW_AUTOCONFIG</b>
+                  </term>
+                </listheader>
+              </list>
             </description>
+            <description>Enables proxy detection via autoconfig URL.<div><b>Note</b>  Support for this flag was introduced in Windows 10, version 1703 (10.0; Build 15063).</div></description>
+          </listheader>
+          <listheader>
             <description>
-              <para>Enables proxy detection via autoconfig URL.</para>
+              <list type="bullet">
+                <listheader>
+                  <term>
+                    <b>WINHTTP_AUTOPROXY_ALLOW_CM</b>
+                  </term>
+                </listheader>
+              </list>
             </description>
-          </item>
-          <item>
-            <description>
-              <b>WINHTTP_AUTOPROXY_ALLOW_CM</b>
-            </description>
-            <description>
-              <para>Enables proxy detection via connection manager.</para>
-            </description>
-          </item>
+            <description>Enables proxy detection via connection manager.<div><b>Note</b>  Support for this flag was introduced in Windows 10, version 1703 (10.0; Build 15063).</div></description>
+          </listheader>
           <description>
-            <b>WINHTTP_AUTOPROXY_ALLOW_STATIC</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_ALLOW_STATIC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Enables proxy detection via static configuration.<div><b>Note</b>  Support for this flag was introduced in Windows 10, version 1703 (10.0; Build 15063).</div></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Enables proxy detection via static configuration.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_AUTO_DETECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Attempt to automatically discover the URL of the PAC file using both DHCP and DNS queries to the local network.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WINHTTP_AUTOPROXY_AUTO_DETECT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_CONFIG_URL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Download the PAC file from the URL specified by <b>lpszAutoConfigUrl</b> in the <b>WINHTTP_AUTOPROXY_OPTIONS</b> structure.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Attempt to automatically discover the URL of the PAC file using both DHCP and DNS queries to the local network.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_HOST_KEEPCASE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Maintains the case of the hostnames passed to the PAC script. This is the default behavior.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WINHTTP_AUTOPROXY_CONFIG_URL</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_HOST_LOWERCASE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Converts hostnames to lowercase before passing them to the PAC script.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Download the PAC file from the URL specified by <b>lpszAutoConfigUrl</b> in the <b>WINHTTP_AUTOPROXY_OPTIONS</b> structure.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_NO_CACHE_CLIENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Disables querying a host to proxy cache of script execution results in the current process.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WINHTTP_AUTOPROXY_HOST_KEEPCASE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_NO_CACHE_SVC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Disables querying a host to proxy cache of script execution results in the autoproxy service.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Maintains the case of the hostnames passed to the PAC script. This is the default behavior.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_NO_DIRECTACCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Disables querying Direct Access proxy settings for this request.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WINHTTP_AUTOPROXY_HOST_LOWERCASE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_RUN_INPROCESS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Executes the Web Proxy Auto-Discovery (WPAD) protocol in-process instead of delegating to an out-of-process WinHTTP AutoProxy Service, if available. This flag must be combined with one of the other flags.<para>This option has no effect when passed to <see cref="WinHttpGetProxyForUrlEx" />.</para><div><b>Note</b>  This flag is deprecated.</div></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Converts hostnames to lowercase before passing them to the PAC script.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_RUN_OUTPROCESS_ONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>By default, WinHTTP is configured to fall back to auto-discover a proxy in-process. If this fallback behavior is undesirable in the event that an out-of-process discovery fails, it can be disabled using this flag.<para>This option has no effect when passed to <see cref="WinHttpGetProxyForUrlEx" />.</para><div><b>Note</b>  This flag is available on Windows Server 2003 only.</div></description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WINHTTP_AUTOPROXY_NO_CACHE_CLIENT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTOPROXY_SORT_RESULTS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Disables querying a host to proxy cache of script execution results in the current process.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WINHTTP_AUTOPROXY_NO_CACHE_SVC</b>
-          </description>
-          <description>
-            <para>Disables querying a host to proxy cache of script execution results in the autoproxy service.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WINHTTP_AUTOPROXY_NO_DIRECTACCESS</b>
-          </description>
-          <description>
-            <para>Disables querying Direct Access proxy settings for this request.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WINHTTP_AUTOPROXY_RUN_INPROCESS</b>
-          </description>
-          <description>
-            <para>Executes the Web Proxy Auto-Discovery (WPAD) protocol in-process instead of delegating to an out-of-process WinHTTP AutoProxy Service, if available. This flag must be combined with one of the other flags.</para>
-            <para>This option has no effect when passed to <see cref="WinHttpGetProxyForUrlEx" />.</para>
-            <para>
-              <b>Note</b>  This flag is deprecated.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WINHTTP_AUTOPROXY_RUN_OUTPROCESS_ONLY</b>
-          </description>
-          <description>
-            <para>By default, WinHTTP is configured to fall back to auto-discover a proxy in-process. If this fallback behavior is undesirable in the event that an out-of-process discovery fails, it can be disabled using this flag.</para>
-            <para>This option has no effect when passed to <see cref="WinHttpGetProxyForUrlEx" />.</para>
-            <para>
-              <b>Note</b>  This flag is available on Windows Server 2003 only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WINHTTP_AUTOPROXY_SORT_RESULTS </b>
-          </description>
-          <description>
-            <para>Orders the proxy results based on a heuristic placing the fastest proxies first.</para>
-          </description>
-        </item>
+          <description>Orders the proxy results based on a heuristic placing the fastest proxies first.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -138,22 +181,30 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WINHTTP_AUTO_DETECT_TYPE_DHCP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTO_DETECT_TYPE_DHCP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Use DHCP to locate the proxy auto-configuration file.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Use DHCP to locate the proxy auto-configuration file.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WINHTTP_AUTO_DETECT_TYPE_DNS_A</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>WINHTTP_AUTO_DETECT_TYPE_DNS_A</b>
-          </description>
-          <description>
-            <para>Use DNS to attempt to locate the proxy auto-configuration file at a well-known location on the domain of the local computer.</para>
-          </description>
-        </item>
+          <description>Use DNS to attempt to locate the proxy auto-configuration file at a well-known location on the domain of the local computer.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -164,14 +215,10 @@
     </summary>
   </member>
   <member name="WINHTTP_AUTOPROXY_OPTIONS.lpvReserved">
-    <summary>
-      <para>Reserved for future use; must be <b>NULL</b>.</para>
-    </summary>
+    <summary>Reserved for future use; must be <b>NULL</b>.</summary>
   </member>
   <member name="WINHTTP_AUTOPROXY_OPTIONS.dwReserved">
-    <summary>
-      <para>Reserved for future use; must be zero.</para>
-    </summary>
+    <summary>Reserved for future use; must be zero.</summary>
   </member>
   <member name="WINHTTP_AUTOPROXY_OPTIONS.fAutoLogonIfChallenged">
     <summary>

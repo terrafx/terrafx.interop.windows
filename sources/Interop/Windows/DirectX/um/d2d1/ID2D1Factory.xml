@@ -3,564 +3,166 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Factory.CreateDCRenderTarget">
-    <summary>
-      <para>Creates a render target that draws to a Windows Graphics Device Interface (GDI) device context.</para>
-    </summary>
-    <param name="renderTargetProperties">
-      <para>Type: <b>const <see cref="D2D1_RENDER_TARGET_PROPERTIES" />*</b></para>
-      <para>The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering.  To enable the device context (DC) render target to work with GDI, set the DXGI format to <see cref="DXGI_FORMAT_B8G8R8A8_UNORM" /> and the alpha mode to <see cref="D2D1_ALPHA_MODE_PREMULTIPLIED" /> or <b>D2D1_ALPHA_MODE_IGNORE</b>. For more information about pixel formats, see  <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel  Formats and Alpha Modes</a>.</para>
-    </param>
-    <param name="dcRenderTarget">
-      <para>Type: <b><see cref="ID2D1DCRenderTarget" />**</b></para>
-      <para>When this method returns, <i>dcRenderTarget</i> contains the address of the pointer to the  <see cref="ID2D1DCRenderTarget" /> created by the method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>Before you can render with a DC render target, you must use the render target's <see cref="BindDC" /> method to associate it with a GDI DC.  Do this for each different DC and whenever there is a change in the size of the area you want to draw to.</para>
-      <para>To enable the DC render target to work with GDI, set the render target's DXGI format to <see cref="DXGI_FORMAT_B8G8R8A8_UNORM" /> and alpha mode to <see cref="D2D1_ALPHA_MODE_PREMULTIPLIED" /> or <b>D2D1_ALPHA_MODE_IGNORE</b>.</para>
-      <para>Your application should create render targets once and hold on to them for the life of the application or until the render target's  <see cref="EndDraw" /> method returns the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a>  error. When you receive this error, recreate the render target (and any resources it created).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-and-gdi-interoperation-overview">Direct2D and GDI Interoperation Overview</seealso>
-    <seealso cref="ID2D1Factory" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel  Formats and Alpha Modes</seealso>
+    <summary>Creates a render target that draws to a Windows Graphics Device Interface (GDI) device context.</summary>
+    <param name="renderTargetProperties">The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. To enable the device context (DC) render target to work with GDI, set the DXGI format to <see cref="DXGI_FORMAT_B8G8R8A8_UNORM" /> and the alpha mode to <see cref="D2D1_ALPHA_MODE_PREMULTIPLIED" /> or <b>D2D1_ALPHA_MODE_IGNORE</b>. For more information about pixel formats, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</param>
+    <param name="dcRenderTarget">When this method returns, <i>dcRenderTarget</i> contains the address of the pointer to the <see cref="ID2D1DCRenderTarget" /> created by the method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateDrawingStateBlock">
-    <summary>
-      <para>Creates an <see cref="ID2D1DrawingStateBlock" /> that can be used with the <see cref="SaveDrawingState" /> and <see cref="RestoreDrawingState" /> methods of a render target.</para>
-    </summary>
-    <param name="drawingStateDescription">
-      <para>Type: <b>const <see cref="D2D1_DRAWING_STATE_DESCRIPTION" />*</b></para>
-      <para>A structure that contains antialiasing, transform, and tags  information.</para>
-    </param>
-    <param name="textRenderingParams">
-      <para>Type: <b><see cref="IDWriteRenderingParams" />*</b></para>
-      <para>Optional text parameters that indicate how text should be rendered.</para>
-    </param>
-    <param name="drawingStateBlock">
-      <para>Type: <b><see cref="ID2D1DrawingStateBlock" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the new drawing state block created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1DrawingStateBlock" /> that can be used with the <see cref="SaveDrawingState" /> and <see cref="RestoreDrawingState" /> methods of a render target.</summary>
+    <param name="drawingStateDescription">A structure that contains antialiasing, transform, and tags information.</param>
+    <param name="textRenderingParams">Optional text parameters that indicate how text should be rendered.</param>
+    <param name="drawingStateBlock">When this method returns, contains the address of a pointer to the new drawing state block created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateDrawingStateBlock">
-    <summary>
-      <para>Creates an <see cref="ID2D1DrawingStateBlock" /> that can be used with the <see cref="SaveDrawingState" /> and <see cref="RestoreDrawingState" /> methods of a render target.</para>
-    </summary>
-    <param name="drawingStateDescription">
-      <para>Type: <b>const <see cref="D2D1_DRAWING_STATE_DESCRIPTION" /></b></para>
-      <para>A structure that contains antialiasing, transform, and tags  information.</para>
-    </param>
-    <param name="drawingStateBlock">
-      <para>Type: <b><see cref="ID2D1DrawingStateBlock" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the new drawing state block created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1DrawingStateBlock" /> that can be used with the <see cref="SaveDrawingState" /> and <see cref="RestoreDrawingState" /> methods of a render target.</summary>
+    <param name="drawingStateDescription">A structure that contains antialiasing, transform, and tags information.</param>
+    <param name="drawingStateBlock">When this method returns, contains the address of a pointer to the new drawing state block created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateDrawingStateBlock">
-    <summary>
-      <para>Creates an <see cref="ID2D1DrawingStateBlock" /> that can be used with the <see cref="SaveDrawingState" /> and <see cref="RestoreDrawingState" /> methods of a render target.</para>
-    </summary>
-    <param name="drawingStateBlock">
-      <para>Type: <b><see cref="ID2D1DrawingStateBlock" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the new drawing state block created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1DrawingStateBlock" /> that can be used with the <see cref="SaveDrawingState" /> and <see cref="RestoreDrawingState" /> methods of a render target.</summary>
+    <param name="drawingStateBlock">When this method returns, contains the address of a pointer to the new drawing state block created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateDxgiSurfaceRenderTarget">
-    <summary>
-      <para>Creates a render target that draws to a DirectX Graphics Infrastructure (DXGI) surface.</para>
-    </summary>
-    <param name="dxgiSurface">
-      <para>Type: <b><see cref="IDXGISurface" />*</b></para>
-      <para>The IDXGISurface to which the render target will draw.</para>
-    </param>
-    <param name="renderTargetProperties">
-      <para>Type: <b>const <see cref="D2D1_RENDER_TARGET_PROPERTIES" />*</b></para>
-      <para>The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see  <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel  Formats and Alpha Modes</a>.</para>
-    </param>
-    <param name="renderTarget">
-      <para>Type: <b><see cref="ID2D1RenderTarget" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the <see cref="ID2D1RenderTarget" /> object created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>To write to a Direct3D surface, you obtain an <see cref="IDXGISurface" /> and pass it to the CreateDxgiSurfaceRenderTarget method to create a DXGI surface render target; you can then use the DXGI surface render target to draw 2-D content to the DXGI surface.</para>
-      <para>A DXGI surface render target is a type of <see cref="ID2D1RenderTarget" />. Like other Direct2D render targets, you can use it to create resources and issue drawing commands.</para>
-      <para>The DXGI surface render target and the DXGI surface must use the same DXGI format. If you specify the <see cref="DXGI_FORMAT_UNKOWN" /> format when you create the render target, it will automatically use the surface's format.</para>
-      <para>The DXGI surface render target does not perform DXGI surface synchronization.</para>
-      <para>For more information about creating and using DXGI surface render targets, see the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-and-direct3d-interoperation-overview">Direct2D and Direct3D Interoperability Overview</a>.</para>
-      <para>To work with Direct2D, the Direct3D device that provides the <see cref="IDXGISurface" /> must be created with the <b>D3D10_CREATE_DEVICE_BGRA_SUPPORT</b> flag.</para>
-      <para>When you create a render target and hardware acceleration is available, you allocate resources on the computer's GPU. By creating a render target once and retaining it as long as possible, you gain performance benefits. Your application should create render targets once and hold onto them for the life of the application or until the render target's <see cref="EndDraw" /> method returns the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a>  error. When you receive this error, you need to recreate the render target (and any resources it created).</para>
-    </remarks>
-    <seealso cref="CreateDxgiSurfaceRenderTarget(IDXGISurface,D2D1_RENDER_TARGET_PROPERTIES *,ID2D1RenderTarget)" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-and-direct3d-interoperation-overview">Direct2D and Direct3D Interoperability Overview</seealso>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates a render target that draws to a DirectX Graphics Infrastructure (DXGI) surface.</summary>
+    <param name="dxgiSurface">The IDXGISurface to which the render target will draw.</param>
+    <param name="renderTargetProperties">The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</param>
+    <param name="renderTarget">When this method returns, contains the address of the pointer to the <see cref="ID2D1RenderTarget" /> object created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateDxgiSurfaceRenderTarget">
-    <summary>
-      <para>Creates a render target that draws to a DirectX Graphics Infrastructure (DXGI) surface.</para>
-    </summary>
-    <param name="dxgiSurface">
-      <para>Type: <b><see cref="IDXGISurface" />*</b></para>
-      <para>The IDXGISurface to which the render target will draw.</para>
-    </param>
-    <param name="renderTargetProperties">
-      <para>Type: <b>const <see cref="D2D1_RENDER_TARGET_PROPERTIES" /> &amp;</b></para>
-      <para>The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see  <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel  Formats and Alpha Modes</a>.</para>
-    </param>
-    <param name="renderTarget">
-      <para>Type: <b><see cref="ID2D1RenderTarget" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the <see cref="ID2D1RenderTarget" /> object created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>To write to a Direct3D surface, you obtain an <see cref="IDXGISurface" /> and pass it to the CreateDxgiSurfaceRenderTarget method to create a DXGI surface render target; you can then use the DXGI surface render target to draw 2-D content to the DXGI surface.</para>
-      <para>A DXGI surface render target is a type of <see cref="ID2D1RenderTarget" />. Like other Direct2D render targets, you can use it to create resources and issue drawing commands.</para>
-      <para>The DXGI surface render target and the DXGI surface must use the same DXGI format. If you specify the <see cref="DXGI_FORMAT_UNKOWN" /> format when you create the render target, it will automatically use the surface's format.</para>
-      <para>The DXGI surface render target does not perform DXGI surface synchronization.</para>
-      <para>For more information about creating and using DXGI surface render targets, see the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-and-direct3d-interoperation-overview">Direct2D and Direct3D Interoperability Overview</a>.</para>
-      <para>To work with Direct2D, the Direct3D device that provides the <see cref="IDXGISurface" /> must be created with the <b>D3D10_CREATE_DEVICE_BGRA_SUPPORT</b> flag.</para>
-      <para>When you create a render target and hardware acceleration is available, you allocate resources on the computer's GPU. By creating a render target once and retaining it as long as possible, you gain performance benefits. Your application should create render targets once and hold onto them for the life of the application or until the render target's <see cref="EndDraw" /> method returns the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a>  error. When you receive this error, you need to recreate the render target (and any resources it created).</para>
-    </remarks>
-    <seealso cref="CreateDxgiSurfaceRenderTarget(IDXGISurface,D2D1_RENDER_TARGET_PROPERTIES,ID2D1RenderTarget)" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-and-direct3d-interoperation-overview">Direct2D and Direct3D Interoperability Overview</seealso>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates a render target that draws to a DirectX Graphics Infrastructure (DXGI) surface.</summary>
+    <param name="dxgiSurface">The IDXGISurface to which the render target will draw.</param>
+    <param name="renderTargetProperties">The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</param>
+    <param name="renderTarget">When this method returns, contains the address of the pointer to the <see cref="ID2D1RenderTarget" /> object created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateEllipseGeometry">
-    <summary>
-      <para>Creates an <see cref="ID2D1EllipseGeometry" />.</para>
-    </summary>
-    <param name="ellipse">
-      <para>Type: [in] <b>const <see cref="D2D1_ELLIPSE" /> &amp;</b></para>
-      <para>A value that describes the center point, x-radius, and y-radius of the ellipse geometry.</para>
-    </param>
-    <param name="ellipseGeometry">
-      <para>Type: [out] <b><see cref="ID2D1EllipseGeometry" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the ellipse geometry created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1EllipseGeometry" />.</summary>
+    <param name="ellipse">A value that describes the center point, x-radius, and y-radius of the ellipse geometry.</param>
+    <param name="ellipseGeometry">When this method returns, contains the address of the pointer to the ellipse geometry created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateGeometryGroup">
+    <summary>Creates an <see cref="ID2D1GeometryGroup" />, which is an object that holds other geometries.</summary>
+    <param name="fillMode">A value that specifies the rule that a composite shape uses to determine whether a given point is part of the geometry.</param>
+    <param name="geometries">An array containing the geometry objects to add to the geometry group. The number of elements in this array is indicated by the <i>geometriesCount</i> parameter.</param>
+    <param name="geometriesCount">The number of elements in <i>geometries</i>.</param>
+    <param name="geometryGroup">When this method returns, contains the address of a pointer to the geometry group created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
+  </member>
+  <member name="ID2D1Factory.CreateHwndRenderTarget">
     <summary>
-      <para>Creates an <see cref="ID2D1GeometryGroup" />, which is an object that holds other geometries.</para>
+      <para>Creates an <see cref="ID2D1HwndRenderTarget" />, a render target that renders to a window.</para>
+      <para>When you create a render target, and hardware acceleration is available, you allocate resources on the computer's GPU. By creating a render target once and retaining it as long as possible, you gain performance benefits. Your application should create render targets once and hold onto them for the life of the application or until the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a> error is received. When you receive this error, you need to recreate the render target (and any resources it created).</para>
+      <h3>-param renderTargetProperties</h3>
+      <para>The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</para>
+      <h3>-param hwndRenderTargetProperties</h3>
+      <para>The window handle, initial size (in pixels), and present options.</para>
+      <h3>-param hwndRenderTarget</h3>
+      <para>When this method returns, contains the address of the pointer to the <see cref="ID2D1HwndRenderTarget" /> object created by this method.</para>
     </summary>
-    <param name="fillMode">
-      <para>Type: <b><see cref="D2D1_FILL_MODE" /></b></para>
-      <para>A value that specifies the rule that a composite shape uses to determine whether a given point is part of the geometry.</para>
-    </param>
-    <param name="geometries">
-      <para>Type: <b><see cref="ID2D1Geometry" />**</b></para>
-      <para>An array containing the geometry objects to add to the geometry group. The number of elements in this array is indicated by the <i>geometriesCount</i> parameter.</para>
-    </param>
-    <param name="geometriesCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of elements in <i>geometries</i>.</para>
-    </param>
-    <param name="geometryGroup">
-      <para>Type: <b><see cref="ID2D1GeometryGroup" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the geometry group created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>Geometry groups are a convenient way to group several geometries simultaneously so all figures of several distinct geometries are concatenated into one. To create a  <see cref="ID2D1GeometryGroup" /> object, call  the <b>CreateGeometryGroup</b> method on the <see cref="ID2D1Factory" /> object, passing in the <i>fillMode</i> with possible values of   <see cref="D2D1_FILL_MODE_ALTERNATE" /> (alternate) and <b>D2D1_FILL_MODE_WINDING</b>, an array of geometry objects to add to the geometry group, and the number of elements in this array.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-geometries-overview">Geometries Overview</seealso>
-    <seealso cref="ID2D1Factory" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateHwndRenderTarget">
     <summary>
       <para>Creates an <see cref="ID2D1HwndRenderTarget" />, a render target that renders to a window.</para>
       <para>When you create a render target, and hardware acceleration is available, you allocate resources on the computer's GPU. By creating a render target once and retaining it as long as possible, you gain performance benefits. Your application should create render targets once and hold onto them for the life of the application or until the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a> error is received. When you receive this error, you need to recreate the render target (and any resources it created).</para>
     </summary>
-    <param name="renderTargetProperties">
-      <para>Type: [in] <b>const <see cref="D2D1_RENDER_TARGET_PROPERTIES" />*</b></para>
-      <para>The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering.  For information about supported pixel formats, see  <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel  Formats and Alpha Modes</a>.</para>
-    </param>
-    <param name="hwndRenderTargetProperties">
-      <para>Type: [in] <b>const <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" />*</b></para>
-      <para>The window handle, initial size (in pixels), and present options.</para>
-    </param>
-    <param name="hwndRenderTarget">
-      <para>Type: [out] <b><see cref="ID2D1HwndRenderTarget" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the <see cref="ID2D1HwndRenderTarget" /> object created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>When you create a render target and hardware acceleration is available, you allocate resources on the computer's GPU. By creating a render target once and retaining it as long as possible, you gain performance benefits. Your application should create render targets once and hold onto them for the life of the application or until the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a>  error is received. When you receive this error, you need to recreate the render target (and any resources it created).</para>
-    </remarks>
-    <seealso cref="ID2D1Factory" />
-  </member>
-  <member name="ID2D1Factory.CreateHwndRenderTarget">
-    <summary>
-      <para>Creates an <see cref="ID2D1HwndRenderTarget" />, a render target that renders to a window.</para>
-      <para>When you create a render target, and hardware acceleration is available, you allocate resources on the computer's GPU. By creating a render target once and retaining it as long as possible, you gain performance benefits. Your application should create render targets once and hold onto them for the life of the application or until the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a> error is received. When you receive this error, you need to recreate the render target (and any resources it created).</para>
-    </summary>
-    <param name="renderTargetProperties">
-      <para>Type: [in] <b>const <see cref="D2D1_RENDER_TARGET_PROPERTIES" /> &amp;</b></para>
-      <para>The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering.  For information about supported pixel formats, see  <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel  Formats and Alpha Modes</a>.</para>
-    </param>
-    <param name="hwndRenderTargetProperties">
-      <para>Type: [in] <b>const <see cref="D2D1_HWND_RENDER_TARGET_PROPERTIES" /> &amp;</b></para>
-      <para>The window handle, initial size (in pixels), and present options.</para>
-    </param>
-    <param name="hwndRenderTarget">
-      <para>Type: [out] <b><see cref="ID2D1HwndRenderTarget" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the <see cref="ID2D1HwndRenderTarget" /> object created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>When you create a render target and hardware acceleration is available, you allocate resources on the computer's GPU. By creating a render target once and retaining it as long as possible, you gain performance benefits. Your application should create render targets once and hold onto them for the life of the application or until the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a>  error is received. When you receive this error, you need to recreate the render target (and any resources it created).</para>
-    </remarks>
-    <seealso cref="ID2D1Factory" />
+    <param name="renderTargetProperties">The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</param>
+    <param name="hwndRenderTargetProperties">The window handle, initial size (in pixels), and present options.</param>
+    <param name="hwndRenderTarget">When this method returns, contains the address of the pointer to the <see cref="ID2D1HwndRenderTarget" /> object created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreatePathGeometry">
-    <summary>
-      <para>Creates an empty <see cref="ID2D1PathGeometry" />.</para>
-    </summary>
-    <param name="pathGeometry">
-      <para>Type: <b><see cref="ID2D1PathGeometry" />**</b></para>
-      <para>When this method returns, contains the address to a pointer to the path geometry created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an empty <see cref="ID2D1PathGeometry" />.</summary>
+    <param name="pathGeometry">When this method returns, contains the address to a pointer to the path geometry created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateRectangleGeometry">
-    <summary>
-      <para>Creates an <see cref="ID2D1RectangleGeometry" />.</para>
-    </summary>
-    <param name="rectangle">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The coordinates of the rectangle geometry.</para>
-    </param>
-    <param name="rectangleGeometry">
-      <para>Type: [out] <b><see cref="ID2D1RectangleGeometry" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the rectangle geometry created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1RectangleGeometry" />.</summary>
+    <param name="rectangle">The coordinates of the rectangle geometry.</param>
+    <param name="rectangleGeometry">When this method returns, contains the address of the pointer to the rectangle geometry created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateRectangleGeometry">
-    <summary>
-      <para>Creates an <see cref="ID2D1RectangleGeometry" />.</para>
-    </summary>
-    <param name="rectangle">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-rect-f">D2D1_RECT_F</a> &amp;</b></para>
-      <para>The coordinates of the rectangle geometry.</para>
-    </param>
-    <param name="rectangleGeometry">
-      <para>Type: [out] <b><see cref="ID2D1RectangleGeometry" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the rectangle geometry created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1RectangleGeometry" />.</summary>
+    <param name="rectangle">The coordinates of the rectangle geometry.</param>
+    <param name="rectangleGeometry">When this method returns, contains the address of the pointer to the rectangle geometry created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateRoundedRectangleGeometry">
-    <summary>
-      <para>Creates an <see cref="ID2D1RoundedRectangleGeometry" />.</para>
-    </summary>
-    <param name="roundedRectangle">
-      <para>Type: [in] <b>const <see cref="D2D1_ROUNDED_RECT" />*</b></para>
-      <para>The coordinates and corner radii of the rounded rectangle geometry.</para>
-    </param>
-    <param name="roundedRectangleGeometry">
-      <para>Type: [out] <b><see cref="ID2D1RoundedRectangleGeometry" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the rounded rectangle geometry created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1RoundedRectangleGeometry" />.</summary>
+    <param name="roundedRectangle">The coordinates and corner radii of the rounded rectangle geometry.</param>
+    <param name="roundedRectangleGeometry">When this method returns, contains the address of the pointer to the rounded rectangle geometry created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateRoundedRectangleGeometry">
-    <summary>
-      <para>Creates an <see cref="ID2D1RoundedRectangleGeometry" />.</para>
-    </summary>
-    <param name="roundedRectangle">
-      <para>Type: [in] <b>const <see cref="D2D1_ROUNDED_RECT" /> &amp;</b></para>
-      <para>The coordinates and corner radii of the rounded rectangle geometry.</para>
-    </param>
-    <param name="roundedRectangleGeometry">
-      <para>Type: [out] <b><see cref="ID2D1RoundedRectangleGeometry" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the rounded rectangle geometry created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1RoundedRectangleGeometry" />.</summary>
+    <param name="roundedRectangle">The coordinates and corner radii of the rounded rectangle geometry.</param>
+    <param name="roundedRectangleGeometry">When this method returns, contains the address of the pointer to the rounded rectangle geometry created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateStrokeStyle">
-    <summary>
-      <para>Creates an <see cref="ID2D1StrokeStyle" /> that describes start cap, dash pattern, and other features of a stroke.</para>
-    </summary>
-    <param name="strokeStyleProperties">
-      <para>Type: <b>const <see cref="D2D1_STROKE_STYLE_PROPERTIES" />*</b></para>
-      <para>A structure that describes the stroke's line cap, dash offset, and other details of a stroke.</para>
-    </param>
-    <param name="dashes">
-      <para>Type: <b>const FLOAT*</b></para>
-      <para>An array whose elements are set to the length of each dash and space in the dash pattern. The first element sets the length of a dash, the second element sets the length of a space, the third element sets the length of a dash, and so on. The length of each dash and space in the dash pattern is the product of the element value in the array and the stroke width.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of elements in the <i>dashes</i> array.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: <b><see cref="ID2D1StrokeStyle" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the stroke style created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1StrokeStyle" /> that describes start cap, dash pattern, and other features of a stroke.</summary>
+    <param name="strokeStyleProperties">A structure that describes the stroke's line cap, dash offset, and other details of a stroke.</param>
+    <param name="dashes">An array whose elements are set to the length of each dash and space in the dash pattern. The first element sets the length of a dash, the second element sets the length of a space, the third element sets the length of a dash, and so on. The length of each dash and space in the dash pattern is the product of the element value in the array and the stroke width.</param>
+    <param name="dashesCount">The number of elements in the <i>dashes</i> array.</param>
+    <param name="strokeStyle">When this method returns, contains the address of the pointer to the stroke style created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateStrokeStyle">
-    <summary>
-      <para>Creates an <see cref="ID2D1StrokeStyle" /> that describes start cap, dash pattern, and other features of a stroke.</para>
-    </summary>
-    <param name="strokeStyleProperties">
-      <para>Type: <b>const <see cref="D2D1_STROKE_STYLE_PROPERTIES" /></b></para>
-      <para>A structure that describes the stroke's line cap, dash offset, and other details of a stroke.</para>
-    </param>
-    <param name="dashes">
-      <para>Type: <b>const FLOAT*</b></para>
-      <para>An array whose elements are set to the length of each dash and space in the dash pattern. The first element sets the length of a dash, the second element sets the length of a space, the third element sets the length of a dash, and so on. The length of each dash and space in the dash pattern is the product of the element value in the array and the stroke width.</para>
-    </param>
-    <param name="dashesCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of elements in the <i>dashes</i> array.</para>
-    </param>
-    <param name="strokeStyle">
-      <para>Type: <b><see cref="ID2D1StrokeStyle" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the stroke style created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates an <see cref="ID2D1StrokeStyle" /> that describes start cap, dash pattern, and other features of a stroke.</summary>
+    <param name="strokeStyleProperties">A structure that describes the stroke's line cap, dash offset, and other details of a stroke.</param>
+    <param name="dashes">An array whose elements are set to the length of each dash and space in the dash pattern. The first element sets the length of a dash, the second element sets the length of a space, the third element sets the length of a dash, and so on. The length of each dash and space in the dash pattern is the product of the element value in the array and the stroke width.</param>
+    <param name="dashesCount">The number of elements in the <i>dashes</i> array.</param>
+    <param name="strokeStyle">When this method returns, contains the address of the pointer to the stroke style created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateTransformedGeometry">
-    <summary>
-      <para>Transforms the specified geometry and stores the result as an <see cref="ID2D1TransformedGeometry" /> object.</para>
-    </summary>
-    <param name="sourceGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to transform.</para>
-    </param>
-    <param name="transform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a>*</b></para>
-      <para>The transformation to apply.</para>
-    </param>
-    <param name="transformedGeometry">
-      <para>Type: [out] <b><see cref="ID2D1TransformedGeometry" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the new transformed geometry object. The transformed geometry stores the result of transforming <i>sourceGeometry</i> by <i>transform</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>Like other resources, a transformed geometry inherits the resource space and threading policy of the factory that created it. This object is immutable.</para>
-      <para>When stroking a transformed geometry with the <see cref="DrawGeometry" /> method, the stroke width is not affected by the transform applied to the geometry. The stroke width is only affected by the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory" />
-    <seealso cref="ID2D1TransformedGeometry" />
+    <summary>Transforms the specified geometry and stores the result as an <see cref="ID2D1TransformedGeometry" /> object.</summary>
+    <param name="sourceGeometry">The geometry to transform.</param>
+    <param name="transform">The transformation to apply.</param>
+    <param name="transformedGeometry">When this method returns, contains the address of the pointer to the new transformed geometry object. The transformed geometry stores the result of transforming <i>sourceGeometry</i> by <i>transform</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateTransformedGeometry">
-    <summary>
-      <para>Transforms the specified geometry and stores the result as an <see cref="ID2D1TransformedGeometry" /> object.</para>
-    </summary>
-    <param name="sourceGeometry">
-      <para>Type: [in] <b><see cref="ID2D1Geometry" />*</b></para>
-      <para>The geometry to transform.</para>
-    </param>
-    <param name="transform">
-      <para>Type: [in] <b>const <a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a> &amp;</b></para>
-      <para>The transformation to apply.</para>
-    </param>
-    <param name="transformedGeometry">
-      <para>Type: [out] <b><see cref="ID2D1TransformedGeometry" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the new transformed geometry object. The transformed geometry stores the result of transforming <i>sourceGeometry</i> by <i>transform</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>Like other resources, a transformed geometry inherits the resource space and threading policy of the factory that created it. This object is immutable.</para>
-      <para>When stroking a transformed geometry with the <see cref="DrawGeometry" /> method, the stroke width is not affected by the transform applied to the geometry. The stroke width is only affected by the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Factory" />
-    <seealso cref="ID2D1TransformedGeometry" />
+    <summary>Transforms the specified geometry and stores the result as an <see cref="ID2D1TransformedGeometry" /> object.</summary>
+    <param name="sourceGeometry">The geometry to transform.</param>
+    <param name="transform">The transformation to apply.</param>
+    <param name="transformedGeometry">When this method returns, contains the address of the pointer to the new transformed geometry object. The transformed geometry stores the result of transforming <i>sourceGeometry</i> by <i>transform</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateWicBitmapRenderTarget">
-    <summary>
-      <para>Creates a render target that renders to a Microsoft Windows Imaging Component (WIC)  bitmap.</para>
-    </summary>
-    <param name="target">
-      <para>Type: <b><see cref="IWICBitmap" />*</b></para>
-      <para>The bitmap that receives the rendering output of the render target.</para>
-    </param>
-    <param name="renderTargetProperties">
-      <para>Type: <b>const <see cref="D2D1_RENDER_TARGET_PROPERTIES" />*</b></para>
-      <para>The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see  <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel  Formats and Alpha Modes</a>.</para>
-    </param>
-    <param name="renderTarget">
-      <para>Type: <b><see cref="ID2D1RenderTarget" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the <see cref="ID2D1RenderTarget" /> object created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>You must use <see cref="D2D1_FEATURE_LEVEL_DEFAULT" /> for the <b>minLevel</b> member of the  <i>renderTargetProperties</i> parameter with this method.</para>
-      <para>Your application should create render targets once and hold onto them for the life of the application or until the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a>  error is received. When you receive this error, you need to recreate the render target (and any resources it created).</para>
-      <blockquote>
-        <para>[!NOTE]
-This method isn't supported on Windows Phone and will fail when called on a device with error code 0x8899000b  (“There is no hardware rendering device available for this operation”). Because the Windows Phone Emulator supports WARP rendering,  this method will fail when called on the emulator with a different error code, 0x88982f80  (wincodec_err_unsupportedpixelformat).</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates a render target that renders to a Microsoft Windows Imaging Component (WIC) bitmap.</summary>
+    <param name="target">The bitmap that receives the rendering output of the render target.</param>
+    <param name="renderTargetProperties">The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</param>
+    <param name="renderTarget">When this method returns, contains the address of the pointer to the <see cref="ID2D1RenderTarget" /> object created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.CreateWicBitmapRenderTarget">
-    <summary>
-      <para>Creates a render target that renders to a Microsoft Windows Imaging Component (WIC)  bitmap.</para>
-    </summary>
-    <param name="target">
-      <para>Type: <b><see cref="IWICBitmap" />*</b></para>
-      <para>The bitmap that receives the rendering output of the render target.</para>
-    </param>
-    <param name="renderTargetProperties">
-      <para>Type: <b>const <see cref="D2D1_RENDER_TARGET_PROPERTIES" /></b></para>
-      <para>The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see  <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel  Formats and Alpha Modes</a>.</para>
-    </param>
-    <param name="renderTarget">
-      <para>Type: <b><see cref="ID2D1RenderTarget" />**</b></para>
-      <para>When this method returns, contains the address of the pointer to the  <see cref="ID2D1RenderTarget" /> object created by this method.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>You must use <see cref="D2D1_FEATURE_LEVEL_DEFAULT" /> for the <b>minLevel</b> member of the  <i>renderTargetProperties</i> parameter with this method.</para>
-      <para>Your application should create render targets once and hold onto them for the life of the application or until the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">D2DERR_RECREATE_TARGET</a>  error is received. When you receive this error, you need to recreate the render target (and any resources it created).</para>
-      <blockquote>
-        <para>[!NOTE]
-This method isn't supported on Windows Phone, and will fail when called on a device with error code 0x8899000b  (“There is no hardware rendering device available for this operation”). Because the Windows Phone Emulator supports WARP rendering,  this method will fail when called on the emulator with a different error code, 0x88982f80  (wincodec_err_unsupportedpixelformat).</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="ID2D1Factory" />
+    <summary>Creates a render target that renders to a Microsoft Windows Imaging Component (WIC) bitmap.</summary>
+    <param name="target">The bitmap that receives the rendering output of the render target.</param>
+    <param name="renderTargetProperties">The rendering mode, pixel format, remoting options, DPI information, and the minimum DirectX support required for hardware rendering. For information about supported pixel formats, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</param>
+    <param name="renderTarget">When this method returns, contains the address of the pointer to the <see cref="ID2D1RenderTarget" /> object created by this method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory.GetDesktopDpi">
     <summary>
+      <blockquote>[!IMPORTANT]<b>ID2D1Factory.GetDesktopDpi</b> is deprecated. For a desktop app, instead use <see cref="GetDpiForWindow" />. For a Universal Windows Platform (UWP) app, instead use <a href="https://docs.microsoft.com//uwp/api/windows.graphics.display.displayinformation.logicaldpi">DisplayInformation.LogicalDpi</a>.</blockquote>
       <para>Retrieves the current desktop dots per inch (DPI). To refresh this value, call <see cref="ReloadSystemMetrics" />.</para>
     </summary>
-    <param name="dpiX">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>When this method returns, contains the horizontal DPI of the desktop. You must allocate storage for this parameter.</para>
-    </param>
-    <param name="dpiY">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>When this method returns, contains the vertical DPI of the desktop. You must allocate storage for this parameter.</para>
-    </param>
-    <remarks>
-      <para>Use this method to obtain the system DPI when setting physical pixel values, such as when you specify the size of a window.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/how-to--size-a-window-properly-for-high-dpi-displays">How to Ensure that Your Application Displays Properly on High-DPI Displays</seealso>
-    <seealso cref="ID2D1Factory" />
+    <param name="dpiX">When this method returns, contains the horizontal DPI of the desktop. You must allocate storage for this parameter.</param>
+    <param name="dpiY">When this method returns, contains the vertical DPI of the desktop. You must allocate storage for this parameter.</param>
   </member>
   <member name="ID2D1Factory.ReloadSystemMetrics">
-    <summary>
-      <para>Forces the factory to refresh any system defaults that it might have changed since factory creation.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</para>
-    </returns>
-    <remarks>
-      <para>You should call this method before calling the <see cref="GetDesktopDpi" /> method, to ensure that the system DPI is current.</para>
-    </remarks>
-    <seealso cref="GetDesktopDpi" />
-    <seealso cref="ID2D1Factory" />
+    <summary>Forces the factory to refresh any system defaults that it might have changed since factory creation.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a> error code.</returns>
   </member>
   <member name="ID2D1Factory">
-    <summary>
-      <para>Creates Direct2D resources.</para>
-    </summary>
-    <remarks>
-      <para>The <b>ID2D1Factory</b> interface is the starting point for using Direct2D; it's what you use to create other Direct2D resources that you can use to draw or describe shapes.</para>
-      <para>A factory defines a set of Create<i>Resource</i> methods that can produce the following drawing resources:</para>
-      <list type="bullet">
-        <item>
-          <description>Render targets: objects that render drawing commands.</description>
-        </item>
-        <item>
-          <description>Drawing state blocks: objects that store drawing state information, such as the current transformation and antialiasing mode.</description>
-        </item>
-        <item>
-          <description>Geometries: objects that represent simple and potentially complex shapes.</description>
-        </item>
-      </list>
-      <para>To create an <b>ID2D1Factory</b>, you use one of the <see cref="CreateFactory" /> methods. You should retain the <b>ID2D1Factory</b> instance for as long as you use Direct2D resources; in general, you shouldn't need to recreate it when the application is running. For more information about Direct2D resources, see the <a href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</a>.</para>
-      <h3>Singlethreaded and Multithreaded Factories</h3>
-      <para>When you create a factory, you can specify whether it is multithreaded or singlethreaded. A singlethreaded factory provides no serialization against any other single threaded instance within Direct2D, so, this mechanism provides a very large degree of scaling on the CPU.</para>
-      <para>You can also create a multithreaded factory instance. In this case, the factory and all derived objects can be used from any thread and each render target can be rendered to independently. Direct2D serializes calls to these objects, so a single multithreaded Direct2D instance won't scale as well on the CPU as many single threaded instances. However, the resources can be shared within the multithreaded instance.</para>
-      <para>Note that the qualifier "On the CPU": GPUs generally take advantage of fine-grained parallelism more so than CPUs. For example, multithreaded calls from the CPU might still end up being serialized when being sent to the GPU, however, a whole bank of pixel and vertex shaders will run in parallel to perform the rendering.</para>
-      <para>See <a href="https://docs.microsoft.com//windows/win32/Direct2D/multi-threaded-direct2d-apps">Multithreaded Direct2D Apps</a> for more info.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-overview">Direct2D Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-quickstart">Direct2D QuickStart</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/getting-started-with-direct2d">Getting Started with Direct2D</seealso>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/multi-threaded-direct2d-apps">Multithreaded Direct2D Apps</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/resources-and-resource-domains">Resources Overview</seealso>
+    <summary>Creates Direct2D resources.</summary>
   </member>
 </doc>

@@ -19,7 +19,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
     public uint DeviceNumber;
 
     /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.Flags"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:7273:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L7273_C5")]
     public _Flags_e__Struct Flags;
 
     /// <include file='SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.xml' path='doc/member[@name="SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO.DeviceSize"]/*' />
@@ -36,7 +36,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
         public uint ForcedByRegistry
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x1u;
             }
@@ -53,7 +53,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
         public uint Initialized
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 1) & 0x1u;
             }
@@ -70,7 +70,7 @@ public partial struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 2) & 0x3FFFFFFFu;
             }

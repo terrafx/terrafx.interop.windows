@@ -10,9 +10,9 @@ public unsafe partial struct REGISTERWORDW
 {
     /// <include file='REGISTERWORDW.xml' path='doc/member[@name="REGISTERWORDW.lpReading"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpReading;
+    public char* lpReading;
 
     /// <include file='REGISTERWORDW.xml' path='doc/member[@name="REGISTERWORDW.lpWord"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpWord;
+    public char* lpWord;
 }

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXC_OUT_KIND">
+    <summary>
+      <para>Defines constants that specify the kind of output to retrieve from an <see cref="IDxcResult" />. For use with the <i>dxcOutKind</i> parameter of <see cref="IDxcResult.GetOutput" /> and <see cref="IDxcResult.HasOutput" />.</para>
+      <blockquote>[!NOTE] Text outputs returned from version 2 APIs are UTF-8 or UTF-16, depending on the <code>-encoding</code> option passed to the compiler.</blockquote>
+    </summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_NONE">
+    <summary>Specifies no output.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_OBJECT">
+    <summary>For <see cref="IDxcBlob" />, specifies a shader or library object.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_ERRORS">
+    <summary>For <see cref="IDxcBlobUtf8" /> or <see cref="IDxcBlobUtf16" />, specifies errors.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_PDB">
+    <summary>For <see cref="IDxcBlob" />, specifies PDB.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_SHADER_HASH">
+    <summary>For <see cref="IDxcBlob" />, specifies the DxcShaderHash of a shader or a shader with source info (<code>-Zsb/-Zss</code>).</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_DISASSEMBLY">
+    <summary>For <see cref="IDxcBlobUtf8" /> or <see cref="IDxcBlobUtf16" />, specifies the output from disassembling.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_HLSL">
+    <summary>For <see cref="IDxcBlobUtf8" /> or <see cref="IDxcBlobUtf16" />, specifies the output from the preprocessor or rewriter.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_TEXT">
+    <summary>For <see cref="IDxcBlobUtf8" /> or <see cref="IDxcBlobUtf16" />, specifies other text, such as <code>-ast-dump</code> or <code>-Odump</code>.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_REFLECTION">
+    <summary>For <see cref="IDxcBlob" />, specifies the RDAT part with reflection data.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_ROOT_SIGNATURE">
+    <summary>For <see cref="IDxcBlob" />, specifies serialized root signature output.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_EXTRA_OUTPUTS">
+    <summary>For <see cref="IDxcExtraOutputs" />, specifies extra outputs.</summary>
+  </member>
+  <member name="DXC_OUT_KIND.DXC_OUT_FORCE_DWORD"></member>
+</doc>

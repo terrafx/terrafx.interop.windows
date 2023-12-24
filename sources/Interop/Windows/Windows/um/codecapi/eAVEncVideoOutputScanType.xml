@@ -4,29 +4,20 @@
 <doc>
   <member name="eAVEncVideoOutputScanType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies how the encoder interlaces the output video. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideooutputscantype-property">AVEncVideoOutputScanType</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncVideoOutputScanType.eAVEncVideoOutputScan_Progressive">
-    <summary>
-      <para>Output frames are progressive.</para>
-    </summary>
+    <summary>Output frames are progressive.</summary>
   </member>
   <member name="eAVEncVideoOutputScanType.eAVEncVideoOutputScan_Interlaced">
-    <summary>
-      <para>Output frames are interlaced.</para>
-    </summary>
+    <summary>Output frames are interlaced.</summary>
   </member>
   <member name="eAVEncVideoOutputScanType.eAVEncVideoOutputScan_SameAsInput">
-    <summary>
-      <para>The interlacing on the output frames matches the input frames.</para>
-    </summary>
+    <summary>The interlacing on the output frames matches the input frames.</summary>
   </member>
   <member name="eAVEncVideoOutputScanType.eAVEncVideoOutputScan_Automatic">
-    <summary>
-      <para>Use the media type on the encoder's input pin to determine whether the frames are progressive or interlaced.</para>
-    </summary>
+    <summary>Use the media type on the encoder's input pin to determine whether the frames are progressive or interlaced.</summary>
   </member>
 </doc>

@@ -3,41 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MilMatrix3x2D">
-    <summary>
-      <para>Specifies a 3x2 matrix that describes a transform.</para>
-    </summary>
-    <remarks>
-      <para>In Windows Vista, this structure was named MIL_MATRIX3X2D. It was renamed in Windows 7.</para>
-    </remarks>
+    <summary>Specifies a 3x2 matrix that describes a transform.</summary>
   </member>
   <member name="MilMatrix3x2D.S_11">
-    <summary>
-      <para>The value at the (1,1) position of the matrix (first row, first column).</para>
-    </summary>
+    <summary>The value at the (1,1) position of the matrix (first row, first column).</summary>
   </member>
   <member name="MilMatrix3x2D.S_12">
-    <summary>
-      <para>The value at the (1,2) position of the matrix (first row, second column).</para>
-    </summary>
+    <summary>The value at the (1,2) position of the matrix (first row, second column).</summary>
   </member>
   <member name="MilMatrix3x2D.S_21">
-    <summary>
-      <para>The value at the (2,1) position of the matrix (second row, first column).</para>
-    </summary>
+    <summary>The value at the (2,1) position of the matrix (second row, first column).</summary>
   </member>
   <member name="MilMatrix3x2D.S_22">
-    <summary>
-      <para>The value at the (2,2) position of the matrix (second row, second column).</para>
-    </summary>
+    <summary>The value at the (2,2) position of the matrix (second row, second column).</summary>
   </member>
   <member name="MilMatrix3x2D.DX">
-    <summary>
-      <para>The value at the (3,1) position of the matrix (third row, first column).</para>
-    </summary>
+    <summary>The value at the (3,1) position of the matrix (third row, first column).</summary>
   </member>
   <member name="MilMatrix3x2D.DY">
-    <summary>
-      <para>The value at the (3,2) position of the matrix (third row, second column).</para>
-    </summary>
+    <summary>The value at the (3,2) position of the matrix (third row, second column).</summary>
   </member>
 </doc>

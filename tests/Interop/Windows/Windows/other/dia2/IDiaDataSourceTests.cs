@@ -19,32 +19,4 @@ public static unsafe partial class IDiaDataSourceTests
     {
         Assert.That(typeof(IDiaDataSource).GUID, Is.EqualTo(IID_IDiaDataSource));
     }
-
-    /// <summary>Validates that the <see cref="IDiaDataSource" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaDataSource>(), Is.EqualTo(sizeof(IDiaDataSource)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaDataSource" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaDataSource).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaDataSource" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaDataSource), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaDataSource), Is.EqualTo(4));
-        }
-    }
 }

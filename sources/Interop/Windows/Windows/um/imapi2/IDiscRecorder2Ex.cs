@@ -25,7 +25,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, Guid*, void**, int>)(lpVtbl[0]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, Guid*, void**, int>)(lpVtbl[0]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, uint>)(lpVtbl[1]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, uint>)(lpVtbl[1]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, uint>)(lpVtbl[2]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, uint>)(lpVtbl[2]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.SendCommandNoData"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(3)]
     public HRESULT SendCommandNoData(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE[18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, int>)(lpVtbl[3]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, byte*, uint, byte*, uint, int>)(lpVtbl[3]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.SendCommandSendDataToDevice"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(4)]
     public HRESULT SendCommandSendDataToDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE[18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, int>)(lpVtbl[4]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, int>)(lpVtbl[4]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.SendCommandGetDataFromDevice"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(5)]
     public HRESULT SendCommandGetDataFromDevice(byte* Cdb, [NativeTypeName("ULONG")] uint CdbSize, [NativeTypeName("BYTE[18]")] byte* SenseBuffer, [NativeTypeName("ULONG")] uint Timeout, byte* Buffer, [NativeTypeName("ULONG_IMAPI2_NONZERO")] uint BufferSize, [NativeTypeName("ULONG_IMAPI2_NOT_NEGATIVE *")] uint* BufferFetched)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, uint*, int>)(lpVtbl[5]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize, BufferFetched);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, byte*, uint, byte*, uint, byte*, uint, uint*, int>)(lpVtbl[5]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), Cdb, CdbSize, SenseBuffer, Timeout, Buffer, BufferSize, BufferFetched);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.ReadDvdStructure"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(6)]
     public HRESULT ReadDvdStructure([NativeTypeName("ULONG")] uint format, [NativeTypeName("ULONG")] uint address, [NativeTypeName("ULONG")] uint layer, [NativeTypeName("ULONG")] uint agid, byte** data, [NativeTypeName("ULONG_IMAPI2_DVD_STRUCTURE *")] uint* count)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, uint, uint, uint, uint, byte**, uint*, int>)(lpVtbl[6]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), format, address, layer, agid, data, count);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, uint, uint, uint, uint, byte**, uint*, int>)(lpVtbl[6]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), format, address, layer, agid, data, count);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.SendDvdStructure"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(7)]
     public HRESULT SendDvdStructure([NativeTypeName("ULONG")] uint format, byte* data, [NativeTypeName("ULONG_IMAPI2_DVD_STRUCTURE")] uint count)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, uint, byte*, uint, int>)(lpVtbl[7]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), format, data, count);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, uint, byte*, uint, int>)(lpVtbl[7]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), format, data, count);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetAdapterDescriptor"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(8)]
     public HRESULT GetAdapterDescriptor(byte** data, [NativeTypeName("ULONG_IMAPI2_ADAPTER_DESCRIPTOR *")] uint* byteSize)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, byte**, uint*, int>)(lpVtbl[8]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), data, byteSize);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, byte**, uint*, int>)(lpVtbl[8]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), data, byteSize);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetDeviceDescriptor"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(9)]
     public HRESULT GetDeviceDescriptor(byte** data, [NativeTypeName("ULONG_IMAPI2_DEVICE_DESCRIPTOR *")] uint* byteSize)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, byte**, uint*, int>)(lpVtbl[9]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), data, byteSize);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, byte**, uint*, int>)(lpVtbl[9]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), data, byteSize);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetDiscInformation"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(10)]
     public HRESULT GetDiscInformation(byte** discInformation, [NativeTypeName("ULONG_IMAPI2_DISC_INFORMATION *")] uint* byteSize)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, byte**, uint*, int>)(lpVtbl[10]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), discInformation, byteSize);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, byte**, uint*, int>)(lpVtbl[10]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), discInformation, byteSize);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetTrackInformation"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(11)]
     public HRESULT GetTrackInformation([NativeTypeName("ULONG")] uint address, IMAPI_READ_TRACK_ADDRESS_TYPE addressType, byte** trackInformation, [NativeTypeName("ULONG_IMAPI2_TRACK_INFORMATION *")] uint* byteSize)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, uint, IMAPI_READ_TRACK_ADDRESS_TYPE, byte**, uint*, int>)(lpVtbl[11]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), address, addressType, trackInformation, byteSize);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, uint, IMAPI_READ_TRACK_ADDRESS_TYPE, byte**, uint*, int>)(lpVtbl[11]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), address, addressType, trackInformation, byteSize);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetFeaturePage"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(12)]
     public HRESULT GetFeaturePage(IMAPI_FEATURE_PAGE_TYPE requestedFeature, [NativeTypeName("BOOLEAN")] byte currentFeatureOnly, byte** featureData, [NativeTypeName("ULONG_IMAPI2_FEATURE_PAGE *")] uint* byteSize)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_FEATURE_PAGE_TYPE, byte, byte**, uint*, int>)(lpVtbl[12]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestedFeature, currentFeatureOnly, featureData, byteSize);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, IMAPI_FEATURE_PAGE_TYPE, byte, byte**, uint*, int>)(lpVtbl[12]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestedFeature, currentFeatureOnly, featureData, byteSize);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetModePage"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(13)]
     public HRESULT GetModePage(IMAPI_MODE_PAGE_TYPE requestedModePage, IMAPI_MODE_PAGE_REQUEST_TYPE requestType, byte** modePageData, [NativeTypeName("ULONG_IMAPI2_MODE_PAGE *")] uint* byteSize)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_TYPE, IMAPI_MODE_PAGE_REQUEST_TYPE, byte**, uint*, int>)(lpVtbl[13]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestedModePage, requestType, modePageData, byteSize);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_TYPE, IMAPI_MODE_PAGE_REQUEST_TYPE, byte**, uint*, int>)(lpVtbl[13]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestedModePage, requestType, modePageData, byteSize);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.SetModePage"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(14)]
     public HRESULT SetModePage(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, byte* data, [NativeTypeName("ULONG_IMAPI2_MODE_PAGE")] uint byteSize)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_REQUEST_TYPE, byte*, uint, int>)(lpVtbl[14]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestType, data, byteSize);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_REQUEST_TYPE, byte*, uint, int>)(lpVtbl[14]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestType, data, byteSize);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetSupportedFeaturePages"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(15)]
     public HRESULT GetSupportedFeaturePages([NativeTypeName("BOOLEAN")] byte currentFeatureOnly, IMAPI_FEATURE_PAGE_TYPE** featureData, [NativeTypeName("ULONG_IMAPI2_ALL_FEATURE_PAGES *")] uint* byteSize)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, byte, IMAPI_FEATURE_PAGE_TYPE**, uint*, int>)(lpVtbl[15]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), currentFeatureOnly, featureData, byteSize);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, byte, IMAPI_FEATURE_PAGE_TYPE**, uint*, int>)(lpVtbl[15]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), currentFeatureOnly, featureData, byteSize);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetSupportedProfiles"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(16)]
     public HRESULT GetSupportedProfiles([NativeTypeName("BOOLEAN")] byte currentOnly, IMAPI_PROFILE_TYPE** profileTypes, [NativeTypeName("ULONG_IMAPI2_ALL_PROFILES *")] uint* validProfiles)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, byte, IMAPI_PROFILE_TYPE**, uint*, int>)(lpVtbl[16]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), currentOnly, profileTypes, validProfiles);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, byte, IMAPI_PROFILE_TYPE**, uint*, int>)(lpVtbl[16]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), currentOnly, profileTypes, validProfiles);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetSupportedModePages"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(17)]
     public HRESULT GetSupportedModePages(IMAPI_MODE_PAGE_REQUEST_TYPE requestType, IMAPI_MODE_PAGE_TYPE** modePageTypes, [NativeTypeName("ULONG_IMAPI2_ALL_MODE_PAGES *")] uint* validPages)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_REQUEST_TYPE, IMAPI_MODE_PAGE_TYPE**, uint*, int>)(lpVtbl[17]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestType, modePageTypes, validPages);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, IMAPI_MODE_PAGE_REQUEST_TYPE, IMAPI_MODE_PAGE_TYPE**, uint*, int>)(lpVtbl[17]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), requestType, modePageTypes, validPages);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetByteAlignmentMask"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(18)]
     public HRESULT GetByteAlignmentMask([NativeTypeName("ULONG *")] uint* value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, uint*, int>)(lpVtbl[18]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, uint*, int>)(lpVtbl[18]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetMaximumNonPageAlignedTransferSize"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(19)]
     public HRESULT GetMaximumNonPageAlignedTransferSize([NativeTypeName("ULONG *")] uint* value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, uint*, int>)(lpVtbl[19]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, uint*, int>)(lpVtbl[19]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IDiscRecorder2Ex.xml' path='doc/member[@name="IDiscRecorder2Ex.GetMaximumPageAlignedTransferSize"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
     [VtblIndex(20)]
     public HRESULT GetMaximumPageAlignedTransferSize([NativeTypeName("ULONG *")] uint* value)
     {
-        return ((delegate* unmanaged<IDiscRecorder2Ex*, uint*, int>)(lpVtbl[20]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IDiscRecorder2Ex*, uint*, int>)(lpVtbl[20]))((IDiscRecorder2Ex*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -251,66 +251,66 @@ public unsafe partial struct IDiscRecorder2Ex : IDiscRecorder2Ex.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG, BYTE *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, byte*, uint, int> SendCommandNoData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, byte*, uint, int> SendCommandNoData;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG, BYTE *, ULONG, BYTE *, ULONG_IMAPI2_NONZERO) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, byte*, uint, byte*, uint, int> SendCommandSendDataToDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, byte*, uint, byte*, uint, int> SendCommandSendDataToDevice;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG, BYTE *, ULONG, BYTE *, ULONG_IMAPI2_NONZERO, ULONG_IMAPI2_NOT_NEGATIVE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, byte*, uint, byte*, uint, uint*, int> SendCommandGetDataFromDevice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, byte*, uint, byte*, uint, uint*, int> SendCommandGetDataFromDevice;
 
         [NativeTypeName("HRESULT (ULONG, ULONG, ULONG, ULONG, BYTE **, ULONG_IMAPI2_DVD_STRUCTURE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, uint, byte**, uint*, int> ReadDvdStructure;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, uint, byte**, uint*, int> ReadDvdStructure;
 
         [NativeTypeName("HRESULT (ULONG, BYTE *, ULONG_IMAPI2_DVD_STRUCTURE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte*, uint, int> SendDvdStructure;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte*, uint, int> SendDvdStructure;
 
         [NativeTypeName("HRESULT (BYTE **, ULONG_IMAPI2_ADAPTER_DESCRIPTOR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetAdapterDescriptor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, int> GetAdapterDescriptor;
 
         [NativeTypeName("HRESULT (BYTE **, ULONG_IMAPI2_DEVICE_DESCRIPTOR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetDeviceDescriptor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, int> GetDeviceDescriptor;
 
         [NativeTypeName("HRESULT (BYTE **, ULONG_IMAPI2_DISC_INFORMATION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetDiscInformation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, int> GetDiscInformation;
 
         [NativeTypeName("HRESULT (ULONG, IMAPI_READ_TRACK_ADDRESS_TYPE, BYTE **, ULONG_IMAPI2_TRACK_INFORMATION *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMAPI_READ_TRACK_ADDRESS_TYPE, byte**, uint*, int> GetTrackInformation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMAPI_READ_TRACK_ADDRESS_TYPE, byte**, uint*, int> GetTrackInformation;
 
         [NativeTypeName("HRESULT (IMAPI_FEATURE_PAGE_TYPE, BOOLEAN, BYTE **, ULONG_IMAPI2_FEATURE_PAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_FEATURE_PAGE_TYPE, byte, byte**, uint*, int> GetFeaturePage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_FEATURE_PAGE_TYPE, byte, byte**, uint*, int> GetFeaturePage;
 
         [NativeTypeName("HRESULT (IMAPI_MODE_PAGE_TYPE, IMAPI_MODE_PAGE_REQUEST_TYPE, BYTE **, ULONG_IMAPI2_MODE_PAGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_MODE_PAGE_TYPE, IMAPI_MODE_PAGE_REQUEST_TYPE, byte**, uint*, int> GetModePage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_MODE_PAGE_TYPE, IMAPI_MODE_PAGE_REQUEST_TYPE, byte**, uint*, int> GetModePage;
 
         [NativeTypeName("HRESULT (IMAPI_MODE_PAGE_REQUEST_TYPE, BYTE *, ULONG_IMAPI2_MODE_PAGE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_MODE_PAGE_REQUEST_TYPE, byte*, uint, int> SetModePage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_MODE_PAGE_REQUEST_TYPE, byte*, uint, int> SetModePage;
 
         [NativeTypeName("HRESULT (BOOLEAN, IMAPI_FEATURE_PAGE_TYPE **, ULONG_IMAPI2_ALL_FEATURE_PAGES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte, IMAPI_FEATURE_PAGE_TYPE**, uint*, int> GetSupportedFeaturePages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte, IMAPI_FEATURE_PAGE_TYPE**, uint*, int> GetSupportedFeaturePages;
 
         [NativeTypeName("HRESULT (BOOLEAN, IMAPI_PROFILE_TYPE **, ULONG_IMAPI2_ALL_PROFILES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte, IMAPI_PROFILE_TYPE**, uint*, int> GetSupportedProfiles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte, IMAPI_PROFILE_TYPE**, uint*, int> GetSupportedProfiles;
 
         [NativeTypeName("HRESULT (IMAPI_MODE_PAGE_REQUEST_TYPE, IMAPI_MODE_PAGE_TYPE **, ULONG_IMAPI2_ALL_MODE_PAGES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_MODE_PAGE_REQUEST_TYPE, IMAPI_MODE_PAGE_TYPE**, uint*, int> GetSupportedModePages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_MODE_PAGE_REQUEST_TYPE, IMAPI_MODE_PAGE_TYPE**, uint*, int> GetSupportedModePages;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetByteAlignmentMask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetByteAlignmentMask;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMaximumNonPageAlignedTransferSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMaximumNonPageAlignedTransferSize;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMaximumPageAlignedTransferSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMaximumPageAlignedTransferSize;
     }
 }

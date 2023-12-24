@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC">
+    <summary>Represents the picture level control elements for the associated <see cref="EncodeFrame" /> command for HEVC encoding.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.Flags">
+    <summary>A bitwise OR combination of values from the <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC_FLAGS" /> enumeration specifying configuration flags for the frame being encoded.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.FrameType">
+    <summary>A value from the <see cref="D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC" /> enumeration specifying the picture type. Make sure that the codec-specific flags support the specified type. This selection must be kept in sync with the GOP structure configuration set by the host. Note that the GOP is defined in display order and this pic type selection must follow the GOP, but in encode order.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.slice_pic_parameter_set_id">
+    <summary>A <b>UINT</b> specifying the value to be used in the slice headers of the current frame to reference the PPS.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.PictureOrderCountNumber">
+    <summary>A <b>UINT</b> specifying the current frame display order.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.TemporalLayerIndex">
+    <summary>A <b>UINT</b> specifying the picture layer number in temporal hierarchy. Check for the maximum number of layers in <see cref="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC" />.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.List0ReferenceFramesCount">
+    <summary>A <b>UINT</b> specifying the number of past frame references to be used for this frame. This value should be coherent with what was exposed in <b>D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC</b>.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.pList0ReferenceFrames">
+    <summary>A pointer to a <b>UINT</b> array specifying the list of past frame reference frames to be used for this frame. Each integer value in this array indices into <i>pReferenceFramesReconPictureDescriptors</i> to reference pictures kept in the DPB.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.List1ReferenceFramesCount">
+    <summary>A <b>UINT</b> specifying the number of future frame references to be used for this frame. This value should be coherent with what was exposed in <b>D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION_SUPPORT_HEVC</b>.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.pList1ReferenceFrames">
+    <summary>A pointer to a <b>UINT</b> array specifying the list of future frame reference frames to be used for this frame. Each integer value in this array indices into <i>pReferenceFramesReconPictureDescriptors</i> to reference pictures kept in the DPB.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.ReferenceFramesReconPictureDescriptorsCount">
+    <summary>A <b>UINT</b> specifying the number of entries in <i>pReferenceFramesReconPictureDescriptors</i>.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.pReferenceFramesReconPictureDescriptors">
+    <summary>
+      <para>A pointer to a <b>UINT</b> array that describes the current state of the DPB buffer kept in <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC.ReferenceFrames" />. The <i>pList0ReferenceFrames</i> and <i>pList1ReferenceFrames</i> lists indices map from past/future references into this descriptors array.</para>
+      <para>This array of descriptors, in turn, maps a reference picture for this frame into a resource index in the reconstructed pictures array <b>D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC.ReferenceFrames</b>. Additionally, for each reference picture it indicates the encode and display order number and whether it is a long term reference.</para>
+      <para>The size of this array always matches <b>D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC.ReferenceFrames.NumTextures</b> for the associated <b>EncodeFrame</b> command.</para>
+    </summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.List0RefPicModificationsCount">
+    <summary>A <b>UINT</b> specifying the number of items in <i>pList0RefPicModifications</i>.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.pList0RefPicModifications">
+    <summary>A pointer to a <b>UINT</b> array containing modification commands for the L0 list.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.List1RefPicModificationsCount">
+    <summary>A <b>UINT</b> specifying the number of items in <i>pList1RefPicModifications</i>.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.pList1RefPicModifications">
+    <summary>A pointer to a <b>UINT</b> array containing modification commands for the L1 list.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.QPMapValuesCount">
+    <summary>A <b>UINT</b> specifying the number of elements present in <i>pRateControlQPMap</i>. This should match the number of coding blocks in the frame, rounding up the frame resolution to the closest aligned values.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC.pRateControlQPMap">
+    <summary>A pointer to an array of <b>Int8</b> containing, in row/column scan order, the QP map values to use on each squared region for this frame. The QP map dimensions can be calculated using the current resolution and <see cref="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS.QPMapRegionPixelsSize" /> conveying the squared region sizes.</summary>
+  </member>
+</doc>

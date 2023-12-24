@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PKU2U_CREDUI_CONTEXT">
+    <summary>Specifies a PKU2U client context.</summary>
+  </member>
+  <member name="PKU2U_CREDUI_CONTEXT.Version">
+    <summary>The version number of the context. This must be <b>PKU2U_CREDUI_CONTEXT_VERSION</b>.</summary>
+  </member>
+  <member name="PKU2U_CREDUI_CONTEXT.cbHeaderLength">
+    <summary>The size, in bytes, of this structure, not including the <see cref="PKU2U_CERT_BLOB" /> structure that follows it.</summary>
+  </member>
+  <member name="PKU2U_CREDUI_CONTEXT.cbStructureLength">
+    <summary>The size, in bytes, of this structure, including the <see cref="PKU2U_CERT_BLOB" /> structure that follows it.</summary>
+  </member>
+  <member name="PKU2U_CREDUI_CONTEXT.CertArrayCount">
+    <summary>The size, in bytes, of the <see cref="PKU2U_CERT_BLOB" /> structure that follows this structure.</summary>
+  </member>
+  <member name="PKU2U_CREDUI_CONTEXT.CertArrayOffset">
+    <summary>The number of bytes from the beginning of this structure in memory to the beginning of the <see cref="PKU2U_CERT_BLOB" /> structure that follows this structure.</summary>
+  </member>
+</doc>

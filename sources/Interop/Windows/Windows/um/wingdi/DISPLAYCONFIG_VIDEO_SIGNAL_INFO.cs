@@ -29,7 +29,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
     public DISPLAYCONFIG_2DREGION totalSize;
 
     /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_VIDEO_SIGNAL_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2854:5)")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L2854_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='DISPLAYCONFIG_VIDEO_SIGNAL_INFO.xml' path='doc/member[@name="DISPLAYCONFIG_VIDEO_SIGNAL_INFO.scanLineOrdering"]/*' />
@@ -63,7 +63,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AdditionalSignalInfo"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2856:9)")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L2856_C9")]
         public _AdditionalSignalInfo_e__Struct AdditionalSignalInfo;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.videoStandard"]/*' />
@@ -81,7 +81,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
             public uint videoStandard
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0xFFFFu;
                 }
@@ -98,7 +98,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
             public uint vSyncFreqDivider
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0x3Fu;
                 }
@@ -115,7 +115,7 @@ public partial struct DISPLAYCONFIG_VIDEO_SIGNAL_INFO
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 22) & 0x3FFu;
                 }

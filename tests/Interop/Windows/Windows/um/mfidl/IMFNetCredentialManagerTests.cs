@@ -19,32 +19,4 @@ public static unsafe partial class IMFNetCredentialManagerTests
     {
         Assert.That(typeof(IMFNetCredentialManager).GUID, Is.EqualTo(IID_IMFNetCredentialManager));
     }
-
-    /// <summary>Validates that the <see cref="IMFNetCredentialManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFNetCredentialManager>(), Is.EqualTo(sizeof(IMFNetCredentialManager)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetCredentialManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFNetCredentialManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetCredentialManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFNetCredentialManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFNetCredentialManager), Is.EqualTo(4));
-        }
-    }
 }

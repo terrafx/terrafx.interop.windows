@@ -3,416 +3,335 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICMP_ECHO_REPLY">
-    <summary>
-      <para>The
-<b>ICMP_ECHO_REPLY</b> structure describes the data returned in response to an IPv4 echo request.</para>
-    </summary>
-    <remarks>
-      <para>The <b>ICMP_ECHO_REPLY</b> structure is used by the <see cref="IcmpParseReplies" /> function to return the response to an IPv4 echo request. On a 64-bit platform, the  <see cref="ICMP_ECHO_REPLY32" /> structure should be used.</para>
-      <para>For IPv4, some of the possible values for the <b>Status</b> member are specified in
-<a href="https://www.ietf.org/rfc/rfc792.txt">RFC 792</a>.</para>
-      <para>The <see cref="GetIpErrorString" /> function can be used to retrieve the IP helper error string for the <b>IP_STATUS</b> error code in the <b>Status</b> member.</para>
-      <para>The <b>ICMP_ECHO_REPLY</b> structure is defined in the <i>Ipexport.h</i> header file which is automatically included in the <i>Iphlpapi.h</i> header file. The <i>Ipexport.h</i> header file should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetIpErrorString" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
-    <seealso cref="IPAddr" />
-    <seealso cref="IP_OPTION_INFORMATION" />
-    <seealso cref="IP_OPTION_INFORMATION32" />
-    <seealso cref="IcmpCloseHandle" />
-    <seealso cref="IcmpCreateFile" />
-    <seealso cref="IcmpParseReplies" />
-    <seealso cref="IcmpSendEcho" />
-    <seealso cref="IcmpSendEcho2" />
-    <seealso cref="IcmpSendEcho2Ex" />
+    <summary>The<b>ICMP_ECHO_REPLY</b> structure describes the data returned in response to an IPv4 echo request.</summary>
   </member>
   <member name="ICMP_ECHO_REPLY.Address">
-    <summary>
-      <para>Type: <b>IPAddr</b></para>
-      <para>The replying IPv4 address, in the form of an <see cref="IPAddr" /> structure.</para>
-    </summary>
+    <summary>The replying IPv4 address, in the form of an <see cref="IPAddr" /> structure.</summary>
   </member>
   <member name="ICMP_ECHO_REPLY.Status">
     <summary>
-      <para>Type: <b>ULONG</b></para>
       <para>The status of the echo request, in the form of an <b>IP_STATUS</b> code. The possible values for this member are defined in the <i>Ipexport.h</i> header file.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_SUCCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The status was success.</para>
-          </description>
-        </item>
-        <item>
+          <description>The status was success.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_BUF_TOO_SMALL</b>
-                </description>
-              </item>
-              <item>
-                <description>11001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The reply buffer was too small.</para>
-          </description>
-        </item>
-        <item>
+          <description>The reply buffer was too small.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_NET_UNREACHABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>11002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The destination network was unreachable.</para>
-          </description>
-        </item>
-        <item>
+          <description>The destination network was unreachable.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_HOST_UNREACHABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>11003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The destination host was unreachable.</para>
-          </description>
-        </item>
-        <item>
+          <description>The destination host was unreachable.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_PROT_UNREACHABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>11004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The destination protocol was unreachable.</para>
-          </description>
-        </item>
-        <item>
+          <description>The destination protocol was unreachable.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_DEST_PORT_UNREACHABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>11005</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11005</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The destination port was unreachable.</para>
-          </description>
-        </item>
-        <item>
+          <description>The destination port was unreachable.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_NO_RESOURCES</b>
-                </description>
-              </item>
-              <item>
-                <description>11006</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11006</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Insufficient IP resources were available.</para>
-          </description>
-        </item>
-        <item>
+          <description>Insufficient IP resources were available.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>IP_BAD_OPTION </b>
-                </description>
-              </item>
-              <item>
-                <description>11007</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>IP_BAD_OPTION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11007</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A bad IP option was specified.</para>
-          </description>
-        </item>
-        <item>
+          <description>A bad IP option was specified.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_HW_ERROR</b>
-                </description>
-              </item>
-              <item>
-                <description>11008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A hardware error occurred.</para>
-          </description>
-        </item>
-        <item>
+          <description>A hardware error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_PACKET_TOO_BIG</b>
-                </description>
-              </item>
-              <item>
-                <description>11009</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11009</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The packet was too big.</para>
-          </description>
-        </item>
-        <item>
+          <description>The packet was too big.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_REQ_TIMED_OUT</b>
-                </description>
-              </item>
-              <item>
-                <description>11010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The request timed out.</para>
-          </description>
-        </item>
-        <item>
+          <description>The request timed out.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_BAD_REQ</b>
-                </description>
-              </item>
-              <item>
-                <description>11011</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11011</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A bad request.</para>
-          </description>
-        </item>
-        <item>
+          <description>A bad request.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_BAD_ROUTE</b>
-                </description>
-              </item>
-              <item>
-                <description>11012</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11012</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A bad route.</para>
-          </description>
-        </item>
-        <item>
+          <description>A bad route.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_TTL_EXPIRED_TRANSIT</b>
-                </description>
-              </item>
-              <item>
-                <description>11013</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11013</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The time to live (TTL) expired in transit.</para>
-          </description>
-        </item>
-        <item>
+          <description>The time to live (TTL) expired in transit.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_TTL_EXPIRED_REASSEM</b>
-                </description>
-              </item>
-              <item>
-                <description>11014</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11014</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The time to live expired during fragment reassembly.</para>
-          </description>
-        </item>
-        <item>
+          <description>The time to live expired during fragment reassembly.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_PARAM_PROBLEM</b>
-                </description>
-              </item>
-              <item>
-                <description>11015</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11015</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A parameter problem.</para>
-          </description>
-        </item>
-        <item>
+          <description>A parameter problem.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_SOURCE_QUENCH</b>
-                </description>
-              </item>
-              <item>
-                <description>11016</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11016</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Datagrams are arriving too fast to be processed and datagrams may have been discarded.</para>
-          </description>
-        </item>
-        <item>
+          <description>Datagrams are arriving too fast to be processed and datagrams may have been discarded.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_OPTION_TOO_BIG</b>
-                </description>
-              </item>
-              <item>
-                <description>11017</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11017</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An IP option was too big.</para>
-          </description>
-        </item>
-        <item>
+          <description>An IP option was too big.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_BAD_DESTINATION</b>
-                </description>
-              </item>
-              <item>
-                <description>11018</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11018</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A bad destination.</para>
-          </description>
-        </item>
-        <item>
+          <description>A bad destination.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IP_GENERAL_FAILURE</b>
-                </description>
-              </item>
-              <item>
-                <description>11050</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11050</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A general failure. This error can be returned for some malformed ICMP packets.</para>
-          </description>
-        </item>
+          <description>A general failure. This error can be returned for some malformed ICMP packets.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="ICMP_ECHO_REPLY.RoundTripTime">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The round trip time, in milliseconds.</para>
-    </summary>
+    <summary>The round trip time, in milliseconds.</summary>
   </member>
   <member name="ICMP_ECHO_REPLY.DataSize">
-    <summary>
-      <para>Type: <b>USHORT</b></para>
-      <para>The data size, in bytes, of the reply.</para>
-    </summary>
+    <summary>The data size, in bytes, of the reply.</summary>
   </member>
   <member name="ICMP_ECHO_REPLY.Reserved">
-    <summary>
-      <para>Type: <b>USHORT</b></para>
-      <para>Reserved for system use.</para>
-    </summary>
+    <summary>Reserved for system use.</summary>
   </member>
   <member name="ICMP_ECHO_REPLY.Data">
-    <summary>
-      <para>Type: <b>PVOID</b></para>
-      <para>A pointer to the reply data.</para>
-    </summary>
+    <summary>A pointer to the reply data.</summary>
   </member>
   <member name="ICMP_ECHO_REPLY.Options">
-    <summary>
-      <para>Type: <b>struct ip_option_information</b></para>
-      <para>The IP options in the IP header of the reply, in the form of an <see cref="IP_OPTION_INFORMATION" /> structure.</para>
-    </summary>
+    <summary>The IP options in the IP header of the reply, in the form of an <see cref="IP_OPTION_INFORMATION" /> structure.</summary>
   </member>
 </doc>

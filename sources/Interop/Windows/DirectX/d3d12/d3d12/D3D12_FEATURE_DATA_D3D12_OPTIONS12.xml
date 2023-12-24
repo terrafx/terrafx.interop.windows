@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS12">
+    <summary>Indicates whether or not Enhanced Barriers are supported.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS12.MSPrimitivesPipelineStatisticIncludesCulledPrimitives">
+    <summary>TBD</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS12.EnhancedBarriersSupported">
+    <summary>
+      <para>Indicates whether or not Enhanced Barriers are supported. <code>true</code> if supported, otherwise <code>false</code>.</para>
+      <para>Enhanced Barriers is not currently a hardware or driver requirement. So before using command list Barrier APIs, or resource creation APIs using the <i>InitialLayout</i> parameter, you must check for optional driver support via <i>EnhancedBarriersSupported</i>.</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later; otherwise, the value is always <code>FALSE</code>.</para>
+    </summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS12.RelaxedFormatCastingSupported">
+    <summary>
+      <para>Technically used to indicate support for the functionality that enables integer aliasing.</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later; otherwise, the value is always <code>FALSE</code>.</para>
+    </summary>
+  </member>
+</doc>

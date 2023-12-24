@@ -4,11 +4,10 @@
 <doc>
   <member name="IAMClockSlave.GetErrorTolerance">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetErrorTolerance</code> method retrieves the audio renderer's rate-matching tolerance.</para>
     </summary>
-    <param name="pdwTolerance">
-      <para>Pointer to a variable that receives the maximum tolerance, in milliseconds.</para>
-    </param>
+    <param name="pdwTolerance">Pointer to a variable that receives the maximum tolerance, in milliseconds.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -16,38 +15,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMClockSlave Interface" />
   </member>
   <member name="IAMClockSlave.SetErrorTolerance">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetErrorTolerance</code> method sets the audio renderer's rate-matching tolerance.</para>
     </summary>
-    <param name="dwTolerance">
-      <para>Specifies the maximum tolerance, in milliseconds. The value must be from 1 to 1000, inclusive.</para>
-    </param>
+    <param name="dwTolerance">Specifies the maximum tolerance, in milliseconds. The value must be from 1 to 1000, inclusive.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -55,51 +56,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_STOPPED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_STOPPED</b>
-            </para>
-          </description>
-          <description>
-            <para>The filter graph is not stopped.</para>
-          </description>
-        </item>
+          <description>The filter graph is not stopped.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Changing the tolerance has no effect unless the audio renderer is matching rates with a different clock. If the audio renderer is the reference clock, the audio is always synchronized to the clock (by definition).</para>
-      <para>This method fails if the filter graph is not stopped.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMClockSlave Interface" />
   </member>
   <member name="IAMClockSlave">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IAMClockSlave</code> interface controls the tolerance of an audio renderer when it is matching rates with another clock.</para>
       <para>If the audio renderer is matching rates with another clock, it allows the audio to drift up to the amount of the specified tolerance. If the audio drifts too far ahead, the renderer drops samples; if it drifts too far behind, the renderer inserts silent gaps. This interface enables an application to change the tolerance from the default.</para>
       <para>Setting a larger tolerance is likely to result in the audio stream becoming out of sync with the video stream. Setting a smaller tolerance can cause audio jitter. Therefore, changing the tolerance setting is not recommended, unless you have a specific reason to do so.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/live-sources">Live Sources</seealso>
   </member>
 </doc>

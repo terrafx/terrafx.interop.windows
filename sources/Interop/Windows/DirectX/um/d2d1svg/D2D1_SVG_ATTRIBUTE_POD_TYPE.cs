@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_ATTRIBUTE_POD_TYPE.xml' path='doc/member[@name="D2D1_SVG_ATTRIBUTE_POD_TYPE"]/*' />
-public enum D2D1_SVG_ATTRIBUTE_POD_TYPE : uint
+public enum D2D1_SVG_ATTRIBUTE_POD_TYPE
 {
     /// <include file='D2D1_SVG_ATTRIBUTE_POD_TYPE.xml' path='doc/member[@name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT"]/*' />
     D2D1_SVG_ATTRIBUTE_POD_TYPE_FLOAT = 0,
@@ -51,5 +51,5 @@ public enum D2D1_SVG_ATTRIBUTE_POD_TYPE : uint
     D2D1_SVG_ATTRIBUTE_POD_TYPE_LENGTH = 13,
 
     /// <include file='D2D1_SVG_ATTRIBUTE_POD_TYPE.xml' path='doc/member[@name="D2D1_SVG_ATTRIBUTE_POD_TYPE.D2D1_SVG_ATTRIBUTE_POD_TYPE_FORCE_DWORD"]/*' />
-    D2D1_SVG_ATTRIBUTE_POD_TYPE_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_ATTRIBUTE_POD_TYPE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

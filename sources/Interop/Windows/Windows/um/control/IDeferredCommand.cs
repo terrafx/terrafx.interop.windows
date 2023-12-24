@@ -25,7 +25,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDeferredCommand*, Guid*, void**, int>)(lpVtbl[0]))((IDeferredCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDeferredCommand*, Guid*, void**, int>)(lpVtbl[0]))((IDeferredCommand*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDeferredCommand*, uint>)(lpVtbl[1]))((IDeferredCommand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeferredCommand*, uint>)(lpVtbl[1]))((IDeferredCommand*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDeferredCommand*, uint>)(lpVtbl[2]))((IDeferredCommand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeferredCommand*, uint>)(lpVtbl[2]))((IDeferredCommand*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDeferredCommand.xml' path='doc/member[@name="IDeferredCommand.Cancel"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface, INat
     [VtblIndex(3)]
     public HRESULT Cancel()
     {
-        return ((delegate* unmanaged<IDeferredCommand*, int>)(lpVtbl[3]))((IDeferredCommand*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDeferredCommand*, int>)(lpVtbl[3]))((IDeferredCommand*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDeferredCommand.xml' path='doc/member[@name="IDeferredCommand.Confidence"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface, INat
     [VtblIndex(4)]
     public HRESULT Confidence([NativeTypeName("LONG *")] int* pConfidence)
     {
-        return ((delegate* unmanaged<IDeferredCommand*, int*, int>)(lpVtbl[4]))((IDeferredCommand*)Unsafe.AsPointer(ref this), pConfidence);
+        return ((delegate* unmanaged[MemberFunction]<IDeferredCommand*, int*, int>)(lpVtbl[4]))((IDeferredCommand*)Unsafe.AsPointer(ref this), pConfidence);
     }
 
     /// <include file='IDeferredCommand.xml' path='doc/member[@name="IDeferredCommand.Postpone"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface, INat
     [VtblIndex(5)]
     public HRESULT Postpone([NativeTypeName("REFTIME")] double newtime)
     {
-        return ((delegate* unmanaged<IDeferredCommand*, double, int>)(lpVtbl[5]))((IDeferredCommand*)Unsafe.AsPointer(ref this), newtime);
+        return ((delegate* unmanaged[MemberFunction]<IDeferredCommand*, double, int>)(lpVtbl[5]))((IDeferredCommand*)Unsafe.AsPointer(ref this), newtime);
     }
 
     /// <include file='IDeferredCommand.xml' path='doc/member[@name="IDeferredCommand.GetHResult"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetHResult(HRESULT* phrResult)
     {
-        return ((delegate* unmanaged<IDeferredCommand*, HRESULT*, int>)(lpVtbl[6]))((IDeferredCommand*)Unsafe.AsPointer(ref this), phrResult);
+        return ((delegate* unmanaged[MemberFunction]<IDeferredCommand*, HRESULT*, int>)(lpVtbl[6]))((IDeferredCommand*)Unsafe.AsPointer(ref this), phrResult);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IDeferredCommand : IDeferredCommand.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Cancel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Cancel;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> Confidence;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> Confidence;
 
         [NativeTypeName("HRESULT (REFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> Postpone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> Postpone;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT*, int> GetHResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT*, int> GetHResult;
     }
 }

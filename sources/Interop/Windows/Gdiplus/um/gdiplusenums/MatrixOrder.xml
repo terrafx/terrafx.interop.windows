@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MatrixOrder">
+    <summary>The <b>MatrixOrder</b> enumeration specifies the order of multiplication when a new matrix is multiplied by an existing matrix.</summary>
+  </member>
+  <member name="MatrixOrder.MatrixOrderPrepend">
+    <summary>Specifies that the new matrix is on the left and the existing matrix is on the right.</summary>
+  </member>
+  <member name="MatrixOrder.MatrixOrderAppend">
+    <summary>Specifies that the existing matrix is on the left and the new matrix is on the right.</summary>
+  </member>
+</doc>

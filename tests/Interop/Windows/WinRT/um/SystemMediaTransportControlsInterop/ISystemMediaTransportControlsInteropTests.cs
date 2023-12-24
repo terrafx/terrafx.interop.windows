@@ -19,32 +19,4 @@ public static unsafe partial class ISystemMediaTransportControlsInteropTests
     {
         Assert.That(typeof(ISystemMediaTransportControlsInterop).GUID, Is.EqualTo(IID_ISystemMediaTransportControlsInterop));
     }
-
-    /// <summary>Validates that the <see cref="ISystemMediaTransportControlsInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISystemMediaTransportControlsInterop>(), Is.EqualTo(sizeof(ISystemMediaTransportControlsInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="ISystemMediaTransportControlsInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISystemMediaTransportControlsInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISystemMediaTransportControlsInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISystemMediaTransportControlsInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISystemMediaTransportControlsInterop), Is.EqualTo(4));
-        }
-    }
 }

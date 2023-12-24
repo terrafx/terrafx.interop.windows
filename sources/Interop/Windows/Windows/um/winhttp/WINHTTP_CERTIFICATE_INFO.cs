@@ -16,23 +16,23 @@ public unsafe partial struct WINHTTP_CERTIFICATE_INFO
 
     /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszSubjectInfo"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszSubjectInfo;
+    public char* lpszSubjectInfo;
 
     /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszIssuerInfo"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszIssuerInfo;
+    public char* lpszIssuerInfo;
 
     /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszProtocolName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszProtocolName;
+    public char* lpszProtocolName;
 
     /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszSignatureAlgName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszSignatureAlgName;
+    public char* lpszSignatureAlgName;
 
     /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.lpszEncryptionAlgName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszEncryptionAlgName;
+    public char* lpszEncryptionAlgName;
 
     /// <include file='WINHTTP_CERTIFICATE_INFO.xml' path='doc/member[@name="WINHTTP_CERTIFICATE_INFO.dwKeySize"]/*' />
     [NativeTypeName("DWORD")]

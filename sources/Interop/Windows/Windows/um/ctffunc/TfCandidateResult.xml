@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TfCandidateResult">
-    <summary>
-      <para>Elements of the <b>TfCandidateResult</b> enumeration are used with the <see cref="ITfCandidateList.SetResult" /> method to specify the result of a reconversion operation performed on a given candidate string.</para>
-    </summary>
-    <seealso cref="ITfCandidateList.SetResult " />
+    <summary>Elements of the <b>TfCandidateResult</b> enumeration are used with the <see cref="ITfCandidateList.SetResult" /> method to specify the result of a reconversion operation performed on a given candidate string.</summary>
   </member>
   <member name="TfCandidateResult.CAND_FINALIZED">
-    <summary>
-      <para>The candidate string has been selected and accepted. The previous text should be replaced with the specified candidate.</para>
-    </summary>
+    <summary>The candidate string has been selected and accepted. The previous text should be replaced with the specified candidate.</summary>
   </member>
   <member name="TfCandidateResult.CAND_SELECTED">
-    <summary>
-      <para>The candidate string has been selected, but the selection is not yet final.</para>
-    </summary>
+    <summary>The candidate string has been selected, but the selection is not yet final.</summary>
   </member>
   <member name="TfCandidateResult.CAND_CANCELED">
-    <summary>
-      <para>The reconversion operation has been canceled.</para>
-    </summary>
+    <summary>The reconversion operation has been canceled.</summary>
   </member>
 </doc>

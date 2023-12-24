@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TESSELLATOR_PARTITIONING">
+    <summary>Partitioning options.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D_TESSELLATOR_PARTITIONING_UNDEFINED"></member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D_TESSELLATOR_PARTITIONING_INTEGER"></member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D_TESSELLATOR_PARTITIONING_POW2"></member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD"></member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN"></member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D11_TESSELLATOR_PARTITIONING_UNDEFINED">
+    <summary>The partitioning type is undefined.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D11_TESSELLATOR_PARTITIONING_INTEGER">
+    <summary>Partition with integers only.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D11_TESSELLATOR_PARTITIONING_POW2">
+    <summary>Partition with a power-of-two number only.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D11_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD">
+    <summary>Partition with an odd, fractional number.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_PARTITIONING.D3D11_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN">
+    <summary>Partition with an even, fractional number.</summary>
+  </member>
+</doc>

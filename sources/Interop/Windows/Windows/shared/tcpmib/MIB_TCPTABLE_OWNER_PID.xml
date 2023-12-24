@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_TCPTABLE_OWNER_PID">
-    <summary>
-      <para>The <b>MIB_TCPTABLE_OWNER_PID</b> structure contains a table of process IDs (PIDs)  and the IPv4 TCP links that  are context bound to these PIDs.</para>
-    </summary>
-    <remarks>
-      <para>This table is specifically returned by a call to <see cref="GetExtendedTcpTable" /> with the <i>TableClass</i> parameter set to a <b>TCP_TABLE_OWNER_PID_*</b> value from the <see cref="TCP_TABLE_CLASS" /> enumeration and the <i>ulAf</i> parameter set to <b>AF_INET4</b>.</para>
-      <para>The <b>MIB_TCPTABLE_OWNER_PID</b> structure may contain padding for alignment between the <b>dwNumEntries</b> member and the first <see cref="MIB_TCPROW_OWNER_PID" /> array entry in the <b>table</b> member. Padding for alignment may also be present between the <b>MIB_TCPROW_OWNER_PID</b> array entries in the <b>table</b> member. Any access to a <b>MIB_TCPROW_OWNER_PID</b> array entry should assume  padding may exist.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Tcpmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Tcpmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Tcpmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/mib/management-information-base-reference">MIB Reference</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/mib/mib-structures">MIB Structures</seealso>
+    <summary>The <b>MIB_TCPTABLE_OWNER_PID</b> structure contains a table of process IDs (PIDs) and the IPv4 TCP links that are context bound to these PIDs.</summary>
   </member>
   <member name="MIB_TCPTABLE_OWNER_PID.dwNumEntries">
-    <summary>
-      <para>The number of <see cref="MIB_TCPROW_OWNER_PID" /> elements in the <b>table</b>.</para>
-    </summary>
+    <summary>The number of <see cref="MIB_TCPROW_OWNER_PID" /> elements in the <b>table</b>.</summary>
   </member>
   <member name="MIB_TCPTABLE_OWNER_PID.table">
-    <summary>
-      <para>Array of <see cref="MIB_TCPROW_OWNER_PID" /> structures returned by a call to <see cref="GetExtendedTcpTable" />.</para>
-    </summary>
+    <summary>Array of <see cref="MIB_TCPROW_OWNER_PID" /> structures returned by a call to <see cref="GetExtendedTcpTable" />.</summary>
   </member>
 </doc>

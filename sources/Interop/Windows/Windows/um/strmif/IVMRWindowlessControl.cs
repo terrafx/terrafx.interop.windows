@@ -25,7 +25,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, uint>)(lpVtbl[1]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, uint>)(lpVtbl[1]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, uint>)(lpVtbl[2]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, uint>)(lpVtbl[2]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetNativeVideoSize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(3)]
     public HRESULT GetNativeVideoSize([NativeTypeName("LONG *")] int* lpWidth, [NativeTypeName("LONG *")] int* lpHeight, [NativeTypeName("LONG *")] int* lpARWidth, [NativeTypeName("LONG *")] int* lpARHeight)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int*, int*, int>)(lpVtbl[3]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpWidth, lpHeight, lpARWidth, lpARHeight);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, int*, int*, int*, int*, int>)(lpVtbl[3]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpWidth, lpHeight, lpARWidth, lpARHeight);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetMinIdealVideoSize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(4)]
     public HRESULT GetMinIdealVideoSize([NativeTypeName("LONG *")] int* lpWidth, [NativeTypeName("LONG *")] int* lpHeight)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int>)(lpVtbl[4]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpWidth, lpHeight);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, int*, int*, int>)(lpVtbl[4]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpWidth, lpHeight);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetMaxIdealVideoSize"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(5)]
     public HRESULT GetMaxIdealVideoSize([NativeTypeName("LONG *")] int* lpWidth, [NativeTypeName("LONG *")] int* lpHeight)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, int*, int*, int>)(lpVtbl[5]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpWidth, lpHeight);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, int*, int*, int>)(lpVtbl[5]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpWidth, lpHeight);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetVideoPosition"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(6)]
     public HRESULT SetVideoPosition([NativeTypeName("const LPRECT")] RECT* lpSRCRect, [NativeTypeName("const LPRECT")] RECT* lpDSTRect)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, RECT*, RECT*, int>)(lpVtbl[6]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpSRCRect, lpDSTRect);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, RECT*, RECT*, int>)(lpVtbl[6]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpSRCRect, lpDSTRect);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetVideoPosition"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(7)]
     public HRESULT GetVideoPosition([NativeTypeName("LPRECT")] RECT* lpSRCRect, [NativeTypeName("LPRECT")] RECT* lpDSTRect)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, RECT*, RECT*, int>)(lpVtbl[7]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpSRCRect, lpDSTRect);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, RECT*, RECT*, int>)(lpVtbl[7]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpSRCRect, lpDSTRect);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetAspectRatioMode"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(8)]
     public HRESULT GetAspectRatioMode([NativeTypeName("DWORD *")] uint* lpAspectRatioMode)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, uint*, int>)(lpVtbl[8]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpAspectRatioMode);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, uint*, int>)(lpVtbl[8]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpAspectRatioMode);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetAspectRatioMode"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(9)]
     public HRESULT SetAspectRatioMode([NativeTypeName("DWORD")] uint AspectRatioMode)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, uint, int>)(lpVtbl[9]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), AspectRatioMode);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, uint, int>)(lpVtbl[9]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), AspectRatioMode);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetVideoClippingWindow"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(10)]
     public HRESULT SetVideoClippingWindow(HWND hwnd)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, HWND, int>)(lpVtbl[10]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, HWND, int>)(lpVtbl[10]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.RepaintVideo"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(11)]
     public HRESULT RepaintVideo(HWND hwnd, HDC hdc)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, HWND, HDC, int>)(lpVtbl[11]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd, hdc);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, HWND, HDC, int>)(lpVtbl[11]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), hwnd, hdc);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.DisplayModeChanged"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(12)]
     public HRESULT DisplayModeChanged()
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, int>)(lpVtbl[12]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, int>)(lpVtbl[12]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetCurrentImage"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(13)]
     public HRESULT GetCurrentImage(byte** lpDib)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, byte**, int>)(lpVtbl[13]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpDib);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, byte**, int>)(lpVtbl[13]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpDib);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetBorderColor"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(14)]
     public HRESULT SetBorderColor(COLORREF Clr)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int>)(lpVtbl[14]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, COLORREF, int>)(lpVtbl[14]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetBorderColor"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(15)]
     public HRESULT GetBorderColor(COLORREF* lpClr)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int>)(lpVtbl[15]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, COLORREF*, int>)(lpVtbl[15]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.SetColorKey"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(16)]
     public HRESULT SetColorKey(COLORREF Clr)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF, int>)(lpVtbl[16]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, COLORREF, int>)(lpVtbl[16]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), Clr);
     }
 
     /// <include file='IVMRWindowlessControl.xml' path='doc/member[@name="IVMRWindowlessControl.GetColorKey"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
     [VtblIndex(17)]
     public HRESULT GetColorKey(COLORREF* lpClr)
     {
-        return ((delegate* unmanaged<IVMRWindowlessControl*, COLORREF*, int>)(lpVtbl[17]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
+        return ((delegate* unmanaged[MemberFunction]<IVMRWindowlessControl*, COLORREF*, int>)(lpVtbl[17]))((IVMRWindowlessControl*)Unsafe.AsPointer(ref this), lpClr);
     }
 
     public interface Interface : IUnknown.Interface
@@ -218,57 +218,57 @@ public unsafe partial struct IVMRWindowlessControl : IVMRWindowlessControl.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG *, LONG *, LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int*, int*, int> GetNativeVideoSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int*, int*, int> GetNativeVideoSize;
 
         [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetMinIdealVideoSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetMinIdealVideoSize;
 
         [NativeTypeName("HRESULT (LONG *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int*, int> GetMaxIdealVideoSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int*, int> GetMaxIdealVideoSize;
 
         [NativeTypeName("HRESULT (const LPRECT, const LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> SetVideoPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, RECT*, int> SetVideoPosition;
 
         [NativeTypeName("HRESULT (LPRECT, LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> GetVideoPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, RECT*, int> GetVideoPosition;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetAspectRatioMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetAspectRatioMode;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetAspectRatioMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetAspectRatioMode;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> SetVideoClippingWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> SetVideoClippingWindow;
 
         [NativeTypeName("HRESULT (HWND, HDC) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, HDC, int> RepaintVideo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, HDC, int> RepaintVideo;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DisplayModeChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DisplayModeChanged;
 
         [NativeTypeName("HRESULT (BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, int> GetCurrentImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, int> GetCurrentImage;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF, int> SetBorderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF, int> SetBorderColor;
 
         [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF*, int> GetBorderColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF*, int> GetBorderColor;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF, int> SetColorKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF, int> SetColorKey;
 
         [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF*, int> GetColorKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF*, int> GetColorKey;
     }
 }

@@ -3,49 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IObjectWithBackReferences.RemoveBackReferences">
-    <summary>
-      <para>Removes all back references held by an object.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is used for all tasks associated with freeing/releasing back references held
-by an object, and may prepare an object for reuse.</para>
-    </remarks>
+    <summary>Removes all back references held by an object.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IObjectWithBackReferences">
-    <summary>
-      <para>Provides a method for interacting with back references held by an object.</para>
-    </summary>
-    <remarks>
-      <h3>When to Use</h3>
-      <para>When an object contains forward references to child objects that have back references to the parent object, circular references can occur. To break this circle, the parent object needs to keep track of back references from child objects.</para>
-      <h3>When to Implement</h3>
-      <para>This interface should be implemented by Shell data source objects (objects that implement <see cref="IShellFolder" />) that hold references to other objects in a way that might result in reference cycles. For example, an object that maintains references to other data source objects that are cached as the result of binding operations should implement this interface.</para>
-      <para>This interface was available in Windows Vista with Service Pack 1 (SP1), but it was not declared in a public header until Windows 7. For use in Windows Vista with SP1, the following Interface Definition Language (IDL) fragment describes this interface, including its IID.</para>
-      <code>object,
-    uuid(321a6a6a-d61f-4bf3-97ae-14be2986bb36),
-    pointer_default(unique)
-]
-interface IObjectWithBackReferences : IUnknown
-{
-    HRESULT RemoveBackReferences();
-}
-
-</code>
-      <para>The following C++ fragment can be used to enable access to this interface.</para>
-      <code>struct
-    __declspec(uuid("321a6a6a-d61f-4bf3-97ae-14be2986bb36"))
-    __declspec(novtable)
-IObjectWithBackReferences : public IUnknown
-{
-    public:
-        virtual HRESULT __stdcall RemoveBackReferences() = 0;
-};
-
-</code>
-    </remarks>
+    <summary>Provides a method for interacting with back references held by an object.</summary>
   </member>
 </doc>

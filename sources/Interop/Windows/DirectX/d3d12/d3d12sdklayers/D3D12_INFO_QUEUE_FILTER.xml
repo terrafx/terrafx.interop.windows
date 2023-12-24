@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_INFO_QUEUE_FILTER">
+    <summary>Debug message filter; contains a lists of message types to allow or deny.</summary>
+  </member>
+  <member name="D3D12_INFO_QUEUE_FILTER.AllowList">
+    <summary>Specifies types of messages that you want to allow. See <see cref="D3D12_INFO_QUEUE_FILTER_DESC" />.</summary>
+  </member>
+  <member name="D3D12_INFO_QUEUE_FILTER.DenyList">
+    <summary>Specifies types of messages that you want to deny.</summary>
+  </member>
+</doc>

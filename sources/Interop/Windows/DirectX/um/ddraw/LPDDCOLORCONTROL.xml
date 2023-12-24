@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LPDDCOLORCONTROL">
+    <summary>The DDCOLORCONTROL structure defines the color controls associated with a Microsoft DirectDraw <a href="https://docs.microsoft.com//windows-hardware/drivers/display/video-port-extensions-to-directx">video port extensions (VPE)</a> object.</summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.dwSize">
+    <summary>Specifies the size in bytes of this DDCOLORCONTROL structure.</summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.dwFlags">
+    <summary>
+      <para>Indicates a set of flags that specify what structure members contain valid data. When the structure is returned by <a href="https://msdn.microsoft.com/library/ff550383(v=vs.85)">DdVideoPortColorControl</a>, it also indicates what options are supported by the VPE object. This member can be a bitwise OR of the values listed in the following table.</para>
+    </summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.lBrightness">
+    <summary>Specifies the luminance intensity (Black Level), in IRE units*100. This member can range from 0 to 10,000, with a default value of 750 (7.5 IRE).</summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.lContrast">
+    <summary>Specifies the relative difference between higher and lower intensity luminance values, in IRE units*100. This member can range from 0 to 20,000, with a default value of 10,000 (100 IRE). Higher values of contrast cause darker luminance values to tend toward black, and cause lighter luminance values to tend toward white. Lower values of contrast cause all luminance values to move toward the middle luminance values.</summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.lHue">
+    <summary>Specifies the phase relationship of the chrominance components. Hue is specified in degrees, with a valid range of -180 to 180. The default is 0 degrees.</summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.lSaturation">
+    <summary>Specifies the color intensity, in IRE units*100. This member can range from 0 to 20,000, with a default value of 10,000 (100 IRE).</summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.lSharpness">
+    <summary>Specifies the sharpness in arbitrary units. The valid range is 0 to 10, with a default value of 5.</summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.lGamma">
+    <summary>Controls the amount of gamma correction applied to the luminance values. The valid range is 1 to 500 gamma units, with a default of 1.</summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.lColorEnable">
+    <summary>Specifies a flag indicating whether color is used. If this member is zero, color is not used; if it is 1, then color is used. The default value is 1.</summary>
+  </member>
+  <member name="LPDDCOLORCONTROL.dwReserved1">
+    <summary>Reserved for system use, and should be ignored.</summary>
+  </member>
+</doc>

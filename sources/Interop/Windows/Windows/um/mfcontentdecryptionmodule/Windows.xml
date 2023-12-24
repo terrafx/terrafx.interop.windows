@@ -3,26 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.MFCreateEncryptedMediaExtensionsStoreActivate">
-    <summary>
-      <para>This function creates an object that implements <see cref="IMFActivate" />. This object’s implementation of ActivateObject is based on the specified IMFPMPHostApp and class ID.</para>
-    </summary>
-    <param name="pmpHost">
-      <para>An <see cref="IMFPMPHostApp" /> with the necessary information to create the <b>IMFActivate</b> for this app package.</para>
-    </param>
-    <param name="objectStream">
-      <para>An <see cref="IStream" /> representing the object stream that will be loaded via IMFActivate.Load.</para>
-    </param>
-    <param name="classId">
-      <para>An <b>LPCWSTR</b> representing the target object's activatable class id.</para>
-    </param>
-    <param name="activate">
-      <para>Receives a reference to the to an <b>IMFActivate</b>.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>The <b>IMFActivate</b> can be created in a protected process and activated in an app process.</para>
-    </remarks>
+    <summary>This function creates an object that implements <see cref="IMFActivate" />. This object’s implementation of ActivateObject is based on the specified IMFPMPHostApp and class ID.</summary>
+    <param name="pmpHost">An <see cref="IMFPMPHostApp" /> with the necessary information to create the <b>IMFActivate</b> for this app package.</param>
+    <param name="objectStream">An <see cref="IStream" /> representing the object stream that will be loaded via IMFActivate.Load.</param>
+    <param name="classId">An <b>LPCWSTR</b> representing the target object's activatable class id.</param>
+    <param name="activate">Receives a reference to the to an <b>IMFActivate</b>.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
 </doc>

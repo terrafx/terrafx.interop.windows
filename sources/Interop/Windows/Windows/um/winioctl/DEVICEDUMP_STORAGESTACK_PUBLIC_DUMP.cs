@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
+public partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
 {
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP.Descriptor"]/*' />
     public DEVICEDUMP_STRUCTURE_VERSION Descriptor;
@@ -23,7 +23,7 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
 
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP.cDriverName"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte cDriverName[16];
+    public _cDriverName_e__FixedBuffer cDriverName;
 
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP.uiNumRecords"]/*' />
     [NativeTypeName("DWORD")]
@@ -32,6 +32,14 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
     /// <include file='DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP.xml' path='doc/member[@name="DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP.RecordArray"]/*' />
     [NativeTypeName("DEVICEDUMP_STORAGESTACK_PUBLIC_STATE_RECORD[1]")]
     public _RecordArray_e__FixedBuffer RecordArray;
+
+    /// <include file='_cDriverName_e__FixedBuffer.xml' path='doc/member[@name="_cDriverName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(16)]
+    public partial struct _cDriverName_e__FixedBuffer
+    {
+        public byte e0;
+    }
 
     /// <include file='_RecordArray_e__FixedBuffer.xml' path='doc/member[@name="_RecordArray_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
@@ -45,7 +53,7 @@ public unsafe partial struct DEVICEDUMP_STORAGESTACK_PUBLIC_DUMP
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

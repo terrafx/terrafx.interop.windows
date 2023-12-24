@@ -19,32 +19,4 @@ public static unsafe partial class DispIHTMLInputTextElementTests
     {
         Assert.That(typeof(DispIHTMLInputTextElement).GUID, Is.EqualTo(IID_DispIHTMLInputTextElement));
     }
-
-    /// <summary>Validates that the <see cref="DispIHTMLInputTextElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispIHTMLInputTextElement>(), Is.EqualTo(sizeof(DispIHTMLInputTextElement)));
-    }
-
-    /// <summary>Validates that the <see cref="DispIHTMLInputTextElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispIHTMLInputTextElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispIHTMLInputTextElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispIHTMLInputTextElement), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispIHTMLInputTextElement), Is.EqualTo(4));
-        }
-    }
 }

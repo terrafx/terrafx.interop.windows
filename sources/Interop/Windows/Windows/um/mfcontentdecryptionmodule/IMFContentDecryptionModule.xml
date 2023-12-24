@@ -3,131 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFContentDecryptionModule.CreateSession">
-    <summary>
-      <para>Creates a <see cref="IMFContentDecryptionModuleSession" /> object representing a Content Decryption Module (CDM) session.</para>
-    </summary>
-    <param name="sessionType">
-      <para>A member of the <see cref="MF_MEDIAKEYSESSION_TYPE" /> that specifies the type of CDM session to create.</para>
-    </param>
-    <param name="callbacks">
-      <para>An <see cref="IMFContentDecryptionModuleSessionCallbacks" /> object for receiving key status change updates.</para>
-    </param>
-    <param name="session">
-      <para>Receives the created <b>IMFContentDecryptionModuleSession</b> object.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>CreateSession</b> is based on the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#dom-mediakeys-createsession">createSession</a>.</para>
-    </remarks>
+    <summary>Creates a <see cref="IMFContentDecryptionModuleSession" /> object representing a Content Decryption Module (CDM) session.</summary>
+    <param name="sessionType">A member of the <see cref="MF_MEDIAKEYSESSION_TYPE" /> that specifies the type of CDM session to create.</param>
+    <param name="callbacks">An <see cref="IMFContentDecryptionModuleSessionCallbacks" /> object for receiving key status change updates.</param>
+    <param name="session">Receives the created <b>IMFContentDecryptionModuleSession</b> object.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModule.CreateTrustedInput">
-    <summary>
-      <para>Creates an <see cref="IMFTrustedInput" /> object that implements the decryption of content.</para>
-    </summary>
-    <param name="contentInitData">
-      <para>A <b>BYTE</b> array containing initialization data. <i>contentInitData</i> will only be used if initData from <see cref="IMFContentDecryptionModuleSession.GenerateRequest" /> is not provided or incomplete. Initialization Data should be structured in PSSH Box Format. For more details, see the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/eme-initdata-cenc/#common-system">Common SystemID and PSSH Box Format</a>.</para>
-    </param>
-    <param name="contentInitDataSize">
-      <para>The size of the array in <i>contentInitData</i>.</para>
-    </param>
-    <param name="trustedInput">
-      <para>Receives the created <b>IMFTrustedInput</b> object.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>An implementation of a Content Decryption Module (CDM) may include an implementation of <see cref="IMFInputTrustAuthority" /> obtained by calling <b>CreateTrustedInput</b>.</para>
-      <para>The following attributes are supported for <b>IMFInputTrustAuthority</b> decrypter.</para>
-      <para>| Property                                      |Description
-|-----------------------------------------------|---------------------------------------------------------------|
-| <a href="https://docs.microsoft.com//windows/win32/medfound/mft-policy-set-aware">MFT_POLICY_SET_AWARE</a> | If non-zero, indicates that the <b>IMFTransform</b> wants to receive <a href="https://docs.microsoft.com//windows/win32/medfound/mepolicyset">MEPolicySet</a> completion notifications.|
-| <a href="https://docs.microsoft.com//windows/win32/medfound/mft-using-hardware-drm">MFT_USING_HARDWARE_DRM</a> | Specifies whether the IMFTransform is using hardware DRM. If an MFT decrypter specifies this attribute set to 1, then it is using hardware DRM. If an MFT decrypter specifies this attribute set to 0, then it is not using hardware DRM. If an MFT decrypter does not specify this attribute or specifies it with a different value, then it does not (or is unable to) indicate whether it is using hardware DRM. |</para>
-    </remarks>
-    <seealso cref="IMFTrustedInput" />
+    <summary>Creates an <see cref="IMFTrustedInput" /> object that implements the decryption of content.</summary>
+    <param name="contentInitData">A <b>BYTE</b> array containing initialization data. <i>contentInitData</i> will only be used if initData from <see cref="IMFContentDecryptionModuleSession.GenerateRequest" /> is not provided or incomplete. Initialization Data should be structured in PSSH Box Format. For more details, see the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/eme-initdata-cenc/#common-system">Common SystemID and PSSH Box Format</a>.</param>
+    <param name="contentInitDataSize">The size of the array in <i>contentInitData</i>.</param>
+    <param name="trustedInput">Receives the created <b>IMFTrustedInput</b> object.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModule.GetProtectionSystemIds">
-    <summary>
-      <para>Gets a list of <b>SystemIDs</b> that the <b>IMFContentDecryptionModule</b> supports.</para>
-    </summary>
-    <param name="systemIds">
-      <para>A <b>GUID</b> array in which the SystemIDs are returned.</para>
-    </param>
-    <param name="count">
-      <para>The count of SystemIDs returned in the <i>systemIds</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>SystemIDs</b> are identifiers used in the "cenc" Initialization Data Format. For more details, see <a href="https://w3c.github.io/encrypted-media/format-registry/initdata/cenc.html">"cenc" Initialization Data Format</a>.</para>
-      <para>The <i>systemIds</i> memory must be allocated and freed using <see cref="CoTaskMem" />.</para>
-    </remarks>
+    <summary>Gets a list of <b>SystemIDs</b> that the <b>IMFContentDecryptionModule</b> supports.</summary>
+    <param name="systemIds">A <b>GUID</b> array in which the SystemIDs are returned.</param>
+    <param name="count">The count of SystemIDs returned in the <i>systemIds</i> parameter.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModule.GetSuspendNotify">
-    <summary>
-      <para>Retrieves an object for <see cref="IMFContentDecryptionModuleSession" /> suspend events.</para>
-    </summary>
-    <param name="notify">
-      <para>Receives an <see cref="IMFCdmSuspendNotify" /> object that notifies the Content Decryption Module (CDM) when global resources should be brought into a consistent state prior to suspending.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
+    <summary>Retrieves an object for <see cref="IMFContentDecryptionModuleSession" /> suspend events.</summary>
+    <param name="notify">Receives an <see cref="IMFCdmSuspendNotify" /> object that notifies the Content Decryption Module (CDM) when global resources should be brought into a consistent state prior to suspending.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModule.SetContentEnabler">
-    <summary>
-      <para>Allows the caller to specify the <see cref="IMFContentEnabler" /> interface that shall be used by the Content Decryption Module (CDM).</para>
-    </summary>
-    <param name="contentEnabler">
-      <para>The <see cref="IMFContentEnabler" /> interface to be used by the CDM.</para>
-    </param>
-    <param name="result">
-      <para>An <see cref="IMFAsyncResult" /> that provides information about the result of the operation.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>The IMFContentEnabler is typically obtained by calling  <see cref="IMFInputTrustAuthority.RequestAccess" />.</para>
-    </remarks>
+    <summary>Allows the caller to specify the <see cref="IMFContentEnabler" /> interface that shall be used by the Content Decryption Module (CDM).</summary>
+    <param name="contentEnabler">The <see cref="IMFContentEnabler" /> interface to be used by the CDM.</param>
+    <param name="result">An <see cref="IMFAsyncResult" /> that provides information about the result of the operation.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModule.SetPMPHostApp">
-    <summary>
-      <para>Allows the caller to specify the <see cref="IMFPMPHostApp" /> interface, which represents a protected process. The <b>IMFPMPHostApp</b> interface is used by the Content Decryption Module (CDM) to create the IMFTrustedInput object.</para>
-    </summary>
-    <param name="pmpHostApp">
-      <para>The <b>IMFPMPHostApp</b> representing a protected process.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
+    <summary>Allows the caller to specify the <see cref="IMFPMPHostApp" /> interface, which represents a protected process. The <b>IMFPMPHostApp</b> interface is used by the Content Decryption Module (CDM) to create the IMFTrustedInput object.</summary>
+    <param name="pmpHostApp">The <b>IMFPMPHostApp</b> representing a protected process.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModule.SetServerCertificate">
-    <summary>
-      <para>Provides a server certificate to be used to encrypt messages to the license server.</para>
-    </summary>
-    <param name="certificate">
-      <para>A <b>BYTE</b> array containing the certificate.</para>
-    </param>
-    <param name="certificateSize">
-      <para>The size of the array in <i>certificate</i>.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>SetServerCertificate</b> is based on the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#dom-mediakeys-setservercertificate">SetServerCertificate</a>.</para>
-    </remarks>
+    <summary>Provides a server certificate to be used to encrypt messages to the license server.</summary>
+    <param name="certificate">A <b>BYTE</b> array containing the certificate.</param>
+    <param name="certificateSize">The size of the array in <i>certificate</i>.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IMFContentDecryptionModule">
-    <summary>
-      <para>Represents a Content Decryption Module (CDM) for a DRM key system.</para>
-    </summary>
+    <summary>Represents a Content Decryption Module (CDM) for a DRM key system.</summary>
   </member>
 </doc>

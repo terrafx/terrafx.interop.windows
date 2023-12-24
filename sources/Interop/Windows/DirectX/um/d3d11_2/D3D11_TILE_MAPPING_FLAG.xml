@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TILE_MAPPING_FLAG">
-    <summary>
-      <para>Identifies how to perform a tile-mapping operation.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+    <summary>Identifies how to perform a tile-mapping operation.</summary>
   </member>
   <member name="D3D11_TILE_MAPPING_FLAG.D3D11_TILE_MAPPING_NO_OVERWRITE">
-    <summary>
-      <para>Indicates that no overwriting of tiles occurs in the tile-mapping operation.</para>
-    </summary>
+    <summary>Indicates that no overwriting of tiles occurs in the tile-mapping operation.</summary>
   </member>
 </doc>

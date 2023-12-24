@@ -25,7 +25,7 @@ public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCall
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUserAccountChangeCallback*, Guid*, void**, int>)(lpVtbl[0]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUserAccountChangeCallback*, Guid*, void**, int>)(lpVtbl[0]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCall
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUserAccountChangeCallback*, uint>)(lpVtbl[1]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUserAccountChangeCallback*, uint>)(lpVtbl[1]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,36 +43,36 @@ public unsafe partial struct IUserAccountChangeCallback : IUserAccountChangeCall
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUserAccountChangeCallback*, uint>)(lpVtbl[2]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUserAccountChangeCallback*, uint>)(lpVtbl[2]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUserAccountChangeCallback.xml' path='doc/member[@name="IUserAccountChangeCallback.OnPictureChange"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] ushort* pszUserName)
+    public HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] char* pszUserName)
     {
-        return ((delegate* unmanaged<IUserAccountChangeCallback*, ushort*, int>)(lpVtbl[3]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this), pszUserName);
+        return ((delegate* unmanaged[MemberFunction]<IUserAccountChangeCallback*, char*, int>)(lpVtbl[3]))((IUserAccountChangeCallback*)Unsafe.AsPointer(ref this), pszUserName);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] ushort* pszUserName);
+        HRESULT OnPictureChange([NativeTypeName("LPCWSTR")] char* pszUserName);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> OnPictureChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> OnPictureChange;
     }
 }

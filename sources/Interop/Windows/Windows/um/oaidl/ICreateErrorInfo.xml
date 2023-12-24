@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICreateErrorInfo.SetDescription">
-    <summary>
-      <para>Sets the textual description of the error.</para>
-    </summary>
-    <param name="szDescription">
-      <para>A brief description of the error.</para>
-    </param>
+    <summary>Sets the textual description of the error.</summary>
+    <param name="szDescription">A brief description of the error.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,41 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The text should be supplied in the language specified by the locale ID (LCID) that was passed to the method raising the error. For more information, see LCID Attribute in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/type-libraries-and-the-object-description-language">Type Libraries and the Object Description Language</a>.</para>
-      <para>Use of this function is demonstrated in the file Main.cpp of the COM Fundamentals Hello sample.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreateerrorinfo">ICreateErrorInfo</seealso>
   </member>
   <member name="ICreateErrorInfo.SetGUID">
-    <summary>
-      <para>Sets the globally unique identifier (GUID) of the interface that defined the error.</para>
-    </summary>
-    <param name="rguid">
-      <para>The GUID of the interface that defined the error, or GUID_NULL if the error was defined by the operating system.</para>
-    </param>
+    <summary>Sets the globally unique identifier (GUID) of the interface that defined the error.</summary>
+    <param name="rguid">The GUID of the interface that defined the error, or GUID_NULL if the error was defined by the operating system.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -58,42 +49,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method sets the GUID of the interface that defined the error. If the error was defined by the system, set <b>ICreateErrorInfo.SetGUID</b> to GUID_NULL.</para>
-      <para>This GUID does not necessarily represent the source of the error; however, the source is the class or application that raised the error. Using the GUID, applications can handle errors in an interface, independent of the class that implements the interface.</para>
-      <para>Use of this function is demonstrated in the file Main.cpp of the COM Fundamentals Hello sample.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreateerrorinfo">ICreateErrorInfo</seealso>
   </member>
   <member name="ICreateErrorInfo.SetHelpContext">
-    <summary>
-      <para>Sets the Help context identifier (ID) for the error.</para>
-    </summary>
-    <param name="dwHelpContext">
-      <para>The Help context ID for the error.</para>
-    </param>
+    <summary>Sets the Help context identifier (ID) for the error.</summary>
+    <param name="dwHelpContext">The Help context ID for the error.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -101,40 +86,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method sets the Help context ID for the error. To establish the Help file to which it applies, use <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-icreateerrorinfo-sethelpfile">ICreateErrorInfo.SetHelpFile</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreateerrorinfo">ICreateErrorInfo</seealso>
   </member>
   <member name="ICreateErrorInfo.SetHelpFile">
-    <summary>
-      <para>Sets the path of the Help file that describes the error.</para>
-    </summary>
-    <param name="szHelpFile">
-      <para>The fully qualified path of the Help file that describes the error.</para>
-    </param>
+    <summary>Sets the path of the Help file that describes the error.</summary>
+    <param name="szHelpFile">The fully qualified path of the Help file that describes the error.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -142,40 +123,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method sets the fully qualified path of the Help file that describes the current error. Use <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-icreateerrorinfo-sethelpcontext">ICreateErrorInfo.SetHelpContext</a> to set the Help context ID for the error in the Help file.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreateerrorinfo">ICreateErrorInfo</seealso>
   </member>
   <member name="ICreateErrorInfo.SetSource">
-    <summary>
-      <para>Sets the language-dependent programmatic identifier (ProgID) for the class or application that raised the error.</para>
-    </summary>
-    <param name="szSource">
-      <para>A ProgID in the form <i>progname</i>.<i>objectname</i>.</para>
-    </param>
+    <summary>Sets the language-dependent programmatic identifier (ProgID) for the class or application that raised the error.</summary>
+    <param name="szSource">A ProgID in the form <i>progname</i>.<i>objectname</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -183,38 +160,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method should be used to identify the class or application that is the source of the error. The language for the returned ProgID depends on the locale identifier (LCID) that was passed to the method at the time of invocation.</para>
-      <para>Use of this function is demonstrated in the file Main.cpp of the COM Fundamentals Hello sample.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreateerrorinfo">ICreateErrorInfo</seealso>
   </member>
   <member name="ICreateErrorInfo">
-    <summary>
-      <para>Returns error information.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/error-handling-interfaces">Error Handling Interfaces </seealso>
+    <summary>Returns error information.</summary>
   </member>
 </doc>

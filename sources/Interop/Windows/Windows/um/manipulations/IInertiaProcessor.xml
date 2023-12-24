@@ -3,2241 +3,822 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IInertiaProcessor.Complete">
-    <summary>
-      <para>The <b>Complete</b> method finishes the current manipulation and stops inertia on the inertia processor.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
-    </returns>
-    <remarks>
-      <para>The <b>Complete</b> method raises the <see cref="ManipulationCompleted" /> event    on an <see cref="_IManipulationEvents" /> interface implementation.</para>
-      <h4>Examples</h4>
-      <code>
-    // set properties on the IInertiaProcessor interface
-    this-&gt;m_spIInertProc-&gt;put_DesiredRotation(spin);
-
-    // complete any unprocessed inertia
-    this-&gt;m_spIInertProc-&gt;Complete();
-
-    // reset the processor
-    this-&gt;m_spIInertProc-&gt;Reset();
-
-    // If you have implemented a timer that handles inertia processing,
-    // this should be started as well and the processor will raise
-    // Manipulation* events
-
-</code>
-    </remarks>
-    <seealso cref="CompleteTime" />
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/imanipulationprocessor-methods">Methods</seealso>
+    <summary>The <b>Complete</b> method finishes the current manipulation and stops inertia on the inertia processor.</summary>
+    <returns>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</returns>
   </member>
   <member name="IInertiaProcessor.CompleteTime">
-    <summary>
-      <para>Finishes the current manipulation at the given tick, stops inertia on the inertia processor, and raises the <see cref="ManipulationCompleted" /> event.</para>
-    </summary>
-    <param name="timestamp">
-      <para>A parameter containing a timestamp (in milliseconds) to process.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
-    </returns>
-    <remarks>
-      <para>The <b>CompleteTime</b> method raises the <see cref="ManipulationCompleted" /> event on an <see cref="_IManipulationEvents" /> interface implementation.</para>
-    </remarks>
-    <seealso cref="Complete" />
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/imanipulationprocessor-methods">Methods</seealso>
+    <summary>Finishes the current manipulation at the given tick, stops inertia on the inertia processor, and raises the <see cref="ManipulationCompleted" /> event.</summary>
+    <param name="timestamp">A parameter containing a timestamp (in milliseconds) to process.</param>
+    <returns>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</returns>
   </member>
   <member name="IInertiaProcessor.BoundaryBottom">
     <summary>
       <para>The <b>BoundaryBottom</b> property limits how far towards the bottom of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_BoundaryBottom">
     <summary>
       <para>The <b>BoundaryBottom</b> property limits how far towards the bottom of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_BoundaryBottom">
     <summary>
       <para>The <b>BoundaryBottom</b> property limits how far towards the bottom of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.BoundaryLeft">
     <summary>
       <para>The <b>BoundaryLeft</b> property limits how far towards the left of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_BoundaryLeft">
     <summary>
       <para>The <b>BoundaryLeft</b> property limits how far towards the left of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_BoundaryLeft">
     <summary>
       <para>The <b>BoundaryLeft</b> property limits how far towards the left of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.BoundaryRight">
     <summary>
       <para>The <b>BoundaryRight</b> property limits how far towards the right of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_BoundaryRight">
     <summary>
       <para>The <b>BoundaryRight</b> property limits how far towards the right of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_BoundaryRight">
     <summary>
       <para>The <b>BoundaryRight</b> property limits how far towards the right of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.BoundaryTop">
     <summary>
       <para>The <b>BoundaryTop</b> property limits how far towards the top of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_BoundaryTop">
     <summary>
       <para>The <b>BoundaryTop</b> property limits how far towards the top of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_BoundaryTop">
     <summary>
       <para>The <b>BoundaryTop</b> property limits how far towards the top of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredAngularDeceleration">
     <summary>
-      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per  msec squared.</para>
+      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per msec squared.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredAngularDeceleration</b> and <see cref="DesiredRotation" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredAngularDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredAngularDeceleration">
     <summary>
-      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per  msec squared.</para>
+      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per msec squared.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredAngularDeceleration</b> and <see cref="DesiredRotation" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredAngularDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredAngularDeceleration">
     <summary>
-      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per  msec squared.</para>
+      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per msec squared.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredAngularDeceleration</b> and <see cref="DesiredRotation" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredAngularDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredDeceleration">
     <summary>
       <para>The <b>DesiredDeceleration</b> property specifies the desired rate at which translation operations will decelerate.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDeceleration</b> and <see cref="DesiredDisplacement" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDisplacement" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredDeceleration">
     <summary>
       <para>The <b>DesiredDeceleration</b> property specifies the desired rate at which translation operations will decelerate.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDeceleration</b> and <see cref="DesiredDisplacement" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDisplacement" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredDeceleration">
     <summary>
       <para>The <b>DesiredDeceleration</b> property specifies the desired rate at which translation operations will decelerate.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDeceleration</b> and <see cref="DesiredDisplacement" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDisplacement" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredDisplacement">
     <summary>
       <para>The <b>DesiredDisplacement</b> property specifies the desired distance that the object will travel.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDisplacement</b> and <see cref="DesiredDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDisplacement</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredDisplacement">
     <summary>
       <para>The <b>DesiredDisplacement</b> property specifies the desired distance that the object will travel.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDisplacement</b> and <see cref="DesiredDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDisplacement</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredDisplacement">
     <summary>
       <para>The <b>DesiredDisplacement</b> property specifies the desired distance that the object will travel.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDisplacement</b> and <see cref="DesiredDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDisplacement</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredExpansion">
     <summary>
       <para>The <b>DesiredExpansion</b> property specifies the desired change in the object's average radius.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansion</b> and <see cref="DesiredExpansionDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansion</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredExpansion">
     <summary>
       <para>The <b>DesiredExpansion</b> property specifies the desired change in the object's average radius.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansion</b> and <see cref="DesiredExpansionDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansion</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredExpansion">
     <summary>
       <para>The <b>DesiredExpansion</b> property specifies the desired change in the object's average radius.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansion</b> and <see cref="DesiredExpansionDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansion</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredExpansionDeceleration">
     <summary>
       <para>The <b>DesiredExpansionDeceleration</b> property specifies the rate at which the object will stop expanding.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansionDeceleration</b> and <see cref="DesiredExpansion" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansionDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredExpansionDeceleration">
     <summary>
       <para>The <b>DesiredExpansionDeceleration</b> property specifies the rate at which the object will stop expanding.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansionDeceleration</b> and <see cref="DesiredExpansion" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansionDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredExpansionDeceleration">
     <summary>
       <para>The <b>DesiredExpansionDeceleration</b> property specifies the rate at which the object will stop expanding.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansionDeceleration</b> and <see cref="DesiredExpansion" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansionDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredRotation">
     <summary>
       <para>The DesiredRotation property specifies how far the current inertia processor object should manipulate the target object in radians.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredRotation</b> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredRotation</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredAngularDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredRotation">
     <summary>
       <para>The DesiredRotation property specifies how far the current inertia processor object should manipulate the target object in radians.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredRotation</b> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredRotation</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredAngularDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredRotation">
     <summary>
       <para>The DesiredRotation property specifies how far the current inertia processor object should manipulate the target object in radians.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredRotation</b> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredRotation</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredAngularDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.ElasticMarginBottom">
     <summary>
       <para>The <b>ElasticMarginBottom</b> property specifies the bottom region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_ElasticMarginBottom">
     <summary>
       <para>The <b>ElasticMarginBottom</b> property specifies the bottom region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_ElasticMarginBottom">
     <summary>
       <para>The <b>ElasticMarginBottom</b> property specifies the bottom region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.ElasticMarginLeft">
     <summary>
       <para>The <b>ElasticMarginLeft</b> property specifies the leftmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_ElasticMarginLeft">
     <summary>
       <para>The <b>ElasticMarginLeft</b> property specifies the leftmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_ElasticMarginLeft">
     <summary>
       <para>The <b>ElasticMarginLeft</b> property specifies the leftmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.ElasticMarginRight">
     <summary>
       <para>The <b>ElasticMarginRight</b> property specifies the rightmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_ElasticMarginRight">
     <summary>
       <para>The <b>ElasticMarginRight</b> property specifies the rightmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_ElasticMarginRight">
     <summary>
       <para>The <b>ElasticMarginRight</b> property specifies the rightmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.ElasticMarginTop">
     <summary>
       <para>The <b>ElasticMarginTop</b> property specifies the topmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_ElasticMarginTop">
     <summary>
       <para>The <b>ElasticMarginTop</b> property specifies the topmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_ElasticMarginTop">
     <summary>
       <para>The <b>ElasticMarginTop</b> property specifies the topmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialAngularVelocity">
     <summary>
       <para>The <b>InitialAngularVelocity</b> property specifies the rotational (angular) velocity of the target when movement begins.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <see cref="DesiredRotation" /> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.  If the <b>DesiredRotation</b> property is set, the API will set the <b>DesiredAngularDeceleration</b> property so that the object will stop after the desired number of radians.
-The unit of angular acceleration is radians.</para>
-      <para>If inertia processing has already started, setting <b>InitialAngularVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso cref="GetAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialAngularVelocity">
     <summary>
       <para>The <b>InitialAngularVelocity</b> property specifies the rotational (angular) velocity of the target when movement begins.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <see cref="DesiredRotation" /> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.  If the <b>DesiredRotation</b> property is set, the API will set the <b>DesiredAngularDeceleration</b> property so that the object will stop after the desired number of radians.
-The unit of angular acceleration is radians.</para>
-      <para>If inertia processing has already started, setting <b>InitialAngularVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso cref="GetAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialAngularVelocity">
     <summary>
       <para>The <b>InitialAngularVelocity</b> property specifies the rotational (angular) velocity of the target when movement begins.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <see cref="DesiredRotation" /> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.  If the <b>DesiredRotation</b> property is set, the API will set the <b>DesiredAngularDeceleration</b> property so that the object will stop after the desired number of radians.
-The unit of angular acceleration is radians.</para>
-      <para>If inertia processing has already started, setting <b>InitialAngularVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso cref="GetAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialExpansionVelocity">
     <summary>
       <para>The <b>InitialExpansionVelocity</b> property specifies the rate of radius expansion for a target when the target was affected by inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>The amount of expansion that the <see cref="IInertiaProcessor" /> extrapolates will be determined by the <see cref="DesiredExpansion" /> or <see cref="DesiredExpansionDeceleration" /> property.
-<b>DesiredExpansion</b> and <b>DesiredExpansionDeceleration</b> are mutually exclusive.  If one is set, the other should be NaN.
-If using the <b>DesiredExpansion</b> property, the API will set the appropriate <b>DesiredExpansionDeceleration</b> value to expand the requested amount.</para>
-      <para>If inertia processing has already started, setting <b>InitialExpansionVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso cref="GetExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialExpansionVelocity">
     <summary>
       <para>The <b>InitialExpansionVelocity</b> property specifies the rate of radius expansion for a target when the target was affected by inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>The amount of expansion that the <see cref="IInertiaProcessor" /> extrapolates will be determined by the <see cref="DesiredExpansion" /> or <see cref="DesiredExpansionDeceleration" /> property.
-<b>DesiredExpansion</b> and <b>DesiredExpansionDeceleration</b> are mutually exclusive.  If one is set, the other should be NaN.
-If using the <b>DesiredExpansion</b> property, the API will set the appropriate <b>DesiredExpansionDeceleration</b> value to expand the requested amount.</para>
-      <para>If inertia processing has already started, setting <b>InitialExpansionVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso cref="GetExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialExpansionVelocity">
     <summary>
       <para>The <b>InitialExpansionVelocity</b> property specifies the rate of radius expansion for a target when the target was affected by inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>The amount of expansion that the <see cref="IInertiaProcessor" /> extrapolates will be determined by the <see cref="DesiredExpansion" /> or <see cref="DesiredExpansionDeceleration" /> property.
-<b>DesiredExpansion</b> and <b>DesiredExpansionDeceleration</b> are mutually exclusive.  If one is set, the other should be NaN.
-If using the <b>DesiredExpansion</b> property, the API will set the appropriate <b>DesiredExpansionDeceleration</b> value to expand the requested amount.</para>
-      <para>If inertia processing has already started, setting <b>InitialExpansionVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso cref="GetExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialOriginX">
     <summary>
       <para>The <b>InitialOriginX</b> property specifies the starting horizontal location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginX</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginX</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginX</b> is valid before
-setting it on an <see cref="IInertiaProcessor" /> interface. If Inertia processing has already started, calling put_InitialOriginX()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates,
-you pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialOriginX">
     <summary>
       <para>The <b>InitialOriginX</b> property specifies the starting horizontal location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginX</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginX</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginX</b> is valid before
-setting it on an <see cref="IInertiaProcessor" /> interface. If Inertia processing has already started, calling put_InitialOriginX()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates,
-you pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialOriginX">
     <summary>
       <para>The <b>InitialOriginX</b> property specifies the starting horizontal location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginX</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginX</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginX</b> is valid before
-setting it on an <see cref="IInertiaProcessor" /> interface. If Inertia processing has already started, calling put_InitialOriginX()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates,
-you pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialOriginY">
     <summary>
       <para>The <b>InitialOriginY</b> property specifies the starting vertical location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginY</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginY</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginY</b> is valid before setting it
-on an <see cref="IInertiaProcessor" /> interface.     If Inertia processing has already started, calling put_InitialOriginY()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates, you
-pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialOriginY">
     <summary>
       <para>The <b>InitialOriginY</b> property specifies the starting vertical location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginY</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginY</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginY</b> is valid before setting it
-on an <see cref="IInertiaProcessor" /> interface.     If Inertia processing has already started, calling put_InitialOriginY()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates, you
-pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialOriginY">
     <summary>
       <para>The <b>InitialOriginY</b> property specifies the starting vertical location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginY</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginY</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginY</b> is valid before setting it
-on an <see cref="IInertiaProcessor" /> interface.     If Inertia processing has already started, calling put_InitialOriginY()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates, you
-pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialRadius">
     <summary>
       <para>The <b>InitialRadius</b> property specifies the distance from the edge of the target to its center before the object was changed.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialRadius</b> will reset the inertia engine to the initial state with new radius value applied.</para>
-      <para>Call this function to set initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" />, or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialRadius">
     <summary>
       <para>The <b>InitialRadius</b> property specifies the distance from the edge of the target to its center before the object was changed.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialRadius</b> will reset the inertia engine to the initial state with new radius value applied.</para>
-      <para>Call this function to set initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" />, or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialRadius">
     <summary>
       <para>The <b>InitialRadius</b> property specifies the distance from the edge of the target to its center before the object was changed.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialRadius</b> will reset the inertia engine to the initial state with new radius value applied.</para>
-      <para>Call this function to set initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" />, or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialTimestamp">
     <summary>
       <para>The <b>InitialTimestamp</b> property specifies the starting time stamp for a target object with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialTimestamp">
     <summary>
       <para>The <b>InitialTimestamp</b> property specifies the starting time stamp for a target object with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialTimestamp">
     <summary>
       <para>The <b>InitialTimestamp</b> property specifies the starting time stamp for a target object with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialVelocityX">
     <summary>
       <para>The <b>InitialVelocityX</b> property specifies the initial movement of the target object on the horizontal axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialVelocityX</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialVelocityX">
     <summary>
       <para>The <b>InitialVelocityX</b> property specifies the initial movement of the target object on the horizontal axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialVelocityX</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialVelocityX">
     <summary>
       <para>The <b>InitialVelocityX</b> property specifies the initial movement of the target object on the horizontal axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialVelocityX</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialVelocityY">
     <summary>
       <para>The <b>InitialVelocityY</b> property specifies the initial movement of the target object on the vertical axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If inertia processing has already started, setting <b>InitialVelocityY</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialVelocityY">
     <summary>
       <para>The <b>InitialVelocityY</b> property specifies the initial movement of the target object on the vertical axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If inertia processing has already started, setting <b>InitialVelocityY</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialVelocityY">
     <summary>
       <para>The <b>InitialVelocityY</b> property specifies the initial movement of the target object on the vertical axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If inertia processing has already started, setting <b>InitialVelocityY</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.Process">
-    <summary>
-      <para>The <b>Process</b> method performs calculations and can raise the <b>Started</b>, <b>Delta</b>, or <b>Completed</b> event depending on whether extrapolation is completed or not. If extrapolation finished at the previous tick, the method is no-op.</para>
-    </summary>
-    <param name="completed">
-      <para>Indicates whether an operation was performed. A value of false indicates extrapolation was finished at a previous tick and the operation was a no-op.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
-    </returns>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/imanipulationprocessor-methods">Methods</seealso>
-    <seealso cref="ProcessTime" />
+    <summary>The <b>Process</b> method performs calculations and can raise the <b>Started</b>, <b>Delta</b>, or <b>Completed</b> event depending on whether extrapolation is completed or not. If extrapolation finished at the previous tick, the method is no-op.</summary>
+    <param name="completed">Indicates whether an operation was performed. A value of false indicates extrapolation was finished at a previous tick and the operation was a no-op.</param>
+    <returns>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</returns>
   </member>
   <member name="IInertiaProcessor.ProcessTime">
-    <summary>
-      <para>The <b>ProcessTime</b> method performs calculations for the given tick and can raise the <b>Started</b>, <b>Delta</b>, or <b>Completed</b> event depending on whether extrapolation is completed or not. If extrapolation finished at the previous tick, the method is no-op.</para>
-    </summary>
-    <param name="timestamp">
-      <para>A parameter that contains a timestamp (in millisecs) to process.</para>
-    </param>
-    <param name="completed">
-      <para>Indicates whether an operation was performed. A value of false indicates extrapolation was finished at a previous tick and the operation was a no-op.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
-    </returns>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/imanipulationprocessor-methods">Methods</seealso>
-    <seealso cref="Process" />
+    <summary>The <b>ProcessTime</b> method performs calculations for the given tick and can raise the <b>Started</b>, <b>Delta</b>, or <b>Completed</b> event depending on whether extrapolation is completed or not. If extrapolation finished at the previous tick, the method is no-op.</summary>
+    <param name="timestamp">A parameter that contains a timestamp (in millisecs) to process.</param>
+    <param name="completed">Indicates whether an operation was performed. A value of false indicates extrapolation was finished at a previous tick and the operation was a no-op.</param>
+    <returns>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</returns>
   </member>
   <member name="IInertiaProcessor.BoundaryBottom">
     <summary>
       <para>The <b>BoundaryBottom</b> property limits how far towards the bottom of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_BoundaryBottom">
     <summary>
       <para>The <b>BoundaryBottom</b> property limits how far towards the bottom of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_BoundaryBottom">
     <summary>
       <para>The <b>BoundaryBottom</b> property limits how far towards the bottom of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.BoundaryLeft">
     <summary>
       <para>The <b>BoundaryLeft</b> property limits how far towards the left of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_BoundaryLeft">
     <summary>
       <para>The <b>BoundaryLeft</b> property limits how far towards the left of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_BoundaryLeft">
     <summary>
       <para>The <b>BoundaryLeft</b> property limits how far towards the left of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryRight" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.BoundaryRight">
     <summary>
       <para>The <b>BoundaryRight</b> property limits how far towards the right of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_BoundaryRight">
     <summary>
       <para>The <b>BoundaryRight</b> property limits how far towards the right of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_BoundaryRight">
     <summary>
       <para>The <b>BoundaryRight</b> property limits how far towards the right of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.BoundaryTop">
     <summary>
       <para>The <b>BoundaryTop</b> property limits how far towards the top of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_BoundaryTop">
     <summary>
       <para>The <b>BoundaryTop</b> property limits how far towards the top of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_BoundaryTop">
     <summary>
       <para>The <b>BoundaryTop</b> property limits how far towards the top of the screen the target object can move.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="BoundaryBottom" />
-    <seealso cref="BoundaryLeft" />
-    <seealso cref="BoundaryRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredAngularDeceleration">
     <summary>
-      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per  msec squared.</para>
+      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per msec squared.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredAngularDeceleration</b> and <see cref="DesiredRotation" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredAngularDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredAngularDeceleration">
     <summary>
-      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per  msec squared.</para>
+      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per msec squared.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredAngularDeceleration</b> and <see cref="DesiredRotation" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredAngularDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredAngularDeceleration">
     <summary>
-      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per  msec squared.</para>
+      <para>The <b>DesiredAngularDeceleration</b> property specifies the desired rate that the target object will stop spinning in radians per msec squared.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredAngularDeceleration</b> and <see cref="DesiredRotation" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredAngularDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredDeceleration">
     <summary>
       <para>The <b>DesiredDeceleration</b> property specifies the desired rate at which translation operations will decelerate.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDeceleration</b> and <see cref="DesiredDisplacement" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDisplacement" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredDeceleration">
     <summary>
       <para>The <b>DesiredDeceleration</b> property specifies the desired rate at which translation operations will decelerate.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDeceleration</b> and <see cref="DesiredDisplacement" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDisplacement" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredDeceleration">
     <summary>
       <para>The <b>DesiredDeceleration</b> property specifies the desired rate at which translation operations will decelerate.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDeceleration</b> and <see cref="DesiredDisplacement" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDisplacement" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredDisplacement">
     <summary>
       <para>The <b>DesiredDisplacement</b> property specifies the desired distance that the object will travel.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDisplacement</b> and <see cref="DesiredDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDisplacement</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredDisplacement">
     <summary>
       <para>The <b>DesiredDisplacement</b> property specifies the desired distance that the object will travel.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDisplacement</b> and <see cref="DesiredDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDisplacement</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredDisplacement">
     <summary>
       <para>The <b>DesiredDisplacement</b> property specifies the desired distance that the object will travel.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredDisplacement</b> and <see cref="DesiredDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredDisplacement</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredExpansion">
     <summary>
       <para>The <b>DesiredExpansion</b> property specifies the desired change in the object's average radius.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansion</b> and <see cref="DesiredExpansionDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansion</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredExpansion">
     <summary>
       <para>The <b>DesiredExpansion</b> property specifies the desired change in the object's average radius.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansion</b> and <see cref="DesiredExpansionDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansion</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredExpansion">
     <summary>
       <para>The <b>DesiredExpansion</b> property specifies the desired change in the object's average radius.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansion</b> and <see cref="DesiredExpansionDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansion</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredExpansionDeceleration">
     <summary>
       <para>The <b>DesiredExpansionDeceleration</b> property specifies the rate at which the object will stop expanding.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansionDeceleration</b> and <see cref="DesiredExpansion" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansionDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredExpansionDeceleration">
     <summary>
       <para>The <b>DesiredExpansionDeceleration</b> property specifies the rate at which the object will stop expanding.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansionDeceleration</b> and <see cref="DesiredExpansion" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansionDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredExpansionDeceleration">
     <summary>
       <para>The <b>DesiredExpansionDeceleration</b> property specifies the rate at which the object will stop expanding.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredExpansionDeceleration</b> and <see cref="DesiredExpansion" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredExpansionDeceleration</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.DesiredRotation">
     <summary>
       <para>The DesiredRotation property specifies how far the current inertia processor object should manipulate the target object in radians.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredRotation</b> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredRotation</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredAngularDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_DesiredRotation">
     <summary>
       <para>The DesiredRotation property specifies how far the current inertia processor object should manipulate the target object in radians.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredRotation</b> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredRotation</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredAngularDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_DesiredRotation">
     <summary>
       <para>The DesiredRotation property specifies how far the current inertia processor object should manipulate the target object in radians.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>DesiredRotation</b> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.</para>
-      <para>If inertia processing has already started, setting <b>DesiredRotation</b> will reset the inertia engine to the initial state with new deceleration value applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredAngularDeceleration" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.ElasticMarginBottom">
     <summary>
       <para>The <b>ElasticMarginBottom</b> property specifies the bottom region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_ElasticMarginBottom">
     <summary>
       <para>The <b>ElasticMarginBottom</b> property specifies the bottom region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_ElasticMarginBottom">
     <summary>
       <para>The <b>ElasticMarginBottom</b> property specifies the bottom region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.ElasticMarginLeft">
     <summary>
       <para>The <b>ElasticMarginLeft</b> property specifies the leftmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_ElasticMarginLeft">
     <summary>
       <para>The <b>ElasticMarginLeft</b> property specifies the leftmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_ElasticMarginLeft">
     <summary>
       <para>The <b>ElasticMarginLeft</b> property specifies the leftmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.ElasticMarginRight">
     <summary>
       <para>The <b>ElasticMarginRight</b> property specifies the rightmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_ElasticMarginRight">
     <summary>
       <para>The <b>ElasticMarginRight</b> property specifies the rightmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_ElasticMarginRight">
     <summary>
       <para>The <b>ElasticMarginRight</b> property specifies the rightmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginTop" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.ElasticMarginTop">
     <summary>
       <para>The <b>ElasticMarginTop</b> property specifies the topmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_ElasticMarginTop">
     <summary>
       <para>The <b>ElasticMarginTop</b> property specifies the topmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_ElasticMarginTop">
     <summary>
       <para>The <b>ElasticMarginTop</b> property specifies the topmost region for bouncing the target object.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso cref="ElasticMarginBottom" />
-    <seealso cref="ElasticMarginLeft" />
-    <seealso cref="ElasticMarginRight" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialAngularVelocity">
     <summary>
       <para>The <b>InitialAngularVelocity</b> property specifies the rotational (angular) velocity of the target when movement begins.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <see cref="DesiredRotation" /> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.  If the <b>DesiredRotation</b> property is set, the API will set the <b>DesiredAngularDeceleration</b> property so that the object will stop after the desired number of radians.
-The unit of angular acceleration is radians.</para>
-      <para>If inertia processing has already started, setting <b>InitialAngularVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso cref="GetAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialAngularVelocity">
     <summary>
       <para>The <b>InitialAngularVelocity</b> property specifies the rotational (angular) velocity of the target when movement begins.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <see cref="DesiredRotation" /> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.  If the <b>DesiredRotation</b> property is set, the API will set the <b>DesiredAngularDeceleration</b> property so that the object will stop after the desired number of radians.
-The unit of angular acceleration is radians.</para>
-      <para>If inertia processing has already started, setting <b>InitialAngularVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso cref="GetAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialAngularVelocity">
     <summary>
       <para>The <b>InitialAngularVelocity</b> property specifies the rotational (angular) velocity of the target when movement begins.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>
-        <see cref="DesiredRotation" /> and <see cref="DesiredAngularDeceleration" /> are mutually exclusive.  If one is set, the other should be NaN.  If the <b>DesiredRotation</b> property is set, the API will set the <b>DesiredAngularDeceleration</b> property so that the object will stop after the desired number of radians.
-The unit of angular acceleration is radians.</para>
-      <para>If inertia processing has already started, setting <b>InitialAngularVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredRotation" />
-    <seealso cref="GetAngularVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialExpansionVelocity">
     <summary>
       <para>The <b>InitialExpansionVelocity</b> property specifies the rate of radius expansion for a target when the target was affected by inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>The amount of expansion that the <see cref="IInertiaProcessor" /> extrapolates will be determined by the <see cref="DesiredExpansion" /> or <see cref="DesiredExpansionDeceleration" /> property.
-<b>DesiredExpansion</b> and <b>DesiredExpansionDeceleration</b> are mutually exclusive.  If one is set, the other should be NaN.
-If using the <b>DesiredExpansion</b> property, the API will set the appropriate <b>DesiredExpansionDeceleration</b> value to expand the requested amount.</para>
-      <para>If inertia processing has already started, setting <b>InitialExpansionVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso cref="GetExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialExpansionVelocity">
     <summary>
       <para>The <b>InitialExpansionVelocity</b> property specifies the rate of radius expansion for a target when the target was affected by inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>The amount of expansion that the <see cref="IInertiaProcessor" /> extrapolates will be determined by the <see cref="DesiredExpansion" /> or <see cref="DesiredExpansionDeceleration" /> property.
-<b>DesiredExpansion</b> and <b>DesiredExpansionDeceleration</b> are mutually exclusive.  If one is set, the other should be NaN.
-If using the <b>DesiredExpansion</b> property, the API will set the appropriate <b>DesiredExpansionDeceleration</b> value to expand the requested amount.</para>
-      <para>If inertia processing has already started, setting <b>InitialExpansionVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso cref="GetExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialExpansionVelocity">
     <summary>
       <para>The <b>InitialExpansionVelocity</b> property specifies the rate of radius expansion for a target when the target was affected by inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>The amount of expansion that the <see cref="IInertiaProcessor" /> extrapolates will be determined by the <see cref="DesiredExpansion" /> or <see cref="DesiredExpansionDeceleration" /> property.
-<b>DesiredExpansion</b> and <b>DesiredExpansionDeceleration</b> are mutually exclusive.  If one is set, the other should be NaN.
-If using the <b>DesiredExpansion</b> property, the API will set the appropriate <b>DesiredExpansionDeceleration</b> value to expand the requested amount.</para>
-      <para>If inertia processing has already started, setting <b>InitialExpansionVelocity</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="DesiredExpansion" />
-    <seealso cref="DesiredExpansionDeceleration" />
-    <seealso cref="GetExpansionVelocity" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialOriginX">
     <summary>
       <para>The <b>InitialOriginX</b> property specifies the starting horizontal location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginX</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginX</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginX</b> is valid before
-setting it on an <see cref="IInertiaProcessor" /> interface. If Inertia processing has already started, calling put_InitialOriginX()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates,
-you pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialOriginX">
     <summary>
       <para>The <b>InitialOriginX</b> property specifies the starting horizontal location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginX</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginX</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginX</b> is valid before
-setting it on an <see cref="IInertiaProcessor" /> interface. If Inertia processing has already started, calling put_InitialOriginX()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates,
-you pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialOriginX">
     <summary>
       <para>The <b>InitialOriginX</b> property specifies the starting horizontal location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginX</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginX</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginX</b> is valid before
-setting it on an <see cref="IInertiaProcessor" /> interface. If Inertia processing has already started, calling put_InitialOriginX()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates,
-you pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialOriginY">
     <summary>
       <para>The <b>InitialOriginY</b> property specifies the starting vertical location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginY</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginY</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginY</b> is valid before setting it
-on an <see cref="IInertiaProcessor" /> interface.     If Inertia processing has already started, calling put_InitialOriginY()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates, you
-pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialOriginY">
     <summary>
       <para>The <b>InitialOriginY</b> property specifies the starting vertical location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginY</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginY</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginY</b> is valid before setting it
-on an <see cref="IInertiaProcessor" /> interface.     If Inertia processing has already started, calling put_InitialOriginY()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates, you
-pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialOriginY">
     <summary>
       <para>The <b>InitialOriginY</b> property specifies the starting vertical location for a target with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>A user can manipulate an object to set the <b>InitialOriginY</b> to be outside of the elastic bounds.
-Setting <b>InitialOriginY</b> to a value outside of the elastic bounds will cause an exception to be thrown.
-To prevent  users from setting the origin out of bounds, check that <b>InitialOriginY</b> is valid before setting it
-on an <see cref="IInertiaProcessor" /> interface.     If Inertia processing has already started, calling put_InitialOriginY()
-will reset the inertia state to initial time stamp.</para>
-      <para>All locations used for the inertia and manipulation processor are relative. If you want to use screen coordinates,
-you pass screen coordinates to the manipulation (or inertia) processor; if you want to use absolute coordinates, you
-pass those into the processor you are using.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialOriginY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialRadius">
     <summary>
       <para>The <b>InitialRadius</b> property specifies the distance from the edge of the target to its center before the object was changed.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialRadius</b> will reset the inertia engine to the initial state with new radius value applied.</para>
-      <para>Call this function to set initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" />, or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialRadius">
     <summary>
       <para>The <b>InitialRadius</b> property specifies the distance from the edge of the target to its center before the object was changed.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialRadius</b> will reset the inertia engine to the initial state with new radius value applied.</para>
-      <para>Call this function to set initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" />, or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialRadius">
     <summary>
       <para>The <b>InitialRadius</b> property specifies the distance from the edge of the target to its center before the object was changed.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialRadius</b> will reset the inertia engine to the initial state with new radius value applied.</para>
-      <para>Call this function to set initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" />, or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialTimestamp">
     <summary>
       <para>The <b>InitialTimestamp</b> property specifies the starting time stamp for a target object with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialTimestamp">
     <summary>
       <para>The <b>InitialTimestamp</b> property specifies the starting time stamp for a target object with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialTimestamp">
     <summary>
       <para>The <b>InitialTimestamp</b> property specifies the starting time stamp for a target object with inertia.</para>
       <para>This property is read/write.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialVelocityX">
     <summary>
       <para>The <b>InitialVelocityX</b> property specifies the initial movement of the target object on the horizontal axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialVelocityX</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialVelocityX">
     <summary>
       <para>The <b>InitialVelocityX</b> property specifies the initial movement of the target object on the horizontal axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialVelocityX</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialVelocityX">
     <summary>
       <para>The <b>InitialVelocityX</b> property specifies the initial movement of the target object on the horizontal axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If Inertia processing has already started, setting <b>InitialVelocityX</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.get_InitialVelocityY">
     <summary>
       <para>The <b>InitialVelocityY</b> property specifies the initial movement of the target object on the vertical axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If inertia processing has already started, setting <b>InitialVelocityY</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.InitialVelocityY">
     <summary>
       <para>The <b>InitialVelocityY</b> property specifies the initial movement of the target object on the vertical axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If inertia processing has already started, setting <b>InitialVelocityY</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.put_InitialVelocityY">
     <summary>
       <para>The <b>InitialVelocityY</b> property specifies the initial movement of the target object on the vertical axis.</para>
       <para>This property is read/write.</para>
     </summary>
-    <remarks>
-      <para>If inertia processing has already started, setting <b>InitialVelocityY</b> will reset the inertia engine to the initial state with new velocity values applied.</para>
-      <para>Call this function to set the initial state of inertia. You would call this function most likely during the <see cref="ManipulationCompleted" /> event of the <see cref="IManipulationProcessor" /> or in the constructor of the <see cref="IInertiaProcessor" /> interface.</para>
-    </remarks>
-    <seealso cref="GetVelocityY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/handling-inertia-in-unmanaged-code">Handling Inertia in Unmanaged Code</seealso>
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/inertia-mechanics">Inertia Mechanics</seealso>
-    <seealso cref="InitialVelocityX" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/iinertiaprocessor-properties">Properties</seealso>
   </member>
   <member name="IInertiaProcessor.Reset">
-    <summary>
-      <para>The <b>Reset</b> method initializes the processor with initial timestamp and restarts inertia.</para>
-    </summary>
-    <returns>
-      <para>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</para>
-    </returns>
-    <remarks>
-      <para>If you have changed properties on an object currently being manipulated by inertia, call <see cref="Complete" /> before calling <b>Reset</b>.</para>
-      <h4>Examples</h4>
-      <code>
-    // set properties on the IInertiaProcessor interface
-    this-&gt;m_spIInertProc-&gt;put_DesiredRotation(spin);
-
-    // complete any unprocessed inertia
-    this-&gt;m_spIInertProc-&gt;Complete();
-
-    // reset the processor
-    this-&gt;m_spIInertProc-&gt;Reset();
-
-    // If you have implemented a timer that handles inertia processing,
-    // this should be started as well and the processor will raise
-    // Manipulation* events
-
-</code>
-    </remarks>
-    <seealso cref="Complete" />
-    <seealso cref="IInertiaProcessor" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/imanipulationprocessor-methods">Methods</seealso>
+    <summary>The <b>Reset</b> method initializes the processor with initial timestamp and restarts inertia.</summary>
+    <returns>Returns <b>S_OK</b> on success, otherwise returns an error code such as <b>E_FAIL</b>.</returns>
   </member>
   <member name="IInertiaProcessor">
-    <summary>
-      <para>The IInertiaProcessor interface handles calculations regarding object motion for Windows Touch.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/intertmanip-classes-and-interfaces">Classes and Interfaces</seealso>
+    <summary>The IInertiaProcessor interface handles calculations regarding object motion for Windows Touch.</summary>
   </member>
 </doc>

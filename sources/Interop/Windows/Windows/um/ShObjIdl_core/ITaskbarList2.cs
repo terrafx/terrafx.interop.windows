@@ -25,7 +25,7 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITaskbarList2*, Guid*, void**, int>)(lpVtbl[0]))((ITaskbarList2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITaskbarList2*, Guid*, void**, int>)(lpVtbl[0]))((ITaskbarList2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITaskbarList2*, uint>)(lpVtbl[1]))((ITaskbarList2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITaskbarList2*, uint>)(lpVtbl[1]))((ITaskbarList2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITaskbarList2*, uint>)(lpVtbl[2]))((ITaskbarList2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITaskbarList2*, uint>)(lpVtbl[2]))((ITaskbarList2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITaskbarList.HrInit" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT HrInit()
     {
-        return ((delegate* unmanaged<ITaskbarList2*, int>)(lpVtbl[3]))((ITaskbarList2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITaskbarList2*, int>)(lpVtbl[3]))((ITaskbarList2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITaskbarList.AddTab" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT AddTab(HWND hwnd)
     {
-        return ((delegate* unmanaged<ITaskbarList2*, HWND, int>)(lpVtbl[4]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<ITaskbarList2*, HWND, int>)(lpVtbl[4]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <inheritdoc cref="ITaskbarList.DeleteTab" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT DeleteTab(HWND hwnd)
     {
-        return ((delegate* unmanaged<ITaskbarList2*, HWND, int>)(lpVtbl[5]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<ITaskbarList2*, HWND, int>)(lpVtbl[5]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <inheritdoc cref="ITaskbarList.ActivateTab" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT ActivateTab(HWND hwnd)
     {
-        return ((delegate* unmanaged<ITaskbarList2*, HWND, int>)(lpVtbl[6]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<ITaskbarList2*, HWND, int>)(lpVtbl[6]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <inheritdoc cref="ITaskbarList.SetActiveAlt" />
@@ -83,7 +83,7 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT SetActiveAlt(HWND hwnd)
     {
-        return ((delegate* unmanaged<ITaskbarList2*, HWND, int>)(lpVtbl[7]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<ITaskbarList2*, HWND, int>)(lpVtbl[7]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <include file='ITaskbarList2.xml' path='doc/member[@name="ITaskbarList2.MarkFullscreenWindow"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT MarkFullscreenWindow(HWND hwnd, BOOL fFullscreen)
     {
-        return ((delegate* unmanaged<ITaskbarList2*, HWND, BOOL, int>)(lpVtbl[8]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd, fFullscreen);
+        return ((delegate* unmanaged[MemberFunction]<ITaskbarList2*, HWND, BOOL, int>)(lpVtbl[8]))((ITaskbarList2*)Unsafe.AsPointer(ref this), hwnd, fFullscreen);
     }
 
     public interface Interface : ITaskbarList.Interface
@@ -104,30 +104,30 @@ public unsafe partial struct ITaskbarList2 : ITaskbarList2.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> HrInit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> HrInit;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> AddTab;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> AddTab;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> DeleteTab;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> DeleteTab;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> ActivateTab;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> ActivateTab;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> SetActiveAlt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> SetActiveAlt;
 
         [NativeTypeName("HRESULT (HWND, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, BOOL, int> MarkFullscreenWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, BOOL, int> MarkFullscreenWindow;
     }
 }

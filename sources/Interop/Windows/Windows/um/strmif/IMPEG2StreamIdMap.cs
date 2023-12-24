@@ -25,7 +25,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMPEG2StreamIdMap*, Guid*, void**, int>)(lpVtbl[0]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMPEG2StreamIdMap*, Guid*, void**, int>)(lpVtbl[0]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint>)(lpVtbl[1]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMPEG2StreamIdMap*, uint>)(lpVtbl[1]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint>)(lpVtbl[2]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMPEG2StreamIdMap*, uint>)(lpVtbl[2]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMPEG2StreamIdMap.xml' path='doc/member[@name="IMPEG2StreamIdMap.MapStreamId"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface, IN
     [VtblIndex(3)]
     public HRESULT MapStreamId([NativeTypeName("ULONG")] uint ulStreamId, [NativeTypeName("DWORD")] uint MediaSampleContent, [NativeTypeName("ULONG")] uint ulSubstreamFilterValue, int iDataOffset)
     {
-        return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint, uint, uint, int, int>)(lpVtbl[3]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), ulStreamId, MediaSampleContent, ulSubstreamFilterValue, iDataOffset);
+        return ((delegate* unmanaged[MemberFunction]<IMPEG2StreamIdMap*, uint, uint, uint, int, int>)(lpVtbl[3]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), ulStreamId, MediaSampleContent, ulSubstreamFilterValue, iDataOffset);
     }
 
     /// <include file='IMPEG2StreamIdMap.xml' path='doc/member[@name="IMPEG2StreamIdMap.UnmapStreamId"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface, IN
     [VtblIndex(4)]
     public HRESULT UnmapStreamId([NativeTypeName("ULONG")] uint culStreamId, [NativeTypeName("ULONG *")] uint* pulStreamId)
     {
-        return ((delegate* unmanaged<IMPEG2StreamIdMap*, uint, uint*, int>)(lpVtbl[4]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), culStreamId, pulStreamId);
+        return ((delegate* unmanaged[MemberFunction]<IMPEG2StreamIdMap*, uint, uint*, int>)(lpVtbl[4]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), culStreamId, pulStreamId);
     }
 
     /// <include file='IMPEG2StreamIdMap.xml' path='doc/member[@name="IMPEG2StreamIdMap.EnumStreamIdMap"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface, IN
     [VtblIndex(5)]
     public HRESULT EnumStreamIdMap(IEnumStreamIdMap** ppIEnumStreamIdMap)
     {
-        return ((delegate* unmanaged<IMPEG2StreamIdMap*, IEnumStreamIdMap**, int>)(lpVtbl[5]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), ppIEnumStreamIdMap);
+        return ((delegate* unmanaged[MemberFunction]<IMPEG2StreamIdMap*, IEnumStreamIdMap**, int>)(lpVtbl[5]))((IMPEG2StreamIdMap*)Unsafe.AsPointer(ref this), ppIEnumStreamIdMap);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IMPEG2StreamIdMap : IMPEG2StreamIdMap.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, DWORD, ULONG, int) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int, int> MapStreamId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int, int> MapStreamId;
 
         [NativeTypeName("HRESULT (ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> UnmapStreamId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> UnmapStreamId;
 
         [NativeTypeName("HRESULT (IEnumStreamIdMap **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumStreamIdMap**, int> EnumStreamIdMap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumStreamIdMap**, int> EnumStreamIdMap;
     }
 }

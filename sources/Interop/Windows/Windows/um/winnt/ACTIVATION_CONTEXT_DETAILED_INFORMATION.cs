@@ -46,13 +46,13 @@ public unsafe partial struct ACTIVATION_CONTEXT_DETAILED_INFORMATION
 
     /// <include file='ACTIVATION_CONTEXT_DETAILED_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.lpRootManifestPath"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* lpRootManifestPath;
+    public char* lpRootManifestPath;
 
     /// <include file='ACTIVATION_CONTEXT_DETAILED_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.lpRootConfigurationPath"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* lpRootConfigurationPath;
+    public char* lpRootConfigurationPath;
 
     /// <include file='ACTIVATION_CONTEXT_DETAILED_INFORMATION.xml' path='doc/member[@name="ACTIVATION_CONTEXT_DETAILED_INFORMATION.lpAppDirPath"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* lpAppDirPath;
+    public char* lpAppDirPath;
 }

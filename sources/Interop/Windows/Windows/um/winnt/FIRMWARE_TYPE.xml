@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FIRMWARE_TYPE">
-    <summary>
-      <para>Specifies a firmware type.</para>
-    </summary>
-    <seealso cref="GetFirmwareType" />
+    <summary>Specifies a firmware type.</summary>
   </member>
   <member name="FIRMWARE_TYPE.FirmwareTypeUnknown">
-    <summary>
-      <para>The firmware type is unknown.</para>
-    </summary>
+    <summary>The firmware type is unknown.</summary>
   </member>
   <member name="FIRMWARE_TYPE.FirmwareTypeBios">
-    <summary>
-      <para>The computer booted in legacy BIOS mode.</para>
-    </summary>
+    <summary>The computer booted in legacy BIOS mode.</summary>
   </member>
   <member name="FIRMWARE_TYPE.FirmwareTypeUefi">
-    <summary>
-      <para>The computer booted in UEFI mode.</para>
-    </summary>
+    <summary>The computer booted in UEFI mode.</summary>
   </member>
   <member name="FIRMWARE_TYPE.FirmwareTypeMax">
-    <summary>
-      <para>Not implemented.</para>
-    </summary>
+    <summary>Not implemented.</summary>
   </member>
 </doc>

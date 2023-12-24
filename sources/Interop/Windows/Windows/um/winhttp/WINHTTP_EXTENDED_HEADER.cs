@@ -13,16 +13,16 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct WINHTTP_EXTENDED_HEADER
 {
     /// <include file='WINHTTP_EXTENDED_HEADER.xml' path='doc/member[@name="WINHTTP_EXTENDED_HEADER.Anonymous1"]/*' />
-    [NativeTypeName("_WINHTTP_EXTENDED_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winhttp.h:514:5)")]
+    [NativeTypeName("__AnonymousRecord_winhttp_L514_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='WINHTTP_EXTENDED_HEADER.xml' path='doc/member[@name="WINHTTP_EXTENDED_HEADER.Anonymous2"]/*' />
-    [NativeTypeName("_WINHTTP_EXTENDED_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winhttp.h:519:5)")]
+    [NativeTypeName("__AnonymousRecord_winhttp_L519_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pwszName"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszName
+    public ref char* pwszName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -44,7 +44,7 @@ public unsafe partial struct WINHTTP_EXTENDED_HEADER
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pwszValue"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszValue
+    public ref char* pwszValue
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -71,7 +71,7 @@ public unsafe partial struct WINHTTP_EXTENDED_HEADER
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pwszName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCWSTR")]
-        public ushort* pwszName;
+        public char* pwszName;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.pszName"]/*' />
         [FieldOffset(0)]
@@ -86,7 +86,7 @@ public unsafe partial struct WINHTTP_EXTENDED_HEADER
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pwszValue"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PCWSTR")]
-        public ushort* pwszValue;
+        public char* pwszValue;
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pszValue"]/*' />
         [FieldOffset(0)]

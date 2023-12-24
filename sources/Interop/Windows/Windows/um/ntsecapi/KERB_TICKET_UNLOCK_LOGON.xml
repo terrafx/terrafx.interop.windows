@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_TICKET_UNLOCK_LOGON">
+    <summary>
+      <para>The <b>KERB_TICKET_UNLOCK_LOGON</b> structure contains information to unlock a workstation.</para>
+      <para>It is used by<see cref="LsaLogonUser" />.</para>
+    </summary>
+  </member>
+  <member name="KERB_TICKET_UNLOCK_LOGON.Logon">
+    <summary>
+      <see cref="KERB_TICKET_LOGON" /> structure. All members of the structure must be the same as the structure used in the original logon except the <see cref="KERB_LOGON_SUBMIT_TYPE" /> member, which must be set to <b>KerbTicketUnlockLogon</b>.</summary>
+  </member>
+  <member name="KERB_TICKET_UNLOCK_LOGON.LogonId">
+    <summary>
+      <see cref="LUID" /> structure containing the logon identifier of the current <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>. This ID was previously returned from the initial logon by<see cref="LsaLogonUser" />.</summary>
+  </member>
+</doc>

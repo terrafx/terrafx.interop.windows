@@ -19,32 +19,4 @@ public static unsafe partial class IAMAudioInputMixerTests
     {
         Assert.That(typeof(IAMAudioInputMixer).GUID, Is.EqualTo(IID_IAMAudioInputMixer));
     }
-
-    /// <summary>Validates that the <see cref="IAMAudioInputMixer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMAudioInputMixer>(), Is.EqualTo(sizeof(IAMAudioInputMixer)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMAudioInputMixer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMAudioInputMixer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMAudioInputMixer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMAudioInputMixer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMAudioInputMixer), Is.EqualTo(4));
-        }
-    }
 }

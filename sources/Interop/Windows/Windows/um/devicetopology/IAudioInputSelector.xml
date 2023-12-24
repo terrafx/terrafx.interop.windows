@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioInputSelector.GetSelection">
-    <summary>
-      <para>The GetSelection method gets the local ID of the part that is connected to the selector input that is currently selected.</para>
-    </summary>
-    <param name="pnIdSelected">
-      <para>Pointer to a <b>UINT</b> variable into which the method writes the local ID of the part that directly links to the currently selected selector input.</para>
-    </param>
+    <summary>The GetSelection method gets the local ID of the part that is connected to the selector input that is currently selected.</summary>
+    <param name="pnIdSelected">Pointer to a <b>UINT</b> variable into which the method writes the local ID of the part that directly links to the currently selected selector input.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -16,35 +12,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>pnIdSelected</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pnIdSelected</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A local ID is a number that uniquely identifies a part among all parts in a device topology. To obtain a pointer to the <see cref="IPart" /> interface of a part from its local ID, call the <see cref="IDeviceTopology.GetPartById" /> method.</para>
-    </remarks>
-    <seealso cref="IAudioInputSelector Interface" />
-    <seealso cref="IDeviceTopology.GetPartById" />
-    <seealso cref="IPart Interface" />
   </member>
   <member name="IAudioInputSelector.SetSelection">
-    <summary>
-      <para>The <b>SetSelection</b> method selects one of the inputs of the input selector.</para>
-    </summary>
-    <param name="nIdSelect">
-      <para>The new selector input. The caller should set this parameter to the local ID of a part that has a direct link to one of the selector inputs.</para>
-    </param>
-    <param name="pguidEventContext">
-      <para>Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetSelection</b> call changes the state of the input-selector control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
-    </param>
+    <summary>The <b>SetSelection</b> method selects one of the inputs of the input selector.</summary>
+    <param name="nIdSelect">The new selector input. The caller should set this parameter to the local ID of a part that has a direct link to one of the selector inputs.</param>
+    <param name="pguidEventContext">Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetSelection</b> call changes the state of the input-selector control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -52,34 +38,32 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>nIdSelect</i> is not the local ID of a part at a selector input.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>nIdSelect</i> is not the local ID of a part at a selector input.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A local ID is a number that uniquely identifies a part among all parts in a device topology. To obtain the local ID of a part, call the <see cref="IPart.GetLocalId" /> method on the part object.</para>
-      <para>For a code example that calls the <b>SetSelection</b> method, see the implementation of the SelectCaptureDevice function in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
-    </remarks>
-    <seealso cref="IAudioInputSelector Interface" />
-    <seealso cref="IPart.GetLocalId" />
   </member>
   <member name="IAudioInputSelector">
     <summary>
@@ -88,8 +72,5 @@
       <para>Most Windows audio adapter drivers support the Windows Driver Model (WDM) and use kernel-streaming (KS) properties to represent the hardware control parameters in subunits (referred to as KS nodes). The <b>IAudioInputSelector</b> interface provides convenient access to the KSPROPERTY_AUDIO_MUX_SOURCE property of a subunit that has a subtype GUID value of KSNODETYPE_MUX. To obtain the subtype GUID of a subunit, call the <see cref="IPart.GetSubType" /> method. For more information about KS properties and KS node types, see the Windows DDK documentation.</para>
       <para>For a code example that uses the <b>IAudioInputSelector</b> interface, see the implementation of the SelectCaptureDevice function in <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IPart.Activate" />
   </member>
 </doc>

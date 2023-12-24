@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IStorageItemHandleAccess.Create">
+    <summary>Creates a handle to a file.</summary>
+    <param name="accessOptions">The level of access that a handle has on the file.</param>
+    <param name="sharingOptions">The requested sharing mode of the handle.</param>
+    <param name="options">The flags of the file handle.</param>
+    <param name="oplockBreakingHandler">Not currently implemented.</param>
+    <param name="interopHandle">The handle to the file.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IStorageItemHandleAccess">
+    <summary>Provides access to the operating system handle of a storage file.</summary>
+  </member>
+</doc>

@@ -20,5 +20,5 @@ public unsafe partial struct STGOPTIONS
 
     /// <include file='STGOPTIONS.xml' path='doc/member[@name="STGOPTIONS.pwcsTemplateFile"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* pwcsTemplateFile;
+    public char* pwcsTemplateFile;
 }

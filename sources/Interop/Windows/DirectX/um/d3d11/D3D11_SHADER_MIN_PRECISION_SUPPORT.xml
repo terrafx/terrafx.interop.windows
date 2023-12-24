@@ -4,21 +4,13 @@
 <doc>
   <member name="D3D11_SHADER_MIN_PRECISION_SUPPORT">
     <summary>
-      <para>
-        <b>Note</b>  This enumeration is supported by the Direct3D 11.1 runtime, which is available on Windows 8 and later operating systems. Values that specify minimum precision levels at shader stages.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-enums">Core Enumerations</seealso>
-    <seealso cref="D3D11_FEATURE" />
-    <seealso cref="D3D11_FEATURE_DATA_SHADER_MIN_PRECISION_SUPPORT" />
+      <div>
+        <b>Note</b>  This enumeration is supported by the Direct3D 11.1 runtime, which is available on Windows 8 and later operating systems.</div>Values that specify minimum precision levels at shader stages.</summary>
   </member>
   <member name="D3D11_SHADER_MIN_PRECISION_SUPPORT.D3D11_SHADER_MIN_PRECISION_10_BIT">
-    <summary>
-      <para>Minimum precision level is 10-bit.</para>
-    </summary>
+    <summary>Minimum precision level is 10-bit.</summary>
   </member>
   <member name="D3D11_SHADER_MIN_PRECISION_SUPPORT.D3D11_SHADER_MIN_PRECISION_16_BIT">
-    <summary>
-      <para>Minimum precision level is 16-bit.</para>
-    </summary>
+    <summary>Minimum precision level is 16-bit.</summary>
   </member>
 </doc>

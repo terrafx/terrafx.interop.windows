@@ -25,7 +25,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, Guid*, void**, int>)(lpVtbl[0]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, uint>)(lpVtbl[1]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, uint>)(lpVtbl[1]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, uint>)(lpVtbl[2]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, uint>)(lpVtbl[2]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleWindow.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, HWND*, int>)(lpVtbl[3]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, HWND*, int>)(lpVtbl[3]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fEnterMode);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, BOOL, int>)(lpVtbl[4]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.CanInPlaceActivate" />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(5)]
     public HRESULT CanInPlaceActivate()
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, int>)(lpVtbl[5]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, int>)(lpVtbl[5]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.OnInPlaceActivate" />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(6)]
     public HRESULT OnInPlaceActivate()
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, int>)(lpVtbl[6]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, int>)(lpVtbl[6]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.OnUIActivate" />
@@ -83,7 +83,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(7)]
     public HRESULT OnUIActivate()
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, int>)(lpVtbl[7]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, int>)(lpVtbl[7]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.GetWindowContext" />
@@ -91,7 +91,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(8)]
     public HRESULT GetWindowContext(IOleInPlaceFrame** ppFrame, IOleInPlaceUIWindow** ppDoc, [NativeTypeName("LPRECT")] RECT* lprcPosRect, [NativeTypeName("LPRECT")] RECT* lprcClipRect, [NativeTypeName("LPOLEINPLACEFRAMEINFO")] OLEINPLACEFRAMEINFO* lpFrameInfo)
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, IOleInPlaceFrame**, IOleInPlaceUIWindow**, RECT*, RECT*, OLEINPLACEFRAMEINFO*, int>)(lpVtbl[8]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), ppFrame, ppDoc, lprcPosRect, lprcClipRect, lpFrameInfo);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, IOleInPlaceFrame**, IOleInPlaceUIWindow**, RECT*, RECT*, OLEINPLACEFRAMEINFO*, int>)(lpVtbl[8]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), ppFrame, ppDoc, lprcPosRect, lprcClipRect, lpFrameInfo);
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.Scroll" />
@@ -99,7 +99,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(9)]
     public HRESULT Scroll(SIZE scrollExtant)
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, SIZE, int>)(lpVtbl[9]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), scrollExtant);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, SIZE, int>)(lpVtbl[9]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), scrollExtant);
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.OnUIDeactivate" />
@@ -107,7 +107,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(10)]
     public HRESULT OnUIDeactivate(BOOL fUndoable)
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, BOOL, int>)(lpVtbl[10]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fUndoable);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, BOOL, int>)(lpVtbl[10]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fUndoable);
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.OnInPlaceDeactivate" />
@@ -115,7 +115,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(11)]
     public HRESULT OnInPlaceDeactivate()
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, int>)(lpVtbl[11]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, int>)(lpVtbl[11]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.DiscardUndoState" />
@@ -123,7 +123,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(12)]
     public HRESULT DiscardUndoState()
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, int>)(lpVtbl[12]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, int>)(lpVtbl[12]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.DeactivateAndUndo" />
@@ -131,7 +131,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(13)]
     public HRESULT DeactivateAndUndo()
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, int>)(lpVtbl[13]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, int>)(lpVtbl[13]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleInPlaceSite.OnPosRectChange" />
@@ -139,7 +139,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(14)]
     public HRESULT OnPosRectChange([NativeTypeName("LPCRECT")] RECT* lprcPosRect)
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, RECT*, int>)(lpVtbl[14]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), lprcPosRect);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, RECT*, int>)(lpVtbl[14]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), lprcPosRect);
     }
 
     /// <include file='IOleInPlaceSiteEx.xml' path='doc/member[@name="IOleInPlaceSiteEx.OnInPlaceActivateEx"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(15)]
     public HRESULT OnInPlaceActivateEx(BOOL* pfNoRedraw, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, BOOL*, uint, int>)(lpVtbl[15]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), pfNoRedraw, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, BOOL*, uint, int>)(lpVtbl[15]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), pfNoRedraw, dwFlags);
     }
 
     /// <include file='IOleInPlaceSiteEx.xml' path='doc/member[@name="IOleInPlaceSiteEx.OnInPlaceDeactivateEx"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(16)]
     public HRESULT OnInPlaceDeactivateEx(BOOL fNoRedraw)
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, BOOL, int>)(lpVtbl[16]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fNoRedraw);
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, BOOL, int>)(lpVtbl[16]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this), fNoRedraw);
     }
 
     /// <include file='IOleInPlaceSiteEx.xml' path='doc/member[@name="IOleInPlaceSiteEx.RequestUIActivate"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
     [VtblIndex(17)]
     public HRESULT RequestUIActivate()
     {
-        return ((delegate* unmanaged<IOleInPlaceSiteEx*, int>)(lpVtbl[17]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleInPlaceSiteEx*, int>)(lpVtbl[17]))((IOleInPlaceSiteEx*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IOleInPlaceSite.Interface
@@ -182,57 +182,57 @@ public unsafe partial struct IOleInPlaceSiteEx : IOleInPlaceSiteEx.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CanInPlaceActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CanInPlaceActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnInPlaceActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnInPlaceActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnUIActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnUIActivate;
 
         [NativeTypeName("HRESULT (IOleInPlaceFrame **, IOleInPlaceUIWindow **, LPRECT, LPRECT, LPOLEINPLACEFRAMEINFO) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleInPlaceFrame**, IOleInPlaceUIWindow**, RECT*, RECT*, OLEINPLACEFRAMEINFO*, int> GetWindowContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleInPlaceFrame**, IOleInPlaceUIWindow**, RECT*, RECT*, OLEINPLACEFRAMEINFO*, int> GetWindowContext;
 
         [NativeTypeName("HRESULT (SIZE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE, int> Scroll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE, int> Scroll;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> OnUIDeactivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> OnUIDeactivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnInPlaceDeactivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnInPlaceDeactivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DiscardUndoState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DiscardUndoState;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DeactivateAndUndo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DeactivateAndUndo;
 
         [NativeTypeName("HRESULT (LPCRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> OnPosRectChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> OnPosRectChange;
 
         [NativeTypeName("HRESULT (BOOL *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, uint, int> OnInPlaceActivateEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, uint, int> OnInPlaceActivateEx;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> OnInPlaceDeactivateEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> OnInPlaceDeactivateEx;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RequestUIActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RequestUIActivate;
     }
 }

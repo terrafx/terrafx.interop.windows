@@ -4,34 +4,23 @@
 <doc>
   <member name="DVD_TextCharSet">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Defines which character set a specified string is encoded with.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDvdInfo2.GetDVDTextLanguageInfo" />
   </member>
   <member name="DVD_TextCharSet.DVD_CharSet_Unicode">
-    <summary>
-      <para>Unicode character set.</para>
-    </summary>
+    <summary>Unicode character set.</summary>
   </member>
   <member name="DVD_TextCharSet.DVD_CharSet_ISO646">
-    <summary>
-      <para>ISO 646 character set.</para>
-    </summary>
+    <summary>ISO 646 character set.</summary>
   </member>
   <member name="DVD_TextCharSet.DVD_CharSet_JIS_Roman_Kanji">
-    <summary>
-      <para>Japanese Industrial Standards (JIS) Roman Kanji character set.</para>
-    </summary>
+    <summary>Japanese Industrial Standards (JIS) Roman Kanji character set.</summary>
   </member>
   <member name="DVD_TextCharSet.DVD_CharSet_ISO8859_1">
-    <summary>
-      <para>ISO 8859-1 character set.</para>
-    </summary>
+    <summary>ISO 8859-1 character set.</summary>
   </member>
   <member name="DVD_TextCharSet.DVD_CharSet_ShiftJIS_Kanji_Roman_Katakana">
-    <summary>
-      <para>JIS Kanji-Roman-Katakana character set.</para>
-    </summary>
+    <summary>JIS Kanji-Roman-Katakana character set.</summary>
   </member>
 </doc>

@@ -3,22 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CHANGER_ELEMENT_STATUS_EX">
-    <summary>
-      <para>Represents the status of the specified element.</para>
-    </summary>
-    <seealso cref="CHANGER_ELEMENT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_get_element_status">IOCTL_CHANGER_GET_ELEMENT_STATUS</seealso>
+    <summary>Represents the status of the specified element.</summary>
   </member>
   <member name="CHANGER_ELEMENT_STATUS_EX.Element">
-    <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that represents the element to which this structure refers.</para>
-    </summary>
+    <summary>A<see cref="CHANGER_ELEMENT" /> structure that represents the element to which this structure refers.</summary>
   </member>
   <member name="CHANGER_ELEMENT_STATUS_EX.SrcElementAddress">
     <summary>
-      <para>A
-<see cref="CHANGER_ELEMENT" /> structure that represents the element from which the media currently in this element was most recently moved.</para>
+      <para>A<see cref="CHANGER_ELEMENT" /> structure that represents the element from which the media currently in this element was most recently moved.</para>
       <para>This member is valid only if the <b>Flags</b> member includes ELEMENT_STATUS_SVALID.</para>
     </summary>
   </member>
@@ -30,249 +22,216 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_ACCESS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The changer's transport element can access the piece of media in this element. The media is not accessible in the following circumstances: (1) If the element type is ChangerSlot, the slot is not present in the changer (for example, the magazine containing the slot has been physically removed). (2) If the element type is ChangerDrive, the drive is broken or has been removed. (3) If the element type is ChangerIEPort, the changer's insert/eject port is extended.</para>
-          </description>
-        </item>
-        <item>
+          <description>The changer's transport element can access the piece of media in this element. The media is not accessible in the following circumstances: (1) If the element type is ChangerSlot, the slot is not present in the changer (for example, the magazine containing the slot has been physically removed). (2) If the element type is ChangerDrive, the drive is broken or has been removed. (3) If the element type is ChangerIEPort, the changer's insert/eject port is extended.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_AVOLTAG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Alternate volume information in the <b>AlternateVolumeID</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+          <description>Alternate volume information in the <b>AlternateVolumeID</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_EXCEPT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The element is in an abnormal state. Check the <b>ExceptionCode</b> member for more information.</para>
-          </description>
-        </item>
-        <item>
+          <description>The element is in an abnormal state. Check the <b>ExceptionCode</b> member for more information.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_EXENAB</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The element supports export of media through the changer's insert/eject port.</para>
-          </description>
-        </item>
-        <item>
+          <description>The element supports export of media through the changer's insert/eject port.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_FULL</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The element contains a piece of media.</para>
-            <para>Note that this value is valid only if the element type is ChangerDrive, ChangerSlot, or ChangerTransport. If the element type is ChangerIEPort, this value is valid only if the <b>Features0</b> member of
-<see cref="GET_CHANGER_PARAMETERS" /> includes CHANGER_REPORT_IEPORT_STATE.</para>
-          </description>
-        </item>
-        <item>
+          <description>The element contains a piece of media.<para>Note that this value is valid only if the element type is ChangerDrive, ChangerSlot, or ChangerTransport. If the element type is ChangerIEPort, this value is valid only if the <b>Features0</b> member of<see cref="GET_CHANGER_PARAMETERS" /> includes CHANGER_REPORT_IEPORT_STATE.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_ID_VALID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The SCSI target ID in the <b>TargetID</b> member is valid.</para>
-            <para>This value is valid only if the element type is ChangerDrive.</para>
-          </description>
-        </item>
-        <item>
+          <description>The SCSI target ID in the <b>TargetID</b> member is valid. <para>This value is valid only if the element type is ChangerDrive.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_IMPEXP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The media in this element was placed there by an operator.</para>
-            <para>This value is valid only if the element type is ChangerIEPort.</para>
-          </description>
-        </item>
-        <item>
+          <description>The media in this element was placed there by an operator. <para>This value is valid only if the element type is ChangerIEPort.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_INENAB</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The element supports import of media through the changer's insert/eject port.</para>
-          </description>
-        </item>
-        <item>
+          <description>The element supports import of media through the changer's insert/eject port.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_INVERT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00400000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00400000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The media in the element was flipped.</para>
-            <para>This value is valid only if ELEMENT_STATUS_SVALID is also included.</para>
-          </description>
-        </item>
-        <item>
+          <description>The media in the element was flipped. <para>This value is valid only if ELEMENT_STATUS_SVALID is also included.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_LUN_VALID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The logical unit number in the <b>Lun</b> member is valid. This value is valid only if the element type is ChangerDrive.</para>
-          </description>
-        </item>
-        <item>
+          <description>The logical unit number in the <b>Lun</b> member is valid. This value is valid only if the element type is ChangerDrive.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_NOT_BUS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00008000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The drive at the address indicated by <b>Lun</b> and <b>TargetID</b> is on a different SCSI bus than the changer itself.</para>
-          </description>
-        </item>
-        <item>
+          <description>The drive at the address indicated by <b>Lun</b> and <b>TargetID</b> is on a different SCSI bus than the changer itself.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_PRODUCT_DATA</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The serial number in the <b>SerialNumber</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+          <description>The serial number in the <b>SerialNumber</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_PVOLTAG</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Primary volume information in the <b>PrimaryVolumeID</b> member is valid.</para>
-          </description>
-        </item>
-        <item>
+          <description>Primary volume information in the <b>PrimaryVolumeID</b> member is valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ELEMENT_STATUS_SVALID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00800000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00800000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The <b>SourceElement</b> member and ELEMENT_STATUS_INVERT are both valid.</para>
-          </description>
-        </item>
+          <description>The <b>SourceElement</b> member and ELEMENT_STATUS_INVERT are both valid.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -284,147 +243,126 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_DRIVE_NOT_INSTALLED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The drive at this element address is absent.</para>
-          </description>
-        </item>
-        <item>
+          <description>The drive at this element address is absent.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_INIT_STATUS_NEEDED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000011</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000011</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An Initialize Element Status command is needed.</para>
-          </description>
-        </item>
-        <item>
+          <description>An Initialize Element Status command is needed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_LABEL_QUESTIONABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The label might be invalid due to a unit attention condition.</para>
-          </description>
-        </item>
-        <item>
+          <description>The label might be invalid due to a unit attention condition.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_LABEL_UNREADABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The changer's barcode reader could not read the bar code label on the piece of media in this element, because the media is missing, damaged, improperly positioned, or upside down.</para>
-          </description>
-        </item>
-        <item>
+          <description>The changer's barcode reader could not read the bar code label on the piece of media in this element, because the media is missing, damaged, improperly positioned, or upside down.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_SLOT_NOT_PRESENT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The slot at this element address is currently not installed in the changer. Each slot in a removable magazine is reported not present to indicate that the magazine has been removed.</para>
-          </description>
-        </item>
-        <item>
+          <description>The slot at this element address is currently not installed in the changer. Each slot in a removable magazine is reported not present to indicate that the magazine has been removed.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_TRAY_MALFUNCTION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The drive at this element address has a tray that must be extended to load or remove media, and the tray is not extending as required.</para>
-          </description>
-        </item>
-        <item>
+          <description>The drive at this element address has a tray that must be extended to load or remove media, and the tray is not extending as required.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_UNHANDLED_ERROR</b>
-                </description>
-              </item>
-              <item>
-                <description>0xFFFFFFFF</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0xFFFFFFFF</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Unknown error condition.</para>
-          </description>
-        </item>
+          <description>Unknown error condition.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CHANGER_ELEMENT_STATUS_EX.TargetId">
-    <summary>
-      <para>For a SCSI changer, specifies the SCSI target ID of the drive at this element address. This member is valid only if the <b>ElementType</b> member of the <b>Element</b> structure is ChangerDrive and the <b>Flags</b> member includes ELEMENT_STATUS_ID_VALID.</para>
-    </summary>
+    <summary>For a SCSI changer, specifies the SCSI target ID of the drive at this element address. This member is valid only if the <b>ElementType</b> member of the <b>Element</b> structure is ChangerDrive and the <b>Flags</b> member includes ELEMENT_STATUS_ID_VALID.</summary>
   </member>
   <member name="CHANGER_ELEMENT_STATUS_EX.Lun">
-    <summary>
-      <para>The SCSI logical unit number of the drive at this element address. This member is valid only if the <b>ElementType</b> member of the <b>Element</b> structure is ChangerDrive and the <b>Flags</b> member includes ELEMENT_STATUS_LUN_VALID.</para>
-    </summary>
+    <summary>The SCSI logical unit number of the drive at this element address. This member is valid only if the <b>ElementType</b> member of the <b>Element</b> structure is ChangerDrive and the <b>Flags</b> member includes ELEMENT_STATUS_LUN_VALID.</summary>
   </member>
   <member name="CHANGER_ELEMENT_STATUS_EX.Reserved">
-    <summary>
-      <para>Reserved for future use. The value of this member must be zero.</para>
-    </summary>
+    <summary>Reserved for future use. The value of this member must be zero.</summary>
   </member>
   <member name="CHANGER_ELEMENT_STATUS_EX.PrimaryVolumeID">
     <summary>
-      <para>The primary volume identifier for the media. If the changer supports a barcode reader and the reader is installed (as indicated by CHANGER_BAR_CODE_SCANNER_INSTALLED in the <b>Features0</b> member of
-<see cref="GET_CHANGER_PARAMETERS" />), <b>PrimaryVolumeID</b> is the bar code of the media. If the changer does not support a barcode reader, <b>PrimaryVolumeID</b> is the value previously assigned to the media.</para>
+      <para>The primary volume identifier for the media. If the changer supports a barcode reader and the reader is installed (as indicated by CHANGER_BAR_CODE_SCANNER_INSTALLED in the <b>Features0</b> member of<see cref="GET_CHANGER_PARAMETERS" />), <b>PrimaryVolumeID</b> is the bar code of the media. If the changer does not support a barcode reader, <b>PrimaryVolumeID</b> is the value previously assigned to the media.</para>
       <para>This member is valid only if the <b>Flags</b> member includes ELEMENT_STATUS_PVOLTAG.</para>
       <para>If the volume identifier is missing or unreadable, this member is cleared.</para>
     </summary>
@@ -436,18 +374,12 @@
     </summary>
   </member>
   <member name="CHANGER_ELEMENT_STATUS_EX.VendorIdentification">
-    <summary>
-      <para>The vendor identifier.</para>
-    </summary>
+    <summary>The vendor identifier.</summary>
   </member>
   <member name="CHANGER_ELEMENT_STATUS_EX.ProductIdentification">
-    <summary>
-      <para>The product identifier.</para>
-    </summary>
+    <summary>The product identifier.</summary>
   </member>
   <member name="CHANGER_ELEMENT_STATUS_EX.SerialNumber">
-    <summary>
-      <para>The serial number for the drive.</para>
-    </summary>
+    <summary>The serial number for the drive.</summary>
   </member>
 </doc>

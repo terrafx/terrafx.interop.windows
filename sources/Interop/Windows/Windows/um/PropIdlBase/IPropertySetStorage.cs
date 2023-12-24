@@ -25,7 +25,7 @@ public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPropertySetStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPropertySetStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPropertySetStorage*, uint>)(lpVtbl[1]))((IPropertySetStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertySetStorage*, uint>)(lpVtbl[1]))((IPropertySetStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPropertySetStorage*, uint>)(lpVtbl[2]))((IPropertySetStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPropertySetStorage*, uint>)(lpVtbl[2]))((IPropertySetStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPropertySetStorage.xml' path='doc/member[@name="IPropertySetStorage.Create"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
     [VtblIndex(3)]
     public HRESULT Create([NativeTypeName("const IID &")] Guid* rfmtid, [NativeTypeName("const CLSID *")] Guid* pclsid, [NativeTypeName("DWORD")] uint grfFlags, [NativeTypeName("DWORD")] uint grfMode, IPropertyStorage** ppprstg)
     {
-        return ((delegate* unmanaged<IPropertySetStorage*, Guid*, Guid*, uint, uint, IPropertyStorage**, int>)(lpVtbl[3]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid, pclsid, grfFlags, grfMode, ppprstg);
+        return ((delegate* unmanaged[MemberFunction]<IPropertySetStorage*, Guid*, Guid*, uint, uint, IPropertyStorage**, int>)(lpVtbl[3]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid, pclsid, grfFlags, grfMode, ppprstg);
     }
 
     /// <include file='IPropertySetStorage.xml' path='doc/member[@name="IPropertySetStorage.Open"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
     [VtblIndex(4)]
     public HRESULT Open([NativeTypeName("const IID &")] Guid* rfmtid, [NativeTypeName("DWORD")] uint grfMode, IPropertyStorage** ppprstg)
     {
-        return ((delegate* unmanaged<IPropertySetStorage*, Guid*, uint, IPropertyStorage**, int>)(lpVtbl[4]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid, grfMode, ppprstg);
+        return ((delegate* unmanaged[MemberFunction]<IPropertySetStorage*, Guid*, uint, IPropertyStorage**, int>)(lpVtbl[4]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid, grfMode, ppprstg);
     }
 
     /// <include file='IPropertySetStorage.xml' path='doc/member[@name="IPropertySetStorage.Delete"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
     [VtblIndex(5)]
     public HRESULT Delete([NativeTypeName("const IID &")] Guid* rfmtid)
     {
-        return ((delegate* unmanaged<IPropertySetStorage*, Guid*, int>)(lpVtbl[5]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid);
+        return ((delegate* unmanaged[MemberFunction]<IPropertySetStorage*, Guid*, int>)(lpVtbl[5]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), rfmtid);
     }
 
     /// <include file='IPropertySetStorage.xml' path='doc/member[@name="IPropertySetStorage.Enum"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
     [VtblIndex(6)]
     public HRESULT Enum(IEnumSTATPROPSETSTG** ppenum)
     {
-        return ((delegate* unmanaged<IPropertySetStorage*, IEnumSTATPROPSETSTG**, int>)(lpVtbl[6]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IPropertySetStorage*, IEnumSTATPROPSETSTG**, int>)(lpVtbl[6]))((IPropertySetStorage*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IPropertySetStorage : IPropertySetStorage.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, const CLSID *, DWORD, DWORD, IPropertyStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint, uint, IPropertyStorage**, int> Create;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, uint, uint, IPropertyStorage**, int> Create;
 
         [NativeTypeName("HRESULT (const IID &, DWORD, IPropertyStorage **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, IPropertyStorage**, int> Open;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, IPropertyStorage**, int> Open;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> Delete;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> Delete;
 
         [NativeTypeName("HRESULT (IEnumSTATPROPSETSTG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumSTATPROPSETSTG**, int> Enum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumSTATPROPSETSTG**, int> Enum;
     }
 }

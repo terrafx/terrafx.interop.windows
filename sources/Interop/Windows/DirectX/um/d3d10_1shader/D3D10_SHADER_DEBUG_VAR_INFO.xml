@@ -3,45 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_SHADER_DEBUG_VAR_INFO">
-    <summary>
-      <para>Represents information about a shader source variable.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-structures">Shader Structures</seealso>
+    <summary>Represents information about a shader source variable.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_VAR_INFO.TokenId">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Index into token list for declaring identifier.</para>
-    </summary>
+    <summary>Index into token list for declaring identifier.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_VAR_INFO.Type">
-    <summary>
-      <para>Type: <b><see cref="D3D10_SHADER_VARIABLE_TYPE" /></b></para>
-      <para>The variable type. <b>Type</b> is only required for arrays.</para>
-    </summary>
+    <summary>The variable type. <b>Type</b> is only required for arrays.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_VAR_INFO.Register">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Register the variable is stored in.</para>
-    </summary>
+    <summary>Register the variable is stored in.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_VAR_INFO.Component">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The original variable that declared this variable.</para>
-    </summary>
+    <summary>The original variable that declared this variable.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_VAR_INFO.ScopeVar">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Offset into the scope variable array defined in <see cref="D3D10_SHADER_DEBUG_INFO" />.</para>
-    </summary>
+    <summary>Offset into the scope variable array defined in <see cref="D3D10_SHADER_DEBUG_INFO" />.</summary>
   </member>
   <member name="D3D10_SHADER_DEBUG_VAR_INFO.ScopeVarOffset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>This variable's offset in its <b>ScopeVar</b>.</para>
-    </summary>
+    <summary>This variable's offset in its <b>ScopeVar</b>.</summary>
   </member>
 </doc>

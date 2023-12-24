@@ -6,11 +6,11 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_CROSSFADE_PROP.xml' path='doc/member[@name="D2D1_CROSSFADE_PROP"]/*' />
-public enum D2D1_CROSSFADE_PROP : uint
+public enum D2D1_CROSSFADE_PROP
 {
     /// <include file='D2D1_CROSSFADE_PROP.xml' path='doc/member[@name="D2D1_CROSSFADE_PROP.D2D1_CROSSFADE_PROP_WEIGHT"]/*' />
     D2D1_CROSSFADE_PROP_WEIGHT = 0,
 
     /// <include file='D2D1_CROSSFADE_PROP.xml' path='doc/member[@name="D2D1_CROSSFADE_PROP.D2D1_CROSSFADE_PROP_FORCE_DWORD"]/*' />
-    D2D1_CROSSFADE_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_CROSSFADE_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

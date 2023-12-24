@@ -25,7 +25,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, void**, int>)(lpVtbl[0]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultFolderMenuInitialize*, Guid*, void**, int>)(lpVtbl[0]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, uint>)(lpVtbl[1]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDefaultFolderMenuInitialize*, uint>)(lpVtbl[1]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, uint>)(lpVtbl[2]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDefaultFolderMenuInitialize*, uint>)(lpVtbl[2]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
     [VtblIndex(3)]
     public HRESULT Initialize(HWND hwnd, IContextMenuCB* pcmcb, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidlFolder, IShellFolder* psf, uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, IUnknown* punkAssociation, uint cKeys, [NativeTypeName("const HKEY *")] HKEY* aKeys)
     {
-        return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, HWND, IContextMenuCB*, ITEMIDLIST*, IShellFolder*, uint, ITEMIDLIST**, IUnknown*, uint, HKEY*, int>)(lpVtbl[3]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), hwnd, pcmcb, pidlFolder, psf, cidl, apidl, punkAssociation, cKeys, aKeys);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultFolderMenuInitialize*, HWND, IContextMenuCB*, ITEMIDLIST*, IShellFolder*, uint, ITEMIDLIST**, IUnknown*, uint, HKEY*, int>)(lpVtbl[3]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), hwnd, pcmcb, pidlFolder, psf, cidl, apidl, punkAssociation, cKeys, aKeys);
     }
 
     /// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize.SetMenuRestrictions"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
     [VtblIndex(4)]
     public HRESULT SetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrValues)
     {
-        return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, int>)(lpVtbl[4]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), dfmrValues);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, int>)(lpVtbl[4]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), dfmrValues);
     }
 
     /// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize.GetMenuRestrictions"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
     [VtblIndex(5)]
     public HRESULT GetMenuRestrictions(DEFAULT_FOLDER_MENU_RESTRICTIONS dfmrMask, DEFAULT_FOLDER_MENU_RESTRICTIONS* pdfmrValues)
     {
-        return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS*, int>)(lpVtbl[5]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), dfmrMask, pdfmrValues);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultFolderMenuInitialize*, DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS*, int>)(lpVtbl[5]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), dfmrMask, pdfmrValues);
     }
 
     /// <include file='IDefaultFolderMenuInitialize.xml' path='doc/member[@name="IDefaultFolderMenuInitialize.SetHandlerClsid"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
     [VtblIndex(6)]
     public HRESULT SetHandlerClsid([NativeTypeName("const IID &")] Guid* rclsid)
     {
-        return ((delegate* unmanaged<IDefaultFolderMenuInitialize*, Guid*, int>)(lpVtbl[6]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), rclsid);
+        return ((delegate* unmanaged[MemberFunction]<IDefaultFolderMenuInitialize*, Guid*, int>)(lpVtbl[6]))((IDefaultFolderMenuInitialize*)Unsafe.AsPointer(ref this), rclsid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IDefaultFolderMenuInitialize : IDefaultFolderMenuIn
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, IContextMenuCB *, LPCITEMIDLIST, IShellFolder *, UINT, LPCITEMIDLIST *, IUnknown *, UINT, const HKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, IContextMenuCB*, ITEMIDLIST*, IShellFolder*, uint, ITEMIDLIST**, IUnknown*, uint, HKEY*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, IContextMenuCB*, ITEMIDLIST*, IShellFolder*, uint, ITEMIDLIST**, IUnknown*, uint, HKEY*, int> Initialize;
 
         [NativeTypeName("HRESULT (DEFAULT_FOLDER_MENU_RESTRICTIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEFAULT_FOLDER_MENU_RESTRICTIONS, int> SetMenuRestrictions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEFAULT_FOLDER_MENU_RESTRICTIONS, int> SetMenuRestrictions;
 
         [NativeTypeName("HRESULT (DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS*, int> GetMenuRestrictions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DEFAULT_FOLDER_MENU_RESTRICTIONS, DEFAULT_FOLDER_MENU_RESTRICTIONS*, int> GetMenuRestrictions;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetHandlerClsid;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetHandlerClsid;
     }
 }

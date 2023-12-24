@@ -19,32 +19,4 @@ public static unsafe partial class ICatalogFileInfoTests
     {
         Assert.That(typeof(ICatalogFileInfo).GUID, Is.EqualTo(IID_ICatalogFileInfo));
     }
-
-    /// <summary>Validates that the <see cref="ICatalogFileInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICatalogFileInfo>(), Is.EqualTo(sizeof(ICatalogFileInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="ICatalogFileInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICatalogFileInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICatalogFileInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICatalogFileInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICatalogFileInfo), Is.EqualTo(4));
-        }
-    }
 }

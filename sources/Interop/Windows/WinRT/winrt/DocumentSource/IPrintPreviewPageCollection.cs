@@ -26,7 +26,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPrintPreviewPageCollection*, Guid*, void**, int>)(lpVtbl[0]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPrintPreviewPageCollection*, Guid*, void**, int>)(lpVtbl[0]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPrintPreviewPageCollection*, uint>)(lpVtbl[1]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintPreviewPageCollection*, uint>)(lpVtbl[1]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPrintPreviewPageCollection*, uint>)(lpVtbl[2]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPrintPreviewPageCollection*, uint>)(lpVtbl[2]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPrintPreviewPageCollection.xml' path='doc/member[@name="IPrintPreviewPageCollection.Paginate"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
     [VtblIndex(3)]
     public HRESULT Paginate([NativeTypeName("UINT32")] uint currentJobPage, IInspectable* printTaskOptions)
     {
-        return ((delegate* unmanaged<IPrintPreviewPageCollection*, uint, IInspectable*, int>)(lpVtbl[3]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), currentJobPage, printTaskOptions);
+        return ((delegate* unmanaged[MemberFunction]<IPrintPreviewPageCollection*, uint, IInspectable*, int>)(lpVtbl[3]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), currentJobPage, printTaskOptions);
     }
 
     /// <include file='IPrintPreviewPageCollection.xml' path='doc/member[@name="IPrintPreviewPageCollection.MakePage"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
     [VtblIndex(4)]
     public HRESULT MakePage([NativeTypeName("UINT32")] uint desiredJobPage, float width, float height)
     {
-        return ((delegate* unmanaged<IPrintPreviewPageCollection*, uint, float, float, int>)(lpVtbl[4]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), desiredJobPage, width, height);
+        return ((delegate* unmanaged[MemberFunction]<IPrintPreviewPageCollection*, uint, float, float, int>)(lpVtbl[4]))((IPrintPreviewPageCollection*)Unsafe.AsPointer(ref this), desiredJobPage, width, height);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct IPrintPreviewPageCollection : IPrintPreviewPageColl
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, IInspectable *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IInspectable*, int> Paginate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IInspectable*, int> Paginate;
 
         [NativeTypeName("HRESULT (UINT32, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, float, int> MakePage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, float, int> MakePage;
     }
 }

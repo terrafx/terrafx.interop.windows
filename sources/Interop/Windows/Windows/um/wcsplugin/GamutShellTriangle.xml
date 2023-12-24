@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GamutShellTriangle">
+    <summary>Contains three vertex indices for accessing a vertex buffer.</summary>
+  </member>
+  <member name="GamutShellTriangle.aVertexIndex">
+    <summary>An array of three vertex indices that are used for accessing a vertex buffer.</summary>
+  </member>
+</doc>

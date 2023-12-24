@@ -25,7 +25,7 @@ public unsafe partial struct IDVRGB219 : IDVRGB219.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDVRGB219*, Guid*, void**, int>)(lpVtbl[0]))((IDVRGB219*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDVRGB219*, Guid*, void**, int>)(lpVtbl[0]))((IDVRGB219*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDVRGB219 : IDVRGB219.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDVRGB219*, uint>)(lpVtbl[1]))((IDVRGB219*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDVRGB219*, uint>)(lpVtbl[1]))((IDVRGB219*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDVRGB219 : IDVRGB219.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDVRGB219*, uint>)(lpVtbl[2]))((IDVRGB219*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDVRGB219*, uint>)(lpVtbl[2]))((IDVRGB219*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDVRGB219.xml' path='doc/member[@name="IDVRGB219.SetRGB219"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDVRGB219 : IDVRGB219.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetRGB219(BOOL bState)
     {
-        return ((delegate* unmanaged<IDVRGB219*, BOOL, int>)(lpVtbl[3]))((IDVRGB219*)Unsafe.AsPointer(ref this), bState);
+        return ((delegate* unmanaged[MemberFunction]<IDVRGB219*, BOOL, int>)(lpVtbl[3]))((IDVRGB219*)Unsafe.AsPointer(ref this), bState);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IDVRGB219 : IDVRGB219.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetRGB219;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetRGB219;
     }
 }

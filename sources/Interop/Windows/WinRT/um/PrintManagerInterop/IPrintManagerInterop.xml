@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPrintManagerInterop.GetForWindow">
+    <summary>Gets the <a href="https://docs.microsoft.com//uwp/api/Windows.Graphics.Printing.PrintManager">PrintManager</a> instance for the specified window.</summary>
+    <param name="appWindow">The window to get the <a href="https://docs.microsoft.com//uwp/api/Windows.Graphics.Printing.PrintManager">PrintManager</a> instance for.</param>
+    <param name="riid">The reference ID of the specified window.</param>
+    <param name="printManager">The <a href="https://docs.microsoft.com//uwp/api/Windows.Graphics.Printing.PrintManager">PrintManager</a> instance for the specified window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPrintManagerInterop.ShowPrintUIForWindowAsync">
+    <summary>Displays the UI for printing content for the specified window.</summary>
+    <param name="appWindow">The window to show the print UI for.</param>
+    <param name="riid">The reference ID of the specified window.</param>
+    <param name="asyncOperation">The asynchronous operation that reports completion.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPrintManagerInterop">
+    <summary>Enables access to <a href="https://docs.microsoft.com//uwp/api/Windows.Graphics.Printing.PrintManager">PrintManager</a> methods in a Windows Store app that manages multiple windows.</summary>
+  </member>
+</doc>

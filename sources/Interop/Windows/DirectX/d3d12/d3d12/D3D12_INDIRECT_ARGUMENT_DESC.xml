@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC">
+    <summary>Describes an indirect argument (an indirect parameter), for use with a command signature.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.Type">
+    <summary>A single <see cref="D3D12_INDIRECT_ARGUMENT_TYPE" /> enumeration constant.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.VertexBuffer"></member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.VertexBuffer.Slot">
+    <summary>Specifies the slot containing the vertex buffer address.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.Constant"></member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.Constant.RootParameterIndex">
+    <summary>Specifies the root index of the constant.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.Constant.DestOffsetIn32BitValues">
+    <summary>The offset, in 32-bit values, to set the first constant of the group. Supports multi-value constants at a given root index. Root constant entries must be sorted from smallest to largest DestOffsetIn32BitValues.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.Constant.Num32BitValuesToSet">
+    <summary>The number of 32-bit constants that are set at the given root index. Supports multi-value constants at a given root index.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.ConstantBufferView"></member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.ConstantBufferView.RootParameterIndex">
+    <summary>Specifies the root index of the CBV.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.ShaderResourceView"></member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.ShaderResourceView.RootParameterIndex">
+    <summary>Specifies the root index of the SRV.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.UnorderedAccessView"></member>
+  <member name="D3D12_INDIRECT_ARGUMENT_DESC.UnorderedAccessView.RootParameterIndex">
+    <summary>Specifies the root index of the UAV.</summary>
+  </member>
+</doc>

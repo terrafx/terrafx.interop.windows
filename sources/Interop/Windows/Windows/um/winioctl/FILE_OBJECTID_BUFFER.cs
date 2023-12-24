@@ -11,14 +11,14 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER"]/*' />
-public unsafe partial struct FILE_OBJECTID_BUFFER
+public partial struct FILE_OBJECTID_BUFFER
 {
     /// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER.ObjectId"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte ObjectId[16];
+    public _ObjectId_e__FixedBuffer ObjectId;
 
     /// <include file='FILE_OBJECTID_BUFFER.xml' path='doc/member[@name="FILE_OBJECTID_BUFFER.Anonymous"]/*' />
-    [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:12234:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L12250_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthVolumeId"]/*' />
@@ -28,7 +28,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthVolumeId[0], 16);
+            return Anonymous.Anonymous.BirthVolumeId;
         }
     }
 
@@ -39,7 +39,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.BirthObjectId[0], 16);
+            return Anonymous.Anonymous.BirthObjectId;
         }
     }
 
@@ -50,7 +50,7 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.Anonymous.DomainId[0], 16);
+            return Anonymous.Anonymous.DomainId;
         }
     }
 
@@ -61,38 +61,73 @@ public unsafe partial struct FILE_OBJECTID_BUFFER
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.ExtendedInfo[0], 48);
+            return Anonymous.ExtendedInfo;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_FILE_OBJECTID_BUFFER::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:12235:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L12251_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ExtendedInfo"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE[48]")]
-        public fixed byte ExtendedInfo[48];
+        public _ExtendedInfo_e__FixedBuffer ExtendedInfo;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
-        public unsafe partial struct _Anonymous_e__Struct
+        public partial struct _Anonymous_e__Struct
         {
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthVolumeId"]/*' />
             [NativeTypeName("BYTE[16]")]
-            public fixed byte BirthVolumeId[16];
+            public _BirthVolumeId_e__FixedBuffer BirthVolumeId;
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.BirthObjectId"]/*' />
             [NativeTypeName("BYTE[16]")]
-            public fixed byte BirthObjectId[16];
+            public _BirthObjectId_e__FixedBuffer BirthObjectId;
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.DomainId"]/*' />
             [NativeTypeName("BYTE[16]")]
-            public fixed byte DomainId[16];
+            public _DomainId_e__FixedBuffer DomainId;
+
+            /// <include file='_BirthVolumeId_e__FixedBuffer.xml' path='doc/member[@name="_BirthVolumeId_e__FixedBuffer"]/*' />
+            [InlineArray(16)]
+            public partial struct _BirthVolumeId_e__FixedBuffer
+            {
+                public byte e0;
+            }
+
+            /// <include file='_BirthObjectId_e__FixedBuffer.xml' path='doc/member[@name="_BirthObjectId_e__FixedBuffer"]/*' />
+            [InlineArray(16)]
+            public partial struct _BirthObjectId_e__FixedBuffer
+            {
+                public byte e0;
+            }
+
+            /// <include file='_DomainId_e__FixedBuffer.xml' path='doc/member[@name="_DomainId_e__FixedBuffer"]/*' />
+            [InlineArray(16)]
+            public partial struct _DomainId_e__FixedBuffer
+            {
+                public byte e0;
+            }
         }
+
+        /// <include file='_ExtendedInfo_e__FixedBuffer.xml' path='doc/member[@name="_ExtendedInfo_e__FixedBuffer"]/*' />
+        [InlineArray(48)]
+        public partial struct _ExtendedInfo_e__FixedBuffer
+        {
+            public byte e0;
+        }
+    }
+
+    /// <include file='_ObjectId_e__FixedBuffer.xml' path='doc/member[@name="_ObjectId_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ObjectId_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

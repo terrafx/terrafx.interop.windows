@@ -3,28 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPublishedApp2.Install2">
-    <summary>
-      <para>Installs an application published by an application publisher, while preventing multiple windows from being active on the same thread.</para>
-    </summary>
-    <param name="pstInstall">
-      <para>Type: <b>LPSYSTEMTIME</b></para>
-      <para>A pointer to a <see cref="SYSTEMTIME" /> structure.</para>
-    </param>
-    <param name="hwndParent">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the parent window.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Installs an application published by an application publisher, while preventing multiple windows from being active on the same thread.</summary>
+    <param name="pstInstall">A pointer to a <see cref="SYSTEMTIME" /> structure.</param>
+    <param name="hwndParent">A handle to the parent window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPublishedApp2">
-    <summary>
-      <para>Extends the <see cref="IPublishedApp" /> interface by providing an additional installation method.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IPublishedApp" /> interface, from which it inherits.</para>
-    </remarks>
+    <summary>Extends the <see cref="IPublishedApp" /> interface by providing an additional installation method.</summary>
   </member>
 </doc>

@@ -3,65 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POINTER_BUTTON_CHANGE_TYPE">
-    <summary>
-      <para>Identifies a change in the state of a button associated with a pointer.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/enums">Enumerations</seealso>
-    <seealso cref="POINTER_INFO" />
+    <summary>Identifies a change in the state of a button associated with a pointer.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_NONE">
-    <summary>
-      <para>No change in button state.</para>
-    </summary>
+    <summary>No change in button state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_FIRSTBUTTON_DOWN">
-    <summary>
-      <para>The first button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_FIRSTBUTTON</a>) transitioned to a pressed state.</para>
-    </summary>
+    <summary>The first button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_FIRSTBUTTON</a>) transitioned to a pressed state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_FIRSTBUTTON_UP">
-    <summary>
-      <para>The first button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_FIRSTBUTTON</a>) transitioned to a released state.</para>
-    </summary>
+    <summary>The first button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_FIRSTBUTTON</a>) transitioned to a released state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_SECONDBUTTON_DOWN">
-    <summary>
-      <para>The second button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_SECONDBUTTON</a>) transitioned to a pressed state.</para>
-    </summary>
+    <summary>The second button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_SECONDBUTTON</a>) transitioned to a pressed state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_SECONDBUTTON_UP">
-    <summary>
-      <para>The second button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_SECONDBUTTON</a>) transitioned to a released state.</para>
-    </summary>
+    <summary>The second button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_SECONDBUTTON</a>) transitioned to a released state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_THIRDBUTTON_DOWN">
-    <summary>
-      <para>The third button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_THIRDBUTTON</a>) transitioned to a pressed state.</para>
-    </summary>
+    <summary>The third button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_THIRDBUTTON</a>) transitioned to a pressed state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_THIRDBUTTON_UP">
-    <summary>
-      <para>The third button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_THIRDBUTTON</a>) transitioned to a released state.</para>
-    </summary>
+    <summary>The third button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_THIRDBUTTON</a>) transitioned to a released state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_FOURTHBUTTON_DOWN">
-    <summary>
-      <para>The fourth button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_FOURTHBUTTON</a>) transitioned to a pressed state.</para>
-    </summary>
+    <summary>The fourth button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_FOURTHBUTTON</a>) transitioned to a pressed state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_FOURTHBUTTON_UP">
-    <summary>
-      <para>The fourth button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_FOURTHBUTTON</a>) transitioned to a released state.</para>
-    </summary>
+    <summary>The fourth button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_FOURTHBUTTON</a>) transitioned to a released state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_FIFTHBUTTON_DOWN">
-    <summary>
-      <para>The fifth button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_FIFTHBUTTON</a>) transitioned to a pressed state.</para>
-    </summary>
+    <summary>The fifth button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_FIFTHBUTTON</a>) transitioned to a pressed state.</summary>
   </member>
   <member name="POINTER_BUTTON_CHANGE_TYPE.POINTER_CHANGE_FIFTHBUTTON_UP">
-    <summary>
-      <para>The fifth button (see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/pointer-flags-contants">POINTER_FLAG_FIFTHBUTTON</a>) transitioned to a released state.</para>
-    </summary>
+    <summary>The fifth button (see <a href="https://docs.microsoft.com//windows/win32/inputmsg/pointer-flags-contants">POINTER_FLAG_FIFTHBUTTON</a>) transitioned to a released state.</summary>
   </member>
 </doc>

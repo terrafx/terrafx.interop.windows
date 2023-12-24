@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.HBITMAP_UserFree">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HBITMAP_UserFree64">
+    <summary>Frees resources on the server side when called by RPC stub files.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The object.</param>
+  </member>
+  <member name="Windows.HBITMAP_UserMarshal">
+    <summary>Marshals an HBITMAP object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HBITMAP_UserMarshal64">
+    <summary>Marshals an HBITMAP object into the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HBITMAP_UserSize">
+    <summary>Calculates the wire size of the HBITMAP object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HBITMAP object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HBITMAP_UserSize64">
+    <summary>Calculates the wire size of the HBITMAP object and gets its handle and data.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer offset where the object will be marshaled. The method has to account for any padding needed for the HBITMAP object to be properly aligned when it will be marshaled to the buffer.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HBITMAP_UserUnmarshal">
+    <summary>Unmarshals an HBITMAP object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+  <member name="Windows.HBITMAP_UserUnmarshal64">
+    <summary>Unmarshals an HBITMAP object from the RPC buffer.</summary>
+    <param name="unnamedParam1">The data used by RPC.</param>
+    <param name="unnamedParam2">The current buffer. This pointer may or may not be aligned on entry.</param>
+    <param name="unnamedParam3">The object.</param>
+  </member>
+</doc>

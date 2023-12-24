@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PWMFRect16">
+    <summary>The <b>PWMFRect16</b> structure defines a rectangle that bounds a placeable metafile. The rectangle defines the size and position of the metafile.</summary>
+  </member>
+  <member name="PWMFRect16.Left">
+    <summary>Left coordinate of the rectangle that bounds the metafile.</summary>
+  </member>
+  <member name="PWMFRect16.Top">
+    <summary>Top coordinate of the rectangle that bounds the metafile.</summary>
+  </member>
+  <member name="PWMFRect16.Right">
+    <summary>Right coordinate of the rectangle that bounds the metafile.</summary>
+  </member>
+  <member name="PWMFRect16.Bottom">
+    <summary>Bottom coordinate of the rectangle that bounds the metafile.</summary>
+  </member>
+</doc>

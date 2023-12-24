@@ -25,7 +25,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISharedBitmap*, Guid*, void**, int>)(lpVtbl[0]))((ISharedBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISharedBitmap*, Guid*, void**, int>)(lpVtbl[0]))((ISharedBitmap*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISharedBitmap*, uint>)(lpVtbl[1]))((ISharedBitmap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISharedBitmap*, uint>)(lpVtbl[1]))((ISharedBitmap*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISharedBitmap*, uint>)(lpVtbl[2]))((ISharedBitmap*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISharedBitmap*, uint>)(lpVtbl[2]))((ISharedBitmap*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.GetSharedBitmap"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetSharedBitmap(HBITMAP* phbm)
     {
-        return ((delegate* unmanaged<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[3]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
+        return ((delegate* unmanaged[MemberFunction]<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[3]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
     }
 
     /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.GetSize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetSize(SIZE* pSize)
     {
-        return ((delegate* unmanaged<ISharedBitmap*, SIZE*, int>)(lpVtbl[4]))((ISharedBitmap*)Unsafe.AsPointer(ref this), pSize);
+        return ((delegate* unmanaged[MemberFunction]<ISharedBitmap*, SIZE*, int>)(lpVtbl[4]))((ISharedBitmap*)Unsafe.AsPointer(ref this), pSize);
     }
 
     /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.GetFormat"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT GetFormat(WTS_ALPHATYPE* pat)
     {
-        return ((delegate* unmanaged<ISharedBitmap*, WTS_ALPHATYPE*, int>)(lpVtbl[5]))((ISharedBitmap*)Unsafe.AsPointer(ref this), pat);
+        return ((delegate* unmanaged[MemberFunction]<ISharedBitmap*, WTS_ALPHATYPE*, int>)(lpVtbl[5]))((ISharedBitmap*)Unsafe.AsPointer(ref this), pat);
     }
 
     /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.InitializeBitmap"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT InitializeBitmap(HBITMAP hbm, WTS_ALPHATYPE wtsAT)
     {
-        return ((delegate* unmanaged<ISharedBitmap*, HBITMAP, WTS_ALPHATYPE, int>)(lpVtbl[6]))((ISharedBitmap*)Unsafe.AsPointer(ref this), hbm, wtsAT);
+        return ((delegate* unmanaged[MemberFunction]<ISharedBitmap*, HBITMAP, WTS_ALPHATYPE, int>)(lpVtbl[6]))((ISharedBitmap*)Unsafe.AsPointer(ref this), hbm, wtsAT);
     }
 
     /// <include file='ISharedBitmap.xml' path='doc/member[@name="ISharedBitmap.Detach"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT Detach(HBITMAP* phbm)
     {
-        return ((delegate* unmanaged<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[7]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
+        return ((delegate* unmanaged[MemberFunction]<ISharedBitmap*, HBITMAP*, int>)(lpVtbl[7]))((ISharedBitmap*)Unsafe.AsPointer(ref this), phbm);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct ISharedBitmap : ISharedBitmap.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HBITMAP*, int> GetSharedBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HBITMAP*, int> GetSharedBitmap;
 
         [NativeTypeName("HRESULT (SIZE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, int> GetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, int> GetSize;
 
         [NativeTypeName("HRESULT (WTS_ALPHATYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WTS_ALPHATYPE*, int> GetFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WTS_ALPHATYPE*, int> GetFormat;
 
         [NativeTypeName("HRESULT (HBITMAP, WTS_ALPHATYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HBITMAP, WTS_ALPHATYPE, int> InitializeBitmap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HBITMAP, WTS_ALPHATYPE, int> InitializeBitmap;
 
         [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HBITMAP*, int> Detach;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HBITMAP*, int> Detach;
     }
 }

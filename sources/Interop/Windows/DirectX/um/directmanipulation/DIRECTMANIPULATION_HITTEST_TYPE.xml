@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DIRECTMANIPULATION_HITTEST_TYPE">
-    <summary>
-      <para>Defines how hit testing is handled by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> when using a dedicated hit-test thread registered through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationmanager-registerhittesttarget">RegisterHitTestTarget</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+    <summary>Defines how hit testing is handled by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> when using a dedicated hit-test thread registered through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationmanager-registerhittesttarget">RegisterHitTestTarget</a>.</summary>
   </member>
   <member name="DIRECTMANIPULATION_HITTEST_TYPE.DIRECTMANIPULATION_HITTEST_TYPE_ASYNCHRONOUS">
-    <summary>
-      <para>The hit-test thread receives <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> messages and specifies whether to call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a>. If <b>SetContact</b> is not called, the contact will not be associated with a viewport.</para>
-    </summary>
+    <summary>The hit-test thread receives <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> messages and specifies whether to call <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a>. If <b>SetContact</b> is not called, the contact will not be associated with a viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_HITTEST_TYPE.DIRECTMANIPULATION_HITTEST_TYPE_SYNCHRONOUS">
-    <summary>
-      <para>The UI thread always receives <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> messages after the hit-test thread. A call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a> is not required.</para>
-    </summary>
+    <summary>The UI thread always receives <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> messages after the hit-test thread. A call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a> is not required.</summary>
   </member>
   <member name="DIRECTMANIPULATION_HITTEST_TYPE.DIRECTMANIPULATION_HITTEST_TYPE_AUTO_SYNCHRONOUS">
-    <summary>
-      <para>The UI thread receives <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> messages only when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a> isn't called by the hit-test thread.</para>
-    </summary>
+    <summary>The UI thread receives <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> messages only when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setcontact">SetContact</a> isn't called by the hit-test thread.</summary>
   </member>
 </doc>

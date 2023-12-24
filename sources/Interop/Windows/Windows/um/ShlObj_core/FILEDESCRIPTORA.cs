@@ -4,13 +4,14 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct FILEDESCRIPTORA
+public partial struct FILEDESCRIPTORA
 {
     /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
@@ -50,5 +51,13 @@ public unsafe partial struct FILEDESCRIPTORA
 
     /// <include file='FILEDESCRIPTORA.xml' path='doc/member[@name="FILEDESCRIPTORA.cFileName"]/*' />
     [NativeTypeName("CHAR[260]")]
-    public fixed sbyte cFileName[260];
+    public _cFileName_e__FixedBuffer cFileName;
+
+    /// <include file='_cFileName_e__FixedBuffer.xml' path='doc/member[@name="_cFileName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(260)]
+    public partial struct _cFileName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

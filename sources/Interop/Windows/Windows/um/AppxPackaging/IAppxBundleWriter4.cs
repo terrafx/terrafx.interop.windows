@@ -27,7 +27,7 @@ public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter4*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleWriter4*, uint>)(lpVtbl[1]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter4*, uint>)(lpVtbl[1]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,64 +45,64 @@ public unsafe partial struct IAppxBundleWriter4 : IAppxBundleWriter4.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleWriter4*, uint>)(lpVtbl[2]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter4*, uint>)(lpVtbl[2]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleWriter4.xml' path='doc/member[@name="IAppxBundleWriter4.AddPayloadPackage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage)
+    public HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] char* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int>)(lpVtbl[3]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, packageStream, isDefaultApplicablePackage);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter4*, char*, IStream*, BOOL, int>)(lpVtbl[3]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, packageStream, isDefaultApplicablePackage);
     }
 
     /// <include file='IAppxBundleWriter4.xml' path='doc/member[@name="IAppxBundleWriter4.AddPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)
+    public HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int>)(lpVtbl[4]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter4*, char*, IStream*, BOOL, int>)(lpVtbl[4]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
     }
 
     /// <include file='IAppxBundleWriter4.xml' path='doc/member[@name="IAppxBundleWriter4.AddExternalPackageReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)
+    public HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage)
     {
-        return ((delegate* unmanaged<IAppxBundleWriter4*, ushort*, IStream*, BOOL, int>)(lpVtbl[5]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleWriter4*, char*, IStream*, BOOL, int>)(lpVtbl[5]))((IAppxBundleWriter4*)Unsafe.AsPointer(ref this), fileName, inputStream, isDefaultApplicablePackage);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage);
+        HRESULT AddPayloadPackage([NativeTypeName("LPCWSTR")] char* fileName, IStream* packageStream, BOOL isDefaultApplicablePackage);
 
         [VtblIndex(4)]
-        HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
+        HRESULT AddPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
 
         [VtblIndex(5)]
-        HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] ushort* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
+        HRESULT AddExternalPackageReference([NativeTypeName("LPCWSTR")] char* fileName, IStream* inputStream, BOOL isDefaultApplicablePackage);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, BOOL, int> AddPayloadPackage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IStream*, BOOL, int> AddPayloadPackage;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, BOOL, int> AddPackageReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IStream*, BOOL, int> AddPackageReference;
 
         [NativeTypeName("HRESULT (LPCWSTR, IStream *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IStream*, BOOL, int> AddExternalPackageReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IStream*, BOOL, int> AddExternalPackageReference;
     }
 }

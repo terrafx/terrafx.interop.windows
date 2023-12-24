@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS">
+    <summary>Describes a resource to resolve to at the conclusion of a render pass.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS.pSrcResource">
+    <summary>A pointer to an <see cref="ID3D12Resource" />. The source resource.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS.pDstResource">
+    <summary>A pointer to an <see cref="ID3D12Resource" />. The destination resource.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS.SubresourceCount">
+    <summary>A <b>UINT</b>. The number of subresources.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS.pSubresourceParameters">
+    <summary>
+      <para>A pointer to a constant array of <see cref="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS" />. These subresources can be a subset of the render target's array slices, but you can't target subresources that aren't part of the render target view (RTV) or the depth/stencil view (DSV).</para>
+      <blockquote>[!NOTE] This pointer is directly referenced by the command list, and the memory for this array must remain alive and intact until <see cref="EndRenderPass" /> is called.</blockquote>
+    </summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS.Format">
+    <summary>A <see cref="DXGI_FORMAT" />. The data format of the resources.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS.ResolveMode">
+    <summary>A <see cref="D3D12_RESOLVE_MODE" />. The resolve operation.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS.PreserveResolveSource">
+    <summary>A <b>BOOL</b>. <b>TRUE</b> to preserve the resolve source, otherwise <b>FALSE</b>.</summary>
+  </member>
+</doc>

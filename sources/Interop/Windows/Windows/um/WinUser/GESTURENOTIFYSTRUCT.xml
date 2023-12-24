@@ -3,36 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GESTURENOTIFYSTRUCT">
-    <summary>
-      <para>When transmitted with <a href="https://docs.microsoft.com//windows/desktop/wintouch/wm-gesturenotify">WM_GESTURENOTIFY</a> messages,
-passes information about a gesture.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtstructures">Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/wm-gesturenotify">WM_GESTURENOTIFY</seealso>
+    <summary>When transmitted with <a href="https://docs.microsoft.com//windows/desktop/wintouch/wm-gesturenotify">WM_GESTURENOTIFY</a> messages, passes information about a gesture.</summary>
   </member>
   <member name="GESTURENOTIFYSTRUCT.cbSize">
-    <summary>
-      <para>The size of the structure.</para>
-    </summary>
+    <summary>The size of the structure.</summary>
   </member>
   <member name="GESTURENOTIFYSTRUCT.dwFlags">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="GESTURENOTIFYSTRUCT.hwndTarget">
-    <summary>
-      <para>The target window for the gesture notification.</para>
-    </summary>
+    <summary>The target window for the gesture notification.</summary>
   </member>
   <member name="GESTURENOTIFYSTRUCT.ptsLocation">
-    <summary>
-      <para>The location of the gesture in physical screen coordinates.</para>
-    </summary>
+    <summary>The location of the gesture in physical screen coordinates.</summary>
   </member>
   <member name="GESTURENOTIFYSTRUCT.dwInstanceID">
-    <summary>
-      <para>A specific gesture instance with gesture messages starting with <b>GID_START</b> and ending with <b>GID_END</b>.</para>
-    </summary>
+    <summary>A specific gesture instance with gesture messages starting with <b>GID_START</b> and ending with <b>GID_END</b>.</summary>
   </member>
 </doc>

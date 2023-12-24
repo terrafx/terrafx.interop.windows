@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumReadyCallback.EnumReady">
-    <summary>
-      <para>Notifies the implementer that the view's item enumeration has completed.  This callback interface is provided to the view via <see cref="SetEnumReadyCallback" /></para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Notifies the implementer that the view's item enumeration has completed. This callback interface is provided to the view via <see cref="SetEnumReadyCallback" /></summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumReadyCallback">
-    <summary>
-      <para>Exposes methods that enable the view to notify the implementer when the enumeration has completed.  The view calls this method to tell the implementer that the enumeration can be retrieved via <see cref="IEnumerableView.CreateEnumIDListFromContents" />.  The callback allows the implementer to share the views enumeration.</para>
-    </summary>
+    <summary>Exposes methods that enable the view to notify the implementer when the enumeration has completed. The view calls this method to tell the implementer that the enumeration can be retrieved via <see cref="IEnumerableView.CreateEnumIDListFromContents" />. The callback allows the implementer to share the views enumeration.</summary>
   </member>
 </doc>

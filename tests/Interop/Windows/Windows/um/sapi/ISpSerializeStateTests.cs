@@ -19,32 +19,4 @@ public static unsafe partial class ISpSerializeStateTests
     {
         Assert.That(typeof(ISpSerializeState).GUID, Is.EqualTo(IID_ISpSerializeState));
     }
-
-    /// <summary>Validates that the <see cref="ISpSerializeState" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpSerializeState>(), Is.EqualTo(sizeof(ISpSerializeState)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpSerializeState" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpSerializeState).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpSerializeState" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpSerializeState), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpSerializeState), Is.EqualTo(4));
-        }
-    }
 }

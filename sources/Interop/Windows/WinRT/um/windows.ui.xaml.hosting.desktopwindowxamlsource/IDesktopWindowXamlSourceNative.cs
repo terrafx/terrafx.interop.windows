@@ -28,7 +28,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative : IDesktopWindowXaml
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative*, Guid*, void**, int>)(lpVtbl[0]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative : IDesktopWindowXaml
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative*, uint>)(lpVtbl[1]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative*, uint>)(lpVtbl[1]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative : IDesktopWindowXaml
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative*, uint>)(lpVtbl[2]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative*, uint>)(lpVtbl[2]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDesktopWindowXamlSourceNative.xml' path='doc/member[@name="IDesktopWindowXamlSourceNative.AttachToWindow"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative : IDesktopWindowXaml
     [VtblIndex(3)]
     public HRESULT AttachToWindow(HWND parentWnd)
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative*, HWND, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this), parentWnd);
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative*, HWND, int>)(lpVtbl[3]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this), parentWnd);
     }
 
     /// <include file='IDesktopWindowXamlSourceNative.xml' path='doc/member[@name="IDesktopWindowXamlSourceNative.get_WindowHandle"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDesktopWindowXamlSourceNative : IDesktopWindowXaml
     [VtblIndex(4)]
     public HRESULT get_WindowHandle(HWND* hWnd)
     {
-        return ((delegate* unmanaged<IDesktopWindowXamlSourceNative*, HWND*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this), hWnd);
+        return ((delegate* unmanaged[MemberFunction]<IDesktopWindowXamlSourceNative*, HWND*, int>)(lpVtbl[4]))((IDesktopWindowXamlSourceNative*)Unsafe.AsPointer(ref this), hWnd);
     }
 
     public interface Interface : IUnknown.Interface
@@ -78,18 +78,18 @@ public unsafe partial struct IDesktopWindowXamlSourceNative : IDesktopWindowXaml
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> AttachToWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> AttachToWindow;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> get_WindowHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> get_WindowHandle;
     }
 }

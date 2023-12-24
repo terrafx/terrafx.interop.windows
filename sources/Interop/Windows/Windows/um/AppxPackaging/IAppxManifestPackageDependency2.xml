@@ -3,28 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestPackageDependency2.GetMaxMajorVersionTested">
-    <summary>
-      <para>Returns the maximum major version number of  the package that is tested to be compatible
-with the current package.</para>
-    </summary>
-    <param name="maxMajorVersionTested">
-      <para>The maximum major version number of the dependency package that has been tested to be compatible
-with the current package.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the
-<b>MaxMajorVersionTested</b> attribute is not specified for the current dependency package, this method returns the highest 16 bits of the <b>MinVersion</b> field. For more information, see the <see cref="GetMinVersion" /> method.</para>
-    </remarks>
-    <seealso cref="GetMinVersion" />
-    <seealso cref="IAppxManifestPackageDependency2" />
+    <summary>Returns the maximum major version number of the package that is tested to be compatible with the current package.</summary>
+    <param name="maxMajorVersionTested">The maximum major version number of the dependency package that has been tested to be compatible with the current package.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestPackageDependency2">
-    <summary>
-      <para>Describes the dependency of one package on another package.</para>
-    </summary>
-    <seealso cref="IAppxManifestPackageDependency" />
+    <summary>Describes the dependency of one package on another package.</summary>
   </member>
 </doc>

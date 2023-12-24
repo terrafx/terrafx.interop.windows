@@ -27,7 +27,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo2 : IAppxBundleManife
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo2*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo2 : IAppxBundleManife
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo2*, uint>)(lpVtbl[1]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo2 : IAppxBundleManife
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo2*, uint>)(lpVtbl[2]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleManifestPackageInfo2.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo2.GetIsPackageReference"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo2 : IAppxBundleManife
     [VtblIndex(3)]
     public HRESULT GetIsPackageReference(BOOL* isPackageReference)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isPackageReference);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[3]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isPackageReference);
     }
 
     /// <include file='IAppxBundleManifestPackageInfo2.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo2.GetIsNonQualifiedResourcePackage"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo2 : IAppxBundleManife
     [VtblIndex(4)]
     public HRESULT GetIsNonQualifiedResourcePackage(BOOL* isNonQualifiedResourcePackage)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isNonQualifiedResourcePackage);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[4]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isNonQualifiedResourcePackage);
     }
 
     /// <include file='IAppxBundleManifestPackageInfo2.xml' path='doc/member[@name="IAppxBundleManifestPackageInfo2.GetIsDefaultApplicablePackage"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxBundleManifestPackageInfo2 : IAppxBundleManife
     [VtblIndex(5)]
     public HRESULT GetIsDefaultApplicablePackage(BOOL* isDefaultApplicablePackage)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isDefaultApplicablePackage);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestPackageInfo2*, BOOL*, int>)(lpVtbl[5]))((IAppxBundleManifestPackageInfo2*)Unsafe.AsPointer(ref this), isDefaultApplicablePackage);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxBundleManifestPackageInfo2 : IAppxBundleManife
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetIsPackageReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetIsPackageReference;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetIsNonQualifiedResourcePackage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetIsNonQualifiedResourcePackage;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetIsDefaultApplicablePackage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetIsDefaultApplicablePackage;
     }
 }

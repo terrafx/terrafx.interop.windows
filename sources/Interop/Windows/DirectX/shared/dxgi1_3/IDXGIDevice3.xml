@@ -5,33 +5,15 @@
   <member name="IDXGIDevice3.Trim">
     <summary>
       <para>Trims the graphics memory allocated by the <see cref="IDXGIDevice3" /> DXGI device on the app's behalf.</para>
-      <para>For apps that render with DirectX, graphics drivers periodically allocate internal memory buffers in order to speed up subsequent rendering requests. These memory allocations count against the app's memory usage for PLM  and in general lead to increased memory usage by the overall system.</para>
+      <para>For apps that render with DirectX, graphics drivers periodically allocate internal memory buffers in order to speed up subsequent rendering requests. These memory allocations count against the app's memory usage for PLM and in general lead to increased memory usage by the overall system.</para>
       <para>Starting in Windows 8.1, apps that render with Direct2D and/or Direct3D (including <a href="https://docs.microsoft.com//uwp/api/Windows.UI.Core.CoreWindow">CoreWindow</a> and XAML interop) must call <b>Trim</b> in response to the PLM suspend callback. The Direct3D runtime and the graphics driver will discard internal memory buffers allocated for the app, reducing its memory footprint.</para>
       <para>Calling this method does not change the rendering state of the graphics device and it has no effect on rendering operations. There is a brief performance hit when internal buffers are reallocated during the first rendering operations after the <b>Trim</b> call, therefore apps should only call <b>Trim</b> when going idle for a period of time (in response to PLM suspend, for example).</para>
-      <para>Apps should ensure that they call <b>Trim</b> as one of the last D3D operations done before going idle. Direct3D will normally defer the destruction of D3D objects. Calling <b>Trim</b>, however, forces Direct3D to destroy objects immediately. For this reason, it is not guaranteed that releasing the final reference on Direct3D objects after calling <b>Trim</b> will cause the object to be destroyed and memory to be deallocated  before the app suspends.</para>
+      <para>Apps should ensure that they call <b>Trim</b> as one of the last D3D operations done before going idle. Direct3D will normally defer the destruction of D3D objects. Calling <b>Trim</b>, however, forces Direct3D to destroy objects immediately. For this reason, it is not guaranteed that releasing the final reference on Direct3D objects after calling <b>Trim</b> will cause the object to be destroyed and memory to be deallocated before the app suspends.</para>
       <para>Similar to <see cref="ID3D11DeviceContext.Flush" />, apps should call <see cref="ID3D11DeviceContext.ClearState" /> before calling <b>Trim</b>. <b>ClearState</b> clears the Direct3D pipeline bindings, ensuring that Direct3D does not hold any references to the Direct3D objects you are trying to release.</para>
-      <para>It is also prudent to release references on middleware before calling <b>Trim</b>, as that middleware may also need to release references
-to Direct3D objects.</para>
+      <para>It is also prudent to release references on middleware before calling <b>Trim</b>, as that middleware may also need to release references to Direct3D objects.</para>
     </summary>
-    <seealso cref="IDXGIDevice3" />
   </member>
   <member name="IDXGIDevice3">
-    <summary>
-      <para>The <b>IDXGIDevice3</b> interface implements a derived class for DXGI objects that produce image data. The interface exposes a method to trim graphics memory usage by the DXGI device.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IDXGIDevice3</b> interface is designed for use by DXGI objects that need access to other DXGI objects. This interface is useful to
-applications that do not use Direct3D to communicate with DXGI.</para>
-      <para>The Direct3D create device functions return a Direct3D device object. This Direct3D device object implements the <see cref="IUnknown" /> interface. You can query this Direct3D device object for the device's
-corresponding <b>IDXGIDevice3</b> interface. To retrieve the <b>IDXGIDevice3</b>  interface of a Direct3D device, use the following code:</para>
-      <code>IDXGIDevice3 * pDXGIDevice;
-hr = g_pd3dDevice-&gt;QueryInterface(__uuidof(IDXGIDevice3), (void **)&amp;amp;amp;amp;amp;amp;pDXGIDevice);
-</code>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIDevice2" />
+    <summary>The <b>IDXGIDevice3</b> interface implements a derived class for DXGI objects that produce image data. The interface exposes a method to trim graphics memory usage by the DXGI device.</summary>
   </member>
 </doc>

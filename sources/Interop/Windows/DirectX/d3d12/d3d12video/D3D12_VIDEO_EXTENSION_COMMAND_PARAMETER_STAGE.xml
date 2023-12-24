@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE">
+    <summary>Specifies the parameter stages for video extension commands.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_CREATION">
+    <summary>The parameter stage is in video extension command creation.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_INITIALIZATION">
+    <summary>The parameter stage is in video extension command initialization.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_EXECUTION">
+    <summary>The parameter stage is in video extension command execution.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_CAPS_INPUT">
+    <summary>The parameter stage is input parameters passed to capabilities queries.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_CAPS_OUTPUT">
+    <summary>The parameter stage is output parameters passed to capabilities queries.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_DEVICE_EXECUTE_INPUT">
+    <summary>The parameter stage is device execution input.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_STAGE_DEVICE_EXECUTE_OUTPUT">
+    <summary>The parameter stage is device execution output.</summary>
+  </member>
+</doc>

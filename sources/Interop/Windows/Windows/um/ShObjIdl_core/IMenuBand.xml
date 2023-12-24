@@ -3,93 +3,78 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMenuBand.IsMenuMessage">
-    <summary>
-      <para>A message pump calls this method to see if any messages should be redirected to the Component Object Model (COM) object.</para>
-    </summary>
-    <param name="pmsg">
-      <para>Type: <b><see cref="MSG" />*</b></para>
-      <para>A pointer to an <see cref="MSG" /> structure.</para>
-    </param>
+    <summary>A message pump calls this method to see if any messages should be redirected to the Component Object Model (COM) object.</summary>
+    <param name="pmsg">A pointer to an <see cref="MSG" /> structure.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A message should be redirected to the COM object. The application should call <see cref="IMenuBand.TranslateMenuMessage" /> with this message.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A message should be redirected to the COM object. The application should call <see cref="IMenuBand.TranslateMenuMessage" /> with this message.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The menu has exited the menu mode and can be destroyed.</para>
-          </description>
-        </item>
+          <description>The menu has exited the menu mode and can be destroyed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If this method returns <b>S_OK</b>, the message loop should not call <see cref="TranslateMessage" /> or <see cref="DispatchMessage" />.</para>
-    </remarks>
   </member>
   <member name="IMenuBand.TranslateMenuMessage">
-    <summary>
-      <para>Translates a message for a Component Object Model (COM) object.</para>
-    </summary>
-    <param name="pmsg">
-      <para>Type: <b><see cref="MSG" />*</b></para>
-      <para>A pointer to an <see cref="MSG" /> structure that contains the incoming message.</para>
-    </param>
-    <param name="plRet">
-      <para>Type: <b>LRESULT*</b></para>
-      <para>A pointer to the translated message.</para>
-    </param>
+    <summary>Translates a message for a Component Object Model (COM) object.</summary>
+    <param name="pmsg">A pointer to an <see cref="MSG" /> structure that contains the incoming message.</param>
+    <param name="plRet">A pointer to the translated message.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method can return one of these values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The message was handled and should be deleted.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The message was handled and should be deleted.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The message was not handled. In this case, *plRet is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The message was not handled. In this case, *plRet is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Typically, <see cref="IMenuBand.IsMenuMessage" /> is called before this method. The parent window proc, not the message pump, must call <b>IMenuBand.TranslateMenuMessage</b> for every message.</para>
-      <para>This method can change the values of <i>pmsg</i>. If so, the changes should be forwarded on.</para>
-      <para>This method is required because some modal message pumps do not allow a call to a custom translation method.</para>
-    </remarks>
   </member>
 </doc>

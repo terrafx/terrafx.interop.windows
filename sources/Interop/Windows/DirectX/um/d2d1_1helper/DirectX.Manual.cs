@@ -254,9 +254,9 @@ public static unsafe partial class DirectX
     public static HRESULT SetDpiCompensatedEffectInput(ID2D1DeviceContext* deviceContext, ID2D1Effect* effect, [NativeTypeName("UINT32")] uint inputIndex, ID2D1Bitmap* inputBitmap, D2D1_INTERPOLATION_MODE interpolationMode = D2D1_INTERPOLATION_MODE_LINEAR, D2D1_BORDER_MODE borderMode = D2D1_BORDER_MODE_HARD)
     {
         HRESULT hr = S_OK;
-        ID2D1Effect* dpiCompensationEffect = null;
+        ID2D1Effect* dpiCompensationEffect;
 
-        if (inputBitmap != null)
+        if (inputBitmap == null)
         {
             effect->SetInput(inputIndex, null);
             return hr;

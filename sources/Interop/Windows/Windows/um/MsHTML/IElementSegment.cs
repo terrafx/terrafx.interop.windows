@@ -25,7 +25,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementSegment*, Guid*, void**, int>)(lpVtbl[0]))((IElementSegment*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementSegment*, Guid*, void**, int>)(lpVtbl[0]))((IElementSegment*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementSegment*, uint>)(lpVtbl[1]))((IElementSegment*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementSegment*, uint>)(lpVtbl[1]))((IElementSegment*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementSegment*, uint>)(lpVtbl[2]))((IElementSegment*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementSegment*, uint>)(lpVtbl[2]))((IElementSegment*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISegment.GetPointers" />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetPointers(IMarkupPointer* pIStart, IMarkupPointer* pIEnd)
     {
-        return ((delegate* unmanaged<IElementSegment*, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[3]))((IElementSegment*)Unsafe.AsPointer(ref this), pIStart, pIEnd);
+        return ((delegate* unmanaged[MemberFunction]<IElementSegment*, IMarkupPointer*, IMarkupPointer*, int>)(lpVtbl[3]))((IElementSegment*)Unsafe.AsPointer(ref this), pIStart, pIEnd);
     }
 
     /// <include file='IElementSegment.xml' path='doc/member[@name="IElementSegment.GetElement"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetElement(IHTMLElement** ppIElement)
     {
-        return ((delegate* unmanaged<IElementSegment*, IHTMLElement**, int>)(lpVtbl[4]))((IElementSegment*)Unsafe.AsPointer(ref this), ppIElement);
+        return ((delegate* unmanaged[MemberFunction]<IElementSegment*, IHTMLElement**, int>)(lpVtbl[4]))((IElementSegment*)Unsafe.AsPointer(ref this), ppIElement);
     }
 
     /// <include file='IElementSegment.xml' path='doc/member[@name="IElementSegment.SetPrimary"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface, INativ
     [VtblIndex(5)]
     public HRESULT SetPrimary(BOOL fPrimary)
     {
-        return ((delegate* unmanaged<IElementSegment*, BOOL, int>)(lpVtbl[5]))((IElementSegment*)Unsafe.AsPointer(ref this), fPrimary);
+        return ((delegate* unmanaged[MemberFunction]<IElementSegment*, BOOL, int>)(lpVtbl[5]))((IElementSegment*)Unsafe.AsPointer(ref this), fPrimary);
     }
 
     /// <include file='IElementSegment.xml' path='doc/member[@name="IElementSegment.IsPrimary"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface, INativ
     [VtblIndex(6)]
     public HRESULT IsPrimary(BOOL* pfPrimary)
     {
-        return ((delegate* unmanaged<IElementSegment*, BOOL*, int>)(lpVtbl[6]))((IElementSegment*)Unsafe.AsPointer(ref this), pfPrimary);
+        return ((delegate* unmanaged[MemberFunction]<IElementSegment*, BOOL*, int>)(lpVtbl[6]))((IElementSegment*)Unsafe.AsPointer(ref this), pfPrimary);
     }
 
     public interface Interface : ISegment.Interface
@@ -94,24 +94,24 @@ public unsafe partial struct IElementSegment : IElementSegment.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupPointer*, IMarkupPointer*, int> GetPointers;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> GetElement;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetPrimary;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetPrimary;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsPrimary;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsPrimary;
     }
 }

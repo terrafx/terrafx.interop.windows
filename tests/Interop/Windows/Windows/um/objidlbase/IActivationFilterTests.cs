@@ -19,32 +19,4 @@ public static unsafe partial class IActivationFilterTests
     {
         Assert.That(typeof(IActivationFilter).GUID, Is.EqualTo(IID_IActivationFilter));
     }
-
-    /// <summary>Validates that the <see cref="IActivationFilter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IActivationFilter>(), Is.EqualTo(sizeof(IActivationFilter)));
-    }
-
-    /// <summary>Validates that the <see cref="IActivationFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IActivationFilter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IActivationFilter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IActivationFilter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IActivationFilter), Is.EqualTo(4));
-        }
-    }
 }

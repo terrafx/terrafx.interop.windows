@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_DEVICE_CONTEXT_OPTIONS">
-    <summary>
-      <para>This specifies options that apply to the device context for its lifetime.</para>
-    </summary>
+    <summary>This specifies options that apply to the device context for its lifetime.</summary>
   </member>
   <member name="D2D1_DEVICE_CONTEXT_OPTIONS.D2D1_DEVICE_CONTEXT_OPTIONS_NONE">
-    <summary>
-      <para>The device context is created with default options.</para>
-    </summary>
+    <summary>The device context is created with default options.</summary>
   </member>
   <member name="D2D1_DEVICE_CONTEXT_OPTIONS.D2D1_DEVICE_CONTEXT_OPTIONS_ENABLE_MULTITHREADED_OPTIMIZATIONS">
-    <summary>
-      <para>Distribute rendering work across multiple threads. Refer to <a href="https://docs.microsoft.com//windows/desktop/Direct2D/improving-direct2d-performance">Improving the performance of Direct2D apps</a> for additional notes on the use of this flag.</para>
-    </summary>
+    <summary>Distribute rendering work across multiple threads. Refer to <a href="https://docs.microsoft.com//windows/desktop/Direct2D/improving-direct2d-performance">Improving the performance of Direct2D apps</a> for additional notes on the use of this flag.</summary>
   </member>
-  <member name="D2D1_DEVICE_CONTEXT_OPTIONS.D2D1_DEVICE_CONTEXT_OPTIONS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_DEVICE_CONTEXT_OPTIONS.D2D1_DEVICE_CONTEXT_OPTIONS_FORCE_DWORD"></member>
 </doc>

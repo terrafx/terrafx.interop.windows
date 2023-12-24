@@ -3,55 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_EFFECT_SHADER_DESC">
-    <summary>
-      <para>Describes an effect shader.</para>
-    </summary>
-    <remarks>
-      <para>To get an effect-shader description, call <see cref="ID3D10EffectShaderVariable.GetShaderDesc" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-effect-structures">Effect Structures (Direct3D 10)</seealso>
+    <summary>Describes an effect shader.</summary>
   </member>
   <member name="D3D10_EFFECT_SHADER_DESC.pInputSignature">
-    <summary>
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a>*</b></para>
-      <para>Passed into CreateInputLayout. Only valid on a vertex shader or geometry shader. See <see cref="ID3D10Device_CreateInputLayout" />.</para>
-    </summary>
+    <summary>Passed into CreateInputLayout. Only valid on a vertex shader or geometry shader. See <see cref="ID3D10Device_CreateInputLayout" />.</summary>
   </member>
   <member name="D3D10_EFFECT_SHADER_DESC.IsInline">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>
-        <b>TRUE</b> is the shader is defined inline; otherwise <b>FALSE</b>.</para>
-    </summary>
+      <b>TRUE</b> is the shader is defined inline; otherwise <b>FALSE</b>.</summary>
   </member>
   <member name="D3D10_EFFECT_SHADER_DESC.pBytecode">
-    <summary>
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a>*</b></para>
-      <para>A pointer to the compiled shader.</para>
-    </summary>
+    <summary>A pointer to the compiled shader.</summary>
   </member>
   <member name="D3D10_EFFECT_SHADER_DESC.BytecodeLength">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The length of pBytecode.</para>
-    </summary>
+    <summary>The length of pBytecode.</summary>
   </member>
   <member name="D3D10_EFFECT_SHADER_DESC.SODecl">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>A string that contains a declaration of the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-pipeline-stages">stream output </a> from a geometry shader.</para>
-    </summary>
+    <summary>A string that contains a declaration of the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-pipeline-stages">stream output</a> from a geometry shader.</summary>
   </member>
   <member name="D3D10_EFFECT_SHADER_DESC.NumInputSignatureEntries">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of entries in the input signature.</para>
-    </summary>
+    <summary>The number of entries in the input signature.</summary>
   </member>
   <member name="D3D10_EFFECT_SHADER_DESC.NumOutputSignatureEntries">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of entries in the output signature.</para>
-    </summary>
+    <summary>The number of entries in the output signature.</summary>
   </member>
 </doc>

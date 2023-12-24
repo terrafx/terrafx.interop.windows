@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12ShaderReflectionConstantBuffer.GetDesc">
+    <summary>Gets a constant-buffer description.</summary>
+    <param name="pDesc">A shader-buffer description, as a pointer to a <see cref="D3D12_SHADER_BUFFER_DESC" /> structure.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionConstantBuffer.GetVariableByIndex">
+    <summary>Gets a shader-reflection variable by index.</summary>
+    <param name="Index">Zero-based index.</param>
+    <returns>A pointer to a shader-reflection variable interface (see <see cref="ID3D12ShaderReflectionVariable Interface" />).</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionConstantBuffer.GetVariableByName">
+    <summary>Gets a shader-reflection variable by name.</summary>
+    <param name="Name">Variable name.</param>
+    <returns>Returns a sentinel object (end of list marker). To determine if GetVariableByName successfully completed, call <see cref="ID3D12ShaderReflectionVariable.GetDesc" /> and check the returned <b>HRESULT</b>; any return value other than success means that GetVariableByName failed.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionConstantBuffer">
+    <summary>This shader-reflection interface provides access to a constant buffer.</summary>
+  </member>
+</doc>

@@ -27,7 +27,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDataObjectAsyncCapability*, Guid*, void**, int>)(lpVtbl[0]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectAsyncCapability*, Guid*, void**, int>)(lpVtbl[0]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDataObjectAsyncCapability*, uint>)(lpVtbl[1]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectAsyncCapability*, uint>)(lpVtbl[1]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDataObjectAsyncCapability*, uint>)(lpVtbl[2]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectAsyncCapability*, uint>)(lpVtbl[2]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.SetAsyncMode"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
     [VtblIndex(3)]
     public HRESULT SetAsyncMode(BOOL fDoOpAsync)
     {
-        return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL, int>)(lpVtbl[3]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), fDoOpAsync);
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectAsyncCapability*, BOOL, int>)(lpVtbl[3]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), fDoOpAsync);
     }
 
     /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.GetAsyncMode"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
     [VtblIndex(4)]
     public HRESULT GetAsyncMode(BOOL* pfIsOpAsync)
     {
-        return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[4]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfIsOpAsync);
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[4]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfIsOpAsync);
     }
 
     /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.StartOperation"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
     [VtblIndex(5)]
     public HRESULT StartOperation(IBindCtx* pbcReserved)
     {
-        return ((delegate* unmanaged<IDataObjectAsyncCapability*, IBindCtx*, int>)(lpVtbl[5]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pbcReserved);
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectAsyncCapability*, IBindCtx*, int>)(lpVtbl[5]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pbcReserved);
     }
 
     /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.InOperation"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
     [VtblIndex(6)]
     public HRESULT InOperation(BOOL* pfInAsyncOp)
     {
-        return ((delegate* unmanaged<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[6]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfInAsyncOp);
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectAsyncCapability*, BOOL*, int>)(lpVtbl[6]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), pfInAsyncOp);
     }
 
     /// <include file='IDataObjectAsyncCapability.xml' path='doc/member[@name="IDataObjectAsyncCapability.EndOperation"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
     [VtblIndex(7)]
     public HRESULT EndOperation(HRESULT hResult, IBindCtx* pbcReserved, [NativeTypeName("DWORD")] uint dwEffects)
     {
-        return ((delegate* unmanaged<IDataObjectAsyncCapability*, HRESULT, IBindCtx*, uint, int>)(lpVtbl[7]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), hResult, pbcReserved, dwEffects);
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectAsyncCapability*, HRESULT, IBindCtx*, uint, int>)(lpVtbl[7]))((IDataObjectAsyncCapability*)Unsafe.AsPointer(ref this), hResult, pbcReserved, dwEffects);
     }
 
     public interface Interface : IUnknown.Interface
@@ -110,27 +110,27 @@ public unsafe partial struct IDataObjectAsyncCapability : IDataObjectAsyncCapabi
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetAsyncMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetAsyncMode;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetAsyncMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetAsyncMode;
 
         [NativeTypeName("HRESULT (IBindCtx *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, int> StartOperation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBindCtx*, int> StartOperation;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> InOperation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> InOperation;
 
         [NativeTypeName("HRESULT (HRESULT, IBindCtx *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, IBindCtx*, uint, int> EndOperation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, IBindCtx*, uint, int> EndOperation;
     }
 }

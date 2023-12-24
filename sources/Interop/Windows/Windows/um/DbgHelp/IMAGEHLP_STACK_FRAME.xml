@@ -3,11 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGEHLP_STACK_FRAME">
-    <summary>
-      <para>Contains the stack frame information. This structure is used with the
-<see cref="SymSetContext" /> function.</para>
-    </summary>
-    <seealso cref="SymSetContext" />
+    <summary>Contains the stack frame information. This structure is used with the<see cref="SymSetContext" /> function.</summary>
   </member>
   <member name="IMAGEHLP_STACK_FRAME.InstructionOffset">
     <summary>
@@ -21,9 +17,7 @@
     </summary>
   </member>
   <member name="IMAGEHLP_STACK_FRAME.ReturnOffset">
-    <summary>
-      <para>The return address.</para>
-    </summary>
+    <summary>The return address.</summary>
   </member>
   <member name="IMAGEHLP_STACK_FRAME.FrameOffset">
     <summary>
@@ -49,35 +43,22 @@
   </member>
   <member name="IMAGEHLP_STACK_FRAME.BackingStoreOffset">
     <summary>
-      <para>
-        <b>Intel Itanium:  </b>The backing store address.</para>
-    </summary>
+      <b>Intel Itanium:  </b>The backing store address.</summary>
   </member>
   <member name="IMAGEHLP_STACK_FRAME.FuncTableEntry">
     <summary>
-      <para>
-        <b>x86:  </b>An
-<see cref="FPO_DATA" /> structure. If there is no function table entry, this member is <b>NULL</b>.</para>
-    </summary>
+      <b>x86:  </b>An<see cref="FPO_DATA" /> structure. If there is no function table entry, this member is <b>NULL</b>.</summary>
   </member>
   <member name="IMAGEHLP_STACK_FRAME.Params">
-    <summary>
-      <para>The possible arguments to the function.</para>
-    </summary>
+    <summary>The possible arguments to the function.</summary>
   </member>
   <member name="IMAGEHLP_STACK_FRAME.Reserved">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
   <member name="IMAGEHLP_STACK_FRAME.Virtual">
-    <summary>
-      <para>If this is a virtual frame, this member is <b>TRUE</b>. Otherwise, this member is <b>FALSE</b>.</para>
-    </summary>
+    <summary>If this is a virtual frame, this member is <b>TRUE</b>. Otherwise, this member is <b>FALSE</b>.</summary>
   </member>
   <member name="IMAGEHLP_STACK_FRAME.Reserved2">
-    <summary>
-      <para>This member is reserved for system use.</para>
-    </summary>
+    <summary>This member is reserved for system use.</summary>
   </member>
 </doc>

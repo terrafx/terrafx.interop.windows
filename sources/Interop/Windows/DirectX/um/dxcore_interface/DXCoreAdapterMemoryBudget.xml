@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXCoreAdapterMemoryBudget">
+    <summary>Describes the memory budget for an adapter.</summary>
+  </member>
+  <member name="DXCoreAdapterMemoryBudget.budget">
+    <summary>Specifies the OS-provided adapter memory budget, in bytes, that your application should target. If <i>currentUsage</i> is greater than <i>budget</i>, then your application may incur stuttering or performance penalties due to background activity by the OS, which is intended to provide other applications with a fair usage of adapter memory.</summary>
+  </member>
+  <member name="DXCoreAdapterMemoryBudget.budget">
+    <summary>Specifies your application's current adapter memory usage, in bytes.</summary>
+  </member>
+  <member name="DXCoreAdapterMemoryBudget.availableForReservation">
+    <summary>Specifies the amount of adapter memory, in bytes, that your application has available for reservation. To reserve this adapter memory, your application should call <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nf-dxcore_interface-idxcoreadapter-setstate">IDXCoreAdapter.SetState</a> with <i>state</i> set to <see cref="DXCoreAdapterState.AdapterMemoryBudget" />.</summary>
+  </member>
+  <member name="DXCoreAdapterMemoryBudget.availableForReservation">
+    <summary>Specifies the amount of adapter memory, in bytes, that is reserved by your application. The OS uses the reservation as a hint to determine your application's minimum working set. Your application should attempt to ensure that its adapter memory usage can be trimmed to meet this requirement.</summary>
+  </member>
+</doc>

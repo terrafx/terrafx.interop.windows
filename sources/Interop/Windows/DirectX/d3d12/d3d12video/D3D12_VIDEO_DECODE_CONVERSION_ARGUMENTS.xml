@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS">
+    <summary>Specifies the parameters for decode output conversion. <see cref="D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS1" /> is used for the same purpose, but provides additional fields for output width and output height.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS.Enable">
+    <summary>A boolean value indicating whether decode conversion should be used.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS.pReferenceTexture2D">
+    <summary>A pointer to an <see cref="ID3D12Resource" /> containing the native decoding output. When downsampling is enabled, the output at native decode resolution, color space, and format may be required for future decode submissions (as reference frames, for instance).</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS.ReferenceSubresource">
+    <summary>The subresource index of the resource provided in <i>pDecodeTexture2D</i> to use.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS.OutputColorSpace">
+    <summary>A value from the <see cref="DXGI_COLOR_SPACE_TYPE" /> enumeration specifying the target color space of the output.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS.DecodeColorSpace">
+    <summary>A value from the <see cref="DXGI_COLOR_SPACE_TYPE" /> enumeration specifying the source-decoded color space before conversion.</summary>
+  </member>
+</doc>

@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumTfUIElements.Clone">
-    <summary>
-      <para>The <b>IEnumTfUIElements.Clone</b> method creates a copy of the enumerator object.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>[out] A pointer to a <see cref="IEnumTfUIElements" /> interface.</para>
-    </param>
+    <summary>The <b>IEnumTfUIElements.Clone</b> method creates a copy of the enumerator object.</summary>
+    <param name="ppEnum">[out] A pointer to a <see cref="IEnumTfUIElements" /> interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,52 +12,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfUIElements.Next">
-    <summary>
-      <para>The <b>IEnumTfUIElements.Next</b> method obtains, from the current position, the specified number of elements in the enumeration sequence.</para>
-    </summary>
-    <param name="ulCount">
-      <para>[out] Specifies the number of elements to obtain.</para>
-    </param>
-    <param name="ppElement">
-      <para>[out] Pointer to an array of <see cref="ITfUIElement" /> interface pointer. This array must be at least <i>ulCount</i> elements in size.</para>
-    </param>
-    <param name="pcFetched">
-      <para>[out] Pointer to a ULONG value that receives the number of elements actually obtained. This value can be less than the number of items requested. This parameter can be <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>IEnumTfUIElements.Next</b> method obtains, from the current position, the specified number of elements in the enumeration sequence.</summary>
+    <param name="ulCount">[out] Specifies the number of elements to obtain.</param>
+    <param name="ppElement">[out] Pointer to an array of <see cref="ITfUIElement" /> interface pointer. This array must be at least <i>ulCount</i> elements in size.</param>
+    <param name="pcFetched">[out] Pointer to a ULONG value that receives the number of elements actually obtained. This value can be less than the number of items requested. This parameter can be <b>NULL</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -69,43 +63,47 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method reached the end of the enumeration before the specified number of elements could be obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method reached the end of the enumeration before the specified number of elements could be obtained.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfUIElements.Reset">
-    <summary>
-      <para>The <b>IEnumTfUIElements.Reset</b> method resets the enumerator object by moving the current position to the beginning of the enumeration sequence.</para>
-    </summary>
+    <summary>The <b>IEnumTfUIElements.Reset</b> method resets the enumerator object by moving the current position to the beginning of the enumeration sequence.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -113,26 +111,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfUIElements.Skip">
-    <summary>
-      <para>The <b>IEnumTfUIElements.Skip</b> method obtains, from the current position, the specified number of elements in the enumeration sequence.</para>
-    </summary>
-    <param name="ulCount">
-      <para>[in] Specifies the number of elements to skip.</para>
-    </param>
+    <summary>The <b>IEnumTfUIElements.Skip</b> method obtains, from the current position, the specified number of elements in the enumeration sequence.</summary>
+    <param name="ulCount">[in] Specifies the number of elements to skip.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -140,32 +136,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The method reached the end of the enumeration before the specified number of elements could be skipped.</para>
-          </description>
-        </item>
+          <description>The method reached the end of the enumeration before the specified number of elements could be skipped.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IEnumTfUIElements">
-    <summary>
-      <para>The <b>IEnumTfUIElements</b> interface is implemented by TSF manager and used by applications or textservices. This interface can be retrieved by <see cref="ITfUIElementMgr.EnumUIElements" />  and enumerates the registered UI elements.</para>
-    </summary>
+    <summary>The <b>IEnumTfUIElements</b> interface is implemented by TSF manager and used by applications or textservices. This interface can be retrieved by <see cref="ITfUIElementMgr.EnumUIElements" /> and enumerates the registered UI elements.</summary>
   </member>
 </doc>

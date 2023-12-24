@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFT_REGISTER_TYPE_INFO">
-    <summary>
-      <para>Contains media type information for registering a Media Foundation transform (MFT).</para>
-    </summary>
-    <seealso cref="MFTEnum" />
-    <seealso cref="MFTGetInfo" />
-    <seealso cref="MFTRegister" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Contains media type information for registering a Media Foundation transform (MFT).</summary>
   </member>
   <member name="MFT_REGISTER_TYPE_INFO.guidMajorType">
-    <summary>
-      <para>The major media type. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Major Media Types</a>.</para>
-    </summary>
+    <summary>The major media type. For a list of possible values, see <a href="https://docs.microsoft.com//windows/desktop/medfound/media-type-guids">Major Media Types</a>.</summary>
   </member>
   <member name="MFT_REGISTER_TYPE_INFO.guidSubtype">
     <summary>

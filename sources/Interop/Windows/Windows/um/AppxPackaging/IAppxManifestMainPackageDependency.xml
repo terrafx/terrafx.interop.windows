@@ -3,44 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestMainPackageDependency.GetName">
-    <summary>
-      <para>Gets the name of the main package dependency from the AppxManifest.xml.</para>
-    </summary>
-    <param name="name">
-      <para>The name of the main package dependency.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestMainPackageDependency" />
+    <summary>Gets the name of the main package dependency from the AppxManifest.xml.</summary>
+    <param name="name">The name of the main package dependency.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestMainPackageDependency.GetPackageFamilyName">
-    <summary>
-      <para>Gets the package family name of the main package dependency from the AppxManifest.xml.</para>
-    </summary>
-    <param name="packageFamilyName">
-      <para>The package family name of the main package dependency.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestMainPackageDependency" />
+    <summary>Gets the package family name of the main package dependency from the AppxManifest.xml.</summary>
+    <param name="packageFamilyName">The package family name of the main package dependency.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestMainPackageDependency.GetPublisher">
-    <summary>
-      <para>Gets the publisher of the main package dependency from the AppxManifest.xml.</para>
-    </summary>
-    <param name="publisher">
-      <para>The publisher of the main package dependency.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestMainPackageDependency" />
+    <summary>Gets the publisher of the main package dependency from the AppxManifest.xml.</summary>
+    <param name="publisher">The publisher of the main package dependency.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestMainPackageDependency">
-    <summary>
-      <para>Provides access to attribute values of the main package dependency.</para>
-    </summary>
+    <summary>Provides access to attribute values of the main package dependency.</summary>
   </member>
 </doc>

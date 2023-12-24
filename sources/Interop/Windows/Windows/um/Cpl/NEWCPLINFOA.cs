@@ -3,13 +3,14 @@
 // Ported from um/Cpl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='NEWCPLINFOA.xml' path='doc/member[@name="NEWCPLINFOA"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct NEWCPLINFOA
+public partial struct NEWCPLINFOA
 {
     /// <include file='NEWCPLINFOA.xml' path='doc/member[@name="NEWCPLINFOA.dwSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -32,13 +33,37 @@ public unsafe partial struct NEWCPLINFOA
 
     /// <include file='NEWCPLINFOA.xml' path='doc/member[@name="NEWCPLINFOA.szName"]/*' />
     [NativeTypeName("CHAR[32]")]
-    public fixed sbyte szName[32];
+    public _szName_e__FixedBuffer szName;
 
     /// <include file='NEWCPLINFOA.xml' path='doc/member[@name="NEWCPLINFOA.szInfo"]/*' />
     [NativeTypeName("CHAR[64]")]
-    public fixed sbyte szInfo[64];
+    public _szInfo_e__FixedBuffer szInfo;
 
     /// <include file='NEWCPLINFOA.xml' path='doc/member[@name="NEWCPLINFOA.szHelpFile"]/*' />
     [NativeTypeName("CHAR[128]")]
-    public fixed sbyte szHelpFile[128];
+    public _szHelpFile_e__FixedBuffer szHelpFile;
+
+    /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(32)]
+    public partial struct _szName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_szInfo_e__FixedBuffer.xml' path='doc/member[@name="_szInfo_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(64)]
+    public partial struct _szInfo_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_szHelpFile_e__FixedBuffer.xml' path='doc/member[@name="_szHelpFile_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(128)]
+    public partial struct _szHelpFile_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

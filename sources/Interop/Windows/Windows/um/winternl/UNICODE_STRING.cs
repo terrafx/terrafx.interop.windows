@@ -16,5 +16,5 @@ public unsafe partial struct UNICODE_STRING
 
     /// <include file='UNICODE_STRING.xml' path='doc/member[@name="UNICODE_STRING.Buffer"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* Buffer;
+    public char* Buffer;
 }

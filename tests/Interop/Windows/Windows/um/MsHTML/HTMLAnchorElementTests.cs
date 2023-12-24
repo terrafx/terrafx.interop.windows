@@ -19,25 +19,4 @@ public static unsafe partial class HTMLAnchorElementTests
     {
         Assert.That(typeof(HTMLAnchorElement).GUID, Is.EqualTo(IID_HTMLAnchorElement));
     }
-
-    /// <summary>Validates that the <see cref="HTMLAnchorElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLAnchorElement>(), Is.EqualTo(sizeof(HTMLAnchorElement)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLAnchorElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLAnchorElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLAnchorElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLAnchorElement), Is.EqualTo(1));
-    }
 }

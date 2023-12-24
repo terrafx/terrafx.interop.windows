@@ -25,7 +25,7 @@ public unsafe partial struct IExtensionServices : IExtensionServices.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IExtensionServices*, Guid*, void**, int>)(lpVtbl[0]))((IExtensionServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IExtensionServices*, Guid*, void**, int>)(lpVtbl[0]))((IExtensionServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IExtensionServices : IExtensionServices.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IExtensionServices*, uint>)(lpVtbl[1]))((IExtensionServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExtensionServices*, uint>)(lpVtbl[1]))((IExtensionServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,50 +43,50 @@ public unsafe partial struct IExtensionServices : IExtensionServices.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IExtensionServices*, uint>)(lpVtbl[2]))((IExtensionServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExtensionServices*, uint>)(lpVtbl[2]))((IExtensionServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IExtensionServices.xml' path='doc/member[@name="IExtensionServices.SetAdditionalHeaders"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetAdditionalHeaders([NativeTypeName("LPCWSTR")] ushort* pwzAdditionalHeaders)
+    public HRESULT SetAdditionalHeaders([NativeTypeName("LPCWSTR")] char* pwzAdditionalHeaders)
     {
-        return ((delegate* unmanaged<IExtensionServices*, ushort*, int>)(lpVtbl[3]))((IExtensionServices*)Unsafe.AsPointer(ref this), pwzAdditionalHeaders);
+        return ((delegate* unmanaged[MemberFunction]<IExtensionServices*, char*, int>)(lpVtbl[3]))((IExtensionServices*)Unsafe.AsPointer(ref this), pwzAdditionalHeaders);
     }
 
     /// <include file='IExtensionServices.xml' path='doc/member[@name="IExtensionServices.SetAuthenticateData"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetAuthenticateData(HWND phwnd, [NativeTypeName("LPCWSTR")] ushort* pwzUsername, [NativeTypeName("LPCWSTR")] ushort* pwzPassword)
+    public HRESULT SetAuthenticateData(HWND phwnd, [NativeTypeName("LPCWSTR")] char* pwzUsername, [NativeTypeName("LPCWSTR")] char* pwzPassword)
     {
-        return ((delegate* unmanaged<IExtensionServices*, HWND, ushort*, ushort*, int>)(lpVtbl[4]))((IExtensionServices*)Unsafe.AsPointer(ref this), phwnd, pwzUsername, pwzPassword);
+        return ((delegate* unmanaged[MemberFunction]<IExtensionServices*, HWND, char*, char*, int>)(lpVtbl[4]))((IExtensionServices*)Unsafe.AsPointer(ref this), phwnd, pwzUsername, pwzPassword);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetAdditionalHeaders([NativeTypeName("LPCWSTR")] ushort* pwzAdditionalHeaders);
+        HRESULT SetAdditionalHeaders([NativeTypeName("LPCWSTR")] char* pwzAdditionalHeaders);
 
         [VtblIndex(4)]
-        HRESULT SetAuthenticateData(HWND phwnd, [NativeTypeName("LPCWSTR")] ushort* pwzUsername, [NativeTypeName("LPCWSTR")] ushort* pwzPassword);
+        HRESULT SetAuthenticateData(HWND phwnd, [NativeTypeName("LPCWSTR")] char* pwzUsername, [NativeTypeName("LPCWSTR")] char* pwzPassword);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetAdditionalHeaders;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetAdditionalHeaders;
 
         [NativeTypeName("HRESULT (HWND, LPCWSTR, LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, ushort*, ushort*, int> SetAuthenticateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, char*, char*, int> SetAuthenticateData;
     }
 }

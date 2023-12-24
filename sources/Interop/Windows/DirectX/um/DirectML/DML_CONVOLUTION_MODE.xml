@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_CONVOLUTION_MODE">
-    <summary>
-      <para>Defines constants that specify a mode for the DirectML convolution operator (as described by the <see cref="DML_CONVOLUTION_OPERATOR_DESC" /> structure).</para>
-    </summary>
-    <seealso cref="DML_CONVOLUTION_OPERATOR_DESC" />
+    <summary>Defines constants that specify a mode for the DirectML convolution operator (as described by the <see cref="DML_CONVOLUTION_OPERATOR_DESC" /> structure).</summary>
   </member>
   <member name="DML_CONVOLUTION_MODE.DML_CONVOLUTION_MODE_CONVOLUTION">
-    <summary>
-      <para>Specifies the convolution mode. When used along with <see cref="DML_CONVOLUTION_DIRECTION_FORWARD" />, this flips the filter along the height and width axes.</para>
-    </summary>
+    <summary>Specifies the convolution mode. When used along with <see cref="DML_CONVOLUTION_DIRECTION_FORWARD" />, this flips the filter along the height and width axes.</summary>
   </member>
   <member name="DML_CONVOLUTION_MODE.DML_CONVOLUTION_MODE_CROSS_CORRELATION">
-    <summary>
-      <para>Specifies the cross-correlation mode. If in doubt, use this mode—it is appropriate for the vast majority of machine learning (ML) model inference. When used along with <see cref="DML_CONVOLUTION_DIRECTION_BACKWARD" />, this flips the filter along the height and width axes.</para>
-    </summary>
+    <summary>Specifies the cross-correlation mode. If in doubt, use this mode—it is appropriate for the vast majority of machine learning (ML) model inference. When used along with <see cref="DML_CONVOLUTION_DIRECTION_BACKWARD" />, this flips the filter along the height and width axes.</summary>
   </member>
 </doc>

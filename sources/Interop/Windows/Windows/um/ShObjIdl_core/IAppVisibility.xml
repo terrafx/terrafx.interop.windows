@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppVisibility.Advise">
-    <summary>
-      <para>Registers an advise sink object to receive notification of changes to the display.</para>
-    </summary>
-    <param name="pCallback">
-      <para>The client's advise sink that receives outgoing calls from the connection point.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>A token that uniquely identifies this connection. Use this token to delete the connection by passing it to the <see cref="Unadvise" /> method.</para>
-    </param>
+    <summary>Registers an advise sink object to receive notification of changes to the display.</summary>
+    <param name="pCallback">The client's advise sink that receives outgoing calls from the connection point.</param>
+    <param name="pdwCookie">A token that uniquely identifies this connection. Use this token to delete the connection by passing it to the <see cref="Unadvise" /> method.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,31 +13,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>pdwCookie</i> is <b>NULL</b>.
-</description>
-        </item>
+            <i>pdwCookie</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAppVisibility" />
-    <seealso cref="IAppVisibilityEvents" />
   </member>
   <member name="IAppVisibility.GetAppVisibilityOnMonitor">
-    <summary>
-      <para>Queries the current mode of the specified monitor.</para>
-    </summary>
-    <param name="hMonitor">
-      <para>The monitor to query.</para>
-    </param>
-    <param name="pMode">
-      <para>The current mode of <i>hMonitor</i>.</para>
-    </param>
+    <summary>Queries the current mode of the specified monitor.</summary>
+    <param name="hMonitor">The monitor to query.</param>
+    <param name="pMode">The current mode of <i>hMonitor</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -51,29 +40,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>pMode</i> is <b>NULL</b>.
-</description>
-        </item>
+            <i>pMode</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAppVisibility" />
-    <seealso cref="MONITOR_APP_VISIBILITY" />
   </member>
   <member name="IAppVisibility.IsLauncherVisible">
-    <summary>
-      <para>Gets a value that indicates whether the Start screen is displayed.</para>
-    </summary>
+    <summary>Gets a value that indicates whether the Start screen is displayed.</summary>
     <param name="pfVisible">
-      <para>
-        <b>TRUE</b> if the Start screen is displayed; otherwise, <b>FALSE.</b></para>
-    </param>
+      <b>TRUE</b> if the Start screen is displayed; otherwise, <b>FALSE.</b></param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -81,44 +67,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>pfVisible</i> is <b>NULL</b>.
-</description>
-        </item>
+            <i>pfVisible</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAppVisibility" />
   </member>
   <member name="IAppVisibility.Unadvise">
-    <summary>
-      <para>Cancels a connection that was previously established by using <see cref="Advise" />.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>A token that uniquely identifies the connection to cancel, which is provided by a previous call to to the <see cref="Advise" /> method.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppVisibility" />
-    <seealso cref="IAppVisibilityEvents" />
+    <summary>Cancels a connection that was previously established by using <see cref="Advise" />.</summary>
+    <param name="dwCookie">A token that uniquely identifies the connection to cancel, which is provided by a previous call to to the <see cref="Advise" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppVisibility">
-    <summary>
-      <para>Provides functionality to determine whether the display is showing Universal Windows Platform apps.</para>
-    </summary>
-    <remarks>
-      <para>Use the <b>IAppVisibility</b> interface to determine when a display is showing Universal Windows Platform apps. This is useful for accessibility tools and other applications.</para>
-      <para>Use the <see cref="IsLauncherVisible" />  method to determine when  the Start screen is visible.</para>
-      <para>Don't implement the <b>IAppVisibility</b> interface. Instead, call the <see cref="CoCreateInstance" /> function with <b>CLSID_AppVisibility</b>.</para>
-    </remarks>
-    <seealso cref="IAppVisibilityEvents" />
-    <seealso cref="IUnknown" />
-    <seealso cref="MONITOR_APP_VISIBILITY" />
+    <summary>Provides functionality to determine whether the display is showing Universal Windows Platform apps.</summary>
   </member>
 </doc>

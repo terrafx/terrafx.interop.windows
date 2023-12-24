@@ -4,97 +4,44 @@
 <doc>
   <member name="IBasicVideo.GetCurrentImage">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetCurrentImage</code> method retrieves the current image waiting at the renderer.</para>
     </summary>
-    <param name="pBufferSize">
-      <para>Pointer to a variable that contains the size of the buffer that the caller is passing in. If <i>pDIBImage</i> is <b>NULL</b>, this parameter receives the required buffer size.</para>
-    </param>
-    <param name="pDIBImage">
-      <para>Pointer to a buffer where the complete image will be stored in device-independent bitmap (DIB) format. Cast the pointer to a long pointer type.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> filter and the Video Mixing Renderer (VMR) implement this method differently.</para>
-      <h3>Video Renderer only:</h3>
-      <para>This method fails if the renderer is using DirectDraw acceleration. Unfortunately, this depends on the end-user's hardware configuration, so in practice this method is not reliable.</para>
-      <para>Pause the Video Renderer before calling this method. Otherwise, the method returns VFW_E_NOT_PAUSED. Make sure that the pause operation has completed by calling <see cref="IMediaControl.GetState" />; if the pause operation has not completed, the <b>GetCurrentImage</b> method returns E_UNEXPECTED. Depending on what data the source filter has available, the video renderer is not guaranteed to service this request. If no image is available, it returns E_FAIL.</para>
-      <h3>Video Mixing Renderer only:</h3>
-      <para>This method is reliable regardless of whether the VMR is using DirectDraw acceleration and regardless of the current graph state (running, stopped, or paused).</para>
-      <h3>Video Renderer and Video Mixing Renderer:</h3>
-      <para>To obtain the required buffer size to hold the image, call this method with a <b>NULL</b> pointer in the <i>pDIBImage</i> parameter. The method returns the required buffer size in the <i>pBufferSize</i> parameter. Allocate a buffer of that size and call the method again, with <i>pDIBImage</i> pointing to the buffer. On the second call, use <i>pBufferSize</i> to specify the buffer size. If the buffer is too small to hold the complete image, the method returns E_OUTOFMEMORY.</para>
-      <para>If the method succeeds, the buffer is filled with the entire DIB image, including the <see cref="BITMAPINFOHEADER" /> structure, plus any palette entries and bit masks as defined in the Win32 <see cref="BITMAPINFO" /> structure. The format of the image depends on the type provided by the source filter, and cannot be specified in advance.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pBufferSize">Pointer to a variable that contains the size of the buffer that the caller is passing in. If <i>pDIBImage</i> is <b>NULL</b>, this parameter receives the required buffer size.</param>
+    <param name="pDIBImage">Pointer to a buffer where the complete image will be stored in device-independent bitmap (DIB) format. Cast the pointer to a long pointer type.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.GetDestinationPosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetDestinationPosition</code> method retrieves the position of the destination rectangle.</para>
     </summary>
-    <param name="pLeft">
-      <para>Pointer to a variable that receives the x-coordinate, in pixels.</para>
-    </param>
-    <param name="pTop">
-      <para>Pointer to a variable that receives the y-coordinate, in pixels.</para>
-    </param>
-    <param name="pWidth">
-      <para>Pointer to a variable that receives the width, in pixels.</para>
-    </param>
-    <param name="pHeight">
-      <para>Pointer to a variable that receives the height, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>This method has the same effect as individually calling the <see cref="IBasicVideo.get_DestinationLeft" />, <see cref="IBasicVideo.get_DestinationTop" />, <see cref="IBasicVideo.get_DestinationWidth" />, and <see cref="IBasicVideo.get_DestinationHeight" /> methods.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pLeft">Pointer to a variable that receives the x-coordinate, in pixels.</param>
+    <param name="pTop">Pointer to a variable that receives the y-coordinate, in pixels.</param>
+    <param name="pWidth">Pointer to a variable that receives the width, in pixels.</param>
+    <param name="pHeight">Pointer to a variable that receives the height, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.GetSourcePosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetSourcePosition</code> method retrieves the position of the source rectangle.</para>
     </summary>
-    <param name="pLeft">
-      <para>Pointer to a variable that receives the x-coordinate, in pixels.</para>
-    </param>
-    <param name="pTop">
-      <para>Pointer to a variable that receives the y-coordinate, in pixels.</para>
-    </param>
-    <param name="pWidth">
-      <para>Pointer to a variable that receives the width, in pixels.</para>
-    </param>
-    <param name="pHeight">
-      <para>Pointer to a variable that receives the height, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>This method has the same effect as individually calling the <see cref="IBasicVideo.get_SourceLeft" />, <see cref="IBasicVideo.get_SourceTop" />, <see cref="IBasicVideo.get_SourceWidth" />, and <see cref="IBasicVideo.get_SourceHeight" /> methods.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pLeft">Pointer to a variable that receives the x-coordinate, in pixels.</param>
+    <param name="pTop">Pointer to a variable that receives the y-coordinate, in pixels.</param>
+    <param name="pWidth">Pointer to a variable that receives the width, in pixels.</param>
+    <param name="pHeight">Pointer to a variable that receives the height, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.GetVideoPaletteEntries">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetVideoPaletteEntries</code> method retrieves the palette colors for the video.</para>
     </summary>
-    <param name="StartIndex">
-      <para>Start index for the palette.</para>
-    </param>
-    <param name="Entries">
-      <para>Number of palette entries to retrieve.</para>
-    </param>
-    <param name="pRetrieved">
-      <para>Pointer to a variable that receives the number of entries returned in <i>pPallette</i>.</para>
-    </param>
-    <param name="pPalette">
-      <para>Pointer to an array of <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structures of size <i>Entries</i>. Cast the pointer to a long pointer type. The method fills the array.</para>
-    </param>
+    <param name="StartIndex">Start index for the palette.</param>
+    <param name="Entries">Number of palette entries to retrieve.</param>
+    <param name="pRetrieved">Pointer to a variable that receives the number of entries returned in <i>pPallette</i>.</param>
+    <param name="pPalette">Pointer to an array of <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structures of size <i>Entries</i>. Cast the pointer to a long pointer type. The method fills the array.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -102,269 +49,191 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NO_PALETTE_AVAILABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>No palette is available.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NO_PALETTE_AVAILABLE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>No palette is available.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The Video Renderer's input pin is not connected.</para>
-          </description>
-        </item>
+          <description>The Video Renderer's input pin is not connected.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
   </member>
   <member name="IBasicVideo.GetVideoSize">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetVideoSize</code> method retrieves the native video dimensions.</para>
     </summary>
-    <param name="pWidth">
-      <para>Pointer to a variable that receives the width of the video image, in pixels.</para>
-    </param>
-    <param name="pHeight">
-      <para>Pointer to a variable that receives the height of the video image, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pWidth">Pointer to a variable that receives the width of the video image, in pixels.</param>
+    <param name="pHeight">Pointer to a variable that receives the height of the video image, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_AvgTimePerFrame">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_AvgTimePerFrame</code> method retrieves the average time between successive frames.</para>
     </summary>
-    <param name="pAvgTimePerFrame">
-      <para>Pointer to a variable of type <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reftime">REFTIME</a> that receives the average frame time, in seconds.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>This method returns the authored time per frame. This value is typically set by the source filter, which obtains it from information in the video stream itself. This value is not necessarily equal to the actual time per frame at which the video is rendered.</para>
-      <para>To retrieve the actual frame rate during playback, use the <a href="https://docs.microsoft.com//previous-versions/ms786607(v=vs.85)">IQualProp.get_AvgFrameRate</a>. For more information on actual versus authored frame rates, see the Remarks section for the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pAvgTimePerFrame">Pointer to a variable of type <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reftime">REFTIME</a> that receives the average frame time, in seconds.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_BitErrorRate">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_BitErrorRate</code> method retrieves the approximate bit error rate of the video stream</para>
     </summary>
-    <param name="pBitErrorRate">
-      <para>Pointer to a variable that receives the approximate number of bits per error.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pBitErrorRate">Pointer to a variable that receives the approximate number of bits per error.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_BitRate">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_BitRate</code> method retrieves the approximate bit rate of the video stream.</para>
     </summary>
-    <param name="pBitRate">
-      <para>Pointer to a variable that receives the approximate bit rate, in bits per second.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pBitRate">Pointer to a variable that receives the approximate bit rate, in bits per second.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_DestinationHeight">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_DestinationHeight</code> method retrieves the height of the destination rectangle.</para>
     </summary>
-    <param name="pDestinationHeight">
-      <para>Pointer to a variable that receives the height, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pDestinationHeight">Pointer to a variable that receives the height, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_DestinationLeft">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_DestinationLeft</code> method retrieves the x-coordinate of the destination rectangle.</para>
     </summary>
-    <param name="pDestinationLeft">
-      <para>Pointer to a variable that receives the x-coordinate, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pDestinationLeft">Pointer to a variable that receives the x-coordinate, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_DestinationTop">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_DestinationTop</code> method retrieves the y-coordinate of the destination rectangle.</para>
     </summary>
-    <param name="pDestinationTop">
-      <para>Pointer to a variable that receives the y-coordinate, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pDestinationTop">Pointer to a variable that receives the y-coordinate, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_DestinationWidth">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_DestinationWidth</code> method retrieves the width of the destination rectangle.</para>
     </summary>
-    <param name="pDestinationWidth">
-      <para>Pointer to a variable that receives the width, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pDestinationWidth">Pointer to a variable that receives the width, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_SourceHeight">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_SourceHeight</code> method retrieves the height of the source rectangle.</para>
     </summary>
-    <param name="pSourceHeight">
-      <para>Pointer to a variable that receives the current height, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pSourceHeight">Pointer to a variable that receives the current height, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_SourceLeft">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_SourceLeft</code> method retrieves the x-coordinate of the source rectangle.</para>
     </summary>
-    <param name="pSourceLeft">
-      <para>Pointer to a variable that receives the x-coordinate, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pSourceLeft">Pointer to a variable that receives the x-coordinate, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_SourceTop">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_SourceTop</code> method retrieves the y-coordinate of the source rectangle.</para>
     </summary>
-    <param name="pSourceTop">
-      <para>Pointer a variable that receives the y-coordinate, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pSourceTop">Pointer a variable that receives the y-coordinate, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_SourceWidth">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_SourceWidth</code> method retrieves the width of the source rectangle.</para>
     </summary>
-    <param name="pSourceWidth">
-      <para>Pointer to a variable that receives the width, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pSourceWidth">Pointer to a variable that receives the width, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_VideoHeight">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>get_VideoHeight</code> method retrieves the native height of the video.</para>
     </summary>
-    <param name="pVideoHeight">
-      <para>Pointer to a variable that receives the height, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pVideoHeight">Pointer to a variable that receives the height, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.get_VideoWidth">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The get_VideoWidth method retrieves the native width of the video.</para>
     </summary>
-    <param name="pVideoWidth">
-      <para>Pointer to a variable that receives the width of the video, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="pVideoWidth">Pointer to a variable that receives the width of the video, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.IsUsingDefaultDestination">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IsUsingDefaultDestination</code> method queries whether the renderer is using the default destination rectangle.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK if the renderer is using the default destination rectangle, or S_FALSE otherwise.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
-    <seealso cref="IBasicVideo.SetDefaultDestinationPosition" />
+    <returns>Returns S_OK if the renderer is using the default destination rectangle, or S_FALSE otherwise.</returns>
   </member>
   <member name="IBasicVideo.IsUsingDefaultSource">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IsUsingDefaultSource</code> method queries whether the renderer is using the default source rectangle.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK if the renderer is using the default source rectangle, or S_FALSE otherwise.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
-    <seealso cref="IBasicVideo.SetDefaultSourcePosition" />
+    <returns>Returns S_OK if the renderer is using the default source rectangle, or S_FALSE otherwise.</returns>
   </member>
   <member name="IBasicVideo.put_DestinationHeight">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_DestinationHeight</code> method sets the height of the destination rectangle.</para>
     </summary>
-    <param name="DestinationHeight">
-      <para>Specifies the height, in pixels.</para>
-    </param>
+    <param name="DestinationHeight">Specifies the height, in pixels.</param>
     <returns>
       <para>Returns an <code>HRESULT</code> value. Possible values include the following.</para>
       <list type="table">
@@ -372,74 +241,67 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument. <i>DestinationHeight</i> must be larger than zero.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument. <i>DestinationHeight</i> must be larger than zero.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The video renderer is not connected.</para>
-          </description>
-        </item>
+          <description>The video renderer is not connected.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
   </member>
   <member name="IBasicVideo.put_DestinationLeft">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_DestinationLeft</code> method sets the x-coordinate of the destination rectangle.</para>
     </summary>
-    <param name="DestinationLeft">
-      <para>Specifies the x-coordinate, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="DestinationLeft">Specifies the x-coordinate, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.put_DestinationTop">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_DestinationTop</code> method sets the y-coordinate of the destination rectangle.</para>
     </summary>
-    <param name="DestinationTop">
-      <para>Specifies the y-coordinate, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="DestinationTop">Specifies the y-coordinate, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.put_DestinationWidth">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_DestinationWidth</code> method sets the width of the destination rectangle.</para>
     </summary>
-    <param name="DestinationWidth">
-      <para>Specifies the width, in pixels.</para>
-    </param>
+    <param name="DestinationWidth">Specifies the width, in pixels.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -447,61 +309,59 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument. <i>DestinationWidth</i> must be larger than zero.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument. <i>DestinationWidth</i> must be larger than zero.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The video renderer is not connected.</para>
-          </description>
-        </item>
+          <description>The video renderer is not connected.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
   </member>
   <member name="IBasicVideo.put_SourceHeight">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_SourceHeight</code> method sets the height of the source rectangle.</para>
     </summary>
-    <param name="SourceHeight">
-      <para>Specifies the height, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="SourceHeight">Specifies the height, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.put_SourceLeft">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_SourceLeft</code> method sets the x-coordinate of the source rectangle.</para>
     </summary>
-    <param name="SourceLeft">
-      <para>Specifies the x-coordinate, in pixels.</para>
-    </param>
+    <param name="SourceLeft">Specifies the x-coordinate, in pixels.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -509,51 +369,51 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The video renderer's input pin is not connected.</para>
-          </description>
-        </item>
+          <description>The video renderer's input pin is not connected.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method moves the entire source rectangle to the left or right. It does not change the width of the source rectangle. If the value of <i>SourceLeft</i> would place the right edge of the rectangle beyond the edge of the video frame, the method returns E_INVALIDARG. To crop the video, call <b>put_SourceWidth</b> to adjust the width, before calling <code>put_SourceLeft</code>. (Or call <b>SetSourcePosition</b> to set the entire source rectangle at once.)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
   </member>
   <member name="IBasicVideo.put_SourceTop">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_SourceTop</code> method sets the y-coordinate of the source rectangle.</para>
     </summary>
-    <param name="SourceTop">
-      <para>Specifies the y-coordinate, in pixels.</para>
-    </param>
+    <param name="SourceTop">Specifies the y-coordinate, in pixels.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -561,93 +421,76 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The video renderer's input pin is not connected.</para>
-          </description>
-        </item>
+          <description>The video renderer's input pin is not connected.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method moves the entire source rectangle up or down. It does not change the height of the source rectangle. If the value of <i>SourceTop</i> would place the bottom edge of the rectangle beyond the edge of the video frame, the method returns E_INVALIDARG. To crop the video, call <b>put_SourceHeight</b> to adjust the width, before calling <code>put_SourceTop</code>. (Or call <b>SetSourcePosition</b> to set the entire source rectangle at once.)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
   </member>
   <member name="IBasicVideo.put_SourceWidth">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>put_SourceWidth</code> method sets the width of the source rectangle.</para>
     </summary>
-    <param name="SourceWidth">
-      <para>Specifies the width, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="SourceWidth">Specifies the width, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.SetDefaultDestinationPosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetDefaultDestinationPosition</code> method reverts to the default destination rectangle. After this method is called, the video renderer uses the entire window for playback.</para>
     </summary>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.SetDefaultSourcePosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetDefaultSourcePosition</code> method reverts to the default source rectangle. After this method is called, the video renderer uses the entire video image, without cropping.</para>
     </summary>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo.SetDestinationPosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetDestinationPosition</code> method sets the destination rectangle.</para>
     </summary>
-    <param name="Left">
-      <para>Specifies the x-coordinate, in pixels.</para>
-    </param>
-    <param name="Top">
-      <para>Specifies the y-coordinate, in pixels.</para>
-    </param>
-    <param name="Width">
-      <para>Specifies the width, in pixels.</para>
-    </param>
-    <param name="Height">
-      <para>Specifies the height, in pixels.</para>
-    </param>
+    <param name="Left">Specifies the x-coordinate, in pixels.</param>
+    <param name="Top">Specifies the y-coordinate, in pixels.</param>
+    <param name="Width">Specifies the width, in pixels.</param>
+    <param name="Height">Specifies the height, in pixels.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -655,72 +498,59 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument. <i>Width</i> and <i>Height</i> must be larger than zero.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument. <i>Width</i> and <i>Height</i> must be larger than zero.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The video renderer is not connected.</para>
-          </description>
-        </item>
+          <description>The video renderer is not connected.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method has the same effect as individually calling the <see cref="IBasicVideo.put_DestinationLeft" />, <see cref="IBasicVideo.put_DestinationTop" />, <see cref="IBasicVideo.put_DestinationWidth" />, and <see cref="IBasicVideo.put_DestinationHeight" /> methods.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
   </member>
   <member name="IBasicVideo.SetSourcePosition">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetSourcePosition</code> method sets the source rectangle.</para>
     </summary>
-    <param name="Left">
-      <para>Specifies the x-coordinate, in pixels.</para>
-    </param>
-    <param name="Top">
-      <para>Specifies the y-coordinate, in pixels.</para>
-    </param>
-    <param name="Width">
-      <para>Specifies the width, in pixels.</para>
-    </param>
-    <param name="Height">
-      <para>Specifies the height, in pixels.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value.</para>
-    </returns>
-    <remarks>
-      <para>This method has the same effect as individually calling the <see cref="IBasicVideo.put_SourceLeft" />, <see cref="IBasicVideo.put_SourceTop" />, <see cref="IBasicVideo.put_SourceWidth" />, and <see cref="IBasicVideo.put_SourceHeight" /> methods.</para>
-      <para>Setting this coordinate does not affect the destination rectangle height.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IBasicVideo Interface" />
+    <param name="Left">Specifies the x-coordinate, in pixels.</param>
+    <param name="Top">Specifies the y-coordinate, in pixels.</param>
+    <param name="Width">Specifies the width, in pixels.</param>
+    <param name="Height">Specifies the height, in pixels.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
   </member>
   <member name="IBasicVideo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IBasicVideo</code> interface sets video properties such as the destination and source rectangles. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> filter and Video Mixing Renderer filters implement this interface, but the interface is exposed to applications through the Filter Graph Manager. Applications should always retrieve this interface from the Filter Graph Manager.</para>
       <para>The <code>IBasicVideo</code> interface manipulates the following rectangles associated with the video image:</para>
       <list type="bullet">
@@ -733,12 +563,6 @@
         <item>
           <description>The <i>video</i> rectangle is the original video image.</description>
         </item>
-      </list>
-      <para>In other words, the video renderer crops the image to the source rectangle, and then stretches or shrinks the cropped image to the destination rectangle. All rectangle dimensions are given in pixels.</para>
-      <para>Properties set on the Video Renderer persist between successive connections and disconnections.</para>
-      <para>
-        <b>Error codes</b>: If the video renderer filter is not connected to another filter, all methods return the error code VFW_E_NOT_CONNECTED. For the Filter Graph Manager's implementation, if the graph does not contain a video renderer filter, all methods return E_NOINTERFACE. Note that the Filter Graph Manager exposes the interface even when the graph does not contain a video renderer, so an application can query for the interface before it builds the graph.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</seealso>
+      </list>In other words, the video renderer crops the image to the source rectangle, and then stretches or shrinks the cropped image to the destination rectangle. All rectangle dimensions are given in pixels.<para>Properties set on the Video Renderer persist between successive connections and disconnections.</para><para><b>Error codes</b>: If the video renderer filter is not connected to another filter, all methods return the error code VFW_E_NOT_CONNECTED. For the Filter Graph Manager's implementation, if the graph does not contain a video renderer filter, all methods return E_NOINTERFACE. Note that the Filter Graph Manager exposes the interface even when the graph does not contain a video renderer, so an application can query for the interface before it builds the graph.</para></summary>
   </member>
 </doc>

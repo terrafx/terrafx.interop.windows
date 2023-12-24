@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12CommandAllocator.Reset">
+    <summary>Indicates to re-use the memory that is associated with the command allocator.</summary>
+    <returns>This method returns <b>E_FAIL</b> if there is an actively recording command list referencing the command allocator. The debug layer will also issue an error in this case.<br />See <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12CommandAllocator">
+    <summary>Represents the allocations of storage for graphics processing unit (GPU) commands.</summary>
+  </member>
+</doc>

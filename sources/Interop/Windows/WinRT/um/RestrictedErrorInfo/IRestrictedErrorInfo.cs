@@ -28,7 +28,7 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRestrictedErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRestrictedErrorInfo*, Guid*, void**, int>)(lpVtbl[0]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRestrictedErrorInfo*, uint>)(lpVtbl[1]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRestrictedErrorInfo*, uint>)(lpVtbl[1]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,50 +46,50 @@ public unsafe partial struct IRestrictedErrorInfo : IRestrictedErrorInfo.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRestrictedErrorInfo*, uint>)(lpVtbl[2]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRestrictedErrorInfo*, uint>)(lpVtbl[2]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRestrictedErrorInfo.xml' path='doc/member[@name="IRestrictedErrorInfo.GetErrorDetails"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetErrorDetails([NativeTypeName("BSTR *")] ushort** description, HRESULT* error, [NativeTypeName("BSTR *")] ushort** restrictedDescription, [NativeTypeName("BSTR *")] ushort** capabilitySid)
+    public HRESULT GetErrorDetails([NativeTypeName("BSTR *")] char** description, HRESULT* error, [NativeTypeName("BSTR *")] char** restrictedDescription, [NativeTypeName("BSTR *")] char** capabilitySid)
     {
-        return ((delegate* unmanaged<IRestrictedErrorInfo*, ushort**, HRESULT*, ushort**, ushort**, int>)(lpVtbl[3]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), description, error, restrictedDescription, capabilitySid);
+        return ((delegate* unmanaged[MemberFunction]<IRestrictedErrorInfo*, char**, HRESULT*, char**, char**, int>)(lpVtbl[3]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), description, error, restrictedDescription, capabilitySid);
     }
 
     /// <include file='IRestrictedErrorInfo.xml' path='doc/member[@name="IRestrictedErrorInfo.GetReference"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetReference([NativeTypeName("BSTR *")] ushort** reference)
+    public HRESULT GetReference([NativeTypeName("BSTR *")] char** reference)
     {
-        return ((delegate* unmanaged<IRestrictedErrorInfo*, ushort**, int>)(lpVtbl[4]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), reference);
+        return ((delegate* unmanaged[MemberFunction]<IRestrictedErrorInfo*, char**, int>)(lpVtbl[4]))((IRestrictedErrorInfo*)Unsafe.AsPointer(ref this), reference);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetErrorDetails([NativeTypeName("BSTR *")] ushort** description, HRESULT* error, [NativeTypeName("BSTR *")] ushort** restrictedDescription, [NativeTypeName("BSTR *")] ushort** capabilitySid);
+        HRESULT GetErrorDetails([NativeTypeName("BSTR *")] char** description, HRESULT* error, [NativeTypeName("BSTR *")] char** restrictedDescription, [NativeTypeName("BSTR *")] char** capabilitySid);
 
         [VtblIndex(4)]
-        HRESULT GetReference([NativeTypeName("BSTR *")] ushort** reference);
+        HRESULT GetReference([NativeTypeName("BSTR *")] char** reference);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *, HRESULT *, BSTR *, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, HRESULT*, ushort**, ushort**, int> GetErrorDetails;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, HRESULT*, char**, char**, int> GetErrorDetails;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetReference;
     }
 }

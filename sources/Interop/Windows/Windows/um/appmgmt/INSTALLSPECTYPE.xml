@@ -3,29 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INSTALLSPECTYPE">
-    <summary>
-      <para>The <b>INSTALLSPECTYPE</b> enumeration values define the ways  a group policy application can be specified to the  <see cref="InstallApplication" /> function. The values are used in the <b>Type</b> member of <see cref="INSTALLDATA" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
-    <seealso cref="INSTALLDATA" />
-    <seealso cref="InstallApplication" />
-    <seealso cref="UninstallApplication" />
+    <summary>The <b>INSTALLSPECTYPE</b> enumeration values define the ways a group policy application can be specified to the <see cref="InstallApplication" /> function. The values are used in the <b>Type</b> member of <see cref="INSTALLDATA" />.</summary>
   </member>
   <member name="INSTALLSPECTYPE.APPNAME">
-    <summary>
-      <para>This constant equals 1. The application is specified by its display name and group policy GUID.</para>
-    </summary>
+    <summary>This constant equals 1. The application is specified by its display name and group policy GUID.</summary>
   </member>
   <member name="INSTALLSPECTYPE.FILEEXT">
-    <summary>
-      <para>The application is specified by its file name extension, for example, .jpg.</para>
-    </summary>
+    <summary>The application is specified by its file name extension, for example, .jpg.</summary>
   </member>
-  <member name="INSTALLSPECTYPE.PROGID">
-    <summary></summary>
-  </member>
-  <member name="INSTALLSPECTYPE.COMCLASS">
-    <summary></summary>
-  </member>
+  <member name="INSTALLSPECTYPE.PROGID"></member>
+  <member name="INSTALLSPECTYPE.COMCLASS"></member>
 </doc>

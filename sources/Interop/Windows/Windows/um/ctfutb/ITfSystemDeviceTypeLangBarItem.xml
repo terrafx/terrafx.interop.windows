@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfSystemDeviceTypeLangBarItem.GetIconMode">
-    <summary>
-      <para>Obtains the current icon display mode for a system language bar item.</para>
-    </summary>
-    <param name="pdwFlags">
-      <para>Pointer to a <b>DWORD</b> that receives the current icon display mode for a system language bar item. For more information about possible values, see the dwFlags parameter in <see cref="ITfSystemDeviceTypeLangBarItem.SetIconMode" />.</para>
-    </param>
+    <summary>Obtains the current icon display mode for a system language bar item.</summary>
+    <param name="pdwFlags">Pointer to a <b>DWORD</b> that receives the current icon display mode for a system language bar item. For more information about possible values, see the dwFlags parameter in <see cref="ITfSystemDeviceTypeLangBarItem.SetIconMode" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,35 +12,35 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The system language bar item does not support this method.</para>
-          </description>
-        </item>
+          <description>The system language bar item does not support this method.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfSystemDeviceTypeLangBarItem" />
-    <seealso cref="ITfSystemDeviceTypeLangBarItem.SetIconMode " />
   </member>
   <member name="ITfSystemDeviceTypeLangBarItem.SetIconMode">
-    <summary>
-      <para>Modifies the type of icon displayed for a system language bar item.</para>
-    </summary>
+    <summary>Modifies the type of icon displayed for a system language bar item.</summary>
     <param name="dwFlags">
       <para>Specifies how the system language bar item should display the icon. This can be one of the following values.</para>
       <list type="table">
@@ -52,22 +48,30 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>0</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The system language bar item should display a default icon for the item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The system language bar item should display a default icon for the item.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_DTLBI_USEPROFILEICON</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_DTLBI_USEPROFILEICON</b>
-          </description>
-          <description>
-            <para>The system language bar item should display the icon specified for the language profile.</para>
-          </description>
-        </item>
+          <description>The system language bar item should display the icon specified for the language profile.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -77,39 +81,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The system language bar item does not support this method.</para>
-          </description>
-        </item>
+          <description>The system language bar item does not support this method.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfSystemDeviceTypeLangBarItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/miscellaneous-language-bar-constants">Miscellaneous Language Bar Constants</seealso>
   </member>
   <member name="ITfSystemDeviceTypeLangBarItem">
-    <summary>
-      <para>The <b>ITfSystemDeviceTypeLangBarItem</b> interface is implemented by a system language bar item and used by an application or text service to control how the system item displays its icon. The application or text service obtains an instance of this interface by calling QueryInterface on the <see cref="ITfLangBarItem" /> object with IID_ITfSystemDeviceTypeLangBarItem.</para>
-    </summary>
-    <remarks>
-      <para>Support for this interface is optional and must not be assumed.</para>
-    </remarks>
-    <seealso cref="ITfLangBarItem" />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfSystemDeviceTypeLangBarItem</b> interface is implemented by a system language bar item and used by an application or text service to control how the system item displays its icon. The application or text service obtains an instance of this interface by calling QueryInterface on the <see cref="ITfLangBarItem" /> object with IID_ITfSystemDeviceTypeLangBarItem.</summary>
   </member>
 </doc>

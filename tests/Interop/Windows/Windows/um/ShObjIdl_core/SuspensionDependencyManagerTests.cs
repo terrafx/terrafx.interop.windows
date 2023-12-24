@@ -19,25 +19,4 @@ public static unsafe partial class SuspensionDependencyManagerTests
     {
         Assert.That(typeof(SuspensionDependencyManager).GUID, Is.EqualTo(IID_SuspensionDependencyManager));
     }
-
-    /// <summary>Validates that the <see cref="SuspensionDependencyManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SuspensionDependencyManager>(), Is.EqualTo(sizeof(SuspensionDependencyManager)));
-    }
-
-    /// <summary>Validates that the <see cref="SuspensionDependencyManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SuspensionDependencyManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SuspensionDependencyManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SuspensionDependencyManager), Is.EqualTo(1));
-    }
 }

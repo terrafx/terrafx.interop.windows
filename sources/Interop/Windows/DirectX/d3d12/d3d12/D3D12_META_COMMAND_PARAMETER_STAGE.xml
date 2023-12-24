@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_META_COMMAND_PARAMETER_STAGE">
+    <summary>Defines constants that specify the stage of a parameter to a meta command.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_PARAMETER_STAGE.D3D12_META_COMMAND_PARAMETER_STAGE_CREATION">
+    <summary>Specifies that the parameter is used at the meta command creation stage.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_PARAMETER_STAGE.D3D12_META_COMMAND_PARAMETER_STAGE_INITIALIZATION">
+    <summary>Specifies that the parameter is used at the meta command initialization stage.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_PARAMETER_STAGE.D3D12_META_COMMAND_PARAMETER_STAGE_EXECUTION">
+    <summary>Specifies that the parameter is used at the meta command execution stage.</summary>
+  </member>
+</doc>

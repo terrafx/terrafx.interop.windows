@@ -3,465 +3,119 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAttachmentExecute.CheckPolicy">
-    <summary>
-      <para>Provides a Boolean test that can be used to make decisions based on the attachment's execution policy.</para>
-    </summary>
+    <summary>Provides a Boolean test that can be used to make decisions based on the attachment's execution policy.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>Enable</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>S_FALSE</description>
           <description>Prompt</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>Any other failure code</description>
           <description>Disable</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>IAttachmentExecute.CheckPolicy</b> examines a set of properties known collectively as <i>evidence</i>. Anything used to determine trust level is considered evidence. These properties are set using the following methods.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IAttachmentExecute.SetFileName" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IAttachmentExecute.SetLocalPath" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IAttachmentExecute.SetReferrer" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IAttachmentExecute.SetSource" />
-          </description>
-        </item>
-      </list>
-      <para>The information returned by <b>IAttachmentExecute.CheckPolicy</b> enables an application to modify its UI appropriately for the situation.</para>
-      <para>
-        <b>IAttachmentExecute.CheckPolicy</b> requires the application first to call either <see cref="IAttachmentExecute.SetFileName" /> or <see cref="IAttachmentExecute.SetLocalPath" />.</para>
-    </remarks>
   </member>
   <member name="IAttachmentExecute.ClearClientState">
-    <summary>
-      <para>Removes any stored state that is based on the client's GUID. An example might be a setting based on a checked box that indicates a prompt should not be displayed again for a particular file type.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <see cref="IAttachmentExecute.SetClientGuid" /> must be called before using <b>IAttachmentExecute.ClearClientState</b>.</para>
-    </remarks>
+    <summary>Removes any stored state that is based on the client's GUID. An example might be a setting based on a checked box that indicates a prompt should not be displayed again for a particular file type.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute.Execute">
-    <summary>
-      <para>Executes an action on an attachment.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the parent window.</para>
-    </param>
-    <param name="pszVerb">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated string that contains a verb specifying the action to be performed on the file. See the <i>lpOperation</i> parameter in <see cref="ShellExecute" /> for valid strings. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="phProcess">
-      <para>Type: <b>HANDLE*</b></para>
-      <para>A pointer to a handle to the source process, used for synchronous operation. This value can be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Before calling <b>IAttachmentExecute.Execute</b>, <see cref="IAttachmentExecute.SetLocalPath" /> must be called with a valid local path and the file must be copied to that location.</para>
-      <para>If a prompt is indicated, <b>IAttachmentExecute.Execute</b> calls <see cref="IAttachmentExecute.Prompt" /> using the <see cref="ATTACHMENT_ACTION_EXEC" /> value.</para>
-      <para>
-        <b>IAttachmentExecute.Execute</b> may run virus scanners or other trust services to validate the file before executing it. Note that these services can delete or alter the file.</para>
-      <para>
-        <b>IAttachmentExecute.Execute</b> may attach <see cref="evidence" /> to the local path in its NTFS alternate data stream (ADS).</para>
-      <para>If <i>phProcess</i> is not <b>NULL</b>, <b>IAttachmentExecute.Execute</b> operates as a synchronous process and returns an <b>HPROCESS</b>, if available. If <i>phProcess</i> is <b>NULL</b>, <b>IAttachmentExecute.Execute</b> operates as an asynchronous process. This implies that the calling application has a message pump and a long-lived window.</para>
-      <para>If the handle pointed to by <i>phProcess</i> is non-<b>NULL</b> when the method returns, the calling application is responsible for calling <see cref="CloseHandle" /> to free the handle when it is no longer needed.</para>
-    </remarks>
+    <summary>Executes an action on an attachment.</summary>
+    <param name="hwnd">The handle of the parent window.</param>
+    <param name="pszVerb">A pointer to a null-terminated string that contains a verb specifying the action to be performed on the file. See the <i>lpOperation</i> parameter in <see cref="ShellExecute" /> for valid strings. This value can be <b>NULL</b>.</param>
+    <param name="phProcess">A pointer to a handle to the source process, used for synchronous operation. This value can be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute.Prompt">
-    <summary>
-      <para>Presents a prompt UI to the user.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the parent window.</para>
-    </param>
-    <param name="prompt">
-      <para>Type: <b><see cref="ATTACHMENT_PROMPT" /></b></para>
-      <para>A member of the <see cref="ATTACHMENT_PROMPT" /> enumeration that indicates what type of prompt UI to display to the user.</para>
-    </param>
-    <param name="paction">
-      <para>Type: <b><see cref="ATTACHMENT_ACTION" />*</b></para>
-      <para>A member of the <see cref="ATTACHMENT_ACTION" /> enumeration that indicates the action to be performed upon user confirmation.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>You must call <see cref="IAttachmentExecute.SetFileName" /> or <see cref="IAttachmentExecute.SetLocalPath" /> before calling <b>IAttachmentExecute.Prompt</b>.</para>
-      <para>
-        <b>IAttachmentExecute.Prompt</b> can be called by the application to force UI presentation before the file has been copied to disk.</para>
-    </remarks>
+    <summary>Presents a prompt UI to the user.</summary>
+    <param name="hwnd">A handle to the parent window.</param>
+    <param name="prompt">A member of the <see cref="ATTACHMENT_PROMPT" /> enumeration that indicates what type of prompt UI to display to the user.</param>
+    <param name="paction">A member of the <see cref="ATTACHMENT_ACTION" /> enumeration that indicates the action to be performed upon user confirmation.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute.Save">
-    <summary>
-      <para>Saves the attachment.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Before calling <b>IAttachmentExecute.Save</b>, you must call <see cref="IAttachmentExecute.SetLocalPath" /> with a valid path. The file should be copied to that local path before <b>IAttachmentExecute.Save</b> is called.</para>
-      <para>
-        <b>IAttachmentExecute.Save</b> should always be called if the local path declared in <see cref="IAttachmentExecute.SetLocalPath" /> is not the path of a temporary directory.</para>
-      <para>
-        <b>IAttachmentExecute.Save</b> may run virus scanners or other trust services to validate the file before saving it. Note that these services can delete or alter the file.</para>
-      <para>
-        <b>IAttachmentExecute.Save</b> may attach <see cref="evidence" /> to the local path in its NTFS alternate data stream (ADS).</para>
-    </remarks>
-    <seealso cref="IAttachmentExecute" />
-    <seealso cref="IAttachmentExecute.SaveWithUI" />
+    <summary>Saves the attachment.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute.SaveWithUI">
-    <summary>
-      <para>Presents the user with explanatory error UI if the save action fails.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the parent window.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>IAttachmentExecute.SaveWithUI</b> does not call <see cref="IAttachmentExecute.Prompt" />.</para>
-      <para>Before calling <b>IAttachmentExecute.SaveWithUI</b>, you must call <see cref="IAttachmentExecute.SetLocalPath" /> with a valid path. The file is copied to that local path before <b>IAttachmentExecute.SaveWithUI</b> is called.</para>
-      <para>
-        <b>IAttachmentExecute.SaveWithUI</b> may run virus scanners or other trust services to validate the file before saving it. Note that these services can delete or alter the file.</para>
-      <para>
-        <b>IAttachmentExecute.SaveWithUI</b> may attach <see cref="evidence" /> to the local path in its NTFS alternate data stream (ADS).</para>
-    </remarks>
-    <seealso cref="IAttachmentExecute" />
-    <seealso cref="IAttachmentExecute.Save" />
+    <summary>Presents the user with explanatory error UI if the save action fails.</summary>
+    <param name="hwnd">The handle of the parent window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute.SetClientGuid">
-    <summary>
-      <para>Specifies and stores the GUID for the client.</para>
-    </summary>
-    <param name="guid">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The GUID that represents the client.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>A user can choose not to display certain prompts. That information is stored in the registry on a per-client basis, indexed by <i>guid</i>.</para>
-    </remarks>
+    <summary>Specifies and stores the GUID for the client.</summary>
+    <param name="guid">The GUID that represents the client.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute.SetClientTitle">
-    <summary>
-      <para>Specifies and stores the title of the prompt window.</para>
-    </summary>
-    <param name="pszTitle">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string that contains the title text.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <b>IAttachmentExecute.SetClientTitle</b> is not called, a default title of <b>File Download</b> is used in the prompt's title bar.</para>
-    </remarks>
+    <summary>Specifies and stores the title of the prompt window.</summary>
+    <param name="pszTitle">A pointer to a string that contains the title text.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute.SetFileName">
-    <summary>
-      <para>Specifies and stores the proposed name of the file.</para>
-    </summary>
-    <param name="pszFileName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string that contains the file name.</para>
-    </param>
+    <summary>Specifies and stores the proposed name of the file.</summary>
+    <param name="pszFileName">A pointer to a string that contains the file name.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code, including the following.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>pszFileName</i> value is is set to <b>NULL</b>, points to an empty string, or points to a file name longer than <b>MAX_PATH</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>pszFileName</i> value is is set to <b>NULL</b>, points to an empty string, or points to a file name longer than <b>MAX_PATH</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The file name cannot be stored.</para>
-          </description>
-        </item>
+          <description>The file name cannot be stored.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>No path information should be included at <i>pszFileName</i>, just the file's name.</para>
-      <para>
-        <b>IAttachmentExecute.SetFileName</b> can be used by the calling application to check the validity of the file name before copying the file locally. The file name is checked for name collisions against other files stored at the local path location.</para>
-      <para>
-        <b>IAttachmentExecute.SetFileName</b> is optional.</para>
-    </remarks>
-    <seealso cref="IAttachmentExecute" />
-    <seealso cref="IAttachmentExecute.SetLocalPath" />
   </member>
   <member name="IAttachmentExecute.SetLocalPath">
-    <summary>
-      <para>Sets and stores the path to the file.</para>
-    </summary>
-    <param name="pszLocalPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string that contains the local path where the attachment file is to be stored.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Calling <b>IAttachmentExecute.SetLocalPath</b> is required.</para>
-      <para>When the attachment is approved for execution by the user (either through policy or prompt), the path specified by this method is used. If only <see cref="IAttachmentExecute.SetFileName" /> was called before calling <see cref="IAttachmentExecute.CheckPolicy" /> and <see cref="IAttachmentExecute.Prompt" />, that trust could be revoked if the assumed local path was different from that set by <b>IAttachmentExecute.SetLocalPath</b>. Trust can be granted by various Zone APIs, antivirus services, file type information, policies as well as other system trust providers.</para>
-      <para>
-        <b>IAttachmentExecute.SetLocalPath</b> must be called before calling <see cref="IAttachmentExecute.Execute" />.</para>
-    </remarks>
-    <seealso cref="IAttachmentExecute" />
-    <seealso cref="IAttachmentExecute.SetFileName" />
+    <summary>Sets and stores the path to the file.</summary>
+    <param name="pszLocalPath">A pointer to a string that contains the local path where the attachment file is to be stored.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute.SetReferrer">
-    <summary>
-      <para>Sets the security zone associated with the attachment file based on the referring file.</para>
-    </summary>
-    <param name="pszReferrer">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string containing the path of the referring file.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>IAttachmentExecute.SetReferrer</b> and <see cref="IAttachmentExecute.SetSource" /> have similar functionality. If both are set, the least-trusted zone of the two is used.</para>
-      <para>
-        <b>IAttachmentExecute.SetReferrer</b> is used by container files to indicate indirect inheritance and avoid zone elevation. It can also be used with shortcut files to limit elevation based on parameters.</para>
-      <para>Calling <b>IAttachmentExecute.SetReferrer</b> is optional.</para>
-      <para>
-        <b>IAttachmentExecute.SetReferrer</b> is only used to determine the security zone and its associated policies.</para>
-    </remarks>
+    <summary>Sets the security zone associated with the attachment file based on the referring file.</summary>
+    <param name="pszReferrer">A pointer to a string containing the path of the referring file.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute.SetSource">
-    <summary>
-      <para>Sets an alternate path or URL for the source of a file transfer.</para>
-    </summary>
-    <param name="pszSource">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string containing the path or URL to use as the source.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The path or URL declared here is used as the primary zone determinant. The policy under which the attachment is handled is based partially on the perceived zone. If <i>pszSource</i> is <b>NULL</b>, the default is Restricted Zone.</para>
-      <para>Calling <b>IAttachmentExecute.SetSource</b> is optional.</para>
-      <para>The path or URL declared here can also be used in the prompt UI as the <b>From</b> field.</para>
-      <para>The path or URL declared here can also be sent to handlers that can process URLs.</para>
-    </remarks>
+    <summary>Sets an alternate path or URL for the source of a file transfer.</summary>
+    <param name="pszSource">A pointer to a string containing the path or URL to use as the source.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAttachmentExecute">
-    <summary>
-      <para>Exposes methods that work with client applications to present a user environment that provides safe download and exchange of files through email and messaging attachments.</para>
-    </summary>
-    <remarks>
-      <para>This interface assumes the following:</para>
-      <list type="bullet">
-        <item>
-          <description>The client has policies or settings  for attachment support and behavior.</description>
-        </item>
-        <item>
-          <description>The client interacts with the user.</description>
-        </item>
-      </list>
-      <para>The IID for this interface is <b>IID_IAttachmentExecute</b>.</para>
-      <para>Here is an example of how an email client might use <b>IAttachmentExecute</b>.</para>
-      <code>
-// CClientAttachmentInfo, defined by the client, implements all the
-// necessary client functionality concerning attachments.
-class CClientAttachmentInfo;
-
-// Creates an instance of IAttachmentExecute
-HRESULT CreateAttachmentServices(IAttachmentExecute **ppae)
-{
-    // Assume that CoInitialize has already been called for this thread.
-    HRESULT hr = CoCreateInstance(CLSID_AttachmentServices,
-                                  NULL,
-                                  CLSCTX_INPROC_SERVER,
-                                  IID_IAttachmentExecute,
-                                  (void**)&amp;amp;amp;amp;amp;amp;pAttachExec);
-
-    if (SUCCEEDED(hr))
-    {
-        // Set the client's GUID.
-
-        // UUID_ClientID should be created using uuidgen.exe and
-        // defined internally.
-        (*ppae)-&gt;SetClientGuid(UUID_ClientID);
-
-        // You also could call SetClientTitle at this point, but it is
-        // not required.
-    }
-    return hr;
-}
-
-BOOL IsAttachmentBlocked(CClientAttachmentInfo *pinfo)
-{
-    // Assume that a client function has copied the file from the mail store
-    // into a temporary file.
-    PWSTR pszFileName;
-
-    // GetFileName is a method in this class for which we do not provide
-    // an implementation here.
-    HRESULT hr = pinfo-&gt;GetFileName(&amp;amp;amp;amp;amp;amp;pszFileName);
-    if (SUCCEEDED(hr))
-    {
-        IAttachmentExecute *pExecute;
-
-        hr = CreateAttachmentServices(&amp;amp;amp;amp;amp;amp;pExecute);
-        if (SUCCEEDED(hr))
-        {
-            hr = pExecute-&gt;SetFileName(pszFileName);
-
-            // Do not call SetLocalPath since we do not have the local path yet.
-            // Do not call SetSource since email sources are not verifiable.
-            // Do not call SetReferrer since we do not have a better zone
-            // than the default (Restricted sites).
-
-            // Check for a policy regarding the file.
-            if (SUCCEEDED(hr))
-            {
-                hr = pExecute-&gt;CheckPolicy();
-            }
-            pExecute-&gt;Release();
-        }
-        LocalFree(pszFileName);
-    }
-    return FAILED(hr);
-}
-
-HRESULT OnDoubleClickAttachment(HWND hwnd, CClientAttachmentInfo *pinfo)
-{
-    // Assume that a client function has copied the file from the mail store
-    // into a temporary file.
-    PWSTR pszTempFile;
-
-    // CopyToTempFile is a method in this class for which we do not provide
-    // an implementation here.
-    HRESULT hr = pinfo-&gt;CopyToTempFile(&amp;amp;amp;amp;amp;amp;pszTempFile);
-    if (SUCCEEDED(hr))
-    {
-        IAttachmentExecute *pExecute;
-
-        hr = CreateAttachmentServices(&amp;amp;amp;amp;amp;amp;pExecute);
-        if (SUCCEEDED(hr))
-        {
-            hr = pExecute-&gt;SetLocalPath(pszTempFile);
-
-            // Do not call SetFileName since we already have the local path.
-            // Do not call SetSource since email sources are not verifiable.
-            // Do not call SetReferrer since we do not have a better zone
-            // than the default (Restricted sites).
-
-            if (SUCCEEDED(hr))
-            {
-                hr = pExecute-&gt;Execute(hwnd, NULL, NULL);
-            }
-            pExecute-&gt;Release();
-        }
-        LocalFree(pszTempFile);
-    }
-    return hr;
-}
-
-HRESULT OnSaveAttachment(HWND hwnd, CClientAttachmentInfo *pinfo)
-{
-    // Assume that a client function has copied the file from the mail store
-    // into a location selected by the user.
-    PWSTR pszUserFile;
-
-    // CopyToUserFile is a method in this class for which we do not provide
-    // an implementation here.
-    HRESULT hr = pinfo-&gt;CopyToUserFile(hwnd, &amp;amp;amp;amp;amp;amp;pszUserFile);
-    if (SUCCEEDED(hr))
-    {
-        IAttachmentExecute *pExecute;
-
-        hr = CreateAttachmentServices(&amp;amp;amp;amp;amp;amp;pExecute);
-        if (SUCCEEDED(hr))
-        {
-            hr = pExecute-&gt;SetLocalPath(pszTempFile);
-
-            // Do not call SetFileName since we have the local path.
-            // Do not call SetSource since email sources are not verifiable.
-            // Do not call SetReferrer since we do not have a better zone
-            // than the default (Restricted sites).
-
-            if (SUCCEEDED(hr))
-            {
-                hr = pExecute-&gt;Save();
-            }
-            pExecute-&gt;Release();
-        }
-        LocalFree(pszUserFile);
-    }
-    return hr;
-}
-</code>
-    </remarks>
+    <summary>Exposes methods that work with client applications to present a user environment that provides safe download and exchange of files through email and messaging attachments.</summary>
   </member>
 </doc>

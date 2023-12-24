@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_LOCAL_ROOT_SIGNATURE">
+    <summary>Defines a local root signature state subobject that will be used with associated shaders.</summary>
+  </member>
+  <member name="D3D12_LOCAL_ROOT_SIGNATURE.pLocalRootSignature">
+    <summary>The root signature that will function as a local root signature. A state object holds a reference to this signature.</summary>
+  </member>
+</doc>

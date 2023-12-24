@@ -19,32 +19,4 @@ public static unsafe partial class ISoftDistExtTests
     {
         Assert.That(typeof(ISoftDistExt).GUID, Is.EqualTo(IID_ISoftDistExt));
     }
-
-    /// <summary>Validates that the <see cref="ISoftDistExt" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISoftDistExt>(), Is.EqualTo(sizeof(ISoftDistExt)));
-    }
-
-    /// <summary>Validates that the <see cref="ISoftDistExt" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISoftDistExt).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISoftDistExt" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISoftDistExt), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISoftDistExt), Is.EqualTo(4));
-        }
-    }
 }

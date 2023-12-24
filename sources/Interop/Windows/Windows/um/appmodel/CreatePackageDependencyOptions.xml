@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CreatePackageDependencyOptions">
-    <summary>
-      <para>Defines options that can be applied when creating a package dependency by using the <see cref="TryCreatePackageDependency" /> function.</para>
-    </summary>
-    <seealso cref="TryCreatePackageDependency" />
+    <summary>Defines options that can be applied when creating a package dependency by using the <see cref="TryCreatePackageDependency" /> function.</summary>
   </member>
   <member name="CreatePackageDependencyOptions.CreatePackageDependencyOptions_None">
-    <summary>
-      <para>No options are applied.</para>
-    </summary>
+    <summary>No options are applied.</summary>
   </member>
   <member name="CreatePackageDependencyOptions.CreatePackageDependencyOptions_DoNotVerifyDependencyResolution">
-    <summary>
-      <para>Disables dependency resolution when pinning a package dependency. This is useful for installers running as user contexts other than the target user (for example, installers running as LocalSystem).</para>
-    </summary>
+    <summary>Disables dependency resolution when pinning a package dependency. This is useful for installers running as user contexts other than the target user (for example, installers running as LocalSystem).</summary>
   </member>
   <member name="CreatePackageDependencyOptions.CreatePackageDependencyOptions_ScopeIsSystem">
-    <summary>
-      <para>Defines the package dependency for the system, accessible to all users (by default, the package dependency is defined for a specific user). This option requires the caller has administrative privileges.</para>
-    </summary>
+    <summary>Defines the package dependency for the system, accessible to all users (by default, the package dependency is defined for a specific user). This option requires the caller has administrative privileges.</summary>
   </member>
 </doc>

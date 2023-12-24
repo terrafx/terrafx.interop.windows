@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXTCONN">
-    <summary>
-      <para>Specifies the type of external connection existing on an embedded object.</para>
-    </summary>
-    <seealso cref="IExternalConnection.AddConnection" />
-    <seealso cref="IExternalConnection.ReleaseConnection" />
+    <summary>Specifies the type of external connection existing on an embedded object.</summary>
   </member>
   <member name="EXTCONN.EXTCONN_STRONG">
-    <summary>
-      <para>The external connection is a link. If this value is specified, the external connection must keep the object alive until all strong external connections are cleared through <see cref="IExternalConnection.ReleaseConnection" />.</para>
-    </summary>
+    <summary>The external connection is a link. If this value is specified, the external connection must keep the object alive until all strong external connections are cleared through <see cref="IExternalConnection.ReleaseConnection" />.</summary>
   </member>
   <member name="EXTCONN.EXTCONN_WEAK">
-    <summary>
-      <para>This value is not used.</para>
-    </summary>
+    <summary>This value is not used.</summary>
   </member>
   <member name="EXTCONN.EXTCONN_CALLABLE">
-    <summary>
-      <para>This value is not used.</para>
-    </summary>
+    <summary>This value is not used.</summary>
   </member>
 </doc>

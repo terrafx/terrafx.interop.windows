@@ -19,32 +19,4 @@ public static unsafe partial class ICanvasRenderingContext2DTests
     {
         Assert.That(typeof(ICanvasRenderingContext2D).GUID, Is.EqualTo(IID_ICanvasRenderingContext2D));
     }
-
-    /// <summary>Validates that the <see cref="ICanvasRenderingContext2D" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICanvasRenderingContext2D>(), Is.EqualTo(sizeof(ICanvasRenderingContext2D)));
-    }
-
-    /// <summary>Validates that the <see cref="ICanvasRenderingContext2D" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICanvasRenderingContext2D).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICanvasRenderingContext2D" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICanvasRenderingContext2D), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICanvasRenderingContext2D), Is.EqualTo(4));
-        }
-    }
 }

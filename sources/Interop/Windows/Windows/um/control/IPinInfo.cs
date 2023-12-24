@@ -25,7 +25,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPinInfo*, Guid*, void**, int>)(lpVtbl[0]))((IPinInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, Guid*, void**, int>)(lpVtbl[0]))((IPinInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPinInfo*, uint>)(lpVtbl[1]))((IPinInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, uint>)(lpVtbl[1]))((IPinInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPinInfo*, uint>)(lpVtbl[2]))((IPinInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, uint>)(lpVtbl[2]))((IPinInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IPinInfo*, uint*, int>)(lpVtbl[3]))((IPinInfo*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, uint*, int>)(lpVtbl[3]))((IPinInfo*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IPinInfo*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IPinInfo*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IPinInfo*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IPinInfo*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IPinInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IPinInfo*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IPinInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IPinInfo*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IPinInfo*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_Pin"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_Pin(IUnknown** ppUnk)
     {
-        return ((delegate* unmanaged<IPinInfo*, IUnknown**, int>)(lpVtbl[7]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, IUnknown**, int>)(lpVtbl[7]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_ConnectedTo"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT get_ConnectedTo(IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IPinInfo*, IDispatch**, int>)(lpVtbl[8]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, IDispatch**, int>)(lpVtbl[8]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_ConnectionMediaType"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT get_ConnectionMediaType(IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IPinInfo*, IDispatch**, int>)(lpVtbl[9]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, IDispatch**, int>)(lpVtbl[9]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_FilterInfo"]/*' />
@@ -107,15 +107,15 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_FilterInfo(IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IPinInfo*, IDispatch**, int>)(lpVtbl[10]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, IDispatch**, int>)(lpVtbl[10]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_Name"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT get_Name([NativeTypeName("BSTR *")] ushort** ppUnk)
+    public HRESULT get_Name([NativeTypeName("BSTR *")] char** ppUnk)
     {
-        return ((delegate* unmanaged<IPinInfo*, ushort**, int>)(lpVtbl[11]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, char**, int>)(lpVtbl[11]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_Direction"]/*' />
@@ -123,15 +123,15 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT get_Direction([NativeTypeName("LONG *")] int* ppDirection)
     {
-        return ((delegate* unmanaged<IPinInfo*, int*, int>)(lpVtbl[12]))((IPinInfo*)Unsafe.AsPointer(ref this), ppDirection);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, int*, int>)(lpVtbl[12]))((IPinInfo*)Unsafe.AsPointer(ref this), ppDirection);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_PinID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_PinID([NativeTypeName("BSTR *")] ushort** strPinID)
+    public HRESULT get_PinID([NativeTypeName("BSTR *")] char** strPinID)
     {
-        return ((delegate* unmanaged<IPinInfo*, ushort**, int>)(lpVtbl[13]))((IPinInfo*)Unsafe.AsPointer(ref this), strPinID);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, char**, int>)(lpVtbl[13]))((IPinInfo*)Unsafe.AsPointer(ref this), strPinID);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.get_MediaTypes"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT get_MediaTypes(IDispatch** ppUnk)
     {
-        return ((delegate* unmanaged<IPinInfo*, IDispatch**, int>)(lpVtbl[14]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, IDispatch**, int>)(lpVtbl[14]))((IPinInfo*)Unsafe.AsPointer(ref this), ppUnk);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.Connect"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT Connect(IUnknown* pPin)
     {
-        return ((delegate* unmanaged<IPinInfo*, IUnknown*, int>)(lpVtbl[15]))((IPinInfo*)Unsafe.AsPointer(ref this), pPin);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, IUnknown*, int>)(lpVtbl[15]))((IPinInfo*)Unsafe.AsPointer(ref this), pPin);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.ConnectDirect"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT ConnectDirect(IUnknown* pPin)
     {
-        return ((delegate* unmanaged<IPinInfo*, IUnknown*, int>)(lpVtbl[16]))((IPinInfo*)Unsafe.AsPointer(ref this), pPin);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, IUnknown*, int>)(lpVtbl[16]))((IPinInfo*)Unsafe.AsPointer(ref this), pPin);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.ConnectWithType"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT ConnectWithType(IUnknown* pPin, IDispatch* pMediaType)
     {
-        return ((delegate* unmanaged<IPinInfo*, IUnknown*, IDispatch*, int>)(lpVtbl[17]))((IPinInfo*)Unsafe.AsPointer(ref this), pPin, pMediaType);
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, IUnknown*, IDispatch*, int>)(lpVtbl[17]))((IPinInfo*)Unsafe.AsPointer(ref this), pPin, pMediaType);
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.Disconnect"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT Disconnect()
     {
-        return ((delegate* unmanaged<IPinInfo*, int>)(lpVtbl[18]))((IPinInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, int>)(lpVtbl[18]))((IPinInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPinInfo.xml' path='doc/member[@name="IPinInfo.Render"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
     [VtblIndex(19)]
     public HRESULT Render()
     {
-        return ((delegate* unmanaged<IPinInfo*, int>)(lpVtbl[19]))((IPinInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPinInfo*, int>)(lpVtbl[19]))((IPinInfo*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDispatch.Interface
@@ -197,13 +197,13 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
         HRESULT get_FilterInfo(IDispatch** ppUnk);
 
         [VtblIndex(11)]
-        HRESULT get_Name([NativeTypeName("BSTR *")] ushort** ppUnk);
+        HRESULT get_Name([NativeTypeName("BSTR *")] char** ppUnk);
 
         [VtblIndex(12)]
         HRESULT get_Direction([NativeTypeName("LONG *")] int* ppDirection);
 
         [VtblIndex(13)]
-        HRESULT get_PinID([NativeTypeName("BSTR *")] ushort** strPinID);
+        HRESULT get_PinID([NativeTypeName("BSTR *")] char** strPinID);
 
         [VtblIndex(14)]
         HRESULT get_MediaTypes(IDispatch** ppUnk);
@@ -228,63 +228,63 @@ public unsafe partial struct IPinInfo : IPinInfo.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get_Pin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get_Pin;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_ConnectedTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_ConnectedTo;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_ConnectionMediaType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_ConnectionMediaType;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_FilterInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_FilterInfo;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_Name;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_Name;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Direction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Direction;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_PinID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_PinID;
 
         [NativeTypeName("HRESULT (IDispatch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDispatch**, int> get_MediaTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDispatch**, int> get_MediaTypes;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> Connect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> Connect;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> ConnectDirect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> ConnectDirect;
 
         [NativeTypeName("HRESULT (IUnknown *, IDispatch *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IDispatch*, int> ConnectWithType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IDispatch*, int> ConnectWithType;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Disconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Disconnect;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Render;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Render;
     }
 }

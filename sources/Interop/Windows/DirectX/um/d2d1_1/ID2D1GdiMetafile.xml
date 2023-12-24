@@ -3,72 +3,56 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1GdiMetafile.GetBounds">
-    <summary>
-      <para>Gets the bounds of the metafile, in device-independent pixels (DIPs), as reported in the metafile’s header.</para>
-    </summary>
-    <param name="bounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The bounds, in DIPs, of the metafile.</para>
-    </param>
+    <summary>Gets the bounds of the metafile, in device-independent pixels (DIPs), as reported in the metafile’s header.</summary>
+    <param name="bounds">The bounds, in DIPs, of the metafile.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1GdiMetafile" />
   </member>
   <member name="ID2D1GdiMetafile.Stream">
-    <summary>
-      <para>This method streams the contents of the command  to the given metafile  sink.</para>
-    </summary>
-    <param name="sink">
-      <para>Type: <b><see cref="ID2D1GdiMetafileSink" /></b></para>
-      <para>The sink into which Direct2D  will call back.</para>
-    </param>
+    <summary>This method streams the contents of the command to the given metafile sink.</summary>
+    <param name="sink">The sink into which Direct2D will call back.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1GdiMetafile" />
   </member>
   <member name="ID2D1GdiMetafile">
-    <summary>
-      <para>A Direct2D resource that wraps a WMF, EMF, or EMF+ metafile.</para>
-    </summary>
+    <summary>A Direct2D resource that wraps a WMF, EMF, or EMF+ metafile.</summary>
   </member>
 </doc>

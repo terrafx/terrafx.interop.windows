@@ -3,39 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_ERR">
-    <summary>
-      <para>Defines error status codes for the Media Engine.</para>
-    </summary>
-    <remarks>
-      <para>The values greater than zero correspond to error codes defined for the <b>MediaError</b> object  in HTML5.</para>
-    </remarks>
-    <seealso cref="IMFMediaError.GetErrorCode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines error status codes for the Media Engine.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_NOERROR">
-    <summary>
-      <para>No error.</para>
-    </summary>
+    <summary>No error.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_ABORTED">
-    <summary>
-      <para>The process of fetching the media resource was stopped at the user's request.</para>
-    </summary>
+    <summary>The process of fetching the media resource was stopped at the user's request.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_NETWORK">
-    <summary>
-      <para>A network error occurred while fetching the media resource.</para>
-    </summary>
+    <summary>A network error occurred while fetching the media resource.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_DECODE">
-    <summary>
-      <para>An error occurred while decoding the media resource.</para>
-    </summary>
+    <summary>An error occurred while decoding the media resource.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_SRC_NOT_SUPPORTED">
-    <summary>
-      <para>The media resource is not supported.</para>
-    </summary>
+    <summary>The media resource is not supported.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_ERR.MF_MEDIA_ENGINE_ERR_ENCRYPTED">
     <summary>

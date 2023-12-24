@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcOptimizerPass.GetDescription"></member>
+  <member name="IDxcOptimizerPass.GetOptionArgCount"></member>
+  <member name="IDxcOptimizerPass.GetOptionArgDescription"></member>
+  <member name="IDxcOptimizerPass.GetOptionArgName"></member>
+  <member name="IDxcOptimizerPass.GetOptionName"></member>
+  <member name="IDxcOptimizerPass">
+    <summary>
+      <para>Interface representing an optimizer pass.</para>
+      <para>To obtain an instance of this interface, call <see cref="IDxcOptimizer.GetAvailablePass" />.</para>
+    </summary>
+  </member>
+</doc>

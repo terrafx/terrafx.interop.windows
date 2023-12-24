@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_OPERATION_STYLE">
-    <summary>
-      <para>An enumeration of the different operation styles.</para>
-    </summary>
+    <summary>An enumeration of the different operation styles.</summary>
   </member>
   <member name="WS_OPERATION_STYLE.WS_NON_RPC_LITERAL_OPERATION">
-    <summary>
-      <para>document/literal style operation or encoding operations.</para>
-    </summary>
+    <summary>document/literal style operation or encoding operations.</summary>
   </member>
   <member name="WS_OPERATION_STYLE.WS_RPC_LITERAL_OPERATION">
-    <summary>
-      <para>rpc/literal style operation.</para>
-    </summary>
+    <summary>rpc/literal style operation.</summary>
   </member>
 </doc>

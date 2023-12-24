@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMREOF">
-    <summary>
-      <para>The <b>EMREOF</b> structure contains data for the enhanced metafile record that indicates the end of the metafile.</para>
-    </summary>
-    <seealso cref="EMR" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</seealso>
+    <summary>The <b>EMREOF</b> structure contains data for the enhanced metafile record that indicates the end of the metafile.</summary>
   </member>
   <member name="EMREOF.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMREOF.nPalEntries">
-    <summary>
-      <para>The number of palette entries.</para>
-    </summary>
+    <summary>The number of palette entries.</summary>
   </member>
   <member name="EMREOF.offPalEntries">
-    <summary>
-      <para>The offset, in bytes, to an array of <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structures.</para>
-    </summary>
+    <summary>The offset, in bytes, to an array of <a href="https://docs.microsoft.com//previous-versions/dd162769(v=vs.85)">PALETTEENTRY</a> structures.</summary>
   </member>
   <member name="EMREOF.nSizeLast">
-    <summary>
-      <para>The same size as the <b>nSize</b> member of the <see cref="EMR" /> structure. This member must be the last double word of the record. If palette entries exist, they precede this member.</para>
-    </summary>
+    <summary>The same size as the <b>nSize</b> member of the <see cref="EMR" /> structure. This member must be the last double word of the record. If palette entries exist, they precede this member.</summary>
   </member>
 </doc>

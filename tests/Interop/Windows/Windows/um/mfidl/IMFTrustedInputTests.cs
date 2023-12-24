@@ -19,32 +19,4 @@ public static unsafe partial class IMFTrustedInputTests
     {
         Assert.That(typeof(IMFTrustedInput).GUID, Is.EqualTo(IID_IMFTrustedInput));
     }
-
-    /// <summary>Validates that the <see cref="IMFTrustedInput" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTrustedInput>(), Is.EqualTo(sizeof(IMFTrustedInput)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTrustedInput" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTrustedInput).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTrustedInput" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTrustedInput), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTrustedInput), Is.EqualTo(4));
-        }
-    }
 }

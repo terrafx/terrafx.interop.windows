@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ISwapChainPanelNative.SetSwapChain">
+    <summary>Sets the DirectX swap chain for <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.controls.swapchainpanel">SwapChainPanel</a>.</summary>
+    <param name="swapChain">A configured <see cref="IDXGISwapChain" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="ISwapChainPanelNative">
+    <summary>Provides interoperation between XAML and a DirectX swap chain. Unlike <a href="https://docs.microsoft.com//uwp/api/windows.ui.xaml.controls.swapchainbackgroundpanel">SwapChainBackgroundPanel</a>, a <b>SwapChainPanel</b> can appear at any level in the XAML display tree, and more than 1 can be present in any given tree.</summary>
+  </member>
+</doc>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_ADD_BINDING_CACHE_ENTRY_REQUEST">
+    <summary>Specifies a message to add a binding cache entry. You must have the <b>SeTcbPrivilege</b> privilege set.</summary>
+  </member>
+  <member name="KERB_ADD_BINDING_CACHE_ENTRY_REQUEST.MessageType">
+    <summary>A value of the <see cref="KERB_PROTOCOL_MESSAGE_TYPE" /> enumeration that lists the types of messages that can be sent to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> authentication package by calling the <see cref="LsaCallAuthenticationPackage" /> function. This member must be set to <b>KerbAddBindingCacheEntryMessage</b>.</summary>
+  </member>
+  <member name="KERB_ADD_BINDING_CACHE_ENTRY_REQUEST.RealmName">
+    <summary>The 	name of the realm of the domain controller.</summary>
+  </member>
+  <member name="KERB_ADD_BINDING_CACHE_ENTRY_REQUEST.KdcAddress">
+    <summary>The address of the Key Distribution Center (KDC) of the server to which you want to bind.</summary>
+  </member>
+  <member name="KERB_ADD_BINDING_CACHE_ENTRY_REQUEST.AddressType">
+    <summary>
+      <para>The type of string that is contained in the <b>KdcAddress</b> member. This can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DS_INET_ADDRESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The address is a string IP address of the domain controller, for example, "\\157.55.94.74").</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DS_NETBIOS_ADDRESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The address is a NetBIOS name of the domain controller, for example, "\\phoenix".</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+</doc>

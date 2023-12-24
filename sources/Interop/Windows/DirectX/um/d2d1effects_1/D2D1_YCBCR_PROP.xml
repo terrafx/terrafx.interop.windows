@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_YCBCR_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/ycbcr-effect">YCbCr effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/ycbcr-effect">YCbCr effect</a>.</summary>
   </member>
   <member name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING">
     <summary>
@@ -27,7 +25,5 @@
       <para>The type is <see cref="D2D1_YCBCR_INTERPOLATION_MODE" />.</para>
     </summary>
   </member>
-  <member name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_FORCE_DWORD"></member>
 </doc>

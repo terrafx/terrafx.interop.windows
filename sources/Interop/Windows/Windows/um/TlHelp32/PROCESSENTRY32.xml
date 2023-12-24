@@ -3,127 +3,69 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESSENTRY32">
-    <summary>
-      <para>Describes an entry from a list of the processes residing in the system address space when a snapshot was taken.</para>
-    </summary>
-    <seealso cref="Process32First" />
-    <seealso cref="Process32Next" />
+    <summary>Describes an entry from a list of the processes residing in the system address space when a snapshot was taken.</summary>
   </member>
   <member name="PROCESSENTRY32.dwSize">
-    <summary>
-      <para>The size of the structure, in bytes. Before calling the
-<see cref="Process32First" /> function, set this member to <code>sizeof(PROCESSENTRY32)</code>. If you do not initialize <b>dwSize</b>,
-<b>Process32First</b> fails.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. Before calling the<see cref="Process32First" /> function, set this member to <code>sizeof(PROCESSENTRY32)</code>. If you do not initialize <b>dwSize</b>,<b>Process32First</b> fails.</summary>
   </member>
   <member name="PROCESSENTRY32.cntUsage">
-    <summary>
-      <para>This member is no longer used and is always set to zero.</para>
-    </summary>
+    <summary>This member is no longer used and is always set to zero.</summary>
   </member>
   <member name="PROCESSENTRY32.th32ProcessID">
-    <summary>
-      <para>The process identifier.</para>
-    </summary>
+    <summary>The process identifier.</summary>
   </member>
   <member name="PROCESSENTRY32.th32DefaultHeapID">
-    <summary>
-      <para>This member is no longer used and is always set to zero.</para>
-    </summary>
+    <summary>This member is no longer used and is always set to zero.</summary>
   </member>
   <member name="PROCESSENTRY32.th32ModuleID">
-    <summary>
-      <para>This member is no longer used and is always set to zero.</para>
-    </summary>
+    <summary>This member is no longer used and is always set to zero.</summary>
   </member>
   <member name="PROCESSENTRY32.cntThreads">
-    <summary>
-      <para>The number of execution threads started by the process.</para>
-    </summary>
+    <summary>The number of execution threads started by the process.</summary>
   </member>
   <member name="PROCESSENTRY32.th32ParentProcessID">
-    <summary>
-      <para>The identifier of the process that created this process (its parent process).</para>
-    </summary>
+    <summary>The identifier of the process that created this process (its parent process).</summary>
   </member>
   <member name="PROCESSENTRY32.pcPriClassBase">
-    <summary>
-      <para>The base priority of any threads created by this process.</para>
-    </summary>
+    <summary>The base priority of any threads created by this process.</summary>
   </member>
   <member name="PROCESSENTRY32.dwFlags">
-    <summary>
-      <para>This member is no longer used and is always set to zero.</para>
-    </summary>
+    <summary>This member is no longer used and is always set to zero.</summary>
   </member>
   <member name="PROCESSENTRY32.szExeFile">
-    <summary>
-      <para>The name of the executable file for the process. To retrieve the full path to the executable file, call the <see cref="Module32First" /> function and check the <b>szExePath</b> member of the <see cref="MODULEENTRY32" /> structure that is returned. However, if the calling process is a 32-bit process, you must call the <see cref="QueryFullProcessImageName" /> function to retrieve the full path of the executable file for a 64-bit process.</para>
-    </summary>
+    <summary>The name of the executable file for the process. To retrieve the full path to the executable file, call the <see cref="Module32First" /> function and check the <b>szExePath</b> member of the <see cref="MODULEENTRY32" /> structure that is returned. However, if the calling process is a 32-bit process, you must call the <see cref="QueryFullProcessImageName" /> function to retrieve the full path of the executable file for a 64-bit process.</summary>
   </member>
   <member name="PROCESSENTRY32">
-    <summary>
-      <para>Describes an entry from a list of the processes residing in the system address space when a snapshot was taken.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The tlhelp32.h header defines PROCESSENTRY32 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="Process32First" />
-    <seealso cref="Process32Next" />
+    <summary>Describes an entry from a list of the processes residing in the system address space when a snapshot was taken.</summary>
   </member>
   <member name="PROCESSENTRY32.dwSize">
-    <summary>
-      <para>The size of the structure, in bytes. Before calling the
-<see cref="Process32First" /> function, set this member to <code>sizeof(PROCESSENTRY32)</code>. If you do not initialize <b>dwSize</b>,
-<b>Process32First</b> fails.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. Before calling the<see cref="Process32First" /> function, set this member to <code>sizeof(PROCESSENTRY32)</code>. If you do not initialize <b>dwSize</b>,<b>Process32First</b> fails.</summary>
   </member>
   <member name="PROCESSENTRY32.cntUsage">
-    <summary>
-      <para>This member is no longer used and is always set to zero.</para>
-    </summary>
+    <summary>This member is no longer used and is always set to zero.</summary>
   </member>
   <member name="PROCESSENTRY32.th32ProcessID">
-    <summary>
-      <para>The process identifier.</para>
-    </summary>
+    <summary>The process identifier.</summary>
   </member>
   <member name="PROCESSENTRY32.th32DefaultHeapID">
-    <summary>
-      <para>This member is no longer used and is always set to zero.</para>
-    </summary>
+    <summary>This member is no longer used and is always set to zero.</summary>
   </member>
   <member name="PROCESSENTRY32.th32ModuleID">
-    <summary>
-      <para>This member is no longer used and is always set to zero.</para>
-    </summary>
+    <summary>This member is no longer used and is always set to zero.</summary>
   </member>
   <member name="PROCESSENTRY32.cntThreads">
-    <summary>
-      <para>The number of execution threads started by the process.</para>
-    </summary>
+    <summary>The number of execution threads started by the process.</summary>
   </member>
   <member name="PROCESSENTRY32.th32ParentProcessID">
-    <summary>
-      <para>The identifier of the process that created this process (its parent process).</para>
-    </summary>
+    <summary>The identifier of the process that created this process (its parent process).</summary>
   </member>
   <member name="PROCESSENTRY32.pcPriClassBase">
-    <summary>
-      <para>The base priority of any threads created by this process.</para>
-    </summary>
+    <summary>The base priority of any threads created by this process.</summary>
   </member>
   <member name="PROCESSENTRY32.dwFlags">
-    <summary>
-      <para>This member is no longer used, and is always set to zero.</para>
-    </summary>
+    <summary>This member is no longer used, and is always set to zero.</summary>
   </member>
   <member name="PROCESSENTRY32.szExeFile">
-    <summary>
-      <para>The name of the executable file for the process. To retrieve the full path to the executable file, call the <see cref="Module32First" /> function and check the <b>szExePath</b> member of the <see cref="MODULEENTRY32" /> structure that is returned. However, if the calling process is a 32-bit process, you must call the <see cref="QueryFullProcessImageName" /> function to retrieve the full path of the executable file for a 64-bit process.</para>
-    </summary>
+    <summary>The name of the executable file for the process. To retrieve the full path to the executable file, call the <see cref="Module32First" /> function and check the <b>szExePath</b> member of the <see cref="MODULEENTRY32" /> structure that is returned. However, if the calling process is a 32-bit process, you must call the <see cref="QueryFullProcessImageName" /> function to retrieve the full path of the executable file for a 64-bit process.</summary>
   </member>
 </doc>

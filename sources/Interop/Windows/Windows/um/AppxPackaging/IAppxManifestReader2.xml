@@ -3,31 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestReader2.GetQualifiedResources">
-    <summary>
-      <para>Gets an enumerator that iterates through the qualified resources that are defined in the manifest.</para>
-    </summary>
-    <param name="resources">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dn280306(v=vs.85)">IAppxManifestQualifiedResourcesEnumerator</a>**</b></para>
-      <para>The enumerator that iterates through the qualified resources.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If the method succeeds, it returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>Resources are specified using the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/appxmanifestschema/element-resources">Resources</a> element in the manifest.</para>
-      <para>Call the <see cref="IUnknown.Release" /> method when you have finished using the <i>resources</i> object.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader2" />
+    <summary>Gets an enumerator that iterates through the qualified resources that are defined in the manifest.</summary>
+    <param name="resources">The enumerator that iterates through the qualified resources.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>.</returns>
   </member>
   <member name="IAppxManifestReader2">
-    <summary>
-      <para>Represents an object model of the package manifest that provides methods to access manifest elements and attributes.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  Starting with Windows 8.1, we recommend not to use <see cref="IAppxManifestReader.GetResources" /> anymore to only iterate over the <b>Language</b> values in the manifest. Instead, use <b>IAppxManifestReader2.GetResources</b> because it iterates over other resource qualifiers as well, such as, <b>Scale</b> and <b>DXFeatureLevel</b>.</para>
-    </remarks>
-    <seealso cref="IAppxManifestReader" />
+    <summary>Represents an object model of the package manifest that provides methods to access manifest elements and attributes.</summary>
   </member>
 </doc>

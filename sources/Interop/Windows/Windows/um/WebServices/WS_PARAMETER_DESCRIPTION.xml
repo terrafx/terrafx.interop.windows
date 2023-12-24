@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_PARAMETER_DESCRIPTION">
-    <summary>
-      <para>The index of the parameters in the incoming/outgoing messages field descriptions.</para>
-    </summary>
+    <summary>The index of the parameters in the incoming/outgoing messages field descriptions.</summary>
   </member>
   <member name="WS_PARAMETER_DESCRIPTION.parameterType">
-    <summary>
-      <para>The type of the parameter.</para>
-    </summary>
+    <summary>The type of the parameter.</summary>
   </member>
   <member name="WS_PARAMETER_DESCRIPTION.inputMessageIndex">
-    <summary>
-      <para>A value between 0 and MAX_SHORT - 1 that represents the index of the field
-in the input <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a>. It is MAX_USHORT if it has not present in the input
-WS_MESSAGE.</para>
-    </summary>
+    <summary>A value between 0 and MAX_SHORT - 1 that represents the index of the field in the input <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a>. It is MAX_USHORT if it has not present in the input WS_MESSAGE.</summary>
   </member>
   <member name="WS_PARAMETER_DESCRIPTION.outputMessageIndex">
-    <summary>
-      <para>A value between 0 and MAX_SHORT - 1 that represents the index of the field
-in the output <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a>. It is MAX_USHORT if it has not present in the output
-WS_MESSAGE.</para>
-    </summary>
+    <summary>A value between 0 and MAX_SHORT - 1 that represents the index of the field in the output <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-message">WS_MESSAGE</a>. It is MAX_USHORT if it has not present in the output WS_MESSAGE.</summary>
   </member>
 </doc>

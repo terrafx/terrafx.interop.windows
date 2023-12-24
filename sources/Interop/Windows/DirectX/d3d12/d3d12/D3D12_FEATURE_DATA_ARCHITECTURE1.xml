@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE1">
+    <summary>
+      <para>Provides detail about each adapter's architectural details, so that your application can better optimize for certain adapter properties.</para>
+      <div>
+        <b>Note</b>  This structure, introduced in Windows 10, version 1703 (Creators' Update), supersedes the <see cref="D3D12_FEATURE_DATA_ARCHITECTURE" /> structure. If your application targets Windows 10, version 1703 (Creators' Update) or higher, then use <b>D3D12_FEATURE_DATA_ARCHITECTURE1</b> (and <see cref="D3D12_FEATURE_ARCHITECTURE1" />).</div>
+    </summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE1.NodeIndex">
+    <summary>In multi-adapter operation, this indicates which physical adapter of the device is relevant. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.<b>NodeIndex</b> is filled out by the application before calling <see cref="CheckFeatureSupport" />, as the application can retrieve details about the architecture of each adapter.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE1.TileBasedRenderer">
+    <summary>Specifies whether the hardware and driver support a tile-based renderer. The runtime sets this member to <b>TRUE</b> if the hardware and driver support a tile-based renderer.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE1.UMA">
+    <summary>Specifies whether the hardware and driver support UMA. The runtime sets this member to <b>TRUE</b> if the hardware and driver support UMA.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE1.CacheCoherentUMA">
+    <summary>Specifies whether the hardware and driver support cache-coherent UMA. The runtime sets this member to <b>TRUE</b> if the hardware and driver support cache-coherent UMA.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_ARCHITECTURE1.IsolatedMMU">
+    <summary>
+      <para>
+        <a href="https://docs.microsoft.com//visualstudio/code-quality/annotating-structs-and-classes">SAL</a>: <code><i>Out</i></code></para>
+      <para>Specifies whether the hardware and driver support isolated Memory Management Unit (MMU). The runtime sets this member to <b>TRUE</b> if the GPU honors CPU page table properties like <b>MEM_WRITE_WATCH</b> (for more information, see <see cref="VirtualAlloc" />) and <b>PAGE_READONLY</b> (for more information, see <a href="https://docs.microsoft.com//windows/win32/Memory/memory-protection-constants">Memory Protection Constants</a>).</para>
+      <para>If <b>TRUE</b>, the application must take care to no use memory with these page table properties with the GPU, as the GPU might trigger these page table properties in unexpected ways. For example, GPU write operations might be coarser than the application expects, particularly writes from within shaders. Certain write-watch pages might appear dirty, even when it isn't obvious how GPU writes may have affected them. GPU operations associated with upload and readback heap usage scenarios work well with write-watch pages, but might occasionally generate false positives that can be safely ignored.</para>
+    </summary>
+  </member>
+</doc>

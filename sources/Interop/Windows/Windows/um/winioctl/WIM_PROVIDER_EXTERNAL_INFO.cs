@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WIM_PROVIDER_EXTERNAL_INFO.xml' path='doc/member[@name="WIM_PROVIDER_EXTERNAL_INFO"]/*' />
-public unsafe partial struct WIM_PROVIDER_EXTERNAL_INFO
+public partial struct WIM_PROVIDER_EXTERNAL_INFO
 {
     /// <include file='WIM_PROVIDER_EXTERNAL_INFO.xml' path='doc/member[@name="WIM_PROVIDER_EXTERNAL_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -21,5 +23,12 @@ public unsafe partial struct WIM_PROVIDER_EXTERNAL_INFO
 
     /// <include file='WIM_PROVIDER_EXTERNAL_INFO.xml' path='doc/member[@name="WIM_PROVIDER_EXTERNAL_INFO.ResourceHash"]/*' />
     [NativeTypeName("BYTE[20]")]
-    public fixed byte ResourceHash[20];
+    public _ResourceHash_e__FixedBuffer ResourceHash;
+
+    /// <include file='_ResourceHash_e__FixedBuffer.xml' path='doc/member[@name="_ResourceHash_e__FixedBuffer"]/*' />
+    [InlineArray(20)]
+    public partial struct _ResourceHash_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

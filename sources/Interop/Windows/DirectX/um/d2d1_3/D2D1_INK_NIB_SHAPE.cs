@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_INK_NIB_SHAPE.xml' path='doc/member[@name="D2D1_INK_NIB_SHAPE"]/*' />
-public enum D2D1_INK_NIB_SHAPE : uint
+public enum D2D1_INK_NIB_SHAPE
 {
     /// <include file='D2D1_INK_NIB_SHAPE.xml' path='doc/member[@name="D2D1_INK_NIB_SHAPE.D2D1_INK_NIB_SHAPE_ROUND"]/*' />
     D2D1_INK_NIB_SHAPE_ROUND = 0,
@@ -15,5 +15,5 @@ public enum D2D1_INK_NIB_SHAPE : uint
     D2D1_INK_NIB_SHAPE_SQUARE = 1,
 
     /// <include file='D2D1_INK_NIB_SHAPE.xml' path='doc/member[@name="D2D1_INK_NIB_SHAPE.D2D1_INK_NIB_SHAPE_FORCE_DWORD"]/*' />
-    D2D1_INK_NIB_SHAPE_FORCE_DWORD = 0xffffffff,
+    D2D1_INK_NIB_SHAPE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

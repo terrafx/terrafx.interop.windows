@@ -19,7 +19,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AccessCheckAndAuditAlarmW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL AccessCheckAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
+    public static extern BOOL AccessCheckAndAuditAlarmW([NativeTypeName("LPCWSTR")] char* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] char* ObjectTypeName, [NativeTypeName("LPWSTR")] char* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AccessCheckByType"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -34,17 +34,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AccessCheckByTypeAndAuditAlarmW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL AccessCheckByTypeAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
+    public static extern BOOL AccessCheckByTypeAndAuditAlarmW([NativeTypeName("LPCWSTR")] char* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] char* ObjectTypeName, [NativeTypeName("LPCWSTR")] char* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccess, [NativeTypeName("LPBOOL")] BOOL* AccessStatus, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AccessCheckByTypeResultListAndAuditAlarmW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL AccessCheckByTypeResultListAndAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
+    public static extern BOOL AccessCheckByTypeResultListAndAuditAlarmW([NativeTypeName("LPCWSTR")] char* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPCWSTR")] char* ObjectTypeName, [NativeTypeName("LPCWSTR")] char* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AccessCheckByTypeResultListAndAuditAlarmByHandleW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL AccessCheckByTypeResultListAndAuditAlarmByHandleW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, HANDLE ClientToken, [NativeTypeName("LPCWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPCWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
+    public static extern BOOL AccessCheckByTypeResultListAndAuditAlarmByHandleW([NativeTypeName("LPCWSTR")] char* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, HANDLE ClientToken, [NativeTypeName("LPCWSTR")] char* ObjectTypeName, [NativeTypeName("LPCWSTR")] char* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* SecurityDescriptor, [NativeTypeName("PSID")] void* PrincipalSelfSid, [NativeTypeName("DWORD")] uint DesiredAccess, AUDIT_EVENT_TYPE AuditType, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("POBJECT_TYPE_LIST")] OBJECT_TYPE_LIST* ObjectTypeList, [NativeTypeName("DWORD")] uint ObjectTypeListLength, [NativeTypeName("PGENERIC_MAPPING")] GENERIC_MAPPING* GenericMapping, BOOL ObjectCreation, [NativeTypeName("LPDWORD")] uint* GrantedAccessList, [NativeTypeName("LPDWORD")] uint* AccessStatusList, [NativeTypeName("LPBOOL")] BOOL* pfGenerateOnClose);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddAccessAllowedAce"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -251,7 +251,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFileSecurityW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL GetFileSecurityW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint RequestedInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
+    public static extern BOOL GetFileSecurityW([NativeTypeName("LPCWSTR")] char* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint RequestedInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("DWORD")] uint nLength, [NativeTypeName("LPDWORD")] uint* lpnLengthNeeded);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKernelObjectSecurity"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -407,22 +407,22 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ObjectCloseAuditAlarmW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ObjectCloseAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, BOOL GenerateOnClose);
+    public static extern BOOL ObjectCloseAuditAlarmW([NativeTypeName("LPCWSTR")] char* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, BOOL GenerateOnClose);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ObjectDeleteAuditAlarmW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ObjectDeleteAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, BOOL GenerateOnClose);
+    public static extern BOOL ObjectDeleteAuditAlarmW([NativeTypeName("LPCWSTR")] char* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, BOOL GenerateOnClose);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ObjectOpenAuditAlarmW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ObjectOpenAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] ushort* ObjectTypeName, [NativeTypeName("LPWSTR")] ushort* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, HANDLE ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL ObjectCreation, BOOL AccessGranted, [NativeTypeName("LPBOOL")] BOOL* GenerateOnClose);
+    public static extern BOOL ObjectOpenAuditAlarmW([NativeTypeName("LPCWSTR")] char* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, [NativeTypeName("LPWSTR")] char* ObjectTypeName, [NativeTypeName("LPWSTR")] char* ObjectName, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, HANDLE ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("DWORD")] uint GrantedAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL ObjectCreation, BOOL AccessGranted, [NativeTypeName("LPBOOL")] BOOL* GenerateOnClose);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ObjectPrivilegeAuditAlarmW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ObjectPrivilegeAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, HANDLE ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL AccessGranted);
+    public static extern BOOL ObjectPrivilegeAuditAlarmW([NativeTypeName("LPCWSTR")] char* SubsystemName, [NativeTypeName("LPVOID")] void* HandleId, HANDLE ClientToken, [NativeTypeName("DWORD")] uint DesiredAccess, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL AccessGranted);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PrivilegeCheck"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -432,7 +432,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PrivilegedServiceAuditAlarmW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL PrivilegedServiceAuditAlarmW([NativeTypeName("LPCWSTR")] ushort* SubsystemName, [NativeTypeName("LPCWSTR")] ushort* ServiceName, HANDLE ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL AccessGranted);
+    public static extern BOOL PrivilegedServiceAuditAlarmW([NativeTypeName("LPCWSTR")] char* SubsystemName, [NativeTypeName("LPCWSTR")] char* ServiceName, HANDLE ClientToken, [NativeTypeName("PPRIVILEGE_SET")] PRIVILEGE_SET* Privileges, BOOL AccessGranted);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.QuerySecurityAccessMask"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -451,7 +451,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetFileSecurityW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetFileSecurityW([NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
+    public static extern BOOL SetFileSecurityW([NativeTypeName("LPCWSTR")] char* lpFileName, [NativeTypeName("SECURITY_INFORMATION")] uint SecurityInformation, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetKernelObjectSecurity"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -511,43 +511,52 @@ public static unsafe partial class Windows
     [DllImport("advapi32", ExactSpelling = true)]
     [return: NativeTypeName("LONG")]
     [SupportedOSPlatform("windows10.0")]
-    public static extern int CveEventWrite([NativeTypeName("PCWSTR")] ushort* CveId, [NativeTypeName("PCWSTR")] ushort* AdditionalDetails);
+    public static extern int CveEventWrite([NativeTypeName("PCWSTR")] char* CveId, [NativeTypeName("PCWSTR")] char* AdditionalDetails);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeriveCapabilitySidsFromName"]/*' />
     [DllImport("kernelbase", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL DeriveCapabilitySidsFromName([NativeTypeName("LPCWSTR")] ushort* CapName, [NativeTypeName("PSID **")] void*** CapabilityGroupSids, [NativeTypeName("DWORD *")] uint* CapabilityGroupSidCount, [NativeTypeName("PSID **")] void*** CapabilitySids, [NativeTypeName("DWORD *")] uint* CapabilitySidCount);
+    public static extern BOOL DeriveCapabilitySidsFromName([NativeTypeName("LPCWSTR")] char* CapName, [NativeTypeName("PSID **")] void*** CapabilityGroupSids, [NativeTypeName("DWORD *")] uint* CapabilityGroupSidCount, [NativeTypeName("PSID **")] void*** CapabilitySids, [NativeTypeName("DWORD *")] uint* CapabilitySidCount);
 
     [NativeTypeName("#define AccessCheckAndAuditAlarm AccessCheckAndAuditAlarmW")]
-    public static delegate*<ushort*, void*, ushort*, ushort*, void*, uint, GENERIC_MAPPING*, BOOL, uint*, BOOL*, BOOL*, BOOL> AccessCheckAndAuditAlarm => &AccessCheckAndAuditAlarmW;
+    public static delegate*<char*, void*, char*, char*, void*, uint, GENERIC_MAPPING*, BOOL, uint*, BOOL*, BOOL*, BOOL> AccessCheckAndAuditAlarm => &AccessCheckAndAuditAlarmW;
 
     [NativeTypeName("#define AccessCheckByTypeAndAuditAlarm AccessCheckByTypeAndAuditAlarmW")]
-    public static delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, BOOL*, BOOL*, BOOL> AccessCheckByTypeAndAuditAlarm => &AccessCheckByTypeAndAuditAlarmW;
+    public static delegate*<char*, void*, char*, char*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, BOOL*, BOOL*, BOOL> AccessCheckByTypeAndAuditAlarm => &AccessCheckByTypeAndAuditAlarmW;
 
     [NativeTypeName("#define AccessCheckByTypeResultListAndAuditAlarm AccessCheckByTypeResultListAndAuditAlarmW")]
-    public static delegate*<ushort*, void*, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, uint*, BOOL*, BOOL> AccessCheckByTypeResultListAndAuditAlarm => &AccessCheckByTypeResultListAndAuditAlarmW;
+    public static delegate*<char*, void*, char*, char*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, uint*, BOOL*, BOOL> AccessCheckByTypeResultListAndAuditAlarm => &AccessCheckByTypeResultListAndAuditAlarmW;
 
     [NativeTypeName("#define AccessCheckByTypeResultListAndAuditAlarmByHandle AccessCheckByTypeResultListAndAuditAlarmByHandleW")]
-    public static delegate*<ushort*, void*, HANDLE, ushort*, ushort*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, uint*, BOOL*, BOOL> AccessCheckByTypeResultListAndAuditAlarmByHandle => &AccessCheckByTypeResultListAndAuditAlarmByHandleW;
+    public static delegate*<char*, void*, HANDLE, char*, char*, void*, void*, uint, AUDIT_EVENT_TYPE, uint, OBJECT_TYPE_LIST*, uint, GENERIC_MAPPING*, BOOL, uint*, uint*, BOOL*, BOOL> AccessCheckByTypeResultListAndAuditAlarmByHandle => &AccessCheckByTypeResultListAndAuditAlarmByHandleW;
 
     [NativeTypeName("#define GetFileSecurity GetFileSecurityW")]
-    public static delegate*<ushort*, uint, void*, uint, uint*, BOOL> GetFileSecurity => &GetFileSecurityW;
+    public static delegate*<char*, uint, void*, uint, uint*, BOOL> GetFileSecurity => &GetFileSecurityW;
 
     [NativeTypeName("#define ObjectCloseAuditAlarm ObjectCloseAuditAlarmW")]
-    public static delegate*<ushort*, void*, BOOL, BOOL> ObjectCloseAuditAlarm => &ObjectCloseAuditAlarmW;
+    public static delegate*<char*, void*, BOOL, BOOL> ObjectCloseAuditAlarm => &ObjectCloseAuditAlarmW;
 
     [NativeTypeName("#define ObjectDeleteAuditAlarm ObjectDeleteAuditAlarmW")]
-    public static delegate*<ushort*, void*, BOOL, BOOL> ObjectDeleteAuditAlarm => &ObjectDeleteAuditAlarmW;
+    public static delegate*<char*, void*, BOOL, BOOL> ObjectDeleteAuditAlarm => &ObjectDeleteAuditAlarmW;
 
     [NativeTypeName("#define ObjectOpenAuditAlarm ObjectOpenAuditAlarmW")]
-    public static delegate*<ushort*, void*, ushort*, ushort*, void*, HANDLE, uint, uint, PRIVILEGE_SET*, BOOL, BOOL, BOOL*, BOOL> ObjectOpenAuditAlarm => &ObjectOpenAuditAlarmW;
+    public static delegate*<char*, void*, char*, char*, void*, HANDLE, uint, uint, PRIVILEGE_SET*, BOOL, BOOL, BOOL*, BOOL> ObjectOpenAuditAlarm => &ObjectOpenAuditAlarmW;
 
     [NativeTypeName("#define ObjectPrivilegeAuditAlarm ObjectPrivilegeAuditAlarmW")]
-    public static delegate*<ushort*, void*, HANDLE, uint, PRIVILEGE_SET*, BOOL, BOOL> ObjectPrivilegeAuditAlarm => &ObjectPrivilegeAuditAlarmW;
+    public static delegate*<char*, void*, HANDLE, uint, PRIVILEGE_SET*, BOOL, BOOL> ObjectPrivilegeAuditAlarm => &ObjectPrivilegeAuditAlarmW;
 
     [NativeTypeName("#define PrivilegedServiceAuditAlarm PrivilegedServiceAuditAlarmW")]
-    public static delegate*<ushort*, ushort*, HANDLE, PRIVILEGE_SET*, BOOL, BOOL> PrivilegedServiceAuditAlarm => &PrivilegedServiceAuditAlarmW;
+    public static delegate*<char*, char*, HANDLE, PRIVILEGE_SET*, BOOL, BOOL> PrivilegedServiceAuditAlarm => &PrivilegedServiceAuditAlarmW;
 
     [NativeTypeName("#define SetFileSecurity SetFileSecurityW")]
-    public static delegate*<ushort*, uint, void*, BOOL> SetFileSecurity => &SetFileSecurityW;
+    public static delegate*<char*, uint, void*, BOOL> SetFileSecurity => &SetFileSecurityW;
+
+    [NativeTypeName("#define SIGNING_LEVEL_FILE_CACHE_FLAG_NOT_VALIDATED 0x01")]
+    public const int SIGNING_LEVEL_FILE_CACHE_FLAG_NOT_VALIDATED = 0x01;
+
+    [NativeTypeName("#define SIGNING_LEVEL_FILE_CACHE_FLAG_VALIDATE_ONLY 0x04")]
+    public const int SIGNING_LEVEL_FILE_CACHE_FLAG_VALIDATE_ONLY = 0x04;
+
+    [NativeTypeName("#define SIGNING_LEVEL_MICROSOFT 8")]
+    public const int SIGNING_LEVEL_MICROSOFT = 8;
 }

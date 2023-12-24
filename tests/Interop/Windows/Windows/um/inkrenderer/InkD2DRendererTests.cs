@@ -19,25 +19,4 @@ public static unsafe partial class InkD2DRendererTests
     {
         Assert.That(typeof(InkD2DRenderer).GUID, Is.EqualTo(CLSID_InkD2DRenderer));
     }
-
-    /// <summary>Validates that the <see cref="InkD2DRenderer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<InkD2DRenderer>(), Is.EqualTo(sizeof(InkD2DRenderer)));
-    }
-
-    /// <summary>Validates that the <see cref="InkD2DRenderer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(InkD2DRenderer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="InkD2DRenderer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(InkD2DRenderer), Is.EqualTo(1));
-    }
 }

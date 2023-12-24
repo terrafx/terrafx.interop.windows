@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CROSS_SLIDE_PARAMETER">
-    <summary>
-      <para>Defines the cross-slide threshold and its distance threshold.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-getcrossslideparameterinteractioncontext">GetCrossSlideParameterInteractionContext</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/input_intcontext/structures">Interaction Context Structures</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/nf-interactioncontext-setcrossslideparametersinteractioncontext">SetCrossSlideParametersInteractionContext</seealso>
+    <summary>Defines the cross-slide threshold and its distance threshold.</summary>
   </member>
   <member name="CROSS_SLIDE_PARAMETER.threshold">
-    <summary>
-      <para>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-cross_slide_threshold">CROSS_SLIDE_THRESHOLD</a>.</para>
-    </summary>
+    <summary>One of the constants from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/interactioncontext/ne-interactioncontext-cross_slide_threshold">CROSS_SLIDE_THRESHOLD</a>.</summary>
   </member>
   <member name="CROSS_SLIDE_PARAMETER.distance">
-    <summary>
-      <para>The <i>threshold</i> distance, in DIPs.</para>
-    </summary>
+    <summary>The <i>threshold</i> distance, in DIPs.</summary>
   </member>
 </doc>

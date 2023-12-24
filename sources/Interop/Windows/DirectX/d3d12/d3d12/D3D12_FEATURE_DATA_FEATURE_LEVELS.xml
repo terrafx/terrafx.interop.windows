@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_FEATURE_LEVELS">
+    <summary>Describes info about the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature levels</a> supported by the current graphics driver.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_FEATURE_LEVELS.NumFeatureLevels">
+    <summary>The number of <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature levels</a> in the array at <b>pFeatureLevelsRequested</b>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_FEATURE_LEVELS.pFeatureLevelsRequested">
+    <summary>A pointer to an array of <see cref="D3D_FEATURE_LEVEL" />s that the application is requesting for the driver and hardware to evaluate.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_FEATURE_LEVELS.MaxSupportedFeatureLevel">
+    <summary>The maximum <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> that the driver and hardware support.</summary>
+  </member>
+</doc>

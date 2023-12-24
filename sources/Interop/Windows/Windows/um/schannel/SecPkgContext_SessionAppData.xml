@@ -9,18 +9,12 @@
     </summary>
   </member>
   <member name="SecPkgContext_SessionAppData.dwFlags">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="SecPkgContext_SessionAppData.cbAppData">
-    <summary>
-      <para>Count of bytes used by <b>pbAppData</b>.</para>
-    </summary>
+    <summary>Count of bytes used by <b>pbAppData</b>.</summary>
   </member>
   <member name="SecPkgContext_SessionAppData.pbAppData">
-    <summary>
-      <para>Pointer to a <b>BYTE</b> that represents the session application data.</para>
-    </summary>
+    <summary>Pointer to a <b>BYTE</b> that represents the session application data.</summary>
   </member>
 </doc>

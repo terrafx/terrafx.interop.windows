@@ -26,7 +26,7 @@ public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D10Multithread*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Multithread*, Guid*, void**, int>)(lpVtbl[0]))((ID3D10Multithread*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D10Multithread*, uint>)(lpVtbl[1]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Multithread*, uint>)(lpVtbl[1]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D10Multithread*, uint>)(lpVtbl[2]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Multithread*, uint>)(lpVtbl[2]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Multithread.xml' path='doc/member[@name="ID3D10Multithread.Enter"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface, IN
     [VtblIndex(3)]
     public void Enter()
     {
-        ((delegate* unmanaged<ID3D10Multithread*, void>)(lpVtbl[3]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID3D10Multithread*, void>)(lpVtbl[3]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Multithread.xml' path='doc/member[@name="ID3D10Multithread.Leave"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface, IN
     [VtblIndex(4)]
     public void Leave()
     {
-        ((delegate* unmanaged<ID3D10Multithread*, void>)(lpVtbl[4]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID3D10Multithread*, void>)(lpVtbl[4]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D10Multithread.xml' path='doc/member[@name="ID3D10Multithread.SetMultithreadProtected"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface, IN
     [VtblIndex(5)]
     public BOOL SetMultithreadProtected(BOOL bMTProtect)
     {
-        return ((delegate* unmanaged<ID3D10Multithread*, BOOL, int>)(lpVtbl[5]))((ID3D10Multithread*)Unsafe.AsPointer(ref this), bMTProtect);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Multithread*, BOOL, int>)(lpVtbl[5]))((ID3D10Multithread*)Unsafe.AsPointer(ref this), bMTProtect);
     }
 
     /// <include file='ID3D10Multithread.xml' path='doc/member[@name="ID3D10Multithread.GetMultithreadProtected"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface, IN
     [VtblIndex(6)]
     public BOOL GetMultithreadProtected()
     {
-        return ((delegate* unmanaged<ID3D10Multithread*, int>)(lpVtbl[6]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10Multithread*, int>)(lpVtbl[6]))((ID3D10Multithread*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct ID3D10Multithread : ID3D10Multithread.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Enter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Enter;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Leave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Leave;
 
         [NativeTypeName("BOOL (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetMultithreadProtected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetMultithreadProtected;
 
         [NativeTypeName("BOOL () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetMultithreadProtected;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetMultithreadProtected;
     }
 }

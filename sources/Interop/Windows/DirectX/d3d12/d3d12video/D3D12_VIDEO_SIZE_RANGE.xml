@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_SIZE_RANGE">
+    <summary>Describes the range of supported sizes for a video scaler.</summary>
+  </member>
+  <member name="D3D12_VIDEO_SIZE_RANGE.MaxWidth">
+    <summary>The largest output width to which content can be scaled. The largest value allowed is <b>D3D12_REQ_TEXTURE2D_U_OR_V_DIMENSION</b> (16384).</summary>
+  </member>
+  <member name="D3D12_VIDEO_SIZE_RANGE.MaxHeight">
+    <summary>The largest output height to which content can be scaled. The largest value allowed is <b>D3D12_REQ_TEXTURE2D_U_OR_V_DIMENSION</b> (16384).</summary>
+  </member>
+  <member name="D3D12_VIDEO_SIZE_RANGE.MinWidth">
+    <summary>The smallest output width to which content can be scaled. The smallest allowed value is 1.</summary>
+  </member>
+  <member name="D3D12_VIDEO_SIZE_RANGE.MinHeight">
+    <summary>The smallest output height to which content can be scaled. The smallest allowed value is 1.</summary>
+  </member>
+</doc>

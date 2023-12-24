@@ -16,7 +16,7 @@ public partial struct NET_ADDRESS_INFO
     public NET_ADDRESS_FORMAT Format;
 
     /// <include file='NET_ADDRESS_INFO.xml' path='doc/member[@name="NET_ADDRESS_INFO.Anonymous"]/*' />
-    [NativeTypeName("NET_ADDRESS_INFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/iphlpapi.h:1416:4)")]
+    [NativeTypeName("__AnonymousRecord_iphlpapi_L1416_C4")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NamedAddress"]/*' />
@@ -69,7 +69,7 @@ public partial struct NET_ADDRESS_INFO
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.NamedAddress"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/iphlpapi.h:1418:7)")]
+        [NativeTypeName("__AnonymousRecord_iphlpapi_L1418_C7")]
         public _NamedAddress_e__Struct NamedAddress;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Ipv4Address"]/*' />
@@ -85,15 +85,29 @@ public partial struct NET_ADDRESS_INFO
         public SOCKADDR IpAddress;
 
         /// <include file='_NamedAddress_e__Struct.xml' path='doc/member[@name="_NamedAddress_e__Struct"]/*' />
-        public unsafe partial struct _NamedAddress_e__Struct
+        public partial struct _NamedAddress_e__Struct
         {
             /// <include file='_NamedAddress_e__Struct.xml' path='doc/member[@name="_NamedAddress_e__Struct.Address"]/*' />
             [NativeTypeName("WCHAR[256]")]
-            public fixed ushort Address[256];
+            public _Address_e__FixedBuffer Address;
 
             /// <include file='_NamedAddress_e__Struct.xml' path='doc/member[@name="_NamedAddress_e__Struct.Port"]/*' />
             [NativeTypeName("WCHAR[6]")]
-            public fixed ushort Port[6];
+            public _Port_e__FixedBuffer Port;
+
+            /// <include file='_Address_e__FixedBuffer.xml' path='doc/member[@name="_Address_e__FixedBuffer"]/*' />
+            [InlineArray(256)]
+            public partial struct _Address_e__FixedBuffer
+            {
+                public char e0;
+            }
+
+            /// <include file='_Port_e__FixedBuffer.xml' path='doc/member[@name="_Port_e__FixedBuffer"]/*' />
+            [InlineArray(6)]
+            public partial struct _Port_e__FixedBuffer
+            {
+                public char e0;
+            }
         }
     }
 }

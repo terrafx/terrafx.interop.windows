@@ -11,32 +11,32 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128"]/*' />
 [StructLayout(LayoutKind.Explicit)]
-public unsafe partial struct ARM64_NT_NEON128
+public partial struct ARM64_NT_NEON128
 {
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_ARM64_NT_NEON128::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:6518:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L6521_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.D"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("double[2]")]
-    public fixed double D[2];
+    public _D_e__FixedBuffer D;
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.S"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("float[4]")]
-    public fixed float S[4];
+    public _S_e__FixedBuffer S;
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.H"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("WORD[8]")]
-    public fixed ushort H[8];
+    public _H_e__FixedBuffer H;
 
     /// <include file='ARM64_NT_NEON128.xml' path='doc/member[@name="ARM64_NT_NEON128.B"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("BYTE[16]")]
-    public fixed byte B[16];
+    public _B_e__FixedBuffer B;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.Low"]/*' />
     [UnscopedRef]
@@ -70,5 +70,33 @@ public unsafe partial struct ARM64_NT_NEON128
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.High"]/*' />
         [NativeTypeName("LONGLONG")]
         public long High;
+    }
+
+    /// <include file='_D_e__FixedBuffer.xml' path='doc/member[@name="_D_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _D_e__FixedBuffer
+    {
+        public double e0;
+    }
+
+    /// <include file='_S_e__FixedBuffer.xml' path='doc/member[@name="_S_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _S_e__FixedBuffer
+    {
+        public float e0;
+    }
+
+    /// <include file='_H_e__FixedBuffer.xml' path='doc/member[@name="_H_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _H_e__FixedBuffer
+    {
+        public ushort e0;
+    }
+
+    /// <include file='_B_e__FixedBuffer.xml' path='doc/member[@name="_B_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _B_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

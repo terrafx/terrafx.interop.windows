@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IContextMenu.GetCommandString">
-    <summary>
-      <para>Gets information about a shortcut menu command, including the help string and the language-independent, or <i>canonical</i>, name for the command.</para>
-    </summary>
-    <param name="idCmd">
-      <para>Type: <b>UINT_PTR</b></para>
-      <para>Menu command identifier offset.</para>
-    </param>
+    <summary>Gets information about a shortcut menu command, including the help string and the language-independent, or <i>canonical</i>, name for the command.</summary>
+    <param name="idCmd">Menu command identifier offset.</param>
     <param name="uType">
-      <para>Type: <b>UINT</b></para>
       <para>Flags specifying the information to return. This parameter can have one of the following values.</para>
       <h4>GCS_HELPTEXTA</h4>
       <para>Sets <i>pszName</i> to an ANSI string containing the help text for the command.</para>
@@ -26,73 +20,23 @@
       <h4>GCS_VERBW</h4>
       <para>Sets <i>pszName</i> to a Unicode string containing the language-independent command name for the menu item.</para>
     </param>
-    <param name="pReserved">
-      <para>Type: <b>UINT*</b></para>
-      <para>Reserved. Applications must specify <b>NULL</b> when calling this method and handlers must ignore this parameter when called.</para>
-    </param>
-    <param name="pszName">
-      <para>Type: <b>LPSTR</b></para>
-      <para>The address of the buffer to receive the null-terminated string being retrieved.</para>
-    </param>
-    <param name="cchMax">
-      <para>Type: <b>UINT</b></para>
-      <para>Size of the buffer, in characters, to receive the null-terminated string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The language-independent command name, or <i>verb</i>, is a name that can be passed to the <see cref="IContextMenu.InvokeCommand" /> method to activate a command by an application. The help text is a description of the command that Windows Explorer displays in its status bar. It should be reasonably short (under 40 characters).</para>
-      <para>Several common verbs can be identified by their canonical name, for instance, <i>open</i>, <i>print</i>, <i>delete</i>, and <i>rename</i>. Clients can compare the string pointed to by <i>pszName</i> against these canonical names to check for their presence on the shortcut menu.</para>
-      <para>Even though <i>pszName</i> is declared as an <b>LPSTR</b>, you must cast it to <b>UINT_PTR</b> and return a Unicode string if <i>uFlags</i> is set to either <b>GCS_HELPTEXTW</b> or <b>GCS_VERBW</b>. <b>GCS_UNICODE</b> can be used as a bitmask to test <i>uFlags</i> for 'W' and 'A' versions of the flag it contains.</para>
-    </remarks>
+    <param name="pReserved">Reserved. Applications must specify <b>NULL</b> when calling this method and handlers must ignore this parameter when called.</param>
+    <param name="pszName">The address of the buffer to receive the null-terminated string being retrieved.</param>
+    <param name="cchMax">Size of the buffer, in characters, to receive the null-terminated string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IContextMenu.InvokeCommand">
-    <summary>
-      <para>Carries out the command associated with a shortcut menu item.</para>
-    </summary>
-    <param name="pici">
-      <para>Type: <b>LPCMINVOKECOMMANDINFO</b></para>
-      <para>A pointer to a <see cref="CMINVOKECOMMANDINFO" /> or <see cref="CMINVOKECOMMANDINFOEX" /> structure that contains specifics about the command.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <see cref="IContextMenu" /> interface is exported by several Shell extension handlers and namespace extensions. It is used to add commands to shortcut menus. When the user selects one of the commands that the handler or namespace extension added to a shortcut menu, the Shell calls that command's <b>InvokeCommand</b> method. The command can be specified by its menu identifier offset, defined when <see cref="IContextMenu.QueryContextMenu" /> was called, or by its associated verb. An application can invoke this method directly by obtaining a pointer to an object's <b>IContextMenu</b> interface. An application can also invoke this method indirectly by calling <see cref="ShellExecute" /> or <see cref="ShellExecuteEx" /> and specifying a verb that is supported by the namespace extension or handler.</para>
-      <h3>Note to Users</h3>
-      <para>Although the <i>pici</i> parameter is declared in Shlobj.h as a <see cref="CMINVOKECOMMANDINFO" /> structure, you can use either <b>CMINVOKECOMMANDINFO</b> or <see cref="CMINVOKECOMMANDINFOEX" />. Either will work for ANSI strings, but you must use a <b>CMINVOKECOMMANDINFOEX</b> structure for Unicode strings.</para>
-      <h3>Notes to Implementers</h3>
-      <para>Check the <b>cbSize</b> member of <i>pici</i> to determine which structure (<see cref="CMINVOKECOMMANDINFO" /> or <see cref="CMINVOKECOMMANDINFOEX" />) was passed in. If it is a <b>CMINVOKECOMMANDINFOEX</b> structure and the <b>fMask</b> member has the <b>CMIC_MASK_UNICODE</b> flag set, you must cast <i>pici</i> to <b>CMINVOKECOMMANDINFOEX</b> to use the Unicode information contained in the last five members of the structure.</para>
-      <para>If the verb, specified either by a canonical verb name or the command ID is not recognized by the context menu handler, it must return a failure (E_FAIL) so that the verb can be passed on to other context menu handlers that might implement it.</para>
-      <para>As of Windows Vista, it is not sufficient invoke the command asynchronously simply by setting the CMIC_MASK_ASYNCOK flag in the <b>fMask</b> member of the <see cref="CMINVOKECOMMANDINFO" /> or <see cref="CMINVOKECOMMANDINFOEX" /> structure. You must also set a thread reference on the calling thread as explained in <a href="https://docs.microsoft.com//windows/desktop/shell/managing-thread-references">Managing Thread References</a>.</para>
-    </remarks>
-    <seealso cref="IContextMenu" />
+    <summary>Carries out the command associated with a shortcut menu item.</summary>
+    <param name="pici">A pointer to a <see cref="CMINVOKECOMMANDINFO" /> or <see cref="CMINVOKECOMMANDINFOEX" /> structure that contains specifics about the command.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IContextMenu.QueryContextMenu">
-    <summary>
-      <para>Adds commands to a shortcut menu.</para>
-    </summary>
-    <param name="hmenu">
-      <para>Type: <b>HMENU</b></para>
-      <para>A handle to the shortcut menu. The handler should specify this handle when adding menu items.</para>
-    </param>
-    <param name="indexMenu">
-      <para>Type: <b>UINT</b></para>
-      <para>The zero-based position at which to insert the first new menu item.</para>
-    </param>
-    <param name="idCmdFirst">
-      <para>Type: <b>UINT</b></para>
-      <para>The minimum value that the handler can specify for a menu item identifier.</para>
-    </param>
-    <param name="idCmdLast">
-      <para>Type: <b>UINT</b></para>
-      <para>The maximum value that the handler can specify for a menu item identifier.</para>
-    </param>
+    <summary>Adds commands to a shortcut menu.</summary>
+    <param name="hmenu">A handle to the shortcut menu. The handler should specify this handle when adding menu items.</param>
+    <param name="indexMenu">The zero-based position at which to insert the first new menu item.</param>
+    <param name="idCmdFirst">The minimum value that the handler can specify for a menu item identifier.</param>
+    <param name="idCmdLast">The maximum value that the handler can specify for a menu item identifier.</param>
     <param name="uFlags">
-      <para>Type: <b>UINT</b></para>
       <para>Optional flags that specify how the shortcut menu can be changed. This parameter can be set to a combination of the following values. The remaining bits of the low-order word are reserved by the system. The high-order word can be used for context-specific communications. The CMF_RESERVED value can be used to mask the low-order word.</para>
       <h4>CMF_NORMAL (0x00000000)</h4>
       <para>0x00000000. Indicates normal operation. A shortcut menu extension, namespace extension, or drag-and-drop handler can add all menu items.</para>
@@ -135,46 +79,12 @@
       <para>
         <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
       <h4>CMF_DONOTPICKDEFAULT (0x00002000)</h4>
-      <para>0x00001000. When no verb is explicitly specified, do not use a default verb in its place.</para>
+      <para>0x00002000. When no verb is explicitly specified, do not use a default verb in its place.</para>
       <para>
         <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not available.</para>
       <h4>CMF_RESERVED (0xffff0000)</h4>
       <para>0xffff0000. This flag is a bitmask that specifies all bits that should not be used. This is to be used only as a mask. Do not pass this as a parameter value.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If successful, returns an <b>HRESULT</b> value that has its severity value set to SEVERITY_SUCCESS and its code value set to the offset of the largest command identifier that was assigned, plus one. For example, if <i>idCmdFirst</i> is set to 5 and you add three items to the menu with command identifiers of 5, 7, and 8, the return value should be MAKE_HRESULT(SEVERITY_SUCCESS, 0, 8 - 5 + 1). Otherwise, it returns a COM error value.</para>
-    </returns>
-    <remarks>
-      <para>This method should call either <see cref="InsertMenu" /> or <see cref="InsertMenuItem" /> to insert its menu items into the menu specified by <i>hmenu</i>. The <i>indexMenu</i> parameter holds the index to be used for the first menu item. The identifier of each menu item must fall within the range defined by <i>idCmdFirst</i> and <i>idCmdLast</i>.</para>
-      <para>A common practice is to set the first command identifier to <i>idCmdFirst</i> (an offset of zero) and increment the offset for each additional command by one. This practice ensures that you do not exceed <i>idCmdLast</i> and preserves the range of identifiers that are available for use by other handlers. Store the offsets for reference because they can be used to identify the command in subsequent calls to <see cref="IContextMenu.GetCommandString" /> and <see cref="IContextMenu.InvokeCommand" />.</para>
-      <para>If the Shell subsequently calls another shortcut menu handler, it will use the code value of the returned <b>HRESULT</b> to set <i>idCmdFirst</i> when it calls that handler's <b>QueryContextMenu</b> method.</para>
-      <para>When a context menu handler adds a pop-up menu item, it must use <b>IContextMenu.QueryContextMenu</b> to add at least one item to that menu for the WM_INITMENUPOPUP message to be forwarded.</para>
-    </remarks>
-  </member>
-  <member name="IContextMenu">
-    <summary>
-      <para>Exposes methods that either create or merge a shortcut menu associated with a Shell object. Note that there are several better ways to extend Shell menus. For more information, see <a href="https://docs.microsoft.com//windows/win32/shell/context-menu-handlers">Creating Shortcut Menu Handlers</a>.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>Implement <b>IContextMenu</b> in the following situations.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/handlers">Shell extension handlers</a> implement this interface to dynamically add items to a Shell object's shortcut menu.</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/shell/nse-works">Namespace extensions</a> implement this interface to specify their object's shortcut menus.</description>
-        </item>
-      </list>
-      <para>For a detailed discussion of how to implement <b>IContextMenu</b>, see <a href="https://docs.microsoft.com//windows/desktop/shell/context-menu-handlers">Creating Context Menu Handlers</a>.</para>
-      <h3>When to Use</h3>
-      <para>Applications use <b>IContextMenu</b> to retrieve information about the items in an object's shortcut menu and to invoke the associated commands. To retrieve an object's <b>IContextMenu</b> interface, an application must call the object's <see cref="IShellFolder.GetUIObjectOf" /> method.</para>
-      <para>Shell extension handlers that export this interface must also export <see cref="IShellExtInit" />. For details, see <a href="https://docs.microsoft.com//windows/desktop/shell/handlers">Creating Shell Extension Handlers</a>.</para>
-      <para>
-        <b>Note</b>  <b>Windows Vista and later:</b> Prior to Windows Vista this interface was declared in Shlobj.h.</para>
-    </remarks>
+    <returns>If successful, returns an <b>HRESULT</b> value that has its severity value set to SEVERITY_SUCCESS and its code value set to the offset of the largest command identifier that was assigned, plus one. For example, if <i>idCmdFirst</i> is set to 5 and you add three items to the menu with command identifiers of 5, 7, and 8, the return value should be MAKE_HRESULT(SEVERITY_SUCCESS, 0, 8 - 5 + 1). Otherwise, it returns a COM error value.</returns>
   </member>
 </doc>

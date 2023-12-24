@@ -3,55 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIAKEY_STATUS">
-    <summary>
-      <para>Specifies the status of a Content Decryption Module (CDM) session key.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is with the <see cref="MFMediaKeyStatus" /> structure used as the output parameter for the <see cref="IMFContentDecryptionModuleSession.GetKeyStatuses" /> method.</para>
-      <para>
-        <b>MF_MEDIAKEY_STATUS</b> is based on the Encrypted Media Extension specification's <a href="https://www.w3.org/tr/2017/rec-encrypted-media-20170918/#dom-mediakeystatus">MediaKeyStatus</a> enumeration.</para>
-    </remarks>
-    <seealso cref="MFMediaKeyStatus" />
-    <seealso cref="IMFContentDecryptionModuleSession.GetKeyStatuses" />
+    <summary>Specifies the status of a Content Decryption Module (CDM) session key.</summary>
   </member>
   <member name="MF_MEDIAKEY_STATUS.MF_MEDIAKEY_STATUS_USABLE">
-    <summary>
-      <para>The CDM is certain the key is currently usable for decryption.</para>
-    </summary>
+    <summary>The CDM is certain the key is currently usable for decryption.</summary>
   </member>
   <member name="MF_MEDIAKEY_STATUS.MF_MEDIAKEY_STATUS_EXPIRED">
-    <summary>
-      <para>The key is no longer usable for decryption because its expiration time has passed.</para>
-    </summary>
+    <summary>The key is no longer usable for decryption because its expiration time has passed.</summary>
   </member>
   <member name="MF_MEDIAKEY_STATUS.MF_MEDIAKEY_STATUS_OUTPUT_DOWNSCALED">
-    <summary>
-      <para>There are output restrictions associated with the key that cannot currently be met. Media data decrypted with this key may be presented at a lower quality (e.g., resolution), if necessary according to the output restrictions.</para>
-    </summary>
+    <summary>There are output restrictions associated with the key that cannot currently be met. Media data decrypted with this key may be presented at a lower quality (e.g., resolution), if necessary according to the output restrictions.</summary>
   </member>
   <member name="MF_MEDIAKEY_STATUS.MF_MEDIAKEY_STATUS_OUTPUT_NOT_ALLOWED">
-    <summary>
-      <para>There are output restrictions associated with the key that disallow output.</para>
-    </summary>
+    <summary>There are output restrictions associated with the key that disallow output.</summary>
   </member>
   <member name="MF_MEDIAKEY_STATUS.MF_MEDIAKEY_STATUS_STATUS_PENDING">
-    <summary>
-      <para>The status of the key is not yet known and is being determined. The status will be updated with the actual status when it has been determined.</para>
-    </summary>
+    <summary>The status of the key is not yet known and is being determined. The status will be updated with the actual status when it has been determined.</summary>
   </member>
   <member name="MF_MEDIAKEY_STATUS.MF_MEDIAKEY_STATUS_INTERNAL_ERROR">
-    <summary>
-      <para>The key is not currently usable for decryption because of an error in the CDM unrelated to the other values. This value is not actionable by the application.</para>
-    </summary>
+    <summary>The key is not currently usable for decryption because of an error in the CDM unrelated to the other values. This value is not actionable by the application.</summary>
   </member>
   <member name="MF_MEDIAKEY_STATUS.MF_MEDIAKEY_STATUS_RELEASED">
-    <summary>
-      <para>The key itself is no longer available to the CDM, but information about the key, such as a record of license destruction, is available.</para>
-    </summary>
+    <summary>The key itself is no longer available to the CDM, but information about the key, such as a record of license destruction, is available.</summary>
   </member>
   <member name="MF_MEDIAKEY_STATUS.MF_MEDIAKEY_STATUS_OUTPUT_RESTRICTED">
-    <summary>
-      <para>There are output restrictions associated with the key that cannot currently be met. Media data decrypted with this key may be blocked from presentation, if necessary according to the output restrictions. The application should avoid using streams that will trigger the output restrictions associated with the key.</para>
-    </summary>
+    <summary>There are output restrictions associated with the key that cannot currently be met. Media data decrypted with this key may be blocked from presentation, if necessary according to the output restrictions. The application should avoid using streams that will trigger the output restrictions associated with the key.</summary>
   </member>
 </doc>

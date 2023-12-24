@@ -3,44 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestTargetDeviceFamily.GetMaxVersionTested">
-    <summary>
-      <para>Gets the maximum version tested from the AppxManifest.xml.</para>
-    </summary>
-    <param name="maxVersionTested">
-      <para>The max version tested attribute.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestTargetDeviceFamily" />
+    <summary>Gets the maximum version tested from the AppxManifest.xml.</summary>
+    <param name="maxVersionTested">The max version tested attribute.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestTargetDeviceFamily.GetMinVersion">
-    <summary>
-      <para>Gets the minimum version of the target device family from the AppxManifest.xml.</para>
-    </summary>
-    <param name="minVersion">
-      <para>The minimum version.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestTargetDeviceFamily" />
+    <summary>Gets the minimum version of the target device family from the AppxManifest.xml.</summary>
+    <param name="minVersion">The minimum version.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestTargetDeviceFamily.GetName">
-    <summary>
-      <para>Gets the name of the target device family from the AppxManifest.xml..</para>
-    </summary>
-    <param name="name">
-      <para>The target device family name.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxManifestTargetDeviceFamily" />
+    <summary>Gets the name of the target device family from the AppxManifest.xml..</summary>
+    <param name="name">The target device family name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestTargetDeviceFamily">
-    <summary>
-      <para>Retrieves information about the target device family from the AppxManifest.xml.</para>
-    </summary>
+    <summary>Retrieves information about the target device family from the AppxManifest.xml.</summary>
   </member>
 </doc>

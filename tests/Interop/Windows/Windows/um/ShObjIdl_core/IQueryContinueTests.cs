@@ -19,32 +19,4 @@ public static unsafe partial class IQueryContinueTests
     {
         Assert.That(typeof(IQueryContinue).GUID, Is.EqualTo(IID_IQueryContinue));
     }
-
-    /// <summary>Validates that the <see cref="IQueryContinue" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IQueryContinue>(), Is.EqualTo(sizeof(IQueryContinue)));
-    }
-
-    /// <summary>Validates that the <see cref="IQueryContinue" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IQueryContinue).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IQueryContinue" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IQueryContinue), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IQueryContinue), Is.EqualTo(4));
-        }
-    }
 }

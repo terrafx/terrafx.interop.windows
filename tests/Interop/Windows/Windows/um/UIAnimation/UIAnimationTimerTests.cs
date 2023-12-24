@@ -19,25 +19,4 @@ public static unsafe partial class UIAnimationTimerTests
     {
         Assert.That(typeof(UIAnimationTimer).GUID, Is.EqualTo(CLSID_UIAnimationTimer));
     }
-
-    /// <summary>Validates that the <see cref="UIAnimationTimer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<UIAnimationTimer>(), Is.EqualTo(sizeof(UIAnimationTimer)));
-    }
-
-    /// <summary>Validates that the <see cref="UIAnimationTimer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(UIAnimationTimer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="UIAnimationTimer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(UIAnimationTimer), Is.EqualTo(1));
-    }
 }

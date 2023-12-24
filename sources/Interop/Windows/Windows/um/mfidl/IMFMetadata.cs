@@ -25,7 +25,7 @@ public unsafe partial struct IMFMetadata : IMFMetadata.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMetadata*, Guid*, void**, int>)(lpVtbl[0]))((IMFMetadata*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, Guid*, void**, int>)(lpVtbl[0]))((IMFMetadata*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMetadata : IMFMetadata.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMetadata*, uint>)(lpVtbl[1]))((IMFMetadata*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, uint>)(lpVtbl[1]))((IMFMetadata*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,23 +43,23 @@ public unsafe partial struct IMFMetadata : IMFMetadata.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMetadata*, uint>)(lpVtbl[2]))((IMFMetadata*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, uint>)(lpVtbl[2]))((IMFMetadata*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMetadata.xml' path='doc/member[@name="IMFMetadata.SetLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetLanguage([NativeTypeName("LPCWSTR")] ushort* pwszRFC1766)
+    public HRESULT SetLanguage([NativeTypeName("LPCWSTR")] char* pwszRFC1766)
     {
-        return ((delegate* unmanaged<IMFMetadata*, ushort*, int>)(lpVtbl[3]))((IMFMetadata*)Unsafe.AsPointer(ref this), pwszRFC1766);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, char*, int>)(lpVtbl[3]))((IMFMetadata*)Unsafe.AsPointer(ref this), pwszRFC1766);
     }
 
     /// <include file='IMFMetadata.xml' path='doc/member[@name="IMFMetadata.GetLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** ppwszRFC1766)
+    public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] char** ppwszRFC1766)
     {
-        return ((delegate* unmanaged<IMFMetadata*, ushort**, int>)(lpVtbl[4]))((IMFMetadata*)Unsafe.AsPointer(ref this), ppwszRFC1766);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, char**, int>)(lpVtbl[4]))((IMFMetadata*)Unsafe.AsPointer(ref this), ppwszRFC1766);
     }
 
     /// <include file='IMFMetadata.xml' path='doc/member[@name="IMFMetadata.GetAllLanguages"]/*' />
@@ -67,31 +67,31 @@ public unsafe partial struct IMFMetadata : IMFMetadata.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetAllLanguages(PROPVARIANT* ppvLanguages)
     {
-        return ((delegate* unmanaged<IMFMetadata*, PROPVARIANT*, int>)(lpVtbl[5]))((IMFMetadata*)Unsafe.AsPointer(ref this), ppvLanguages);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, PROPVARIANT*, int>)(lpVtbl[5]))((IMFMetadata*)Unsafe.AsPointer(ref this), ppvLanguages);
     }
 
     /// <include file='IMFMetadata.xml' path='doc/member[@name="IMFMetadata.SetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetProperty([NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppvValue)
+    public HRESULT SetProperty([NativeTypeName("LPCWSTR")] char* pwszName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppvValue)
     {
-        return ((delegate* unmanaged<IMFMetadata*, ushort*, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMetadata*)Unsafe.AsPointer(ref this), pwszName, ppvValue);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, char*, PROPVARIANT*, int>)(lpVtbl[6]))((IMFMetadata*)Unsafe.AsPointer(ref this), pwszName, ppvValue);
     }
 
     /// <include file='IMFMetadata.xml' path='doc/member[@name="IMFMetadata.GetProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetProperty([NativeTypeName("LPCWSTR")] ushort* pwszName, PROPVARIANT* ppvValue)
+    public HRESULT GetProperty([NativeTypeName("LPCWSTR")] char* pwszName, PROPVARIANT* ppvValue)
     {
-        return ((delegate* unmanaged<IMFMetadata*, ushort*, PROPVARIANT*, int>)(lpVtbl[7]))((IMFMetadata*)Unsafe.AsPointer(ref this), pwszName, ppvValue);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, char*, PROPVARIANT*, int>)(lpVtbl[7]))((IMFMetadata*)Unsafe.AsPointer(ref this), pwszName, ppvValue);
     }
 
     /// <include file='IMFMetadata.xml' path='doc/member[@name="IMFMetadata.DeleteProperty"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT DeleteProperty([NativeTypeName("LPCWSTR")] ushort* pwszName)
+    public HRESULT DeleteProperty([NativeTypeName("LPCWSTR")] char* pwszName)
     {
-        return ((delegate* unmanaged<IMFMetadata*, ushort*, int>)(lpVtbl[8]))((IMFMetadata*)Unsafe.AsPointer(ref this), pwszName);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, char*, int>)(lpVtbl[8]))((IMFMetadata*)Unsafe.AsPointer(ref this), pwszName);
     }
 
     /// <include file='IMFMetadata.xml' path='doc/member[@name="IMFMetadata.GetAllPropertyNames"]/*' />
@@ -99,28 +99,28 @@ public unsafe partial struct IMFMetadata : IMFMetadata.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetAllPropertyNames(PROPVARIANT* ppvNames)
     {
-        return ((delegate* unmanaged<IMFMetadata*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMetadata*)Unsafe.AsPointer(ref this), ppvNames);
+        return ((delegate* unmanaged[MemberFunction]<IMFMetadata*, PROPVARIANT*, int>)(lpVtbl[9]))((IMFMetadata*)Unsafe.AsPointer(ref this), ppvNames);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetLanguage([NativeTypeName("LPCWSTR")] ushort* pwszRFC1766);
+        HRESULT SetLanguage([NativeTypeName("LPCWSTR")] char* pwszRFC1766);
 
         [VtblIndex(4)]
-        HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** ppwszRFC1766);
+        HRESULT GetLanguage([NativeTypeName("LPWSTR *")] char** ppwszRFC1766);
 
         [VtblIndex(5)]
         HRESULT GetAllLanguages(PROPVARIANT* ppvLanguages);
 
         [VtblIndex(6)]
-        HRESULT SetProperty([NativeTypeName("LPCWSTR")] ushort* pwszName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppvValue);
+        HRESULT SetProperty([NativeTypeName("LPCWSTR")] char* pwszName, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* ppvValue);
 
         [VtblIndex(7)]
-        HRESULT GetProperty([NativeTypeName("LPCWSTR")] ushort* pwszName, PROPVARIANT* ppvValue);
+        HRESULT GetProperty([NativeTypeName("LPCWSTR")] char* pwszName, PROPVARIANT* ppvValue);
 
         [VtblIndex(8)]
-        HRESULT DeleteProperty([NativeTypeName("LPCWSTR")] ushort* pwszName);
+        HRESULT DeleteProperty([NativeTypeName("LPCWSTR")] char* pwszName);
 
         [VtblIndex(9)]
         HRESULT GetAllPropertyNames(PROPVARIANT* ppvNames);
@@ -130,33 +130,33 @@ public unsafe partial struct IMFMetadata : IMFMetadata.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetLanguage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetLanguage;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLanguage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetLanguage;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetAllLanguages;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, int> GetAllLanguages;
 
         [NativeTypeName("HRESULT (LPCWSTR, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> SetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, PROPVARIANT*, int> SetProperty;
 
         [NativeTypeName("HRESULT (LPCWSTR, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, PROPVARIANT*, int> GetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, PROPVARIANT*, int> GetProperty;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> DeleteProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> DeleteProperty;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetAllPropertyNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, int> GetAllPropertyNames;
     }
 }

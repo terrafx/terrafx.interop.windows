@@ -3,37 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_DEPTH_STENCILOP_DESC">
-    <summary>
-      <para>Stencil operations that can be performed based on the results of stencil test.</para>
-    </summary>
-    <remarks>
-      <para>All stencil operations are specified as a <see cref="D3D11_STENCIL_OP" />. The stencil operation can be set differently based on the outcome of the stencil test (which is referred to as <b>StencilFunc</b> in the stencil test portion of depth-stencil testing.</para>
-      <para>This structure is a member of a <see cref="depth-stencil description" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-structures">Core Structures</seealso>
+    <summary>Stencil operations that can be performed based on the results of stencil test.</summary>
   </member>
   <member name="D3D11_DEPTH_STENCILOP_DESC.StencilFailOp">
-    <summary>
-      <para>Type: <b><see cref="D3D11_STENCIL_OP" /></b></para>
-      <para>The stencil operation to perform when stencil testing fails.</para>
-    </summary>
+    <summary>The stencil operation to perform when stencil testing fails.</summary>
   </member>
   <member name="D3D11_DEPTH_STENCILOP_DESC.StencilDepthFailOp">
-    <summary>
-      <para>Type: <b><see cref="D3D11_STENCIL_OP" /></b></para>
-      <para>The stencil operation to perform when stencil testing passes and depth testing fails.</para>
-    </summary>
+    <summary>The stencil operation to perform when stencil testing passes and depth testing fails.</summary>
   </member>
   <member name="D3D11_DEPTH_STENCILOP_DESC.StencilPassOp">
-    <summary>
-      <para>Type: <b><see cref="D3D11_STENCIL_OP" /></b></para>
-      <para>The stencil operation to perform when stencil testing and depth testing both pass.</para>
-    </summary>
+    <summary>The stencil operation to perform when stencil testing and depth testing both pass.</summary>
   </member>
   <member name="D3D11_DEPTH_STENCILOP_DESC.StencilFunc">
-    <summary>
-      <para>Type: <b><see cref="D3D11_COMPARISON_FUNC" /></b></para>
-      <para>A function that compares stencil data against existing stencil data. The function options are listed in <see cref="D3D11_COMPARISON_FUNC" />.</para>
-    </summary>
+    <summary>A function that compares stencil data against existing stencil data. The function options are listed in <see cref="D3D11_COMPARISON_FUNC" />.</summary>
   </member>
 </doc>

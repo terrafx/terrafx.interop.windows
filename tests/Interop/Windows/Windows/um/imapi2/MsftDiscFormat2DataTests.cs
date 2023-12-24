@@ -19,25 +19,4 @@ public static unsafe partial class MsftDiscFormat2DataTests
     {
         Assert.That(typeof(MsftDiscFormat2Data).GUID, Is.EqualTo(CLSID_MsftDiscFormat2Data));
     }
-
-    /// <summary>Validates that the <see cref="MsftDiscFormat2Data" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftDiscFormat2Data>(), Is.EqualTo(sizeof(MsftDiscFormat2Data)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftDiscFormat2Data" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftDiscFormat2Data).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftDiscFormat2Data" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftDiscFormat2Data), Is.EqualTo(1));
-    }
 }

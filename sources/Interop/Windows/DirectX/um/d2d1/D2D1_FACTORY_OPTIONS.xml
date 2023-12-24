@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_FACTORY_OPTIONS">
-    <summary>
-      <para>Contains the debugging level of an <see cref="ID2D1Factory" /> object.</para>
-    </summary>
-    <remarks>
-      <para>To enable debugging, you must install the <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2ddebuglayer-overview">Direct2D Debug Layer</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/direct2ddebuglayer-overview">Direct2D Debug Layer</seealso>
+    <summary>Contains the debugging level of an <see cref="ID2D1Factory" /> object.</summary>
   </member>
   <member name="D2D1_FACTORY_OPTIONS.debugLevel">
-    <summary>
-      <para>Type: <b><see cref="D2D1_DEBUG_LEVEL" /></b></para>
-      <para>The debugging level of the <see cref="ID2D1Factory" /> object.</para>
-    </summary>
+    <summary>The debugging level of the <see cref="ID2D1Factory" /> object.</summary>
   </member>
 </doc>

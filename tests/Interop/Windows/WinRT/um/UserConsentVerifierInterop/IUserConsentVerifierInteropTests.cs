@@ -19,32 +19,4 @@ public static unsafe partial class IUserConsentVerifierInteropTests
     {
         Assert.That(typeof(IUserConsentVerifierInterop).GUID, Is.EqualTo(IID_IUserConsentVerifierInterop));
     }
-
-    /// <summary>Validates that the <see cref="IUserConsentVerifierInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUserConsentVerifierInterop>(), Is.EqualTo(sizeof(IUserConsentVerifierInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IUserConsentVerifierInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUserConsentVerifierInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUserConsentVerifierInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUserConsentVerifierInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUserConsentVerifierInterop), Is.EqualTo(4));
-        }
-    }
 }

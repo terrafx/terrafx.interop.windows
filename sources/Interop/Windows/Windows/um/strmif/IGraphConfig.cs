@@ -25,7 +25,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IGraphConfig*, Guid*, void**, int>)(lpVtbl[0]))((IGraphConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, Guid*, void**, int>)(lpVtbl[0]))((IGraphConfig*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IGraphConfig*, uint>)(lpVtbl[1]))((IGraphConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, uint>)(lpVtbl[1]))((IGraphConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IGraphConfig*, uint>)(lpVtbl[2]))((IGraphConfig*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, uint>)(lpVtbl[2]))((IGraphConfig*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.Reconnect"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Reconnect(IPin* pOutputPin, IPin* pInputPin, [NativeTypeName("const AM_MEDIA_TYPE *")] AM_MEDIA_TYPE* pmtFirstConnection, IBaseFilter* pUsingFilter, HANDLE hAbortEvent, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IGraphConfig*, IPin*, IPin*, AM_MEDIA_TYPE*, IBaseFilter*, HANDLE, uint, int>)(lpVtbl[3]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pInputPin, pmtFirstConnection, pUsingFilter, hAbortEvent, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, IPin*, IPin*, AM_MEDIA_TYPE*, IBaseFilter*, HANDLE, uint, int>)(lpVtbl[3]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pInputPin, pmtFirstConnection, pUsingFilter, hAbortEvent, dwFlags);
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.Reconfigure"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Reconfigure(IGraphConfigCallback* pCallback, [NativeTypeName("PVOID")] void* pvContext, [NativeTypeName("DWORD")] uint dwFlags, HANDLE hAbortEvent)
     {
-        return ((delegate* unmanaged<IGraphConfig*, IGraphConfigCallback*, void*, uint, HANDLE, int>)(lpVtbl[4]))((IGraphConfig*)Unsafe.AsPointer(ref this), pCallback, pvContext, dwFlags, hAbortEvent);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, IGraphConfigCallback*, void*, uint, HANDLE, int>)(lpVtbl[4]))((IGraphConfig*)Unsafe.AsPointer(ref this), pCallback, pvContext, dwFlags, hAbortEvent);
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.AddFilterToCache"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT AddFilterToCache(IBaseFilter* pFilter)
     {
-        return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, int>)(lpVtbl[5]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, IBaseFilter*, int>)(lpVtbl[5]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter);
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.EnumCacheFilter"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT EnumCacheFilter(IEnumFilters** pEnum)
     {
-        return ((delegate* unmanaged<IGraphConfig*, IEnumFilters**, int>)(lpVtbl[6]))((IGraphConfig*)Unsafe.AsPointer(ref this), pEnum);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, IEnumFilters**, int>)(lpVtbl[6]))((IGraphConfig*)Unsafe.AsPointer(ref this), pEnum);
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.RemoveFilterFromCache"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT RemoveFilterFromCache(IBaseFilter* pFilter)
     {
-        return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, int>)(lpVtbl[7]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, IBaseFilter*, int>)(lpVtbl[7]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter);
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.GetStartTime"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetStartTime([NativeTypeName("REFERENCE_TIME *")] long* prtStart)
     {
-        return ((delegate* unmanaged<IGraphConfig*, long*, int>)(lpVtbl[8]))((IGraphConfig*)Unsafe.AsPointer(ref this), prtStart);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, long*, int>)(lpVtbl[8]))((IGraphConfig*)Unsafe.AsPointer(ref this), prtStart);
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.PushThroughData"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT PushThroughData(IPin* pOutputPin, IPinConnection* pConnection, HANDLE hEventAbort)
     {
-        return ((delegate* unmanaged<IGraphConfig*, IPin*, IPinConnection*, HANDLE, int>)(lpVtbl[9]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pConnection, hEventAbort);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, IPin*, IPinConnection*, HANDLE, int>)(lpVtbl[9]))((IGraphConfig*)Unsafe.AsPointer(ref this), pOutputPin, pConnection, hEventAbort);
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.SetFilterFlags"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT SetFilterFlags(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint, int>)(lpVtbl[10]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, IBaseFilter*, uint, int>)(lpVtbl[10]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, dwFlags);
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.GetFilterFlags"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetFilterFlags(IBaseFilter* pFilter, [NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint*, int>)(lpVtbl[11]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, IBaseFilter*, uint*, int>)(lpVtbl[11]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, pdwFlags);
     }
 
     /// <include file='IGraphConfig.xml' path='doc/member[@name="IGraphConfig.RemoveFilterEx"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT RemoveFilterEx(IBaseFilter* pFilter, [NativeTypeName("DWORD")] uint Flags)
     {
-        return ((delegate* unmanaged<IGraphConfig*, IBaseFilter*, uint, int>)(lpVtbl[12]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, Flags);
+        return ((delegate* unmanaged[MemberFunction]<IGraphConfig*, IBaseFilter*, uint, int>)(lpVtbl[12]))((IGraphConfig*)Unsafe.AsPointer(ref this), pFilter, Flags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct IGraphConfig : IGraphConfig.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPin *, IPin *, const AM_MEDIA_TYPE *, IBaseFilter *, HANDLE, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, IPin*, AM_MEDIA_TYPE*, IBaseFilter*, HANDLE, uint, int> Reconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, IPin*, AM_MEDIA_TYPE*, IBaseFilter*, HANDLE, uint, int> Reconnect;
 
         [NativeTypeName("HRESULT (IGraphConfigCallback *, PVOID, DWORD, HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IGraphConfigCallback*, void*, uint, HANDLE, int> Reconfigure;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IGraphConfigCallback*, void*, uint, HANDLE, int> Reconfigure;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, int> AddFilterToCache;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, int> AddFilterToCache;
 
         [NativeTypeName("HRESULT (IEnumFilters **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumFilters**, int> EnumCacheFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumFilters**, int> EnumCacheFilter;
 
         [NativeTypeName("HRESULT (IBaseFilter *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, int> RemoveFilterFromCache;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, int> RemoveFilterFromCache;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> GetStartTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> GetStartTime;
 
         [NativeTypeName("HRESULT (IPin *, IPinConnection *, HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, IPinConnection*, HANDLE, int> PushThroughData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, IPinConnection*, HANDLE, int> PushThroughData;
 
         [NativeTypeName("HRESULT (IBaseFilter *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, uint, int> SetFilterFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, uint, int> SetFilterFlags;
 
         [NativeTypeName("HRESULT (IBaseFilter *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, uint*, int> GetFilterFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, uint*, int> GetFilterFlags;
 
         [NativeTypeName("HRESULT (IBaseFilter *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBaseFilter*, uint, int> RemoveFilterEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBaseFilter*, uint, int> RemoveFilterEx;
     }
 }

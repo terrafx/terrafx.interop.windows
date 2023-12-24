@@ -25,7 +25,7 @@ public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFnGetSAPIObject*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetSAPIObject*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFnGetSAPIObject*, uint>)(lpVtbl[1]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetSAPIObject*, uint>)(lpVtbl[1]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFnGetSAPIObject*, uint>)(lpVtbl[2]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetSAPIObject*, uint>)(lpVtbl[2]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnGetSAPIObject*, ushort**, int>)(lpVtbl[3]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetSAPIObject*, char**, int>)(lpVtbl[3]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnGetSAPIObject.xml' path='doc/member[@name="ITfFnGetSAPIObject.Get"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface, 
     [VtblIndex(4)]
     public HRESULT Get(TfSapiObject sObj, IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<ITfFnGetSAPIObject*, TfSapiObject, IUnknown**, int>)(lpVtbl[4]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), sObj, ppunk);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetSAPIObject*, TfSapiObject, IUnknown**, int>)(lpVtbl[4]))((ITfFnGetSAPIObject*)Unsafe.AsPointer(ref this), sObj, ppunk);
     }
 
     public interface Interface : ITfFunction.Interface
@@ -72,18 +72,18 @@ public unsafe partial struct ITfFnGetSAPIObject : ITfFnGetSAPIObject.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (TfSapiObject, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TfSapiObject, IUnknown**, int> Get;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TfSapiObject, IUnknown**, int> Get;
     }
 }

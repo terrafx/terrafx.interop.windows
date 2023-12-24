@@ -4,18 +4,10 @@
 <doc>
   <member name="FILESYSTEM_STATISTICS">
     <summary>
-      <para>Contains statistical information from the file system.
-<b>Tip</b>  Applications targeting Windows 10 can access additional statistics through <see cref="FILESYSTEM_STATISTICS_EX" />.</para>
+      <para>Contains statistical information from the file system.</para>
+      <div>
+        <b>Tip</b>  Applications targeting Windows 10 can access additional statistics through <see cref="FILESYSTEM_STATISTICS_EX" />.</div>
     </summary>
-    <remarks>
-      <para>There are two types of files: user and metadata. User files are available for the user. Metadata files are
-system files that contain information, which the file system uses for its internal organization.</para>
-      <para>The number of read and write operations measured is the number of paging operations.</para>
-    </remarks>
-    <seealso cref="EXFAT_STATISTICS" />
-    <seealso cref="FAT_STATISTICS" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_filesystem_get_statistics">FSCTL_FILESYSTEM_GET_STATISTICS</seealso>
-    <seealso cref="NTFS_STATISTICS" />
   </member>
   <member name="FILESYSTEM_STATISTICS.FileSystemType">
     <summary>
@@ -26,83 +18,62 @@ system files that contain information, which the file system uses for its intern
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FILESYSTEM_STATISTICS_TYPE_EXFAT</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file system is an exFAT file system.</para>
-            <para>If this value is set, this structure is followed by an
-<see cref="EXFAT_STATISTICS" /> structure.</para>
-            <para>
-              <b>Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not supported until Windows Vista with SP1.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file system is an exFAT file system.<para>If this value is set, this structure is followed by an<see cref="EXFAT_STATISTICS" /> structure.</para><para><b>Windows Vista, Windows Server 2003 and Windows XP:  </b>This value is not supported until Windows Vista with SP1.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FILESYSTEM_STATISTICS_TYPE_FAT</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file system is a FAT file system.</para>
-            <para>If this value is set, this structure is followed by a
-<see cref="FAT_STATISTICS" /> structure.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file system is a FAT file system.<para>If this value is set, this structure is followed by a<see cref="FAT_STATISTICS" /> structure.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FILESYSTEM_STATISTICS_TYPE_NTFS</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file system is the NTFS file system.</para>
-            <para>If this value is set, this structure is followed by an
-<see cref="NTFS_STATISTICS" /> structure.</para>
-          </description>
-        </item>
+          <description>The file system is the NTFS file system.<para>If this value is set, this structure is followed by an<see cref="NTFS_STATISTICS" /> structure.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.Version">
-    <summary>
-      <para>This member is set to 1 (one).</para>
-    </summary>
+    <summary>This member is set to 1 (one).</summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.SizeOfCompleteStructure">
     <summary>
-      <para>The size of this structure plus the size of the file system-specific structure that follows this
-structure, multiplied by the number of processors.</para>
-      <para>This value must be a multiple of 64. For example, if the size of
-<b>FILESYSTEM_STATISTICS</b> is 0x38, the size of
-<see cref="NTFS_STATISTICS" /> is 0xD8, and if there are 2
-processors, the buffer allocated must be 0x280.</para>
-      <para>sizeof(<b>FILESYSTEM_STATISTICS</b>) =
-0x38</para>
+      <para>The size of this structure plus the size of the file system-specific structure that follows this structure, multiplied by the number of processors.</para>
+      <para>This value must be a multiple of 64. For example, if the size of<b>FILESYSTEM_STATISTICS</b> is 0x38, the size of<see cref="NTFS_STATISTICS" /> is 0xD8, and if there are 2 processors, the buffer allocated must be 0x280.</para>
+      <para>sizeof(<b>FILESYSTEM_STATISTICS</b>) = 0x38</para>
       <para>sizeof(<see cref="NTFS_STATISTICS" />) = 0xD8</para>
       <para>Total Size = 0x110</para>
       <para>size of the complete structure = 0x140 (which is the aligned length, a multiple of 64)</para>
@@ -110,14 +81,10 @@ processors, the buffer allocated must be 0x280.</para>
     </summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.UserFileReads">
-    <summary>
-      <para>The number of read operations on user files.</para>
-    </summary>
+    <summary>The number of read operations on user files.</summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.UserFileReadBytes">
-    <summary>
-      <para>The number of bytes read from user files.</para>
-    </summary>
+    <summary>The number of bytes read from user files.</summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.UserDiskReads">
     <summary>
@@ -126,14 +93,10 @@ processors, the buffer allocated must be 0x280.</para>
     </summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.UserFileWrites">
-    <summary>
-      <para>The number of write operations on user files.</para>
-    </summary>
+    <summary>The number of write operations on user files.</summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.UserFileWriteBytes">
-    <summary>
-      <para>The number of bytes written to user files.</para>
-    </summary>
+    <summary>The number of bytes written to user files.</summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.UserDiskWrites">
     <summary>
@@ -142,14 +105,10 @@ processors, the buffer allocated must be 0x280.</para>
     </summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.MetaDataReads">
-    <summary>
-      <para>The number of read operations on metadata files.</para>
-    </summary>
+    <summary>The number of read operations on metadata files.</summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.MetaDataReadBytes">
-    <summary>
-      <para>The number of bytes read from metadata files.</para>
-    </summary>
+    <summary>The number of bytes read from metadata files.</summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.MetaDataDiskReads">
     <summary>
@@ -158,14 +117,10 @@ processors, the buffer allocated must be 0x280.</para>
     </summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.MetaDataWrites">
-    <summary>
-      <para>The number of write operations on metadata files.</para>
-    </summary>
+    <summary>The number of write operations on metadata files.</summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.MetaDataWriteBytes">
-    <summary>
-      <para>The number of bytes written to metadata files.</para>
-    </summary>
+    <summary>The number of bytes written to metadata files.</summary>
   </member>
   <member name="FILESYSTEM_STATISTICS.MetaDataDiskWrites">
     <summary>

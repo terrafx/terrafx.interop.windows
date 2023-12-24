@@ -25,7 +25,7 @@ public unsafe partial struct IWindowForBindingUI : IWindowForBindingUI.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWindowForBindingUI*, Guid*, void**, int>)(lpVtbl[0]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWindowForBindingUI*, Guid*, void**, int>)(lpVtbl[0]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWindowForBindingUI : IWindowForBindingUI.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWindowForBindingUI*, uint>)(lpVtbl[1]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWindowForBindingUI*, uint>)(lpVtbl[1]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWindowForBindingUI : IWindowForBindingUI.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWindowForBindingUI*, uint>)(lpVtbl[2]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWindowForBindingUI*, uint>)(lpVtbl[2]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWindowForBindingUI.xml' path='doc/member[@name="IWindowForBindingUI.GetWindow"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWindowForBindingUI : IWindowForBindingUI.Interface
     [VtblIndex(3)]
     public HRESULT GetWindow([NativeTypeName("const GUID &")] Guid* rguidReason, HWND* phwnd)
     {
-        return ((delegate* unmanaged<IWindowForBindingUI*, Guid*, HWND*, int>)(lpVtbl[3]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IWindowForBindingUI*, Guid*, HWND*, int>)(lpVtbl[3]))((IWindowForBindingUI*)Unsafe.AsPointer(ref this), rguidReason, phwnd);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IWindowForBindingUI : IWindowForBindingUI.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, HWND*, int> GetWindow;
     }
 }

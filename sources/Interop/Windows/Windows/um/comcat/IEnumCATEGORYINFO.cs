@@ -25,7 +25,7 @@ public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumCATEGORYINFO*, Guid*, void**, int>)(lpVtbl[0]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumCATEGORYINFO*, Guid*, void**, int>)(lpVtbl[0]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumCATEGORYINFO*, uint>)(lpVtbl[1]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumCATEGORYINFO*, uint>)(lpVtbl[1]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumCATEGORYINFO*, uint>)(lpVtbl[2]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumCATEGORYINFO*, uint>)(lpVtbl[2]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumCATEGORYINFO.xml' path='doc/member[@name="IEnumCATEGORYINFO.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface, IN
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, CATEGORYINFO* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumCATEGORYINFO*, uint, CATEGORYINFO*, uint*, int>)(lpVtbl[3]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumCATEGORYINFO*, uint, CATEGORYINFO*, uint*, int>)(lpVtbl[3]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IEnumCATEGORYINFO.xml' path='doc/member[@name="IEnumCATEGORYINFO.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface, IN
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IEnumCATEGORYINFO*, uint, int>)(lpVtbl[4]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IEnumCATEGORYINFO*, uint, int>)(lpVtbl[4]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IEnumCATEGORYINFO.xml' path='doc/member[@name="IEnumCATEGORYINFO.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface, IN
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumCATEGORYINFO*, int>)(lpVtbl[5]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumCATEGORYINFO*, int>)(lpVtbl[5]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumCATEGORYINFO.xml' path='doc/member[@name="IEnumCATEGORYINFO.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface, IN
     [VtblIndex(6)]
     public HRESULT Clone(IEnumCATEGORYINFO** ppenum)
     {
-        return ((delegate* unmanaged<IEnumCATEGORYINFO*, IEnumCATEGORYINFO**, int>)(lpVtbl[6]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumCATEGORYINFO*, IEnumCATEGORYINFO**, int>)(lpVtbl[6]))((IEnumCATEGORYINFO*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumCATEGORYINFO : IEnumCATEGORYINFO.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, CATEGORYINFO *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, CATEGORYINFO*, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, CATEGORYINFO*, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumCATEGORYINFO **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumCATEGORYINFO**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumCATEGORYINFO**, int> Clone;
     }
 }

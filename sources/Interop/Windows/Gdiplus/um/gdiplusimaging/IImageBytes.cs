@@ -26,7 +26,7 @@ public unsafe partial struct IImageBytes : IImageBytes.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IImageBytes*, Guid*, void**, int>)(lpVtbl[0]))((IImageBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IImageBytes*, Guid*, void**, int>)(lpVtbl[0]))((IImageBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IImageBytes : IImageBytes.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IImageBytes*, uint>)(lpVtbl[1]))((IImageBytes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IImageBytes*, uint>)(lpVtbl[1]))((IImageBytes*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IImageBytes : IImageBytes.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IImageBytes*, uint>)(lpVtbl[2]))((IImageBytes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IImageBytes*, uint>)(lpVtbl[2]))((IImageBytes*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IImageBytes.xml' path='doc/member[@name="IImageBytes.CountBytes"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IImageBytes : IImageBytes.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT CountBytes(uint* pcb)
     {
-        return ((delegate* unmanaged<IImageBytes*, uint*, int>)(lpVtbl[3]))((IImageBytes*)Unsafe.AsPointer(ref this), pcb);
+        return ((delegate* unmanaged[MemberFunction]<IImageBytes*, uint*, int>)(lpVtbl[3]))((IImageBytes*)Unsafe.AsPointer(ref this), pcb);
     }
 
     /// <include file='IImageBytes.xml' path='doc/member[@name="IImageBytes.LockBytes"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IImageBytes : IImageBytes.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT LockBytes(uint cb, [NativeTypeName("ULONG")] uint ulOffset, [NativeTypeName("const void **")] void** ppvBytes)
     {
-        return ((delegate* unmanaged<IImageBytes*, uint, uint, void**, int>)(lpVtbl[4]))((IImageBytes*)Unsafe.AsPointer(ref this), cb, ulOffset, ppvBytes);
+        return ((delegate* unmanaged[MemberFunction]<IImageBytes*, uint, uint, void**, int>)(lpVtbl[4]))((IImageBytes*)Unsafe.AsPointer(ref this), cb, ulOffset, ppvBytes);
     }
 
     /// <include file='IImageBytes.xml' path='doc/member[@name="IImageBytes.UnlockBytes"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IImageBytes : IImageBytes.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT UnlockBytes([NativeTypeName("const void *")] void* pvBytes, uint cb, [NativeTypeName("ULONG")] uint ulOffset)
     {
-        return ((delegate* unmanaged<IImageBytes*, void*, uint, uint, int>)(lpVtbl[5]))((IImageBytes*)Unsafe.AsPointer(ref this), pvBytes, cb, ulOffset);
+        return ((delegate* unmanaged[MemberFunction]<IImageBytes*, void*, uint, uint, int>)(lpVtbl[5]))((IImageBytes*)Unsafe.AsPointer(ref this), pvBytes, cb, ulOffset);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,21 +87,21 @@ public unsafe partial struct IImageBytes : IImageBytes.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> CountBytes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> CountBytes;
 
         [NativeTypeName("HRESULT (UINT, ULONG, const void **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, void**, int> LockBytes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, void**, int> LockBytes;
 
         [NativeTypeName("HRESULT (const void *, UINT, ULONG) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, uint, int> UnlockBytes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, uint, int> UnlockBytes;
     }
 }

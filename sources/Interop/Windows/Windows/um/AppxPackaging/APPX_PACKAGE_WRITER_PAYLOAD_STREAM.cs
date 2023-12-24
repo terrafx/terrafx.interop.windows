@@ -16,11 +16,11 @@ public unsafe partial struct APPX_PACKAGE_WRITER_PAYLOAD_STREAM
 
     /// <include file='APPX_PACKAGE_WRITER_PAYLOAD_STREAM.xml' path='doc/member[@name="APPX_PACKAGE_WRITER_PAYLOAD_STREAM.fileName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* fileName;
+    public char* fileName;
 
     /// <include file='APPX_PACKAGE_WRITER_PAYLOAD_STREAM.xml' path='doc/member[@name="APPX_PACKAGE_WRITER_PAYLOAD_STREAM.contentType"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* contentType;
+    public char* contentType;
 
     /// <include file='APPX_PACKAGE_WRITER_PAYLOAD_STREAM.xml' path='doc/member[@name="APPX_PACKAGE_WRITER_PAYLOAD_STREAM.compressionOption"]/*' />
     public APPX_COMPRESSION_OPTION compressionOption;

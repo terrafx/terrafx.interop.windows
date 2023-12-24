@@ -3,30 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1GdiMetafileSink.ProcessRecord">
-    <summary>
-      <para>This method is called once for each record stored in a metafile.</para>
-    </summary>
-    <param name="recordType">
-      <para>Type: <b>DWORD</b></para>
-      <para>The type of the record.</para>
-    </param>
-    <param name="recordData">
-      <para>Type: <b>void*</b></para>
-      <para>The data for the record.</para>
-    </param>
-    <param name="recordDataSize">
-      <para>Type: <b>UINT</b></para>
-      <para>The byte size of the record data.</para>
-    </param>
-    <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>Return true if the record is successfully.</para>
-    </returns>
-    <seealso cref="ID2D1GdiMetafileSink" />
+    <summary>This method is called once for each record stored in a metafile.</summary>
+    <param name="recordType">The type of the record.</param>
+    <param name="recordData">The data for the record.</param>
+    <param name="recordDataSize">The byte size of the record data.</param>
+    <returns>Return true if the record is successfully.</returns>
   </member>
   <member name="ID2D1GdiMetafileSink">
-    <summary>
-      <para>A developer implemented interface that allows a metafile to be replayed.</para>
-    </summary>
+    <summary>A developer implemented interface that allows a metafile to be replayed.</summary>
   </member>
 </doc>

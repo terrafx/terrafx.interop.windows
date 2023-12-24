@@ -25,7 +25,7 @@ public unsafe partial struct REBARBANDINFOW
 
     /// <include file='REBARBANDINFOW.xml' path='doc/member[@name="REBARBANDINFOW.lpText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpText;
+    public char* lpText;
 
     /// <include file='REBARBANDINFOW.xml' path='doc/member[@name="REBARBANDINFOW.cch"]/*' />
     public uint cch;

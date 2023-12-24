@@ -19,32 +19,4 @@ public static unsafe partial class IDocViewSiteTests
     {
         Assert.That(typeof(IDocViewSite).GUID, Is.EqualTo(IID_IDocViewSite));
     }
-
-    /// <summary>Validates that the <see cref="IDocViewSite" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDocViewSite>(), Is.EqualTo(sizeof(IDocViewSite)));
-    }
-
-    /// <summary>Validates that the <see cref="IDocViewSite" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDocViewSite).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDocViewSite" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDocViewSite), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDocViewSite), Is.EqualTo(4));
-        }
-    }
 }

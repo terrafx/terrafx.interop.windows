@@ -19,32 +19,4 @@ public static unsafe partial class ITfInputProcessorProfileActivationSinkTests
     {
         Assert.That(typeof(ITfInputProcessorProfileActivationSink).GUID, Is.EqualTo(IID_ITfInputProcessorProfileActivationSink));
     }
-
-    /// <summary>Validates that the <see cref="ITfInputProcessorProfileActivationSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfInputProcessorProfileActivationSink>(), Is.EqualTo(sizeof(ITfInputProcessorProfileActivationSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfInputProcessorProfileActivationSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfInputProcessorProfileActivationSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfInputProcessorProfileActivationSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfInputProcessorProfileActivationSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfInputProcessorProfileActivationSink), Is.EqualTo(4));
-        }
-    }
 }

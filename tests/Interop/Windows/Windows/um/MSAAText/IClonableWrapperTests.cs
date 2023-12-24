@@ -19,32 +19,4 @@ public static unsafe partial class IClonableWrapperTests
     {
         Assert.That(typeof(IClonableWrapper).GUID, Is.EqualTo(IID_IClonableWrapper));
     }
-
-    /// <summary>Validates that the <see cref="IClonableWrapper" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IClonableWrapper>(), Is.EqualTo(sizeof(IClonableWrapper)));
-    }
-
-    /// <summary>Validates that the <see cref="IClonableWrapper" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IClonableWrapper).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IClonableWrapper" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IClonableWrapper), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IClonableWrapper), Is.EqualTo(4));
-        }
-    }
 }

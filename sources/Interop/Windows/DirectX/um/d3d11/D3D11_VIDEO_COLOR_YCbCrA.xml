@@ -3,37 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_COLOR_YCbCrA">
-    <summary>
-      <para>Specifies a YCbCr color value.</para>
-    </summary>
-    <remarks>
-      <para>Values have a nominal range of [0...1]. Given a format with  <i>n</i> bits per channel, the value of each color component is calculated as follows:</para>
-      <para>
-        <code>val = f * ((1 &lt;&lt; n)-1)</code>
-      </para>
-      <para>For example, for 8-bit YUV formats, <code>val = BYTE(f * 255.0)</code>.  Reference black is (0.0625, 0.5, 0.5), which corresponds to (16, 128, 128) in an 8-bit representation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/about-yuv-video">About YUV Video</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Specifies a YCbCr color value.</summary>
   </member>
   <member name="D3D11_VIDEO_COLOR_YCbCrA.Y">
-    <summary>
-      <para>The Y luma value.</para>
-    </summary>
+    <summary>The Y luma value.</summary>
   </member>
   <member name="D3D11_VIDEO_COLOR_YCbCrA.Cb">
-    <summary>
-      <para>The Cb chroma value.</para>
-    </summary>
+    <summary>The Cb chroma value.</summary>
   </member>
   <member name="D3D11_VIDEO_COLOR_YCbCrA.Cr">
-    <summary>
-      <para>The Cr chroma value.</para>
-    </summary>
+    <summary>The Cr chroma value.</summary>
   </member>
   <member name="D3D11_VIDEO_COLOR_YCbCrA.A">
-    <summary>
-      <para>The alpha value. Values range from 0 (transparent) to 1 (opaque).</para>
-    </summary>
+    <summary>The alpha value. Values range from 0 (transparent) to 1 (opaque).</summary>
   </member>
 </doc>

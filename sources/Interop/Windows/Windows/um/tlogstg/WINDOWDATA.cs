@@ -21,13 +21,13 @@ public unsafe partial struct WINDOWDATA
 
     /// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA.lpszUrl"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszUrl;
+    public char* lpszUrl;
 
     /// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA.lpszUrlLocation"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszUrlLocation;
+    public char* lpszUrlLocation;
 
     /// <include file='WINDOWDATA.xml' path='doc/member[@name="WINDOWDATA.lpszTitle"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszTitle;
+    public char* lpszTitle;
 }

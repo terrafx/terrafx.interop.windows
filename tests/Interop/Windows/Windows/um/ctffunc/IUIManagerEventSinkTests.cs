@@ -21,32 +21,4 @@ public static unsafe partial class IUIManagerEventSinkTests
     {
         Assert.That(typeof(IUIManagerEventSink).GUID, Is.EqualTo(IID_IUIManagerEventSink));
     }
-
-    /// <summary>Validates that the <see cref="IUIManagerEventSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUIManagerEventSink>(), Is.EqualTo(sizeof(IUIManagerEventSink)));
-    }
-
-    /// <summary>Validates that the <see cref="IUIManagerEventSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUIManagerEventSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUIManagerEventSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUIManagerEventSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUIManagerEventSink), Is.EqualTo(4));
-        }
-    }
 }

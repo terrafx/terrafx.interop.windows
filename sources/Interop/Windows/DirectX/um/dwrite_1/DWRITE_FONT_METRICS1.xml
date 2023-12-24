@@ -3,89 +3,46 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FONT_METRICS1">
-    <summary>
-      <para>The <b>DWRITE_FONT_METRICS1</b> structure specifies the metrics that are applicable to all glyphs within the font face.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>DWRITE_FONT_METRICS1</b> inherits from <see cref="DWRITE_FONT_METRICS" />:</para>
-      <code>
-struct DWRITE_FONT_METRICS1 : public DWRITE_FONT_METRICS
-{
-...
-};
-</code>
-    </remarks>
-    <seealso cref="IDWriteFont1.GetMetrics" />
-    <seealso cref="IDWriteFontFace1.GetGdiCompatibleMetrics" />
-    <seealso cref="IDWriteFontFace1.GetMetrics" />
+    <summary>The <b>DWRITE_FONT_METRICS1</b> structure specifies the metrics that are applicable to all glyphs within the font face.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.glyphBoxLeft">
-    <summary>
-      <para>Left edge of accumulated bounding blackbox of all glyphs in the font.</para>
-    </summary>
+    <summary>Left edge of accumulated bounding blackbox of all glyphs in the font.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.glyphBoxTop">
-    <summary>
-      <para>Top edge of accumulated bounding blackbox of all glyphs in the font.</para>
-    </summary>
+    <summary>Top edge of accumulated bounding blackbox of all glyphs in the font.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.glyphBoxRight">
-    <summary>
-      <para>Right edge of accumulated bounding blackbox of all glyphs in the font.</para>
-    </summary>
+    <summary>Right edge of accumulated bounding blackbox of all glyphs in the font.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.glyphBoxBottom">
-    <summary>
-      <para>Bottom edge of accumulated bounding blackbox of all glyphs in the font.</para>
-    </summary>
+    <summary>Bottom edge of accumulated bounding blackbox of all glyphs in the font.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.subscriptPositionX">
-    <summary>
-      <para>Horizontal position of the subscript relative to the baseline origin. This is typically negative (to the left) in italic and oblique fonts, and zero in regular fonts.</para>
-    </summary>
+    <summary>Horizontal position of the subscript relative to the baseline origin. This is typically negative (to the left) in italic and oblique fonts, and zero in regular fonts.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.subscriptPositionY">
-    <summary>
-      <para>Vertical position of the subscript relative to the baseline. This is typically negative.</para>
-    </summary>
+    <summary>Vertical position of the subscript relative to the baseline. This is typically negative.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.subscriptSizeX">
-    <summary>
-      <para>Horizontal size of the subscript em box in design units, used to scale the simulated subscript relative to the full em box size. This is the numerator of the scaling ratio where denominator is the design units per em. If this member is zero, the font does not specify a scale factor, and the client uses its own policy.</para>
-    </summary>
+    <summary>Horizontal size of the subscript em box in design units, used to scale the simulated subscript relative to the full em box size. This is the numerator of the scaling ratio where denominator is the design units per em. If this member is zero, the font does not specify a scale factor, and the client uses its own policy.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.subscriptSizeY">
-    <summary>
-      <para>Vertical size of the subscript em box in design units, used to scale the simulated subscript relative to the full em box size. This is the numerator of the scaling ratio where denominator is the design units per em. If this member is zero, the font does not specify a scale factor, and the client uses its own policy.</para>
-    </summary>
+    <summary>Vertical size of the subscript em box in design units, used to scale the simulated subscript relative to the full em box size. This is the numerator of the scaling ratio where denominator is the design units per em. If this member is zero, the font does not specify a scale factor, and the client uses its own policy.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.superscriptPositionX">
-    <summary>
-      <para>Horizontal position of the superscript relative to the baseline origin. This is typically positive (to the right) in italic and oblique fonts, and zero in regular fonts.</para>
-    </summary>
+    <summary>Horizontal position of the superscript relative to the baseline origin. This is typically positive (to the right) in italic and oblique fonts, and zero in regular fonts.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.superscriptPositionY">
-    <summary>
-      <para>Vertical position of the superscript relative to the baseline. This is typically positive.</para>
-    </summary>
+    <summary>Vertical position of the superscript relative to the baseline. This is typically positive.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.superscriptSizeX">
-    <summary>
-      <para>Horizontal size of the superscript em box in design units, used to scale the simulated superscript relative to the full em box size. This is the numerator of the scaling ratio where denominator is the design units per em. If this member is zero, the font does not specify a scale factor, and the client should use its own policy.</para>
-    </summary>
+    <summary>Horizontal size of the superscript em box in design units, used to scale the simulated superscript relative to the full em box size. This is the numerator of the scaling ratio where denominator is the design units per em. If this member is zero, the font does not specify a scale factor, and the client should use its own policy.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.superscriptSizeY">
-    <summary>
-      <para>Vertical size of the superscript em box in design units, used to scale the simulated superscript relative to the full em box size. This is the numerator of the scaling ratio where denominator is the design units per em. If this member is zero, the font does not specify a scale factor, and the client should use its own policy.</para>
-    </summary>
+    <summary>Vertical size of the superscript em box in design units, used to scale the simulated superscript relative to the full em box size. This is the numerator of the scaling ratio where denominator is the design units per em. If this member is zero, the font does not specify a scale factor, and the client should use its own policy.</summary>
   </member>
   <member name="DWRITE_FONT_METRICS1.hasTypographicMetrics">
-    <summary>
-      <para>A Boolean value that indicates that the ascent, descent, and lineGap are based on newer 'typographic' values in the font, rather than legacy values.</para>
-    </summary>
+    <summary>A Boolean value that indicates that the ascent, descent, and lineGap are based on newer 'typographic' values in the font, rather than legacy values.</summary>
   </member>
-  <member name="DWRITE_FONT_METRICS1.DWRITE_FONT_METRICS">
-    <summary></summary>
-  </member>
+  <member name="DWRITE_FONT_METRICS1.DWRITE_FONT_METRICS"></member>
 </doc>

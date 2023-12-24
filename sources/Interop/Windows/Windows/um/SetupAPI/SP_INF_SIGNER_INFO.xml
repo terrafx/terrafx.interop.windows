@@ -3,141 +3,65 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_INF_SIGNER_INFO">
-    <summary>
-      <para>The <b>SP_INF_SIGNER_INFO</b> structure stores information about an INF file's digital signature.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The setupapi.h header defines SP_INF_SIGNER_INFO_V1 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
+    <summary>The <b>SP_INF_SIGNER_INFO</b> structure stores information about an INF file's digital signature.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.cbSize">
-    <summary>
-      <para>Size of this structure, in bytes.</para>
-    </summary>
+    <summary>Size of this structure, in bytes.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.CatalogFile">
-    <summary>
-      <para>Path to the catalog file, stored in an array of maximum size MAX_PATH characters.</para>
-    </summary>
+    <summary>Path to the catalog file, stored in an array of maximum size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.DigitalSigner">
-    <summary>
-      <para>Path to the digital signer of the file, stored in an array of maximum size MAX_PATH characters.</para>
-    </summary>
+    <summary>Path to the digital signer of the file, stored in an array of maximum size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.DigitalSignerVersion">
-    <summary>
-      <para>Version of the digital signer, stored in an array of size MAX_PATH characters.</para>
-    </summary>
+    <summary>Version of the digital signer, stored in an array of size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO">
-    <summary>
-      <para>The <b>SP_INF_SIGNER_INFO</b> structure stores information about an INF file's digital signature.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The setupapi.h header defines SP_INF_SIGNER_INFO_V1 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
+    <summary>The <b>SP_INF_SIGNER_INFO</b> structure stores information about an INF file's digital signature.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.cbSize">
-    <summary>
-      <para>Size of this structure, in bytes.</para>
-    </summary>
+    <summary>Size of this structure, in bytes.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.CatalogFile">
-    <summary>
-      <para>Path to the catalog file, stored in an array of maximum size MAX_PATH characters.</para>
-    </summary>
+    <summary>Path to the catalog file, stored in an array of maximum size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.DigitalSigner">
-    <summary>
-      <para>Path to the digital signer of the file, stored in an array of maximum size MAX_PATH characters.</para>
-    </summary>
+    <summary>Path to the digital signer of the file, stored in an array of maximum size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.DigitalSignerVersion">
-    <summary>
-      <para>Version of the digital signer, stored in an array of size MAX_PATH characters.</para>
-    </summary>
+    <summary>Version of the digital signer, stored in an array of size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO">
-    <summary>
-      <para>The <b>SP_INF_SIGNER_INFO</b> structure stores information about an INF file's digital signature.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The setupapi.h header defines SP_INF_SIGNER_INFO_V2 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
+    <summary>The <b>SP_INF_SIGNER_INFO</b> structure stores information about an INF file's digital signature.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.cbSize">
-    <summary>
-      <para>Size of this structure, in bytes.</para>
-    </summary>
+    <summary>Size of this structure, in bytes.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.CatalogFile">
-    <summary>
-      <para>Path to the catalog file, stored in an array of maximum size MAX_PATH characters.</para>
-    </summary>
+    <summary>Path to the catalog file, stored in an array of maximum size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.DigitalSigner">
-    <summary>
-      <para>Path to the digital signer of the file, stored in an array of maximum size MAX_PATH characters.</para>
-    </summary>
+    <summary>Path to the digital signer of the file, stored in an array of maximum size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.DigitalSignerVersion">
-    <summary>
-      <para>Version of the digital signer, stored in an array of size MAX_PATH characters.</para>
-    </summary>
+    <summary>Version of the digital signer, stored in an array of size MAX_PATH characters.</summary>
   </member>
-  <member name="SP_INF_SIGNER_INFO.SignerScore">
-    <summary></summary>
-  </member>
+  <member name="SP_INF_SIGNER_INFO.SignerScore"></member>
   <member name="SP_INF_SIGNER_INFO">
-    <summary>
-      <para>The <b>SP_INF_SIGNER_INFO</b> structure stores information about an INF file's digital signature.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The setupapi.h header defines SP_INF_SIGNER_INFO_V2 as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/overview">Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/SetupApi/structures--setup-api-">Structures</seealso>
+    <summary>The <b>SP_INF_SIGNER_INFO</b> structure stores information about an INF file's digital signature.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.cbSize">
-    <summary>
-      <para>Size of this structure, in bytes.</para>
-    </summary>
+    <summary>Size of this structure, in bytes.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.CatalogFile">
-    <summary>
-      <para>Path to the catalog file, stored in an array of maximum size MAX_PATH characters.</para>
-    </summary>
+    <summary>Path to the catalog file, stored in an array of maximum size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.DigitalSigner">
-    <summary>
-      <para>Path to the digital signer of the file, stored in an array of maximum size MAX_PATH characters.</para>
-    </summary>
+    <summary>Path to the digital signer of the file, stored in an array of maximum size MAX_PATH characters.</summary>
   </member>
   <member name="SP_INF_SIGNER_INFO.DigitalSignerVersion">
-    <summary>
-      <para>Version of the digital signer, stored in an array of size MAX_PATH characters.</para>
-    </summary>
+    <summary>Version of the digital signer, stored in an array of size MAX_PATH characters.</summary>
   </member>
-  <member name="SP_INF_SIGNER_INFO.SignerScore">
-    <summary></summary>
-  </member>
+  <member name="SP_INF_SIGNER_INFO.SignerScore"></member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRImagePresenter*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenter*, Guid*, void**, int>)(lpVtbl[0]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRImagePresenter*, uint>)(lpVtbl[1]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenter*, uint>)(lpVtbl[1]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRImagePresenter*, uint>)(lpVtbl[2]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenter*, uint>)(lpVtbl[2]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRImagePresenter.xml' path='doc/member[@name="IVMRImagePresenter.StartPresenting"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface, 
     [VtblIndex(3)]
     public HRESULT StartPresenting([NativeTypeName("DWORD_PTR")] nuint dwUserID)
     {
-        return ((delegate* unmanaged<IVMRImagePresenter*, nuint, int>)(lpVtbl[3]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenter*, nuint, int>)(lpVtbl[3]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID);
     }
 
     /// <include file='IVMRImagePresenter.xml' path='doc/member[@name="IVMRImagePresenter.StopPresenting"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface, 
     [VtblIndex(4)]
     public HRESULT StopPresenting([NativeTypeName("DWORD_PTR")] nuint dwUserID)
     {
-        return ((delegate* unmanaged<IVMRImagePresenter*, nuint, int>)(lpVtbl[4]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenter*, nuint, int>)(lpVtbl[4]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID);
     }
 
     /// <include file='IVMRImagePresenter.xml' path='doc/member[@name="IVMRImagePresenter.PresentImage"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface, 
     [VtblIndex(5)]
     public HRESULT PresentImage([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRPRESENTATIONINFO* lpPresInfo)
     {
-        return ((delegate* unmanaged<IVMRImagePresenter*, nuint, VMRPRESENTATIONINFO*, int>)(lpVtbl[5]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID, lpPresInfo);
+        return ((delegate* unmanaged[MemberFunction]<IVMRImagePresenter*, nuint, VMRPRESENTATIONINFO*, int>)(lpVtbl[5]))((IVMRImagePresenter*)Unsafe.AsPointer(ref this), dwUserID, lpPresInfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IVMRImagePresenter : IVMRImagePresenter.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, int> StartPresenting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, int> StartPresenting;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, int> StopPresenting;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, int> StopPresenting;
 
         [NativeTypeName("HRESULT (DWORD_PTR, VMRPRESENTATIONINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, VMRPRESENTATIONINFO*, int> PresentImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, VMRPRESENTATIONINFO*, int> PresentImage;
     }
 }

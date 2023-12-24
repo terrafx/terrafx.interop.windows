@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_BUFFER_SRV">
+    <summary>Describes the elements in a buffer resource to use in a shader-resource view.</summary>
+  </member>
+  <member name="D3D12_BUFFER_SRV.FirstElement">
+    <summary>The index of the first element to be accessed by the view.</summary>
+  </member>
+  <member name="D3D12_BUFFER_SRV.NumElements">
+    <summary>The number of elements in the resource.</summary>
+  </member>
+  <member name="D3D12_BUFFER_SRV.StructureByteStride">
+    <summary>The size of each element in the buffer structure (in bytes) when the buffer represents a structured buffer. The size must match the struct size declared in shaders that access the view.</summary>
+  </member>
+  <member name="D3D12_BUFFER_SRV.Flags">
+    <summary>A <see cref="D3D12_BUFFER_SRV_FLAGS" />-typed value that identifies view options for the buffer. Currently, the only option is to identify a raw view of the buffer. For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</summary>
+  </member>
+</doc>

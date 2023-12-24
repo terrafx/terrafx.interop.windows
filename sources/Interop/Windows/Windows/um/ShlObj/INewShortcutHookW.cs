@@ -25,7 +25,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INewShortcutHookW*, Guid*, void**, int>)(lpVtbl[0]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookW*, Guid*, void**, int>)(lpVtbl[0]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INewShortcutHookW*, uint>)(lpVtbl[1]))((INewShortcutHookW*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookW*, uint>)(lpVtbl[1]))((INewShortcutHookW*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,106 +43,106 @@ public unsafe partial struct INewShortcutHookW : INewShortcutHookW.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INewShortcutHookW*, uint>)(lpVtbl[2]))((INewShortcutHookW*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookW*, uint>)(lpVtbl[2]))((INewShortcutHookW*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.SetReferent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetReferent([NativeTypeName("PCWSTR")] ushort* pcszReferent, HWND hwnd)
+    public HRESULT SetReferent([NativeTypeName("PCWSTR")] char* pcszReferent, HWND hwnd)
     {
-        return ((delegate* unmanaged<INewShortcutHookW*, ushort*, HWND, int>)(lpVtbl[3]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pcszReferent, hwnd);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookW*, char*, HWND, int>)(lpVtbl[3]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pcszReferent, hwnd);
     }
 
     /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.GetReferent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetReferent([NativeTypeName("PWSTR")] ushort* pszReferent, int cchReferent)
+    public HRESULT GetReferent([NativeTypeName("PWSTR")] char* pszReferent, int cchReferent)
     {
-        return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int, int>)(lpVtbl[4]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszReferent, cchReferent);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookW*, char*, int, int>)(lpVtbl[4]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszReferent, cchReferent);
     }
 
     /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.SetFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetFolder([NativeTypeName("PCWSTR")] ushort* pcszFolder)
+    public HRESULT SetFolder([NativeTypeName("PCWSTR")] char* pcszFolder)
     {
-        return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int>)(lpVtbl[5]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pcszFolder);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookW*, char*, int>)(lpVtbl[5]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pcszFolder);
     }
 
     /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.GetFolder"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetFolder([NativeTypeName("PWSTR")] ushort* pszFolder, int cchFolder)
+    public HRESULT GetFolder([NativeTypeName("PWSTR")] char* pszFolder, int cchFolder)
     {
-        return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int, int>)(lpVtbl[6]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszFolder, cchFolder);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookW*, char*, int, int>)(lpVtbl[6]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszFolder, cchFolder);
     }
 
     /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetName([NativeTypeName("PWSTR")] ushort* pszName, int cchName)
+    public HRESULT GetName([NativeTypeName("PWSTR")] char* pszName, int cchName)
     {
-        return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int, int>)(lpVtbl[7]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszName, cchName);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookW*, char*, int, int>)(lpVtbl[7]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszName, cchName);
     }
 
     /// <include file='INewShortcutHookW.xml' path='doc/member[@name="INewShortcutHookW.GetExtension"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetExtension([NativeTypeName("PWSTR")] ushort* pszExtension, int cchExtension)
+    public HRESULT GetExtension([NativeTypeName("PWSTR")] char* pszExtension, int cchExtension)
     {
-        return ((delegate* unmanaged<INewShortcutHookW*, ushort*, int, int>)(lpVtbl[8]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszExtension, cchExtension);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookW*, char*, int, int>)(lpVtbl[8]))((INewShortcutHookW*)Unsafe.AsPointer(ref this), pszExtension, cchExtension);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT SetReferent([NativeTypeName("PCWSTR")] ushort* pcszReferent, HWND hwnd);
+        HRESULT SetReferent([NativeTypeName("PCWSTR")] char* pcszReferent, HWND hwnd);
 
         [VtblIndex(4)]
-        HRESULT GetReferent([NativeTypeName("PWSTR")] ushort* pszReferent, int cchReferent);
+        HRESULT GetReferent([NativeTypeName("PWSTR")] char* pszReferent, int cchReferent);
 
         [VtblIndex(5)]
-        HRESULT SetFolder([NativeTypeName("PCWSTR")] ushort* pcszFolder);
+        HRESULT SetFolder([NativeTypeName("PCWSTR")] char* pcszFolder);
 
         [VtblIndex(6)]
-        HRESULT GetFolder([NativeTypeName("PWSTR")] ushort* pszFolder, int cchFolder);
+        HRESULT GetFolder([NativeTypeName("PWSTR")] char* pszFolder, int cchFolder);
 
         [VtblIndex(7)]
-        HRESULT GetName([NativeTypeName("PWSTR")] ushort* pszName, int cchName);
+        HRESULT GetName([NativeTypeName("PWSTR")] char* pszName, int cchName);
 
         [VtblIndex(8)]
-        HRESULT GetExtension([NativeTypeName("PWSTR")] ushort* pszExtension, int cchExtension);
+        HRESULT GetExtension([NativeTypeName("PWSTR")] char* pszExtension, int cchExtension);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PCWSTR, HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, HWND, int> SetReferent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, HWND, int> SetReferent;
 
         [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> GetReferent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> GetReferent;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetFolder;
 
         [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> GetFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> GetFolder;
 
         [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> GetName;
 
         [NativeTypeName("HRESULT (PWSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> GetExtension;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> GetExtension;
     }
 }

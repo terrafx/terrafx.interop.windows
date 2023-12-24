@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLApplicationCacheTests
     {
         Assert.That(typeof(IHTMLApplicationCache).GUID, Is.EqualTo(IID_IHTMLApplicationCache));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLApplicationCache" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLApplicationCache>(), Is.EqualTo(sizeof(IHTMLApplicationCache)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLApplicationCache" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLApplicationCache).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLApplicationCache" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLApplicationCache), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLApplicationCache), Is.EqualTo(4));
-        }
-    }
 }

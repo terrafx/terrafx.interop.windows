@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='BrightnessContrast.xml' path='doc/member[@name="BrightnessContrast"]/*' />
-[NativeTypeName("struct BrightnessContrast : Effect")]
+[NativeTypeName("struct BrightnessContrast : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct BrightnessContrast
 {
@@ -48,7 +48,7 @@ public unsafe partial struct BrightnessContrast
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::BrightnessContrastParams *")] BrightnessContrastParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const BrightnessContrastParams *")] BrightnessContrastParams* parameters)
     {
         uint size = 8;
 

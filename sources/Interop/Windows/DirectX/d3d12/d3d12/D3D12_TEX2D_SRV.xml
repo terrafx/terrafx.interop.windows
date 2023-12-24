@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TEX2D_SRV">
+    <summary>Describes the subresource from a 2D texture to use in a shader-resource view.</summary>
+  </member>
+  <member name="D3D12_TEX2D_SRV.MostDetailedMip">
+    <summary>The index of the most detailed mipmap level to use; this number is between 0 and <b>MipLevels</b> (from the original Texture2D for which <see cref="ID3D12Device.CreateShaderResourceView" /> creates a view) -1.</summary>
+  </member>
+  <member name="D3D12_TEX2D_SRV.MipLevels">
+    <summary>The maximum number of mipmap levels for the view of the texture. See the remarks in <see cref="D3D12_TEX1D_SRV" />. Set to -1 to indicate all the mipmap levels from <b>MostDetailedMip</b> on down to least detailed.</summary>
+  </member>
+  <member name="D3D12_TEX2D_SRV.PlaneSlice">
+    <summary>The index (plane slice number) of the plane to use in the texture.</summary>
+  </member>
+  <member name="D3D12_TEX2D_SRV.ResourceMinLODClamp">
+    <summary>
+      <para>Specifies the minimum mipmap level that you can access. Specifying 0.0f means that you can access all of the mipmap levels. Specifying 3.0f means that you can access mipmap levels from 3.0f to <i>MipCount - 1</i>.</para>
+      <para>We recommend that you don't set <i>MostDetailedMip</i> and <i>ResourceMinLODClamp</i> at the same time. Instead, set one of those two members to 0 (to get default behavior). That's because <i>MipLevels</i> is interpreted differently in conjunction with different fields:</para>
+      <list type="bullet">
+        <item>
+          <description>For <i>MostDetailedMip</i>, mips are in the range [<i>MostDetailedMip</i>, <i>MostDetailedMip</i> + <i>MipLevels</i> - 1].</description>
+        </item>
+        <item>
+          <description>For <i>ResourceMinLODClamp</i>, mips are in the range [<i>ResourceMinLODClamp</i>, <i>MipLevels</i> - 1].</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+</doc>

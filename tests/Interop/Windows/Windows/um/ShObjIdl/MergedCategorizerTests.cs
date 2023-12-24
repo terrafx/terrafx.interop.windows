@@ -19,25 +19,4 @@ public static unsafe partial class MergedCategorizerTests
     {
         Assert.That(typeof(MergedCategorizer).GUID, Is.EqualTo(IID_MergedCategorizer));
     }
-
-    /// <summary>Validates that the <see cref="MergedCategorizer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MergedCategorizer>(), Is.EqualTo(sizeof(MergedCategorizer)));
-    }
-
-    /// <summary>Validates that the <see cref="MergedCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MergedCategorizer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MergedCategorizer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MergedCategorizer), Is.EqualTo(1));
-    }
 }

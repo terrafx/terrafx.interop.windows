@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_SUPPORT">
+    <summary>Indicates the level of support for protected resource sessions.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_SUPPORT.NodeIndex">
+    <summary>An input field, indicating the adapter index to query.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_SUPPORT.SharingTier">
+    <summary>An output field indicating the type of protected resource session support.</summary>
+  </member>
+</doc>

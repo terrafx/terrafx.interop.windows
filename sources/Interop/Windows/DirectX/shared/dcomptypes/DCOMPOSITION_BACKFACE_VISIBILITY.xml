@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DCOMPOSITION_BACKFACE_VISIBILITY">
-    <summary>
-      <para>Specifies the backface visibility to be applied to a visual.</para>
-    </summary>
-    <seealso href="https://github.com/microsoft/windows-classic-samples/tree/master/samples/dcompv2backfaceandd2dbatching">DirectComposition Backface and D2D Batching</seealso>
-    <seealso cref="IDCompositionVisual2.SetBackFaceVisibility" />
+    <summary>Specifies the backface visibility to be applied to a visual.</summary>
   </member>
   <member name="DCOMPOSITION_BACKFACE_VISIBILITY.DCOMPOSITION_BACKFACE_VISIBILITY_VISIBLE">
-    <summary>
-      <para>Surfaces in this visual's sub-tree are visible regardless of transformation.</para>
-    </summary>
+    <summary>Surfaces in this visual's sub-tree are visible regardless of transformation.</summary>
   </member>
   <member name="DCOMPOSITION_BACKFACE_VISIBILITY.DCOMPOSITION_BACKFACE_VISIBILITY_HIDDEN">
-    <summary>
-      <para>Surfaces in this visual's sub-tree are only visible when facing the observer.</para>
-    </summary>
+    <summary>Surfaces in this visual's sub-tree are only visible when facing the observer.</summary>
   </member>
   <member name="DCOMPOSITION_BACKFACE_VISIBILITY.DCOMPOSITION_BACKFACE_VISIBILITY_INHERIT">
-    <summary>
-      <para>The back face visibility is the same as that of the target visual's parent visual.</para>
-    </summary>
+    <summary>The back face visibility is the same as that of the target visual's parent visual.</summary>
   </member>
 </doc>

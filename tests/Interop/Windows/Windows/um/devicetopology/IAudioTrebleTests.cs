@@ -19,32 +19,4 @@ public static unsafe partial class IAudioTrebleTests
     {
         Assert.That(typeof(IAudioTreble).GUID, Is.EqualTo(IID_IAudioTreble));
     }
-
-    /// <summary>Validates that the <see cref="IAudioTreble" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioTreble>(), Is.EqualTo(sizeof(IAudioTreble)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioTreble" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioTreble).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioTreble" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioTreble), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioTreble), Is.EqualTo(4));
-        }
-    }
 }

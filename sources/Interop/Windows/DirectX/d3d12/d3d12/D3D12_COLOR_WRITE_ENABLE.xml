@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_COLOR_WRITE_ENABLE">
+    <summary>Identifies which components of each pixel of a render target are writable during blending.</summary>
+  </member>
+  <member name="D3D12_COLOR_WRITE_ENABLE.D3D12_COLOR_WRITE_ENABLE_RED">
+    <summary>Allow data to be stored in the red component.</summary>
+  </member>
+  <member name="D3D12_COLOR_WRITE_ENABLE.D3D12_COLOR_WRITE_ENABLE_GREEN">
+    <summary>Allow data to be stored in the green component.</summary>
+  </member>
+  <member name="D3D12_COLOR_WRITE_ENABLE.D3D12_COLOR_WRITE_ENABLE_BLUE">
+    <summary>Allow data to be stored in the blue component.</summary>
+  </member>
+  <member name="D3D12_COLOR_WRITE_ENABLE.D3D12_COLOR_WRITE_ENABLE_ALPHA">
+    <summary>Allow data to be stored in the alpha component.</summary>
+  </member>
+  <member name="D3D12_COLOR_WRITE_ENABLE.D3D12_COLOR_WRITE_ENABLE_ALL">
+    <summary>Allow data to be stored in all components.</summary>
+  </member>
+</doc>

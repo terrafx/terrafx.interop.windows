@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COLORMAP">
-    <summary>
-      <para>Contains information used by the <see cref="CreateMappedBitmap" /> function to map the colors of the bitmap.</para>
-    </summary>
+    <summary>Contains information used by the <see cref="CreateMappedBitmap" /> function to map the colors of the bitmap.</summary>
   </member>
   <member name="COLORMAP.from">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
-      <para>Color to map from.</para>
-    </summary>
+    <summary>Color to map from.</summary>
   </member>
   <member name="COLORMAP.to">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
-      <para>Color to map to.</para>
-    </summary>
+    <summary>Color to map to.</summary>
   </member>
 </doc>

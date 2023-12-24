@@ -25,7 +25,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IQuickActivate*, Guid*, void**, int>)(lpVtbl[0]))((IQuickActivate*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IQuickActivate*, Guid*, void**, int>)(lpVtbl[0]))((IQuickActivate*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IQuickActivate*, uint>)(lpVtbl[1]))((IQuickActivate*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQuickActivate*, uint>)(lpVtbl[1]))((IQuickActivate*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IQuickActivate*, uint>)(lpVtbl[2]))((IQuickActivate*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQuickActivate*, uint>)(lpVtbl[2]))((IQuickActivate*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IQuickActivate.xml' path='doc/member[@name="IQuickActivate.QuickActivate"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT QuickActivate(QACONTAINER* pQaContainer, QACONTROL* pQaControl)
     {
-        return ((delegate* unmanaged<IQuickActivate*, QACONTAINER*, QACONTROL*, int>)(lpVtbl[3]))((IQuickActivate*)Unsafe.AsPointer(ref this), pQaContainer, pQaControl);
+        return ((delegate* unmanaged[MemberFunction]<IQuickActivate*, QACONTAINER*, QACONTROL*, int>)(lpVtbl[3]))((IQuickActivate*)Unsafe.AsPointer(ref this), pQaContainer, pQaControl);
     }
 
     /// <include file='IQuickActivate.xml' path='doc/member[@name="IQuickActivate.SetContentExtent"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT SetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
     {
-        return ((delegate* unmanaged<IQuickActivate*, SIZE*, int>)(lpVtbl[4]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
+        return ((delegate* unmanaged[MemberFunction]<IQuickActivate*, SIZE*, int>)(lpVtbl[4]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
     }
 
     /// <include file='IQuickActivate.xml' path='doc/member[@name="IQuickActivate.GetContentExtent"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetContentExtent([NativeTypeName("LPSIZEL")] SIZE* pSizel)
     {
-        return ((delegate* unmanaged<IQuickActivate*, SIZE*, int>)(lpVtbl[5]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
+        return ((delegate* unmanaged[MemberFunction]<IQuickActivate*, SIZE*, int>)(lpVtbl[5]))((IQuickActivate*)Unsafe.AsPointer(ref this), pSizel);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IQuickActivate : IQuickActivate.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (QACONTAINER *, QACONTROL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, QACONTAINER*, QACONTROL*, int> QuickActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, QACONTAINER*, QACONTROL*, int> QuickActivate;
 
         [NativeTypeName("HRESULT (LPSIZEL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, int> SetContentExtent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, int> SetContentExtent;
 
         [NativeTypeName("HRESULT (LPSIZEL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SIZE*, int> GetContentExtent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SIZE*, int> GetContentExtent;
     }
 }

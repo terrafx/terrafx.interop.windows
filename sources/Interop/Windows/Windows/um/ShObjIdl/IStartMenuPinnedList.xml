@@ -11,12 +11,8 @@
       <para>
         <b>Windows 8</b>: Unpins the item from the taskbar but does not remove the item from the Start screen. Items cannot be programmatically removed from Start; they can only be unpinned by the user or removed as part of a program's uninstallation.</para>
     </summary>
-    <param name="pitem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to an <see cref="IShellItem" /> object that represents the item to unpin.</para>
-    </param>
+    <param name="pitem">A pointer to an <see cref="IShellItem" /> object that represents the item to unpin.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <list type="bullet">
         <item>
           <description>Returns S_OK if the item was successfully removed from the list of pinned items and/or the taskbar.</description>
@@ -29,65 +25,8 @@
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>Because an application cannot know if any of its installed shortcuts have been pinned, this method should be called on any application shortcut being removed from the system. This includes shortcuts placed on the desktop during installation and those added to the <b>Start</b> menu's <b>All Programs</b> list.</para>
-      <para>It is recommended that all applications use this method to clean up their pinned items during their uninstallation process. Unpinning the application shortcut is not required, but it is strongly recommended for reliability.</para>
-      <para>This method does not remove the original shortcut represented by <i>pitem</i>. It removes its pinned representation from the <b>Start</b> menu and/or taskbar. Once an item has been removed (unpinned) through this method, then the application can delete the original shortcut.</para>
-      <para>If an item is pinned to both the <b>Start</b> menu and the taskbar, one call to this method removes it from both locations.</para>
-      <para>
-        <b>Note</b>  If your application is using the Windows Installer (MSI) framework to perform the uninstallation, you do not need to call this method explicitly; MSI will make the call to unpin the shortcuts for you.</para>
-      <h4>Examples</h4>
-      <para>This example demonstrates the use of <b>IStartMenuPinnedList.RemoveFromList</b>.</para>
-      <code>
-HRESULT hr = CoInitializeEx(NULL,COINIT_APARTMENTTHREADED);
-
-if (SUCCEEDED(hr))
-{
-    IShellItem *pitem;
-    hr = SHCreateItemFromParsingName(TEXT("Path to the shortcut"),
-                                     NULL,
-                                     IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pitem));
-
-    //
-    // Do setup work here to remove the link, including the unpinning
-    // of the item.
-    //
-
-    if (SUCCEEDED(hr))
-    {
-        IStartMenuPinnedList *pStartMenuPinnedList;
-
-        hr = CoCreateInstance(CLSID_StartMenuPin,
-                              NULL,
-                              CLSCTX_INPROC_SERVER,
-                              IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pStartMenuPinnedList));
-
-        if (SUCCEEDED(hr))
-        {
-            hr = pStartMenuPinnedList-&gt;RemoveFromList(pitem);
-            pStartMenuPinnedList-&gt;Release();
-        }
-
-        pitem-&gt;Release();
-    }
-}
-
-CoUnitialize();
-</code>
-    </remarks>
   </member>
   <member name="IStartMenuPinnedList">
-    <summary>
-      <para>Exposes a method that unpins an application shortcut from the <b>Start</b> menu or the taskbar.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>Windows provides an implementation of this interface as CLSID_StartMenuPin. Third parties do not provide their own implementation.</para>
-      <h3>When to Use</h3>
-      <para>Any shortcut installed by an application might have been subsequently pinned by the user, and there is no way for an application to know this. Therefore, we recommend that, during uninstallation, all applications call <see cref="IStartMenuPinnedList.RemoveFromList" /> on each shortcut they installed.</para>
-      <para>Note that <b>IStartMenuPinnedList</b> does not remove the shortcuts themselves, it only unpins them. Applications first call <see cref="IStartMenuPinnedList.RemoveFromList" /> on a shortcut, then delete that shortcut.</para>
-      <h3>Compatibility</h3>
-      <para>In Windows 8, the Start screen replaces the legacy Start menu. CLSID_StartMenuPin and <b>IStartMenuPinnedList</b> are present in Windows 8 to provide backward compatibility with existing applications, but they do not affect <a href="https://docs.microsoft.com//previous-versions/windows/apps/hh761490(v=win.10)">tiles</a> pinned to the Windows 8 Start screen. CLSID_StartMenuPin and <b>IStartMenuPinnedList</b> do continue to impact items pinned to the Windows 8 desktop taskbar.</para>
-    </remarks>
+    <summary>Exposes a method that unpins an application shortcut from the <b>Start</b> menu or the taskbar.</summary>
   </member>
 </doc>

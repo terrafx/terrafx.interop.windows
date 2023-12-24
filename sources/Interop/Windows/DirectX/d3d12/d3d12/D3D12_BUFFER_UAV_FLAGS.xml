@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_BUFFER_UAV_FLAGS">
+    <summary>Identifies unordered-access view options for a buffer resource.</summary>
+  </member>
+  <member name="D3D12_BUFFER_UAV_FLAGS.D3D12_BUFFER_UAV_FLAG_NONE">
+    <summary>Indicates a default view.</summary>
+  </member>
+  <member name="D3D12_BUFFER_UAV_FLAGS.D3D12_BUFFER_UAV_FLAG_RAW">
+    <summary>Resource contains raw, unstructured data. Requires the UAV format to be <see cref="DXGI_FORMAT_R32_TYPELESS" />. For more info about raw viewing of buffers, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-resources-intro">Raw Views of Buffers</a>.</summary>
+  </member>
+</doc>

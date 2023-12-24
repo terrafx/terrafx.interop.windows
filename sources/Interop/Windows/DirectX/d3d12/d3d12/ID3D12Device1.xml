@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Device1.CreatePipelineLibrary">
+    <summary>
+      <para>Creates a cached pipeline library. For pipeline state objects (PSOs) that are expected to share data together, grouping them into a library before serializing them means that there's less overhead due to metadata, as well as the opportunity to avoid redundant or duplicated data being written to disk.</para>
+      <para>You can query for <b>ID3D12PipelineLibrary</b> support with <b><see cref="ID3D12Device.CheckFeatureSupport" /></b>, with <b><see cref="D3D12_FEATURE_SHADER_CACHE" /></b> and <b><see cref="D3D12_FEATURE_DATA_SHADER_CACHE" /></b>. If the <i>Flags</i> member of <b><see cref="D3D12_FEATURE_DATA_SHADER_CACHE" /></b> contains the flag <b><see cref="D3D12_SHADER_CACHE_SUPPORT_LIBRARY" /></b>, the <b>ID3D12PipelineLibrary</b> interface is supported. If not, then <b>DXGI_ERROR_NOT_SUPPORTED</b> will always be returned when this function is called.</para>
+    </summary>
+    <param name="pLibraryBlob">If the input library blob is empty, then the initial content of the library is empty. If the input library blob is not empty, then it is validated for integrity, parsed, and the pointer is stored. The pointer provided as input to this method must remain valid for the lifetime of the object returned. For efficiency reasons, the data is not copied.</param>
+    <param name="BlobLength">Specifies the length of <i>pLibraryBlob</i> in bytes.</param>
+    <param name="riid">Specifies a unique REFIID for the <see cref="ID3D12PipelineLibrary" /> object. Typically set this and the following parameter with the macro <code>IID_PPV_ARGS(&amp;Library)</code>, where <b>Library</b> is the name of the object.</param>
+    <param name="ppPipelineLibrary">Returns a pointer to the created library.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>, including <b>E_INVALIDARG</b> if the blob is corrupted or unrecognized, <b>D3D12_ERROR_DRIVER_VERSION_MISMATCH</b> if the provided data came from an old driver or runtime, and <b>D3D12_ERROR_ADAPTER_NOT_FOUND</b> if the data came from different hardware.</para>
+      <para>If you pass <code>nullptr</code> for <i>pPipelineLibrary</i> then the runtime still performs the validation of the blob but avoid creating the actual library and returns S_FALSE if the library would have been created.</para>
+      <para>Also, the feature requires an updated driver, and attempting to use it on old drivers will return DXGI_ERROR_UNSUPPORTED.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device1.SetEventOnMultipleFenceCompletion">
+    <summary>Specifies an event that should be fired when one or more of a collection of fences reach specific values.</summary>
+    <param name="ppFences">An array of length <i>NumFences</i> that specifies the <see cref="ID3D12Fence" /> objects.</param>
+    <param name="pFenceValues">An array of length <i>NumFences</i> that specifies the fence values required for the event is to be signaled.</param>
+    <param name="NumFences">Specifies the number of fences to be included.</param>
+    <param name="Flags">Specifies one of the <see cref="D3D12_MULTIPLE_FENCE_WAIT_FLAGS" /> that determines how to proceed.</param>
+    <param name="hEvent">A handle to the event object.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
+  </member>
+  <member name="ID3D12Device1.SetResidencyPriority">
+    <summary>This method sets residency priorities of a specified list of objects.</summary>
+    <param name="NumObjects">Specifies the number of objects in the <i>ppObjects</i> and <i>pPriorities</i> arrays.</param>
+    <param name="ppObjects">Specifies an array, of length <i>NumObjects</i>, containing references to <see cref="ID3D12Pageable" /> objects.</param>
+    <param name="pPriorities">Specifies an array, of length <i>NumObjects</i>, of <see cref="D3D12_RESIDENCY_PRIORITY" /> values for the list of objects.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
+  </member>
+  <member name="ID3D12Device1">
+    <summary>
+      <para>Represents a virtual adapter, and expands on the range of methods provided by <see cref="ID3D12Device" />.</para>
+      <div>
+        <b>Note</b>  This interface was introduced in Windows 10 Anniversary Update. Applications targetting Windows 10 Anniversary Update should use this interface instead of earlier or later versions. Applications targetting an earlier or later version of Windows 10 should use the appropriate version of the <b>ID3D12Device</b> interface.</div>
+    </summary>
+  </member>
+</doc>

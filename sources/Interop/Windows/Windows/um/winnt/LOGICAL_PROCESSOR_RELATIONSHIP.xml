@@ -3,32 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LOGICAL_PROCESSOR_RELATIONSHIP">
-    <summary>
-      <para>Represents the relationship between the processor set identified in the corresponding <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" />  structure.</para>
-    </summary>
-    <remarks>
-      <para>The value specified by this enumeration indicates the relationship represented in the corresponding <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" />  structure.</para>
-      <h4>Examples</h4>
-      <para>For an example, see <see cref="GetLogicalProcessorInformation" />.</para>
-    </remarks>
-    <seealso cref="GetLogicalProcessorInformation" />
-    <seealso cref="GetLogicalProcessorInformationEx" />
-    <seealso cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION" />
-    <seealso cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" />
+    <summary>Represents the relationship between the processor set identified in the corresponding <see cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" /> structure.</summary>
   </member>
   <member name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationProcessorCore">
-    <summary>
-      <para>The specified logical processors share a single processor core.</para>
-    </summary>
+    <summary>The specified logical processors share a single processor core.</summary>
   </member>
   <member name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationNumaNode">
-    <summary>
-      <para>The specified logical processors  are part of the same NUMA node.</para>
-    </summary>
+    <summary>The specified logical processors are part of the same NUMA node.</summary>
   </member>
   <member name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationCache">
     <summary>
-      <para>The specified logical processors  share a cache.</para>
+      <para>The specified logical processors share a cache.</para>
       <para>
         <b>Windows Server 2003:  </b>This value is not supported until Windows Server 2003 with SP1 and Windows XP Professional x64 Edition.</para>
     </summary>
@@ -47,16 +32,22 @@
         <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP Professional x64 Edition:  </b>This value is not supported until Windows Server 2008 R2.</para>
     </summary>
   </member>
+  <member name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationProcessorDie">
+    <summary>The specified logical processors share a single processor die.</summary>
+  </member>
   <member name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationNumaNodeEx">
     <summary>
-      <para>Introduced in TBD - Release Iron.  Requests that the full affinity be returned. Unlike the other relation types, <b>RelationNumaNodeEx</b> is not used on input. It is simply a request for <b>RelationNumaNode</b> with full group information.</para>
-    </summary>
+      <b>Introduced in Windows Server 2022 (21H2, build 20348).</b> Requests that the full affinity be returned. Unlike the other relation types, <b>RelationNumaNodeEx</b> is not used on input. It is simply a request for <b>RelationNumaNode</b> with full group information.</summary>
+  </member>
+  <member name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationModule">
+    <summary>
+      <b>Introduced in Windows 11 (21H2, build 22000).</b> The specified logical processors share a single processor module.</summary>
   </member>
   <member name="LOGICAL_PROCESSOR_RELATIONSHIP.RelationAll">
     <summary>
       <para>On input, retrieves information about all possible relationship types. This value is not used on output.</para>
       <para>
-        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP Professional x64 Edition:  </b>This value is not supported  until Windows Server 2008 R2.</para>
+        <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP Professional x64 Edition:  </b>This value is not supported until Windows Server 2008 R2.</para>
     </summary>
   </member>
 </doc>

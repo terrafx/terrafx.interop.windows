@@ -19,9 +19,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowAllObjects
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)(_bitfield1 & 0x1);
+            return (BOOL)((_bitfield1 << 31) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -36,9 +36,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowExtensions
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 1) & 0x1);
+            return (BOOL)((_bitfield1 << 30) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -53,9 +53,9 @@ public partial struct SHELLSTATEW
     public BOOL fNoConfirmRecycle
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 2) & 0x1);
+            return (BOOL)((_bitfield1 << 29) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -70,9 +70,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowSysFiles
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 3) & 0x1);
+            return (BOOL)((_bitfield1 << 28) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -87,9 +87,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowCompColor
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 4) & 0x1);
+            return (BOOL)((_bitfield1 << 27) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -104,9 +104,9 @@ public partial struct SHELLSTATEW
     public BOOL fDoubleClickInWebView
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 5) & 0x1);
+            return (BOOL)((_bitfield1 << 26) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -121,9 +121,9 @@ public partial struct SHELLSTATEW
     public BOOL fDesktopHTML
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 6) & 0x1);
+            return (BOOL)((_bitfield1 << 25) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -138,9 +138,9 @@ public partial struct SHELLSTATEW
     public BOOL fWin95Classic
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 7) & 0x1);
+            return (BOOL)((_bitfield1 << 24) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -155,9 +155,9 @@ public partial struct SHELLSTATEW
     public BOOL fDontPrettyPath
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 8) & 0x1);
+            return (BOOL)((_bitfield1 << 23) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -172,9 +172,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowAttribCol
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 9) & 0x1);
+            return (BOOL)((_bitfield1 << 22) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -189,9 +189,9 @@ public partial struct SHELLSTATEW
     public BOOL fMapNetDrvBtn
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 10) & 0x1);
+            return (BOOL)((_bitfield1 << 21) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -206,9 +206,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowInfoTip
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 11) & 0x1);
+            return (BOOL)((_bitfield1 << 20) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -223,9 +223,9 @@ public partial struct SHELLSTATEW
     public BOOL fHideIcons
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 12) & 0x1);
+            return (BOOL)((_bitfield1 << 19) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -240,9 +240,9 @@ public partial struct SHELLSTATEW
     public BOOL fWebView
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 13) & 0x1);
+            return (BOOL)((_bitfield1 << 18) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -257,9 +257,9 @@ public partial struct SHELLSTATEW
     public BOOL fFilter
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 14) & 0x1);
+            return (BOOL)((_bitfield1 << 17) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -274,9 +274,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowSuperHidden
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 15) & 0x1);
+            return (BOOL)((_bitfield1 << 16) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -291,9 +291,9 @@ public partial struct SHELLSTATEW
     public BOOL fNoNetCrawling
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield1 >> 16) & 0x1);
+            return (BOOL)((_bitfield1 << 15) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -330,9 +330,9 @@ public partial struct SHELLSTATEW
     public BOOL fSepProcess
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)(_bitfield2 & 0x1);
+            return (BOOL)((_bitfield2 << 31) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -347,9 +347,9 @@ public partial struct SHELLSTATEW
     public BOOL fStartPanelOn
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield2 >> 1) & 0x1);
+            return (BOOL)((_bitfield2 << 30) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -364,9 +364,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowStartPage
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield2 >> 2) & 0x1);
+            return (BOOL)((_bitfield2 << 29) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -381,9 +381,9 @@ public partial struct SHELLSTATEW
     public BOOL fAutoCheckSelect
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield2 >> 3) & 0x1);
+            return (BOOL)((_bitfield2 << 28) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -398,9 +398,9 @@ public partial struct SHELLSTATEW
     public BOOL fIconsOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield2 >> 4) & 0x1);
+            return (BOOL)((_bitfield2 << 27) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -415,9 +415,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowTypeOverlay
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield2 >> 5) & 0x1);
+            return (BOOL)((_bitfield2 << 26) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -432,9 +432,9 @@ public partial struct SHELLSTATEW
     public BOOL fShowStatusBar
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
-            return (BOOL)((_bitfield2 >> 6) & 0x1);
+            return (BOOL)((_bitfield2 << 25) >> 31);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -449,7 +449,7 @@ public partial struct SHELLSTATEW
     public uint fSpareFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (uint)((_bitfield2 >> 7) & 0x1FF);
         }

@@ -3,74 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyStoreFactory.GetPropertyStore">
-    <summary>
-      <para>Gets an <see cref="IPropertyStore" /> object that corresponds to the supplied flags.</para>
-    </summary>
+    <summary>Gets an <see cref="IPropertyStore" /> object that corresponds to the supplied flags.</summary>
     <param name="flags">
-      <para>Type: <b><see cref="GETPROPERTYSTOREFLAGS" /></b></para>
-      <para>
-        <see cref="GETPROPERTYSTOREFLAGS" /> values that modify the store that is returned.</para>
-    </param>
-    <param name="pUnkFactory">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>Optional. A pointer to the <see cref="IUnknown" /> of an object that implements <see cref="ICreateObject" />. If <i>pUnkFactory</i> is provided, this method can create the handler instance using <b>ICreateObject</b> rather than <see cref="CoCreateInstance" />, if implemented. The reason to provide <i>pUnkFactory</i> is usually to create the handler in a different process. However, for most users, passing <b>NULL</b> in this parameter is sufficient.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to IID of the object to create.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address of an <see cref="IPropertyStore" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>It is recommended that you use the IID_PPV_ARGS macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error.</para>
-    </remarks>
+      <see cref="GETPROPERTYSTOREFLAGS" /> values that modify the store that is returned.</param>
+    <param name="pUnkFactory">Optional. A pointer to the <see cref="IUnknown" /> of an object that implements <see cref="ICreateObject" />. If <i>pUnkFactory</i> is provided, this method can create the handler instance using <b>ICreateObject</b> rather than <see cref="CoCreateInstance" />, if implemented. The reason to provide <i>pUnkFactory</i> is usually to create the handler in a different process. However, for most users, passing <b>NULL</b> in this parameter is sufficient.</param>
+    <param name="riid">A reference to IID of the object to create.</param>
+    <param name="ppv">When this method returns, contains the address of an <see cref="IPropertyStore" /> interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyStoreFactory.GetPropertyStoreForKeys">
-    <summary>
-      <para>Gets an <see cref="IPropertyStore" /> object, given a set of property keys. This provides an alternative, possibly faster, method of getting an <b>IPropertyStore</b> object compared to calling <see cref="IPropertyStoreFactory.GetPropertyStore" />.</para>
-    </summary>
-    <param name="rgKeys">
-      <para>Type: <b>const <see cref="PROPERTYKEY" />*</b></para>
-      <para>A pointer to an array of <see cref="PROPERTYKEY" /> structures.</para>
-    </param>
-    <param name="cKeys">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of <see cref="PROPERTYKEY" /> structures in the array pointed to by <i>rgKeys</i>.</para>
-    </param>
+    <summary>Gets an <see cref="IPropertyStore" /> object, given a set of property keys. This provides an alternative, possibly faster, method of getting an <b>IPropertyStore</b> object compared to calling <see cref="IPropertyStoreFactory.GetPropertyStore" />.</summary>
+    <param name="rgKeys">A pointer to an array of <see cref="PROPERTYKEY" /> structures.</param>
+    <param name="cKeys">The number of <see cref="PROPERTYKEY" /> structures in the array pointed to by <i>rgKeys</i>.</param>
     <param name="flags">
-      <para>Type: <b><see cref="GETPROPERTYSTOREFLAGS" /></b></para>
-      <para>
-        <see cref="GETPROPERTYSTOREFLAGS" /> values that modify the store that is returned.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to IID of the object to create.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address of an <see cref="IPropertyStore" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>It is recommended that you use the IID_PPV_ARGS macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error.</para>
-    </remarks>
+      <see cref="GETPROPERTYSTOREFLAGS" /> values that modify the store that is returned.</param>
+    <param name="riid">A reference to IID of the object to create.</param>
+    <param name="ppv">When this method returns, contains the address of an <see cref="IPropertyStore" /> interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyStoreFactory">
-    <summary>
-      <para>Exposes methods to get an <see cref="IPropertyStore" /> object.</para>
-    </summary>
-    <remarks>
-      <para>This interface is typically obtained through <see cref="IShellFolder.BindToObject" /> or <see cref="IShellItem.BindToHandler" />. It is useful for data source implementers who want to avoid the additional overhead of creating a property store through <see cref="IShellItem2.GetPropertyStore" />. However, <b>IShellItem2.GetPropertyStore</b> is the recommended method to obtain a property store unless you are implementing a data source through a Shell folder extension.</para>
-    </remarks>
-    <seealso cref="PSCreatePropertyStoreFromObject" />
+    <summary>Exposes methods to get an <see cref="IPropertyStore" /> object.</summary>
   </member>
 </doc>

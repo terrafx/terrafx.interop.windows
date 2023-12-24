@@ -21,32 +21,4 @@ public static unsafe partial class IPrintDocumentPackageStatusEventTests
     {
         Assert.That(typeof(IPrintDocumentPackageStatusEvent).GUID, Is.EqualTo(IID_IPrintDocumentPackageStatusEvent));
     }
-
-    /// <summary>Validates that the <see cref="IPrintDocumentPackageStatusEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPrintDocumentPackageStatusEvent>(), Is.EqualTo(sizeof(IPrintDocumentPackageStatusEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="IPrintDocumentPackageStatusEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPrintDocumentPackageStatusEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPrintDocumentPackageStatusEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPrintDocumentPackageStatusEvent), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPrintDocumentPackageStatusEvent), Is.EqualTo(4));
-        }
-    }
 }

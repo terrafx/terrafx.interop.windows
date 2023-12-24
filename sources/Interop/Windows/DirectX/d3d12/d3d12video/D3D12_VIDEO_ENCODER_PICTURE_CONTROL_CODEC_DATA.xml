@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA">
+    <summary>Represents the picture level control elements for the associated <see cref="EncodeFrame" /> command for multiple codecs.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA.DataSize">
+    <summary>The data size of the provided picture level control structure.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA.pH264PicData">
+    <summary>A pointer to a <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264" /> representing the picture level control elements for H.264 encoding.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA.pHEVCPicData">
+    <summary>A pointer to a <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC" /> representing the picture level control elements for H.264 encoding.</summary>
+  </member>
+</doc>

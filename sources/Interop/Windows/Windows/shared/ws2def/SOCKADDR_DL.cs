@@ -3,10 +3,12 @@
 // Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SOCKADDR_DL.xml' path='doc/member[@name="SOCKADDR_DL"]/*' />
-public unsafe partial struct SOCKADDR_DL
+public partial struct SOCKADDR_DL
 {
     /// <include file='SOCKADDR_DL.xml' path='doc/member[@name="SOCKADDR_DL.sdl_family"]/*' />
     [NativeTypeName("ADDRESS_FAMILY")]
@@ -14,9 +16,23 @@ public unsafe partial struct SOCKADDR_DL
 
     /// <include file='SOCKADDR_DL.xml' path='doc/member[@name="SOCKADDR_DL.sdl_data"]/*' />
     [NativeTypeName("UCHAR[8]")]
-    public fixed byte sdl_data[8];
+    public _sdl_data_e__FixedBuffer sdl_data;
 
     /// <include file='SOCKADDR_DL.xml' path='doc/member[@name="SOCKADDR_DL.sdl_zero"]/*' />
     [NativeTypeName("UCHAR[4]")]
-    public fixed byte sdl_zero[4];
+    public _sdl_zero_e__FixedBuffer sdl_zero;
+
+    /// <include file='_sdl_data_e__FixedBuffer.xml' path='doc/member[@name="_sdl_data_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _sdl_data_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_sdl_zero_e__FixedBuffer.xml' path='doc/member[@name="_sdl_zero_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _sdl_zero_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class ICastingControllerTests
     {
         Assert.That(typeof(ICastingController).GUID, Is.EqualTo(IID_ICastingController));
     }
-
-    /// <summary>Validates that the <see cref="ICastingController" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICastingController>(), Is.EqualTo(sizeof(ICastingController)));
-    }
-
-    /// <summary>Validates that the <see cref="ICastingController" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICastingController).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICastingController" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICastingController), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICastingController), Is.EqualTo(4));
-        }
-    }
 }

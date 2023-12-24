@@ -19,32 +19,4 @@ public static unsafe partial class AsyncIPipeLongTests
     {
         Assert.That(typeof(AsyncIPipeLong).GUID, Is.EqualTo(IID_AsyncIPipeLong));
     }
-
-    /// <summary>Validates that the <see cref="AsyncIPipeLong" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AsyncIPipeLong>(), Is.EqualTo(sizeof(AsyncIPipeLong)));
-    }
-
-    /// <summary>Validates that the <see cref="AsyncIPipeLong" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AsyncIPipeLong).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AsyncIPipeLong" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(AsyncIPipeLong), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(AsyncIPipeLong), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInternetProtocolSinkStackable*, Guid*, void**, int>)(lpVtbl[0]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocolSinkStackable*, Guid*, void**, int>)(lpVtbl[0]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInternetProtocolSinkStackable*, uint>)(lpVtbl[1]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocolSinkStackable*, uint>)(lpVtbl[1]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInternetProtocolSinkStackable*, uint>)(lpVtbl[2]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocolSinkStackable*, uint>)(lpVtbl[2]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInternetProtocolSinkStackable.xml' path='doc/member[@name="IInternetProtocolSinkStackable.SwitchSink"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
     [VtblIndex(3)]
     public HRESULT SwitchSink(IInternetProtocolSink* pOIProtSink)
     {
-        return ((delegate* unmanaged<IInternetProtocolSinkStackable*, IInternetProtocolSink*, int>)(lpVtbl[3]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this), pOIProtSink);
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocolSinkStackable*, IInternetProtocolSink*, int>)(lpVtbl[3]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this), pOIProtSink);
     }
 
     /// <include file='IInternetProtocolSinkStackable.xml' path='doc/member[@name="IInternetProtocolSinkStackable.CommitSwitch"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
     [VtblIndex(4)]
     public HRESULT CommitSwitch()
     {
-        return ((delegate* unmanaged<IInternetProtocolSinkStackable*, int>)(lpVtbl[4]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocolSinkStackable*, int>)(lpVtbl[4]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInternetProtocolSinkStackable.xml' path='doc/member[@name="IInternetProtocolSinkStackable.RollbackSwitch"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
     [VtblIndex(5)]
     public HRESULT RollbackSwitch()
     {
-        return ((delegate* unmanaged<IInternetProtocolSinkStackable*, int>)(lpVtbl[5]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetProtocolSinkStackable*, int>)(lpVtbl[5]))((IInternetProtocolSinkStackable*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IInternetProtocolSinkStackable : IInternetProtocolS
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IInternetProtocolSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IInternetProtocolSink*, int> SwitchSink;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IInternetProtocolSink*, int> SwitchSink;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CommitSwitch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CommitSwitch;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RollbackSwitch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RollbackSwitch;
     }
 }

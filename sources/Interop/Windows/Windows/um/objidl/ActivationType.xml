@@ -3,26 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ActivationType">
-    <summary>
-      <para>Specifies the kind of activation for an activatable class.</para>
-    </summary>
-    <seealso cref="IActivatableClassRegistration" />
+    <summary>Specifies the kind of activation for an activatable class.</summary>
   </member>
-  <member name="ActivationType.ACTIVATIONTYPE_UNCATEGORIZED">
-    <summary></summary>
-  </member>
-  <member name="ActivationType.ACTIVATIONTYPE_FROM_MONIKER">
-    <summary></summary>
-  </member>
-  <member name="ActivationType.ACTIVATIONTYPE_FROM_DATA">
-    <summary></summary>
-  </member>
-  <member name="ActivationType.ACTIVATIONTYPE_FROM_STORAGE">
-    <summary></summary>
-  </member>
-  <member name="ActivationType.ACTIVATIONTYPE_FROM_STREAM">
-    <summary></summary>
-  </member>
+  <member name="ActivationType.ACTIVATIONTYPE_UNCATEGORIZED"></member>
+  <member name="ActivationType.ACTIVATIONTYPE_FROM_MONIKER"></member>
+  <member name="ActivationType.ACTIVATIONTYPE_FROM_DATA"></member>
+  <member name="ActivationType.ACTIVATIONTYPE_FROM_STORAGE"></member>
+  <member name="ActivationType.ACTIVATIONTYPE_FROM_STREAM"></member>
   <member name="ActivationType.ACTIVATIONTYPE_FROM_FILE">
     <summary>
       <h4>- ActivationType_InProcess</h4>

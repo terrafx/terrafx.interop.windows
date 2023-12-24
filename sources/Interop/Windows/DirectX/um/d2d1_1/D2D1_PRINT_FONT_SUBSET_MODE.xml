@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_PRINT_FONT_SUBSET_MODE">
-    <summary>
-      <para>Defines when font resources should be subset during printing.</para>
-    </summary>
-    <seealso cref="D2D1_PRINT_CONTROL_PROPERTIES" />
+    <summary>Defines when font resources should be subset during printing.</summary>
   </member>
   <member name="D2D1_PRINT_FONT_SUBSET_MODE.D2D1_PRINT_FONT_SUBSET_MODE_DEFAULT">
     <summary>
       <para>Uses a heuristic strategy to decide when to subset fonts.</para>
-      <blockquote>
-        <para>[!NOTE]
-If the print driver has requested archive-optimized content, then Direct2D will subset fonts once, for the entire document.</para>
-      </blockquote>
+      <blockquote>[!NOTE] If the print driver has requested archive-optimized content, then Direct2D will subset fonts once, for the entire document.</blockquote>
     </summary>
   </member>
   <member name="D2D1_PRINT_FONT_SUBSET_MODE.D2D1_PRINT_FONT_SUBSET_MODE_EACHPAGE">
-    <summary>
-      <para>Subsets and embeds font resources in each page, then discards that font subset after the page is printed out.</para>
-    </summary>
+    <summary>Subsets and embeds font resources in each page, then discards that font subset after the page is printed out.</summary>
   </member>
   <member name="D2D1_PRINT_FONT_SUBSET_MODE.D2D1_PRINT_FONT_SUBSET_MODE_NONE">
-    <summary>
-      <para>Sends out the original font resources without subsetting along with the page that first uses the font, and re-uses the font resources for later pages without resending them.</para>
-    </summary>
+    <summary>Sends out the original font resources without subsetting along with the page that first uses the font, and re-uses the font resources for later pages without resending them.</summary>
   </member>
   <member name="D2D1_PRINT_FONT_SUBSET_MODE.D2D1_PRINT_FONT_SUBSET_MODE_FORCE_DWORD">
-    <summary>
-      <para>A value that's guaranteed to be a DWORD.</para>
-    </summary>
+    <summary>A value that's guaranteed to be a DWORD.</summary>
   </member>
 </doc>

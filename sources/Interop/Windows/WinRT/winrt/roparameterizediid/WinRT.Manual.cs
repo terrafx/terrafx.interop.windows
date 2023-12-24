@@ -7,7 +7,7 @@ namespace TerraFX.Interop.WinRT;
 
 public static unsafe partial class WinRT
 {
-    public static _Locator Locator(delegate*<ushort*, IRoSimpleMetaDataBuilder*, int> fn)
+    public static _Locator Locator(delegate*<char*, IRoSimpleMetaDataBuilder*, int> fn)
     {
         return new _Locator(fn);
     }

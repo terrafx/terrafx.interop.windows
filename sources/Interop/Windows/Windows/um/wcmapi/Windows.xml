@@ -3,222 +3,41 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.WcmFreeMemory">
-    <summary>
-      <para>The <b>WcmFreeMemory</b> function is used to release memory resources allocated by the WCM functions.</para>
-    </summary>
-    <param name="pMemory">
-      <para>Pointer to the memory to be freed.</para>
-    </param>
+    <summary>The <b>WcmFreeMemory</b> function is used to release memory resources allocated by the WCM functions.</summary>
+    <param name="pMemory">Pointer to the memory to be freed.</param>
   </member>
   <member name="Windows.WcmGetProfileList">
-    <summary>
-      <para>The <b>WcmGetProfileList</b> function retrieves a list of profiles in preferred order, descending from the most preferred to the least preferred. The list includes all WCM-managed auto-connect profiles across all WCM-managed media types.</para>
-    </summary>
-    <param name="pReserved">
-      <para>Type: <b>PVOID</b></para>
-      <para>Reserved.</para>
-    </param>
-    <param name="ppProfileList">
-      <para>Type: <b><see cref="PWCM_PROFILE_INFO_LIST" />*</b></para>
-      <para>The list of profiles.</para>
-    </param>
-    <returns>
-      <para>Type: <b>DWORD</b></para>
-      <para>Returns ERROR_SUCCESS if successful, or an error value otherwise.</para>
-    </returns>
-    <seealso cref="PWCM_PROFILE_INFO_LIST" />
+    <summary>The <b>WcmGetProfileList</b> function retrieves a list of profiles in preferred order, descending from the most preferred to the least preferred. The list includes all WCM-managed auto-connect profiles across all WCM-managed media types.</summary>
+    <param name="pReserved">Reserved.</param>
+    <param name="ppProfileList">The list of profiles.</param>
+    <returns>Returns ERROR_SUCCESS if successful, or an error value otherwise.</returns>
   </member>
   <member name="Windows.WcmQueryProperty">
-    <summary>
-      <para>The <b>WcmQueryProperty</b> function retrieves the value of a specified WCM property.</para>
-    </summary>
-    <param name="pInterface">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The interface to query. For global properties, this parameter is NULL.</para>
-    </param>
-    <param name="strProfileName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The name of the profile. If querying a non-global property (<b>connection_cost</b>, <b>dataplan_status</b>, or <b>hotspot_profile</b>), the profile must be specified or the call will fail.</para>
-    </param>
-    <param name="Property">
-      <para>Type: <b><see cref="WCM_PROPERTY" /></b></para>
-      <para>The WCM property to query.</para>
-    </param>
-    <param name="pReserved">
-      <para>Type: <b>PVOID</b></para>
-      <para>Reserved.</para>
-    </param>
-    <param name="pdwDataSize">
-      <para>Type: <b>PDWORD</b></para>
-      <para>The size of the returned property value.</para>
-    </param>
-    <param name="ppData">
-      <para>Type: <b>PBYTE*</b></para>
-      <para>The returned property value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>DWORD</b></para>
-      <para>Returns ERROR_SUCCESS if successful, or an error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>The type of data stored in the <i>ppData</i> parameter will vary, depending on which property is being queried. This table shows the data type of each property.</para>
-      <list type="table">
-        <listheader>
-          <description>Property name</description>
-          <description>Data type</description>
-        </listheader>
-        <item>
-          <description>wcm_global_property_domain_policy</description>
-          <description>
-            <see cref="WCM_POLICY_VALUE" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_global_property_minimize_policy</description>
-          <description>
-            <see cref="WCM_POLICY_VALUE" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_global_property_roaming_policy</description>
-          <description>
-            <see cref="WCM_POLICY_VALUE" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_global_property_powermanagement_policy</description>
-          <description>
-            <see cref="WCM_POLICY_VALUE" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_intf_property_connection_cost</description>
-          <description>
-            <see cref="WCM_CONNECTION_COST_DATA" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_intf_property_dataplan_status</description>
-          <description>
-            <see cref="WCM_DATAPLAN_STATUS" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_intf_property_hotspot_profile</description>
-          <description>Contains zero-length output. </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="WCM_PROPERTY" />
+    <summary>The <b>WcmQueryProperty</b> function retrieves the value of a specified WCM property.</summary>
+    <param name="pInterface">The interface to query. For global properties, this parameter is NULL.</param>
+    <param name="strProfileName">The name of the profile. If querying a non-global property (<b>connection_cost</b>, <b>dataplan_status</b>, or <b>hotspot_profile</b>), the profile must be specified or the call will fail.</param>
+    <param name="Property">The WCM property to query.</param>
+    <param name="pReserved">Reserved.</param>
+    <param name="pdwDataSize">The size of the returned property value.</param>
+    <param name="ppData">The returned property value.</param>
+    <returns>Returns ERROR_SUCCESS if successful, or an error value otherwise.</returns>
   </member>
   <member name="Windows.WcmSetProfileList">
-    <summary>
-      <para>The <b>WcmSetProfileList</b> function reorders a profile list or a subset of a profile list.</para>
-    </summary>
-    <param name="pProfileList">
-      <para>Type: <b><see cref="WCM_PROFILE_INFO_LIST" />*</b></para>
-      <para>The list of profiles to be reordered, provided in the preferred order (descending from the most preferred to the least preferred).</para>
-    </param>
-    <param name="dwPosition">
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies the position in the list to start the reorder.</para>
-    </param>
-    <param name="fIgnoreUnknownProfiles">
-      <para>Type: <b>BOOL</b></para>
-      <para>True if any profiles in <i>pProfileList</i> which do not exist should be ignored; the call will proceed with the remainder of the list. False if the call should fail without modifying the profile order if any profiles in <i>pProfileList</i> do not exist.</para>
-    </param>
-    <param name="pReserved">
-      <para>Type: <b>PVOID</b></para>
-      <para>Reserved.</para>
-    </param>
-    <returns>
-      <para>Type: <b>DWORD</b></para>
-      <para>Returns ERROR_SUCCESS if successful, or an error value otherwise.</para>
-    </returns>
-    <seealso cref="WCM_PROFILE_INFO_LIST" />
+    <summary>The <b>WcmSetProfileList</b> function reorders a profile list or a subset of a profile list.</summary>
+    <param name="pProfileList">The list of profiles to be reordered, provided in the preferred order (descending from the most preferred to the least preferred).</param>
+    <param name="dwPosition">Specifies the position in the list to start the reorder.</param>
+    <param name="fIgnoreUnknownProfiles">True if any profiles in <i>pProfileList</i> which do not exist should be ignored; the call will proceed with the remainder of the list. False if the call should fail without modifying the profile order if any profiles in <i>pProfileList</i> do not exist.</param>
+    <param name="pReserved">Reserved.</param>
+    <returns>Returns ERROR_SUCCESS if successful, or an error value otherwise.</returns>
   </member>
   <member name="Windows.WcmSetProperty">
-    <summary>
-      <para>The <b>WcmSetProperty</b> function sets the value of a WCM property.</para>
-    </summary>
-    <param name="pInterface">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The interface to set. For global properties, this parameter is NULL.</para>
-    </param>
-    <param name="strProfileName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The profile name.</para>
-    </param>
-    <param name="Property">
-      <para>Type: <b><see cref="WCM_PROPERTY" /></b></para>
-      <para>The WCM property to set.</para>
-    </param>
-    <param name="pReserved">
-      <para>Type: <b>PVOID</b></para>
-      <para>Reserved.</para>
-    </param>
-    <param name="dwDataSize">
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the new property value.</para>
-    </param>
-    <param name="pbData">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>The new property value.</para>
-    </param>
-    <returns>
-      <para>Type: <b>DWORD</b></para>
-      <para>Returns ERROR_SUCCESS if successful, or an error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>The type of data stored in the <i>pbData</i> parameter will vary, depending on which property is being set. This table shows the data type of each property.</para>
-      <list type="table">
-        <listheader>
-          <description>Property name</description>
-          <description>Data type</description>
-        </listheader>
-        <item>
-          <description>wcm_global_property_domain_policy</description>
-          <description>
-            <see cref="WCM_POLICY_VALUE" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_global_property_minimize_policy</description>
-          <description>
-            <see cref="WCM_POLICY_VALUE" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_global_property_roaming_policy</description>
-          <description>
-            <see cref="WCM_POLICY_VALUE" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_global_property_powermanagement_policy</description>
-          <description>
-            <see cref="WCM_POLICY_VALUE" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_intf_property_connection_cost</description>
-          <description>
-            <see cref="WCM_CONNECTION_COST_DATA" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_intf_property_dataplan_status</description>
-          <description>
-            <see cref="WCM_DATAPLAN_STATUS" />
-          </description>
-        </item>
-        <item>
-          <description>wcm_intf_property_hotspot_profile</description>
-          <description>Variable-length XML string. See the <a href="https://docs.microsoft.com//uwp/schemas/mobilebroadbandschema/hotspotprofile/schema-root">HotSpotProfile schema</a> for more information.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//uwp/schemas/mobilebroadbandschema/hotspotprofile/schema-root">HotSpotProfile schema</seealso>
-    <seealso cref="WCM_PROPERTY" />
+    <summary>The <b>WcmSetProperty</b> function sets the value of a WCM property.</summary>
+    <param name="pInterface">The interface to set. For global properties, this parameter is NULL.</param>
+    <param name="strProfileName">The profile name.</param>
+    <param name="Property">The WCM property to set.</param>
+    <param name="pReserved">Reserved.</param>
+    <param name="dwDataSize">The size of the new property value.</param>
+    <param name="pbData">The new property value.</param>
+    <returns>Returns ERROR_SUCCESS if successful, or an error value otherwise.</returns>
   </member>
 </doc>

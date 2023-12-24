@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TILE_RANGE_FLAGS">
+    <summary>Specifies a range of tile mappings.</summary>
+  </member>
+  <member name="D3D12_TILE_RANGE_FLAGS.D3D12_TILE_RANGE_FLAG_NONE">
+    <summary>No tile-mapping flags are specified.</summary>
+  </member>
+  <member name="D3D12_TILE_RANGE_FLAGS.D3D12_TILE_RANGE_FLAG_NULL">
+    <summary>The tile range is <b>NULL</b>.</summary>
+  </member>
+  <member name="D3D12_TILE_RANGE_FLAGS.D3D12_TILE_RANGE_FLAG_SKIP">
+    <summary>Skip the tile range.</summary>
+  </member>
+  <member name="D3D12_TILE_RANGE_FLAGS.D3D12_TILE_RANGE_FLAG_REUSE_SINGLE_TILE">
+    <summary>Reuse a single tile in the tile range.</summary>
+  </member>
+</doc>

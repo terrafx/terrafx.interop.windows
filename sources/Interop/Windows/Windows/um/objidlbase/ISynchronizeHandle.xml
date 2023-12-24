@@ -3,22 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISynchronizeHandle.GetHandle">
-    <summary>
-      <para>Retrieves a handle to the synchronization object.</para>
-    </summary>
-    <param name="ph">
-      <para>A pointer to the variable that receives a handle to the synchronization object.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="ISynchronizeEvent.SetEventHandle" />
-    <seealso cref="ISynchronizeHandle" />
+    <summary>Retrieves a handle to the synchronization object.</summary>
+    <param name="ph">A pointer to the variable that receives a handle to the synchronization object.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_FAIL, and S_OK.</returns>
   </member>
   <member name="ISynchronizeHandle">
-    <summary>
-      <para>Retrieves a handle associated with a synchronization object.</para>
-    </summary>
-    <seealso cref="ISynchronizeEvent" />
+    <summary>Retrieves a handle associated with a synchronization object.</summary>
   </member>
 </doc>

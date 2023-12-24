@@ -3,25 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GROUP_POLICY_OBJECTA">
-    <summary>
-      <para>The
-<b>GROUP_POLICY_OBJECT</b> structure provides information about a GPO in a GPO list.</para>
-    </summary>
-    <remarks>
-      <para>Each GPO could contain data that must be processed by multiple snap-in extensions. Therefore, the data in the <b>lpExtensions</b> member is organized as a series of <b>GUID</b>s that identify the extensions and snap-in extensions. The data format is as follows:</para>
-      <code>[ext_guid1, snap_in_guid1, snap_in_guid2, ...]
-[ext_guid2, snap_in_guid3, snap_in_guid4, ...]
-</code>
-      <para>First, there is an opening bracket, "[", followed by the <b>GUID</b> of the extension. Next, you'll find one or more <b>GUID</b>s identifying the snap-in extensions that have stored data in the GPO. After the last snap-in <b>GUID</b> for an extension, there is a closing bracket, "]". This pattern is repeated for the next extension.</para>
-      <blockquote>
-        <para>[!NOTE]
-The userenv.h header defines GROUP_POLICY_OBJECT as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="FreeGPOList" />
-    <seealso cref="GetGPOList" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
+    <summary>The<b>GROUP_POLICY_OBJECT</b> structure provides information about a GPO in a GPO list.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.dwOptions">
     <summary>
@@ -33,29 +15,19 @@ The userenv.h header defines GROUP_POLICY_OBJECT as an alias which automatically
     </summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.dwVersion">
-    <summary>
-      <para>Specifies the version number of the GPO.</para>
-    </summary>
+    <summary>Specifies the version number of the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpDSPath">
-    <summary>
-      <para>Pointer to a string that specifies the path to the directory service portion of the GPO.</para>
-    </summary>
+    <summary>Pointer to a string that specifies the path to the directory service portion of the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpFileSysPath">
-    <summary>
-      <para>Pointer to a string that specifies the path to the file system portion of the GPO.</para>
-    </summary>
+    <summary>Pointer to a string that specifies the path to the file system portion of the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpDisplayName">
-    <summary>
-      <para>Pointer to the display name of the GPO.</para>
-    </summary>
+    <summary>Pointer to the display name of the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.szGPOName">
-    <summary>
-      <para>Pointer to a string that specifies a unique name that identifies the GPO.</para>
-    </summary>
+    <summary>Pointer to a string that specifies a unique name that identifies the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.GPOLink">
     <summary>
@@ -73,55 +45,25 @@ The userenv.h header defines GROUP_POLICY_OBJECT as an alias which automatically
     </summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lParam">
-    <summary>
-      <para>User-supplied data.</para>
-    </summary>
+    <summary>User-supplied data.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.pNext">
-    <summary>
-      <para>Pointer to the next GPO in the list.</para>
-    </summary>
+    <summary>Pointer to the next GPO in the list.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.pPrev">
-    <summary>
-      <para>Pointer to the previous GPO in the list.</para>
-    </summary>
+    <summary>Pointer to the previous GPO in the list.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpExtensions">
-    <summary>
-      <para>Extensions that have stored data in this GPO. The format is a string of <b>GUID</b>s grouped in brackets. For more information, see the following Remarks section.</para>
-    </summary>
+    <summary>Extensions that have stored data in this GPO. The format is a string of <b>GUID</b>s grouped in brackets. For more information, see the following Remarks section.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lParam2">
-    <summary>
-      <para>User-supplied data.</para>
-    </summary>
+    <summary>User-supplied data.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpLink">
-    <summary>
-      <para>Path to the Active Directory site, domain, or organization unit to which this GPO is linked. If the GPO is linked to the local GPO, this member is "Local".</para>
-    </summary>
+    <summary>Path to the Active Directory site, domain, or organization unit to which this GPO is linked. If the GPO is linked to the local GPO, this member is "Local".</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA">
-    <summary>
-      <para>The
-<b>GROUP_POLICY_OBJECT</b> structure provides information about a GPO in a GPO list.</para>
-    </summary>
-    <remarks>
-      <para>Each GPO could contain data that must be processed by multiple snap-in extensions. Therefore, the data in the <b>lpExtensions</b> member is organized as a series of <b>GUID</b>s that identify the extensions and snap-in extensions. The data format is as follows:</para>
-      <code>[ext_guid1, snap_in_guid1, snap_in_guid2, ...]
-[ext_guid2, snap_in_guid3, snap_in_guid4, ...]
-</code>
-      <para>First, there is an opening bracket, "[", followed by the <b>GUID</b> of the extension. Next, you'll find one or more <b>GUID</b>s identifying the snap-in extensions that have stored data in the GPO. After the last snap-in <b>GUID</b> for an extension, there is a closing bracket, "]". This pattern is repeated for the next extension.</para>
-      <blockquote>
-        <para>[!NOTE]
-The userenv.h header defines GROUP_POLICY_OBJECT as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso cref="FreeGPOList" />
-    <seealso cref="GetGPOList" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/about-group-policy">Group Policy Overview</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/Policy/group-policy-structures">Group Policy Structures</seealso>
+    <summary>The<b>GROUP_POLICY_OBJECT</b> structure provides information about a GPO in a GPO list.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.dwOptions">
     <summary>
@@ -133,29 +75,19 @@ The userenv.h header defines GROUP_POLICY_OBJECT as an alias which automatically
     </summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.dwVersion">
-    <summary>
-      <para>Specifies the version number of the GPO.</para>
-    </summary>
+    <summary>Specifies the version number of the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpDSPath">
-    <summary>
-      <para>Pointer to a string that specifies the path to the directory service portion of the GPO.</para>
-    </summary>
+    <summary>Pointer to a string that specifies the path to the directory service portion of the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpFileSysPath">
-    <summary>
-      <para>Pointer to a string that specifies the path to the file system portion of the GPO.</para>
-    </summary>
+    <summary>Pointer to a string that specifies the path to the file system portion of the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpDisplayName">
-    <summary>
-      <para>Pointer to the display name of the GPO.</para>
-    </summary>
+    <summary>Pointer to the display name of the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.szGPOName">
-    <summary>
-      <para>Pointer to a string that specifies a unique name that identifies the GPO.</para>
-    </summary>
+    <summary>Pointer to a string that specifies a unique name that identifies the GPO.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.GPOLink">
     <summary>
@@ -173,29 +105,19 @@ The userenv.h header defines GROUP_POLICY_OBJECT as an alias which automatically
     </summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lParam">
-    <summary>
-      <para>User-supplied data.</para>
-    </summary>
+    <summary>User-supplied data.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.pNext">
-    <summary>
-      <para>Pointer to the next GPO in the list.</para>
-    </summary>
+    <summary>Pointer to the next GPO in the list.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.pPrev">
-    <summary>
-      <para>Pointer to the previous GPO in the list.</para>
-    </summary>
+    <summary>Pointer to the previous GPO in the list.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpExtensions">
-    <summary>
-      <para>Extensions that have stored data in this GPO. The format is a string of <b>GUID</b>s grouped in brackets. For more information, see the following Remarks section.</para>
-    </summary>
+    <summary>Extensions that have stored data in this GPO. The format is a string of <b>GUID</b>s grouped in brackets. For more information, see the following Remarks section.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lParam2">
-    <summary>
-      <para>User-supplied data.</para>
-    </summary>
+    <summary>User-supplied data.</summary>
   </member>
   <member name="GROUP_POLICY_OBJECTA.lpLink">
     <summary>

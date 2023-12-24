@@ -3,20 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="JOBOBJECT_BASIC_UI_RESTRICTIONS">
-    <summary>
-      <para>Contains basic user-interface restrictions for a job object.</para>
-    </summary>
-    <remarks>
-      <para>If you specify the JOB_OBJECT_UILIMIT_HANDLES flag, when a process associated with the job broadcasts messages, they are only sent to top-level windows owned by processes associated with the same job. In addition, hooks can be installed only on threads belonging to processes associated with the job.</para>
-      <para>To grant access to a User handle to a job that has a user-interface restriction, use the
-<see cref="UserHandleGrantAccess" /> function.</para>
-    </remarks>
-    <seealso cref="ExitWindows" />
-    <seealso cref="ExitWindowsEx" />
-    <seealso cref="QueryInformationJobObject" />
-    <seealso cref="SetInformationJobObject" />
-    <seealso cref="SystemParametersInfo" />
-    <seealso cref="UserHandleGrantAccess" />
+    <summary>Contains basic user-interface restrictions for a job object.</summary>
   </member>
   <member name="JOBOBJECT_BASIC_UI_RESTRICTIONS.UIRestrictionsClass">
     <summary>
@@ -26,148 +13,126 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_UILIMIT_DESKTOP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prevents processes associated with the job from creating desktops and switching desktops using the
-<see cref="CreateDesktop" /> and
-<see cref="SwitchDesktop" /> functions.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prevents processes associated with the job from creating desktops and switching desktops using the <see cref="CreateDesktop" /> and <see cref="SwitchDesktop" /> functions.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_UILIMIT_DISPLAYSETTINGS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prevents processes associated with the job from calling the
-<see cref="ChangeDisplaySettings" /> function.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prevents processes associated with the job from calling the <see cref="ChangeDisplaySettings" /> function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_UILIMIT_EXITWINDOWS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prevents processes associated with the job from calling the
-<see cref="ExitWindows" /> or
-<see cref="ExitWindowsEx" /> function.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prevents processes associated with the job from calling the <see cref="ExitWindows" /> or <see cref="ExitWindowsEx" /> function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_UILIMIT_GLOBALATOMS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prevents processes associated with the job from accessing global atoms. When this flag is used, each job has its own atom table.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prevents processes associated with the job from accessing global atoms. When this flag is used, each job has its own atom table.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_UILIMIT_HANDLES</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prevents processes associated with the job from using USER handles owned by processes not associated with the same job.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prevents processes associated with the job from using USER handles owned by processes not associated with the same job.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_UILIMIT_READCLIPBOARD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prevents processes associated with the job from reading data from the clipboard.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prevents processes associated with the job from reading data from the clipboard.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_UILIMIT_SYSTEMPARAMETERS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prevents processes associated with the job from changing system parameters by using the
-<see cref="SystemParametersInfo" /> function.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prevents processes associated with the job from changing system parameters by using the <see cref="SystemParametersInfo" /> function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>JOB_OBJECT_UILIMIT_WRITECLIPBOARD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prevents processes associated with the job from writing data to the clipboard.</para>
-          </description>
-        </item>
+          <description>Prevents processes associated with the job from writing data to the clipboard.</description>
+        </listheader>
       </list>
     </summary>
   </member>

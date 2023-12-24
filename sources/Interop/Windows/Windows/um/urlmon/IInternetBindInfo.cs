@@ -25,7 +25,7 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInternetBindInfo*, Guid*, void**, int>)(lpVtbl[0]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInternetBindInfo*, Guid*, void**, int>)(lpVtbl[0]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInternetBindInfo*, uint>)(lpVtbl[1]))((IInternetBindInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetBindInfo*, uint>)(lpVtbl[1]))((IInternetBindInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInternetBindInfo*, uint>)(lpVtbl[2]))((IInternetBindInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetBindInfo*, uint>)(lpVtbl[2]))((IInternetBindInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IInternetBindInfo.xml' path='doc/member[@name="IInternetBindInfo.GetBindInfo"]/*' />
@@ -51,15 +51,15 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetBindInfo([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo)
     {
-        return ((delegate* unmanaged<IInternetBindInfo*, uint*, BINDINFO*, int>)(lpVtbl[3]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo);
+        return ((delegate* unmanaged[MemberFunction]<IInternetBindInfo*, uint*, BINDINFO*, int>)(lpVtbl[3]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), grfBINDF, pbindinfo);
     }
 
     /// <include file='IInternetBindInfo.xml' path='doc/member[@name="IInternetBindInfo.GetBindString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] ushort** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched)
+    public HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] char** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched)
     {
-        return ((delegate* unmanaged<IInternetBindInfo*, uint, ushort**, uint, uint*, int>)(lpVtbl[4]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), ulStringType, ppwzStr, cEl, pcElFetched);
+        return ((delegate* unmanaged[MemberFunction]<IInternetBindInfo*, uint, char**, uint, uint*, int>)(lpVtbl[4]))((IInternetBindInfo*)Unsafe.AsPointer(ref this), ulStringType, ppwzStr, cEl, pcElFetched);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,25 +68,25 @@ public unsafe partial struct IInternetBindInfo : IInternetBindInfo.Interface, IN
         HRESULT GetBindInfo([NativeTypeName("DWORD *")] uint* grfBINDF, BINDINFO* pbindinfo);
 
         [VtblIndex(4)]
-        HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] ushort** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched);
+        HRESULT GetBindString([NativeTypeName("ULONG")] uint ulStringType, [NativeTypeName("LPOLESTR *")] char** ppwzStr, [NativeTypeName("ULONG")] uint cEl, [NativeTypeName("ULONG *")] uint* pcElFetched);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, BINDINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, BINDINFO*, int> GetBindInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, BINDINFO*, int> GetBindInfo;
 
         [NativeTypeName("HRESULT (ULONG, LPOLESTR *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort**, uint, uint*, int> GetBindString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char**, uint, uint*, int> GetBindString;
     }
 }

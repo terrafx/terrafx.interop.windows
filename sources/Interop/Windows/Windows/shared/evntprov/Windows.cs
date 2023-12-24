@@ -4,7 +4,6 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -54,7 +53,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventWriteString"]/*' />
     [DllImport("Advapi32", ExactSpelling = true)]
     [return: NativeTypeName("ULONG")]
-    public static extern uint EventWriteString([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("UCHAR")] byte Level, [NativeTypeName("ULONGLONG")] ulong Keyword, [NativeTypeName("PCWSTR")] ushort* String);
+    public static extern uint EventWriteString([NativeTypeName("REGHANDLE")] ulong RegHandle, [NativeTypeName("UCHAR")] byte Level, [NativeTypeName("ULONGLONG")] ulong Keyword, [NativeTypeName("PCWSTR")] char* String);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventActivityIdControl"]/*' />
     [DllImport("Advapi32", ExactSpelling = true)]
@@ -86,7 +85,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EventDescZero"]/*' />
     public static void EventDescZero([NativeTypeName("PEVENT_DESCRIPTOR")] EVENT_DESCRIPTOR* EventDescriptor)
     {
-        Unsafe.InitBlockUnaligned(EventDescriptor, 0, (uint)(sizeof(EVENT_DESCRIPTOR)));
+        NativeMemory.Fill(EventDescriptor, (uint)(sizeof(EVENT_DESCRIPTOR)), 0);
         return;
     }
 

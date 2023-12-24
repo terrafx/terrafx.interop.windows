@@ -19,32 +19,4 @@ public static unsafe partial class DispDOMMouseEventTests
     {
         Assert.That(typeof(DispDOMMouseEvent).GUID, Is.EqualTo(IID_DispDOMMouseEvent));
     }
-
-    /// <summary>Validates that the <see cref="DispDOMMouseEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispDOMMouseEvent>(), Is.EqualTo(sizeof(DispDOMMouseEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMMouseEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispDOMMouseEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispDOMMouseEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispDOMMouseEvent), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispDOMMouseEvent), Is.EqualTo(4));
-        }
-    }
 }

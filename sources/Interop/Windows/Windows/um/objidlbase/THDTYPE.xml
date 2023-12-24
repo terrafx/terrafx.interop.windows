@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="THDTYPE">
-    <summary>
-      <para>Indicates whether a particular thread supports a message loop.</para>
-    </summary>
-    <seealso cref="IComThreadingInfo.GetCurrentThreadType" />
+    <summary>Indicates whether a particular thread supports a message loop.</summary>
   </member>
   <member name="THDTYPE.THDTYPE_BLOCKMESSAGES">
-    <summary>
-      <para>The thread does not support a message loop. This behavior is associated with multithreaded apartments.</para>
-    </summary>
+    <summary>The thread does not support a message loop. This behavior is associated with multithreaded apartments.</summary>
   </member>
   <member name="THDTYPE.THDTYPE_PROCESSMESSAGES">
-    <summary>
-      <para>The thread supports a message loop. This behavior is associated with single-threaded apartments.</para>
-    </summary>
+    <summary>The thread supports a message loop. This behavior is associated with single-threaded apartments.</summary>
   </member>
 </doc>

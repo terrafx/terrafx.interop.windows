@@ -19,32 +19,4 @@ public static unsafe partial class IInertiaProcessorTests
     {
         Assert.That(typeof(IInertiaProcessor).GUID, Is.EqualTo(IID_IInertiaProcessor));
     }
-
-    /// <summary>Validates that the <see cref="IInertiaProcessor" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInertiaProcessor>(), Is.EqualTo(sizeof(IInertiaProcessor)));
-    }
-
-    /// <summary>Validates that the <see cref="IInertiaProcessor" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInertiaProcessor).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInertiaProcessor" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInertiaProcessor), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInertiaProcessor), Is.EqualTo(4));
-        }
-    }
 }

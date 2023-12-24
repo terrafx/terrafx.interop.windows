@@ -19,25 +19,4 @@ public static unsafe partial class UIAnimationManager2Tests
     {
         Assert.That(typeof(UIAnimationManager2).GUID, Is.EqualTo(CLSID_UIAnimationManager2));
     }
-
-    /// <summary>Validates that the <see cref="UIAnimationManager2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<UIAnimationManager2>(), Is.EqualTo(sizeof(UIAnimationManager2)));
-    }
-
-    /// <summary>Validates that the <see cref="UIAnimationManager2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(UIAnimationManager2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="UIAnimationManager2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(UIAnimationManager2), Is.EqualTo(1));
-    }
 }

@@ -3,71 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYSTEMTIME">
-    <summary>
-      <para>Specifies a date and time, using individual members for the month, day, year, weekday, hour, minute, second, and millisecond. The time is either in coordinated universal time (UTC) or local time, depending on the function that is being called.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The <b>SYSTEMTIME</b> does not check to see if the date represented is a real and valid date. When working with this API, you should ensure its validity, especially in leap year scenarios. See <a href="https://techcommunity.microsoft.com/t5/azure-developer-community-blog/it-s-2020-is-your-code-ready-for-leap-day/ba-p/1157279">leap day readiness</a> for more information.</para>
-      </blockquote>
-      <para>It is not recommended that you add and subtract values from the
-<b>SYSTEMTIME</b> structure to obtain relative times. Instead, you should</para>
-      <list type="bullet">
-        <item>
-          <description>Convert the
-<b>SYSTEMTIME</b> structure to a
-<see cref="FILETIME" /> structure.</description>
-        </item>
-        <item>
-          <description>Copy the resulting
-<see cref="FILETIME" /> structure to a
-<see cref="ULARGE_INTEGER" /> structure.</description>
-        </item>
-        <item>
-          <description>Use normal 64-bit arithmetic on the <see cref="ULARGE_INTEGER" /> value.</description>
-        </item>
-      </list>
-      <para>The system can periodically refresh the time by synchronizing with a time source. Because the system time can be adjusted either forward or backward, do not compare system time readings to determine elapsed time. Instead, use one of the methods described in
-<a href="https://docs.microsoft.com//windows/desktop/SysInfo/windows-time">Windows Time</a>.</para>
-      <h4>Examples</h4>
-      <para>The following example demonstrates the difference between the time values retrieved by the <see cref="GetSystemTime" /> and <see cref="GetLocalTime" /> functions.</para>
-      <code>#include &lt;windows.h&gt;
-#include &lt;stdio.h&gt;
-
-void main()
-{
-    SYSTEMTIME st, lt;
-
-    GetSystemTime(&amp;amp;amp;amp;amp;amp;st);
-    GetLocalTime(&amp;amp;amp;amp;amp;amp;lt);
-
-    printf("The system time is: %02d:%02d\n", st.wHour, st.wMinute);
-    printf(" The local time is: %02d:%02d\n", lt.wHour, lt.wMinute);
-}
-
-
-</code>
-      <code>// Sample output
-
-The system time is: 19:34
- The local time is: 12:34
-
-</code>
-    </remarks>
-    <seealso cref="FILETIME" />
-    <seealso cref="FileTimeToSystemTime" />
-    <seealso cref="GetLocalTime" />
-    <seealso cref="GetSystemTime" />
-    <seealso cref="SetLocalTime" />
-    <seealso cref="SetSystemTime" />
-    <seealso cref="SystemTimeToFileTime" />
-    <seealso cref="ULARGE_INTEGER" />
+    <summary>Specifies a date and time, using individual members for the month, day, year, weekday, hour, minute, second, and millisecond. The time is either in coordinated universal time (UTC) or local time, depending on the function that is being called.</summary>
   </member>
   <member name="SYSTEMTIME.wYear">
-    <summary>
-      <para>The year. The valid values for this member are 1601 through 30827.</para>
-    </summary>
+    <summary>The year. The valid values for this member are 1601 through 30827.</summary>
   </member>
   <member name="SYSTEMTIME.wMonth">
     <summary>
@@ -77,102 +16,126 @@ The system time is: 19:34
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>1</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
+          <description>January</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>January</para>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>February</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>2</para>
+            <list type="bullet">
+              <listheader>
+                <term>3</term>
+              </listheader>
+            </list>
           </description>
+          <description>March</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>February</para>
+            <list type="bullet">
+              <listheader>
+                <term>4</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>April</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>3</para>
+            <list type="bullet">
+              <listheader>
+                <term>5</term>
+              </listheader>
+            </list>
           </description>
+          <description>May</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>March</para>
+            <list type="bullet">
+              <listheader>
+                <term>6</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>June</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>4</para>
+            <list type="bullet">
+              <listheader>
+                <term>7</term>
+              </listheader>
+            </list>
           </description>
+          <description>July</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>April</para>
+            <list type="bullet">
+              <listheader>
+                <term>8</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>August</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>5</para>
+            <list type="bullet">
+              <listheader>
+                <term>9</term>
+              </listheader>
+            </list>
           </description>
+          <description>September</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>May</para>
+            <list type="bullet">
+              <listheader>
+                <term>10</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>October</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>6</para>
+            <list type="bullet">
+              <listheader>
+                <term>11</term>
+              </listheader>
+            </list>
           </description>
+          <description>November</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>June</para>
+            <list type="bullet">
+              <listheader>
+                <term>12</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>7</para>
-          </description>
-          <description>
-            <para>July</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>8</para>
-          </description>
-          <description>
-            <para>August</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>9</para>
-          </description>
-          <description>
-            <para>September</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>10</para>
-          </description>
-          <description>
-            <para>October</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>11</para>
-          </description>
-          <description>
-            <para>November</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>12</para>
-          </description>
-          <description>
-            <para>December</para>
-          </description>
-        </item>
+          <description>December</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -184,88 +147,92 @@ The system time is: 19:34
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>0</para>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
           </description>
+          <description>Sunday</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Sunday</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Monday</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>1</para>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
           </description>
+          <description>Tuesday</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Monday</para>
+            <list type="bullet">
+              <listheader>
+                <term>3</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Wednesday</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>2</para>
+            <list type="bullet">
+              <listheader>
+                <term>4</term>
+              </listheader>
+            </list>
           </description>
+          <description>Thursday</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Tuesday</para>
+            <list type="bullet">
+              <listheader>
+                <term>5</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Friday</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>3</para>
+            <list type="bullet">
+              <listheader>
+                <term>6</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Wednesday</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>4</para>
-          </description>
-          <description>
-            <para>Thursday</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>5</para>
-          </description>
-          <description>
-            <para>Friday</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>6</para>
-          </description>
-          <description>
-            <para>Saturday</para>
-          </description>
-        </item>
+          <description>Saturday</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="SYSTEMTIME.wDay">
-    <summary>
-      <para>The day of the month. The valid values for this member are 1 through 31.</para>
-    </summary>
+    <summary>The day of the month. The valid values for this member are 1 through 31.</summary>
   </member>
   <member name="SYSTEMTIME.wHour">
-    <summary>
-      <para>The hour. The valid values for this member are 0 through 23.</para>
-    </summary>
+    <summary>The hour. The valid values for this member are 0 through 23.</summary>
   </member>
   <member name="SYSTEMTIME.wMinute">
-    <summary>
-      <para>The minute. The valid values for this member are 0 through 59.</para>
-    </summary>
+    <summary>The minute. The valid values for this member are 0 through 59.</summary>
   </member>
   <member name="SYSTEMTIME.wSecond">
-    <summary>
-      <para>The second. The valid values for this member are 0 through 59.</para>
-    </summary>
+    <summary>The second. The valid values for this member are 0 through 59.</summary>
   </member>
   <member name="SYSTEMTIME.wMilliseconds">
-    <summary>
-      <para>The millisecond. The valid values for this member are 0 through 999.</para>
-    </summary>
+    <summary>The millisecond. The valid values for this member are 0 through 999.</summary>
   </member>
 </doc>

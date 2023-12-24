@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_ENDPOINT_ADDRESS_EXTENSION_TYPE">
-    <summary>
-      <para>This identifies a type of extension within the extensions field of the
-<see cref="WS_ENDPOINT_ADDRESS" />.</para>
-    </summary>
+    <summary>This identifies a type of extension within the extensions field of the<see cref="WS_ENDPOINT_ADDRESS" />.</summary>
   </member>
   <member name="WS_ENDPOINT_ADDRESS_EXTENSION_TYPE.WS_ENDPOINT_ADDRESS_EXTENSION_METADATA_ADDRESS">
     <summary>

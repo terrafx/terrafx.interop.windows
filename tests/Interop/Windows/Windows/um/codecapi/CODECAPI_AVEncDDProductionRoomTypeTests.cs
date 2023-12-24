@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncDDProductionRoomTypeTests
     {
         Assert.That(typeof(CODECAPI_AVEncDDProductionRoomType).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDProductionRoomType));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDProductionRoomType" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDProductionRoomType>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDProductionRoomType)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDProductionRoomType" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncDDProductionRoomType).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDProductionRoomType" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncDDProductionRoomType), Is.EqualTo(1));
-    }
 }

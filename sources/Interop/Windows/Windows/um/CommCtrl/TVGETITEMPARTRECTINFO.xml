@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TVGETITEMPARTRECTINFO">
-    <summary>
-      <para>Contains information for identifying the "hit zone" for a specified part of a tree item. The structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tvm-getitempartrect">TVM_GETITEMPARTRECT</a> message and the <see cref="TreeView_GetItemPartRect" /> macro.</para>
-    </summary>
+    <summary>Contains information for identifying the "hit zone" for a specified part of a tree item. The structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tvm-getitempartrect">TVM_GETITEMPARTRECT</a> message and the <see cref="TreeView_GetItemPartRect" /> macro.</summary>
   </member>
   <member name="TVGETITEMPARTRECTINFO.hti">
-    <summary>
-      <para>Type: <b>HTREEITEM</b></para>
-      <para>Handle to the parent item.</para>
-    </summary>
+    <summary>Handle to the parent item.</summary>
   </member>
   <member name="TVGETITEMPARTRECTINFO.prc">
-    <summary>
-      <para>Type: <b><see cref="RECT" />*</b></para>
-      <para>Pointer to a <see cref="RECT" /> structure to receive the coordinates of the bounding rectangle. The sender of the message (the caller) is responsible for allocating this structure.</para>
-    </summary>
+    <summary>Pointer to a <see cref="RECT" /> structure to receive the coordinates of the bounding rectangle. The sender of the message (the caller) is responsible for allocating this structure.</summary>
   </member>
   <member name="TVGETITEMPARTRECTINFO.partID">
-    <summary>
-      <para>Type: <b>TVITEMPART</b></para>
-      <para>ID of the item part. This value must be <b>TVGIPR_BUTTON</b> (0x0001).</para>
-    </summary>
+    <summary>ID of the item part. This value must be <b>TVGIPR_BUTTON</b> (0x0001).</summary>
   </member>
 </doc>

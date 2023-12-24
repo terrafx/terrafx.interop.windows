@@ -24,11 +24,11 @@ public unsafe partial struct PROPSHEETPAGEA_V1
     public HINSTANCE hInstance;
 
     /// <include file='PROPSHEETPAGEA_V1.xml' path='doc/member[@name="PROPSHEETPAGEA_V1.Anonymous1"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEA_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:198:5)")]
+    [NativeTypeName("__AnonymousRecord_prsht_L198_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='PROPSHEETPAGEA_V1.xml' path='doc/member[@name="PROPSHEETPAGEA_V1.Anonymous2"]/*' />
-    [NativeTypeName("_PROPSHEETPAGEA_V1::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/prsht.h:198:5)")]
+    [NativeTypeName("__AnonymousRecord_prsht_L198_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='PROPSHEETPAGEA_V1.xml' path='doc/member[@name="PROPSHEETPAGEA_V1.pszTitle"]/*' />

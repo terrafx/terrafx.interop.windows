@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SAMPLER_FEEDBACK_TIER">
+    <summary>Defines constants that specify sampler feedback support.</summary>
+  </member>
+  <member name="D3D12_SAMPLER_FEEDBACK_TIER.D3D12_SAMPLER_FEEDBACK_TIER_NOT_SUPPORTED">
+    <summary>Specifies that sampler feedback is not supported. Attempts at calling sampler feedback APIs represent an error.</summary>
+  </member>
+  <member name="D3D12_SAMPLER_FEEDBACK_TIER.D3D12_SAMPLER_FEEDBACK_TIER_0_9">
+    <summary>
+      <para>Specifies that sampler feedback is supported to tier 0.9. This indicates the following:</para>
+      <para>Sampler feedback is supported for samplers with these texture addressing modes:</para>
+      <list type="bullet">
+        <item>
+          <description>D3D12_TEXTURE_ADDRESS_MODE_WRAP</description>
+        </item>
+        <item>
+          <description>D3D12_TEXTURE_ADDRESS_MODE_CLAMP</description>
+        </item>
+      </list>
+      <para>The Texture2D shader resource view passed in to feedback-writing HLSL methods has these restrictions:</para>
+      <list type="bullet">
+        <item>
+          <description>The MostDetailedMip field must be 0.</description>
+        </item>
+        <item>
+          <description>The MipLevels count must span the full mip count of the resource.</description>
+        </item>
+        <item>
+          <description>The PlaneSlice field must be 0.</description>
+        </item>
+        <item>
+          <description>The ResourceMinLODClamp field must be 0.</description>
+        </item>
+      </list>
+      <para>The Texture2DArray shader resource view passed in to feedback-writing HLSL methods has these restrictions:</para>
+      <list type="bullet">
+        <item>
+          <description>All the limitations as in Texture2D above, and</description>
+        </item>
+        <item>
+          <description>The FirstArraySlice field must be 0.</description>
+        </item>
+        <item>
+          <description>The ArraySize field must span the full array element count of the resource.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="D3D12_SAMPLER_FEEDBACK_TIER.D3D12_SAMPLER_FEEDBACK_TIER_1_0">
+    <summary>Specifies sample feedback is supported to tier 1.0. This indicates that sampler feedback is supported for all texture addressing modes, and feedback-writing methods are supported irrespective of the passed-in shader resource view.</summary>
+  </member>
+  <member name="D3D12_SAMPLER_FEEDBACK_TIER.D3D12_MESH_SHADER_TIER_NOT_SUPPORTED"></member>
+</doc>

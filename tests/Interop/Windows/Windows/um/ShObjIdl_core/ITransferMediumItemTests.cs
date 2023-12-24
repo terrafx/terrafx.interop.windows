@@ -19,32 +19,4 @@ public static unsafe partial class ITransferMediumItemTests
     {
         Assert.That(typeof(ITransferMediumItem).GUID, Is.EqualTo(IID_ITransferMediumItem));
     }
-
-    /// <summary>Validates that the <see cref="ITransferMediumItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITransferMediumItem>(), Is.EqualTo(sizeof(ITransferMediumItem)));
-    }
-
-    /// <summary>Validates that the <see cref="ITransferMediumItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITransferMediumItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITransferMediumItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITransferMediumItem), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITransferMediumItem), Is.EqualTo(4));
-        }
-    }
 }

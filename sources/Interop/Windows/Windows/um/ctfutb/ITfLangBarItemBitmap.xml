@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfLangBarItemBitmap.DrawBitmap">
-    <summary>
-      <para>Obtains the bitmap and mask for the bitmap item.</para>
-    </summary>
-    <param name="bmWidth">
-      <para>Contains the width, in pixels, of the bitmap item.</para>
-    </param>
-    <param name="bmHeight">
-      <para>Contains the height, in pixels, of the bitmap item.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Not currently used.</para>
-    </param>
-    <param name="phbmp">
-      <para>Pointer to an <i>HBITMAP</i> value that receives the handle of the bitmap drawn for the bitmap item.</para>
-    </param>
+    <summary>Obtains the bitmap and mask for the bitmap item.</summary>
+    <param name="bmWidth">Contains the width, in pixels, of the bitmap item.</param>
+    <param name="bmHeight">Contains the height, in pixels, of the bitmap item.</param>
+    <param name="dwFlags">Not currently used.</param>
+    <param name="phbmp">Pointer to an <i>HBITMAP</i> value that receives the handle of the bitmap drawn for the bitmap item.</param>
     <param name="phbmpMask">
       <para>Pointer to an <b>HBITMAP</b> value that receives the handle of the mask bitmap. This is a monochrome bitmap that functions as a mask for <i>phbmp</i>. Each black pixel in this bitmap will cause the corresponding pixel in <i>phbmp</i> to be displayed in its normal color. Every white pixel in this bitmap will cause the cooresponding pixel in <i>phbmp</i> to be displayed in the inverse of its normal color.</para>
       <para>To display the bitmap without any color conversion, create a monochrome bitmap the same size as <i>phbmp</i> and set each pixel to black (RGB(0, 0, 0)).</para>
@@ -29,49 +19,49 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfLangBarItemBitmap.GetPreferredSize">
-    <summary>
-      <para>Obtains the preferred size, in pixels, of the bitmap.</para>
-    </summary>
-    <param name="pszDefault">
-      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure that contains the default size, in pixels, of the bitmap.</para>
-    </param>
-    <param name="psz">
-      <para>Pointer to a <b>SIZE</b> structure that receives the preferred size, in pixels, of the bitmap. The <b>cy</b> member of this structure is ignored.</para>
-    </param>
+    <summary>Obtains the preferred size, in pixels, of the bitmap.</summary>
+    <param name="pszDefault">Pointer to a <see cref="SIZE" /> structure that contains the default size, in pixels, of the bitmap.</param>
+    <param name="psz">Pointer to a <b>SIZE</b> structure that receives the preferred size, in pixels, of the bitmap. The <b>cy</b> member of this structure is ignored.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -79,34 +69,26 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfLangBarItemBitmap" />
-    <seealso href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</seealso>
   </member>
   <member name="ITfLangBarItemBitmap.OnClick">
-    <summary>
-      <para>Not currently used.</para>
-    </summary>
-    <param name="click">
-      <para>Contains one of the <see cref="TfLBIClick" /> values that indicate which mouse button was used to click the bitmap.</para>
-    </param>
-    <param name="pt">
-      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that contains the position of the mouse cursor, in screen coordinates, at the time of the click event.</para>
-    </param>
-    <param name="prcArea">
-      <para>Pointer to a <see cref="RECT" /> structure that contains the bounding rectangle, in screen coordinates, of the bitmap.</para>
-    </param>
+    <summary>Not currently used.</summary>
+    <param name="click">Contains one of the <see cref="TfLBIClick" /> values that indicate which mouse button was used to click the bitmap.</param>
+    <param name="pt">Pointer to a <see cref="POINT" /> structure that contains the position of the mouse cursor, in screen coordinates, at the time of the click event.</param>
+    <param name="prcArea">Pointer to a <see cref="RECT" /> structure that contains the bounding rectangle, in screen coordinates, of the bitmap.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -114,43 +96,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfLangBarItemBitmap" />
-    <seealso href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</seealso>
-    <seealso cref="RECT" />
-    <seealso cref="TfLBIClick " />
   </member>
   <member name="ITfLangBarItemBitmap">
     <summary>
       <para>The <b>ITfLangBarItemBitmap</b> interface is implemented by an application or text service and used by the language bar manager to obtain information specific to a bitmap item on the language bar.</para>
       <para>The language bar manager obtains an instance of this interface by calling QueryInterface on the <see cref="ITfLangBarItem" /> passed to <see cref="ITfLangBarItemMgr.AddItem" /> with IID_ITfLangBarItemBitmap.</para>
     </summary>
-    <remarks>
-      <para>A language bar bitmap functions as a static item on the language bar that displays a bitmap.</para>
-    </remarks>
-    <seealso cref="ITfLangBarItem " />
-    <seealso cref="ITfLangBarItemMgr.AddItem " />
-    <seealso cref="IUnknown" />
   </member>
 </doc>

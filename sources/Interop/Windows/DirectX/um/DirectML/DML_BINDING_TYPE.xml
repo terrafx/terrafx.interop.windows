@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_BINDING_TYPE">
-    <summary>
-      <para>Defines constants that specify the nature of the resource(s) referred to by a binding description (a <see cref="DML_BINDING_DESC" /> structure).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
-    <seealso cref="DML_BINDING_DESC" />
+    <summary>Defines constants that specify the nature of the resource(s) referred to by a binding description (a <see cref="DML_BINDING_DESC" /> structure).</summary>
   </member>
   <member name="DML_BINDING_TYPE.DML_BINDING_TYPE_NONE">
-    <summary>
-      <para>Indicates that no resources are to be bound.</para>
-    </summary>
+    <summary>Indicates that no resources are to be bound.</summary>
   </member>
   <member name="DML_BINDING_TYPE.DML_BINDING_TYPE_BUFFER">
-    <summary>
-      <para>Specifies a binding that binds a single buffer to the binding table. The corresponding binding desc type is <see cref="DML_BUFFER_BINDING" />.</para>
-    </summary>
+    <summary>Specifies a binding that binds a single buffer to the binding table. The corresponding binding desc type is <see cref="DML_BUFFER_BINDING" />.</summary>
   </member>
   <member name="DML_BINDING_TYPE.DML_BINDING_TYPE_BUFFER_ARRAY">
-    <summary>
-      <para>Specifies a binding that binds an array of buffers to the binding table. The corresponding binding desc type is <see cref="DML_BUFFER_ARRAY_BINDING" />.</para>
-    </summary>
+    <summary>Specifies a binding that binds an array of buffers to the binding table. The corresponding binding desc type is <see cref="DML_BUFFER_ARRAY_BINDING" />.</summary>
   </member>
 </doc>

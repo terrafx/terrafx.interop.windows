@@ -10,7 +10,7 @@ public unsafe partial struct STATPROPSTG
 {
     /// <include file='STATPROPSTG.xml' path='doc/member[@name="STATPROPSTG.lpwstrName"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* lpwstrName;
+    public char* lpwstrName;
 
     /// <include file='STATPROPSTG.xml' path='doc/member[@name="STATPROPSTG.propid"]/*' />
     [NativeTypeName("PROPID")]

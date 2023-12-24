@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FontFamily.Clone">
+    <summary>The <b>FontFamily.Clone</b> method creates a new <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object based on this <b>FontFamily</b> object.</summary>
+    <returns>This method returns a pointer to the new <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object.</returns>
+  </member>
+  <member name="FontFamily.FontFamily">
+    <summary>Creates a <b>FontFamily.FontFamily</b> object based on a specified font family.</summary>
+    <param name="name">Name of the font family. For example, Arial.ttf is the name of the Arial font family.</param>
+    <param name="fontCollection">Optional. Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontcollection">FontCollection</a> object that specifies the collection that the font family belongs to. If<b>FontCollection</b> is <b>NULL</b>, this font family is not part of a collection. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="FontFamily.FontFamily">
+    <summary>Creates an empty <b>FontFamily.FontFamily</b> object.</summary>
+  </member>
+  <member name="FontFamily.GenericMonospace">
+    <summary>The <b>FontFamily.GenericMonospace</b> method gets a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that specifies a generic monospace typeface.</summary>
+    <returns>This method returns a pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that specifies a generic monospace typeface.</returns>
+  </member>
+  <member name="FontFamily.GenericSansSerif">
+    <summary>The <b>FontFamily.GenericSansSerif</b> method gets a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that specifies a generic sans serif typeface.</summary>
+    <returns>This method returns a pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that specifies a generic sans serif typeface.</returns>
+  </member>
+  <member name="FontFamily.GenericSerif">
+    <summary>The <b>FontFamily.GenericSerif</b> method gets a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that represents a generic serif typeface.</summary>
+    <returns>This method returns a pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object that represents a generic serif typeface.</returns>
+  </member>
+  <member name="FontFamily.GetCellAscent">
+    <summary>The <b>FontFamily.GetCellAscent</b> method gets the cell ascent, in design units, of this font family for the specified style or style combination.</summary>
+    <param name="style">Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise <b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold | FontStyleUnderline | FontStyleStrikeout</code> specifies a combination of the three styles.</param>
+    <returns>This method returns the cell ascent, in design units, of this font family for the specified style or style combination.</returns>
+  </member>
+  <member name="FontFamily.GetCellDescent">
+    <summary>The <b>FontFamily.GetCellDescent</b> method gets the cell descent, in design units, of this font family for the specified style or style combination.</summary>
+    <param name="style">Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise <b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold | FontStyleUnderline | FontStyleStrikeout</code> specifies a combination of the three styles.</param>
+    <returns>This method returns the cell descent, in design units, of this font family for the specified style or style combination.</returns>
+  </member>
+  <member name="FontFamily.GetEmHeight">
+    <summary>The <b>FontFamily.GetEmHeight</b> method gets the size (commonly called em size or em height), in design units, of this font family.</summary>
+    <param name="style">Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise <b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold | FontStyleUnderline | FontStyleStrikeout</code> specifies a combination of the three styles.</param>
+    <returns>This method returns the size, in design units, of this font family.</returns>
+  </member>
+  <member name="FontFamily.GetFamilyName">
+    <summary>The <b>FontFamily.GetFamilyName</b> method gets the name of this font family.</summary>
+    <param name="name">Name of this font family.</param>
+    <param name="language">Optional. Sixteen-bit value that specifies the language to use. The default value is LANG_NEUTRAL, which is the user's default language.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="FontFamily.GetLastStatus">
+    <summary>The <b>FontFamily.GetLastStatus</b> method returns a value that indicates the nature of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>FontFamily.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object have failed since the previous call to <b>FontFamily.GetLastStatus</b>, then <b>FontFamily.GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object has failed since the previous call to <b>FontFamily.GetLastStatus</b>, then <b>FontFamily.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="FontFamily.GetLineSpacing">
+    <summary>The <b>FontFamily.GetLineSpacing</b> method gets the line spacing, in design units, of this font family for the specified style or style combination. The line spacing is the vertical distance between the base lines of two consecutive lines of text.</summary>
+    <param name="style">Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise <b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold | FontStyleUnderline | FontStyleStrikeout</code> specifies a combination of the three styles.</param>
+    <returns>This method returns the line spacing of this font family.</returns>
+  </member>
+  <member name="FontFamily.IsAvailable">
+    <summary>The <b>FontFamily.IsAvailable</b> method determines whether this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object was created successfully.</summary>
+    <returns>If this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-fontfamily">FontFamily</a> object was created successfully, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="FontFamily.IsStyleAvailable">
+    <summary>The <b>FontFamily.IsStyleAvailable</b> method determines whether the specified style is available for this font family.</summary>
+    <param name="style">Integer that specifies the style of the typeface. This value must be an element of the <see cref="FontStyle" /> enumeration or the result of a bitwise <b>OR</b> applied to two or more of these elements. For example, <code>FontStyleBold | FontStyleUnderline | FontStyleStrikeout</code> specifies a combination of the three styles.</param>
+    <returns>If the style or combination of styles is available, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+</doc>

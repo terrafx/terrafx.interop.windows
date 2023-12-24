@@ -19,32 +19,4 @@ public static unsafe partial class ISpatialAudioObjectRenderStreamBaseTests
     {
         Assert.That(typeof(ISpatialAudioObjectRenderStreamBase).GUID, Is.EqualTo(IID_ISpatialAudioObjectRenderStreamBase));
     }
-
-    /// <summary>Validates that the <see cref="ISpatialAudioObjectRenderStreamBase" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpatialAudioObjectRenderStreamBase>(), Is.EqualTo(sizeof(ISpatialAudioObjectRenderStreamBase)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpatialAudioObjectRenderStreamBase" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpatialAudioObjectRenderStreamBase).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpatialAudioObjectRenderStreamBase" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpatialAudioObjectRenderStreamBase), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpatialAudioObjectRenderStreamBase), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,34 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.CryptSIPAddProvider">
-    <summary>
-      <para>The <b>CryptSIPAddProvider</b> function registers functions that are exported by a given DLL file that implements  a Subject Interface Package (SIP).</para>
-    </summary>
-    <param name="psNewProv">
-      <para>A pointer to a <see cref="SIP_ADD_NEWPROVIDER" /> structure that specifies the DLL file and function names to register.</para>
-    </param>
-    <returns>
-      <para>The return value is <b>TRUE</b> if the function succeeds; <b>FALSE</b> if the function fails. If the function fails, call the <see cref="GetLastError" /> function to determine the reason for failure.</para>
-    </returns>
-    <remarks>
-      <para>Typically, you call this function as part of an in-process COM server registration. The <b>CryptSIPAddProvider</b> function persists the appropriate Registry entries for the SIP provider functions.</para>
-      <para>When you have finished using the added SIP provider, remove it by calling the <see cref="CryptSIPRemoveProvider" /> function.</para>
-    </remarks>
-    <seealso cref="CryptSIPRemoveProvider" />
+    <summary>The <b>CryptSIPAddProvider</b> function registers functions that are exported by a given DLL file that implements a Subject Interface Package (SIP).</summary>
+    <param name="psNewProv">A pointer to a <see cref="SIP_ADD_NEWPROVIDER" /> structure that specifies the DLL file and function names to register.</param>
+    <returns>The return value is <b>TRUE</b> if the function succeeds; <b>FALSE</b> if the function fails. If the function fails, call the <see cref="GetLastError" /> function to determine the reason for failure.</returns>
   </member>
   <member name="Windows.CryptSIPCreateIndirectData">
-    <summary>
-      <para>The <see cref="SIP_SUBJECTINFO" /> structure, the digest algorithm, and  an encoding attribute. The hash can be used as an indirect reference to the data.</para>
-    </summary>
-    <param name="pSubjectInfo">
-      <para>A pointer to a <see cref="SIP_SUBJECTINFO" /> structure that contains the subject to which the indirect data reference will point.</para>
-    </param>
-    <param name="pcbIndirectData">
-      <para>A pointer to a <see cref="SIP_INDIRECT_DATA" /> structure.</para>
-    </param>
-    <param name="pIndirectData">
-      <para>A pointer to a <see cref="SIP_INDIRECT_DATA" /> structure to receive the catalog item.</para>
-    </param>
+    <summary>The <see cref="SIP_SUBJECTINFO" /> structure, the digest algorithm, and an encoding attribute. The hash can be used as an indirect reference to the data.</summary>
+    <param name="pSubjectInfo">A pointer to a <see cref="SIP_SUBJECTINFO" /> structure that contains the subject to which the indirect data reference will point.</param>
+    <param name="pcbIndirectData">A pointer to a <see cref="SIP_INDIRECT_DATA" /> structure.</param>
+    <param name="pIndirectData">A pointer to a <see cref="SIP_INDIRECT_DATA" /> structure to receive the catalog item.</param>
     <returns>
       <para>The return value is <b>TRUE</b> if the function succeeds; otherwise, <b>FALSE</b>.</para>
       <para>If this function returns <b>FALSE</b>, additional error information can be obtained by calling the <see cref="GetLastError" /> function. <b>GetLastError</b> will return one of the following error codes.</para>
@@ -39,87 +20,77 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_BAD_FORMAT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_BAD_FORMAT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The file or data format is not correct for the specified <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP) type.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The file or data format is not correct for the specified <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP) type.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the parameters are not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_ENOUGH_MEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>There was an error allocating memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the parameters are not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>NTE_BAD_ALGID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified algorithm is not supported by the SIP.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_NOT_ENOUGH_MEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_E_SUBJECT_FORM_UNKNOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There was an error allocating memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>NTE_BAD_ALGID</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified algorithm is not supported by the SIP.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TRUST_E_SUBJECT_FORM_UNKNOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The subject type is not recognized.</para>
-          </description>
-        </item>
+          <description>The subject type is not recognized.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If <i>pcbIndirectData</i> points to a <b>DWORD</b> and <i>pIndirectData</i> points to <b>NULL</b>, the size of the data will be returned
-in <i>pcbIndirectData</i>.</para>
-    </remarks>
   </member>
   <member name="Windows.CryptSIPGetCaps">
-    <summary>
-      <para>The <b>CryptSIPGetCaps</b> function retrieves the capabilities of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP).</para>
-    </summary>
-    <param name="pSubjInfo">
-      <para>Pointer to a <see cref="SIP_SUBJECTINFO" /> structure that specifies subject information data to the SIP APIs.</para>
-    </param>
-    <param name="pCaps">
-      <para>Pointer to a <see cref="SIP_CAP_SET" /> structure that defines the capabilities of an SIP.</para>
-    </param>
-    <remarks>
-      <para>Unlike other SIP functions, <see cref="SIP_DISPATCH_INFO" /> structure. Instead, callers must map the object identifier (OID) to the function entry point.</para>
-    </remarks>
-    <seealso cref="SIP_CAP_SET" />
-    <seealso cref="SIP_SUBJECTINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/mssip/nc-mssip-pcryptsipgetcaps">pCryptSIPGetCaps</seealso>
+    <summary>The <b>CryptSIPGetCaps</b> function retrieves the capabilities of a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP).</summary>
+    <param name="pSubjInfo">Pointer to a <see cref="SIP_SUBJECTINFO" /> structure that specifies subject information data to the SIP APIs.</param>
+    <param name="pCaps">Pointer to a <see cref="SIP_CAP_SET" /> structure that defines the capabilities of an SIP.</param>
   </member>
   <member name="Windows.CryptSIPGetSignedDataMsg">
-    <summary>
-      <para>The <b>CryptSIPGetSignedDataMsg</b> function retrieves an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Authenticode</a> signature from the file.</para>
-    </summary>
-    <param name="pSubjectInfo">
-      <para>A pointer to a <see cref="SIP_SUBJECTINFO" /> structure that contains information about the message subject.</para>
-    </param>
+    <summary>The <b>CryptSIPGetSignedDataMsg</b> function retrieves an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Authenticode</a> signature from the file.</summary>
+    <param name="pSubjectInfo">A pointer to a <see cref="SIP_SUBJECTINFO" /> structure that contains information about the message subject.</param>
     <param name="pdwEncodingType">
       <para>The encoding type of the Authenticode signature.</para>
       <para>This parameter can be a combination of one or more of the following values.</para>
@@ -128,52 +99,43 @@ in <i>pcbIndirectData</i>.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>PKCS_7_ASN_ENCODING</b>
-                </description>
-              </item>
-              <item>
-                <description>65536 (0x10000)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>65536 (0x10000)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Specifies <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">PKCS #7</a> message encoding.</para>
-          </description>
-        </item>
-        <item>
+          <description>Specifies <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">PKCS #7</a> message encoding.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>X509_ASN_ENCODING</b>
-                </description>
-              </item>
-              <item>
-                <description>1 (0x1)</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1 (0x1)</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Specifies <a href="https://docs.microsoft.com//windows/desktop/SecGloss/x-gly">X.509</a> certificate encoding.</para>
-          </description>
-        </item>
+          <description>Specifies <a href="https://docs.microsoft.com//windows/desktop/SecGloss/x-gly">X.509</a> certificate encoding.</description>
+        </listheader>
       </list>
     </param>
-    <param name="dwIndex">
-      <para>This parameter is reserved and should be set to zero.</para>
-    </param>
-    <param name="pcbSignedDataMsg">
-      <para>The length, in bytes, of the buffer pointed to by the <i>pbSignedDataMsg</i> parameter.</para>
-    </param>
+    <param name="dwIndex">This parameter is reserved and should be set to zero.</param>
+    <param name="pcbSignedDataMsg">The length, in bytes, of the buffer pointed to by the <i>pbSignedDataMsg</i> parameter.</param>
     <param name="pbSignedDataMsg">
       <para>A pointer to a buffer to receive the returned Authenticode signature.</para>
-      <para>To determine the size of the buffer needed, set the <i>pbSignedDataMsg</i> parameter to <b>NULL</b> and call the <b>CryptSIPGetSignedDataMsg</b> function. This function will place the required size of the buffer, in bytes, in the value pointed to by <i>pcbSignedDataMsg</i>. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/SecCrypto/retrieving-data-of-unknown-length">Retrieving Data of Unknown Length</a>.</para>
+      <para>To determine the size of the buffer needed, set the <i>pbSignedDataMsg</i> parameter to <b>NULL</b> and call the <b>CryptSIPGetSignedDataMsg</b> function. This function will place the required size of the buffer, in bytes, in the value pointed to by <i>pcbSignedDataMsg</i>. For more information, see<a href="https://docs.microsoft.com//windows/desktop/SecCrypto/retrieving-data-of-unknown-length">Retrieving Data of Unknown Length</a>.</para>
     </param>
     <returns>
       <para>If the function succeeds, the function returns <b>TRUE</b>.</para>
@@ -183,145 +145,108 @@ in <i>pcbIndirectData</i>.</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>CRYPT_E_NO_MATCH</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CRYPT_E_NO_MATCH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The signature specified by the index could not be found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The signature specified by the index could not be found.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_BAD_FORMAT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified data or file format of the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP) is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_BAD_FORMAT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The [SIP_SUBJECTINFO](/windows/desktop/api/mssip/ns-mssip-sip_subjectinfo) structure is a null pointer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified data or file format of the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP) is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The size of the message buffer was insufficient to hold the retrieved data, the <i>pcbSignedDataMsg</i> parameter has been set to indicate the required buffer size.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_E_SUBJECT_FORM_UNKNOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <see cref="SIP_SUBJECTINFO" /> structure is a null pointer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The size of the message buffer was insufficient to hold the retrieved data, the <i>pcbSignedDataMsg</i> parameter has been set to indicate the required buffer size.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TRUST_E_SUBJECT_FORM_UNKNOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified subject type is not valid.</para>
-          </description>
-        </item>
+          <description>The specified subject type is not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Subjects include, but are not limited to, portable executable images (.exe), cabinet (.cab) images, flat files, and catalog files. Each subject type uses a different subset of its data for hash calculation and requires a different procedure for storage and retrieval. Therefore, each subject type has a unique SIP specification.</para>
-    </remarks>
-    <seealso cref="CryptSIPPutSignedDataMsg" />
-    <seealso cref="CryptSIPRemoveSignedDataMsg" />
   </member>
   <member name="Windows.CryptSIPLoad">
-    <summary>
-      <para>The <see cref="SIP_DISPATCH_INFO" /> structure. The exported functions must have been previously registered by calling the <see cref="CryptSIPAddProvider" /> function.</para>
-    </summary>
-    <param name="pgSubject">
-      <para>A pointer to a GUID returned by calling the <see cref="CryptSIPRetrieveSubjectGuid" /> function.</para>
-    </param>
-    <param name="dwFlags">
-      <para>This parameter is reserved and must be set to zero.</para>
-    </param>
-    <param name="pSipDispatch">
-      <para>A pointer to a <see cref="SIP_DISPATCH_INFO" /> structure that contains pointers to SIP provider functions that are specific to the subject type. The caller must initialize this structure to binary zeros, and set the <b>cbSize</b> member to <code>sizeof(SIP_DISPATCH_INFO)</code> before calling the <b>CryptSIPLoad</b> function.</para>
-    </param>
+    <summary>The <see cref="SIP_DISPATCH_INFO" /> structure. The exported functions must have been previously registered by calling the <see cref="CryptSIPAddProvider" /> function.</summary>
+    <param name="pgSubject">A pointer to a GUID returned by calling the <see cref="CryptSIPRetrieveSubjectGuid" /> function.</param>
+    <param name="dwFlags">This parameter is reserved and must be set to zero.</param>
+    <param name="pSipDispatch">A pointer to a <see cref="SIP_DISPATCH_INFO" /> structure that contains pointers to SIP provider functions that are specific to the subject type. The caller must initialize this structure to binary zeros, and set the <b>cbSize</b> member to <code>sizeof(SIP_DISPATCH_INFO)</code> before calling the <b>CryptSIPLoad</b> function.</param>
     <returns>
       <para>If the function succeeds, the function returns <b>TRUE</b>.</para>
-      <para>If the function fails, it returns  <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+      <para>If the function fails, it returns <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
     </returns>
   </member>
   <member name="Windows.CryptSIPRemoveProvider">
-    <summary>
-      <para>The <b>CryptSIPRemoveProvider</b> function removes registry details of a Subject Interface Package (SIP) DLL file  added by a previous call to the <see cref="CryptSIPAddProvider" /> function.</para>
-    </summary>
-    <param name="pgProv">
-      <para>A pointer to the GUID that identifies the SIP DLL  to remove.</para>
-    </param>
-    <returns>
-      <para>The return value is <b>TRUE</b> if the function succeeds; <b>FALSE</b> if the function fails. If the function fails, call the <see cref="GetLastError" /> function to determine the reason for failure.</para>
-    </returns>
-    <remarks>
-      <para>Typically you call this function to unregister an in-process COM server. The <b>CryptSIPRemoveProvider</b> function removes the appropriate Registry entries for the SIP provider functions.</para>
-    </remarks>
-    <seealso cref="CryptSIPAddProvider" />
+    <summary>The <b>CryptSIPRemoveProvider</b> function removes registry details of a Subject Interface Package (SIP) DLL file added by a previous call to the <see cref="CryptSIPAddProvider" /> function.</summary>
+    <param name="pgProv">A pointer to the GUID that identifies the SIP DLL to remove.</param>
+    <returns>The return value is <b>TRUE</b> if the function succeeds; <b>FALSE</b> if the function fails. If the function fails, call the <see cref="GetLastError" /> function to determine the reason for failure.</returns>
   </member>
   <member name="Windows.CryptSIPRemoveSignedDataMsg">
-    <summary>
-      <para>The <b>CryptSIPRemoveSignedDataMsg</b> function removes a specified <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Authenticode</a> signature.</para>
-    </summary>
-    <param name="pSubjectInfo">
-      <para>A pointer to a <see cref="SIP_SUBJECTINFO" /> structure that contains information about the message subject.</para>
-    </param>
-    <param name="dwIndex">
-      <para>This parameter is reserved and should be set to zero.</para>
-    </param>
+    <summary>The <b>CryptSIPRemoveSignedDataMsg</b> function removes a specified <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">Authenticode</a> signature.</summary>
+    <param name="pSubjectInfo">A pointer to a <see cref="SIP_SUBJECTINFO" /> structure that contains information about the message subject.</param>
+    <param name="dwIndex">This parameter is reserved and should be set to zero.</param>
     <returns>
       <para>If the function succeeds, the function returns <b>TRUE</b>.</para>
-      <para>If the function fails, it returns  <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+      <para>If the function fails, it returns <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
     </returns>
-    <seealso cref="CryptSIPGetSignedDataMsg" />
-    <seealso cref="CryptSIPPutSignedDataMsg" />
   </member>
   <member name="Windows.CryptSIPRetrieveSubjectGuid">
-    <summary>
-      <para>The <b>CryptSIPRetrieveSubjectGuid</b> function retrieves a GUID based on the header information in  a specified file. The GUID is used by the <see cref="CryptSIPLoad" /> function to load the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP) implementation for the given file type.</para>
-    </summary>
-    <param name="FileName">
-      <para>The name of the file.</para>
-    </param>
-    <param name="hFileIn">
-      <para>A handle to the file to check.</para>
-    </param>
-    <param name="pgSubject">
-      <para>A GUID that identifies the subject.</para>
-    </param>
+    <summary>The <b>CryptSIPRetrieveSubjectGuid</b> function retrieves a GUID based on the header information in a specified file. The GUID is used by the <see cref="CryptSIPLoad" /> function to load the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface package</a> (SIP) implementation for the given file type.</summary>
+    <param name="FileName">The name of the file.</param>
+    <param name="hFileIn">A handle to the file to check.</param>
+    <param name="pgSubject">A GUID that identifies the subject.</param>
     <returns>
       <para>If the function succeeds, the function returns <b>TRUE</b>.</para>
-      <para>If the function fails, it returns  <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
+      <para>If the function fails, it returns <b>FALSE</b>. For extended error information, call <see cref="GetLastError" />.</para>
     </returns>
   </member>
   <member name="Windows.CryptSIPRetrieveSubjectGuidForCatalogFile">
-    <summary>
-      <para>The  <b>CryptSIPRetrieveSubjectGuidForCatalogFile</b> function retrieves the subject GUID associated with the specified file.</para>
-    </summary>
-    <param name="FileName">
-      <para>The name of the file. If the <i>hFileIn</i> parameter is set, the value in this parameter is ignored.</para>
-    </param>
-    <param name="hFileIn">
-      <para>A handle to the file to check. This parameter must contain a valid handle if the <i>FileName</i> parameter is <b>NULL</b>.</para>
-    </param>
-    <param name="pgSubject">
-      <para>A globally unique ID that identifies the subject.</para>
-    </param>
+    <summary>The <b>CryptSIPRetrieveSubjectGuidForCatalogFile</b> function retrieves the subject GUID associated with the specified file.</summary>
+    <param name="FileName">The name of the file. If the <i>hFileIn</i> parameter is set, the value in this parameter is ignored.</param>
+    <param name="hFileIn">A handle to the file to check. This parameter must contain a valid handle if the <i>FileName</i> parameter is <b>NULL</b>.</param>
+    <param name="pgSubject">A globally unique ID that identifies the subject.</param>
     <returns>
       <para>The return value is <b>TRUE</b> if the function succeeds; otherwise, <b>FALSE</b>.</para>
       <para>If this function returns <b>FALSE</b>, additional error information can be obtained by calling the <see cref="GetLastError" /> function. <b>GetLastError</b> will return one of the following error codes.</para>
@@ -330,32 +255,25 @@ in <i>pcbIndirectData</i>.</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more of the parameters are not valid.</para>
-          </description>
-        </item>
+          <description>One or more of the parameters are not valid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This function only supports <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subject interface packages</a> (SIPs) that are used for portable executable images (.exe), cabinet (.cab) images, and flat files.</para>
-    </remarks>
   </member>
   <member name="Windows.CryptSIPVerifyIndirectData">
-    <summary>
-      <para>The <b>CryptSIPVerifyIndirectData</b> function validates the indirect hashed data against the supplied subject.</para>
-    </summary>
-    <param name="pSubjectInfo">
-      <para>A pointer to a <see cref="SIP_SUBJECTINFO" /> structure that contains information about the message subject.</para>
-    </param>
-    <param name="pIndirectData">
-      <para>A pointer to a <see cref="SIP_INDIRECT_DATA" /> structure that contains information about the hashed subject information.</para>
-    </param>
+    <summary>The <b>CryptSIPVerifyIndirectData</b> function validates the indirect hashed data against the supplied subject.</summary>
+    <param name="pSubjectInfo">A pointer to a <see cref="SIP_SUBJECTINFO" /> structure that contains information about the message subject.</param>
+    <param name="pIndirectData">A pointer to a <see cref="SIP_INDIRECT_DATA" /> structure that contains information about the hashed subject information.</param>
     <returns>
       <para>The return value is <b>TRUE</b> if the function succeeds; otherwise, <b>FALSE</b>.</para>
       <para>If this function returns <b>FALSE</b>, additional error information can be obtained by calling the <see cref="GetLastError" /> function. <b>GetLastError</b> will return one of the following error codes.</para>
@@ -364,30 +282,31 @@ in <i>pcbIndirectData</i>.</para>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_INVALID_PARAMETER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INVALID_PARAMETER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more of the parameters are not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the parameters are not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUST_E_SUBJECT_FORM_UNKNOWN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TRUST_E_SUBJECT_FORM_UNKNOWN</b>
-            </para>
-          </description>
-          <description>
-            <para>The subject type is an unknown type.</para>
-          </description>
-        </item>
+          <description>The subject type is an unknown type.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Subjects include, but are not limited to, portable executable images (.exe), cabinet (.cab) images, flat files, and catalog files. Each subject type uses a different subset of its data for hash calculation and requires a different procedure for storage and retrieval. Therefore each subject type has a unique subject interface package specification.</para>
-    </remarks>
   </member>
 </doc>

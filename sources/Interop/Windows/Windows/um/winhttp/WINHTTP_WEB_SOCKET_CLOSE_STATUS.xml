@@ -3,72 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS">
-    <summary>
-      <para>The <b>WINHTTP_WEB_SOCKET_CLOSE_STATUS</b> enumeration includes the status of a WebSocket close operation.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>WINHTTP_WEB_SOCKET_CLOSE_STATUS</b> is used by <see cref="WinHttpWebSocketClose" />, <see cref="WinHttpWebSocketShutdown" />, and <see cref="WinHttpWebSocketQueryCloseStatus" />.</para>
-    </remarks>
-    <seealso cref="WinHttpWebSocketClose" />
-    <seealso cref="WinHttpWebSocketQueryCloseStatus" />
-    <seealso cref="WinHttpWebSocketShutdown" />
+    <summary>The <b>WINHTTP_WEB_SOCKET_CLOSE_STATUS</b> enumeration includes the status of a WebSocket close operation.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_SUCCESS_CLOSE_STATUS">
-    <summary>
-      <para>The connection closed successfully.</para>
-    </summary>
+    <summary>The connection closed successfully.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_ENDPOINT_TERMINATED_CLOSE_STATUS">
-    <summary>
-      <para>The peer is going away and terminating the connection.</para>
-    </summary>
+    <summary>The peer is going away and terminating the connection.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_PROTOCOL_ERROR_CLOSE_STATUS">
-    <summary>
-      <para>A protocol error occurred.</para>
-    </summary>
+    <summary>A protocol error occurred.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_INVALID_DATA_TYPE_CLOSE_STATUS">
-    <summary>
-      <para>Invalid data received by the peer.</para>
-    </summary>
+    <summary>Invalid data received by the peer.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_EMPTY_CLOSE_STATUS">
-    <summary>
-      <para>The close message was empty.</para>
-    </summary>
+    <summary>The close message was empty.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_ABORTED_CLOSE_STATUS">
-    <summary>
-      <para>The connection was aborted.</para>
-    </summary>
+    <summary>The connection was aborted.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_INVALID_PAYLOAD_CLOSE_STATUS">
-    <summary>
-      <para>The payload was invalid.</para>
-    </summary>
+    <summary>The payload was invalid.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_POLICY_VIOLATION_CLOSE_STATUS">
-    <summary>
-      <para>The message violates an endpoint's policy.</para>
-    </summary>
+    <summary>The message violates an endpoint's policy.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_MESSAGE_TOO_BIG_CLOSE_STATUS">
-    <summary>
-      <para>The message sent was too large to process.</para>
-    </summary>
+    <summary>The message sent was too large to process.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_UNSUPPORTED_EXTENSIONS_CLOSE_STATUS">
-    <summary>
-      <para>A client endpoint expected the server to negotiate one or more extensions, but the server didn't return them in the response message of the WebSocket handshake.</para>
-    </summary>
+    <summary>A client endpoint expected the server to negotiate one or more extensions, but the server didn't return them in the response message of the WebSocket handshake.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_SERVER_ERROR_CLOSE_STATUS">
-    <summary>
-      <para>An unexpected condition prevented the server from
-fulfilling the request.</para>
-    </summary>
+    <summary>An unexpected condition prevented the server from fulfilling the request.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_CLOSE_STATUS.WINHTTP_WEB_SOCKET_SECURE_HANDSHAKE_ERROR_CLOSE_STATUS">
     <summary>

@@ -19,32 +19,4 @@ public static unsafe partial class IWinInetCacheHintsTests
     {
         Assert.That(typeof(IWinInetCacheHints).GUID, Is.EqualTo(IID_IWinInetCacheHints));
     }
-
-    /// <summary>Validates that the <see cref="IWinInetCacheHints" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWinInetCacheHints>(), Is.EqualTo(sizeof(IWinInetCacheHints)));
-    }
-
-    /// <summary>Validates that the <see cref="IWinInetCacheHints" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWinInetCacheHints).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWinInetCacheHints" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWinInetCacheHints), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWinInetCacheHints), Is.EqualTo(4));
-        }
-    }
 }

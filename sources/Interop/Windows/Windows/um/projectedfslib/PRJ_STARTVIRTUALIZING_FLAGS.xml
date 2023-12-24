@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_STARTVIRTUALIZING_FLAGS">
-    <summary>
-      <para>Flags to provide when starting a virtualization instance.</para>
-    </summary>
+    <summary>Flags to provide when starting a virtualization instance.</summary>
   </member>
   <member name="PRJ_STARTVIRTUALIZING_FLAGS.PRJ_FLAG_NONE">
-    <summary>
-      <para>No flags.</para>
-    </summary>
+    <summary>No flags.</summary>
   </member>
   <member name="PRJ_STARTVIRTUALIZING_FLAGS.PRJ_FLAG_USE_NEGATIVE_PATH_CACHE">
     <summary>

@@ -25,7 +25,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, Guid*, void**, int>)(lpVtbl[0]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, Guid*, void**, int>)(lpVtbl[0]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, uint>)(lpVtbl[1]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, uint>)(lpVtbl[1]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, uint>)(lpVtbl[2]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, uint>)(lpVtbl[2]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, uint*, int>)(lpVtbl[3]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, uint*, int>)(lpVtbl[3]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_screenX"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT get_screenX([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[7]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[7]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_screenY"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT get_screenY([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[8]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[8]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_clientX"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(9)]
     public HRESULT get_clientX([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[9]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[9]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_clientY"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(10)]
     public HRESULT get_clientY([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[10]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[10]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_ctrlKey"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(11)]
     public HRESULT get_ctrlKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, short*, int>)(lpVtbl[11]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, short*, int>)(lpVtbl[11]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_shiftKey"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(12)]
     public HRESULT get_shiftKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, short*, int>)(lpVtbl[12]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, short*, int>)(lpVtbl[12]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_altKey"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(13)]
     public HRESULT get_altKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, short*, int>)(lpVtbl[13]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, short*, int>)(lpVtbl[13]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_metaKey"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(14)]
     public HRESULT get_metaKey([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, short*, int>)(lpVtbl[14]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, short*, int>)(lpVtbl[14]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_button"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(15)]
     public HRESULT get_button(ushort* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, ushort*, int>)(lpVtbl[15]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, ushort*, int>)(lpVtbl[15]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_relatedTarget"]/*' />
@@ -155,23 +155,23 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(16)]
     public HRESULT get_relatedTarget(IEventTarget** p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, IEventTarget**, int>)(lpVtbl[16]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, IEventTarget**, int>)(lpVtbl[16]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.initMouseEvent"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT initMouseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg)
+    public HRESULT initMouseEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int>)(lpVtbl[17]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, buttonArg, relatedTargetArg);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int>)(lpVtbl[17]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), eventType, canBubble, cancelable, viewArg, detailArg, screenXArg, screenYArg, clientXArg, clientYArg, ctrlKeyArg, altKeyArg, shiftKeyArg, metaKeyArg, buttonArg, relatedTargetArg);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.getModifierState"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated)
+    public HRESULT getModifierState([NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, ushort*, short*, int>)(lpVtbl[18]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), keyArg, activated);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, char*, short*, int>)(lpVtbl[18]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), keyArg, activated);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_buttons"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(19)]
     public HRESULT get_buttons(ushort* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, ushort*, int>)(lpVtbl[19]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, ushort*, int>)(lpVtbl[19]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_fromElement"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(20)]
     public HRESULT get_fromElement(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, IHTMLElement**, int>)(lpVtbl[20]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, IHTMLElement**, int>)(lpVtbl[20]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_toElement"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(21)]
     public HRESULT get_toElement(IHTMLElement** p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, IHTMLElement**, int>)(lpVtbl[21]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, IHTMLElement**, int>)(lpVtbl[21]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_x"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(22)]
     public HRESULT get_x([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[22]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[22]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_y"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(23)]
     public HRESULT get_y([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[23]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[23]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_offsetX"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(24)]
     public HRESULT get_offsetX([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[24]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[24]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_offsetY"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(25)]
     public HRESULT get_offsetY([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[25]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[25]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_pageX"]/*' />
@@ -235,7 +235,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(26)]
     public HRESULT get_pageX([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[26]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[26]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_pageY"]/*' />
@@ -243,7 +243,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(27)]
     public HRESULT get_pageY([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[27]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[27]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_layerX"]/*' />
@@ -251,7 +251,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(28)]
     public HRESULT get_layerX([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[28]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[28]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_layerY"]/*' />
@@ -259,7 +259,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(29)]
     public HRESULT get_layerY([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, int*, int>)(lpVtbl[29]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, int*, int>)(lpVtbl[29]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IDOMMouseEvent.xml' path='doc/member[@name="IDOMMouseEvent.get_which"]/*' />
@@ -267,7 +267,7 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
     [VtblIndex(30)]
     public HRESULT get_which(ushort* p)
     {
-        return ((delegate* unmanaged<IDOMMouseEvent*, ushort*, int>)(lpVtbl[30]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IDOMMouseEvent*, ushort*, int>)(lpVtbl[30]))((IDOMMouseEvent*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -303,10 +303,10 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
         HRESULT get_relatedTarget(IEventTarget** p);
 
         [VtblIndex(17)]
-        HRESULT initMouseEvent([NativeTypeName("BSTR")] ushort* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg);
+        HRESULT initMouseEvent([NativeTypeName("BSTR")] char* eventType, [NativeTypeName("VARIANT_BOOL")] short canBubble, [NativeTypeName("VARIANT_BOOL")] short cancelable, IHTMLWindow2* viewArg, [NativeTypeName("long")] int detailArg, [NativeTypeName("long")] int screenXArg, [NativeTypeName("long")] int screenYArg, [NativeTypeName("long")] int clientXArg, [NativeTypeName("long")] int clientYArg, [NativeTypeName("VARIANT_BOOL")] short ctrlKeyArg, [NativeTypeName("VARIANT_BOOL")] short altKeyArg, [NativeTypeName("VARIANT_BOOL")] short shiftKeyArg, [NativeTypeName("VARIANT_BOOL")] short metaKeyArg, ushort buttonArg, IEventTarget* relatedTargetArg);
 
         [VtblIndex(18)]
-        HRESULT getModifierState([NativeTypeName("BSTR")] ushort* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated);
+        HRESULT getModifierState([NativeTypeName("BSTR")] char* keyArg, [NativeTypeName("VARIANT_BOOL *")] short* activated);
 
         [VtblIndex(19)]
         HRESULT get_buttons(ushort* p);
@@ -349,96 +349,96 @@ public unsafe partial struct IDOMMouseEvent : IDOMMouseEvent.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_screenX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_screenX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_screenY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_screenY;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_clientX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_clientX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_clientY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_clientY;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_ctrlKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_ctrlKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_shiftKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_shiftKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_altKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_altKey;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_metaKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_metaKey;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_button;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_button;
 
         [NativeTypeName("HRESULT (IEventTarget **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEventTarget**, int> get_relatedTarget;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEventTarget**, int> get_relatedTarget;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL, VARIANT_BOOL, IHTMLWindow2 *, long, long, long, long, long, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, VARIANT_BOOL, USHORT, IEventTarget *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int> initMouseEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short, short, IHTMLWindow2*, int, int, int, int, int, short, short, short, short, ushort, IEventTarget*, int> initMouseEvent;
 
         [NativeTypeName("HRESULT (BSTR, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, short*, int> getModifierState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, short*, int> getModifierState;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_buttons;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_buttons;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_fromElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_fromElement;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> get_toElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> get_toElement;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_x;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_x;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_y;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_offsetX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_offsetX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_offsetY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_offsetY;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_pageX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_pageX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_pageY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_pageY;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_layerX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_layerX;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_layerY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_layerY;
 
         [NativeTypeName("HRESULT (USHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_which;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort*, int> get_which;
     }
 }

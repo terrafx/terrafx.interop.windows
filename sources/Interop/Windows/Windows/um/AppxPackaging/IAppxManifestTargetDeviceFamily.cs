@@ -27,7 +27,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestTargetDeviceFamily*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, uint>)(lpVtbl[1]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestTargetDeviceFamily*, uint>)(lpVtbl[1]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,15 +45,15 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, uint>)(lpVtbl[2]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestTargetDeviceFamily*, uint>)(lpVtbl[2]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** name)
     {
-        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ushort**, int>)(lpVtbl[3]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), name);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestTargetDeviceFamily*, char**, int>)(lpVtbl[3]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), name);
     }
 
     /// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily.GetMinVersion"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
     [VtblIndex(4)]
     public HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion)
     {
-        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ulong*, int>)(lpVtbl[4]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), minVersion);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestTargetDeviceFamily*, ulong*, int>)(lpVtbl[4]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), minVersion);
     }
 
     /// <include file='IAppxManifestTargetDeviceFamily.xml' path='doc/member[@name="IAppxManifestTargetDeviceFamily.GetMaxVersionTested"]/*' />
@@ -69,13 +69,13 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
     [VtblIndex(5)]
     public HRESULT GetMaxVersionTested([NativeTypeName("UINT64 *")] ulong* maxVersionTested)
     {
-        return ((delegate* unmanaged<IAppxManifestTargetDeviceFamily*, ulong*, int>)(lpVtbl[5]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), maxVersionTested);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestTargetDeviceFamily*, ulong*, int>)(lpVtbl[5]))((IAppxManifestTargetDeviceFamily*)Unsafe.AsPointer(ref this), maxVersionTested);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** name);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** name);
 
         [VtblIndex(4)]
         HRESULT GetMinVersion([NativeTypeName("UINT64 *")] ulong* minVersion);
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxManifestTargetDeviceFamily : IAppxManifestTarg
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetMinVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetMinVersion;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetMaxVersionTested;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetMaxVersionTested;
     }
 }

@@ -3,48 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMREXTCREATEPEN">
-    <summary>
-      <para>The <b>EMREXTCREATEPEN</b> structure contains members for the <see cref="ExtCreatePen" /> enhanced metafile record. If the record contains a <see cref="BITMAPINFO" /> structure, it is followed by the bitmap bits that form a packed device-independent bitmap (DIB).</para>
-    </summary>
-    <seealso cref="BITMAPINFO" />
-    <seealso cref="EXTLOGPEN" />
-    <seealso cref="ExtCreatePen" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMREXTCREATEPEN</b> structure contains members for the <see cref="ExtCreatePen" /> enhanced metafile record. If the record contains a <see cref="BITMAPINFO" /> structure, it is followed by the bitmap bits that form a packed device-independent bitmap (DIB).</summary>
   </member>
   <member name="EMREXTCREATEPEN.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMREXTCREATEPEN.ihPen">
-    <summary>
-      <para>Index to pen in handle table.</para>
-    </summary>
+    <summary>Index to pen in handle table.</summary>
   </member>
   <member name="EMREXTCREATEPEN.offBmi">
-    <summary>
-      <para>Offset to <see cref="BITMAPINFO" /> structure, if any.</para>
-    </summary>
+    <summary>Offset to <see cref="BITMAPINFO" /> structure, if any.</summary>
   </member>
   <member name="EMREXTCREATEPEN.cbBmi">
-    <summary>
-      <para>Size of <see cref="BITMAPINFO" /> structure, if any.</para>
-    </summary>
+    <summary>Size of <see cref="BITMAPINFO" /> structure, if any.</summary>
   </member>
   <member name="EMREXTCREATEPEN.offBits">
-    <summary>
-      <para>Offset to brush bitmap bits, if any.</para>
-    </summary>
+    <summary>Offset to brush bitmap bits, if any.</summary>
   </member>
   <member name="EMREXTCREATEPEN.cbBits">
-    <summary>
-      <para>Size of brush bitmap bits, if any.</para>
-    </summary>
+    <summary>Size of brush bitmap bits, if any.</summary>
   </member>
   <member name="EMREXTCREATEPEN.elp">
-    <summary>
-      <para>Extended logical pen, including the <b>elpStyleEntry</b> member of the <see cref="EXTLOGPEN" /> structure.</para>
-    </summary>
+    <summary>Extended logical pen, including the <b>elpStyleEntry</b> member of the <see cref="EXTLOGPEN" /> structure.</summary>
   </member>
 </doc>

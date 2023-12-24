@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfEditSession.DoEditSession">
-    <summary>
-      <para>Called to enable a text service to read and/or modify the contents of a context.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</a> value that uniquely identifies the edit session. This cookie is used to access the context with methods such as <see cref="ITfRange.GetText" />.</para>
-    </param>
+    <summary>Called to enable a text service to read and/or modify the contents of a context.</summary>
+    <param name="ec">Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</a> value that uniquely identifies the edit session. This cookie is used to access the context with methods such as <see cref="ITfRange.GetText" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,45 +12,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfContext.RequestEditSession " />
-    <seealso cref="ITfEditSession " />
-    <seealso cref="ITfRange.GetText" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie
-</seealso>
   </member>
   <member name="ITfEditSession">
-    <summary>
-      <para>The <b>ITfEditSession</b> interface is implemented by a text service and used by the TSF manager to read and/or modify the text and properties of a context.</para>
-    </summary>
-    <remarks>
-      <para>A text service initiates an edit session by calling <see cref="ITfContext.RequestEditSession" />, passing a pointer to the <b>ITfEditSession</b> interface. When the edit session is granted, the TSF manager calls <b>DoEditSession</b>.</para>
-      <para>If the context is destroyed before the application grants a lock, or if the calling text service is deactivated before a lock is granted, the <b>DoEditSession</b> method is not called. For this reason, a text service should put cleanup operations for an edit session in the <b>ITfEditSession</b> interface destructor rather than in the <b>DoEditSession</b> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/edit-sessions">Edit Sessions</seealso>
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfContext.RequestEditSession " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfEditSession</b> interface is implemented by a text service and used by the TSF manager to read and/or modify the text and properties of a context.</summary>
   </member>
 </doc>

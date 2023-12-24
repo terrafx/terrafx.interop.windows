@@ -25,7 +25,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOverlay*, Guid*, void**, int>)(lpVtbl[0]))((IOverlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, Guid*, void**, int>)(lpVtbl[0]))((IOverlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOverlay*, uint>)(lpVtbl[1]))((IOverlay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, uint>)(lpVtbl[1]))((IOverlay*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOverlay*, uint>)(lpVtbl[2]))((IOverlay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, uint>)(lpVtbl[2]))((IOverlay*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetPalette"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetPalette([NativeTypeName("DWORD *")] uint* pdwColors, PALETTEENTRY** ppPalette)
     {
-        return ((delegate* unmanaged<IOverlay*, uint*, PALETTEENTRY**, int>)(lpVtbl[3]))((IOverlay*)Unsafe.AsPointer(ref this), pdwColors, ppPalette);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, uint*, PALETTEENTRY**, int>)(lpVtbl[3]))((IOverlay*)Unsafe.AsPointer(ref this), pdwColors, ppPalette);
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.SetPalette"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetPalette([NativeTypeName("DWORD")] uint dwColors, PALETTEENTRY* pPalette)
     {
-        return ((delegate* unmanaged<IOverlay*, uint, PALETTEENTRY*, int>)(lpVtbl[4]))((IOverlay*)Unsafe.AsPointer(ref this), dwColors, pPalette);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, uint, PALETTEENTRY*, int>)(lpVtbl[4]))((IOverlay*)Unsafe.AsPointer(ref this), dwColors, pPalette);
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetDefaultColorKey"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetDefaultColorKey(COLORKEY* pColorKey)
     {
-        return ((delegate* unmanaged<IOverlay*, COLORKEY*, int>)(lpVtbl[5]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, COLORKEY*, int>)(lpVtbl[5]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetColorKey"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetColorKey(COLORKEY* pColorKey)
     {
-        return ((delegate* unmanaged<IOverlay*, COLORKEY*, int>)(lpVtbl[6]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, COLORKEY*, int>)(lpVtbl[6]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.SetColorKey"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT SetColorKey(COLORKEY* pColorKey)
     {
-        return ((delegate* unmanaged<IOverlay*, COLORKEY*, int>)(lpVtbl[7]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, COLORKEY*, int>)(lpVtbl[7]))((IOverlay*)Unsafe.AsPointer(ref this), pColorKey);
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetWindowHandle"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetWindowHandle(HWND* pHwnd)
     {
-        return ((delegate* unmanaged<IOverlay*, HWND*, int>)(lpVtbl[8]))((IOverlay*)Unsafe.AsPointer(ref this), pHwnd);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, HWND*, int>)(lpVtbl[8]))((IOverlay*)Unsafe.AsPointer(ref this), pHwnd);
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetClipList"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetClipList(RECT* pSourceRect, RECT* pDestinationRect, RGNDATA** ppRgnData)
     {
-        return ((delegate* unmanaged<IOverlay*, RECT*, RECT*, RGNDATA**, int>)(lpVtbl[9]))((IOverlay*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect, ppRgnData);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, RECT*, RECT*, RGNDATA**, int>)(lpVtbl[9]))((IOverlay*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect, ppRgnData);
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.GetVideoPosition"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetVideoPosition(RECT* pSourceRect, RECT* pDestinationRect)
     {
-        return ((delegate* unmanaged<IOverlay*, RECT*, RECT*, int>)(lpVtbl[10]))((IOverlay*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, RECT*, RECT*, int>)(lpVtbl[10]))((IOverlay*)Unsafe.AsPointer(ref this), pSourceRect, pDestinationRect);
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.Advise"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT Advise(IOverlayNotify* pOverlayNotify, [NativeTypeName("DWORD")] uint dwInterests)
     {
-        return ((delegate* unmanaged<IOverlay*, IOverlayNotify*, uint, int>)(lpVtbl[11]))((IOverlay*)Unsafe.AsPointer(ref this), pOverlayNotify, dwInterests);
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, IOverlayNotify*, uint, int>)(lpVtbl[11]))((IOverlay*)Unsafe.AsPointer(ref this), pOverlayNotify, dwInterests);
     }
 
     /// <include file='IOverlay.xml' path='doc/member[@name="IOverlay.Unadvise"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT Unadvise()
     {
-        return ((delegate* unmanaged<IOverlay*, int>)(lpVtbl[12]))((IOverlay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOverlay*, int>)(lpVtbl[12]))((IOverlay*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct IOverlay : IOverlay.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *, PALETTEENTRY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, PALETTEENTRY**, int> GetPalette;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, PALETTEENTRY**, int> GetPalette;
 
         [NativeTypeName("HRESULT (DWORD, PALETTEENTRY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, PALETTEENTRY*, int> SetPalette;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, PALETTEENTRY*, int> SetPalette;
 
         [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORKEY*, int> GetDefaultColorKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORKEY*, int> GetDefaultColorKey;
 
         [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORKEY*, int> GetColorKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORKEY*, int> GetColorKey;
 
         [NativeTypeName("HRESULT (COLORKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORKEY*, int> SetColorKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORKEY*, int> SetColorKey;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindowHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindowHandle;
 
         [NativeTypeName("HRESULT (RECT *, RECT *, RGNDATA **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, RECT*, RGNDATA**, int> GetClipList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, RECT*, RGNDATA**, int> GetClipList;
 
         [NativeTypeName("HRESULT (RECT *, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, RECT*, int> GetVideoPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, RECT*, int> GetVideoPosition;
 
         [NativeTypeName("HRESULT (IOverlayNotify *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOverlayNotify*, uint, int> Advise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOverlayNotify*, uint, int> Advise;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unadvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unadvise;
     }
 }

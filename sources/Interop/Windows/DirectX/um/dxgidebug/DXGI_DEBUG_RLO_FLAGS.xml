@@ -3,37 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_DEBUG_RLO_FLAGS">
-    <summary>
-      <para>Flags used with <see cref="ReportLiveObjects" /> to specify the amount of info to report about an object's lifetime.</para>
-    </summary>
-    <remarks>
-      <para>Use this enumeration with <see cref="IDXGIDebug.ReportLiveObjects" />.</para>
-      <para>
-        <b>Note</b>  This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+    <summary>Flags used with <see cref="ReportLiveObjects" /> to specify the amount of info to report about an object's lifetime.</summary>
   </member>
   <member name="DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_SUMMARY">
-    <summary>
-      <para>A flag that specifies to obtain a summary about an object's lifetime.</para>
-    </summary>
+    <summary>A flag that specifies to obtain a summary about an object's lifetime.</summary>
   </member>
   <member name="DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_DETAIL">
-    <summary>
-      <para>A flag that specifies to obtain detailed info about an object's lifetime.</para>
-    </summary>
+    <summary>A flag that specifies to obtain detailed info about an object's lifetime.</summary>
   </member>
   <member name="DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_IGNORE_INTERNAL">
-    <summary>
-      <para>This flag indicates to ignore objects which have no external refcounts keeping them alive.
-D3D objects are printed using an external refcount and an internal refcount.
-Typically, all objects are printed.
-This flag means ignore the objects whose external refcount is 0, because the application is not responsible for keeping them alive.</para>
-    </summary>
+    <summary>This flag indicates to ignore objects which have no external refcounts keeping them alive. D3D objects are printed using an external refcount and an internal refcount. Typically, all objects are printed. This flag means ignore the objects whose external refcount is 0, because the application is not responsible for keeping them alive.</summary>
   </member>
   <member name="DXGI_DEBUG_RLO_FLAGS.DXGI_DEBUG_RLO_ALL">
-    <summary>
-      <para>A flag that specifies to obtain both a summary and detailed info about an object's lifetime.</para>
-    </summary>
+    <summary>A flag that specifies to obtain both a summary and detailed info about an object's lifetime.</summary>
   </member>
 </doc>

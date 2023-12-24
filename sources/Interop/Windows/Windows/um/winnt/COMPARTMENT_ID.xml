@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COMPARTMENT_ID">
-    <summary>
-      <para>The <b>COMPARTMENT_ID</b> enumeration indicates the network routing compartment identifier.</para>
-    </summary>
+    <summary>The <b>COMPARTMENT_ID</b> enumeration indicates the network routing compartment identifier.</summary>
   </member>
   <member name="COMPARTMENT_ID.UNSPECIFIED_COMPARTMENT_ID">
-    <summary>
-      <para>Indicates that the routing compartment is undefined.</para>
-    </summary>
+    <summary>Indicates that the routing compartment is undefined.</summary>
   </member>
   <member name="COMPARTMENT_ID.DEFAULT_COMPARTMENT_ID">
-    <summary>
-      <para>Indicates the default routing compartment.</para>
-    </summary>
+    <summary>Indicates the default routing compartment.</summary>
   </member>
 </doc>

@@ -48,7 +48,7 @@ public unsafe partial struct MetafileHeader
     public int Height;
 
     /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.Anonymous"]/*' />
-    [NativeTypeName("Gdiplus::MetafileHeader::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/GdiplusMetaHeader.h:129:5)")]
+    [NativeTypeName("__AnonymousRecord_GdiplusMetaHeader_L129_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MetafileHeader.xml' path='doc/member[@name="MetafileHeader.EmfPlusHeaderSize"]/*' />

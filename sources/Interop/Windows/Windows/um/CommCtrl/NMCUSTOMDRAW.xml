@@ -3,266 +3,345 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMCUSTOMDRAW">
-    <summary>
-      <para>Contains information specific to an <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-customdraw">NM_CUSTOMDRAW</a> notification code.</para>
-    </summary>
-    <remarks>
-      <para>The value your application returns depends on the current drawing stage. The <b>dwDrawStage</b> member of the associated <b>NMCUSTOMDRAW</b> structure holds a value that specifies the drawing stage. When the <b>dwDrawStage</b> member equals CDDS_PREPAINT and CDDS_PREERASE, some controls send the CDDS_PREERASE message first and expect the return value to indicate which subsequent messages will be sent. For a code sample that illustrates states and drawing stages, see <a href="https://docs.microsoft.com//windows/desktop/Controls/custom-draw">Customizing a Control's Appearance Using Custom Draw</a>.</para>
-    </remarks>
+    <summary>Contains information specific to an <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-customdraw">NM_CUSTOMDRAW</a> notification code.</summary>
   </member>
   <member name="NMCUSTOMDRAW.hdr">
-    <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>An <see cref="NMHDR" /> structure that contains information about this notification code.</para>
-    </summary>
+    <summary>An <see cref="NMHDR" /> structure that contains information about this notification code.</summary>
   </member>
   <member name="NMCUSTOMDRAW.dwDrawStage">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>The current drawing stage. This is one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>Global Values:</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Global Values:</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description></description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDDS_POSTERASE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_POSTERASE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>After the erasing cycle is complete.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>After the erasing cycle is complete.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_POSTPAINT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>After the painting cycle is complete.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDDS_POSTPAINT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_PREERASE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Before the erasing cycle begins.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>After the painting cycle is complete.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_PREPAINT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Before the painting cycle begins.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDDS_PREERASE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Item-specific Values:</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Before the erasing cycle begins.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_ITEM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Indicates that the <b>dwItemSpec</b>, 						<b>uItemState</b>, and <b>lItemlParam</b> members are valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDDS_PREPAINT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_ITEMPOSTERASE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>After an item has been erased.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Before the painting cycle begins.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_ITEMPOSTPAINT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>After an item has been drawn.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>Item-specific Values:</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_ITEMPREERASE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description></description>
-        </item>
-        <item>
+          <description>Before an item is erased.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDDS_ITEM</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_ITEMPREPAINT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Before an item is drawn.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Indicates that the <b>dwItemSpec</b>,
-<b>uItemState</b>, and <b>lItemlParam</b> members are valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDDS_SUBITEM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>CDDS_ITEMPOSTERASE</b>
-          </description>
-          <description>
-            <para>After an item has been erased.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDDS_ITEMPOSTPAINT</b>
-          </description>
-          <description>
-            <para>After an item has been drawn.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDDS_ITEMPREERASE</b>
-          </description>
-          <description>
-            <para>Before an item is erased.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDDS_ITEMPREPAINT</b>
-          </description>
-          <description>
-            <para>Before an item is drawn.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDDS_SUBITEM</b>
-          </description>
-          <description>
-            <para>Flag combined with CDDS_ITEMPREPAINT or CDDS_ITEMPOSTPAINT if a subitem is being drawn. This will only be set if <a href="https://docs.microsoft.com//windows/desktop/Controls/cdrf-constants">CDRF_NOTIFYITEMDRAW</a> is returned from CDDS_PREPAINT.</para>
-          </description>
-        </item>
+          <description>Flag combined with CDDS_ITEMPREPAINT or CDDS_ITEMPOSTPAINT if a subitem is being drawn. This will only be set if <a href="https://docs.microsoft.com//windows/desktop/Controls/cdrf-constants">CDRF_NOTIFYITEMDRAW</a> is returned from CDDS_PREPAINT.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NMCUSTOMDRAW.hdc">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HDC</a></b></para>
-      <para>A handle to the control's device context. Use this HDC to perform any GDI functions.</para>
-    </summary>
+    <summary>A handle to the control's device context. Use this HDC to perform any GDI functions.</summary>
   </member>
   <member name="NMCUSTOMDRAW.rc">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>The <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn. This member is initialized only by the CDDS_ITEMPREPAINT notification. <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 5.80.</a> This member is also initialized by the CDDS_PREPAINT notification.</para>
-    </summary>
+    <summary>The <see cref="RECT" /> structure that describes the bounding rectangle of the area being drawn. This member is initialized only by the CDDS_ITEMPREPAINT notification. <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 5.80.</a> This member is also initialized by the CDDS_PREPAINT notification.</summary>
   </member>
   <member name="NMCUSTOMDRAW.dwItemSpec">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD_PTR</a></b></para>
-      <para>The item number. What is contained in this member will depend on the type of control that is sending the notification. See the <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-customdraw">NM_CUSTOMDRAW</a> notification reference for the specific control to determine what, if anything, is contained in this member.</para>
-    </summary>
+    <summary>The item number. What is contained in this member will depend on the type of control that is sending the notification. See the <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-customdraw">NM_CUSTOMDRAW</a> notification reference for the specific control to determine what, if anything, is contained in this member.</summary>
   </member>
   <member name="NMCUSTOMDRAW.uItemState">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>The current item state. This value is a combination of the following flags.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CDIS_CHECKED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_CHECKED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item is checked.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item is checked.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_DEFAULT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The item is in its default state.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDIS_DEFAULT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_DISABLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item is disabled.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item is in its default state.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_FOCUS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The item is in focus.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDIS_DISABLED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_GRAYED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item is grayed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item is disabled.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_HOT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The item is currently under the pointer ("hot").</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDIS_FOCUS</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_INDETERMINATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item is in an indeterminate state.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item is in focus.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_MARKED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The item is marked. The meaning of this is determined by the implementation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDIS_GRAYED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_SELECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item is selected. <div><b>Note</b>  This flag does not work correctly for owner-drawn list-view controls that have the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-view-window-styles">LVS_SHOWSELALWAYS</a> style. For these controls, you can determine whether an item is selected by using <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-getitemstate">LVM_GETITEMSTATE</a> (or <see cref="ListView_GetItemState" />) and checking for the <b>LVIS_SELECTED</b> flag.</div></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item is grayed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDIS_HOT</b>
-          </description>
-          <description>
-            <para>The item is currently under the pointer ("hot").</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDIS_INDETERMINATE</b>
-          </description>
-          <description>
-            <para>The item is in an indeterminate state.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDIS_MARKED</b>
-          </description>
-          <description>
-            <para>The item is marked. The meaning of this is determined by the implementation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDIS_SELECTED</b>
-          </description>
-          <description>
-            <para>The item is selected.</para>
-            <para>
-              <b>Note</b>  This flag does not work correctly for owner-drawn list-view controls that have the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-view-window-styles">LVS_SHOWSELALWAYS</a> style. For these controls, you can determine whether an item is selected by using <a href="https://docs.microsoft.com//windows/desktop/Controls/lvm-getitemstate">LVM_GETITEMSTATE</a> (or <see cref="ListView_GetItemState" />) and checking for the <b>LVIS_SELECTED</b> flag.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDIS_SHOWKEYBOARDCUES</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_SHOWKEYBOARDCUES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
             <para>
               <a href="https://docs.microsoft.com//windows/desktop/Controls/common-control-versions">Version 6.0.</a>The item is showing its keyboard cues.</para>
             <para>Note that Comctl32 version 6 is not redistributable. operating systems. To use Comctl32.dll version 6, specify it in the manifest. For more information on manifests, see <a href="https://docs.microsoft.com//windows/desktop/Controls/cookbook-overview">Enabling Visual Styles</a>.</para>
           </description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDIS_NEARHOT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_NEARHOT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item is part of a control that is currently under the mouse pointer ("hot"), but the item is not "hot" itself. The meaning of this is determined by the implementation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item is part of a control that is currently under the mouse pointer ("hot"), but the item is not "hot" itself.  The meaning of this is determined by the implementation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_OTHERSIDEHOT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The item is part of a splitbutton that is currently under the mouse pointer ("hot"), but the item is not "hot" itself. The meaning of this is determined by the implementation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CDIS_OTHERSIDEHOT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CDIS_DROPHILITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The item is part of a splitbutton that is currently under the mouse pointer ("hot"), but the item is not "hot" itself.  The meaning of this is determined by the implementation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CDIS_DROPHILITED</b>
-          </description>
-          <description>
-            <para>The item is currently the drop target of a drag-and-drop operation.</para>
-          </description>
-        </item>
+          <description>The item is currently the drop target of a drag-and-drop operation.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NMCUSTOMDRAW.lItemlParam">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
-      <para>Application-defined item data.</para>
-    </summary>
+    <summary>Application-defined item data.</summary>
   </member>
 </doc>

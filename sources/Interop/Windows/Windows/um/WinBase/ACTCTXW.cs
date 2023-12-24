@@ -18,7 +18,7 @@ public unsafe partial struct ACTCTXW
 
     /// <include file='ACTCTXW.xml' path='doc/member[@name="ACTCTXW.lpSource"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpSource;
+    public char* lpSource;
 
     /// <include file='ACTCTXW.xml' path='doc/member[@name="ACTCTXW.wProcessorArchitecture"]/*' />
     public ushort wProcessorArchitecture;
@@ -29,15 +29,15 @@ public unsafe partial struct ACTCTXW
 
     /// <include file='ACTCTXW.xml' path='doc/member[@name="ACTCTXW.lpAssemblyDirectory"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpAssemblyDirectory;
+    public char* lpAssemblyDirectory;
 
     /// <include file='ACTCTXW.xml' path='doc/member[@name="ACTCTXW.lpResourceName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpResourceName;
+    public char* lpResourceName;
 
     /// <include file='ACTCTXW.xml' path='doc/member[@name="ACTCTXW.lpApplicationName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpApplicationName;
+    public char* lpApplicationName;
 
     /// <include file='ACTCTXW.xml' path='doc/member[@name="ACTCTXW.hModule"]/*' />
     public HMODULE hModule;

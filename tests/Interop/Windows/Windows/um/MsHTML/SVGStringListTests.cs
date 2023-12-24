@@ -19,25 +19,4 @@ public static unsafe partial class SVGStringListTests
     {
         Assert.That(typeof(SVGStringList).GUID, Is.EqualTo(IID_SVGStringList));
     }
-
-    /// <summary>Validates that the <see cref="SVGStringList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGStringList>(), Is.EqualTo(sizeof(SVGStringList)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGStringList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGStringList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGStringList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGStringList), Is.EqualTo(1));
-    }
 }

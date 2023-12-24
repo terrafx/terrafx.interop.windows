@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_SERIALIZATION">
+    <summary>Indicates the level of support for heap serialization.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_SERIALIZATION.NodeIndex">
+    <summary>An input field, indicating the adapter index to query.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_SERIALIZATION.HeapSerializationTier">
+    <summary>An output field, indicating the tier of heap serialization support.</summary>
+  </member>
+</doc>

@@ -37,7 +37,7 @@ public unsafe partial struct TBBUTTONINFOW
 
     /// <include file='TBBUTTONINFOW.xml' path='doc/member[@name="TBBUTTONINFOW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='TBBUTTONINFOW.xml' path='doc/member[@name="TBBUTTONINFOW.cchText"]/*' />
     public int cchText;

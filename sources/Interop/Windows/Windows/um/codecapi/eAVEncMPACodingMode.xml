@@ -4,38 +4,23 @@
 <doc>
   <member name="eAVEncMPACodingMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the MPEG audio encoding mode. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpacodingmode-property">AVEncMPACodingMode</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_Mono">
-    <summary>
-      <para>Single channel.
-This mode corresponds to single_channel mode (bit code '11'), defined in ISO/IEC 11172-3.</para>
-    </summary>
+    <summary>Single channel. This mode corresponds to single_channel mode (bit code '11'), defined in ISO/IEC 11172-3.</summary>
   </member>
   <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_Stereo">
-    <summary>
-      <para>Stereo channels.
-This mode corresponds to stereo mode ('00'), defined in ISO/IEC 11172-3.</para>
-    </summary>
+    <summary>Stereo channels. This mode corresponds to stereo mode ('00'), defined in ISO/IEC 11172-3.</summary>
   </member>
   <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_DualChannel">
-    <summary>
-      <para>Two mono channels.
-This mode corresponds to dual_channel mode ('10'), defined in ISO/IEC 11172-3.</para>
-    </summary>
+    <summary>Two mono channels. This mode corresponds to dual_channel mode ('10'), defined in ISO/IEC 11172-3.</summary>
   </member>
   <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_JointStereo">
-    <summary>
-      <para>Joint stereo mode. This mode uses similarities between the two channels to achieve greater compression. This mode corresponds to joint_stereo mode ('01'), defined in ISO/IEC 11172-3.</para>
-    </summary>
+    <summary>Joint stereo mode. This mode uses similarities between the two channels to achieve greater compression. This mode corresponds to joint_stereo mode ('01'), defined in ISO/IEC 11172-3.</summary>
   </member>
   <member name="eAVEncMPACodingMode.eAVEncMPACodingMode_Surround">
-    <summary>
-      <para>Surround audio (5.1 channels).
-This mode applies to MPEG-2 audio (ISO/IEC 13818-3).</para>
-    </summary>
+    <summary>Surround audio (5.1 channels). This mode applies to MPEG-2 audio (ISO/IEC 13818-3).</summary>
   </member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPersistSerializedPropStorage2*, Guid*, void**, int>)(lpVtbl[0]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPersistSerializedPropStorage2*, Guid*, void**, int>)(lpVtbl[0]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPersistSerializedPropStorage2*, uint>)(lpVtbl[1]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistSerializedPropStorage2*, uint>)(lpVtbl[1]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPersistSerializedPropStorage2*, uint>)(lpVtbl[2]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistSerializedPropStorage2*, uint>)(lpVtbl[2]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPersistSerializedPropStorage.SetFlags" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
     [VtblIndex(3)]
     public HRESULT SetFlags([NativeTypeName("PERSIST_SPROPSTORE_FLAGS")] int flags)
     {
-        return ((delegate* unmanaged<IPersistSerializedPropStorage2*, int, int>)(lpVtbl[3]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), flags);
+        return ((delegate* unmanaged[MemberFunction]<IPersistSerializedPropStorage2*, int, int>)(lpVtbl[3]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), flags);
     }
 
     /// <inheritdoc cref="IPersistSerializedPropStorage.SetPropertyStorage" />
@@ -59,7 +59,7 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
     [VtblIndex(4)]
     public HRESULT SetPropertyStorage(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb)
     {
-        return ((delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, int>)(lpVtbl[4]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb);
+        return ((delegate* unmanaged[MemberFunction]<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, int>)(lpVtbl[4]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb);
     }
 
     /// <inheritdoc cref="IPersistSerializedPropStorage.GetPropertyStorage" />
@@ -67,7 +67,7 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
     [VtblIndex(5)]
     public HRESULT GetPropertyStorage([NativeTypeName("SERIALIZEDPROPSTORAGE **")] PCUSERIALIZEDPROPSTORAGE* ppsps, [NativeTypeName("DWORD *")] uint* pcb)
     {
-        return ((delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE*, uint*, int>)(lpVtbl[5]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), ppsps, pcb);
+        return ((delegate* unmanaged[MemberFunction]<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE*, uint*, int>)(lpVtbl[5]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), ppsps, pcb);
     }
 
     /// <include file='IPersistSerializedPropStorage2.xml' path='doc/member[@name="IPersistSerializedPropStorage2.GetPropertyStorageSize"]/*' />
@@ -75,15 +75,15 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
     [VtblIndex(6)]
     public HRESULT GetPropertyStorageSize([NativeTypeName("DWORD *")] uint* pcb)
     {
-        return ((delegate* unmanaged<IPersistSerializedPropStorage2*, uint*, int>)(lpVtbl[6]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), pcb);
+        return ((delegate* unmanaged[MemberFunction]<IPersistSerializedPropStorage2*, uint*, int>)(lpVtbl[6]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), pcb);
     }
 
     /// <include file='IPersistSerializedPropStorage2.xml' path='doc/member[@name="IPersistSerializedPropStorage2.GetPropertyStorageBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT GetPropertyStorageBuffer(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten)
+    public HRESULT GetPropertyStorageBuffer([NativeTypeName("SERIALIZEDPROPSTORAGE*")] PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten)
     {
-        return ((delegate* unmanaged<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int>)(lpVtbl[7]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb, pcbWritten);
+        return ((delegate* unmanaged[MemberFunction]<IPersistSerializedPropStorage2*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int>)(lpVtbl[7]))((IPersistSerializedPropStorage2*)Unsafe.AsPointer(ref this), psps, cb, pcbWritten);
     }
 
     public interface Interface : IPersistSerializedPropStorage.Interface
@@ -92,34 +92,34 @@ public unsafe partial struct IPersistSerializedPropStorage2 : IPersistSerialized
         HRESULT GetPropertyStorageSize([NativeTypeName("DWORD *")] uint* pcb);
 
         [VtblIndex(7)]
-        HRESULT GetPropertyStorageBuffer(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten);
+        HRESULT GetPropertyStorageBuffer([NativeTypeName("SERIALIZEDPROPSTORAGE*")] PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("DWORD *")] uint* pcbWritten);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PERSIST_SPROPSTORE_FLAGS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetFlags;
 
         [NativeTypeName("HRESULT (PCUSERIALIZEDPROPSTORAGE, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PCUSERIALIZEDPROPSTORAGE, uint, int> SetPropertyStorage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PCUSERIALIZEDPROPSTORAGE, uint, int> SetPropertyStorage;
 
         [NativeTypeName("HRESULT (SERIALIZEDPROPSTORAGE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PCUSERIALIZEDPROPSTORAGE*, uint*, int> GetPropertyStorage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PCUSERIALIZEDPROPSTORAGE*, uint*, int> GetPropertyStorage;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetPropertyStorageSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetPropertyStorageSize;
 
         [NativeTypeName("HRESULT (SERIALIZEDPROPSTORAGE *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int> GetPropertyStorageBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PCUSERIALIZEDPROPSTORAGE, uint, uint*, int> GetPropertyStorageBuffer;
     }
 }

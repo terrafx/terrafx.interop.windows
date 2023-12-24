@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE">
-    <summary>
-      <para>The type for specifying a symmetric cryptographic key as raw bytes.</para>
-    </summary>
+    <summary>The type for specifying a symmetric cryptographic key as raw bytes.</summary>
   </member>
   <member name="WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE.keyHandle">
-    <summary>
-      <para>The base type from which this type and all other key handle types derive.</para>
-    </summary>
+    <summary>The base type from which this type and all other key handle types derive.</summary>
   </member>
   <member name="WS_RAW_SYMMETRIC_SECURITY_KEY_HANDLE.rawKeyBytes">
-    <summary>
-      <para>The cryptographic key as raw bytes.  It is strongly recommended that
-after the key is supplied in this form to any API, it is immediately
-cleared using SecureZeroMemory.</para>
-    </summary>
+    <summary>The cryptographic key as raw bytes. It is strongly recommended that after the key is supplied in this form to any API, it is immediately cleared using SecureZeroMemory.</summary>
   </member>
 </doc>

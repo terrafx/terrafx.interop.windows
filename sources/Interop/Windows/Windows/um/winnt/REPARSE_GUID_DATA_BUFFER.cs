@@ -4,6 +4,9 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -26,14 +29,34 @@ public partial struct REPARSE_GUID_DATA_BUFFER
     public Guid ReparseGuid;
 
     /// <include file='REPARSE_GUID_DATA_BUFFER.xml' path='doc/member[@name="REPARSE_GUID_DATA_BUFFER.GenericReparseBuffer"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:14569:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14590_C5")]
     public _GenericReparseBuffer_e__Struct GenericReparseBuffer;
 
     /// <include file='_GenericReparseBuffer_e__Struct.xml' path='doc/member[@name="_GenericReparseBuffer_e__Struct"]/*' />
-    public unsafe partial struct _GenericReparseBuffer_e__Struct
+    public partial struct _GenericReparseBuffer_e__Struct
     {
         /// <include file='_GenericReparseBuffer_e__Struct.xml' path='doc/member[@name="_GenericReparseBuffer_e__Struct.DataBuffer"]/*' />
         [NativeTypeName("BYTE[1]")]
-        public fixed byte DataBuffer[1];
+        public _DataBuffer_e__FixedBuffer DataBuffer;
+
+        /// <include file='_DataBuffer_e__FixedBuffer.xml' path='doc/member[@name="_DataBuffer_e__FixedBuffer"]/*' />
+        public partial struct _DataBuffer_e__FixedBuffer
+        {
+            public byte e0;
+
+            [UnscopedRef]
+            public ref byte this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref Unsafe.Add(ref e0, index);
+                }
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
+            public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+        }
     }
 }

@@ -3,27 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_INTEGER_BLOB">
-    <summary>
-      <para>The CryptoAPI <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure is used for an arbitrary array of bytes. It is declared in Wincrypt.h and provides flexibility for objects that can contain various data types.</para>
-    </summary>
-    <seealso cref="CERT_EXTENSION" />
-    <seealso cref="CERT_POLICY_QUALIFIER_INFO" />
-    <seealso cref="CERT_REQUEST_INFO" />
-    <seealso cref="CMSG_CTRL_ADD_SIGNER_UNAUTH_ATTR_PARA" />
-    <seealso cref="CMSG_SIGNER_INFO" />
-    <seealso cref="CRYPT_ATTRIBUTE_TYPE_VALUE" />
-    <seealso cref="CRYPT_TIME_STAMP_REQUEST_INFO" />
-    <seealso cref="CertCompareIntegerBlob" />
-    <seealso cref="CertNameToStr" />
+    <summary>The CryptoAPI <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure is used for an arbitrary array of bytes. It is declared in Wincrypt.h and provides flexibility for objects that can contain various data types.</summary>
   </member>
   <member name="CRYPT_INTEGER_BLOB.cbData">
-    <summary>
-      <para>The count of bytes in the buffer pointed to by <i>pbData</i>.</para>
-    </summary>
+    <summary>The count of bytes in the buffer pointed to by <i>pbData</i>.</summary>
   </member>
   <member name="CRYPT_INTEGER_BLOB.pbData">
-    <summary>
-      <para>A pointer to a block of data bytes.</para>
-    </summary>
+    <summary>A pointer to a block of data bytes.</summary>
   </member>
 </doc>

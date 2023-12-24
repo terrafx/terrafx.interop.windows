@@ -19,32 +19,4 @@ public static unsafe partial class IMenuPopupTests
     {
         Assert.That(typeof(IMenuPopup).GUID, Is.EqualTo(IID_IMenuPopup));
     }
-
-    /// <summary>Validates that the <see cref="IMenuPopup" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMenuPopup>(), Is.EqualTo(sizeof(IMenuPopup)));
-    }
-
-    /// <summary>Validates that the <see cref="IMenuPopup" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMenuPopup).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMenuPopup" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMenuPopup), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMenuPopup), Is.EqualTo(4));
-        }
-    }
 }

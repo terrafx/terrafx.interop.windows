@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_CLASSIMAGELIST_DATA">
-    <summary>
-      <para>An SP_CLASSIMAGELIST_DATA structure describes a class image list.</para>
-    </summary>
-    <seealso cref="SetupDiDestroyClassImageList" />
-    <seealso cref="SetupDiGetClassImageIndex" />
-    <seealso cref="SetupDiGetClassImageList" />
+    <summary>An SP_CLASSIMAGELIST_DATA structure describes a class image list.</summary>
   </member>
   <member name="SP_CLASSIMAGELIST_DATA.cbSize">
-    <summary>
-      <para>The size, in bytes, of the SP_CLASSIMAGE_DATA structure.</para>
-    </summary>
+    <summary>The size, in bytes, of the SP_CLASSIMAGE_DATA structure.</summary>
   </member>
   <member name="SP_CLASSIMAGELIST_DATA.ImageList">
-    <summary>
-      <para>A handle to the class image list.</para>
-    </summary>
+    <summary>A handle to the class image list.</summary>
   </member>
   <member name="SP_CLASSIMAGELIST_DATA.Reserved">
-    <summary>
-      <para>Reserved. For internal use only.</para>
-    </summary>
+    <summary>Reserved. For internal use only.</summary>
   </member>
 </doc>

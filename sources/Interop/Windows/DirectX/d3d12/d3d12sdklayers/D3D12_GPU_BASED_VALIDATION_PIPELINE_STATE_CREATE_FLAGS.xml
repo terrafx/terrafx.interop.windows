@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS">
+    <summary>Specifies how GPU-Based Validation handles patched pipeline states during <see cref="ID3D12Device.CreateGraphicsPipelineState" /> and <see cref="ID3D12Device.CreateComputePipelineState" />.</summary>
+  </member>
+  <member name="D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS.D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAG_NONE">
+    <summary>This is the default value. Indicates no patching of pipeline states should be done during PSO creation. Instead PSO’s are patched on first use in a command list. This can help to reduce the up-front cost of PSO creation but may instead slow down command list recording until a steady-state is reached.</summary>
+  </member>
+  <member name="D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS.D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAG_FRONT_LOAD_CREATE_TRACKING_ONLY_SHADERS">
+    <summary>Indicates that state-tracking GPU-Based Validation PSO’s should be created along with the original PSO at create time.</summary>
+  </member>
+  <member name="D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS.D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAG_FRONT_LOAD_CREATE_UNGUARDED_VALIDATION_SHADERS">
+    <summary>Indicates that unguarded GPU-Based Validation PSO’s should be created along with the original PSO at create time.</summary>
+  </member>
+  <member name="D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS.D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAG_FRONT_LOAD_CREATE_GUARDED_VALIDATION_SHADERS">
+    <summary>Indicates that guarded GPU-Based Validation PSO’s should be created along with the original PSO at create time.</summary>
+  </member>
+  <member name="D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS.D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS_VALID_MASK">
+    <summary>Internal use only.</summary>
+  </member>
+</doc>

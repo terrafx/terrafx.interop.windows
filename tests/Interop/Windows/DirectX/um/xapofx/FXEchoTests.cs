@@ -19,25 +19,4 @@ public static unsafe partial class FXEchoTests
     {
         Assert.That(typeof(FXEcho).GUID, Is.EqualTo(CLSID_FXEcho));
     }
-
-    /// <summary>Validates that the <see cref="FXEcho" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FXEcho>(), Is.EqualTo(sizeof(FXEcho)));
-    }
-
-    /// <summary>Validates that the <see cref="FXEcho" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FXEcho).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FXEcho" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FXEcho), Is.EqualTo(1));
-    }
 }

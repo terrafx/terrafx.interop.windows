@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CM_STATE">
-    <summary>
-      <para>Specifies column state values. Used by members of the <see cref="IColumnManager" /> interface through the <see cref="CM_COLUMNINFO" /> structure.</para>
-    </summary>
+    <summary>Specifies column state values. Used by members of the <see cref="IColumnManager" /> interface through the <see cref="CM_COLUMNINFO" /> structure.</summary>
   </member>
   <member name="CM_STATE.CM_STATE_NONE">
-    <summary>
-      <para>The column is not currently displayed.</para>
-    </summary>
+    <summary>The column is not currently displayed.</summary>
   </member>
   <member name="CM_STATE.CM_STATE_VISIBLE">
-    <summary>
-      <para>The column is currently displayed.</para>
-    </summary>
+    <summary>The column is currently displayed.</summary>
   </member>
   <member name="CM_STATE.CM_STATE_FIXEDWIDTH">
-    <summary>
-      <para>The column cannot be resized.</para>
-    </summary>
+    <summary>The column cannot be resized.</summary>
   </member>
   <member name="CM_STATE.CM_STATE_NOSORTBYFOLDERNESS">
-    <summary>
-      <para>Do not sort folders separately.</para>
-    </summary>
+    <summary>Do not sort folders separately.</summary>
   </member>
   <member name="CM_STATE.CM_STATE_ALWAYSVISIBLE">
-    <summary>
-      <para>The column cannot be hidden.</para>
-    </summary>
+    <summary>The column cannot be hidden.</summary>
   </member>
 </doc>

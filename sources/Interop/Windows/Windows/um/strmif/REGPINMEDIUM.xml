@@ -4,28 +4,17 @@
 <doc>
   <member name="REGPINMEDIUM">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>REGPINMEDIUM</code> structure describes a pin medium for registration through the <see cref="IFilterMapper2" /> interface.</para>
     </summary>
-    <remarks>
-      <para>A <i>medium</i> identifies a hardware path of communication that exists within a single hardware device or between two devices. Register mediums if your filter is built on kernel streaming pins and needs to connect to other such filters.</para>
-      <para>This structure is equivalent to the <a href="https://docs.microsoft.com//windows-hardware/drivers/stream/kspin-medium-structure">KSPIN_MEDIUM</a> structure, which is used by kernel streaming drivers.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/ksmultiple-item">KSMULTIPLE_ITEM</seealso>
   </member>
   <member name="REGPINMEDIUM.clsMedium">
-    <summary>
-      <para>GUID that specifies the medium.</para>
-    </summary>
+    <summary>GUID that specifies the medium.</summary>
   </member>
   <member name="REGPINMEDIUM.dw1">
-    <summary>
-      <para>Variable of type <b>DWORD</b> that specifies the instance of this medium. This is necessary when two identical devices are present on the host system.</para>
-    </summary>
+    <summary>Variable of type <b>DWORD</b> that specifies the instance of this medium. This is necessary when two identical devices are present on the host system.</summary>
   </member>
   <member name="REGPINMEDIUM.dw2">
-    <summary>
-      <para>Not used.</para>
-    </summary>
+    <summary>Not used.</summary>
   </member>
 </doc>

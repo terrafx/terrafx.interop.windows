@@ -19,32 +19,4 @@ public static unsafe partial class IAppVisibilityTests
     {
         Assert.That(typeof(IAppVisibility).GUID, Is.EqualTo(IID_IAppVisibility));
     }
-
-    /// <summary>Validates that the <see cref="IAppVisibility" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppVisibility>(), Is.EqualTo(sizeof(IAppVisibility)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppVisibility" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppVisibility).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppVisibility" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppVisibility), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppVisibility), Is.EqualTo(4));
-        }
-    }
 }

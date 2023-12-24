@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER"]/*' />
-public enum D2D1_FILTER : uint
+public enum D2D1_FILTER
 {
     /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_MIN_MAG_MIP_POINT"]/*' />
     D2D1_FILTER_MIN_MAG_MIP_POINT = 0x00,
@@ -36,5 +36,5 @@ public enum D2D1_FILTER : uint
     D2D1_FILTER_ANISOTROPIC = 0x55,
 
     /// <include file='D2D1_FILTER.xml' path='doc/member[@name="D2D1_FILTER.D2D1_FILTER_FORCE_DWORD"]/*' />
-    D2D1_FILTER_FORCE_DWORD = 0xffffffff,
+    D2D1_FILTER_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

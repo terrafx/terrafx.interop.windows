@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT"]/*' />
-public unsafe partial struct KERNEL_CET_CONTEXT
+public partial struct KERNEL_CET_CONTEXT
 {
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Ssp"]/*' />
     [NativeTypeName("DWORD64")]
@@ -25,12 +25,12 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public ushort SegCs;
 
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Anonymous"]/*' />
-    [NativeTypeName("_KERNEL_CET_CONTEXT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:2715:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L2715_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='KERNEL_CET_CONTEXT.xml' path='doc/member[@name="KERNEL_CET_CONTEXT.Fill"]/*' />
     [NativeTypeName("WORD[2]")]
-    public fixed ushort Fill[2];
+    public _Fill_e__FixedBuffer Fill;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.AllFlags"]/*' />
     [UnscopedRef]
@@ -47,7 +47,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public ushort UseWrss
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.UseWrss;
         }
@@ -63,7 +63,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public ushort PopShadowStackOne
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.PopShadowStackOne;
         }
@@ -79,7 +79,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
     public ushort Unused
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Unused;
         }
@@ -102,7 +102,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_KERNEL_CET_CONTEXT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:2717:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L2717_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
             public ushort UseWrss
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (ushort)(_bitfield & 0x1u);
                 }
@@ -132,7 +132,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
             public ushort PopShadowStackOne
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (ushort)((_bitfield >> 1) & 0x1u);
                 }
@@ -149,7 +149,7 @@ public unsafe partial struct KERNEL_CET_CONTEXT
             public ushort Unused
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (ushort)((_bitfield >> 2) & 0x3FFFu);
                 }
@@ -161,5 +161,12 @@ public unsafe partial struct KERNEL_CET_CONTEXT
                 }
             }
         }
+    }
+
+    /// <include file='_Fill_e__FixedBuffer.xml' path='doc/member[@name="_Fill_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Fill_e__FixedBuffer
+    {
+        public ushort e0;
     }
 }

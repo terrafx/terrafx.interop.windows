@@ -3,25 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IE4COMPONENT">
-    <summary>
-      <para>Used by Microsoft Internet Explorer 4.0 and Microsoft Internet Explorer 4.01 to hold information about a component. With Windows 2000, it is replaced by the <see cref="COMPONENT" /> structure.</para>
-    </summary>
+    <summary>Used by Microsoft Internet Explorer 4.0 and Microsoft Internet Explorer 4.01 to hold information about a component. With Windows 2000, it is replaced by the <see cref="COMPONENT" /> structure.</summary>
   </member>
   <member name="IE4COMPONENT.dwSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of the structure.</para>
-    </summary>
+    <summary>The size of the structure.</summary>
   </member>
   <member name="IE4COMPONENT.dwID">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Set to zero.</para>
-    </summary>
+    <summary>Reserved. Set to zero.</summary>
   </member>
   <member name="IE4COMPONENT.iComponentType">
     <summary>
-      <para>Type: <b>int</b></para>
       <para>The component type. It can be set to one of these values:</para>
       <h4>COMP_TYPE_HTMLDOC</h4>
       <h4>COMP_TYPE_PICTURE</h4>
@@ -30,45 +21,24 @@
     </summary>
   </member>
   <member name="IE4COMPONENT.fChecked">
-    <summary>
-      <para>Type: <b>BOOL</b></para>
-      <para>A value that is set to <b>TRUE</b> if the component is enabled, or <b>FALSE</b> if not.</para>
-    </summary>
+    <summary>A value that is set to <b>TRUE</b> if the component is enabled, or <b>FALSE</b> if not.</summary>
   </member>
   <member name="IE4COMPONENT.fDirty">
-    <summary>
-      <para>Type: <b>BOOL</b></para>
-      <para>A value that is set to <b>TRUE</b> if the component has been modified and not yet saved to disk. It will be set to <b>FALSE</b> if the component has not been modified, or if it has been modified and saved to disk.</para>
-    </summary>
+    <summary>A value that is set to <b>TRUE</b> if the component has been modified and not yet saved to disk. It will be set to <b>FALSE</b> if the component has not been modified, or if it has been modified and saved to disk.</summary>
   </member>
   <member name="IE4COMPONENT.fNoScroll">
-    <summary>
-      <para>Type: <b>BOOL</b></para>
-      <para>A value that is set to <b>TRUE</b> if the component is scrollable, or <b>FALSE</b> if it's not.</para>
-    </summary>
+    <summary>A value that is set to <b>TRUE</b> if the component is scrollable, or <b>FALSE</b> if it's not.</summary>
   </member>
   <member name="IE4COMPONENT.cpPos">
-    <summary>
-      <para>Type: <b><see cref="COMPPOS" /></b></para>
-      <para>A <see cref="COMPPOS" /> structure containing position and size information.</para>
-    </summary>
+    <summary>A <see cref="COMPPOS" /> structure containing position and size information.</summary>
   </member>
   <member name="IE4COMPONENT.wszFriendlyName">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
-      <para>The component's friendly name.</para>
-    </summary>
+    <summary>The component's friendly name.</summary>
   </member>
   <member name="IE4COMPONENT.wszSource">
-    <summary>
-      <para>Type: <b>WCHAR[INTERNET_MAX_URL_LENGTH]</b></para>
-      <para>The component's URL.</para>
-    </summary>
+    <summary>The component's URL.</summary>
   </member>
   <member name="IE4COMPONENT.wszSubscribedURL">
-    <summary>
-      <para>Type: <b>WCHAR[INTERNET_MAX_URL_LENGTH]</b></para>
-      <para>The URL that a user has been subscribed to.</para>
-    </summary>
+    <summary>The URL that a user has been subscribed to.</summary>
   </member>
 </doc>

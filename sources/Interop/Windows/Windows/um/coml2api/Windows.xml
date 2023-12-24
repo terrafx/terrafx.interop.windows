@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.FmtIdToPropStgName">
+    <summary>The <b>FmtIdToPropStgName</b> function converts a property set format identifier (FMTID) to its storage or stream name.</summary>
+    <param name="pfmtid">A pointer to the FMTID of the property set.</param>
+    <param name="oszName">A pointer to a null-terminated string that receives the storage or stream name of the property set identified by <i>pfmtid</i>. The array allocated for this string must be at least CCH_MAX_PROPSTG_NAME (32) characters in length.</param>
+    <returns>This function supports the standard return value E_INVALIDARG as well as the following:</returns>
+  </member>
+  <member name="Windows.GetConvertStg">
+    <summary>The<b>GetConvertStg</b> function returns the current value of the convert bit for the specified storage object.</summary>
+    <param name="pStg">
+      <see cref="IStorage" /> pointer to the storage object from which the convert bit is to be retrieved.</param>
+    <returns>
+      <see cref="IStorage.OpenStream" />,<see cref="IStorage.OpenStorage" />, and<see cref="ISequentialStream.Read" /> storage and stream access errors.</returns>
+  </member>
+  <member name="Windows.GetHGlobalFromILockBytes">
+    <summary>The<b>GetHGlobalFromILockBytes</b> function retrieves a global memory handle to a byte array object created using the<see cref="CreateILockBytesOnHGlobal" /> function.</summary>
+    <param name="plkbyt">Pointer to the<see cref="ILockBytes" /> interface on the byte-array object previously created by a call to the<see cref="CreateILockBytesOnHGlobal" /> function.</param>
+    <param name="phglobal">Pointer to the current memory handle used by the specified byte-array object.</param>
+    <returns>This function returns HRESULT.</returns>
+  </member>
+  <member name="Windows.PropStgNameToFmtId">
+    <summary>The <b>PropStgNameToFmtId</b> function converts a property set storage or stream name to its format identifier.</summary>
+    <param name="oszName">A pointer to a null-terminated Unicode string that contains the stream name of a simple property set or the storage name of a nonsimple property set.</param>
+    <param name="pfmtid">A pointer to a FMTID variable that receives the format identifier of the property set specified by <i>oszName</i>.</param>
+    <returns>This function supports the standard return value E_INVALIDARG as well as the following:</returns>
+  </member>
+  <member name="Windows.ReadClassStg">
+    <summary>The <b>ReadClassStg</b> function reads the CLSID previously written to a storage object with the<see cref="WriteClassStg" /> function.</summary>
+    <param name="pStg">Pointer to the<see cref="IStorage" /> interface on the storage object containing the CLSID to be retrieved.</param>
+    <param name="pclsid">Pointer to where the CLSID is written. May return CLSID_NULL.</param>
+    <returns>
+      <para>This function supports the standard return value E_OUTOFMEMORY, in addition to the following:</para>
+      <para>This function also returns any of the error values returned by the<see cref="IStorage.Stat" /> method.</para>
+    </returns>
+  </member>
+  <member name="Windows.ReadClassStm">
+    <summary>The<b>ReadClassStm</b> function reads the CLSID previously written to a stream object with the<see cref="WriteClassStm" /> function.</summary>
+    <param name="pStm">A pointer to the<see cref="IStream" /> interface on the stream object that contains the CLSID to be read. This CLSID must have been previously written to the stream object using<see cref="WriteClassStm" />.</param>
+    <param name="pclsid">A pointer to where the CLSID is to be written.</param>
+    <returns>This function also returns any of the error values returned by the<see cref="ISequentialStream.Read" /> method.</returns>
+  </member>
+  <member name="Windows.StgCreateDocfile">
+    <summary>
+      <para>The <b>StgCreateDocfile</b> function creates a new compound file storage object using the COM-provided <a href="https://docs.microsoft.com//windows/desktop/Stg/istorage-compound-file-implementation">compound file implementation</a> for the<see cref="IStorage" /> interface.</para>
+      <div>
+        <b>Note</b>  Applications should use the new function, <see cref="StgCreateStorageEx" />, instead of <b>StgCreateDocfile</b>, to take advantage of enhanced Structured Storage features. This function, <b>StgCreateDocfile</b>, still exists for compatibility with Windows 2000.</div>
+    </summary>
+    <param name="pwcsName">A pointer to a null-terminated Unicode string name for the compound file being created. It is passed uninterpreted to the file system. This can be a relative name or <b>NULL</b>. If <b>NULL</b>, a temporary compound file is allocated with a unique name.</param>
+    <param name="grfMode">Specifies the access mode to use when opening the new storage object. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>. If the caller specifies transacted mode together with STGM_CREATE or STGM_CONVERT, the overwrite or conversion takes place when the commit operation is called for the root storage. If <see cref="IStorage.Commit" /> is not called for the root storage object, previous contents of the file will be restored. STGM_CREATE and STGM_CONVERT cannot be combined with the STGM_NOSNAPSHOT flag, because a snapshot copy is required when a file is overwritten or converted in the transacted mode.</param>
+    <param name="reserved">Reserved for future use; must be zero.</param>
+    <param name="ppstgOpen">A pointer to the location of the<see cref="IStorage" /> pointer to the new storage object.</param>
+    <returns>
+      <b>StgCreateDocfile</b> can also return any file system errors or system errors wrapped in an <b>HRESULT</b>. For more information, see<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a> and<a href="https://docs.microsoft.com//windows/desktop/com/handling-unknown-errors">Handling Unknown Errors</a>.</returns>
+  </member>
+  <member name="Windows.StgCreateDocfileOnILockBytes">
+    <summary>The <b>StgCreateDocfileOnILockBytes</b> function creates and opens a new compound file storage object on top of a byte-array object provided by the caller. The storage object supports the COM-provided, compound-file implementation for the<see cref="IStorage" /> interface.</summary>
+    <param name="plkbyt">A pointer to the<see cref="ILockBytes" /> interface on the underlying byte-array object on which to create a compound file.</param>
+    <param name="grfMode">Specifies the access mode to use when opening the new compound file. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a> and the Remarks section below.</param>
+    <param name="reserved">Reserved for future use; must be zero.</param>
+    <param name="ppstgOpen">A pointer to the location of the<see cref="IStorage" /> pointer on the new storage object.</param>
+    <returns>The <b>StgCreateDocfileOnILockBytes</b> function can also return any file system errors, or system errors wrapped in an <b>HRESULT</b>, or<see cref="ILockBytes" /> interface error return values. For more information, see<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a> and<a href="https://docs.microsoft.com//windows/desktop/com/handling-unknown-errors">Handling Unknown Errors</a>.</returns>
+  </member>
+  <member name="Windows.StgCreatePropSetStg">
+    <summary>The <b>StgCreatePropSetStg</b> function creates a property set storage object from a specified storage object. The property set storage object supplies the system-provided, stand-alone implementation of the<see cref="IPropertySetStorage" /> interface.</summary>
+    <param name="pStorage">A pointer to the storage object that contains or will contain one or more property sets.</param>
+    <param name="dwReserved">Reserved for future use; must be zero.</param>
+    <param name="ppPropSetStg">A pointer to<see cref="IPropertySetStorage" />* pointer variable that receives the interface pointer to the property-set storage object.</param>
+    <returns>This function supports the standard return value <b>E_INVALIDARG</b> as well as the following:</returns>
+  </member>
+  <member name="Windows.StgCreatePropStg">
+    <summary>The <b>StgCreatePropStg</b> function creates and opens a property set in a specified storage or stream object. The property set supplies the system-provided, stand-alone implementation of the<see cref="IPropertyStorage" /> interface.</summary>
+    <param name="pUnk">A pointer to the <b>IUnknown</b> interface on the storage or stream object that stores the new property set.</param>
+    <param name="fmtid">The FMTID of the property set to be created.</param>
+    <param name="pclsid">A Pointer to the initial CLSID for this property set. May be <b>NULL</b>, in which case <i>pclsid</i> is set to all zeroes.</param>
+    <param name="grfFlags">The values from <a href="https://docs.microsoft.com//windows/desktop/Stg/propsetflag-constants">PROPSETFLAG Constants</a> that determine how the property set is created and opened.</param>
+    <param name="dwReserved">Reserved; must be zero.</param>
+    <param name="ppPropStg">The address of an<see cref="IPropertyStorage" />* pointer variable that receives the interface pointer to the new property set.</param>
+    <returns>This function supports the standard return values E_INVALIDARG and E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="Windows.StgCreateStorageEx">
+    <summary>
+      <para>The <b>StgCreateStorageEx</b> function creates a new storage object using a provided implementation for the<see cref="IStorage" /> or<see cref="IPropertySetStorage" /> interfaces. To open an existing file, use the<see cref="StgOpenStorageEx" /> function instead.</para>
+      <para>Applications written for Windows 2000, Windows Server 2003 and Windows XP must use<b>StgCreateStorageEx</b> rather than<see cref="StgCreateDocfile" /> to take advantage of the enhanced Windows 2000 and Windows XP Structured Storage features.</para>
+    </summary>
+    <param name="pwcsName">
+      <para>A pointer to the path of the file to create. It is passed uninterpreted to the file system. This can be a relative name or <b>NULL</b>. If <b>NULL</b>, a temporary file is allocated with a unique name. If non-<b>NULL</b>, the string size must not exceed MAX_PATH characters.</para>
+      <para>
+        <b>Windows 2000:  </b>Unlike the <see cref="CreateFile" /> function, you cannot exceed the MAX_PATH limit by using the "\?" prefix.</para>
+    </param>
+    <param name="grfMode">A value that specifies the access mode to use when opening the new storage object. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>. If the caller specifies transacted mode together with STGM_CREATE or STGM_CONVERT, the overwrite or conversion takes place when the commit operation is called for the root storage. If <see cref="IStorage.Commit" /> is not called for the root storage object, previous contents of the file will be restored. STGM_CREATE and STGM_CONVERT cannot be combined with the STGM_NOSNAPSHOT flag, because a snapshot copy is required when a file is overwritten or converted in the transacted mode.</param>
+    <param name="stgfmt">A value that specifies the storage file format. For more information, see the<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa380330(v=vs.85)">STGFMT</a> enumeration.</param>
+    <param name="grfAttrs">
+      <para>A value that depends on the value of the <i>stgfmt</i> parameter.</para>
+      <list type="table">
+        <listheader>
+          <description>Parameter Values</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STGFMT_DOCFILE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>0, or FILE_FLAG_NO_BUFFERING. For more information, see <see cref="CreateFile" />. If the sector size of the file, specified in <i>pStgOptions</i>, is not an integer multiple of the underlying disk's physical sector size, this operation will fail.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>All other values of <i>stgfmt</i></b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Must be 0.</description>
+        </listheader>
+      </list>
+    </param>
+    <param name="pStgOptions">The <i>pStgOptions</i> parameter is valid only if the <i>stgfmt</i> parameter is set to STGFMT_DOCFILE. If the <i>stgfmt</i> parameter is set to STGFMT_DOCFILE, <i>pStgOptions</i> points to the<see cref="STGOPTIONS" /> structure, which specifies features of the storage object, such as the sector size. This parameter may be <b>NULL</b>, which creates a storage object with a default sector size of 512 bytes. If non-<b>NULL</b>, the <b>ulSectorSize</b> member must be set to either 512 or 4096. If set to 4096, STGM_SIMPLE may not be specified in the <i>grfMode</i> parameter. The <b>usVersion</b> member must be set before calling<b>StgCreateStorageEx</b>. For more information, see <b>STGOPTIONS</b>.</param>
+    <param name="pSecurityDescriptor">
+      <para>Enables the ACLs to be set when the file is created. If not <b>NULL</b>, needs to be a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> structure. See <see cref="CreateFile" /> for information on how to set ACLs on files.</para>
+      <para>
+        <b>Windows Server 2003, Windows 2000 Server, Windows XP and Windows 2000 Professional:  </b>Value must be <b>NULL</b>.</para>
+    </param>
+    <param name="riid">A value that specifies the interface identifier (IID) of the interface pointer to return. This IID may be for the<see cref="IStorage" /> interface or the<see cref="IPropertySetStorage" /> interface.</param>
+    <param name="ppObjectOpen">A pointer to an interface pointer variable that receives a pointer for an interface on the new storage object; contains <b>NULL</b> if operation failed.</param>
+    <returns>This function can also return any file system errors or system errors wrapped in an <b>HRESULT</b>. For more information, see<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a> and<a href="https://docs.microsoft.com//windows/desktop/com/handling-unknown-errors">Handling Unknown Errors</a>.</returns>
+  </member>
+  <member name="Windows.StgIsStorageFile">
+    <summary>The <b>StgIsStorageFile</b> function indicates whether a particular disk file contains a storage object.</summary>
+    <param name="pwcsName">Pointer to the null-terminated Unicode string name of the disk file to be examined. The <i>pwcsName</i> parameter is passed uninterpreted to the underlying file system.</param>
+    <returns>
+      <b>StgIsStorageFile</b> function can also return any file system errors or system errors wrapped in an <b>HRESULT</b>. See<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a> and<a href="https://docs.microsoft.com//windows/desktop/com/handling-unknown-errors">Handling Unknown Errors</a></returns>
+  </member>
+  <member name="Windows.StgIsStorageILockBytes">
+    <summary>The <b>StgIsStorageILockBytes</b> function indicates whether the specified byte array contains a storage object.</summary>
+    <param name="plkbyt">
+      <see cref="ILockBytes" /> pointer to the byte array to be examined.</param>
+    <returns>This function can also return any file system errors, or system errors wrapped in an <b>HRESULT</b>, or<see cref="ILockBytes" /> interface error return values. See<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a> and<a href="https://docs.microsoft.com//windows/desktop/com/handling-unknown-errors">Handling Unknown Errors</a></returns>
+  </member>
+  <member name="Windows.StgOpenPropStg">
+    <summary>The <b>StgOpenPropStg</b> function opens a specified property set in a specified storage or stream object. The property set supplies the system-provided, stand-alone implementation of the<see cref="IPropertyStorage" /> interface.</summary>
+    <param name="pUnk">The interface pointer for <b>IUnknown</b> interface on the storage or stream object that contains the requested property set object.</param>
+    <param name="fmtid">The FMTID of the property set to be opened.</param>
+    <param name="grfFlags">The values from <a href="https://docs.microsoft.com//windows/desktop/Stg/propsetflag-constants">PROPSETFLAG Constants</a>.</param>
+    <param name="dwReserved">Reserved for future use; must be zero.</param>
+    <param name="ppPropStg">A pointer to an <see cref="IPropertyStorage" />* pointer variable that receives the interface pointer to the requested property set.</param>
+    <returns>This function supports the standard return values E_INVALIDARG and E_UNEXPECTED, in addition to the following:</returns>
+  </member>
+  <member name="Windows.StgOpenStorage">
+    <summary>
+      <para>The <b>StgOpenStorage</b> function opens an existing root storage object in the file system. Use this function to open compound files. Do not use it to open directories, files, or summary catalogs. Nested storage objects can only be opened using their parent<see cref="IStorage.OpenStorage" /> method.</para>
+      <div>
+        <b>Note</b>  Applications should use the new function, <see cref="StgOpenStorageEx" />, instead of <b>StgOpenStorage</b>, to take advantage of the enhanced and Windows Structured Storage features. This function, <b>StgOpenStorage</b>, still exists for compatibility with applications running on Windows 2000.</div>
+    </summary>
+    <param name="pwcsName">A pointer to the path of the <b>null</b>-terminated Unicode string file that contains the storage object to open. This parameter is ignored if the <i>pstgPriority</i> parameter is not <b>NULL</b>.</param>
+    <param name="pstgPriority">
+      <para>A pointer to the<see cref="IStorage" /> interface that should be <b>NULL</b>. If not <b>NULL</b>, this parameter is used as described below in the Remarks section.</para>
+      <para>After <b>StgOpenStorage</b> returns, the storage object specified in <i>pStgPriority</i> may have been released and should no longer be used.</para>
+    </param>
+    <param name="grfMode">Specifies the access mode to use to open the storage object.</param>
+    <param name="snbExclude">If not <b>NULL</b>, pointer to a block of elements in the storage to be excluded as the storage object is opened. The exclusion occurs regardless of whether a snapshot copy happens on the open. Can be <b>NULL</b>.</param>
+    <param name="reserved">Indicates reserved for future use; must be zero.</param>
+    <param name="ppstgOpen">A pointer to a<see cref="IStorage" />* pointer variable that receives the interface pointer to the opened storage.</param>
+    <returns>The <b>StgOpenStorage</b> function can also return any file system errors or system errors wrapped in an <b>HRESULT</b>. For more information, see<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a> and<a href="https://docs.microsoft.com//windows/desktop/com/handling-unknown-errors">Handling Unknown Errors</a>.</returns>
+  </member>
+  <member name="Windows.StgOpenStorageEx">
+    <summary>
+      <para>The <b>StgOpenStorageEx</b> function opens an existing root storage object in the file system. Use this function to open <a href="https://docs.microsoft.com//windows/desktop/Stg/compound-files">Compound Files</a> and regular files. To create a new file, use the<see cref="StgCreateStorageEx" /> function.</para>
+      <div>
+        <b>Note</b>  To use enhancements, all Windows 2000, Windows XP, and Windows Server 2003 applications should call <b>StgOpenStorageEx</b>, instead of <see cref="StgOpenStorage" />. The <b>StgOpenStorage</b> function is used for compatibility with Windows 2000 and earlier applications.</div>
+    </summary>
+    <param name="pwcsName">
+      <para>A pointer to the path of the null-terminated Unicode string file that contains the storage object. This string size cannot exceed <b>MAX_PATH</b> characters.</para>
+      <para>
+        <b>Windows Server 2003 and Windows XP/2000:  </b>Unlike the <see cref="CreateFile" /> function, the <b>MAX_PATH</b> limit cannot be exceeded by using the "\?" prefix.</para>
+    </param>
+    <param name="grfMode">
+      <para>A value that specifies the access mode to open the new storage object. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a>. If the caller specifies transacted mode together with <b>STGM_CREATE</b> or <b>STGM_CONVERT</b>, the overwrite or conversion occurs when the commit operation is called for the root storage. If <see cref="IStorage.Commit" /> is not called for the root storage object, previous contents of the file will be restored. <b>STGM_CREATE</b> and <b>STGM_CONVERT</b> cannot be combined with the <b>STGM_NOSNAPSHOT</b> flag, because a snapshot copy is required when a file is overwritten or converted in transacted mode.</para>
+      <para>If the storage object is opened in direct mode (<b>STGM_DIRECT</b>) with access to either <b>STGM_WRITE</b> or <b>STGM_READWRITE</b>, the sharing mode must be <b>STGM_SHARE_EXCLUSIVE</b> unless the <b>STGM_DIRECT_SWMR</b> mode is specified. For more information, see the Remarks section. If the storage object is opened in direct mode with access to <b>STGM_READ</b>, the sharing mode must be either <b>STGM_SHARE_EXCLUSIVE</b> or <b>STGM_SHARE_DENY_WRITE</b>, unless <b>STGM_PRIORITY</b> or <b>STGM_DIRECT_SWMR</b> is specified. For more information, see the Remarks section.</para>
+      <para>The mode in which a file is opened can affect implementation performance. For more information, see<a href="https://docs.microsoft.com//windows/desktop/Stg/structured-storage-interfaces">Compound File Implementation Limits</a>.</para>
+    </param>
+    <param name="stgfmt">A value that specifies the storage file format. For more information, see the<a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa380330(v=vs.85)">STGFMT</a> enumeration.</param>
+    <param name="grfAttrs">
+      <para>A value that depends upon the value of the <i>stgfmt</i> parameter.</para>
+      <para>
+        <b>STGFMT_DOCFILE</b> must be zero (0) or <b>FILE_FLAG_NO_BUFFERING</b>. For more information about this value, see <see cref="CreateFile" />. If the sector size of the file, specified in <i>pStgOptions</i>, is not an integer multiple of the physical sector size of the underlying disk, then this operation will fail. All other values of <i>stgfmt</i> must be zero.</para>
+    </param>
+    <param name="pStgOptions">A pointer to an<see cref="STGOPTIONS" /> structure that contains data about the storage object opened. The <i>pStgOptions</i> parameter is valid only if the <i>stgfmt</i> parameter is set to <b>STGFMT_DOCFILE</b>. The <b>usVersion</b> member must be set before calling<b>StgOpenStorageEx</b>. For more information, see the <b>STGOPTIONS</b> structure.</param>
+    <param name="pSecurityDescriptor">Reserved; must be zero.</param>
+    <param name="riid">A value that specifies the GUID of the interface pointer to return. Can also be the header-specified value for <b>IID_IStorage</b> to obtain the<see cref="IStorage" /> interface or for <b>IID_IPropertySetStorage</b> to obtain the<see cref="IPropertySetStorage" /> interface.</param>
+    <param name="ppObjectOpen">The address of an interface pointer variable that receives a pointer for an interface on the storage object opened; contains <b>NULL</b> if operation failed.</param>
+    <returns>This function can also return any file system errors or system errors wrapped in an <b>HRESULT</b>. For more information, see <a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a> and<a href="https://docs.microsoft.com//windows/desktop/com/handling-unknown-errors">Handling Unknown Errors</a>.</returns>
+  </member>
+  <member name="Windows.StgOpenStorageOnILockBytes">
+    <summary>The <b>StgOpenStorageOnILockBytes</b> function opens an existing storage object that does not reside in a disk file, but instead has an underlying byte array provided by the caller.</summary>
+    <param name="plkbyt">
+      <see cref="ILockBytes" /> pointer to the underlying byte array object that contains the storage object to be opened.</param>
+    <param name="pstgPriority">
+      <para>A pointer to the<see cref="IStorage" /> interface that should be <b>NULL</b>. If not <b>NULL</b>, this parameter is used as described below in the Remarks section.</para>
+      <para>After <b>StgOpenStorageOnILockBytes</b> returns, the storage object specified in <i>pStgPriority</i> may have been released and should no longer be used.</para>
+    </param>
+    <param name="grfMode">Specifies the access mode to use to open the storage object. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM Constants</a> and the Remarks section below.</param>
+    <param name="snbExclude">Can be <b>NULL</b>. If not <b>NULL</b>, this parameter points to a block of elements in this storage that are to be excluded as the storage object is opened. This exclusion occurs independently of whether a snapshot copy happens on the open.</param>
+    <param name="reserved">Indicates reserved for future use; must be zero.</param>
+    <param name="ppstgOpen">Points to the location of an<see cref="IStorage" /> pointer to the opened storage on successful return.</param>
+    <returns>The <b>StgOpenStorageOnILockBytes</b> function can also return any file system errors, or system errors wrapped in an <b>HRESULT</b>, or<see cref="ILockBytes" /> interface error return values. See<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a>and<a href="https://docs.microsoft.com//windows/desktop/com/handling-unknown-errors">Handling Unknown Errors</a>.</returns>
+  </member>
+  <member name="Windows.StgSetTimes">
+    <summary>The <b>StgSetTimes</b> function sets the creation, access, and modification times of the indicated file, if supported by the underlying file system.</summary>
+    <param name="lpszName">Pointer to the name of the file to be changed.</param>
+    <param name="pctime">Pointer to the new value for the creation time.</param>
+    <param name="patime">Pointer to the new value for the access time.</param>
+    <param name="pmtime">Pointer to the new value for the modification time.</param>
+    <returns>The <b>StgSetTimes</b> function can also return any file system errors or system errors wrapped in an <b>HRESULT</b>. See<a href="https://docs.microsoft.com//windows/desktop/com/error-handling-strategies">Error Handling Strategies</a> and<a href="https://docs.microsoft.com//windows/desktop/com/handling-unknown-errors">Handling Unknown Errors</a>.</returns>
+  </member>
+  <member name="Windows.WriteClassStg">
+    <summary>The <b>WriteClassStg</b> function stores the specified class identifier (CLSID) in a storage object.</summary>
+    <param name="pStg">
+      <see cref="IStorage" /> pointer to the storage object that gets a new CLSID.</param>
+    <param name="rclsid">Pointer to the CLSID to be stored with the object.</param>
+    <returns>This function returns HRESULT.</returns>
+  </member>
+  <member name="Windows.WriteClassStm">
+    <summary>The <b>WriteClassStm</b> function stores the specified CLSID in the stream.</summary>
+    <param name="pStm">
+      <see cref="IStream" /> pointer to the stream into which the CLSID is to be written.</param>
+    <param name="rclsid">Specifies the CLSID to write to the stream.</param>
+    <returns>This function returns HRESULT.</returns>
+  </member>
+</doc>

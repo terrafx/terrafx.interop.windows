@@ -3,19 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICComponentSigning">
-    <summary>
-      <para>Specifies the component signing status.</para>
-    </summary>
+    <summary>Specifies the component signing status.</summary>
   </member>
   <member name="WICComponentSigning.WICComponentSigned">
-    <summary>
-      <para>A signed component.</para>
-    </summary>
+    <summary>A signed component.</summary>
   </member>
   <member name="WICComponentSigning.WICComponentUnsigned">
-    <summary>
-      <para>An unsigned component</para>
-    </summary>
+    <summary>An unsigned component</summary>
   </member>
   <member name="WICComponentSigning.WICComponentSafe">
     <summary>
@@ -24,11 +18,7 @@
     </summary>
   </member>
   <member name="WICComponentSigning.WICComponentDisabled">
-    <summary>
-      <para>A component has been disabled.</para>
-    </summary>
+    <summary>A component has been disabled.</summary>
   </member>
-  <member name="WICComponentSigning.WICCOMPONENTSIGNING_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICComponentSigning.WICCOMPONENTSIGNING_FORCE_DWORD"></member>
 </doc>

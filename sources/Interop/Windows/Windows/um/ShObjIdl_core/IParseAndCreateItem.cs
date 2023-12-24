@@ -25,7 +25,7 @@ public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int>)(lpVtbl[0]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IParseAndCreateItem*, Guid*, void**, int>)(lpVtbl[0]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IParseAndCreateItem*, uint>)(lpVtbl[1]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IParseAndCreateItem*, uint>)(lpVtbl[1]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IParseAndCreateItem*, uint>)(lpVtbl[2]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IParseAndCreateItem*, uint>)(lpVtbl[2]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IParseAndCreateItem.xml' path='doc/member[@name="IParseAndCreateItem.SetItem"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface
     [VtblIndex(3)]
     public HRESULT SetItem(IShellItem* psi)
     {
-        return ((delegate* unmanaged<IParseAndCreateItem*, IShellItem*, int>)(lpVtbl[3]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), psi);
+        return ((delegate* unmanaged[MemberFunction]<IParseAndCreateItem*, IShellItem*, int>)(lpVtbl[3]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), psi);
     }
 
     /// <include file='IParseAndCreateItem.xml' path='doc/member[@name="IParseAndCreateItem.GetItem"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface
     [VtblIndex(4)]
     public HRESULT GetItem([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IParseAndCreateItem*, Guid*, void**, int>)(lpVtbl[4]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IParseAndCreateItem*, Guid*, void**, int>)(lpVtbl[4]))((IParseAndCreateItem*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IParseAndCreateItem : IParseAndCreateItem.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IShellItem *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem*, int> SetItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem*, int> SetItem;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetItem;
     }
 }

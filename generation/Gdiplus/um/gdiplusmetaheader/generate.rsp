@@ -1,7 +1,7 @@
 @../../../settings.rsp
 @../../../remap.rsp
 --exclude
-Gdiplus.MetafileHeader.GetEmfHeader():const Gdiplus.ENHMETAHEADER3 *
+Gdiplus.MetafileHeader.GetEmfHeader():const ENHMETAHEADER3 *
 Gdiplus.MetafileHeader.GetWmfHeader():const METAHEADER *
 Gdiplus.MetafileHeader.IsEmfOrEmfPlus():BOOL
 Gdiplus.MetafileHeader.IsEmfPlus():BOOL

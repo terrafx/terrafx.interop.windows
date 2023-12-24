@@ -4,10 +4,9 @@
 <doc>
   <member name="IDrawVideoImage.DrawVideoImageBegin">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. New applications should not use it.</para>
-      <para>The <code>DrawVideoImageBegin</code> method turns off DirectDraw in preparation for a call to the <b>DrawVideoImageDraw</b> method.</para>
-    </summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. New applications should not use it.</div>The <code>DrawVideoImageBegin</code> method turns off DirectDraw in preparation for a call to the <b>DrawVideoImageDraw</b> method.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -15,36 +14,29 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDrawVideoImage Interface" />
-    <seealso cref="IDrawVideoImage.DrawVideoImageDraw" />
   </member>
   <member name="IDrawVideoImage.DrawVideoImageDraw">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. New applications should not use it.</para>
-      <para>The <code>DrawVideoImageDraw</code> method draws the specified source rectangle to the specified destination rectangle in the specified GDI device context.</para>
-    </summary>
-    <param name="hdc">
-      <para>Specifies the device context.</para>
-    </param>
-    <param name="lprcSrc">
-      <para>Pointer to a <b>RECT</b> structure that specifies the source rectangle, as a subrectangle of the current video frame.</para>
-    </param>
-    <param name="lprcDst">
-      <para>Pointer to a <b>RECT</b> structure that specifies the destination rectangle in the device context.</para>
-    </param>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. New applications should not use it.</div>The <code>DrawVideoImageDraw</code> method draws the specified source rectangle to the specified destination rectangle in the specified GDI device context.</summary>
+    <param name="hdc">Specifies the device context.</param>
+    <param name="lprcSrc">Pointer to a <b>RECT</b> structure that specifies the source rectangle, as a subrectangle of the current video frame.</param>
+    <param name="lprcDst">Pointer to a <b>RECT</b> structure that specifies the destination rectangle in the device context.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -52,26 +44,26 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDrawVideoImage Interface" />
   </member>
   <member name="IDrawVideoImage.DrawVideoImageEnd">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. New applications should not use it.</para>
-      <para>The <code>DrawVideoImageEnd</code> method turns DirectDraw back on after drawing has been performed.</para>
-    </summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. New applications should not use it.</div>The <code>DrawVideoImageEnd</code> method turns DirectDraw back on after drawing has been performed.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -79,27 +71,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDrawVideoImage Interface" />
   </member>
   <member name="IDrawVideoImage">
     <summary>
-      <para>
-        <b>Note</b>  This interface has been deprecated. New applications should not use it.</para>
-      <para>The <code>IDrawVideoImage</code> interface enables an application to draw the same video image in multiple places simultaneously on the screen. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> filter exposes this interface. The Video Mixing Renderer (VMR) filter provides a better way to accomplish the same effect, through the use of multiple input streams.</para>
-      <para>To use this interface, call <b>DrawVideoImageBegin</b> to put the Video Renderer into GDI mode. Then the application can call the <b>DrawVideoImageDraw</b> method as often as necessary. The renderer simply takes the current video frame and draws it to the specified rectangle. This process is asynchronous to the delivery of frames to the renderer on the filter graph thread. The application is responsible for the frame rate at which it renders images; this rate will never be the same as the rate of the frames being delivered to the filter. In other words, calling this method is like taking a periodic snapshot of the video and putting it into a device context of your choosing at a rate of your choosing.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This interface has been deprecated. New applications should not use it.</div>The <code>IDrawVideoImage</code> interface enables an application to draw the same video image in multiple places simultaneously on the screen. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> filter exposes this interface. The Video Mixing Renderer (VMR) filter provides a better way to accomplish the same effect, through the use of multiple input streams.<para>To use this interface, call <b>DrawVideoImageBegin</b> to put the Video Renderer into GDI mode. Then the application can call the <b>DrawVideoImageDraw</b> method as often as necessary. The renderer simply takes the current video frame and draws it to the specified rectangle. This process is asynchronous to the delivery of frames to the renderer on the filter graph thread. The application is responsible for the frame rate at which it renders images; this rate will never be the same as the rate of the frames being delivered to the filter. In other words, calling this method is like taking a periodic snapshot of the video and putting it into a device context of your choosing at a rate of your choosing.</para></summary>
   </member>
 </doc>

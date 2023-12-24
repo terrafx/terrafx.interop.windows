@@ -3,102 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPublishedApp.GetPublishedAppInfo">
-    <summary>
-      <para>Gets publishing-related information about an application published by an application publisher.</para>
-    </summary>
-    <param name="ppai">
-      <para>Type: <b><see cref="PUBAPPINFO" />*</b></para>
-      <para>A pointer to an <see cref="PUBAPPINFO" /> structure that returns the application information.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The dwMask member of the <see cref="PUBAPPINFO" /> structure indicates which members have been requested. Note that Add/Remove Programs will not set the PAI_SCHEDULEDTIME and PAI_EXPIREDTIME bits.  However, the corresponding values stScheduled and stExpired will be used when applicable if the implementation provides them.  A publisher should provide this data if it is available.</para>
-      <h4>Examples</h4>
-      <para>The example shows a sample implementation:</para>
-      <code>HRESULT CPubApp.GetPublishedAppInfo(PUBAPPINFO *pInfo)
-{
-    if (sizeof(PUBAPPINFO) != pInfo-&gt;cbSize)
-        return E_FAIL;
-
-    // Add/Remove Programs will use these items but will not ask for them.
-
-    pInfo-&gt;dwMask |= (PAI_EXPIRETIME | PAI_SCHEDULEDTIME);
-
-    // First save off the mask of requested data items.
-
-    const DWORD dwMask = pInfo-&gt;dwMask;
-
-    // Zero-out the mask.  The bits should be set as items are retrieved.
-
-    pInfo-&gt;dwMask = 0;
-
-    // Call an internal function that obtains data and sets
-    // bits in pInfo-&gt;dwMask for each item obtained.
-
-    return get_pub_app_info(pInfo, dwMask);
-}
-
-
-
-</code>
-    </remarks>
-    <seealso cref="IAppPublisher" />
-    <seealso cref="IEnumPublishedApps" />
-    <seealso cref="IPublishedApp" />
-    <seealso cref="PUBAPPINFO" />
+    <summary>Gets publishing-related information about an application published by an application publisher.</summary>
+    <param name="ppai">A pointer to an <see cref="PUBAPPINFO" /> structure that returns the application information.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPublishedApp.Install">
-    <summary>
-      <para>Installs an application published by an application publisher. This method is invoked when the user selects <b>Add</b> or <b>Add Later</b> in <b>Add/Remove Programs</b> in Control Panel.</para>
-    </summary>
-    <param name="pstInstall">
-      <para>Type: <b>LPSYSTEMTIME</b></para>
-      <para>A pointer to a <see cref="SYSTEMTIME" /> structure that specifies the time the user elected to schedule installation through the <b>Add Later</b> button in <b>Add/Remove Programs</b>. This option is only available if the application supports scheduled installation (compare <see cref="GetPossibleActions" />). If this parameter is <b>NULL</b>, the application should be installed immediately.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="GetPossibleActions" />
-    <seealso cref="IAppPublisher" />
-    <seealso cref="IPublishedApp" />
+    <summary>Installs an application published by an application publisher. This method is invoked when the user selects <b>Add</b> or <b>Add Later</b> in <b>Add/Remove Programs</b> in Control Panel.</summary>
+    <param name="pstInstall">A pointer to a <see cref="SYSTEMTIME" /> structure that specifies the time the user elected to schedule installation through the <b>Add Later</b> button in <b>Add/Remove Programs</b>. This option is only available if the application supports scheduled installation (compare <see cref="GetPossibleActions" />). If this parameter is <b>NULL</b>, the application should be installed immediately.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPublishedApp.Unschedule">
-    <summary>
-      <para>Cancels the installation of an application published by an application publisher.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called in each of the following circumstances.</para>
-      <list type="number">
-        <item>
-          <description>The user selected the <b>Do Not Add Program</b> option in the <b>Add Later</b> dialog box in <b>Add/Remove Programs</b> in Control Panel.</description>
-        </item>
-        <item>
-          <description>The user has selected an installation time later than either the expiration time or the assigned time as specified in the published application information. In these circumstances, implementations are expected to cancel any scheduled installation for the application.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IAppPublisher" />
-    <seealso cref="IPublishedApp" />
-    <seealso cref="IPublishedApp.GetPublishedAppInfo" />
-    <seealso cref="IShellApp" />
+    <summary>Cancels the installation of an application published by an application publisher.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPublishedApp">
-    <summary>
-      <para>Exposes methods that represent applications to Add/Remove Programs in Control Panel.</para>
-    </summary>
-    <remarks>
-      <para>To publish applications to Add/Remove Programs in Control Panel, you must support <see cref="IEnumPublishedApps" />, <see cref="IAppPublisher" /> and <b>IPublishedApp</b>.</para>
-    </remarks>
-    <seealso cref="IAppPublisher" />
-    <seealso cref="IEnumPublishedApps" />
-    <seealso cref="IShellApp" />
+    <summary>Exposes methods that represent applications to Add/Remove Programs in Control Panel.</summary>
   </member>
 </doc>

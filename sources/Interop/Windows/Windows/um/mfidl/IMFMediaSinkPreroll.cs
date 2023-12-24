@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaSinkPreroll*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSinkPreroll*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaSinkPreroll*, uint>)(lpVtbl[1]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSinkPreroll*, uint>)(lpVtbl[1]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaSinkPreroll*, uint>)(lpVtbl[2]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSinkPreroll*, uint>)(lpVtbl[2]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSinkPreroll.xml' path='doc/member[@name="IMFMediaSinkPreroll.NotifyPreroll"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
     [VtblIndex(3)]
     public HRESULT NotifyPreroll([NativeTypeName("MFTIME")] long hnsUpcomingStartTime)
     {
-        return ((delegate* unmanaged<IMFMediaSinkPreroll*, long, int>)(lpVtbl[3]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), hnsUpcomingStartTime);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSinkPreroll*, long, int>)(lpVtbl[3]))((IMFMediaSinkPreroll*)Unsafe.AsPointer(ref this), hnsUpcomingStartTime);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFMediaSinkPreroll : IMFMediaSinkPreroll.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFTIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> NotifyPreroll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> NotifyPreroll;
     }
 }

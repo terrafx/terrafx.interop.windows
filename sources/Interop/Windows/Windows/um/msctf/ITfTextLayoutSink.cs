@@ -25,7 +25,7 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfTextLayoutSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfTextLayoutSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfTextLayoutSink*, uint>)(lpVtbl[1]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfTextLayoutSink*, uint>)(lpVtbl[1]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfTextLayoutSink*, uint>)(lpVtbl[2]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfTextLayoutSink*, uint>)(lpVtbl[2]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfTextLayoutSink.xml' path='doc/member[@name="ITfTextLayoutSink.OnLayoutChange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface, IN
     [VtblIndex(3)]
     public HRESULT OnLayoutChange(ITfContext* pic, TfLayoutCode lcode, ITfContextView* pView)
     {
-        return ((delegate* unmanaged<ITfTextLayoutSink*, ITfContext*, TfLayoutCode, ITfContextView*, int>)(lpVtbl[3]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this), pic, lcode, pView);
+        return ((delegate* unmanaged[MemberFunction]<ITfTextLayoutSink*, ITfContext*, TfLayoutCode, ITfContextView*, int>)(lpVtbl[3]))((ITfTextLayoutSink*)Unsafe.AsPointer(ref this), pic, lcode, pView);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfTextLayoutSink : ITfTextLayoutSink.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ITfContext *, TfLayoutCode, ITfContextView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, TfLayoutCode, ITfContextView*, int> OnLayoutChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, TfLayoutCode, ITfContextView*, int> OnLayoutChange;
     }
 }

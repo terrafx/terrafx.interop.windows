@@ -8,59 +8,32 @@
       <para>
         <b>DML_RESAMPLE1_OPERATOR_DESC</b> rescales arbitrary dimensions of the input tensor using either nearest-neighbor sampling or bilinear interpolation. Given an <i>InputGradientTensor</i> with the same sizes as the <i>output</i> of an equivalent <b>DML_RESAMPLE1_OPERATOR_DESC</b>, this operator produces an <i>OutputGradientTensor</i> with the same sizes as the <i>input</i> of the <b>DML_RESAMPLE1_OPERATOR_DESC</b>.</para>
       <para>As an example, consider a <b>DML_RESAMPLE1_OPERATOR_DESC</b> that performs a nearest-neighbor scaling of 1.5x in the width, and 0.5x in the height.</para>
-      <code>InputTensor           OutputTensor
-[[1, 2],   Resample    [1, 1, 2]
- [3, 4]]      --&gt;
-</code>
+      <code>InputTensor OutputTensor [[1, 2], Resample [1, 1, 2] [3, 4]] --&gt;</code>
       <para>Notice how the 0th element of the input tensor (with value 1) contributes to two elements in the output, the 1st element (with value 2) contributes to one element in the output, and the 2nd and 3rd elements (with values 3 and 4) contribute to no elements of the output.</para>
       <para>The corresponding <b>DML_RESAMPLE_GRAD_OPERATOR_DESC</b> would perform the following.</para>
-      <code>InputGradientTensor           OutputGradientTensor
-    [4, 5, 6]      ResampleGrad    [[9, 6],
-                       --&gt;          [0, 0]]
-</code>
+      <code>InputGradientTensor OutputGradientTensor [4, 5, 6] ResampleGrad [[9, 6], --&gt; [0, 0]]</code>
       <para>Notice that the values in the <i>OutputGradientTensor</i> represent the weighted contributions of that element to the <i>OutputTensor</i> during the original <b>DML_RESAMPLE1_OPERATOR_DESC</b> operator.</para>
     </summary>
   </member>
   <member name="DML_RESAMPLE_GRAD_OPERATOR_DESC.InputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer. Typically this tensor would have the same sizes as the <i>output</i> of the corresponding <see cref="DML_RESAMPLE1_OPERATOR_DESC" /> in the forward pass.</para>
-    </summary>
+    <summary>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer. Typically this tensor would have the same sizes as the <i>output</i> of the corresponding <see cref="DML_RESAMPLE1_OPERATOR_DESC" /> in the forward pass.</summary>
   </member>
   <member name="DML_RESAMPLE_GRAD_OPERATOR_DESC.OutputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An output tensor containing the backpropagated gradients. Typically this tensor would have the same sizes as the <i>input</i> of the corresponding <see cref="DML_RESAMPLE1_OPERATOR_DESC" /> in the forward pass.</para>
-    </summary>
+    <summary>An output tensor containing the backpropagated gradients. Typically this tensor would have the same sizes as the <i>input</i> of the corresponding <see cref="DML_RESAMPLE1_OPERATOR_DESC" /> in the forward pass.</summary>
   </member>
   <member name="DML_RESAMPLE_GRAD_OPERATOR_DESC.InterpolationMode">
-    <summary>
-      <para>Type: <see cref="DML_INTERPOLATION_MODE" /></para>
-      <para>See <i>InterpolationMode</i> in <see cref="DML_RESAMPLE1_OPERATOR_DESC" />.</para>
-    </summary>
+    <summary>See <i>InterpolationMode</i> in <see cref="DML_RESAMPLE1_OPERATOR_DESC" />.</summary>
   </member>
   <member name="DML_RESAMPLE_GRAD_OPERATOR_DESC.DimensionCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of elements in the <i>Scales</i>, <i>InputPixelOffsets</i>, and <i>OutputPixelOffsets</i> arrays. This value must equal the <i>DimensionCount</i> provided in the <i>InputGradientTensor</i> and <i>OutputGradientTensor</i>.</para>
-    </summary>
+    <summary>The number of elements in the <i>Scales</i>, <i>InputPixelOffsets</i>, and <i>OutputPixelOffsets</i> arrays. This value must equal the <i>DimensionCount</i> provided in the <i>InputGradientTensor</i> and <i>OutputGradientTensor</i>.</summary>
   </member>
   <member name="DML_RESAMPLE_GRAD_OPERATOR_DESC.Scales">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a>*</b></para>
-      <para>See <i>Scales</i> in <see cref="DML_RESAMPLE1_OPERATOR_DESC" />.</para>
-    </summary>
+    <summary>See <i>Scales</i> in <see cref="DML_RESAMPLE1_OPERATOR_DESC" />.</summary>
   </member>
   <member name="DML_RESAMPLE_GRAD_OPERATOR_DESC.InputPixelOffsets">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a>*</b></para>
-      <para>See <i>InputPixelOffsets</i> in <see cref="DML_RESAMPLE1_OPERATOR_DESC" />.</para>
-    </summary>
+    <summary>See <i>InputPixelOffsets</i> in <see cref="DML_RESAMPLE1_OPERATOR_DESC" />.</summary>
   </member>
   <member name="DML_RESAMPLE_GRAD_OPERATOR_DESC.OutputPixelOffsets">
-    <summary>
-      <para>Type: _Field_size_(DimensionCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a>*</b></para>
-      <para>See <i>OutputPixelOffsets</i> in <see cref="DML_RESAMPLE1_OPERATOR_DESC" />.</para>
-    </summary>
+    <summary>See <i>OutputPixelOffsets</i> in <see cref="DML_RESAMPLE1_OPERATOR_DESC" />.</summary>
   </member>
 </doc>

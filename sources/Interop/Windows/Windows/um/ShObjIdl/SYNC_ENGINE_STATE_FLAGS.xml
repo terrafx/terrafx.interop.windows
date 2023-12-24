@@ -9,56 +9,34 @@
     </summary>
   </member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_NONE">
-    <summary>
-      <para>No state.</para>
-    </summary>
+    <summary>No state.</summary>
   </member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_SERVICE_QUOTA_NEARING_LIMIT">
-    <summary>
-      <para>The user's cloud storage quota is nearing capacity. This is dependent on the user's total quota space.</para>
-    </summary>
+    <summary>The user's cloud storage quota is nearing capacity. This is dependent on the user's total quota space.</summary>
   </member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_SERVICE_QUOTA_EXCEEDED_LIMIT">
-    <summary>
-      <para>The user's cloud storage quota is filled.</para>
-    </summary>
+    <summary>The user's cloud storage quota is filled.</summary>
   </member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_AUTHENTICATION_ERROR">
-    <summary>
-      <para>The user's account credentials are invalid.</para>
-    </summary>
+    <summary>The user's account credentials are invalid.</summary>
   </member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_METERED_NETWORK">
-    <summary>
-      <para>The sync engine is paused because of metered network settings.</para>
-    </summary>
+    <summary>The sync engine is paused because of metered network settings.</summary>
   </member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_DISK_SPACE_FULL">
-    <summary>
-      <para>The drive that contains the sync engine's content has reached the maximum allowed space.</para>
-    </summary>
+    <summary>The drive that contains the sync engine's content has reached the maximum allowed space.</summary>
   </member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_CLIENT_POLICY">
-    <summary>
-      <para>The user has exceeded their daily limit of requests or data transfers to the service.</para>
-    </summary>
+    <summary>The user has exceeded their daily limit of requests or data transfers to the service.</summary>
   </member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_SERVICE_POLICY">
-    <summary>
-      <para>The service has requested the system to throttle requests.</para>
-    </summary>
+    <summary>The service has requested the system to throttle requests.</summary>
   </member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_SERVICE_UNAVAILABLE">
-    <summary>
-      <para>The service can't be reached at this time.</para>
-    </summary>
+    <summary>The service can't be reached at this time.</summary>
   </member>
-  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_USER_REQUEST">
-    <summary></summary>
-  </member>
+  <member name="SYNC_ENGINE_STATE_FLAGS.SESF_PAUSED_DUE_TO_USER_REQUEST"></member>
   <member name="SYNC_ENGINE_STATE_FLAGS.SESF_ALL_FLAGS">
-    <summary>
-      <para>A bitmask value for all valid SYNC_ENGINE_STATE_FLAGS flags.</para>
-    </summary>
+    <summary>A bitmask value for all valid SYNC_ENGINE_STATE_FLAGS flags.</summary>
   </member>
 </doc>

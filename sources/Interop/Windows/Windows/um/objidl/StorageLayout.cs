@@ -14,7 +14,7 @@ public unsafe partial struct StorageLayout
 
     /// <include file='StorageLayout.xml' path='doc/member[@name="StorageLayout.pwcsElementName"]/*' />
     [NativeTypeName("OLECHAR *")]
-    public ushort* pwcsElementName;
+    public char* pwcsElementName;
 
     /// <include file='StorageLayout.xml' path='doc/member[@name="StorageLayout.cOffset"]/*' />
     public LARGE_INTEGER cOffset;

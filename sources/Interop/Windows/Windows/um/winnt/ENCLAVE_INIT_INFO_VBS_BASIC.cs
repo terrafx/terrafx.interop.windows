@@ -10,15 +10,15 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='ENCLAVE_INIT_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_VBS_BASIC"]/*' />
-public unsafe partial struct ENCLAVE_INIT_INFO_VBS_BASIC
+public partial struct ENCLAVE_INIT_INFO_VBS_BASIC
 {
     /// <include file='ENCLAVE_INIT_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_VBS_BASIC.FamilyId"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte FamilyId[16];
+    public _FamilyId_e__FixedBuffer FamilyId;
 
     /// <include file='ENCLAVE_INIT_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_VBS_BASIC.ImageId"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte ImageId[16];
+    public _ImageId_e__FixedBuffer ImageId;
 
     /// <include file='ENCLAVE_INIT_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_VBS_BASIC.EnclaveSize"]/*' />
     [NativeTypeName("ULONGLONG")]
@@ -33,7 +33,7 @@ public unsafe partial struct ENCLAVE_INIT_INFO_VBS_BASIC
     public uint Reserved;
 
     /// <include file='ENCLAVE_INIT_INFO_VBS_BASIC.xml' path='doc/member[@name="ENCLAVE_INIT_INFO_VBS_BASIC.Anonymous"]/*' />
-    [NativeTypeName("_ENCLAVE_INIT_INFO_VBS_BASIC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:14200:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L14221_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.SignatureInfoHandle"]/*' />
@@ -70,5 +70,19 @@ public unsafe partial struct ENCLAVE_INIT_INFO_VBS_BASIC
         [FieldOffset(0)]
         [NativeTypeName("ULONGLONG")]
         public ulong Unused;
+    }
+
+    /// <include file='_FamilyId_e__FixedBuffer.xml' path='doc/member[@name="_FamilyId_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _FamilyId_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_ImageId_e__FixedBuffer.xml' path='doc/member[@name="_ImageId_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ImageId_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

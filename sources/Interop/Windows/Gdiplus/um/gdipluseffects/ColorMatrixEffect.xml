@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ColorMatrixEffect.ColorMatrixEffect">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colormatrixeffect">ColorMatrixEffect</a> object.</summary>
+  </member>
+  <member name="ColorMatrixEffect.GetParameters">
+    <summary>The <b>ColorMatrixEffect.GetParameters</b> method gets the elements of the current 5x5 color matrix of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colormatrixeffect">ColorMatrixEffect</a> object.</summary>
+    <param name="size">Pointer to a <b>UINT</b> that specifies the size, in bytes, of a <see cref="ColorMatrix" /> structure.</param>
+    <param name="matrix">Pointer to a <see cref="ColorMatrix" /> structure that receives the elements of the color matrix.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ColorMatrixEffect.SetParameters">
+    <summary>The <b>ColorMatrixEffect.SetParameters</b> method sets the 5x5 color matrix of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colormatrixeffect">ColorMatrixEffect</a> object.</summary>
+    <param name="matrix">Pointer to a <see cref="ColorMatrix" /> object that specifies the 5x5 color matrix.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

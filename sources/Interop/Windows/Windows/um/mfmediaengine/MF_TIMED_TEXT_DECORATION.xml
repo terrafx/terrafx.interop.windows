@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_TIMED_TEXT_DECORATION">
-    <summary>
-      <para>Specifies how text is decorated (underlined and so on).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies how text is decorated (underlined and so on).</summary>
   </member>
   <member name="MF_TIMED_TEXT_DECORATION.MF_TIMED_TEXT_DECORATION_NONE">
-    <summary>
-      <para>Text isn't decorated.</para>
-    </summary>
+    <summary>Text isn't decorated.</summary>
   </member>
   <member name="MF_TIMED_TEXT_DECORATION.MF_TIMED_TEXT_DECORATION_UNDERLINE">
-    <summary>
-      <para>Text is underlined.</para>
-    </summary>
+    <summary>Text is underlined.</summary>
   </member>
   <member name="MF_TIMED_TEXT_DECORATION.MF_TIMED_TEXT_DECORATION_LINE_THROUGH">
-    <summary>
-      <para>Text has a line through it.</para>
-    </summary>
+    <summary>Text has a line through it.</summary>
   </member>
   <member name="MF_TIMED_TEXT_DECORATION.MF_TIMED_TEXT_DECORATION_OVERLINE">
-    <summary>
-      <para>Text has a line over it.</para>
-    </summary>
+    <summary>Text has a line over it.</summary>
   </member>
 </doc>

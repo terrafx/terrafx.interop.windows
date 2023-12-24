@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechDataKeyTests
     {
         Assert.That(typeof(ISpeechDataKey).GUID, Is.EqualTo(IID_ISpeechDataKey));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechDataKey" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechDataKey>(), Is.EqualTo(sizeof(ISpeechDataKey)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechDataKey" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechDataKey).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechDataKey" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechDataKey), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechDataKey), Is.EqualTo(4));
-        }
-    }
 }

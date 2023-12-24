@@ -14,7 +14,7 @@ public unsafe partial struct WINHTTP_HEADER_NAME
     /// <include file='WINHTTP_HEADER_NAME.xml' path='doc/member[@name="WINHTTP_HEADER_NAME.pwszName"]/*' />
     [FieldOffset(0)]
     [NativeTypeName("PCWSTR")]
-    public ushort* pwszName;
+    public char* pwszName;
 
     /// <include file='WINHTTP_HEADER_NAME.xml' path='doc/member[@name="WINHTTP_HEADER_NAME.pszName"]/*' />
     [FieldOffset(0)]

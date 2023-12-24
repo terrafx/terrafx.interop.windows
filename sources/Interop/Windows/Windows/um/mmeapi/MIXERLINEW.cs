@@ -3,13 +3,14 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIXERLINEW.xml' path='doc/member[@name="MIXERLINEW"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct MIXERLINEW
+public partial struct MIXERLINEW
 {
     /// <include file='MIXERLINEW.xml' path='doc/member[@name="MIXERLINEW.cbStruct"]/*' />
     [NativeTypeName("DWORD")]
@@ -53,19 +54,19 @@ public unsafe partial struct MIXERLINEW
 
     /// <include file='MIXERLINEW.xml' path='doc/member[@name="MIXERLINEW.szShortName"]/*' />
     [NativeTypeName("WCHAR[16]")]
-    public fixed ushort szShortName[16];
+    public _szShortName_e__FixedBuffer szShortName;
 
     /// <include file='MIXERLINEW.xml' path='doc/member[@name="MIXERLINEW.szName"]/*' />
     [NativeTypeName("WCHAR[64]")]
-    public fixed ushort szName[64];
+    public _szName_e__FixedBuffer szName;
 
     /// <include file='MIXERLINEW.xml' path='doc/member[@name="MIXERLINEW.Target"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mmeapi.h:1901:5)")]
+    [NativeTypeName("__AnonymousRecord_mmeapi_L1901_C5")]
     public _Target_e__Struct Target;
 
     /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    public unsafe partial struct _Target_e__Struct
+    public partial struct _Target_e__Struct
     {
         /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct.dwType"]/*' />
         [NativeTypeName("DWORD")]
@@ -89,6 +90,30 @@ public unsafe partial struct MIXERLINEW
 
         /// <include file='_Target_e__Struct.xml' path='doc/member[@name="_Target_e__Struct.szPname"]/*' />
         [NativeTypeName("WCHAR[32]")]
-        public fixed ushort szPname[32];
+        public _szPname_e__FixedBuffer szPname;
+
+        /// <include file='_szPname_e__FixedBuffer.xml' path='doc/member[@name="_szPname_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 1)]
+        [InlineArray(32)]
+        public partial struct _szPname_e__FixedBuffer
+        {
+            public char e0;
+        }
+    }
+
+    /// <include file='_szShortName_e__FixedBuffer.xml' path='doc/member[@name="_szShortName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(16)]
+    public partial struct _szShortName_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_szName_e__FixedBuffer.xml' path='doc/member[@name="_szName_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(64)]
+    public partial struct _szName_e__FixedBuffer
+    {
+        public char e0;
     }
 }

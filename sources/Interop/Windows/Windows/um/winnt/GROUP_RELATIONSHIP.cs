@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='GROUP_RELATIONSHIP.xml' path='doc/member[@name="GROUP_RELATIONSHIP"]/*' />
-public unsafe partial struct GROUP_RELATIONSHIP
+public partial struct GROUP_RELATIONSHIP
 {
     /// <include file='GROUP_RELATIONSHIP.xml' path='doc/member[@name="GROUP_RELATIONSHIP.MaximumGroupCount"]/*' />
     [NativeTypeName("WORD")]
@@ -23,11 +23,18 @@ public unsafe partial struct GROUP_RELATIONSHIP
 
     /// <include file='GROUP_RELATIONSHIP.xml' path='doc/member[@name="GROUP_RELATIONSHIP.Reserved"]/*' />
     [NativeTypeName("BYTE[20]")]
-    public fixed byte Reserved[20];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='GROUP_RELATIONSHIP.xml' path='doc/member[@name="GROUP_RELATIONSHIP.GroupInfo"]/*' />
     [NativeTypeName("PROCESSOR_GROUP_INFO[1]")]
     public _GroupInfo_e__FixedBuffer GroupInfo;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(20)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
 
     /// <include file='_GroupInfo_e__FixedBuffer.xml' path='doc/member[@name="_GroupInfo_e__FixedBuffer"]/*' />
     public partial struct _GroupInfo_e__FixedBuffer
@@ -40,7 +47,7 @@ public unsafe partial struct GROUP_RELATIONSHIP
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

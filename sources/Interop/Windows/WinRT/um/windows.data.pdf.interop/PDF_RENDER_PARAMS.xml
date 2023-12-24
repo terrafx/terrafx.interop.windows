@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PDF_RENDER_PARAMS">
+    <summary>Represents a set of properties for outputting a single page of a Portable Document Format (PDF) file.</summary>
+  </member>
+  <member name="PDF_RENDER_PARAMS.pdf.interop.PDF_RENDER_PARAMS.SourceRect"></member>
+  <member name="PDF_RENDER_PARAMS.pdf.interop.PDF_RENDER_PARAMS.DestinationWidth"></member>
+  <member name="PDF_RENDER_PARAMS.pdf.interop.PDF_RENDER_PARAMS.DestinationHeight"></member>
+  <member name="PDF_RENDER_PARAMS.pdf.interop.PDF_RENDER_PARAMS.BackgroundColor"></member>
+  <member name="PDF_RENDER_PARAMS.pdf.interop.PDF_RENDER_PARAMS.IgnoreHighContrast"></member>
+  <member name="PDF_RENDER_PARAMS.BackgroundColor">
+    <summary>Outputs the page with the specified background color. The default is {1.f, 1.f, 1.f, 1.f}, which represents the values 1.0 for red, green, blue, and alpha channel, respectively. These values, taken together, represent white at full opacity.</summary>
+  </member>
+  <member name="PDF_RENDER_PARAMS.DestinationHeight">
+    <summary>Outputs the page at the specified height. The default is 0.f.</summary>
+  </member>
+  <member name="PDF_RENDER_PARAMS.DestinationWidth">
+    <summary>Outputs the page at the specified width. The default is 0.f.</summary>
+  </member>
+  <member name="PDF_RENDER_PARAMS.IgnoreHighContrast">
+    <summary>False to use the system's high contrast display settings; otherwise true. The default is true.</summary>
+  </member>
+  <member name="PDF_RENDER_PARAMS.SourceRect">
+    <summary>Outputs a rectangular portion of the original page, as defined by the <b>D2D_RECT_F</b> structure's upper-left and lower-right corner x- and y-coordinates. The default value is 0.f for all coordinates.</summary>
+  </member>
+</doc>

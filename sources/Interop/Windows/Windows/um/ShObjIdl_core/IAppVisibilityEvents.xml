@@ -3,41 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppVisibilityEvents.AppVisibilityOnMonitorChanged">
-    <summary>
-      <para>Notifies a client that the mode of a display has changed.</para>
-    </summary>
-    <param name="hMonitor">
-      <para>The display that has a changing mode.</para>
-    </param>
-    <param name="previousMode">
-      <para>The previous mode of <i>hMonitor</i>, which may be <b>MAV_UNKNOWN</b>  if the client was unaware of the display previously.</para>
-    </param>
-    <param name="currentMode">
-      <para>The current mode of <i>hMonitor</i>, which will not be <b>MAV_UNKNOWN</b>.</para>
-    </param>
-    <returns>
-      <para>The return value is ignored.</para>
-    </returns>
-    <seealso cref="IAppVisibilityEvents" />
+    <summary>Notifies a client that the mode of a display has changed.</summary>
+    <param name="hMonitor">The display that has a changing mode.</param>
+    <param name="previousMode">The previous mode of <i>hMonitor</i>, which may be <b>MAV_UNKNOWN</b> if the client was unaware of the display previously.</param>
+    <param name="currentMode">The current mode of <i>hMonitor</i>, which will not be <b>MAV_UNKNOWN</b>.</param>
+    <returns>The return value is ignored.</returns>
   </member>
   <member name="IAppVisibilityEvents.LauncherVisibilityChange">
-    <summary>
-      <para>Notifies a client that visibility of the Start screen has changed.</para>
-    </summary>
+    <summary>Notifies a client that visibility of the Start screen has changed.</summary>
     <param name="currentVisibleState">
-      <para>
-        <b>TRUE</b> if the Start screen is displayed; otherwise, <b>FALSE.</b></para>
-    </param>
-    <returns>
-      <para>The return value is ignored.</para>
-    </returns>
-    <seealso cref="IAppVisibilityEvents" />
+      <b>TRUE</b> if the Start screen is displayed; otherwise, <b>FALSE.</b></param>
+    <returns>The return value is ignored.</returns>
   </member>
   <member name="IAppVisibilityEvents">
-    <summary>
-      <para>Enables applications to receive notifications of state changes in a display and of changes in Start screen visibility.</para>
-    </summary>
-    <seealso cref="IAppVisibility" />
-    <seealso cref="IUnknown" />
+    <summary>Enables applications to receive notifications of state changes in a display and of changes in Start screen visibility.</summary>
   </member>
 </doc>

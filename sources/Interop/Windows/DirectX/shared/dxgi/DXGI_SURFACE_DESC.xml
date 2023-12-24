@@ -3,36 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_SURFACE_DESC">
-    <summary>
-      <para>Describes a surface.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used by the <see cref="GetDesc" /> and  <see cref="CreateSurface" /> methods.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <summary>Describes a surface.</summary>
   </member>
   <member name="DXGI_SURFACE_DESC.Width">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A value describing the surface width.</para>
-    </summary>
+    <summary>A value describing the surface width.</summary>
   </member>
   <member name="DXGI_SURFACE_DESC.Height">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A value describing the surface height.</para>
-    </summary>
+    <summary>A value describing the surface height.</summary>
   </member>
   <member name="DXGI_SURFACE_DESC.Format">
-    <summary>
-      <para>Type: <b><see cref="DXGI_FORMAT" /></b></para>
-      <para>A member of the <see cref="DXGI_FORMAT" /> enumerated type that describes the surface format.</para>
-    </summary>
+    <summary>A member of the <see cref="DXGI_FORMAT" /> enumerated type that describes the surface format.</summary>
   </member>
   <member name="DXGI_SURFACE_DESC.SampleDesc">
-    <summary>
-      <para>Type: <b><see cref="DXGI_SAMPLE_DESC" /></b></para>
-      <para>A member of the <see cref="DXGI_SAMPLE_DESC" /> structure that describes multi-sampling parameters for the surface.</para>
-    </summary>
+    <summary>A member of the <see cref="DXGI_SAMPLE_DESC" /> structure that describes multi-sampling parameters for the surface.</summary>
   </member>
 </doc>

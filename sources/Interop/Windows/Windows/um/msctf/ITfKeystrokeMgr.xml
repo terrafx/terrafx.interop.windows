@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfKeystrokeMgr.AdviseKeyEventSink">
-    <summary>
-      <para>Installs a key event sink to receive keyboard events.</para>
-    </summary>
-    <param name="tid">
-      <para>Identifier of the client that owns the key event sink. This value is obtained by a previous call to <see cref="ITfThreadMgr.Activate" />.</para>
-    </param>
-    <param name="pSink">
-      <para>Pointer to a <see cref="ITfKeyEventSink" /> interface.</para>
-    </param>
-    <param name="fForeground">
-      <para>Specifies if this key event sink is made the foreground key event sink. If this is <b>TRUE</b>, this key event sink is made the foreground key event sink. Otherwise, this key event sink does not become the foreground key event sink.</para>
-    </param>
+    <summary>Installs a key event sink to receive keyboard events.</summary>
+    <param name="tid">Identifier of the client that owns the key event sink. This value is obtained by a previous call to <see cref="ITfThreadMgr.Activate" />.</param>
+    <param name="pSink">Pointer to a <see cref="ITfKeyEventSink" /> interface.</param>
+    <param name="fForeground">Specifies if this key event sink is made the foreground key event sink. If this is <b>TRUE</b>, this key event sink is made the foreground key event sink. Otherwise, this key event sink does not become the foreground key event sink.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,52 +14,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_ADVISELIMIT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CONNECT_E_ADVISELIMIT</b>
-            </para>
-          </description>
-          <description>
-            <para>The client identified by <i>tid</i> has a key event sink installed.</para>
-          </description>
-        </item>
+          <description>The client identified by <i>tid</i> has a key event sink installed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The foreground key event sink receives all keyboard events. A non-foreground key event sink only receives preserved keys and key events that occur over text that marked owned by the client identifier.</para>
-    </remarks>
-    <seealso cref="ITfKeyEventSink " />
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfThreadMgr.Activate " />
   </member>
   <member name="ITfKeystrokeMgr.GetForeground">
-    <summary>
-      <para>Obtains the class identifier of the foreground TSF text service.</para>
-    </summary>
-    <param name="pclsid">
-      <para>Pointer to a CLSID that receives the class identifier of the foreground TSF text service.</para>
-    </param>
+    <summary>Obtains the class identifier of the foreground TSF text service.</summary>
+    <param name="pclsid">Pointer to a CLSID that receives the class identifier of the foreground TSF text service.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -75,62 +63,63 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>There is no foreground text service.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pclsid</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There is no foreground text service.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pclsid</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfKeystrokeMgr.GetPreservedKey">
-    <summary>
-      <para>Obtains the command GUID for a preserved key.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to the application context. This value is returned by a previous call to <see cref="ITfDocumentMgr.CreateContext" />.</para>
-    </param>
-    <param name="pprekey">
-      <para>Pointer to a <see cref="TF_PRESERVEDKEY" /> structure that identifies the preserved key to obtain. The <b>uVKey</b> member contains the virtual key code and the <b>uModifiers</b> member identifies the modifiers of the preserved key. The <b>uVKey</b> member must be less than 256.</para>
-    </param>
-    <param name="pguid">
-      <para>Pointer to a GUID value that receives the command GUID of the preserved key. This is the GUID passed in the TSF text service call to <see cref="ITfKeystrokeMgr.PreserveKey" />. This value receives GUID_NULL if the preserved key is not found.</para>
-    </param>
+    <summary>Obtains the command GUID for a preserved key.</summary>
+    <param name="pic">Pointer to the application context. This value is returned by a previous call to <see cref="ITfDocumentMgr.CreateContext" />.</param>
+    <param name="pprekey">Pointer to a <see cref="TF_PRESERVEDKEY" /> structure that identifies the preserved key to obtain. The <b>uVKey</b> member contains the virtual key code and the <b>uModifiers</b> member identifies the modifiers of the preserved key. The <b>uVKey</b> member must be less than 256.</param>
+    <param name="pguid">Pointer to a GUID value that receives the command GUID of the preserved key. This is the GUID passed in the TSF text service call to <see cref="ITfKeystrokeMgr.PreserveKey" />. This value receives GUID_NULL if the preserved key is not found.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -138,66 +127,61 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful and the preserved key was found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful and the preserved key was found.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method was successful, but the preserved key was not found. <i>pguid</i> receives GUID_NULL.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful, but the preserved key was not found. <i>pguid</i> receives GUID_NULL.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Preserved keys are registered by TSF text services and used to provide keyboard shortcuts to common commands implemented by the TSF text service.</para>
-    </remarks>
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.PreserveKey " />
-    <seealso cref="TF_PRESERVEDKEY " />
   </member>
   <member name="ITfKeystrokeMgr.GetPreservedKeyDescription">
-    <summary>
-      <para>Obtains the description string of an existing preserved key.</para>
-    </summary>
-    <param name="rguid">
-      <para>Contains the command GUID of the preserved key.</para>
-    </param>
-    <param name="pbstrDesc">
-      <para>Pointer to a BSTR value the receives the description string. The caller must free this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a>.</para>
-    </param>
+    <summary>Obtains the description string of an existing preserved key.</summary>
+    <param name="rguid">Contains the command GUID of the preserved key.</param>
+    <param name="pbstrDesc">Pointer to a BSTR value the receives the description string. The caller must free this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -205,57 +189,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters is invalid or the preserved key is not found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters is invalid or the preserved key is not found.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Preserved keys are registered by TSF text services and provide keyboard shortcuts to common commands implemented by the TSF text service.</para>
-    </remarks>
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
   </member>
   <member name="ITfKeystrokeMgr.IsPreservedKey">
-    <summary>
-      <para>Determines if a command GUID and key combination is a preserved key.</para>
-    </summary>
-    <param name="rguid">
-      <para>Specifies the command GUID of the preserved key. This is the GUID passed in the text service call to <see cref="ITfKeystrokeMgr.PreserveKey" />.</para>
-    </param>
-    <param name="pprekey">
-      <para>Pointer to a <see cref="TF_PRESERVEDKEY" /> structure that identifies the preserved key. The <b>uVKey</b> member contains the virtual key code and the <b>uModifiers</b> member identifies the modifiers of the preserved key. The <b>uVKey</b> member must be less than 256.</para>
-    </param>
-    <param name="pfRegistered">
-      <para>Pointer to a BOOL that receives <b>TRUE</b> if the command GUID and key combination is a registered preserved key, or <b>FALSE</b> otherwise.</para>
-    </param>
+    <summary>Determines if a command GUID and key combination is a preserved key.</summary>
+    <param name="rguid">Specifies the command GUID of the preserved key. This is the GUID passed in the text service call to <see cref="ITfKeystrokeMgr.PreserveKey" />.</param>
+    <param name="pprekey">Pointer to a <see cref="TF_PRESERVEDKEY" /> structure that identifies the preserved key. The <b>uVKey</b> member contains the virtual key code and the <b>uModifiers</b> member identifies the modifiers of the preserved key. The <b>uVKey</b> member must be less than 256.</param>
+    <param name="pfRegistered">Pointer to a BOOL that receives <b>TRUE</b> if the command GUID and key combination is a registered preserved key, or <b>FALSE</b> otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -263,68 +240,62 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful and the preserved key was found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful and the preserved key was found.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method was successful, but the preserved key was not found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful, but the preserved key was not found.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Preserved keys are registered by TSF text services and provide keyboard shortcuts to common commands implemented by the TSF text service.</para>
-    </remarks>
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.PreserveKey " />
-    <seealso cref="TF_PRESERVEDKEY " />
   </member>
   <member name="ITfKeystrokeMgr.KeyDown">
-    <summary>
-      <para>Passes a key down event to the keystroke manager.</para>
-    </summary>
-    <param name="wParam">
-      <para>Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL that, on exit, indicates if the key event was handled. If this value receives <b>TRUE</b>, the key event was handled and the event should not be forwarded to the application. If this value is <b>FALSE</b>, the key event was not handled and the event should be forwarded to the application.</para>
-    </param>
+    <summary>Passes a key down event to the keystroke manager.</summary>
+    <param name="wParam">Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="lParam">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="pfEaten">Pointer to a BOOL that, on exit, indicates if the key event was handled. If this value receives <b>TRUE</b>, the key event was handled and the event should not be forwarded to the application. If this value is <b>FALSE</b>, the key event was not handled and the event should be forwarded to the application.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -332,79 +303,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>There are no key event sinks installed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There are no key event sinks installed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If this method is successful and <i>pfEaten</i> receives <b>TRUE</b>, the application should not process the key down event. If this method does not return S_OK or <i>pfEaten</i> receives <b>FALSE</b>, the application should process the key down event. The following is an example of how this is implemented.</para>
-      <code>
-if(msg.message == WM_KEYDOWN)
-{
-    if( pKeyboardMgr-&gt;TestKeyDown(msg.wParam, msg.lParam, &amp;amp;amp;amp;amp;amp;amp;fEaten) == S_OK
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; fEaten
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; pKeyboardMgr-&gt;KeyDown(msg.wParam, msg.lParam, &amp;amp;amp;amp;amp;amp;amp;fEaten) == S_OK
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; fEaten)
-    {
-        //The key was handled by the keystroke manager or a TSF text service. Do not pass the key to the application.
-        continue;
-    }
-    else
-    {
-        //Let the application process the key.
-    }
-}
-
-</code>
-      <para>If the keystroke manager does not handle the key event, it passes the key event to TSF text services by calling the TSF text service <see cref="ITfKeyEventSink.OnKeyDown" /> method.</para>
-    </remarks>
-    <seealso cref="ITfKeyEventSink.OnKeyDown" />
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.KeyUp" />
-    <seealso cref="ITfKeystrokeMgr.TestKeyDown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</seealso>
   </member>
   <member name="ITfKeystrokeMgr.KeyUp">
-    <summary>
-      <para>Passes a key up event to the keystroke manager.</para>
-    </summary>
-    <param name="wParam">
-      <para>Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL that, on exit, indicates if the key event will be handled. If this value receives <b>TRUE</b>, the key event would be handled and the event should not be forwarded to the application. If this value is <b>FALSE</b>, the key event would not be handled and the event should be forwarded to the application.</para>
-    </param>
+    <summary>Passes a key up event to the keystroke manager.</summary>
+    <param name="wParam">Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <param name="lParam">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <param name="pfEaten">Pointer to a BOOL that, on exit, indicates if the key event will be handled. If this value receives <b>TRUE</b>, the key event would be handled and the event should not be forwarded to the application. If this value is <b>FALSE</b>, the key event would not be handled and the event should be forwarded to the application.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -412,85 +354,52 @@ if(msg.message == WM_KEYDOWN)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>No key event sinks are installed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>No key event sinks are installed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If this method is successful and <i>pfEaten</i> receives <b>TRUE</b>, the application should not process the key down event. If this method does not return S_OK or <i>pfEaten</i> receives <b>FALSE</b>, the application should process the key down event. The following is an example of how this is implemented.</para>
-      <code>
-if(msg.message == WM_KEYUP)
-{
-    if( pKeyboardMgr-&gt;TestKeyUp(msg.wParam, msg.lParam, &amp;amp;amp;amp;amp;amp;amp;fEaten) == S_OK
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; fEaten
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; pKeyboardMgr-&gt;KeyUp(msg.wParam, msg.lParam, &amp;amp;amp;amp;amp;amp;amp;fEaten) == S_OK
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; fEaten)
-    {
-        //The key was handled by the keystroke manager or a TSF text service. Do not pass the key to the application.
-        continue;
-    }
-    else
-    {
-        //Let the application process the key.
-    }
-}
-
-</code>
-      <para>If the keystroke manager does not handle the key event, it passes the key event to the text services by a call to the text service <see cref="ITfKeyEventSink.OnKeyUp" /> method.</para>
-    </remarks>
-    <seealso cref="ITfKeyEventSink.OnKeyUp" />
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.KeyDown" />
-    <seealso cref="ITfKeystrokeMgr.TestKeyUp" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</seealso>
   </member>
   <member name="ITfKeystrokeMgr.PreserveKey">
-    <summary>
-      <para>Registers a preserved key.</para>
-    </summary>
-    <param name="tid">
-      <para>Contains the client identifier of the TSF text service. This value is passed to the TSF text service in its <see cref="ITfTextInputProcessor.Activate" /> method.</para>
-    </param>
-    <param name="rguid">
-      <para>Contains the command GUID of the preserved key. This value is passed to the TSF text service <see cref="ITfKeyEventSink.OnPreservedKey" /> method to identify the preserved key when the preserved key is activated.</para>
-    </param>
-    <param name="prekey">
-      <para>Pointer to a <see cref="TF_PRESERVEDKEY" /> structure that specifies the preserved key. The <b>uVKey</b> member contains the virtual key code and the <b>uModifiers</b> member identifies the modifiers of the preserved key.</para>
-    </param>
-    <param name="pchDesc">
-      <para>Pointer to a Unicode string that contains the description of the preserved key. This cannot be <b>NULL</b> unless <i>cchDesc</i> is zero.</para>
-    </param>
-    <param name="cchDesc">
-      <para>Specifies the number of characters in <i>pchDesc</i>. Pass zero for this parameter if no description is required.</para>
-    </param>
+    <summary>Registers a preserved key.</summary>
+    <param name="tid">Contains the client identifier of the TSF text service. This value is passed to the TSF text service in its <see cref="ITfTextInputProcessor.Activate" /> method.</param>
+    <param name="rguid">Contains the command GUID of the preserved key. This value is passed to the TSF text service <see cref="ITfKeyEventSink.OnPreservedKey" /> method to identify the preserved key when the preserved key is activated.</param>
+    <param name="prekey">Pointer to a <see cref="TF_PRESERVEDKEY" /> structure that specifies the preserved key. The <b>uVKey</b> member contains the virtual key code and the <b>uModifiers</b> member identifies the modifiers of the preserved key.</param>
+    <param name="pchDesc">Pointer to a Unicode string that contains the description of the preserved key. This cannot be <b>NULL</b> unless <i>cchDesc</i> is zero.</param>
+    <param name="cchDesc">Specifies the number of characters in <i>pchDesc</i>. Pass zero for this parameter if no description is required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -498,80 +407,74 @@ if(msg.message == WM_KEYUP)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_ALREADY_EXISTS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The preserved key is registered.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_ALREADY_EXISTS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The preserved key is registered.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A memory allocation error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Preserved keys are registered by TSF text services and provide keyboard shortcuts to common commands implemented by the TSF text service.</para>
-    </remarks>
-    <seealso cref="ITfKeyEventSink.OnPreservedKey " />
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.UnpreserveKey " />
-    <seealso cref="ITfTextInputProcessor.Activate " />
-    <seealso cref="TF_PRESERVEDKEY " />
   </member>
   <member name="ITfKeystrokeMgr.SetPreservedKeyDescription">
-    <summary>
-      <para>Modifies the description string of an existing preserved key.</para>
-    </summary>
-    <param name="rguid">
-      <para>Contains the command GUID of the preserved key.</para>
-    </param>
-    <param name="pchDesc">
-      <para>Pointer to a Unicode string that contains the new description of the preserved key. This cannot be <b>NULL</b> unless <i>cchDesc</i> is zero.</para>
-    </param>
-    <param name="cchDesc">
-      <para>Number of characters in <i>pchDesc</i>. Pass zero for this parameter if no description is required.</para>
-    </param>
+    <summary>Modifies the description string of an existing preserved key.</summary>
+    <param name="rguid">Contains the command GUID of the preserved key.</param>
+    <param name="pchDesc">Pointer to a Unicode string that contains the new description of the preserved key. This cannot be <b>NULL</b> unless <i>cchDesc</i> is zero.</param>
+    <param name="cchDesc">Number of characters in <i>pchDesc</i>. Pass zero for this parameter if no description is required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -579,57 +482,50 @@ if(msg.message == WM_KEYUP)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid or the preserved key is not found.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid or the preserved key is not found.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Preserved keys are registered by TSF text services and provide keyboard shortcuts to common commands implemented by the TSF text service.</para>
-    </remarks>
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.GetPreservedKeyDescription " />
   </member>
   <member name="ITfKeystrokeMgr.SimulatePreservedKey">
-    <summary>
-      <para>Simulates the execution of a preserved key sequence.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to the application context. This value was returned by a previous call to <see cref="ITfDocumentMgr.CreateContext" />.</para>
-    </param>
-    <param name="rguid">
-      <para>Contains the command GUID of the preserved key.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL that indicates if the key event was handled. If this value receives <b>TRUE</b>, the key event was handled. If this value is <b>FALSE</b>, the key event was not handled.</para>
-    </param>
+    <summary>Simulates the execution of a preserved key sequence.</summary>
+    <param name="pic">Pointer to the application context. This value was returned by a previous call to <see cref="ITfDocumentMgr.CreateContext" />.</param>
+    <param name="rguid">Contains the command GUID of the preserved key.</param>
+    <param name="pfEaten">Pointer to a BOOL that indicates if the key event was handled. If this value receives <b>TRUE</b>, the key event was handled. If this value is <b>FALSE</b>, the key event was not handled.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -637,64 +533,62 @@ if(msg.message == WM_KEYUP)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The preserved key cannot be simulated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The preserved key cannot be simulated.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="ITfKeystrokeMgr" />
   </member>
   <member name="ITfKeystrokeMgr.TestKeyDown">
-    <summary>
-      <para>Determines if the keystroke manager will handle a key down event.</para>
-    </summary>
-    <param name="wParam">
-      <para>Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL that indicates if the key event would be handled. If this value receives <b>TRUE</b>, the key event would be handled and the event should not be forwarded to the application. If this value is <b>FALSE</b>, the key event would not be handled and the event should be forwarded to the application.</para>
-    </param>
+    <summary>Determines if the keystroke manager will handle a key down event.</summary>
+    <param name="wParam">Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="lParam">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</a>.</param>
+    <param name="pfEaten">Pointer to a BOOL that indicates if the key event would be handled. If this value receives <b>TRUE</b>, the key event would be handled and the event should not be forwarded to the application. If this value is <b>FALSE</b>, the key event would not be handled and the event should be forwarded to the application.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -702,79 +596,50 @@ if(msg.message == WM_KEYUP)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>There are no key event sinks installed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There are no key event sinks installed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An application can determine if a key event will be handled by the keystroke manager with this method. If this method is successful and <i>pfEaten</i> receives <b>TRUE</b>, the application should call <see cref="ITfKeystrokeMgr.KeyDown" />. If this method does not return S_OK or <i>pfEaten</i> receives <b>FALSE</b>, the application should not call <b>ITfKeystrokeMgr.KeyDown</b> . The following is an example of how this is implemented.</para>
-      <code>
-if(msg.message == WM_KEYDOWN)
-{
-    if( pKeyboardMgr-&gt;TestKeyDown(msg.wParam, msg.lParam, &amp;amp;amp;amp;amp;amp;amp;fEaten) == S_OK
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; fEaten
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; pKeyboardMgr-&gt;KeyDown(msg.wParam, msg.lParam, &amp;amp;amp;amp;amp;amp;amp;fEaten) == S_OK
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; fEaten)
-    {
-        //The key was handled by the keystroke manager or a TSF text service. Do not pass the key to the application.
-        continue;
-    }
-    else
-    {
-        //Let the application process the key.
-    }
-}
-
-</code>
-      <para>If the keystroke manager does not handle the key event, it passes the key event to the TSF text services by calling the text service <see cref="ITfKeyEventSink.OnTestKeyDown" /> method.</para>
-    </remarks>
-    <seealso cref="ITfKeyEventSink.OnTestKeyDown" />
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.KeyDown" />
-    <seealso cref="ITfKeystrokeMgr.TestKeyUp" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keydown">WM_KEYDOWN</seealso>
   </member>
   <member name="ITfKeystrokeMgr.TestKeyUp">
-    <summary>
-      <para>Determines if the keystroke manager will handle a key up event.</para>
-    </summary>
-    <param name="wParam">
-      <para>Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <param name="lParam">
-      <para>Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</para>
-    </param>
-    <param name="pfEaten">
-      <para>Pointer to a BOOL that indicates if the key event is handled. If this value receives <b>TRUE</b>, the key event is handled and the event should not be forwarded to the application. If this value is <b>FALSE</b>, the key event is not handled and the event should be forwarded to the application.</para>
-    </param>
+    <summary>Determines if the keystroke manager will handle a key up event.</summary>
+    <param name="wParam">Specifies the virtual-key code of the key. For more information about this parameter, see the <i>wParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <param name="lParam">Specifies the repeat count, scan code, extended-key flag, context code, previous key-state flag, and transition-state flag of the key. For more information about this parameter, see the <i>lParam</i> parameter in <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</a>.</param>
+    <param name="pfEaten">Pointer to a BOOL that indicates if the key event is handled. If this value receives <b>TRUE</b>, the key event is handled and the event should not be forwarded to the application. If this value is <b>FALSE</b>, the key event is not handled and the event should be forwarded to the application.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -782,73 +647,48 @@ if(msg.message == WM_KEYDOWN)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>No key event sinks are installed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>No key event sinks are installed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An application can determine if a key event is handled by the keystroke manager with this method. If this method is successful and <i>pfEaten</i> receives <b>TRUE</b>, the application should call <see cref="ITfKeystrokeMgr.KeyUp" />. If this method does not return S_OK or <i>pfEaten</i> receives <b>FALSE</b>, the application should not call <b>ITfKeystrokeMgr.KeyUp</b> . The following is an example of how this is implemented.</para>
-      <code>
-if(msg.message == WM_KEYUP)
-{
-    if( pKeyboardMgr-&gt;TestKeyUp(msg.wParam, msg.lParam, &amp;amp;amp;amp;amp;amp;amp;fEaten) == S_OK
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; fEaten
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; pKeyboardMgr-&gt;KeyUp(msg.wParam, msg.lParam, &amp;amp;amp;amp;amp;amp;amp;fEaten) == S_OK
-        &amp;amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp;amp; fEaten)
-    {
-        The key was handled by the keystroke manager or a text service. Do not pass the key to the application.
-        continue;
-    }
-    else
-    {
-        //Let the application process the key.
-    }
-}
-
-</code>
-      <para>If the keystroke manager does not handle the key event, it passes the key event to the TSF text service by calling the TSF text service <see cref="ITfKeyEventSink.OnTestKeyUp" /> method.</para>
-    </remarks>
-    <seealso cref="ITfKeyEventSink.OnTestKeyUp" />
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.KeyUp" />
-    <seealso cref="ITfKeystrokeMgr.TestKeyDown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-keyup">WM_KEYUP</seealso>
   </member>
   <member name="ITfKeystrokeMgr.UnadviseKeyEventSink">
-    <summary>
-      <para>Removes a key event sink.</para>
-    </summary>
-    <param name="tid">
-      <para>Identifier of the client that owns the key event sink. This value was passed when the advise sink was installed using <see cref="ITfKeystrokeMgr.AdviseKeyEventSink" />.</para>
-    </param>
+    <summary>Removes a key event sink.</summary>
+    <param name="tid">Identifier of the client that owns the key event sink. This value was passed when the advise sink was installed using <see cref="ITfKeystrokeMgr.AdviseKeyEventSink" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -856,51 +696,49 @@ if(msg.message == WM_KEYUP)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>tid</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_NOCONNECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>tid</i> parameter is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CONNECT_E_NOCONNECTION</b>
-            </para>
-          </description>
-          <description>
-            <para>The advise sink identified by <i>tid</i> was not found.</para>
-          </description>
-        </item>
+          <description>The advise sink identified by <i>tid</i> was not found.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.AdviseKeyEventSink " />
   </member>
   <member name="ITfKeystrokeMgr.UnpreserveKey">
-    <summary>
-      <para>Unregisters a preserved key.</para>
-    </summary>
-    <param name="rguid">
-      <para>Contains the command GUID of the preserved key.</para>
-    </param>
-    <param name="pprekey">
-      <para>Pointer to a <see cref="TF_PRESERVEDKEY" /> structure that specifies the preserved key. The <i>uVKey</i> member contains the virtual key code and the <i>uModifiers</i> member identifies the modifiers of the preserved key.</para>
-    </param>
+    <summary>Unregisters a preserved key.</summary>
+    <param name="rguid">Contains the command GUID of the preserved key.</param>
+    <param name="pprekey">Pointer to a <see cref="TF_PRESERVEDKEY" /> structure that specifies the preserved key. The <i>uVKey</i> member contains the virtual key code and the <i>uModifiers</i> member identifies the modifiers of the preserved key.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -908,48 +746,46 @@ if(msg.message == WM_KEYUP)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_NOCONNECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The preserved key is not registered.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>CONNECT_E_NOCONNECTION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The preserved key is not registered.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Preserved keys are registered by TSF text services and provide keyboard shortcuts to common commands implemented by the TSF text service.</para>
-    </remarks>
-    <seealso cref="ITfKeystrokeMgr" />
-    <seealso cref="ITfKeystrokeMgr.PreserveKey " />
-    <seealso cref="TF_PRESERVEDKEY " />
   </member>
   <member name="ITfKeystrokeMgr">
-    <summary>
-      <para>The <b>ITfKeystrokeMgr</b> interface is implemented by the TSF manager and used by applications and text services to interact with the keyboard manager.</para>
-    </summary>
+    <summary>The <b>ITfKeystrokeMgr</b> interface is implemented by the TSF manager and used by applications and text services to interact with the keyboard manager.</summary>
   </member>
 </doc>

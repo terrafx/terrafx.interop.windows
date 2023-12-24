@@ -25,7 +25,7 @@ public unsafe partial struct ISimpleAudioVolume : ISimpleAudioVolume.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISimpleAudioVolume*, Guid*, void**, int>)(lpVtbl[0]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleAudioVolume*, Guid*, void**, int>)(lpVtbl[0]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISimpleAudioVolume : ISimpleAudioVolume.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISimpleAudioVolume*, uint>)(lpVtbl[1]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISimpleAudioVolume*, uint>)(lpVtbl[1]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISimpleAudioVolume : ISimpleAudioVolume.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISimpleAudioVolume*, uint>)(lpVtbl[2]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISimpleAudioVolume*, uint>)(lpVtbl[2]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISimpleAudioVolume.xml' path='doc/member[@name="ISimpleAudioVolume.SetMasterVolume"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISimpleAudioVolume : ISimpleAudioVolume.Interface, 
     [VtblIndex(3)]
     public HRESULT SetMasterVolume(float fLevel, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<ISimpleAudioVolume*, float, Guid*, int>)(lpVtbl[3]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), fLevel, EventContext);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleAudioVolume*, float, Guid*, int>)(lpVtbl[3]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), fLevel, EventContext);
     }
 
     /// <include file='ISimpleAudioVolume.xml' path='doc/member[@name="ISimpleAudioVolume.GetMasterVolume"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISimpleAudioVolume : ISimpleAudioVolume.Interface, 
     [VtblIndex(4)]
     public HRESULT GetMasterVolume(float* pfLevel)
     {
-        return ((delegate* unmanaged<ISimpleAudioVolume*, float*, int>)(lpVtbl[4]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), pfLevel);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleAudioVolume*, float*, int>)(lpVtbl[4]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), pfLevel);
     }
 
     /// <include file='ISimpleAudioVolume.xml' path='doc/member[@name="ISimpleAudioVolume.SetMute"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISimpleAudioVolume : ISimpleAudioVolume.Interface, 
     [VtblIndex(5)]
     public HRESULT SetMute([NativeTypeName("const BOOL")] BOOL bMute, [NativeTypeName("LPCGUID")] Guid* EventContext)
     {
-        return ((delegate* unmanaged<ISimpleAudioVolume*, BOOL, Guid*, int>)(lpVtbl[5]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute, EventContext);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleAudioVolume*, BOOL, Guid*, int>)(lpVtbl[5]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), bMute, EventContext);
     }
 
     /// <include file='ISimpleAudioVolume.xml' path='doc/member[@name="ISimpleAudioVolume.GetMute"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISimpleAudioVolume : ISimpleAudioVolume.Interface, 
     [VtblIndex(6)]
     public HRESULT GetMute(BOOL* pbMute)
     {
-        return ((delegate* unmanaged<ISimpleAudioVolume*, BOOL*, int>)(lpVtbl[6]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleAudioVolume*, BOOL*, int>)(lpVtbl[6]))((ISimpleAudioVolume*)Unsafe.AsPointer(ref this), pbMute);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ISimpleAudioVolume : ISimpleAudioVolume.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (float, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, Guid*, int> SetMasterVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, Guid*, int> SetMasterVolume;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetMasterVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetMasterVolume;
 
         [NativeTypeName("HRESULT (const BOOL, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, Guid*, int> SetMute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, Guid*, int> SetMute;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetMute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetMute;
     }
 }

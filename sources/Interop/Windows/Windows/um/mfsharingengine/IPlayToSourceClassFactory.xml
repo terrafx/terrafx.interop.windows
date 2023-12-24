@@ -3,30 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPlayToSourceClassFactory.CreateInstance">
-    <summary>
-      <para>Creates an instance of the <b>PlayToController</b> object.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>A bitwise <b>OR</b> of flags from the <see cref="PLAYTO_SOURCE_CREATEFLAGS" /> enumeration.</para>
-    </param>
-    <param name="pControl">
-      <para>A pointer to the <see cref="IPlayToControl" /> interface.</para>
-    </param>
-    <param name="ppSource">
-      <para>Receives a pointer to the <see cref="IInspectable" /> interface. The caller must release the interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IPlayToSourceClassFactory" />
+    <summary>Creates an instance of the <b>PlayToController</b> object.</summary>
+    <param name="dwFlags">A bitwise <b>OR</b> of flags from the <see cref="PLAYTO_SOURCE_CREATEFLAGS" /> enumeration.</param>
+    <param name="pControl">A pointer to the <see cref="IPlayToControl" /> interface.</param>
+    <param name="ppSource">Receives a pointer to the <see cref="IInspectable" /> interface. The caller must release the interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPlayToSourceClassFactory">
-    <summary>
-      <para>Creates an instance of the <a href="https://docs.microsoft.com//uwp/api/windows.media.playto.playtosource">PlayToSource</a> object.</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call <see cref="CoCreateInstance" />. The CLSID is <b>CLSID_PlayToSourceClassFactory</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Creates an instance of the <a href="https://docs.microsoft.com//uwp/api/windows.media.playto.playtosource">PlayToSource</a> object.</summary>
   </member>
 </doc>

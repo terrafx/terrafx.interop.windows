@@ -3,29 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WRITE_CACHE_ENABLE">
-    <summary>
-      <para>Indicates whether the write cache is enabled or disabled.</para>
-    </summary>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</a> control code reports a <b>WRITE_CACHE_ENABLE</b> value in the <see cref="STORAGE_WRITE_CACHE_PROPERTY structure" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-enumeration-types">Disk Management Enumeration Types</seealso>
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_storage_query_property.md">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
-    <seealso cref="STORAGE_WRITE_CACHE_PROPERTY structure" />
+    <summary>Indicates whether the write cache is enabled or disabled.</summary>
   </member>
   <member name="WRITE_CACHE_ENABLE.WriteCacheEnableUnknown">
-    <summary>
-      <para>The system cannot report whether the device's write cache is enabled or disabled.</para>
-    </summary>
+    <summary>The system cannot report whether the device's write cache is enabled or disabled.</summary>
   </member>
   <member name="WRITE_CACHE_ENABLE.WriteCacheDisabled">
-    <summary>
-      <para>The device's write cache is disabled.</para>
-    </summary>
+    <summary>The device's write cache is disabled.</summary>
   </member>
   <member name="WRITE_CACHE_ENABLE.WriteCacheEnabled">
-    <summary>
-      <para>The device's write cache is enabled.</para>
-    </summary>
+    <summary>The device's write cache is enabled.</summary>
   </member>
 </doc>

@@ -4,14 +4,11 @@
 <doc>
   <member name="IVMRDeinterlaceControl.GetActualDeinterlaceMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetActualDeinterlaceMode</b> method returns the deinterlacing mode that the VMR is using for a specified stream.</para>
     </summary>
-    <param name="dwStreamID">
-      <para>Index of the video stream.</para>
-    </param>
-    <param name="lpDeinterlaceMode">
-      <para>Pointer to a variable that receives a GUID value that identifies the deinterlacing mode. The method returns GUID_NULL if the VMR has not initialized the deinterlacing hardware, or if the VMR determines that this stream should not be deinterlaced.</para>
-    </param>
+    <param name="dwStreamID">Index of the video stream.</param>
+    <param name="lpDeinterlaceMode">Pointer to a variable that receives a GUID value that identifies the deinterlacing mode. The method returns GUID_NULL if the VMR has not initialized the deinterlacing hardware, or if the VMR determines that this stream should not be deinterlaced.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -19,62 +16,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream number.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream number.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
-            </para>
-          </description>
-          <description>
-            <para>The VMR is not in mixer mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in mixer mode.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRDeinterlaceControl Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRDeinterlaceControl.GetDeinterlaceMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetDeinterlaceMode</b> method retrieves the deinterlacing mode for the specified video stream.</para>
     </summary>
-    <param name="dwStreamID">
-      <para>Index of the video stream to check.</para>
-    </param>
-    <param name="lpDeinterlaceMode">
-      <para>Pointer to a variable that receives a GUID. The GUID identifies the deinterlacing mode currently in use. If no deinterlacing mode was set, the value is GUID_NULL.</para>
-    </param>
+    <param name="dwStreamID">Index of the video stream to check.</param>
+    <param name="lpDeinterlaceMode">Pointer to a variable that receives a GUID. The GUID identifies the deinterlacing mode currently in use. If no deinterlacing mode was set, the value is GUID_NULL.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -82,79 +82,78 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream number.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream number.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>No deinterlacing mode was set.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>No deinterlacing mode was set.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
-            </para>
-          </description>
-          <description>
-            <para>The VMR is not in mixer mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in mixer mode.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The VMR may not be able to use the requested mode, in which case it falls back to another deinterlace mode, as specified in the <see cref="IVMRDeinterlaceControl.SetDeinterlacePrefs" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRDeinterlaceControl Interface" />
-    <seealso cref="IVMRDeinterlaceControl.SetDeinterlaceMode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRDeinterlaceControl.GetDeinterlaceModeCaps">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetDeinterlaceModeCaps</b> method retrieves the capabilities of a specific deinterlacing mode supported by the graphics device driver.</para>
     </summary>
-    <param name="lpDeinterlaceMode">
-      <para>Pointer to a GUID that identifies the deinterlacing mode. Call the <see cref="GetNumberOfDeinterlaceModes" /> method to obtain a list of GUIDs supported by the driver.</para>
-    </param>
-    <param name="lpVideoDescription">
-      <para>Pointer to a <see cref="VMRVideoDesc" /> structure describing the video to deinterlace. Set the <b>dwSize</b> member of the structure before calling the method.</para>
-    </param>
-    <param name="lpDeinterlaceCaps">
-      <para>Pointer to a <see cref="VMRDeinterlaceCaps" /> structure. Set the <b>dwSize</b> member of the structure before calling the method. The method fills the structure with information about the specified deinterlacing mode.</para>
-    </param>
+    <param name="lpDeinterlaceMode">Pointer to a GUID that identifies the deinterlacing mode. Call the <see cref="GetNumberOfDeinterlaceModes" /> method to obtain a list of GUIDs supported by the driver.</param>
+    <param name="lpVideoDescription">Pointer to a <see cref="VMRVideoDesc" /> structure describing the video to deinterlace. Set the <b>dwSize</b> member of the structure before calling the method.</param>
+    <param name="lpDeinterlaceCaps">Pointer to a <see cref="VMRDeinterlaceCaps" /> structure. Set the <b>dwSize</b> member of the structure before calling the method. The method fills the structure with information about the specified deinterlacing mode.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -162,82 +161,88 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DDRAW_CAPS_NOT_SUITABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The video card does not support hardware deinterlacing.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_VMR_NO_DEINTERLACE_HW</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The video card does not support hardware deinterlacing.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>VFW_E_DDRAW_CAPS_NOT_SUITABLE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The video card does not support hardware deinterlacing.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_VMR_NO_DEINTERLACE_HW</b>
-            </para>
-          </description>
-          <description>
-            <para>The video card does not support hardware deinterlacing.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
-            </para>
-          </description>
-          <description>
-            <para>The VMR is not in mixer mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in mixer mode.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The method returns <see cref="VMRVideoDesc" /> and <see cref="VMRDeinterlaceCaps" /> structures.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRDeinterlaceControl Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRDeinterlaceControl.GetDeinterlacePrefs">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetDeinterlacePrefs</b> method queries how the VMR will select a deinterlacing mode if it cannot use the preferred deinterlacing mode.</para>
     </summary>
-    <param name="lpdwDeinterlacePrefs">
-      <para>Pointer to a variable that receives a member of the <see cref="VMRDeinterlacePrefs" /> enumeration.</para>
-    </param>
+    <param name="lpdwDeinterlacePrefs">Pointer to a variable that receives a member of the <see cref="VMRDeinterlacePrefs" /> enumeration.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -245,59 +250,54 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
-            </para>
-          </description>
-          <description>
-            <para>The VMR is not in mixer mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in mixer mode.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>By default, the preferred deinterlacing mode is the first mode reported by the driver. The application can set the preferred mode by calling the <see cref="IVMRDeinterlaceControl.SetDeinterlaceMode" /> method. If the VMR cannot use the preferred mode, it will fall back to another mode as specified by the <i>dwDeinterlacePrefs</i> parameter.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRDeinterlaceControl Interface" />
-    <seealso cref="IVMRDeinterlaceControl.SetDeinterlacePrefs" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRDeinterlaceControl.GetNumberOfDeinterlaceModes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>GetNumberOfDeinterlaceModes</b> method retrieves the deinterlacing modes available to the VMR for the specified video format.</para>
     </summary>
-    <param name="lpVideoDescription">
-      <para>Pointer to a <see cref="VMRVideoDesc" /> structure that describes the video.</para>
-    </param>
-    <param name="lpdwNumDeinterlaceModes">
-      <para>Pointer to a <b>DWORD</b> value. On input, this value specifies the size of the array given in <i>lpDeinterlaceModes</i>. On output, it receives number of GUIDs the method copied into the array.</para>
-    </param>
-    <param name="lpDeinterlaceModes">
-      <para>Address of an array allocated by caller. The method fills the array with GUID values. To determine the size of the array that is needed, set this parameter to <b>NULL</b> and check the value returned in <i>lpdwNumDeinterlaceModes</i>.</para>
-    </param>
+    <param name="lpVideoDescription">Pointer to a <see cref="VMRVideoDesc" /> structure that describes the video.</param>
+    <param name="lpdwNumDeinterlaceModes">Pointer to a <b>DWORD</b> value. On input, this value specifies the size of the array given in <i>lpDeinterlaceModes</i>. On output, it receives number of GUIDs the method copied into the array.</param>
+    <param name="lpDeinterlaceModes">Address of an array allocated by caller. The method fills the array with GUID values. To determine the size of the array that is needed, set this parameter to <b>NULL</b> and check the value returned in <i>lpdwNumDeinterlaceModes</i>.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -305,80 +305,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
-            </para>
-          </description>
-          <description>
-            <para>The VMR is not in mixer mode.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_DDRAW_CAPS_NOT_SUITABLE</b>
-            </para>
-          </description>
-          <description>
-            <para>The video card does not support hardware deinterlacing.</para>
-          </description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>This method returns an array of GUIDs, where each GUID represents a deinterlacing mode that is supported in hardware by the graphics device driver. The array is sorted by quality, so the first entry represents the best quality, the second entry represents the next best quality, and so forth.</para>
-      <para>All drivers are required to support the following mode:</para>
-      <list type="table">
         <listheader>
           <description>
-            <b>GUID</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>Description
-</description>
+          <description>
+            <b>NULL</b> pointer argument.</description>
         </listheader>
-        <item>
-          <description>DXVA_DeinterlaceBobDevice</description>
-          <description>Bob mode</description>
-        </item>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Success</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The VMR is not in mixer mode.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_DDRAW_CAPS_NOT_SUITABLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The video card does not support hardware deinterlacing.</description>
+        </listheader>
       </list>
-      <para>Drivers can support additional modes and should define their own GUIDs to identify them. For each returned mode, call the <see cref="IVMRDeinterlaceControl.GetDeinterlaceModeCaps" /> method to get information about that mode.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRDeinterlaceControl Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
+    </returns>
   </member>
   <member name="IVMRDeinterlaceControl.SetDeinterlaceMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>SetDeinterlaceMode</b> method sets the deinterlacing mode for the specified video stream.</para>
     </summary>
-    <param name="dwStreamID">
-      <para>Index of the video stream to set. To set all streams, use the value 0xFFFFFFFF.</para>
-    </param>
-    <param name="lpDeinterlaceMode">
-      <para>Pointer to a GUID that specifies the deinterlacing mode. To turn off deinterlacing, use the value GUID_NULL.</para>
-    </param>
+    <param name="dwStreamID">Index of the video stream to set. To set all streams, use the value 0xFFFFFFFF.</param>
+    <param name="lpDeinterlaceMode">Pointer to a GUID that specifies the deinterlacing mode. To turn off deinterlacing, use the value GUID_NULL.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -386,78 +371,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream number.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream number.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
-            </para>
-          </description>
-          <description>
-            <para>The VMR is not in mixer mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in mixer mode.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the application does not specify the mode, the VMR defaults to the first mode reported by the driver. In either case, if the VMR cannot use the preferred mode, it falls back to another mode as specified in the <see cref="IVMRDeinterlaceControl.SetDeinterlacePrefs" /> method.</para>
-      <para>The <b>SetDeinterlaceMode</b> method is effective only for new connections made to the VMR. Some deinterlacing modes require additional reference samples; the exact number depends on the mode. The VMR allocates surfaces for these additional samples. The client must set the deinterlace mode before the surfaces have been allocated. Surface allocation occurs after any of the following:</para>
-      <list type="bullet">
-        <item>
-          <description>Pin connections, including dynamic reconnections</description>
-        </item>
-        <item>
-          <description>Dynamic format changes (the upstream filter calls <see cref="IPin.ReceiveConnection" /> to specify a new format)</description>
-        </item>
-        <item>
-          <description>Resolution changes</description>
-        </item>
-        <item>
-          <description>Monitor changes</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRDeinterlaceControl Interface" />
-    <seealso cref="IVMRDeinterlaceControl.GetDeinterlaceMode" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRDeinterlaceControl.SetDeinterlacePrefs">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>SetDeinterlacePrefs</b> method specifies how the VMR will select a deinterlacing mode if it cannot use the preferred deinterlacing mode.</para>
     </summary>
-    <param name="dwDeinterlacePrefs">
-      <para>A member of the <see cref="VMRDeinterlacePrefs" /> enumeration type.</para>
-    </param>
+    <param name="dwDeinterlacePrefs">A member of the <see cref="VMRDeinterlacePrefs" /> enumeration type.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -465,55 +436,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_VMR_NOT_IN_MIXER_MODE</b>
-            </para>
-          </description>
-          <description>
-            <para>The VMR is not in mixer mode.</para>
-          </description>
-        </item>
+          <description>The VMR is not in mixer mode.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>By default, the preferred deinterlacing mode is the first mode reported by the driver. The application can set the preferred mode by calling the <see cref="IVMRDeinterlaceControl.SetDeinterlaceMode" /> method. If the VMR cannot use the preferred mode, it will fall back to another mode as specified by the <i>dwDeinterlacePrefs</i> parameter.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IVMRDeinterlaceControl Interface" />
-    <seealso cref="IVMRDeinterlaceControl.GetDeinterlacePrefs" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
   <member name="IVMRDeinterlaceControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IVMRDeinterlaceControl</b> interface provides support for advanced hardware-accelerated deinterlacing using the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-mixing-renderer-filter-7">Video Mixing Renderer Filter 7</a> (VMR-7). This interface enables applications or other filters to control how the VMR manages DirectX Video Acceleration (DirectX VA) hardware deinterlacing.</para>
     </summary>
-    <remarks>
-      <para>This interface is applicable only when the VMR is in mixer mode. All methods in this interface return VFW_E_VMR_NOT_IN_MIXER_MODE if the VMR is not in mixer mode.</para>
-      <para>Deinterlacing modes are identified by GUIDs. The graphics device driver returns an array of GUIDs for the modes that it supports. The array is sorted in order of quality, from best quality to lowest quality. To retrieve the list of GUIDs, call the <see cref="GetNumberOfDeinterlaceModes" /> method. To obtain more information about a particular mode, pass this GUID to the <see cref="GetDeinterlaceModeCaps" /> method. To configure the VMR to use a particular mode, call the <see cref="SetDeinterlaceMode" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/setting-deinterlace-preferences">Setting Deinterlace Preferences</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-video-mixing-renderer">Using the Video Mixing Renderer</seealso>
   </member>
 </doc>

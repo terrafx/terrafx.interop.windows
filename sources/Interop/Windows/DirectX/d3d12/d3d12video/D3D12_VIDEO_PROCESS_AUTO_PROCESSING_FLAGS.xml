@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS">
+    <summary>Specifies the automatic processing features that a video processor can support.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_NONE">
+    <summary>No automatic processing features are supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_DENOISE">
+    <summary>Denoise is supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_DERINGING">
+    <summary>Deringing is supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_EDGE_ENHANCEMENT">
+    <summary>Edge enhancement is supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_COLOR_CORRECTION">
+    <summary>Color correction is supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_FLESH_TONE_MAPPING">
+    <summary>Flesh tone mapping is supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_IMAGE_STABILIZATION">
+    <summary>Image stabilization is supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_SUPER_RESOLUTION">
+    <summary>Enhanced image resolution is supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_ANAMORPHIC_SCALING">
+    <summary>Anamorphic scaling is supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAGS.D3D12_VIDEO_PROCESS_AUTO_PROCESSING_FLAG_CUSTOM">
+    <summary>Additional processing features, not described by the other flags, are available.</summary>
+  </member>
+</doc>

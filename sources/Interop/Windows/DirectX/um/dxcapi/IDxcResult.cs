@@ -26,7 +26,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDxcResult*, Guid*, void**, int>)(lpVtbl[0]))((IDxcResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, Guid*, void**, int>)(lpVtbl[0]))((IDxcResult*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[1]))((IDxcResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, uint>)(lpVtbl[1]))((IDxcResult*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[2]))((IDxcResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, uint>)(lpVtbl[2]))((IDxcResult*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDxcOperationResult.GetStatus" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetStatus(HRESULT* pStatus)
     {
-        return ((delegate* unmanaged<IDxcResult*, HRESULT*, int>)(lpVtbl[3]))((IDxcResult*)Unsafe.AsPointer(ref this), pStatus);
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, HRESULT*, int>)(lpVtbl[3]))((IDxcResult*)Unsafe.AsPointer(ref this), pStatus);
     }
 
     /// <inheritdoc cref="IDxcOperationResult.GetResult" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetResult(IDxcBlob** ppResult)
     {
-        return ((delegate* unmanaged<IDxcResult*, IDxcBlob**, int>)(lpVtbl[4]))((IDxcResult*)Unsafe.AsPointer(ref this), ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, IDxcBlob**, int>)(lpVtbl[4]))((IDxcResult*)Unsafe.AsPointer(ref this), ppResult);
     }
 
     /// <inheritdoc cref="IDxcOperationResult.GetErrorBuffer" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetErrorBuffer(IDxcBlobEncoding** ppErrors)
     {
-        return ((delegate* unmanaged<IDxcResult*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcResult*)Unsafe.AsPointer(ref this), ppErrors);
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcResult*)Unsafe.AsPointer(ref this), ppErrors);
     }
 
     /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.HasOutput"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [VtblIndex(6)]
     public BOOL HasOutput(DXC_OUT_KIND dxcOutKind)
     {
-        return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, int>)(lpVtbl[6]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind);
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, DXC_OUT_KIND, int>)(lpVtbl[6]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind);
     }
 
     /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.GetOutput"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetOutput(DXC_OUT_KIND dxcOutKind, [NativeTypeName("const IID &")] Guid* iid, void** ppvObject, IDxcBlobUtf16** ppOutputName)
     {
-        return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int>)(lpVtbl[7]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind, iid, ppvObject, ppOutputName);
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int>)(lpVtbl[7]))((IDxcResult*)Unsafe.AsPointer(ref this), dxcOutKind, iid, ppvObject, ppOutputName);
     }
 
     /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.GetNumOutputs"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [return: NativeTypeName("UINT32")]
     public uint GetNumOutputs()
     {
-        return ((delegate* unmanaged<IDxcResult*, uint>)(lpVtbl[8]))((IDxcResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, uint>)(lpVtbl[8]))((IDxcResult*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.GetOutputByIndex"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [VtblIndex(9)]
     public DXC_OUT_KIND GetOutputByIndex([NativeTypeName("UINT32")] uint Index)
     {
-        return ((delegate* unmanaged<IDxcResult*, uint, DXC_OUT_KIND>)(lpVtbl[9]))((IDxcResult*)Unsafe.AsPointer(ref this), Index);
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, uint, DXC_OUT_KIND>)(lpVtbl[9]))((IDxcResult*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='IDxcResult.xml' path='doc/member[@name="IDxcResult.PrimaryOutput"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
     [VtblIndex(10)]
     public DXC_OUT_KIND PrimaryOutput()
     {
-        return ((delegate* unmanaged<IDxcResult*, DXC_OUT_KIND>)(lpVtbl[10]))((IDxcResult*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcResult*, DXC_OUT_KIND>)(lpVtbl[10]))((IDxcResult*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IDxcOperationResult.Interface
@@ -135,36 +135,36 @@ public unsafe partial struct IDxcResult : IDxcResult.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT*, int> GetStatus;
 
         [NativeTypeName("HRESULT (IDxcBlob **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDxcBlob**, int> GetResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDxcBlob**, int> GetResult;
 
         [NativeTypeName("HRESULT (IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDxcBlobEncoding**, int> GetErrorBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDxcBlobEncoding**, int> GetErrorBuffer;
 
         [NativeTypeName("BOOL (DXC_OUT_KIND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXC_OUT_KIND, int> HasOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXC_OUT_KIND, int> HasOutput;
 
         [NativeTypeName("HRESULT (DXC_OUT_KIND, const IID &, void **, IDxcBlobUtf16 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int> GetOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXC_OUT_KIND, Guid*, void**, IDxcBlobUtf16**, int> GetOutput;
 
         [NativeTypeName("UINT32 ()")]
-        public delegate* unmanaged<TSelf*, uint> GetNumOutputs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetNumOutputs;
 
         [NativeTypeName("DXC_OUT_KIND (UINT32)")]
-        public delegate* unmanaged<TSelf*, uint, DXC_OUT_KIND> GetOutputByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DXC_OUT_KIND> GetOutputByIndex;
 
         [NativeTypeName("DXC_OUT_KIND ()")]
-        public delegate* unmanaged<TSelf*, DXC_OUT_KIND> PrimaryOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXC_OUT_KIND> PrimaryOutput;
     }
 }

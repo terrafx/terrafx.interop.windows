@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HatchStyle">
+    <summary>The <b>HatchStyle</b> enumeration specifies the hatch pattern used by a brush of type<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-hatchbrush">HatchBrush</a>. The hatch pattern consists of a solid background color and lines drawn over the background.</summary>
+  </member>
+  <member name="HatchStyle.HatchStyleHorizontal">
+    <summary>
+      <para>Specifies horizontal lines.</para>
+      <img alt="Illustration of an ellipse filled with widely spaced horizontal lines over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylehorizontal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleVertical">
+    <summary>
+      <para>Specifies vertical lines.</para>
+      <img alt="Illustration of an ellipse filled with widely spaced vertical lines over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylevertical.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleForwardDiagonal">
+    <summary>
+      <para>Specifies diagonal lines that slant to the right from top points to bottom points. The lines are antialiased.</para>
+      <img alt="Illustration of an ellipse filled with right-slanting lines over a background color." src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyleforwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleBackwardDiagonal">
+    <summary>
+      <para>Specifies diagonal lines that slant to the left from top points to bottom points. The lines are antialiased.</para>
+      <img alt="Illustration of an ellipse filled with left-slanting lines over a background color." src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylebackwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleCross">
+    <summary>
+      <para>Specifies horizontal and vertical lines that cross at 90-degree angles.</para>
+      <img alt="Illustration of an ellipse filled with a grid of horizontal and vertical lines over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylecross.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDiagonalCross">
+    <summary>
+      <para>Specifies forward diagonal and backward diagonal lines that cross at 90-degree angles. The lines are antialiased.</para>
+      <img alt="Illustration of an ellipse filled with a grid of diagonal lines over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylediagonalcross.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle05Percent">
+    <summary>
+      <para>Specifies a 5-percent hatch. The ratio of foreground color to background color is 5:100.</para>
+      <img alt="Illustration of an ellipse filled with sparse, evenly spaced dots over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle05percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle10Percent">
+    <summary>
+      <para>Specifies a 10-percent hatch. The ratio of foreground color to background color is 10:100.</para>
+      <img alt="Illustration of an ellipse filled with evenly spaced dots over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle10percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle20Percent">
+    <summary>
+      <para>Specifies a 20-percent hatch. The ratio of foreground color to background color is 20:100.</para>
+      <img alt="Illustration of an ellipse filled with dense, evenly spaced dots over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle20percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle25Percent">
+    <summary>
+      <para>Specifies a 25-percent hatch. The ratio of foreground color to background color is 25:100.</para>
+      <img alt="Illustration of an ellipse filled with very dense, evenly spaced dots over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle25percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle30Percent">
+    <summary>
+      <para>Specifies a 30-percent hatch. The ratio of foreground color to background color is 30:100.</para>
+      <img alt="Illustration of an ellipse filled with a 30 percent dense, diagonal dot grid over a background color." src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle30percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle40Percent">
+    <summary>
+      <para>Specifies a 40-percent hatch. The ratio of foreground color to background color is 40:100.</para>
+      <img alt="Illustration of an ellipse filled with tiny checkerboard with cutouts shaped like plus signs, over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle40percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle50Percent">
+    <summary>
+      <para>Specifies a 50-percent hatch. The ratio of foreground color to background color is 50:100.</para>
+      <img alt="Illustration of an ellipse filled with a tiny checkerboard over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle50percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle60Percent">
+    <summary>
+      <para>Specifies a 60-percent hatch. The ratio of foreground color to background color is 60:100.</para>
+      <img alt="Illustration of an ellipse filled with a diagonal grid of plus-signs over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle60percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle70Percent">
+    <summary>
+      <para>Specifies a 70-percent hatch. The ratio of foreground color to background color is 70:100.</para>
+      <img alt="Illustration of an ellipse filled with a 70 percent dense, diagonal dot grid over a background color." src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle70percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle75Percent">
+    <summary>
+      <para>Specifies a 75-percent hatch. The ratio of foreground color to background color is 75:100.</para>
+      <img alt="Illustration of an ellipse filled with a wide, diagonal grid over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle75percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle80Percent">
+    <summary>
+      <para>Specifies an 80-percent hatch. The ratio of foreground color to background color is 80:100.</para>
+      <img alt="Illustration of an ellipse filled with a wider, diagonal grid over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle80percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyle90Percent">
+    <summary>
+      <para>Specifies a 90-percent hatch. The ratio of foreground color to background color is 90:100.</para>
+      <img alt="Illustration of an ellipse filled with the widest, diagonal grid over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyle90percent.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleLightDownwardDiagonal">
+    <summary>
+      <para>Specifies diagonal lines that slant to the right from top points to bottom points and are spaced 50 percent closer together than HatchStyleForwardDiagonal but are not antialiased.</para>
+      <img alt="Illustration of an ellipse filled with light left-slanting lines over a background color." src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylelightdownwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleLightUpwardDiagonal">
+    <summary>
+      <para>Specifies diagonal lines that slant to the left from top points to bottom points and are spaced 50 percent closer together than HatchStyleBackwardDiagonal but are not antialiased.</para>
+      <img alt="Illustration of an ellipse filled with slanting lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylelightupwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDarkDownwardDiagonal">
+    <summary>
+      <para>Specifies diagonal lines that slant to the right from top points to bottom points, are spaced 50 percent closer together than HatchStyleForwardDiagonal, and are twice the width of HatchStyleForwardDiagonal but are not antialiased.</para>
+      <img alt="Illustration of an ellipse filled with wide, slanting lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledarkdownwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDarkUpwardDiagonal">
+    <summary>
+      <para>Specifies diagonal lines that slant to the left from top points to bottom points, are spaced 50 percent closer together than HatchStyleBackwardDiagonal, and are twice the width of HatchStyleBackwardDiagonal but are not antialiased.</para>
+      <img alt="Illustration of an ellipse filled with wide, slanting lines over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledarkupwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleWideDownwardDiagonal">
+    <summary>
+      <para>Specifies diagonal lines that slant to the right from top points to bottom points, have the same spacing as HatchStyleForwardDiagonal, and are triple the width of HatchStyleForwardDiagonal but are not antialiased.</para>
+      <img alt="Illustration of an ellipse filled with wide, widely-spaced, slanting lines over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylewidedownwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleWideUpwardDiagonal">
+    <summary>
+      <para>Specifies diagonal lines that slant to the left from top points to bottom points, have the same spacing as HatchStyleBackwardDiagonal, and are triple the width of HatchStyleBackwardDiagonal but are not antialiased.</para>
+      <img alt="Illustration of an ellipse filled with widely-spaced, wide, slanting lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylewideupwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleLightVertical">
+    <summary>
+      <para>Specifies vertical lines that are spaced 50 percent closer together than HatchStyleVertical.</para>
+      <img alt="Illustration of an ellipse filled with vertical lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylelightvertical.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleLightHorizontal">
+    <summary>
+      <para>Specifies horizontal lines that are spaced 50 percent closer together than HatchStyleHorizontal.</para>
+      <img alt="Illustration of an ellipse filled with horizontal lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylelighthorizontal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleNarrowVertical">
+    <summary>
+      <para>Specifies vertical lines that are spaced 75 percent closer together than HatchStyleVertical (or 25 percent closer together than HatchStyleLightVertical).</para>
+      <img alt="Illustration of an ellipse filled with densely-spaced, vertical lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylenarrowvertical.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleNarrowHorizontal">
+    <summary>
+      <para>Specifies horizontal lines that are spaced 75 percent closer together than HatchStyleHorizontal ( or 25 percent closer together than HatchStyleLightHorizontal).</para>
+      <img alt="Illustration of an ellipse filled with densely-spaced, horizontal lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylenarrowhorizontal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDarkVertical">
+    <summary>
+      <para>Specifies vertical lines that are spaced 50 percent closer together than HatchStyleVerical and are twice the width of HatchStyleVertical.</para>
+      <img alt="Illustration of an ellipse filled with wide vertical lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledarkvertical.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDarkHorizontal">
+    <summary>
+      <para>Specifies horizontal lines that are spaced 50 percent closer together than HatchStyleHorizontal and are twice the width of HatchStyleHorizontal.</para>
+      <img alt="Illustration of an ellipse filled with wide horizontal lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledarkhorizontal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDashedDownwardDiagonal">
+    <summary>
+      <para>Specifies horizontal lines that are composed of forward diagonals.</para>
+      <img alt="Illustration of an ellipse filled with rows of slash characters over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledasheddownwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDashedUpwardDiagonal">
+    <summary>
+      <para>Specifies horizontal lines that are composed of backward diagonals.</para>
+      <img alt="Illustration of an ellipse filled with rows of backslash characters over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledashedupwarddiagonal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDashedHorizontal">
+    <summary>
+      <para>Specifies horizontal dashed lines.</para>
+      <img alt="Illustration of an ellipse filled with dashed horizontal lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledashedhorizontal.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDashedVertical">
+    <summary>
+      <para>Specifies vertical dashed lines.</para>
+      <img alt="Illustration of an ellipse filled with dashed vertical lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledashedvertical.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleSmallConfetti">
+    <summary>
+      <para>Specifies a hatch that has the appearance of confetti.</para>
+      <img alt="Illustration of an ellipse filled with dots that form horizontal zig-zag lines, over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylesmallconfetti.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleLargeConfetti">
+    <summary>
+      <para>Specifies a hatch that has the appearance of confetti composed of larger pieces than HatchStyleSmallConfetti.</para>
+      <img alt="Illustration of an ellipse filled with wider dots in an irregular but repeating pattern, over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylelargeconfetti.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleZigZag">
+    <summary>
+      <para>Specifies horizontal lines of zigzags.</para>
+      <img alt="Illustration of an ellipse filled with horizontal zig-zag lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylezigzag.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleWave">
+    <summary>
+      <para>Specifies horizontal lines of tildes.</para>
+      <img alt="Illustration of an ellipse filled with lines of tilde characters over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylewave.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDiagonalBrick">
+    <summary>
+      <para>Specifies a hatch that has the appearance of a wall of bricks laid in a backward diagonal direction.</para>
+      <img alt="Illustration of an ellipse filled with a diagonal brick pattern over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylediagonalbrick.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleHorizontalBrick">
+    <summary>
+      <para>Specifies a hatch that has the appearance of a wall of bricks laid horizontally.</para>
+      <img alt="Illustration of an ellipse filled with a horizontal brick pattern over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylehorizontalbrick.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleWeave">
+    <summary>
+      <para>Specifies a hatch that has the appearance of a woven material.</para>
+      <img alt="Illustration of an ellipse filled with a diagonal weave pattern over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyleweave.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStylePlaid">
+    <summary>
+      <para>Specifies a hatch that has the appearance of a plaid material.</para>
+      <img alt="Illustration of an ellipse filled with an open grid of opaque half-toned horizontal lines over opaque solid vertical lines, over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyleplaid.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDivot">
+    <summary>
+      <para>Specifies a hatch that has the appearance of divots.</para>
+      <img alt="Illustration of an ellipse filled with alternating rows of greater-than and less-than symbols, over a background color" src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledivot.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDottedGrid">
+    <summary>
+      <para>Specifies horizontal and vertical dotted lines that cross at 90-degree angles.</para>
+      <img alt="Illustration of an ellipse filled with a grid of dotted lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledottedgrid.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleDottedDiamond">
+    <summary>
+      <para>Specifies forward diagonal and backward diagonal dotted lines that cross at 90-degree angles.</para>
+      <img alt="Illustration of an ellipse filled with a grid of slanting dotted lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyledotteddiamond.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleShingle">
+    <summary>
+      <para>Specifies a hatch that has the appearance of shingles laid in a forward diagonal direction.</para>
+      <img alt="Illustration of an ellipse filled with a diagonal shingle pattern over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyleshingle.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleTrellis">
+    <summary>
+      <para>Specifies a hatch that has the appearance of a trellis.</para>
+      <img alt="Illustration of an ellipse filled with a grid of wide, slanting lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyletrellis.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleSphere">
+    <summary>
+      <para>Specifies a hatch that has the appearance of a checkerboard of spheres.</para>
+      <img alt="Illustration of an ellipse filled with a checkerboard of spheres over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylesphere.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleSmallGrid">
+    <summary>
+      <para>Specifies horizontal and vertical lines that cross at 90-degree angles and are spaced 50 percent closer together than HatchStyleCross.</para>
+      <img alt="Illustration of an ellipse filled with a small grid of lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylesmallgrid.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleSmallCheckerBoard">
+    <summary>
+      <para>Specifies a hatch that has the appearance of a checkerboard.</para>
+      <img alt="Illustration of an ellipse filled with a small checkerboard pattern over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylesmallcheckerboard.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleLargeCheckerBoard">
+    <summary>
+      <para>Specifies a hatch that has the appearance of a checkerboard with squares that are twice the size of HatchStyleSmallCheckerBoard.</para>
+      <img alt="Illustration of an ellipse filled with a wide checkerboard pattern over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylelargecheckerboard.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleOutlinedDiamond">
+    <summary>
+      <para>Specifies forward diagonal and backward diagonal lines that cross at 90-degree angles but are not antialiased.</para>
+      <img alt="Illustration of an ellipse filled with a small grid of slanting lines over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstyleoutlineddiamond.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleSolidDiamond">
+    <summary>
+      <para>Specifies a hatch that has the appearance of a checkerboard placed diagonally.</para>
+      <img alt="Illustration of an ellipse filled with a large, diagonal checkerboard pattern over a background color " src="https://docs.microsoft.com/windows/win32/api/gdiplusenums/images/hatchstylesoliddiamond.png" />
+    </summary>
+  </member>
+  <member name="HatchStyle.HatchStyleTotal">
+    <summary>Specifies no hatch thereby allowing the brush to be transparent.</summary>
+  </member>
+  <member name="HatchStyle.HatchStyleLargeGrid">
+    <summary>Specifies HatchStyleCross.</summary>
+  </member>
+  <member name="HatchStyle.HatchStyleMin">
+    <summary>Specifies HatchStyleHorizonal.</summary>
+  </member>
+  <member name="HatchStyle.HatchStyleMax">
+    <summary>Specifies HatchStyleSolidDiamond.</summary>
+  </member>
+</doc>

@@ -3,31 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioClientDuckingControl.SetDuckingOptionsForCurrentStream">
-    <summary>
-      <para>Sets the audio ducking options for an audio render stream. Allows an app to specify that the system shouldn't duck the audio of other streams when the app's audio render stream is active.</para>
-    </summary>
-    <param name="options">
-      <para>A value from the <see cref="AUDIO_DUCKING_OPTIONS" /> enumeration specifying the requested ducking behavior.</para>
-    </param>
-    <returns>
-      <para>On successful completion, returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>Get an instance of the <see cref="IAudioClientDuckingControl" /> interface by calling <see cref="IAudioClient.GetService" />, passing in the interface ID constant <b>IID_IAudioClientDuckingControl</b>.</para>
-      <para>
-        <b>IAudioClientDuckingControl</b> only controls the ducking caused by the audio stream (<b>IAudioClient</b>) that the interface is obtained from.</para>
-      <para>Audio from applications could continue to be ducked if there are other concurrent applications with streams that cause ducking.</para>
-    </remarks>
+    <summary>Sets the audio ducking options for an audio render stream. Allows an app to specify that the system shouldn't duck the audio of other streams when the app's audio render stream is active.</summary>
+    <param name="options">A value from the <see cref="AUDIO_DUCKING_OPTIONS" /> enumeration specifying the requested ducking behavior.</param>
+    <returns>On successful completion, returns S_OK.</returns>
   </member>
   <member name="IAudioClientDuckingControl">
-    <summary>
-      <para>Provides a method, <see cref="SetDuckingOptionsForCurrentStream" />, that allows an app to specify that the system shouldn't duck the audio of other streams when the app's audio render stream is active.</para>
-    </summary>
-    <remarks>
-      <para>Get an instance of the <see cref="IAudioClientDuckingControl" /> interface by calling <see cref="IAudioClient.GetService" />, passing in the interface ID constant <b>IID_IAudioClientDuckingControl</b>.</para>
-      <para>
-        <b>IAudioClientDuckingControl</b> only controls the ducking caused by the audio stream (<b>IAudioClient</b>) that the interface is obtained from.</para>
-      <para>Audio from applications could continue to be ducked if there are other concurrent applications with streams that cause ducking.</para>
-    </remarks>
+    <summary>Provides a method, <see cref="SetDuckingOptionsForCurrentStream" />, that allows an app to specify that the system shouldn't duck the audio of other streams when the app's audio render stream is active.</summary>
   </member>
 </doc>

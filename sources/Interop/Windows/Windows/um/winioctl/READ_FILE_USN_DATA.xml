@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="READ_FILE_USN_DATA">
-    <summary>
-      <para>Specifies the versions of the update sequence number (USN) change journal supported by the
-application. This structure is the input structure to the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_file_usn_data">FSCTL_READ_FILE_USN_DATA</a> control code.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_usn_journal">FSCTL_READ_USN_JOURNAL</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Specifies the versions of the update sequence number (USN) change journal supported by the application. This structure is the input structure to the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_read_file_usn_data">FSCTL_READ_FILE_USN_DATA</a> control code.</summary>
   </member>
   <member name="READ_FILE_USN_DATA.MinMajorVersion">
-    <summary>
-      <para>The lowest version of the USN change journal accepted by the application. If the input buffer is not
-specified this defaults to 2.</para>
-    </summary>
+    <summary>The lowest version of the USN change journal accepted by the application. If the input buffer is not specified this defaults to 2.</summary>
   </member>
   <member name="READ_FILE_USN_DATA.MaxMajorVersion">
-    <summary>
-      <para>The highest version of the USN change journal accepted by the application. If the input buffer is not
-specified this defaults to 2. To support 128-bit file identifiers used by ReFS this must be 3 or higher.</para>
-    </summary>
+    <summary>The highest version of the USN change journal accepted by the application. If the input buffer is not specified this defaults to 2. To support 128-bit file identifiers used by ReFS this must be 3 or higher.</summary>
   </member>
 </doc>

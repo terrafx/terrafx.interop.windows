@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLAudioElementFactoryTests
     {
         Assert.That(typeof(IHTMLAudioElementFactory).GUID, Is.EqualTo(IID_IHTMLAudioElementFactory));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLAudioElementFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLAudioElementFactory>(), Is.EqualTo(sizeof(IHTMLAudioElementFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLAudioElementFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLAudioElementFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLAudioElementFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLAudioElementFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLAudioElementFactory), Is.EqualTo(4));
-        }
-    }
 }

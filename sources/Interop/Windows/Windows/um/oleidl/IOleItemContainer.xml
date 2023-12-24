@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleItemContainer.GetObject">
-    <summary>
-      <para>Retrieves a pointer to the specified object.</para>
-    </summary>
-    <param name="pszItem">
-      <para>The container's name for the requested object.</para>
-    </param>
-    <param name="dwSpeedNeeded">
-      <para>Indicates approximately how long the caller will wait to get the object. Possible values are taken from the enumeration <see cref="BINDSPEED" />.</para>
-    </param>
-    <param name="pbc">
-      <para>A pointer to the <see cref="IBindCtx" /> interface on the bind context object to be used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the binding implementation should retrieve information about its environment.</para>
-    </param>
-    <param name="riid">
-      <para>A reference to the identifier of the interface pointer requested.</para>
-    </param>
-    <param name="ppvObject">
-      <para>Address of the pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, *<i>ppvObject</i> contains the requested interface pointer to the object named by <i>pszItem</i>. When successful, the implementation must call <see cref="AddRef" /> on the *<i>ppvObject</i>; it is the caller's responsibility to call <see cref="Release" />. If an error occurs, the implementation sets *<i>ppvObject</i> to <b>NULL</b>.</para>
-    </param>
+    <summary>Retrieves a pointer to the specified object.</summary>
+    <param name="pszItem">The container's name for the requested object.</param>
+    <param name="dwSpeedNeeded">Indicates approximately how long the caller will wait to get the object. Possible values are taken from the enumeration <see cref="BINDSPEED" />.</param>
+    <param name="pbc">A pointer to the <see cref="IBindCtx" /> interface on the bind context object to be used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the binding implementation should retrieve information about its environment.</param>
+    <param name="riid">A reference to the identifier of the interface pointer requested.</param>
+    <param name="ppvObject">Address of the pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, *<i>ppvObject</i> contains the requested interface pointer to the object named by <i>pszItem</i>. When successful, the implementation must call <see cref="AddRef" /> on the *<i>ppvObject</i>; it is the caller's responsibility to call <see cref="Release" />. If an error occurs, the implementation sets *<i>ppvObject</i> to <b>NULL</b>.</param>
     <returns>
       <para>This method can return the standard return value E_OUTOFMEMORY, as well as the following values.</para>
       <list type="table">
@@ -28,74 +16,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_EXCEEDEDDEADLINE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The binding operation could not be completed within the time limit specified by the bind context's <see cref="BIND_OPTS" /> structure, or with the speed indicated by the <i>dwSpeedNeeded</i> parameter.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MK_E_EXCEEDEDDEADLINE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_NOOBJECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The parameter <i>pszItem</i> does not identify an object in this container.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The binding operation could not be completed within the time limit specified by the bind context's <see cref="BIND_OPTS" /> structure, or with the speed indicated by the <i>dwSpeedNeeded</i> parameter.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MK_E_NOOBJECT</b>
-            </para>
-          </description>
-          <description>
-            <para>The parameter <i>pszItem</i> does not identify an object in this container.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested interface was not available.</para>
-          </description>
-        </item>
+          <description>The requested interface was not available.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The item moniker implementation of <see cref="IMoniker.BindToObject" /> calls this method, passing the name stored within the item moniker as the <i>pszItem</i> parameter.</para>
-      <h3>Notes to Implementers</h3>
-      <para>Your implementation of <b>IOleItemContainer.GetObject</b> should first determine whether <i>pszItem</i> is a valid name for one of the container's objects. If not, you should return MK_E_NOOBJECT.</para>
-      <para>If <i>pszItem</i> names an embedded or linked object, your implementation must check the value of the <i>dwSpeedNeeded</i> parameter. If the value is BINDSPEED_IMMEDIATE and the object is not yet loaded, you should return MK_E_EXCEEDEDDEADLINE. If the object is loaded, your implementation should determine whether the object is running (for example, by calling the <see cref="OleIsRunning" /> function). If it is not running and the <i>dwSpeedNeeded</i> value is BINDSPEED_MODERATE, your implementation should return MK_E_EXCEEDEDDEADLINE. If the object is not running and <i>dwSpeedNeeded</i> is BINDSPEED_INDEFINITE, your implementation should call the <see cref="OleRun" /> function to put the object in the running state. Then it can query the object for the requested interface. Note that it is important the object be running before you query for the interface.</para>
-      <para>If <i>pszItem</i> names a pseudo-object, your implementation can ignore the <i>dwSpeedNeeded</i> parameter because a pseudo-object is running whenever its container is running. In this case, your implementation can simply query for the requested interface.</para>
-      <para>If you need more specific information about the time limit than is given by <i>dwSpeedNeeded</i>, you can call <see cref="IBindCtx.GetBindOptions" /> on the <i>pbc</i> parameter to get the actual deadline parameter.</para>
-    </remarks>
-    <seealso cref="IOleItemContainer" />
   </member>
   <member name="IOleItemContainer.GetObjectStorage">
-    <summary>
-      <para>Retrieves a pointer to the storage for the specified object.</para>
-    </summary>
-    <param name="pszItem">
-      <para>The compound document's name for the object whose storage is requested.</para>
-    </param>
-    <param name="pbc">
-      <para>A pointer to the <see cref="IBindCtx" /> interface on the bind context to be used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the binding implementation should retrieve information about its environment.</para>
-    </param>
-    <param name="riid">
-      <para>A reference to the identifier of the interface to be used to communicate with the object, usually <see cref="IStorage" />.</para>
-    </param>
-    <param name="ppvStorage">
-      <para>Address of a pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, *<i>ppvStorage</i> contains the requested interface pointer to the storage for the object named by <i>pszItem</i>. When successful, the implementation must call <see cref="AddRef" /> on *<i>ppvStorage</i>; it is the caller's responsibility to call <see cref="Release" />. If an error occurs, *<i>ppvStorage</i> is set to <b>NULL</b>.</para>
-    </param>
+    <summary>Retrieves a pointer to the storage for the specified object.</summary>
+    <param name="pszItem">The compound document's name for the object whose storage is requested.</param>
+    <param name="pbc">A pointer to the <see cref="IBindCtx" /> interface on the bind context to be used in this binding operation. The bind context caches objects bound during the binding process, contains parameters that apply to all operations using the bind context, and provides the means by which the binding implementation should retrieve information about its environment.</param>
+    <param name="riid">A reference to the identifier of the interface to be used to communicate with the object, usually <see cref="IStorage" />.</param>
+    <param name="ppvStorage">Address of a pointer variable that receives the interface pointer requested in <i>riid</i>. Upon successful return, *<i>ppvStorage</i> contains the requested interface pointer to the storage for the object named by <i>pszItem</i>. When successful, the implementation must call <see cref="AddRef" /> on *<i>ppvStorage</i>; it is the caller's responsibility to call <see cref="Release" />. If an error occurs, *<i>ppvStorage</i> is set to <b>NULL</b>.</param>
     <returns>
       <para>This method can return the standard return value E_OUTOFMEMORY, as well as the following values.</para>
       <list type="table">
@@ -103,62 +80,60 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completely successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completely successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_OBJECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The parameter <i>pszItem</i> does not identify a object in this container.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>MK_E_OBJECT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_NOSTORAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object does not have its own independent storage.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The parameter <i>pszItem</i> does not identify a object in this container.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MK_E_NOSTORAGE</b>
-            </para>
-          </description>
-          <description>
-            <para>The object does not have its own independent storage.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested interface is not available.</para>
-          </description>
-        </item>
+          <description>The requested interface is not available.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The item moniker implementation of <see cref="IMoniker.BindToStorage" /> calls this method.</para>
-      <h3>Notes to Implementers</h3>
-      <para>If <i>pszItem</i> designates a pseudo-object, your implementation of <b>IOleItemContainer.GetObjectStorage</b> should return MK_E_NOSTORAGE, because pseudo-objects do not have their own independent storage. If <i>pszItem</i> designates an embedded object, or a portion of the document that has its own storage, your implementation should return the specified interface pointer on the appropriate storage object.</para>
-    </remarks>
-    <seealso cref="IOleItemContainer" />
   </member>
   <member name="IOleItemContainer.IsRunning">
-    <summary>
-      <para>Determines whether the specified object is running.</para>
-    </summary>
-    <param name="pszItem">
-      <para>The container's name for the object.</para>
-    </param>
+    <summary>Determines whether the specified object is running.</summary>
+    <param name="pszItem">The container's name for the object.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -166,45 +141,44 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object is running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The object is running.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The object is not running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MK_E_NOOBJECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The object is not running.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MK_E_NOOBJECT</b>
-            </para>
-          </description>
-          <description>
-            <para>The parameter does not identify an object in this container.</para>
-          </description>
-        </item>
+          <description>The parameter does not identify an object in this container.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The item moniker implementation of <see cref="IMoniker.IsRunning" /> calls this method.</para>
-      <h3>Notes to Implementers</h3>
-      <para>Your implementation of <b>IOleItemContainer.IsRunning</b> should first determine whether <i>pszItem</i> identifies one of the container's objects. If it does not, your implementation should return MK_E_NOOBJECT. If the object is not loaded, your implementation should return S_FALSE. If it is loaded, your implementation can call the <see cref="OleIsRunning" /> function to determine whether it is running.</para>
-      <para>If <i>pszItem</i> names a pseudo-object, your implementation can simply return S_OK because a pseudo-object is running whenever its container is running.</para>
-    </remarks>
-    <seealso cref="IOleItemContainer" />
   </member>
   <member name="IOleItemContainer">
     <summary>
@@ -212,7 +186,5 @@
       <para>When any container of objects uses item monikers to identify its objects, it must define a naming scheme for those objects. The container's <b>IOleItemContainer</b> implementation uses knowledge of that naming scheme to retrieve an object given a particular name. Item monikers use the container's <b>IOleItemContainer</b> implementation during binding.</para>
       <para>This interface is not supported for use across machine boundaries.</para>
     </summary>
-    <seealso cref="CreateItemMoniker" />
-    <seealso cref="IMoniker" />
   </member>
 </doc>

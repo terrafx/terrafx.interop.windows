@@ -14,15 +14,15 @@ public unsafe partial struct SPSEMANTICERRORINFO
 
     /// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO.pszScriptLine"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszScriptLine;
+    public char* pszScriptLine;
 
     /// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO.pszSource"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszSource;
+    public char* pszSource;
 
     /// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO.pszDescription"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDescription;
+    public char* pszDescription;
 
     /// <include file='SPSEMANTICERRORINFO.xml' path='doc/member[@name="SPSEMANTICERRORINFO.hrResultCode"]/*' />
     public HRESULT hrResultCode;

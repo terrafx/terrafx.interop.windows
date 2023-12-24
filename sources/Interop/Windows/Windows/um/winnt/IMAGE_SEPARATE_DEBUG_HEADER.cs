@@ -3,10 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGE_SEPARATE_DEBUG_HEADER.xml' path='doc/member[@name="IMAGE_SEPARATE_DEBUG_HEADER"]/*' />
-public unsafe partial struct IMAGE_SEPARATE_DEBUG_HEADER
+public partial struct IMAGE_SEPARATE_DEBUG_HEADER
 {
     /// <include file='IMAGE_SEPARATE_DEBUG_HEADER.xml' path='doc/member[@name="IMAGE_SEPARATE_DEBUG_HEADER.Signature"]/*' />
     [NativeTypeName("WORD")]
@@ -58,5 +60,12 @@ public unsafe partial struct IMAGE_SEPARATE_DEBUG_HEADER
 
     /// <include file='IMAGE_SEPARATE_DEBUG_HEADER.xml' path='doc/member[@name="IMAGE_SEPARATE_DEBUG_HEADER.Reserved"]/*' />
     [NativeTypeName("DWORD[2]")]
-    public fixed uint Reserved[2];
+    public _Reserved_e__FixedBuffer Reserved;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

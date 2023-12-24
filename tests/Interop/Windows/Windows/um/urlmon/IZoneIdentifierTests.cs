@@ -19,32 +19,4 @@ public static unsafe partial class IZoneIdentifierTests
     {
         Assert.That(typeof(IZoneIdentifier).GUID, Is.EqualTo(IID_IZoneIdentifier));
     }
-
-    /// <summary>Validates that the <see cref="IZoneIdentifier" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IZoneIdentifier>(), Is.EqualTo(sizeof(IZoneIdentifier)));
-    }
-
-    /// <summary>Validates that the <see cref="IZoneIdentifier" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IZoneIdentifier).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IZoneIdentifier" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IZoneIdentifier), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IZoneIdentifier), Is.EqualTo(4));
-        }
-    }
 }

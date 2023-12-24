@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Ster
     {
         Assert.That(typeof(CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto>(), Is.EqualTo(sizeof(CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_GUID_AVDecAudioOutputFormat_PCM_Stereo_Auto), Is.EqualTo(1));
-    }
 }

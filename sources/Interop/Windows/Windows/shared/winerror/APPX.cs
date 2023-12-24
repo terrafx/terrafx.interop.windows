@@ -81,4 +81,7 @@ public static partial class APPX
 
     [NativeTypeName("#define APPX_E_INVALID_PUBLISHER_BRIDGING _HRESULT_TYPEDEF_(0x80080218L)")]
     public const int APPX_E_INVALID_PUBLISHER_BRIDGING = unchecked((int)(0x80080218));
+
+    [NativeTypeName("#define APPX_E_DIGEST_MISMATCH _HRESULT_TYPEDEF_(0x80080219L)")]
+    public const int APPX_E_DIGEST_MISMATCH = unchecked((int)(0x80080219));
 }

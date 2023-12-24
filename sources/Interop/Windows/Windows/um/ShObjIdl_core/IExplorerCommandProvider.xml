@@ -3,54 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IExplorerCommandProvider.GetCommand">
-    <summary>
-      <para>Gets a specified Explorer command instance.</para>
-    </summary>
-    <param name="rguidCommandId">
-      <para>Type: <b>REFGUID</b></para>
-      <para>A reference to a command ID as a <b>GUID</b>. Used to obtain a command definition.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the requested interface.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this function returns, contains the interface pointer requested in riid. This will typically be <see cref="IExplorerCommand" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets a specified Explorer command instance.</summary>
+    <param name="rguidCommandId">A reference to a command ID as a <b>GUID</b>. Used to obtain a command definition.</param>
+    <param name="riid">A reference to the IID of the requested interface.</param>
+    <param name="ppv">When this function returns, contains the interface pointer requested in riid. This will typically be <see cref="IExplorerCommand" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerCommandProvider.GetCommands">
-    <summary>
-      <para>Gets a specified Explorer command enumerator instance.</para>
-    </summary>
-    <param name="punkSite">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to an interface used to set a site.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the requested interface.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this function returns, contains the interface pointer requested in riid. This will typically be <see cref="IEnumExplorerCommand" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets a specified Explorer command enumerator instance.</summary>
+    <param name="punkSite">A pointer to an interface used to set a site.</param>
+    <param name="riid">A reference to the IID of the requested interface.</param>
+    <param name="ppv">When this function returns, contains the interface pointer requested in riid. This will typically be <see cref="IEnumExplorerCommand" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerCommandProvider">
-    <summary>
-      <para>Exposes methods to create Explorer commands and command enumerators.</para>
-    </summary>
-    <remarks>
-      <para>None of the methods of this interface should communicate with network resources; they are called on the UI thread and doing so would cause the UI to stop responding.</para>
-      <para>Each command should have its own unique GUID; the command provider is expected to create a command instance on a per-GUID basis.</para>
-    </remarks>
+    <summary>Exposes methods to create Explorer commands and command enumerators.</summary>
   </member>
 </doc>

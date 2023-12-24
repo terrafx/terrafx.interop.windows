@@ -3,27 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMLVSCROLL">
-    <summary>
-      <para>Provides information about a scrolling operation.</para>
-    </summary>
+    <summary>Provides information about a scrolling operation.</summary>
   </member>
   <member name="NMLVSCROLL.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about a <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-endscroll">LVN_ENDSCROLL</a> or a <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-beginscroll">LVN_BEGINSCROLL</a> notification code.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about a <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-endscroll">LVN_ENDSCROLL</a> or a <a href="https://docs.microsoft.com//windows/desktop/Controls/lvn-beginscroll">LVN_BEGINSCROLL</a> notification code.</summary>
   </member>
   <member name="NMLVSCROLL.dx">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Value of type <b>int</b> that specifies in pixels the horizontal position where a scrolling operation should begin or end.</para>
-    </summary>
+    <summary>Value of type <b>int</b> that specifies in pixels the horizontal position where a scrolling operation should begin or end.</summary>
   </member>
   <member name="NMLVSCROLL.dy">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Value of type <b>int</b> that specifies in pixels the vertical position where a scrolling operation should begin or end.</para>
-    </summary>
+    <summary>Value of type <b>int</b> that specifies in pixels the vertical position where a scrolling operation should begin or end.</summary>
   </member>
 </doc>

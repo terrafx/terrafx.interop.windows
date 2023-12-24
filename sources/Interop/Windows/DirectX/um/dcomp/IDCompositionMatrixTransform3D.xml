@@ -3,87 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionMatrixTransform3D.SetMatrix">
-    <summary>
-      <para>Changes all values of the matrix of this 3D transformation effect.</para>
-    </summary>
-    <param name="matrix">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/direct3d9/d3dmatrix">D3DMATRIX</a></b></para>
-      <para>The new matrix for this 3D transformation effect.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method fails if any of the matrix values are NaN, positive infinity, or negative infinity.</para>
-      <para>If any of the matrix elements were previously animated, this method removes the animations and sets the elements to the specified static value.</para>
-    </remarks>
-    <seealso cref="IDCompositionMatrixTransform3D" />
+    <summary>Changes all values of the matrix of this 3D transformation effect.</summary>
+    <param name="matrix">The new matrix for this 3D transformation effect.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionMatrixTransform3D.SetMatrixElement">
-    <summary>
-      <para>Changes the value of one element of the matrix of this 3D transform.</para>
-    </summary>
-    <param name="row">
-      <para>Type: <b>int</b></para>
-      <para>The row index of the element to change. This value must be between 0 and 3, inclusive.</para>
-    </param>
-    <param name="column">
-      <para>Type: <b>int</b></para>
-      <para>The column index of the element to change. This value must be between 0 and 3, inclusive.</para>
-    </param>
-    <param name="value">
-      <para>Type: <b>float</b></para>
-      <para>The new value of the specified element.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method fails if the <i>value</i> parameter is NaN, positive infinity, or negative infinity.</para>
-      <para>If the specified element was previously animated, this method removes the animation and sets the element to the specified static value.</para>
-    </remarks>
-    <seealso cref="IDCompositionMatrixTransform3D" />
+    <summary>Changes the value of one element of the matrix of this 3D transform.</summary>
+    <param name="row">The row index of the element to change. This value must be between 0 and 3, inclusive.</param>
+    <param name="column">The column index of the element to change. This value must be between 0 and 3, inclusive.</param>
+    <param name="value">The new value of the specified element.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionMatrixTransform3D.SetMatrixElement">
-    <summary>
-      <para>Animates the value of one element of the matrix of this 3D transform.</para>
-    </summary>
-    <param name="row">
-      <para>Type: <b>int</b></para>
-      <para>The row index of the element to change. This value must be between 0 and 3, inclusive.</para>
-    </param>
-    <param name="column">
-      <para>Type: <b>int</b></para>
-      <para>The column index of the element to change. This value must be between 0 and 3, inclusive.</para>
-    </param>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the value of the specified element changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the specified element unless this method is called again. If the specified element was previously animated, calling this method replaces the previous animation with the new animation.</para>
-      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected transform. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
-    </remarks>
-    <seealso cref="IDCompositionMatrixTransform3D" />
+    <summary>Animates the value of one element of the matrix of this 3D transform.</summary>
+    <param name="row">The row index of the element to change. This value must be between 0 and 3, inclusive.</param>
+    <param name="column">The column index of the element to change. This value must be between 0 and 3, inclusive.</param>
+    <param name="animation">An animation that represents how the value of the specified element changes over time. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionMatrixTransform3D">
-    <summary>
-      <para>Represents an arbitrary 3D transformation defined by a 4-by-4 matrix.</para>
-    </summary>
-    <remarks>
-      <para>A 3D matrix transform represents the following 4-by-4 matrix:</para>
-      <para>
-        <img alt="Four-by-four 3D transform matrix" src="https://docs.microsoft.com/windows/win32/api/dcompmages/3D_matrix.png" />
-      </para>
-      <para>The application can set any of the values in the first three columns. Note that the fourth column is padded to allow for matrix concatenation.</para>
-    </remarks>
-    <seealso cref="IDCompositionTransform3D" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh449178(v=vs.85)">IDCompositionVisual.SetTransform</seealso>
+    <summary>Represents an arbitrary 3D transformation defined by a 4-by-4 matrix.</summary>
   </member>
 </doc>

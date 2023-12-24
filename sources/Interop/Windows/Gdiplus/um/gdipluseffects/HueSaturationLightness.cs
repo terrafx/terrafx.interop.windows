@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='HueSaturationLightness.xml' path='doc/member[@name="HueSaturationLightness"]/*' />
-[NativeTypeName("struct HueSaturationLightness : Effect")]
+[NativeTypeName("struct HueSaturationLightness : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct HueSaturationLightness
 {
@@ -48,7 +48,7 @@ public unsafe partial struct HueSaturationLightness
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::HueSaturationLightnessParams *")] HueSaturationLightnessParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const HueSaturationLightnessParams *")] HueSaturationLightnessParams* parameters)
     {
         uint size = 12;
 

@@ -19,25 +19,4 @@ public static unsafe partial class SVGExceptionTests
     {
         Assert.That(typeof(SVGException).GUID, Is.EqualTo(IID_SVGException));
     }
-
-    /// <summary>Validates that the <see cref="SVGException" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGException>(), Is.EqualTo(sizeof(SVGException)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGException" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGException).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGException" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGException), Is.EqualTo(1));
-    }
 }

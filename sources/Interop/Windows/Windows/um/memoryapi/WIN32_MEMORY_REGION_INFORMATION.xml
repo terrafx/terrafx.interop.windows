@@ -3,107 +3,44 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WIN32_MEMORY_REGION_INFORMATION">
-    <summary>
-      <para>Contains information about a memory region. A memory region is a single allocation that is created using a memory allocation function, such as <see cref="VirtualAlloc" /> or <see cref="MapViewOfFile" />.</para>
-    </summary>
-    <remarks>
-      <para>The <b>WIN32_MEMORY_REGION_INFORMATION</b> structure contains information about a single memory allocation. In contrast, the <see cref="MEMORY_BASIC_INFORMATION" /> structure that is returned by the <see cref="VirtualQuery" /> function describes a contiguous run of pages within a single allocation that all have the same type, state, and protection. The mapping between <b>WIN32_MEMORY_REGION_INFORMATION</b> fields and memory type values returned by <b>VirtualQuery</b> is as follows:</para>
-      <list type="table">
-        <listheader>
-          <description>WIN32_MEMORY_REGION_INFORMATION</description>
-          <description>MEMORY_BASIC_INFORMATION.Type</description>
-        </listheader>
-        <item>
-          <description>Private</description>
-          <description>MEM_PRIVATE</description>
-        </item>
-        <item>
-          <description>MappedDataFile</description>
-          <description>MEM_MAPPED</description>
-        </item>
-        <item>
-          <description>MappedImage</description>
-          <description>MEM_IMAGE</description>
-        </item>
-        <item>
-          <description>MappedPageFile</description>
-          <description>MEM_MAPPED</description>
-        </item>
-        <item>
-          <description>MappedPhysical</description>
-          <description>MEM_MAPPED</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="MEMORY_BASIC_INFORMATION" />
-    <seealso cref="MapViewOfFile" />
-    <seealso cref="VirtualAlloc" />
-    <seealso cref="VirtualQuery" />
+    <summary>Contains information about a memory region. A memory region is a single allocation that is created using a memory allocation function, such as <see cref="VirtualAlloc" /> or <see cref="MapViewOfFile" />.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.AllocationBase">
-    <summary>
-      <para>The base address of the allocation.</para>
-    </summary>
+    <summary>The base address of the allocation.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.AllocationProtect">
-    <summary>
-      <para>The page protection value that was specified when the allocation was created. Protections of individual pages within the allocation can be different from this value. To query protection values of individual pages, use the <see cref="VirtualQuery" /> function.</para>
-    </summary>
+    <summary>The page protection value that was specified when the allocation was created. Protections of individual pages within the allocation can be different from this value. To query protection values of individual pages, use the <see cref="VirtualQuery" /> function.</summary>
   </member>
-  <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME"></member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.Flags">
-    <summary>
-      <para>Represents all memory region flags as a single ULONG value. Applications should not use this field. Instead, test the individual bit field flags defined below.</para>
-    </summary>
+    <summary>Represents all memory region flags as a single ULONG value. Applications should not use this field. Instead, test the individual bit field flags defined below.</summary>
   </member>
-  <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.Private">
-    <summary>
-      <para>A value of 1 indicates that the allocation is private to the process.</para>
-    </summary>
+    <summary>A value of 1 indicates that the allocation is private to the process.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.MappedDataFile">
-    <summary>
-      <para>A value of 1 indicates that the allocation is a mapped view of a data file.</para>
-    </summary>
+    <summary>A value of 1 indicates that the allocation is a mapped view of a data file.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.MappedImage">
-    <summary>
-      <para>A value of 1 indicates that the allocation is a mapped view of an executable image.</para>
-    </summary>
+    <summary>A value of 1 indicates that the allocation is a mapped view of an executable image.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.MappedPageFile">
-    <summary>
-      <para>A value of 1 indicates that the allocation is a mapped view of a pagefile-backed section.</para>
-    </summary>
+    <summary>A value of 1 indicates that the allocation is a mapped view of a pagefile-backed section.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.MappedPhysical">
-    <summary>
-      <para>A value of 1 indicates that the allocation is a view of the <b>\Device\PhysicalMemory</b> section.</para>
-    </summary>
+    <summary>A value of 1 indicates that the allocation is a view of the <b>\Device\PhysicalMemory</b> section.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.DirectMapped">
-    <summary>
-      <para>A value of 1 indicates that the allocation is a mapped view of a direct-mapped file.</para>
-    </summary>
+    <summary>A value of 1 indicates that the allocation is a mapped view of a direct-mapped file.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.RegionSize">
-    <summary>
-      <para>The size of the allocation.</para>
-    </summary>
+    <summary>The size of the allocation.</summary>
   </member>
   <member name="WIN32_MEMORY_REGION_INFORMATION.CommitSize">
-    <summary>
-      <para>The commit charge associated with the allocation. For private allocations, this is the combined size of pages in the region that are committed, as opposed to reserved. For mapped views, this is the combined size of pages that have copy-on-write protection, or have been made private as a result of copy-on-write.</para>
-    </summary>
+    <summary>The commit charge associated with the allocation. For private allocations, this is the combined size of pages in the region that are committed, as opposed to reserved. For mapped views, this is the combined size of pages that have copy-on-write protection, or have been made private as a result of copy-on-write.</summary>
   </member>
 </doc>

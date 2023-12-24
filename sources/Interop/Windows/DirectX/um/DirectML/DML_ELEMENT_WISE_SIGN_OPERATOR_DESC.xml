@@ -5,23 +5,14 @@
   <member name="DML_ELEMENT_WISE_SIGN_OPERATOR_DESC">
     <summary>
       <para>Returns a value representing the sign of each element of <i>InputTensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>.</para>
-      <code>f(x) = -1, if x &lt; 0
-        1, if x &gt; 0
-        0, otherwise // This includes negative zero.
-</code>
+      <code>f(x) = -1, if x &lt; 0 1, if x &gt; 0 0, otherwise // This includes negative zero.</code>
       <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias <i>InputTensor</i> during binding.</para>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_SIGN_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input tensor to read from.</para>
-    </summary>
+    <summary>The input tensor to read from.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_SIGN_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to.</para>
-    </summary>
+    <summary>The output tensor to write the results to.</summary>
   </member>
 </doc>

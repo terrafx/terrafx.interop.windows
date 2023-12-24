@@ -19,32 +19,4 @@ public static unsafe partial class IUIAnimationTransition2Tests
     {
         Assert.That(typeof(IUIAnimationTransition2).GUID, Is.EqualTo(IID_IUIAnimationTransition2));
     }
-
-    /// <summary>Validates that the <see cref="IUIAnimationTransition2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUIAnimationTransition2>(), Is.EqualTo(sizeof(IUIAnimationTransition2)));
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationTransition2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUIAnimationTransition2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUIAnimationTransition2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUIAnimationTransition2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUIAnimationTransition2), Is.EqualTo(4));
-        }
-    }
 }

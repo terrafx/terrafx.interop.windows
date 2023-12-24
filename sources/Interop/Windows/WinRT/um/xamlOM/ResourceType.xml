@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ResourceType">
+    <summary>Defines constants that specify the type of a resource in a resource dictionary.</summary>
+  </member>
+  <member name="ResourceType.ResourceTypeStatic">
+    <summary>The resource is a <a href="https://docs.microsoft.com//windows/uwp/xaml-platform/staticresource-markup-extension">StaticResource</a>.</summary>
+  </member>
+  <member name="ResourceType.ResourceTypeTheme">
+    <summary>The resource is a <a href="https://docs.microsoft.com//windows/uwp/xaml-platform/themeresource-markup-extension">ThemeResource</a>.</summary>
+  </member>
+</doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SAMPLE_POSITION">
+    <summary>Describes a sub-pixel sample position for use with programmable sample positions.</summary>
+  </member>
+  <member name="D3D12_SAMPLE_POSITION.X">
+    <summary>A signed sub-pixel coordinate value in the X axis.</summary>
+  </member>
+  <member name="D3D12_SAMPLE_POSITION.Y">
+    <summary>A signed sub-pixel coordinate value in the Y axis.</summary>
+  </member>
+</doc>

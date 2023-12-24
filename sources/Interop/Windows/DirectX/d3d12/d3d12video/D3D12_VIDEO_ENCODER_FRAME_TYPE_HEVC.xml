@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC">
+    <summary>Specifies the type of an HEVC video frame.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC.D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC_I_FRAME">
+    <summary>I-Frame. Completely intra-coded frame.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC.D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC_P_FRAME">
+    <summary>P-Frame. Allows references to past frames.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC.D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC_B_FRAME">
+    <summary>B-Frame. Allows references to both past and future (in display order) frames.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC.D3D12_VIDEO_ENCODER_FRAME_TYPE_HEVC_IDR_FRAME">
+    <summary>Instantaneous decode refresh frame. A special type of I-frame where no frame after it can reference any frame before it.</summary>
+  </member>
+</doc>

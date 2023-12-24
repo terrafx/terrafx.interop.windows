@@ -3,112 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioSessionEnumerator.GetCount">
-    <summary>
-      <para>The <b>GetCount</b> method gets the total number of audio sessions that are open on the audio device.</para>
-    </summary>
-    <param name="SessionCount">
-      <para>Receives the total number of audio sessions.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK.</para>
-    </returns>
-    <seealso cref="IAudioSessionEnumerator" />
+    <summary>The <b>GetCount</b> method gets the total number of audio sessions that are open on the audio device.</summary>
+    <param name="SessionCount">Receives the total number of audio sessions.</param>
+    <returns>If the method succeeds, it returns S_OK.</returns>
   </member>
   <member name="IAudioSessionEnumerator.GetSession">
-    <summary>
-      <para>The <b>GetSession</b> method gets the audio session specified by an audio session number.</para>
-    </summary>
-    <param name="SessionCount">
-      <para>The session number. If there are <i>n</i> sessions, the sessions are numbered from 0 to <i>n</i> – 1. To get the number of sessions, call the <see cref="IAudioSessionEnumerator.GetCount" /> method.</para>
-    </param>
-    <param name="Session">
-      <para>Receives a pointer to the <see cref="IAudioSessionControl" /> interface of the session object in the collection that is maintained by the session enumerator. The caller must release the interface pointer.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK.</para>
-    </returns>
-    <seealso cref="IAudioSessionEnumerator" />
+    <summary>The <b>GetSession</b> method gets the audio session specified by an audio session number.</summary>
+    <param name="SessionCount">The session number. If there are <i>n</i> sessions, the sessions are numbered from 0 to <i>n</i> – 1. To get the number of sessions, call the <see cref="IAudioSessionEnumerator.GetCount" /> method.</param>
+    <param name="Session">Receives a pointer to the <see cref="IAudioSessionControl" /> interface of the session object in the collection that is maintained by the session enumerator. The caller must release the interface pointer.</param>
+    <returns>If the method succeeds, it returns S_OK.</returns>
   </member>
   <member name="IAudioSessionEnumerator">
-    <summary>
-      <para>The <b>IAudioSessionEnumerator</b> interface enumerates audio sessions on an audio device. To get a reference to the <b>IAudioSessionEnumerator</b> interface of the session enumerator object, the application must call <see cref="IAudioSessionManager2.GetSessionEnumerator" />.</para>
-    </summary>
-    <remarks>
-      <para>If an application wants to be  notified when new sessions are created, it must register its implementation of  <see cref="IAudioSessionNotification" /> with the session manager.  Upon successful registration, the session manager sends create-session notifications to the application in the form of callbacks. These notifications contain a reference to the <see cref="IAudioSessionControl" /> pointer of the newly created session.</para>
-      <para>The session enumerator maintains a list of current sessions by holding references to each session's <see cref="IAudioSessionControl" /> pointer. However, the session enumerator might not be aware of the new sessions that are reported through <see cref="IAudioSessionNotification" />. In that case, the application would have access to only a partial list of sessions. This might occur if the <b>IAudioSessionControl</b> pointer (in the callback) is released before the session enumerator is initialized. Therefore,    if an application wants a complete set of sessions for the audio endpoint, the application should maintain its own list.</para>
-      <para>The application must perform the following steps to receive session notifications and manage a list of current sessions.</para>
-      <list type="number">
-        <item>
-          <description>Initialize COM with the Multithreaded Apartment (MTA) model by calling <code>CoInitializeEx(NULL, COINIT_MULTITHREADED)</code> in a non-UI thread. If MTA is not initialized, the application does not receive session notifications from the session manager.  <b>Note</b>  Threads that run the user interface of an application should be initialized with the apartment threading model.
-</description>
-        </item>
-        <item>
-          <description>Activate an <see cref="IAudioSessionManager2" /> interface from the audio endpoint device. Call <see cref="IMMDevice.Activate" /> with parameter <i>iid</i> set to <b>IID_IAudioSessionManager2</b>. This call receives a reference to the session manager's <b>IAudioSessionManager2</b> interface in the <i>ppInterface</i> parameter.  </description>
-        </item>
-        <item>
-          <description>Implement the <see cref="IAudioSessionNotification" /> interface to provide the callback behavior.</description>
-        </item>
-        <item>
-          <description>Call <see cref="IAudioSessionManager2.RegisterSessionNotification" /> to register the application's implementation of  <see cref="IAudioSessionNotification" />.</description>
-        </item>
-        <item>
-          <description>Create and initialize the session enumerator object by calling <see cref="IAudioSessionManager2.GetSessionEnumerator" />. This method generates a list of current sessions available for the endpoint and adds the <see cref="IAudioSessionControl" /> pointers for  each session in the list, if they are not already present.</description>
-        </item>
-        <item>
-          <description>Use the <b>IAudioSessionEnumerator</b> interface returned in the previous step to retrieve and enumerate the list of sessions. The session control for each session can be retrieved by calling <see cref="IAudioSessionEnumerator.GetSession" />. Make sure you call <b>AddRef</b> for each session control to maintain the reference count.</description>
-        </item>
-        <item>
-          <description>When the application gets a create-session notification, add  the <see cref="IAudioSessionControl" /> pointer of the new session (received in <see cref="IAudioSessionNotification.OnSessionCreated" />)  to the list of existing sessions. </description>
-        </item>
-      </list>
-      <para>Because the application maintains this list of sessions and manages the lifetime of the session based on the application's requirements, there is no expiration mechanism enforced by the audio system on the session control objects.</para>
-      <para>A session control is valid as long as the application has a reference to the session control in the list.</para>
-      <h4>Examples</h4>
-      <para>The following example code shows how to create the session enumerator object and then enumerate sessions.</para>
-      <code>HRESULT EnumSessions(IAudioSessionManager2* pSessionManager)
-{
-    if (!pSessionManager)
-    {
-        return E_INVALIDARG;
-    }
-
-    HRESULT hr = S_OK;
-
-    int cbSessionCount = 0;
-    LPWSTR pswSession = NULL;
-
-    IAudioSessionEnumerator* pSessionList = NULL;
-    IAudioSessionControl* pSessionControl = NULL;
-
-    // Get the current list of sessions.
-    CHECK_HR( hr = pSessionManager-&gt;GetSessionEnumerator(&amp;amp;amp;amp;amp;amp;pSessionList));
-
-    // Get the session count.
-    CHECK_HR( hr = pSessionList-&gt;GetCount(&amp;amp;amp;amp;amp;amp;cbSessionCount));
-
-    for (int index = 0 ; index &lt; cbSessionCount ; index++)
-    {
-        CoTaskMemFree(pswSession);
-        SAFE_RELEASE(pSessionControl);
-
-        // Get the &lt;n&gt;th session.
-        CHECK_HR(hr = pSessionList-&gt;GetSession(index, &amp;amp;amp;amp;amp;amp;pSessionControl));
-
-        CHECK_HR(hr = pSessionControl-&gt;GetDisplayName(&amp;amp;amp;amp;amp;amp;pswSession));
-
-        wprintf_s(L"Session Name: %s\n", pswSession);
-    }
-
-done:
-    CoTaskMemFree(pswSession);
-    SAFE_RELEASE(pSessionControl);
-    SAFE_RELEASE(pSessionList);
-
-    return hr;
-
-}
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
+    <summary>The <b>IAudioSessionEnumerator</b> interface enumerates audio sessions on an audio device. To get a reference to the <b>IAudioSessionEnumerator</b> interface of the session enumerator object, the application must call <see cref="IAudioSessionManager2.GetSessionEnumerator" />.</summary>
   </member>
 </doc>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IXamlDiagnostics.GetApplication">
+    <summary>Gets an instance of the application.</summary>
+    <param name="ppApplication">The application.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IXamlDiagnostics.GetDispatcher">
+    <summary>Gets the core dispatcher used to access elements on the UI thread.</summary>
+    <param name="ppDispatcher">The core dispatcher.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IXamlDiagnostics.GetHandleFromIInspectable">
+    <summary>Gets an <b>InstanceHandle</b> representation of an <see cref="IInspectable" />.</summary>
+    <param name="pInstance">An instance of the object as an <see cref="IInspectable" />.</param>
+    <param name="pHandle">A handle to the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IXamlDiagnostics.GetIInspectableFromHandle">
+    <summary>Gets the <see cref="IInspectable" /> from the XAML Diagnostics cache.</summary>
+    <param name="instanceHandle">A handle to the object.</param>
+    <param name="ppInstance">The object as an <see cref="IInspectable" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IXamlDiagnostics.GetInitializationData">
+    <summary>Gets the initialization data passed in to XAML Diagnostics.</summary>
+    <param name="pInitializationData">The initialization data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IXamlDiagnostics.GetUiLayer">
+    <summary>Gets the visual diagnostics root that can be used to draw on for highlighting elements in the tree.</summary>
+    <param name="ppLayer">The visual diagnostics root.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IXamlDiagnostics.HitTest">
+    <summary>Gets all elements in the visual tree that fall within the specified rectangle.</summary>
+    <param name="rect">The area to hit test.</param>
+    <param name="pCount">The size of the array.</param>
+    <param name="ppInstanceHandles">An array containing all elements.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IXamlDiagnostics.RegisterInstance">
+    <summary>Adds an <see cref="IInspectable" /> to the XAML Diagnostics cache and returns the newly created<b>InstanceHandle</b> for the object.</summary>
+    <param name="pInstance">An instance of the object.</param>
+    <param name="pInstanceHandle">A handle to the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IXamlDiagnostics">
+    <summary>Represents a XAML Diagnostics session.</summary>
+  </member>
+</doc>

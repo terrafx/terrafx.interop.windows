@@ -5,40 +5,29 @@
   <member name="DWRITE_WORD_WRAPPING">
     <summary>
       <para>Specifies the word wrapping to be used in a particular multiline paragraph.</para>
-      <para>
-        <b>Note</b>  <b>DWRITE_WORD_WRAPPING_EMERGENCY_BREAK</b>, <b>DWRITE_WORD_WRAPPING_WHOLE _WORD</b>, and <b>DWRITE_WORD_WRAPPING_CHARACTER</b> are available in Windows 8.1 and later, only.</para>
+      <div>
+        <b>Note</b>  <b>DWRITE_WORD_WRAPPING_EMERGENCY_BREAK</b>, <b>DWRITE_WORD_WRAPPING_WHOLE _WORD</b>, and <b>DWRITE_WORD_WRAPPING_CHARACTER</b> are available in Windows 8.1 and later, only.</div>
     </summary>
   </member>
   <member name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_WRAP">
-    <summary>
-      <para>Indicates that words are broken across lines to avoid text overflowing the layout box.</para>
-    </summary>
+    <summary>Indicates that words are broken across lines to avoid text overflowing the layout box.</summary>
   </member>
   <member name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_NO_WRAP">
-    <summary>
-      <para>Indicates that words are kept within the same line even when it overflows the layout box. This option is often used with scrolling to reveal overflow text.</para>
-    </summary>
+    <summary>Indicates that words are kept within the same line even when it overflows the layout box. This option is often used with scrolling to reveal overflow text.</summary>
   </member>
   <member name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_EMERGENCY_BREAK">
     <summary>
-      <para>
-        <b>Note</b>  Windows 8.1 and later only.</para>
-      <para>Words are broken across lines to avoid text overflowing the layout box.
-Emergency wrapping occurs if the word is larger than the maximum width.</para>
-    </summary>
+      <div>
+        <b>Note</b>  Windows 8.1 and later only.</div>Words are broken across lines to avoid text overflowing the layout box. Emergency wrapping occurs if the word is larger than the maximum width.</summary>
   </member>
   <member name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_WHOLE_WORD">
     <summary>
-      <para>
-        <b>Note</b>  Windows 8.1 and later only.</para>
-      <para>When emergency wrapping, only wrap whole words, never breaking words when the layout width is too small for even a single word.</para>
-    </summary>
+      <div>
+        <b>Note</b>  Windows 8.1 and later only.</div>When emergency wrapping, only wrap whole words, never breaking words when the layout width is too small for even a single word.</summary>
   </member>
   <member name="DWRITE_WORD_WRAPPING.DWRITE_WORD_WRAPPING_CHARACTER">
     <summary>
-      <para>
-        <b>Note</b>  Windows 8.1 and later only.</para>
-      <para>Wrap between any valid character clusters.</para>
-    </summary>
+      <div>
+        <b>Note</b>  Windows 8.1 and later only.</div>Wrap between any valid character clusters.</summary>
   </member>
 </doc>

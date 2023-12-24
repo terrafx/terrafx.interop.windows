@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DRAW_ARGUMENTS">
+    <summary>Describes parameters for drawing instances.</summary>
+  </member>
+  <member name="D3D12_DRAW_ARGUMENTS.VertexCountPerInstance">
+    <summary>Specifies the number of vertices to draw, per instance.</summary>
+  </member>
+  <member name="D3D12_DRAW_ARGUMENTS.InstanceCount">
+    <summary>Specifies the number of instances.</summary>
+  </member>
+  <member name="D3D12_DRAW_ARGUMENTS.StartVertexLocation">
+    <summary>Specifies an index to the first vertex to start drawing from.</summary>
+  </member>
+  <member name="D3D12_DRAW_ARGUMENTS.StartInstanceLocation">
+    <summary>Specifies an index to the first instance to start drawing from.</summary>
+  </member>
+</doc>

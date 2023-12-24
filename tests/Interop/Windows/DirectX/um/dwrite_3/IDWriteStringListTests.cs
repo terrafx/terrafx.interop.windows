@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteStringListTests
     {
         Assert.That(typeof(IDWriteStringList).GUID, Is.EqualTo(IID_IDWriteStringList));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteStringList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteStringList>(), Is.EqualTo(sizeof(IDWriteStringList)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteStringList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteStringList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteStringList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteStringList), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteStringList), Is.EqualTo(4));
-        }
-    }
 }

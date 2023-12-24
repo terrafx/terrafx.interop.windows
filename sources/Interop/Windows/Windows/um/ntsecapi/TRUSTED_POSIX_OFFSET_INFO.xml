@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRUSTED_POSIX_OFFSET_INFO">
+    <summary>The <b>TRUSTED_POSIX_OFFSET_INFO</b> structure is used to query or set the value used to generate Posix user and group identifiers. The<see cref="LsaQueryTrustedDomainInfo" /> and<see cref="LsaSetTrustedDomainInformation" /> functions use this structure when their <i>InformationClass</i> parameters are set to <b>TrustedPosixOffsetInformation</b>.</summary>
+  </member>
+  <member name="TRUSTED_POSIX_OFFSET_INFO.Offset">
+    <summary>An offset that the system uses to generate Posix user and group identifiers that correspond to a given SID. To generate a Posix identifier, the system adds the RID from the SID to the Posix offset of the trusted domain identified by the SID.</summary>
+  </member>
+</doc>

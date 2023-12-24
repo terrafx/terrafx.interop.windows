@@ -3,25 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_PROTOCOL_COMMAND">
-    <summary>
-      <para>This structure is used as an input buffer when using the pass-through mechanism to issue  a vendor-specific command to a storage device (via <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_protocol_command">IOCTL_STORAGE_PROTOCOL_COMMAND</a>).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_protocol_command">IOCTL_STORAGE_PROTOCOL_COMMAND</seealso>
+    <summary>This structure is used as an input buffer when using the pass-through mechanism to issue a vendor-specific command to a storage device (via <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_protocol_command">IOCTL_STORAGE_PROTOCOL_COMMAND</a>).</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.Version">
-    <summary>
-      <para>The version of this structure. This should be set to <b>STORAGE_PROTOCOL_STRUCTURE_VERSION</b>.</para>
-    </summary>
+    <summary>The version of this structure. This should be set to <b>STORAGE_PROTOCOL_STRUCTURE_VERSION</b>.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.Length">
-    <summary>
-      <para>The size of this structure. This should be set to sizeof(<b>STORAGE_PROTOCOL_COMMAND</b>).</para>
-    </summary>
+    <summary>The size of this structure. This should be set to sizeof(<b>STORAGE_PROTOCOL_COMMAND</b>).</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.ProtocolType">
-    <summary>
-      <para>The protocol type, of type <see cref="STORAGE_PROTOCOL_TYPE" />.</para>
-    </summary>
+    <summary>The protocol type, of type <see cref="STORAGE_PROTOCOL_TYPE" />.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.Flags">
     <summary>
@@ -31,12 +22,12 @@
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_COMMAND_FLAG_ADAPTER_REQUEST</b>
           </description>
           <description>This flag indicates the request to target an adapter instead of device.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -48,131 +39,103 @@
           <description>Status value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_STATUS_PENDING</b>
           </description>
           <description>The request is pending.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_STATUS_SUCCESS</b>
           </description>
           <description>The request has completed successfully.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_STATUS_ERROR</b>
           </description>
           <description>The request has encountered an error.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_STATUS_INVALID_REQUEST</b>
           </description>
           <description>The request is not valid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_STATUS_NO_DEVICE</b>
           </description>
           <description>A device is not available to make a request to.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_STATUS_BUSY</b>
           </description>
           <description>The device is busy acting on the request.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_STATUS_DATA_OVERRUN</b>
           </description>
           <description>The device encountered a data overrun while acting on the request.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_STATUS_INSUFFICIENT_RESOURCES</b>
           </description>
           <description>The device cannot complete the request due to insufficient resources.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>STORAGE_PROTOCOL_STATUS_NOT_SUPPORTED</b>
           </description>
           <description>The request is not supported.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.ErrorCode">
-    <summary>
-      <para>The error code for this request. This is optionally set.</para>
-    </summary>
+    <summary>The error code for this request. This is optionally set.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.CommandLength">
-    <summary>
-      <para>The length of the command. A non-zero value must be set by the caller.</para>
-    </summary>
+    <summary>The length of the command. A non-zero value must be set by the caller.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.ErrorInfoLength">
-    <summary>
-      <para>The length of the error buffer. This is optionally set and can be set to 0.</para>
-    </summary>
+    <summary>The length of the error buffer. This is optionally set and can be set to 0.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.DataToDeviceTransferLength">
-    <summary>
-      <para>The size of the buffer that is to be transferred to the device. This is only used with a WRITE request.</para>
-    </summary>
+    <summary>The size of the buffer that is to be transferred to the device. This is only used with a WRITE request.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.DataFromDeviceTransferLength">
-    <summary>
-      <para>The size of the buffer this is to be transferred from the device. This is only used with a READ request.</para>
-    </summary>
+    <summary>The size of the buffer this is to be transferred from the device. This is only used with a READ request.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.TimeOutValue">
-    <summary>
-      <para>How long to wait for the device until timing out. This is set in units of seconds.</para>
-    </summary>
+    <summary>How long to wait for the device until timing out. This is set in units of seconds.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.ErrorInfoOffset">
-    <summary>
-      <para>The offset of the error buffer. This must be pointer-aligned.</para>
-    </summary>
+    <summary>The offset of the error buffer. This must be pointer-aligned.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.DataToDeviceBufferOffset">
-    <summary>
-      <para>The offset of the buffer that is to be transferred to the device. This must be pointer-aligned and is only used with a WRITE request.</para>
-    </summary>
+    <summary>The offset of the buffer that is to be transferred to the device. This must be pointer-aligned and is only used with a WRITE request.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.DataFromDeviceBufferOffset">
-    <summary>
-      <para>The offset of the buffer that is to be transferred from the device. This must be pointer-aligned and is only used with a READ request.</para>
-    </summary>
+    <summary>The offset of the buffer that is to be transferred from the device. This must be pointer-aligned and is only used with a READ request.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.CommandSpecific">
-    <summary>
-      <para>Command-specific data passed along with the command. This depends on the command from the driver, and is optionally set.</para>
-    </summary>
+    <summary>Command-specific data passed along with the command. This depends on the command from the driver, and is optionally set.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.Reserved0">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.FixedProtocolReturnData">
-    <summary>
-      <para>The return data. This is optionally set. Some protocols such as NVMe, may return a small amount of data (DWORD0 from completion queue entry) without the need of a separate device data transfer.</para>
-    </summary>
+    <summary>The return data. This is optionally set. Some protocols such as NVMe, may return a small amount of data (DWORD0 from completion queue entry) without the need of a separate device data transfer.</summary>
   </member>
   <member name="STORAGE_PROTOCOL_COMMAND.Reserved1">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
-  <member name="STORAGE_PROTOCOL_COMMAND.Command [ANYSIZE_ARRAY]">
-    <summary>
-      <para>The vendor-specific command that is to be passed-through to the device.</para>
-    </summary>
+  <member name="STORAGE_PROTOCOL_COMMAND.Command">
+    <summary>The vendor-specific command that is to be passed-through to the device.</summary>
   </member>
 </doc>

@@ -19,25 +19,4 @@ public static unsafe partial class SmartcardWinRTProviderTests
     {
         Assert.That(typeof(SmartcardWinRTProvider).GUID, Is.EqualTo(IID_SmartcardWinRTProvider));
     }
-
-    /// <summary>Validates that the <see cref="SmartcardWinRTProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SmartcardWinRTProvider>(), Is.EqualTo(sizeof(SmartcardWinRTProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="SmartcardWinRTProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SmartcardWinRTProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SmartcardWinRTProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SmartcardWinRTProvider), Is.EqualTo(1));
-    }
 }

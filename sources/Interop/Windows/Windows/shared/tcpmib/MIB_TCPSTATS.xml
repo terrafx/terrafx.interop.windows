@@ -3,404 +3,236 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_TCPSTATS">
-    <summary>
-      <para>The
-<b>MIB_TCPSTATS</b> structure contains statistics for the TCP protocol running on the local computer.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="GetTcpStatistics" /> function returns a pointer to a <b>MIB_TCPSTATS</b> structure.</para>
-      <para>The <b>MIB_TCPSTATS</b> structure changed slightly on Windows Vista and later. On Windows Vista and later, the <b>dwRtoAlgorithm</b> member is replaced by  a union that contains the following members.</para>
-      <list type="table">
-        <listheader>
-          <description>Member</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>DWORD dwRtoAlgorithm
-</description>
-          <description>
-            <para>The retransmission time-out (RTO) algorithm in use.</para>
-          </description>
-        </item>
-        <item>
-          <description>TCP_RTO_ALGORITHM RtoAlgorithm
-</description>
-          <description>
-            <para>The retransmission time-out (RTO) algorithm in use.  This member can be one of the values from the <b>TCP_RTO_ALGORITHM</b> enumeration type defined in the <i>Tcpmib.h</i> header file. The possible values are the same as those defined for the <b>dwRtoAlgorithm</b> member.</para>
-          </description>
-        </item>
-      </list>
-      <para>In the Windows SDK, the version of the structure for use on Windows Vista and later is  defined as <b>MIB_TCPSTATS_LH</b>. In the Windows SDK, the version of this structure to be used on earlier systems including Windows 2000 and later is defined as <b>MIB_TCPSTATS_W2K</b>. When compiling an application if the target platform is Windows Vista and later (<code>NTDDI_VERSION &gt;= NTDDI_LONGHORN</code>, <code>_WIN32_WINNT &gt;= 0x0600</code>, or <code>WINVER &gt;= 0x0600</code>), the <b>MIB_TCPSTATS_LH</b> structure is typedefed to the <b>MIB_TCPSTATS</b> structure. When compiling an application if the target platform is not Windows Vista and later, the <b>MIB_TCPSTATS_W2K</b> structure is typedefed to the <b>MIB_TCPSTATS</b> structure.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Tcpmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Tcpmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Tcpmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetTcpStatistics" />
-    <seealso cref="GetUdpStatistics" />
-    <seealso cref="MIB_UDPSTATS" />
+    <summary>The<b>MIB_TCPSTATS</b> structure contains statistics for the TCP protocol running on the local computer.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwRtoAlgorithm">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The retransmission time-out (RTO) algorithm in use. This member can be one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_TCP_RTO_OTHER</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Other</para>
-          </description>
-        </item>
-        <item>
+          <description>Other</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_TCP_RTO_CONSTANT</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Constant Time-out</para>
-          </description>
-        </item>
-        <item>
+          <description>Constant Time-out</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_TCP_RTO_RSRE</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>MIL-STD-1778 Appendix B</para>
-          </description>
-        </item>
-        <item>
+          <description>MIL-STD-1778 Appendix B</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_TCP_RTO_VANJ</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Van Jacobson's Algorithm</para>
-          </description>
-        </item>
+          <description>Van Jacobson's Algorithm</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="MIB_TCPSTATS.RtoAlgorithm">
-    <summary></summary>
-  </member>
+  <member name="MIB_TCPSTATS.RtoAlgorithm"></member>
   <member name="MIB_TCPSTATS.dwRtoMin">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The minimum RTO value in milliseconds.</para>
-    </summary>
+    <summary>The minimum RTO value in milliseconds.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwRtoMax">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The maximum RTO value in milliseconds.</para>
-    </summary>
+    <summary>The maximum RTO value in milliseconds.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwMaxConn">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The maximum number of connections. If this member is -1, the maximum number of connections is variable.</para>
-    </summary>
+    <summary>The maximum number of connections. If this member is -1, the maximum number of connections is variable.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwActiveOpens">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of active opens. In an active open, the client is initiating a connection with the server.</para>
-    </summary>
+    <summary>The number of active opens. In an active open, the client is initiating a connection with the server.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwPassiveOpens">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of passive opens. In a passive open, the server is listening for a connection request from a client.</para>
-    </summary>
+    <summary>The number of passive opens. In a passive open, the server is listening for a connection request from a client.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwAttemptFails">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of failed connection attempts.</para>
-    </summary>
+    <summary>The number of failed connection attempts.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwEstabResets">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of established connections that were reset.</para>
-    </summary>
+    <summary>The number of established connections that were reset.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwCurrEstab">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of currently established connections.</para>
-    </summary>
+    <summary>The number of currently established connections.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwInSegs">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of segments received.</para>
-    </summary>
+    <summary>The number of segments received.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwOutSegs">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of segments transmitted. This number does not include retransmitted segments.</para>
-    </summary>
+    <summary>The number of segments transmitted. This number does not include retransmitted segments.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwRetransSegs">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of segments retransmitted.</para>
-    </summary>
+    <summary>The number of segments retransmitted.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwInErrs">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of errors received.</para>
-    </summary>
+    <summary>The number of errors received.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwOutRsts">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of segments transmitted with the reset flag set.</para>
-    </summary>
+    <summary>The number of segments transmitted with the reset flag set.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwNumConns">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of connections that are currently present in the system. This total number includes connections in all states except listening connections.</para>
-    </summary>
+    <summary>The number of connections that are currently present in the system. This total number includes connections in all states except listening connections.</summary>
   </member>
   <member name="MIB_TCPSTATS">
-    <summary>
-      <para>The
-<b>MIB_TCPSTATS</b> structure contains statistics for the TCP protocol running on the local computer.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="GetTcpStatistics" /> function returns a pointer to a <b>MIB_TCPSTATS</b> structure.</para>
-      <para>The <b>MIB_TCPSTATS</b> structure changed slightly on Windows Vista and later. On Windows Vista and later, the <b>dwRtoAlgorithm</b> member is replaced by  a union that contains the following members.</para>
-      <list type="table">
-        <listheader>
-          <description>Member</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>DWORD dwRtoAlgorithm
-</description>
-          <description>
-            <para>The retransmission time-out (RTO) algorithm in use.</para>
-          </description>
-        </item>
-        <item>
-          <description>TCP_RTO_ALGORITHM RtoAlgorithm
-</description>
-          <description>
-            <para>The retransmission time-out (RTO) algorithm in use.  This member can be one of the values from the <b>TCP_RTO_ALGORITHM</b> enumeration type defined in the <i>Tcpmib.h</i> header file. The possible values are the same as those defined for the <b>dwRtoAlgorithm</b> member.</para>
-          </description>
-        </item>
-      </list>
-      <para>In the Windows SDK, the version of the structure for use on Windows Vista and later is  defined as <b>MIB_TCPSTATS_LH</b>. In the Windows SDK, the version of this structure to be used on earlier systems including Windows 2000 and later is defined as <b>MIB_TCPSTATS_W2K</b>. When compiling an application if the target platform is Windows Vista and later (<code>NTDDI_VERSION &gt;= NTDDI_LONGHORN</code>, <code>_WIN32_WINNT &gt;= 0x0600</code>, or <code>WINVER &gt;= 0x0600</code>), the <b>MIB_TCPSTATS_LH</b> structure is typedefed to the <b>MIB_TCPSTATS</b> structure. When compiling an application if the target platform is not Windows Vista and later, the <b>MIB_TCPSTATS_W2K</b> structure is typedefed to the <b>MIB_TCPSTATS</b> structure.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Tcpmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Tcpmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Tcpmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetTcpStatistics" />
-    <seealso cref="GetUdpStatistics" />
-    <seealso cref="MIB_UDPSTATS" />
+    <summary>The<b>MIB_TCPSTATS</b> structure contains statistics for the TCP protocol running on the local computer.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwRtoAlgorithm">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The retransmission time-out (RTO) algorithm in use. This member can be one of the following values:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_TCP_RTO_OTHER</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Other</para>
-          </description>
-        </item>
-        <item>
+          <description>Other</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_TCP_RTO_CONSTANT</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Constant Time-out</para>
-          </description>
-        </item>
-        <item>
+          <description>Constant Time-out</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_TCP_RTO_RSRE</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>MIL-STD-1778 Appendix B</para>
-          </description>
-        </item>
-        <item>
+          <description>MIL-STD-1778 Appendix B</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_TCP_RTO_VANJ</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Van Jacobson's Algorithm</para>
-          </description>
-        </item>
+          <description>Van Jacobson's Algorithm</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MIB_TCPSTATS.dwRtoMin">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The minimum RTO value in milliseconds.</para>
-    </summary>
+    <summary>The minimum RTO value in milliseconds.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwRtoMax">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The maximum RTO value in milliseconds.</para>
-    </summary>
+    <summary>The maximum RTO value in milliseconds.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwMaxConn">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The maximum number of connections. If this member is -1, the maximum number of connections is variable.</para>
-    </summary>
+    <summary>The maximum number of connections. If this member is -1, the maximum number of connections is variable.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwActiveOpens">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of active opens. In an active open, the client is initiating a connection with the server.</para>
-    </summary>
+    <summary>The number of active opens. In an active open, the client is initiating a connection with the server.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwPassiveOpens">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of passive opens. In a passive open, the server is listening for a connection request from a client.</para>
-    </summary>
+    <summary>The number of passive opens. In a passive open, the server is listening for a connection request from a client.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwAttemptFails">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of failed connection attempts.</para>
-    </summary>
+    <summary>The number of failed connection attempts.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwEstabResets">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of established connections that were reset.</para>
-    </summary>
+    <summary>The number of established connections that were reset.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwCurrEstab">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of currently established connections.</para>
-    </summary>
+    <summary>The number of currently established connections.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwInSegs">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of segments received.</para>
-    </summary>
+    <summary>The number of segments received.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwOutSegs">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of segments transmitted. This number does not include retransmitted segments.</para>
-    </summary>
+    <summary>The number of segments transmitted. This number does not include retransmitted segments.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwRetransSegs">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of segments retransmitted.</para>
-    </summary>
+    <summary>The number of segments retransmitted.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwInErrs">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of errors received.</para>
-    </summary>
+    <summary>The number of errors received.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwOutRsts">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of segments transmitted with the reset flag set.</para>
-    </summary>
+    <summary>The number of segments transmitted with the reset flag set.</summary>
   </member>
   <member name="MIB_TCPSTATS.dwNumConns">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of connections that are currently present in the system. This total number includes connections in all states except listening connections.</para>
-    </summary>
+    <summary>The number of connections that are currently present in the system. This total number includes connections in all states except listening connections.</summary>
   </member>
 </doc>

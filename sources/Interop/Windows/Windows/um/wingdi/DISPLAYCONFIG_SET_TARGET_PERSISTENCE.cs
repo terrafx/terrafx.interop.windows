@@ -16,14 +16,14 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     public DISPLAYCONFIG_DEVICE_INFO_HEADER header;
 
     /// <include file='DISPLAYCONFIG_SET_TARGET_PERSISTENCE.xml' path='doc/member[@name="DISPLAYCONFIG_SET_TARGET_PERSISTENCE.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_SET_TARGET_PERSISTENCE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3127:5)")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3127_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.bootPersistenceOn"]/*' />
     public uint bootPersistenceOn
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.bootPersistenceOn;
         }
@@ -39,7 +39,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -68,7 +68,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DISPLAYCONFIG_SET_TARGET_PERSISTENCE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3129:9)")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3129_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />
@@ -86,7 +86,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
             public uint bootPersistenceOn
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -103,7 +103,7 @@ public partial struct DISPLAYCONFIG_SET_TARGET_PERSISTENCE
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

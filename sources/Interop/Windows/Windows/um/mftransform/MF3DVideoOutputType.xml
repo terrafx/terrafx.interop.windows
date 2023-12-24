@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF3DVideoOutputType">
-    <summary>
-      <para>Specifies how to  output a 3D stereoscopic video stream.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-enable-3dvideo-output">MF_ENABLE_3DVIDEO_OUTPUT</a> attribute.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies how to output a 3D stereoscopic video stream.</summary>
   </member>
   <member name="MF3DVideoOutputType.MF3DVideoOutputType_BaseView">
-    <summary>
-      <para>Output the base view only. Discard the other view.</para>
-    </summary>
+    <summary>Output the base view only. Discard the other view.</summary>
   </member>
   <member name="MF3DVideoOutputType.MF3DVideoOutputType_Stereo">
-    <summary>
-      <para>Output a stereo view (two buffers).</para>
-    </summary>
+    <summary>Output a stereo view (two buffers).</summary>
   </member>
 </doc>

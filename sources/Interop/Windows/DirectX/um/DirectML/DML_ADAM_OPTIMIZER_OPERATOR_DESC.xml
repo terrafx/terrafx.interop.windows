@@ -6,40 +6,15 @@
     <summary>
       <para>Computes updated weights (parameters) using the supplied gradients, based on the Adam (<b>ADA</b>ptive <b>M</b>oment estimation) algorithm. This operator is an optimizer, and is typically used in the weight update step of a training loop to perform gradient descent.</para>
       <para>This operator performs the following computation:</para>
-      <code>X = InputParametersTensor
-M = InputFirstMomentTensor
-V = InputSecondMomentTensor
-G = GradientTensor
-T = TrainingStepTensor
-
-// Compute updated first and second moment estimates.
-M = Beta1 * M + (1.0 - Beta1) * G
-V = Beta2 * V + (1.0 - Beta2) * G * G
-
-// Compute bias correction factor for first and second moment estimates.
-Alpha = sqrt(1.0 - pow(Beta2, T)) / (1.0 - pow(Beta1, T))
-
-X -= LearningRate * Alpha * M / (sqrt(V) + Epsilon)
-
-OutputParametersTensor = X
-OutputFirstMomentTensor = M
-OutputSecondMomentTensor = V
-</code>
+      <code>X = InputParametersTensor M = InputFirstMomentTensor V = InputSecondMomentTensor G = GradientTensor T = TrainingStepTensor // Compute updated first and second moment estimates. M = Beta1 * M + (1.0 - Beta1) * G V = Beta2 * V + (1.0 - Beta2) * G * G // Compute bias correction factor for first and second moment estimates. Alpha = sqrt(1.0 - pow(Beta2, T)) / (1.0 - pow(Beta1, T)) X -= LearningRate * Alpha * M / (sqrt(V) + Epsilon) OutputParametersTensor = X OutputFirstMomentTensor = M OutputSecondMomentTensor = V</code>
       <para>In addition to computing the updated weight parameters (returned in <i>OutputParametersTensor</i>), this operator also returns the updated first and second moment estimates in <i>OutputFirstMomentTensor</i> and <i>OutputSecondMomentTensor</i>, respectively. Typically, you should store these first and second moment estimates, and supply them as inputs during the subsequent training step.</para>
     </summary>
-    <remarks>
-      <para>This operator supports in-place execution, meaning that each output tensor is permitted to alias an eligible input tensor during binding. For example, it's possible to bind the same resource for both the <i>InputParametersTensor</i> and <i>OutputParametersTensor</i> in order to effectively achieve an in-place update of the input parameters. All of this operator's input tensors, with the exception of the <i>TrainingStepTensor</i>, are eligible to be aliased in this way.</para>
-    </remarks>
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.InputParametersTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>A tensor containing the parameters (weights) to apply this optimizer to. The gradient, first, and second moment estimates, current training step, as well as hyperparameters <i>LearningRate</i>, <i>Beta1</i>, and <i>Beta2</i>, are used by this operator to perform gradient descent on the weight values supplied in this tensor.</para>
-    </summary>
+    <summary>A tensor containing the parameters (weights) to apply this optimizer to. The gradient, first, and second moment estimates, current training step, as well as hyperparameters <i>LearningRate</i>, <i>Beta1</i>, and <i>Beta2</i>, are used by this operator to perform gradient descent on the weight values supplied in this tensor.</summary>
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.InputFirstMomentTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>A tensor containing the first moment estimate of the gradient for each weight value. These values are typically obtained as the result of a previous execution of this operator, via the <i>OutputFirstMomentTensor</i>.</para>
       <para>When applying this optimizer to a set of weights for the first time (for example, during the initial training step) the values of this tensor should typically be initialized to zero. Subsequent executions should use the values returned in <i>OutputFirstMomentTensor</i>.</para>
       <para>The <i>Sizes</i> and <i>DataType</i> of this tensor must exactly match those of the <i>InputParametersTensor</i>.</para>
@@ -47,7 +22,6 @@ OutputSecondMomentTensor = V
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.InputSecondMomentTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>A tensor containing the second moment estimate of the gradient for each weight value. These values are typically obtained as the result of a previous execution of this operator, via the <i>OutputSecondMomentTensor</i>.</para>
       <para>When applying this optimizer to a set of weights for the first time (for example, during the initial training step) the values of this tensor should typically be initialized to zero. Subsequent executions should use the values returned in <i>OutputSecondMomentTensor</i>.</para>
       <para>The <i>Sizes</i> and <i>DataType</i> of this tensor must exactly match those of the <i>InputParametersTensor</i>.</para>
@@ -55,14 +29,12 @@ OutputSecondMomentTensor = V
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.GradientTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>The gradients to apply to the input parameters (weights) for gradient descent. Gradients are typically obtained in a backpropagation pass during training.</para>
       <para>The <i>Sizes</i> and <i>DataType</i> of this tensor must exactly match those of the <i>InputParametersTensor</i>.</para>
     </summary>
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.TrainingStepTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>A scalar tensor containing a single integer value representing the current training step count. This value along with <i>Beta1</i> and <i>Beta2</i> is used to compute the exponential decay of the first and second moment estimate tensors.</para>
       <para>Typically the training step value starts at 0 at the beginning of training, and is incremented by 1 on each successive training step. This operator doesn't update the training step value; you should do that manually, for example using <see cref="DML_OPERATOR_ELEMENT_WISE_ADD" />.</para>
       <para>This tensor must be a scalar (that is, all <i>Sizes</i> equal to 1) and have data type <see cref="DML_TENSOR_DATA_TYPE_UINT32" />.</para>
@@ -70,50 +42,35 @@ OutputSecondMomentTensor = V
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.OutputParametersTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>An output tensor that holds the updated parameter (weight) values after gradient descent is applied.</para>
-      <para>During binding, this tensor is permitted to alias an eligible input tensor, which can be used to perform an in-place update of this tensor. See the Remarks section for more details.</para>
+      <para>During binding, this tensor is permitted to alias an eligible input tensor, which can be used to perform an in-place update of this tensor. See the <a href="https://docs.microsoft.com/#remarks">Remarks</a> section for more details.</para>
       <para>The <i>Sizes</i> and <i>DataType</i> of this tensor must exactly match those of the <i>InputParametersTensor</i>.</para>
     </summary>
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.OutputFirstMomentTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>An output tensor containing updated first moment estimates. You should store the values of this tensor, and supply them in <i>InputFirstMomentTensor</i> during the subsequent training step.</para>
-      <para>During binding, this tensor is permitted to alias an eligible input tensor, which can be used to perform an in-place update of this tensor. See the Remarks section for more details.</para>
+      <para>During binding, this tensor is permitted to alias an eligible input tensor, which can be used to perform an in-place update of this tensor. See the <a href="https://docs.microsoft.com/#remarks">Remarks</a> section for more details.</para>
       <para>The <i>Sizes</i> and <i>DataType</i> of this tensor must exactly match those of the <i>InputParametersTensor</i>.</para>
     </summary>
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.OutputSecondMomentTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>An output tensor containing updated second moment estimates. You should store the values of this tensor and supply them in <i>InputSecondMomentTensor</i> during the subsequent training step.</para>
-      <para>During binding, this tensor is permitted to alias an eligible input tensor, which can be used to perform an in-place update of this tensor. See the Remarks section for more details.</para>
+      <para>During binding, this tensor is permitted to alias an eligible input tensor, which can be used to perform an in-place update of this tensor. See the <a href="https://docs.microsoft.com/#remarks">Remarks</a> section for more details.</para>
       <para>The <i>Sizes</i> and <i>DataType</i> of this tensor must exactly match those of the <i>InputParametersTensor</i>.</para>
     </summary>
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.LearningRate">
-    <summary>
-      <para>Type: <b>float</b></para>
-      <para>The learning rate, also commonly referred to as the <i>step size</i>. The learning rate is a hyperparameter that determines the magnitude of the weight update along the gradient vector on each training step.</para>
-    </summary>
+    <summary>The learning rate, also commonly referred to as the <i>step size</i>. The learning rate is a hyperparameter that determines the magnitude of the weight update along the gradient vector on each training step.</summary>
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.Beta1">
-    <summary>
-      <para>Type: <b>float</b></para>
-      <para>A hyperparameter representing the exponential decay rate of the gradient's first moment estimate. This value should be between 0.0 and 1.0. A value of 0.9f is typical.</para>
-    </summary>
+    <summary>A hyperparameter representing the exponential decay rate of the gradient's first moment estimate. This value should be between 0.0 and 1.0. A value of 0.9f is typical.</summary>
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.Beta2">
-    <summary>
-      <para>Type: <b>float</b></para>
-      <para>A hyperparameter representing the exponential decay rate of the gradient's second moment estimate. This value should be between 0.0 and 1.0. A value of 0.999f is typical.</para>
-    </summary>
+    <summary>A hyperparameter representing the exponential decay rate of the gradient's second moment estimate. This value should be between 0.0 and 1.0. A value of 0.999f is typical.</summary>
   </member>
   <member name="DML_ADAM_OPTIMIZER_OPERATOR_DESC.Epsilon">
-    <summary>
-      <para>Type: <b>float</b></para>
-      <para>A small value used to help numerical stability by preventing division-by-zero. For 32-bit floating-point inputs, typical values include 1e-8 or <code>FLT_EPSILON</code>.</para>
-    </summary>
+    <summary>A small value used to help numerical stability by preventing division-by-zero. For 32-bit floating-point inputs, typical values include 1e-8 or <code>FLT_EPSILON</code>.</summary>
   </member>
 </doc>

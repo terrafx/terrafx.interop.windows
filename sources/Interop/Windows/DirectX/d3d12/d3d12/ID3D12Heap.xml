@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Heap.GetDesc">
+    <summary>Gets the heap description.</summary>
+    <returns>Returns the <see cref="D3D12_HEAP_DESC" /> structure that describes the heap.</returns>
+  </member>
+  <member name="ID3D12Heap">
+    <summary>A heap is an abstraction of contiguous memory allocation, used to manage physical memory. This heap can be used with <see cref="ID3D12Resource" /> objects to support placed resources or reserved resources.</summary>
+  </member>
+</doc>

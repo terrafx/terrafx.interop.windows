@@ -3,32 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IRemoteComputer.Initialize">
-    <summary>
-      <para>Used by Windows Explorer or Windows Internet Explorer when it is initializing or enumerating a namespace extension invoked on a remote computer.</para>
-    </summary>
-    <param name="pszMachine">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the machine name of the remote computer.</para>
-    </param>
-    <param name="bEnumerating">
-      <para>Type: <b>BOOL</b></para>
-      <para>A value that is set to <b>TRUE</b> if Windows Explorer is enumerating the namespace extension, or <b>FALSE</b> if it is initializing it.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or standard OLE error values otherwise.</para>
-    </returns>
-    <remarks>
-      <para>If failure is returned, the extension won't appear for the specified computer. Otherwise, the extension will appear and target the remote computer.</para>
-    </remarks>
+    <summary>Used by Windows Explorer or Windows Internet Explorer when it is initializing or enumerating a namespace extension invoked on a remote computer.</summary>
+    <param name="pszMachine">A pointer to a buffer containing the machine name of the remote computer.</param>
+    <param name="bEnumerating">A value that is set to <b>TRUE</b> if Windows Explorer is enumerating the namespace extension, or <b>FALSE</b> if it is initializing it.</param>
+    <returns>Returns S_OK if successful, or standard OLE error values otherwise.</returns>
   </member>
   <member name="IRemoteComputer">
-    <summary>
-      <para>Exposes a method that enumerates or initializes a namespace extension when it is invoked on a remote object. This interface is used, for example, to initialize the remote printers virtual folder.</para>
-    </summary>
-    <remarks>
-      <para>Implement <b>IRemoteComputer</b> when your namespace extension may be invoked on a remote computer.</para>
-      <para>You do not call this interface directly. <b>IRemoteComputer</b> is used by the operating system only when it has confirmed that your application is aware of this interface.</para>
-    </remarks>
+    <summary>Exposes a method that enumerates or initializes a namespace extension when it is invoked on a remote object. This interface is used, for example, to initialize the remote printers virtual folder.</summary>
   </member>
 </doc>

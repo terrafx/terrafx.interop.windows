@@ -25,7 +25,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISynchronizeEvent*, Guid*, void**, int>)(lpVtbl[0]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISynchronizeEvent*, Guid*, void**, int>)(lpVtbl[0]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISynchronizeEvent*, uint>)(lpVtbl[1]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISynchronizeEvent*, uint>)(lpVtbl[1]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISynchronizeEvent*, uint>)(lpVtbl[2]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISynchronizeEvent*, uint>)(lpVtbl[2]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISynchronizeHandle.GetHandle" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetHandle(HANDLE* ph)
     {
-        return ((delegate* unmanaged<ISynchronizeEvent*, HANDLE*, int>)(lpVtbl[3]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
+        return ((delegate* unmanaged[MemberFunction]<ISynchronizeEvent*, HANDLE*, int>)(lpVtbl[3]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
     }
 
     /// <include file='ISynchronizeEvent.xml' path='doc/member[@name="ISynchronizeEvent.SetEventHandle"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface, IN
     [VtblIndex(4)]
     public HRESULT SetEventHandle(HANDLE* ph)
     {
-        return ((delegate* unmanaged<ISynchronizeEvent*, HANDLE*, int>)(lpVtbl[4]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
+        return ((delegate* unmanaged[MemberFunction]<ISynchronizeEvent*, HANDLE*, int>)(lpVtbl[4]))((ISynchronizeEvent*)Unsafe.AsPointer(ref this), ph);
     }
 
     public interface Interface : ISynchronizeHandle.Interface
@@ -72,18 +72,18 @@ public unsafe partial struct ISynchronizeEvent : ISynchronizeEvent.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE*, int> GetHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE*, int> GetHandle;
 
         [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE*, int> SetEventHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE*, int> SetEventHandle;
     }
 }

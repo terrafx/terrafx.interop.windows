@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SpatialAudioMetadataWriterCopyMode">
-    <summary>
-      <para>Specifies the copy mode used when calling <see cref="ISpatialAudioMetadataCopier.CopyMetadataForFrames" />.</para>
-    </summary>
+    <summary>Specifies the copy mode used when calling <see cref="ISpatialAudioMetadataCopier.CopyMetadataForFrames" />.</summary>
   </member>
   <member name="SpatialAudioMetadataWriterCopyMode.SpatialAudioMetadataCopy_Overwrite">
-    <summary>
-      <para>Creates a direct copy of the number of metadata items  specified with the <i>copyFrameCount</i> parameter  into destination buffer, overwriting any previously existing data.</para>
-    </summary>
+    <summary>Creates a direct copy of the number of metadata items specified with the <i>copyFrameCount</i> parameter into destination buffer, overwriting any previously existing data.</summary>
   </member>
   <member name="SpatialAudioMetadataWriterCopyMode.SpatialAudioMetadataCopy_Append">
-    <summary>
-      <para>Performs an append operation which will fail if the  resulting <see cref="ISpatialAudioMetadataItemsBuffer" /> has too many items.</para>
-    </summary>
+    <summary>Performs an append operation which will fail if the resulting <see cref="ISpatialAudioMetadataItemsBuffer" /> has too many items.</summary>
   </member>
   <member name="SpatialAudioMetadataWriterCopyMode.SpatialAudioMetadataCopy_AppendMergeWithLast">
-    <summary>
-      <para>Performs an append operation, and if overflow occurs, extra items are merged into last item, adopting last merged item's offset value.</para>
-    </summary>
+    <summary>Performs an append operation, and if overflow occurs, extra items are merged into last item, adopting last merged item's offset value.</summary>
   </member>
   <member name="SpatialAudioMetadataWriterCopyMode.SpatialAudioMetadataCopy_AppendMergeWithFirst">
-    <summary>
-      <para>Performs an append operation, and if overflow occurs, extra items are merged, assigning the offset to the offset of the first non-overflow item.</para>
-    </summary>
+    <summary>Performs an append operation, and if overflow occurs, extra items are merged, assigning the offset to the offset of the first non-overflow item.</summary>
   </member>
 </doc>

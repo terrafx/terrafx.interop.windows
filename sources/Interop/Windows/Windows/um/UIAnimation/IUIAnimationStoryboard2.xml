@@ -3,746 +3,392 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUIAnimationStoryboard2.Abandon">
-    <summary>
-      <para>Terminates the storyboard, releases all related animation variables, and removes the storyboard from the schedule.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method can be called before or after the storyboard starts playing.</para>
-      <para>This method does not trigger any storyboard events.</para>
-    </remarks>
-    <seealso cref="IUIAnimationManager2.AbandonAllStoryboards" />
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.Conclude" />
-    <seealso cref="IUIAnimationStoryboard2.Finish" />
-    <seealso cref="IUIAnimationStoryboard2.Schedule" />
+    <summary>Terminates the storyboard, releases all related animation variables, and removes the storyboard from the schedule.</summary>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.AddKeyframeAfterTransition">
-    <summary>
-      <para>Adds a keyframe at the end of the specified transition.</para>
-    </summary>
-    <param name="transition">
-      <para>The transition after which a keyframe is to be added.</para>
-    </param>
-    <param name="keyframe">
-      <para>The keyframe to be added.</para>
-    </param>
+    <summary>Adds a keyframe at the end of the specified transition.</summary>
+    <param name="transition">The transition after which a keyframe is to be added.</param>
+    <param name="keyframe">The keyframe to be added.</param>
     <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code.</para>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>UI_E_TRANSITION_NOT_IN_STORYBOARD</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>UI_E_TRANSITION_NOT_IN_STORYBOARD</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The transition has not been added to the storyboard.</para>
-          </description>
-        </item>
-      </list>
-      <para>See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>A keyframe represents a moment in time within a storyboard and can be used to specify the start and end times of transitions. Because keyframes can be added at the ends of transitions, their offsets from the start of the storyboard may not be known until the storyboard is playing.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.AddKeyframeAtOffset" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransition" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransitionAtKeyframe" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransitionBetweenKeyframes" />
-    <seealso cref="IUIAnimationTransition2" />
-    <seealso cref="IUIAnimationTransitionLibrary2" />
-    <seealso cref="UI_ANIMATION_KEYFRAME" />
+          <description>The transition has not been added to the storyboard.</description>
+        </listheader>
+      </list> <para>See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para></returns>
   </member>
   <member name="IUIAnimationStoryboard2.AddKeyframeAtOffset">
-    <summary>
-      <para>Adds a keyframe at the specified offset from an existing keyframe.</para>
-    </summary>
-    <param name="existingKeyframe">
-      <para>The existing keyframe. To add a keyframe at an offset from the start of the storyboard, use the special keyframe <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd756780(v=vs.85)">UI_ANIMATION_KEYFRAME_STORYBOARD_START</a>.</para>
-    </param>
-    <param name="offset">
-      <para>The offset from the existing keyframe at which a new keyframe is to be added.</para>
-    </param>
-    <param name="keyframe">
-      <para>The keyframe to be added.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>A keyframe represents a moment in time within a storyboard and can be used to specify the start and end times of transitions. Because keyframes can be added at the ends of transitions, their offsets from the start of the storyboard may not be known until the storyboard is playing.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.AddKeyframeAfterTransition" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransitionAtKeyframe" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransitionBetweenKeyframes" />
-    <seealso cref="UI_ANIMATION_KEYFRAME" />
+    <summary>Adds a keyframe at the specified offset from an existing keyframe.</summary>
+    <param name="existingKeyframe">The existing keyframe. To add a keyframe at an offset from the start of the storyboard, use the special keyframe <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd756780(v=vs.85)">UI_ANIMATION_KEYFRAME_STORYBOARD_START</a>.</param>
+    <param name="offset">The offset from the existing keyframe at which a new keyframe is to be added.</param>
+    <param name="keyframe">The keyframe to be added.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.AddTransition">
-    <summary>
-      <para>Adds a transition to the storyboard.</para>
-    </summary>
-    <param name="variable">
-      <para>The animation variable for which the transition is to be added.</para>
-    </param>
+    <summary>Adds a transition to the storyboard.</summary>
+    <param name="variable">The animation variable for which the transition is to be added.</param>
     <param name="transition">
-      <para>The transition to be added.</para>
+      <code> The transition to be added.</code>
     </param>
     <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code.</para>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>UI_E_TRANSITION_ALREADY_USED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>UI_E_TRANSITION_ALREADY_USED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This transition has already been added to a storyboard.</para>
-          </description>
-        </item>
-      </list>
-      <para>See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>The <b>AddTransition</b> method applies the specified transition to the specified variable in the storyboard. If this is the first transition applied to this variable in this storyboard, the transition begins at the start of the storyboard. Otherwise, the transition is appended to the transition that was most recently added to the variable.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.AddKeyframeAfterTransition" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransitionBetweenKeyframes" />
-    <seealso cref="IUIAnimationTransition2" />
-    <seealso cref="IUIAnimationTransitionLibrary2" />
+          <description>This transition has already been added to a storyboard.</description>
+        </listheader>
+      </list> <para>See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para></returns>
   </member>
   <member name="IUIAnimationStoryboard2.AddTransitionAtKeyframe">
-    <summary>
-      <para>Adds a transition that starts at the specified keyframe.</para>
-    </summary>
-    <param name="variable">
-      <para>The animation variable for which a transition is to be added.</para>
-    </param>
-    <param name="transition">
-      <para>The transition to be added.</para>
-    </param>
-    <param name="startKeyframe">
-      <para>The keyframe that specifies the beginning of the new transition.</para>
-    </param>
+    <summary>Adds a transition that starts at the specified keyframe.</summary>
+    <param name="variable">The animation variable for which a transition is to be added.</param>
+    <param name="transition">The transition to be added.</param>
+    <param name="startKeyframe">The keyframe that specifies the beginning of the new transition.</param>
     <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code.</para>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>UI_E_TRANSITION_ALREADY_USED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>UI_E_TRANSITION_ALREADY_USED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This transition has already been added to a storyboard or has been added to a storyboard that has finished playing and been released.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This transition has already been added to a storyboard or has been added to a storyboard that has finished playing and been released.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>UI_E_TRANSITION_ECLIPSED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>UI_E_TRANSITION_ECLIPSED</b>
-            </para>
-          </description>
-          <description>
-            <para>The transition might eclipse the beginning of another transition in the storyboard.</para>
-          </description>
-        </item>
-      </list>
-      <para>See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Transitions must be added in the order in which they will be played. A transition may begin playing before the preceding transition in the storyboard has finished, in which case the initial value and velocity seen by the new transition is determined by the state of the preceding one. A transition should not begin before the start of the preceding transition.</para>
-      <para>A keyframe represents a moment in time within a storyboard and can be used to specify the start and end times of transitions. Because keyframes can be added at the ends of transitions, their offsets from the start of the storyboard may not be known until the storyboard is playing.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.AddKeyframeAfterTransition" />
-    <seealso cref="IUIAnimationStoryboard2.AddKeyframeAtOffset" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransition" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransitionBetweenKeyframes" />
-    <seealso cref="IUIAnimationTransition2" />
-    <seealso cref="IUIAnimationTransitionLibrary2" />
+          <description>The transition might eclipse the beginning of another transition in the storyboard.</description>
+        </listheader>
+      </list> <para>See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para></returns>
   </member>
   <member name="IUIAnimationStoryboard2.AddTransitionBetweenKeyframes">
-    <summary>
-      <para>Adds a transition between two keyframes.</para>
-    </summary>
-    <param name="variable">
-      <para>The animation variable for which the transition is to be added.</para>
-    </param>
-    <param name="transition">
-      <para>The transition to be added.</para>
-    </param>
-    <param name="startKeyframe">
-      <para>A keyframe that specifies the beginning of the new transition.</para>
-    </param>
-    <param name="endKeyframe">
-      <para>A keyframe that specifies the end of the new transition. It must not be possible for <i>endKeyframe</i> to appear earlier in the storyboard than <i>startKeyframe</i>.</para>
-    </param>
+    <summary>Adds a transition between two keyframes.</summary>
+    <param name="variable">The animation variable for which the transition is to be added.</param>
+    <param name="transition">The transition to be added.</param>
+    <param name="startKeyframe">A keyframe that specifies the beginning of the new transition.</param>
+    <param name="endKeyframe">A keyframe that specifies the end of the new transition. It must not be possible for <i>endKeyframe</i> to appear earlier in the storyboard than <i>startKeyframe</i>.</param>
     <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code.</para>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>UI_E_TRANSITION_ALREADY_USED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>UI_E_TRANSITION_ALREADY_USED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This transition has already been added to a storyboard or has been added to a storyboard that has finished playing and been released.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This transition has already been added to a storyboard or has been added to a storyboard that has finished playing and been released.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>UI_E_TRANSITION_ECLIPSED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The transition might eclipse the beginning of another transition in the storyboard.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>UI_E_TRANSITION_ECLIPSED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>UI_E_START_KEYFRAME_AFTER_END</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The transition might eclipse the beginning of another transition in the storyboard.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>UI_E_START_KEYFRAME_AFTER_END</b>
-            </para>
-          </description>
-          <description>
-            <para>The start keyframe might occur after the end keyframe.</para>
-          </description>
-        </item>
-      </list>
-      <para>See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method applies the specified transition to the specified variable in the storyboard, with the transition starting and ending at the specified keyframes.  If the transition was created with a duration parameter specified, that duration is overwritten with the duration of time between the start and end keyframes. Otherwise, Windows Animation speeds up or slows down the transition as necessary.</para>
-      <para>A keyframe represents a moment in time within a storyboard and can be used to specify the start and end times of transitions. Because keyframes can be added at the ends of transitions, their offsets from the start of the storyboard may not be known until the storyboard is playing.</para>
-      <para>Transitions must be added in the order in which they will be played. A transition may begin playing before the preceding transition in the storyboard has finished, in which case the initial value and velocity seen by the new transition will be determined by the state of the preceding one. It must not be possible for a transition to begin before the start of the preceding transition.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.AddKeyframeAfterTransition" />
-    <seealso cref="IUIAnimationStoryboard2.AddKeyframeAtOffset" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransition" />
-    <seealso cref="IUIAnimationStoryboard2.AddTransitionAtKeyframe" />
-    <seealso cref="IUIAnimationTransition2" />
-    <seealso cref="IUIAnimationTransitionLibrary2" />
+          <description>The start keyframe might occur after the end keyframe.</description>
+        </listheader>
+      </list> <para>See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para></returns>
   </member>
   <member name="IUIAnimationStoryboard2.Conclude">
-    <summary>
-      <para>Completes the current iteration of a keyframe loop that is in progress (where the loop is set to <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a>), terminates the loop, and continues with the storyboard.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method specifies that any subsequent  keyframe loops that have a repetition count of <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a> (-1) will be skipped while the remainder of the storyboard is played.</para>
-      <para>An iteration of a keyframe loop that is in progress will be completed before the remainder of the storyboard plays.</para>
-      <para>If this method is called at the end of an alternating keyframe loop iteration, the loop is terminated with the  loop value set to the ending loop value.</para>
-      <para>If this method is called at the end of a non-alternating keyframe loop iteration, where  "loop wrapping" results in the loop value being set to the starting value of the next iteration, the loop is executed once more in order for the loop value to be set to the ending loop value.</para>
-      <para>For alternating keyframe loops, each iteration has a starting value that is equivalent to the ending value of the preceding loop. In this case, "loop wrapping" is not an issue.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
+    <summary>Completes the current iteration of a keyframe loop that is in progress (where the loop is set to <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a>), terminates the loop, and continues with the storyboard.</summary>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.Finish">
-    <summary>
-      <para>Finishes the storyboard within the specified time, compressing the storyboard if necessary.</para>
-    </summary>
-    <param name="completionDeadline">
-      <para>The maximum amount of time that the storyboard can use to finish playing.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method has no effect on storyboard events. Events continue to be raised as expected while the storyboard plays.</para>
-    </remarks>
-    <seealso cref="IUIAnimationManager2.FinishAllStoryboards" />
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.Abandon" />
-    <seealso cref="IUIAnimationStoryboard2.Conclude" />
-    <seealso cref="IUIAnimationStoryboard2.Schedule" />
+    <summary>Finishes the storyboard within the specified time, compressing the storyboard if necessary.</summary>
+    <param name="completionDeadline">The maximum amount of time that the storyboard can use to finish playing.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.GetElapsedTime">
-    <summary>
-      <para>Gets the time that has elapsed since the storyboard started playing.</para>
-    </summary>
-    <param name="elapsedTime">
-      <para>The elapsed time.</para>
-    </param>
+    <summary>Gets the time that has elapsed since the storyboard started playing.</summary>
+    <param name="elapsedTime">The elapsed time.</param>
     <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>UI_E_STORYBOARD_NOT_PLAYING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>UI_E_STORYBOARD_NOT_PLAYING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The storyboard is not playing.</para>
-          </description>
-        </item>
+          <description>The storyboard is not playing.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.GetStatus" />
-    <seealso cref="UI_ANIMATION_STORYBOARD_STATUS" />
   </member>
   <member name="IUIAnimationStoryboard2.GetStatus">
-    <summary>
-      <para>Gets the status of the storyboard.</para>
-    </summary>
-    <param name="status">
-      <para>The storyboard status.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Unless this method is called from a handler for <see cref="OnStoryboardStatusChanged" /> events, the only values it returns are <see cref="UI_ANIMATION_STORYBOARD_BUILDING" />, <b>UI_ANIMATION_STORYBOARD_SCHEDULED</b>,
-<b>UI_ANIMATION_STORYBOARD_PLAYING</b>, and <b>UI_ANIMATION_STORYBOARD_READY</b>.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboardEventHandler2.OnStoryboardStatusChanged" />
-    <seealso cref="UI_ANIMATION_STORYBOARD_STATUS" />
+    <summary>Gets the status of the storyboard.</summary>
+    <param name="status">The storyboard status.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.GetTag">
-    <summary>
-      <para>Gets the tag for a storyboard.</para>
-    </summary>
-    <param name="object">
-      <para>The object portion of the tag.</para>
-    </param>
-    <param name="id">
-      <para>The identifier portion of the tag.</para>
-    </param>
+    <summary>Gets the tag for a storyboard.</summary>
+    <param name="object">The object portion of the tag.</param>
+    <param name="id">The identifier portion of the tag.</param>
     <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
+      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>UI_E_VALUE_NOT_SET</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>UI_E_VALUE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The storyboard tag was not set.</para>
-          </description>
-        </item>
+          <description>The storyboard tag was not set.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A tag is a pairing of an integer identifier (<i>id</i>) with a COM object (<i>object</i>); it can be used by an application to identify a storyboard.</para>
-      <para>This method can return the identifier, the object, or both portions of the tag.</para>
-    </remarks>
-    <seealso cref="IUIAnimationManager2.GetStoryboardFromTag" />
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.SetTag" />
   </member>
   <member name="IUIAnimationStoryboard2.HoldVariable">
-    <summary>
-      <para>Directs the storyboard to hold the specified animation variable at its final value until the storyboard ends.</para>
-    </summary>
-    <param name="variable">
-      <para>The animation variable.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>When a storyboard is playing, it has exclusive access to any variables it animates unless the storyboard is trimmed by a higher-priority storyboard. Typically, this exclusive access is released  when the last transition in the storyboard for that variable finishes playing. Applications can call this method to maintain exclusive access to the animation variable and hold the variable, at the final value of the last transition, until the end of the storyboard.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationVariable2" />
+    <summary>Directs the storyboard to hold the specified animation variable at its final value until the storyboard ends.</summary>
+    <param name="variable">The animation variable.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.RepeatBetweenKeyframes">
-    <summary>
-      <para>Creates a loop between two keyframes.</para>
-    </summary>
-    <param name="startKeyframe">
-      <para>The keyframe at which the loop is to begin.</para>
-    </param>
-    <param name="endKeyframe">
-      <para>The keyframe at which the loop is to end. <i>endKeyframe</i> must not occur earlier in the storyboard than <i>startKeyframe</i>.</para>
-    </param>
-    <param name="cRepetition">
-      <para>The number of times the loop is to be repeated; the last iteration of a loop can terminate fractionally between keyframes. A value of  zero indicates that the specified portion of a storyboard will not be played.  A value of <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a> (-1) indicates that the loop will repeat indefinitely until the storyboard is trimmed or concluded.</para>
-    </param>
+    <summary>Creates a loop between two keyframes.</summary>
+    <param name="startKeyframe">The keyframe at which the loop is to begin.</param>
+    <param name="endKeyframe">The keyframe at which the loop is to end. <i>endKeyframe</i> must not occur earlier in the storyboard than <i>startKeyframe</i>.</param>
+    <param name="cRepetition">The number of times the loop is to be repeated; the last iteration of a loop can terminate fractionally between keyframes. A value of zero indicates that the specified portion of a storyboard will not be played. A value of <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a> (-1) indicates that the loop will repeat indefinitely until the storyboard is trimmed or concluded.</param>
     <param name="repeatMode">
       <para>The pattern for the loop iteration.</para>
-      <para>A value of <see cref="UI_ANIMATION_REPEAT_MODE_ALTERNATE" /> (1) specifies that the  start of the loop must alternate between keyframes (k1-&gt;k2, k2-&gt;k1, k1-&gt;k2, and so on).</para>
-      <para>A value of <see cref="UI_ANIMATION_REPEAT_MODE_NORMAL" /> (0) specifies that the start of the  loop must begin with the first keyframe (k1-&gt;k2, k1-&gt;k2, k1-&gt;k2, and so on).</para>
-      <para>
-        <b>Note</b>  If <i>repeatMode</i> has a value of <see cref="UI_ANIMATION_REPEAT_MODE_ALTERNATE" /> (1) and <i>cRepetition</i> has a value of <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a> (-1), the loop terminates on the end keyframe.</para>
+      <para>A value of <see cref="UI_ANIMATION_REPEAT_MODE_ALTERNATE" /> (1) specifies that the start of the loop must alternate between keyframes (k1-&gt;k2, k2-&gt;k1, k1-&gt;k2, and so on).</para>
+      <para>A value of <see cref="UI_ANIMATION_REPEAT_MODE_NORMAL" /> (0) specifies that the start of the loop must begin with the first keyframe (k1-&gt;k2, k1-&gt;k2, k1-&gt;k2, and so on).</para>
+      <div>
+        <b>Note</b>  If <i>repeatMode</i> has a value of <see cref="UI_ANIMATION_REPEAT_MODE_ALTERNATE" /> (1) and <i>cRepetition</i> has a value of <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a> (-1), the loop terminates on the end keyframe.</div>
     </param>
-    <param name="pIterationChangeHandler">
-      <para>The handler for each loop iteration event. The default value is 0.</para>
-    </param>
-    <param name="id">
-      <para>The loop ID to pass to <i>pIterationChangeHandler</i>. The default value is 0.</para>
-    </param>
-    <param name="fRegisterForNextAnimationEvent">
-      <para>If true, specifies that <i>pIterationChangeHandler</i> will be incorporated into the estimate of the time interval until the next animation event that is returned by the <see cref="IUIAnimationManager2.EstimateNextEventTime" /> method. The default value is 0, or false.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method directs a storyboard to play the interval between the given keyframes repeatedly before playing the remainder of the storyboard. If a finite repetition count is specified, the loop always plays that number of times. If <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a> (-1) is specified, the loop repeats until the storyboard is concluded, in which case the current iteration of the loop completes and the remainder of the storyboard plays. A storyboard that loops indefinitely also ends if it is truncated.</para>
-      <para>Nested and overlapping loops are not supported.</para>
-      <para>A keyframe represents a moment in time within a storyboard and can be used to specify the start or end times of transitions.  Because keyframes can be added at the ends of transitions, their offsets from the start of the storyboard may not be known until the storyboard is playing.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.AddKeyframeAfterTransition" />
-    <seealso cref="IUIAnimationStoryboard2.AddKeyframeAtOffset" />
+    <param name="pIterationChangeHandler">The handler for each loop iteration event. The default value is 0.</param>
+    <param name="id">The loop ID to pass to <i>pIterationChangeHandler</i>. The default value is 0.</param>
+    <param name="fRegisterForNextAnimationEvent">If true, specifies that <i>pIterationChangeHandler</i> will be incorporated into the estimate of the time interval until the next animation event that is returned by the <see cref="IUIAnimationManager2.EstimateNextEventTime" /> method. The default value is 0, or false.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.Schedule">
-    <summary>
-      <para>Directs the storyboard to schedule itself for play.</para>
-    </summary>
-    <param name="timeNow">
-      <para>The current time.</para>
-    </param>
-    <param name="schedulingResult">
-      <para>The result of the scheduling request.
-You can omit this parameter from calls to this method.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method directs a storyboard to try to add itself to the schedule of playing storyboards, using these rules:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>If there are no playing storyboards animating any of the same animation variables, the attempt succeeds and the storyboard starts playing immediately.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>If the storyboard has priority to cancel, trim, conclude, or compress conflicting storyboards, the attempt to schedule succeeds and the storyboard starts playing as soon as possible.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>If the storyboard does not have priority, the attempt fails and the <i>schedulingResult</i> parameter is set to <see cref="UI_ANIMATION_SCHEDULING_INSUFFICIENT_PRIORITY" />.</para>
-          </description>
-        </item>
-      </list>
-      <para>If this method is called from a handler for <see cref="OnStoryboardStatusChanged" /> events, the <i>schedulingResult</i> parameter is set to <b>UI_ANIMATION_SCHEDULING_DEFERRED</b>.  The only way to determine whether the storyboard is successfully scheduled is to set a storyboard event handler and check whether the storyboard's status ever becomes <see cref="UI_ANIMATION_SCHEDULING_INSUFFICIENT_PRIORITY" />.</para>
-      <para>It is possible to reuse a storyboard by calling <b>Schedule</b> again after its status has reached <see cref="UI_ANIMATION_STORYBOARD_READY" />.  An attempt to schedule a storyboard when it is in any state other than <b>UI_ANIMATION_STORYBOARD_BUILDING</b> or <b>UI_ANIMATION_STORYBOARD_READY</b> fails, and  <i>schedulingResult</i> is set to <see cref="UI_ANIMATION_SCHEDULING_ALREADY_SCHEDULED" />.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.Abandon" />
-    <seealso cref="IUIAnimationStoryboard2.Conclude" />
-    <seealso cref="IUIAnimationStoryboard2.Finish" />
-    <seealso cref="IUIAnimationStoryboard2.GetStatus" />
-    <seealso cref="IUIAnimationTimer.GetTime" />
-    <seealso cref="UI_ANIMATION_SCHEDULING_RESULT" />
-    <seealso cref="UI_ANIMATION_STORYBOARD_STATUS" />
+    <summary>Directs the storyboard to schedule itself for play.</summary>
+    <param name="timeNow">The current time.</param>
+    <param name="schedulingResult">The result of the scheduling request. You can omit this parameter from calls to this method.</param>
+    <returns>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.SetLongestAcceptableDelay">
-    <summary>
-      <para>Sets the longest acceptable delay before the scheduled storyboard begins.</para>
-    </summary>
-    <param name="delay">
-      <para>The longest acceptable delay. This parameter can be a positive value, or <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds-eventually">UI_ANIMATION_SECONDS_EVENTUALLY</a> (-1) to indicate that any finite delay is acceptable.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>For Windows Animation to schedule a storyboard successfully, the storyboard must begin before the longest acceptable delay has elapsed. Windows Animation determines this delay in the following order: the delay value set by calling this method, the delay value set by calling the <see cref="IUIAnimationManager2.SetDefaultLongestAcceptableDelay" /> method, or 0.0 if neither of these methods has been called.</para>
-      <para>Use <see cref="IUIAnimationStoryboard2.SetSkipDuration" /> to start a storyboard animation at a specified offset instead of delaying the start of a storyboard.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="SetSkipDuration" />
+    <summary>Sets the longest acceptable delay before the scheduled storyboard begins.</summary>
+    <param name="delay">The longest acceptable delay. This parameter can be a positive value, or <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds-eventually">UI_ANIMATION_SECONDS_EVENTUALLY</a> (-1) to indicate that any finite delay is acceptable.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.SetSkipDuration">
-    <summary>
-      <para>Specifies an offset from the beginning of a storyboard at which to start animating.</para>
-    </summary>
-    <param name="secondsDuration">
-      <para>The offset, or amount of time, to skip at the beginning of the storyboard.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Calls to <b>SetSkipDuration</b> fail if the storyboard has been scheduled.</para>
-      <para>
-        <b>SetSkipDuration</b> does not delay the start of a scheduled storyboard. See <see cref="IUIAnimationStoryboard2.SetLongestAcceptableDelay" /> for more info on how to set a delay for a scheduled storyboard.</para>
-      <para>This diagram shows a skip duration, or offset, for a storyboard.</para>
-      <para>
-        <img alt="Illustration of a storyboard offset" src="https://docs.microsoft.com/windows/win32/api/UIAnimation/Images/SetSkipDuration.png" />
-      </para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="SetLongestAcceptableDelay" />
+    <summary>Specifies an offset from the beginning of a storyboard at which to start animating.</summary>
+    <param name="secondsDuration">The offset, or amount of time, to skip at the beginning of the storyboard.</param>
+    <returns>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.SetStoryboardEventHandler">
-    <summary>
-      <para>Specifies a handler for storyboard events.</para>
-    </summary>
+    <summary>Specifies a handler for storyboard events.</summary>
     <param name="handler">
       <para>The handler that Windows Animation should call whenever storyboard status and update events occur.</para>
       <para>The specified object must implement the <see cref="IUIAnimationStoryboardEventHandler2" /> interface or be <b>NULL</b>. See Remarks for more info.</para>
     </param>
-    <param name="fRegisterStatusChangeForNextAnimationEvent">
-      <para>If <b>TRUE</b>, registers the <see cref="OnStoryboardStatusChanged" /> event and includes those events in <see cref="IUIAnimationManager2.EstimateNextEventTime" />, which estimates the time interval until the next animation event. No default value.</para>
-    </param>
-    <param name="fRegisterUpdateForNextAnimationEvent">
-      <para>If <b>TRUE</b>, registers the <see cref="OnStoryboardUpdated" /> event and includes those events in <see cref="IUIAnimationManager2.EstimateNextEventTime" />, which estimates the time interval until the next animation event. No default value.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Passing <b>NULL</b> for the <i>handler</i> parameter causes Windows Animation to release its reference to any handler object that you passed in earlier. This technique can be essential for breaking reference cycles without having to call the <see cref="IUIAnimationManager2.Shutdown" /> method.</para>
-    </remarks>
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboardEventHandler2" />
+    <param name="fRegisterStatusChangeForNextAnimationEvent">If <b>TRUE</b>, registers the <see cref="OnStoryboardStatusChanged" /> event and includes those events in <see cref="IUIAnimationManager2.EstimateNextEventTime" />, which estimates the time interval until the next animation event. No default value.</param>
+    <param name="fRegisterUpdateForNextAnimationEvent">If <b>TRUE</b>, registers the <see cref="OnStoryboardUpdated" /> event and includes those events in <see cref="IUIAnimationManager2.EstimateNextEventTime" />, which estimates the time interval until the next animation event. No default value.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2.SetTag">
-    <summary>
-      <para>Sets the tag for the storyboard.</para>
-    </summary>
-    <param name="object">
-      <para>The object portion of the tag.
-This parameter can be NULL.</para>
-    </param>
-    <param name="id">
-      <para>The identifier portion of the tag.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>A tag is a pairing of an integer identifier (<i>id</i>) with a COM object (<i>object</i>). It can be used by an application to identify a storyboard.</para>
-    </remarks>
-    <seealso cref="IUIAnimationManager2.GetStoryboardFromTag" />
-    <seealso cref="IUIAnimationStoryboard2" />
-    <seealso cref="IUIAnimationStoryboard2.GetTag" />
+    <summary>Sets the tag for the storyboard.</summary>
+    <param name="object">The object portion of the tag.<br />This parameter can be NULL.</param>
+    <param name="id">The identifier portion of the tag.</param>
+    <returns>Returns S_OK if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationStoryboard2">
     <summary>
-      <para>Defines a storyboard, which contains a group of transitions
-that are synchronized relative to one another.<h2>In this section</h2></para>
+      <para>Defines a storyboard, which contains a group of transitions that are synchronized relative to one another.<h2>In this section</h2></para>
       <list type="table">
         <listheader>
           <description>Topic</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <see cref="Abandon Method" />
-            </para>
+            <see cref="Abandon Method" />
           </description>
+          <description>Terminates the storyboard, releases all related animation variables, and removes the storyboard from the schedule.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Terminates the storyboard, releases all related animation variables, and removes the storyboard from the schedule.</para>
+            <see cref="AddKeyframeAfterTransition Method" />
           </description>
-        </item>
-        <item>
+          <description>Adds a keyframe at the end of the specified transition.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <see cref="AddKeyframeAfterTransition Method" />
-            </para>
+            <see cref="AddKeyframeAtOffset Method" />
           </description>
+          <description>Adds a keyframe at the specified offset from an existing keyframe.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Adds a keyframe at the end of the specified transition.</para>
+            <see cref="AddTransition Method" />
           </description>
-        </item>
-        <item>
+          <description>Adds a transition to the storyboard.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <see cref="AddKeyframeAtOffset Method" />
-            </para>
+            <see cref="AddTransitionAtKeyframe Method" />
           </description>
+          <description>Adds a transition that starts at the specified keyframe.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Adds a keyframe at the specified offset from an existing keyframe.</para>
+            <see cref="AddTransitionBetweenKeyframes Method" />
           </description>
-        </item>
-        <item>
+          <description>Adds a transition between two keyframes.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <see cref="AddTransition Method" />
-            </para>
+            <see cref="Conclude Method" />
           </description>
+          <description>Completes the current iteration of a keyframe loop that is in progress (where the loop is set to <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a>), terminates the loop, and continues with the storyboard.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Adds a transition to the storyboard.</para>
+            <see cref="Finish Method" />
           </description>
-        </item>
-        <item>
+          <description>Finishes the storyboard within the specified time, compressing the storyboard if necessary.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <see cref="AddTransitionAtKeyframe Method" />
-            </para>
+            <see cref="GetElapsedTime Method" />
           </description>
+          <description>Gets the time that has elapsed since the storyboard started playing.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Adds a transition that starts at the specified keyframe.</para>
+            <see cref="GetStatus Method" />
           </description>
-        </item>
-        <item>
+          <description>Gets the status of the storyboard.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <see cref="AddTransitionBetweenKeyframes Method" />
-            </para>
+            <see cref="GetTag Method" />
           </description>
+          <description>Gets the tag for a storyboard.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Adds a transition between two keyframes.</para>
+            <see cref="HoldVariable Method" />
           </description>
-        </item>
-        <item>
+          <description>Directs the storyboard to hold the specified animation variable at its final value until the storyboard ends.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <see cref="Conclude Method" />
-            </para>
+            <see cref="RepeatBetweenKeyframes Method" />
           </description>
+          <description>Creates a loop between two keyframes.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Completes the current iteration of a keyframe loop that is in progress (where the loop is set to <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-repeat-indefinitely">UI_ANIMATION_REPEAT_INDEFINITELY</a>), terminates the loop, and continues with the storyboard.</para>
+            <see cref="Schedule Method" />
           </description>
-        </item>
-        <item>
+          <description>Directs the storyboard to schedule itself for play.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <see cref="Finish Method" />
-            </para>
+            <see cref="SetSkipDuration Method" />
           </description>
+          <description>Specifies an offset from the beginning of a storyboard at which to start animating.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Finishes the storyboard within the specified time, compressing the storyboard if necessary.</para>
+            <see cref="SetLongestAcceptableDelay Method" />
           </description>
-        </item>
-        <item>
+          <description>Sets the longest acceptable delay before the scheduled storyboard begins.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <see cref="GetElapsedTime Method" />
-            </para>
+            <see cref="SetStoryboardEventHandler Method" />
           </description>
+          <description>Specifies a handler for storyboard events.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Gets the time that has elapsed since the storyboard started playing.</para>
+            <see cref="SetTag Method" />
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="GetStatus Method" />
-            </para>
-          </description>
-          <description>
-            <para>Gets the status of the storyboard.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="GetTag Method" />
-            </para>
-          </description>
-          <description>
-            <para>Gets the tag for a storyboard.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="HoldVariable Method" />
-            </para>
-          </description>
-          <description>
-            <para>Directs the storyboard to hold the specified animation variable at its final value until the storyboard ends.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="RepeatBetweenKeyframes Method" />
-            </para>
-          </description>
-          <description>
-            <para>Creates a loop between two keyframes.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="Schedule Method" />
-            </para>
-          </description>
-          <description>
-            <para>Directs the storyboard to schedule itself for play.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="SetSkipDuration Method" />
-            </para>
-          </description>
-          <description>
-            <para>Specifies an offset from the beginning of a storyboard at which to start animating.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="SetLongestAcceptableDelay Method" />
-            </para>
-          </description>
-          <description>
-            <para>Sets the longest acceptable delay before the scheduled storyboard begins.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="SetStoryboardEventHandler Method" />
-            </para>
-          </description>
-          <description>
-            <para>Specifies a handler for storyboard events.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <see cref="SetTag Method" />
-            </para>
-          </description>
-          <description>
-            <para>Sets the tag for the storyboard.</para>
-          </description>
-        </item>
+          <description>Sets the tag for the storyboard.</description>
+        </listheader>
       </list>
     </summary>
   </member>

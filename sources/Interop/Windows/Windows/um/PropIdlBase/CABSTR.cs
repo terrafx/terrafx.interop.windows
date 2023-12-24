@@ -14,5 +14,5 @@ public unsafe partial struct CABSTR
 
     /// <include file='CABSTR.xml' path='doc/member[@name="CABSTR.pElems"]/*' />
     [NativeTypeName("BSTR *")]
-    public ushort** pElems;
+    public char** pElems;
 }

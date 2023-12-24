@@ -26,5 +26,5 @@ public unsafe partial struct SIGNER_BLOB_INFO
 
     /// <include file='SIGNER_BLOB_INFO.xml' path='doc/member[@name="SIGNER_BLOB_INFO.pwszDisplayName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwszDisplayName;
+    public char* pwszDisplayName;
 }

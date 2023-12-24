@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC">
+    <summary>Describes a graphics pipeline state object.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.pRootSignature">
+    <summary>A pointer to the <see cref="ID3D12RootSignature" /> object.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.VS">
+    <summary>A <see cref="D3D12_SHADER_BYTECODE" /> structure that describes the vertex shader.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.PS">
+    <summary>A <see cref="D3D12_SHADER_BYTECODE" /> structure that describes the pixel shader.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.DS">
+    <summary>A <see cref="D3D12_SHADER_BYTECODE" /> structure that describes the domain shader.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.HS">
+    <summary>A <see cref="D3D12_SHADER_BYTECODE" /> structure that describes the hull shader.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.GS">
+    <summary>A <see cref="D3D12_SHADER_BYTECODE" /> structure that describes the geometry shader.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.StreamOutput">
+    <summary>A <see cref="D3D12_STREAM_OUTPUT_DESC" /> structure that describes a streaming output buffer.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.BlendState">
+    <summary>A <see cref="D3D12_BLEND_DESC" /> structure that describes the blend state.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.SampleMask">
+    <summary>The sample mask for the blend state.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.RasterizerState">
+    <summary>A <see cref="D3D12_RASTERIZER_DESC" /> structure that describes the rasterizer state.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.DepthStencilState">
+    <summary>A <see cref="D3D12_DEPTH_STENCIL_DESC" /> structure that describes the depth-stencil state.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.InputLayout">
+    <summary>A <see cref="D3D12_INPUT_LAYOUT_DESC" /> structure that describes the input-buffer data for the input-assembler stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.IBStripCutValue">
+    <summary>Specifies the properties of the index buffer in a <see cref="D3D12_INDEX_BUFFER_STRIP_CUT_VALUE" /> structure.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.PrimitiveTopologyType">
+    <summary>A <see cref="D3D12_PRIMITIVE_TOPOLOGY_TYPE" />-typed value for the type of primitive, and ordering of the primitive data.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.NumRenderTargets">
+    <summary>The number of render target formats in the <b>RTVFormats</b> member.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.RTVFormats">
+    <summary>An array of <see cref="DXGI_FORMAT" />-typed values for the render target formats.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.DSVFormat">
+    <summary>A <see cref="DXGI_FORMAT" />-typed value for the depth-stencil format.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.SampleDesc">
+    <summary>A <see cref="DXGI_SAMPLE_DESC" /> structure that specifies multisampling parameters.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.NodeMask">
+    <summary>For single GPU operation, set this to zero. If there are multiple GPU nodes, set bits to identify the nodes (the device's physical adapters) for which the graphics pipeline state is to apply. Each bit in the mask corresponds to a single node. Refer to <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.CachedPSO">
+    <summary>A cached pipeline state object, as a <see cref="D3D12_CACHED_PIPELINE_STATE" /> structure. pCachedBlob and CachedBlobSizeInBytes may be set to NULL and 0 respectively.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_PIPELINE_STATE_DESC.Flags">
+    <summary>A <see cref="D3D12_PIPELINE_STATE_FLAGS" /> enumeration constant such as for "tool debug".</summary>
+  </member>
+</doc>

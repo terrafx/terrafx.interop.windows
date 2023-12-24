@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE">
-    <summary>
-      <para>The <b>WINHTTP_WEB_SOCKET_BUFFER_TYPE</b> enumeration includes types of WebSocket buffers.</para>
-    </summary>
+    <summary>The <b>WINHTTP_WEB_SOCKET_BUFFER_TYPE</b> enumeration includes types of WebSocket buffers.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_BINARY_MESSAGE_BUFFER_TYPE">
-    <summary>
-      <para>Buffer contains either the entire binary message or the last part of it.</para>
-    </summary>
+    <summary>Buffer contains either the entire binary message or the last part of it.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_BINARY_FRAGMENT_BUFFER_TYPE">
-    <summary>
-      <para>Buffer contains only part of a binary message.</para>
-    </summary>
+    <summary>Buffer contains only part of a binary message.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_UTF8_MESSAGE_BUFFER_TYPE">
-    <summary>
-      <para>Buffer contains either the entire UTF-8 message or the last part of it.</para>
-    </summary>
+    <summary>Buffer contains either the entire UTF-8 message or the last part of it.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_UTF8_FRAGMENT_BUFFER_TYPE">
-    <summary>
-      <para>Buffer contains only part of a UTF-8 message.</para>
-    </summary>
+    <summary>Buffer contains only part of a UTF-8 message.</summary>
   </member>
   <member name="WINHTTP_WEB_SOCKET_BUFFER_TYPE.WINHTTP_WEB_SOCKET_CLOSE_BUFFER_TYPE">
-    <summary>
-      <para>The server sent a close frame.</para>
-    </summary>
+    <summary>The server sent a close frame.</summary>
   </member>
 </doc>

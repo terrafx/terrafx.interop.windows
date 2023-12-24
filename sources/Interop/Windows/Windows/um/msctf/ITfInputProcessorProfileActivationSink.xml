@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfInputProcessorProfileActivationSink.OnActivated">
-    <summary>
-      <para>The ITfInputProcessorProfileActivationSink.OnActivated method is a callback that is called when an input processor profile is activated or deactivated.</para>
-    </summary>
+    <summary>The ITfInputProcessorProfileActivationSink.OnActivated method is a callback that is called when an input processor profile is activated or deactivated.</summary>
     <param name="dwProfileType">
       <para>[in] The type of this profile. This is one of these values.</para>
       <list type="table">
@@ -13,39 +11,37 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TF_PROFILETYPE_INPUTPROCESSOR</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_PROFILETYPE_INPUTPROCESSOR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>This is a text service.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>This is a text service.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_PROFILETYPE_KEYBOARDLAYOUT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_PROFILETYPE_KEYBOARDLAYOUT</b>
-          </description>
-          <description>
-            <para>This is a keyboard layout.</para>
-          </description>
-        </item>
+          <description>This is a keyboard layout.</description>
+        </listheader>
       </list>
     </param>
-    <param name="langid">
-      <para>[in] Specifies the language id of the profile.</para>
-    </param>
-    <param name="clsid">
-      <para>[in] Specifies the CLSID of the text service. If <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT, this is CLSID_NULL.</para>
-    </param>
-    <param name="catid">
-      <para>[in] Specifies the category of this text service. This category is GUID_TFCAT_TIP_KEYBOARD, GUID_TFCAT_TIP_SPEECH, GUID_TFCAT_TIP_HANDWRITING or something in GUID_TFCAT_CATEGORY_OF_TIP. If <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT, this is GUID_NULL.</para>
-    </param>
-    <param name="guidProfile">
-      <para>[in] Specifies the GUID to identify the profile. If <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT, this is GUID_NULL.</para>
-    </param>
-    <param name="hkl">
-      <para>[in] Specifies the keyboard layout handle of this profile. If <i>dwProfileType</i> is TF_PROFILETYPE_ INPUTPROCESSOR, this is <b>NULL</b>.</para>
-    </param>
+    <param name="langid">[in] Specifies the language id of the profile.</param>
+    <param name="clsid">[in] Specifies the CLSID of the text service. If <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT, this is CLSID_NULL.</param>
+    <param name="catid">[in] Specifies the category of this text service. This category is GUID_TFCAT_TIP_KEYBOARD, GUID_TFCAT_TIP_SPEECH, GUID_TFCAT_TIP_HANDWRITING or something in GUID_TFCAT_CATEGORY_OF_TIP. If <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT, this is GUID_NULL.</param>
+    <param name="guidProfile">[in] Specifies the GUID to identify the profile. If <i>dwProfileType</i> is TF_PROFILETYPE_KEYBOARDLAYOUT, this is GUID_NULL.</param>
+    <param name="hkl">[in] Specifies the keyboard layout handle of this profile. If <i>dwProfileType</i> is TF_PROFILETYPE_ INPUTPROCESSOR, this is <b>NULL</b>.</param>
     <param name="dwFlags">
       <para>[in]</para>
       <list type="table">
@@ -53,26 +49,23 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TF_IPSINK_FLAG_ACTIVE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_IPSINK_FLAG_ACTIVE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>This is on if this profile is activated.</para>
-          </description>
-        </item>
+          <description>This is on if this profile is activated.</description>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>The TSF manager ignores the return value of this method.</para>
-    </returns>
+    <returns>The TSF manager ignores the return value of this method.</returns>
   </member>
   <member name="ITfInputProcessorProfileActivationSink">
-    <summary>
-      <para>The <b>ITfInputProcessorProfileActivationSink</b> interface is implemented by an application to receive notifications when the profile changes.</para>
-    </summary>
-    <remarks>
-      <para>To install this advise sink, obtain an <see cref="ITfSource" /> object from an <see cref="ITfThreadMgr" /> object by calling <b>ITfThreadMgr.QueryInterface</b> with <b>IID_ ITfSource</b>. Then call <see cref="ITfSource.AdviseSink" /> with <b>IID_ITfInputProcessorProfileActivationSink</b>.</para>
-    </remarks>
+    <summary>The <b>ITfInputProcessorProfileActivationSink</b> interface is implemented by an application to receive notifications when the profile changes.</summary>
   </member>
 </doc>

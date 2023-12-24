@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRROUNDRECT">
-    <summary>
-      <para>The <b>EMRROUNDRECT</b> structure contains members for the <b>RoundRect</b> enhanced metafile record.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="RoundRect" />
+    <summary>The <b>EMRROUNDRECT</b> structure contains members for the <b>RoundRect</b> enhanced metafile record.</summary>
   </member>
   <member name="EMRROUNDRECT.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRROUNDRECT.rclBox">
-    <summary>
-      <para>Bounding rectangle, in logical units.</para>
-    </summary>
+    <summary>Bounding rectangle, in logical units.</summary>
   </member>
   <member name="EMRROUNDRECT.szlCorner">
-    <summary>
-      <para>Width and height, in logical units, of the ellipse used to draw rounded corners.</para>
-    </summary>
+    <summary>Width and height, in logical units, of the ellipse used to draw rounded corners.</summary>
   </member>
 </doc>

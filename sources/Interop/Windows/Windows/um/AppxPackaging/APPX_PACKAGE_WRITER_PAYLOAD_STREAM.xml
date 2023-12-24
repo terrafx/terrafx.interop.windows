@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPX_PACKAGE_WRITER_PAYLOAD_STREAM">
-    <summary>
-      <para>Contains the data and metadata of files to write into the app package.</para>
-    </summary>
+    <summary>Contains the data and metadata of files to write into the app package.</summary>
   </member>
   <member name="APPX_PACKAGE_WRITER_PAYLOAD_STREAM.inputStream">
-    <summary>
-      <para>The source of the payload file.</para>
-    </summary>
+    <summary>The source of the payload file.</summary>
   </member>
   <member name="APPX_PACKAGE_WRITER_PAYLOAD_STREAM.fileName">
-    <summary>
-      <para>Name of the payload file.</para>
-    </summary>
+    <summary>Name of the payload file.</summary>
   </member>
   <member name="APPX_PACKAGE_WRITER_PAYLOAD_STREAM.contentType">
-    <summary>
-      <para>The content type of the payload file.</para>
-    </summary>
+    <summary>The content type of the payload file.</summary>
   </member>
   <member name="APPX_PACKAGE_WRITER_PAYLOAD_STREAM.compressionOption">
-    <summary>
-      <para>The degree of compression used for the file in the package.</para>
-    </summary>
+    <summary>The degree of compression used for the file in the package.</summary>
   </member>
 </doc>

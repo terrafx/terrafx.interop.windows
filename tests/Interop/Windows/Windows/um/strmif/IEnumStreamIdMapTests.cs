@@ -19,32 +19,4 @@ public static unsafe partial class IEnumStreamIdMapTests
     {
         Assert.That(typeof(IEnumStreamIdMap).GUID, Is.EqualTo(IID_IEnumStreamIdMap));
     }
-
-    /// <summary>Validates that the <see cref="IEnumStreamIdMap" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEnumStreamIdMap>(), Is.EqualTo(sizeof(IEnumStreamIdMap)));
-    }
-
-    /// <summary>Validates that the <see cref="IEnumStreamIdMap" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEnumStreamIdMap).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEnumStreamIdMap" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEnumStreamIdMap), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEnumStreamIdMap), Is.EqualTo(4));
-        }
-    }
 }

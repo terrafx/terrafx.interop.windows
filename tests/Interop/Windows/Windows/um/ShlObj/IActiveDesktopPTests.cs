@@ -19,32 +19,4 @@ public static unsafe partial class IActiveDesktopPTests
     {
         Assert.That(typeof(IActiveDesktopP).GUID, Is.EqualTo(IID_IActiveDesktopP));
     }
-
-    /// <summary>Validates that the <see cref="IActiveDesktopP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IActiveDesktopP>(), Is.EqualTo(sizeof(IActiveDesktopP)));
-    }
-
-    /// <summary>Validates that the <see cref="IActiveDesktopP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IActiveDesktopP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IActiveDesktopP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IActiveDesktopP), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IActiveDesktopP), Is.EqualTo(4));
-        }
-    }
 }

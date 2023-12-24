@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS">
+    <summary>Represents output arguments to <see cref="ID3D12VideoEncodeCommandList2.EncodeFrame" />.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS.Bitstream">
+    <summary>A <see cref="A D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM" /> containing the result of the encoding operation.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS.ReconstructedPicture">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_RECONSTRUCTED_PICTURE" /> representing a reconstructed picture generated from the input frame. This resource is only needed if the encoded picture is marked to be used as a reference picture in the corresponding picture control structure for this encode operation, NULL can be set otherwise as the reconstructed picture will not be written in the output.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODEFRAME_OUTPUT_ARGUMENTS.EncoderOutputMetadata">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER" /> representing encoding metadata returned by the encoder in hardware-specific layout. This data must be resolved into a readable format using <see cref="ID3D12VIDEOCOMMANDLIST2.ResolveEncoderOutputMetadata" />.</summary>
+  </member>
+</doc>

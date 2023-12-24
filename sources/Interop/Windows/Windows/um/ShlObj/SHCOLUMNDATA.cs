@@ -3,6 +3,8 @@
 // Ported from um/ShlObj.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA"]/*' />
@@ -22,9 +24,16 @@ public unsafe partial struct SHCOLUMNDATA
 
     /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.pwszExt"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszExt;
+    public char* pwszExt;
 
     /// <include file='SHCOLUMNDATA.xml' path='doc/member[@name="SHCOLUMNDATA.wszFile"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort wszFile[260];
+    public _wszFile_e__FixedBuffer wszFile;
+
+    /// <include file='_wszFile_e__FixedBuffer.xml' path='doc/member[@name="_wszFile_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _wszFile_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

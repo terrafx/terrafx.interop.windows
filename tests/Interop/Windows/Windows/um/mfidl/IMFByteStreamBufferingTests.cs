@@ -19,32 +19,4 @@ public static unsafe partial class IMFByteStreamBufferingTests
     {
         Assert.That(typeof(IMFByteStreamBuffering).GUID, Is.EqualTo(IID_IMFByteStreamBuffering));
     }
-
-    /// <summary>Validates that the <see cref="IMFByteStreamBuffering" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFByteStreamBuffering>(), Is.EqualTo(sizeof(IMFByteStreamBuffering)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFByteStreamBuffering" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFByteStreamBuffering).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFByteStreamBuffering" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFByteStreamBuffering), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFByteStreamBuffering), Is.EqualTo(4));
-        }
-    }
 }

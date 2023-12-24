@@ -294,7 +294,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetAdapterIndex"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetAdapterIndex([NativeTypeName("LPWSTR")] ushort* AdapterName, [NativeTypeName("PULONG")] uint* IfIndex);
+    public static extern uint GetAdapterIndex([NativeTypeName("LPWSTR")] char* AdapterName, [NativeTypeName("PULONG")] uint* IfIndex);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddIPAddress"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
@@ -427,7 +427,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetIpErrorString"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetIpErrorString([NativeTypeName("IP_STATUS")] uint ErrorCode, [NativeTypeName("PWSTR")] ushort* Buffer, [NativeTypeName("PDWORD")] uint* Size);
+    public static extern uint GetIpErrorString([NativeTypeName("IP_STATUS")] uint ErrorCode, [NativeTypeName("PWSTR")] char* Buffer, [NativeTypeName("PDWORD")] uint* Size);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ResolveNeighbor"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
@@ -467,5 +467,5 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ParseNetworkString"]/*' />
     [DllImport("iphlpapi", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint ParseNetworkString([NativeTypeName("const WCHAR *")] ushort* NetworkString, [NativeTypeName("DWORD")] uint Types, [NativeTypeName("PNET_ADDRESS_INFO")] NET_ADDRESS_INFO* AddressInfo, ushort* PortNumber, byte* PrefixLength);
+    public static extern uint ParseNetworkString([NativeTypeName("const WCHAR *")] char* NetworkString, [NativeTypeName("DWORD")] uint Types, [NativeTypeName("PNET_ADDRESS_INFO")] NET_ADDRESS_INFO* AddressInfo, ushort* PortNumber, byte* PrefixLength);
 }

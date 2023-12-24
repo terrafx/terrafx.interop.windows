@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcCompiler.Compile">
+    <summary>Compile a single entry point to the target shader model. <b>IDxcCompiler.Compile</b> is deprecated; use <see cref="IDxcCompiler3.Compile" /> instead.</summary>
+    <param name="pSource">The source text to compile.</param>
+    <param name="pSourceName">An optional file name for <i>pSource</i>. Used in errors and include handlers.</param>
+    <param name="pEntryPoint">Entry point name.</param>
+    <param name="pTargetProfile">Shader profile to compile.</param>
+    <param name="pArguments">An array of pointers to arguments.</param>
+    <param name="argCount">The number of arguments.</param>
+    <param name="pDefines">An array of defines.</param>
+    <param name="defineCount">The number of defines.</param>
+    <param name="pIncludeHandler">An optional user-provided interface to handle <code>#include</code> directives.</param>
+    <param name="ppResult">The compiler output status, buffer, and errors.</param>
+  </member>
+  <member name="IDxcCompiler.Disassemble">
+    <summary>Disassemble a program. <b>IDxcCompiler.Disassemble</b> is deprecated; use <see cref="IDxcCompiler3.Disassemble" /> instead.</summary>
+    <param name="pSource">The program to disassemble.</param>
+    <param name="ppDisassembly">The disassembly text.</param>
+  </member>
+  <member name="IDxcCompiler.Preprocess">
+    <summary>Preprocess source text. <b>IDxcCompiler.Preprocess</b> is deprecated; use <see cref="IDxcCompiler3.Compile" /> with the <code>-P</code> argument instead.</summary>
+    <param name="pSource">The source text to preprocess.</param>
+    <param name="pSourceName">An optional file name for <i>pSource</i>. Used in errors and include handlers.</param>
+    <param name="pArguments">An array of pointers to arguments.</param>
+    <param name="argCount">The number of arguments.</param>
+    <param name="pDefines">An array of defines.</param>
+    <param name="defineCount">The number of defines.</param>
+    <param name="pIncludeHandler">An optional user-provided interface to handle <code>#include</code> directives.</param>
+    <param name="ppResult">The preprocessor output status, buffer, and errors.</param>
+  </member>
+  <member name="IDxcCompiler">
+    <summary>
+      <b>IDxcCompiler</b> is deprecated; use <see cref="IDxcCompiler3" /> instead.</summary>
+  </member>
+</doc>

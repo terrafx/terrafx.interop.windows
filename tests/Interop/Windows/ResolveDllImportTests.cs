@@ -137,6 +137,21 @@ public static unsafe partial class ResolveDllImportTests
                     break;
                 }
 
+                case "GetDeveloperDriveEnablementState":
+                {
+                    if (!OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22631, 0))
+                    {
+                        // This isn't good practice, but current CI runs Windows Server and these APIs aren't available
+                        // due to only being in a newer version of Windows.
+                        Assert.Warn($"Warn: {exception.Message}");
+                    }
+                    else
+                    {
+                        goto default;
+                    }
+                    break;
+                }
+
                 case "DrawShadowText":
                 case "GetWindowSubclass":
                 case "HIMAGELIST_QueryInterface":
@@ -157,8 +172,7 @@ public static unsafe partial class ResolveDllImportTests
 
                 default:
                 {
-                    Assert.Fail($"Fail: {exception.Message}");
-                    break;
+                    throw;
                 }
             }
         }

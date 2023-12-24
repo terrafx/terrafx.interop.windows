@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVAudioSampleRateTests
     {
         Assert.That(typeof(CODECAPI_AVAudioSampleRate).GUID, Is.EqualTo(IID_CODECAPI_AVAudioSampleRate));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVAudioSampleRate" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVAudioSampleRate>(), Is.EqualTo(sizeof(CODECAPI_AVAudioSampleRate)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVAudioSampleRate" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVAudioSampleRate).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVAudioSampleRate" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVAudioSampleRate), Is.EqualTo(1));
-    }
 }

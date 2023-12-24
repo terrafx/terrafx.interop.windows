@@ -3,46 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFolderViewOptions.GetFolderViewOptions">
-    <summary>
-      <para>Retrieves the current set of options for the view.</para>
-    </summary>
-    <param name="pfvoFlags">
-      <para>Type: <b><see cref="FOLDERVIEWOPTIONS" />*</b></para>
-      <para>A bitmask that, when this method returns successfully, receives the <see cref="FOLDERVIEWOPTIONS" /> values that are currently set.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the current set of options for the view.</summary>
+    <param name="pfvoFlags">A bitmask that, when this method returns successfully, receives the <see cref="FOLDERVIEWOPTIONS" /> values that are currently set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderViewOptions.SetFolderViewOptions">
-    <summary>
-      <para>Sets specified options for the view.</para>
-    </summary>
-    <param name="fvoMask">
-      <para>Type: <b><see cref="FOLDERVIEWOPTIONS" /></b></para>
-      <para>A bitmask made up of one or more of the <see cref="FOLDERVIEWOPTIONS" /> flags to indicate which options' are being changed. Values in <i>fvoFlags</i> not included in this mask are ignored.</para>
-    </param>
-    <param name="fvoFlags">
-      <para>Type: <b><see cref="FOLDERVIEWOPTIONS" /></b></para>
-      <para>A bitmask that contains the new values for the options specified in <i>fvoMask</i>. To enable an option, the bitmask should include the <see cref="FOLDERVIEWOPTIONS" /> flag for that option. To disable an option, the bit used for that <b>FOLDERVIEWOPTIONS</b> flag should be 0.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets specified options for the view.</summary>
+    <param name="fvoMask">A bitmask made up of one or more of the <see cref="FOLDERVIEWOPTIONS" /> flags to indicate which options' are being changed. Values in <i>fvoFlags</i> not included in this mask are ignored.</param>
+    <param name="fvoFlags">A bitmask that contains the new values for the options specified in <i>fvoMask</i>. To enable an option, the bitmask should include the <see cref="FOLDERVIEWOPTIONS" /> flag for that option. To disable an option, the bit used for that <b>FOLDERVIEWOPTIONS</b> flag should be 0.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFolderViewOptions">
-    <summary>
-      <para>Exposes methods that allow control of folder view options specific to the Windows 7 and later views.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>An implementation of this interface is provided with Windows as part of CLSID_ExplorerBrowser and CLSID_ShellBrowser. Third parties do not implement this interface.</para>
-      <h3>When to Use</h3>
-      <para>By default, the Windows 7 item view does not support custom positioning, custom ordering, or hyperlinks, which were supported in the Windows Vista list view. Use this interface when you require those features of the older view. If, at some later time, the item view adds support for those features, these options will automatically use the newer view rather than continuing to revert to the older view as they currently do.</para>
-      <para>Use this interface to turn off animation and scroll tip view options new to Windows 7.</para>
-      <para>Use this interface to retrieve the current view settings for all of those options.</para>
-    </remarks>
+    <summary>Exposes methods that allow control of folder view options specific to the Windows 7 and later views.</summary>
   </member>
 </doc>

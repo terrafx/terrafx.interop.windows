@@ -25,11 +25,11 @@ public unsafe partial struct SIP_SUBJECTINFO
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.pwsFileName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwsFileName;
+    public char* pwsFileName;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.pwsDisplayName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pwsDisplayName;
+    public char* pwsDisplayName;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.dwReserved1"]/*' />
     [NativeTypeName("DWORD")]
@@ -74,7 +74,7 @@ public unsafe partial struct SIP_SUBJECTINFO
     public uint dwUnionChoice;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.Anonymous"]/*' />
-    [NativeTypeName("SIP_SUBJECTINFO_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/mssip.h:114:5)")]
+    [NativeTypeName("__AnonymousRecord_mssip_L114_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='SIP_SUBJECTINFO.xml' path='doc/member[@name="SIP_SUBJECTINFO.pClientData"]/*' />

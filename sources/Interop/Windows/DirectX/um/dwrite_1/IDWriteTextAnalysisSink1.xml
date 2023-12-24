@@ -3,54 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextAnalysisSink1.SetGlyphOrientation">
-    <summary>
-      <para>The text analyzer calls back to this to report the actual orientation
-of each character for shaping and drawing.</para>
-    </summary>
-    <param name="textPosition">
-      <para>Type: <b>UINT32 </b></para>
-      <para>The starting position to report from.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32 </b></para>
-      <para>Number of UTF-16 units of the reported range.</para>
-    </param>
-    <param name="glyphOrientationAngle">
-      <para>Type: <b><see cref="DWRITE_GLYPH_ORIENTATION_ANGLE" /></b></para>
-      <para>A <see cref="DWRITE_GLYPH_ORIENTATION_ANGLE" />-typed value that specifies the angle of the glyphs within the text
-range (pass to <see cref="IDWriteTextAnalyzer1.GetGlyphOrientationTransform" /> to get the world
-relative transform).</para>
-    </param>
-    <param name="adjustedBidiLevel">
-      <para>Type: <b>UINT8</b></para>
-      <para>The adjusted bidi level to be used by
-the client layout for reordering runs. This will differ from the
-resolved bidi level retrieved from the source for cases such as
-Arabic stacked top-to-bottom, where the glyphs are still shaped
-as RTL, but the runs are TTB along with any CJK or Latin.</para>
-    </param>
-    <param name="isSideways">
-      <para>Type: <b>BOOL</b></para>
-      <para>Whether the glyphs are rotated on their side,
-which is the default case for CJK and the case stacked Latin</para>
-    </param>
-    <param name="isRightToLeft">
-      <para>Type: <b>BOOL</b></para>
-      <para>Whether the script should be shaped as
-right-to-left. For Arabic stacked top-to-bottom, even when the
-adjusted bidi level is coerced to an even level, this will still
-be true.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns a successful code or an error code to abort analysis.</para>
-    </returns>
-    <seealso cref="IDWriteTextAnalysisSink1" />
+    <summary>The text analyzer calls back to this to report the actual orientation of each character for shaping and drawing.</summary>
+    <param name="textPosition">The starting position to report from.</param>
+    <param name="textLength">Number of UTF-16 units of the reported range.</param>
+    <param name="glyphOrientationAngle">A <see cref="DWRITE_GLYPH_ORIENTATION_ANGLE" />-typed value that specifies the angle of the glyphs within the text range (pass to <see cref="IDWriteTextAnalyzer1.GetGlyphOrientationTransform" /> to get the world relative transform).</param>
+    <param name="adjustedBidiLevel">The adjusted bidi level to be used by the client layout for reordering runs. This will differ from the resolved bidi level retrieved from the source for cases such as Arabic stacked top-to-bottom, where the glyphs are still shaped as RTL, but the runs are TTB along with any CJK or Latin.</param>
+    <param name="isSideways">Whether the glyphs are rotated on their side, which is the default case for CJK and the case stacked Latin</param>
+    <param name="isRightToLeft">Whether the script should be shaped as right-to-left. For Arabic stacked top-to-bottom, even when the adjusted bidi level is coerced to an even level, this will still be true.</param>
+    <returns>Returns a successful code or an error code to abort analysis.</returns>
   </member>
   <member name="IDWriteTextAnalysisSink1">
-    <summary>
-      <para>The interface you implement to receive the  output of the text analyzers.</para>
-    </summary>
-    <seealso cref="IDWriteTextAnalysisSink" />
+    <summary>The interface you implement to receive the output of the text analyzers.</summary>
   </member>
 </doc>

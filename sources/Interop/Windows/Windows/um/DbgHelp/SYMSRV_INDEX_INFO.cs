@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO"]/*' />
-public unsafe partial struct SYMSRV_INDEX_INFO
+public partial struct SYMSRV_INDEX_INFO
 {
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.sizeofstruct"]/*' />
     [NativeTypeName("DWORD")]
@@ -16,7 +17,7 @@ public unsafe partial struct SYMSRV_INDEX_INFO
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.file"]/*' />
     [NativeTypeName("char[261]")]
-    public fixed sbyte file[261];
+    public _file_e__FixedBuffer file;
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.stripped"]/*' />
     public BOOL stripped;
@@ -31,11 +32,11 @@ public unsafe partial struct SYMSRV_INDEX_INFO
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.dbgfile"]/*' />
     [NativeTypeName("char[261]")]
-    public fixed sbyte dbgfile[261];
+    public _dbgfile_e__FixedBuffer dbgfile;
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.pdbfile"]/*' />
     [NativeTypeName("char[261]")]
-    public fixed sbyte pdbfile[261];
+    public _pdbfile_e__FixedBuffer pdbfile;
 
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.guid"]/*' />
     public Guid guid;
@@ -47,4 +48,25 @@ public unsafe partial struct SYMSRV_INDEX_INFO
     /// <include file='SYMSRV_INDEX_INFO.xml' path='doc/member[@name="SYMSRV_INDEX_INFO.age"]/*' />
     [NativeTypeName("DWORD")]
     public uint age;
+
+    /// <include file='_file_e__FixedBuffer.xml' path='doc/member[@name="_file_e__FixedBuffer"]/*' />
+    [InlineArray(261)]
+    public partial struct _file_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_dbgfile_e__FixedBuffer.xml' path='doc/member[@name="_dbgfile_e__FixedBuffer"]/*' />
+    [InlineArray(261)]
+    public partial struct _dbgfile_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_pdbfile_e__FixedBuffer.xml' path='doc/member[@name="_pdbfile_e__FixedBuffer"]/*' />
+    [InlineArray(261)]
+    public partial struct _pdbfile_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

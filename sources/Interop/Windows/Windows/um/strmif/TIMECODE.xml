@@ -4,12 +4,9 @@
 <doc>
   <member name="TIMECODE">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>TIMECODE</b> structure contains basic timecode frame count information.</para>
     </summary>
-    <remarks>
-      <para>Fractional frame can be used to indicate temporal offset into frame when timecode was actually read from an external device; for example, wFrameFract=0x7ff means the timecode value was read from the device at the end of the first video field.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="TIMECODE.wFrameRate">
     <summary>
@@ -19,59 +16,64 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ED_FORMAT_SMPTE_30</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_FORMAT_SMPTE_30</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>30 frames per second.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>30 frames per second.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_FORMAT_SMPTE_30DROP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>30 frames per second drop frame (actual rate 29.97 fps).</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ED_FORMAT_SMPTE_30DROP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_FORMAT_SMPTE_25</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>25 frames per second.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>30 frames per second drop frame (actual rate 29.97 fps).</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_FORMAT_SMPTE_24</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>ED_FORMAT_SMPTE_25</b>
-          </description>
-          <description>
-            <para>25 frames per second.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ED_FORMAT_SMPTE_24</b>
-          </description>
-          <description>
-            <para>24 frames per second.</para>
-          </description>
-        </item>
-      </list>
-    </summary>
+          <description>24 frames per second.</description>
+        </listheader>
+      </list> </summary>
   </member>
   <member name="TIMECODE.wFrameFract">
-    <summary>
-      <para>Fractional frame. Full scale is 0x1000.</para>
-    </summary>
+    <summary>Fractional frame. Full scale is 0x1000.</summary>
   </member>
   <member name="TIMECODE.dwFrames">
-    <summary>
-      <para>Timecode value as a binary framecount.</para>
-    </summary>
+    <summary>Timecode value as a binary framecount.</summary>
   </member>
   <member name="TIMECODE">
-    <summary>
-      <para>The <b>TIMECODE</b> structure contains basic timecode frame count information.</para>
-    </summary>
-    <remarks>
-      <para>Fractional frame can be used to indicate temporal offset into frame when timecode was actually read from an external device; for example, wFrameFract=0x7ff means the timecode value was read from the device at the end of the first video field.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
+    <summary>The <b>TIMECODE</b> structure contains basic timecode frame count information.</summary>
   </member>
   <member name="TIMECODE.wFrameRate">
     <summary>
@@ -81,52 +83,62 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ED_FORMAT_SMPTE_30</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_FORMAT_SMPTE_30</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>30 frames per second.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>30 frames per second.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_FORMAT_SMPTE_30DROP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>30 frames per second drop frame (actual rate 29.97 fps).</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ED_FORMAT_SMPTE_30DROP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_FORMAT_SMPTE_25</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>25 frames per second.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>30 frames per second drop frame (actual rate 29.97 fps).</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ED_FORMAT_SMPTE_24</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>ED_FORMAT_SMPTE_25</b>
-          </description>
-          <description>
-            <para>25 frames per second.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ED_FORMAT_SMPTE_24</b>
-          </description>
-          <description>
-            <para>24 frames per second.</para>
-          </description>
-        </item>
+          <description>24 frames per second.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="TIMECODE.wFrameFract">
-    <summary>
-      <para>Fractional frame. Full scale is 0x1000.</para>
-    </summary>
+    <summary>Fractional frame. Full scale is 0x1000.</summary>
   </member>
   <member name="TIMECODE.dwFrames">
-    <summary>
-      <para>Timecode value as a binary framecount.</para>
-    </summary>
+    <summary>Timecode value as a binary framecount.</summary>
   </member>
-  <member name="TIMECODE.qw">
-    <summary></summary>
-  </member>
+  <member name="TIMECODE.qw"></member>
 </doc>

@@ -3,42 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_MAPPED_SUBRESOURCE">
-    <summary>
-      <para>Provides access to subresource data.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used in a call to <see cref="ID3D11DeviceContext.Map" />.</para>
-      <para>The values in these members tell you how much data you can view:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>pData</b> points to row 0 and depth slice 0.</description>
-        </item>
-        <item>
-          <description>
-            <b>RowPitch</b> contains the value that the runtime adds to <b>pData</b> to move from row to row,  where each row contains multiple pixels.</description>
-        </item>
-        <item>
-          <description>
-            <b>DepthPitch</b> contains the value that the runtime adds to <b>pData</b> to move from depth slice to depth slice,  where each depth slice contains multiple rows.</description>
-        </item>
-      </list>
-      <para>When <b>RowPitch</b> and <b>DepthPitch</b> are not appropriate for the resource type, the runtime might set their values to 0. So, don't use these values for anything other than iterating over rows and depth. Here are some examples:</para>
-      <list type="bullet">
-        <item>
-          <description>For <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-buffer">Buffer</a> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture1d">Texture1D</a>, the runtime assigns values  that aren't 0 to <b>RowPitch</b> and <b>DepthPitch</b>. For example, if a <b>Buffer</b> contains 8 bytes, the runtime assigns values to <b>RowPitch</b> and <b>DepthPitch</b> that are greater than or equal to 8.</description>
-        </item>
-        <item>
-          <description>For <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/sm5-object-texture2d">Texture2D</a>, the runtime still assigns a value that isn't 0 to <b>DepthPitch</b>, assuming that the field isn't used.</description>
-        </item>
-      </list>
-      <b>Note</b>  The runtime might assign values to <b>RowPitch</b> and <b>DepthPitch</b> that are larger than anticipated because there might be padding between rows and depth.
-</remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Provides access to subresource data.</summary>
   </member>
   <member name="D3D11_MAPPED_SUBRESOURCE.pData">
     <summary>
-      <para>Type: <b>void*</b></para>
       <para>Pointer to the data. When <see cref="ID3D11DeviceContext.Map" /> provides the pointer, the runtime ensures that the pointer has a specific alignment, depending on the following feature levels:</para>
       <list type="bullet">
         <item>
@@ -51,15 +19,9 @@
     </summary>
   </member>
   <member name="D3D11_MAPPED_SUBRESOURCE.RowPitch">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The row pitch, or width, or physical size (in bytes) of the data.</para>
-    </summary>
+    <summary>The row pitch, or width, or physical size (in bytes) of the data.</summary>
   </member>
   <member name="D3D11_MAPPED_SUBRESOURCE.DepthPitch">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The depth pitch, or width, or physical size (in bytes)of the data.</para>
-    </summary>
+    <summary>The depth pitch, or width, or physical size (in bytes)of the data.</summary>
   </member>
 </doc>

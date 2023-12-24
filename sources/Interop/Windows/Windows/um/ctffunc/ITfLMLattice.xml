@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfLMLattice.EnumLatticeElements">
-    <summary>
-      <para>Obtains an enumerator that contains all lattice elements contained in the lattice property that start at or after a specific offset from the start of the frame.</para>
-    </summary>
-    <param name="dwFrameStart">
-      <para>Specifies the offset, in 100-nanosecond units, relative to the start of the phrase, of the first element to obtain.</para>
-    </param>
-    <param name="rguidType">
-      <para>Specifies the lattice type identifier. This can be one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/lattice-types">Lattice Type</a> values.</para>
-    </param>
-    <param name="ppEnum">
-      <para>Pointer to an <see cref="IEnumTfLatticeElements" /> interface pointer that receives the enumerator object.</para>
-    </param>
+    <summary>Obtains an enumerator that contains all lattice elements contained in the lattice property that start at or after a specific offset from the start of the frame.</summary>
+    <param name="dwFrameStart">Specifies the offset, in 100-nanosecond units, relative to the start of the phrase, of the first element to obtain.</param>
+    <param name="rguidType">Specifies the lattice type identifier. This can be one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/lattice-types">Lattice Type</a> values.</param>
+    <param name="ppEnum">Pointer to an <see cref="IEnumTfLatticeElements" /> interface pointer that receives the enumerator object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,63 +14,62 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>rguidType</i> is unsupported by the lattice property.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>rguidType</i> is unsupported by the lattice property.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumTfLatticeElements " />
-    <seealso cref="ITfLMLattice" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/lattice-types">Lattice Types
-</seealso>
   </member>
   <member name="ITfLMLattice.QueryType">
-    <summary>
-      <para>Determines if a specific lattice element type is supported by the lattice property.</para>
-    </summary>
-    <param name="rguidType">
-      <para>Specifies the lattice type identifier. This can be one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/lattice-types">Lattice Type</a> values.</para>
-    </param>
-    <param name="pfSupported">
-      <para>Pointer to a <b>BOOL</b> that receives a value that indicates if the lattice type is supported. If the lattice type is supported, this parameter receives a nonzero value and the method returns S_OK. If the lattice type is unsupported, this parameter receives zero and the method returns E_INVALIDARG.</para>
-    </param>
+    <summary>Determines if a specific lattice element type is supported by the lattice property.</summary>
+    <param name="rguidType">Specifies the lattice type identifier. This can be one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/lattice-types">Lattice Type</a> values.</param>
+    <param name="pfSupported">Pointer to a <b>BOOL</b> that receives a value that indicates if the lattice type is supported. If the lattice type is supported, this parameter receives a nonzero value and the method returns S_OK. If the lattice type is unsupported, this parameter receives zero and the method returns E_INVALIDARG.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -86,39 +77,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified lattice type is supported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified lattice type is supported.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>Either <i>pfSupported</i> is invalid or the specified lattice type is not supported.</para>
-          </description>
-        </item>
+          <description>Either <i>pfSupported</i> is invalid or the specified lattice type is not supported.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfLMLattice" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/lattice-types">Lattice Types
-</seealso>
   </member>
   <member name="ITfLMLattice">
-    <summary>
-      <para>The <b>ITfLMLattice</b> interface is implemented by the speech text service to provide information about lattice element properties and is used by a client (application or other text service). A client obtains this interface from the GUID_PROP_LMLATTICE property by calling <see cref="ITfReadOnlyProperty.GetValue" />. For more information, see <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties</a>.</para>
-    </summary>
-    <seealso cref="ITfReadOnlyProperty.GetValue " />
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties
-</seealso>
+    <summary>The <b>ITfLMLattice</b> interface is implemented by the speech text service to provide information about lattice element properties and is used by a client (application or other text service). A client obtains this interface from the GUID_PROP_LMLATTICE property by calling <see cref="ITfReadOnlyProperty.GetValue" />. For more information, see <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties</a>.</summary>
   </member>
 </doc>

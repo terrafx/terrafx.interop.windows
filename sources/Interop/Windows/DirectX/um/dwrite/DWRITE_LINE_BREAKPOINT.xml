@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_LINE_BREAKPOINT">
-    <summary>
-      <para>Line breakpoint characteristics of a character.</para>
-    </summary>
+    <summary>Line breakpoint characteristics of a character.</summary>
   </member>
   <member name="DWRITE_LINE_BREAKPOINT.breakConditionBefore">
-    <summary>
-      <para>Type: <b>UINT8</b></para>
-      <para>Indicates a breaking condition before the character.</para>
-    </summary>
+    <summary>Indicates a breaking condition before the character.</summary>
   </member>
   <member name="DWRITE_LINE_BREAKPOINT.breakConditionAfter">
-    <summary>
-      <para>Type: <b>UINT8</b></para>
-      <para>Indicates a breaking condition after the character.</para>
-    </summary>
+    <summary>Indicates a breaking condition after the character.</summary>
   </member>
   <member name="DWRITE_LINE_BREAKPOINT.isWhitespace">
-    <summary>
-      <para>Type: <b>UINT8</b></para>
-      <para>Indicates that the character is some form of whitespace, which may be meaningful for justification.</para>
-    </summary>
+    <summary>Indicates that the character is some form of whitespace, which may be meaningful for justification.</summary>
   </member>
   <member name="DWRITE_LINE_BREAKPOINT.isSoftHyphen">
-    <summary>
-      <para>Type: <b>UINT8</b></para>
-      <para>Indicates that the character is a soft hyphen, often used to indicate hyphenation points inside words.</para>
-    </summary>
+    <summary>Indicates that the character is a soft hyphen, often used to indicate hyphenation points inside words.</summary>
   </member>
   <member name="DWRITE_LINE_BREAKPOINT.padding">
-    <summary>
-      <para>Type: <b>UINT8</b></para>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
 </doc>

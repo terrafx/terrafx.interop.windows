@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Image.Clone">
+    <summary>The <b>Image.Clone</b> method creates a new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object and initializes it with the contents of this<b>Image</b> object.</summary>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</returns>
+  </member>
+  <member name="Image.FindFirstItem">
+    <summary>The <b>Image.FindFirstItem</b> method retrieves the description and the data size of the first metadata item in this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="item">Pointer to an <a href="https://docs.microsoft.com//previous-versions/ms534468(v=vs.85)">ImageItemData</a> object. On input, the Desc member points to a buffer (allocated by the caller) large enough to hold the metadata description (1 byte for JPEG, 4 bytes for PNG, 11 bytes for GIF), and the DescSize member specifies the size (1, 4, or 6) of the buffer pointed to by Desc. On output, the buffer pointed to by Desc receives the metadata description, and the DataSize member receives the size, in bytes, of the metadata itself.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.FindNextItem">
+    <summary>The <b>Image.FindNextItem</b> method is used along with the <see cref="Image.FindFirstItem" /> method to enumerate the metadata items stored in this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object. The <b>Image.FindNextItem</b> method retrieves the description and the data size of the next metadata item in this <b>Image</b> object.</summary>
+    <param name="item">Pointer to an <a href="https://docs.microsoft.com//previous-versions/ms534468(v=vs.85)">ImageItemData</a> object. On input, the Desc member points to a buffer (allocated by the caller) large enough to hold the metadata description (1 byte for JPEG, 4 bytes for PNG, 11 bytes for GIF), and the DescSize member specifies the size (1, 4, or 6) of the buffer pointed to by Desc. On output, the buffer pointed to by Desc receives the metadata description, and the DataSize member receives the size, in bytes, of the metadata itself.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.FromFile">
+    <summary>The <b>Image.FromFile</b> method creates an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object based on a file.</summary>
+    <param name="filename">Pointer to a wide-character string that specifies the name of the file.</param>
+    <param name="useEmbeddedColorManagement">Optional. Boolean value that specifies whether the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object applies color correction according to color management information that is embedded in the image file. Embedded information can include International Color Consortium (ICC) profiles, gamma values, and chromaticity information. <b>TRUE</b> specifies that color correction is enabled, and <b>FALSE</b> specifies that color correction is not enabled. The default value is <b>FALSE</b>.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</returns>
+  </member>
+  <member name="Image.FromStream">
+    <summary>The <b>Image.FromStream</b> method creates a new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object based on a stream.</summary>
+    <param name="stream">Pointer to an<see cref="IStream" /> interface. The implementation of IStream must include the<see cref="IStream.Seek" />,<b>Read</b>, and<see cref="IStream.Stat" /> methods.</param>
+    <param name="useEmbeddedColorManagement">Optional. Boolean value that specifies whether the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object applies color correction according to color management information that is embedded in the stream. Embedded information can include International Color Consortium (ICC) profiles, gamma values, and chromaticity information. <b>TRUE</b> specifies that color correction is enabled, and <b>FALSE</b> specifies that color correction is not enabled. The default value is <b>FALSE</b>.</param>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</returns>
+  </member>
+  <member name="Image.GetAllPropertyItems">
+    <summary>The <b>Image.GetAllPropertyItems</b> method gets all the property items (metadata) stored in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="totalBufferSize">Integer that specifies the size, in bytes, of the<i>allItems</i> buffer. Call the <see cref="Image.GetPropertySize" /> method to obtain the required size.</param>
+    <param name="numProperties">Integer that specifies the number of properties in the image. Call the <see cref="Image.GetPropertySize" /> method to obtain this number.</param>
+    <param name="allItems">Pointer to an array of <a href="https://docs.microsoft.com//previous-versions/ms534493(v=vs.85)">PropertyItem</a> objects that receives the property items.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<b>Status</b> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetBounds">
+    <summary>The <b>Image.GetBounds</b> method gets the bounding rectangle for this image.</summary>
+    <param name="srcRect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rectf">RectF</a> object that receives the bounding rectangle.</param>
+    <param name="srcUnit">Pointer to a variable that receives an element of the <see cref="Unit" /> enumeration that indicates the unit of measure for the bounding rectangle.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetEncoderParameterList">
+    <summary>The <b>Image.GetEncoderParameterList</b> method gets a list of the parameters supported by a specified image encoder.</summary>
+    <param name="clsidEncoder">Pointer to a<b>CLSID</b> that specifies the encoder.</param>
+    <param name="size">Integer that specifies the size, in bytes, of the<i>buffer</i> array. Call the <see cref="Image.GetEncoderParameterListSize" /> method to obtain the required size.</param>
+    <param name="buffer">Pointer to an<a href="https://docs.microsoft.com//previous-versions/ms534435(v=vs.85)">EncoderParameters</a> object that receives the list of supported parameters.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetEncoderParameterListSize">
+    <summary>The <b>Image.GetEncoderParameterListSize</b> method gets the size, in bytes, of the parameter list for a specified image encoder.</summary>
+    <param name="clsidEncoder">Pointer to a<b>CLSID</b> that specifies the encoder.</param>
+    <returns>This method returns the size, in bytes, of the parameter list.</returns>
+  </member>
+  <member name="Image.GetFlags">
+    <summary>The <b>Image.GetFlags</b> method gets a set of flags that indicate certain attributes of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <returns>This method returns a value that holds a set of single-bit flags. The flags are defined in the <see cref="ImageFlags" /> enumeration.</returns>
+  </member>
+  <member name="Image.GetFrameCount">
+    <summary>The <b>Image.GetFrameCount</b> method gets the number of frames in a specified dimension of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="dimensionID">Pointer to a GUID that specifies the dimension. GUIDs that identify various dimensions are defined in Gdiplusimaging.h.</param>
+    <returns>This method returns the number of frames in the specified dimension of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</returns>
+  </member>
+  <member name="Image.GetFrameDimensionsCount">
+    <summary>The <b>Image.GetFrameDimensionsCount</b> method gets the number of frame dimensions in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <returns>This method returns the number of frame dimensions in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</returns>
+  </member>
+  <member name="Image.GetFrameDimensionsList">
+    <summary>The <b>Image.GetFrameDimensionsList</b> method gets the identifiers for the frame dimensions of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="dimensionIDs">Pointer to an array that receives the identifiers. GUIDs that identify various dimensions are defined in Gdiplusimaging.h.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>dimensionIDs</i> array. Call the<see cref="Image.GetFrameDimensionsCount" /> method to determine this number.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetHeight">
+    <summary>The <b>Image.GetHeight</b> method gets the image height, in pixels, of this image.</summary>
+    <returns>This method returns the height, in pixels, of this image.</returns>
+  </member>
+  <member name="Image.GetHorizontalResolution">
+    <summary>The <b>Image.GetHorizontalResolution</b> method gets the horizontal resolution, in dots per inch, of this image.</summary>
+    <returns>This method returns the horizontal resolution, in dots per inch, of this image.</returns>
+  </member>
+  <member name="Image.GetItemData">
+    <summary>The <b>Image.GetItemData</b> method gets one piece of metadata from this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="item">Pointer to an <a href="https://docs.microsoft.com//previous-versions/ms534468(v=vs.85)">ImageItemData</a> object that specifies the item to be retrieved. The Data member of the <b>ImageItemData</b> object points to a buffer that receives the custom metadata. If the Data member is set to <b>NULL</b>, this method returns the size of the required buffer in the DataSize member of the ImageItemData object.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetLastStatus">
+    <summary>The <b>Image.GetLastStatus</b> method returns a value that indicates the nature of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>Image.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object have failed since the previous call to <b>Image.GetLastStatus</b>, then <b>Image.GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object has failed since the previous call to <b>Image.GetLastStatus</b>, then <b>Image.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="Image.GetPalette">
+    <summary>The <b>Image.GetPalette</b> method gets the <see cref="ColorPalette" /> of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="palette">Pointer to a <see cref="ColorPalette" /> structure that receives the palette.</param>
+    <param name="size">Integer that specifies the size, in bytes, of the palette. Call the <see cref="Image.GetPaletteSize" /> method to determine the size.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetPaletteSize">
+    <summary>The <b>Image.GetPaletteSize</b> method gets the size, in bytes, of the color palette of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <returns>This method returns the size, in bytes, of the color palette of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</returns>
+  </member>
+  <member name="Image.GetPhysicalDimension">
+    <summary>The <b>Image.GetPhysicalDimension</b> method gets the width and height of this image.</summary>
+    <param name="size">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object that receives the width and height of this image.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetPixelFormat">
+    <summary>The <b>Image.GetPixelFormat</b> method gets the pixel format of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <returns>This method returns an integer that indicates the pixel format of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object. The<b>PixelFormat</b> data type and constants that represent various pixel formats are defined in Gdipluspixelformats.h. For more information about pixel format constants, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-constant-image-pixel-format-constants">Image Pixel Format Constants</a>.</returns>
+  </member>
+  <member name="Image.GetPropertyCount">
+    <summary>The <b>Image.GetPropertyCount</b> method gets the number of properties (pieces of metadata) stored in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <returns>This method returns the number of properties stored in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</returns>
+  </member>
+  <member name="Image.GetPropertyIdList">
+    <summary>The <b>Image.GetPropertyIdList</b> method gets a list of the property identifiers used in the metadata of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="numOfProperty">Integer that specifies the number of elements in the<i>list</i> array. Call the <see cref="Image.GetPropertyCount" /> method to determine this number.</param>
+    <param name="list">Pointer to an array that receives the property identifiers.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetPropertyItem">
+    <summary>The <b>Image.GetPropertyItem</b> method gets a specified property item (piece of metadata) from this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="propId">Integer that identifies the property item to be retrieved.</param>
+    <param name="propSize">Integer that specifies the size, in bytes, of the property item to be retrieved. Call the <see cref="Image.GetPropertyItemSize" /> method to determine the size.</param>
+    <param name="buffer">Pointer to a <a href="https://docs.microsoft.com//previous-versions/ms534493(v=vs.85)">PropertyItem</a> object that receives the property item.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetPropertyItemSize">
+    <summary>The <b>Image.GetPropertyItemSize</b> method gets the size, in bytes, of a specified property item of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="propId">Integer that identifies the property item.</param>
+    <returns>This method returns the size, in bytes, of a specified property item of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</returns>
+  </member>
+  <member name="Image.GetPropertySize">
+    <summary>The <b>Image.GetPropertySize</b> method gets the total size, in bytes, of all the property items stored in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object. The <b>Image.GetPropertySize</b> method also gets the number of property items stored in this<b>Image</b> object.</summary>
+    <param name="totalBufferSize">Pointer to a<b>UINT</b> that receives the total size, in bytes, of all the property items.</param>
+    <param name="numProperties">Pointer to a<b>UINT</b> that receives the number of property items.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetRawFormat">
+    <summary>The <b>Image.GetRawFormat</b> method gets a globally unique identifier (			GUID) that identifies the format of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object. GUIDs that identify various file formats are defined in Gdiplusimaging.h.</summary>
+    <param name="format">Pointer to a GUID that receives the format identifier.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.GetThumbnailImage">
+    <summary>The <b>Image.GetThumbnailImage</b> method gets a thumbnail image from this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="thumbWidth">Width, in pixels, of the requested thumbnail image.</param>
+    <param name="thumbHeight">Height, in pixels, of the requested thumbnail image.</param>
+    <param name="callback">Optional. Callback function that you provide. During the process of creating or retrieving the thumbnail image, GDI+ calls this function to give you the opportunity to abort the process. The default value is <b>NULL</b>.</param>
+    <param name="callbackData">Optional. Pointer to a block of memory that contains data to be used by the callback function. The default value is <b>NULL</b>.</param>
+    <returns>This method returns a pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that contains the thumbnail image.</returns>
+  </member>
+  <member name="Image.GetType">
+    <summary>The <b>Image.GetType</b> method gets the type (bitmap or metafile) of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <returns>This method returns an element of the <see cref="ImageType" /> enumeration that indicates the image type.</returns>
+  </member>
+  <member name="Image.GetVerticalResolution">
+    <summary>The <b>Image.GetVerticalResolution</b> method gets the vertical resolution, in dots per inch, of this image.</summary>
+    <returns>This method returns the vertical resolution, in dots per inch, of this image.</returns>
+  </member>
+  <member name="Image.GetWidth">
+    <summary>The <b>Image.GetWidth</b> method gets the width, in pixels, of this image.</summary>
+    <returns>This method returns the width, in pixels, of this image.</returns>
+  </member>
+  <member name="Image.Image">
+    <summary>Creates an <b>Image.Image</b> object based on a file.</summary>
+    <param name="filename">Pointer to a wide-character string that specifies the name of the file.</param>
+    <param name="useEmbeddedColorManagement">
+      <para>Optional. Boolean value that specifies whether the new <b>Image.Image</b> object applies color correction according to color management information that is embedded in the image file. Embedded information can include ICC profiles, gamma values, and chromaticity information.</para>
+      <h4>FALSE</h4>
+      <para>Default. Specifies that color correction is enabled</para>
+      <h4>TRUE</h4>
+      <para>Specifies that color correction is not enabled</para>
+    </param>
+  </member>
+  <member name="Image.Image">
+    <summary>Creates an <b>Image.Image</b> object based on a stream.</summary>
+    <param name="stream">Pointer to an <see cref="IStream" /> interface. The implementation of IStream must include the <b>Seek</b>, <b>Read</b>, and <b>Stat</b> methods.</param>
+    <param name="useEmbeddedColorManagement">
+      <para>Optional. <b>BOOL</b> value that specifies whether the new <b>Image.Image</b> object applies color correction according to color management information that is embedded in the stream. Embedded information can include ICC profiles, gamma values, and chromaticity information.</para>
+      <h4>FALSE</h4>
+      <para>Default. Specifies that color correction is enabled</para>
+      <h4>TRUE</h4>
+      <para>Specifies that color correction is not enabled</para>
+    </param>
+  </member>
+  <member name="Image.RemovePropertyItem">
+    <summary>The <b>Image.RemovePropertyItem</b> method removes a property item (piece of metadata) from this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="propId">Integer that identifies the property item to be removed.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.RotateFlip">
+    <summary>The <b>Image.RotateFlip</b> method rotates and flips this image.</summary>
+    <param name="rotateFlipType">Element of the <see cref="RotateFlipType" /> enumeration that specifies the type of rotation and the type of flip.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.Save">
+    <summary>The <b>Image.Save</b> method saves this image to a file.</summary>
+    <param name="filename">Pointer to a null-terminated string that specifies the path name for the saved image.</param>
+    <param name="clsidEncoder">Pointer to a CLSID that specifies the encoder to use to save the image.</param>
+    <param name="encoderParams">Optional. Pointer to an <a href="https://docs.microsoft.com//previous-versions/ms534435(v=vs.85)">EncoderParameters</a> object that holds parameters used by the encoder. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.Save">
+    <summary>The <b>Image.Save</b> method saves this image to a stream.</summary>
+    <param name="stream">Pointer to an<b>IStream</b> COM interface. The implementation of<b>IStream</b> must include the<b>Seek</b>,<b>Read</b>,<b>Write</b>, and<b>Stat</b> methods.</param>
+    <param name="clsidEncoder">Pointer to a<b>CLSID</b> that specifies the encoder to use to save the image.</param>
+    <param name="encoderParams">Optional. Pointer to an <a href="https://docs.microsoft.com//previous-versions/ms534435(v=vs.85)">EncoderParameters</a> object that holds parameters used by the encoder. The default value is <b>NULL</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.SaveAdd">
+    <summary>The <b>Image.SaveAdd</b> method adds a frame to a file or stream specified in a previous call to the <b>Save</b> method. Use this method to save selected frames from a multiple-frame image to another multiple-frame image.</summary>
+    <param name="encoderParams">Pointer to an <a href="https://docs.microsoft.com//previous-versions/ms534435(v=vs.85)">EncoderParameters</a> object that holds parameters required by the image encoder used by the save-add operation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.SaveAdd">
+    <summary>The <b>Image.SaveAdd</b> method adds a frame to a file or stream specified in a previous call to the<b>Save</b> method.</summary>
+    <param name="newImage">Pointer to an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that holds the frame to be added.</param>
+    <param name="encoderParams">Pointer to an <a href="https://docs.microsoft.com//previous-versions/ms534435(v=vs.85)">EncoderParameters</a> object that contains parameters required by the image encoder used in the save-add operation.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.SelectActiveFrame">
+    <summary>The <b>Image.SelectActiveFrame</b> method selects the frame in this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object specified by a dimension and an index.</summary>
+    <param name="dimensionID">Pointer to a<b>GUID</b> that specifies the frame dimension.<b>GUID</b>s that identify various frame dimensions are defined in Gdiplusimaging.h.</param>
+    <param name="frameIndex">Integer that specifies the index of the frame within the specified frame dimension.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+      <para>
+        <b>Remarks</b>
+      </para>
+      <para>When you call the <b>Image.SelectActiveFrame</b> method, all changes that you made to the previously active frame are discarded. If you want to retain changes that you make to a frame, call the<b>Save</b> method before you switch to a different frame.</para>
+      <para>Among all the image formats currently supported by GDI+, the only formats that support multiple-frame images are GIF and TIFF. When you call the <b>Image.SelectActiveFrame</b> method on a GIF image, you should use FrameDimensionTime. When you call the <b>Image.SelectActiveFrame</b> method on a TIFF image, you should use FrameDimensionPage.</para>
+    </returns>
+  </member>
+  <member name="Image.SetAbort">
+    <summary>The <b>Image.SetAbort</b> method sets the object whose <b>Abort</b> method is called periodically during time-consuming rendering operation.</summary>
+    <param name="pIAbort">Pointer to an application-defined descendant of the <see cref="GdiplusAbort" /> structure.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.SetPalette">
+    <summary>The <b>Image.SetPalette</b> method sets the color palette of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object.</summary>
+    <param name="palette">Pointer to a <see cref="ColorPalette" /> structure that specifies the palette.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="Image.SetPropertyItem">
+    <summary>The <b>Image.SetPropertyItem</b> method sets a property item (piece of metadata) for this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object. If the item already exists, then its contents are updated; otherwise, a new item is added.</summary>
+    <param name="item">Pointer to a <a href="https://docs.microsoft.com//previous-versions/ms534493(v=vs.85)">PropertyItem</a> object that specifies the property item to be set.</param>
+    <returns>
+      <para>If the method succeeds, it returns Ok, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

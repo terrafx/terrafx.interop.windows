@@ -3,13 +3,14 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 2)]
-public unsafe partial struct IMAGE_DOS_HEADER
+public partial struct IMAGE_DOS_HEADER
 {
     /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER.e_magic"]/*' />
     [NativeTypeName("WORD")]
@@ -69,7 +70,7 @@ public unsafe partial struct IMAGE_DOS_HEADER
 
     /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER.e_res"]/*' />
     [NativeTypeName("WORD[4]")]
-    public fixed ushort e_res[4];
+    public _e_res_e__FixedBuffer e_res;
 
     /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER.e_oemid"]/*' />
     [NativeTypeName("WORD")]
@@ -81,9 +82,25 @@ public unsafe partial struct IMAGE_DOS_HEADER
 
     /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER.e_res2"]/*' />
     [NativeTypeName("WORD[10]")]
-    public fixed ushort e_res2[10];
+    public _e_res2_e__FixedBuffer e_res2;
 
     /// <include file='IMAGE_DOS_HEADER.xml' path='doc/member[@name="IMAGE_DOS_HEADER.e_lfanew"]/*' />
     [NativeTypeName("LONG")]
     public int e_lfanew;
+
+    /// <include file='_e_res_e__FixedBuffer.xml' path='doc/member[@name="_e_res_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 2)]
+    [InlineArray(4)]
+    public partial struct _e_res_e__FixedBuffer
+    {
+        public ushort e0;
+    }
+
+    /// <include file='_e_res2_e__FixedBuffer.xml' path='doc/member[@name="_e_res2_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 2)]
+    [InlineArray(10)]
+    public partial struct _e_res2_e__FixedBuffer
+    {
+        public ushort e0;
+    }
 }

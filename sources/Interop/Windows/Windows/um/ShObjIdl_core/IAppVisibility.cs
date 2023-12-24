@@ -25,7 +25,7 @@ public unsafe partial struct IAppVisibility : IAppVisibility.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppVisibility*, Guid*, void**, int>)(lpVtbl[0]))((IAppVisibility*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppVisibility*, Guid*, void**, int>)(lpVtbl[0]))((IAppVisibility*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppVisibility : IAppVisibility.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppVisibility*, uint>)(lpVtbl[1]))((IAppVisibility*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppVisibility*, uint>)(lpVtbl[1]))((IAppVisibility*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppVisibility : IAppVisibility.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppVisibility*, uint>)(lpVtbl[2]))((IAppVisibility*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppVisibility*, uint>)(lpVtbl[2]))((IAppVisibility*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppVisibility.xml' path='doc/member[@name="IAppVisibility.GetAppVisibilityOnMonitor"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppVisibility : IAppVisibility.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetAppVisibilityOnMonitor(HMONITOR hMonitor, MONITOR_APP_VISIBILITY* pMode)
     {
-        return ((delegate* unmanaged<IAppVisibility*, HMONITOR, MONITOR_APP_VISIBILITY*, int>)(lpVtbl[3]))((IAppVisibility*)Unsafe.AsPointer(ref this), hMonitor, pMode);
+        return ((delegate* unmanaged[MemberFunction]<IAppVisibility*, HMONITOR, MONITOR_APP_VISIBILITY*, int>)(lpVtbl[3]))((IAppVisibility*)Unsafe.AsPointer(ref this), hMonitor, pMode);
     }
 
     /// <include file='IAppVisibility.xml' path='doc/member[@name="IAppVisibility.IsLauncherVisible"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAppVisibility : IAppVisibility.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT IsLauncherVisible(BOOL* pfVisible)
     {
-        return ((delegate* unmanaged<IAppVisibility*, BOOL*, int>)(lpVtbl[4]))((IAppVisibility*)Unsafe.AsPointer(ref this), pfVisible);
+        return ((delegate* unmanaged[MemberFunction]<IAppVisibility*, BOOL*, int>)(lpVtbl[4]))((IAppVisibility*)Unsafe.AsPointer(ref this), pfVisible);
     }
 
     /// <include file='IAppVisibility.xml' path='doc/member[@name="IAppVisibility.Advise"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppVisibility : IAppVisibility.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT Advise(IAppVisibilityEvents* pCallback, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<IAppVisibility*, IAppVisibilityEvents*, uint*, int>)(lpVtbl[5]))((IAppVisibility*)Unsafe.AsPointer(ref this), pCallback, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IAppVisibility*, IAppVisibilityEvents*, uint*, int>)(lpVtbl[5]))((IAppVisibility*)Unsafe.AsPointer(ref this), pCallback, pdwCookie);
     }
 
     /// <include file='IAppVisibility.xml' path='doc/member[@name="IAppVisibility.Unadvise"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAppVisibility : IAppVisibility.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Unadvise([NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<IAppVisibility*, uint, int>)(lpVtbl[6]))((IAppVisibility*)Unsafe.AsPointer(ref this), dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IAppVisibility*, uint, int>)(lpVtbl[6]))((IAppVisibility*)Unsafe.AsPointer(ref this), dwCookie);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAppVisibility : IAppVisibility.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMONITOR, MONITOR_APP_VISIBILITY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMONITOR, MONITOR_APP_VISIBILITY*, int> GetAppVisibilityOnMonitor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMONITOR, MONITOR_APP_VISIBILITY*, int> GetAppVisibilityOnMonitor;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsLauncherVisible;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsLauncherVisible;
 
         [NativeTypeName("HRESULT (IAppVisibilityEvents *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppVisibilityEvents*, uint*, int> Advise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppVisibilityEvents*, uint*, int> Advise;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Unadvise;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Unadvise;
     }
 }

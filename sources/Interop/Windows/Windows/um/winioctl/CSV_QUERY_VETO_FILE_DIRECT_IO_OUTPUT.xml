@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT">
-    <summary>
-      <para>Contains troubleshooting information about why a volume is in redirected mode.</para>
-    </summary>
-    <remarks>
-      <para>CSV writes the troubleshooting strings to a diagnostic log that, when filtered, can provide hints as to why
-a volume is in a redirected mode.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Contains troubleshooting information about why a volume is in redirected mode.</summary>
   </member>
   <member name="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.VetoedFromAltitudeIntegral">
-    <summary>
-      <para>The integer portion of VetoedFromAltitude.</para>
-    </summary>
+    <summary>The integer portion of VetoedFromAltitude.</summary>
   </member>
   <member name="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.VetoedFromAltitudeDecimal">
-    <summary>
-      <para>The decimal portion of VetoedFromAltitude.</para>
-    </summary>
+    <summary>The decimal portion of VetoedFromAltitude.</summary>
   </member>
   <member name="CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT.Reason">
-    <summary>
-      <para>The reason why volume is in a redirected mode.</para>
-    </summary>
+    <summary>The reason why volume is in a redirected mode.</summary>
   </member>
 </doc>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ENHMETAHEADER3">
+    <summary>The <b>ENHMETAHEADER3</b> structure contains enhanced-metafile data including the dimensions of the metafile image, the number of records in the metafile, and the resolution of the device on which the metafile was created.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.iType">
+    <summary>Record type. Value is always EMR_HEADER.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.nSize">
+    <summary>Structure size, in bytes. This may be greater than the value returned by <b>sizeof</b>(<b>ENHMETAHEADER3</b>).</summary>
+  </member>
+  <member name="ENHMETAHEADER3.rclBounds">
+    <summary>Bounding rectangle, in device units, for the image stored in the metafile.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.rclFrame">
+    <summary>Rectangle, in 0.01 millimeter units, that surrounds the image stored in the metafile.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.dSignature">
+    <summary>Must be ENHMETA_SIGNATURE.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.nVersion">
+    <summary>Version number of the metafile format. The current version is 0x10000.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.nBytes">
+    <summary>Size, in bytes, of the metafile.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.nRecords">
+    <summary>Number of records in the metafile.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.nHandles">
+    <summary>Number of handles in the metafile handle table. Handle index zero is reserved.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.sReserved">
+    <summary>Reserved. Must be zero.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.nDescription">
+    <summary>Number of characters in the string that contains the description of the metafile's contents. This member is 0 if the metafile does not have a description string.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.offDescription">
+    <summary>Offset from the beginning of the <b>ENHMETAHEADER3</b> structure to the string that contains the description of the metafile's contents. This member is 0 if the metafile does not have a description string.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.nPalEntries">
+    <summary>Number of entries in the metafile palette.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.szlDevice">
+    <summary>Resolution, in pixels, of the reference device.</summary>
+  </member>
+  <member name="ENHMETAHEADER3.szlMillimeters">
+    <summary>Resolution, in millimeters, of the reference device.</summary>
+  </member>
+</doc>

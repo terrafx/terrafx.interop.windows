@@ -9,55 +9,31 @@
     </summary>
   </member>
   <member name="DECIMAL.wReserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
-  <member name="DECIMAL.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
-  <member name="DECIMAL.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="DECIMAL.DUMMYUNIONNAME"></member>
+  <member name="DECIMAL.DUMMYSTRUCTNAME"></member>
   <member name="DECIMAL.scale">
-    <summary>
-      <para>The number of decimal places for the number. Valid values are from 0 to 28. So 12.345 is represented as 12345 with a scale of 3.</para>
-    </summary>
+    <summary>The number of decimal places for the number. Valid values are from 0 to 28. So 12.345 is represented as 12345 with a scale of 3.</summary>
   </member>
   <member name="DECIMAL.sign">
-    <summary>
-      <para>Indicates the sign; 0 for positive numbers or DECIMAL_NEG for negative numbers. So -1 is represented as 1 with the DECIMAL_NEG bit set.</para>
-    </summary>
+    <summary>Indicates the sign; 0 for positive numbers or DECIMAL_NEG for negative numbers. So -1 is represented as 1 with the DECIMAL_NEG bit set.</summary>
   </member>
   <member name="DECIMAL.signscale">
-    <summary>
-      <para>The sign and number of decimal places.</para>
-    </summary>
+    <summary>The sign and number of decimal places.</summary>
   </member>
   <member name="DECIMAL.Hi32">
-    <summary>
-      <para>The high 32 bits of the number.</para>
-    </summary>
+    <summary>The high 32 bits of the number.</summary>
   </member>
-  <member name="DECIMAL.DUMMYUNIONNAME2">
-    <summary></summary>
-  </member>
-  <member name="DECIMAL.DUMMYSTRUCTNAME2">
-    <summary></summary>
-  </member>
+  <member name="DECIMAL.DUMMYUNIONNAME2"></member>
+  <member name="DECIMAL.DUMMYSTRUCTNAME2"></member>
   <member name="DECIMAL.Lo32">
-    <summary>
-      <para>The low 32 bits of the number.</para>
-    </summary>
+    <summary>The low 32 bits of the number.</summary>
   </member>
   <member name="DECIMAL.Mid32">
-    <summary>
-      <para>The middle 32 bits of the number.</para>
-    </summary>
+    <summary>The middle 32 bits of the number.</summary>
   </member>
   <member name="DECIMAL.Lo64">
-    <summary>
-      <para>The low 32 bits of the number.</para>
-    </summary>
+    <summary>The low 32 bits of the number.</summary>
   </member>
 </doc>

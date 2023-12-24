@@ -7,11 +7,6 @@
       <para>Describes the timestamping capabilities of a network interface card's (NIC's) hardware.</para>
       <para>For more info, and code examples, see <a href="https://docs.microsoft.com//windows/win32/iphlp/packet-timestamping">Packet timestamping</a>.</para>
     </summary>
-    <remarks>
-      <para>All of the <b>INTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES</b> structure's members represent hardware timestamp capabilities. The hardware timestamps are generated using the NIC's hardware clock.</para>
-      <para>Having both hardware and software timestamps enabled together isn't supported.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/win32/iphlp/packet-timestamping">Packet timestamping</seealso>
   </member>
   <member name="PINTERFACE_HARDWARE_TIMESTAMP_CAPABILITIES.PtpV2OverUdpIPv4EventMessageReceive">
     <summary>
@@ -83,8 +78,7 @@
     <summary>
       <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
       <para>
-        <b>TRUE</b> indicates that the NIC can generate a hardware timestamp for any specific transmitted packet when indicated to do so by the application. A value of <b>FALSE</b> indicates that the hardware is not capable of this.
-See <see cref="TIMESTAMPING_CONFIG" /> (and <b>TIMESTAMPING_FLAG_TX</b>) to determine how to request a timestamp when sending UDP packets through <a href="https://docs.microsoft.com//windows/win32/winsock/windows-sockets-start-page-2">Windows Sockets</a>.</para>
+        <b>TRUE</b> indicates that the NIC can generate a hardware timestamp for any specific transmitted packet when indicated to do so by the application. A value of <b>FALSE</b> indicates that the hardware is not capable of this. See <see cref="TIMESTAMPING_CONFIG" /> (and <b>TIMESTAMPING_FLAG_TX</b>) to determine how to request a timestamp when sending UDP packets through <a href="https://docs.microsoft.com//windows/win32/winsock/windows-sockets-start-page-2">Windows Sockets</a>.</para>
     </summary>
   </member>
 </doc>

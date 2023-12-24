@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW"]/*' />
-public unsafe partial struct EMRPOLYDRAW
+public partial struct EMRPOLYDRAW
 {
     /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW.emr"]/*' />
     public EMR emr;
@@ -29,7 +29,7 @@ public unsafe partial struct EMRPOLYDRAW
 
     /// <include file='EMRPOLYDRAW.xml' path='doc/member[@name="EMRPOLYDRAW.abTypes"]/*' />
     [NativeTypeName("BYTE[1]")]
-    public fixed byte abTypes[1];
+    public _abTypes_e__FixedBuffer abTypes;
 
     /// <include file='_aptl_e__FixedBuffer.xml' path='doc/member[@name="_aptl_e__FixedBuffer"]/*' />
     public partial struct _aptl_e__FixedBuffer
@@ -42,12 +42,32 @@ public unsafe partial struct EMRPOLYDRAW
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [UnscopedRef]
         public Span<POINTL> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
+
+    /// <include file='_abTypes_e__FixedBuffer.xml' path='doc/member[@name="_abTypes_e__FixedBuffer"]/*' />
+    public partial struct _abTypes_e__FixedBuffer
+    {
+        public byte e0;
+
+        [UnscopedRef]
+        public ref byte this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

@@ -3,10 +3,15 @@
 // Ported from shared/wtypes.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='RemHBRUSH.xml' path='doc/member[@name="RemHBRUSH"]/*' />
-public unsafe partial struct RemHBRUSH
+public partial struct RemHBRUSH
 {
     /// <include file='RemHBRUSH.xml' path='doc/member[@name="RemHBRUSH.cbData"]/*' />
     [NativeTypeName("ULONG")]
@@ -14,5 +19,25 @@ public unsafe partial struct RemHBRUSH
 
     /// <include file='RemHBRUSH.xml' path='doc/member[@name="RemHBRUSH.data"]/*' />
     [NativeTypeName("byte[1]")]
-    public fixed byte data[1];
+    public _data_e__FixedBuffer data;
+
+    /// <include file='_data_e__FixedBuffer.xml' path='doc/member[@name="_data_e__FixedBuffer"]/*' />
+    public partial struct _data_e__FixedBuffer
+    {
+        public byte e0;
+
+        [UnscopedRef]
+        public ref byte this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IMFStreamingSinkConfigTests
     {
         Assert.That(typeof(IMFStreamingSinkConfig).GUID, Is.EqualTo(IID_IMFStreamingSinkConfig));
     }
-
-    /// <summary>Validates that the <see cref="IMFStreamingSinkConfig" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFStreamingSinkConfig>(), Is.EqualTo(sizeof(IMFStreamingSinkConfig)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFStreamingSinkConfig" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFStreamingSinkConfig).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFStreamingSinkConfig" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFStreamingSinkConfig), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFStreamingSinkConfig), Is.EqualTo(4));
-        }
-    }
 }

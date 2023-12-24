@@ -25,7 +25,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFQualityManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFQualityManager*, uint>)(lpVtbl[1]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityManager*, uint>)(lpVtbl[1]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFQualityManager*, uint>)(lpVtbl[2]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityManager*, uint>)(lpVtbl[2]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyTopology"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
     [VtblIndex(3)]
     public HRESULT NotifyTopology(IMFTopology* pTopology)
     {
-        return ((delegate* unmanaged<IMFQualityManager*, IMFTopology*, int>)(lpVtbl[3]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pTopology);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityManager*, IMFTopology*, int>)(lpVtbl[3]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pTopology);
     }
 
     /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyPresentationClock"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
     [VtblIndex(4)]
     public HRESULT NotifyPresentationClock(IMFPresentationClock* pClock)
     {
-        return ((delegate* unmanaged<IMFQualityManager*, IMFPresentationClock*, int>)(lpVtbl[4]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pClock);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityManager*, IMFPresentationClock*, int>)(lpVtbl[4]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pClock);
     }
 
     /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyProcessInput"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
     [VtblIndex(5)]
     public HRESULT NotifyProcessInput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lInputIndex, IMFSample* pSample)
     {
-        return ((delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int>)(lpVtbl[5]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pNode, lInputIndex, pSample);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int>)(lpVtbl[5]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pNode, lInputIndex, pSample);
     }
 
     /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyProcessOutput"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
     [VtblIndex(6)]
     public HRESULT NotifyProcessOutput(IMFTopologyNode* pNode, [NativeTypeName("long")] int lOutputIndex, IMFSample* pSample)
     {
-        return ((delegate* unmanaged<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int>)(lpVtbl[6]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pNode, lOutputIndex, pSample);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityManager*, IMFTopologyNode*, int, IMFSample*, int>)(lpVtbl[6]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pNode, lOutputIndex, pSample);
     }
 
     /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.NotifyQualityEvent"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
     [VtblIndex(7)]
     public HRESULT NotifyQualityEvent(IUnknown* pObject, IMFMediaEvent* pEvent)
     {
-        return ((delegate* unmanaged<IMFQualityManager*, IUnknown*, IMFMediaEvent*, int>)(lpVtbl[7]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pObject, pEvent);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityManager*, IUnknown*, IMFMediaEvent*, int>)(lpVtbl[7]))((IMFQualityManager*)Unsafe.AsPointer(ref this), pObject, pEvent);
     }
 
     /// <include file='IMFQualityManager.xml' path='doc/member[@name="IMFQualityManager.Shutdown"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
     [VtblIndex(8)]
     public HRESULT Shutdown()
     {
-        return ((delegate* unmanaged<IMFQualityManager*, int>)(lpVtbl[8]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityManager*, int>)(lpVtbl[8]))((IMFQualityManager*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IMFQualityManager : IMFQualityManager.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFTopology *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFTopology*, int> NotifyTopology;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFTopology*, int> NotifyTopology;
 
         [NativeTypeName("HRESULT (IMFPresentationClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPresentationClock*, int> NotifyPresentationClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPresentationClock*, int> NotifyPresentationClock;
 
         [NativeTypeName("HRESULT (IMFTopologyNode *, long, IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessInput;
 
         [NativeTypeName("HRESULT (IMFTopologyNode *, long, IMFSample *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessOutput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFTopologyNode*, int, IMFSample*, int> NotifyProcessOutput;
 
         [NativeTypeName("HRESULT (IUnknown *, IMFMediaEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, IMFMediaEvent*, int> NotifyQualityEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, IMFMediaEvent*, int> NotifyQualityEvent;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Shutdown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Shutdown;
     }
 }

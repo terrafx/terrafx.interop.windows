@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRPOLYLINE">
-    <summary>
-      <para>The <b>EMRPOLYLINE, </b><b>EMRPOLYBEZIER, </b><b>EMRPOLYGON, </b><b>EMRPOLYBEZIERTO, </b> and <b>EMRPOLYLINETO</b> structures contain members for the <see cref="Polyline" />, <see cref="PolyBezier" />, <see cref="Polygon" />, <see cref="PolyBezierTo" />, and <see cref="PolylineTo" /> enhanced metafile records.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRPOLYLINE,</b><b>EMRPOLYBEZIER,</b><b>EMRPOLYGON,</b><b>EMRPOLYBEZIERTO,</b> and <b>EMRPOLYLINETO</b> structures contain members for the <see cref="Polyline" />, <see cref="PolyBezier" />, <see cref="Polygon" />, <see cref="PolyBezierTo" />, and <see cref="PolylineTo" /> enhanced metafile records.</summary>
   </member>
   <member name="EMRPOLYLINE.emr">
-    <summary>
-      <para>Base structure for all record types.</para>
-    </summary>
+    <summary>Base structure for all record types.</summary>
   </member>
   <member name="EMRPOLYLINE.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRPOLYLINE.cptl">
-    <summary>
-      <para>Number of points array.</para>
-    </summary>
+    <summary>Number of points array.</summary>
   </member>
   <member name="EMRPOLYLINE.aptl">
-    <summary>
-      <para>Array of 32-bit points, in logical units.</para>
-    </summary>
+    <summary>Array of 32-bit points, in logical units.</summary>
   </member>
 </doc>

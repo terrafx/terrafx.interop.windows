@@ -3,6 +3,7 @@
 // Ported from um/WinBase.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -37,44 +38,51 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
     public uint Flags;
 
     /// <include file='FILE_REMOTE_PROTOCOL_INFO.xml' path='doc/member[@name="FILE_REMOTE_PROTOCOL_INFO.GenericReserved"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:9197:5)")]
+    [NativeTypeName("__AnonymousRecord_winbase_L9213_C5")]
     public _GenericReserved_e__Struct GenericReserved;
 
     /// <include file='FILE_REMOTE_PROTOCOL_INFO.xml' path='doc/member[@name="FILE_REMOTE_PROTOCOL_INFO.ProtocolSpecific"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:9210:5)")]
+    [NativeTypeName("__AnonymousRecord_winbase_L9226_C5")]
     public _ProtocolSpecific_e__Union ProtocolSpecific;
 
     /// <include file='_GenericReserved_e__Struct.xml' path='doc/member[@name="_GenericReserved_e__Struct"]/*' />
-    public unsafe partial struct _GenericReserved_e__Struct
+    public partial struct _GenericReserved_e__Struct
     {
         /// <include file='_GenericReserved_e__Struct.xml' path='doc/member[@name="_GenericReserved_e__Struct.Reserved"]/*' />
         [NativeTypeName("ULONG[8]")]
-        public fixed uint Reserved[8];
+        public _Reserved_e__FixedBuffer Reserved;
+
+        /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+        [InlineArray(8)]
+        public partial struct _Reserved_e__FixedBuffer
+        {
+            public uint e0;
+        }
     }
 
     /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _ProtocolSpecific_e__Union
+    public partial struct _ProtocolSpecific_e__Union
     {
         /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union.Smb2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:9212:9)")]
+        [NativeTypeName("__AnonymousRecord_winbase_L9228_C9")]
         public _Smb2_e__Struct Smb2;
 
         /// <include file='_ProtocolSpecific_e__Union.xml' path='doc/member[@name="_ProtocolSpecific_e__Union.Reserved"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("ULONG[16]")]
-        public fixed uint Reserved[16];
+        public _Reserved_e__FixedBuffer Reserved;
 
         /// <include file='_Smb2_e__Struct.xml' path='doc/member[@name="_Smb2_e__Struct"]/*' />
         public partial struct _Smb2_e__Struct
         {
             /// <include file='_Smb2_e__Struct.xml' path='doc/member[@name="_Smb2_e__Struct.Server"]/*' />
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:9214:13)")]
+            [NativeTypeName("__AnonymousRecord_winbase_L9230_C13")]
             public _Server_e__Struct Server;
 
             /// <include file='_Smb2_e__Struct.xml' path='doc/member[@name="_Smb2_e__Struct.Share"]/*' />
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:9218:13)")]
+            [NativeTypeName("__AnonymousRecord_winbase_L9234_C13")]
             public _Share_e__Struct Share;
 
             /// <include file='_Server_e__Struct.xml' path='doc/member[@name="_Server_e__Struct"]/*' />
@@ -96,6 +104,13 @@ public partial struct FILE_REMOTE_PROTOCOL_INFO
                 [NativeTypeName("ULONG")]
                 public uint ShareFlags;
             }
+        }
+
+        /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+        [InlineArray(16)]
+        public partial struct _Reserved_e__FixedBuffer
+        {
+            public uint e0;
         }
     }
 }

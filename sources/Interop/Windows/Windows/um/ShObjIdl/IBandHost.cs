@@ -25,7 +25,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBandHost*, Guid*, void**, int>)(lpVtbl[0]))((IBandHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBandHost*, Guid*, void**, int>)(lpVtbl[0]))((IBandHost*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBandHost*, uint>)(lpVtbl[1]))((IBandHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBandHost*, uint>)(lpVtbl[1]))((IBandHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBandHost*, uint>)(lpVtbl[2]))((IBandHost*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBandHost*, uint>)(lpVtbl[2]))((IBandHost*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBandHost.xml' path='doc/member[@name="IBandHost.CreateBand"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT CreateBand([NativeTypeName("const IID &")] Guid* rclsidBand, BOOL fAvailable, BOOL fVisible, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IBandHost*, Guid*, BOOL, BOOL, Guid*, void**, int>)(lpVtbl[3]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable, fVisible, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IBandHost*, Guid*, BOOL, BOOL, Guid*, void**, int>)(lpVtbl[3]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable, fVisible, riid, ppv);
     }
 
     /// <include file='IBandHost.xml' path='doc/member[@name="IBandHost.SetBandAvailability"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetBandAvailability([NativeTypeName("const IID &")] Guid* rclsidBand, BOOL fAvailable)
     {
-        return ((delegate* unmanaged<IBandHost*, Guid*, BOOL, int>)(lpVtbl[4]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable);
+        return ((delegate* unmanaged[MemberFunction]<IBandHost*, Guid*, BOOL, int>)(lpVtbl[4]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand, fAvailable);
     }
 
     /// <include file='IBandHost.xml' path='doc/member[@name="IBandHost.DestroyBand"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IBandHost : IBandHost.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT DestroyBand([NativeTypeName("const IID &")] Guid* rclsidBand)
     {
-        return ((delegate* unmanaged<IBandHost*, Guid*, int>)(lpVtbl[5]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand);
+        return ((delegate* unmanaged[MemberFunction]<IBandHost*, Guid*, int>)(lpVtbl[5]))((IBandHost*)Unsafe.AsPointer(ref this), rclsidBand);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IBandHost : IBandHost.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, BOOL, BOOL, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, BOOL, BOOL, Guid*, void**, int> CreateBand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, BOOL, BOOL, Guid*, void**, int> CreateBand;
 
         [NativeTypeName("HRESULT (const IID &, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, BOOL, int> SetBandAvailability;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, BOOL, int> SetBandAvailability;
 
         [NativeTypeName("HRESULT (const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> DestroyBand;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> DestroyBand;
     }
 }

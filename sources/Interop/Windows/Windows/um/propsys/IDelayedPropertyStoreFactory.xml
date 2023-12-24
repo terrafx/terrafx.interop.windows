@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDelayedPropertyStoreFactory.GetDelayedPropertyStore">
-    <summary>
-      <para>Gets an <see cref="IPropertyStore" /> interface object, as specified.</para>
-    </summary>
-    <param name="flags">
-      <para>Type: <b><see cref="GETPROPERTYSTOREFLAGS" /></b></para>
-      <para>The GPS_XXX flags that modify the store that is returned. See <see cref="GETPROPERTYSTOREFLAGS" />.</para>
-    </param>
+    <summary>Gets an <see cref="IPropertyStore" /> interface object, as specified.</summary>
+    <param name="flags">The GPS_XXX flags that modify the store that is returned. See <see cref="GETPROPERTYSTOREFLAGS" />.</param>
     <param name="dwStoreId">
-      <para>Type: <b>DWORD</b></para>
       <para>The property store ID. Valid values are.</para>
       <h4>STOREID_INNATE</h4>
       <para>Value is 0.</para>
@@ -20,22 +14,11 @@
       <h4>STOREID_FALLBACK</h4>
       <para>Value is 2.</para>
     </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the desired IID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>The address of an <see cref="IPropertyStore" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="riid">A reference to the desired IID.</param>
+    <param name="ppv">The address of an <see cref="IPropertyStore" /> interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDelayedPropertyStoreFactory">
-    <summary>
-      <para>Exposes a method to create a specified <see cref="IPropertyStore" /> object in circumstances where property access is potentially slow.</para>
-    </summary>
+    <summary>Exposes a method to create a specified <see cref="IPropertyStore" /> object in circumstances where property access is potentially slow.</summary>
   </member>
 </doc>

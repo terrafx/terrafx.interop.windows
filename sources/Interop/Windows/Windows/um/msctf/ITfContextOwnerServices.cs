@@ -25,7 +25,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, uint>)(lpVtbl[1]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, uint>)(lpVtbl[1]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, uint>)(lpVtbl[2]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, uint>)(lpVtbl[2]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.OnLayoutChange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [VtblIndex(3)]
     public HRESULT OnLayoutChange()
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, int>)(lpVtbl[3]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, int>)(lpVtbl[3]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.OnStatusChange"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [VtblIndex(4)]
     public HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, uint, int>)(lpVtbl[4]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, uint, int>)(lpVtbl[4]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.OnAttributeChange"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [VtblIndex(5)]
     public HRESULT OnAttributeChange([NativeTypeName("const GUID &")] Guid* rguidAttribute)
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, Guid*, int>)(lpVtbl[5]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), rguidAttribute);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, Guid*, int>)(lpVtbl[5]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), rguidAttribute);
     }
 
     /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.Serialize"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [VtblIndex(6)]
     public HRESULT Serialize(ITfProperty* pProp, ITfRange* pRange, TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream)
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int>)(lpVtbl[6]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), pProp, pRange, pHdr, pStream);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int>)(lpVtbl[6]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), pProp, pRange, pHdr, pStream);
     }
 
     /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.Unserialize"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [VtblIndex(7)]
     public HRESULT Unserialize(ITfProperty* pProp, [NativeTypeName("const TF_PERSISTENT_PROPERTY_HEADER_ACP *")] TF_PERSISTENT_PROPERTY_HEADER_ACP* pHdr, IStream* pStream, ITfPersistentPropertyLoaderACP* pLoader)
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int>)(lpVtbl[7]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), pProp, pHdr, pStream, pLoader);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int>)(lpVtbl[7]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), pProp, pHdr, pStream, pLoader);
     }
 
     /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.ForceLoadProperty"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [VtblIndex(8)]
     public HRESULT ForceLoadProperty(ITfProperty* pProp)
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, ITfProperty*, int>)(lpVtbl[8]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), pProp);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, ITfProperty*, int>)(lpVtbl[8]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), pProp);
     }
 
     /// <include file='ITfContextOwnerServices.xml' path='doc/member[@name="ITfContextOwnerServices.CreateRange"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
     [VtblIndex(9)]
     public HRESULT CreateRange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, ITfRangeACP** ppRange)
     {
-        return ((delegate* unmanaged<ITfContextOwnerServices*, int, int, ITfRangeACP**, int>)(lpVtbl[9]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), acpStart, acpEnd, ppRange);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextOwnerServices*, int, int, ITfRangeACP**, int>)(lpVtbl[9]))((ITfContextOwnerServices*)Unsafe.AsPointer(ref this), acpStart, acpEnd, ppRange);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct ITfContextOwnerServices : ITfContextOwnerServices.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnLayoutChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnLayoutChange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnStatusChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnStatusChange;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> OnAttributeChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> OnAttributeChange;
 
         [NativeTypeName("HRESULT (ITfProperty *, ITfRange *, TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int> Serialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfProperty*, ITfRange*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, int> Serialize;
 
         [NativeTypeName("HRESULT (ITfProperty *, const TF_PERSISTENT_PROPERTY_HEADER_ACP *, IStream *, ITfPersistentPropertyLoaderACP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int> Unserialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfProperty*, TF_PERSISTENT_PROPERTY_HEADER_ACP*, IStream*, ITfPersistentPropertyLoaderACP*, int> Unserialize;
 
         [NativeTypeName("HRESULT (ITfProperty *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfProperty*, int> ForceLoadProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfProperty*, int> ForceLoadProperty;
 
         [NativeTypeName("HRESULT (LONG, LONG, ITfRangeACP **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, ITfRangeACP**, int> CreateRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, ITfRangeACP**, int> CreateRange;
     }
 }

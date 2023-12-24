@@ -3,124 +3,52 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64">
-    <summary>
-      <para>Contains information about a deferred symbol load.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD</b> is defined as follows in DbgHelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
-#define IMAGEHLP_DEFERRED_SYMBOL_LOAD IMAGEHLP_DEFERRED_SYMBOL_LOAD64
-#define PIMAGEHLP_DEFERRED_SYMBOL_LOAD PIMAGEHLP_DEFERRED_SYMBOL_LOAD64
-#else
-typedef struct _IMAGEHLP_DEFERRED_SYMBOL_LOAD {
-    DWORD    SizeOfStruct;
-    DWORD    BaseOfImage;
-    DWORD    CheckSum;
-    DWORD    TimeDateStamp;
-    CHAR     FileName[MAX_PATH];
-    BOOLEAN  Reparse;
-    HANDLE   hFile;
-} IMAGEHLP_DEFERRED_SYMBOL_LOAD, *PIMAGEHLP_DEFERRED_SYMBOL_LOAD;
-#endif
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psymbol_registered_callback">SymRegisterCallbackProc64</seealso>
+    <summary>Contains information about a deferred symbol load.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.SizeOfStruct">
-    <summary>
-      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_DEFERRED_SYMBOL_LOAD64)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_DEFERRED_SYMBOL_LOAD64)</code>.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.BaseOfImage">
-    <summary>
-      <para>The base virtual address where the image is loaded.</para>
-    </summary>
+    <summary>The base virtual address where the image is loaded.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.CheckSum">
-    <summary>
-      <para>The computed checksum of the image. This value can be zero.</para>
-    </summary>
+    <summary>The computed checksum of the image. This value can be zero.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.TimeDateStamp">
-    <summary>
-      <para>The date and timestamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The timestamp can be printed using the C run-time (CRT) function <b>ctime</b>.</para>
-    </summary>
+    <summary>The date and timestamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The timestamp can be printed using the C run-time (CRT) function <b>ctime</b>.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.FileName">
-    <summary>
-      <para>The image name. The name may or may not contain a full path.</para>
-    </summary>
+    <summary>The image name. The name may or may not contain a full path.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.Reparse">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the operation should be performed again. Otherwise, it should not.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the operation should be performed again. Otherwise, it should not.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.hFile">
-    <summary>
-      <para>A handle to a file. This member is used with <b>CBA_DEFERRED_SYMBOL_LOAD_PARTIAL</b> and <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD_FAILURE</b> callbacks.</para>
-    </summary>
+    <summary>A handle to a file. This member is used with <b>CBA_DEFERRED_SYMBOL_LOAD_PARTIAL</b> and <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD_FAILURE</b> callbacks.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64">
-    <summary>
-      <para>Contains information about a deferred symbol load.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD</b> is defined as follows in DbgHelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
-#define IMAGEHLP_DEFERRED_SYMBOL_LOAD IMAGEHLP_DEFERRED_SYMBOL_LOAD64
-#define PIMAGEHLP_DEFERRED_SYMBOL_LOAD PIMAGEHLP_DEFERRED_SYMBOL_LOAD64
-#else
-typedef struct _IMAGEHLP_DEFERRED_SYMBOL_LOAD {
-    DWORD    SizeOfStruct;
-    DWORD    BaseOfImage;
-    DWORD    CheckSum;
-    DWORD    TimeDateStamp;
-    CHAR     FileName[MAX_PATH];
-    BOOLEAN  Reparse;
-    HANDLE   hFile;
-} IMAGEHLP_DEFERRED_SYMBOL_LOAD, *PIMAGEHLP_DEFERRED_SYMBOL_LOAD;
-#endif
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psymbol_registered_callback">SymRegisterCallbackProc64</seealso>
+    <summary>Contains information about a deferred symbol load.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.SizeOfStruct">
-    <summary>
-      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_DEFERRED_SYMBOL_LOAD64)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_DEFERRED_SYMBOL_LOAD64)</code>.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.BaseOfImage">
-    <summary>
-      <para>The base virtual address where the image is loaded.</para>
-    </summary>
+    <summary>The base virtual address where the image is loaded.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.CheckSum">
-    <summary>
-      <para>The computed checksum of the image. This value can be zero.</para>
-    </summary>
+    <summary>The computed checksum of the image. This value can be zero.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.TimeDateStamp">
-    <summary>
-      <para>The date and timestamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The timestamp can be printed using the C run-time (CRT) function <b>ctime</b>.</para>
-    </summary>
+    <summary>The date and timestamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The timestamp can be printed using the C run-time (CRT) function <b>ctime</b>.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.FileName">
-    <summary>
-      <para>The image name. The name may or may not contain a full path.</para>
-    </summary>
+    <summary>The image name. The name may or may not contain a full path.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.Reparse">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the operation should be performed again. Otherwise, it should not.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the operation should be performed again. Otherwise, it should not.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.hFile">
-    <summary>
-      <para>A handle to a file. This member is used with <b>CBA_DEFERRED_SYMBOL_LOAD_PARTIAL</b> and <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD_FAILURE</b> callbacks.</para>
-    </summary>
+    <summary>A handle to a file. This member is used with <b>CBA_DEFERRED_SYMBOL_LOAD_PARTIAL</b> and <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD_FAILURE</b> callbacks.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.Flags">
     <summary>
@@ -136,64 +64,28 @@ typedef struct _IMAGEHLP_DEFERRED_SYMBOL_LOAD {
     </summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64">
-    <summary>
-      <para>Contains information about a deferred symbol load.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD</b> is defined as follows in DbgHelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
-#define IMAGEHLP_DEFERRED_SYMBOL_LOAD IMAGEHLP_DEFERRED_SYMBOL_LOAD64
-#define PIMAGEHLP_DEFERRED_SYMBOL_LOAD PIMAGEHLP_DEFERRED_SYMBOL_LOAD64
-#else
-typedef struct _IMAGEHLP_DEFERRED_SYMBOL_LOAD {
-    DWORD    SizeOfStruct;
-    DWORD    BaseOfImage;
-    DWORD    CheckSum;
-    DWORD    TimeDateStamp;
-    CHAR     FileName[MAX_PATH];
-    BOOLEAN  Reparse;
-    HANDLE   hFile;
-} IMAGEHLP_DEFERRED_SYMBOL_LOAD, *PIMAGEHLP_DEFERRED_SYMBOL_LOAD;
-#endif
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-psymbol_registered_callback">SymRegisterCallbackProc64</seealso>
+    <summary>Contains information about a deferred symbol load.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.SizeOfStruct">
-    <summary>
-      <para>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_DEFERRED_SYMBOL_LOAD64)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this member to <code>sizeof(IMAGEHLP_DEFERRED_SYMBOL_LOAD64)</code>.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.BaseOfImage">
-    <summary>
-      <para>The base virtual address where the image is loaded.</para>
-    </summary>
+    <summary>The base virtual address where the image is loaded.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.CheckSum">
-    <summary>
-      <para>The computed checksum of the image. This value can be zero.</para>
-    </summary>
+    <summary>The computed checksum of the image. This value can be zero.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.TimeDateStamp">
-    <summary>
-      <para>The date and timestamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The timestamp can be printed using the C run-time (CRT) function <b>ctime</b>.</para>
-    </summary>
+    <summary>The date and timestamp value. The value is represented in the number of seconds elapsed since midnight (00:00:00), January 1, 1970, Universal Coordinated Time, according to the system clock. The timestamp can be printed using the C run-time (CRT) function <b>ctime</b>.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.FileName">
-    <summary>
-      <para>The image name. The name may or may not contain a full path.</para>
-    </summary>
+    <summary>The image name. The name may or may not contain a full path.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.Reparse">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the operation should be performed again. Otherwise, it should not.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the operation should be performed again. Otherwise, it should not.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.hFile">
-    <summary>
-      <para>A handle to a file. This member is used with <b>CBA_DEFERRED_SYMBOL_LOAD_PARTIAL</b> and <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD_FAILURE</b> callbacks.</para>
-    </summary>
+    <summary>A handle to a file. This member is used with <b>CBA_DEFERRED_SYMBOL_LOAD_PARTIAL</b> and <b>IMAGEHLP_DEFERRED_SYMBOL_LOAD_FAILURE</b> callbacks.</summary>
   </member>
   <member name="IMAGEHLP_DEFERRED_SYMBOL_LOAD64.Flags">
     <summary>

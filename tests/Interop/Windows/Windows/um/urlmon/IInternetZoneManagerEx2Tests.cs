@@ -19,32 +19,4 @@ public static unsafe partial class IInternetZoneManagerEx2Tests
     {
         Assert.That(typeof(IInternetZoneManagerEx2).GUID, Is.EqualTo(IID_IInternetZoneManagerEx2));
     }
-
-    /// <summary>Validates that the <see cref="IInternetZoneManagerEx2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInternetZoneManagerEx2>(), Is.EqualTo(sizeof(IInternetZoneManagerEx2)));
-    }
-
-    /// <summary>Validates that the <see cref="IInternetZoneManagerEx2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInternetZoneManagerEx2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInternetZoneManagerEx2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInternetZoneManagerEx2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInternetZoneManagerEx2), Is.EqualTo(4));
-        }
-    }
 }

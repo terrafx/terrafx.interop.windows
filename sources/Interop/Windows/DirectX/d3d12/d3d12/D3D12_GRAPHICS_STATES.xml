@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_GRAPHICS_STATES">
+    <summary>Defines flags that specify states related to a graphics command list. Values can be bitwise OR'd together.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_NONE">
+    <summary>Specifies no state.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_IA_VERTEX_BUFFERS">
+    <summary>Specifies the state of the vertex buffer bindings on the input assembler stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_IA_INDEX_BUFFER">
+    <summary>Specifies the state of the index buffer binding on the input assembler stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_IA_PRIMITIVE_TOPOLOGY">
+    <summary>Specifies the state of the primitive topology value set on the input assembler stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_DESCRIPTOR_HEAP">
+    <summary>Specifies the state of the currently bound descriptor heaps.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_GRAPHICS_ROOT_SIGNATURE">
+    <summary>Specifies the state of the currently set graphics root signature.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_COMPUTE_ROOT_SIGNATURE">
+    <summary>Specifies the state of the currently set compute root signature.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_RS_VIEWPORTS">
+    <summary>Specifies the state of the viewports bound to the rasterizer stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_RS_SCISSOR_RECTS">
+    <summary>Specifies the state of the scissor rectangles bound to the rasterizer stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_PREDICATION">
+    <summary>Specifies the predicate state.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_OM_RENDER_TARGETS">
+    <summary>Specifies the state of the render targets bound to the output merger stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_OM_STENCIL_REF">
+    <summary>Specifies the state of the reference value for depth stencil tests set on the output merger stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_OM_BLEND_FACTOR">
+    <summary>Specifies the state of the blend factor set on the output merger stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_PIPELINE_STATE">
+    <summary>Specifies the state of the pipeline state object.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_SO_TARGETS">
+    <summary>Specifies the state of the buffer views bound to the stream output stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_OM_DEPTH_BOUNDS">
+    <summary>Specifies the state of the depth bounds set on the output merger stage.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_SAMPLE_POSITIONS">
+    <summary>Specifies the state of the sample positions.</summary>
+  </member>
+  <member name="D3D12_GRAPHICS_STATES.D3D12_GRAPHICS_STATE_VIEW_INSTANCE_MASK">
+    <summary>Specifies the state of the view instances mask.</summary>
+  </member>
+</doc>

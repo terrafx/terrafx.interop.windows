@@ -3,71 +3,34 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_SWAP_CHAIN_DESC">
-    <summary>
-      <para>Describes a swap chain.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used by the <see cref="GetDesc" /> and <see cref="CreateSwapChain" /> methods.</para>
-      <para>In full-screen mode, there is a dedicated front buffer; in windowed mode, the desktop is the front buffer.</para>
-      <para>If you create a swap chain with one buffer, specifying <b>DXGI_SWAP_EFFECT_SEQUENTIAL</b> does not cause the contents of the single
-buffer to be swapped with the front buffer.</para>
-      <para>For performance information about flipping swap-chain buffers in full-screen application,
-see <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-programming-guide-dxgi">Full-Screen Application Performance Hints</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
-    <seealso cref="IDXGIFactory.CreateSwapChain" />
-    <seealso cref="IDXGISwapChain" />
+    <summary>Describes a swap chain.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC.BufferDesc">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173064(v=vs.85)">DXGI_MODE_DESC</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173064(v=vs.85)">DXGI_MODE_DESC</a> structure that describes the backbuffer display mode.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb173064(v=vs.85)">DXGI_MODE_DESC</a> structure that describes the backbuffer display mode.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC.SampleDesc">
-    <summary>
-      <para>Type: <b><see cref="DXGI_SAMPLE_DESC" /></b></para>
-      <para>A <see cref="DXGI_SAMPLE_DESC" /> structure that describes multi-sampling parameters.</para>
-    </summary>
+    <summary>A <see cref="DXGI_SAMPLE_DESC" /> structure that describes multi-sampling parameters.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC.BufferUsage">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-usage">DXGI_USAGE</a></b></para>
-      <para>A member of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-usage">DXGI_USAGE</a> enumerated type that describes the surface usage and CPU access options for the back buffer. The back buffer can
-be used for shader input or render-target output.</para>
-    </summary>
+    <summary>A member of the <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-usage">DXGI_USAGE</a> enumerated type that describes the surface usage and CPU access options for the back buffer. The back buffer can be used for shader input or render-target output.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC.BufferCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A value that describes the number of buffers in the swap chain. When you call  <see cref="IDXGIFactory.CreateSwapChain" /> to create a full-screen swap chain, you typically include the front buffer in this value. For more information about swap-chain buffers, see Remarks.</para>
-    </summary>
+    <summary>A value that describes the number of buffers in the swap chain. When you call <see cref="IDXGIFactory.CreateSwapChain" /> to create a full-screen swap chain, you typically include the front buffer in this value. For more information about swap-chain buffers, see Remarks.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC.OutputWindow">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
-      <para>An <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a> handle to the output window. This member must not be <b>NULL</b>.</para>
-    </summary>
+    <summary>An <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a> handle to the output window. This member must not be <b>NULL</b>.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC.Windowed">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
       <para>A Boolean value that specifies whether the output is in windowed mode. <b>TRUE</b> if the output is in windowed mode; otherwise, <b>FALSE</b>.</para>
       <para>We recommend that you create a windowed swap chain and allow the end user to change the swap chain to full screen through <see cref="IDXGISwapChain.SetFullscreenState" />; that is, do not set this member to FALSE to force the swap chain to be full screen. However, if you create the swap chain as full screen, also provide the end user with a list of supported display modes through the <b>BufferDesc</b> member because a swap chain that is created with an unsupported display mode might cause the display to go black and prevent the end user from seeing anything.</para>
       <para>For more information about choosing windowed verses full screen, see <see cref="IDXGIFactory.CreateSwapChain" />.</para>
     </summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC.SwapEffect">
-    <summary>
-      <para>Type: <b><see cref="DXGI_SWAP_EFFECT" /></b></para>
-      <para>A member of the <see cref="DXGI_SWAP_EFFECT" /> enumerated type that describes options for handling the contents of the presentation buffer after
-presenting a surface.</para>
-    </summary>
+    <summary>A member of the <see cref="DXGI_SWAP_EFFECT" /> enumerated type that describes options for handling the contents of the presentation buffer after presenting a surface.</summary>
   </member>
   <member name="DXGI_SWAP_CHAIN_DESC.Flags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A member of the <see cref="DXGI_SWAP_CHAIN_FLAG" /> enumerated type that describes options for swap-chain behavior.</para>
-    </summary>
+    <summary>A member of the <see cref="DXGI_SWAP_CHAIN_FLAG" /> enumerated type that describes options for swap-chain behavior.</summary>
   </member>
 </doc>

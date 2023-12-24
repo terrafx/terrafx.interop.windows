@@ -25,7 +25,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfCleanupContextDurationSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfCleanupContextDurationSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfCleanupContextDurationSink*, uint>)(lpVtbl[1]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCleanupContextDurationSink*, uint>)(lpVtbl[1]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfCleanupContextDurationSink*, uint>)(lpVtbl[2]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCleanupContextDurationSink*, uint>)(lpVtbl[2]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfCleanupContextDurationSink.xml' path='doc/member[@name="ITfCleanupContextDurationSink.OnStartCleanupContext"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
     [VtblIndex(3)]
     public HRESULT OnStartCleanupContext()
     {
-        return ((delegate* unmanaged<ITfCleanupContextDurationSink*, int>)(lpVtbl[3]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCleanupContextDurationSink*, int>)(lpVtbl[3]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfCleanupContextDurationSink.xml' path='doc/member[@name="ITfCleanupContextDurationSink.OnEndCleanupContext"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
     [VtblIndex(4)]
     public HRESULT OnEndCleanupContext()
     {
-        return ((delegate* unmanaged<ITfCleanupContextDurationSink*, int>)(lpVtbl[4]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCleanupContextDurationSink*, int>)(lpVtbl[4]))((ITfCleanupContextDurationSink*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfCleanupContextDurationSink : ITfCleanupContextDu
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnStartCleanupContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnStartCleanupContext;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnEndCleanupContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnEndCleanupContext;
     }
 }

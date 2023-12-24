@@ -25,7 +25,7 @@ public unsafe partial struct SPWORD
 
     /// <include file='SPWORD.xml' path='doc/member[@name="SPWORD.pszWord"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszWord;
+    public char* pszWord;
 
     /// <include file='SPWORD.xml' path='doc/member[@name="SPWORD.pFirstWordPronunciation"]/*' />
     public SPWORDPRONUNCIATION* pFirstWordPronunciation;

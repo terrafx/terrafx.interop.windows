@@ -10,7 +10,7 @@ public unsafe partial struct ACTRL_PROPERTY_ENTRYW
 {
     /// <include file='ACTRL_PROPERTY_ENTRYW.xml' path='doc/member[@name="ACTRL_PROPERTY_ENTRYW.lpProperty"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpProperty;
+    public char* lpProperty;
 
     /// <include file='ACTRL_PROPERTY_ENTRYW.xml' path='doc/member[@name="ACTRL_PROPERTY_ENTRYW.pAccessEntryList"]/*' />
     [NativeTypeName("PACTRL_ACCESS_ENTRY_LISTW")]

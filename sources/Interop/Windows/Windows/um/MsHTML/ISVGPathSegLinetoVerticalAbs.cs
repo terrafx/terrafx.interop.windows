@@ -25,7 +25,7 @@ public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVer
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISVGPathSegLinetoVerticalAbs*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegLinetoVerticalAbs*, Guid*, void**, int>)(lpVtbl[0]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVer
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISVGPathSegLinetoVerticalAbs*, uint>)(lpVtbl[1]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegLinetoVerticalAbs*, uint>)(lpVtbl[1]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVer
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISVGPathSegLinetoVerticalAbs*, uint>)(lpVtbl[2]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegLinetoVerticalAbs*, uint>)(lpVtbl[2]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVer
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISVGPathSegLinetoVerticalAbs*, uint*, int>)(lpVtbl[3]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegLinetoVerticalAbs*, uint*, int>)(lpVtbl[3]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVer
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISVGPathSegLinetoVerticalAbs*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegLinetoVerticalAbs*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISVGPathSegLinetoVerticalAbs*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegLinetoVerticalAbs*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVer
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISVGPathSegLinetoVerticalAbs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegLinetoVerticalAbs*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISVGPathSegLinetoVerticalAbs.xml' path='doc/member[@name="ISVGPathSegLinetoVerticalAbs.put_y"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVer
     [VtblIndex(7)]
     public HRESULT put_y(float v)
     {
-        return ((delegate* unmanaged<ISVGPathSegLinetoVerticalAbs*, float, int>)(lpVtbl[7]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), v);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegLinetoVerticalAbs*, float, int>)(lpVtbl[7]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), v);
     }
 
     /// <include file='ISVGPathSegLinetoVerticalAbs.xml' path='doc/member[@name="ISVGPathSegLinetoVerticalAbs.get_y"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVer
     [VtblIndex(8)]
     public HRESULT get_y(float* p)
     {
-        return ((delegate* unmanaged<ISVGPathSegLinetoVerticalAbs*, float*, int>)(lpVtbl[8]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ISVGPathSegLinetoVerticalAbs*, float*, int>)(lpVtbl[8]))((ISVGPathSegLinetoVerticalAbs*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IDispatch.Interface
@@ -107,30 +107,30 @@ public unsafe partial struct ISVGPathSegLinetoVerticalAbs : ISVGPathSegLinetoVer
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_y;
 
         [NativeTypeName("HRESULT (float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_y;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_y;
     }
 }

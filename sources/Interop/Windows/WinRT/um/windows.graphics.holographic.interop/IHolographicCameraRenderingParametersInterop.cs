@@ -29,7 +29,7 @@ public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHol
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, Guid*, void**, int>)(lpVtbl[0]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicCameraRenderingParametersInterop*, Guid*, void**, int>)(lpVtbl[0]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -38,7 +38,7 @@ public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHol
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, uint>)(lpVtbl[1]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHolographicCameraRenderingParametersInterop*, uint>)(lpVtbl[1]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -47,7 +47,7 @@ public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHol
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, uint>)(lpVtbl[2]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHolographicCameraRenderingParametersInterop*, uint>)(lpVtbl[2]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -55,7 +55,7 @@ public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHol
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicCameraRenderingParametersInterop*, uint*, Guid**, int>)(lpVtbl[3]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -63,7 +63,7 @@ public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHol
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, HSTRING*, int>)(lpVtbl[4]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicCameraRenderingParametersInterop*, HSTRING*, int>)(lpVtbl[4]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -71,7 +71,7 @@ public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHol
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, TrustLevel*, int>)(lpVtbl[5]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicCameraRenderingParametersInterop*, TrustLevel*, int>)(lpVtbl[5]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IHolographicCameraRenderingParametersInterop.xml' path='doc/member[@name="IHolographicCameraRenderingParametersInterop.CommitDirect3D12Resource"]/*' />
@@ -79,7 +79,7 @@ public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHol
     [VtblIndex(6)]
     public HRESULT CommitDirect3D12Resource(ID3D12Resource* pColorResourceToCommit, ID3D12Fence* pColorResourceFence, [NativeTypeName("UINT64")] ulong colorResourceFenceSignalValue)
     {
-        return ((delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, int>)(lpVtbl[6]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), pColorResourceToCommit, pColorResourceFence, colorResourceFenceSignalValue);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicCameraRenderingParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, int>)(lpVtbl[6]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), pColorResourceToCommit, pColorResourceFence, colorResourceFenceSignalValue);
     }
 
     /// <include file='IHolographicCameraRenderingParametersInterop.xml' path='doc/member[@name="IHolographicCameraRenderingParametersInterop.CommitDirect3D12ResourceWithDepthData"]/*' />
@@ -87,7 +87,7 @@ public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHol
     [VtblIndex(7)]
     public HRESULT CommitDirect3D12ResourceWithDepthData(ID3D12Resource* pColorResourceToCommit, ID3D12Fence* pColorResourceFence, [NativeTypeName("UINT64")] ulong colorResourceFenceSignalValue, ID3D12Resource* pDepthResourceToCommit, ID3D12Fence* pDepthResourceFence, [NativeTypeName("UINT64")] ulong depthResourceFenceSignalValue)
     {
-        return ((delegate* unmanaged<IHolographicCameraRenderingParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, ID3D12Resource*, ID3D12Fence*, ulong, int>)(lpVtbl[7]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), pColorResourceToCommit, pColorResourceFence, colorResourceFenceSignalValue, pDepthResourceToCommit, pDepthResourceFence, depthResourceFenceSignalValue);
+        return ((delegate* unmanaged[MemberFunction]<IHolographicCameraRenderingParametersInterop*, ID3D12Resource*, ID3D12Fence*, ulong, ID3D12Resource*, ID3D12Fence*, ulong, int>)(lpVtbl[7]))((IHolographicCameraRenderingParametersInterop*)Unsafe.AsPointer(ref this), pColorResourceToCommit, pColorResourceFence, colorResourceFenceSignalValue, pDepthResourceToCommit, pDepthResourceFence, depthResourceFenceSignalValue);
     }
 
     public interface Interface : IInspectable.Interface
@@ -103,27 +103,27 @@ public unsafe partial struct IHolographicCameraRenderingParametersInterop : IHol
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12Fence *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, ID3D12Fence*, ulong, int> CommitDirect3D12Resource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, ID3D12Fence*, ulong, int> CommitDirect3D12Resource;
 
         [NativeTypeName("HRESULT (ID3D12Resource *, ID3D12Fence *, UINT64, ID3D12Resource *, ID3D12Fence *, UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID3D12Resource*, ID3D12Fence*, ulong, ID3D12Resource*, ID3D12Fence*, ulong, int> CommitDirect3D12ResourceWithDepthData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID3D12Resource*, ID3D12Fence*, ulong, ID3D12Resource*, ID3D12Fence*, ulong, int> CommitDirect3D12ResourceWithDepthData;
     }
 }

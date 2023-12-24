@@ -19,25 +19,4 @@ public static unsafe partial class HTMLDOMXmlSerializerFactoryTests
     {
         Assert.That(typeof(HTMLDOMXmlSerializerFactory).GUID, Is.EqualTo(IID_HTMLDOMXmlSerializerFactory));
     }
-
-    /// <summary>Validates that the <see cref="HTMLDOMXmlSerializerFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLDOMXmlSerializerFactory>(), Is.EqualTo(sizeof(HTMLDOMXmlSerializerFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLDOMXmlSerializerFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLDOMXmlSerializerFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLDOMXmlSerializerFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLDOMXmlSerializerFactory), Is.EqualTo(1));
-    }
 }

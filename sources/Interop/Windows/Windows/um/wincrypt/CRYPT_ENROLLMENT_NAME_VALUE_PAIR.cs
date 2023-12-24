@@ -10,9 +10,9 @@ public unsafe partial struct CRYPT_ENROLLMENT_NAME_VALUE_PAIR
 {
     /// <include file='CRYPT_ENROLLMENT_NAME_VALUE_PAIR.xml' path='doc/member[@name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR.pwszName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszName;
+    public char* pwszName;
 
     /// <include file='CRYPT_ENROLLMENT_NAME_VALUE_PAIR.xml' path='doc/member[@name="CRYPT_ENROLLMENT_NAME_VALUE_PAIR.pwszValue"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszValue;
+    public char* pwszValue;
 }

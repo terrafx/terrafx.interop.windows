@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_STREAM_OUTPUT_DESC">
+    <summary>Describes a streaming output buffer.</summary>
+  </member>
+  <member name="D3D12_STREAM_OUTPUT_DESC.pSODeclaration">
+    <summary>An array of <see cref="D3D12_SO_DECLARATION_ENTRY" /> structures. Can't be <b>NULL</b> if <b>NumEntries</b> &gt; 0.</summary>
+  </member>
+  <member name="D3D12_STREAM_OUTPUT_DESC.NumEntries">
+    <summary>The number of entries in the stream output declaration array that the <b>pSODeclaration</b> member points to.</summary>
+  </member>
+  <member name="D3D12_STREAM_OUTPUT_DESC.pBufferStrides">
+    <summary>An array of buffer strides; each stride is the size of an element for that buffer.</summary>
+  </member>
+  <member name="D3D12_STREAM_OUTPUT_DESC.NumStrides">
+    <summary>The number of strides (or buffers) that the <b>pBufferStrides</b> member points to.</summary>
+  </member>
+  <member name="D3D12_STREAM_OUTPUT_DESC.RasterizedStream">
+    <summary>The index number of the stream to be sent to the rasterizer stage.</summary>
+  </member>
+</doc>

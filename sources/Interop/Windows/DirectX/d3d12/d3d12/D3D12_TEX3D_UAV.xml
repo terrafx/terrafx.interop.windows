@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TEX3D_UAV">
+    <summary>Describes a unordered-access 3D texture resource.</summary>
+  </member>
+  <member name="D3D12_TEX3D_UAV.MipSlice">
+    <summary>The mipmap slice index.</summary>
+  </member>
+  <member name="D3D12_TEX3D_UAV.FirstWSlice">
+    <summary>The zero-based index of the first depth slice to be accessed.</summary>
+  </member>
+  <member name="D3D12_TEX3D_UAV.WSize">
+    <summary>
+      <para>The number of depth slices.</para>
+      <para>Set to -1 to indicate all the depth slices from <b>FirstWSlice</b> to the last slice.</para>
+    </summary>
+  </member>
+</doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFByteStream*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, Guid*, void**, int>)(lpVtbl[0]))((IMFByteStream*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFByteStream*, uint>)(lpVtbl[1]))((IMFByteStream*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, uint>)(lpVtbl[1]))((IMFByteStream*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFByteStream*, uint>)(lpVtbl[2]))((IMFByteStream*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, uint>)(lpVtbl[2]))((IMFByteStream*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.GetCapabilities"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pdwCapabilities)
     {
-        return ((delegate* unmanaged<IMFByteStream*, uint*, int>)(lpVtbl[3]))((IMFByteStream*)Unsafe.AsPointer(ref this), pdwCapabilities);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, uint*, int>)(lpVtbl[3]))((IMFByteStream*)Unsafe.AsPointer(ref this), pdwCapabilities);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.GetLength"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT GetLength([NativeTypeName("QWORD *")] ulong* pqwLength)
     {
-        return ((delegate* unmanaged<IMFByteStream*, ulong*, int>)(lpVtbl[4]))((IMFByteStream*)Unsafe.AsPointer(ref this), pqwLength);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, ulong*, int>)(lpVtbl[4]))((IMFByteStream*)Unsafe.AsPointer(ref this), pqwLength);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.SetLength"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT SetLength([NativeTypeName("QWORD")] ulong qwLength)
     {
-        return ((delegate* unmanaged<IMFByteStream*, ulong, int>)(lpVtbl[5]))((IMFByteStream*)Unsafe.AsPointer(ref this), qwLength);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, ulong, int>)(lpVtbl[5]))((IMFByteStream*)Unsafe.AsPointer(ref this), qwLength);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.GetCurrentPosition"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT GetCurrentPosition([NativeTypeName("QWORD *")] ulong* pqwPosition)
     {
-        return ((delegate* unmanaged<IMFByteStream*, ulong*, int>)(lpVtbl[6]))((IMFByteStream*)Unsafe.AsPointer(ref this), pqwPosition);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, ulong*, int>)(lpVtbl[6]))((IMFByteStream*)Unsafe.AsPointer(ref this), pqwPosition);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.SetCurrentPosition"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT SetCurrentPosition([NativeTypeName("QWORD")] ulong qwPosition)
     {
-        return ((delegate* unmanaged<IMFByteStream*, ulong, int>)(lpVtbl[7]))((IMFByteStream*)Unsafe.AsPointer(ref this), qwPosition);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, ulong, int>)(lpVtbl[7]))((IMFByteStream*)Unsafe.AsPointer(ref this), qwPosition);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.IsEndOfStream"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT IsEndOfStream(BOOL* pfEndOfStream)
     {
-        return ((delegate* unmanaged<IMFByteStream*, BOOL*, int>)(lpVtbl[8]))((IMFByteStream*)Unsafe.AsPointer(ref this), pfEndOfStream);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, BOOL*, int>)(lpVtbl[8]))((IMFByteStream*)Unsafe.AsPointer(ref this), pfEndOfStream);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Read"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT Read(byte* pb, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
     {
-        return ((delegate* unmanaged<IMFByteStream*, byte*, uint, uint*, int>)(lpVtbl[9]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pcbRead);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, byte*, uint, uint*, int>)(lpVtbl[9]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pcbRead);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.BeginRead"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT BeginRead(byte* pb, [NativeTypeName("ULONG")] uint cb, IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFByteStream*, byte*, uint, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[10]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pCallback, punkState);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, byte*, uint, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[10]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pCallback, punkState);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.EndRead"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT EndRead(IMFAsyncResult* pResult, [NativeTypeName("ULONG *")] uint* pcbRead)
     {
-        return ((delegate* unmanaged<IMFByteStream*, IMFAsyncResult*, uint*, int>)(lpVtbl[11]))((IMFByteStream*)Unsafe.AsPointer(ref this), pResult, pcbRead);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, IMFAsyncResult*, uint*, int>)(lpVtbl[11]))((IMFByteStream*)Unsafe.AsPointer(ref this), pResult, pcbRead);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Write"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT Write([NativeTypeName("const BYTE *")] byte* pb, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
     {
-        return ((delegate* unmanaged<IMFByteStream*, byte*, uint, uint*, int>)(lpVtbl[12]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pcbWritten);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, byte*, uint, uint*, int>)(lpVtbl[12]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pcbWritten);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.BeginWrite"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT BeginWrite([NativeTypeName("const BYTE *")] byte* pb, [NativeTypeName("ULONG")] uint cb, IMFAsyncCallback* pCallback, IUnknown* punkState)
     {
-        return ((delegate* unmanaged<IMFByteStream*, byte*, uint, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[13]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pCallback, punkState);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, byte*, uint, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[13]))((IMFByteStream*)Unsafe.AsPointer(ref this), pb, cb, pCallback, punkState);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.EndWrite"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT EndWrite(IMFAsyncResult* pResult, [NativeTypeName("ULONG *")] uint* pcbWritten)
     {
-        return ((delegate* unmanaged<IMFByteStream*, IMFAsyncResult*, uint*, int>)(lpVtbl[14]))((IMFByteStream*)Unsafe.AsPointer(ref this), pResult, pcbWritten);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, IMFAsyncResult*, uint*, int>)(lpVtbl[14]))((IMFByteStream*)Unsafe.AsPointer(ref this), pResult, pcbWritten);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Seek"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT Seek(MFBYTESTREAM_SEEK_ORIGIN SeekOrigin, [NativeTypeName("LONGLONG")] long llSeekOffset, [NativeTypeName("DWORD")] uint dwSeekFlags, [NativeTypeName("QWORD *")] ulong* pqwCurrentPosition)
     {
-        return ((delegate* unmanaged<IMFByteStream*, MFBYTESTREAM_SEEK_ORIGIN, long, uint, ulong*, int>)(lpVtbl[15]))((IMFByteStream*)Unsafe.AsPointer(ref this), SeekOrigin, llSeekOffset, dwSeekFlags, pqwCurrentPosition);
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, MFBYTESTREAM_SEEK_ORIGIN, long, uint, ulong*, int>)(lpVtbl[15]))((IMFByteStream*)Unsafe.AsPointer(ref this), SeekOrigin, llSeekOffset, dwSeekFlags, pqwCurrentPosition);
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Flush"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT Flush()
     {
-        return ((delegate* unmanaged<IMFByteStream*, int>)(lpVtbl[16]))((IMFByteStream*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, int>)(lpVtbl[16]))((IMFByteStream*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFByteStream.xml' path='doc/member[@name="IMFByteStream.Close"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<IMFByteStream*, int>)(lpVtbl[17]))((IMFByteStream*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFByteStream*, int>)(lpVtbl[17]))((IMFByteStream*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -218,57 +218,57 @@ public unsafe partial struct IMFByteStream : IMFByteStream.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCapabilities;
 
         [NativeTypeName("HRESULT (QWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetLength;
 
         [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, int> SetLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, int> SetLength;
 
         [NativeTypeName("HRESULT (QWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> GetCurrentPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> GetCurrentPosition;
 
         [NativeTypeName("HRESULT (QWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, int> SetCurrentPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, int> SetCurrentPosition;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsEndOfStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsEndOfStream;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, uint*, int> Read;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, uint*, int> Read;
 
         [NativeTypeName("HRESULT (BYTE *, ULONG, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, IMFAsyncCallback*, IUnknown*, int> BeginRead;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, IMFAsyncCallback*, IUnknown*, int> BeginRead;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, uint*, int> EndRead;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, uint*, int> EndRead;
 
         [NativeTypeName("HRESULT (const BYTE *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, uint*, int> Write;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, uint*, int> Write;
 
         [NativeTypeName("HRESULT (const BYTE *, ULONG, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, IMFAsyncCallback*, IUnknown*, int> BeginWrite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, IMFAsyncCallback*, IUnknown*, int> BeginWrite;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, uint*, int> EndWrite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, uint*, int> EndWrite;
 
         [NativeTypeName("HRESULT (MFBYTESTREAM_SEEK_ORIGIN, LONGLONG, DWORD, QWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFBYTESTREAM_SEEK_ORIGIN, long, uint, ulong*, int> Seek;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFBYTESTREAM_SEEK_ORIGIN, long, uint, ulong*, int> Seek;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Flush;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Flush;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
     }
 }

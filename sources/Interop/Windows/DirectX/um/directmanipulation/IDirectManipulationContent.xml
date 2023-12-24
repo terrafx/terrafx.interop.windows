@@ -3,180 +3,60 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDirectManipulationContent.GetContentRect">
-    <summary>
-      <para>Retrieves the bounding rectangle of the content, relative to the bounding rectangle of the viewport (if defined).</para>
-    </summary>
-    <param name="contentSize">
-      <para>The bounding rectangle of the content.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the bounding rectangle  has not been set using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationcontent-setcontentrect">SetContentRect</a>, then <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">UI_E_VALUE_NOT_SET</a> is returned. However, the actual content rectangle is (-<a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>, -<a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>, <a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>, <a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</seealso>
+    <summary>Retrieves the bounding rectangle of the content, relative to the bounding rectangle of the viewport (if defined).</summary>
+    <param name="contentSize">The bounding rectangle of the content.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationContent.GetContentTransform">
     <summary>
-      <para>Retrieves the transform applied to the content.</para>
+      <code>Retrieves the transform applied to the content.</code>
     </summary>
-    <param name="matrix">
-      <para>The transform matrix.</para>
-    </param>
-    <param name="pointCount">
-      <para>The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This transform contains the default overpan and bounce curves during manipulation and inertia.</para>
-      <para>This transform does not contain the sync transform set with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationcontent-synccontenttransform">SyncContentTransform</a>.</para>
-      <para>When this method returns, the format of <i>matrix</i> is:</para>
-      <para>
-        <i>matrix</i>
-        <i>matrix</i>
-        <i>matrix</i>
-        <i>matrix</i>
-        <i>matrix</i>
-        <i>matrix</i>
-      </para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</seealso>
+    <param name="matrix">The transform matrix.</param>
+    <param name="pointCount">The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationContent.GetOutputTransform">
-    <summary>
-      <para>Gets the final transform applied to the content.</para>
-    </summary>
-    <param name="matrix">
-      <para>The transform matrix.</para>
-    </param>
-    <param name="pointCount">
-      <para>The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This transform might contain the other custom curves applied during manipulation and inertia.</para>
-      <para>This transform contains both the content transform and the sync transform set with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationcontent-synccontenttransform">SyncContentTransform</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</seealso>
+    <summary>Gets the final transform applied to the content.</summary>
+    <param name="matrix">The transform matrix.</param>
+    <param name="pointCount">The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationContent.GetTag">
-    <summary>
-      <para>Retrieves the tag object set on this content.</para>
-    </summary>
-    <param name="riid">
-      <para>A reference to the identifier of the interface to use. The tag object typically implements this interface.</para>
-    </param>
-    <param name="object">
-      <para>The tag object.</para>
-    </param>
-    <param name="id">
-      <para>The ID portion of the tag.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>GetTag</b> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationcontent-settag">SetTag</a> are useful for associating an external COM object with the content without an external mapping between the two. They can also be used to pass information to callbacks generated for the content.</para>
-      <para>
-        <b>GetTag</b> queries the tag value for the specified interface and returns a pointer to that interface.</para>
-      <para>A tag is a pairing of an integer ID (<i>id</i>) with a Component Object Model (COM) object (<i>object</i>). It can be used by an app to identify a motion.
-The parameters are optional, so that the method can return both parts of the tag, the identifier portion, or the tag object.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the syntax for this method.</para>
-      <code>IUnknown* pObject;
-UINT32 id;
-
-HRESULT hr = pContent-&gt;GetTag(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pObject), &amp;amp;amp;amp;amp;amp;id);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</seealso>
+    <summary>Retrieves the tag object set on this content.</summary>
+    <param name="riid">A reference to the identifier of the interface to use. The tag object typically implements this interface.</param>
+    <param name="object">The tag object.</param>
+    <param name="id">The ID portion of the tag.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationContent.GetViewport">
-    <summary>
-      <para>Retrieves the viewport that contains the content.</para>
-    </summary>
-    <param name="riid">
-      <para>A reference to the identifier of the interface to use.</para>
-    </param>
-    <param name="object">
-      <para>The viewport object.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</seealso>
+    <summary>Retrieves the viewport that contains the content.</summary>
+    <param name="riid">A reference to the identifier of the interface to use.</param>
+    <param name="object">The viewport object.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationContent.SetContentRect">
-    <summary>
-      <para>Specifies the bounding rectangle of the content, relative to its viewport.</para>
-    </summary>
-    <param name="contentSize">
-      <para>The bounding rectangle of the content.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The default bounding rectangle is (-<a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>, -<a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>, <a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>, <a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</seealso>
+    <summary>Specifies the bounding rectangle of the content, relative to its viewport.</summary>
+    <param name="contentSize">The bounding rectangle of the content.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationContent.SetTag">
-    <summary>
-      <para>Specifies the tag object for the content.</para>
-    </summary>
-    <param name="object">
-      <para>The object portion of the tag.</para>
-    </param>
-    <param name="id">
-      <para>The ID portion of the tag.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationcontent-gettag">GetTag</a> and <b>SetTag</b> are useful for associating an external COM object with the content without an external mapping between the two. They can also be used to pass information to callbacks generated for the content.</para>
-      <para>A tag is a pairing of an integer ID  (<i>id</i>) with a Component Object Model (COM) object (<i>object</i>). It can be used by an app to store and retrieve an arbitrary object associated with the content.</para>
-      <para>The <i>object</i> parameter is optional, so that the method can set just the identifier portion.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</seealso>
+    <summary>Specifies the tag object for the content.</summary>
+    <param name="object">The object portion of the tag.</param>
+    <param name="id">The ID portion of the tag.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationContent.SyncContentTransform">
-    <summary>
-      <para>Modifies the content transform while maintaining the output transform.</para>
-    </summary>
-    <param name="matrix">
-      <para>The transform matrix.</para>
-    </param>
-    <param name="pointCount">
-      <para>The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method will fail if the viewport state is <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_status">DIRECTMANIPULATION_RUNNING</a>, <b>DIRECTMANIPULATION_INERTIA</b> or <b>DIRECTMANIPULATION_SUSPENDED</b>.</para>
-      <para>This method is useful when the application wants to apply transforms on top of the content transforms at the end of a manipulation, while preserving the visual output transform of the content.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</seealso>
+    <summary>Modifies the content transform while maintaining the output transform.</summary>
+    <param name="matrix">The transform matrix.</param>
+    <param name="pointCount">The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationContent">
     <summary>
       <para>Encapsulates content inside a viewport, where content represents a visual surface clipped inside the viewport.</para>
-      <para>The content has a set of transforms that controls the visual movement of the surface during manipulation and inertia.
-<b>Note</b>  When implementing a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> object, ensure that the <see cref="IUnknown" /> implementation supports multithreading through thread-safe reference counting. For more information, see <see cref="InterlockedIncrement" /> and <see cref="InterlockedDecrement" />.</para>
+      <para>The content has a set of transforms that controls the visual movement of the surface during manipulation and inertia.</para>
+      <div>
+        <b>Note</b>  When implementing a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> object, ensure that the <see cref="IUnknown" /> implementation supports multithreading through thread-safe reference counting. For more information, see <see cref="InterlockedIncrement" /> and <see cref="InterlockedDecrement" />.</div>
     </summary>
-    <remarks>
-      <para>The system provides an implementation of <b>IDirectManipulationContent</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
   </member>
 </doc>

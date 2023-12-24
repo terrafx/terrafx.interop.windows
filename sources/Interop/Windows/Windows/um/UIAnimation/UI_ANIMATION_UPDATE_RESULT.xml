@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UI_ANIMATION_UPDATE_RESULT">
-    <summary>
-      <para>Defines results for animation updates.</para>
-    </summary>
-    <seealso cref="IUIAnimationManager.Update" />
-    <seealso cref="IUIAnimationTimerUpdateHandler.OnUpdate" />
+    <summary>Defines results for animation updates.</summary>
   </member>
   <member name="UI_ANIMATION_UPDATE_RESULT.UI_ANIMATION_UPDATE_NO_CHANGE">
-    <summary>
-      <para>No animation variables have changed.</para>
-    </summary>
+    <summary>No animation variables have changed.</summary>
   </member>
   <member name="UI_ANIMATION_UPDATE_RESULT.UI_ANIMATION_UPDATE_VARIABLES_CHANGED">
-    <summary>
-      <para>One or more animation variables has changed.</para>
-    </summary>
+    <summary>One or more animation variables has changed.</summary>
   </member>
 </doc>

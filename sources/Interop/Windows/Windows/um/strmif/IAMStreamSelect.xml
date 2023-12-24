@@ -4,11 +4,10 @@
 <doc>
   <member name="IAMStreamSelect.Count">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Count</code> method retrieves the number of available streams.</para>
     </summary>
-    <param name="pcStreams">
-      <para>Receives the number of streams.</para>
-    </param>
+    <param name="pcStreams">Receives the number of streams.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -16,59 +15,58 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The pins are not connected.</para>
-          </description>
-        </item>
+          <description>The pins are not connected.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMStreamSelect Interface" />
   </member>
   <member name="IAMStreamSelect.Enable">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Enable</code> method enables or disables a given stream.</para>
     </summary>
-    <param name="lIndex">
-      <para>Zero-based index of the stream.</para>
-    </param>
+    <param name="lIndex">Zero-based index of the stream.</param>
     <param name="dwFlags">
       <para>Flag indicating whether to enable or disable the stream. Use one of the following values.</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Zero</description>
           <description>Disable all streams in the group containing this stream.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AMSTREAMSELECTENABLE_ENABLE</description>
           <description>Enable only this stream within the given group and disable all others.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AMSTREAMSELECTENABLE_ENABLEALL</description>
           <description>Enable all streams in the group containing this stream.</description>
-        </item>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -78,104 +76,99 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Invalid stream ID.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The filter does not support the specified flag.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream ID.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_NOT_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The filter does not support the specified flag.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_NOT_CONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The pins are not connected.</para>
-          </description>
-        </item>
+          <description>The pins are not connected.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMStreamSelect Interface" />
   </member>
   <member name="IAMStreamSelect.Info">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Info</code> method retrieves information about a given stream.</para>
     </summary>
-    <param name="lIndex">
-      <para>Zero-based index of the stream.</para>
-    </param>
-    <param name="ppmt">
-      <para>Address of a variable that receives a pointer to the stream's media type. This parameter is optional and can be <b>NULL</b>. If the value is non-<b>NULL</b>, the method returns a pointer to an <see cref="AM_MEDIA_TYPE" /> structure. The caller must delete the structure, including the format block. (You can use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/deletemediatype">DeleteMediaType</a> function from the DirectShow base-class library.)</para>
-    </param>
+    <param name="lIndex">Zero-based index of the stream.</param>
+    <param name="ppmt">Address of a variable that receives a pointer to the stream's media type. This parameter is optional and can be <b>NULL</b>. If the value is non-<b>NULL</b>, the method returns a pointer to an <see cref="AM_MEDIA_TYPE" /> structure. The caller must delete the structure, including the format block. (You can use the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/deletemediatype">DeleteMediaType</a> function from the DirectShow base-class library.)</param>
     <param name="pdwFlags">
       <para>Pointer to a variable that receives one of the following values:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Zero</description>
           <description>This stream is disabled.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AMSTREAMSELECTINFO_ENABLED</description>
           <description>The stream is enabled, and others in this group might be enabled too.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AMSTREAMSELECTINFO_EXCLUSIVE</description>
           <description>This stream is the only enabled stream in the group.</description>
-        </item>
-      </list>
-      <para>This parameter is optional and can be <b>NULL</b>.</para>
-    </param>
-    <param name="plcid">
-      <para>Pointer to a variable that receives a locale context (LCID) value. If the stream is associated with a particular locale, the LCID is returned in this variable. Otherwise, the variable receives the value zero. This parameter is optional and can be <b>NULL</b>.</para>
-    </param>
-    <param name="pdwGroup">
-      <para>Pointer to a variable that receives the logical group with which the stream is associated. This parameter is optional and can be <b>NULL</b>.</para>
-    </param>
-    <param name="ppszName">
-      <para>Address of a variable that receives a pointer to the stream name. The caller must free the returned string by calling the <b>CoTaskMemFree</b> function. This parameter is optional and can be <b>NULL</b>.</para>
-    </param>
+        </listheader>
+      </list> <para>This parameter is optional and can be <b>NULL</b>.</para></param>
+    <param name="plcid">Pointer to a variable that receives a locale context (LCID) value. If the stream is associated with a particular locale, the LCID is returned in this variable. Otherwise, the variable receives the value zero. This parameter is optional and can be <b>NULL</b>.</param>
+    <param name="pdwGroup">Pointer to a variable that receives the logical group with which the stream is associated. This parameter is optional and can be <b>NULL</b>.</param>
+    <param name="ppszName">Address of a variable that receives a pointer to the stream name. The caller must free the returned string by calling the <b>CoTaskMemFree</b> function. This parameter is optional and can be <b>NULL</b>.</param>
     <param name="ppObject">
       <para>Address of a variable that receives an <b>IUnknown</b> interface pointer. The method might return a pointer to a pin or filter associated with the stream, or it might return the value <b>NULL</b>. If the method returns a non-<b>NULL</b> value, the caller must release the <b>IUnknown</b> pointer.</para>
       <para>Calling the <see cref="IAMStreamSelect.Enable" /> method might invalidate the object returned by this method.</para>
@@ -193,71 +186,61 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The index is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The index is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMStreamSelect Interface" />
   </member>
   <member name="IAMStreamSelect">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IAMStreamSelect</code> interface selects from the available streams on a parser filter. For example, a file might contain audio streams encoded in several languages, such as English, German, and French. The application could use this interface to select which language is played.</para>
     </summary>
-    <remarks>
-      <para>The following filters implement this interface:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mpeg-1-stream-splitter-filter">MPEG-1 Stream Splitter</a> filter</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mpeg-2-splitter">MPEG-2 Splitter</a> filter</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/DirectShow/sami--cc--parser-filter">SAMI (CC) Parser</a> filter</description>
-        </item>
-      </list>
-    </remarks>
   </member>
 </doc>

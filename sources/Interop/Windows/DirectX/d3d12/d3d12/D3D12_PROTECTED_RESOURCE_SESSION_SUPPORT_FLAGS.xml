@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS">
+    <summary>Defines constants that specify protected resource session support.</summary>
+  </member>
+  <member name="D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS.D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAG_NONE">
+    <summary>Indicates that protected resource sessions are not supported.</summary>
+  </member>
+  <member name="D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS.D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAG_SUPPORTED">
+    <summary>Indicates that protected resource sessions are supported.</summary>
+  </member>
+</doc>

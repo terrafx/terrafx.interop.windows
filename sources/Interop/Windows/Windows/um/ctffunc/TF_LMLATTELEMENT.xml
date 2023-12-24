@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_LMLATTELEMENT">
-    <summary>
-      <para>The <b>TF_LMLATTELEMENT</b> structure contains information about a lattice element. A lattice element is used in speech recognition. This structure is used with the <see cref="IEnumTfLatticeElements.Next" /> method.</para>
-    </summary>
-    <seealso cref="IEnumTfLatticeElements.Next " />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
+    <summary>The <b>TF_LMLATTELEMENT</b> structure contains information about a lattice element. A lattice element is used in speech recognition. This structure is used with the <see cref="IEnumTfLatticeElements.Next" /> method.</summary>
   </member>
   <member name="TF_LMLATTELEMENT.dwFrameStart">
-    <summary>
-      <para>Contains the starting offset, in 100-nanosecond units, of the element relative to the start of the phrase.</para>
-    </summary>
+    <summary>Contains the starting offset, in 100-nanosecond units, of the element relative to the start of the phrase.</summary>
   </member>
   <member name="TF_LMLATTELEMENT.dwFrameLen">
-    <summary>
-      <para>Contains the length, in 100-nanosecond units, of the element.</para>
-    </summary>
+    <summary>Contains the length, in 100-nanosecond units, of the element.</summary>
   </member>
   <member name="TF_LMLATTELEMENT.dwFlags">
-    <summary>
-      <para>Not currently used.</para>
-    </summary>
+    <summary>Not currently used.</summary>
   </member>
   <member name="TF_LMLATTELEMENT.iCost">
     <summary>
@@ -32,24 +22,22 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>SP_LOW_CONFIDENCE</description>
           <description>The speech engine has low confidence in the element.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>SP_NORMAL_CONFIDENCE</description>
           <description>The speech engine has normal confidence in the element.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>SP_HIGH_CONFIDENCE</description>
           <description>The speech engine has high confidence in the element.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="TF_LMLATTELEMENT.bstrText">
-    <summary>
-      <para>Contains the display text for the element. If the spoken word is "two", the display text will be "2". The caller must free this string using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</para>
-    </summary>
+    <summary>Contains the display text for the element. If the spoken word is "two", the display text will be "2". The caller must free this string using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</summary>
   </member>
 </doc>

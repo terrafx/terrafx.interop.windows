@@ -3,93 +3,54 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="QACONTAINER">
-    <summary>
-      <para>Specifies container information for <see cref="IQuickActivate.QuickActivate" />.</para>
-    </summary>
-    <remarks>
-      <para>If an interface pointer in the <b>QACONTAINER</b> structure is <b>NULL</b> it does not indicate that the interface is not supported. In this situation, the control should use <see cref="QueryInterface" /> to obtain the interface pointer in the standard manner.</para>
-    </remarks>
-    <seealso cref="IQuickActivate.QuickActivate" />
-    <seealso cref="QACONTAINERFLAGS" />
+    <summary>Specifies container information for <see cref="IQuickActivate.QuickActivate" />.</summary>
   </member>
   <member name="QACONTAINER.cbSize">
-    <summary>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="QACONTAINER.pClientSite">
-    <summary>
-      <para>A pointer to an <see cref="IOleClientSite" /> interface in the container.</para>
-    </summary>
+    <summary>A pointer to an <see cref="IOleClientSite" /> interface in the container.</summary>
   </member>
   <member name="QACONTAINER.pAdviseSink">
-    <summary>
-      <para>A pointer to an <see cref="IAdviseSinkEx" /> interface in the container.</para>
-    </summary>
+    <summary>A pointer to an <see cref="IAdviseSinkEx" /> interface in the container.</summary>
   </member>
   <member name="QACONTAINER.pPropertyNotifySink">
-    <summary>
-      <para>A pointer to an <see cref="IPropertyNotifySink" /> interface in the container.</para>
-    </summary>
+    <summary>A pointer to an <see cref="IPropertyNotifySink" /> interface in the container.</summary>
   </member>
   <member name="QACONTAINER.pUnkEventSink">
-    <summary>
-      <para>A pointer to an <see cref="IUnknown" /> interface on the container's sink object.</para>
-    </summary>
+    <summary>A pointer to an <see cref="IUnknown" /> interface on the container's sink object.</summary>
   </member>
   <member name="QACONTAINER.dwAmbientFlags">
-    <summary>
-      <para>The number of ambient properties supplied by the container using values from the <see cref="QACONTAINERFLAGS" /> enumeration.</para>
-    </summary>
+    <summary>The number of ambient properties supplied by the container using values from the <see cref="QACONTAINERFLAGS" /> enumeration.</summary>
   </member>
   <member name="QACONTAINER.colorFore">
-    <summary>
-      <para>Specifies ForeColor, an ambient property supplied by the container with a DISPID = -704.</para>
-    </summary>
+    <summary>Specifies ForeColor, an ambient property supplied by the container with a DISPID = -704.</summary>
   </member>
   <member name="QACONTAINER.colorBack">
-    <summary>
-      <para>Specifies BackColor, an ambient property supplied by the container with a DISPID = -701.</para>
-    </summary>
+    <summary>Specifies BackColor, an ambient property supplied by the container with a DISPID = -701.</summary>
   </member>
   <member name="QACONTAINER.pFont">
-    <summary>
-      <para>Specifies Font, an ambient property supplied by the container with a DISPID = -703.</para>
-    </summary>
+    <summary>Specifies Font, an ambient property supplied by the container with a DISPID = -703.</summary>
   </member>
   <member name="QACONTAINER.pUndoMgr">
-    <summary>
-      <para>A pointer to an <see cref="IOleUndoManager" /> interface in the container.</para>
-    </summary>
+    <summary>A pointer to an <see cref="IOleUndoManager" /> interface in the container.</summary>
   </member>
   <member name="QACONTAINER.dwAppearance">
-    <summary>
-      <para>Specifies Appearance, an ambient property supplied by the container with a DISPID = -716.</para>
-    </summary>
+    <summary>Specifies Appearance, an ambient property supplied by the container with a DISPID = -716.</summary>
   </member>
   <member name="QACONTAINER.lcid">
-    <summary>
-      <para>Specifies LocaleIdentifier, an ambient property supplied by the container with a DISPID = -705.</para>
-    </summary>
+    <summary>Specifies LocaleIdentifier, an ambient property supplied by the container with a DISPID = -705.</summary>
   </member>
   <member name="QACONTAINER.hpal">
-    <summary>
-      <para>Specifies Palette, an ambient property supplied by the container with a DISPID = -726.</para>
-    </summary>
+    <summary>Specifies Palette, an ambient property supplied by the container with a DISPID = -726.</summary>
   </member>
   <member name="QACONTAINER.pBindHost">
-    <summary>
-      <para>A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775076(v=vs.85)">IBindHost</a> interface in the container.</para>
-    </summary>
+    <summary>A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775076(v=vs.85)">IBindHost</a> interface in the container.</summary>
   </member>
   <member name="QACONTAINER.pOleControlSite">
-    <summary>
-      <para>A pointer to the <see cref="IOleControlSite" /> interface in the container's site object.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IOleControlSite" /> interface in the container's site object.</summary>
   </member>
   <member name="QACONTAINER.pServiceProvider">
-    <summary>
-      <para>A pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678965(v=vs.85)">IServiceProvider</a> interface in the container.</para>
-    </summary>
+    <summary>A pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678965(v=vs.85)">IServiceProvider</a> interface in the container.</summary>
   </member>
 </doc>

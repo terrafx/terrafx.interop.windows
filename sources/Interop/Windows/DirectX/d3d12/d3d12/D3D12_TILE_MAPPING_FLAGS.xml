@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TILE_MAPPING_FLAGS">
+    <summary>Specifies how to perform a tile-mapping operation.</summary>
+  </member>
+  <member name="D3D12_TILE_MAPPING_FLAGS.D3D12_TILE_MAPPING_FLAG_NONE">
+    <summary>No tile-mapping flags are specified.</summary>
+  </member>
+  <member name="D3D12_TILE_MAPPING_FLAGS.D3D12_TILE_MAPPING_FLAG_NO_HAZARD">
+    <summary>Unsupported, do not use.</summary>
+  </member>
+</doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFTranscodeProfile*, Guid*, void**, int>)(lpVtbl[0]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeProfile*, Guid*, void**, int>)(lpVtbl[0]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFTranscodeProfile*, uint>)(lpVtbl[1]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeProfile*, uint>)(lpVtbl[1]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFTranscodeProfile*, uint>)(lpVtbl[2]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeProfile*, uint>)(lpVtbl[2]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.SetAudioAttributes"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     [VtblIndex(3)]
     public HRESULT SetAudioAttributes(IMFAttributes* pAttrs)
     {
-        return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[3]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[3]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
     }
 
     /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.GetAudioAttributes"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     [VtblIndex(4)]
     public HRESULT GetAudioAttributes(IMFAttributes** ppAttrs)
     {
-        return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[4]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[4]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
     }
 
     /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.SetVideoAttributes"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     [VtblIndex(5)]
     public HRESULT SetVideoAttributes(IMFAttributes* pAttrs)
     {
-        return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[5]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[5]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
     }
 
     /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.GetVideoAttributes"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     [VtblIndex(6)]
     public HRESULT GetVideoAttributes(IMFAttributes** ppAttrs)
     {
-        return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[6]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[6]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
     }
 
     /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.SetContainerAttributes"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     [VtblIndex(7)]
     public HRESULT SetContainerAttributes(IMFAttributes* pAttrs)
     {
-        return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[7]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeProfile*, IMFAttributes*, int>)(lpVtbl[7]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), pAttrs);
     }
 
     /// <include file='IMFTranscodeProfile.xml' path='doc/member[@name="IMFTranscodeProfile.GetContainerAttributes"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
     [VtblIndex(8)]
     public HRESULT GetContainerAttributes(IMFAttributes** ppAttrs)
     {
-        return ((delegate* unmanaged<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[8]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
+        return ((delegate* unmanaged[MemberFunction]<IMFTranscodeProfile*, IMFAttributes**, int>)(lpVtbl[8]))((IMFTranscodeProfile*)Unsafe.AsPointer(ref this), ppAttrs);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IMFTranscodeProfile : IMFTranscodeProfile.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes*, int> SetAudioAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes*, int> SetAudioAttributes;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetAudioAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes**, int> GetAudioAttributes;
 
         [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes*, int> SetVideoAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes*, int> SetVideoAttributes;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetVideoAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes**, int> GetVideoAttributes;
 
         [NativeTypeName("HRESULT (IMFAttributes *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes*, int> SetContainerAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes*, int> SetContainerAttributes;
 
         [NativeTypeName("HRESULT (IMFAttributes **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes**, int> GetContainerAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes**, int> GetContainerAttributes;
     }
 }

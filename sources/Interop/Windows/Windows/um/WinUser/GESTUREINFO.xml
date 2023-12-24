@@ -3,214 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GESTUREINFO">
-    <summary>
-      <para>Stores information about a gesture.</para>
-    </summary>
-    <remarks>
-      <para>The <b>HIDWORD</b> of the <b>ullArguments</b> member is always 0, with the following exceptions:</para>
-      <list type="bullet">
-        <item>
-          <description>For <b>GID_PAN</b>, it is 0 except when there is inertia. When <b>GF_INERTIA</b> is set,  the <b>HIDWORD</b> is an inertia vector (two 16-bit values).</description>
-        </item>
-        <item>
-          <description>For <b>GID_PRESSANDTAP</b>, it is the distance between the two points.</description>
-        </item>
-      </list>
-      <para>The <b>GESTUREINFO</b> structure is retrieved by passing the handle to the gesture information structure
-to the <see cref="GetGestureInfo" /> function.</para>
-      <para>The following flags indicate the various states of the gestures and are stored in <b>dwFlags</b>.</para>
-      <list type="table">
-        <listheader>
-          <description>Name</description>
-          <description>Value</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>GF_BEGIN</description>
-          <description>0x00000001</description>
-          <description>A gesture is starting.</description>
-        </item>
-        <item>
-          <description>GF_INERTIA</description>
-          <description>0x00000002</description>
-          <description>A gesture has triggered inertia.</description>
-        </item>
-        <item>
-          <description>GF_END</description>
-          <description>0x00000004</description>
-          <description>A gesture has finished.</description>
-        </item>
-      </list>
-      <para>
-        <b>Note</b>  Most applications should ignore the <b>GID_BEGIN</b> and <b>GID_END</b> messages and pass them to <b>DefWindowProc</b>.
-These messages are used by the default gesture handler. Application behavior is undefined when
-the <b>GID_BEGIN</b> and <b>GID_END</b> messages are consumed by a third-party application.</para>
-      <para>The following table indicates the various identifiers for gestures.</para>
-      <list type="table">
-        <listheader>
-          <description>Name</description>
-          <description>Value</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>
-            <b>GID_BEGIN</b>
-          </description>
-          <description>1</description>
-          <description>A gesture is starting.</description>
-        </item>
-        <item>
-          <description>
-            <b>GID_END</b>
-          </description>
-          <description>2</description>
-          <description>A gesture is ending.</description>
-        </item>
-        <item>
-          <description>
-            <b>GID_ZOOM</b>
-          </description>
-          <description>3</description>
-          <description>The zoom gesture.</description>
-        </item>
-        <item>
-          <description>
-            <b>GID_PAN</b>
-          </description>
-          <description>4</description>
-          <description>The pan gesture.</description>
-        </item>
-        <item>
-          <description>
-            <b>GID_ROTATE</b>
-          </description>
-          <description>5</description>
-          <description>The rotation gesture.</description>
-        </item>
-        <item>
-          <description>
-            <b>GID_TWOFINGERTAP</b>
-          </description>
-          <description>6</description>
-          <description>The two-finger tap gesture.</description>
-        </item>
-        <item>
-          <description>
-            <b>GID_PRESSANDTAP</b>
-          </description>
-          <description>7</description>
-          <description>The press and tap gesture.</description>
-        </item>
-      </list>
-      <para>
-        <b>Note</b>  The <b>GID_PAN</b> gesture has built-in inertia.  At the end of a pan gesture, additional pan
-gesture messages are created by the operating system.</para>
-      <para>The following type is defined to represent a constant pointer to a <b>GESTUREINFO</b> structure.</para>
-      <code>
-    typedef GESTUREINFO const * PCGESTUREINFO;
-
-</code>
-      <h4>Examples</h4>
-      <code>  LRESULT DecodeGesture(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam){
-    // Create a structure to populate and retrieve the extra message info.
-    GESTUREINFO gi;
-
-    ZeroMemory(&amp;amp;amp;amp;amp;amp;gi, sizeof(GESTUREINFO));
-
-    gi.cbSize = sizeof(GESTUREINFO);
-
-    BOOL bResult  = GetGestureInfo((HGESTUREINFO)lParam, &amp;amp;amp;amp;amp;amp;gi);
-    BOOL bHandled = FALSE;
-
-    if (bResult){
-        // now interpret the gesture
-        switch (gi.dwID){
-           case GID_ZOOM:
-               // Code for zooming goes here
-               bHandled = TRUE;
-               break;
-           case GID_PAN:
-               // Code for panning goes here
-               bHandled = TRUE;
-               break;
-           case GID_ROTATE:
-               // Code for rotation goes here
-               bHandled = TRUE;
-               break;
-           case GID_TWOFINGERTAP:
-               // Code for two-finger tap goes here
-               bHandled = TRUE;
-               break;
-           case GID_PRESSANDTAP:
-               // Code for roll over goes here
-               bHandled = TRUE;
-               break;
-           default:
-               // A gesture was not recognized
-               break;
-        }
-    }else{
-        DWORD dwErr = GetLastError();
-        if (dwErr &gt; 0){
-            //MessageBoxW(hWnd, L"Error!", L"Could not retrieve a GESTUREINFO structure.", MB_OK);
-        }
-    }
-    if (bHandled){
-        return 0;
-    }else{
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-  }
-
-</code>
-    </remarks>
-    <seealso cref="GetGestureInfo" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/mtstructures">Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/wintouch/wm-gesture">WM_GESTURE</seealso>
+    <summary>Stores information about a gesture.</summary>
   </member>
   <member name="GESTUREINFO.cbSize">
-    <summary>
-      <para>The size of the structure, in bytes. The caller must set this to <code>sizeof(GESTUREINFO)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this to <code>sizeof(GESTUREINFO)</code>.</summary>
   </member>
   <member name="GESTUREINFO.dwFlags">
-    <summary>
-      <para>The state of the gesture.  For additional information, see Remarks.</para>
-    </summary>
+    <summary>The state of the gesture. For additional information, see Remarks.</summary>
   </member>
   <member name="GESTUREINFO.dwID">
-    <summary>
-      <para>The identifier of the gesture command.</para>
-    </summary>
+    <summary>The identifier of the gesture command.</summary>
   </member>
   <member name="GESTUREINFO.hwndTarget">
-    <summary>
-      <para>A handle to the window that is targeted by this gesture.</para>
-    </summary>
+    <summary>A handle to the window that is targeted by this gesture.</summary>
   </member>
   <member name="GESTUREINFO.ptsLocation">
-    <summary>
-      <para>A <b>POINTS</b> structure containing the coordinates associated with the gesture. These coordinates are always relative to the origin of the screen.</para>
-    </summary>
+    <summary>A <b>POINTS</b> structure containing the coordinates associated with the gesture. These coordinates are always relative to the origin of the screen.</summary>
   </member>
   <member name="GESTUREINFO.dwInstanceID">
-    <summary>
-      <para>An internally used identifier for the structure.</para>
-    </summary>
+    <summary>An internally used identifier for the structure.</summary>
   </member>
   <member name="GESTUREINFO.dwSequenceID">
-    <summary>
-      <para>An internally used identifier for the sequence.</para>
-    </summary>
+    <summary>An internally used identifier for the sequence.</summary>
   </member>
   <member name="GESTUREINFO.ullArguments">
-    <summary>
-      <para>A 64-bit unsigned integer that contains the arguments for gestures that fit into 8 bytes.</para>
-    </summary>
+    <summary>A 64-bit unsigned integer that contains the arguments for gestures that fit into 8 bytes.</summary>
   </member>
   <member name="GESTUREINFO.cbExtraArgs">
-    <summary>
-      <para>The size, in bytes, of extra arguments that accompany this gesture.</para>
-    </summary>
+    <summary>The size, in bytes, of extra arguments that accompany this gesture.</summary>
   </member>
 </doc>

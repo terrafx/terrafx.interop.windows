@@ -17,7 +17,7 @@ public unsafe partial struct APPX_ENCRYPTED_PACKAGE_SETTINGS2
 
     /// <include file='APPX_ENCRYPTED_PACKAGE_SETTINGS2.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_SETTINGS2.encryptionAlgorithm"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* encryptionAlgorithm;
+    public char* encryptionAlgorithm;
 
     /// <include file='APPX_ENCRYPTED_PACKAGE_SETTINGS2.xml' path='doc/member[@name="APPX_ENCRYPTED_PACKAGE_SETTINGS2.blockMapHashAlgorithm"]/*' />
     public IUri* blockMapHashAlgorithm;

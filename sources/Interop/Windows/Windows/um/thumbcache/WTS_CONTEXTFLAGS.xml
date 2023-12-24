@@ -9,28 +9,18 @@
     </summary>
   </member>
   <member name="WTS_CONTEXTFLAGS.WTSCF_DEFAULT">
-    <summary>
-      <para>None of the following options are set. Set in response to <see cref="WTS_NONE" />.</para>
-    </summary>
+    <summary>None of the following options are set. Set in response to <see cref="WTS_NONE" />.</summary>
   </member>
   <member name="WTS_CONTEXTFLAGS.WTSCF_APPSTYLE">
-    <summary>
-      <para>Provide a thumbnail suitable to the Windows Store app UX guidelines. Set in response to <see cref="WTS_APPSTYLE" />.</para>
-    </summary>
+    <summary>Provide a thumbnail suitable to the Windows Store app UX guidelines. Set in response to <see cref="WTS_APPSTYLE" />.</summary>
   </member>
   <member name="WTS_CONTEXTFLAGS.WTSCF_SQUARE">
-    <summary>
-      <para>If necessary, crop the bitmap's dimensions so that is square. The length of the shortest side becomes the length of all sides. Set in response to <see cref="WTS_CROPTOSQUARE" />.</para>
-    </summary>
+    <summary>If necessary, crop the bitmap's dimensions so that is square. The length of the shortest side becomes the length of all sides. Set in response to <see cref="WTS_CROPTOSQUARE" />.</summary>
   </member>
   <member name="WTS_CONTEXTFLAGS.WTSCF_WIDE">
-    <summary>
-      <para>Stretch and crop the bitmap so that its height is 0.7 times its width. Set in response to <see cref="WTS_WIDETHUMBNAILS" />.</para>
-    </summary>
+    <summary>Stretch and crop the bitmap so that its height is 0.7 times its width. Set in response to <see cref="WTS_WIDETHUMBNAILS" />.</summary>
   </member>
   <member name="WTS_CONTEXTFLAGS.WTSCF_FAST">
-    <summary>
-      <para>If not cached, only extract the thumbnail if it is embedded in EXIF format, typically 96x96. Set in response to <see cref="WTS_FASTEXTRACT" />.</para>
-    </summary>
+    <summary>If not cached, only extract the thumbnail if it is embedded in EXIF format, typically 96x96. Set in response to <see cref="WTS_FASTEXTRACT" />.</summary>
   </member>
 </doc>

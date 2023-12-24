@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DRED_PAGE_FAULT_OUTPUT">
+    <summary>Describes allocation data related to a GPU page fault on a given virtual address (VA). Contains the VA of a GPU page fault, together with a list of matching allocation nodes for active objects, and a list of allocation nodes for recently deleted objects.</summary>
+  </member>
+  <member name="D3D12_DRED_PAGE_FAULT_OUTPUT.PageFaultVA">
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12_gpu_virtual_address">D3D12_GPU_VIRTUAL_ADDRESS</a> containing the GPU virtual address (VA) of the faulting operation if device removal was due to a GPU page fault.</summary>
+  </member>
+  <member name="D3D12_DRED_PAGE_FAULT_OUTPUT.pHeadExistingAllocationNode">
+    <summary>A pointer to a constant <see cref="D3D12_DRED_ALLOCATION_NODE" /> object representing the head of a linked list of allocation nodes for active allocated runtime objects with virtual address (VA) ranges that match the faulting VA (<code>PageFaultVA</code>). Has a value of <code>nullptr</code> if the list is empty.</summary>
+  </member>
+  <member name="D3D12_DRED_PAGE_FAULT_OUTPUT.pHeadRecentFreedAllocationNode">
+    <summary>A pointer to a constant <see cref="D3D12_DRED_ALLOCATION_NODE" /> object representing the head of a linked list of allocation nodes for recently freed runtime objects with virtual address (VA) ranges that match the faulting VA (<code>PageFaultVA</code>). Has a value of <code>nullptr</code> if the list is empty.</summary>
+  </member>
+</doc>

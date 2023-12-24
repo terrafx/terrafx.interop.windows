@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MSV1_0_SUBAUTH_LOGON">
+    <summary>The <b>MSV1_0_SUBAUTH_LOGON</b> structure is used by <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subauthentication</a> DLLs.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_LOGON.MessageType">
+    <summary>A<see cref="MSV1_0_LOGON_SUBMIT_TYPE" /> value that indicates the type of logon being requested. This value must be set to <b>MsV1_0SubAuthLogon</b>.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_LOGON.LogonDomainName">
+    <summary>A <see cref="UNICODE_STRING" /> that contains the name of the logon domain. The specified domain name must be a Windows domain or a mixed domain that is trusted by this computer. If the logon domain name is not known (for example, for clients that do not supply this information), this member should be passed in as a zero-length string. This is the authenticating authority.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_LOGON.UserName">
+    <summary>A <see cref="UNICODE_STRING" /> that contains the account name of the user. The name can be up to 255 bytes long. The name is treated as case insensitive.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_LOGON.Workstation">
+    <summary>A <see cref="UNICODE_STRING" /> that contains the computer name of the workstation where the user logon request was initiated.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_LOGON.ChallengeToClient">
+    <summary>Contains the challenge returned from a previous call to<see cref="LsaCallAuthenticationPackage" />, when <b>MsV1_0Lm20ChallengeRequest</b> was specified as the message type. For more information, see the description of <b>MsV1_0Lm20ChallengeRequest</b> in<see cref="MSV1_0_PROTOCOL_MESSAGE_TYPE" />. This enables the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/a-gly">authentication package</a> to determine whether the challenge response is correct.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_LOGON.AuthenticationInfo1">
+    <summary>Contains <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">subauthentication package</a>–specific information. For more information, see the subauthentication package documentation.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_LOGON.AuthenticationInfo2">
+    <summary>Contains subauthentication package specific information. For more information, see the subauthentication package documentation.</summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_LOGON.ParameterControl">
+    <summary>
+      <para>Specifies additional information about how the logon should be processed. This member can contain one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_CLEARTEXT_PASSWORD_ALLOWED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>LanMan2.0 or LanMan1.0 send a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">plaintext</a> password instead of a challenge response. To allow plaintext passwords to be used in the NetworkLogon message, an application must supply this flag.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_UPDATE_LOGON_STATISTICS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Update the logon statistics for the account. If this flag is not set, the bad password count is set to zero upon successful logon.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_RETURN_USER_PARAMETERS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the user parameters to be returned in the <b>HomeDirectoryDrive</b> member of the <see cref="MSV1_0_INTERACTIVE_PROFILE" /> structure.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_DONT_TRY_GUEST_ACCOUNT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Prevents the user from logging on with a guest account.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_ALLOW_SERVER_TRUST_ACCOUNT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If this flag is set, domain controller accounts can be used for authentication; otherwise, only user accounts can be used.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_RETURN_PASSWORD_EXPIRY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the password expiration time to be returned in the <b>LogoffTime</b> member of the <see cref="MSV1_0_LM20_LOGON_PROFILE" /> structure returned in the output buffer.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_ALLOW_WORKSTATION_TRUST_ACCOUNT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description> Permits remote-boot clients to log on using a computer account.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_TRY_GUEST_ACCOUNT_ONLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Causes the user to log on using the guest account.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_RETURN_PROFILE_PATH</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns the profile path associated with the logged on user.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MSV1_0_TRY_SPECIFIED_DOMAIN_ONLY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description> Only a domain controller associated with the specified domain will attempt to validate the logon request.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="MSV1_0_SUBAUTH_LOGON.SubAuthPackageId">
+    <summary>Contains the subauthentication package identifier. This value is set by the subauthentication package vendor.</summary>
+  </member>
+</doc>

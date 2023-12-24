@@ -3,23 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1CommandSink4.SetPrimitiveBlend2">
-    <summary>
-      <para>Sets a new primitive blend mode. Allows access to the MAX primitive blend mode.</para>
-    </summary>
-    <param name="primitiveBlend">
-      <para>Type: <b><see cref="D2D1_PRIMITIVE_BLEND" /></b></para>
-      <para>The primitive blend that will apply to subsequent primitives.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code.</para>
-    </returns>
-    <seealso cref="ID2D1CommandSink4" />
+    <summary>Sets a new primitive blend mode. Allows access to the MAX primitive blend mode.</summary>
+    <param name="primitiveBlend">The primitive blend that will apply to subsequent primitives.</param>
+    <returns>If the method succeeds, it returns S_OK. If it fails, it returns an HRESULT error code.</returns>
   </member>
   <member name="ID2D1CommandSink4">
-    <summary>
-      <para>This interface performs all the same functions as the existing <see cref="ID2D1CommandSink3" /> interface.
-It also enables access to the new primitive blend mode, MAX, through the <see cref="SetPrimitiveBlend2" /> method.</para>
-    </summary>
+    <summary>This interface performs all the same functions as the existing <see cref="ID2D1CommandSink3" /> interface. It also enables access to the new primitive blend mode, MAX, through the <see cref="SetPrimitiveBlend2" /> method.</summary>
   </member>
 </doc>

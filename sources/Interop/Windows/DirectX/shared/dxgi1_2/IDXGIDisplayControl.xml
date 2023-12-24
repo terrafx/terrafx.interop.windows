@@ -3,52 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIDisplayControl.IsStereoEnabled">
-    <summary>
-      <para>Retrieves a Boolean value that indicates whether the operating system's stereoscopic 3D display behavior is enabled.</para>
-    </summary>
+    <summary>Retrieves a Boolean value that indicates whether the operating system's stereoscopic 3D display behavior is enabled.</summary>
     <returns>
       <para>
         <b>IsStereoEnabled</b> returns TRUE when the operating system's stereoscopic 3D display behavior is enabled and FALSE when this behavior is disabled.</para>
       <para>
         <b>Platform Update for Windows 7:  </b>On Windows 7 or Windows Server 2008 R2 with the <a href="https://support.microsoft.com/help/2670838">Platform Update for Windows 7</a> installed, <b>IsStereoEnabled</b> always returns FALSE because stereoscopic 3D display behavior isn’t available with the Platform Update for Windows 7. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.</para>
     </returns>
-    <remarks>
-      <para>You pass a Boolean value to the  <see cref="IDXGIDisplayControl.SetStereoEnabled" /> method to either enable or disable the operating system's stereoscopic 3D display behavior. TRUE enables the operating system's stereoscopic 3D display behavior and FALSE disables it.</para>
-    </remarks>
-    <seealso cref="IDXGIDisplayControl" />
   </member>
   <member name="IDXGIDisplayControl.SetStereoEnabled">
-    <summary>
-      <para>Set a Boolean value to either enable or disable the operating system's stereoscopic 3D display behavior.</para>
-    </summary>
-    <param name="enabled">
-      <para>A Boolean value that either enables or disables the operating system's stereoscopic 3D display behavior. TRUE enables the operating system's stereoscopic 3D display behavior and FALSE disables it.</para>
-    </param>
-    <remarks>
-      <para>
-        <b>Platform Update for Windows 7:  </b>On Windows 7 or Windows Server 2008 R2 with the <a href="https://support.microsoft.com/help/2670838">Platform Update for Windows 7</a> installed, <b>SetStereoEnabled</b> doesn't change stereoscopic 3D display behavior because stereoscopic 3D display behavior isn’t available with the Platform Update for Windows 7. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.</para>
-    </remarks>
-    <seealso cref="IDXGIDisplayControl" />
+    <summary>Set a Boolean value to either enable or disable the operating system's stereoscopic 3D display behavior.</summary>
+    <param name="enabled">A Boolean value that either enables or disables the operating system's stereoscopic 3D display behavior. TRUE enables the operating system's stereoscopic 3D display behavior and FALSE disables it.</param>
   </member>
   <member name="IDXGIDisplayControl">
     <summary>
       <para>The <b>IDXGIDisplayControl</b> interface exposes methods to indicate user preference for the operating system's stereoscopic 3D display behavior and to set stereoscopic 3D display status to enable or disable.</para>
       <para>We recommend that you not use <b>IDXGIDisplayControl</b> to query or set system-wide stereoscopic 3D settings in your stereoscopic 3D apps. Instead, for your windowed apps, call the <see cref="IDXGIFactory2.IsWindowedStereoEnabled" /> method to determine whether to render in stereo; for your full-screen apps, call the <see cref="IDXGIOutput1.GetDisplayModeList1" /> method and then determine whether any of the returned display modes support rendering in stereo.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>Note</b>  The <b>IDXGIDisplayControl</b> interface is only used by the <b>Display</b> app of the operating system's Control Panel or by control applets from third party graphics vendors. This interface is not meant for developers of end-user apps.</para>
-      <para>
-        <b>Note</b>  The <b>IDXGIDisplayControl</b> interface does not exist for Windows Store apps.</para>
-      <para>Call <see cref="QueryInterface" /> from a factory object (<see cref="IDXGIFactory" />, <see cref="IDXGIFactory1" /> or <see cref="IDXGIFactory2" />) to retrieve the <b>IDXGIDisplayControl</b> interface. The following code shows how.</para>
-      <code>IDXGIDisplayControl * pDXGIDisplayControl;
-hr = g_pDXGIFactory-&gt;QueryInterface(__uuidof(IDXGIDisplayControl), (void **)&amp;amp;amp;amp;amp;amp;pDXGIDisplayControl);
-</code>
-      <para>The operating system processes changes to stereo-enabled configuration asynchronously. Therefore, these changes might not be immediately visible in every process that calls <see cref="IDXGIDisplayControl.IsStereoEnabled" /> to query for stereo configuration.  Control applets can use the <see cref="IDXGIFactory2.RegisterStereoStatusEvent" /> or <see cref="IDXGIFactory2.RegisterStereoStatusWindow" /> method to register for notifications of all stereo configuration changes.</para>
-      <para>
-        <b>Platform Update for Windows 7:  </b>Stereoscopic 3D display behavior isn’t available with the Platform Update for Windows 7. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IUnknown" />
   </member>
 </doc>

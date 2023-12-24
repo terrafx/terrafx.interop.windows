@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_ATTRIBUTES_ARRAY">
-    <summary>
-      <para>Contains the clipboard format definition for CFSTR_FILE_ATTRIBUTES_ARRAY.</para>
-    </summary>
+    <summary>Contains the clipboard format definition for CFSTR_FILE_ATTRIBUTES_ARRAY.</summary>
   </member>
   <member name="FILE_ATTRIBUTES_ARRAY.cItems">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The number of items in the <b>rgdwFileAttributes</b> array.</para>
-    </summary>
+    <summary>The number of items in the <b>rgdwFileAttributes</b> array.</summary>
   </member>
   <member name="FILE_ATTRIBUTES_ARRAY.dwSumFileAttributes">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>All of the attributes combined using OR.</para>
-    </summary>
+    <summary>All of the attributes combined using OR.</summary>
   </member>
   <member name="FILE_ATTRIBUTES_ARRAY.dwProductFileAttributes">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>All of the attributes combined using AND.</para>
-    </summary>
+    <summary>All of the attributes combined using AND.</summary>
   </member>
   <member name="FILE_ATTRIBUTES_ARRAY.rgdwFileAttributes">
-    <summary>
-      <para>Type: <b>DWORD[1]</b></para>
-      <para>An array of file attributes.</para>
-    </summary>
+    <summary>An array of file attributes.</summary>
   </member>
 </doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_INDEX_BUFFER_VIEW">
+    <summary>Describes the index buffer to view.</summary>
+  </member>
+  <member name="D3D12_INDEX_BUFFER_VIEW.BufferLocation">
+    <summary>The GPU virtual address of the index buffer.<br />D3D12_GPU_VIRTUAL_ADDRESS is a typedef'd synonym of UINT64.</summary>
+  </member>
+  <member name="D3D12_INDEX_BUFFER_VIEW.SizeInBytes">
+    <summary>The size in bytes of the index buffer.</summary>
+  </member>
+  <member name="D3D12_INDEX_BUFFER_VIEW.Format">
+    <summary>A <see cref="DXGI_FORMAT" />-typed value for the index-buffer format.</summary>
+  </member>
+</doc>

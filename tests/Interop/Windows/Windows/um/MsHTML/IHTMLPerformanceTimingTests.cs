@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLPerformanceTimingTests
     {
         Assert.That(typeof(IHTMLPerformanceTiming).GUID, Is.EqualTo(IID_IHTMLPerformanceTiming));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLPerformanceTiming" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLPerformanceTiming>(), Is.EqualTo(sizeof(IHTMLPerformanceTiming)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLPerformanceTiming" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLPerformanceTiming).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLPerformanceTiming" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLPerformanceTiming), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLPerformanceTiming), Is.EqualTo(4));
-        }
-    }
 }

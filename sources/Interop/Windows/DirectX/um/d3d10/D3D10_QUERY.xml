@@ -3,49 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_QUERY">
-    <summary>
-      <para>Query types.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+    <summary>Query types.</summary>
   </member>
   <member name="D3D10_QUERY.D3D10_QUERY_EVENT">
-    <summary>
-      <para>Determines whether or not the GPU is finished processing commands. When the GPU is finished processing commands <see cref="GetData" /> will return S_OK, and pData will point to a BOOL with a value of <b>TRUE</b>. When using this type of query, <see cref="Begin" /> is disabled.</para>
-    </summary>
+    <summary>Determines whether or not the GPU is finished processing commands. When the GPU is finished processing commands <see cref="GetData" /> will return S_OK, and pData will point to a BOOL with a value of <b>TRUE</b>. When using this type of query, <see cref="Begin" /> is disabled.</summary>
   </member>
   <member name="D3D10_QUERY.D3D10_QUERY_OCCLUSION">
-    <summary>
-      <para>Get the number of samples that passed the depth and stencil tests in between <see cref="Begin" /> and <see cref="End" />. <see cref="GetData" /> returns a UINT64. If a depth or stencil test is disabled, then each of those tests will be counted as a pass.</para>
-    </summary>
+    <summary>Get the number of samples that passed the depth and stencil tests in between <see cref="Begin" /> and <see cref="End" />. <see cref="GetData" /> returns a UINT64. If a depth or stencil test is disabled, then each of those tests will be counted as a pass.</summary>
   </member>
   <member name="D3D10_QUERY.D3D10_QUERY_TIMESTAMP">
-    <summary>
-      <para>Get a timestamp value where <see cref="GetData" /> returns a UINT64. This kind of query is only useful if two timestamp queries are done in the middle of a D3D10_QUERY_TIMESTAMP_DISJOINT query. The difference of two timestamps can be used to determine how many ticks have elapsed, and the D3D10_QUERY_TIMESTAMP_DISJOINT query will determine if that difference is a reliable value and also has a value that shows how to convert the number of ticks into seconds. See <see cref="D3D10_QUERY_DATA_TIMESTAMP_DISJOINT" />. When using this type of query, <see cref="Begin" /> is disabled.</para>
-    </summary>
+    <summary>Get a timestamp value where <see cref="GetData" /> returns a UINT64. This kind of query is only useful if two timestamp queries are done in the middle of a D3D10_QUERY_TIMESTAMP_DISJOINT query. The difference of two timestamps can be used to determine how many ticks have elapsed, and the D3D10_QUERY_TIMESTAMP_DISJOINT query will determine if that difference is a reliable value and also has a value that shows how to convert the number of ticks into seconds. See <see cref="D3D10_QUERY_DATA_TIMESTAMP_DISJOINT" />. When using this type of query, <see cref="Begin" /> is disabled.</summary>
   </member>
   <member name="D3D10_QUERY.D3D10_QUERY_TIMESTAMP_DISJOINT">
-    <summary>
-      <para>Determines whether or not a D3D10_QUERY_TIMESTAMP is returning reliable values, and also gives the frequency of the processor enabling you to convert the number of elapsed ticks into seconds. <see cref="GetData" /> will return a <see cref="D3D10_QUERY_DATA_TIMESTAMP_DISJOINT" />. This type of query should only be invoked once per frame or less.</para>
-    </summary>
+    <summary>Determines whether or not a D3D10_QUERY_TIMESTAMP is returning reliable values, and also gives the frequency of the processor enabling you to convert the number of elapsed ticks into seconds. <see cref="GetData" /> will return a <see cref="D3D10_QUERY_DATA_TIMESTAMP_DISJOINT" />. This type of query should only be invoked once per frame or less.</summary>
   </member>
   <member name="D3D10_QUERY.D3D10_QUERY_PIPELINE_STATISTICS">
-    <summary>
-      <para>Get pipeline statistics, such as the number of pixel shader invocations in between <see cref="Begin" /> and <see cref="End" />. <see cref="GetData" /> will return a <see cref="D3D10_QUERY_DATA_PIPELINE_STATISTICS" />.</para>
-    </summary>
+    <summary>Get pipeline statistics, such as the number of pixel shader invocations in between <see cref="Begin" /> and <see cref="End" />. <see cref="GetData" /> will return a <see cref="D3D10_QUERY_DATA_PIPELINE_STATISTICS" />.</summary>
   </member>
   <member name="D3D10_QUERY.D3D10_QUERY_OCCLUSION_PREDICATE">
-    <summary>
-      <para>Similar to D3D10_QUERY_OCCLUSION, except <see cref="GetData" /> returns a BOOL indicating whether or not any samples passed the depth and stencil tests - <b>TRUE</b> meaning at least one passed, <b>FALSE</b> meaning none passed.</para>
-    </summary>
+    <summary>Similar to D3D10_QUERY_OCCLUSION, except <see cref="GetData" /> returns a BOOL indicating whether or not any samples passed the depth and stencil tests - <b>TRUE</b> meaning at least one passed, <b>FALSE</b> meaning none passed.</summary>
   </member>
   <member name="D3D10_QUERY.D3D10_QUERY_SO_STATISTICS">
-    <summary>
-      <para>Get streaming output statistics, such as the number of primitives streamed out in between <see cref="Begin" /> and <see cref="End" />. <see cref="GetData" /> will return a <see cref="D3D10_QUERY_DATA_SO_STATISTICS" /> structure.</para>
-    </summary>
+    <summary>Get streaming output statistics, such as the number of primitives streamed out in between <see cref="Begin" /> and <see cref="End" />. <see cref="GetData" /> will return a <see cref="D3D10_QUERY_DATA_SO_STATISTICS" /> structure.</summary>
   </member>
   <member name="D3D10_QUERY.D3D10_QUERY_SO_OVERFLOW_PREDICATE">
-    <summary>
-      <para>Determines whether or not any of the streaming output buffers overflowed in between <see cref="Begin" /> and <see cref="End" />. <see cref="GetData" /> returns a BOOL - <b>TRUE</b> meaning there was an overflow, <b>FALSE</b> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</para>
-    </summary>
+    <summary>Determines whether or not any of the streaming output buffers overflowed in between <see cref="Begin" /> and <see cref="End" />. <see cref="GetData" /> returns a BOOL - <b>TRUE</b> meaning there was an overflow, <b>FALSE</b> meaning there was not an overflow. If streaming output writes to multiple buffers, and one of the buffers overflows, then it will stop writing to all the output buffers. When an overflow is detected by Direct3D it is prevented from happening - no memory is corrupted. This predication may be used in conjunction with an SO_STATISTICS query so that when an overflow occurs the SO_STATISTIC query will let the application know how much memory was needed to prevent an overflow.</summary>
   </member>
 </doc>

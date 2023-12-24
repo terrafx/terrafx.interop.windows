@@ -19,32 +19,4 @@ public static unsafe partial class IZoomEventsTests
     {
         Assert.That(typeof(IZoomEvents).GUID, Is.EqualTo(IID_IZoomEvents));
     }
-
-    /// <summary>Validates that the <see cref="IZoomEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IZoomEvents>(), Is.EqualTo(sizeof(IZoomEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="IZoomEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IZoomEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IZoomEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IZoomEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IZoomEvents), Is.EqualTo(4));
-        }
-    }
 }

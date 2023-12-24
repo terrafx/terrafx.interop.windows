@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ELEMENT_WISE_NEGATE_OPERATOR_DESC">
+    <summary>
+      <para>Negates each element of <i>InputTensor</i>, storing the result into the corresponding element of <i>OutputTensor</i>.</para>
+      <code>f(x) = -x</code>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias <i>InputTensor</i> during binding.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_NEGATE_OPERATOR_DESC.InputTensor">
+    <summary>The input tensor to read from.</summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_NEGATE_OPERATOR_DESC.OutputTensor">
+    <summary>The output tensor to write the results to.</summary>
+  </member>
+</doc>

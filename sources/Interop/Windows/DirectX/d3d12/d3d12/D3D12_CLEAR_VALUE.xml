@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_CLEAR_VALUE">
+    <summary>Describes a value used to optimize clear operations for a particular resource.</summary>
+  </member>
+  <member name="D3D12_CLEAR_VALUE.Format">
+    <summary>
+      <para>Specifies one member of the <see cref="DXGI_FORMAT" /> enum.</para>
+      <para>The format of the commonly cleared color follows the same validation rules as a view/ descriptor creation. In general, the format of the clear color can be any format in the same typeless group that the resource format belongs to.</para>
+      <para>This <i>Format</i> must match the format of the view used during the clear operation. It indicates whether the <i>Color</i> or the <i>DepthStencil</i> member is valid and how to convert the values for usage with the resource.</para>
+    </summary>
+  </member>
+  <member name="D3D12_CLEAR_VALUE.Color">
+    <summary>Specifies a 4-entry array of float values, determining the RGBA value. The order of RGBA matches the order used with <see cref="ClearRenderTargetView" />.</summary>
+  </member>
+  <member name="D3D12_CLEAR_VALUE.DepthStencil">
+    <summary>Specifies one member of <see cref="D3D12_DEPTH_STENCIL_VALUE" />. These values match the semantics of <i>Depth</i> and <i>Stencil</i> in <see cref="ClearDepthStencilView" />.</summary>
+  </member>
+</doc>

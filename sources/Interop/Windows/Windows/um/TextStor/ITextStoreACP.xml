@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITextStoreACP.AdviseSink">
-    <summary>
-      <para>The <b>ITextStoreACP.AdviseSink</b> method installs a new advise sink from the <see cref="ITextStoreACPSink" /> interface or modifies an existing advise sink. The sink interface is specified by the <i>punk</i> parameter.</para>
-    </summary>
-    <param name="riid">
-      <para>Specifies the sink interface.</para>
-    </param>
-    <param name="punk">
-      <para>Pointer to the sink interface. Cannot be <b>NULL</b>.</para>
-    </param>
-    <param name="dwMask">
-      <para>Specifies the events that notify the advise sink. For more information about possible parameter values, see <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-as--constants">TS_AS_* Constants</a>.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.AdviseSink</b> method installs a new advise sink from the <see cref="ITextStoreACPSink" /> interface or modifies an existing advise sink. The sink interface is specified by the <i>punk</i> parameter.</summary>
+    <param name="riid">Specifies the sink interface.</param>
+    <param name="punk">Pointer to the sink interface. Cannot be <b>NULL</b>.</param>
+    <param name="dwMask">Specifies the events that notify the advise sink. For more information about possible parameter values, see <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-as--constants">TS_AS_* Constants</a>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,134 +14,63 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_ADVISELIMIT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A sink interface pointer could not be obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>CONNECT_E_ADVISELIMIT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified sink interface is unsupported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A sink interface pointer could not be obtained.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified sink interface is unsupported.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified sink object could not be obtained.</para>
-          </description>
-        </item>
+          <description>The specified sink object could not be obtained.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Subsequent calls with the same interface, represented by the <i>punk</i> parameter, are handled as requests to update the <i>dwMask</i> parameter. Servers should not call the <b>AddRef</b> method on the sink in response to such a request.</para>
-      <para>Servers only maintain a single connection point. Attempts to advise a second sink object fail until the original sink object is removed. Applications should use the <see cref="ITextStoreACP.UnadviseSink" /> method to unregister the sink object when notifications are not required.</para>
-      <para>Use this method to get the <see cref="ITextStoreACPServices" /> interface.</para>
-      <h4>Examples</h4>
-      <para>CMyTextEditor
-<see cref="ITextStoreACP " /></para>
-      <code>
-STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
-{
-        HRESULT         hr;
-        IUnknown                *punkID;
-        typedef struct
-        {
-        IUnknown                *punkID;
-        ITextStoreACPSink       *pTextStoreACPSink;
-        DWORD                   dwMask;
-        }ADVISE_SINK, *PADVISE_SINK;
-
-        // Determine if the sink interface exists.
-        // Get the pointer to the IUnknown interface and check if the IUnknown
-        // pointer is the same as a pointer to an existing sink.
-        // If the sink exists, update the existing sink with the
-        // dwMask parameters passed to this method.
-        hr = QueryInterface(IID_IUnknown, (LPVOID*)&amp;amp;amp;amp;amp;amp;punkID);
-
-        if(FAILED(hr))
-        {
-                hr = E_INVALIDARG;
-        }
-
-        if(punkID == m_AdviseSink.punkID)
-        {
-                m_AdviseSink.dwMask = dwMask;
-                hr = S_OK;
-        }
-
-        // If the sink does not exist, do the following:
-        // 1. Install a new sink.
-        // 2. Keep the pointer to the IUnknown interface to uniquely
-        //        identify this advise sink.
-        // 3. Set the dwMask parameter of this new sink to the dwMask
-        //    parameters passed to this method.
-        // 4. Increment the reference count.
-        // 5. Release the IUnknown pointer, since this pointer is no
-        //        longer required.
-
-        if(IsEqualIID(riid, IID_ITextStoreACPSink))
-        {
-                punk-&gt;QueryInterface(IID_ITextStoreACPSink,
-                         (LPVOID*)&amp;amp;amp;amp;amp;amp;m_AdviseSink.pTextStoreACPSink);
-                m_AdviseSink.punkID = punkID;
-                m_AdviseSink.dwMask = dwMask;
-                punkID-&gt;AddRef();
-                punkID-&gt;Release();
-
-                hr = S_OK;
-        }
-        return hr;
-
-}
-
-</code>
-    </remarks>
-    <seealso cref="ITextStoreACP " />
-    <seealso cref="ITextStoreACP.UnadviseSink " />
-    <seealso cref="ITextStoreACPServices " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-as--constants">TS_AS_* Constants
-</seealso>
   </member>
   <member name="ITextStoreACP.FindNextAttrTransition">
-    <summary>
-      <para>The <b>ITextStoreACP.FindNextAttrTransition</b> method determines the character position where a transition occurs in an attribute value. The specified attribute to check is application-dependent.</para>
-    </summary>
-    <param name="acpStart">
-      <para>Specifies the character position to start the search for an attribute transition.</para>
-    </param>
-    <param name="acpHalt">
-      <para>Specifies the character position to end the search for an attribute transition.</para>
-    </param>
-    <param name="cFilterAttrs">
-      <para>Specifies the number of attributes to check.</para>
-    </param>
-    <param name="paFilterAttrs">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> data type that specifies the attribute to check.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.FindNextAttrTransition</b> method determines the character position where a transition occurs in an attribute value. The specified attribute to check is application-dependent.</summary>
+    <param name="acpStart">Specifies the character position to start the search for an attribute transition.</param>
+    <param name="acpHalt">Specifies the character position to end the search for an attribute transition.</param>
+    <param name="cFilterAttrs">Specifies the number of attributes to check.</param>
+    <param name="paFilterAttrs">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> data type that specifies the attribute to check.</param>
     <param name="dwFlags">
       <para>Specifies the direction to search for an attribute transition. By default, the method searches forward.</para>
       <list type="table">
@@ -157,33 +78,35 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TS_ATTR_FIND_BACKWARDS</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_ATTR_FIND_BACKWARDS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method searches backward.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method searches backward.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_ATTR_FIND_WANT_OFFSET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TS_ATTR_FIND_WANT_OFFSET</b>
-          </description>
-          <description>
-            <para>The <i>plFoundOffset</i> parameter receives the character offset of the attribute transition from <i>acpStart</i>.</para>
-          </description>
-        </item>
+          <description>The <i>plFoundOffset</i> parameter receives the character offset of the attribute transition from <i>acpStart</i>.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pacpNext">
-      <para>Receives the next character position to check for an attribute transition.</para>
-    </param>
-    <param name="pfFound">
-      <para>Receives a Boolean value of <b>TRUE</b> if an attribute transition was found, otherwise <b>FALSE</b> is returned.</para>
-    </param>
-    <param name="plFoundOffset">
-      <para>Receives the character position of the attribute transition (not ACP positions). If TS_ATTR_FIND_WANT_OFFSET flag is set in <i>dwFlags</i>, receives the character offset of the attribute transition from <i>acpStart</i>.</para>
-    </param>
+    <param name="pacpNext">Receives the next character position to check for an attribute transition.</param>
+    <param name="pfFound">Receives a Boolean value of <b>TRUE</b> if an attribute transition was found, otherwise <b>FALSE</b> is returned.</param>
+    <param name="plFoundOffset">Receives the character position of the attribute transition (not ACP positions). If TS_ATTR_FIND_WANT_OFFSET flag is set in <i>dwFlags</i>, receives the character offset of the attribute transition from <i>acpStart</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -191,48 +114,37 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_INVALIDPOS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_INVALIDPOS</b>
-            </para>
-          </description>
-          <description>
-            <para>The character positions specified are beyond the text in the document.</para>
-          </description>
-        </item>
+          <description>The character positions specified are beyond the text in the document.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  If an application does not implement <b>ITextStoreACP.FindNextAttrTransition</b>, <see cref="ITfReadOnlyProperty.EnumRanges" /> fails with E_FAIL.</para>
-    </remarks>
-    <seealso cref="ITextStoreACP" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID
-</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-attr--constants">TS_ATTR_* Constants
-</seealso>
   </member>
   <member name="ITextStoreACP.GetACPFromPoint">
-    <summary>
-      <para>The <b>ITextStoreACP.GetACPFromPoint</b> method converts a point in screen coordinates to an application character position.</para>
-    </summary>
-    <param name="vcView">
-      <para>Specifies the context view.</para>
-    </param>
-    <param name="ptScreen">
-      <para>Pointer to the <b>POINT</b> structure with the screen coordinates of the point.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.GetACPFromPoint</b> method converts a point in screen coordinates to an application character position.</summary>
+    <param name="vcView">Specifies the context view.</param>
+    <param name="ptScreen">Pointer to the <b>POINT</b> structure with the screen coordinates of the point.</param>
     <param name="dwFlags">
       <para>Specifies the character position to return based upon the screen coordinates of the point relative to a character bounding box. By default, the character position returned is the character bounding box containing the screen coordinates of the point. If the point is outside a character bounding box, the method returns <b>NULL</b> or <a href="https://docs.microsoft.com//windows/desktop/TSF/manager-return-values">TF_E_INVALIDPOINT</a>. Other bit flags for this parameter are as follows.</para>
       <para>The bit flags can be combined.</para>
@@ -241,27 +153,33 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>GXFPF_ROUND_NEAREST</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GXFPF_ROUND_NEAREST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>If the screen coordinates of the point are contained in a character bounding box, the character position returned is the bounding edge closest to the screen coordinates of the point.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>If the screen coordinates of the point are contained in a character bounding box, the character position returned is the bounding edge closest to the screen coordinates of the point.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GXFPF_NEAREST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>GXFPF_NEAREST</b>
-          </description>
-          <description>
-            <para>If the screen coordinates of the point are not contained in a character bounding box, the closest character position is returned.</para>
-          </description>
-        </item>
+          <description>If the screen coordinates of the point are not contained in a character bounding box, the closest character position is returned.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pacp">
-      <para>Receives the character position that corresponds to the screen coordinates of the point.</para>
-    </param>
+    <param name="pacp">Receives the character position that corresponds to the screen coordinates of the point.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -269,105 +187,53 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_INVALIDPOINT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>ptScreen</i> parameter is not within the bounding box of any character.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TS_E_INVALIDPOINT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLAYOUT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>ptScreen</i> parameter is not within the bounding box of any character.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLAYOUT</b>
-            </para>
-          </description>
-          <description>
-            <para>The application has not calculated a text layout.</para>
-          </description>
-        </item>
+          <description>The application has not calculated a text layout.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <img alt="Point 1 is in character bounding box and point 2 is outside the character bounding box." src="https://docs.microsoft.com/windows/win32/api/TextStor/images/ACPFig01.gif" />
-      </para>
-      <para>The point 1 screen coordinates cause the <i>pacp</i> parameter to be 0 by default or if the <i>dwFlags</i> parameter is set to <a href="https://docs.microsoft.com//windows/desktop/TSF/gxfpf--constants">GXFPF_NEAREST</a> because the point 1 screen coordinates are inside the character bounding box of character position 0. If the <i>dwFlags</i> parameter is set to GXFPF_ROUND_NEAREST for point 1, the <i>pacp</i> parameter is 1 because the point 1 screen coordinates are closest to range position 1. Range position 1 is the starting range position of character position 1.</para>
-      <para>For the point 2 screen coordinates, the method returns <b>TF_E_INVALIDPOINT</b> by default or if the <i>dwFlags</i> parameter is set to <b>GXFPF_NEAREST</b> because the point 2 screen coordinates are outside a character bounding box. If the <i>dwFlags</i> parameter is set to <b>GXFPF_ROUND_NEAREST</b>, then the point 2 screen coordinates causes the <i>pacp</i> parameter to be 1, because the closest character position to the point 2 screen coordinates is character position 1.</para>
-      <para>
-        <b>Point 1
-</b>
-      </para>
-      <list type="bullet">
-        <item>
-          <description>Default-- <i>pacp = 0</i> --The screen coordinates point is inside the character bounding box of Character Position 0.</description>
-        </item>
-        <item>
-          <description>
-            <b>GXFPF_ROUND_NEAREST</b> -- <i>pacp = 1</i> --The screen coordinates of the point is closest to Range Position 1 which is the starting range position of Character Position 1.</description>
-        </item>
-        <item>
-          <description>
-            <b>GXFPF_NEAREST</b> -- <i>pacp = 0</i> --The default behavior occurs because the point is within the character bounding box of Character Position 0.</description>
-        </item>
-      </list>
-      <b>Point 2</b>
-      <list type="bullet">
-        <item>
-          <description>Default-- <i>hr = TF_E_INVALIDPOINT</i> --The screen coordinates of the point is outside a character bounding box.</description>
-        </item>
-        <item>
-          <description>GXPF_ROUND_NEAREST-- <i>hr = TF_E_INVALIDPOINT</i> --The default behavior occurs because the screen coordinates of the point are outside a character bounding box.</description>
-        </item>
-        <item>
-          <description>GXPF_NEAREST-- <i>pacp = 1</i> --The closest character position to the screen coordinates of the point is Character Position 1.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/gxfpf--constants">GXFPF_* Constants
-</seealso>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITfContextOwner.GetACPFromPoint " />
-    <seealso cref="ITfContextView.GetRangeFromPoint " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/manager-return-values">Manager Return Values
-</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie
-</seealso>
   </member>
   <member name="ITextStoreACP.GetActiveView">
-    <summary>
-      <para>The <b>ITextStoreACP.GetActiveView</b> method returns a <a href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie</a> data type that specifies the current active view.</para>
-    </summary>
-    <param name="pvcView">
-      <para>Receives the <b>TsViewCookie</b> data type that specifies the current active view.</para>
-    </param>
-    <returns>
-      <para>This method has no return values.</para>
-    </returns>
-    <seealso cref="ITextStoreACP" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie
-</seealso>
+    <summary>The <b>ITextStoreACP.GetActiveView</b> method returns a <a href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie</a> data type that specifies the current active view.</summary>
+    <param name="pvcView">Receives the <b>TsViewCookie</b> data type that specifies the current active view.</param>
+    <returns>This method has no return values.</returns>
   </member>
   <member name="ITextStoreACP.GetEmbedded">
-    <summary>
-      <para>Gets an embedded document.</para>
-    </summary>
-    <param name="acpPos">
-      <para>Contains the character position, within the document, from where the object is obtained.</para>
-    </param>
+    <summary>Gets an embedded document.</summary>
+    <param name="acpPos">Contains the character position, within the document, from where the object is obtained.</param>
     <param name="rguidService">
       <para>Contains a GUID value that defines the requested format of the obtained object. This can be one of the following values.</para>
       <list type="table">
@@ -375,38 +241,46 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>GUID_TS_SERVICE_DATAOBJECT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GUID_TS_SERVICE_DATAOBJECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object should be obtained as an <see cref="IDataObject" /> object.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The object should be obtained as an <see cref="IDataObject" /> object.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GUID_TS_SERVICE_ACCESSIBLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The object should be obtained as an <a href="https://docs.microsoft.com//windows/desktop/WinAuto/accessible-objects">Accessible object</a>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>GUID_TS_SERVICE_ACCESSIBLE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GUID_TS_SERVICE_ACTIVEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The object should be obtained as an <a href="https://docs.microsoft.com//windows/desktop/WinAuto/accessible-objects">Accessible object</a>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>GUID_TS_SERVICE_ACTIVEX</b>
-          </description>
-          <description>
-            <para>The object should be obtained as an ActiveX object.</para>
-          </description>
-        </item>
+          <description>The object should be obtained as an ActiveX object.</description>
+        </listheader>
       </list>
     </param>
-    <param name="riid">
-      <para>Specifies the interface type requested.</para>
-    </param>
-    <param name="ppunk">
-      <para>Pointer to an <b>IUnknown</b> pointer that receives the requested interface.</para>
-    </param>
+    <param name="riid">Specifies the interface type requested.</param>
+    <param name="ppunk">Pointer to an <b>IUnknown</b> pointer that receives the requested interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -414,102 +288,109 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The application does not support embedded objects.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_INVALIDPOS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>acpPos</i> is not within the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The requested interface type is unsupported.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more parameters are invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The caller does not have a read-only lock.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOOBJECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>There is no embedded object at <i>acpPos</i>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The application does not support embedded objects.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOSERVICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_INVALIDPOS</b>
-            </para>
-          </description>
-          <description>
-            <i>acpPos</i> is not within the document.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested interface type is unsupported.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller does not have a read-only lock.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOOBJECT</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no embedded object at <i>acpPos</i>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOSERVICE</b>
-            </para>
-          </description>
-          <description>
-            <para>The service type specified in <i>rguidService</i> is unsupported.</para>
-          </description>
-        </item>
+          <description>The service type specified in <i>rguidService</i> is unsupported.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The caller must use <b>QueryInterface</b> to probe for appropriate interfaces. Prospective interfaces include those associated with embedded documents or controls such as <b>IOleObject</b> , <b>IDataObject</b> , <b>IViewObject</b> , <b>IPersistStorage</b> , <b>IOleCache</b> , or <b>IDispatch</b> .</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinAuto/accessible-objects">Accessible Objects</seealso>
-    <seealso cref="IDataObject" />
-    <seealso cref="ITextStoreACP" />
   </member>
   <member name="ITextStoreACP.GetEndACP">
-    <summary>
-      <para>The <b>ITextStoreACP.GetEndACP</b> method returns the number of characters in a document.</para>
-    </summary>
-    <param name="pacp">
-      <para>Receives the character position of the last character in the document plus one.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.GetEndACP</b> method returns the number of characters in a document.</summary>
+    <param name="pacp">Receives the character position of the last character in the document plus one.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -517,54 +398,50 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The application has not implemented this method. This is usually an indication that calculating the end position requires excessive resources. If the end position is necessary, you can use <see cref="ITextStoreACP.GetText" /> to calculate it, though this can also be a memory-intensive operation, paging in arbitrarily large amounts of memory from disk.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The application has not implemented this method. This is usually an indication that calculating the end position requires excessive resources. If the end position is necessary, you can use <see cref="ITextStoreACP.GetText" /> to calculate it, though this can also be a memory-intensive operation, paging in arbitrarily large amounts of memory from disk.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller does not have a read-only lock.</para>
-          </description>
-        </item>
+          <description>The caller does not have a read-only lock.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.GetText " />
   </member>
   <member name="ITextStoreACP.GetFormattedText">
-    <summary>
-      <para>The <b>ITextStoreACP.GetFormattedText</b> method returns formatted text data about a specified text string. The caller must have a read/write lock on the document before calling this method.</para>
-    </summary>
-    <param name="acpStart">
-      <para>Specifies the starting character position of the text to get in the document.</para>
-    </param>
-    <param name="acpEnd">
-      <para>Specifies the ending character position of the text to get in the document. This parameter is ignored if the value is 1.</para>
-    </param>
-    <param name="ppDataObject">
-      <para>Receives the pointer to the <b>IDataObject</b> object that contains the formatted text.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.GetFormattedText</b> method returns formatted text data about a specified text string. The caller must have a read/write lock on the document before calling this method.</summary>
+    <param name="acpStart">Specifies the starting character position of the text to get in the document.</param>
+    <param name="acpEnd">Specifies the ending character position of the text to get in the document. This parameter is ignored if the value is 1.</param>
+    <param name="ppDataObject">Receives the pointer to the <b>IDataObject</b> object that contains the formatted text.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -572,39 +449,37 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller does not have a read/write lock on the document.</para>
-          </description>
-        </item>
+          <description>The caller does not have a read/write lock on the document.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITextStoreACP.GetScreenExt">
-    <summary>
-      <para>The <b>ITextStoreACP.GetScreenExt</b> method returns the bounding box screen coordinates of the display surface where the text stream is rendered.</para>
-    </summary>
-    <param name="vcView">
-      <para>Specifies the context view.</para>
-    </param>
-    <param name="prc">
-      <para>Receives the bounding box screen coordinates of the display surface of the document.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.GetScreenExt</b> method returns the bounding box screen coordinates of the display surface where the text stream is rendered.</summary>
+    <param name="vcView">Specifies the context view.</param>
+    <param name="prc">Receives the bounding box screen coordinates of the display surface of the document.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -612,53 +487,39 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified <i>vcView</i> parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The specified <i>vcView</i> parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the text is not currently displayed, for example, if the document window is minimized, the <i>prc</i> parameter is set to { 0, 0, 0, 0 }.</para>
-    </remarks>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITfContextOwner.GetScreenExt " />
-    <seealso cref="ITfContextView.GetScreenExt " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie
-</seealso>
   </member>
   <member name="ITextStoreACP.GetSelection">
-    <summary>
-      <para>The <b>ITextStoreACP.GetSelection</b> method returns the character position of a text selection in a document. This method supports multiple text selections. The caller must have a read-only lock on the document before calling this method.</para>
-    </summary>
-    <param name="ulIndex">
-      <para>Specifies the text selections that start the process. If the <a href="https://docs.microsoft.com//windows/desktop/TSF/miscellaneous-framework-constants">TF_DEFAULT_SELECTION</a> constant is specified for this parameter, the input selection starts the process.</para>
-    </param>
-    <param name="ulCount">
-      <para>Specifies the maximum number of selections to return.</para>
-    </param>
-    <param name="pSelection">
-      <para>Receives the style, start, and end character positions of the selected text. These values are put into the <see cref="TS_SELECTION_ACP" /> structure.</para>
-    </param>
-    <param name="pcFetched">
-      <para>Receives the number of <i>pSelection</i> structures returned.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.GetSelection</b> method returns the character position of a text selection in a document. This method supports multiple text selections. The caller must have a read-only lock on the document before calling this method.</summary>
+    <param name="ulIndex">Specifies the text selections that start the process. If the <a href="https://docs.microsoft.com//windows/desktop/TSF/miscellaneous-framework-constants">TF_DEFAULT_SELECTION</a> constant is specified for this parameter, the input selection starts the process.</param>
+    <param name="ulCount">Specifies the maximum number of selections to return.</param>
+    <param name="pSelection">Receives the style, start, and end character positions of the selected text. These values are put into the <see cref="TS_SELECTION_ACP" /> structure.</param>
+    <param name="pcFetched">Receives the number of <i>pSelection</i> structures returned.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -666,51 +527,48 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The caller does not have a read-only lock on the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOSELECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The caller does not have a read-only lock on the document.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOSELECTION</b>
-            </para>
-          </description>
-          <description>
-            <para>The document has no selection.</para>
-          </description>
-        </item>
+          <description>The document has no selection.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/edit-contexts">Edit Contexts</seealso>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.SetSelection " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/miscellaneous-framework-constants">Miscellaneous Framework Constants</seealso>
-    <seealso cref="TS_SELECTION_ACP " />
   </member>
   <member name="ITextStoreACP.GetStatus">
-    <summary>
-      <para>The <b>ITextStoreACP.GetStatus</b> method obtains the document status. The document status is returned through the <see cref="TS_STATUS" /> structure.</para>
-    </summary>
-    <param name="pdcs">
-      <para>Receives the <b>TS_STATUS</b> structure that contains the document status. Cannot be <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.GetStatus</b> method obtains the document status. The document status is returned through the <see cref="TS_STATUS" /> structure.</summary>
+    <param name="pdcs">Receives the <b>TS_STATUS</b> structure that contains the document status. Cannot be <b>NULL</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -718,63 +576,44 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The pointer to the TS_STATUS parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The pointer to the TS_STATUS parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITextStoreACP " />
-    <seealso cref="ITfContextOwner.GetStatus " />
-    <seealso cref="TS_STATUS " />
   </member>
   <member name="ITextStoreACP.GetText">
-    <summary>
-      <para>The <b>ITextStoreACP.GetText</b> method returns information about text at a specified character position. This method returns the visible and hidden text and indicates if embedded data is attached to the text.</para>
-    </summary>
-    <param name="acpStart">
-      <para>Specifies the starting character position.</para>
-    </param>
-    <param name="acpEnd">
-      <para>Specifies the ending character position. If this parameter is 1, then return all text in the text store.</para>
-    </param>
-    <param name="pchPlain">
-      <para>Specifies the buffer to receive the plain text data. If this parameter is <b>NULL</b>, then the <i>cchPlainReq</i> parameter must be 0.</para>
-    </param>
-    <param name="cchPlainReq">
-      <para>Specifies the number of plain text characters passed to the method.</para>
-    </param>
-    <param name="pcchPlainRet">
-      <para>Receives the number of characters copied into the plain text buffer. This parameter cannot be <b>NULL</b>. Use a parameter if values are not required.</para>
-    </param>
-    <param name="prgRunInfo">
-      <para>Receives an array of <see cref="TS_RUNINFO" /> structures. May be <b>NULL</b> only if <i>cRunInfoReq</i> = 0.</para>
-    </param>
-    <param name="cRunInfoReq">
-      <para>Specifies the size, in characters, of the text run buffer.</para>
-    </param>
-    <param name="pcRunInfoRet">
-      <para>Receives the number of <b>TS_RUNINFO</b> structures written to the text run buffer. This parameter cannot be <b>NULL</b>.</para>
-    </param>
-    <param name="pacpNext">
-      <para>Receives the character position of the next unread character. Cannot be <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.GetText</b> method returns information about text at a specified character position. This method returns the visible and hidden text and indicates if embedded data is attached to the text.</summary>
+    <param name="acpStart">Specifies the starting character position.</param>
+    <param name="acpEnd">Specifies the ending character position. If this parameter is -1, then return all text in the text store.</param>
+    <param name="pchPlain">Specifies the buffer to receive the plain text data. If this parameter is <b>NULL</b>, then the <i>cchPlainReq</i> parameter must be 0.</param>
+    <param name="cchPlainReq">Specifies the number of plain text characters passed to the method.</param>
+    <param name="pcchPlainRet">Receives the number of characters copied into the plain text buffer. This parameter cannot be <b>NULL</b>. Use a parameter if values are not required.</param>
+    <param name="prgRunInfo">Receives an array of <see cref="TS_RUNINFO" /> structures. May be <b>NULL</b> only if <i>cRunInfoReq</i> = 0.</param>
+    <param name="cRunInfoReq">Specifies the size, in characters, of the text run buffer.</param>
+    <param name="pcRunInfoRet">Receives the number of <b>TS_RUNINFO</b> structures written to the text run buffer. This parameter cannot be <b>NULL</b>.</param>
+    <param name="pacpNext">Receives the character position of the next unread character. Cannot be <b>NULL</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -782,69 +621,52 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_INVALIDPOS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>acpStart</i> or <i>acpEnd</i> parameters are outside of the document text.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_INVALIDPOS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>acpStart</i> or <i>acpEnd</i> parameters are outside of the document text.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller does not have a read-only lock on the document.</para>
-          </description>
-        </item>
+          <description>The caller does not have a read-only lock on the document.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Callers that use this method must have a read-only lock on the document by calling the <b>ITextStoreACP.RequestLock</b> method. Without a read-only lock, the method fails and returns <a href="https://docs.microsoft.com//windows/desktop/TSF/manager-return-values">TF_E_NOLOCK</a>.</para>
-      <para>Applications can also truncate the method return values for internal reasons. Callers should carefully examine the return characters and text run counts to get the required return values. If the return values are incomplete, repeatedly call the method until the return values are complete.</para>
-      <para>The caller can request plain text only by setting the <i>cRunInfoReq</i> parameter to 0 and the <i>prgRunInfo</i> parameter to <b>NULL</b>. The caller can request only text run data by setting the <i>cchPlainReq</i> parameter to 0 and the <i>pchPlain</i> parameter to <b>NULL</b>. However, the caller must still supply valid non-<b>null</b> values for <i>pcchPlainRet</i>, even if this parameter is not used.</para>
-      <para>If <i>acpEnd</i> is -1, then it should be handled as if set at the end of the stream. Otherwise, it will be greater than or equal to zero.</para>
-      <para>On exit, <i>pacpNext</i> should be set to the character position of the next character in the stream not referenced by the return values. A caller would use this to quickly scan text with multiple ITextStoreACP.GetText calls.</para>
-    </remarks>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.RequestLock " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/manager-return-values">Manager Return Values</seealso>
-    <seealso cref="TS_RUNINFO " />
   </member>
   <member name="ITextStoreACP.GetTextExt">
-    <summary>
-      <para>The <b>ITextStoreACP.GetTextExt</b> method returns the bounding box, in screen coordinates, of the text at a specified character position. The caller must have a read-only lock on the document before calling this method.</para>
-    </summary>
-    <param name="vcView">
-      <para>Specifies the context view.</para>
-    </param>
-    <param name="acpStart">
-      <para>Specifies the starting character position of the text to get in the document.</para>
-    </param>
-    <param name="acpEnd">
-      <para>Specifies the ending character position of the text to get in the document.</para>
-    </param>
-    <param name="prc">
-      <para>Receives the bounding box in screen coordinates of the text at the specified character positions.</para>
-    </param>
-    <param name="pfClipped">
-      <para>Receives a Boolean value that specifies if the text in the bounding box has been clipped. If this parameter is <b>TRUE</b>, the bounding box contains clipped text and does not include the entire requested text range. The bounding box is clipped because the requested range is not visible.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.GetTextExt</b> method returns the bounding box, in screen coordinates, of the text at a specified character position. The caller must have a read-only lock on the document before calling this method.</summary>
+    <param name="vcView">Specifies the context view.</param>
+    <param name="acpStart">Specifies the starting character position of the text to get in the document.</param>
+    <param name="acpEnd">Specifies the ending character position of the text to get in the document.</param>
+    <param name="prc">Receives the bounding box in screen coordinates of the text at the specified character positions.</param>
+    <param name="pfClipped">Receives a Boolean value that specifies if the text in the bounding box has been clipped. If this parameter is <b>TRUE</b>, the bounding box contains clipped text and does not include the entire requested text range. The bounding box is clipped because the requested range is not visible.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -852,75 +674,73 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The specified start and end character positions are equal.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TS_E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_INVALIDPOS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The range specified by the <i>acpStart</i> and <i>acpEnd</i> parameters extends past the beginning or end of the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified start and end character positions are equal.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLAYOUT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The application has not calculated a text layout.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TS_E_INVALIDPOS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The range specified by the <i>acpStart</i> and <i>acpEnd</i> parameters extends past the beginning or end of the document.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLAYOUT</b>
-            </para>
-          </description>
-          <description>
-            <para>The application has not calculated a text layout.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller does not have a read-only lock on the document.</para>
-          </description>
-        </item>
+          <description>The caller does not have a read-only lock on the document.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the document window is minimized, or if the specified text is not currently visible, the method returns S_OK with the <i>prc</i> parameter set to {0,0,0,0}.</para>
-    </remarks>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITfContextOwner.GetTextExt " />
-    <seealso cref="ITfContextView.GetTextExt " />
   </member>
   <member name="ITextStoreACP.GetWnd">
-    <summary>
-      <para>The <b>ITextStoreACP.GetWnd</b> method returns the handle to a window that corresponds to the current document.</para>
-    </summary>
-    <param name="vcView">
-      <para>Specifies the <a href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie</a> data type that corresponds to the current document.</para>
-    </param>
-    <param name="phwnd">
-      <para>Receives a pointer to the handle of the window that corresponds to the current document. This parameter can be <b>NULL</b> if the document does not have the corresponding handle to the window.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.GetWnd</b> method returns the handle to a window that corresponds to the current document.</summary>
+    <param name="vcView">Specifies the <a href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie</a> data type that corresponds to the current document.</param>
+    <param name="phwnd">Receives a pointer to the handle of the window that corresponds to the current document. This parameter can be <b>NULL</b> if the document does not have the corresponding handle to the window.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -928,54 +748,40 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <b>TsViewCookie</b> data type is invalid.</para>
-          </description>
-        </item>
+          <description>The <b>TsViewCookie</b> data type is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A document cannot have a corresponding window handle if the document is in memory but not displayed on the screen, or if the document is a windowless control and the control does not recognize the window handle of the owner of the windowless controls. Callers cannot assume that the <i>phwnd</i> parameter will receive a non-<b>NULL</b> value even if the method is successful. Callers can also receive a <b>NULL</b> value for the <i>phwnd</i> parameter.</para>
-    </remarks>
-    <seealso cref="ITextStoreACP" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tsviewcookie">TsViewCookie
-</seealso>
   </member>
   <member name="ITextStoreACP.InsertEmbedded">
-    <summary>
-      <para>Inserts an embedded object at the specified character.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Must be TS_IE_CORRECTION.</para>
-    </param>
-    <param name="acpStart">
-      <para>Contains the starting character position where the object is inserted.</para>
-    </param>
-    <param name="acpEnd">
-      <para>Contains the ending character position where the object is inserted.</para>
-    </param>
-    <param name="pDataObject">
-      <para>Pointer to an <see cref="IDataObject" /> interface that contains data about the object inserted.</para>
-    </param>
-    <param name="pChange">
-      <para>Pointer to a <see cref="TS_TEXTCHANGE" /> structure that receives data about the modified text.</para>
-    </param>
+    <summary>Inserts an embedded object at the specified character.</summary>
+    <param name="dwFlags">Must be TS_IE_CORRECTION.</param>
+    <param name="acpStart">Contains the starting character position where the object is inserted.</param>
+    <param name="acpEnd">Contains the ending character position where the object is inserted.</param>
+    <param name="pDataObject">Pointer to an <see cref="IDataObject" /> interface that contains data about the object inserted.</param>
+    <param name="pChange">Pointer to a <see cref="TS_TEXTCHANGE" /> structure that receives data about the modified text.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -983,78 +789,84 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The application does not support embedded objects.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_FORMAT</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The application does not support the data type contained in <i>pDataObject</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_INVALIDPOS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>acpStart</i> and/or <i>acpEnd</i> are not within the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The application does not support embedded objects.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_FORMAT</b>
-            </para>
-          </description>
-          <description>
-            <para>The application does not support the data type contained in <i>pDataObject</i>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_INVALIDPOS</b>
-            </para>
-          </description>
-          <description>
-            <i>acpStart</i> and/or <i>acpEnd</i> are not within the document.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller does not have a read/write lock.</para>
-          </description>
-        </item>
+          <description>The caller does not have a read/write lock.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IDataObject" />
-    <seealso cref="ITextStoreACP" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-ie--constants">TS_IE_* Constants
-</seealso>
-    <seealso cref="TS_TEXTCHANGE " />
   </member>
   <member name="ITextStoreACP.InsertEmbeddedAtSelection">
-    <summary>
-      <para>The <b>ITextStoreACP.InsertEmbeddedAtSelection</b> method inserts an <see cref="IDataObject" /> object at the insertion point or selection. The client that calls this method must have a read/write lock before inserting an <b>IDataObject</b> object into the document.</para>
-    </summary>
+    <summary>The <b>ITextStoreACP.InsertEmbeddedAtSelection</b> method inserts an <see cref="IDataObject" /> object at the insertion point or selection. The client that calls this method must have a read/write lock before inserting an <b>IDataObject</b> object into the document.</summary>
     <param name="dwFlags">
       <para>Specifies whether the <i>pacpStart</i> and <i>pacpEnd</i> parameters and the <see cref="TS_TEXTCHANGE" /> structure will contain the results of the object insertion.</para>
       <para>The <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-ias--constants">TF_IAS_NOQUERY</a> and TF_IAS_QUERYONLY flags cannot be combined.</para>
@@ -1063,42 +875,47 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>0</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Text insertion will occur, and the <i>pacpStart</i> and <i>pacpEnd</i> parameters will contain the results of the text insertion. The <b>TS_TEXTCHANGE</b> structure must be filled with this flag.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Text insertion will occur, and the <i>pacpStart</i> and <i>pacpEnd</i> parameters will contain the results of the text insertion. The <b>TS_TEXTCHANGE</b> structure must be filled with this flag.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_IAS_NOQUERY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Text is inserted, the values of the <i>pacpStart</i> and <i>pacpEnd</i> parameters can be <b>NULL</b>, and the <b>TS_TEXTCHANGE</b> structure must be filled. Use this flag if the results of the text insertion are not required.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_IAS_NOQUERY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_IAS_QUERYONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Text is inserted, the values of the <i>pacpStart</i> and <i>pacpEnd</i> parameters can be <b>NULL</b>, and the <b>TS_TEXTCHANGE</b> structure must be filled. Use this flag if the results of the text insertion are not required.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_IAS_QUERYONLY</b>
-          </description>
-          <description>
-            <para>Text is not inserted, and the values for the <i>pacpStart</i> and <i>pacpEnd</i> parameter contain the results of the text insertion. The values of these parameters depend on how the application implements text insertion into a document. For more information, see the Remarks section.</para>
-            <para>Use this flag to view the results of the text insertion without actually inserting the text, for example, to predict the results of collapsing or otherwise adjusting a selection. It is not required that you fill the <b>TS_TEXTCHANGE</b> structure with this flag.</para>
-          </description>
-        </item>
+          <description>Text is not inserted, and the values for the <i>pacpStart</i> and <i>pacpEnd</i> parameter contain the results of the text insertion. The values of these parameters depend on how the application implements text insertion into a document. For more information, see the Remarks section.<para>Use this flag to view the results of the text insertion without actually inserting the text, for example, to predict the results of collapsing or otherwise adjusting a selection. It is not required that you fill the <b>TS_TEXTCHANGE</b> structure with this flag.</para></description>
+        </listheader>
       </list>
     </param>
-    <param name="pDataObject">
-      <para>Pointer to the <b>IDataObject</b> object to be inserted.</para>
-    </param>
-    <param name="pacpStart">
-      <para>Pointer to the starting application character position where the object insertion will occur.</para>
-    </param>
-    <param name="pacpEnd">
-      <para>Pointer to the ending application character position where the object insertion will occur. This parameter value will be the same as the value of the <i>pacpStart</i> parameter for an insertion point.</para>
-    </param>
+    <param name="pDataObject">Pointer to the <b>IDataObject</b> object to be inserted.</param>
+    <param name="pacpStart">Pointer to the starting application character position where the object insertion will occur.</param>
+    <param name="pacpEnd">Pointer to the ending application character position where the object insertion will occur. This parameter value will be the same as the value of the <i>pacpStart</i> parameter for an insertion point.</param>
     <param name="pChange">
       <para>Pointer to a <b>TS_TEXTCHANGE</b> structure with the following members.</para>
       <list type="table">
@@ -1106,30 +923,42 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>acpStart</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>acpStart</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The starting application character position before the object is inserted into the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The starting application character position before the object is inserted into the document.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>acpOldEnd</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The ending application character position before the object is inserted into the document. This value is the same as <b>acpStart</b> for an insertion point. If this value is different from <b>acpStart</b>, then text was selected prior to the object insertion.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>acpOldEnd</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>acpNewEnd</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The ending application character position before the object is inserted into the document. This value is the same as <b>acpStart</b> for an insertion point. If this value is different from <b>acpStart</b>, then text was selected prior to the object insertion.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>acpNewEnd</b>
-          </description>
-          <description>
-            <para>The ending application character position after the object insertion took place.</para>
-          </description>
-        </item>
+          <description>The ending application character position after the object insertion took place.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -1139,51 +968,47 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>pchText</i> parameter is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>pchText</i> parameter is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller does not have a lock on the document.</para>
-          </description>
-        </item>
+          <description>The caller does not have a lock on the document.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The values of the <i>pacpStart</i> and <i>pacpEnd</i> parameters depend upon how the client application inserts an object into a document. For example, if the application sets the cursor at the start of the object after object insertion, then the value of the <i>pacpStart</i> and <i>pacpEnd</i> parameters is the same as the <b>acpStart</b> member of the <b>TS_TEXTCHANGE</b> structure.</para>
-    </remarks>
-    <seealso cref="IDataObject" />
-    <seealso cref="ITextStoreACP" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-ias--constants">TF_IAS_* Constants
-</seealso>
-    <seealso cref="TS_TEXTCHANGE " />
   </member>
   <member name="ITextStoreACP.InsertTextAtSelection">
-    <summary>
-      <para>The <b>ITextStoreACP.InsertTextAtSelection</b> method inserts text at the insertion point or selection. A caller must have a read/write lock on the document before inserting text.</para>
-    </summary>
+    <summary>The <b>ITextStoreACP.InsertTextAtSelection</b> method inserts text at the insertion point or selection. A caller must have a read/write lock on the document before inserting text.</summary>
     <param name="dwFlags">
       <para>Specifies whether the <i>pacpStart</i> and <i>pacpEnd</i> parameters and the <see cref="TS_TEXTCHANGE" /> structure contain the results of the text insertion.</para>
       <para>The <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-ias--constants">TF_IAS_NOQUERY</a> and TF_IAS_QUERYONLY flags cannot be combined.</para>
@@ -1192,44 +1017,48 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>0</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>0</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Text insertion will occur, and the <i>pacpStart</i> and <i>pacpEnd</i> parameters will contain the results of the text insertion. The <b>TS_TEXTCHANGE</b> structure must be filled with this flag.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Text insertion will occur, and the <i>pacpStart</i> and <i>pacpEnd</i> parameters will contain the results of the text insertion. The <b>TS_TEXTCHANGE</b> structure must be filled with this flag.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_IAS_NOQUERY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Text is inserted, the values of the <i>pacpStart</i> and <i>pacpEnd</i> parameters can be <b>NULL</b>, and the <b>TS_TEXTCHANGE</b> structure must be filled. Use this flag to view the results of the text insertion.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_IAS_NOQUERY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_IAS_QUERYONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Text is inserted, the values of the <i>pacpStart</i> and <i>pacpEnd</i> parameters can be <b>NULL</b>, and the <b>TS_TEXTCHANGE</b> structure must be filled. Use this flag to view the results of the text insertion.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_IAS_QUERYONLY</b>
-          </description>
-          <description>
-            <para>Text is not inserted, and the values for the <i>pacpStart</i> and <i>pacpEnd</i> parameters contain the results of the text insertion. The values of these parameters depend on how the application implements text insertion into a document. For more information, see the Remarks section. Use this flag to view the results of the text insertion without actually inserting the text. It is not required that you fill the <b>TS_TEXTCHANGE</b> structure if you use this flag.</para>
-          </description>
-        </item>
+          <description>Text is not inserted, and the values for the <i>pacpStart</i> and <i>pacpEnd</i> parameters contain the results of the text insertion. The values of these parameters depend on how the application implements text insertion into a document. For more information, see the Remarks section. Use this flag to view the results of the text insertion without actually inserting the text. It is not required that you fill the <b>TS_TEXTCHANGE</b> structure if you use this flag.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pchText">
-      <para>Pointer to the string to insert in the document. The string can be <b>NULL</b> terminated.</para>
-    </param>
-    <param name="cch">
-      <para>Specifies the text length.</para>
-    </param>
-    <param name="pacpStart">
-      <para>Pointer to the starting application character position where the text insertion occurs.</para>
-    </param>
-    <param name="pacpEnd">
-      <para>Pointer to the ending application character position where the text insertion occurs. This parameter value is the same as the value of the <i>pacpStart</i> parameter for an insertion point.</para>
-    </param>
+    <param name="pchText">Pointer to the string to insert in the document. The string can be <b>NULL</b> terminated.</param>
+    <param name="cch">Specifies the text length.</param>
+    <param name="pacpStart">Pointer to the starting application character position where the text insertion occurs.</param>
+    <param name="pacpEnd">Pointer to the ending application character position where the text insertion occurs. This parameter value is the same as the value of the <i>pacpStart</i> parameter for an insertion point.</param>
     <param name="pChange">
       <para>Pointer to a <b>TS_TEXTCHANGE</b> structure with the following members.</para>
       <list type="table">
@@ -1237,30 +1066,42 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>acpStart</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>acpStart</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The starting application character position before the text is inserted into the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The starting application character position before the text is inserted into the document.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>acpOldEnd</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The ending application character position before the text is inserted into the document. This value is the same as <b>acpStart</b> for an insertion point. If this value is different from <b>acpStart</b>, then text was selected prior to the text insertion.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>acpOldEnd</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>acpNewEnd</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The ending application character position before the text is inserted into the document. This value is the same as <b>acpStart</b> for an insertion point. If this value is different from <b>acpStart</b>, then text was selected prior to the text insertion.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>acpNewEnd</b>
-          </description>
-          <description>
-            <para>The end position after the text insertion occurred.</para>
-          </description>
-        </item>
+          <description>The end position after the text insertion occurred.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -1270,68 +1111,52 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The caller does not have a lock on the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The caller does not have a lock on the document.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pchText</i> parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The <i>pchText</i> parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The values of the <i>pacpStart</i> and the <i>pacpEnd</i> parameters depend upon how the client application inserts text into a document. For example, if the application sets the cursor at the start of the inserted text after text insertion, then the value for the <i>pacpStart</i> and <i>pacpEnd</i> parameters is the same as the <b>acpStart</b> member of the <b>TS_TEXTCHANGE</b> structure.</para>
-      <para>Applications should not call the <see cref="ITextStoreACPSink.OnTextChange" /> method in response to this method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/compositions">Compositions</seealso>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACPSink.OnTextChange " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-ias--constants">TF_IAS_* Constants
-</seealso>
-    <seealso cref="TS_TEXTCHANGE " />
   </member>
   <member name="ITextStoreACP.QueryInsert">
-    <summary>
-      <para>The <b>ITextStoreACP.QueryInsert</b> method determines whether the specified start and end character positions are valid. Use this method to adjust an edit to a document before executing the edit. The method must not return values outside the range of the document.</para>
-    </summary>
-    <param name="acpTestStart">
-      <para>Starting application character position for inserted text.</para>
-    </param>
-    <param name="acpTestEnd">
-      <para>Ending application character position for the inserted text. This value is equal to <i>acpTextStart</i> if the text is inserted at a point instead of replacing selected text.</para>
-    </param>
-    <param name="cch">
-      <para>Length of replacement text.</para>
-    </param>
-    <param name="pacpResultStart">
-      <para>Returns the new starting application character position of the inserted text. If this parameter is <b>NULL</b>, then text cannot be inserted at the specified position. This value cannot be outside the document range.</para>
-    </param>
-    <param name="pacpResultEnd">
-      <para>Returns the new ending application character position of the inserted text. If this parameter is <b>NULL</b>, then <i>pacpResultStart</i> is set to <b>NULL</b> and text cannot be inserted at the specified position. This value cannot be outside the document range.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.QueryInsert</b> method determines whether the specified start and end character positions are valid. Use this method to adjust an edit to a document before executing the edit. The method must not return values outside the range of the document.</summary>
+    <param name="acpTestStart">Starting application character position for inserted text.</param>
+    <param name="acpTestEnd">Ending application character position for the inserted text. This value is equal to <i>acpTextStart</i> if the text is inserted at a point instead of replacing selected text.</param>
+    <param name="cch">Length of replacement text.</param>
+    <param name="pacpResultStart">Returns the new starting application character position of the inserted text. If this parameter is <b>NULL</b>, then text cannot be inserted at the specified position. This value cannot be outside the document range.</param>
+    <param name="pacpResultEnd">Returns the new ending application character position of the inserted text. If this parameter is <b>NULL</b>, then <i>pacpResultStart</i> is set to <b>NULL</b> and text cannot be inserted at the specified position. This value cannot be outside the document range.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -1339,55 +1164,50 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>acpTestStart</i> or <i>acpTestEnd</i> parameters are invalid.</para>
-          </description>
-        </item>
+          <description>The <i>acpTestStart</i> or <i>acpTestEnd</i> parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The values of <i>pacpResultStart</i> and <i>pacpResultEnd</i> depend upon how the application inserts text into the document. If <i>pacpResultStart</i> and <i>pacpResultEnd</i> are the same as <i>acpTextStart</i>, the cursor is at the beginning of the inserted text after insertion. If <i>pacpResultStart</i> and <i>pacpResultEnd</i> are the same as <i>acpTextEnd</i>, the cursor is at the end of the inserted text after insertion. If the difference between <i>pacpResultStart</i> and <i>pacpResultEnd</i> is equal to the length of the inserted text, the inserted text is highlighted after insertion.</para>
-    </remarks>
   </member>
   <member name="ITextStoreACP.QueryInsertEmbedded">
-    <summary>
-      <para>Gets a value indicating whether the specified object can be inserted into the document.</para>
-    </summary>
-    <param name="pguidService">
-      <para>Pointer to the object type. Can be <b>NULL</b>.</para>
-    </param>
-    <param name="pFormatEtc">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/com/the-formatetc-structure">FORMATETC</a> structure that contains format data of the object. This parameter cannot be <b>NULL</b> if the <i>pguidService</i> parameter is <b>NULL</b>.</para>
-    </param>
-    <param name="pfInsertable">
-      <para>Receives <b>TRUE</b> if the object type can be inserted into the document or <b>FALSE</b> if the object type cannot be inserted into the document.</para>
-    </param>
+    <summary>Gets a value indicating whether the specified object can be inserted into the document.</summary>
+    <param name="pguidService">Pointer to the object type. Can be <b>NULL</b>.</param>
+    <param name="pFormatEtc">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/com/the-formatetc-structure">FORMATETC</a> structure that contains format data of the object. This parameter cannot be <b>NULL</b> if the <i>pguidService</i> parameter is <b>NULL</b>.</param>
+    <param name="pfInsertable">Receives <b>TRUE</b> if the object type can be inserted into the document or <b>FALSE</b> if the object type cannot be inserted into the document.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -1395,73 +1215,46 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pFormatEtc</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The <i>pFormatEtc</i> parameter is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The clipboard formats supported by the document are dependent on the application.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/the-formatetc-structure">FORMATETC</seealso>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.InsertEmbedded " />
-    <seealso cref="ITextStoreACP.InsertEmbeddedAtSelection " />
   </member>
   <member name="ITextStoreACP.RequestAttrsAtPosition">
-    <summary>
-      <para>Gets text attributes at the specified character position.</para>
-    </summary>
-    <param name="acpPos">
-      <para>Specifies the application character position in the document.</para>
-    </param>
-    <param name="cFilterAttrs">
-      <para>Specifies the number of attributes to obtain.</para>
-    </param>
-    <param name="paFilterAttrs">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> data type that specifies the attribute to verify.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Must be zero.</para>
-    </param>
-    <returns>
-      <para>This method has no return values.</para>
-    </returns>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.RetrieveRequestedAttrs " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID
-</seealso>
+    <summary>Gets text attributes at the specified character position.</summary>
+    <param name="acpPos">Specifies the application character position in the document.</param>
+    <param name="cFilterAttrs">Specifies the number of attributes to obtain.</param>
+    <param name="paFilterAttrs">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> data type that specifies the attribute to verify.</param>
+    <param name="dwFlags">Must be zero.</param>
+    <returns>This method has no return values.</returns>
   </member>
   <member name="ITextStoreACP.RequestAttrsTransitioningAtPosition">
-    <summary>
-      <para>Gets text attributes transitioning at the specified character position.</para>
-    </summary>
-    <param name="acpPos">
-      <para>Specifies the application character position in the document.</para>
-    </param>
-    <param name="cFilterAttrs">
-      <para>Specifies the number of attributes to obtain.</para>
-    </param>
-    <param name="paFilterAttrs">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> data type that specifies the attribute to verify.</para>
-    </param>
+    <summary>Gets text attributes transitioning at the specified character position.</summary>
+    <param name="acpPos">Specifies the application character position in the document.</param>
+    <param name="cFilterAttrs">Specifies the number of attributes to obtain.</param>
+    <param name="paFilterAttrs">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> data type that specifies the attribute to verify.</param>
     <param name="dwFlags">
       <para>Specifies attributes for the call to the <see cref="ITextStoreACP.RetrieveRequestedAttrs" /> method. If this parameter is not set, the method returns the attributes that start at the specified position. Other possible values for this parameter are the following.</para>
       <list type="table">
@@ -1469,22 +1262,30 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TS_ATTR_FIND_WANT_END</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_ATTR_FIND_WANT_END</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Obtains the attributes that end at the specified application character position.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Obtains the attributes that end at the specified application character position.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_ATTR_FIND_WANT_VALUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TS_ATTR_FIND_WANT_VALUE</b>
-          </description>
-          <description>
-            <para>Obtains the value of the attribute in addition to the attribute. The attribute value is put into the <b>varValue</b> member of the <see cref="TS_ATTRVAL" /> structure during the <b>ITextStoreACP.RetrieveRequestedAttrs</b> method call.</para>
-          </description>
-        </item>
+          <description>Obtains the value of the attribute in addition to the attribute. The attribute value is put into the <b>varValue</b> member of the <see cref="TS_ATTRVAL" /> structure during the <b>ITextStoreACP.RetrieveRequestedAttrs</b> method call.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -1494,34 +1295,23 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>In the sentence, "This is <i>italic text</i>.", the italic attribute starts before the word <i>italic</i> and ends after the word <i>text</i>.</para>
-      <para>If the flag TS_ATTR_FIND_WANT_END is set in <i>dwFlags</i>, the method would return the italic attribute for the text "<i>italic</i> &lt;anchor&gt;normal", because there is an end transition at the anchor location.</para>
-    </remarks>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.RetrieveRequestedAttrs " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID
-</seealso>
-    <seealso cref="TS_ATTRVAL " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-attr--constants">TS_ATTR_* Constants
-</seealso>
   </member>
   <member name="ITextStoreACP.RequestLock">
-    <summary>
-      <para>The <b>ITextStoreACP.RequestLock</b> method is called by the TSF manager to provide a document lock in order to modify the document. This method calls the <see cref="ITextStoreACPSink.OnLockGranted" /> method to create the document lock.</para>
-    </summary>
+    <summary>The <b>ITextStoreACP.RequestLock</b> method is called by the TSF manager to provide a document lock in order to modify the document. This method calls the <see cref="ITextStoreACPSink.OnLockGranted" /> method to create the document lock.</summary>
     <param name="dwLockFlags">
       <para>Specifies the type of lock requested.</para>
       <list type="table">
@@ -1529,30 +1319,42 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TS_LF_READ</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_LF_READ</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The document has a read-only lock and cannot be modified.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The document has a read-only lock and cannot be modified.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_LF_READWRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The document has a read/write lock and can be modified.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TS_LF_READWRITE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_LF_SYNC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The document has a read/write lock and can be modified.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TS_LF_SYNC</b>
-          </description>
-          <description>
-            <para>The document has a synchronous-lock if this flag is combined with other flags.</para>
-          </description>
-        </item>
+          <description>The document has a synchronous-lock if this flag is combined with other flags.</description>
+        </listheader>
       </list>
     </param>
     <param name="phrSession">
@@ -1566,57 +1368,38 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method uses the <b>ITextStoreACPSink.OnLockGranted</b> method to lock the document. Applications must never modify the document or send change notifications using the <see cref="ITextStoreACPSink.OnTextChange" /> method from within the <b>ITextStoreACP.RequestLock</b> method. If the application has pending changes to report, the application can only respond to the asynchronous lock request.</para>
-      <para>Applications should not attempt to queue multiple <b>ITextStoreACP.RequestLock</b> method calls, because the application requires only a single callback. If the caller makes several read requests and one or more write requests, however, the callback should be for write access.</para>
-      <para>Successful requests for synchronous locks supersede requests for asynchronous locks. Unsuccessful requests for synchronous locks do not supersede requests for asynchronous locks. The implementation must still serve the outstanding asynchronous request, if one exists.</para>
-      <para>If the lock is granted before the <b>ITextStoreACP.RequestLock</b> method returns, the <i>phrSession</i> parameter will receive the HRESULT returned by the <b>ITextStoreACPSink.OnLockGranted</b> method. If the call is successful, but the lock will be granted later, the <i>phrSession</i> parameter receives the TS_S_ASYNC flag. The <i>phrSession</i> parameter should be ignored if <b>ITextStoreACP.RequestLock</b> returns anything other than S_OK.</para>
-      <para>A caller should never call this method reentrantly, except in the case that the caller holds a read-only lock. In this case the method can be called reentrantly to ask for an asynchronous write lock. The write lock will be granted later, after the read-only lock ends.</para>
-      <para>For more information about document locks, see <a href="https://docs.microsoft.com//windows/desktop/TSF/document-locks">Document Locks</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/document-locks">Document Locks</seealso>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACPSink.OnLockGranted " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-lf--constants">TS_LF_* Constants
-</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/text-store-return-values">Text Store Return Values
-</seealso>
   </member>
   <member name="ITextStoreACP.RequestSupportedAttrs">
-    <summary>
-      <para>Get the attributes that are supported in the document.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Specifies whether a subsequent call to the <see cref="ITextStoreAnchor.RetrieveRequestedAttrs" /> method will contain the supported attributes. If the TS_ATTR_FIND_WANT_VALUE flag is specified, the default attribute values will be those in the <see cref="TS_ATTRVAL" /> structure after the subsequent call to <b>ITextStoreAnchor.RetrieveRequestedAttrs</b>. If any other flag is specified for this parameter, the method only verifies that the attribute is supported and that the <b>varValue</b> member of the <b>TS_ATTRVAL</b> structure is set to VT_EMPTY.</para>
-    </param>
-    <param name="cFilterAttrs">
-      <para>Specifies the number of supported attributes to obtain.</para>
-    </param>
-    <param name="paFilterAttrs">
-      <para>Pointer to the <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> data type that specifies the attribute to verify. The method returns only the attributes specified by <b>TS_ATTRID</b>, even though other attributes can be supported.</para>
-    </param>
+    <summary>Get the attributes that are supported in the document.</summary>
+    <param name="dwFlags">Specifies whether a subsequent call to the <see cref="ITextStoreAnchor.RetrieveRequestedAttrs" /> method will contain the supported attributes. If the TS_ATTR_FIND_WANT_VALUE flag is specified, the default attribute values will be those in the <see cref="TS_ATTRVAL" /> structure after the subsequent call to <b>ITextStoreAnchor.RetrieveRequestedAttrs</b>. If any other flag is specified for this parameter, the method only verifies that the attribute is supported and that the <b>varValue</b> member of the <b>TS_ATTRVAL</b> structure is set to VT_EMPTY.</param>
+    <param name="cFilterAttrs">Specifies the number of supported attributes to obtain.</param>
+    <param name="paFilterAttrs">Pointer to the <a href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID</a> data type that specifies the attribute to verify. The method returns only the attributes specified by <b>TS_ATTRID</b>, even though other attributes can be supported.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -1624,57 +1407,50 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>The method was unable to allocate sufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>The method was unable to allocate sufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.RetrieveRequestededAttrs " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ts-attrid">TS_ATTRID
-</seealso>
-    <seealso cref="TS_ATTRVAL " />
   </member>
   <member name="ITextStoreACP.RetrieveRequestedAttrs">
-    <summary>
-      <para>Gets the attributes returned by a call to an attribute request method.</para>
-    </summary>
-    <param name="ulCount">
-      <para>Specifies the number of supported attributes to obtain.</para>
-    </param>
-    <param name="paAttrVals">
-      <para>Pointer to the <see cref="TS_ATTRVAL" /> structure that receives the supported attributes. The members of this structure depend upon the <i>dwFlags</i> parameter of the calling method.</para>
-    </param>
-    <param name="pcFetched">
-      <para>Receives the number of supported attributes.</para>
-    </param>
+    <summary>Gets the attributes returned by a call to an attribute request method.</summary>
+    <param name="ulCount">Specifies the number of supported attributes to obtain.</param>
+    <param name="paAttrVals">Pointer to the <see cref="TS_ATTRVAL" /> structure that receives the supported attributes. The members of this structure depend upon the <i>dwFlags</i> parameter of the calling method.</param>
+    <param name="pcFetched">Receives the number of supported attributes.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -1682,31 +1458,24 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.RequestAttrsAtPosition " />
-    <seealso cref="ITextStoreACP.RequestSupportedAttrs " />
-    <seealso cref="TS_ATTRVAL " />
-    <seealso cref="TextStoreACP.RequestAttrsTransitioningAtPosition " />
   </member>
   <member name="ITextStoreACP.SetSelection">
-    <summary>
-      <para>The <b>ITextStoreACP.SetSelection</b> method selects text within the document. The application must have a read/write lock on the document before calling this method.</para>
-    </summary>
-    <param name="ulCount">
-      <para>Specifies the number of text selections in <i>pSelection</i>.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.SetSelection</b> method selects text within the document. The application must have a read/write lock on the document before calling this method.</summary>
+    <param name="ulCount">Specifies the number of text selections in <i>pSelection</i>.</param>
     <param name="pSelection">
       <para>Specifies the style, start, and end character positions of the text selected through the <see cref="TS_SELECTION_ACP" /> structure.</para>
       <para>When the start and end character positions are equal, the method places a caret at that character position. There can be only one caret at a time in the document.</para>
@@ -1718,71 +1487,64 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_INVALIDPOS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The character positions specified are beyond the text in the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unspecified error occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_INVALIDPOS</b>
-            </para>
-          </description>
-          <description>
-            <para>The character positions specified are beyond the text in the document.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller does not have a read/write lock.</para>
-          </description>
-        </item>
+          <description>The caller does not have a read/write lock.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.GetSelection " />
-    <seealso cref="TS_SELECTION_ACP " />
   </member>
   <member name="ITextStoreACP.SetText">
-    <summary>
-      <para>The <b>ITextStoreACP.SetText</b> method sets the text selection to the supplied character positions.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>If set to the value of TS_ST_CORRECTION, the text is a transform (correction) of existing content, and any special text markup information (metadata) is retained, such as .wav file data or a language identifier. The client defines the type of markup information to be retained.</para>
-    </param>
-    <param name="acpStart">
-      <para>Specifies the starting character position of the text to replace.</para>
-    </param>
-    <param name="acpEnd">
-      <para>Specifies the ending character position of the text to replace. This parameter is ignored if the value is 1.</para>
-    </param>
-    <param name="pchText">
-      <para>Specifies the pointer to the replacement text. The text string does not have to be <b>NULL</b> terminated, because the text character count is specified in the <i>cch</i> parameter.</para>
-    </param>
-    <param name="cch">
-      <para>Specifies the number of characters in the replacement text.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.SetText</b> method sets the text selection to the supplied character positions.</summary>
+    <param name="dwFlags">If set to the value of TS_ST_CORRECTION, the text is a transform (correction) of existing content, and any special text markup information (metadata) is retained, such as .wav file data or a language identifier. The client defines the type of markup information to be retained.</param>
+    <param name="acpStart">Specifies the starting character position of the text to replace.</param>
+    <param name="acpEnd">Specifies the ending character position of the text to replace. This parameter is ignored if the value is 1.</param>
+    <param name="pchText">Specifies the pointer to the replacement text. The text string does not have to be <b>NULL</b> terminated, because the text character count is specified in the <i>cch</i> parameter.</param>
+    <param name="cch">Specifies the number of characters in the replacement text.</param>
     <param name="pChange">
       <para>Pointer to a <see cref="TS_TEXTCHANGE" /> structure with the following data.</para>
       <list type="table">
@@ -1790,30 +1552,42 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>acpStart</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>acpStart</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The starting application character position before the text is inserted into the document.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The starting application character position before the text is inserted into the document.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>acpOldEnd</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The ending position before the text is inserted into the document. This value is the same as <i>acpStart</i> for an insertion point. If this value is different from <i>acpStart</i>, then text was selected prior to the text insertion.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>acpOldEnd</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>acpNewEnd</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The ending position before the text is inserted into the document. This value is the same as <i>acpStart</i> for an insertion point. If this value is different from <i>acpStart</i>, then text was selected prior to the text insertion.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>acpNewEnd</b>
-          </description>
-          <description>
-            <para>The ending position after the text insertion occurred.</para>
-          </description>
-        </item>
+          <description>The ending position after the text insertion occurred.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -1823,78 +1597,72 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_INVALIDPOS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>acpStart</i> or <i>acpEnd</i> parameter is outside of the document text.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TS_E_INVALIDPOS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The caller does not have a read/write lock.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>acpStart</i> or <i>acpEnd</i> parameter is outside of the document text.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The document is read-only. Content cannot be modified.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TS_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_REGION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The caller does not have a read/write lock.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_READONLY</b>
-            </para>
-          </description>
-          <description>
-            <para>The document is read-only. Content cannot be modified.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_REGION</b>
-            </para>
-          </description>
-          <description>
-            <para>An attempt was made to modify text across a region boundary.</para>
-          </description>
-        </item>
+          <description>An attempt was made to modify text across a region boundary.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Applications should start a composition by first using <see cref="ITextStoreACP.InsertTextAtSelection" />. <b>ITextStoreACP.SetText</b> should be used only within an existing composition. If there is no active composition at the time <b>SetText</b> is called, the TSF manager creates a composition that lasts just long enough to wrap the call to <b>SetText</b>.</para>
-      <para>The <i>acpStart</i> and <i>acpEnd</i> character positions cannot be outside the document range.</para>
-      <para>Applications should not call the <see cref="ITextStoreACPSink.OnTextChange" /> method in response to this method.</para>
-      <para>This method should call the <see cref="ITextStoreACP.SetSelection" /> method to select the text to be changed. After successfully executing the <b>ITextStoreACP.SetSelection</b> method, this method then calls the <b>ITextStoreACP.InsertTextAtSelection</b> method to perform the actual text change.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/compositions">Compositions</seealso>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACPSink.OnTextChange " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/miscellaneous-text-store-constants">Miscellaneous Text Store Constants
-</seealso>
-    <seealso cref="TS_TEXTCHANGE " />
   </member>
   <member name="ITextStoreACP.UnadviseSink">
-    <summary>
-      <para>The <b>ITextStoreACP.UnadviseSink</b> method is called by an application to indicate that it no longer requires notifications from the TSF manager. The TSF manager will release the sink interface and stop notifications.</para>
-    </summary>
-    <param name="punk">
-      <para>Pointer to a sink object. Cannot be <b>NULL</b>.</para>
-    </param>
+    <summary>The <b>ITextStoreACP.UnadviseSink</b> method is called by an application to indicate that it no longer requires notifications from the TSF manager. The TSF manager will release the sink interface and stop notifications.</summary>
+    <param name="punk">Pointer to a sink object. Cannot be <b>NULL</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -1902,42 +1670,37 @@ STDMETHODIMP CMyTextEditor.AdviseSink(REFIID riid, IUnknown *punk, DWORD dwMask)
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_NOCONNECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CONNECT_E_NOCONNECTION</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no active sink object.</para>
-          </description>
-        </item>
+          <description>There is no active sink object.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Every call to the <see cref="ITextStoreAnchor.AdviseSink" /> method, which registers a new sink object, should be matched by a call to this method. Calls to the <b>ITextStoreAnchor.AdviseSink</b> method that only update the <i>dwMask</i> parameter of a sink which was previously registered, do not require a call to the <see cref="ITextStoreAnchor.UnadviseSink" /> method.</para>
-      <para>For example, to register a sink object, an application calls the <b>ITextStoreAnchor.AdviseSink</b> method the first time. After registering the sink object, the application can call the <b>ITextStoreAnchor.AdviseSink</b> method again with the same sink object to change the <i>dwMask</i> parameter. To unregister the sink object, an application calls the <b>ITextStoreAnchor.UnadviseSink</b> method.</para>
-      <para>The <i>punk</i> parameter must have the same COM identity as the pointer originally passed in the <b>ITextStoreAnchor.AdviseSink</b> method.</para>
-    </remarks>
-    <seealso cref="ITextStoreACP" />
-    <seealso cref="ITextStoreACP.AdviseSink " />
   </member>
   <member name="ITextStoreACP">
     <summary>
       <para>The <b>ITextStoreACP</b> interface is implemented by the application and is used by the TSF manager to manipulate text streams or text stores in TSF. An application can obtain an instance of this interface with a call to the <see cref="ITfDocumentMgr.CreateContext" /> method. The interface ID is IID_ITextStoreACP.</para>
       <para>This interface exposes text stores through an application character position (ACP) format. Applications that use an anchor-based format should use <see cref="ITextStoreAnchor" />.</para>
     </summary>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/text-stores">Text Stores</seealso>
   </member>
 </doc>

@@ -38,7 +38,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetSystemWow64DirectoryW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern uint GetSystemWow64DirectoryW([NativeTypeName("LPWSTR")] ushort* lpBuffer, uint uSize);
+    public static extern uint GetSystemWow64DirectoryW([NativeTypeName("LPWSTR")] char* lpBuffer, uint uSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWow64Process2"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -56,7 +56,7 @@ public static unsafe partial class Windows
     [DllImport("kernelbase", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows10.0.10586.0")]
-    public static extern uint GetSystemWow64Directory2W([NativeTypeName("LPWSTR")] ushort* lpBuffer, uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
+    public static extern uint GetSystemWow64Directory2W([NativeTypeName("LPWSTR")] char* lpBuffer, uint uSize, [NativeTypeName("WORD")] ushort ImageFileMachineType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IsWow64GuestMachineSupported"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -79,9 +79,9 @@ public static unsafe partial class Windows
     public static extern uint Wow64SuspendThread(HANDLE hThread);
 
     [NativeTypeName("#define GetSystemWow64Directory GetSystemWow64DirectoryW")]
-    public static delegate*<ushort*, uint, uint> GetSystemWow64Directory => &GetSystemWow64DirectoryW;
+    public static delegate*<char*, uint, uint> GetSystemWow64Directory => &GetSystemWow64DirectoryW;
 
     [NativeTypeName("#define GetSystemWow64Directory2 GetSystemWow64Directory2W")]
     [SupportedOSPlatform("windows10.0.10586.0")]
-    public static delegate*<ushort*, uint, ushort, uint> GetSystemWow64Directory2 => &GetSystemWow64Directory2W;
+    public static delegate*<char*, uint, ushort, uint> GetSystemWow64Directory2 => &GetSystemWow64Directory2W;
 }

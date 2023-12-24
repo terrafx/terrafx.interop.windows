@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXCoreHardwareID">
+    <summary>Represents the PnP hardware ID parts for an adapter.</summary>
+  </member>
+  <member name="DXCoreHardwareID.vendorId">
+    <summary>The PCI ID of the adapter's hardware vendor.</summary>
+  </member>
+  <member name="DXCoreHardwareID.deviceId">
+    <summary>The PCI ID of the adapter's hardware device.</summary>
+  </member>
+  <member name="DXCoreHardwareID.subSysId">
+    <summary>The PCI ID of the adapter's hardware subsystem.</summary>
+  </member>
+  <member name="DXCoreHardwareID.revision">
+    <summary>The PCI ID of the adapter's revision number.</summary>
+  </member>
+</doc>

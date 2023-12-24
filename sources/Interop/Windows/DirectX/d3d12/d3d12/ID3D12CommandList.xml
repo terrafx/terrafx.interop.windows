@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12CommandList.GetType">
+    <summary>Gets the type of the command list, such as direct, bundle, compute, or copy.</summary>
+    <returns>This method returns the type of the command list, as a <see cref="D3D12_COMMAND_LIST_TYPE" /> enumeration constant, such as direct, bundle, compute, or copy.</returns>
+  </member>
+  <member name="ID3D12CommandList">
+    <summary>An interface from which <see cref="ID3D12GraphicsCommandList" /> inherits. It represents an ordered set of commands that the GPU executes, while allowing for extension to support other command lists than just those for graphics (such as compute and copy).</summary>
+  </member>
+</doc>

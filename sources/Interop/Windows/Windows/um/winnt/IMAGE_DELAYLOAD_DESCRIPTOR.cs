@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
 {
     /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.Attributes"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:19652:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19702_C5")]
     public _Attributes_e__Union Attributes;
 
     /// <include file='IMAGE_DELAYLOAD_DESCRIPTOR.xml' path='doc/member[@name="IMAGE_DELAYLOAD_DESCRIPTOR.DllNameRVA"]/*' />
@@ -54,14 +54,14 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
 
         /// <include file='_Attributes_e__Union.xml' path='doc/member[@name="_Attributes_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_DELAYLOAD_DESCRIPTOR::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:19654:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L19704_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RvaBased"]/*' />
         public uint RvaBased
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return Anonymous.RvaBased;
             }
@@ -77,7 +77,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
         public uint ReservedAttributes
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return Anonymous.ReservedAttributes;
             }
@@ -99,7 +99,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
             public uint RvaBased
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -116,7 +116,7 @@ public partial struct IMAGE_DELAYLOAD_DESCRIPTOR
             public uint ReservedAttributes
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x7FFFFFFFu;
                 }

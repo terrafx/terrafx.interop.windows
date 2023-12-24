@@ -4,31 +4,18 @@
 <doc>
   <member name="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE">
     <summary>
-      <para>The type for specifying asymmetric cryptographic keys as CAPI 1.0 key
-handles.</para>
-      <para>When this structure is used in an API (such as
-with <see cref="XML token creation" /> and subsequent
-<see cref="use of that XML token" /> for a channel), the application is responsible for making
-sure that the HCRYPTPROV remains valid as long as the key is in
-use.  The application is also responsible for freeing the handle when
-it is no longer in use.</para>
-      <para>This type is supported only on pre-Windows Vista platforms: for
-Windows Vista and later, please use <see cref="WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE" />.</para>
+      <para>The type for specifying asymmetric cryptographic keys as CAPI 1.0 key handles.</para>
+      <para>When this structure is used in an API (such as with <see cref="XML token creation" /> and subsequent<see cref="use of that XML token" /> for a channel), the application is responsible for making sure that the HCRYPTPROV remains valid as long as the key is in use. The application is also responsible for freeing the handle when it is no longer in use.</para>
+      <para>This type is supported only on pre-Windows Vista platforms: for Windows Vista and later, please use <see cref="WS_NCRYPT_ASYMMETRIC_SECURITY_KEY_HANDLE" />.</para>
     </summary>
   </member>
   <member name="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.keyHandle">
-    <summary>
-      <para>The base type from which this type and all other key handle types derive.</para>
-    </summary>
+    <summary>The base type from which this type and all other key handle types derive.</summary>
   </member>
   <member name="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.provider">
-    <summary>
-      <para>The cryptographic provider.</para>
-    </summary>
+    <summary>The cryptographic provider.</summary>
   </member>
   <member name="WS_CAPI_ASYMMETRIC_SECURITY_KEY_HANDLE.keySpec">
-    <summary>
-      <para>The key specification.</para>
-    </summary>
+    <summary>The key specification.</summary>
   </member>
 </doc>

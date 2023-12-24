@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfCandidateListUIElementBehavior.Abort">
-    <summary>
-      <para>The <b>ITfCandidateListUIElementBehavior.Abort</b> method closes the candidate list. There is no guarantee that the current selection will be finalized.</para>
-    </summary>
+    <summary>The <b>ITfCandidateListUIElementBehavior.Abort</b> method closes the candidate list. There is no guarantee that the current selection will be finalized.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -13,33 +11,35 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElementBehavior.Finalize">
-    <summary>
-      <para>The <b>ITfCandidateListUIElementBehavior.Finalize</b> method finalizes the current selection and close the candidate list.</para>
-    </summary>
+    <summary>The <b>ITfCandidateListUIElementBehavior.Finalize</b> method finalizes the current selection and close the candidate list.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -47,36 +47,36 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElementBehavior.SetSelection">
-    <summary>
-      <para>The <b>ITfCandidateListUIElementBehavior.SetSelection</b> method set the selection of the candidate list.</para>
-    </summary>
-    <param name="nIndex">
-      <para>[in] An index for the candidate string to be selected.</para>
-    </param>
+    <summary>The <b>ITfCandidateListUIElementBehavior.SetSelection</b> method set the selection of the candidate list.</summary>
+    <param name="nIndex">[in] An index for the candidate string to be selected.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -84,32 +84,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElementBehavior">
-    <summary>
-      <para>This interface is implemented by a text service that has a candidate list UI and its UI can be controlled by the application. The application QI this interface from <see cref="ITfUIElement" /> and controls the candidate list behavior.</para>
-    </summary>
+    <summary>This interface is implemented by a text service that has a candidate list UI and its UI can be controlled by the application. The application QI this interface from <see cref="ITfUIElement" /> and controls the candidate list behavior.</summary>
   </member>
 </doc>

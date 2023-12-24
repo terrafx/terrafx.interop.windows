@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoEncodeFrameTypeQPTests
     {
         Assert.That(typeof(CODECAPI_AVEncVideoEncodeFrameTypeQP).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoEncodeFrameTypeQP));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoEncodeFrameTypeQP" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoEncodeFrameTypeQP>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoEncodeFrameTypeQP)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoEncodeFrameTypeQP" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoEncodeFrameTypeQP).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoEncodeFrameTypeQP" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoEncodeFrameTypeQP), Is.EqualTo(1));
-    }
 }

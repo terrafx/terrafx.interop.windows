@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, uint>)(lpVtbl[1]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, uint>)(lpVtbl[1]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, uint>)(lpVtbl[2]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, uint>)(lpVtbl[2]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.GetFontFile"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(3)]
     public HRESULT GetFontFile(IDWriteFontFile** fontFile)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, IDWriteFontFile**, int>)(lpVtbl[3]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontFile);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, IDWriteFontFile**, int>)(lpVtbl[3]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontFile);
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.GetFontFaceIndex"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetFontFaceIndex()
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, uint>)(lpVtbl[4]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, uint>)(lpVtbl[4]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.GetFontAxisCount"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetFontAxisCount()
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, uint>)(lpVtbl[5]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, uint>)(lpVtbl[5]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.GetDefaultFontAxisValues"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(6)]
     public HRESULT GetDefaultFontAxisValues(DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_AXIS_VALUE*, uint, int>)(lpVtbl[6]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontAxisValues, fontAxisValueCount);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, DWRITE_FONT_AXIS_VALUE*, uint, int>)(lpVtbl[6]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontAxisValues, fontAxisValueCount);
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.GetFontAxisRanges"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(7)]
     public HRESULT GetFontAxisRanges(DWRITE_FONT_AXIS_RANGE* fontAxisRanges, [NativeTypeName("UINT32")] uint fontAxisRangeCount)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_AXIS_RANGE*, uint, int>)(lpVtbl[7]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontAxisRanges, fontAxisRangeCount);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, DWRITE_FONT_AXIS_RANGE*, uint, int>)(lpVtbl[7]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontAxisRanges, fontAxisRangeCount);
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.GetFontAxisAttributes"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(8)]
     public DWRITE_FONT_AXIS_ATTRIBUTES GetFontAxisAttributes([NativeTypeName("UINT32")] uint axisIndex)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, uint, DWRITE_FONT_AXIS_ATTRIBUTES>)(lpVtbl[8]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), axisIndex);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, uint, DWRITE_FONT_AXIS_ATTRIBUTES>)(lpVtbl[8]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), axisIndex);
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.GetAxisNames"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(9)]
     public HRESULT GetAxisNames([NativeTypeName("UINT32")] uint axisIndex, IDWriteLocalizedStrings** names)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, uint, IDWriteLocalizedStrings**, int>)(lpVtbl[9]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), axisIndex, names);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, uint, IDWriteLocalizedStrings**, int>)(lpVtbl[9]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), axisIndex, names);
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.GetAxisValueNameCount"]/*' />
@@ -111,7 +111,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetAxisValueNameCount([NativeTypeName("UINT32")] uint axisIndex)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, uint, uint>)(lpVtbl[10]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), axisIndex);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, uint, uint>)(lpVtbl[10]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), axisIndex);
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.GetAxisValueNames"]/*' />
@@ -119,7 +119,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(11)]
     public HRESULT GetAxisValueNames([NativeTypeName("UINT32")] uint axisIndex, [NativeTypeName("UINT32")] uint axisValueIndex, DWRITE_FONT_AXIS_RANGE* fontAxisRange, IDWriteLocalizedStrings** names)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, uint, uint, DWRITE_FONT_AXIS_RANGE*, IDWriteLocalizedStrings**, int>)(lpVtbl[11]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), axisIndex, axisValueIndex, fontAxisRange, names);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, uint, uint, DWRITE_FONT_AXIS_RANGE*, IDWriteLocalizedStrings**, int>)(lpVtbl[11]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), axisIndex, axisValueIndex, fontAxisRange, names);
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.HasVariations"]/*' />
@@ -127,7 +127,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(12)]
     public BOOL HasVariations()
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, int>)(lpVtbl[12]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, int>)(lpVtbl[12]))((IDWriteFontResource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.CreateFontFace"]/*' />
@@ -135,7 +135,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(13)]
     public HRESULT CreateFontFace(DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFace5** fontFace)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFace5**, int>)(lpVtbl[13]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontSimulations, fontAxisValues, fontAxisValueCount, fontFace);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFace5**, int>)(lpVtbl[13]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontSimulations, fontAxisValues, fontAxisValueCount, fontFace);
     }
 
     /// <include file='IDWriteFontResource.xml' path='doc/member[@name="IDWriteFontResource.CreateFontFaceReference"]/*' />
@@ -143,7 +143,7 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
     [VtblIndex(14)]
     public HRESULT CreateFontFaceReference(DWRITE_FONT_SIMULATIONS fontSimulations, [NativeTypeName("const DWRITE_FONT_AXIS_VALUE *")] DWRITE_FONT_AXIS_VALUE* fontAxisValues, [NativeTypeName("UINT32")] uint fontAxisValueCount, IDWriteFontFaceReference1** fontFaceReference)
     {
-        return ((delegate* unmanaged<IDWriteFontResource*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFaceReference1**, int>)(lpVtbl[14]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontSimulations, fontAxisValues, fontAxisValueCount, fontFaceReference);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontResource*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFaceReference1**, int>)(lpVtbl[14]))((IDWriteFontResource*)Unsafe.AsPointer(ref this), fontSimulations, fontAxisValues, fontAxisValueCount, fontFaceReference);
     }
 
     public interface Interface : IUnknown.Interface
@@ -192,48 +192,48 @@ public unsafe partial struct IDWriteFontResource : IDWriteFontResource.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFontFile **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontFile**, int> GetFontFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontFile**, int> GetFontFile;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetFontFaceIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetFontFaceIndex;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetFontAxisCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetFontAxisCount;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_AXIS_VALUE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_AXIS_VALUE*, uint, int> GetDefaultFontAxisValues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_AXIS_VALUE*, uint, int> GetDefaultFontAxisValues;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_AXIS_RANGE *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_AXIS_RANGE*, uint, int> GetFontAxisRanges;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_AXIS_RANGE*, uint, int> GetFontAxisRanges;
 
         [NativeTypeName("DWRITE_FONT_AXIS_ATTRIBUTES (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, DWRITE_FONT_AXIS_ATTRIBUTES> GetFontAxisAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, DWRITE_FONT_AXIS_ATTRIBUTES> GetFontAxisAttributes;
 
         [NativeTypeName("HRESULT (UINT32, IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IDWriteLocalizedStrings**, int> GetAxisNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IDWriteLocalizedStrings**, int> GetAxisNames;
 
         [NativeTypeName("UINT32 (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint> GetAxisValueNameCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint> GetAxisValueNameCount;
 
         [NativeTypeName("HRESULT (UINT32, UINT32, DWRITE_FONT_AXIS_RANGE *, IDWriteLocalizedStrings **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, DWRITE_FONT_AXIS_RANGE*, IDWriteLocalizedStrings**, int> GetAxisValueNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, DWRITE_FONT_AXIS_RANGE*, IDWriteLocalizedStrings**, int> GetAxisValueNames;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> HasVariations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> HasVariations;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_SIMULATIONS, const DWRITE_FONT_AXIS_VALUE *, UINT32, IDWriteFontFace5 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFace5**, int> CreateFontFace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFace5**, int> CreateFontFace;
 
         [NativeTypeName("HRESULT (DWRITE_FONT_SIMULATIONS, const DWRITE_FONT_AXIS_VALUE *, UINT32, IDWriteFontFaceReference1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFaceReference1**, int> CreateFontFaceReference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_FONT_SIMULATIONS, DWRITE_FONT_AXIS_VALUE*, uint, IDWriteFontFaceReference1**, int> CreateFontFaceReference;
     }
 }

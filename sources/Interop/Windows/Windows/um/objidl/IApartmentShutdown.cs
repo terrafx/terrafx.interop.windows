@@ -27,7 +27,7 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IApartmentShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IApartmentShutdown*, Guid*, void**, int>)(lpVtbl[0]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IApartmentShutdown*, uint>)(lpVtbl[1]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApartmentShutdown*, uint>)(lpVtbl[1]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IApartmentShutdown*, uint>)(lpVtbl[2]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IApartmentShutdown*, uint>)(lpVtbl[2]))((IApartmentShutdown*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IApartmentShutdown.xml' path='doc/member[@name="IApartmentShutdown.OnUninitialize"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface, 
     [VtblIndex(3)]
     public void OnUninitialize([NativeTypeName("UINT64")] ulong ui64ApartmentIdentifier)
     {
-        ((delegate* unmanaged<IApartmentShutdown*, ulong, void>)(lpVtbl[3]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), ui64ApartmentIdentifier);
+        ((delegate* unmanaged[MemberFunction]<IApartmentShutdown*, ulong, void>)(lpVtbl[3]))((IApartmentShutdown*)Unsafe.AsPointer(ref this), ui64ApartmentIdentifier);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IApartmentShutdown : IApartmentShutdown.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (UINT64) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, void> OnUninitialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, void> OnUninitialize;
     }
 }

@@ -3,8 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INoMarshal">
-    <summary>
-      <para>Marks an object that doesn't support being marshaled or stored in the Global Interface Table.</para>
-    </summary>
+    <summary>Marks an object that doesn't support being marshaled or stored in the Global Interface Table.</summary>
   </member>
 </doc>

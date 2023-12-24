@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RESOURCE_DESC1">
+    <summary>Describes a resource, such as a texture, including a mip region. This structure is used in several methods.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.Dimension">
+    <summary>One member of <see cref="D3D12_RESOURCE_DIMENSION" />, specifying the dimensions of the resource (for example, D3D12_RESOURCE_DIMENSION_TEXTURE1D), or whether it is a buffer ((D3D12_RESOURCE_DIMENSION_BUFFER).</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.Alignment">
+    <summary>Specifies the alignment.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.Width">
+    <summary>Specifies the width of the resource.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.Height">
+    <summary>Specifies the height of the resource.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.DepthOrArraySize">
+    <summary>Specifies the depth of the resource, if it is 3D, or the array size if it is an array of 1D or 2D resources.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.MipLevels">
+    <summary>Specifies the number of MIP levels.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.Format">
+    <summary>Specifies one member of <see cref="DXGI_FORMAT" />.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.SampleDesc">
+    <summary>Specifies a <see cref="DXGI_SAMPLE_DESC" /> structure.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.Layout">
+    <summary>Specifies one member of <see cref="D3D12_TEXTURE_LAYOUT" />.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.Flags">
+    <summary>Bitwise-OR'd flags, as <see cref="D3D12_RESOURCE_FLAGS" /> enumeration constants.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_DESC1.SamplerFeedbackMipRegion">
+    <summary>A <see cref="D3D12_MIP_REGION" /> struct.</summary>
+  </member>
+</doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAccClientDocMgr*, Guid*, void**, int>)(lpVtbl[0]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAccClientDocMgr*, uint>)(lpVtbl[1]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAccClientDocMgr*, uint>)(lpVtbl[1]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAccClientDocMgr*, uint>)(lpVtbl[2]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAccClientDocMgr*, uint>)(lpVtbl[2]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAccClientDocMgr.xml' path='doc/member[@name="IAccClientDocMgr.GetDocuments"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetDocuments(IEnumUnknown** enumUnknown)
     {
-        return ((delegate* unmanaged<IAccClientDocMgr*, IEnumUnknown**, int>)(lpVtbl[3]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), enumUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IAccClientDocMgr*, IEnumUnknown**, int>)(lpVtbl[3]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), enumUnknown);
     }
 
     /// <include file='IAccClientDocMgr.xml' path='doc/member[@name="IAccClientDocMgr.LookupByHWND"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, INat
     [VtblIndex(4)]
     public HRESULT LookupByHWND(HWND hWnd, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int>)(lpVtbl[4]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), hWnd, riid, ppunk);
+        return ((delegate* unmanaged[MemberFunction]<IAccClientDocMgr*, HWND, Guid*, IUnknown**, int>)(lpVtbl[4]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), hWnd, riid, ppunk);
     }
 
     /// <include file='IAccClientDocMgr.xml' path='doc/member[@name="IAccClientDocMgr.LookupByPoint"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, INat
     [VtblIndex(5)]
     public HRESULT LookupByPoint(POINT pt, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int>)(lpVtbl[5]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), pt, riid, ppunk);
+        return ((delegate* unmanaged[MemberFunction]<IAccClientDocMgr*, POINT, Guid*, IUnknown**, int>)(lpVtbl[5]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), pt, riid, ppunk);
     }
 
     /// <include file='IAccClientDocMgr.xml' path='doc/member[@name="IAccClientDocMgr.GetFocused"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetFocused([NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<IAccClientDocMgr*, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppunk);
+        return ((delegate* unmanaged[MemberFunction]<IAccClientDocMgr*, Guid*, IUnknown**, int>)(lpVtbl[6]))((IAccClientDocMgr*)Unsafe.AsPointer(ref this), riid, ppunk);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAccClientDocMgr : IAccClientDocMgr.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumUnknown**, int> GetDocuments;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumUnknown**, int> GetDocuments;
 
         [NativeTypeName("HRESULT (HWND, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, Guid*, IUnknown**, int> LookupByHWND;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, Guid*, IUnknown**, int> LookupByHWND;
 
         [NativeTypeName("HRESULT (POINT, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT, Guid*, IUnknown**, int> LookupByPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT, Guid*, IUnknown**, int> LookupByPoint;
 
         [NativeTypeName("HRESULT (const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown**, int> GetFocused;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown**, int> GetFocused;
     }
 }

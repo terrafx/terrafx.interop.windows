@@ -4,37 +4,23 @@
 <doc>
   <member name="ANALOGVIDEOINFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>ANALOGVIDEOINFO</b> structure maintains information about the format of the analog video signal.</para>
     </summary>
-    <remarks>
-      <para>Filters using this format usually pass the video signal using a hardware-based connection rather than using memory-based transports.</para>
-      <para>An example of a definition of an analog video media type connection would be a connection of NTSC video using "M" color encoding. This would use a major media type of MEDIATYPE_AnalogVideo, a subtype of MEDIASUBTYPE_AnalogVideo_NTSC_M, and a format type of FORMAT_AnalogVideo.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="ANALOGVIDEOINFO.rcSource">
-    <summary>
-      <para>Source video rectangle.</para>
-    </summary>
+    <summary>Source video rectangle.</summary>
   </member>
   <member name="ANALOGVIDEOINFO.rcTarget">
-    <summary>
-      <para>Destination target rectangle.</para>
-    </summary>
+    <summary>Destination target rectangle.</summary>
   </member>
   <member name="ANALOGVIDEOINFO.dwActiveWidth">
-    <summary>
-      <para>Source video width.</para>
-    </summary>
+    <summary>Source video width.</summary>
   </member>
   <member name="ANALOGVIDEOINFO.dwActiveHeight">
-    <summary>
-      <para>Source video height (483 for NTSC, 575 for PAL/SECAM).</para>
-    </summary>
+    <summary>Source video height (483 for NTSC, 575 for PAL/SECAM).</summary>
   </member>
   <member name="ANALOGVIDEOINFO.AvgTimePerFrame">
-    <summary>
-      <para>Average time per frame in 100-nanosecond units.</para>
-    </summary>
+    <summary>Average time per frame in 100-nanosecond units.</summary>
   </member>
 </doc>

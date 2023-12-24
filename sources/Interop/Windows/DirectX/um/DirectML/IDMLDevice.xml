@@ -3,260 +3,93 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDMLDevice.CheckFeatureSupport">
-    <summary>
-      <para>Gets information about the optional features and capabilities that are supported by the DirectML device.</para>
-    </summary>
-    <param name="feature">
-      <para>Type: <see cref="DML_FEATURE" /></para>
-      <para>A constant from the <see cref="DML_FEATURE" /> enumeration describing the feature(s) that you want to query for support.</para>
-    </param>
-    <param name="featureQueryDataSize">
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The size of the structure pointed to by the <i>featureQueryData</i> parameter, if provided, otherwise 0.</para>
-    </param>
-    <param name="featureQueryData">
-      <para>Type: <b>const void*</b></para>
-      <para>An optional pointer to a query structure that corresponds to the value of the <i>feature</i> parameter. To determine the corresponding query type for each constant, see <see cref="DML_FEATURE" />.</para>
-    </param>
-    <param name="featureSupportDataSize">
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The size of the structure pointed to by the <i>featureSupportData</i> parameter.</para>
-    </param>
-    <param name="featureSupportData">
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to a support data structure that corresponds to the value of the <i>feature</i> parameter. To determine the corresponding support data type for each constant, see <see cref="DML_FEATURE" />.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns <b>DXGI_ERROR_UNSUPPORTED</b> if the <see cref="DML_FEATURE" /> is unrecognized or unsupported, and <b>E_INVALIDARG</b> if the parameters are incorrect.</para>
-    </returns>
-    <seealso cref="IDMLDevice" />
+    <summary>Gets information about the optional features and capabilities that are supported by the DirectML device.</summary>
+    <param name="feature">A constant from the <see cref="DML_FEATURE" /> enumeration describing the feature(s) that you want to query for support.</param>
+    <param name="featureQueryDataSize">The size of the structure pointed to by the <i>featureQueryData</i> parameter, if provided, otherwise 0.</param>
+    <param name="featureQueryData">An optional pointer to a query structure that corresponds to the value of the <i>feature</i> parameter. To determine the corresponding query type for each constant, see <see cref="DML_FEATURE" />.</param>
+    <param name="featureSupportDataSize">The size of the structure pointed to by the <i>featureSupportData</i> parameter.</param>
+    <param name="featureSupportData">A pointer to a support data structure that corresponds to the value of the <i>feature</i> parameter. To determine the corresponding support data type for each constant, see <see cref="DML_FEATURE" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns <b>DXGI_ERROR_UNSUPPORTED</b> if the <see cref="DML_FEATURE" /> is unrecognized or unsupported, and <b>E_INVALIDARG</b> if the parameters are incorrect.</returns>
   </member>
   <member name="IDMLDevice.CompileOperator">
     <summary>
       <para>Compiles an operator into an object that can be dispatched to the GPU.</para>
-      <para>A compiled operator represents the efficient, baked form of an operator suitable for execution on the GPU.
-A compiled operator holds state (such as shaders and other objects) required for execution. Because a compiled operator
-implements the <see cref="IDMLPageable" /> interface, you're able to evict one from GPU memory if you wish. See
-<see cref="IDMLDevice.Evict" /> and <see cref="IDMLDevice.MakeResident" /> for more info.</para>
+      <para>A compiled operator represents the efficient, baked form of an operator suitable for execution on the GPU. A compiled operator holds state (such as shaders and other objects) required for execution. Because a compiled operator implements the <see cref="IDMLPageable" /> interface, you're able to evict one from GPU memory if you wish. See<see cref="IDMLDevice.Evict" /> and <see cref="IDMLDevice.MakeResident" /> for more info.</para>
       <para>The compiled operator maintains a strong reference to the supplied <see cref="IDMLOperator" /> pointer.</para>
     </summary>
-    <param name="op">
-      <para>Type: <b><see cref="IDMLOperator" />*</b></para>
-      <para>The operator (created with <see cref="IDMLDevice.CreateOperator" />) to compile.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <see cref="DML_EXECUTION_FLAGS" /></para>
-      <para>Any flags to control the execution of this operator.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLCompiledOperator" />.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the compiled operator. This is the address of a pointer to an <see cref="IDMLCompiledOperator" />, representing  the compiled operator created.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLDevice" />
+    <param name="op">The operator (created with <see cref="IDMLDevice.CreateOperator" />) to compile.</param>
+    <param name="flags">Any flags to control the execution of this operator.</param>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLCompiledOperator" />.</param>
+    <param name="ppv">A pointer to a memory block that receives a pointer to the compiled operator. This is the address of a pointer to an <see cref="IDMLCompiledOperator" />, representing the compiled operator created.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLDevice.CreateBindingTable">
     <summary>
       <para>Creates a binding table, which is an object that can be used to bind resources (such as tensors) to the pipeline.</para>
-      <para>The binding table wraps a range of an application-managed descriptor heap using the provided descriptor handles
-and count.  Binding tables are used by DirectML to manage the binding of resources by writing descriptors into
-the descriptor heap at the offset specified by the <b>CPUDescriptorHandle</b>, and binding those descriptors to the
-pipeline using the descriptors at the offset specified by the <b>GPUDescriptorHandle</b>. The order in which
-DirectML writes descriptors into the heap is unspecified, so your application must take care not to overwrite the
-descriptors wrapped by the binding table.</para>
-      <para>The supplied CPU and GPU descriptor handles may come from different heaps, however it is then your
-application's responsibility to ensure that the entire descriptor range referred to by the CPU descriptor
-handle is copied into the range referred to by the GPU descriptor handle prior to execution using this binding
-table.</para>
-      <para>The descriptor heap from which the handles are supplied must have type <see cref="D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV" />.
-Additionally, the heap referred to by the <b>GPUDescriptorHandle</b> must be a shader-visible descriptor heap.</para>
-      <para>You must not delete the heap referred to by the GPU descriptor handle until all work referencing it has
-completed execution on the GPU. You may, however, reset or release the binding table itself as soon as the
-dispatch has been recorded into the command list. Similar to the relationship between <see cref="ID3D12CommandList" /> and
-<see cref="ID3D12CommandAllocator" />, the <see cref="IDMLBindingTable" /> doesn't own the underlying memory referenced by the descriptor
-handles. Rather, the <see cref="ID3D12DescriptorHeap" /> does. Therefore, you're permitted to reset or release a DirectML binding table before work using the binding table has completed execution on the GPU.</para>
+      <para>The binding table wraps a range of an application-managed descriptor heap using the provided descriptor handles and count. Binding tables are used by DirectML to manage the binding of resources by writing descriptors into the descriptor heap at the offset specified by the <b>CPUDescriptorHandle</b>, and binding those descriptors to the pipeline using the descriptors at the offset specified by the <b>GPUDescriptorHandle</b>. The order in which DirectML writes descriptors into the heap is unspecified, so your application must take care not to overwrite the descriptors wrapped by the binding table.</para>
+      <para>The supplied CPU and GPU descriptor handles may come from different heaps, however it is then your application's responsibility to ensure that the entire descriptor range referred to by the CPU descriptor handle is copied into the range referred to by the GPU descriptor handle prior to execution using this binding table.</para>
+      <para>The descriptor heap from which the handles are supplied must have type <see cref="D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV" />. Additionally, the heap referred to by the <b>GPUDescriptorHandle</b> must be a shader-visible descriptor heap.</para>
+      <para>You must not delete the heap referred to by the GPU descriptor handle until all work referencing it has completed execution on the GPU. You may, however, reset or release the binding table itself as soon as the dispatch has been recorded into the command list. Similar to the relationship between <see cref="ID3D12CommandList" /> and<see cref="ID3D12CommandAllocator" />, the <see cref="IDMLBindingTable" /> doesn't own the underlying memory referenced by the descriptor handles. Rather, the <see cref="ID3D12DescriptorHeap" /> does. Therefore, you're permitted to reset or release a DirectML binding table before work using the binding table has completed execution on the GPU.</para>
     </summary>
-    <param name="desc">
-      <para>Type: <b>const <see cref="DML_BINDING_TABLE_DESC" />*</b></para>
-      <para>An optional pointer to a <see cref="DML_BINDING_TABLE_DESC" /> containing the binding table parameters. This may be <b>nullptr</b>, indicating an empty binding table.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLBindingTable" />.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the binding table. This is the address of a pointer to an <see cref="IDMLBindingTable" />, representing  the binding table created.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
-    <seealso cref="IDMLDevice" />
+    <param name="desc">An optional pointer to a <see cref="DML_BINDING_TABLE_DESC" /> containing the binding table parameters. This may be <b>nullptr</b>, indicating an empty binding table.</param>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLBindingTable" />.</param>
+    <param name="ppv">A pointer to a memory block that receives a pointer to the binding table. This is the address of a pointer to an <see cref="IDMLBindingTable" />, representing the binding table created.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLDevice.CreateCommandRecorder">
     <summary>
       <para>Creates a DirectML command recorder.</para>
-      <para>A command recorder allows your application to record the initialization and execution of compiled operators into
-existing Direct3D 12 command lists. The command recorder is a stateless object: it does not own command lists or
-operators, nor does it execute any GPU work. Instead, it merely records the commands necessary for
-dispatching initialization or execution into an application-supplied command list. Your application is then
-responsible for submitting the execution of that command list to the Direct3D 12 command queue.</para>
+      <para>A command recorder allows your application to record the initialization and execution of compiled operators into existing Direct3D 12 command lists. The command recorder is a stateless object: it does not own command lists or operators, nor does it execute any GPU work. Instead, it merely records the commands necessary for dispatching initialization or execution into an application-supplied command list. Your application is then responsible for submitting the execution of that command list to the Direct3D 12 command queue.</para>
     </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLCommandRecorder" />.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the command recorder. This is the address of a pointer to an <see cref="IDMLCommandRecorder" />, representing  the command recorder created.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLDevice" />
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLCommandRecorder" />.</param>
+    <param name="ppv">A pointer to a memory block that receives a pointer to the command recorder. This is the address of a pointer to an <see cref="IDMLCommandRecorder" />, representing the command recorder created.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLDevice.CreateOperator">
     <summary>
       <para>Creates a DirectML operator.</para>
-      <para>In DirectML, an operator represents an abstract bundle of functionality, which can be compiled into a form suitable
-for execution on the GPU. Operator objects cannot be executed directly; they must first be compiled into an
-<see cref="IDMLCompiledOperator" />.</para>
+      <para>In DirectML, an operator represents an abstract bundle of functionality, which can be compiled into a form suitable for execution on the GPU. Operator objects cannot be executed directly; they must first be compiled into an<see cref="IDMLCompiledOperator" />.</para>
     </summary>
-    <param name="desc">
-      <para>Type: <b>const <see cref="DML_OPERATOR_DESC" />*</b></para>
-      <para>The description of the operator to be created.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLOperator" />.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the operator. This is the address of a pointer to an <see cref="IDMLOperator" />, representing  the operator created.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLDevice" />
-    <seealso href="https://msdn.microsoft.com/745db37d-20bf-4422-b224-a6bdef272b8d">IDMLDevice.CompileOperator</seealso>
+    <param name="desc">The description of the operator to be created.</param>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLOperator" />.</param>
+    <param name="ppv">A pointer to a memory block that receives a pointer to the operator. This is the address of a pointer to an <see cref="IDMLOperator" />, representing the operator created.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLDevice.CreateOperatorInitializer">
     <summary>
       <para>Creates an object that can be used to initialize compiled operators.</para>
-      <para>Once compiled, an operator must be
-initialized exactly once on the GPU before it can be executed. The operator initializer holds the state
-necessary for initialization of one or more target compiled operators.</para>
-      <para>Once instantiated, dispatch of the operator initializer can be recorded in a command list via
-<see cref="IDMLCommandRecorder.RecordDispatch" />. After execution completes on the GPU, all compiled operators that are
-targets of the initializer enter the initialized state.</para>
-      <para>An operator initializer can be reused to initialize different sets of compiled operators. See
-<see cref="IDMLOperatorInitializer.Reset" /> for more info.</para>
-      <para>An operator initializer can be created with no target operators. Executing such an initializer is a no-op.
-Creating an operator initializer with no target operators may be useful if you wish to create an initializer
-up-front, but don't yet know which operators it will be used to initialize. <see cref="IDMLOperatorInitializer.Reset" /> can be used to reset which
-operators to target.</para>
+      <para>Once compiled, an operator must be initialized exactly once on the GPU before it can be executed. The operator initializer holds the state necessary for initialization of one or more target compiled operators.</para>
+      <para>Once instantiated, dispatch of the operator initializer can be recorded in a command list via<see cref="IDMLCommandRecorder.RecordDispatch" />. After execution completes on the GPU, all compiled operators that are targets of the initializer enter the initialized state.</para>
+      <para>An operator initializer can be reused to initialize different sets of compiled operators. See<see cref="IDMLOperatorInitializer.Reset" /> for more info.</para>
+      <para>An operator initializer can be created with no target operators. Executing such an initializer is a no-op. Creating an operator initializer with no target operators may be useful if you wish to create an initializer up-front, but don't yet know which operators it will be used to initialize. <see cref="IDMLOperatorInitializer.Reset" /> can be used to reset which operators to target.</para>
     </summary>
-    <param name="operatorCount">
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>This parameter determines the number of elements in the array passed in the  <i>operators</i> parameter.</para>
-    </param>
-    <param name="operators">
-      <para>Type: <b><see cref="IDMLCompiledOperator" />*</b></para>
-      <para>An optional pointer to a constant array of <see cref="IDMLCompiledOperator" /> pointers containing the set of operators that this initializer will target. Upon execution of the initializer, the target
-operators become initialized. This array may be null or empty, indicating that the initializer has no target
-operators.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLOperatorInitializer" />.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the operator initializer. This is the address of a pointer to an <see cref="IDMLOperatorInitializer" />, representing  the operator initializer created.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLDevice" />
+    <param name="operatorCount">This parameter determines the number of elements in the array passed in the <i>operators</i> parameter.</param>
+    <param name="operators">An optional pointer to a constant array of <see cref="IDMLCompiledOperator" /> pointers containing the set of operators that this initializer will target. Upon execution of the initializer, the target operators become initialized. This array may be null or empty, indicating that the initializer has no target operators.</param>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="IDMLOperatorInitializer" />.</param>
+    <param name="ppv">A pointer to a memory block that receives a pointer to the operator initializer. This is the address of a pointer to an <see cref="IDMLOperatorInitializer" />, representing the operator initializer created.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLDevice.Evict">
-    <summary>
-      <para>Evicts one or more pageable objects from GPU memory. Also see <see cref="IDMLDevice.MakeResident" />.</para>
-    </summary>
-    <param name="count">
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>This parameter determines the number of elements in the array passed in the  <i>ppObjects</i> parameter.</para>
-    </param>
-    <param name="ppObjects">
-      <para>Type: <b><see cref="IDMLPageable" />*</b></para>
-      <para>A pointer to a constant array of <see cref="IDMLPageable" /> pointers containing the pageable objects to evict from GPU memory.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLDevice" />
-    <seealso cref="IDMLDevice.MakeResident" />
+    <summary>Evicts one or more pageable objects from GPU memory. Also see <see cref="IDMLDevice.MakeResident" />.</summary>
+    <param name="count">This parameter determines the number of elements in the array passed in the <i>ppObjects</i> parameter.</param>
+    <param name="ppObjects">A pointer to a constant array of <see cref="IDMLPageable" /> pointers containing the pageable objects to evict from GPU memory.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLDevice.GetDeviceRemovedReason">
-    <summary>
-      <para>Retrieves the reason that the DirectML device was removed.</para>
-    </summary>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>An <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a> containing the reason that the device was removed, or <b>S_OK</b> if the device has not been removed.</para>
-    </returns>
-    <seealso cref="IDMLDevice" />
+    <summary>Retrieves the reason that the DirectML device was removed.</summary>
+    <returns>An <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a> containing the reason that the device was removed, or <b>S_OK</b> if the device has not been removed.</returns>
   </member>
   <member name="IDMLDevice.GetParentDevice">
-    <summary>
-      <para>Retrieves the Direct3D 12 device that was used to create this DirectML device.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="ID3D12Device" />.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>A pointer to a memory block that receives a pointer to the device. This is the address of a pointer to an <see cref="ID3D12Device" />, representing  the device.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLDevice" />
+    <summary>Retrieves the Direct3D 12 device that was used to create this DirectML device.</summary>
+    <param name="riid">A reference to the globally unique identifier (GUID) of the interface that you wish to be returned in <i>ppv</i>. This is expected to be the GUID of <see cref="ID3D12Device" />.</param>
+    <param name="ppv">A pointer to a memory block that receives a pointer to the device. This is the address of a pointer to an <see cref="ID3D12Device" />, representing the device.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLDevice.MakeResident">
-    <summary>
-      <para>Causes one or more pageable objects to become resident in GPU memory. Also see <see cref="IDMLDevice.Evict" />.</para>
-    </summary>
-    <param name="count">
-      <para>Type: <b>UINT</b></para>
-      <para>This parameter determines the number of elements in the array passed in the  <i>ppObjects</i> parameter.</para>
-    </param>
-    <param name="ppObjects">
-      <para>Type: <b><see cref="IDMLPageable" />*</b></para>
-      <para>A pointer to a constant array of <see cref="IDMLPageable" /> pointers containing the pageable objects to make resident in GPU memory.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLDevice" />
-    <seealso cref="IDMLDevice.Evict" />
+    <summary>Causes one or more pageable objects to become resident in GPU memory. Also see <see cref="IDMLDevice.Evict" />.</summary>
+    <param name="count">This parameter determines the number of elements in the array passed in the <i>ppObjects</i> parameter.</param>
+    <param name="ppObjects">A pointer to a constant array of <see cref="IDMLPageable" /> pointers containing the pageable objects to make resident in GPU memory.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLDevice">
     <summary>
@@ -264,6 +97,5 @@ operators.</para>
       <para>A DirectML device is always associated with exactly one underlying Direct3D 12 device. All objects created by the DirectML device maintain a strong reference to their parent device. Unlike the Direct3D 12 device, the DML device is not a singleton. Therefore, it's possible to create multiple DirectML devices over the same Direct3D 12 device. However, this isn't recommended as the DirectML device has no mutable state, so there's little advantage to creating multiple DML devices over the same Direct3D 12 device.</para>
       <para>This object is thread-safe.</para>
     </summary>
-    <seealso cref="IDMLObject" />
   </member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IAMTVAudioTests
     {
         Assert.That(typeof(IAMTVAudio).GUID, Is.EqualTo(IID_IAMTVAudio));
     }
-
-    /// <summary>Validates that the <see cref="IAMTVAudio" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMTVAudio>(), Is.EqualTo(sizeof(IAMTVAudio)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMTVAudio" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMTVAudio).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMTVAudio" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMTVAudio), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMTVAudio), Is.EqualTo(4));
-        }
-    }
 }

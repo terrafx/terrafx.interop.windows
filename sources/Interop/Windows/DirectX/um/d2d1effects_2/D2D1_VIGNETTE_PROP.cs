@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_VIGNETTE_PROP.xml' path='doc/member[@name="D2D1_VIGNETTE_PROP"]/*' />
-public enum D2D1_VIGNETTE_PROP : uint
+public enum D2D1_VIGNETTE_PROP
 {
     /// <include file='D2D1_VIGNETTE_PROP.xml' path='doc/member[@name="D2D1_VIGNETTE_PROP.D2D1_VIGNETTE_PROP_COLOR"]/*' />
     D2D1_VIGNETTE_PROP_COLOR = 0,
@@ -18,5 +18,5 @@ public enum D2D1_VIGNETTE_PROP : uint
     D2D1_VIGNETTE_PROP_STRENGTH = 2,
 
     /// <include file='D2D1_VIGNETTE_PROP.xml' path='doc/member[@name="D2D1_VIGNETTE_PROP.D2D1_VIGNETTE_PROP_FORCE_DWORD"]/*' />
-    D2D1_VIGNETTE_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_VIGNETTE_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

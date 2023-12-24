@@ -16,7 +16,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontResourceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern int AddFontResourceW([NativeTypeName("LPCWSTR")] ushort* param0);
+    public static extern int AddFontResourceW([NativeTypeName("LPCWSTR")] char* param0);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AnimatePalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -58,7 +58,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern HMETAFILE CopyMetaFileW(HMETAFILE param0, [NativeTypeName("LPCWSTR")] ushort* param1);
+    public static extern HMETAFILE CopyMetaFileW(HMETAFILE param0, [NativeTypeName("LPCWSTR")] char* param1);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateBitmap"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -90,7 +90,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDCW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern HDC CreateDCW([NativeTypeName("LPCWSTR")] ushort* pwszDriver, [NativeTypeName("LPCWSTR")] ushort* pwszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
+    public static extern HDC CreateDCW([NativeTypeName("LPCWSTR")] char* pwszDriver, [NativeTypeName("LPCWSTR")] char* pwszDevice, [NativeTypeName("LPCWSTR")] char* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateDIBitmap"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -126,7 +126,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateFontW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern HFONT CreateFontW(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCWSTR")] ushort* pszFaceName);
+    public static extern HFONT CreateFontW(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, [NativeTypeName("DWORD")] uint bItalic, [NativeTypeName("DWORD")] uint bUnderline, [NativeTypeName("DWORD")] uint bStrikeOut, [NativeTypeName("DWORD")] uint iCharSet, [NativeTypeName("DWORD")] uint iOutPrecision, [NativeTypeName("DWORD")] uint iClipPrecision, [NativeTypeName("DWORD")] uint iQuality, [NativeTypeName("DWORD")] uint iPitchAndFamily, [NativeTypeName("LPCWSTR")] char* pszFaceName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateHatchBrush"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -138,7 +138,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateICW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern HDC CreateICW([NativeTypeName("LPCWSTR")] ushort* pszDriver, [NativeTypeName("LPCWSTR")] ushort* pszDevice, [NativeTypeName("LPCWSTR")] ushort* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
+    public static extern HDC CreateICW([NativeTypeName("LPCWSTR")] char* pszDriver, [NativeTypeName("LPCWSTR")] char* pszDevice, [NativeTypeName("LPCWSTR")] char* pszPort, [NativeTypeName("const DEVMODEW *")] DEVMODEW* pdm);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMetaFileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -146,7 +146,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern HDC CreateMetaFileW([NativeTypeName("LPCWSTR")] ushort* pszFile);
+    public static extern HDC CreateMetaFileW([NativeTypeName("LPCWSTR")] char* pszFile);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -188,7 +188,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateScalableFontResourceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CreateScalableFontResourceW([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] ushort* lpszFont, [NativeTypeName("LPCWSTR")] ushort* lpszFile, [NativeTypeName("LPCWSTR")] ushort* lpszPath);
+    public static extern BOOL CreateScalableFontResourceW([NativeTypeName("DWORD")] uint fdwHidden, [NativeTypeName("LPCWSTR")] char* lpszFont, [NativeTypeName("LPCWSTR")] char* lpszFile, [NativeTypeName("LPCWSTR")] char* lpszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateSolidBrush"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -233,7 +233,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontFamiliesW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern int EnumFontFamiliesW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam);
+    public static extern int EnumFontFamiliesW(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontsA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -241,7 +241,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumFontsW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern int EnumFontsW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam);
+    public static extern int EnumFontsW(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpLogfont, [NativeTypeName("FONTENUMPROCW")] delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int> lpProc, LPARAM lParam);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumObjects"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -425,7 +425,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern HMETAFILE GetMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HMETAFILE GetMetaFileW([NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetNearestColor"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -516,7 +516,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPointW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL GetTextExtentPointW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
+    public static extern BOOL GetTextExtentPointW(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* lpsz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPoint32A"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -524,7 +524,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPoint32W"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL GetTextExtentPoint32W(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
+    public static extern BOOL GetTextExtentPoint32W(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpString, int c, [NativeTypeName("LPSIZE")] SIZE* psizl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentExPointA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -532,7 +532,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentExPointW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL GetTextExtentExPointW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
+    public static extern BOOL GetTextExtentExPointW(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpszString, int cchString, int nMaxExtent, [NativeTypeName("LPINT")] int* lpnFit, [NativeTypeName("LPINT")] int* lpnDx, [NativeTypeName("LPSIZE")] SIZE* lpSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextCharset"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -560,7 +560,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCharacterPlacementW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetCharacterPlacementW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSW")] GCP_RESULTSW* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern uint GetCharacterPlacementW(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpString, int nCount, int nMexExtent, [NativeTypeName("LPGCP_RESULTSW")] GCP_RESULTSW* lpResults, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetFontUnicodeRanges"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -575,7 +575,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetGlyphIndicesW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetGlyphIndicesW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
+    public static extern uint GetGlyphIndicesW(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpstr, int c, [NativeTypeName("LPWORD")] ushort* pgi, [NativeTypeName("DWORD")] uint fl);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextExtentPointI"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -599,7 +599,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontResourceExW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern int AddFontResourceExW([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* res);
+    public static extern int AddFontResourceExW([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* res);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontResourceExA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -607,7 +607,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontResourceExW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL RemoveFontResourceExW([NativeTypeName("LPCWSTR")] ushort* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
+    public static extern BOOL RemoveFontResourceExW([NativeTypeName("LPCWSTR")] char* name, [NativeTypeName("DWORD")] uint fl, [NativeTypeName("PVOID")] void* pdv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddFontMemResourceEx"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -735,7 +735,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RemoveFontResourceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL RemoveFontResourceW([NativeTypeName("LPCWSTR")] ushort* lpFileName);
+    public static extern BOOL RemoveFontResourceW([NativeTypeName("LPCWSTR")] char* lpFileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.RoundRect"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -937,7 +937,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CopyEnhMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern HENHMETAFILE CopyEnhMetaFileW(HENHMETAFILE hEnh, [NativeTypeName("LPCWSTR")] ushort* lpFileName);
+    public static extern HENHMETAFILE CopyEnhMetaFileW(HENHMETAFILE hEnh, [NativeTypeName("LPCWSTR")] char* lpFileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEnhMetaFileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -945,7 +945,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateEnhMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern HDC CreateEnhMetaFileW(HDC hdc, [NativeTypeName("LPCWSTR")] ushort* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCWSTR")] ushort* lpDesc);
+    public static extern HDC CreateEnhMetaFileW(HDC hdc, [NativeTypeName("LPCWSTR")] char* lpFilename, [NativeTypeName("const RECT *")] RECT* lprc, [NativeTypeName("LPCWSTR")] char* lpDesc);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.DeleteEnhMetaFile"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -961,7 +961,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern HENHMETAFILE GetEnhMetaFileW([NativeTypeName("LPCWSTR")] ushort* lpName);
+    public static extern HENHMETAFILE GetEnhMetaFileW([NativeTypeName("LPCWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileBits"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -973,7 +973,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileDescriptionW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern uint GetEnhMetaFileDescriptionW(HENHMETAFILE hemf, uint cchBuffer, [NativeTypeName("LPWSTR")] ushort* lpDescription);
+    public static extern uint GetEnhMetaFileDescriptionW(HENHMETAFILE hemf, uint cchBuffer, [NativeTypeName("LPWSTR")] char* lpDescription);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnhMetaFileHeader"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -1191,7 +1191,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.TextOutW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL TextOutW(HDC hdc, int x, int y, [NativeTypeName("LPCWSTR")] ushort* lpString, int c);
+    public static extern BOOL TextOutW(HDC hdc, int x, int y, [NativeTypeName("LPCWSTR")] char* lpString, int c);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtTextOutA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -1199,7 +1199,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExtTextOutW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL ExtTextOutW(HDC hdc, int x, int y, uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCWSTR")] ushort* lpString, uint c, [NativeTypeName("const INT *")] int* lpDx);
+    public static extern BOOL ExtTextOutW(HDC hdc, int x, int y, uint options, [NativeTypeName("const RECT *")] RECT* lprect, [NativeTypeName("LPCWSTR")] char* lpString, uint c, [NativeTypeName("const INT *")] int* lpDx);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PolyTextOutA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -1287,7 +1287,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetTextFaceW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern int GetTextFaceW(HDC hdc, int c, [NativeTypeName("LPWSTR")] ushort* lpName);
+    public static extern int GetTextFaceW(HDC hdc, int c, [NativeTypeName("LPWSTR")] char* lpName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetKerningPairsA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -1367,7 +1367,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetICMProfileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL GetICMProfileW(HDC hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPWSTR")] ushort* pszFilename);
+    public static extern BOOL GetICMProfileW(HDC hdc, [NativeTypeName("LPDWORD")] uint* pBufSize, [NativeTypeName("LPWSTR")] char* pszFilename);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetICMProfileA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -1375,7 +1375,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetICMProfileW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL SetICMProfileW(HDC hdc, [NativeTypeName("LPWSTR")] ushort* lpFileName);
+    public static extern BOOL SetICMProfileW(HDC hdc, [NativeTypeName("LPWSTR")] char* lpFileName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceGammaRamp"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -1395,7 +1395,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EnumICMProfilesW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern int EnumICMProfilesW(HDC hdc, [NativeTypeName("ICMENUMPROCW")] delegate* unmanaged<ushort*, LPARAM, int> proc, LPARAM param2);
+    public static extern int EnumICMProfilesW(HDC hdc, [NativeTypeName("ICMENUMPROCW")] delegate* unmanaged<char*, LPARAM, int> proc, LPARAM param2);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateICMRegKeyA"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -1403,7 +1403,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.UpdateICMRegKeyW"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
-    public static extern BOOL UpdateICMRegKeyW([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPWSTR")] ushort* lpszCMID, [NativeTypeName("LPWSTR")] ushort* lpszFileName, uint command);
+    public static extern BOOL UpdateICMRegKeyW([NativeTypeName("DWORD")] uint reserved, [NativeTypeName("LPWSTR")] char* lpszCMID, [NativeTypeName("LPWSTR")] char* lpszFileName, uint command);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ColorCorrectPalette"]/*' />
     [DllImport("gdi32", ExactSpelling = true)]
@@ -2765,28 +2765,28 @@ public static unsafe partial class Windows
     public const int TT_ENABLED = 0x0002;
 
     [NativeTypeName("#define AddFontResource AddFontResourceW")]
-    public static delegate*<ushort*, int> AddFontResource => &AddFontResourceW;
+    public static delegate*<char*, int> AddFontResource => &AddFontResourceW;
 
     [NativeTypeName("#define CopyMetaFile CopyMetaFileW")]
-    public static delegate*<HMETAFILE, ushort*, HMETAFILE> CopyMetaFile => &CopyMetaFileW;
+    public static delegate*<HMETAFILE, char*, HMETAFILE> CopyMetaFile => &CopyMetaFileW;
 
     [NativeTypeName("#define CreateDC CreateDCW")]
-    public static delegate*<ushort*, ushort*, ushort*, DEVMODEW*, HDC> CreateDC => &CreateDCW;
+    public static delegate*<char*, char*, char*, DEVMODEW*, HDC> CreateDC => &CreateDCW;
 
     [NativeTypeName("#define CreateFontIndirect CreateFontIndirectW")]
     public static delegate*<LOGFONTW*, HFONT> CreateFontIndirect => &CreateFontIndirectW;
 
     [NativeTypeName("#define CreateFont CreateFontW")]
-    public static delegate*<int, int, int, int, int, uint, uint, uint, uint, uint, uint, uint, uint, ushort*, HFONT> CreateFont => &CreateFontW;
+    public static delegate*<int, int, int, int, int, uint, uint, uint, uint, uint, uint, uint, uint, char*, HFONT> CreateFont => &CreateFontW;
 
     [NativeTypeName("#define CreateIC CreateICW")]
-    public static delegate*<ushort*, ushort*, ushort*, DEVMODEW*, HDC> CreateIC => &CreateICW;
+    public static delegate*<char*, char*, char*, DEVMODEW*, HDC> CreateIC => &CreateICW;
 
     [NativeTypeName("#define CreateMetaFile CreateMetaFileW")]
-    public static delegate*<ushort*, HDC> CreateMetaFile => &CreateMetaFileW;
+    public static delegate*<char*, HDC> CreateMetaFile => &CreateMetaFileW;
 
     [NativeTypeName("#define CreateScalableFontResource CreateScalableFontResourceW")]
-    public static delegate*<uint, ushort*, ushort*, ushort*, BOOL> CreateScalableFontResource => &CreateScalableFontResourceW;
+    public static delegate*<uint, char*, char*, char*, BOOL> CreateScalableFontResource => &CreateScalableFontResourceW;
 
     [NativeTypeName("#define PRINTRATEUNIT_PPM 1")]
     public const int PRINTRATEUNIT_PPM = 1;
@@ -2840,10 +2840,10 @@ public static unsafe partial class Windows
     public static delegate*<HDC, LOGFONTW*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, uint, int> EnumFontFamiliesEx => &EnumFontFamiliesExW;
 
     [NativeTypeName("#define EnumFontFamilies EnumFontFamiliesW")]
-    public static delegate*<HDC, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, int> EnumFontFamilies => &EnumFontFamiliesW;
+    public static delegate*<HDC, char*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, int> EnumFontFamilies => &EnumFontFamiliesW;
 
     [NativeTypeName("#define EnumFonts EnumFontsW")]
-    public static delegate*<HDC, ushort*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, int> EnumFonts => &EnumFontsW;
+    public static delegate*<HDC, char*, delegate* unmanaged<LOGFONTW*, TEXTMETRICW*, uint, LPARAM, int>, LPARAM, int> EnumFonts => &EnumFontsW;
 
     [NativeTypeName("#define GetCharWidth GetCharWidthW")]
     public static delegate*<HDC, uint, uint, int*, BOOL> GetCharWidth => &GetCharWidthW;
@@ -2864,22 +2864,22 @@ public static unsafe partial class Windows
     public static delegate*<HDC, uint, uint, GLYPHMETRICS*, uint, void*, MAT2*, uint> GetGlyphOutline => &GetGlyphOutlineW;
 
     [NativeTypeName("#define GetMetaFile GetMetaFileW")]
-    public static delegate*<ushort*, HMETAFILE> GetMetaFile => &GetMetaFileW;
+    public static delegate*<char*, HMETAFILE> GetMetaFile => &GetMetaFileW;
 
     [NativeTypeName("#define GetOutlineTextMetrics GetOutlineTextMetricsW")]
     public static delegate*<HDC, uint, OUTLINETEXTMETRICW*, uint> GetOutlineTextMetrics => &GetOutlineTextMetricsW;
 
     [NativeTypeName("#define GetTextExtentPoint GetTextExtentPointW")]
-    public static delegate*<HDC, ushort*, int, SIZE*, BOOL> GetTextExtentPoint => &GetTextExtentPointW;
+    public static delegate*<HDC, char*, int, SIZE*, BOOL> GetTextExtentPoint => &GetTextExtentPointW;
 
     [NativeTypeName("#define GetTextExtentPoint32 GetTextExtentPoint32W")]
-    public static delegate*<HDC, ushort*, int, SIZE*, BOOL> GetTextExtentPoint32 => &GetTextExtentPoint32W;
+    public static delegate*<HDC, char*, int, SIZE*, BOOL> GetTextExtentPoint32 => &GetTextExtentPoint32W;
 
     [NativeTypeName("#define GetTextExtentExPoint GetTextExtentExPointW")]
-    public static delegate*<HDC, ushort*, int, int, int*, int*, SIZE*, BOOL> GetTextExtentExPoint => &GetTextExtentExPointW;
+    public static delegate*<HDC, char*, int, int, int*, int*, SIZE*, BOOL> GetTextExtentExPoint => &GetTextExtentExPointW;
 
     [NativeTypeName("#define GetCharacterPlacement GetCharacterPlacementW")]
-    public static delegate*<HDC, ushort*, int, int, GCP_RESULTSW*, uint, uint> GetCharacterPlacement => &GetCharacterPlacementW;
+    public static delegate*<HDC, char*, int, int, GCP_RESULTSW*, uint, uint> GetCharacterPlacement => &GetCharacterPlacementW;
 
     [NativeTypeName("#define GS_8BIT_INDICES 0x00000001")]
     public const int GS_8BIT_INDICES = 0x00000001;
@@ -2888,7 +2888,7 @@ public static unsafe partial class Windows
     public const int GGI_MARK_NONEXISTING_GLYPHS = 0X0001;
 
     [NativeTypeName("#define GetGlyphIndices GetGlyphIndicesW")]
-    public static delegate*<HDC, ushort*, int, ushort*, uint, uint> GetGlyphIndices => &GetGlyphIndicesW;
+    public static delegate*<HDC, char*, int, ushort*, uint, uint> GetGlyphIndices => &GetGlyphIndicesW;
 
     [NativeTypeName("#define STAMP_DESIGNVECTOR (0x8000000 + 'd' + ('v' << 8))")]
     public const int STAMP_DESIGNVECTOR = (0x8000000 + 'd' + ('v' << 8));
@@ -2903,16 +2903,10 @@ public static unsafe partial class Windows
     public const int STAMP_CFF2 = (0x8000000 + 'c' + ('v' << 8));
 
     [NativeTypeName("#define AddFontResourceEx AddFontResourceExW")]
-    public static delegate*<ushort*, uint, void*, int> AddFontResourceEx => &AddFontResourceExW;
+    public static delegate*<char*, uint, void*, int> AddFontResourceEx => &AddFontResourceExW;
 
     [NativeTypeName("#define RemoveFontResourceEx RemoveFontResourceExW")]
-    public static delegate*<ushort*, uint, void*, BOOL> RemoveFontResourceEx => &RemoveFontResourceExW;
-
-    [NativeTypeName("#define FR_PRIVATE 0x10")]
-    public const int FR_PRIVATE = 0x10;
-
-    [NativeTypeName("#define FR_NOT_ENUM 0x20")]
-    public const int FR_NOT_ENUM = 0x20;
+    public static delegate*<char*, uint, void*, BOOL> RemoveFontResourceEx => &RemoveFontResourceExW;
 
     [NativeTypeName("#define CreateFontIndirectEx CreateFontIndirectExW")]
     public static delegate*<ENUMLOGFONTEXDVW*, HFONT> CreateFontIndirectEx => &CreateFontIndirectExW;
@@ -2921,7 +2915,7 @@ public static unsafe partial class Windows
     public static delegate*<HDC, DEVMODEW*, HDC> ResetDC => &ResetDCW;
 
     [NativeTypeName("#define RemoveFontResource RemoveFontResourceW")]
-    public static delegate*<ushort*, BOOL> RemoveFontResource => &RemoveFontResourceW;
+    public static delegate*<char*, BOOL> RemoveFontResource => &RemoveFontResourceW;
 
     [NativeTypeName("#define AC_SRC_OVER 0x00")]
     public const int AC_SRC_OVER = 0x00;
@@ -2942,16 +2936,16 @@ public static unsafe partial class Windows
     public const int GRADIENT_FILL_OP_FLAG = 0x000000ff;
 
     [NativeTypeName("#define CopyEnhMetaFile CopyEnhMetaFileW")]
-    public static delegate*<HENHMETAFILE, ushort*, HENHMETAFILE> CopyEnhMetaFile => &CopyEnhMetaFileW;
+    public static delegate*<HENHMETAFILE, char*, HENHMETAFILE> CopyEnhMetaFile => &CopyEnhMetaFileW;
 
     [NativeTypeName("#define CreateEnhMetaFile CreateEnhMetaFileW")]
-    public static delegate*<HDC, ushort*, RECT*, ushort*, HDC> CreateEnhMetaFile => &CreateEnhMetaFileW;
+    public static delegate*<HDC, char*, RECT*, char*, HDC> CreateEnhMetaFile => &CreateEnhMetaFileW;
 
     [NativeTypeName("#define GetEnhMetaFile GetEnhMetaFileW")]
-    public static delegate*<ushort*, HENHMETAFILE> GetEnhMetaFile => &GetEnhMetaFileW;
+    public static delegate*<char*, HENHMETAFILE> GetEnhMetaFile => &GetEnhMetaFileW;
 
     [NativeTypeName("#define GetEnhMetaFileDescription GetEnhMetaFileDescriptionW")]
-    public static delegate*<HENHMETAFILE, uint, ushort*, uint> GetEnhMetaFileDescription => &GetEnhMetaFileDescriptionW;
+    public static delegate*<HENHMETAFILE, uint, char*, uint> GetEnhMetaFileDescription => &GetEnhMetaFileDescriptionW;
 
     [NativeTypeName("#define GetTextMetrics GetTextMetricsW")]
     public static delegate*<HDC, TEXTMETRICW*, BOOL> GetTextMetrics => &GetTextMetricsW;
@@ -2987,16 +2981,16 @@ public static unsafe partial class Windows
     public static delegate*<HANDLE, int, void*, int> GetObject => &GetObjectW;
 
     [NativeTypeName("#define TextOut TextOutW")]
-    public static delegate*<HDC, int, int, ushort*, int, BOOL> TextOut => &TextOutW;
+    public static delegate*<HDC, int, int, char*, int, BOOL> TextOut => &TextOutW;
 
     [NativeTypeName("#define ExtTextOut ExtTextOutW")]
-    public static delegate*<HDC, int, int, uint, RECT*, ushort*, uint, int*, BOOL> ExtTextOut => &ExtTextOutW;
+    public static delegate*<HDC, int, int, uint, RECT*, char*, uint, int*, BOOL> ExtTextOut => &ExtTextOutW;
 
     [NativeTypeName("#define PolyTextOut PolyTextOutW")]
     public static delegate*<HDC, POLYTEXTW*, int, BOOL> PolyTextOut => &PolyTextOutW;
 
     [NativeTypeName("#define GetTextFace GetTextFaceW")]
-    public static delegate*<HDC, int, ushort*, int> GetTextFace => &GetTextFaceW;
+    public static delegate*<HDC, int, char*, int> GetTextFace => &GetTextFaceW;
 
     [NativeTypeName("#define FONTMAPPER_MAX 10")]
     public const int FONTMAPPER_MAX = 10;
@@ -3011,16 +3005,16 @@ public static unsafe partial class Windows
     public static delegate*<LOGCOLORSPACEW*, HCOLORSPACE> CreateColorSpace => &CreateColorSpaceW;
 
     [NativeTypeName("#define GetICMProfile GetICMProfileW")]
-    public static delegate*<HDC, uint*, ushort*, BOOL> GetICMProfile => &GetICMProfileW;
+    public static delegate*<HDC, uint*, char*, BOOL> GetICMProfile => &GetICMProfileW;
 
     [NativeTypeName("#define SetICMProfile SetICMProfileW")]
-    public static delegate*<HDC, ushort*, BOOL> SetICMProfile => &SetICMProfileW;
+    public static delegate*<HDC, char*, BOOL> SetICMProfile => &SetICMProfileW;
 
     [NativeTypeName("#define EnumICMProfiles EnumICMProfilesW")]
-    public static delegate*<HDC, delegate* unmanaged<ushort*, LPARAM, int>, LPARAM, int> EnumICMProfiles => &EnumICMProfilesW;
+    public static delegate*<HDC, delegate* unmanaged<char*, LPARAM, int>, LPARAM, int> EnumICMProfiles => &EnumICMProfilesW;
 
     [NativeTypeName("#define UpdateICMRegKey UpdateICMRegKeyW")]
-    public static delegate*<uint, ushort*, ushort*, uint, BOOL> UpdateICMRegKey => &UpdateICMRegKeyW;
+    public static delegate*<uint, char*, char*, uint, BOOL> UpdateICMRegKey => &UpdateICMRegKeyW;
 
     [NativeTypeName("#define ENHMETA_SIGNATURE 0x464D4520")]
     public const int ENHMETA_SIGNATURE = 0x464D4520;

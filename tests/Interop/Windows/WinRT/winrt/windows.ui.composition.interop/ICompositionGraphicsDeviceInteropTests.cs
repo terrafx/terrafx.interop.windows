@@ -19,32 +19,4 @@ public static unsafe partial class ICompositionGraphicsDeviceInteropTests
     {
         Assert.That(typeof(ICompositionGraphicsDeviceInterop).GUID, Is.EqualTo(IID_ICompositionGraphicsDeviceInterop));
     }
-
-    /// <summary>Validates that the <see cref="ICompositionGraphicsDeviceInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICompositionGraphicsDeviceInterop>(), Is.EqualTo(sizeof(ICompositionGraphicsDeviceInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="ICompositionGraphicsDeviceInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICompositionGraphicsDeviceInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICompositionGraphicsDeviceInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICompositionGraphicsDeviceInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICompositionGraphicsDeviceInterop), Is.EqualTo(4));
-        }
-    }
 }

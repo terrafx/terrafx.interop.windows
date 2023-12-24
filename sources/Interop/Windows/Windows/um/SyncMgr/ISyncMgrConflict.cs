@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflict*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrConflict*, uint>)(lpVtbl[1]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflict*, uint>)(lpVtbl[1]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrConflict*, uint>)(lpVtbl[2]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflict*, uint>)(lpVtbl[2]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.GetProperty"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetProperty([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, PROPVARIANT* ppropvar)
     {
-        return ((delegate* unmanaged<ISyncMgrConflict*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[3]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), propkey, ppropvar);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflict*, PROPERTYKEY*, PROPVARIANT*, int>)(lpVtbl[3]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), propkey, ppropvar);
     }
 
     /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.GetConflictIdInfo"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetConflictIdInfo(SYNCMGR_CONFLICT_ID_INFO* pConflictIdInfo)
     {
-        return ((delegate* unmanaged<ISyncMgrConflict*, SYNCMGR_CONFLICT_ID_INFO*, int>)(lpVtbl[4]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), pConflictIdInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflict*, SYNCMGR_CONFLICT_ID_INFO*, int>)(lpVtbl[4]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), pConflictIdInfo);
     }
 
     /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.GetItemsArray"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetItemsArray(ISyncMgrConflictItems** ppArray)
     {
-        return ((delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictItems**, int>)(lpVtbl[5]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), ppArray);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflict*, ISyncMgrConflictItems**, int>)(lpVtbl[5]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), ppArray);
     }
 
     /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.Resolve"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface, INat
     [VtblIndex(6)]
     public HRESULT Resolve(ISyncMgrConflictResolveInfo* pResolveInfo)
     {
-        return ((delegate* unmanaged<ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int>)(lpVtbl[6]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), pResolveInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int>)(lpVtbl[6]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), pResolveInfo);
     }
 
     /// <include file='ISyncMgrConflict.xml' path='doc/member[@name="ISyncMgrConflict.GetResolutionHandler"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface, INat
     [VtblIndex(7)]
     public HRESULT GetResolutionHandler([NativeTypeName("const IID &")] Guid* riid, void** ppvResolutionHandler)
     {
-        return ((delegate* unmanaged<ISyncMgrConflict*, Guid*, void**, int>)(lpVtbl[7]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvResolutionHandler);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflict*, Guid*, void**, int>)(lpVtbl[7]))((ISyncMgrConflict*)Unsafe.AsPointer(ref this), riid, ppvResolutionHandler);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct ISyncMgrConflict : ISyncMgrConflict.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const PROPERTYKEY &, PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> GetProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPERTYKEY*, PROPVARIANT*, int> GetProperty;
 
         [NativeTypeName("HRESULT (SYNCMGR_CONFLICT_ID_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SYNCMGR_CONFLICT_ID_INFO*, int> GetConflictIdInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SYNCMGR_CONFLICT_ID_INFO*, int> GetConflictIdInfo;
 
         [NativeTypeName("HRESULT (ISyncMgrConflictItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISyncMgrConflictItems**, int> GetItemsArray;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISyncMgrConflictItems**, int> GetItemsArray;
 
         [NativeTypeName("HRESULT (ISyncMgrConflictResolveInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISyncMgrConflictResolveInfo*, int> Resolve;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISyncMgrConflictResolveInfo*, int> Resolve;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetResolutionHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetResolutionHandler;
     }
 }

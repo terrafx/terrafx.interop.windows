@@ -25,7 +25,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleClientSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleClientSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleClientSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleClientSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleClientSite*, uint>)(lpVtbl[1]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleClientSite*, uint>)(lpVtbl[1]))((IOleClientSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleClientSite*, uint>)(lpVtbl[2]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleClientSite*, uint>)(lpVtbl[2]))((IOleClientSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.SaveObject"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT SaveObject()
     {
-        return ((delegate* unmanaged<IOleClientSite*, int>)(lpVtbl[3]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleClientSite*, int>)(lpVtbl[3]))((IOleClientSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.GetMoniker"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetMoniker([NativeTypeName("DWORD")] uint dwAssign, [NativeTypeName("DWORD")] uint dwWhichMoniker, IMoniker** ppmk)
     {
-        return ((delegate* unmanaged<IOleClientSite*, uint, uint, IMoniker**, int>)(lpVtbl[4]))((IOleClientSite*)Unsafe.AsPointer(ref this), dwAssign, dwWhichMoniker, ppmk);
+        return ((delegate* unmanaged[MemberFunction]<IOleClientSite*, uint, uint, IMoniker**, int>)(lpVtbl[4]))((IOleClientSite*)Unsafe.AsPointer(ref this), dwAssign, dwWhichMoniker, ppmk);
     }
 
     /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.GetContainer"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetContainer(IOleContainer** ppContainer)
     {
-        return ((delegate* unmanaged<IOleClientSite*, IOleContainer**, int>)(lpVtbl[5]))((IOleClientSite*)Unsafe.AsPointer(ref this), ppContainer);
+        return ((delegate* unmanaged[MemberFunction]<IOleClientSite*, IOleContainer**, int>)(lpVtbl[5]))((IOleClientSite*)Unsafe.AsPointer(ref this), ppContainer);
     }
 
     /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.ShowObject"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT ShowObject()
     {
-        return ((delegate* unmanaged<IOleClientSite*, int>)(lpVtbl[6]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleClientSite*, int>)(lpVtbl[6]))((IOleClientSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.OnShowWindow"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT OnShowWindow(BOOL fShow)
     {
-        return ((delegate* unmanaged<IOleClientSite*, BOOL, int>)(lpVtbl[7]))((IOleClientSite*)Unsafe.AsPointer(ref this), fShow);
+        return ((delegate* unmanaged[MemberFunction]<IOleClientSite*, BOOL, int>)(lpVtbl[7]))((IOleClientSite*)Unsafe.AsPointer(ref this), fShow);
     }
 
     /// <include file='IOleClientSite.xml' path='doc/member[@name="IOleClientSite.RequestNewObjectLayout"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT RequestNewObjectLayout()
     {
-        return ((delegate* unmanaged<IOleClientSite*, int>)(lpVtbl[8]))((IOleClientSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleClientSite*, int>)(lpVtbl[8]))((IOleClientSite*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IOleClientSite : IOleClientSite.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SaveObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SaveObject;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IMoniker**, int> GetMoniker;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IMoniker**, int> GetMoniker;
 
         [NativeTypeName("HRESULT (IOleContainer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleContainer**, int> GetContainer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleContainer**, int> GetContainer;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ShowObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ShowObject;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> OnShowWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> OnShowWindow;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RequestNewObjectLayout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RequestNewObjectLayout;
     }
 }

@@ -17,7 +17,7 @@ public unsafe partial struct STGMEDIUM
     public uint tymed;
 
     /// <include file='STGMEDIUM.xml' path='doc/member[@name="STGMEDIUM.Anonymous"]/*' />
-    [NativeTypeName("tagSTGMEDIUM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/objidl.h:12046:36)")]
+    [NativeTypeName("__AnonymousRecord_objidl_L12046_C36")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='STGMEDIUM.xml' path='doc/member[@name="STGMEDIUM.pUnkForRelease"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct STGMEDIUM
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpszFileName"]/*' />
     [UnscopedRef]
-    public ref ushort* lpszFileName
+    public ref char* lpszFileName
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -123,7 +123,7 @@ public unsafe partial struct STGMEDIUM
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpszFileName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
-        public ushort* lpszFileName;
+        public char* lpszFileName;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pstm"]/*' />
         [FieldOffset(0)]

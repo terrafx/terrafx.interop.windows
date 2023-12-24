@@ -3,66 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_ADAPTER_DESC">
-    <summary>
-      <para>Describes an adapter (or video card) by using DXGI 1.0.</para>
-    </summary>
-    <remarks>
-      <para>The <b>DXGI_ADAPTER_DESC</b> structure provides a description of an adapter.  This structure is initialized by using the <see cref="IDXGIAdapter.GetDesc" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
+    <summary>Describes an adapter (or video card) by using DXGI 1.0.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC.Description">
-    <summary>
-      <para>Type: <b>WCHAR[128]</b></para>
-      <para>A string that contains the adapter description. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns “Software Adapter” for the description string.</para>
-    </summary>
+    <summary>A string that contains the adapter description. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns “Software Adapter” for the description string.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC.VendorId">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The PCI ID of the hardware vendor. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns zeros for the PCI ID of the hardware vendor.</para>
-    </summary>
+    <summary>The PCI ID of the hardware vendor. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns zeros for the PCI ID of the hardware vendor.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC.DeviceId">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The PCI ID of the hardware device. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns zeros for the PCI ID of the hardware device.</para>
-    </summary>
+    <summary>The PCI ID of the hardware device. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns zeros for the PCI ID of the hardware device.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC.SubSysId">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The PCI ID of the sub system. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns zeros for the PCI ID of the sub system.</para>
-    </summary>
+    <summary>The PCI ID of the sub system. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns zeros for the PCI ID of the sub system.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC.Revision">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The PCI ID of the revision number of the adapter. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns zeros for the PCI ID of the revision number of the adapter.</para>
-    </summary>
+    <summary>The PCI ID of the revision number of the adapter. On <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9 graphics hardware, <see cref="GetDesc" /> returns zeros for the PCI ID of the revision number of the adapter.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC.DedicatedVideoMemory">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The number of bytes of dedicated video memory that are not shared with the CPU.</para>
-    </summary>
+    <summary>The number of bytes of dedicated video memory that are not shared with the CPU.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC.DedicatedSystemMemory">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The number of bytes of dedicated system memory that are not shared with the CPU. This memory is allocated from available system memory at boot time.</para>
-    </summary>
+    <summary>The number of bytes of dedicated system memory that are not shared with the CPU. This memory is allocated from available system memory at boot time.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC.SharedSystemMemory">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The number of bytes of shared system memory. This is the maximum value of system memory that may be consumed by the adapter during operation. Any incidental memory consumed by the driver as it manages and uses video memory is additional.</para>
-    </summary>
+    <summary>The number of bytes of shared system memory. This is the maximum value of system memory that may be consumed by the adapter during operation. Any incidental memory consumed by the driver as it manages and uses video memory is additional.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC.AdapterLuid">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549708(v=vs.85)">LUID</a></b></para>
-      <para>A unique value that identifies the adapter. See <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549708(v=vs.85)">LUID</a> for a definition of the structure. <b>LUID</b> is defined in dxgi.h.</para>
-    </summary>
+    <summary>A unique value that identifies the adapter. See <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549708(v=vs.85)">LUID</a> for a definition of the structure. <b>LUID</b> is defined in dxgi.h.</summary>
   </member>
 </doc>

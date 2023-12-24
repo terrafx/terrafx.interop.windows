@@ -3,25 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SFVM_PROPPAGE_DATA">
-    <summary>
-      <para>Contains the details of a page to be added to an object's <b>Properties</b> sheet.</para>
-    </summary>
+    <summary>Contains the details of a page to be added to an object's <b>Properties</b> sheet.</summary>
   </member>
-  <member name="SFVM_PROPPAGE_DATA.dwReserved">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-    </summary>
-  </member>
+  <member name="SFVM_PROPPAGE_DATA.dwReserved"></member>
   <member name="SFVM_PROPPAGE_DATA.pfn">
-    <summary>
-      <para>Type: <b>LPFNADDPROPSHEETPAGE</b></para>
-      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/prsht/nc-prsht-lpfnaddpropsheetpage">AddPropSheetPageProc</a> callback function used to add property pages. When this function is used by Windows Explorer, it provides <b>pfn</b> through the system folder view object's <see cref="IShellView.AddPropertySheetPages" /> method. The callback function can then pass the information to <see cref="IShellPropSheetExt.AddPages" />.</para>
-    </summary>
+    <summary>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/prsht/nc-prsht-lpfnaddpropsheetpage">AddPropSheetPageProc</a> callback function used to add property pages. When this function is used by Windows Explorer, it provides <b>pfn</b> through the system folder view object's <see cref="IShellView.AddPropertySheetPages" /> method. The callback function can then pass the information to <see cref="IShellPropSheetExt.AddPages" />.</summary>
   </member>
   <member name="SFVM_PROPPAGE_DATA.lParam">
-    <summary>
-      <para>Type: <b>LPARAM</b></para>
-      <para>The details of the property sheet to be added. When this function is used by Windows Explorer, it provides <b>lParam</b> through the system folder view object's <see cref="IShellView.AddPropertySheetPages" /> method. The callback function can then pass the information to <see cref="IShellPropSheetExt.AddPages" />.</para>
-    </summary>
+    <summary>The details of the property sheet to be added. When this function is used by Windows Explorer, it provides <b>lParam</b> through the system folder view object's <see cref="IShellView.AddPropertySheetPages" /> method. The callback function can then pass the information to <see cref="IShellPropSheetExt.AddPages" />.</summary>
   </member>
 </doc>

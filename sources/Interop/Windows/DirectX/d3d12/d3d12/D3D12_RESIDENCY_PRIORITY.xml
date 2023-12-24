@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RESIDENCY_PRIORITY">
+    <summary>
+      <para>Specifies broad residency priority buckets useful for quickly establishing an application priority scheme.</para>
+      <para>Applications can assign priority values other than the five values present in this enumeration.</para>
+    </summary>
+  </member>
+  <member name="D3D12_RESIDENCY_PRIORITY.D3D12_RESIDENCY_PRIORITY_MINIMUM">
+    <summary>Indicates a minimum priority.</summary>
+  </member>
+  <member name="D3D12_RESIDENCY_PRIORITY.D3D12_RESIDENCY_PRIORITY_LOW">
+    <summary>Indicates a low priority.</summary>
+  </member>
+  <member name="D3D12_RESIDENCY_PRIORITY.D3D12_RESIDENCY_PRIORITY_NORMAL">
+    <summary>Indicates a normal, medium, priority.</summary>
+  </member>
+  <member name="D3D12_RESIDENCY_PRIORITY.D3D12_RESIDENCY_PRIORITY_HIGH">
+    <summary>Indicates a high priority. Applications are discouraged from using priories greater than this. For more information see <see cref="ID3D12Device1.SetResidencyPriority" />.</summary>
+  </member>
+  <member name="D3D12_RESIDENCY_PRIORITY.D3D12_RESIDENCY_PRIORITY_MAXIMUM">
+    <summary>Indicates a maximum priority. Applications are discouraged from using priorities greater than this; <b>D3D12_RESIDENCY_PRIORITY_MAXIMUM</b> is not guaranteed to be available. For more information see <see cref="ID3D12Device1.SetResidencyPriority" /></summary>
+  </member>
+</doc>

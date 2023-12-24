@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RM_SHUTDOWN_TYPE">
-    <summary>
-      <para>Configures the shut down of applications.</para>
-    </summary>
-    <remarks>
-      <para>The  time to wait before initiating a forced shutdown of applications is specified by the following registry key. <b>HKCU</b>\<b>Control Panel</b>\<b>Desktop</b>\<b>HungAppTimeout</b></para>
-      <para>The time to wait before initiating a forced shutdown of services is specified by the following registry key. <b>HKLM</b>\<b>System</b>\<b>CurrentControlSet</b>\<b>Control</b>\<b>WaitToKillServiceTimeout</b></para>
-    </remarks>
-    <seealso cref="RmShutdown" />
+    <summary>Configures the shut down of applications.</summary>
   </member>
   <member name="RM_SHUTDOWN_TYPE.RmForceShutdown">
-    <summary>
-      <para>Forces unresponsive applications and services to shut down after the timeout period. An application that does not respond to a shutdown request by the Restart Manager is forced to shut down after 30 seconds. A service that does not respond to a shutdown request is forced to shut down after 20 seconds. These default times can be changed by modifying the registry keys described in the Remarks section.</para>
-    </summary>
+    <summary>Forces unresponsive applications and services to shut down after the timeout period. An application that does not respond to a shutdown request by the Restart Manager is forced to shut down after 30 seconds. A service that does not respond to a shutdown request is forced to shut down after 20 seconds. These default times can be changed by modifying the registry keys described in the Remarks section.</summary>
   </member>
   <member name="RM_SHUTDOWN_TYPE.RmShutdownOnlyRegistered">
-    <summary>
-      <para>Shuts down applications if and only if all the applications have been registered for restart  using the <b>RegisterApplicationRestart</b> function. If any processes or services cannot be restarted, then no processes or services are shut down.</para>
-    </summary>
+    <summary>Shuts down applications if and only if all the applications have been registered for restart using the <b>RegisterApplicationRestart</b> function. If any processes or services cannot be restarted, then no processes or services are shut down.</summary>
   </member>
 </doc>

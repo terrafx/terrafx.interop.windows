@@ -18,19 +18,19 @@ public static unsafe partial class D3D11
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
-                    0x12, 0x5F, 0x69, 0x86,
-                    0x0E, 0x34,
-                    0x04, 0x4F,
-                    0x9F,
-                    0xD3,
-                    0x92,
-                    0x53,
-                    0xDD,
-                    0x32,
-                    0x74,
-                    0x60
-                };
+            ReadOnlySpan<byte> data = [
+                0x12, 0x5F, 0x69, 0x86,
+                0x0E, 0x34,
+                0x04, 0x4F,
+                0x9F,
+                0xD3,
+                0x92,
+                0x53,
+                0xDD,
+                0x32,
+                0x74,
+                0x60
+            ];
 
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }

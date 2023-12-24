@@ -154,7 +154,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateProcessW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CreateProcessW([NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, BOOL bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
+    public static extern BOOL CreateProcessW([NativeTypeName("LPCWSTR")] char* lpApplicationName, [NativeTypeName("LPWSTR")] char* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, BOOL bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] char* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetProcessShutdownParameters"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -174,7 +174,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateProcessAsUserW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CreateProcessAsUserW(HANDLE hToken, [NativeTypeName("LPCWSTR")] ushort* lpApplicationName, [NativeTypeName("LPWSTR")] ushort* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, BOOL bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] ushort* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
+    public static extern BOOL CreateProcessAsUserW(HANDLE hToken, [NativeTypeName("LPCWSTR")] char* lpApplicationName, [NativeTypeName("LPWSTR")] char* lpCommandLine, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpProcessAttributes, [NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpThreadAttributes, BOOL bInheritHandles, [NativeTypeName("DWORD")] uint dwCreationFlags, [NativeTypeName("LPVOID")] void* lpEnvironment, [NativeTypeName("LPCWSTR")] char* lpCurrentDirectory, [NativeTypeName("LPSTARTUPINFOW")] STARTUPINFOW* lpStartupInfo, [NativeTypeName("LPPROCESS_INFORMATION")] PROCESS_INFORMATION* lpProcessInformation);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadToken"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -473,24 +473,24 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetThreadDescription"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
-    public static extern HRESULT SetThreadDescription(HANDLE hThread, [NativeTypeName("PCWSTR")] ushort* lpThreadDescription);
+    public static extern HRESULT SetThreadDescription(HANDLE hThread, [NativeTypeName("PCWSTR")] char* lpThreadDescription);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThreadDescription"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SupportedOSPlatform("windows10.0.14393.0")]
-    public static extern HRESULT GetThreadDescription(HANDLE hThread, [NativeTypeName("PWSTR *")] ushort** ppszThreadDescription);
+    public static extern HRESULT GetThreadDescription(HANDLE hThread, [NativeTypeName("PWSTR *")] char** ppszThreadDescription);
 
     [NativeTypeName("#define TLS_OUT_OF_INDEXES ((DWORD)0xFFFFFFFF)")]
     public const uint TLS_OUT_OF_INDEXES = ((uint)(0xFFFFFFFF));
 
     [NativeTypeName("#define CreateProcess CreateProcessW")]
-    public static delegate*<ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, BOOL, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, BOOL> CreateProcess => &CreateProcessW;
+    public static delegate*<char*, char*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, BOOL, uint, void*, char*, STARTUPINFOW*, PROCESS_INFORMATION*, BOOL> CreateProcess => &CreateProcessW;
 
     [NativeTypeName("#define GetStartupInfo GetStartupInfoW")]
     public static delegate*<STARTUPINFOW*, void> GetStartupInfo => &GetStartupInfoW;
 
     [NativeTypeName("#define CreateProcessAsUser CreateProcessAsUserW")]
-    public static delegate*<HANDLE, ushort*, ushort*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, BOOL, uint, void*, ushort*, STARTUPINFOW*, PROCESS_INFORMATION*, BOOL> CreateProcessAsUser => &CreateProcessAsUserW;
+    public static delegate*<HANDLE, char*, char*, SECURITY_ATTRIBUTES*, SECURITY_ATTRIBUTES*, BOOL, uint, void*, char*, STARTUPINFOW*, PROCESS_INFORMATION*, BOOL> CreateProcessAsUser => &CreateProcessAsUserW;
 
     [NativeTypeName("#define PME_CURRENT_VERSION 1")]
     public const int PME_CURRENT_VERSION = 1;

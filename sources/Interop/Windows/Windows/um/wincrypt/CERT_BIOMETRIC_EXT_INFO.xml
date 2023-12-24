@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_BIOMETRIC_EXT_INFO">
-    <summary>
-      <para>The <b>CERT_BIOMETRIC_EXT_INFO</b> structure contains a set of biometric information.</para>
-    </summary>
-    <seealso cref="CryptDecodeObject" />
-    <seealso cref="CryptEncodeObject" />
-    <seealso cref="CryptEncodeObjectEx" />
+    <summary>The <b>CERT_BIOMETRIC_EXT_INFO</b> structure contains a set of biometric information.</summary>
   </member>
   <member name="CERT_BIOMETRIC_EXT_INFO.cBiometricData">
-    <summary>
-      <para>The number of elements in the <b>rgBiometricData</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgBiometricData</b> array.</summary>
   </member>
   <member name="CERT_BIOMETRIC_EXT_INFO.rgBiometricData">
-    <summary>
-      <para>An array of <see cref="CERT_BIOMETRIC_DATA" /> structures that contain the biometric data. The <b>cBiometricData</b> member contains the number of elements in this array.</para>
-    </summary>
+    <summary>An array of <see cref="CERT_BIOMETRIC_DATA" /> structures that contain the biometric data. The <b>cBiometricData</b> member contains the number of elements in this array.</summary>
   </member>
 </doc>

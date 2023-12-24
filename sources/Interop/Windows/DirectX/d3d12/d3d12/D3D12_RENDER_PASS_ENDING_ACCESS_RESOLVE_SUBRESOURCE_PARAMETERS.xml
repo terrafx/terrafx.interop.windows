@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS">
+    <summary>Describes the subresources involved in resolving at the conclusion of a render pass.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS.SrcSubresource">
+    <summary>A <b>UINT</b>. The source subresource.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS.DstSubresource">
+    <summary>A <b>UINT</b>. The destination subresource.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS.DstX">
+    <summary>A <b>UINT</b>. The x coordinate within the destination subresource.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS.DstY">
+    <summary>A <b>UINT</b>. The y coordinate within the destination subresource.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_SUBRESOURCE_PARAMETERS.SrcRect">
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-rect">D3D12_RECT</a>. The rectangle within the source subresource.</summary>
+  </member>
+</doc>

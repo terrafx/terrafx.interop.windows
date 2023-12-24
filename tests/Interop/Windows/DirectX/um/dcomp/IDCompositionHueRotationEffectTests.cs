@@ -19,32 +19,4 @@ public static unsafe partial class IDCompositionHueRotationEffectTests
     {
         Assert.That(typeof(IDCompositionHueRotationEffect).GUID, Is.EqualTo(IID_IDCompositionHueRotationEffect));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionHueRotationEffect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionHueRotationEffect>(), Is.EqualTo(sizeof(IDCompositionHueRotationEffect)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionHueRotationEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionHueRotationEffect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionHueRotationEffect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionHueRotationEffect), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionHueRotationEffect), Is.EqualTo(4));
-        }
-    }
 }

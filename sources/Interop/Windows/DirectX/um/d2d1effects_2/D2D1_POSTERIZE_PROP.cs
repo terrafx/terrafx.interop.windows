@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_POSTERIZE_PROP.xml' path='doc/member[@name="D2D1_POSTERIZE_PROP"]/*' />
-public enum D2D1_POSTERIZE_PROP : uint
+public enum D2D1_POSTERIZE_PROP
 {
     /// <include file='D2D1_POSTERIZE_PROP.xml' path='doc/member[@name="D2D1_POSTERIZE_PROP.D2D1_POSTERIZE_PROP_RED_VALUE_COUNT"]/*' />
     D2D1_POSTERIZE_PROP_RED_VALUE_COUNT = 0,
@@ -18,5 +18,5 @@ public enum D2D1_POSTERIZE_PROP : uint
     D2D1_POSTERIZE_PROP_BLUE_VALUE_COUNT = 2,
 
     /// <include file='D2D1_POSTERIZE_PROP.xml' path='doc/member[@name="D2D1_POSTERIZE_PROP.D2D1_POSTERIZE_PROP_FORCE_DWORD"]/*' />
-    D2D1_POSTERIZE_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_POSTERIZE_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

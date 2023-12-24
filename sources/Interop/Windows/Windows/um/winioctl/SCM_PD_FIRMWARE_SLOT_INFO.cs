@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SCM_PD_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="SCM_PD_FIRMWARE_SLOT_INFO"]/*' />
-public unsafe partial struct SCM_PD_FIRMWARE_SLOT_INFO
+public partial struct SCM_PD_FIRMWARE_SLOT_INFO
 {
     /// <include file='SCM_PD_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="SCM_PD_FIRMWARE_SLOT_INFO.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -28,7 +28,7 @@ public unsafe partial struct SCM_PD_FIRMWARE_SLOT_INFO
     public byte ReadOnly
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield & 0x1u);
         }
@@ -45,7 +45,7 @@ public unsafe partial struct SCM_PD_FIRMWARE_SLOT_INFO
     public byte Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 1) & 0x7Fu);
         }
@@ -59,9 +59,23 @@ public unsafe partial struct SCM_PD_FIRMWARE_SLOT_INFO
 
     /// <include file='SCM_PD_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="SCM_PD_FIRMWARE_SLOT_INFO.Reserved1"]/*' />
     [NativeTypeName("BYTE[6]")]
-    public fixed byte Reserved1[6];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='SCM_PD_FIRMWARE_SLOT_INFO.xml' path='doc/member[@name="SCM_PD_FIRMWARE_SLOT_INFO.Revision"]/*' />
     [NativeTypeName("BYTE[32]")]
-    public fixed byte Revision[32];
+    public _Revision_e__FixedBuffer Revision;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(6)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_Revision_e__FixedBuffer.xml' path='doc/member[@name="_Revision_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _Revision_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

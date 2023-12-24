@@ -3,55 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_RESAMPLE_OPERATOR_DESC">
-    <summary>
-      <para>Resamples elements from the source to the destination tensor, using the scale factors to compute the destination tensor size. You can use a linear or nearest-neighbor interpolation mode. The operator supports interpolation across multiple dimensions, not just 2D. So you can keep the same spatial size, but interpolate across channels or across batches.</para>
-    </summary>
-    <remarks>
-      <para>A newer version of this operator, <see cref="DML_RESAMPLE1_OPERATOR_DESC" />, was introduced in <code>DML_FEATURE_LEVEL_2_1</code>.</para>
-    </remarks>
+    <summary>Resamples elements from the source to the destination tensor, using the scale factors to compute the destination tensor size. You can use a linear or nearest-neighbor interpolation mode. The operator supports interpolation across multiple dimensions, not just 2D. So you can keep the same spatial size, but interpolate across channels or across batches.</summary>
   </member>
   <member name="DML_RESAMPLE_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor containing the input data.</para>
-    </summary>
+    <summary>The tensor containing the input data.</summary>
   </member>
   <member name="DML_RESAMPLE_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to write the output data to.</para>
-    </summary>
+    <summary>The tensor to write the output data to.</summary>
   </member>
   <member name="DML_RESAMPLE_OPERATOR_DESC.InterpolationMode">
     <summary>
-      <para>Type: <see cref="DML_INTERPOLATION_MODE" /></para>
       <para>This field determines the kind of interpolation used to choose output pixels.</para>
       <list type="bullet">
         <item>
           <description>
-            <para>
-              <b>DML_INTERPOLATION_MODE_NEAREST_NEIGHBOR</b>. Uses the <i>Nearest Neighbor</i> algorithm, which chooses the input element nearest to the corresponding pixel center for each output element.</para>
-          </description>
+            <b>DML_INTERPOLATION_MODE_NEAREST_NEIGHBOR</b>. Uses the <i>Nearest Neighbor</i> algorithm, which chooses the input element nearest to the corresponding pixel center for each output element.</description>
         </item>
         <item>
           <description>
-            <para>
-              <b>DML_INTERPOLATION_MODE_LINEAR</b>. Uses the <i>Quadrilinear</i> algorithm, which computes the output element by doing the weighted average of the 2 nearest neighboring input elements per dimension. Since all 4 dimensions can be resampled, the weighted average is computed on a total of 16 input elements for each output element.</para>
-          </description>
+            <b>DML_INTERPOLATION_MODE_LINEAR</b>. Uses the <i>Linear Interpolation</i> algorithm, which computes the output element by computing the weighted average of the 2 nearest neighboring input elements per dimension. Resampling is supported up to 4 dimensions (quadrilinear), where the weighted average is computed on a total of 16 input elements for each output element.</description>
         </item>
       </list>
     </summary>
   </member>
   <member name="DML_RESAMPLE_OPERATOR_DESC.ScaleCount">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The number of values in the array <i>Scales</i> points to. This value must match the dimension count of <i>InputTensor</i> and <i>OutputTensor</i>, which has to be 4.</para>
-    </summary>
+    <summary>The number of values in the array <code>Scales</code> points to. This value must match the dimension count of <i>InputTensor</i> and <i>OutputTensor</i>.</summary>
   </member>
   <member name="DML_RESAMPLE_OPERATOR_DESC.Scales">
-    <summary>
-      <para>Type: _Field_size_(ScaleCount) <b>const <a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a>*</b></para>
-      <para>The scales to apply when resampling the input, where scales &gt; 1 scale up the image and scales &lt; 1 scale down the image for that dimension. Note that the scales don't need to be exactly <code>OutputSize / InputSize</code>. If the input after scaling is larger than the output bound, then we crop it to the output size. On the other hand, if the input after scaling is smaller than the output bound, the output edges are clamped.</para>
-    </summary>
+    <summary>The scales to apply when resampling the input, where scales &gt; 1 scale up the image and scales &lt; 1 scale down the image for that dimension. Note that the scales don't need to be exactly <code>OutputSize / InputSize</code>. If the input after scaling is larger than the output bound, then we crop it to the output size. On the other hand, if the input after scaling is smaller than the output bound, the output edges are clamped.</summary>
   </member>
 </doc>

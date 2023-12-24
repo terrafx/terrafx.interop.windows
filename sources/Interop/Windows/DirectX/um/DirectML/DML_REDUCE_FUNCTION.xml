@@ -3,69 +3,42 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_REDUCE_FUNCTION">
-    <summary>
-      <para>Defines constants that specify the specific reduction algorithm to use for the DirectML reduce operator (as described by the <see cref="DML_REDUCE_OPERATOR_DESC" /> structure).</para>
-    </summary>
-    <seealso cref="DML_REDUCE_OPERATOR_DESC" />
+    <summary>Defines constants that specify the specific reduction algorithm to use for the DirectML reduce operator (as described by the <see cref="DML_REDUCE_OPERATOR_DESC" /> structure).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_ARGMAX">
-    <summary>
-      <para>Indicates a reduction function that computes the indices of the max elements of the input tensor's elements along the specified axis, int32 {i j k ..} = maxindex(X Y Z …).</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the indices of the max elements of the input tensor's elements along the specified axis, int32 {i j k ..} = maxindex(X Y Z …).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_ARGMIN">
-    <summary>
-      <para>Indicates a reduction function that computes the indices of the min elements of the input tensor's elements along the specified axis, int32 {i j k ..} = minindex(X Y Z …).</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the indices of the min elements of the input tensor's elements along the specified axis, int32 {i j k ..} = minindex(X Y Z …).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_AVERAGE">
-    <summary>
-      <para>Indicates a reduction function that computes the mean of the input tensor's elements along the specified axes, x = (x1 + x2 + ... + xn) / n.</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the mean of the input tensor's elements along the specified axes, x = (x1 + x2 + ... + xn) / n.</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_L1">
-    <summary>
-      <para>Indicates a reduction function that computes the L1 norm of the input tensor's elements along the specified axes, x = |x1| + |x2| + ... + |xn|.</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the L1 norm of the input tensor's elements along the specified axes, x = |x1| + |x2| + ... + |xn|.</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_L2">
-    <summary>
-      <para>Indicates a reduction function that computes the L2 norm of the input tensor's elements along the specified axes, x = sqrt(x1^2 + x2^2 + ... + xn^2).</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the L2 norm of the input tensor's elements along the specified axes, x = sqrt(x1^2 + x2^2 + ... + xn^2).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_LOG_SUM">
-    <summary>
-      <para>Indicates a reduction function that computes the log sum of the input tensor's elements along the specified axes, x = log(x1 + x2 + ... + xn).</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the log sum of the input tensor's elements along the specified axes, x = log(x1 + x2 + ... + xn).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_LOG_SUM_EXP">
-    <summary>
-      <para>Indicates a reduction function that computes the log sum exponent of the input tensor's elements along the specified axes, x = log(exp(x1) + exp(x2) + ... + exp(xn)).</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the log sum exponent of the input tensor's elements along the specified axes, x = log(exp(x1) + exp(x2) + ... + exp(xn)).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_MAX">
-    <summary>
-      <para>Indicates a reduction function that computes the max of the input tensor's elements along the specified axes, x = max(max(max(x1, x2), x3), ..., xn).</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the max of the input tensor's elements along the specified axes, x = max(max(max(x1, x2), x3), ..., xn).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_MIN">
-    <summary>
-      <para>Indicates a reduction function that computes the min of the input tensor's elements along the specified axes, x = min(min(min(x1, x2), x3), ..., xn).</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the min of the input tensor's elements along the specified axes, x = min(min(min(x1, x2), x3), ..., xn).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_MULTIPLY">
-    <summary>
-      <para>Indicates a reduction function that computes the product of the input tensor's elements along the specified axes, x = (x1 * x2 * ... * xn).</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the product of the input tensor's elements along the specified axes, x = (x1 * x2 * ... * xn).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_SUM">
-    <summary>
-      <para>Indicates a reduction function that computes the sum  of the input tensor's elements along the specified axes, x = (x1 + x2 + ... + xn).</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the sum of the input tensor's elements along the specified axes, x = (x1 + x2 + ... + xn).</summary>
   </member>
   <member name="DML_REDUCE_FUNCTION.DML_REDUCE_FUNCTION_SUM_SQUARE">
-    <summary>
-      <para>Indicates a reduction function that computes the sum square of the input tensor's elements along the specified axes, x = x1^2 + x2^2 + ... + xn^2.</para>
-    </summary>
+    <summary>Indicates a reduction function that computes the sum square of the input tensor's elements along the specified axes, x = x1^2 + x2^2 + ... + xn^2.</summary>
   </member>
 </doc>

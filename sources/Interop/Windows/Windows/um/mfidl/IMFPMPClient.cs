@@ -25,7 +25,7 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFPMPClient*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPClient*, Guid*, void**, int>)(lpVtbl[0]))((IMFPMPClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFPMPClient*, uint>)(lpVtbl[1]))((IMFPMPClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPClient*, uint>)(lpVtbl[1]))((IMFPMPClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFPMPClient*, uint>)(lpVtbl[2]))((IMFPMPClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPClient*, uint>)(lpVtbl[2]))((IMFPMPClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFPMPClient.xml' path='doc/member[@name="IMFPMPClient.SetPMPHost"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetPMPHost(IMFPMPHost* pPMPHost)
     {
-        return ((delegate* unmanaged<IMFPMPClient*, IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPClient*)Unsafe.AsPointer(ref this), pPMPHost);
+        return ((delegate* unmanaged[MemberFunction]<IMFPMPClient*, IMFPMPHost*, int>)(lpVtbl[3]))((IMFPMPClient*)Unsafe.AsPointer(ref this), pPMPHost);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMFPMPClient : IMFPMPClient.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFPMPHost *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFPMPHost*, int> SetPMPHost;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFPMPHost*, int> SetPMPHost;
     }
 }

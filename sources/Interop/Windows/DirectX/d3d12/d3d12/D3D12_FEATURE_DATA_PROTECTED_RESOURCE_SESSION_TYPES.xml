@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES">
+    <summary>Indicates a list of protected resource session types.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.NodeIndex">
+    <summary>An input parameter which, in multi-adapter operation, indicates which physical adapter of the device this operation applies to.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.Count">
+    <summary>An input parameter indicating the size of the <i>pTypes</i> array. This must match the count returned through the <see cref="D3D12_FEATURE_PROTECTED_RESOURCE_SESSION_TYPE_COUNT" /> query.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPES.pTypes">
+    <summary>An output parameter containing an array populated with the supported protected resource session types.</summary>
+  </member>
+</doc>

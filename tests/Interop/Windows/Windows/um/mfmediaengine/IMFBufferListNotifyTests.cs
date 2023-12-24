@@ -21,32 +21,4 @@ public static unsafe partial class IMFBufferListNotifyTests
     {
         Assert.That(typeof(IMFBufferListNotify).GUID, Is.EqualTo(IID_IMFBufferListNotify));
     }
-
-    /// <summary>Validates that the <see cref="IMFBufferListNotify" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFBufferListNotify>(), Is.EqualTo(sizeof(IMFBufferListNotify)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFBufferListNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFBufferListNotify).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFBufferListNotify" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFBufferListNotify), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFBufferListNotify), Is.EqualTo(4));
-        }
-    }
 }

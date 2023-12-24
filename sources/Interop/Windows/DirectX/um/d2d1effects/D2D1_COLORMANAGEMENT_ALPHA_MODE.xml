@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_COLORMANAGEMENT_ALPHA_MODE">
-    <summary>
-      <para>Indicates how the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-management">Color management effect</a> should interpret alpha data that is contained in the input image.</para>
-    </summary>
+    <summary>Indicates how the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/color-management">Color management effect</a> should interpret alpha data that is contained in the input image.</summary>
   </member>
   <member name="D2D1_COLORMANAGEMENT_ALPHA_MODE.D2D1_COLORMANAGEMENT_ALPHA_MODE_PREMULTIPLIED">
-    <summary>
-      <para>The effect assumes the alpha mode is premultiplied.</para>
-    </summary>
+    <summary>The effect assumes the alpha mode is premultiplied.</summary>
   </member>
   <member name="D2D1_COLORMANAGEMENT_ALPHA_MODE.D2D1_COLORMANAGEMENT_ALPHA_MODE_STRAIGHT">
-    <summary>
-      <para>The effect assumes the alpha mode is straight.</para>
-    </summary>
+    <summary>The effect assumes the alpha mode is straight.</summary>
   </member>
-  <member name="D2D1_COLORMANAGEMENT_ALPHA_MODE.D2D1_COLORMANAGEMENT_ALPHA_MODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_COLORMANAGEMENT_ALPHA_MODE.D2D1_COLORMANAGEMENT_ALPHA_MODE_FORCE_DWORD"></member>
 </doc>

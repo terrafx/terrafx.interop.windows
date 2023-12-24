@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ACTRL_PROPERTY_ENTRYA">
+    <summary>Contains a list of access-control entries for an object or a specified property on an object.</summary>
+  </member>
+  <member name="ACTRL_PROPERTY_ENTRYA.lpProperty">
+    <summary>The GUID of a property on an object. Use the <see cref="UuidToString" /> function to generate a string representation of a property GUID.</summary>
+  </member>
+  <member name="ACTRL_PROPERTY_ENTRYA.pAccessEntryList">
+    <summary>A pointer to an <see cref="ACTRL_ACCESS_ENTRY_LIST" /> structure that contains a list of access-control entries.</summary>
+  </member>
+  <member name="ACTRL_PROPERTY_ENTRYA.fListFlags">
+    <summary>
+      <para>Flags that specify information about the <b>pProperty</b> property. This member can be 0 or the following value.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_ACCESS_PROTECTED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Protects the object or property from inheriting access-control entries.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="ACTRL_PROPERTY_ENTRYA">
+    <summary>Contains a list of access-control entries for an object or a specified property on an object.</summary>
+  </member>
+  <member name="ACTRL_PROPERTY_ENTRYA.lpProperty">
+    <summary>The GUID of a property on an object. Use the <see cref="UuidToString" /> function to generate a string representation of a property GUID.</summary>
+  </member>
+  <member name="ACTRL_PROPERTY_ENTRYA.pAccessEntryList">
+    <summary>A pointer to an <see cref="ACTRL_ACCESS_ENTRY_LIST" /> structure that contains a list of access-control entries.</summary>
+  </member>
+  <member name="ACTRL_PROPERTY_ENTRYA.fListFlags">
+    <summary>
+      <para>Flags that specify information about the <b>pProperty</b> property. This member can be 0 or the following value.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ACTRL_ACCESS_PROTECTED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Protects the object or property from inheriting access-control entries.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+</doc>

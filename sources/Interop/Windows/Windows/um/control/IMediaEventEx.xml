@@ -4,50 +4,23 @@
 <doc>
   <member name="IMediaEventEx.FreeEventParams">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>FreeEventParams</code> method frees resources associated with the parameters of an event.</para>
     </summary>
-    <param name="lEvCode">
-      <para>Event code.</para>
-    </param>
-    <param name="lParam1">
-      <para>First event parameter.</para>
-    </param>
-    <param name="lParam2">
-      <para>Second event parameter.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>After you call the <see cref="IMediaEvent.GetEvent" /> method to retrieve an event notification, you must call <code>FreeEventParams</code>. This method frees any resources that were allocated for the event parameters. Pass in the same variables used for the <b>GetEvent</b> call.</para>
-      <h4>Examples</h4>
-      <code>
-hr = pEvent-&gt;GetEvent(&amp;amp;amp;amp;amp;amp;evCode, &amp;amp;amp;amp;amp;amp;param1, &amp;amp;amp;amp;amp;amp;param2, 0);
-// Handle the event (not shown).
-hr = pEvent-&gt;FreeEventParams(evCode, param1, param2);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEvent Interface" />
-    <seealso cref="IMediaEventEx" />
+    <param name="lEvCode">Event code.</param>
+    <param name="lParam1">First event parameter.</param>
+    <param name="lParam2">Second event parameter.</param>
+    <returns>Returns S_OK.</returns>
   </member>
   <member name="IMediaEventEx.GetEvent">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetEvent</code> method retrieves the next event notification from the event queue.</para>
     </summary>
-    <param name="lEventCode">
-      <para>Pointer to a variable that receives the event code.</para>
-    </param>
-    <param name="lParam1">
-      <para>Pointer to a variable that receives the first event parameter.</para>
-    </param>
-    <param name="lParam2">
-      <para>Pointer to a variable that receives the second event parameter.</para>
-    </param>
-    <param name="msTimeout">
-      <para>Time-out interval, in milliseconds. Use INFINITE to block until there is an event.</para>
-    </param>
+    <param name="lEventCode">Pointer to a variable that receives the event code.</param>
+    <param name="lParam1">Pointer to a variable that receives the first event parameter.</param>
+    <param name="lParam2">Pointer to a variable that receives the second event parameter.</param>
+    <param name="msTimeout">Time-out interval, in milliseconds. Use INFINITE to block until there is an event.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
       <list type="table">
@@ -55,133 +28,97 @@ hr = pEvent-&gt;FreeEventParams(evCode, param1, param2);
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ABORT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_ABORT</b>
-            </para>
-          </description>
-          <description>
-            <para>Timeout expired.</para>
-          </description>
-        </item>
+          <description>Timeout expired.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If no event is on the queue, this method waits up to <i>msTimeout</i> milliseconds for an event to arrive. Avoid using a time-out interval of INFINITE, because threads cannot process any messages while waiting in <code>GetEvent</code>. If you call <code>GetEvent</code> from the same thread that processes Windows messages, specify only small wait times, in order to remain responsive to user input.</para>
-      <para>After calling <code>GetEvent</code>, call the <see cref="IMediaEvent.FreeEventParams" /> method to release any resources allocated for the event parameters.</para>
-      <para>For a list of notification codes and event parameter values, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/event-notification-codes">Event Notification Codes</a>.</para>
-      <para>Because this method removes the event from the filter graph event queue, there is no way for multiple clients to monitor events from the same graph.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEvent Interface" />
-    <seealso cref="IMediaEventEx" />
   </member>
   <member name="IMediaEventEx.GetNotifyFlags">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetNotifyFlags</code> method determines whether event notifications are enabled.</para>
     </summary>
     <param name="lplNoNotifyFlags">
       <para>Pointer to a variable that receives one of the following values:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Zero</description>
           <description>Event notifications are enabled.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AM_MEDIAEVENT_NONOTIFY</description>
           <description>Event notifications are disabled.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>Returns S_OK if successful, or E_POINTER if the <i>lplNoNotifyFlags</i> parameter is <b>NULL</b>.</para>
-    </returns>
-    <remarks>
-      <para>By default, the Filter Graph Manager posts event notifications for the application. To disable event notification, call the <see cref="IMediaEventEx.SetNotifyFlags" /> method with the value AM_MEDIAEVENT_NONOTIFY.</para>
-      <para>If event notifications are disabled, the handle returned by the <see cref="IMediaEvent.GetEventHandle" /> method is signaled at the end of each stream—that is, whenever the Filter Graph Manager receives an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-complete">EC_COMPLETE</a> event.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEventEx Interface" />
+    <returns>Returns S_OK if successful, or E_POINTER if the <i>lplNoNotifyFlags</i> parameter is <b>NULL</b>.</returns>
   </member>
   <member name="IMediaEventEx.SetNotifyFlags">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetNotifyFlags</code> method enables or disables event notifications.</para>
     </summary>
     <param name="lNoNotifyFlags">
       <para>Value indicating whether to enable or disable event notifications. Must be one of the following values:</para>
       <list type="table">
         <listheader>
-          <description>Value
-</description>
-          <description>Description
-</description>
+          <description>Value</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Zero</description>
           <description>Enable event notifications.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>AM_MEDIAEVENT_NONOTIFY</description>
           <description>Disable event notifications.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <returns>
-      <para>Returns S_OK if successful, or E_INVALIDARG if the <i>lNoNotifyFlags</i> parameter is invalid.</para>
-    </returns>
-    <remarks>
-      <para>By default, the Filter Graph Manager posts event notifications for the application. If the <i>lNoNotifyFlags</i> parameter is AM_MEDIAEVENT_NONOTIFY, the Filter Graph Manager clears any pending event notifications from the queue, and does not post any new ones.</para>
-      <para>If event notifications are disabled, the handle returned by the <see cref="IMediaEvent.GetEventHandle" /> method is signaled at the end of each stream—that is, whenever the Filter Graph Manager receives an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-complete">EC_COMPLETE</a> event.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEventEx Interface" />
+    <returns>Returns S_OK if successful, or E_INVALIDARG if the <i>lNoNotifyFlags</i> parameter is invalid.</returns>
   </member>
   <member name="IMediaEventEx.SetNotifyWindow">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetNotifyWindow</code> method registers a window to process event notifications.</para>
     </summary>
-    <param name="hwnd">
-      <para>Handle to the window, or <b>NULL</b> to stop receiving event messages.</para>
-    </param>
-    <param name="lMsg">
-      <para>Window message to be passed as the notification.</para>
-    </param>
-    <param name="lInstanceData">
-      <para>Value to be passed as the <i>lParam</i> parameter for the <i>lMsg</i> message.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful or E_INVALIDARG if the <i>hwnd</i> parameter is not a valid handle to a window.</para>
-    </returns>
-    <remarks>
-      <para>This method designates a window that will process event notifications. Whenever the Filter Graph Manager puts an event in the event queue, it will also post a message to the designated window. The <i>hwnd</i> parameter specifies the window, and the <i>lMsg</i> parameter specifies the message. The application should define a private window message for this purpose. The message's <i>lParam</i> parameter is set to the value of <b>lInstanceData</b>, and the <i>wParam</i> parameter is set to zero.</para>
-      <para>When the window receives the message, it should call the <see cref="IMediaEvent.GetEvent" /> method to retrieve the event. Events are asynchronous, so the queue might contain several events (or none). Call <b>GetEvent</b> repeatedly, until it returns an error code.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IMediaEventEx Interface" />
+    <param name="hwnd">Handle to the window, or <b>NULL</b> to stop receiving event messages.</param>
+    <param name="lMsg">Window message to be passed as the notification.</param>
+    <param name="lInstanceData">Value to be passed as the <i>lParam</i> parameter for the <i>lMsg</i> message.</param>
+    <returns>Returns S_OK if successful or E_INVALIDARG if the <i>hwnd</i> parameter is not a valid handle to a window.</returns>
   </member>
   <member name="IMediaEventEx">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>IMediaEventEx</b> interface inherits the <see cref="IMediaEvent" /> interface, which contains methods for retrieving event notifications and for overriding the filter graph's default handling of events. <b>IMediaEventEx</b> adds methods that enable an application window to receive messages when events occur.</para>
       <para>The Filter Graph Manager implements this interface.</para>
       <para>For more information about event notification, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/event-notification-in-directshow">Event Notification in DirectShow</a>. For a list of system-defined event notifications, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/event-notification-codes">Event Notification Codes</a>.</para>
     </summary>
-    <seealso cref="IMediaEvent" />
   </member>
 </doc>

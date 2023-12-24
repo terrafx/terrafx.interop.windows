@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_ZONE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONE_DESCRIPTOR"]/*' />
-public unsafe partial struct STORAGE_ZONE_DESCRIPTOR
+public partial struct STORAGE_ZONE_DESCRIPTOR
 {
     /// <include file='STORAGE_ZONE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONE_DESCRIPTOR.Size"]/*' />
     [NativeTypeName("DWORD")]
@@ -24,7 +26,7 @@ public unsafe partial struct STORAGE_ZONE_DESCRIPTOR
 
     /// <include file='STORAGE_ZONE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONE_DESCRIPTOR.Reserved0"]/*' />
     [NativeTypeName("BYTE[3]")]
-    public fixed byte Reserved0[3];
+    public _Reserved0_e__FixedBuffer Reserved0;
 
     /// <include file='STORAGE_ZONE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONE_DESCRIPTOR.ZoneSize"]/*' />
     [NativeTypeName("DWORDLONG")]
@@ -33,4 +35,11 @@ public unsafe partial struct STORAGE_ZONE_DESCRIPTOR
     /// <include file='STORAGE_ZONE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONE_DESCRIPTOR.WritePointerOffset"]/*' />
     [NativeTypeName("DWORDLONG")]
     public ulong WritePointerOffset;
+
+    /// <include file='_Reserved0_e__FixedBuffer.xml' path='doc/member[@name="_Reserved0_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Reserved0_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KnownGamingPrivileges">
+    <summary>
+      <para>Do not use. This API is only supported for Xbox developers.</para>
+      <para>To learn more about becoming a Xbox developer, see <a href="https://www.xbox.com/developers">Developing Games for Xbox One and Windows 10</a>.</para>
+    </summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_BROADCAST">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_VIEW_FRIENDS_LIST">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_GAME_DVR">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_SHARE_KINECT_CONTENT">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_MULTIPLAYER_PARTIES">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_COMMUNICATION_VOICE_INGAME">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_COMMUNICATION_VOICE_SKYPE">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_CLOUD_GAMING_MANAGE_SESSION">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_CLOUD_GAMING_JOIN_SESSION">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_CLOUD_SAVED_GAMES">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_SHARE_CONTENT">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_PREMIUM_CONTENT">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_SUBSCRIPTION_CONTENT">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_SOCIAL_NETWORK_SHARING">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_PREMIUM_VIDEO">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_VIDEO_COMMUNICATIONS">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_PURCHASE_CONTENT">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_USER_CREATED_CONTENT">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_PROFILE_VIEWING">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_COMMUNICATIONS">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_MULTIPLAYER_SESSIONS">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+  <member name="KnownGamingPrivileges.XPRIVILEGE_ADD_FRIEND">
+    <summary>Do not use. This API is only supported for Xbox developers.</summary>
+  </member>
+</doc>

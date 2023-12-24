@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RESOURCE_BINDING_TIER">
+    <summary>Identifies the tier of resource binding being used.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_BINDING_TIER.D3D12_RESOURCE_BINDING_TIER_1">
+    <summary>Tier 1. See <a href="https://docs.microsoft.com//windows/desktop/direct3d12/hardware-support">Hardware Tiers</a>.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_BINDING_TIER.D3D12_RESOURCE_BINDING_TIER_2">
+    <summary>Tier 2. See <a href="https://docs.microsoft.com//windows/desktop/direct3d12/hardware-support">Hardware Tiers</a>.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_BINDING_TIER.D3D12_RESOURCE_BINDING_TIER_3">
+    <summary>Tier 3. See <a href="https://docs.microsoft.com//windows/desktop/direct3d12/hardware-support">Hardware Tiers</a>.</summary>
+  </member>
+</doc>

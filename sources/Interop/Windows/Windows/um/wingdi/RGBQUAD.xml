@@ -3,40 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RGBQUAD">
-    <summary>
-      <para>The <b>RGBQUAD</b> structure describes a color consisting of relative intensities of red, green, and blue.</para>
-    </summary>
-    <remarks>
-      <para>The <b>bmiColors</b> member of the <see cref="BITMAPINFO" /> structure consists of an array of <b>RGBQUAD</b> structures.</para>
-    </remarks>
-    <seealso cref="BITMAPINFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmap-structures">Bitmap Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmaps">Bitmaps Overview</seealso>
-    <seealso cref="CreateDIBSection" />
-    <seealso cref="CreateDIBitmap" />
-    <seealso cref="GetDIBits" />
-    <seealso cref="SetDIBits" />
-    <seealso cref="SetDIBitsToDevice" />
-    <seealso cref="StretchDIBits" />
+    <summary>The <b>RGBQUAD</b> structure describes a color consisting of relative intensities of red, green, and blue.</summary>
   </member>
   <member name="RGBQUAD.rgbBlue">
-    <summary>
-      <para>The intensity of blue in the color.</para>
-    </summary>
+    <summary>The intensity of blue in the color.</summary>
   </member>
   <member name="RGBQUAD.rgbGreen">
-    <summary>
-      <para>The intensity of green in the color.</para>
-    </summary>
+    <summary>The intensity of green in the color.</summary>
   </member>
   <member name="RGBQUAD.rgbRed">
-    <summary>
-      <para>The intensity of red in the color.</para>
-    </summary>
+    <summary>The intensity of red in the color.</summary>
   </member>
   <member name="RGBQUAD.rgbReserved">
-    <summary>
-      <para>This member is reserved and must be zero.</para>
-    </summary>
+    <summary>This member is reserved and must be zero.</summary>
   </member>
 </doc>

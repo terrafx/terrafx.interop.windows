@@ -4,14 +4,12 @@
 <doc>
   <member name="STREAM_ID_MAP">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>STREAM_ID_MAP</code> structure describes an elementary stream within an MPEG-2 program stream. Used with the <see cref="IEnumStreamIdMap" /> interface methods.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="STREAM_ID_MAP.stream_id">
-    <summary>
-      <para>Specifies the ID of the PES stream.</para>
-    </summary>
+    <summary>Specifies the ID of the PES stream.</summary>
   </member>
   <member name="STREAM_ID_MAP.dwMediaSampleContent">
     <summary>
@@ -25,13 +23,9 @@
     </summary>
   </member>
   <member name="STREAM_ID_MAP.ulSubstreamFilterValue">
-    <summary>
-      <para>Specifies the substream within the elementary stream. If no substream filtering is required, use SUBSTREAM_FILTER_VAL_NONE (0x10000000).</para>
-    </summary>
+    <summary>Specifies the substream within the elementary stream. If no substream filtering is required, use SUBSTREAM_FILTER_VAL_NONE (0x10000000).</summary>
   </member>
   <member name="STREAM_ID_MAP.iDataOffset">
-    <summary>
-      <para>Specifies the offset in bytes for the substream. If no filtering is required, specify 0.</para>
-    </summary>
+    <summary>Specifies the offset in bytes for the substream. If no filtering is required, specify 0.</summary>
   </member>
 </doc>

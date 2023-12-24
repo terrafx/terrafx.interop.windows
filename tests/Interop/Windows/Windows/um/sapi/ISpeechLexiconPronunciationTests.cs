@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechLexiconPronunciationTests
     {
         Assert.That(typeof(ISpeechLexiconPronunciation).GUID, Is.EqualTo(IID_ISpeechLexiconPronunciation));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechLexiconPronunciation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechLexiconPronunciation>(), Is.EqualTo(sizeof(ISpeechLexiconPronunciation)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechLexiconPronunciation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechLexiconPronunciation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechLexiconPronunciation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechLexiconPronunciation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechLexiconPronunciation), Is.EqualTo(4));
-        }
-    }
 }

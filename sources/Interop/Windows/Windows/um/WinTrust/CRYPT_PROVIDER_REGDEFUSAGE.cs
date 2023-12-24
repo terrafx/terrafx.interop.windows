@@ -19,7 +19,7 @@ public unsafe partial struct CRYPT_PROVIDER_REGDEFUSAGE
 
     /// <include file='CRYPT_PROVIDER_REGDEFUSAGE.xml' path='doc/member[@name="CRYPT_PROVIDER_REGDEFUSAGE.pwszDllName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszDllName;
+    public char* pwszDllName;
 
     /// <include file='CRYPT_PROVIDER_REGDEFUSAGE.xml' path='doc/member[@name="CRYPT_PROVIDER_REGDEFUSAGE.pwszLoadCallbackDataFunctionName"]/*' />
     [NativeTypeName("char *")]

@@ -27,7 +27,7 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptedPackageWriter*, Guid*, void**, int>)(lpVtbl[0]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, uint>)(lpVtbl[1]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptedPackageWriter*, uint>)(lpVtbl[1]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,15 +45,15 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, uint>)(lpVtbl[2]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptedPackageWriter*, uint>)(lpVtbl[2]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxEncryptedPackageWriter.xml' path='doc/member[@name="IAppxEncryptedPackageWriter.AddPayloadFileEncrypted"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream)
+    public HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] char* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream)
     {
-        return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int>)(lpVtbl[3]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this), fileName, compressionOption, inputStream);
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptedPackageWriter*, char*, APPX_COMPRESSION_OPTION, IStream*, int>)(lpVtbl[3]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this), fileName, compressionOption, inputStream);
     }
 
     /// <include file='IAppxEncryptedPackageWriter.xml' path='doc/member[@name="IAppxEncryptedPackageWriter.Close"]/*' />
@@ -61,13 +61,13 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
     [VtblIndex(4)]
     public HRESULT Close()
     {
-        return ((delegate* unmanaged<IAppxEncryptedPackageWriter*, int>)(lpVtbl[4]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxEncryptedPackageWriter*, int>)(lpVtbl[4]))((IAppxEncryptedPackageWriter*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] ushort* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream);
+        HRESULT AddPayloadFileEncrypted([NativeTypeName("LPCWSTR")] char* fileName, APPX_COMPRESSION_OPTION compressionOption, IStream* inputStream);
 
         [VtblIndex(4)]
         HRESULT Close();
@@ -77,18 +77,18 @@ public unsafe partial struct IAppxEncryptedPackageWriter : IAppxEncryptedPackage
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPCWSTR, APPX_COMPRESSION_OPTION, IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, APPX_COMPRESSION_OPTION, IStream*, int> AddPayloadFileEncrypted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, APPX_COMPRESSION_OPTION, IStream*, int> AddPayloadFileEncrypted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Close;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Close;
     }
 }

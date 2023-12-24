@@ -3,23 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NT_FE_CONSOLE_PROPS">
-    <summary>
-      <para>Holds an extra data block used by <see cref="IShellLinkDataList" />. It holds the console's code page.</para>
-    </summary>
+    <summary>Holds an extra data block used by <see cref="IShellLinkDataList" />. It holds the console's code page.</summary>
   </member>
   <member name="NT_FE_CONSOLE_PROPS.dbh">
-    <summary>
-      <para>Type: <b><see cref="DATABLOCK_HEADER" /></b></para>
-      <para>The <see cref="DATABLOCK_HEADER" /> structure with the <b>NT_FE_CONSOLE_PROPS</b> structure's size and signature. The signature for an <b>NT_FE_CONSOLE_PROPS</b> structure is NT_FE_CONSOLE_PROPS_SIG.</para>
-    </summary>
+    <summary>The <see cref="DATABLOCK_HEADER" /> structure with the <b>NT_FE_CONSOLE_PROPS</b> structure's size and signature. The signature for an <b>NT_FE_CONSOLE_PROPS</b> structure is NT_FE_CONSOLE_PROPS_SIG.</summary>
   </member>
-  <member name="NT_FE_CONSOLE_PROPS.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="NT_FE_CONSOLE_PROPS.DUMMYSTRUCTNAME"></member>
   <member name="NT_FE_CONSOLE_PROPS.uCodePage">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The console's code page.</para>
-    </summary>
+    <summary>The console's code page.</summary>
   </member>
 </doc>

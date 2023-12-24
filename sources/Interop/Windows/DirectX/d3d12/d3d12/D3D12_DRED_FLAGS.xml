@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DRED_FLAGS">
+    <summary>
+      <blockquote>[!NOTE] As of Windows 10, version 1903, <b>D3D12_DRED_FLAGS</b> is deprecated, and it may not be available in future versions of Windows.</blockquote>
+      <para>Defines constants used in the <see cref="D3D12_DEVICE_REMOVED_EXTENDED_DATA structure" /> to specify control flags for the Direct3D runtime. Values can be bitwise OR'd together.</para>
+    </summary>
+  </member>
+  <member name="D3D12_DRED_FLAGS.D3D12_DRED_FLAG_NONE">
+    <summary>Typically specifies that Device Removed Extended Data (DRED) is disabled, except for when user-initiated feedback is used to produce a repro, or when otherwise enabled by Windows via automatic detection of process-instability issues. This is the default value.</summary>
+  </member>
+  <member name="D3D12_DRED_FLAGS.D3D12_DRED_FLAG_FORCE_ENABLE">
+    <summary>Forces DRED to be enabled, regardless of the system state.</summary>
+  </member>
+  <member name="D3D12_DRED_FLAGS.D3D12_DRED_FLAG_DISABLE_AUTOBREADCRUMBS">
+    <summary>Disables DRED auto breadcrumbs.</summary>
+  </member>
+</doc>

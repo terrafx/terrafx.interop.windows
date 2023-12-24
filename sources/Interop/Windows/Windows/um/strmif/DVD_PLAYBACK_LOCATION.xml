@@ -4,27 +4,17 @@
 <doc>
   <member name="DVD_PLAYBACK_LOCATION">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DVD_PLAYBACK_LOCATION</code> structure indicates DVD playback location.</para>
     </summary>
-    <remarks>
-      <para>
-        <b>TitleNum</b> and <b>ChapterNum</b> or <b>TitleNum</b> and <b>TimeCode</b> are sufficient to save the playback location for simple linear movies.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="DVD_PLAYBACK_LOCATION.TitleNum">
-    <summary>
-      <para>Title number for the whole disc; Title Track Number (TTN) not Video Title Set_Title Track Number (VTS_TTN).</para>
-    </summary>
+    <summary>Title number for the whole disc; Title Track Number (TTN) not Video Title Set_Title Track Number (VTS_TTN).</summary>
   </member>
   <member name="DVD_PLAYBACK_LOCATION.ChapterNum">
-    <summary>
-      <para>Part-of-title number with title. 0xffffffff if not a simple linear movie.</para>
-    </summary>
+    <summary>Part-of-title number with title. 0xffffffff if not a simple linear movie.</summary>
   </member>
   <member name="DVD_PLAYBACK_LOCATION.TimeCode">
-    <summary>
-      <para>Timecode. Use <see cref="DVD_TIMECODE" /> for current playback time. 0xFFFFFFFF if not a simple linear movie.</para>
-    </summary>
+    <summary>Timecode. Use <see cref="DVD_TIMECODE" /> for current playback time. 0xFFFFFFFF if not a simple linear movie.</summary>
   </member>
 </doc>

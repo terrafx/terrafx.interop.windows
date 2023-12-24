@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_HEAP_SERIALIZATION_TIER">
+    <summary>Defines constants that specify heap serialization support.</summary>
+  </member>
+  <member name="D3D12_HEAP_SERIALIZATION_TIER.D3D12_HEAP_SERIALIZATION_TIER_0">
+    <summary>Indicates that heap serialization is not supported.</summary>
+  </member>
+  <member name="D3D12_HEAP_SERIALIZATION_TIER.D3D12_HEAP_SERIALIZATION_TIER_10">
+    <summary>Indicates that heap serialization is supported. Your application can serialize resource data in heaps through copying APIs such as <see cref="CopyResource" />, without necessarily requiring an explicit <a href="https://docs.microsoft.com//windows/desktop/direct3d12/using-resource-barriers-to-synchronize-resource-states-in-direct3d-12#implicit-state-transitions">state transition</a> of resources on those heaps.</summary>
+  </member>
+</doc>

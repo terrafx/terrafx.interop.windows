@@ -4,27 +4,17 @@
 <doc>
   <member name="DVD_SUBPICTURE_CODING">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Indicates what kind of content the subpicture stream contains.</para>
     </summary>
-    <remarks>
-      <para>Most subpicture streams contain language-related content such as movie subtitles, but subpictures can also be used for the bouncing ball in karaoke or other non-language-related purposes.</para>
-    </remarks>
-    <seealso cref="DVD_SubpictureAttributes" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="DVD_SUBPICTURE_CODING.DVD_SPCoding_RunLength">
-    <summary>
-      <para>Indicates that the subpicture uses run length encoding.</para>
-    </summary>
+    <summary>Indicates that the subpicture uses run length encoding.</summary>
   </member>
   <member name="DVD_SUBPICTURE_CODING.DVD_SPCoding_Extended">
-    <summary>
-      <para>Indicates that subpicture uses extended encoding.</para>
-    </summary>
+    <summary>Indicates that subpicture uses extended encoding.</summary>
   </member>
   <member name="DVD_SUBPICTURE_CODING.DVD_SPCoding_Other">
-    <summary>
-      <para>Indicates that the subpicture uses some other encoding scheme.</para>
-    </summary>
+    <summary>Indicates that the subpicture uses some other encoding scheme.</summary>
   </member>
 </doc>

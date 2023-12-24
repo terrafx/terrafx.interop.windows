@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventStore*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrEventStore*, uint>)(lpVtbl[1]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventStore*, uint>)(lpVtbl[1]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrEventStore*, uint>)(lpVtbl[2]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventStore*, uint>)(lpVtbl[2]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrEventStore.xml' path='doc/member[@name="ISyncMgrEventStore.GetEventEnumerator"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface, 
     [VtblIndex(3)]
     public HRESULT GetEventEnumerator(IEnumSyncMgrEvents** ppenum)
     {
-        return ((delegate* unmanaged<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int>)(lpVtbl[3]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventStore*, IEnumSyncMgrEvents**, int>)(lpVtbl[3]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     /// <include file='ISyncMgrEventStore.xml' path='doc/member[@name="ISyncMgrEventStore.GetEventCount"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface, 
     [VtblIndex(4)]
     public HRESULT GetEventCount([NativeTypeName("ULONG *")] uint* pcEvents)
     {
-        return ((delegate* unmanaged<ISyncMgrEventStore*, uint*, int>)(lpVtbl[4]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pcEvents);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventStore*, uint*, int>)(lpVtbl[4]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pcEvents);
     }
 
     /// <include file='ISyncMgrEventStore.xml' path='doc/member[@name="ISyncMgrEventStore.GetEvent"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface, 
     [VtblIndex(5)]
     public HRESULT GetEvent([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent** ppEvent)
     {
-        return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int>)(lpVtbl[5]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), rguidEventID, ppEvent);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventStore*, Guid*, ISyncMgrEvent**, int>)(lpVtbl[5]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), rguidEventID, ppEvent);
     }
 
     /// <include file='ISyncMgrEventStore.xml' path='doc/member[@name="ISyncMgrEventStore.RemoveEvent"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface, 
     [VtblIndex(6)]
     public HRESULT RemoveEvent(Guid* pguidEventIDs, [NativeTypeName("ULONG")] uint cEvents)
     {
-        return ((delegate* unmanaged<ISyncMgrEventStore*, Guid*, uint, int>)(lpVtbl[6]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pguidEventIDs, cEvents);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventStore*, Guid*, uint, int>)(lpVtbl[6]))((ISyncMgrEventStore*)Unsafe.AsPointer(ref this), pguidEventIDs, cEvents);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ISyncMgrEventStore : ISyncMgrEventStore.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumSyncMgrEvents **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumSyncMgrEvents**, int> GetEventEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumSyncMgrEvents**, int> GetEventEnumerator;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetEventCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetEventCount;
 
         [NativeTypeName("HRESULT (const GUID &, ISyncMgrEvent **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ISyncMgrEvent**, int> GetEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, ISyncMgrEvent**, int> GetEvent;
 
         [NativeTypeName("HRESULT (GUID *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, int> RemoveEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, int> RemoveEvent;
     }
 }

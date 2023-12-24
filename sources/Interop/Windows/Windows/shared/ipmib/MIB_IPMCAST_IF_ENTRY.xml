@@ -3,43 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_IPMCAST_IF_ENTRY">
-    <summary>
-      <para>The
-<b>MIB_IPMCAST_IF_ENTRY</b> structure stores information about an IP multicast interface.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="MIB_IPMCAST_IF_TABLE" />
+    <summary>The<b>MIB_IPMCAST_IF_ENTRY</b> structure stores information about an IP multicast interface.</summary>
   </member>
   <member name="MIB_IPMCAST_IF_ENTRY.dwIfIndex">
-    <summary>
-      <para>The index of this interface.</para>
-    </summary>
+    <summary>The index of this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_IF_ENTRY.dwTtl">
-    <summary>
-      <para>The time-to-live value for this interface.</para>
-    </summary>
+    <summary>The time-to-live value for this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_IF_ENTRY.dwProtocol">
-    <summary>
-      <para>The multicast routing protocol that owns this interface.</para>
-    </summary>
+    <summary>The multicast routing protocol that owns this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_IF_ENTRY.dwRateLimit">
-    <summary>
-      <para>The rate limit of this interface.</para>
-    </summary>
+    <summary>The rate limit of this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_IF_ENTRY.ulInMcastOctets">
-    <summary>
-      <para>The number of octets of multicast data received through this interface.</para>
-    </summary>
+    <summary>The number of octets of multicast data received through this interface.</summary>
   </member>
   <member name="MIB_IPMCAST_IF_ENTRY.ulOutMcastOctets">
-    <summary>
-      <para>The number of octets of multicast data sent through this interface.</para>
-    </summary>
+    <summary>The number of octets of multicast data sent through this interface.</summary>
   </member>
 </doc>

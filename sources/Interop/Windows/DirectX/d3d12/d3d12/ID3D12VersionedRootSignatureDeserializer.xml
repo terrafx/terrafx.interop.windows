@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12VersionedRootSignatureDeserializer.GetRootSignatureDescAtVersion">
+    <summary>Converts root signature description structures to a requested version.</summary>
+    <param name="convertToVersion">Specifies the required <see cref="D3D_ROOT_SIGNATURE_VERSION" />.</param>
+    <param name="ppDesc">Contains the deserialized root signature in a <see cref="D3D12_VERSIONED_ROOT_SIGNATURE_DESC" /> structure.</param>
+    <returns>This method returns an HRESULT success or error code. The method can fail with E_OUTOFMEMORY.</returns>
+  </member>
+  <member name="ID3D12VersionedRootSignatureDeserializer.GetUnconvertedRootSignatureDesc">
+    <summary>Gets the layout of the root signature, without converting between root signature versions.</summary>
+    <returns>This method returns a deserialized root signature in a <see cref="D3D12_VERSIONED_ROOT_SIGNATURE_DESC" /> structure that describes the layout of the root signature.</returns>
+  </member>
+  <member name="ID3D12VersionedRootSignatureDeserializer">
+    <summary>Contains methods to return the deserialized<see cref="D3D12_ROOT_SIGNATURE_DESC1" />data structure, of any version of a serialized root signature.</summary>
+  </member>
+</doc>

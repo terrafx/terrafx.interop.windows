@@ -3,15 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE">
-    <summary>
-      <para>Specifies the color space for video processing.</para>
-    </summary>
-    <remarks>
-      <para>The <b>RGB_Range</b> member applies to RGB output, while the <b>YCbCr_Matrix</b> and <b>YCbCr_xvYCC</b> members apply to YCbCr output. If the driver performs color-space conversion on the background color, it uses the values that apply to both color spaces.</para>
-      <para>If the driver supports extended YCbCr (xvYCC), it returns the <b>D3D11_VIDEO_PROCESSOR_DEVICE_CAPS_xvYCC</b> capabilities flag in the <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> method. Otherwise, the driver ignores the value of <b>YCbCr_xvYCC</b> and treats all YCbCr output as conventional YCbCr.</para>
-      <para>If extended YCbCr is supported, it can be used with either transfer matrix. Extended YCbCr does not change the black point or white point—the black point is still 16 and the white point is still 235. However, extended YCbCr explicitly allows blacker-than-black values in the range 1–15, and whiter-than-white values in the range 236–254. When extended YCbCr is used, the driver should not clip the luma values to the nominal 16–235 range.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Specifies the color space for video processing.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE.Usage">
     <summary>
@@ -21,22 +13,26 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>0</para>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
           </description>
+          <description>Playback</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Playback</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>1</para>
-          </description>
-          <description>
-            <para>Video processing</para>
-          </description>
-        </item>
+          <description>Video processing</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -48,22 +44,26 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>0</para>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
           </description>
+          <description>Full range (0-255)</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Full range (0-255)</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>1</para>
-          </description>
-          <description>
-            <para>Limited range (16-235)</para>
-          </description>
-        </item>
+          <description>Limited range (16-235)</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -75,22 +75,26 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>0</para>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
           </description>
+          <description>ITU-R BT.601</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>ITU-R BT.601</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>1</para>
-          </description>
-          <description>
-            <para>ITU-R BT.709</para>
-          </description>
-        </item>
+          <description>ITU-R BT.709</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -102,22 +106,26 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>0</para>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
           </description>
+          <description>Conventional YCbCr</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Conventional YCbCr</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>1</para>
-          </description>
-          <description>
-            <para>Extended YCbCr (xvYCC)</para>
-          </description>
-        </item>
+          <description>Extended YCbCr (xvYCC)</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -128,8 +136,6 @@
     </summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_COLOR_SPACE.Reserved">
-    <summary>
-      <para>Reserved. Set to zero.</para>
-    </summary>
+    <summary>Reserved. Set to zero.</summary>
   </member>
 </doc>

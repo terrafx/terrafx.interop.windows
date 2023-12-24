@@ -3,50 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TRACE_VALUE">
-    <summary>
-      <para>Describes a trace value.</para>
-    </summary>
-    <remarks>
-      <para>This API requires the Windows Software Development Kit (SDK) for Windows 8.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-structures">Shader Structures</seealso>
+    <summary>Describes a trace value.</summary>
   </member>
   <member name="D3D11_TRACE_VALUE.Bits">
     <summary>
       <para>An array of bits that make up the trace value. The [0] element is X.</para>
-      <para>
-        <b>Note</b>  This member can hold <b>float</b>, <b>UINT</b>, or <b>INT</b> data.
-The elements are specified as <b>UINT</b> rather than using a union to minimize the risk of x86 SNaN-&gt;QNaN quashing during float assignment.
-If the bits are displayed, they can be interpreted as <b>float</b> at the last moment.</para>
+      <div>
+        <b>Note</b>  This member can hold <b>float</b>, <b>UINT</b>, or <b>INT</b> data. The elements are specified as <b>UINT</b> rather than using a union to minimize the risk of x86 SNaN-&gt;QNaN quashing during float assignment. If the bits are displayed, they can be interpreted as <b>float</b> at the last moment.</div>
     </summary>
   </member>
   <member name="D3D11_TRACE_VALUE.ValidMask">
     <summary>
-      <para>A combination of the following component values that are combined by using a bitwise <b>OR</b> operation.
-The resulting value specifies the component trace mask.</para>
+      <para>A combination of the following component values that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies the component trace mask.</para>
       <list type="table">
         <listheader>
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>D3D11_TRACE_COMPONENT_X (0x1)</description>
           <description>The x component of the trace mask.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D11_TRACE_COMPONENT_Y (0x2)</description>
           <description>The y component of the trace mask.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D11_TRACE_COMPONENT_Z (0x4)</description>
           <description>The depth z component of the trace mask.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D11_TRACE_COMPONENT_W (0x8)</description>
           <description>The depth w component of the trace mask.</description>
-        </item>
-      </list>
-      <para>Ignore unmasked values, particularly if deltas are accumulated.</para>
-    </summary>
+        </listheader>
+      </list> <para>Ignore unmasked values, particularly if deltas are accumulated.</para></summary>
   </member>
 </doc>

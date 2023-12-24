@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHITEMID">
-    <summary>
-      <para>Defines an item identifier.</para>
-    </summary>
+    <summary>Defines an item identifier.</summary>
   </member>
   <member name="SHITEMID.cb">
-    <summary>
-      <para>Type: <b>USHORT</b></para>
-      <para>The size of identifier, in bytes, including <b>cb</b> itself.</para>
-    </summary>
+    <summary>The size of identifier, in bytes, including <b>cb</b> itself.</summary>
   </member>
   <member name="SHITEMID.abID">
-    <summary>
-      <para>Type: <b>BYTE[1]</b></para>
-      <para>A variable-length item identifier.</para>
-    </summary>
+    <summary>A variable-length item identifier.</summary>
   </member>
 </doc>

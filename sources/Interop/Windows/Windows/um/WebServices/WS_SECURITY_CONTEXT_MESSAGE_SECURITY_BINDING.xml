@@ -4,16 +4,9 @@
 <doc>
   <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING">
     <summary>
-      <para>The security binding subtype for specifying the use of a security context
-token negotiated between the client and server using
-WS-SecureConversation. This security binding may be used only with
-message security. It is used to establish a message-level security
-context. Another set of one or more security bindings, specified in the
-bootstrapSecurityDescription field, is used to the bootstrap the context.</para>
-      <para>Only one instance of this binding may be present in a <see cref="security description" />.
-This security binding is not supported with the <see cref="WS_NAMEDPIPE_CHANNEL_BINDING" />.</para>
-      <para>When this binding is used, the channel must complete the receive of at least one
-message before it can be used to send messages.</para>
+      <para>The security binding subtype for specifying the use of a security context token negotiated between the client and server using WS-SecureConversation. This security binding may be used only with message security. It is used to establish a message-level security context. Another set of one or more security bindings, specified in the bootstrapSecurityDescription field, is used to the bootstrap the context.</para>
+      <para>Only one instance of this binding may be present in a <see cref="security description" />. This security binding is not supported with the <see cref="WS_NAMEDPIPE_CHANNEL_BINDING" />.</para>
+      <para>When this binding is used, the channel must complete the receive of at least one message before it can be used to send messages.</para>
       <para>With this security binding, the following security binding properties may be specified:</para>
       <list type="bullet">
         <item>
@@ -55,26 +48,16 @@ message before it can be used to send messages.</para>
     </summary>
   </member>
   <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING.binding">
-    <summary>
-      <para>The base type from which this security binding subtype and all other security binding subtypes derive.</para>
-    </summary>
+    <summary>The base type from which this security binding subtype and all other security binding subtypes derive.</summary>
   </member>
   <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING.bindingUsage">
     <summary>
-      <para>How the security token corresponding to this security binding should
-be attached to a message.</para>
-      <para>Currently, only <see cref="WS_SUPPORTING_MESSAGE_SECURITY_USAGE" /> is
-supported.  With this usage, this security binding provides client
-authentication, but not message protection (such as signing, encryption,
-replay detection).  Thus, this binding must be used together with
-another security binding such as the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" /></para>
-      <para>that provides a protected channel.</para>
+      <para>How the security token corresponding to this security binding should be attached to a message.</para>
+      <para>Currently, only <see cref="WS_SUPPORTING_MESSAGE_SECURITY_USAGE" /> is supported. With this usage, this security binding provides client authentication, but not message protection (such as signing, encryption, replay detection). Thus, this binding must be used together with another security binding such as the <see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />that provides a protected channel.</para>
       <para>To use this binding on HTTP without SSL, the security description property <b>WS_SECURITY_PROPERTY_TRANSPORT_PROTECTION_LEVEL</b> must be explicitly set to <b>WS_PROTECTION_LEVEL_NONE</b>. This is not supported on the client or on TCP.</para>
     </summary>
   </member>
   <member name="WS_SECURITY_CONTEXT_MESSAGE_SECURITY_BINDING.bootstrapSecurityDescription">
-    <summary>
-      <para>The security description for used to obtain the security context token.</para>
-    </summary>
+    <summary>The security description for used to obtain the security context token.</summary>
   </member>
 </doc>

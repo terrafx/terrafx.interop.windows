@@ -3,43 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID">
-    <summary>
-      <para>Each property represents optional parameters for configuring
-the given <see cref="WS_SERVICE_ENDPOINT" /> structure.
-This enumeration is used within the <see cref="WS_SERVICE_ENDPOINT_PROPERTY" /> structure that is part of <b>WS_SERVICE_ENDPOINT</b>.</para>
-    </summary>
+    <summary>Each property represents optional parameters for configuring the given <see cref="WS_SERVICE_ENDPOINT" /> structure. This enumeration is used within the <see cref="WS_SERVICE_ENDPOINT_PROPERTY" /> structure that is part of <b>WS_SERVICE_ENDPOINT</b>.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_ACCEPT_CHANNEL_CALLBACK">
-    <summary>
-      <para>Used with <see cref="WS_SERVICE_ENDPOINT" />.
-The value is a pointer to WS_SERVICE_PROPERTY_ACCEPT_CALLBACK structure.</para>
-    </summary>
+    <summary>Used with <see cref="WS_SERVICE_ENDPOINT" />. The value is a pointer to WS_SERVICE_PROPERTY_ACCEPT_CALLBACK structure.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_CLOSE_CHANNEL_CALLBACK">
-    <summary>
-      <para>Used with <see cref="WS_SERVICE_ENDPOINT" />.
-The value is a pointer to WS_SERVICE_PROPERTY_CLOSE_CALLBACK structure.</para>
-    </summary>
+    <summary>Used with <see cref="WS_SERVICE_ENDPOINT" />. The value is a pointer to WS_SERVICE_PROPERTY_CLOSE_CALLBACK structure.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_MAX_ACCEPTING_CHANNELS">
-    <summary>
-      <para>Used with <see cref="WS_SERVICE_ENDPOINT" />, this specifies the maximum number of concurrent channels service host will have
-actively accepting new connections for a given endpoint.                     When not specified this value is set to 1. If an endpoint specifies a default message handler (See <b>WS_SERVICE_ENDPOINT</b>) concurrency
-has to be 1.</para>
-    </summary>
+    <summary>Used with <see cref="WS_SERVICE_ENDPOINT" />, this specifies the maximum number of concurrent channels service host will have actively accepting new connections for a given endpoint. When not specified this value is set to 1. If an endpoint specifies a default message handler (See <b>WS_SERVICE_ENDPOINT</b>) concurrency has to be 1.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_MAX_CONCURRENCY">
-    <summary>
-      <para>Used with <see cref="WS_SERVICE_ENDPOINT" />, this specifies the maximum number of concurrent calls that would be serviced on a session based channel.
-When not specified this value is set to 1. If an endpoint specifies a default message handler (See <b>WS_SERVICE_ENDPOINT</b> concurrency
-has to be 1.</para>
-    </summary>
+    <summary>Used with <see cref="WS_SERVICE_ENDPOINT" />, this specifies the maximum number of concurrent calls that would be serviced on a session based channel. When not specified this value is set to 1. If an endpoint specifies a default message handler (See <b>WS_SERVICE_ENDPOINT</b> concurrency has to be 1.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_BODY_HEAP_MAX_SIZE">
     <summary>
       <para>Maximum <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-heap">heap</a> size for body deserialization.</para>
-      <para>This is the heap available setting used for deserializing the body. This heap is also
-available to service operations for allocating out parameters.</para>
+      <para>This is the heap available setting used for deserializing the body. This heap is also available to service operations for allocating out parameters.</para>
       <para>Default is 65535 bytes.</para>
     </summary>
   </member>
@@ -47,15 +28,13 @@ available to service operations for allocating out parameters.</para>
     <summary>
       <para>
         <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-heap">Heap</a> trim size for body deserialization.</para>
-      <para>This is the heap available setting used for deserializing the body. This heap is also
-available to service operations for allocating out parameters.</para>
+      <para>This is the heap available setting used for deserializing the body. This heap is also available to service operations for allocating out parameters.</para>
       <para>Default is 4096 bytes.</para>
     </summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_MESSAGE_PROPERTIES">
     <summary>
-      <para>This property allows the user to specify properties of the message
-objects used by the endpoint to send and receive messages.</para>
+      <para>This property allows the user to specify properties of the message objects used by the endpoint to send and receive messages.</para>
       <para>This property may be specified when the service host is created.</para>
       <para>The value specified should be of type <see cref="WS_MESSAGE_PROPERTIES" />.</para>
       <para>The following message properties may be specified:</para>
@@ -85,41 +64,29 @@ objects used by the endpoint to send and receive messages.</para>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_MAX_CALL_POOL_SIZE">
     <summary>
-      <para>The maximum number of call servicing objects that would be pooled to service a message object, on a given
-endpoint. Note that in case of session based channels many call objects can be used on a single
-channel if <see cref="WS_SERVICE_ENDPOINT_PROPERTY_MAX_CONCURRENCY" /> is greater than 1.</para>
+      <para>The maximum number of call servicing objects that would be pooled to service a message object, on a given endpoint. Note that in case of session based channels many call objects can be used on a single channel if <see cref="WS_SERVICE_ENDPOINT_PROPERTY_MAX_CONCURRENCY" /> is greater than 1.</para>
       <para>For sessionless channels this property should ideally be equal to <see cref="WS_SERVICE_ENDPOINT_PROPERTY_MAX_CHANNEL_POOL_SIZE" />.</para>
       <para>Default is 100.</para>
     </summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_MAX_CHANNEL_POOL_SIZE">
     <summary>
-      <para>The maximum number of <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-channel">WS_CHANNEL</a> which will be pooled by Service Host on a given
-endpoint.</para>
+      <para>The maximum number of <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-channel">WS_CHANNEL</a> which will be pooled by Service Host on a given endpoint.</para>
       <para>Default is 100.</para>
     </summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_LISTENER_PROPERTIES">
-    <summary>
-      <para>Listener properties.</para>
-    </summary>
+    <summary>Listener properties.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_CHECK_MUST_UNDERSTAND">
-    <summary>
-      <para>Enables or disables must understand header verification on an endpoint. This is 'TRUE' by default.</para>
-    </summary>
+    <summary>Enables or disables must understand header verification on an endpoint. This is 'TRUE' by default.</summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_METADATA_EXCHANGE_TYPE">
     <summary>
-      <para>This property can be set to <see cref="WS_METADATA_EXCHANGE_TYPE_MEX" /> to enable
-servicing of WS-MetadataExchange requests on the endpoint. In case the application wishes to
-expose metadata through HTTP GET, this property can be set to <b>WS_METADATA_EXCHANGE_TYPE_HTTP_GET</b></para>
+      <para>This property can be set to <see cref="WS_METADATA_EXCHANGE_TYPE_MEX" /> to enable servicing of WS-MetadataExchange requests on the endpoint. In case the application wishes to expose metadata through HTTP GET, this property can be set to <b>WS_METADATA_EXCHANGE_TYPE_HTTP_GET</b></para>
       <para>If not specified, the default value of this property is '<see cref="WS_METADATA_EXCHANGE_TYPE_NONE" />'.</para>
-      <para>Note that this property when set to <see cref="WS_METADATA_EXCHANGE_TYPE_HTTP_GET" /> changes the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-listener">WS_LISTENER</a> property
-<see cref="WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS" /> and
-<b>WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS</b> to <see cref="WS_MATCH_URL_PREFIX_PATH" />.</para>
-      <para>When setting this property to WS_METADATA_EXCHANGE_TYPE_HTTP_GET an application must not specify <see cref="WS_MATCH_URL_EXACT_PATH" /> for the listener
-properties <see cref="WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS" /> and <b>WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS</b> for the given <see cref="WS_SERVICE_ENDPOINT" />.</para>
+      <para>Note that this property when set to <see cref="WS_METADATA_EXCHANGE_TYPE_HTTP_GET" /> changes the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-listener">WS_LISTENER</a> property<see cref="WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS" /> and<b>WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS</b> to <see cref="WS_MATCH_URL_PREFIX_PATH" />.</para>
+      <para>When setting this property to WS_METADATA_EXCHANGE_TYPE_HTTP_GET an application must not specify <see cref="WS_MATCH_URL_EXACT_PATH" /> for the listener properties <see cref="WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS" /> and <b>WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS</b> for the given <see cref="WS_SERVICE_ENDPOINT" />.</para>
     </summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_METADATA">
@@ -131,19 +98,12 @@ properties <see cref="WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS" /> an
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_METADATA_EXCHANGE_URL_SUFFIX">
     <summary>
-      <para>Specifies the suffix which is concatenated as is to the <see cref="WS_SERVICE_ENDPOINT" /> URL to generate a URL for WS-MetadataExchange v1.1 requests servicing.
-The generated URL is used to compare against the 'to' header of the message received. Note that if the message does not contain a 'to' header the requests is not
-serviced.</para>
+      <para>Specifies the suffix which is concatenated as is to the <see cref="WS_SERVICE_ENDPOINT" /> URL to generate a URL for WS-MetadataExchange v1.1 requests servicing. The generated URL is used to compare against the 'to' header of the message received. Note that if the message does not contain a 'to' header the requests is not serviced.</para>
       <para>This property must only be specified if <see cref="WS_SERVICE_ENDPOINT_PROPERTY_METADATA_EXCHANGE_TYPE" /> is set to <see cref="WS_METADATA_EXCHANGE_TYPE_MEX" />.</para>
-      <para>Specifying this property is useful in cases where an application wishes to handle WS-Transfer Get requests as well as use the same endpoint to service
-WS-MetadataExchange v1.1 requests. The generate URL in this case is used to filter out WS-Transfer Get requests for Ws-MetadataExchange v1.1.</para>
-      <para>By default no filtering is done for WS-MetadataExchange v1.1 for MEX and all WS-Transfer GET requests will be handled by the endpoint for Ws-MetadataExchange v1.1, if
-Ws-MetadataExchange v1.1 is enabled on the endpoint.</para>
-      <para>Note that this property changes the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-listener">WS_LISTENER</a> property <see cref="WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS" /> and
-<b>WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS</b> to <see cref="WS_MATCH_URL_PREFIX_PATH" />.</para>
-      <para>When setting this property an application must not specify <see cref="WS_MATCH_URL_EXACT_PATH" /> for the listener
-properties <see cref="WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS" /> and <b>WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS</b></para>
-      <para>for the given <see cref="WS_SERVICE_ENDPOINT" />.</para>
+      <para>Specifying this property is useful in cases where an application wishes to handle WS-Transfer Get requests as well as use the same endpoint to service WS-MetadataExchange v1.1 requests. The generate URL in this case is used to filter out WS-Transfer Get requests for Ws-MetadataExchange v1.1.</para>
+      <para>By default no filtering is done for WS-MetadataExchange v1.1 for MEX and all WS-Transfer GET requests will be handled by the endpoint for Ws-MetadataExchange v1.1, if Ws-MetadataExchange v1.1 is enabled on the endpoint.</para>
+      <para>Note that this property changes the <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-listener">WS_LISTENER</a> property <see cref="WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS" /> and<b>WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS</b> to <see cref="WS_MATCH_URL_PREFIX_PATH" />.</para>
+      <para>When setting this property an application must not specify <see cref="WS_MATCH_URL_EXACT_PATH" /> for the listener properties <see cref="WS_LISTENER_PROPERTY_TRANSPORT_URL_MATCHING_OPTIONS" /> and <b>WS_LISTENER_PROPERTY_TO_HEADER_MATCHING_OPTIONS</b>for the given <see cref="WS_SERVICE_ENDPOINT" />.</para>
     </summary>
   </member>
   <member name="WS_SERVICE_ENDPOINT_PROPERTY_ID.WS_SERVICE_ENDPOINT_PROPERTY_MAX_CHANNELS">

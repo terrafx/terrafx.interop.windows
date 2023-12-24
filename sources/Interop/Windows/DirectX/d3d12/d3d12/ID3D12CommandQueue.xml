@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12CommandQueue.BeginEvent">
+    <summary>Not intended to be called directly.  Use the<a href="https://devblogs.microsoft.com/pix/winpixeventruntime/">PIX event runtime</a> to insert events into a command queue.</summary>
+    <param name="Metadata">Internal.</param>
+    <param name="pData">Internal.</param>
+    <param name="Size">Internal.</param>
+  </member>
+  <member name="ID3D12CommandQueue.CopyTileMappings">
+    <summary>Copies mappings from a source reserved resource to a destination reserved resource.</summary>
+    <param name="pDstResource">A pointer to the destination reserved resource.</param>
+    <param name="pDstRegionStartCoordinate">A pointer to a<see cref="D3D12_TILED_RESOURCE_COORDINATE" /> structure that describes the starting coordinates of the destination reserved resource.</param>
+    <param name="pSrcResource">A pointer to the source reserved resource.</param>
+    <param name="pSrcRegionStartCoordinate">A pointer to a <see cref="D3D12_TILED_RESOURCE_COORDINATE" /> structure that describes the starting coordinates of the source reserved resource.</param>
+    <param name="pRegionSize">A pointer to a <see cref="D3D12_TILE_REGION_SIZE" /> structure that describes the size of the reserved region.</param>
+    <param name="Flags">One member of <see cref="D3D12_TILE_MAPPING_FLAGS" />.</param>
+  </member>
+  <member name="ID3D12CommandQueue.EndEvent">
+    <summary>Not intended to be called directly.  Use the<a href="https://devblogs.microsoft.com/pix/winpixeventruntime/">PIX event runtime</a> to insert events into a command queue.</summary>
+  </member>
+  <member name="ID3D12CommandQueue.ExecuteCommandLists">
+    <summary>Submits an array of command lists for execution.</summary>
+    <param name="NumCommandLists">The number of command lists to be executed.</param>
+    <param name="ppCommandLists">The array of <see cref="ID3D12CommandList" /> command lists to be executed.</param>
+  </member>
+  <member name="ID3D12CommandQueue.GetClockCalibration">
+    <summary>This method samples the CPU and GPU timestamp counters at the same moment in time.</summary>
+    <param name="pGpuTimestamp">The value of the GPU timestamp counter.</param>
+    <param name="pCpuTimestamp">The value of the CPU timestamp counter.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12CommandQueue.GetDesc">
+    <summary>Gets the description of the command queue.</summary>
+    <returns>The description of the command queue, as a <see cref="D3D12_COMMAND_QUEUE_DESC" /> structure.</returns>
+  </member>
+  <member name="ID3D12CommandQueue.GetTimestampFrequency">
+    <summary>This method is used to determine the rate at which the GPU timestamp counter increments.</summary>
+    <param name="pFrequency">The GPU timestamp counter frequency (in ticks/second).</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12CommandQueue.SetMarker">
+    <summary>Not intended to be called directly.  Use the<a href="https://devblogs.microsoft.com/pix/winpixeventruntime/">PIX event runtime</a> to insert events into a command queue.</summary>
+    <param name="Metadata">Internal.</param>
+    <param name="pData">Internal.</param>
+    <param name="Size">Internal.</param>
+  </member>
+  <member name="ID3D12CommandQueue.Signal">
+    <summary>Updates a fence to a specified value.</summary>
+    <param name="pFence">A pointer to the <see cref="ID3D12Fence" /> object.</param>
+    <param name="Value">The value to set the fence to.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12CommandQueue.UpdateTileMappings">
+    <summary>Updates mappings of tile locations in reserved resources to memory locations in a resource heap.</summary>
+    <param name="pResource">A pointer to the reserved resource.</param>
+    <param name="NumResourceRegions">The number of reserved resource regions.</param>
+    <param name="pResourceRegionStartCoordinates">An array of <see cref="D3D12_TILED_RESOURCE_COORDINATE" /> structures that describe the starting coordinates of the reserved resource regions. The <i>NumResourceRegions</i> parameter specifies the number of <b>D3D12_TILED_RESOURCE_COORDINATE</b> structures in the array.</param>
+    <param name="pResourceRegionSizes">An array of <see cref="D3D12_TILE_REGION_SIZE" /> structures that describe the sizes of the reserved resource regions. The <i>NumResourceRegions</i> parameter specifies the number of <b>D3D12_TILE_REGION_SIZE</b> structures in the array.</param>
+    <param name="pHeap">A pointer to the resource heap.</param>
+    <param name="NumRanges">The number of tile ranges.</param>
+    <param name="pRangeFlags">A pointer to an array of <see cref="D3D12_TILE_RANGE_FLAGS" /> values that describes each tile range. The <i>NumRanges</i> parameter specifies the number of values in the array.</param>
+    <param name="pHeapRangeStartOffsets">An array of offsets into the resource heap. These are 0-based tile offsets, counting in tiles (not bytes).</param>
+    <param name="pRangeTileCounts">An array of tiles. An array of values that specify the number of tiles in each tile range. The <i>NumRanges</i> parameter specifies the number of values in the array.</param>
+    <param name="Flags">A combination of <see cref="D3D12_TILE_MAPPING_FLAGS" /> values that are combined by using a bitwise OR operation.</param>
+  </member>
+  <member name="ID3D12CommandQueue.Wait">
+    <summary>Queues a GPU-side wait, and returns immediately. A GPU-side wait is where the GPU waits until the specified fence reaches or exceeds the specified value.</summary>
+    <param name="pFence">A pointer to the <see cref="ID3D12Fence" /> object.</param>
+    <param name="Value">The value that the command queue is waiting for the fence to reach or exceed. So when <see cref="ID3D12Fence.GetCompletedValue" /> is greater than or equal to <i>Value</i>, the wait is terminated.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12CommandQueue">
+    <summary>Provides methods for submitting command lists, synchronizing command list execution, instrumenting the command queue, and updating resource tile mappings.</summary>
+  </member>
+</doc>

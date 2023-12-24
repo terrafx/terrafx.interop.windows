@@ -3,43 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_KEYERR">
-    <summary>
-      <para>Defines media key error codes for the media engine.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>MF_MEDIA_ENGINE_KEYERR</b> is used with the <i>code</i> parameter of  <see cref="IMFMediaKeySessionNotify.KeyError" /> and the <i>code</i> value returned from <a href="https://docs.microsoft.com//windows/desktop/medfound/imfmediakeysession-geterror">IMFMediaKeySession.GetError</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines media key error codes for the media engine.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_KEYERR.MF_MEDIAENGINE_KEYERR_UNKNOWN">
-    <summary>
-      <para>Unknown error occurred.</para>
-    </summary>
+    <summary>Unknown error occurred.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_KEYERR.MF_MEDIAENGINE_KEYERR_CLIENT">
-    <summary>
-      <para>An error with the client occurred.</para>
-    </summary>
+    <summary>An error with the client occurred.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_KEYERR.MF_MEDIAENGINE_KEYERR_SERVICE">
-    <summary>
-      <para>An error with the service occurred.</para>
-    </summary>
+    <summary>An error with the service occurred.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_KEYERR.MF_MEDIAENGINE_KEYERR_OUTPUT">
-    <summary>
-      <para>An error with the output occurred.</para>
-    </summary>
+    <summary>An error with the output occurred.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_KEYERR.MF_MEDIAENGINE_KEYERR_HARDWARECHANGE">
-    <summary>
-      <para>An error occurred related to a hardware change.</para>
-    </summary>
+    <summary>An error occurred related to a hardware change.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_KEYERR.MF_MEDIAENGINE_KEYERR_DOMAIN">
-    <summary>
-      <para>An error with the domain occurred.</para>
-    </summary>
+    <summary>An error with the domain occurred.</summary>
   </member>
 </doc>

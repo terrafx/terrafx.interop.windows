@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CATEGORYINFO">
-    <summary>
-      <para>Describes a component category.</para>
-    </summary>
-    <seealso cref="ICatRegister" />
+    <summary>Describes a component category.</summary>
   </member>
   <member name="CATEGORYINFO.catid">
-    <summary>
-      <para>The category identifier for the component.</para>
-    </summary>
+    <summary>The category identifier for the component.</summary>
   </member>
   <member name="CATEGORYINFO.lcid">
-    <summary>
-      <para>The locale identifier. See <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifier-constants-and-strings">Language Identifier Constants and Strings</a>.</para>
-    </summary>
+    <summary>The locale identifier. See <a href="https://docs.microsoft.com//windows/desktop/Intl/language-identifier-constants-and-strings">Language Identifier Constants and Strings</a>.</summary>
   </member>
   <member name="CATEGORYINFO.szDescription">
-    <summary>
-      <para>The description of the category (cannot exceed 128 characters).</para>
-    </summary>
+    <summary>The description of the category (cannot exceed 128 characters).</summary>
   </member>
 </doc>

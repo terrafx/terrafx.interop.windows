@@ -19,32 +19,4 @@ public static unsafe partial class IHandlerInfoTests
     {
         Assert.That(typeof(IHandlerInfo).GUID, Is.EqualTo(IID_IHandlerInfo));
     }
-
-    /// <summary>Validates that the <see cref="IHandlerInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHandlerInfo>(), Is.EqualTo(sizeof(IHandlerInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="IHandlerInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHandlerInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHandlerInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHandlerInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHandlerInfo), Is.EqualTo(4));
-        }
-    }
 }

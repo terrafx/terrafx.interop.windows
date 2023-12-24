@@ -3,101 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteStringList.GetCount">
-    <summary>
-      <para>Gets the number of strings in the string list.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>UINT32</b></para>
-      <para>Returns the number of strings in the string list.</para>
-    </returns>
-    <seealso cref="IDWriteStringList" />
+    <summary>Gets the number of strings in the string list.</summary>
+    <returns>Returns the number of strings in the string list.</returns>
   </member>
   <member name="IDWriteStringList.GetLocaleName">
-    <summary>
-      <para>Copies the locale name with the specified index to the specified array.</para>
-    </summary>
-    <param name="listIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the locale name.</para>
-    </param>
-    <param name="localeName">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>Character array that receives the locale name.</para>
-    </param>
-    <param name="size">
-      <para>Type: <b>UINT32</b></para>
-      <para>Size of the array in characters. The size must include space for the terminating null character.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteStringList" />
+    <summary>Copies the locale name with the specified index to the specified array.</summary>
+    <param name="listIndex">Zero-based index of the locale name.</param>
+    <param name="localeName">Character array that receives the locale name.</param>
+    <param name="size">Size of the array in characters. The size must include space for the terminating null character.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteStringList.GetLocaleNameLength">
-    <summary>
-      <para>Gets the length in characters (not including the null terminator) of the locale name with the specified index.</para>
-    </summary>
-    <param name="listIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the locale name.</para>
-    </param>
-    <param name="length">
-      <para>Type: <b>UINT32*</b></para>
-      <para>Receives the length in characters, not including the null terminator.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteStringList" />
+    <summary>Gets the length in characters (not including the null terminator) of the locale name with the specified index.</summary>
+    <param name="listIndex">Zero-based index of the locale name.</param>
+    <param name="length">Receives the length in characters, not including the null terminator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteStringList.GetString">
-    <summary>
-      <para>Copies the string with the specified index to the specified array.</para>
-    </summary>
-    <param name="listIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the string.</para>
-    </param>
-    <param name="stringBuffer">
-      <para>Type: <b>WCHAR*</b></para>
-      <para>Character array that receives the string.</para>
-    </param>
-    <param name="stringBufferSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>Size of the array in characters. The size must include space for the terminating null character.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteStringList" />
+    <summary>Copies the string with the specified index to the specified array.</summary>
+    <param name="listIndex">Zero-based index of the string.</param>
+    <param name="stringBuffer">Character array that receives the string.</param>
+    <param name="stringBufferSize">Size of the array in characters. The size must include space for the terminating null character.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteStringList.GetStringLength">
-    <summary>
-      <para>Gets the length in characters (not including the null terminator) of the string with the specified index.</para>
-    </summary>
-    <param name="listIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the string.</para>
-    </param>
-    <param name="length">
-      <para>Type: <b>UINT32*</b></para>
-      <para>Receives the length in characters of the string, not including the null terminator.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteStringList" />
+    <summary>Gets the length in characters (not including the null terminator) of the string with the specified index.</summary>
+    <param name="listIndex">Zero-based index of the string.</param>
+    <param name="length">Receives the length in characters of the string, not including the null terminator.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteStringList">
-    <summary>
-      <para>Represents a collection of strings indexed by number.An IDWriteStringList is identical to IDWriteLocalizedStrings except for the semantics, where localized strings are indexed on language
-(each language has one string property) whereas IDWriteStringList may contain multiple strings of the same language, such as a string list of family names from a
-font set. You can QueryInterface from an IDWriteLocalizedStrings to an IDWriteStringList.</para>
-    </summary>
-    <seealso cref="IUnknown" />
+    <summary>Represents a collection of strings indexed by number.An IDWriteStringList is identical to IDWriteLocalizedStrings except for the semantics, where localized strings are indexed on language (each language has one string property) whereas IDWriteStringList may contain multiple strings of the same language, such as a string list of family names from a font set. You can QueryInterface from an IDWriteLocalizedStrings to an IDWriteStringList.</summary>
   </member>
 </doc>

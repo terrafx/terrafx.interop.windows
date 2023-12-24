@@ -3,31 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFTOPOLOGY_DXVA_MODE">
-    <summary>
-      <para>Specifies whether the topology loader enables Microsoft DirectX Video Acceleration (DXVA) in the topology.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-topology-dxva-mode">MF_TOPOLOGY_DXVA_MODE</a> topology attribute.</para>
-      <para>If an MFT supports DXVA, the MFT must return <b>TRUE</b> for the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d-aware-attribute">MF_SA_D3D_AWARE</a> attribute. To enable DXVA, the topology loader calls <see cref="IMFTransform.ProcessMessage" /> on the MFT, passing the MFT a pointer to the <see cref="IDirect3DDeviceManager9" /> interface. The topology loader gets the <b>IDirect3DDeviceManager9</b> pointer from the media sink for the video stream. Typically the enhanced video renderer (EVR) is the media sink.</para>
-      <para>Previous versions of Microsoft Media Foundation supported DXVA only for decoders.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/directx-video-acceleration-2-0">DirectX Video Acceleration 2.0</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies whether the topology loader enables Microsoft DirectX Video Acceleration (DXVA) in the topology.</summary>
   </member>
   <member name="MFTOPOLOGY_DXVA_MODE.MFTOPOLOGY_DXVA_DEFAULT">
-    <summary>
-      <para>The topology loader enables DXVA
-on the decoder if possible, and drops optional Media Foundation transforms (MFTs) that do not support DXVA.</para>
-    </summary>
+    <summary>The topology loader enables DXVA on the decoder if possible, and drops optional Media Foundation transforms (MFTs) that do not support DXVA.</summary>
   </member>
   <member name="MFTOPOLOGY_DXVA_MODE.MFTOPOLOGY_DXVA_NONE">
-    <summary>
-      <para>The topology loader disables all video acceleration. This setting forces software processing, even when the decoder supports DXVA.</para>
-    </summary>
+    <summary>The topology loader disables all video acceleration. This setting forces software processing, even when the decoder supports DXVA.</summary>
   </member>
   <member name="MFTOPOLOGY_DXVA_MODE.MFTOPOLOGY_DXVA_FULL">
-    <summary>
-      <para>The topology loader enables DXVA on every MFT that supports it.</para>
-    </summary>
+    <summary>The topology loader enables DXVA on every MFT that supports it.</summary>
   </member>
 </doc>

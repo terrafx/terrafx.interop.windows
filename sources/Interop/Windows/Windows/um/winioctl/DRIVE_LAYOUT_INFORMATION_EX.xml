@@ -3,47 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DRIVE_LAYOUT_INFORMATION_EX">
-    <summary>
-      <para>Contains extended information about a drive's partitions.</para>
-    </summary>
-    <seealso cref="DRIVE_LAYOUT_INFORMATION_GPT" />
-    <seealso cref="DRIVE_LAYOUT_INFORMATION_MBR" />
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_get_drive_layout_ex.md">IOCTL_DISK_GET_DRIVE_LAYOUT_EX</seealso>
-    <seealso href="https://docs.microsoft.com/ni-winioctl-ioctl_disk_set_drive_layout.md">IOCTL_DISK_SET_DRIVE_LAYOUT_EX</seealso>
-    <seealso cref="PARTITION_INFORMATION_EX" />
-    <seealso cref="PARTITION_INFORMATION" />
+    <summary>Contains extended information about a drive's partitions.</summary>
   </member>
   <member name="DRIVE_LAYOUT_INFORMATION_EX.PartitionStyle">
     <summary>
       <para>The style of the partitions on the drive enumerated by the <see cref="PARTITION_STYLE" /> enumeration.</para>
-      <para>| Style | Value | Meaning |
-| --- | --- | --- |
-| <b>PARTITION_STYLE_MBR</b> | 0 | Master boot record (MBR) format.|
-| <b>PARTITION_STYLE_GPT</b> | 1 | GUID Partition Table (GPT) format. |
-| <b>PARTITION_STYLE_RAW</b> | 2 | Partition not formatted in either of the recognized formats—MBR or GPT. |</para>
+      <para>| Style | Value | Meaning | | --- | --- | --- | | <b>PARTITION_STYLE_MBR</b> | 0 | Master boot record (MBR) format.| | <b>PARTITION_STYLE_GPT</b> | 1 | GUID Partition Table (GPT) format. | | <b>PARTITION_STYLE_RAW</b> | 2 | Partition not formatted in either of the recognized formats—MBR or GPT. |</para>
     </summary>
   </member>
   <member name="DRIVE_LAYOUT_INFORMATION_EX.PartitionCount">
-    <summary>
-      <para>The number of partitions on the drive. On hard disks with the MBR layout, this value will always be a multiple of 4. Any partitions that are actually unused will have a partition type of <b>PARTITION_ENTRY_UNUSED</b> (0) set in the <b>PartitionType</b> member of the <see cref="PARTITION_INFORMATION_MBR" /> structure of the <b>Mbr</b> member of the <see cref="PARTITION_INFORMATION_EX" /> structure of the <b>PartitionEntry</b> member of this structure.</para>
-    </summary>
+    <summary>The number of partitions on the drive. On hard disks with the MBR layout, this value will always be a multiple of 4. Any partitions that are actually unused will have a partition type of <b>PARTITION_ENTRY_UNUSED</b> (0) set in the <b>PartitionType</b> member of the <see cref="PARTITION_INFORMATION_MBR" /> structure of the <b>Mbr</b> member of the <see cref="PARTITION_INFORMATION_EX" /> structure of the <b>PartitionEntry</b> member of this structure.</summary>
   </member>
-  <member name="DRIVE_LAYOUT_INFORMATION_EX.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="DRIVE_LAYOUT_INFORMATION_EX.DUMMYUNIONNAME"></member>
   <member name="DRIVE_LAYOUT_INFORMATION_EX.DUMMYUNIONNAME.Mbr">
-    <summary>
-      <para>A <see cref="DRIVE_LAYOUT_INFORMATION_MBR" /> structure containing information about the master boot record type partitioning on the drive.</para>
-    </summary>
+    <summary>A <see cref="DRIVE_LAYOUT_INFORMATION_MBR" /> structure containing information about the master boot record type partitioning on the drive.</summary>
   </member>
   <member name="DRIVE_LAYOUT_INFORMATION_EX.DUMMYUNIONNAME.Gpt">
-    <summary>
-      <para>A <see cref="DRIVE_LAYOUT_INFORMATION_GPT" /> structure containing information about the GUID disk partition type partitioning on the drive.</para>
-    </summary>
+    <summary>A <see cref="DRIVE_LAYOUT_INFORMATION_GPT" /> structure containing information about the GUID disk partition type partitioning on the drive.</summary>
   </member>
   <member name="DRIVE_LAYOUT_INFORMATION_EX.PartitionEntry">
-    <summary>
-      <para>A variable-sized array of <see cref="PARTITION_INFORMATION_EX" /> structures, one structure for each partition on the drive.</para>
-    </summary>
+    <summary>A variable-sized array of <see cref="PARTITION_INFORMATION_EX" /> structures, one structure for each partition on the drive.</summary>
   </member>
 </doc>

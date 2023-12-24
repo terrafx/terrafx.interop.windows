@@ -25,7 +25,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, Guid*, void**, int>)(lpVtbl[0]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, Guid*, void**, int>)(lpVtbl[0]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint>)(lpVtbl[1]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint>)(lpVtbl[1]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint>)(lpVtbl[2]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint>)(lpVtbl[2]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInternetZoneManager.GetZoneAttributes" />
@@ -51,7 +51,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(3)]
     public HRESULT GetZoneAttributes([NativeTypeName("DWORD")] uint dwZone, ZONEATTRIBUTES* pZoneAttributes)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, ZONEATTRIBUTES*, int>)(lpVtbl[3]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, pZoneAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, ZONEATTRIBUTES*, int>)(lpVtbl[3]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, pZoneAttributes);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.SetZoneAttributes" />
@@ -59,7 +59,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(4)]
     public HRESULT SetZoneAttributes([NativeTypeName("DWORD")] uint dwZone, ZONEATTRIBUTES* pZoneAttributes)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, ZONEATTRIBUTES*, int>)(lpVtbl[4]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, pZoneAttributes);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, ZONEATTRIBUTES*, int>)(lpVtbl[4]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, pZoneAttributes);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.GetZoneCustomPolicy" />
@@ -67,7 +67,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(5)]
     public HRESULT GetZoneCustomPolicy([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("const GUID &")] Guid* guidKey, byte** ppPolicy, [NativeTypeName("DWORD *")] uint* pcbPolicy, URLZONEREG urlZoneReg)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, Guid*, byte**, uint*, URLZONEREG, int>)(lpVtbl[5]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, guidKey, ppPolicy, pcbPolicy, urlZoneReg);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, Guid*, byte**, uint*, URLZONEREG, int>)(lpVtbl[5]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, guidKey, ppPolicy, pcbPolicy, urlZoneReg);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.SetZoneCustomPolicy" />
@@ -75,7 +75,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(6)]
     public HRESULT SetZoneCustomPolicy([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("const GUID &")] Guid* guidKey, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, Guid*, byte*, uint, URLZONEREG, int>)(lpVtbl[6]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, guidKey, pPolicy, cbPolicy, urlZoneReg);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, Guid*, byte*, uint, URLZONEREG, int>)(lpVtbl[6]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, guidKey, pPolicy, cbPolicy, urlZoneReg);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.GetZoneActionPolicy" />
@@ -83,7 +83,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(7)]
     public HRESULT GetZoneActionPolicy([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, uint, byte*, uint, URLZONEREG, int>)(lpVtbl[7]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, uint, byte*, uint, URLZONEREG, int>)(lpVtbl[7]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.SetZoneActionPolicy" />
@@ -91,23 +91,23 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(8)]
     public HRESULT SetZoneActionPolicy([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, uint, byte*, uint, URLZONEREG, int>)(lpVtbl[8]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, uint, byte*, uint, URLZONEREG, int>)(lpVtbl[8]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.PromptAction" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT PromptAction([NativeTypeName("DWORD")] uint dwAction, HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("LPCWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint dwPromptFlags)
+    public HRESULT PromptAction([NativeTypeName("DWORD")] uint dwAction, HWND hwndParent, [NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("LPCWSTR")] char* pwszText, [NativeTypeName("DWORD")] uint dwPromptFlags)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, HWND, ushort*, ushort*, uint, int>)(lpVtbl[9]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwAction, hwndParent, pwszUrl, pwszText, dwPromptFlags);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, HWND, char*, char*, uint, int>)(lpVtbl[9]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwAction, hwndParent, pwszUrl, pwszText, dwPromptFlags);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.LogAction" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT LogAction([NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("LPCWSTR")] ushort* pwszUrl, [NativeTypeName("LPCWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint dwLogFlags)
+    public HRESULT LogAction([NativeTypeName("DWORD")] uint dwAction, [NativeTypeName("LPCWSTR")] char* pwszUrl, [NativeTypeName("LPCWSTR")] char* pwszText, [NativeTypeName("DWORD")] uint dwLogFlags)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, ushort*, ushort*, uint, int>)(lpVtbl[10]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwAction, pwszUrl, pwszText, dwLogFlags);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, char*, char*, uint, int>)(lpVtbl[10]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwAction, pwszUrl, pwszText, dwLogFlags);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.CreateZoneEnumerator" />
@@ -115,7 +115,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(11)]
     public HRESULT CreateZoneEnumerator([NativeTypeName("DWORD *")] uint* pdwEnum, [NativeTypeName("DWORD *")] uint* pdwCount, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint*, uint*, uint, int>)(lpVtbl[11]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), pdwEnum, pdwCount, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint*, uint*, uint, int>)(lpVtbl[11]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), pdwEnum, pdwCount, dwFlags);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.GetZoneAt" />
@@ -123,7 +123,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(12)]
     public HRESULT GetZoneAt([NativeTypeName("DWORD")] uint dwEnum, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwZone)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, uint, uint*, int>)(lpVtbl[12]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwEnum, dwIndex, pdwZone);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, uint, uint*, int>)(lpVtbl[12]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwEnum, dwIndex, pdwZone);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.DestroyZoneEnumerator" />
@@ -131,7 +131,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(13)]
     public HRESULT DestroyZoneEnumerator([NativeTypeName("DWORD")] uint dwEnum)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, int>)(lpVtbl[13]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwEnum);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, int>)(lpVtbl[13]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwEnum);
     }
 
     /// <inheritdoc cref="IInternetZoneManager.CopyTemplatePoliciesToZone" />
@@ -139,7 +139,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(14)]
     public HRESULT CopyTemplatePoliciesToZone([NativeTypeName("DWORD")] uint dwTemplate, [NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, uint, uint, int>)(lpVtbl[14]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwTemplate, dwZone, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, uint, uint, int>)(lpVtbl[14]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwTemplate, dwZone, dwReserved);
     }
 
     /// <include file='IInternetZoneManagerEx.xml' path='doc/member[@name="IInternetZoneManagerEx.GetZoneActionPolicyEx"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(15)]
     public HRESULT GetZoneActionPolicyEx([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, uint, byte*, uint, URLZONEREG, uint, int>)(lpVtbl[15]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, uint, byte*, uint, URLZONEREG, uint, int>)(lpVtbl[15]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg, dwFlags);
     }
 
     /// <include file='IInternetZoneManagerEx.xml' path='doc/member[@name="IInternetZoneManagerEx.SetZoneActionPolicyEx"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
     [VtblIndex(16)]
     public HRESULT SetZoneActionPolicyEx([NativeTypeName("DWORD")] uint dwZone, [NativeTypeName("DWORD")] uint dwAction, byte* pPolicy, [NativeTypeName("DWORD")] uint cbPolicy, URLZONEREG urlZoneReg, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IInternetZoneManagerEx*, uint, uint, byte*, uint, URLZONEREG, uint, int>)(lpVtbl[16]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IInternetZoneManagerEx*, uint, uint, byte*, uint, URLZONEREG, uint, int>)(lpVtbl[16]))((IInternetZoneManagerEx*)Unsafe.AsPointer(ref this), dwZone, dwAction, pPolicy, cbPolicy, urlZoneReg, dwFlags);
     }
 
     public interface Interface : IInternetZoneManager.Interface
@@ -171,54 +171,54 @@ public unsafe partial struct IInternetZoneManagerEx : IInternetZoneManagerEx.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, ZONEATTRIBUTES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ZONEATTRIBUTES*, int> GetZoneAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ZONEATTRIBUTES*, int> GetZoneAttributes;
 
         [NativeTypeName("HRESULT (DWORD, ZONEATTRIBUTES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ZONEATTRIBUTES*, int> SetZoneAttributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ZONEATTRIBUTES*, int> SetZoneAttributes;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, BYTE **, DWORD *, URLZONEREG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, byte**, uint*, URLZONEREG, int> GetZoneCustomPolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, byte**, uint*, URLZONEREG, int> GetZoneCustomPolicy;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, BYTE *, DWORD, URLZONEREG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, byte*, uint, URLZONEREG, int> SetZoneCustomPolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, byte*, uint, URLZONEREG, int> SetZoneCustomPolicy;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD, URLZONEREG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, URLZONEREG, int> GetZoneActionPolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint, URLZONEREG, int> GetZoneActionPolicy;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD, URLZONEREG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, URLZONEREG, int> SetZoneActionPolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint, URLZONEREG, int> SetZoneActionPolicy;
 
         [NativeTypeName("HRESULT (DWORD, HWND, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HWND, ushort*, ushort*, uint, int> PromptAction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, HWND, char*, char*, uint, int> PromptAction;
 
         [NativeTypeName("HRESULT (DWORD, LPCWSTR, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ushort*, ushort*, uint, int> LogAction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, char*, char*, uint, int> LogAction;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint*, uint, int> CreateZoneEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint*, uint, int> CreateZoneEnumerator;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint*, int> GetZoneAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint*, int> GetZoneAt;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> DestroyZoneEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> DestroyZoneEnumerator;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, int> CopyTemplatePoliciesToZone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, int> CopyTemplatePoliciesToZone;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD, URLZONEREG, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, URLZONEREG, uint, int> GetZoneActionPolicyEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint, URLZONEREG, uint, int> GetZoneActionPolicyEx;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD, URLZONEREG, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, URLZONEREG, uint, int> SetZoneActionPolicyEx;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint, URLZONEREG, uint, int> SetZoneActionPolicyEx;
     }
 }

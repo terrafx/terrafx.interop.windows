@@ -10,12 +10,15 @@
 -Wno-macro-redefined
 -Wno-nonportable-include-path
 -Wno-pragma-pack
+-Wno-switch
 --config
 exclude-com-proxies
 exclude-empty-records
 exclude-enum-operators
 generate-aggressive-inlining
+generate-callconv-member-function
 generate-cpp-attributes
+generate-disable-runtime-marshalling
 generate-doc-includes
 generate-file-scoped-namespaces
 generate-guid-member
@@ -38,6 +41,10 @@ UNICODE
 header.txt
 --include-directory
 ../../../include
+../../../include/d3d12
+../../../include/d3d12on7
+../../../include/d3dx12
+../../../include/dxtk12
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/shared
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/winrt

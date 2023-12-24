@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncVideoInverseTelecineThresholdTe
     {
         Assert.That(typeof(CODECAPI_AVEncVideoInverseTelecineThreshold).GUID, Is.EqualTo(IID_CODECAPI_AVEncVideoInverseTelecineThreshold));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInverseTelecineThreshold" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncVideoInverseTelecineThreshold>(), Is.EqualTo(sizeof(CODECAPI_AVEncVideoInverseTelecineThreshold)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInverseTelecineThreshold" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncVideoInverseTelecineThreshold).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncVideoInverseTelecineThreshold" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncVideoInverseTelecineThreshold), Is.EqualTo(1));
-    }
 }

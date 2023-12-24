@@ -3,587 +3,199 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEMSTATUS">
-    <summary>
-      <para>Contains error and status codes returned by methods in the WMI API.</para>
-    </summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_NO_ERROR">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_NO_ERROR">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_SAME">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_FALSE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_ALREADY_EXISTS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_RESET_TO_DEFAULT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_DIFFERENT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_TIMEDOUT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_NO_MORE_DATA">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_OPERATION_CANCELLED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_PENDING">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_DUPLICATE_OBJECTS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_ACCESS_DENIED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_PARTIAL_RESULTS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_S_SOURCE_NOT_AVAILABLE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_FAILED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_NOT_FOUND">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_ACCESS_DENIED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROVIDER_FAILURE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_TYPE_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_OUT_OF_MEMORY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_CONTEXT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_PARAMETER">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_NOT_AVAILABLE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CRITICAL_ERROR">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_STREAM">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_SUPERCLASS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_NAMESPACE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_OBJECT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_CLASS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROVIDER_NOT_FOUND">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_PROVIDER_REGISTRATION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROVIDER_LOAD_FAILURE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INITIALIZATION_FAILURE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_TRANSPORT_FAILURE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_OPERATION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_QUERY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_QUERY_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_ALREADY_EXISTS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_OVERRIDE_NOT_ALLOWED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROPAGATED_QUALIFIER">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROPAGATED_PROPERTY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UNEXPECTED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_ILLEGAL_OPERATION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CANNOT_BE_KEY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INCOMPLETE_CLASS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_SYNTAX">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_NONDECORATED_OBJECT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_READ_ONLY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROVIDER_NOT_CAPABLE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CLASS_HAS_CHILDREN">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CLASS_HAS_INSTANCES">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_QUERY_NOT_IMPLEMENTED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_ILLEGAL_NULL">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_QUALIFIER_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_PROPERTY_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_VALUE_OUT_OF_RANGE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CANNOT_BE_SINGLETON">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_CIM_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_METHOD">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_METHOD_PARAMETERS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_SYSTEM_PROPERTY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_PROPERTY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CALL_CANCELLED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_SHUTTING_DOWN">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROPAGATED_METHOD">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UNSUPPORTED_PARAMETER">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_MISSING_PARAMETER_ID">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_PARAMETER_ID">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_NONCONSECUTIVE_PARAMETER_IDS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PARAMETER_ID_ON_RETVAL">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_OBJECT_PATH">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_OUT_OF_DISK_SPACE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_BUFFER_TOO_SMALL">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UNSUPPORTED_PUT_EXTENSION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UNKNOWN_OBJECT_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UNKNOWN_PACKET_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_MARSHAL_VERSION_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_MARSHAL_INVALID_SIGNATURE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_QUALIFIER">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_DUPLICATE_PARAMETER">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_TOO_MUCH_DATA">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_SERVER_TOO_BUSY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_FLAVOR">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CIRCULAR_REFERENCE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UNSUPPORTED_CLASS_UPDATE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CANNOT_CHANGE_KEY_INHERITANCE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CANNOT_CHANGE_INDEX_INHERITANCE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_TOO_MANY_PROPERTIES">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UPDATE_TYPE_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UPDATE_OVERRIDE_NOT_ALLOWED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UPDATE_PROPAGATED_METHOD">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_METHOD_NOT_IMPLEMENTED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_METHOD_DISABLED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_REFRESHER_BUSY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UNPARSABLE_QUERY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_NOT_EVENT_CLASS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_MISSING_GROUP_WITHIN">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_MISSING_AGGREGATION_LIST">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROPERTY_NOT_AN_OBJECT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_AGGREGATING_BY_OBJECT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UNINTERPRETABLE_PROVIDER_QUERY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_BACKUP_RESTORE_WINMGMT_RUNNING">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_QUEUE_OVERFLOW">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PRIVILEGE_NOT_HELD">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_OPERATOR">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_LOCAL_CREDENTIALS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CANNOT_BE_ABSTRACT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_AMENDED_OBJECT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CLIENT_TOO_SLOW">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_NULL_SECURITY_DESCRIPTOR">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_TIMED_OUT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_ASSOCIATION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_AMBIGUOUS_OPERATION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_QUOTA_VIOLATION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_RESERVED_001">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_RESERVED_002">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_UNSUPPORTED_LOCALE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_HANDLE_OUT_OF_DATE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CONNECTION_FAILED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_HANDLE_REQUEST">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROPERTY_NAME_TOO_WIDE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_CLASS_NAME_TOO_WIDE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_METHOD_NAME_TOO_WIDE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_QUALIFIER_NAME_TOO_WIDE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_RERUN_COMMAND">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_DATABASE_VER_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_VETO_DELETE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_VETO_PUT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_INVALID_LOCALE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROVIDER_SUSPENDED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_SYNCHRONIZATION_REQUIRED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_NO_SCHEMA">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROVIDER_ALREADY_REGISTERED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROVIDER_NOT_REGISTERED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_FATAL_TRANSPORT_ERROR">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_ENCRYPTED_CONNECTION_REQUIRED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROVIDER_TIMED_OUT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_NO_KEY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEM_E_PROVIDER_DISABLED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMESS_E_REGISTRATION_TOO_BROAD">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMESS_E_REGISTRATION_TOO_PRECISE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMESS_E_AUTHZ_NOT_PRIVILEGED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_QUALIFIER_NAME">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_SEMI">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_OPEN_BRACE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_CLOSE_BRACE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_CLOSE_BRACKET">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_CLOSE_PAREN">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_ILLEGAL_CONSTANT_VALUE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_TYPE_IDENTIFIER">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_OPEN_PAREN">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_UNRECOGNIZED_TOKEN">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_UNRECOGNIZED_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_PROPERTY_NAME">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_TYPEDEF_NOT_SUPPORTED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_UNEXPECTED_ALIAS">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_UNEXPECTED_ARRAY_INIT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_AMENDMENT_SYNTAX">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_DUPLICATE_AMENDMENT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_PRAGMA">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_NAMESPACE_SYNTAX">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_CLASS_NAME">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_TYPE_MISMATCH">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_ALIAS_NAME">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_CLASS_DECLARATION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_INSTANCE_DECLARATION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_DOLLAR">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_CIMTYPE_QUALIFIER">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_DUPLICATE_PROPERTY">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_NAMESPACE_SPECIFICATION">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_OUT_OF_RANGE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_FILE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_ALIASES_IN_EMBEDDED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_NULL_ARRAY_ELEM">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_DUPLICATE_QUALIFIER">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_FLAVOR_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INCOMPATIBLE_FLAVOR_TYPES">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_MULTIPLE_ALIASES">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INCOMPATIBLE_FLAVOR_TYPES2">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_NO_ARRAYS_RETURNED">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_MUST_BE_IN_OR_OUT">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_FLAGS_SYNTAX">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_BRACE_OR_BAD_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_UNSUPPORTED_CIMV22_QUAL_VALUE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_UNSUPPORTED_CIMV22_DATA_TYPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_DELETEINSTANCE_SYNTAX">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_QUALIFIER_SYNTAX">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_QUALIFIER_USED_OUTSIDE_SCOPE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_ERROR_CREATING_TEMP_FILE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_ERROR_INVALID_INCLUDE_FILE">
-    <summary></summary>
-  </member>
-  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_DELETECLASS_SYNTAX">
-    <summary></summary>
-  </member>
+    <summary>Contains error and status codes returned by methods in the WMI API.</summary>
+  </member>
+  <member name="WBEMSTATUS.WBEM_NO_ERROR"></member>
+  <member name="WBEMSTATUS.WBEM_S_NO_ERROR"></member>
+  <member name="WBEMSTATUS.WBEM_S_SAME"></member>
+  <member name="WBEMSTATUS.WBEM_S_FALSE"></member>
+  <member name="WBEMSTATUS.WBEM_S_ALREADY_EXISTS"></member>
+  <member name="WBEMSTATUS.WBEM_S_RESET_TO_DEFAULT"></member>
+  <member name="WBEMSTATUS.WBEM_S_DIFFERENT"></member>
+  <member name="WBEMSTATUS.WBEM_S_TIMEDOUT"></member>
+  <member name="WBEMSTATUS.WBEM_S_NO_MORE_DATA"></member>
+  <member name="WBEMSTATUS.WBEM_S_OPERATION_CANCELLED"></member>
+  <member name="WBEMSTATUS.WBEM_S_PENDING"></member>
+  <member name="WBEMSTATUS.WBEM_S_DUPLICATE_OBJECTS"></member>
+  <member name="WBEMSTATUS.WBEM_S_ACCESS_DENIED"></member>
+  <member name="WBEMSTATUS.WBEM_S_PARTIAL_RESULTS"></member>
+  <member name="WBEMSTATUS.WBEM_S_SOURCE_NOT_AVAILABLE"></member>
+  <member name="WBEMSTATUS.WBEM_E_FAILED"></member>
+  <member name="WBEMSTATUS.WBEM_E_NOT_FOUND"></member>
+  <member name="WBEMSTATUS.WBEM_E_ACCESS_DENIED"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROVIDER_FAILURE"></member>
+  <member name="WBEMSTATUS.WBEM_E_TYPE_MISMATCH"></member>
+  <member name="WBEMSTATUS.WBEM_E_OUT_OF_MEMORY"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_CONTEXT"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_PARAMETER"></member>
+  <member name="WBEMSTATUS.WBEM_E_NOT_AVAILABLE"></member>
+  <member name="WBEMSTATUS.WBEM_E_CRITICAL_ERROR"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_STREAM"></member>
+  <member name="WBEMSTATUS.WBEM_E_NOT_SUPPORTED"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_SUPERCLASS"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_NAMESPACE"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_OBJECT"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_CLASS"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROVIDER_NOT_FOUND"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_PROVIDER_REGISTRATION"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROVIDER_LOAD_FAILURE"></member>
+  <member name="WBEMSTATUS.WBEM_E_INITIALIZATION_FAILURE"></member>
+  <member name="WBEMSTATUS.WBEM_E_TRANSPORT_FAILURE"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_OPERATION"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_QUERY"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_QUERY_TYPE"></member>
+  <member name="WBEMSTATUS.WBEM_E_ALREADY_EXISTS"></member>
+  <member name="WBEMSTATUS.WBEM_E_OVERRIDE_NOT_ALLOWED"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROPAGATED_QUALIFIER"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROPAGATED_PROPERTY"></member>
+  <member name="WBEMSTATUS.WBEM_E_UNEXPECTED"></member>
+  <member name="WBEMSTATUS.WBEM_E_ILLEGAL_OPERATION"></member>
+  <member name="WBEMSTATUS.WBEM_E_CANNOT_BE_KEY"></member>
+  <member name="WBEMSTATUS.WBEM_E_INCOMPLETE_CLASS"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_SYNTAX"></member>
+  <member name="WBEMSTATUS.WBEM_E_NONDECORATED_OBJECT"></member>
+  <member name="WBEMSTATUS.WBEM_E_READ_ONLY"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROVIDER_NOT_CAPABLE"></member>
+  <member name="WBEMSTATUS.WBEM_E_CLASS_HAS_CHILDREN"></member>
+  <member name="WBEMSTATUS.WBEM_E_CLASS_HAS_INSTANCES"></member>
+  <member name="WBEMSTATUS.WBEM_E_QUERY_NOT_IMPLEMENTED"></member>
+  <member name="WBEMSTATUS.WBEM_E_ILLEGAL_NULL"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_QUALIFIER_TYPE"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_PROPERTY_TYPE"></member>
+  <member name="WBEMSTATUS.WBEM_E_VALUE_OUT_OF_RANGE"></member>
+  <member name="WBEMSTATUS.WBEM_E_CANNOT_BE_SINGLETON"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_CIM_TYPE"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_METHOD"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_METHOD_PARAMETERS"></member>
+  <member name="WBEMSTATUS.WBEM_E_SYSTEM_PROPERTY"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_PROPERTY"></member>
+  <member name="WBEMSTATUS.WBEM_E_CALL_CANCELLED"></member>
+  <member name="WBEMSTATUS.WBEM_E_SHUTTING_DOWN"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROPAGATED_METHOD"></member>
+  <member name="WBEMSTATUS.WBEM_E_UNSUPPORTED_PARAMETER"></member>
+  <member name="WBEMSTATUS.WBEM_E_MISSING_PARAMETER_ID"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_PARAMETER_ID"></member>
+  <member name="WBEMSTATUS.WBEM_E_NONCONSECUTIVE_PARAMETER_IDS"></member>
+  <member name="WBEMSTATUS.WBEM_E_PARAMETER_ID_ON_RETVAL"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_OBJECT_PATH"></member>
+  <member name="WBEMSTATUS.WBEM_E_OUT_OF_DISK_SPACE"></member>
+  <member name="WBEMSTATUS.WBEM_E_BUFFER_TOO_SMALL"></member>
+  <member name="WBEMSTATUS.WBEM_E_UNSUPPORTED_PUT_EXTENSION"></member>
+  <member name="WBEMSTATUS.WBEM_E_UNKNOWN_OBJECT_TYPE"></member>
+  <member name="WBEMSTATUS.WBEM_E_UNKNOWN_PACKET_TYPE"></member>
+  <member name="WBEMSTATUS.WBEM_E_MARSHAL_VERSION_MISMATCH"></member>
+  <member name="WBEMSTATUS.WBEM_E_MARSHAL_INVALID_SIGNATURE"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_QUALIFIER"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_DUPLICATE_PARAMETER"></member>
+  <member name="WBEMSTATUS.WBEM_E_TOO_MUCH_DATA"></member>
+  <member name="WBEMSTATUS.WBEM_E_SERVER_TOO_BUSY"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_FLAVOR"></member>
+  <member name="WBEMSTATUS.WBEM_E_CIRCULAR_REFERENCE"></member>
+  <member name="WBEMSTATUS.WBEM_E_UNSUPPORTED_CLASS_UPDATE"></member>
+  <member name="WBEMSTATUS.WBEM_E_CANNOT_CHANGE_KEY_INHERITANCE"></member>
+  <member name="WBEMSTATUS.WBEM_E_CANNOT_CHANGE_INDEX_INHERITANCE"></member>
+  <member name="WBEMSTATUS.WBEM_E_TOO_MANY_PROPERTIES"></member>
+  <member name="WBEMSTATUS.WBEM_E_UPDATE_TYPE_MISMATCH"></member>
+  <member name="WBEMSTATUS.WBEM_E_UPDATE_OVERRIDE_NOT_ALLOWED"></member>
+  <member name="WBEMSTATUS.WBEM_E_UPDATE_PROPAGATED_METHOD"></member>
+  <member name="WBEMSTATUS.WBEM_E_METHOD_NOT_IMPLEMENTED"></member>
+  <member name="WBEMSTATUS.WBEM_E_METHOD_DISABLED"></member>
+  <member name="WBEMSTATUS.WBEM_E_REFRESHER_BUSY"></member>
+  <member name="WBEMSTATUS.WBEM_E_UNPARSABLE_QUERY"></member>
+  <member name="WBEMSTATUS.WBEM_E_NOT_EVENT_CLASS"></member>
+  <member name="WBEMSTATUS.WBEM_E_MISSING_GROUP_WITHIN"></member>
+  <member name="WBEMSTATUS.WBEM_E_MISSING_AGGREGATION_LIST"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROPERTY_NOT_AN_OBJECT"></member>
+  <member name="WBEMSTATUS.WBEM_E_AGGREGATING_BY_OBJECT"></member>
+  <member name="WBEMSTATUS.WBEM_E_UNINTERPRETABLE_PROVIDER_QUERY"></member>
+  <member name="WBEMSTATUS.WBEM_E_BACKUP_RESTORE_WINMGMT_RUNNING"></member>
+  <member name="WBEMSTATUS.WBEM_E_QUEUE_OVERFLOW"></member>
+  <member name="WBEMSTATUS.WBEM_E_PRIVILEGE_NOT_HELD"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_OPERATOR"></member>
+  <member name="WBEMSTATUS.WBEM_E_LOCAL_CREDENTIALS"></member>
+  <member name="WBEMSTATUS.WBEM_E_CANNOT_BE_ABSTRACT"></member>
+  <member name="WBEMSTATUS.WBEM_E_AMENDED_OBJECT"></member>
+  <member name="WBEMSTATUS.WBEM_E_CLIENT_TOO_SLOW"></member>
+  <member name="WBEMSTATUS.WBEM_E_NULL_SECURITY_DESCRIPTOR"></member>
+  <member name="WBEMSTATUS.WBEM_E_TIMED_OUT"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_ASSOCIATION"></member>
+  <member name="WBEMSTATUS.WBEM_E_AMBIGUOUS_OPERATION"></member>
+  <member name="WBEMSTATUS.WBEM_E_QUOTA_VIOLATION"></member>
+  <member name="WBEMSTATUS.WBEM_E_RESERVED_001"></member>
+  <member name="WBEMSTATUS.WBEM_E_RESERVED_002"></member>
+  <member name="WBEMSTATUS.WBEM_E_UNSUPPORTED_LOCALE"></member>
+  <member name="WBEMSTATUS.WBEM_E_HANDLE_OUT_OF_DATE"></member>
+  <member name="WBEMSTATUS.WBEM_E_CONNECTION_FAILED"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_HANDLE_REQUEST"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROPERTY_NAME_TOO_WIDE"></member>
+  <member name="WBEMSTATUS.WBEM_E_CLASS_NAME_TOO_WIDE"></member>
+  <member name="WBEMSTATUS.WBEM_E_METHOD_NAME_TOO_WIDE"></member>
+  <member name="WBEMSTATUS.WBEM_E_QUALIFIER_NAME_TOO_WIDE"></member>
+  <member name="WBEMSTATUS.WBEM_E_RERUN_COMMAND"></member>
+  <member name="WBEMSTATUS.WBEM_E_DATABASE_VER_MISMATCH"></member>
+  <member name="WBEMSTATUS.WBEM_E_VETO_DELETE"></member>
+  <member name="WBEMSTATUS.WBEM_E_VETO_PUT"></member>
+  <member name="WBEMSTATUS.WBEM_E_INVALID_LOCALE"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROVIDER_SUSPENDED"></member>
+  <member name="WBEMSTATUS.WBEM_E_SYNCHRONIZATION_REQUIRED"></member>
+  <member name="WBEMSTATUS.WBEM_E_NO_SCHEMA"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROVIDER_ALREADY_REGISTERED"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROVIDER_NOT_REGISTERED"></member>
+  <member name="WBEMSTATUS.WBEM_E_FATAL_TRANSPORT_ERROR"></member>
+  <member name="WBEMSTATUS.WBEM_E_ENCRYPTED_CONNECTION_REQUIRED"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROVIDER_TIMED_OUT"></member>
+  <member name="WBEMSTATUS.WBEM_E_NO_KEY"></member>
+  <member name="WBEMSTATUS.WBEM_E_PROVIDER_DISABLED"></member>
+  <member name="WBEMSTATUS.WBEMESS_E_REGISTRATION_TOO_BROAD"></member>
+  <member name="WBEMSTATUS.WBEMESS_E_REGISTRATION_TOO_PRECISE"></member>
+  <member name="WBEMSTATUS.WBEMESS_E_AUTHZ_NOT_PRIVILEGED"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_QUALIFIER_NAME"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_SEMI"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_OPEN_BRACE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_CLOSE_BRACE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_CLOSE_BRACKET"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_CLOSE_PAREN"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_ILLEGAL_CONSTANT_VALUE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_TYPE_IDENTIFIER"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_OPEN_PAREN"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_UNRECOGNIZED_TOKEN"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_UNRECOGNIZED_TYPE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_PROPERTY_NAME"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_TYPEDEF_NOT_SUPPORTED"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_UNEXPECTED_ALIAS"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_UNEXPECTED_ARRAY_INIT"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_AMENDMENT_SYNTAX"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_DUPLICATE_AMENDMENT"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_PRAGMA"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_NAMESPACE_SYNTAX"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_CLASS_NAME"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_TYPE_MISMATCH"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_ALIAS_NAME"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_CLASS_DECLARATION"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_INSTANCE_DECLARATION"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_DOLLAR"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_CIMTYPE_QUALIFIER"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_DUPLICATE_PROPERTY"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_NAMESPACE_SPECIFICATION"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_OUT_OF_RANGE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_FILE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_ALIASES_IN_EMBEDDED"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_NULL_ARRAY_ELEM"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_DUPLICATE_QUALIFIER"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_FLAVOR_TYPE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INCOMPATIBLE_FLAVOR_TYPES"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_MULTIPLE_ALIASES"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INCOMPATIBLE_FLAVOR_TYPES2"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_NO_ARRAYS_RETURNED"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_MUST_BE_IN_OR_OUT"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_FLAGS_SYNTAX"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_EXPECTED_BRACE_OR_BAD_TYPE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_UNSUPPORTED_CIMV22_QUAL_VALUE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_UNSUPPORTED_CIMV22_DATA_TYPE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_DELETEINSTANCE_SYNTAX"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_QUALIFIER_SYNTAX"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_QUALIFIER_USED_OUTSIDE_SCOPE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_ERROR_CREATING_TEMP_FILE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_ERROR_INVALID_INCLUDE_FILE"></member>
+  <member name="WBEMSTATUS.WBEMMOF_E_INVALID_DELETECLASS_SYNTAX"></member>
 </doc>

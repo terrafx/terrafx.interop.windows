@@ -19,25 +19,4 @@ public static unsafe partial class TreeWalkerTests
     {
         Assert.That(typeof(TreeWalker).GUID, Is.EqualTo(IID_TreeWalker));
     }
-
-    /// <summary>Validates that the <see cref="TreeWalker" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TreeWalker>(), Is.EqualTo(sizeof(TreeWalker)));
-    }
-
-    /// <summary>Validates that the <see cref="TreeWalker" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TreeWalker).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TreeWalker" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TreeWalker), Is.EqualTo(1));
-    }
 }

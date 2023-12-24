@@ -3,32 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISpatialAudioObjectBase.GetAudioObjectType">
-    <summary>
-      <para>Gets a value specifying the type of audio object that is represented by the <see cref="ISpatialAudioObject" />. This value indicates if the object is dynamic or static. If the object is static, one and only one of the static audio channel values to which the object is assigned is returned.</para>
-    </summary>
-    <param name="audioObjectType">
-      <para>A value specifying the type of audio object that is represented</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>Set the type of the audio object with the <i>type</i> parameter to the  <see cref="ISpatialAudioObjectRenderStream.ActivateSpatialAudioObject" /> method.</para>
-    </remarks>
-    <seealso cref="ISpatialAudioObject" />
-    <seealso cref="ISpatialAudioObjectBase" />
+    <summary>Gets a value specifying the type of audio object that is represented by the <see cref="ISpatialAudioObject" />. This value indicates if the object is dynamic or static. If the object is static, one and only one of the static audio channel values to which the object is assigned is returned.</summary>
+    <param name="audioObjectType">A value specifying the type of audio object that is represented</param>
+    <returns>If the method succeeds, it returns S_OK.</returns>
   </member>
   <member name="ISpatialAudioObjectBase.GetBuffer">
-    <summary>
-      <para>Gets a buffer that is used to supply the audio data for the <see cref="ISpatialAudioObject" />.</para>
-    </summary>
-    <param name="buffer">
-      <para>The buffer into which audio data is written.</para>
-    </param>
-    <param name="bufferLength">
-      <para>The length of the buffer in bytes. This length will be the value returned in the   <i>frameCountPerBuffer</i> parameter to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> multiplied by the value of the <b>nBlockAlign</b> field of the <see cref="WAVEFORMATEX" /> structure passed in the     <see cref="SpatialAudioObjectRenderStreamActivationParams" /></para>
-      <para>parameter to  <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" />.</para>
-    </param>
+    <summary>Gets a buffer that is used to supply the audio data for the <see cref="ISpatialAudioObject" />.</summary>
+    <param name="buffer">The buffer into which audio data is written.</param>
+    <param name="bufferLength">The length of the buffer in bytes. This length will be the value returned in the <i>frameCountPerBuffer</i> parameter to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> multiplied by the value of the <b>nBlockAlign</b> field of the <see cref="WAVEFORMATEX" /> structure passed in the <see cref="SpatialAudioObjectRenderStreamActivationParams" /><br />parameter to <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" />.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -36,67 +18,44 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> was not called before the call to <b>GetBuffer</b>. This method must be called before the first time <b>GetBuffer</b> is called and after every subsequent call to <see cref="ISpatialAudioObjectRenderStream.EndUpdatingAudioObjects" />.</para>
-          </description>
-        </item>
-        <item>
+            <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> was not called before the call to <b>GetBuffer</b>. This method must be called before the first time <b>GetBuffer</b> is called and after every subsequent call to <see cref="ISpatialAudioObjectRenderStream.EndUpdatingAudioObjects" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <see cref="SetEndOfStream" /> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> and <see cref="ISpatialAudioObjectRenderStream.EndUpdatingAudioObjects" />).</para>
-          </description>
-        </item>
+            <see cref="SetEndOfStream" /> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> and <see cref="ISpatialAudioObjectRenderStream.EndUpdatingAudioObjects" />).</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The first time <b>GetBuffer</b> is called after the <see cref="ISpatialAudioObject" /> is activated with a call <see cref="ISpatialAudioObjectRenderStream.ActivateSpatialAudioObject" />,
-lifetime of the spatial audio object starts.
-To keep the spatial audio object alive after that, this <b>GetBuffer</b> must be called on every processing pass (between calls to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> and <see cref="ISpatialAudioObjectRenderStream.EndUpdatingAudioObjects" />). If <b>GetBuffer</b> is not called within an audio processing pass, <see cref="SetEndOfStream" /> is called implicitly on the audio object to deactivate, and the audio object can only be reused after calling <see cref="Release" /> on the object and then reactivating the object by calling <b>ActivateSpatialAudioObject</b> again.</para>
-      <para>The pointers retrieved by <b>GetBuffer</b> should not be used after
-<see cref="ISpatialAudioObjectRenderStream.EndUpdatingAudioObjects" /> has been called.</para>
-    </remarks>
-    <seealso cref="ISpatialAudioObject" />
-    <seealso cref="ISpatialAudioObjectBase" />
   </member>
   <member name="ISpatialAudioObjectBase.IsActive">
-    <summary>
-      <para>Gets a boolean value indicating whether the <see cref="ISpatialAudioObject" /> is valid.</para>
-    </summary>
+    <summary>Gets a boolean value indicating whether the <see cref="ISpatialAudioObject" /> is valid.</summary>
     <param name="isActive">
-      <para>
-        <b>TRUE</b> if the audio object is currently valid; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>If this value is false, you should call <see cref="Release" /> to make the audio object resource available in the future.</para>
-      <para>
-        <b>IsActive</b> will be set to false after <see cref="SetEndOfStream" /> is called implicitly or explicitly. <b>SetEndOfStream</b> is called implicitly by the system if <see cref="GetBuffer" /> is not called within an audio processing pass (between calls to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> and <see cref="ISpatialAudioObjectRenderStream.EndUpdatingAudioObjects" />).</para>
-      <para>The rendering engine will also deactivate the audio object, setting <b>IsActive</b> to false, when audio object resources become unavailable. In this case, a notification is sent via <see cref="ISpatialAudioObjectRenderStreamNotify" /> before the object is deactivated. The value returned in the <i>availableDynamicObjectCount</i> parameter to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> indicates how many objects will be processed for each pass.</para>
-    </remarks>
-    <seealso cref="ISpatialAudioObject" />
-    <seealso cref="ISpatialAudioObjectBase" />
+      <b>TRUE</b> if the audio object is currently valid; otherwise, <b>FALSE</b>.</param>
+    <returns>If the method succeeds, it returns S_OK.</returns>
   </member>
   <member name="ISpatialAudioObjectBase.SetEndOfStream">
-    <summary>
-      <para>Instructs the system that the final block of audio data has been  submitted for the <see cref="ISpatialAudioObject" /> so that the object can be deactivated and its resources reused.</para>
-    </summary>
-    <param name="frameCount">
-      <para>The number of audio frames in the audio buffer that should be included in the final processing pass. This number may be smaller than or equal to the value returned in  the <i>frameCountPerBuffer</i> parameter to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" />.</para>
-    </param>
+    <summary>Instructs the system that the final block of audio data has been submitted for the <see cref="ISpatialAudioObject" /> so that the object can be deactivated and its resources reused.</summary>
+    <param name="frameCount">The number of audio frames in the audio buffer that should be included in the final processing pass. This number may be smaller than or equal to the value returned in the <i>frameCountPerBuffer</i> parameter to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" />.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -104,40 +63,39 @@ To keep the spatial audio object alive after that, this <b>GetBuffer</b> must be
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUDCLNT_E_OUT_OF_ORDER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> was not called before the call to <b>SetEndOfStream</b>.</para>
-          </description>
-        </item>
-        <item>
+            <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> was not called before the call to <b>SetEndOfStream</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SPTLAUDCLNT_E_RESOURCES_INVALIDATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>
-              <see cref="SetEndOfStream" /> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> and <see cref="ISpatialAudioObjectRenderStream.EndUpdatingAudioObjects" />).</para>
-          </description>
-        </item>
+            <see cref="SetEndOfStream" /> was called either explicitly or implicitly in a previous audio processing pass. <b>SetEndOfStream</b> is called implicitly by the system if <b>GetBuffer</b> is not called within an audio processing pass (between calls to <see cref="ISpatialAudioObjectRenderStream.BeginUpdatingAudioObjects" /> and <see cref="ISpatialAudioObjectRenderStream.EndUpdatingAudioObjects" />).</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call <see cref="Release" /> after calling <b>SetEndOfStream</b> to make free the audio object resources for future use.</para>
-    </remarks>
-    <seealso cref="ISpatialAudioObject" />
-    <seealso cref="ISpatialAudioObjectBase" />
   </member>
   <member name="ISpatialAudioObjectBase">
     <summary>
-      <para>Base interface that represents an object that provides audio data to  be  rendered from a position in 3D space, relative to the user. Spatial audio objects can be static or dynamic, which you specify with the <i>type</i> parameter to the  <see cref="ISpatialAudioObjectRenderStream.ActivateSpatialAudioObject" /> method. Dynamic audio objects can be placed in an arbitrary position in space and can be moved over time. Static audio objects are assigned to one or more channels, defined in the <see cref="AudioObjectType" /> enumeration, that each correlate to a fixed speaker location that may be a physical or a virtualized speaker.</para>
-      <para>This interface is a part of  Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
+      <para>Base interface that represents an object that provides audio data to be rendered from a position in 3D space, relative to the user. Spatial audio objects can be static or dynamic, which you specify with the <i>type</i> parameter to the <see cref="ISpatialAudioObjectRenderStream.ActivateSpatialAudioObject" /> method. Dynamic audio objects can be placed in an arbitrary position in space and can be moved over time. Static audio objects are assigned to one or more channels, defined in the <see cref="AudioObjectType" /> enumeration, that each correlate to a fixed speaker location that may be a physical or a virtualized speaker.</para>
+      <para>This interface is a part of Windows Sonic, Microsoft’s audio platform for more immersive audio which includes integrated spatial sound on Xbox and Windows.</para>
     </summary>
   </member>
 </doc>

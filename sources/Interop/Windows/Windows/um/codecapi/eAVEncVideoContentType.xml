@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="eAVEncVideoContentType">
-    <summary>
-      <para>Specifies the type of video content. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/codecapi-avencvideocontenttype">CODECAPI_AVEncVideoContentType</a> property.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies the type of video content. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/codecapi-avencvideocontenttype">CODECAPI_AVEncVideoContentType</a> property.</summary>
   </member>
   <member name="eAVEncVideoContentType.eAVEncVideoContentType_Unknown">
-    <summary>
-      <para>Unknown or normal content. (Default.)</para>
-    </summary>
+    <summary>Unknown or normal content. (Default.)</summary>
   </member>
   <member name="eAVEncVideoContentType.eAVEncVideoContentType_FixedCameraAngle">
-    <summary>
-      <para>The content was captured with a fixed camera, such as a webcam.</para>
-    </summary>
+    <summary>The content was captured with a fixed camera, such as a webcam.</summary>
   </member>
 </doc>

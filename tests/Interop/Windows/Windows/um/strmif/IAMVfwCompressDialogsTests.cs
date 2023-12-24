@@ -19,32 +19,4 @@ public static unsafe partial class IAMVfwCompressDialogsTests
     {
         Assert.That(typeof(IAMVfwCompressDialogs).GUID, Is.EqualTo(IID_IAMVfwCompressDialogs));
     }
-
-    /// <summary>Validates that the <see cref="IAMVfwCompressDialogs" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMVfwCompressDialogs>(), Is.EqualTo(sizeof(IAMVfwCompressDialogs)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMVfwCompressDialogs" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMVfwCompressDialogs).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMVfwCompressDialogs" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMVfwCompressDialogs), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMVfwCompressDialogs), Is.EqualTo(4));
-        }
-    }
 }

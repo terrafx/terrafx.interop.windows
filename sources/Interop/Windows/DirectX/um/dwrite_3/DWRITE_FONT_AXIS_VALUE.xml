@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FONT_AXIS_VALUE">
-    <summary>
-      <para>Represents a value for a font axis. Used when querying and creating font instances (for example, see <see cref="IDWriteFontFace5.GetFontAxisValues" />).</para>
-    </summary>
-    <seealso cref="DWRITE_FONT_AXIS_TAG enumeration" />
-    <seealso cref="DWRITE_FONT_AXIS_RANGE structure" />
+    <summary>Represents a value for a font axis. Used when querying and creating font instances (for example, see <see cref="IDWriteFontFace5.GetFontAxisValues" />).</summary>
   </member>
   <member name="DWRITE_FONT_AXIS_VALUE.axisTag">
-    <summary>
-      <para>Type: <b><see cref="DWRITE_FONT_AXIS_TAG" /></b></para>
-      <para>The four-character identifier of the font axis (for example, weight, width, slant, italic, and so on).</para>
-    </summary>
+    <summary>The four-character identifier of the font axis (for example, weight, width, slant, italic, and so on).</summary>
   </member>
   <member name="DWRITE_FONT_AXIS_VALUE.value">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">FLOAT</a></b></para>
       <para>A value for the axis specified in <code>axisTag</code>. The meaning and range of the value depends on the semantics of the particular axis. Certain well-known axes have standard ranges and defaults. Here are some examples.</para>
       <list type="bullet">
         <item>

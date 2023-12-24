@@ -19,32 +19,4 @@ public static unsafe partial class ISpGrammarBuilderTests
     {
         Assert.That(typeof(ISpGrammarBuilder).GUID, Is.EqualTo(IID_ISpGrammarBuilder));
     }
-
-    /// <summary>Validates that the <see cref="ISpGrammarBuilder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpGrammarBuilder>(), Is.EqualTo(sizeof(ISpGrammarBuilder)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpGrammarBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpGrammarBuilder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpGrammarBuilder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpGrammarBuilder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpGrammarBuilder), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TI_FINDCHILDREN_PARAMS">
-    <summary>
-      <para>Contains type index information. It is used by the
-<see cref="SymGetTypeInfo" /> function.</para>
-    </summary>
-    <seealso cref="SymGetTypeInfo" />
+    <summary>Contains type index information. It is used by the<see cref="SymGetTypeInfo" /> function.</summary>
   </member>
   <member name="TI_FINDCHILDREN_PARAMS.Count">
-    <summary>
-      <para>The number of children.</para>
-    </summary>
+    <summary>The number of children.</summary>
   </member>
   <member name="TI_FINDCHILDREN_PARAMS.Start">
-    <summary>
-      <para>The zero-based index of the child from which the child indexes are to be retrieved. For example, in an array with five elements, if Start is two, this indicates the third array element. In most cases, this member is zero.</para>
-    </summary>
+    <summary>The zero-based index of the child from which the child indexes are to be retrieved. For example, in an array with five elements, if Start is two, this indicates the third array element. In most cases, this member is zero.</summary>
   </member>
   <member name="TI_FINDCHILDREN_PARAMS.ChildId">
-    <summary>
-      <para>An array of type indexes. There is one index per child.</para>
-    </summary>
+    <summary>An array of type indexes. There is one index per child.</summary>
   </member>
 </doc>

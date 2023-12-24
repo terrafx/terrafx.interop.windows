@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationVariableChangeHandler : IUIAnimationVar
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationVariableChangeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariableChangeHandler*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationVariableChangeHandler : IUIAnimationVar
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationVariableChangeHandler*, uint>)(lpVtbl[1]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariableChangeHandler*, uint>)(lpVtbl[1]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationVariableChangeHandler : IUIAnimationVar
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationVariableChangeHandler*, uint>)(lpVtbl[2]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariableChangeHandler*, uint>)(lpVtbl[2]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationVariableChangeHandler.xml' path='doc/member[@name="IUIAnimationVariableChangeHandler.OnValueChanged"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationVariableChangeHandler : IUIAnimationVar
     [VtblIndex(3)]
     public HRESULT OnValueChanged(IUIAnimationStoryboard* storyboard, IUIAnimationVariable* variable, double newValue, double previousValue)
     {
-        return ((delegate* unmanaged<IUIAnimationVariableChangeHandler*, IUIAnimationStoryboard*, IUIAnimationVariable*, double, double, int>)(lpVtbl[3]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this), storyboard, variable, newValue, previousValue);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationVariableChangeHandler*, IUIAnimationStoryboard*, IUIAnimationVariable*, double, double, int>)(lpVtbl[3]))((IUIAnimationVariableChangeHandler*)Unsafe.AsPointer(ref this), storyboard, variable, newValue, previousValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IUIAnimationVariableChangeHandler : IUIAnimationVar
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboard *, IUIAnimationVariable *, DOUBLE, DOUBLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationStoryboard*, IUIAnimationVariable*, double, double, int> OnValueChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationStoryboard*, IUIAnimationVariable*, double, double, int> OnValueChanged;
     }
 }

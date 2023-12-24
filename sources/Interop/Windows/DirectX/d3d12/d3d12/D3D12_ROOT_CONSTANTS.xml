@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_ROOT_CONSTANTS">
+    <summary>Describes constants inline in the root signature that appear in shaders as one constant buffer.</summary>
+  </member>
+  <member name="D3D12_ROOT_CONSTANTS.ShaderRegister">
+    <summary>The shader register.</summary>
+  </member>
+  <member name="D3D12_ROOT_CONSTANTS.RegisterSpace">
+    <summary>The register space.</summary>
+  </member>
+  <member name="D3D12_ROOT_CONSTANTS.Num32BitValues">
+    <summary>The number of constants that occupy a single shader slot (these constants appear like a single constant buffer). All constants occupy a single root signature bind slot.</summary>
+  </member>
+</doc>

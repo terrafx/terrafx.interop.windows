@@ -3,27 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMC_TAGGED_REQUEST">
-    <summary>
-      <para>The <b>CMC_TAGGED_REQUEST</b> structure is used in the
-<see cref="CMC_DATA_INFO" /> structures to request a certificate. In the future, it may be used for other requests.</para>
-    </summary>
-    <remarks>
-      <para>Additional members of the union may be defined in future versions.</para>
-    </remarks>
+    <summary>The <b>CMC_TAGGED_REQUEST</b> structure is used in the<see cref="CMC_DATA_INFO" /> structures to request a certificate. In the future, it may be used for other requests.</summary>
   </member>
   <member name="CMC_TAGGED_REQUEST.dwTaggedRequestChoice">
     <summary>
-      <para>
-        <b>DWORD</b> identifying the union member to be used. CMC_TAGGED_CERT_REQUEST_CHOICE can be used to select the CMC_TAGGED_CERT_REQUEST.</para>
-    </summary>
+      <b>DWORD</b> identifying the union member to be used. CMC_TAGGED_CERT_REQUEST_CHOICE can be used to select the CMC_TAGGED_CERT_REQUEST.</summary>
   </member>
-  <member name="CMC_TAGGED_REQUEST.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="CMC_TAGGED_REQUEST.DUMMYUNIONNAME"></member>
   <member name="CMC_TAGGED_REQUEST.DUMMYUNIONNAME.pTaggedCertRequest">
-    <summary>
-      <para>A pointer to a
-<see cref="CMC_TAGGED_CERT_REQUEST" /> structure containing the signed <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate request</a>.</para>
-    </summary>
+    <summary>A pointer to a<see cref="CMC_TAGGED_CERT_REQUEST" /> structure containing the signed <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate request</a>.</summary>
   </member>
 </doc>

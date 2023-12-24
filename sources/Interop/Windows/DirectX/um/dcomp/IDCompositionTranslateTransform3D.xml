@@ -3,138 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionTranslateTransform3D.SetOffsetX">
-    <summary>
-      <para>Changes the value of the OffsetX property of a 3D translation transform effect. The OffsetX property specifies the distance to translate along the x-axis.</para>
-    </summary>
-    <param name="offsetX">
-      <para>Type: <b>float</b></para>
-      <para>The distance to translate along the x-axis, in pixels.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method fails if the <i>offsetX</i> parameter is NaN, positive infinity, or negative infinity.</para>
-      <para>If the OffsetX property was previously animated, this method removes the animation and sets the OffsetX property to the specified static value.</para>
-    </remarks>
-    <seealso cref="IDCompositionTranslateTransform3D" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetY" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetZ" />
+    <summary>Changes the value of the OffsetX property of a 3D translation transform effect. The OffsetX property specifies the distance to translate along the x-axis.</summary>
+    <param name="offsetX">The distance to translate along the x-axis, in pixels.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionTranslateTransform3D.SetOffsetX">
-    <summary>
-      <para>Animates the value of the OffsetX property of a 3D translation transform effect. The OffsetX property specifies the distance to translate along the x-axis.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation object that determines how the value of the OffsetX property changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the OffsetX property unless this method is called again. If the OffsetX property was previously animated, calling this method replaces the previous animation with the new animation.</para>
-      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
-    </remarks>
-    <seealso cref="IDCompositionTranslateTransform3D" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetY" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetZ" />
+    <summary>Animates the value of the OffsetX property of a 3D translation transform effect. The OffsetX property specifies the distance to translate along the x-axis.</summary>
+    <param name="animation">An animation object that determines how the value of the OffsetX property changes over time. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionTranslateTransform3D.SetOffsetY">
-    <summary>
-      <para>Changes the value of the OffsetY property of a 3D translation transform effect. The OffsetY property specifies the distance to translate along the y-axis.</para>
-    </summary>
-    <param name="offsetY">
-      <para>Type: <b>float</b></para>
-      <para>The distance to translate along the y-axis, in pixels.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method fails if the <i>offsetY</i> parameter is NaN, positive infinity, or negative infinity.</para>
-      <para>If the OffsetY property was previously animated, this method removes the animation and sets the OffsetY property to the specified static value.</para>
-    </remarks>
-    <seealso cref="IDCompositionTranslateTransform3D" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetX" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetZ" />
+    <summary>Changes the value of the OffsetY property of a 3D translation transform effect. The OffsetY property specifies the distance to translate along the y-axis.</summary>
+    <param name="offsetY">The distance to translate along the y-axis, in pixels.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionTranslateTransform3D.SetOffsetY">
-    <summary>
-      <para>Animates the value of the OffsetY property of a 3D translation transform effect. The OffsetY property specifies the distance to translate along the y-axis.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation object that determines how the value of the OffsetY property changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the OffsetY property unless this method is called again. If the OffsetY property was previously animated, calling this method replaces the previous animation with the new animation.</para>
-      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface as the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
-    </remarks>
-    <seealso cref="IDCompositionTranslateTransform3D" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetX" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetZ" />
+    <summary>Animates the value of the OffsetY property of a 3D translation transform effect. The OffsetY property specifies the distance to translate along the y-axis.</summary>
+    <param name="animation">An animation object that determines how the value of the OffsetY property changes over time. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionTranslateTransform3D.SetOffsetZ">
-    <summary>
-      <para>Changes the value of the OffsetZ property of a 3D translation transform effect. The OffsetZ property specifies the distance to translate along the z-axis.</para>
-    </summary>
-    <param name="offsetZ">
-      <para>Type: <b>float</b></para>
-      <para>The distance to translate along the z-axis, in pixels.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method fails if the <i>offsetZ</i> parameter is NaN, positive infinity, or negative infinity.</para>
-      <para>If the OffsetZ property was previously animated, this method removes the animation and sets the OffsetZ property to the specified static value.</para>
-    </remarks>
-    <seealso cref="IDCompositionTranslateTransform3D" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetX" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetY" />
+    <summary>Changes the value of the OffsetZ property of a 3D translation transform effect. The OffsetZ property specifies the distance to translate along the z-axis.</summary>
+    <param name="offsetZ">The distance to translate along the z-axis, in pixels.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionTranslateTransform3D.SetOffsetZ">
-    <summary>
-      <para>Animates the value of the OffsetZ property of a 3D translation transform effect. The OffsetZ property specifies the distance to translate along the z-axis.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation object that determines how the value of the OffsetZ property changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a>  for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method makes a copy of the specified animation. If the object referenced by the <i>animation</i> parameter is changed after calling this method, the change does not affect the OffsetZ property unless this method is called again. If the OffsetZ property was previously animated, calling this method replaces the previous animation with the new animation.</para>
-      <para>This method fails if <i>animation</i> is an invalid pointer or if it was not created by the same <see cref="IDCompositionDevice" /> interface that created the affected visual. The interface cannot be a custom implementation; only interfaces created by Microsoft DirectComposition can be used with this method.</para>
-    </remarks>
-    <seealso cref="IDCompositionTranslateTransform3D" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetX" />
-    <seealso cref="IDCompositionTranslateTransform3D.SetOffsetY" />
+    <summary>Animates the value of the OffsetZ property of a 3D translation transform effect. The OffsetZ property specifies the distance to translate along the z-axis.</summary>
+    <param name="animation">An animation object that determines how the value of the OffsetZ property changes over time. This parameter must not be NULL.</param>
+    <returns>If the function succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/directcomp/directcomposition-error-codes">DirectComposition Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IDCompositionTranslateTransform3D">
-    <summary>
-      <para>Represents a 3D transformation that affects the offset of a visual along the x-axis, y-axis, and z-axis.</para>
-    </summary>
-    <remarks>
-      <para>A 3D translation transform represents the following 4-by-4 matrix:</para>
-      <para>
-        <img alt="Four-by-four translation matrix" src="https://docs.microsoft.com/windows/win32/api/dcompmages/3D_translate_transform_4x4matrix.png" />
-      </para>
-      <para>The effect is to offset the blending position of the visual's subtree by <i>x</i>, <i>y</i>, and <i>z</i>.</para>
-    </remarks>
-    <seealso cref="IDCompositionEffectGroup.SetTransform3D" />
-    <seealso cref="IDCompositionTransform3D" />
-    <seealso cref="IDCompositionVisual.SetEffect" />
+    <summary>Represents a 3D transformation that affects the offset of a visual along the x-axis, y-axis, and z-axis.</summary>
   </member>
 </doc>

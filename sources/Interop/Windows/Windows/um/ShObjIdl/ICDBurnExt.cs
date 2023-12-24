@@ -25,7 +25,7 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICDBurnExt*, Guid*, void**, int>)(lpVtbl[0]))((ICDBurnExt*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICDBurnExt*, Guid*, void**, int>)(lpVtbl[0]))((ICDBurnExt*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICDBurnExt*, uint>)(lpVtbl[1]))((ICDBurnExt*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICDBurnExt*, uint>)(lpVtbl[1]))((ICDBurnExt*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICDBurnExt*, uint>)(lpVtbl[2]))((ICDBurnExt*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICDBurnExt*, uint>)(lpVtbl[2]))((ICDBurnExt*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICDBurnExt.xml' path='doc/member[@name="ICDBurnExt.GetSupportedActionTypes"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetSupportedActionTypes([NativeTypeName("CDBE_ACTIONS *")] uint* pdwActions)
     {
-        return ((delegate* unmanaged<ICDBurnExt*, uint*, int>)(lpVtbl[3]))((ICDBurnExt*)Unsafe.AsPointer(ref this), pdwActions);
+        return ((delegate* unmanaged[MemberFunction]<ICDBurnExt*, uint*, int>)(lpVtbl[3]))((ICDBurnExt*)Unsafe.AsPointer(ref this), pdwActions);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ICDBurnExt : ICDBurnExt.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CDBE_ACTIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSupportedActionTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSupportedActionTypes;
     }
 }

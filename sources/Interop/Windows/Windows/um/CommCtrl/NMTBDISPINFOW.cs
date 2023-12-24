@@ -27,7 +27,7 @@ public unsafe partial struct NMTBDISPINFOW
 
     /// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='NMTBDISPINFOW.xml' path='doc/member[@name="NMTBDISPINFOW.cchText"]/*' />
     public int cchText;

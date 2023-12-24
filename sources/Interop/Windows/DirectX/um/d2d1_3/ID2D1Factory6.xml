@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Factory6.CreateDevice">
-    <summary>
-      <para>Creates a new Direct2D device from the given IDXGIDevice.</para>
-    </summary>
-    <param name="dxgiDevice">
-      <para>Type: <b>IDXGIDevice*</b></para>
-      <para>The IDXGIDevice to create the Direct2D device from.</para>
-    </param>
-    <param name="d2dDevice5">
-      <para>Type: <b>ID2D1Device5**</b></para>
-      <para>The created device.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <seealso cref="ID2D1Factory6" />
+    <summary>Creates a new Direct2D device from the given IDXGIDevice.</summary>
+    <param name="dxgiDevice">The IDXGIDevice to create the Direct2D device from.</param>
+    <param name="d2dDevice5">The created device.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="ID2D1Factory6">
-    <summary>
-      <para>Creates Direct2D resources. This interface also enables the creation of ID2D1Device5 objects.</para>
-    </summary>
+    <summary>Creates Direct2D resources. This interface also enables the creation of ID2D1Device5 objects.</summary>
   </member>
 </doc>

@@ -21,32 +21,4 @@ public static unsafe partial class IProtectionPolicyManagerInteropTests
     {
         Assert.That(typeof(IProtectionPolicyManagerInterop).GUID, Is.EqualTo(IID_IProtectionPolicyManagerInterop));
     }
-
-    /// <summary>Validates that the <see cref="IProtectionPolicyManagerInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IProtectionPolicyManagerInterop>(), Is.EqualTo(sizeof(IProtectionPolicyManagerInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IProtectionPolicyManagerInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IProtectionPolicyManagerInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IProtectionPolicyManagerInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IProtectionPolicyManagerInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IProtectionPolicyManagerInterop), Is.EqualTo(4));
-        }
-    }
 }

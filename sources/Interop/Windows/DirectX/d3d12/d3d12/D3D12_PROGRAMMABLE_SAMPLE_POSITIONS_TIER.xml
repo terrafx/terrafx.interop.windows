@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER">
+    <summary>Specifies the level of support for programmable sample positions that's offered by the adapter.</summary>
+  </member>
+  <member name="D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER.D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER_NOT_SUPPORTED">
+    <summary>Indicates that there's no support for programmable sample positions.</summary>
+  </member>
+  <member name="D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER.D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER_1">
+    <summary>Indicates that there's tier 1 support for programmable sample positions. In tier 1, a single sample pattern can be specified to repeat for every pixel (<see cref="SetSamplePosition" /> parameter <i>NumPixels</i> = 1) and ResolveSubResource is supported.</summary>
+  </member>
+  <member name="D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER.D3D12_PROGRAMMABLE_SAMPLE_POSITIONS_TIER_2">
+    <summary>Indicates that there's tier 2 support for programmable sample positions. In tier 2, four separate sample patterns can be specified for each pixel in a 2x2 grid (<see cref="SetSamplePosition" /> parameter <i>NumPixels</i> = 1) that repeats over the render-target or viewport, aligned on even coordinates .</summary>
+  </member>
+</doc>

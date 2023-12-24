@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION">
-    <summary>
-      <para>Contains basic accounting information for a job object.</para>
-    </summary>
-    <seealso cref="QueryInformationJobObject" />
-    <seealso cref="SetInformationJobObject" />
+    <summary>Contains basic accounting information for a job object.</summary>
   </member>
   <member name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalUserTime">
-    <summary>
-      <para>The total amount of user-mode execution time for all active processes associated with the job, as well as all terminated processes no longer associated with the job, in 100-nanosecond ticks.</para>
-    </summary>
+    <summary>The total amount of user-mode execution time for all active processes associated with the job, as well as all terminated processes no longer associated with the job, in 100-nanosecond ticks.</summary>
   </member>
   <member name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalKernelTime">
-    <summary>
-      <para>The total amount of kernel-mode execution time for all active processes associated with the job, as well as all terminated processes no longer associated with the job, in 100-nanosecond ticks.</para>
-    </summary>
+    <summary>The total amount of kernel-mode execution time for all active processes associated with the job, as well as all terminated processes no longer associated with the job, in 100-nanosecond ticks.</summary>
   </member>
   <member name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.ThisPeriodTotalUserTime">
     <summary>
@@ -32,23 +24,15 @@
     </summary>
   </member>
   <member name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalPageFaultCount">
-    <summary>
-      <para>The total number of page faults encountered by all active processes associated with the job, as well as all terminated processes no longer associated with the job.</para>
-    </summary>
+    <summary>The total number of page faults encountered by all active processes associated with the job, as well as all terminated processes no longer associated with the job.</summary>
   </member>
   <member name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalProcesses">
-    <summary>
-      <para>The total number of processes associated with the job during its lifetime, including those that have terminated. For example, when a process is associated with a job, but the association fails because of a limit violation, this value is incremented.</para>
-    </summary>
+    <summary>The total number of processes associated with the job during its lifetime, including those that have terminated. For example, when a process is associated with a job, but the association fails because of a limit violation, this value is incremented.</summary>
   </member>
   <member name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.ActiveProcesses">
-    <summary>
-      <para>The total number of processes currently associated with the job. When a process is associated with a job, but the association fails because of a limit violation, this value is temporarily incremented. When the terminated process exits and all references to the process are released, this value is decremented.</para>
-    </summary>
+    <summary>The total number of processes currently associated with the job. When a process is associated with a job, but the association fails because of a limit violation, this value is temporarily incremented. When the terminated process exits and all references to the process are released, this value is decremented.</summary>
   </member>
   <member name="JOBOBJECT_BASIC_ACCOUNTING_INFORMATION.TotalTerminatedProcesses">
-    <summary>
-      <para>The total number of processes terminated because of a limit violation.</para>
-    </summary>
+    <summary>The total number of processes terminated because of a limit violation.</summary>
   </member>
 </doc>

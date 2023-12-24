@@ -3,12 +3,13 @@
 // Ported from shared/dxgitype.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using TerraFX.Interop.Windows;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES"]/*' />
-public unsafe partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
+public partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
 {
     /// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES.ScaleAndOffsetSupported"]/*' />
     public BOOL ScaleAndOffsetSupported;
@@ -24,5 +25,12 @@ public unsafe partial struct DXGI_GAMMA_CONTROL_CAPABILITIES
 
     /// <include file='DXGI_GAMMA_CONTROL_CAPABILITIES.xml' path='doc/member[@name="DXGI_GAMMA_CONTROL_CAPABILITIES.ControlPointPositions"]/*' />
     [NativeTypeName("float[1025]")]
-    public fixed float ControlPointPositions[1025];
+    public _ControlPointPositions_e__FixedBuffer ControlPointPositions;
+
+    /// <include file='_ControlPointPositions_e__FixedBuffer.xml' path='doc/member[@name="_ControlPointPositions_e__FixedBuffer"]/*' />
+    [InlineArray(1025)]
+    public partial struct _ControlPointPositions_e__FixedBuffer
+    {
+        public float e0;
+    }
 }

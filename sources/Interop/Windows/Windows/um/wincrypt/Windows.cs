@@ -19,7 +19,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptAcquireContextW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptAcquireContextW(HCRYPTPROV* phProv, [NativeTypeName("LPCWSTR")] ushort* szContainer, [NativeTypeName("LPCWSTR")] ushort* szProvider, [NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL CryptAcquireContextW(HCRYPTPROV* phProv, [NativeTypeName("LPCWSTR")] char* szContainer, [NativeTypeName("LPCWSTR")] char* szProvider, [NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptReleaseContext"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -129,7 +129,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSignHashW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptSignHashW(HCRYPTHASH hHash, [NativeTypeName("DWORD")] uint dwKeySpec, [NativeTypeName("LPCWSTR")] ushort* szDescription, [NativeTypeName("DWORD")] uint dwFlags, byte* pbSignature, [NativeTypeName("DWORD *")] uint* pdwSigLen);
+    public static extern BOOL CryptSignHashW(HCRYPTHASH hHash, [NativeTypeName("DWORD")] uint dwKeySpec, [NativeTypeName("LPCWSTR")] char* szDescription, [NativeTypeName("DWORD")] uint dwFlags, byte* pbSignature, [NativeTypeName("DWORD *")] uint* pdwSigLen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptVerifySignatureA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -139,7 +139,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptVerifySignatureW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptVerifySignatureW(HCRYPTHASH hHash, [NativeTypeName("const BYTE *")] byte* pbSignature, [NativeTypeName("DWORD")] uint dwSigLen, HCRYPTKEY hPubKey, [NativeTypeName("LPCWSTR")] ushort* szDescription, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL CryptVerifySignatureW(HCRYPTHASH hHash, [NativeTypeName("const BYTE *")] byte* pbSignature, [NativeTypeName("DWORD")] uint dwSigLen, HCRYPTKEY hPubKey, [NativeTypeName("LPCWSTR")] char* szDescription, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSetProviderA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -149,7 +149,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSetProviderW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptSetProviderW([NativeTypeName("LPCWSTR")] ushort* pszProvName, [NativeTypeName("DWORD")] uint dwProvType);
+    public static extern BOOL CryptSetProviderW([NativeTypeName("LPCWSTR")] char* pszProvName, [NativeTypeName("DWORD")] uint dwProvType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSetProviderExA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -159,7 +159,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSetProviderExW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptSetProviderExW([NativeTypeName("LPCWSTR")] ushort* pszProvName, [NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL CryptSetProviderExW([NativeTypeName("LPCWSTR")] char* pszProvName, [NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptGetDefaultProviderA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -169,7 +169,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptGetDefaultProviderW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptGetDefaultProviderW([NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszProvName, [NativeTypeName("DWORD *")] uint* pcbProvName);
+    public static extern BOOL CryptGetDefaultProviderW([NativeTypeName("DWORD")] uint dwProvType, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] char* pszProvName, [NativeTypeName("DWORD *")] uint* pcbProvName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptEnumProviderTypesA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -179,7 +179,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptEnumProviderTypesW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptEnumProviderTypesW([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwProvType, [NativeTypeName("LPWSTR")] ushort* szTypeName, [NativeTypeName("DWORD *")] uint* pcbTypeName);
+    public static extern BOOL CryptEnumProviderTypesW([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwProvType, [NativeTypeName("LPWSTR")] char* szTypeName, [NativeTypeName("DWORD *")] uint* pcbTypeName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptEnumProvidersA"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -189,7 +189,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptEnumProvidersW"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptEnumProvidersW([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwProvType, [NativeTypeName("LPWSTR")] ushort* szProvName, [NativeTypeName("DWORD *")] uint* pcbProvName);
+    public static extern BOOL CryptEnumProvidersW([NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("DWORD *")] uint* pdwReserved, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD *")] uint* pdwProvType, [NativeTypeName("LPWSTR")] char* szProvName, [NativeTypeName("DWORD *")] uint* pcbProvName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptContextAddRef"]/*' />
     [DllImport("advapi32", ExactSpelling = true)]
@@ -247,11 +247,11 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptGetDefaultOIDDllList"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptGetDefaultOIDDllList(HCRYPTOIDFUNCSET hFuncSet, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("WCHAR *")] ushort* pwszDllList, [NativeTypeName("DWORD *")] uint* pcchDllList);
+    public static extern BOOL CryptGetDefaultOIDDllList(HCRYPTOIDFUNCSET hFuncSet, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("WCHAR *")] char* pwszDllList, [NativeTypeName("DWORD *")] uint* pcchDllList);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptGetDefaultOIDFunctionAddress"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CryptGetDefaultOIDFunctionAddress(HCRYPTOIDFUNCSET hFuncSet, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCWSTR")] ushort* pwszDll, [NativeTypeName("DWORD")] uint dwFlags, void** ppvFuncAddr, HCRYPTOIDFUNCADDR* phFuncAddr);
+    public static extern BOOL CryptGetDefaultOIDFunctionAddress(HCRYPTOIDFUNCSET hFuncSet, [NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCWSTR")] char* pwszDll, [NativeTypeName("DWORD")] uint dwFlags, void** ppvFuncAddr, HCRYPTOIDFUNCADDR* phFuncAddr);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptFreeOIDFunctionAddress"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -259,7 +259,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptRegisterOIDFunction"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CryptRegisterOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("LPCWSTR")] ushort* pwszDll, [NativeTypeName("LPCSTR")] sbyte* pszOverrideFuncName);
+    public static extern BOOL CryptRegisterOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("LPCWSTR")] char* pwszDll, [NativeTypeName("LPCSTR")] sbyte* pszOverrideFuncName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptUnregisterOIDFunction"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -267,25 +267,25 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptRegisterDefaultOIDFunction"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CryptRegisterDefaultOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPCWSTR")] ushort* pwszDll);
+    public static extern BOOL CryptRegisterDefaultOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("DWORD")] uint dwIndex, [NativeTypeName("LPCWSTR")] char* pwszDll);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptUnregisterDefaultOIDFunction"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CryptUnregisterDefaultOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCWSTR")] ushort* pwszDll);
+    public static extern BOOL CryptUnregisterDefaultOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCWSTR")] char* pwszDll);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSetOIDFunctionValue"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CryptSetOIDFunctionValue([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("LPCWSTR")] ushort* pwszValueName, [NativeTypeName("DWORD")] uint dwValueType, [NativeTypeName("const BYTE *")] byte* pbValueData, [NativeTypeName("DWORD")] uint cbValueData);
+    public static extern BOOL CryptSetOIDFunctionValue([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("LPCWSTR")] char* pwszValueName, [NativeTypeName("DWORD")] uint dwValueType, [NativeTypeName("const BYTE *")] byte* pbValueData, [NativeTypeName("DWORD")] uint cbValueData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptGetOIDFunctionValue"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptGetOIDFunctionValue([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("LPCWSTR")] ushort* pwszValueName, [NativeTypeName("DWORD *")] uint* pdwValueType, byte* pbValueData, [NativeTypeName("DWORD *")] uint* pcbValueData);
+    public static extern BOOL CryptGetOIDFunctionValue([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("LPCWSTR")] char* pwszValueName, [NativeTypeName("DWORD *")] uint* pdwValueType, byte* pbValueData, [NativeTypeName("DWORD *")] uint* pcbValueData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptEnumOIDFunction"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptEnumOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("DWORD")] uint dwFlags, void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_OID_FUNC")] delegate* unmanaged<uint, sbyte*, sbyte*, uint, uint*, ushort**, byte**, uint*, void*, BOOL> pfnEnumOIDFunc);
+    public static extern BOOL CryptEnumOIDFunction([NativeTypeName("DWORD")] uint dwEncodingType, [NativeTypeName("LPCSTR")] sbyte* pszFuncName, [NativeTypeName("LPCSTR")] sbyte* pszOID, [NativeTypeName("DWORD")] uint dwFlags, void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_OID_FUNC")] delegate* unmanaged<uint, sbyte*, sbyte*, uint, uint*, char**, byte**, uint*, void*, BOOL> pfnEnumOIDFunc);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptFindOIDInfo"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -307,7 +307,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptFindLocalizedName"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [return: NativeTypeName("LPCWSTR")]
-    public static extern ushort* CryptFindLocalizedName([NativeTypeName("LPCWSTR")] ushort* pwszCryptName);
+    public static extern char* CryptFindLocalizedName([NativeTypeName("LPCWSTR")] char* pwszCryptName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptMsgOpenToEncode"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -675,7 +675,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertRegisterPhysicalStore"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CertRegisterPhysicalStore([NativeTypeName("const void *")] void* pvSystemStore, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pwszStoreName, [NativeTypeName("PCERT_PHYSICAL_STORE_INFO")] CERT_PHYSICAL_STORE_INFO* pStoreInfo, void* pvReserved);
+    public static extern BOOL CertRegisterPhysicalStore([NativeTypeName("const void *")] void* pvSystemStore, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pwszStoreName, [NativeTypeName("PCERT_PHYSICAL_STORE_INFO")] CERT_PHYSICAL_STORE_INFO* pStoreInfo, void* pvReserved);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertUnregisterSystemStore"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -683,11 +683,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertUnregisterPhysicalStore"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CertUnregisterPhysicalStore([NativeTypeName("const void *")] void* pvSystemStore, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pwszStoreName);
+    public static extern BOOL CertUnregisterPhysicalStore([NativeTypeName("const void *")] void* pvSystemStore, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pwszStoreName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertEnumSystemStoreLocation"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CertEnumSystemStoreLocation([NativeTypeName("DWORD")] uint dwFlags, void* pvArg, [NativeTypeName("PFN_CERT_ENUM_SYSTEM_STORE_LOCATION")] delegate* unmanaged<ushort*, uint, void*, void*, BOOL> pfnEnum);
+    public static extern BOOL CertEnumSystemStoreLocation([NativeTypeName("DWORD")] uint dwFlags, void* pvArg, [NativeTypeName("PFN_CERT_ENUM_SYSTEM_STORE_LOCATION")] delegate* unmanaged<char*, uint, void*, void*, BOOL> pfnEnum);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertEnumSystemStore"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -696,7 +696,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertEnumPhysicalStore"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CertEnumPhysicalStore([NativeTypeName("const void *")] void* pvSystemStore, [NativeTypeName("DWORD")] uint dwFlags, void* pvArg, [NativeTypeName("PFN_CERT_ENUM_PHYSICAL_STORE")] delegate* unmanaged<void*, uint, ushort*, CERT_PHYSICAL_STORE_INFO*, void*, void*, BOOL> pfnEnum);
+    public static extern BOOL CertEnumPhysicalStore([NativeTypeName("const void *")] void* pvSystemStore, [NativeTypeName("DWORD")] uint dwFlags, void* pvArg, [NativeTypeName("PFN_CERT_ENUM_PHYSICAL_STORE")] delegate* unmanaged<void*, uint, char*, CERT_PHYSICAL_STORE_INFO*, void*, void*, BOOL> pfnEnum);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertGetEnhancedKeyUsage"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -797,7 +797,7 @@ public static unsafe partial class Windows
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
     [SupportedOSPlatform("windows6.2")]
-    public static extern BOOL CertIsStrongHashToSign([NativeTypeName("PCCERT_STRONG_SIGN_PARA")] CERT_STRONG_SIGN_PARA* pStrongSignPara, [NativeTypeName("LPCWSTR")] ushort* pwszCNGHashAlgid, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pSigningCert);
+    public static extern BOOL CertIsStrongHashToSign([NativeTypeName("PCCERT_STRONG_SIGN_PARA")] CERT_STRONG_SIGN_PARA* pStrongSignPara, [NativeTypeName("LPCWSTR")] char* pwszCNGHashAlgid, [NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pSigningCert);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptHashToBeSigned"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -812,7 +812,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptHashCertificate2"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptHashCertificate2([NativeTypeName("LPCWSTR")] ushort* pwszCNGHashAlgid, [NativeTypeName("DWORD")] uint dwFlags, void* pvReserved, [NativeTypeName("const BYTE *")] byte* pbEncoded, [NativeTypeName("DWORD")] uint cbEncoded, byte* pbComputedHash, [NativeTypeName("DWORD *")] uint* pcbComputedHash);
+    public static extern BOOL CryptHashCertificate2([NativeTypeName("LPCWSTR")] char* pwszCNGHashAlgid, [NativeTypeName("DWORD")] uint dwFlags, void* pvReserved, [NativeTypeName("const BYTE *")] byte* pbEncoded, [NativeTypeName("DWORD")] uint cbEncoded, byte* pbComputedHash, [NativeTypeName("DWORD *")] uint* pcbComputedHash);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSignCertificate"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -944,7 +944,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertRDNValueToStrW"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint CertRDNValueToStrW([NativeTypeName("DWORD")] uint dwValueType, [NativeTypeName("PCERT_RDN_VALUE_BLOB")] CRYPT_DATA_BLOB* pValue, [NativeTypeName("LPWSTR")] ushort* psz, [NativeTypeName("DWORD")] uint csz);
+    public static extern uint CertRDNValueToStrW([NativeTypeName("DWORD")] uint dwValueType, [NativeTypeName("PCERT_RDN_VALUE_BLOB")] CRYPT_DATA_BLOB* pValue, [NativeTypeName("LPWSTR")] char* psz, [NativeTypeName("DWORD")] uint csz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertNameToStrA"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -954,7 +954,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertNameToStrW"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint CertNameToStrW([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("PCERT_NAME_BLOB")] CRYPT_DATA_BLOB* pName, [NativeTypeName("DWORD")] uint dwStrType, [NativeTypeName("LPWSTR")] ushort* psz, [NativeTypeName("DWORD")] uint csz);
+    public static extern uint CertNameToStrW([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("PCERT_NAME_BLOB")] CRYPT_DATA_BLOB* pName, [NativeTypeName("DWORD")] uint dwStrType, [NativeTypeName("LPWSTR")] char* psz, [NativeTypeName("DWORD")] uint csz);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertStrToNameA"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -964,7 +964,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertStrToNameW"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CertStrToNameW([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("LPCWSTR")] ushort* pszX500, [NativeTypeName("DWORD")] uint dwStrType, void* pvReserved, byte* pbEncoded, [NativeTypeName("DWORD *")] uint* pcbEncoded, [NativeTypeName("LPCWSTR *")] ushort** ppszError);
+    public static extern BOOL CertStrToNameW([NativeTypeName("DWORD")] uint dwCertEncodingType, [NativeTypeName("LPCWSTR")] char* pszX500, [NativeTypeName("DWORD")] uint dwStrType, void* pvReserved, byte* pbEncoded, [NativeTypeName("DWORD *")] uint* pcbEncoded, [NativeTypeName("LPCWSTR *")] char** ppszError);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertGetNameStringA"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -974,7 +974,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertGetNameStringW"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint CertGetNameStringW([NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pCertContext, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwFlags, void* pvTypePara, [NativeTypeName("LPWSTR")] ushort* pszNameString, [NativeTypeName("DWORD")] uint cchNameString);
+    public static extern uint CertGetNameStringW([NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pCertContext, [NativeTypeName("DWORD")] uint dwType, [NativeTypeName("DWORD")] uint dwFlags, void* pvTypePara, [NativeTypeName("LPWSTR")] char* pszNameString, [NativeTypeName("DWORD")] uint cchNameString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSignMessage"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1060,7 +1060,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertOpenSystemStoreW"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HCERTSTORE CertOpenSystemStoreW(HCRYPTPROV_LEGACY hProv, [NativeTypeName("LPCWSTR")] ushort* szSubsystemProtocol);
+    public static extern HCERTSTORE CertOpenSystemStoreW(HCRYPTPROV_LEGACY hProv, [NativeTypeName("LPCWSTR")] char* szSubsystemProtocol);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertAddEncodedCertificateToSystemStoreA"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1070,11 +1070,11 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertAddEncodedCertificateToSystemStoreW"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CertAddEncodedCertificateToSystemStoreW([NativeTypeName("LPCWSTR")] ushort* szCertStoreName, [NativeTypeName("const BYTE *")] byte* pbCertEncoded, [NativeTypeName("DWORD")] uint cbCertEncoded);
+    public static extern BOOL CertAddEncodedCertificateToSystemStoreW([NativeTypeName("LPCWSTR")] char* szCertStoreName, [NativeTypeName("const BYTE *")] byte* pbCertEncoded, [NativeTypeName("DWORD")] uint cbCertEncoded);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FindCertsByIssuer"]/*' />
     [DllImport("wintrust", ExactSpelling = true)]
-    public static extern HRESULT FindCertsByIssuer([NativeTypeName("PCERT_CHAIN")] CERT_CHAIN* pCertChains, [NativeTypeName("DWORD *")] uint* pcbCertChains, [NativeTypeName("DWORD *")] uint* pcCertChains, byte* pbEncodedIssuerName, [NativeTypeName("DWORD")] uint cbEncodedIssuerName, [NativeTypeName("LPCWSTR")] ushort* pwszPurpose, [NativeTypeName("DWORD")] uint dwKeySpec);
+    public static extern HRESULT FindCertsByIssuer([NativeTypeName("PCERT_CHAIN")] CERT_CHAIN* pCertChains, [NativeTypeName("DWORD *")] uint* pcbCertChains, [NativeTypeName("DWORD *")] uint* pcCertChains, byte* pbEncodedIssuerName, [NativeTypeName("DWORD")] uint cbEncodedIssuerName, [NativeTypeName("LPCWSTR")] char* pwszPurpose, [NativeTypeName("DWORD")] uint dwKeySpec);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptQueryObject"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1118,7 +1118,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptRetrieveObjectByUrlW"]/*' />
     [DllImport("cryptnet", ExactSpelling = true)]
-    public static extern BOOL CryptRetrieveObjectByUrlW([NativeTypeName("LPCWSTR")] ushort* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, HCRYPTASYNC hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
+    public static extern BOOL CryptRetrieveObjectByUrlW([NativeTypeName("LPCWSTR")] char* pszUrl, [NativeTypeName("LPCSTR")] sbyte* pszObjectOid, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPVOID *")] void** ppvObject, HCRYPTASYNC hAsyncRetrieve, [NativeTypeName("PCRYPT_CREDENTIALS")] CRYPT_CREDENTIALS* pCredentials, [NativeTypeName("LPVOID")] void* pvVerify, [NativeTypeName("PCRYPT_RETRIEVE_AUX_INFO")] CRYPT_RETRIEVE_AUX_INFO* pAuxInfo);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptInstallCancelRetrieval"]/*' />
     [DllImport("cryptnet", ExactSpelling = true)]
@@ -1155,17 +1155,17 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptGetKeyIdentifierProperty"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptGetKeyIdentifierProperty([NativeTypeName("const CRYPT_HASH_BLOB *")] CRYPT_DATA_BLOB* pKeyIdentifier, [NativeTypeName("DWORD")] uint dwPropId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pwszComputerName, void* pvReserved, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
+    public static extern BOOL CryptGetKeyIdentifierProperty([NativeTypeName("const CRYPT_HASH_BLOB *")] CRYPT_DATA_BLOB* pKeyIdentifier, [NativeTypeName("DWORD")] uint dwPropId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pwszComputerName, void* pvReserved, void* pvData, [NativeTypeName("DWORD *")] uint* pcbData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptSetKeyIdentifierProperty"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptSetKeyIdentifierProperty([NativeTypeName("const CRYPT_HASH_BLOB *")] CRYPT_DATA_BLOB* pKeyIdentifier, [NativeTypeName("DWORD")] uint dwPropId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pwszComputerName, void* pvReserved, [NativeTypeName("const void *")] void* pvData);
+    public static extern BOOL CryptSetKeyIdentifierProperty([NativeTypeName("const CRYPT_HASH_BLOB *")] CRYPT_DATA_BLOB* pKeyIdentifier, [NativeTypeName("DWORD")] uint dwPropId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pwszComputerName, void* pvReserved, [NativeTypeName("const void *")] void* pvData);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptEnumKeyIdentifierProperties"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptEnumKeyIdentifierProperties([NativeTypeName("const CRYPT_HASH_BLOB *")] CRYPT_DATA_BLOB* pKeyIdentifier, [NativeTypeName("DWORD")] uint dwPropId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] ushort* pwszComputerName, void* pvReserved, void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_KEYID_PROP")] delegate* unmanaged<CRYPT_DATA_BLOB*, uint, void*, void*, uint, uint*, void**, uint*, BOOL> pfnEnum);
+    public static extern BOOL CryptEnumKeyIdentifierProperties([NativeTypeName("const CRYPT_HASH_BLOB *")] CRYPT_DATA_BLOB* pKeyIdentifier, [NativeTypeName("DWORD")] uint dwPropId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPCWSTR")] char* pwszComputerName, void* pvReserved, void* pvArg, [NativeTypeName("PFN_CRYPT_ENUM_KEYID_PROP")] delegate* unmanaged<CRYPT_DATA_BLOB*, uint, void*, void*, uint, uint*, void**, uint*, BOOL> pfnEnum);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptCreateKeyIdentifierFromCSP"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1216,7 +1216,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptStringToBinaryW"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CryptStringToBinaryW([NativeTypeName("LPCWSTR")] ushort* pszString, [NativeTypeName("DWORD")] uint cchString, [NativeTypeName("DWORD")] uint dwFlags, byte* pbBinary, [NativeTypeName("DWORD *")] uint* pcbBinary, [NativeTypeName("DWORD *")] uint* pdwSkip, [NativeTypeName("DWORD *")] uint* pdwFlags);
+    public static extern BOOL CryptStringToBinaryW([NativeTypeName("LPCWSTR")] char* pszString, [NativeTypeName("DWORD")] uint cchString, [NativeTypeName("DWORD")] uint dwFlags, byte* pbBinary, [NativeTypeName("DWORD *")] uint* pcbBinary, [NativeTypeName("DWORD *")] uint* pdwSkip, [NativeTypeName("DWORD *")] uint* pdwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptBinaryToStringA"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1224,12 +1224,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptBinaryToStringW"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CryptBinaryToStringW([NativeTypeName("const BYTE *")] byte* pbBinary, [NativeTypeName("DWORD")] uint cbBinary, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* pszString, [NativeTypeName("DWORD *")] uint* pcchString);
+    public static extern BOOL CryptBinaryToStringW([NativeTypeName("const BYTE *")] byte* pbBinary, [NativeTypeName("DWORD")] uint cbBinary, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] char* pszString, [NativeTypeName("DWORD *")] uint* pcchString);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PFXImportCertStore"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HCERTSTORE PFXImportCertStore(CRYPT_DATA_BLOB* pPFX, [NativeTypeName("LPCWSTR")] ushort* szPassword, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern HCERTSTORE PFXImportCertStore(CRYPT_DATA_BLOB* pPFX, [NativeTypeName("LPCWSTR")] char* szPassword, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PFXIsPFXBlob"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1237,17 +1237,17 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PFXVerifyPassword"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL PFXVerifyPassword(CRYPT_DATA_BLOB* pPFX, [NativeTypeName("LPCWSTR")] ushort* szPassword, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL PFXVerifyPassword(CRYPT_DATA_BLOB* pPFX, [NativeTypeName("LPCWSTR")] char* szPassword, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PFXExportCertStoreEx"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL PFXExportCertStoreEx(HCERTSTORE hStore, CRYPT_DATA_BLOB* pPFX, [NativeTypeName("LPCWSTR")] ushort* szPassword, void* pvPara, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL PFXExportCertStoreEx(HCERTSTORE hStore, CRYPT_DATA_BLOB* pPFX, [NativeTypeName("LPCWSTR")] char* szPassword, void* pvPara, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PFXExportCertStore"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL PFXExportCertStore(HCERTSTORE hStore, CRYPT_DATA_BLOB* pPFX, [NativeTypeName("LPCWSTR")] ushort* szPassword, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern BOOL PFXExportCertStore(HCERTSTORE hStore, CRYPT_DATA_BLOB* pPFX, [NativeTypeName("LPCWSTR")] char* szPassword, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertOpenServerOcspResponse"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1278,7 +1278,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertRetrieveLogoOrBiometricInfo"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CertRetrieveLogoOrBiometricInfo([NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pCertContext, [NativeTypeName("LPCSTR")] sbyte* lpszLogoOrBiometricType, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("DWORD")] uint dwFlags, void* pvReserved, byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("LPWSTR *")] ushort** ppwszMimeType);
+    public static extern BOOL CertRetrieveLogoOrBiometricInfo([NativeTypeName("PCCERT_CONTEXT")] CERT_CONTEXT* pCertContext, [NativeTypeName("LPCSTR")] sbyte* lpszLogoOrBiometricType, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("DWORD")] uint dwFlags, void* pvReserved, byte** ppbData, [NativeTypeName("DWORD *")] uint* pcbData, [NativeTypeName("LPWSTR *")] char** ppwszMimeType);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertSelectCertificateChains"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1292,7 +1292,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptRetrieveTimeStamp"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL CryptRetrieveTimeStamp([NativeTypeName("LPCWSTR")] ushort* wszUrl, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPCSTR")] sbyte* pszHashId, [NativeTypeName("const CRYPT_TIMESTAMP_PARA *")] CRYPT_TIMESTAMP_PARA* pPara, [NativeTypeName("const BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("PCRYPT_TIMESTAMP_CONTEXT *")] CRYPT_TIMESTAMP_CONTEXT** ppTsContext, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppTsSigner, HCERTSTORE* phStore);
+    public static extern BOOL CryptRetrieveTimeStamp([NativeTypeName("LPCWSTR")] char* wszUrl, [NativeTypeName("DWORD")] uint dwRetrievalFlags, [NativeTypeName("DWORD")] uint dwTimeout, [NativeTypeName("LPCSTR")] sbyte* pszHashId, [NativeTypeName("const CRYPT_TIMESTAMP_PARA *")] CRYPT_TIMESTAMP_PARA* pPara, [NativeTypeName("const BYTE *")] byte* pbData, [NativeTypeName("DWORD")] uint cbData, [NativeTypeName("PCRYPT_TIMESTAMP_CONTEXT *")] CRYPT_TIMESTAMP_CONTEXT** ppTsContext, [NativeTypeName("PCCERT_CONTEXT *")] CERT_CONTEXT** ppTsSigner, HCERTSTORE* phStore);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CryptVerifyTimeStampSignature"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
@@ -1301,7 +1301,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CertIsWeakHash"]/*' />
     [DllImport("crypt32", ExactSpelling = true)]
-    public static extern BOOL CertIsWeakHash([NativeTypeName("DWORD")] uint dwHashUseType, [NativeTypeName("LPCWSTR")] ushort* pwszCNGHashAlgid, [NativeTypeName("DWORD")] uint dwChainFlags, [NativeTypeName("PCCERT_CHAIN_CONTEXT")] CERT_CHAIN_CONTEXT* pSignerChainContext, [NativeTypeName("LPFILETIME")] FILETIME* pTimeStamp, [NativeTypeName("LPCWSTR")] ushort* pwszFileName);
+    public static extern BOOL CertIsWeakHash([NativeTypeName("DWORD")] uint dwHashUseType, [NativeTypeName("LPCWSTR")] char* pwszCNGHashAlgid, [NativeTypeName("DWORD")] uint dwChainFlags, [NativeTypeName("PCCERT_CHAIN_CONTEXT")] CERT_CHAIN_CONTEXT* pSignerChainContext, [NativeTypeName("LPFILETIME")] FILETIME* pTimeStamp, [NativeTypeName("LPCWSTR")] char* pwszFileName);
 
     [NativeTypeName("#define RSA1024BIT_KEY 0x04000000")]
     public const int RSA1024BIT_KEY = 0x04000000;
@@ -1372,7 +1372,7 @@ public static unsafe partial class Windows
     [NativeTypeName("#define EXPO_OFFLOAD_FUNC_NAME \"OffloadModExpo\"")]
     public static ReadOnlySpan<byte> EXPO_OFFLOAD_FUNC_NAME => "OffloadModExpo"u8;
 
-    [NativeTypeName("#define szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS \"Software\\\\Policies\\\\Microsoft\\\\Cryptography\"")]
+    [NativeTypeName("#define szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS \"Software\\Policies\\Microsoft\\Cryptography\"")]
     public static ReadOnlySpan<byte> szKEY_CRYPTOAPI_PRIVATE_KEY_OPTIONS => "Software\\Policies\\Microsoft\\Cryptography"u8;
 
     [NativeTypeName("#define szKEY_CACHE_ENABLED \"CachePrivateKeys\"")]
@@ -1400,28 +1400,28 @@ public static unsafe partial class Windows
     public const int INTERNATIONAL_USAGE = 0x00000001;
 
     [NativeTypeName("#define CryptAcquireContext CryptAcquireContextW")]
-    public static delegate*<HCRYPTPROV*, ushort*, ushort*, uint, uint, BOOL> CryptAcquireContext => &CryptAcquireContextW;
+    public static delegate*<HCRYPTPROV*, char*, char*, uint, uint, BOOL> CryptAcquireContext => &CryptAcquireContextW;
 
     [NativeTypeName("#define CryptSignHash CryptSignHashW")]
-    public static delegate*<HCRYPTHASH, uint, ushort*, uint, byte*, uint*, BOOL> CryptSignHash => &CryptSignHashW;
+    public static delegate*<HCRYPTHASH, uint, char*, uint, byte*, uint*, BOOL> CryptSignHash => &CryptSignHashW;
 
     [NativeTypeName("#define CryptVerifySignature CryptVerifySignatureW")]
-    public static delegate*<HCRYPTHASH, byte*, uint, HCRYPTKEY, ushort*, uint, BOOL> CryptVerifySignature => &CryptVerifySignatureW;
+    public static delegate*<HCRYPTHASH, byte*, uint, HCRYPTKEY, char*, uint, BOOL> CryptVerifySignature => &CryptVerifySignatureW;
 
     [NativeTypeName("#define CryptSetProvider CryptSetProviderW")]
-    public static delegate*<ushort*, uint, BOOL> CryptSetProvider => &CryptSetProviderW;
+    public static delegate*<char*, uint, BOOL> CryptSetProvider => &CryptSetProviderW;
 
     [NativeTypeName("#define CryptSetProviderEx CryptSetProviderExW")]
-    public static delegate*<ushort*, uint, uint*, uint, BOOL> CryptSetProviderEx => &CryptSetProviderExW;
+    public static delegate*<char*, uint, uint*, uint, BOOL> CryptSetProviderEx => &CryptSetProviderExW;
 
     [NativeTypeName("#define CryptGetDefaultProvider CryptGetDefaultProviderW")]
-    public static delegate*<uint, uint*, uint, ushort*, uint*, BOOL> CryptGetDefaultProvider => &CryptGetDefaultProviderW;
+    public static delegate*<uint, uint*, uint, char*, uint*, BOOL> CryptGetDefaultProvider => &CryptGetDefaultProviderW;
 
     [NativeTypeName("#define CryptEnumProviderTypes CryptEnumProviderTypesW")]
-    public static delegate*<uint, uint*, uint, uint*, ushort*, uint*, BOOL> CryptEnumProviderTypes => &CryptEnumProviderTypesW;
+    public static delegate*<uint, uint*, uint, uint*, char*, uint*, BOOL> CryptEnumProviderTypes => &CryptEnumProviderTypesW;
 
     [NativeTypeName("#define CryptEnumProviders CryptEnumProvidersW")]
-    public static delegate*<uint, uint*, uint, uint*, ushort*, uint*, BOOL> CryptEnumProviders => &CryptEnumProvidersW;
+    public static delegate*<uint, uint*, uint, uint*, char*, uint*, BOOL> CryptEnumProviders => &CryptEnumProvidersW;
 
     [NativeTypeName("#define RSA_CSP_PUBLICKEYBLOB ((LPCSTR) 19)")]
     public static sbyte* RSA_CSP_PUBLICKEYBLOB => ((sbyte*)(19));
@@ -1446,6 +1446,9 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define CMS_SIGNER_INFO ((LPCSTR) 501)")]
     public static sbyte* CMS_SIGNER_INFO => ((sbyte*)(501));
+
+    [NativeTypeName("#define wszURI_NTDS_OBJECTSID_PREFIX L\"tag:microsoft.com,2022-09-14:sid:\"")]
+    public const string wszURI_NTDS_OBJECTSID_PREFIX = "tag:microsoft.com,2022-09-14:sid:";
 
     [NativeTypeName("#define SITE_PIN_RULES_ALL_SUBDOMAINS_FLAG 0x1")]
     public const int SITE_PIN_RULES_ALL_SUBDOMAINS_FLAG = 0x1;
@@ -1511,22 +1514,22 @@ public static unsafe partial class Windows
     public const int NETSCAPE_SIGN_CA_CERT_TYPE = 0x01;
 
     [NativeTypeName("#define CertRDNValueToStr CertRDNValueToStrW")]
-    public static delegate*<uint, CRYPT_DATA_BLOB*, ushort*, uint, uint> CertRDNValueToStr => &CertRDNValueToStrW;
+    public static delegate*<uint, CRYPT_DATA_BLOB*, char*, uint, uint> CertRDNValueToStr => &CertRDNValueToStrW;
 
     [NativeTypeName("#define CertNameToStr CertNameToStrW")]
-    public static delegate*<uint, CRYPT_DATA_BLOB*, uint, ushort*, uint, uint> CertNameToStr => &CertNameToStrW;
+    public static delegate*<uint, CRYPT_DATA_BLOB*, uint, char*, uint, uint> CertNameToStr => &CertNameToStrW;
 
     [NativeTypeName("#define CertStrToName CertStrToNameW")]
-    public static delegate*<uint, ushort*, uint, void*, byte*, uint*, ushort**, BOOL> CertStrToName => &CertStrToNameW;
+    public static delegate*<uint, char*, uint, void*, byte*, uint*, char**, BOOL> CertStrToName => &CertStrToNameW;
 
     [NativeTypeName("#define CertGetNameString CertGetNameStringW")]
-    public static delegate*<CERT_CONTEXT*, uint, uint, void*, ushort*, uint, uint> CertGetNameString => &CertGetNameStringW;
+    public static delegate*<CERT_CONTEXT*, uint, uint, void*, char*, uint, uint> CertGetNameString => &CertGetNameStringW;
 
     [NativeTypeName("#define CertOpenSystemStore CertOpenSystemStoreW")]
-    public static delegate*<HCRYPTPROV_LEGACY, ushort*, HCERTSTORE> CertOpenSystemStore => &CertOpenSystemStoreW;
+    public static delegate*<HCRYPTPROV_LEGACY, char*, HCERTSTORE> CertOpenSystemStore => &CertOpenSystemStoreW;
 
     [NativeTypeName("#define CertAddEncodedCertificateToSystemStore CertAddEncodedCertificateToSystemStoreW")]
-    public static delegate*<ushort*, byte*, uint, BOOL> CertAddEncodedCertificateToSystemStore => &CertAddEncodedCertificateToSystemStoreW;
+    public static delegate*<char*, byte*, uint, BOOL> CertAddEncodedCertificateToSystemStore => &CertAddEncodedCertificateToSystemStoreW;
 
     [NativeTypeName("#define CREDENTIAL_OID_PASSWORD_CREDENTIALS_A ((LPCSTR)1)")]
     public static sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS_A => ((sbyte*)(1));
@@ -1538,7 +1541,7 @@ public static unsafe partial class Windows
     public static sbyte* CREDENTIAL_OID_PASSWORD_CREDENTIALS => ((sbyte*)(2));
 
     [NativeTypeName("#define CryptRetrieveObjectByUrl CryptRetrieveObjectByUrlW")]
-    public static delegate*<ushort*, sbyte*, uint, uint, void**, HCRYPTASYNC, CRYPT_CREDENTIALS*, void*, CRYPT_RETRIEVE_AUX_INFO*, BOOL> CryptRetrieveObjectByUrl => &CryptRetrieveObjectByUrlW;
+    public static delegate*<char*, sbyte*, uint, uint, void**, HCRYPTASYNC, CRYPT_CREDENTIALS*, void*, CRYPT_RETRIEVE_AUX_INFO*, BOOL> CryptRetrieveObjectByUrl => &CryptRetrieveObjectByUrlW;
 
     [NativeTypeName("#define USAGE_MATCH_TYPE_AND 0x00000000")]
     public const int USAGE_MATCH_TYPE_AND = 0x00000000;
@@ -1571,10 +1574,10 @@ public static unsafe partial class Windows
     public const int MICROSOFT_ROOT_CERT_CHAIN_POLICY_DISABLE_FLIGHT_ROOT_FLAG = 0x00040000;
 
     [NativeTypeName("#define CryptStringToBinary CryptStringToBinaryW")]
-    public static delegate*<ushort*, uint, uint, byte*, uint*, uint*, uint*, BOOL> CryptStringToBinary => &CryptStringToBinaryW;
+    public static delegate*<char*, uint, uint, byte*, uint*, uint*, uint*, BOOL> CryptStringToBinary => &CryptStringToBinaryW;
 
     [NativeTypeName("#define CryptBinaryToString CryptBinaryToStringW")]
-    public static delegate*<byte*, uint, uint, ushort*, uint*, BOOL> CryptBinaryToString => &CryptBinaryToStringW;
+    public static delegate*<byte*, uint, uint, char*, uint*, BOOL> CryptBinaryToString => &CryptBinaryToStringW;
 
     [NativeTypeName("#define REPORT_NO_PRIVATE_KEY 0x0001")]
     public const int REPORT_NO_PRIVATE_KEY = 0x0001;

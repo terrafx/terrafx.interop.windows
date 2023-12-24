@@ -3,40 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1GdiMetafileSink1.ProcessRecord">
-    <summary>
-      <para>Provides access to metafile records, including their type, data, and flags.</para>
-    </summary>
-    <param name="recordType">
-      <para>Type: <b>DWORD</b></para>
-      <para>The type of metafile record being processed. Please see <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emf/91c257d7-c39d-4a36-9b1f-63e3f73d30ca">MS-EMF</a> and <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emfplus/5f92c789-64f2-46b5-9ed4-15a9bb0946c6">MS-EMFPLUS</a> for a list of record types.</para>
-    </param>
-    <param name="recordData">
-      <para>Type: <b>const void*</b></para>
-      <para>The data contained in this record. Please see <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emf/91c257d7-c39d-4a36-9b1f-63e3f73d30ca">MS-EMF</a> and <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emfplus/5f92c789-64f2-46b5-9ed4-15a9bb0946c6">MS-EMFPLUS</a> for information on record data layouts.</para>
-    </param>
-    <param name="recordDataSize">
-      <para>Type: <b>UINT</b></para>
-      <para>TThe size of the data pointed to by recordData.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b>UINT32</b></para>
-      <para>The set of flags set for this record. Please see <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emf/91c257d7-c39d-4a36-9b1f-63e3f73d30ca">MS-EMF</a> and <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emfplus/5f92c789-64f2-46b5-9ed4-15a9bb0946c6">MS-EMFPLUS</a> for information on record flags.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>S_OK if successful, otherwise a failure HRESULT.</para>
-    </returns>
-    <remarks>
-      <para>For details on the EMF and EMF+ formats, please see Microsoft technical documents  <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emf/91c257d7-c39d-4a36-9b1f-63e3f73d30ca">MS-EMF</a> and <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emfplus/5f92c789-64f2-46b5-9ed4-15a9bb0946c6">MS-EMFPLUS</a>.</para>
-    </remarks>
-    <seealso cref="ID2D1GdiMetafileSink1" />
-    <seealso href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emfplus/5f92c789-64f2-46b5-9ed4-15a9bb0946c6">[MS-EMFPLUS]: Enhanced Metafile Format Plus Extensions</seealso>
-    <seealso href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emf/91c257d7-c39d-4a36-9b1f-63e3f73d30ca">[MS-EMF]: Enhanced Metafile Format</seealso>
+    <summary>Provides access to metafile records, including their type, data, and flags.</summary>
+    <param name="recordType">The type of metafile record being processed. Please see <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emf/91c257d7-c39d-4a36-9b1f-63e3f73d30ca">MS-EMF</a> and <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emfplus/5f92c789-64f2-46b5-9ed4-15a9bb0946c6">MS-EMFPLUS</a> for a list of record types.</param>
+    <param name="recordData">The data contained in this record. Please see <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emf/91c257d7-c39d-4a36-9b1f-63e3f73d30ca">MS-EMF</a> and <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emfplus/5f92c789-64f2-46b5-9ed4-15a9bb0946c6">MS-EMFPLUS</a> for information on record data layouts.</param>
+    <param name="recordDataSize">TThe size of the data pointed to by recordData.</param>
+    <param name="flags">The set of flags set for this record. Please see <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emf/91c257d7-c39d-4a36-9b1f-63e3f73d30ca">MS-EMF</a> and <a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-emfplus/5f92c789-64f2-46b5-9ed4-15a9bb0946c6">MS-EMFPLUS</a> for information on record flags.</param>
+    <returns>S_OK if successful, otherwise a failure HRESULT.</returns>
   </member>
   <member name="ID2D1GdiMetafileSink1">
-    <summary>
-      <para>This interface performs all the same functions as the existing ID2D1GdiMetafileSink interface. It also enables access to metafile records.</para>
-    </summary>
-    <seealso cref="ID2D1GdiMetafileSink" />
+    <summary>This interface performs all the same functions as the existing ID2D1GdiMetafileSink interface. It also enables access to metafile records.</summary>
   </member>
 </doc>

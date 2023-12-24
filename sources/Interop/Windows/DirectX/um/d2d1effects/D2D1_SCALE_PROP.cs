@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP"]/*' />
-public enum D2D1_SCALE_PROP : uint
+public enum D2D1_SCALE_PROP
 {
     /// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_SCALE"]/*' />
     D2D1_SCALE_PROP_SCALE = 0,
@@ -24,5 +24,5 @@ public enum D2D1_SCALE_PROP : uint
     D2D1_SCALE_PROP_SHARPNESS = 4,
 
     /// <include file='D2D1_SCALE_PROP.xml' path='doc/member[@name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_FORCE_DWORD"]/*' />
-    D2D1_SCALE_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_SCALE_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

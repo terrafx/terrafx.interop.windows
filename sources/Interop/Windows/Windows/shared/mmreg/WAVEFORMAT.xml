@@ -3,15 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WAVEFORMAT">
-    <summary>
-      <para>The <b>WAVEFORMAT</b> structure describes the format of waveform-audio data. Only format information common to all waveform-audio data formats is included in this structure. This structure has been superseded by the <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a> structure.</para>
-    </summary>
-    <remarks>
-      <para>For formats that require additional information, this structure is included as a member in another structure along with the additional information.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-audio">Waveform Audio</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Multimedia/waveform-structures">Waveform Structures</seealso>
+    <summary>The <b>WAVEFORMAT</b> structure describes the format of waveform-audio data. Only format information common to all waveform-audio data formats is included in this structure. This structure has been superseded by the <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a> structure.</summary>
   </member>
   <member name="WAVEFORMAT.wFormatTag">
     <summary>
@@ -21,35 +13,31 @@
           <description>Name</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WAVE_FORMAT_PCM</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WAVE_FORMAT_PCM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Waveform-audio data is PCM.</para>
-          </description>
-        </item>
+          <description>Waveform-audio data is PCM.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="WAVEFORMAT.nChannels">
-    <summary>
-      <para>Number of channels in the waveform-audio data. Mono data uses one channel and stereo data uses two channels.</para>
-    </summary>
+    <summary>Number of channels in the waveform-audio data. Mono data uses one channel and stereo data uses two channels.</summary>
   </member>
   <member name="WAVEFORMAT.nSamplesPerSec">
-    <summary>
-      <para>Sample rate, in samples per second.</para>
-    </summary>
+    <summary>Sample rate, in samples per second.</summary>
   </member>
   <member name="WAVEFORMAT.nAvgBytesPerSec">
-    <summary>
-      <para>Required average data transfer rate, in bytes per second. For example, 16-bit stereo at 44.1 kHz has an average data rate of 176,400 bytes per second (2 channels — 2 bytes per sample per channel — 44,100 samples per second).</para>
-    </summary>
+    <summary>Required average data transfer rate, in bytes per second. For example, 16-bit stereo at 44.1 kHz has an average data rate of 176,400 bytes per second (2 channels — 2 bytes per sample per channel — 44,100 samples per second).</summary>
   </member>
   <member name="WAVEFORMAT.nBlockAlign">
-    <summary>
-      <para>Block alignment, in bytes. The block alignment is the minimum atomic unit of data. For PCM data, the block alignment is the number of bytes used by a single sample, including data for both channels if the data is stereo. For example, the block alignment for 16-bit stereo PCM is 4 bytes (2 channels — 2 bytes per sample).</para>
-    </summary>
+    <summary>Block alignment, in bytes. The block alignment is the minimum atomic unit of data. For PCM data, the block alignment is the number of bytes used by a single sample, including data for both channels if the data is stereo. For example, the block alignment for 16-bit stereo PCM is 4 bytes (2 channels — 2 bytes per sample).</summary>
   </member>
 </doc>

@@ -4,33 +4,17 @@
 <doc>
   <member name="IMediaObject.AllocateStreamingResources">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>AllocateStreamingResources</code> method allocates any resources needed by the DMO. Calling this method is always optional.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</para>
-    </returns>
-    <remarks>
-      <para>An application can call this method as a streaming optimization. It gives the DMO an opportunity to perform any time-consuming initializations before streaming begins. If you call this method, do so after you set the media types on the DMO, but before you make the first calls to <b>ProcessInput</b> or <b>ProcessOutput</b>.</para>
-      <para>This method is optional in the following sense:</para>
-      <list type="bullet">
-        <item>
-          <description>If the DMO does not support this method, the method returns S_OK.</description>
-        </item>
-        <item>
-          <description>If the application never calls this method, the DMO allocates resources within a call to <see cref="IMediaObject.ProcessInput" /> or <see cref="IMediaObject.ProcessOutput" />.</description>
-        </item>
-      </list>
-      <para>If the DMO supports this method, it should also support the <see cref="IMediaObject.FreeStreamingResources" /> method.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
+    <returns>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</returns>
   </member>
   <member name="IMediaObject.Discontinuity">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Discontinuity</code> method signals a discontinuity on the specified input stream.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -38,103 +22,78 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_NOTACCEPTING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The DMO is not accepting input.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_NOTACCEPTING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The input and output types have not been set.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The DMO is not accepting input.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DMO_E_TYPE_NOT_SET</b>
-            </para>
-          </description>
-          <description>
-            <para>The input and output types have not been set.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A discontinuity represents a break in the input. A discontinuity might occur because no more data is expected, the format is changing, or there is a gap in the data. After a discontinuity, the DMO does not accept further input on that stream until all pending data has been processed. The application should call the <see cref="IMediaObject.ProcessOutput" /> method until none of the streams returns the DMO_OUTPUT_DATA_BUFFERF_INCOMPLETE flag.</para>
-      <para>This method might fail if it is called before the client sets the input and output types on the DMO.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.Flush">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Flush</code> method flushes all internally buffered data.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</para>
-    </returns>
-    <remarks>
-      <para>The DMO performs the following actions when this method is called:</para>
-      <list type="bullet">
-        <item>
-          <description>Releases any <see cref="IMediaBuffer" /> references it holds.</description>
-        </item>
-        <item>
-          <description>Discards any values that specify the time stamp or sample length for a media buffer.</description>
-        </item>
-        <item>
-          <description>Reinitializes any internal states that depend on the contents of a media sample.</description>
-        </item>
-      </list>
-      <para>Media types, maximum latency, and locked state do not change.</para>
-      <para>When the method returns, every input stream accepts data. Output streams cannot produce any data until the application calls the <see cref="IMediaObject.ProcessInput" /> method on at least one input stream.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
+    <returns>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</returns>
   </member>
   <member name="IMediaObject.FreeStreamingResources">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>FreeStreamingResources</code> method frees resources allocated by the DMO. Calling this method is always optional.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</para>
-    </returns>
-    <remarks>
-      <para>This method releases any resources that the <see cref="IMediaObject.AllocateStreamingResources" /> method initializes.</para>
-      <para>If the DMO does not support this method, the method returns S_OK. If you call this method during streaming, the method fails and the DMO does not release any resources.</para>
-      <para>Regardless of whether the method fails or succeeds, the application can continue to call other methods on the DMO. The DMO might need to re-initialize resources that were previously freed.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
+    <returns>Returns S_OK if successful. Otherwise, returns an <b>HRESULT</b> value indicating the cause of the error.</returns>
   </member>
   <member name="IMediaObject.GetInputCurrentType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetInputCurrentType</code> method retrieves the media type that was set for an input stream, if any.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
-    <param name="pmt">
-      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure allocated by the caller. The method fills the structure with the media type.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
+    <param name="pmt">Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure allocated by the caller. The method fills the structure with the media type.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -142,64 +101,64 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Media type was not set.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_TYPE_NOT_SET</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Media type was not set.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The caller must set the media type for the stream before calling this method. To set the media type, call the <see cref="IMediaObject.SetInputType" /> method.</para>
-      <para>If the method succeeds, call <see cref="MoFreeMediaType" /> to free the format block.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetInputMaxLatency">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetInputMaxLatency</code> method retrieves the maximum latency on a specified input stream.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
-    <param name="prtMaxLatency">
-      <para>Pointer to a variable that receives the maximum latency.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
+    <param name="prtMaxLatency">Pointer to a variable that receives the maximum latency.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -207,83 +166,66 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failure.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Not implemented. Assume zero latency.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>Not implemented. Assume zero latency.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The latency is the difference between a time stamp on the input stream and the corresponding time stamp on the output stream. The maximum latency is the largest possible difference in the time stamps. For a DMO, determine the maximum latency as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>Process input buffers until the DMO can produce output. </description>
-        </item>
-        <item>
-          <description>Process as many output buffers as possible. </description>
-        </item>
-        <item>
-          <description>The maximum latency is the largest delta between input time stamps and output time stamps (taken as an absolute value). </description>
-        </item>
-      </list>
-      <para>Under this definition, latency does not include the time that it takes to process samples. Nor does it include any latency introduced by the size of the input buffer.</para>
-      <para>For the special case where a DMO processes exactly one sample at a time, the maximum latency is simply the difference in time stamps.</para>
-      <para>Latency is defined only when samples have time stamps, and the time stamps increase or decrease monotonically. Maximum latency might depend on the media types for the input and output streams.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetInputSizeInfo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetInputSizeInfo</code> method retrieves the buffer requirements for a specified input stream.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
-    <param name="pcbSize">
-      <para>Pointer to a variable that receives the minimum size of an input buffer for this stream, in bytes.</para>
-    </param>
-    <param name="pcbMaxLookahead">
-      <para>Pointer to a variable that receives the maximum amount of data that the DMO will hold for lookahead, in bytes. If the DMO does not perform lookahead on the stream, the value is zero.</para>
-    </param>
-    <param name="pcbAlignment">
-      <para>Pointer to a variable that receives the required buffer alignment, in bytes. If the input stream has no alignment requirement, the value is 1.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
+    <param name="pcbSize">Pointer to a variable that receives the minimum size of an input buffer for this stream, in bytes.</param>
+    <param name="pcbMaxLookahead">Pointer to a variable that receives the maximum amount of data that the DMO will hold for lookahead, in bytes. If the DMO does not perform lookahead on the stream, the value is zero.</param>
+    <param name="pcbAlignment">Pointer to a variable that receives the required buffer alignment, in bytes. If the input stream has no alignment requirement, the value is 1.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -291,55 +233,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Media type was not set.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_TYPE_NOT_SET</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Media type was not set.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The buffer requirements may depend on the media types of the various streams. Before calling this method, set the media type of each stream by calling the <see cref="IMediaObject.SetInputType" /> and <see cref="IMediaObject.SetOutputType" /> methods. If the media types have not been set, this method might return an error.</para>
-      <para>If the DMO performs lookahead on the input stream, it returns the DMO_INPUT_STREAMF_HOLDS_BUFFERS flag in the <see cref="IMediaObject.GetInputStreamInfo" /> method. During processing, the DMO holds up to the number of bytes indicated by the <i>pcbMaxLookahead</i> parameter. The application must allocate enough buffers for the DMO to hold this much data.</para>
-      <para>A buffer is <i>aligned</i> if the buffer's start address is a multiple of <i>*pcbAlignment</i>. The alignment must be a power of two. Depending on the microprocessor, reads and writes to an aligned buffer might be faster than to an unaligned buffer. Also, some microprocessors do not support unaligned reads and writes.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetInputStatus">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetInputStatus</code> method queries whether an input stream can accept more input data.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Pointer to a variable that receives either zero or DMO_INPUT_STATUSF_ACCEPT_DATA.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
+    <param name="dwFlags">Pointer to a variable that receives either zero or DMO_INPUT_STATUSF_ACCEPT_DATA.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -347,76 +286,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the input stream will accept more data, the method returns the DMO_INPUT_STATUSF_ACCEPT_DATA flag in the <i>dwFlags</i> parameter. Otherwise, it sets this parameter to zero. If the stream will accept more data, the application can call the <see cref="IMediaObject.ProcessInput" /> method.</para>
-      <para>The status of an input stream can change only as the result of one of the following method calls.</para>
-      <list type="table">
-        <listheader>
-          <description>Method
-</description>
-          <description>Description
-</description>
-        </listheader>
-        <item>
-          <description>
-            <see cref="IMediaObject.Discontinuity" />
-          </description>
-          <description>Signals a discontinuity on the specified input stream.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IMediaObject.Flush" />
-          </description>
-          <description>Flushes all internally buffered data.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IMediaObject.ProcessInput" />
-          </description>
-          <description>Delivers a buffer to the specified input stream.</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IMediaObject.ProcessOutput" />
-          </description>
-          <description>Generates output from the current input data.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetInputStreamInfo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetInputStreamInfo</code> method retrieves information about an input stream, such as any restrictions on the number of samples per buffer, and whether the stream performs lookahead on the input data. This information never changes.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
-    <param name="pdwFlags">
-      <para>Pointer to a variable that receives a bitwise combination of zero or more <see cref="DMO_INPUT_STREAM_INFO_FLAGS" /> flags.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
+    <param name="pdwFlags">Pointer to a variable that receives a bitwise combination of zero or more <see cref="DMO_INPUT_STREAM_INFO_FLAGS" /> flags.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -424,57 +327,54 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream index</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The DMO_INPUT_STREAMF_HOLDS_BUFFERS flag indicates that the DMO performs lookahead on the incoming data.</para>
-      <para>The application must be sure to allocate sufficient buffers for the DMO to process the input. Call the <see cref="IMediaObject.GetInputSizeInfo" /> method to determine the buffer requirements.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetInputType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetInputType</code> method retrieves a preferred media type for a specified input stream.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
-    <param name="dwTypeIndex">
-      <para>Zero-based index on the set of acceptable media types.</para>
-    </param>
-    <param name="pmt">
-      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure allocated by the caller, or <b>NULL</b>. If this parameter is non-<b>NULL</b>, the method fills the structure with the media type. You can use the value <b>NULL</b> to test whether the type index is in range, by checking the return code.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
+    <param name="dwTypeIndex">Zero-based index on the set of acceptable media types.</param>
+    <param name="pmt">Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure allocated by the caller, or <b>NULL</b>. If this parameter is non-<b>NULL</b>, the method fills the structure with the media type. You can use the value <b>NULL</b> to test whether the type index is in range, by checking the return code.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -482,78 +382,77 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_NO_MORE_ITEMS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Type index is out of range.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream index.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_NO_MORE_ITEMS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Type index is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method to enumerate an input stream's preferred media types. The DMO assigns each media type an index value in order of preference. The most preferred type has an index of zero. To enumerate all the types, make successive calls while incrementing the type index until the method returns DMO_E_NO_MORE_ITEMS. The DMO is not guaranteed to enumerate every media type that it supports.</para>
-      <para>The format block in the returned type might be <b>NULL</b>. If so, the format type is GUID_NULL. Check the format type before dereferencing the format block.</para>
-      <para>If the method succeeds, call <see cref="MoFreeMediaType" /> to free the format block. (This function is also safe to call when the format block is <b>NULL</b>.)</para>
-      <para>To set the media type, call the <see cref="IMediaObject.SetInputType" /> method. Setting the media type on one stream can change another stream's preferred types. In fact, a stream might not have a preferred type until the type is set on another stream. For example, a decoder might not have a preferred output type until the input type is set. However, the DMO is not required to update its preferred types dynamically in this fashion. Thus, the types returned by this method are not guaranteed to be valid; they might fail when used in the <b>SetInputType</b> method.</para>
-      <para>To test whether a particular media type is acceptable, call <b>SetInputType</b> with the DMO_SET_TYPEF_TEST_ONLY flag.</para>
-      <para>To test whether the <i>dwTypeIndex</i> parameter is in range, set <i>pmt</i> to <b>NULL</b>. The method returns S_OK if the index is in range, or DMO_E_NO_MORE_ITEMS if the index is out of range.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetOutputCurrentType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetOutputCurrentType</code> method retrieves the media type that was set for an output stream, if any.</para>
     </summary>
-    <param name="dwOutputStreamIndex">
-      <para>Zero-based index of an output stream on the DMO.</para>
-    </param>
-    <param name="pmt">
-      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure allocated by the caller. The method fills the structure with the media type.</para>
-    </param>
+    <param name="dwOutputStreamIndex">Zero-based index of an output stream on the DMO.</param>
+    <param name="pmt">Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure allocated by the caller. The method fills the structure with the media type.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -561,67 +460,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Media type was not set.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_TYPE_NOT_SET</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Media type was not set.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The caller must set the media type for the stream before calling this method. To set the media type, call the <see cref="IMediaObject.SetOutputType" /> method.</para>
-      <para>If the method succeeds, call <see cref="MoFreeMediaType" /> to free the format block.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetOutputSizeInfo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetOutputSizeInfo</code> method retrieves the buffer requirements for a specified output stream.</para>
     </summary>
-    <param name="dwOutputStreamIndex">
-      <para>Zero-based index of an output stream on the DMO.</para>
-    </param>
-    <param name="pcbSize">
-      <para>Pointer to a variable that receives the minimum size of an output buffer for this stream, in bytes.</para>
-    </param>
-    <param name="pcbAlignment">
-      <para>Pointer to a variable that receives the required buffer alignment, in bytes. If the output stream has no alignment requirement, the value is 1.</para>
-    </param>
+    <param name="dwOutputStreamIndex">Zero-based index of an output stream on the DMO.</param>
+    <param name="pcbSize">Pointer to a variable that receives the minimum size of an output buffer for this stream, in bytes.</param>
+    <param name="pcbAlignment">Pointer to a variable that receives the required buffer alignment, in bytes. If the output stream has no alignment requirement, the value is 1.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -629,55 +526,52 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_TYPE_NOT_SET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Media type was not set.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_TYPE_NOT_SET</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Media type was not set.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The buffer requirements may depend on the media types set for each of the streams.</para>
-      <para>Before calling this method, set the media type of each stream by calling the <see cref="IMediaObject.SetInputType" /> and <see cref="IMediaObject.SetOutputType" /> methods. If the media types have not been set, this method might return an error. However, if a stream is optional, and the application will not use the stream, you do not have to set the media type for the stream.</para>
-      <para>A buffer is <i>aligned</i> if the buffer's start address is a multiple of <i>*pcbAlignment</i>. Depending on the architecture of the microprocessor, it is faster to read and write to an aligned buffer than to an unaligned buffer. On some microprocessors, reading and writing to an unaligned buffer is not supported and can cause the program to crash. Zero is not a valid alignment.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetOutputStreamInfo">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetOutputStreamInfo</code> method retrieves information about an output stream; for example, whether the stream is discardable, and whether it uses a fixed sample size. This information never changes.</para>
     </summary>
-    <param name="dwOutputStreamIndex">
-      <para>Zero-based index of an output stream on the DMO.</para>
-    </param>
-    <param name="pdwFlags">
-      <para>Pointer to a variable that receives a bitwise combination of zero or more <see cref="DMO_OUTPUT_STREAM_INFO_FLAGS" /> flags.</para>
-    </param>
+    <param name="dwOutputStreamIndex">Zero-based index of an output stream on the DMO.</param>
+    <param name="pdwFlags">Pointer to a variable that receives a bitwise combination of zero or more <see cref="DMO_OUTPUT_STREAM_INFO_FLAGS" /> flags.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -685,53 +579,54 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream index</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetOutputType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetOutputType</code> method retrieves a preferred media type for a specified output stream.</para>
     </summary>
-    <param name="dwOutputStreamIndex">
-      <para>Zero-based index of an output stream on the DMO.</para>
-    </param>
-    <param name="dwTypeIndex">
-      <para>Zero-based index on the set of acceptable media types.</para>
-    </param>
-    <param name="pmt">
-      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure allocated by the caller, or <b>NULL</b>. If this parameter is non-<b>NULL</b>, the method fills the structure with the media type. You can use the value <b>NULL</b> to test whether the type index is in range, by checking the return code.</para>
-    </param>
+    <param name="dwOutputStreamIndex">Zero-based index of an output stream on the DMO.</param>
+    <param name="dwTypeIndex">Zero-based index on the set of acceptable media types.</param>
+    <param name="pmt">Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure allocated by the caller, or <b>NULL</b>. If this parameter is non-<b>NULL</b>, the method fills the structure with the media type. You can use the value <b>NULL</b> to test whether the type index is in range, by checking the return code.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -739,78 +634,77 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_NO_MORE_ITEMS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Type index is out of range.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Invalid stream index.</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_NO_MORE_ITEMS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Type index is out of range.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method to enumerate an output stream's preferred media types. The DMO assigns each media type an index value, in order of preference. The most preferred type has an index of zero. To enumerate all the types, make successive calls while incrementing the type index, until the method returns DMO_E_NO_MORE_ITEMS. The DMO is not guaranteed to enumerate every media type that it supports.</para>
-      <para>The format block in the returned type might be <b>NULL</b>. If so, the format type is GUID_NULL. You should check the format type before dereferencing the format block.</para>
-      <para>If the method succeeds, call <see cref="MoFreeMediaType" /> to free the format block. (This function is also safe to call when the format block is <b>NULL</b>.)</para>
-      <para>To set the media type, call the <see cref="IMediaObject.SetOutputType" /> method. Setting the media type on one stream can change another stream's preferred types. In fact, a stream might not have a preferred type until the type is set on another stream. For example, a decoder might not have a preferred output type until the input type is set. However, the DMO is not required to update its preferred types dynamically in this fashion. Thus, the types returned by this method are not guaranteed to be valid; they might fail when used in the <b>SetOutputType</b> method.</para>
-      <para>To test whether a particular media type is acceptable, call <b>SetOutputType</b> with the DMO_SET_TYPEF_TEST_ONLY flag.</para>
-      <para>To test whether the <i>dwTypeIndex</i> parameter is in range, set <i>pmt</i> to <b>NULL</b>. The method returns S_OK if the index is in range, or DMO_E_NO_MORE_ITEMS if the index is out of range.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.GetStreamCount">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetStreamCount</code> method retrieves the number of input and output streams.</para>
     </summary>
-    <param name="pcInputStreams">
-      <para>Pointer to a variable that receives the number of input streams. Cannot be <b>NULL</b>.</para>
-    </param>
-    <param name="pcOutputStreams">
-      <para>Pointer to a variable that receives the number of output streams. Cannot be <b>NULL</b>.</para>
-    </param>
+    <param name="pcInputStreams">Pointer to a variable that receives the number of input streams. Cannot be <b>NULL</b>.</param>
+    <param name="pcOutputStreams">Pointer to a variable that receives the number of output streams. Cannot be <b>NULL</b>.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -818,40 +712,40 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The DMO might have zero input streams or zero output streams. The number of streams does not change; a DMO cannot dynamically add or remove streams.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.Lock">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Lock</code> method acquires or releases a lock on the DMO. Call this method to keep the DMO serialized when performing multiple operations.</para>
     </summary>
-    <param name="bLock">
-      <para>Value that specifies whether to acquire or release the lock. If the value is non-zero, a lock is acquired. If the value is zero, the lock is released.</para>
-    </param>
+    <param name="bLock">Value that specifies whether to acquire or release the lock. If the value is non-zero, a lock is acquired. If the value is zero, the lock is released.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -859,58 +753,43 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Failure</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method prevents other threads from calling methods on the DMO. If another thread calls a method on the DMO, the thread blocks until the lock is released.</para>
-      <para>If you are using the Active Template Library (ATL) to implement a DMO, the name of the Lock method conflicts with the <b>CComObjectRootEx.Lock</b> method. To work around this problem, define the preprocessor symbol FIX_LOCK_NAME before including the header file Dmo.h:</para>
-      <code>
-#define FIX_LOCK_NAME
-#include &lt;dmo.h&gt;
-
-</code>
-      <para>This directive causes the preprocessor to rename the <b>IMediaObject</b> method to <i>DMOLock</i>. In your DMO, implement the method as <i>DMOLock</i>. In your implementation, call the ATL <b>Lock</b> or <b>Unlock</b> method, depending on the value of <i>bLock</i>. Applications can still invoke the method using the name <i>Lock</i> because the vtable order does not change.</para>
-    </remarks>
   </member>
   <member name="IMediaObject.ProcessInput">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>ProcessInput</code> method delivers a buffer to the specified input stream.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
-    <param name="pBuffer">
-      <para>Pointer to the buffer's <see cref="IMediaBuffer" /> interface.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Bitwise combination of zero or more flags from the <see cref="DMO_INPUT_DATA_BUFFER_FLAGS" /> enumeration.</para>
-    </param>
-    <param name="rtTimestamp">
-      <para>Time stamp that specifies the start time of the data in the buffer. If the buffer has a valid time stamp, set the DMO_INPUT_DATA_BUFFERF_TIME flag in the <i>dwFlags</i> parameter. Otherwise, the DMO ignores this value.</para>
-    </param>
-    <param name="rtTimelength">
-      <para>Reference time specifying the duration of the data in the buffer. If this value is valid, set the DMO_INPUT_DATA_BUFFERF_TIMELENGTH flag in the <i>dwFlags</i> parameter. Otherwise, the DMO ignores this value.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
+    <param name="pBuffer">Pointer to the buffer's <see cref="IMediaBuffer" /> interface.</param>
+    <param name="dwFlags">Bitwise combination of zero or more flags from the <see cref="DMO_INPUT_DATA_BUFFER_FLAGS" /> enumeration.</param>
+    <param name="rtTimestamp">Time stamp that specifies the start time of the data in the buffer. If the buffer has a valid time stamp, set the DMO_INPUT_DATA_BUFFERF_TIME flag in the <i>dwFlags</i> parameter. Otherwise, the DMO ignores this value.</param>
+    <param name="rtTimelength">Reference time specifying the duration of the data in the buffer. If this value is valid, set the DMO_INPUT_DATA_BUFFERF_TIMELENGTH flag in the <i>dwFlags</i> parameter. Otherwise, the DMO ignores this value.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -918,72 +797,66 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_NOTACCEPTING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Data cannot be accepted.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_NOTACCEPTING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>No output to process.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Data cannot be accepted.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>No output to process.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success.</para>
-          </description>
-        </item>
+          <description>Success.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The input buffer specified in the <i>pBuffer</i> parameter is read-only. The DMO will not modify the data in this buffer. All write operations occur on the output buffers, which are given in a separate call to the <see cref="IMediaObject.ProcessOutput" /> method.</para>
-      <para>If the DMO does not process all the data in the buffer, it keeps a reference count on the buffer. It releases the buffer once it has generated all the output, unless it needs to perform lookahead on the data. (To determine whether a DMO performs lookahead, call the <see cref="IMediaObject.GetInputStreamInfo" /> method.)</para>
-      <para>If this method returns DMO_E_NOTACCEPTING, call <b>ProcessOutput</b> until the input stream can accept more data. To determine whether the stream can accept more data, call the <see cref="IMediaObject.GetInputStatus" /> method.</para>
-      <para>If the method returns S_FALSE, no output was generated from this input and the application does not need to call <b>ProcessOutput</b>. However, a DMO is not required to return S_FALSE in this situation; it might return S_OK.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.ProcessOutput">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>ProcessOutput</code> method generates output from the current input data.</para>
     </summary>
-    <param name="dwFlags">
-      <para>Bitwise combination of zero or more flags from the <see cref="DMO_PROCESS_OUTPUT_FLAGS" /> enumeration.</para>
-    </param>
-    <param name="cOutputBufferCount">
-      <para>Number of output buffers.</para>
-    </param>
-    <param name="pOutputBuffers">
-      <para>Pointer to an array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_output_data_buffer">DMO_OUTPUT_DATA_BUFFER</a> structures containing the output buffers. Specify the size of the array in the <i>cOutputBufferCount</i> parameter.</para>
-    </param>
-    <param name="pdwStatus">
-      <para>Pointer to a variable that receives a reserved value (zero). The application should ignore this value.</para>
-    </param>
+    <param name="dwFlags">Bitwise combination of zero or more flags from the <see cref="DMO_PROCESS_OUTPUT_FLAGS" /> enumeration.</param>
+    <param name="cOutputBufferCount">Number of output buffers.</param>
+    <param name="pOutputBuffers">Pointer to an array of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_output_data_buffer">DMO_OUTPUT_DATA_BUFFER</a> structures containing the output buffers. Specify the size of the array in the <i>cOutputBufferCount</i> parameter.</param>
+    <param name="pdwStatus">Pointer to a variable that receives a reserved value (zero). The application should ignore this value.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -991,94 +864,77 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Failure</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Invalid argument</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>Failure</para>
-          </description>
-        </item>
-        <item>
+            <b>NULL</b> pointer argument</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>No output was generated</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid argument</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <b>NULL</b> pointer argument
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>No output was generated</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <i>pOutputBuffers</i> parameter points to an array of <b>DMO_OUTPUT_DATA_BUFFER</b> structures. The application must allocate one structure for each output stream. To determine the number of output streams, call the <see cref="IMediaObject.GetStreamCount" /> method. Set the <i>cOutputBufferCount</i> parameter to this number.</para>
-      <para>Each <b>DMO_OUTPUT_DATA_BUFFER</b> structure contains a pointer to a buffer's <see cref="IMediaBuffer" /> interface. The application allocates these buffers. The other members of the structure are status fields. The DMO sets these fields if the method succeeds. If the method fails, their values are undefined.</para>
-      <para>When the application calls <code>ProcessOutput</code>, the DMO processes as much input data as possible. It writes the output data to the output buffers, starting from the end of the data in each buffer. (To find the end of the data, call the <see cref="IMediaBuffer.GetBufferAndLength" /> method.) The DMO never holds a reference count on an output buffer.</para>
-      <para>If the DMO fills an entire output buffer and still has input data to process, the DMO returns the DMO_OUTPUT_DATA_BUFFERF_INCOMPLETE flag in the <b>DMO_OUTPUT_DATA_BUFFER</b> structure. The application should check for this flag by testing the <b>dwStatus</b> member of each structure.</para>
-      <para>If the method returns S_FALSE, no output was generated. However, a DMO is not required to return S_FALSE in this situation; it might return S_OK.</para>
-      <para>
-        <b>Discarding data:</b>
-      </para>
-      <para>You can discard data from a stream by setting the DMO_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER flag in the <i>dwFlags</i> parameter. For each stream that you want to discard, set the <b>pBuffer</b> member of the <b>DMO_OUTPUT_DATA_BUFFER</b> structure to <b>NULL</b>.</para>
-      <para>For each stream in which <b>pBuffer</b> is <b>NULL</b>:</para>
-      <list type="bullet">
-        <item>
-          <description>If the DMO_PROCESS_OUTPUT_DISCARD_WHEN_NO_BUFFER flag is set, and the stream is discardable or optional, the DMO discards the data.</description>
-        </item>
-        <item>
-          <description>If the flag is set but the stream is neither discardable nor optional, the DMO discards the data if possible. It is not guaranteed to discard the data.</description>
-        </item>
-        <item>
-          <description>If the flag is not set, the DMO does not produce output data for that stream, but does not discard the data.</description>
-        </item>
-      </list>
-      <para>To check whether a stream is discardable or optional, call the <see cref="IMediaObject.GetOutputStreamInfo" /> method.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.SetInputMaxLatency">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetInputMaxLatency</code> method sets the maximum latency on a specified input stream. For the definition of maximum latency, see <see cref="IMediaObject.GetInputMaxLatency" />.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
-    <param name="rtMaxLatency">
-      <para>Maximum latency.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
+    <param name="rtMaxLatency">Maximum latency.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -1086,64 +942,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failure</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Not implemented</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Failure</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>Not implemented</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Success</para>
-          </description>
-        </item>
+          <description>Success</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMediaObject Interface" />
-    <seealso cref="IMediaObject.GetInputMaxLatency" />
   </member>
   <member name="IMediaObject.SetInputType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetInputType</code> method sets the media type on an input stream, or tests whether a media type is acceptable.</para>
     </summary>
-    <param name="dwInputStreamIndex">
-      <para>Zero-based index of an input stream on the DMO.</para>
-    </param>
-    <param name="pmt">
-      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure that specifies the media type.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Bitwise combination of zero or more flags from the <see cref="DMO_SET_TYPE_FLAGS" /> enumeration.</para>
-    </param>
+    <param name="dwInputStreamIndex">Zero-based index of an input stream on the DMO.</param>
+    <param name="pmt">Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure that specifies the media type.</param>
+    <param name="dwFlags">Bitwise combination of zero or more flags from the <see cref="DMO_SET_TYPE_FLAGS" /> enumeration.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -1151,78 +1008,65 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_TYPE_NOT_ACCEPTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Media type was not accepted</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_TYPE_NOT_ACCEPTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Media type is not acceptable</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Media type was not accepted</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Media type is not acceptable</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Media type was set successfully, or is acceptable</para>
-          </description>
-        </item>
+          <description>Media type was set successfully, or is acceptable</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method to test, set, or clear the media type on an input stream:</para>
-      <list type="bullet">
-        <item>
-          <description>To test the media type without setting it, use the DMO_SET_TYPEF_TEST_ONLY flag. If the media type is not acceptable, the method returns S_FALSE.</description>
-        </item>
-        <item>
-          <description>To set the media type, set <i>dwFlags</i> to zero. If the media type is not acceptable, the method returns DMO_E_TYPE_NOT_ACCEPTED.</description>
-        </item>
-        <item>
-          <description>To clear the current media type (if any), use the DMO_SET_TYPEF_CLEAR flag and set <i>pmt</i> to <b>NULL</b>. When the method returns, the stream no longer has a media type. The DMO cannot process samples until the application sets a new media type.</description>
-        </item>
-      </list>
-      <para>The media types that are currently set on other streams can affect whether the media type is acceptable.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject.SetOutputType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetOutputType</code> method sets the media type on an output stream, or tests whether a media type is acceptable.</para>
     </summary>
-    <param name="dwOutputStreamIndex">
-      <para>Zero-based index of an output stream on the DMO.</para>
-    </param>
-    <param name="pmt">
-      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure that specifies the media type.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Bitwise combination of zero or more flags from the <see cref="DMO_SET_TYPE_FLAGS" /> enumeration.</para>
-    </param>
+    <param name="dwOutputStreamIndex">Zero-based index of an output stream on the DMO.</param>
+    <param name="pmt">Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/mediaobj/ns-mediaobj-dmo_media_type">DMO_MEDIA_TYPE</a> structure that specifies the media type.</param>
+    <param name="dwFlags">Bitwise combination of zero or more flags from the <see cref="DMO_SET_TYPE_FLAGS" /> enumeration.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those in the following table.</para>
       <list type="table">
@@ -1230,67 +1074,60 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_INVALIDSTREAMINDEX</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_INVALIDSTREAMINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Invalid stream index</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Invalid stream index</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DMO_E_TYPE_NOT_ACCEPTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Media type was not accepted</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DMO_E_TYPE_NOT_ACCEPTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Media type is not acceptable</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Media type was not accepted</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Media type is not acceptable</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>Media type was set successfully, or is acceptable</para>
-          </description>
-        </item>
+          <description>Media type was set successfully, or is acceptable</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method to test, set, or clear the media type on an output stream:</para>
-      <list type="bullet">
-        <item>
-          <description>To test the media type without setting it, use the DMO_SET_TYPEF_TEST_ONLY flag. If the media type is not acceptable, the method returns S_FALSE.</description>
-        </item>
-        <item>
-          <description>To set the media type, set <i>dwFlags</i> to zero. If the media type is not acceptable, the method returns DMO_E_TYPE_NOT_ACCEPTED.</description>
-        </item>
-        <item>
-          <description>To clear the current media type (if any), use the DMO_SET_TYPEF_CLEAR flag and set <i>pmt</i> to <b>NULL</b>. When the method returns, the stream no longer has a media type. The DMO cannot process samples until the application sets a new media type, unless the stream is optional.</description>
-        </item>
-      </list>
-      <para>The media types that are currently set on other streams can affect whether the media type is acceptable.</para>
-    </remarks>
-    <seealso cref="IMediaObject Interface" />
   </member>
   <member name="IMediaObject">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IMediaObject</code> interface provides methods for manipulating a Microsoft DirectX Media Object (DMO).</para>
     </summary>
   </member>

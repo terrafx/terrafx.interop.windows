@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_EDGEDETECTION_MODE">
-    <summary>
-      <para>Values for the <see cref="D2D1_EDGEDETECTION_PROP_MODE" /> property of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/edge-detection-effect">Edge Detection effect</a>.</para>
-    </summary>
+    <summary>Values for the <see cref="D2D1_EDGEDETECTION_PROP_MODE" /> property of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/edge-detection-effect">Edge Detection effect</a>.</summary>
   </member>
   <member name="D2D1_EDGEDETECTION_MODE.D2D1_EDGEDETECTION_MODE_SOBEL">
-    <summary>
-      <para>Indicates the Sobel operator should be used for edge detection.</para>
-    </summary>
+    <summary>Indicates the Sobel operator should be used for edge detection.</summary>
   </member>
   <member name="D2D1_EDGEDETECTION_MODE.D2D1_EDGEDETECTION_MODE_PREWITT">
-    <summary>
-      <para>Indicates the Prewitt operator should be used for edge detection.</para>
-    </summary>
+    <summary>Indicates the Prewitt operator should be used for edge detection.</summary>
   </member>
-  <member name="D2D1_EDGEDETECTION_MODE.D2D1_EDGEDETECTION_MODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_EDGEDETECTION_MODE.D2D1_EDGEDETECTION_MODE_FORCE_DWORD"></member>
 </doc>

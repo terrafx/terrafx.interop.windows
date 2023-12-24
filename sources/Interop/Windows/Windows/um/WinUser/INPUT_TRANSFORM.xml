@@ -3,66 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INPUT_TRANSFORM">
-    <summary>
-      <para>Defines the matrix that represents a transform on a message consumer. This matrix can be used to transform pointer input data from client coordinates to screen coordinates, while the inverse can be used to transform pointer input data from screen coordinates to client coordinates.</para>
-    </summary>
-    <seealso cref="GetPointerInputTransform" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/structures">Structures</seealso>
+    <summary>Defines the matrix that represents a transform on a message consumer. This matrix can be used to transform pointer input data from client coordinates to screen coordinates, while the inverse can be used to transform pointer input data from screen coordinates to client coordinates.</summary>
   </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._11">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._12">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._13">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._14">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._21">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._22">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._23">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._24">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._31">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._32">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._33">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._34">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._41">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._42">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._43">
-    <summary></summary>
-  </member>
-  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._44">
-    <summary></summary>
-  </member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._11"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._12"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._13"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._14"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._21"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._22"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._23"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._24"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._31"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._32"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._33"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._34"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._41"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._42"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._43"></member>
+  <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.DUMMYSTRUCTNAME._44"></member>
   <member name="INPUT_TRANSFORM.DUMMYUNIONNAME.m">
     <summary>
       <h4>- ( unnamed struct )</h4>

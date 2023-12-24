@@ -16,7 +16,7 @@ public unsafe partial struct WINTRUST_FILE_INFO
 
     /// <include file='WINTRUST_FILE_INFO.xml' path='doc/member[@name="WINTRUST_FILE_INFO.pcwszFilePath"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcwszFilePath;
+    public char* pcwszFilePath;
 
     /// <include file='WINTRUST_FILE_INFO.xml' path='doc/member[@name="WINTRUST_FILE_INFO.hFile"]/*' />
     public HANDLE hFile;

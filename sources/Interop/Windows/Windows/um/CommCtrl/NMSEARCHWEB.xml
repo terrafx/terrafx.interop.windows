@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NMSEARCHWEB">
+    <summary>Contains information used to handle an <a href="https://docs.microsoft.com//windows/win32/controls/en-searchweb">EN_SEARCHWEB</a> notification code.</summary>
+  </member>
+  <member name="NMSEARCHWEB.hdr">
+    <summary>An NMHDR structure that contains additional information about this notification.</summary>
+  </member>
+  <member name="NMSEARCHWEB.entrypoint">
+    <summary>An enum value that indicates the entry point of the search.</summary>
+  </member>
+  <member name="NMSEARCHWEB.hasQueryText">
+    <summary>TRUE if there is query text; otherwise, FALSE.</summary>
+  </member>
+  <member name="NMSEARCHWEB.invokeSucceeded">
+    <summary>TRUE if the invoke succeeded; otherwise, FALSE.</summary>
+  </member>
+</doc>

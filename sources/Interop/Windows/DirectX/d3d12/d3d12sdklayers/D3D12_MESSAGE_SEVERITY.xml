@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_MESSAGE_SEVERITY">
+    <summary>Debug message severity levels for an information queue.</summary>
+  </member>
+  <member name="D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_CORRUPTION">
+    <summary>Indicates a corruption error.</summary>
+  </member>
+  <member name="D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_ERROR">
+    <summary>Indicates an error.</summary>
+  </member>
+  <member name="D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_WARNING">
+    <summary>Indicates a warning.</summary>
+  </member>
+  <member name="D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_INFO">
+    <summary>Indicates an information message.</summary>
+  </member>
+  <member name="D3D12_MESSAGE_SEVERITY.D3D12_MESSAGE_SEVERITY_MESSAGE">
+    <summary>Indicates a message other than corruption, error, warning or information.</summary>
+  </member>
+</doc>

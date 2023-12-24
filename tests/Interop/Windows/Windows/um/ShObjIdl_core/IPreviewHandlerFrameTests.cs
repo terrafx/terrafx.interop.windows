@@ -19,32 +19,4 @@ public static unsafe partial class IPreviewHandlerFrameTests
     {
         Assert.That(typeof(IPreviewHandlerFrame).GUID, Is.EqualTo(IID_IPreviewHandlerFrame));
     }
-
-    /// <summary>Validates that the <see cref="IPreviewHandlerFrame" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPreviewHandlerFrame>(), Is.EqualTo(sizeof(IPreviewHandlerFrame)));
-    }
-
-    /// <summary>Validates that the <see cref="IPreviewHandlerFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPreviewHandlerFrame).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPreviewHandlerFrame" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPreviewHandlerFrame), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPreviewHandlerFrame), Is.EqualTo(4));
-        }
-    }
 }

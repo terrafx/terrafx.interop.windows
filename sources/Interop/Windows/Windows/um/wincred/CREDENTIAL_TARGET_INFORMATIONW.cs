@@ -10,31 +10,31 @@ public unsafe partial struct CREDENTIAL_TARGET_INFORMATIONW
 {
     /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.TargetName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* TargetName;
+    public char* TargetName;
 
     /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.NetbiosServerName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* NetbiosServerName;
+    public char* NetbiosServerName;
 
     /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.DnsServerName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* DnsServerName;
+    public char* DnsServerName;
 
     /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.NetbiosDomainName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* NetbiosDomainName;
+    public char* NetbiosDomainName;
 
     /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.DnsDomainName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* DnsDomainName;
+    public char* DnsDomainName;
 
     /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.DnsTreeName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* DnsTreeName;
+    public char* DnsTreeName;
 
     /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.PackageName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* PackageName;
+    public char* PackageName;
 
     /// <include file='CREDENTIAL_TARGET_INFORMATIONW.xml' path='doc/member[@name="CREDENTIAL_TARGET_INFORMATIONW.Flags"]/*' />
     [NativeTypeName("ULONG")]

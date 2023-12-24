@@ -19,25 +19,4 @@ public static unsafe partial class DOMDragEventTests
     {
         Assert.That(typeof(DOMDragEvent).GUID, Is.EqualTo(IID_DOMDragEvent));
     }
-
-    /// <summary>Validates that the <see cref="DOMDragEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMDragEvent>(), Is.EqualTo(sizeof(DOMDragEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMDragEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMDragEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMDragEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMDragEvent), Is.EqualTo(1));
-    }
 }

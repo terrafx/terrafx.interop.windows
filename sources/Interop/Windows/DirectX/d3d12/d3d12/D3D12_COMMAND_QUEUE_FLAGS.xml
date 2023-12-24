@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_COMMAND_QUEUE_FLAGS">
+    <summary>Specifies flags to be used when creating a command queue.</summary>
+  </member>
+  <member name="D3D12_COMMAND_QUEUE_FLAGS.D3D12_COMMAND_QUEUE_FLAG_NONE">
+    <summary>Indicates a default command queue.</summary>
+  </member>
+  <member name="D3D12_COMMAND_QUEUE_FLAGS.D3D12_COMMAND_QUEUE_FLAG_DISABLE_GPU_TIMEOUT">
+    <summary>Indicates that the GPU timeout should be disabled for this command queue.</summary>
+  </member>
+</doc>

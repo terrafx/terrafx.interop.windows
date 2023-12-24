@@ -19,32 +19,4 @@ public static unsafe partial class ISupportErrorInfoTests
     {
         Assert.That(typeof(ISupportErrorInfo).GUID, Is.EqualTo(IID_ISupportErrorInfo));
     }
-
-    /// <summary>Validates that the <see cref="ISupportErrorInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISupportErrorInfo>(), Is.EqualTo(sizeof(ISupportErrorInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="ISupportErrorInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISupportErrorInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISupportErrorInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISupportErrorInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISupportErrorInfo), Is.EqualTo(4));
-        }
-    }
 }

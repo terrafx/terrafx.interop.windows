@@ -3,173 +3,105 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FOLDERFLAGS">
-    <summary>
-      <para>A set of flags that specify folder view options. The flags are independent of each other and can be used in any combination.</para>
-    </summary>
+    <summary>A set of flags that specify folder view options. The flags are independent of each other and can be used in any combination.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NONE">
-    <summary>
-      <para>0x00000000. <b>Windows 7 and later</b>. No special view options.</para>
-    </summary>
+    <summary>0x00000000. <b>Windows 7 and later</b>. No special view options.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_AUTOARRANGE">
-    <summary>
-      <para>0x00000001. Automatically arrange the elements in the view. This implies <a href="https://docs.microsoft.com//windows/desktop/Controls/list-view-window-styles">LVS_AUTOARRANGE</a> if the list-view control is used to implement the view.</para>
-    </summary>
+    <summary>0x00000001. Automatically arrange the elements in the view. This implies <a href="https://docs.microsoft.com//windows/desktop/Controls/list-view-window-styles">LVS_AUTOARRANGE</a> if the list-view control is used to implement the view.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_ABBREVIATEDNAMES">
-    <summary>
-      <para>0x00000002. Not supported.</para>
-    </summary>
+    <summary>0x00000002. Not supported.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_SNAPTOGRID">
-    <summary>
-      <para>0x00000004. Not supported.</para>
-    </summary>
+    <summary>0x00000004. Not supported.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_OWNERDATA">
-    <summary>
-      <para>0x00000008. Not supported.</para>
-    </summary>
+    <summary>0x00000008. Not supported.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_BESTFITWINDOW">
-    <summary>
-      <para>0x00000010. Not supported.</para>
-    </summary>
+    <summary>0x00000010. Not supported.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_DESKTOP">
-    <summary>
-      <para>0x00000020. Make the folder behave like the desktop. This value applies only to the desktop and is not used for typical Shell folders. This flag implies <b>FWF_NOCLIENTEDGE</b> and <b>FWF_NOSCROLL</b>.</para>
-    </summary>
+    <summary>0x00000020. Make the folder behave like the desktop. This value applies only to the desktop and is not used for typical Shell folders. This flag implies <b>FWF_NOCLIENTEDGE</b> and <b>FWF_NOSCROLL</b>.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_SINGLESEL">
-    <summary>
-      <para>0x00000040. Do not allow more than a single item to be selected. This is used in the common dialog boxes.</para>
-    </summary>
+    <summary>0x00000040. Do not allow more than a single item to be selected. This is used in the common dialog boxes.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOSUBFOLDERS">
-    <summary>
-      <para>0x00000080. Do not show subfolders.</para>
-    </summary>
+    <summary>0x00000080. Do not show subfolders.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_TRANSPARENT">
-    <summary>
-      <para>0x00000100. Draw transparently. This is used only for the desktop.</para>
-    </summary>
+    <summary>0x00000100. Draw transparently. This is used only for the desktop.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOCLIENTEDGE">
-    <summary>
-      <para>0x00000200. Not supported.</para>
-    </summary>
+    <summary>0x00000200. Not supported.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOSCROLL">
-    <summary>
-      <para>0x00000400. Do not add scroll bars. This is used only for the desktop.</para>
-    </summary>
+    <summary>0x00000400. Do not add scroll bars. This is used only for the desktop.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_ALIGNLEFT">
-    <summary>
-      <para>0x00000800. The view should be left-aligned. This implies <a href="https://docs.microsoft.com//windows/desktop/Controls/list-view-window-styles">LVS_ALIGNLEFT</a> if the list-view control is used to implement the view.</para>
-    </summary>
+    <summary>0x00000800. The view should be left-aligned. This implies <a href="https://docs.microsoft.com//windows/desktop/Controls/list-view-window-styles">LVS_ALIGNLEFT</a> if the list-view control is used to implement the view.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOICONS">
-    <summary>
-      <para>0x00001000. The view should not display icons.</para>
-    </summary>
+    <summary>0x00001000. The view should not display icons.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_SHOWSELALWAYS">
-    <summary>
-      <para>0x00002000. This flag is deprecated as of Windows XP and has no effect. Always show the selection.</para>
-    </summary>
+    <summary>0x00002000. This flag is deprecated as of Windows XP and has no effect. Always show the selection.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOVISIBLE">
-    <summary>
-      <para>0x00004000. Not supported.</para>
-    </summary>
+    <summary>0x00004000. Not supported.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_SINGLECLICKACTIVATE">
-    <summary>
-      <para>0x00008000. Not supported.</para>
-    </summary>
+    <summary>0x00008000. Not supported.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOWEBVIEW">
-    <summary>
-      <para>0x00010000. The view should not be shown as a web view.</para>
-    </summary>
+    <summary>0x00010000. The view should not be shown as a web view.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_HIDEFILENAMES">
-    <summary>
-      <para>0x00020000. The view should not display file names.</para>
-    </summary>
+    <summary>0x00020000. The view should not display file names.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_CHECKSELECT">
-    <summary>
-      <para>0x00040000. Turns on the check mode for the view.</para>
-    </summary>
+    <summary>0x00040000. Turns on the check mode for the view.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOENUMREFRESH">
-    <summary>
-      <para>0x00080000. <b>Windows Vista and later</b>. Do not re-enumerate the view (or drop the current contents of the view) when the view is refreshed.</para>
-    </summary>
+    <summary>0x00080000. <b>Windows Vista and later</b>. Do not re-enumerate the view (or drop the current contents of the view) when the view is refreshed.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOGROUPING">
-    <summary>
-      <para>0x00100000. <b>Windows Vista and later</b>. Do not allow grouping in the view</para>
-    </summary>
+    <summary>0x00100000. <b>Windows Vista and later</b>. Do not allow grouping in the view</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_FULLROWSELECT">
-    <summary>
-      <para>0x00200000. <b>Windows Vista and later</b>. When an item is selected, the item and all its sub-items are highlighted.</para>
-    </summary>
+    <summary>0x00200000. <b>Windows Vista and later</b>. When an item is selected, the item and all its sub-items are highlighted.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOFILTERS">
-    <summary>
-      <para>0x00400000. <b>Windows Vista and later</b>. Do not display filters in the view.</para>
-    </summary>
+    <summary>0x00400000. <b>Windows Vista and later</b>. Do not display filters in the view.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOCOLUMNHEADER">
-    <summary>
-      <para>0x00800000. <b>Windows Vista and later</b>. Do not display a column header in the view in any view mode.</para>
-    </summary>
+    <summary>0x00800000. <b>Windows Vista and later</b>. Do not display a column header in the view in any view mode.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOHEADERINALLVIEWS">
-    <summary>
-      <para>0x01000000. <b>Windows Vista and later</b>. Only show the column header in details view mode.</para>
-    </summary>
+    <summary>0x01000000. <b>Windows Vista and later</b>. Only show the column header in details view mode.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_EXTENDEDTILES">
-    <summary>
-      <para>0x02000000. <b>Windows Vista and later</b>. When the view is in "tile view mode" the layout of a single item should be extended to the width of the view.</para>
-    </summary>
+    <summary>0x02000000. <b>Windows Vista and later</b>. When the view is in "tile view mode" the layout of a single item should be extended to the width of the view.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_TRICHECKSELECT">
-    <summary>
-      <para>0x04000000. <b>Windows Vista and later</b>. Not supported.</para>
-    </summary>
+    <summary>0x04000000. <b>Windows Vista and later</b>. Not supported.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_AUTOCHECKSELECT">
-    <summary>
-      <para>0x08000000. <b>Windows Vista and later</b>. Items can be selected using checkboxes.</para>
-    </summary>
+    <summary>0x08000000. <b>Windows Vista and later</b>. Items can be selected using checkboxes.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_NOBROWSERVIEWSTATE">
-    <summary>
-      <para>0x10000000. <b>Windows Vista and later</b>. The view should not save view state in the browser.</para>
-    </summary>
+    <summary>0x10000000. <b>Windows Vista and later</b>. The view should not save view state in the browser.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_SUBSETGROUPS">
-    <summary>
-      <para>0x20000000. <b>Windows Vista and later</b>. The view should list the number of items displayed in each group.  To be used with <see cref="IFolderView2.SetGroupSubsetCount" />.</para>
-    </summary>
+    <summary>0x20000000. <b>Windows Vista and later</b>. The view should list the number of items displayed in each group. To be used with <see cref="IFolderView2.SetGroupSubsetCount" />.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_USESEARCHFOLDER">
-    <summary>
-      <para>0x40000000. <b>Windows Vista and later</b>. Use the search folder for stacking and searching.</para>
-    </summary>
+    <summary>0x40000000. <b>Windows Vista and later</b>. Use the search folder for stacking and searching.</summary>
   </member>
   <member name="FOLDERFLAGS.FWF_ALLOWRTLREADING">
-    <summary>
-      <para>(int)0x80000000. <b>Windows Vista and later</b>. Ensure right-to-left reading layout in a right-to-left system. Without this flag, the view displays strings from left-to-right both on systems set to left-to-right and right-to-left reading layout, which ensures that file names display correctly.</para>
-    </summary>
+    <summary>(int)0x80000000. <b>Windows Vista and later</b>. Ensure right-to-left reading layout in a right-to-left system. Without this flag, the view displays strings from left-to-right both on systems set to left-to-right and right-to-left reading layout, which ensures that file names display correctly.</summary>
   </member>
 </doc>

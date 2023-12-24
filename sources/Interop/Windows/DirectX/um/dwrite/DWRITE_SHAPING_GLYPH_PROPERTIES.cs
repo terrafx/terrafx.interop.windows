@@ -17,7 +17,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
     public ushort justification
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)(_bitfield & 0xFu);
         }
@@ -34,7 +34,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
     public ushort isClusterStart
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 4) & 0x1u);
         }
@@ -51,7 +51,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
     public ushort isDiacritic
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 5) & 0x1u);
         }
@@ -68,7 +68,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
     public ushort isZeroWidthSpace
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 6) & 0x1u);
         }
@@ -85,7 +85,7 @@ public partial struct DWRITE_SHAPING_GLYPH_PROPERTIES
     public ushort reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 7) & 0x1FFu);
         }

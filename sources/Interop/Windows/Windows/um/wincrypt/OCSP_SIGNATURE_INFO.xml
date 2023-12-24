@@ -3,34 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OCSP_SIGNATURE_INFO">
-    <summary>
-      <para>The <b>OCSP_SIGNATURE_INFO</b> structure contains a signature for an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request or response. The <see cref="OCSP_SIGNED_REQUEST_INFO" /> and <see cref="OCSP_BASIC_SIGNED_RESPONSE_INFO" /> structures use this structure.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_BLOB</seealso>
-    <seealso cref="CRYPT_ALGORITHM_IDENTIFIER" />
-    <seealso cref="CRYPT_BIT_BLOB" />
-    <seealso cref="OCSP_BASIC_SIGNED_RESPONSE_INFO" />
-    <seealso cref="OCSP_SIGNED_REQUEST_INFO" />
-    <seealso href="https://www.ietf.org/rfc/rfc2560.txt">RFC 2560  Online Certificate Status Protocol</seealso>
+    <summary>The <b>OCSP_SIGNATURE_INFO</b> structure contains a signature for an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) request or response. The <see cref="OCSP_SIGNED_REQUEST_INFO" /> and <see cref="OCSP_BASIC_SIGNED_RESPONSE_INFO" /> structures use this structure.</summary>
   </member>
   <member name="OCSP_SIGNATURE_INFO.SignatureAlgorithm">
-    <summary>
-      <para>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the algorithm used to create the <b>Signature</b>.</para>
-    </summary>
+    <summary>A <see cref="CRYPT_ALGORITHM_IDENTIFIER" /> structure that specifies the algorithm used to create the <b>Signature</b>.</summary>
   </member>
   <member name="OCSP_SIGNATURE_INFO.Signature">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains a signed hash of an <see cref="OCSP_REQUEST_INFO" /> or <see cref="OCSP_BASIC_RESPONSE_INFO" /> structure.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that contains a signed hash of an <see cref="OCSP_REQUEST_INFO" /> or <see cref="OCSP_BASIC_RESPONSE_INFO" /> structure.</summary>
   </member>
   <member name="OCSP_SIGNATURE_INFO.cCertEncoded">
-    <summary>
-      <para>The number of elements in the <b>rgCertEncoded</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgCertEncoded</b> array.</summary>
   </member>
   <member name="OCSP_SIGNATURE_INFO.rgCertEncoded">
-    <summary>
-      <para>An array of pointers to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_BLOB</a> structures, each of which contains an encoded signature certificate.</para>
-    </summary>
+    <summary>An array of pointers to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_BLOB</a> structures, each of which contains an encoded signature certificate.</summary>
   </member>
 </doc>

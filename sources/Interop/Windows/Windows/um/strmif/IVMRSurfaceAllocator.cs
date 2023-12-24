@@ -26,7 +26,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRSurfaceAllocator*, Guid*, void**, int>)(lpVtbl[0]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurfaceAllocator*, Guid*, void**, int>)(lpVtbl[0]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRSurfaceAllocator*, uint>)(lpVtbl[1]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurfaceAllocator*, uint>)(lpVtbl[1]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRSurfaceAllocator*, uint>)(lpVtbl[2]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurfaceAllocator*, uint>)(lpVtbl[2]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRSurfaceAllocator.xml' path='doc/member[@name="IVMRSurfaceAllocator.AllocateSurface"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
     [VtblIndex(3)]
     public HRESULT AllocateSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, VMRALLOCATIONINFO* lpAllocInfo, [NativeTypeName("DWORD *")] uint* lpdwActualBuffers, [NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface)
     {
-        return ((delegate* unmanaged<IVMRSurfaceAllocator*, nuint, VMRALLOCATIONINFO*, uint*, IDirectDrawSurface7**, int>)(lpVtbl[3]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwUserID, lpAllocInfo, lpdwActualBuffers, lplpSurface);
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurfaceAllocator*, nuint, VMRALLOCATIONINFO*, uint*, IDirectDrawSurface7**, int>)(lpVtbl[3]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwUserID, lpAllocInfo, lpdwActualBuffers, lplpSurface);
     }
 
     /// <include file='IVMRSurfaceAllocator.xml' path='doc/member[@name="IVMRSurfaceAllocator.FreeSurface"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
     [VtblIndex(4)]
     public HRESULT FreeSurface([NativeTypeName("DWORD_PTR")] nuint dwID)
     {
-        return ((delegate* unmanaged<IVMRSurfaceAllocator*, nuint, int>)(lpVtbl[4]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwID);
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurfaceAllocator*, nuint, int>)(lpVtbl[4]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwID);
     }
 
     /// <include file='IVMRSurfaceAllocator.xml' path='doc/member[@name="IVMRSurfaceAllocator.PrepareSurface"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
     [VtblIndex(5)]
     public HRESULT PrepareSurface([NativeTypeName("DWORD_PTR")] nuint dwUserID, [NativeTypeName("LPDIRECTDRAWSURFACE7")] IDirectDrawSurface7* lpSurface, [NativeTypeName("DWORD")] uint dwSurfaceFlags)
     {
-        return ((delegate* unmanaged<IVMRSurfaceAllocator*, nuint, IDirectDrawSurface7*, uint, int>)(lpVtbl[5]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwUserID, lpSurface, dwSurfaceFlags);
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurfaceAllocator*, nuint, IDirectDrawSurface7*, uint, int>)(lpVtbl[5]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), dwUserID, lpSurface, dwSurfaceFlags);
     }
 
     /// <include file='IVMRSurfaceAllocator.xml' path='doc/member[@name="IVMRSurfaceAllocator.AdviseNotify"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
     [VtblIndex(6)]
     public HRESULT AdviseNotify(IVMRSurfaceAllocatorNotify* lpIVMRSurfAllocNotify)
     {
-        return ((delegate* unmanaged<IVMRSurfaceAllocator*, IVMRSurfaceAllocatorNotify*, int>)(lpVtbl[6]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), lpIVMRSurfAllocNotify);
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurfaceAllocator*, IVMRSurfaceAllocatorNotify*, int>)(lpVtbl[6]))((IVMRSurfaceAllocator*)Unsafe.AsPointer(ref this), lpIVMRSurfAllocNotify);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct IVMRSurfaceAllocator : IVMRSurfaceAllocator.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD_PTR, VMRALLOCATIONINFO *, DWORD *, LPDIRECTDRAWSURFACE7 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, VMRALLOCATIONINFO*, uint*, IDirectDrawSurface7**, int> AllocateSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, VMRALLOCATIONINFO*, uint*, IDirectDrawSurface7**, int> AllocateSurface;
 
         [NativeTypeName("HRESULT (DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, int> FreeSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, int> FreeSurface;
 
         [NativeTypeName("HRESULT (DWORD_PTR, LPDIRECTDRAWSURFACE7, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, nuint, IDirectDrawSurface7*, uint, int> PrepareSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, nuint, IDirectDrawSurface7*, uint, int> PrepareSurface;
 
         [NativeTypeName("HRESULT (IVMRSurfaceAllocatorNotify *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IVMRSurfaceAllocatorNotify*, int> AdviseNotify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IVMRSurfaceAllocatorNotify*, int> AdviseNotify;
     }
 }

@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="USERCLASSTYPE">
-    <summary>
-      <para>Indicates the different variants of the display name associated with a class of objects.</para>
-    </summary>
-    <seealso cref="IOleObject.GetUserType" />
-    <seealso cref="OleRegGetUserType" />
+    <summary>Indicates the different variants of the display name associated with a class of objects.</summary>
   </member>
   <member name="USERCLASSTYPE.USERCLASSTYPE_FULL">
-    <summary>
-      <para>The full type name of the class.</para>
-    </summary>
+    <summary>The full type name of the class.</summary>
   </member>
   <member name="USERCLASSTYPE.USERCLASSTYPE_SHORT">
-    <summary>
-      <para>A short name (maximum of 15 characters) that is used for popup menus and the <b>Links</b> dialog box.</para>
-    </summary>
+    <summary>A short name (maximum of 15 characters) that is used for popup menus and the <b>Links</b> dialog box.</summary>
   </member>
   <member name="USERCLASSTYPE.USERCLASSTYPE_APPNAME">
-    <summary>
-      <para>The name of the application servicing the class and is used in the result text in dialog boxes.</para>
-    </summary>
+    <summary>The name of the application servicing the class and is used in the result text in dialog boxes.</summary>
   </member>
 </doc>

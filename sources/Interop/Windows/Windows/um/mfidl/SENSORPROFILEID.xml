@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SENSORPROFILEID">
-    <summary>
-      <para>Describes a sensor profile ID.</para>
-    </summary>
+    <summary>Describes a sensor profile ID.</summary>
   </member>
   <member name="SENSORPROFILEID.Type">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/medfound/sensor-profile-guids">Sensor Profile GUID</a> that describes the type of sensor profile.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//windows/desktop/medfound/sensor-profile-guids">Sensor Profile GUID</a> that describes the type of sensor profile.</summary>
   </member>
   <member name="SENSORPROFILEID.Index">
-    <summary>
-      <para>The index of the sensor profile.</para>
-    </summary>
+    <summary>The index of the sensor profile.</summary>
   </member>
   <member name="SENSORPROFILEID.Unused">
-    <summary>
-      <para>Not currently used.</para>
-    </summary>
+    <summary>Not currently used.</summary>
   </member>
 </doc>

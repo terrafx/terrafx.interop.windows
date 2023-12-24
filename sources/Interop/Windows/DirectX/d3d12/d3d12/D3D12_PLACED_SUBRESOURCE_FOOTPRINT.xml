@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_PLACED_SUBRESOURCE_FOOTPRINT">
+    <summary>Describes the footprint of a placed subresource, including the offset and the D3D12_SUBRESOURCE_FOOTPRINT.</summary>
+  </member>
+  <member name="D3D12_PLACED_SUBRESOURCE_FOOTPRINT.Offset">
+    <summary>The offset of the subresource within the parent resource, in bytes. The offset between the start of the parent resource and this subresource.</summary>
+  </member>
+  <member name="D3D12_PLACED_SUBRESOURCE_FOOTPRINT.Footprint">
+    <summary>The format, width, height, depth, and row-pitch of the subresource, as a <see cref="D3D12_SUBRESOURCE_FOOTPRINT" /> structure.</summary>
+  </member>
+</doc>

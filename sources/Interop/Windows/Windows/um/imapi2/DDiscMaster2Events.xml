@@ -3,43 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DDiscMaster2Events.NotifyDeviceAdded">
-    <summary>
-      <para>Receives notification when an optical media device is added to the computer.</para>
-    </summary>
+    <summary>Receives notification when an optical media device is added to the computer.</summary>
     <param name="object">
       <para>An <see cref="IDiscMaster2" /> interface that you can use to enumerate the devices on the computer.</para>
       <para>This parameter is a <b>MsftDiscMaster2</b> object in script.</para>
     </param>
-    <param name="uniqueId">
-      <para>String that contains an identifier that uniquely identifies the optical media device that was added to the computer.</para>
-    </param>
-    <returns>
-      <para>Return values are ignored.</para>
-    </returns>
-    <seealso cref="DDiscMaster2Events" />
-    <seealso cref="IDiscMaster2" />
+    <param name="uniqueId">String that contains an identifier that uniquely identifies the optical media device that was added to the computer.</param>
+    <returns>Return values are ignored.</returns>
   </member>
   <member name="DDiscMaster2Events.NotifyDeviceRemoved">
-    <summary>
-      <para>Receives notification when an optical media device is removed from the computer.</para>
-    </summary>
+    <summary>Receives notification when an optical media device is removed from the computer.</summary>
     <param name="object">
       <para>An <see cref="IDiscMaster2" /> interface that you can use to enumerate the devices on the computer.</para>
       <para>This parameter is a <b>MsftDiscMaster2</b> object in script.</para>
     </param>
-    <param name="uniqueId">
-      <para>String that contains an identifier that uniquely identifies the optical media device that was added to the computer.</para>
-    </param>
-    <returns>
-      <para>Return values are ignored.</para>
-    </returns>
-    <seealso cref="DDiscMaster2Events" />
-    <seealso cref="IDiscMaster2" />
+    <param name="uniqueId">String that contains an identifier that uniquely identifies the optical media device that was added to the computer.</param>
+    <returns>Return values are ignored.</returns>
   </member>
   <member name="DDiscMaster2Events">
-    <summary>
-      <para>Implement this interface to receive notification when a CD or DVD device is added to or removed from the computer.</para>
-    </summary>
-    <seealso cref="IDiscMaster2" />
+    <summary>Implement this interface to receive notification when a CD or DVD device is added to or removed from the computer.</summary>
   </member>
 </doc>

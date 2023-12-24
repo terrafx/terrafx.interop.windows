@@ -25,7 +25,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, Guid*, void**, int>)(lpVtbl[0]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, Guid*, void**, int>)(lpVtbl[0]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, uint>)(lpVtbl[1]))((IManipulationProcessor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, uint>)(lpVtbl[1]))((IManipulationProcessor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, uint>)(lpVtbl[2]))((IManipulationProcessor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, uint>)(lpVtbl[2]))((IManipulationProcessor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_SupportedManipulations"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(3)]
     public HRESULT get_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS* manipulations)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, MANIPULATION_PROCESSOR_MANIPULATIONS*, int>)(lpVtbl[3]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulations);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, MANIPULATION_PROCESSOR_MANIPULATIONS*, int>)(lpVtbl[3]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulations);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_SupportedManipulations"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(4)]
     public HRESULT put_SupportedManipulations(MANIPULATION_PROCESSOR_MANIPULATIONS manipulations)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, MANIPULATION_PROCESSOR_MANIPULATIONS, int>)(lpVtbl[4]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulations);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, MANIPULATION_PROCESSOR_MANIPULATIONS, int>)(lpVtbl[4]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulations);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_PivotPointX"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(5)]
     public HRESULT get_PivotPointX(float* pivotPointX)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[5]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointX);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float*, int>)(lpVtbl[5]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointX);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_PivotPointX"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(6)]
     public HRESULT put_PivotPointX(float pivotPointX)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[6]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointX);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float, int>)(lpVtbl[6]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointX);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_PivotPointY"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(7)]
     public HRESULT get_PivotPointY(float* pivotPointY)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[7]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointY);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float*, int>)(lpVtbl[7]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointY);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_PivotPointY"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(8)]
     public HRESULT put_PivotPointY(float pivotPointY)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[8]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointY);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float, int>)(lpVtbl[8]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotPointY);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_PivotRadius"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(9)]
     public HRESULT get_PivotRadius(float* pivotRadius)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[9]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotRadius);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float*, int>)(lpVtbl[9]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotRadius);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_PivotRadius"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(10)]
     public HRESULT put_PivotRadius(float pivotRadius)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[10]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotRadius);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float, int>)(lpVtbl[10]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), pivotRadius);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.CompleteManipulation"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(11)]
     public HRESULT CompleteManipulation()
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, int>)(lpVtbl[11]))((IManipulationProcessor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, int>)(lpVtbl[11]))((IManipulationProcessor*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessDown"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(12)]
     public HRESULT ProcessDown([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[12]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[12]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessMove"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(13)]
     public HRESULT ProcessMove([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[13]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[13]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessUp"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(14)]
     public HRESULT ProcessUp([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[14]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, uint, float, float, int>)(lpVtbl[14]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessDownWithTime"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(15)]
     public HRESULT ProcessDownWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[15]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[15]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessMoveWithTime"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(16)]
     public HRESULT ProcessMoveWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[16]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[16]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.ProcessUpWithTime"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(17)]
     public HRESULT ProcessUpWithTime([NativeTypeName("MANIPULATOR_ID")] uint manipulatorId, float x, float y, [NativeTypeName("DWORD")] uint timestamp)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[17]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, uint, float, float, uint, int>)(lpVtbl[17]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), manipulatorId, x, y, timestamp);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.GetVelocityX"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(18)]
     public HRESULT GetVelocityX(float* velocityX)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[18]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), velocityX);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float*, int>)(lpVtbl[18]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), velocityX);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.GetVelocityY"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(19)]
     public HRESULT GetVelocityY(float* velocityY)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[19]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), velocityY);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float*, int>)(lpVtbl[19]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), velocityY);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.GetExpansionVelocity"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(20)]
     public HRESULT GetExpansionVelocity(float* expansionVelocity)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[20]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), expansionVelocity);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float*, int>)(lpVtbl[20]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), expansionVelocity);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.GetAngularVelocity"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(21)]
     public HRESULT GetAngularVelocity(float* angularVelocity)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[21]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), angularVelocity);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float*, int>)(lpVtbl[21]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), angularVelocity);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.get_MinimumScaleRotateRadius"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(22)]
     public HRESULT get_MinimumScaleRotateRadius(float* minRadius)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float*, int>)(lpVtbl[22]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), minRadius);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float*, int>)(lpVtbl[22]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), minRadius);
     }
 
     /// <include file='IManipulationProcessor.xml' path='doc/member[@name="IManipulationProcessor.put_MinimumScaleRotateRadius"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
     [VtblIndex(23)]
     public HRESULT put_MinimumScaleRotateRadius(float minRadius)
     {
-        return ((delegate* unmanaged<IManipulationProcessor*, float, int>)(lpVtbl[23]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), minRadius);
+        return ((delegate* unmanaged[MemberFunction]<IManipulationProcessor*, float, int>)(lpVtbl[23]))((IManipulationProcessor*)Unsafe.AsPointer(ref this), minRadius);
     }
 
     public interface Interface : IUnknown.Interface
@@ -284,75 +284,75 @@ public unsafe partial struct IManipulationProcessor : IManipulationProcessor.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MANIPULATION_PROCESSOR_MANIPULATIONS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MANIPULATION_PROCESSOR_MANIPULATIONS*, int> get_SupportedManipulations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MANIPULATION_PROCESSOR_MANIPULATIONS*, int> get_SupportedManipulations;
 
         [NativeTypeName("HRESULT (MANIPULATION_PROCESSOR_MANIPULATIONS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MANIPULATION_PROCESSOR_MANIPULATIONS, int> put_SupportedManipulations;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MANIPULATION_PROCESSOR_MANIPULATIONS, int> put_SupportedManipulations;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_PivotPointX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_PivotPointX;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_PivotPointX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_PivotPointX;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_PivotPointY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_PivotPointY;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_PivotPointY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_PivotPointY;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_PivotRadius;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_PivotRadius;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_PivotRadius;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_PivotRadius;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CompleteManipulation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CompleteManipulation;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, float, int> ProcessDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, float, int> ProcessDown;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, float, int> ProcessMove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, float, int> ProcessMove;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, float, int> ProcessUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, float, int> ProcessUp;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, float, uint, int> ProcessDownWithTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, float, uint, int> ProcessDownWithTime;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, float, uint, int> ProcessMoveWithTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, float, uint, int> ProcessMoveWithTime;
 
         [NativeTypeName("HRESULT (MANIPULATOR_ID, FLOAT, FLOAT, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, float, uint, int> ProcessUpWithTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, float, uint, int> ProcessUpWithTime;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetVelocityX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetVelocityX;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetVelocityY;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetVelocityY;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetExpansionVelocity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetExpansionVelocity;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> GetAngularVelocity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> GetAngularVelocity;
 
         [NativeTypeName("HRESULT (FLOAT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, int> get_MinimumScaleRotateRadius;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, int> get_MinimumScaleRotateRadius;
 
         [NativeTypeName("HRESULT (FLOAT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, int> put_MinimumScaleRotateRadius;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, int> put_MinimumScaleRotateRadius;
     }
 }

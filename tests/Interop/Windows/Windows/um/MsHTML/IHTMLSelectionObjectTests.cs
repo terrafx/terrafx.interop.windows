@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLSelectionObjectTests
     {
         Assert.That(typeof(IHTMLSelectionObject).GUID, Is.EqualTo(IID_IHTMLSelectionObject));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLSelectionObject" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLSelectionObject>(), Is.EqualTo(sizeof(IHTMLSelectionObject)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLSelectionObject" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLSelectionObject).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLSelectionObject" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLSelectionObject), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLSelectionObject), Is.EqualTo(4));
-        }
-    }
 }

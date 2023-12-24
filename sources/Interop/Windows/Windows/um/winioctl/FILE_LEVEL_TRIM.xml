@@ -3,30 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_LEVEL_TRIM">
-    <summary>
-      <para>Used as input to the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_file_level_trim">FSCTL_FILE_LEVEL_TRIM</a> control code.</para>
-    </summary>
-    <seealso cref="FILE_LEVEL_TRIM_OUTPUT" />
-    <seealso cref="FILE_LEVEL_TRIM_RANGE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_file_level_trim">FSCTL_FILE_LEVEL_TRIM</seealso>
+    <summary>Used as input to the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_file_level_trim">FSCTL_FILE_LEVEL_TRIM</a> control code.</summary>
   </member>
   <member name="FILE_LEVEL_TRIM.Key">
-    <summary>
-      <para>Reserved. Set to zero (0).</para>
-    </summary>
+    <summary>Reserved. Set to zero (0).</summary>
   </member>
   <member name="FILE_LEVEL_TRIM.NumRanges">
-    <summary>
-      <para>Number of <see cref="FILE_LEVEL_TRIM_RANGE" /> entries in
-the <b>Ranges</b> member. On return should be compared with the
-<b>NumRangesProcessed</b> member of the
-<see cref="FILE_LEVEL_TRIM_OUTPUT" /> structure.</para>
-    </summary>
+    <summary>Number of <see cref="FILE_LEVEL_TRIM_RANGE" /> entries in the <b>Ranges</b> member. On return should be compared with the<b>NumRangesProcessed</b> member of the<see cref="FILE_LEVEL_TRIM_OUTPUT" /> structure.</summary>
   </member>
   <member name="FILE_LEVEL_TRIM.Ranges">
-    <summary>
-      <para>Array of ranges that describe the portions of the file that are to be trimmed.</para>
-    </summary>
+    <summary>Array of ranges that describe the portions of the file that are to be trimmed.</summary>
   </member>
 </doc>

@@ -26,12 +26,12 @@ public static unsafe partial class WinRT
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<D2D_RECT_F>());
             return ref Unsafe.As<byte, D2D_RECT_F>(ref MemoryMarshal.GetReference(data));
@@ -44,12 +44,12 @@ public static unsafe partial class WinRT
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x00, 0x00, 0x80, 0x3F,
                 0x00, 0x00, 0x80, 0x3F,
                 0x00, 0x00, 0x80, 0x3F,
                 0x00, 0x00, 0x80, 0x3F
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<DXGI_RGBA>());
             return ref Unsafe.As<byte, DXGI_RGBA>(ref MemoryMarshal.GetReference(data));

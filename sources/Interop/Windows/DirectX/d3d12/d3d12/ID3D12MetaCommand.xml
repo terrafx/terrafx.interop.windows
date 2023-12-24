@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12MetaCommand.GetRequiredParameterResourceSize">
+    <summary>Retrieves the amount of memory required for the specified runtime parameter resource for a meta command, for the specified stage.</summary>
+    <param name="Stage">A <b>D3D12_META_COMMAND_PARAMETER_STAGE</b> specifying the stage to which the parameter belongs.</param>
+    <param name="ParameterIndex">The zero-based index of the parameter within the stage.</param>
+    <returns>The number of bytes required for the specified runtime parameter resource.</returns>
+  </member>
+  <member name="ID3D12MetaCommand">
+    <summary>
+      <para>Represents a meta command. A meta command is a Direct3D 12 object representing an algorithm that is accelerated by independent hardware vendors (IHVs). It's an opaque reference to a command generator that is implemented by the driver.</para>
+      <para>The lifetime of a meta command is tied to the lifetime of the command list that references it. So, you should only free a meta command if no command list referencing it is currently executing on the GPU.</para>
+      <para>A meta command can encapsulate a set of pipeline state objects (PSOs), bindings, intermediate resource states, and Draw/Dispatch calls. You can think of the signature of a meta command as being similar to a C-style function, with multiple in/out parameters, and no return value.</para>
+    </summary>
+  </member>
+</doc>

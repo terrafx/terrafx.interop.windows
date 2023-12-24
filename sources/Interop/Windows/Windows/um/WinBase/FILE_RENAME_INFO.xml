@@ -3,44 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_RENAME_INFO">
-    <summary>
-      <para>Contains the name to which the file should be renamed. Use only when calling
-<see cref="SetFileInformationByHandle" />.</para>
-    </summary>
-    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
-    <seealso cref="SetFileInformationByHandle" />
+    <summary>Contains the target name to which the source file should be renamed. Use only when calling<see cref="SetFileInformationByHandle" />.</summary>
   </member>
-  <member name="FILE_RENAME_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="FILE_RENAME_INFO.DUMMYUNIONNAME"></member>
   <member name="FILE_RENAME_INFO.DUMMYUNIONNAME.ReplaceIfExists">
-    <summary>
-      <para>
-        <b>TRUE</b> to replace the file; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>This field is used when <b>SetFileInformationByHandle</b>'s <i>FileInformationClass</i> parameter is set to <b>FileRenameInfo</b>. If this field is <b>TRUE</b> and the target file exists then the target file will be replaced by the source file. If this field is <b>FALSE</b> and the target file exists then operation will return an error.</summary>
   </member>
   <member name="FILE_RENAME_INFO.DUMMYUNIONNAME.Flags">
-    <summary></summary>
-  </member>
-  <member name="FILE_RENAME_INFO.ReplaceIfExists">
-    <summary>
-      <para>
-        <b>TRUE</b> to replace the file; otherwise, <b>FALSE</b>.</para>
-    </summary>
+    <summary>This field is used when <b>SetFileInformationByHandle</b>'s <i>FileInformationClass</i> parameter is set to <b>FileRenameInfoEx</b>.</summary>
   </member>
   <member name="FILE_RENAME_INFO.RootDirectory">
-    <summary>
-      <para>A handle to the root directory in which the file to be renamed is located.</para>
-    </summary>
+    <summary>This field should be set to NULL.</summary>
   </member>
   <member name="FILE_RENAME_INFO.FileNameLength">
-    <summary>
-      <para>The size of <b>FileName</b> in bytes.</para>
-    </summary>
+    <summary>The size of <b>FileName</b> in bytes, not including the NUL-termination.</summary>
   </member>
   <member name="FILE_RENAME_INFO.FileName">
     <summary>
-      <para>The new file name.</para>
+      <para>A NUL-terminated wide-character string containing the new path to the file. The value can be one of the following:</para>
+      <list type="bullet">
+        <item>
+          <description>An absolute path (drive, directory, and filename).</description>
+        </item>
+        <item>
+          <description>A path relative to the process's current directory.</description>
+        </item>
+        <item>
+          <description>The new name of an NTFS file stream, starting with <code>:</code>.</description>
+        </item>
+      </list>
     </summary>
   </member>
 </doc>

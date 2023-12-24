@@ -8,11 +8,11 @@ using System.Runtime.CompilerServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='RTL_USER_PROCESS_PARAMETERS.xml' path='doc/member[@name="RTL_USER_PROCESS_PARAMETERS"]/*' />
-public unsafe partial struct RTL_USER_PROCESS_PARAMETERS
+public partial struct RTL_USER_PROCESS_PARAMETERS
 {
     /// <include file='RTL_USER_PROCESS_PARAMETERS.xml' path='doc/member[@name="RTL_USER_PROCESS_PARAMETERS.Reserved1"]/*' />
     [NativeTypeName("BYTE[16]")]
-    public fixed byte Reserved1[16];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='RTL_USER_PROCESS_PARAMETERS.xml' path='doc/member[@name="RTL_USER_PROCESS_PARAMETERS.Reserved2"]/*' />
     [NativeTypeName("PVOID[10]")]
@@ -23,6 +23,13 @@ public unsafe partial struct RTL_USER_PROCESS_PARAMETERS
 
     /// <include file='RTL_USER_PROCESS_PARAMETERS.xml' path='doc/member[@name="RTL_USER_PROCESS_PARAMETERS.CommandLine"]/*' />
     public UNICODE_STRING CommandLine;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
 
     /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
     public unsafe partial struct _Reserved2_e__FixedBuffer

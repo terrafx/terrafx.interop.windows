@@ -19,32 +19,4 @@ public static unsafe partial class IWriteEngine2EventArgsTests
     {
         Assert.That(typeof(IWriteEngine2EventArgs).GUID, Is.EqualTo(IID_IWriteEngine2EventArgs));
     }
-
-    /// <summary>Validates that the <see cref="IWriteEngine2EventArgs" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWriteEngine2EventArgs>(), Is.EqualTo(sizeof(IWriteEngine2EventArgs)));
-    }
-
-    /// <summary>Validates that the <see cref="IWriteEngine2EventArgs" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWriteEngine2EventArgs).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWriteEngine2EventArgs" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWriteEngine2EventArgs), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWriteEngine2EventArgs), Is.EqualTo(4));
-        }
-    }
 }

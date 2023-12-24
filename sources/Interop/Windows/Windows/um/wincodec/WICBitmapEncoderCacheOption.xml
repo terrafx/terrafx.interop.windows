@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICBitmapEncoderCacheOption">
-    <summary>
-      <para>Specifies the cache options available for an encoder.</para>
-    </summary>
+    <summary>Specifies the cache options available for an encoder.</summary>
   </member>
   <member name="WICBitmapEncoderCacheOption.WICBitmapEncoderCacheInMemory">
-    <summary>
-      <para>The encoder is cached in memory. This option is not supported.</para>
-    </summary>
+    <summary>The encoder is cached in memory. This option is not supported.</summary>
   </member>
   <member name="WICBitmapEncoderCacheOption.WICBitmapEncoderCacheTempFile">
-    <summary>
-      <para>The encoder is cached to a temporary file. This option is not supported.</para>
-    </summary>
+    <summary>The encoder is cached to a temporary file. This option is not supported.</summary>
   </member>
   <member name="WICBitmapEncoderCacheOption.WICBitmapEncoderNoCache">
-    <summary>
-      <para>The encoder is not cached.</para>
-    </summary>
+    <summary>The encoder is not cached.</summary>
   </member>
-  <member name="WICBitmapEncoderCacheOption.WICBITMAPENCODERCACHEOPTION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICBitmapEncoderCacheOption.WICBITMAPENCODERCACHEOPTION_FORCE_DWORD"></member>
 </doc>

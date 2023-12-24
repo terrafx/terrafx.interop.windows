@@ -40,7 +40,7 @@ public static partial class CRED
     public static ReadOnlySpan<byte> CRED_SESSION_WILDCARD_NAME_A => "*Session"u8;
 
     [NativeTypeName("#define CRED_UNIVERSAL_WILDCARD_W L'*'")]
-    public const ushort CRED_UNIVERSAL_WILDCARD_W = '*';
+    public const char CRED_UNIVERSAL_WILDCARD_W = '*';
 
     [NativeTypeName("#define CRED_UNIVERSAL_WILDCARD_A '*'")]
     public const sbyte CRED_UNIVERSAL_WILDCARD_A = (sbyte)('*');
@@ -67,19 +67,19 @@ public static partial class CRED
     public const uint CRED_TARGETNAME_LEGACYGENERIC_NAMESPACE_LENGTH = (14 - 1);
 
     [NativeTypeName("#define CRED_TARGETNAME_NAMESPACE_SEPERATOR_W L':'")]
-    public const ushort CRED_TARGETNAME_NAMESPACE_SEPERATOR_W = ':';
+    public const char CRED_TARGETNAME_NAMESPACE_SEPERATOR_W = ':';
 
     [NativeTypeName("#define CRED_TARGETNAME_NAMESPACE_SEPERATOR_A ':'")]
     public const sbyte CRED_TARGETNAME_NAMESPACE_SEPERATOR_A = (sbyte)(':');
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_W L'='")]
-    public const ushort CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_W = '=';
+    public const char CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_W = '=';
 
     [NativeTypeName("#define CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_A '='")]
     public const sbyte CRED_TARGETNAME_ATTRIBUTE_SEPERATOR_A = (sbyte)('=');
 
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_W L'|'")]
-    public const ushort CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_W = '|';
+    public const char CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_W = '|';
 
     [NativeTypeName("#define CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_A '|'")]
     public const sbyte CRED_TARGETNAME_DOMAIN_EXTENDED_USERNAME_SEPARATOR_A = (sbyte)('|');

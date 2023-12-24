@@ -4,38 +4,25 @@
 <doc>
   <member name="MPEG2VIDEOINFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>MPEG2VIDEOINFO</b> structure describes an MPEG-2 video stream.</para>
     </summary>
-    <remarks>
-      <para>The <see cref="BITMAPINFOHEADER" /> structure contained in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a> structure (<b>hdr</b>) cannot be followed by any palette entries or color masks, because this structure is immediately followed by the <b>dwStartTimeCode</b> member.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="MPEG2VIDEOINFO.hdr">
     <summary>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a> structure.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/dvdmedia/ns-dvdmedia-videoinfoheader2">VIDEOINFOHEADER2</a> structure.</summary>
   </member>
   <member name="MPEG2VIDEOINFO.dwStartTimeCode">
-    <summary>
-      <para>25-bit group-of-pictures (GOP) time code at start of data. This field is not used for DVD.</para>
-    </summary>
+    <summary>25-bit group-of-pictures (GOP) time code at start of data. This field is not used for DVD.</summary>
   </member>
   <member name="MPEG2VIDEOINFO.cbSequenceHeader">
-    <summary>
-      <para>Length of the sequence header, in bytes. For DVD, set this field to zero. The sequence header is given in the <b>dwSequenceHeader</b> field.</para>
-    </summary>
+    <summary>Length of the sequence header, in bytes. For DVD, set this field to zero. The sequence header is given in the <b>dwSequenceHeader</b> field.</summary>
   </member>
   <member name="MPEG2VIDEOINFO.dwProfile">
-    <summary>
-      <para>Specifies the MPEG-2 profile as an <see cref="AM_MPEG2Profile" /> enumeration type.</para>
-    </summary>
+    <summary>Specifies the MPEG-2 profile as an <see cref="AM_MPEG2Profile" /> enumeration type.</summary>
   </member>
   <member name="MPEG2VIDEOINFO.dwLevel">
-    <summary>
-      <para>Specifies the MPEG-2 level as an <see cref="AM_MPEG2Level" /> enumeration type.</para>
-    </summary>
+    <summary>Specifies the MPEG-2 level as an <see cref="AM_MPEG2Level" /> enumeration type.</summary>
   </member>
   <member name="MPEG2VIDEOINFO.dwFlags">
     <summary>
@@ -45,183 +32,159 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_DoPanScan</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If this flag is set, the MPEG-2 video decoder should crop the output image based on pan-scan vectors in picture_display_extension and change the picture aspect ratio to 4x3. The VMR should not receive a 16x9 sample with this flag. A simple implementation might alter the source rectangle to indicate a 540 wide source region with a left edge equal to the display offset in the picture_display_extension.</para>
-          </description>
-        </item>
-        <item>
+          <description>If this flag is set, the MPEG-2 video decoder should crop the output image based on pan-scan vectors in picture_display_extension and change the picture aspect ratio to 4x3. The VMR should not receive a 16x9 sample with this flag. A simple implementation might alter the source rectangle to indicate a 540 wide source region with a left edge equal to the display offset in the picture_display_extension.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_DVDLine21Field1</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set, the MPEG-2 decoder must be able to produce an output pin for DVD style closed-captioned data found in the Group Of Pictures (GOP) layer of field 1.</para>
-          </description>
-        </item>
-        <item>
+          <description>If set, the MPEG-2 decoder must be able to produce an output pin for DVD style closed-captioned data found in the Group Of Pictures (GOP) layer of field 1.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_DVDLine21Field2</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set, the MPEG-2 decoder must be able to produce an output pin for DVD style closed-captioned data found in the GOP layer of field 2.</para>
-          </description>
-        </item>
-        <item>
+          <description>If set, the MPEG-2 decoder must be able to produce an output pin for DVD style closed-captioned data found in the GOP layer of field 2.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_SourceIsLetterboxed</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set, indicates that black bars have been encoded in the top and bottom of the video.</para>
-          </description>
-        </item>
-        <item>
+          <description>If set, indicates that black bars have been encoded in the top and bottom of the video.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_FilmCameraMode</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set, indicates "film mode" used for the 625/50 (line/field) content. If cleared, indicates that "camera mode" was used.</para>
-          </description>
-        </item>
-        <item>
+          <description>If set, indicates "film mode" used for the 625/50 (line/field) content. If cleared, indicates that "camera mode" was used.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_LetterboxAnalogOut</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set and this stream is sent to an analog output, it should be letterboxed. Streams sent to VGA should be letterboxed only by renderers.</para>
-          </description>
-        </item>
-        <item>
+          <description>If set and this stream is sent to an analog output, it should be letterboxed. Streams sent to VGA should be letterboxed only by renderers.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_DSS_UserData</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set, the MPEG-2 decoder must process DSS style user data.</para>
-          </description>
-        </item>
-        <item>
+          <description>If set, the MPEG-2 decoder must process DSS style user data.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_DVB_UserData</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000080</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set, the MPEG-2 decoder must process DVB style user data.</para>
-          </description>
-        </item>
-        <item>
+          <description>If set, the MPEG-2 decoder must process DVB style user data.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_27MhzTimebase</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set, the PTS, DTS timestamps advance at 27MHz rather than 90KHz.</para>
-          </description>
-        </item>
-        <item>
+          <description>If set, the PTS, DTS timestamps advance at 27MHz rather than 90KHz.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AMMPEG2_WidescreenAnalogOut</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000200</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If set and this stream is sent to an analog output, it should  be in widescreen format (4x3 content should be centered on a 16x9 output). Streams sent to VGA should be widescreened only by renderers.</para>
-          </description>
-        </item>
-      </list>
-      <para>Set undefined flags to zero or connection will be rejected. For more information on how to use these flags, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mpeg-decoder-preprocessing-transformations">MPEG Decoder Preprocessing Transformations</a>.</para>
-    </summary>
+          <description>If set and this stream is sent to an analog output, it should be in widescreen format (4x3 content should be centered on a 16x9 output). Streams sent to VGA should be widescreened only by renderers.</description>
+        </listheader>
+      </list> <para>Set undefined flags to zero or connection will be rejected. For more information on how to use these flags, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/mpeg-decoder-preprocessing-transformations">MPEG Decoder Preprocessing Transformations</a>.</para></summary>
   </member>
   <member name="MPEG2VIDEOINFO.dwSequenceHeader">
-    <summary>
-      <para>Start of an array that contains the sequence header, including quantization matrices and the sequence extension, if required. This field is typed as <b>DWORD</b> array to enforce 32-bit alignment. The size of the array, in bytes, is given in the <b>cbSequenceHeader</b> member.</para>
-    </summary>
+    <summary>Start of an array that contains the sequence header, including quantization matrices and the sequence extension, if required. This field is typed as <b>DWORD</b> array to enforce 32-bit alignment. The size of the array, in bytes, is given in the <b>cbSequenceHeader</b> member.</summary>
   </member>
 </doc>

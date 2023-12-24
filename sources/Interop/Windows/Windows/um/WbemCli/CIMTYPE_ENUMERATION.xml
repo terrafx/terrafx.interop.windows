@@ -3,103 +3,63 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CIMTYPE_ENUMERATION">
-    <summary>
-      <para>The <b>CIMTYPE_ENUMERATION</b> enumeration defines values that specify different CIM data types. All the values in the enumeration are types defined by the Distributed Management Task Force (DMTF). For more information about the DMTF and the CIM data types, see <a href="https://www.dmtf.org/standards/cim">http://www.dmtf.org/standards/cim/cim_spec_v22</a>.</para>
-    </summary>
+    <summary>The <b>CIMTYPE_ENUMERATION</b> enumeration defines values that specify different CIM data types. All the values in the enumeration are types defined by the Distributed Management Task Force (DMTF). For more information about the DMTF and the CIM data types, see <a href="https://www.dmtf.org/standards/cim">http://www.dmtf.org/standards/cim/cim_spec_v22</a>.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_ILLEGAL">
-    <summary>
-      <para>An illegal value.</para>
-    </summary>
+    <summary>An illegal value.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_EMPTY">
-    <summary>
-      <para>An empty (null) value.</para>
-    </summary>
+    <summary>An empty (null) value.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_SINT8">
-    <summary>
-      <para>An 8-bit signed integer.</para>
-    </summary>
+    <summary>An 8-bit signed integer.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_UINT8">
-    <summary>
-      <para>An 8-bit unsigned integer.</para>
-    </summary>
+    <summary>An 8-bit unsigned integer.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_SINT16">
-    <summary>
-      <para>A 16-bit signed integer.</para>
-    </summary>
+    <summary>A 16-bit signed integer.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_UINT16">
-    <summary>
-      <para>A 16-bit unsigned integer.</para>
-    </summary>
+    <summary>A 16-bit unsigned integer.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_SINT32">
-    <summary>
-      <para>A 32-bit signed integer.</para>
-    </summary>
+    <summary>A 32-bit signed integer.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_UINT32">
-    <summary>
-      <para>A 32-bit unsigned integer.</para>
-    </summary>
+    <summary>A 32-bit unsigned integer.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_SINT64">
-    <summary>
-      <para>A 64-bit signed integer.</para>
-    </summary>
+    <summary>A 64-bit signed integer.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_UINT64">
-    <summary>
-      <para>A 64-bit unsigned integer.</para>
-    </summary>
+    <summary>A 64-bit unsigned integer.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_REAL32">
-    <summary>
-      <para>A 32-bit real number.</para>
-    </summary>
+    <summary>A 32-bit real number.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_REAL64">
-    <summary>
-      <para>A 64-bit real number.</para>
-    </summary>
+    <summary>A 64-bit real number.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_BOOLEAN">
-    <summary>
-      <para>A Boolean value.</para>
-    </summary>
+    <summary>A Boolean value.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_STRING">
-    <summary>
-      <para>A string value.</para>
-    </summary>
+    <summary>A string value.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_DATETIME">
-    <summary>
-      <para>A DateTime value.</para>
-    </summary>
+    <summary>A DateTime value.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_REFERENCE">
-    <summary>
-      <para>Reference (__Path) of another Object.</para>
-    </summary>
+    <summary>Reference (__Path) of another Object.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_CHAR16">
-    <summary>
-      <para>A 16-bit character value.</para>
-    </summary>
+    <summary>A 16-bit character value.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_OBJECT">
-    <summary>
-      <para>An Object value.</para>
-    </summary>
+    <summary>An Object value.</summary>
   </member>
   <member name="CIMTYPE_ENUMERATION.CIM_FLAG_ARRAY">
-    <summary>
-      <para>An array value.</para>
-    </summary>
+    <summary>An array value.</summary>
   </member>
 </doc>

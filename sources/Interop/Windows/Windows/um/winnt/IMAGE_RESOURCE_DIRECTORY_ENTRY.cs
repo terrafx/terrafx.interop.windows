@@ -13,18 +13,18 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
 {
     /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous1"]/*' />
-    [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:19720:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19770_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='IMAGE_RESOURCE_DIRECTORY_ENTRY.xml' path='doc/member[@name="IMAGE_RESOURCE_DIRECTORY_ENTRY.Anonymous2"]/*' />
-    [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:19728:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L19778_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.NameOffset"]/*' />
     public uint NameOffset
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous1.Anonymous.NameOffset;
         }
@@ -40,7 +40,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     public uint NameIsString
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous1.Anonymous.NameIsString;
         }
@@ -89,7 +89,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     public uint OffsetToDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.OffsetToDirectory;
         }
@@ -105,7 +105,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     public uint DataIsDirectory
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous2.Anonymous.DataIsDirectory;
         }
@@ -123,7 +123,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
     {
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:19721:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L19771_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Name"]/*' />
@@ -146,7 +146,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
             public uint NameOffset
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x7FFFFFFFu;
                 }
@@ -163,7 +163,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
             public uint NameIsString
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 31) & 0x1u;
                 }
@@ -188,7 +188,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
 
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_RESOURCE_DIRECTORY_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:19730:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L19780_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -201,7 +201,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
             public uint OffsetToDirectory
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x7FFFFFFFu;
                 }
@@ -218,7 +218,7 @@ public partial struct IMAGE_RESOURCE_DIRECTORY_ENTRY
             public uint DataIsDirectory
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 31) & 0x1u;
                 }

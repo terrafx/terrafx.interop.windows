@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_HTTP_SSL_HEADER_AUTH_POLICY_DESCRIPTION">
-    <summary>
-      <para>Describes the policy specifying http channel binding with SSL transport security and
-header authentication.</para>
-    </summary>
+    <summary>Describes the policy specifying http channel binding with SSL transport security and header authentication.</summary>
   </member>
   <member name="WS_HTTP_SSL_HEADER_AUTH_POLICY_DESCRIPTION.channelProperties">
-    <summary>
-      <para>Template description for the channel properties specified in policy.</para>
-    </summary>
+    <summary>Template description for the channel properties specified in policy.</summary>
   </member>
   <member name="WS_HTTP_SSL_HEADER_AUTH_POLICY_DESCRIPTION.securityProperties">
-    <summary>
-      <para>Template description for the security properties specified in policy.</para>
-    </summary>
+    <summary>Template description for the security properties specified in policy.</summary>
   </member>
   <member name="WS_HTTP_SSL_HEADER_AUTH_POLICY_DESCRIPTION.sslTransportSecurityBinding">
-    <summary>
-      <para>SSL security binding description.</para>
-    </summary>
+    <summary>SSL security binding description.</summary>
   </member>
   <member name="WS_HTTP_SSL_HEADER_AUTH_POLICY_DESCRIPTION.httpHeaderAuthSecurityBinding">
-    <summary>
-      <para>HTTP header authentication binding description.</para>
-    </summary>
+    <summary>HTTP header authentication binding description.</summary>
   </member>
 </doc>

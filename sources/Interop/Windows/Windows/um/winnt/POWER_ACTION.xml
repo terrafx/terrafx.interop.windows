@@ -3,54 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POWER_ACTION">
-    <summary>
-      <para>Defines values that are used to specify system power action types.</para>
-    </summary>
-    <seealso cref="POWER_ACTION_POLICY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Power/power-management-portal">Power Management</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Power/power-management-enumeration-types">Power Management Enumeration Types</seealso>
+    <summary>Defines values that are used to specify system power action types.</summary>
   </member>
   <member name="POWER_ACTION.PowerActionNone">
-    <summary>
-      <para>No system power action.</para>
-    </summary>
+    <summary>No system power action.</summary>
   </member>
   <member name="POWER_ACTION.PowerActionReserved">
-    <summary>
-      <para>Reserved; do not use.</para>
-    </summary>
+    <summary>Reserved; do not use.</summary>
   </member>
   <member name="POWER_ACTION.PowerActionSleep">
-    <summary>
-      <para>Sleep.</para>
-    </summary>
+    <summary>Sleep.</summary>
   </member>
   <member name="POWER_ACTION.PowerActionHibernate">
-    <summary>
-      <para>Hibernate.</para>
-    </summary>
+    <summary>Hibernate.</summary>
   </member>
   <member name="POWER_ACTION.PowerActionShutdown">
-    <summary>
-      <para>Shutdown.</para>
-    </summary>
+    <summary>Shutdown.</summary>
   </member>
   <member name="POWER_ACTION.PowerActionShutdownReset">
-    <summary>
-      <para>Shutdown and reset.</para>
-    </summary>
+    <summary>Shutdown and reset.</summary>
   </member>
   <member name="POWER_ACTION.PowerActionShutdownOff">
-    <summary>
-      <para>Shutdown and power off.</para>
-    </summary>
+    <summary>Shutdown and power off.</summary>
   </member>
   <member name="POWER_ACTION.PowerActionWarmEject">
-    <summary>
-      <para>Warm eject.</para>
-    </summary>
+    <summary>Warm eject.</summary>
   </member>
-  <member name="POWER_ACTION.PowerActionDisplayOff">
-    <summary></summary>
-  </member>
+  <member name="POWER_ACTION.PowerActionDisplayOff"></member>
 </doc>

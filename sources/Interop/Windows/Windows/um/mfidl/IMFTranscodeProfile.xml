@@ -3,119 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTranscodeProfile.GetAudioAttributes">
-    <summary>
-      <para>Gets the audio stream settings that are currently set in the transcode profile.</para>
-    </summary>
-    <param name="ppAttrs">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface of the attribute store containing the current audio stream settings. Caller must release the interface pointer.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If there are no audio attributes set in the transcode profile, the call to <b>GetAudioAttributes</b> succeeds and  <i>ppAttrs</i> receives <b>NULL</b>.</para>
-      <para>To get a specific attribute value, the caller must call the appropriate <see cref="IMFAttributes" /> method depending on the data type of the attribute, and specify the attribute name. The following topics describe the audio attributes:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/audio-media-types">Audio Media Types</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-encodingprofile">MF_TRANSCODE_ENCODINGPROFILE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-qualityvsspeed">MF_TRANSCODE_QUALITYVSSPEED</a>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes in Media Foundation</seealso>
-    <seealso cref="IMFTranscodeProfile" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transcode-api">Transcode API</seealso>
+    <summary>Gets the audio stream settings that are currently set in the transcode profile.</summary>
+    <param name="ppAttrs">Receives a pointer to the <see cref="IMFAttributes" /> interface of the attribute store containing the current audio stream settings. Caller must release the interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTranscodeProfile.GetContainerAttributes">
-    <summary>
-      <para>Gets the container settings that are currently set in the transcode profile.</para>
-    </summary>
-    <param name="ppAttrs">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface of the attribute store containing the current container type for the output file. Caller must release the interface pointer.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If there are no container attributes set in the transcode profile, the call to <b>GetContainerAttributes</b>  succeeds and  <i>ppAttrs</i> receives <b>NULL</b>.</para>
-      <para>To get a specific attribute value, the caller must call the appropriate <see cref="IMFAttributes" /> method depending on the data type of the attribute. The following list shows the container attributes:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-containertype">MF_TRANSCODE_CONTAINERTYPE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-skip-metadata-transfer">MF_TRANSCODE_SKIP_METADATA_TRANSFER</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-topologymode">MF_TRANSCODE_TOPOLOGYMODE</a>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes in Media Foundation</seealso>
-    <seealso cref="IMFTranscodeProfile" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transcode-api">Transcode API</seealso>
+    <summary>Gets the container settings that are currently set in the transcode profile.</summary>
+    <param name="ppAttrs">Receives a pointer to the <see cref="IMFAttributes" /> interface of the attribute store containing the current container type for the output file. Caller must release the interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTranscodeProfile.GetVideoAttributes">
-    <summary>
-      <para>Gets the video stream settings that are currently set in the transcode profile.</para>
-    </summary>
-    <param name="ppAttrs">
-      <para>Receives a pointer to the <see cref="IMFAttributes" /> interface of the attribute store containing the current video stream settings. Caller must release the interface pointer.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If there are no container attributes set in the transcode profile, the <b>GetVideoAttributes</b> method  succeeds and  <i>ppAttrs</i> receives <b>NULL</b>.</para>
-      <para>To get a specific attribute value, the caller must call the appropriate <see cref="IMFAttributes" /> method depending on the data type of the attribute, and specify the attribute name. The following list shows the video attributes:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/video-media-types">Video Media Types</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-encodingprofile">MF_TRANSCODE_ENCODINGPROFILE</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-qualityvsspeed">MF_TRANSCODE_QUALITYVSSPEED</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-donot-insert-encoder">MF_TRANSCODE_DONOT_INSERT_ENCODER</a>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes in Media Foundation</seealso>
-    <seealso cref="IMFTranscodeProfile" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transcode-api">Transcode API</seealso>
+    <summary>Gets the video stream settings that are currently set in the transcode profile.</summary>
+    <param name="ppAttrs">Receives a pointer to the <see cref="IMFAttributes" /> interface of the attribute store containing the current video stream settings. Caller must release the interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTranscodeProfile.SetAudioAttributes">
     <summary>
-      <para>Sets audio stream configuration settings  in the transcode profile.</para>
-      <para>To get a list of compatible audio media types supported by the Media Foundation transform (MFT) encoder , call  <see cref="MFTranscodeGetAudioOutputAvailableTypes" />. You can get the attributes that are set on the required media type and set them on the transcode profile. To set the audio attributes properly, create a new attribute store and copy the attribute store from the required media media type by calling <see cref="IMFAttributes.CopyAllItems" />. This makes sure that the caller does not hold the references to the media type retrieved from the encoder. For example code, see <see cref="MFCreateTranscodeProfile" />.</para>
+      <para>Sets audio stream configuration settings in the transcode profile.</para>
+      <para>To get a list of compatible audio media types supported by the Media Foundation transform (MFT) encoder , call <see cref="MFTranscodeGetAudioOutputAvailableTypes" />. You can get the attributes that are set on the required media type and set them on the transcode profile. To set the audio attributes properly, create a new attribute store and copy the attribute store from the required media media type by calling <see cref="IMFAttributes.CopyAllItems" />. This makes sure that the caller does not hold the references to the media type retrieved from the encoder. For example code, see <see cref="MFCreateTranscodeProfile" />.</para>
     </summary>
     <param name="pAttrs">
       <para>Pointer to the <see cref="IMFAttributes" /> interface of an attribute store that contains the configuration settings for the audio stream. The specified attribute values overwrite any existing values stored in the transcode profile.</para>
@@ -141,19 +46,12 @@
             <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-qualityvsspeed">MF_TRANSCODE_QUALITYVSSPEED</a>
           </description>
         </item>
-      </list>
-      <para>To create the attribute store, call <see cref="MFCreateAttributes" />. To set a specific attribute value in the attribute store, the caller must call the appropriate <see cref="IMFAttributes" /> methods depending on the data type of the attribute.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes in Media Foundation</seealso>
-    <seealso cref="IMFTranscodeProfile" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transcode-api">Transcode API</seealso>
+      </list>To create the attribute store, call <see cref="MFCreateAttributes" />. To set a specific attribute value in the attribute store, the caller must call the appropriate <see cref="IMFAttributes" /> methods depending on the data type of the attribute.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTranscodeProfile.SetContainerAttributes">
     <summary>
-      <para>Sets container configuration settings  in the transcode profile.</para>
+      <para>Sets container configuration settings in the transcode profile.</para>
       <para>For example code, see <see cref="MFCreateTranscodeProfile" />.</para>
     </summary>
     <param name="pAttrs">
@@ -185,20 +83,12 @@
             <a href="https://docs.microsoft.com//windows/desktop/medfound/mft-fieldofuse-unlock-attribute">MFT_FIELDOFUSE_UNLOCK</a>
           </description>
         </item>
-      </list>
-      <para>To create the attribute store, call <see cref="MFCreateAttributes" />. To set a specific attribute value in the attribute store, the caller must call the appropriate <see cref="IMFAttributes" /> methods depending on the data type of the attribute.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes in Media Foundation</seealso>
-    <seealso cref="IMFTranscodeProfile" />
-    <seealso cref="MFCreateAttributes" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transcode-api">Transcode API</seealso>
+      </list>To create the attribute store, call <see cref="MFCreateAttributes" />. To set a specific attribute value in the attribute store, the caller must call the appropriate <see cref="IMFAttributes" /> methods depending on the data type of the attribute.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTranscodeProfile.SetVideoAttributes">
     <summary>
-      <para>Sets video stream configuration settings  in the transcode profile.</para>
+      <para>Sets video stream configuration settings in the transcode profile.</para>
       <para>For example code, see <see cref="MFCreateTranscodeProfile" />.</para>
     </summary>
     <param name="pAttrs">
@@ -225,24 +115,14 @@
             <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-transcode-qualityvsspeed">MF_TRANSCODE_QUALITYVSSPEED</a>
           </description>
         </item>
-      </list>
-      <para>To create the attribute store, call <see cref="MFCreateAttributes" />. To set a specific attribute value in the attribute store, the caller must call the appropriate <see cref="IMFAttributes" /> methods depending on the data type of the attribute.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/attributes-and-properties">Attributes in Media Foundation</seealso>
-    <seealso cref="IMFTranscodeProfile" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transcode-api">Transcode API</seealso>
+      </list>To create the attribute store, call <see cref="MFCreateAttributes" />. To set a specific attribute value in the attribute store, the caller must call the appropriate <see cref="IMFAttributes" /> methods depending on the data type of the attribute.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTranscodeProfile">
     <summary>
       <para>Implemented by the transcode profile object.</para>
-      <para>The transcode profile stores configuration settings that the topology builder uses to generate the transcode topology for the output file. These configuration settings are specified by the caller and include audio and video stream properties, encoder settings, and  container settings that are specified by the caller.</para>
+      <para>The transcode profile stores configuration settings that the topology builder uses to generate the transcode topology for the output file. These configuration settings are specified by the caller and include audio and video stream properties, encoder settings, and container settings that are specified by the caller.</para>
       <para>To create the transcode profile object, call <see cref="MFCreateTranscodeProfile" />. The configured transcode profile is passed to <see cref="MFCreateTranscodeTopology" />, which creates the transcode topology with the appropriate settings.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/fast-transcode-objects">Fast Transcode Objects</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/transcode-api">Transcode API</seealso>
   </member>
 </doc>

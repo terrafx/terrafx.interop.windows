@@ -25,7 +25,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILaunchUIContext*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchUIContext*, Guid*, void**, int>)(lpVtbl[0]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILaunchUIContext*, uint>)(lpVtbl[1]))((ILaunchUIContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILaunchUIContext*, uint>)(lpVtbl[1]))((ILaunchUIContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILaunchUIContext*, uint>)(lpVtbl[2]))((ILaunchUIContext*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILaunchUIContext*, uint>)(lpVtbl[2]))((ILaunchUIContext*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILaunchUIContext.xml' path='doc/member[@name="ILaunchUIContext.SetAssociatedWindow"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface, INat
     [VtblIndex(3)]
     public HRESULT SetAssociatedWindow(HWND value)
     {
-        return ((delegate* unmanaged<ILaunchUIContext*, HWND, int>)(lpVtbl[3]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchUIContext*, HWND, int>)(lpVtbl[3]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ILaunchUIContext.xml' path='doc/member[@name="ILaunchUIContext.SetTabGroupingPreference"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface, INat
     [VtblIndex(4)]
     public HRESULT SetTabGroupingPreference([NativeTypeName("DWORD")] uint value)
     {
-        return ((delegate* unmanaged<ILaunchUIContext*, uint, int>)(lpVtbl[4]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ILaunchUIContext*, uint, int>)(lpVtbl[4]))((ILaunchUIContext*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ILaunchUIContext : ILaunchUIContext.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> SetAssociatedWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> SetAssociatedWindow;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetTabGroupingPreference;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetTabGroupingPreference;
     }
 }

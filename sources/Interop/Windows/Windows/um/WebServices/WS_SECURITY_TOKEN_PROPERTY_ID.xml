@@ -4,63 +4,32 @@
 <doc>
   <member name="WS_SECURITY_TOKEN_PROPERTY_ID">
     <summary>
-      <para>Defines the keys for the fields and properties that can be extracted
-from a security token.  Not all properties are valid for all security
-token types.  The function <see cref="WsGetSecurityTokenProperty" /> uses
-the values defined here as keys.</para>
+      <para>Defines the keys for the fields and properties that can be extracted from a security token. Not all properties are valid for all security token types. The function <see cref="WsGetSecurityTokenProperty" /> uses the values defined here as keys.</para>
       <para>See also <see cref="WS_SECURITY_BINDING_PROPERTY" />.</para>
     </summary>
   </member>
   <member name="WS_SECURITY_TOKEN_PROPERTY_ID.WS_SECURITY_TOKEN_PROPERTY_KEY_TYPE">
-    <summary>
-      <para>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a <see cref="WS_SECURITY_KEY_TYPE" /> value indicating the type of the proof key of the security token.</para>
-    </summary>
+    <summary>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a <see cref="WS_SECURITY_KEY_TYPE" /> value indicating the type of the proof key of the security token.</summary>
   </member>
   <member name="WS_SECURITY_TOKEN_PROPERTY_ID.WS_SECURITY_TOKEN_PROPERTY_VALID_FROM_TIME">
-    <summary>
-      <para>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a <see cref="WS_DATETIME" /> structure containing the time from when the security token is valid.  For a security token
-that does not define an explicit start time for its validity period, a
-<b>WS_DATETIME</b> with a tick count of 0 is returned.</para>
-    </summary>
+    <summary>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a <see cref="WS_DATETIME" /> structure containing the time from when the security token is valid. For a security token that does not define an explicit start time for its validity period, a<b>WS_DATETIME</b> with a tick count of 0 is returned.</summary>
   </member>
   <member name="WS_SECURITY_TOKEN_PROPERTY_ID.WS_SECURITY_TOKEN_PROPERTY_VALID_TILL_TIME">
-    <summary>
-      <para>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a <see cref="WS_DATETIME" /> structure containing the point in time at which a currently valid security token becomes invalid.  For a security token
-that does not define an explicit end time for its validity period, a
-<b>WS_DATETIME</b> with a tick count of 0 is returned.</para>
-    </summary>
+    <summary>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a <see cref="WS_DATETIME" /> structure containing the point in time at which a currently valid security token becomes invalid. For a security token that does not define an explicit end time for its validity period, a<b>WS_DATETIME</b> with a tick count of 0 is returned.</summary>
   </member>
   <member name="WS_SECURITY_TOKEN_PROPERTY_ID.WS_SECURITY_TOKEN_PROPERTY_SERIALIZED_XML">
-    <summary>
-      <para>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> containing the XML wire form of the security token.</para>
-    </summary>
+    <summary>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> containing the XML wire form of the security token.</summary>
   </member>
   <member name="WS_SECURITY_TOKEN_PROPERTY_ID.WS_SECURITY_TOKEN_PROPERTY_ATTACHED_REFERENCE_XML">
-    <summary>
-      <para>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> containing
-the XML wire form of the attached reference to the security token.
-Attached references are used to refer to a security token when the
-security token and its referring point (such as a signature using that
-token) both occur in the same message.</para>
-    </summary>
+    <summary>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> containing the XML wire form of the attached reference to the security token. Attached references are used to refer to a security token when the security token and its referring point (such as a signature using that token) both occur in the same message.</summary>
   </member>
   <member name="WS_SECURITY_TOKEN_PROPERTY_ID.WS_SECURITY_TOKEN_PROPERTY_UNATTACHED_REFERENCE_XML">
-    <summary>
-      <para>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> containing
-the XML wire form of the unattached reference to the security token.
-Unattached references are used to refer to a security token when the
-security token does not occur in the same message as its referring
-point (such as a signature using that token).</para>
-    </summary>
+    <summary>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a pointer to a <a href="https://docs.microsoft.com//windows/desktop/wsw/ws-xml-buffer">WS_XML_BUFFER</a> containing the XML wire form of the unattached reference to the security token. Unattached references are used to refer to a security token when the security token does not occur in the same message as its referring point (such as a signature using that token).</summary>
   </member>
   <member name="WS_SECURITY_TOKEN_PROPERTY_ID.WS_SECURITY_TOKEN_PROPERTY_SYMMETRIC_KEY">
     <summary>
-      <para>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a pointer to a <see cref="WS_BYTES" /> structure containing
-the raw key data of the symmetric token key. This property is available when <see cref="WS_SECURITY_TOKEN_PROPERTY_KEY_TYPE" /> is
-<see cref="WS_SECURITY_KEY_TYPE_SYMMETRIC" />.</para>
-      <para>If the token was obtained via <see cref="WsRequestSecurityToken" />, the returned buffer contains key material generated during
-the token request, which is either entropy generated by the client, entropy generated by the server or key material derived from from both client
-and server entropy, depending on <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ISSUED_TOKEN_KEY_ENTROPY" />.</para>
+      <para>The accompanying <b>value</b> parameter of the <see cref="WsGetSecurityTokenProperty" /> function is a pointer to a <see cref="WS_BYTES" /> structure containing the raw key data of the symmetric token key. This property is available when <see cref="WS_SECURITY_TOKEN_PROPERTY_KEY_TYPE" /> is<see cref="WS_SECURITY_KEY_TYPE_SYMMETRIC" />.</para>
+      <para>If the token was obtained via <see cref="WsRequestSecurityToken" />, the returned buffer contains key material generated during the token request, which is either entropy generated by the client, entropy generated by the server or key material derived from from both client and server entropy, depending on <see cref="WS_REQUEST_SECURITY_TOKEN_PROPERTY_ISSUED_TOKEN_KEY_ENTROPY" />.</para>
       <para>When using this property with <see cref="WsGetSecurityTokenProperty" />, the 'heap' parameter must be non-NULL.</para>
       <para>The returned buffer should be securely erased or encrypted immediately after use to prevent leaking of sensitive data.</para>
     </summary>

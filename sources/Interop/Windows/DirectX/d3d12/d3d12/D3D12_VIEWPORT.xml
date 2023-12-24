@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIEWPORT">
+    <summary>Describes the dimensions of a viewport.</summary>
+  </member>
+  <member name="D3D12_VIEWPORT.TopLeftX">
+    <summary>X position of the left hand side of the viewport.</summary>
+  </member>
+  <member name="D3D12_VIEWPORT.TopLeftY">
+    <summary>Y position of the top of the viewport.</summary>
+  </member>
+  <member name="D3D12_VIEWPORT.Width">
+    <summary>Width of the viewport.</summary>
+  </member>
+  <member name="D3D12_VIEWPORT.Height">
+    <summary>Height of the viewport.</summary>
+  </member>
+  <member name="D3D12_VIEWPORT.MinDepth">
+    <summary>Minimum depth of the viewport. Ranges between 0 and 1.</summary>
+  </member>
+  <member name="D3D12_VIEWPORT.MaxDepth">
+    <summary>Maximum depth of the viewport. Ranges between 0 and 1.</summary>
+  </member>
+</doc>

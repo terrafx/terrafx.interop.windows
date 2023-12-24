@@ -3,6 +3,8 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='STACKFRAME64.xml' path='doc/member[@name="STACKFRAME64"]/*' />
@@ -29,7 +31,7 @@ public unsafe partial struct STACKFRAME64
 
     /// <include file='STACKFRAME64.xml' path='doc/member[@name="STACKFRAME64.Params"]/*' />
     [NativeTypeName("DWORD64[4]")]
-    public fixed ulong Params[4];
+    public _Params_e__FixedBuffer Params;
 
     /// <include file='STACKFRAME64.xml' path='doc/member[@name="STACKFRAME64.Far"]/*' />
     public BOOL Far;
@@ -39,8 +41,22 @@ public unsafe partial struct STACKFRAME64
 
     /// <include file='STACKFRAME64.xml' path='doc/member[@name="STACKFRAME64.Reserved"]/*' />
     [NativeTypeName("DWORD64[3]")]
-    public fixed ulong Reserved[3];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='STACKFRAME64.xml' path='doc/member[@name="STACKFRAME64.KdHelp"]/*' />
     public KDHELP64 KdHelp;
+
+    /// <include file='_Params_e__FixedBuffer.xml' path='doc/member[@name="_Params_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _Params_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public ulong e0;
+    }
 }

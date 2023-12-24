@@ -19,32 +19,4 @@ public static unsafe partial class IVisualInteractionSourceInteropTests
     {
         Assert.That(typeof(IVisualInteractionSourceInterop).GUID, Is.EqualTo(IID_IVisualInteractionSourceInterop));
     }
-
-    /// <summary>Validates that the <see cref="IVisualInteractionSourceInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVisualInteractionSourceInterop>(), Is.EqualTo(sizeof(IVisualInteractionSourceInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IVisualInteractionSourceInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVisualInteractionSourceInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVisualInteractionSourceInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVisualInteractionSourceInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVisualInteractionSourceInterop), Is.EqualTo(4));
-        }
-    }
 }

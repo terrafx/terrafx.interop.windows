@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_FOREST_TRUST_INFORMATION">
+    <summary>The <b>LSA_FOREST_TRUST_INFORMATION</b> structure contains <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Local Security Authority</a> forest trust information.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_INFORMATION.RecordCount.range"></member>
+  <member name="LSA_FOREST_TRUST_INFORMATION.RecordCount.range.0"></member>
+  <member name="LSA_FOREST_TRUST_INFORMATION.RecordCount.range.MAX_RECORDS_IN_FOREST_TRUST_INFO"></member>
+  <member name="LSA_FOREST_TRUST_INFORMATION.Entries.size_is"></member>
+  <member name="LSA_FOREST_TRUST_INFORMATION.Entries.size_is.RecordCount"></member>
+  <member name="LSA_FOREST_TRUST_INFORMATION.RecordCount">
+    <summary>Number of <see cref="LSA_FOREST_TRUST_RECORD" /> structures in the array pointed to by the <b>Entries</b> member.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_INFORMATION.Entries">
+    <summary>Pointer to a pointer to an array of <see cref="LSA_FOREST_TRUST_RECORD" /> structures, each of which contains one piece of forest trust information.</summary>
+  </member>
+</doc>

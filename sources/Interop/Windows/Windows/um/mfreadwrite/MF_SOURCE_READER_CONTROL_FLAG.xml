@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_SOURCE_READER_CONTROL_FLAG">
-    <summary>
-      <para>Contains flags for the <see cref="IMFSourceReader.ReadSample" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/source-reader">Source Reader</seealso>
+    <summary>Contains flags for the <see cref="IMFSourceReader.ReadSample" /> method.</summary>
   </member>
   <member name="MF_SOURCE_READER_CONTROL_FLAG.MF_SOURCE_READER_CONTROLF_DRAIN">
-    <summary>
-      <para>Retrieve any pending samples, but do not request any more samples from the media source. To get all of the pending samples, call <see cref="ReadSample" /> with this flag until the method returns a <b>NULL</b> media sample pointer.</para>
-    </summary>
+    <summary>Retrieve any pending samples, but do not request any more samples from the media source. To get all of the pending samples, call <see cref="ReadSample" /> with this flag until the method returns a <b>NULL</b> media sample pointer.</summary>
   </member>
 </doc>

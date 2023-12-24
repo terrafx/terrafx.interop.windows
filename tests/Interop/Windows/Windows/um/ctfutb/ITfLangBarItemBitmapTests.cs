@@ -19,32 +19,4 @@ public static unsafe partial class ITfLangBarItemBitmapTests
     {
         Assert.That(typeof(ITfLangBarItemBitmap).GUID, Is.EqualTo(IID_ITfLangBarItemBitmap));
     }
-
-    /// <summary>Validates that the <see cref="ITfLangBarItemBitmap" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfLangBarItemBitmap>(), Is.EqualTo(sizeof(ITfLangBarItemBitmap)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfLangBarItemBitmap" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfLangBarItemBitmap).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfLangBarItemBitmap" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfLangBarItemBitmap), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfLangBarItemBitmap), Is.EqualTo(4));
-        }
-    }
 }

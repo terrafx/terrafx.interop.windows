@@ -3,48 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITaskbarList4.SetTabProperties">
-    <summary>
-      <para>Allows a tab to specify whether the main application frame window or the tab window should be used as a thumbnail or in the peek feature under certain circumstances.</para>
-    </summary>
-    <param name="hwndTab">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the tab window that is to have properties set. This handle must already be registered through <see cref="RegisterTab" />.</para>
-    </param>
-    <param name="stpFlags">
-      <para>Type: <b><see cref="STPFLAG" /></b></para>
-      <para>One or more members of the <see cref="STPFLAG" /> enumeration that specify the displayed thumbnail and peek image source of the tab thumbnail.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An application might want to use the thumbnail or peek representation of its associated parent window if the application cannot generate its own thumbnail for a tab or for its active tab content (such as an animation) to appear live.</para>
-    </remarks>
-    <seealso cref="ITaskbarList4" />
+    <summary>Allows a tab to specify whether the main application frame window or the tab window should be used as a thumbnail or in the peek feature under certain circumstances.</summary>
+    <param name="hwndTab">The handle of the tab window that is to have properties set. This handle must already be registered through <see cref="RegisterTab" />.</param>
+    <param name="stpFlags">One or more members of the <see cref="STPFLAG" /> enumeration that specify the displayed thumbnail and peek image source of the tab thumbnail.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITaskbarList4">
-    <summary>
-      <para>Extends <see cref="ITaskbarList3" /> by providing a method that allows the caller to control two property values for the tab thumbnail and peek feature.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="ITaskbarList" />, <see cref="ITaskbarList2" />, and <see cref="ITaskbarList3" /> interfaces, from which it inherits.</para>
-      <h3>When to Implement</h3>
-      <para>An implementation of this interface is provided in Windows as CLSID_TaskbarList. This interface is not implemented by third parties.</para>
-      <h3>When to Implement</h3>
-      <para>An implementation of this interface is provided in Windows as CLSID_TaskbarList. This interface is not implemented by third parties.</para>
-      <h3>When to Use</h3>
-      <para>Use the methods of this interface for the following:</para>
-      <list type="bullet">
-        <item>
-          <description>To use the thumbnail image of the application frame window in place of the tab thumbnail in some circumstances.</description>
-        </item>
-        <item>
-          <description>To use the application frame window in place of the tab as the source of the tab's peek image (a full-screen view of the window in response to a mouse-over event in the thumbnail).</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ITaskbarList3" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/taskbar-extensions">Taskbar Extensions</seealso>
+    <summary>Extends <see cref="ITaskbarList3" /> by providing a method that allows the caller to control two property values for the tab thumbnail and peek feature.</summary>
   </member>
 </doc>

@@ -8,7 +8,7 @@ using static TerraFX.Interop.DirectX.D2D1_LINE_JOIN;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_LINE_JOIN.xml' path='doc/member[@name="D2D1_SVG_LINE_JOIN"]/*' />
-public enum D2D1_SVG_LINE_JOIN : uint
+public enum D2D1_SVG_LINE_JOIN
 {
     /// <include file='D2D1_SVG_LINE_JOIN.xml' path='doc/member[@name="D2D1_SVG_LINE_JOIN.D2D1_SVG_LINE_JOIN_BEVEL"]/*' />
     D2D1_SVG_LINE_JOIN_BEVEL = D2D1_LINE_JOIN_BEVEL,
@@ -20,5 +20,5 @@ public enum D2D1_SVG_LINE_JOIN : uint
     D2D1_SVG_LINE_JOIN_ROUND = D2D1_LINE_JOIN_ROUND,
 
     /// <include file='D2D1_SVG_LINE_JOIN.xml' path='doc/member[@name="D2D1_SVG_LINE_JOIN.D2D1_SVG_LINE_JOIN_FORCE_DWORD"]/*' />
-    D2D1_SVG_LINE_JOIN_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_LINE_JOIN_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12DebugCommandList.AssertResourceState">
+    <summary>Checks whether a resource, or subresource, is in a specified state, or not.</summary>
+    <param name="pResource">Specifies the <see cref="ID3D12Resource" /> to check.</param>
+    <param name="Subresource">The index of the subresource to check. This can be set to an index, or D3D12_RESOURCE_BARRIER_ALL_SUBRESOURCES.</param>
+    <param name="State">Specifies the state to check for. This can be one or more D3D12_RESOURCE_STATES flags Or'ed together.</param>
+    <returns>This method returns true if the resource or subresource is in the specified state, false otherwise.</returns>
+  </member>
+  <member name="ID3D12DebugCommandList.GetFeatureMask">
+    <summary>Returns the debug feature flags that have been set on a command list.</summary>
+    <returns>A bit mask containing the set debug features.</returns>
+  </member>
+  <member name="ID3D12DebugCommandList.SetFeatureMask">
+    <summary>Turns the debug features for a command list on or off.</summary>
+    <param name="Mask">A combination of feature-mask flags that are combined by using a bitwise OR operation. If a flag is present, that feature will be set to on, otherwise the feature will be set to off.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12DebugCommandList">
+    <summary>Provides methods to monitor and debug a command list.</summary>
+  </member>
+</doc>

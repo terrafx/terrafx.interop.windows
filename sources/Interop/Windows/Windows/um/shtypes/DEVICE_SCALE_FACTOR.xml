@@ -3,75 +3,37 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEVICE_SCALE_FACTOR">
-    <summary>
-      <para>Indicates a spoofed device scale factor, as a percent. Used by <see cref="IApplicationDesignModeSettings.SetApplicationViewState" /> and <see cref="IApplicationDesignModeSettings.IsApplicationViewStateSupported" /></para>
-    </summary>
-    <seealso cref="IApplicationDesignModeSettings.IsApplicationViewStateSupported" />
-    <seealso cref="IApplicationDesignModeSettings.SetApplicationViewState" />
+    <summary>Indicates a spoofed device scale factor, as a percent. Used by <see cref="IApplicationDesignModeSettings.SetApplicationViewState" /> and <see cref="IApplicationDesignModeSettings.IsApplicationViewStateSupported" /></summary>
   </member>
-  <member name="DEVICE_SCALE_FACTOR.DEVICE_SCALE_FACTOR_INVALID">
-    <summary></summary>
-  </member>
+  <member name="DEVICE_SCALE_FACTOR.DEVICE_SCALE_FACTOR_INVALID"></member>
   <member name="DEVICE_SCALE_FACTOR.SCALE_100_PERCENT">
-    <summary>
-      <para>100%. The scale factor for the device is 1x.</para>
-    </summary>
+    <summary>100%. The scale factor for the device is 1x.</summary>
   </member>
   <member name="DEVICE_SCALE_FACTOR.SCALE_120_PERCENT">
-    <summary>
-      <para>120%. The scale factor for the device is 1.2x.</para>
-    </summary>
+    <summary>120%. The scale factor for the device is 1.2x.</summary>
   </member>
-  <member name="DEVICE_SCALE_FACTOR.SCALE_125_PERCENT">
-    <summary></summary>
-  </member>
+  <member name="DEVICE_SCALE_FACTOR.SCALE_125_PERCENT"></member>
   <member name="DEVICE_SCALE_FACTOR.SCALE_140_PERCENT">
-    <summary>
-      <para>140%. The scale factor for the device is 1.4x.</para>
-    </summary>
+    <summary>140%. The scale factor for the device is 1.4x.</summary>
   </member>
   <member name="DEVICE_SCALE_FACTOR.SCALE_150_PERCENT">
-    <summary>
-      <para>150%. The scale factor for the device is 1.5x.</para>
-    </summary>
+    <summary>150%. The scale factor for the device is 1.5x.</summary>
   </member>
   <member name="DEVICE_SCALE_FACTOR.SCALE_160_PERCENT">
-    <summary>
-      <para>160%. The scale factor for the device is 1.6x.</para>
-    </summary>
+    <summary>160%. The scale factor for the device is 1.6x.</summary>
   </member>
-  <member name="DEVICE_SCALE_FACTOR.SCALE_175_PERCENT">
-    <summary></summary>
-  </member>
+  <member name="DEVICE_SCALE_FACTOR.SCALE_175_PERCENT"></member>
   <member name="DEVICE_SCALE_FACTOR.SCALE_180_PERCENT">
-    <summary>
-      <para>180%. The scale factor for the device is 1.8x.</para>
-    </summary>
+    <summary>180%. The scale factor for the device is 1.8x.</summary>
   </member>
-  <member name="DEVICE_SCALE_FACTOR.SCALE_200_PERCENT">
-    <summary></summary>
-  </member>
+  <member name="DEVICE_SCALE_FACTOR.SCALE_200_PERCENT"></member>
   <member name="DEVICE_SCALE_FACTOR.SCALE_225_PERCENT">
-    <summary>
-      <para>225%. The scale factor for the device is 2.25x.</para>
-    </summary>
+    <summary>225%. The scale factor for the device is 2.25x.</summary>
   </member>
-  <member name="DEVICE_SCALE_FACTOR.SCALE_250_PERCENT">
-    <summary></summary>
-  </member>
-  <member name="DEVICE_SCALE_FACTOR.SCALE_300_PERCENT">
-    <summary></summary>
-  </member>
-  <member name="DEVICE_SCALE_FACTOR.SCALE_350_PERCENT">
-    <summary></summary>
-  </member>
-  <member name="DEVICE_SCALE_FACTOR.SCALE_400_PERCENT">
-    <summary></summary>
-  </member>
-  <member name="DEVICE_SCALE_FACTOR.SCALE_450_PERCENT">
-    <summary></summary>
-  </member>
-  <member name="DEVICE_SCALE_FACTOR.SCALE_500_PERCENT">
-    <summary></summary>
-  </member>
+  <member name="DEVICE_SCALE_FACTOR.SCALE_250_PERCENT"></member>
+  <member name="DEVICE_SCALE_FACTOR.SCALE_300_PERCENT"></member>
+  <member name="DEVICE_SCALE_FACTOR.SCALE_350_PERCENT"></member>
+  <member name="DEVICE_SCALE_FACTOR.SCALE_400_PERCENT"></member>
+  <member name="DEVICE_SCALE_FACTOR.SCALE_450_PERCENT"></member>
+  <member name="DEVICE_SCALE_FACTOR.SCALE_500_PERCENT"></member>
 </doc>

@@ -13,14 +13,14 @@ namespace TerraFX.Interop.Windows;
 public partial struct HIDP_KEYBOARD_MODIFIER_STATE
 {
     /// <include file='HIDP_KEYBOARD_MODIFIER_STATE.xml' path='doc/member[@name="HIDP_KEYBOARD_MODIFIER_STATE.Anonymous"]/*' />
-    [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/hidpi.h:1937:4)")]
+    [NativeTypeName("__AnonymousRecord_hidpi_L1937_C4")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.LeftControl"]/*' />
     public uint LeftControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.LeftControl;
         }
@@ -36,7 +36,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint LeftShift
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.LeftShift;
         }
@@ -52,7 +52,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint LeftAlt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.LeftAlt;
         }
@@ -68,7 +68,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint LeftGUI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.LeftGUI;
         }
@@ -84,7 +84,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint RightControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.RightControl;
         }
@@ -100,7 +100,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint RightShift
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.RightShift;
         }
@@ -116,7 +116,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint RightAlt
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.RightAlt;
         }
@@ -132,7 +132,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint RigthGUI
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.RigthGUI;
         }
@@ -148,7 +148,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint CapsLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.CapsLock;
         }
@@ -164,7 +164,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint ScollLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ScollLock;
         }
@@ -180,7 +180,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint NumLock
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.NumLock;
         }
@@ -196,7 +196,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Reserved;
         }
@@ -225,7 +225,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_HIDP_KEYBOARD_MODIFIER_STATE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/hidpi.h:1938:7)")]
+        [NativeTypeName("__AnonymousRecord_hidpi_L1938_C7")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ul"]/*' />
@@ -243,7 +243,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint LeftControl
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -260,7 +260,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint LeftShift
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -277,7 +277,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint LeftAlt
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -294,7 +294,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint LeftGUI
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -311,7 +311,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint RightControl
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -328,7 +328,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint RightShift
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x1u;
                 }
@@ -345,7 +345,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint RightAlt
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 6) & 0x1u;
                 }
@@ -362,7 +362,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint RigthGUI
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 7) & 0x1u;
                 }
@@ -379,7 +379,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint CapsLock
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 8) & 0x1u;
                 }
@@ -396,7 +396,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint ScollLock
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 9) & 0x1u;
                 }
@@ -413,7 +413,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint NumLock
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 10) & 0x1u;
                 }
@@ -430,7 +430,7 @@ public partial struct HIDP_KEYBOARD_MODIFIER_STATE
             public uint Reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 11) & 0x1FFFFFu;
                 }

@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_TEX2D_ARRAY_RTV1">
-    <summary>
-      <para>Describes the subresources from an array of 2D textures to use in a render-target view.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Describes the subresources from an array of 2D textures to use in a render-target view.</summary>
   </member>
   <member name="D3D11_TEX2D_ARRAY_RTV1.MipSlice">
-    <summary>
-      <para>The index of the mipmap level to use mip slice.</para>
-    </summary>
+    <summary>The index of the mipmap level to use mip slice.</summary>
   </member>
   <member name="D3D11_TEX2D_ARRAY_RTV1.FirstArraySlice">
-    <summary>
-      <para>The index of the first texture to use in an array of textures.</para>
-    </summary>
+    <summary>The index of the first texture to use in an array of textures.</summary>
   </member>
   <member name="D3D11_TEX2D_ARRAY_RTV1.ArraySize">
-    <summary>
-      <para>Number of textures in the array to use in the render-target view, starting from <b>FirstArraySlice</b>.</para>
-    </summary>
+    <summary>Number of textures in the array to use in the render-target view, starting from <b>FirstArraySlice</b>.</summary>
   </member>
   <member name="D3D11_TEX2D_ARRAY_RTV1.PlaneSlice">
-    <summary>
-      <para>The index (plane slice number) of the plane to use in an array of textures.</para>
-    </summary>
+    <summary>The index (plane slice number) of the plane to use in an array of textures.</summary>
   </member>
 </doc>

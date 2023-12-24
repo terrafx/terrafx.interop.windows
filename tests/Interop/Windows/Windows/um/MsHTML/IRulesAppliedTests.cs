@@ -19,32 +19,4 @@ public static unsafe partial class IRulesAppliedTests
     {
         Assert.That(typeof(IRulesApplied).GUID, Is.EqualTo(IID_IRulesApplied));
     }
-
-    /// <summary>Validates that the <see cref="IRulesApplied" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRulesApplied>(), Is.EqualTo(sizeof(IRulesApplied)));
-    }
-
-    /// <summary>Validates that the <see cref="IRulesApplied" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRulesApplied).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRulesApplied" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRulesApplied), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRulesApplied), Is.EqualTo(4));
-        }
-    }
 }

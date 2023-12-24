@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICGifImageDescriptorProperties.xml' path='doc/member[@name="WICGifImageDescriptorProperties"]/*' />
-public enum WICGifImageDescriptorProperties : uint
+public enum WICGifImageDescriptorProperties
 {
     /// <include file='WICGifImageDescriptorProperties.xml' path='doc/member[@name="WICGifImageDescriptorProperties.WICGifImageDescriptorLeft"]/*' />
     WICGifImageDescriptorLeft = 0x1,

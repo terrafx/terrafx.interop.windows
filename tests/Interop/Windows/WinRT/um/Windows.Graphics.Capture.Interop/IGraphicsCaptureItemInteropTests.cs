@@ -19,32 +19,4 @@ public static unsafe partial class IGraphicsCaptureItemInteropTests
     {
         Assert.That(typeof(IGraphicsCaptureItemInterop).GUID, Is.EqualTo(IID_IGraphicsCaptureItemInterop));
     }
-
-    /// <summary>Validates that the <see cref="IGraphicsCaptureItemInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IGraphicsCaptureItemInterop>(), Is.EqualTo(sizeof(IGraphicsCaptureItemInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IGraphicsCaptureItemInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IGraphicsCaptureItemInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IGraphicsCaptureItemInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IGraphicsCaptureItemInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IGraphicsCaptureItemInterop), Is.EqualTo(4));
-        }
-    }
 }

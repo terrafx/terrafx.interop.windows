@@ -25,7 +25,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDistributorNotify*, Guid*, void**, int>)(lpVtbl[0]))((IDistributorNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDistributorNotify*, Guid*, void**, int>)(lpVtbl[0]))((IDistributorNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDistributorNotify*, uint>)(lpVtbl[1]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDistributorNotify*, uint>)(lpVtbl[1]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDistributorNotify*, uint>)(lpVtbl[2]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDistributorNotify*, uint>)(lpVtbl[2]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.Stop"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface, 
     [VtblIndex(3)]
     public HRESULT Stop()
     {
-        return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[3]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDistributorNotify*, int>)(lpVtbl[3]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.Pause"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface, 
     [VtblIndex(4)]
     public HRESULT Pause()
     {
-        return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[4]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDistributorNotify*, int>)(lpVtbl[4]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.Run"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface, 
     [VtblIndex(5)]
     public HRESULT Run([NativeTypeName("REFERENCE_TIME")] long tStart)
     {
-        return ((delegate* unmanaged<IDistributorNotify*, long, int>)(lpVtbl[5]))((IDistributorNotify*)Unsafe.AsPointer(ref this), tStart);
+        return ((delegate* unmanaged[MemberFunction]<IDistributorNotify*, long, int>)(lpVtbl[5]))((IDistributorNotify*)Unsafe.AsPointer(ref this), tStart);
     }
 
     /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.SetSyncSource"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface, 
     [VtblIndex(6)]
     public HRESULT SetSyncSource(IReferenceClock* pClock)
     {
-        return ((delegate* unmanaged<IDistributorNotify*, IReferenceClock*, int>)(lpVtbl[6]))((IDistributorNotify*)Unsafe.AsPointer(ref this), pClock);
+        return ((delegate* unmanaged[MemberFunction]<IDistributorNotify*, IReferenceClock*, int>)(lpVtbl[6]))((IDistributorNotify*)Unsafe.AsPointer(ref this), pClock);
     }
 
     /// <include file='IDistributorNotify.xml' path='doc/member[@name="IDistributorNotify.NotifyGraphChange"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface, 
     [VtblIndex(7)]
     public HRESULT NotifyGraphChange()
     {
-        return ((delegate* unmanaged<IDistributorNotify*, int>)(lpVtbl[7]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDistributorNotify*, int>)(lpVtbl[7]))((IDistributorNotify*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IDistributorNotify : IDistributorNotify.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Stop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Stop;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Pause;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Pause;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> Run;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> Run;
 
         [NativeTypeName("HRESULT (IReferenceClock *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IReferenceClock*, int> SetSyncSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IReferenceClock*, int> SetSyncSource;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> NotifyGraphChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> NotifyGraphChange;
     }
 }

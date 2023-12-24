@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_PROFILE_BUFFER_TYPE">
+    <summary>The <b>KERB_PROFILE_BUFFER_TYPE</b> enumeration lists the type of logon profile returned.</summary>
+  </member>
+  <member name="KERB_PROFILE_BUFFER_TYPE.KerbInteractiveProfile">
+    <summary>The buffer contains information about an interactive <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</summary>
+  </member>
+  <member name="KERB_PROFILE_BUFFER_TYPE.KerbSmartCardProfile"></member>
+  <member name="KERB_PROFILE_BUFFER_TYPE.KerbTicketProfile">
+    <summary>The buffer contains information about a Kerberos logon session.</summary>
+  </member>
+</doc>

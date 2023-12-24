@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IBootOptions.AssignBootImage">
-    <summary>
-      <para>Sets the data stream that contains the boot image.</para>
-    </summary>
-    <param name="newVal">
-      <para>An <b>IStream</b> interface of the data stream that contains the boot image.</para>
-    </param>
+    <summary>Sets the data stream that contains the boot image.</summary>
+    <param name="newVal">An <b>IStream</b> interface of the data stream that contains the boot image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,47 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_BOOT_IMAGE_DATA</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>IMAPI_E_BOOT_IMAGE_DATA</b>
-            </para>
-          </description>
-          <description>
-            <para>The boot object could not be added to the image.</para>
-            <para>Value: 0xC0AAB142</para>
-          </description>
-        </item>
+          <description>The boot object could not be added to the image.<para>Value: 0xC0AAB142</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the size of the newly assigned boot image is either 1.2, 1.44. or 2.88 MB, this method will automatically adjust the <see cref="EmulationType" /> value to the respective "floppy" type value.   It is, however, possible to  override the default or previously assigned <b>EmulationType</b> value by calling the <see cref="IBootOptions.put_Emulation" /> method.</para>
-      <para>The additional specification of the platform on which to use the boot image requires the call to the <see cref="IBootOptions.put_PlatformId" /> method.</para>
-      <para>IMAPI does not include any boot images; developers must provide their own boot images.</para>
-    </remarks>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IBootOptions.get_BootImage" />
-    <seealso cref="IFileSystemImage.get_BootImageOptions" />
-    <seealso cref="IFileSystemImage.put_BootImageOptions" />
   </member>
   <member name="IBootOptions.get_BootImage">
-    <summary>
-      <para>Retrieves a pointer to the boot image data stream.</para>
-    </summary>
-    <param name="pVal">
-      <para>Pointer to the <b>IStream</b> interface associated with the boot image data stream.</para>
-    </param>
+    <summary>Retrieves a pointer to the boot image data stream.</summary>
+    <param name="pVal">Pointer to the <b>IStream</b> interface associated with the boot image data stream.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -64,31 +49,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IBootOptions.AssignBootImage" />
-    <seealso cref="IFileSystemImage.get_BootImageOptions" />
-    <seealso cref="IFileSystemImage.put_BootImageOptions" />
   </member>
   <member name="IBootOptions.get_Emulation">
-    <summary>
-      <para>Retrieves the media type that the boot image is intended to emulate.</para>
-    </summary>
-    <param name="pVal">
-      <para>Media type that the boot image is intended to emulate. For possible values, see the <see cref="EmulationType" /> enumeration type.</para>
-    </param>
+    <summary>Retrieves the media type that the boot image is intended to emulate.</summary>
+    <param name="pVal">Media type that the boot image is intended to emulate. For possible values, see the <see cref="EmulationType" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -96,29 +74,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IBootOptions.put_Emulation" />
   </member>
   <member name="IBootOptions.get_ImageSize">
-    <summary>
-      <para>Retrieves the size of the boot image.</para>
-    </summary>
-    <param name="pVal">
-      <para>Size, in bytes, of the boot image.</para>
-    </param>
+    <summary>Retrieves the size of the boot image.</summary>
+    <param name="pVal">Size, in bytes, of the boot image.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -126,28 +99,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IBootOptions" />
   </member>
   <member name="IBootOptions.get_Manufacturer">
-    <summary>
-      <para>Retrieves the identifier of the manufacturer of the CD.</para>
-    </summary>
-    <param name="pVal">
-      <para>Identifier of the manufacturer of the CD.</para>
-    </param>
+    <summary>Retrieves the identifier of the manufacturer of the CD.</summary>
+    <param name="pVal">Identifier of the manufacturer of the CD.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -155,29 +124,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IBootOptions.put_Manufacturer" />
   </member>
   <member name="IBootOptions.get_PlatformId">
-    <summary>
-      <para>Retrieves the platform identifier that identifies the operating system architecture that the boot image supports.</para>
-    </summary>
-    <param name="pVal">
-      <para>Identifies the operating system architecture that the boot image supports. For possible values, see the <see cref="PlatformId" /> enumeration type.</para>
-    </param>
+    <summary>Retrieves the platform identifier that identifies the operating system architecture that the boot image supports.</summary>
+    <param name="pVal">Identifies the operating system architecture that the boot image supports. For possible values, see the <see cref="PlatformId" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -185,29 +149,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IBootOptions.put_PlatformId" />
   </member>
   <member name="IBootOptions.put_Emulation">
-    <summary>
-      <para>Sets the media type that the boot image is intended to emulate.</para>
-    </summary>
-    <param name="newVal">
-      <para>Media type that the boot image is intended to emulate. For possible values, see the <see cref="EmulationType" /> enumeration type. The default value is <b>EmulationNone</b>, which means the BIOS will not emulate any device type or special sector size for the CD during boot from the CD.</para>
-    </param>
+    <summary>Sets the media type that the boot image is intended to emulate.</summary>
+    <param name="newVal">Media type that the boot image is intended to emulate. For possible values, see the <see cref="EmulationType" /> enumeration type. The default value is <b>EmulationNone</b>, which means the BIOS will not emulate any device type or special sector size for the CD during boot from the CD.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -215,29 +174,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>IMAPI_E_BOOT_EMULATION_IMAGE_SIZE_MISMATCH</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IMAPI_E_BOOT_EMULATION_IMAGE_SIZE_MISMATCH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The emulation type requested does not match the boot image size.</para>
-            <para>Value: 0xC0AAB14A</para>
-          </description>
-        </item>
+          <description>The emulation type requested does not match the boot image size.<para>Value: 0xC0AAB14A</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IBootOptions.get_Emulation" />
   </member>
   <member name="IBootOptions.put_Manufacturer">
-    <summary>
-      <para>Sets an identifier that identifies the manufacturer or developer of the CD.</para>
-    </summary>
-    <param name="newVal">
-      <para>Identifier that identifies the manufacturer or developer of the CD. This is an ANSI string that is limited to 24 bytes. The string does not need to include a NULL character; however, you must set unused bytes to 0x00.</para>
-    </param>
+    <summary>Sets an identifier that identifies the manufacturer or developer of the CD.</summary>
+    <param name="newVal">Identifier that identifies the manufacturer or developer of the CD. This is an ANSI string that is limited to 24 bytes. The string does not need to include a NULL character; however, you must set unused bytes to 0x00.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -245,56 +199,42 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>	IMAPI_E_INVALID_PARAM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>    IMAPI_E_INVALID_PARAM</b>
-            </para>
-          </description>
-          <description>
-            <para>The provided <i>newVal</i> parameter is not valid.</para>
-            <para>Value: 0xC0AAB101</para>
-          </description>
-        </item>
+          <description>The provided <i>newVal</i> parameter is not valid.<para>Value: 0xC0AAB101</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IBootOptions.get_Manufacturer" />
   </member>
   <member name="IBootOptions.put_PlatformId">
-    <summary>
-      <para>Sets the platform identifier that identifies the operating system architecture that the boot image supports.</para>
-    </summary>
-    <param name="newVal">
-      <para>Identifies the operating system architecture that the boot image supports. For possible values, see the <see cref="PlatformId" /> enumeration type. The default value is  <b>PlatformX86</b> for Intel x86–based platforms.</para>
-    </param>
-    <returns>
-      <para>S_OK is returned on success, but other success codes may be returned as a result of implementation.</para>
-    </returns>
-    <seealso cref="IBootOptions" />
-    <seealso cref="IBootOptions.get_PlatformId" />
+    <summary>Sets the platform identifier that identifies the operating system architecture that the boot image supports.</summary>
+    <param name="newVal">Identifies the operating system architecture that the boot image supports. For possible values, see the <see cref="PlatformId" /> enumeration type. The default value is <b>PlatformX86</b> for Intel x86–based platforms.</param>
+    <returns>S_OK is returned on success, but other success codes may be returned as a result of implementation.</returns>
   </member>
   <member name="IBootOptions">
     <summary>
       <para>Use this interface to specify the boot image to add to the optical disc. A boot image contains one or more sectors of code used to start the computer.</para>
       <para>To create an instance of this interface, call the <b>CoCreateInstance</b> function. Use__uuidof(BootOptions) for the class identifier and __uuidof(IBootOptions) for the interface identifier.</para>
     </summary>
-    <remarks>
-      <para>This interface supports the "El Torito" Bootable CD-ROM format specification.</para>
-      <para>To add the boot image to a file system image, call the <see cref="IFileSystemImage.put_BootImageOptions" /> method.</para>
-      <para>To get the boot image associated with a file system image, call the <see cref="IFileSystemImage.get_BootImageOptions" /> method.</para>
-      <para>To create the <b>BootOptions</b> object in a script, use IMAPI2.BootOptions as the program identifier when calling <b>CreateObject</b>.</para>
-    </remarks>
   </member>
 </doc>

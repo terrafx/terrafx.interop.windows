@@ -38,6 +38,12 @@ public enum PROCESS_INFORMATION_CLASS
     /// <include file='PROCESS_INFORMATION_CLASS.xml' path='doc/member[@name="PROCESS_INFORMATION_CLASS.ProcessMachineTypeInfo"]/*' />
     ProcessMachineTypeInfo,
 
+    /// <include file='PROCESS_INFORMATION_CLASS.xml' path='doc/member[@name="PROCESS_INFORMATION_CLASS.ProcessOverrideSubsequentPrefetchParameter"]/*' />
+    ProcessOverrideSubsequentPrefetchParameter,
+
+    /// <include file='PROCESS_INFORMATION_CLASS.xml' path='doc/member[@name="PROCESS_INFORMATION_CLASS.ProcessMaxOverridePrefetchParameter"]/*' />
+    ProcessMaxOverridePrefetchParameter,
+
     /// <include file='PROCESS_INFORMATION_CLASS.xml' path='doc/member[@name="PROCESS_INFORMATION_CLASS.ProcessInformationClassMax"]/*' />
     ProcessInformationClassMax,
 }

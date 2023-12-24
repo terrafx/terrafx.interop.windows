@@ -19,32 +19,4 @@ public static unsafe partial class IDockingWindowFrameTests
     {
         Assert.That(typeof(IDockingWindowFrame).GUID, Is.EqualTo(IID_IDockingWindowFrame));
     }
-
-    /// <summary>Validates that the <see cref="IDockingWindowFrame" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDockingWindowFrame>(), Is.EqualTo(sizeof(IDockingWindowFrame)));
-    }
-
-    /// <summary>Validates that the <see cref="IDockingWindowFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDockingWindowFrame).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDockingWindowFrame" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDockingWindowFrame), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDockingWindowFrame), Is.EqualTo(4));
-        }
-    }
 }

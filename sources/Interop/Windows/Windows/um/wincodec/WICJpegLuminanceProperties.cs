@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICJpegLuminanceProperties.xml' path='doc/member[@name="WICJpegLuminanceProperties"]/*' />
-public enum WICJpegLuminanceProperties : uint
+public enum WICJpegLuminanceProperties
 {
     /// <include file='WICJpegLuminanceProperties.xml' path='doc/member[@name="WICJpegLuminanceProperties.WICJpegLuminanceTable"]/*' />
     WICJpegLuminanceTable = 0x1,

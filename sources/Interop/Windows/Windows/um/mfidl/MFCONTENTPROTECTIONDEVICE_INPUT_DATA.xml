@@ -3,33 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA">
-    <summary>
-      <para>Contains information about the data that you want to provide as input to a protection system function.</para>
-    </summary>
-    <seealso cref="IMFContentProtectionDevice.GetPrivateDataByteCount" />
-    <seealso cref="IMFContentProtectionDevice.InvokeFunction" />
-    <seealso cref="MFCONTENTPROTECTIONDEVICE_OUTPUT_DATA" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Contains information about the data that you want to provide as input to a protection system function.</summary>
   </member>
   <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.HWProtectionFunctionID">
-    <summary>
-      <para>The identifier of the function that you need to run. This value is defined by the implementation of the protection system.</para>
-    </summary>
+    <summary>The identifier of the function that you need to run. This value is defined by the implementation of the protection system.</summary>
   </member>
   <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.PrivateDataByteCount">
-    <summary>
-      <para>The size of the private data that the implementation of  the security processor implementation reserved. You can determine this value by calling the <see cref="IMFContentProtectionDevice.GetPrivateDataByteCount" /> method.</para>
-    </summary>
+    <summary>The size of the private data that the implementation of the security processor implementation reserved. You can determine this value by calling the <see cref="IMFContentProtectionDevice.GetPrivateDataByteCount" /> method.</summary>
   </member>
   <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.HWProtectionDataByteCount">
-    <summary>
-      <para>The size of the data provided as input to the protection system function that you want to run.</para>
-    </summary>
+    <summary>The size of the data provided as input to the protection system function that you want to run.</summary>
   </member>
   <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="MFCONTENTPROTECTIONDEVICE_INPUT_DATA.InputData">
     <summary>

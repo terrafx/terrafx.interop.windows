@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="QUOTA_LIMITS">
-    <summary>
-      <para>The <b>QUOTA_LIMITS</b> structure describes the amount of system resources available to a user.</para>
-    </summary>
+    <summary>The <b>QUOTA_LIMITS</b> structure describes the amount of system resources available to a user.</summary>
   </member>
   <member name="QUOTA_LIMITS.PagedPoolLimit">
     <summary>
@@ -15,7 +13,7 @@
   </member>
   <member name="QUOTA_LIMITS.NonPagedPoolLimit">
     <summary>
-      <para>Specifies the amount of nonpaged pool memory assigned to the user. The nonpaged pool is an area of system memory  for objects that cannot be written to disk but must remain in physical memory as long as they are allocated.</para>
+      <para>Specifies the amount of nonpaged pool memory assigned to the user. The nonpaged pool is an area of system memory for objects that cannot be written to disk but must remain in physical memory as long as they are allocated.</para>
       <para>The value set in this member is not enforced by the LSA. You should set this member to 0, which causes the default value to be used.</para>
     </summary>
   </member>

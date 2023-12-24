@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleControlSite.GetExtendedControl">
-    <summary>
-      <para>Retrieves an <b>IDispatch</b> pointer to the extended control that the container uses to wrap the real control.</para>
-    </summary>
-    <param name="ppDisp">
-      <para>A pointer to an <b>IDispatch</b> pointer variable that receives the interface pointer to the extended control. If an error occurs, the implementation must set *<i>ppDisp</i> to <b>NULL</b>. On success, the caller is responsible for calling <see cref="Release" /> when *<i>ppDisp</i> is no longer needed.</para>
-    </param>
+    <summary>Retrieves an <b>IDispatch</b> pointer to the extended control that the container uses to wrap the real control.</summary>
+    <param name="ppDisp">A pointer to an <b>IDispatch</b> pointer variable that receives the interface pointer to the extended control. If an error occurs, the implementation must set *<i>ppDisp</i> to <b>NULL</b>. On success, the caller is responsible for calling <see cref="Release" /> when *<i>ppDisp</i> is no longer needed.</param>
     <returns>
       <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
       <list type="table">
@@ -16,52 +12,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The container does not implement extended controls.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The container does not implement extended controls.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The address in <i>ppDisp</i> or *<i>ppDisp</i> is not valid. For example, it may be <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The address in <i>ppDisp</i> or *<i>ppDisp</i> is not valid. For example, it may be <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method gives the real control access to whatever properties and methods the container maintains in the extended control. These properties and methods would otherwise be inaccessible to the control.</para>
-      <h3>Notes to Callers</h3>
-      <para>The returned pointer is the responsibility of the caller, which must release it when it is no longer needed.</para>
-    </remarks>
-    <seealso cref="IOleControlSite" />
   </member>
   <member name="IOleControlSite.LockInPlaceActive">
-    <summary>
-      <para>Indicates whether a control should remain in-place active. Calls to this method typically nest an event to ensure that the object's activation state remains stable throughout the processing of the event.</para>
-    </summary>
-    <param name="fLock">
-      <para>Indicates whether to ensure the in-place active state (<b>TRUE</b>) or to allow activation to change (<b>FALSE</b>). When <b>TRUE</b>, a supporting container must not deactivate the in-place object until this method is called again with <b>FALSE</b>.</para>
-    </param>
+    <summary>Indicates whether a control should remain in-place active. Calls to this method typically nest an event to ensure that the object's activation state remains stable throughout the processing of the event.</summary>
+    <param name="fLock">Indicates whether to ensure the in-place active state (<b>TRUE</b>) or to allow activation to change (<b>FALSE</b>). When <b>TRUE</b>, a supporting container must not deactivate the in-place object until this method is called again with <b>FALSE</b>.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -69,63 +61,44 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The lock or unlock was made successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The lock or unlock was made successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The container does not support in-place locking.</para>
-          </description>
-        </item>
+          <description>The container does not support in-place locking.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method affects the control's in-place active state but not its UI-active state.</para>
-    </remarks>
-    <seealso cref="IOleControlSite" />
   </member>
   <member name="IOleControlSite.OnControlInfoChanged">
-    <summary>
-      <para>Informs the container that the control's <see cref="CONTROLINFO" /> structure has changed and that the container should call the control's <see cref="IOleControl.GetControlInfo" /> for an update.</para>
-    </summary>
-    <returns>
-      <para>This method returns S_OK in all cases.</para>
-    </returns>
-    <seealso cref="IOleControl.GetControlInfo" />
-    <seealso cref="IOleControlSite" />
+    <summary>Informs the container that the control's <see cref="CONTROLINFO" /> structure has changed and that the container should call the control's <see cref="IOleControl.GetControlInfo" /> for an update.</summary>
+    <returns>This method returns S_OK in all cases.</returns>
   </member>
   <member name="IOleControlSite.OnFocus">
-    <summary>
-      <para>Indicates whether the control managed by this control site has gained or lost the focus.</para>
-    </summary>
-    <param name="fGotFocus">
-      <para>Indicates whether the control gained (TRUE) or lost the focus (FALSE).</para>
-    </param>
-    <returns>
-      <para>This method returns S_OK in all cases.</para>
-    </returns>
-    <remarks>
-      <para>The container uses this information to update the state of <b>Default</b> and <b>Cancel</b> buttons according to how the control with the focus processes Return or Esc keys. A control's behavior regarding the Return and Esc keys is specified in the control's <see cref="CONTROLINFO" /> structure. See <see cref="IOleControl.GetControlInfo" /> for more information.</para>
-    </remarks>
-    <seealso cref="IOleControl.GetControlInfo" />
-    <seealso cref="IOleControlSite" />
+    <summary>Indicates whether the control managed by this control site has gained or lost the focus.</summary>
+    <param name="fGotFocus">Indicates whether the control gained (TRUE) or lost the focus (FALSE).</param>
+    <returns>This method returns S_OK in all cases.</returns>
   </member>
   <member name="IOleControlSite.ShowPropertyFrame">
-    <summary>
-      <para>Instructs a container to display a property sheet for the control embedded in this site.</para>
-    </summary>
+    <summary>Instructs a container to display a property sheet for the control embedded in this site.</summary>
     <returns>
       <para>This method can return the standard return value E_OUTOFMEMORY, as well as the following values.</para>
       <list type="table">
@@ -133,43 +106,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The container does not need to show property pages itself.</para>
-          </description>
-        </item>
+          <description>The container does not need to show property pages itself.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A control must always call this method in the container first when it intends to show its own property pages. Calling this method gives the container a chance to have those property pages work with the container's extended controls. The container may include its own property pages as well in such cases, which doesn't affect the control at all. If the container does not implement this method or if it returns a failure of any kind, the control can show its property pages directly. Otherwise, the container has shown the pages.</para>
-    </remarks>
-    <seealso cref="IOleControlSite" />
   </member>
   <member name="IOleControlSite.TransformCoords">
-    <summary>
-      <para>Converts coordinates expressed in <b>HIMETRIC</b> units (as is standard in OLE) to the units specified by the container.</para>
-    </summary>
-    <param name="pPtlHimetric">
-      <para>Address of a <a href="https://docs.microsoft.com//previous-versions/dd162807(v=vs.85)">POINTL</a> structure containing coordinates expressed in <b>HIMETRIC</b> units. This is an [in] parameter when <i>dwFlags</i> contains XFORMCOORDS_HIMETRICTOCONTAINER; it is an [out] parameter with XFORMCOORDS_CONTAINERTOHIMETRIC. In the latter case, the contents are undefined on error.</para>
-    </param>
-    <param name="pPtfContainer">
-      <para>Address of a caller-allocated <see cref="POINTF" /> structure that receives the converted coordinates. This is an [in] parameter when <i>dwFlags</i> contains XFORMCOORDS_CONTAINERTOHIMETRIC; it is an [out] parameter with XFORMCOORDS_HIMETRICTOCONTAINER. In the latter case, the contents are undefined on error.</para>
-    </param>
+    <summary>Converts coordinates expressed in <b>HIMETRIC</b> units (as is standard in OLE) to the units specified by the container.</summary>
+    <param name="pPtlHimetric">Address of a <see cref="POINTL" /> structure containing coordinates expressed in <b>HIMETRIC</b> units. This is an [in] parameter when <i>dwFlags</i> contains XFORMCOORDS_HIMETRICTOCONTAINER; it is an [out] parameter with XFORMCOORDS_CONTAINERTOHIMETRIC. In the latter case, the contents are undefined on error.</param>
+    <param name="pPtfContainer">Address of a caller-allocated <see cref="POINTF" /> structure that receives the converted coordinates. This is an [in] parameter when <i>dwFlags</i> contains XFORMCOORDS_CONTAINERTOHIMETRIC; it is an [out] parameter with XFORMCOORDS_HIMETRICTOCONTAINER. In the latter case, the contents are undefined on error.</param>
     <param name="dwFlags">
       <para>Flags indicating the exact conversion to perform. This parameter can be any combination of the following values, except as indicated.</para>
       <list type="table">
@@ -177,91 +144,81 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>XFORMCOORDS_POSITION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The coordinates to convert represent a position point. Cannot be used with XFORMCOORDS_SIZE.</para>
-          </description>
-        </item>
-        <item>
+          <description>The coordinates to convert represent a position point. Cannot be used with XFORMCOORDS_SIZE.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>XFORMCOORDS_SIZE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The coordinates to convert represent a set of dimensions. Cannot be used with XFORMCOORDS_POSITION.</para>
-          </description>
-        </item>
-        <item>
+          <description>The coordinates to convert represent a set of dimensions. Cannot be used with XFORMCOORDS_POSITION.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>XFORMCOORDS_HIMETRICTOCONTAINER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The operation converts pptlHimetric into pptfContainer. Cannot be used with XFORMCOORDS_CONTAINERTOHIMETRIC.</para>
-          </description>
-        </item>
-        <item>
+          <description>The operation converts pptlHimetric into pptfContainer. Cannot be used with XFORMCOORDS_CONTAINERTOHIMETRIC.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>XFORMCOORDS_CONTAINERTOHIMETRIC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x8</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The operation converts pptfContainer into pptlHimetric. Cannot be used with XFORMCOORDS_HIMETRICTOCONTAINER.</para>
-          </description>
-        </item>
-        <item>
+          <description>The operation converts pptfContainer into pptlHimetric. Cannot be used with XFORMCOORDS_HIMETRICTOCONTAINER.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>XFORMCOORDS_EVENTCOMPAT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The operation maintains compatibility with an event.</para>
-          </description>
-        </item>
+          <description>The operation maintains compatibility with an event.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -271,53 +228,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The container does not require any special coordinate conversions. The container deals completely in <b>HIMETRIC</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The container does not require any special coordinate conversions. The container deals completely in <b>HIMETRIC</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The address in <i>pPtlHimetric</i> or <i>pPtfContainer</i> is not valid. For example, it may be <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The address in <i>pPtlHimetric</i> or <i>pPtfContainer</i> is not valid. For example, it may be <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A control uses this method when it has to send coordinates to a container within an event or some other custom call or when the control has container coordinates that it needs to convert into <b>HIMETRIC</b> units.</para>
-    </remarks>
-    <seealso cref="IOleControlSite" />
   </member>
   <member name="IOleControlSite.TranslateAccelerator">
-    <summary>
-      <para>Passes a keystroke to the control site for processing.</para>
-    </summary>
-    <param name="pMsg">
-      <para>A pointer to the <see cref="MSG" /> structure describing the keystroke to be processed.</para>
-    </param>
-    <param name="grfModifiers">
-      <para>Flags describing the state of the Control, Alt, and Shift keys. The value of the flag can be any valid <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms683763(v=vs.85)">KEYMODIFIERS</a> enumeration values.</para>
-    </param>
+    <summary>Passes a keystroke to the control site for processing.</summary>
+    <param name="pMsg">A pointer to the <see cref="MSG" /> structure describing the keystroke to be processed.</param>
+    <param name="grfModifiers">Flags describing the state of the Control, Alt, and Shift keys. The value of the flag can be any valid <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms683763(v=vs.85)">KEYMODIFIERS</a> enumeration values.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -325,50 +278,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The container processed the message.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The container processed the message.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The container did not process the message. This value must also be returned in all other error cases besides E_NOTIMPL.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The container did not process the message. This value must also be returned in all other error cases besides E_NOTIMPL.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The container does not implement accelerator support.</para>
-          </description>
-        </item>
+          <description>The container does not implement accelerator support.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is called by a control that can be UI-active. In such cases, a control can process all keystrokes first through <see cref="IOleInPlaceActiveObject.TranslateAccelerator" />, according to normal OLE Compound Document rules. Inside that method, the control can give the container certain messages to process first by calling <b>IOleControlSite.TranslateAccelerator</b> and using the return value to determine if any processing took place. Otherwise, the control always processes the message first. If the control does not use the keystroke as an accelerator, it passes the keystroke to the container through this method.</para>
-    </remarks>
-    <seealso cref="IOleControlSite" />
-    <seealso cref="IOleInPlaceActiveObject.TranslateAccelerator" />
   </member>
   <member name="IOleControlSite">
-    <summary>
-      <para>Provides the methods that enable a site object to manage each embedded control within a container. A site object provides <b>IOleControlSite</b> as well as other site interfaces such as <see cref="IOleClientSite" /> and <see cref="IOleInPlaceSite" />. When a control requires the services expressed through this interface, it will query one of the other client site interfaces for <b>IOleControlSite</b>.</para>
-    </summary>
-    <seealso cref="IOleClientSite" />
-    <seealso cref="IOleControl" />
-    <seealso cref="IOleInPlaceSite" />
+    <summary>Provides the methods that enable a site object to manage each embedded control within a container. A site object provides <b>IOleControlSite</b> as well as other site interfaces such as <see cref="IOleClientSite" /> and <see cref="IOleInPlaceSite" />. When a control requires the services expressed through this interface, it will query one of the other client site interfaces for <b>IOleControlSite</b>.</summary>
   </member>
 </doc>

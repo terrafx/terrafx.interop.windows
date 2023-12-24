@@ -19,25 +19,4 @@ public static unsafe partial class SVGPathSegCurvetoCubicSmoothAbsTests
     {
         Assert.That(typeof(SVGPathSegCurvetoCubicSmoothAbs).GUID, Is.EqualTo(IID_SVGPathSegCurvetoCubicSmoothAbs));
     }
-
-    /// <summary>Validates that the <see cref="SVGPathSegCurvetoCubicSmoothAbs" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGPathSegCurvetoCubicSmoothAbs>(), Is.EqualTo(sizeof(SVGPathSegCurvetoCubicSmoothAbs)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGPathSegCurvetoCubicSmoothAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGPathSegCurvetoCubicSmoothAbs).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGPathSegCurvetoCubicSmoothAbs" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGPathSegCurvetoCubicSmoothAbs), Is.EqualTo(1));
-    }
 }

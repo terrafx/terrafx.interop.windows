@@ -18,7 +18,7 @@ public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Int
     [VtblIndex(0)]
     public void OnProcessingPassStart()
     {
-        ((delegate* unmanaged<IXAudio2EngineCallback*, void>)(lpVtbl[0]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IXAudio2EngineCallback*, void>)(lpVtbl[0]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXAudio2EngineCallback.xml' path='doc/member[@name="IXAudio2EngineCallback.OnProcessingPassEnd"]/*' />
@@ -26,7 +26,7 @@ public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Int
     [VtblIndex(1)]
     public void OnProcessingPassEnd()
     {
-        ((delegate* unmanaged<IXAudio2EngineCallback*, void>)(lpVtbl[1]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IXAudio2EngineCallback*, void>)(lpVtbl[1]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IXAudio2EngineCallback.xml' path='doc/member[@name="IXAudio2EngineCallback.OnCriticalError"]/*' />
@@ -34,7 +34,7 @@ public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Int
     [VtblIndex(2)]
     public void OnCriticalError(HRESULT Error)
     {
-        ((delegate* unmanaged<IXAudio2EngineCallback*, HRESULT, void>)(lpVtbl[2]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2EngineCallback*, HRESULT, void>)(lpVtbl[2]))((IXAudio2EngineCallback*)Unsafe.AsPointer(ref this), Error);
     }
 
     public interface Interface
@@ -53,12 +53,12 @@ public unsafe partial struct IXAudio2EngineCallback : IXAudio2EngineCallback.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> OnProcessingPassStart;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> OnProcessingPassStart;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> OnProcessingPassEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> OnProcessingPassEnd;
 
         [NativeTypeName("void (HRESULT) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HRESULT, void> OnCriticalError;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HRESULT, void> OnCriticalError;
     }
 }

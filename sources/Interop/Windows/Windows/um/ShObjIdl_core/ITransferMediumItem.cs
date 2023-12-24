@@ -25,7 +25,7 @@ public unsafe partial struct ITransferMediumItem : ITransferMediumItem.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITransferMediumItem*, Guid*, void**, int>)(lpVtbl[0]))((ITransferMediumItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITransferMediumItem*, Guid*, void**, int>)(lpVtbl[0]))((ITransferMediumItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITransferMediumItem : ITransferMediumItem.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITransferMediumItem*, uint>)(lpVtbl[1]))((ITransferMediumItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITransferMediumItem*, uint>)(lpVtbl[1]))((ITransferMediumItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITransferMediumItem : ITransferMediumItem.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITransferMediumItem*, uint>)(lpVtbl[2]))((ITransferMediumItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITransferMediumItem*, uint>)(lpVtbl[2]))((ITransferMediumItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IRelatedItem.GetItemIDList" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITransferMediumItem : ITransferMediumItem.Interface
     [VtblIndex(3)]
     public HRESULT GetItemIDList([NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
     {
-        return ((delegate* unmanaged<ITransferMediumItem*, ITEMIDLIST**, int>)(lpVtbl[3]))((ITransferMediumItem*)Unsafe.AsPointer(ref this), ppidl);
+        return ((delegate* unmanaged[MemberFunction]<ITransferMediumItem*, ITEMIDLIST**, int>)(lpVtbl[3]))((ITransferMediumItem*)Unsafe.AsPointer(ref this), ppidl);
     }
 
     /// <inheritdoc cref="IRelatedItem.GetItem" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITransferMediumItem : ITransferMediumItem.Interface
     [VtblIndex(4)]
     public HRESULT GetItem(IShellItem** ppsi)
     {
-        return ((delegate* unmanaged<ITransferMediumItem*, IShellItem**, int>)(lpVtbl[4]))((ITransferMediumItem*)Unsafe.AsPointer(ref this), ppsi);
+        return ((delegate* unmanaged[MemberFunction]<ITransferMediumItem*, IShellItem**, int>)(lpVtbl[4]))((ITransferMediumItem*)Unsafe.AsPointer(ref this), ppsi);
     }
 
     public interface Interface : IRelatedItem.Interface
@@ -70,18 +70,18 @@ public unsafe partial struct ITransferMediumItem : ITransferMediumItem.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST**, int> GetItemIDList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST**, int> GetItemIDList;
 
         [NativeTypeName("HRESULT (IShellItem **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellItem**, int> GetItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellItem**, int> GetItem;
     }
 }

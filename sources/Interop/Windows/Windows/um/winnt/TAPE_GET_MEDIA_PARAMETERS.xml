@@ -3,39 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TAPE_GET_MEDIA_PARAMETERS">
-    <summary>
-      <para>The
-<b>TAPE_GET_MEDIA_PARAMETERS</b> structure describes the tape in the tape drive. It is used by the <see cref="GetTapeParameters" /> function.</para>
-    </summary>
-    <remarks>
-      <para>The
-<see cref="GetTapeParameters" /> function fills the <b>Remaining</b> and <b>Capacity</b> members with estimates of the tape remaining in the current tape partition and the total capacity of the current tape partition.</para>
-    </remarks>
-    <seealso cref="GetTapeParameters" />
+    <summary>The<b>TAPE_GET_MEDIA_PARAMETERS</b> structure describes the tape in the tape drive. It is used by the <see cref="GetTapeParameters" /> function.</summary>
   </member>
   <member name="TAPE_GET_MEDIA_PARAMETERS.Capacity">
-    <summary>
-      <para>Total number of bytes on the current tape partition.</para>
-    </summary>
+    <summary>Total number of bytes on the current tape partition.</summary>
   </member>
   <member name="TAPE_GET_MEDIA_PARAMETERS.Remaining">
-    <summary>
-      <para>Number of bytes between the current position and the end of the current tape partition.</para>
-    </summary>
+    <summary>Number of bytes between the current position and the end of the current tape partition.</summary>
   </member>
   <member name="TAPE_GET_MEDIA_PARAMETERS.BlockSize">
-    <summary>
-      <para>Number of bytes per block.</para>
-    </summary>
+    <summary>Number of bytes per block.</summary>
   </member>
   <member name="TAPE_GET_MEDIA_PARAMETERS.PartitionCount">
-    <summary>
-      <para>Number of partitions on the tape.</para>
-    </summary>
+    <summary>Number of partitions on the tape.</summary>
   </member>
   <member name="TAPE_GET_MEDIA_PARAMETERS.WriteProtected">
-    <summary>
-      <para>If this member is <b>TRUE</b>, the tape is write-protected. Otherwise, it is not.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, the tape is write-protected. Otherwise, it is not.</summary>
   </member>
 </doc>

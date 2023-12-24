@@ -17,7 +17,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FillConsoleOutputCharacterW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL FillConsoleOutputCharacterW(HANDLE hConsoleOutput, [NativeTypeName("WCHAR")] ushort cCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten);
+    public static extern BOOL FillConsoleOutputCharacterW(HANDLE hConsoleOutput, [NativeTypeName("WCHAR")] char cCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FillConsoleOutputAttribute"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -112,7 +112,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleOutputCharacterW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL WriteConsoleOutputCharacterW(HANDLE hConsoleOutput, [NativeTypeName("LPCWSTR")] ushort* lpCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten);
+    public static extern BOOL WriteConsoleOutputCharacterW(HANDLE hConsoleOutput, [NativeTypeName("LPCWSTR")] char* lpCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwWriteCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsWritten);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WriteConsoleOutputAttribute"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -127,7 +127,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleOutputCharacterW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL ReadConsoleOutputCharacterW(HANDLE hConsoleOutput, [NativeTypeName("LPWSTR")] ushort* lpCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwReadCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsRead);
+    public static extern BOOL ReadConsoleOutputCharacterW(HANDLE hConsoleOutput, [NativeTypeName("LPWSTR")] char* lpCharacter, [NativeTypeName("DWORD")] uint nLength, COORD dwReadCoord, [NativeTypeName("LPDWORD")] uint* lpNumberOfCharsRead);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadConsoleOutputAttribute"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -184,7 +184,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetConsoleTitleW([NativeTypeName("LPWSTR")] ushort* lpConsoleTitle, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint GetConsoleTitleW([NativeTypeName("LPWSTR")] char* lpConsoleTitle, [NativeTypeName("DWORD")] uint nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetConsoleOriginalTitleA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -196,7 +196,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetConsoleOriginalTitleW([NativeTypeName("LPWSTR")] ushort* lpConsoleTitle, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint GetConsoleOriginalTitleW([NativeTypeName("LPWSTR")] char* lpConsoleTitle, [NativeTypeName("DWORD")] uint nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleTitleA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -206,7 +206,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetConsoleTitleW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetConsoleTitleW([NativeTypeName("LPCWSTR")] ushort* lpConsoleTitle);
+    public static extern BOOL SetConsoleTitleW([NativeTypeName("LPCWSTR")] char* lpConsoleTitle);
 
     [NativeTypeName("#define FOREGROUND_BLUE 0x0001")]
     public const int FOREGROUND_BLUE = 0x0001;
@@ -257,13 +257,13 @@ public static unsafe partial class Windows
     public const int COMMON_LVB_SBCSDBCS = 0x0300;
 
     [NativeTypeName("#define FillConsoleOutputCharacter FillConsoleOutputCharacterW")]
-    public static delegate*<HANDLE, ushort, uint, COORD, uint*, BOOL> FillConsoleOutputCharacter => &FillConsoleOutputCharacterW;
+    public static delegate*<HANDLE, char, uint, COORD, uint*, BOOL> FillConsoleOutputCharacter => &FillConsoleOutputCharacterW;
 
     [NativeTypeName("#define WriteConsoleOutputCharacter WriteConsoleOutputCharacterW")]
-    public static delegate*<HANDLE, ushort*, uint, COORD, uint*, BOOL> WriteConsoleOutputCharacter => &WriteConsoleOutputCharacterW;
+    public static delegate*<HANDLE, char*, uint, COORD, uint*, BOOL> WriteConsoleOutputCharacter => &WriteConsoleOutputCharacterW;
 
     [NativeTypeName("#define ReadConsoleOutputCharacter ReadConsoleOutputCharacterW")]
-    public static delegate*<HANDLE, ushort*, uint, COORD, uint*, BOOL> ReadConsoleOutputCharacter => &ReadConsoleOutputCharacterW;
+    public static delegate*<HANDLE, char*, uint, COORD, uint*, BOOL> ReadConsoleOutputCharacter => &ReadConsoleOutputCharacterW;
 
     [NativeTypeName("#define WriteConsoleInput WriteConsoleInputW")]
     public static delegate*<HANDLE, INPUT_RECORD*, uint, uint*, BOOL> WriteConsoleInput => &WriteConsoleInputW;
@@ -278,11 +278,11 @@ public static unsafe partial class Windows
     public static delegate*<HANDLE, CHAR_INFO*, COORD, COORD, SMALL_RECT*, BOOL> ReadConsoleOutput => &ReadConsoleOutputW;
 
     [NativeTypeName("#define GetConsoleTitle GetConsoleTitleW")]
-    public static delegate*<ushort*, uint, uint> GetConsoleTitle => &GetConsoleTitleW;
+    public static delegate*<char*, uint, uint> GetConsoleTitle => &GetConsoleTitleW;
 
     [NativeTypeName("#define GetConsoleOriginalTitle GetConsoleOriginalTitleW")]
-    public static delegate*<ushort*, uint, uint> GetConsoleOriginalTitle => &GetConsoleOriginalTitleW;
+    public static delegate*<char*, uint, uint> GetConsoleOriginalTitle => &GetConsoleOriginalTitleW;
 
     [NativeTypeName("#define SetConsoleTitle SetConsoleTitleW")]
-    public static delegate*<ushort*, BOOL> SetConsoleTitle => &SetConsoleTitleW;
+    public static delegate*<char*, BOOL> SetConsoleTitle => &SetConsoleTitleW;
 }

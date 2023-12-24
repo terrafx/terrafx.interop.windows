@@ -3,160 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFontFamily.GetFamilyNames">
-    <summary>
-      <para>Creates a localized strings object that contains the family names for the font family, indexed by locale name.</para>
-    </summary>
-    <param name="names">
-      <para>Type: <b><see cref="IDWriteLocalizedStrings" />**</b></para>
-      <para>The address of a pointer to the newly created <see cref="IDWriteLocalizedStrings" /> object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The following code example shows how to get the font family name from a <see cref="IDWriteFontFamily" /> object.</para>
-      <code>IDWriteLocalizedStrings* pFamilyNames = NULL;
-
-// Get a list of localized strings for the family name.
-if (SUCCEEDED(hr))
-{
-    hr = pFontFamily-&gt;GetFamilyNames(&amp;amp;amp;amp;amp;amp;pFamilyNames);
-}
-
-UINT32 index = 0;
-BOOL exists = false;
-
-wchar_t localeName[LOCALE_NAME_MAX_LENGTH];
-
-if (SUCCEEDED(hr))
-{
-    // Get the default locale for this user.
-    int defaultLocaleSuccess = GetUserDefaultLocaleName(localeName, LOCALE_NAME_MAX_LENGTH);
-
-    // If the default locale is returned, find that locale name, otherwise use "en-us".
-    if (defaultLocaleSuccess)
-    {
-        hr = pFamilyNames-&gt;FindLocaleName(localeName, &amp;amp;amp;amp;amp;amp;index, &amp;amp;amp;amp;amp;amp;exists);
-    }
-    if (SUCCEEDED(hr) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; !exists) // if the above find did not find a match, retry with US English
-    {
-        hr = pFamilyNames-&gt;FindLocaleName(L"en-us", &amp;amp;amp;amp;amp;amp;index, &amp;amp;amp;amp;amp;amp;exists);
-    }
-}
-
-// If the specified locale doesn't exist, select the first on the list.
-if (!exists)
-    index = 0;
-
-UINT32 length = 0;
-
-// Get the string length.
-if (SUCCEEDED(hr))
-{
-    hr = pFamilyNames-&gt;GetStringLength(index, &amp;amp;amp;amp;amp;amp;length);
-}
-
-// Allocate a string big enough to hold the name.
-wchar_t* name = new (std.nothrow) wchar_t[length+1];
-if (name == NULL)
-{
-    hr = E_OUTOFMEMORY;
-}
-
-// Get the family name.
-if (SUCCEEDED(hr))
-{
-    hr = pFamilyNames-&gt;GetString(index, name, length+1);
-}
-
-</code>
-    </remarks>
-    <seealso cref="IDWriteFontFamily" />
+    <summary>Creates a localized strings object that contains the family names for the font family, indexed by locale name.</summary>
+    <param name="names">The address of a pointer to the newly created <see cref="IDWriteLocalizedStrings" /> object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFamily.GetFirstMatchingFont">
-    <summary>
-      <para>Gets the font that best matches the specified properties.</para>
-    </summary>
-    <param name="weight">
-      <para>Type: <b><see cref="DWRITE_FONT_WEIGHT" /></b></para>
-      <para>A value that is used to match a requested font weight.</para>
-    </param>
-    <param name="stretch">
-      <para>Type: <b><see cref="DWRITE_FONT_STRETCH" /></b></para>
-      <para>A value that is used to match a requested font stretch.</para>
-    </param>
-    <param name="style">
-      <para>Type: <b><see cref="DWRITE_FONT_STYLE" /></b></para>
-      <para>A value that is used to match a requested font style.</para>
-    </param>
-    <param name="matchingFont">
-      <para>Type: <b><see cref="IDWriteFont" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the newly created <see cref="IDWriteFont" /> object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteFontFamily" />
+    <summary>Gets the font that best matches the specified properties.</summary>
+    <param name="weight">A value that is used to match a requested font weight.</param>
+    <param name="stretch">A value that is used to match a requested font stretch.</param>
+    <param name="style">A value that is used to match a requested font style.</param>
+    <param name="matchingFont">When this method returns, contains the address of a pointer to the newly created <see cref="IDWriteFont" /> object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFamily.GetMatchingFonts">
-    <summary>
-      <para>Gets a list of fonts in the font family ranked in order of how well they match the specified properties.</para>
-    </summary>
-    <param name="weight">
-      <para>Type: <b><see cref="DWRITE_FONT_WEIGHT" /></b></para>
-      <para>A value that is used to match a requested font weight.</para>
-    </param>
-    <param name="stretch">
-      <para>Type: <b><see cref="DWRITE_FONT_STRETCH" /></b></para>
-      <para>A value that is used to match a requested font stretch.</para>
-    </param>
-    <param name="style">
-      <para>Type: <b><see cref="DWRITE_FONT_STYLE" /></b></para>
-      <para>A value that is used to match a requested font style.</para>
-    </param>
-    <param name="matchingFonts">
-      <para>Type: <b><see cref="IDWriteFontList" />**</b></para>
-      <para>An address of a pointer to the newly created <see cref="IDWriteFontList" /> object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteFontFamily" />
+    <summary>Gets a list of fonts in the font family ranked in order of how well they match the specified properties.</summary>
+    <param name="weight">A value that is used to match a requested font weight.</param>
+    <param name="stretch">A value that is used to match a requested font stretch.</param>
+    <param name="style">A value that is used to match a requested font style.</param>
+    <param name="matchingFonts">An address of a pointer to the newly created <see cref="IDWriteFontList" /> object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteFontFamily">
-    <summary>
-      <para>Represents a family of related fonts.</para>
-    </summary>
-    <remarks>
-      <para>A font family is a set of fonts that share the same family name, such as "Times New Roman", but that differ in features. These feature differences include style, such as italic, and weight, such as bold.</para>
-      <para>The following illustration shows examples of fonts that are members of the "Times New Roman" font family.</para>
-      <para>
-        <img alt="Illustration of italic, bold, and bold italic text from the Times New Roman font family" src="https://docs.microsoft.com/windows/win32/api/dwritemages/FontFamily_for_TimesNewRoman.png" />
-      </para>
-      <para>An <b>IDWriteFontFamily</b> object can be retrieved from a font collection using the  <see cref="IDWriteFontCollection.GetFontFamily" /> method shown in the following example.  <see cref="GetFontFamily" /> takes a <b>UINT32</b> index and returns the font family for the font at that index.</para>
-      <code>IDWriteFontFamily* pFontFamily = NULL;
-
-// Get the font family.
-if (SUCCEEDED(hr))
-{
-    hr = pFontCollection-&gt;GetFontFamily(i, &amp;amp;amp;amp;amp;amp;pFontFamily);
-}
-
-</code>
-      <para>The font family name is used to specify the font family for text layout and text format objects.  You can get a list of localized font family names from an <b>IDWriteFontFamily</b> object in the form of an <see cref="IDWriteLocalizedStrings" /> object by using the <see cref="IDWriteFontFamily.GetFamilyNames" /> method, as shown in the following code.</para>
-      <code>IDWriteLocalizedStrings* pFamilyNames = NULL;
-
-// Get a list of localized strings for the family name.
-if (SUCCEEDED(hr))
-{
-    hr = pFontFamily-&gt;GetFamilyNames(&amp;amp;amp;amp;amp;amp;pFamilyNames);
-}
-
-</code>
-    </remarks>
-    <seealso cref="IDWriteFontList" />
+    <summary>Represents a family of related fonts.</summary>
   </member>
 </doc>

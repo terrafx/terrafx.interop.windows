@@ -3,61 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MEMORY_BASIC_INFORMATION">
-    <summary>
-      <para>Contains information about a range of pages in the virtual address space of a process. The
-<see cref="VirtualQuery" /> and
-<see cref="VirtualQueryEx" /> functions use this structure.</para>
-    </summary>
-    <remarks>
-      <para>To enable a debugger to debug a target that is running on a different architecture (32-bit versus 64-bit), use one of the explicit forms of this structure.</para>
-      <code>typedef struct _MEMORY_BASIC_INFORMATION32 {
-    DWORD BaseAddress;
-    DWORD AllocationBase;
-    DWORD AllocationProtect;
-    DWORD RegionSize;
-    DWORD State;
-    DWORD Protect;
-    DWORD Type;
-} MEMORY_BASIC_INFORMATION32, *PMEMORY_BASIC_INFORMATION32;
-
-typedef struct DECLSPEC_ALIGN(16) _MEMORY_BASIC_INFORMATION64 {
-    ULONGLONG BaseAddress;
-    ULONGLONG AllocationBase;
-    DWORD     AllocationProtect;
-    DWORD     __alignment1;
-    ULONGLONG RegionSize;
-    DWORD     State;
-    DWORD     Protect;
-    DWORD     Type;
-    DWORD     __alignment2;
-} MEMORY_BASIC_INFORMATION64, *PMEMORY_BASIC_INFORMATION64;
-</code>
-    </remarks>
-    <seealso cref="VirtualAlloc" />
-    <seealso cref="VirtualQuery" />
-    <seealso cref="VirtualQueryEx" />
+    <summary>Contains information about a range of pages in the virtual address space of a process. The<see cref="VirtualQuery" /> and<see cref="VirtualQueryEx" /> functions use this structure.</summary>
   </member>
   <member name="MEMORY_BASIC_INFORMATION.BaseAddress">
-    <summary>
-      <para>A pointer to the base address of the region of pages.</para>
-    </summary>
+    <summary>A pointer to the base address of the region of pages.</summary>
   </member>
   <member name="MEMORY_BASIC_INFORMATION.AllocationBase">
-    <summary>
-      <para>A pointer to the base address of a range of pages allocated by the
-<see cref="VirtualAlloc" /> function. The page pointed to by the <b>BaseAddress</b> member is contained within this allocation range.</para>
-    </summary>
+    <summary>A pointer to the base address of a range of pages allocated by the<see cref="VirtualAlloc" /> function. The page pointed to by the <b>BaseAddress</b> member is contained within this allocation range.</summary>
   </member>
   <member name="MEMORY_BASIC_INFORMATION.AllocationProtect">
-    <summary>
-      <para>The memory protection option when the region was initially allocated. This member can be one of the
-<a href="https://docs.microsoft.com//windows/desktop/Memory/memory-protection-constants">memory protection constants</a> or 0 if the caller does not have access.</para>
-    </summary>
+    <summary>The memory protection option when the region was initially allocated. This member can be one of the<a href="https://docs.microsoft.com//windows/desktop/Memory/memory-protection-constants">memory protection constants</a> or 0 if the caller does not have access.</summary>
   </member>
   <member name="MEMORY_BASIC_INFORMATION.RegionSize">
-    <summary>
-      <para>The size of the region beginning at the base address in which all pages have identical attributes, in bytes.</para>
-    </summary>
+    <summary>The size of the region beginning at the base address in which all pages have identical attributes, in bytes.</summary>
   </member>
   <member name="MEMORY_BASIC_INFORMATION.State">
     <summary>
@@ -67,64 +25,56 @@ typedef struct DECLSPEC_ALIGN(16) _MEMORY_BASIC_INFORMATION64 {
           <description>State</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MEM_COMMIT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates committed pages for which physical storage has been allocated, either in memory or in the paging file on disk.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates committed pages for which physical storage has been allocated, either in memory or in the paging file on disk.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MEM_FREE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x10000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates free pages not accessible to the calling process and available to be allocated. For free pages, the information in the <b>AllocationBase</b>, <b>AllocationProtect</b>, <b>Protect</b>, and <b>Type</b> members is undefined.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates free pages not accessible to the calling process and available to be allocated. For free pages, the information in the <b>AllocationBase</b>, <b>AllocationProtect</b>, <b>Protect</b>, and <b>Type</b> members is undefined.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MEM_RESERVE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x2000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates reserved pages where a range of the process's virtual address space is reserved without any physical storage being allocated. For reserved pages, the information in the <b>Protect</b> member is undefined.</para>
-          </description>
-        </item>
+          <description>Indicates reserved pages where a range of the process's virtual address space is reserved without any physical storage being allocated. For reserved pages, the information in the <b>Protect</b> member is undefined.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MEMORY_BASIC_INFORMATION.Protect">
-    <summary>
-      <para>The access protection of the pages in the region. This member is one of the values listed for the <b>AllocationProtect</b> member.</para>
-    </summary>
+    <summary>The access protection of the pages in the region. This member is one of the values listed for the <b>AllocationProtect</b> member.</summary>
   </member>
   <member name="MEMORY_BASIC_INFORMATION.Type">
     <summary>
@@ -134,57 +84,51 @@ typedef struct DECLSPEC_ALIGN(16) _MEMORY_BASIC_INFORMATION64 {
           <description>Type</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MEM_IMAGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x1000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates that the memory pages within the region are mapped into the view of an image section.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates that the memory pages within the region are mapped into the view of an image section.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MEM_MAPPED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x40000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x40000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates that the memory pages within the region are mapped into the view of a section.</para>
-          </description>
-        </item>
-        <item>
+          <description>Indicates that the memory pages within the region are mapped into the view of a section.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MEM_PRIVATE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x20000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x20000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Indicates that the memory pages within the region are private (that is, not shared by other processes).</para>
-          </description>
-        </item>
+          <description>Indicates that the memory pages within the region are private (that is, not shared by other processes).</description>
+        </listheader>
       </list>
     </summary>
   </member>

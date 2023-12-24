@@ -4,24 +4,17 @@
 <doc>
   <member name="eAVEncDDSurroundExMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies whether a Dolby Digital audio stream is encoded in Dolby Digital Surround EX. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencddsurroundexmode-property">AVEncDDSurroundExMode</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncDDSurroundExMode.eAVEncDDSurroundExMode_NotIndicated">
-    <summary>
-      <para>The Surround EX mode is not indicated.</para>
-    </summary>
+    <summary>The Surround EX mode is not indicated.</summary>
   </member>
   <member name="eAVEncDDSurroundExMode.eAVEncDDSurroundExMode_No">
-    <summary>
-      <para>The audio is not encoded in Surround EX.</para>
-    </summary>
+    <summary>The audio is not encoded in Surround EX.</summary>
   </member>
   <member name="eAVEncDDSurroundExMode.eAVEncDDSurroundExMode_Yes">
-    <summary>
-      <para>The audio is encoded in Surround EX.</para>
-    </summary>
+    <summary>The audio is encoded in Surround EX.</summary>
   </member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellBrowser*, Guid*, void**, int>)(lpVtbl[0]))((IShellBrowser*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, Guid*, void**, int>)(lpVtbl[0]))((IShellBrowser*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellBrowser*, uint>)(lpVtbl[1]))((IShellBrowser*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, uint>)(lpVtbl[1]))((IShellBrowser*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellBrowser*, uint>)(lpVtbl[2]))((IShellBrowser*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, uint>)(lpVtbl[2]))((IShellBrowser*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IOleWindow.GetWindow" />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetWindow(HWND* phwnd)
     {
-        return ((delegate* unmanaged<IShellBrowser*, HWND*, int>)(lpVtbl[3]))((IShellBrowser*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, HWND*, int>)(lpVtbl[3]))((IShellBrowser*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     /// <inheritdoc cref="IOleWindow.ContextSensitiveHelp" />
@@ -59,7 +59,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT ContextSensitiveHelp(BOOL fEnterMode)
     {
-        return ((delegate* unmanaged<IShellBrowser*, BOOL, int>)(lpVtbl[4]))((IShellBrowser*)Unsafe.AsPointer(ref this), fEnterMode);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, BOOL, int>)(lpVtbl[4]))((IShellBrowser*)Unsafe.AsPointer(ref this), fEnterMode);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.InsertMenusSB"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT InsertMenusSB(HMENU hmenuShared, [NativeTypeName("LPOLEMENUGROUPWIDTHS")] OLEMENUGROUPWIDTHS* lpMenuWidths)
     {
-        return ((delegate* unmanaged<IShellBrowser*, HMENU, OLEMENUGROUPWIDTHS*, int>)(lpVtbl[5]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, lpMenuWidths);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, HMENU, OLEMENUGROUPWIDTHS*, int>)(lpVtbl[5]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, lpMenuWidths);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SetMenuSB"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT SetMenuSB(HMENU hmenuShared, [NativeTypeName("HOLEMENU")] HGLOBAL holemenuRes, HWND hwndActiveObject)
     {
-        return ((delegate* unmanaged<IShellBrowser*, HMENU, HGLOBAL, HWND, int>)(lpVtbl[6]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, holemenuRes, hwndActiveObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, HMENU, HGLOBAL, HWND, int>)(lpVtbl[6]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared, holemenuRes, hwndActiveObject);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.RemoveMenusSB"]/*' />
@@ -83,15 +83,15 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT RemoveMenusSB(HMENU hmenuShared)
     {
-        return ((delegate* unmanaged<IShellBrowser*, HMENU, int>)(lpVtbl[7]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, HMENU, int>)(lpVtbl[7]))((IShellBrowser*)Unsafe.AsPointer(ref this), hmenuShared);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SetStatusTextSB"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT SetStatusTextSB([NativeTypeName("LPCWSTR")] ushort* pszStatusText)
+    public HRESULT SetStatusTextSB([NativeTypeName("LPCWSTR")] char* pszStatusText)
     {
-        return ((delegate* unmanaged<IShellBrowser*, ushort*, int>)(lpVtbl[8]))((IShellBrowser*)Unsafe.AsPointer(ref this), pszStatusText);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, char*, int>)(lpVtbl[8]))((IShellBrowser*)Unsafe.AsPointer(ref this), pszStatusText);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.EnableModelessSB"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT EnableModelessSB(BOOL fEnable)
     {
-        return ((delegate* unmanaged<IShellBrowser*, BOOL, int>)(lpVtbl[9]))((IShellBrowser*)Unsafe.AsPointer(ref this), fEnable);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, BOOL, int>)(lpVtbl[9]))((IShellBrowser*)Unsafe.AsPointer(ref this), fEnable);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.TranslateAcceleratorSB"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT TranslateAcceleratorSB(MSG* pmsg, [NativeTypeName("WORD")] ushort wID)
     {
-        return ((delegate* unmanaged<IShellBrowser*, MSG*, ushort, int>)(lpVtbl[10]))((IShellBrowser*)Unsafe.AsPointer(ref this), pmsg, wID);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, MSG*, ushort, int>)(lpVtbl[10]))((IShellBrowser*)Unsafe.AsPointer(ref this), pmsg, wID);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.BrowseObject"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT BrowseObject([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, uint wFlags)
     {
-        return ((delegate* unmanaged<IShellBrowser*, ITEMIDLIST*, uint, int>)(lpVtbl[11]))((IShellBrowser*)Unsafe.AsPointer(ref this), pidl, wFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, ITEMIDLIST*, uint, int>)(lpVtbl[11]))((IShellBrowser*)Unsafe.AsPointer(ref this), pidl, wFlags);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.GetViewStateStream"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT GetViewStateStream([NativeTypeName("DWORD")] uint grfMode, IStream** ppStrm)
     {
-        return ((delegate* unmanaged<IShellBrowser*, uint, IStream**, int>)(lpVtbl[12]))((IShellBrowser*)Unsafe.AsPointer(ref this), grfMode, ppStrm);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, uint, IStream**, int>)(lpVtbl[12]))((IShellBrowser*)Unsafe.AsPointer(ref this), grfMode, ppStrm);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.GetControlWindow"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT GetControlWindow(uint id, HWND* phwnd)
     {
-        return ((delegate* unmanaged<IShellBrowser*, uint, HWND*, int>)(lpVtbl[13]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, phwnd);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, uint, HWND*, int>)(lpVtbl[13]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, phwnd);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SendControlMsg"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT SendControlMsg(uint id, uint uMsg, WPARAM wParam, LPARAM lParam, LRESULT* pret)
     {
-        return ((delegate* unmanaged<IShellBrowser*, uint, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[14]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, uMsg, wParam, lParam, pret);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, uint, uint, WPARAM, LPARAM, LRESULT*, int>)(lpVtbl[14]))((IShellBrowser*)Unsafe.AsPointer(ref this), id, uMsg, wParam, lParam, pret);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.QueryActiveShellView"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT QueryActiveShellView(IShellView** ppshv)
     {
-        return ((delegate* unmanaged<IShellBrowser*, IShellView**, int>)(lpVtbl[15]))((IShellBrowser*)Unsafe.AsPointer(ref this), ppshv);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, IShellView**, int>)(lpVtbl[15]))((IShellBrowser*)Unsafe.AsPointer(ref this), ppshv);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.OnViewWindowActive"]/*' />
@@ -155,15 +155,15 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT OnViewWindowActive(IShellView* pshv)
     {
-        return ((delegate* unmanaged<IShellBrowser*, IShellView*, int>)(lpVtbl[16]))((IShellBrowser*)Unsafe.AsPointer(ref this), pshv);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, IShellView*, int>)(lpVtbl[16]))((IShellBrowser*)Unsafe.AsPointer(ref this), pshv);
     }
 
     /// <include file='IShellBrowser.xml' path='doc/member[@name="IShellBrowser.SetToolbarItems"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] void* lpButtons, uint nButtons, uint uFlags)
+    public HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] TBBUTTON* lpButtons, uint nButtons, uint uFlags)
     {
-        return ((delegate* unmanaged<IShellBrowser*, void*, uint, uint, int>)(lpVtbl[17]))((IShellBrowser*)Unsafe.AsPointer(ref this), lpButtons, nButtons, uFlags);
+        return ((delegate* unmanaged[MemberFunction]<IShellBrowser*, TBBUTTON*, uint, uint, int>)(lpVtbl[17]))((IShellBrowser*)Unsafe.AsPointer(ref this), lpButtons, nButtons, uFlags);
     }
 
     public interface Interface : IOleWindow.Interface
@@ -178,7 +178,7 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
         HRESULT RemoveMenusSB(HMENU hmenuShared);
 
         [VtblIndex(8)]
-        HRESULT SetStatusTextSB([NativeTypeName("LPCWSTR")] ushort* pszStatusText);
+        HRESULT SetStatusTextSB([NativeTypeName("LPCWSTR")] char* pszStatusText);
 
         [VtblIndex(9)]
         HRESULT EnableModelessSB(BOOL fEnable);
@@ -205,64 +205,64 @@ public unsafe partial struct IShellBrowser : IShellBrowser.Interface, INativeGui
         HRESULT OnViewWindowActive(IShellView* pshv);
 
         [VtblIndex(17)]
-        HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] void* lpButtons, uint nButtons, uint uFlags);
+        HRESULT SetToolbarItems([NativeTypeName("LPTBBUTTONSB")] TBBUTTON* lpButtons, uint nButtons, uint uFlags);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWindow;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> ContextSensitiveHelp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> ContextSensitiveHelp;
 
         [NativeTypeName("HRESULT (HMENU, LPOLEMENUGROUPWIDTHS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU, OLEMENUGROUPWIDTHS*, int> InsertMenusSB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU, OLEMENUGROUPWIDTHS*, int> InsertMenusSB;
 
         [NativeTypeName("HRESULT (HMENU, HOLEMENU, HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU, HGLOBAL, HWND, int> SetMenuSB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU, HGLOBAL, HWND, int> SetMenuSB;
 
         [NativeTypeName("HRESULT (HMENU) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU, int> RemoveMenusSB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU, int> RemoveMenusSB;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetStatusTextSB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetStatusTextSB;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> EnableModelessSB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> EnableModelessSB;
 
         [NativeTypeName("HRESULT (MSG *, WORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, ushort, int> TranslateAcceleratorSB;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, ushort, int> TranslateAcceleratorSB;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, uint, int> BrowseObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, uint, int> BrowseObject;
 
         [NativeTypeName("HRESULT (DWORD, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IStream**, int> GetViewStateStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IStream**, int> GetViewStateStream;
 
         [NativeTypeName("HRESULT (UINT, HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, HWND*, int> GetControlWindow;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, HWND*, int> GetControlWindow;
 
         [NativeTypeName("HRESULT (UINT, UINT, WPARAM, LPARAM, LRESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, WPARAM, LPARAM, LRESULT*, int> SendControlMsg;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, WPARAM, LPARAM, LRESULT*, int> SendControlMsg;
 
         [NativeTypeName("HRESULT (IShellView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView**, int> QueryActiveShellView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellView**, int> QueryActiveShellView;
 
         [NativeTypeName("HRESULT (IShellView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IShellView*, int> OnViewWindowActive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IShellView*, int> OnViewWindowActive;
 
         [NativeTypeName("HRESULT (LPTBBUTTONSB, UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, uint, int> SetToolbarItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TBBUTTON*, uint, uint, int> SetToolbarItems;
     }
 }

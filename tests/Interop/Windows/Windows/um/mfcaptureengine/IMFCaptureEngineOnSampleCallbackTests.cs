@@ -21,32 +21,4 @@ public static unsafe partial class IMFCaptureEngineOnSampleCallbackTests
     {
         Assert.That(typeof(IMFCaptureEngineOnSampleCallback).GUID, Is.EqualTo(IID_IMFCaptureEngineOnSampleCallback));
     }
-
-    /// <summary>Validates that the <see cref="IMFCaptureEngineOnSampleCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFCaptureEngineOnSampleCallback>(), Is.EqualTo(sizeof(IMFCaptureEngineOnSampleCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFCaptureEngineOnSampleCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFCaptureEngineOnSampleCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFCaptureEngineOnSampleCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFCaptureEngineOnSampleCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFCaptureEngineOnSampleCallback), Is.EqualTo(4));
-        }
-    }
 }

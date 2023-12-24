@@ -3,37 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_LISTENER_STATE">
-    <summary>
-      <para>The different states that a listener can be in.</para>
-    </summary>
-    <remarks>
-      <para>The following are the state transitions for a Listener.</para>
-      <para>.:image type="content" source="./images/ListenerStates.png" border="false" alt-text="Diagram showing the possible states of a Listener object and the transitions between them.".:</para>
-      <para>A listener will only move to <b>WS_LISTENER_STATE_FAULTED</b></para>
-      <para>state if <see cref="WsAbortListener" /> is called.</para>
-      <para>Note that only the valid state transitions are shown.  Using
-a function not shown for a given state will result in an
-<b>WS_E_INVALID_OPERATION</b> error being returned from
-the function (or crash in the case of <see cref="WsFreeListener" />).
-See <a href="https://docs.microsoft.com//windows/desktop/wsw/windows-web-services-return-values">Windows Web Services Return Values</a>.</para>
-    </remarks>
+    <summary>The different states that a listener can be in.</summary>
   </member>
-  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_CREATED">
-    <summary></summary>
-  </member>
-  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_OPENING">
-    <summary></summary>
-  </member>
-  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_OPEN">
-    <summary></summary>
-  </member>
-  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_FAULTED">
-    <summary></summary>
-  </member>
-  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_CLOSING">
-    <summary></summary>
-  </member>
-  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_CLOSED">
-    <summary></summary>
-  </member>
+  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_CREATED"></member>
+  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_OPENING"></member>
+  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_OPEN"></member>
+  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_FAULTED"></member>
+  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_CLOSING"></member>
+  <member name="WS_LISTENER_STATE.WS_LISTENER_STATE_CLOSED"></member>
 </doc>

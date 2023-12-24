@@ -3,30 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE">
-    <summary>
-      <para>Specifies the alpha fill mode for video processing.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-enumerations">Direct3D 11 Video Enumerations</seealso>
-    <seealso cref="ID3D11VideoContext.VideoProcessorSetOutputAlphaFillMode" />
+    <summary>Specifies the alpha fill mode for video processing.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE.D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_OPAQUE">
-    <summary>
-      <para>Alpha values inside the target rectangle are set to opaque.</para>
-    </summary>
+    <summary>Alpha values inside the target rectangle are set to opaque.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE.D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_BACKGROUND">
-    <summary>
-      <para>Alpha values inside the target rectangle are set to the alpha value specified in the background color. To set the background color, call the <see cref="ID3D11VideoContext.VideoProcessorSetOutputBackgroundColor" /> method.</para>
-    </summary>
+    <summary>Alpha values inside the target rectangle are set to the alpha value specified in the background color. To set the background color, call the <see cref="ID3D11VideoContext.VideoProcessorSetOutputBackgroundColor" /> method.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE.D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_DESTINATION">
-    <summary>
-      <para>Existing alpha values remain unchanged in the output surface.</para>
-    </summary>
+    <summary>Existing alpha values remain unchanged in the output surface.</summary>
   </member>
   <member name="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE.D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_SOURCE_STREAM">
     <summary>
-      <para>Alpha values are taken from an  input stream, scaled, and copied to the corresponding destination rectangle for that stream. The input stream is specified in the <i>StreamIndex</i> parameter of the <see cref="ID3D11VideoContext.VideoProcessorSetOutputAlphaFillMode" /> method.</para>
+      <para>Alpha values are taken from an input stream, scaled, and copied to the corresponding destination rectangle for that stream. The input stream is specified in the <i>StreamIndex</i> parameter of the <see cref="ID3D11VideoContext.VideoProcessorSetOutputAlphaFillMode" /> method.</para>
       <para>If the input stream does not have alpha data, the video processor sets the alpha values in the target rectangle to opaque. If the input stream is disabled or the source rectangle is empty, the alpha values in the target rectangle are not modified.</para>
     </summary>
   </member>

@@ -3,63 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CSV_CONTROL_OP">
-    <summary>
-      <para>Specifies the type of CSV control operation to use with the <a href="https://docs.microsoft.com/ni-winioctl-fsctl_csv_control.md">FSCTL_CSV_CONTROL</a> control code.</para>
-    </summary>
-    <remarks>
-      <para>An alternative to calling the <a href="https://docs.microsoft.com/ni-winioctl-fsctl_csv_control.md">FSCTL_CSV_CONTROL</a> control code with this enumeration is to use the <see cref="CSV_CONTROL_PARAM" /> structure, which encapsulates a member of this enumeration type.</para>
-    </remarks>
-    <seealso cref="CSV_CONTROL_PARAM" />
-    <seealso cref="CSV_QUERY_FILE_REVISION" />
-    <seealso cref="CSV_QUERY_MDS_PATH" />
-    <seealso cref="CSV_QUERY_REDIRECT_STATE" />
-    <seealso href="https://docs.microsoft.com/ni-winioctl-fsctl_csv_control.md">FSCTL_CSV_CONTROL</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-enumerations">File Management Enumerations</seealso>
+    <summary>Specifies the type of CSV control operation to use with the <a href="https://docs.microsoft.com/ni-winioctl-fsctl_csv_control.md">FSCTL_CSV_CONTROL</a> control code.</summary>
   </member>
   <member name="CSV_CONTROL_OP.CsvControlStartRedirectFile">
-    <summary>
-      <para>Start file redirection.</para>
-    </summary>
+    <summary>Start file redirection.</summary>
   </member>
   <member name="CSV_CONTROL_OP.CsvControlStopRedirectFile">
-    <summary>
-      <para>Stop file redirection.</para>
-    </summary>
+    <summary>Stop file redirection.</summary>
   </member>
   <member name="CSV_CONTROL_OP.CsvControlQueryRedirectState">
-    <summary>
-      <para>Search for state redirection. When this value is specified, the <see cref="CSV_QUERY_REDIRECT_STATE" /> structure must also be used.</para>
-    </summary>
+    <summary>Search for state redirection. When this value is specified, the <see cref="CSV_QUERY_REDIRECT_STATE" /> structure must also be used.</summary>
   </member>
   <member name="CSV_CONTROL_OP.CsvControlQueryFileRevision">
-    <summary>
-      <para>Search for file revision. When this value is specified, the <see cref="CSV_QUERY_FILE_REVISION" /> structure must also be used.</para>
-    </summary>
+    <summary>Search for file revision. When this value is specified, the <see cref="CSV_QUERY_FILE_REVISION" /> structure must also be used.</summary>
   </member>
-  <member name="CSV_CONTROL_OP.CsvControlQueryMdsPath">
-    <summary></summary>
-  </member>
-  <member name="CSV_CONTROL_OP.CsvControlQueryFileRevisionFileId128">
-    <summary></summary>
-  </member>
-  <member name="CSV_CONTROL_OP.CsvControlQueryVolumeRedirectState">
-    <summary></summary>
-  </member>
-  <member name="CSV_CONTROL_OP.CsvControlEnableUSNRangeModificationTracking">
-    <summary></summary>
-  </member>
-  <member name="CSV_CONTROL_OP.CsvControlMarkHandleLocalVolumeMount">
-    <summary></summary>
-  </member>
-  <member name="CSV_CONTROL_OP.CsvControlUnmarkHandleLocalVolumeMount">
-    <summary></summary>
-  </member>
-  <member name="CSV_CONTROL_OP.CsvControlGetCsvFsMdsPathV2">
-    <summary></summary>
-  </member>
-  <member name="CSV_CONTROL_OP.CsvControlDisableCaching">
-    <summary></summary>
-  </member>
+  <member name="CSV_CONTROL_OP.CsvControlQueryMdsPath"></member>
+  <member name="CSV_CONTROL_OP.CsvControlQueryFileRevisionFileId128"></member>
+  <member name="CSV_CONTROL_OP.CsvControlQueryVolumeRedirectState"></member>
+  <member name="CSV_CONTROL_OP.CsvControlEnableUSNRangeModificationTracking"></member>
+  <member name="CSV_CONTROL_OP.CsvControlMarkHandleLocalVolumeMount"></member>
+  <member name="CSV_CONTROL_OP.CsvControlUnmarkHandleLocalVolumeMount"></member>
+  <member name="CSV_CONTROL_OP.CsvControlGetCsvFsMdsPathV2"></member>
+  <member name="CSV_CONTROL_OP.CsvControlDisableCaching"></member>
   <member name="CSV_CONTROL_OP.CsvControlEnableCaching">
     <summary>
       <h4>- CsvControlMdsPath</h4>

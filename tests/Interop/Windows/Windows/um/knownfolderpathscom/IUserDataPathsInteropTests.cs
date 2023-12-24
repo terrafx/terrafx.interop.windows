@@ -19,32 +19,4 @@ public static unsafe partial class IUserDataPathsInteropTests
     {
         Assert.That(typeof(IUserDataPathsInterop).GUID, Is.EqualTo(IID_IUserDataPathsInterop));
     }
-
-    /// <summary>Validates that the <see cref="IUserDataPathsInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUserDataPathsInterop>(), Is.EqualTo(sizeof(IUserDataPathsInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IUserDataPathsInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUserDataPathsInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUserDataPathsInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUserDataPathsInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUserDataPathsInterop), Is.EqualTo(4));
-        }
-    }
 }

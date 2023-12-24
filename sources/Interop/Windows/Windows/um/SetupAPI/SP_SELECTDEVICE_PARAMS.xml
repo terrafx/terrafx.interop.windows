@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SP_SELECTDEVICE_PARAMS">
+    <summary>An SP_SELECTDEVICE_PARAMS structure corresponds to a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-selectdevice">DIF_SELECTDEVICE</a> installation request.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.ClassInstallHeader">
+    <summary>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.Title">
+    <summary>Buffer that contains an installer-provided window title for driver-selection windows. Windows uses this title for the window title for the Select Device dialogs.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.Instructions">
+    <summary>Buffer that contains an installer-provided select-device instructions.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.ListLabel">
+    <summary>Buffer that contains an installer-provided label for the list of drivers from which the user can select.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.SubTitle">
+    <summary>Buffer that contains an installer-provided subtitle used in select-device wizards. This string is not used in select dialogs.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.Reserved">
+    <summary>Reserved. For internal use only.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS">
+    <summary>An SP_SELECTDEVICE_PARAMS structure corresponds to a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-selectdevice">DIF_SELECTDEVICE</a> installation request.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.ClassInstallHeader">
+    <summary>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.Title">
+    <summary>Buffer that contains an installer-provided window title for driver-selection windows. Windows uses this title for the window title for the Select Device dialogs.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.Instructions">
+    <summary>Buffer that contains an installer-provided select-device instructions.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.ListLabel">
+    <summary>Buffer that contains an installer-provided label for the list of drivers from which the user can select.</summary>
+  </member>
+  <member name="SP_SELECTDEVICE_PARAMS.SubTitle">
+    <summary>
+      <para>Buffer that contains an installer-provided subtitle used in select-device wizards. This string is not used in select dialogs.</para>
+      <h4>- Reserved</h4>
+      <para>Reserved. For internal use only.</para>
+    </summary>
+  </member>
+</doc>

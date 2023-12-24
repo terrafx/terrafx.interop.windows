@@ -3,92 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS">
-    <summary>
-      <para>This structure is reserved for system use, and you should not use it in your code.</para>
-    </summary>
+    <summary>This structure is reserved for system use, and you should not use it in your code.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.PtpV2OverUdpIPv4EventMsgReceiveHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.PtpV2OverUdpIPv4AllMsgReceiveHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.PtpV2OverUdpIPv4EventMsgTransmitHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.PtpV2OverUdpIPv4AllMsgTransmitHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.PtpV2OverUdpIPv6EventMsgReceiveHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.PtpV2OverUdpIPv6AllMsgReceiveHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.PtpV2OverUdpIPv6EventMsgTransmitHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.PtpV2OverUdpIPv6AllMsgTransmitHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.AllReceiveHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.AllTransmitHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.TaggedTransmitHw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.AllReceiveSw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.AllTransmitSw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="INTERFACE_TIMESTAMP_CAPABILITY_FLAGS.TaggedTransmitSw">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">BOOLEAN</a></b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

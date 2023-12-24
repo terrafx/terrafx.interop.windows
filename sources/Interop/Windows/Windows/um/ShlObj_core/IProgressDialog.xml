@@ -3,140 +3,47 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IProgressDialog.HasUserCancelled">
-    <summary>
-      <para>Checks whether the user has canceled the operation.</para>
-    </summary>
+    <summary>Checks whether the user has canceled the operation.</summary>
     <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> if the user has canceled the operation; otherwise, <b>FALSE</b>.</para>
-    </returns>
-    <remarks>
-      <para>The system does not send a message to the application when the user clicks the <b>Cancel</b> button. You must periodically use this function to poll the progress dialog box object to determine whether the operation has been canceled.</para>
-    </remarks>
-    <seealso cref="IProgressDialog" />
+      <b>TRUE</b> if the user has canceled the operation; otherwise, <b>FALSE</b>.</returns>
   </member>
   <member name="IProgressDialog.SetCancelMsg">
-    <summary>
-      <para>Sets a message to be displayed if the user cancels the operation.</para>
-    </summary>
-    <param name="pwzCancelMsg">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a null-terminated Unicode string that contains the message to be displayed.</para>
-    </param>
-    <param name="pvResevered">
-      <para>Type: <b>LPCVOID</b></para>
-      <para>Reserved. Set to <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Even though the user clicks <b>Cancel</b>, the application cannot immediately call <see cref="IProgressDialog.StopProgressDialog" /> to close the dialog box. The application must wait until the next time it calls <see cref="IProgressDialog.HasUserCancelled" /> to discover that the user has canceled the operation. Since this delay might be significant, the progress dialog box provides the user with immediate feedback by clearing text lines 1 and 2 and displaying the cancel message on line 3. The message is intended to let the user know that the delay is normal and that the progress dialog box will be closed shortly. It is typically is set to something like "Please wait while ...".</para>
-    </remarks>
-    <seealso cref="IProgressDialog" />
+    <summary>Sets a message to be displayed if the user cancels the operation.</summary>
+    <param name="pwzCancelMsg">A pointer to a null-terminated Unicode string that contains the message to be displayed.</param>
+    <param name="pvResevered">Reserved. Set to <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProgressDialog.SetLine">
-    <summary>
-      <para>Displays a message in the progress dialog.</para>
-    </summary>
-    <param name="dwLineNum">
-      <para>Type: <b>DWORD</b></para>
-      <para>The line number on which the text is to be displayed. Currently there are three lines—1, 2, and 3. If the <b>PROGDLG_AUTOTIME</b> flag was included in the <i>dwFlags</i> parameter when <see cref="IProgressDialog.StartProgressDialog" /> was called, only lines 1 and 2 can be used. The estimated time will be displayed on line 3.</para>
-    </param>
-    <param name="pwzString">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A null-terminated Unicode string that contains the text.</para>
-    </param>
+    <summary>Displays a message in the progress dialog.</summary>
+    <param name="dwLineNum">The line number on which the text is to be displayed. Currently there are three lines—1, 2, and 3. If the <b>PROGDLG_AUTOTIME</b> flag was included in the <i>dwFlags</i> parameter when <see cref="IProgressDialog.StartProgressDialog" /> was called, only lines 1 and 2 can be used. The estimated time will be displayed on line 3.</param>
+    <param name="pwzString">A null-terminated Unicode string that contains the text.</param>
     <param name="fCompactPath">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to have path strings compacted if they are too large to fit on a line. The paths are compacted with <see cref="PathCompactPath" />.</para>
-    </param>
-    <param name="pvResevered">
-      <para>Type: <b>LPCVOID</b></para>
-      <para>Reserved. Set to <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This function is typically used to display a message such as "Item XXX is now being processed." typically, messages are displayed on lines 1 and 2, with line 3 reserved for the estimated time.</para>
-    </remarks>
-    <seealso cref="IProgressDialog" />
+      <b>TRUE</b> to have path strings compacted if they are too large to fit on a line. The paths are compacted with <see cref="PathCompactPath" />.</param>
+    <param name="pvResevered">Reserved. Set to <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProgressDialog.SetProgress">
-    <summary>
-      <para>Updates the progress dialog box with the current state of the operation.</para>
-    </summary>
-    <param name="dwCompleted">
-      <para>Type: <b>DWORD</b></para>
-      <para>An application-defined value that indicates what proportion of the operation has been completed at the time the method was called.</para>
-    </param>
-    <param name="dwTotal">
-      <para>Type: <b>DWORD</b></para>
-      <para>An application-defined value that specifies what value <i>dwCompleted</i> will have when the operation is complete.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use any convenient numerical measure of the progress of the operation. To use values larger than 4 gigabytes (GB), you can instead call <see cref="IProgressDialog.SetProgress64" />.</para>
-    </remarks>
-    <seealso cref="IProgressDialog" />
+    <summary>Updates the progress dialog box with the current state of the operation.</summary>
+    <param name="dwCompleted">An application-defined value that indicates what proportion of the operation has been completed at the time the method was called.</param>
+    <param name="dwTotal">An application-defined value that specifies what value <i>dwCompleted</i> will have when the operation is complete.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProgressDialog.SetProgress64">
-    <summary>
-      <para>Updates the progress dialog box with the current state of the operation.</para>
-    </summary>
-    <param name="ullCompleted">
-      <para>Type: <b>ULONGLONG</b></para>
-      <para>An application-defined value that indicates what proportion of the operation has been completed at the time the method was called.</para>
-    </param>
-    <param name="ullTotal">
-      <para>Type: <b>ULONGLONG</b></para>
-      <para>An application-defined value that specifies what value <i>ullCompleted</i> will have when the operation is complete.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method has exactly the same function as <see cref="IProgressDialog.SetProgress" /> but allows you to use values larger than one <b>DWORD</b> (4 GB).</para>
-    </remarks>
-    <seealso cref="IProgressDialog" />
+    <summary>Updates the progress dialog box with the current state of the operation.</summary>
+    <param name="ullCompleted">An application-defined value that indicates what proportion of the operation has been completed at the time the method was called.</param>
+    <param name="ullTotal">An application-defined value that specifies what value <i>ullCompleted</i> will have when the operation is complete.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProgressDialog.SetTitle">
-    <summary>
-      <para>Sets the title of the progress dialog box.</para>
-    </summary>
-    <param name="pwzTitle">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>A pointer to a null-terminated Unicode string that contains the dialog box title.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IProgressDialog" />
+    <summary>Sets the title of the progress dialog box.</summary>
+    <param name="pwzTitle">A pointer to a null-terminated Unicode string that contains the dialog box title.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProgressDialog.StartProgressDialog">
-    <summary>
-      <para>Starts the progress dialog box.</para>
-    </summary>
-    <param name="hwndParent">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the dialog box's parent window.</para>
-    </param>
-    <param name="punkEnableModless">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>Reserved. Set to <b>NULL</b>.</para>
-    </param>
+    <summary>Starts the progress dialog box.</summary>
+    <param name="hwndParent">A handle to the dialog box's parent window.</param>
+    <param name="punkEnableModless">Reserved. Set to <b>NULL</b>.</param>
     <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>Flags that control the operation of the progress dialog box. A combination of the following values:</para>
       <h4>PROGDLG_NORMAL</h4>
       <para>Normal progress dialog box behavior.</para>
@@ -157,34 +64,16 @@
       <para>
         <b>Windows Vista and later.</b> Do not display a cancel button. The operation cannot be canceled. Use this only when absolutely necessary.</para>
     </param>
-    <param name="pvResevered">
-      <para>Type: <b>LPCVOID</b></para>
-      <para>Reserved. Set to <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IProgressDialog" />
+    <param name="pvResevered">Reserved. Set to <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProgressDialog.StopProgressDialog">
-    <summary>
-      <para>Stops the progress dialog box and removes it from the screen.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IProgressDialog" />
-    <seealso cref="IProgressDialog.HasUserCancelled" />
-    <seealso cref="IProgressDialog.StartProgressDialog" />
+    <summary>Stops the progress dialog box and removes it from the screen.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProgressDialog.Timer">
-    <summary>
-      <para>Resets the progress dialog box timer to zero.</para>
-    </summary>
+    <summary>Resets the progress dialog box timer to zero.</summary>
     <param name="dwTimerAction">
-      <para>Type: <b>DWORD</b></para>
       <para>Flags that indicate the action to be taken by the timer. One of the following values:</para>
       <h4>PDTIMER_RESET</h4>
       <para>Resets the timer to zero. Progress will be calculated from the time this method is called.</para>
@@ -193,72 +82,10 @@
       <h4>PDTIMER_RESUME</h4>
       <para>Progress has been resumed.</para>
     </param>
-    <param name="pvResevered">
-      <para>Type: <b>LPCVOID</b></para>
-      <para>Reserved. Set to <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The timer is used to estimate the remaining time. It is started when your application calls <see cref="IProgressDialog.StartProgressDialog" />. Unless your application will start immediately, it should call <b>Timer</b> just before starting the operation. This practice ensures that the time estimates will be as accurate as possible. This method should not be called after the first call to <see cref="IProgressDialog.SetProgress" />.</para>
-    </remarks>
-    <seealso cref="IProgressDialog" />
+    <param name="pvResevered">Reserved. Set to <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IProgressDialog">
-    <summary>
-      <para>Exposes methods that provide options for an application to display a progress dialog box. This interface is exported by the progress dialog box object (CLSID_ProgressDialog). This object is a generic way to show a user how an operation is progressing. It is typically used when deleting, uploading, copying, moving, or downloading large numbers of files.</para>
-    </summary>
-    <remarks>
-      <para>The progress dialog box object creates a modeless dialog box and allows the client to set its title, animation, text lines, and progress bar. The object then handles updating on a background thread and allows the user to cancel the operation. Optionally, it estimates the time remaining until the operation is complete and displays the information as a line of text.</para>
-      <para>Applications normally do not implement this interface. It is exported by the progress dialog box object for use by applications.</para>
-      <para>Use this interface when your application needs to display a progress dialog box. To initialize the object:</para>
-      <list type="number">
-        <item>
-          <description>Create an in-process progress dialog box object (CLSID_ProgressDialog) with <see cref="CoCreateInstance" />. Request a
-pointer to its <b>IProgressDialog</b> interface (IID_IProgressDialog).</description>
-        </item>
-        <item>
-          <description>Call <see cref="IProgressDialog.SetTitle" /> to specify the dialog box title.</description>
-        </item>
-        <item>
-          <description>Call <see cref="IProgressDialog.SetAnimation" /> to specify an AVI clip to be played while the operation progresses.</description>
-        </item>
-        <item>
-          <description>Call <see cref="IProgressDialog.SetCancelMsg" /> to specify the message that will be displayed if the user cancels the operation.</description>
-        </item>
-      </list>
-      <para>To display the progress of the operation:</para>
-      <list type="number">
-        <item>
-          <description>Call <see cref="IProgressDialog.StartProgressDialog" /> to display the dialog box.</description>
-        </item>
-        <item>
-          <description>Assign a numerical value to the total amount of work the operation will perform. Use any number that allows you to conveniently define the progress of the operation. For example, set this value to 100 if you want to specify the progress of the operation in terms of the percent that has been completed.</description>
-        </item>
-        <item>
-          <description>Call <see cref="IProgressDialog.Timer" /> to reset the timer. This method sets the starting point that the progress dialog object uses to estimate the time remaining in the operation. If you do not call this method, the starting point will be the call to <see cref="StartProgressDialog" />.</description>
-        </item>
-        <item>
-          <description>As the operation progresses, periodically call <see cref="IProgressDialog.SetProgress" /> to update the dialog box as to how much of the operation has been completed. The progress dialog object will update its progress bar and recalculate its estimate of the remaining time. You can use any numerical measure of progress that is convenient. However, if you want to use values larger than 4 gigabytes (GB), you must call <see cref="IProgressDialog.SetProgress64" /> instead of <b>IProgressDialog.SetProgress</b>.</description>
-        </item>
-        <item>
-          <description>Your application does not receive a notification if the user clicks the <b>Cancel</b> button to cancel the operation. As the operation progresses, periodically call <see cref="IProgressDialog.HasUserCancelled" /> to see if the user has clicked the <b>Cancel</b> button. Applications typically call this method each time they call <see cref="IProgressDialog.SetProgress" /> or <see cref="IProgressDialog.SetProgress64" />.</description>
-        </item>
-        <item>
-          <description>The dialog box displays three lines of text. An application can periodically call <see cref="IProgressDialog.SetLine" /> to display a message on one of these lines. This method is normally used to provide information on the current status of the operation. A typical message is something like: "Currently processing item XXX...". Messages are typically displayed on lines 1 and 2. You can display messages on line 3 only if you have not instructed the progress dialog object to estimate the remaining time by setting the <b>PROGDLG_AUTOTIME</b> flag in the <i>dwFlags</i> parameter of <see cref="IProgressDialog.StartProgressDialog" />. In that case, the third text line is used to display the estimated time.</description>
-        </item>
-      </list>
-      <para>When the operation is complete:</para>
-      <list type="number">
-        <item>
-          <description>Call <see cref="IProgressDialog.StopProgressDialog" /> to close the dialog box.</description>
-        </item>
-        <item>
-          <description>Release the progress dialog box object.</description>
-        </item>
-      </list>
-    </remarks>
+    <summary>Exposes methods that provide options for an application to display a progress dialog box. This interface is exported by the progress dialog box object (CLSID_ProgressDialog). This object is a generic way to show a user how an operation is progressing. It is typically used when deleting, uploading, copying, moving, or downloading large numbers of files.</summary>
   </member>
 </doc>

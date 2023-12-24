@@ -25,7 +25,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, Guid*, void**, int>)(lpVtbl[0]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, uint>)(lpVtbl[1]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, uint>)(lpVtbl[1]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, uint>)(lpVtbl[2]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, uint>)(lpVtbl[2]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.AddTransition"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(3)]
     public HRESULT AddTransition(IUIAnimationVariable* variable, IUIAnimationTransition* transition)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, int>)(lpVtbl[3]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, int>)(lpVtbl[3]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.AddKeyframeAtOffset"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(4)]
     public HRESULT AddKeyframeAtOffset(UI_ANIMATION_KEYFRAME existingKeyframe, [NativeTypeName("UI_ANIMATION_SECONDS")] double offset, UI_ANIMATION_KEYFRAME* keyframe)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME, double, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[4]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), existingKeyframe, offset, keyframe);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME, double, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[4]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), existingKeyframe, offset, keyframe);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.AddKeyframeAfterTransition"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(5)]
     public HRESULT AddKeyframeAfterTransition(IUIAnimationTransition* transition, UI_ANIMATION_KEYFRAME* keyframe)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[5]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), transition, keyframe);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int>)(lpVtbl[5]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), transition, keyframe);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.AddTransitionAtKeyframe"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(6)]
     public HRESULT AddTransitionAtKeyframe(IUIAnimationVariable* variable, IUIAnimationTransition* transition, UI_ANIMATION_KEYFRAME startKeyframe)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, int>)(lpVtbl[6]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, int>)(lpVtbl[6]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.AddTransitionBetweenKeyframes"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(7)]
     public HRESULT AddTransitionBetweenKeyframes(IUIAnimationVariable* variable, IUIAnimationTransition* transition, UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int>)(lpVtbl[7]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe, endKeyframe);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int>)(lpVtbl[7]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable, transition, startKeyframe, endKeyframe);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.RepeatBetweenKeyframes"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(8)]
     public HRESULT RepeatBetweenKeyframes(UI_ANIMATION_KEYFRAME startKeyframe, UI_ANIMATION_KEYFRAME endKeyframe, [NativeTypeName("INT32")] int repetitionCount)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int, int>)(lpVtbl[8]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), startKeyframe, endKeyframe, repetitionCount);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int, int>)(lpVtbl[8]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), startKeyframe, endKeyframe, repetitionCount);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.HoldVariable"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(9)]
     public HRESULT HoldVariable(IUIAnimationVariable* variable)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationVariable*, int>)(lpVtbl[9]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, IUIAnimationVariable*, int>)(lpVtbl[9]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), variable);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.SetLongestAcceptableDelay"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(10)]
     public HRESULT SetLongestAcceptableDelay([NativeTypeName("UI_ANIMATION_SECONDS")] double delay)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, double, int>)(lpVtbl[10]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), delay);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, double, int>)(lpVtbl[10]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), delay);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.Schedule"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(11)]
     public HRESULT Schedule([NativeTypeName("UI_ANIMATION_SECONDS")] double timeNow, UI_ANIMATION_SCHEDULING_RESULT* schedulingResult = null)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, double, UI_ANIMATION_SCHEDULING_RESULT*, int>)(lpVtbl[11]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), timeNow, schedulingResult);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, double, UI_ANIMATION_SCHEDULING_RESULT*, int>)(lpVtbl[11]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), timeNow, schedulingResult);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.Conclude"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(12)]
     public HRESULT Conclude()
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, int>)(lpVtbl[12]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, int>)(lpVtbl[12]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.Finish"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(13)]
     public HRESULT Finish([NativeTypeName("UI_ANIMATION_SECONDS")] double completionDeadline)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, double, int>)(lpVtbl[13]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), completionDeadline);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, double, int>)(lpVtbl[13]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), completionDeadline);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.Abandon"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(14)]
     public HRESULT Abandon()
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, int>)(lpVtbl[14]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, int>)(lpVtbl[14]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.SetTag"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(15)]
     public HRESULT SetTag(IUnknown* @object, [NativeTypeName("UINT32")] uint id)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUnknown*, uint, int>)(lpVtbl[15]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), @object, id);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, IUnknown*, uint, int>)(lpVtbl[15]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), @object, id);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.GetTag"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(16)]
     public HRESULT GetTag(IUnknown** @object, [NativeTypeName("UINT32 *")] uint* id)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUnknown**, uint*, int>)(lpVtbl[16]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), @object, id);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, IUnknown**, uint*, int>)(lpVtbl[16]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), @object, id);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.GetStatus"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(17)]
     public HRESULT GetStatus(UI_ANIMATION_STORYBOARD_STATUS* status)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS*, int>)(lpVtbl[17]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), status);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, UI_ANIMATION_STORYBOARD_STATUS*, int>)(lpVtbl[17]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), status);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.GetElapsedTime"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(18)]
     public HRESULT GetElapsedTime([NativeTypeName("UI_ANIMATION_SECONDS *")] double* elapsedTime)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, double*, int>)(lpVtbl[18]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), elapsedTime);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, double*, int>)(lpVtbl[18]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), elapsedTime);
     }
 
     /// <include file='IUIAnimationStoryboard.xml' path='doc/member[@name="IUIAnimationStoryboard.SetStoryboardEventHandler"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
     [VtblIndex(19)]
     public HRESULT SetStoryboardEventHandler(IUIAnimationStoryboardEventHandler* handler)
     {
-        return ((delegate* unmanaged<IUIAnimationStoryboard*, IUIAnimationStoryboardEventHandler*, int>)(lpVtbl[19]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), handler);
+        return ((delegate* unmanaged[MemberFunction]<IUIAnimationStoryboard*, IUIAnimationStoryboardEventHandler*, int>)(lpVtbl[19]))((IUIAnimationStoryboard*)Unsafe.AsPointer(ref this), handler);
     }
 
     public interface Interface : IUnknown.Interface
@@ -240,63 +240,63 @@ public unsafe partial struct IUIAnimationStoryboard : IUIAnimationStoryboard.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, int> AddTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, int> AddTransition;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_KEYFRAME, UI_ANIMATION_SECONDS, UI_ANIMATION_KEYFRAME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_KEYFRAME, double, UI_ANIMATION_KEYFRAME*, int> AddKeyframeAtOffset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UI_ANIMATION_KEYFRAME, double, UI_ANIMATION_KEYFRAME*, int> AddKeyframeAtOffset;
 
         [NativeTypeName("HRESULT (IUIAnimationTransition *, UI_ANIMATION_KEYFRAME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int> AddKeyframeAfterTransition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME*, int> AddKeyframeAfterTransition;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *, UI_ANIMATION_KEYFRAME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, int> AddTransitionAtKeyframe;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, int> AddTransitionAtKeyframe;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *, IUIAnimationTransition *, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int> AddTransitionBetweenKeyframes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationVariable*, IUIAnimationTransition*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int> AddTransitionBetweenKeyframes;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, INT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int, int> RepeatBetweenKeyframes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UI_ANIMATION_KEYFRAME, UI_ANIMATION_KEYFRAME, int, int> RepeatBetweenKeyframes;
 
         [NativeTypeName("HRESULT (IUIAnimationVariable *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationVariable*, int> HoldVariable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationVariable*, int> HoldVariable;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetLongestAcceptableDelay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetLongestAcceptableDelay;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS, UI_ANIMATION_SCHEDULING_RESULT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, UI_ANIMATION_SCHEDULING_RESULT*, int> Schedule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, UI_ANIMATION_SCHEDULING_RESULT*, int> Schedule;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Conclude;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Conclude;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> Finish;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> Finish;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Abandon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Abandon;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, int> SetTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, int> SetTag;
 
         [NativeTypeName("HRESULT (IUnknown **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, uint*, int> GetTag;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, uint*, int> GetTag;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_STORYBOARD_STATUS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, UI_ANIMATION_STORYBOARD_STATUS*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, UI_ANIMATION_STORYBOARD_STATUS*, int> GetStatus;
 
         [NativeTypeName("HRESULT (UI_ANIMATION_SECONDS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetElapsedTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetElapsedTime;
 
         [NativeTypeName("HRESULT (IUIAnimationStoryboardEventHandler *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUIAnimationStoryboardEventHandler*, int> SetStoryboardEventHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUIAnimationStoryboardEventHandler*, int> SetStoryboardEventHandler;
     }
 }

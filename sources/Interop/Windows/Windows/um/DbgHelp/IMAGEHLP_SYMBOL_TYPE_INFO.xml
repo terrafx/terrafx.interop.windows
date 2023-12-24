@@ -3,11 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGEHLP_SYMBOL_TYPE_INFO">
-    <summary>
-      <para>Identifies the type of symbol information to be retrieved.</para>
-    </summary>
-    <seealso cref="SymGetTypeInfo" />
-    <seealso cref="SymGetTypeInfoEx" />
+    <summary>Identifies the type of symbol information to be retrieved.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_SYMTAG">
     <summary>
@@ -54,8 +50,15 @@
   <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_FINDCHILDREN">
     <summary>
       <para>The type index of all children.</para>
-      <para>The data type  is a pointer to a
-<see cref="TI_FINDCHILDREN_PARAMS" /> structure. The <b>Count</b> member should be initialized with the number of children.</para>
+      <para>The data type is a pointer to a<see cref="TI_FINDCHILDREN_PARAMS" /> structure.</para>
+      <list type="bullet">
+        <item>
+          <description>The <b>Count</b> member should be initialized with the number of children.</description>
+        </item>
+        <item>
+          <description>The <b>Start</b> member should also be initialized. In most cases, to zero.</description>
+        </item>
+      </list>
     </summary>
   </member>
   <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_DATAKIND">
@@ -107,9 +110,7 @@
     </summary>
   </member>
   <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALTABLESHAPEID">
-    <summary>
-      <para>The symbol interface of the type of virtual table, for a user-defined type.</para>
-    </summary>
+    <summary>The symbol interface of the type of virtual table, for a user-defined type.</summary>
   </member>
   <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALBASEPOINTEROFFSET">
     <summary>
@@ -210,10 +211,6 @@
         <b>DbgHelp 6.6 and earlier:  </b>This value is not supported.</para>
     </summary>
   </member>
-  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALBASETABLETYPE">
-    <summary></summary>
-  </member>
-  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.IMAGEHLP_SYMBOL_TYPE_INFO_MAX">
-    <summary></summary>
-  </member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.TI_GET_VIRTUALBASETABLETYPE"></member>
+  <member name="IMAGEHLP_SYMBOL_TYPE_INFO.IMAGEHLP_SYMBOL_TYPE_INFO_MAX"></member>
 </doc>

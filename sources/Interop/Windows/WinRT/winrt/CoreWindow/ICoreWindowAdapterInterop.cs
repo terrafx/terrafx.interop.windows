@@ -26,7 +26,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, Guid*, void**, int>)(lpVtbl[0]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint>)(lpVtbl[1]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, uint>)(lpVtbl[1]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint>)(lpVtbl[2]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, uint>)(lpVtbl[2]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -52,7 +52,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, uint*, Guid**, int>)(lpVtbl[3]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, uint*, Guid**, int>)(lpVtbl[3]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -60,7 +60,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, HSTRING*, int>)(lpVtbl[4]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, HSTRING*, int>)(lpVtbl[4]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -68,7 +68,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, TrustLevel*, int>)(lpVtbl[5]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, TrustLevel*, int>)(lpVtbl[5]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_AppActivationClientAdapter"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(6)]
     public HRESULT get_AppActivationClientAdapter(IUnknown** value)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[6]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[6]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_ApplicationViewClientAdapter"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(7)]
     public HRESULT get_ApplicationViewClientAdapter(IUnknown** value)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[7]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[7]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_CoreApplicationViewClientAdapter"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(8)]
     public HRESULT get_CoreApplicationViewClientAdapter(IUnknown** value)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[8]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[8]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_HoloViewClientAdapter"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(9)]
     public HRESULT get_HoloViewClientAdapter(IUnknown** value)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[9]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[9]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_PositionerClientAdapter"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(10)]
     public HRESULT get_PositionerClientAdapter(IUnknown** value)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[10]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[10]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_SystemNavigationClientAdapter"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(11)]
     public HRESULT get_SystemNavigationClientAdapter(IUnknown** value)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[11]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[11]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.get_TitleBarClientAdapter"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(12)]
     public HRESULT get_TitleBarClientAdapter(IUnknown** value)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[12]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, IUnknown**, int>)(lpVtbl[12]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='ICoreWindowAdapterInterop.xml' path='doc/member[@name="ICoreWindowAdapterInterop.SetWindowClientAdapter"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
     [VtblIndex(13)]
     public HRESULT SetWindowClientAdapter(IUnknown* value)
     {
-        return ((delegate* unmanaged<ICoreWindowAdapterInterop*, IUnknown*, int>)(lpVtbl[13]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ICoreWindowAdapterInterop*, IUnknown*, int>)(lpVtbl[13]))((ICoreWindowAdapterInterop*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IInspectable.Interface
@@ -166,45 +166,45 @@ public unsafe partial struct ICoreWindowAdapterInterop : ICoreWindowAdapterInter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get_AppActivationClientAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get_AppActivationClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get_ApplicationViewClientAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get_ApplicationViewClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get_CoreApplicationViewClientAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get_CoreApplicationViewClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get_HoloViewClientAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get_HoloViewClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get_PositionerClientAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get_PositionerClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get_SystemNavigationClientAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get_SystemNavigationClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get_TitleBarClientAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get_TitleBarClientAdapter;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> SetWindowClientAdapter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> SetWindowClientAdapter;
     }
 }

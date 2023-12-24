@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EVENT_INFO_CLASS">
+    <summary>The <b>EVENT_INFO_CLASS</b> enumeration type is used with the<see cref="EventSetInformation" />function to specify the configuration operation to be performed on an ETW event provider registration.</summary>
+  </member>
+  <member name="EVENT_INFO_CLASS.EventProviderBinaryTrackInfo">
+    <summary>
+      <para>Adds binary tracking information from this provider to each session that collects events from this event provider. The binary tracking data includes the full path to the binary containing the callback that was specified when registering the event provider. This information is useful if the binary contains <a href="https://docs.microsoft.com//windows/win32/wes/message-compiler--mc-exe-">mc.exe</a>-generated decoding resources but is not globally registered. Decoding tools can use the path in the trace to locate the binary and extract the decoding resources.</para>
+      <para>The <i>EventInformation</i> buffer is not used with this configuration operation. The ETW runtime will automatically use the full path of the caller's module (the full path to the DLL or EXE that contains the callback function specified in the call to <b>EventRegister</b>). For this operation to be useful, the same DLL or EXE file must contain the <code>mc.exe</code>-generated decoding resources.</para>
+    </summary>
+  </member>
+  <member name="EVENT_INFO_CLASS.EventProviderSetReserved1">
+    <summary>Not used.</summary>
+  </member>
+  <member name="EVENT_INFO_CLASS.EventProviderSetTraits">
+    <summary>
+      <para>Sets traits for the provider such as the provider's name. Indicates that ETW should recognize the <code>Type</code> field of<see cref="EVENT_DATA_DESCRIPTOR" /> structures used with this provider. Requires the provider to initialize all fields of the<b>EVENT_DATA_DESCRIPTOR</b> structures, including the <code>Reserved</code> field. (The provider should usually set <code>dataDescriptor.Reserved = 0</code>, as is done by<see cref="EventDataDescCreate" />.)</para>
+      <para>Note that the <b>EVENT_DATA_DESCRIPTOR</b> structure contains a <code>Type</code> field in a section of the structure that was previously the <code>Reserved</code> field. To avoid compatibility issues with providers that leave the Reserved field uninitialized, ETW will ignore the <code>Type</code> field (treat it as 0) unless the provider has used<i>EventProviderSetTraits</i> or <i>EventProviderUseDescriptorType</i> in a call to<b>EventSetInformation</b>.</para>
+      <para>The <i>EventInformation</i> buffer should contain the<a href="https://docs.microsoft.com//windows/desktop/ETW/provider-traits">provider traits</a> to be used for the provider.</para>
+    </summary>
+  </member>
+  <member name="EVENT_INFO_CLASS.EventProviderUseDescriptorType">
+    <summary>
+      <para>Specifies whether ETW should recognize the <code>Type</code> field of<see cref="EVENT_DATA_DESCRIPTOR" /> structures used with this provider. If <code>TRUE</code>, requires the provider to initialize all fields of the <b>EVENT_DATA_DESCRIPTOR</b> structures, including the <code>Reserved</code> field. (The provider should usually set <code>dataDescriptor.Reserved = 0</code>, as is done by<see cref="EventDataDescCreate" />.)</para>
+      <para>Note that the <b>EVENT_DATA_DESCRIPTOR</b> structure contains a <code>Type</code> field in a section of the structure that was previously the <code>Reserved</code> field. To avoid compatibility issues with providers that leave the Reserved field uninitialized, ETW will ignore the <code>Type</code> field (treat it as 0) unless the provider has used<i>EventProviderSetTraits</i> or <i>EventProviderUseDescriptorType</i> in a call to<b>EventSetInformation</b>.</para>
+      <para>The <i>EventInformation</i> buffer should contain a <b>BOOLEAN</b> value (1 byte, value<code>FALSE</code> or <code>TRUE</code>).</para>
+    </summary>
+  </member>
+  <member name="EVENT_INFO_CLASS.MaxEventInfo">
+    <summary>The first invalid operation code. This value may change in subsequent versions of the Windows SDK.</summary>
+  </member>
+</doc>

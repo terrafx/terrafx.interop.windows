@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_MESSAGE">
+    <summary>A debug message in the Information Queue.</summary>
+  </member>
+  <member name="D3D12_MESSAGE.Category">
+    <summary>The category of the message. See <see cref="D3D12_MESSAGE_CATEGORY" />.</summary>
+  </member>
+  <member name="D3D12_MESSAGE.Severity">
+    <summary>The severity of the message. See <see cref="D3D12_MESSAGE_SEVERITY" />.</summary>
+  </member>
+  <member name="D3D12_MESSAGE.ID">
+    <summary>The ID of the message. See <see cref="D3D12_MESSAGE_ID" />.</summary>
+  </member>
+  <member name="D3D12_MESSAGE.pDescription">
+    <summary>The message string.</summary>
+  </member>
+  <member name="D3D12_MESSAGE.DescriptionByteLength">
+    <summary>The length of <i>pDescription</i>, in bytes.</summary>
+  </member>
+</doc>

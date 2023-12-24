@@ -25,7 +25,7 @@ public unsafe partial struct IDestinationStreamFactory : IDestinationStreamFacto
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDestinationStreamFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDestinationStreamFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDestinationStreamFactory*, Guid*, void**, int>)(lpVtbl[0]))((IDestinationStreamFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDestinationStreamFactory : IDestinationStreamFacto
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDestinationStreamFactory*, uint>)(lpVtbl[1]))((IDestinationStreamFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDestinationStreamFactory*, uint>)(lpVtbl[1]))((IDestinationStreamFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDestinationStreamFactory : IDestinationStreamFacto
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDestinationStreamFactory*, uint>)(lpVtbl[2]))((IDestinationStreamFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDestinationStreamFactory*, uint>)(lpVtbl[2]))((IDestinationStreamFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDestinationStreamFactory.xml' path='doc/member[@name="IDestinationStreamFactory.GetDestinationStream"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDestinationStreamFactory : IDestinationStreamFacto
     [VtblIndex(3)]
     public HRESULT GetDestinationStream(IStream** ppstm)
     {
-        return ((delegate* unmanaged<IDestinationStreamFactory*, IStream**, int>)(lpVtbl[3]))((IDestinationStreamFactory*)Unsafe.AsPointer(ref this), ppstm);
+        return ((delegate* unmanaged[MemberFunction]<IDestinationStreamFactory*, IStream**, int>)(lpVtbl[3]))((IDestinationStreamFactory*)Unsafe.AsPointer(ref this), ppstm);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IDestinationStreamFactory : IDestinationStreamFacto
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream**, int> GetDestinationStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream**, int> GetDestinationStream;
     }
 }

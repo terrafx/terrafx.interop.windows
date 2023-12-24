@@ -25,7 +25,7 @@ public unsafe partial struct ITfCompartment : ITfCompartment.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfCompartment*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartment*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartment*, Guid*, void**, int>)(lpVtbl[0]))((ITfCompartment*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfCompartment : ITfCompartment.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfCompartment*, uint>)(lpVtbl[1]))((ITfCompartment*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartment*, uint>)(lpVtbl[1]))((ITfCompartment*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfCompartment : ITfCompartment.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfCompartment*, uint>)(lpVtbl[2]))((ITfCompartment*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartment*, uint>)(lpVtbl[2]))((ITfCompartment*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfCompartment.xml' path='doc/member[@name="ITfCompartment.SetValue"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfCompartment : ITfCompartment.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT SetValue([NativeTypeName("TfClientId")] uint tid, [NativeTypeName("const VARIANT *")] VARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<ITfCompartment*, uint, VARIANT*, int>)(lpVtbl[3]))((ITfCompartment*)Unsafe.AsPointer(ref this), tid, pvarValue);
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartment*, uint, VARIANT*, int>)(lpVtbl[3]))((ITfCompartment*)Unsafe.AsPointer(ref this), tid, pvarValue);
     }
 
     /// <include file='ITfCompartment.xml' path='doc/member[@name="ITfCompartment.GetValue"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfCompartment : ITfCompartment.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetValue(VARIANT* pvarValue)
     {
-        return ((delegate* unmanaged<ITfCompartment*, VARIANT*, int>)(lpVtbl[4]))((ITfCompartment*)Unsafe.AsPointer(ref this), pvarValue);
+        return ((delegate* unmanaged[MemberFunction]<ITfCompartment*, VARIANT*, int>)(lpVtbl[4]))((ITfCompartment*)Unsafe.AsPointer(ref this), pvarValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfCompartment : ITfCompartment.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId, const VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, VARIANT*, int> SetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, VARIANT*, int> SetValue;
 
         [NativeTypeName("HRESULT (VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT*, int> GetValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT*, int> GetValue;
     }
 }

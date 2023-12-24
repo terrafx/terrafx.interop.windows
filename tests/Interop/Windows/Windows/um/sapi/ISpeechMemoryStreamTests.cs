@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechMemoryStreamTests
     {
         Assert.That(typeof(ISpeechMemoryStream).GUID, Is.EqualTo(IID_ISpeechMemoryStream));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechMemoryStream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechMemoryStream>(), Is.EqualTo(sizeof(ISpeechMemoryStream)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechMemoryStream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechMemoryStream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechMemoryStream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechMemoryStream), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechMemoryStream), Is.EqualTo(4));
-        }
-    }
 }

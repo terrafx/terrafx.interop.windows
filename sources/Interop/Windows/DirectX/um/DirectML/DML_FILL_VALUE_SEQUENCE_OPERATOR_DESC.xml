@@ -5,35 +5,19 @@
   <member name="DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC">
     <summary>
       <para>Fills a tensor with a sequence. This operator performs the following pseudocode.</para>
-      <code>for each coordinate in OutputTensor
-    OutputTensor[coordinate] = Value
-    Value += Delta
-endfor
-</code>
+      <code>for each coordinate in OutputTensor OutputTensor[coordinate] = Value Value += Delta endfor</code>
     </summary>
   </member>
   <member name="DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to write the results to. This tensor may have any size.</para>
-    </summary>
+    <summary>The tensor to write the results to. This tensor may have any size.</summary>
   </member>
   <member name="DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC.ValueDataType">
-    <summary>
-      <para>Type: <b><see cref="DML_TENSOR_DATA_TYPE" /></b></para>
-      <para>The data type of <i>Value</i> field, which must match <i>OutputTensor.DataType</i>.</para>
-    </summary>
+    <summary>The data type of <i>Value</i> field, which must match <i>OutputTensor.DataType</i>.</summary>
   </member>
   <member name="DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC.ValueStart">
-    <summary>
-      <para>Type: <b><see cref="DML_SCALAR_UNION" /></b></para>
-      <para>The initial value to fill the first element in the output, with <i>ValueDataType</i> determining how to interpret the field.</para>
-    </summary>
+    <summary>The initial value to fill the first element in the output, with <i>ValueDataType</i> determining how to interpret the field.</summary>
   </member>
   <member name="DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC.ValueDelta">
-    <summary>
-      <para>Type: <b><see cref="DML_SCALAR_UNION" /></b></para>
-      <para>A step to add to the value for each element written, with <i>ValueDataType</i> determining how to interpret the field.</para>
-    </summary>
+    <summary>A step to add to the value for each element written, with <i>ValueDataType</i> determining how to interpret the field.</summary>
   </member>
 </doc>

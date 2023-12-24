@@ -3,22 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="sockaddr">
-    <summary>
-      <para>The
-sockaddr structure varies depending on the protocol selected. Except for the <i>sin*_family</i> parameter,
-sockaddr contents are expressed in network byte order.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms740504(v=vs.85)">SOCKADDR_STORAGE</seealso>
+    <summary>The sockaddr structure varies depending on the protocol selected. Except for the <i>sin*_family</i> parameter, sockaddr contents are expressed in network byte order.</summary>
   </member>
-  <member name="sockaddr.sin6_family">
-    <summary></summary>
-  </member>
-  <member name="sockaddr.sin6_port">
-    <summary></summary>
-  </member>
-  <member name="sockaddr.sin6_flowinfo">
-    <summary></summary>
-  </member>
+  <member name="sockaddr.sin6_family"></member>
+  <member name="sockaddr.sin6_port"></member>
+  <member name="sockaddr.sin6_flowinfo"></member>
   <member name="sockaddr.sin6_addr">
     <summary>
       <h4>- sa_data</h4>

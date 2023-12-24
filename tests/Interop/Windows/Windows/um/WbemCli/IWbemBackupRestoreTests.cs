@@ -19,32 +19,4 @@ public static unsafe partial class IWbemBackupRestoreTests
     {
         Assert.That(typeof(IWbemBackupRestore).GUID, Is.EqualTo(IID_IWbemBackupRestore));
     }
-
-    /// <summary>Validates that the <see cref="IWbemBackupRestore" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWbemBackupRestore>(), Is.EqualTo(sizeof(IWbemBackupRestore)));
-    }
-
-    /// <summary>Validates that the <see cref="IWbemBackupRestore" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWbemBackupRestore).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWbemBackupRestore" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWbemBackupRestore), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWbemBackupRestore), Is.EqualTo(4));
-        }
-    }
 }

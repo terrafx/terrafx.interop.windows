@@ -9,7 +9,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_WINDOW_STATE.xml' path='doc/member[@name="D2D1_WINDOW_STATE"]/*' />
 [Flags]
-public enum D2D1_WINDOW_STATE : uint
+public enum D2D1_WINDOW_STATE
 {
     /// <include file='D2D1_WINDOW_STATE.xml' path='doc/member[@name="D2D1_WINDOW_STATE.D2D1_WINDOW_STATE_NONE"]/*' />
     D2D1_WINDOW_STATE_NONE = 0x0000000,
@@ -18,5 +18,5 @@ public enum D2D1_WINDOW_STATE : uint
     D2D1_WINDOW_STATE_OCCLUDED = 0x0000001,
 
     /// <include file='D2D1_WINDOW_STATE.xml' path='doc/member[@name="D2D1_WINDOW_STATE.D2D1_WINDOW_STATE_FORCE_DWORD"]/*' />
-    D2D1_WINDOW_STATE_FORCE_DWORD = 0xffffffff,
+    D2D1_WINDOW_STATE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

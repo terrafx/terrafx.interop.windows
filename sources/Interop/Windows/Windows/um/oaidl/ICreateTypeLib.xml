@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICreateTypeLib.CreateTypeInfo">
-    <summary>
-      <para>Creates a new type description instance within the type library.</para>
-    </summary>
-    <param name="szName">
-      <para>The name of the new type.</para>
-    </param>
-    <param name="tkind">
-      <para>TYPEKIND of the type description to be created.</para>
-    </param>
-    <param name="ppCTInfo">
-      <para>The type description.</para>
-    </param>
+    <summary>Creates a new type description instance within the type library.</summary>
+    <param name="szName">The name of the new type.</param>
+    <param name="tkind">TYPEKIND of the type description to be created.</param>
+    <param name="ppCTInfo">The type description.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,87 +14,95 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INSUFFICIENTMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_INVALIDSTATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The state of the type library is not valid for this operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory to complete the operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_NAMECONFLICT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The provided name is not unique.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>STG_E_INSUFFICIENTMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_WRONGTYPEKIND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_INVALIDSTATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The state of the type library is not valid for this operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_NAMECONFLICT</b>
-            </para>
-          </description>
-          <description>
-            <para>The provided name is not unique.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_WRONGTYPEKIND</b>
-            </para>
-          </description>
-          <description>
-            <para>Type mismatch.</para>
-          </description>
-        </item>
+          <description>Type mismatch.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Use <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</a> to create a new type description instance within the library. An error is returned if the specified name already appears in the library. Valid <i>tkind</i> values are described in TYPEKIND. To get the type information of the type description that is being created, call <code>IUnknown.QueryInterface(IID_ITypeInfo, ...)</code> on the returned <b>ICreateTypeLib</b>. This type information can be used by other type descriptions that reference it by using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-icreatetypeinfo-addreftypeinfo">ICreateTypeInfo.AddRefTypeInfo</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
   </member>
   <member name="ICreateTypeLib.SaveAllChanges">
-    <summary>
-      <para>Saves the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</a> instance following the layout of type information.</para>
-    </summary>
+    <summary>Saves the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</a> instance following the layout of type information.</summary>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -110,80 +110,84 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INSUFFICIENTMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_IOERROR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The function cannot write to the file.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Insufficient memory to complete the operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_INVALIDSTATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_INSUFFICIENTMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_IOERROR</b>
-            </para>
-          </description>
-          <description>
-            <para>The function cannot write to the file.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_INVALIDSTATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The state of the type library is not valid for this operation.</para>
-          </description>
-        </item>
+          <description>The state of the type library is not valid for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You should not call any other <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</a> methods after calling <b>SaveAllChanges</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
   </member>
   <member name="ICreateTypeLib.SetDocString">
-    <summary>
-      <para>Sets the documentation string associated with the library.</para>
-    </summary>
-    <param name="szDoc">
-      <para>A brief description of the type library.</para>
-    </param>
+    <summary>Sets the documentation string associated with the library.</summary>
+    <param name="szDoc">A brief description of the type library.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -191,60 +195,60 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INSUFFICIENTMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_INSUFFICIENTMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The documentation string is a brief description of the library intended for use by type information browsing tools.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
   </member>
   <member name="ICreateTypeLib.SetGuid">
-    <summary>
-      <para>Sets the universal unique identifier (UUID) associated with the type library (Also known as the globally unique identifier (GUID)).</para>
-    </summary>
-    <param name="guid">
-      <para>The globally unique identifier to be assigned to the library.</para>
-    </param>
+    <summary>Sets the universal unique identifier (UUID) associated with the type library (Also known as the globally unique identifier (GUID)).</summary>
+    <param name="guid">The globally unique identifier to be assigned to the library.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -252,68 +256,72 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INSUFFICIENTMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_INVALIDSTATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_INSUFFICIENTMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_INVALIDSTATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The state of the type library is not valid for this operation.</para>
-          </description>
-        </item>
+          <description>The state of the type library is not valid for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/type-libraries-and-the-object-description-language">Type Libraries and the Object Description Language</seealso>
   </member>
   <member name="ICreateTypeLib.SetHelpContext">
-    <summary>
-      <para>Sets the Help context ID for retrieving general Help information for the type library.</para>
-    </summary>
-    <param name="dwHelpContext">
-      <para>The Help context ID.</para>
-    </param>
+    <summary>Sets the Help context ID for retrieving general Help information for the type library.</summary>
+    <param name="dwHelpContext">The Help context ID.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -321,70 +329,72 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INSUFFICIENTMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_INVALIDSTATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_INSUFFICIENTMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_INVALIDSTATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The state of the type library is not valid for this operation.</para>
-          </description>
-        </item>
+          <description>The state of the type library is not valid for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Calling <b>SetHelpContext</b> with a Help context of zero is equivalent to not calling it at all, because zero indicates a null Help context.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
   </member>
   <member name="ICreateTypeLib.SetHelpFileName">
-    <summary>
-      <para>Sets the name of the Help file.</para>
-    </summary>
-    <param name="szHelpFileName">
-      <para>The name of the Help file for the library.</para>
-    </param>
+    <summary>Sets the name of the Help file.</summary>
+    <param name="szHelpFileName">The name of the Help file for the library.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -392,72 +402,72 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INSUFFICIENTMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_INVALIDSTATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_INSUFFICIENTMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_INVALIDSTATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The state of the type library is not valid for this operation.</para>
-          </description>
-        </item>
+          <description>The state of the type library is not valid for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Each type library can reference a single Help file.</para>
-      <para>The <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-itypelib-getdocumentation">GetDocumentation</a> method of the created <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypelib">ITypeLib</a> returns a fully qualified path for the Help file, which is formed by appending the name passed into <i>szHelpFileName</i> to the registered Help directory for the type library. The Help directory is registered under:</para>
-      <para>\TYPELIB&lt;guid of library&gt;&lt;Major.Minor version &gt;\HELPDIR</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
   </member>
   <member name="ICreateTypeLib.SetLcid">
-    <summary>
-      <para>Sets the binary Microsoft national language ID associated with the library.</para>
-    </summary>
-    <param name="lcid">
-      <para>The locale ID for the type library.</para>
-    </param>
+    <summary>Sets the binary Microsoft national language ID associated with the library.</summary>
+    <param name="lcid">The locale ID for the type library.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -465,70 +475,72 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INSUFFICIENTMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_INVALIDSTATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_INSUFFICIENTMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_INVALIDSTATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The state of the type library is not valid for this operation.</para>
-          </description>
-        </item>
+          <description>The state of the type library is not valid for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For more information on national language IDs, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/supporting-multiple-national-languages">Supporting Multiple National Languages</a> and the National Language Support (NLS) API.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
   </member>
   <member name="ICreateTypeLib.SetLibFlags">
-    <summary>
-      <para>Sets library flags.</para>
-    </summary>
-    <param name="uLibFlags">
-      <para>The flags to set.</para>
-    </param>
+    <summary>Sets library flags.</summary>
+    <param name="uLibFlags">The flags to set.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -536,70 +548,72 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INSUFFICIENTMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_INVALIDSTATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_INSUFFICIENTMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_INVALIDSTATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The state of the type library is not valid for this operation.</para>
-          </description>
-        </item>
+          <description>The state of the type library is not valid for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Valid <i>uLibFlags</i> values are listed in <see cref="LIBFLAGS" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
   </member>
   <member name="ICreateTypeLib.SetName">
-    <summary>
-      <para>Sets the name of the type library.</para>
-    </summary>
-    <param name="szName">
-      <para>The name to be assigned to the library.</para>
-    </param>
+    <summary>Sets the name of the type library.</summary>
+    <param name="szName">The name to be assigned to the library.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -607,70 +621,73 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more of the arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STG_E_INSUFFICIENTMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Insufficient memory to complete the operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_INVALIDSTATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>STG_E_INSUFFICIENTMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory to complete the operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_INVALIDSTATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The state of the type library is not valid for this operation.</para>
-          </description>
-        </item>
+          <description>The state of the type library is not valid for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
   </member>
   <member name="ICreateTypeLib.SetVersion">
-    <summary>
-      <para>Sets the major and minor version numbers of the type library.</para>
-    </summary>
-    <param name="wMajorVerNum">
-      <para>The major version number for the library.</para>
-    </param>
-    <param name="wMinorVerNum">
-      <para>The minor version number for the library.</para>
-    </param>
+    <summary>Sets the major and minor version numbers of the type library.</summary>
+    <param name="wMajorVerNum">The major version number for the library.</param>
+    <param name="wMinorVerNum">The minor version number for the library.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -678,34 +695,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_INVALIDSTATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TYPE_E_INVALIDSTATE</b>
-            </para>
-          </description>
-          <description>
-            <para>The state of the type library is not valid for this operation.</para>
-          </description>
-        </item>
+          <description>The state of the type library is not valid for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-icreatetypelib">ICreateTypeLib</seealso>
   </member>
   <member name="ICreateTypeLib">
-    <summary>
-      <para>Provides the methods for creating and managing the component or file that contains type information. Type libraries are created from type descriptions using the MIDL compiler. These type libraries are accessed through the ITypeLib interface.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/using-type-building-interfaces-and-functions">Type Building Interfaces and Functions </seealso>
+    <summary>Provides the methods for creating and managing the component or file that contains type information. Type libraries are created from type descriptions using the MIDL compiler. These type libraries are accessed through the ITypeLib interface.</summary>
   </member>
 </doc>

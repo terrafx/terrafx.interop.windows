@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SpatialAudioHrtfActivationParams2">
+    <summary>Represents activation parameters for a spatial audio render stream, extending with the ability to specify stream options.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.ObjectFormat">
+    <summary>Format descriptor for spatial audio objects associated with the stream. All objects must have the same format and must be of type <a href="https://docs.microsoft.com//previous-versions/dd757713(v=vs.85)">WAVEFORMATEX</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd390971(v=vs.85)">WAVEFORMATEXTENSIBLE</a>.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.StaticObjectTypeMask">
+    <summary>A bitwise combination of <b>AudioObjectType</b> values indicating the set of static spatial audio channels that will be allowed by the activated stream.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.MinDynamicObjectCount">
+    <summary>The minimum number of concurrent dynamic objects. If this number of dynamic audio objects can't be activated simultaneously, no dynamic audio objects will be activated.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.MaxDynamicObjectCount">
+    <summary>The maximum number of concurrent dynamic objects that can be activated with <see cref="ISpatialAudioRenderStreamForHrtf" />.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.Category">
+    <summary>The category of the audio stream and its spatial audio objects.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.EventHandle">
+    <summary>The event that will signal the client to provide more audio data. This handle will be duplicated internally before it is used.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.NotifyObject">
+    <summary>The object that provides notifications for spatial audio clients to respond to changes in the state of an <see cref="ISpatialAudioRenderStreamForHrtf" />. This object is used to notify clients that the number of dynamic spatial audio objects that can be activated concurrently is about to change.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.DistanceDecay">
+    <summary>Optional default value for the decay model used for <see cref="ISpatialAudioObjectForHrtf" /> objects associated with the stream. <b>nullptr</b> if unused.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.Directivity">
+    <summary>Optional default value for the spatial audio directivity model used for <see cref="ISpatialAudioObjectForHrtf" /> objects associated with the stream. <b>nullptr</b> if unused.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.Environment">
+    <summary>Optional default value for the type of environment that is simulated when audio is processed for <see cref="ISpatialAudioObjectForHrtf" /> objects associated with the stream. <b>nullptr</b> if unused.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.Orientation">
+    <summary>Optional default value for the orientation of <see cref="ISpatialAudioObjectForHrtf" /> objects associated with the stream. <b>nullptr</b> if unused.</summary>
+  </member>
+  <member name="SpatialAudioHrtfActivationParams2.Options">
+    <summary>A member of the emumeration, specifying options for the activated audio stream.</summary>
+  </member>
+</doc>

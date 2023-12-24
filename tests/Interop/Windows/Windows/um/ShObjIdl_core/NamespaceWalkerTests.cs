@@ -19,25 +19,4 @@ public static unsafe partial class NamespaceWalkerTests
     {
         Assert.That(typeof(NamespaceWalker).GUID, Is.EqualTo(IID_NamespaceWalker));
     }
-
-    /// <summary>Validates that the <see cref="NamespaceWalker" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<NamespaceWalker>(), Is.EqualTo(sizeof(NamespaceWalker)));
-    }
-
-    /// <summary>Validates that the <see cref="NamespaceWalker" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(NamespaceWalker).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="NamespaceWalker" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(NamespaceWalker), Is.EqualTo(1));
-    }
 }

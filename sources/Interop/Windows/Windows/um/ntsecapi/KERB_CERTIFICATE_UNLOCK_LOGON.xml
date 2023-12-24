@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_CERTIFICATE_UNLOCK_LOGON">
+    <summary>
+      <para>The <b>KERB_CERTIFICATE_UNLOCK_LOGON</b> structure contains information used to unlock a workstation that has been locked during an interactive smart card <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</para>
+      <para>It is passed as the <i>AuthenticationInformation</i> parameter to the<see cref="LsaLogonUser" /> function when using the <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/kerberos-ssp-ap">Kerberos</a> security package to unlock a logon session.</para>
+    </summary>
+  </member>
+  <member name="KERB_CERTIFICATE_UNLOCK_LOGON.Logon">
+    <summary>
+      <para>A <see cref="KERB_CERTIFICATE_LOGON" /> structure that contains information about the logon session to unlock.</para>
+      <para>The <b>MessageType</b> member of the <see cref="KERB_CERTIFICATE_LOGON" /> structure must be set to <b>KerbCertificateUnlockLogon</b>.</para>
+    </summary>
+  </member>
+  <member name="KERB_CERTIFICATE_UNLOCK_LOGON.LogonId">
+    <summary>A <see cref="LUID" /> structure that identifies the logon session to unlock. This member is set by <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/winlogon">Winlogon</a>.</summary>
+  </member>
+</doc>

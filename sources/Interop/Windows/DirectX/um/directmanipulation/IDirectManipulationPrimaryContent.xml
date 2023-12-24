@@ -4,202 +4,87 @@
 <doc>
   <member name="IDirectManipulationPrimaryContent.GetCenterPoint">
     <summary>
-      <para>Retrieves the center point of the manipulation in content coordinates. If there is no manipulation in progress, retrieves the center point of the viewport.</para>
+      <code>Retrieves the center point of the manipulation in content coordinates. If there is no manipulation in progress, retrieves the center point of the viewport.</code>
     </summary>
-    <param name="centerX">
-      <para>The center on the horizontal axis.</para>
-    </param>
-    <param name="centerY">
-      <para>The center on the vertical axis.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</seealso>
+    <param name="centerX">The center on the horizontal axis.</param>
+    <param name="centerY">The center on the vertical axis.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationPrimaryContent.GetInertiaEndTransform">
-    <summary>
-      <para>Gets the final transform, including inertia, of the primary content.</para>
-    </summary>
-    <param name="matrix">
-      <para>The transformed matrix that represents the inertia ending position.</para>
-    </param>
+    <summary>Gets the final transform, including inertia, of the primary content.</summary>
+    <param name="matrix">The transformed matrix that represents the inertia ending position.</param>
     <param name="pointCount">
       <para>The size of the matrix.</para>
       <para>This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</para>
     </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Warning</b>  Calling this method can cause a race condition if inertia has ended or been interrupted. This can also occur during the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewporteventhandler-onviewportstatuschanged">OnViewportStatusChanged</a> callback.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</seealso>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationPrimaryContent.SetHorizontalAlignment">
-    <summary>
-      <para>Sets the horizontal alignment of the primary content relative to the viewport.</para>
-    </summary>
+    <summary>Sets the horizontal alignment of the primary content relative to the viewport.</summary>
     <param name="alignment">
       <para>One or more values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_horizontalalignment">DIRECTMANIPULATION_HORIZONTALALIGNMENT</a>. The default is <b>DIRECTMANIPULATION_HORIZONTALALIGNMENT_NONE</b>.</para>
-      <para>
-        <b>Note</b>  You cannot combine the following options: DIRECTMANIPULATION_HORIZONTALALIGNMENT_LEFT, DIRECTMANIPULATION-HORIZONTALALIGNMENT_CENTER, DIRECTMANIPULATION_HORIZONTALALIGNMENT_RIGHT. DIRECTMANIPULATION_HORIZONTALALIGNMENT_UNLOCKCENTER can be combined with any option but cannot be configured by itself.</para>
+      <div>
+        <b>Note</b>  You cannot combine the following options: DIRECTMANIPULATION_HORIZONTALALIGNMENT_LEFT, DIRECTMANIPULATION-HORIZONTALALIGNMENT_CENTER, DIRECTMANIPULATION_HORIZONTALALIGNMENT_RIGHT. DIRECTMANIPULATION_HORIZONTALALIGNMENT_UNLOCKCENTER can be combined with any option but cannot be configured by itself.</div>
     </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If you have activated a configuration consisting only of zoom or zoom inertia, specify DIRECTMANIPULATION_HORIZONTALALIGNMENT_UNLOCKCENTER to respect the zoom center point.</para>
-      <h4>Examples</h4>
-      <para>The following example shows one way to  this method.</para>
-      <code>HRESULT hr = pViewport-&gt;SetHorizontalAlignment(
-    DIRECTMANIPULATION_HORIZONTALALIGNMENT_CENTER | DIRECTMANIPULATION_HORIZONTALALIGNMENT_UNLOCKCENTER);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</seealso>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationPrimaryContent.SetSnapCoordinate">
     <summary>
-      <para>Specifies the coordinate system for snap points or snap intervals.</para>
+      <code>Specifies the coordinate system for snap points or snap intervals.</code>
     </summary>
-    <param name="motion">
-      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a>.</para>
-    </param>
+    <param name="motion">One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a>.</param>
     <param name="coordinate">
       <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_snappoint_coordinate">DIRECTMANIPULATION_SNAPPOINT_COORDINATE</a>.</para>
       <para>If <i>motion</i> is set to translation (<b>DIRECTMANIPULATION_MOTION_TRANSLATEX</b> or <b>DIRECTMANIPULATION_MOTION_TRANSLATEY</b>), all values of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_snappoint_coordinate">DIRECTMANIPULATION_SNAPPOINT_COORDINATE</a> are valid.</para>
       <para>If <i>motion</i> is set to <b>DIRECTMANIPULATION_MOTION_ZOOM</b>, only <b>DIRECTMANIPULATION_COORDINATE_ORIGIN</b> of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_snappoint_coordinate">DIRECTMANIPULATION_SNAPPOINT_COORDINATE</a> is valid (<i>origin</i> must be set to 0.0f).</para>
     </param>
     <param name="origin">
-      <para>The initial, or starting, snap point. All snap points are relative to this one. Only used when  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_snappoint_coordinate">DIRECTMANIPULATION_COORDINATE_ORIGIN</a> is set.</para>
+      <para>The initial, or starting, snap point. All snap points are relative to this one. Only used when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_snappoint_coordinate">DIRECTMANIPULATION_COORDINATE_ORIGIN</a> is set.</para>
       <para>If <i>motion</i> is set to <b>DIRECTMANIPULATION_MOTION_ZOOM</b>, then <i>origin</i> must be set to 0.0f.</para>
     </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The origin is relative to the content boundaries. If no boundary has been set (<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationcontent-setcontentrect">SetContentRect</a> is never called) the default boundaries are (-<a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>, <a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapinterval">SetSnapInterval</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnappoints">SetSnapPoints</seealso>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationPrimaryContent.SetSnapInterval">
     <summary>
-      <para>Specifies snap points for the inertia end position at uniform intervals.</para>
+      <code>Specifies snap points for the inertia end position at uniform intervals.</code>
     </summary>
-    <param name="motion">
-      <para>One of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a> enumeration values.</para>
-    </param>
-    <param name="interval">
-      <para>The interval between each snap point.</para>
-    </param>
-    <param name="offset">
-      <para>The offset from the coordinate specified in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapcoordinate">SetSnapCoordinate</a>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Snap point locations are in content coordinate units.</para>
-      <para>Specify snap points through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnappoints">SetSnapPoints</a> or <b>SetSnapInterval</b>.</para>
-      <para>If snap points are invalid (for example, outside of the content boundaries), they are ignored and the content is always within the content boundaries.</para>
-      <para>Snap points are not at boundaries by default. If you wish for content to stop at a boundary, a snap point must be set at the boundary.</para>
-      <para>Snap points set by <b>SetSnapInterval</b> can be cleared by calling <b>SetSnapInterval</b> with an interval of 0.0f.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to set the coordinate system for X translation snap points to the origin. Snap points are set every 45 pixels, beginning at the origin along the X-axis.</para>
-      <code>HRESULT hr = SetSnapCoordinate(testWindow, 0, DIRECTMANIPULATION_MOTION_TRANSLATEX, DIRECTMANIPULATION_COORDINATE_ORIGIN, 0.0f);
-hr = pContent-&gt;SetSnapInterval(DIRECTMANIPULATION_MOTION_TRANSLATEX, 45.0f, 0.0f);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapcoordinate">SetSnapCoordinate</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnappoints">SetSnapPoints</seealso>
+    <param name="motion">One of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a> enumeration values.</param>
+    <param name="interval">The interval between each snap point.</param>
+    <param name="offset">The offset from the coordinate specified in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapcoordinate">SetSnapCoordinate</a>.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationPrimaryContent.SetSnapPoints">
-    <summary>
-      <para>Specifies the snap points for the inertia rest position.</para>
-    </summary>
-    <param name="motion">
-      <para>One or more of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a> enumeration values. Only <b>DIRECTMANIPULATION_MOTION_TRANSLATE_X</b>, <b>DIRECTMANIPULATION_MOTION_TRANSLATE_Y</b>, or <b>DIRECTMANIPULATION_MOTION_ZOOM</b> are allowed.</para>
-    </param>
-    <param name="points">
-      <para>An array of snap points within the boundaries of the content to snap to. Should be specified in increasing order relative to the origin set in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapcoordinate">SetSnapCoordinate</a>.</para>
-    </param>
-    <param name="pointCount">
-      <para>The size of the array of snap points. Should be greater than 0.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. If there is no change in the snap points, this method can return <b>S_FALSE</b>. Otherwise, it returns an <b>HRESULT</b> error code. If invalid snap points are specified, existing snap points might be affected.</para>
-    </returns>
-    <remarks>
-      <para>If snap points are invalid (for example, outside of the content boundaries), they are ignored and the content is always within the content boundaries.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapcoordinate">SetSnapCoordinate</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapinterval">SetSnapInterval</seealso>
+    <summary>Specifies the snap points for the inertia rest position.</summary>
+    <param name="motion">One or more of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a> enumeration values. Only <b>DIRECTMANIPULATION_MOTION_TRANSLATE_X</b>, <b>DIRECTMANIPULATION_MOTION_TRANSLATE_Y</b>, or <b>DIRECTMANIPULATION_MOTION_ZOOM</b> are allowed.</param>
+    <param name="points">An array of snap points within the boundaries of the content to snap to. Should be specified in increasing order relative to the origin set in <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapcoordinate">SetSnapCoordinate</a>.</param>
+    <param name="pointCount">The size of the array of snap points. Should be greater than 0.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. If there is no change in the snap points, this method can return <b>S_FALSE</b>. Otherwise, it returns an <b>HRESULT</b> error code. If invalid snap points are specified, existing snap points might be affected.</returns>
   </member>
   <member name="IDirectManipulationPrimaryContent.SetSnapType">
-    <summary>
-      <para>Specifies the type of snap point.</para>
-    </summary>
-    <param name="motion">
-      <para>One or more of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a> enumeration values.</para>
-    </param>
+    <summary>Specifies the type of snap point.</summary>
+    <param name="motion">One or more of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a> enumeration values.</param>
     <param name="type">
       <para>One of the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_snappoint_type">DIRECTMANIPULATION_SNAPPOINT_TYPE</a> enumeration values.</para>
       <para>If set to <b>DIRECTMANIPULATION_SNAPPOINT_TYPE_NONE</b>, snap points specified through <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnappoints">SetSnapPoints</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationprimarycontent-setsnapinterval">SetSnapInterval</a> are cleared.</para>
     </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</seealso>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationPrimaryContent.SetVerticalAlignment">
-    <summary>
-      <para>Specifies the vertical alignment of the primary content in the viewport.</para>
-    </summary>
+    <summary>Specifies the vertical alignment of the primary content in the viewport.</summary>
     <param name="alignment">
       <para>One or more values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_verticalalignment">DIRECTMANIPULATION_VERTICALALIGNMENT</a>.</para>
-      <para>
-        <b>Note</b>  You cannot combine <b>DIRECTMANIPULATION_VERTICALALIGNMENT_TOP</b>, <b>DIRECTMANIPULATION_VERTICALALIGNMENT_CENTER</b>, or <b>DIRECTMANIPULATION_VERTICALALIGNMENT_BOTTOM</b>. <b>DIRECTMANIPULATION_VERTICALALIGNMENT_UNLOCKCENTER</b> can be combined with any option but cannot be configured by itself.</para>
+      <div>
+        <b>Note</b>  You cannot combine <b>DIRECTMANIPULATION_VERTICALALIGNMENT_TOP</b>, <b>DIRECTMANIPULATION_VERTICALALIGNMENT_CENTER</b>, or <b>DIRECTMANIPULATION_VERTICALALIGNMENT_BOTTOM</b>. <b>DIRECTMANIPULATION_VERTICALALIGNMENT_UNLOCKCENTER</b> can be combined with any option but cannot be configured by itself.</div>
     </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If you have activated a configuration consisting only of zoom or zoom inertia, specify <b>DIRECTMANIPULATION_VERTICALALIGNMENT_UNLOCKCENTER</b> to respect the zoom center point.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to use this method.</para>
-      <code>HRESULT hr = pContent-&gt;SetVerticalAlignment(
-    DIRECTMANIPULATION_VERTICALALIGNMENT_CENTER| DIRECTMANIPULATION_VERTICALALIGNMENT_UNLOCKCENTER);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</seealso>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationPrimaryContent.SetZoomBoundaries">
-    <summary>
-      <para>Specifies the minimum and maximum boundaries for zoom.</para>
-    </summary>
-    <param name="zoomMinimum">
-      <para>The minimum zoom level allowed. Must be greater than or equal to 0.1f, which corresponds to 100% zoom.</para>
-    </param>
-    <param name="zoomMaximum">
-      <para>The maximum zoom allowed. Must be greater than <i>zoomMinimum</i> and less than <a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the content is outside the new boundaries, and the viewport is ENABLED or READY, then the content is reset to be within the new boundaries. If inertia configuration is enabled, the reset operation uses an inertia animation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</seealso>
+    <summary>Specifies the minimum and maximum boundaries for zoom.</summary>
+    <param name="zoomMinimum">The minimum zoom level allowed. Must be greater than or equal to 0.1f, which corresponds to 100% zoom.</param>
+    <param name="zoomMaximum">The maximum zoom allowed. Must be greater than <i>zoomMinimum</i> and less than <a href="https://docs.microsoft.com//previous-versions/ms858507(v=msdn.10)">FLT_MAX</a>.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationPrimaryContent">
-    <summary>
-      <para>Encapsulates the primary content inside a viewport. Primary content is the content specified during the creation of a viewport.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
+    <summary>Encapsulates the primary content inside a viewport. Primary content is the content specified during the creation of a viewport.</summary>
   </member>
 </doc>

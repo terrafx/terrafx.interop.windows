@@ -25,7 +25,7 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFnShowHelp*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnShowHelp*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFnShowHelp*, uint>)(lpVtbl[1]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnShowHelp*, uint>)(lpVtbl[1]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFnShowHelp*, uint>)(lpVtbl[2]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnShowHelp*, uint>)(lpVtbl[2]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnShowHelp*, ushort**, int>)(lpVtbl[3]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnShowHelp*, char**, int>)(lpVtbl[3]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnShowHelp.xml' path='doc/member[@name="ITfFnShowHelp.Show"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT Show(HWND hwndParent)
     {
-        return ((delegate* unmanaged<ITfFnShowHelp*, HWND, int>)(lpVtbl[4]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), hwndParent);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnShowHelp*, HWND, int>)(lpVtbl[4]))((ITfFnShowHelp*)Unsafe.AsPointer(ref this), hwndParent);
     }
 
     public interface Interface : ITfFunction.Interface
@@ -72,18 +72,18 @@ public unsafe partial struct ITfFnShowHelp : ITfFnShowHelp.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> Show;
     }
 }

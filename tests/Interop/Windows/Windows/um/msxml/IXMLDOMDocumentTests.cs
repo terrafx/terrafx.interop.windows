@@ -19,32 +19,4 @@ public static unsafe partial class IXMLDOMDocumentTests
     {
         Assert.That(typeof(IXMLDOMDocument).GUID, Is.EqualTo(IID_IXMLDOMDocument));
     }
-
-    /// <summary>Validates that the <see cref="IXMLDOMDocument" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IXMLDOMDocument>(), Is.EqualTo(sizeof(IXMLDOMDocument)));
-    }
-
-    /// <summary>Validates that the <see cref="IXMLDOMDocument" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IXMLDOMDocument).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IXMLDOMDocument" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IXMLDOMDocument), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IXMLDOMDocument), Is.EqualTo(4));
-        }
-    }
 }

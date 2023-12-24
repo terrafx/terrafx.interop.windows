@@ -3,54 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_LINING">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_LINING</b> enumeration contains values that specify the handling of the outline for the decorative typeface.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_LINING</b> enumeration contains values that specify the handling of the outline for the decorative typeface.</summary>
   </member>
   <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_ANY">
-    <summary>
-      <para>Any lining.</para>
-    </summary>
+    <summary>Any lining.</summary>
   </member>
   <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_NO_FIT">
-    <summary>
-      <para>No fit for lining.</para>
-    </summary>
+    <summary>No fit for lining.</summary>
   </member>
   <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_NONE">
-    <summary>
-      <para>No lining.</para>
-    </summary>
+    <summary>No lining.</summary>
   </member>
   <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_INLINE">
-    <summary>
-      <para>The lining is inline.</para>
-    </summary>
+    <summary>The lining is inline.</summary>
   </member>
   <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_OUTLINE">
-    <summary>
-      <para>The lining is outline.</para>
-    </summary>
+    <summary>The lining is outline.</summary>
   </member>
   <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_ENGRAVED">
-    <summary>
-      <para>The lining is engraved.</para>
-    </summary>
+    <summary>The lining is engraved.</summary>
   </member>
   <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_SHADOW">
-    <summary>
-      <para>The lining is shadowed.</para>
-    </summary>
+    <summary>The lining is shadowed.</summary>
   </member>
   <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_RELIEF">
-    <summary>
-      <para>The lining is relief.</para>
-    </summary>
+    <summary>The lining is relief.</summary>
   </member>
   <member name="DWRITE_PANOSE_LINING.DWRITE_PANOSE_LINING_BACKDROP">
-    <summary>
-      <para>The lining is backdrop.</para>
-    </summary>
+    <summary>The lining is backdrop.</summary>
   </member>
 </doc>

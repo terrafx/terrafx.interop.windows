@@ -7,8 +7,6 @@
       <para>The <b>CRL_DIST_POINT_NAME</b> structure identifies a location from which the CRL can be obtained. When <b>CRL_DIST_POINT_NAME</b> is used, different forms of the CRL distribution point name appear in the <b>FullName</b> member of the <see cref="CERT_ALT_NAME_INFO" /> structure. An application need not be able to process all of the name forms in the structure. It can use a distribution point if at least one name form can be processed.</para>
       <para>If no name forms for a distribution point can be processed, an application can still use the certificate, provided requisite revocation information can be obtained from another source such as a distribution point of the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority's</a> (CA's) directory entry.</para>
     </summary>
-    <seealso cref="CERT_ALT_NAME_INFO" />
-    <seealso cref="CRL_DIST_POINT" />
   </member>
   <member name="CRL_DIST_POINT_NAME.dwDistPointNameChoice">
     <summary>
@@ -18,40 +16,47 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CRL_DIST_POINT_NO_NAME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CRL_DIST_POINT_NO_NAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>No distribution point name is provided.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>No distribution point name is provided.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CRL_DIST_POINT_FULL_NAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The distribution point name is in the <b>FullName</b> member of the union.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CRL_DIST_POINT_FULL_NAME</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CRL_DIST_POINT_ISSUER_RDN_NAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The distribution point name is in the <b>FullName</b> member of the union.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CRL_DIST_POINT_ISSUER_RDN_NAME</b>
-          </description>
-          <description>
-            <para>Currently not implemented.</para>
-          </description>
-        </item>
+          <description>Currently not implemented.</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="CRL_DIST_POINT_NAME.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="CRL_DIST_POINT_NAME.DUMMYUNIONNAME"></member>
   <member name="CRL_DIST_POINT_NAME.DUMMYUNIONNAME.FullName">
-    <summary>
-      <para>A
-<see cref="CERT_ALT_NAME_INFO" /> structure containing an array of alternative names specifying the CRL distribution point in one of several different forms. One of the most common uses a URL in the form "http://…" to specify the location of the CRL.</para>
-    </summary>
+    <summary>A<see cref="CERT_ALT_NAME_INFO" /> structure containing an array of alternative names specifying the CRL distribution point in one of several different forms. One of the most common uses a URL in the form "http://…" to specify the location of the CRL.</summary>
   </member>
 </doc>

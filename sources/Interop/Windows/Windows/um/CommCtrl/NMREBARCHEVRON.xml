@@ -3,47 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMREBARCHEVRON">
-    <summary>
-      <para>Contains information used in handling the <a href="https://docs.microsoft.com//windows/desktop/Controls/rbn-chevronpushed">RBN_CHEVRONPUSHED</a> notification code.</para>
-    </summary>
+    <summary>Contains information used in handling the <a href="https://docs.microsoft.com//windows/desktop/Controls/rbn-chevronpushed">RBN_CHEVRONPUSHED</a> notification code.</summary>
   </member>
   <member name="NMREBARCHEVRON.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="NMREBARCHEVRON.uBand">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Index of the band sending the notification.</para>
-    </summary>
+    <summary>Index of the band sending the notification.</summary>
   </member>
   <member name="NMREBARCHEVRON.wID">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Application-defined identifier for the band.</para>
-    </summary>
+    <summary>Application-defined identifier for the band.</summary>
   </member>
   <member name="NMREBARCHEVRON.lParam">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
-      <para>Application-defined value associated with the band.</para>
-    </summary>
+    <summary>Application-defined value associated with the band.</summary>
   </member>
   <member name="NMREBARCHEVRON.rc">
     <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>
-        <see cref="RECT" /> structure that defines the area covered by the chevron.</para>
-    </summary>
+      <see cref="RECT" /> structure that defines the area covered by the chevron.</summary>
   </member>
   <member name="NMREBARCHEVRON.lParamNM">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
-      <para>An application-defined value. If the <a href="https://docs.microsoft.com//windows/desktop/Controls/rbn-chevronpushed">RBN_CHEVRONPUSHED</a> notification was sent as a result of an <a href="https://docs.microsoft.com//windows/desktop/Controls/rb-pushchevron">RB_PUSHCHEVRON</a> message, this member contains the message's
-<i>lAppValue</i> value. Otherwise, it is set to zero.</para>
-    </summary>
+    <summary>An application-defined value. If the <a href="https://docs.microsoft.com//windows/desktop/Controls/rbn-chevronpushed">RBN_CHEVRONPUSHED</a> notification was sent as a result of an <a href="https://docs.microsoft.com//windows/desktop/Controls/rb-pushchevron">RB_PUSHCHEVRON</a> message, this member contains the message's<i>lAppValue</i> value. Otherwise, it is set to zero.</summary>
   </member>
 </doc>

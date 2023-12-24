@@ -19,32 +19,4 @@ public static unsafe partial class ITfContextOwnerServicesTests
     {
         Assert.That(typeof(ITfContextOwnerServices).GUID, Is.EqualTo(IID_ITfContextOwnerServices));
     }
-
-    /// <summary>Validates that the <see cref="ITfContextOwnerServices" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfContextOwnerServices>(), Is.EqualTo(sizeof(ITfContextOwnerServices)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfContextOwnerServices" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfContextOwnerServices).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfContextOwnerServices" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfContextOwnerServices), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfContextOwnerServices), Is.EqualTo(4));
-        }
-    }
 }

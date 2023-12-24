@@ -19,25 +19,4 @@ public static unsafe partial class SVGPathSegLinetoHorizontalAbsTests
     {
         Assert.That(typeof(SVGPathSegLinetoHorizontalAbs).GUID, Is.EqualTo(IID_SVGPathSegLinetoHorizontalAbs));
     }
-
-    /// <summary>Validates that the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGPathSegLinetoHorizontalAbs>(), Is.EqualTo(sizeof(SVGPathSegLinetoHorizontalAbs)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGPathSegLinetoHorizontalAbs).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGPathSegLinetoHorizontalAbs" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGPathSegLinetoHorizontalAbs), Is.EqualTo(1));
-    }
 }

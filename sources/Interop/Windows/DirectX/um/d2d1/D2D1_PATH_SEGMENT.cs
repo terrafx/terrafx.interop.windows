@@ -9,7 +9,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_PATH_SEGMENT.xml' path='doc/member[@name="D2D1_PATH_SEGMENT"]/*' />
 [Flags]
-public enum D2D1_PATH_SEGMENT : uint
+public enum D2D1_PATH_SEGMENT
 {
     /// <include file='D2D1_PATH_SEGMENT.xml' path='doc/member[@name="D2D1_PATH_SEGMENT.D2D1_PATH_SEGMENT_NONE"]/*' />
     D2D1_PATH_SEGMENT_NONE = 0x00000000,
@@ -21,5 +21,5 @@ public enum D2D1_PATH_SEGMENT : uint
     D2D1_PATH_SEGMENT_FORCE_ROUND_LINE_JOIN = 0x00000002,
 
     /// <include file='D2D1_PATH_SEGMENT.xml' path='doc/member[@name="D2D1_PATH_SEGMENT.D2D1_PATH_SEGMENT_FORCE_DWORD"]/*' />
-    D2D1_PATH_SEGMENT_FORCE_DWORD = 0xffffffff,
+    D2D1_PATH_SEGMENT_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

@@ -23,5 +23,5 @@ public unsafe partial struct AASHELLMENUITEM
 
     /// <include file='AASHELLMENUITEM.xml' path='doc/member[@name="AASHELLMENUITEM.psz"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* psz;
+    public char* psz;
 }

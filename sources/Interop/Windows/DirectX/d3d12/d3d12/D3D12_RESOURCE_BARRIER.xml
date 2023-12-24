@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RESOURCE_BARRIER">
+    <summary>Describes a resource barrier (transition in resource use).</summary>
+  </member>
+  <member name="D3D12_RESOURCE_BARRIER.Type">
+    <summary>A <see cref="D3D12_RESOURCE_BARRIER_TYPE" />-typed value that specifies the type of resource barrier. This member determines which type to use in the union below.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_BARRIER.Flags">
+    <summary>Specifies a <see cref="D3D12_RESOURCE_BARRIER_FLAGS" /> enumeration constant such as for "begin only" or "end only".</summary>
+  </member>
+  <member name="D3D12_RESOURCE_BARRIER.Transition">
+    <summary>A <see cref="D3D12_RESOURCE_TRANSITION_BARRIER" /> structure that describes the transition of subresources between different usages.<br />Members specify the before and after usages of the subresources.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_BARRIER.Aliasing">
+    <summary>A<see cref="D3D12_RESOURCE_ALIASING_BARRIER" /> structure that describes the transition between usages of two different resources that have mappings into the same heap.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_BARRIER.UAV">
+    <summary>A<see cref="D3D12_RESOURCE_UAV_BARRIER" /> structure that describes a resource in which all UAV accesses (reads or writes) must complete before any future UAV accesses (read or write) can begin.</summary>
+  </member>
+</doc>

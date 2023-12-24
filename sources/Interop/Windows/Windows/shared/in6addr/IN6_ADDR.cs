@@ -3,6 +3,7 @@
 // Ported from shared/in6addr.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -11,21 +12,35 @@ namespace TerraFX.Interop.Windows;
 public partial struct IN6_ADDR
 {
     /// <include file='IN6_ADDR.xml' path='doc/member[@name="IN6_ADDR.u"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/in6addr.h:26:5)")]
+    [NativeTypeName("__AnonymousRecord_in6addr_L26_C5")]
     public _u_e__Union u;
 
     /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _u_e__Union
+    public partial struct _u_e__Union
     {
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.Byte"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("UCHAR[16]")]
-        public fixed byte Byte[16];
+        public _Byte_e__FixedBuffer Byte;
 
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.Word"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("USHORT[8]")]
-        public fixed ushort Word[8];
+        public _Word_e__FixedBuffer Word;
+
+        /// <include file='_Byte_e__FixedBuffer.xml' path='doc/member[@name="_Byte_e__FixedBuffer"]/*' />
+        [InlineArray(16)]
+        public partial struct _Byte_e__FixedBuffer
+        {
+            public byte e0;
+        }
+
+        /// <include file='_Word_e__FixedBuffer.xml' path='doc/member[@name="_Word_e__FixedBuffer"]/*' />
+        [InlineArray(8)]
+        public partial struct _Word_e__FixedBuffer
+        {
+            public ushort e0;
+        }
     }
 }

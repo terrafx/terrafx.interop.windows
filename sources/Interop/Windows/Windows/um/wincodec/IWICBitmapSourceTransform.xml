@@ -2,175 +2,24 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
-  <member name="IWICBitmapSourceTransform.CopyPixels">
-    <summary>
-      <para>Copies pixel data using the supplied input parameters.</para>
-    </summary>
-    <param name="prc">
-      <para>Type: <b>const <see cref="WICRect" />*</b></para>
-      <para>The rectangle of pixels to copy.</para>
-    </param>
-    <param name="uiWidth">
-      <para>Type: <b>UINT</b></para>
-      <para>The width to scale the source bitmap. This parameter must equal the value obtainable through <see cref="IWICBitmapSourceTransform.GetClosestSize" />.</para>
-    </param>
-    <param name="uiHeight">
-      <para>Type: <b>UINT</b></para>
-      <para>The height to scale the source bitmap. This parameter must equal the value obtainable through <see cref="IWICBitmapSourceTransform.GetClosestSize" />.</para>
-    </param>
-    <param name="pguidDstFormat">
-      <para>Type: <b>WICPixelFormatGUID*</b></para>
-      <para>The GUID of desired pixel format in which the pixels should be returned.</para>
-      <para>This GUID must be a format obtained through an <see cref="GetClosestPixelFormat" /> call.</para>
-    </param>
-    <param name="dstTransform">
-      <para>Type: <b><see cref="WICBitmapTransformOptions" /></b></para>
-      <para>The desired rotation or flip to perform prior to the pixel copy.</para>
-      <para>The transform must be an operation supported by an <see cref="DoesSupportTransform" /> call.</para>
-      <para>If a <i>dstTransform</i> is specified, <i>nStride</i> is the <i>transformed stride</i> and is based on the <i>pguidDstFormat</i> pixel format, not the original source's pixel format.</para>
-    </param>
-    <param name="nStride">
-      <para>Type: <b>UINT</b></para>
-      <para>The stride of the destination buffer.</para>
-    </param>
-    <param name="cbBufferSize">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the destination buffer.</para>
-    </param>
-    <param name="pbBuffer">
-      <para>Type: <b>BYTE*</b></para>
-      <para>The output buffer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <h3>Codec Developer Remarks</h3>
-      <para>If NULL is passed in for <i>prc</i>, the entire image is copied.</para>
-      <para>For codec developer implementation details for this method, see <a href="https://docs.microsoft.com//windows/win32/wic/-wic-imp-iwicbitmapsourcetransform">Implementing IWICBitmapSourceTransform</a>.</para>
-      <para>When multiple transform operations are requested, the result is dependent on the order in which the operations are performed.
-To ensure predictability and consistency across CODECs, it's important that all CODECs perform these operations in the same order.
-The recommended order of these operations is:</para>
-      <list type="number">
-        <item>
-          <description>Scale</description>
-        </item>
-        <item>
-          <description>Crop</description>
-        </item>
-        <item>
-          <description>Flip/Rotate</description>
-        </item>
-      </list>
-      <para>Pixel format conversion can be performed at any time, since it has no effect on the other transforms.</para>
-      <para>The first parameter, <i>prc</i> is used to specify the region of interest for clipping the image.
-By convention, scaling is performed before clipping so, if the image is to be scaled as well as clipped, the region of interest should be determined after the image has been scaled.</para>
-      <para>If a <i>dstTransform</i> is specified, the stride is the transformed stride, and is based on the pixelFormat specified in the <b>CopyPixels</b> call, not the original frame's pixel format.</para>
-    </remarks>
-    <seealso cref="IWICBitmapSourceTransform" />
-    <seealso href="https://docs.microsoft.com//windows/win32/wic/-wic-lh">Microsoft Windows Imaging Codec</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/wic/-wic-programming-guide">Programming Guide</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/wic/-wic-codec-reference">References</seealso>
-    <seealso href="https://docs.microsoft.com//windows/win32/wic/-wic-samples">Samples and Code Examples</seealso>
-  </member>
   <member name="IWICBitmapSourceTransform.DoesSupportTransform">
-    <summary>
-      <para>Determines whether a specific transform option is supported natively by the implementation of the <see cref="IWICBitmapSourceTransform" /> interface.</para>
-    </summary>
-    <param name="dstTransform">
-      <para>Type: <b><see cref="WICBitmapTransformOptions" /></b></para>
-      <para>The <see cref="WICBitmapTransformOptions" /> to check if they are supported.</para>
-    </param>
-    <param name="pfIsSupported">
-      <para>Type: <b>BOOL*</b></para>
-      <para>A pointer that receives a value specifying whether the transform option is supported.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The Windows provided codecs provide the following level of support:</para>
-      <list type="bullet">
-        <item>
-          <description>BMP, ICO, GIF, TIFF: No implementation of <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapsourcetransform">IWICBitmapSourceTransform</a>.</description>
-        </item>
-        <item>
-          <description>JPEG, PNG: Trivial support (WICBitmapTransformRotate0 only).</description>
-        </item>
-        <item>
-          <description>JPEG-XR: Support for all transformation/rotations.
-</description>
-        </item>
-      </list>
-    </remarks>
+    <summary>Determines whether a specific transform option is supported natively by the implementation of the <see cref="IWICBitmapSourceTransform" /> interface.</summary>
+    <param name="dstTransform">The <see cref="WICBitmapTransformOptions" /> to check if they are supported.</param>
+    <param name="pfIsSupported">A pointer that receives a value specifying whether the transform option is supported.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapSourceTransform.GetClosestPixelFormat">
-    <summary>
-      <para>Retrieves the closest pixel format to which the implementation of <see cref="IWICBitmapSourceTransform" /> can natively copy pixels, given a desired format.</para>
-    </summary>
-    <param name="pguidDstFormat">
-      <para>Type: <b>WICPixelFormatGUID*</b></para>
-      <para>A pointer that receives the GUID of the pixel format that is the closest supported pixel format of the desired format.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The Windows provided codecs provide the following support:</para>
-      <list type="bullet">
-        <item>
-          <description>BMP, ICO, GIF, TIFF: No implementation of <see cref="IWICBitmapSourceTransform" />.</description>
-        </item>
-        <item>
-          <description>JPEG, PNG, JPEG-XR: Trivial support (always returns the same value as <see cref="IWICBitmapFrameDecode.GetPixelFormat" />).</description>
-        </item>
-      </list>
-    </remarks>
+    <summary>Retrieves the closest pixel format to which the implementation of <see cref="IWICBitmapSourceTransform" /> can natively copy pixels, given a desired format.</summary>
+    <param name="pguidDstFormat">A pointer that receives the GUID of the pixel format that is the closest supported pixel format of the desired format.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapSourceTransform.GetClosestSize">
-    <summary>
-      <para>Returns the closest dimensions the implementation can natively scale to given the desired dimensions.</para>
-    </summary>
-    <param name="puiWidth">
-      <para>Type: <b>UINT*</b></para>
-      <para>The desired width. A pointer that receives the closest supported width.</para>
-    </param>
-    <param name="puiHeight">
-      <para>Type: <b>UINT*</b></para>
-      <para>The desired height. A pointer that receives the closest supported height.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The Windows provided codecs provide the following support for native scaling:</para>
-      <list type="bullet">
-        <item>
-          <description>BMP, ICO, GIF, TIFF: No implementation of <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapsourcetransform">IWICBitmapSourceTransform</a>.</description>
-        </item>
-        <item>
-          <description>PNG: No scaling support.</description>
-        </item>
-        <item>
-          <description>JPEG: Native down-scaling by a factor of 8, 4, or 2.</description>
-        </item>
-        <item>
-          <description>JPEG-XR:  Native scaling of the original image by powers of 2.
-</description>
-        </item>
-      </list>
-    </remarks>
+    <summary>Returns the closest dimensions the implementation can natively scale to given the desired dimensions.</summary>
+    <param name="puiWidth">The desired width. A pointer that receives the closest supported width.</param>
+    <param name="puiHeight">The desired height. A pointer that receives the closest supported height.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapSourceTransform">
-    <summary>
-      <para>Exposes methods for offloading certain operations to the underlying <see cref="IWICBitmapSource" /> implementation.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IWICBitmapSourceTransform</b> interface is implemented by codecs which can natively scale, flip, rotate, or format convert pixels during decoding. As the transformation is combined with the decoding process, native transformation will generally offer performance advantages over non-native transformations. The inbox <see cref="IWICBitmapScaler" />, <see cref="IWICBitmapFlipRotator" />, and <see cref="IWICFormatConverter" /> implementations all make use of the <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapsourcetransform">IWICBitmapSourceTransform</a> interface when they are placed immediately after a supported <a href="https://docs.microsoft.com//windows/desktop/wic/-wic-imp-iwicbitmapframedecode">IWICBitmapFrameDecode</a>, so in the typical case an application will automatically receive this performance increase and does not need to directly use this interface. However, when chaining multiple transformations, or when implementing a custom transformation, there may be a performance advantage to using the IWICBitmapSourceTransform interface directly.</para>
-    </remarks>
+    <summary>Exposes methods for offloading certain operations to the underlying <see cref="IWICBitmapSource" /> implementation.</summary>
   </member>
 </doc>

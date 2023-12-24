@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LPDDSURFACEDESC2">
+    <summary>The DDSURFACEDESC2 structure contains a description of a surface to be created by the driver.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.dwSize">
+    <summary>Specifies the size in bytes of this DDSURFACEDESC2 structure. This member must be initialized before the structure is used.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.dwFlags">
+    <summary>
+      <para>Specifies a set of flags that determine what members of the DDSURFACEDESC2 structure contain valid data. This member can be one or more of the following flags:</para>
+    </summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.dwHeight">
+    <summary>Specifies the height of surface in pixels.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.dwWidth">
+    <summary>Specifies the width of the surface in pixels.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN">
+    <summary>N/A</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.lPitch">
+    <summary>Specifies the number of bytes between the beginnings of two adjacent scan lines; that is, the number of bytes to add to the beginning address of one scan line to reach the beginning address of the next scan line below it. The driver's <a href="https://docs.microsoft.com//windows/win32/api/ddrawint/nc-ddrawint-pdd_createsurface">DdCreateSurface</a> callback must return this value.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.dwLinearSize">
+    <summary>Specifies the size in bytes of a formless, late-allocated, optimized surface.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.dwBackBufferCount">
+    <summary>Specifies the number of back buffers associated with the surface.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.dwDepth">
+    <summary>The bit-depth if this is a volume texture.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.dwMipMapCount">
+    <summary>Specifies the number of mipmap levels.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.dwRefreshRate">
+    <summary>Specifies the refresh rate in hertz of the monitor (used when the display mode is described).</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.dwSrcVBHandle">
+    <summary>Specifies the source used in <b>IDirect3DVertexBuffer7.Optimize</b> (described in the Microsoft Direct3D SDK documentation).</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.dwAlphaBitDepth">
+    <summary>Specifies the depth of the alpha buffer in bits per pixel.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.dwReserved">
+    <summary>Reserved, and should be set to zero.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.lpSurface">
+    <summary>Specifies the address of the associated surface memory.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.ddckCKDestOverlay">
+    <summary>Specifies the color key for destination overlay use.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.dwEmptyFaceColor">
+    <summary>Specifies the physical color for empty cube map faces.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.ddckCKDestBlt">
+    <summary>Specifies the color key for destination blit use.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.ddckCKSrcOverlay">
+    <summary>Specifies the color key for source overlay use.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.ddckCKSrcBlt">
+    <summary>Specifies the color key for source blit use.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.ddpfPixelFormat">
+    <summary>Specifies a <see cref="DDPIXELFORMAT" /> structure that describes the pixel format of the surface.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.DUMMYUNIONNAMEN.dwFVF">
+    <summary>Specifies the Flexible Vertex Format (<a href="https://docs.microsoft.com//windows/win32/direct3d9/d3dfvf">D3DFVF</a>) for the vertex buffers.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.ddsCaps">
+    <summary>Specifies a <see cref="DDSCAPS" /> structure that contains the DirectDraw surface capabilities.</summary>
+  </member>
+  <member name="LPDDSURFACEDESC2.dwTextureStage">
+    <summary>Specifies the stage in the multitexture cascade. For more information, see <a href="https://docs.microsoft.com//windows-hardware/drivers/display/texture-stages">Texture Stages</a>.</summary>
+  </member>
+</doc>

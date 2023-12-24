@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioSystemEffectsPropertyStore.OpenDefaultPropertyStore">
-    <summary>
-      <para>Opens the audio system effects default property store.</para>
-    </summary>
+    <summary>Opens the audio system effects default property store.</summary>
     <param name="stgmAccess">
       <para>The storage-access mode. This parameter specifies whether to open the property store in read mode, write mode, or read/write mode. Set this parameter to one of the following STGM constants:</para>
       <para>STGM_READ</para>
@@ -13,25 +11,14 @@
       <para>STGM_READWRITE</para>
       <para>The method permits a client running as an administrator to open a store for read-only, write-only, or read/write access. A client that is not running as an administrator is restricted to read-only access.</para>
     </param>
-    <param name="propStore">
-      <para>Receives a pointer to an <see cref="IPropertyStore" /> representing the default property store.</para>
-    </param>
+    <param name="propStore">Receives a pointer to an <see cref="IPropertyStore" /> representing the default property store.</param>
     <returns>
       <para>Returns an HRESULT including, but not limited to the following:</para>
-      <para>| Value | Description |
-|-------|-------------|
-| S_OK  | Success     |
-| E_NOTFOUND | The call is attempting to open a property store that does not exist. See Remarks. |
-| E_ACCESSDENIED | The caller was denied access for the specified <i>stgmAccess</i> value |</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success | | E_NOTFOUND | The call is attempting to open a property store that does not exist. See Remarks. | | E_ACCESSDENIED | The caller was denied access for the specified <i>stgmAccess</i> value |</para>
     </returns>
-    <remarks>
-      <para>This method will only open existing property stores under the context registry keys. It will not create a new key if one is not present in the associated INF file. Attempting to access a property store that does not already exist will result in an E_NOTFOUND error.</para>
-    </remarks>
   </member>
   <member name="IAudioSystemEffectsPropertyStore.OpenUserPropertyStore">
-    <summary>
-      <para>Opens the audio system effects user property store.</para>
-    </summary>
+    <summary>Opens the audio system effects user property store.</summary>
     <param name="stgmAccess">
       <para>The storage-access mode. This parameter specifies whether to open the property store in read mode, write mode, or read/write mode. Set this parameter to one of the following STGM constants:</para>
       <para>STGM_READ</para>
@@ -39,25 +26,14 @@
       <para>STGM_READWRITE</para>
       <para>The method permits a client running as an administrator to open a store for read-only, write-only, or read/write access. A client that is not running as an administrator is restricted to read-only access.</para>
     </param>
-    <param name="propStore">
-      <para>Receives a pointer to an <see cref="IPropertyStore" /> representing the user property store.</para>
-    </param>
+    <param name="propStore">Receives a pointer to an <see cref="IPropertyStore" /> representing the user property store.</param>
     <returns>
       <para>Returns an HRESULT including, but not limited to the following:</para>
-      <para>| Value | Description |
-|-------|-------------|
-| S_OK  | Success     |
-| E_NOTFOUND | The call is attempting to open a property store that does not exist. See Remarks. |
-| E_ACCESSDENIED | The caller was denied access for the specified <i>stgmAccess</i> value |</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success | | E_NOTFOUND | The call is attempting to open a property store that does not exist. See Remarks. | | E_ACCESSDENIED | The caller was denied access for the specified <i>stgmAccess</i> value |</para>
     </returns>
-    <remarks>
-      <para>This method will only open existing property stores under the context registry keys. It will not create a new key if one is not present in the associated INF file. Attempting to access a property store that does not already exist will result in an E_NOTFOUND error.</para>
-    </remarks>
   </member>
   <member name="IAudioSystemEffectsPropertyStore.OpenVolatilePropertyStore">
-    <summary>
-      <para>Opens the audio system effects volatile property store.</para>
-    </summary>
+    <summary>Opens the audio system effects volatile property store.</summary>
     <param name="stgmAccess">
       <para>The storage-access mode. This parameter specifies whether to open the property store in read mode, write mode, or read/write mode. Set this parameter to one of the following STGM constants:</para>
       <para>STGM_READ</para>
@@ -65,68 +41,31 @@
       <para>STGM_READWRITE</para>
       <para>The method permits a client running as an administrator to open a store for read-only, write-only, or read/write access. A client that is not running as an administrator is restricted to read-only access.</para>
     </param>
-    <param name="propStore">
-      <para>Receives a pointer to an <see cref="IPropertyStore" /> representing the volatile property store.</para>
-    </param>
+    <param name="propStore">Receives a pointer to an <see cref="IPropertyStore" /> representing the volatile property store.</param>
     <returns>
       <para>Returns an HRESULT including, but not limited to the following:</para>
-      <para>| Value | Description |
-|-------|-------------|
-| S_OK  | Success     |
-| E_NOTFOUND | The call is attempting to open a property store that does not exist. See Remarks. |
-| E_ACCESSDENIED | The caller was denied access for the specified <i>stgmAccess</i> value |</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success | | E_NOTFOUND | The call is attempting to open a property store that does not exist. See Remarks. | | E_ACCESSDENIED | The caller was denied access for the specified <i>stgmAccess</i> value |</para>
     </returns>
-    <remarks>
-      <para>This method will only open existing property stores under the context registry keys. It will not create a new key if one is not present in the associated INF file. Attempting to access a property store that does not already exist will result in an E_NOTFOUND error.</para>
-    </remarks>
   </member>
   <member name="IAudioSystemEffectsPropertyStore.RegisterPropertyChangeNotification">
-    <summary>
-      <para>Registers an <see cref="IAudioSystemEffectsPropertyChangeNotificationClient" /> callback interface to receive notifications when audio system effect properties change.</para>
-    </summary>
-    <param name="callback">
-      <para>A pointer to the <b>IAudioSystemEffectsPropertyChangeNotificationClient</b> callback interface to register.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
-    <remarks>
-      <para>This method should not be used by APOs and should only be used by hardware support apps to register for notifications.</para>
-    </remarks>
+    <summary>Registers an <see cref="IAudioSystemEffectsPropertyChangeNotificationClient" /> callback interface to receive notifications when audio system effect properties change.</summary>
+    <param name="callback">A pointer to the <b>IAudioSystemEffectsPropertyChangeNotificationClient</b> callback interface to register.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IAudioSystemEffectsPropertyStore.ResetUserPropertyStore">
-    <summary>
-      <para>Deletes all existing key value pairs in the audio system effect user property store.</para>
-    </summary>
-    <returns>
-      <para>S_OK on success.</para>
-    </returns>
+    <summary>Deletes all existing key value pairs in the audio system effect user property store.</summary>
+    <returns>S_OK on success.</returns>
   </member>
   <member name="IAudioSystemEffectsPropertyStore.ResetVolatilePropertyStore">
-    <summary>
-      <para>Deletes all existing key value pairs in the audio system effect volatile property store.</para>
-    </summary>
-    <returns>
-      <para>S_OK on success.</para>
-    </returns>
+    <summary>Deletes all existing key value pairs in the audio system effect volatile property store.</summary>
+    <returns>S_OK on success.</returns>
   </member>
   <member name="IAudioSystemEffectsPropertyStore.UnregisterPropertyChangeNotification">
-    <summary>
-      <para>Unregisters an <see cref="IAudioSystemEffectsPropertyChangeNotificationClient" /> callback interface previously registered to receive notifications when audio system effect properties change.</para>
-    </summary>
-    <param name="callback">
-      <para>A pointer to the <b>IAudioSystemEffectsPropertyChangeNotificationClient</b> callback interface to unregister.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on success.</para>
-    </returns>
+    <summary>Unregisters an <see cref="IAudioSystemEffectsPropertyChangeNotificationClient" /> callback interface previously registered to receive notifications when audio system effect properties change.</summary>
+    <param name="callback">A pointer to the <b>IAudioSystemEffectsPropertyChangeNotificationClient</b> callback interface to unregister.</param>
+    <returns>Returns S_OK on success.</returns>
   </member>
   <member name="IAudioSystemEffectsPropertyStore">
-    <summary>
-      <para>Provides access to manage audio system effects audio stores and to register for notifications when audio system effect properties change.</para>
-    </summary>
-    <remarks>
-      <para>This API is intended to support OEMs and app developers who want the ability to query and modify the property store associated with an audio device and publish HSA apps in the Microsoft Store. In order to use this API, you must specify the restricted <i>audioDeviceConfiguration</i> capability in your app package manifest. This is a restricted capability. For more information, see <a href="https://docs.microsoft.com//windows/uwp/packaging/app-capability-declarations">App capability declarations</a>.</para>
-    </remarks>
+    <summary>Provides access to manage audio system effects audio stores and to register for notifications when audio system effect properties change.</summary>
   </member>
 </doc>

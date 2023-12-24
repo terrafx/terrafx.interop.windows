@@ -3,34 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="VPCOLORFLAGS">
-    <summary>
-      <para>Specifies the use of a color. Used by <see cref="IVisualProperties" /> methods.</para>
-    </summary>
+    <summary>Specifies the use of a color. Used by <see cref="IVisualProperties" /> methods.</summary>
   </member>
   <member name="VPCOLORFLAGS.VPCF_TEXT">
-    <summary>
-      <para>A text color.</para>
-    </summary>
+    <summary>A text color.</summary>
   </member>
   <member name="VPCOLORFLAGS.VPCF_BACKGROUND">
-    <summary>
-      <para>A background color.</para>
-    </summary>
+    <summary>A background color.</summary>
   </member>
   <member name="VPCOLORFLAGS.VPCF_SORTCOLUMN">
-    <summary>
-      <para>A sort-column color.</para>
-    </summary>
+    <summary>A sort-column color.</summary>
   </member>
   <member name="VPCOLORFLAGS.VPCF_SUBTEXT">
-    <summary>
-      <para>A subtext color.</para>
-    </summary>
+    <summary>A subtext color.</summary>
   </member>
   <member name="VPCOLORFLAGS.VPCF_TEXTBACKGROUND">
     <summary>
-      <para>
-        <b>Windows 7 and later</b>. A text background color.</para>
-    </summary>
+      <b>Windows 7 and later</b>. A text background color.</summary>
   </member>
 </doc>

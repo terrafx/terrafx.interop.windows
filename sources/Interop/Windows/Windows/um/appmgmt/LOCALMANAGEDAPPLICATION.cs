@@ -10,15 +10,15 @@ public unsafe partial struct LOCALMANAGEDAPPLICATION
 {
     /// <include file='LOCALMANAGEDAPPLICATION.xml' path='doc/member[@name="LOCALMANAGEDAPPLICATION.pszDeploymentName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszDeploymentName;
+    public char* pszDeploymentName;
 
     /// <include file='LOCALMANAGEDAPPLICATION.xml' path='doc/member[@name="LOCALMANAGEDAPPLICATION.pszPolicyName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszPolicyName;
+    public char* pszPolicyName;
 
     /// <include file='LOCALMANAGEDAPPLICATION.xml' path='doc/member[@name="LOCALMANAGEDAPPLICATION.pszProductId"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszProductId;
+    public char* pszProductId;
 
     /// <include file='LOCALMANAGEDAPPLICATION.xml' path='doc/member[@name="LOCALMANAGEDAPPLICATION.dwState"]/*' />
     [NativeTypeName("DWORD")]

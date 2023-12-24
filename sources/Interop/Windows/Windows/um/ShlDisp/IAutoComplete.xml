@@ -3,94 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAutoComplete.Enable">
-    <summary>
-      <para>Enables or disables autocompletion.</para>
-    </summary>
-    <param name="fEnable">
-      <para>Type: <b>BOOL</b></para>
-      <para>A value that is set to <b>TRUE</b> to enable autocompletion, or <b>FALSE</b> to disable it.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>Autocompletion is enabled by default. Applications need only to call this method to disable autocompletion or to reenable it if it has been disabled.</para>
-    </remarks>
-    <seealso cref="IAutoComplete" />
+    <summary>Enables or disables autocompletion.</summary>
+    <param name="fEnable">A value that is set to <b>TRUE</b> to enable autocompletion, or <b>FALSE</b> to disable it.</param>
+    <returns>Returns S_OK if successful, or a COM error value otherwise.</returns>
   </member>
   <member name="IAutoComplete.Init">
-    <summary>
-      <para>Initializes the autocomplete object.</para>
-    </summary>
-    <param name="hwndEdit">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window for the system edit control for which autocompletion will be enabled.</para>
-    </param>
-    <param name="punkACL">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the <see cref="IUnknown" /> interface of the string list object that generates candidates for the completed string. The object must expose an <see cref="IEnumString" /> interface.</para>
-    </param>
-    <param name="pwszRegKeyPath">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to an optional, null-terminated Unicode string that gives the registry path, including the value name, where the format string is stored as a <b>REG_SZ</b> value. The autocomplete object first looks for the path under <b>HKEY_CURRENT_USER</b>. If it fails, it tries <b>HKEY_LOCAL_MACHINE</b>. For a discussion of the format string, see the definition of <i>pwszQuickComplete</i>.</para>
-    </param>
-    <param name="pwszQuickComplete">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to an optional null-terminated Unicode string that specifies the format to be used if the user enters text and presses CTRL+ENTER. Set this parameter to <b>NULL</b> to disable quick completion. Otherwise, the autocomplete object treats <i>pwszQuickComplete</i> as a <see cref="StringCchPrintf" /> format string and the text in the edit box as its associated argument, to produce a new string. For example, set <i>pwszQuickComplete</i> to "http://www.%s.com/". When a user enters "MyURL" into the edit box and presses CTRL+ENTER, the text in the edit box is updated to "http://www.MyURL.com/".</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAutoComplete" />
+    <summary>Initializes the autocomplete object.</summary>
+    <param name="hwndEdit">A handle to the window for the system edit control for which autocompletion will be enabled.</param>
+    <param name="punkACL">A pointer to the <see cref="IUnknown" /> interface of the string list object that generates candidates for the completed string. The object must expose an <see cref="IEnumString" /> interface.</param>
+    <param name="pwszRegKeyPath">A pointer to an optional, null-terminated Unicode string that gives the registry path, including the value name, where the format string is stored as a <b>REG_SZ</b> value. The autocomplete object first looks for the path under <b>HKEY_CURRENT_USER</b>. If it fails, it tries <b>HKEY_LOCAL_MACHINE</b>. For a discussion of the format string, see the definition of <i>pwszQuickComplete</i>.</param>
+    <param name="pwszQuickComplete">A pointer to an optional null-terminated Unicode string that specifies the format to be used if the user enters text and presses CTRL+ENTER. Set this parameter to <b>NULL</b> to disable quick completion. Otherwise, the autocomplete object treats <i>pwszQuickComplete</i> as a <see cref="StringCchPrintf" /> format string and the text in the edit box as its associated argument, to produce a new string. For example, set <i>pwszQuickComplete</i> to "http://www.%s.com/". When a user enters "MyURL" into the edit box and presses CTRL+ENTER, the text in the edit box is updated to "http://www.MyURL.com/".</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAutoComplete">
-    <summary>
-      <para>Exposed by the autocomplete object (CLSID_AutoComplete). This interface allows applications to initialize, enable, and disable the object.</para>
-    </summary>
-    <remarks>
-      <para>Autocompletion expands strings that have been partially entered in an <a href="https://docs.microsoft.com//windows/desktop/Controls/edit-controls">edit control</a> into complete strings. For example, when a user starts to type a URL in the Address edit control that is embedded in the Windows Internet Explorer toolbar, autocompletion expands the string into one or more complete URLs that are consistent with the existing partial string. A partial URL string such as "mic" might be expanded to "http://www.microsoft.com" or "http://www.microsoft.com/windows". Autocompletion is typically used with edit controls or with controls that have an embedded edit control such as the <a href="https://docs.microsoft.com//windows/desktop/Controls/comboboxex-control-reference">comboboxex control</a>.</para>
-      <para>Autocompletion has two modes for displaying the completed string. The modes are independent, so you can enable either or both. To specify the mode, call <see cref="IAutoComplete2.SetOptions" />. The modes are as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>In <i>autoappend</i> mode, autocompletion appends the remainder of the most likely candidate string to the existing characters, highlighting the appended characters. The edit control behaves as if the user had entered the entire string manually and then highlighted the appended characters. If the user continues to enter characters, they are added to the existing partial string. If the user adds a character that is identical to the next highlighted character, the highlighting for that character will be turned off. The remaining characters will still be highlighted. If the user adds a character that does not match the next highlighted character, autocompletion attempts to generate a new candidate string based on the larger partial string. It appends the remainder of the new candidate string to the current partial string, as before. If no candidate string can be found, only the typed characters appear and the edit box behaves as it would without autocompletion. This process continues until the user accepts a string.</description>
-        </item>
-        <item>
-          <description>In <i>autosuggest</i> mode, autocompletion displays a drop-down list beneath the edit control with one or more suggested complete strings. The user can select one of the suggested strings, usually by clicking it, or continue typing. As typing progresses, the drop-down list may be modified, based on the current partial string. If you set the <b>ACO_SEARCH</b> flag in the <i>dwFlag</i> parameter of <see cref="IAutoComplete2.SetOptions" />, a "Search for 'XXX'" item is added to the bottom of the drop-down list. It is displayed even if there are no suggested strings. "XXX" is set to the current partial string and is updated as the user continues to type. If the user selects "Search for '...'", your application should launch a search engine to assist the user.</description>
-        </item>
-      </list>
-      <para>The simplest way to implement autocompletion is to call <see cref="SHAutoComplete" />. When this function is called for a system edit control, the control will autocomplete partially entered file system paths or URLs. To enable autocompletion for other types of strings, or to have more control over how autocompletion works, you can use the underlying autocomplete object directly.</para>
-      <para>This interface is not usually implemented by applications. It is exposed by the Shell's autocomplete object and used by applications.</para>
-      <para>Use the <b>IAutoComplete</b> interface of the autocomplete object to initialize the object and to
-enable or disable autocompletion.</para>
-      <para>To implement autocompletion for an edit control using the autocomplete object, do the following:</para>
-      <list type="number">
-        <item>
-          <description>Implement a string list Component Object Model (COM) object that exports an <see cref="IEnumString" /> interface. This string list object is responsible for providing the list of strings that the autocomplete object will use as candidates for completed strings.</description>
-        </item>
-        <item>
-          <description>Create an instance of the autocomplete object with <see cref="CoCreateInstance" />. Request a pointer to its <b>IAutoComplete</b> interface.</description>
-        </item>
-        <item>
-          <description>Call <see cref="IAutoComplete.Init" />. Set the <i>hwndEdit</i> parameter to the window handle of the edit control. If the edit control is embedded in another control, you must retrieve the handle to the edit control itself. For example, to retrieve a handle to the edit control embedded in a <a href="https://docs.microsoft.com//windows/desktop/Controls/comboboxex-control-reference">comboboxex control</a>, send a <a href="https://docs.microsoft.com//windows/desktop/Controls/cbem-geteditcontrol">CBEM_GETEDITCONTROL</a> message. Set the <i>punkACL</i> parameter of <b>IAutoComplete.Init</b> to the <see cref="IUnknown" /> pointer of the string list object.</description>
-        </item>
-        <item>
-          <description>If you do not want to use the default options, retrieve a pointer to the autocomplete object's <see cref="IAutoComplete2" /> interface. Call <see cref="IAutoComplete2.SetOptions" /> to set the desired options.</description>
-        </item>
-        <item>
-          <description>The autocomplete object uses the <see cref="IUnknown" /> pointer of the string list object, passed as <i>punkACL</i> in step 3, to retrieve a pointer to that object's <see cref="IEnumString" /> interface. The autocomplete object then calls that interface to generate its list of candidate strings. It selects strings from that list that are an acceptable match to the partial string in the control. In autoappend mode, the characters needed to complete the string are appended to the partial string and highlighted. In autosuggest mode, a drop-down box with a list of one or more possible strings is displayed below the edit control.</description>
-        </item>
-        <item>
-          <description>If the user accepts an autocompleted string, the edit control behaves as if the string had been entered manually.</description>
-        </item>
-      </list>
-      <para>Autocompletion is enabled by default. Applications need only to call <see cref="IAutoComplete.Enable" /> to disable autocompletion or to reenable it if it has been disabled.</para>
-    </remarks>
-    <seealso cref="IACList" />
-    <seealso cref="IACList2" />
-    <seealso cref="IAutoComplete2" />
-    <seealso cref="ICurrentWorkingDirectory" />
-    <seealso cref="IObjMgr" />
+    <summary>Exposed by the autocomplete object (CLSID_AutoComplete). This interface allows applications to initialize, enable, and disable the object.</summary>
   </member>
 </doc>

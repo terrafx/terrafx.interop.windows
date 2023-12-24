@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleCacheControl.OnRun">
-    <summary>
-      <para>Notifies the cache that the data source object has entered the running state so that the cache object can establish advise sinks as needed.</para>
-    </summary>
-    <param name="pDataObject">
-      <para>A pointer to the <see cref="IDataObject" /> interface on the object that is entering the running state.</para>
-    </param>
+    <summary>Notifies the cache that the data source object has entered the running state so that the cache object can establish advise sinks as needed.</summary>
+    <param name="pDataObject">A pointer to the <see cref="IDataObject" /> interface on the object that is entering the running state.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -16,52 +12,47 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One of the arguments is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One of the  arguments is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory is available for this operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory is available for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When <b>OnRun</b> is called, the cache sets up advisory connections as necessary with the source data object so it can receive notifications. The advisory connection created between the running object and the cache is destroyed when <see cref="IOleCacheControl.OnStop" /> is called.</para>
-      <para>Some object handlers or in-process servers might use the cache passively, and not call <b>OnRun</b>. These applications must call <see cref="IOleCache2.UpdateCache" />, <see cref="IOleCache.InitCache" />, or <see cref="IOleCache.SetData" /> to fill the cache when necessary to ensure that the cache gets updated.</para>
-      <para>
-        <b>OnRun</b> does not add a reference count on the pointer to <see cref="IDataObject" /> passed in <i>pDataObject</i>. Because it is the responsibility of the caller of <see cref="OleRun" /> to ensure that the lifetime of the <i>pDataObject</i> pointer lasts until <see cref="OnStop" /> is called, the caller must be holding a pointer to <b>IDataObject</b> on the data object of interest.</para>
-    </remarks>
-    <seealso cref="IOleCache2.UpdateCache" />
-    <seealso cref="IOleCacheControl" />
-    <seealso cref="IOleCacheControl.OnStop" />
   </member>
   <member name="IOleCacheControl.OnStop">
-    <summary>
-      <para>Notifies the cache that it should terminate any existing advise sinks. No indication is given as to whether a connection actually existed.</para>
-    </summary>
+    <summary>Notifies the cache that it should terminate any existing advise sinks. No indication is given as to whether a connection actually existed.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -69,37 +60,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unexpected error has occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory is available for this operation.</para>
-          </description>
-        </item>
+          <description>Insufficient memory is available for this operation.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The data advisory connection between the running object and the cache is destroyed as part of calling <b>OnStop</b>.</para>
-    </remarks>
-    <seealso cref="IOleCacheControl" />
-    <seealso cref="IOleCacheControl.OnRun" />
   </member>
   <member name="IOleCacheControl">
-    <summary>
-      <para>Provides proper maintenance of caches. It maintains the caches by connecting the running object's <see cref="IDataObject" /> implementation to the cache, allowing the cache to receive notifications from the running object.</para>
-    </summary>
+    <summary>Provides proper maintenance of caches. It maintains the caches by connecting the running object's <see cref="IDataObject" /> implementation to the cache, allowing the cache to receive notifications from the running object.</summary>
   </member>
 </doc>

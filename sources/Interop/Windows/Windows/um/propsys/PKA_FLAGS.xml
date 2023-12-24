@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PKA_FLAGS">
-    <summary>
-      <para>Describes property change array behavior.</para>
-    </summary>
+    <summary>Describes property change array behavior.</summary>
   </member>
   <member name="PKA_FLAGS.PKA_SET">
-    <summary>
-      <para>Replace current value.</para>
-    </summary>
+    <summary>Replace current value.</summary>
   </member>
   <member name="PKA_FLAGS.PKA_APPEND">
-    <summary>
-      <para>Append to current value - multi-value properties only.</para>
-    </summary>
+    <summary>Append to current value - multi-value properties only.</summary>
   </member>
   <member name="PKA_FLAGS.PKA_DELETE">
-    <summary>
-      <para>Delete from current value - multi-value properties only.</para>
-    </summary>
+    <summary>Delete from current value - multi-value properties only.</summary>
   </member>
 </doc>

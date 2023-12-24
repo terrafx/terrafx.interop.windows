@@ -3,36 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INotificationActivationCallback.Activate">
-    <summary>
-      <para>Called when a user interacts with a toast in the action center.</para>
-    </summary>
-    <param name="appUserModelId">
-      <para>The unique identifier representing your app to the notification platform.</para>
-    </param>
-    <param name="invokedArgs">
-      <para>Arguments from the invoked button. <b>NULL</b> if the toast indicates the default activation and no launch arguments were specified in the XML payload.</para>
-    </param>
-    <param name="data">
-      <para>The data from the input elements available on the notification toast.</para>
-    </param>
-    <param name="count">
-      <para>The number of <i>data</i> elements.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In order for your app to respond to toasts in the action center, you need to override this method in your app. You also will need to create a shortcut on the start menu. For more information about how to respond to activation notifications, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/win32_tile_badge_notif/respond-to-toast-activations">Respond to toast activations</a>.</para>
-      <para>If your application uses non-interactive toasts, you can respond to those without using <i>invokedArgs</i> or <i>data</i>.</para>
-      <para>If you return a failure code, the activation will fail and the user can try again to activate your app.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/notificationactivationcallback/nn-notificationactivationcallback-inotificationactivationcallback">INotificationActivationCallback</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/win32_tile_badge_notif/respond-to-toast-activations">Respond to toast activations</seealso>
+    <summary>Called when a user interacts with a toast in the action center.</summary>
+    <param name="appUserModelId">The unique identifier representing your app to the notification platform.</param>
+    <param name="invokedArgs">Arguments from the invoked button. <b>NULL</b> if the toast indicates the default activation and no launch arguments were specified in the XML payload.</param>
+    <param name="data">The data from the input elements available on the notification toast.</param>
+    <param name="count">The number of <i>data</i> elements.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INotificationActivationCallback">
-    <summary>
-      <para>Receives notification messages when an app is triggered through a toast from the action center.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/win32_tile_badge_notif/respond-to-toast-activations">Respond to toast activations</seealso>
+    <summary>Receives notification messages when an app is triggered through a toast from the action center.</summary>
   </member>
 </doc>

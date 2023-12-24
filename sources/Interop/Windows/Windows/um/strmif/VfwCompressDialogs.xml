@@ -4,29 +4,20 @@
 <doc>
   <member name="VfwCompressDialogs">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies a dialog box that might exist in a Video for Windows compression (codec) driver.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IAMVfwCaptureDialogs Interface" />
   </member>
   <member name="VfwCompressDialogs.VfwCompressDialog_Config">
-    <summary>
-      <para>Configure dialog box.</para>
-    </summary>
+    <summary>Configure dialog box.</summary>
   </member>
   <member name="VfwCompressDialogs.VfwCompressDialog_About">
-    <summary>
-      <para>About dialog box.</para>
-    </summary>
+    <summary>About dialog box.</summary>
   </member>
   <member name="VfwCompressDialogs.VfwCompressDialog_QueryConfig">
-    <summary>
-      <para>Specifies whether the Configure dialog box is available.</para>
-    </summary>
+    <summary>Specifies whether the Configure dialog box is available.</summary>
   </member>
   <member name="VfwCompressDialogs.VfwCompressDialog_QueryAbout">
-    <summary>
-      <para>Specifies whether the About dialog box is available.</para>
-    </summary>
+    <summary>Specifies whether the About dialog box is available.</summary>
   </member>
 </doc>

@@ -19,25 +19,4 @@ public static unsafe partial class XMLHttpRequestEventTargetTests
     {
         Assert.That(typeof(XMLHttpRequestEventTarget).GUID, Is.EqualTo(IID_XMLHttpRequestEventTarget));
     }
-
-    /// <summary>Validates that the <see cref="XMLHttpRequestEventTarget" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<XMLHttpRequestEventTarget>(), Is.EqualTo(sizeof(XMLHttpRequestEventTarget)));
-    }
-
-    /// <summary>Validates that the <see cref="XMLHttpRequestEventTarget" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(XMLHttpRequestEventTarget).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="XMLHttpRequestEventTarget" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(XMLHttpRequestEventTarget), Is.EqualTo(1));
-    }
 }

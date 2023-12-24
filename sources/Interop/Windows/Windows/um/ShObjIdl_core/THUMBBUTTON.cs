@@ -3,10 +3,12 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='THUMBBUTTON.xml' path='doc/member[@name="THUMBBUTTON"]/*' />
-public unsafe partial struct THUMBBUTTON
+public partial struct THUMBBUTTON
 {
     /// <include file='THUMBBUTTON.xml' path='doc/member[@name="THUMBBUTTON.dwMask"]/*' />
     public THUMBBUTTONMASK dwMask;
@@ -22,8 +24,15 @@ public unsafe partial struct THUMBBUTTON
 
     /// <include file='THUMBBUTTON.xml' path='doc/member[@name="THUMBBUTTON.szTip"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szTip[260];
+    public _szTip_e__FixedBuffer szTip;
 
     /// <include file='THUMBBUTTON.xml' path='doc/member[@name="THUMBBUTTON.dwFlags"]/*' />
     public THUMBBUTTONFLAGS dwFlags;
+
+    /// <include file='_szTip_e__FixedBuffer.xml' path='doc/member[@name="_szTip_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _szTip_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

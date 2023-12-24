@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="MSV1_0_INTERACTIVE_PROFILE">
+    <summary>
+      <para>The <b>MSV1_0_INTERACTIVE_PROFILE</b> structure contains information about an interactive logon profile.</para>
+      <para>This structure is used by the <see cref="LsaLogonUser" /> function.</para>
+    </summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.MessageType">
+    <summary>
+      <see cref="MSV1_0_PROFILE_BUFFER_TYPE" /> value identifying the type of profile data being returned. This member must be set to <b>MsV1_0InteractiveProfile</b>.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.LogonCount">
+    <summary>
+      <para>Number of times the user is currently logged on.</para>
+      <div>
+        <b>Note</b>  This value is not guaranteed to be accurate because the domain controller is not notified of all logons and logoffs.</div>
+    </summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.BadPasswordCount">
+    <summary>Number of times a password that is not valid was applied to the account since the last successful logon.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.LogonTime">
+    <summary>Time when the user last logged on. This is an absolute-format Windows standard time value.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.LogoffTime">
+    <summary>Time when the user should log off. This is an absolute-format Windows standard time value.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.KickOffTime">
+    <summary>Time when the system should force the user to log off. This is an absolute-format Windows standard time value. Note that Windows users are not forced to log off interactively; however, their network connections may be closed.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.PasswordLastSet">
+    <summary>Time and date the password was last changed. This is an absolute format Windows standard time value.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.PasswordCanChange">
+    <summary>Time and date when the user should be reminded to change passwords. This is an absolute-format Windows standard time value. This member is used by the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/g-gly">GINA</a> to display the prompt asking whether the user wants to change the current password.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.PasswordMustChange">
+    <summary>Time and date when the user must change the password. If the user can never change the password, this member is undefined. This is an absolute-format, Windows, standard time value.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.LogonScript">
+    <summary>
+      <see cref="UNICODE_STRING" /> containing the relative path to the account's logon script.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.HomeDirectory">
+    <summary>
+      <see cref="UNICODE_STRING" /> containing the home directory for the user.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.FullName">
+    <summary>
+      <see cref="UNICODE_STRING" /> containing the full name of the user.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.ProfilePath">
+    <summary>
+      <see cref="UNICODE_STRING" /> specifying the path to the user's roaming profile if the user has a roaming profile. For example: \SomeServer\SomeShare\MyUserName</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.HomeDirectoryDrive">
+    <summary>
+      <see cref="UNICODE_STRING" /> containing the drive letter (for example, C:\ or D:) of the home directory.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.LogonServer">
+    <summary>
+      <see cref="UNICODE_STRING" /> containing the name of the server that processed the logon request.</summary>
+  </member>
+  <member name="MSV1_0_INTERACTIVE_PROFILE.UserFlags">
+    <summary>
+      <para>Specifies how this user established the session. This can be the following flag.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LOGON_EXTRA_SIDS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The user logged on using extra <a href="https://docs.microsoft.com//windows/desktop/SecGloss/s-gly">security identifiers</a> (SIDs).</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+</doc>

@@ -7,21 +7,12 @@
       <para>Rearranges (permutes) data from depth into blocks of spatial data. The operator outputs a copy of the input tensor where values from the depth dimension are moved in spatial blocks to the height and width dimensions.</para>
       <para>This is the inverse transformation of <see cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" />.</para>
     </summary>
-    <remarks>
-      <para>When <i>Order</i> is set to <see cref="DML_DEPTH_SPACE_ORDER_DEPTH_COLUMN_ROW" />, <b>DML_DEPTH_TO_SPACE1_OPERATOR_DESC</b> is equivalent to <see cref="DML_DEPTH_TO_SPACE_OPERATOR_DESC" />.</para>
-    </remarks>
-    <seealso cref="DML_DEPTH_TO_SPACE_OPERATOR_DESC" />
-    <seealso cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" />
   </member>
   <member name="DML_DEPTH_TO_SPACE1_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to read from. The input tensor's dimensions are <code>{ BatchCount, InputChannelCount, InputHeight, InputWidth }</code>.</para>
-    </summary>
+    <summary>The tensor to read from. The input tensor's dimensions are <code>{ BatchCount, InputChannelCount, InputHeight, InputWidth }</code>.</summary>
   </member>
   <member name="DML_DEPTH_TO_SPACE1_OPERATOR_DESC.OutputTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>The tensor to write the results to. The output tensor's dimensions are <code>{ BatchCount, OutputChannelCount, OutputHeight, OutputWidth }</code>, where:</para>
       <list type="bullet">
         <item>
@@ -37,15 +28,9 @@
     </summary>
   </member>
   <member name="DML_DEPTH_TO_SPACE1_OPERATOR_DESC.BlockSize">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The width and height of the blocks that are moved.</para>
-    </summary>
+    <summary>The width and height of the blocks that are moved.</summary>
   </member>
   <member name="DML_DEPTH_TO_SPACE1_OPERATOR_DESC.Order">
-    <summary>
-      <para>Type: <b><see cref="DML_DEPTH_SPACE_ORDER" /></b></para>
-      <para>See <see cref="DML_DEPTH_SPACE_ORDER" />.</para>
-    </summary>
+    <summary>See <see cref="DML_DEPTH_SPACE_ORDER" />.</summary>
   </member>
 </doc>

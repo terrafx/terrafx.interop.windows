@@ -419,49 +419,49 @@ public static partial class SDDL
     public const string SDDL_ML_SYSTEM = "SI";
 
     [NativeTypeName("#define SDDL_SEPERATORC TEXT(';')")]
-    public const ushort SDDL_SEPERATORC = ';';
+    public const char SDDL_SEPERATORC = ';';
 
     [NativeTypeName("#define SDDL_DELIMINATORC TEXT(':')")]
-    public const ushort SDDL_DELIMINATORC = ':';
+    public const char SDDL_DELIMINATORC = ':';
 
     [NativeTypeName("#define SDDL_ACE_BEGINC TEXT('(')")]
-    public const ushort SDDL_ACE_BEGINC = '(';
+    public const char SDDL_ACE_BEGINC = '(';
 
     [NativeTypeName("#define SDDL_ACE_ENDC TEXT(')')")]
-    public const ushort SDDL_ACE_ENDC = ')';
+    public const char SDDL_ACE_ENDC = ')';
 
     [NativeTypeName("#define SDDL_SPACEC TEXT(' ')")]
-    public const ushort SDDL_SPACEC = ' ';
+    public const char SDDL_SPACEC = ' ';
 
     [NativeTypeName("#define SDDL_ACE_COND_BEGINC TEXT('(')")]
-    public const ushort SDDL_ACE_COND_BEGINC = '(';
+    public const char SDDL_ACE_COND_BEGINC = '(';
 
     [NativeTypeName("#define SDDL_ACE_COND_ENDC TEXT(')')")]
-    public const ushort SDDL_ACE_COND_ENDC = ')';
+    public const char SDDL_ACE_COND_ENDC = ')';
 
     [NativeTypeName("#define SDDL_ACE_COND_STRING_BEGINC TEXT('\"')")]
-    public const ushort SDDL_ACE_COND_STRING_BEGINC = '"';
+    public const char SDDL_ACE_COND_STRING_BEGINC = '"';
 
     [NativeTypeName("#define SDDL_ACE_COND_STRING_ENDC TEXT('\"')")]
-    public const ushort SDDL_ACE_COND_STRING_ENDC = '"';
+    public const char SDDL_ACE_COND_STRING_ENDC = '"';
 
     [NativeTypeName("#define SDDL_ACE_COND_COMPOSITEVALUE_BEGINC TEXT('{')")]
-    public const ushort SDDL_ACE_COND_COMPOSITEVALUE_BEGINC = '{';
+    public const char SDDL_ACE_COND_COMPOSITEVALUE_BEGINC = '{';
 
     [NativeTypeName("#define SDDL_ACE_COND_COMPOSITEVALUE_ENDC TEXT('}')")]
-    public const ushort SDDL_ACE_COND_COMPOSITEVALUE_ENDC = '}';
+    public const char SDDL_ACE_COND_COMPOSITEVALUE_ENDC = '}';
 
     [NativeTypeName("#define SDDL_ACE_COND_COMPOSITEVALUE_SEPERATORC TEXT(',')")]
-    public const ushort SDDL_ACE_COND_COMPOSITEVALUE_SEPERATORC = ',';
+    public const char SDDL_ACE_COND_COMPOSITEVALUE_SEPERATORC = ',';
 
     [NativeTypeName("#define SDDL_ACE_COND_BLOB_PREFIXC TEXT('#')")]
-    public const ushort SDDL_ACE_COND_BLOB_PREFIXC = '#';
+    public const char SDDL_ACE_COND_BLOB_PREFIXC = '#';
 
     [NativeTypeName("#define SDDL_ACE_COND_SID_BEGINC TEXT('(')")]
-    public const ushort SDDL_ACE_COND_SID_BEGINC = '(';
+    public const char SDDL_ACE_COND_SID_BEGINC = '(';
 
     [NativeTypeName("#define SDDL_ACE_COND_SID_ENDC TEXT(')')")]
-    public const ushort SDDL_ACE_COND_SID_ENDC = ')';
+    public const char SDDL_ACE_COND_SID_ENDC = ')';
 
     [NativeTypeName("#define SDDL_SEPERATOR TEXT(\";\")")]
     public const string SDDL_SEPERATOR = ";";

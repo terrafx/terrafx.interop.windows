@@ -3,75 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ENUMLOGFONTEXA">
-    <summary>
-      <para>The <b>ENUMLOGFONTEX</b> structure contains information about an enumerated font.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The wingdi.h header defines ENUMLOGFONTEX as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd162618(v=vs.85)">EnumFontFamExProc</seealso>
-    <seealso cref="EnumFontFamiliesEx" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="LOGFONT" />
+    <summary>The <b>ENUMLOGFONTEX</b> structure contains information about an enumerated font.</summary>
   </member>
   <member name="ENUMLOGFONTEXA.elfLogFont">
-    <summary>
-      <para>A <see cref="LOGFONT" /> structure that contains values defining the font attributes.</para>
-    </summary>
+    <summary>A <see cref="LOGFONT" /> structure that contains values defining the font attributes.</summary>
   </member>
   <member name="ENUMLOGFONTEXA.elfFullName">
-    <summary>
-      <para>The unique name of the font. For example, ABC Font Company TrueType Bold Italic Sans Serif.</para>
-    </summary>
+    <summary>The unique name of the font. For example, ABC Font Company TrueType Bold Italic Sans Serif.</summary>
   </member>
   <member name="ENUMLOGFONTEXA.elfStyle">
-    <summary>
-      <para>The style of the font. For example, Bold Italic.</para>
-    </summary>
+    <summary>The style of the font. For example, Bold Italic.</summary>
   </member>
   <member name="ENUMLOGFONTEXA.elfScript">
-    <summary>
-      <para>The script, that is, the character set, of the font. For example, Cyrillic.</para>
-    </summary>
+    <summary>The script, that is, the character set, of the font. For example, Cyrillic.</summary>
   </member>
   <member name="ENUMLOGFONTEXA">
-    <summary>
-      <para>The <b>ENUMLOGFONTEX</b> structure contains information about an enumerated font.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The wingdi.h header defines ENUMLOGFONTEX as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/dd162618(v=vs.85)">EnumFontFamExProc</seealso>
-    <seealso cref="EnumFontFamiliesEx" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="LOGFONT" />
+    <summary>The <b>ENUMLOGFONTEX</b> structure contains information about an enumerated font.</summary>
   </member>
   <member name="ENUMLOGFONTEXA.elfLogFont">
-    <summary>
-      <para>A <see cref="LOGFONT" /> structure that contains values defining the font attributes.</para>
-    </summary>
+    <summary>A <see cref="LOGFONT" /> structure that contains values defining the font attributes.</summary>
   </member>
   <member name="ENUMLOGFONTEXA.elfFullName">
-    <summary>
-      <para>The unique name of the font. For example, ABC Font Company TrueType Bold Italic Sans Serif.</para>
-    </summary>
+    <summary>The unique name of the font. For example, ABC Font Company TrueType Bold Italic Sans Serif.</summary>
   </member>
   <member name="ENUMLOGFONTEXA.elfStyle">
-    <summary>
-      <para>The style of the font. For example, Bold Italic.</para>
-    </summary>
+    <summary>The style of the font. For example, Bold Italic.</summary>
   </member>
   <member name="ENUMLOGFONTEXA.elfScript">
-    <summary>
-      <para>The script, that is, the character set, of the font. For example, Cyrillic.</para>
-    </summary>
+    <summary>The script, that is, the character set, of the font. For example, Cyrillic.</summary>
   </member>
 </doc>

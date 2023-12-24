@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESSOR_GROUP_INFO">
-    <summary>
-      <para>Represents the number and affinity of processors in a processor group.</para>
-    </summary>
-    <seealso cref="GROUP_RELATIONSHIP" />
+    <summary>Represents the number and affinity of processors in a processor group.</summary>
   </member>
   <member name="PROCESSOR_GROUP_INFO.MaximumProcessorCount">
-    <summary>
-      <para>The maximum number of processors in the group.</para>
-    </summary>
+    <summary>The maximum number of processors in the group.</summary>
   </member>
   <member name="PROCESSOR_GROUP_INFO.ActiveProcessorCount">
-    <summary>
-      <para>The number of active processors in the group.</para>
-    </summary>
+    <summary>The number of active processors in the group.</summary>
   </member>
   <member name="PROCESSOR_GROUP_INFO.Reserved">
-    <summary>
-      <para>This member is reserved.</para>
-    </summary>
+    <summary>This member is reserved.</summary>
   </member>
   <member name="PROCESSOR_GROUP_INFO.ActiveProcessorMask">
-    <summary>
-      <para>A bitmap that specifies the affinity for zero or more active processors within the group.</para>
-    </summary>
+    <summary>A bitmap that specifies the affinity for zero or more active processors within the group.</summary>
   </member>
 </doc>

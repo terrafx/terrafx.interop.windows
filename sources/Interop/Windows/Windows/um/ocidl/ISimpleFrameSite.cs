@@ -25,7 +25,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISimpleFrameSite*, Guid*, void**, int>)(lpVtbl[0]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleFrameSite*, Guid*, void**, int>)(lpVtbl[0]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISimpleFrameSite*, uint>)(lpVtbl[1]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISimpleFrameSite*, uint>)(lpVtbl[1]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISimpleFrameSite*, uint>)(lpVtbl[2]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISimpleFrameSite*, uint>)(lpVtbl[2]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISimpleFrameSite.xml' path='doc/member[@name="ISimpleFrameSite.PreMessageFilter"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface, INat
     [VtblIndex(3)]
     public HRESULT PreMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD *")] uint* pdwCookie)
     {
-        return ((delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint*, int>)(lpVtbl[3]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, pdwCookie);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint*, int>)(lpVtbl[3]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, pdwCookie);
     }
 
     /// <include file='ISimpleFrameSite.xml' path='doc/member[@name="ISimpleFrameSite.PostMessageFilter"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface, INat
     [VtblIndex(4)]
     public HRESULT PostMessageFilter(HWND hWnd, uint msg, WPARAM wp, LPARAM lp, LRESULT* plResult, [NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint, int>)(lpVtbl[4]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<ISimpleFrameSite*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint, int>)(lpVtbl[4]))((ISimpleFrameSite*)Unsafe.AsPointer(ref this), hWnd, msg, wp, lp, plResult, dwCookie);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ISimpleFrameSite : ISimpleFrameSite.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM, LRESULT *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint*, int> PreMessageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint*, int> PreMessageFilter;
 
         [NativeTypeName("HRESULT (HWND, UINT, WPARAM, LPARAM, LRESULT *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint, int> PostMessageFilter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, uint, WPARAM, LPARAM, LRESULT*, uint, int> PostMessageFilter;
     }
 }

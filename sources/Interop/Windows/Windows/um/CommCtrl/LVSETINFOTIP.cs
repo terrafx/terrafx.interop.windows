@@ -17,7 +17,7 @@ public unsafe partial struct LVSETINFOTIP
 
     /// <include file='LVSETINFOTIP.xml' path='doc/member[@name="LVSETINFOTIP.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='LVSETINFOTIP.xml' path='doc/member[@name="LVSETINFOTIP.iItem"]/*' />
     public int iItem;

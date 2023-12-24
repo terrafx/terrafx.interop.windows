@@ -64,7 +64,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetDeviceIDString"]/*' />
     [DllImport("tbs", ExactSpelling = true)]
-    public static extern HRESULT GetDeviceIDString([NativeTypeName("PWSTR")] ushort* pszWindowsAIK, [NativeTypeName("UINT32")] uint cchWindowsAIK, [NativeTypeName("PUINT32")] uint* pcchResult, BOOL* pfProtectedByTPM);
+    public static extern HRESULT GetDeviceIDString([NativeTypeName("PWSTR")] char* pszWindowsAIK, [NativeTypeName("UINT32")] uint cchWindowsAIK, [NativeTypeName("PUINT32")] uint* pcchResult, BOOL* pfProtectedByTPM);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.Tbsi_Create_Windows_Key"]/*' />
     [DllImport("tbs", ExactSpelling = true)]

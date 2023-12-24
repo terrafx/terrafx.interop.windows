@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RASTERIZER_DESC">
+    <summary>Describes rasterizer state.</summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.FillMode">
+    <summary>A <see cref="D3D12_FILL_MODE" />-typed value that specifies the fill mode to use when rendering.</summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.CullMode">
+    <summary>A <see cref="D3D12_CULL_MODE" />-typed value that specifies that triangles facing the specified direction are not drawn.</summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.FrontCounterClockwise">
+    <summary>Determines if a triangle is front- or back-facing. If this member is <b>TRUE</b>, a triangle will be considered front-facing if its vertices are counter-clockwise on the render target and considered back-facing if they are clockwise. If this parameter is <b>FALSE</b>, the opposite is true.</summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.DepthBias">
+    <summary>Depth value added to a given pixel. For info about depth bias, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage-depth-bias">Depth Bias</a>.</summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.DepthBiasClamp">
+    <summary>Maximum depth bias of a pixel. For info about depth bias, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage-depth-bias">Depth Bias</a>.</summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.SlopeScaledDepthBias">
+    <summary>Scalar on a given pixel's slope. For info about depth bias, see <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d10-graphics-programming-guide-output-merger-stage-depth-bias">Depth Bias</a>.</summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.DepthClipEnable">
+    <summary>
+      <para>Specifies whether to enable clipping based on distance.</para>
+      <para>The hardware always performs x and y clipping of rasterized coordinates. When <b>DepthClipEnable</b> is set to the default–<b>TRUE</b>, the hardware also clips the z value (that is, the hardware performs the last step of the following algorithm).</para>
+      <code>0 &lt; w -w &lt;= x &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden) -w &lt;= y &lt;= w (or arbitrarily wider range if implementation uses a guard band to reduce clipping burden) 0 &lt;= z &lt;= w</code>
+      <para>When you set <b>DepthClipEnable</b> to <b>FALSE</b>, the hardware skips the z clipping (that is, the last step in the preceding algorithm). However, the hardware still performs the "0 &lt; w" clipping. When z clipping is disabled, improper depth ordering at the pixel level might result. However, when z clipping is disabled, stencil shadow implementations are simplified. In other words, you can avoid complex special-case handling for geometry that goes beyond the back clipping plane.</para>
+    </summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.MultisampleEnable">
+    <summary>Specifies whether to use the quadrilateral or alpha line anti-aliasing algorithm on multisample antialiasing (MSAA) render targets. Set to <b>TRUE</b> to use the quadrilateral line anti-aliasing algorithm and to <b>FALSE</b> to use the alpha line anti-aliasing algorithm. For more info about this member, see Remarks.</summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.AntialiasedLineEnable">
+    <summary>Specifies whether to enable line antialiasing; only applies if doing line drawing and <b>MultisampleEnable</b> is <b>FALSE</b>. For more info about this member, see Remarks.</summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.ForcedSampleCount">
+    <summary>
+      <para>The sample count that is forced while UAV rendering or rasterizing. Valid values are 0, 1, 4, 8, and optionally 16. 0 indicates that the sample count is not forced.</para>
+      <div>
+        <b>Note</b>  If you want to render with <b>ForcedSampleCount</b> set to 1 or greater, you must follow these guidelines:<list type="bullet"><item><description>Don't bind depth-stencil views.</description></item><item><description>Disable depth testing.</description></item><item><description>Ensure the shader doesn't output depth.</description></item><item><description>If you have any render-target views bound (<see cref="D3D12_DESCRIPTOR_HEAP_TYPE_RTV" />) and <b>ForcedSampleCount</b> is greater than 1, ensure that every render target has only a single sample.</description></item><item><description>Don't operate the shader at sample frequency. Therefore, <see cref="ID3D12ShaderReflection.IsSampleFrequencyShader" /> returns <b>FALSE</b>.</description></item></list>Otherwise, rendering behavior is undefined.</div>
+    </summary>
+  </member>
+  <member name="D3D12_RASTERIZER_DESC.ConservativeRaster">
+    <summary>A <see cref="D3D12_CONSERVATIVE_RASTERIZATION_MODE" />-typed value that identifies whether conservative rasterization is on or off.</summary>
+  </member>
+</doc>

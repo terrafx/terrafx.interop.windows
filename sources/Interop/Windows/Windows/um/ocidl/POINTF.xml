@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="POINTF">
-    <summary>
-      <para>Contains information that is used to convert between container units, expressed in floating point, and control units, expressed in <b>HIMETRIC</b>. The <b>POINTF</b> structure specifically holds the floating point container units. Controls do not attempt to interpret either value in the structure.</para>
-    </summary>
-    <seealso cref="IOleControlSite.TransformCoords" />
+    <summary>Contains information that is used to convert between container units, expressed in floating point, and control units, expressed in <b>HIMETRIC</b>. The <b>POINTF</b> structure specifically holds the floating point container units. Controls do not attempt to interpret either value in the structure.</summary>
   </member>
   <member name="POINTF.x">
-    <summary>
-      <para>The x coordinates of the point in units that the container finds convenient.</para>
-    </summary>
+    <summary>The x coordinates of the point in units that the container finds convenient.</summary>
   </member>
   <member name="POINTF.y">
-    <summary>
-      <para>The y coordinates of the point in units that the container finds convenient.</para>
-    </summary>
+    <summary>The y coordinates of the point in units that the container finds convenient.</summary>
   </member>
 </doc>

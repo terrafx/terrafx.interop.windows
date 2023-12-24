@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12DeviceChild.GetDevice">
+    <summary>Gets a pointer to the device that created this interface.</summary>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the device interface. The <b>REFIID</b>, or <b>GUID</b>, of the interface to the device can be obtained by using the __uuidof() macro. For example, __uuidof(<see cref="ID3D12Device" />) will get the <b>GUID</b> of the interface to a device.</param>
+    <param name="ppvDevice">A pointer to a memory block that receives a pointer to the <see cref="ID3D12Device" /> interface for the device.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12DeviceChild">
+    <summary>An interface from which other core interfaces inherit from, including (but not limited to) <see cref="ID3D12PipelineLibrary" />, <see cref="ID3D12CommandList" />, <see cref="ID3D12Pageable" />, and <see cref="ID3D12RootSignature" />. It provides a method to get back to the device object it was created against.</summary>
+  </member>
+</doc>

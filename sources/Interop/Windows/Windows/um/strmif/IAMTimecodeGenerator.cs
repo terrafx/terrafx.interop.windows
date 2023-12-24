@@ -25,7 +25,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMTimecodeGenerator*, Guid*, void**, int>)(lpVtbl[0]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeGenerator*, Guid*, void**, int>)(lpVtbl[0]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMTimecodeGenerator*, uint>)(lpVtbl[1]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeGenerator*, uint>)(lpVtbl[1]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMTimecodeGenerator*, uint>)(lpVtbl[2]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeGenerator*, uint>)(lpVtbl[2]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.GetTCGMode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
     [VtblIndex(3)]
     public HRESULT GetTCGMode([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
     {
-        return ((delegate* unmanaged<IAMTimecodeGenerator*, int, int*, int>)(lpVtbl[3]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Param, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeGenerator*, int, int*, int>)(lpVtbl[3]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Param, pValue);
     }
 
     /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.SetTCGMode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
     [VtblIndex(4)]
     public HRESULT SetTCGMode([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
     {
-        return ((delegate* unmanaged<IAMTimecodeGenerator*, int, int, int>)(lpVtbl[4]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Param, Value);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeGenerator*, int, int, int>)(lpVtbl[4]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Param, Value);
     }
 
     /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.put_VITCLine"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
     [VtblIndex(5)]
     public HRESULT put_VITCLine([NativeTypeName("long")] int Line)
     {
-        return ((delegate* unmanaged<IAMTimecodeGenerator*, int, int>)(lpVtbl[5]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Line);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeGenerator*, int, int>)(lpVtbl[5]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), Line);
     }
 
     /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.get_VITCLine"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
     [VtblIndex(6)]
     public HRESULT get_VITCLine([NativeTypeName("long *")] int* pLine)
     {
-        return ((delegate* unmanaged<IAMTimecodeGenerator*, int*, int>)(lpVtbl[6]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pLine);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeGenerator*, int*, int>)(lpVtbl[6]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pLine);
     }
 
     /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.SetTimecode"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
     [VtblIndex(7)]
     public HRESULT SetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)
     {
-        return ((delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int>)(lpVtbl[7]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pTimecodeSample);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int>)(lpVtbl[7]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pTimecodeSample);
     }
 
     /// <include file='IAMTimecodeGenerator.xml' path='doc/member[@name="IAMTimecodeGenerator.GetTimecode"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
     [VtblIndex(8)]
     public HRESULT GetTimecode([NativeTypeName("PTIMECODE_SAMPLE")] TIMECODE_SAMPLE* pTimecodeSample)
     {
-        return ((delegate* unmanaged<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int>)(lpVtbl[8]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pTimecodeSample);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeGenerator*, TIMECODE_SAMPLE*, int>)(lpVtbl[8]))((IAMTimecodeGenerator*)Unsafe.AsPointer(ref this), pTimecodeSample);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IAMTimecodeGenerator : IAMTimecodeGenerator.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> GetTCGMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> GetTCGMode;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetTCGMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetTCGMode;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_VITCLine;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_VITCLine;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_VITCLine;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_VITCLine;
 
         [NativeTypeName("HRESULT (PTIMECODE_SAMPLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TIMECODE_SAMPLE*, int> SetTimecode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TIMECODE_SAMPLE*, int> SetTimecode;
 
         [NativeTypeName("HRESULT (PTIMECODE_SAMPLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TIMECODE_SAMPLE*, int> GetTimecode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TIMECODE_SAMPLE*, int> GetTimecode;
     }
 }

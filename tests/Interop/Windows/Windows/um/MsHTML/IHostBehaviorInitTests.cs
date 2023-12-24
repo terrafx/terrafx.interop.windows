@@ -19,32 +19,4 @@ public static unsafe partial class IHostBehaviorInitTests
     {
         Assert.That(typeof(IHostBehaviorInit).GUID, Is.EqualTo(IID_IHostBehaviorInit));
     }
-
-    /// <summary>Validates that the <see cref="IHostBehaviorInit" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHostBehaviorInit>(), Is.EqualTo(sizeof(IHostBehaviorInit)));
-    }
-
-    /// <summary>Validates that the <see cref="IHostBehaviorInit" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHostBehaviorInit).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHostBehaviorInit" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHostBehaviorInit), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHostBehaviorInit), Is.EqualTo(4));
-        }
-    }
 }

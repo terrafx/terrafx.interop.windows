@@ -17,9 +17,9 @@ public unsafe partial struct CERT_STRONG_SIGN_SERIALIZED_INFO
 
     /// <include file='CERT_STRONG_SIGN_SERIALIZED_INFO.xml' path='doc/member[@name="CERT_STRONG_SIGN_SERIALIZED_INFO.pwszCNGSignHashAlgids"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszCNGSignHashAlgids;
+    public char* pwszCNGSignHashAlgids;
 
     /// <include file='CERT_STRONG_SIGN_SERIALIZED_INFO.xml' path='doc/member[@name="CERT_STRONG_SIGN_SERIALIZED_INFO.pwszCNGPubKeyMinBitLengths"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszCNGPubKeyMinBitLengths;
+    public char* pwszCNGPubKeyMinBitLengths;
 }

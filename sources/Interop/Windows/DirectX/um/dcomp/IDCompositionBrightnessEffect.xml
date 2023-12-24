@@ -3,150 +3,56 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionBrightnessEffect.SetBlackPoint">
-    <summary>
-      <para>Specifies the lower portion of the brightness transfer curve for the brightness effect.</para>
-    </summary>
-    <param name="blackPoint">
-      <para>Type: <b>const <see cref="D2D1_VECTOR_2F" /></b></para>
-      <para>The lower portion of the brightness transfer curve. The black point adjusts the appearance of the darker portions of the image. The vector is for both the x value and the y value, in that order. Each of the values must be between 0 and 1, inclusive.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Specifies the lower portion of the brightness transfer curve for the brightness effect.</summary>
+    <param name="blackPoint">The lower portion of the brightness transfer curve. The black point adjusts the appearance of the darker portions of the image. The vector is for both the x value and the y value, in that order. Each of the values must be between 0 and 1, inclusive.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect.SetBlackPointX">
-    <summary>
-      <para>Sets the x value of the black point.</para>
-    </summary>
-    <param name="blackPointX">
-      <para>Type: <b>float</b></para>
-      <para>The x value of the black point.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Sets the x value of the black point.</summary>
+    <param name="blackPointX">The x value of the black point.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect.SetBlackPointX">
-    <summary>
-      <para>Sets the x value of the black point.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the x value of the black point changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Sets the x value of the black point.</summary>
+    <param name="animation">An animation that represents how the x value of the black point changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect.SetBlackPointY">
-    <summary>
-      <para>Sets the y value of the black point.</para>
-    </summary>
-    <param name="blackPointY">
-      <para>Type: <b>float</b></para>
-      <para>The y value of the black point.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Sets the y value of the black point.</summary>
+    <param name="blackPointY">The y value of the black point.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect.SetBlackPointY">
-    <summary>
-      <para>Sets the y value of the black point.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the y value of the black point changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Sets the y value of the black point.</summary>
+    <param name="animation">An animation that represents how the y value of the black point changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect.SetWhitePoint">
-    <summary>
-      <para>Sets the upper portion of the brightness transfer curve.</para>
-    </summary>
-    <param name="whitePoint">
-      <para>Type: <b>const <see cref="D2D1_VECTOR_2F" /></b></para>
-      <para>The upper portion of the brightness transfer curve. The white point adjusts the appearance of the brighter portions of the image.
-This vector is for both the x value and the y value, in that order. Each of the values must be between 0 and 1, inclusive.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Sets the upper portion of the brightness transfer curve.</summary>
+    <param name="whitePoint">The upper portion of the brightness transfer curve. The white point adjusts the appearance of the brighter portions of the image. This vector is for both the x value and the y value, in that order. Each of the values must be between 0 and 1, inclusive.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect.SetWhitePointX">
-    <summary>
-      <para>Sets the x value of the white point.</para>
-    </summary>
-    <param name="whitePointX">
-      <para>Type: <b>float</b></para>
-      <para>The x value of the white point. This value must be between 0 and 1.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Sets the x value of the white point.</summary>
+    <param name="whitePointX">The x value of the white point. This value must be between 0 and 1.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect.SetWhitePointX">
-    <summary>
-      <para>Sets the x value of the white point.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the x value of the white point changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Sets the x value of the white point.</summary>
+    <param name="animation">An animation that represents how the x value of the white point changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect.SetWhitePointY">
-    <summary>
-      <para>Sets the y value of the white point.</para>
-    </summary>
-    <param name="whitePointY">
-      <para>Type: <b>float</b></para>
-      <para>The y value of the white point.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Sets the y value of the white point.</summary>
+    <param name="whitePointY">The y value of the white point.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect.SetWhitePointY">
-    <summary>
-      <para>Sets the y value of the white point.</para>
-    </summary>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the y value of the white point changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionBrightnessEffect" />
+    <summary>Sets the y value of the white point.</summary>
+    <param name="animation">An animation that represents how the y value of the white point changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionBrightnessEffect">
-    <summary>
-      <para>The brightness effect controls the brightness of the image.</para>
-    </summary>
-    <seealso cref="IDCompositionFilterEffect" />
+    <summary>The brightness effect controls the brightness of the image.</summary>
   </member>
 </doc>

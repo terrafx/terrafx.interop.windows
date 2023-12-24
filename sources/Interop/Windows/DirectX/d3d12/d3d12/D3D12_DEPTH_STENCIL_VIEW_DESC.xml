@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC">
+    <summary>Describes the subresources of a texture that are accessible from a depth-stencil view.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC.Format">
+    <summary>A <see cref="DXGI_FORMAT" />-typed value that specifies the viewing format. For allowable formats, see Remarks.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC.ViewDimension">
+    <summary>A <see cref="D3D12_DSV_DIMENSION" />-typed value that specifies how the depth-stencil resource will be accessed. This member also determines which _DSV to use in the following union.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC.Flags">
+    <summary>A combination of <see cref="D3D12_DSV_FLAGS" /> enumeration constants that are combined by using a bitwise OR operation. The resulting value specifies whether the texture is read only.<br />Pass 0 to specify that it isn't read only; otherwise, pass one or more of the members of the <b>D3D12_DSV_FLAGS</b> enumerated type.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC.Texture1D">
+    <summary>A <see cref="D3D12_TEX1D_DSV" /> structure that specifies a 1D texture subresource.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC.Texture1DArray">
+    <summary>A <see cref="D3D12_TEX1D_ARRAY_DSV" /> structure that specifies an array of 1D texture subresources.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC.Texture2D">
+    <summary>A <see cref="D3D12_TEX2D_DSV" /> structure that specifies a 2D texture subresource.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC.Texture2DArray">
+    <summary>A <see cref="D3D12_TEX2D_ARRAY_DSV" /> structure that specifies an array of 2D texture subresources.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC.Texture2DMS">
+    <summary>A <see cref="D3D12_TEX2DMS_DSV" /> structure that specifies a multisampled 2D texture.</summary>
+  </member>
+  <member name="D3D12_DEPTH_STENCIL_VIEW_DESC.Texture2DMSArray">
+    <summary>A <see cref="D3D12_TEX2DMS_ARRAY_DSV" /> structure that specifies an array of multisampled 2D textures.</summary>
+  </member>
+</doc>

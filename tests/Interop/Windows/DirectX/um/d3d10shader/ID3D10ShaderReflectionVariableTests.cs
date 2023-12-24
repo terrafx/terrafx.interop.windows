@@ -19,32 +19,4 @@ public static unsafe partial class ID3D10ShaderReflectionVariableTests
     {
         Assert.That(typeof(ID3D10ShaderReflectionVariable).GUID, Is.EqualTo(IID_ID3D10ShaderReflectionVariable));
     }
-
-    /// <summary>Validates that the <see cref="ID3D10ShaderReflectionVariable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID3D10ShaderReflectionVariable>(), Is.EqualTo(sizeof(ID3D10ShaderReflectionVariable)));
-    }
-
-    /// <summary>Validates that the <see cref="ID3D10ShaderReflectionVariable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID3D10ShaderReflectionVariable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID3D10ShaderReflectionVariable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID3D10ShaderReflectionVariable), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID3D10ShaderReflectionVariable), Is.EqualTo(4));
-        }
-    }
 }

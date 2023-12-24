@@ -25,7 +25,7 @@ public unsafe partial struct IAMClockAdjust : IAMClockAdjust.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMClockAdjust*, Guid*, void**, int>)(lpVtbl[0]))((IAMClockAdjust*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMClockAdjust*, Guid*, void**, int>)(lpVtbl[0]))((IAMClockAdjust*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMClockAdjust : IAMClockAdjust.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMClockAdjust*, uint>)(lpVtbl[1]))((IAMClockAdjust*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMClockAdjust*, uint>)(lpVtbl[1]))((IAMClockAdjust*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMClockAdjust : IAMClockAdjust.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMClockAdjust*, uint>)(lpVtbl[2]))((IAMClockAdjust*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMClockAdjust*, uint>)(lpVtbl[2]))((IAMClockAdjust*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMClockAdjust.xml' path='doc/member[@name="IAMClockAdjust.SetClockDelta"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMClockAdjust : IAMClockAdjust.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT SetClockDelta([NativeTypeName("REFERENCE_TIME")] long rtDelta)
     {
-        return ((delegate* unmanaged<IAMClockAdjust*, long, int>)(lpVtbl[3]))((IAMClockAdjust*)Unsafe.AsPointer(ref this), rtDelta);
+        return ((delegate* unmanaged[MemberFunction]<IAMClockAdjust*, long, int>)(lpVtbl[3]))((IAMClockAdjust*)Unsafe.AsPointer(ref this), rtDelta);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IAMClockAdjust : IAMClockAdjust.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (REFERENCE_TIME) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> SetClockDelta;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> SetClockDelta;
     }
 }

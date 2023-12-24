@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SVG_LENGTH_UNITS.xml' path='doc/member[@name="D2D1_SVG_LENGTH_UNITS"]/*' />
-public enum D2D1_SVG_LENGTH_UNITS : uint
+public enum D2D1_SVG_LENGTH_UNITS
 {
     /// <include file='D2D1_SVG_LENGTH_UNITS.xml' path='doc/member[@name="D2D1_SVG_LENGTH_UNITS.D2D1_SVG_LENGTH_UNITS_NUMBER"]/*' />
     D2D1_SVG_LENGTH_UNITS_NUMBER = 0,
@@ -15,5 +15,5 @@ public enum D2D1_SVG_LENGTH_UNITS : uint
     D2D1_SVG_LENGTH_UNITS_PERCENTAGE = 1,
 
     /// <include file='D2D1_SVG_LENGTH_UNITS.xml' path='doc/member[@name="D2D1_SVG_LENGTH_UNITS.D2D1_SVG_LENGTH_UNITS_FORCE_DWORD"]/*' />
-    D2D1_SVG_LENGTH_UNITS_FORCE_DWORD = 0xffffffff,
+    D2D1_SVG_LENGTH_UNITS_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

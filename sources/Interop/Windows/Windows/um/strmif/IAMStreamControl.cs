@@ -25,7 +25,7 @@ public unsafe partial struct IAMStreamControl : IAMStreamControl.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMStreamControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMStreamControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMStreamControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMStreamControl : IAMStreamControl.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMStreamControl*, uint>)(lpVtbl[1]))((IAMStreamControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamControl*, uint>)(lpVtbl[1]))((IAMStreamControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMStreamControl : IAMStreamControl.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMStreamControl*, uint>)(lpVtbl[2]))((IAMStreamControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamControl*, uint>)(lpVtbl[2]))((IAMStreamControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMStreamControl.xml' path='doc/member[@name="IAMStreamControl.StartAt"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMStreamControl : IAMStreamControl.Interface, INat
     [VtblIndex(3)]
     public HRESULT StartAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStart, [NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<IAMStreamControl*, long*, uint, int>)(lpVtbl[3]))((IAMStreamControl*)Unsafe.AsPointer(ref this), ptStart, dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamControl*, long*, uint, int>)(lpVtbl[3]))((IAMStreamControl*)Unsafe.AsPointer(ref this), ptStart, dwCookie);
     }
 
     /// <include file='IAMStreamControl.xml' path='doc/member[@name="IAMStreamControl.StopAt"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMStreamControl : IAMStreamControl.Interface, INat
     [VtblIndex(4)]
     public HRESULT StopAt([NativeTypeName("const REFERENCE_TIME *")] long* ptStop, BOOL bSendExtra, [NativeTypeName("DWORD")] uint dwCookie)
     {
-        return ((delegate* unmanaged<IAMStreamControl*, long*, BOOL, uint, int>)(lpVtbl[4]))((IAMStreamControl*)Unsafe.AsPointer(ref this), ptStop, bSendExtra, dwCookie);
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamControl*, long*, BOOL, uint, int>)(lpVtbl[4]))((IAMStreamControl*)Unsafe.AsPointer(ref this), ptStop, bSendExtra, dwCookie);
     }
 
     /// <include file='IAMStreamControl.xml' path='doc/member[@name="IAMStreamControl.GetInfo"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMStreamControl : IAMStreamControl.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetInfo(AM_STREAM_INFO* pInfo)
     {
-        return ((delegate* unmanaged<IAMStreamControl*, AM_STREAM_INFO*, int>)(lpVtbl[5]))((IAMStreamControl*)Unsafe.AsPointer(ref this), pInfo);
+        return ((delegate* unmanaged[MemberFunction]<IAMStreamControl*, AM_STREAM_INFO*, int>)(lpVtbl[5]))((IAMStreamControl*)Unsafe.AsPointer(ref this), pInfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IAMStreamControl : IAMStreamControl.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const REFERENCE_TIME *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, uint, int> StartAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, uint, int> StartAt;
 
         [NativeTypeName("HRESULT (const REFERENCE_TIME *, BOOL, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, BOOL, uint, int> StopAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, BOOL, uint, int> StopAt;
 
         [NativeTypeName("HRESULT (AM_STREAM_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AM_STREAM_INFO*, int> GetInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AM_STREAM_INFO*, int> GetInfo;
     }
 }

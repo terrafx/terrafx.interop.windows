@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION">
-    <summary>
-      <para>Describes the changes found by the
-<see cref="ReadDirectoryChangesExW" /> function.</para>
-    </summary>
-    <seealso cref="ReadDirectoryChangesExW" />
+    <summary>Describes the changes found by the<see cref="ReadDirectoryChangesExW" /> function.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.NextEntryOffset">
-    <summary>
-      <para>The number of bytes that must be skipped to get to the next record. A value of zero indicates that this is
-the last record.</para>
-    </summary>
+    <summary>The number of bytes that must be skipped to get to the next record. A value of zero indicates that this is the last record.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.Action">
     <summary>
@@ -23,157 +16,121 @@ the last record.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FILE_ACTION_ADDED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was added to the directory.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file was added to the directory.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FILE_ACTION_REMOVED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was removed from the directory.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file was removed from the directory.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FILE_ACTION_MODIFIED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was modified. This can be a change in the time stamp or attributes.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file was modified. This can be a change in the time stamp or attributes.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FILE_ACTION_RENAMED_OLD_NAME</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was renamed and this is the old name.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file was renamed and this is the old name.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>FILE_ACTION_RENAMED_NEW_NAME</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000005</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000005</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file was renamed and this is the new name.</para>
-          </description>
-        </item>
+          <description>The file was renamed and this is the new name.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.CreationTime">
-    <summary>
-      <para>The date and time that the directory or file was created and added to the file system.</para>
-    </summary>
+    <summary>The date and time that the directory or file was created and added to the file system.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.LastModificationTime">
-    <summary>
-      <para>The date and time that the content of the directory or file  was last modified in the file system.</para>
-    </summary>
+    <summary>The date and time that the content of the directory or file was last modified in the file system.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.LastChangeTime">
-    <summary>
-      <para>The date and time that the metadata or content of the directory or file  was last changed in the file system.</para>
-    </summary>
+    <summary>The date and time that the metadata or content of the directory or file was last changed in the file system.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.LastAccessTime">
-    <summary>
-      <para>The date and time the directory or file was last accessed in the file system.</para>
-    </summary>
+    <summary>The date and time the directory or file was last accessed in the file system.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.AllocatedLength">
-    <summary>
-      <para>The allocated size of the file, in bytes.</para>
-    </summary>
+    <summary>The allocated size of the file, in bytes.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.FileSize">
-    <summary>
-      <para>The new size of the directory or file in bytes, or the old size if
-the size is unchanged.</para>
-    </summary>
+    <summary>The new size of the directory or file in bytes, or the old size if the size is unchanged.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.FileAttributes">
-    <summary>
-      <para>The attributes of the directory or file.</para>
-    </summary>
+    <summary>The attributes of the directory or file.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.ReparsePointTag">
-    <summary>
-      <para>The identifier tag of a reparse point for the directory or file.</para>
-    </summary>
+    <summary>The identifier tag of a reparse point for the directory or file.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.FileId">
-    <summary>
-      <para>The identifier of the directory or file.</para>
-    </summary>
+    <summary>The identifier of the directory or file.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.ParentFileId">
-    <summary>
-      <para>The identifier of the parent directory for the file.</para>
-    </summary>
+    <summary>The identifier of the parent directory for the file.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.FileNameLength">
-    <summary>
-      <para>The size of the file name portion of the record, in bytes. This value does not include a
-terminating null character.</para>
-    </summary>
+    <summary>The size of the file name portion of the record, in bytes. This value does not include a terminating null character.</summary>
   </member>
   <member name="FILE_NOTIFY_EXTENDED_INFORMATION.FileName">
     <summary>
-      <para>A variable-length field that contains the file name relative to the directory handle. The file name is in
-the Unicode character format and is not null-terminated.</para>
-      <para>If there is both a short and long name for the file, the function will return one of these names, but it is
-unspecified which one.</para>
+      <para>A variable-length field that contains the file name relative to the directory handle. The file name is in the Unicode character format and is not null-terminated.</para>
+      <para>If there is both a short and long name for the file, the function will return one of these names, but it is unspecified which one.</para>
     </summary>
   </member>
 </doc>

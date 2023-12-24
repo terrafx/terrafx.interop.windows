@@ -3,41 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OFSTRUCT">
-    <summary>
-      <para>Contains information about a file that the
-<see cref="OpenFile" /> function opened or attempted to open.</para>
-    </summary>
-    <seealso cref="OpenFile" />
+    <summary>Contains information about a file that the<see cref="OpenFile" /> function opened or attempted to open.</summary>
   </member>
   <member name="OFSTRUCT.cBytes">
-    <summary>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="OFSTRUCT.fFixedDisk">
-    <summary>
-      <para>If this member is nonzero, the file is on a hard (fixed) disk. Otherwise, it is not.</para>
-    </summary>
+    <summary>If this member is nonzero, the file is on a hard (fixed) disk. Otherwise, it is not.</summary>
   </member>
   <member name="OFSTRUCT.nErrCode">
-    <summary>
-      <para>The MS-DOS error code if the
-<see cref="OpenFile" /> function failed.</para>
-    </summary>
+    <summary>The MS-DOS error code if the<see cref="OpenFile" /> function failed.</summary>
   </member>
   <member name="OFSTRUCT.Reserved1">
-    <summary>
-      <para>Reserved; do not use.</para>
-    </summary>
+    <summary>Reserved; do not use.</summary>
   </member>
   <member name="OFSTRUCT.Reserved2">
-    <summary>
-      <para>Reserved; do not use.</para>
-    </summary>
+    <summary>Reserved; do not use.</summary>
   </member>
   <member name="OFSTRUCT.szPathName">
-    <summary>
-      <para>The path and file name of the file.</para>
-    </summary>
+    <summary>The path and file name of the file.</summary>
   </member>
 </doc>

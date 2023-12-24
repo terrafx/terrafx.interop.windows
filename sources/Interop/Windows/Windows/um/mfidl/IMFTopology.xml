@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFTopology.AddNode">
-    <summary>
-      <para>Adds a node to the topology.</para>
-    </summary>
-    <param name="pNode">
-      <para>Pointer to the node's <see cref="IMFTopologyNode" /> interface.</para>
-    </param>
+    <summary>Adds a node to the topology.</summary>
+    <param name="pNode">Pointer to the node's <see cref="IMFTopologyNode" /> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,35 +12,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pNode</i> is invalid, possibly because the node already exists in the topology.
-</description>
-        </item>
+            <i>pNode</i> is invalid, possibly because the node already exists in the topology.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFTopology" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopology.Clear">
-    <summary>
-      <para>Removes all nodes from the topology.</para>
-    </summary>
+    <summary>Removes all nodes from the topology.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -52,71 +49,30 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You do not need to clear a topology before disposing of it. The <b>Clear</b> method is called automatically when the topology is destroyed.</para>
-    </remarks>
-    <seealso cref="IMFTopology" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopology.CloneFrom">
-    <summary>
-      <para>Converts this topology into a copy of another topology.</para>
-    </summary>
-    <param name="pTopology">
-      <para>A pointer to the <see cref="IMFTopology" /> interface of the topology to clone.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method does the following:</para>
-      <list type="bullet">
-        <item>
-          <description>Removes all of the nodes from this topology.
-</description>
-        </item>
-        <item>
-          <description>Clones the nodes from <i>pTopology</i> and adds them to this topology. The cloned nodes have the same node identifiers as the nodes from <i>pTopology</i>.
-</description>
-        </item>
-        <item>
-          <description>Connects the cloned nodes to match the connections in <i>pTopology</i>.
-</description>
-        </item>
-        <item>
-          <description>Copies the attributes from <i>pTopology</i> to this topology.
-</description>
-        </item>
-        <item>
-          <description>Copies the topology identifier from <i>pTopology</i> to this topology.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFTopology" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
+    <summary>Converts this topology into a copy of another topology.</summary>
+    <param name="pTopology">A pointer to the <see cref="IMFTopology" /> interface of the topology to clone.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTopology.GetNode">
-    <summary>
-      <para>Gets a node in the topology, specified by index.</para>
-    </summary>
-    <param name="wIndex">
-      <para>The zero-based index of the node. To get the number of nodes in the topology, call <see cref="IMFTopology.GetNodeCount" />.</para>
-    </param>
-    <param name="ppNode">
-      <para>Receives a pointer to the node's <see cref="IMFTopologyNode" /> interface. The caller must release the pointer.</para>
-    </param>
+    <summary>Gets a node in the topology, specified by index.</summary>
+    <param name="wIndex">The zero-based index of the node. To get the number of nodes in the topology, call <see cref="IMFTopology.GetNodeCount" />.</param>
+    <param name="ppNode">Receives a pointer to the node's <see cref="IMFTopologyNode" /> interface. The caller must release the pointer.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -124,51 +80,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The index is less than zero.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The index is less than zero.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDINDEX</b>
-            </para>
-          </description>
-          <description>
-            <para>No node can be found at the index <i>wIndex</i>.</para>
-          </description>
-        </item>
+          <description>No node can be found at the index <i>wIndex</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFTopology" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopology.GetNodeByID">
-    <summary>
-      <para>Gets a node in the topology, specified by node identifier.</para>
-    </summary>
-    <param name="qwTopoNodeID">
-      <para>The identifier of the node to retrieve. To get a node's identifier, call <see cref="IMFTopologyNode.GetTopoNodeID" />.</para>
-    </param>
-    <param name="ppNode">
-      <para>Receives a pointer to the node's <see cref="IMFTopologyNode" /> interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets a node in the topology, specified by node identifier.</summary>
+    <param name="qwTopoNodeID">The identifier of the node to retrieve. To get a node's identifier, call <see cref="IMFTopologyNode.GetTopoNodeID" />.</param>
+    <param name="ppNode">Receives a pointer to the node's <see cref="IMFTopologyNode" /> interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -176,94 +130,56 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The topology does not contain a node with this identifier.</para>
-          </description>
-        </item>
+          <description>The topology does not contain a node with this identifier.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFTopology" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopology.GetNodeCount">
-    <summary>
-      <para>Gets the number of nodes in the topology.</para>
-    </summary>
-    <param name="pwNodes">
-      <para>Receives the number of nodes.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTopology" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
+    <summary>Gets the number of nodes in the topology.</summary>
+    <param name="pwNodes">Receives the number of nodes.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTopology.GetOutputNodeCollection">
-    <summary>
-      <para>Gets the output nodes in the topology.</para>
-    </summary>
-    <param name="ppCollection">
-      <para>Receives a pointer to the <see cref="IMFCollection" /> interface. The caller must release the pointer. The collection contains <b>IUnknown</b> pointers to all of the output nodes in the topology. Each pointer can be queried for the <see cref="IMFTopologyNode" /> interface. The collection might be empty.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTopology" />
-    <seealso cref="IMFTopologyNode.GetNodeType" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
+    <summary>Gets the output nodes in the topology.</summary>
+    <param name="ppCollection">Receives a pointer to the <see cref="IMFCollection" /> interface. The caller must release the pointer. The collection contains <b>IUnknown</b> pointers to all of the output nodes in the topology. Each pointer can be queried for the <see cref="IMFTopologyNode" /> interface. The collection might be empty.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTopology.GetSourceNodeCollection">
-    <summary>
-      <para>Gets the source nodes in the topology.</para>
-    </summary>
-    <param name="ppCollection">
-      <para>Receives a pointer to the <see cref="IMFCollection" /> interface. The caller must release the pointer. The collection contains <b>IUnknown</b> pointers to all of the source nodes in the topology. Each pointer can be queried for the <see cref="IMFTopologyNode" /> interface. The collection might be empty.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTopology" />
-    <seealso cref="IMFTopologyNode.GetNodeType" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
+    <summary>Gets the source nodes in the topology.</summary>
+    <param name="ppCollection">Receives a pointer to the <see cref="IMFCollection" /> interface. The caller must release the pointer. The collection contains <b>IUnknown</b> pointers to all of the source nodes in the topology. Each pointer can be queried for the <see cref="IMFTopologyNode" /> interface. The collection might be empty.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTopology.GetTopologyID">
-    <summary>
-      <para>Gets the identifier of the topology.</para>
-    </summary>
-    <param name="pID">
-      <para>Receives the identifier, as a <a href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</a> value.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFTopology" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
+    <summary>Gets the identifier of the topology.</summary>
+    <param name="pID">Receives the identifier, as a <a href="https://docs.microsoft.com//windows/desktop/medfound/topoid">TOPOID</a> value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFTopology.RemoveNode">
-    <summary>
-      <para>Removes a node from the topology.</para>
-    </summary>
-    <param name="pNode">
-      <para>Pointer to the node's <see cref="IMFTopologyNode" /> interface.</para>
-    </param>
+    <summary>Removes a node from the topology.</summary>
+    <param name="pNode">Pointer to the node's <see cref="IMFTopologyNode" /> interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -271,43 +187,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified node is not a member of this topology.</para>
-          </description>
-        </item>
+          <description>The specified node is not a member of this topology.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method does not destroy the node, so the <see cref="IMFTopologyNode" /> pointer is still valid after the method returns.</para>
-      <para>The method breaks any connections between the specified node and other nodes.</para>
-    </remarks>
-    <seealso cref="IMFTopology" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
   </member>
   <member name="IMFTopology">
     <summary>
       <para>Represents a topology. A <i>topology</i> describes a collection of media sources, sinks, and transforms that are connected in a certain order. These objects are represented within the topology by <i>topology nodes</i>, which expose the <see cref="IMFTopologyNode" /> interface. A topology describes the path of multimedia data through these nodes.</para>
       <para>To create a topology, call <see cref="MFCreateTopology" />.</para>
     </summary>
-    <seealso cref="IMFAttributes" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topologies">Topologies</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/topology-attributes">Topology Attributes</seealso>
   </member>
 </doc>

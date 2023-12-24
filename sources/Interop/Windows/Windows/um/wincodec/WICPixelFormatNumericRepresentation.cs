@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation"]/*' />
-public enum WICPixelFormatNumericRepresentation : uint
+public enum WICPixelFormatNumericRepresentation
 {
     /// <include file='WICPixelFormatNumericRepresentation.xml' path='doc/member[@name="WICPixelFormatNumericRepresentation.WICPixelFormatNumericRepresentationUnspecified"]/*' />
     WICPixelFormatNumericRepresentationUnspecified = 0,

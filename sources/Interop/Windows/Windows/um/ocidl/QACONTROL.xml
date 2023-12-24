@@ -3,39 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="QACONTROL">
-    <summary>
-      <para>Specifies control information for  <see cref="IQuickActivate.QuickActivate" />.</para>
-    </summary>
-    <seealso cref="IQuickActivate.QuickActivate" />
+    <summary>Specifies control information for <see cref="IQuickActivate.QuickActivate" />.</summary>
   </member>
   <member name="QACONTROL.cbSize">
-    <summary>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="QACONTROL.dwMiscStatus">
-    <summary>
-      <para>The control's miscellaneous status bits that can also be returned by <see cref="IOleObject.GetMiscStatus" />. See <see cref="OLEMISC" /> for more information.</para>
-    </summary>
+    <summary>The control's miscellaneous status bits that can also be returned by <see cref="IOleObject.GetMiscStatus" />. See <see cref="OLEMISC" /> for more information.</summary>
   </member>
   <member name="QACONTROL.dwViewStatus">
-    <summary>
-      <para>The control's view status that can also be returned by <see cref="IViewObjectEx.GetViewStatus" />. See <see cref="VIEWSTATUS" /> for more information.</para>
-    </summary>
+    <summary>The control's view status that can also be returned by <see cref="IViewObjectEx.GetViewStatus" />. See <see cref="VIEWSTATUS" /> for more information.</summary>
   </member>
   <member name="QACONTROL.dwEventCookie">
-    <summary>
-      <para>A unique identifier for control-defined events.</para>
-    </summary>
+    <summary>A unique identifier for control-defined events.</summary>
   </member>
   <member name="QACONTROL.dwPropNotifyCookie">
-    <summary>
-      <para>A unique identifier for control-defined properties.</para>
-    </summary>
+    <summary>A unique identifier for control-defined properties.</summary>
   </member>
   <member name="QACONTROL.dwPointerActivationPolicy">
-    <summary>
-      <para>The control's activation policy that can also be returned by <see cref="IPointerInactive.GetActivationPolicy" />. If all the bits of <b>dwPointerActivationPolicy</b> are set, then the IPointerInactive interface may not be supported. The container should <see cref="QueryInterface" /> to obtain the interface pointer in the standard manner.</para>
-    </summary>
+    <summary>The control's activation policy that can also be returned by <see cref="IPointerInactive.GetActivationPolicy" />. If all the bits of <b>dwPointerActivationPolicy</b> are set, then the IPointerInactive interface may not be supported. The container should <see cref="QueryInterface" /> to obtain the interface pointer in the standard manner.</summary>
   </member>
 </doc>

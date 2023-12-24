@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDirectDrawGammaControl.GetGammaRamp">
-    <summary>
-      <para>Retrieves the red, green, and blue gamma ramps for the primary surface.</para>
-    </summary>
-    <param name="unnamedParam1">
-      <para>Currently not used and must be set to 0.</para>
-    </param>
-    <param name="unnamedParam2">
-      <para>A pointer to a <see cref="DDGAMMARAMP" /> structure that receives the current red, green, and blue gamma ramps. Each array maps color values in the frame buffer to the color values to be passed to the digital-to-analog converter (DAC).</para>
-    </param>
+    <summary>Retrieves the red, green, and blue gamma ramps for the primary surface.</summary>
+    <param name="unnamedParam1">Currently not used and must be set to 0.</param>
+    <param name="unnamedParam2">A pointer to a <see cref="DDGAMMARAMP" /> structure that receives the current red, green, and blue gamma ramps. Each array maps color values in the frame buffer to the color values to be passed to the digital-to-analog converter (DAC).</param>
     <returns>
       <para>If the method succeeds, the return value is DD_OK.</para>
       <para>If it fails, the method can return one of the following error values:</para>
@@ -27,21 +21,11 @@
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>GetGammaRamp</b> method.</para>
-    </remarks>
-    <seealso cref="IDirectDrawGammaControl" />
   </member>
   <member name="IDirectDrawGammaControl.SetGammaRamp">
-    <summary>
-      <para>Sets the red, green, and blue gamma ramps for the primary surface.</para>
-    </summary>
-    <param name="unnamedParam1">
-      <para>Flag that indicates whether gamma calibration is required. Set this parameter to DDSGR_CALIBRATE to request that the calibrator adjust the gamma ramp according to the physical properties of the display, which makes the result identical on all computers. If calibration is not needed, set this parameter to 0.</para>
-    </param>
-    <param name="unnamedParam2">
-      <para>A pointer to a <see cref="DDGAMMARAMP" /> structure that contains the new red, green, and blue gamma ramp entries. Each array maps color values in the frame buffer to the color values to be passed to the digital-to-analog converter (DAC).</para>
-    </param>
+    <summary>Sets the red, green, and blue gamma ramps for the primary surface.</summary>
+    <param name="unnamedParam1">Flag that indicates whether gamma calibration is required. Set this parameter to DDSGR_CALIBRATE to request that the calibrator adjust the gamma ramp according to the physical properties of the display, which makes the result identical on all computers. If calibration is not needed, set this parameter to 0.</param>
+    <param name="unnamedParam2">A pointer to a <see cref="DDGAMMARAMP" /> structure that contains the new red, green, and blue gamma ramp entries. Each array maps color values in the frame buffer to the color values to be passed to the digital-to-analog converter (DAC).</param>
     <returns>
       <para>If the method succeeds, the return value is DD_OK.</para>
       <para>If it fails, the method can return one of the following error values:</para>
@@ -60,25 +44,8 @@
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>Not all systems support gamma calibration. To determine whether gamma calibration is supported, call <see cref="IDirectDraw7.GetCaps" /> and examine the <b>dwCaps2</b> member of the associated <see cref="DDCAPS" /> structure after the method returns. If the DDCAPS2_CANCALIBRATEGAMMA capability flag is present, gamma calibration is supported.</para>
-      <para>Calibrating gamma ramps incurs some processing overhead and should not be used frequently.</para>
-      <para>Including the DDSGR_CALIBRATE flag in the <i>dwFlags</i> parameter when running on computers that do not support gamma calibration does not cause this method to fail. The method succeeds and sets new gamma ramp values without calibration.</para>
-      <para>You must use <see cref="LoadLibrary" /> to explicitly link to Ddraw.dll and then use <see cref="GetProcAddress" /> to access the  <b>SetGammaRamp</b> method.</para>
-    </remarks>
-    <seealso cref="IDirectDrawGammaControl" />
   </member>
   <member name="IDirectDrawGammaControl">
-    <summary>
-      <para>Applications use the methods of the <b>IDirectDrawGammaControl</b> interface to adjust the red, green, and blue gamma ramp levels of the primary surface. This section is a reference to the methods of this interface.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IDirectDrawGammaControl</b> interface is supported by DirectDrawSurface objects. That is, you can retrieve a pointer to the <b>IDirectDrawGammaControl</b> interface by calling the <see cref="IUnknown.QueryInterface" /> method of a DirectDrawSurface object and by specifying the IID_IDirectDrawGammaControl reference identifier in the <i>riid</i> parameter.</para>
-      <para>You can use the LPDIRECTDRAWGAMMACONTROL data type to declare a variable that contains a pointer to an <b>IDirectDrawGammaControl</b> interface. The Ddraw.h header file declares the data type with the following code:</para>
-      <code>
-typedef struct IDirectDrawGammaControl    FAR *LPDIRECTDRAWGAMMACONTROL;
-
-</code>
-    </remarks>
+    <summary>Applications use the methods of the <b>IDirectDrawGammaControl</b> interface to adjust the red, green, and blue gamma ramp levels of the primary surface. This section is a reference to the methods of this interface.</summary>
   </member>
 </doc>

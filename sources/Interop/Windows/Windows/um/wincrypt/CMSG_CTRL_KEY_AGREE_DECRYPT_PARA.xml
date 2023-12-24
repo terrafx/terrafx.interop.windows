@@ -3,52 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA">
-    <summary>
-      <para>The <b>CMSG_CTRL_KEY_AGREE_DECRYPT_PARA</b> structure contains information about a key agreement recipient.</para>
-    </summary>
+    <summary>The <b>CMSG_CTRL_KEY_AGREE_DECRYPT_PARA</b> structure contains information about a key agreement recipient.</summary>
   </member>
   <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.cbSize">
-    <summary>
-      <para>The size, in bytes,  of this data structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this data structure.</summary>
   </member>
-  <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.DUMMYUNIONNAME"></member>
   <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.DUMMYUNIONNAME.hCryptProv">
-    <summary>
-      <para>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP) used to do the recipient key encryption and export. If <b>NULL</b>, the provider specified in <see cref="CMSG_ENVELOPED_ENCODE_INFO" /> is used.
-The CNG function <see cref="NCryptIsKeyHandle" /> is called to determine the union choice.</para>
-    </summary>
+    <summary>A handle to the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">cryptographic service provider</a> (CSP) used to do the recipient key encryption and export. If <b>NULL</b>, the provider specified in <see cref="CMSG_ENVELOPED_ENCODE_INFO" /> is used. The CNG function <see cref="NCryptIsKeyHandle" /> is called to determine the union choice.</summary>
   </member>
   <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.DUMMYUNIONNAME.hNCryptKey">
-    <summary>
-      <para>A handle to the CNG CSP used to do the recipient key encryption and export. The CNG function <see cref="NCryptIsKeyHandle" /> is called to determine the union choice. New encrypt algorithms are only supported in CNG functions. The CNG function <see cref="NCryptTranslateHandle" /> will be called to convert the CryptoAPI CSP <i>hCryptProv</i> choice where necessary. We recommend that applications pass, to the <i>hNCryptKey</i> member, the CNG CSP handle that is returned from the <see cref="NCryptOpenKey" /> function.</para>
-    </summary>
+    <summary>A handle to the CNG CSP used to do the recipient key encryption and export. The CNG function <see cref="NCryptIsKeyHandle" /> is called to determine the union choice. New encrypt algorithms are only supported in CNG functions. The CNG function <see cref="NCryptTranslateHandle" /> will be called to convert the CryptoAPI CSP <i>hCryptProv</i> choice where necessary. We recommend that applications pass, to the <i>hNCryptKey</i> member, the CNG CSP handle that is returned from the <see cref="NCryptOpenKey" /> function.</summary>
   </member>
   <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.dwKeySpec">
-    <summary>
-      <para>Specifies the encrypted key. The encrypted key is the result of encrypting the content-encryption key. This member is not used when the <i>hNCryptKey</i> member is used.</para>
-    </summary>
+    <summary>Specifies the encrypted key. The encrypted key is the result of encrypting the content-encryption key. This member is not used when the <i>hNCryptKey</i> member is used.</summary>
   </member>
   <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.pKeyAgree">
-    <summary>
-      <para>A pointer to a <see cref="CMSG_KEY_AGREE_RECIPIENT_INFO" /> structure.</para>
-    </summary>
+    <summary>A pointer to a <see cref="CMSG_KEY_AGREE_RECIPIENT_INFO" /> structure.</summary>
   </member>
   <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.dwRecipientIndex">
-    <summary>
-      <para>Indicates a specific recipient in an array of recipients.</para>
-    </summary>
+    <summary>Indicates a specific recipient in an array of recipients.</summary>
   </member>
   <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.dwRecipientEncryptedKeyIndex">
-    <summary>
-      <para>Indicates a specific encrypted key in an array of encrypted keys.</para>
-    </summary>
+    <summary>Indicates a specific encrypted key in an array of encrypted keys.</summary>
   </member>
   <member name="CMSG_CTRL_KEY_AGREE_DECRYPT_PARA.OriginatorPublicKey">
-    <summary>
-      <para>A <see cref="CRYPT_BIT_BLOB" /> structure that contains the sender's public key information.</para>
-    </summary>
+    <summary>A <see cref="CRYPT_BIT_BLOB" /> structure that contains the sender's public key information.</summary>
   </member>
 </doc>

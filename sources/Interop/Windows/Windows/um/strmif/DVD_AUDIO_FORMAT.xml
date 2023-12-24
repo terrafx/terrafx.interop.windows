@@ -4,56 +4,35 @@
 <doc>
   <member name="DVD_AUDIO_FORMAT">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Indicates the audio format of a DVD.</para>
     </summary>
-    <remarks>
-      <para>This enumeration is a member of the <see cref="DVD_AudioAttributes" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_AC3">
-    <summary>
-      <para>Audio format is Dolby AC-3.</para>
-    </summary>
+    <summary>Audio format is Dolby AC-3.</summary>
   </member>
   <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_MPEG1">
-    <summary>
-      <para>Audio format is MPEG-1.</para>
-    </summary>
+    <summary>Audio format is MPEG-1.</summary>
   </member>
   <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_MPEG1_DRC">
-    <summary>
-      <para>Audio format is MPEG-1 with dynamic range control.</para>
-    </summary>
+    <summary>Audio format is MPEG-1 with dynamic range control.</summary>
   </member>
   <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_MPEG2">
-    <summary>
-      <para>Audio format is MPEG-2.</para>
-    </summary>
+    <summary>Audio format is MPEG-2.</summary>
   </member>
   <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_MPEG2_DRC">
-    <summary>
-      <para>Audio format is MPEG-2 with dynamic range control.</para>
-    </summary>
+    <summary>Audio format is MPEG-2 with dynamic range control.</summary>
   </member>
   <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_LPCM">
-    <summary>
-      <para>Audio format is Linear Pulse Code Modulated (LPCM).</para>
-    </summary>
+    <summary>Audio format is Linear Pulse Code Modulated (LPCM).</summary>
   </member>
   <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_DTS">
-    <summary>
-      <para>Audio format is Digital Theater Systems (DTS).</para>
-    </summary>
+    <summary>Audio format is Digital Theater Systems (DTS).</summary>
   </member>
   <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_SDDS">
-    <summary>
-      <para>Audio format is Sony Dynamic Digital Sound (SDDS).</para>
-    </summary>
+    <summary>Audio format is Sony Dynamic Digital Sound (SDDS).</summary>
   </member>
   <member name="DVD_AUDIO_FORMAT.DVD_AudioFormat_Other">
-    <summary>
-      <para>Audio format is unrecognized.</para>
-    </summary>
+    <summary>Audio format is unrecognized.</summary>
   </member>
 </doc>

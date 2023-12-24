@@ -13,9 +13,9 @@ public unsafe partial struct BANNER_NOTIFICATION
 
     /// <include file='BANNER_NOTIFICATION.xml' path='doc/member[@name="BANNER_NOTIFICATION.providerIdentity"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* providerIdentity;
+    public char* providerIdentity;
 
     /// <include file='BANNER_NOTIFICATION.xml' path='doc/member[@name="BANNER_NOTIFICATION.contentId"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* contentId;
+    public char* contentId;
 }

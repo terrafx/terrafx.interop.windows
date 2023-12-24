@@ -3,13 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHDESCRIPTIONID">
-    <summary>
-      <para>Receives item data in response to a call to <see cref="SHGetDataFromIDList" />.</para>
-    </summary>
+    <summary>Receives item data in response to a call to <see cref="SHGetDataFromIDList" />.</summary>
   </member>
   <member name="SHDESCRIPTIONID.dwDescriptionId">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Receives a value that determines what type the item is. One of the following values.</para>
       <h4>SHDID_ROOT_REGITEM</h4>
       <para>The item is a registered item on the desktop.</para>
@@ -60,9 +57,6 @@
     </summary>
   </member>
   <member name="SHDESCRIPTIONID.clsid">
-    <summary>
-      <para>Type: <b>CLSID</b></para>
-      <para>Receives the CLSID of the object to which the item belongs.</para>
-    </summary>
+    <summary>Receives the CLSID of the object to which the item belongs.</summary>
   </member>
 </doc>

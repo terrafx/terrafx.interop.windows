@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_VIDEO_PROCESSOR_ALGORITHM_TYPE">
-    <summary>
-      <para>Defines algorithms for the video processor which is use by <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-video-processor-algorithm">MF_VIDEO_PROCESSOR_ALGORITHM</a>.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines algorithms for the video processor which is use by <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-video-processor-algorithm">MF_VIDEO_PROCESSOR_ALGORITHM</a>.</summary>
   </member>
   <member name="MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.MF_VIDEO_PROCESSOR_ALGORITHM_DEFAULT">
-    <summary>
-      <para>default mode favors a balance of quality and speed</para>
-    </summary>
+    <summary>default mode favors a balance of quality and speed</summary>
   </member>
   <member name="MF_VIDEO_PROCESSOR_ALGORITHM_TYPE.MF_VIDEO_PROCESSOR_ALGORITHM_MRF_CRF_444">
-    <summary>
-      <para>The video processor will always internally process in AYUV and use high quality filters.</para>
-    </summary>
+    <summary>The video processor will always internally process in AYUV and use high quality filters.</summary>
   </member>
 </doc>

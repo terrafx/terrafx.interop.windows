@@ -3,36 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICComponentEnumerateOptions">
-    <summary>
-      <para>Specifies component enumeration options.</para>
-    </summary>
+    <summary>Specifies component enumeration options.</summary>
   </member>
   <member name="WICComponentEnumerateOptions.WICComponentEnumerateDefault">
-    <summary>
-      <para>Enumerate any components that are not disabled. Because this value is 0x0, it is always included with the other options.</para>
-    </summary>
+    <summary>Enumerate any components that are not disabled. Because this value is 0x0, it is always included with the other options.</summary>
   </member>
   <member name="WICComponentEnumerateOptions.WICComponentEnumerateRefresh">
-    <summary>
-      <para>Force a read of the registry before enumerating components.</para>
-    </summary>
+    <summary>Force a read of the registry before enumerating components.</summary>
   </member>
   <member name="WICComponentEnumerateOptions.WICComponentEnumerateDisabled">
-    <summary>
-      <para>Include disabled components in the enumeration. The set of disabled components is disjoint with the set of default enumerated components</para>
-    </summary>
+    <summary>Include disabled components in the enumeration. The set of disabled components is disjoint with the set of default enumerated components</summary>
   </member>
   <member name="WICComponentEnumerateOptions.WICComponentEnumerateUnsigned">
-    <summary>
-      <para>Include unsigned components in the enumeration. This option has no effect.</para>
-    </summary>
+    <summary>Include unsigned components in the enumeration. This option has no effect.</summary>
   </member>
   <member name="WICComponentEnumerateOptions.WICComponentEnumerateBuiltInOnly">
-    <summary>
-      <para>At the end of component enumeration, filter out any components that are not Windows provided.</para>
-    </summary>
+    <summary>At the end of component enumeration, filter out any components that are not Windows provided.</summary>
   </member>
-  <member name="WICComponentEnumerateOptions.WICCOMPONENTENUMERATEOPTIONS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICComponentEnumerateOptions.WICCOMPONENTENUMERATEOPTIONS_FORCE_DWORD"></member>
 </doc>

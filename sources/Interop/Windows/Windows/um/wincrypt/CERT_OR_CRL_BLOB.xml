@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_OR_CRL_BLOB">
-    <summary>
-      <para>The <b>CERT_OR_CRL_BLOB</b> structure encapsulates certificates for use with Internet Key Exchange messages.</para>
-    </summary>
+    <summary>The <b>CERT_OR_CRL_BLOB</b> structure encapsulates certificates for use with Internet Key Exchange messages.</summary>
   </member>
   <member name="CERT_OR_CRL_BLOB.dwChoice">
     <summary>
@@ -15,51 +13,43 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_BUNDLE_CERTIFICATE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The <b>pbEncoded</b> member points to an encoded certificate.</para>
-          </description>
-        </item>
-        <item>
+          <description>The <b>pbEncoded</b> member points to an encoded certificate.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_BUNDLE_CRL</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The <b>pbEncoded</b> member points to a certificate list.</para>
-          </description>
-        </item>
+          <description>The <b>pbEncoded</b> member points to a certificate list.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CERT_OR_CRL_BLOB.cbEncoded">
-    <summary>
-      <para>The size, in bytes, of the buffer pointed to by the <b>pbEncoded</b> member.</para>
-    </summary>
+    <summary>The size, in bytes, of the buffer pointed to by the <b>pbEncoded</b> member.</summary>
   </member>
   <member name="CERT_OR_CRL_BLOB.pbEncoded">
-    <summary>
-      <para>A pointer to a buffer that contains a certificate or a <see cref="CERT_OR_CRL_BUNDLE" /> structure that contains an array of certificates as specified by the <b>dwChoice</b> member.</para>
-    </summary>
+    <summary>A pointer to a buffer that contains a certificate or a <see cref="CERT_OR_CRL_BUNDLE" /> structure that contains an array of certificates as specified by the <b>dwChoice</b> member.</summary>
   </member>
 </doc>

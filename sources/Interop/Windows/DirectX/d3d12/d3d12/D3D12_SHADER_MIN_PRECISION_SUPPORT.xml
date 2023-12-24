@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SHADER_MIN_PRECISION_SUPPORT">
+    <summary>Describes minimum precision support options for shaders in the current graphics driver.</summary>
+  </member>
+  <member name="D3D12_SHADER_MIN_PRECISION_SUPPORT.D3D12_SHADER_MIN_PRECISION_SUPPORT_NONE">
+    <summary>The driver supports only full 32-bit precision for all shader stages.</summary>
+  </member>
+  <member name="D3D12_SHADER_MIN_PRECISION_SUPPORT.D3D12_SHADER_MIN_PRECISION_SUPPORT_10_BIT">
+    <summary>The driver supports 10-bit precision.</summary>
+  </member>
+  <member name="D3D12_SHADER_MIN_PRECISION_SUPPORT.D3D12_SHADER_MIN_PRECISION_SUPPORT_16_BIT">
+    <summary>The driver supports 16-bit precision.</summary>
+  </member>
+</doc>

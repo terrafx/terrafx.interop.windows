@@ -12,11 +12,11 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreatePrivateNamespaceW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreatePrivateNamespaceW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpPrivateNamespaceAttributes, [NativeTypeName("LPVOID")] void* lpBoundaryDescriptor, [NativeTypeName("LPCWSTR")] ushort* lpAliasPrefix);
+    public static extern HANDLE CreatePrivateNamespaceW([NativeTypeName("LPSECURITY_ATTRIBUTES")] SECURITY_ATTRIBUTES* lpPrivateNamespaceAttributes, [NativeTypeName("LPVOID")] void* lpBoundaryDescriptor, [NativeTypeName("LPCWSTR")] char* lpAliasPrefix);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.OpenPrivateNamespaceW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    public static extern HANDLE OpenPrivateNamespaceW([NativeTypeName("LPVOID")] void* lpBoundaryDescriptor, [NativeTypeName("LPCWSTR")] ushort* lpAliasPrefix);
+    public static extern HANDLE OpenPrivateNamespaceW([NativeTypeName("LPVOID")] void* lpBoundaryDescriptor, [NativeTypeName("LPCWSTR")] char* lpAliasPrefix);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ClosePrivateNamespace"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -27,7 +27,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.CreateBoundaryDescriptorW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern HANDLE CreateBoundaryDescriptorW([NativeTypeName("LPCWSTR")] ushort* Name, [NativeTypeName("ULONG")] uint Flags);
+    public static extern HANDLE CreateBoundaryDescriptorW([NativeTypeName("LPCWSTR")] char* Name, [NativeTypeName("ULONG")] uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.AddSIDToBoundaryDescriptor"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]

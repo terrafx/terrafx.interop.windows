@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12VideoDecodeCommandList.BeginEvent">
+    <summary>For internal use only. Not intended to be called directly.</summary>
+    <param name="Metadata">Internal.</param>
+    <param name="pData">Internal.</param>
+    <param name="Size">Internal.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.BeginQuery">
+    <summary>Starts a query running.</summary>
+    <param name="pQueryHeap">A pointer to an <see cref="ID3D12QueryHeap" /> specifying the storage for this query.</param>
+    <param name="Type">A member of the <see cref="D3D12_QUERY_TYPE" /> enumeration specifying the type of the query.</param>
+    <param name="Index">The index of the query within the query heap.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.ClearState">
+    <summary>Resets the state of a direct command list back to the state it was in when the command list was created.</summary>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.Close">
+    <summary>Indicates that recording to the command list has finished.</summary>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise, returns one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>E_FAIL</b> if the command list has already been closed, or an invalid API was called during command list recording.</description>
+        </item>
+        <item>
+          <description>
+            <b>E_OUTOFMEMORY</b> if the operating system ran out of memory during recording.</description>
+        </item>
+        <item>
+          <description>
+            <b>E_INVALIDARG</b> if an invalid argument was passed to the command list API during recording.</description>
+        </item>
+      </list>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.DecodeFrame">
+    <summary>Records a decode frame operation to the command list. Inputs, outputs, and parameters for the decode are specified as arguments to this method.</summary>
+    <param name="pDecoder">A pointer to an <see cref="ID3D12VideoDecoder" /> interface representing a decoder instance.</param>
+    <param name="pOutputArguments">A <see cref="D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS" /> structure specifying the output surface and output arguments.</param>
+    <param name="pInputArguments">A <see cref="D3D12_VIDEO_DECODE_INPUT_STREAM_ARGUMENTS" /> structure specifying the input bitstream, reference frames, and other input parameters.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.DiscardResource">
+    <summary>Indicate that the current contents of a resource can be discarded. The current contents of the resource are no longer valid allowing optimizations for subsequent operations such as <see cref="ResourceBarrier" />.</summary>
+    <param name="pResource">A pointer to the <see cref="ID3D12Resource" /> interface for the resource to discard.</param>
+    <param name="pRegion">A pointer to a <see cref="D3D12_DISCARD_REGION" /> structure that describes details for the discard-resource operation.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.EndEvent">
+    <summary>For internal use only. Not intended to be called directly.</summary>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.EndQuery">
+    <summary>Ends a query.</summary>
+    <param name="pQueryHeap">A pointer to an <see cref="ID3D12QueryHeap" /> specifying the storage for this query.</param>
+    <param name="Type">A member of the <see cref="D3D12_QUERY_TYPE" /> enumeration specifying the type of the query.</param>
+    <param name="Index">The index of the query within the query heap.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.Reset">
+    <summary>Resets a command list back to its initial state as if a new command list was just created.</summary>
+    <param name="pAllocator">A pointer to the <see cref="ID3D12CommandAllocator" /> object that the device creates command lists from.</param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise, returns one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <b>E_FAIL</b> if the command list was not in the "closed" state when the <b>Reset</b> call was made, or the per-device limit would have been exceeded.</description>
+        </item>
+        <item>
+          <description>
+            <b>E_OUTOFMEMORY</b> if the operating system ran out of memory.</description>
+        </item>
+        <item>
+          <description>
+            <b>E_INVALIDARG</b> if the allocator is currently being used with another command list in the "recording" state or if the specified allocator was created with the wrong type.</description>
+        </item>
+      </list>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.ResolveQueryData">
+    <summary>Extracts data from a query.</summary>
+    <param name="pQueryHeap">A pointer to an <see cref="ID3D12QueryHeap" /> specifying the storage containing the queries to resolve.</param>
+    <param name="Type">A member of the <see cref="D3D12_QUERY_TYPE" /> enumeration specifying the type of the query.</param>
+    <param name="StartIndex">The index of the first query to resolve.</param>
+    <param name="NumQueries">The number of queries to resolve.</param>
+    <param name="pDestinationBuffer">A pointer to an <see cref="ID3D12Resource" /> representing the destination buffer. The resource must be in the state <see cref="D3D12_RESOURCE_STATE_COPY_DEST" />.</param>
+    <param name="AlignedDestinationBufferOffset">The alignment offset into the destination buffer. This must be a multiple of 8 bytes.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.ResourceBarrier">
+    <summary>Notifies the driver that it needs to synchronize multiple accesses to resources.</summary>
+    <param name="NumBarriers">The number of submitted barrier descriptions.</param>
+    <param name="pBarriers">Pointer to an array of barrier descriptions.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.SetMarker">
+    <summary>For internal use only. Not intended to be called directly.</summary>
+    <param name="Metadata">Internal.</param>
+    <param name="pData">Internal.</param>
+    <param name="Size">Internal.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.SetPredication">
+    <summary>Specifies that subsequent commands should not be performed if the predicate value passes the specified operation.</summary>
+    <param name="pBuffer">A pointer to an <see cref="ID3D12Resource" /> representing the buffer from which to read the 64-bit predication value.</param>
+    <param name="AlignedBufferOffset">The UINT64-aligned buffer offset.</param>
+    <param name="Operation">A member of the <see cref="D3D12_PREDICATION_OP" /> enumeration specifying the predicate operation.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList.WriteBufferImmediate">
+    <summary>Writes a number of 32-bit immediate values to the specified buffer locations directly from the command stream.</summary>
+    <param name="Count">The number of elements in the <i>pParams</i> and <i>pModes</i> arrays.</param>
+    <param name="pParams">The address of an array of <see cref="D3D12_WRITEBUFFERIMMEDIATE_PARAMETER" /> structures of size <i>Count</i>.</param>
+    <param name="pModes">The address of an array of <see cref="D3D12_WRITEBUFFERIMMEDIATE_MODE" /> structures of size <i>Count</i>. The default value is <b>null</b>. Passing <b>null</b> causes the system to write all immediate values using <b>D3D12_WRITEBUFFERIMMEDIATE_MODE_DEFAULT</b>.</param>
+  </member>
+  <member name="ID3D12VideoDecodeCommandList">
+    <summary>Encapsulates a list of graphics commands for video decoding. This interface is inherited by <see cref="ID3D12VideoDecodeCommandList1" />.</summary>
+  </member>
+</doc>

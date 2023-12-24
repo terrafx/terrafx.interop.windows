@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPVGOPSInSeqTests
     {
         Assert.That(typeof(CODECAPI_AVEncMPVGOPSInSeq).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPVGOPSInSeq));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGOPSInSeq" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPVGOPSInSeq>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPVGOPSInSeq)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGOPSInSeq" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPVGOPSInSeq).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPVGOPSInSeq" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPVGOPSInSeq), Is.EqualTo(1));
-    }
 }

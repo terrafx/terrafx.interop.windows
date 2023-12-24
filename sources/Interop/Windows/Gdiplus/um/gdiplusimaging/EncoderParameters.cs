@@ -17,7 +17,7 @@ public partial struct EncoderParameters
     public uint Count;
 
     /// <include file='EncoderParameters.xml' path='doc/member[@name="EncoderParameters.Parameter"]/*' />
-    [NativeTypeName("Gdiplus::EncoderParameter[1]")]
+    [NativeTypeName("EncoderParameter[1]")]
     public _Parameter_e__FixedBuffer Parameter;
 
     /// <include file='_Parameter_e__FixedBuffer.xml' path='doc/member[@name="_Parameter_e__FixedBuffer"]/*' />
@@ -31,7 +31,7 @@ public partial struct EncoderParameters
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TRUSTED_INFORMATION_CLASS">
+    <summary>
+      <para>The <b>TRUSTED_INFORMATION_CLASS</b> enumeration type defines values that indicate the type of information to set or query for a trusted domain.</para>
+      <para>Each value has an associated structure that the<see cref="LsaQueryTrustedDomainInfo" /> and<see cref="LsaSetTrustedDomainInformation" /> functions use to store the information.</para>
+    </summary>
+  </member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainNameInformation">
+    <summary>Query or set the name of a trusted domain. Use the<see cref="TRUSTED_DOMAIN_NAME_INFO" /> structure.</summary>
+  </member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedControllersInformation">
+    <summary>This value is obsolete.</summary>
+  </member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedPosixOffsetInformation">
+    <summary>Query or set the value used to generate Posix user and group identifiers. Use the<see cref="TRUSTED_POSIX_OFFSET_INFO" /> structure.</summary>
+  </member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedPasswordInformation">
+    <summary>This value has been superseded by the <b>TrustedDomainAuthInformation</b> value.</summary>
+  </member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainInformationBasic">
+    <summary>This value is obsolete.</summary>
+  </member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainInformationEx">
+    <summary>Query extended information for a trusted domain. Use the<see cref="TRUSTED_DOMAIN_INFORMATION_EX" /> structure.</summary>
+  </member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainAuthInformation">
+    <summary>Query authentication information for a trusted domain. Use the<see cref="TRUSTED_DOMAIN_AUTH_INFORMATION" /> structure.</summary>
+  </member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainFullInformation">
+    <summary>Query complete information for a trusted domain. This information includes the Posix offset information, authentication information, and the extended information returned for the <b>TrustedDomainInformationEx</b> value. Use the<see cref="TRUSTED_DOMAIN_FULL_INFORMATION" /> structure.</summary>
+  </member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainAuthInformationInternal"></member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainFullInformationInternal"></member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainInformationEx2Internal"></member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainFullInformation2Internal"></member>
+  <member name="TRUSTED_INFORMATION_CLASS.TrustedDomainSupportedEncryptionTypes"></member>
+</doc>

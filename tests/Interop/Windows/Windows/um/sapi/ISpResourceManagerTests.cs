@@ -19,32 +19,4 @@ public static unsafe partial class ISpResourceManagerTests
     {
         Assert.That(typeof(ISpResourceManager).GUID, Is.EqualTo(IID_ISpResourceManager));
     }
-
-    /// <summary>Validates that the <see cref="ISpResourceManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpResourceManager>(), Is.EqualTo(sizeof(ISpResourceManager)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpResourceManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpResourceManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpResourceManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpResourceManager), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpResourceManager), Is.EqualTo(4));
-        }
-    }
 }

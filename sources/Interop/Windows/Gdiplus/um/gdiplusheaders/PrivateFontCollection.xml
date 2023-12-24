@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PrivateFontCollection.AddFontFile">
+    <summary>The <b>PrivateFontCollection.AddFontFile</b> method adds a font file to this private font collection.</summary>
+    <param name="filename">Pointer to a wide-character string that specifies the name of a font file.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PrivateFontCollection.AddMemoryFont">
+    <summary>The <b>PrivateFontCollection.AddMemoryFont</b> method adds a font that is contained in system memory to a Windows GDI+ font collection.</summary>
+    <param name="memory">Pointer to a font that is contained in memory.</param>
+    <param name="length">Integer that specifies the number of bytes of data in the font.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PrivateFontCollection.PrivateFontCollection">
+    <summary>Creates an empty <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-privatefontcollection">PrivateFontCollection</a> object.</summary>
+  </member>
+  <member name="PrivateFontCollection.PrivateFontCollection">
+    <summary>Creates an empty <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-privatefontcollection">PrivateFontCollection</a> object.</summary>
+  </member>
+</doc>

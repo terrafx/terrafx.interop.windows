@@ -4,34 +4,23 @@
 <doc>
   <member name="VMRDeinterlaceCaps">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>VMRDeinterlaceCaps</code> structure describes the capabilities of a deinterlacing mode.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="IVMRDeinterlaceControl Interface" />
   </member>
   <member name="VMRDeinterlaceCaps.dwSize">
-    <summary>
-      <para>Size of the structure, in bytes.</para>
-    </summary>
+    <summary>Size of the structure, in bytes.</summary>
   </member>
   <member name="VMRDeinterlaceCaps.dwNumPreviousOutputFrames">
-    <summary>
-      <para>Number of previously de-interlaced frames that must be fed back to the hardware to deinterlace the next field. (Used by recursive deinterlacing algorithms.)</para>
-    </summary>
+    <summary>Number of previously de-interlaced frames that must be fed back to the hardware to deinterlace the next field. (Used by recursive deinterlacing algorithms.)</summary>
   </member>
   <member name="VMRDeinterlaceCaps.dwNumForwardRefSamples">
-    <summary>
-      <para>Number of future samples needed to deinterlace the current field.</para>
-    </summary>
+    <summary>Number of future samples needed to deinterlace the current field.</summary>
   </member>
   <member name="VMRDeinterlaceCaps.dwNumBackwardRefSamples">
-    <summary>
-      <para>Number of past samples needed to deinterlace the current field.</para>
-    </summary>
+    <summary>Number of past samples needed to deinterlace the current field.</summary>
   </member>
   <member name="VMRDeinterlaceCaps.DeinterlaceTechnology">
-    <summary>
-      <para>Bitwise combination of flags from the <see cref="VMRDeinterlaceTech" /> enumeration type. These flags are used to describe the deinterlacing algorithm.</para>
-    </summary>
+    <summary>Bitwise combination of flags from the <see cref="VMRDeinterlaceTech" /> enumeration type. These flags are used to describe the deinterlacing algorithm.</summary>
   </member>
 </doc>

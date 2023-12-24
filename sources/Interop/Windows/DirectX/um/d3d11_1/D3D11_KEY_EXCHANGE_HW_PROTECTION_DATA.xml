@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA">
-    <summary>
-      <para>Represents key exchange data for hardware content protection.</para>
-    </summary>
-    <remarks>
-      <para>A pointer to this structure is passed in the <i>pData</i> parameter of <see cref="ID3D11VideoContext.NegotiateCryptoSessionKeyExchange" /> method when the <see cref="ID3D11CryptoSession" /> is creating using the <b>D3D11_KEY_EXCHANGE_HW_PROTECTION</b> key exchange type.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Represents key exchange data for hardware content protection.</summary>
   </member>
   <member name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.HWProtectionFunctionID">
-    <summary>
-      <para>The function ID of the DRM command. The values and meanings of the function ID are defined by the DRM specification.</para>
-    </summary>
+    <summary>The function ID of the DRM command. The values and meanings of the function ID are defined by the DRM specification.</summary>
   </member>
   <member name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.pInputData">
-    <summary>
-      <para>Pointer to a buffer containing a <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA" /> structure that specifies memory reserved for IHV use and the input data for the DRM command.</para>
-    </summary>
+    <summary>Pointer to a buffer containing a <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_INPUT_DATA" /> structure that specifies memory reserved for IHV use and the input data for the DRM command.</summary>
   </member>
   <member name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.pOutputData">
-    <summary>
-      <para>Pointer to a buffer containing a <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA" /> structure that specifies memory reserved for IHV use and the input data for the DRM command.</para>
-    </summary>
+    <summary>Pointer to a buffer containing a <see cref="D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA" /> structure that specifies memory reserved for IHV use and the input data for the DRM command.</summary>
   </member>
   <member name="D3D11_KEY_EXCHANGE_HW_PROTECTION_DATA.Status">
-    <summary>
-      <para>The result of the hardware DRM command.</para>
-    </summary>
+    <summary>The result of the hardware DRM command.</summary>
   </member>
 </doc>

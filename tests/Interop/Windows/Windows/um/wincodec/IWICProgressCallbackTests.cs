@@ -19,32 +19,4 @@ public static unsafe partial class IWICProgressCallbackTests
     {
         Assert.That(typeof(IWICProgressCallback).GUID, Is.EqualTo(IID_IWICProgressCallback));
     }
-
-    /// <summary>Validates that the <see cref="IWICProgressCallback" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICProgressCallback>(), Is.EqualTo(sizeof(IWICProgressCallback)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICProgressCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICProgressCallback).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICProgressCallback" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICProgressCallback), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICProgressCallback), Is.EqualTo(4));
-        }
-    }
 }

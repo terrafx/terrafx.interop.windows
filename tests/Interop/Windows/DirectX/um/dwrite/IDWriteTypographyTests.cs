@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteTypographyTests
     {
         Assert.That(typeof(IDWriteTypography).GUID, Is.EqualTo(IID_IDWriteTypography));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteTypography" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteTypography>(), Is.EqualTo(sizeof(IDWriteTypography)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteTypography" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteTypography).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteTypography" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteTypography), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteTypography), Is.EqualTo(4));
-        }
-    }
 }

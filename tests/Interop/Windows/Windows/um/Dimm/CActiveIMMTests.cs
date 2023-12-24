@@ -19,25 +19,4 @@ public static unsafe partial class CActiveIMMTests
     {
         Assert.That(typeof(CActiveIMM).GUID, Is.EqualTo(IID_CActiveIMM));
     }
-
-    /// <summary>Validates that the <see cref="CActiveIMM" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CActiveIMM>(), Is.EqualTo(sizeof(CActiveIMM)));
-    }
-
-    /// <summary>Validates that the <see cref="CActiveIMM" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CActiveIMM).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CActiveIMM" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CActiveIMM), Is.EqualTo(1));
-    }
 }

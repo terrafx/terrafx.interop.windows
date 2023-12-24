@@ -3,139 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIDevice4.OfferResources1">
-    <summary>
-      <para>Allows the operating system to free the video memory of resources, including both discarding the content and de-committing the memory.</para>
-    </summary>
-    <param name="NumResources">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of resources in the <i>ppResources</i> argument array.</para>
-    </param>
-    <param name="ppResources">
-      <para>Type: <b>IDXGIResource*</b></para>
-      <para>An array of pointers to <see cref="IDXGIResource" /> interfaces for the resources to offer.</para>
-    </param>
-    <param name="Priority">
-      <para>Type: <b>DXGI_OFFER_RESOURCE_PRIORITY</b></para>
-      <para>A <see cref="DXGI_OFFER_RESOURCE_PRIORITY" />-typed value that indicates how valuable data is.</para>
-    </param>
-    <param name="Flags">
-      <para>Type: <b>UINT</b></para>
-      <para>Specifies the <see cref="DXGI_OFFER_RESOURCE_FLAGS" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code, which can include E_INVALIDARG if a resource in the array, or the priority, is invalid.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>OfferResources1</b> (an extension of the original <see cref="IDXGIDevice2.OfferResources" /> API) enables D3D based applications to allow de-committing of an allocation’s backing store to reduce system commit under low memory conditions.
-A de-committed allocation cannot be reused, so opting in to the new DXGI_OFFER_RESOURCE_FLAG_ALLOW_DECOMMIT flag means the new reclaim results must be properly handled. Refer to the flag descriptions in <see cref="DXGI_RECLAIM_RESOURCE_RESULTS" /> and the Example below.</para>
-      <para>
-        <b>OfferResources1</b> and <see cref="ReclaimResources1" /> may <i>not</i> be used interchangeably with <see cref="OfferResources" /> and <see cref="ReclaimResources" />.</para>
-      <para>The priority value that the  <i>Priority</i> parameter specifies describes how valuable the caller considers the content to be.  The operating system uses the priority value to discard resources in order of priority. The operating system discards a resource that is offered with low priority before it discards a resource that is  offered with a higher priority.</para>
-      <para>If you call <b>OfferResources1</b> to offer a resource while the resource is bound to the pipeline, the resource is unbound.  You cannot call <b>OfferResources1</b> on a resource that is mapped.  After you offer a resource, the resource cannot be mapped or bound to the pipeline until you call the <see cref="ReclaimResources1" /> method to reclaim the resource. You cannot call <b>OfferResources1</b> to offer immutable resources.</para>
-      <para>To offer shared resources, call <see cref="OfferResources1" /> on only one of the sharing devices.  To ensure exclusive access to the resources, you must use an <see cref="IDXGIKeyedMutex" /> object and then call <b>OfferResources1</b> only while you hold the mutex. In fact, you can't offer shared resources unless you use <b>IDXGIKeyedMutex</b> because offering shared resources without using <b>IDXGIKeyedMutex</b> isn't supported.</para>
-      <para>The user mode display driver might not immediately offer the resources that you specified in a call to <b>OfferResources1</b>. The driver can postpone offering them until the next call to <see cref="IDXGISwapChain.Present" />, <see cref="IDXGISwapChain1.Present1" />, or <see cref="ID3D11DeviceContext.Flush" />.</para>
-      <h4>Examples</h4>
-      <para>A UWP based application is being suspended to the background and wishes to offer its graphics resources back to the system, in case another application wants them. The application will reclaim these resources when it gets resumed. The application also realizes that the total available system commit is small on this platform, and is willing to allow its resources to be removed from the system commit. If the reclaim process fails because the system is out of memory, the application handles the error condition.</para>
-      <code>struct Texture
-{
-    UINT32 Width;
-    UINT32 Height;
-    UINT32 Mips;
-    ID3D11Texture2D* pResource;
-};
-
-void Application.OfferInterfaceResources(ID3D11Device* pD3D11Device)
-{
-    CComPtr&lt;IDXGIDevice4&gt; pDXGIDevice;
-    ThrowIfFailed(pD3D11Device-&gt;QueryInterface(&amp;amp;amp;amp;amp;amp;amp;pDXGIDevice));
-
-    for(Texture&amp;amp;amp;amp;amp;amp;amp; t : m_Textures)
-    {
-        CComPtr&lt;IDXGIResource&gt; pDXGIResource;
-        ThrowIfFailed(t.pResource-&gt;QueryInterface(&amp;amp;amp;amp;amp;amp;amp;pDXGIResource));
-        ThrowIfFailed(pDXGIDevice-&gt;OfferResources1(1, &amp;amp;amp;amp;amp;amp;amp;pDXGIResource, DXGI_OFFER_RESOURCE_PRIORITY_NORMAL,
-                                            DXGI_OFFER_RESOURCE_FLAG_ALLOW_DECOMMIT));
-    }
-}
-
-void Application.ReclaimInterfaceResources (ID3D11Device* pD3D11Device)
-{
-    CComPtr&lt;IDXGIDevice4&gt; pDXGIDevice;
-    ThrowIfFailed(pD3D11Device-&gt;QueryInterface(&amp;amp;amp;amp;amp;amp;amp;pDXGIDevice));
-
-    for(Texture&amp;amp;amp;amp;amp;amp;amp; t : m_Textures)
-    {
-        CComPtr&lt;IDXGIResource&gt; pDXGIResource;
-        ThrowIfFailed(t.pResource-&gt;QueryInterface(&amp;amp;amp;amp;amp;amp;amp;pDXGIResource));
-
-        DXGI_RECLAIM_RESOURCE_RESULTS Result;
-        ThrowIfFailed(pDXGIDevice-&gt;ReclaimResources1(1, &amp;amp;amp;amp;amp;amp;amp;pDXGIResource, &amp;amp;amp;amp;amp;amp;amp;Result));
-
-        // If the surface lost its backing commitment, it must be recreated.
-
-        if(Result == DXGI_RECLAIM_RESOURCE_RESULT_NOT_COMMITTED)
-        {
-            t.pResource-&gt;Release();
-            t.pResource = CreateTexture(t.Width, t.Height, t.Mips);
-        }
-
-        // If the surface lost its content (either because it was discarded, or recreated
-        // due to lost commitment), we must regenerate the content.
-
-        if(Result != DXGI_RECLAIM_RESOURCE_RESULT_OK)
-        {
-            PopulateContent(t);
-        }
-    }
-}
-
-</code>
-    </remarks>
-    <seealso cref="DXGI_RECLAIM_RESOURCE_RESULTS" />
-    <seealso cref="IDXGIDevice4" />
+    <summary>Allows the operating system to free the video memory of resources, including both discarding the content and de-committing the memory.</summary>
+    <param name="NumResources">The number of resources in the <i>ppResources</i> argument array.</param>
+    <param name="ppResources">An array of pointers to <see cref="IDXGIResource" /> interfaces for the resources to offer.</param>
+    <param name="Priority">A <see cref="DXGI_OFFER_RESOURCE_PRIORITY" />-typed value that indicates how valuable data is.</param>
+    <param name="Flags">Specifies the <see cref="DXGI_OFFER_RESOURCE_FLAGS" />.</param>
+    <returns>This method returns an HRESULT success or error code, which can include E_INVALIDARG if a resource in the array, or the priority, is invalid.</returns>
   </member>
   <member name="IDXGIDevice4.ReclaimResources1">
-    <summary>
-      <para>Restores access to resources that were previously offered by calling <see cref="IDXGIDevice4.OfferResources1" />.</para>
-    </summary>
-    <param name="NumResources">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of resources in the <i>ppResources</i> argument and <i>pResults</i> argument arrays.</para>
-    </param>
-    <param name="ppResources">
-      <para>Type: <b>IDXGIResource*</b></para>
-      <para>An array of pointers to <see cref="IDXGIResource" /> interfaces for the resources to reclaim.</para>
-    </param>
-    <param name="pResults">
-      <para>Type: <b><see cref="DXGI_RECLAIM_RESOURCE_RESULTS" />*</b></para>
-      <para>A pointer to an array that receives <see cref="DXGI_RECLAIM_RESOURCE_RESULTS" /> values. Each value in the array corresponds to a resource at the same index that the <i>ppResources</i> parameter specifies.  The caller can pass in <b>NULL</b>, if the caller intends to fill the resources with new content regardless of whether the old content was discarded.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code, including E_INVALIDARG if the resources are invalid.</para>
-    </returns>
-    <remarks>
-      <para>After you call <see cref="OfferResources1" /> to offer one or more resources, you must call <b>ReclaimResources1</b> before you can use those resources again.</para>
-      <para>To reclaim shared resources, call <b>ReclaimResources1</b> only on one of the sharing devices.  To ensure exclusive access to the resources, you must use an <see cref="IDXGIKeyedMutex" /> object and then call <b>ReclaimResources1</b> only while you hold the mutex.</para>
-    </remarks>
-    <seealso cref="IDXGIDevice4" />
-    <seealso cref="ReclaimResources" />
+    <summary>Restores access to resources that were previously offered by calling <see cref="IDXGIDevice4.OfferResources1" />.</summary>
+    <param name="NumResources">The number of resources in the <i>ppResources</i> argument and <i>pResults</i> argument arrays.</param>
+    <param name="ppResources">An array of pointers to <see cref="IDXGIResource" /> interfaces for the resources to reclaim.</param>
+    <param name="pResults">A pointer to an array that receives <see cref="DXGI_RECLAIM_RESOURCE_RESULTS" /> values. Each value in the array corresponds to a resource at the same index that the <i>ppResources</i> parameter specifies. The caller can pass in <b>NULL</b>, if the caller intends to fill the resources with new content regardless of whether the old content was discarded.</param>
+    <returns>This method returns an HRESULT success or error code, including E_INVALIDARG if the resources are invalid.</returns>
   </member>
   <member name="IDXGIDevice4">
-    <summary>
-      <para>This interface provides updated methods to offer and reclaim resources.</para>
-    </summary>
-    <remarks>
-      <para>The Direct3D create device functions return a Direct3D device object. This Direct3D device object implements the <see cref="IUnknown" /> interface. You can query this Direct3D device object for the device's
-corresponding <b>IDXGIDevice4</b> interface. To retrieve the <b>IDXGIDevice4</b>  interface of a Direct3D device, use the following code:</para>
-      <code>IDXGIDevice4 * pDXGIDevice;
-hr = g_pd3dDevice-&gt;QueryInterface(__uuidof(IDXGIDevice4), (void **)&amp;amp;amp;amp;amp;amp;pDXGIDevice);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIDevice2" />
-    <seealso cref="IDXGIDevice3" />
+    <summary>This interface provides updated methods to offer and reclaim resources.</summary>
   </member>
 </doc>

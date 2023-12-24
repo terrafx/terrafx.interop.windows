@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SUBRESOURCE_INFO">
+    <summary>Describes subresource data.</summary>
+  </member>
+  <member name="D3D12_SUBRESOURCE_INFO.Offset">
+    <summary>Offset, in bytes, between the start of the parent resource and this subresource.</summary>
+  </member>
+  <member name="D3D12_SUBRESOURCE_INFO.RowPitch">
+    <summary>The row pitch, or width, or physical size, in bytes, of the subresource data.</summary>
+  </member>
+  <member name="D3D12_SUBRESOURCE_INFO.DepthPitch">
+    <summary>The depth pitch, or width, or physical size, in bytes, of the subresource data.</summary>
+  </member>
+</doc>

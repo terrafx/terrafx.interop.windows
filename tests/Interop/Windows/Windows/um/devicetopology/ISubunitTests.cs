@@ -19,32 +19,4 @@ public static unsafe partial class ISubunitTests
     {
         Assert.That(typeof(ISubunit).GUID, Is.EqualTo(IID_ISubunit));
     }
-
-    /// <summary>Validates that the <see cref="ISubunit" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISubunit>(), Is.EqualTo(sizeof(ISubunit)));
-    }
-
-    /// <summary>Validates that the <see cref="ISubunit" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISubunit).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISubunit" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISubunit), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISubunit), Is.EqualTo(4));
-        }
-    }
 }

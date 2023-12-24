@@ -21,32 +21,4 @@ public static unsafe partial class IAppxContentGroupsEnumeratorTests
     {
         Assert.That(typeof(IAppxContentGroupsEnumerator).GUID, Is.EqualTo(IID_IAppxContentGroupsEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IAppxContentGroupsEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxContentGroupsEnumerator>(), Is.EqualTo(sizeof(IAppxContentGroupsEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxContentGroupsEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxContentGroupsEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxContentGroupsEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxContentGroupsEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxContentGroupsEnumerator), Is.EqualTo(4));
-        }
-    }
 }

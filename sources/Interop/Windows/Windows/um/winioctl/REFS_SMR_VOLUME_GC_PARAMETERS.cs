@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS"]/*' />
-public unsafe partial struct REFS_SMR_VOLUME_GC_PARAMETERS
+public partial struct REFS_SMR_VOLUME_GC_PARAMETERS
 {
     /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -32,5 +34,12 @@ public unsafe partial struct REFS_SMR_VOLUME_GC_PARAMETERS
 
     /// <include file='REFS_SMR_VOLUME_GC_PARAMETERS.xml' path='doc/member[@name="REFS_SMR_VOLUME_GC_PARAMETERS.Unused"]/*' />
     [NativeTypeName("DWORDLONG[8]")]
-    public fixed ulong Unused[8];
+    public _Unused_e__FixedBuffer Unused;
+
+    /// <include file='_Unused_e__FixedBuffer.xml' path='doc/member[@name="_Unused_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _Unused_e__FixedBuffer
+    {
+        public ulong e0;
+    }
 }

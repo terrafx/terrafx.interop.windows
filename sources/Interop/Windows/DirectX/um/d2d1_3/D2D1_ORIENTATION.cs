@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_ORIENTATION.xml' path='doc/member[@name="D2D1_ORIENTATION"]/*' />
-public enum D2D1_ORIENTATION : uint
+public enum D2D1_ORIENTATION
 {
     /// <include file='D2D1_ORIENTATION.xml' path='doc/member[@name="D2D1_ORIENTATION.D2D1_ORIENTATION_DEFAULT"]/*' />
     D2D1_ORIENTATION_DEFAULT = 1,
@@ -33,5 +33,5 @@ public enum D2D1_ORIENTATION : uint
     D2D1_ORIENTATION_ROTATE_CLOCKWISE90 = 8,
 
     /// <include file='D2D1_ORIENTATION.xml' path='doc/member[@name="D2D1_ORIENTATION.D2D1_ORIENTATION_FORCE_DWORD"]/*' />
-    D2D1_ORIENTATION_FORCE_DWORD = 0xffffffff,
+    D2D1_ORIENTATION_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

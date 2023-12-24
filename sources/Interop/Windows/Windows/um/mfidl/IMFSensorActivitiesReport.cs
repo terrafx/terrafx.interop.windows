@@ -27,7 +27,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSensorActivitiesReport*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivitiesReport*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint>)(lpVtbl[1]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivitiesReport*, uint>)(lpVtbl[1]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint>)(lpVtbl[2]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivitiesReport*, uint>)(lpVtbl[2]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSensorActivitiesReport.xml' path='doc/member[@name="IMFSensorActivitiesReport.GetCount"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
     [VtblIndex(3)]
     public HRESULT GetCount([NativeTypeName("ULONG *")] uint* pcCount)
     {
-        return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint*, int>)(lpVtbl[3]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), pcCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivitiesReport*, uint*, int>)(lpVtbl[3]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), pcCount);
     }
 
     /// <include file='IMFSensorActivitiesReport.xml' path='doc/member[@name="IMFSensorActivitiesReport.GetActivityReport"]/*' />
@@ -61,15 +61,15 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
     [VtblIndex(4)]
     public HRESULT GetActivityReport([NativeTypeName("ULONG")] uint Index, IMFSensorActivityReport** sensorActivityReport)
     {
-        return ((delegate* unmanaged<IMFSensorActivitiesReport*, uint, IMFSensorActivityReport**, int>)(lpVtbl[4]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), Index, sensorActivityReport);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivitiesReport*, uint, IMFSensorActivityReport**, int>)(lpVtbl[4]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), Index, sensorActivityReport);
     }
 
     /// <include file='IMFSensorActivitiesReport.xml' path='doc/member[@name="IMFSensorActivitiesReport.GetActivityReportByDeviceName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport)
+    public HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] char* SymbolicName, IMFSensorActivityReport** sensorActivityReport)
     {
-        return ((delegate* unmanaged<IMFSensorActivitiesReport*, ushort*, IMFSensorActivityReport**, int>)(lpVtbl[5]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), SymbolicName, sensorActivityReport);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorActivitiesReport*, char*, IMFSensorActivityReport**, int>)(lpVtbl[5]))((IMFSensorActivitiesReport*)Unsafe.AsPointer(ref this), SymbolicName, sensorActivityReport);
     }
 
     public interface Interface : IUnknown.Interface
@@ -81,28 +81,28 @@ public unsafe partial struct IMFSensorActivitiesReport : IMFSensorActivitiesRepo
         HRESULT GetActivityReport([NativeTypeName("ULONG")] uint Index, IMFSensorActivityReport** sensorActivityReport);
 
         [VtblIndex(5)]
-        HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] ushort* SymbolicName, IMFSensorActivityReport** sensorActivityReport);
+        HRESULT GetActivityReportByDeviceName([NativeTypeName("LPCWSTR")] char* SymbolicName, IMFSensorActivityReport** sensorActivityReport);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCount;
 
         [NativeTypeName("HRESULT (ULONG, IMFSensorActivityReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFSensorActivityReport**, int> GetActivityReport;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFSensorActivityReport**, int> GetActivityReport;
 
         [NativeTypeName("HRESULT (LPCWSTR, IMFSensorActivityReport **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMFSensorActivityReport**, int> GetActivityReportByDeviceName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IMFSensorActivityReport**, int> GetActivityReportByDeviceName;
     }
 }

@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WBEM_BACKUP_RESTORE_FLAGS">
-    <summary>
-      <para>Contains flags used for the <see cref="IWbemBackupRestore.Restore" /> method and the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa391421(v=vs.85)">IWbemBackupRestoreEx.Restore</a> method.</para>
-    </summary>
+    <summary>Contains flags used for the <see cref="IWbemBackupRestore.Restore" /> method and the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa391421(v=vs.85)">IWbemBackupRestoreEx.Restore</a> method.</summary>
   </member>
   <member name="WBEM_BACKUP_RESTORE_FLAGS.WBEM_FLAG_BACKUP_RESTORE_DEFAULT">
-    <summary>
-      <para>Does not shut down active clients; returns an error if there are any.</para>
-    </summary>
+    <summary>Does not shut down active clients; returns an error if there are any.</summary>
   </member>
   <member name="WBEM_BACKUP_RESTORE_FLAGS.WBEM_FLAG_BACKUP_RESTORE_FORCE_SHUTDOWN">
-    <summary>
-      <para>Shuts down any active clients.</para>
-    </summary>
+    <summary>Shuts down any active clients.</summary>
   </member>
 </doc>

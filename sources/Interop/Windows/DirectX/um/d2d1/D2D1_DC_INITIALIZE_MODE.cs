@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_DC_INITIALIZE_MODE.xml' path='doc/member[@name="D2D1_DC_INITIALIZE_MODE"]/*' />
-public enum D2D1_DC_INITIALIZE_MODE : uint
+public enum D2D1_DC_INITIALIZE_MODE
 {
     /// <include file='D2D1_DC_INITIALIZE_MODE.xml' path='doc/member[@name="D2D1_DC_INITIALIZE_MODE.D2D1_DC_INITIALIZE_MODE_COPY"]/*' />
     D2D1_DC_INITIALIZE_MODE_COPY = 0,
@@ -15,5 +15,5 @@ public enum D2D1_DC_INITIALIZE_MODE : uint
     D2D1_DC_INITIALIZE_MODE_CLEAR = 1,
 
     /// <include file='D2D1_DC_INITIALIZE_MODE.xml' path='doc/member[@name="D2D1_DC_INITIALIZE_MODE.D2D1_DC_INITIALIZE_MODE_FORCE_DWORD"]/*' />
-    D2D1_DC_INITIALIZE_MODE_FORCE_DWORD = 0xffffffff,
+    D2D1_DC_INITIALIZE_MODE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

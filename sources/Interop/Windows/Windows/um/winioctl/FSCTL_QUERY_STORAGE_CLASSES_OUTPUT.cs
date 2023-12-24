@@ -48,7 +48,7 @@ public partial struct FSCTL_QUERY_STORAGE_CLASSES_OUTPUT
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

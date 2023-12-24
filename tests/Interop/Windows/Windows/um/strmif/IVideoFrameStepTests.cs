@@ -19,32 +19,4 @@ public static unsafe partial class IVideoFrameStepTests
     {
         Assert.That(typeof(IVideoFrameStep).GUID, Is.EqualTo(IID_IVideoFrameStep));
     }
-
-    /// <summary>Validates that the <see cref="IVideoFrameStep" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVideoFrameStep>(), Is.EqualTo(sizeof(IVideoFrameStep)));
-    }
-
-    /// <summary>Validates that the <see cref="IVideoFrameStep" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVideoFrameStep).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVideoFrameStep" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVideoFrameStep), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVideoFrameStep), Is.EqualTo(4));
-        }
-    }
 }

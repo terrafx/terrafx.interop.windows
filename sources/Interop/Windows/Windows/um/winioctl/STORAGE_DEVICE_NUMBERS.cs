@@ -40,7 +40,7 @@ public partial struct STORAGE_DEVICE_NUMBERS
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

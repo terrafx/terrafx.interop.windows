@@ -21,32 +21,4 @@ public static unsafe partial class IVisualTreeService2Tests
     {
         Assert.That(typeof(IVisualTreeService2).GUID, Is.EqualTo(IID_IVisualTreeService2));
     }
-
-    /// <summary>Validates that the <see cref="IVisualTreeService2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVisualTreeService2>(), Is.EqualTo(sizeof(IVisualTreeService2)));
-    }
-
-    /// <summary>Validates that the <see cref="IVisualTreeService2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVisualTreeService2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVisualTreeService2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVisualTreeService2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVisualTreeService2), Is.EqualTo(4));
-        }
-    }
 }

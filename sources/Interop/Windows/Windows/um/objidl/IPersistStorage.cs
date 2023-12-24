@@ -25,7 +25,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPersistStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, Guid*, void**, int>)(lpVtbl[0]))((IPersistStorage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPersistStorage*, uint>)(lpVtbl[1]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, uint>)(lpVtbl[1]))((IPersistStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPersistStorage*, uint>)(lpVtbl[2]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, uint>)(lpVtbl[2]))((IPersistStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IPersist.GetClassID" />
@@ -51,7 +51,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetClassID([NativeTypeName("CLSID *")] Guid* pClassID)
     {
-        return ((delegate* unmanaged<IPersistStorage*, Guid*, int>)(lpVtbl[3]))((IPersistStorage*)Unsafe.AsPointer(ref this), pClassID);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, Guid*, int>)(lpVtbl[3]))((IPersistStorage*)Unsafe.AsPointer(ref this), pClassID);
     }
 
     /// <include file='IPersistStorage.xml' path='doc/member[@name="IPersistStorage.IsDirty"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [VtblIndex(4)]
     public HRESULT IsDirty()
     {
-        return ((delegate* unmanaged<IPersistStorage*, int>)(lpVtbl[4]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, int>)(lpVtbl[4]))((IPersistStorage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPersistStorage.xml' path='doc/member[@name="IPersistStorage.InitNew"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [VtblIndex(5)]
     public HRESULT InitNew(IStorage* pStg)
     {
-        return ((delegate* unmanaged<IPersistStorage*, IStorage*, int>)(lpVtbl[5]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, IStorage*, int>)(lpVtbl[5]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
     }
 
     /// <include file='IPersistStorage.xml' path='doc/member[@name="IPersistStorage.Load"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [VtblIndex(6)]
     public HRESULT Load(IStorage* pStg)
     {
-        return ((delegate* unmanaged<IPersistStorage*, IStorage*, int>)(lpVtbl[6]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, IStorage*, int>)(lpVtbl[6]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStg);
     }
 
     /// <include file='IPersistStorage.xml' path='doc/member[@name="IPersistStorage.Save"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [VtblIndex(7)]
     public HRESULT Save(IStorage* pStgSave, BOOL fSameAsLoad)
     {
-        return ((delegate* unmanaged<IPersistStorage*, IStorage*, BOOL, int>)(lpVtbl[7]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgSave, fSameAsLoad);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, IStorage*, BOOL, int>)(lpVtbl[7]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgSave, fSameAsLoad);
     }
 
     /// <include file='IPersistStorage.xml' path='doc/member[@name="IPersistStorage.SaveCompleted"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [VtblIndex(8)]
     public HRESULT SaveCompleted(IStorage* pStgNew)
     {
-        return ((delegate* unmanaged<IPersistStorage*, IStorage*, int>)(lpVtbl[8]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgNew);
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, IStorage*, int>)(lpVtbl[8]))((IPersistStorage*)Unsafe.AsPointer(ref this), pStgNew);
     }
 
     /// <include file='IPersistStorage.xml' path='doc/member[@name="IPersistStorage.HandsOffStorage"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
     [VtblIndex(9)]
     public HRESULT HandsOffStorage()
     {
-        return ((delegate* unmanaged<IPersistStorage*, int>)(lpVtbl[9]))((IPersistStorage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPersistStorage*, int>)(lpVtbl[9]))((IPersistStorage*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IPersist.Interface
@@ -127,33 +127,33 @@ public unsafe partial struct IPersistStorage : IPersistStorage.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetClassID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetClassID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsDirty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsDirty;
 
         [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStorage*, int> InitNew;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorage*, int> InitNew;
 
         [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStorage*, int> Load;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorage*, int> Load;
 
         [NativeTypeName("HRESULT (IStorage *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStorage*, BOOL, int> Save;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorage*, BOOL, int> Save;
 
         [NativeTypeName("HRESULT (IStorage *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStorage*, int> SaveCompleted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStorage*, int> SaveCompleted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> HandsOffStorage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> HandsOffStorage;
     }
 }

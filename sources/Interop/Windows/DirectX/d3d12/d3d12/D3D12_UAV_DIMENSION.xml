@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_UAV_DIMENSION">
+    <summary>Identifies unordered-access view options.</summary>
+  </member>
+  <member name="D3D12_UAV_DIMENSION.D3D12_UAV_DIMENSION_UNKNOWN">
+    <summary>The view type is unknown.</summary>
+  </member>
+  <member name="D3D12_UAV_DIMENSION.D3D12_UAV_DIMENSION_BUFFER">
+    <summary>View the resource as a buffer.</summary>
+  </member>
+  <member name="D3D12_UAV_DIMENSION.D3D12_UAV_DIMENSION_TEXTURE1D">
+    <summary>View the resource as a 1D texture.</summary>
+  </member>
+  <member name="D3D12_UAV_DIMENSION.D3D12_UAV_DIMENSION_TEXTURE1DARRAY">
+    <summary>View the resource as a 1D texture array.</summary>
+  </member>
+  <member name="D3D12_UAV_DIMENSION.D3D12_UAV_DIMENSION_TEXTURE2D">
+    <summary>View the resource as a 2D texture.</summary>
+  </member>
+  <member name="D3D12_UAV_DIMENSION.D3D12_UAV_DIMENSION_TEXTURE2DARRAY">
+    <summary>View the resource as a 2D texture array.</summary>
+  </member>
+  <member name="D3D12_UAV_DIMENSION.D3D12_UAV_DIMENSION_TEXTURE3D">
+    <summary>View the resource as a 3D texture array.</summary>
+  </member>
+</doc>

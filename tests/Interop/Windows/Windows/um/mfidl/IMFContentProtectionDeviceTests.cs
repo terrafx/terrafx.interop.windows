@@ -21,32 +21,4 @@ public static unsafe partial class IMFContentProtectionDeviceTests
     {
         Assert.That(typeof(IMFContentProtectionDevice).GUID, Is.EqualTo(IID_IMFContentProtectionDevice));
     }
-
-    /// <summary>Validates that the <see cref="IMFContentProtectionDevice" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFContentProtectionDevice>(), Is.EqualTo(sizeof(IMFContentProtectionDevice)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFContentProtectionDevice" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFContentProtectionDevice).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFContentProtectionDevice" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFContentProtectionDevice), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFContentProtectionDevice), Is.EqualTo(4));
-        }
-    }
 }

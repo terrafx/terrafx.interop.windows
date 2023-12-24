@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RAYTRACING_PIPELINE_CONFIG">
+    <summary>A state subobject that represents a raytracing pipeline configuration.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_PIPELINE_CONFIG.MaxTraceRecursionDepth">
+    <summary>Limit on ray recursion for the raytracing pipeline. It must be in the range of 0 to 31. Below the maximum recursion depth, shader invocations such as closest hit or miss shaders can call <b>TraceRay</b> any number of times. At the maximum recursion depth, <b>TraceRay</b> calls result in the device going into removed state.</summary>
+  </member>
+</doc>

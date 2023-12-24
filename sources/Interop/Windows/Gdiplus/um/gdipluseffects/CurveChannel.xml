@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CurveChannel">
+    <summary>The <b>CurveChannel</b> enumeration specifies which color channels are affected by a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-colorcurve">ColorCurve</a> bitmap adjustment.</summary>
+  </member>
+  <member name="CurveChannel.CurveChannelAll">
+    <summary>Specifies that the color adjustment applies to all channels.</summary>
+  </member>
+  <member name="CurveChannel.CurveChannelRed">
+    <summary>Specifies that the color adjustment applies only to the red channel.</summary>
+  </member>
+  <member name="CurveChannel.CurveChannelGreen">
+    <summary>Specifies that the color adjustment applies only to the green channel.</summary>
+  </member>
+  <member name="CurveChannel.CurveChannelBlue">
+    <summary>Specifies that the color adjustment applies only to the blue channel.</summary>
+  </member>
+</doc>

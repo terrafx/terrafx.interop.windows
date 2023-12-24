@@ -4,25 +4,17 @@
 <doc>
   <member name="AM_GRAPH_CONFIG_RECONNECT_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies how to reconnect filters when dynamically rebuilding the filter graph.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IGraphConfig.Reconnect" />
-    <seealso cref="IPinFlowControl.Block" />
   </member>
   <member name="AM_GRAPH_CONFIG_RECONNECT_FLAGS.AM_GRAPH_CONFIG_RECONNECT_DIRECTCONNECT">
-    <summary>
-      <para>Do not insert additional filters into the graph while reconnecting, aside from any filter explicitly requested.</para>
-    </summary>
+    <summary>Do not insert additional filters into the graph while reconnecting, aside from any filter explicitly requested.</summary>
   </member>
   <member name="AM_GRAPH_CONFIG_RECONNECT_FLAGS.AM_GRAPH_CONFIG_RECONNECT_CACHE_REMOVED_FILTERS">
-    <summary>
-      <para>Place filters removed from the graph into the filter cache.</para>
-    </summary>
+    <summary>Place filters removed from the graph into the filter cache.</summary>
   </member>
   <member name="AM_GRAPH_CONFIG_RECONNECT_FLAGS.AM_GRAPH_CONFIG_RECONNECT_USE_ONLY_CACHED_FILTERS">
-    <summary>
-      <para>When inserting additional filters into the graph, use only filters currently in the filter cache.</para>
-    </summary>
+    <summary>When inserting additional filters into the graph, use only filters currently in the filter cache.</summary>
   </member>
 </doc>

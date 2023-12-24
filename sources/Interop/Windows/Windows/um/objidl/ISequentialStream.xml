@@ -3,94 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISequentialStream.Read">
-    <summary>
-      <para>The <b>Read</b> method reads a specified number of bytes from the stream object into memory, starting at the current seek pointer.</para>
-    </summary>
-    <param name="pv">
-      <para>A pointer to the buffer which the stream data is read into.</para>
-    </param>
-    <param name="cb">
-      <para>The number of bytes of data to read from the stream object.</para>
-    </param>
+    <summary>The <b>Read</b> method reads a specified number of bytes from the stream object into memory, starting at the current seek pointer.</summary>
+    <param name="pv">A pointer to the buffer which the stream data is read into.</param>
+    <param name="cb">The number of bytes of data to read from the stream object.</param>
     <param name="pcbRead">
       <para>A pointer to a <b>ULONG</b> variable that receives the actual number of bytes read from the stream object.</para>
-      <para>
-        <b>Note</b>  The number of bytes read may be zero.</para>
+      <div>
+        <b>Note</b>  The number of bytes read may be zero.</div>
     </param>
     <returns>
       <para>This method can return one of these values.</para>
-      <para>| Return code | Description |
-|----------------|---------------|
-|S_OK | All of the requested data was successfully read from the stream object; the number of bytes requested in <i>cb</i> is the same as the number of bytes returned in <i>pcbRead</i>.|
-|S_FALSE | The value returned in <i>pcbRead</i> is less than the number of bytes requested in <i>cb</i>. This indicates the end of the stream has been reached. The number of bytes read indicates how much of the <i>pv</i> buffer has been filled.|
-|E_PENDING | Asynchronous storage only: Part or all of the data to be read is currently unavailable. |
-|STG_E_ACCESSDENIED | The caller does not have permissions required to read this stream object.|
-|STG_E_INVALIDPOINTER | One of the pointer values is invalid.|
-|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
+      <para>| Return code | Description | |----------------|---------------| |S_OK | All of the requested data was successfully read from the stream object; the number of bytes requested in <i>cb</i> is the same as the number of bytes returned in <i>pcbRead</i>.| |S_FALSE | The value returned in <i>pcbRead</i> is less than the number of bytes requested in <i>cb</i>. This indicates the end of the stream has been reached. The number of bytes read indicates how much of the <i>pv</i> buffer has been filled.| |E_PENDING | Asynchronous storage only: Part or all of the data to be read is currently unavailable. | |STG_E_ACCESSDENIED | The caller does not have permissions required to read this stream object.| |STG_E_INVALIDPOINTER | One of the pointer values is invalid.| |STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|</para>
     </returns>
-    <remarks>
-      <para>This method reads bytes from this stream object into memory. The stream object must be opened in <b>STGM_READ</b> mode. This method adjusts the seek pointer by the actual number of bytes read.</para>
-      <para>The number of bytes actually read is also returned in the <i>pcbRead</i> parameter.</para>
-      <h3>Notes to Callers</h3>
-      <para>The actual number of bytes read can be less than the number of bytes requested if an error occurs or if the end of the stream is reached during the read operation.  The number of bytes returned should always  be compared to the number of bytes requested.  If the number of bytes returned is less than the number of bytes requested, it usually means the <b>Read</b> method attempted to read  past the end of the stream.</para>
-      <para>The application should handle both a returned error  and <b>S_OK</b> return values on end-of-stream read operations.</para>
-    </remarks>
-    <seealso cref="ISequentialStream.Write" />
-    <seealso cref="IStorage.OpenStream" />
-    <seealso cref="IStream" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
-    <seealso cref="STGMOVE" />
   </member>
   <member name="ISequentialStream.Write">
-    <summary>
-      <para>The <b>Write</b> method writes a specified number of bytes into the stream object starting at the current seek pointer.</para>
-    </summary>
-    <param name="pv">
-      <para>A pointer to the buffer that contains the data that is to be written to the stream. A valid pointer must be provided for this parameter even when <i>cb</i> is zero.</para>
-    </param>
-    <param name="cb">
-      <para>The number of bytes of data to attempt to write into the stream. This value can be zero.</para>
-    </param>
-    <param name="pcbWritten">
-      <para>A pointer to a <b>ULONG</b> variable where this method writes the actual number of bytes written to the stream object. The caller can set this pointer to <b>NULL</b>, in which case this method does not provide the actual number of bytes written.</para>
-    </param>
+    <summary>The <b>Write</b> method writes a specified number of bytes into the stream object starting at the current seek pointer.</summary>
+    <param name="pv">A pointer to the buffer that contains the data that is to be written to the stream. A valid pointer must be provided for this parameter even when <i>cb</i> is zero.</param>
+    <param name="cb">The number of bytes of data to attempt to write into the stream. This value can be zero.</param>
+    <param name="pcbWritten">A pointer to a <b>ULONG</b> variable where this method writes the actual number of bytes written to the stream object. The caller can set this pointer to <b>NULL</b>, in which case this method does not provide the actual number of bytes written.</param>
     <returns>
       <para>This method can return one of these values.</para>
-      <para>| Return code | Description |
-|----------------|---------------|
-|S_OK | The data was successfully written to the stream object.|
-|E_PENDING | Asynchronous Storage only: Part or all of the data to be written is currently unavailable.|
-|STG_E_MEDIUMFULL | The write operation failed because there is no space left on the storage device.|
-|STG_E_ACCESSDENIED | The caller does not have the required  permissions for writing to this stream object.|
-|STG_E_CANTSAVE | Data cannot be written for reasons other than improper access or insufficient space.|
-|STG_E_INVALIDPOINTER | One of the pointer values is not valid. The <i>pv</i> parameter must contain a valid pointer even if <i>cb</i> is zero.|
-|STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.|
-|STG_E_WRITEFAULT | The write operation failed due to a disk error. This value is also returned when this method attempts to write to a stream that was opened in simple mode (using the STGM_SIMPLE flag).|</para>
+      <para>| Return code | Description | |----------------|---------------| |S_OK | The data was successfully written to the stream object.| |E_PENDING | Asynchronous Storage only: Part or all of the data to be written is currently unavailable.| |STG_E_MEDIUMFULL | The write operation failed because there is no space left on the storage device.| |STG_E_ACCESSDENIED | The caller does not have the required permissions for writing to this stream object.| |STG_E_CANTSAVE | Data cannot be written for reasons other than improper access or insufficient space.| |STG_E_INVALIDPOINTER | One of the pointer values is not valid. The <i>pv</i> parameter must contain a valid pointer even if <i>cb</i> is zero.| |STG_E_REVERTED | The object has been invalidated by a revert operation above it in the transaction tree.| |STG_E_WRITEFAULT | The write operation failed due to a disk error. This value is also returned when this method attempts to write to a stream that was opened in simple mode (using the STGM_SIMPLE flag).|</para>
     </returns>
-    <remarks>
-      <para>
-        <b>ISequentialStream.Write</b> writes the specified data to a stream object. The seek pointer is adjusted for the number of bytes actually written. The number of bytes actually written is returned in the <i>pcbWritten</i> parameter. If the byte count is zero bytes, the write operation has no effect.</para>
-      <para>If the seek pointer is currently past the end of the stream and the byte count is nonzero, this method increases the size of the stream to the seek pointer and writes the specified bytes starting at the seek pointer. The fill bytes written to the stream are not initialized to any particular value. This is the same as the end-of-file behavior in the MS-DOS FAT file system.</para>
-      <para>With a zero byte count and a seek pointer past the end of the stream, this method does not create the fill bytes to increase the stream to the seek pointer. In this case, you must call the
-<see cref="IStream.SetSize" /> method to increase the size of the stream and write the fill bytes.</para>
-      <para>The <i>pcbWritten</i> parameter can have a value even if an error occurs.</para>
-      <para>In the COM-provided implementation, stream objects are not sparse. Any fill bytes are eventually allocated on the disk and assigned to the stream.</para>
-    </remarks>
-    <seealso cref="ISequentialStream.Read" />
-    <seealso cref="IStorage.OpenStream" />
-    <seealso cref="IStream" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Stg/istream-compound-file-implementation">IStream - Compound File Implementation</seealso>
-    <seealso cref="STGMOVE" />
   </member>
   <member name="ISequentialStream">
-    <summary>
-      <para>The
-<b>ISequentialStream</b> interface supports simplified sequential access to stream objects. The
-<see cref="IStream" /> interface inherits its
-<see cref="Read" /> and
-<see cref="Write" /> methods from
-<b>ISequentialStream</b>.</para>
-    </summary>
-    <seealso cref="IStream" />
+    <summary>The<b>ISequentialStream</b> interface supports simplified sequential access to stream objects. The<see cref="IStream" /> interface inherits its<see cref="Read" /> and<see cref="Write" /> methods from<b>ISequentialStream</b>.</summary>
   </member>
 </doc>

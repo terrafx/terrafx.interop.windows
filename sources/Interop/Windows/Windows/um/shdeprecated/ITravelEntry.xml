@@ -3,60 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITravelEntry.GetPidl">
-    <summary>
-      <para>Deprecated. Gets the pointer to an item identifier list (PIDL) associated with the travel entry.</para>
-    </summary>
-    <param name="ppidl">
-      <para>Type: <b>LPITEMIDLIST*</b></para>
-      <para>The travel entry's PIDL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Gets the pointer to an item identifier list (PIDL) associated with the travel entry.</summary>
+    <param name="ppidl">The travel entry's PIDL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITravelEntry.Invoke">
-    <summary>
-      <para>Deprecated. Invokes the travel entry, navigating to that page.</para>
-    </summary>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>The <see cref="IUnknown" /> representing the browser or frame within which the travel operation generating the entry is taking place.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated. Invokes the travel entry, navigating to that page.</summary>
+    <param name="punk">The <see cref="IUnknown" /> representing the browser or frame within which the travel operation generating the entry is taking place.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITravelEntry.Update">
-    <summary>
-      <para>Deprecated. Updates the travel entry.</para>
-    </summary>
-    <param name="punk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>The <see cref="IUnknown" /> representing the browser or frame within which the travel operation generating the entry is taking place.</para>
-    </param>
+    <summary>Deprecated. Updates the travel entry.</summary>
+    <param name="punk">The <see cref="IUnknown" /> representing the browser or frame within which the travel operation generating the entry is taking place.</param>
     <param name="fIsLocalAnchor">
-      <para>Type: <b>BOOL</b></para>
       <para>The value specifying whether the new entry is a local anchor.</para>
       <h4>TRUE</h4>
       <para>The entry is an anchor link within the same page.</para>
       <h4>FALSE</h4>
       <para>The entry is another page or an anchor on another page.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITravelEntry">
-    <summary>
-      <para>Deprecated. Exposes methods to identify, invoke, and update an individual item in the browser's travel history.</para>
-    </summary>
-    <remarks>
-      <para>Travel entries represented by <b>ITravelEntry</b> are created and maintained internally by the travel log (<see cref="ITravelLog" />). Calling applications rarely use <b>ITravelEntry</b> directly.</para>
-      <para>
-        <b>Note</b>  <b>ITravelEntry</b> may not be supported in versions of Windows later than Windows XP.</para>
-    </remarks>
+    <summary>Deprecated. Exposes methods to identify, invoke, and update an individual item in the browser's travel history.</summary>
   </member>
 </doc>

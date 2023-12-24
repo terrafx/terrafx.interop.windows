@@ -19,25 +19,4 @@ public static unsafe partial class TrayBandSiteServiceTests
     {
         Assert.That(typeof(TrayBandSiteService).GUID, Is.EqualTo(IID_TrayBandSiteService));
     }
-
-    /// <summary>Validates that the <see cref="TrayBandSiteService" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TrayBandSiteService>(), Is.EqualTo(sizeof(TrayBandSiteService)));
-    }
-
-    /// <summary>Validates that the <see cref="TrayBandSiteService" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TrayBandSiteService).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TrayBandSiteService" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TrayBandSiteService), Is.EqualTo(1));
-    }
 }

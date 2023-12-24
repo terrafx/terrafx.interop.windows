@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICPngSrgbProperties">
-    <summary>
-      <para>Specifies the Portable Network Graphics (PNG) sRGB chunk metadata properties.</para>
-    </summary>
+    <summary>Specifies the Portable Network Graphics (PNG) sRGB chunk metadata properties.</summary>
   </member>
   <member name="WICPngSrgbProperties.WICPngSrgbRenderingIntent">
     <summary>
@@ -15,26 +13,24 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>0</description>
           <description>Perceptual</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>1</description>
           <description>Relative colorimetric</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>2</description>
           <description>Saturation</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>3</description>
           <description>Absolute colorimetric</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="WICPngSrgbProperties.WICPngSrgbProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICPngSrgbProperties.WICPngSrgbProperties_FORCE_DWORD"></member>
 </doc>

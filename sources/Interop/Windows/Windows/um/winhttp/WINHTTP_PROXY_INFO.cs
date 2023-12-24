@@ -14,9 +14,9 @@ public unsafe partial struct WINHTTP_PROXY_INFO
 
     /// <include file='WINHTTP_PROXY_INFO.xml' path='doc/member[@name="WINHTTP_PROXY_INFO.lpszProxy"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszProxy;
+    public char* lpszProxy;
 
     /// <include file='WINHTTP_PROXY_INFO.xml' path='doc/member[@name="WINHTTP_PROXY_INFO.lpszProxyBypass"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpszProxyBypass;
+    public char* lpszProxyBypass;
 }

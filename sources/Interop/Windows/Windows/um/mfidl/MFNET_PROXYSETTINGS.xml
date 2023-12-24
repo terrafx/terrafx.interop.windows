@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFNET_PROXYSETTINGS">
-    <summary>
-      <para>Specifies how the default proxy locator will specify the connection settings to a proxy server. The application must set these values in the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfnetsource-proxysettings-property">MFNETSOURCE_PROXYSETTINGS</a> property.</para>
-    </summary>
-    <seealso cref="MFCreateProxyLocator" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/proxy-support-for-network-sources">Proxy Support for Network Sources</seealso>
+    <summary>Specifies how the default proxy locator will specify the connection settings to a proxy server. The application must set these values in the <a href="https://docs.microsoft.com//windows/desktop/medfound/mfnetsource-proxysettings-property">MFNETSOURCE_PROXYSETTINGS</a> property.</summary>
   </member>
   <member name="MFNET_PROXYSETTINGS.MFNET_PROXYSETTING_NONE">
-    <summary>
-      <para>The proxy locator bypasses all addresses.</para>
-    </summary>
+    <summary>The proxy locator bypasses all addresses.</summary>
   </member>
   <member name="MFNET_PROXYSETTINGS.MFNET_PROXYSETTING_MANUAL">
     <summary>
@@ -43,13 +36,9 @@
     </summary>
   </member>
   <member name="MFNET_PROXYSETTINGS.MFNET_PROXYSETTING_AUTO">
-    <summary>
-      <para>The proxy locator automatically discovers proxy servers by using the WinInet auto-proxy detection mechanism.</para>
-    </summary>
+    <summary>The proxy locator automatically discovers proxy servers by using the WinInet auto-proxy detection mechanism.</summary>
   </member>
   <member name="MFNET_PROXYSETTINGS.MFNET_PROXYSETTING_BROWSER">
-    <summary>
-      <para>The proxy locator uses the proxy settings of the browser. By default, the proxy locator sets this value for HTTP.</para>
-    </summary>
+    <summary>The proxy locator uses the proxy settings of the browser. By default, the proxy locator sets this value for HTTP.</summary>
   </member>
 </doc>

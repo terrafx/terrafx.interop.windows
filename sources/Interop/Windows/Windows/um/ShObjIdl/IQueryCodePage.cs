@@ -25,7 +25,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IQueryCodePage*, Guid*, void**, int>)(lpVtbl[0]))((IQueryCodePage*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IQueryCodePage*, Guid*, void**, int>)(lpVtbl[0]))((IQueryCodePage*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IQueryCodePage*, uint>)(lpVtbl[1]))((IQueryCodePage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQueryCodePage*, uint>)(lpVtbl[1]))((IQueryCodePage*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IQueryCodePage*, uint>)(lpVtbl[2]))((IQueryCodePage*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IQueryCodePage*, uint>)(lpVtbl[2]))((IQueryCodePage*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IQueryCodePage.xml' path='doc/member[@name="IQueryCodePage.GetCodePage"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetCodePage(uint* puiCodePage)
     {
-        return ((delegate* unmanaged<IQueryCodePage*, uint*, int>)(lpVtbl[3]))((IQueryCodePage*)Unsafe.AsPointer(ref this), puiCodePage);
+        return ((delegate* unmanaged[MemberFunction]<IQueryCodePage*, uint*, int>)(lpVtbl[3]))((IQueryCodePage*)Unsafe.AsPointer(ref this), puiCodePage);
     }
 
     /// <include file='IQueryCodePage.xml' path='doc/member[@name="IQueryCodePage.SetCodePage"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT SetCodePage(uint uiCodePage)
     {
-        return ((delegate* unmanaged<IQueryCodePage*, uint, int>)(lpVtbl[4]))((IQueryCodePage*)Unsafe.AsPointer(ref this), uiCodePage);
+        return ((delegate* unmanaged[MemberFunction]<IQueryCodePage*, uint, int>)(lpVtbl[4]))((IQueryCodePage*)Unsafe.AsPointer(ref this), uiCodePage);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IQueryCodePage : IQueryCodePage.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCodePage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCodePage;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetCodePage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetCodePage;
     }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFNetCredentialManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialManager*, Guid*, void**, int>)(lpVtbl[0]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFNetCredentialManager*, uint>)(lpVtbl[1]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialManager*, uint>)(lpVtbl[1]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFNetCredentialManager*, uint>)(lpVtbl[2]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialManager*, uint>)(lpVtbl[2]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFNetCredentialManager.xml' path='doc/member[@name="IMFNetCredentialManager.BeginGetCredentials"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
     [VtblIndex(3)]
     public HRESULT BeginGetCredentials(MFNetCredentialManagerGetParam* pParam, IMFAsyncCallback* pCallback, IUnknown* pState)
     {
-        return ((delegate* unmanaged<IMFNetCredentialManager*, MFNetCredentialManagerGetParam*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pParam, pCallback, pState);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialManager*, MFNetCredentialManagerGetParam*, IMFAsyncCallback*, IUnknown*, int>)(lpVtbl[3]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pParam, pCallback, pState);
     }
 
     /// <include file='IMFNetCredentialManager.xml' path='doc/member[@name="IMFNetCredentialManager.EndGetCredentials"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
     [VtblIndex(4)]
     public HRESULT EndGetCredentials(IMFAsyncResult* pResult, IMFNetCredential** ppCred)
     {
-        return ((delegate* unmanaged<IMFNetCredentialManager*, IMFAsyncResult*, IMFNetCredential**, int>)(lpVtbl[4]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pResult, ppCred);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialManager*, IMFAsyncResult*, IMFNetCredential**, int>)(lpVtbl[4]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pResult, ppCred);
     }
 
     /// <include file='IMFNetCredentialManager.xml' path='doc/member[@name="IMFNetCredentialManager.SetGood"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
     [VtblIndex(5)]
     public HRESULT SetGood(IMFNetCredential* pCred, BOOL fGood)
     {
-        return ((delegate* unmanaged<IMFNetCredentialManager*, IMFNetCredential*, BOOL, int>)(lpVtbl[5]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pCred, fGood);
+        return ((delegate* unmanaged[MemberFunction]<IMFNetCredentialManager*, IMFNetCredential*, BOOL, int>)(lpVtbl[5]))((IMFNetCredentialManager*)Unsafe.AsPointer(ref this), pCred, fGood);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IMFNetCredentialManager : IMFNetCredentialManager.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFNetCredentialManagerGetParam *, IMFAsyncCallback *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFNetCredentialManagerGetParam*, IMFAsyncCallback*, IUnknown*, int> BeginGetCredentials;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFNetCredentialManagerGetParam*, IMFAsyncCallback*, IUnknown*, int> BeginGetCredentials;
 
         [NativeTypeName("HRESULT (IMFAsyncResult *, IMFNetCredential **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncResult*, IMFNetCredential**, int> EndGetCredentials;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncResult*, IMFNetCredential**, int> EndGetCredentials;
 
         [NativeTypeName("HRESULT (IMFNetCredential *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFNetCredential*, BOOL, int> SetGood;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFNetCredential*, BOOL, int> SetGood;
     }
 }

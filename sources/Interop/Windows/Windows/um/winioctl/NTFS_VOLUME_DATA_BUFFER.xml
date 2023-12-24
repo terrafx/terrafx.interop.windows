@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="NTFS_VOLUME_DATA_BUFFER">
+    <summary>Represents volume data. This structure is passed to the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_volume_data">FSCTL_GET_NTFS_VOLUME_DATA</a> control code.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.ByteCount"></member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MajorVersion"></member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MinorVersion"></member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.BytesPerPhysicalSector"></member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.LfsMajorVersion"></member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.LfsMinorVersion"></member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MaxDeviceTrimExtentCount"></member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MaxDeviceTrimByteCount"></member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MaxVolumeTrimExtentCount"></member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MaxVolumeTrimByteCount">
+    <summary>
+      <h4>- BytesPerCluster</h4>
+      <para>The number of bytes in a cluster on the specified volume. This value is also known as the cluster factor.</para>
+      <h4>- BytesPerFileRecordSegment</h4>
+      <para>The number of bytes in a file record segment.</para>
+      <h4>- BytesPerSector</h4>
+      <para>The number of bytes in a sector on the specified volume.</para>
+      <h4>- ClustersPerFileRecordSegment</h4>
+      <para>The number of clusters in a file record segment.</para>
+      <h4>- FreeClusters</h4>
+      <para>The number of free clusters in the specified volume.</para>
+      <h4>- Mft2StartLcn</h4>
+      <para>The starting logical cluster number of the master file table mirror.</para>
+      <h4>- MftStartLcn</h4>
+      <para>The starting logical cluster number of the master file table.</para>
+      <h4>- MftValidDataLength</h4>
+      <para>The length of the master file table, in bytes.</para>
+      <h4>- MftZoneEnd</h4>
+      <para>The ending logical cluster number of the master file table zone.</para>
+      <h4>- MftZoneStart</h4>
+      <para>The starting logical cluster number of the master file table zone.</para>
+      <h4>- NumberSectors</h4>
+      <para>The number of sectors in the specified volume.</para>
+      <h4>- TotalClusters</h4>
+      <para>The number of used and free clusters in the specified volume.</para>
+      <h4>- TotalReserved</h4>
+      <para>The number of reserved clusters in the specified volume.</para>
+      <h4>- VolumeSerialNumber</h4>
+      <para>The serial number of the volume. This is a unique number assigned to the volume media by the operating system.</para>
+    </summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER">
+    <summary>Represents volume data. This structure is passed to the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_get_ntfs_volume_data">FSCTL_GET_NTFS_VOLUME_DATA</a> control code.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.VolumeSerialNumber">
+    <summary>The serial number of the volume. This is a unique number assigned to the volume media by the operating system.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.NumberSectors">
+    <summary>The number of sectors in the specified volume.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.TotalClusters">
+    <summary>The number of used and free clusters in the specified volume.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.FreeClusters">
+    <summary>The number of free clusters in the specified volume.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.TotalReserved">
+    <summary>The number of reserved clusters in the specified volume.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.BytesPerSector">
+    <summary>The number of bytes in a sector on the specified volume.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.BytesPerCluster">
+    <summary>The number of bytes in a cluster on the specified volume. This value is also known as the cluster factor.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.BytesPerFileRecordSegment">
+    <summary>The number of bytes in a file record segment.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.ClustersPerFileRecordSegment">
+    <summary>The number of clusters in a file record segment.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MftValidDataLength">
+    <summary>The length of the master file table, in bytes.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MftStartLcn">
+    <summary>The starting logical cluster number of the master file table.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.Mft2StartLcn">
+    <summary>The starting logical cluster number of the master file table mirror.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MftZoneStart">
+    <summary>The starting logical cluster number of the master file table zone.</summary>
+  </member>
+  <member name="NTFS_VOLUME_DATA_BUFFER.MftZoneEnd">
+    <summary>The ending logical cluster number of the master file table zone.</summary>
+  </member>
+</doc>

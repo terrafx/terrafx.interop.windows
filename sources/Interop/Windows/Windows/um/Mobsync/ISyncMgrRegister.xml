@@ -3,126 +3,95 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrRegister.GetHandlerRegistrationInfo">
-    <summary>
-      <para>Called by the registered application's handler to get current registration information.</para>
-    </summary>
-    <param name="clsidHandler">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The CLSID of the handler.</para>
-    </param>
-    <param name="pdwSyncMgrRegisterFlags">
-      <para>Type: <b>LPDWORD</b></para>
-      <para>Returns registration flags from the <see cref="SYNCMGRREGISTERFLAGS" /> enumeration that indicate events for which the handler is registered to be notified.</para>
-    </param>
+    <summary>Called by the registered application's handler to get current registration information.</summary>
+    <param name="clsidHandler">The CLSID of the handler.</param>
+    <param name="pdwSyncMgrRegisterFlags">Returns registration flags from the <see cref="SYNCMGRREGISTERFLAGS" /> enumeration that indicate events for which the handler is registered to be notified.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Call was successful, the handler is registered.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Call was successful, the handler is registered.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>Call was not successful, the handler is not registered.</para>
-          </description>
-        </item>
+          <description>Call was not successful, the handler is not registered.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISyncMgrRegister" />
   </member>
   <member name="ISyncMgrRegister.RegisterSyncMgrHandler">
-    <summary>
-      <para>Registers a handler with the synchronization manager when the handler has items to synchronize.</para>
-    </summary>
-    <param name="clsidHandler">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The CLSID of the handler that should be registered to do synchronizations.</para>
-    </param>
-    <param name="pwszDescription">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Text identifying the handler. This parameter may be <b>NULL</b>.</para>
-    </param>
-    <param name="dwSyncMgrRegisterFlags">
-      <para>Type: <b>DWORD</b></para>
-    </param>
+    <summary>Registers a handler with the synchronization manager when the handler has items to synchronize.</summary>
+    <param name="clsidHandler">The CLSID of the handler that should be registered to do synchronizations.</param>
+    <param name="pwszDescription">Text identifying the handler. This parameter may be <b>NULL</b>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The handler was successfully registered.</para>
-          </description>
-        </item>
+          <description>The handler was successfully registered.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISyncMgrRegister" />
   </member>
   <member name="ISyncMgrRegister.UnregisterSyncMgrHandler">
-    <summary>
-      <para>Removes a handler's class identifier (CLSID) from the registration. A handler should call this when it no longer has any items to synchronize.</para>
-    </summary>
-    <param name="clsidHandler">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The CLSID of the handler that should be unregistered.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-    </param>
+    <summary>Removes a handler's class identifier (CLSID) from the registration. A handler should call this when it no longer has any items to synchronize.</summary>
+    <param name="clsidHandler">The CLSID of the handler that should be unregistered.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>This method supports the standard return values E_INVALIDARG, E_UNEXPECTED, and E_OUTOFMEMORY, as well as the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The handler was successfully removed from the registry with SyncMgr.</para>
-          </description>
-        </item>
+          <description>The handler was successfully removed from the registry with SyncMgr.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ISyncMgrRegister" />
   </member>
   <member name="ISyncMgrRegister">
-    <summary>
-      <para>Exposes methods so that an application can register with the synchronization manager. This can be achieved either through the
-<b>ISyncMgrRegister</b> interface or by registering directly in the registry.</para>
-    </summary>
-    <remarks>
-      <para>The handler must be a standard OLE server. It must register the standard OLE keys for an InProc OLE server in addition to the SyncMgr key.</para>
-    </remarks>
+    <summary>Exposes methods so that an application can register with the synchronization manager. This can be achieved either through the<b>ISyncMgrRegister</b> interface or by registering directly in the registry.</summary>
   </member>
 </doc>

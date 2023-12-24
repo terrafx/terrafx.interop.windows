@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS">
+    <summary>Specifies the result of a call to <see cref="ID3D12Device5.CheckDriverMatchingIdentifier" /> which queries whether serialized data is compatible with the current device and driver version.</summary>
+  </member>
+  <member name="D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS.D3D12_DRIVER_MATCHING_IDENTIFIER_COMPATIBLE_WITH_DEVICE">
+    <summary>Serialized data is compatible with the current device/driver.</summary>
+  </member>
+  <member name="D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS.D3D12_DRIVER_MATCHING_IDENTIFIER_UNSUPPORTED_TYPE">
+    <summary>The specified <see cref="D3D12_SERIALIZED_DATA_TYPE" /> specified is unknown or unsupported.</summary>
+  </member>
+  <member name="D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS.D3D12_DRIVER_MATCHING_IDENTIFIER_UNRECOGNIZED">
+    <summary>Format of the data in <see cref="D3D12_SERIALIZED_DATA_DRIVER_MATCHING_IDENTIFIER" /> is unrecognized. This could indicate either corrupt data or the identifier was produced by a different hardware vendor.</summary>
+  </member>
+  <member name="D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS.D3D12_DRIVER_MATCHING_IDENTIFIER_INCOMPATIBLE_VERSION">
+    <summary>Serialized data is recognized, but its version is not compatible with the current driver. This result may indicate that the device is from the same hardware vendor but is an incompatible version.</summary>
+  </member>
+  <member name="D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS.D3D12_DRIVER_MATCHING_IDENTIFIER_INCOMPATIBLE_TYPE">
+    <summary>
+      <see cref="D3D12_SERIALIZED_DATA_TYPE" /> specifies a data type that is not compatible with the type of serialized data. As long as there is only a single defined serialized data type this error cannot not be produced.</summary>
+  </member>
+</doc>

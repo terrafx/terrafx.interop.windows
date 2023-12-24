@@ -25,7 +25,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, Guid*, void**, int>)(lpVtbl[0]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, uint>)(lpVtbl[1]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, uint>)(lpVtbl[1]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, uint>)(lpVtbl[2]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, uint>)(lpVtbl[2]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.Initialize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(3)]
     public HRESULT Initialize(IPropertyBag2* pIEncoderOptions)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, IPropertyBag2*, int>)(lpVtbl[3]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pIEncoderOptions);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, IPropertyBag2*, int>)(lpVtbl[3]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pIEncoderOptions);
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.SetSize"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(4)]
     public HRESULT SetSize(uint uiWidth, uint uiHeight)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, uint, uint, int>)(lpVtbl[4]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), uiWidth, uiHeight);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, uint, uint, int>)(lpVtbl[4]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), uiWidth, uiHeight);
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.SetResolution"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(5)]
     public HRESULT SetResolution(double dpiX, double dpiY)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, double, double, int>)(lpVtbl[5]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), dpiX, dpiY);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, double, double, int>)(lpVtbl[5]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), dpiX, dpiY);
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.SetPixelFormat"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(6)]
     public HRESULT SetPixelFormat([NativeTypeName("WICPixelFormatGUID *")] Guid* pPixelFormat)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, Guid*, int>)(lpVtbl[6]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pPixelFormat);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, Guid*, int>)(lpVtbl[6]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pPixelFormat);
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.SetColorContexts"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(7)]
     public HRESULT SetColorContexts(uint cCount, IWICColorContext** ppIColorContext)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, uint, IWICColorContext**, int>)(lpVtbl[7]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), cCount, ppIColorContext);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, uint, IWICColorContext**, int>)(lpVtbl[7]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), cCount, ppIColorContext);
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.SetPalette"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(8)]
     public HRESULT SetPalette(IWICPalette* pIPalette)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, IWICPalette*, int>)(lpVtbl[8]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pIPalette);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, IWICPalette*, int>)(lpVtbl[8]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pIPalette);
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.SetThumbnail"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(9)]
     public HRESULT SetThumbnail(IWICBitmapSource* pIThumbnail)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, IWICBitmapSource*, int>)(lpVtbl[9]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pIThumbnail);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, IWICBitmapSource*, int>)(lpVtbl[9]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pIThumbnail);
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.WritePixels"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(10)]
     public HRESULT WritePixels(uint lineCount, uint cbStride, uint cbBufferSize, byte* pbPixels)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, uint, uint, uint, byte*, int>)(lpVtbl[10]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), lineCount, cbStride, cbBufferSize, pbPixels);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, uint, uint, uint, byte*, int>)(lpVtbl[10]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), lineCount, cbStride, cbBufferSize, pbPixels);
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.WriteSource"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(11)]
     public HRESULT WriteSource(IWICBitmapSource* pIBitmapSource, WICRect* prc)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, IWICBitmapSource*, WICRect*, int>)(lpVtbl[11]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pIBitmapSource, prc);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, IWICBitmapSource*, WICRect*, int>)(lpVtbl[11]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), pIBitmapSource, prc);
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.Commit"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(12)]
     public HRESULT Commit()
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, int>)(lpVtbl[12]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, int>)(lpVtbl[12]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICBitmapFrameEncode.xml' path='doc/member[@name="IWICBitmapFrameEncode.GetMetadataQueryWriter"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
     [VtblIndex(13)]
     public HRESULT GetMetadataQueryWriter(IWICMetadataQueryWriter** ppIMetadataQueryWriter)
     {
-        return ((delegate* unmanaged<IWICBitmapFrameEncode*, IWICMetadataQueryWriter**, int>)(lpVtbl[13]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), ppIMetadataQueryWriter);
+        return ((delegate* unmanaged[MemberFunction]<IWICBitmapFrameEncode*, IWICMetadataQueryWriter**, int>)(lpVtbl[13]))((IWICBitmapFrameEncode*)Unsafe.AsPointer(ref this), ppIMetadataQueryWriter);
     }
 
     public interface Interface : IUnknown.Interface
@@ -174,45 +174,45 @@ public unsafe partial struct IWICBitmapFrameEncode : IWICBitmapFrameEncode.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPropertyBag2 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyBag2*, int> Initialize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyBag2*, int> Initialize;
 
         [NativeTypeName("HRESULT (UINT, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> SetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> SetSize;
 
         [NativeTypeName("HRESULT (double, double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, double, int> SetResolution;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, double, int> SetResolution;
 
         [NativeTypeName("HRESULT (WICPixelFormatGUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetPixelFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetPixelFormat;
 
         [NativeTypeName("HRESULT (UINT, IWICColorContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IWICColorContext**, int> SetColorContexts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IWICColorContext**, int> SetColorContexts;
 
         [NativeTypeName("HRESULT (IWICPalette *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICPalette*, int> SetPalette;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICPalette*, int> SetPalette;
 
         [NativeTypeName("HRESULT (IWICBitmapSource *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICBitmapSource*, int> SetThumbnail;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICBitmapSource*, int> SetThumbnail;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, byte*, int> WritePixels;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, byte*, int> WritePixels;
 
         [NativeTypeName("HRESULT (IWICBitmapSource *, WICRect *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICBitmapSource*, WICRect*, int> WriteSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICBitmapSource*, WICRect*, int> WriteSource;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT (IWICMetadataQueryWriter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IWICMetadataQueryWriter**, int> GetMetadataQueryWriter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IWICMetadataQueryWriter**, int> GetMetadataQueryWriter;
     }
 }

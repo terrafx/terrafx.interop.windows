@@ -1,0 +1,16 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+D3D12_DEFAULT
+--file
+d3dx12-d3dx12_default.h
+--methodClassName
+DirectX
+--namespace
+TerraFX.Interop.DirectX
+--output
+../../../../sources/Interop/Windows/DirectX/d3dx12/d3dx12_default
+--test-output
+../../../../tests/Interop/Windows/DirectX/d3dx12/d3dx12_default
+--traverse
+../../../include/d3dx12/d3dx12_default.h

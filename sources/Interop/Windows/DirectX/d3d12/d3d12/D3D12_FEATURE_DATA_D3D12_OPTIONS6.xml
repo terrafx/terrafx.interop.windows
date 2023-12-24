@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS6">
+    <summary>Indicates the level of support that the adapter provides for variable-rate shading (VRS), and indicates whether or not background processing is supported. For more info, see <a href="https://docs.microsoft.com//windows/desktop/direct3d12/vrs">Variable-rate shading (VRS)</a>, and the <a href="https://microsoft.github.io/directx-specs/d3d/backgroundprocessing.html">Direct3D 12 background processing spec</a>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS6.AdditionalShadingRatesSupported">
+    <summary>Indicates whether 2x4, 4x2, and 4x4 coarse pixel sizes are supported for single-sampled rendering; and whether coarse pixel size 2x4 is supported for 2x MSAA. <code>true</code> if those sizes are supported, otherwise <code>false</code>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS6.PerPrimitiveShadingRateSupportedWithViewportIndexing">
+    <summary>Indicates whether the per-provoking-vertex (also known as per-primitive) rate can be used with more than one viewport. If so, then, in that case, that rate can be used when <code>SV_ViewportIndex</code> is written to. <code>true</code> if that rate can be used with more than one viewport, otherwise <code>false</code>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS6.VariableShadingRateTier">
+    <summary>Indicates the shading rate tier.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS6.ShadingRateImageTileSize">
+    <summary>Indicates the tile size of the screen-space image as a <b>UINT</b>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS6.BackgroundProcessingSupported">
+    <summary>Indicates whether or not background processing is supported. <code>true</code> if background processing is supported, otherwise <code>false</code>. For more info, see the <a href="https://microsoft.github.io/directx-specs/d3d/backgroundprocessing.html">Direct3D 12 background processing spec</a>.</summary>
+  </member>
+</doc>

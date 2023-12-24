@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CALLTYPE">
-    <summary>
-      <para>Specifies the call types used by <see cref="IMessageFilter.HandleInComingCall" />.</para>
-    </summary>
-    <seealso cref="IMessageFilter.HandleInComingCall" />
+    <summary>Specifies the call types used by <see cref="IMessageFilter.HandleInComingCall" />.</summary>
   </member>
   <member name="CALLTYPE.CALLTYPE_TOPLEVEL">
-    <summary>
-      <para>A top-level call has arrived and the object is not currently waiting for a reply from a previous outgoing call. Calls of this type should always be handled.</para>
-    </summary>
+    <summary>A top-level call has arrived and the object is not currently waiting for a reply from a previous outgoing call. Calls of this type should always be handled.</summary>
   </member>
   <member name="CALLTYPE.CALLTYPE_NESTED">
-    <summary>
-      <para>A call has arrived bearing the same logical thread identifier as that of a previous outgoing call for which the object is still awaiting a reply. Calls of this type should always be handled.</para>
-    </summary>
+    <summary>A call has arrived bearing the same logical thread identifier as that of a previous outgoing call for which the object is still awaiting a reply. Calls of this type should always be handled.</summary>
   </member>
   <member name="CALLTYPE.CALLTYPE_ASYNC">
-    <summary>
-      <para>An asynchronous call has arrived. Calls of this type cannot be rejected. OLE always delivers calls of this type.</para>
-    </summary>
+    <summary>An asynchronous call has arrived. Calls of this type cannot be rejected. OLE always delivers calls of this type.</summary>
   </member>
   <member name="CALLTYPE.CALLTYPE_TOPLEVEL_CALLPENDING">
-    <summary>
-      <para>A new top-level call has arrived with a new logical thread identifier and the object is currently waiting for a reply from a previous outgoing call. Calls of this type may be handled or rejected.</para>
-    </summary>
+    <summary>A new top-level call has arrived with a new logical thread identifier and the object is currently waiting for a reply from a previous outgoing call. Calls of this type may be handled or rejected.</summary>
   </member>
   <member name="CALLTYPE.CALLTYPE_ASYNC_CALLPENDING">
-    <summary>
-      <para>An asynchronous call has arrived with a new logical thread identifier and the object is currently waiting for a reply from a previous outgoing call. Calls of this type cannot be rejected.</para>
-    </summary>
+    <summary>An asynchronous call has arrived with a new logical thread identifier and the object is currently waiting for a reply from a previous outgoing call. Calls of this type cannot be rejected.</summary>
   </member>
 </doc>

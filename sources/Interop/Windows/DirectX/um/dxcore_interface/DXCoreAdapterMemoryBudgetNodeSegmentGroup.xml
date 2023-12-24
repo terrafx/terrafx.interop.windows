@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXCoreAdapterMemoryBudgetNodeSegmentGroup">
+    <summary>Describes a memory segment group for an adapter.</summary>
+  </member>
+  <member name="DXCoreAdapterMemoryBudgetNodeSegmentGroup.nodeIndex">
+    <summary>Specifies the device's physical adapter for which the adapter memory information is queried. For single-adapter operation, set this to zero. If there are multiple adapter nodes, then set this to the index of the node (the device's physical adapter) for which you want to query for adapter memory information (see <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter</a>).</summary>
+  </member>
+  <member name="DXCoreAdapterMemoryBudgetNodeSegmentGroup.segmentGroup">
+    <summary>Specifies the adapter memory segment grouping that you want to query about.</summary>
+  </member>
+</doc>

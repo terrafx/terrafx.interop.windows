@@ -4,50 +4,26 @@
 <doc>
   <member name="IFilterMapper2.CreateCategory">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>CreateCategory</code> method adds a new filter category to the registry.</para>
     </summary>
-    <param name="clsidCategory">
-      <para>Class identifier (CLSID) of the new filter category.</para>
-    </param>
+    <param name="clsidCategory">Class identifier (CLSID) of the new filter category.</param>
     <param name="dwCategoryMerit">
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/DirectShow/merit">Merit</a> of the category. Categories with higher merit are enumerated first.</para>
-    </param>
-    <param name="Description">
-      <para>Descriptive name for the category.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</para>
-    </returns>
-    <remarks>
-      <para>The filter graph manager initially skips all categories with a merit value less than or equal to MERIT_DO_NOT_USE, to speed up the graph-building process. Filter categories that should not be considered for playback should have a merit of MERIT_DO_NOT_USE or less.</para>
-      <para>A filter can appear in one or more categories (for example, Video Compressors) to restrict the search space.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper2 Interface" />
+      <a href="https://docs.microsoft.com//windows/desktop/DirectShow/merit">Merit</a> of the category. Categories with higher merit are enumerated first.</param>
+    <param name="Description">Descriptive name for the category.</param>
+    <returns>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</returns>
   </member>
   <member name="IFilterMapper2.RegisterFilter">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>RegisterFilter</code> method adds filter information to the registry.</para>
     </summary>
-    <param name="clsidFilter">
-      <para>Class identifier (CLSID) of the filter.</para>
-    </param>
-    <param name="Name">
-      <para>Descriptive name for the filter.</para>
-    </param>
-    <param name="ppMoniker">
-      <para>Address of a pointer to a device moniker that determines where this filter's data will be written. Can be <b>NULL</b>.</para>
-    </param>
-    <param name="pclsidCategory">
-      <para>Pointer to the filter category of the filter. If <b>NULL</b>, the default category is CLSID_ActiveMovieFilters. (See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-categories">Filter Categories</a>.)</para>
-    </param>
-    <param name="szInstance">
-      <para>Instance data for constructing the device moniker's display name. Can be the friendly name, or the string representation of the filter CLSID. If <b>NULL</b>, defaults to the filter CLSID.</para>
-    </param>
-    <param name="prf2">
-      <para>Pointer to a <see cref="REGFILTER2" /> structure containing filter information.</para>
-    </param>
+    <param name="clsidFilter">Class identifier (CLSID) of the filter.</param>
+    <param name="Name">Descriptive name for the filter.</param>
+    <param name="ppMoniker">Address of a pointer to a device moniker that determines where this filter's data will be written. Can be <b>NULL</b>.</param>
+    <param name="pclsidCategory">Pointer to the filter category of the filter. If <b>NULL</b>, the default category is CLSID_ActiveMovieFilters. (See <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-categories">Filter Categories</a>.)</param>
+    <param name="szInstance">Instance data for constructing the device moniker's display name. Can be the friendly name, or the string representation of the filter CLSID. If <b>NULL</b>, defaults to the filter CLSID.</param>
+    <param name="prf2">Pointer to a <see cref="REGFILTER2" /> structure containing filter information.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include those shown in the following table.</para>
       <list type="table">
@@ -55,75 +31,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_BAD_KEY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_BAD_KEY</b>
-            </para>
-          </description>
-          <description>
-            <para>Could not get registry key.</para>
-          </description>
-        </item>
+          <description>Could not get registry key.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method adds information about the filter to the registry, under the registry entry for the specified filter category. It does not register the in-process server that creates the filter (usually a DLL). To register the server, you can call the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/amoviedllregisterserver2">AMovieDllRegisterServer2</a> function.</para>
-      <para>For the <i>ppMoniker</i> parameter, use one of the following:</para>
-      <list type="bullet">
-        <item>
-          <description>The address of an <see cref="IMoniker" /> interface pointer for an existing device moniker</description>
-        </item>
-        <item>
-          <description>The address of a <b>NULL</b><b>IMoniker</b> interface pointer</description>
-        </item>
-        <item>
-          <description>
-            <b>NULL</b>
-          </description>
-        </item>
-      </list>
-      <para>If you are registering a filter for a Windows Driver Model (WDM) or Plug and Play device, pass the address of the existing device moniker. The filter will be registered using this moniker. When the method returns, <i>*ppMoniker</i> is set to <b>NULL</b>.</para>
-      <para>Otherwise, the method creates a new moniker. If <i>ppMoniker</i> is non-<b>NULL</b>, the method sets <i>*ppMoniker</i> to point to the new moniker. The application can use this moniker to write additional private values in the property bag. Be sure to release the interface.</para>
-      <para>Set <i>ppMoniker</i> to <b>NULL</b> if you don't want to provide or receive the moniker.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper2 Interface" />
   </member>
   <member name="IFilterMapper2.UnregisterFilter">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>UnregisterFilter</code> method removes filter information from the registry.</para>
     </summary>
-    <param name="pclsidCategory">
-      <para>Address of a GUID that specifies the filter category from which to remove the filter. For a list of categories, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-categories">Filter Categories</a>.</para>
-    </param>
-    <param name="szInstance">
-      <para>Instance data used to construct the device moniker's display name. Use the value that was originally passed to the <b>RegisterFilter</b> method.</para>
-    </param>
-    <param name="Filter">
-      <para>Class identifier (CLSID) of the filter.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</para>
-    </returns>
-    <remarks>
-      <para>If the filter was not registered, the method might return an error.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IFilterMapper2 Interface" />
+    <param name="pclsidCategory">Address of a GUID that specifies the filter category from which to remove the filter. For a list of categories, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-categories">Filter Categories</a>.</param>
+    <param name="szInstance">Instance data used to construct the device moniker's display name. Use the value that was originally passed to the <b>RegisterFilter</b> method.</param>
+    <param name="Filter">Class identifier (CLSID) of the filter.</param>
+    <returns>Returns S_OK if successful, or an <b>HRESULT</b> value indicating the cause of the error.</returns>
   </member>
   <member name="IFilterMapper2">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Registers and unregisters filters, and locates filters in the registry. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-mapper">Filter Mapper</a> helper object implements this interface.</para>
       <para>Filters use this interface to register and unregister themselves. When the filter graph manager builds a filter graph, it uses this interface to look up filters and determine their characteristics. Applications can also use this interface to look up filters. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/using-the-filter-mapper">Using the Filter Mapper</a> and <a href="https://docs.microsoft.com//windows/desktop/DirectShow/how-to-register-directshow-filters">How to Register DirectShow Filters</a>.</para>
     </summary>

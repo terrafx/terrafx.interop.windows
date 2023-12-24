@@ -3,93 +3,67 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1PrintControl.AddPage">
-    <summary>
-      <para>Converts Direct2D primitives in the passed-in command list into a fixed page representation for use  by the print subsystem.</para>
-    </summary>
-    <param name="commandList">
-      <para>Type: <b><see cref="ID2D1CommandList" />*</b></para>
-      <para>The command list that contains the rendering operations.</para>
-    </param>
-    <param name="pageSize">
-      <para>Type: <b><see cref="D2D_SIZE_F" /></b></para>
-      <para>The size of the page to add.</para>
-    </param>
-    <param name="pagePrintTicketStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>The print ticket stream.</para>
-    </param>
-    <param name="tag1">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-tag">D2D1_TAG</a>*</b></para>
-      <para>Contains the first label for subsequent drawing operations. This parameter is passed uninitialized. If NULL is specified, no value is retrieved for this parameter.</para>
-    </param>
-    <param name="tag2">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-tag">D2D1_TAG</a>*</b></para>
-      <para>Contains the second label for subsequent drawing operations. This parameter is passed uninitialized. If NULL is specified, no value is retrieved for this parameter.</para>
-    </param>
+    <summary>Converts Direct2D primitives in the passed-in command list into a fixed page representation for use by the print subsystem.</summary>
+    <param name="commandList">The command list that contains the rendering operations.</param>
+    <param name="pageSize">The size of the page to add.</param>
+    <param name="pagePrintTicketStream">The print ticket stream.</param>
+    <param name="tag1">Contains the first label for subsequent drawing operations. This parameter is passed uninitialized. If NULL is specified, no value is retrieved for this parameter.</param>
+    <param name="tag2">Contains the second label for subsequent drawing operations. This parameter is passed uninitialized. If NULL is specified, no value is retrieved for this parameter.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_PRINT_JOB_CLOSED</description>
           <description>The print job is already finished.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1PrintControl" />
   </member>
   <member name="ID2D1PrintControl.Close">
-    <summary>
-      <para>Passes all remaining resources to the print sub-system, then clean up and close the current print job.</para>
-    </summary>
+    <summary>Passes all remaining resources to the print sub-system, then clean up and close the current print job.</summary>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D2DERR_PRINT_JOB_CLOSED</description>
           <description>The print job is already finished.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1PrintControl" />
   </member>
   <member name="ID2D1PrintControl">
-    <summary>
-      <para>Converts <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> primitives stored in an <see cref="ID2D1CommandList" /> into a fixed page representation.  The print sub-system then consumes the primitives.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/printing-and-command-lists">Printing and Command Lists</seealso>
+    <summary>Converts <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> primitives stored in an <see cref="ID2D1CommandList" /> into a fixed page representation. The print sub-system then consumes the primitives.</summary>
   </member>
 </doc>

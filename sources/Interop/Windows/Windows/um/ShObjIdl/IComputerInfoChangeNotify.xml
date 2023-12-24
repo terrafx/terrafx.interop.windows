@@ -7,10 +7,7 @@
       <para>Not supported.</para>
       <para>This interface may be absent in later versions of Windows.</para>
     </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IComputerInfoChangeNotify">
     <summary>

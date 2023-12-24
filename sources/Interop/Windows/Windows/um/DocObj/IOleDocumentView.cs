@@ -25,7 +25,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocumentView*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocumentView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleDocumentView*, uint>)(lpVtbl[1]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, uint>)(lpVtbl[1]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleDocumentView*, uint>)(lpVtbl[2]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, uint>)(lpVtbl[2]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.SetInPlaceSite"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(3)]
     public HRESULT SetInPlaceSite(IOleInPlaceSite* pIPSite)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite*, int>)(lpVtbl[3]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pIPSite);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, IOleInPlaceSite*, int>)(lpVtbl[3]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pIPSite);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.GetInPlaceSite"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetInPlaceSite(IOleInPlaceSite** ppIPSite)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite**, int>)(lpVtbl[4]))((IOleDocumentView*)Unsafe.AsPointer(ref this), ppIPSite);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, IOleInPlaceSite**, int>)(lpVtbl[4]))((IOleDocumentView*)Unsafe.AsPointer(ref this), ppIPSite);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.GetDocument"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetDocument(IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, IUnknown**, int>)(lpVtbl[5]))((IOleDocumentView*)Unsafe.AsPointer(ref this), ppunk);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, IUnknown**, int>)(lpVtbl[5]))((IOleDocumentView*)Unsafe.AsPointer(ref this), ppunk);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.SetRect"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(6)]
     public HRESULT SetRect([NativeTypeName("LPRECT")] RECT* prcView)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, RECT*, int>)(lpVtbl[6]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, RECT*, int>)(lpVtbl[6]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.GetRect"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(7)]
     public HRESULT GetRect([NativeTypeName("LPRECT")] RECT* prcView)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, RECT*, int>)(lpVtbl[7]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, RECT*, int>)(lpVtbl[7]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.SetRectComplex"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(8)]
     public HRESULT SetRectComplex([NativeTypeName("LPRECT")] RECT* prcView, [NativeTypeName("LPRECT")] RECT* prcHScroll, [NativeTypeName("LPRECT")] RECT* prcVScroll, [NativeTypeName("LPRECT")] RECT* prcSizeBox)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, RECT*, RECT*, RECT*, RECT*, int>)(lpVtbl[8]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView, prcHScroll, prcVScroll, prcSizeBox);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, RECT*, RECT*, RECT*, RECT*, int>)(lpVtbl[8]))((IOleDocumentView*)Unsafe.AsPointer(ref this), prcView, prcHScroll, prcVScroll, prcSizeBox);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.Show"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(9)]
     public HRESULT Show(BOOL fShow)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, BOOL, int>)(lpVtbl[9]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fShow);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, BOOL, int>)(lpVtbl[9]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fShow);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.UIActivate"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(10)]
     public HRESULT UIActivate(BOOL fUIActivate)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, BOOL, int>)(lpVtbl[10]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fUIActivate);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, BOOL, int>)(lpVtbl[10]))((IOleDocumentView*)Unsafe.AsPointer(ref this), fUIActivate);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.Open"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(11)]
     public HRESULT Open()
     {
-        return ((delegate* unmanaged<IOleDocumentView*, int>)(lpVtbl[11]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, int>)(lpVtbl[11]))((IOleDocumentView*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.CloseView"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(12)]
     public HRESULT CloseView([NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, uint, int>)(lpVtbl[12]))((IOleDocumentView*)Unsafe.AsPointer(ref this), dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, uint, int>)(lpVtbl[12]))((IOleDocumentView*)Unsafe.AsPointer(ref this), dwReserved);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.SaveViewState"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(13)]
     public HRESULT SaveViewState([NativeTypeName("LPSTREAM")] IStream* pstm)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, IStream*, int>)(lpVtbl[13]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pstm);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, IStream*, int>)(lpVtbl[13]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pstm);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.ApplyViewState"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(14)]
     public HRESULT ApplyViewState([NativeTypeName("LPSTREAM")] IStream* pstm)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, IStream*, int>)(lpVtbl[14]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pstm);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, IStream*, int>)(lpVtbl[14]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pstm);
     }
 
     /// <include file='IOleDocumentView.xml' path='doc/member[@name="IOleDocumentView.Clone"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
     [VtblIndex(15)]
     public HRESULT Clone(IOleInPlaceSite* pIPSiteNew, IOleDocumentView** ppViewNew)
     {
-        return ((delegate* unmanaged<IOleDocumentView*, IOleInPlaceSite*, IOleDocumentView**, int>)(lpVtbl[15]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pIPSiteNew, ppViewNew);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentView*, IOleInPlaceSite*, IOleDocumentView**, int>)(lpVtbl[15]))((IOleDocumentView*)Unsafe.AsPointer(ref this), pIPSiteNew, ppViewNew);
     }
 
     public interface Interface : IUnknown.Interface
@@ -196,51 +196,51 @@ public unsafe partial struct IOleDocumentView : IOleDocumentView.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleInPlaceSite *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleInPlaceSite*, int> SetInPlaceSite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleInPlaceSite*, int> SetInPlaceSite;
 
         [NativeTypeName("HRESULT (IOleInPlaceSite **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleInPlaceSite**, int> GetInPlaceSite;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleInPlaceSite**, int> GetInPlaceSite;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> GetDocument;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> GetDocument;
 
         [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> SetRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> SetRect;
 
         [NativeTypeName("HRESULT (LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> GetRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> GetRect;
 
         [NativeTypeName("HRESULT (LPRECT, LPRECT, LPRECT, LPRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, RECT*, RECT*, RECT*, int> SetRectComplex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, RECT*, RECT*, RECT*, int> SetRectComplex;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> UIActivate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> UIActivate;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Open;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Open;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> CloseView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> CloseView;
 
         [NativeTypeName("HRESULT (LPSTREAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, int> SaveViewState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, int> SaveViewState;
 
         [NativeTypeName("HRESULT (LPSTREAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, int> ApplyViewState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, int> ApplyViewState;
 
         [NativeTypeName("HRESULT (IOleInPlaceSite *, IOleDocumentView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleInPlaceSite*, IOleDocumentView**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleInPlaceSite*, IOleDocumentView**, int> Clone;
     }
 }

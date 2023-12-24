@@ -3,54 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CATEGORYINFO_FLAGS">
-    <summary>
-      <para>Provides a set of flags for use with the <see cref="CATEGORY_INFO" /> structure.</para>
-    </summary>
+    <summary>Provides a set of flags for use with the <see cref="CATEGORY_INFO" /> structure.</summary>
   </member>
   <member name="CATEGORYINFO_FLAGS.CATINFO_NORMAL">
-    <summary>
-      <para>0x00000000. Applies default properties for the category.</para>
-    </summary>
+    <summary>0x00000000. Applies default properties for the category.</summary>
   </member>
   <member name="CATEGORYINFO_FLAGS.CATINFO_COLLAPSED">
-    <summary>
-      <para>0x00000001. The category should appear as collapsed</para>
-    </summary>
+    <summary>0x00000001. The category should appear as collapsed</summary>
   </member>
   <member name="CATEGORYINFO_FLAGS.CATINFO_HIDDEN">
-    <summary>
-      <para>0x00000002. The category should appear as hidden.</para>
-    </summary>
+    <summary>0x00000002. The category should appear as hidden.</summary>
   </member>
   <member name="CATEGORYINFO_FLAGS.CATINFO_EXPANDED">
-    <summary>
-      <para>0x00000004. The category should appear as expanded.</para>
-    </summary>
+    <summary>0x00000004. The category should appear as expanded.</summary>
   </member>
   <member name="CATEGORYINFO_FLAGS.CATINFO_NOHEADER">
-    <summary>
-      <para>0x00000008. The category has no header.</para>
-    </summary>
+    <summary>0x00000008. The category has no header.</summary>
   </member>
   <member name="CATEGORYINFO_FLAGS.CATINFO_NOTCOLLAPSIBLE">
-    <summary>
-      <para>0x00000010. The category cannot be collapsed.</para>
-    </summary>
+    <summary>0x00000010. The category cannot be collapsed.</summary>
   </member>
   <member name="CATEGORYINFO_FLAGS.CATINFO_NOHEADERCOUNT">
-    <summary>
-      <para>0x00000020. The count of items in the category should not be displayed in the header.</para>
-    </summary>
+    <summary>0x00000020. The count of items in the category should not be displayed in the header.</summary>
   </member>
   <member name="CATEGORYINFO_FLAGS.CATINFO_SUBSETTED">
-    <summary>
-      <para>0x00000040. <b>Windows 7 and later</b>. The category should appear subsetted.</para>
-    </summary>
+    <summary>0x00000040. <b>Windows 7 and later</b>. The category should appear subsetted.</summary>
   </member>
-  <member name="CATEGORYINFO_FLAGS.CATINFO_SEPARATE_IMAGES">
-    <summary></summary>
-  </member>
-  <member name="CATEGORYINFO_FLAGS.CATINFO_SHOWEMPTY">
-    <summary></summary>
-  </member>
+  <member name="CATEGORYINFO_FLAGS.CATINFO_SEPARATE_IMAGES"></member>
+  <member name="CATEGORYINFO_FLAGS.CATINFO_SHOWEMPTY"></member>
 </doc>

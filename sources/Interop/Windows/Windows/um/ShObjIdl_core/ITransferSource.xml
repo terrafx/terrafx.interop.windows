@@ -3,770 +3,677 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITransferSource.Advise">
-    <summary>
-      <para>Sets up an advisory connection for notifications on the status of file operations.</para>
-    </summary>
-    <param name="psink">
-      <para>Type: <b><see cref="ITransferAdviseSink" />*</b></para>
-      <para>A pointer to notification interface <see cref="ITransferAdviseSink" /> to update the calling application using methods on this interface.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to a returned token that uniquely identifies this connection. The calling application uses this token later to delete the connection by passing it to the <see cref="ITransferSource.Unadvise" /> method. If the connection was not successfully established, this value is zero.</para>
-    </param>
+    <summary>Sets up an advisory connection for notifications on the status of file operations.</summary>
+    <param name="psink">A pointer to notification interface <see cref="ITransferAdviseSink" /> to update the calling application using methods on this interface.</param>
+    <param name="pdwCookie">A pointer to a returned token that uniquely identifies this connection. The calling application uses this token later to delete the connection by passing it to the <see cref="ITransferSource.Unadvise" /> method. If the connection was not successfully established, this value is zero.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Any HRESULTs other than listed indicate a failure.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The Interface successfully associated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The Interface successfully associated.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The handler can only handle one sink interface.</para>
-          </description>
-        </item>
+          <description>The handler can only handle one sink interface.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call <b>ITransferSource.Advise</b> before calling any other methods in this interface to enable an advisory session. If not set, the handler should consider it an indication that no feedback is available and to do the "default" operation without consulting the calling application.</para>
-    </remarks>
   </member>
   <member name="ITransferSource.ApplyPropertiesToItem">
-    <summary>
-      <para>Apply a set of property changes to an item.</para>
-    </summary>
-    <param name="psiSource">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> to be altered.</para>
-    </param>
-    <param name="ppsiNew">
-      <para>Type: <b><see cref="IShellItem" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the changed <see cref="IShellItem" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Apply a set of property changes to an item.</summary>
+    <param name="psiSource">A pointer to the <see cref="IShellItem" /> to be altered.</param>
+    <param name="ppsiNew">When this method returns, contains the address of a pointer to the changed <see cref="IShellItem" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITransferSource.EnterFolder">
-    <summary>
-      <para>Notifies that a folder is the destination of a file operation.</para>
-    </summary>
-    <param name="psiChildFolderDest">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> destination folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called when beginning to process a folder or subfolder in a recursive operation. For instance, when a source folder is copied to a destination folder, method <b>ITransferSource.EnterFolder</b> should be called with <i>psiChildFolderDest</i> set to the destination folder.</para>
-    </remarks>
-    <seealso cref="ITransferSource" />
-    <seealso cref="ITransferSource.Advise" />
-    <seealso cref="ITransferSource.LeaveFolder" />
-    <seealso cref="ITransferSource.Unadvise" />
+    <summary>Notifies that a folder is the destination of a file operation.</summary>
+    <param name="psiChildFolderDest">A pointer to the <see cref="IShellItem" /> destination folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITransferSource.GetDefaultDestinationName">
-    <summary>
-      <para>Gets the default name for a Shell item.</para>
-    </summary>
-    <param name="psiSource">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" />.</para>
-    </param>
-    <param name="psiParentDest">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the parent <see cref="IShellItem" /> of the destination target of the file operation.</para>
-    </param>
-    <param name="ppszDestinationName">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When the method returns, contains a pointer to a null-terminated, Unicode string containing the default name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Gets the default name for a Shell item, if different than the item's parsing name.</para>
-    </remarks>
+    <summary>Gets the default name for a Shell item.</summary>
+    <param name="psiSource">A pointer to the <see cref="IShellItem" />.</param>
+    <param name="psiParentDest">A pointer to the parent <see cref="IShellItem" /> of the destination target of the file operation.</param>
+    <param name="ppszDestinationName">When the method returns, contains a pointer to a null-terminated, Unicode string containing the default name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITransferSource.LeaveFolder">
-    <summary>
-      <para>Sends notification that a folder is no longer the destination of a file operation.</para>
-    </summary>
-    <param name="psiChildFolderDest">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> destination folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called at the end of recursive file operations on a destination folder.</para>
-    </remarks>
-    <seealso cref="ITransferSource" />
-    <seealso cref="ITransferSource.Advise" />
-    <seealso cref="ITransferSource.EnterFolder" />
-    <seealso cref="ITransferSource.Unadvise" />
+    <summary>Sends notification that a folder is no longer the destination of a file operation.</summary>
+    <param name="psiChildFolderDest">A pointer to the <see cref="IShellItem" /> destination folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITransferSource.LinkItem">
-    <summary>
-      <para>Not implemented.</para>
-    </summary>
-    <param name="psiSource">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to an <see cref="IShellItem" /> that represents the source item.</para>
-    </param>
-    <param name="psiParentDest">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> as parent to link.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated, Unicode string containing the name for the link.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b>DWORD</b></para>
-      <para>The flags that control the file operation. Value is one or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</para>
-    </param>
-    <param name="ppsiNewDest">
-      <para>Type: <b><see cref="IShellItem" />**</b></para>
-      <para>When the method returns, contains the address of a pointer to the <see cref="IShellItem" /> of the link.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Not implemented.</summary>
+    <param name="psiSource">A pointer to an <see cref="IShellItem" /> that represents the source item.</param>
+    <param name="psiParentDest">A pointer to the <see cref="IShellItem" /> as parent to link.</param>
+    <param name="pszNewName">A pointer to a null-terminated, Unicode string containing the name for the link.</param>
+    <param name="flags">The flags that control the file operation. Value is one or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</param>
+    <param name="ppsiNewDest">When the method returns, contains the address of a pointer to the <see cref="IShellItem" /> of the link.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITransferSource.MoveItem">
-    <summary>
-      <para>Moves the item within the volume/namespace, returning the <see cref="IShellItem" /> in its new location.</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> to be moved.</para>
-    </param>
-    <param name="psiParentDst">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> that represents the new parent item at the destination.</para>
-    </param>
-    <param name="pszNameDst">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to a null-terminated buffer that contains the destination path.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b><see cref="TRANSFER_SOURCE_FLAGS" /></b></para>
-      <para>Flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</para>
-    </param>
-    <param name="ppsiNew">
-      <para>Type: <b><see cref="IShellItem" />**</b></para>
-      <para>When this method returns successfully, contains an address of a pointer to the <see cref="IShellItem" /> in its new location.</para>
-    </param>
+    <summary>Moves the item within the volume/namespace, returning the <see cref="IShellItem" /> in its new location.</summary>
+    <param name="psi">A pointer to the <see cref="IShellItem" /> to be moved.</param>
+    <param name="psiParentDst">A pointer to the <see cref="IShellItem" /> that represents the new parent item at the destination.</param>
+    <param name="pszNameDst">Pointer to a null-terminated buffer that contains the destination path.</param>
+    <param name="flags">Flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</param>
+    <param name="ppsiNew">When this method returns successfully, contains an address of a pointer to the <see cref="IShellItem" /> in its new location.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns <b>S_OK</b> if the move succeeded. In that case, <i>ppsiNew</i> points to the address of the new item. Other possible return values, both success and failure codes, include the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_IGNORED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_IGNORED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The destination item already exists and has not been overwritten. In this case, <i>ppsiNew</i> is <b>NULL</b> and the caller should delete the source item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The destination item already exists and has not been overwritten. In this case, <i>ppsiNew</i> is <b>NULL</b> and the caller should delete the source item.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_MERGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The destination item already exists and the user has chosen to merge the source and destination folders. In this case, <i>ppsiNew</i> points to a <b>NULL</b> value and the caller should delete the source item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_MERGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>When the item being moved is a folder, the caller should convert a move operation into a copy and delete operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The destination item already exists and the user has chosen to merge the source and destination folders. In this case, <i>ppsiNew</i> points to a <b>NULL</b> value and the caller should delete the source item.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_NOT_SAME_DEVICE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The caller should convert a move operation into a copy and delete operation. This error is seen as <code>HRESULT_FROM_WIN32(ERROR_NOT_SAME_DEVICE)</code>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_FILE_EXISTS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>When moving a folder, the caller should convert the move operation into a copy and delete operation. The destination item must support <see cref="ITransferDestination" />. This error is seen as <code>HRESULT_FROM_WIN32(ERROR_FILE_EXISTS)</code>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>When the item being moved is a folder, the caller should convert a move operation into a copy and delete operation.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_ALREADY_EXISTS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_NOT_SAME_DEVICE</b>
-            </para>
-          </description>
-          <description>
-            <para>The caller should convert a move operation into a copy and delete operation. This error is seen as <code>HRESULT_FROM_WIN32(ERROR_NOT_SAME_DEVICE)</code>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_FILE_EXISTS</b>
-            </para>
-          </description>
-          <description>
-            <para>When moving a folder, the caller should convert the move operation into a copy and delete operation. The destination item must support <see cref="ITransferDestination" />. This error is seen as <code>HRESULT_FROM_WIN32(ERROR_FILE_EXISTS)</code>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_ALREADY_EXISTS</b>
-            </para>
-          </description>
-          <description>
-            <para>When moving a folder, the caller should convert the move operation into a copy and delete operation. The destination item must support <see cref="ITransferDestination" />. This error is seen as <code>HRESULT_FROM_WIN32(ERROR_ALREADY_EXISTS)</code>.</para>
-          </description>
-        </item>
+          <description>When moving a folder, the caller should convert the move operation into a copy and delete operation. The destination item must support <see cref="ITransferDestination" />. This error is seen as <code>HRESULT_FROM_WIN32(ERROR_ALREADY_EXISTS)</code>.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITransferSource.OpenItem">
-    <summary>
-      <para>Opens the item for copying. Returns an object that can be enumerated for resources (<see cref="IShellItemResources" />).</para>
-    </summary>
-    <param name="psi">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> to be opened.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b><see cref="TRANSFER_SOURCE_FLAGS" /></b></para>
-      <para>The flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID (the interface ID or GUID) of the interface to return in <i>ppv</i>.  This should be an <see cref="IShellItemResources" /> or an interface derived from <b>IShellItemResources</b>.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address of a pointer to the interface specified by <i>riid</i>.</para>
-    </param>
+    <summary>Opens the item for copying. Returns an object that can be enumerated for resources (<see cref="IShellItemResources" />).</summary>
+    <param name="psi">A pointer to the <see cref="IShellItem" /> to be opened.</param>
+    <param name="flags">The flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</param>
+    <param name="riid">A reference to the IID (the interface ID or GUID) of the interface to return in <i>ppv</i>. This should be an <see cref="IShellItemResources" /> or an interface derived from <b>IShellItemResources</b>.</param>
+    <param name="ppv">When this method returns, contains the address of a pointer to the interface specified by <i>riid</i>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or one of the following specific Shell codes, or a system error code.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_YES</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_YES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded "Yes" to the dialog.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded "Yes" to the dialog.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_RETRY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User responded to retry the current action.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_RETRY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_IGNORED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded "No" to the dialog.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded to retry the current action.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_MERGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User responded to merge folders.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_IGNORED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_RETRY_WITH_NEW_NAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded to retry the file with new name.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded "No" to the dialog.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_DONT_PROCESS_CHILDREN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Child items should not be processed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_MERGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_PENDING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Error has been queued and will display later.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded to merge folders.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_E_USER_CANCELLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User canceled the current action.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_RETRY_WITH_NEW_NAME</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_E_REQUIRES_ELEVATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>User responded to retry the file with new name.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_S_DONT_PROCESS_CHILDREN</b>
-            </para>
-          </description>
-          <description>
-            <para>Child items should not be processed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_S_PENDING</b>
-            </para>
-          </description>
-          <description>
-            <para>Error has been queued and will display later.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_E_USER_CANCELLED</b>
-            </para>
-          </description>
-          <description>
-            <para>User canceled the current action.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_E_REQUIRES_ELEVATION</b>
-            </para>
-          </description>
-          <description>
-            <para>Operation requires elevated privileges.</para>
-          </description>
-        </item>
+          <description>Operation requires elevated privileges.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITransferSource.RecycleItem">
-    <summary>
-      <para>Recycle the item into the provided recycle location and return the item in its new location.</para>
-    </summary>
-    <param name="psiSource">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> to be recycled.</para>
-    </param>
-    <param name="psiParentDest">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> of the recycle location (the new parent of the item).</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b><see cref="TRANSFER_SOURCE_FLAGS" /></b></para>
-      <para>The flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</para>
-    </param>
-    <param name="ppsiNewDest">
-      <para>Type: <b><see cref="IShellItem" />**</b></para>
-      <para>When the method returns, contains the address of a pointer to the recycled <see cref="IShellItem" />.</para>
-    </param>
+    <summary>Recycle the item into the provided recycle location and return the item in its new location.</summary>
+    <param name="psiSource">A pointer to the <see cref="IShellItem" /> to be recycled.</param>
+    <param name="psiParentDest">A pointer to the <see cref="IShellItem" /> of the recycle location (the new parent of the item).</param>
+    <param name="flags">The flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</param>
+    <param name="ppsiNewDest">When the method returns, contains the address of a pointer to the recycled <see cref="IShellItem" />.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following, or an error code.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_YES</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_YES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded "Yes" to the dialog.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded "Yes" to the dialog.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_RETRY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User responded to retry the current action.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_RETRY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_IGNORED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded "No" to the dialog.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded to retry the current action.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_DONT_PROCESS_CHILDREN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Children items should not be processed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_IGNORED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_PENDING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Error has been queued and will display later.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded "No" to the dialog.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_E_USER_CANCELLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User canceled the current action.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_DONT_PROCESS_CHILDREN</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_E_REQUIRES_ELEVATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Children items should not be processed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_S_PENDING</b>
-            </para>
-          </description>
-          <description>
-            <para>Error has been queued and will display later.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_E_USER_CANCELLED</b>
-            </para>
-          </description>
-          <description>
-            <para>User canceled the current action.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_E_REQUIRES_ELEVATION</b>
-            </para>
-          </description>
-          <description>
-            <para>Operation requires elevated privileges.</para>
-          </description>
-        </item>
+          <description>Operation requires elevated privileges.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITransferSource.RemoveItem">
-    <summary>
-      <para>Removes the item without moving the item to the Recycle Bin.</para>
-    </summary>
-    <param name="psiSource">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> to be removed.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b><see cref="TRANSFER_SOURCE_FLAGS" /></b></para>
-      <para>Flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</para>
-    </param>
+    <summary>Removes the item without moving the item to the Recycle Bin.</summary>
+    <param name="psiSource">A pointer to the <see cref="IShellItem" /> to be removed.</param>
+    <param name="flags">Flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following, or an error code.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_YES</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_YES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded "Yes" to the dialog</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded "Yes" to the dialog</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_RETRY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User responded to retry the current action</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_RETRY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_IGNORED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded "No" to the dialog.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded to retry the current action</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_MERGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User responded to merge folders.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_IGNORED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_RETRY_WITH_NEW_NAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded to retry the file with new name.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded "No" to the dialog.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_DONT_PROCESS_CHILDREN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Child items should not be processed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_MERGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_PENDING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Error has been queued and will display later.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded to merge folders.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_E_USER_CANCELLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User canceled the current action.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_RETRY_WITH_NEW_NAME</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_E_REQUIRES_ELEVATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>User responded to retry the file with new name.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_S_DONT_PROCESS_CHILDREN</b>
-            </para>
-          </description>
-          <description>
-            <para>Child items should not be processed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_S_PENDING</b>
-            </para>
-          </description>
-          <description>
-            <para>Error has been queued and will display later.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_E_USER_CANCELLED</b>
-            </para>
-          </description>
-          <description>
-            <para>User canceled the current action.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_E_REQUIRES_ELEVATION</b>
-            </para>
-          </description>
-          <description>
-            <para>Operation requires elevated privileges.</para>
-          </description>
-        </item>
+          <description>Operation requires elevated privileges.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITransferSource.RenameItem">
-    <summary>
-      <para>Changes the name of an item, returning the <see cref="IShellItem" /> with the new name.</para>
-    </summary>
-    <param name="psiSource">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to the <see cref="IShellItem" /> object to be renamed.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a null-terminated, Unicode string containing the new name.</para>
-    </param>
-    <param name="flags">
-      <para>Type: <b><see cref="TRANSFER_SOURCE_FLAGS" /></b></para>
-      <para>Flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</para>
-    </param>
-    <param name="ppsiNewDest">
-      <para>Type: <b><see cref="IShellItem" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the <see cref="IShellItem" /> object.</para>
-    </param>
+    <summary>Changes the name of an item, returning the <see cref="IShellItem" /> with the new name.</summary>
+    <param name="psiSource">A pointer to the <see cref="IShellItem" /> object to be renamed.</param>
+    <param name="pszNewName">A pointer to a null-terminated, Unicode string containing the new name.</param>
+    <param name="flags">Flags that control the file operation. One or more of the <see cref="TRANSFER_SOURCE_FLAGS" /> constants.</param>
+    <param name="ppsiNewDest">When this method returns, contains the address of a pointer to the <see cref="IShellItem" /> object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following, or an error code.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_YES</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_YES</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded "Yes" to the dialog.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded "Yes" to the dialog.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_RETRY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User responded to retry the current action.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_RETRY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_IGNORED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded "No" to the dialog.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded to retry the current action.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_MERGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User responded to merge folders.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_IGNORED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_USER_RETRY_WITH_NEW_NAME</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>User responded to retry the file with new name.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded "No" to the dialog.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_DONT_PROCESS_CHILDREN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Child items should not be processed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_MERGE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_S_PENDING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Error has been queued and will display later.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>User responded to merge folders.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_E_USER_CANCELLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>User canceled the current action.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>COPYENGINE_S_USER_RETRY_WITH_NEW_NAME</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPYENGINE_E_REQUIRES_ELEVATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>User responded to retry the file with new name.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_S_DONT_PROCESS_CHILDREN</b>
-            </para>
-          </description>
-          <description>
-            <para>Child items should not be processed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_S_PENDING</b>
-            </para>
-          </description>
-          <description>
-            <para>Error has been queued and will display later.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_E_USER_CANCELLED</b>
-            </para>
-          </description>
-          <description>
-            <para>User canceled the current action.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>COPYENGINE_E_REQUIRES_ELEVATION</b>
-            </para>
-          </description>
-          <description>
-            <para>Operation requires elevated privileges.</para>
-          </description>
-        </item>
+          <description>Operation requires elevated privileges.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITransferSource.SetProperties">
-    <summary>
-      <para>Sets properties that should be applied to an item.</para>
-    </summary>
-    <param name="pproparray">
-      <para>Type: <b><see cref="IPropertyChangeArray" />*</b></para>
-      <para>An array of properties and their changed values.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Any return value other than S_OK indicates a failure.</para>
-    </returns>
+    <summary>Sets properties that should be applied to an item.</summary>
+    <param name="pproparray">An array of properties and their changed values.</param>
+    <returns>Any return value other than S_OK indicates a failure.</returns>
   </member>
   <member name="ITransferSource.Unadvise">
-    <summary>
-      <para>Terminates an advisory connection.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Type: <b>DWORD</b></para>
-      <para>The connection token previously returned from method <see cref="ITransferSource.Advise" />.</para>
-    </param>
+    <summary>Terminates an advisory connection.</summary>
+    <param name="dwCookie">The connection token previously returned from method <see cref="ITransferSource.Advise" />.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Any HRESULTs other than listed indicate a failure.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The connection was successfully terminated.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The connection was successfully terminated.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_NOCONNECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CONNECT_E_NOCONNECTION</b>
-            </para>
-          </description>
-          <description>
-            <para>The value in dwCookie does not represent a valid connection.</para>
-          </description>
-        </item>
+          <description>The value in dwCookie does not represent a valid connection.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Terminates an advisory connection previously established through  method <see cref="ITransferSource.Advise" />. The <i>dwCookie</i> parameter identifies the connection to terminate.</para>
-    </remarks>
   </member>
   <member name="ITransferSource">
-    <summary>
-      <para>Exposes methods to manipulate <see cref="IShellItem" />, including copy, move, recycle, and others. This interface is offered to provide more control over file operations by providing an <see cref="ITransferSource.Advise" /> method.</para>
-    </summary>
+    <summary>Exposes methods to manipulate <see cref="IShellItem" />, including copy, move, recycle, and others. This interface is offered to provide more control over file operations by providing an <see cref="ITransferSource.Advise" /> method.</summary>
   </member>
 </doc>

@@ -3,21 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CADWORD">
-    <summary>
-      <para>Specifies a counted array of values that can be used to obtain the value corresponding to one of the predefined strings for a property.</para>
-    </summary>
-    <seealso cref="CALPOLESTR" />
-    <seealso cref="IPerPropertyBrowsing.GetPredefinedStrings" />
-    <seealso cref="IPerPropertyBrowsing.GetPredefinedValue" />
+    <summary>Specifies a counted array of values that can be used to obtain the value corresponding to one of the predefined strings for a property.</summary>
   </member>
   <member name="CADWORD.cElems">
-    <summary>
-      <para>The size of the array pointed to by <b>pElems</b>.</para>
-    </summary>
+    <summary>The size of the array pointed to by <b>pElems</b>.</summary>
   </member>
   <member name="CADWORD.pElems">
-    <summary>
-      <para>A pointer to an array of values, each of which can be passed to the <see cref="IPerPropertyBrowsing.GetPredefinedValue" /> method to obtain the corresponding value for one of the property's predefined strings. This array is allocated by the callee using <see cref="CoTaskMemAlloc" /> and is freed by the caller using <see cref="CoTaskMemFree" />.</para>
-    </summary>
+    <summary>A pointer to an array of values, each of which can be passed to the <see cref="IPerPropertyBrowsing.GetPredefinedValue" /> method to obtain the corresponding value for one of the property's predefined strings. This array is allocated by the callee using <see cref="CoTaskMemAlloc" /> and is freed by the caller using <see cref="CoTaskMemFree" />.</summary>
   </member>
 </doc>

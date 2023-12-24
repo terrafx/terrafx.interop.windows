@@ -3,27 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CIDA">
-    <summary>
-      <para>Used with the <a href="https://docs.microsoft.com//windows/desktop/shell/clipboard">CFSTR_SHELLIDLIST</a> clipboard format to transfer the pointer to an item identifier list (PIDL) of one or more Shell namespace objects.</para>
-    </summary>
-    <remarks>
-      <para>To use this structure to retrieve a particular PIDL, add the <b>aoffset</b> value of the PIDL to the address of the structure. The following two macros can be used to retrieve PIDLs from the structure. The first retrieves the PIDL of the parent folder. The second retrieves a PIDL, specified by its zero-based index.</para>
-      <code>#define HIDA_GetPIDLFolder(pida) (LPCITEMIDLIST)(((LPBYTE)pida)+(pida)-&gt;aoffset[0])
-#define HIDA_GetPIDLItem(pida, i) (LPCITEMIDLIST)(((LPBYTE)pida)+(pida)-&gt;aoffset[i+1])
-</code>
-      <para>The value that is returned by these macros is a pointer to the <see cref="ITEMIDLIST" /> structure. Since these structures vary in length, you must determine the end of the structure by parsing it. See <a href="https://docs.microsoft.com//windows/desktop/shell/shell-namespace">NameSpace</a> for further discussion of PIDLs and the <b>ITEMIDLIST</b> structure.</para>
-    </remarks>
+    <summary>Used with the <a href="https://docs.microsoft.com//windows/desktop/shell/clipboard">CFSTR_SHELLIDLIST</a> clipboard format to transfer the pointer to an item identifier list (PIDL) of one or more Shell namespace objects.</summary>
   </member>
   <member name="CIDA.cidl">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The number of PIDLs that are being transferred, not including the parent folder.</para>
-    </summary>
+    <summary>The number of PIDLs that are being transferred, not including the parent folder.</summary>
   </member>
   <member name="CIDA.aoffset">
-    <summary>
-      <para>Type: <b>UINT[1]</b></para>
-      <para>An array of offsets, relative to the beginning of this structure. The array contains <b>cidl</b>+1 elements. The first element of <b>aoffset</b> contains an offset to the fully qualified PIDL of a parent folder. If this PIDL is empty, the parent folder is the desktop. Each of the remaining elements of the array contains an offset to one of the PIDLs to be transferred. All of these PIDLs are relative to the PIDL of the parent folder.</para>
-    </summary>
+    <summary>An array of offsets, relative to the beginning of this structure. The array contains <b>cidl</b>+1 elements. The first element of <b>aoffset</b> contains an offset to the fully qualified PIDL of a parent folder. If this PIDL is empty, the parent folder is the desktop. Each of the remaining elements of the array contains an offset to one of the PIDLs to be transferred. All of these PIDLs are relative to the PIDL of the parent folder.</summary>
   </member>
 </doc>

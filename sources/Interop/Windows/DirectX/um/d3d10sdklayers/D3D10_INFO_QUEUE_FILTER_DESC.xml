@@ -3,49 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_INFO_QUEUE_FILTER_DESC">
-    <summary>
-      <para>Allow or deny certain types of messages to pass through a filter.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>D3D10_INFO_QUEUE_FILTER_DESC</b> is used to define the allow list and deny list in the <see cref="D3D10_INFO_QUEUE_FILTER" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-structures">Core Structures</seealso>
+    <summary>Allow or deny certain types of messages to pass through a filter.</summary>
   </member>
   <member name="D3D10_INFO_QUEUE_FILTER_DESC.NumCategories">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of message categories to allow or deny.</para>
-    </summary>
+    <summary>Number of message categories to allow or deny.</summary>
   </member>
   <member name="D3D10_INFO_QUEUE_FILTER_DESC.pCategoryList">
-    <summary>
-      <para>Type: <b><see cref="D3D10_MESSAGE_CATEGORY" />*</b></para>
-      <para>Array of message categories to allow or deny. Array must have at least NumCategories members (see <see cref="D3D10_MESSAGE_CATEGORY" />).</para>
-    </summary>
+    <summary>Array of message categories to allow or deny. Array must have at least NumCategories members (see <see cref="D3D10_MESSAGE_CATEGORY" />).</summary>
   </member>
   <member name="D3D10_INFO_QUEUE_FILTER_DESC.NumSeverities">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of message severity levels to allow or deny.</para>
-    </summary>
+    <summary>Number of message severity levels to allow or deny.</summary>
   </member>
   <member name="D3D10_INFO_QUEUE_FILTER_DESC.pSeverityList">
-    <summary>
-      <para>Type: <b><see cref="D3D10_MESSAGE_SEVERITY" />*</b></para>
-      <para>Array of message severity levels to allow or deny. Array must have at least NumSeverities members (see <see cref="D3D10_MESSAGE_SEVERITY" />).</para>
-    </summary>
+    <summary>Array of message severity levels to allow or deny. Array must have at least NumSeverities members (see <see cref="D3D10_MESSAGE_SEVERITY" />).</summary>
   </member>
   <member name="D3D10_INFO_QUEUE_FILTER_DESC.NumIDs">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of message IDs to allow or deny.</para>
-    </summary>
+    <summary>Number of message IDs to allow or deny.</summary>
   </member>
   <member name="D3D10_INFO_QUEUE_FILTER_DESC.pIDList">
-    <summary>
-      <para>Type: <b><see cref="D3D10_MESSAGE_ID" />*</b></para>
-      <para>Array of message IDs to allow or deny. Array must have at least NumIDs members (see <see cref="D3D10_MESSAGE_ID" />).</para>
-    </summary>
+    <summary>Array of message IDs to allow or deny. Array must have at least NumIDs members (see <see cref="D3D10_MESSAGE_ID" />).</summary>
   </member>
 </doc>

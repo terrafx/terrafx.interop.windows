@@ -25,7 +25,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, void**, int>)(lpVtbl[0]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFCapturePhotoConfirmation*, Guid*, void**, int>)(lpVtbl[0]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, uint>)(lpVtbl[1]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCapturePhotoConfirmation*, uint>)(lpVtbl[1]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, uint>)(lpVtbl[2]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFCapturePhotoConfirmation*, uint>)(lpVtbl[2]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFCapturePhotoConfirmation.xml' path='doc/member[@name="IMFCapturePhotoConfirmation.SetPhotoConfirmationCallback"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
     [VtblIndex(3)]
     public HRESULT SetPhotoConfirmationCallback(IMFAsyncCallback* pNotificationCallback)
     {
-        return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, IMFAsyncCallback*, int>)(lpVtbl[3]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), pNotificationCallback);
+        return ((delegate* unmanaged[MemberFunction]<IMFCapturePhotoConfirmation*, IMFAsyncCallback*, int>)(lpVtbl[3]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), pNotificationCallback);
     }
 
     /// <include file='IMFCapturePhotoConfirmation.xml' path='doc/member[@name="IMFCapturePhotoConfirmation.SetPixelFormat"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
     [VtblIndex(4)]
     public HRESULT SetPixelFormat(Guid subtype)
     {
-        return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid, int>)(lpVtbl[4]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
+        return ((delegate* unmanaged[MemberFunction]<IMFCapturePhotoConfirmation*, Guid, int>)(lpVtbl[4]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
     }
 
     /// <include file='IMFCapturePhotoConfirmation.xml' path='doc/member[@name="IMFCapturePhotoConfirmation.GetPixelFormat"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
     [VtblIndex(5)]
     public HRESULT GetPixelFormat(Guid* subtype)
     {
-        return ((delegate* unmanaged<IMFCapturePhotoConfirmation*, Guid*, int>)(lpVtbl[5]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
+        return ((delegate* unmanaged[MemberFunction]<IMFCapturePhotoConfirmation*, Guid*, int>)(lpVtbl[5]))((IMFCapturePhotoConfirmation*)Unsafe.AsPointer(ref this), subtype);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IMFCapturePhotoConfirmation : IMFCapturePhotoConfir
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFAsyncCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAsyncCallback*, int> SetPhotoConfirmationCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAsyncCallback*, int> SetPhotoConfirmationCallback;
 
         [NativeTypeName("HRESULT (GUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> SetPixelFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> SetPixelFormat;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetPixelFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetPixelFormat;
     }
 }

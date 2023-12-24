@@ -3,60 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFStandardVideoFormat">
-    <summary>
-      <para>Contains values that specify common video formats.</para>
-    </summary>
-    <seealso cref="MFInitVideoFormat" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Contains values that specify common video formats.</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_reserved">
-    <summary>
-      <para>Reserved; do not use.</para>
-    </summary>
+    <summary>Reserved; do not use.</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_NTSC">
-    <summary>
-      <para>NTSC television (720 x 480i).</para>
-    </summary>
+    <summary>NTSC television (720 x 480i).</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_PAL">
-    <summary>
-      <para>PAL television (720 x 576i).</para>
-    </summary>
+    <summary>PAL television (720 x 576i).</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_DVD_NTSC">
-    <summary>
-      <para>DVD, NTSC standard (720 x 480).</para>
-    </summary>
+    <summary>DVD, NTSC standard (720 x 480).</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_DVD_PAL">
-    <summary>
-      <para>DVD, PAL standard (720 x 576).</para>
-    </summary>
+    <summary>DVD, PAL standard (720 x 576).</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_DV_PAL">
-    <summary>
-      <para>DV video, PAL standard.</para>
-    </summary>
+    <summary>DV video, PAL standard.</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_DV_NTSC">
-    <summary>
-      <para>DV video, NTSC standard.</para>
-    </summary>
+    <summary>DV video, NTSC standard.</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_ATSC_SD480i">
-    <summary>
-      <para>ATSC digital television, SD (480i).</para>
-    </summary>
+    <summary>ATSC digital television, SD (480i).</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_ATSC_HD1080i">
-    <summary>
-      <para>ATSC digital television, HD interlaced (1080i)</para>
-    </summary>
+    <summary>ATSC digital television, HD interlaced (1080i)</summary>
   </member>
   <member name="MFStandardVideoFormat.MFStdVideoFormat_ATSC_HD720p">
-    <summary>
-      <para>ATSC digital television, HD progressive (720p)</para>
-    </summary>
+    <summary>ATSC digital television, HD progressive (720p)</summary>
   </member>
 </doc>

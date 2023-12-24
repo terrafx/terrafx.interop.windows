@@ -3,42 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_UDPTABLE_OWNER_PID">
-    <summary>
-      <para>The <b>MIB_UDPTABLE_OWNER_PID</b> structure contains the User Datagram Protocol (UDP)  listener table for IPv4 on the local computer. The table also includes the process ID (PID) that issued the call to the <see cref="bind" /> function for each UDP endpoint.</para>
-    </summary>
-    <remarks>
-      <para>The <b>MIB_UDPTABLE_OWNER_PID</b> structure is returned by a call to <see cref="GetExtendedUdpTable" /> with the <i>TableClass</i> parameter set to <b>UDP_TABLE_OWNER_PID</b> from the <see cref="UDP_TABLE_CLASS" /> enumeration and the <i>ulAf</i> parameter set to <b>AF_INET4</b>. The <b>MIB_UDPTABLE_OWNER_PID</b> structure contains an array of <see cref="MIB_UDPROW_OWNER_PID" /> structures.</para>
-      <para>The <b>MIB_UDPTABLE_OWNER_PID</b> structure may contain padding for alignment between the <b>dwNumEntries</b> member and the first <see cref="MIB_UDPROW_OWNER_PID" /> array entry in the <b>table</b> member. Padding for alignment may also be present between the <b>MIB_UDPROW_OWNER_PID</b> array entries in the <b>table</b> member. Any access to a <b>MIB_UDPROW_OWNER_PID</b> array entry should assume  padding may exist.</para>
-      <para>The <b>MIB_UDPTABLE_OWNER_PID</b> structure contains the UDP listener table for IPv4 on the local computer. The name is based on the definition of this table in RFC 1213 published by the IETF. For more information, see
-<a href="http://tools.ietf.org/html/rfc1213">http://www.ietf.org/rfc/rfc1213.txt</a>. This table contains UDP  endpoints for IPv4 that have been bound to an address. It should be noted that an application can create a UDP socket and bind it to an address for the sole purpose of sending a UDP datagram, with no intention of receiving packets using this socket (functioning as a listener).</para>
-      <para>The <see cref="MIB_UDPTABLE_OWNER_MODULE" /> structure is an enhanced version of the  <b>MIB_UDPTABLE_OWNER_PID</b> structure that includes any available ownership data for each UDP endpoint in the table.  The <b>MIB_UDPTABLE_OWNER_PID</b> is an enhanced version of the <see cref="MIB_UDPTABLE" /> that includes the process ID (PID) that issued the call to the <see cref="bind" /> function for each UDP endpoint in the table.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Udpmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Udpmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Udpmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetExtendedUdpTable" />
-    <seealso cref="GetUdp6Table" />
-    <seealso cref="GetUdpTable" />
-    <seealso cref="MIB_UDP6ROW" />
-    <seealso cref="MIB_UDP6ROW_OWNER_MODULE" />
-    <seealso cref="MIB_UDP6ROW_OWNER_PID" />
-    <seealso cref="MIB_UDP6TABLE" />
-    <seealso cref="MIB_UDP6TABLE_OWNER_MODULE" />
-    <seealso cref="MIB_UDP6TABLE_OWNER_PID" />
-    <seealso cref="MIB_UDPROW" />
-    <seealso cref="MIB_UDPROW_OWNER_MODULE" />
-    <seealso cref="MIB_UDPROW_OWNER_PID" />
-    <seealso cref="MIB_UDPTABLE" />
-    <seealso cref="MIB_UDPTABLE_OWNER_MODULE" />
-    <seealso cref="UDP_TABLE_CLASS" />
-    <seealso cref="bind" />
+    <summary>The <b>MIB_UDPTABLE_OWNER_PID</b> structure contains the User Datagram Protocol (UDP) listener table for IPv4 on the local computer. The table also includes the process ID (PID) that issued the call to the <see cref="bind" /> function for each UDP endpoint.</summary>
   </member>
   <member name="MIB_UDPTABLE_OWNER_PID.dwNumEntries">
-    <summary>
-      <para>The number of <see cref="MIB_UDPROW_OWNER_PID" /> elements in <b>table</b>.</para>
-    </summary>
+    <summary>The number of <see cref="MIB_UDPROW_OWNER_PID" /> elements in <b>table</b>.</summary>
   </member>
   <member name="MIB_UDPTABLE_OWNER_PID.table">
-    <summary>
-      <para>An array of <see cref="MIB_UDPROW_OWNER_PID" /> structures returned by a call to <see cref="GetExtendedUdpTable" />.</para>
-    </summary>
+    <summary>An array of <see cref="MIB_UDPROW_OWNER_PID" /> structures returned by a call to <see cref="GetExtendedUdpTable" />.</summary>
   </member>
 </doc>

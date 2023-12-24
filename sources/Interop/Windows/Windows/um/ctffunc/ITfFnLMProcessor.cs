@@ -25,7 +25,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, uint>)(lpVtbl[1]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, uint>)(lpVtbl[1]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, uint>)(lpVtbl[2]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, uint>)(lpVtbl[2]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, ushort**, int>)(lpVtbl[3]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, char**, int>)(lpVtbl[3]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnLMProcessor.xml' path='doc/member[@name="ITfFnLMProcessor.QueryRange"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [VtblIndex(4)]
     public HRESULT QueryRange(ITfRange* pRange, ITfRange** ppNewRange, BOOL* pfAccepted)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfAccepted);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, ITfRange*, ITfRange**, BOOL*, int>)(lpVtbl[4]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pRange, ppNewRange, pfAccepted);
     }
 
     /// <include file='ITfFnLMProcessor.xml' path='doc/member[@name="ITfFnLMProcessor.QueryLangID"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [VtblIndex(5)]
     public HRESULT QueryLangID([NativeTypeName("LANGID")] ushort langid, BOOL* pfAccepted)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, ushort, BOOL*, int>)(lpVtbl[5]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), langid, pfAccepted);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, ushort, BOOL*, int>)(lpVtbl[5]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), langid, pfAccepted);
     }
 
     /// <include file='ITfFnLMProcessor.xml' path='doc/member[@name="ITfFnLMProcessor.GetReconversion"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetReconversion(ITfRange* pRange, ITfCandidateList** ppCandList)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, ITfRange*, ITfCandidateList**, int>)(lpVtbl[6]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pRange, ppCandList);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, ITfRange*, ITfCandidateList**, int>)(lpVtbl[6]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pRange, ppCandList);
     }
 
     /// <include file='ITfFnLMProcessor.xml' path='doc/member[@name="ITfFnLMProcessor.Reconvert"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [VtblIndex(7)]
     public HRESULT Reconvert(ITfRange* pRange)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, ITfRange*, int>)(lpVtbl[7]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pRange);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, ITfRange*, int>)(lpVtbl[7]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pRange);
     }
 
     /// <include file='ITfFnLMProcessor.xml' path='doc/member[@name="ITfFnLMProcessor.QueryKey"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [VtblIndex(8)]
     public HRESULT QueryKey(BOOL fUp, WPARAM vKey, LPARAM lparamKeydata, BOOL* pfInterested)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[8]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeydata, pfInterested);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[8]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeydata, pfInterested);
     }
 
     /// <include file='ITfFnLMProcessor.xml' path='doc/member[@name="ITfFnLMProcessor.InvokeKey"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [VtblIndex(9)]
     public HRESULT InvokeKey(BOOL fUp, WPARAM vKey, LPARAM lparamKeyData)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, int>)(lpVtbl[9]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeyData);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, BOOL, WPARAM, LPARAM, int>)(lpVtbl[9]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), fUp, vKey, lparamKeyData);
     }
 
     /// <include file='ITfFnLMProcessor.xml' path='doc/member[@name="ITfFnLMProcessor.InvokeFunc"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
     [VtblIndex(10)]
     public HRESULT InvokeFunc(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* refguidFunc)
     {
-        return ((delegate* unmanaged<ITfFnLMProcessor*, ITfContext*, Guid*, int>)(lpVtbl[10]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pic, refguidFunc);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnLMProcessor*, ITfContext*, Guid*, int>)(lpVtbl[10]))((ITfFnLMProcessor*)Unsafe.AsPointer(ref this), pic, refguidFunc);
     }
 
     public interface Interface : ITfFunction.Interface
@@ -138,36 +138,36 @@ public unsafe partial struct ITfFnLMProcessor : ITfFnLMProcessor.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfRange **, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfRange*, ITfRange**, BOOL*, int> QueryRange;
 
         [NativeTypeName("HRESULT (LANGID, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort, BOOL*, int> QueryLangID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ushort, BOOL*, int> QueryLangID;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange*, ITfCandidateList**, int> GetReconversion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfRange*, ITfCandidateList**, int> GetReconversion;
 
         [NativeTypeName("HRESULT (ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange*, int> Reconvert;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfRange*, int> Reconvert;
 
         [NativeTypeName("HRESULT (BOOL, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, WPARAM, LPARAM, BOOL*, int> QueryKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, WPARAM, LPARAM, BOOL*, int> QueryKey;
 
         [NativeTypeName("HRESULT (BOOL, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, WPARAM, LPARAM, int> InvokeKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, WPARAM, LPARAM, int> InvokeKey;
 
         [NativeTypeName("HRESULT (ITfContext *, const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, Guid*, int> InvokeFunc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, Guid*, int> InvokeFunc;
     }
 }

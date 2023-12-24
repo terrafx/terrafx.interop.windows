@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12VideoEncoder.GetCodec">
+    <summary>Gets the codec associated with the video encoder.</summary>
+    <returns>The value from the <see cref="D3D12_VIDEO_ENCODER_CODEC" /> enumeration specified in the <see cref="D3D12_VIDEO_ENCODER_DESC" /> passed into <see cref="ID3D12VideoDevice3.CreateVideoEncoder" />.</returns>
+  </member>
+  <member name="ID3D12VideoEncoder.GetCodecConfiguration">
+    <summary>Gets the codec configuration parameters associated with the video encoder.</summary>
+    <param name="dstCodecConfig">Receives a <see cref="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION" /> structure representing the codec configuration parameters specified in the <see cref="D3D12_VIDEO_ENCODER_DESC" /> passed into <see cref="ID3D12VideoDevice3.CreateVideoEncoder" />.</param>
+    <returns>Returns S_OK on success.</returns>
+  </member>
+  <member name="ID3D12VideoEncoder.GetCodecProfile">
+    <summary>Gets the codec profile associated with the video encoder.</summary>
+    <param name="dstProfile">Receives a <see cref="D3D12_VIDEO_ENCODER_PROFILE_DESC" /> structure representing the codec profile specified in the <see cref="D3D12_VIDEO_ENCODER_DESC" /> passed into <see cref="ID3D12VideoDevice3.CreateVideoEncoder" />.</param>
+    <returns>Returns S_OK on success.</returns>
+  </member>
+  <member name="ID3D12VideoEncoder.GetEncoderFlags">
+    <summary>Gets the encoder flags with which the video encoder was initialized.</summary>
+    <returns>The bitwise OR combination of values from the <see cref="D3D12_VIDEO_ENCODER_FLAGS" /> enumeration specified in the <see cref="D3D12_VIDEO_ENCODER_DESC" /> passed into <see cref="ID3D12VideoDevice3.CreateVideoEncoder" />.</returns>
+  </member>
+  <member name="ID3D12VideoEncoder.GetInputFormat">
+    <summary>Gets the input format of the video encoder.</summary>
+    <returns>The <see cref="DXGI_FORMAT" /> value specified in the <see cref="D3D12_VIDEO_ENCODER_DESC" /> passed into <see cref="ID3D12VideoDevice3.CreateVideoEncoder" />.</returns>
+  </member>
+  <member name="ID3D12VideoEncoder.GetMaxMotionEstimationPrecision">
+    <summary>Gets the maximum motion estimation precision of the video encoder.</summary>
+    <returns>The value from the <see cref="D3D12_VIDEO_ENCODER_MOTION_ESTIMATION_PRECISION_MODE" /> enumeration specified in the <see cref="D3D12_VIDEO_ENCODER_DESC" /> passed into <see cref="ID3D12VideoDevice3.CreateVideoEncoder" />.</returns>
+  </member>
+  <member name="ID3D12VideoEncoder.GetNodeMask">
+    <summary>Gets the node mask for the video encoder.</summary>
+    <returns>The node mask value specified in the <see cref="D3D12_VIDEO_ENCODER_DESC" /> passed into <see cref="ID3D12VideoDevice3.CreateVideoEncoder" />.</returns>
+  </member>
+  <member name="ID3D12VideoEncoder">
+    <summary>Represents a Direct3D 12 video encoder.</summary>
+  </member>
+</doc>

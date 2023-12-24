@@ -19,32 +19,4 @@ public static unsafe partial class IStreamBuilderTests
     {
         Assert.That(typeof(IStreamBuilder).GUID, Is.EqualTo(IID_IStreamBuilder));
     }
-
-    /// <summary>Validates that the <see cref="IStreamBuilder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IStreamBuilder>(), Is.EqualTo(sizeof(IStreamBuilder)));
-    }
-
-    /// <summary>Validates that the <see cref="IStreamBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IStreamBuilder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IStreamBuilder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IStreamBuilder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IStreamBuilder), Is.EqualTo(4));
-        }
-    }
 }

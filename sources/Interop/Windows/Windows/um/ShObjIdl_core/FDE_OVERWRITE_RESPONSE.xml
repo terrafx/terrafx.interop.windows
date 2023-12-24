@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FDE_OVERWRITE_RESPONSE">
-    <summary>
-      <para>Specifies the values used by the <see cref="IFileDialogEvents.OnOverwrite" /> method to indicate an application's response to an overwrite request during a save operation using the common file dialog.</para>
-    </summary>
+    <summary>Specifies the values used by the <see cref="IFileDialogEvents.OnOverwrite" /> method to indicate an application's response to an overwrite request during a save operation using the common file dialog.</summary>
   </member>
   <member name="FDE_OVERWRITE_RESPONSE.FDEOR_DEFAULT">
-    <summary>
-      <para>The application has not handled the event. The dialog displays a UI asking the user whether the file should be overwritten and returned from the dialog.</para>
-    </summary>
+    <summary>The application has not handled the event. The dialog displays a UI asking the user whether the file should be overwritten and returned from the dialog.</summary>
   </member>
   <member name="FDE_OVERWRITE_RESPONSE.FDEOR_ACCEPT">
-    <summary>
-      <para>The application has determined that the file should be returned from the dialog.</para>
-    </summary>
+    <summary>The application has determined that the file should be returned from the dialog.</summary>
   </member>
   <member name="FDE_OVERWRITE_RESPONSE.FDEOR_REFUSE">
-    <summary>
-      <para>The application has determined that the file should not be returned from the dialog.</para>
-    </summary>
+    <summary>The application has determined that the file should not be returned from the dialog.</summary>
   </member>
 </doc>

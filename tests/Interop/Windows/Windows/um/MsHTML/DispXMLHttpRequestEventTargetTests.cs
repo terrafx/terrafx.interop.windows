@@ -19,32 +19,4 @@ public static unsafe partial class DispXMLHttpRequestEventTargetTests
     {
         Assert.That(typeof(DispXMLHttpRequestEventTarget).GUID, Is.EqualTo(IID_DispXMLHttpRequestEventTarget));
     }
-
-    /// <summary>Validates that the <see cref="DispXMLHttpRequestEventTarget" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispXMLHttpRequestEventTarget>(), Is.EqualTo(sizeof(DispXMLHttpRequestEventTarget)));
-    }
-
-    /// <summary>Validates that the <see cref="DispXMLHttpRequestEventTarget" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispXMLHttpRequestEventTarget).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispXMLHttpRequestEventTarget" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispXMLHttpRequestEventTarget), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispXMLHttpRequestEventTarget), Is.EqualTo(4));
-        }
-    }
 }

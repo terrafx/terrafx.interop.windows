@@ -3,20 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_POLICY_MAPPING">
-    <summary>
-      <para>The <b>CERT_POLICY_MAPPING</b> structure contains a mapping between issuer domain and subject domain policy OIDs.</para>
-    </summary>
+    <summary>The <b>CERT_POLICY_MAPPING</b> structure contains a mapping between issuer domain and subject domain policy OIDs.</summary>
   </member>
   <member name="CERT_POLICY_MAPPING.pszIssuerDomainPolicy">
     <summary>
-      <para>
-        <b>pszObjId</b> of an issuer domain policy.</para>
-    </summary>
+      <b>pszObjId</b> of an issuer domain policy.</summary>
   </member>
   <member name="CERT_POLICY_MAPPING.pszSubjectDomainPolicy">
     <summary>
-      <para>
-        <b>pszObjId</b> of the equivalent subject domain policy.</para>
-    </summary>
+      <b>pszObjId</b> of the equivalent subject domain policy.</summary>
   </member>
 </doc>

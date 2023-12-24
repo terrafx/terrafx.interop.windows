@@ -4,53 +4,32 @@
 <doc>
   <member name="DVD_TitleAttributes">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>DVD_TitleAttributes</b> structure contains information about a DVD title.</para>
     </summary>
-    <remarks>
-      <para>By default, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> uses the <b>AppMode</b> member of the anonymous union to report  the title mode.</para>
-      <para>If the application sets the <b>DVD_EnableTitleLength</b> option to <b>TRUE</b>, the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-navigator-filter">DVD Navigator</a> uses the <b>TitleLength</b> member of the union to report the title length. To set this option, call the <see cref="IDvdControl2.SetOption" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="IDvdInfo2.GetTitleAttributes" />
   </member>
   <member name="DVD_TitleAttributes.AppMode">
-    <summary>
-      <para>A variable of type <see cref="DVD_TITLE_APPMODE" /> indicating whether the Navigator is in karaoke mode.</para>
-    </summary>
+    <summary>A variable of type <see cref="DVD_TITLE_APPMODE" /> indicating whether the Navigator is in karaoke mode.</summary>
   </member>
   <member name="DVD_TitleAttributes.TitleLength">
-    <summary>
-      <para>A <see cref="DVD_HMSF_TIMECODE" /> structure.</para>
-    </summary>
+    <summary>A <see cref="DVD_HMSF_TIMECODE" /> structure.</summary>
   </member>
   <member name="DVD_TitleAttributes.VideoAttributes">
-    <summary>
-      <para>A <see cref="DVD_VideoAttributes" /> structure containing information about the "main" video of the current menu or title.</para>
-    </summary>
+    <summary>A <see cref="DVD_VideoAttributes" /> structure containing information about the "main" video of the current menu or title.</summary>
   </member>
   <member name="DVD_TitleAttributes.ulNumberOfAudioStreams">
-    <summary>
-      <para>The number of audio streams available in the title.</para>
-    </summary>
+    <summary>The number of audio streams available in the title.</summary>
   </member>
   <member name="DVD_TitleAttributes.AudioAttributes">
-    <summary>
-      <para>An array of <see cref="DVD_AudioAttributes" /> structures containing information about each available audio stream in the current title.</para>
-    </summary>
+    <summary>An array of <see cref="DVD_AudioAttributes" /> structures containing information about each available audio stream in the current title.</summary>
   </member>
   <member name="DVD_TitleAttributes.MultichannelAudioAttributes">
-    <summary>
-      <para>An array of <see cref="DVD_AudioAttributes" /> structure.</para>
-    </summary>
+    <summary>An array of <see cref="DVD_AudioAttributes" /> structure.</summary>
   </member>
   <member name="DVD_TitleAttributes.ulNumberOfSubpictureStreams">
-    <summary>
-      <para>The number of subpicture streams available in the title.</para>
-    </summary>
+    <summary>The number of subpicture streams available in the title.</summary>
   </member>
   <member name="DVD_TitleAttributes.SubpictureAttributes">
-    <summary>
-      <para>An array of <see cref="DVD_SubpictureAttributes" /> structures that contain information about each available subpicture stream in the title.</para>
-    </summary>
+    <summary>An array of <see cref="DVD_SubpictureAttributes" /> structures that contain information about each available subpicture stream in the title.</summary>
   </member>
 </doc>

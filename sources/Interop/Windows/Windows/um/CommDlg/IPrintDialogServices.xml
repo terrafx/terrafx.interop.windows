@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPrintDialogServices.AddRef">
+    <summary>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown">IUnknown's</a>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nf-unknwn-iunknown-addref">AddRef</a> method</summary>
+  </member>
+  <member name="IPrintDialogServices.GetCurrentDevMode">
+    <summary>Fills a <see cref="DEVMODE" /> structure with information about the currently selected printer for use with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a>.</summary>
+    <param name="pDevMode">A pointer to a buffer that receives a <see cref="DEVMODE" /> structure containing information about the currently selected printer.</param>
+    <param name="pcbSize">
+      <para>On input, the variable specifies the size, in bytes, of the buffer pointed to by the <i>lpDevMode</i> parameter. On output, the variable contains the number of bytes written to <i>lpDevMode</i>.</para>
+      <para>If the size is zero on input, the function returns the required buffer size (in bytes) in <i>pcbSize</i> and does not use the <i>lpDevMode</i> buffer.</para>
+    </param>
+    <returns>
+      <para>If the method is successful, the return value is <b>S_OK</b>. If no printer is currently selected, the return value is <b>S_OK</b>, the value returned in <i>pcbSize</i> is zero, and the <i>lpDevMode</i> buffer is unchanged.</para>
+      <para>If an error occurs, the return value is a COM error code. For more information, see <a href="https://docs.microsoft.com//windows/desktop/SetupApi/error-handling">Error Handling</a>.</para>
+    </returns>
+  </member>
+  <member name="IPrintDialogServices.GetCurrentPortName">
+    <summary>Retrieves the name of the current port for use with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a>.</summary>
+    <param name="pPortName">The name of the current port.</param>
+    <param name="pcchSize">
+      <para>On input, the variable specifies the size, in characters, of the buffer pointed to by the <i>lpPortName</i> parameter. On output, the variable contains the number of bytes (ANSI) or characters (Unicode), including the terminating null character, written to the buffer.</para>
+      <para>If the size is zero on input, the function returns the required buffer size (in bytes or characters) in <i>pcchSize</i> and does not use the <i>lpPortName</i> buffer.</para>
+    </param>
+    <returns>
+      <para>If the method is successful, the return value is <b>S_OK</b>. If there is no current port, the return value is <b>S_OK</b>, the value returned in <i>pcchSize</i> is zero, and the <i>lpPortName</i> buffer is unchanged.</para>
+      <para>If an error occurs, the return value is a COM error code. For more information, see <a href="https://docs.microsoft.com//windows/desktop/SetupApi/error-handling">Error Handling</a>.</para>
+    </returns>
+  </member>
+  <member name="IPrintDialogServices.GetCurrentPrinterName">
+    <summary>Retrieves the name of the currently selected printer, for use with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a>.</summary>
+    <param name="pPrinterName">The name of the currently selected printer.</param>
+    <param name="pcchSize">
+      <para>On input, the variable specifies the size, in characters, of the buffer pointed to by the <i>lpPrinterName</i> parameter. On output, the variable contains the number of bytes (ANSI) or characters (Unicode), including the terminating null character, written to the buffer.</para>
+      <para>If the size is zero on input, the function returns the required buffer size (in bytes or characters) in <i>pcchSize</i> and does not use the <i>lpPrinterName</i> buffer.</para>
+    </param>
+    <returns>
+      <para>If the method is successful, the return value is <b>S_OK</b>. If no printer is currently selected, the return value is <b>S_OK</b>, the value returned in <i>pcchSize</i> is zero, and the <i>lpPrinterName</i> buffer is unchanged.</para>
+      <para>If an error occurs, the return value is a COM error code. For more information, see <a href="https://docs.microsoft.com//windows/desktop/SetupApi/error-handling">Error Handling</a>.</para>
+    </returns>
+  </member>
+  <member name="IPrintDialogServices.QueryInterface">
+    <summary>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown">IUnknown's</a>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)">QueryInterface</a> method</summary>
+  </member>
+  <member name="IPrintDialogServices.Release">
+    <summary>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown">IUnknown's</a>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nf-unknwn-iunknown-release">Release</a> method</summary>
+  </member>
+  <member name="IPrintDialogServices">
+    <summary>Provides methods that enable an application using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function to retrieve information about the currently selected printer.</summary>
+  </member>
+</doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_COMMAND_QUEUE_DESC">
+    <summary>Describes a command queue.</summary>
+  </member>
+  <member name="D3D12_COMMAND_QUEUE_DESC.Type">
+    <summary>Specifies one member of <see cref="D3D12_COMMAND_LIST_TYPE" />.</summary>
+  </member>
+  <member name="D3D12_COMMAND_QUEUE_DESC.Priority">
+    <summary>The priority for the command queue, as a<see cref="D3D12_COMMAND_QUEUE_PRIORITY" /> enumeration constant to select normal or high priority.</summary>
+  </member>
+  <member name="D3D12_COMMAND_QUEUE_DESC.Flags">
+    <summary>Specifies any flags from the <see cref="D3D12_COMMAND_QUEUE_FLAGS" /> enumeration.</summary>
+  </member>
+  <member name="D3D12_COMMAND_QUEUE_DESC.NodeMask">
+    <summary>For single GPU operation, set this to zero. If there are multiple GPU nodes, set a bit to identify the node (the device's physical adapter) to which the command queue applies. Each bit in the mask corresponds to a single node. Only 1 bit must be set. Refer to <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</summary>
+  </member>
+</doc>

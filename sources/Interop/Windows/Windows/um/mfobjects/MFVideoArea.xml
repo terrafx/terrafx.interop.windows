@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFVideoArea">
-    <summary>
-      <para>Specifies a rectangular area within a video frame.</para>
-    </summary>
-    <seealso cref="MFOffset" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Specifies a rectangular area within a video frame.</summary>
   </member>
   <member name="MFVideoArea.OffsetX">
-    <summary>
-      <para>An <see cref="MFOffset" /> structure that contains the x-coordinate of the upper-left corner of the rectangle. This coordinate might have a fractional value.</para>
-    </summary>
+    <summary>An <see cref="MFOffset" /> structure that contains the x-coordinate of the upper-left corner of the rectangle. This coordinate might have a fractional value.</summary>
   </member>
   <member name="MFVideoArea.OffsetY">
-    <summary>
-      <para>An <see cref="MFOffset" /> structure that contains the y-coordinate of the upper-left corner of the rectangle. This coordinate might have a fractional value.</para>
-    </summary>
+    <summary>An <see cref="MFOffset" /> structure that contains the y-coordinate of the upper-left corner of the rectangle. This coordinate might have a fractional value.</summary>
   </member>
   <member name="MFVideoArea.Area">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd145106(v=vs.85)">SIZE</a> structure that contains the width and height of the rectangle.</para>
-    </summary>
+    <summary>A <see cref="SIZE" /> structure that contains the width and height of the rectangle.</summary>
   </member>
 </doc>

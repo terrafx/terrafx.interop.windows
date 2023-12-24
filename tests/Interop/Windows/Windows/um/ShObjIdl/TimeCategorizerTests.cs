@@ -19,25 +19,4 @@ public static unsafe partial class TimeCategorizerTests
     {
         Assert.That(typeof(TimeCategorizer).GUID, Is.EqualTo(IID_TimeCategorizer));
     }
-
-    /// <summary>Validates that the <see cref="TimeCategorizer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<TimeCategorizer>(), Is.EqualTo(sizeof(TimeCategorizer)));
-    }
-
-    /// <summary>Validates that the <see cref="TimeCategorizer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(TimeCategorizer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="TimeCategorizer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(TimeCategorizer), Is.EqualTo(1));
-    }
 }

@@ -3,24 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="X3DAUDIO_DISTANCE_CURVE">
-    <summary>
-      <para>Defines an explicit piecewise curve made up of linear segments, directly defining DSP behavior with respect to normalized distance.</para>
-    </summary>
-    <remarks>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">Structures</seealso>
+    <summary>Defines an explicit piecewise curve made up of linear segments, directly defining DSP behavior with respect to normalized distance.</summary>
   </member>
   <member name="X3DAUDIO_DISTANCE_CURVE.pPoints">
     <summary>
-      <para>
-        <see cref="X3DAUDIO_DISTANCE_CURVE_POINT" /> array. The array must have no duplicates and be sorted in ascending order with respect to distance.</para>
-    </summary>
+      <see cref="X3DAUDIO_DISTANCE_CURVE_POINT" /> array. The array must have no duplicates and be sorted in ascending order with respect to distance.</summary>
   </member>
   <member name="X3DAUDIO_DISTANCE_CURVE.PointCount">
-    <summary>
-      <para>Number of distance curve points. There must be two or more points since all curves must have at least two endpoints defining values at 0.0f and 1.0f normalized distance, respectively.</para>
-    </summary>
+    <summary>Number of distance curve points. There must be two or more points since all curves must have at least two endpoints defining values at 0.0f and 1.0f normalized distance, respectively.</summary>
   </member>
 </doc>

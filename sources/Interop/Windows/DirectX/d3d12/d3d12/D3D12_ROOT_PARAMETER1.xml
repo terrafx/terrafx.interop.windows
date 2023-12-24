@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_ROOT_PARAMETER1">
+    <summary>Describes the slot of a root signature version 1.1.</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER1.ParameterType">
+    <summary>A <see cref="D3D12_ROOT_PARAMETER_TYPE" />-typed value that specifies the type of root signature slot. This member determines which type to use in the union below.</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER1.DescriptorTable">
+    <summary>A <see cref="D3D12_ROOT_DESCRIPTOR_TABLE1" /> structure that describes the layout of a descriptor table as a collection of descriptor ranges that appear one after the other in a descriptor heap.</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER1.Constants">
+    <summary>A <see cref="D3D12_ROOT_CONSTANTS" /> structure that describes constants inline in the root signature that appear in shaders as one constant buffer.</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER1.Descriptor">
+    <summary>A <see cref="D3D12_ROOT_DESCRIPTOR1" /> structure that describes descriptors inline in the root signature that appear in shaders.</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER1.ShaderVisibility">
+    <summary>A <see cref="D3D12_SHADER_VISIBILITY" />-typed value that specifies the shaders that can access the contents of the root signature slot.</summary>
+  </member>
+</doc>

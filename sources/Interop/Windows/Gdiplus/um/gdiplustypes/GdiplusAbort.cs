@@ -18,7 +18,7 @@ public unsafe partial struct GdiplusAbort : GdiplusAbort.Interface
     [VtblIndex(0)]
     public HRESULT Abort()
     {
-        return ((delegate* unmanaged<GdiplusAbort*, int>)(lpVtbl[0]))((GdiplusAbort*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<GdiplusAbort*, int>)(lpVtbl[0]))((GdiplusAbort*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface
@@ -31,6 +31,6 @@ public unsafe partial struct GdiplusAbort : GdiplusAbort.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Abort;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Abort;
     }
 }

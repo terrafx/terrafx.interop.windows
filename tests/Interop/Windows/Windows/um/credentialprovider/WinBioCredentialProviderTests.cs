@@ -19,25 +19,4 @@ public static unsafe partial class WinBioCredentialProviderTests
     {
         Assert.That(typeof(WinBioCredentialProvider).GUID, Is.EqualTo(IID_WinBioCredentialProvider));
     }
-
-    /// <summary>Validates that the <see cref="WinBioCredentialProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<WinBioCredentialProvider>(), Is.EqualTo(sizeof(WinBioCredentialProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="WinBioCredentialProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(WinBioCredentialProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="WinBioCredentialProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(WinBioCredentialProvider), Is.EqualTo(1));
-    }
 }

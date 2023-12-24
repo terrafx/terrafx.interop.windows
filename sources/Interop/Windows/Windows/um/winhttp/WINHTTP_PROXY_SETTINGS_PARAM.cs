@@ -14,9 +14,9 @@ public unsafe partial struct WINHTTP_PROXY_SETTINGS_PARAM
 
     /// <include file='WINHTTP_PROXY_SETTINGS_PARAM.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_PARAM.pcwszConnectionName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pcwszConnectionName;
+    public char* pcwszConnectionName;
 
     /// <include file='WINHTTP_PROXY_SETTINGS_PARAM.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_PARAM.pcwszProbeHost"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pcwszProbeHost;
+    public char* pcwszProbeHost;
 }

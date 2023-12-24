@@ -17,12 +17,12 @@ public unsafe partial struct SPC_LINK
     public uint dwLinkChoice;
 
     /// <include file='SPC_LINK.xml' path='doc/member[@name="SPC_LINK.Anonymous"]/*' />
-    [NativeTypeName("SPC_LINK_::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinTrust.h:1275:5)")]
+    [NativeTypeName("__AnonymousRecord_WinTrust_L1275_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszUrl"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszUrl
+    public ref char* pwszUrl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -44,7 +44,7 @@ public unsafe partial struct SPC_LINK
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszFile"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszFile
+    public ref char* pwszFile
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -60,7 +60,7 @@ public unsafe partial struct SPC_LINK
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszUrl"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* pwszUrl;
+        public char* pwszUrl;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Moniker"]/*' />
         [FieldOffset(0)]
@@ -69,6 +69,6 @@ public unsafe partial struct SPC_LINK
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.pwszFile"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPWSTR")]
-        public ushort* pwszFile;
+        public char* pwszFile;
     }
 }

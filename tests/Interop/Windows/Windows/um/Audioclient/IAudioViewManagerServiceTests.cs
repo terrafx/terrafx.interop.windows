@@ -19,32 +19,4 @@ public static unsafe partial class IAudioViewManagerServiceTests
     {
         Assert.That(typeof(IAudioViewManagerService).GUID, Is.EqualTo(IID_IAudioViewManagerService));
     }
-
-    /// <summary>Validates that the <see cref="IAudioViewManagerService" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioViewManagerService>(), Is.EqualTo(sizeof(IAudioViewManagerService)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioViewManagerService" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioViewManagerService).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioViewManagerService" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioViewManagerService), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioViewManagerService), Is.EqualTo(4));
-        }
-    }
 }

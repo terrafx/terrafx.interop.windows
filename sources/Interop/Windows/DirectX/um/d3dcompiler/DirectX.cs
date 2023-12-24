@@ -13,11 +13,11 @@ public static unsafe partial class DirectX
 {
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DReadFileToBlob"]/*' />
     [DllImport("d3dcompiler_47", ExactSpelling = true)]
-    public static extern HRESULT D3DReadFileToBlob([NativeTypeName("LPCWSTR")] ushort* pFileName, ID3DBlob** ppContents);
+    public static extern HRESULT D3DReadFileToBlob([NativeTypeName("LPCWSTR")] char* pFileName, ID3DBlob** ppContents);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DWriteBlobToFile"]/*' />
     [DllImport("d3dcompiler_47", ExactSpelling = true)]
-    public static extern HRESULT D3DWriteBlobToFile(ID3DBlob* pBlob, [NativeTypeName("LPCWSTR")] ushort* pFileName, BOOL bOverwrite);
+    public static extern HRESULT D3DWriteBlobToFile(ID3DBlob* pBlob, [NativeTypeName("LPCWSTR")] char* pFileName, BOOL bOverwrite);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DCompile"]/*' />
     [DllImport("d3dcompiler_47", ExactSpelling = true)]
@@ -29,7 +29,7 @@ public static unsafe partial class DirectX
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DCompileFromFile"]/*' />
     [DllImport("d3dcompiler_47", ExactSpelling = true)]
-    public static extern HRESULT D3DCompileFromFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("const D3D_SHADER_MACRO *")] D3D_SHADER_MACRO* pDefines, ID3DInclude* pInclude, [NativeTypeName("LPCSTR")] sbyte* pEntrypoint, [NativeTypeName("LPCSTR")] sbyte* pTarget, uint Flags1, uint Flags2, ID3DBlob** ppCode, ID3DBlob** ppErrorMsgs);
+    public static extern HRESULT D3DCompileFromFile([NativeTypeName("LPCWSTR")] char* pFileName, [NativeTypeName("const D3D_SHADER_MACRO *")] D3D_SHADER_MACRO* pDefines, ID3DInclude* pInclude, [NativeTypeName("LPCSTR")] sbyte* pEntrypoint, [NativeTypeName("LPCSTR")] sbyte* pTarget, uint Flags1, uint Flags2, ID3DBlob** ppCode, ID3DBlob** ppErrorMsgs);
 
     /// <include file='DirectX.xml' path='doc/member[@name="DirectX.D3DPreprocess"]/*' />
     [DllImport("d3dcompiler_47", ExactSpelling = true)]

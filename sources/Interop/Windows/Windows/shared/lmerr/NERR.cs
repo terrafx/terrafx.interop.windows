@@ -1017,4 +1017,7 @@ public static partial class NERR
 
     [NativeTypeName("#define NERR_TooManyHostNames (NERR_BASE + 631)")]
     public const int NERR_TooManyHostNames = (2100 + 631);
+
+    [NativeTypeName("#define NERR_AccountReuseBlockedByPolicy (NERR_BASE + 632)")]
+    public const int NERR_AccountReuseBlockedByPolicy = (2100 + 632);
 }

@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncAudioMapDestChannel7Tests
     {
         Assert.That(typeof(CODECAPI_AVEncAudioMapDestChannel7).GUID, Is.EqualTo(IID_CODECAPI_AVEncAudioMapDestChannel7));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncAudioMapDestChannel7" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncAudioMapDestChannel7>(), Is.EqualTo(sizeof(CODECAPI_AVEncAudioMapDestChannel7)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncAudioMapDestChannel7" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncAudioMapDestChannel7).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncAudioMapDestChannel7" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncAudioMapDestChannel7), Is.EqualTo(1));
-    }
 }

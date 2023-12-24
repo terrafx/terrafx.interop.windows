@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_DISTANTDIFFUSE_PROP.xml' path='doc/member[@name="D2D1_DISTANTDIFFUSE_PROP"]/*' />
-public enum D2D1_DISTANTDIFFUSE_PROP : uint
+public enum D2D1_DISTANTDIFFUSE_PROP
 {
     /// <include file='D2D1_DISTANTDIFFUSE_PROP.xml' path='doc/member[@name="D2D1_DISTANTDIFFUSE_PROP.D2D1_DISTANTDIFFUSE_PROP_AZIMUTH"]/*' />
     D2D1_DISTANTDIFFUSE_PROP_AZIMUTH = 0,
@@ -30,5 +30,5 @@ public enum D2D1_DISTANTDIFFUSE_PROP : uint
     D2D1_DISTANTDIFFUSE_PROP_SCALE_MODE = 6,
 
     /// <include file='D2D1_DISTANTDIFFUSE_PROP.xml' path='doc/member[@name="D2D1_DISTANTDIFFUSE_PROP.D2D1_DISTANTDIFFUSE_PROP_FORCE_DWORD"]/*' />
-    D2D1_DISTANTDIFFUSE_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_DISTANTDIFFUSE_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

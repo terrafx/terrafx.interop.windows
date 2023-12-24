@@ -19,32 +19,4 @@ public static unsafe partial class IAMTimecodeGeneratorTests
     {
         Assert.That(typeof(IAMTimecodeGenerator).GUID, Is.EqualTo(IID_IAMTimecodeGenerator));
     }
-
-    /// <summary>Validates that the <see cref="IAMTimecodeGenerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMTimecodeGenerator>(), Is.EqualTo(sizeof(IAMTimecodeGenerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMTimecodeGenerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMTimecodeGenerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMTimecodeGenerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMTimecodeGenerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMTimecodeGenerator), Is.EqualTo(4));
-        }
-    }
 }

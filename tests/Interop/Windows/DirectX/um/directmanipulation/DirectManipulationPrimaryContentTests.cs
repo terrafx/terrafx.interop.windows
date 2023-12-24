@@ -19,25 +19,4 @@ public static unsafe partial class DirectManipulationPrimaryContentTests
     {
         Assert.That(typeof(DirectManipulationPrimaryContent).GUID, Is.EqualTo(CLSID_DirectManipulationPrimaryContent));
     }
-
-    /// <summary>Validates that the <see cref="DirectManipulationPrimaryContent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DirectManipulationPrimaryContent>(), Is.EqualTo(sizeof(DirectManipulationPrimaryContent)));
-    }
-
-    /// <summary>Validates that the <see cref="DirectManipulationPrimaryContent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DirectManipulationPrimaryContent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DirectManipulationPrimaryContent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DirectManipulationPrimaryContent), Is.EqualTo(1));
-    }
 }

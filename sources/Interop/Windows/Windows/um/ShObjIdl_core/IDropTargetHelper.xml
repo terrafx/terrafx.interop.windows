@@ -3,131 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDropTargetHelper.DragEnter">
-    <summary>
-      <para>Notifies the drag-image manager that the drop target's <see cref="IDropTarget.DragEnter" /> method has been called.</para>
-    </summary>
-    <param name="hwndTarget">
-      <para>Type: <b>HWND</b></para>
-      <para>The target's window handle.</para>
-    </param>
-    <param name="pDataObject">
-      <para>Type: <b><see cref="IDataObject" />*</b></para>
-      <para>A pointer to the data object's <see cref="IDataObject" /> interface.</para>
-    </param>
-    <param name="ppt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>The <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure pointer that was received in the <see cref="IDropTarget.DragEnter" /> method's
-<i>pt</i> parameter.</para>
-    </param>
-    <param name="dwEffect">
-      <para>Type: <b>DWORD</b></para>
-      <para>The value pointed to by the <see cref="IDropTarget.DragEnter" /> method's
-<i>pdwEffect</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by a drop target when its <see cref="IDropTarget.DragEnter" /> method is called. It notifies the drag-image manager that the drop target has been entered, and provides it with the information needed to display the drag image.</para>
-    </remarks>
-    <seealso cref="IDropTargetHelper" />
+    <summary>Notifies the drag-image manager that the drop target's <see cref="IDropTarget.DragEnter" /> method has been called.</summary>
+    <param name="hwndTarget">The target's window handle.</param>
+    <param name="pDataObject">A pointer to the data object's <see cref="IDataObject" /> interface.</param>
+    <param name="ppt">The <see cref="POINT" /> structure pointer that was received in the <see cref="IDropTarget.DragEnter" /> method's<i>pt</i> parameter.</param>
+    <param name="dwEffect">The value pointed to by the <see cref="IDropTarget.DragEnter" /> method's<i>pdwEffect</i> parameter.</param>
+    <returns>Returns S_OK if successful, or a COM error value otherwise.</returns>
   </member>
   <member name="IDropTargetHelper.DragLeave">
-    <summary>
-      <para>Notifies the drag-image manager that the drop target's <see cref="IDropTarget.DragLeave" /> method has been called.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by a drop target when its <see cref="IDropTarget.DragLeave" /> method is called. It notifies the drag-image manager that the cursor has left the drop target.</para>
-    </remarks>
-    <seealso cref="IDropTargetHelper" />
+    <summary>Notifies the drag-image manager that the drop target's <see cref="IDropTarget.DragLeave" /> method has been called.</summary>
+    <returns>Returns S_OK if successful, or a COM error value otherwise.</returns>
   </member>
   <member name="IDropTargetHelper.DragOver">
-    <summary>
-      <para>Notifies the drag-image manager that the drop target's <see cref="IDropTarget.DragOver" /> method has been called.</para>
-    </summary>
-    <param name="ppt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>The <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure pointer that was received in the <see cref="IDropTarget.DragOver" /> method's
-<i>pt</i> parameter.</para>
-    </param>
-    <param name="dwEffect">
-      <para>Type: <b>DWORD</b></para>
-      <para>The value pointed to by the <see cref="IDropTarget.DragOver" /> method's
-<i>pdwEffect</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by a drop target when its <see cref="IDropTarget.DragOver" /> method is called. It notifies the drag-image manager that the cursor position has changed and provides it with the information needed to display the drag image.</para>
-    </remarks>
-    <seealso cref="IDropTargetHelper" />
+    <summary>Notifies the drag-image manager that the drop target's <see cref="IDropTarget.DragOver" /> method has been called.</summary>
+    <param name="ppt">The <see cref="POINT" /> structure pointer that was received in the <see cref="IDropTarget.DragOver" /> method's<i>pt</i> parameter.</param>
+    <param name="dwEffect">The value pointed to by the <see cref="IDropTarget.DragOver" /> method's<i>pdwEffect</i> parameter.</param>
+    <returns>Returns S_OK if successful, or a COM error value otherwise.</returns>
   </member>
   <member name="IDropTargetHelper.Drop">
-    <summary>
-      <para>Notifies the drag-image manager that the drop target's <see cref="IDropTarget.Drop" /> method has been called.</para>
-    </summary>
-    <param name="pDataObject">
-      <para>Type: <b><see cref="IDataObject" />*</b></para>
-      <para>A pointer to the data object's <see cref="IDataObject" /> interface.</para>
-    </param>
-    <param name="ppt">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a>*</b></para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure pointer that was received in the <see cref="IDropTarget.Drop" /> method's
-<i>pt</i> parameter.</para>
-    </param>
-    <param name="dwEffect">
-      <para>Type: <b>DWORD</b></para>
-      <para>The value pointed to by the <see cref="IDropTarget.Drop" /> method's
-<i>pdwEffect</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method is called by a drop target when its <see cref="IDropTarget.Drop" /> method is called. It notifies the drag-image manager that the object has been dropped, and provides it with the information needed to display the drag image.</para>
-    </remarks>
-    <seealso cref="IDropTargetHelper" />
+    <summary>Notifies the drag-image manager that the drop target's <see cref="IDropTarget.Drop" /> method has been called.</summary>
+    <param name="pDataObject">A pointer to the data object's <see cref="IDataObject" /> interface.</param>
+    <param name="ppt">A <see cref="POINT" /> structure pointer that was received in the <see cref="IDropTarget.Drop" /> method's<i>pt</i> parameter.</param>
+    <param name="dwEffect">The value pointed to by the <see cref="IDropTarget.Drop" /> method's<i>pdwEffect</i> parameter.</param>
+    <returns>Returns S_OK if successful, or a COM error value otherwise.</returns>
   </member>
   <member name="IDropTargetHelper.Show">
-    <summary>
-      <para>Notifies the drag-image manager to show or hide the drag image.</para>
-    </summary>
-    <param name="fShow">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that is set to <b>TRUE</b> to show the drag image, and <b>FALSE</b> to hide it.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or a COM error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>This method is used when dragging over a target window in a low color-depth video mode. It allows the target to notify the drag-image manager to hide the drag image while it is painting the window. While you are painting a window that is currently being dragged over, hide the drag image by calling <b>Show</b> with <i>fShow</i> set to <b>FALSE</b>. Once the window has been painted, display the drag image again by calling <b>Show</b> with <i>fShow</i> set to <b>TRUE</b>.</para>
-    </remarks>
-    <seealso cref="IDropTargetHelper" />
+    <summary>Notifies the drag-image manager to show or hide the drag image.</summary>
+    <param name="fShow">A boolean value that is set to <b>TRUE</b> to show the drag image, and <b>FALSE</b> to hide it.</param>
+    <returns>Returns S_OK if successful, or a COM error value otherwise.</returns>
   </member>
   <member name="IDropTargetHelper">
-    <summary>
-      <para>Exposes methods that allow drop targets to display a drag image while the image is over the target window.</para>
-    </summary>
-    <remarks>
-      <para>This interface is exposed by the Shell's drag-image manager. It is not implemented by applications.</para>
-      <para>This interface is used by drop targets to enable the drag-image manager to display the drag image while the image is over the target window. The <see cref="IDragSourceHelper" /> and <b>IDropTargetHelper</b> interfaces are exposed by the drag-image manager object to allow the <see cref="IDropTarget" /> interface to use custom drag images. To use either of these interfaces, you must create an in-process server drag-image manager object by calling <see cref="CoCreateInstance" /> with a class identifier (CLSID) of CLSID_DragDropHelper. Get interface pointers using standard Component Object Model (COM) procedures.</para>
-      <para>Four of the <b>IDropTargetHelper</b> methods correspond to the four <see cref="IDropTarget" /> methods. When you implement <b>IDropTarget</b>, each of its methods should call the corresponding <b>IDropTargetHelper</b> method to pass the information to the drag-image manager. The fifth <b>IDropTargetHelper</b> method notifies the drag-image manager to show or hide the drag image. This method is used when dragging over a target window in a low color-depth video mode. It allows the target to hide the drag image while it is painting the window.</para>
-      <para>
-        <b>Note</b>   The drag-and-drop helper object calls <see cref="IDataObject.SetData" /> to load private formats—used for cross-process support—into the data object. It later retrieves these formats by calling <see cref="IDataObject.GetData" />. To support the drag-and-drop helper object, the data object's <b>SetData</b> and <b>GetData</b> implementations must be able to accept and return arbitrary private formats.</para>
-      <para>For further discussion of Shell drag-and-drop operations, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/bb776905(v=vs.85)">Transferring Shell Data Using Drag-and-Drop or the Clipboard</a>.</para>
-      <para>
-        <b>Note</b>   Prior to Windows Vista this interface was declared in Shlobj.h.</para>
-    </remarks>
-    <seealso cref="IDragSourceHelper" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/dataobject">Shell Data Object</seealso>
+    <summary>Exposes methods that allow drop targets to display a drag image while the image is over the target window.</summary>
   </member>
 </doc>

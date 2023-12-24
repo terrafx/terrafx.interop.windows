@@ -25,7 +25,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, Guid*, void**, int>)(lpVtbl[0]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfConfigureSystemKeystrokeFeed*, Guid*, void**, int>)(lpVtbl[0]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, uint>)(lpVtbl[1]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfConfigureSystemKeystrokeFeed*, uint>)(lpVtbl[1]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, uint>)(lpVtbl[2]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfConfigureSystemKeystrokeFeed*, uint>)(lpVtbl[2]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfConfigureSystemKeystrokeFeed.xml' path='doc/member[@name="ITfConfigureSystemKeystrokeFeed.DisableSystemKeystrokeFeed"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
     [VtblIndex(3)]
     public HRESULT DisableSystemKeystrokeFeed()
     {
-        return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, int>)(lpVtbl[3]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfConfigureSystemKeystrokeFeed*, int>)(lpVtbl[3]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfConfigureSystemKeystrokeFeed.xml' path='doc/member[@name="ITfConfigureSystemKeystrokeFeed.EnableSystemKeystrokeFeed"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
     [VtblIndex(4)]
     public HRESULT EnableSystemKeystrokeFeed()
     {
-        return ((delegate* unmanaged<ITfConfigureSystemKeystrokeFeed*, int>)(lpVtbl[4]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfConfigureSystemKeystrokeFeed*, int>)(lpVtbl[4]))((ITfConfigureSystemKeystrokeFeed*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct ITfConfigureSystemKeystrokeFeed : ITfConfigureSyste
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> DisableSystemKeystrokeFeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> DisableSystemKeystrokeFeed;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EnableSystemKeystrokeFeed;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EnableSystemKeystrokeFeed;
     }
 }

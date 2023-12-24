@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_VECTOR_4F">
-    <summary>
-      <para>A vector of 4 FLOAT values (x, y, z, w).</para>
-    </summary>
+    <summary>A vector of 4 FLOAT values (x, y, z, w).</summary>
   </member>
   <member name="D2D1_VECTOR_4F.x">
-    <summary>
-      <para>The x value of the vector.</para>
-    </summary>
+    <summary>The x value of the vector.</summary>
   </member>
   <member name="D2D1_VECTOR_4F.y">
-    <summary>
-      <para>The y value of the vector.</para>
-    </summary>
+    <summary>The y value of the vector.</summary>
   </member>
   <member name="D2D1_VECTOR_4F.z">
-    <summary>
-      <para>The z value of the vector.</para>
-    </summary>
+    <summary>The z value of the vector.</summary>
   </member>
   <member name="D2D1_VECTOR_4F.w">
-    <summary>
-      <para>The w value of the vector.</para>
-    </summary>
+    <summary>The w value of the vector.</summary>
   </member>
 </doc>

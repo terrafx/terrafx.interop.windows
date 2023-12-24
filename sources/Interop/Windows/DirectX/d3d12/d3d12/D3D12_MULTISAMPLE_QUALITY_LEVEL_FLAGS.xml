@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS">
+    <summary>Specifies options for determining quality levels.</summary>
+  </member>
+  <member name="D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS.D3D12_MULTISAMPLE_QUALITY_LEVELS_FLAG_NONE">
+    <summary>No options are supported.</summary>
+  </member>
+  <member name="D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS.D3D12_MULTISAMPLE_QUALITY_LEVELS_FLAG_TILED_RESOURCE">
+    <summary>The number of quality levels can be determined for tiled resources.</summary>
+  </member>
+</doc>

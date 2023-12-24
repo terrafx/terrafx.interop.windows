@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICompositionTextureInterop.GetAvailableFence">
+    <summary>
+      <para>Retrieves a Direct3D synchronization fence/value pair that indicates when the composition texture will become available, if that info is known. The value returned depends on the availability state of the composition texture. An availability state specifies whether, and when, it's safe to render to the composition texture.</para>
+      <para>See the <b>Remarks</b> section of <see cref="IDCompositionTexture.GetAvailableFence" /> for the availability states, their descriptions, and how <b>GetAvailableFence</b> behaves for each state.</para>
+    </summary>
+    <param name="fenceValue">The returned fence value.</param>
+    <param name="iid">An interface identifier.</param>
+    <param name="availableFence">The returned available fence, or <code>nullptr</code>, depending on the availability state of the composition texture. For details, see the <b>Remarks</b> section of <see cref="IDCompositionTexture.GetAvailableFence" />.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">HRESULT</a> error code.</returns>
+  </member>
+  <member name="ICompositionTextureInterop">
+    <summary>
+      <para>To access interop methods, query <b>ICompositionTextureInterop</b> from the composition texture object.</para>
+      <para>The interface to an object that represents a raw Direct3D texture that can be bound to a DComp visual as content. The object can be used anywhere that a generic composition surface can be used in those APIs today—for example, as the content of a visual or a surface brush. The object exposes an available fence, which can be used to synchronize application rendering and composition work. Can also accept various attributes, such as an alpha mode, source rect, and color space, to more precisely define the content being displayed.</para>
+      <para>The composition textures API supports Direct3D 11 only.</para>
+    </summary>
+  </member>
+</doc>

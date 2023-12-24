@@ -21,7 +21,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
     public uint PrologLen
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0xFFu;
         }
@@ -38,7 +38,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
     public uint FuncLen
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 8) & 0x3FFFFFu;
         }
@@ -55,7 +55,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
     public uint ThirtyTwoBit
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 30) & 0x1u;
         }
@@ -72,7 +72,7 @@ public partial struct IMAGE_CE_RUNTIME_FUNCTION_ENTRY
     public uint ExceptionFlag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 31) & 0x1u;
         }

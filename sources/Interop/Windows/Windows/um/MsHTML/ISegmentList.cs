@@ -25,7 +25,7 @@ public unsafe partial struct ISegmentList : ISegmentList.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISegmentList*, Guid*, void**, int>)(lpVtbl[0]))((ISegmentList*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISegmentList*, Guid*, void**, int>)(lpVtbl[0]))((ISegmentList*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISegmentList : ISegmentList.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISegmentList*, uint>)(lpVtbl[1]))((ISegmentList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISegmentList*, uint>)(lpVtbl[1]))((ISegmentList*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISegmentList : ISegmentList.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISegmentList*, uint>)(lpVtbl[2]))((ISegmentList*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISegmentList*, uint>)(lpVtbl[2]))((ISegmentList*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISegmentList.xml' path='doc/member[@name="ISegmentList.CreateIterator"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISegmentList : ISegmentList.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT CreateIterator(ISegmentListIterator** ppIIter)
     {
-        return ((delegate* unmanaged<ISegmentList*, ISegmentListIterator**, int>)(lpVtbl[3]))((ISegmentList*)Unsafe.AsPointer(ref this), ppIIter);
+        return ((delegate* unmanaged[MemberFunction]<ISegmentList*, ISegmentListIterator**, int>)(lpVtbl[3]))((ISegmentList*)Unsafe.AsPointer(ref this), ppIIter);
     }
 
     /// <include file='ISegmentList.xml' path='doc/member[@name="ISegmentList.GetType"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISegmentList : ISegmentList.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetType(SELECTION_TYPE* peType)
     {
-        return ((delegate* unmanaged<ISegmentList*, SELECTION_TYPE*, int>)(lpVtbl[4]))((ISegmentList*)Unsafe.AsPointer(ref this), peType);
+        return ((delegate* unmanaged[MemberFunction]<ISegmentList*, SELECTION_TYPE*, int>)(lpVtbl[4]))((ISegmentList*)Unsafe.AsPointer(ref this), peType);
     }
 
     /// <include file='ISegmentList.xml' path='doc/member[@name="ISegmentList.IsEmpty"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ISegmentList : ISegmentList.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT IsEmpty(BOOL* pfEmpty)
     {
-        return ((delegate* unmanaged<ISegmentList*, BOOL*, int>)(lpVtbl[5]))((ISegmentList*)Unsafe.AsPointer(ref this), pfEmpty);
+        return ((delegate* unmanaged[MemberFunction]<ISegmentList*, BOOL*, int>)(lpVtbl[5]))((ISegmentList*)Unsafe.AsPointer(ref this), pfEmpty);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct ISegmentList : ISegmentList.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISegmentListIterator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISegmentListIterator**, int> CreateIterator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISegmentListIterator**, int> CreateIterator;
 
         [NativeTypeName("HRESULT (SELECTION_TYPE *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, SELECTION_TYPE*, int> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, SELECTION_TYPE*, int> GetType;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsEmpty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsEmpty;
     }
 }

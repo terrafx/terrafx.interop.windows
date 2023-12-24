@@ -19,32 +19,4 @@ public static unsafe partial class IElementSegmentTests
     {
         Assert.That(typeof(IElementSegment).GUID, Is.EqualTo(IID_IElementSegment));
     }
-
-    /// <summary>Validates that the <see cref="IElementSegment" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IElementSegment>(), Is.EqualTo(sizeof(IElementSegment)));
-    }
-
-    /// <summary>Validates that the <see cref="IElementSegment" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IElementSegment).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IElementSegment" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IElementSegment), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IElementSegment), Is.EqualTo(4));
-        }
-    }
 }

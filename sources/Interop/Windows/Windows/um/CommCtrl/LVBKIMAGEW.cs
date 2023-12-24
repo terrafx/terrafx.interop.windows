@@ -17,7 +17,7 @@ public unsafe partial struct LVBKIMAGEW
 
     /// <include file='LVBKIMAGEW.xml' path='doc/member[@name="LVBKIMAGEW.pszImage"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszImage;
+    public char* pszImage;
 
     /// <include file='LVBKIMAGEW.xml' path='doc/member[@name="LVBKIMAGEW.cchImageMax"]/*' />
     public uint cchImageMax;

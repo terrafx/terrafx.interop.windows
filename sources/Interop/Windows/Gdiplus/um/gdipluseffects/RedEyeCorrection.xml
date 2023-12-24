@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RedEyeCorrection.GetParameters">
+    <summary>The <b>RedEyeCorrection.GetParameters</b> method gets the current values of the parameters of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-redeyecorrection">RedEyeCorrection</a> object.</summary>
+    <param name="size">The size, in bytes, of the buffer pointed to by the <i>parameters</i> parameter.</param>
+    <param name="parameters">Pointer to a buffer that is large enough to receive a <see cref="RedEyeCorrectionParams" /> structure followed by an array of RECT structures. To determine the total size of the required buffer, call the GetParameterSize method of the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-redeyecorrection">RedEyeCorrection</a> object whose parameters you want to retrieve.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="RedEyeCorrection.RedEyeCorrection">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-redeyecorrection">RedEyeCorrection</a> object.</summary>
+  </member>
+  <member name="RedEyeCorrection.SetParameters">
+    <summary>The <b>RedEyeCorrection.SetParameters</b> method sets the parameters of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-redeyecorrection">RedEyeCorrection</a> object.</summary>
+    <param name="parameters">Pointer to a <see cref="RedEyeCorrectionParams" /> structure that specifies the parameters.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

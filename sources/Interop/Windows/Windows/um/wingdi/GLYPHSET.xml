@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GLYPHSET">
-    <summary>
-      <para>The <b>GLYPHSET</b> structure contains information about a range of Unicode code points.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="GetFontUnicodeRanges" />
-    <seealso cref="WCRANGE" />
+    <summary>The <b>GLYPHSET</b> structure contains information about a range of Unicode code points.</summary>
   </member>
   <member name="GLYPHSET.cbThis">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="GLYPHSET.flAccel">
     <summary>
@@ -24,26 +16,20 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>GS_8BIT_INDICES</description>
           <description>Treat glyph indices as 8-bit wide values. Otherwise, they are 16-bit wide values.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="GLYPHSET.cGlyphsSupported">
-    <summary>
-      <para>The total number of Unicode code points supported in the font.</para>
-    </summary>
+    <summary>The total number of Unicode code points supported in the font.</summary>
   </member>
   <member name="GLYPHSET.cRanges">
-    <summary>
-      <para>The total number of Unicode ranges in <b>ranges</b>.</para>
-    </summary>
+    <summary>The total number of Unicode ranges in <b>ranges</b>.</summary>
   </member>
   <member name="GLYPHSET.ranges">
-    <summary>
-      <para>Array of Unicode ranges that are supported in the font.</para>
-    </summary>
+    <summary>Array of Unicode ranges that are supported in the font.</summary>
   </member>
 </doc>

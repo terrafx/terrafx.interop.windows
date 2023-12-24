@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1RenderInfo*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RenderInfo*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1RenderInfo*, uint>)(lpVtbl[1]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RenderInfo*, uint>)(lpVtbl[1]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1RenderInfo*, uint>)(lpVtbl[2]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RenderInfo*, uint>)(lpVtbl[2]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1RenderInfo.xml' path='doc/member[@name="ID2D1RenderInfo.SetInputDescription"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetInputDescription([NativeTypeName("UINT32")] uint inputIndex, D2D1_INPUT_DESCRIPTION inputDescription)
     {
-        return ((delegate* unmanaged<ID2D1RenderInfo*, uint, D2D1_INPUT_DESCRIPTION, int>)(lpVtbl[3]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), inputIndex, inputDescription);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RenderInfo*, uint, D2D1_INPUT_DESCRIPTION, int>)(lpVtbl[3]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), inputIndex, inputDescription);
     }
 
     /// <include file='ID2D1RenderInfo.xml' path='doc/member[@name="ID2D1RenderInfo.SetOutputBuffer"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface, INativ
     [VtblIndex(4)]
     public HRESULT SetOutputBuffer(D2D1_BUFFER_PRECISION bufferPrecision, D2D1_CHANNEL_DEPTH channelDepth)
     {
-        return ((delegate* unmanaged<ID2D1RenderInfo*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1RenderInfo*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int>)(lpVtbl[4]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), bufferPrecision, channelDepth);
     }
 
     /// <include file='ID2D1RenderInfo.xml' path='doc/member[@name="ID2D1RenderInfo.SetCached"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface, INativ
     [VtblIndex(5)]
     public void SetCached(BOOL isCached)
     {
-        ((delegate* unmanaged<ID2D1RenderInfo*, BOOL, void>)(lpVtbl[5]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), isCached);
+        ((delegate* unmanaged[MemberFunction]<ID2D1RenderInfo*, BOOL, void>)(lpVtbl[5]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), isCached);
     }
 
     /// <include file='ID2D1RenderInfo.xml' path='doc/member[@name="ID2D1RenderInfo.SetInstructionCountHint"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface, INativ
     [VtblIndex(6)]
     public void SetInstructionCountHint([NativeTypeName("UINT32")] uint instructionCount)
     {
-        ((delegate* unmanaged<ID2D1RenderInfo*, uint, void>)(lpVtbl[6]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), instructionCount);
+        ((delegate* unmanaged[MemberFunction]<ID2D1RenderInfo*, uint, void>)(lpVtbl[6]))((ID2D1RenderInfo*)Unsafe.AsPointer(ref this), instructionCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct ID2D1RenderInfo : ID2D1RenderInfo.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32, D2D1_INPUT_DESCRIPTION) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, D2D1_INPUT_DESCRIPTION, int> SetInputDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, D2D1_INPUT_DESCRIPTION, int> SetInputDescription;
 
         [NativeTypeName("HRESULT (D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_BUFFER_PRECISION, D2D1_CHANNEL_DEPTH, int> SetOutputBuffer;
 
         [NativeTypeName("void (BOOL) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, void> SetCached;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, void> SetCached;
 
         [NativeTypeName("void (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void> SetInstructionCountHint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void> SetInstructionCountHint;
     }
 }

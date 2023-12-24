@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TextRenderingHint">
+    <summary>The <b>TextRenderingHint</b> enumeration specifies the process used to render text. The process affects the quality of the text.</summary>
+  </member>
+  <member name="TextRenderingHint.TextRenderingHintSystemDefault">
+    <summary>Specifies that a character is drawn using the currently selected system font smoothing mode (also called a rendering hint).</summary>
+  </member>
+  <member name="TextRenderingHint.TextRenderingHintSingleBitPerPixelGridFit">
+    <summary>Specifies that a character is drawn using its glyph bitmap and hinting to improve character appearance on stems and curvature.</summary>
+  </member>
+  <member name="TextRenderingHint.TextRenderingHintSingleBitPerPixel">
+    <summary>Specifies that a character is drawn using its glyph bitmap and no hinting. This results in better performance at the expense of quality.</summary>
+  </member>
+  <member name="TextRenderingHint.TextRenderingHintAntiAliasGridFit">
+    <summary>Specifies that a character is drawn using its antialiased glyph bitmap and hinting. This results in much better quality due to antialiasing at a higher performance cost.</summary>
+  </member>
+  <member name="TextRenderingHint.TextRenderingHintAntiAlias">
+    <summary>Specifies that a character is drawn using its antialiased glyph bitmap and no hinting. Stem width differences may be noticeable because hinting is turned off.</summary>
+  </member>
+  <member name="TextRenderingHint.TextRenderingHintClearTypeGridFit">
+    <summary>
+      <para>Specifies that a character is drawn using its glyph ClearType bitmap and hinting. This type of text rendering cannot be used along with <see cref="CompositingModeSourceCopy" />.</para>
+      <para>Windows XP and Windows Server 2003 and later versions of Windows only: ClearType rendering is supported only on Windows XP and Windows Server 2003 and later versions of Windows. Therefore, <see cref="TextRenderingHintClearTypeGridFit" /> is ignored on other operating systems even though GDI+ is supported on those operating systems.</para>
+    </summary>
+  </member>
+</doc>

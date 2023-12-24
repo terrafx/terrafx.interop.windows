@@ -11,7 +11,7 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetEnvironmentStringsW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    public static extern BOOL SetEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* NewEnvironment);
+    public static extern BOOL SetEnvironmentStringsW([NativeTypeName("LPWCH")] char* NewEnvironment);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetStdHandle"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -36,7 +36,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCommandLineW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("LPWSTR")]
-    public static extern ushort* GetCommandLineW();
+    public static extern char* GetCommandLineW();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnvironmentStringsA"]/*' />
     [DllImport("kernel32", EntryPoint = "GetEnvironmentStrings", ExactSpelling = true)]
@@ -46,7 +46,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnvironmentStringsW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("LPWCH")]
-    public static extern ushort* GetEnvironmentStringsW();
+    public static extern char* GetEnvironmentStringsW();
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeEnvironmentStringsA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -56,7 +56,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FreeEnvironmentStringsW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL FreeEnvironmentStringsW([NativeTypeName("LPWCH")] ushort* penv);
+    public static extern BOOL FreeEnvironmentStringsW([NativeTypeName("LPWCH")] char* penv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetEnvironmentVariableA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -68,7 +68,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint GetEnvironmentVariableW([NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("LPWSTR")] char* lpBuffer, [NativeTypeName("DWORD")] uint nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetEnvironmentVariableA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -78,7 +78,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetEnvironmentVariableW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPCWSTR")] ushort* lpValue);
+    public static extern BOOL SetEnvironmentVariableW([NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("LPCWSTR")] char* lpValue);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ExpandEnvironmentStringsA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -90,7 +90,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint ExpandEnvironmentStringsW([NativeTypeName("LPCWSTR")] ushort* lpSrc, [NativeTypeName("LPWSTR")] ushort* lpDst, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint ExpandEnvironmentStringsW([NativeTypeName("LPCWSTR")] char* lpSrc, [NativeTypeName("LPWSTR")] char* lpDst, [NativeTypeName("DWORD")] uint nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCurrentDirectoryA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -98,7 +98,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCurrentDirectoryW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    public static extern BOOL SetCurrentDirectoryW([NativeTypeName("LPCWSTR")] ushort* lpPathName);
+    public static extern BOOL SetCurrentDirectoryW([NativeTypeName("LPCWSTR")] char* lpPathName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentDirectoryA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -108,13 +108,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentDirectoryW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint GetCurrentDirectoryW([NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPWSTR")] ushort* lpBuffer);
+    public static extern uint GetCurrentDirectoryW([NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPWSTR")] char* lpBuffer);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SearchPathW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint SearchPathW([NativeTypeName("LPCWSTR")] ushort* lpPath, [NativeTypeName("LPCWSTR")] ushort* lpFileName, [NativeTypeName("LPCWSTR")] ushort* lpExtension, [NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPWSTR")] ushort* lpBuffer, [NativeTypeName("LPWSTR *")] ushort** lpFilePart);
+    public static extern uint SearchPathW([NativeTypeName("LPCWSTR")] char* lpPath, [NativeTypeName("LPCWSTR")] char* lpFileName, [NativeTypeName("LPCWSTR")] char* lpExtension, [NativeTypeName("DWORD")] uint nBufferLength, [NativeTypeName("LPWSTR")] char* lpBuffer, [NativeTypeName("LPWSTR *")] char** lpFilePart);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SearchPathA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -128,38 +128,38 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.NeedCurrentDirectoryForExePathW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    public static extern BOOL NeedCurrentDirectoryForExePathW([NativeTypeName("LPCWSTR")] ushort* ExeName);
+    public static extern BOOL NeedCurrentDirectoryForExePathW([NativeTypeName("LPCWSTR")] char* ExeName);
 
     [NativeTypeName("#define SetEnvironmentStrings SetEnvironmentStringsW")]
-    public static delegate*<ushort*, BOOL> SetEnvironmentStrings => &SetEnvironmentStringsW;
+    public static delegate*<char*, BOOL> SetEnvironmentStrings => &SetEnvironmentStringsW;
 
     [NativeTypeName("#define GetCommandLine GetCommandLineW")]
-    public static delegate*<ushort*> GetCommandLine => &GetCommandLineW;
+    public static delegate*<char*> GetCommandLine => &GetCommandLineW;
 
     [NativeTypeName("#define GetEnvironmentStrings GetEnvironmentStringsW")]
-    public static delegate*<ushort*> GetEnvironmentStrings => &GetEnvironmentStringsW;
+    public static delegate*<char*> GetEnvironmentStrings => &GetEnvironmentStringsW;
 
     [NativeTypeName("#define FreeEnvironmentStrings FreeEnvironmentStringsW")]
-    public static delegate*<ushort*, BOOL> FreeEnvironmentStrings => &FreeEnvironmentStringsW;
+    public static delegate*<char*, BOOL> FreeEnvironmentStrings => &FreeEnvironmentStringsW;
 
     [NativeTypeName("#define GetEnvironmentVariable GetEnvironmentVariableW")]
-    public static delegate*<ushort*, ushort*, uint, uint> GetEnvironmentVariable => &GetEnvironmentVariableW;
+    public static delegate*<char*, char*, uint, uint> GetEnvironmentVariable => &GetEnvironmentVariableW;
 
     [NativeTypeName("#define SetEnvironmentVariable SetEnvironmentVariableW")]
-    public static delegate*<ushort*, ushort*, BOOL> SetEnvironmentVariable => &SetEnvironmentVariableW;
+    public static delegate*<char*, char*, BOOL> SetEnvironmentVariable => &SetEnvironmentVariableW;
 
     [NativeTypeName("#define ExpandEnvironmentStrings ExpandEnvironmentStringsW")]
-    public static delegate*<ushort*, ushort*, uint, uint> ExpandEnvironmentStrings => &ExpandEnvironmentStringsW;
+    public static delegate*<char*, char*, uint, uint> ExpandEnvironmentStrings => &ExpandEnvironmentStringsW;
 
     [NativeTypeName("#define SetCurrentDirectory SetCurrentDirectoryW")]
-    public static delegate*<ushort*, BOOL> SetCurrentDirectory => &SetCurrentDirectoryW;
+    public static delegate*<char*, BOOL> SetCurrentDirectory => &SetCurrentDirectoryW;
 
     [NativeTypeName("#define GetCurrentDirectory GetCurrentDirectoryW")]
-    public static delegate*<uint, ushort*, uint> GetCurrentDirectory => &GetCurrentDirectoryW;
+    public static delegate*<uint, char*, uint> GetCurrentDirectory => &GetCurrentDirectoryW;
 
     [NativeTypeName("#define SearchPath SearchPathW")]
-    public static delegate*<ushort*, ushort*, ushort*, uint, ushort*, ushort**, uint> SearchPath => &SearchPathW;
+    public static delegate*<char*, char*, char*, uint, char*, char**, uint> SearchPath => &SearchPathW;
 
     [NativeTypeName("#define NeedCurrentDirectoryForExePath NeedCurrentDirectoryForExePathW")]
-    public static delegate*<ushort*, BOOL> NeedCurrentDirectoryForExePath => &NeedCurrentDirectoryForExePathW;
+    public static delegate*<char*, BOOL> NeedCurrentDirectoryForExePath => &NeedCurrentDirectoryForExePathW;
 }

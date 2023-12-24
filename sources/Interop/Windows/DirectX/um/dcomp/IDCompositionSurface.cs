@@ -28,7 +28,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDCompositionSurface*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionSurface*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSurface*, Guid*, void**, int>)(lpVtbl[0]))((IDCompositionSurface*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDCompositionSurface*, uint>)(lpVtbl[1]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSurface*, uint>)(lpVtbl[1]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDCompositionSurface*, uint>)(lpVtbl[2]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSurface*, uint>)(lpVtbl[2]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.BeginDraw"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
     [VtblIndex(3)]
     public HRESULT BeginDraw([NativeTypeName("const RECT *")] RECT* updateRect, [NativeTypeName("const IID &")] Guid* iid, void** updateObject, POINT* updateOffset)
     {
-        return ((delegate* unmanaged<IDCompositionSurface*, RECT*, Guid*, void**, POINT*, int>)(lpVtbl[3]))((IDCompositionSurface*)Unsafe.AsPointer(ref this), updateRect, iid, updateObject, updateOffset);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSurface*, RECT*, Guid*, void**, POINT*, int>)(lpVtbl[3]))((IDCompositionSurface*)Unsafe.AsPointer(ref this), updateRect, iid, updateObject, updateOffset);
     }
 
     /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.EndDraw"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
     [VtblIndex(4)]
     public HRESULT EndDraw()
     {
-        return ((delegate* unmanaged<IDCompositionSurface*, int>)(lpVtbl[4]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSurface*, int>)(lpVtbl[4]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.SuspendDraw"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
     [VtblIndex(5)]
     public HRESULT SuspendDraw()
     {
-        return ((delegate* unmanaged<IDCompositionSurface*, int>)(lpVtbl[5]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSurface*, int>)(lpVtbl[5]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.ResumeDraw"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
     [VtblIndex(6)]
     public HRESULT ResumeDraw()
     {
-        return ((delegate* unmanaged<IDCompositionSurface*, int>)(lpVtbl[6]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSurface*, int>)(lpVtbl[6]))((IDCompositionSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDCompositionSurface.xml' path='doc/member[@name="IDCompositionSurface.Scroll"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
     [VtblIndex(7)]
     public HRESULT Scroll([NativeTypeName("const RECT *")] RECT* scrollRect, [NativeTypeName("const RECT *")] RECT* clipRect, int offsetX, int offsetY)
     {
-        return ((delegate* unmanaged<IDCompositionSurface*, RECT*, RECT*, int, int, int>)(lpVtbl[7]))((IDCompositionSurface*)Unsafe.AsPointer(ref this), scrollRect, clipRect, offsetX, offsetY);
+        return ((delegate* unmanaged[MemberFunction]<IDCompositionSurface*, RECT*, RECT*, int, int, int>)(lpVtbl[7]))((IDCompositionSurface*)Unsafe.AsPointer(ref this), scrollRect, clipRect, offsetX, offsetY);
     }
 
     public interface Interface : IUnknown.Interface
@@ -111,27 +111,27 @@ public unsafe partial struct IDCompositionSurface : IDCompositionSurface.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const RECT *, const IID &, void **, POINT *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, Guid*, void**, POINT*, int> BeginDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, Guid*, void**, POINT*, int> BeginDraw;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> EndDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> EndDraw;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> SuspendDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> SuspendDraw;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResumeDraw;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResumeDraw;
 
         [NativeTypeName("HRESULT (const RECT *, const RECT *, int, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, RECT*, int, int, int> Scroll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, RECT*, int, int, int> Scroll;
     }
 }

@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ThumbnailStreamCacheOptions">
-    <summary>
-      <para>Defines the cache options used by the <see cref="IThumbnailStreamCache" /> interface.</para>
-    </summary>
-    <seealso cref="IThumbnailStreamCache" />
+    <summary>Defines the cache options used by the <see cref="IThumbnailStreamCache" /> interface.</summary>
   </member>
   <member name="ThumbnailStreamCacheOptions.ExtractIfNotCached">
-    <summary>
-      <para>Return the cached thumbnail if it is already cached, otherwise extract the thumbnail to the cache.</para>
-    </summary>
+    <summary>Return the cached thumbnail if it is already cached, otherwise extract the thumbnail to the cache.</summary>
   </member>
   <member name="ThumbnailStreamCacheOptions.ReturnOnlyIfCached">
-    <summary>
-      <para>Return the thumbnail only if it is already cached.</para>
-    </summary>
+    <summary>Return the thumbnail only if it is already cached.</summary>
   </member>
   <member name="ThumbnailStreamCacheOptions.ResizeThumbnail">
-    <summary>
-      <para>Resize the thumbnail to match the requested size.</para>
-    </summary>
+    <summary>Resize the thumbnail to match the requested size.</summary>
   </member>
   <member name="ThumbnailStreamCacheOptions.AllowSmallerSize">
-    <summary>
-      <para>Can return a cached thumbnail that is smaller than the requested size.</para>
-    </summary>
+    <summary>Can return a cached thumbnail that is smaller than the requested size.</summary>
   </member>
 </doc>

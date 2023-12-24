@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Debug1.EnableDebugLayer">
+    <summary>Enables the debug layer.</summary>
+  </member>
+  <member name="ID3D12Debug1.SetEnableGPUBasedValidation">
+    <summary>This method enables or disables GPU-Based Validation (GBV) before creating a device with the debug layer enabled.</summary>
+    <param name="Enable">TRUE to enable GPU-Based Validation, otherwise FALSE.</param>
+  </member>
+  <member name="ID3D12Debug1.SetEnableSynchronizedCommandQueueValidation">
+    <summary>Enables or disables dependent command queue synchronization when using a D3D12 device with the debug layer enabled.</summary>
+    <param name="Enable">TRUE to enable Dependent Command Queue Synchronization, otherwise FALSE.</param>
+  </member>
+  <member name="ID3D12Debug1">
+    <summary>Adds GPU-Based Validation and Dependent Command Queue Synchronization to the debug layer.</summary>
+  </member>
+</doc>

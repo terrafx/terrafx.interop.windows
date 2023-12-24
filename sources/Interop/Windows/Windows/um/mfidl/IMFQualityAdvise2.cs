@@ -25,7 +25,7 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFQualityAdvise2*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdvise2*, Guid*, void**, int>)(lpVtbl[0]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFQualityAdvise2*, uint>)(lpVtbl[1]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdvise2*, uint>)(lpVtbl[1]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFQualityAdvise2*, uint>)(lpVtbl[2]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdvise2*, uint>)(lpVtbl[2]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IMFQualityAdvise.SetDropMode" />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
     [VtblIndex(3)]
     public HRESULT SetDropMode(MF_QUALITY_DROP_MODE eDropMode)
     {
-        return ((delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_DROP_MODE, int>)(lpVtbl[3]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), eDropMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdvise2*, MF_QUALITY_DROP_MODE, int>)(lpVtbl[3]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), eDropMode);
     }
 
     /// <inheritdoc cref="IMFQualityAdvise.SetQualityLevel" />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
     [VtblIndex(4)]
     public HRESULT SetQualityLevel(MF_QUALITY_LEVEL eQualityLevel)
     {
-        return ((delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_LEVEL, int>)(lpVtbl[4]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), eQualityLevel);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdvise2*, MF_QUALITY_LEVEL, int>)(lpVtbl[4]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), eQualityLevel);
     }
 
     /// <inheritdoc cref="IMFQualityAdvise.GetDropMode" />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetDropMode(MF_QUALITY_DROP_MODE* peDropMode)
     {
-        return ((delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_DROP_MODE*, int>)(lpVtbl[5]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), peDropMode);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdvise2*, MF_QUALITY_DROP_MODE*, int>)(lpVtbl[5]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), peDropMode);
     }
 
     /// <inheritdoc cref="IMFQualityAdvise.GetQualityLevel" />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
     [VtblIndex(6)]
     public HRESULT GetQualityLevel(MF_QUALITY_LEVEL* peQualityLevel)
     {
-        return ((delegate* unmanaged<IMFQualityAdvise2*, MF_QUALITY_LEVEL*, int>)(lpVtbl[6]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), peQualityLevel);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdvise2*, MF_QUALITY_LEVEL*, int>)(lpVtbl[6]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), peQualityLevel);
     }
 
     /// <inheritdoc cref="IMFQualityAdvise.DropTime" />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
     [VtblIndex(7)]
     public HRESULT DropTime([NativeTypeName("LONGLONG")] long hnsAmountToDrop)
     {
-        return ((delegate* unmanaged<IMFQualityAdvise2*, long, int>)(lpVtbl[7]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), hnsAmountToDrop);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdvise2*, long, int>)(lpVtbl[7]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), hnsAmountToDrop);
     }
 
     /// <include file='IMFQualityAdvise2.xml' path='doc/member[@name="IMFQualityAdvise2.NotifyQualityEvent"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
     [VtblIndex(8)]
     public HRESULT NotifyQualityEvent(IMFMediaEvent* pEvent, [NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IMFQualityAdvise2*, IMFMediaEvent*, uint*, int>)(lpVtbl[8]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), pEvent, pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMFQualityAdvise2*, IMFMediaEvent*, uint*, int>)(lpVtbl[8]))((IMFQualityAdvise2*)Unsafe.AsPointer(ref this), pEvent, pdwFlags);
     }
 
     public interface Interface : IMFQualityAdvise.Interface
@@ -104,30 +104,30 @@ public unsafe partial struct IMFQualityAdvise2 : IMFQualityAdvise2.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MF_QUALITY_DROP_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_QUALITY_DROP_MODE, int> SetDropMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_QUALITY_DROP_MODE, int> SetDropMode;
 
         [NativeTypeName("HRESULT (MF_QUALITY_LEVEL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_QUALITY_LEVEL, int> SetQualityLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_QUALITY_LEVEL, int> SetQualityLevel;
 
         [NativeTypeName("HRESULT (MF_QUALITY_DROP_MODE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_QUALITY_DROP_MODE*, int> GetDropMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_QUALITY_DROP_MODE*, int> GetDropMode;
 
         [NativeTypeName("HRESULT (MF_QUALITY_LEVEL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_QUALITY_LEVEL*, int> GetQualityLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_QUALITY_LEVEL*, int> GetQualityLevel;
 
         [NativeTypeName("HRESULT (LONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long, int> DropTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long, int> DropTime;
 
         [NativeTypeName("HRESULT (IMFMediaEvent *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFMediaEvent*, uint*, int> NotifyQualityEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFMediaEvent*, uint*, int> NotifyQualityEvent;
     }
 }

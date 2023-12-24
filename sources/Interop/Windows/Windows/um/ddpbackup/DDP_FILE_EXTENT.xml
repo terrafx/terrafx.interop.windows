@@ -4,24 +4,12 @@
 <doc>
   <member name="DDP_FILE_EXTENT">
     <summary>
-      <para>
-        <b>DDP_FILE_EXTENT</b> represents the extent of data in a
-file that is to be read in a pending call to
-<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-readbackupfile">ReadBackupFile</a>.</para>
-    </summary>
-    <remarks>
-      <para>Data Deduplication needs to read only the portions of a container file that back the restore target file.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-previewcontainerread">IDedupReadFileCallback.PreviewContainerRead</seealso>
+      <b>DDP_FILE_EXTENT</b> represents the extent of data in a file that is to be read in a pending call to<a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/ddpbackup/nf-ddpbackup-idedupreadfilecallback-readbackupfile">ReadBackupFile</a>.</summary>
   </member>
   <member name="DDP_FILE_EXTENT.Length">
-    <summary>
-      <para>Length, in bytes, of the extent.</para>
-    </summary>
+    <summary>Length, in bytes, of the extent.</summary>
   </member>
   <member name="DDP_FILE_EXTENT.Offset">
-    <summary>
-      <para>Offset, in bytes, from the beginning of the file to the beginning of the extent.</para>
-    </summary>
+    <summary>Offset, in bytes, from the beginning of the file to the beginning of the extent.</summary>
   </member>
 </doc>

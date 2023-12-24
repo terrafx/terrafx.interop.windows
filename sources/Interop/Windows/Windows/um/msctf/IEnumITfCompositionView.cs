@@ -25,7 +25,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumITfCompositionView*, Guid*, void**, int>)(lpVtbl[0]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumITfCompositionView*, Guid*, void**, int>)(lpVtbl[0]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumITfCompositionView*, uint>)(lpVtbl[1]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumITfCompositionView*, uint>)(lpVtbl[1]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumITfCompositionView*, uint>)(lpVtbl[2]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumITfCompositionView*, uint>)(lpVtbl[2]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumITfCompositionView.xml' path='doc/member[@name="IEnumITfCompositionView.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
     [VtblIndex(3)]
     public HRESULT Clone(IEnumITfCompositionView** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumITfCompositionView*, IEnumITfCompositionView**, int>)(lpVtbl[3]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumITfCompositionView*, IEnumITfCompositionView**, int>)(lpVtbl[3]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumITfCompositionView.xml' path='doc/member[@name="IEnumITfCompositionView.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfCompositionView** rgCompositionView, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumITfCompositionView*, uint, ITfCompositionView**, uint*, int>)(lpVtbl[4]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount, rgCompositionView, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumITfCompositionView*, uint, ITfCompositionView**, uint*, int>)(lpVtbl[4]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount, rgCompositionView, pcFetched);
     }
 
     /// <include file='IEnumITfCompositionView.xml' path='doc/member[@name="IEnumITfCompositionView.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumITfCompositionView*, int>)(lpVtbl[5]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumITfCompositionView*, int>)(lpVtbl[5]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumITfCompositionView.xml' path='doc/member[@name="IEnumITfCompositionView.Skip"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<IEnumITfCompositionView*, uint, int>)(lpVtbl[6]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumITfCompositionView*, uint, int>)(lpVtbl[6]))((IEnumITfCompositionView*)Unsafe.AsPointer(ref this), ulCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumITfCompositionView : IEnumITfCompositionView.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumITfCompositionView **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumITfCompositionView**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumITfCompositionView**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, ITfCompositionView **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfCompositionView**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfCompositionView**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
     }
 }

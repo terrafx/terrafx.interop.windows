@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BP_BUFFERFORMAT">
-    <summary>
-      <para>Specifies the format of the buffer. Used by <see cref="BeginBufferedAnimation" /> and <see cref="BeginBufferedPaint" />.</para>
-    </summary>
-    <seealso cref="CreateCompatibleBitmap" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/device-independent-bitmaps">Device-Independent Bitmaps</seealso>
+    <summary>Specifies the format of the buffer. Used by <see cref="BeginBufferedAnimation" /> and <see cref="BeginBufferedPaint" />.</summary>
   </member>
   <member name="BP_BUFFERFORMAT.BPBF_COMPATIBLEBITMAP">
-    <summary>
-      <para>Compatible bitmap. The  number of bits per pixel is based on the color format of the device associated with the HDC specified with <see cref="BeginBufferedPaint" /> or <see cref="BeginBufferedAnimation" />—typically, this is the display device.</para>
-    </summary>
+    <summary>Compatible bitmap. The number of bits per pixel is based on the color format of the device associated with the HDC specified with <see cref="BeginBufferedPaint" /> or <see cref="BeginBufferedAnimation" />—typically, this is the display device.</summary>
   </member>
   <member name="BP_BUFFERFORMAT.BPBF_DIB">
-    <summary>
-      <para>Bottom-up device-independent bitmap. The origin of the bitmap is the lower-left corner. Uses 32 bits per pixel.</para>
-    </summary>
+    <summary>Bottom-up device-independent bitmap. The origin of the bitmap is the lower-left corner. Uses 32 bits per pixel.</summary>
   </member>
   <member name="BP_BUFFERFORMAT.BPBF_TOPDOWNDIB">
-    <summary>
-      <para>Top-down device-independent bitmap. The origin of the bitmap is the upper-left corner. Uses 32 bits per pixel.</para>
-    </summary>
+    <summary>Top-down device-independent bitmap. The origin of the bitmap is the upper-left corner. Uses 32 bits per pixel.</summary>
   </member>
   <member name="BP_BUFFERFORMAT.BPBF_TOPDOWNMONODIB">
-    <summary>
-      <para>Top-down, monochrome, device-independent bitmap. Uses 1 bit per pixel.</para>
-    </summary>
+    <summary>Top-down, monochrome, device-independent bitmap. Uses 1 bit per pixel.</summary>
   </member>
 </doc>

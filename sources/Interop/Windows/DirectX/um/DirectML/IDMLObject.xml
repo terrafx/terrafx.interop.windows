@@ -3,88 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDMLObject.GetPrivateData">
-    <summary>
-      <para>Gets application-defined data from a DirectML device object. This method is thread-safe.</para>
-    </summary>
-    <param name="guid">
-      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
-      <para>The <b>GUID</b> that is associated with the data.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a>*</b></para>
-      <para>A pointer to a variable that on input contains the size, in bytes, of the buffer that <i>data</i> points to, and on output contains the size, in bytes, of the amount of data that <b>GetPrivateData</b> retrieved.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to a memory block that receives the data from the device object if <i>dataSize</i> points to a value that specifies a buffer large enough to hold the data.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the data returned is a pointer to an <see cref="IUnknown" /> (or derived interface) that was previously set by <see cref="SetPrivateDataInterface" />, then that interface will have its reference count incremented before the private data is returned.</para>
-    </remarks>
-    <seealso cref="IDMLObject" />
+    <summary>Gets application-defined data from a DirectML device object. This method is thread-safe.</summary>
+    <param name="guid">The <b>GUID</b> that is associated with the data.</param>
+    <param name="dataSize">A pointer to a variable that on input contains the size, in bytes, of the buffer that <i>data</i> points to, and on output contains the size, in bytes, of the amount of data that <b>GetPrivateData</b> retrieved.</param>
+    <param name="data">A pointer to a memory block that receives the data from the device object if <i>dataSize</i> points to a value that specifies a buffer large enough to hold the data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLObject.SetName">
-    <summary>
-      <para>Associates a name with the DirectML device object.
-This name is for use in debug diagnostics and tools. This method is thread-safe.</para>
-    </summary>
-    <param name="name">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">PCWSTR</a></b></para>
-      <para>A <b>NULL</b>-terminated <b>UNICODE</b> string that contains the name to associate with the DirectML device object.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLObject" />
+    <summary>Associates a name with the DirectML device object. This name is for use in debug diagnostics and tools. This method is thread-safe.</summary>
+    <param name="name">A <b>NULL</b>-terminated <b>UNICODE</b> string that contains the name to associate with the DirectML device object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLObject.SetPrivateData">
-    <summary>
-      <para>Sets application-defined data to a DirectML device object, and associates that data with an application-defined <b>GUID</b>. This method is thread-safe.</para>
-    </summary>
-    <param name="guid">
-      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
-      <para>The <b>GUID</b> to associate with the data.</para>
-    </param>
-    <param name="dataSize">
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The size in bytes of the data.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>const void*</b></para>
-      <para>A pointer to a memory block that contains the data to be stored with this DirectML device object. If <i>data</i> is <b>NULL</b>, then <i>dataSize</i> must be 0, and any data that was previously associated with the <b>GUID</b> specified in <i>guid</i> will be destroyed.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLObject" />
+    <summary>Sets application-defined data to a DirectML device object, and associates that data with an application-defined <b>GUID</b>. This method is thread-safe.</summary>
+    <param name="guid">The <b>GUID</b> to associate with the data.</param>
+    <param name="dataSize">The size in bytes of the data.</param>
+    <param name="data">A pointer to a memory block that contains the data to be stored with this DirectML device object. If <i>data</i> is <b>NULL</b>, then <i>dataSize</i> must be 0, and any data that was previously associated with the <b>GUID</b> specified in <i>guid</i> will be destroyed.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLObject.SetPrivateDataInterface">
-    <summary>
-      <para>Associates an <see cref="IUnknown" />-derived interface with the DirectML device object, and associates that interface with an application-defined <b>GUID</b>. This method is thread-safe.</para>
-    </summary>
-    <param name="guid">
-      <para>Type: <b><a href="https://docs.microsoft.com//openspecs/windows_protocols/ms-oaut/6e7d7108-c213-40bc-8294-ac13fe68fd50">REFGUID</a></b></para>
-      <para>The <b>GUID</b> to associate with the interface.</para>
-    </param>
-    <param name="data">
-      <para>Type: <b>const <see cref="IUnknown" />*</b></para>
-      <para>A pointer to the <see cref="IUnknown" />-derived interface to be associated with the device object.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLObject" />
+    <summary>Associates an <see cref="IUnknown" />-derived interface with the DirectML device object, and associates that interface with an application-defined <b>GUID</b>. This method is thread-safe.</summary>
+    <param name="guid">The <b>GUID</b> to associate with the interface.</param>
+    <param name="data">A pointer to the <see cref="IUnknown" />-derived interface to be associated with the device object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLObject">
-    <summary>
-      <para>An interface from which <see cref="IDMLDevice" /> and <see cref="IDMLDeviceChild" /> inherit directly (and all other interfaces, indirectly). Consequently, it provides methods common to all DirectML interfaces, specifically methods to associate private data, and to annotate object names. The <b>IDMLObject</b> interface inherits from the <see cref="IUnknown" /> interface.</para>
-    </summary>
+    <summary>An interface from which <see cref="IDMLDevice" /> and <see cref="IDMLDeviceChild" /> inherit directly (and all other interfaces, indirectly). Consequently, it provides methods common to all DirectML interfaces, specifically methods to associate private data, and to annotate object names. The <b>IDMLObject</b> interface inherits from the <see cref="IUnknown" /> interface.</summary>
   </member>
 </doc>

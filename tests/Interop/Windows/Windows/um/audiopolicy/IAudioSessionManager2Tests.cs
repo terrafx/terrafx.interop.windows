@@ -19,32 +19,4 @@ public static unsafe partial class IAudioSessionManager2Tests
     {
         Assert.That(typeof(IAudioSessionManager2).GUID, Is.EqualTo(IID_IAudioSessionManager2));
     }
-
-    /// <summary>Validates that the <see cref="IAudioSessionManager2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioSessionManager2>(), Is.EqualTo(sizeof(IAudioSessionManager2)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioSessionManager2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioSessionManager2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioSessionManager2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioSessionManager2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioSessionManager2), Is.EqualTo(4));
-        }
-    }
 }

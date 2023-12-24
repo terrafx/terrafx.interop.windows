@@ -14,7 +14,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct QUERY_FILE_LAYOUT_INPUT
 {
     /// <include file='QUERY_FILE_LAYOUT_INPUT.xml' path='doc/member[@name="QUERY_FILE_LAYOUT_INPUT.Anonymous"]/*' />
-    [NativeTypeName("_QUERY_FILE_LAYOUT_INPUT::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:14936:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L15007_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='QUERY_FILE_LAYOUT_INPUT.xml' path='doc/member[@name="QUERY_FILE_LAYOUT_INPUT.Flags"]/*' />
@@ -29,7 +29,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
     public uint Reserved;
 
     /// <include file='QUERY_FILE_LAYOUT_INPUT.xml' path='doc/member[@name="QUERY_FILE_LAYOUT_INPUT.Filter"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:14963:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L15034_C5")]
     public _Filter_e__Union Filter;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.FilterEntryCount"]/*' />
@@ -99,7 +99,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref AsSpan(int.MaxValue)[index];
+                    return ref Unsafe.Add(ref e0, index);
                 }
             }
 
@@ -119,7 +119,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref AsSpan(int.MaxValue)[index];
+                    return ref Unsafe.Add(ref e0, index);
                 }
             }
 
@@ -139,7 +139,7 @@ public partial struct QUERY_FILE_LAYOUT_INPUT
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
                 get
                 {
-                    return ref AsSpan(int.MaxValue)[index];
+                    return ref Unsafe.Add(ref e0, index);
                 }
             }
 

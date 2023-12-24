@@ -7,28 +7,15 @@
       <para>Contains parameters used during a moniker-binding operation.</para>
       <para>The <see cref="BIND_OPTS2" /> or <see cref="BIND_OPTS3" /> structure can be used in place of the <b>BIND_OPTS</b> structure.</para>
     </summary>
-    <remarks>
-      <para>A <b>BIND_OPTS</b> structure is stored in a bind context; the same bind context is used by each component of a composite moniker during binding, allowing the same parameters to be passed to all components of a composite moniker. See <see cref="IBindCtx" /> for more information about bind contexts.</para>
-      <para>Moniker clients (use a moniker to acquire an interface pointer to an object) typically do not need to specify values for the members of this structure. The <see cref="CreateBindCtx" /> function creates a bind context with the bind options set to default values that are suitable for most situations; the <see cref="BindMoniker" /> function does the same thing when creating a bind context for use in binding a moniker. If you want to modify the values of these bind options, you can do so by passing a <b>BIND_OPTS</b> structure to the <see cref="IBindCtx.SetBindOptions" /> method. Moniker implementers can pass a <b>BIND_OPTS</b> structure to the <see cref="IBindCtx.GetBindOptions" /> method to retrieve the values of these bind options.</para>
-    </remarks>
-    <seealso cref="CreateBindCtx" />
-    <seealso cref="IBindCtx" />
-    <seealso cref="IMoniker" />
   </member>
   <member name="BIND_OPTS.cbStruct">
-    <summary>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="BIND_OPTS.grfFlags">
-    <summary>
-      <para>Flags that control aspects of moniker binding operations. This value is any combination of the bit flags in the <see cref="BIND_FLAGS" /> enumeration. The <see cref="CreateBindCtx" /> function initializes this member to zero.</para>
-    </summary>
+    <summary>Flags that control aspects of moniker binding operations. This value is any combination of the bit flags in the <see cref="BIND_FLAGS" /> enumeration. The <see cref="CreateBindCtx" /> function initializes this member to zero.</summary>
   </member>
   <member name="BIND_OPTS.grfMode">
-    <summary>
-      <para>Flags that should be used when opening the file that contains the object identified by the moniker. Possible values  are the <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM constants</a>. The binding operation uses these flags in the call to <see cref="IPersistFile.Load" /> when loading the file. If the object is already running, these flags are ignored by the binding operation. The <see cref="CreateBindCtx" /> function initializes this field to STGM_READWRITE.</para>
-    </summary>
+    <summary>Flags that should be used when opening the file that contains the object identified by the moniker. Possible values are the <a href="https://docs.microsoft.com//windows/desktop/Stg/stgm-constants">STGM constants</a>. The binding operation uses these flags in the call to <see cref="IPersistFile.Load" /> when loading the file. If the object is already running, these flags are ignored by the binding operation. The <see cref="CreateBindCtx" /> function initializes this field to STGM_READWRITE.</summary>
   </member>
   <member name="BIND_OPTS.dwTickCountDeadline">
     <summary>

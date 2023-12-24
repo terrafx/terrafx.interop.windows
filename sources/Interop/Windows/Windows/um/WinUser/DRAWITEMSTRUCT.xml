@@ -3,257 +3,310 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DRAWITEMSTRUCT">
-    <summary>
-      <para>Provides information that the owner window uses to determine how to paint an owner-drawn control or menu item. The owner window of the owner-drawn control or menu item receives a pointer to this structure as the <i>lParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/Controls/wm-drawitem">WM_DRAWITEM</a> message.</para>
-    </summary>
-    <remarks>
-      <para>Some control types, such as status bars, do not set the value of <b>CtlType</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/cb-addstring">CB_ADDSTRING</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/cb-insertstring">CB_INSERTSTRING</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/cb-setitemdata">CB_SETITEMDATA</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lb-addstring">LB_ADDSTRING</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lb-insertstring">LB_INSERTSTRING</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/lb-setitemdata">LB_SETITEMDATA</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Controls/wm-drawitem">WM_DRAWITEM</seealso>
+    <summary>Provides information that the owner window uses to determine how to paint an owner-drawn control or menu item. The owner window of the owner-drawn control or menu item receives a pointer to this structure as the <i>lParam</i> parameter of the <a href="https://docs.microsoft.com//windows/desktop/Controls/wm-drawitem">WM_DRAWITEM</a> message.</summary>
   </member>
   <member name="DRAWITEMSTRUCT.CtlType">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>The control type. This member can be one of the following values. See Remarks.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ODT_BUTTON</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODT_BUTTON</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Owner-drawn button</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Owner-drawn button</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODT_COMBOBOX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Owner-drawn combo box</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ODT_COMBOBOX</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODT_LISTBOX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Owner-drawn list box</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Owner-drawn combo box</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODT_LISTVIEW</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>List-view control</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ODT_LISTBOX</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODT_MENU</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Owner-drawn menu item</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Owner-drawn list box</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODT_STATIC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Owner-drawn static control</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ODT_LISTVIEW</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODT_TAB</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>List-view control</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ODT_MENU</b>
-          </description>
-          <description>
-            <para>Owner-drawn menu item</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ODT_STATIC</b>
-          </description>
-          <description>
-            <para>Owner-drawn static control</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ODT_TAB</b>
-          </description>
-          <description>
-            <para>Tab control</para>
-          </description>
-        </item>
+          <description>Tab control</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="DRAWITEMSTRUCT.CtlID">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The identifier of the combo box, list box, button, or static control. This member is not used for a menu item.</para>
-    </summary>
+    <summary>The identifier of the combo box, list box, button, or static control. This member is not used for a menu item.</summary>
   </member>
   <member name="DRAWITEMSTRUCT.itemID">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The menu item identifier for a menu item or the index of the item in a list box or combo box. For an empty list box or combo box, this member can be <code>-1</code>. This allows the application to draw only the focus rectangle at the coordinates specified by the <b>rcItem</b> member even though there are no items in the control. This indicates to the user whether the list box or combo box has the focus. How the bits are set in the <b>itemAction</b> member determines whether the rectangle is to be drawn as though the list box or combo box has the focus.</para>
-    </summary>
+    <summary>The menu item identifier for a menu item or the index of the item in a list box or combo box. For an empty list box or combo box, this member can be <code>-1</code>. This allows the application to draw only the focus rectangle at the coordinates specified by the <b>rcItem</b> member even though there are no items in the control. This indicates to the user whether the list box or combo box has the focus. How the bits are set in the <b>itemAction</b> member determines whether the rectangle is to be drawn as though the list box or combo box has the focus.</summary>
   </member>
   <member name="DRAWITEMSTRUCT.itemAction">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>The required drawing action. This member can be one or more of the values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ODA_DRAWENTIRE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODA_DRAWENTIRE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The entire control needs to be drawn.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The entire control needs to be drawn.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODA_FOCUS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The control has lost or gained the keyboard focus. The <b>itemState</b> member should be checked to determine whether the control has the focus.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ODA_FOCUS</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODA_SELECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The control has lost or gained the keyboard focus. The <b>itemState</b> member should be checked to determine whether the control has the focus.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ODA_SELECT</b>
-          </description>
-          <description>
-            <para>The selection status has changed. The <b>itemState</b> member should be checked to determine the new selection state.</para>
-          </description>
-        </item>
+          <description>The selection status has changed. The <b>itemState</b> member should be checked to determine the new selection state.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="DRAWITEMSTRUCT.itemState">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>The visual state of the item after the current drawing action takes place. This member can be a combination of the values shown in the following table.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>ODS_CHECKED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_CHECKED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The menu item is to be checked. This bit is used only in a menu.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The menu item is to be checked. This bit is used only in a menu.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_COMBOBOXEDIT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The drawing takes place in the selection field (edit control) of an owner-drawn combo box.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ODS_COMBOBOXEDIT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_DEFAULT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item is the default item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The drawing takes place in the selection field (edit control) of an owner-drawn combo box.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_DISABLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The item is to be drawn as disabled.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ODS_DEFAULT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_FOCUS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item has the keyboard focus.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item is the default item.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_GRAYED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The item is to be grayed. This bit is used only in a menu.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ODS_DISABLED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_HOTLIGHT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item is being hot-tracked, that is, the item will be highlighted when the mouse is on the item.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item is to be drawn as disabled.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_INACTIVE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The item is inactive and the window associated with the menu is inactive.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ODS_FOCUS</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_NOACCEL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The control is drawn without the keyboard accelerator cues.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item has the keyboard focus.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_NOFOCUSRECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The control is drawn without focus indicator cues.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>ODS_GRAYED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ODS_SELECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The item is to be grayed. This bit is used only in a menu.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ODS_HOTLIGHT</b>
-          </description>
-          <description>
-            <para>The item is being hot-tracked, that is, the item will be highlighted when the mouse is on the item.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ODS_INACTIVE</b>
-          </description>
-          <description>
-            <para>The item is inactive and the window associated with the menu is inactive.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ODS_NOACCEL</b>
-          </description>
-          <description>
-            <para>The control is drawn without the keyboard accelerator cues.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ODS_NOFOCUSRECT</b>
-          </description>
-          <description>
-            <para>The control is drawn without focus indicator cues.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>ODS_SELECTED</b>
-          </description>
-          <description>
-            <para>The menu item's status is selected.</para>
-          </description>
-        </item>
+          <description>The menu item's status is selected.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="DRAWITEMSTRUCT.hwndItem">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HWND</a></b></para>
-      <para>A handle to the control for combo boxes, list boxes, buttons, and static controls. For menus, this member is a handle to the menu that contains the item.</para>
-    </summary>
+    <summary>A handle to the control for combo boxes, list boxes, buttons, and static controls. For menus, this member is a handle to the menu that contains the item.</summary>
   </member>
   <member name="DRAWITEMSTRUCT.hDC">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HDC</a></b></para>
-      <para>A handle to a device context; this device context must be used when performing drawing operations on the control.</para>
-    </summary>
+    <summary>A handle to a device context; this device context must be used when performing drawing operations on the control.</summary>
   </member>
   <member name="DRAWITEMSTRUCT.rcItem">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>A rectangle that defines the boundaries of the control to be drawn. This rectangle is in the device context specified by the <b>hDC</b> member. The system automatically clips anything that the owner window draws in the device context for combo boxes, list boxes, and buttons, but does not clip menu items. When drawing menu items, the owner window must not draw outside the boundaries of the rectangle defined by the <b>rcItem</b> member.</para>
-    </summary>
+    <summary>A rectangle that defines the boundaries of the control to be drawn. This rectangle is in the device context specified by the <b>hDC</b> member. The system automatically clips anything that the owner window draws in the device context for combo boxes, list boxes, and buttons, but does not clip menu items. When drawing menu items, the owner window must not draw outside the boundaries of the rectangle defined by the <b>rcItem</b> member.</summary>
   </member>
   <member name="DRAWITEMSTRUCT.itemData">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">ULONG_PTR</a></b></para>
       <para>The application-defined value associated with the menu item. For a control, this parameter specifies the value last assigned to the list box or combo box by the <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-setitemdata">LB_SETITEMDATA</a> or <a href="https://docs.microsoft.com//windows/desktop/Controls/cb-setitemdata">CB_SETITEMDATA</a> message. If the list box or combo box has the <a href="https://docs.microsoft.com//windows/desktop/Controls/list-box-styles">LBS_HASSTRINGS</a> or <a href="https://docs.microsoft.com//windows/desktop/Controls/combo-box-styles">CBS_HASSTRINGS</a> style, this value is initially zero. Otherwise, this value is initially the value that was passed to the list box or combo box in the <i>lParam</i> parameter of one of the following messages:</para>
       <list type="bullet">
         <item>
@@ -276,8 +329,6 @@
             <a href="https://docs.microsoft.com//windows/desktop/Controls/lb-insertstring">LB_INSERTSTRING</a>
           </description>
         </item>
-      </list>
-      <para>If <b>CtlType</b> is <b>ODT_BUTTON</b> or <b>ODT_STATIC</b>, <b>itemData</b> is zero.</para>
-    </summary>
+      </list>If <b>CtlType</b> is <b>ODT_BUTTON</b> or <b>ODT_STATIC</b>, <b>itemData</b> is zero.</summary>
   </member>
 </doc>

@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MENUITEMTEMPLATEHEADER">
-    <summary>
-      <para>Defines the header for a menu template. A complete menu template consists of a header and one or more menu item lists.</para>
-    </summary>
-    <remarks>
-      <para>One or more <see cref="MENUITEMTEMPLATE" /> structures are combined to form the menu item list.</para>
-    </remarks>
-    <seealso cref="LoadMenuIndirect" />
-    <seealso cref="MENUITEMTEMPLATE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/menus">Menus</seealso>
+    <summary>Defines the header for a menu template. A complete menu template consists of a header and one or more menu item lists.</summary>
   </member>
   <member name="MENUITEMTEMPLATEHEADER.versionNumber">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>The version number. This member must be zero.</para>
-    </summary>
+    <summary>The version number. This member must be zero.</summary>
   </member>
   <member name="MENUITEMTEMPLATEHEADER.offset">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>The offset, in bytes, from the end of the header. The menu item list begins at this offset. Usually, this member is zero, and the menu item list follows immediately after the header.</para>
-    </summary>
+    <summary>The offset, in bytes, from the end of the header. The menu item list begins at this offset. Usually, this member is zero, and the menu item list follows immediately after the header.</summary>
   </member>
 </doc>

@@ -3,7 +3,7 @@
 // Ported from shared/ws2ipdef.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -12,13 +12,13 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IN6_SET_ADDR_UNSPECIFIED"]/*' />
     public static void IN6_SET_ADDR_UNSPECIFIED([NativeTypeName("PIN6_ADDR")] IN6_ADDR* a)
     {
-        Unsafe.InitBlockUnaligned(a->u.Byte, 0, (uint)(sizeof(IN6_ADDR)));
+        NativeMemory.Fill(&a->u.Byte, (uint)(sizeof(IN6_ADDR)), 0);
     }
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.IN6_SET_ADDR_LOOPBACK"]/*' />
     public static void IN6_SET_ADDR_LOOPBACK([NativeTypeName("PIN6_ADDR")] IN6_ADDR* a)
     {
-        Unsafe.InitBlockUnaligned(a->u.Byte, 0, (uint)(sizeof(IN6_ADDR)));
+        NativeMemory.Fill(&a->u.Byte, (uint)(sizeof(IN6_ADDR)), 0);
         a->u.Byte[15] = 1;
     }
 

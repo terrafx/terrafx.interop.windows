@@ -31,31 +31,31 @@ public partial struct uCLSSPEC
         /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.pFileExt"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
-        public ushort* pFileExt;
+        public char* pFileExt;
 
         /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.pMimeType"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
-        public ushort* pMimeType;
+        public char* pMimeType;
 
         /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.pProgId"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
-        public ushort* pProgId;
+        public char* pProgId;
 
         /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.pFileName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
-        public ushort* pFileName;
+        public char* pFileName;
 
         /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.ByName"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/wtypes.h:938:24)")]
+        [NativeTypeName("__AnonymousRecord_wtypes_L938_C24")]
         public _ByName_e__Struct ByName;
 
         /// <include file='_tagged_union_e__Union.xml' path='doc/member[@name="_tagged_union_e__Union.ByObjectId"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/wtypes.h:943:24)")]
+        [NativeTypeName("__AnonymousRecord_wtypes_L943_C24")]
         public _ByObjectId_e__Struct ByObjectId;
 
         /// <include file='_ByName_e__Struct.xml' path='doc/member[@name="_ByName_e__Struct"]/*' />
@@ -63,7 +63,7 @@ public partial struct uCLSSPEC
         {
             /// <include file='_ByName_e__Struct.xml' path='doc/member[@name="_ByName_e__Struct.pPackageName"]/*' />
             [NativeTypeName("LPOLESTR")]
-            public ushort* pPackageName;
+            public char* pPackageName;
 
             /// <include file='_ByName_e__Struct.xml' path='doc/member[@name="_ByName_e__Struct.PolicyId"]/*' />
             public Guid PolicyId;

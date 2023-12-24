@@ -3,10 +3,12 @@
 // Ported from shared/tbs.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='TPM_WNF_PROVISIONING.xml' path='doc/member[@name="TPM_WNF_PROVISIONING"]/*' />
-public unsafe partial struct TPM_WNF_PROVISIONING
+public partial struct TPM_WNF_PROVISIONING
 {
     /// <include file='TPM_WNF_PROVISIONING.xml' path='doc/member[@name="TPM_WNF_PROVISIONING.status"]/*' />
     [NativeTypeName("UINT32")]
@@ -14,5 +16,12 @@ public unsafe partial struct TPM_WNF_PROVISIONING
 
     /// <include file='TPM_WNF_PROVISIONING.xml' path='doc/member[@name="TPM_WNF_PROVISIONING.message"]/*' />
     [NativeTypeName("BYTE[28]")]
-    public fixed byte message[28];
+    public _message_e__FixedBuffer message;
+
+    /// <include file='_message_e__FixedBuffer.xml' path='doc/member[@name="_message_e__FixedBuffer"]/*' />
+    [InlineArray(28)]
+    public partial struct _message_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

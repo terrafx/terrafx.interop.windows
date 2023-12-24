@@ -3,714 +3,243 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11VideoContext.ConfigureAuthenticatedChannel">
-    <summary>
-      <para>Sends a configuration command to an authenticated channel.</para>
-    </summary>
-    <param name="pChannel">
-      <para>A pointer to the <see cref="ID3D11AuthenticatedChannel" /> interface.</para>
-    </param>
-    <param name="InputSize">
-      <para>The size of the <i>pInput</i> array, in bytes.</para>
-    </param>
-    <param name="pInput">
-      <para>A pointer to a byte array that contains input data for the command. This buffer always starts with a <see cref="D3D11_AUTHENTICATED_CONFIGURE_INPUT" /> structure. The <b>ConfigureType</b> member of the structure specifies the command and defines the meaning of the rest of the buffer.</para>
-    </param>
-    <param name="pOutput">
-      <para>A pointer to a <see cref="D3D11_AUTHENTICATED_CONFIGURE_OUTPUT" /> structure that receives the response to the command.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sends a configuration command to an authenticated channel.</summary>
+    <param name="pChannel">A pointer to the <see cref="ID3D11AuthenticatedChannel" /> interface.</param>
+    <param name="InputSize">The size of the <i>pInput</i> array, in bytes.</param>
+    <param name="pInput">A pointer to a byte array that contains input data for the command. This buffer always starts with a <see cref="D3D11_AUTHENTICATED_CONFIGURE_INPUT" /> structure. The <b>ConfigureType</b> member of the structure specifies the command and defines the meaning of the rest of the buffer.</param>
+    <param name="pOutput">A pointer to a <see cref="D3D11_AUTHENTICATED_CONFIGURE_OUTPUT" /> structure that receives the response to the command.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.DecoderBeginFrame">
-    <summary>
-      <para>Starts a decoding operation to decode a video frame.</para>
-    </summary>
-    <param name="pDecoder">
-      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</para>
-    </param>
-    <param name="pView">
-      <para>A pointer to the <see cref="ID3D11VideoDecoderOutputView" /> interface. This interface describes the resource that will receive the decoded frame. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoderOutputView" />.</para>
-    </param>
-    <param name="ContentKeySize">
-      <para>The size of the content key that is specified in <i>pContentKey</i>. If <i>pContentKey</i> is NULL, set <i>ContentKeySize</i> to zero.</para>
-    </param>
-    <param name="pContentKey">
-      <para>An optional pointer to a content key that was used to encrypt the frame data. If no content key was used, set this parameter to <b>NULL</b>. If the caller provides a content key, the caller must use the session key to encrypt the content key.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.  <b>D3DERR_WASSTILLDRAWING</b> or <b>E_PENDING</b> is returned if the hardware is busy, in which case the decoder should try to make the call again.</para>
-    </returns>
-    <remarks>
-      <para>After this method is called, call <see cref="ID3D11VideoContext.SubmitDecoderBuffers" /> to perform decoding operations. When all decoding operations have been executed, call <see cref="ID3D11VideoContext.DecoderEndFrame" />.</para>
-      <para>Each call to <b>DecoderBeginFrame</b> must have a matching call to <see cref="DecoderEndFrame" />. In most cases you cannot nest <b>DecoderBeginFrame</b> calls, but some codecs, such as  like VC-1, can have nested <b>DecoderBeginFrame</b> calls for special operations like post processing.</para>
-      <para>The following encryption scenarios are supported through the content key:</para>
-      <list type="bullet">
-        <item>
-          <description>The decoder can choose to not encrypt every frame, for example  it may only encrypt the I frames and not encrypt the P/B frames.  In these scenario, the decoder will specify pContentKey = NULL and ContentKeySize = 0 for those frames that it does not encrypt.</description>
-        </item>
-        <item>
-          <description>The decoder can choose to encrypt the compressed buffers using the session key.  In this scenario, the decoder will specify a content key containing all zeros.</description>
-        </item>
-        <item>
-          <description>The decoder can choose to encrypt the compressed buffers using a separate content key.  In this scenario, the decoder will ECB encrypt the content key using the session key and pass the encrypted content key.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Starts a decoding operation to decode a video frame.</summary>
+    <param name="pDecoder">A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</param>
+    <param name="pView">A pointer to the <see cref="ID3D11VideoDecoderOutputView" /> interface. This interface describes the resource that will receive the decoded frame. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoderOutputView" />.</param>
+    <param name="ContentKeySize">The size of the content key that is specified in <i>pContentKey</i>. If <i>pContentKey</i> is NULL, set <i>ContentKeySize</i> to zero.</param>
+    <param name="pContentKey">An optional pointer to a content key that was used to encrypt the frame data. If no content key was used, set this parameter to <b>NULL</b>. If the caller provides a content key, the caller must use the session key to encrypt the content key.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code. <b>D3DERR_WASSTILLDRAWING</b> or <b>E_PENDING</b> is returned if the hardware is busy, in which case the decoder should try to make the call again.</returns>
   </member>
   <member name="ID3D11VideoContext.DecoderEndFrame">
-    <summary>
-      <para>Signals the end of a decoding operation.</para>
-    </summary>
-    <param name="pDecoder">
-      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoContext" />
-    <seealso cref="ID3D11VideoContext.DecoderBeginFrame" />
+    <summary>Signals the end of a decoding operation.</summary>
+    <param name="pDecoder">A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.DecoderExtension">
-    <summary>
-      <para>Performs an extended function for decoding. This method enables extensions to the basic decoder functionality.</para>
-    </summary>
-    <param name="pDecoder">
-      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</para>
-    </param>
-    <param name="pExtensionData">
-      <para>A pointer to a <see cref="D3D11_VIDEO_DECODER_EXTENSION" /> structure that contains data for the function.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Performs an extended function for decoding. This method enables extensions to the basic decoder functionality.</summary>
+    <param name="pDecoder">A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</param>
+    <param name="pExtensionData">A pointer to a <see cref="D3D11_VIDEO_DECODER_EXTENSION" /> structure that contains data for the function.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.DecryptionBlt">
-    <summary>
-      <para>Writes encrypted data to a protected surface.</para>
-    </summary>
-    <param name="pCryptoSession">
-      <para>A pointer to the <see cref="ID3D11CryptoSession" /> interface.</para>
-    </param>
-    <param name="pSrcSurface">
-      <para>A pointer to the surface that contains the source data.</para>
-    </param>
-    <param name="pDstSurface">
-      <para>A pointer to the protected surface where the encrypted data is written.</para>
-    </param>
+    <summary>Writes encrypted data to a protected surface.</summary>
+    <param name="pCryptoSession">A pointer to the <see cref="ID3D11CryptoSession" /> interface.</param>
+    <param name="pSrcSurface">A pointer to the surface that contains the source data.</param>
+    <param name="pDstSurface">A pointer to the protected surface where the encrypted data is written.</param>
     <param name="pEncryptedBlockInfo">
       <para>A pointer to a <see cref="D3D11_ENCRYPTED_BLOCK_INFO" /> structure, or <b>NULL</b>.</para>
-      <para>If the driver supports partially encrypted buffers,  <i>pEncryptedBlockInfo</i> indicates which portions of the buffer are encrypted.  If the entire surface is encrypted, set this parameter to <b>NULL</b>.</para>
-      <para>To check whether the driver supports partially encrypted buffers, call <see cref="ID3D11VideoDevice.GetContentProtectionCaps" /> and check for the <b>D3D11_CONTENT_PROTECTION_CAPS_PARTIAL_DECRYPTION
-</b> capabilities flag. If the driver does not support partially encrypted buffers, set this parameter to <b>NULL</b>.</para>
+      <para>If the driver supports partially encrypted buffers, <i>pEncryptedBlockInfo</i> indicates which portions of the buffer are encrypted. If the entire surface is encrypted, set this parameter to <b>NULL</b>.</para>
+      <para>To check whether the driver supports partially encrypted buffers, call <see cref="ID3D11VideoDevice.GetContentProtectionCaps" /> and check for the <b>D3D11_CONTENT_PROTECTION_CAPS_PARTIAL_DECRYPTION</b> capabilities flag. If the driver does not support partially encrypted buffers, set this parameter to <b>NULL</b>.</para>
     </param>
-    <param name="ContentKeySize">
-      <para>The size of the encrypted content key, in bytes.</para>
-    </param>
+    <param name="ContentKeySize">The size of the encrypted content key, in bytes.</param>
     <param name="pContentKey">
       <para>A pointer to a buffer that contains a content encryption key, or <b>NULL</b>. To query whether the driver supports the use of content keys, call <see cref="ID3D11VideoDevice.GetContentProtectionCaps" /> and check for the <b>D3D11_CONTENT_PROTECTION_CAPS_CONTENT_KEY</b> capabilities flag.</para>
-      <para>If the driver supports content keys, use the content key to encrypt the surface. Encrypt the content key using the session key, and place the  resulting cipher text in <i>pContentKey</i>. If the driver does not support content keys, use the session key to encrypt the surface and set <i>pContentKey</i> to <b>NULL</b>.</para>
+      <para>If the driver supports content keys, use the content key to encrypt the surface. Encrypt the content key using the session key, and place the resulting cipher text in <i>pContentKey</i>. If the driver does not support content keys, use the session key to encrypt the surface and set <i>pContentKey</i> to <b>NULL</b>.</para>
     </param>
-    <param name="IVSize">
-      <para>The size of the <i>pIV</i> buffer, in bytes.</para>
-    </param>
+    <param name="IVSize">The size of the <i>pIV</i> buffer, in bytes.</param>
     <param name="pIV">
       <para>A pointer to a buffer that contains the initialization vector (IV).</para>
-      <para>For 128-bit AES-CTR encryption, <i>pIV</i> points to a <see cref="D3D11_AES_CTR_IV" /> structure. The caller allocates the structure and generates the IV. When you generate the first IV, initialize the structure to a random number. For each subsequent IV, simply increment the <b>IV</b> member of the structure, ensuring that the value always increases.  This procedure enables the driver to validate that the same IV is never used more than once with the same key pair.</para>
+      <para>For 128-bit AES-CTR encryption, <i>pIV</i> points to a <see cref="D3D11_AES_CTR_IV" /> structure. The caller allocates the structure and generates the IV. When you generate the first IV, initialize the structure to a random number. For each subsequent IV, simply increment the <b>IV</b> member of the structure, ensuring that the value always increases. This procedure enables the driver to validate that the same IV is never used more than once with the same key pair.</para>
       <para>For other encryption types, a different structure might be used, or the encryption might not use an IV.</para>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Not all hardware or drivers support this functionality for all cryptographic types. This function can only be called when the <see cref="D3D11_CONTENT_PROTECTION_CAPS_DECRYPTION_BLT" />  cap is reported.</para>
-      <para>This method does not support writing to sub-rectangles of the surface.</para>
-      <para>If the hardware and driver support a content key:</para>
-      <list type="bullet">
-        <item>
-          <description>The data is encrypted by the caller using the content key.</description>
-        </item>
-        <item>
-          <description>The content key is encrypted by the caller using the session key.</description>
-        </item>
-        <item>
-          <description>The encrypted content key is passed to the driver.</description>
-        </item>
-      </list>
-      <para>Otherwise, the data is encrypted by the caller using the session key and NULL is passed as the content key.</para>
-      <para>If the driver and hardware support partially encrypted buffers, <i>pEncryptedBlockInfo</i> indicates which portions of the buffer are encrypted and which is not.  If the entire buffer is encrypted, <i>pEncryptedBlockinfo</i> should be <b>NULL</b>.</para>
-      <para>The <see cref="D3D11_ENCRYPTED_BLOCK_INFO" /> allows the application to indicate which bytes in the buffer are encrypted.  This is specified in bytes, so the application must ensure that the encrypted blocks match the GPU’s crypto block alignment.</para>
-      <para>This function does not honor a D3D11 predicate that may have been set.</para>
-      <para>If the application uses <see cref="D3D11 queries" />, this function may not be accounted for with <b>D3D11_QUERY_EVENT</b> and <b>D3D11_QUERY_TIMESTAMP</b> when using feature levels lower than 11.  <b>D3D11_QUERY_PIPELINE_STATISTICS</b> will not include this function for any feature level.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.EncryptionBlt">
-    <summary>
-      <para>Reads encrypted data from a protected surface.</para>
-    </summary>
-    <param name="pCryptoSession">
-      <para>A pointer to the <see cref="ID3D11CryptoSession" /> interface of the cryptographic session.</para>
-    </param>
-    <param name="pSrcSurface">
-      <para>A pointer to the <see cref="ID3D11Texture2D" /> interface of the protected surface.</para>
-    </param>
-    <param name="pDstSurface">
-      <para>A pointer to the <see cref="ID3D11Texture2D" /> interface of the surface that receives the encrypted data.</para>
-    </param>
-    <param name="IVSize">
-      <para>The size of the <i>pIV</i> buffer, in bytes.</para>
-    </param>
+    <summary>Reads encrypted data from a protected surface.</summary>
+    <param name="pCryptoSession">A pointer to the <see cref="ID3D11CryptoSession" /> interface of the cryptographic session.</param>
+    <param name="pSrcSurface">A pointer to the <see cref="ID3D11Texture2D" /> interface of the protected surface.</param>
+    <param name="pDstSurface">A pointer to the <see cref="ID3D11Texture2D" /> interface of the surface that receives the encrypted data.</param>
+    <param name="IVSize">The size of the <i>pIV</i> buffer, in bytes.</param>
     <param name="pIV">
       <para>A pointer to a buffer that receives the initialization vector (IV). The caller allocates this buffer, but the driver generates the IV.</para>
       <para>For 128-bit AES-CTR encryption, <i>pIV</i> points to a <see cref="D3D11_AES_CTR_IV" /> structure. When the driver generates the first IV, it initializes the structure to a random number. For each subsequent IV, the driver simply increments the <b>IV</b> member of the structure, ensuring that the value always increases. The application can validate that the same IV is never used more than once with the same key pair.</para>
     </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Not all drivers support this method. To query the driver capabilities, call <see cref="ID3D11VideoDevice.GetContentProtectionCaps" /> and check for the <b>D3D11_CONTENT_PROTECTION_CAPS_ENCRYPTED_READ_BACK</b></para>
-      <para>flag in the <b>Caps</b> member of the <see cref="D3D11_VIDEO_CONTENT_PROTECTION_CAPS" /> structure.</para>
-      <para>Some drivers might require a separate key to decrypt the data that is read back. To check for this requirement, call <see cref="GetContentProtectionCaps" /> and check for the <b>D3D11_CONTENT_PROTECTION_CAPS_ENCRYPTED_READ_BACK_KEY</b></para>
-      <para>flag. If this flag is present, call <see cref="ID3D11VideoContext.GetEncryptionBltKey" /> to get the decryption key.</para>
-      <para>This method has the following limitations:</para>
-      <list type="bullet">
-        <item>
-          <description>Reading back  sub-rectangles is not supported.</description>
-        </item>
-        <item>
-          <description>Reading back  partially encrypted surfaces is not supported.</description>
-        </item>
-        <item>
-          <description>The protected surface must be either an off-screen plain surface or a render target.</description>
-        </item>
-        <item>
-          <description>The destination surface must be a <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-sa-d3d11-usage">D3D11_USAGE_STAGING</a> resource.</description>
-        </item>
-        <item>
-          <description>The protected surface cannot be multisampled.</description>
-        </item>
-        <item>
-          <description>Stretching and colorspace conversion are not supported.</description>
-        </item>
-      </list>
-      <para>This function does not honor a D3D11 predicate that may have been set.</para>
-      <para>If the application uses <see cref="D3D11 queries" />, this function may not be accounted for with <b>D3D11_QUERY_EVENT</b> and <b>D3D11_QUERY_TIMESTAMP</b> when using feature levels lower than 11.  <b>D3D11_QUERY_PIPELINE_STATISTICS</b> will not include this function for any feature level.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.FinishSessionKeyRefresh">
-    <summary>
-      <para>Switches to a new session key.</para>
-    </summary>
-    <param name="pCryptoSession">
-      <para>A pointer to the <see cref="ID3D11CryptoSession" /> interface.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This function can only be called when the <see cref="D3D11_CONTENT_PROTECTION_CAPS_FRESHEN_SESSION_KEY" /> cap is reported.</para>
-      <para>Before calling this method, call <see cref="ID3D11VideoContext.StartSessionKeyRefresh" />. The <b>StartSessionKeyRefresh</b> method gets a random number from the driver, which is used to create a new session key. The new session key does not become active until the application calls <b>FinishSessionKeyRefresh</b>. After the application calls <b>FinishSessionKeyRefresh</b>, all protected surfaces are encrypted using the new session key.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Switches to a new session key.</summary>
+    <param name="pCryptoSession">A pointer to the <see cref="ID3D11CryptoSession" /> interface.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.GetDecoderBuffer">
-    <summary>
-      <para>Gets a pointer to a decoder buffer.</para>
-    </summary>
-    <param name="pDecoder">
-      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</para>
-    </param>
-    <param name="Type">
-      <para>The type of buffer to retrieve, specified as a member of the <see cref="D3D11_VIDEO_DECODER_BUFFER_TYPE" /> enumeration.</para>
-    </param>
-    <param name="pBufferSize">
-      <para>Receives the size of the buffer, in bytes.</para>
-    </param>
-    <param name="ppBuffer">
-      <para>Receives a pointer to the start of the memory buffer.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The graphics driver allocates the buffers that are used for decoding. This method locks the Microsoft Direct3Dsurface that contains the buffer. When you are done using the buffer, call <see cref="ID3D11VideoContext.ReleaseDecoderBuffer" /> to unlock the surface.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets a pointer to a decoder buffer.</summary>
+    <param name="pDecoder">A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</param>
+    <param name="Type">The type of buffer to retrieve, specified as a member of the <see cref="D3D11_VIDEO_DECODER_BUFFER_TYPE" /> enumeration.</param>
+    <param name="pBufferSize">Receives the size of the buffer, in bytes.</param>
+    <param name="ppBuffer">Receives a pointer to the start of the memory buffer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.GetEncryptionBltKey">
-    <summary>
-      <para>Gets the cryptographic key to decrypt the data returned by the <see cref="ID3D11VideoContext.EncryptionBlt" /> method.</para>
-    </summary>
-    <param name="pCryptoSession">
-      <para>A pointer to the <see cref="ID3D11CryptoSession" /> interface.</para>
-    </param>
-    <param name="KeySize">
-      <para>The size of the <i>pReadbackKey</i> array, in bytes. The size should match the size of the session key.</para>
-    </param>
-    <param name="pReadbackKey">
-      <para>A pointer to a byte array that receives the key. The key is encrypted using the session key.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method applies only when the driver requires a separate content key for the <see cref="EncryptionBlt" /> method. For more information, see the Remarks for <b>EncryptionBlt</b>.</para>
-      <para>Each time this method is called, the driver generates a new key.</para>
-      <para>The <i>KeySize</i> should match the size of the session key.</para>
-      <para>The read back key is encrypted by the driver/hardware using the session key.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the cryptographic key to decrypt the data returned by the <see cref="ID3D11VideoContext.EncryptionBlt" /> method.</summary>
+    <param name="pCryptoSession">A pointer to the <see cref="ID3D11CryptoSession" /> interface.</param>
+    <param name="KeySize">The size of the <i>pReadbackKey</i> array, in bytes. The size should match the size of the session key.</param>
+    <param name="pReadbackKey">A pointer to a byte array that receives the key. The key is encrypted using the session key.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.NegotiateAuthenticatedChannelKeyExchange">
-    <summary>
-      <para>Establishes a session key for an authenticated channel.</para>
-    </summary>
-    <param name="pChannel">
-      <para>A pointer to the <see cref="ID3D11AuthenticatedChannel" /> interface.  This method will fail if the channel type is    <see cref="D3D11_AUTHENTICATED_CHANNEL_D3D11" />, because the Direct3D11 channel does not support authentication.</para>
-    </param>
-    <param name="DataSize">
-      <para>The size of the data in the <i>pData</i> array, in bytes.</para>
-    </param>
-    <param name="pData">
-      <para>A pointer to a byte array that contains the encrypted session key. The buffer must contain 256 bytes of data, encrypted using RSA Encryption Scheme - Optimal Asymmetric Encryption Padding (RSAES-OAEP).</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method will fail if the channel type is    <see cref="D3D11_AUTHENTICATED_CHANNEL_D3D11" />, because the Direct3D11 channel does not support authentication.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Establishes a session key for an authenticated channel.</summary>
+    <param name="pChannel">A pointer to the <see cref="ID3D11AuthenticatedChannel" /> interface. This method will fail if the channel type is <see cref="D3D11_AUTHENTICATED_CHANNEL_D3D11" />, because the Direct3D11 channel does not support authentication.</param>
+    <param name="DataSize">The size of the data in the <i>pData</i> array, in bytes.</param>
+    <param name="pData">A pointer to a byte array that contains the encrypted session key. The buffer must contain 256 bytes of data, encrypted using RSA Encryption Scheme - Optimal Asymmetric Encryption Padding (RSAES-OAEP).</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.NegotiateCryptoSessionKeyExchange">
-    <summary>
-      <para>Establishes the session key for a cryptographic session.</para>
-    </summary>
-    <param name="pCryptoSession">
-      <para>A pointer to the <see cref="ID3D11CryptoSession" /> interface of the cryptographic session.</para>
-    </param>
-    <param name="DataSize">
-      <para>The size of the <i>pData</i> byte array, in bytes.</para>
-    </param>
-    <param name="pData">
-      <para>A pointer to a byte array that contains the encrypted session key.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The key exchange mechanism depends on the type of cryptographic session.</para>
-      <para>For RSA Encryption Scheme - Optimal Asymmetric Encryption Padding (RSAES-OAEP), the software decoder generates the secret key, encrypts the secret key by using the public key with RSAES-OAEP, and places the cipher text in the <i>pData</i> parameter. The actual size of the buffer for RSAES-OAEP is 256 bytes.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Establishes the session key for a cryptographic session.</summary>
+    <param name="pCryptoSession">A pointer to the <see cref="ID3D11CryptoSession" /> interface of the cryptographic session.</param>
+    <param name="DataSize">The size of the <i>pData</i> byte array, in bytes.</param>
+    <param name="pData">A pointer to a byte array that contains the encrypted session key.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.QueryAuthenticatedChannel">
-    <summary>
-      <para>Sends a query to an authenticated channel.</para>
-    </summary>
-    <param name="pChannel">
-      <para>A pointer to the <see cref="ID3D11AuthenticatedChannel" /> interface.</para>
-    </param>
-    <param name="InputSize">
-      <para>The size of the <i>pInput</i> array, in bytes.</para>
-    </param>
-    <param name="pInput">
-      <para>A pointer to a byte array that contains input data for the query. This array always starts with a <see cref="D3D11_AUTHENTICATED_QUERY_INPUT" /> structure. The <b>QueryType</b> member of the structure specifies the query and defines the meaning of the rest of the array.</para>
-    </param>
-    <param name="OutputSize">
-      <para>The size of the <i>pOutput</i> array, in bytes.</para>
-    </param>
-    <param name="pOutput">
-      <para>A pointer to a byte array that receives the result of the query. This array always starts with a <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT" /> structure. The meaning of the rest of the array depends on the query.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sends a query to an authenticated channel.</summary>
+    <param name="pChannel">A pointer to the <see cref="ID3D11AuthenticatedChannel" /> interface.</param>
+    <param name="InputSize">The size of the <i>pInput</i> array, in bytes.</param>
+    <param name="pInput">A pointer to a byte array that contains input data for the query. This array always starts with a <see cref="D3D11_AUTHENTICATED_QUERY_INPUT" /> structure. The <b>QueryType</b> member of the structure specifies the query and defines the meaning of the rest of the array.</param>
+    <param name="OutputSize">The size of the <i>pOutput</i> array, in bytes.</param>
+    <param name="pOutput">A pointer to a byte array that receives the result of the query. This array always starts with a <see cref="D3D11_AUTHENTICATED_QUERY_OUTPUT" /> structure. The meaning of the rest of the array depends on the query.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.ReleaseDecoderBuffer">
-    <summary>
-      <para>Releases a buffer that was obtained by calling the <see cref="ID3D11VideoContext.GetDecoderBuffer" /> method.</para>
-    </summary>
-    <param name="pDecoder">
-      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</para>
-    </param>
-    <param name="Type">
-      <para>The type of buffer to release. Specify the same value that was used in the <i>Type</i> parameter of the <see cref="GetDecoderBuffer" /> method.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Releases a buffer that was obtained by calling the <see cref="ID3D11VideoContext.GetDecoderBuffer" /> method.</summary>
+    <param name="pDecoder">A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoDecoder" />.</param>
+    <param name="Type">The type of buffer to release. Specify the same value that was used in the <i>Type</i> parameter of the <see cref="GetDecoderBuffer" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.StartSessionKeyRefresh">
-    <summary>
-      <para>Gets a random number that can be used to refresh the session key.</para>
-    </summary>
-    <param name="pCryptoSession">
-      <para>A pointer to the <see cref="ID3D11CryptoSession" /> interface.</para>
-    </param>
-    <param name="RandomNumberSize">
-      <para>The size of the <i>pRandomNumber</i> array, in bytes. The size should match the size of the session key.</para>
-    </param>
-    <param name="pRandomNumber">
-      <para>A pointer to a byte array that receives a random number.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To generate a new session key, perform a bitwise <b>XOR</b> between the previous session key and the random number. The new session key does not take affect until the application calls <see cref="ID3D11VideoContext.FinishSessionKeyRefresh" />.</para>
-      <para>To query whether the driver supports this method, call <see cref="ID3D11VideoDevice.GetContentProtectionCaps" /> and check for the <b>D3D11_CONTENT_PROTECTION_CAPS_FRESHEN_SESSION_KEY</b> capabilities flag.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets a random number that can be used to refresh the session key.</summary>
+    <param name="pCryptoSession">A pointer to the <see cref="ID3D11CryptoSession" /> interface.</param>
+    <param name="RandomNumberSize">The size of the <i>pRandomNumber</i> array, in bytes. The size should match the size of the session key.</param>
+    <param name="pRandomNumber">A pointer to a byte array that receives a random number.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.SubmitDecoderBuffers">
-    <summary>
-      <para>Submits one or more buffers for decoding.</para>
-    </summary>
-    <param name="pDecoder">
-      <para>A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call the <see cref="ID3D11VideoDevice.CreateVideoDecoder" /> method.</para>
-    </param>
-    <param name="NumBuffers">
-      <para>The number of buffers submitted for decoding.</para>
-    </param>
-    <param name="pBufferDesc">
-      <para>A pointer to an array of <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC" /> structures. The <i>NumBuffers</i> parameter specifies the number of elements in the array. Each element in the array describes a compressed buffer for decoding.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This function does not honor a D3D11 predicate that may have been set.</para>
-      <para>If the application uses <see cref="D3D11 queries" />, this function may not be accounted for with <b>D3D11_QUERY_EVENT</b> and <b>D3D11_QUERY_TIMESTAMP</b> when using feature levels lower than 11.  <b>D3D11_QUERY_PIPELINE_STATISTICS</b> will not include this function for any feature level.</para>
-      <para>When using feature levels 9_x, all partially encrypted buffers must use the same EncryptedBlockInfo, and partial encryption cannot be turned off on a per frame basis.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Submits one or more buffers for decoding.</summary>
+    <param name="pDecoder">A pointer to the <see cref="ID3D11VideoDecoder" /> interface. To get this pointer, call the <see cref="ID3D11VideoDevice.CreateVideoDecoder" /> method.</param>
+    <param name="NumBuffers">The number of buffers submitted for decoding.</param>
+    <param name="pBufferDesc">A pointer to an array of <see cref="D3D11_VIDEO_DECODER_BUFFER_DESC" /> structures. The <i>NumBuffers</i> parameter specifies the number of elements in the array. Each element in the array describes a compressed buffer for decoding.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorBlt">
-    <summary>
-      <para>Performs a video processing operation on one or more input samples, and writes the result to a Direct3D surface.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call the <see cref="ID3D11VideoDevice.CreateVideoProcessor" /> method.</para>
-    </param>
-    <param name="pView">
-      <para>A pointer to the <see cref="ID3D11VideoProcessorOutputView" /> interface for the output surface. The output of the video processing operation will be written to this surface.</para>
-    </param>
-    <param name="OutputFrame">
-      <para>The frame number of the output video frame, indexed from zero.</para>
-    </param>
-    <param name="StreamCount">
-      <para>The number of input streams to process.</para>
-    </param>
-    <param name="pStreams">
-      <para>A pointer to an array of <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> structures that contain information about the input streams. The caller allocates the array and fills in each structure. The number of elements in the array is given in the <i>StreamCount</i> parameter.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The maximum value of <i>StreamCount</i> is given in the <b>MaxStreamStates</b> member of the <see cref="D3D11_VIDEO_PROCESSOR_CAPS" /> structure. The maximum number of streams that can be enabled at one time is given in the <b>MaxInputStreams</b> member of that structure.</para>
-      <para>If the output stereo mode is <b>TRUE</b>:</para>
-      <list type="bullet">
-        <item>
-          <description>The output view must contain a texture array of two elements.</description>
-        </item>
-        <item>
-          <description>At least one stereo stream must be specified.</description>
-        </item>
-        <item>
-          <description>If multiple input streams are enabled, it is possible that one or more of the input streams may contain mono data.</description>
-        </item>
-      </list>
-      <para>Otherwise:</para>
-      <list type="bullet">
-        <item>
-          <description>The output view must contain a single element.</description>
-        </item>
-        <item>
-          <description>The stereo format cannot be <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO" /> .</description>
-        </item>
-      </list>
-      <para>This function does not honor a D3D11 predicate that may have been set.</para>
-      <para>If the application uses <see cref="D3D11 queries" />, this function may not be accounted for with <b>D3D11_QUERY_EVENT</b> and <b>D3D11_QUERY_TIMESTAMP</b> when using feature levels lower than 11. <b>D3D11_QUERY_PIPELINE_STATISTICS</b> will not include this function for any feature level.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext interface" />
+    <summary>Performs a video processing operation on one or more input samples, and writes the result to a Direct3D surface.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call the <see cref="ID3D11VideoDevice.CreateVideoProcessor" /> method.</param>
+    <param name="pView">A pointer to the <see cref="ID3D11VideoProcessorOutputView" /> interface for the output surface. The output of the video processing operation will be written to this surface.</param>
+    <param name="OutputFrame">The frame number of the output video frame, indexed from zero.</param>
+    <param name="StreamCount">The number of input streams to process.</param>
+    <param name="pStreams">A pointer to an array of <see cref="D3D11_VIDEO_PROCESSOR_STREAM" /> structures that contain information about the input streams. The caller allocates the array and fills in each structure. The number of elements in the array is given in the <i>StreamCount</i> parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetOutputAlphaFillMode">
-    <summary>
-      <para>Gets the current alpha fill mode for the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="pAlphaFillMode">
-      <para>Receives the alpha fill mode, as a <see cref="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE" /> value.</para>
-    </param>
-    <param name="pStreamIndex">
-      <para>If the alpha fill mode is <b>D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_SOURCE_STREAM</b>, this parameter receives the zero-based index of an input stream. The input stream provides the alpha values for the alpha fill.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the current alpha fill mode for the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="pAlphaFillMode">Receives the alpha fill mode, as a <see cref="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE" /> value.</param>
+    <param name="pStreamIndex">If the alpha fill mode is <b>D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_SOURCE_STREAM</b>, this parameter receives the zero-based index of an input stream. The input stream provides the alpha values for the alpha fill.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetOutputBackgroundColor">
-    <summary>
-      <para>Gets the current background color for the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="pYCbCr">
-      <para>Receives the value <b>TRUE</b> if the background color is a YCbCr color, or <b>FALSE</b> if the background color is an RGB color.</para>
-    </param>
-    <param name="pColor">
-      <para>A pointer to a <see cref="D3D11_VIDEO_COLOR" /> structure. The method fills in the structure with the background color.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the current background color for the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="pYCbCr">Receives the value <b>TRUE</b> if the background color is a YCbCr color, or <b>FALSE</b> if the background color is an RGB color.</param>
+    <param name="pColor">A pointer to a <see cref="D3D11_VIDEO_COLOR" /> structure. The method fills in the structure with the background color.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetOutputColorSpace">
-    <summary>
-      <para>Gets the current output color space for the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="pColorSpace">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_COLOR_SPACE" /> structure. The method fills in the structure with the output color space.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the current output color space for the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="pColorSpace">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_COLOR_SPACE" /> structure. The method fills in the structure with the output color space.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetOutputConstriction">
-    <summary>
-      <para>Gets the current level of downsampling that is performed by the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="pEnabled">
-      <para>Receives the value <b>TRUE</b> if downsampling was explicitly enabled using the <see cref="ID3D11VideoContext.VideoProcessorSetOutputConstriction" /> method. Receives the value <b>FALSE</b> if the downsampling was disabled or was never set.</para>
-    </param>
-    <param name="pSize">
-      <para>If <i>Enabled</i> receives the value <b>TRUE</b>, this parameter receives the downsampling size. Otherwise, this parameter is ignored.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the current level of downsampling that is performed by the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="pEnabled">Receives the value <b>TRUE</b> if downsampling was explicitly enabled using the <see cref="ID3D11VideoContext.VideoProcessorSetOutputConstriction" /> method. Receives the value <b>FALSE</b> if the downsampling was disabled or was never set.</param>
+    <param name="pSize">If <i>Enabled</i> receives the value <b>TRUE</b>, this parameter receives the downsampling size. Otherwise, this parameter is ignored.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetOutputExtension">
-    <summary>
-      <para>Gets private state data from the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="pExtensionGuid">
-      <para>A pointer to a GUID that identifies the state. The meaning of this GUID is defined by the graphics driver.</para>
-    </param>
-    <param name="DataSize">
-      <para>The size of the <i>pData</i> buffer, in bytes.</para>
-    </param>
-    <param name="pData">
-      <para>A pointer to a buffer that receives the private state data.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets private state data from the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="pExtensionGuid">A pointer to a GUID that identifies the state. The meaning of this GUID is defined by the graphics driver.</param>
+    <param name="DataSize">The size of the <i>pData</i> buffer, in bytes.</param>
+    <param name="pData">A pointer to a buffer that receives the private state data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetOutputStereoMode">
-    <summary>
-      <para>Queries whether the video processor produces stereo video frames.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="pEnabled">
-      <para>Receives the value <b>TRUE</b> if stereo output is enabled, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Queries whether the video processor produces stereo video frames.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="pEnabled">Receives the value <b>TRUE</b> if stereo output is enabled, or <b>FALSE</b> otherwise.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetOutputTargetRect">
-    <summary>
-      <para>Gets the current target rectangle for the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="Enabled">
-      <para>Receives the value <b>TRUE</b> if the target rectangle was explicitly set using the <see cref="ID3D11VideoContext.VideoProcessorSetOutputTargetRect" /> method. Receives the value FALSE if the target rectangle was disabled or was never set.</para>
-    </param>
-    <param name="pRect">
-      <para>If <i>Enabled</i> receives the value <b>TRUE</b>, this parameter receives the target rectangle. Otherwise, this parameter is ignored.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the current target rectangle for the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="Enabled">Receives the value <b>TRUE</b> if the target rectangle was explicitly set using the <see cref="ID3D11VideoContext.VideoProcessorSetOutputTargetRect" /> method. Receives the value FALSE if the target rectangle was disabled or was never set.</param>
+    <param name="pRect">If <i>Enabled</i> receives the value <b>TRUE</b>, this parameter receives the target rectangle. Otherwise, this parameter is ignored.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamAlpha">
-    <summary>
-      <para>Gets the planar alpha for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pEnabled">
-      <para>Receives the value <b>TRUE</b> if planar alpha is enabled, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <param name="pAlpha">
-      <para>Receives the planar alpha value. The value can range from 0.0 (transparent) to 1.0 (opaque).</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the planar alpha for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pEnabled">Receives the value <b>TRUE</b> if planar alpha is enabled, or <b>FALSE</b> otherwise.</param>
+    <param name="pAlpha">Receives the planar alpha value. The value can range from 0.0 (transparent) to 1.0 (opaque).</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamAutoProcessingMode">
-    <summary>
-      <para>Queries whether automatic processing features of the video processor are enabled.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pEnabled">
-      <para>Receives the value <b>TRUE</b> if automatic processing features are enabled, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <remarks>
-      <para>Automatic processing  refers to additional image processing that drivers might have performed on the image data prior to the application receiving the data.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Queries whether automatic processing features of the video processor are enabled.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pEnabled">Receives the value <b>TRUE</b> if automatic processing features are enabled, or <b>FALSE</b> otherwise.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamColorSpace">
-    <summary>
-      <para>Gets the color space for an input stream of the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pColorSpace">
-      <para>Receives a <see cref="D3D11_VIDEO_PROCESSOR_COLOR_SPACE" /> value that specifies the color space.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the color space for an input stream of the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pColorSpace">Receives a <see cref="D3D11_VIDEO_PROCESSOR_COLOR_SPACE" /> value that specifies the color space.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamDestRect">
-    <summary>
-      <para>Gets the destination rectangle for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pEnabled">
-      <para>Receives the value <b>TRUE</b> if the destination rectangle is enabled, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <param name="pRect">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162897(v=vs.85)">RECT</a> structure that receives the destination rectangle.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the destination rectangle for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pEnabled">Receives the value <b>TRUE</b> if the destination rectangle is enabled, or <b>FALSE</b> otherwise.</param>
+    <param name="pRect">A pointer to a <see cref="RECT" /> structure that receives the destination rectangle.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamExtension">
-    <summary>
-      <para>Gets a driver-specific state for a video processing stream.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pExtensionGuid">
-      <para>A pointer to a GUID that identifies the state. The meaning of this GUID is defined by the graphics driver.</para>
-    </param>
-    <param name="DataSize">
-      <para>The size of the <i>pData</i> buffer, in bytes.</para>
-    </param>
-    <param name="pData">
-      <para>A pointer to a buffer that receives the private state data.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets a driver-specific state for a video processing stream.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pExtensionGuid">A pointer to a GUID that identifies the state. The meaning of this GUID is defined by the graphics driver.</param>
+    <param name="DataSize">The size of the <i>pData</i> buffer, in bytes.</param>
+    <param name="pData">A pointer to a buffer that receives the private state data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamFilter">
-    <summary>
-      <para>Gets the image filter settings for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Filter">
-      <para>The filter to query, specified as a <see cref="D3D11_VIDEO_PROCESSOR_FILTER" /> value.</para>
-    </param>
-    <param name="pEnabled">
-      <para>Receives the value <b>TRUE</b> if the image filter is enabled, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <param name="pLevel">
-      <para>Receives the filter level.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the image filter settings for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Filter">The filter to query, specified as a <see cref="D3D11_VIDEO_PROCESSOR_FILTER" /> value.</param>
+    <param name="pEnabled">Receives the value <b>TRUE</b> if the image filter is enabled, or <b>FALSE</b> otherwise.</param>
+    <param name="pLevel">Receives the filter level.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamFrameFormat">
-    <summary>
-      <para>Gets the format of an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pFrameFormat">
-      <para>Receives a <see cref="D3D11_VIDEO_FRAME_FORMAT" /> value that specifies whether the stream contains interlaced or progressive frames.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the format of an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pFrameFormat">Receives a <see cref="D3D11_VIDEO_FRAME_FORMAT" /> value that specifies whether the stream contains interlaced or progressive frames.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamLumaKey">
-    <summary>
-      <para>Gets the luma key for an input stream of the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pEnabled">
-      <para>Receives the value <b>TRUE</b> if luma keying is enabled, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <param name="pLower">
-      <para>Receives the lower bound for the luma key. The valid range is [0…1].</para>
-    </param>
-    <param name="pUpper">
-      <para>Receives the upper bound for the luma key. The valid range is [0…1].</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the luma key for an input stream of the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pEnabled">Receives the value <b>TRUE</b> if luma keying is enabled, or <b>FALSE</b> otherwise.</param>
+    <param name="pLower">Receives the lower bound for the luma key. The valid range is [0…1].</param>
+    <param name="pUpper">Receives the upper bound for the luma key. The valid range is [0…1].</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamOutputRate">
-    <summary>
-      <para>Gets the rate at which the video processor produces output frames for an input stream.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pOutputRate">
-      <para>Receives a <see cref="D3D11_VIDEO_PROCESSOR_OUTPUT_RATE" /> value that specifies the output rate.</para>
-    </param>
+    <summary>Gets the rate at which the video processor produces output frames for an input stream.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pOutputRate">Receives a <see cref="D3D11_VIDEO_PROCESSOR_OUTPUT_RATE" /> value that specifies the output rate.</param>
     <param name="pRepeatFrame">
       <para>Receives a Boolean value that specifies how the driver performs frame-rate conversion, if required.</para>
       <list type="table">
@@ -718,126 +247,69 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRUE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Repeat frames.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Repeat frames.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>FALSE</b>
-          </description>
-          <description>
-            <para>Interpolate frames.</para>
-          </description>
-        </item>
+          <description>Interpolate frames.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pCustomRate">
-      <para>A pointer to a <see cref="DXGI_RATIONAL" /> structure. If the output rate is <b>D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_CUSTOM</b>, the method fills in this structure with the exact output rate. Otherwise, this parameter is ignored.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <param name="pCustomRate">A pointer to a <see cref="DXGI_RATIONAL" /> structure. If the output rate is <b>D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_CUSTOM</b>, the method fills in this structure with the exact output rate. Otherwise, this parameter is ignored.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamPalette">
-    <summary>
-      <para>Gets the color-palette entries for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Count">
-      <para>The number of entries in the <i>pEntries</i> array.</para>
-    </param>
-    <param name="pEntries">
-      <para>A pointer to a <b>UINT</b> array allocated by the caller. The method fills the array with the palette entries. For RGB streams, the palette entries use the <b>DXGI_FORMAT_B8G8R8A8</b> representation. For YCbCr streams, the palette entries use the <b>DXGI_FORMAT_AYUV</b> representation.</para>
-    </param>
-    <remarks>
-      <para>This method applies only to input streams that have a palettized color format. Palettized formats with 4 bits per pixel (bpp) use 16 palette entries. Formats with 8 bpp use 256 entries.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the color-palette entries for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Count">The number of entries in the <i>pEntries</i> array.</param>
+    <param name="pEntries">A pointer to a <b>UINT</b> array allocated by the caller. The method fills the array with the palette entries. For RGB streams, the palette entries use the <b>DXGI_FORMAT_B8G8R8A8</b> representation. For YCbCr streams, the palette entries use the <b>DXGI_FORMAT_AYUV</b> representation.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamPixelAspectRatio">
-    <summary>
-      <para>Gets the pixel aspect ratio for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pEnabled">
-      <para>Receives the value <b>TRUE</b> if the pixel aspect ratio is specified. Otherwise, receives the value <b>FALSE</b>.</para>
-    </param>
-    <param name="pSourceAspectRatio">
-      <para>A pointer to a <see cref="DXGI_RATIONAL" /> structure. If *<i>pEnabled</i> is <b>TRUE</b>, this parameter receives the pixel aspect ratio of the source rectangle.</para>
-    </param>
-    <param name="pDestinationAspectRatio">
-      <para>A pointer to a <see cref="DXGI_RATIONAL" /> structure. If *<i>pEnabled</i> is <b>TRUE</b>, this parameter receives the pixel aspect ratio of the destination rectangle.</para>
-    </param>
-    <remarks>
-      <para>When the method returns, if <i>*pEnabled</i> is <b>TRUE</b>, the <i>pSourceAspectRatio</i> and <i>pDestinationAspectRatio</i> parameters contain the pixel aspect ratios. Otherwise, the default pixel aspect ratio is 1:1 (square pixels).</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the pixel aspect ratio for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pEnabled">Receives the value <b>TRUE</b> if the pixel aspect ratio is specified. Otherwise, receives the value <b>FALSE</b>.</param>
+    <param name="pSourceAspectRatio">A pointer to a <see cref="DXGI_RATIONAL" /> structure. If *<i>pEnabled</i> is <b>TRUE</b>, this parameter receives the pixel aspect ratio of the source rectangle.</param>
+    <param name="pDestinationAspectRatio">A pointer to a <see cref="DXGI_RATIONAL" /> structure. If *<i>pEnabled</i> is <b>TRUE</b>, this parameter receives the pixel aspect ratio of the destination rectangle.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamRotation">
-    <summary>
-      <para>Gets the stream rotation  for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pEnable">
-      <para>Specifies if the stream is rotated.</para>
-    </param>
-    <param name="pRotation">
-      <para>Specifies the rotation of the stream in a clockwise orientation.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the stream rotation for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pEnable">Specifies if the stream is rotated.</param>
+    <param name="pRotation">Specifies the rotation of the stream in a clockwise orientation.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamSourceRect">
-    <summary>
-      <para>Gets the source rectangle for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pEnabled">
-      <para>Receives the value <b>TRUE</b> if the source rectangle is enabled, or <b>FALSE</b> otherwise.</para>
-    </param>
-    <param name="pRect">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162897(v=vs.85)">RECT</a> structure that receives the source rectangle.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Gets the source rectangle for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pEnabled">Receives the value <b>TRUE</b> if the source rectangle is enabled, or <b>FALSE</b> otherwise.</param>
+    <param name="pRect">A pointer to a <see cref="RECT" /> structure that receives the source rectangle.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorGetStreamStereoFormat">
-    <summary>
-      <para>Gets the stereo 3D format for an input stream on the video processor</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pEnable">
-      <para>Receives the value <b>TRUE</b> if stereo 3D is enabled for this stream, or <b>FALSE</b> otherwise. If the value is <b>FALSE</b>, ignore the remaining parameters.</para>
-    </param>
-    <param name="pFormat">
-      <para>Receives a <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT" /> value that specifies the layout of the two stereo views in memory.</para>
-    </param>
+    <summary>Gets the stereo 3D format for an input stream on the video processor</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pEnable">Receives the value <b>TRUE</b> if stereo 3D is enabled for this stream, or <b>FALSE</b> otherwise. If the value is <b>FALSE</b>, ignore the remaining parameters.</param>
+    <param name="pFormat">Receives a <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT" /> value that specifies the layout of the two stereo views in memory.</param>
     <param name="pLeftViewFrame0">
       <para>Receives a Boolean value.</para>
       <list type="table">
@@ -845,22 +317,30 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRUE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Frame 0 contains the left view.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Frame 0 contains the left view.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>FALSE</b>
-          </description>
-          <description>
-            <para>Frame 0 contains the right view.</para>
-          </description>
-        </item>
+          <description>Frame 0 contains the right view.</description>
+        </listheader>
       </list>
     </param>
     <param name="pBaseViewFrame0">
@@ -870,373 +350,145 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRUE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Frame 0 contains the base view.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Frame 0 contains the base view.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>FALSE</b>
-          </description>
-          <description>
-            <para>Frame 1 contains the base view.</para>
-          </description>
-        </item>
+          <description>Frame 1 contains the base view.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pFlipMode">
-      <para>Receives a <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE" /> value. This value specifies whether one of the views is flipped.</para>
-    </param>
-    <param name="MonoOffset">
-      <para>Receives the pixel offset used for <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO_OFFSET</b> format. This parameter is ignored for other stereo formats.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <param name="pFlipMode">Receives a <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE" /> value. This value specifies whether one of the views is flipped.</param>
+    <param name="MonoOffset">Receives the pixel offset used for <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO_OFFSET</b> format. This parameter is ignored for other stereo formats.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetOutputAlphaFillMode">
-    <summary>
-      <para>Sets the alpha fill mode for data that the video processor writes to the render target.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="AlphaFillMode">
-      <para>The alpha fill mode, specified as a <see cref="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE" /> value.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of an input stream. This parameter is used if <i>AlphaFillMode</i> is <b>D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_SOURCE_STREAM</b>. Otherwise, the parameter is ignored.</para>
-    </param>
-    <remarks>
-      <para>To find out which fill modes the device supports, call the <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> method. If the driver reports the <b>D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_ALPHA_FILL</b> capability, the driver supports all of the fill modes. Otherwise, the <i>AlphaFillMode</i> parameter must be <b>D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_OPAQUE</b>.</para>
-      <para>The default fill mode is <b>D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_OPAQUE</b>.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the alpha fill mode for data that the video processor writes to the render target.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="AlphaFillMode">The alpha fill mode, specified as a <see cref="D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE" /> value.</param>
+    <param name="StreamIndex">The zero-based index of an input stream. This parameter is used if <i>AlphaFillMode</i> is <b>D3D11_VIDEO_PROCESSOR_ALPHA_FILL_MODE_SOURCE_STREAM</b>. Otherwise, the parameter is ignored.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetOutputBackgroundColor">
-    <summary>
-      <para>Sets the background color for the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="YCbCr">
-      <para>If <b>TRUE</b>, the color is specified as a YCbCr value. Otherwise, the color is specified as an RGB value.</para>
-    </param>
-    <param name="pColor">
-      <para>A pointer to a <see cref="D3D11_VIDEO_COLOR" /> structure that specifies the background color.</para>
-    </param>
-    <remarks>
-      <para>The video processor uses the background color to fill areas of the target rectangle that do not contain a video image. Areas outside the target rectangle are not affected.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the background color for the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="YCbCr">If <b>TRUE</b>, the color is specified as a YCbCr value. Otherwise, the color is specified as an RGB value.</param>
+    <param name="pColor">A pointer to a <see cref="D3D11_VIDEO_COLOR" /> structure that specifies the background color.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetOutputColorSpace">
-    <summary>
-      <para>Sets the output color space for the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="pColorSpace">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_COLOR_SPACE" /> structure that specifies the color space.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the output color space for the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="pColorSpace">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_COLOR_SPACE" /> structure that specifies the color space.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetOutputConstriction">
-    <summary>
-      <para>Sets the amount of downsampling to perform on the output.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="Enable">
-      <para>If <b>TRUE</b>, downsampling is enabled. Otherwise, downsampling is disabled and the <b>Size</b> member is ignored.</para>
-    </param>
-    <param name="Size">
-      <para>The sampling size.</para>
-    </param>
-    <remarks>
-      <para>Downsampling is sometimes used to reduce the quality of premium content when other forms of content protection are not available. By default, downsampling is disabled.</para>
-      <para>If the <i>Enable</i> parameter is <b>TRUE</b>, the driver downsamples the composed image  to the specified size, and then scales it back to the size of the target rectangle.</para>
-      <para>The width and height of <i>Size</i> must be greater than zero. If the size is larger than the target rectangle, downsampling does not occur.</para>
-      <para>To use this feature, the driver must support downsampling, indicated by the <b>D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_CONSTRICTION</b> capability flag. To query for this capability, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" />.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the amount of downsampling to perform on the output.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="Enable">If <b>TRUE</b>, downsampling is enabled. Otherwise, downsampling is disabled and the <b>Size</b> member is ignored.</param>
+    <param name="Size">The sampling size.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetOutputExtension">
-    <summary>
-      <para>Sets a driver-specific video processing state.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="pExtensionGuid">
-      <para>A pointer to a GUID that identifies the operation. The meaning of this GUID is defined by the graphics driver.</para>
-    </param>
-    <param name="DataSize">
-      <para>The size of the <i>pData</i> buffer, in bytes.</para>
-    </param>
-    <param name="pData">
-      <para>A pointer to a buffer that contains private state data. The method passes this buffer directly to the driver without validation. It is the responsibility of the driver to validate the data.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets a driver-specific video processing state.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="pExtensionGuid">A pointer to a GUID that identifies the operation. The meaning of this GUID is defined by the graphics driver.</param>
+    <param name="DataSize">The size of the <i>pData</i> buffer, in bytes.</param>
+    <param name="pData">A pointer to a buffer that contains private state data. The method passes this buffer directly to the driver without validation. It is the responsibility of the driver to validate the data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetOutputStereoMode">
-    <summary>
-      <para>Specifies whether the video processor produces stereo video frames.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="Enable">
-      <para>If <b>TRUE</b>, stereo output is enabled. Otherwise, the video processor produces mono video frames.</para>
-    </param>
-    <remarks>
-      <para>By default, the video processor produces mono video frames.</para>
-      <para>To use this feature, the driver must support stereo video, indicated by the <b>D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_STEREO</b> capability flag. To query for this capability, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" />.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Specifies whether the video processor produces stereo video frames.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="Enable">If <b>TRUE</b>, stereo output is enabled. Otherwise, the video processor produces mono video frames.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetOutputTargetRect">
-    <summary>
-      <para>Sets the target rectangle for the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="Enable">
-      <para>Specifies whether to apply the target rectangle.</para>
-    </param>
-    <param name="pRect">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162897(v=vs.85)">RECT</a> structure that specifies the target rectangle.  If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
-    </param>
-    <remarks>
-      <para>The target rectangle is the area within the destination surface where the output will be drawn. The target rectangle is given in pixel coordinates, relative to the destination surface.</para>
-      <para>If this method is never called, or if the <i>Enable</i> parameter is <b>FALSE</b>, the video processor writes to the entire destination surface.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the target rectangle for the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="Enable">Specifies whether to apply the target rectangle.</param>
+    <param name="pRect">A pointer to a <see cref="RECT" /> structure that specifies the target rectangle. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamAlpha">
-    <summary>
-      <para>Sets the planar alpha for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Enable">
-      <para>Specifies whether alpha blending is enabled.</para>
-    </param>
-    <param name="Alpha">
-      <para>The planar alpha value. The value can range from 0.0 (transparent) to 1.0 (opaque).
-If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
-    </param>
-    <remarks>
-      <para>To use this feature, the driver must support stereo video, indicated by the  <see cref="D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_ALHPA_STREAM" /> capability flag. To query for this  capability, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" />.</para>
-      <para>Alpha blending is disabled by default.</para>
-      <para>For each pixel, the destination color value is computed as follows:</para>
-      <para>
-        <code>Cd = Cs * (As * Ap * Ae) + Cd * (1.0 - As * Ap * Ae)</code>
-      </para>
-      <para>where:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <code>Cd</code> = The color value of the destination pixel</description>
-        </item>
-        <item>
-          <description>
-            <code>Cs</code> = The color value of the source pixel</description>
-        </item>
-        <item>
-          <description>
-            <code>As</code> = The per-pixel source alpha</description>
-        </item>
-        <item>
-          <description>
-            <code>Ap</code> = The planar alpha value</description>
-        </item>
-        <item>
-          <description>
-            <code>Ae</code> = The palette-entry alpha value, or 1.0 (see Note)</description>
-        </item>
-      </list>
-      <b>Note</b>  Palette-entry alpha values apply only to palettized color formats, and only when the device supports the <b>D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_ALPHA_PALETTE</b> capability. Otherwise, this factor equals 1.0.
-<para>The destination alpha value is computed according to the alpha fill mode. For more information, see <see cref="ID3D11VideoContext.VideoProcessorSetOutputAlphaFillMode" />.</para></remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the planar alpha for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Enable">Specifies whether alpha blending is enabled.</param>
+    <param name="Alpha">The planar alpha value. The value can range from 0.0 (transparent) to 1.0 (opaque). If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamAutoProcessingMode">
-    <summary>
-      <para>Enables or disables automatic processing features on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Enable">
-      <para>If <b>TRUE</b>, automatic processing features are enabled. If <b>FALSE</b>, the driver disables any  extra video processing that it might be performing.</para>
-    </param>
-    <remarks>
-      <para>By default, the driver might perform certain processing tasks automatically during the video processor blit. This method enables the application to disable these extra video processing features. For example, if you provide your own pixel  shader for the video processor, you might want to disable the driver's automatic processing.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Enables or disables automatic processing features on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Enable">If <b>TRUE</b>, automatic processing features are enabled. If <b>FALSE</b>, the driver disables any extra video processing that it might be performing.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamColorSpace">
-    <summary>
-      <para>Sets the color space for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pColorSpace">
-      <para>A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_COLOR_SPACE" /> structure that specifies the color space.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the color space for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pColorSpace">A pointer to a <see cref="D3D11_VIDEO_PROCESSOR_COLOR_SPACE" /> structure that specifies the color space.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamDestRect">
-    <summary>
-      <para>Sets the destination rectangle for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Enable">
-      <para>Specifies whether to apply the destination rectangle.</para>
-    </param>
-    <param name="pRect">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162897(v=vs.85)">RECT</a> structure that specifies the destination rectangle. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
-    </param>
-    <remarks>
-      <para>The destination rectangle is the portion of the output surface that receives the blit for this stream. The destination rectangle is given in pixel coordinates, relative to the output surface.</para>
-      <para>The default destination rectangle is an empty rectangle (0, 0, 0, 0). If this method is never called, or if the <i>Enable</i> parameter is <b>FALSE</b>, no data is written from this stream.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the destination rectangle for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Enable">Specifies whether to apply the destination rectangle.</param>
+    <param name="pRect">A pointer to a <see cref="RECT" /> structure that specifies the destination rectangle. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamExtension">
-    <summary>
-      <para>Sets a driver-specific state on a video processing stream.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="pExtensionGuid">
-      <para>A pointer to a GUID that identifies the operation. The meaning of this GUID is defined by the graphics driver.</para>
-    </param>
-    <param name="DataSize">
-      <para>The size of the <i>pData</i> buffer, in bytes.</para>
-    </param>
-    <param name="pData">
-      <para>A pointer to a buffer that contains private state data. The method passes this buffer directly to the driver without validation. It is the responsibility of the driver to validate the data.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets a driver-specific state on a video processing stream.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="pExtensionGuid">A pointer to a GUID that identifies the operation. The meaning of this GUID is defined by the graphics driver.</param>
+    <param name="DataSize">The size of the <i>pData</i> buffer, in bytes.</param>
+    <param name="pData">A pointer to a buffer that contains private state data. The method passes this buffer directly to the driver without validation. It is the responsibility of the driver to validate the data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamFilter">
-    <summary>
-      <para>Enables or disables an image filter for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
+    <summary>Enables or disables an image filter for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
     <param name="Filter">
       <para>The filter, specified as a <see cref="D3D11_VIDEO_PROCESSOR_FILTER" /> value.</para>
       <para>To query which filters the driver supports, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" />.</para>
     </param>
-    <param name="Enable">
-      <para>Specifies whether to enable the filter.</para>
-    </param>
+    <param name="Enable">Specifies whether to enable the filter.</param>
     <param name="Level">
       <para>The filter level. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
       <para>To find the valid range of levels for a specified filter, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorFilterRange" />.</para>
     </param>
-    <seealso cref="ID3D11VideoContext" />
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamFrameFormat">
-    <summary>
-      <para>Specifies whether an input stream on the video processor contains interlaced or progressive frames.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="FrameFormat">
-      <para>A <see cref="D3D11_VIDEO_FRAME_FORMAT" /> value that specifies the interlacing.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Specifies whether an input stream on the video processor contains interlaced or progressive frames.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="FrameFormat">A <see cref="D3D11_VIDEO_FRAME_FORMAT" /> value that specifies the interlacing.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamLumaKey">
-    <summary>
-      <para>Sets the luma key for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Enable">
-      <para>Specifies whether luma keying is enabled.</para>
-    </param>
-    <param name="Lower">
-      <para>The lower bound for the luma key. The valid range is [0…1]. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
-    </param>
-    <param name="Upper">
-      <para>The upper bound for the luma key. The valid range is [0…1]. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
-    </param>
-    <remarks>
-      <para>To use this feature, the driver must support luma keying, indicated by the <b>D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_LUMA_KEY</b> capability flag. To query for this capability, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" />. In addition, if the input format is RGB, the device must support the <b>D3D11_VIDEO_PROCESSOR_FORMAT_CAPS_RGB_LUMA_KEY</b> capability.</para>
-      <para>The values of <i>Lower</i> and <i>Upper</i> give the lower and upper bounds of the luma key, using a nominal range of [0...1]. Given a format with <i>n</i> bits per channel, these values are converted to luma values as follows:</para>
-      <para>
-        <code>val = f * ((1 &lt;&lt; n)-1)</code>
-      </para>
-      <para>Any pixel whose luma value falls within the upper and lower bounds (inclusive) is treated as transparent.</para>
-      <para>For example, if the pixel format uses 8-bit luma, the upper bound is calculated as follows:</para>
-      <para>
-        <code>BYTE Y = BYTE(max(min(1.0, Upper), 0.0) * 255.0)</code>
-      </para>
-      <para>Note that the value is clamped to the range [0...1] before multiplying by 255.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the luma key for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Enable">Specifies whether luma keying is enabled.</param>
+    <param name="Lower">The lower bound for the luma key. The valid range is [0…1]. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</param>
+    <param name="Upper">The upper bound for the luma key. The valid range is [0…1]. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamOutputRate">
-    <summary>
-      <para>Sets the rate at which the video processor produces output frames for an input stream.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="OutputRate">
-      <para>The output rate, specified as a <see cref="D3D11_VIDEO_PROCESSOR_OUTPUT_RATE" /> value.</para>
-    </param>
+    <summary>Sets the rate at which the video processor produces output frames for an input stream.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="OutputRate">The output rate, specified as a <see cref="D3D11_VIDEO_PROCESSOR_OUTPUT_RATE" /> value.</param>
     <param name="RepeatFrame">
       <para>Specifies how the driver performs frame-rate conversion, if required.</para>
       <list type="table">
@@ -1244,150 +496,76 @@ If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TRUE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TRUE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Repeat frames.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Repeat frames.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>FALSE</b>
-          </description>
-          <description>
-            <para>Interpolate frames.</para>
-          </description>
-        </item>
+          <description>Interpolate frames.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pCustomRate">
-      <para>A pointer to a <see cref="DXGI_RATIONAL" /> structure. If <i>OutputRate</i> is <b>D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_CUSTOM</b>,  this parameter specifies the exact output rate. Otherwise, this parameter is ignored and can be <b>NULL</b>.</para>
-    </param>
-    <remarks>
-      <para>The standard output rates are normal frame-rate (<b>D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_NORMAL</b>) and half frame-rate (<b>D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_HALF</b>). In addition, the driver might support custom rates  for rate conversion or inverse telecine. To get the list of custom rates, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCustomRate" />.</para>
-      <para>Depending on the output rate, the driver might need to convert the frame rate. If so, the value of <i>RepeatFrame</i> controls whether the driver creates interpolated frames or simply repeats input frames.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <param name="pCustomRate">A pointer to a <see cref="DXGI_RATIONAL" /> structure. If <i>OutputRate</i> is <b>D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_CUSTOM</b>, this parameter specifies the exact output rate. Otherwise, this parameter is ignored and can be <b>NULL</b>.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamPalette">
-    <summary>
-      <para>Sets the color-palette entries for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Count">
-      <para>The number of elements in the <i>pEntries</i> array.</para>
-    </param>
-    <param name="pEntries">
-      <para>A pointer to an array of palette entries. For RGB streams, the palette entries use the <b>DXGI_FORMAT_B8G8R8A8</b> representation. For YCbCr streams, the palette entries use the <b>DXGI_FORMAT_AYUV</b> representation. The caller allocates the array.</para>
-    </param>
-    <remarks>
-      <para>This method applies only to  input streams that have a palettized color format. Palettized formats with 4 bits per pixel (bpp) use the first 16 entries in the list. Formats with 8 bpp use the first 256 entries.</para>
-      <para>If a pixel has a palette index greater than the number of entries, the device treats the pixel as white with opaque alpha. For full-range RGB, this value is (255, 255, 255, 255); for YCbCr the value is (255, 235, 128, 128).</para>
-      <para>If the driver does not report the <b>D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_ALPHA_PALETTE</b> capability flag, every palette entry must have an alpha value of 0xFF (opaque). To query for this capability, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" />.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the color-palette entries for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Count">The number of elements in the <i>pEntries</i> array.</param>
+    <param name="pEntries">A pointer to an array of palette entries. For RGB streams, the palette entries use the <b>DXGI_FORMAT_B8G8R8A8</b> representation. For YCbCr streams, the palette entries use the <b>DXGI_FORMAT_AYUV</b> representation. The caller allocates the array.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamPixelAspectRatio">
-    <summary>
-      <para>Sets the pixel aspect ratio for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Enable">
-      <para>Specifies whether the <i>pSourceAspectRatio</i> and <i>pDestinationAspectRatio</i> parameters contain valid values. Otherwise, the pixel aspect ratios are unspecified.</para>
-    </param>
-    <param name="pSourceAspectRatio">
-      <para>A pointer to a <see cref="DXGI_RATIONAL" /> structure that contains the pixel aspect ratio of the source rectangle. If <i>Enable</i> is <b>FALSE</b>, this parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="pDestinationAspectRatio">
-      <para>A pointer to a <see cref="DXGI_RATIONAL" /> structure that contains the pixel aspect ratio of the destination rectangle. If <i>Enable</i> is <b>FALSE</b>, this parameter can be <b>NULL</b>.</para>
-    </param>
-    <remarks>
-      <para>This function can only be called if the driver reports the     <see cref="D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_PIXEL_ASPECT_RATIO" />  capability. If this capability is not set, this function will have no effect.</para>
-      <para>Pixel aspect ratios of the form 0/n and n/0 are not valid.</para>
-      <para>The default pixel aspect ratio is 1:1 (square pixels).</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/picture-aspect-ratio">Picture Aspect Ratio</seealso>
+    <summary>Sets the pixel aspect ratio for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Enable">Specifies whether the <i>pSourceAspectRatio</i> and <i>pDestinationAspectRatio</i> parameters contain valid values. Otherwise, the pixel aspect ratios are unspecified.</param>
+    <param name="pSourceAspectRatio">A pointer to a <see cref="DXGI_RATIONAL" /> structure that contains the pixel aspect ratio of the source rectangle. If <i>Enable</i> is <b>FALSE</b>, this parameter can be <b>NULL</b>.</param>
+    <param name="pDestinationAspectRatio">A pointer to a <see cref="DXGI_RATIONAL" /> structure that contains the pixel aspect ratio of the destination rectangle. If <i>Enable</i> is <b>FALSE</b>, this parameter can be <b>NULL</b>.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamRotation">
-    <summary>
-      <para>Sets the stream rotation for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Enable">
-      <para>Specifies if the stream is to be rotated in a clockwise orientation.</para>
-    </param>
-    <param name="Rotation">
-      <para>Specifies the rotation of the stream.</para>
-    </param>
-    <remarks>
-      <para>This is an optional state and the application should only use it if    <see cref="D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_ROTATION" /> is reported in  <see cref="D3D11_VIDEO_PROCESSOR_CAPS.FeatureCaps" />.</para>
-      <para>The stream source rectangle will be specified in the pre-rotation coordinates (typically landscape) and the stream destination rectangle will be specified in the post-rotation coordinates (typically portrait).   The application must update the stream destination rectangle correctly when using a rotation value other than 0° and 180°.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the stream rotation for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Enable">Specifies if the stream is to be rotated in a clockwise orientation.</param>
+    <param name="Rotation">Specifies the rotation of the stream.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamSourceRect">
-    <summary>
-      <para>Sets the source rectangle for an input stream on the video processor.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Enable">
-      <para>Specifies whether to apply the source rectangle.</para>
-    </param>
-    <param name="pRect">
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/dd162897(v=vs.85)">RECT</a> structure that specifies the source rectangle. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
-    </param>
-    <remarks>
-      <para>The source rectangle is the portion of the input surface that is  blitted to the destination surface. The source rectangle is given in pixel coordinates, relative to the input surface.</para>
-      <para>If this method is never called, or if the <i>Enable</i> parameter is <b>FALSE</b>, the video processor reads from the entire input surface.</para>
-    </remarks>
-    <seealso cref="ID3D11VideoContext" />
+    <summary>Sets the source rectangle for an input stream on the video processor.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Enable">Specifies whether to apply the source rectangle.</param>
+    <param name="pRect">A pointer to a <see cref="RECT" /> structure that specifies the source rectangle. If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</param>
   </member>
   <member name="ID3D11VideoContext.VideoProcessorSetStreamStereoFormat">
-    <summary>
-      <para>Enables or disables stereo 3D video for an input stream on the video processor. In addition, this method specifies the layout of the video frames in memory.</para>
-    </summary>
-    <param name="pVideoProcessor">
-      <para>A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</para>
-    </param>
-    <param name="StreamIndex">
-      <para>The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</para>
-    </param>
-    <param name="Enable">
-      <para>Specifies whether stereo 3D is enabled for this stream. If the value is <b>FALSE</b>, the remaining parameters of this method are ignored.</para>
-    </param>
-    <param name="Format">
-      <para>Specifies the layout of the two stereo views in memory, as a <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT" /> value.</para>
-    </param>
+    <summary>Enables or disables stereo 3D video for an input stream on the video processor. In addition, this method specifies the layout of the video frames in memory.</summary>
+    <param name="pVideoProcessor">A pointer to the <see cref="ID3D11VideoProcessor" /> interface. To get this pointer, call <see cref="ID3D11VideoDevice.CreateVideoProcessor" />.</param>
+    <param name="StreamIndex">The zero-based index of the input stream. To get the maximum number of streams, call <see cref="ID3D11VideoProcessorEnumerator.GetVideoProcessorCaps" /> and check the <b>MaxStreamStates</b> structure member.</param>
+    <param name="Enable">Specifies whether stereo 3D is enabled for this stream. If the value is <b>FALSE</b>, the remaining parameters of this method are ignored.</param>
+    <param name="Format">Specifies the layout of the two stereo views in memory, as a <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FORMAT" /> value.</param>
     <param name="LeftViewFrame0">
       <para>If <b>TRUE</b>, frame 0 contains the left view. Otherwise, frame 0 contains the right view.</para>
       <para>This parameter is ignored for the following stereo formats:</para>
       <list type="bullet">
         <item>
           <description>
-            <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO </b>
+            <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO</b>
           </description>
         </item>
         <item>
@@ -1403,7 +581,7 @@ If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
       <list type="bullet">
         <item>
           <description>
-            <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO </b>
+            <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO</b>
           </description>
         </item>
         <item>
@@ -1412,79 +590,23 @@ If <i>Enable</i> is <b>FALSE</b>, this parameter is ignored.</para>
           </description>
         </item>
         <item>
-          <description>When <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_SEPARATE</b> is used and the application wants to convert the stereo data to mono, it can either:<list type="bullet"><item><description>Specify the base view as a mono input.</description></item><item><description>Specify both resources and allow the driver to do the conversion from the base view.  In this case, <see cref="D3D11_VIDEO_PROCESSOR_STREAM.hInputSurface" /> is considered frame 0 and <b>D3D11_VIDEO_PROCESSOR_STREAM.hInputSurfaceRight</b> is considered frame 1.</description></item></list></description>
+          <description>When <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_SEPARATE</b> is used and the application wants to convert the stereo data to mono, it can either:<list type="bullet"><item><description>Specify the base view as a mono input.</description></item><item><description>Specify both resources and allow the driver to do the conversion from the base view. In this case, <see cref="D3D11_VIDEO_PROCESSOR_STREAM.hInputSurface" /> is considered frame 0 and <b>D3D11_VIDEO_PROCESSOR_STREAM.hInputSurfaceRight</b> is considered frame 1.</description></item></list></description>
         </item>
       </list>
     </param>
-    <param name="FlipMode">
-      <para>A flag from the  <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE" /> enumeration, specifying whether one of the views is flipped.</para>
-    </param>
+    <param name="FlipMode">A flag from the <see cref="D3D11_VIDEO_PROCESSOR_STEREO_FLIP_MODE" /> enumeration, specifying whether one of the views is flipped.</param>
     <param name="MonoOffset">
       <para>For <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO_OFFSET</b> format, this parameter specifies how to generate the left and right views:</para>
       <list type="bullet">
         <item>
-          <description>If <i>MonoOffset</i> is positive, the right view is shifted to the right by that many pixels, and the left view is shifted to the left by the same amount. </description>
+          <description>If <i>MonoOffset</i> is positive, the right view is shifted to the right by that many pixels, and the left view is shifted to the left by the same amount.</description>
         </item>
         <item>
           <description>If <i>MonoOffset</i> is negative, the right view is shifted to the left by that many pixels, and the left view is shifted to right by the same amount.</description>
         </item>
-      </list>
-      <para>If <i>Format</i> is not <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO_OFFSET</b>, this parameter must be zero.</para>
-    </param>
-    <seealso cref="ID3D11VideoContext" />
+      </list>If <i>Format</i> is not <b>D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO_OFFSET</b>, this parameter must be zero.</param>
   </member>
   <member name="ID3D11VideoContext">
-    <summary>
-      <para>Provides the video functionality of a Microsoft Direct3D 11 device.</para>
-    </summary>
-    <remarks>
-      <para>To get a pointer to this interface, call <see cref="QueryInterface" /> with an <see cref="ID3D11DeviceContext" /> interface pointer.</para>
-      <para>This interface provides access to several areas of Microsoft Direct3Dvideo functionality:</para>
-      <list type="bullet">
-        <item>
-          <description>Hardware-accelerated video decoding</description>
-        </item>
-        <item>
-          <description>Video processing</description>
-        </item>
-        <item>
-          <description>GPU-based content protection</description>
-        </item>
-        <item>
-          <description>Video encryption and decryption</description>
-        </item>
-      </list>
-      <para>In Microsoft Direct3D 9, the equivalent functions were distributed across several interfaces:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IDirect3DAuthenticatedChannel9" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDirect3DCryptoSession9" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDirectXVideoDecoder" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDirectXVideoProcessor" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDXVAHD_VideoProcessor" />
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-interfaces">Direct3D 11 Video Interfaces</seealso>
-    <seealso cref="ID3D11DeviceChild" />
-    <seealso cref="ID3D11VideoContext1" />
+    <summary>Provides the video functionality of a Microsoft Direct3D 11 device.</summary>
   </member>
 </doc>

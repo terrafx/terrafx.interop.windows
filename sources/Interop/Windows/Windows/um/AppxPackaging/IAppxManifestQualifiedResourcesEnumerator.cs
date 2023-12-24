@@ -25,7 +25,7 @@ public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxMa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResourcesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxMa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResourcesEnumerator*, uint>)(lpVtbl[1]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxMa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResourcesEnumerator*, uint>)(lpVtbl[2]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxManifestQualifiedResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestQualifiedResourcesEnumerator.GetCurrent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxMa
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxManifestQualifiedResource** resource)
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, IAppxManifestQualifiedResource**, int>)(lpVtbl[3]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this), resource);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResourcesEnumerator*, IAppxManifestQualifiedResource**, int>)(lpVtbl[3]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this), resource);
     }
 
     /// <include file='IAppxManifestQualifiedResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestQualifiedResourcesEnumerator.GetHasCurrent"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxMa
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResourcesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
     /// <include file='IAppxManifestQualifiedResourcesEnumerator.xml' path='doc/member[@name="IAppxManifestQualifiedResourcesEnumerator.MoveNext"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxMa
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasNext)
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResourcesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResourcesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxManifestQualifiedResourcesEnumerator*)Unsafe.AsPointer(ref this), hasNext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IAppxManifestQualifiedResourcesEnumerator : IAppxMa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestQualifiedResource **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestQualifiedResource**, int> GetCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestQualifiedResource**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetHasCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> MoveNext;
     }
 }

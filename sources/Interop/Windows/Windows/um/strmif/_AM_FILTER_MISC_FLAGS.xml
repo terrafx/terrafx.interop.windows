@@ -4,19 +4,14 @@
 <doc>
   <member name="_AM_FILTER_MISC_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>_AM_FILTER_MISC_FLAGS</b> enumeration contains flags that indicate whether a filter is a source filter or a renderer filter.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IAMFilterMiscFlags.GetMiscFlags" />
   </member>
   <member name="_AM_FILTER_MISC_FLAGS.AM_FILTER_MISC_FLAGS_IS_RENDERER">
-    <summary>
-      <para>The filter is a renderer and sends an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-complete">EC_COMPLETE</a> event at the end of the stream.</para>
-    </summary>
+    <summary>The filter is a renderer and sends an <a href="https://docs.microsoft.com//windows/desktop/DirectShow/ec-complete">EC_COMPLETE</a> event at the end of the stream.</summary>
   </member>
   <member name="_AM_FILTER_MISC_FLAGS.AM_FILTER_MISC_FLAGS_IS_SOURCE">
-    <summary>
-      <para>The filter is a source filter.</para>
-    </summary>
+    <summary>The filter is a source filter.</summary>
   </member>
 </doc>

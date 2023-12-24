@@ -21,32 +21,4 @@ public static unsafe partial class IDCompositionVisualDebugTests
     {
         Assert.That(typeof(IDCompositionVisualDebug).GUID, Is.EqualTo(IID_IDCompositionVisualDebug));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionVisualDebug" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionVisualDebug>(), Is.EqualTo(sizeof(IDCompositionVisualDebug)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionVisualDebug" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionVisualDebug).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionVisualDebug" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionVisualDebug), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionVisualDebug), Is.EqualTo(4));
-        }
-    }
 }

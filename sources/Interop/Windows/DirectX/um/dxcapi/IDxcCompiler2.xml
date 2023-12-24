@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcCompiler2.CompileWithDebug">
+    <summary>Compile a single entry point to the target shader model with debug information. <b>IDxcCompiler.CompileWithDebug</b> is deprecated; use <see cref="IDxcCompiler3.Compile" /> instead.</summary>
+    <param name="pSource">The source text to compile.</param>
+    <param name="pSourceName">An optional file name for <i>pSource</i>. Used in errors and include handlers.</param>
+    <param name="pEntryPoint">Entry point name.</param>
+    <param name="pTargetProfile">Shader profile to compile.</param>
+    <param name="pArguments">An array of pointers to arguments.</param>
+    <param name="argCount">The number of arguments.</param>
+    <param name="pDefines">An array of defines.</param>
+    <param name="defineCount">The number of defines.</param>
+    <param name="pIncludeHandler">An optional user-provided interface to handle <code>#include</code> directives.</param>
+    <param name="ppResult">The compiler output status, buffer, and errors.</param>
+    <param name="ppDebugBlobName">A suggested file name for the debug blob. You must free this memory by using <see cref="CoTaskMemFree" />.</param>
+    <param name="ppDebugBlob">The debug blob.</param>
+  </member>
+  <member name="IDxcCompiler2">
+    <summary>
+      <b>IDxcCompiler2</b> is deprecated; use <see cref="IDxcCompiler3" /> instead.</summary>
+  </member>
+</doc>

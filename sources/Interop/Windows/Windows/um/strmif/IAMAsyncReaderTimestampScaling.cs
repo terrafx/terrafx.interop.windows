@@ -25,7 +25,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, Guid*, void**, int>)(lpVtbl[0]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMAsyncReaderTimestampScaling*, Guid*, void**, int>)(lpVtbl[0]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, uint>)(lpVtbl[1]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMAsyncReaderTimestampScaling*, uint>)(lpVtbl[1]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, uint>)(lpVtbl[2]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMAsyncReaderTimestampScaling*, uint>)(lpVtbl[2]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMAsyncReaderTimestampScaling.xml' path='doc/member[@name="IAMAsyncReaderTimestampScaling.GetTimestampMode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
     [VtblIndex(3)]
     public HRESULT GetTimestampMode(BOOL* pfRaw)
     {
-        return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL*, int>)(lpVtbl[3]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), pfRaw);
+        return ((delegate* unmanaged[MemberFunction]<IAMAsyncReaderTimestampScaling*, BOOL*, int>)(lpVtbl[3]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), pfRaw);
     }
 
     /// <include file='IAMAsyncReaderTimestampScaling.xml' path='doc/member[@name="IAMAsyncReaderTimestampScaling.SetTimestampMode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
     [VtblIndex(4)]
     public HRESULT SetTimestampMode(BOOL fRaw)
     {
-        return ((delegate* unmanaged<IAMAsyncReaderTimestampScaling*, BOOL, int>)(lpVtbl[4]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), fRaw);
+        return ((delegate* unmanaged[MemberFunction]<IAMAsyncReaderTimestampScaling*, BOOL, int>)(lpVtbl[4]))((IAMAsyncReaderTimestampScaling*)Unsafe.AsPointer(ref this), fRaw);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAMAsyncReaderTimestampScaling : IAMAsyncReaderTime
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetTimestampMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetTimestampMode;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> SetTimestampMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> SetTimestampMode;
     }
 }

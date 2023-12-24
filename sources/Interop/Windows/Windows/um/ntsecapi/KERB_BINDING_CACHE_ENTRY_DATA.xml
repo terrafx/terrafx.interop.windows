@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_BINDING_CACHE_ENTRY_DATA">
+    <summary>Specifies the data for the binding cache entry. You must have the <b>SeTcbPrivilege</b> privilege set.</summary>
+  </member>
+  <member name="KERB_BINDING_CACHE_ENTRY_DATA.DiscoveryTime">
+    <summary>The time elapsed to find the domain controller to bind to.</summary>
+  </member>
+  <member name="KERB_BINDING_CACHE_ENTRY_DATA.RealmName">
+    <summary>The 	name of the realm for which to obtain a binding handle.</summary>
+  </member>
+  <member name="KERB_BINDING_CACHE_ENTRY_DATA.KdcAddress">
+    <summary>The address of the Key Distribution Center (KDC) of the server to which you want to bind.</summary>
+  </member>
+  <member name="KERB_BINDING_CACHE_ENTRY_DATA.AddressType">
+    <summary>
+      <para>The type of string that is contained in the <b>KdcAddress</b> member. This can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DS_INET_ADDRESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The address is a string IP address of the domain controller, for example, "\\157.55.94.74").</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DS_NETBIOS_ADDRESS</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The address is a NetBIOS name of the domain controller, for example, "\\phoenix".</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_BINDING_CACHE_ENTRY_DATA.Flags">
+    <summary>The domain controller flags that the caller provides. These flags are needed to pass to the <see cref="DsGetDcName" /> function.</summary>
+  </member>
+  <member name="KERB_BINDING_CACHE_ENTRY_DATA.DcFlags">
+    <summary>The domain controller flags. These flags are returned from the <see cref="DsGetDcName" /> function.</summary>
+  </member>
+  <member name="KERB_BINDING_CACHE_ENTRY_DATA.CacheFlags">
+    <summary>
+      <para>Flags that provide more information about the binding cache.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_NO_DC_FLAGS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x10000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>No flags are found for the binding cache.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_BINDING_CACHE_ENTRY_DATA.KdcName">
+    <summary>
+      <see cref="UNICODE_STRING" /> that specifies the name of the KDC.</summary>
+  </member>
+</doc>

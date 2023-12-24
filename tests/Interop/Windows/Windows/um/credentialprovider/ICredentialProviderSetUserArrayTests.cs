@@ -21,32 +21,4 @@ public static unsafe partial class ICredentialProviderSetUserArrayTests
     {
         Assert.That(typeof(ICredentialProviderSetUserArray).GUID, Is.EqualTo(IID_ICredentialProviderSetUserArray));
     }
-
-    /// <summary>Validates that the <see cref="ICredentialProviderSetUserArray" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICredentialProviderSetUserArray>(), Is.EqualTo(sizeof(ICredentialProviderSetUserArray)));
-    }
-
-    /// <summary>Validates that the <see cref="ICredentialProviderSetUserArray" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICredentialProviderSetUserArray).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICredentialProviderSetUserArray" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICredentialProviderSetUserArray), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICredentialProviderSetUserArray), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFInputTrustAuthority*, Guid*, void**, int>)(lpVtbl[0]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFInputTrustAuthority*, Guid*, void**, int>)(lpVtbl[0]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFInputTrustAuthority*, uint>)(lpVtbl[1]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFInputTrustAuthority*, uint>)(lpVtbl[1]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFInputTrustAuthority*, uint>)(lpVtbl[2]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFInputTrustAuthority*, uint>)(lpVtbl[2]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.GetDecrypter"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
     [VtblIndex(3)]
     public HRESULT GetDecrypter([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IMFInputTrustAuthority*, Guid*, void**, int>)(lpVtbl[3]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IMFInputTrustAuthority*, Guid*, void**, int>)(lpVtbl[3]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.RequestAccess"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
     [VtblIndex(4)]
     public HRESULT RequestAccess(MFPOLICYMANAGER_ACTION Action, IMFActivate** ppContentEnablerActivate)
     {
-        return ((delegate* unmanaged<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFActivate**, int>)(lpVtbl[4]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), Action, ppContentEnablerActivate);
+        return ((delegate* unmanaged[MemberFunction]<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFActivate**, int>)(lpVtbl[4]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), Action, ppContentEnablerActivate);
     }
 
     /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.GetPolicy"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
     [VtblIndex(5)]
     public HRESULT GetPolicy(MFPOLICYMANAGER_ACTION Action, IMFOutputPolicy** ppPolicy)
     {
-        return ((delegate* unmanaged<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFOutputPolicy**, int>)(lpVtbl[5]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), Action, ppPolicy);
+        return ((delegate* unmanaged[MemberFunction]<IMFInputTrustAuthority*, MFPOLICYMANAGER_ACTION, IMFOutputPolicy**, int>)(lpVtbl[5]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), Action, ppPolicy);
     }
 
     /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.BindAccess"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
     [VtblIndex(6)]
     public HRESULT BindAccess(MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam)
     {
-        return ((delegate* unmanaged<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int>)(lpVtbl[6]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), pParam);
+        return ((delegate* unmanaged[MemberFunction]<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int>)(lpVtbl[6]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), pParam);
     }
 
     /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.UpdateAccess"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
     [VtblIndex(7)]
     public HRESULT UpdateAccess(MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS* pParam)
     {
-        return ((delegate* unmanaged<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int>)(lpVtbl[7]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), pParam);
+        return ((delegate* unmanaged[MemberFunction]<IMFInputTrustAuthority*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int>)(lpVtbl[7]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this), pParam);
     }
 
     /// <include file='IMFInputTrustAuthority.xml' path='doc/member[@name="IMFInputTrustAuthority.Reset"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
     [VtblIndex(8)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IMFInputTrustAuthority*, int>)(lpVtbl[8]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFInputTrustAuthority*, int>)(lpVtbl[8]))((IMFInputTrustAuthority*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IMFInputTrustAuthority : IMFInputTrustAuthority.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetDecrypter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetDecrypter;
 
         [NativeTypeName("HRESULT (MFPOLICYMANAGER_ACTION, IMFActivate **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFPOLICYMANAGER_ACTION, IMFActivate**, int> RequestAccess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFPOLICYMANAGER_ACTION, IMFActivate**, int> RequestAccess;
 
         [NativeTypeName("HRESULT (MFPOLICYMANAGER_ACTION, IMFOutputPolicy **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFPOLICYMANAGER_ACTION, IMFOutputPolicy**, int> GetPolicy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFPOLICYMANAGER_ACTION, IMFOutputPolicy**, int> GetPolicy;
 
         [NativeTypeName("HRESULT (MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> BindAccess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> BindAccess;
 
         [NativeTypeName("HRESULT (MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> UpdateAccess;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFINPUTTRUSTAUTHORITY_ACCESS_PARAMS*, int> UpdateAccess;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
     }
 }

@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnGetSAPIObject.Get">
-    <summary>
-      <para>Obtains a specified SAPI object.</para>
-    </summary>
-    <param name="sObj">
-      <para>Contains a <see cref="TfSapiObject" /> value that specifies the SAPI object to obtain.</para>
-    </param>
-    <param name="ppunk">
-      <para>Pointer to an <b>IUnknown</b> interface pointer that receives the requested SAPI object. The caller must release this interface when it is no longer required.</para>
-    </param>
+    <summary>Obtains a specified SAPI object.</summary>
+    <param name="sObj">Contains a <see cref="TfSapiObject" /> value that specifies the SAPI object to obtain.</param>
+    <param name="ppunk">Pointer to an <b>IUnknown</b> interface pointer that receives the requested SAPI object. The caller must release this interface when it is no longer required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,40 +13,44 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The requested object cannot be obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The requested object cannot be obtained.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The requested object is not implemented.</para>
-          </description>
-        </item>
+          <description>The requested object is not implemented.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfFnGetSAPIObject" />
-    <seealso cref="TfSapiObject " />
   </member>
   <member name="ITfFnGetSAPIObject">
     <summary>

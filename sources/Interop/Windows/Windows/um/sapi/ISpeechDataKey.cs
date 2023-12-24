@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechDataKey : ISpeechDataKey.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechDataKey : ISpeechDataKey.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, uint>)(lpVtbl[1]))((ISpeechDataKey*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, uint>)(lpVtbl[1]))((ISpeechDataKey*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechDataKey : ISpeechDataKey.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, uint>)(lpVtbl[2]))((ISpeechDataKey*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, uint>)(lpVtbl[2]))((ISpeechDataKey*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechDataKey : ISpeechDataKey.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, uint*, int>)(lpVtbl[3]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, uint*, int>)(lpVtbl[3]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct ISpeechDataKey : ISpeechDataKey.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,202 +75,202 @@ public unsafe partial struct ISpeechDataKey : ISpeechDataKey.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.SetBinaryValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetBinaryValue([NativeTypeName("const BSTR")] ushort* ValueName, VARIANT Value)
+    public HRESULT SetBinaryValue([NativeTypeName("const BSTR")] char* ValueName, VARIANT Value)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, VARIANT, int>)(lpVtbl[7]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, VARIANT, int>)(lpVtbl[7]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.GetBinaryValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetBinaryValue([NativeTypeName("const BSTR")] ushort* ValueName, VARIANT* Value)
+    public HRESULT GetBinaryValue([NativeTypeName("const BSTR")] char* ValueName, VARIANT* Value)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, VARIANT*, int>)(lpVtbl[8]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, VARIANT*, int>)(lpVtbl[8]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.SetStringValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(9)]
-    public HRESULT SetStringValue([NativeTypeName("const BSTR")] ushort* ValueName, [NativeTypeName("const BSTR")] ushort* Value)
+    public HRESULT SetStringValue([NativeTypeName("const BSTR")] char* ValueName, [NativeTypeName("const BSTR")] char* Value)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, ushort*, int>)(lpVtbl[9]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, char*, int>)(lpVtbl[9]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.GetStringValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT GetStringValue([NativeTypeName("const BSTR")] ushort* ValueName, [NativeTypeName("BSTR *")] ushort** Value)
+    public HRESULT GetStringValue([NativeTypeName("const BSTR")] char* ValueName, [NativeTypeName("BSTR *")] char** Value)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, ushort**, int>)(lpVtbl[10]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, char**, int>)(lpVtbl[10]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.SetLongValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT SetLongValue([NativeTypeName("const BSTR")] ushort* ValueName, [NativeTypeName("long")] int Value)
+    public HRESULT SetLongValue([NativeTypeName("const BSTR")] char* ValueName, [NativeTypeName("long")] int Value)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, int, int>)(lpVtbl[11]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, int, int>)(lpVtbl[11]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.GetLongValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT GetLongValue([NativeTypeName("const BSTR")] ushort* ValueName, [NativeTypeName("long *")] int* Value)
+    public HRESULT GetLongValue([NativeTypeName("const BSTR")] char* ValueName, [NativeTypeName("long *")] int* Value)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, int*, int>)(lpVtbl[12]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, int*, int>)(lpVtbl[12]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName, Value);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.OpenKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT OpenKey([NativeTypeName("const BSTR")] ushort* SubKeyName, ISpeechDataKey** SubKey)
+    public HRESULT OpenKey([NativeTypeName("const BSTR")] char* SubKeyName, ISpeechDataKey** SubKey)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, ISpeechDataKey**, int>)(lpVtbl[13]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), SubKeyName, SubKey);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, ISpeechDataKey**, int>)(lpVtbl[13]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), SubKeyName, SubKey);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.CreateKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT CreateKey([NativeTypeName("const BSTR")] ushort* SubKeyName, ISpeechDataKey** SubKey)
+    public HRESULT CreateKey([NativeTypeName("const BSTR")] char* SubKeyName, ISpeechDataKey** SubKey)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, ISpeechDataKey**, int>)(lpVtbl[14]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), SubKeyName, SubKey);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, ISpeechDataKey**, int>)(lpVtbl[14]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), SubKeyName, SubKey);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.DeleteKey"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(15)]
-    public HRESULT DeleteKey([NativeTypeName("const BSTR")] ushort* SubKeyName)
+    public HRESULT DeleteKey([NativeTypeName("const BSTR")] char* SubKeyName)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, int>)(lpVtbl[15]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), SubKeyName);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, int>)(lpVtbl[15]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), SubKeyName);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.DeleteValue"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(16)]
-    public HRESULT DeleteValue([NativeTypeName("const BSTR")] ushort* ValueName)
+    public HRESULT DeleteValue([NativeTypeName("const BSTR")] char* ValueName)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, ushort*, int>)(lpVtbl[16]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, char*, int>)(lpVtbl[16]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), ValueName);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.EnumKeys"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(17)]
-    public HRESULT EnumKeys([NativeTypeName("long")] int Index, [NativeTypeName("BSTR *")] ushort** SubKeyName)
+    public HRESULT EnumKeys([NativeTypeName("long")] int Index, [NativeTypeName("BSTR *")] char** SubKeyName)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, int, ushort**, int>)(lpVtbl[17]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), Index, SubKeyName);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, int, char**, int>)(lpVtbl[17]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), Index, SubKeyName);
     }
 
     /// <include file='ISpeechDataKey.xml' path='doc/member[@name="ISpeechDataKey.EnumValues"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT EnumValues([NativeTypeName("long")] int Index, [NativeTypeName("BSTR *")] ushort** ValueName)
+    public HRESULT EnumValues([NativeTypeName("long")] int Index, [NativeTypeName("BSTR *")] char** ValueName)
     {
-        return ((delegate* unmanaged<ISpeechDataKey*, int, ushort**, int>)(lpVtbl[18]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), Index, ValueName);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechDataKey*, int, char**, int>)(lpVtbl[18]))((ISpeechDataKey*)Unsafe.AsPointer(ref this), Index, ValueName);
     }
 
     public interface Interface : IDispatch.Interface
     {
         [VtblIndex(7)]
-        HRESULT SetBinaryValue([NativeTypeName("const BSTR")] ushort* ValueName, VARIANT Value);
+        HRESULT SetBinaryValue([NativeTypeName("const BSTR")] char* ValueName, VARIANT Value);
 
         [VtblIndex(8)]
-        HRESULT GetBinaryValue([NativeTypeName("const BSTR")] ushort* ValueName, VARIANT* Value);
+        HRESULT GetBinaryValue([NativeTypeName("const BSTR")] char* ValueName, VARIANT* Value);
 
         [VtblIndex(9)]
-        HRESULT SetStringValue([NativeTypeName("const BSTR")] ushort* ValueName, [NativeTypeName("const BSTR")] ushort* Value);
+        HRESULT SetStringValue([NativeTypeName("const BSTR")] char* ValueName, [NativeTypeName("const BSTR")] char* Value);
 
         [VtblIndex(10)]
-        HRESULT GetStringValue([NativeTypeName("const BSTR")] ushort* ValueName, [NativeTypeName("BSTR *")] ushort** Value);
+        HRESULT GetStringValue([NativeTypeName("const BSTR")] char* ValueName, [NativeTypeName("BSTR *")] char** Value);
 
         [VtblIndex(11)]
-        HRESULT SetLongValue([NativeTypeName("const BSTR")] ushort* ValueName, [NativeTypeName("long")] int Value);
+        HRESULT SetLongValue([NativeTypeName("const BSTR")] char* ValueName, [NativeTypeName("long")] int Value);
 
         [VtblIndex(12)]
-        HRESULT GetLongValue([NativeTypeName("const BSTR")] ushort* ValueName, [NativeTypeName("long *")] int* Value);
+        HRESULT GetLongValue([NativeTypeName("const BSTR")] char* ValueName, [NativeTypeName("long *")] int* Value);
 
         [VtblIndex(13)]
-        HRESULT OpenKey([NativeTypeName("const BSTR")] ushort* SubKeyName, ISpeechDataKey** SubKey);
+        HRESULT OpenKey([NativeTypeName("const BSTR")] char* SubKeyName, ISpeechDataKey** SubKey);
 
         [VtblIndex(14)]
-        HRESULT CreateKey([NativeTypeName("const BSTR")] ushort* SubKeyName, ISpeechDataKey** SubKey);
+        HRESULT CreateKey([NativeTypeName("const BSTR")] char* SubKeyName, ISpeechDataKey** SubKey);
 
         [VtblIndex(15)]
-        HRESULT DeleteKey([NativeTypeName("const BSTR")] ushort* SubKeyName);
+        HRESULT DeleteKey([NativeTypeName("const BSTR")] char* SubKeyName);
 
         [VtblIndex(16)]
-        HRESULT DeleteValue([NativeTypeName("const BSTR")] ushort* ValueName);
+        HRESULT DeleteValue([NativeTypeName("const BSTR")] char* ValueName);
 
         [VtblIndex(17)]
-        HRESULT EnumKeys([NativeTypeName("long")] int Index, [NativeTypeName("BSTR *")] ushort** SubKeyName);
+        HRESULT EnumKeys([NativeTypeName("long")] int Index, [NativeTypeName("BSTR *")] char** SubKeyName);
 
         [VtblIndex(18)]
-        HRESULT EnumValues([NativeTypeName("long")] int Index, [NativeTypeName("BSTR *")] ushort** ValueName);
+        HRESULT EnumValues([NativeTypeName("long")] int Index, [NativeTypeName("BSTR *")] char** ValueName);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (const BSTR, VARIANT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT, int> SetBinaryValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT, int> SetBinaryValue;
 
         [NativeTypeName("HRESULT (const BSTR, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, VARIANT*, int> GetBinaryValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, VARIANT*, int> GetBinaryValue;
 
         [NativeTypeName("HRESULT (const BSTR, const BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetStringValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetStringValue;
 
         [NativeTypeName("HRESULT (const BSTR, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort**, int> GetStringValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char**, int> GetStringValue;
 
         [NativeTypeName("HRESULT (const BSTR, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int, int> SetLongValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int, int> SetLongValue;
 
         [NativeTypeName("HRESULT (const BSTR, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int*, int> GetLongValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int*, int> GetLongValue;
 
         [NativeTypeName("HRESULT (const BSTR, ISpeechDataKey **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ISpeechDataKey**, int> OpenKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ISpeechDataKey**, int> OpenKey;
 
         [NativeTypeName("HRESULT (const BSTR, ISpeechDataKey **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ISpeechDataKey**, int> CreateKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ISpeechDataKey**, int> CreateKey;
 
         [NativeTypeName("HRESULT (const BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> DeleteKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> DeleteKey;
 
         [NativeTypeName("HRESULT (const BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> DeleteValue;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> DeleteValue;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> EnumKeys;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char**, int> EnumKeys;
 
         [NativeTypeName("HRESULT (long, BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ushort**, int> EnumValues;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, char**, int> EnumValues;
     }
 }

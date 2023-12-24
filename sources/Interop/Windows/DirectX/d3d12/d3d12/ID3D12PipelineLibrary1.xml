@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12PipelineLibrary1.LoadPipeline">
+    <summary>Retrieves the requested PSO from the library. The pipeline stream description is matched against the library database and remembered in order to prevent duplication of PSO contents.</summary>
+    <param name="pName">
+      <para>
+        <a href="https://docs.microsoft.com//cpp/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>The unique name of the PSO.</para>
+    </param>
+    <param name="pDesc">
+      <para>
+        <a href="https://docs.microsoft.com//cpp/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>In</i></code></para>
+      <para>Describes the required PSO using a <see cref="D3D12_PIPELINE_STATE_STREAM_DESC" /> structure. This description is matched against the library database and stored in order to prevent duplication of PSO contents.</para>
+    </param>
+    <param name="riid">
+      <para>Specifies a REFIID for the ID3D12PipelineStateState object.</para>
+      <para>Applications should typically set this argument and the following argument, ppPipelineState, by using the macro IID_PPV_ARGS(&amp;PSO1), where PSO1 is the name of the object.</para>
+    </param>
+    <param name="ppPipelineState">
+      <para>
+        <a href="https://docs.microsoft.com//cpp/code-quality/annotating-function-parameters-and-return-values">SAL</a>: <code><i>COM_Outptr</i></code></para>
+      <para>Specifies the pointer that will reference the PSO after the function successfully returns.</para>
+    </param>
+    <returns>This method returns an HRESULT success or error code, which can include E_INVALIDARG if the name doesn't exist or the stream description doesn't match the data in the library, and E_OUTOFMEMORY if the function is unable to allocate the resulting PSO.</returns>
+  </member>
+  <member name="ID3D12PipelineLibrary1">
+    <summary>Manages a pipeline library. This interface extends <see cref="ID3D12PipelineLibrary" /> to load PSOs from a pipeline state stream description.</summary>
+  </member>
+</doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IWebBrowserTests
     {
         Assert.That(typeof(IWebBrowser).GUID, Is.EqualTo(IID_IWebBrowser));
     }
-
-    /// <summary>Validates that the <see cref="IWebBrowser" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWebBrowser>(), Is.EqualTo(sizeof(IWebBrowser)));
-    }
-
-    /// <summary>Validates that the <see cref="IWebBrowser" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWebBrowser).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWebBrowser" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWebBrowser), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWebBrowser), Is.EqualTo(4));
-        }
-    }
 }

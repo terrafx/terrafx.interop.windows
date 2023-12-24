@@ -3,158 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11On12Device.AcquireWrappedResources">
-    <summary>
-      <para>Acquires D3D11 resources for use with D3D 11on12.
-Indicates that rendering to the wrapped resources can begin again.</para>
-    </summary>
-    <param name="ppResources">
-      <para>Type: <b>ID3D11Resource*</b></para>
-      <para>Specifies a pointer to a set of D3D11 resources, defined by <see cref="ID3D11Resource" />.</para>
-    </param>
-    <param name="NumResources">
-      <para>Type: <b>UINT</b></para>
-      <para>Count of the number of resources.</para>
-    </param>
-    <remarks>
-      <para>This method marks the resources as "acquired" in hazard tracking.</para>
-      <para>Keyed mutex resources cannot be provided to this method; use <see cref="IDXGIKeyedMutex.AcquireSync" /> instead.</para>
-      <h4>Examples</h4>
-      <para>Render text over D3D12 using D2D via the 11On12 device.</para>
-      <code>// Render text over D3D12 using D2D via the 11On12 device.
-void D3D1211on12.RenderUI()
-{
-    D2D1_SIZE_F rtSize = m_d2dRenderTargets[m_frameIndex]-&gt;GetSize();
-    D2D1_RECT_F textRect = D2D1.RectF(0, 0, rtSize.width, rtSize.height);
-    static const WCHAR text[] = L"11On12";
-
-    // Acquire our wrapped render target resource for the current back buffer.
-    m_d3d11On12Device-&gt;AcquireWrappedResources(m_wrappedBackBuffers[m_frameIndex].GetAddressOf(), 1);
-
-    // Render text directly to the back buffer.
-    m_d2dDeviceContext-&gt;SetTarget(m_d2dRenderTargets[m_frameIndex].Get());
-    m_d2dDeviceContext-&gt;BeginDraw();
-    m_d2dDeviceContext-&gt;SetTransform(D2D1.Matrix3x2F.Identity());
-    m_d2dDeviceContext-&gt;DrawTextW(
-        text,
-        _countof(text) - 1,
-        m_textFormat.Get(),
-        &amp;amp;amp;amp;amp;amp;textRect,
-        m_textBrush.Get()
-        );
-    ThrowIfFailed(m_d2dDeviceContext-&gt;EndDraw());
-
-    // Release our wrapped render target resource. Releasing
-    // transitions the back buffer resource to the state specified
-    // as the OutState when the wrapped resource was created.
-    m_d3d11On12Device-&gt;ReleaseWrappedResources(m_wrappedBackBuffers[m_frameIndex].GetAddressOf(), 1);
-
-    // Flush to submit the 11 command list to the shared command queue.
-    m_d3d11DeviceContext-&gt;Flush();
-}
-
-</code>
-      <para>Refer to the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/notes-on-example-code">Example Code in the D3D12 Reference</a>.</para>
-    </remarks>
-    <seealso cref="ID3D11On12Device" />
+    <summary>Acquires D3D11 resources for use with D3D 11on12. Indicates that rendering to the wrapped resources can begin again.</summary>
+    <param name="ppResources">Specifies a pointer to a set of D3D11 resources, defined by <see cref="ID3D11Resource" />.</param>
+    <param name="NumResources">Count of the number of resources.</param>
   </member>
   <member name="ID3D11On12Device.CreateWrappedResource">
-    <summary>
-      <para>This method creates D3D11 resources for use with D3D 11on12.</para>
-    </summary>
-    <param name="pResource12">
-      <para>Type: <b>IUnknown*</b></para>
-      <para>A pointer to an already-created D3D12 resource or heap.</para>
-    </param>
-    <param name="pFlags11">
-      <para>Type: <b>const <see cref="D3D11_RESOURCE_FLAGS" />*</b></para>
-      <para>A <see cref="D3D11_RESOURCE_FLAGS" /> structure that enables an application to override flags that would be inferred by the resource/heap properties.
-The D3D11_RESOURCE_FLAGS structure contains bind flags, misc flags, and CPU access flags.</para>
-    </param>
-    <param name="InState">
-      <para>Type: <b><see cref="D3D12_RESOURCE_STATES" /></b></para>
-      <para>The use of the resource on input, as a bitwise-OR'd combination of <see cref="D3D12_RESOURCE_STATES" /> enumeration constants.</para>
-    </param>
-    <param name="OutState">
-      <para>Type: <b><see cref="D3D12_RESOURCE_STATES" /></b></para>
-      <para>The use of the resource on output, as a bitwise-OR'd combination of <see cref="D3D12_RESOURCE_STATES" /> enumeration constants.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The globally unique identifier (<b>GUID</b>) for the wrapped resource interface.
-The <b>REFIID</b>, or <b>GUID</b>, of the interface to the wrapped resource can be obtained by using the __uuidof() macro.
-For example, __uuidof(<see cref="ID3D12Resource" />) will get the <b>GUID</b> of the interface to a wrapped resource.</para>
-    </param>
-    <param name="ppResource11">
-      <para>Type: <b>void**</b></para>
-      <para>After the method returns, points to the newly created wrapped D3D11 resource or heap.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11On12Device" />
+    <summary>This method creates D3D11 resources for use with D3D 11on12.</summary>
+    <param name="pResource12">A pointer to an already-created D3D12 resource or heap.</param>
+    <param name="pFlags11">A <see cref="D3D11_RESOURCE_FLAGS" /> structure that enables an application to override flags that would be inferred by the resource/heap properties. The D3D11_RESOURCE_FLAGS structure contains bind flags, misc flags, and CPU access flags.</param>
+    <param name="InState">The use of the resource on input, as a bitwise-OR'd combination of <see cref="D3D12_RESOURCE_STATES" /> enumeration constants.</param>
+    <param name="OutState">The use of the resource on output, as a bitwise-OR'd combination of <see cref="D3D12_RESOURCE_STATES" /> enumeration constants.</param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the wrapped resource interface. The <b>REFIID</b>, or <b>GUID</b>, of the interface to the wrapped resource can be obtained by using the __uuidof() macro. For example, __uuidof(<see cref="ID3D11Resource" />) will get the <b>GUID</b> of the interface to a wrapped resource.</param>
+    <param name="ppResource11">After the method returns, points to the newly created wrapped D3D11 resource or heap.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11On12Device.ReleaseWrappedResources">
-    <summary>
-      <para>Releases D3D11 resources that were wrapped for D3D 11on12.</para>
-    </summary>
-    <param name="ppResources">
-      <para>Type: <b>ID3D11Resource*</b></para>
-      <para>Specifies a pointer to a set of D3D11 resources, defined by <see cref="ID3D11Resource" />.</para>
-    </param>
-    <param name="NumResources">
-      <para>Type: <b>UINT</b></para>
-      <para>Count of the number of resources.</para>
-    </param>
-    <remarks>
-      <para>Call this method prior to calling Flush, to insert resource barriers to the appropriate "out" state, and to mark that they should then be expected to be in the "in" state.
-If no resource list is provided, all wrapped resources are transitioned.
-These resources will be marked as “not acquired” in hazard tracking until <see cref="ID3D11On12Device.AcquireWrappedResources" /> is called.</para>
-      <para>Keyed mutex resources cannot be provided to this method; use <see cref="IDXGIKeyedMutex.ReleaseSync" /> instead.</para>
-      <h4>Examples</h4>
-      <para>Render text over D3D12 using D2D via the 11On12 device.</para>
-      <code>// Render text over D3D12 using D2D via the 11On12 device.
-void D3D1211on12.RenderUI()
-{
-    D2D1_SIZE_F rtSize = m_d2dRenderTargets[m_frameIndex]-&gt;GetSize();
-    D2D1_RECT_F textRect = D2D1.RectF(0, 0, rtSize.width, rtSize.height);
-    static const WCHAR text[] = L"11On12";
-
-    // Acquire our wrapped render target resource for the current back buffer.
-    m_d3d11On12Device-&gt;AcquireWrappedResources(m_wrappedBackBuffers[m_frameIndex].GetAddressOf(), 1);
-
-    // Render text directly to the back buffer.
-    m_d2dDeviceContext-&gt;SetTarget(m_d2dRenderTargets[m_frameIndex].Get());
-    m_d2dDeviceContext-&gt;BeginDraw();
-    m_d2dDeviceContext-&gt;SetTransform(D2D1.Matrix3x2F.Identity());
-    m_d2dDeviceContext-&gt;DrawTextW(
-        text,
-        _countof(text) - 1,
-        m_textFormat.Get(),
-        &amp;amp;amp;amp;amp;amp;textRect,
-        m_textBrush.Get()
-        );
-    ThrowIfFailed(m_d2dDeviceContext-&gt;EndDraw());
-
-    // Release our wrapped render target resource. Releasing
-    // transitions the back buffer resource to the state specified
-    // as the OutState when the wrapped resource was created.
-    m_d3d11On12Device-&gt;ReleaseWrappedResources(m_wrappedBackBuffers[m_frameIndex].GetAddressOf(), 1);
-
-    // Flush to submit the 11 command list to the shared command queue.
-    m_d3d11DeviceContext-&gt;Flush();
-}
-
-</code>
-      <para>Refer to the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/notes-on-example-code">Example Code in the D3D12 Reference</a>.</para>
-    </remarks>
-    <seealso cref="ID3D11On12Device" />
+    <summary>Releases D3D11 resources that were wrapped for D3D 11on12.</summary>
+    <param name="ppResources">Specifies a pointer to a set of D3D11 resources, defined by <see cref="ID3D11Resource" />.</param>
+    <param name="NumResources">Count of the number of resources.</param>
   </member>
   <member name="ID3D11On12Device">
-    <summary>
-      <para>Handles the creation, wrapping, and releasing of Direct3D 11 resources for Direct3D11on12.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/direct3d-11on12-interfaces">11on12 Interfaces</seealso>
-    <seealso cref="IUnknown interface" />
+    <summary>Handles the creation, wrapping, and releasing of Direct3D 11 resources for Direct3D11on12.</summary>
   </member>
 </doc>

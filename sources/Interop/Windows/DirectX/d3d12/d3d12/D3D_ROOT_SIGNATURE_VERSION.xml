@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D_ROOT_SIGNATURE_VERSION">
+    <summary>Specifies the version of root signature layout.</summary>
+  </member>
+  <member name="D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1">
+    <summary>Version one of root signature layout.</summary>
+  </member>
+  <member name="D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1_0">
+    <summary>Version one of root signature layout.</summary>
+  </member>
+  <member name="D3D_ROOT_SIGNATURE_VERSION.D3D_ROOT_SIGNATURE_VERSION_1_1">
+    <summary>Version 1.1 of root signature layout. Refer to <a href="https://docs.microsoft.com//windows/desktop/direct3d12/root-signature-version-1-1">Root Signature Version 1.1</a>.</summary>
+  </member>
+</doc>

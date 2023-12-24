@@ -19,32 +19,4 @@ public static unsafe partial class IMarshal2Tests
     {
         Assert.That(typeof(IMarshal2).GUID, Is.EqualTo(IID_IMarshal2));
     }
-
-    /// <summary>Validates that the <see cref="IMarshal2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMarshal2>(), Is.EqualTo(sizeof(IMarshal2)));
-    }
-
-    /// <summary>Validates that the <see cref="IMarshal2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMarshal2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMarshal2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMarshal2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMarshal2), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRL_FIND_ISSUED_FOR_PARA">
-    <summary>
-      <para>The <b>CRL_FIND_ISSUED_FOR_PARA</b> structure contains the certificate contexts of both a subject and a certificate issuer. For more information, see
-<see cref="CertFindCRLInStore" />.</para>
-    </summary>
+    <summary>The <b>CRL_FIND_ISSUED_FOR_PARA</b> structure contains the certificate contexts of both a subject and a certificate issuer. For more information, see<see cref="CertFindCRLInStore" />.</summary>
   </member>
   <member name="CRL_FIND_ISSUED_FOR_PARA.pSubjectCert">
-    <summary>
-      <para>A pointer to a subject's certificate context.</para>
-    </summary>
+    <summary>A pointer to a subject's certificate context.</summary>
   </member>
   <member name="CRL_FIND_ISSUED_FOR_PARA.pIssuerCert">
-    <summary>
-      <para>A pointer to a certificate issuer's certificate context.</para>
-    </summary>
+    <summary>A pointer to a certificate issuer's certificate context.</summary>
   </member>
 </doc>

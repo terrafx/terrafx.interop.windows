@@ -19,32 +19,4 @@ public static unsafe partial class IUserNotification2Tests
     {
         Assert.That(typeof(IUserNotification2).GUID, Is.EqualTo(IID_IUserNotification2));
     }
-
-    /// <summary>Validates that the <see cref="IUserNotification2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IUserNotification2>(), Is.EqualTo(sizeof(IUserNotification2)));
-    }
-
-    /// <summary>Validates that the <see cref="IUserNotification2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IUserNotification2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IUserNotification2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IUserNotification2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IUserNotification2), Is.EqualTo(4));
-        }
-    }
 }

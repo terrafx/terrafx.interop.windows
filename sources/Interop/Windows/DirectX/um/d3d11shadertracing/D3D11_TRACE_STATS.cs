@@ -3,6 +3,7 @@
 // Ported from um/d3d11shadertracing.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 using TerraFX.Interop.Windows;
 
@@ -10,7 +11,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS"]/*' />
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct D3D11_TRACE_STATS
+public partial struct D3D11_TRACE_STATS
 {
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.TraceDesc"]/*' />
     public D3D11_SHADER_TRACE_DESC TraceDesc;
@@ -28,11 +29,11 @@ public unsafe partial struct D3D11_TRACE_STATS
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.InputMask"]/*' />
     [NativeTypeName("D3D11_TRACE_COMPONENT_MASK[32]")]
-    public fixed byte InputMask[32];
+    public _InputMask_e__FixedBuffer InputMask;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.OutputMask"]/*' />
     [NativeTypeName("D3D11_TRACE_COMPONENT_MASK[32]")]
-    public fixed byte OutputMask[32];
+    public _OutputMask_e__FixedBuffer OutputMask;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.NumTemps"]/*' />
     [NativeTypeName("UINT16")]
@@ -44,7 +45,7 @@ public unsafe partial struct D3D11_TRACE_STATS
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.IndexableTempSize"]/*' />
     [NativeTypeName("UINT16[4096]")]
-    public fixed ushort IndexableTempSize[4096];
+    public _IndexableTempSize_e__FixedBuffer IndexableTempSize;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.ImmediateConstantBufferSize"]/*' />
     [NativeTypeName("UINT16")]
@@ -52,31 +53,31 @@ public unsafe partial struct D3D11_TRACE_STATS
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.PixelPosition"]/*' />
     [NativeTypeName("UINT[4][2]")]
-    public fixed uint PixelPosition[4 * 2];
+    public _PixelPosition_e__FixedBuffer PixelPosition;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.PixelCoverageMask"]/*' />
     [NativeTypeName("UINT64[4]")]
-    public fixed ulong PixelCoverageMask[4];
+    public _PixelCoverageMask_e__FixedBuffer PixelCoverageMask;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.PixelDiscardedMask"]/*' />
     [NativeTypeName("UINT64[4]")]
-    public fixed ulong PixelDiscardedMask[4];
+    public _PixelDiscardedMask_e__FixedBuffer PixelDiscardedMask;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.PixelCoverageMaskAfterShader"]/*' />
     [NativeTypeName("UINT64[4]")]
-    public fixed ulong PixelCoverageMaskAfterShader[4];
+    public _PixelCoverageMaskAfterShader_e__FixedBuffer PixelCoverageMaskAfterShader;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.PixelCoverageMaskAfterA2CSampleMask"]/*' />
     [NativeTypeName("UINT64[4]")]
-    public fixed ulong PixelCoverageMaskAfterA2CSampleMask[4];
+    public _PixelCoverageMaskAfterA2CSampleMask_e__FixedBuffer PixelCoverageMaskAfterA2CSampleMask;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.PixelCoverageMaskAfterA2CSampleMaskDepth"]/*' />
     [NativeTypeName("UINT64[4]")]
-    public fixed ulong PixelCoverageMaskAfterA2CSampleMaskDepth[4];
+    public _PixelCoverageMaskAfterA2CSampleMaskDepth_e__FixedBuffer PixelCoverageMaskAfterA2CSampleMaskDepth;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.PixelCoverageMaskAfterA2CSampleMaskDepthStencil"]/*' />
     [NativeTypeName("UINT64[4]")]
-    public fixed ulong PixelCoverageMaskAfterA2CSampleMaskDepthStencil[4];
+    public _PixelCoverageMaskAfterA2CSampleMaskDepthStencil_e__FixedBuffer PixelCoverageMaskAfterA2CSampleMaskDepthStencil;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.PSOutputsDepth"]/*' />
     public BOOL PSOutputsDepth;
@@ -92,9 +93,93 @@ public unsafe partial struct D3D11_TRACE_STATS
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.HSOutputPatchConstantMask"]/*' />
     [NativeTypeName("D3D11_TRACE_COMPONENT_MASK[32]")]
-    public fixed byte HSOutputPatchConstantMask[32];
+    public _HSOutputPatchConstantMask_e__FixedBuffer HSOutputPatchConstantMask;
 
     /// <include file='D3D11_TRACE_STATS.xml' path='doc/member[@name="D3D11_TRACE_STATS.DSInputPatchConstantMask"]/*' />
     [NativeTypeName("D3D11_TRACE_COMPONENT_MASK[32]")]
-    public fixed byte DSInputPatchConstantMask[32];
+    public _DSInputPatchConstantMask_e__FixedBuffer DSInputPatchConstantMask;
+
+    /// <include file='_InputMask_e__FixedBuffer.xml' path='doc/member[@name="_InputMask_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _InputMask_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_OutputMask_e__FixedBuffer.xml' path='doc/member[@name="_OutputMask_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _OutputMask_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_IndexableTempSize_e__FixedBuffer.xml' path='doc/member[@name="_IndexableTempSize_e__FixedBuffer"]/*' />
+    [InlineArray(4096)]
+    public partial struct _IndexableTempSize_e__FixedBuffer
+    {
+        public ushort e0;
+    }
+
+    /// <include file='_PixelPosition_e__FixedBuffer.xml' path='doc/member[@name="_PixelPosition_e__FixedBuffer"]/*' />
+    [InlineArray(4 * 2)]
+    public partial struct _PixelPosition_e__FixedBuffer
+    {
+        public uint e0_0;
+    }
+
+    /// <include file='_PixelCoverageMask_e__FixedBuffer.xml' path='doc/member[@name="_PixelCoverageMask_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _PixelCoverageMask_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_PixelDiscardedMask_e__FixedBuffer.xml' path='doc/member[@name="_PixelDiscardedMask_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _PixelDiscardedMask_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_PixelCoverageMaskAfterShader_e__FixedBuffer.xml' path='doc/member[@name="_PixelCoverageMaskAfterShader_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _PixelCoverageMaskAfterShader_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_PixelCoverageMaskAfterA2CSampleMask_e__FixedBuffer.xml' path='doc/member[@name="_PixelCoverageMaskAfterA2CSampleMask_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _PixelCoverageMaskAfterA2CSampleMask_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_PixelCoverageMaskAfterA2CSampleMaskDepth_e__FixedBuffer.xml' path='doc/member[@name="_PixelCoverageMaskAfterA2CSampleMaskDepth_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _PixelCoverageMaskAfterA2CSampleMaskDepth_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_PixelCoverageMaskAfterA2CSampleMaskDepthStencil_e__FixedBuffer.xml' path='doc/member[@name="_PixelCoverageMaskAfterA2CSampleMaskDepthStencil_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _PixelCoverageMaskAfterA2CSampleMaskDepthStencil_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_HSOutputPatchConstantMask_e__FixedBuffer.xml' path='doc/member[@name="_HSOutputPatchConstantMask_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _HSOutputPatchConstantMask_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_DSInputPatchConstantMask_e__FixedBuffer.xml' path='doc/member[@name="_DSInputPatchConstantMask_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _DSInputPatchConstantMask_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFPMPServer.CreateObjectByCLSID">
-    <summary>
-      <para>Creates an object in the protected media path (PMP) process.</para>
-    </summary>
-    <param name="clsid">
-      <para>CLSID of the object to create.</para>
-    </param>
-    <param name="riid">
-      <para>Interface identifier of the interface to retrieve.</para>
-    </param>
-    <param name="ppObject">
-      <para>Receives a pointer to the requested interface. The caller must release the interface.</para>
-    </param>
+    <summary>Creates an object in the protected media path (PMP) process.</summary>
+    <param name="clsid">CLSID of the object to create.</param>
+    <param name="riid">Interface identifier of the interface to retrieve.</param>
+    <param name="ppObject">Receives a pointer to the requested interface. The caller must release the interface.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -22,24 +14,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFPMPServer" />
   </member>
   <member name="IMFPMPServer.LockProcess">
-    <summary>
-      <para>Blocks the protected media path (PMP) process from ending.</para>
-    </summary>
+    <summary>Blocks the protected media path (PMP) process from ending.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -47,27 +38,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When this method is called, it increments the lock count on the PMP process. For every call to this method, the application should make a corresponding call to <see cref="IMFPMPServer.UnlockProcess" />, which decrements the lock count. When the PMP process is ready to exit, it waits for about 3 seconds, or until the lock count reaches zero, before exiting.</para>
-    </remarks>
-    <seealso cref="IMFPMPServer" />
   </member>
   <member name="IMFPMPServer.UnlockProcess">
-    <summary>
-      <para>Decrements the lock count on the protected media path (PMP) process. Call this method once for each call to <see cref="IMFPMPServer.LockProcess" />.</para>
-    </summary>
+    <summary>Decrements the lock count on the protected media path (PMP) process. Call this method once for each call to <see cref="IMFPMPServer.LockProcess" />.</summary>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -75,43 +62,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFPMPServer" />
   </member>
   <member name="IMFPMPServer">
-    <summary>
-      <para>Enables two instances of the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> to share the same protected media path (PMP) process.</para>
-    </summary>
-    <remarks>
-      <para>If your application creates more than one instance of the Media Session, you can use this interface to share the same PMP process among several instances. This can be more efficient than re-creating the PMP process each time.</para>
-      <para>Use this interface as follows:</para>
-      <list type="number">
-        <item>
-          <description>Create the first instance of the PMP Media Session by calling <see cref="MFCreatePMPMediaSession" />.
-</description>
-        </item>
-        <item>
-          <description>Retrieve an <b>IMFPMPServer</b> pointer from the first Media Session by calling <see cref="IMFGetService.GetService" /> with the service identifier <b>MF_PMP_SERVER_CONTEXT</b>.
-</description>
-        </item>
-        <item>
-          <description>Create the second instance of the PMP Media Session. Set the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-session-server-context-attribute">MF_SESSION_SERVER_CONTEXT</a> attribute on the <i>pConfiguration</i> parameter of the <see cref="MFCreatePMPMediaSession" /> function. The attribute value is the <b>IMFPMPServer</b> pointer retrieved in step 2.
-</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/pmp-media-session">PMP Media Session</seealso>
+    <summary>Enables two instances of the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> to share the same protected media path (PMP) process.</summary>
   </member>
 </doc>

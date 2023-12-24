@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_LP_NORMALIZATION_OPERATOR_DESC">
-    <summary>
-      <para>Performs an Lp-normalization function along the specified axis of the input tensor.</para>
-    </summary>
+    <summary>Performs an Lp-normalization function along the specified axis of the input tensor.</summary>
   </member>
   <member name="DML_LP_NORMALIZATION_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor containing the input data.</para>
-    </summary>
+    <summary>The tensor containing the input data.</summary>
   </member>
   <member name="DML_LP_NORMALIZATION_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The tensor to write the results to. This tensor's <i>Sizes</i> should match the <i>InputTensor</i>.</para>
-    </summary>
+    <summary>The tensor to write the results to. This tensor's <i>Sizes</i> should match the <i>InputTensor</i>.</summary>
   </member>
   <member name="DML_LP_NORMALIZATION_OPERATOR_DESC.Axis">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The axis on which to apply normalization.</para>
-    </summary>
+    <summary>The axis on which to apply normalization.</summary>
   </member>
   <member name="DML_LP_NORMALIZATION_OPERATOR_DESC.Epsilon">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>The epsilon value to use to avoid division by zero. A value of 0.00001 is recommended as default.</para>
-    </summary>
+    <summary>The epsilon value to use to avoid division by zero. A value of 0.00001 is recommended as default.</summary>
   </member>
   <member name="DML_LP_NORMALIZATION_OPERATOR_DESC.P">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The order of the normalization (either 1 or 2).</para>
-    </summary>
+    <summary>The order of the normalization (either 1 or 2).</summary>
   </member>
 </doc>

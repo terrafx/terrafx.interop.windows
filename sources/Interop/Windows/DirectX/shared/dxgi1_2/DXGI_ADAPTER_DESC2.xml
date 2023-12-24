@@ -3,73 +3,42 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_ADAPTER_DESC2">
-    <summary>
-      <para>Describes an adapter (or video card) that uses Microsoft DirectX Graphics Infrastructure (DXGI) 1.2.</para>
-    </summary>
-    <remarks>
-      <para>The <b>DXGI_ADAPTER_DESC2</b> structure provides a DXGI 1.2 description of an adapter.  This structure is initialized by using the <see cref="IDXGIAdapter2.GetDesc2" /> method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-structures">DXGI Structures</seealso>
-    <seealso cref="IDXGIAdapter2.GetDesc2" />
+    <summary>Describes an adapter (or video card) that uses Microsoft DirectX Graphics Infrastructure (DXGI) 1.2.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.Description">
-    <summary>
-      <para>A string that contains the adapter description.</para>
-    </summary>
+    <summary>A string that contains the adapter description.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.VendorId">
-    <summary>
-      <para>The PCI ID of the hardware vendor.</para>
-    </summary>
+    <summary>The PCI ID of the hardware vendor.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.DeviceId">
-    <summary>
-      <para>The PCI ID of the hardware device.</para>
-    </summary>
+    <summary>The PCI ID of the hardware device.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.SubSysId">
-    <summary>
-      <para>The PCI ID of the sub system.</para>
-    </summary>
+    <summary>The PCI ID of the sub system.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.Revision">
-    <summary>
-      <para>The PCI ID of the revision number of the adapter.</para>
-    </summary>
+    <summary>The PCI ID of the revision number of the adapter.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.DedicatedVideoMemory">
-    <summary>
-      <para>The number of bytes of dedicated video memory that are not shared with the CPU.</para>
-    </summary>
+    <summary>The number of bytes of dedicated video memory that are not shared with the CPU.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.DedicatedSystemMemory">
-    <summary>
-      <para>The number of bytes of dedicated system memory that are not shared with the CPU. This memory is allocated from available system memory at boot time.</para>
-    </summary>
+    <summary>The number of bytes of dedicated system memory that are not shared with the CPU. This memory is allocated from available system memory at boot time.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.SharedSystemMemory">
-    <summary>
-      <para>The number of bytes of shared system memory. This is the maximum value of system memory that may be consumed by the adapter during operation. Any incidental memory consumed by the driver as it manages and uses video memory is additional.</para>
-    </summary>
+    <summary>The number of bytes of shared system memory. This is the maximum value of system memory that may be consumed by the adapter during operation. Any incidental memory consumed by the driver as it manages and uses video memory is additional.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.AdapterLuid">
-    <summary>
-      <para>A unique value that identifies the adapter. See <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549708(v=vs.85)">LUID</a> for a definition of the structure. <b>LUID</b> is defined in dxgi.h.</para>
-    </summary>
+    <summary>A unique value that identifies the adapter. See <a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff549708(v=vs.85)">LUID</a> for a definition of the structure. <b>LUID</b> is defined in dxgi.h.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.Flags">
-    <summary>
-      <para>A value of the <see cref="DXGI_ADAPTER_FLAG" /> enumerated type that describes the adapter type.  The <b>DXGI_ADAPTER_FLAG_REMOTE</b> flag is reserved.</para>
-    </summary>
+    <summary>A value of the <see cref="DXGI_ADAPTER_FLAG" /> enumerated type that describes the adapter type. The <b>DXGI_ADAPTER_FLAG_REMOTE</b> flag is reserved.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.GraphicsPreemptionGranularity">
-    <summary>
-      <para>A value of the <see cref="DXGI_GRAPHICS_PREEMPTION_GRANULARITY" /> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current graphics rendering task.</para>
-    </summary>
+    <summary>A value of the <see cref="DXGI_GRAPHICS_PREEMPTION_GRANULARITY" /> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current graphics rendering task.</summary>
   </member>
   <member name="DXGI_ADAPTER_DESC2.ComputePreemptionGranularity">
-    <summary>
-      <para>A value of the <see cref="DXGI_COMPUTE_PREEMPTION_GRANULARITY" /> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current compute task.</para>
-    </summary>
+    <summary>A value of the <see cref="DXGI_COMPUTE_PREEMPTION_GRANULARITY" /> enumerated type that describes the granularity level at which the GPU can be preempted from performing its current compute task.</summary>
   </member>
 </doc>

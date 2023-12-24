@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TEX2DMS_ARRAY_RTV">
+    <summary>Describes the subresources from an array of multi sampled 2D textures to use in a render-target view.</summary>
+  </member>
+  <member name="D3D12_TEX2DMS_ARRAY_RTV.FirstArraySlice">
+    <summary>The index of the first texture to use in an array of textures.</summary>
+  </member>
+  <member name="D3D12_TEX2DMS_ARRAY_RTV.ArraySize">
+    <summary>The number of textures to use.</summary>
+  </member>
+</doc>

@@ -13,19 +13,19 @@ public unsafe partial struct CONFIRM_CONFLICT_ITEM
 
     /// <include file='CONFIRM_CONFLICT_ITEM.xml' path='doc/member[@name="CONFIRM_CONFLICT_ITEM.pszOriginalName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszOriginalName;
+    public char* pszOriginalName;
 
     /// <include file='CONFIRM_CONFLICT_ITEM.xml' path='doc/member[@name="CONFIRM_CONFLICT_ITEM.pszAlternateName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszAlternateName;
+    public char* pszAlternateName;
 
     /// <include file='CONFIRM_CONFLICT_ITEM.xml' path='doc/member[@name="CONFIRM_CONFLICT_ITEM.pszLocationShort"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszLocationShort;
+    public char* pszLocationShort;
 
     /// <include file='CONFIRM_CONFLICT_ITEM.xml' path='doc/member[@name="CONFIRM_CONFLICT_ITEM.pszLocationFull"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszLocationFull;
+    public char* pszLocationFull;
 
     /// <include file='CONFIRM_CONFLICT_ITEM.xml' path='doc/member[@name="CONFIRM_CONFLICT_ITEM.nType"]/*' />
     public SYNCMGR_CONFLICT_ITEM_TYPE nType;

@@ -18,7 +18,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA9, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -30,7 +30,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAA, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -55,7 +55,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -68,7 +68,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAB, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -80,7 +80,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -93,7 +93,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAC, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -105,7 +105,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -118,7 +118,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAD, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -130,7 +130,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -143,7 +143,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAE, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -155,7 +155,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -168,7 +168,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAF, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -180,7 +180,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -193,7 +193,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB0, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -205,7 +205,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -218,7 +218,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB1, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -230,7 +230,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -243,7 +243,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB2, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -255,7 +255,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -268,7 +268,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB5, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -280,7 +280,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -293,7 +293,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB6, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -305,7 +305,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -318,7 +318,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB7, 0x3C, 0x6B, 0xB9,
                 0x28, 0x07,
                 0xD3, 0x11,
@@ -330,7 +330,7 @@ public static partial class Gdiplus
                 0x1E,
                 0xF3,
                 0x2E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -343,7 +343,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x6D, 0xBD, 0xED, 0x6A,
                 0xB5, 0x3F,
                 0x8A, 0x41,
@@ -355,7 +355,7 @@ public static partial class Gdiplus
                 0x9D,
                 0xC8,
                 0x72
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -368,7 +368,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x7B, 0x6F, 0x23, 0x84,
                 0xD3, 0x3B,
                 0x8F, 0x42,
@@ -380,7 +380,7 @@ public static partial class Gdiplus
                 0x9C,
                 0xA3,
                 0x15
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -393,7 +393,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x86, 0xDC, 0x62, 0x74,
                 0x80, 0x61,
                 0x7E, 0x4C,
@@ -405,7 +405,7 @@ public static partial class Gdiplus
                 0xA7,
                 0xA4,
                 0x83
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -418,7 +418,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xBE, 0x6C, 0x83, 0xE5,
                 0xEF, 0x5E,
                 0x1D, 0x4F,
@@ -430,7 +430,7 @@ public static partial class Gdiplus
                 0xB6,
                 0x08,
                 0xCE
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -443,7 +443,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xCD, 0xFD, 0x4A, 0x1C,
                 0x77, 0x61,
                 0xCF, 0x43,
@@ -455,7 +455,7 @@ public static partial class Gdiplus
                 0x39,
                 0xEE,
                 0x85
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -468,7 +468,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x9D, 0x73, 0x9D, 0xE0,
                 0xD4, 0xCC,
                 0xEE, 0x44,
@@ -480,7 +480,7 @@ public static partial class Gdiplus
                 0xE4,
                 0xFC,
                 0x58
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -493,7 +493,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x55, 0x70, 0x08, 0x66,
                 0x66, 0xAD,
                 0x7C, 0x4C,
@@ -505,7 +505,7 @@ public static partial class Gdiplus
                 0x0B,
                 0x83,
                 0x37
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -518,7 +518,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x61, 0x26, 0x4E, 0x3A,
                 0x09, 0x31,
                 0x56, 0x4E,
@@ -530,7 +530,7 @@ public static partial class Gdiplus
                 0xE7,
                 0xDC,
                 0xFA
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -543,7 +543,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x76, 0x8C, 0xD1, 0x24,
                 0x4A, 0x81,
                 0xA4, 0x41,
@@ -555,7 +555,7 @@ public static partial class Gdiplus
                 0xCC,
                 0xF7,
                 0x97
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -568,7 +568,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x3A, 0xC5, 0x42, 0x6D,
                 0x9A, 0x22,
                 0x25, 0x48,
@@ -580,7 +580,7 @@ public static partial class Gdiplus
                 0xB9,
                 0xA8,
                 0xB8
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -593,7 +593,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB5, 0xE4, 0x5B, 0x1D,
                 0x4A, 0xFA,
                 0x2D, 0x45,
@@ -605,7 +605,7 @@ public static partial class Gdiplus
                 0x05,
                 0xE7,
                 0xEB
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -618,7 +618,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xD1, 0xB2, 0x0E, 0x8D,
                 0x8E, 0xA5,
                 0xA8, 0x4E,
@@ -630,7 +630,7 @@ public static partial class Gdiplus
                 0xB7,
                 0xB6,
                 0xF9
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -643,7 +643,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xCE, 0x3B, 0xB3, 0xED,
                 0x66, 0x02,
                 0x77, 0x4A,
@@ -655,7 +655,7 @@ public static partial class Gdiplus
                 0x99,
                 0xE7,
                 0x17
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -668,7 +668,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xDC, 0x55, 0xE4, 0xF2,
                 0xB3, 0x09,
                 0x16, 0x43,
@@ -680,7 +680,7 @@ public static partial class Gdiplus
                 0x32,
                 0x48,
                 0x1C
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -693,7 +693,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xFC, 0x66, 0x22, 0x29,
                 0x40, 0xAC,
                 0xBF, 0x47,
@@ -705,7 +705,7 @@ public static partial class Gdiplus
                 0xA6,
                 0x55,
                 0xDE
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -718,7 +718,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xA0, 0x62, 0x7A, 0xAE,
                 0x2C, 0xEE,
                 0xD8, 0x49,
@@ -730,7 +730,7 @@ public static partial class Gdiplus
                 0x27,
                 0x59,
                 0x6E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -743,7 +743,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x13, 0x5E, 0x87, 0x63,
                 0x1D, 0x1F,
                 0xAB, 0x45,
@@ -755,7 +755,7 @@ public static partial class Gdiplus
                 0x66,
                 0xA6,
                 0x50
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -768,7 +768,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC9, 0xBB, 0x19, 0xA2,
                 0x9D, 0x0A,
                 0x05, 0x40,
@@ -780,7 +780,7 @@ public static partial class Gdiplus
                 0x8B,
                 0xB0,
                 0x6C
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -793,7 +793,7 @@ public static partial class Gdiplus
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x23, 0x18, 0x5D, 0x02,
                 0x7D, 0x6C,
                 0x7B, 0x44,
@@ -805,7 +805,7 @@ public static partial class Gdiplus
                 0xDF,
                 0xA2,
                 0xFC
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

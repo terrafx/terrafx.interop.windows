@@ -4,24 +4,17 @@
 <doc>
   <member name="IAMTVAudioNotification.OnEvent">
     <summary>
-      <para>
-        <b>Note</b>  The <b>IAMTVAudioNotification</b> interface is deprecated.</para>
-      <para>The <code>OnEvent</code> method handles events from a TV tuner card controlled by the <see cref="IAMTVAudio" /> interface.</para>
-    </summary>
-    <param name="Event">
-      <para>Flag identifying the type of event. The only value currently defined is AMTVAUDIO_EVENT_CHANGED.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMTVAudioNotification Interface" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  The <b>IAMTVAudioNotification</b> interface is deprecated.</div>The <code>OnEvent</code> method handles events from a TV tuner card controlled by the <see cref="IAMTVAudio" /> interface.</summary>
+    <param name="Event">Flag identifying the type of event. The only value currently defined is AMTVAUDIO_EVENT_CHANGED.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IAMTVAudioNotification">
     <summary>
-      <para>
-        <b>Note</b>  This callback interface has been deprecated, because the TV Audio filter does not implement the callback mechanism.</para>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  This callback interface has been deprecated, because the TV Audio filter does not implement the callback mechanism.</div>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/deprecated-interfaces">Deprecated Interfaces</seealso>
   </member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellMenuCallback*, Guid*, void**, int>)(lpVtbl[0]))((IShellMenuCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenuCallback*, Guid*, void**, int>)(lpVtbl[0]))((IShellMenuCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellMenuCallback*, uint>)(lpVtbl[1]))((IShellMenuCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellMenuCallback*, uint>)(lpVtbl[1]))((IShellMenuCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellMenuCallback*, uint>)(lpVtbl[2]))((IShellMenuCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellMenuCallback*, uint>)(lpVtbl[2]))((IShellMenuCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellMenuCallback.xml' path='doc/member[@name="IShellMenuCallback.CallbackSM"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface, 
     [VtblIndex(3)]
     public HRESULT CallbackSM([NativeTypeName("LPSMDATA")] SMDATA* psmd, uint uMsg, WPARAM wParam, LPARAM lParam)
     {
-        return ((delegate* unmanaged<IShellMenuCallback*, SMDATA*, uint, WPARAM, LPARAM, int>)(lpVtbl[3]))((IShellMenuCallback*)Unsafe.AsPointer(ref this), psmd, uMsg, wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<IShellMenuCallback*, SMDATA*, uint, WPARAM, LPARAM, int>)(lpVtbl[3]))((IShellMenuCallback*)Unsafe.AsPointer(ref this), psmd, uMsg, wParam, lParam);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IShellMenuCallback : IShellMenuCallback.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPSMDATA, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SMDATA*, uint, WPARAM, LPARAM, int> CallbackSM;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SMDATA*, uint, WPARAM, LPARAM, int> CallbackSM;
     }
 }

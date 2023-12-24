@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RENDER_PASS_BEGINNING_ACCESS">
+    <summary>Describes the access to resource(s) that is requested by an application at the transition into a render pass.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_BEGINNING_ACCESS.Type">
+    <summary>A <see cref="D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE" />. The type of access being requested.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_BEGINNING_ACCESS.Clear">
+    <summary>A <see cref="D3D12_RENDER_PASS_BEGINNING_ACCESS_CLEAR_PARAMETERS" />. Appropriate when <b>Type</b> is <see cref="D3D12_RENDER_PASS_BEGINNING_ACCESS_TYPE_CLEAR" />. The clear value to which resource(s) should be cleared.</summary>
+  </member>
+</doc>

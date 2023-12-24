@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -13,17 +14,17 @@ public partial struct IMAGE_AUX_SYMBOL
 {
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.Sym"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18895:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18945_C5")]
     public _Sym_e__Struct Sym;
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.File"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18915:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18965_C5")]
     public _File_e__Struct File;
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.Section"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18918:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18968_C5")]
     public _Section_e__Struct Section;
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.TokenDef"]/*' />
@@ -32,7 +33,7 @@ public partial struct IMAGE_AUX_SYMBOL
 
     /// <include file='IMAGE_AUX_SYMBOL.xml' path='doc/member[@name="IMAGE_AUX_SYMBOL.CRC"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18929:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18979_C5")]
     public _CRC_e__Struct CRC;
 
     /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct"]/*' />
@@ -44,11 +45,11 @@ public partial struct IMAGE_AUX_SYMBOL
         public uint TagIndex;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.Misc"]/*' />
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18897:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L18947_C9")]
         public _Misc_e__Union Misc;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.FcnAry"]/*' />
-        [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18904:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L18954_C9")]
         public _FcnAry_e__Union FcnAry;
 
         /// <include file='_Sym_e__Struct.xml' path='doc/member[@name="_Sym_e__Struct.TvIndex"]/*' />
@@ -61,7 +62,7 @@ public partial struct IMAGE_AUX_SYMBOL
         {
             /// <include file='_Misc_e__Union.xml' path='doc/member[@name="_Misc_e__Union.LnSz"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18898:13)")]
+            [NativeTypeName("__AnonymousRecord_winnt_L18948_C13")]
             public _LnSz_e__Struct LnSz;
 
             /// <include file='_Misc_e__Union.xml' path='doc/member[@name="_Misc_e__Union.TotalSize"]/*' />
@@ -88,12 +89,12 @@ public partial struct IMAGE_AUX_SYMBOL
         {
             /// <include file='_FcnAry_e__Union.xml' path='doc/member[@name="_FcnAry_e__Union.Function"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18905:13)")]
+            [NativeTypeName("__AnonymousRecord_winnt_L18955_C13")]
             public _Function_e__Struct Function;
 
             /// <include file='_FcnAry_e__Union.xml' path='doc/member[@name="_FcnAry_e__Union.Array"]/*' />
             [FieldOffset(0)]
-            [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18909:13)")]
+            [NativeTypeName("__AnonymousRecord_winnt_L18959_C13")]
             public _Array_e__Struct Array;
 
             /// <include file='_Function_e__Struct.xml' path='doc/member[@name="_Function_e__Struct"]/*' />
@@ -110,21 +111,35 @@ public partial struct IMAGE_AUX_SYMBOL
             }
 
             /// <include file='_Array_e__Struct.xml' path='doc/member[@name="_Array_e__Struct"]/*' />
-            public unsafe partial struct _Array_e__Struct
+            public partial struct _Array_e__Struct
             {
                 /// <include file='_Array_e__Struct.xml' path='doc/member[@name="_Array_e__Struct.Dimension"]/*' />
                 [NativeTypeName("WORD[4]")]
-                public fixed ushort Dimension[4];
+                public _Dimension_e__FixedBuffer Dimension;
+
+                /// <include file='_Dimension_e__FixedBuffer.xml' path='doc/member[@name="_Dimension_e__FixedBuffer"]/*' />
+                [InlineArray(4)]
+                public partial struct _Dimension_e__FixedBuffer
+                {
+                    public ushort e0;
+                }
             }
         }
     }
 
     /// <include file='_File_e__Struct.xml' path='doc/member[@name="_File_e__Struct"]/*' />
-    public unsafe partial struct _File_e__Struct
+    public partial struct _File_e__Struct
     {
         /// <include file='_File_e__Struct.xml' path='doc/member[@name="_File_e__Struct.Name"]/*' />
         [NativeTypeName("BYTE[18]")]
-        public fixed byte Name[18];
+        public _Name_e__FixedBuffer Name;
+
+        /// <include file='_Name_e__FixedBuffer.xml' path='doc/member[@name="_Name_e__FixedBuffer"]/*' />
+        [InlineArray(18)]
+        public partial struct _Name_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 
     /// <include file='_Section_e__Struct.xml' path='doc/member[@name="_Section_e__Struct"]/*' />
@@ -162,7 +177,7 @@ public partial struct IMAGE_AUX_SYMBOL
 
     /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 2)]
-    public unsafe partial struct _CRC_e__Struct
+    public partial struct _CRC_e__Struct
     {
         /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct.crc"]/*' />
         [NativeTypeName("DWORD")]
@@ -170,6 +185,14 @@ public partial struct IMAGE_AUX_SYMBOL
 
         /// <include file='_CRC_e__Struct.xml' path='doc/member[@name="_CRC_e__Struct.rgbReserved"]/*' />
         [NativeTypeName("BYTE[14]")]
-        public fixed byte rgbReserved[14];
+        public _rgbReserved_e__FixedBuffer rgbReserved;
+
+        /// <include file='_rgbReserved_e__FixedBuffer.xml' path='doc/member[@name="_rgbReserved_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
+        [InlineArray(14)]
+        public partial struct _rgbReserved_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 }

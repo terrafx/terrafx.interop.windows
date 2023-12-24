@@ -19,32 +19,4 @@ public static unsafe partial class ISVGAnimatedPointsTests
     {
         Assert.That(typeof(ISVGAnimatedPoints).GUID, Is.EqualTo(IID_ISVGAnimatedPoints));
     }
-
-    /// <summary>Validates that the <see cref="ISVGAnimatedPoints" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISVGAnimatedPoints>(), Is.EqualTo(sizeof(ISVGAnimatedPoints)));
-    }
-
-    /// <summary>Validates that the <see cref="ISVGAnimatedPoints" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISVGAnimatedPoints).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISVGAnimatedPoints" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISVGAnimatedPoints), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISVGAnimatedPoints), Is.EqualTo(4));
-        }
-    }
 }

@@ -7,12 +7,8 @@
       <para>Retrieves pointers to multiple supported interfaces on an object.</para>
       <para>Calling this method is equivalent to issuing a series of separate <see cref="QueryInterface" /> calls except that you do not incur the overhead of a corresponding number of RPC calls. In multithreaded applications and distributed environments, keeping RPC calls to a minimum is essential for optimal performance.</para>
     </summary>
-    <param name="cMQIs">
-      <para>The number of elements in the <i>pMQIs</i> array.</para>
-    </param>
-    <param name="pMQIs">
-      <para>An array of <see cref="MULTI_QI" /> structures. For more information, see Remarks.</para>
-    </param>
+    <param name="cMQIs">The number of elements in the <i>pMQIs</i> array.</param>
+    <param name="pMQIs">An array of <see cref="MULTI_QI" /> structures. For more information, see Remarks.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -20,55 +16,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method retrieved pointers to all requested interfaces.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method retrieved pointers to all requested interfaces.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The method retrieved pointers to some, but not all, of the requested interfaces.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method retrieved pointers to some, but not all, of the requested interfaces.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The method retrieved pointers to none of the requested interfaces.</para>
-          </description>
-        </item>
+          <description>The method retrieved pointers to none of the requested interfaces.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <b>QueryMultipleInterfaces</b> method takes as input an array of <see cref="MULTI_QI" /> structures. Each structure specifies an interface IID and contains two additional members for receiving an interface pointer and return value.</para>
-      <para>This method obtains as many requested interface pointers as possible directly from the object proxy. For each interface not implemented on the proxy, the method calls the server to obtain a pointer. Upon receiving an interface pointer from the server, the method builds a corresponding interface proxy and returns its pointer along with pointers to the interfaces it already implements.</para>
-      <h3>Notes to Callers</h3>
-      <para>A caller should begin by querying the object proxy for the <see cref="IMultiQI" /> interface. If the object proxy returns a pointer to this interface, the caller should then create a <see cref="MULTI_QI" /> structure for each interface it wants to obtain. Each structure should specify an interface IID and set its <b>pItf</b> member to <b>NULL</b>. Failure to set the <b>pItf</b> member to <b>NULL</b> will cause the object proxy to ignore the structure.</para>
-      <para>On return, <b>QueryMultipleInterfaces</b> writes the requested interface pointer and a return value into each <see cref="MULTI_QI" /> structure in the client's array. The <b>pItf</b> member receives the pointer; the <b>hr</b> member receives the return value.</para>
-      <para>If the value returned from a call to <b>QueryMultipleInterfaces</b> is S_OK, then pointers were returned for all requested interfaces.</para>
-      <para>If the return value is E_NOINTERFACE, then pointers were returned for none of the requested interfaces. If the return value is S_FALSE, then pointers to one or more requested interfaces were not returned. In this event, the client should check the <b>hr</b> member of each <see cref="MULTI_QI" /> structure to determine which interfaces were acquired and which were not.</para>
-      <para>If a client knows ahead of time that it will be using several of an object's interfaces, it can call <b>QueryMultipleInterfaces</b> up front and then, later, if a <see cref="QueryInterface" /> is done for one of the interfaces already acquired through <b>QueryMultipleInterfaces</b>, no RPC call will be necessary.</para>
-      <para>On return, the caller should check the <b>hr</b> member of each <see cref="MULTI_QI" /> structure to determine which interface pointers were and were not returned.</para>
-      <para>The client is responsible for releasing each of the acquired interfaces by calling <see cref="Release" />.</para>
-    </remarks>
-    <seealso cref="IMultiQI" />
   </member>
   <member name="IMultiQI">
-    <summary>
-      <para>Enables a client to query an object proxy, or handler, for multiple interfaces by using a single RPC call. By using this interface, instead of relying on separate calls to <see cref="IUnknown.QueryInterface" />, clients can reduce the number of RPC calls that have to cross thread, process, or machine boundaries and, therefore, the amount of time required to obtain the requested interface pointers.</para>
-    </summary>
+    <summary>Enables a client to query an object proxy, or handler, for multiple interfaces by using a single RPC call. By using this interface, instead of relying on separate calls to <see cref="IUnknown.QueryInterface" />, clients can reduce the number of RPC calls that have to cross thread, process, or machine boundaries and, therefore, the amount of time required to obtain the requested interface pointers.</summary>
   </member>
 </doc>

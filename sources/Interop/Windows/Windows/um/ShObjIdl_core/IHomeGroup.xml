@@ -3,58 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IHomeGroup.IsMember">
-    <summary>
-      <para>Determines whether the local computer is a member of a HomeGroup.</para>
-    </summary>
-    <param name="member">
-      <para>Type: <b>BOOL*</b></para>
-      <para>When this method returns successfully, receives <b>TRUE</b> if the local computer is a member of a HomeGroup; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The following code snippet shows how to create an instance of <see cref="IHomeGroup" /> and call <b>IHomeGroup.IsMember</b>.</para>
-      <code>#include "shobjidl.h"
-#include "atlbase.h"   // For COM smart pointers
-
-CComPtr&lt;IHomeGroup&gt; spHomeGroup;
-HRESULT hr = S_OK;
-BOOL fIsHGMember = FALSE;
-
-// Initialize the COM subsystem.
-hr = CoInitialize(NULL);
-if (FAILED(hr)) return hr;
-
-// Create an instance of IHomeGroup.
-hr = CoCreateInstance(CLSID_HomeGroup,
-                      NULL,
-                      CLSCTX_INPROC_SERVER,
-                      IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;spHomeGroup));
-
-if (FAILED(hr)) return hr;
-
-// fIsHGMember receives the value TRUE if the local computer is a member of a
-// HomeGroup, or FALSE if the computer is not a HomeGroup member.
-hr = spHomeGroup-&gt;IsMember(&amp;amp;amp;amp;amp;amp;fIsHGMember);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/visualstudio/visual-studio-2010/ezzw7k98(v=vs.100)">CComPtr</seealso>
-    <seealso cref="CoCreateInstance" />
-    <seealso cref="CoInitialize" />
-    <seealso cref="IHomeGroup" />
+    <summary>Determines whether the local computer is a member of a HomeGroup.</summary>
+    <param name="member">When this method returns successfully, receives <b>TRUE</b> if the local computer is a member of a HomeGroup; otherwise, <b>FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IHomeGroup.ShowSharingWizard">
-    <summary>
-      <para>Displays a wizard that allows a user to create a Home Group, and then retrieves the sharing options that the user selected through the wizard.</para>
-    </summary>
-    <param name="owner">
-      <para>Type: <b>HWND</b></para>
-      <para>Handle of the owner window of the wizard, used for notifications. This value can be <b>NULL</b>.</para>
-    </param>
+    <summary>Displays a wizard that allows a user to create a Home Group, and then retrieves the sharing options that the user selected through the wizard.</summary>
+    <param name="owner">Handle of the owner window of the wizard, used for notifications. This value can be <b>NULL</b>.</param>
     <param name="sharingchoices">
-      <para>Type: <b>HOMEGROUPSHARINGCHOICES*</b></para>
       <para>Pointer to a value that, when this method returns successfully, receives one or more of the following values that indicate the libraries and devices chosen through the wizard to be shared with the Home Group.</para>
       <h4>HGSC_NONE (0x00000000)</h4>
       <para>0x00000000. None of the Home Group options were selected</para>
@@ -70,112 +26,64 @@ hr = spHomeGroup-&gt;IsMember(&amp;amp;amp;amp;amp;amp;fIsHGMember);
       <para>0x00000010. Installed printer devices were selected to be shared with the Home Group.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or a standard error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>ERROR_CANCELLED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_CANCELLED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The user canceled the wizard. Use <see cref="HRESULT_FROM_WIN32" /> to extract this error code.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The user canceled the wizard. Use <see cref="HRESULT_FROM_WIN32" /> to extract this error code.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The computer is not joined to a Home Group or the network or Home Group is not in a state that allows sharing (such as not being connected to the network or having another sharing operation in progress).</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was launched from a multithreaded apartment (MTA) thread.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The computer is not joined to a Home Group or the network or Home Group is not in a state that allows sharing (such as not being connected to the network or having another sharing operation in progress).</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
-          </description>
-          <description>
-            <para>The method was launched from a multithreaded apartment (MTA) thread.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>sharingchoices</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The <i>sharingchoices</i> parameter is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method must be called from a single-threaded apartment (STA) thread.</para>
-      <h4>Examples</h4>
-      <para>The following code shows an example use of <b>ShowSharingWizard</b>.</para>
-      <code>HRESULT hr = CoInitializeEx(NULL, COINIT_APARTMENTTHREADED);
-if (SUCCEEDED(hr))
-{
-    IHomeGroup *phg;
-
-    hr = CoCreateInstance(CLSID_HomeGroup, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;phg));
-    if (SUCCEEDED(hr))
-    {
-        HOMEGROUPSHARINGCHOICES sharingchoices;
-
-        hr = phg-&gt;ShowSharingWizard(NULL, &amp;amp;amp;amp;amp;amp;sharingchoices);
-        if (SUCCEEDED(hr))
-        {
-            \\ The user selected to share.
-
-            if (sharingchoices &amp;amp;amp;amp;amp;amp; HGSC_MUSICLIBRARY)
-            {
-                \\ Music
-            }
-            if (sharingchoices &amp;amp;amp;amp;amp;amp; HGSC_PICTURESLIBRARY)
-            {
-                \\ Pictures
-            }
-            if (sharingchoices &amp;amp;amp;amp;amp;amp; HGSC_VIDEOSLIBRARY)
-            {
-                \\ Videos
-            }
-            if (sharingchoices &amp;amp;amp;amp;amp;amp; HGSC_DOCUMENTSLIBRARY)
-            {
-                \\ Documents
-            }
-            if (sharingchoices &amp;amp;amp;amp;amp;amp; HGSC_PRINTERS)
-            {
-                \\ Printers
-            }
-        }
-        phg-&gt;Release();
-    }
-    CoUninitialize();
-}
-</code>
-    </remarks>
   </member>
   <member name="IHomeGroup">
-    <summary>
-      <para>Exposes methods that determine a computer's HomeGroup membership status and display the sharing wizard.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>Custom implementations of <b>IHomeGroup</b> are not supported; client applications use the implementation provided in Provsvc.dll.</para>
-      <h3>When to Use</h3>
-      <para>Use <b>IHomeGroup</b> when there is a need to determine the local computer's HomeGroup membership status; that is, to check wither the local computer is a member of a HomeGroup.</para>
-      <para>To create an instance of <b>IHomeGroup</b>, call <see cref="CoCreateInstance" /> and specify <b>CLSID_HomeGroup</b> as the CLSID. <b>CLSID_HomeGroup</b> is defined in Shobjidl.h and Shobjidl.idl.</para>
-    </remarks>
+    <summary>Exposes methods that determine a computer's HomeGroup membership status and display the sharing wizard.</summary>
   </member>
 </doc>

@@ -5,56 +5,41 @@
   <member name="IPublishingWizard.GetTransferManifest">
     <summary>
       <para>Gets a transfer manifest for a file transfer operation performed by a publishing wizard, such as the Online Print Wizard or the Add Network Place Wizard.</para>
-      <para>
-        <b>Note</b>  This method is deprecated for Windows Vista, as it is not supported for Online Print Wizard or Add Network Place Wizard.</para>
+      <div>
+        <b>Note</b>  This method is deprecated for Windows Vista, as it is not supported for Online Print Wizard or Add Network Place Wizard.</div>
     </summary>
-    <param name="phrFromTransfer">
-      <para>Type: <b>HRESULT*</b></para>
-      <para>A pointer to a variable of type <b>HRESULT</b> that, when this method returns, is set to S_OK if the transfer operation was successful, S_FALSE if the transfer has not yet begun, or a standard error value if the transfer has failed or has been canceled. This value can be <b>NULL</b> if you do not require this information.</para>
-    </param>
-    <param name="pdocManifest">
-      <para>Type: <b>IXMLDOMDocument**</b></para>
-      <para>Address of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/dd892951(v=vs.85)">IXMLDOMDocument interface</a> pointer that, when this method returns, points to the <b>IXMLDOMDocument interface</b> object that represents the manifest. This value can be <b>NULL</b>.</para>
-    </param>
+    <param name="phrFromTransfer">A pointer to a variable of type <b>HRESULT</b> that, when this method returns, is set to S_OK if the transfer operation was successful, S_FALSE if the transfer has not yet begun, or a standard error value if the transfer has failed or has been canceled. This value can be <b>NULL</b> if you do not require this information.</param>
+    <param name="pdocManifest">Address of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/dd892951(v=vs.85)">IXMLDOMDocument interface</a> pointer that, when this method returns, points to the <b>IXMLDOMDocument interface</b> object that represents the manifest. This value can be <b>NULL</b>.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if the manifest is successfully retrieved or a standard COM error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The transfer manifest has not yet been created.</para>
-          </description>
-        </item>
+          <description>The transfer manifest has not yet been created.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The transfer manifest is not created until the wizard is actually displayed. For information on displaying a publishing wizard, see the <see cref="IPublishingWizard" /> topic.</para>
-    </remarks>
-    <seealso cref="IPublishingWizard" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/interfaces">Transfer Manifest Schema</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/lwef/pubwiz-manifest">Using the Transfer Manifest</seealso>
   </member>
   <member name="IPublishingWizard.Initialize">
     <summary>
       <para>Initializes the <a href="https://docs.microsoft.com//windows/desktop/shell/scriptable-shell-objects-roadmap">Publishing Wizard</a> object with the files to transfer, the settings to use, and the type of wizard to create.</para>
-      <para>
-        <b>Note</b>  Windows Vista no longer supports the Online Print Wizard. However, this method can still be used to generate the Add Network Place Wizard.</para>
+      <div>
+        <b>Note</b>  Windows Vista no longer supports the Online Print Wizard. However, this method can still be used to generate the Add Network Place Wizard.</div>
     </summary>
-    <param name="pdo">
-      <para>Type: <b><see cref="IDataObject" />*</b></para>
-      <para>A pointer to an instance of <see cref="IDataObject" /> that represents the files or folder to be transferred, if <i>pszServiceProvider</i> is <code>InternetPhotoPrinting</code>. If <i>pszServiceProvider</i> is <code>AddNetPlace</code>, this parameter is <b>NULL</b>.</para>
-    </param>
+    <param name="pdo">A pointer to an instance of <see cref="IDataObject" /> that represents the files or folder to be transferred, if <i>pszServiceProvider</i> is <code>InternetPhotoPrinting</code>. If <i>pszServiceProvider</i> is <code>AddNetPlace</code>, this parameter is <b>NULL</b>.</param>
     <param name="dwOptions">
-      <para>Type: <b>DWORD</b></para>
       <para>A combination of the following flags.</para>
       <h4>SHPWHF_NORECOMPRESS</h4>
       <para>Do not allow recompression of image data. For use with the Online Print Wizard.</para>
@@ -71,7 +56,6 @@
       <para>For use with the Add Network Place Wizard. In Windows XP, if this flag is set and an attempt to open the network location using WebDAV fails, the Add Network Place Wizard attempts to create a web folder for the location, using support for WEC. In Windows Vista and Windows Server 2003, this flag has no effect and network locations without support for WebDAV may not be opened as web folders.</para>
     </param>
     <param name="pszServiceScope">
-      <para>Type: <b>LPCWSTR</b></para>
       <para>Unicode string that indicates the type of wizard to display. The following case-sensitive values are supported in Windows Vista.</para>
       <h4>AddNetPlace</h4>
       <para>Initialize the Add Network Place Wizard.</para>
@@ -79,166 +63,40 @@
       <para>Initialize the Online Print Wizard. Not supported in Windows Vista.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>In Windows Vista, may indicate an attempt to initialize the unsupported Online Print Wizard by passing <code>InternetPhotoPrinting</code> in <i>pszServiceProvider</i>. <para>In Windows XP, may indicate that when initializing the Online Print Wizard, the <i>pdo</i> parameter is <b>NULL</b> or points to an empty selection.</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>In Windows Vista, may indicate an attempt to initialize the unsupported Online Print Wizard by passing <code>InternetPhotoPrinting</code> in <i>pszServiceProvider</i>.</para>
-            <para>In Windows XP, may indicate that when initializing the Online Print Wizard, the <i>pdo</i> parameter is <b>NULL</b> or points to an empty selection.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pszServiceProvider</i> parameter is not one of the supported values or the <i>dwOptions</i> parameter contains an unsupported combination of flags.</para>
-          </description>
-        </item>
+          <description>The <i>pszServiceProvider</i> parameter is not one of the supported values or the <i>dwOptions</i> parameter contains an unsupported combination of flags.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>IPublishingWizard.Initialize</b>, implemented by a <a href="https://docs.microsoft.com//windows/desktop/shell/scriptable-shell-objects-roadmap">Publishing Wizard</a> object, is called to initialize the wizard object.</para>
-      <para>The following sample does not work on Windows Vista because the Online Print Wizard cannot be instantiated through <see cref="IPublishingWizard" /> in Windows Vista.</para>
-      <code>/* initializing the Online Print Wizard in Windows XP or Windows 2003 Server*/
-hr = pPublish-&gt;Initialize(pDataObject,  // A data object that represents files or
-                                        // folders to transfer.
-                          SHPWHF_NOFILESELECTOR,     // Flags
-                          L"InternetPhotoPrinting"); // Display the Online Print Wizard.
-</code>
-      <para>
-        <b>IPublishingWizard.Initialize</b> does not actually display the initialized wizard. See the <see cref="IPublishingWizard" /> topic for information on how to display the wizard.</para>
-    </remarks>
   </member>
   <member name="IPublishingWizard">
-    <summary>
-      <para>Exposes methods for working with the Online Print Wizard, the Web Publishing Wizard, and the Add Network Place Wizard. In Windows Vista, <b>IPublishingWizard</b> no longer supports the Web Publishing Wizard or Online Print Wizard.</para>
-    </summary>
-    <remarks>
-      <para>The Online Print Wizard is a wizard for ordering prints of photos online. The use of <b>IPublishingWizard</b> to work with the Online Print Wizard is no longer supported in Windows Vista.</para>
-      <para>The Add Network Place Wizard allows the user to create a shortcut to network resources in My Network Places (in Windows XP) or Computer (in Windows Vista).</para>
-      <para>The Windows Shell supplies a <a href="https://docs.microsoft.com//windows/desktop/shell/scriptable-shell-objects-roadmap">Publishing Wizard object</a> that implements <b>IPublishingWizard</b> and <see cref="IWizardExtension" />. The methods of <b>IPublishingWizard</b> are used to initialize the type of the wizard, set certain attributes of the wizard, and retrieve a transfer manifest. The methods of <b>IWizardExtension</b> are used to retrieve the extension pages that make up the body of the selected wizard. To instantiate the <b>Publishing Wizard object</b>, call <see cref="CoCreateInstance" /> and use the class identifier (CLSID) CLSID_PublishingWizard and IID_IPublishingWizard as the REFIID.</para>
-      <code>IPublishingWizard *pPublish = NULL;
-
-HRESULT hr = CoCreateInstance(CLSID_PublishingWizard,
-                              NULL,
-                              CLSCTX_INPROC_SERVER,
-                              IID_IPublishingWizard,
-                              (LPVOID*)&amp;amp;amp;amp;amp;amp;pPublish);
-
-</code>
-      <para>Once the <a href="https://docs.microsoft.com//windows/desktop/shell/scriptable-shell-objects-roadmap">Publishing Wizard object</a> has been instantiated, call <see cref="IPublishingWizard.Initialize" /> to initialize the <b>Publishing Wizard object</b>.</para>
-      <para>
-        <b>Note</b>  The examples below will not work on Windows Vista since the <b>IPublishingWizard</b> methods no longer support the Online Printing Wizard in Windows Vista.</para>
-      <code>// Initializing the Online Print Wizard
-
-hr = pPublish-&gt;Initialize(pDataObject,
-                          SHPWHF_NOFILESELECTOR,
-                          L"InternetPhotoPrinting");
-
-// pDataObject: A data object that represents files or folders to transfer.
-// SHPWHF_NOFILESELECTOR: This flag must be set.
-// L"InternetPhotoPrinting": Display the Online Print Wizard.
-
-</code>
-      <para>Note that <see cref="IPublishingWizard.Initialize" /> does not actually display the wizard. In order to display the Online Print Wizard, you must create a <see cref="PROPSHEETHEADER" /> structure and then modify its <i>phpage</i> member to include the array of <see cref="PROPSHEETPAGE" /> handles returned by <see cref="IWizardExtension.AddPages" />. <b>IWizardExtension.AddPages</b> is implemented by the same <a href="https://docs.microsoft.com//windows/desktop/shell/scriptable-shell-objects-roadmap">Publishing Wizard object</a> that implements <b>IPublishingWizard</b>.</para>
-      <para>If displaying the Online Print Wizard, the PSH_NOMARGIN flag should be set in the <i>dwFlags</i> member of the <see cref="PROPSHEETHEADER" /> structure that contains the extension pages.</para>
-      <para>In addition to the extension pages retrieved from <see cref="IWizardExtension.AddPages" />, the <i>phpage</i> array should include a start page, a cancel page, and a finish page, provided by your application. When the user backs out of or cancels the extension, or when the extension finishes displaying its pages, the extension then communicates to the wizard that it must navigate out of the stack of extension pages to one of these application-provided pages. Your application must supply an implementation of <see cref="IWizardSite" /> that handles this communication. The <b>IPublishingWizard</b> object's site must be set to your <b>IWizardSite</b> implementation. The <see cref="IUnknown_SetSite" /> function can be used to set the site. Once your application has specified the wizard settings using <see cref="IPublishingWizard.Initialize" />, properly populated the <i>phpage</i> member of a <see cref="PROPSHEETHEADER" /> structure, and set the site to an implementation of <b>IWizardSite</b>, the wizard may be displayed by calling the <see cref="PropertySheet" /> function.</para>
-      <code>/* This is example code demonstrating how to populate a PROPSHEETHEADER
-structure and use it to display the Online Print Wizard.
-This sample assumes that the PublishingWizard object has already
-been instantiated and initialized elsewhere in the application. */
-
-// Define the number of wizard pages that we expect to get from
-// the Publishing Wizard object.
-// The Online Print Wizard provides 6 predefined pages in Windows Vista,
-// but provided 9 in Windows XP.
-#if NTDDI_VERSION &gt;= NTDDI_VISTA
-#define NUMPAGES 6
-#else
-#define NUMPAGES 9
-#endif
-
-// Number of wizard pages supplied by the application in addition to
-// the predefined pages supplied by the Online Print Wizard.
-#define NUMNONEXTENSIONPAGES 3
-
-// Array to hold the property sheets to display in the wizard,
-// including both those returned by IPublishingWizard.AddPages()
-// and those application-defined pages returned by IWizardSite methods.
-HPROPSHEETPAGE hPropSheets[NUMPAGES + NUMNONEXTENSIONPAGES];
-
-// Handles to the application-defined property sheets.
-// This example assumes that they are initialized elsewhere in the application.
-HPROPSHEETPAGE hPropSheetFinishPage = CreateFinishPage;
-HPROPSHEETPAGE hPropSheetStartPage = CreateStartPage;
-HPROPSHEETPAGE hPropSheetCanceledPage = CreateCanceledPage;
-
-// Number of property sheets returned by IPublishingWizard.AddPages().
-UINT uCount = 0;
-INT_PTR retval = 0; // return value from PropertySheet
-HRESULT hr;
-
-// Property sheet header structure whose phpage member will receive
-// the array of wizard pages retrieved from AddPages.
-PROPSHEETHEADER psh;
-psh.dwSize = sizeof(PROPSHEETHEADER);
-
-// Set the PublishingWizard object's site to an IWizardSite implementation
-// defined by your application.
-hr = IUnknown_SetSite(pIPublish, (IUnknown *)pWizSite);
-
-// Fill the hPropSheets array with the pages of the wizard.
-if SUCCEEDED(hr)
-{
-    hr = pIPublish-&gt;AddPages(&amp;amp;amp;amp;amp;amp;hPropSheets[0], NUMPAGES, &amp;amp;amp;amp;amp;amp;uCount);
-}
-
-if SUCCEEDED(hr)
-{
-    // Define start, finish, and canceled pages elsewhere in your application.
-    // Here, these pages are added after the extension pages.
-    hPropSheets[uCount] = hPropSheetFinishPage;
-    hPropSheets[uCount + 1] = hPropSheetCanceledPage;
-    hPropSheets[uCount + 2] = hPropSheetStartPage;
-
-    // Assign the array of property sheets.
-    psh.phpage = hPropSheets;
-
-    // Number of extension pages from AddPages + # of your own pages.
-    psh.nPages = uCount + NUMNONEXTENSIONPAGES;
-
-    // The index into phpage where the first page to display is located.
-    psh.nStartPage = 0;
-
-    // PSH_NOMARGIN must be specified for the Online Print Wizard.
-    psh.dwFlags =  PSH_AEROWIZARD | PSH_WIZARD | PSH_NOMARGIN;
-    psh.hwndParent = NULL;
-    psh.hInstance = NULL;
-
-    // Display the wizard.
-    PropertySheet(&amp;amp;amp;amp;amp;amp;psh);
-}
-
-</code>
-    </remarks>
-    <seealso cref="IWizardExtension" />
-    <seealso cref="IWizardExtension.AddPages" />
-    <seealso cref="IWizardSite" />
-    <seealso cref="PROPSHEETHEADER" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/scriptable-shell-objects-roadmap">Publishing Wizard object</seealso>
+    <summary>Exposes methods for working with the Online Print Wizard, the Web Publishing Wizard, and the Add Network Place Wizard. In Windows Vista, <b>IPublishingWizard</b> no longer supports the Web Publishing Wizard or Online Print Wizard.</summary>
   </member>
 </doc>

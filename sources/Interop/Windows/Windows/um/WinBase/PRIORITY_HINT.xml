@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRIORITY_HINT">
-    <summary>
-      <para>Defines values that are used with the <see cref="FILE_IO_PRIORITY_HINT_INFO" /> structure to specify the priority hint for a file I/O operation.</para>
-    </summary>
-    <seealso cref="FILE_IO_PRIORITY_HINT_INFO" />
-    <seealso cref="SetFileInformationByHandle" />
+    <summary>Defines values that are used with the <see cref="FILE_IO_PRIORITY_HINT_INFO" /> structure to specify the priority hint for a file I/O operation.</summary>
   </member>
   <member name="PRIORITY_HINT.IoPriorityHintVeryLow">
-    <summary>
-      <para>The lowest possible priority hint level. The system uses this value for background I/O operations.</para>
-    </summary>
+    <summary>The lowest possible priority hint level. The system uses this value for background I/O operations.</summary>
   </member>
   <member name="PRIORITY_HINT.IoPriorityHintLow">
-    <summary>
-      <para>A low-priority hint level.</para>
-    </summary>
+    <summary>A low-priority hint level.</summary>
   </member>
   <member name="PRIORITY_HINT.IoPriorityHintNormal">
-    <summary>
-      <para>A normal-priority hint level. This value is the default setting for an I/O operation.</para>
-    </summary>
+    <summary>A normal-priority hint level. This value is the default setting for an I/O operation.</summary>
   </member>
   <member name="PRIORITY_HINT.MaximumIoPriorityHintType">
-    <summary>
-      <para>This value is used for validation. Supported values are less than this value.</para>
-    </summary>
+    <summary>This value is used for validation. Supported values are less than this value.</summary>
   </member>
 </doc>

@@ -3,38 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_COMPUTE_PREEMPTION_GRANULARITY">
-    <summary>
-      <para>Identifies the granularity at which the graphics processing unit (GPU) can be preempted from performing its current compute task.</para>
-    </summary>
-    <remarks>
-      <para>You call the <see cref="IDXGIAdapter2.GetDesc2" /> method to retrieve the granularity level at which the GPU can be preempted from performing its current compute task. The operating system specifies the compute granularity level in the  <b>ComputePreemptionGranularity</b> member of the <see cref="DXGI_ADAPTER_DESC2" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
-    <seealso cref="DXGI_ADAPTER_DESC2" />
+    <summary>Identifies the granularity at which the graphics processing unit (GPU) can be preempted from performing its current compute task.</summary>
   </member>
   <member name="DXGI_COMPUTE_PREEMPTION_GRANULARITY.DXGI_COMPUTE_PREEMPTION_DMA_BUFFER_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a compute packet.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a compute packet.</summary>
   </member>
   <member name="DXGI_COMPUTE_PREEMPTION_GRANULARITY.DXGI_COMPUTE_PREEMPTION_DISPATCH_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a dispatch (for example, a call to the <see cref="ID3D11DeviceContext.Dispatch" /> method). A dispatch is a part of a compute packet.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a dispatch (for example, a call to the <see cref="ID3D11DeviceContext.Dispatch" /> method). A dispatch is a part of a compute packet.</summary>
   </member>
   <member name="DXGI_COMPUTE_PREEMPTION_GRANULARITY.DXGI_COMPUTE_PREEMPTION_THREAD_GROUP_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a thread group. A thread group is a part of a dispatch.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a thread group. A thread group is a part of a dispatch.</summary>
   </member>
   <member name="DXGI_COMPUTE_PREEMPTION_GRANULARITY.DXGI_COMPUTE_PREEMPTION_THREAD_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a thread in a thread group. A thread is a part of a thread group.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a thread in a thread group. A thread is a part of a thread group.</summary>
   </member>
   <member name="DXGI_COMPUTE_PREEMPTION_GRANULARITY.DXGI_COMPUTE_PREEMPTION_INSTRUCTION_BOUNDARY">
-    <summary>
-      <para>Indicates the preemption granularity as a compute instruction in a thread.</para>
-    </summary>
+    <summary>Indicates the preemption granularity as a compute instruction in a thread.</summary>
   </member>
 </doc>

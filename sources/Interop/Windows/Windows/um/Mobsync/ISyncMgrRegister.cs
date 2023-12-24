@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrRegister*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrRegister*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrRegister*, uint>)(lpVtbl[1]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrRegister*, uint>)(lpVtbl[1]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrRegister*, uint>)(lpVtbl[2]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrRegister*, uint>)(lpVtbl[2]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrRegister.xml' path='doc/member[@name="ISyncMgrRegister.RegisterSyncMgrHandler"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT RegisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPCWSTR")] ushort* pwszDescription, [NativeTypeName("DWORD")] uint dwSyncMgrRegisterFlags)
+    public HRESULT RegisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPCWSTR")] char* pwszDescription, [NativeTypeName("DWORD")] uint dwSyncMgrRegisterFlags)
     {
-        return ((delegate* unmanaged<ISyncMgrRegister*, Guid*, ushort*, uint, int>)(lpVtbl[3]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, pwszDescription, dwSyncMgrRegisterFlags);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrRegister*, Guid*, char*, uint, int>)(lpVtbl[3]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, pwszDescription, dwSyncMgrRegisterFlags);
     }
 
     /// <include file='ISyncMgrRegister.xml' path='doc/member[@name="ISyncMgrRegister.UnregisterSyncMgrHandler"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface, INat
     [VtblIndex(4)]
     public HRESULT UnregisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<ISyncMgrRegister*, Guid*, uint, int>)(lpVtbl[4]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrRegister*, Guid*, uint, int>)(lpVtbl[4]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, dwReserved);
     }
 
     /// <include file='ISyncMgrRegister.xml' path='doc/member[@name="ISyncMgrRegister.GetHandlerRegistrationInfo"]/*' />
@@ -67,13 +67,13 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface, INat
     [VtblIndex(5)]
     public HRESULT GetHandlerRegistrationInfo([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPDWORD")] uint* pdwSyncMgrRegisterFlags)
     {
-        return ((delegate* unmanaged<ISyncMgrRegister*, Guid*, uint*, int>)(lpVtbl[5]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, pdwSyncMgrRegisterFlags);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrRegister*, Guid*, uint*, int>)(lpVtbl[5]))((ISyncMgrRegister*)Unsafe.AsPointer(ref this), clsidHandler, pdwSyncMgrRegisterFlags);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT RegisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPCWSTR")] ushort* pwszDescription, [NativeTypeName("DWORD")] uint dwSyncMgrRegisterFlags);
+        HRESULT RegisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("LPCWSTR")] char* pwszDescription, [NativeTypeName("DWORD")] uint dwSyncMgrRegisterFlags);
 
         [VtblIndex(4)]
         HRESULT UnregisterSyncMgrHandler([NativeTypeName("const IID &")] Guid* clsidHandler, [NativeTypeName("DWORD")] uint dwReserved);
@@ -86,21 +86,21 @@ public unsafe partial struct ISyncMgrRegister : ISyncMgrRegister.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, LPCWSTR, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort*, uint, int> RegisterSyncMgrHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char*, uint, int> RegisterSyncMgrHandler;
 
         [NativeTypeName("HRESULT (const IID &, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, int> UnregisterSyncMgrHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, int> UnregisterSyncMgrHandler;
 
         [NativeTypeName("HRESULT (const IID &, LPDWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, int> GetHandlerRegistrationInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, int> GetHandlerRegistrationInfo;
     }
 }

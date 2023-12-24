@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12LifetimeOwner.LifetimeStateUpdated">
+    <summary>Called when the lifetime state of a lifetime-tracked object changes.</summary>
+    <param name="NewState">The new state.</param>
+  </member>
+  <member name="ID3D12LifetimeOwner">
+    <summary>Represents an application-defined callback used for being notified of lifetime changes of an object.</summary>
+  </member>
+</doc>

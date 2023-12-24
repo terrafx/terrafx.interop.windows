@@ -19,32 +19,4 @@ public static unsafe partial class IDMLObjectTests
     {
         Assert.That(typeof(IDMLObject).GUID, Is.EqualTo(IID_IDMLObject));
     }
-
-    /// <summary>Validates that the <see cref="IDMLObject" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDMLObject>(), Is.EqualTo(sizeof(IDMLObject)));
-    }
-
-    /// <summary>Validates that the <see cref="IDMLObject" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDMLObject).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDMLObject" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDMLObject), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDMLObject), Is.EqualTo(4));
-        }
-    }
 }

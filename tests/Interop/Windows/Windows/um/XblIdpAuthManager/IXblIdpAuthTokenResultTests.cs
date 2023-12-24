@@ -19,32 +19,4 @@ public static unsafe partial class IXblIdpAuthTokenResultTests
     {
         Assert.That(typeof(IXblIdpAuthTokenResult).GUID, Is.EqualTo(IID_IXblIdpAuthTokenResult));
     }
-
-    /// <summary>Validates that the <see cref="IXblIdpAuthTokenResult" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IXblIdpAuthTokenResult>(), Is.EqualTo(sizeof(IXblIdpAuthTokenResult)));
-    }
-
-    /// <summary>Validates that the <see cref="IXblIdpAuthTokenResult" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IXblIdpAuthTokenResult).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IXblIdpAuthTokenResult" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IXblIdpAuthTokenResult), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IXblIdpAuthTokenResult), Is.EqualTo(4));
-        }
-    }
 }

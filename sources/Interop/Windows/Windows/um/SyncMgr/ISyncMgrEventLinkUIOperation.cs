@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventLinkUIOperation*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, uint>)(lpVtbl[1]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventLinkUIOperation*, uint>)(lpVtbl[1]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, uint>)(lpVtbl[2]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventLinkUIOperation*, uint>)(lpVtbl[2]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISyncMgrUIOperation.Run" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
     [VtblIndex(3)]
     public HRESULT Run(HWND hwndOwner)
     {
-        return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, HWND, int>)(lpVtbl[3]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventLinkUIOperation*, HWND, int>)(lpVtbl[3]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), hwndOwner);
     }
 
     /// <include file='ISyncMgrEventLinkUIOperation.xml' path='doc/member[@name="ISyncMgrEventLinkUIOperation.Init"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
     [VtblIndex(4)]
     public HRESULT Init([NativeTypeName("const GUID &")] Guid* rguidEventID, ISyncMgrEvent* pEvent)
     {
-        return ((delegate* unmanaged<ISyncMgrEventLinkUIOperation*, Guid*, ISyncMgrEvent*, int>)(lpVtbl[4]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), rguidEventID, pEvent);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrEventLinkUIOperation*, Guid*, ISyncMgrEvent*, int>)(lpVtbl[4]))((ISyncMgrEventLinkUIOperation*)Unsafe.AsPointer(ref this), rguidEventID, pEvent);
     }
 
     public interface Interface : ISyncMgrUIOperation.Interface
@@ -72,18 +72,18 @@ public unsafe partial struct ISyncMgrEventLinkUIOperation : ISyncMgrEventLinkUIO
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> Run;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> Run;
 
         [NativeTypeName("HRESULT (const GUID &, ISyncMgrEvent *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ISyncMgrEvent*, int> Init;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, ISyncMgrEvent*, int> Init;
     }
 }

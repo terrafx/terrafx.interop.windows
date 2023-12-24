@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_SCALE_BIAS">
-    <summary>
-      <para>Contains the values of scale and bias terms supplied to a DirectML operator. Scale and bias have the effect of applying the function g(x) = x * <i>Scale</i> + <i>Bias</i>.</para>
-    </summary>
+    <summary>Contains the values of scale and bias terms supplied to a DirectML operator. Scale and bias have the effect of applying the function g(x) = x * <i>Scale</i> + <i>Bias</i>.</summary>
   </member>
   <member name="DML_SCALE_BIAS.Scale">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>The scale term in g(x) = x * <i>Scale</i> + <i>Bias</i>.</para>
-    </summary>
+    <summary>The scale term in g(x) = x * <i>Scale</i> + <i>Bias</i>.</summary>
   </member>
   <member name="DML_SCALE_BIAS.Bias">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">FLOAT</a></b></para>
-      <para>The bias term in g(x) = x * <i>Scale</i> + <i>Bias</i>.</para>
-    </summary>
+    <summary>The bias term in g(x) = x * <i>Scale</i> + <i>Bias</i>.</summary>
   </member>
 </doc>

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12InfoQueue.AddApplicationMessage">
+    <summary>Adds a user-defined message to the message queue and sends that message to debug output.</summary>
+    <param name="Severity">Severity of a message.</param>
+    <param name="pDescription">Specifies the message string.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.AddMessage">
+    <summary>Adds a debug message to the message queue and sends that message to debug output.</summary>
+    <param name="Category">Category of a message.</param>
+    <param name="Severity">Severity of a message.</param>
+    <param name="ID">Unique identifier of a message.</param>
+    <param name="pDescription">User-defined message.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.AddRetrievalFilterEntries">
+    <summary>Add storage filters to the top of the retrieval-filter stack.</summary>
+    <param name="pFilter">Array of retrieval filters.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.AddStorageFilterEntries">
+    <summary>Add storage filters to the top of the storage-filter stack.</summary>
+    <param name="pFilter">Array of storage filters.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.ClearRetrievalFilter">
+    <summary>Remove a retrieval filter from the top of the retrieval-filter stack.</summary>
+  </member>
+  <member name="ID3D12InfoQueue.ClearStorageFilter">
+    <summary>Remove a storage filter from the top of the storage-filter stack.</summary>
+  </member>
+  <member name="ID3D12InfoQueue.ClearStoredMessages">
+    <summary>Clear all messages from the message queue.</summary>
+  </member>
+  <member name="ID3D12InfoQueue.GetBreakOnCategory">
+    <summary>Get a message category to break on when a message with that category passes through the storage filter.</summary>
+    <param name="Category">Message category to break on.</param>
+    <returns>Whether this breaking condition is turned on or off (true for on, false for off).</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetBreakOnID">
+    <summary>Get a message identifier to break on when a message with that identifier passes through the storage filter.</summary>
+    <param name="ID">Message identifier to break on.</param>
+    <returns>Whether this breaking condition is turned on or off (true for on, false for off).</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetBreakOnSeverity">
+    <summary>Get a message severity level to break on when a message with that severity level passes through the storage filter.</summary>
+    <param name="Severity">Message severity level to break on.</param>
+    <returns>Whether this breaking condition is turned on or off (true for on, false for off).</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetMessage">
+    <summary>Get a message from the message queue.</summary>
+    <param name="MessageIndex">Index into message queue after an optional retrieval filter has been applied. This can be between 0 and the number of messages in the message queue that pass through the retrieval filter (which can be obtained with <see cref="GetNumStoredMessagesAllowedByRetrievalFilter" />). 0 is the message at the front of the message queue.</param>
+    <param name="pMessage">Returned message.</param>
+    <param name="pMessageByteLength">Size of <i>pMessage</i> in bytes.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetMessageCountLimit">
+    <summary>Get the maximum number of messages that can be added to the message queue.</summary>
+    <returns>
+      <para>Maximum number of messages that can be added to the queue. -1 means no limit.</para>
+      <para>When the number of messages in the message queue has reached the maximum limit, new messages coming in will push old messages out.</para>
+    </returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetMuteDebugOutput">
+    <summary>Get a boolean that determines if debug output is on or off.</summary>
+    <returns>Whether the debug output is on or off (true for on, false for off).</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetNumMessagesAllowedByStorageFilter">
+    <summary>Get the number of messages that were allowed to pass through a storage filter.</summary>
+    <returns>Number of messages allowed by a storage filter.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetNumMessagesDeniedByStorageFilter">
+    <summary>Get the number of messages that were denied passage through a storage filter.</summary>
+    <returns>Number of messages denied by a storage filter.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetNumMessagesDiscardedByMessageCountLimit">
+    <summary>Get the number of messages that were discarded due to the message count limit.</summary>
+    <returns>Number of messages discarded.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetNumStoredMessages">
+    <summary>Get the number of messages currently stored in the message queue.</summary>
+    <returns>Number of messages currently stored in the message queue.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetNumStoredMessagesAllowedByRetrievalFilter">
+    <summary>Get the number of messages that are able to pass through a retrieval filter.</summary>
+    <returns>Number of messages allowed by a retrieval filter.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetRetrievalFilter">
+    <summary>Get the retrieval filter at the top of the retrieval-filter stack.</summary>
+    <param name="pFilter">Retrieval filter at the top of the retrieval-filter stack.</param>
+    <param name="pFilterByteLength">Size of the retrieval filter in bytes. If <i>pFilter</i> is NULL, the size of the retrieval filter will be output to this parameter.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetRetrievalFilterStackSize">
+    <summary>Get the size of the retrieval-filter stack in bytes.</summary>
+    <returns>Size of the retrieval-filter stack in bytes.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetStorageFilter">
+    <summary>Get the storage filter at the top of the storage-filter stack.</summary>
+    <param name="pFilter">Storage filter at the top of the storage-filter stack.</param>
+    <param name="pFilterByteLength">Size of the storage filter in bytes. If <i>pFilter</i> is NULL, the size of the storage filter will be output to this parameter.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.GetStorageFilterStackSize">
+    <summary>Get the size of the storage-filter stack in bytes.</summary>
+    <returns>Size of the storage-filter stack in bytes.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.PopRetrievalFilter">
+    <summary>Pop a retrieval filter from the top of the retrieval-filter stack.</summary>
+  </member>
+  <member name="ID3D12InfoQueue.PopStorageFilter">
+    <summary>Pop a storage filter from the top of the storage-filter stack.</summary>
+  </member>
+  <member name="ID3D12InfoQueue.PushCopyOfRetrievalFilter">
+    <summary>Push a copy of retrieval filter currently on the top of the retrieval-filter stack onto the retrieval-filter stack.</summary>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.PushCopyOfStorageFilter">
+    <summary>Push a copy of storage filter currently on the top of the storage-filter stack onto the storage-filter stack.</summary>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.PushEmptyRetrievalFilter">
+    <summary>Push an empty retrieval filter onto the retrieval-filter stack.</summary>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.PushEmptyStorageFilter">
+    <summary>Push an empty storage filter onto the storage-filter stack.</summary>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.PushRetrievalFilter">
+    <summary>Push a retrieval filter onto the retrieval-filter stack.</summary>
+    <param name="pFilter">Pointer to a retrieval filter.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.PushStorageFilter">
+    <summary>Push a storage filter onto the storage-filter stack.</summary>
+    <param name="pFilter">Pointer to a storage filter.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.SetBreakOnCategory">
+    <summary>Set a message category to break on when a message with that category passes through the storage filter.</summary>
+    <param name="Category">Message category to break on.</param>
+    <param name="bEnable">Turns this breaking condition on or off (true for on, false for off).</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.SetBreakOnID">
+    <summary>Set a message identifier to break on when a message with that identifier passes through the storage filter.</summary>
+    <param name="ID">Message identifier to break on.</param>
+    <param name="bEnable">Turns this breaking condition on or off (true for on, false for off).</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.SetBreakOnSeverity">
+    <summary>Set a message severity level to break on when a message with that severity level passes through the storage filter.</summary>
+    <param name="Severity">A message severity level to break on.</param>
+    <param name="bEnable">Turns this breaking condition on or off (true for on, false for off).</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.SetMessageCountLimit">
+    <summary>Set the maximum number of messages that can be added to the message queue.</summary>
+    <param name="MessageCountLimit">
+      <para>Maximum number of messages that can be added to the message queue. -1 means no limit.</para>
+      <para>When the number of messages in the message queue has reached the maximum limit, new messages coming in will push old messages out.</para>
+    </param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12InfoQueue.SetMuteDebugOutput">
+    <summary>Set a boolean that turns the debug output on or off.</summary>
+    <param name="bMute">Disable/Enable the debug output (true to disable or mute the output, false to enable the output).</param>
+  </member>
+  <member name="ID3D12InfoQueue">
+    <summary>An information-queue interface stores, retrieves, and filters debug messages. The queue consists of a message queue, an optional storage filter stack, and a optional retrieval filter stack.</summary>
+  </member>
+</doc>

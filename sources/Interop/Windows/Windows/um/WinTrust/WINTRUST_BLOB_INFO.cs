@@ -19,7 +19,7 @@ public unsafe partial struct WINTRUST_BLOB_INFO
 
     /// <include file='WINTRUST_BLOB_INFO.xml' path='doc/member[@name="WINTRUST_BLOB_INFO.pcwszDisplayName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcwszDisplayName;
+    public char* pcwszDisplayName;
 
     /// <include file='WINTRUST_BLOB_INFO.xml' path='doc/member[@name="WINTRUST_BLOB_INFO.cbMemObject"]/*' />
     [NativeTypeName("DWORD")]

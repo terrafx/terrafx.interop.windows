@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_RENDER_TARGET_TYPE.xml' path='doc/member[@name="D2D1_RENDER_TARGET_TYPE"]/*' />
-public enum D2D1_RENDER_TARGET_TYPE : uint
+public enum D2D1_RENDER_TARGET_TYPE
 {
     /// <include file='D2D1_RENDER_TARGET_TYPE.xml' path='doc/member[@name="D2D1_RENDER_TARGET_TYPE.D2D1_RENDER_TARGET_TYPE_DEFAULT"]/*' />
     D2D1_RENDER_TARGET_TYPE_DEFAULT = 0,
@@ -18,5 +18,5 @@ public enum D2D1_RENDER_TARGET_TYPE : uint
     D2D1_RENDER_TARGET_TYPE_HARDWARE = 2,
 
     /// <include file='D2D1_RENDER_TARGET_TYPE.xml' path='doc/member[@name="D2D1_RENDER_TARGET_TYPE.D2D1_RENDER_TARGET_TYPE_FORCE_DWORD"]/*' />
-    D2D1_RENDER_TARGET_TYPE_FORCE_DWORD = 0xffffffff,
+    D2D1_RENDER_TARGET_TYPE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

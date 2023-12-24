@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_QUADRATIC_BEZIER_SEGMENT">
-    <summary>
-      <para>Contains the control point and end point for a quadratic Bezier segment.</para>
-    </summary>
+    <summary>Contains the control point and end point for a quadratic Bezier segment.</summary>
   </member>
   <member name="D2D1_QUADRATIC_BEZIER_SEGMENT.point1">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The control point of the quadratic Bezier segment.</para>
-    </summary>
+    <summary>The control point of the quadratic Bezier segment.</summary>
   </member>
   <member name="D2D1_QUADRATIC_BEZIER_SEGMENT.point2">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The end point of the quadratic Bezier segment.</para>
-    </summary>
+    <summary>The end point of the quadratic Bezier segment.</summary>
   </member>
 </doc>

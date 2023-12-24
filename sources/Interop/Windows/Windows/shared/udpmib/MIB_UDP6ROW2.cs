@@ -10,11 +10,11 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2"]/*' />
-public unsafe partial struct MIB_UDP6ROW2
+public partial struct MIB_UDP6ROW2
 {
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.ucLocalAddr"]/*' />
     [NativeTypeName("UCHAR[16]")]
-    public fixed byte ucLocalAddr[16];
+    public _ucLocalAddr_e__FixedBuffer ucLocalAddr;
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwLocalScopeId"]/*' />
     [NativeTypeName("DWORD")]
@@ -32,16 +32,16 @@ public unsafe partial struct MIB_UDP6ROW2
     public LARGE_INTEGER liCreateTimestamp;
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.Anonymous"]/*' />
-    [NativeTypeName("_MIB_UDP6ROW2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/udpmib.h:177:5)")]
+    [NativeTypeName("__AnonymousRecord_udpmib_L177_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.OwningModuleInfo"]/*' />
     [NativeTypeName("ULONGLONG[16]")]
-    public fixed ulong OwningModuleInfo[16];
+    public _OwningModuleInfo_e__FixedBuffer OwningModuleInfo;
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.ucRemoteAddr"]/*' />
     [NativeTypeName("UCHAR[16]")]
-    public fixed byte ucRemoteAddr[16];
+    public _ucRemoteAddr_e__FixedBuffer ucRemoteAddr;
 
     /// <include file='MIB_UDP6ROW2.xml' path='doc/member[@name="MIB_UDP6ROW2.dwRemoteScopeId"]/*' />
     [NativeTypeName("DWORD")]
@@ -55,7 +55,7 @@ public unsafe partial struct MIB_UDP6ROW2
     public int SpecificPortBind
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.SpecificPortBind;
         }
@@ -84,7 +84,7 @@ public unsafe partial struct MIB_UDP6ROW2
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_MIB_UDP6ROW2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/udpmib.h:178:9)")]
+        [NativeTypeName("__AnonymousRecord_udpmib_L178_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />
@@ -101,9 +101,9 @@ public unsafe partial struct MIB_UDP6ROW2
             public int SpecificPortBind
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
-                    return _bitfield & 0x1;
+                    return (_bitfield << 31) >> 31;
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -113,5 +113,26 @@ public unsafe partial struct MIB_UDP6ROW2
                 }
             }
         }
+    }
+
+    /// <include file='_ucLocalAddr_e__FixedBuffer.xml' path='doc/member[@name="_ucLocalAddr_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ucLocalAddr_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_OwningModuleInfo_e__FixedBuffer.xml' path='doc/member[@name="_OwningModuleInfo_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _OwningModuleInfo_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_ucRemoteAddr_e__FixedBuffer.xml' path='doc/member[@name="_ucRemoteAddr_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ucRemoteAddr_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

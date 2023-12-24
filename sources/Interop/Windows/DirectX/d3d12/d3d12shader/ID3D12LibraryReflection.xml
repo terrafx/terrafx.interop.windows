@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12LibraryReflection.GetDesc">
+    <summary>Fills the library descriptor structure for the library reflection.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D12_LIBRARY_DESC" /> structure that receives a description of the library reflection.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12LibraryReflection.GetFunctionByIndex">
+    <summary>Gets the function reflector.</summary>
+    <param name="FunctionIndex">The zero-based index of the function reflector to retrieve.</param>
+    <returns>The function reflector, as a pointer to <see cref="ID3D12FunctionReflection" />.</returns>
+  </member>
+  <member name="ID3D12LibraryReflection">
+    <summary>
+      <para>A library-reflection interface accesses library info.<div><b>Note</b>  This interface is part of the HLSL shader linking technology that you can use on all Direct3D 12 platforms to create precompiled HLSL functions, package them into libraries, and link them into full shaders at run time.</div></para>
+    </summary>
+  </member>
+</doc>

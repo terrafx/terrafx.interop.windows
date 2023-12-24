@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TAPE_PREPARE">
-    <summary>
-      <para>The
-<b>TAPE_PREPARE</b> structure describes how to prepare the tape.</para>
-    </summary>
+    <summary>The<b>TAPE_PREPARE</b> structure describes how to prepare the tape.</summary>
   </member>
   <member name="TAPE_PREPARE.Operation">
     <summary>
@@ -16,78 +13,68 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_LOCK</b>
-                </description>
-              </item>
-              <item>
-                <description>3L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Locks the tape ejection mechanism so that the tape is not ejected accidentally during a tape operation.</para>
-          </description>
-        </item>
-        <item>
+          <description>Locks the tape ejection mechanism so that the tape is not ejected accidentally during a tape operation.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_TENSION</b>
-                </description>
-              </item>
-              <item>
-                <description>2L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Moves to the end of the tape and rewinds to the beginning of the tape. This value is ignored if the tape device does not support tensioning.</para>
-          </description>
-        </item>
-        <item>
+          <description>Moves to the end of the tape and rewinds to the beginning of the tape. This value is ignored if the tape device does not support tensioning.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_UNLOAD</b>
-                </description>
-              </item>
-              <item>
-                <description>1L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Rewinds and unloads the tape.</para>
-          </description>
-        </item>
-        <item>
+          <description>Rewinds and unloads the tape.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_UNLOCK</b>
-                </description>
-              </item>
-              <item>
-                <description>4L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Unlocks the tape ejection mechanism.</para>
-          </description>
-        </item>
+          <description>Unlocks the tape ejection mechanism.</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="TAPE_PREPARE.Immediate">
-    <summary></summary>
-  </member>
+  <member name="TAPE_PREPARE.Immediate"></member>
 </doc>

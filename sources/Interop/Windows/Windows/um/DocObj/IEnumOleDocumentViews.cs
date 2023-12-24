@@ -25,7 +25,7 @@ public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumOleDocumentViews*, Guid*, void**, int>)(lpVtbl[0]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumOleDocumentViews*, Guid*, void**, int>)(lpVtbl[0]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumOleDocumentViews*, uint>)(lpVtbl[1]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumOleDocumentViews*, uint>)(lpVtbl[1]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumOleDocumentViews*, uint>)(lpVtbl[2]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumOleDocumentViews*, uint>)(lpVtbl[2]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumOleDocumentViews.xml' path='doc/member[@name="IEnumOleDocumentViews.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Inter
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint cViews, IOleDocumentView** rgpView, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumOleDocumentViews*, uint, IOleDocumentView**, uint*, int>)(lpVtbl[3]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), cViews, rgpView, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumOleDocumentViews*, uint, IOleDocumentView**, uint*, int>)(lpVtbl[3]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), cViews, rgpView, pcFetched);
     }
 
     /// <include file='IEnumOleDocumentViews.xml' path='doc/member[@name="IEnumOleDocumentViews.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Inter
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint cViews)
     {
-        return ((delegate* unmanaged<IEnumOleDocumentViews*, uint, int>)(lpVtbl[4]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), cViews);
+        return ((delegate* unmanaged[MemberFunction]<IEnumOleDocumentViews*, uint, int>)(lpVtbl[4]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), cViews);
     }
 
     /// <include file='IEnumOleDocumentViews.xml' path='doc/member[@name="IEnumOleDocumentViews.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Inter
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumOleDocumentViews*, int>)(lpVtbl[5]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumOleDocumentViews*, int>)(lpVtbl[5]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumOleDocumentViews.xml' path='doc/member[@name="IEnumOleDocumentViews.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Inter
     [VtblIndex(6)]
     public HRESULT Clone(IEnumOleDocumentViews** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumOleDocumentViews*, IEnumOleDocumentViews**, int>)(lpVtbl[6]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumOleDocumentViews*, IEnumOleDocumentViews**, int>)(lpVtbl[6]))((IEnumOleDocumentViews*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumOleDocumentViews : IEnumOleDocumentViews.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, IOleDocumentView **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IOleDocumentView**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IOleDocumentView**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumOleDocumentViews **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumOleDocumentViews**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumOleDocumentViews**, int> Clone;
     }
 }

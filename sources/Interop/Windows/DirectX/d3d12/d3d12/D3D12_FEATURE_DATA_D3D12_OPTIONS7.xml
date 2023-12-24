@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS7">
+    <summary>Indicates the level of support that the adapter provides for mesh and amplification shaders, and for sampler feedback.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS7.MeshShaderTier">
+    <summary>Indicates the level of support for mesh and amplification shaders.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS7.SamplerFeedbackTier">
+    <summary>Indicates the level of support for sampler feedback.</summary>
+  </member>
+</doc>

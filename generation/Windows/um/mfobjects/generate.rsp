@@ -30,5 +30,3 @@ MF_PLUGIN_CONTROL_POLICY=SupportedOSPlatform("windows6.2")
 --with-librarypath
 MFDeserializeAttributesFromStream=mfplat
 MFSerializeAttributesToStream=mfplat
---with-type
-MF_Plugin_Type=uint

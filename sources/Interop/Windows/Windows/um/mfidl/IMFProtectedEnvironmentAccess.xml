@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFProtectedEnvironmentAccess.Call">
-    <summary>
-      <para>Allows content protection systems to access the protected environment.</para>
-    </summary>
-    <param name="inputLength">
-      <para>The length in bytes of the input data.</para>
-    </param>
-    <param name="input">
-      <para>A pointer to the input data.</para>
-    </param>
-    <param name="outputLength">
-      <para>The length in bytes of the output data.</para>
-    </param>
-    <param name="output">
-      <para>A pointer to the output data.</para>
-    </param>
+    <summary>Allows content protection systems to access the protected environment.</summary>
+    <param name="inputLength">The length in bytes of the input data.</param>
+    <param name="input">A pointer to the input data.</param>
+    <param name="outputLength">The length in bytes of the output data.</param>
+    <param name="output">A pointer to the output data.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -25,50 +15,28 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>See  <see cref="MFCreateProtectedEnvironmentAccess" /> for an example of how to create an <see cref="IMFProtectedEnvironmentAccess" /> object and use the <b>Call</b> method.</para>
-    </remarks>
-    <seealso cref="IMFProtectedEnvironmentAccess" />
-    <seealso cref="MFCreateProtectedEnvironmentAccess" />
   </member>
   <member name="IMFProtectedEnvironmentAccess.ReadGRL">
-    <summary>
-      <para>Gets the Global Revocation List (GLR).</para>
-    </summary>
-    <param name="outputLength">
-      <para>The length of the data returned in <b>output</b>.</para>
-    </param>
-    <param name="output">
-      <para>Receives the contents of the global revocation list file.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Allows reading of the system Global Revocation List (GRL).</para>
-    </remarks>
-    <seealso cref="IMFProtectedEnvironmentAccess" />
+    <summary>Gets the Global Revocation List (GLR).</summary>
+    <param name="outputLength">The length of the data returned in <b>output</b>.</param>
+    <param name="output">Receives the contents of the global revocation list file.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFProtectedEnvironmentAccess">
-    <summary>
-      <para>Provides a method that allows content protection systems to perform a handshake with the protected environment. This is needed because the <b>CreateFile</b> and <b>DeviceIoControl</b> APIs are not available to Windows Store apps.</para>
-    </summary>
-    <remarks>
-      <para>See  <see cref="MFCreateProtectedEnvironmentAccess" /> for an example of how to create and use an <b>IMFProtectedEnvironmentAccess</b> object.</para>
-    </remarks>
-    <seealso cref="MFCreateProtectedEnvironmentAccess" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Provides a method that allows content protection systems to perform a handshake with the protected environment. This is needed because the <b>CreateFile</b> and <b>DeviceIoControl</b> APIs are not available to Windows Store apps.</summary>
   </member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IWICStreamProviderTests
     {
         Assert.That(typeof(IWICStreamProvider).GUID, Is.EqualTo(IID_IWICStreamProvider));
     }
-
-    /// <summary>Validates that the <see cref="IWICStreamProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICStreamProvider>(), Is.EqualTo(sizeof(IWICStreamProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICStreamProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICStreamProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICStreamProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICStreamProvider), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICStreamProvider), Is.EqualTo(4));
-        }
-    }
 }

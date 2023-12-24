@@ -3,48 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10Query.GetDesc">
-    <summary>
-      <para>Get a query description.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_QUERY_DESC" />*</b></para>
-      <para>Pointer to a query description (see <see cref="D3D10_QUERY_DESC" />).</para>
-    </param>
-    <seealso cref="ID3D10Query Interface" />
+    <summary>Get a query description.</summary>
+    <param name="pDesc">Pointer to a query description (see <see cref="D3D10_QUERY_DESC" />).</param>
   </member>
   <member name="ID3D10Query">
-    <summary>
-      <para>A query interface queries information from the GPU.</para>
-    </summary>
-    <remarks>
-      <para>A query can be created with <see cref="ID3D10Device.CreateQuery" />.</para>
-      <para>This interface inherits the functionality of an <see cref="ID3D10Asynchronous Interface" />.</para>
-      <para>Query data is typically gathered by issuing an <see cref="ID3D10Asynchronous.Begin" /> command, issuing some graphics commands, issuing an <see cref="ID3D10Asynchronous.End" /> command, and then calling <see cref="ID3D10Asynchronous.GetData" /> to get data about what happened in between the Begin and End calls. The data returned by GetData will be different depending on the type of query.</para>
-      <para>There are, however, some queries that do not require calls to Begin. For a list of possible queries see <see cref="D3D10_QUERY" />.</para>
-      <para>A query is typically executed as shown in the following code:</para>
-      <code>D3D10_QUERY_DESC queryDesc;
-
-... // Fill out queryDesc structure
-
-ID3D10Query * pQuery;
-pDevice-&gt;CreateQuery(&amp;amp;amp;amp;amp;amp;queryDesc, &amp;amp;amp;amp;amp;amp;pQuery);
-
-pQuery-&gt;Begin();
-
-... // Issue graphics commands, do whatever
-
-pQuery-&gt;End();
-
-UINT64 queryData; // This data type is different depending on the query type
-
-while( S_OK != pQuery-&gt;GetData(&amp;amp;amp;amp;amp;amp;queryData, sizeof(UINT64), 0) )
-{
-}
-
-</code>
-      <para>When using a query that does not require a call to Begin, it still requires a call to End. The call to End causes the data returned by GetData to be accurate up until the last call to End.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D10Asynchronous" />
+    <summary>A query interface queries information from the GPU.</summary>
   </member>
 </doc>

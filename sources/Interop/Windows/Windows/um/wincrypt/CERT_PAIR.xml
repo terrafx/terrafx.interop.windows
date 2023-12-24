@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_PAIR">
-    <summary>
-      <para>The <b>CERT_PAIR</b> structure contains a certificate and its pair cross certificate.</para>
-    </summary>
+    <summary>The <b>CERT_PAIR</b> structure contains a certificate and its pair cross certificate.</summary>
   </member>
   <member name="CERT_PAIR.Forward">
-    <summary>
-      <para>An optional <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_BLOB</a> structure that contains a certificate. If the <b>cbData</b> member of <b>Forward</b> is zero, the certificate may be empty.</para>
-    </summary>
+    <summary>An optional <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_BLOB</a> structure that contains a certificate. If the <b>cbData</b> member of <b>Forward</b> is zero, the certificate may be empty.</summary>
   </member>
   <member name="CERT_PAIR.Reverse">
-    <summary>
-      <para>An optional <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_BLOB</a> structure that contains a certificate. If the <b>cbData</b> member of <b>Reverse</b> is zero, the certificate may be empty.</para>
-    </summary>
+    <summary>An optional <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_BLOB</a> structure that contains a certificate. If the <b>cbData</b> member of <b>Reverse</b> is zero, the certificate may be empty.</summary>
   </member>
 </doc>

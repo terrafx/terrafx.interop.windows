@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_CAPTURE_ENGINE_SINK_TYPE">
-    <summary>
-      <para>Specifies a type of capture sink.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies a type of capture sink.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_SINK_TYPE.MF_CAPTURE_ENGINE_SINK_TYPE_RECORD">
-    <summary>
-      <para>A recording sink, for capturing audio and video to a file.</para>
-    </summary>
+    <summary>A recording sink, for capturing audio and video to a file.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_SINK_TYPE.MF_CAPTURE_ENGINE_SINK_TYPE_PREVIEW">
-    <summary>
-      <para>A preview sink, for previewing live audio or video.</para>
-    </summary>
+    <summary>A preview sink, for previewing live audio or video.</summary>
   </member>
   <member name="MF_CAPTURE_ENGINE_SINK_TYPE.MF_CAPTURE_ENGINE_SINK_TYPE_PHOTO">
-    <summary>
-      <para>A photo sink, for capturing still images.</para>
-    </summary>
+    <summary>A photo sink, for capturing still images.</summary>
   </member>
 </doc>

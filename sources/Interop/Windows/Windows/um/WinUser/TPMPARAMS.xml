@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TPMPARAMS">
-    <summary>
-      <para>Contains extended parameters for the <see cref="TrackPopupMenuEx" /> function.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/menus">Menus</seealso>
-    <seealso cref="TrackPopupMenuEx" />
+    <summary>Contains extended parameters for the <see cref="TrackPopupMenuEx" /> function.</summary>
   </member>
   <member name="TPMPARAMS.cbSize">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The size of structure, in bytes.</para>
-    </summary>
+    <summary>The size of structure, in bytes.</summary>
   </member>
   <member name="TPMPARAMS.rcExclude">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>The rectangle to be excluded when positioning the window, in screen coordinates.</para>
-    </summary>
+    <summary>The rectangle to be excluded when positioning the window, in screen coordinates.</summary>
   </member>
 </doc>

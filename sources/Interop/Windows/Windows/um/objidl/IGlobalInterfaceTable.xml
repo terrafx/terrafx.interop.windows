@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IGlobalInterfaceTable.GetInterfaceFromGlobal">
-    <summary>
-      <para>Retrieves a pointer to an interface on an object that is usable by the calling apartment. This interface must be currently registered in the global interface table.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Identifies the interface (and its object), and is retrieved through a call to <see cref="IGlobalInterfaceTable.RegisterInterfaceInGlobal" />.</para>
-    </param>
-    <param name="riid">
-      <para>The IID of the interface.</para>
-    </param>
-    <param name="ppv">
-      <para>A pointer to the pointer for the requested interface.</para>
-    </param>
+    <summary>Retrieves a pointer to an interface on an object that is usable by the calling apartment. This interface must be currently registered in the global interface table.</summary>
+    <param name="dwCookie">Identifies the interface (and its object), and is retrieved through a call to <see cref="IGlobalInterfaceTable.RegisterInterfaceInGlobal" />.</param>
+    <param name="riid">The IID of the interface.</param>
+    <param name="ppv">A pointer to the pointer for the requested interface.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -22,48 +14,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>After an interface has been registered in the global interface table, an apartment can get a pointer to this interface by calling the <b>GetInterfaceFromGlobal</b> method with the supplied cookie. This pointer to the interface can be used in the calling apartment but not by other apartments in the process.</para>
-      <para>The application is responsible for coordinating access to the global variable during calls to <see cref="IGlobalInterfaceTable.RevokeInterfaceFromGlobal" />. That is, the application should ensure that one thread does not call <b>RevokeInterfaceFromGlobal</b> while another thread is calling <b>GetInterfaceFromGlobal</b> with the same cookie. Multiple calls to <b>GetInterfaceFromGlobal</b> for the same cookie are permitted.</para>
-      <para>The <b>GetInterfaceFromGlobal</b> method calls <see cref="AddRef" /> on the pointer obtained in the <i>ppv</i> parameter. It is the caller's responsibility to call <see cref="Release" /> on this pointer.</para>
-    </remarks>
-    <seealso cref="IGlobalInterfaceTable" />
   </member>
   <member name="IGlobalInterfaceTable.RegisterInterfaceInGlobal">
-    <summary>
-      <para>Registers the specified interface on an object residing in one apartment of a process as a global interface, enabling other apartments access to that interface.</para>
-    </summary>
-    <param name="pUnk">
-      <para>An interface pointer of type <i>riid</i> on the object on which the interface to be registered as global is implemented.</para>
-    </param>
-    <param name="riid">
-      <para>The IID of the interface to be registered as global.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>An identifier that can be used by another apartment to get access to a pointer to the interface being registered. The value of an invalid cookie is 0.</para>
-    </param>
+    <summary>Registers the specified interface on an object residing in one apartment of a process as a global interface, enabling other apartments access to that interface.</summary>
+    <param name="pUnk">An interface pointer of type <i>riid</i> on the object on which the interface to be registered as global is implemented.</param>
+    <param name="riid">The IID of the interface to be registered as global.</param>
+    <param name="pdwCookie">An identifier that can be used by another apartment to get access to a pointer to the interface being registered. The value of an invalid cookie is 0.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -71,42 +53,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Called in the apartment in which an object resides to register one of the object's interfaces as a global interface. This method supplies a pointer to a cookie that other apartments can use in a call to the <see cref="GetInterfaceFromGlobal" /> method to get a pointer to that interface.</para>
-      <para>The interface pointer may be a pointer to an in-process object, or it may be a pointer to a proxy for an object residing in another apartment, in another process, or on another computer.</para>
-      <para>The apartment that calls this method must remain alive until the corresponding call to <see cref="RevokeInterfaceFromGlobal" />.</para>
-    </remarks>
-    <seealso cref="IGlobalInterfaceTable" />
   </member>
   <member name="IGlobalInterfaceTable.RevokeInterfaceFromGlobal">
-    <summary>
-      <para>Revokes the registration of an interface in the global interface table.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Identifies the interface whose global registration is to be revoked.</para>
-    </param>
+    <summary>Revokes the registration of an interface in the global interface table.</summary>
+    <param name="dwCookie">Identifies the interface whose global registration is to be revoked.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -114,41 +90,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The parameter is invalid.</para>
-          </description>
-        </item>
+          <description>The parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Call this method when an interface registered in the global interface table object no longer needs to be accessed by other apartments in the same process. This method can be called by any apartment in the process, including apartments other than the one that registered the interface in the global interface table.</para>
-    </remarks>
-    <seealso cref="IGlobalInterfaceTable" />
   </member>
   <member name="IGlobalInterfaceTable">
-    <summary>
-      <para>Enables any apartment in a process to get access to an interface implemented on an object in any other apartment in the process.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IGlobalInterfaceTable</b> interface is an efficient way for a process to store an interface pointer in a memory location that can be accessed from multiple apartments within the process, such as processwide variables and agile (free-threaded marshaled) objects containing interface pointers to other objects.</para>
-      <para>An agile object is unaware of the underlying COM infrastructure in which it runs - in other words, what apartment, context, and thread it is executing on. The object may be holding on to interfaces that are specific to an apartment or context. For this reason, calling these interfaces from wherever the agile component is executing may not always work properly. The global interface table avoids this problem by guaranteeing that a valid proxy (or direct pointer) to the object is used, based on where the agile object is executing.</para>
-      <para>The global interface table is not portable across process or machine boundaries, so it cannot be used in place of the normal parameter-passing mechanism.</para>
-    </remarks>
+    <summary>Enables any apartment in a process to get access to an interface implemented on an object in any other apartment in the process.</summary>
   </member>
 </doc>

@@ -3,47 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESSOR_POWER_POLICY">
-    <summary>
-      <para>Contains information about processor performance control and C-states.</para>
-    </summary>
-    <seealso cref="CallNtPowerInformation" />
-    <seealso cref="PROCESSOR_POWER_POLICY_INFO" />
+    <summary>Contains information about processor performance control and C-states.</summary>
   </member>
   <member name="PROCESSOR_POWER_POLICY.Revision">
-    <summary>
-      <para>The current structure revision level.  Set this value by calling <see cref="ReadProcessorPwrScheme" /> before using a  <b>PROCESSOR_POWER_POLICY</b> structure to set power policy.</para>
-    </summary>
+    <summary>The current structure revision level. Set this value by calling <see cref="ReadProcessorPwrScheme" /> before using a <b>PROCESSOR_POWER_POLICY</b> structure to set power policy.</summary>
   </member>
   <member name="PROCESSOR_POWER_POLICY.DynamicThrottle">
-    <summary>
-      <para>The current processor performance state policy. This member must be one of the values described in
-<a href="https://docs.microsoft.com//windows/desktop/Power/processor-performance-control-policy-constants">Processor Performance Control Policy Constants</a>.</para>
-    </summary>
+    <summary>The current processor performance state policy. This member must be one of the values described in<a href="https://docs.microsoft.com//windows/desktop/Power/processor-performance-control-policy-constants">Processor Performance Control Policy Constants</a>.</summary>
   </member>
   <member name="PROCESSOR_POWER_POLICY.Spare">
-    <summary>
-      <para>Reserved; set to zero.</para>
-    </summary>
+    <summary>Reserved; set to zero.</summary>
   </member>
   <member name="PROCESSOR_POWER_POLICY.DisableCStates">
-    <summary>
-      <para>Reserved; set to zero.</para>
-    </summary>
+    <summary>Reserved; set to zero.</summary>
   </member>
   <member name="PROCESSOR_POWER_POLICY.Reserved">
-    <summary>
-      <para>Reserved; set to zero.</para>
-    </summary>
+    <summary>Reserved; set to zero.</summary>
   </member>
   <member name="PROCESSOR_POWER_POLICY.PolicyCount">
-    <summary>
-      <para>The number of elements in the <b>Policy</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>Policy</b> array.</summary>
   </member>
   <member name="PROCESSOR_POWER_POLICY.Policy">
-    <summary>
-      <para>An array of
-<see cref="PROCESSOR_POWER_POLICY_INFO" /> structures that defines values used to apply processor C-state policy settings. Policy[0] corresponds to ACPI C-state C1, Policy[1] corresponds to C2, and Policy[2] corresponds to C3. The <b>AllowPromotion</b> member determines whether the processor can be promoted to the state. For example, if Policy[0].AllowPromotion is 0, the computer cannot transition from C0 to C1.</para>
-    </summary>
+    <summary>An array of<see cref="PROCESSOR_POWER_POLICY_INFO" /> structures that defines values used to apply processor C-state policy settings. Policy[0] corresponds to ACPI C-state C1, Policy[1] corresponds to C2, and Policy[2] corresponds to C3. The <b>AllowPromotion</b> member determines whether the processor can be promoted to the state. For example, if Policy[0].AllowPromotion is 0, the computer cannot transition from C0 to C1.</summary>
   </member>
 </doc>

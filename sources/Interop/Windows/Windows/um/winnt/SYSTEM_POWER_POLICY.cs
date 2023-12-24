@@ -3,15 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY"]/*' />
-public unsafe partial struct SYSTEM_POWER_POLICY
+public partial struct SYSTEM_POWER_POLICY
 {
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.Revision"]/*' />
     [NativeTypeName("DWORD")]
@@ -48,7 +45,7 @@ public unsafe partial struct SYSTEM_POWER_POLICY
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.Spare2"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Spare2[2];
+    public _Spare2_e__FixedBuffer Spare2;
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.MinSleep"]/*' />
     public SYSTEM_POWER_STATE MinSleep;
@@ -89,7 +86,7 @@ public unsafe partial struct SYSTEM_POWER_POLICY
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.VideoReserved"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint VideoReserved[3];
+    public _VideoReserved_e__FixedBuffer VideoReserved;
 
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.SpindownTimeout"]/*' />
     [NativeTypeName("DWORD")]
@@ -111,26 +108,24 @@ public unsafe partial struct SYSTEM_POWER_POLICY
     /// <include file='SYSTEM_POWER_POLICY.xml' path='doc/member[@name="SYSTEM_POWER_POLICY.OverThrottled"]/*' />
     public POWER_ACTION_POLICY OverThrottled;
 
+    /// <include file='_Spare2_e__FixedBuffer.xml' path='doc/member[@name="_Spare2_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Spare2_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
     /// <include file='_DischargePolicy_e__FixedBuffer.xml' path='doc/member[@name="_DischargePolicy_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
     public partial struct _DischargePolicy_e__FixedBuffer
     {
         public SYSTEM_POWER_LEVEL e0;
-        public SYSTEM_POWER_LEVEL e1;
-        public SYSTEM_POWER_LEVEL e2;
-        public SYSTEM_POWER_LEVEL e3;
+    }
 
-        [UnscopedRef]
-        public ref SYSTEM_POWER_LEVEL this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<SYSTEM_POWER_LEVEL> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
+    /// <include file='_VideoReserved_e__FixedBuffer.xml' path='doc/member[@name="_VideoReserved_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _VideoReserved_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

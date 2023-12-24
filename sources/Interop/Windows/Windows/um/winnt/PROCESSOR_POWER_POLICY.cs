@@ -3,15 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY"]/*' />
-public unsafe partial struct PROCESSOR_POWER_POLICY
+public partial struct PROCESSOR_POWER_POLICY
 {
     /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Revision"]/*' />
     [NativeTypeName("DWORD")]
@@ -22,7 +19,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
 
     /// <include file='PROCESSOR_POWER_POLICY.xml' path='doc/member[@name="PROCESSOR_POWER_POLICY.Spare"]/*' />
     [NativeTypeName("BYTE[3]")]
-    public fixed byte Spare[3];
+    public _Spare_e__FixedBuffer Spare;
 
     public uint _bitfield;
 
@@ -31,7 +28,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
     public uint DisableCStates
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -48,7 +45,7 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
     public uint Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 1) & 0x7FFFFFFFu;
         }
@@ -68,25 +65,17 @@ public unsafe partial struct PROCESSOR_POWER_POLICY
     [NativeTypeName("PROCESSOR_POWER_POLICY_INFO[3]")]
     public _Policy_e__FixedBuffer Policy;
 
+    /// <include file='_Spare_e__FixedBuffer.xml' path='doc/member[@name="_Spare_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _Spare_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
     /// <include file='_Policy_e__FixedBuffer.xml' path='doc/member[@name="_Policy_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
     public partial struct _Policy_e__FixedBuffer
     {
         public PROCESSOR_POWER_POLICY_INFO e0;
-        public PROCESSOR_POWER_POLICY_INFO e1;
-        public PROCESSOR_POWER_POLICY_INFO e2;
-
-        [UnscopedRef]
-        public ref PROCESSOR_POWER_POLICY_INFO this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<PROCESSOR_POWER_POLICY_INFO> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 3);
     }
 }

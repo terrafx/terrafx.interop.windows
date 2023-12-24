@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfLangBarItem.GetInfo">
-    <summary>
-      <para>Obtains information about the language bar item.</para>
-    </summary>
+    <summary>Obtains information about the language bar item.</summary>
     <param name="pInfo">
       <para>Pointer to a <see cref="TF_LANGBARITEMINFO" /> structure that receives the language bar item information.</para>
       <para>Starting with Windows 8, the item will be ignored if the structure does not include GUID_LBI_INPUTMODE. For more information, see <a href="https://docs.microsoft.com/en-us/windows/win32/w8cookbook/third-party-input-method-editors#manifestation">Third-party input method editors</a> in the Compatibility cookbook for Windows.</para>
@@ -17,38 +15,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pInfo</i> is invalid.
-</description>
-        </item>
+            <i>pInfo</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfLangBarItem" />
-    <seealso cref="TF_LANGBARITEMINFO" />
   </member>
   <member name="ITfLangBarItem.GetStatus">
-    <summary>
-      <para>Obtains the status of a language bar item.</para>
-    </summary>
-    <param name="pdwStatus">
-      <para>Pointer to a <b>DWORD</b> that receives zero or a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-status--constants">TF_LBI_STATUS_*</a> values that indicate the current status of the item.</para>
-    </param>
+    <summary>Obtains the status of a language bar item.</summary>
+    <param name="pdwStatus">Pointer to a <b>DWORD</b> that receives zero or a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-status--constants">TF_LBI_STATUS_*</a> values that indicate the current status of the item.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -56,39 +53,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pdwStatus</i> is invalid.
-</description>
-        </item>
+            <i>pdwStatus</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfLangBarItem" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-lbi-status--constants">TF_LBI_STATUS_*
-</seealso>
   </member>
   <member name="ITfLangBarItem.GetTooltipString">
-    <summary>
-      <para>Obtains the text to be displayed in the tooltip for the language bar item.</para>
-    </summary>
-    <param name="pbstrToolTip">
-      <para>Pointer to a <b>BSTR</b> value that receives the tooltip string for the language bar item. This string must be allocated using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a> function. The caller must free this buffer when it is no longer required by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a>.</para>
-    </param>
+    <summary>Obtains the text to be displayed in the tooltip for the language bar item.</summary>
+    <param name="pbstrToolTip">Pointer to a <b>BSTR</b> value that receives the tooltip string for the language bar item. This string must be allocated using the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</a> function. The caller must free this buffer when it is no longer required by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -96,59 +91,61 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pbstrToolTip</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The language bar item does not support tooltip text.</description>
+        </listheader>
+        <listheader>
           <description>
-            <i>pbstrToolTip</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The language bar item does not support tooltip text.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfLangBarItem" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysallocstring">SysAllocString</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
   </member>
   <member name="ITfLangBarItem.Show">
-    <summary>
-      <para>Called to show or hide the language bar item.</para>
-    </summary>
-    <param name="fShow">
-      <para>Contains a <b>BOOL</b> that indicates if the item should be shown or hidden. Contains a nonzero value if the item should be shown or zero otherwise.</para>
-    </param>
+    <summary>Called to show or hide the language bar item.</summary>
+    <param name="fShow">Contains a <b>BOOL</b> that indicates if the item should be shown or hidden. Contains a nonzero value if the item should be shown or zero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -156,41 +153,34 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The language bar item does not support this method.</para>
-          </description>
-        </item>
+          <description>The language bar item does not support this method.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The language bar item implementation should update its visible status by modifying the value returned from <see cref="ITfLangBarItem.GetStatus" /> to include or exclude the TF_LBI_STATUS_HIDDEN status flag. The implementation then prompts language bar to obtain the new status value by calling <see cref="ITfLangBarItemSink.OnUpdate" /> with TF_LBI_STATUS.</para>
-      <para>This method is only useful when the item has the TF_LBI_STYLE_HIDDENSTATUSCONTROL style. Without this style, only the language bar can show or hide the item.</para>
-    </remarks>
-    <seealso cref="ITfLangBarItem" />
-    <seealso cref="ITfLangBarItem.GetStatus " />
-    <seealso cref="ITfLangBarItemSink.OnUpdate " />
   </member>
   <member name="ITfLangBarItem">
-    <summary>
-      <para>The <b>ITfLangBarItem</b> interface is implemented by a language bar item provider and used by the language bar manager to obtain detailed information about the language bar item. An instance of this interface is provided to the language bar manager by the <see cref="ITfLangBarItemMgr.AddItem" /> method.</para>
-    </summary>
-    <seealso cref="ITfLangBarItemMgr.AddItem " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfLangBarItem</b> interface is implemented by a language bar item provider and used by the language bar manager to obtain detailed information about the language bar item. An instance of this interface is provided to the language bar manager by the <see cref="ITfLangBarItemMgr.AddItem" /> method.</summary>
   </member>
 </doc>

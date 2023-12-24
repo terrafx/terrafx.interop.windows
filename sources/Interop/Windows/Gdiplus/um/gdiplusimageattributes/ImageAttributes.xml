@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ImageAttributes.ClearBrushRemapTable">
+    <summary>The <b>ImageAttributes.ClearBrushRemapTable</b> method clears the brush color-remap table of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object.</summary>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.ClearColorKey">
+    <summary>The <b>ImageAttributes.ClearColorKey</b> method clears the color key (transparency range) for a specified category.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the color key is cleared. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.ClearColorMatrix">
+    <summary>The <b>ImageAttributes.ClearColorMatrix</b> method clears the color-adjustment matrix for a specified category.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the color-adjustment matrix is cleared. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the 	<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.ClearGamma">
+    <summary>The <b>ImageAttributes.ClearGamma</b> method disables gamma correction for a specified category.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which gamma correction is disabled. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.ClearNoOp">
+    <summary>The <b>ImageAttributes.ClearNoOp</b> method clears the NoOp setting for a specified category.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the NoOp setting is cleared. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.ClearOutputChannel">
+    <summary>The <b>ImageAttributes.ClearOutputChannel</b> method clears the cyan-magenta-yellow-black (CMYK) output channel setting for a specified category.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the output channel setting is cleared. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.ClearOutputChannelColorProfile">
+    <summary>The <b>ImageAttributes.ClearOutputChannelColorProfile</b> method clears the output channel color profile setting for a specified category.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the output channel profile setting is cleared. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.ClearRemapTable">
+    <summary>The <b>ImageAttributes.ClearRemapTable</b> method clears the color-remap table for a specified category.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the remap table is cleared. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.ClearThreshold">
+    <summary>The <b>ImageAttributes.ClearThreshold</b> method clears the threshold value for a specified category.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the threshold is cleared. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.Clone">
+    <summary>The <b>ImageAttributes.Clone</b> method makes a copy of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object.</summary>
+    <returns>This method returns a pointer to the new<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object.</returns>
+  </member>
+  <member name="ImageAttributes.GetAdjustedPalette">
+    <summary>The <b>ImageAttributes.GetAdjustedPalette</b> method adjusts the colors in a palette according to the adjustment settings of a specified category.</summary>
+    <param name="colorPalette">Pointer to a <see cref="ColorPalette" /> structure that on input, contains the palette to be adjusted and, on output, receives the adjusted palette.</param>
+    <param name="colorAdjustType">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category whose adjustment settings will be applied to the palette.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.GetLastStatus">
+    <summary>The <b>ImageAttributes.GetLastStatus</b> method returns a value that indicates the nature of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>ImageAttributes.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object have failed since the previous call to <b>ImageAttributes.GetLastStatus</b>, then <b>ImageAttributes.GetLastStatus</b> returns <see cref="Ok" />.</para>
+      <para>If at least one method invoked on this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object has failed since the previous call to <b>ImageAttributes.GetLastStatus</b>, then <b>ImageAttributes.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.ImageAttributes">
+    <summary>Creates an <b>ImageAttributes.ImageAttributes</b> object. This is the default constructor.</summary>
+  </member>
+  <member name="ImageAttributes.ImageAttributes">
+    <summary>Creates an <b>ImageAttributes.ImageAttributes</b> object. This is the default constructor.</summary>
+    <param name="imageAttr">TBD</param>
+    <param name="status">TBD</param>
+  </member>
+  <member name="ImageAttributes.ImageAttributes">
+    <summary>Creates an <b>ImageAttributes.ImageAttributes</b> object. This is the default constructor.</summary>
+  </member>
+  <member name="ImageAttributes.Reset">
+    <summary>The <b>ImageAttributes.Reset</b> method clears all color- and grayscale-adjustment settings for a specified category.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which color adjustment is reset. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetBrushRemapTable">
+    <summary>The <b>ImageAttributes.SetBrushRemapTable</b> method sets the color remap table for the brush category.</summary>
+    <param name="mapSize">
+      <b>INT</b> that specifies the number of elements in the <i>map</i> array.</param>
+    <param name="map">Pointer to an array of <see cref="ColorMap" /> structures.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetColorMatrices">
+    <summary>The <b>ImageAttributes.SetColorMatrices</b> method sets the color-adjustment matrix and the grayscale-adjustment matrix for a specified category.</summary>
+    <param name="colorMatrix">Pointer to a 5×5 color-adjustment matrix.</param>
+    <param name="grayMatrix">Pointer to a 5×5 grayscale-adjustment matrix.</param>
+    <param name="mode">Element of the <see cref="ColorMatrixFlags" /> enumeration that specifies the type of image and color that will be affected by the color-adjustment and grayscale-adjustment matrices. The default value is <see cref="ColorMatrixFlagsDefault" />.</param>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the color-adjustment and grayscale-adjustment matrices are set. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetColorMatrix">
+    <summary>The <b>ImageAttributes.SetColorMatrix</b> method sets the color-adjustment matrix for a specified category.</summary>
+    <param name="colorMatrix">Pointer to a 5×5 color-adjustment matrix.</param>
+    <param name="mode">Element of the <see cref="ColorMatrixFlags" /> enumeration that specifies the type of image and color that will be affected by the color-adjustment matrix.</param>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the color-adjustment matrix is set. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetGamma">
+    <summary>The <b>ImageAttributes.SetGamma</b> method sets the gamma value for a specified category.</summary>
+    <param name="gamma">
+      <b>REAL</b> number that specifies the gamma value.</param>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the gamma value is set. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetNoOp">
+    <summary>The <b>ImageAttributes.SetNoOp</b> method turns off color adjustment for a specified category. You can call <see cref="ImageAttributes.ClearNoOp" /> to reinstate the color-adjustment settings that were in place before the call to <b>ImageAttributes.SetNoOp</b>.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which color correction is turned off. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetOutputChannel">
+    <summary>The <b>ImageAttributes.SetOutputChannel</b> method sets the CMYK output channel for a specified category.</summary>
+    <param name="channelFlags">Element of the <see cref="ColorChannelFlags" /> enumeration that specifies the output channel.</param>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the output channel is set. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetOutputChannelColorProfile">
+    <summary>The <b>ImageAttributes.SetOutputChannelColorProfile</b> method sets the output channel color-profile file for a specified category.</summary>
+    <param name="colorProfileFilename">Path name of a color-profile file. If the color-profile file is in the %SystemRoot%\System32\Spool\Drivers\Color directory, then this parameter can be the file name. Otherwise, this parameter must be the fully qualified path name.</param>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the output channel color-profile file is set. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetRemapTable">
+    <summary>The <b>ImageAttributes.SetRemapTable</b> method sets the color-remap table for a specified category.</summary>
+    <param name="mapSize">
+      <b>INT</b> that specifies the number of elements in the <i>map</i> array.</param>
+    <param name="map">Pointer to an array of <see cref="ColorMap" /> structures that defines the color map.</param>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the color-remap table is set. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetThreshold">
+    <summary>The <b>ImageAttributes.SetThreshold</b> method sets the threshold (transparency range) for a specified category.</summary>
+    <param name="threshold">
+      <b>REAL</b> number that specifies the threshold value.</param>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the color threshold is set. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetToIdentity">
+    <summary>The <b>ImageAttributes.SetToIdentity</b> method sets the color-adjustment matrix of a specified category to identity matrix.</summary>
+    <param name="type">Element of the <see cref="ColorAdjustType" /> enumeration that specifies the category for which the color-adjustment matrix is set to identity. The default value is <see cref="ColorAdjustTypeDefault" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="ImageAttributes.SetWrapMode">
+    <summary>The <b>ImageAttributes.SetWrapMode</b> method sets the wrap mode of this<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object.</summary>
+    <param name="wrap">Element of the <see cref="WrapMode" /> enumeration that specifies how repeated copies of an image are used to tile an area.</param>
+    <param name="color">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the color of pixels outside of a rendered image. This color is visible if the <i>wrap</i> parameter is set to <see cref="WrapModeClamp" /> and the source rectangle passed to <a href="https://docs.microsoft.com//previous-versions/ms536037(v=vs.85)">DrawImage</a> is larger than the image itself. The default value is Color(), which is a <b>Color</b> object initialized to black.</param>
+    <param name="clamp">This parameter has no effect in GDI+ version 1.0. Set this parameter to <b>FALSE</b>. The default value is <b>FALSE</b>.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the <b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

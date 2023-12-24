@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXGI_SAMPLE_DESC">
+    <summary>Describes multi-sampling parameters for a resource.</summary>
+  </member>
+  <member name="DXGI_SAMPLE_DESC.Count">
+    <summary>The number of multisamples per pixel.</summary>
+  </member>
+  <member name="DXGI_SAMPLE_DESC.Quality">
+    <summary>
+      <para>The image quality level. The higher the quality, the lower the performance. The valid range is between zero and one less than the level returned by <see cref="ID3D10Device.CheckMultisampleQualityLevels" /> for Direct3D 10 or <see cref="ID3D11Device.CheckMultisampleQualityLevels" /> for Direct3D 11.</para>
+      <para>For Direct3D 10.1 and Direct3D 11, you can use two special quality level values. For more information about these quality level values, see Remarks.</para>
+    </summary>
+  </member>
+</doc>

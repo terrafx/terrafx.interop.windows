@@ -19,25 +19,4 @@ public static unsafe partial class MsftIsoImageManagerTests
     {
         Assert.That(typeof(MsftIsoImageManager).GUID, Is.EqualTo(CLSID_MsftIsoImageManager));
     }
-
-    /// <summary>Validates that the <see cref="MsftIsoImageManager" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MsftIsoImageManager>(), Is.EqualTo(sizeof(MsftIsoImageManager)));
-    }
-
-    /// <summary>Validates that the <see cref="MsftIsoImageManager" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MsftIsoImageManager).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MsftIsoImageManager" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MsftIsoImageManager), Is.EqualTo(1));
-    }
 }

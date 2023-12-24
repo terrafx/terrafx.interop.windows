@@ -34,7 +34,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint K32GetModuleBaseNameW(HANDLE hProcess, HMODULE hModule, [NativeTypeName("LPWSTR")] ushort* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint K32GetModuleBaseNameW(HANDLE hProcess, HMODULE hModule, [NativeTypeName("LPWSTR")] char* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.K32GetModuleFileNameExA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -46,7 +46,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint K32GetModuleFileNameExW(HANDLE hProcess, HMODULE hModule, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint K32GetModuleFileNameExW(HANDLE hProcess, HMODULE hModule, [NativeTypeName("LPWSTR")] char* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.K32GetModuleInformation"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -77,7 +77,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint K32GetMappedFileNameW(HANDLE hProcess, [NativeTypeName("LPVOID")] void* lpv, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint K32GetMappedFileNameW(HANDLE hProcess, [NativeTypeName("LPVOID")] void* lpv, [NativeTypeName("LPWSTR")] char* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.K32GetMappedFileNameA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -100,7 +100,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint K32GetDeviceDriverBaseNameW([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPWSTR")] ushort* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint K32GetDeviceDriverBaseNameW([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPWSTR")] char* lpBaseName, [NativeTypeName("DWORD")] uint nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.K32GetDeviceDriverFileNameA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -112,7 +112,7 @@ public static unsafe partial class Windows
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
     [return: NativeTypeName("DWORD")]
-    public static extern uint K32GetDeviceDriverFileNameW([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPWSTR")] ushort* lpFilename, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint K32GetDeviceDriverFileNameW([NativeTypeName("LPVOID")] void* ImageBase, [NativeTypeName("LPWSTR")] char* lpFilename, [NativeTypeName("DWORD")] uint nSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.K32QueryWorkingSet"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -137,7 +137,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.K32EnumPageFilesW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern BOOL K32EnumPageFilesW([NativeTypeName("PENUM_PAGE_FILE_CALLBACKW")] delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, BOOL> pCallBackRoutine, [NativeTypeName("LPVOID")] void* pContext);
+    public static extern BOOL K32EnumPageFilesW([NativeTypeName("PENUM_PAGE_FILE_CALLBACKW")] delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, char*, BOOL> pCallBackRoutine, [NativeTypeName("LPVOID")] void* pContext);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.K32EnumPageFilesA"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -152,7 +152,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.K32GetProcessImageFileNameW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint K32GetProcessImageFileNameW(HANDLE hProcess, [NativeTypeName("LPWSTR")] ushort* lpImageFileName, [NativeTypeName("DWORD")] uint nSize);
+    public static extern uint K32GetProcessImageFileNameW(HANDLE hProcess, [NativeTypeName("LPWSTR")] char* lpImageFileName, [NativeTypeName("DWORD")] uint nSize);
 
     [NativeTypeName("#define PSAPI_VERSION 2")]
     public const int PSAPI_VERSION = 2;
@@ -173,7 +173,7 @@ public static unsafe partial class Windows
     public static delegate*<HANDLE, PSAPI_WS_WATCH_INFORMATION_EX*, uint*, BOOL> GetWsChangesEx => &K32GetWsChangesEx;
 
     [NativeTypeName("#define GetMappedFileNameW K32GetMappedFileNameW")]
-    public static delegate*<HANDLE, void*, ushort*, uint, uint> GetMappedFileNameW => &K32GetMappedFileNameW;
+    public static delegate*<HANDLE, void*, char*, uint, uint> GetMappedFileNameW => &K32GetMappedFileNameW;
 
     [NativeTypeName("#define GetMappedFileNameA K32GetMappedFileNameA")]
     public static delegate*<HANDLE, void*, sbyte*, uint, uint> GetMappedFileNameA => &K32GetMappedFileNameA;
@@ -185,13 +185,13 @@ public static unsafe partial class Windows
     public static delegate*<void*, sbyte*, uint, uint> GetDeviceDriverBaseNameA => &K32GetDeviceDriverBaseNameA;
 
     [NativeTypeName("#define GetDeviceDriverBaseNameW K32GetDeviceDriverBaseNameW")]
-    public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverBaseNameW => &K32GetDeviceDriverBaseNameW;
+    public static delegate*<void*, char*, uint, uint> GetDeviceDriverBaseNameW => &K32GetDeviceDriverBaseNameW;
 
     [NativeTypeName("#define GetDeviceDriverFileNameA K32GetDeviceDriverFileNameA")]
     public static delegate*<void*, sbyte*, uint, uint> GetDeviceDriverFileNameA => &K32GetDeviceDriverFileNameA;
 
     [NativeTypeName("#define GetDeviceDriverFileNameW K32GetDeviceDriverFileNameW")]
-    public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverFileNameW => &K32GetDeviceDriverFileNameW;
+    public static delegate*<void*, char*, uint, uint> GetDeviceDriverFileNameW => &K32GetDeviceDriverFileNameW;
 
     [NativeTypeName("#define GetPerformanceInfo K32GetPerformanceInfo")]
     public static delegate*<PERFORMANCE_INFORMATION*, uint, BOOL> GetPerformanceInfo => &K32GetPerformanceInfo;
@@ -200,25 +200,25 @@ public static unsafe partial class Windows
     public static delegate*<HANDLE, sbyte*, uint, uint> GetProcessImageFileNameA => &K32GetProcessImageFileNameA;
 
     [NativeTypeName("#define GetProcessImageFileNameW K32GetProcessImageFileNameW")]
-    public static delegate*<HANDLE, ushort*, uint, uint> GetProcessImageFileNameW => &K32GetProcessImageFileNameW;
+    public static delegate*<HANDLE, char*, uint, uint> GetProcessImageFileNameW => &K32GetProcessImageFileNameW;
 
     [NativeTypeName("#define GetModuleBaseNameA K32GetModuleBaseNameA")]
     public static delegate*<HANDLE, HMODULE, sbyte*, uint, uint> GetModuleBaseNameA => &K32GetModuleBaseNameA;
 
     [NativeTypeName("#define GetModuleBaseNameW K32GetModuleBaseNameW")]
-    public static delegate*<HANDLE, HMODULE, ushort*, uint, uint> GetModuleBaseNameW => &K32GetModuleBaseNameW;
+    public static delegate*<HANDLE, HMODULE, char*, uint, uint> GetModuleBaseNameW => &K32GetModuleBaseNameW;
 
     [NativeTypeName("#define GetModuleFileNameExA K32GetModuleFileNameExA")]
     public static delegate*<HANDLE, HMODULE, sbyte*, uint, uint> GetModuleFileNameExA => &K32GetModuleFileNameExA;
 
     [NativeTypeName("#define GetModuleFileNameExW K32GetModuleFileNameExW")]
-    public static delegate*<HANDLE, HMODULE, ushort*, uint, uint> GetModuleFileNameExW => &K32GetModuleFileNameExW;
+    public static delegate*<HANDLE, HMODULE, char*, uint, uint> GetModuleFileNameExW => &K32GetModuleFileNameExW;
 
     [NativeTypeName("#define EmptyWorkingSet K32EmptyWorkingSet")]
     public static delegate*<HANDLE, BOOL> EmptyWorkingSet => &K32EmptyWorkingSet;
 
     [NativeTypeName("#define EnumPageFilesW K32EnumPageFilesW")]
-    public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, BOOL>, void*, BOOL> EnumPageFilesW => &K32EnumPageFilesW;
+    public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, char*, BOOL>, void*, BOOL> EnumPageFilesW => &K32EnumPageFilesW;
 
     [NativeTypeName("#define EnumPageFilesA K32EnumPageFilesA")]
     public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, sbyte*, BOOL>, void*, BOOL> EnumPageFilesA => &K32EnumPageFilesA;
@@ -239,23 +239,23 @@ public static unsafe partial class Windows
     public static delegate*<HANDLE, void*, uint, BOOL> QueryWorkingSetEx => &K32QueryWorkingSetEx;
 
     [NativeTypeName("#define GetModuleBaseName GetModuleBaseNameW")]
-    public static delegate*<HANDLE, HMODULE, ushort*, uint, uint> GetModuleBaseName => &K32GetModuleBaseNameW;
+    public static delegate*<HANDLE, HMODULE, char*, uint, uint> GetModuleBaseName => &K32GetModuleBaseNameW;
 
     [NativeTypeName("#define GetModuleFileNameEx GetModuleFileNameExW")]
-    public static delegate*<HANDLE, HMODULE, ushort*, uint, uint> GetModuleFileNameEx => &K32GetModuleFileNameExW;
+    public static delegate*<HANDLE, HMODULE, char*, uint, uint> GetModuleFileNameEx => &K32GetModuleFileNameExW;
 
     [NativeTypeName("#define GetMappedFileName GetMappedFileNameW")]
-    public static delegate*<HANDLE, void*, ushort*, uint, uint> GetMappedFileName => &K32GetMappedFileNameW;
+    public static delegate*<HANDLE, void*, char*, uint, uint> GetMappedFileName => &K32GetMappedFileNameW;
 
     [NativeTypeName("#define GetDeviceDriverBaseName GetDeviceDriverBaseNameW")]
-    public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverBaseName => &K32GetDeviceDriverBaseNameW;
+    public static delegate*<void*, char*, uint, uint> GetDeviceDriverBaseName => &K32GetDeviceDriverBaseNameW;
 
     [NativeTypeName("#define GetDeviceDriverFileName GetDeviceDriverFileNameW")]
-    public static delegate*<void*, ushort*, uint, uint> GetDeviceDriverFileName => &K32GetDeviceDriverFileNameW;
+    public static delegate*<void*, char*, uint, uint> GetDeviceDriverFileName => &K32GetDeviceDriverFileNameW;
 
     [NativeTypeName("#define EnumPageFiles EnumPageFilesW")]
-    public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, ushort*, BOOL>, void*, BOOL> EnumPageFiles => &K32EnumPageFilesW;
+    public static delegate*<delegate* unmanaged<void*, ENUM_PAGE_FILE_INFORMATION*, char*, BOOL>, void*, BOOL> EnumPageFiles => &K32EnumPageFilesW;
 
     [NativeTypeName("#define GetProcessImageFileName GetProcessImageFileNameW")]
-    public static delegate*<HANDLE, ushort*, uint, uint> GetProcessImageFileName => &K32GetProcessImageFileNameW;
+    public static delegate*<HANDLE, char*, uint, uint> GetProcessImageFileName => &K32GetProcessImageFileNameW;
 }

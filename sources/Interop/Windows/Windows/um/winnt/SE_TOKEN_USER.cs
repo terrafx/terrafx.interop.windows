@@ -11,14 +11,14 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SE_TOKEN_USER.xml' path='doc/member[@name="SE_TOKEN_USER"]/*' />
-public unsafe partial struct SE_TOKEN_USER
+public partial struct SE_TOKEN_USER
 {
     /// <include file='SE_TOKEN_USER.xml' path='doc/member[@name="SE_TOKEN_USER.Anonymous1"]/*' />
-    [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:11638:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L11645_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='SE_TOKEN_USER.xml' path='doc/member[@name="SE_TOKEN_USER.Anonymous2"]/*' />
-    [NativeTypeName("_SE_TOKEN_USER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:11643:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L11650_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.TokenUser"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct SE_TOKEN_USER
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous2.Buffer[0], 68);
+            return Anonymous2.Buffer;
         }
     }
 
@@ -80,7 +80,7 @@ public unsafe partial struct SE_TOKEN_USER
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous2_e__Union
+    public partial struct _Anonymous2_e__Union
     {
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Sid"]/*' />
         [FieldOffset(0)]
@@ -89,6 +89,13 @@ public unsafe partial struct SE_TOKEN_USER
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.Buffer"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE[68]")]
-        public fixed byte Buffer[68];
+        public _Buffer_e__FixedBuffer Buffer;
+
+        /// <include file='_Buffer_e__FixedBuffer.xml' path='doc/member[@name="_Buffer_e__FixedBuffer"]/*' />
+        [InlineArray(68)]
+        public partial struct _Buffer_e__FixedBuffer
+        {
+            public byte e0;
+        }
     }
 }

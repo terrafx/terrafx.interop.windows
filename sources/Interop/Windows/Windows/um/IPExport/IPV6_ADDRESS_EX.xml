@@ -3,56 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPV6_ADDRESS_EX">
-    <summary>
-      <para>The <b>IPV6_ADDRESS_EX</b> structure stores an
-IPv6 address.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IPV6_ADDRESS_EX</b> structure is a member of the
-<see cref="ICMPV6_ECHO_REPLY" /> structure that is used by the
-<see cref="Icmp6ParseReplies" /> function.</para>
-      <para>The <b>IPV6_ADDRESS_EX</b> structure is defined in public
-header files included in the Microsoft Windows Software Development Kit (SDK), but this structure is used by the
-<see cref="Icmp6ParseReplies" /> function on
-Windows XP and later.</para>
-      <para>In the Windows SDK, the
-<b>IPV6_ADDRESS_EX</b> is structure defined when compiling an
-application if the target platform is Windows XP and later
-(<code>NTDDI_VERSION &gt;= NTDDI_XP</code>,
-<code>_WIN32_WINNT &gt;= 0x0501</code>, or
-<code>WINVER &gt;= 0x0501</code>). When compiling an application if the target
-platform is not Windows XP and later, the
-<b>IPV6_ADDRESS_EX</b> structure is undefined.</para>
-      <para>This structure is defined in the Ipexport.h header file which is automatically included in the Iphlpapi.h
-header file. The Ipexport.h header file should never be used directly.</para>
-    </remarks>
-    <seealso cref="ICMPV6_ECHO_REPLY" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
-    <seealso cref="IP_OPTION_INFORMATION" />
-    <seealso cref="Icmp6CreateFile" />
-    <seealso cref="Icmp6ParseReplies" />
-    <seealso cref="Icmp6SendEcho2" />
-    <seealso cref="IcmpCloseHandle" />
+    <summary>The <b>IPV6_ADDRESS_EX</b> structure stores an IPv6 address.</summary>
   </member>
   <member name="IPV6_ADDRESS_EX.sin6_port">
-    <summary>
-      <para>The IPv6 port number in network byte order.</para>
-    </summary>
+    <summary>The IPv6 port number in network byte order.</summary>
   </member>
   <member name="IPV6_ADDRESS_EX.sin6_flowinfo">
-    <summary>
-      <para>The IPv6 flowinfo value from the IPv6 header in network byte order.</para>
-    </summary>
+    <summary>The IPv6 flowinfo value from the IPv6 header in network byte order.</summary>
   </member>
   <member name="IPV6_ADDRESS_EX.sin6_addr">
-    <summary>
-      <para>The IPv6 address in network byte order.</para>
-    </summary>
+    <summary>The IPv6 address in network byte order.</summary>
   </member>
   <member name="IPV6_ADDRESS_EX.sin6_scope_id">
-    <summary>
-      <para>The IPv6 scope ID in network byte order.</para>
-    </summary>
+    <summary>The IPv6 scope ID in network byte order.</summary>
   </member>
 </doc>

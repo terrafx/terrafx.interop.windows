@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_ACCOUNT_DOMAIN_INFO">
+    <summary>The <b>POLICY_ACCOUNT_DOMAIN_INFO</b> structure is used to set and query the name and SID of the system's account domain. The<see cref="LsaQueryInformationPolicy" /> and<see cref="LsaSetInformationPolicy" /> functions use this structure when their <i>InformationClass</i> parameters are set to <b>PolicyAccountDomainInformation</b>.</summary>
+  </member>
+  <member name="POLICY_ACCOUNT_DOMAIN_INFO.DomainName">
+    <summary>An<see cref="LSA_UNICODE_STRING" /> structure that specifies the name of the account domain.</summary>
+  </member>
+  <member name="POLICY_ACCOUNT_DOMAIN_INFO.DomainSid">
+    <summary>Pointer to the SID of the account domain.</summary>
+  </member>
+</doc>

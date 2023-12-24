@@ -3,40 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGRITEMFLAGS">
-    <summary>
-      <para>Specifies information for the current item in the <see cref="SYNCMGRITEM" /> structure.</para>
-    </summary>
-    <seealso cref="SYNCMGRITEM" />
+    <summary>Specifies information for the current item in the <see cref="SYNCMGRITEM" /> structure.</summary>
   </member>
   <member name="SYNCMGRITEMFLAGS.SYNCMGRITEM_HASPROPERTIES">
-    <summary>
-      <para>The item has a properties dialog.</para>
-    </summary>
+    <summary>The item has a properties dialog.</summary>
   </member>
   <member name="SYNCMGRITEMFLAGS.SYNCMGRITEM_TEMPORARY">
-    <summary>
-      <para>The item is temporary and any stored preferences can be removed. This value is defined but not used in Windows Vista.</para>
-    </summary>
+    <summary>The item is temporary and any stored preferences can be removed. This value is defined but not used in Windows Vista.</summary>
   </member>
   <member name="SYNCMGRITEMFLAGS.SYNCMGRITEM_ROAMINGUSER">
-    <summary>
-      <para>The item roams with the user and is not specific to a machine. This value is defined but is ignored by both Windows XP and Windows Vista.</para>
-    </summary>
+    <summary>The item roams with the user and is not specific to a machine. This value is defined but is ignored by both Windows XP and Windows Vista.</summary>
   </member>
   <member name="SYNCMGRITEMFLAGS.SYNCMGRITEM_LASTUPDATETIME">
-    <summary>
-      <para>The LastUpdateTime field is valid.</para>
-    </summary>
+    <summary>The LastUpdateTime field is valid.</summary>
   </member>
   <member name="SYNCMGRITEMFLAGS.SYNCMGRITEM_MAYDELETEITEM">
-    <summary>
-      <para>The item may be deleted. This value has been deprecated for Windows Vista and later. This value is defined but is ignored by both Windows XP and Windows Vista.</para>
-    </summary>
+    <summary>The item may be deleted. This value has been deprecated for Windows Vista and later. This value is defined but is ignored by both Windows XP and Windows Vista.</summary>
   </member>
   <member name="SYNCMGRITEMFLAGS.SYNCMGRITEM_HIDDEN">
     <summary>
-      <para>
-        <b>Windows Vista and later</b>. Not supported.</para>
-    </summary>
+      <b>Windows Vista and later</b>. Not supported.</summary>
   </member>
 </doc>

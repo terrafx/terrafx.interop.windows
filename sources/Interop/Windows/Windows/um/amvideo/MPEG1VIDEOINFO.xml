@@ -4,29 +4,21 @@
 <doc>
   <member name="MPEG1VIDEOINFO">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>MPEG1VIDEOINFO</b> structure describes an MPEG-1 video stream.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="MPEG1VIDEOINFO.hdr">
     <summary>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/amvideo/ns-amvideo-videoinfoheader">VIDEOINFOHEADER</a> structure.</summary>
   </member>
   <member name="MPEG1VIDEOINFO.dwStartTimeCode">
-    <summary>
-      <para>25-bit group-of-pictures (GOP) time code at start of data.</para>
-    </summary>
+    <summary>25-bit group-of-pictures (GOP) time code at start of data.</summary>
   </member>
   <member name="MPEG1VIDEOINFO.cbSequenceHeader">
-    <summary>
-      <para>Length of the <b>bSequenceHeader</b> member, in bytes.</para>
-    </summary>
+    <summary>Length of the <b>bSequenceHeader</b> member, in bytes.</summary>
   </member>
   <member name="MPEG1VIDEOINFO.bSequenceHeader">
-    <summary>
-      <para>Start of an array that contains the sequence header, including quantization matrices, if any. The size of the array is given in the <b>cbSequenceHeader</b> member.</para>
-    </summary>
+    <summary>Start of an array that contains the sequence header, including quantization matrices, if any. The size of the array is given in the <b>cbSequenceHeader</b> member.</summary>
   </member>
 </doc>

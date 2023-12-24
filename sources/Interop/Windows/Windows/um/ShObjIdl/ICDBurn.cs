@@ -25,7 +25,7 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICDBurn*, Guid*, void**, int>)(lpVtbl[0]))((ICDBurn*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICDBurn*, Guid*, void**, int>)(lpVtbl[0]))((ICDBurn*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICDBurn*, uint>)(lpVtbl[1]))((ICDBurn*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICDBurn*, uint>)(lpVtbl[1]))((ICDBurn*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICDBurn*, uint>)(lpVtbl[2]))((ICDBurn*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICDBurn*, uint>)(lpVtbl[2]))((ICDBurn*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICDBurn.xml' path='doc/member[@name="ICDBurn.GetRecorderDriveLetter"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] ushort* pszDrive, uint cch)
+    public HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] char* pszDrive, uint cch)
     {
-        return ((delegate* unmanaged<ICDBurn*, ushort*, uint, int>)(lpVtbl[3]))((ICDBurn*)Unsafe.AsPointer(ref this), pszDrive, cch);
+        return ((delegate* unmanaged[MemberFunction]<ICDBurn*, char*, uint, int>)(lpVtbl[3]))((ICDBurn*)Unsafe.AsPointer(ref this), pszDrive, cch);
     }
 
     /// <include file='ICDBurn.xml' path='doc/member[@name="ICDBurn.Burn"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Burn(HWND hwnd)
     {
-        return ((delegate* unmanaged<ICDBurn*, HWND, int>)(lpVtbl[4]))((ICDBurn*)Unsafe.AsPointer(ref this), hwnd);
+        return ((delegate* unmanaged[MemberFunction]<ICDBurn*, HWND, int>)(lpVtbl[4]))((ICDBurn*)Unsafe.AsPointer(ref this), hwnd);
     }
 
     /// <include file='ICDBurn.xml' path='doc/member[@name="ICDBurn.HasRecordableDrive"]/*' />
@@ -67,13 +67,13 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT HasRecordableDrive(BOOL* pfHasRecorder)
     {
-        return ((delegate* unmanaged<ICDBurn*, BOOL*, int>)(lpVtbl[5]))((ICDBurn*)Unsafe.AsPointer(ref this), pfHasRecorder);
+        return ((delegate* unmanaged[MemberFunction]<ICDBurn*, BOOL*, int>)(lpVtbl[5]))((ICDBurn*)Unsafe.AsPointer(ref this), pfHasRecorder);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] ushort* pszDrive, uint cch);
+        HRESULT GetRecorderDriveLetter([NativeTypeName("LPWSTR")] char* pszDrive, uint cch);
 
         [VtblIndex(4)]
         HRESULT Burn(HWND hwnd);
@@ -86,21 +86,21 @@ public unsafe partial struct ICDBurn : ICDBurn.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetRecorderDriveLetter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> GetRecorderDriveLetter;
 
         [NativeTypeName("HRESULT (HWND) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, int> Burn;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, int> Burn;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> HasRecordableDrive;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> HasRecordableDrive;
     }
 }

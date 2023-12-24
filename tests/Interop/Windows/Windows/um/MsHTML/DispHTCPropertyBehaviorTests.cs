@@ -19,32 +19,4 @@ public static unsafe partial class DispHTCPropertyBehaviorTests
     {
         Assert.That(typeof(DispHTCPropertyBehavior).GUID, Is.EqualTo(IID_DispHTCPropertyBehavior));
     }
-
-    /// <summary>Validates that the <see cref="DispHTCPropertyBehavior" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTCPropertyBehavior>(), Is.EqualTo(sizeof(DispHTCPropertyBehavior)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTCPropertyBehavior" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTCPropertyBehavior).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTCPropertyBehavior" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTCPropertyBehavior), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTCPropertyBehavior), Is.EqualTo(4));
-        }
-    }
 }

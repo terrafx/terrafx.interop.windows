@@ -3,81 +3,50 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.D3DDisassemble11Trace">
-    <summary>
-      <para>Disassembles a section of compiled Microsoft High Level Shader Language (HLSL) code that is specified by shader trace steps.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b>LPCVOID</b></para>
-      <para>A pointer to compiled shader data.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b>SIZE_T</b></para>
-      <para>The size, in bytes, of the block of memory that pSrcData points to.</para>
-    </param>
-    <param name="pTrace">
-      <para>Type: <b>ID3D11ShaderTrace*</b></para>
-      <para>A pointer to the ID3D11ShaderTrace interface for the shader trace information object.</para>
-    </param>
-    <param name="StartStep">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of the step in the trace from which D3DDisassemble11Trace starts the disassembly.</para>
-    </param>
-    <param name="NumSteps">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of trace steps to disassemble.</para>
-    </param>
+    <summary>Disassembles a section of compiled Microsoft High Level Shader Language (HLSL) code that is specified by shader trace steps.</summary>
+    <param name="pSrcData">A pointer to compiled shader data.</param>
+    <param name="SrcDataSize">The size, in bytes, of the block of memory that pSrcData points to.</param>
+    <param name="pTrace">A pointer to the ID3D11ShaderTrace interface for the shader trace information object.</param>
+    <param name="StartStep">The number of the step in the trace from which D3DDisassemble11Trace starts the disassembly.</param>
+    <param name="NumSteps">The number of trace steps to disassemble.</param>
     <param name="Flags">
-      <para>Type: <b>UINT</b></para>
       <para>A combination of zero or more of the following flags that are combined by using a bitwise OR operation. The resulting value specifies how D3DDisassemble11Trace disassembles the compiled shader data.</para>
       <list type="table">
         <listheader>
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>D3D_DISASM_ENABLE_COLOR_CODE (0x01)</description>
           <description> Enable the output of color codes.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_ENABLE_DEFAULT_VALUE_PRINTS (0x02)</description>
           <description> Enable the output of default values.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_ENABLE_INSTRUCTION_NUMBERING (0x04)</description>
           <description> Enable instruction numbering.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_ENABLE_INSTRUCTION_CYCLE (0x08)</description>
           <description> No effect.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_DISABLE_DEBUG_INFO (0x10)</description>
           <description> Disable the output of debug information.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_ENABLE_INSTRUCTION_OFFSET (0x20)</description>
           <description> Enable the output of instruction offsets.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_INSTRUCTION_ONLY (0x40)</description>
-          <description>
-            <para>Enable the output of the instruction cycle per step in D3DDisassemble11Trace. This flag is similar to the D3D_DISASM_ENABLE_INSTRUCTION_NUMBERING and D3D_DISASM_ENABLE_INSTRUCTION_OFFSET flags.</para>
-            <para>This flag has no effect in the D3DDisassembleRegion function. Cycle information comes from the trace; therefore, cycle information is available only in the trace disassembly.</para>
-          </description>
-        </item>
+          <description> Enable the output of the instruction cycle per step in D3DDisassemble11Trace. This flag is similar to the D3D_DISASM_ENABLE_INSTRUCTION_NUMBERING and D3D_DISASM_ENABLE_INSTRUCTION_OFFSET flags.<para>This flag has no effect in the D3DDisassembleRegion function. Cycle information comes from the trace; therefore, cycle information is available only in the trace disassembly.</para></description>
+        </listheader>
       </list>
     </param>
-    <param name="ppDisassembly">
-      <para>Type: <b>ID3D10Blob**</b></para>
-      <para>A pointer to a buffer that receives the ID3DBlob interface that accesses the disassembled HLSL code.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT error code.</para>
-    </returns>
-    <remarks>
-      <para>D3DDisassemble11Trace walks the steps of a shader trace and outputs appropriate disassembly for each step that is based on the step's instruction index. The disassembly is annotated with register-value information from the trace. The behavior of D3DDisassemble11Trace differs from D3DDisassemble in that instead of the static disassembly of a compiled shader that D3DDisassemble performs, D3DDisassemble11Trace provides an execution trace that is based on the shader trace information.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-functions">Shader Functions</seealso>
+    <param name="ppDisassembly">A pointer to a buffer that receives the ID3DBlob interface that accesses the disassembled HLSL code.</param>
+    <returns>This method returns an HRESULT error code.</returns>
   </member>
 </doc>

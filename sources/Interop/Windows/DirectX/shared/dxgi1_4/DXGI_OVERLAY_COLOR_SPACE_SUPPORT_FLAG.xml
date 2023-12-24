@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG">
-    <summary>
-      <para>Specifies support for overlay color space.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+    <summary>Specifies support for overlay color space.</summary>
   </member>
   <member name="DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG.DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT">
-    <summary>
-      <para>Overlay color space support is present.</para>
-    </summary>
+    <summary>Overlay color space support is present.</summary>
   </member>
 </doc>

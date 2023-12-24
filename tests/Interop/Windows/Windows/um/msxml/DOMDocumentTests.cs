@@ -19,25 +19,4 @@ public static unsafe partial class DOMDocumentTests
     {
         Assert.That(typeof(DOMDocument).GUID, Is.EqualTo(CLSID_DOMDocument));
     }
-
-    /// <summary>Validates that the <see cref="DOMDocument" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMDocument>(), Is.EqualTo(sizeof(DOMDocument)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMDocument" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMDocument).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMDocument" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMDocument), Is.EqualTo(1));
-    }
 }

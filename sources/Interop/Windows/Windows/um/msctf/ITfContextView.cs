@@ -25,7 +25,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfContextView*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextView*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextView*, Guid*, void**, int>)(lpVtbl[0]))((ITfContextView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfContextView*, uint>)(lpVtbl[1]))((ITfContextView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextView*, uint>)(lpVtbl[1]))((ITfContextView*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfContextView*, uint>)(lpVtbl[2]))((ITfContextView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfContextView*, uint>)(lpVtbl[2]))((ITfContextView*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView.GetRangeFromPoint"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetRangeFromPoint([NativeTypeName("TfEditCookie")] uint ec, [NativeTypeName("const POINT *")] POINT* ppt, [NativeTypeName("DWORD")] uint dwFlags, ITfRange** ppRange)
     {
-        return ((delegate* unmanaged<ITfContextView*, uint, POINT*, uint, ITfRange**, int>)(lpVtbl[3]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, ppt, dwFlags, ppRange);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextView*, uint, POINT*, uint, ITfRange**, int>)(lpVtbl[3]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, ppt, dwFlags, ppRange);
     }
 
     /// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView.GetTextExt"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetTextExt([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange, RECT* prc, BOOL* pfClipped)
     {
-        return ((delegate* unmanaged<ITfContextView*, uint, ITfRange*, RECT*, BOOL*, int>)(lpVtbl[4]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, pRange, prc, pfClipped);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextView*, uint, ITfRange*, RECT*, BOOL*, int>)(lpVtbl[4]))((ITfContextView*)Unsafe.AsPointer(ref this), ec, pRange, prc, pfClipped);
     }
 
     /// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView.GetScreenExt"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetScreenExt(RECT* prc)
     {
-        return ((delegate* unmanaged<ITfContextView*, RECT*, int>)(lpVtbl[5]))((ITfContextView*)Unsafe.AsPointer(ref this), prc);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextView*, RECT*, int>)(lpVtbl[5]))((ITfContextView*)Unsafe.AsPointer(ref this), prc);
     }
 
     /// <include file='ITfContextView.xml' path='doc/member[@name="ITfContextView.GetWnd"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT GetWnd(HWND* phwnd)
     {
-        return ((delegate* unmanaged<ITfContextView*, HWND*, int>)(lpVtbl[6]))((ITfContextView*)Unsafe.AsPointer(ref this), phwnd);
+        return ((delegate* unmanaged[MemberFunction]<ITfContextView*, HWND*, int>)(lpVtbl[6]))((ITfContextView*)Unsafe.AsPointer(ref this), phwnd);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct ITfContextView : ITfContextView.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, const POINT *, DWORD, ITfRange **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, POINT*, uint, ITfRange**, int> GetRangeFromPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, POINT*, uint, ITfRange**, int> GetRangeFromPoint;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *, RECT *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, RECT*, BOOL*, int> GetTextExt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, RECT*, BOOL*, int> GetTextExt;
 
         [NativeTypeName("HRESULT (RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT*, int> GetScreenExt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT*, int> GetScreenExt;
 
         [NativeTypeName("HRESULT (HWND *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND*, int> GetWnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND*, int> GetWnd;
     }
 }

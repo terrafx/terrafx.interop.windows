@@ -3,31 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ASSOCKEY">
-    <summary>
-      <para>Specifies the type of key to be returned by <see cref="IQueryAssociations.GetKey" />.</para>
-    </summary>
+    <summary>Specifies the type of key to be returned by <see cref="IQueryAssociations.GetKey" />.</summary>
   </member>
   <member name="ASSOCKEY.ASSOCKEY_SHELLEXECCLASS">
-    <summary>
-      <para>A key that is passed to <see cref="ShellExecuteEx" /> through a <see cref="SHELLEXECUTEINFO" /> structure.</para>
-    </summary>
+    <summary>A key that is passed to <see cref="ShellExecuteEx" /> through a <see cref="SHELLEXECUTEINFO" /> structure.</summary>
   </member>
   <member name="ASSOCKEY.ASSOCKEY_APP">
-    <summary>
-      <para>An <b>Application</b> key for the file type.</para>
-    </summary>
+    <summary>An <b>Application</b> key for the file type.</summary>
   </member>
   <member name="ASSOCKEY.ASSOCKEY_CLASS">
-    <summary>
-      <para>A ProgID or class key.</para>
-    </summary>
+    <summary>A ProgID or class key.</summary>
   </member>
   <member name="ASSOCKEY.ASSOCKEY_BASECLASS">
-    <summary>
-      <para>A BaseClass value.</para>
-    </summary>
+    <summary>A BaseClass value.</summary>
   </member>
-  <member name="ASSOCKEY.ASSOCKEY_MAX">
-    <summary></summary>
-  </member>
+  <member name="ASSOCKEY.ASSOCKEY_MAX"></member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleLink*, Guid*, void**, int>)(lpVtbl[0]))((IOleLink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, Guid*, void**, int>)(lpVtbl[0]))((IOleLink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleLink*, uint>)(lpVtbl[1]))((IOleLink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, uint>)(lpVtbl[1]))((IOleLink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleLink*, uint>)(lpVtbl[2]))((IOleLink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, uint>)(lpVtbl[2]))((IOleLink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.SetUpdateOptions"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetUpdateOptions([NativeTypeName("DWORD")] uint dwUpdateOpt)
     {
-        return ((delegate* unmanaged<IOleLink*, uint, int>)(lpVtbl[3]))((IOleLink*)Unsafe.AsPointer(ref this), dwUpdateOpt);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, uint, int>)(lpVtbl[3]))((IOleLink*)Unsafe.AsPointer(ref this), dwUpdateOpt);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.GetUpdateOptions"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetUpdateOptions([NativeTypeName("DWORD *")] uint* pdwUpdateOpt)
     {
-        return ((delegate* unmanaged<IOleLink*, uint*, int>)(lpVtbl[4]))((IOleLink*)Unsafe.AsPointer(ref this), pdwUpdateOpt);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, uint*, int>)(lpVtbl[4]))((IOleLink*)Unsafe.AsPointer(ref this), pdwUpdateOpt);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.SetSourceMoniker"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT SetSourceMoniker(IMoniker* pmk, [NativeTypeName("const IID &")] Guid* rclsid)
     {
-        return ((delegate* unmanaged<IOleLink*, IMoniker*, Guid*, int>)(lpVtbl[5]))((IOleLink*)Unsafe.AsPointer(ref this), pmk, rclsid);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, IMoniker*, Guid*, int>)(lpVtbl[5]))((IOleLink*)Unsafe.AsPointer(ref this), pmk, rclsid);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.GetSourceMoniker"]/*' />
@@ -75,23 +75,23 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetSourceMoniker(IMoniker** ppmk)
     {
-        return ((delegate* unmanaged<IOleLink*, IMoniker**, int>)(lpVtbl[6]))((IOleLink*)Unsafe.AsPointer(ref this), ppmk);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, IMoniker**, int>)(lpVtbl[6]))((IOleLink*)Unsafe.AsPointer(ref this), ppmk);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.SetSourceDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText)
+    public HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] char* pszStatusText)
     {
-        return ((delegate* unmanaged<IOleLink*, ushort*, int>)(lpVtbl[7]))((IOleLink*)Unsafe.AsPointer(ref this), pszStatusText);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, char*, int>)(lpVtbl[7]))((IOleLink*)Unsafe.AsPointer(ref this), pszStatusText);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.GetSourceDisplayName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName)
+    public HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] char** ppszDisplayName)
     {
-        return ((delegate* unmanaged<IOleLink*, ushort**, int>)(lpVtbl[8]))((IOleLink*)Unsafe.AsPointer(ref this), ppszDisplayName);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, char**, int>)(lpVtbl[8]))((IOleLink*)Unsafe.AsPointer(ref this), ppszDisplayName);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.BindToSource"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT BindToSource([NativeTypeName("DWORD")] uint bindflags, IBindCtx* pbc)
     {
-        return ((delegate* unmanaged<IOleLink*, uint, IBindCtx*, int>)(lpVtbl[9]))((IOleLink*)Unsafe.AsPointer(ref this), bindflags, pbc);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, uint, IBindCtx*, int>)(lpVtbl[9]))((IOleLink*)Unsafe.AsPointer(ref this), bindflags, pbc);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.BindIfRunning"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT BindIfRunning()
     {
-        return ((delegate* unmanaged<IOleLink*, int>)(lpVtbl[10]))((IOleLink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, int>)(lpVtbl[10]))((IOleLink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.GetBoundSource"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetBoundSource(IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<IOleLink*, IUnknown**, int>)(lpVtbl[11]))((IOleLink*)Unsafe.AsPointer(ref this), ppunk);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, IUnknown**, int>)(lpVtbl[11]))((IOleLink*)Unsafe.AsPointer(ref this), ppunk);
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.UnbindSource"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT UnbindSource()
     {
-        return ((delegate* unmanaged<IOleLink*, int>)(lpVtbl[12]))((IOleLink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, int>)(lpVtbl[12]))((IOleLink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleLink.xml' path='doc/member[@name="IOleLink.Update"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT Update(IBindCtx* pbc)
     {
-        return ((delegate* unmanaged<IOleLink*, IBindCtx*, int>)(lpVtbl[13]))((IOleLink*)Unsafe.AsPointer(ref this), pbc);
+        return ((delegate* unmanaged[MemberFunction]<IOleLink*, IBindCtx*, int>)(lpVtbl[13]))((IOleLink*)Unsafe.AsPointer(ref this), pbc);
     }
 
     public interface Interface : IUnknown.Interface
@@ -149,10 +149,10 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
         HRESULT GetSourceMoniker(IMoniker** ppmk);
 
         [VtblIndex(7)]
-        HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] ushort* pszStatusText);
+        HRESULT SetSourceDisplayName([NativeTypeName("LPCOLESTR")] char* pszStatusText);
 
         [VtblIndex(8)]
-        HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] ushort** ppszDisplayName);
+        HRESULT GetSourceDisplayName([NativeTypeName("LPOLESTR *")] char** ppszDisplayName);
 
         [VtblIndex(9)]
         HRESULT BindToSource([NativeTypeName("DWORD")] uint bindflags, IBindCtx* pbc);
@@ -174,45 +174,45 @@ public unsafe partial struct IOleLink : IOleLink.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetUpdateOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetUpdateOptions;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetUpdateOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetUpdateOptions;
 
         [NativeTypeName("HRESULT (IMoniker *, const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, Guid*, int> SetSourceMoniker;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, Guid*, int> SetSourceMoniker;
 
         [NativeTypeName("HRESULT (IMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker**, int> GetSourceMoniker;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker**, int> GetSourceMoniker;
 
         [NativeTypeName("HRESULT (LPCOLESTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSourceDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetSourceDisplayName;
 
         [NativeTypeName("HRESULT (LPOLESTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSourceDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetSourceDisplayName;
 
         [NativeTypeName("HRESULT (DWORD, IBindCtx *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IBindCtx*, int> BindToSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IBindCtx*, int> BindToSource;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> BindIfRunning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> BindIfRunning;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> GetBoundSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> GetBoundSource;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UnbindSource;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UnbindSource;
 
         [NativeTypeName("HRESULT (IBindCtx *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IBindCtx*, int> Update;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IBindCtx*, int> Update;
     }
 }

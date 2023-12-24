@@ -15,22 +15,22 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreatePath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreatePath([NativeTypeName("Gdiplus::GpFillMode")] GpFillMode brushMode, [NativeTypeName("Gdiplus::GpPath **")] GpPath** path);
+    public static extern GpStatus GdipCreatePath([NativeTypeName("Gdiplus::GpFillMode")] GpFillMode brushMode, GpPath** path);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreatePath2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreatePath2([NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* param0, [NativeTypeName("const BYTE *")] byte* param1, int param2, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode param3, [NativeTypeName("Gdiplus::GpPath **")] GpPath** path);
+    public static extern GpStatus GdipCreatePath2([NativeTypeName("const GpPointF *")] GpPointF* param0, [NativeTypeName("const BYTE *")] byte* param1, int param2, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode param3, GpPath** path);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreatePath2I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreatePath2I([NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* param0, [NativeTypeName("const BYTE *")] byte* param1, int param2, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode param3, [NativeTypeName("Gdiplus::GpPath **")] GpPath** path);
+    public static extern GpStatus GdipCreatePath2I([NativeTypeName("const GpPoint *")] GpPoint* param0, [NativeTypeName("const BYTE *")] byte* param1, int param2, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode param3, GpPath** path);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipClonePath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipClonePath([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("Gdiplus::GpPath **")] GpPath** clonePath);
+    public static extern GpStatus GdipClonePath([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, GpPath** clonePath);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeletePath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -120,7 +120,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathLine2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathLine2([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipAddPathLine2([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathArc"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -135,32 +135,32 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathBeziers"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathBeziers([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipAddPathBeziers([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathCurve"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathCurve([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipAddPathCurve([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathCurve2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathCurve2([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipAddPathCurve2([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathCurve3"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathCurve3([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, int offset, int numberOfSegments, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipAddPathCurve3([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, int offset, int numberOfSegments, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathClosedCurve"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathClosedCurve([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipAddPathClosedCurve([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathClosedCurve2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathClosedCurve2([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipAddPathClosedCurve2([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathRectangle"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -170,7 +170,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathRectangles"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathRectangles([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* rects, int count);
+    public static extern GpStatus GdipAddPathRectangles([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpRectF *")] GpRectF* rects, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathEllipse"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -185,22 +185,22 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathPolygon"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathPolygon([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipAddPathPolygon([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathPath([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPath *")] GpPath* addingPath, BOOL connect);
+    public static extern GpStatus GdipAddPathPath([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPath *")] GpPath* addingPath, BOOL connect);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathString"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathString([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const WCHAR *")] ushort* @string, int length, [NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("Gdiplus::REAL")] float emSize, [NativeTypeName("const Gdiplus::RectF *")] GpRectF* layoutRect, [NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format);
+    public static extern GpStatus GdipAddPathString([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const WCHAR *")] char* @string, int length, [NativeTypeName("const GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("Gdiplus::REAL")] float emSize, [NativeTypeName("const RectF *")] GpRectF* layoutRect, [NativeTypeName("const GpStringFormat *")] GpStringFormat* format);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathStringI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathStringI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const WCHAR *")] ushort* @string, int length, [NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("Gdiplus::REAL")] float emSize, [NativeTypeName("const Gdiplus::Rect *")] GpRect* layoutRect, [NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format);
+    public static extern GpStatus GdipAddPathStringI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const WCHAR *")] char* @string, int length, [NativeTypeName("const GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("Gdiplus::REAL")] float emSize, [NativeTypeName("const Rect *")] GpRect* layoutRect, [NativeTypeName("const GpStringFormat *")] GpStringFormat* format);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathLineI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -210,7 +210,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathLine2I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathLine2I([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipAddPathLine2I([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathArcI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -225,32 +225,32 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathBeziersI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathBeziersI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipAddPathBeziersI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathCurveI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathCurveI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipAddPathCurveI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathCurve2I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathCurve2I([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipAddPathCurve2I([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathCurve3I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathCurve3I([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, int offset, int numberOfSegments, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipAddPathCurve3I([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPoint *")] GpPoint* points, int count, int offset, int numberOfSegments, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathClosedCurveI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathClosedCurveI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipAddPathClosedCurveI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathClosedCurve2I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathClosedCurve2I([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipAddPathClosedCurve2I([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathRectangleI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -260,7 +260,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathRectanglesI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathRectanglesI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* rects, int count);
+    public static extern GpStatus GdipAddPathRectanglesI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpRect *")] GpRect* rects, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathEllipseI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -275,7 +275,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipAddPathPolygonI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipAddPathPolygonI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipAddPathPolygonI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFlattenPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -295,7 +295,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipWarpPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipWarpPath([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float srcx, [NativeTypeName("Gdiplus::REAL")] float srcy, [NativeTypeName("Gdiplus::REAL")] float srcwidth, [NativeTypeName("Gdiplus::REAL")] float srcheight, [NativeTypeName("Gdiplus::WarpMode")] WarpMode warpMode, [NativeTypeName("Gdiplus::REAL")] float flatness);
+    public static extern GpStatus GdipWarpPath([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float srcx, [NativeTypeName("Gdiplus::REAL")] float srcy, [NativeTypeName("Gdiplus::REAL")] float srcwidth, [NativeTypeName("Gdiplus::REAL")] float srcheight, [NativeTypeName("Gdiplus::WarpMode")] WarpMode warpMode, [NativeTypeName("Gdiplus::REAL")] float flatness);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipTransformPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -305,12 +305,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPathWorldBounds"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetPathWorldBounds([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("Gdiplus::GpRectF *")] GpRectF* bounds, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("const Gdiplus::GpPen *")] GpPen* pen);
+    public static extern GpStatus GdipGetPathWorldBounds([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("Gdiplus::GpRectF *")] GpRectF* bounds, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("const GpPen *")] GpPen* pen);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPathWorldBoundsI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetPathWorldBoundsI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("Gdiplus::GpRect *")] GpRect* bounds, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("const Gdiplus::GpPen *")] GpPen* pen);
+    public static extern GpStatus GdipGetPathWorldBoundsI([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("Gdiplus::GpRect *")] GpRect* bounds, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("const GpPen *")] GpPen* pen);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipIsVisiblePathPoint"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -335,7 +335,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreatePathIter"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreatePathIter([NativeTypeName("Gdiplus::GpPathIterator **")] GpPathIterator** iterator, [NativeTypeName("Gdiplus::GpPath *")] GpPath* path);
+    public static extern GpStatus GdipCreatePathIter(GpPathIterator** iterator, [NativeTypeName("Gdiplus::GpPath *")] GpPath* path);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeletePathIter"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -405,27 +405,27 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateMatrix"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateMatrix([NativeTypeName("Gdiplus::GpMatrix **")] GpMatrix** matrix);
+    public static extern GpStatus GdipCreateMatrix(GpMatrix** matrix);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateMatrix2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateMatrix2([NativeTypeName("Gdiplus::REAL")] float m11, [NativeTypeName("Gdiplus::REAL")] float m12, [NativeTypeName("Gdiplus::REAL")] float m21, [NativeTypeName("Gdiplus::REAL")] float m22, [NativeTypeName("Gdiplus::REAL")] float dx, [NativeTypeName("Gdiplus::REAL")] float dy, [NativeTypeName("Gdiplus::GpMatrix **")] GpMatrix** matrix);
+    public static extern GpStatus GdipCreateMatrix2([NativeTypeName("Gdiplus::REAL")] float m11, [NativeTypeName("Gdiplus::REAL")] float m12, [NativeTypeName("Gdiplus::REAL")] float m21, [NativeTypeName("Gdiplus::REAL")] float m22, [NativeTypeName("Gdiplus::REAL")] float dx, [NativeTypeName("Gdiplus::REAL")] float dy, GpMatrix** matrix);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateMatrix3"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateMatrix3([NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* rect, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* dstplg, [NativeTypeName("Gdiplus::GpMatrix **")] GpMatrix** matrix);
+    public static extern GpStatus GdipCreateMatrix3([NativeTypeName("const GpRectF *")] GpRectF* rect, [NativeTypeName("const GpPointF *")] GpPointF* dstplg, GpMatrix** matrix);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateMatrix3I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateMatrix3I([NativeTypeName("const Gdiplus::GpRect *")] GpRect* rect, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* dstplg, [NativeTypeName("Gdiplus::GpMatrix **")] GpMatrix** matrix);
+    public static extern GpStatus GdipCreateMatrix3I([NativeTypeName("const GpRect *")] GpRect* rect, [NativeTypeName("const GpPoint *")] GpPoint* dstplg, GpMatrix** matrix);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneMatrix"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneMatrix([NativeTypeName("Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrix **")] GpMatrix** cloneMatrix);
+    public static extern GpStatus GdipCloneMatrix([NativeTypeName("Gdiplus::GpMatrix *")] GpMatrix* matrix, GpMatrix** cloneMatrix);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteMatrix"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -490,57 +490,57 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetMatrixElements"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetMatrixElements([NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::REAL *")] float* matrixOut);
+    public static extern GpStatus GdipGetMatrixElements([NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::REAL *")] float* matrixOut);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipIsMatrixInvertible"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipIsMatrixInvertible([NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, BOOL* result);
+    public static extern GpStatus GdipIsMatrixInvertible([NativeTypeName("const GpMatrix *")] GpMatrix* matrix, BOOL* result);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipIsMatrixIdentity"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipIsMatrixIdentity([NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, BOOL* result);
+    public static extern GpStatus GdipIsMatrixIdentity([NativeTypeName("const GpMatrix *")] GpMatrix* matrix, BOOL* result);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipIsMatrixEqual"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipIsMatrixEqual([NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix2, BOOL* result);
+    public static extern GpStatus GdipIsMatrixEqual([NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix2, BOOL* result);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateRegion"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateRegion([NativeTypeName("Gdiplus::GpRegion **")] GpRegion** region);
+    public static extern GpStatus GdipCreateRegion(GpRegion** region);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateRegionRect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateRegionRect([NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* rect, [NativeTypeName("Gdiplus::GpRegion **")] GpRegion** region);
+    public static extern GpStatus GdipCreateRegionRect([NativeTypeName("const GpRectF *")] GpRectF* rect, GpRegion** region);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateRegionRectI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateRegionRectI([NativeTypeName("const Gdiplus::GpRect *")] GpRect* rect, [NativeTypeName("Gdiplus::GpRegion **")] GpRegion** region);
+    public static extern GpStatus GdipCreateRegionRectI([NativeTypeName("const GpRect *")] GpRect* rect, GpRegion** region);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateRegionPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateRegionPath([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("Gdiplus::GpRegion **")] GpRegion** region);
+    public static extern GpStatus GdipCreateRegionPath([NativeTypeName("Gdiplus::GpPath *")] GpPath* path, GpRegion** region);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateRegionRgnData"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateRegionRgnData([NativeTypeName("const BYTE *")] byte* regionData, int size, [NativeTypeName("Gdiplus::GpRegion **")] GpRegion** region);
+    public static extern GpStatus GdipCreateRegionRgnData([NativeTypeName("const BYTE *")] byte* regionData, int size, GpRegion** region);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateRegionHrgn"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateRegionHrgn(HRGN hRgn, [NativeTypeName("Gdiplus::GpRegion **")] GpRegion** region);
+    public static extern GpStatus GdipCreateRegionHrgn(HRGN hRgn, GpRegion** region);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneRegion"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneRegion([NativeTypeName("Gdiplus::GpRegion *")] GpRegion* region, [NativeTypeName("Gdiplus::GpRegion **")] GpRegion** cloneRegion);
+    public static extern GpStatus GdipCloneRegion([NativeTypeName("Gdiplus::GpRegion *")] GpRegion* region, GpRegion** cloneRegion);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteRegion"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -560,12 +560,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCombineRegionRect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCombineRegionRect([NativeTypeName("Gdiplus::GpRegion *")] GpRegion* region, [NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* rect, [NativeTypeName("Gdiplus::CombineMode")] CombineMode combineMode);
+    public static extern GpStatus GdipCombineRegionRect([NativeTypeName("Gdiplus::GpRegion *")] GpRegion* region, [NativeTypeName("const GpRectF *")] GpRectF* rect, [NativeTypeName("Gdiplus::CombineMode")] CombineMode combineMode);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCombineRegionRectI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCombineRegionRectI([NativeTypeName("Gdiplus::GpRegion *")] GpRegion* region, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* rect, [NativeTypeName("Gdiplus::CombineMode")] CombineMode combineMode);
+    public static extern GpStatus GdipCombineRegionRectI([NativeTypeName("Gdiplus::GpRegion *")] GpRegion* region, [NativeTypeName("const GpRect *")] GpRect* rect, [NativeTypeName("Gdiplus::CombineMode")] CombineMode combineMode);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCombineRegionPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -670,7 +670,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneBrush"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneBrush([NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("Gdiplus::GpBrush **")] GpBrush** cloneBrush);
+    public static extern GpStatus GdipCloneBrush([NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, GpBrush** cloneBrush);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteBrush"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -685,7 +685,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateHatchBrush"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateHatchBrush([NativeTypeName("Gdiplus::GpHatchStyle")] GpHatchStyle hatchstyle, [NativeTypeName("Gdiplus::ARGB")] uint forecol, [NativeTypeName("Gdiplus::ARGB")] uint backcol, [NativeTypeName("Gdiplus::GpHatch **")] GpHatch** brush);
+    public static extern GpStatus GdipCreateHatchBrush([NativeTypeName("Gdiplus::GpHatchStyle")] GpHatchStyle hatchstyle, [NativeTypeName("Gdiplus::ARGB")] uint forecol, [NativeTypeName("Gdiplus::ARGB")] uint backcol, GpHatch** brush);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetHatchStyle"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -705,27 +705,27 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateTexture"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateTexture([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapmode, [NativeTypeName("Gdiplus::GpTexture **")] GpTexture** texture);
+    public static extern GpStatus GdipCreateTexture([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapmode, GpTexture** texture);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateTexture2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateTexture2([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapmode, [NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height, [NativeTypeName("Gdiplus::GpTexture **")] GpTexture** texture);
+    public static extern GpStatus GdipCreateTexture2([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapmode, [NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height, GpTexture** texture);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateTextureIA"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateTextureIA([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height, [NativeTypeName("Gdiplus::GpTexture **")] GpTexture** texture);
+    public static extern GpStatus GdipCreateTextureIA([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height, GpTexture** texture);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateTexture2I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateTexture2I([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapmode, int x, int y, int width, int height, [NativeTypeName("Gdiplus::GpTexture **")] GpTexture** texture);
+    public static extern GpStatus GdipCreateTexture2I([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapmode, int x, int y, int width, int height, GpTexture** texture);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateTextureIAI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateTextureIAI([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes, int x, int y, int width, int height, [NativeTypeName("Gdiplus::GpTexture **")] GpTexture** texture);
+    public static extern GpStatus GdipCreateTextureIAI([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes, int x, int y, int width, int height, GpTexture** texture);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetTextureTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -735,7 +735,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetTextureTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetTextureTransform([NativeTypeName("Gdiplus::GpTexture *")] GpTexture* brush, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix);
+    public static extern GpStatus GdipSetTextureTransform([NativeTypeName("Gdiplus::GpTexture *")] GpTexture* brush, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipResetTextureTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -745,7 +745,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipMultiplyTextureTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipMultiplyTextureTransform([NativeTypeName("Gdiplus::GpTexture *")] GpTexture* brush, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
+    public static extern GpStatus GdipMultiplyTextureTransform([NativeTypeName("Gdiplus::GpTexture *")] GpTexture* brush, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipTranslateTextureTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -775,12 +775,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetTextureImage"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetTextureImage([NativeTypeName("Gdiplus::GpTexture *")] GpTexture* brush, [NativeTypeName("Gdiplus::GpImage **")] GpImage** image);
+    public static extern GpStatus GdipGetTextureImage([NativeTypeName("Gdiplus::GpTexture *")] GpTexture* brush, GpImage** image);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateSolidFill"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateSolidFill([NativeTypeName("Gdiplus::ARGB")] uint color, [NativeTypeName("Gdiplus::GpSolidFill **")] GpSolidFill** brush);
+    public static extern GpStatus GdipCreateSolidFill([NativeTypeName("Gdiplus::ARGB")] uint color, GpSolidFill** brush);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetSolidFillColor"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -795,32 +795,32 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateLineBrush"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateLineBrush([NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* point1, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* point2, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, [NativeTypeName("Gdiplus::GpLineGradient **")] GpLineGradient** lineGradient);
+    public static extern GpStatus GdipCreateLineBrush([NativeTypeName("const GpPointF *")] GpPointF* point1, [NativeTypeName("const GpPointF *")] GpPointF* point2, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, GpLineGradient** lineGradient);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateLineBrushI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateLineBrushI([NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* point1, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* point2, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, [NativeTypeName("Gdiplus::GpLineGradient **")] GpLineGradient** lineGradient);
+    public static extern GpStatus GdipCreateLineBrushI([NativeTypeName("const GpPoint *")] GpPoint* point1, [NativeTypeName("const GpPoint *")] GpPoint* point2, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, GpLineGradient** lineGradient);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateLineBrushFromRect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateLineBrushFromRect([NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* rect, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::LinearGradientMode")] LinearGradientMode mode, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, [NativeTypeName("Gdiplus::GpLineGradient **")] GpLineGradient** lineGradient);
+    public static extern GpStatus GdipCreateLineBrushFromRect([NativeTypeName("const GpRectF *")] GpRectF* rect, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::LinearGradientMode")] LinearGradientMode mode, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, GpLineGradient** lineGradient);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateLineBrushFromRectI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateLineBrushFromRectI([NativeTypeName("const Gdiplus::GpRect *")] GpRect* rect, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::LinearGradientMode")] LinearGradientMode mode, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, [NativeTypeName("Gdiplus::GpLineGradient **")] GpLineGradient** lineGradient);
+    public static extern GpStatus GdipCreateLineBrushFromRectI([NativeTypeName("const GpRect *")] GpRect* rect, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::LinearGradientMode")] LinearGradientMode mode, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, GpLineGradient** lineGradient);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateLineBrushFromRectWithAngle"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateLineBrushFromRectWithAngle([NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* rect, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::REAL")] float angle, BOOL isAngleScalable, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, [NativeTypeName("Gdiplus::GpLineGradient **")] GpLineGradient** lineGradient);
+    public static extern GpStatus GdipCreateLineBrushFromRectWithAngle([NativeTypeName("const GpRectF *")] GpRectF* rect, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::REAL")] float angle, BOOL isAngleScalable, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, GpLineGradient** lineGradient);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateLineBrushFromRectWithAngleI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateLineBrushFromRectWithAngleI([NativeTypeName("const Gdiplus::GpRect *")] GpRect* rect, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::REAL")] float angle, BOOL isAngleScalable, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, [NativeTypeName("Gdiplus::GpLineGradient **")] GpLineGradient** lineGradient);
+    public static extern GpStatus GdipCreateLineBrushFromRectWithAngleI([NativeTypeName("const GpRect *")] GpRect* rect, [NativeTypeName("Gdiplus::ARGB")] uint color1, [NativeTypeName("Gdiplus::ARGB")] uint color2, [NativeTypeName("Gdiplus::REAL")] float angle, BOOL isAngleScalable, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, GpLineGradient** lineGradient);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetLineColors"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -865,7 +865,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetLineBlend"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetLineBlend([NativeTypeName("Gdiplus::GpLineGradient *")] GpLineGradient* brush, [NativeTypeName("const Gdiplus::REAL *")] float* blend, [NativeTypeName("const Gdiplus::REAL *")] float* positions, int count);
+    public static extern GpStatus GdipSetLineBlend([NativeTypeName("Gdiplus::GpLineGradient *")] GpLineGradient* brush, [NativeTypeName("const REAL *")] float* blend, [NativeTypeName("const REAL *")] float* positions, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetLinePresetBlendCount"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -880,7 +880,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetLinePresetBlend"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetLinePresetBlend([NativeTypeName("Gdiplus::GpLineGradient *")] GpLineGradient* brush, [NativeTypeName("const Gdiplus::ARGB *")] uint* blend, [NativeTypeName("const Gdiplus::REAL *")] float* positions, int count);
+    public static extern GpStatus GdipSetLinePresetBlend([NativeTypeName("Gdiplus::GpLineGradient *")] GpLineGradient* brush, [NativeTypeName("const ARGB *")] uint* blend, [NativeTypeName("const REAL *")] float* positions, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetLineSigmaBlend"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -910,7 +910,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetLineTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetLineTransform([NativeTypeName("Gdiplus::GpLineGradient *")] GpLineGradient* brush, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix);
+    public static extern GpStatus GdipSetLineTransform([NativeTypeName("Gdiplus::GpLineGradient *")] GpLineGradient* brush, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipResetLineTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -920,7 +920,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipMultiplyLineTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipMultiplyLineTransform([NativeTypeName("Gdiplus::GpLineGradient *")] GpLineGradient* brush, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
+    public static extern GpStatus GdipMultiplyLineTransform([NativeTypeName("Gdiplus::GpLineGradient *")] GpLineGradient* brush, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipTranslateLineTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -940,17 +940,17 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreatePathGradient"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreatePathGradient([NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, [NativeTypeName("Gdiplus::GpPathGradient **")] GpPathGradient** polyGradient);
+    public static extern GpStatus GdipCreatePathGradient([NativeTypeName("const GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, GpPathGradient** polyGradient);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreatePathGradientI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreatePathGradientI([NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, [NativeTypeName("Gdiplus::GpPathGradient **")] GpPathGradient** polyGradient);
+    public static extern GpStatus GdipCreatePathGradientI([NativeTypeName("const GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::GpWrapMode")] GpWrapMode wrapMode, GpPathGradient** polyGradient);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreatePathGradientFromPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreatePathGradientFromPath([NativeTypeName("const Gdiplus::GpPath *")] GpPath* path, [NativeTypeName("Gdiplus::GpPathGradient **")] GpPathGradient** polyGradient);
+    public static extern GpStatus GdipCreatePathGradientFromPath([NativeTypeName("const GpPath *")] GpPath* path, GpPathGradient** polyGradient);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPathGradientCenterColor"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -970,7 +970,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPathGradientSurroundColorsWithCount"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetPathGradientSurroundColorsWithCount([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const Gdiplus::ARGB *")] uint* color, int* count);
+    public static extern GpStatus GdipSetPathGradientSurroundColorsWithCount([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const ARGB *")] uint* color, int* count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPathGradientPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -980,7 +980,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPathGradientPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetPathGradientPath([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const Gdiplus::GpPath *")] GpPath* path);
+    public static extern GpStatus GdipSetPathGradientPath([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const GpPath *")] GpPath* path);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPathGradientCenterPoint"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -995,12 +995,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPathGradientCenterPoint"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetPathGradientCenterPoint([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points);
+    public static extern GpStatus GdipSetPathGradientCenterPoint([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const GpPointF *")] GpPointF* points);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPathGradientCenterPointI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetPathGradientCenterPointI([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points);
+    public static extern GpStatus GdipSetPathGradientCenterPointI([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const GpPoint *")] GpPoint* points);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPathGradientRect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1045,7 +1045,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPathGradientBlend"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetPathGradientBlend([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const Gdiplus::REAL *")] float* blend, [NativeTypeName("const Gdiplus::REAL *")] float* positions, int count);
+    public static extern GpStatus GdipSetPathGradientBlend([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const REAL *")] float* blend, [NativeTypeName("const REAL *")] float* positions, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPathGradientPresetBlendCount"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1060,7 +1060,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPathGradientPresetBlend"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetPathGradientPresetBlend([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const Gdiplus::ARGB *")] uint* blend, [NativeTypeName("const Gdiplus::REAL *")] float* positions, int count);
+    public static extern GpStatus GdipSetPathGradientPresetBlend([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const ARGB *")] uint* blend, [NativeTypeName("const REAL *")] float* positions, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPathGradientSigmaBlend"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1100,7 +1100,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipMultiplyPathGradientTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipMultiplyPathGradientTransform([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
+    public static extern GpStatus GdipMultiplyPathGradientTransform([NativeTypeName("Gdiplus::GpPathGradient *")] GpPathGradient* brush, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipTranslatePathGradientTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1130,17 +1130,17 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreatePen1"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreatePen1([NativeTypeName("Gdiplus::ARGB")] uint color, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::GpUnit")] GpUnit unit, [NativeTypeName("Gdiplus::GpPen **")] GpPen** pen);
+    public static extern GpStatus GdipCreatePen1([NativeTypeName("Gdiplus::ARGB")] uint color, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::GpUnit")] GpUnit unit, GpPen** pen);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreatePen2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreatePen2([NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::GpUnit")] GpUnit unit, [NativeTypeName("Gdiplus::GpPen **")] GpPen** pen);
+    public static extern GpStatus GdipCreatePen2([NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::GpUnit")] GpUnit unit, GpPen** pen);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipClonePen"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipClonePen([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("Gdiplus::GpPen **")] GpPen** clonepen);
+    public static extern GpStatus GdipClonePen([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, GpPen** clonepen);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeletePen"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1220,7 +1220,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPenCustomStartCap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetPenCustomStartCap([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("Gdiplus::GpCustomLineCap **")] GpCustomLineCap** customCap);
+    public static extern GpStatus GdipGetPenCustomStartCap([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, GpCustomLineCap** customCap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPenCustomEndCap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1230,7 +1230,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPenCustomEndCap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetPenCustomEndCap([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("Gdiplus::GpCustomLineCap **")] GpCustomLineCap** customCap);
+    public static extern GpStatus GdipGetPenCustomEndCap([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, GpCustomLineCap** customCap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPenMiterLimit"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1270,7 +1270,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipMultiplyPenTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipMultiplyPenTransform([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
+    public static extern GpStatus GdipMultiplyPenTransform([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipTranslatePenTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1305,7 +1305,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPenBrushFill"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetPenBrushFill([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("Gdiplus::GpBrush **")] GpBrush** brush);
+    public static extern GpStatus GdipGetPenBrushFill([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, GpBrush** brush);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPenFillType"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1340,7 +1340,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPenDashArray"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetPenDashArray([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::REAL *")] float* dash, int count);
+    public static extern GpStatus GdipSetPenDashArray([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const REAL *")] float* dash, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPenDashArray"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1355,7 +1355,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPenCompoundArray"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetPenCompoundArray([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::REAL *")] float* dash, int count);
+    public static extern GpStatus GdipSetPenCompoundArray([NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const REAL *")] float* dash, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetPenCompoundArray"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1365,7 +1365,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateCustomLineCap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateCustomLineCap([NativeTypeName("Gdiplus::GpPath *")] GpPath* fillPath, [NativeTypeName("Gdiplus::GpPath *")] GpPath* strokePath, [NativeTypeName("Gdiplus::GpLineCap")] GpLineCap baseCap, [NativeTypeName("Gdiplus::REAL")] float baseInset, [NativeTypeName("Gdiplus::GpCustomLineCap **")] GpCustomLineCap** customCap);
+    public static extern GpStatus GdipCreateCustomLineCap([NativeTypeName("Gdiplus::GpPath *")] GpPath* fillPath, [NativeTypeName("Gdiplus::GpPath *")] GpPath* strokePath, [NativeTypeName("Gdiplus::GpLineCap")] GpLineCap baseCap, [NativeTypeName("Gdiplus::REAL")] float baseInset, GpCustomLineCap** customCap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteCustomLineCap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1375,7 +1375,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneCustomLineCap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneCustomLineCap([NativeTypeName("Gdiplus::GpCustomLineCap *")] GpCustomLineCap* customCap, [NativeTypeName("Gdiplus::GpCustomLineCap **")] GpCustomLineCap** clonedCap);
+    public static extern GpStatus GdipCloneCustomLineCap([NativeTypeName("Gdiplus::GpCustomLineCap *")] GpCustomLineCap* customCap, GpCustomLineCap** clonedCap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetCustomLineCapType"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1435,7 +1435,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateAdjustableArrowCap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateAdjustableArrowCap([NativeTypeName("Gdiplus::REAL")] float height, [NativeTypeName("Gdiplus::REAL")] float width, BOOL isFilled, [NativeTypeName("Gdiplus::GpAdjustableArrowCap **")] GpAdjustableArrowCap** cap);
+    public static extern GpStatus GdipCreateAdjustableArrowCap([NativeTypeName("Gdiplus::REAL")] float height, [NativeTypeName("Gdiplus::REAL")] float width, BOOL isFilled, GpAdjustableArrowCap** cap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetAdjustableArrowCapHeight"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1480,27 +1480,27 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipLoadImageFromStream"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipLoadImageFromStream(IStream* stream, [NativeTypeName("Gdiplus::GpImage **")] GpImage** image);
+    public static extern GpStatus GdipLoadImageFromStream(IStream* stream, GpImage** image);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipLoadImageFromFile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipLoadImageFromFile([NativeTypeName("const WCHAR *")] ushort* filename, [NativeTypeName("Gdiplus::GpImage **")] GpImage** image);
+    public static extern GpStatus GdipLoadImageFromFile([NativeTypeName("const WCHAR *")] char* filename, GpImage** image);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipLoadImageFromStreamICM"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipLoadImageFromStreamICM(IStream* stream, [NativeTypeName("Gdiplus::GpImage **")] GpImage** image);
+    public static extern GpStatus GdipLoadImageFromStreamICM(IStream* stream, GpImage** image);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipLoadImageFromFileICM"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipLoadImageFromFileICM([NativeTypeName("const WCHAR *")] ushort* filename, [NativeTypeName("Gdiplus::GpImage **")] GpImage** image);
+    public static extern GpStatus GdipLoadImageFromFileICM([NativeTypeName("const WCHAR *")] char* filename, GpImage** image);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneImage"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneImage([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpImage **")] GpImage** cloneImage);
+    public static extern GpStatus GdipCloneImage([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, GpImage** cloneImage);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDisposeImage"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1510,27 +1510,27 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSaveImageToFile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSaveImageToFile([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const WCHAR *")] ushort* filename, [NativeTypeName("const CLSID *")] Guid* clsidEncoder, [NativeTypeName("const Gdiplus::EncoderParameters *")] EncoderParameters* encoderParams);
+    public static extern GpStatus GdipSaveImageToFile([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const WCHAR *")] char* filename, [NativeTypeName("const CLSID *")] Guid* clsidEncoder, [NativeTypeName("const EncoderParameters *")] EncoderParameters* encoderParams);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSaveImageToStream"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSaveImageToStream([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, IStream* stream, [NativeTypeName("const CLSID *")] Guid* clsidEncoder, [NativeTypeName("const Gdiplus::EncoderParameters *")] EncoderParameters* encoderParams);
+    public static extern GpStatus GdipSaveImageToStream([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, IStream* stream, [NativeTypeName("const CLSID *")] Guid* clsidEncoder, [NativeTypeName("const EncoderParameters *")] EncoderParameters* encoderParams);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSaveAdd"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSaveAdd([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const Gdiplus::EncoderParameters *")] EncoderParameters* encoderParams);
+    public static extern GpStatus GdipSaveAdd([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const EncoderParameters *")] EncoderParameters* encoderParams);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSaveAddImage"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSaveAddImage([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpImage *")] GpImage* newImage, [NativeTypeName("const Gdiplus::EncoderParameters *")] EncoderParameters* encoderParams);
+    public static extern GpStatus GdipSaveAddImage([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpImage *")] GpImage* newImage, [NativeTypeName("const EncoderParameters *")] EncoderParameters* encoderParams);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetImageGraphicsContext"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetImageGraphicsContext([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::GpGraphics **")] GpGraphics** graphics);
+    public static extern GpStatus GdipGetImageGraphicsContext([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, GpGraphics** graphics);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetImageBounds"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1585,7 +1585,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetImageThumbnail"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetImageThumbnail([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, uint thumbWidth, uint thumbHeight, [NativeTypeName("Gdiplus::GpImage **")] GpImage** thumbImage, [NativeTypeName("Gdiplus::GetThumbnailImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
+    public static extern GpStatus GdipGetImageThumbnail([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, uint thumbWidth, uint thumbHeight, GpImage** thumbImage, [NativeTypeName("Gdiplus::GetThumbnailImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetEncoderParameterListSize"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1630,7 +1630,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetImagePalette"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetImagePalette([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const Gdiplus::ColorPalette *")] ColorPalette* palette);
+    public static extern GpStatus GdipSetImagePalette([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const ColorPalette *")] ColorPalette* palette);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetImagePaletteSize"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1675,7 +1675,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetPropertyItem"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetPropertyItem([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const Gdiplus::PropertyItem *")] PropertyItem* item);
+    public static extern GpStatus GdipSetPropertyItem([NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const PropertyItem *")] PropertyItem* item);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFindFirstImageItem"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1700,47 +1700,47 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromStream"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromStream(IStream* stream, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromStream(IStream* stream, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromFile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromFile([NativeTypeName("const WCHAR *")] ushort* filename, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromFile([NativeTypeName("const WCHAR *")] char* filename, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromStreamICM"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromStreamICM(IStream* stream, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromStreamICM(IStream* stream, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromFileICM"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromFileICM([NativeTypeName("const WCHAR *")] ushort* filename, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromFileICM([NativeTypeName("const WCHAR *")] char* filename, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromScan0"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromScan0(int width, int height, int stride, [NativeTypeName("Gdiplus::PixelFormat")] int format, byte* scan0, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromScan0(int width, int height, int stride, [NativeTypeName("Gdiplus::PixelFormat")] int format, byte* scan0, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromGraphics"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromGraphics(int width, int height, [NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* target, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromGraphics(int width, int height, [NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* target, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromDirectDrawSurface"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromDirectDrawSurface(IDirectDrawSurface7* surface, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromDirectDrawSurface(IDirectDrawSurface7* surface, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromGdiDib"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromGdiDib([NativeTypeName("const BITMAPINFO *")] BITMAPINFO* gdiBitmapInfo, void* gdiBitmapData, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromGdiDib([NativeTypeName("const BITMAPINFO *")] BITMAPINFO* gdiBitmapInfo, void* gdiBitmapData, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromHBITMAP"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromHBITMAP(HBITMAP hbm, HPALETTE hpal, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromHBITMAP(HBITMAP hbm, HPALETTE hpal, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateHBITMAPFromBitmap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1750,7 +1750,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromHICON"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromHICON(HICON hicon, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromHICON(HICON hicon, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateHICONFromBitmap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1760,22 +1760,22 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateBitmapFromResource"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateBitmapFromResource(HINSTANCE hInstance, [NativeTypeName("const WCHAR *")] ushort* lpBitmapName, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** bitmap);
+    public static extern GpStatus GdipCreateBitmapFromResource(HINSTANCE hInstance, [NativeTypeName("const WCHAR *")] char* lpBitmapName, GpBitmap** bitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneBitmapArea"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneBitmapArea([NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height, [NativeTypeName("Gdiplus::PixelFormat")] int format, [NativeTypeName("Gdiplus::GpBitmap *")] GpBitmap* srcBitmap, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** dstBitmap);
+    public static extern GpStatus GdipCloneBitmapArea([NativeTypeName("Gdiplus::REAL")] float x, [NativeTypeName("Gdiplus::REAL")] float y, [NativeTypeName("Gdiplus::REAL")] float width, [NativeTypeName("Gdiplus::REAL")] float height, [NativeTypeName("Gdiplus::PixelFormat")] int format, [NativeTypeName("Gdiplus::GpBitmap *")] GpBitmap* srcBitmap, GpBitmap** dstBitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneBitmapAreaI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneBitmapAreaI(int x, int y, int width, int height, [NativeTypeName("Gdiplus::PixelFormat")] int format, [NativeTypeName("Gdiplus::GpBitmap *")] GpBitmap* srcBitmap, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** dstBitmap);
+    public static extern GpStatus GdipCloneBitmapAreaI(int x, int y, int width, int height, [NativeTypeName("Gdiplus::PixelFormat")] int format, [NativeTypeName("Gdiplus::GpBitmap *")] GpBitmap* srcBitmap, GpBitmap** dstBitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipBitmapLockBits"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipBitmapLockBits([NativeTypeName("Gdiplus::GpBitmap *")] GpBitmap* bitmap, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* rect, uint flags, [NativeTypeName("Gdiplus::PixelFormat")] int format, [NativeTypeName("Gdiplus::BitmapData *")] BitmapData* lockedBitmapData);
+    public static extern GpStatus GdipBitmapLockBits([NativeTypeName("Gdiplus::GpBitmap *")] GpBitmap* bitmap, [NativeTypeName("const GpRect *")] GpRect* rect, uint flags, [NativeTypeName("Gdiplus::PixelFormat")] int format, [NativeTypeName("Gdiplus::BitmapData *")] BitmapData* lockedBitmapData);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipBitmapUnlockBits"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1820,7 +1820,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipBitmapCreateApplyEffect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipBitmapCreateApplyEffect([NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** inputBitmaps, int numInputs, [NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect, RECT* roi, RECT* outputRect, [NativeTypeName("Gdiplus::GpBitmap **")] GpBitmap** outputBitmap, BOOL useAuxData, void** auxData, int* auxDataSize);
+    public static extern GpStatus GdipBitmapCreateApplyEffect(GpBitmap** inputBitmaps, int numInputs, [NativeTypeName("Gdiplus::CGpEffect *")] CGpEffect* effect, RECT* roi, RECT* outputRect, GpBitmap** outputBitmap, BOOL useAuxData, void** auxData, int* auxDataSize);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipBitmapGetHistogram"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1840,12 +1840,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateImageAttributes"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateImageAttributes([NativeTypeName("Gdiplus::GpImageAttributes **")] GpImageAttributes** imageattr);
+    public static extern GpStatus GdipCreateImageAttributes(GpImageAttributes** imageattr);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneImageAttributes"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneImageAttributes([NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageattr, [NativeTypeName("Gdiplus::GpImageAttributes **")] GpImageAttributes** cloneImageattr);
+    public static extern GpStatus GdipCloneImageAttributes([NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageattr, GpImageAttributes** cloneImageattr);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDisposeImageAttributes"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1865,7 +1865,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetImageAttributesColorMatrix"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetImageAttributesColorMatrix([NativeTypeName("Gdiplus::GpImageAttributes *")] GpImageAttributes* imageattr, [NativeTypeName("Gdiplus::ColorAdjustType")] ColorAdjustType type, BOOL enableFlag, [NativeTypeName("const Gdiplus::ColorMatrix *")] ColorMatrix* colorMatrix, [NativeTypeName("const Gdiplus::ColorMatrix *")] ColorMatrix* grayMatrix, [NativeTypeName("Gdiplus::ColorMatrixFlags")] ColorMatrixFlags flags);
+    public static extern GpStatus GdipSetImageAttributesColorMatrix([NativeTypeName("Gdiplus::GpImageAttributes *")] GpImageAttributes* imageattr, [NativeTypeName("Gdiplus::ColorAdjustType")] ColorAdjustType type, BOOL enableFlag, [NativeTypeName("const ColorMatrix *")] ColorMatrix* colorMatrix, [NativeTypeName("const ColorMatrix *")] ColorMatrix* grayMatrix, [NativeTypeName("Gdiplus::ColorMatrixFlags")] ColorMatrixFlags flags);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetImageAttributesThreshold"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1895,12 +1895,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetImageAttributesOutputChannelColorProfile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetImageAttributesOutputChannelColorProfile([NativeTypeName("Gdiplus::GpImageAttributes *")] GpImageAttributes* imageattr, [NativeTypeName("Gdiplus::ColorAdjustType")] ColorAdjustType type, BOOL enableFlag, [NativeTypeName("const WCHAR *")] ushort* colorProfileFilename);
+    public static extern GpStatus GdipSetImageAttributesOutputChannelColorProfile([NativeTypeName("Gdiplus::GpImageAttributes *")] GpImageAttributes* imageattr, [NativeTypeName("Gdiplus::ColorAdjustType")] ColorAdjustType type, BOOL enableFlag, [NativeTypeName("const WCHAR *")] char* colorProfileFilename);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetImageAttributesRemapTable"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetImageAttributesRemapTable([NativeTypeName("Gdiplus::GpImageAttributes *")] GpImageAttributes* imageattr, [NativeTypeName("Gdiplus::ColorAdjustType")] ColorAdjustType type, BOOL enableFlag, uint mapSize, [NativeTypeName("const Gdiplus::ColorMap *")] ColorMap* map);
+    public static extern GpStatus GdipSetImageAttributesRemapTable([NativeTypeName("Gdiplus::GpImageAttributes *")] GpImageAttributes* imageattr, [NativeTypeName("Gdiplus::ColorAdjustType")] ColorAdjustType type, BOOL enableFlag, uint mapSize, [NativeTypeName("const ColorMap *")] ColorMap* map);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetImageAttributesWrapMode"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -1920,22 +1920,22 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateFromHDC"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateFromHDC(HDC hdc, [NativeTypeName("Gdiplus::GpGraphics **")] GpGraphics** graphics);
+    public static extern GpStatus GdipCreateFromHDC(HDC hdc, GpGraphics** graphics);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateFromHDC2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateFromHDC2(HDC hdc, HANDLE hDevice, [NativeTypeName("Gdiplus::GpGraphics **")] GpGraphics** graphics);
+    public static extern GpStatus GdipCreateFromHDC2(HDC hdc, HANDLE hDevice, GpGraphics** graphics);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateFromHWND"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateFromHWND(HWND hwnd, [NativeTypeName("Gdiplus::GpGraphics **")] GpGraphics** graphics);
+    public static extern GpStatus GdipCreateFromHWND(HWND hwnd, GpGraphics** graphics);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateFromHWNDICM"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateFromHWNDICM(HWND hwnd, [NativeTypeName("Gdiplus::GpGraphics **")] GpGraphics** graphics);
+    public static extern GpStatus GdipCreateFromHWNDICM(HWND hwnd, GpGraphics** graphics);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteGraphics"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2045,7 +2045,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipMultiplyWorldTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipMultiplyWorldTransform([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
+    public static extern GpStatus GdipMultiplyWorldTransform([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::GpMatrixOrder")] GpMatrixOrder order);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipTranslateWorldTransform"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2134,12 +2134,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawLines"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawLines([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipDrawLines([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawLinesI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawLinesI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipDrawLinesI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawArc"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2164,12 +2164,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawBeziers"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawBeziers([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipDrawBeziers([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawBeziersI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawBeziersI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipDrawBeziersI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawRectangle"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2184,12 +2184,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawRectangles"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawRectangles([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* rects, int count);
+    public static extern GpStatus GdipDrawRectangles([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpRectF *")] GpRectF* rects, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawRectanglesI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawRectanglesI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* rects, int count);
+    public static extern GpStatus GdipDrawRectanglesI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpRect *")] GpRect* rects, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawEllipse"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2214,12 +2214,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawPolygon"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawPolygon([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipDrawPolygon([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawPolygonI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawPolygonI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipDrawPolygonI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawPath"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2229,52 +2229,52 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawCurve"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawCurve([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipDrawCurve([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawCurveI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawCurveI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipDrawCurveI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawCurve2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawCurve2([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipDrawCurve2([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawCurve2I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawCurve2I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipDrawCurve2I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawCurve3"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawCurve3([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, int offset, int numberOfSegments, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipDrawCurve3([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, int offset, int numberOfSegments, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawCurve3I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawCurve3I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, int offset, int numberOfSegments, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipDrawCurve3I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPoint *")] GpPoint* points, int count, int offset, int numberOfSegments, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawClosedCurve"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawClosedCurve([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipDrawClosedCurve([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawClosedCurveI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawClosedCurveI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipDrawClosedCurveI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawClosedCurve2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawClosedCurve2([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipDrawClosedCurve2([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawClosedCurve2I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawClosedCurve2I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
+    public static extern GpStatus GdipDrawClosedCurve2I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpPen *")] GpPen* pen, [NativeTypeName("const GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGraphicsClear"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2294,32 +2294,32 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillRectangles"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillRectangles([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* rects, int count);
+    public static extern GpStatus GdipFillRectangles([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpRectF *")] GpRectF* rects, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillRectanglesI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillRectanglesI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* rects, int count);
+    public static extern GpStatus GdipFillRectanglesI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpRect *")] GpRect* rects, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillPolygon"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillPolygon([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode fillMode);
+    public static extern GpStatus GdipFillPolygon([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode fillMode);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillPolygonI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillPolygonI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode fillMode);
+    public static extern GpStatus GdipFillPolygonI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode fillMode);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillPolygon2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillPolygon2([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipFillPolygon2([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillPolygon2I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillPolygon2I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipFillPolygon2I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillEllipse"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2349,22 +2349,22 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillClosedCurve"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillClosedCurve([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count);
+    public static extern GpStatus GdipFillClosedCurve([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpPointF *")] GpPointF* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillClosedCurveI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillClosedCurveI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count);
+    public static extern GpStatus GdipFillClosedCurveI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpPoint *")] GpPoint* points, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillClosedCurve2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillClosedCurve2([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode fillMode);
+    public static extern GpStatus GdipFillClosedCurve2([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode fillMode);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillClosedCurve2I"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipFillClosedCurve2I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode fillMode);
+    public static extern GpStatus GdipFillClosedCurve2I([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const GpPoint *")] GpPoint* points, int count, [NativeTypeName("Gdiplus::REAL")] float tension, [NativeTypeName("Gdiplus::GpFillMode")] GpFillMode fillMode);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipFillRegion"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2399,12 +2399,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawImagePoints"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawImagePoints([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* dstpoints, int count);
+    public static extern GpStatus GdipDrawImagePoints([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const GpPointF *")] GpPointF* dstpoints, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawImagePointsI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawImagePointsI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* dstpoints, int count);
+    public static extern GpStatus GdipDrawImagePointsI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const GpPoint *")] GpPoint* dstpoints, int count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawImagePointRect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2419,87 +2419,87 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawImageRectRect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawImageRectRect([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::REAL")] float dstx, [NativeTypeName("Gdiplus::REAL")] float dsty, [NativeTypeName("Gdiplus::REAL")] float dstwidth, [NativeTypeName("Gdiplus::REAL")] float dstheight, [NativeTypeName("Gdiplus::REAL")] float srcx, [NativeTypeName("Gdiplus::REAL")] float srcy, [NativeTypeName("Gdiplus::REAL")] float srcwidth, [NativeTypeName("Gdiplus::REAL")] float srcheight, [NativeTypeName("Gdiplus::GpUnit")] GpUnit srcUnit, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::DrawImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
+    public static extern GpStatus GdipDrawImageRectRect([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("Gdiplus::REAL")] float dstx, [NativeTypeName("Gdiplus::REAL")] float dsty, [NativeTypeName("Gdiplus::REAL")] float dstwidth, [NativeTypeName("Gdiplus::REAL")] float dstheight, [NativeTypeName("Gdiplus::REAL")] float srcx, [NativeTypeName("Gdiplus::REAL")] float srcy, [NativeTypeName("Gdiplus::REAL")] float srcwidth, [NativeTypeName("Gdiplus::REAL")] float srcheight, [NativeTypeName("Gdiplus::GpUnit")] GpUnit srcUnit, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::DrawImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawImageRectRectI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawImageRectRectI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, int dstx, int dsty, int dstwidth, int dstheight, int srcx, int srcy, int srcwidth, int srcheight, [NativeTypeName("Gdiplus::GpUnit")] GpUnit srcUnit, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::DrawImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
+    public static extern GpStatus GdipDrawImageRectRectI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, int dstx, int dsty, int dstwidth, int dstheight, int srcx, int srcy, int srcwidth, int srcheight, [NativeTypeName("Gdiplus::GpUnit")] GpUnit srcUnit, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::DrawImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawImagePointsRect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawImagePointsRect([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const Gdiplus::GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float srcx, [NativeTypeName("Gdiplus::REAL")] float srcy, [NativeTypeName("Gdiplus::REAL")] float srcwidth, [NativeTypeName("Gdiplus::REAL")] float srcheight, [NativeTypeName("Gdiplus::GpUnit")] GpUnit srcUnit, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::DrawImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
+    public static extern GpStatus GdipDrawImagePointsRect([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const GpPointF *")] GpPointF* points, int count, [NativeTypeName("Gdiplus::REAL")] float srcx, [NativeTypeName("Gdiplus::REAL")] float srcy, [NativeTypeName("Gdiplus::REAL")] float srcwidth, [NativeTypeName("Gdiplus::REAL")] float srcheight, [NativeTypeName("Gdiplus::GpUnit")] GpUnit srcUnit, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::DrawImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawImagePointsRectI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawImagePointsRectI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const Gdiplus::GpPoint *")] GpPoint* points, int count, int srcx, int srcy, int srcwidth, int srcheight, [NativeTypeName("Gdiplus::GpUnit")] GpUnit srcUnit, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::DrawImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
+    public static extern GpStatus GdipDrawImagePointsRectI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpImage *")] GpImage* image, [NativeTypeName("const GpPoint *")] GpPoint* points, int count, int srcx, int srcy, int srcwidth, int srcheight, [NativeTypeName("Gdiplus::GpUnit")] GpUnit srcUnit, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes, [NativeTypeName("Gdiplus::DrawImageAbort")] delegate* unmanaged<void*, BOOL> callback, void* callbackData);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileDestPoint"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileDestPoint([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::PointF &")] GpPointF* destPoint, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileDestPoint([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const PointF &")] GpPointF* destPoint, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileDestPointI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileDestPointI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::Point &")] GpPoint* destPoint, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileDestPointI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Point &")] GpPoint* destPoint, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileDestRect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileDestRect([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* destRect, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileDestRect([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const RectF &")] GpRectF* destRect, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileDestRectI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileDestRectI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::Rect &")] GpRect* destRect, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileDestRectI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Rect &")] GpRect* destRect, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileDestPoints"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileDestPoints([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::PointF *")] GpPointF* destPoints, int count, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileDestPoints([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const PointF *")] GpPointF* destPoints, int count, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileDestPointsI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileDestPointsI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::Point *")] GpPoint* destPoints, int count, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileDestPointsI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Point *")] GpPoint* destPoints, int count, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileSrcRectDestPoint"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileSrcRectDestPoint([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::PointF &")] GpPointF* destPoint, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileSrcRectDestPoint([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const PointF &")] GpPointF* destPoint, [NativeTypeName("const RectF &")] GpRectF* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileSrcRectDestPointI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileSrcRectDestPointI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::Point &")] GpPoint* destPoint, [NativeTypeName("const Gdiplus::Rect &")] GpRect* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileSrcRectDestPointI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Point &")] GpPoint* destPoint, [NativeTypeName("const Rect &")] GpRect* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileSrcRectDestRect"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileSrcRectDestRect([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* destRect, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileSrcRectDestRect([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const RectF &")] GpRectF* destRect, [NativeTypeName("const RectF &")] GpRectF* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileSrcRectDestRectI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileSrcRectDestRectI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::Rect &")] GpRect* destRect, [NativeTypeName("const Gdiplus::Rect &")] GpRect* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileSrcRectDestRectI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Rect &")] GpRect* destRect, [NativeTypeName("const Rect &")] GpRect* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileSrcRectDestPoints"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileSrcRectDestPoints([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::PointF *")] GpPointF* destPoints, int count, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileSrcRectDestPoints([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const PointF *")] GpPointF* destPoints, int count, [NativeTypeName("const RectF &")] GpRectF* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipEnumerateMetafileSrcRectDestPointsI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipEnumerateMetafileSrcRectDestPointsI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Gdiplus::Point *")] GpPoint* destPoints, int count, [NativeTypeName("const Gdiplus::Rect &")] GpRect* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const Gdiplus::GpImageAttributes *")] GpImageAttributes* imageAttributes);
+    public static extern GpStatus GdipEnumerateMetafileSrcRectDestPointsI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("const Point *")] GpPoint* destPoints, int count, [NativeTypeName("const Rect &")] GpRect* srcRect, [NativeTypeName("Gdiplus::Unit")] GpUnit srcUnit, [NativeTypeName("Gdiplus::EnumerateMetafileProc")] delegate* unmanaged<EmfPlusRecordType, uint, uint, byte*, void*, BOOL> callback, void* callbackData, [NativeTypeName("const GpImageAttributes *")] GpImageAttributes* imageAttributes);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipPlayMetafileRecord"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipPlayMetafileRecord([NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, [NativeTypeName("Gdiplus::EmfPlusRecordType")] EmfPlusRecordType recordType, uint flags, uint dataSize, [NativeTypeName("const BYTE *")] byte* data);
+    public static extern GpStatus GdipPlayMetafileRecord([NativeTypeName("const GpMetafile *")] GpMetafile* metafile, [NativeTypeName("Gdiplus::EmfPlusRecordType")] EmfPlusRecordType recordType, uint flags, uint dataSize, [NativeTypeName("const BYTE *")] byte* data);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetClipGraphics"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2614,12 +2614,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipBeginContainer"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipBeginContainer([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* dstrect, [NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* srcrect, [NativeTypeName("Gdiplus::GpUnit")] GpUnit unit, [NativeTypeName("Gdiplus::GraphicsContainer *")] uint* state);
+    public static extern GpStatus GdipBeginContainer([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpRectF *")] GpRectF* dstrect, [NativeTypeName("const GpRectF *")] GpRectF* srcrect, [NativeTypeName("Gdiplus::GpUnit")] GpUnit unit, [NativeTypeName("Gdiplus::GraphicsContainer *")] uint* state);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipBeginContainerI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipBeginContainerI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* dstrect, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* srcrect, [NativeTypeName("Gdiplus::GpUnit")] GpUnit unit, [NativeTypeName("Gdiplus::GraphicsContainer *")] uint* state);
+    public static extern GpStatus GdipBeginContainerI([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const GpRect *")] GpRect* dstrect, [NativeTypeName("const GpRect *")] GpRect* srcrect, [NativeTypeName("Gdiplus::GpUnit")] GpUnit unit, [NativeTypeName("Gdiplus::GraphicsContainer *")] uint* state);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipBeginContainer2"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2634,7 +2634,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetMetafileHeaderFromWmf"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetMetafileHeaderFromWmf(HMETAFILE hWmf, [NativeTypeName("const Gdiplus::WmfPlaceableFileHeader *")] WmfPlaceableFileHeader* wmfPlaceableFileHeader, [NativeTypeName("Gdiplus::MetafileHeader *")] MetafileHeader* header);
+    public static extern GpStatus GdipGetMetafileHeaderFromWmf(HMETAFILE hWmf, [NativeTypeName("const WmfPlaceableFileHeader *")] WmfPlaceableFileHeader* wmfPlaceableFileHeader, [NativeTypeName("Gdiplus::MetafileHeader *")] MetafileHeader* header);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetMetafileHeaderFromEmf"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2644,7 +2644,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetMetafileHeaderFromFile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetMetafileHeaderFromFile([NativeTypeName("const WCHAR *")] ushort* filename, [NativeTypeName("Gdiplus::MetafileHeader *")] MetafileHeader* header);
+    public static extern GpStatus GdipGetMetafileHeaderFromFile([NativeTypeName("const WCHAR *")] char* filename, [NativeTypeName("Gdiplus::MetafileHeader *")] MetafileHeader* header);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetMetafileHeaderFromStream"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2664,62 +2664,62 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateStreamOnFile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateStreamOnFile([NativeTypeName("const WCHAR *")] ushort* filename, uint access, IStream** stream);
+    public static extern GpStatus GdipCreateStreamOnFile([NativeTypeName("const WCHAR *")] char* filename, uint access, IStream** stream);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateMetafileFromWmf"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateMetafileFromWmf(HMETAFILE hWmf, BOOL deleteWmf, [NativeTypeName("const Gdiplus::WmfPlaceableFileHeader *")] WmfPlaceableFileHeader* wmfPlaceableFileHeader, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipCreateMetafileFromWmf(HMETAFILE hWmf, BOOL deleteWmf, [NativeTypeName("const WmfPlaceableFileHeader *")] WmfPlaceableFileHeader* wmfPlaceableFileHeader, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateMetafileFromEmf"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateMetafileFromEmf(HENHMETAFILE hEmf, BOOL deleteEmf, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipCreateMetafileFromEmf(HENHMETAFILE hEmf, BOOL deleteEmf, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateMetafileFromFile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateMetafileFromFile([NativeTypeName("const WCHAR *")] ushort* file, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipCreateMetafileFromFile([NativeTypeName("const WCHAR *")] char* file, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateMetafileFromWmfFile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateMetafileFromWmfFile([NativeTypeName("const WCHAR *")] ushort* file, [NativeTypeName("const Gdiplus::WmfPlaceableFileHeader *")] WmfPlaceableFileHeader* wmfPlaceableFileHeader, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipCreateMetafileFromWmfFile([NativeTypeName("const WCHAR *")] char* file, [NativeTypeName("const WmfPlaceableFileHeader *")] WmfPlaceableFileHeader* wmfPlaceableFileHeader, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateMetafileFromStream"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateMetafileFromStream(IStream* stream, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipCreateMetafileFromStream(IStream* stream, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipRecordMetafile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipRecordMetafile(HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] ushort* description, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipRecordMetafile(HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const GpRectF *")] GpRectF* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] char* description, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipRecordMetafileI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipRecordMetafileI(HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] ushort* description, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipRecordMetafileI(HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const GpRect *")] GpRect* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] char* description, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipRecordMetafileFileName"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipRecordMetafileFileName([NativeTypeName("const WCHAR *")] ushort* fileName, HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] ushort* description, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipRecordMetafileFileName([NativeTypeName("const WCHAR *")] char* fileName, HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const GpRectF *")] GpRectF* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] char* description, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipRecordMetafileFileNameI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipRecordMetafileFileNameI([NativeTypeName("const WCHAR *")] ushort* fileName, HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] ushort* description, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipRecordMetafileFileNameI([NativeTypeName("const WCHAR *")] char* fileName, HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const GpRect *")] GpRect* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] char* description, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipRecordMetafileStream"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipRecordMetafileStream(IStream* stream, HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const Gdiplus::GpRectF *")] GpRectF* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] ushort* description, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipRecordMetafileStream(IStream* stream, HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const GpRectF *")] GpRectF* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] char* description, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipRecordMetafileStreamI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipRecordMetafileStreamI(IStream* stream, HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const Gdiplus::GpRect *")] GpRect* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] ushort* description, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** metafile);
+    public static extern GpStatus GdipRecordMetafileStreamI(IStream* stream, HDC referenceHdc, [NativeTypeName("Gdiplus::EmfType")] EmfType type, [NativeTypeName("const GpRect *")] GpRect* frameRect, [NativeTypeName("Gdiplus::MetafileFrameUnit")] MetafileFrameUnit frameUnit, [NativeTypeName("const WCHAR *")] char* description, GpMetafile** metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetMetafileDownLevelRasterizationLimit"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2729,7 +2729,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetMetafileDownLevelRasterizationLimit"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetMetafileDownLevelRasterizationLimit([NativeTypeName("const Gdiplus::GpMetafile *")] GpMetafile* metafile, uint* metafileRasterizationLimitDpi);
+    public static extern GpStatus GdipGetMetafileDownLevelRasterizationLimit([NativeTypeName("const GpMetafile *")] GpMetafile* metafile, uint* metafileRasterizationLimitDpi);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetImageDecodersSize"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2759,7 +2759,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateFontFamilyFromName"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateFontFamilyFromName([NativeTypeName("const WCHAR *")] ushort* name, [NativeTypeName("Gdiplus::GpFontCollection *")] GpFontCollection* fontCollection, [NativeTypeName("Gdiplus::GpFontFamily **")] GpFontFamily** fontFamily);
+    public static extern GpStatus GdipCreateFontFamilyFromName([NativeTypeName("const WCHAR *")] char* name, [NativeTypeName("Gdiplus::GpFontCollection *")] GpFontCollection* fontCollection, GpFontFamily** fontFamily);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteFontFamily"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2769,77 +2769,77 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneFontFamily"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneFontFamily([NativeTypeName("Gdiplus::GpFontFamily *")] GpFontFamily* fontFamily, [NativeTypeName("Gdiplus::GpFontFamily **")] GpFontFamily** clonedFontFamily);
+    public static extern GpStatus GdipCloneFontFamily([NativeTypeName("Gdiplus::GpFontFamily *")] GpFontFamily* fontFamily, GpFontFamily** clonedFontFamily);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetGenericFontFamilySansSerif"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetGenericFontFamilySansSerif([NativeTypeName("Gdiplus::GpFontFamily **")] GpFontFamily** nativeFamily);
+    public static extern GpStatus GdipGetGenericFontFamilySansSerif(GpFontFamily** nativeFamily);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetGenericFontFamilySerif"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetGenericFontFamilySerif([NativeTypeName("Gdiplus::GpFontFamily **")] GpFontFamily** nativeFamily);
+    public static extern GpStatus GdipGetGenericFontFamilySerif(GpFontFamily** nativeFamily);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetGenericFontFamilyMonospace"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetGenericFontFamilyMonospace([NativeTypeName("Gdiplus::GpFontFamily **")] GpFontFamily** nativeFamily);
+    public static extern GpStatus GdipGetGenericFontFamilyMonospace(GpFontFamily** nativeFamily);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetFamilyName"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetFamilyName([NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* family, [NativeTypeName("LPWSTR")] ushort* name, [NativeTypeName("LANGID")] ushort language);
+    public static extern GpStatus GdipGetFamilyName([NativeTypeName("const GpFontFamily *")] GpFontFamily* family, [NativeTypeName("LPWSTR")] char* name, [NativeTypeName("LANGID")] ushort language);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipIsStyleAvailable"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipIsStyleAvailable([NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* family, int style, BOOL* IsStyleAvailable);
+    public static extern GpStatus GdipIsStyleAvailable([NativeTypeName("const GpFontFamily *")] GpFontFamily* family, int style, BOOL* IsStyleAvailable);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetEmHeight"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetEmHeight([NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("UINT16 *")] ushort* EmHeight);
+    public static extern GpStatus GdipGetEmHeight([NativeTypeName("const GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("UINT16 *")] ushort* EmHeight);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetCellAscent"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetCellAscent([NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("UINT16 *")] ushort* CellAscent);
+    public static extern GpStatus GdipGetCellAscent([NativeTypeName("const GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("UINT16 *")] ushort* CellAscent);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetCellDescent"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetCellDescent([NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("UINT16 *")] ushort* CellDescent);
+    public static extern GpStatus GdipGetCellDescent([NativeTypeName("const GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("UINT16 *")] ushort* CellDescent);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetLineSpacing"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetLineSpacing([NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("UINT16 *")] ushort* LineSpacing);
+    public static extern GpStatus GdipGetLineSpacing([NativeTypeName("const GpFontFamily *")] GpFontFamily* family, int style, [NativeTypeName("UINT16 *")] ushort* LineSpacing);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateFontFromDC"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateFontFromDC(HDC hdc, [NativeTypeName("Gdiplus::GpFont **")] GpFont** font);
+    public static extern GpStatus GdipCreateFontFromDC(HDC hdc, GpFont** font);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateFontFromLogfontA"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateFontFromLogfontA(HDC hdc, [NativeTypeName("const LOGFONTA *")] LOGFONTA* logfont, [NativeTypeName("Gdiplus::GpFont **")] GpFont** font);
+    public static extern GpStatus GdipCreateFontFromLogfontA(HDC hdc, [NativeTypeName("const LOGFONTA *")] LOGFONTA* logfont, GpFont** font);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateFontFromLogfontW"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateFontFromLogfontW(HDC hdc, [NativeTypeName("const LOGFONTW *")] LOGFONTW* logfont, [NativeTypeName("Gdiplus::GpFont **")] GpFont** font);
+    public static extern GpStatus GdipCreateFontFromLogfontW(HDC hdc, [NativeTypeName("const LOGFONTW *")] LOGFONTW* logfont, GpFont** font);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateFont"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateFont([NativeTypeName("const Gdiplus::GpFontFamily *")] GpFontFamily* fontFamily, [NativeTypeName("Gdiplus::REAL")] float emSize, int style, [NativeTypeName("Gdiplus::Unit")] GpUnit unit, [NativeTypeName("Gdiplus::GpFont **")] GpFont** font);
+    public static extern GpStatus GdipCreateFont([NativeTypeName("const GpFontFamily *")] GpFontFamily* fontFamily, [NativeTypeName("Gdiplus::REAL")] float emSize, int style, [NativeTypeName("Gdiplus::Unit")] GpUnit unit, GpFont** font);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneFont"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneFont([NativeTypeName("Gdiplus::GpFont *")] GpFont* font, [NativeTypeName("Gdiplus::GpFont **")] GpFont** cloneFont);
+    public static extern GpStatus GdipCloneFont([NativeTypeName("Gdiplus::GpFont *")] GpFont* font, GpFont** cloneFont);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteFont"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2849,7 +2849,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetFamily"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetFamily([NativeTypeName("Gdiplus::GpFont *")] GpFont* font, [NativeTypeName("Gdiplus::GpFontFamily **")] GpFontFamily** family);
+    public static extern GpStatus GdipGetFamily([NativeTypeName("Gdiplus::GpFont *")] GpFont* font, GpFontFamily** family);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetFontStyle"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2869,12 +2869,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetFontHeight"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetFontHeight([NativeTypeName("const Gdiplus::GpFont *")] GpFont* font, [NativeTypeName("const Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::REAL *")] float* height);
+    public static extern GpStatus GdipGetFontHeight([NativeTypeName("const GpFont *")] GpFont* font, [NativeTypeName("const GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::REAL *")] float* height);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetFontHeightGivenDPI"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetFontHeightGivenDPI([NativeTypeName("const Gdiplus::GpFont *")] GpFont* font, [NativeTypeName("Gdiplus::REAL")] float dpi, [NativeTypeName("Gdiplus::REAL *")] float* height);
+    public static extern GpStatus GdipGetFontHeightGivenDPI([NativeTypeName("const GpFont *")] GpFont* font, [NativeTypeName("Gdiplus::REAL")] float dpi, [NativeTypeName("Gdiplus::REAL *")] float* height);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetLogFontA"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2889,17 +2889,17 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipNewInstalledFontCollection"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipNewInstalledFontCollection([NativeTypeName("Gdiplus::GpFontCollection **")] GpFontCollection** fontCollection);
+    public static extern GpStatus GdipNewInstalledFontCollection(GpFontCollection** fontCollection);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipNewPrivateFontCollection"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipNewPrivateFontCollection([NativeTypeName("Gdiplus::GpFontCollection **")] GpFontCollection** fontCollection);
+    public static extern GpStatus GdipNewPrivateFontCollection(GpFontCollection** fontCollection);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeletePrivateFontCollection"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDeletePrivateFontCollection([NativeTypeName("Gdiplus::GpFontCollection **")] GpFontCollection** fontCollection);
+    public static extern GpStatus GdipDeletePrivateFontCollection(GpFontCollection** fontCollection);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetFontCollectionFamilyCount"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2909,12 +2909,12 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetFontCollectionFamilyList"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetFontCollectionFamilyList([NativeTypeName("Gdiplus::GpFontCollection *")] GpFontCollection* fontCollection, int numSought, [NativeTypeName("Gdiplus::GpFontFamily *[]")] GpFontFamily** gpfamilies, int* numFound);
+    public static extern GpStatus GdipGetFontCollectionFamilyList([NativeTypeName("Gdiplus::GpFontCollection *")] GpFontCollection* fontCollection, int numSought, [NativeTypeName("GpFontFamily *[]")] GpFontFamily** gpfamilies, int* numFound);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipPrivateAddFontFile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipPrivateAddFontFile([NativeTypeName("Gdiplus::GpFontCollection *")] GpFontCollection* fontCollection, [NativeTypeName("const WCHAR *")] ushort* filename);
+    public static extern GpStatus GdipPrivateAddFontFile([NativeTypeName("Gdiplus::GpFontCollection *")] GpFontCollection* fontCollection, [NativeTypeName("const WCHAR *")] char* filename);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipPrivateAddMemoryFont"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2924,42 +2924,42 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawString"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawString([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const WCHAR *")] ushort* @string, int length, [NativeTypeName("const Gdiplus::GpFont *")] GpFont* font, [NativeTypeName("const Gdiplus::RectF *")] GpRectF* layoutRect, [NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* stringFormat, [NativeTypeName("const Gdiplus::GpBrush *")] GpBrush* brush);
+    public static extern GpStatus GdipDrawString([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const WCHAR *")] char* @string, int length, [NativeTypeName("const GpFont *")] GpFont* font, [NativeTypeName("const RectF *")] GpRectF* layoutRect, [NativeTypeName("const GpStringFormat *")] GpStringFormat* stringFormat, [NativeTypeName("const GpBrush *")] GpBrush* brush);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipMeasureString"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipMeasureString([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const WCHAR *")] ushort* @string, int length, [NativeTypeName("const Gdiplus::GpFont *")] GpFont* font, [NativeTypeName("const Gdiplus::RectF *")] GpRectF* layoutRect, [NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* stringFormat, [NativeTypeName("Gdiplus::RectF *")] GpRectF* boundingBox, int* codepointsFitted, int* linesFilled);
+    public static extern GpStatus GdipMeasureString([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const WCHAR *")] char* @string, int length, [NativeTypeName("const GpFont *")] GpFont* font, [NativeTypeName("const RectF *")] GpRectF* layoutRect, [NativeTypeName("const GpStringFormat *")] GpStringFormat* stringFormat, [NativeTypeName("Gdiplus::RectF *")] GpRectF* boundingBox, int* codepointsFitted, int* linesFilled);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipMeasureCharacterRanges"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipMeasureCharacterRanges([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const WCHAR *")] ushort* @string, int length, [NativeTypeName("const Gdiplus::GpFont *")] GpFont* font, [NativeTypeName("const Gdiplus::RectF &")] GpRectF* layoutRect, [NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* stringFormat, int regionCount, [NativeTypeName("Gdiplus::GpRegion **")] GpRegion** regions);
+    public static extern GpStatus GdipMeasureCharacterRanges([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const WCHAR *")] char* @string, int length, [NativeTypeName("const GpFont *")] GpFont* font, [NativeTypeName("const RectF &")] GpRectF* layoutRect, [NativeTypeName("const GpStringFormat *")] GpStringFormat* stringFormat, int regionCount, GpRegion** regions);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDrawDriverString"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipDrawDriverString([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const UINT16 *")] ushort* text, int length, [NativeTypeName("const Gdiplus::GpFont *")] GpFont* font, [NativeTypeName("const Gdiplus::GpBrush *")] GpBrush* brush, [NativeTypeName("const Gdiplus::PointF *")] GpPointF* positions, int flags, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix);
+    public static extern GpStatus GdipDrawDriverString([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const UINT16 *")] ushort* text, int length, [NativeTypeName("const GpFont *")] GpFont* font, [NativeTypeName("const GpBrush *")] GpBrush* brush, [NativeTypeName("const PointF *")] GpPointF* positions, int flags, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipMeasureDriverString"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipMeasureDriverString([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const UINT16 *")] ushort* text, int length, [NativeTypeName("const Gdiplus::GpFont *")] GpFont* font, [NativeTypeName("const Gdiplus::PointF *")] GpPointF* positions, int flags, [NativeTypeName("const Gdiplus::GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::RectF *")] GpRectF* boundingBox);
+    public static extern GpStatus GdipMeasureDriverString([NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("const UINT16 *")] ushort* text, int length, [NativeTypeName("const GpFont *")] GpFont* font, [NativeTypeName("const PointF *")] GpPointF* positions, int flags, [NativeTypeName("const GpMatrix *")] GpMatrix* matrix, [NativeTypeName("Gdiplus::RectF *")] GpRectF* boundingBox);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateStringFormat"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateStringFormat(int formatAttributes, [NativeTypeName("LANGID")] ushort language, [NativeTypeName("Gdiplus::GpStringFormat **")] GpStringFormat** format);
+    public static extern GpStatus GdipCreateStringFormat(int formatAttributes, [NativeTypeName("LANGID")] ushort language, GpStringFormat** format);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipStringFormatGetGenericDefault"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipStringFormatGetGenericDefault([NativeTypeName("Gdiplus::GpStringFormat **")] GpStringFormat** format);
+    public static extern GpStatus GdipStringFormatGetGenericDefault(GpStringFormat** format);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipStringFormatGetGenericTypographic"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipStringFormatGetGenericTypographic([NativeTypeName("Gdiplus::GpStringFormat **")] GpStringFormat** format);
+    public static extern GpStatus GdipStringFormatGetGenericTypographic(GpStringFormat** format);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteStringFormat"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2969,7 +2969,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCloneStringFormat"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCloneStringFormat([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, [NativeTypeName("Gdiplus::GpStringFormat **")] GpStringFormat** newFormat);
+    public static extern GpStatus GdipCloneStringFormat([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, GpStringFormat** newFormat);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetStringFormatFlags"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2979,7 +2979,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetStringFormatFlags"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetStringFormatFlags([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, int* flags);
+    public static extern GpStatus GdipGetStringFormatFlags([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, int* flags);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetStringFormatAlign"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2989,7 +2989,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetStringFormatAlign"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetStringFormatAlign([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, [NativeTypeName("Gdiplus::StringAlignment *")] StringAlignment* align);
+    public static extern GpStatus GdipGetStringFormatAlign([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, [NativeTypeName("Gdiplus::StringAlignment *")] StringAlignment* align);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetStringFormatLineAlign"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -2999,7 +2999,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetStringFormatLineAlign"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetStringFormatLineAlign([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, [NativeTypeName("Gdiplus::StringAlignment *")] StringAlignment* align);
+    public static extern GpStatus GdipGetStringFormatLineAlign([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, [NativeTypeName("Gdiplus::StringAlignment *")] StringAlignment* align);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetStringFormatTrimming"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -3009,7 +3009,7 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetStringFormatTrimming"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetStringFormatTrimming([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, [NativeTypeName("Gdiplus::StringTrimming *")] StringTrimming* trimming);
+    public static extern GpStatus GdipGetStringFormatTrimming([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, [NativeTypeName("Gdiplus::StringTrimming *")] StringTrimming* trimming);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetStringFormatHotkeyPrefix"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -3019,22 +3019,22 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetStringFormatHotkeyPrefix"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetStringFormatHotkeyPrefix([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, int* hotkeyPrefix);
+    public static extern GpStatus GdipGetStringFormatHotkeyPrefix([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, int* hotkeyPrefix);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetStringFormatTabStops"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetStringFormatTabStops([NativeTypeName("Gdiplus::GpStringFormat *")] GpStringFormat* format, [NativeTypeName("Gdiplus::REAL")] float firstTabOffset, int count, [NativeTypeName("const Gdiplus::REAL *")] float* tabStops);
+    public static extern GpStatus GdipSetStringFormatTabStops([NativeTypeName("Gdiplus::GpStringFormat *")] GpStringFormat* format, [NativeTypeName("Gdiplus::REAL")] float firstTabOffset, int count, [NativeTypeName("const REAL *")] float* tabStops);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetStringFormatTabStops"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetStringFormatTabStops([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, int count, [NativeTypeName("Gdiplus::REAL *")] float* firstTabOffset, [NativeTypeName("Gdiplus::REAL *")] float* tabStops);
+    public static extern GpStatus GdipGetStringFormatTabStops([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, int count, [NativeTypeName("Gdiplus::REAL *")] float* firstTabOffset, [NativeTypeName("Gdiplus::REAL *")] float* tabStops);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetStringFormatTabStopCount"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetStringFormatTabStopCount([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, int* count);
+    public static extern GpStatus GdipGetStringFormatTabStopCount([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, int* count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetStringFormatDigitSubstitution"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -3044,22 +3044,22 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetStringFormatDigitSubstitution"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetStringFormatDigitSubstitution([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, [NativeTypeName("LANGID *")] ushort* language, [NativeTypeName("Gdiplus::StringDigitSubstitute *")] StringDigitSubstitute* substitute);
+    public static extern GpStatus GdipGetStringFormatDigitSubstitution([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, [NativeTypeName("LANGID *")] ushort* language, [NativeTypeName("Gdiplus::StringDigitSubstitute *")] StringDigitSubstitute* substitute);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipGetStringFormatMeasurableCharacterRangeCount"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipGetStringFormatMeasurableCharacterRangeCount([NativeTypeName("const Gdiplus::GpStringFormat *")] GpStringFormat* format, int* count);
+    public static extern GpStatus GdipGetStringFormatMeasurableCharacterRangeCount([NativeTypeName("const GpStringFormat *")] GpStringFormat* format, int* count);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipSetStringFormatMeasurableCharacterRanges"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipSetStringFormatMeasurableCharacterRanges([NativeTypeName("Gdiplus::GpStringFormat *")] GpStringFormat* format, int rangeCount, [NativeTypeName("const Gdiplus::CharacterRange *")] CharacterRange* ranges);
+    public static extern GpStatus GdipSetStringFormatMeasurableCharacterRanges([NativeTypeName("Gdiplus::GpStringFormat *")] GpStringFormat* format, int rangeCount, [NativeTypeName("const CharacterRange *")] CharacterRange* ranges);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipCreateCachedBitmap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipCreateCachedBitmap([NativeTypeName("Gdiplus::GpBitmap *")] GpBitmap* bitmap, [NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, [NativeTypeName("Gdiplus::GpCachedBitmap **")] GpCachedBitmap** cachedBitmap);
+    public static extern GpStatus GdipCreateCachedBitmap([NativeTypeName("Gdiplus::GpBitmap *")] GpBitmap* bitmap, [NativeTypeName("Gdiplus::GpGraphics *")] GpGraphics* graphics, GpCachedBitmap** cachedBitmap);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipDeleteCachedBitmap"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
@@ -3097,15 +3097,15 @@ public static unsafe partial class Gdiplus
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipConvertToEmfPlus"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipConvertToEmfPlus([NativeTypeName("const Gdiplus::GpGraphics *")] GpGraphics* refGraphics, [NativeTypeName("Gdiplus::GpMetafile *")] GpMetafile* metafile, int* conversionFailureFlag, [NativeTypeName("Gdiplus::EmfType")] EmfType emfType, [NativeTypeName("const WCHAR *")] ushort* description, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** out_metafile);
+    public static extern GpStatus GdipConvertToEmfPlus([NativeTypeName("const GpGraphics *")] GpGraphics* refGraphics, [NativeTypeName("Gdiplus::GpMetafile *")] GpMetafile* metafile, int* conversionFailureFlag, [NativeTypeName("Gdiplus::EmfType")] EmfType emfType, [NativeTypeName("const WCHAR *")] char* description, GpMetafile** out_metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipConvertToEmfPlusToFile"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipConvertToEmfPlusToFile([NativeTypeName("const Gdiplus::GpGraphics *")] GpGraphics* refGraphics, [NativeTypeName("Gdiplus::GpMetafile *")] GpMetafile* metafile, int* conversionFailureFlag, [NativeTypeName("const WCHAR *")] ushort* filename, [NativeTypeName("Gdiplus::EmfType")] EmfType emfType, [NativeTypeName("const WCHAR *")] ushort* description, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** out_metafile);
+    public static extern GpStatus GdipConvertToEmfPlusToFile([NativeTypeName("const GpGraphics *")] GpGraphics* refGraphics, [NativeTypeName("Gdiplus::GpMetafile *")] GpMetafile* metafile, int* conversionFailureFlag, [NativeTypeName("const WCHAR *")] char* filename, [NativeTypeName("Gdiplus::EmfType")] EmfType emfType, [NativeTypeName("const WCHAR *")] char* description, GpMetafile** out_metafile);
 
     /// <include file='Gdiplus.xml' path='doc/member[@name="Gdiplus.GdipConvertToEmfPlusToStream"]/*' />
     [DllImport("gdiplus", ExactSpelling = true)]
     [return: NativeTypeName("Gdiplus::GpStatus")]
-    public static extern GpStatus GdipConvertToEmfPlusToStream([NativeTypeName("const Gdiplus::GpGraphics *")] GpGraphics* refGraphics, [NativeTypeName("Gdiplus::GpMetafile *")] GpMetafile* metafile, int* conversionFailureFlag, IStream* stream, [NativeTypeName("Gdiplus::EmfType")] EmfType emfType, [NativeTypeName("const WCHAR *")] ushort* description, [NativeTypeName("Gdiplus::GpMetafile **")] GpMetafile** out_metafile);
+    public static extern GpStatus GdipConvertToEmfPlusToStream([NativeTypeName("const GpGraphics *")] GpGraphics* refGraphics, [NativeTypeName("Gdiplus::GpMetafile *")] GpMetafile* metafile, int* conversionFailureFlag, IStream* stream, [NativeTypeName("Gdiplus::EmfType")] EmfType emfType, [NativeTypeName("const WCHAR *")] char* description, GpMetafile** out_metafile);
 }

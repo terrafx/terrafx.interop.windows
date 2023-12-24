@@ -3,38 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_IFROW">
-    <summary>
-      <para>The
-<b>MIB_IFROW</b> structure stores information about a particular interface.</para>
-    </summary>
-    <remarks>
-      <para>The <b>dwSpeed</b> member of the <b>MIB_IFROW</b> structure will be incorrect for very high-speed network interfaces (10 Gbit/s network adapter, for example) since the maximum value that can be store in a DWORD is 4,294,967,295. Applications should use the <see cref="MIB_IF_ROW2" /> structure returned by the <see cref="GetIfEntry2" /> and <see cref="GetIfTable2" /> functions or the <see cref="IP_ADAPTER_ADDRESSES" /> structure returned by the <see cref="GetAdaptersAddresses" /> function for determining the speed for very high-speed network interfaces.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>MIB_IFROW</b> structure is defined in the <i>Ifmib.h</i> header file not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ifmib.h</i> header file is automatically included in <i>Iprtrmib.h</i> which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ifmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetAdaptersAddresses" />
-    <seealso cref="GetIfEntry" />
-    <seealso cref="GetIfEntry2" />
-    <seealso cref="IP_ADAPTER_ADDRESSES" />
-    <seealso cref="MIB_IFSTATUS" />
-    <seealso cref="MIB_IFTABLE" />
-    <seealso cref="MIB_IF_TABLE2" />
-    <seealso cref="MPR_INTERFACE_0" />
+    <summary>The<b>MIB_IFROW</b> structure stores information about a particular interface.</summary>
   </member>
   <member name="MIB_IFROW.wszName">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_INTERFACE_NAME_LEN]</b></para>
-      <para>A pointer to a Unicode string that contains the name of the interface.</para>
-    </summary>
+    <summary>A pointer to a Unicode string that contains the name of the interface.</summary>
   </member>
   <member name="MIB_IFROW.dwIndex">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The index that identifies the interface. This index value may change when a network adapter is disabled and then enabled, and should not be considered persistent.</para>
-    </summary>
+    <summary>The index that identifies the interface. This index value may change when a network adapter is disabled and then enabled, and should not be considered persistent.</summary>
   </member>
   <member name="MIB_IFROW.dwType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The interface type as defined by the Internet Assigned Names Authority (IANA). For more information, see <a href="https://www.iana.org/assignments/ianaiftype-mib">http://www.iana.org/assignments/ianaiftype-mib</a>. Possible values for the interface type are listed in the <i>Ipifcons.h</i> header file.</para>
       <para>The table below lists common values for the interface type although many other values are possible.</para>
       <list type="table">
@@ -42,415 +20,348 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_OTHER</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Some other type of network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>Some other type of network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_ETHERNET_CSMACD</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An Ethernet network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>An Ethernet network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_ISO88025_TOKENRING</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A token ring network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A token ring network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_FDDI</b>
-                </description>
-              </item>
-              <item>
-                <description>15</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>15</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Fiber Distributed Data Interface (FDDI) network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Fiber Distributed Data Interface (FDDI) network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_PPP</b>
-                </description>
-              </item>
-              <item>
-                <description>23</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>23</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A PPP network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A PPP network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_SOFTWARE_LOOPBACK</b>
-                </description>
-              </item>
-              <item>
-                <description>24</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>24</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A software loopback network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A software loopback network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_ATM</b>
-                </description>
-              </item>
-              <item>
-                <description>37</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>37</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An ATM network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>An ATM network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_IEEE80211</b>
-                </description>
-              </item>
-              <item>
-                <description>71</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>71</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An IEEE 802.11 wireless network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>An IEEE 802.11 wireless network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_TUNNEL</b>
-                </description>
-              </item>
-              <item>
-                <description>131</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>131</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A tunnel type encapsulation network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A tunnel type encapsulation network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_IEEE1394</b>
-                </description>
-              </item>
-              <item>
-                <description>144</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>144</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An IEEE 1394 (Firewire) high performance serial bus network interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>An IEEE 1394 (Firewire) high performance serial bus network interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b> IF_TYPE_IEEE80216_WMAN</b>
-                </description>
-              </item>
-              <item>
-                <description>237</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>237</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A mobile broadband interface for WiMax devices.</para>
-            <para>
-              <b>Note</b>  This interface type is supported on Windows 7,   Windows Server 2008 R2, and later.</para>
-          </description>
-        </item>
-        <item>
+          <description>A mobile broadband interface for WiMax devices.<div><b>Note</b>  This interface type is supported on Windows 7, Windows Server 2008 R2, and later.</div></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_WWANPP</b>
-                </description>
-              </item>
-              <item>
-                <description>243</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>243</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A mobile broadband interface for GSM-based devices.</para>
-            <para>
-              <b>Note</b>  This interface type is supported on Windows 7,   Windows Server 2008 R2, and later.</para>
-          </description>
-        </item>
-        <item>
+          <description>A mobile broadband interface for GSM-based devices.<div><b>Note</b>  This interface type is supported on Windows 7, Windows Server 2008 R2, and later.</div></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IF_TYPE_WWANPP2</b>
-                </description>
-              </item>
-              <item>
-                <description>244</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>244</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An mobile broadband interface for CDMA-based devices.</para>
-            <para>
-              <b>Note</b>  This interface type is supported on Windows 7,   Windows Server 2008 R2, and later.</para>
-          </description>
-        </item>
+          <description>An mobile broadband interface for CDMA-based devices.<div><b>Note</b>  This interface type is supported on Windows 7, Windows Server 2008 R2, and later.</div></description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MIB_IFROW.dwMtu">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The Maximum Transmission Unit (MTU) size in bytes.</para>
-    </summary>
+    <summary>The Maximum Transmission Unit (MTU) size in bytes.</summary>
   </member>
   <member name="MIB_IFROW.dwSpeed">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The speed of the interface in bits per second.</para>
-    </summary>
+    <summary>The speed of the interface in bits per second.</summary>
   </member>
   <member name="MIB_IFROW.dwPhysAddrLen">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The length, in bytes, of the physical address specified by the <b>bPhysAddr</b> member.</para>
-    </summary>
+    <summary>The length, in bytes, of the physical address specified by the <b>bPhysAddr</b> member.</summary>
   </member>
   <member name="MIB_IFROW.bPhysAddr">
-    <summary>
-      <para>Type: <b>BYTE[MAXLEN_PHYSADDR]</b></para>
-      <para>The physical address of the adapter for this interface.</para>
-    </summary>
+    <summary>The physical address of the adapter for this interface.</summary>
   </member>
   <member name="MIB_IFROW.dwAdminStatus">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The interface is administratively enabled or disabled.</para>
-    </summary>
+    <summary>The interface is administratively enabled or disabled.</summary>
   </member>
   <member name="MIB_IFROW.dwOperStatus">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The operational status of the interface. This member can be one of the following values defined in the INTERNAL_IF_OPER_STATUS enumeration defined in the <i>Ipifcons.h</i> header file.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>IF_OPER_STATUS_NON_OPERATIONAL</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IF_OPER_STATUS_NON_OPERATIONAL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>LAN adapter has been disabled, for example because of an address conflict.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>LAN adapter has been disabled, for example because of an address conflict.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IF_OPER_STATUS_UNREACHABLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>WAN adapter that is not connected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>IF_OPER_STATUS_UNREACHABLE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IF_OPER_STATUS_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>For LAN adapters: network cable disconnected. For WAN adapters: no carrier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>WAN adapter that is not connected.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IF_OPER_STATUS_CONNECTING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>WAN adapter that is in the process of connecting.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>IF_OPER_STATUS_DISCONNECTED</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IF_OPER_STATUS_CONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>WAN adapter that is connected to a remote peer.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>For LAN adapters: network cable disconnected. For WAN adapters: no carrier.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IF_OPER_STATUS_OPERATIONAL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>IF_OPER_STATUS_CONNECTING</b>
-          </description>
-          <description>
-            <para>WAN adapter that is in the process of connecting.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>IF_OPER_STATUS_CONNECTED</b>
-          </description>
-          <description>
-            <para>WAN adapter that is connected to a remote peer.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>IF_OPER_STATUS_OPERATIONAL</b>
-          </description>
-          <description>
-            <para>Default status for LAN adapters</para>
-          </description>
-        </item>
+          <description>Default status for LAN adapters</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MIB_IFROW.dwLastChange">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The  length of time, in hundredths of seconds (10^-2 sec), starting from the last computer restart, when the interface entered its current operational state. This value rolls over after 2^32 hundredths of a second.</para>
+      <para>The length of time, in hundredths of seconds (10^-2 sec), starting from the last computer restart, when the interface entered its current operational state. This value rolls over after 2^32 hundredths of a second.</para>
       <para>The <b>dwLastChange</b> member is not currently supported by NDIS. On Windows Vista and later, NDIS returns zero for this member. On earlier versions of Windows, an arbitrary value is returned in this member for the interfaces supported by NDIS. For interfaces supported by other interface providers, they might return an appropriate value.</para>
     </summary>
   </member>
   <member name="MIB_IFROW.dwInOctets">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of octets of data received through this interface.</para>
-    </summary>
+    <summary>The number of octets of data received through this interface.</summary>
   </member>
   <member name="MIB_IFROW.dwInUcastPkts">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of unicast packets received through this interface.</para>
-    </summary>
+    <summary>The number of unicast packets received through this interface.</summary>
   </member>
   <member name="MIB_IFROW.dwInNUcastPkts">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of non-unicast packets received through this interface. Broadcast and multicast packets are included.</para>
-    </summary>
+    <summary>The number of non-unicast packets received through this interface. Broadcast and multicast packets are included.</summary>
   </member>
   <member name="MIB_IFROW.dwInDiscards">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of incoming packets that were discarded even though they did not have errors.</para>
-    </summary>
+    <summary>The number of incoming packets that were discarded even though they did not have errors.</summary>
   </member>
   <member name="MIB_IFROW.dwInErrors">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of incoming packets that were discarded because of errors.</para>
-    </summary>
+    <summary>The number of incoming packets that were discarded because of errors.</summary>
   </member>
   <member name="MIB_IFROW.dwInUnknownProtos">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of incoming packets that were discarded because the protocol was unknown.</para>
-    </summary>
+    <summary>The number of incoming packets that were discarded because the protocol was unknown.</summary>
   </member>
   <member name="MIB_IFROW.dwOutOctets">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of octets of data sent through this interface.</para>
-    </summary>
+    <summary>The number of octets of data sent through this interface.</summary>
   </member>
   <member name="MIB_IFROW.dwOutUcastPkts">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of unicast packets sent through this interface.</para>
-    </summary>
+    <summary>The number of unicast packets sent through this interface.</summary>
   </member>
   <member name="MIB_IFROW.dwOutNUcastPkts">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of non-unicast packets sent through this interface. Broadcast and multicast packets are included.</para>
-    </summary>
+    <summary>The number of non-unicast packets sent through this interface. Broadcast and multicast packets are included.</summary>
   </member>
   <member name="MIB_IFROW.dwOutDiscards">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of outgoing packets that were discarded even though they did not have errors.</para>
-    </summary>
+    <summary>The number of outgoing packets that were discarded even though they did not have errors.</summary>
   </member>
   <member name="MIB_IFROW.dwOutErrors">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of outgoing packets that were discarded because of errors.</para>
-    </summary>
+    <summary>The number of outgoing packets that were discarded because of errors.</summary>
   </member>
   <member name="MIB_IFROW.dwOutQLen">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The transmit queue length. This field is not currently used.</para>
-    </summary>
+    <summary>The transmit queue length. This field is not currently used.</summary>
   </member>
   <member name="MIB_IFROW.dwDescrLen">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The length, in bytes, of the <b>bDescr</b> member.</para>
-    </summary>
+    <summary>The length, in bytes, of the <b>bDescr</b> member.</summary>
   </member>
   <member name="MIB_IFROW.bDescr">
-    <summary>
-      <para>Type: <b>BYTE[MAXLEN_IFDESCR]</b></para>
-      <para>A description of the interface.</para>
-    </summary>
+    <summary>A description of the interface.</summary>
   </member>
 </doc>

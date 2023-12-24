@@ -3,35 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TAPE_SET_DRIVE_PARAMETERS">
-    <summary>
-      <para>The
-<b>TAPE_SET_DRIVE_PARAMETERS</b> structure describes the tape drive. It is used by the <see cref="SetTapeParameters" /> function.</para>
-    </summary>
-    <seealso cref="SetTapeParameters" />
+    <summary>The<b>TAPE_SET_DRIVE_PARAMETERS</b> structure describes the tape drive. It is used by the <see cref="SetTapeParameters" /> function.</summary>
   </member>
   <member name="TAPE_SET_DRIVE_PARAMETERS.ECC">
-    <summary>
-      <para>If this member is <b>TRUE</b>, hardware error correction is supported. Otherwise, it is not.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, hardware error correction is supported. Otherwise, it is not.</summary>
   </member>
   <member name="TAPE_SET_DRIVE_PARAMETERS.Compression">
-    <summary>
-      <para>If this member is <b>TRUE</b>, hardware data compression is enabled. Otherwise, it is disabled.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, hardware data compression is enabled. Otherwise, it is disabled.</summary>
   </member>
   <member name="TAPE_SET_DRIVE_PARAMETERS.DataPadding">
-    <summary>
-      <para>If this member is <b>TRUE</b>, data padding is enabled. Otherwise, it is disabled. Data padding keeps the tape streaming at a constant speed.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, data padding is enabled. Otherwise, it is disabled. Data padding keeps the tape streaming at a constant speed.</summary>
   </member>
   <member name="TAPE_SET_DRIVE_PARAMETERS.ReportSetmarks">
-    <summary>
-      <para>If this member is <b>TRUE</b>, setmark reporting is enabled. Otherwise, it is disabled.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, setmark reporting is enabled. Otherwise, it is disabled.</summary>
   </member>
   <member name="TAPE_SET_DRIVE_PARAMETERS.EOTWarningZoneSize">
-    <summary>
-      <para>Number of bytes between the end-of-tape warning and the physical end of the tape.</para>
-    </summary>
+    <summary>Number of bytes between the end-of-tape warning and the physical end of the tape.</summary>
   </member>
 </doc>

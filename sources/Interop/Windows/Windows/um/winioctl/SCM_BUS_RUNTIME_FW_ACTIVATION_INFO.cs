@@ -26,7 +26,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
     public SCM_BUS_FIRMWARE_ACTIVATION_STATE FirmwareActivationState;
 
     /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.FirmwareActivationCapability"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:7213:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L7213_C5")]
     public _FirmwareActivationCapability_e__Struct FirmwareActivationCapability;
 
     /// <include file='SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.xml' path='doc/member[@name="SCM_BUS_RUNTIME_FW_ACTIVATION_INFO.EstimatedFirmwareActivationTimeInUSecs"]/*' />
@@ -55,7 +55,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
         public uint FwManagedIoQuiesceFwActivationSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x1u;
             }
@@ -72,7 +72,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
         public uint OsManagedIoQuiesceFwActivationSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 1) & 0x1u;
             }
@@ -89,7 +89,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
         public uint WarmResetBasedFwActivationSupported
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 2) & 0x1u;
             }
@@ -106,7 +106,7 @@ public partial struct SCM_BUS_RUNTIME_FW_ACTIVATION_INFO
         public uint Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 3) & 0x1FFFFFFFu;
             }

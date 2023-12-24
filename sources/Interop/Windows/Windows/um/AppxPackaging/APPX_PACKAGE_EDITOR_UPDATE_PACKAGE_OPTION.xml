@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION">
-    <summary>
-      <para>Options to use when updating an app package.</para>
-    </summary>
-    <seealso cref="UpdatePackage" />
+    <summary>Options to use when updating an app package.</summary>
   </member>
   <member name="APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION.APPX_PACKAGE_EDITOR_UPDATE_PACKAGE_OPTION_APPEND_DELTA">
-    <summary>
-      <para>Appends the delta (difference) of the baseline package and the updated package.</para>
-    </summary>
+    <summary>Appends the delta (difference) of the baseline package and the updated package.</summary>
   </member>
 </doc>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_QUERY_META_COMMAND">
+    <summary>Indicates the level of support that the adapter provides for metacommands.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.CommandId">
+    <summary>The fixed GUID that identifies the metacommand to query about.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.NodeMask">
+    <summary>For single GPU operation, this is zero. If there are multiple GPU nodes, a bit is set to identify a node (the device's physical adapter). Each bit in the mask corresponds to a single node. Only 1 bit must be set. Refer to <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.pQueryInputData">
+    <summary>A pointer to a buffer containing the query input data. Allocate <i>QueryInputDataSizeInBytes</i> bytes.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.QueryInputDataSizeInBytes">
+    <summary>The size of the buffer pointed to by <i>pQueryInputData</i>, in bytes.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.pQueryOutputData">
+    <summary>A pointer to a buffer containing the query output data.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_QUERY_META_COMMAND.QueryOutputDataSizeInBytes">
+    <summary>The size of the buffer pointed to by <i>pQueryOutputData</i>, in bytes.</summary>
+  </member>
+</doc>

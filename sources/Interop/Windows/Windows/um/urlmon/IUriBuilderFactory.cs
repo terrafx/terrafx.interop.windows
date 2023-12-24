@@ -25,7 +25,7 @@ public unsafe partial struct IUriBuilderFactory : IUriBuilderFactory.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IUriBuilderFactory*, Guid*, void**, int>)(lpVtbl[0]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IUriBuilderFactory*, Guid*, void**, int>)(lpVtbl[0]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IUriBuilderFactory : IUriBuilderFactory.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IUriBuilderFactory*, uint>)(lpVtbl[1]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriBuilderFactory*, uint>)(lpVtbl[1]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IUriBuilderFactory : IUriBuilderFactory.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IUriBuilderFactory*, uint>)(lpVtbl[2]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IUriBuilderFactory*, uint>)(lpVtbl[2]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IUriBuilderFactory.xml' path='doc/member[@name="IUriBuilderFactory.CreateIUriBuilder"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IUriBuilderFactory : IUriBuilderFactory.Interface, 
     [VtblIndex(3)]
     public HRESULT CreateIUriBuilder([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUriBuilder** ppIUriBuilder)
     {
-        return ((delegate* unmanaged<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int>)(lpVtbl[3]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), dwFlags, dwReserved, ppIUriBuilder);
+        return ((delegate* unmanaged[MemberFunction]<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int>)(lpVtbl[3]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), dwFlags, dwReserved, ppIUriBuilder);
     }
 
     /// <include file='IUriBuilderFactory.xml' path='doc/member[@name="IUriBuilderFactory.CreateInitializedIUriBuilder"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IUriBuilderFactory : IUriBuilderFactory.Interface, 
     [VtblIndex(4)]
     public HRESULT CreateInitializedIUriBuilder([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("DWORD_PTR")] nuint dwReserved, IUriBuilder** ppIUriBuilder)
     {
-        return ((delegate* unmanaged<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int>)(lpVtbl[4]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), dwFlags, dwReserved, ppIUriBuilder);
+        return ((delegate* unmanaged[MemberFunction]<IUriBuilderFactory*, uint, nuint, IUriBuilder**, int>)(lpVtbl[4]))((IUriBuilderFactory*)Unsafe.AsPointer(ref this), dwFlags, dwReserved, ppIUriBuilder);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IUriBuilderFactory : IUriBuilderFactory.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUriBuilder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, nuint, IUriBuilder**, int> CreateIUriBuilder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, nuint, IUriBuilder**, int> CreateIUriBuilder;
 
         [NativeTypeName("HRESULT (DWORD, DWORD_PTR, IUriBuilder **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, nuint, IUriBuilder**, int> CreateInitializedIUriBuilder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, nuint, IUriBuilder**, int> CreateInitializedIUriBuilder;
     }
 }

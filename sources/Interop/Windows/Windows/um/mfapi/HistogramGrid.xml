@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="HistogramGrid">
-    <summary>
-      <para>The  <b>HistogramGrid</b> structure describes the blob format for <b>MF_CAPTURE_METADATA_HISTOGRAM</b>.</para>
-    </summary>
-    <seealso cref="HistogramBlobHeader" />
-    <seealso cref="HistogramDataHeader" />
-    <seealso cref="HistogramHeader" />
+    <summary>The <b>HistogramGrid</b> structure describes the blob format for <b>MF_CAPTURE_METADATA_HISTOGRAM</b>.</summary>
   </member>
   <member name="HistogramGrid.Width">
-    <summary>
-      <para>Width of the sensor output that histogram is collected from.</para>
-    </summary>
+    <summary>Width of the sensor output that histogram is collected from.</summary>
   </member>
   <member name="HistogramGrid.Height">
-    <summary>
-      <para>Height of the sensor output that histogram is collected from.</para>
-    </summary>
+    <summary>Height of the sensor output that histogram is collected from.</summary>
   </member>
   <member name="HistogramGrid.Region">
-    <summary>
-      <para>Absolute coordinates of the region on the sensor output that the histogram is collected for.</para>
-    </summary>
+    <summary>Absolute coordinates of the region on the sensor output that the histogram is collected for.</summary>
   </member>
 </doc>

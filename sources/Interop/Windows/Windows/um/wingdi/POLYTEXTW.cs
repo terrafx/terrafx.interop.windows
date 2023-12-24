@@ -19,7 +19,7 @@ public unsafe partial struct POLYTEXTW
 
     /// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW.lpstr"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* lpstr;
+    public char* lpstr;
 
     /// <include file='POLYTEXTW.xml' path='doc/member[@name="POLYTEXTW.uiFlags"]/*' />
     public uint uiFlags;

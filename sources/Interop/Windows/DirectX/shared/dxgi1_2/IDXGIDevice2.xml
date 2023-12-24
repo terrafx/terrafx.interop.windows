@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIDevice2.EnqueueSetEvent">
-    <summary>
-      <para>Flushes any outstanding rendering commands and sets the specified event object to the signaled state after all previously submitted rendering commands complete.</para>
-    </summary>
+    <summary>Flushes any outstanding rendering commands and sets the specified event object to the signaled state after all previously submitted rendering commands complete.</summary>
     <param name="hEvent">
       <para>A handle to the event object. The <see cref="CreateEvent" /> or <see cref="OpenEvent" /> function returns this handle. All types of event objects (manual-reset, auto-reset, and so on) are supported.</para>
       <para>The handle must have the EVENT_MODIFY_STATE access right. For more information about access rights, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-object-security-and-access-rights">Synchronization Object Security and Access Rights</a>.</para>
@@ -22,70 +20,13 @@
             <b>E_INVALIDARG</b> if the parameter was validated and determined to be incorrect.</description>
         </item>
       </list>
-      <b>Platform Update for Windows 7:  </b>On Windows 7 or Windows Server 2008 R2 with the <a href="https://support.microsoft.com/help/2670838">Platform Update for Windows 7</a> installed, <b>EnqueueSetEvent</b> fails with E_NOTIMPL. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.
-</returns>
-    <remarks>
-      <para>
-        <b>EnqueueSetEvent</b> calls the <see cref="SetEvent" /> function on the event object after all previously submitted rendering commands complete or the device is removed.</para>
-      <para>After an application calls <b>EnqueueSetEvent</b>, it  can immediately call the <see cref="WaitForSingleObject" /> function to put itself to sleep until rendering commands complete.</para>
-      <para>You cannot use <b>EnqueueSetEvent</b> to determine work completion that is associated with presentation (<see cref="IDXGISwapChain.Present" />); instead, we recommend that you use <see cref="IDXGISwapChain.GetFrameStatistics" />.</para>
-      <h4>Examples</h4>
-      <para>The following example code shows how to use <b>EnqueueSetEvent</b>.</para>
-      <code>void BlockingFinish( IDXGIDevice2* pDevice )
-{
-    // Create a manual-reset event object.
-    hEvent = CreateEvent(
-        NULL,               // default security attributes
-        TRUE,               // manual-reset event
-        FALSE,              // initial state is nonsignaled
-        FALSE
-        );
-
-    if (hEvent == NULL)
-    {
-        printf("CreateEvent failed (%d)\n", GetLastError());
-        return;
-    }
-
-    pDevice-&gt;EnqueueSetEvent(hEvent);
-
-    DWORD dwWaitResult = WaitForSingleObject(
-        hEvent, // event handle
-        INFINITE);    // indefinite wait
-
-    switch (dwWaitResult)
-    {
-        // Event object was signaled
-        case WAIT_OBJECT_0:
-            // Commands completed
-            break;
-
-        // An error occurred
-        default:
-            printf("Wait error (%d)\n", GetLastError());
-            return 0;
-    }
-
-    CloseHandle(hEvent);
-}
-
-</code>
-    </remarks>
-    <seealso cref="IDXGIDevice2" />
+      <b>Platform Update for Windows 7:  </b>On Windows 7 or Windows Server 2008 R2 with the <a href="https://support.microsoft.com/help/2670838">Platform Update for Windows 7</a> installed, <b>EnqueueSetEvent</b> fails with E_NOTIMPL. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.</returns>
   </member>
   <member name="IDXGIDevice2.OfferResources">
-    <summary>
-      <para>Allows the operating system to free the video memory of resources by discarding their content.</para>
-    </summary>
-    <param name="NumResources">
-      <para>The number of resources in the <i>ppResources</i> argument array.</para>
-    </param>
-    <param name="ppResources">
-      <para>An array of pointers to <see cref="IDXGIResource" /> interfaces for the resources to offer.</para>
-    </param>
-    <param name="Priority">
-      <para>A <see cref="DXGI_OFFER_RESOURCE_PRIORITY" />-typed value that indicates how valuable data is.</para>
-    </param>
+    <summary>Allows the operating system to free the video memory of resources by discarding their content.</summary>
+    <param name="NumResources">The number of resources in the <i>ppResources</i> argument array.</param>
+    <param name="ppResources">An array of pointers to <see cref="IDXGIResource" /> interfaces for the resources to offer.</param>
+    <param name="Priority">A <see cref="DXGI_OFFER_RESOURCE_PRIORITY" />-typed value that indicates how valuable data is.</param>
     <returns>
       <para>
         <b>OfferResources</b> returns:</para>
@@ -98,31 +39,12 @@
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>The priority value that the  <i>Priority</i> parameter specifies describes how valuable the caller considers the content to be.  The operating system uses the priority value to discard resources in order of priority. The operating system discards a resource that is offered with low priority before it discards a resource that is  offered with a higher priority.</para>
-      <para>If you call <b>OfferResources</b> to offer a resource while the resource is bound to the pipeline, the resource is unbound.  You cannot call <b>OfferResources</b> on a resource that is mapped.  After you offer a resource, the resource cannot be mapped or bound to the pipeline until you call the <see cref="IDXGIDevice2.ReclaimResource" /> method to reclaim the resource. You cannot call <b>OfferResources</b> to offer immutable resources.</para>
-      <para>To offer shared resources, call <b>OfferResources</b> on only one of the sharing devices.  To ensure exclusive access to the resources, you must use an <see cref="IDXGIKeyedMutex" /> object and then call <b>OfferResources</b> only while you hold the mutex. In fact, you can't offer shared resources unless you use <b>IDXGIKeyedMutex</b> because offering shared resources without using <b>IDXGIKeyedMutex</b> isn't supported.</para>
-      <para>
-        <b>Note</b>  The user mode display driver might not immediately offer the resources that you specified in a call to <b>OfferResources</b>. The driver can postpone offering them until the next call to <see cref="IDXGISwapChain.Present" />, <see cref="IDXGISwapChain1.Present1" />, or <see cref="ID3D11DeviceContext.Flush" />.</para>
-      <para>
-        <b>Platform Update for Windows 7:  </b>The runtime validates that <b>OfferResources</b> is used correctly on non-shared resources but doesn't perform the intended functionality. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.</para>
-    </remarks>
-    <seealso cref="IDXGIDevice2" />
-    <seealso cref="IDXGIDevice2.ReclaimResource" />
   </member>
   <member name="IDXGIDevice2.ReclaimResources">
-    <summary>
-      <para>Restores access to resources that were previously offered by calling <see cref="IDXGIDevice2.OfferResources" />.</para>
-    </summary>
-    <param name="NumResources">
-      <para>The number of resources in the <i>ppResources</i> argument and <i>pDiscarded</i> argument arrays.</para>
-    </param>
-    <param name="ppResources">
-      <para>An array of pointers to <see cref="IDXGIResource" /> interfaces for the resources to reclaim.</para>
-    </param>
-    <param name="pDiscarded">
-      <para>A pointer to an array that receives Boolean values. Each value in the array corresponds to a resource at the same index that the <i>ppResources</i> parameter specifies.  The runtime sets each Boolean value to TRUE if the corresponding resource’s content was discarded and is now undefined, or to FALSE if the corresponding resource’s old content is still intact.  The caller can pass in <b>NULL</b>, if the caller intends to fill the resources with new content regardless of whether the old content was discarded.</para>
-    </param>
+    <summary>Restores access to resources that were previously offered by calling <see cref="IDXGIDevice2.OfferResources" />.</summary>
+    <param name="NumResources">The number of resources in the <i>ppResources</i> argument and <i>pDiscarded</i> argument arrays.</param>
+    <param name="ppResources">An array of pointers to <see cref="IDXGIResource" /> interfaces for the resources to reclaim.</param>
+    <param name="pDiscarded">A pointer to an array that receives Boolean values. Each value in the array corresponds to a resource at the same index that the <i>ppResources</i> parameter specifies. The runtime sets each Boolean value to TRUE if the corresponding resource’s content was discarded and is now undefined, or to FALSE if the corresponding resource’s old content is still intact. The caller can pass in <b>NULL</b>, if the caller intends to fill the resources with new content regardless of whether the old content was discarded.</param>
     <returns>
       <para>
         <b>ReclaimResources</b> returns:</para>
@@ -135,33 +57,8 @@
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>After you call <see cref="IDXGIDevice2.OfferResources" /> to offer one or more resources, you must call <b>ReclaimResources</b> before you can use those resources again.  You must check the values in the array at <i>pDiscarded</i> to determine whether each resource’s content was discarded. If a resource’s content was discarded while it was offered, its current content is undefined. Therefore, you must overwrite the resource’s content before you use the resource.</para>
-      <para>To reclaim shared resources, call <b>ReclaimResources</b> only on one of the sharing devices.  To ensure exclusive access to the resources, you must use an <see cref="IDXGIKeyedMutex" /> object and then call <b>ReclaimResources</b> only while you hold the mutex.</para>
-      <para>
-        <b>Platform Update for Windows 7:  </b>The runtime validates that <b>ReclaimResources</b> is used correctly on non-shared resources but doesn't perform the intended functionality. For more info about the Platform Update for Windows 7, see <a href="https://docs.microsoft.com//windows/desktop/direct3darticles/platform-update-for-windows-7">Platform Update for Windows 7</a>.</para>
-    </remarks>
-    <seealso cref="IDXGIDevice2" />
-    <seealso cref="IDXGIDevice2.OfferResources" />
   </member>
   <member name="IDXGIDevice2">
-    <summary>
-      <para>The <b>IDXGIDevice2</b> interface implements a derived class for DXGI objects that produce image data. The interface exposes methods to block CPU processing until the GPU completes processing, and to offer resources to the operating system.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IDXGIDevice2</b> interface is designed for use by DXGI objects that need access to other DXGI objects. This interface is useful to
-applications that do not use Direct3D to communicate with DXGI.</para>
-      <para>The Direct3D create device functions return a Direct3D device object. This Direct3D device object implements the <see cref="IUnknown" /> interface. You can query this Direct3D device object for the device's
-corresponding <b>IDXGIDevice2</b> interface. To retrieve the <b>IDXGIDevice2</b>  interface of a Direct3D device, use the following code:</para>
-      <code>IDXGIDevice2 * pDXGIDevice;
-hr = g_pd3dDevice-&gt;QueryInterface(__uuidof(IDXGIDevice2), (void **)&amp;amp;amp;amp;amp;amp;pDXGIDevice);
-
-</code>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIDevice1" />
+    <summary>The <b>IDXGIDevice2</b> interface implements a derived class for DXGI objects that produce image data. The interface exposes methods to block CPU processing until the GPU completes processing, and to offer resources to the operating system.</summary>
   </member>
 </doc>

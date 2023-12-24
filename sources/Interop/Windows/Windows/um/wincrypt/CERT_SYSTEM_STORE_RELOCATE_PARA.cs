@@ -13,11 +13,11 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct CERT_SYSTEM_STORE_RELOCATE_PARA
 {
     /// <include file='CERT_SYSTEM_STORE_RELOCATE_PARA.xml' path='doc/member[@name="CERT_SYSTEM_STORE_RELOCATE_PARA.Anonymous1"]/*' />
-    [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:9498:5)")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L9502_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='CERT_SYSTEM_STORE_RELOCATE_PARA.xml' path='doc/member[@name="CERT_SYSTEM_STORE_RELOCATE_PARA.Anonymous2"]/*' />
-    [NativeTypeName("_CERT_SYSTEM_STORE_RELOCATE_PARA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:9502:5)")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L9506_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.hKeyBase"]/*' />
@@ -66,7 +66,7 @@ public unsafe partial struct CERT_SYSTEM_STORE_RELOCATE_PARA
 
     /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pwszSystemStore"]/*' />
     [UnscopedRef]
-    public ref ushort* pwszSystemStore
+    public ref char* pwszSystemStore
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -104,6 +104,6 @@ public unsafe partial struct CERT_SYSTEM_STORE_RELOCATE_PARA
         /// <include file='_Anonymous2_e__Union.xml' path='doc/member[@name="_Anonymous2_e__Union.pwszSystemStore"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPCWSTR")]
-        public ushort* pwszSystemStore;
+        public char* pwszSystemStore;
     }
 }

@@ -19,7 +19,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
     [VtblIndex(0)]
     public HRESULT SetWinRtInterface(Guid iid)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[0]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[0]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
     }
 
     /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetDelegate"]/*' />
@@ -27,55 +27,55 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
     [VtblIndex(1)]
     public HRESULT SetDelegate(Guid iid)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[1]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, Guid, int>)(lpVtbl[1]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), iid);
     }
 
     /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetInterfaceGroupSimpleDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(2)]
-    public HRESULT SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
+    public HRESULT SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("PCWSTR")] char* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int>)(lpVtbl[2]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, defaultInterfaceName, defaultInterfaceIID);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, char*, char*, Guid*, int>)(lpVtbl[2]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, defaultInterfaceName, defaultInterfaceIID);
     }
 
     /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetInterfaceGroupParameterizedDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] ushort** defaultInterfaceNameElements)
+    public HRESULT SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] char** defaultInterfaceNameElements)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int>)(lpVtbl[3]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, elementCount, defaultInterfaceNameElements);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, char*, uint, char**, int>)(lpVtbl[3]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, elementCount, defaultInterfaceNameElements);
     }
 
     /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetRuntimeClassSimpleDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
+    public HRESULT SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("PCWSTR")] char* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, Guid*, int>)(lpVtbl[4]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, defaultInterfaceName, defaultInterfaceIID);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, char*, char*, Guid*, int>)(lpVtbl[4]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, defaultInterfaceName, defaultInterfaceIID);
     }
 
     /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetRuntimeClassParameterizedDefault"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] ushort** defaultInterfaceNameElements)
+    public HRESULT SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] char** defaultInterfaceNameElements)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int>)(lpVtbl[5]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, elementCount, defaultInterfaceNameElements);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, char*, uint, char**, int>)(lpVtbl[5]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, elementCount, defaultInterfaceNameElements);
     }
 
     /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetStruct"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT SetStruct([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] ushort** fieldTypeNames)
+    public HRESULT SetStruct([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] char** fieldTypeNames)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, uint, ushort**, int>)(lpVtbl[6]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, numFields, fieldTypeNames);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, char*, uint, char**, int>)(lpVtbl[6]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, numFields, fieldTypeNames);
     }
 
     /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetEnum"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(7)]
-    public HRESULT SetEnum([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* baseType)
+    public HRESULT SetEnum([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("PCWSTR")] char* baseType)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, ushort*, ushort*, int>)(lpVtbl[7]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, baseType);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, char*, char*, int>)(lpVtbl[7]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), name, baseType);
     }
 
     /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetParameterizedInterface"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
     [VtblIndex(8)]
     public HRESULT SetParameterizedInterface(Guid piid, [NativeTypeName("UINT32")] uint numArgs)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[8]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[8]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
     }
 
     /// <include file='IRoSimpleMetaDataBuilder.xml' path='doc/member[@name="IRoSimpleMetaDataBuilder.SetParameterizedDelegate"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
     [VtblIndex(9)]
     public HRESULT SetParameterizedDelegate(Guid piid, [NativeTypeName("UINT32")] uint numArgs)
     {
-        return ((delegate* unmanaged<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[9]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
+        return ((delegate* unmanaged[MemberFunction]<IRoSimpleMetaDataBuilder*, Guid, uint, int>)(lpVtbl[9]))((IRoSimpleMetaDataBuilder*)Unsafe.AsPointer(ref this), piid, numArgs);
     }
 
     public interface Interface
@@ -103,22 +103,22 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         HRESULT SetDelegate(Guid iid);
 
         [VtblIndex(2)]
-        HRESULT SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID);
+        HRESULT SetInterfaceGroupSimpleDefault([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("PCWSTR")] char* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID);
 
         [VtblIndex(3)]
-        HRESULT SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] ushort** defaultInterfaceNameElements);
+        HRESULT SetInterfaceGroupParameterizedDefault([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("PCWSTR *")] char** defaultInterfaceNameElements);
 
         [VtblIndex(4)]
-        HRESULT SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID);
+        HRESULT SetRuntimeClassSimpleDefault([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("PCWSTR")] char* defaultInterfaceName, [NativeTypeName("const GUID *")] Guid* defaultInterfaceIID);
 
         [VtblIndex(5)]
-        HRESULT SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] ushort** defaultInterfaceNameElements);
+        HRESULT SetRuntimeClassParameterizedDefault([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("UINT32")] uint elementCount, [NativeTypeName("const PCWSTR *")] char** defaultInterfaceNameElements);
 
         [VtblIndex(6)]
-        HRESULT SetStruct([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] ushort** fieldTypeNames);
+        HRESULT SetStruct([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("UINT32")] uint numFields, [NativeTypeName("const PCWSTR *")] char** fieldTypeNames);
 
         [VtblIndex(7)]
-        HRESULT SetEnum([NativeTypeName("PCWSTR")] ushort* name, [NativeTypeName("PCWSTR")] ushort* baseType);
+        HRESULT SetEnum([NativeTypeName("PCWSTR")] char* name, [NativeTypeName("PCWSTR")] char* baseType);
 
         [VtblIndex(8)]
         HRESULT SetParameterizedInterface(Guid piid, [NativeTypeName("UINT32")] uint numArgs);
@@ -131,33 +131,33 @@ public unsafe partial struct IRoSimpleMetaDataBuilder : IRoSimpleMetaDataBuilder
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (GUID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> SetWinRtInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> SetWinRtInterface;
 
         [NativeTypeName("HRESULT (GUID) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, int> SetDelegate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, int> SetDelegate;
 
         [NativeTypeName("HRESULT (PCWSTR, PCWSTR, const GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, Guid*, int> SetInterfaceGroupSimpleDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, Guid*, int> SetInterfaceGroupSimpleDefault;
 
         [NativeTypeName("HRESULT (PCWSTR, UINT32, PCWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort**, int> SetInterfaceGroupParameterizedDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char**, int> SetInterfaceGroupParameterizedDefault;
 
         [NativeTypeName("HRESULT (PCWSTR, PCWSTR, const GUID *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, Guid*, int> SetRuntimeClassSimpleDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, Guid*, int> SetRuntimeClassSimpleDefault;
 
         [NativeTypeName("HRESULT (PCWSTR, UINT32, const PCWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort**, int> SetRuntimeClassParameterizedDefault;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char**, int> SetRuntimeClassParameterizedDefault;
 
         [NativeTypeName("HRESULT (PCWSTR, UINT32, const PCWSTR *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, ushort**, int> SetStruct;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, char**, int> SetStruct;
 
         [NativeTypeName("HRESULT (PCWSTR, PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, int> SetEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, int> SetEnum;
 
         [NativeTypeName("HRESULT (GUID, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, uint, int> SetParameterizedInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, uint, int> SetParameterizedInterface;
 
         [NativeTypeName("HRESULT (GUID, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, uint, int> SetParameterizedDelegate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, uint, int> SetParameterizedDelegate;
     }
 }

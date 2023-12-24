@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TextureBrush.GetImage">
+    <summary>The <b>TextureBrush.GetImage</b> method gets a pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that is defined by this texture brush.</summary>
+    <returns>This method returns a pointer to the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that is defined by this texture brush.</returns>
+  </member>
+  <member name="TextureBrush.GetTransform">
+    <summary>The <b>TextureBrush.GetTransform</b> method gets the transformation matrix of this texture brush.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that receives the transformation matrix.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="TextureBrush.GetWrapMode">
+    <summary>The <b>TextureBrush.GetWrapMode</b> method gets the wrap mode currently set for this texture brush.</summary>
+    <returns>This method returns the wrap mode currently set for this texture brush. The value returned is one of the elements of the <see cref="WrapMode" /> enumeration.</returns>
+  </member>
+  <member name="TextureBrush.MultiplyTransform">
+    <summary>The <b>TextureBrush.MultiplyTransform</b> method updates this brush's transformation matrix with the product of itself and another matrix.</summary>
+    <param name="matrix">Pointer to the matrix to be multiplied by this brush's current transformation matrix.</param>
+    <param name="order">Optional. Element of the<see cref="MatrixOrder" /> enumeration that specifies the order of multiplication. <see cref="MatrixOrderPrepend" /> specifies that the passed matrix is on the left, and <see cref="MatrixOrderAppend" /> specifies that the passed matrix is on the right. The default value is <see cref="MatrixOrderPrepend" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="TextureBrush.ResetTransform">
+    <summary>The <b>TextureBrush.ResetTransform</b> method resets the transformation matrix of this texture brush to the identity matrix. This means that no transformation takes place.</summary>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="TextureBrush.RotateTransform">
+    <summary>The <b>TextureBrush.RotateTransform</b> method updates this texture brush's current transformation matrix with the product of itself and a rotation matrix.</summary>
+    <param name="angle">Real number that specifies the angle, in degrees, of rotation.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <see cref="MatrixOrderPrepend" /> specifies that the rotation matrix is on the left, and <see cref="MatrixOrderAppend" /> specifies that the rotation matrix is on the right. The default value is <see cref="MatrixOrderPrepend" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="TextureBrush.ScaleTransform">
+    <summary>The <b>TextureBrush.ScaleTransform</b> method updates this texture brush's current transformation matrix with the product of itself and a scaling matrix.</summary>
+    <param name="sx">Real number that specifies the amount to scale in the x direction.</param>
+    <param name="sy">Real number that specifies the amount to scale in the y direction.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <see cref="MatrixOrderPrepend" /> specifies that the scaling matrix is on the left, and <see cref="MatrixOrderAppend" /> specifies that the scaling matrix is on the right. The default value is <see cref="MatrixOrderPrepend" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="TextureBrush.SetTransform">
+    <summary>The <b>TextureBrush.SetTransform</b> method sets the transformation matrix of this texture brush.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that specifies the transformation matrix to use.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="TextureBrush.SetWrapMode">
+    <summary>The <b>TextureBrush.SetWrapMode</b> method sets the wrap mode of this texture brush.</summary>
+    <param name="wrapMode">Element of the <see cref="WrapMode" /> enumeration that specifies how repeated copies of an image are used to tile an area when it is painted with this texture brush.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="TextureBrush.TextureBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-texturebrush">TextureBrush</a> object based on an image, a defining rectangle, and a set of image properties.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that contains the bitmap of the image to use.</param>
+    <param name="dstRect">Reference to a rectangle that defines the size of this texture brush and the portion of the image to be used by this texture brush. If the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object is created from a metafile, the brush uses the entire image, which is scaled to fit the size of the brush.</param>
+    <param name="imageAttributes">Optional. Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that contains properties of the image. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="TextureBrush.TextureBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-texturebrush">TextureBrush</a> object based on an image, a defining rectangle, and a set of image properties.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that contains the bitmap of the image to use.</param>
+    <param name="dstRect">Reference to a rectangle that defines the size of this texture brush and the portion of the image to be used by this texture brush. If the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object is created from a metafile, the brush uses the entire image, which is scaled to fit the size of the brush.</param>
+    <param name="imageAttributes">Optional. Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object that contains properties of the image. The default value is <b>NULL</b>.</param>
+  </member>
+  <member name="TextureBrush.TextureBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-texturebrush">TextureBrush</a> object based on an image and a wrap mode. The size of the brush defaults to the size of the image, so the entire image is used by the brush.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that contains the bitmap of the image to use.</param>
+    <param name="wrapMode">Optional. Element of the <see cref="WrapMode" /> enumeration that specifies how repeated copies of an image are used to tile an area when it is painted with this texture brush. The default value is <b>WrapModeTile</b>.</param>
+  </member>
+  <member name="TextureBrush.TextureBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-texturebrush">TextureBrush</a> object based on an image, a wrap mode, and a defining rectangle.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that contains the bitmap of the image to use.</param>
+    <param name="wrapMode">Element of the <see cref="WrapMode" /> enumeration that specifies how repeated copies of an image are used to tile an area when it is painted with this texture brush.</param>
+    <param name="dstRect">Reference to a rectangle that defines the size of this texture brush and the portion of the image to be used by this texture brush. If the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object is created from a metafile, the brush uses the entire image, which is scaled to fit the size of the brush.</param>
+  </member>
+  <member name="TextureBrush.TextureBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-texturebrush">TextureBrush</a> object based on an image, a wrap mode, and a defining rectangle.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that contains the bitmap of the image to use.</param>
+    <param name="wrapMode">Element of the <see cref="WrapMode" /> enumeration that specifies how repeated copies of an image are used to tile an area when it is painted with this texture brush.</param>
+    <param name="dstRect">Reference to a rectangle that defines the size of this texture brush and the portion of the image to be used by this texture brush. If the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object is created from a metafile, the brush uses the entire image, which is scaled to fit the size of the brush.</param>
+  </member>
+  <member name="TextureBrush.TextureBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-texturebrush">TextureBrush</a> object based on an image, a wrap mode, and a defining set of coordinates.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that contains the bitmap of the image to use.</param>
+    <param name="wrapMode">Element of the <see cref="WrapMode" /> enumeration that specifies how repeated copies of an image are used to tile an area when it is painted with this texture brush.</param>
+    <param name="dstX">Leftmost coordinate of the image portion to be used by this brush.</param>
+    <param name="dstY">Uppermost coordinate of the image portion to be used by this brush.</param>
+    <param name="dstWidth">Width of the brush and width of the image portion to be used by the brush.</param>
+    <param name="dstHeight">Height of the brush and height of the image portion to be used by the brush.</param>
+  </member>
+  <member name="TextureBrush.TextureBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-texturebrush">TextureBrush</a> object based on an image, a wrap mode, and a defining set of coordinates.</summary>
+    <param name="image">Pointer to an <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusheaders/nl-gdiplusheaders-image">Image</a> object that contains the bitmap of the image to use.</param>
+    <param name="wrapMode">Element of the <see cref="WrapMode" /> enumeration that specifies how repeated copies of an image are used to tile an area when it is painted with this texture brush.</param>
+    <param name="dstX">Leftmost coordinate of the image portion to be used by this brush.</param>
+    <param name="dstY">Uppermost coordinate of the image portion to be used by this brush.</param>
+    <param name="dstWidth">Width of the brush and width of the image portion to be used by the brush.</param>
+    <param name="dstHeight">Height of the brush and height of the image portion to be used by the brush.</param>
+  </member>
+  <member name="TextureBrush.TranslateTransform">
+    <summary>The <b>TextureBrush.TranslateTransform</b> method updates this brush's current transformation matrix with the product of itself and a translation matrix.</summary>
+    <param name="dx">Real number that specifies the horizontal component of the translation.</param>
+    <param name="dy">Real number that specifies the vertical component of the translation.</param>
+    <param name="order">Optional. Element of the<see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <see cref="MatrixOrderPrepend" /> specifies that the translation matrix is on the left, and <see cref="MatrixOrderAppend" /> specifies that the translation matrix is on the right. The default value is <see cref="MatrixOrderPrepend" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <see cref="Ok" />, which is an element of the<b>Status</b> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

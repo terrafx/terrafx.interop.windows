@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICGifApplicationExtensionProperties.xml' path='doc/member[@name="WICGifApplicationExtensionProperties"]/*' />
-public enum WICGifApplicationExtensionProperties : uint
+public enum WICGifApplicationExtensionProperties
 {
     /// <include file='WICGifApplicationExtensionProperties.xml' path='doc/member[@name="WICGifApplicationExtensionProperties.WICGifApplicationExtensionApplication"]/*' />
     WICGifApplicationExtensionApplication = 0x1,

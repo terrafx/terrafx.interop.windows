@@ -3,25 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT">
-    <summary>
-      <para>A security binding constraint that corresponds to the
-<see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />.</para>
-    </summary>
+    <summary>A security binding constraint that corresponds to the<see cref="WS_SSL_TRANSPORT_SECURITY_BINDING" />.</summary>
   </member>
   <member name="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.bindingConstraint">
     <summary>
       <para>The base binding constraint that this binding constraint derives from.</para>
-      <para>There are no binding-specific properties are defined for this binding constraint
-at this time.</para>
+      <para>There are no binding-specific properties are defined for this binding constraint at this time.</para>
     </summary>
   </member>
   <member name="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.out">
-    <summary>
-      <para>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR, the
-entire contents of this structure will be filled out.</para>
-    </summary>
+    <summary>When <see cref="WsMatchPolicyAlternative" /> returns NOERROR, the entire contents of this structure will be filled out.</summary>
   </member>
-  <member name="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.out.clientCertCredentialRequired">
-    <summary></summary>
-  </member>
+  <member name="WS_SSL_TRANSPORT_SECURITY_BINDING_CONSTRAINT.out.clientCertCredentialRequired"></member>
 </doc>

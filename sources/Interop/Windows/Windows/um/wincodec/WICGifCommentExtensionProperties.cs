@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICGifCommentExtensionProperties.xml' path='doc/member[@name="WICGifCommentExtensionProperties"]/*' />
-public enum WICGifCommentExtensionProperties : uint
+public enum WICGifCommentExtensionProperties
 {
     /// <include file='WICGifCommentExtensionProperties.xml' path='doc/member[@name="WICGifCommentExtensionProperties.WICGifCommentExtensionText"]/*' />
     WICGifCommentExtensionText = 0x1,

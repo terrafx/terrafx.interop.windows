@@ -4,566 +4,166 @@
 <doc>
   <member name="IDirectManipulationViewport.Abandon">
     <summary>
-      <para>Releases all resources that are used by the viewport and prepares it for destruction from memory.</para>
+      <code>Releases all resources that are used by the viewport and prepares it for destruction from memory.</code>
     </summary>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Once <b>Abandon</b> has been called, do not make subsequent function calls on the viewport. If a function is called after <b>Abandon</b>, <b>E_INVALID_STATE</b> will be returned.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.ActivateConfiguration">
-    <summary>
-      <para>Sets the configuration for input interaction.</para>
-    </summary>
-    <param name="configuration">
-      <para>One or more values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_configuration">DIRECTMANIPULATION_CONFIGURATION</a> that specify the interaction configuration for the viewport.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An interaction configuration specifies how the manipulation engine responds to input and which manipulations are supported. Any number of possible configurations can be added to the viewport using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-addconfiguration">AddConfiguration</a> before processing input.</para>
-      <para>Configurations can be switched by the application at runtime using <b>ActivateConfiguration</b>.</para>
-      <para>When a configuration is no longer required (and is not currently active), it can be removed using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-removeconfiguration">RemoveConfiguration</a>.</para>
-      <para>If a configuration has not been added using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-addconfiguration">AddConfiguration</a>, it can be automatically added and then activated by calling <b>ActivateConfiguration</b>.</para>
-      <para>
-        <b>Note</b>  If input processing is occurring, this call will fail.</para>
-      <para>This method fails if a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-guids">drag and drop</a> behavior has been specified.</para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-guids">drag and drop</a> behavior object cannot be attached after successfully calling this method.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to configure a viewport for horizontal panning.</para>
-      <code>HRESULT hr = pViewport&gt;ActivateConfiguration(
-    DIRECTMANIPULATION_CONFIGURATION_INTERACTION |
-    DIRECTMANIPULATION_CONFIGURATION_TRANSLATION_X);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Sets the configuration for input interaction.</summary>
+    <param name="configuration">One or more values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_configuration">DIRECTMANIPULATION_CONFIGURATION</a> that specify the interaction configuration for the viewport.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.AddConfiguration">
-    <summary>
-      <para>Adds an interaction configuration for the viewport.</para>
-    </summary>
-    <param name="configuration">
-      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_configuration">DIRECTMANIPULATION_CONFIGURATION</a> that specifies the interaction configuration for the viewport.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An interaction configuration specifies how the manipulation engine responds to input and which manipulations are supported. Any number of possible configurations can be added to the viewport using <b>AddConfiguration</b> before processing input.</para>
-      <para>Configurations can be switched by the application at runtime using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-activateconfiguration">ActivateConfiguration</a>.</para>
-      <para>When a configuration is no longer required (and is not currently active), it can be removed using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-removeconfiguration">RemoveConfiguration</a>.</para>
-      <para>If a configuration has not been added using <b>AddConfiguration</b>, it can be automatically added and then activated by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-activateconfiguration">ActivateConfiguration</a>.</para>
-      <para>
-        <b>Note</b>  If input processing is occurring, this call will fail.</para>
-      <para>This method fails if a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-guids">drag and drop</a> behavior has been specified.</para>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-guids">drag and drop</a> behavior object cannot be attached after successfully calling this method.</para>
-      <para>You cannot add another <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-guids">drag and drop</a> behavior after an existing one has already been added.</para>
-      <para>This method is designed to allow an application to switch pre-added configurations, as a configuration cannot be changed while a manipulation is occurring. Under most circumstances it is better to update the configuration using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-activateconfiguration">ActivateConfiguration</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Adds an interaction configuration for the viewport.</summary>
+    <param name="configuration">One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_configuration">DIRECTMANIPULATION_CONFIGURATION</a> that specifies the interaction configuration for the viewport.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.AddContent">
-    <summary>
-      <para>Adds secondary content, such as a panning indicator, to a viewport.</para>
-    </summary>
-    <param name="content">
-      <para>The content to add to the viewport.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Secondary content is created by calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationmanager-createcontent">CreateContent</a>. Once added, the secondary content will move relative to the primary content in response to a manipulation. Its motion is determined by rules associated with each type of secondary content.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Adds secondary content, such as a panning indicator, to a viewport.</summary>
+    <param name="content">The content to add to the viewport.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.AddEventHandler">
-    <summary>
-      <para>Adds a new event handler to listen for viewport events.</para>
-    </summary>
-    <param name="window">
-      <para>The handle of a window owned by the thread for the event callback.</para>
-    </param>
-    <param name="eventHandler">
-      <para>The handler that is called when viewport status and update events occur. The specified object must implement the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewporteventhandler">IDirectManipulationViewportEventHandler</a> interface.</para>
-    </param>
-    <param name="cookie">
-      <para>The handle that represents this event handler callback.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The event callback is fired from the thread that owns the specified window. Consecutive events of the same callback method may be coalesced.</para>
-      <para>
-        <b>Note</b>  If the viewport has a drag-drop behavior attached, the event handler should implement <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationdragdropeventhandler">IDirectManipulationDragDropEventHandler</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Adds a new event handler to listen for viewport events.</summary>
+    <param name="window">The handle of a window owned by the thread for the event callback.</param>
+    <param name="eventHandler">The handler that is called when viewport status and update events occur. The specified object must implement the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewporteventhandler">IDirectManipulationViewportEventHandler</a> interface.</param>
+    <param name="cookie">The handle that represents this event handler callback.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.Disable">
-    <summary>
-      <para>Stops input processing by the viewport.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>When a viewport is disabled, it immediately stops all transforms and moves the content to the final location.</para>
-      <para>Call this method when you want to modify multiple attributes atomically. This method can be called at any time.</para>
-      <para>The viewport will not resume processing input until <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-enable">Enable</a> is called.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to use this method.</para>
-      <code>HRESULT hr = pViewport-&gt;Disable();
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Stops input processing by the viewport.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.Enable">
-    <summary>
-      <para>Starts or resumes input processing by the viewport.</para>
-    </summary>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>, or <b>S_FALSE</b> if there is no work to do (for example, the viewport is already enabled). Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method directs a viewport to attempt to respond to input.</para>
-      <para>Call this method if the <b>AUTODISABLE</b> option is set.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to use this method.</para>
-      <code>HRESULT hr = pViewport-&gt;Enable();
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Starts or resumes input processing by the viewport.</summary>
+    <returns>If the method succeeds, it returns <b>S_OK</b>, or <b>S_FALSE</b> if there is no work to do (for example, the viewport is already enabled). Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.GetPrimaryContent">
     <summary>
       <para>Gets the primary content of a viewport that implements <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</a>.</para>
       <para>Primary content is an element that gets transformed (e.g. moved, scaled, rotated) in response to a user interaction. Primary content is created at the same time as the viewport and cannot be added or removed.</para>
     </summary>
-    <param name="riid">
-      <para>IID to the interface.</para>
-    </param>
-    <param name="object">
-      <para>The primary content object.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method gets the content of the viewport that implements <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcontent">IDirectManipulationContent</a> and <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationprimarycontent">IDirectManipulationPrimaryContent</a>.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to use this method.</para>
-      <code>IDirectManipulationPrimaryContent *pContent;
-
-HRESULT hr = pRegion-&gt;GetPrimaryContent(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pContent));
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <param name="riid">IID to the interface.</param>
+    <param name="object">The primary content object.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.GetStatus">
-    <summary>
-      <para>Gets the state of the viewport.</para>
-    </summary>
-    <param name="status">
-      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_status">DIRECTMANIPULATION_STATUS</a>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method returns the viewport state at the time of the call and not at the time when the return value is read.</para>
-      <para>This method will fail if called after <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-abandon">Abandon</a>.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to use this method.</para>
-      <code>DIRECTMANIPULATION_STATUS status;
-
-HRESULT hr = pViewport-&gt;GetStatus(&amp;amp;amp;amp;amp;amp;status);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Gets the state of the viewport.</summary>
+    <param name="status">One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_status">DIRECTMANIPULATION_STATUS</a>.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.GetTag">
-    <summary>
-      <para>Gets the tag value of a viewport.</para>
-    </summary>
-    <param name="riid">
-      <para>IID to the interface.</para>
-    </param>
-    <param name="object">
-      <para>The object portion of the tag.</para>
-    </param>
-    <param name="id">
-      <para>The identifier portion of the tag.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>A tag is a pairing of an integer ID with a Component Object Model (COM) object. It can be used by an app to identify the viewport.</para>
-      <para>The out parameters are optional, so the method can return an ID, the viewport object, or both.</para>
-      <h4>Examples</h4>
-      <para>The following example show how to use this method.</para>
-      <code>IUnknown* pUnk;
-UINT32 id;
-
-HRESULT hr = pRegion-&gt;GetTag(IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pUnk), &amp;amp;amp;amp;amp;amp;id);
-
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Gets the tag value of a viewport.</summary>
+    <param name="riid">IID to the interface.</param>
+    <param name="object">The object portion of the tag.</param>
+    <param name="id">The identifier portion of the tag.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.GetViewportRect">
-    <summary>
-      <para>Retrieves the rectangle for the viewport relative to the origin of the viewport coordinate system specified by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setviewportrect">SetViewportRect</a>.</para>
-    </summary>
-    <param name="viewport">
-      <para>The bounding rectangle relative to the viewport coordinate system.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Retrieves the rectangle for the viewport relative to the origin of the viewport coordinate system specified by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setviewportrect">SetViewportRect</a>.</summary>
+    <param name="viewport">The bounding rectangle relative to the viewport coordinate system.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.ReleaseAllContacts">
-    <summary>
-      <para>Removes all contacts that are associated with the viewport. Inertia is started if the viewport supports inertia.</para>
-    </summary>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This is equivalent to calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-releasecontact">ReleaseContact</a> on every contact associated with the viewport. The outcome is equivalent to the user removing all touch points from the viewport.</para>
-      <para>If supported, inertia will be started after calling this method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Removes all contacts that are associated with the viewport. Inertia is started if the viewport supports inertia.</summary>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.ReleaseContact">
-    <summary>
-      <para>Removes a contact that is associated with a viewport.</para>
-    </summary>
-    <param name="pointerId">
-      <para>The ID of the pointer.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method releases a contact from a specific <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> viewport (equivalent to the user removing a touch point).</para>
-      <para>The viewport state is not affected unless the last remaining contact on the viewport is removed, in which case the viewport will transition to inertia, if supported.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Removes a contact that is associated with a viewport.</summary>
+    <param name="pointerId">The ID of the pointer.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.RemoveConfiguration">
-    <summary>
-      <para>Removes an interaction configuration for the viewport.</para>
-    </summary>
-    <param name="configuration">
-      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_configuration">DIRECTMANIPULATION_CONFIGURATION</a> that specifies the interaction configuration for the viewport.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method removes a possible configuration that was added by using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-addconfiguration">AddConfiguration</a>. This method can be called only if the configuration is not active.</para>
-      <para>An interaction configuration specifies how the manipulation engine responds to input and which gestures are supported. Any number of configurations can be added to the viewport using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-addconfiguration">AddConfiguration</a>. Configurations can be switched by the application at runtime using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-activateconfiguration">ActivateConfiguration</a>. When a configuration is no longer required (and is not currently active), it can be removed using <b>RemoveConfiguration</b>.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to use this method.</para>
-      <code>HRESULT hr = pRegion-&gt;RemoveConfiguration(
-    DIRECTMANIPULATION_CONFIGURATION_INTERACTION |
-    DIRECTMANIPULATION_CONFIGURATION_TRANSLATION_X);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Removes an interaction configuration for the viewport.</summary>
+    <param name="configuration">One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_configuration">DIRECTMANIPULATION_CONFIGURATION</a> that specifies the interaction configuration for the viewport.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.RemoveContent">
-    <summary>
-      <para>Removes secondary content from a viewport.</para>
-    </summary>
-    <param name="content">
-      <para>The content object to remove.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Secondary content can be removed from the viewport at any time.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Removes secondary content from a viewport.</summary>
+    <param name="content">The content object to remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.RemoveEventHandler">
-    <summary>
-      <para>Removes an existing event handler from the viewport.</para>
-    </summary>
-    <param name="cookie">
-      <para>A value that was returned by a previous call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-addeventhandler">AddEventHandler</a>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Removes an existing event handler from the viewport.</summary>
+    <param name="cookie">A value that was returned by a previous call to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-addeventhandler">AddEventHandler</a>.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SetChaining">
-    <summary>
-      <para>Specifies the motion types supported in a viewport that can be chained to a parent viewport.</para>
-    </summary>
-    <param name="enabledTypes">
-      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a> that specifies the motion types that are enabled for this viewport.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Specifies the motion types supported in a viewport that can be chained to a parent viewport.</summary>
+    <param name="enabledTypes">One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_motion_types">DIRECTMANIPULATION_MOTION_TYPES</a> that specifies the motion types that are enabled for this viewport.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SetContact">
-    <summary>
-      <para>Specifies an  association between a contact and the viewport.</para>
-    </summary>
-    <param name="pointerId">
-      <para>The ID of the pointer.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call this method when a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerdown">WM_POINTERDOWN</a> message is received. Upon receiving a <b>WM_POINTERDOWN</b>, the application can use the coordinates of the input to hit-test and determine the viewports to which the contact is associated.</para>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationdefercontactservice-defercontact">DeferContact</a> must be called before <b>SetContact</b>.</para>
-      <para>After initialization, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> is not aware of viewport z-order or parent-child relations between viewports. The order of <b>SetContact</b> calls defines the viewport tree. To establish the correct viewport hierarchy, <b>SetContact</b> should be called first on the child-most viewport, followed by the parent, grand-parent, and so on.</para>
-      <para>Use <see cref="GET_POINTERID_WPARAM" /> to get the pointer identifier from a pointer message. The contact is removed automatically when <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointerup">WM_POINTERUP</a> is received.</para>
-      <para>If a contact is associated with one or more viewports using the <b>SetContact</b> method, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> will examine further input from that contact and attempt to identify an appropriate manipulation based on the configuration of the associated viewports. If a manipulation is recognized, the application will then receive a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/wm-pointercapturechanged">WM_POINTERCAPTURECHANGED</a> message for this contact. In this context, the <b>WM_POINTERCAPTURECHANGED</b> message indicates that Direct Manipulation has captured the contact and the application will not receive input from this contact that is consumed for this manipulation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/inputmsg/messages-and-notifications">User Input Messages and Notifications</seealso>
+    <summary>Specifies an association between a contact and the viewport.</summary>
+    <param name="pointerId">The ID of the pointer.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SetInputMode">
-    <summary>
-      <para>Specifies if input is visible to the UI thread.</para>
-    </summary>
-    <param name="mode">
-      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_input_mode">DIRECTMANIPULATION_INPUT_MODE</a>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>DIRECTMANIPULATION_INPUT_MODE_AUTOMATIC is the default mode for <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</para>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> consumes all the input that drives the manipulation and the application receives WM_POINTERCAPTURECHANGED messages.</para>
-      <para>In some situations an application may want to receive input that is driving a manipulation. Set DIRECTMANIPULATION_INPUT_MODE_MANUAL in this case. The application will receive all input messages, even input used by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> to drive a manipulation.</para>
-      <para>
-        <b>Note</b>  The application will not receive WM_POINTERCAPTURECHANGED messages.</para>
-      <para>Calling this method with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_input_mode">DIRECTMANIPULATION_INPUT_MODE_MANUAL</a> set is similar to calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setviewportoptions">SetViewportOptions(DIRECTMANIPULATION_VIEWPORT_OPTIONS_INPUT)</a>. However, calling <b>SetViewportOptions</b> also overrides all other settings.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how to use this method.</para>
-      <code>HRESULT hr = pViewport-&gt;SetInputMode(DIRECTMANIPULATION_INPUT_MODE_AUTOMATIC);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Specifies if input is visible to the UI thread.</summary>
+    <param name="mode">One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_input_mode">DIRECTMANIPULATION_INPUT_MODE</a>.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SetManualGesture">
-    <summary>
-      <para>Sets which gestures are ignored by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</para>
-    </summary>
-    <param name="configuration">
-      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_gesture_configuration">DIRECTMANIPULATION_GESTURE_CONFIGURATION</a>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use this method to specify which gestures the application processes on the UI thread. If a gesture is recognized, it will be passed to the application for processing and ignored by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</para>
-      <h4>Examples</h4>
-      <para>The following example shows how zoom gestures can be ignored by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> and handled by the application, which may have custom zoom behavior implementation.</para>
-      <code>HRESULT hr = pViewport-&gt;SetManualGesture(DIRECTMANIPULATION_GESTURE_PINCH_ZOOM);
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Sets which gestures are ignored by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</summary>
+    <param name="configuration">One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_gesture_configuration">DIRECTMANIPULATION_GESTURE_CONFIGURATION</a>.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SetTag">
-    <summary>
-      <para>Sets a viewport tag.</para>
-    </summary>
-    <param name="object">
-      <para>The object portion of the tag.</para>
-    </param>
-    <param name="id">
-      <para>The ID portion of the tag.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>A tag is a pairing of an integer ID with a Component Object Model (COM) object. It can be used by an app to identify the viewport.</para>
-      <para>The object parameter is optional, so that the method can set just an ID.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the syntax for this method.</para>
-      <code>IUnknown* pUnk = ...;
-UINT32 id = ...;
-
-HRESULT hr = pRegion-&gt;SetTag(pUnk, id);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Sets a viewport tag.</summary>
+    <param name="object">The object portion of the tag.</param>
+    <param name="id">The ID portion of the tag.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SetUpdateMode">
     <summary>
-      <para>Specifies whether a viewport updates content manually instead of during an input event.</para>
+      <code>Specifies whether a viewport updates content manually instead of during an input event.</code>
     </summary>
-    <param name="mode">
-      <para>One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_input_mode">DIRECTMANIPULATION_INPUT_MODE</a>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>DIRECTMANIPULATION_INPUT_MODE_AUTOMATIC is the default mode for <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>. In this mode, visual updates are pushed to compositor driven by input. This is the expected mode of operation if the application is using system-provided implementation of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcompositor">IDirectManipulationCompositor</a>.</para>
-      <para>If the application provides its own implementation of <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationcompositor">IDirectManipulationCompositor</a>, it should switch viewport update mode to manual by setting DIRECTMANIPULATION_INPUT_MODE_MANUAL. When in manual mode, the compositor pulls visual updates whenever it calls <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationupdatemanager-update">Update</a> on <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a>.</para>
-      <para>Calling this method with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_input_mode">DIRECTMANIPULATION_INPUT_MODE_MANUAL</a> set is similar to calling <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setviewportoptions">SetViewportOptions(DIRECTMANIPULATION_VIEWPORT_OPTIONS_INPUT)</a>. However, calling <b>SetViewportOptions</b> also overrides all other settings.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <param name="mode">One of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_input_mode">DIRECTMANIPULATION_INPUT_MODE</a>.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SetViewportOptions">
     <summary>
       <para>Sets how the viewport handles input and output.</para>
-      <para>Calling this method overrides all  settings previously specified with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setupdatemode">SetUpdateMode</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setinputmode">SetInputMode</a>.</para>
+      <para>Calling this method overrides all settings previously specified with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setupdatemode">SetUpdateMode</a> or <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setinputmode">SetInputMode</a>.</para>
     </summary>
-    <param name="options">
-      <para>One or more of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_viewport_options">DIRECTMANIPULATION_VIEWPORT_OPTIONS</a>.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Calling this method with <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_input_mode">DIRECTMANIPULATION_INPUT_MODE_MANUAL</a> set is similar to calling <b>SetViewportOptions(DIRECTMANIPULATION_VIEWPORT_OPTIONS_INPUT)</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <param name="options">One or more of the values from <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/ne-directmanipulation-directmanipulation_viewport_options">DIRECTMANIPULATION_VIEWPORT_OPTIONS</a>.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SetViewportRect">
     <summary>
-      <para>Sets the bounding rectangle for the viewport, relative to the origin of the viewport coordinate system.</para>
+      <code>Sets the bounding rectangle for the viewport, relative to the origin of the viewport coordinate system.</code>
     </summary>
-    <param name="viewport">
-      <para>The bounding rectangle.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The viewport rectangle specifies the region of content that is visible to the user. In conjunction with the primary content rectangle, the viewport rectangle is used to determine chaining behaviors.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <param name="viewport">The bounding rectangle.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SetViewportTransform">
-    <summary>
-      <para>Specifies the transform from the viewport coordinate system to the window client coordinate system.</para>
-    </summary>
-    <param name="matrix">
-      <para>The transform matrix, in row-wise order: _11, _12, _21, _22, _31, _32.</para>
-    </param>
-    <param name="pointCount">
-      <para>The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call this function to specify the viewport position, scaling and orientation on the screen. Viewport position, scaling, orientation and size are uniquely determined by the viewport transform and the viewport rectangle. The application can specify the viewport transform using this method, and the viewport rectangle using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nf-directmanipulation-idirectmanipulationviewport-setviewportrect">SetViewportRect</a>.</para>
-      <para>The viewport rectangle (the rectangular area inside the content that is visible to the user) is specified in viewport coordinates. If the viewport rectangle top-left point is (0,0), the viewport rectangle is positioned exactly at the viewport coordinate system origin. Viewports offset from the viewport coordinate system origin can be specified in two ways:</para>
-      <list type="bullet">
-        <item>
-          <description>Through the viewport rectangle top-left point</description>
-        </item>
-        <item>
-          <description>Through the viewport transform translation component (_31, _32)</description>
-        </item>
-      </list>
-      <para>The viewport transform converts from the viewport coordinate system to the window client coordinate system. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-portal">Direct Manipulation</a> ignores the window RTL property, so the client area origin is always the top-left point.
-The transforms are applied in the following order:</para>
-      <list type="number">
-        <item>
-          <description>Viewport rectangle offset</description>
-        </item>
-        <item>
-          <description>Viewport transform (from viewport to client coordinate system)</description>
-        </item>
-        <item>
-          <description>Client to screen mapping (from client to screen coordinate system)
-</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Specifies the transform from the viewport coordinate system to the window client coordinate system.</summary>
+    <param name="matrix">The transform matrix, in row-wise order: _11, _12, _21, _22, _31, _32.</param>
+    <param name="pointCount">The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.Stop">
     <summary>
-      <para>Stops the manipulation and returns the viewport to a ready state.</para>
+      <code>Stops the manipulation and returns the viewport to a ready state.</code>
     </summary>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If a mandatory snap point has been configured, the content may animate to the nearest snap point.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.SyncDisplayTransform">
-    <summary>
-      <para>Specifies a display transform for the viewport, and synchronizes the output transform with the new value of the display transform.</para>
-    </summary>
-    <param name="matrix">
-      <para>The transform matrix, in row-wise order: _11, _12, _21, _22, _31, _32.</para>
-    </param>
-    <param name="pointCount">
-      <para>The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the application performs special output processing of the content outside of the compositor (content not fully captured in the viewport transform), it should call this method to specify the display transform for the special processing.</para>
-      <para>The display transform affects how manipulation updates are applied to the output transform. For example, if the display transform is set to scale 3x, panning will move the content 3x the original distance.</para>
-      <para>When a display transform is changed using this method, the output transform will be synchronized to the new value of the display transform.</para>
-      <para>This method cannot be called if the viewport status is <b>DIRECTMANIPULATION_RUNNING</b> or <b>DIRECTMANIPULATION_INERTIA</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Specifies a display transform for the viewport, and synchronizes the output transform with the new value of the display transform.</summary>
+    <param name="matrix">The transform matrix, in row-wise order: _11, _12, _21, _22, _31, _32.</param>
+    <param name="pointCount">The size of the transform matrix. This value is always 6, because a 3x2 matrix is used for all direct manipulation transforms.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport.ZoomToRect">
-    <summary>
-      <para>Moves the viewport to a specific area of the primary content and specifies whether to animate the transition.</para>
-    </summary>
-    <param name="left">
-      <para>The leftmost coordinate of the rectangle in the primary content coordinate space.</para>
-    </param>
-    <param name="top">
-      <para>The topmost coordinate of the rectangle in the primary content coordinate space.</para>
-    </param>
-    <param name="right">
-      <para>The rightmost coordinate of the rectangle in the primary content coordinate space.</para>
-    </param>
-    <param name="bottom">
-      <para>The bottommost coordinate of the rectangle in the primary content coordinate space.</para>
-    </param>
-    <param name="animate">
-      <para>Specifies whether to animate the zoom behavior.</para>
-    </param>
-    <returns>
-      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/directmanipulation/nn-directmanipulation-idirectmanipulationviewport">IDirectManipulationViewport</seealso>
+    <summary>Moves the viewport to a specific area of the primary content and specifies whether to animate the transition.</summary>
+    <param name="left">The leftmost coordinate of the rectangle in the primary content coordinate space.</param>
+    <param name="top">The topmost coordinate of the rectangle in the primary content coordinate space.</param>
+    <param name="right">The rightmost coordinate of the rectangle in the primary content coordinate space.</param>
+    <param name="bottom">The bottommost coordinate of the rectangle in the primary content coordinate space.</param>
+    <param name="animate">Specifies whether to animate the zoom behavior.</param>
+    <returns>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDirectManipulationViewport">
-    <summary>
-      <para>Defines a region within a window (referred to as a viewport) that is able to receive and process input from user interactions.  The viewport contains content that moves in response to a user interaction.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-interfaces">Direct Manipulation Interfaces</seealso>
+    <summary>Defines a region within a window (referred to as a viewport) that is able to receive and process input from user interactions. The viewport contains content that moves in response to a user interaction.</summary>
   </member>
 </doc>

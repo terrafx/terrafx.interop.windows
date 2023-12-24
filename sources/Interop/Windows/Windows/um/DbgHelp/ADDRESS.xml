@@ -3,36 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ADDRESS">
-    <summary>
-      <para>Represents an address. It is used in the
-<see cref="STACKFRAME64" /> structure.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>ADDRESS</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>ADDRESS</b> is defined as follows in DbgHelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
-#define ADDRESS ADDRESS64
-#define LPADDRESS LPADDRESS64
-#else
-typedef struct _tagADDRESS {
-    DWORD         Offset;
-    WORD          Segment;
-    ADDRESS_MODE  Mode;
-} ADDRESS, *LPADDRESS;
-#endif
-</code>
-    </remarks>
-    <seealso cref="STACKFRAME64" />
+    <summary>Represents an address. It is used in the<see cref="STACKFRAME64" /> structure.</summary>
   </member>
   <member name="ADDRESS.Offset">
-    <summary>
-      <para>The offset into the segment, or a 32-bit virtual address. The interpretation of this value depends on the value contained in the <b>Mode</b> member.</para>
-    </summary>
+    <summary>The offset into the segment, or a 32-bit virtual address. The interpretation of this value depends on the value contained in the <b>Mode</b> member.</summary>
   </member>
   <member name="ADDRESS.Segment">
-    <summary>
-      <para>The segment number. This value is used only for 16-bit addressing.</para>
-    </summary>
+    <summary>The segment number. This value is used only for 16-bit addressing.</summary>
   </member>
   <member name="ADDRESS.Mode">
     <summary>
@@ -42,111 +19,77 @@ typedef struct _tagADDRESS {
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AddrMode1616</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>16:16 addressing. To support this addressing mode, you must supply a
-<a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</para>
-          </description>
-        </item>
-        <item>
+          <description>16:16 addressing. To support this addressing mode, you must supply a <a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AddrMode1632</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>16:32 addressing. To support this addressing mode, you must supply a
-<a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</para>
-          </description>
-        </item>
-        <item>
+          <description>16:32 addressing. To support this addressing mode, you must supply a <a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AddrModeReal</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Real-mode addressing. To support this addressing mode, you must supply a
-<a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</para>
-          </description>
-        </item>
-        <item>
+          <description>Real-mode addressing. To support this addressing mode, you must supply a <a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AddrModeFlat</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flat addressing. This is the only addressing mode supported by the library.</para>
-          </description>
-        </item>
+          <description>Flat addressing. This is the only addressing mode supported by the library.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="ADDRESS">
-    <summary>
-      <para>Represents an address. It is used in the
-<see cref="STACKFRAME64" /> structure.</para>
-    </summary>
-    <remarks>
-      <para>This structure supersedes the <b>ADDRESS</b> structure. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/Debug/updated-platform-support">Updated Platform Support</a>. <b>ADDRESS</b> is defined as follows in DbgHelp.h.</para>
-      <code>#if !defined(_IMAGEHLP_SOURCE_) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; defined(_IMAGEHLP64)
-#define ADDRESS ADDRESS64
-#define LPADDRESS LPADDRESS64
-#else
-typedef struct _tagADDRESS {
-    DWORD         Offset;
-    WORD          Segment;
-    ADDRESS_MODE  Mode;
-} ADDRESS, *LPADDRESS;
-#endif
-</code>
-    </remarks>
-    <seealso cref="STACKFRAME64" />
+    <summary>Represents an address. It is used in the<see cref="STACKFRAME64" /> structure.</summary>
   </member>
   <member name="ADDRESS.Offset">
-    <summary>
-      <para>The offset into the segment, or a 32-bit virtual address. The interpretation of this value depends on the value contained in the <b>Mode</b> member.</para>
-    </summary>
+    <summary>The offset into the segment, or a 32-bit virtual address. The interpretation of this value depends on the value contained in the <b>Mode</b> member.</summary>
   </member>
   <member name="ADDRESS.Segment">
-    <summary>
-      <para>The segment number. This value is used only for 16-bit addressing.</para>
-    </summary>
+    <summary>The segment number. This value is used only for 16-bit addressing.</summary>
   </member>
   <member name="ADDRESS.Mode">
     <summary>
@@ -156,77 +99,66 @@ typedef struct _tagADDRESS {
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AddrMode1616</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>16:16 addressing. To support this addressing mode, you must supply a
-<a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</para>
-          </description>
-        </item>
-        <item>
+          <description>16:16 addressing. To support this addressing mode, you must supply a <a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AddrMode1632</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>16:32 addressing. To support this addressing mode, you must supply a
-<a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</para>
-          </description>
-        </item>
-        <item>
+          <description>16:32 addressing. To support this addressing mode, you must supply a <a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AddrModeReal</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Real-mode addressing. To support this addressing mode, you must supply a
-<a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</para>
-          </description>
-        </item>
-        <item>
+          <description>Real-mode addressing. To support this addressing mode, you must supply a <a href="https://docs.microsoft.com//windows/desktop/api/dbghelp/nc-dbghelp-ptranslate_address_routine">TranslateAddressProc64</a> callback function.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>AddrModeFlat</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Flat addressing. This is the only addressing mode supported by the library.</para>
-          </description>
-        </item>
+          <description>Flat addressing. This is the only addressing mode supported by the library.</description>
+        </listheader>
       </list>
     </summary>
   </member>

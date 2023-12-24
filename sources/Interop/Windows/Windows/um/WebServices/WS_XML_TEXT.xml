@@ -3,19 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_TEXT">
-    <summary>
-      <para>Represents a node of text content in xml.</para>
-    </summary>
-    <remarks>
-      <para>XML has no concept of typed content; all content is textual in nature.  In some cases this is inefficient, requiring
-translation between text and natural form (e.g. the characters '1','2','8' and the numerical value 128) or requiring
-more bytes of storage for the representation (e.g. the characters '2',5','5' might take 3 bytes, while the numerical
-value 255 could only take 1).
-This structure provides a way to indicate textual content in xml without physically representing it as the characters
-that comprise that value.</para>
-    </remarks>
+    <summary>Represents a node of text content in xml.</summary>
   </member>
-  <member name="WS_XML_TEXT.textType">
-    <summary></summary>
-  </member>
+  <member name="WS_XML_TEXT.textType"></member>
 </doc>

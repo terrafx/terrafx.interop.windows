@@ -3,23 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSFEATURE_OUTPUT">
-    <summary>
-      <para>The <b>PSFEATURE_OUTPUT</b> structure contains information about PostScript driver output options. This structure is used with the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd144954(v=vs.85)">GET_PS_FEATURESETTING</a> printer escape function.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd144954(v=vs.85)">GET_PS_FEATURESETTING</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/printdocs/printing-and-print-spooler-structures">Print Spooler API Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/printdocs/printdocs-printing">Printing</seealso>
+    <summary>The <b>PSFEATURE_OUTPUT</b> structure contains information about PostScript driver output options. This structure is used with the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd144954(v=vs.85)">GET_PS_FEATURESETTING</a> printer escape function.</summary>
   </member>
   <member name="PSFEATURE_OUTPUT.bPageIndependent">
     <summary>
-      <para>
-        <b>TRUE</b> if PostScript output is page-independent or <b>FALSE</b> if PostScript output is page-dependent.</para>
-    </summary>
+      <b>TRUE</b> if PostScript output is page-independent or <b>FALSE</b> if PostScript output is page-dependent.</summary>
   </member>
   <member name="PSFEATURE_OUTPUT.bSetPageDevice">
     <summary>
-      <para>
-        <b>TRUE</b> if printer feature code (setpagedevice's) is included or <b>FALSE</b> if all printer feature code is suppressed.</para>
-    </summary>
+      <b>TRUE</b> if printer feature code (setpagedevice's) is included or <b>FALSE</b> if all printer feature code is suppressed.</summary>
   </member>
 </doc>

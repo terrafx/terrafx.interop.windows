@@ -3,15 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TOKEN_ORIGIN">
-    <summary>
-      <para>The <b>TOKEN_ORIGIN</b> structure contains information about  the origin of the logon session. This structure is used by the <see cref="GetTokenInformation" /> function.</para>
-    </summary>
-    <seealso cref="GetTokenInformation" />
+    <summary>The <b>TOKEN_ORIGIN</b> structure contains information about the origin of the logon session. This structure is used by the <see cref="GetTokenInformation" /> function.</summary>
   </member>
   <member name="TOKEN_ORIGIN.OriginatingLogonSession">
     <summary>
-      <para>
-        <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Locally unique identifier</a> (LUID) for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>. If the token  passed to <see cref="GetTokenInformation" /> resulted from a logon using explicit credentials, such as passing name, domain, and password to the  <see cref="LogonUser" /> function, then this member will contain the ID of the <i>logon session</i> that created it.  If the token resulted from  network authentication, such as a call to <see cref="AcceptSecurityContext" />,  or a call to <b>LogonUser</b> with <i>dwLogonType</i> set to LOGON32_LOGON_NETWORK or LOGON32_LOGON_NETWORK_CLEARTEXT, then this member will be zero.</para>
-    </summary>
+      <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Locally unique identifier</a> (LUID) for the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>. If the token passed to <see cref="GetTokenInformation" /> resulted from a logon using explicit credentials, such as passing name, domain, and password to the <see cref="LogonUser" /> function, then this member will contain the ID of the <i>logon session</i> that created it. If the token resulted from network authentication, such as a call to <see cref="AcceptSecurityContext" />, or a call to <b>LogonUser</b> with <i>dwLogonType</i> set to LOGON32_LOGON_NETWORK or LOGON32_LOGON_NETWORK_CLEARTEXT, then this member will be zero.</summary>
   </member>
 </doc>

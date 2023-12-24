@@ -3,35 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAssocHandlerInvoker.Invoke">
-    <summary>
-      <para>Invokes an associated application handler.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>There is no guarantee that a given association handler will support a particular selection, especially if multiple items are selected.  Before attempting to invoke the selection via this method, it is recommended to call <see cref="IAssocHandlerInvoker.SupportsSelection" />.</para>
-    </remarks>
+    <summary>Invokes an associated application handler.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAssocHandlerInvoker.SupportsSelection">
-    <summary>
-      <para>Determines whether an invoker supports its selection.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns <b>S_OK</b> if this instance supports its selection, or <b>S_FALSE</b> otherwise.</para>
-    </returns>
-    <remarks>
-      <para>For example, this method should return whether an application (as selected from an "Open With" context menu) can <b>Open</b> a file.</para>
-    </remarks>
+    <summary>Determines whether an invoker supports its selection.</summary>
+    <returns>Returns <b>S_OK</b> if this instance supports its selection, or <b>S_FALSE</b> otherwise.</returns>
   </member>
   <member name="IAssocHandlerInvoker">
-    <summary>
-      <para>Exposes methods that invoke an associated application handler.</para>
-    </summary>
-    <seealso cref="IAssocHandler" />
-    <seealso cref="IEnumAssocHandlers" />
-    <seealso cref="SHAssocEnumHandlers" />
+    <summary>Exposes methods that invoke an associated application handler.</summary>
   </member>
 </doc>

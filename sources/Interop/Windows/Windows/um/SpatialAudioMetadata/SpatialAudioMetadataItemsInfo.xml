@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SpatialAudioMetadataItemsInfo">
-    <summary>
-      <para>Provides information about an <see cref="ISpatialAudioMetadataItems" /> object. Get a copy of this structure by calling <see cref="GetInfo" />.</para>
-    </summary>
+    <summary>Provides information about an <see cref="ISpatialAudioMetadataItems" /> object. Get a copy of this structure by calling <see cref="GetInfo" />.</summary>
   </member>
   <member name="SpatialAudioMetadataItemsInfo.FrameCount">
-    <summary>
-      <para>The total frame count, which defines valid item offsets.</para>
-    </summary>
+    <summary>The total frame count, which defines valid item offsets.</summary>
   </member>
   <member name="SpatialAudioMetadataItemsInfo.ItemCount">
     <summary>
@@ -21,10 +17,6 @@
       <para>The size of the largest command value defined by the metadata format.</para>
     </summary>
   </member>
-  <member name="SpatialAudioMetadataItemsInfo.MaxItemCount">
-    <summary></summary>
-  </member>
-  <member name="SpatialAudioMetadataItemsInfo.MaxValueBufferLength">
-    <summary></summary>
-  </member>
+  <member name="SpatialAudioMetadataItemsInfo.MaxItemCount"></member>
+  <member name="SpatialAudioMetadataItemsInfo.MaxValueBufferLength"></member>
 </doc>

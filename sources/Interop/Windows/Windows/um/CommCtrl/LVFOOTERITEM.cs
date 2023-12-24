@@ -16,7 +16,7 @@ public unsafe partial struct LVFOOTERITEM
 
     /// <include file='LVFOOTERITEM.xml' path='doc/member[@name="LVFOOTERITEM.pszText"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszText;
+    public char* pszText;
 
     /// <include file='LVFOOTERITEM.xml' path='doc/member[@name="LVFOOTERITEM.cchTextMax"]/*' />
     public int cchTextMax;

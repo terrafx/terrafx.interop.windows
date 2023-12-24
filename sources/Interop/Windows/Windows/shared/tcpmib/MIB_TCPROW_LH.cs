@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct MIB_TCPROW_LH
 {
     /// <include file='MIB_TCPROW_LH.xml' path='doc/member[@name="MIB_TCPROW_LH.Anonymous"]/*' />
-    [NativeTypeName("_MIB_TCPROW_LH::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/tcpmib.h:69:5)")]
+    [NativeTypeName("__AnonymousRecord_tcpmib_L69_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIB_TCPROW_LH.xml' path='doc/member[@name="MIB_TCPROW_LH.dwLocalAddr"]/*' />

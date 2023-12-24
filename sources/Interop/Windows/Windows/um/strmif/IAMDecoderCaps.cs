@@ -25,7 +25,7 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMDecoderCaps*, Guid*, void**, int>)(lpVtbl[0]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMDecoderCaps*, Guid*, void**, int>)(lpVtbl[0]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMDecoderCaps*, uint>)(lpVtbl[1]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDecoderCaps*, uint>)(lpVtbl[1]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMDecoderCaps*, uint>)(lpVtbl[2]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMDecoderCaps*, uint>)(lpVtbl[2]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMDecoderCaps.xml' path='doc/member[@name="IAMDecoderCaps.GetDecoderCaps"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetDecoderCaps([NativeTypeName("DWORD")] uint dwCapIndex, [NativeTypeName("DWORD *")] uint* lpdwCap)
     {
-        return ((delegate* unmanaged<IAMDecoderCaps*, uint, uint*, int>)(lpVtbl[3]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this), dwCapIndex, lpdwCap);
+        return ((delegate* unmanaged[MemberFunction]<IAMDecoderCaps*, uint, uint*, int>)(lpVtbl[3]))((IAMDecoderCaps*)Unsafe.AsPointer(ref this), dwCapIndex, lpdwCap);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IAMDecoderCaps : IAMDecoderCaps.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetDecoderCaps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetDecoderCaps;
     }
 }

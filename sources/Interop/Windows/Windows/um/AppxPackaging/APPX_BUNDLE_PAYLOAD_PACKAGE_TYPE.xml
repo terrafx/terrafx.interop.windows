@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE">
-    <summary>
-      <para>Specifies the type of package for a <see cref="IAppxBundleManifestPackageInfo" /> object.</para>
-    </summary>
+    <summary>Specifies the type of package for a <see cref="IAppxBundleManifestPackageInfo" /> object.</summary>
   </member>
   <member name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_APPLICATION">
-    <summary>
-      <para>The package is an app.</para>
-    </summary>
+    <summary>The package is an app.</summary>
   </member>
   <member name="APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE.APPX_BUNDLE_PAYLOAD_PACKAGE_TYPE_RESOURCE">
-    <summary>
-      <para>The package is a resource.</para>
-    </summary>
+    <summary>The package is a resource.</summary>
   </member>
 </doc>

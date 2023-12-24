@@ -3,67 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IBandHost.CreateBand">
-    <summary>
-      <para>Creates a specified band.</para>
-    </summary>
-    <param name="rclsidBand">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>A reference to a CLSID. Used to ensure a duplicate band is not created.</para>
-    </param>
-    <param name="fAvailable">
-      <para>Type: <b>BOOL</b></para>
-      <para>Specifies band availability.</para>
-    </param>
-    <param name="fVisible">
-      <para>Type: <b>BOOL</b></para>
-      <para>Specifies band visibility.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to a desired IID.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>Contains the address of a pointer to a band specified by <i>riid</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a specified band.</summary>
+    <param name="rclsidBand">A reference to a CLSID. Used to ensure a duplicate band is not created.</param>
+    <param name="fAvailable">Specifies band availability.</param>
+    <param name="fVisible">Specifies band visibility.</param>
+    <param name="riid">A reference to a desired IID.</param>
+    <param name="ppv">Contains the address of a pointer to a band specified by <i>riid</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBandHost.DestroyBand">
-    <summary>
-      <para>Destroys a specified band.</para>
-    </summary>
-    <param name="rclsidBand">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>A reference to the CLSID of a band.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Destroys a specified band.</summary>
+    <param name="rclsidBand">A reference to the CLSID of a band.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBandHost.SetBandAvailability">
-    <summary>
-      <para>Sets the availability of a specified band.</para>
-    </summary>
-    <param name="rclsidBand">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>A reference to a CLSID.</para>
-    </param>
-    <param name="fAvailable">
-      <para>Type: <b>BOOL</b></para>
-      <para>Specifies band availability.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the availability of a specified band.</summary>
+    <param name="rclsidBand">A reference to a CLSID.</param>
+    <param name="fAvailable">Specifies band availability.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBandHost">
-    <summary>
-      <para>Exposes methods that create and destroy bands and specify their availability.</para>
-    </summary>
+    <summary>Exposes methods that create and destroy bands and specify their availability.</summary>
   </member>
 </doc>

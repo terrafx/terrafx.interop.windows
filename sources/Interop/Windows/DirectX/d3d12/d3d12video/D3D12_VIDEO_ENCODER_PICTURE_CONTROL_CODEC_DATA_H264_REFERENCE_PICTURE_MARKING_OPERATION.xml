@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_MARKING_OPERATION">
+    <summary>Describes changes in the reference pictures as memory operations as a tuple of an operation identifier and associated parameters needed for the operation.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_MARKING_OPERATION.memory_management_control_operation">
+    <summary>The control operation to be applied to affect the reference picture marking state.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_MARKING_OPERATION.difference_of_pic_nums_minus1">
+    <summary>Used with <b>memory_management_control_operation</b> equal to 3 or 1 to assign a long-term frame index to a short-term reference picture or to mark a short-term reference picture as "unused for reference".</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_MARKING_OPERATION.long_term_pic_num">
+    <summary>Used with <b>memory_management_control_operation</b> equal to 2 to mark a long-term reference picture as "unused for reference".</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_MARKING_OPERATION.long_term_frame_idx">
+    <summary>Used with <b>memory_management_control_operation</b> equal to 3 or 6 to assign a long-term frame index to a picture.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_MARKING_OPERATION.max_long_term_frame_idx_plus1">
+    <summary>The value minus 1 specifies the maximum value of long-term frame index allowed for long-term reference pictures (until receipt of another value of <b>max_long_term_frame_idx_plus1</b>).</summary>
+  </member>
+</doc>

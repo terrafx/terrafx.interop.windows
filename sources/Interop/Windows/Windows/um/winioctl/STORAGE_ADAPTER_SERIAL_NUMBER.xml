@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_ADAPTER_SERIAL_NUMBER">
-    <summary>
-      <para>The NULL-terminated Unicode string of the adapter serial number for the StorageAdapterSerialNumberProperty as defined in <see cref="STORAGE_PROPERTY_ID" />.</para>
-    </summary>
+    <summary>The NULL-terminated Unicode string of the adapter serial number for the StorageAdapterSerialNumberProperty as defined in <see cref="STORAGE_PROPERTY_ID" />.</summary>
   </member>
   <member name="STORAGE_ADAPTER_SERIAL_NUMBER.Version">
-    <summary>
-      <para>The version of this structure. The Size serves as the version.</para>
-    </summary>
+    <summary>The version of this structure. The Size serves as the version.</summary>
   </member>
   <member name="STORAGE_ADAPTER_SERIAL_NUMBER.Size">
-    <summary>
-      <para>The size of this structure.</para>
-    </summary>
+    <summary>The size of this structure.</summary>
   </member>
   <member name="STORAGE_ADAPTER_SERIAL_NUMBER.SerialNumber">
-    <summary>
-      <para>The serial number.</para>
-    </summary>
+    <summary>The serial number.</summary>
   </member>
 </doc>

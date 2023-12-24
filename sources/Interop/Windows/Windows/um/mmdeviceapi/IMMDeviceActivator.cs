@@ -25,7 +25,7 @@ public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMMDeviceActivator*, Guid*, void**, int>)(lpVtbl[0]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceActivator*, Guid*, void**, int>)(lpVtbl[0]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMMDeviceActivator*, uint>)(lpVtbl[1]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceActivator*, uint>)(lpVtbl[1]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMMDeviceActivator*, uint>)(lpVtbl[2]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceActivator*, uint>)(lpVtbl[2]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMMDeviceActivator.xml' path='doc/member[@name="IMMDeviceActivator.Activate"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface, 
     [VtblIndex(3)]
     public HRESULT Activate([NativeTypeName("const IID &")] Guid* iid, IMMDevice* pDevice, PROPVARIANT* pActivationParams, void** ppInterface)
     {
-        return ((delegate* unmanaged<IMMDeviceActivator*, Guid*, IMMDevice*, PROPVARIANT*, void**, int>)(lpVtbl[3]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this), iid, pDevice, pActivationParams, ppInterface);
+        return ((delegate* unmanaged[MemberFunction]<IMMDeviceActivator*, Guid*, IMMDevice*, PROPVARIANT*, void**, int>)(lpVtbl[3]))((IMMDeviceActivator*)Unsafe.AsPointer(ref this), iid, pDevice, pActivationParams, ppInterface);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IMMDeviceActivator : IMMDeviceActivator.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, IMMDevice *, PROPVARIANT *, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IMMDevice*, PROPVARIANT*, void**, int> Activate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IMMDevice*, PROPVARIANT*, void**, int> Activate;
     }
 }

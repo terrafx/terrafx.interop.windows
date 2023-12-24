@@ -19,32 +19,4 @@ public static unsafe partial class ID2D1SolidColorBrushTests
     {
         Assert.That(typeof(ID2D1SolidColorBrush).GUID, Is.EqualTo(IID_ID2D1SolidColorBrush));
     }
-
-    /// <summary>Validates that the <see cref="ID2D1SolidColorBrush" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ID2D1SolidColorBrush>(), Is.EqualTo(sizeof(ID2D1SolidColorBrush)));
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1SolidColorBrush" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ID2D1SolidColorBrush).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ID2D1SolidColorBrush" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ID2D1SolidColorBrush), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ID2D1SolidColorBrush), Is.EqualTo(4));
-        }
-    }
 }

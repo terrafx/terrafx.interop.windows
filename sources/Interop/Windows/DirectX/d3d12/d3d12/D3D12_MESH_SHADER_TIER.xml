@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_MESH_SHADER_TIER">
+    <summary>Defines constants that specify mesh and amplification shader support.</summary>
+  </member>
+  <member name="D3D12_MESH_SHADER_TIER.D3D12_MESH_SHADER_TIER_NOT_SUPPORTED">
+    <summary>Specifies that mesh and amplification shaders are not supported.</summary>
+  </member>
+  <member name="D3D12_MESH_SHADER_TIER.D3D12_MESH_SHADER_TIER_1">
+    <summary>Specifies that mesh and amplification shaders are supported.</summary>
+  </member>
+</doc>

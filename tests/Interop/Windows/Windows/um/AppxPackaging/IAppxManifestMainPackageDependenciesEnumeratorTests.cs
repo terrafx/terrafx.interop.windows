@@ -21,32 +21,4 @@ public static unsafe partial class IAppxManifestMainPackageDependenciesEnumerato
     {
         Assert.That(typeof(IAppxManifestMainPackageDependenciesEnumerator).GUID, Is.EqualTo(IID_IAppxManifestMainPackageDependenciesEnumerator));
     }
-
-    /// <summary>Validates that the <see cref="IAppxManifestMainPackageDependenciesEnumerator" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAppxManifestMainPackageDependenciesEnumerator>(), Is.EqualTo(sizeof(IAppxManifestMainPackageDependenciesEnumerator)));
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestMainPackageDependenciesEnumerator" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAppxManifestMainPackageDependenciesEnumerator).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAppxManifestMainPackageDependenciesEnumerator" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAppxManifestMainPackageDependenciesEnumerator), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAppxManifestMainPackageDependenciesEnumerator), Is.EqualTo(4));
-        }
-    }
 }

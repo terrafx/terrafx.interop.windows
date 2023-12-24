@@ -25,7 +25,7 @@ public unsafe partial struct IIMEServices : IIMEServices.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IIMEServices*, Guid*, void**, int>)(lpVtbl[0]))((IIMEServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IIMEServices*, Guid*, void**, int>)(lpVtbl[0]))((IIMEServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IIMEServices : IIMEServices.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IIMEServices*, uint>)(lpVtbl[1]))((IIMEServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IIMEServices*, uint>)(lpVtbl[1]))((IIMEServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IIMEServices : IIMEServices.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IIMEServices*, uint>)(lpVtbl[2]))((IIMEServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IIMEServices*, uint>)(lpVtbl[2]))((IIMEServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IIMEServices.xml' path='doc/member[@name="IIMEServices.GetActiveIMM"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IIMEServices : IIMEServices.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetActiveIMM(IActiveIMMApp** ppActiveIMM)
     {
-        return ((delegate* unmanaged<IIMEServices*, IActiveIMMApp**, int>)(lpVtbl[3]))((IIMEServices*)Unsafe.AsPointer(ref this), ppActiveIMM);
+        return ((delegate* unmanaged[MemberFunction]<IIMEServices*, IActiveIMMApp**, int>)(lpVtbl[3]))((IIMEServices*)Unsafe.AsPointer(ref this), ppActiveIMM);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IIMEServices : IIMEServices.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IActiveIMMApp **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IActiveIMMApp**, int> GetActiveIMM;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IActiveIMMApp**, int> GetActiveIMM;
     }
 }

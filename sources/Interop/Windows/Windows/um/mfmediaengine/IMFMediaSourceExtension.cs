@@ -27,7 +27,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, uint>)(lpVtbl[1]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, uint>)(lpVtbl[1]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, uint>)(lpVtbl[2]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, uint>)(lpVtbl[2]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetSourceBuffers"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [VtblIndex(3)]
     public IMFSourceBufferList* GetSourceBuffers()
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[3]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[3]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetActiveSourceBuffers"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [VtblIndex(4)]
     public IMFSourceBufferList* GetActiveSourceBuffers()
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[4]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, IMFSourceBufferList*>)(lpVtbl[4]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetReadyState"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [VtblIndex(5)]
     public MF_MSE_READY GetReadyState()
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_READY>)(lpVtbl[5]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, MF_MSE_READY>)(lpVtbl[5]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetDuration"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [VtblIndex(6)]
     public double GetDuration()
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, double>)(lpVtbl[6]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, double>)(lpVtbl[6]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.SetDuration"]/*' />
@@ -85,15 +85,15 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [VtblIndex(7)]
     public HRESULT SetDuration(double duration)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, double, int>)(lpVtbl[7]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), duration);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, double, int>)(lpVtbl[7]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), duration);
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.AddSourceBuffer"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(8)]
-    public HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer)
+    public HRESULT AddSourceBuffer([NativeTypeName("BSTR")] char* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int>)(lpVtbl[8]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type, pNotify, ppSourceBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, char*, IMFSourceBufferNotify*, IMFSourceBuffer**, int>)(lpVtbl[8]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type, pNotify, ppSourceBuffer);
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.RemoveSourceBuffer"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [VtblIndex(9)]
     public HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, IMFSourceBuffer*, int>)(lpVtbl[9]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), pSourceBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, IMFSourceBuffer*, int>)(lpVtbl[9]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), pSourceBuffer);
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.SetEndOfStream"]/*' />
@@ -109,15 +109,15 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [VtblIndex(10)]
     public HRESULT SetEndOfStream(MF_MSE_ERROR error)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, MF_MSE_ERROR, int>)(lpVtbl[10]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), error);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, MF_MSE_ERROR, int>)(lpVtbl[10]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), error);
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.IsTypeSupported"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type)
+    public BOOL IsTypeSupported([NativeTypeName("BSTR")] char* type)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, ushort*, int>)(lpVtbl[11]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, char*, int>)(lpVtbl[11]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), type);
     }
 
     /// <include file='IMFMediaSourceExtension.xml' path='doc/member[@name="IMFMediaSourceExtension.GetSourceBuffer"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
     [VtblIndex(12)]
     public IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex)
     {
-        return ((delegate* unmanaged<IMFMediaSourceExtension*, uint, IMFSourceBuffer*>)(lpVtbl[12]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), dwStreamIndex);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaSourceExtension*, uint, IMFSourceBuffer*>)(lpVtbl[12]))((IMFMediaSourceExtension*)Unsafe.AsPointer(ref this), dwStreamIndex);
     }
 
     public interface Interface : IUnknown.Interface
@@ -146,7 +146,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         HRESULT SetDuration(double duration);
 
         [VtblIndex(8)]
-        HRESULT AddSourceBuffer([NativeTypeName("BSTR")] ushort* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer);
+        HRESULT AddSourceBuffer([NativeTypeName("BSTR")] char* type, IMFSourceBufferNotify* pNotify, IMFSourceBuffer** ppSourceBuffer);
 
         [VtblIndex(9)]
         HRESULT RemoveSourceBuffer(IMFSourceBuffer* pSourceBuffer);
@@ -155,7 +155,7 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         HRESULT SetEndOfStream(MF_MSE_ERROR error);
 
         [VtblIndex(11)]
-        BOOL IsTypeSupported([NativeTypeName("BSTR")] ushort* type);
+        BOOL IsTypeSupported([NativeTypeName("BSTR")] char* type);
 
         [VtblIndex(12)]
         IMFSourceBuffer* GetSourceBuffer([NativeTypeName("DWORD")] uint dwStreamIndex);
@@ -165,42 +165,42 @@ public unsafe partial struct IMFMediaSourceExtension : IMFMediaSourceExtension.I
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("IMFSourceBufferList *() __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFSourceBufferList*> GetSourceBuffers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFSourceBufferList*> GetSourceBuffers;
 
         [NativeTypeName("IMFSourceBufferList *() __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFSourceBufferList*> GetActiveSourceBuffers;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFSourceBufferList*> GetActiveSourceBuffers;
 
         [NativeTypeName("MF_MSE_READY () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MSE_READY> GetReadyState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MSE_READY> GetReadyState;
 
         [NativeTypeName("double () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double> GetDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double> GetDuration;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetDuration;
 
         [NativeTypeName("HRESULT (BSTR, IMFSourceBufferNotify *, IMFSourceBuffer **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, IMFSourceBufferNotify*, IMFSourceBuffer**, int> AddSourceBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, IMFSourceBufferNotify*, IMFSourceBuffer**, int> AddSourceBuffer;
 
         [NativeTypeName("HRESULT (IMFSourceBuffer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFSourceBuffer*, int> RemoveSourceBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFSourceBuffer*, int> RemoveSourceBuffer;
 
         [NativeTypeName("HRESULT (MF_MSE_ERROR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MF_MSE_ERROR, int> SetEndOfStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MF_MSE_ERROR, int> SetEndOfStream;
 
         [NativeTypeName("BOOL (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> IsTypeSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> IsTypeSupported;
 
         [NativeTypeName("IMFSourceBuffer *(DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFSourceBuffer*> GetSourceBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFSourceBuffer*> GetSourceBuffer;
     }
 }

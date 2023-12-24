@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncDDDynamicRangeCompressionContro
     {
         Assert.That(typeof(CODECAPI_AVEncDDDynamicRangeCompressionControl).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDDynamicRangeCompressionControl));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDynamicRangeCompressionControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDDynamicRangeCompressionControl>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDDynamicRangeCompressionControl)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDynamicRangeCompressionControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncDDDynamicRangeCompressionControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDDynamicRangeCompressionControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncDDDynamicRangeCompressionControl), Is.EqualTo(1));
-    }
 }

@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TAPE_SET_MEDIA_PARAMETERS">
-    <summary>
-      <para>The
-<b>TAPE_SET_MEDIA_PARAMETERS</b> structure describes the tape in the tape drive. It is used by the <see cref="SetTapeParameters" /> function.</para>
-    </summary>
-    <seealso cref="SetTapeParameters" />
+    <summary>The<b>TAPE_SET_MEDIA_PARAMETERS</b> structure describes the tape in the tape drive. It is used by the <see cref="SetTapeParameters" /> function.</summary>
   </member>
   <member name="TAPE_SET_MEDIA_PARAMETERS.BlockSize">
-    <summary>
-      <para>Number of bytes per block. Maximum and minimum block sizes can be obtained by calling the
-<see cref="GetTapeParameters" /> function.</para>
-    </summary>
+    <summary>Number of bytes per block. Maximum and minimum block sizes can be obtained by calling the<see cref="GetTapeParameters" /> function.</summary>
   </member>
 </doc>

@@ -3,148 +3,63 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSourceBuffer.Abort">
-    <summary>
-      <para>Aborts the processing of the current media segment.</para>
-    </summary>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Aborts the processing of the current media segment.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceBuffer.Append">
-    <summary>
-      <para>Appends the specified media segment to the <see cref="IMFSourceBuffer" />.</para>
-    </summary>
-    <param name="pData">
-      <para>The media data to append.</para>
-    </param>
-    <param name="len">
-      <para>The length of the media data stored in <i>pData</i>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Appends the specified media segment to the <see cref="IMFSourceBuffer" />.</summary>
+    <param name="pData">The media data to append.</param>
+    <param name="len">The length of the media data stored in <i>pData</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceBuffer.AppendByteStream">
-    <summary>
-      <para>Appends the media segment from the specified byte stream to the <see cref="IMFSourceBuffer" />.</para>
-    </summary>
-    <param name="pStream">
-      <para>The media segment data.</para>
-    </param>
-    <param name="pMaxLen">
-      <para>The maximum length of the media segment data.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Appends the media segment from the specified byte stream to the <see cref="IMFSourceBuffer" />.</summary>
+    <param name="pStream">The media segment data.</param>
+    <param name="pMaxLen">The maximum length of the media segment data.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceBuffer.GetAppendWindowEnd">
-    <summary>
-      <para>Gets the timestamp for the end of the append window.</para>
-    </summary>
-    <returns>
-      <para>The timestamp for the end of the append window.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Gets the timestamp for the end of the append window.</summary>
+    <returns>The timestamp for the end of the append window.</returns>
   </member>
   <member name="IMFSourceBuffer.GetAppendWindowStart">
-    <summary>
-      <para>Gets the timestamp for the start of the append window.</para>
-    </summary>
-    <returns>
-      <para>The timestamp for the start of the append window.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Gets the timestamp for the start of the append window.</summary>
+    <returns>The timestamp for the start of the append window.</returns>
   </member>
   <member name="IMFSourceBuffer.GetBuffered">
-    <summary>
-      <para>Gets the buffered time range.</para>
-    </summary>
-    <param name="ppBuffered">
-      <para>The buffered time range.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Gets the buffered time range.</summary>
+    <param name="ppBuffered">The buffered time range.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceBuffer.GetTimeStampOffset">
-    <summary>
-      <para>Gets the timestamp offset for media segments appended to the <see cref="IMFSourceBuffer" />.</para>
-    </summary>
-    <returns>
-      <para>The timestamp offset.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Gets the timestamp offset for media segments appended to the <see cref="IMFSourceBuffer" />.</summary>
+    <returns>The timestamp offset.</returns>
   </member>
   <member name="IMFSourceBuffer.GetUpdating">
-    <summary>
-      <para>Gets a value that indicates  if <a href="https://docs.microsoft.com//windows/desktop/medfound/imfsourcebuffer-append">Append</a>, <see cref="AppendByteStream" />, or <a href="https://docs.microsoft.com//windows/desktop/medfound/imfsourcebuffer-remove">Remove</a> is in process.</para>
-    </summary>
+    <summary>Gets a value that indicates if <a href="https://docs.microsoft.com//windows/desktop/medfound/imfsourcebuffer-append">Append</a>, <see cref="AppendByteStream" />, or <a href="https://docs.microsoft.com//windows/desktop/medfound/imfsourcebuffer-remove">Remove</a> is in process.</summary>
     <returns>
-      <para>
-        <b>true</b> if <a href="https://docs.microsoft.com//windows/desktop/medfound/imfsourcebuffer-append">Append</a>, <see cref="AppendByteStream" />, or <a href="https://docs.microsoft.com//windows/desktop/medfound/imfsourcebuffer-remove">Remove</a>; otherwise, <b>false</b>.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+      <b>true</b> if <a href="https://docs.microsoft.com//windows/desktop/medfound/imfsourcebuffer-append">Append</a>, <see cref="AppendByteStream" />, or <a href="https://docs.microsoft.com//windows/desktop/medfound/imfsourcebuffer-remove">Remove</a>; otherwise, <b>false</b>.</returns>
   </member>
   <member name="IMFSourceBuffer.Remove">
-    <summary>
-      <para>Removes the media segments defined by the specified time range from the <see cref="IMFSourceBuffer" />.</para>
-    </summary>
-    <param name="start">
-      <para>The start of the time range.</para>
-    </param>
-    <param name="end">
-      <para>The end of the time range.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Removes the media segments defined by the specified time range from the <see cref="IMFSourceBuffer" />.</summary>
+    <param name="start">The start of the time range.</param>
+    <param name="end">The end of the time range.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceBuffer.SetAppendWindowEnd">
-    <summary>
-      <para>Sets the timestamp for the end of the append window.</para>
-    </summary>
-    <param name="time"></param>
-    <returns>
-      <para>The timestamp for the end of the append window.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Sets the timestamp for the end of the append window.</summary>
+    <returns>The timestamp for the end of the append window.</returns>
   </member>
   <member name="IMFSourceBuffer.SetAppendWindowStart">
-    <summary>
-      <para>Sets the timestamp for the start of the append window.</para>
-    </summary>
-    <param name="time">
-      <para>The timestamp for the start of the append window.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Sets the timestamp for the start of the append window.</summary>
+    <param name="time">The timestamp for the start of the append window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceBuffer.SetTimeStampOffset">
-    <summary>
-      <para>Sets the timestamp offset for media segments appended to the <see cref="IMFSourceBuffer" />.</para>
-    </summary>
-    <param name="offset"></param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSourceBuffer" />
+    <summary>Sets the timestamp offset for media segments appended to the <see cref="IMFSourceBuffer" />.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSourceBuffer">
-    <summary>
-      <para>Represents a buffer which contains media data for a <see cref="IMFMediaSourceExtension" />.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IMFSourceBuffer</b> is used in conjunction with the <see cref="IMFMediaSourceExtension" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Represents a buffer which contains media data for a <see cref="IMFMediaSourceExtension" />.</summary>
   </member>
 </doc>

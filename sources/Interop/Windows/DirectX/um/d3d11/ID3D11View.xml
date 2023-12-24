@@ -3,49 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11View.GetResource">
-    <summary>
-      <para>Get the resource that is accessed through this view.</para>
-    </summary>
-    <param name="ppResource">
-      <para>Type: <b><see cref="ID3D11Resource" />**</b></para>
-      <para>Address of a pointer to the resource that is accessed through this view. (See <see cref="ID3D11Resource" />.)</para>
-    </param>
-    <remarks>
-      <para>This function increments the reference count of the resource by one, so it is necessary to call <b>Release</b> on the returned pointer when the application is done with it. Destroying (or losing) the returned pointer before <b>Release</b> is called will result in a memory leak.</para>
-    </remarks>
-    <seealso cref="ID3D11View" />
+    <summary>Get the resource that is accessed through this view.</summary>
+    <param name="ppResource">Address of a pointer to the resource that is accessed through this view. (See <see cref="ID3D11Resource" />.)</param>
   </member>
   <member name="ID3D11View">
-    <summary>
-      <para>A view interface specifies the parts of a resource the pipeline can access during rendering.</para>
-    </summary>
-    <remarks>
-      <para>A view interface is the base interface for all views. There are four types of views; a depth-stencil view, a render-target view, a shader-resource view, and an unordered-access view.</para>
-      <list type="bullet">
-        <item>
-          <description>To create a render-target view, call <see cref="ID3D11Device.CreateRenderTargetView" />.</description>
-        </item>
-        <item>
-          <description>To create a depth-stencil view, call <see cref="ID3D11Device.CreateDepthStencilView" />.</description>
-        </item>
-        <item>
-          <description>To create a shader-resource view, call <see cref="ID3D11Device.CreateShaderResourceView" />.</description>
-        </item>
-        <item>
-          <description>To create an unordered-access view, call <see cref="ID3D11Device.CreateUnorderedAccessView" />.</description>
-        </item>
-      </list>
-      <para>All resources must be bound to the pipeline before they can be accessed.</para>
-      <list type="bullet">
-        <item>
-          <description>To bind a render-target view or a depth-stencil view, call <see cref="ID3D11DeviceContext.OMSetRenderTargets" />.</description>
-        </item>
-        <item>
-          <description>To bind a shader resource, call <see cref="ID3D11DeviceContext.VSSetShaderResources" />.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ID3D11DeviceChild" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+    <summary>A view interface specifies the parts of a resource the pipeline can access during rendering.</summary>
   </member>
 </doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SHADER_BYTECODE">
+    <summary>Describes shader data.</summary>
+  </member>
+  <member name="D3D12_SHADER_BYTECODE.pShaderBytecode">
+    <summary>A pointer to a memory block that contains the shader data.</summary>
+  </member>
+  <member name="D3D12_SHADER_BYTECODE.BytecodeLength">
+    <summary>The size, in bytes, of the shader data that the <b>pShaderBytecode</b> member points to.</summary>
+  </member>
+</doc>

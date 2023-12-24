@@ -18,10 +18,10 @@ public unsafe partial struct VARDESC
 
     /// <include file='VARDESC.xml' path='doc/member[@name="VARDESC.lpstrSchema"]/*' />
     [NativeTypeName("LPOLESTR")]
-    public ushort* lpstrSchema;
+    public char* lpstrSchema;
 
     /// <include file='VARDESC.xml' path='doc/member[@name="VARDESC.Anonymous"]/*' />
-    [NativeTypeName("tagVARDESC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/oaidl.h:880:36)")]
+    [NativeTypeName("__AnonymousRecord_oaidl_L880_C36")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='VARDESC.xml' path='doc/member[@name="VARDESC.elemdescVar"]/*' />

@@ -3,54 +3,17 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISearchBoxInfo.GetCondition">
-    <summary>
-      <para>Retrieves the contents of the search box as an <see cref="ICondition" /> object.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_ICondition.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns successfully, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="ICondition" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>As opposed to the text string retrieved by <see cref="ISearchBoxInfo.GetText" />, <b>GetCondition</b> retrieves the same information as a structured object, the methods of which can be used to parse and manipulate the search string.</para>
-      <para>We recommend that you use the <b>IID_PPV_ARGS</b> macro, defined in Objbase.h, to package the <i>riid</i> and <i>ppv</i> parameters. This macro provides the correct IID based on the interface pointed to by the value in <i>ppv</i>, which eliminates the possibility of a coding error in <i>riid</i> that could lead to unexpected results.</para>
-    </remarks>
-    <seealso cref="ISearchBoxInfo" />
+    <summary>Retrieves the contents of the search box as an <see cref="ICondition" /> object.</summary>
+    <param name="riid">A reference to the IID of the interface to retrieve through <i>ppv</i>, typically IID_ICondition.</param>
+    <param name="ppv">When this method returns successfully, contains the interface pointer requested in <i>riid</i>. This is typically <see cref="ICondition" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISearchBoxInfo.GetText">
-    <summary>
-      <para>Retrieves the contents of the search box as plain text.</para>
-    </summary>
-    <param name="ppsz">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>Pointer to a buffer that, when this method returns successfully, receives the full text entered in the search box.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISearchBoxInfo" />
+    <summary>Retrieves the contents of the search box as plain text.</summary>
+    <param name="ppsz">Pointer to a buffer that, when this method returns successfully, receives the full text entered in the search box.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISearchBoxInfo">
-    <summary>
-      <para>Exposes methods that allow the caller to retrieve information entered into a search box.</para>
-    </summary>
-    <remarks>
-      <para>The search box is shown here in a Windows Explorer window frame.</para>
-      <para>
-        <img alt="Screen shot of upper-right corner of explorer frame showing search box" src="https://docs.microsoft.com/windows/win32/api/ShObjIdl/images/searchbox.jpg" />
-      </para>
-      <para>The frame that contains the search box might also be hosted in another window or in the common file dialog box.</para>
-      <para>To access the search dialog, use <a href="https://docs.microsoft.com//previous-versions/windows/internet-explorer/ie-developer/platform-apis/cc678966(v=vs.85)">QueryService</a> using SID_SSearchBoxInfo on a site pointer within the Windows Explorer window.</para>
-      <h3>When to Implement</h3>
-      <para>An implementation of this interface is provided with Windows. Third parties do not need to implement their own version.</para>
-    </remarks>
+    <summary>Exposes methods that allow the caller to retrieve information entered into a search box.</summary>
   </member>
 </doc>

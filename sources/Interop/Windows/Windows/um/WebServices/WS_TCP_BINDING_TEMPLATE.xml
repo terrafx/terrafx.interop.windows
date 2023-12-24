@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_TCP_BINDING_TEMPLATE">
-    <summary>
-      <para>TCP template structure to be filled in by application for TCP binding.</para>
-    </summary>
+    <summary>TCP template structure to be filled in by application for TCP binding.</summary>
   </member>
   <member name="WS_TCP_BINDING_TEMPLATE.channelProperties">
-    <summary>
-      <para>Application provided additional channel properties that cannot be represented in policy.</para>
-    </summary>
+    <summary>Application provided additional channel properties that cannot be represented in policy.</summary>
   </member>
 </doc>

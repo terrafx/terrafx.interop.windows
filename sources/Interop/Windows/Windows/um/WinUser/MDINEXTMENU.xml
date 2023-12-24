@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MDINEXTMENU">
-    <summary>
-      <para>Contains information about the menu to be activated.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/menus">Menus</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/menurc/wm-nextmenu">WM_NEXTMENU</seealso>
+    <summary>Contains information about the menu to be activated.</summary>
   </member>
   <member name="MDINEXTMENU.hmenuIn">
-    <summary>
-      <para>Type: <b>HMENU</b></para>
-      <para>A handle to the current menu.</para>
-    </summary>
+    <summary>A handle to the current menu.</summary>
   </member>
   <member name="MDINEXTMENU.hmenuNext">
-    <summary>
-      <para>Type: <b>HMENU</b></para>
-      <para>A handle to the menu to be activated.</para>
-    </summary>
+    <summary>A handle to the menu to be activated.</summary>
   </member>
   <member name="MDINEXTMENU.hwndNext">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window to receive the menu notification messages.</para>
-    </summary>
+    <summary>A handle to the window to receive the menu notification messages.</summary>
   </member>
 </doc>

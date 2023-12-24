@@ -4,6 +4,8 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
+[assembly: DefaultDllImportSearchPaths(DllImportSearchPath.SafeDirectories)]
+
 namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
@@ -13,7 +15,10 @@ public static unsafe partial class Windows
 
     static Windows()
     {
-        NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+        if (!Configuration.DisableResolveLibraryHook)
+        {
+            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+        }
     }
 
     /// <summary>The default <see cref="DllImportResolver"/> for TerraFX.Interop.Windows.</summary>
@@ -25,7 +30,7 @@ public static unsafe partial class Windows
             return nativeLibrary;
         }
 
-        return NativeLibrary.Load(libraryName, assembly, searchPath);
+        return IntPtr.Zero;
     }
 
     /// <summary>Tries to resolve a native library using the handlers for the <see cref="ResolveLibrary"/> event.</summary>

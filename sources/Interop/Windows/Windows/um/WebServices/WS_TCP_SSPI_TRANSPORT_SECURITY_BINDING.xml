@@ -4,32 +4,9 @@
 <doc>
   <member name="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING">
     <summary>
-      <para>The security binding subtype for specifying the use of the Windows
-Integrated Authentication protocol (such as Kerberos, NTLM or SPNEGO)
-with the TCP transport.  A specific SSP package may be chosen using
-the security binding property
-<see cref="WS_SECURITY_BINDING_PROPERTY_WINDOWS_INTEGRATED_AUTH_PACKAGE" />;
-if that property is not specified, SPNEGO is used by default.  The use
-of NTLM is strongly discouraged due to its security weakness
-(specifically, lack of server authentication).  If NTLM is to be
-allowed, the security binding property <b>WS_SECURITY_BINDING_PROPERTY_REQUIRE_SERVER_AUTH</b></para>
-      <para>must be set to <b>FALSE</b>.</para>
-      <para>This security binding operates at the transport security level and is
-supported only with the <see cref="WS_TCP_CHANNEL_BINDING" />.  The
-TCP/Windows SSPI combination uses the wire form defined by the
-NegotiateStreamprotocol and the .Net Message Framing specification.</para>
-      <para>On the client side, the security identity of the target server is
-specified using the identity field of the <see cref="WS_ENDPOINT_ADDRESS" /></para>
-      <para>parameter supplied during <see cref="WsOpenChannel" />.  If the identity is a
-<see cref="WS_SPN_ENDPOINT_IDENTITY" /> or a <see cref="WS_UPN_ENDPOINT_IDENTITY" />,
-that string identity value is used directly with the SSP.  If the identity is a
-<see cref="WS_DNS_ENDPOINT_IDENTITY" /> and the value of its dns field is
-'d1', or if no identity is specified in the <b>WS_ENDPOINT_ADDRESS</b></para>
-      <para>and the host component (according to Section 3.2.2 of
-RFC2396) the address URI
-is 'd1', then the form 'host/d1' is used as the server SPN.
-Specifying any other <see cref="WS_ENDPOINT_IDENTITY" /> subtype in
-<b>WS_ENDPOINT_ADDRESS</b> will cause <b>WsOpenChannel</b> to fail.</para>
+      <para>The security binding subtype for specifying the use of the Windows Integrated Authentication protocol (such as Kerberos, NTLM or SPNEGO) with the TCP transport. A specific SSP package may be chosen using the security binding property<see cref="WS_SECURITY_BINDING_PROPERTY_WINDOWS_INTEGRATED_AUTH_PACKAGE" />; if that property is not specified, SPNEGO is used by default. The use of NTLM is strongly discouraged due to its security weakness (specifically, lack of server authentication). If NTLM is to be allowed, the security binding property <b>WS_SECURITY_BINDING_PROPERTY_REQUIRE_SERVER_AUTH</b>must be set to <b>FALSE</b>.</para>
+      <para>This security binding operates at the transport security level and is supported only with the <see cref="WS_TCP_CHANNEL_BINDING" />. The TCP/Windows SSPI combination uses the wire form defined by the NegotiateStreamprotocol and the .Net Message Framing specification.</para>
+      <para>On the client side, the security identity of the target server is specified using the identity field of the <see cref="WS_ENDPOINT_ADDRESS" />parameter supplied during <see cref="WsOpenChannel" />. If the identity is a<see cref="WS_SPN_ENDPOINT_IDENTITY" /> or a <see cref="WS_UPN_ENDPOINT_IDENTITY" />, that string identity value is used directly with the SSP. If the identity is a<see cref="WS_DNS_ENDPOINT_IDENTITY" /> and the value of its dns field is 'd1', or if no identity is specified in the <b>WS_ENDPOINT_ADDRESS</b>and the host component (according to Section 3.2.2 of RFC2396) the address URI is 'd1', then the form 'host/d1' is used as the server SPN. Specifying any other <see cref="WS_ENDPOINT_IDENTITY" /> subtype in<b>WS_ENDPOINT_ADDRESS</b> will cause <b>WsOpenChannel</b> to fail.</para>
       <para>With this security binding, the following security binding properties may be specified:</para>
       <list type="bullet">
         <item>
@@ -39,32 +16,23 @@ Specifying any other <see cref="WS_ENDPOINT_IDENTITY" /> subtype in
         </item>
         <item>
           <description>
-            <see cref="WS_SECURITY_BINDING_PROPERTY_REQUIRE_SERVER_AUTH" /> (client side only)
-</description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_REQUIRE_SERVER_AUTH" /> (client side only)</description>
         </item>
         <item>
           <description>
-            <see cref="WS_SECURITY_BINDING_PROPERTY_ALLOW_ANONYMOUS_CLIENTS" /> (server side only)
-</description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_ALLOW_ANONYMOUS_CLIENTS" /> (server side only)</description>
         </item>
         <item>
           <description>
-            <see cref="WS_SECURITY_BINDING_PROPERTY_ALLOWED_IMPERSONATION_LEVEL" /> (client side only)
-</description>
+            <see cref="WS_SECURITY_BINDING_PROPERTY_ALLOWED_IMPERSONATION_LEVEL" /> (client side only)</description>
         </item>
       </list>
     </summary>
   </member>
   <member name="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING.binding">
-    <summary>
-      <para>The base type from which this security binding subtype and all other security binding subtypes derive.</para>
-    </summary>
+    <summary>The base type from which this security binding subtype and all other security binding subtypes derive.</summary>
   </member>
   <member name="WS_TCP_SSPI_TRANSPORT_SECURITY_BINDING.clientCredential">
-    <summary>
-      <para>The Windows Integrated Authentication credential to be used to
-authenticate the client.  This is required on the client and must not
-be specified on the server.</para>
-    </summary>
+    <summary>The Windows Integrated Authentication credential to be used to authenticate the client. This is required on the client and must not be specified on the server.</summary>
   </member>
 </doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_FORMAT_SUPPORT">
+    <summary>Describes which resources are supported by the current graphics driver for a given format.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_FORMAT_SUPPORT.Format">
+    <summary>A <see cref="DXGI_FORMAT" />-typed value for the format to return info about.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_FORMAT_SUPPORT.Support1">
+    <summary>A combination of <see cref="D3D12_FORMAT_SUPPORT1" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies which resources are supported.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_FORMAT_SUPPORT.Support2">
+    <summary>A combination of <see cref="D3D12_FORMAT_SUPPORT2" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies which unordered resource options are supported.</summary>
+  </member>
+</doc>

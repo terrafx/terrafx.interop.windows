@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGE_ENCLAVE_IMPORT">
-    <summary>
-      <para>Defines a entry in the array of images that an enclave can import.</para>
-    </summary>
+    <summary>Defines a entry in the array of images that an enclave can import.</summary>
   </member>
   <member name="IMAGE_ENCLAVE_IMPORT.MatchType">
     <summary>
@@ -15,122 +13,100 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_ENCLAVE_IMPORT_MATCH_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>None of the identifiers of the image need to match the value in the import record.</para>
-          </description>
-        </item>
-        <item>
+          <description>None of the identifiers of the image need to match the value in the import record.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_ENCLAVE_IMPORT_MATCH_UNIQUE_ID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The value of the enclave unique identifier of the image must match the value in the import record. Otherwise, loading of the image fails.</para>
-          </description>
-        </item>
-        <item>
+          <description>The value of the enclave unique identifier of the image must match the value in the import record. Otherwise, loading of the image fails.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_ENCLAVE_IMPORT_MATCH_AUTHOR_ID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The value of the enclave author identifier of the image must match the value in the import record. Otherwise, loading of the image fails. If this flag is set and the import record indicates an author identifier of all zeros, the imported image must be part of the Windows installation.</para>
-          </description>
-        </item>
-        <item>
+          <description>The value of the enclave author identifier of the image must match the value in the import record. Otherwise, loading of the image fails. If this flag is set and the import record indicates an author identifier of all zeros, the imported image must be part of the Windows installation.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_ENCLAVE_IMPORT_MATCH_FAMILY_ID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000003</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000003</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The value of the enclave family identifier of the image must match the value in the import record. Otherwise, loading of the image fails.</para>
-          </description>
-        </item>
-        <item>
+          <description>The value of the enclave family identifier of the image must match the value in the import record. Otherwise, loading of the image fails.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>IMAGE_ENCLAVE_IMPORT_MATCH_IMAGE_ID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The value of the enclave image identifier must match the value in the import record. Otherwise, loading of the image fails.</para>
-          </description>
-        </item>
+          <description>The value of the enclave image identifier must match the value in the import record. Otherwise, loading of the image fails.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IMAGE_ENCLAVE_IMPORT.MinimumSecurityVersion">
-    <summary>
-      <para>The minimum enclave security version that each image must have for the image to be imported successfully. The image is rejected unless its enclave security version is equal to or greater than the minimum value in the import record.  Set the value in the import record to zero to turn off the security version check.</para>
-    </summary>
+    <summary>The minimum enclave security version that each image must have for the image to be imported successfully. The image is rejected unless its enclave security version is equal to or greater than the minimum value in the import record. Set the value in the import record to zero to turn off the security version check.</summary>
   </member>
   <member name="IMAGE_ENCLAVE_IMPORT.UniqueOrAuthorID">
-    <summary>
-      <para>The unique identifier of the primary module for the enclave, if the <b>MatchType</b> member is <b>IMAGE_ENCLAVE_IMPORT_MATCH_UNIQUE_ID</b>. Otherwise, the author identifier of the primary module for the enclave..</para>
-    </summary>
+    <summary>The unique identifier of the primary module for the enclave, if the <b>MatchType</b> member is <b>IMAGE_ENCLAVE_IMPORT_MATCH_UNIQUE_ID</b>. Otherwise, the author identifier of the primary module for the enclave..</summary>
   </member>
   <member name="IMAGE_ENCLAVE_IMPORT.FamilyID">
-    <summary>
-      <para>The family identifier of the primary module for the enclave.</para>
-    </summary>
+    <summary>The family identifier of the primary module for the enclave.</summary>
   </member>
   <member name="IMAGE_ENCLAVE_IMPORT.ImageID">
-    <summary>
-      <para>The image identifier of the primary module for the enclave.</para>
-    </summary>
+    <summary>The image identifier of the primary module for the enclave.</summary>
   </member>
   <member name="IMAGE_ENCLAVE_IMPORT.ImportName">
-    <summary>
-      <para>The relative virtual address of a NULL-terminated string that contains the same value found in the import directory for the image.</para>
-    </summary>
+    <summary>The relative virtual address of a NULL-terminated string that contains the same value found in the import directory for the image.</summary>
   </member>
   <member name="IMAGE_ENCLAVE_IMPORT.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

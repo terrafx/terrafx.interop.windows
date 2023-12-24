@@ -17,14 +17,14 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     public uint UmsVersion;
 
     /// <include file='UMS_SYSTEM_THREAD_INFORMATION.xml' path='doc/member[@name="UMS_SYSTEM_THREAD_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("_UMS_SYSTEM_THREAD_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:1610:5)")]
+    [NativeTypeName("__AnonymousRecord_winbase_L1614_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.IsUmsSchedulerThread"]/*' />
     public uint IsUmsSchedulerThread
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.IsUmsSchedulerThread;
         }
@@ -40,7 +40,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     public uint IsUmsWorkerThread
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.IsUmsWorkerThread;
         }
@@ -69,7 +69,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_UMS_SYSTEM_THREAD_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinBase.h:1611:9)")]
+        [NativeTypeName("__AnonymousRecord_winbase_L1615_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ThreadUmsFlags"]/*' />
@@ -87,7 +87,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
             public uint IsUmsSchedulerThread
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -104,7 +104,7 @@ public partial struct UMS_SYSTEM_THREAD_INFORMATION
             public uint IsUmsWorkerThread
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }

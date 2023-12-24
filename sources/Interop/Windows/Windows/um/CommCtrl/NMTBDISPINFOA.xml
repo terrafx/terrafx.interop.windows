@@ -3,175 +3,141 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMTBDISPINFOA">
-    <summary>
-      <para>Contains and receives display information for a toolbar item. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getdispinfo">TBN_GETDISPINFO</a> notification code.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The commctrl.h header defines NMTBDISPINFO as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>Contains and receives display information for a toolbar item. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getdispinfo">TBN_GETDISPINFO</a> notification code.</summary>
   </member>
   <member name="NMTBDISPINFOA.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="NMTBDISPINFOA.dwMask">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Set of flags that indicate which members of this structure are being requested. This can be one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TBNF_IMAGE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TBNF_IMAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item's image index is being requested. The image index must be placed in the 						<b>iImage</b> member.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item's image index is being requested. The image index must be placed in the
-<b>iImage</b> member.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TBNF_TEXT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Not currently implemented.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TBNF_TEXT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TBNF_DI_SETITEM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Not currently implemented.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TBNF_DI_SETITEM</b>
-          </description>
-          <description>
-            <para>Set this flag when processing <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getdispinfo">TBN_GETDISPINFO</a>; the toolbar control will retain the supplied information and not request it again.</para>
-          </description>
-        </item>
+          <description>Set this flag when processing <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getdispinfo">TBN_GETDISPINFO</a>; the toolbar control will retain the supplied information and not request it again.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NMTBDISPINFOA.idCommand">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Command identifier of the item for which display information is being requested. This member is filled in by the control before it sends the notification code.</para>
-    </summary>
+    <summary>Command identifier of the item for which display information is being requested. This member is filled in by the control before it sends the notification code.</summary>
   </member>
   <member name="NMTBDISPINFOA.lParam">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD_PTR</a></b></para>
-      <para>Application-defined value associated with the item for which display information is being requested. This member is filled in by the control before sending the notification code.</para>
-    </summary>
+    <summary>Application-defined value associated with the item for which display information is being requested. This member is filled in by the control before sending the notification code.</summary>
   </member>
   <member name="NMTBDISPINFOA.iImage">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Image index for the item.</para>
-    </summary>
+    <summary>Image index for the item.</summary>
   </member>
   <member name="NMTBDISPINFOA.pszText">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
-      <para>Pointer to a character buffer that receives the item's text.</para>
-    </summary>
+    <summary>Pointer to a character buffer that receives the item's text.</summary>
   </member>
   <member name="NMTBDISPINFOA.cchText">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Size of the
-<b>pszText</b> buffer, in characters.</para>
-    </summary>
+    <summary>Size of the<b>pszText</b> buffer, in characters.</summary>
   </member>
   <member name="NMTBDISPINFOA">
-    <summary>
-      <para>Contains and receives display information for a toolbar item. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getdispinfo">TBN_GETDISPINFO</a> notification code.</para>
-    </summary>
-    <remarks>
-      <blockquote>
-        <para>[!NOTE]
-The commctrl.h header defines NMTBDISPINFO as an alias which automatically selects the ANSI or Unicode version of this function based on the definition of the UNICODE preprocessor constant. Mixing usage of the encoding-neutral alias with code that not encoding-neutral can lead to mismatches that result in compilation or runtime errors. For more information, see <a href="https://docs.microsoft.com//windows/win32/intl/conventions-for-function-prototypes">Conventions for Function Prototypes</a>.</para>
-      </blockquote>
-    </remarks>
+    <summary>Contains and receives display information for a toolbar item. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getdispinfo">TBN_GETDISPINFO</a> notification code.</summary>
   </member>
   <member name="NMTBDISPINFOA.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains additional information about the notification.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains additional information about the notification.</summary>
   </member>
   <member name="NMTBDISPINFOA.dwMask">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>Set of flags that indicate which members of this structure are being requested. This can be one or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TBNF_IMAGE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TBNF_IMAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The item's image index is being requested. The image index must be placed in the 						<b>iImage</b> member.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The item's image index is being requested. The image index must be placed in the
-<b>iImage</b> member.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TBNF_TEXT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Not currently implemented.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TBNF_TEXT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TBNF_DI_SETITEM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Not currently implemented.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TBNF_DI_SETITEM</b>
-          </description>
-          <description>
-            <para>Set this flag when processing <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getdispinfo">TBN_GETDISPINFO</a>; the toolbar control will retain the supplied information and not request it again.</para>
-          </description>
-        </item>
+          <description>Set this flag when processing <a href="https://docs.microsoft.com//windows/desktop/Controls/tbn-getdispinfo">TBN_GETDISPINFO</a>; the toolbar control will retain the supplied information and not request it again.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="NMTBDISPINFOA.idCommand">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Command identifier of the item for which display information is being requested. This member is filled in by the control before it sends the notification code.</para>
-    </summary>
+    <summary>Command identifier of the item for which display information is being requested. This member is filled in by the control before it sends the notification code.</summary>
   </member>
   <member name="NMTBDISPINFOA.lParam">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD_PTR</a></b></para>
-      <para>Application-defined value associated with the item for which display information is being requested. This member is filled in by the control before sending the notification code.</para>
-    </summary>
+    <summary>Application-defined value associated with the item for which display information is being requested. This member is filled in by the control before sending the notification code.</summary>
   </member>
   <member name="NMTBDISPINFOA.iImage">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Image index for the item.</para>
-    </summary>
+    <summary>Image index for the item.</summary>
   </member>
   <member name="NMTBDISPINFOA.pszText">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPTSTR</a></b></para>
-      <para>Pointer to a character buffer that receives the item's text.</para>
-    </summary>
+    <summary>Pointer to a character buffer that receives the item's text.</summary>
   </member>
   <member name="NMTBDISPINFOA.cchText">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Size of the
-<b>pszText</b> buffer, in characters.</para>
-    </summary>
+    <summary>Size of the<b>pszText</b> buffer, in characters.</summary>
   </member>
 </doc>

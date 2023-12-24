@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFVideoCaptureSampleAllocator.InitializeCaptureSampleAllocator">
-    <summary>
-      <para>Initializes the sample allocator with parameters relevant to video capture scenarios.</para>
-    </summary>
-    <param name="cbSampleSize">
-      <para>A DWORD specifying the sample size in bytes. The actual sample size used by the allocator is the maximum of the size required by pMediaType and cbSampleSize.</para>
-    </param>
-    <param name="cbCaptureMetadataSize">
-      <para>A DWORD specifying the capture metadata size in bytes. Applies only to callers that want to to include additional metadata with the captured frames. The metadata size should include the size of a <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_metadata_itemheader">KSCAMERA_METADATA_ITEMHEADER</a> in addition to the size of the metadata payload itself.</para>
-    </param>
-    <param name="cbAlignment">
-      <para>A DWORD specifying the buffer alignment size in bytes. The default and minimum alignment size is 4KB. Custom alignment sizes less than 4KB will be treated as 4KB.</para>
-    </param>
-    <param name="cMinimumSamples">
-      <para>A DWORD specifying the minimum number of pre-allocated samples. This method will fail if the allocator cannot pre-allocate the specified minimum number of samples.</para>
-    </param>
+    <summary>Initializes the sample allocator with parameters relevant to video capture scenarios.</summary>
+    <param name="cbSampleSize">A DWORD specifying the sample size in bytes. The actual sample size used by the allocator is the maximum of the size required by pMediaType and cbSampleSize.</param>
+    <param name="cbCaptureMetadataSize">A DWORD specifying the capture metadata size in bytes. Applies only to callers that want to to include additional metadata with the captured frames. The metadata size should include the size of a <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/ksmedia/ns-ksmedia-tagkscamera_metadata_itemheader">KSCAMERA_METADATA_ITEMHEADER</a> in addition to the size of the metadata payload itself.</param>
+    <param name="cbAlignment">A DWORD specifying the buffer alignment size in bytes. The default and minimum alignment size is 4KB. Custom alignment sizes less than 4KB will be treated as 4KB.</param>
+    <param name="cMinimumSamples">A DWORD specifying the minimum number of pre-allocated samples. This method will fail if the allocator cannot pre-allocate the specified minimum number of samples.</param>
     <param name="pAttributes">
       <para>Optional. An <see cref="IMFAttributes" /> store with additional configuration attributes for the sample allocator. The supported attributes are:</para>
       <list type="bullet">
@@ -48,23 +38,13 @@
         </item>
       </list>
     </param>
-    <param name="pMediaType">
-      <para>An <see cref="IMFMediaType" /> specifying the media type for which samples will be allocator. The sample allocator uses this parameter to calculate the minimum required size for the media samples.</para>
-    </param>
+    <param name="pMediaType">An <see cref="IMFMediaType" /> specifying the media type for which samples will be allocator. The sample allocator uses this parameter to calculate the minimum required size for the media samples.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
-      <para>| Return code | Description |
-|---------------|---------------|
-| S_OK | The method succeeded. |
-|MF_E_INVALIDMEDIATYPE | Invalid media type. |</para>
+      <para>| Return code | Description | |---------------|---------------| | S_OK | The method succeeded. | |MF_E_INVALIDMEDIATYPE | Invalid media type. |</para>
     </returns>
   </member>
   <member name="IMFVideoCaptureSampleAllocator">
-    <summary>
-      <para>Allocates video samples for a video media sink with specialized functionality for video capture devices.</para>
-    </summary>
-    <remarks>
-      <para>This interface inherits from <see cref="IMFVideoSampleAllocator" /> and provides the <see cref="InitializeCaptureSampleAllocator" /> method with parameters relevant to video capture scenarios.</para>
-    </remarks>
+    <summary>Allocates video samples for a video media sink with specialized functionality for video capture devices.</summary>
   </member>
 </doc>

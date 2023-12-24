@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_BUFFER_PROPERTY">
-    <summary>
-      <para>Specifies an XML buffer–specific setting.</para>
-    </summary>
+    <summary>Specifies an XML buffer–specific setting.</summary>
   </member>
   <member name="WS_XML_BUFFER_PROPERTY.id">
-    <summary>
-      <para>Identifies the <see cref="WS_XML_BUFFER_PROPERTY_ID" />.</para>
-    </summary>
+    <summary>Identifies the <see cref="WS_XML_BUFFER_PROPERTY_ID" />.</summary>
   </member>
   <member name="WS_XML_BUFFER_PROPERTY.value">
-    <summary>
-      <para>A pointer to the value to set.
-The pointer must have an alignment compatible with the type
-of the property.</para>
-    </summary>
+    <summary>A pointer to the value to set. The pointer must have an alignment compatible with the type of the property.</summary>
   </member>
   <member name="WS_XML_BUFFER_PROPERTY.valueSize">
-    <summary>
-      <para>The size in bytes of the memory pointed to by value.</para>
-    </summary>
+    <summary>The size in bytes of the memory pointed to by value.</summary>
   </member>
 </doc>

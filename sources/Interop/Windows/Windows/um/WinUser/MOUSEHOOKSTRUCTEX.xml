@@ -7,70 +7,50 @@
       <para>Contains information about a mouse event passed to a <b>WH_MOUSE</b> hook procedure, <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</a>.</para>
       <para>This is an extension of the <see cref="MOUSEHOOKSTRUCT" /> structure that includes information about wheel movement or the use of the X button.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/winmsg/hooks">Hooks</seealso>
-    <seealso cref="MOUSEHOOKSTRUCT" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms644988(v=vs.85)">MouseProc</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousewheel">WM_MOUSEWHEEL</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncxbuttondblclk">WM_NCXBUTTONDBLCLK</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncxbuttondown">WM_NCXBUTTONDOWN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncxbuttonup">WM_NCXBUTTONUP</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-xbuttondblclk">WM_XBUTTONDBLCLK</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-xbuttondown">WM_XBUTTONDOWN</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/inputdev/wm-xbuttonup">WM_XBUTTONUP</seealso>
   </member>
   <member name="MOUSEHOOKSTRUCTEX.mouseData">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>If the message is <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-mousewheel">WM_MOUSEWHEEL</a>, the HIWORD of this member is the wheel delta. The LOWORD is undefined and reserved. A positive value indicates that the wheel was rotated forward, away from the user; a negative value indicates that the wheel was rotated backward, toward the user. One wheel click is defined as WHEEL_DELTA, which is 120.</para>
-      <para>If the message is <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-xbuttondown">WM_XBUTTONDOWN</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-xbuttonup">WM_XBUTTONUP</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-xbuttondblclk">WM_XBUTTONDBLCLK</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncxbuttondown">WM_NCXBUTTONDOWN</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncxbuttonup">WM_NCXBUTTONUP</a>, or <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncxbuttondblclk">WM_NCXBUTTONDBLCLK</a>, the HIWORD of
-<b>mouseData</b> specifies which X button was pressed or released, and the LOWORD is undefined and reserved. This member can be one or more of the following values. Otherwise,
-<b>mouseData</b> is not used.</para>
+      <para>If the message is <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-xbuttondown">WM_XBUTTONDOWN</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-xbuttonup">WM_XBUTTONUP</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-xbuttondblclk">WM_XBUTTONDBLCLK</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncxbuttondown">WM_NCXBUTTONDOWN</a>, <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncxbuttonup">WM_NCXBUTTONUP</a>, or <a href="https://docs.microsoft.com//windows/desktop/inputdev/wm-ncxbuttondblclk">WM_NCXBUTTONDBLCLK</a>, the HIWORD of<b>mouseData</b> specifies which X button was pressed or released, and the LOWORD is undefined and reserved. This member can be one or more of the following values. Otherwise,<b>mouseData</b> is not used.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>XBUTTON1</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The first X button was pressed or released.</para>
-          </description>
-        </item>
-        <item>
+          <description>The first X button was pressed or released.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>XBUTTON2</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The second X button was pressed or released.</para>
-          </description>
-        </item>
+          <description>The second X button was pressed or released.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MOUSEHOOKSTRUCTEX.tagMOUSEHOOKSTRUCT">
-    <summary>
-      <para>Type: <b><see cref="MOUSEHOOKSTRUCT" /></b></para>
-      <para>The members of a <see cref="MOUSEHOOKSTRUCT" /> structure make up the first part of this structure.</para>
-    </summary>
+    <summary>The members of a <see cref="MOUSEHOOKSTRUCT" /> structure make up the first part of this structure.</summary>
   </member>
 </doc>

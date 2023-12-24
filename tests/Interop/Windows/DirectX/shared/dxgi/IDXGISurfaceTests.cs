@@ -19,32 +19,4 @@ public static unsafe partial class IDXGISurfaceTests
     {
         Assert.That(typeof(IDXGISurface).GUID, Is.EqualTo(IID_IDXGISurface));
     }
-
-    /// <summary>Validates that the <see cref="IDXGISurface" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDXGISurface>(), Is.EqualTo(sizeof(IDXGISurface)));
-    }
-
-    /// <summary>Validates that the <see cref="IDXGISurface" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDXGISurface).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDXGISurface" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDXGISurface), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDXGISurface), Is.EqualTo(4));
-        }
-    }
 }

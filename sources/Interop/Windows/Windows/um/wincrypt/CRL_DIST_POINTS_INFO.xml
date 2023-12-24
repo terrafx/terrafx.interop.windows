@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRL_DIST_POINTS_INFO">
-    <summary>
-      <para>The <b>CRL_DIST_POINTS_INFO</b> structure contains a list of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL) distribution points a certificate user can reference to determine whether the certificate has been revoked.</para>
-    </summary>
-    <seealso cref="CRL_DIST_POINT" />
+    <summary>The <b>CRL_DIST_POINTS_INFO</b> structure contains a list of <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL) distribution points a certificate user can reference to determine whether the certificate has been revoked.</summary>
   </member>
   <member name="CRL_DIST_POINTS_INFO.cDistPoint">
-    <summary>
-      <para>Number of elements in the <b>rgDistPoint</b> member array.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgDistPoint</b> member array.</summary>
   </member>
   <member name="CRL_DIST_POINTS_INFO.rgDistPoint">
-    <summary>
-      <para>Array of
-<see cref="CRL_DIST_POINT" /> structures.</para>
-    </summary>
+    <summary>Array of<see cref="CRL_DIST_POINT" /> structures.</summary>
   </member>
 </doc>

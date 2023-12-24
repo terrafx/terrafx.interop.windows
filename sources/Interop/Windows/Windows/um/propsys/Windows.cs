@@ -23,27 +23,27 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSFormatForDisplay"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSFormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, [NativeTypeName("LPWSTR")] ushort* pwszText, [NativeTypeName("DWORD")] uint cchText);
+    public static extern HRESULT PSFormatForDisplay([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdfFlags, [NativeTypeName("LPWSTR")] char* pwszText, [NativeTypeName("DWORD")] uint cchText);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSFormatForDisplayAlloc"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSFormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("PWSTR *")] ushort** ppszDisplay);
+    public static extern HRESULT PSFormatForDisplayAlloc([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* key, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("PWSTR *")] char** ppszDisplay);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSFormatPropertyValue"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSFormatPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] ushort** ppszDisplay);
+    public static extern HRESULT PSFormatPropertyValue(IPropertyStore* pps, IPropertyDescription* ppd, PROPDESC_FORMAT_FLAGS pdff, [NativeTypeName("LPWSTR *")] char** ppszDisplay);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSGetImageReferenceForValue"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSGetImageReferenceForValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("PWSTR *")] ushort** ppszImageRes);
+    public static extern HRESULT PSGetImageReferenceForValue([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("const PROPVARIANT &")] PROPVARIANT* propvar, [NativeTypeName("PWSTR *")] char** ppszImageRes);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSStringFromPropertyKey"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSStringFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkey, [NativeTypeName("LPWSTR")] ushort* psz, uint cch);
+    public static extern HRESULT PSStringFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* pkey, [NativeTypeName("LPWSTR")] char* psz, uint cch);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyKeyFromString"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyKeyFromString([NativeTypeName("LPCWSTR")] ushort* pszString, PROPERTYKEY* pkey);
+    public static extern HRESULT PSPropertyKeyFromString([NativeTypeName("LPCWSTR")] char* pszString, PROPERTYKEY* pkey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSCreateMemoryPropertyStore"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
@@ -71,11 +71,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSGetPropertyDescriptionByName"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSGetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] ushort* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT PSGetPropertyDescriptionByName([NativeTypeName("LPCWSTR")] char* pszCanonicalName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSLookupPropertyHandlerCLSID"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSLookupPropertyHandlerCLSID([NativeTypeName("PCWSTR")] ushort* pszFilePath, [NativeTypeName("CLSID *")] Guid* pclsid);
+    public static extern HRESULT PSLookupPropertyHandlerCLSID([NativeTypeName("PCWSTR")] char* pszFilePath, [NativeTypeName("CLSID *")] Guid* pclsid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSGetItemPropertyHandler"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
@@ -95,11 +95,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSRegisterPropertySchema"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSRegisterPropertySchema([NativeTypeName("PCWSTR")] ushort* pszPath);
+    public static extern HRESULT PSRegisterPropertySchema([NativeTypeName("PCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSUnregisterPropertySchema"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSUnregisterPropertySchema([NativeTypeName("PCWSTR")] ushort* pszPath);
+    public static extern HRESULT PSUnregisterPropertySchema([NativeTypeName("PCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSRefreshPropertySchema"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
@@ -111,11 +111,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSGetPropertyKeyFromName"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSGetPropertyKeyFromName([NativeTypeName("PCWSTR")] ushort* pszName, PROPERTYKEY* ppropkey);
+    public static extern HRESULT PSGetPropertyKeyFromName([NativeTypeName("PCWSTR")] char* pszName, PROPERTYKEY* ppropkey);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSGetNameFromPropertyKey"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSGetNameFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("PWSTR *")] ushort** ppszCanonicalName);
+    public static extern HRESULT PSGetNameFromPropertyKey([NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* propkey, [NativeTypeName("PWSTR *")] char** ppszCanonicalName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSCoerceToCanonicalValue"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
@@ -123,7 +123,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSGetPropertyDescriptionListFromString"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSGetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] ushort* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT PSGetPropertyDescriptionListFromString([NativeTypeName("LPCWSTR")] char* pszPropList, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSCreatePropertyStoreFromPropertySetStorage"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
@@ -147,139 +147,139 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSGetNamedPropertyFromPropertyStorage"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSGetNamedPropertyFromPropertyStorage(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] ushort* pszName, PROPVARIANT* ppropvar);
+    public static extern HRESULT PSGetNamedPropertyFromPropertyStorage(PCUSERIALIZEDPROPSTORAGE psps, [NativeTypeName("DWORD")] uint cb, [NativeTypeName("LPCWSTR")] char* pszName, PROPVARIANT* ppropvar);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadType"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadType(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, VARIANT* var, [NativeTypeName("VARTYPE")] ushort type);
+    public static extern HRESULT PSPropertyBag_ReadType(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, VARIANT* var, [NativeTypeName("VARTYPE")] ushort type);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadStr"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadStr(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LPWSTR")] ushort* value, int characterCount);
+    public static extern HRESULT PSPropertyBag_ReadStr(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("LPWSTR")] char* value, int characterCount);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadStrAlloc"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadStrAlloc(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("PWSTR *")] ushort** value);
+    public static extern HRESULT PSPropertyBag_ReadStrAlloc(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("PWSTR *")] char** value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadBSTR"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadBSTR(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("BSTR *")] ushort** value);
+    public static extern HRESULT PSPropertyBag_ReadBSTR(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("BSTR *")] char** value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteStr"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteStr(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LPCWSTR")] ushort* value);
+    public static extern HRESULT PSPropertyBag_WriteStr(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("LPCWSTR")] char* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteBSTR"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteBSTR(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("BSTR")] ushort* value);
+    public static extern HRESULT PSPropertyBag_WriteBSTR(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("BSTR")] char* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadInt"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, int* value);
+    public static extern HRESULT PSPropertyBag_ReadInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, int* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteInt"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, int value);
+    public static extern HRESULT PSPropertyBag_WriteInt(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, int value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadSHORT"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, short* value);
+    public static extern HRESULT PSPropertyBag_ReadSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, short* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteSHORT"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, short value);
+    public static extern HRESULT PSPropertyBag_WriteSHORT(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, short value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadLONG"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LONG *")] int* value);
+    public static extern HRESULT PSPropertyBag_ReadLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("LONG *")] int* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteLONG"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("LONG")] int value);
+    public static extern HRESULT PSPropertyBag_WriteLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("LONG")] int value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadDWORD"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadDWORD(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("DWORD *")] uint* value);
+    public static extern HRESULT PSPropertyBag_ReadDWORD(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("DWORD *")] uint* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteDWORD"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteDWORD(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("DWORD")] uint value);
+    public static extern HRESULT PSPropertyBag_WriteDWORD(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("DWORD")] uint value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadBOOL"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, BOOL* value);
+    public static extern HRESULT PSPropertyBag_ReadBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, BOOL* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteBOOL"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, BOOL value);
+    public static extern HRESULT PSPropertyBag_WriteBOOL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, BOOL value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadPOINTL"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadPOINTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, POINTL* value);
+    public static extern HRESULT PSPropertyBag_ReadPOINTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, POINTL* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WritePOINTL"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WritePOINTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const POINTL *")] POINTL* value);
+    public static extern HRESULT PSPropertyBag_WritePOINTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("const POINTL *")] POINTL* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadPOINTS"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadPOINTS(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, POINTS* value);
+    public static extern HRESULT PSPropertyBag_ReadPOINTS(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, POINTS* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WritePOINTS"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WritePOINTS(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const POINTS *")] POINTS* value);
+    public static extern HRESULT PSPropertyBag_WritePOINTS(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("const POINTS *")] POINTS* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadRECTL"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadRECTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, RECTL* value);
+    public static extern HRESULT PSPropertyBag_ReadRECTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, RECTL* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteRECTL"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteRECTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const RECTL *")] RECTL* value);
+    public static extern HRESULT PSPropertyBag_WriteRECTL(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("const RECTL *")] RECTL* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadStream"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadStream(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IStream** value);
+    public static extern HRESULT PSPropertyBag_ReadStream(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, IStream** value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteStream"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteStream(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IStream* value);
+    public static extern HRESULT PSPropertyBag_WriteStream(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, IStream* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_Delete"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_Delete(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName);
+    public static extern HRESULT PSPropertyBag_Delete(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadULONGLONG"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadULONGLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("ULONGLONG *")] ulong* value);
+    public static extern HRESULT PSPropertyBag_ReadULONGLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("ULONGLONG *")] ulong* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteULONGLONG"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteULONGLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("ULONGLONG")] ulong value);
+    public static extern HRESULT PSPropertyBag_WriteULONGLONG(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("ULONGLONG")] ulong value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadUnknown"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadUnknown(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT PSPropertyBag_ReadUnknown(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteUnknown"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteUnknown(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, IUnknown* punk);
+    public static extern HRESULT PSPropertyBag_WriteUnknown(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, IUnknown* punk);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadGUID"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, Guid* value);
+    public static extern HRESULT PSPropertyBag_ReadGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, Guid* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WriteGUID"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WriteGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const GUID *")] Guid* value);
+    public static extern HRESULT PSPropertyBag_WriteGUID(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("const GUID *")] Guid* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_ReadPropertyKey"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_ReadPropertyKey(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, PROPERTYKEY* value);
+    public static extern HRESULT PSPropertyBag_ReadPropertyKey(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, PROPERTYKEY* value);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PSPropertyBag_WritePropertyKey"]/*' />
     [DllImport("propsys", ExactSpelling = true)]
-    public static extern HRESULT PSPropertyBag_WritePropertyKey(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] ushort* propName, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* value);
+    public static extern HRESULT PSPropertyBag_WritePropertyKey(IPropertyBag* propBag, [NativeTypeName("LPCWSTR")] char* propName, [NativeTypeName("const PROPERTYKEY &")] PROPERTYKEY* value);
 
     [NativeTypeName("#define PDFF_PREFERFRIENDLY static_cast<PROPDESC_FORMAT_FLAGS>(0x10000000)")]
     public const PROPDESC_FORMAT_FLAGS PDFF_PREFERFRIENDLY = (PROPDESC_FORMAT_FLAGS)(0x10000000);

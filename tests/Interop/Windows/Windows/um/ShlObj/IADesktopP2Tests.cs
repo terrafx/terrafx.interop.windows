@@ -19,32 +19,4 @@ public static unsafe partial class IADesktopP2Tests
     {
         Assert.That(typeof(IADesktopP2).GUID, Is.EqualTo(IID_IADesktopP2));
     }
-
-    /// <summary>Validates that the <see cref="IADesktopP2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IADesktopP2>(), Is.EqualTo(sizeof(IADesktopP2)));
-    }
-
-    /// <summary>Validates that the <see cref="IADesktopP2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IADesktopP2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IADesktopP2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IADesktopP2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IADesktopP2), Is.EqualTo(4));
-        }
-    }
 }

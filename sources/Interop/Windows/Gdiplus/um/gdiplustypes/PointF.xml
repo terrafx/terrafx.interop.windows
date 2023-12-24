@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PointF.Equals">
+    <summary>The <b>PointF.Equals</b> method determines whether two<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects are equal. Two points are considered equal if they have the same<b>X</b> and<b>Y</b> data members.</summary>
+    <param name="point">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object that is compared to this<b>PointF</b> object.</param>
+    <returns>If the<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> objects are equal, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="PointF.PointF">
+    <summary>Creates a new <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object and copies the data from another <b>PointF</b> object.</summary>
+    <param name="point">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object whose<b>X</b> and<b>Y</b> data members are copied into the<b>X</b> and<b>Y</b> data members of the new <b>PointF</b> object.</param>
+  </member>
+  <member name="PointF.PointF">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object using a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object to specify the<b>X</b> and<b>Y</b> data members.</summary>
+    <param name="size">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object whose<b>Width</b> data member specifies the<b>X</b> data member of this <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object, and whose<b>Height</b> data member specifies the<b>Y</b> data member of this <b>PointF</b> object.</param>
+  </member>
+  <member name="PointF.PointF">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object using two real numbers to specify the<b>X</b> and<b>Y</b> data members.</summary>
+    <param name="x">Real number that specifies the x-coordinate of the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object.</param>
+    <param name="y">Real number that specifies the y-coordinate of the <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object.</param>
+  </member>
+  <member name="PointF.PointF">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> object and initializes the<b>X</b> and<b>Y</b> data members to zero. This is the default constructor.</summary>
+  </member>
+</doc>

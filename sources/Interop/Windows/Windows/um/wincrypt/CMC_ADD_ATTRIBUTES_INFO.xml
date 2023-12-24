@@ -3,35 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMC_ADD_ATTRIBUTES_INFO">
-    <summary>
-      <para>The <b>CMC_ADD_ATTRIBUTES_INFO</b> structure contains certificate attributes to be added to a certificate.</para>
-    </summary>
+    <summary>The <b>CMC_ADD_ATTRIBUTES_INFO</b> structure contains certificate attributes to be added to a certificate.</summary>
   </member>
   <member name="CMC_ADD_ATTRIBUTES_INFO.dwCmcDataReference">
     <summary>
-      <para>
-        <b>DWORD</b> data reference number.</para>
-    </summary>
+      <b>DWORD</b> data reference number.</summary>
   </member>
   <member name="CMC_ADD_ATTRIBUTES_INFO.cCertReference">
-    <summary>
-      <para>Count of elements in the <b>rgdwCertReference</b> array.</para>
-    </summary>
+    <summary>Count of elements in the <b>rgdwCertReference</b> array.</summary>
   </member>
   <member name="CMC_ADD_ATTRIBUTES_INFO.rgdwCertReference">
-    <summary>
-      <para>Array of certificate reference numbers.</para>
-    </summary>
+    <summary>Array of certificate reference numbers.</summary>
   </member>
   <member name="CMC_ADD_ATTRIBUTES_INFO.cAttribute">
-    <summary>
-      <para>Count of the elements in the <b>rgAttribute</b> array.</para>
-    </summary>
+    <summary>Count of the elements in the <b>rgAttribute</b> array.</summary>
   </member>
   <member name="CMC_ADD_ATTRIBUTES_INFO.rgAttribute">
-    <summary>
-      <para>Array of pointers to the
-<see cref="CRYPT_ATTRIBUTE" /> certificate attributes to be added.</para>
-    </summary>
+    <summary>Array of pointers to the<see cref="CRYPT_ATTRIBUTE" /> certificate attributes to be added.</summary>
   </member>
 </doc>

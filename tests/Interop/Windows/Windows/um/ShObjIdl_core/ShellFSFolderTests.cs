@@ -19,25 +19,4 @@ public static unsafe partial class ShellFSFolderTests
     {
         Assert.That(typeof(ShellFSFolder).GUID, Is.EqualTo(IID_ShellFSFolder));
     }
-
-    /// <summary>Validates that the <see cref="ShellFSFolder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ShellFSFolder>(), Is.EqualTo(sizeof(ShellFSFolder)));
-    }
-
-    /// <summary>Validates that the <see cref="ShellFSFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ShellFSFolder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ShellFSFolder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ShellFSFolder), Is.EqualTo(1));
-    }
 }

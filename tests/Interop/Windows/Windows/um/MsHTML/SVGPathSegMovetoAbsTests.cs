@@ -19,25 +19,4 @@ public static unsafe partial class SVGPathSegMovetoAbsTests
     {
         Assert.That(typeof(SVGPathSegMovetoAbs).GUID, Is.EqualTo(IID_SVGPathSegMovetoAbs));
     }
-
-    /// <summary>Validates that the <see cref="SVGPathSegMovetoAbs" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGPathSegMovetoAbs>(), Is.EqualTo(sizeof(SVGPathSegMovetoAbs)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGPathSegMovetoAbs" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGPathSegMovetoAbs).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGPathSegMovetoAbs" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGPathSegMovetoAbs), Is.EqualTo(1));
-    }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLDialog2Tests
     {
         Assert.That(typeof(IHTMLDialog2).GUID, Is.EqualTo(IID_IHTMLDialog2));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLDialog2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLDialog2>(), Is.EqualTo(sizeof(IHTMLDialog2)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLDialog2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLDialog2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLDialog2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLDialog2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLDialog2), Is.EqualTo(4));
-        }
-    }
 }

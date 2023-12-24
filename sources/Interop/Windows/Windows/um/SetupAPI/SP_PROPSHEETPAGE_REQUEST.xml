@@ -7,65 +7,9 @@
       <para>An SP_PROPSHEETPAGE_REQUEST structure can be passed as the first parameter (<i>lpv</i>) to the <b>ExtensionPropSheetPageProc</b> entry point in the <a href="https://docs.microsoft.com//windows-hardware/drivers/install/setupapi">SetupAPI</a> DLL. <b>ExtensionPropSheetPageProc</b> is used to retrieve a handle to a specified property sheet page.</para>
       <para>For information about <b>ExtensionPropSheetPageProc</b> and related functions, see the Microsoft Windows SDK documentation.</para>
     </summary>
-    <remarks>
-      <para>The component that is retrieving the property pages calls SetupAPI's <b>ExtensionPropSheetPageProc</b> function and passes in a pointer to a SP_PROPSHEETPAGE_REQUEST structure, the address of their  <b>AddPropSheetPageProc </b> function, and some private data. The property sheet provider calls the <b>AddPropSheetPageProc</b> routine for each property sheet it provides.</para>
-      <para>The following code excerpt shows how to retrieve one page, the SetupAPI's Resource Selection page:</para>
-      <code>{
-    DWORD Err;
-    HINSTANCE hLib;
-    FARPROC PropSheetExtProc;
-    HPROPSHEETPAGE hPages[2];
-    .
-    .
-    .
-        if(!(hLib = GetModuleHandle(TEXT("setupapi.dll")))) {
-            return GetLastError();
-        }
-
-        if(!(PropSheetExtProc = GetProcAddress(hLib,
-                 "ExtensionPropSheetPageProc"))) {
-            Err = GetLastError();
-            FreeLibrary(hLib);
-            return Err;
-        }
-
-        PropPageRequest.cbSize = sizeof(SP_PROPSHEETPAGE_REQUEST);
-        PropPageRequest.PageRequested  =
-            SPPSR_SELECT_DEVICE_RESOURCES;
-        PropPageRequest.DeviceInfoSet  = DeviceInfoSet;
-        PropPageRequest.DeviceInfoData = DeviceInfoData;
-
-        if(!PropSheetExtProc(&amp;amp;amp;amp;amp;amp;PropPageRequest,
-                AddPropSheetPageProc, &amp;amp;amp;amp;amp;amp;hPages[1])) {
-            Err = ERROR_INVALID_PARAMETER;
-            FreeLibrary(hLib);
-            return Err;
-        }
-        .
-        .
-        .
-}
-</code>
-      <para>The <b>AddPropSheetPageProc</b> for the previous excerpt would be something like the following:</para>
-      <code>BOOL
-CALLBACK
-AddPropSheetPageProc(
-    IN HPROPSHEETPAGE hpage,
-    IN LPARAM lParam
-   )
-{
-    *((HPROPSHEETPAGE *)lParam) = hpage;
-    return TRUE;
-}
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-addpropertypage-advanced">DIF_ADDPROPERTYPAGE_ADVANCED</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-addpropertypage-basic">DIF_ADDPROPERTYPAGE_BASIC</seealso>
   </member>
   <member name="SP_PROPSHEETPAGE_REQUEST.cbSize">
-    <summary>
-      <para>The size, in bytes, of the SP_PROPSHEETPAGE_REQUEST structure.</para>
-    </summary>
+    <summary>The size, in bytes, of the SP_PROPSHEETPAGE_REQUEST structure.</summary>
   </member>
   <member name="SP_PROPSHEETPAGE_REQUEST.PageRequested">
     <summary>
@@ -79,13 +23,9 @@ AddPropSheetPageProc(
     </summary>
   </member>
   <member name="SP_PROPSHEETPAGE_REQUEST.DeviceInfoSet">
-    <summary>
-      <para>The handle for the device information set that contains the device being installed.</para>
-    </summary>
+    <summary>The handle for the device information set that contains the device being installed.</summary>
   </member>
   <member name="SP_PROPSHEETPAGE_REQUEST.DeviceInfoData">
-    <summary>
-      <para>A pointer to an <see cref="SP_DEVINFO_DATA" /> structure for the device being installed.</para>
-    </summary>
+    <summary>A pointer to an <see cref="SP_DEVINFO_DATA" /> structure for the device being installed.</summary>
   </member>
 </doc>

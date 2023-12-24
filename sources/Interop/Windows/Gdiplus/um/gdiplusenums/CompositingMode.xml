@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="CompositingMode">
+    <summary>The <b>CompositingMode</b> enumeration specifies how rendered colors are combined with background colors. This enumeration is used by the <see cref="Graphics.GetCompositingMode" /> and <see cref="Graphics.SetCompositingMode" /> methods of the<b>Graphics</b> class.</summary>
+  </member>
+  <member name="CompositingMode.CompositingModeSourceOver">
+    <summary>Specifies that when a color is rendered, it is blended with the background color. The blend is determined by the alpha component of the color being rendered.</summary>
+  </member>
+  <member name="CompositingMode.CompositingModeSourceCopy">
+    <summary>Specifies that when a color is rendered, it overwrites the background color. This mode cannot be used along with TextRenderingHintClearTypeGridFit.</summary>
+  </member>
+</doc>

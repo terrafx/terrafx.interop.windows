@@ -3,132 +3,78 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_DEVICE_STATE_TYPES">
-    <summary>
-      <para>Effect device-state types.</para>
-    </summary>
-    <remarks>
-      <para>This enumeration is used by <see cref="D3D10StateBlockMaskDisableCapture" />, <see cref="D3D10StateBlockMaskEnableCapture" />, and <see cref="D3D10StateBlockMaskGetSetting" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-enums">Core Enumerations</seealso>
+    <summary>Effect device-state types.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_SO_BUFFERS">
-    <summary>
-      <para>Stream-output buffer.</para>
-    </summary>
+    <summary>Stream-output buffer.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_OM_RENDER_TARGETS">
-    <summary>
-      <para>Render target.</para>
-    </summary>
+    <summary>Render target.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_OM_DEPTH_STENCIL_STATE">
-    <summary>
-      <para>Depth-stencil state.</para>
-    </summary>
+    <summary>Depth-stencil state.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_OM_BLEND_STATE">
-    <summary>
-      <para>Blend state.</para>
-    </summary>
+    <summary>Blend state.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_VS">
-    <summary>
-      <para>Vertex shader.</para>
-    </summary>
+    <summary>Vertex shader.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_VS_SAMPLERS">
-    <summary>
-      <para>Vertex shader sampler.</para>
-    </summary>
+    <summary>Vertex shader sampler.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_VS_SHADER_RESOURCES">
-    <summary>
-      <para>Vertex shader resource.</para>
-    </summary>
+    <summary>Vertex shader resource.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_VS_CONSTANT_BUFFERS">
-    <summary>
-      <para>Vertex shader constant buffer.</para>
-    </summary>
+    <summary>Vertex shader constant buffer.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_GS">
-    <summary>
-      <para>Geometry shader.</para>
-    </summary>
+    <summary>Geometry shader.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_GS_SAMPLERS">
-    <summary>
-      <para>Geometry shader sampler.</para>
-    </summary>
+    <summary>Geometry shader sampler.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_GS_SHADER_RESOURCES">
-    <summary>
-      <para>Geometry shader resource.</para>
-    </summary>
+    <summary>Geometry shader resource.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_GS_CONSTANT_BUFFERS">
-    <summary>
-      <para>Geometry shader constant buffer.</para>
-    </summary>
+    <summary>Geometry shader constant buffer.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_PS">
-    <summary>
-      <para>Pixel shader.</para>
-    </summary>
+    <summary>Pixel shader.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_PS_SAMPLERS">
-    <summary>
-      <para>Pixel shader sampler.</para>
-    </summary>
+    <summary>Pixel shader sampler.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_PS_SHADER_RESOURCES">
-    <summary>
-      <para>Pixel shader resource.</para>
-    </summary>
+    <summary>Pixel shader resource.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_PS_CONSTANT_BUFFERS">
-    <summary>
-      <para>Pixel shader constant buffer.</para>
-    </summary>
+    <summary>Pixel shader constant buffer.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_IA_VERTEX_BUFFERS">
-    <summary>
-      <para>Input-assembler vertex buffer.</para>
-    </summary>
+    <summary>Input-assembler vertex buffer.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_IA_INDEX_BUFFER">
-    <summary>
-      <para>Input-assembler index buffer.</para>
-    </summary>
+    <summary>Input-assembler index buffer.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_IA_INPUT_LAYOUT">
-    <summary>
-      <para>Input-assembler input layout.</para>
-    </summary>
+    <summary>Input-assembler input layout.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_IA_PRIMITIVE_TOPOLOGY">
-    <summary>
-      <para>Input-assembler primitive topology.</para>
-    </summary>
+    <summary>Input-assembler primitive topology.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_RS_VIEWPORTS">
-    <summary>
-      <para>Viewport.</para>
-    </summary>
+    <summary>Viewport.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_RS_SCISSOR_RECTS">
-    <summary>
-      <para>Scissor rectangle.</para>
-    </summary>
+    <summary>Scissor rectangle.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_RS_RASTERIZER_STATE">
-    <summary>
-      <para>Rasterizer state.</para>
-    </summary>
+    <summary>Rasterizer state.</summary>
   </member>
   <member name="D3D10_DEVICE_STATE_TYPES.D3D10_DST_PREDICATION">
-    <summary>
-      <para>Predication state.</para>
-    </summary>
+    <summary>Predication state.</summary>
   </member>
 </doc>

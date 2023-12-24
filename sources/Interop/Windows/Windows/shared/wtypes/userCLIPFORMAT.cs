@@ -30,6 +30,6 @@ public partial struct userCLIPFORMAT
         /// <include file='_u_e__Union.xml' path='doc/member[@name="_u_e__Union.pwszName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("wchar_t *")]
-        public ushort* pwszName;
+        public char* pwszName;
     }
 }

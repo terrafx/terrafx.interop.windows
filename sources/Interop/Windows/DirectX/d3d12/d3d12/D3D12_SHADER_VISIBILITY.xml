@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SHADER_VISIBILITY">
+    <summary>Specifies the shaders that can access the contents of a given root signature slot.</summary>
+  </member>
+  <member name="D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_ALL">
+    <summary>Specifies that all shader stages can access whatever is bound at the root signature slot.</summary>
+  </member>
+  <member name="D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_VERTEX">
+    <summary>Specifies that the vertex shader stage can access whatever is bound at the root signature slot.</summary>
+  </member>
+  <member name="D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_HULL">
+    <summary>Specifies that the hull shader stage can access whatever is bound at the root signature slot.</summary>
+  </member>
+  <member name="D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_DOMAIN">
+    <summary>Specifies that the domain shader stage can access whatever is bound at the root signature slot.</summary>
+  </member>
+  <member name="D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_GEOMETRY">
+    <summary>Specifies that the geometry shader stage can access whatever is bound at the root signature slot.</summary>
+  </member>
+  <member name="D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_PIXEL">
+    <summary>Specifies that the pixel shader stage can access whatever is bound at the root signature slot.</summary>
+  </member>
+  <member name="D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_AMPLIFICATION">
+    <summary>Specifies that the amplification shader stage can access whatever is bound at the root signature slot.</summary>
+  </member>
+  <member name="D3D12_SHADER_VISIBILITY.D3D12_SHADER_VISIBILITY_MESH">
+    <summary>Specifies that the mesh shader stage can access whatever is bound at the root signature slot.</summary>
+  </member>
+</doc>

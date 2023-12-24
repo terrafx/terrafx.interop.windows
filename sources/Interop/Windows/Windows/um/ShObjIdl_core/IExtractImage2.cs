@@ -25,7 +25,7 @@ public unsafe partial struct IExtractImage2 : IExtractImage2.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IExtractImage2*, Guid*, void**, int>)(lpVtbl[0]))((IExtractImage2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IExtractImage2*, Guid*, void**, int>)(lpVtbl[0]))((IExtractImage2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IExtractImage2 : IExtractImage2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IExtractImage2*, uint>)(lpVtbl[1]))((IExtractImage2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExtractImage2*, uint>)(lpVtbl[1]))((IExtractImage2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IExtractImage2 : IExtractImage2.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IExtractImage2*, uint>)(lpVtbl[2]))((IExtractImage2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IExtractImage2*, uint>)(lpVtbl[2]))((IExtractImage2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IExtractImage.GetLocation" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetLocation([NativeTypeName("LPWSTR")] ushort* pszPathBuffer, [NativeTypeName("DWORD")] uint cch, [NativeTypeName("DWORD *")] uint* pdwPriority, [NativeTypeName("const SIZE *")] SIZE* prgSize, [NativeTypeName("DWORD")] uint dwRecClrDepth, [NativeTypeName("DWORD *")] uint* pdwFlags)
+    public HRESULT GetLocation([NativeTypeName("LPWSTR")] char* pszPathBuffer, [NativeTypeName("DWORD")] uint cch, [NativeTypeName("DWORD *")] uint* pdwPriority, [NativeTypeName("const SIZE *")] SIZE* prgSize, [NativeTypeName("DWORD")] uint dwRecClrDepth, [NativeTypeName("DWORD *")] uint* pdwFlags)
     {
-        return ((delegate* unmanaged<IExtractImage2*, ushort*, uint, uint*, SIZE*, uint, uint*, int>)(lpVtbl[3]))((IExtractImage2*)Unsafe.AsPointer(ref this), pszPathBuffer, cch, pdwPriority, prgSize, dwRecClrDepth, pdwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IExtractImage2*, char*, uint, uint*, SIZE*, uint, uint*, int>)(lpVtbl[3]))((IExtractImage2*)Unsafe.AsPointer(ref this), pszPathBuffer, cch, pdwPriority, prgSize, dwRecClrDepth, pdwFlags);
     }
 
     /// <inheritdoc cref="IExtractImage.Extract" />
@@ -59,7 +59,7 @@ public unsafe partial struct IExtractImage2 : IExtractImage2.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT Extract(HBITMAP* phBmpThumbnail)
     {
-        return ((delegate* unmanaged<IExtractImage2*, HBITMAP*, int>)(lpVtbl[4]))((IExtractImage2*)Unsafe.AsPointer(ref this), phBmpThumbnail);
+        return ((delegate* unmanaged[MemberFunction]<IExtractImage2*, HBITMAP*, int>)(lpVtbl[4]))((IExtractImage2*)Unsafe.AsPointer(ref this), phBmpThumbnail);
     }
 
     /// <include file='IExtractImage2.xml' path='doc/member[@name="IExtractImage2.GetDateStamp"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IExtractImage2 : IExtractImage2.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT GetDateStamp(FILETIME* pDateStamp)
     {
-        return ((delegate* unmanaged<IExtractImage2*, FILETIME*, int>)(lpVtbl[5]))((IExtractImage2*)Unsafe.AsPointer(ref this), pDateStamp);
+        return ((delegate* unmanaged[MemberFunction]<IExtractImage2*, FILETIME*, int>)(lpVtbl[5]))((IExtractImage2*)Unsafe.AsPointer(ref this), pDateStamp);
     }
 
     public interface Interface : IExtractImage.Interface
@@ -80,21 +80,21 @@ public unsafe partial struct IExtractImage2 : IExtractImage2.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, DWORD, DWORD *, const SIZE *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, uint*, SIZE*, uint, uint*, int> GetLocation;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, uint*, SIZE*, uint, uint*, int> GetLocation;
 
         [NativeTypeName("HRESULT (HBITMAP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HBITMAP*, int> Extract;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HBITMAP*, int> Extract;
 
         [NativeTypeName("HRESULT (FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, FILETIME*, int> GetDateStamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, FILETIME*, int> GetDateStamp;
     }
 }

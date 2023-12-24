@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteFontFace1Tests
     {
         Assert.That(typeof(IDWriteFontFace1).GUID, Is.EqualTo(IID_IDWriteFontFace1));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteFontFace1" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteFontFace1>(), Is.EqualTo(sizeof(IDWriteFontFace1)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFontFace1" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteFontFace1).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteFontFace1" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteFontFace1), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteFontFace1), Is.EqualTo(4));
-        }
-    }
 }

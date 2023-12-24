@@ -21,7 +21,7 @@ public unsafe partial struct Size
         Width = Height = 0;
     }
 
-    public Size([NativeTypeName("const Gdiplus::Size &")] Size* size)
+    public Size([NativeTypeName("const Size &")] Size* size)
     {
         Width = size->Width;
         Height = size->Height;
@@ -33,7 +33,7 @@ public unsafe partial struct Size
         Height = height;
     }
 
-    public BOOL Equals([NativeTypeName("const Gdiplus::Size &")] Size* sz)
+    public BOOL Equals([NativeTypeName("const Size &")] Size* sz)
     {
         return ((Width == sz->Width) && (Height == sz->Height)) ? 1 : 0;
     }

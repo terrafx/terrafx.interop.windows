@@ -29,12 +29,12 @@ public unsafe partial struct ADDRINFO_DNS_SERVER
     public SOCKADDR* ai_addr;
 
     /// <include file='ADDRINFO_DNS_SERVER.xml' path='doc/member[@name="ADDRINFO_DNS_SERVER.Anonymous"]/*' />
-    [NativeTypeName("addrinfo_dns_server::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/ws2def.h:1101:5)")]
+    [NativeTypeName("__AnonymousRecord_ws2def_L1101_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ai_template"]/*' />
     [UnscopedRef]
-    public ref ushort* ai_template
+    public ref char* ai_template
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -50,6 +50,6 @@ public unsafe partial struct ADDRINFO_DNS_SERVER
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ai_template"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PWSTR")]
-        public ushort* ai_template;
+        public char* ai_template;
     }
 }

@@ -3,42 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRFRAMERGN">
-    <summary>
-      <para>The <b>EMRFRAMERGN</b> structure contains members for the <see cref="FrameRgn" /> enhanced metafile record.</para>
-    </summary>
-    <seealso cref="FrameRgn" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="RGNDATA" />
+    <summary>The <b>EMRFRAMERGN</b> structure contains members for the <see cref="FrameRgn" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRFRAMERGN.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRFRAMERGN.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRFRAMERGN.cbRgnData">
-    <summary>
-      <para>Size of region data, in bytes.</para>
-    </summary>
+    <summary>Size of region data, in bytes.</summary>
   </member>
   <member name="EMRFRAMERGN.ihBrush">
-    <summary>
-      <para>Index of brush, in handle table.</para>
-    </summary>
+    <summary>Index of brush, in handle table.</summary>
   </member>
   <member name="EMRFRAMERGN.szlStroke">
-    <summary>
-      <para>Width and height of region frame, in logical units.</para>
-    </summary>
+    <summary>Width and height of region frame, in logical units.</summary>
   </member>
   <member name="EMRFRAMERGN.RgnData">
-    <summary>
-      <para>Buffer containing <see cref="RGNDATA" /> structure.</para>
-    </summary>
+    <summary>Buffer containing <see cref="RGNDATA" /> structure.</summary>
   </member>
 </doc>

@@ -19,25 +19,4 @@ public static unsafe partial class VaultProviderTests
     {
         Assert.That(typeof(VaultProvider).GUID, Is.EqualTo(IID_VaultProvider));
     }
-
-    /// <summary>Validates that the <see cref="VaultProvider" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<VaultProvider>(), Is.EqualTo(sizeof(VaultProvider)));
-    }
-
-    /// <summary>Validates that the <see cref="VaultProvider" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(VaultProvider).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="VaultProvider" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(VaultProvider), Is.EqualTo(1));
-    }
 }

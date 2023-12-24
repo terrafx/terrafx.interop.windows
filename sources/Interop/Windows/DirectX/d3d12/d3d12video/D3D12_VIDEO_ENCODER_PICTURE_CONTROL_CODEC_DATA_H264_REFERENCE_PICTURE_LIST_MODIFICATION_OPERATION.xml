@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_LIST_MODIFICATION_OPERATION">
+    <summary>Represents a picture list modification operation for H264 video encoding.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_LIST_MODIFICATION_OPERATION.modification_of_pic_nums_idc">
+    <summary>Together with abs_diff_pic_num_minus1 or long_term_pic_num specifies which of the reference pictures are re-mapped.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_LIST_MODIFICATION_OPERATION.abs_diff_pic_num_minus1">
+    <summary>Specifies the absolute difference between the picture number of the picture being moved to the current index in the list and the picture number prediction value.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264_REFERENCE_PICTURE_LIST_MODIFICATION_OPERATION.long_term_pic_num">
+    <summary>Specifies the long-term picture number of the picture being moved to the current index in the list.</summary>
+  </member>
+</doc>

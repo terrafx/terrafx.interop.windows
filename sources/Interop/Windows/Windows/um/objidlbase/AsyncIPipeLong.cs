@@ -25,7 +25,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<AsyncIPipeLong*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIPipeLong*, Guid*, void**, int>)(lpVtbl[0]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<AsyncIPipeLong*, uint>)(lpVtbl[1]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIPipeLong*, uint>)(lpVtbl[1]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<AsyncIPipeLong*, uint>)(lpVtbl[2]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIPipeLong*, uint>)(lpVtbl[2]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='AsyncIPipeLong.xml' path='doc/member[@name="AsyncIPipeLong.Begin_Pull"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT Begin_Pull([NativeTypeName("ULONG")] uint cRequest)
     {
-        return ((delegate* unmanaged<AsyncIPipeLong*, uint, int>)(lpVtbl[3]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), cRequest);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIPipeLong*, uint, int>)(lpVtbl[3]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), cRequest);
     }
 
     /// <include file='AsyncIPipeLong.xml' path='doc/member[@name="AsyncIPipeLong.Finish_Pull"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT Finish_Pull([NativeTypeName("LONG *")] int* buf, [NativeTypeName("ULONG *")] uint* pcReturned)
     {
-        return ((delegate* unmanaged<AsyncIPipeLong*, int*, uint*, int>)(lpVtbl[4]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, pcReturned);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIPipeLong*, int*, uint*, int>)(lpVtbl[4]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, pcReturned);
     }
 
     /// <include file='AsyncIPipeLong.xml' path='doc/member[@name="AsyncIPipeLong.Begin_Push"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT Begin_Push([NativeTypeName("LONG *")] int* buf, [NativeTypeName("ULONG")] uint cSent)
     {
-        return ((delegate* unmanaged<AsyncIPipeLong*, int*, uint, int>)(lpVtbl[5]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, cSent);
+        return ((delegate* unmanaged[MemberFunction]<AsyncIPipeLong*, int*, uint, int>)(lpVtbl[5]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this), buf, cSent);
     }
 
     /// <include file='AsyncIPipeLong.xml' path='doc/member[@name="AsyncIPipeLong.Finish_Push"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT Finish_Push()
     {
-        return ((delegate* unmanaged<AsyncIPipeLong*, int>)(lpVtbl[6]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<AsyncIPipeLong*, int>)(lpVtbl[6]))((AsyncIPipeLong*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct AsyncIPipeLong : AsyncIPipeLong.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Begin_Pull;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Begin_Pull;
 
         [NativeTypeName("HRESULT (LONG *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, uint*, int> Finish_Pull;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, uint*, int> Finish_Pull;
 
         [NativeTypeName("HRESULT (LONG *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, uint, int> Begin_Push;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, uint, int> Begin_Push;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Finish_Push;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Finish_Push;
     }
 }

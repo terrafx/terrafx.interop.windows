@@ -40,7 +40,7 @@ public unsafe partial struct SPVSTATE
 
     /// <include file='SPVSTATE.xml' path='doc/member[@name="SPVSTATE.pPhoneIds"]/*' />
     [NativeTypeName("SPPHONEID *")]
-    public ushort* pPhoneIds;
+    public char* pPhoneIds;
 
     /// <include file='SPVSTATE.xml' path='doc/member[@name="SPVSTATE.ePartOfSpeech"]/*' />
     public SPPARTOFSPEECH ePartOfSpeech;

@@ -25,7 +25,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPart*, Guid*, void**, int>)(lpVtbl[0]))((IPart*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, Guid*, void**, int>)(lpVtbl[0]))((IPart*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPart*, uint>)(lpVtbl[1]))((IPart*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPart*, uint>)(lpVtbl[1]))((IPart*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPart*, uint>)(lpVtbl[2]))((IPart*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPart*, uint>)(lpVtbl[2]))((IPart*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName)
+    public HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppwstrName)
     {
-        return ((delegate* unmanaged<IPart*, ushort**, int>)(lpVtbl[3]))((IPart*)Unsafe.AsPointer(ref this), ppwstrName);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, char**, int>)(lpVtbl[3]))((IPart*)Unsafe.AsPointer(ref this), ppwstrName);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetLocalId"]/*' />
@@ -59,15 +59,15 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetLocalId(uint* pnId)
     {
-        return ((delegate* unmanaged<IPart*, uint*, int>)(lpVtbl[4]))((IPart*)Unsafe.AsPointer(ref this), pnId);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, uint*, int>)(lpVtbl[4]))((IPart*)Unsafe.AsPointer(ref this), pnId);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetGlobalId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] ushort** ppwstrGlobalId)
+    public HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] char** ppwstrGlobalId)
     {
-        return ((delegate* unmanaged<IPart*, ushort**, int>)(lpVtbl[5]))((IPart*)Unsafe.AsPointer(ref this), ppwstrGlobalId);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, char**, int>)(lpVtbl[5]))((IPart*)Unsafe.AsPointer(ref this), ppwstrGlobalId);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetPartType"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetPartType(PartType* pPartType)
     {
-        return ((delegate* unmanaged<IPart*, PartType*, int>)(lpVtbl[6]))((IPart*)Unsafe.AsPointer(ref this), pPartType);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, PartType*, int>)(lpVtbl[6]))((IPart*)Unsafe.AsPointer(ref this), pPartType);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetSubType"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetSubType(Guid* pSubType)
     {
-        return ((delegate* unmanaged<IPart*, Guid*, int>)(lpVtbl[7]))((IPart*)Unsafe.AsPointer(ref this), pSubType);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, Guid*, int>)(lpVtbl[7]))((IPart*)Unsafe.AsPointer(ref this), pSubType);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetControlInterfaceCount"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetControlInterfaceCount(uint* pCount)
     {
-        return ((delegate* unmanaged<IPart*, uint*, int>)(lpVtbl[8]))((IPart*)Unsafe.AsPointer(ref this), pCount);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, uint*, int>)(lpVtbl[8]))((IPart*)Unsafe.AsPointer(ref this), pCount);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetControlInterface"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetControlInterface(uint nIndex, IControlInterface** ppInterfaceDesc)
     {
-        return ((delegate* unmanaged<IPart*, uint, IControlInterface**, int>)(lpVtbl[9]))((IPart*)Unsafe.AsPointer(ref this), nIndex, ppInterfaceDesc);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, uint, IControlInterface**, int>)(lpVtbl[9]))((IPart*)Unsafe.AsPointer(ref this), nIndex, ppInterfaceDesc);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.EnumPartsIncoming"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT EnumPartsIncoming(IPartsList** ppParts)
     {
-        return ((delegate* unmanaged<IPart*, IPartsList**, int>)(lpVtbl[10]))((IPart*)Unsafe.AsPointer(ref this), ppParts);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, IPartsList**, int>)(lpVtbl[10]))((IPart*)Unsafe.AsPointer(ref this), ppParts);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.EnumPartsOutgoing"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT EnumPartsOutgoing(IPartsList** ppParts)
     {
-        return ((delegate* unmanaged<IPart*, IPartsList**, int>)(lpVtbl[11]))((IPart*)Unsafe.AsPointer(ref this), ppParts);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, IPartsList**, int>)(lpVtbl[11]))((IPart*)Unsafe.AsPointer(ref this), ppParts);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.GetTopologyObject"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT GetTopologyObject(IDeviceTopology** ppTopology)
     {
-        return ((delegate* unmanaged<IPart*, IDeviceTopology**, int>)(lpVtbl[12]))((IPart*)Unsafe.AsPointer(ref this), ppTopology);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, IDeviceTopology**, int>)(lpVtbl[12]))((IPart*)Unsafe.AsPointer(ref this), ppTopology);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.Activate"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT Activate([NativeTypeName("DWORD")] uint dwClsContext, [NativeTypeName("const IID &")] Guid* refiid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPart*, uint, Guid*, void**, int>)(lpVtbl[13]))((IPart*)Unsafe.AsPointer(ref this), dwClsContext, refiid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, uint, Guid*, void**, int>)(lpVtbl[13]))((IPart*)Unsafe.AsPointer(ref this), dwClsContext, refiid, ppvObject);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.RegisterControlChangeCallback"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT RegisterControlChangeCallback([NativeTypeName("const GUID &")] Guid* riid, IControlChangeNotify* pNotify)
     {
-        return ((delegate* unmanaged<IPart*, Guid*, IControlChangeNotify*, int>)(lpVtbl[14]))((IPart*)Unsafe.AsPointer(ref this), riid, pNotify);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, Guid*, IControlChangeNotify*, int>)(lpVtbl[14]))((IPart*)Unsafe.AsPointer(ref this), riid, pNotify);
     }
 
     /// <include file='IPart.xml' path='doc/member[@name="IPart.UnregisterControlChangeCallback"]/*' />
@@ -147,19 +147,19 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT UnregisterControlChangeCallback(IControlChangeNotify* pNotify)
     {
-        return ((delegate* unmanaged<IPart*, IControlChangeNotify*, int>)(lpVtbl[15]))((IPart*)Unsafe.AsPointer(ref this), pNotify);
+        return ((delegate* unmanaged[MemberFunction]<IPart*, IControlChangeNotify*, int>)(lpVtbl[15]))((IPart*)Unsafe.AsPointer(ref this), pNotify);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetName([NativeTypeName("LPWSTR *")] ushort** ppwstrName);
+        HRESULT GetName([NativeTypeName("LPWSTR *")] char** ppwstrName);
 
         [VtblIndex(4)]
         HRESULT GetLocalId(uint* pnId);
 
         [VtblIndex(5)]
-        HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] ushort** ppwstrGlobalId);
+        HRESULT GetGlobalId([NativeTypeName("LPWSTR *")] char** ppwstrGlobalId);
 
         [VtblIndex(6)]
         HRESULT GetPartType(PartType* pPartType);
@@ -196,51 +196,51 @@ public unsafe partial struct IPart : IPart.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetName;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetLocalId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetLocalId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetGlobalId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetGlobalId;
 
         [NativeTypeName("HRESULT (PartType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PartType*, int> GetPartType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PartType*, int> GetPartType;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetSubType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetSubType;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetControlInterfaceCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetControlInterfaceCount;
 
         [NativeTypeName("HRESULT (UINT, IControlInterface **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IControlInterface**, int> GetControlInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IControlInterface**, int> GetControlInterface;
 
         [NativeTypeName("HRESULT (IPartsList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPartsList**, int> EnumPartsIncoming;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPartsList**, int> EnumPartsIncoming;
 
         [NativeTypeName("HRESULT (IPartsList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPartsList**, int> EnumPartsOutgoing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPartsList**, int> EnumPartsOutgoing;
 
         [NativeTypeName("HRESULT (IDeviceTopology **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDeviceTopology**, int> GetTopologyObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDeviceTopology**, int> GetTopologyObject;
 
         [NativeTypeName("HRESULT (DWORD, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> Activate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, int> Activate;
 
         [NativeTypeName("HRESULT (const GUID &, IControlChangeNotify *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IControlChangeNotify*, int> RegisterControlChangeCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IControlChangeNotify*, int> RegisterControlChangeCallback;
 
         [NativeTypeName("HRESULT (IControlChangeNotify *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IControlChangeNotify*, int> UnregisterControlChangeCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IControlChangeNotify*, int> UnregisterControlChangeCallback;
     }
 }

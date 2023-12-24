@@ -3,10 +3,15 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SYMBOL_INFOW.xml' path='doc/member[@name="SYMBOL_INFOW"]/*' />
-public unsafe partial struct SYMBOL_INFOW
+public partial struct SYMBOL_INFOW
 {
     /// <include file='SYMBOL_INFOW.xml' path='doc/member[@name="SYMBOL_INFOW.SizeOfStruct"]/*' />
     [NativeTypeName("ULONG")]
@@ -18,7 +23,7 @@ public unsafe partial struct SYMBOL_INFOW
 
     /// <include file='SYMBOL_INFOW.xml' path='doc/member[@name="SYMBOL_INFOW.Reserved"]/*' />
     [NativeTypeName("ULONG64[2]")]
-    public fixed ulong Reserved[2];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='SYMBOL_INFOW.xml' path='doc/member[@name="SYMBOL_INFOW.Index"]/*' />
     [NativeTypeName("ULONG")]
@@ -66,5 +71,32 @@ public unsafe partial struct SYMBOL_INFOW
 
     /// <include file='SYMBOL_INFOW.xml' path='doc/member[@name="SYMBOL_INFOW.Name"]/*' />
     [NativeTypeName("WCHAR[1]")]
-    public fixed ushort Name[1];
+    public _Name_e__FixedBuffer Name;
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public ulong e0;
+    }
+
+    /// <include file='_Name_e__FixedBuffer.xml' path='doc/member[@name="_Name_e__FixedBuffer"]/*' />
+    public partial struct _Name_e__FixedBuffer
+    {
+        public char e0;
+
+        [UnscopedRef]
+        public ref char this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<char> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

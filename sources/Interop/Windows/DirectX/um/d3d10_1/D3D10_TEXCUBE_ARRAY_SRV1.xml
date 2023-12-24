@@ -3,37 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D10_TEXCUBE_ARRAY_SRV1">
-    <summary>
-      <para>Specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource(s)</a> from an array of <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">cube textures</a> to use in a shader-resource view.</para>
-    </summary>
-    <remarks>
-      <para>This structure is one member of a shader-resource-view description (see <see cref="D3D10_SHADER_RESOURCE_VIEW_DESC1" />).</para>
-      <para>This structure requires Windows Vista Service Pack 1.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-structures">Resource Structures</seealso>
+    <summary>Specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresource(s)</a> from an array of <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">cube textures</a> to use in a shader-resource view.</summary>
   </member>
   <member name="D3D10_TEXCUBE_ARRAY_SRV1.MostDetailedMip">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Index of the most detailed mipmap level to use; this number is between 0 and <b>MipLevels</b>.</para>
-    </summary>
+    <summary>Index of the most detailed mipmap level to use; this number is between 0 and <b>MipLevels</b>.</summary>
   </member>
   <member name="D3D10_TEXCUBE_ARRAY_SRV1.MipLevels">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of mipmap levels to use.</para>
-    </summary>
+    <summary>Number of mipmap levels to use.</summary>
   </member>
   <member name="D3D10_TEXCUBE_ARRAY_SRV1.First2DArrayFace">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Index of the first 2D texture to use.</para>
-    </summary>
+    <summary>Index of the first 2D texture to use.</summary>
   </member>
   <member name="D3D10_TEXCUBE_ARRAY_SRV1.NumCubes">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of cube textures in the array.</para>
-    </summary>
+    <summary>Number of cube textures in the array.</summary>
   </member>
 </doc>

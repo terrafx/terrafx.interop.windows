@@ -3,28 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_PROTECTION_LEVEL">
-    <summary>
-      <para>Defines the required integrity and confidentiality levels for sent and
-received messages.  With transport and mixed-mode security bindings,
-this setting applies to each message as a whole.  With message
-security, the protection level is specified at the granularity of a
-message header or body.  The default value defined applies only to
-transport and mixed-mode security.</para>
-    </summary>
+    <summary>Defines the required integrity and confidentiality levels for sent and received messages. With transport and mixed-mode security bindings, this setting applies to each message as a whole. With message security, the protection level is specified at the granularity of a message header or body. The default value defined applies only to transport and mixed-mode security.</summary>
   </member>
   <member name="WS_PROTECTION_LEVEL.WS_PROTECTION_LEVEL_NONE">
-    <summary>
-      <para>No signing or encryption.</para>
-    </summary>
+    <summary>No signing or encryption.</summary>
   </member>
   <member name="WS_PROTECTION_LEVEL.WS_PROTECTION_LEVEL_SIGN">
-    <summary>
-      <para>Only signing.</para>
-    </summary>
+    <summary>Only signing.</summary>
   </member>
   <member name="WS_PROTECTION_LEVEL.WS_PROTECTION_LEVEL_SIGN_AND_ENCRYPT">
-    <summary>
-      <para>Signing and encryption.</para>
-    </summary>
+    <summary>Signing and encryption.</summary>
   </member>
 </doc>

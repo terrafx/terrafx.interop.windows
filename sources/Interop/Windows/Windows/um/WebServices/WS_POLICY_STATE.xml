@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_POLICY_STATE">
-    <summary>
-      <para>The state of the policy object.</para>
-    </summary>
-    <remarks>
-      <para>The following diagram illustrates the functions that
-cause state transitions in the policy object.</para>
-      <para>.:image type="content" source="./images/PolicyStates.png" border="false" alt-text="Diagram of the state transitions for a Policy object showing the functions that cause transitions between the Created and Faulted states.".:</para>
-    </remarks>
+    <summary>The state of the policy object.</summary>
   </member>
   <member name="WS_POLICY_STATE.WS_POLICY_STATE_CREATED">
-    <summary>
-      <para>The initial state of the policy object.</para>
-    </summary>
+    <summary>The initial state of the policy object.</summary>
   </member>
   <member name="WS_POLICY_STATE.WS_POLICY_STATE_FAULTED">
-    <summary>
-      <para>The policy object is no longer usable due to a previous error.</para>
-    </summary>
+    <summary>The policy object is no longer usable due to a previous error.</summary>
   </member>
 </doc>

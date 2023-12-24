@@ -4,69 +4,41 @@
 <doc>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies values for the <see cref="AM_SAMPLE2_PROPERTIES" /> structure. These values describe the properties of media samples.</para>
     </summary>
-    <remarks>
-      <para>The <b>AM_SAMPLE_DATADISCONTINUITY</b> flag indicates that the data in the current media sample is not considered contiguous with the data in previous samples. A filter receiving a sample with the <b>AM_SAMPLE_DATADISCONTINUITY</b> flag set should not discard unprocessed data in its buffers. A filter waiting for incoming data before it can process buffered data should process the buffered data immediately; so, buffered data might be discarded if it is incomplete.</para>
-      <para>For example, a video decompressor filter might receive a media sample with the <b>AM_SAMPLE_DATADISCONTINUITY</b> flag set when it has two complete compressed video frames and one incomplete compressed video frame in its buffers. In this case, the filter decompresses the two complete frames and discards the incomplete third frame before beginning to process data from the current media sample.</para>
-      <para>The <b>AM_SAMPLE_DATADISCONTINUITY</b> flag is set on the first sample received following a flush or a stop. In addition, you should use the <b>AM_SAMPLE_DATADISCONTINUITY</b> flag when content is switched in the source, when a channel change occurs (when there might also be a format change), or when there is missing data because of stream interruptions.</para>
-      <para>The <b>AM_SAMPLE_DATADISCONTINUITY</b> flag is equivalent to the <see cref="IMediaSample.IsDiscontinuity" /> method returning <b>S_OK</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_SAMPLE_SPLICEPOINT">
-    <summary>
-      <para>Sample is a splice point (it can be decoded without reference to previous data).</para>
-    </summary>
+    <summary>Sample is a splice point (it can be decoded without reference to previous data).</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_SAMPLE_PREROLL">
-    <summary>
-      <para>Sample is a preroll sample.</para>
-    </summary>
+    <summary>Sample is a preroll sample.</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_SAMPLE_DATADISCONTINUITY">
-    <summary>
-      <para>Initial data in this sample is a splice point. The data in the previous sample was not intended to be followed by data in this sample. For more information, see Remarks.</para>
-    </summary>
+    <summary>Initial data in this sample is a splice point. The data in the previous sample was not intended to be followed by data in this sample. For more information, see Remarks.</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_SAMPLE_TYPECHANGED">
-    <summary>
-      <para>Sample type changed.</para>
-    </summary>
+    <summary>Sample type changed.</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_SAMPLE_TIMEVALID">
-    <summary>
-      <para>Time is valid.</para>
-    </summary>
+    <summary>Time is valid.</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_SAMPLE_TIMEDISCONTINUITY">
-    <summary>
-      <para>A time gap in the data starts after this sample. The <see cref="AM_SAMPLE2_PROPERTIES" /> structure can be <b>NULL</b> in this case.</para>
-    </summary>
+    <summary>A time gap in the data starts after this sample. The <see cref="AM_SAMPLE2_PROPERTIES" /> structure can be <b>NULL</b> in this case.</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_SAMPLE_FLUSH_ON_PAUSE">
-    <summary>
-      <para>For live data only; indicates discard in the paused state.</para>
-    </summary>
+    <summary>For live data only; indicates discard in the paused state.</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_SAMPLE_STOPVALID">
-    <summary>
-      <para>Stop time is valid.</para>
-    </summary>
+    <summary>Stop time is valid.</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_SAMPLE_ENDOFSTREAM">
-    <summary>
-      <para>End of stream occurs after this sample. This flag is reserved for kernel streaming. DirectShow currently does not use it.</para>
-    </summary>
+    <summary>End of stream occurs after this sample. This flag is reserved for kernel streaming. DirectShow currently does not use it.</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_STREAM_MEDIA">
-    <summary>
-      <para>Normal data stream identifier.</para>
-    </summary>
+    <summary>Normal data stream identifier.</summary>
   </member>
   <member name="tagAM_SAMPLE_PROPERTY_FLAGS.AM_STREAM_CONTROL">
-    <summary>
-      <para>Control stream identifier. A value greater than 0x7FFFFFFF indicates an application-defined stream.</para>
-    </summary>
+    <summary>Control stream identifier. A value greater than 0x7FFFFFFF indicates an application-defined stream.</summary>
   </member>
 </doc>

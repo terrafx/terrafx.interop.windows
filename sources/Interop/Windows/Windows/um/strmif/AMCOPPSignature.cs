@@ -3,12 +3,21 @@
 // Ported from um/strmif.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='AMCOPPSignature.xml' path='doc/member[@name="AMCOPPSignature"]/*' />
-public unsafe partial struct AMCOPPSignature
+public partial struct AMCOPPSignature
 {
     /// <include file='AMCOPPSignature.xml' path='doc/member[@name="AMCOPPSignature.Signature"]/*' />
     [NativeTypeName("BYTE[256]")]
-    public fixed byte Signature[256];
+    public _Signature_e__FixedBuffer Signature;
+
+    /// <include file='_Signature_e__FixedBuffer.xml' path='doc/member[@name="_Signature_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _Signature_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

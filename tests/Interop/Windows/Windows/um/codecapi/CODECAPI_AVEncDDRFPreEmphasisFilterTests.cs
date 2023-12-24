@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncDDRFPreEmphasisFilterTests
     {
         Assert.That(typeof(CODECAPI_AVEncDDRFPreEmphasisFilter).GUID, Is.EqualTo(IID_CODECAPI_AVEncDDRFPreEmphasisFilter));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDRFPreEmphasisFilter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncDDRFPreEmphasisFilter>(), Is.EqualTo(sizeof(CODECAPI_AVEncDDRFPreEmphasisFilter)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDRFPreEmphasisFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncDDRFPreEmphasisFilter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncDDRFPreEmphasisFilter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncDDRFPreEmphasisFilter), Is.EqualTo(1));
-    }
 }

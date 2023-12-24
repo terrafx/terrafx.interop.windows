@@ -19,25 +19,4 @@ public static unsafe partial class ApplicationDesignModeSettingsTests
     {
         Assert.That(typeof(ApplicationDesignModeSettings).GUID, Is.EqualTo(IID_ApplicationDesignModeSettings));
     }
-
-    /// <summary>Validates that the <see cref="ApplicationDesignModeSettings" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ApplicationDesignModeSettings>(), Is.EqualTo(sizeof(ApplicationDesignModeSettings)));
-    }
-
-    /// <summary>Validates that the <see cref="ApplicationDesignModeSettings" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ApplicationDesignModeSettings).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ApplicationDesignModeSettings" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ApplicationDesignModeSettings), Is.EqualTo(1));
-    }
 }

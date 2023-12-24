@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICGifGraphicControlExtensionProperties.xml' path='doc/member[@name="WICGifGraphicControlExtensionProperties"]/*' />
-public enum WICGifGraphicControlExtensionProperties : uint
+public enum WICGifGraphicControlExtensionProperties
 {
     /// <include file='WICGifGraphicControlExtensionProperties.xml' path='doc/member[@name="WICGifGraphicControlExtensionProperties.WICGifGraphicControlExtensionDisposal"]/*' />
     WICGifGraphicControlExtensionDisposal = 0x1,

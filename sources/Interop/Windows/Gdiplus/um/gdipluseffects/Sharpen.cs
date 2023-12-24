@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='Sharpen.xml' path='doc/member[@name="Sharpen"]/*' />
-[NativeTypeName("struct Sharpen : Effect")]
+[NativeTypeName("struct Sharpen : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct Sharpen
 {
@@ -48,7 +48,7 @@ public unsafe partial struct Sharpen
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::SharpenParams *")] SharpenParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const SharpenParams *")] SharpenParams* parameters)
     {
         uint size = 8;
 

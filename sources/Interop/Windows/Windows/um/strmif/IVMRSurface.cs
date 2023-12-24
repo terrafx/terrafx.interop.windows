@@ -26,7 +26,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRSurface*, Guid*, void**, int>)(lpVtbl[0]))((IVMRSurface*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurface*, Guid*, void**, int>)(lpVtbl[0]))((IVMRSurface*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRSurface*, uint>)(lpVtbl[1]))((IVMRSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurface*, uint>)(lpVtbl[1]))((IVMRSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRSurface*, uint>)(lpVtbl[2]))((IVMRSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurface*, uint>)(lpVtbl[2]))((IVMRSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRSurface.xml' path='doc/member[@name="IVMRSurface.IsSurfaceLocked"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT IsSurfaceLocked()
     {
-        return ((delegate* unmanaged<IVMRSurface*, int>)(lpVtbl[3]))((IVMRSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurface*, int>)(lpVtbl[3]))((IVMRSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRSurface.xml' path='doc/member[@name="IVMRSurface.LockSurface"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT LockSurface(byte** lpSurface)
     {
-        return ((delegate* unmanaged<IVMRSurface*, byte**, int>)(lpVtbl[4]))((IVMRSurface*)Unsafe.AsPointer(ref this), lpSurface);
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurface*, byte**, int>)(lpVtbl[4]))((IVMRSurface*)Unsafe.AsPointer(ref this), lpSurface);
     }
 
     /// <include file='IVMRSurface.xml' path='doc/member[@name="IVMRSurface.UnlockSurface"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT UnlockSurface()
     {
-        return ((delegate* unmanaged<IVMRSurface*, int>)(lpVtbl[5]))((IVMRSurface*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurface*, int>)(lpVtbl[5]))((IVMRSurface*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRSurface.xml' path='doc/member[@name="IVMRSurface.GetSurface"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetSurface([NativeTypeName("LPDIRECTDRAWSURFACE7 *")] IDirectDrawSurface7** lplpSurface)
     {
-        return ((delegate* unmanaged<IVMRSurface*, IDirectDrawSurface7**, int>)(lpVtbl[6]))((IVMRSurface*)Unsafe.AsPointer(ref this), lplpSurface);
+        return ((delegate* unmanaged[MemberFunction]<IVMRSurface*, IDirectDrawSurface7**, int>)(lpVtbl[6]))((IVMRSurface*)Unsafe.AsPointer(ref this), lplpSurface);
     }
 
     public interface Interface : IUnknown.Interface
@@ -98,24 +98,24 @@ public unsafe partial struct IVMRSurface : IVMRSurface.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsSurfaceLocked;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsSurfaceLocked;
 
         [NativeTypeName("HRESULT (BYTE **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, int> LockSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, int> LockSurface;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UnlockSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UnlockSurface;
 
         [NativeTypeName("HRESULT (LPDIRECTDRAWSURFACE7 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDirectDrawSurface7**, int> GetSurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDirectDrawSurface7**, int> GetSurface;
     }
 }

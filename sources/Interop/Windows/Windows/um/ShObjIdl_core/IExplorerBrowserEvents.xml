@@ -3,83 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IExplorerBrowserEvents.OnNavigationComplete">
-    <summary>
-      <para>Notifies clients that the Explorer browser has successfully navigated to a Shell folder.</para>
-    </summary>
-    <param name="pidlFolder">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>A PIDL that specifies the folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called after method <see cref="IExplorerBrowserEvents.OnViewCreated" />, assuming a successful view creation.</para>
-      <para>After a navigation and view creation, either <b>IExplorerBrowserEvents.OnNavigationComplete</b> or <see cref="IExplorerBrowserEvents.OnNavigationFailed" /> is called depending on whether the destination could be navigated to. For example, a failure to navigate includes a destination that is not reached either because there is no route to the path or the user has canceled.</para>
-    </remarks>
+    <summary>Notifies clients that the Explorer browser has successfully navigated to a Shell folder.</summary>
+    <param name="pidlFolder">A PIDL that specifies the folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowserEvents.OnNavigationFailed">
-    <summary>
-      <para>Notifies clients that the Explorer browser has failed to navigate to a Shell folder.</para>
-    </summary>
-    <param name="pidlFolder">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>A PIDL that specifies the folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is called after method <see cref="IExplorerBrowserEvents.OnViewCreated" />, assuming a successful view creation.</para>
-      <para>After a navigation and view creation, either <see cref="IExplorerBrowserEvents.OnNavigationComplete" /> or <b>IExplorerBrowserEvents.OnNavigationFailed</b> is called, depending on whether the destination could be navigated to. For example, a failure to navigate includes a destination that is not reached either because there is no route to the path or the user has canceled.</para>
-    </remarks>
+    <summary>Notifies clients that the Explorer browser has failed to navigate to a Shell folder.</summary>
+    <param name="pidlFolder">A PIDL that specifies the folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowserEvents.OnNavigationPending">
-    <summary>
-      <para>Notifies clients of a pending Explorer browser navigation to a Shell folder.</para>
-    </summary>
-    <param name="pidlFolder">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>A PIDL that specifies the folder.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Explorer browser calls this method before it navigates to a folder, that is, before calling <see cref="IExplorerBrowserEvents.OnNavigationFailed" /> or  <see cref="IExplorerBrowserEvents.OnNavigationComplete" />.</para>
-      <para>Returning any failure code from this method, including E_NOTIMPL, will cancel the navigation.</para>
-    </remarks>
+    <summary>Notifies clients of a pending Explorer browser navigation to a Shell folder.</summary>
+    <param name="pidlFolder">A PIDL that specifies the folder.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowserEvents.OnViewCreated">
-    <summary>
-      <para>Notifies clients that the view of the Explorer browser has been created and can be modified.</para>
-    </summary>
-    <param name="psv">
-      <para>Type: <b><see cref="IShellView" />*</b></para>
-      <para>A pointer to an <see cref="IShellView" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>An Explorer browser calls this method to enable the client to perform any modifications to the Explorer browser view before it is shown; for example, to set view modes or folder flags.</para>
-    </remarks>
+    <summary>Notifies clients that the view of the Explorer browser has been created and can be modified.</summary>
+    <param name="psv">A pointer to an <see cref="IShellView" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerBrowserEvents">
-    <summary>
-      <para>Exposes methods for notification of Explorer browser navigation and view creation events.</para>
-    </summary>
-    <remarks>
-      <para>Implement this interface to be notified of <see cref="IExplorerBrowser" /> navigation and view creation events; implementation enables handling of these events, if desired.</para>
-      <para>
-        <see cref="IExplorerBrowser" /> must be notified of implementers (clients) who want to be advised of <b>IExplorerBrowser</b> events. Clients do this by calling the <see cref="IExplorerBrowser.Advise" /> method. This enables event callbacks by <b>IExplorerBrowser</b> to the client using the methods in <b>IExplorerBrowserEvents</b>. To stop event callbacks, the client must call method <see cref="IExplorerBrowser.Unadvise" /> or a memory leak may result.</para>
-      <para>During its first navigation (<see cref="IExplorerBrowser.BrowseToObject" />), Explorer calls the methods in this interface synchronously. After that, Explorer calls them asynchronously. The order of the event callbacks is as follows: <see cref="IExplorerBrowserEvents.OnNavigationPending" />; <see cref="IExplorerBrowserEvents.OnViewCreated" />;
-and <see cref="IExplorerBrowserEvents.OnNavigationComplete" /> or <see cref="IExplorerBrowserEvents.OnNavigationFailed" /> depending on whether the navigation succeeded or failed.</para>
-    </remarks>
-    <seealso cref="IExplorerBrowser" />
+    <summary>Exposes methods for notification of Explorer browser navigation and view creation events.</summary>
   </member>
 </doc>

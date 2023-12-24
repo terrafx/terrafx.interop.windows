@@ -21,32 +21,4 @@ public static unsafe partial class IMFSpatialAudioObjectBufferTests
     {
         Assert.That(typeof(IMFSpatialAudioObjectBuffer).GUID, Is.EqualTo(IID_IMFSpatialAudioObjectBuffer));
     }
-
-    /// <summary>Validates that the <see cref="IMFSpatialAudioObjectBuffer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSpatialAudioObjectBuffer>(), Is.EqualTo(sizeof(IMFSpatialAudioObjectBuffer)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSpatialAudioObjectBuffer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSpatialAudioObjectBuffer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSpatialAudioObjectBuffer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSpatialAudioObjectBuffer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSpatialAudioObjectBuffer), Is.EqualTo(4));
-        }
-    }
 }

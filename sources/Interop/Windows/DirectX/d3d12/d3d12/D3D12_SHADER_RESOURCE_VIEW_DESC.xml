@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC">
+    <summary>Describes a shader-resource view (SRV).</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Format">
+    <summary>A <see cref="DXGI_FORMAT" />-typed value that specifies the viewing format. See remarks.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.ViewDimension">
+    <summary>A <see cref="D3D12_SRV_DIMENSION" />-typed value that specifies the resource type of the view. This type is the same as the resource type of the underlying resource. This member also determines which _SRV to use in the union below.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Shader4ComponentMapping">
+    <summary>A value, constructed using the <see cref="D3D12_ENCODE_SHADER_4_COMPONENT_MAPPING" /> macro. The <b>D3D12_SHADER_COMPONENT_MAPPING</b> enumeration specifies what values from memory should be returned when the texture is accessed in a shader via this shader resource view (SRV). For example, it can route component 1 (green) from memory, or the constant <code>0</code>, into component 2 (<code>.b</code>) of the value given to the shader.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Buffer">
+    <summary>A <see cref="D3D12_BUFFER_SRV" /> structure that views the resource as a buffer.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Texture1D">
+    <summary>A <see cref="D3D12_TEX1D_SRV" /> structure that views the resource as a 1D texture.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Texture1DArray">
+    <summary>A <see cref="D3D12_TEX1D_ARRAY_SRV" /> structure that views the resource as a 1D-texture array.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Texture2D">
+    <summary>A <see cref="D3D12_TEX2D_SRV" /> structure that views the resource as a 2D-texture.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Texture2DArray">
+    <summary>A <see cref="D3D12_TEX2D_ARRAY_SRV" /> structure that views the resource as a 2D-texture array.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Texture2DMS">
+    <summary>A <see cref="D3D12_TEX2DMS_SRV" /> structure that views the resource as a 2D-multisampled texture.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Texture2DMSArray">
+    <summary>A <see cref="D3D12_TEX2DMS_ARRAY_SRV" /> structure that views the resource as a 2D-multisampled-texture array.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.Texture3D">
+    <summary>A <see cref="D3D12_TEX3D_SRV" /> structure that views the resource as a 3D texture.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.TextureCube">
+    <summary>A <see cref="D3D12_TEXCUBE_SRV" /> structure that views the resource as a 3D-cube texture.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.TextureCubeArray">
+    <summary>A <see cref="D3D12_TEXCUBE_ARRAY_SRV" /> structure that views the resource as a 3D-cube-texture array.</summary>
+  </member>
+  <member name="D3D12_SHADER_RESOURCE_VIEW_DESC.RaytracingAccelerationStructure">
+    <summary>A <see cref="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_SRV" /> structure that views the resource as a raytracing acceleration structure.</summary>
+  </member>
+</doc>

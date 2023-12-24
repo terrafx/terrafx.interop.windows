@@ -4,29 +4,20 @@
 <doc>
   <member name="eAVDecAudioDualMonoReproMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies how the decoder reproduces dual mono audio. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avdecaudiodualmonorepromode-property">AVDecAudioDualMonoReproMode</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_STEREO">
-    <summary>
-      <para>Output channel 1 (Ch1) to the left speaker and channel 2 (Ch2) to the right speaker.</para>
-    </summary>
+    <summary>Output channel 1 (Ch1) to the left speaker and channel 2 (Ch2) to the right speaker.</summary>
   </member>
   <member name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_LEFT_MONO">
-    <summary>
-      <para>Output Ch1 to the left and right speakers.</para>
-    </summary>
+    <summary>Output Ch1 to the left and right speakers.</summary>
   </member>
   <member name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_RIGHT_MONO">
-    <summary>
-      <para>Output Ch2 to the left and right speakers.</para>
-    </summary>
+    <summary>Output Ch2 to the left and right speakers.</summary>
   </member>
   <member name="eAVDecAudioDualMonoReproMode.eAVDecAudioDualMonoReproMode_MIX_MONO">
-    <summary>
-      <para>Mix Ch1 and Ch2 and output the mix to the left and right speakers.</para>
-    </summary>
+    <summary>Mix Ch1 and Ch2 and output the mix to the left and right speakers.</summary>
   </member>
 </doc>

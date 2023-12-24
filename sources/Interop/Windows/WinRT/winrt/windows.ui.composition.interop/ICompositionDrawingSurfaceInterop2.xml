@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICompositionDrawingSurfaceInterop2.CopySurface">
+    <summary>Reads back the contents of a composition drawing surface (or a composition virtual drawing surface).</summary>
+    <param name="destinationResource">Represents the Direct3D texture that will receive the copy. You must have created this resource on the same Direct3D device as the one associated with the <a href="https://docs.microsoft.com//uwp/api/Windows.UI.Composition.CompositionGraphicsDevice">CompositionGraphicsDevice</a> that was used to create the source composition drawing surface (or composition virtual drawing surface).</param>
+    <param name="destinationOffsetX">The x-coordinate of an offset (into <i>destinationResource</i>) where the copy will be performed. No pixels above or to the left of this offset are changed by the copy operation. The argument can't be negative.</param>
+    <param name="destinationOffsetY">The y-coordinate of an offset (into <i>destinationResource</i>) where the copy will be performed. No pixels above or to the left of this offset are changed by the copy operation. The argument can't be negative.</param>
+    <param name="sourceRectangle">
+      <para>An optional pointer to a constant <b>RECT</b> representing the rectangle on the source surface to copy out. The rectangle can't exceed the bounds of the source surface. In order to have enough room to receive the requested pixels, the destination resource must have at least as many pixels as the <i>destinationOffsetX</i> and <i>Y</i> parameters plus the width/height of this rectangle.</para>
+      <para>If this parameter is null, then the entire source surface is copied (and the source surface size is used to validate the size of the destination resource).</para>
+    </param>
+    <returns>
+      <b>S_OK</b> if successful, otherwise returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a> error code indicating the reason for failure. Also see <a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">COM Error Codes (UI, Audio, DirectX, Codec)</a>.</returns>
+  </member>
+  <member name="ICompositionDrawingSurfaceInterop2">
+    <summary>
+      <para>A native interoperation interface that allows you to read back the contents of a composition drawing surface (or a composition virtual drawing surface). This interface is available in C++ only.</para>
+      <para>
+        <b>ICompositionDrawingSurfaceInterop2</b> inherits from the <see cref="ICompositionDrawingSurfaceInterop" /> interface.</para>
+    </summary>
+  </member>
+</doc>

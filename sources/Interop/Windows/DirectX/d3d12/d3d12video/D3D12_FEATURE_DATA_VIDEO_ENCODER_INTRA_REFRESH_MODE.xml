@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_INTRA_REFRESH_MODE">
+    <summary>Provides data for calls to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> when the feature specified is <see cref="D3D12_FEATURE_VIDEO_ENCODER_INTRA_REFRESH_MODE" />. Retrieves a value indicating if the specified intra refresh mode is supported for the specified codec, profile, and level.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_INTRA_REFRESH_MODE.NodeIndex">
+    <summary>In multi-adapter operation, this indicates which physical adapter of the device this operation applies to.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_INTRA_REFRESH_MODE.Codec">
+    <summary>A member of the <see cref="D3D12_VIDEO_ENCODER_CODEC" /> enumeration specifying the codec for which intra refresh mode support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_INTRA_REFRESH_MODE.Profile">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_PROFILE_DESC" /> structure specifying the profile for which intra refresh mode support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_INTRA_REFRESH_MODE.Level">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_LEVEL_SETTING" /> structure specifying the level for which intra refresh mode support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_INTRA_REFRESH_MODE.IntraRefreshMode">
+    <summary>A member of the <see cref="D3D12_VIDEO_ENCODER_INTRA_REFRESH_MODE" /> enumeration specifying the intra refresh mode for which support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_INTRA_REFRESH_MODE.IsSupported">
+    <summary>Receives a boolean value indicating if the specified intra refresh mode is supported for the specified codec, profile, and level.</summary>
+  </member>
+</doc>

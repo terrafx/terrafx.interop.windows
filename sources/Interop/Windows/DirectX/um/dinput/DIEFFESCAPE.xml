@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DIEFFESCAPE">
+    <summary>The <b>DIEFFESCAPE</b> structure passes hardware-specific data directly to the device driver.</summary>
+  </member>
+  <member name="DIEFFESCAPE.dwSize">
+    <summary>Specifies the size of the structure in bytes. This member must be initialized before the structure is used.</summary>
+  </member>
+  <member name="DIEFFESCAPE.dwCommand">
+    <summary>Specifies a driver-specific command number. Contact the hardware vendor for a list of valid commands and their parameters.</summary>
+  </member>
+  <member name="DIEFFESCAPE.lpvInBuffer">
+    <summary>Points to the buffer containing the data required to perform the operation.</summary>
+  </member>
+  <member name="DIEFFESCAPE.cbInBuffer">
+    <summary>Specifies the size, in bytes, of the <b>lpvInBuffer</b> buffer.</summary>
+  </member>
+  <member name="DIEFFESCAPE.lpvOutBuffer">
+    <summary>Points to the buffer in which the operation's output data is returned.</summary>
+  </member>
+  <member name="DIEFFESCAPE.cbOutBuffer">
+    <summary>On entry, specifies the size, in bytes, of the <b>lpvOutBuffer</b> buffer. On exit, specifies the number of bytes actually produced by the command.</summary>
+  </member>
+</doc>

@@ -3,31 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MINIMIZEDMETRICS">
-    <summary>
-      <para>Contains the scalable metrics associated with minimized windows. This structure is used with the
-<see cref="SystemParametersInfo" /> function when the SPI_GETMINIMIZEDMETRICS or SPI_SETMINIMIZEDMETRICS action value is specified.</para>
-    </summary>
-    <seealso cref="SystemParametersInfo" />
+    <summary>Contains the scalable metrics associated with minimized windows. This structure is used with the<see cref="SystemParametersInfo" /> function when the SPI_GETMINIMIZEDMETRICS or SPI_SETMINIMIZEDMETRICS action value is specified.</summary>
   </member>
   <member name="MINIMIZEDMETRICS.cbSize">
-    <summary>
-      <para>The size of the structure, in bytes. The caller must set this to <code>sizeof(MINIMIZEDMETRICS)</code>.</para>
-    </summary>
+    <summary>The size of the structure, in bytes. The caller must set this to <code>sizeof(MINIMIZEDMETRICS)</code>.</summary>
   </member>
   <member name="MINIMIZEDMETRICS.iWidth">
-    <summary>
-      <para>The width of minimized windows, in pixels.</para>
-    </summary>
+    <summary>The width of minimized windows, in pixels.</summary>
   </member>
   <member name="MINIMIZEDMETRICS.iHorzGap">
-    <summary>
-      <para>The horizontal space between arranged minimized windows, in pixels.</para>
-    </summary>
+    <summary>The horizontal space between arranged minimized windows, in pixels.</summary>
   </member>
   <member name="MINIMIZEDMETRICS.iVertGap">
-    <summary>
-      <para>The vertical space between arranged minimized windows, in pixels.</para>
-    </summary>
+    <summary>The vertical space between arranged minimized windows, in pixels.</summary>
   </member>
   <member name="MINIMIZEDMETRICS.iArrange">
     <summary>
@@ -37,167 +25,66 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>ARW_BOTTOMLEFT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Start at the lower-left corner of the work area.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>ARW_BOTTOMRIGHT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0001L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Start at the lower-right corner of the work area.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>ARW_TOPLEFT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0002L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Start at the upper-left corner of the work area.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>ARW_TOPRIGHT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0003L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Start at the upper-right corner of the work area.</para>
-          </description>
-        </item>
-      </list>
-      <para>The direction must be one of the following values.</para>
-      <list type="table">
         <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ARW_BOTTOMLEFT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000L</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Start at the lower-left corner of the work area.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>ARW_LEFT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>ARW_BOTTOMRIGHT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Arrange left (valid with ARW_BOTTOMRIGHT and ARW_TOPRIGHT only).</para>
-          </description>
-        </item>
-        <item>
+          <description>Start at the lower-right corner of the work area.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>ARW_RIGHT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0000L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>ARW_TOPLEFT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Arrange right (valid with ARW_BOTTOMLEFT and ARW_TOPLEFT only).</para>
-          </description>
-        </item>
-        <item>
+          <description>Start at the upper-left corner of the work area.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>ARW_UP</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004L</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>ARW_TOPRIGHT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0003L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Arrange up (valid with ARW_BOTTOMLEFT and ARW_BOTTOMRIGHT only).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>ARW_DOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0004L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Arrange down (valid with ARW_TOPLEFT and ARW_TOPRIGHT only).</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>ARW_HIDE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x0008L</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Hide minimized windows by moving them off the visible area of the screen.</para>
-          </description>
-        </item>
-      </list>
-    </summary>
+          <description>Start at the upper-right corner of the work area.</description>
+        </listheader>
+      </list> <para>The direction must be one of the following values.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>ARW_LEFT</b></term></listheader><listheader><term>0x0000L</term></listheader></list></description><description>Arrange left (valid with ARW_BOTTOMRIGHT and ARW_TOPRIGHT only).</description></listheader><listheader><description><list type="bullet"><listheader><term><b>ARW_RIGHT</b></term></listheader><listheader><term>0x0000L</term></listheader></list></description><description>Arrange right (valid with ARW_BOTTOMLEFT and ARW_TOPLEFT only).</description></listheader><listheader><description><list type="bullet"><listheader><term><b>ARW_UP</b></term></listheader><listheader><term>0x0004L</term></listheader></list></description><description>Arrange up (valid with ARW_BOTTOMLEFT and ARW_BOTTOMRIGHT only).</description></listheader><listheader><description><list type="bullet"><listheader><term><b>ARW_DOWN</b></term></listheader><listheader><term>0x0004L</term></listheader></list></description><description>Arrange down (valid with ARW_TOPLEFT and ARW_TOPRIGHT only).</description></listheader><listheader><description><list type="bullet"><listheader><term><b>ARW_HIDE</b></term></listheader><listheader><term>0x0008L</term></listheader></list></description><description>Hide minimized windows by moving them off the visible area of the screen.</description></listheader></list></summary>
   </member>
 </doc>

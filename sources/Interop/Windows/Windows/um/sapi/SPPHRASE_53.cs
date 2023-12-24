@@ -14,7 +14,7 @@ public unsafe partial struct SPPHRASE_53
 
     /// <include file='SPPHRASE_53.xml' path='doc/member[@name="SPPHRASE_53.pSML"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pSML;
+    public char* pSML;
 
     /// <include file='SPPHRASE_53.xml' path='doc/member[@name="SPPHRASE_53.pSemanticErrorInfo"]/*' />
     public SPSEMANTICERRORINFO* pSemanticErrorInfo;

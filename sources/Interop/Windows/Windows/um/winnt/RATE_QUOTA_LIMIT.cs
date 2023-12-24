@@ -19,14 +19,14 @@ public partial struct RATE_QUOTA_LIMIT
 
     /// <include file='RATE_QUOTA_LIMIT.xml' path='doc/member[@name="RATE_QUOTA_LIMIT.Anonymous"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("_RATE_QUOTA_LIMIT::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12468:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12475_C5")]
     public _Anonymous_e__Struct Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.RatePercent"]/*' />
     public uint RatePercent
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.RatePercent;
         }
@@ -42,7 +42,7 @@ public partial struct RATE_QUOTA_LIMIT
     public uint Reserved0
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Reserved0;
         }
@@ -64,7 +64,7 @@ public partial struct RATE_QUOTA_LIMIT
         public uint RatePercent
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0x7Fu;
             }
@@ -81,7 +81,7 @@ public partial struct RATE_QUOTA_LIMIT
         public uint Reserved0
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 7) & 0x1FFFFFFu;
             }

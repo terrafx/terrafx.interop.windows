@@ -21,32 +21,4 @@ public static unsafe partial class IHolographicCameraRenderingParametersInteropT
     {
         Assert.That(typeof(IHolographicCameraRenderingParametersInterop).GUID, Is.EqualTo(IID_IHolographicCameraRenderingParametersInterop));
     }
-
-    /// <summary>Validates that the <see cref="IHolographicCameraRenderingParametersInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHolographicCameraRenderingParametersInterop>(), Is.EqualTo(sizeof(IHolographicCameraRenderingParametersInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IHolographicCameraRenderingParametersInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHolographicCameraRenderingParametersInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHolographicCameraRenderingParametersInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHolographicCameraRenderingParametersInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHolographicCameraRenderingParametersInterop), Is.EqualTo(4));
-        }
-    }
 }

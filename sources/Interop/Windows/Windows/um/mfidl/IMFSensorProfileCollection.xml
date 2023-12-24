@@ -3,74 +3,35 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSensorProfileCollection.AddProfile">
-    <summary>
-      <para>Adds the specified profile to the collection.</para>
-    </summary>
-    <param name="pProfile">
-      <para>Pointer to an <see cref="IMFSensorProfile" /> object describing the profile to add.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSensorProfileCollection" />
+    <summary>Adds the specified profile to the collection.</summary>
+    <param name="pProfile">Pointer to an <see cref="IMFSensorProfile" /> object describing the profile to add.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSensorProfileCollection.FindProfile">
-    <summary>
-      <para>Finds a profile based on the specified profile ID.</para>
-    </summary>
-    <param name="ProfileId">
-      <para>Pointer to the The ID of the profile to find.</para>
-    </param>
-    <param name="ppProfile">
-      <para>On success, returns a double pointer to the profile.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSensorProfileCollection" />
+    <summary>Finds a profile based on the specified profile ID.</summary>
+    <param name="ProfileId">Pointer to the The ID of the profile to find.</param>
+    <param name="ppProfile">On success, returns a double pointer to the profile.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSensorProfileCollection.GetProfile">
-    <summary>
-      <para>Retrieves the specified profile.</para>
-    </summary>
-    <param name="Index">
-      <para>Index of the profile to retrieve.</para>
-    </param>
-    <param name="ppProfile">
-      <para>On success, returns a double pointer to an <see cref="IMFSensorProfile" /> object that describes the specified sensor profile.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSensorProfileCollection" />
+    <summary>Retrieves the specified profile.</summary>
+    <param name="Index">Index of the profile to retrieve.</param>
+    <param name="ppProfile">On success, returns a double pointer to an <see cref="IMFSensorProfile" /> object that describes the specified sensor profile.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSensorProfileCollection.RemoveProfile">
-    <summary>
-      <para>removes the specified profile based on the specified profile ID.</para>
-    </summary>
-    <param name="ProfileId">
-      <para>Pointer to the <see cref="SENSORPROFILEID" /> of the profile to remove.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSensorProfileCollection" />
+    <summary>removes the specified profile based on the specified profile ID.</summary>
+    <param name="ProfileId">Pointer to the <see cref="SENSORPROFILEID" /> of the profile to remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSensorProfileCollection.RemoveProfileByIndex">
     <summary>
-      <para>Removes a profile based on the specified index.</para>
+      <code> Removes a profile based on the specified index.</code>
     </summary>
-    <param name="Index">
-      <para>The index of the profile to remove.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IMFSensorProfileCollection" />
+    <param name="Index">The index of the profile to remove.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFSensorProfileCollection">
-    <summary>
-      <para>Contains a collection of media foundation sensor profile objects.</para>
-    </summary>
+    <summary>Contains a collection of media foundation sensor profile objects.</summary>
   </member>
 </doc>

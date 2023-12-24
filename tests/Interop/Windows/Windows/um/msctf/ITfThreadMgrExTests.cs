@@ -19,32 +19,4 @@ public static unsafe partial class ITfThreadMgrExTests
     {
         Assert.That(typeof(ITfThreadMgrEx).GUID, Is.EqualTo(IID_ITfThreadMgrEx));
     }
-
-    /// <summary>Validates that the <see cref="ITfThreadMgrEx" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfThreadMgrEx>(), Is.EqualTo(sizeof(ITfThreadMgrEx)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfThreadMgrEx" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfThreadMgrEx).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfThreadMgrEx" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfThreadMgrEx), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfThreadMgrEx), Is.EqualTo(4));
-        }
-    }
 }

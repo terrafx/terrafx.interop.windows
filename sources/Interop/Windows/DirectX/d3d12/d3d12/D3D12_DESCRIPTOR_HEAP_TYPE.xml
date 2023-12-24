@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DESCRIPTOR_HEAP_TYPE">
+    <summary>Specifies a type of descriptor heap.</summary>
+  </member>
+  <member name="D3D12_DESCRIPTOR_HEAP_TYPE.D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV">
+    <summary>The descriptor heap for the combination of constant-buffer, shader-resource, and unordered-access views.</summary>
+  </member>
+  <member name="D3D12_DESCRIPTOR_HEAP_TYPE.D3D12_DESCRIPTOR_HEAP_TYPE_SAMPLER">
+    <summary>The descriptor heap for the sampler.</summary>
+  </member>
+  <member name="D3D12_DESCRIPTOR_HEAP_TYPE.D3D12_DESCRIPTOR_HEAP_TYPE_RTV">
+    <summary>The descriptor heap for the render-target view.</summary>
+  </member>
+  <member name="D3D12_DESCRIPTOR_HEAP_TYPE.D3D12_DESCRIPTOR_HEAP_TYPE_DSV">
+    <summary>The descriptor heap for the depth-stencil view.</summary>
+  </member>
+  <member name="D3D12_DESCRIPTOR_HEAP_TYPE.D3D12_DESCRIPTOR_HEAP_TYPE_NUM_TYPES">
+    <summary>The number of types of descriptor heaps.</summary>
+  </member>
+</doc>

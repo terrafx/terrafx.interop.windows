@@ -19,25 +19,4 @@ public static unsafe partial class SVGMaskElementTests
     {
         Assert.That(typeof(SVGMaskElement).GUID, Is.EqualTo(IID_SVGMaskElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGMaskElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGMaskElement>(), Is.EqualTo(sizeof(SVGMaskElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGMaskElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGMaskElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGMaskElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGMaskElement), Is.EqualTo(1));
-    }
 }

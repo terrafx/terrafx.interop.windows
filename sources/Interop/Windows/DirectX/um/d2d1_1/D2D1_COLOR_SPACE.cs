@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_COLOR_SPACE.xml' path='doc/member[@name="D2D1_COLOR_SPACE"]/*' />
-public enum D2D1_COLOR_SPACE : uint
+public enum D2D1_COLOR_SPACE
 {
     /// <include file='D2D1_COLOR_SPACE.xml' path='doc/member[@name="D2D1_COLOR_SPACE.D2D1_COLOR_SPACE_CUSTOM"]/*' />
     D2D1_COLOR_SPACE_CUSTOM = 0,
@@ -18,5 +18,5 @@ public enum D2D1_COLOR_SPACE : uint
     D2D1_COLOR_SPACE_SCRGB = 2,
 
     /// <include file='D2D1_COLOR_SPACE.xml' path='doc/member[@name="D2D1_COLOR_SPACE.D2D1_COLOR_SPACE_FORCE_DWORD"]/*' />
-    D2D1_COLOR_SPACE_FORCE_DWORD = 0xffffffff,
+    D2D1_COLOR_SPACE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

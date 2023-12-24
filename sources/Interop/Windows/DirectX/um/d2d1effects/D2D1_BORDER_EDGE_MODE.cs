@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_BORDER_EDGE_MODE.xml' path='doc/member[@name="D2D1_BORDER_EDGE_MODE"]/*' />
-public enum D2D1_BORDER_EDGE_MODE : uint
+public enum D2D1_BORDER_EDGE_MODE
 {
     /// <include file='D2D1_BORDER_EDGE_MODE.xml' path='doc/member[@name="D2D1_BORDER_EDGE_MODE.D2D1_BORDER_EDGE_MODE_CLAMP"]/*' />
     D2D1_BORDER_EDGE_MODE_CLAMP = 0,
@@ -18,5 +18,5 @@ public enum D2D1_BORDER_EDGE_MODE : uint
     D2D1_BORDER_EDGE_MODE_MIRROR = 2,
 
     /// <include file='D2D1_BORDER_EDGE_MODE.xml' path='doc/member[@name="D2D1_BORDER_EDGE_MODE.D2D1_BORDER_EDGE_MODE_FORCE_DWORD"]/*' />
-    D2D1_BORDER_EDGE_MODE_FORCE_DWORD = 0xffffffff,
+    D2D1_BORDER_EDGE_MODE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

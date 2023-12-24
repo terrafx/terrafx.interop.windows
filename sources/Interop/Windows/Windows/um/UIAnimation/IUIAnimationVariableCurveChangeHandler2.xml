@@ -3,26 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUIAnimationVariableCurveChangeHandler2.OnCurveChanged">
-    <summary>
-      <para>Handles events that occur when the animation curve of an animation variable changes.</para>
-    </summary>
-    <param name="variable">
-      <para>The animation variable for which the animation curve has been updated.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <seealso cref="IUIAnimationVariable2.SetVariableCurveChangeHandler" />
-    <seealso cref="IUIAnimationVariableCurveChangeHandler2" />
+    <summary>Handles events that occur when the animation curve of an animation variable changes.</summary>
+    <param name="variable">The animation variable for which the animation curve has been updated.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationVariableCurveChangeHandler2">
-    <summary>
-      <para>Defines a method for handling animation curve update events.</para>
-    </summary>
-    <seealso cref="IUIAnimationVariable2.GetCurve" />
-    <seealso cref="IUIAnimationVariable2.GetVectorCurve" />
-    <seealso cref="IUIAnimationVariable2.SetVariableCurveChangeHandler " />
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/-interfaces-main">Interfaces</seealso>
+    <summary>Defines a method for handling animation curve update events.</summary>
   </member>
 </doc>

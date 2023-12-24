@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWriteSpeedDescriptor.get_MediaType">
-    <summary>
-      <para>Retrieves type of media in the current drive.</para>
-    </summary>
-    <param name="value">
-      <para>Type of media in the current drive. For possible values, see the <see cref="IMAPI_MEDIA_PHYSICAL_TYPE" /> enumeration type.</para>
-    </param>
+    <summary>Retrieves type of media in the current drive.</summary>
+    <param name="value">Type of media in the current drive. For possible values, see the <see cref="IMAPI_MEDIA_PHYSICAL_TYPE" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,28 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IWriteSpeedDescriptor" />
   </member>
   <member name="IWriteSpeedDescriptor.get_RotationTypeIsPureCAV">
-    <summary>
-      <para>Retrieves the supported rotational-speed control used by the recorder for the current media.</para>
-    </summary>
-    <param name="value">
-      <para>Is VARIANT_TRUE if constant angular velocity (CAV)  rotational-speed control is in use. Otherwise, VARIANT_FALSE to indicate that another rotational-speed control that the recorder supports is in use.</para>
-    </param>
+    <summary>Retrieves the supported rotational-speed control used by the recorder for the current media.</summary>
+    <param name="value">Is VARIANT_TRUE if constant angular velocity (CAV) rotational-speed control is in use. Otherwise, VARIANT_FALSE to indicate that another rotational-speed control that the recorder supports is in use.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -45,68 +37,44 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Rotational-speed control types include the following:</para>
-      <list type="bullet">
-        <item>
-          <description>    CLV (Constant Linear Velocity). The disc is written at a constant speed. Standard rotational control.</description>
-        </item>
-        <item>
-          <description>    CAV (Constant Angular Velocity). The disc is written at a constantly increasing speed.</description>
-        </item>
-        <item>
-          <description>    ZCAV (Zone Constant Linear Velocity). The disc is divided into zones. After each zone, the write speed increases. This is an impure form of CAV.</description>
-        </item>
-        <item>
-          <description>    PCAV (Partial Constant Angular Velocity). The disc speed increases up to a specified velocity. Once reached, the disc spins at the specified velocity for the duration of the disc writing.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IWriteSpeedDescriptor" />
   </member>
   <member name="IWriteSpeedDescriptor.get_WriteSpeed">
-    <summary>
-      <para>Retrieves the supported write speed for writing to the media.</para>
-    </summary>
-    <param name="value">
-      <para>Write speed of the current media, measured in sectors per second.</para>
-    </param>
+    <summary>Retrieves the supported write speed for writing to the media.</summary>
+    <param name="value">Write speed of the current media, measured in sectors per second.</param>
     <returns>
-      <para>S_OK   is typically returned on success, but the return of other success values is possible.  The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
+      <para>S_OK is typically returned on success, but the return of other success values is possible. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The write speed is based on the media write speeds. The value of this property can change when a media change occurs.</para>
-    </remarks>
-    <seealso cref="IWriteSpeedDescriptor" />
   </member>
 </doc>

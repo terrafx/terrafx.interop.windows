@@ -25,7 +25,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, Guid*, void**, int>)(lpVtbl[0]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, Guid*, void**, int>)(lpVtbl[0]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, uint>)(lpVtbl[1]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, uint>)(lpVtbl[1]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, uint>)(lpVtbl[2]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, uint>)(lpVtbl[2]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.SetLeadPin"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [VtblIndex(3)]
     public HRESULT SetLeadPin(int iPin)
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, int, int>)(lpVtbl[3]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), iPin);
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, int, int>)(lpVtbl[3]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), iPin);
     }
 
     /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.GetLeadPin"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [VtblIndex(4)]
     public HRESULT GetLeadPin(int* piPin)
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, int*, int>)(lpVtbl[4]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), piPin);
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, int*, int>)(lpVtbl[4]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), piPin);
     }
 
     /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.GetInputPinCount"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetInputPinCount(int* piPinCount)
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, int*, int>)(lpVtbl[5]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), piPinCount);
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, int*, int>)(lpVtbl[5]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), piPinCount);
     }
 
     /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.IsUsingClock"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [VtblIndex(6)]
     public HRESULT IsUsingClock(int* pbValue)
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, int*, int>)(lpVtbl[6]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), pbValue);
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, int*, int>)(lpVtbl[6]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), pbValue);
     }
 
     /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.SetUsingClock"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SetUsingClock(int bValue)
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, int, int>)(lpVtbl[7]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), bValue);
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, int, int>)(lpVtbl[7]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), bValue);
     }
 
     /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.GetClockPeriod"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [VtblIndex(8)]
     public HRESULT GetClockPeriod(int* pbValue)
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, int*, int>)(lpVtbl[8]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), pbValue);
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, int*, int>)(lpVtbl[8]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), pbValue);
     }
 
     /// <include file='IBaseVideoMixer.xml' path='doc/member[@name="IBaseVideoMixer.SetClockPeriod"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
     [VtblIndex(9)]
     public HRESULT SetClockPeriod(int bValue)
     {
-        return ((delegate* unmanaged<IBaseVideoMixer*, int, int>)(lpVtbl[9]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), bValue);
+        return ((delegate* unmanaged[MemberFunction]<IBaseVideoMixer*, int, int>)(lpVtbl[9]))((IBaseVideoMixer*)Unsafe.AsPointer(ref this), bValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IBaseVideoMixer : IBaseVideoMixer.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetLeadPin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetLeadPin;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetLeadPin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetLeadPin;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetInputPinCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetInputPinCount;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> IsUsingClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> IsUsingClock;
 
         [NativeTypeName("HRESULT (int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetUsingClock;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetUsingClock;
 
         [NativeTypeName("HRESULT (int *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetClockPeriod;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetClockPeriod;
 
         [NativeTypeName("HRESULT (int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetClockPeriod;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetClockPeriod;
     }
 }

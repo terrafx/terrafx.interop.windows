@@ -3,142 +3,48 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFileOperationProgressSink.FinishOperations">
-    <summary>
-      <para>Performs caller-implemented actions after the last operation performed by the call to <see cref="IFileOperation" /> is complete.</para>
-    </summary>
-    <param name="hrResult">
-      <para>Type: <b>HRESULT</b></para>
-      <para>The return value of the final operation. Note that this is not the HRESULT returned by one of the <see cref="IFileOperation" /> methods, which simply queue the operations. Instead, this is the result of the actual operation, such as copy, delete, or move.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Not used.</para>
-    </returns>
+    <summary>Performs caller-implemented actions after the last operation performed by the call to <see cref="IFileOperation" /> is complete.</summary>
+    <param name="hrResult">The return value of the final operation. Note that this is not the HRESULT returned by one of the <see cref="IFileOperation" /> methods, which simply queue the operations. Instead, this is the result of the actual operation, such as copy, delete, or move.</param>
+    <returns>Not used.</returns>
   </member>
   <member name="IFileOperationProgressSink.PauseTimer">
-    <summary>
-      <para>Not supported.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method should return S_OK rather than E_NOTIMPL.</para>
-    </remarks>
+    <summary>Not supported.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileOperationProgressSink.PostCopyItem">
-    <summary>
-      <para>Performs caller-implemented actions after the copy process for each item is complete.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that were used during the copy operation. Some values can be set or changed during the copy operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiItem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the source item.</para>
-    </param>
-    <param name="psiDestinationFolder">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the destination folder to which the item was copied.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to the new name that was given to the item after it was copied. This is a null-terminated Unicode string. Note that this might not be the name that you asked for, given collisions and other naming rules.</para>
-    </param>
-    <param name="hrCopy">
-      <para>Type: <b>HRESULT</b></para>
-      <para>The return value of the copy operation. Note that this is not the HRESULT returned by <see cref="CopyItem" />, which simply queues the copy operation. Instead, this is the result of the actual copy.</para>
-    </param>
-    <param name="psiNewlyCreated">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that represents the new copy of the item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
-    <seealso cref="CopyItem" />
-    <seealso cref="IFileOperationProgressSink" />
-    <seealso cref="IFileOperationProgressSink.PreCopyItem" />
+    <summary>Performs caller-implemented actions after the copy process for each item is complete.</summary>
+    <param name="dwFlags">bitwise value that contains flags that were used during the copy operation. Some values can be set or changed during the copy operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiItem">Pointer to an <see cref="IShellItem" /> that specifies the source item.</param>
+    <param name="psiDestinationFolder">Pointer to an <see cref="IShellItem" /> that specifies the destination folder to which the item was copied.</param>
+    <param name="pszNewName">Pointer to the new name that was given to the item after it was copied. This is a null-terminated Unicode string. Note that this might not be the name that you asked for, given collisions and other naming rules.</param>
+    <param name="hrCopy">The return value of the copy operation. Note that this is not the HRESULT returned by <see cref="CopyItem" />, which simply queues the copy operation. Instead, this is the result of the actual copy.</param>
+    <param name="psiNewlyCreated">Pointer to an <see cref="IShellItem" /> that represents the new copy of the item.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.PostDeleteItem">
-    <summary>
-      <para>Performs caller-implemented actions after the delete process for each item is complete.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that were used during the delete operation. Some values can be set or changed during the delete operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiItem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the item that was deleted.</para>
-    </param>
-    <param name="hrDelete">
-      <para>Type: <b>HRESULT</b></para>
-      <para>The return value of the delete operation. Note that this is not the HRESULT returned by <see cref="DeleteItem" />, which simply queues the delete operation. Instead, this is the result of the actual deletion.</para>
-    </param>
-    <param name="psiNewlyCreated">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>A pointer to an <see cref="IShellItem" /> that specifies the deleted item, now in the Recycle Bin. If the item was fully deleted, this value is <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
+    <summary>Performs caller-implemented actions after the delete process for each item is complete.</summary>
+    <param name="dwFlags">bitwise value that contains flags that were used during the delete operation. Some values can be set or changed during the delete operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiItem">Pointer to an <see cref="IShellItem" /> that specifies the item that was deleted.</param>
+    <param name="hrDelete">The return value of the delete operation. Note that this is not the HRESULT returned by <see cref="DeleteItem" />, which simply queues the delete operation. Instead, this is the result of the actual deletion.</param>
+    <param name="psiNewlyCreated">A pointer to an <see cref="IShellItem" /> that specifies the deleted item, now in the Recycle Bin. If the item was fully deleted, this value is <b>NULL</b>.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.PostMoveItem">
-    <summary>
-      <para>Performs caller-implemented actions after the move process for each item is complete.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that were used during the move operation. Some values can be set or changed during the move operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiItem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the source item.</para>
-    </param>
-    <param name="psiDestinationFolder">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the destination folder that contains the moved item.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to the name that was given to the item after it was moved. This is a null-terminated Unicode string. Note that this might not be the name that you asked for, given collisions and other naming rules.</para>
-    </param>
-    <param name="hrMove">
-      <para>Type: <b>HRESULT</b></para>
-      <para>The return value of the move operation. Note that this is not the HRESULT returned by <see cref="MoveItem" />, which simply queues the move operation. Instead, this is the result of the actual move.</para>
-    </param>
-    <param name="psiNewlyCreated">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that represents the moved item in its new location.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
+    <summary>Performs caller-implemented actions after the move process for each item is complete.</summary>
+    <param name="dwFlags">bitwise value that contains flags that were used during the move operation. Some values can be set or changed during the move operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiItem">Pointer to an <see cref="IShellItem" /> that specifies the source item.</param>
+    <param name="psiDestinationFolder">Pointer to an <see cref="IShellItem" /> that specifies the destination folder that contains the moved item.</param>
+    <param name="pszNewName">Pointer to the name that was given to the item after it was moved. This is a null-terminated Unicode string. Note that this might not be the name that you asked for, given collisions and other naming rules.</param>
+    <param name="hrMove">The return value of the move operation. Note that this is not the HRESULT returned by <see cref="MoveItem" />, which simply queues the move operation. Instead, this is the result of the actual move.</param>
+    <param name="psiNewlyCreated">Pointer to an <see cref="IShellItem" /> that represents the moved item in its new location.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.PostNewItem">
-    <summary>
-      <para>Performs caller-implemented actions after the new item is created.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that were used during the creation operation. Some values can be set or changed during the creation operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiDestinationFolder">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the destination folder to which the new item was added.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to the file name of the new item, for instance <b>Newfile.txt</b>. This is a null-terminated, Unicode string.</para>
-    </param>
+    <summary>Performs caller-implemented actions after the new item is created.</summary>
+    <param name="dwFlags">bitwise value that contains flags that were used during the creation operation. Some values can be set or changed during the creation operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiDestinationFolder">Pointer to an <see cref="IShellItem" /> that specifies the destination folder to which the new item was added.</param>
+    <param name="pszNewName">Pointer to the file name of the new item, for instance <b>Newfile.txt</b>. This is a null-terminated, Unicode string.</param>
     <param name="pszTemplateName">
-      <para>Type: <b>LPCWSTR</b></para>
       <para>Pointer to the name of the template file (for example <b>Excel9.xls</b>) that the new item is based on, stored in one of the following locations:</para>
       <list type="bullet">
         <item>
@@ -150,242 +56,76 @@
         <item>
           <description>%SystemRoot%\shellnew</description>
         </item>
-      </list>
-      <para>This is a null-terminated, Unicode string used to specify an existing file of the same type as the new file, containing the minimal content that an application wants to include in any new file.</para>
-      <para>This parameter is normally <b>NULL</b> to specify a new, blank file.</para>
-    </param>
-    <param name="dwFileAttributes">
-      <para>Type: <b>DWORD</b></para>
-      <para>The file attributes applied to the new item. One or more of the values found at <see cref="GetFileAttributes" />.</para>
-    </param>
-    <param name="hrNew">
-      <para>Type: <b>HRESULT</b></para>
-      <para>The return value of the creation operation. Note that this is not the HRESULT returned by <see cref="NewItem" />, which simply queues the creation operation. Instead, this is the result of the actual creation.</para>
-    </param>
-    <param name="psiNewItem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that represents the new item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
+      </list>This is a null-terminated, Unicode string used to specify an existing file of the same type as the new file, containing the minimal content that an application wants to include in any new file.<para>This parameter is normally <b>NULL</b> to specify a new, blank file.</para></param>
+    <param name="dwFileAttributes">The file attributes applied to the new item. One or more of the values found at <see cref="GetFileAttributes" />.</param>
+    <param name="hrNew">The return value of the creation operation. Note that this is not the HRESULT returned by <see cref="NewItem" />, which simply queues the creation operation. Instead, this is the result of the actual creation.</param>
+    <param name="psiNewItem">Pointer to an <see cref="IShellItem" /> that represents the new item.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.PostRenameItem">
-    <summary>
-      <para>Performs caller-implemented actions after the rename process for each item is complete.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that were used during the rename operation. Some values can be set or changed during the rename operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiItem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the item before it was renamed.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to the new <see cref="display name" /> of the item. This is a null-terminated, Unicode string. Note that this might not be the name that you asked for, given collisions and other naming rules.</para>
-    </param>
-    <param name="hrRename">
-      <para>Type: <b>HRESULT</b></para>
-      <para>The return value of the rename operation. Note that this is not the HRESULT returned by <see cref="RenameItem" />, which simply queues the rename operation. Instead, this is the result of the actual rename operation.</para>
-    </param>
-    <param name="psiNewlyCreated">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that represents the item with its new name.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
+    <summary>Performs caller-implemented actions after the rename process for each item is complete.</summary>
+    <param name="dwFlags">bitwise value that contains flags that were used during the rename operation. Some values can be set or changed during the rename operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiItem">Pointer to an <see cref="IShellItem" /> that specifies the item before it was renamed.</param>
+    <param name="pszNewName">Pointer to the new <see cref="display name" /> of the item. This is a null-terminated, Unicode string. Note that this might not be the name that you asked for, given collisions and other naming rules.</param>
+    <param name="hrRename">The return value of the rename operation. Note that this is not the HRESULT returned by <see cref="RenameItem" />, which simply queues the rename operation. Instead, this is the result of the actual rename operation.</param>
+    <param name="psiNewlyCreated">Pointer to an <see cref="IShellItem" /> that represents the item with its new name.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.PreCopyItem">
-    <summary>
-      <para>Performs caller-implemented actions before the copy process for each item begins.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiItem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the source item.</para>
-    </param>
-    <param name="psiDestinationFolder">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the destination folder to contain the copy of the item.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to a new name for the item after it has been copied. This is a null-terminated Unicode string and can be <b>NULL</b>. If <b>NULL</b>, the name of the destination item is the same as the source.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, the copy operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
+    <summary>Performs caller-implemented actions before the copy process for each item begins.</summary>
+    <param name="dwFlags">bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiItem">Pointer to an <see cref="IShellItem" /> that specifies the source item.</param>
+    <param name="psiDestinationFolder">Pointer to an <see cref="IShellItem" /> that specifies the destination folder to contain the copy of the item.</param>
+    <param name="pszNewName">Pointer to a new name for the item after it has been copied. This is a null-terminated Unicode string and can be <b>NULL</b>. If <b>NULL</b>, the name of the destination item is the same as the source.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, the copy operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.PreDeleteItem">
-    <summary>
-      <para>Performs caller-implemented actions before the delete process for each item begins.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiItem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the item to be deleted.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, the delete operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
+    <summary>Performs caller-implemented actions before the delete process for each item begins.</summary>
+    <param name="dwFlags">bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiItem">Pointer to an <see cref="IShellItem" /> that specifies the item to be deleted.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, the delete operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.PreMoveItem">
-    <summary>
-      <para>Performs caller-implemented actions before the move process for each item begins.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiItem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the item to be moved.</para>
-    </param>
-    <param name="psiDestinationFolder">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the destination folder to contain the moved item.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to a new name for the item in its new location. This is a null-terminated Unicode string and can be <b>NULL</b>. If <b>NULL</b>, the name of the destination item is the same as the source.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, the move operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
+    <summary>Performs caller-implemented actions before the move process for each item begins.</summary>
+    <param name="dwFlags">bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiItem">Pointer to an <see cref="IShellItem" /> that specifies the item to be moved.</param>
+    <param name="psiDestinationFolder">Pointer to an <see cref="IShellItem" /> that specifies the destination folder to contain the moved item.</param>
+    <param name="pszNewName">Pointer to a new name for the item in its new location. This is a null-terminated Unicode string and can be <b>NULL</b>. If <b>NULL</b>, the name of the destination item is the same as the source.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, the move operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.PreNewItem">
-    <summary>
-      <para>Performs caller-implemented actions before the process to create a new item begins.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiDestinationFolder">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the destination folder that will contain the new item.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to the file name of the new item, for instance <b>Newfile.txt</b>. This is a null-terminated, Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, this operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
+    <summary>Performs caller-implemented actions before the process to create a new item begins.</summary>
+    <param name="dwFlags">bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiDestinationFolder">Pointer to an <see cref="IShellItem" /> that specifies the destination folder that will contain the new item.</param>
+    <param name="pszNewName">Pointer to the file name of the new item, for instance <b>Newfile.txt</b>. This is a null-terminated, Unicode string.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, this operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.PreRenameItem">
-    <summary>
-      <para>Performs caller-implemented actions before the rename process for each item begins.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
-      <para>bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</para>
-    </param>
-    <param name="psiItem">
-      <para>Type: <b><see cref="IShellItem" />*</b></para>
-      <para>Pointer to an <see cref="IShellItem" /> that specifies the item to be renamed.</para>
-    </param>
-    <param name="pszNewName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to the new <see cref="display name" /> of the item. This is a null-terminated, Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. In the case of an error value, the rename operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</para>
-    </returns>
+    <summary>Performs caller-implemented actions before the rename process for each item begins.</summary>
+    <param name="dwFlags">bitwise value that contains flags that control the operation. See <see cref="TRANSFER_SOURCE_FLAGS" /> for flag descriptions.</param>
+    <param name="psiItem">Pointer to an <see cref="IShellItem" /> that specifies the item to be renamed.</param>
+    <param name="pszNewName">Pointer to the new <see cref="display name" /> of the item. This is a null-terminated, Unicode string.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. In the case of an error value, the rename operation and all subsequent operations pending from the call to <see cref="IFileOperation" /> are canceled.</returns>
   </member>
   <member name="IFileOperationProgressSink.ResetTimer">
-    <summary>
-      <para>Not supported.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method should return S_OK rather than E_NOTIMPL.</para>
-    </remarks>
+    <summary>Not supported.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileOperationProgressSink.ResumeTimer">
-    <summary>
-      <para>Not supported.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method should return S_OK rather than E_NOTIMPL.</para>
-    </remarks>
+    <summary>Not supported.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileOperationProgressSink.StartOperations">
-    <summary>
-      <para>Performs caller-implemented actions before any specific file operations are performed.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>StartOperations</b> is the first of the <see cref="IFileOperationProgressSink" /> methods to be called after <see cref="PerformOperations" />. It can be used to perform any setup or initialization that you require before the file operations begin.</para>
-    </remarks>
+    <summary>Performs caller-implemented actions before any specific file operations are performed.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileOperationProgressSink.UpdateProgress">
-    <summary>
-      <para>Provides an estimate of the total amount of work currently done in relation to the total amount of work.</para>
-    </summary>
-    <param name="iWorkTotal">
-      <para>Type: <b>UINT</b></para>
-      <para>An estimate of the amount of work to be completed.</para>
-    </param>
-    <param name="iWorkSoFar">
-      <para>Type: <b>UINT</b></para>
-      <para>The portion of <i>iWorkTotal</i> that has been completed so far.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The <i>iWorkTotal</i> and <i>iWorkSoFar</i> values are "points" or estimates of the amount of work to be done, and how much is completed. They are not specified in any particular units, but should be roughly proportional to how much time the total process takes. For example, to copy one small file might be considered two points, and a large file might be considered ten points. If a process is performing an operation that copies five small files and one large file, and the process has completed four of the small files, <i>iWorkSoFar</i> would be eight points (4 x 2 = 8) and <i>iWorkTotal</i> would be twenty points (5 x 2 + 10 = 20), so the estimate would be 8 of 20 points (or 40%) complete.</para>
-    </remarks>
+    <summary>Provides an estimate of the total amount of work currently done in relation to the total amount of work.</summary>
+    <param name="iWorkTotal">An estimate of the amount of work to be completed.</param>
+    <param name="iWorkSoFar">The portion of <i>iWorkTotal</i> that has been completed so far.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IFileOperationProgressSink">
-    <summary>
-      <para>Exposes methods that provide a rich notification system used by callers of <see cref="IFileOperation" /> to monitor the details of the operations they are performing through that interface.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>Applications must implement <b>IFileOperationProgressSink</b> themselves. Windows does not provide a default implementation.</para>
-      <h3>When to Use</h3>
-      <b>IFileOperationProgressSink</b> are essentially handlers for particular events. They are used normally to display information about the specific action being processed at that time, such as the name of a file, source and destination, and the new name of the item at the destination. Post methods receive the HRESULT of each part of the operation so that the caller can determine specifically where the process fails if it does. <see cref="IFileOperation" /> method parameter values are passed to the appropriate <b>IFileOperationProgressSink</b> methods so that they have access to the same information.
-<para>To attach an implementation of <b>IFileOperationProgressSink</b> to a call to <see cref="IFileOperation" />, you have two options:</para><list type="bullet"><item><description>To be advised of all operations performed by the call to <see cref="IFileOperation" />, use the <see cref="IFileOperation.Advise" /> method.</description></item><item><description>To be notified only of progress for specific operations, pass <b>IFileOperationProgressSink</b> to one or more of these individual <see cref="IFileOperation" /> methods:
-<list type="bullet"><item><description><see cref="CopyItem" /></description></item><item><description><see cref="DeleteItem" /></description></item><item><description><see cref="MoveItem" /></description></item><item><description><see cref="NewItem" /></description></item><item><description><see cref="RenameItem" /></description></item></list></description></item></list><para>If you call <see cref="Advise" /> there is no need to pass <b>IFileOperationProgressSink</b> to specific <see cref="IFileOperation" /> methods as that results in redundant calls to the <b>IFileOperationProgressSink</b> methods and duplicate notifications.</para><para>If you choose to pass <b>IFileOperationProgressSink</b> only to select methods, the same instance of <b>IFileOperationProgressSink</b> can be used for them all.</para><h3>Example</h3><para>The following example passes <b>IFileOperationProgressSink</b> to an instance of <see cref="IFileOperation" /> by calling the <see cref="Advise" /> method.</para><code>IFileOperation *pfo;
-CoCreateInstance(CLSID_FileOperation, NULL, CLSCTX_ALL, IID_IFileOperation, (void **)&amp;amp;amp;amp;amp;amp;m_pFO)
-HRESULT hr = SHCreateFileOperation(hwnd, 0, IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pfo));
-if (SUCCEEDED(hr))
-{
-    // Advise to get notifications
-    DWORD dwCookie;
-    hr = pfo-&gt;Advise(SAFECAST(this, IFileOperationProgressSink*), &amp;amp;amp;amp;amp;amp;dwCookie);
-}
-</code></remarks>
-    <seealso cref="IFileOperation" />
+    <summary>Exposes methods that provide a rich notification system used by callers of <see cref="IFileOperation" /> to monitor the details of the operations they are performing through that interface.</summary>
   </member>
 </doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA">
+    <summary>Represents versioned Device Removed Extended Data (DRED) data, so that debuggers and debugger extensions can access DRED data.</summary>
+  </member>
+  <member name="D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA.Version">
+    <summary>A <see cref="D3D12_DRED_VERSION" /> value, specifying a DRED version. This value determines which inner data member (of the union) is active.</summary>
+  </member>
+  <member name="D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA.Dred_1_0">
+    <summary>A <see cref="D3D12_DEVICE_REMOVED_EXTENDED_DATA" /> value, containing DRED version 1.0 data.</summary>
+  </member>
+  <member name="D3D12_VERSIONED_DEVICE_REMOVED_EXTENDED_DATA.Dred_1_1">
+    <summary>A <see cref="D3D12_DEVICE_REMOVED_EXTENDED_DATA1" /> value, containing DRED version 1.1 data.</summary>
+  </member>
+</doc>

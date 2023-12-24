@@ -19,25 +19,4 @@ public static unsafe partial class HTMLStyleSheetPagesCollectionTests
     {
         Assert.That(typeof(HTMLStyleSheetPagesCollection).GUID, Is.EqualTo(IID_HTMLStyleSheetPagesCollection));
     }
-
-    /// <summary>Validates that the <see cref="HTMLStyleSheetPagesCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLStyleSheetPagesCollection>(), Is.EqualTo(sizeof(HTMLStyleSheetPagesCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLStyleSheetPagesCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLStyleSheetPagesCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLStyleSheetPagesCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLStyleSheetPagesCollection), Is.EqualTo(1));
-    }
 }

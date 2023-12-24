@@ -35,40 +35,40 @@ public static partial class Windows
     [NativeTypeName("#define _SAPI_VER 0x054")]
     public const int _SAPI_VER = 0x054;
 
-    [NativeTypeName("#define SPCAT_AUDIOOUT L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\AudioOutput\"")]
+    [NativeTypeName("#define SPCAT_AUDIOOUT L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput\"")]
     public const string SPCAT_AUDIOOUT = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput";
 
-    [NativeTypeName("#define SPCAT_AUDIOIN L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\AudioInput\"")]
+    [NativeTypeName("#define SPCAT_AUDIOIN L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput\"")]
     public const string SPCAT_AUDIOIN = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput";
 
-    [NativeTypeName("#define SPCAT_VOICES L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\Voices\"")]
+    [NativeTypeName("#define SPCAT_VOICES L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Voices\"")]
     public const string SPCAT_VOICES = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Voices";
 
-    [NativeTypeName("#define SPCAT_RECOGNIZERS L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\Recognizers\"")]
+    [NativeTypeName("#define SPCAT_RECOGNIZERS L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Recognizers\"")]
     public const string SPCAT_RECOGNIZERS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\Recognizers";
 
-    [NativeTypeName("#define SPCAT_APPLEXICONS L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\AppLexicons\"")]
+    [NativeTypeName("#define SPCAT_APPLEXICONS L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AppLexicons\"")]
     public const string SPCAT_APPLEXICONS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AppLexicons";
 
-    [NativeTypeName("#define SPCAT_PHONECONVERTERS L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\PhoneConverters\"")]
+    [NativeTypeName("#define SPCAT_PHONECONVERTERS L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\PhoneConverters\"")]
     public const string SPCAT_PHONECONVERTERS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\PhoneConverters";
 
-    [NativeTypeName("#define SPCAT_TEXTNORMALIZERS L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\TextNormalizers\"")]
+    [NativeTypeName("#define SPCAT_TEXTNORMALIZERS L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\TextNormalizers\"")]
     public const string SPCAT_TEXTNORMALIZERS = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\TextNormalizers";
 
-    [NativeTypeName("#define SPCAT_RECOPROFILES L\"HKEY_CURRENT_USER\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\RecoProfiles\"")]
+    [NativeTypeName("#define SPCAT_RECOPROFILES L\"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\RecoProfiles\"")]
     public const string SPCAT_RECOPROFILES = "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\RecoProfiles";
 
-    [NativeTypeName("#define SPMMSYS_AUDIO_IN_TOKEN_ID L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\AudioInput\\\\TokenEnums\\\\MMAudioIn\\\\\"")]
+    [NativeTypeName("#define SPMMSYS_AUDIO_IN_TOKEN_ID L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput\\TokenEnums\\MMAudioIn\"")]
     public const string SPMMSYS_AUDIO_IN_TOKEN_ID = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioInput\\TokenEnums\\MMAudioIn\\";
 
-    [NativeTypeName("#define SPMMSYS_AUDIO_OUT_TOKEN_ID L\"HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\AudioOutput\\\\TokenEnums\\\\MMAudioOut\\\\\"")]
+    [NativeTypeName("#define SPMMSYS_AUDIO_OUT_TOKEN_ID L\"HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput\\TokenEnums\\MMAudioOut\"")]
     public const string SPMMSYS_AUDIO_OUT_TOKEN_ID = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Speech\\AudioOutput\\TokenEnums\\MMAudioOut\\";
 
-    [NativeTypeName("#define SPCURRENT_USER_LEXICON_TOKEN_ID L\"HKEY_CURRENT_USER\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\CurrentUserLexicon\"")]
+    [NativeTypeName("#define SPCURRENT_USER_LEXICON_TOKEN_ID L\"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserLexicon\"")]
     public const string SPCURRENT_USER_LEXICON_TOKEN_ID = "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserLexicon";
 
-    [NativeTypeName("#define SPCURRENT_USER_SHORTCUT_TOKEN_ID L\"HKEY_CURRENT_USER\\\\SOFTWARE\\\\Microsoft\\\\Speech\\\\CurrentUserShortcut\"")]
+    [NativeTypeName("#define SPCURRENT_USER_SHORTCUT_TOKEN_ID L\"HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserShortcut\"")]
     public const string SPCURRENT_USER_SHORTCUT_TOKEN_ID = "HKEY_CURRENT_USER\\SOFTWARE\\Microsoft\\Speech\\CurrentUserShortcut";
 
     [NativeTypeName("#define SPTOKENVALUE_CLSID L\"CLSID\"")]
@@ -132,7 +132,7 @@ public static partial class Windows
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xD1, 0xAC, 0x72, 0xA3,
                 0xEF, 0x3B,
                 0xBD, 0x4B,
@@ -144,7 +144,7 @@ public static partial class Windows
                 0x41,
                 0x6A,
                 0xF8
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -155,7 +155,7 @@ public static partial class Windows
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x42, 0xCB, 0x8F, 0x7B,
                 0x9D, 0x0E,
                 0x00, 0x4F,
@@ -167,7 +167,7 @@ public static partial class Windows
                 0x17,
                 0x9D,
                 0x3D
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

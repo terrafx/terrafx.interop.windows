@@ -19,32 +19,4 @@ public static unsafe partial class ICreateTypeInfoTests
     {
         Assert.That(typeof(ICreateTypeInfo).GUID, Is.EqualTo(IID_ICreateTypeInfo));
     }
-
-    /// <summary>Validates that the <see cref="ICreateTypeInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ICreateTypeInfo>(), Is.EqualTo(sizeof(ICreateTypeInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="ICreateTypeInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ICreateTypeInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ICreateTypeInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ICreateTypeInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ICreateTypeInfo), Is.EqualTo(4));
-        }
-    }
 }

@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct HTTPSPolicyCallbackData
 {
     /// <include file='HTTPSPolicyCallbackData.xml' path='doc/member[@name="HTTPSPolicyCallbackData.Anonymous"]/*' />
-    [NativeTypeName("_HTTPSPolicyCallbackData::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincrypt.h:20205:5)")]
+    [NativeTypeName("__AnonymousRecord_wincrypt_L20209_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='HTTPSPolicyCallbackData.xml' path='doc/member[@name="HTTPSPolicyCallbackData.dwAuthType"]/*' />
@@ -26,7 +26,7 @@ public unsafe partial struct HTTPSPolicyCallbackData
 
     /// <include file='HTTPSPolicyCallbackData.xml' path='doc/member[@name="HTTPSPolicyCallbackData.pwszServerName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszServerName;
+    public char* pwszServerName;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.cbStruct"]/*' />
     [UnscopedRef]

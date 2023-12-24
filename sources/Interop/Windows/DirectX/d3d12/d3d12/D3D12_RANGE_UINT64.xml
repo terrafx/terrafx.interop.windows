@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RANGE_UINT64">
+    <summary>Describes a memory range in a 64-bit address space.</summary>
+  </member>
+  <member name="D3D12_RANGE_UINT64.Begin">
+    <summary>The offset, in bytes, denoting the beginning of a memory range.</summary>
+  </member>
+  <member name="D3D12_RANGE_UINT64.End">
+    <summary>The offset, in bytes, denoting the end of a memory range.<b>End</b> is one-past-the-end.</summary>
+  </member>
+</doc>

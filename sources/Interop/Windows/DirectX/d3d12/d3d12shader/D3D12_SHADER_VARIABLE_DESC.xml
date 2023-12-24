@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SHADER_VARIABLE_DESC">
+    <summary>Describes a shader variable.</summary>
+  </member>
+  <member name="D3D12_SHADER_VARIABLE_DESC.Name">
+    <summary>The variable name.</summary>
+  </member>
+  <member name="D3D12_SHADER_VARIABLE_DESC.StartOffset">
+    <summary>Offset from the start of the parent structure to the beginning of the variable.</summary>
+  </member>
+  <member name="D3D12_SHADER_VARIABLE_DESC.Size">
+    <summary>Size of the variable (in bytes).</summary>
+  </member>
+  <member name="D3D12_SHADER_VARIABLE_DESC.uFlags">
+    <summary>A combination of <see cref="D3D_SHADER_VARIABLE_FLAGS" />-typed values that are combined by using a bitwise-OR operation. The resulting value identifies shader-variable properties.</summary>
+  </member>
+  <member name="D3D12_SHADER_VARIABLE_DESC.DefaultValue">
+    <summary>The default value for initializing the variable. Emits default values for reflection.</summary>
+  </member>
+  <member name="D3D12_SHADER_VARIABLE_DESC.StartTexture">
+    <summary>Offset from the start of the variable to the beginning of the texture.</summary>
+  </member>
+  <member name="D3D12_SHADER_VARIABLE_DESC.TextureSize">
+    <summary>The size of the texture, in bytes.</summary>
+  </member>
+  <member name="D3D12_SHADER_VARIABLE_DESC.StartSampler">
+    <summary>Offset from the start of the variable to the beginning of the sampler.</summary>
+  </member>
+  <member name="D3D12_SHADER_VARIABLE_DESC.SamplerSize">
+    <summary>The size of the sampler, in bytes.</summary>
+  </member>
+</doc>

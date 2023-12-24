@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISpecifyPropertyPages.GetPages">
-    <summary>
-      <para>Retrieves a list of property pages that can be displayed in this object's property sheet.</para>
-    </summary>
-    <param name="pPages">
-      <para>A pointer to a caller-allocated <see cref="CAUUID" /> structure that must be initialized and filled before returning. The <b>pElems</b> member in the structure is allocated by the callee with <see cref="CoTaskMemAlloc" /> and freed by the caller with <see cref="CoTaskMemFree" />.</para>
-    </param>
+    <summary>Retrieves a list of property pages that can be displayed in this object's property sheet.</summary>
+    <param name="pPages">A pointer to a caller-allocated <see cref="CAUUID" /> structure that must be initialized and filled before returning. The <b>pElems</b> member in the structure is allocated by the callee with <see cref="CoTaskMemAlloc" /> and freed by the caller with <see cref="CoTaskMemFree" />.</param>
     <returns>
       <para>This method can return the standard return values E_OUTOFMEMORY and E_UNEXPECTED, as well as the following values.</para>
       <list type="table">
@@ -16,47 +12,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method completed successfully.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method completed successfully.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The address in <i>pPages</i> is not valid. For example, it may be <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>The address in <i>pPages</i> is not valid. For example, it may be <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <see cref="CAUUID" /> structure is caller-allocated, but is not initialized by the caller. The <b>GetPages</b> method fills the <b>cElements</b> member in the structure. This method also allocates memory for the array pointed to by the <b>pElems</b> member using <see cref="CoTaskMemAlloc" />. Then, it fills the newly allocated array. After this method returns successfully, the structure contains a counted array of UUIDs, each UUID specifying a property page CLSID.</para>
-      <h3>Notes to Callers</h3>
-      <para>The caller must release the memory pointed to by the <b>pElems</b> member of <see cref="CAUUID" />, using <see cref="CoTaskMemFree" /> when it is no longer needed.</para>
-      <h3>Notes to Implementers</h3>
-      <para>E_NOTIMPL is not allowed as a return value, because an object with no property pages should not expose the <see cref="ISpecifyPropertyPages" /> interface.</para>
-    </remarks>
-    <seealso cref="ISpecifyPropertyPages" />
   </member>
   <member name="ISpecifyPropertyPages">
-    <summary>
-      <para>Indicates that an object supports property pages. OLE property pages enable an object to display its properties in a tabbed dialog box known as a <i>property sheet</i>. An end user can then view and change the object's properties. An object can display its property pages independent of its client, or the client can manage the display of property pages from a number of contained objects in a single property sheet. Property pages also provide a means for notifying a client of changes in an object's properties.</para>
-    </summary>
-    <remarks>
-      <para>A property page object manages a particular page within a property sheet. A property page implements at least <see cref="IPropertyPage" /> and can optionally implement <see cref="IPropertyPage2" /> if selection of a specific property is supported.</para>
-      <para>An object specifies its support for property pages by implementing <b>ISpecifyPropertyPages</b>. Through this interface the caller can obtain a list of CLSIDs identifying the specific property pages that the object supports. If the object specifies a property page CLSID, the object must be able to receive property changes from the property page.</para>
-    </remarks>
-    <seealso cref="IPropertyPage" />
-    <seealso cref="IPropertyPage2" />
-    <seealso cref="IPropertyPageSite" />
+    <summary>Indicates that an object supports property pages. OLE property pages enable an object to display its properties in a tabbed dialog box known as a <i>property sheet</i>. An end user can then view and change the object's properties. An object can display its property pages independent of its client, or the client can manage the display of property pages from a number of contained objects in a single property sheet. Property pages also provide a means for notifying a client of changes in an object's properties.</summary>
   </member>
 </doc>

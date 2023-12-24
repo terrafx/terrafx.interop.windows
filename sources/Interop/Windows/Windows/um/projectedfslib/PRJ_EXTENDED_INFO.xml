@@ -3,31 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_EXTENDED_INFO">
-    <summary>
-      <para>A provider uses PRJ_EXTENDED_INFO to provide extended information about a file when calling <see cref="PrjFillDirEntryBuffer2" /> or <see cref="PrjWritePlaceholderInfo2" />.</para>
-    </summary>
+    <summary>A provider uses PRJ_EXTENDED_INFO to provide extended information about a file when calling <see cref="PrjFillDirEntryBuffer2" /> or <see cref="PrjWritePlaceholderInfo2" />.</summary>
   </member>
   <member name="PRJ_EXTENDED_INFO.InfoType">
-    <summary>
-      <para>A <see cref="PRJ_EXT_INFO" /> value describing what kind of extended information this structure contains.</para>
-    </summary>
+    <summary>A <see cref="PRJ_EXT_INFO" /> value describing what kind of extended information this structure contains.</summary>
   </member>
   <member name="PRJ_EXTENDED_INFO.NextInfoOffset">
-    <summary>
-      <para>Offset in bytes from the beginning of this structure to the next PRJ_EXTENDED_INFO structure.  If this is the last structure in the buffer this value must be 0.</para>
-    </summary>
+    <summary>Offset in bytes from the beginning of this structure to the next PRJ_EXTENDED_INFO structure. If this is the last structure in the buffer this value must be 0.</summary>
   </member>
-  <member name="PRJ_EXTENDED_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="PRJ_EXTENDED_INFO.DUMMYUNIONNAME"></member>
   <member name="PRJ_EXTENDED_INFO.DUMMYUNIONNAME.Symlink">
-    <summary>
-      <para>The fields in this struct are used if InfoType is PRJ_EXT_INFO_TYPE_SYMLINK.</para>
-    </summary>
+    <summary>The fields in this struct are used if InfoType is PRJ_EXT_INFO_TYPE_SYMLINK.</summary>
   </member>
   <member name="PRJ_EXTENDED_INFO.DUMMYUNIONNAME.Symlink.TargetName">
-    <summary>
-      <para>Specifies the name of the target of a symbolic link.</para>
-    </summary>
+    <summary>Specifies the name of the target of a symbolic link.</summary>
   </member>
 </doc>

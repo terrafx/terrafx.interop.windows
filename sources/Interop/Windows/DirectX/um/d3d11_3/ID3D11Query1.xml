@@ -3,26 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11Query1.GetDesc1">
-    <summary>
-      <para>Gets a query description.</para>
-    </summary>
-    <param name="pDesc1">
-      <para>Type: <b><see cref="D3D11_QUERY_DESC1" />*</b></para>
-      <para>A pointer to a <see cref="D3D11_QUERY_DESC1" /> structure that receives a description of the query.</para>
-    </param>
-    <seealso cref="ID3D11Query1" />
+    <summary>Gets a query description.</summary>
+    <param name="pDesc1">A pointer to a <see cref="D3D11_QUERY_DESC1" /> structure that receives a description of the query.</param>
   </member>
   <member name="ID3D11Query1">
-    <summary>
-      <para>Represents a query object for querying information from the graphics processing unit (GPU).</para>
-    </summary>
-    <remarks>
-      <para>A query can be created with <see cref="ID3D11Device3.CreateQuery1" />.</para>
-      <para>Query data is typically gathered by issuing an <see cref="ID3D11DeviceContext.Begin" /> command, issuing some graphics commands, issuing an <see cref="ID3D11DeviceContext.End" /> command, and then calling <see cref="ID3D11DeviceContext.GetData" /> to get data about what happened in between the Begin and End calls. The data returned by <b>GetData</b> will be different depending on the type of query.</para>
-      <para>There are, however, some queries that do not require calls to <see cref="Begin" />. For a list of possible queries see <see cref="D3D11_QUERY" />.</para>
-      <para>When using a query that does not require a call to <see cref="Begin" />, it still requires a call to <see cref="End" />. The call to <b>End</b> causes the data returned by <see cref="GetData" /> to be accurate up until the last call to <b>End</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-core-interfaces">Core Interfaces</seealso>
-    <seealso cref="ID3D11Query" />
+    <summary>Represents a query object for querying information from the graphics processing unit (GPU).</summary>
   </member>
 </doc>

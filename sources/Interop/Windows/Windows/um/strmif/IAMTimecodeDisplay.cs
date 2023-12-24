@@ -25,7 +25,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMTimecodeDisplay*, Guid*, void**, int>)(lpVtbl[0]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeDisplay*, Guid*, void**, int>)(lpVtbl[0]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMTimecodeDisplay*, uint>)(lpVtbl[1]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeDisplay*, uint>)(lpVtbl[1]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMTimecodeDisplay*, uint>)(lpVtbl[2]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeDisplay*, uint>)(lpVtbl[2]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMTimecodeDisplay.xml' path='doc/member[@name="IAMTimecodeDisplay.GetTCDisplayEnable"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface, 
     [VtblIndex(3)]
     public HRESULT GetTCDisplayEnable([NativeTypeName("long *")] int* pState)
     {
-        return ((delegate* unmanaged<IAMTimecodeDisplay*, int*, int>)(lpVtbl[3]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), pState);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeDisplay*, int*, int>)(lpVtbl[3]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), pState);
     }
 
     /// <include file='IAMTimecodeDisplay.xml' path='doc/member[@name="IAMTimecodeDisplay.SetTCDisplayEnable"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface, 
     [VtblIndex(4)]
     public HRESULT SetTCDisplayEnable([NativeTypeName("long")] int State)
     {
-        return ((delegate* unmanaged<IAMTimecodeDisplay*, int, int>)(lpVtbl[4]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), State);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeDisplay*, int, int>)(lpVtbl[4]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), State);
     }
 
     /// <include file='IAMTimecodeDisplay.xml' path='doc/member[@name="IAMTimecodeDisplay.GetTCDisplay"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface, 
     [VtblIndex(5)]
     public HRESULT GetTCDisplay([NativeTypeName("long")] int Param, [NativeTypeName("long *")] int* pValue)
     {
-        return ((delegate* unmanaged<IAMTimecodeDisplay*, int, int*, int>)(lpVtbl[5]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), Param, pValue);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeDisplay*, int, int*, int>)(lpVtbl[5]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), Param, pValue);
     }
 
     /// <include file='IAMTimecodeDisplay.xml' path='doc/member[@name="IAMTimecodeDisplay.SetTCDisplay"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface, 
     [VtblIndex(6)]
     public HRESULT SetTCDisplay([NativeTypeName("long")] int Param, [NativeTypeName("long")] int Value)
     {
-        return ((delegate* unmanaged<IAMTimecodeDisplay*, int, int, int>)(lpVtbl[6]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), Param, Value);
+        return ((delegate* unmanaged[MemberFunction]<IAMTimecodeDisplay*, int, int, int>)(lpVtbl[6]))((IAMTimecodeDisplay*)Unsafe.AsPointer(ref this), Param, Value);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IAMTimecodeDisplay : IAMTimecodeDisplay.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetTCDisplayEnable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetTCDisplayEnable;
 
         [NativeTypeName("HRESULT (long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> SetTCDisplayEnable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> SetTCDisplayEnable;
 
         [NativeTypeName("HRESULT (long, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int*, int> GetTCDisplay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int*, int> GetTCDisplay;
 
         [NativeTypeName("HRESULT (long, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, int> SetTCDisplay;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, int> SetTCDisplay;
     }
 }

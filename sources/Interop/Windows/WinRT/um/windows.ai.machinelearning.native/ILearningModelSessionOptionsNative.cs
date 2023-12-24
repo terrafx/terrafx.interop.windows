@@ -26,7 +26,7 @@ public unsafe partial struct ILearningModelSessionOptionsNative : ILearningModel
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILearningModelSessionOptionsNative*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelSessionOptionsNative*, Guid*, void**, int>)(lpVtbl[0]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ILearningModelSessionOptionsNative : ILearningModel
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILearningModelSessionOptionsNative*, uint>)(lpVtbl[1]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelSessionOptionsNative*, uint>)(lpVtbl[1]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ILearningModelSessionOptionsNative : ILearningModel
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILearningModelSessionOptionsNative*, uint>)(lpVtbl[2]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelSessionOptionsNative*, uint>)(lpVtbl[2]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILearningModelSessionOptionsNative.xml' path='doc/member[@name="ILearningModelSessionOptionsNative.SetIntraOpNumThreadsOverride"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct ILearningModelSessionOptionsNative : ILearningModel
     [VtblIndex(3)]
     public HRESULT SetIntraOpNumThreadsOverride([NativeTypeName("UINT32")] uint intraOpNumThreads)
     {
-        return ((delegate* unmanaged<ILearningModelSessionOptionsNative*, uint, int>)(lpVtbl[3]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this), intraOpNumThreads);
+        return ((delegate* unmanaged[MemberFunction]<ILearningModelSessionOptionsNative*, uint, int>)(lpVtbl[3]))((ILearningModelSessionOptionsNative*)Unsafe.AsPointer(ref this), intraOpNumThreads);
     }
 
     public interface Interface : IUnknown.Interface
@@ -65,15 +65,15 @@ public unsafe partial struct ILearningModelSessionOptionsNative : ILearningModel
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetIntraOpNumThreadsOverride;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetIntraOpNumThreadsOverride;
     }
 }

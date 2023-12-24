@@ -3,56 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICStreamProvider.GetPersistOptions">
-    <summary>
-      <para>Gets the persist options used when initializing the component with a stream.</para>
-    </summary>
-    <param name="pdwPersistOptions">
-      <para>Type: <b>DWORD*</b></para>
-      <para>Pointer that receives the persist options used when initializing the component with a stream. If none were provided, <b>WICPersistOptionDefault</b> is returned.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the persist options used when initializing the component with a stream.</summary>
+    <param name="pdwPersistOptions">Pointer that receives the persist options used when initializing the component with a stream. If none were provided, <b>WICPersistOptionDefault</b> is returned.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICStreamProvider.GetPreferredVendorGUID">
-    <summary>
-      <para>Gets the preferred vendor GUID.</para>
-    </summary>
-    <param name="pguidPreferredVendor">
-      <para>Type: <b>GUID*</b></para>
-      <para>Pointer that receives the preferred vendor GUID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the preferred vendor GUID.</summary>
+    <param name="pguidPreferredVendor">Pointer that receives the preferred vendor GUID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICStreamProvider.GetStream">
-    <summary>
-      <para>Gets the stream held by the component.</para>
-    </summary>
-    <param name="ppIStream">
-      <para>Type: <b><see cref="IStream" />**</b></para>
-      <para>Pointer that receives a pointer to the stream held by the component.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the stream held by the component.</summary>
+    <param name="ppIStream">Pointer that receives a pointer to the stream held by the component.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICStreamProvider.RefreshStream">
-    <summary>
-      <para>Informs the component that the content of the stream it's holding onto may have changed. The component should respond by dirtying any cached information from the stream.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Informs the component that the content of the stream it's holding onto may have changed. The component should respond by dirtying any cached information from the stream.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICStreamProvider">
-    <summary>
-      <para>Exposes methods for a stream provider.</para>
-    </summary>
+    <summary>Exposes methods for a stream provider.</summary>
   </member>
 </doc>

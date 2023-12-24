@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="TrustLevel">
+    <summary>Represents the trust level of an activatable class.</summary>
+  </member>
+  <member name="TrustLevel.BaseTrust">
+    <summary>The component has access to resources that are not protected.</summary>
+  </member>
+  <member name="TrustLevel.PartialTrust">
+    <summary>The component has access to resources requested in the app manifest and approved by the user.</summary>
+  </member>
+  <member name="TrustLevel.FullTrust">
+    <summary>The component requires the full privileges of the user.</summary>
+  </member>
+</doc>

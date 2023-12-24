@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_BLEND_MODE.xml' path='doc/member[@name="D2D1_BLEND_MODE"]/*' />
-public enum D2D1_BLEND_MODE : uint
+public enum D2D1_BLEND_MODE
 {
     /// <include file='D2D1_BLEND_MODE.xml' path='doc/member[@name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_MULTIPLY"]/*' />
     D2D1_BLEND_MODE_MULTIPLY = 0,
@@ -87,5 +87,5 @@ public enum D2D1_BLEND_MODE : uint
     D2D1_BLEND_MODE_DIVISION = 25,
 
     /// <include file='D2D1_BLEND_MODE.xml' path='doc/member[@name="D2D1_BLEND_MODE.D2D1_BLEND_MODE_FORCE_DWORD"]/*' />
-    D2D1_BLEND_MODE_FORCE_DWORD = 0xffffffff,
+    D2D1_BLEND_MODE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

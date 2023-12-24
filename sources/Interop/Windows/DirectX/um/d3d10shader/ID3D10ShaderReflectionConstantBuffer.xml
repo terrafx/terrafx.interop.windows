@@ -3,54 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10ShaderReflectionConstantBuffer.GetDesc">
-    <summary>
-      <para>Get a constant-buffer description.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_SHADER_BUFFER_DESC" />*</b></para>
-      <para>A pointer to a shader-buffer description (see <see cref="D3D10_SHADER_BUFFER_DESC" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10ShaderReflectionConstantBuffer Interface" />
+    <summary>Get a constant-buffer description.</summary>
+    <param name="pDesc">A pointer to a shader-buffer description (see <see cref="D3D10_SHADER_BUFFER_DESC" />.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10ShaderReflectionConstantBuffer.GetVariableByIndex">
-    <summary>
-      <para>Get a shader-reflection variable by index.</para>
-    </summary>
-    <param name="Index">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Zero-based index.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10ShaderReflectionVariable" />*</b></para>
-      <para>A pointer to a shader-reflection variable interface (see <see cref="ID3D10ShaderReflectionVariable Interface" />).</para>
-    </returns>
-    <seealso cref="ID3D10ShaderReflectionConstantBuffer Interface" />
+    <summary>Get a shader-reflection variable by index.</summary>
+    <param name="Index">Zero-based index.</param>
+    <returns>A pointer to a shader-reflection variable interface (see <see cref="ID3D10ShaderReflectionVariable Interface" />).</returns>
   </member>
   <member name="ID3D10ShaderReflectionConstantBuffer.GetVariableByName">
-    <summary>
-      <para>Get a shader-reflection variable by name.</para>
-    </summary>
-    <param name="Name">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>Variable name.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="ID3D10ShaderReflectionVariable" />*</b></para>
-      <para>A pointer to a shader-reflection variable interface (see <see cref="ID3D10ShaderReflectionVariable Interface" />).</para>
-    </returns>
-    <seealso cref="ID3D10ShaderReflectionConstantBuffer Interface" />
+    <summary>Get a shader-reflection variable by name.</summary>
+    <param name="Name">Variable name.</param>
+    <returns>A pointer to a shader-reflection variable interface (see <see cref="ID3D10ShaderReflectionVariable Interface" />).</returns>
   </member>
   <member name="ID3D10ShaderReflectionConstantBuffer">
-    <summary>
-      <para>This shader-reflection interface provides access to a constant buffer.</para>
-    </summary>
-    <remarks>
-      <para>To create a constant-buffer interface, call <see cref="ID3D10ShaderReflection.GetConstantBufferByIndex" /> or <see cref="ID3D10ShaderReflection.GetConstantBufferByName" />. This is not a COM interface; therefore, you do not need to worry about reference counts or releasing the interface when you are done with it.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-shader-interfaces">Shader Interfaces</seealso>
+    <summary>This shader-reflection interface provides access to a constant buffer.</summary>
   </member>
 </doc>

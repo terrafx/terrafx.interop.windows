@@ -25,7 +25,7 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResource*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResource*, Guid*, void**, int>)(lpVtbl[0]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResource*, uint>)(lpVtbl[1]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResource*, uint>)(lpVtbl[1]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResource*, uint>)(lpVtbl[2]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResource*, uint>)(lpVtbl[2]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxManifestQualifiedResource.xml' path='doc/member[@name="IAppxManifestQualifiedResource.GetLanguage"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** language)
+    public HRESULT GetLanguage([NativeTypeName("LPWSTR *")] char** language)
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResource*, ushort**, int>)(lpVtbl[3]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), language);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResource*, char**, int>)(lpVtbl[3]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), language);
     }
 
     /// <include file='IAppxManifestQualifiedResource.xml' path='doc/member[@name="IAppxManifestQualifiedResource.GetScale"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
     [VtblIndex(4)]
     public HRESULT GetScale([NativeTypeName("UINT32 *")] uint* scale)
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResource*, uint*, int>)(lpVtbl[4]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), scale);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResource*, uint*, int>)(lpVtbl[4]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), scale);
     }
 
     /// <include file='IAppxManifestQualifiedResource.xml' path='doc/member[@name="IAppxManifestQualifiedResource.GetDXFeatureLevel"]/*' />
@@ -67,13 +67,13 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
     [VtblIndex(5)]
     public HRESULT GetDXFeatureLevel(DX_FEATURE_LEVEL* dxFeatureLevel)
     {
-        return ((delegate* unmanaged<IAppxManifestQualifiedResource*, DX_FEATURE_LEVEL*, int>)(lpVtbl[5]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), dxFeatureLevel);
+        return ((delegate* unmanaged[MemberFunction]<IAppxManifestQualifiedResource*, DX_FEATURE_LEVEL*, int>)(lpVtbl[5]))((IAppxManifestQualifiedResource*)Unsafe.AsPointer(ref this), dxFeatureLevel);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetLanguage([NativeTypeName("LPWSTR *")] ushort** language);
+        HRESULT GetLanguage([NativeTypeName("LPWSTR *")] char** language);
 
         [VtblIndex(4)]
         HRESULT GetScale([NativeTypeName("UINT32 *")] uint* scale);
@@ -86,21 +86,21 @@ public unsafe partial struct IAppxManifestQualifiedResource : IAppxManifestQuali
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetLanguage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetLanguage;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetScale;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetScale;
 
         [NativeTypeName("HRESULT (DX_FEATURE_LEVEL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DX_FEATURE_LEVEL*, int> GetDXFeatureLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DX_FEATURE_LEVEL*, int> GetDXFeatureLevel;
     }
 }

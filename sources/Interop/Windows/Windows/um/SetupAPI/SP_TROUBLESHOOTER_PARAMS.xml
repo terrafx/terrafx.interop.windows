@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SP_TROUBLESHOOTER_PARAMS">
+    <summary>An SP_TROUBLESHOOTER_PARAMS structure corresponds to a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-troubleshooter">DIF_TROUBLESHOOTER</a> installation request.</summary>
+  </member>
+  <member name="SP_TROUBLESHOOTER_PARAMS.ClassInstallHeader">
+    <summary>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</summary>
+  </member>
+  <member name="SP_TROUBLESHOOTER_PARAMS.ChmFile">
+    <summary>Optionally specifies a string buffer that contains the path of a CHM file. The CHM file contains HTML help topics with troubleshooting information. The path must be fully qualified if the file is not in default system help directory (%SystemRoot%\help).</summary>
+  </member>
+  <member name="SP_TROUBLESHOOTER_PARAMS.HtmlTroubleShooter">
+    <summary>Optionally specifies a string buffer that contains the path of a topic in the <b>ChmFile</b>. This parameter identifies the page of the <b>ChmFile</b> that Windows should display first.</summary>
+  </member>
+  <member name="SP_TROUBLESHOOTER_PARAMS">
+    <summary>An SP_TROUBLESHOOTER_PARAMS structure corresponds to a <a href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-troubleshooter">DIF_TROUBLESHOOTER</a> installation request.</summary>
+  </member>
+  <member name="SP_TROUBLESHOOTER_PARAMS.ClassInstallHeader">
+    <summary>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</summary>
+  </member>
+  <member name="SP_TROUBLESHOOTER_PARAMS.ChmFile">
+    <summary>Optionally specifies a string buffer that contains the path of a CHM file. The CHM file contains HTML help topics with troubleshooting information. The path must be fully qualified if the file is not in default system help directory (%SystemRoot%\help).</summary>
+  </member>
+  <member name="SP_TROUBLESHOOTER_PARAMS.HtmlTroubleShooter">
+    <summary>Optionally specifies a string buffer that contains the path of a topic in the <b>ChmFile</b>. This parameter identifies the page of the <b>ChmFile</b> that Windows should display first.</summary>
+  </member>
+</doc>

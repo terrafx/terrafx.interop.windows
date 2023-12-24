@@ -26,7 +26,7 @@ public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMLOperatorKernel*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernel*, Guid*, void**, int>)(lpVtbl[0]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMLOperatorKernel*, uint>)(lpVtbl[1]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernel*, uint>)(lpVtbl[1]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMLOperatorKernel*, uint>)(lpVtbl[2]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernel*, uint>)(lpVtbl[2]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMLOperatorKernel.xml' path='doc/member[@name="IMLOperatorKernel.Compute"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface, IN
     [VtblIndex(3)]
     public HRESULT Compute(IMLOperatorKernelContext* context)
     {
-        return ((delegate* unmanaged<IMLOperatorKernel*, IMLOperatorKernelContext*, int>)(lpVtbl[3]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this), context);
+        return ((delegate* unmanaged[MemberFunction]<IMLOperatorKernel*, IMLOperatorKernelContext*, int>)(lpVtbl[3]))((IMLOperatorKernel*)Unsafe.AsPointer(ref this), context);
     }
 
     public interface Interface : IUnknown.Interface
@@ -65,15 +65,15 @@ public unsafe partial struct IMLOperatorKernel : IMLOperatorKernel.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMLOperatorKernelContext *) noexcept __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMLOperatorKernelContext*, int> Compute;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMLOperatorKernelContext*, int> Compute;
     }
 }

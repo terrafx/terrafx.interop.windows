@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LineJoin">
+    <summary>The <b>LineJoin</b> enumeration specifies how to join two lines that are drawn by the same pen and whose ends meet. At the intersection of the two line ends, a line join makes the join look more continuous.</summary>
+  </member>
+  <member name="LineJoin.LineJoinMiter">
+    <summary>Specifies a mitered join. This produces a sharp corner or a clipped corner, depending on whether the length of the miter exceeds the miter limit.</summary>
+  </member>
+  <member name="LineJoin.LineJoinBevel">
+    <summary>Specifies a beveled join. This produces a diagonal corner.</summary>
+  </member>
+  <member name="LineJoin.LineJoinRound">
+    <summary>Specifies a circular join. This produces a smooth, circular arc between the lines.</summary>
+  </member>
+  <member name="LineJoin.LineJoinMiterClipped">
+    <summary>Specifies a mitered join. This produces a sharp corner or a beveled corner, depending on whether the length of the miter exceeds the miter limit.</summary>
+  </member>
+</doc>

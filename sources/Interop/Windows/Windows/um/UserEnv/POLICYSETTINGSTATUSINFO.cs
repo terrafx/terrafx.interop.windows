@@ -10,15 +10,15 @@ public unsafe partial struct POLICYSETTINGSTATUSINFO
 {
     /// <include file='POLICYSETTINGSTATUSINFO.xml' path='doc/member[@name="POLICYSETTINGSTATUSINFO.szKey"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szKey;
+    public char* szKey;
 
     /// <include file='POLICYSETTINGSTATUSINFO.xml' path='doc/member[@name="POLICYSETTINGSTATUSINFO.szEventSource"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szEventSource;
+    public char* szEventSource;
 
     /// <include file='POLICYSETTINGSTATUSINFO.xml' path='doc/member[@name="POLICYSETTINGSTATUSINFO.szEventLogName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* szEventLogName;
+    public char* szEventLogName;
 
     /// <include file='POLICYSETTINGSTATUSINFO.xml' path='doc/member[@name="POLICYSETTINGSTATUSINFO.dwEventID"]/*' />
     [NativeTypeName("DWORD")]

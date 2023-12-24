@@ -3,29 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IRpcProxyBuffer.Connect">
-    <summary>
-      <para>Initializes a client proxy, binding it to the specified RPC channel.</para>
-    </summary>
-    <param name="pRpcChannelBuffer">
-      <para>A pointer to the <see cref="IRpcChannelBuffer" /> interface that the proxy uses to marshal data.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IRpcProxyBuffer" />
+    <summary>Initializes a client proxy, binding it to the specified RPC channel.</summary>
+    <param name="pRpcChannelBuffer">A pointer to the <see cref="IRpcChannelBuffer" /> interface that the proxy uses to marshal data.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IRpcProxyBuffer.Disconnect">
-    <summary>
-      <para>Disconnects a client proxy from any RPC channel to which it is connected.</para>
-    </summary>
-    <seealso cref="IRpcProxyBuffer" />
+    <summary>Disconnects a client proxy from any RPC channel to which it is connected.</summary>
   </member>
   <member name="IRpcProxyBuffer">
-    <summary>
-      <para>Controls the RPC proxy used to marshal data between COM components.</para>
-    </summary>
-    <seealso cref="IMarshal" />
-    <seealso cref="IRpcChannelBuffer" />
-    <seealso cref="IRpcStubBuffer" />
+    <summary>Controls the RPC proxy used to marshal data between COM components.</summary>
   </member>
 </doc>

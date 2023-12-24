@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Fence.GetCompletedValue">
+    <summary>Gets the current value of the fence.</summary>
+    <returns>Returns the current value of the fence. If the device has been removed, the return value will be <b>UINT64_MAX</b>.</returns>
+  </member>
+  <member name="ID3D12Fence.SetEventOnCompletion">
+    <summary>Specifies an event that's raised when the fence reaches a certain value.</summary>
+    <param name="Value">The fence value when the event is to be signaled.</param>
+    <param name="hEvent">A handle to the event object.</param>
+    <returns>This method returns <b>E_OUTOFMEMORY</b> if the kernel components don’t have sufficient memory to store the event in a list. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12Fence.Signal">
+    <summary>Sets the fence to the specified value.</summary>
+    <param name="Value">The value to set the fence to.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Fence">
+    <summary>Represents a fence, an object used for synchronization of the CPU and one or more GPUs.</summary>
+  </member>
+</doc>

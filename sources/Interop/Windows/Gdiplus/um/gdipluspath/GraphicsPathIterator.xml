@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GraphicsPathIterator.CopyData">
+    <summary>The <b>GraphicsPathIterator.CopyData</b> method copies a subset of the path's data points to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> array and copies a subset of the path's point types to a <b>BYTE</b> array.</summary>
+    <param name="points">Pointer to an array that receives a subset of the path's data points.</param>
+    <param name="types">Pointer to an array that receives a subset of the path's point types.</param>
+    <param name="startIndex">Integer that specifies the starting index of the points and types to be copied.</param>
+    <param name="endIndex">Integer that specifies the ending index of the points and types to be copied.</param>
+    <returns>This method returns the number of points copied. This is the same as the number of types copied.</returns>
+  </member>
+  <member name="GraphicsPathIterator.Enumerate">
+    <summary>The <b>GraphicsPathIterator.Enumerate</b> method copies the path's data points to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-pointf">PointF</a> array and copies the path's point types to a <b>BYTE</b> array.</summary>
+    <param name="points">Pointer to an array that receives the path's data points.</param>
+    <param name="types">Pointer to an array that receives the path's point types.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array. This is the same as the number of elements in the <i>types</i> array.</param>
+    <returns>This method returns the number of points retrieved.</returns>
+  </member>
+  <member name="GraphicsPathIterator.GetCount">
+    <summary>The <b>GraphicsPathIterator.GetCount</b> method returns the number of data points in the path.</summary>
+    <returns>This method returns the number of data points in the path.</returns>
+  </member>
+  <member name="GraphicsPathIterator.GetLastStatus">
+    <summary>The <b>GraphicsPathIterator.GetLastStatus</b> method returns a value that indicates the nature of this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspathiterator">GraphicsPathIterator</a> object's most recent method failure.</summary>
+    <returns>
+      <para>The <b>GraphicsPathIterator.GetLastStatus</b> method returns an element of the <see cref="Status" /> enumeration.</para>
+      <para>If no methods invoked on this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspathiterator">GraphicsPathIterator</a> object have failed since the previous call to <b>GetLastStatus</b>, then <b>GetLastStatus</b> returns Ok.</para>
+      <para>If at least one method invoked on this <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspathiterator">GraphicsPathIterator</a> object has failed since the previous call to <b>GraphicsPathIterator.GetLastStatus</b> then <b>GraphicsPathIterator.GetLastStatus</b> returns a value that indicates the nature of the most recent failure.</para>
+    </returns>
+  </member>
+  <member name="GraphicsPathIterator.GetSubpathCount">
+    <summary>The <b>GraphicsPathIterator.GetSubpathCount</b> method returns the number of subpaths (also called figures) in the path.</summary>
+    <returns>This method returns the number of subpaths (also called figures) in the path.</returns>
+  </member>
+  <member name="GraphicsPathIterator.GraphicsPathIterator">
+    <summary>Creates a new <b>GraphicsPathIterator.GraphicsPathIterator</b> object and associates it with a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that will be associated with this <b>GraphicsPathIterator.GraphicsPathIterator</b> object.</param>
+  </member>
+  <member name="GraphicsPathIterator.GraphicsPathIterator">
+    <summary>Copy constructor for <b>GraphicsPathIterator</b>.</summary>
+    <param name="unnamedParam1">The object to copy to this object.</param>
+  </member>
+  <member name="GraphicsPathIterator.HasCurve">
+    <summary>The <b>GraphicsPathIterator.HasCurve</b> method determines whether the path has any curves.</summary>
+    <returns>If the path has at least one curve, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="GraphicsPathIterator.NextMarker">
+    <summary>The <b>GraphicsPathIterator.NextMarker</b> method gets the next marker-delimited section of this iterator's associated path.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object. This method sets the data points of this <b>GraphicsPath</b> object to match the data points of the retrieved section.</param>
+    <returns>This method returns the number of data points in the retrieved section. If there are no more marker-delimited sections to retrieve, this method returns 0.</returns>
+  </member>
+  <member name="GraphicsPathIterator.NextMarker">
+    <summary>The <b>GraphicsPathIterator.NextMarker</b> method gets the starting index and the ending index of the next marker-delimited section in this iterator's associated path.</summary>
+    <param name="startIndex">Pointer to an <b>INT</b> that receives the starting index.</param>
+    <param name="endIndex">Pointer to an <b>INT</b> that receives the ending index.</param>
+    <returns>This method returns the number of data points in the retrieved section. If there are no more marker-delimited sections to retrieve, this method returns 0.</returns>
+  </member>
+  <member name="GraphicsPathIterator.NextPathType">
+    <summary>The <b>GraphicsPathIterator.NextPathType</b> method gets the starting index and the ending index of the next group of data points that all have the same type.</summary>
+    <param name="pathType">Pointer to a <b>BYTE</b> that receives the point type shared by all points in the group. Possible values are PathPointTypeLine and PathPointTypeBezier, which are elements of the <see cref="PathPointType" /> enumeration.</param>
+    <param name="startIndex">Pointer to an <b>INT</b> that receives the starting index of the group of points.</param>
+    <param name="endIndex">Pointer to an <b>INT</b> that receives the ending index of the group of points.</param>
+    <returns>This method returns the number of data points in the group. If there are no more groups in the path, this method returns 0.</returns>
+  </member>
+  <member name="GraphicsPathIterator.NextSubpath">
+    <summary>The <b>GraphicsPathIterator.NextSubpath</b> method gets the next figure (subpath) from this iterator's associated path.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object. This method sets the data points of this <b>GraphicsPath</b> object to match the data points of the retrieved figure.</param>
+    <param name="isClosed">Pointer to a <b>BOOL</b> that receives a value that indicates whether the retrieved figure is closed. If the figure is closed, the received value is <b>TRUE</b>; otherwise, the received value is <b>FALSE</b>.</param>
+    <returns>This method returns the number of data points in the retrieved figure. If there are no more figures to retrieve, this method returns 0.</returns>
+  </member>
+  <member name="GraphicsPathIterator.NextSubpath">
+    <summary>The <b>GraphicsPathIterator.NextSubpath</b> method gets the starting index and the ending index of the next subpath (figure) in this iterator's associated path.</summary>
+    <param name="startIndex">Pointer to an <b>INT</b> that receives the starting index.</param>
+    <param name="endIndex">Pointer to an <b>INT</b> that receives the ending index.</param>
+    <param name="isClosed">Pointer to a <b>BOOL</b> that receives a value that indicates whether the obtained figure is closed. If the figure is closed, the received value is <b>TRUE</b>; otherwise, the received value is <b>FALSE</b>.</param>
+    <returns>This method returns the number of data points in the next figure. If there are no more figures in the path, this method returns 0.</returns>
+  </member>
+  <member name="GraphicsPathIterator.Rewind">
+    <summary>The <b>GraphicsPathIterator.Rewind</b> method rewinds this iterator to the beginning of its associated path.</summary>
+  </member>
+</doc>

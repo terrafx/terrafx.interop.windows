@@ -3,32 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICProgressNotification">
-    <summary>
-      <para>Specifies when the progress notification callback should be called.</para>
-    </summary>
-    <seealso cref="RegisterProgressNotification" />
+    <summary>Specifies when the progress notification callback should be called.</summary>
   </member>
   <member name="WICProgressNotification.WICProgressNotificationBegin">
-    <summary>
-      <para>The callback should be called when codec operations begin.</para>
-    </summary>
+    <summary>The callback should be called when codec operations begin.</summary>
   </member>
   <member name="WICProgressNotification.WICProgressNotificationEnd">
-    <summary>
-      <para>The callback should be called when codec operations end.</para>
-    </summary>
+    <summary>The callback should be called when codec operations end.</summary>
   </member>
   <member name="WICProgressNotification.WICProgressNotificationFrequent">
-    <summary>
-      <para>The callback should be called frequently to report status.</para>
-    </summary>
+    <summary>The callback should be called frequently to report status.</summary>
   </member>
   <member name="WICProgressNotification.WICProgressNotificationAll">
-    <summary>
-      <para>The callback should be called on all available progress notifications.</para>
-    </summary>
+    <summary>The callback should be called on all available progress notifications.</summary>
   </member>
-  <member name="WICProgressNotification.WICPROGRESSNOTIFICATION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICProgressNotification.WICPROGRESSNOTIFICATION_FORCE_DWORD"></member>
 </doc>

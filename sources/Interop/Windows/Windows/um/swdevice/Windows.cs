@@ -14,7 +14,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SwDeviceCreate"]/*' />
     [DllImport("cfgmgr32", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT SwDeviceCreate([NativeTypeName("PCWSTR")] ushort* pszEnumeratorName, [NativeTypeName("PCWSTR")] ushort* pszParentDeviceInstance, [NativeTypeName("const SW_DEVICE_CREATE_INFO *")] SW_DEVICE_CREATE_INFO* pCreateInfo, [NativeTypeName("ULONG")] uint cPropertyCount, [NativeTypeName("const DEVPROPERTY *")] DEVPROPERTY* pProperties, [NativeTypeName("SW_DEVICE_CREATE_CALLBACK")] delegate* unmanaged<HSWDEVICE, HRESULT, void*, ushort*, void> pCallback, [NativeTypeName("PVOID")] void* pContext, [NativeTypeName("PHSWDEVICE")] HSWDEVICE* phSwDevice);
+    public static extern HRESULT SwDeviceCreate([NativeTypeName("PCWSTR")] char* pszEnumeratorName, [NativeTypeName("PCWSTR")] char* pszParentDeviceInstance, [NativeTypeName("const SW_DEVICE_CREATE_INFO *")] SW_DEVICE_CREATE_INFO* pCreateInfo, [NativeTypeName("ULONG")] uint cPropertyCount, [NativeTypeName("const DEVPROPERTY *")] DEVPROPERTY* pProperties, [NativeTypeName("SW_DEVICE_CREATE_CALLBACK")] delegate* unmanaged<HSWDEVICE, HRESULT, void*, char*, void> pCallback, [NativeTypeName("PVOID")] void* pContext, [NativeTypeName("PHSWDEVICE")] HSWDEVICE* phSwDevice);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SwDeviceClose"]/*' />
     [DllImport("cfgmgr32", ExactSpelling = true)]
@@ -39,7 +39,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SwDeviceInterfaceRegister"]/*' />
     [DllImport("cfgmgr32", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT SwDeviceInterfaceRegister(HSWDEVICE hSwDevice, [NativeTypeName("const GUID *")] Guid* pInterfaceClassGuid, [NativeTypeName("PCWSTR")] ushort* pszReferenceString, [NativeTypeName("ULONG")] uint cPropertyCount, [NativeTypeName("const DEVPROPERTY *")] DEVPROPERTY* pProperties, BOOL fEnabled, [NativeTypeName("PWSTR *")] ushort** ppszDeviceInterfaceId);
+    public static extern HRESULT SwDeviceInterfaceRegister(HSWDEVICE hSwDevice, [NativeTypeName("const GUID *")] Guid* pInterfaceClassGuid, [NativeTypeName("PCWSTR")] char* pszReferenceString, [NativeTypeName("ULONG")] uint cPropertyCount, [NativeTypeName("const DEVPROPERTY *")] DEVPROPERTY* pProperties, BOOL fEnabled, [NativeTypeName("PWSTR *")] char** ppszDeviceInterfaceId);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SwMemFree"]/*' />
     [DllImport("cfgmgr32", ExactSpelling = true)]
@@ -49,10 +49,10 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SwDeviceInterfaceSetState"]/*' />
     [DllImport("cfgmgr32", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT SwDeviceInterfaceSetState(HSWDEVICE hSwDevice, [NativeTypeName("PCWSTR")] ushort* pszDeviceInterfaceId, BOOL fEnabled);
+    public static extern HRESULT SwDeviceInterfaceSetState(HSWDEVICE hSwDevice, [NativeTypeName("PCWSTR")] char* pszDeviceInterfaceId, BOOL fEnabled);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SwDeviceInterfacePropertySet"]/*' />
     [DllImport("cfgmgr32", ExactSpelling = true)]
     [SupportedOSPlatform("windows6.2")]
-    public static extern HRESULT SwDeviceInterfacePropertySet(HSWDEVICE hSwDevice, [NativeTypeName("PCWSTR")] ushort* pszDeviceInterfaceId, [NativeTypeName("ULONG")] uint cPropertyCount, [NativeTypeName("const DEVPROPERTY *")] DEVPROPERTY* pProperties);
+    public static extern HRESULT SwDeviceInterfacePropertySet(HSWDEVICE hSwDevice, [NativeTypeName("PCWSTR")] char* pszDeviceInterfaceId, [NativeTypeName("ULONG")] uint cPropertyCount, [NativeTypeName("const DEVPROPERTY *")] DEVPROPERTY* pProperties);
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, uint>)(lpVtbl[1]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, uint>)(lpVtbl[1]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, uint>)(lpVtbl[2]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, uint>)(lpVtbl[2]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.Lock2D"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT Lock2D(byte** ppbScanline0, [NativeTypeName("LONG *")] int* plPitch)
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[3]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), ppbScanline0, plPitch);
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[3]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), ppbScanline0, plPitch);
     }
 
     /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.Unlock2D"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT Unlock2D()
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, int>)(lpVtbl[4]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, int>)(lpVtbl[4]))((IMF2DBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.GetScanline0AndPitch"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetScanline0AndPitch(byte** pbScanline0, [NativeTypeName("LONG *")] int* plPitch)
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[5]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbScanline0, plPitch);
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, byte**, int*, int>)(lpVtbl[5]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbScanline0, plPitch);
     }
 
     /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.IsContiguousFormat"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT IsContiguousFormat(BOOL* pfIsContiguous)
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, BOOL*, int>)(lpVtbl[6]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pfIsContiguous);
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, BOOL*, int>)(lpVtbl[6]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pfIsContiguous);
     }
 
     /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.GetContiguousLength"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetContiguousLength([NativeTypeName("DWORD *")] uint* pcbLength)
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, uint*, int>)(lpVtbl[7]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pcbLength);
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, uint*, int>)(lpVtbl[7]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pcbLength);
     }
 
     /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.ContiguousCopyTo"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT ContiguousCopyTo(byte* pbDestBuffer, [NativeTypeName("DWORD")] uint cbDestBuffer)
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[8]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbDestBuffer, cbDestBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[8]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbDestBuffer, cbDestBuffer);
     }
 
     /// <include file='IMF2DBuffer.xml' path='doc/member[@name="IMF2DBuffer.ContiguousCopyFrom"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT ContiguousCopyFrom([NativeTypeName("const BYTE *")] byte* pbSrcBuffer, [NativeTypeName("DWORD")] uint cbSrcBuffer)
     {
-        return ((delegate* unmanaged<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[9]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbSrcBuffer, cbSrcBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IMF2DBuffer*, byte*, uint, int>)(lpVtbl[9]))((IMF2DBuffer*)Unsafe.AsPointer(ref this), pbSrcBuffer, cbSrcBuffer);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IMF2DBuffer : IMF2DBuffer.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, int*, int> Lock2D;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, int*, int> Lock2D;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unlock2D;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unlock2D;
 
         [NativeTypeName("HRESULT (BYTE **, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, int*, int> GetScanline0AndPitch;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, int*, int> GetScanline0AndPitch;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsContiguousFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsContiguousFormat;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetContiguousLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetContiguousLength;
 
         [NativeTypeName("HRESULT (BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> ContiguousCopyTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> ContiguousCopyTo;
 
         [NativeTypeName("HRESULT (const BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte*, uint, int> ContiguousCopyFrom;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte*, uint, int> ContiguousCopyFrom;
     }
 }

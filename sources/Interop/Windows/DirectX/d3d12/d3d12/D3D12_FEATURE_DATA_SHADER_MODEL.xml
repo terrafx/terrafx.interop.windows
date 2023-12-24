@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_SHADER_MODEL">
+    <summary>Contains the supported shader model.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_SHADER_MODEL.HighestShaderModel">
+    <summary>Specifies one member of <see cref="D3D_SHADER_MODEL" /> that indicates the maximum supported shader model.</summary>
+  </member>
+</doc>

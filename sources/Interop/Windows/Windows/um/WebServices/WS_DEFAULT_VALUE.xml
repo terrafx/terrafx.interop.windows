@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_DEFAULT_VALUE">
-    <summary>
-      <para>Defines a default value for a field.  This is used
-in a <see cref="WS_FIELD_DESCRIPTION" />.</para>
-    </summary>
+    <summary>Defines a default value for a field. This is used in a <see cref="WS_FIELD_DESCRIPTION" />.</summary>
   </member>
   <member name="WS_DEFAULT_VALUE.value">
-    <summary>
-      <para>A pointer to the default value.</para>
-    </summary>
+    <summary>A pointer to the default value.</summary>
   </member>
   <member name="WS_DEFAULT_VALUE.valueSize">
-    <summary>
-      <para>The size of the default value, in bytes.</para>
-    </summary>
+    <summary>The size of the default value, in bytes.</summary>
   </member>
 </doc>

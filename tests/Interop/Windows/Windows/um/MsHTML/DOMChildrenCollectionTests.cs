@@ -19,25 +19,4 @@ public static unsafe partial class DOMChildrenCollectionTests
     {
         Assert.That(typeof(DOMChildrenCollection).GUID, Is.EqualTo(IID_DOMChildrenCollection));
     }
-
-    /// <summary>Validates that the <see cref="DOMChildrenCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMChildrenCollection>(), Is.EqualTo(sizeof(DOMChildrenCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMChildrenCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMChildrenCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMChildrenCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMChildrenCollection), Is.EqualTo(1));
-    }
 }

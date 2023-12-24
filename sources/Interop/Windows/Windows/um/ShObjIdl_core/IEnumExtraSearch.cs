@@ -25,7 +25,7 @@ public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumExtraSearch*, Guid*, void**, int>)(lpVtbl[0]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumExtraSearch*, Guid*, void**, int>)(lpVtbl[0]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumExtraSearch*, uint>)(lpVtbl[1]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumExtraSearch*, uint>)(lpVtbl[1]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumExtraSearch*, uint>)(lpVtbl[2]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumExtraSearch*, uint>)(lpVtbl[2]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumExtraSearch.xml' path='doc/member[@name="IEnumExtraSearch.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface, INat
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, EXTRASEARCH* rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumExtraSearch*, uint, EXTRASEARCH*, uint*, int>)(lpVtbl[3]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumExtraSearch*, uint, EXTRASEARCH*, uint*, int>)(lpVtbl[3]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IEnumExtraSearch.xml' path='doc/member[@name="IEnumExtraSearch.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface, INat
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IEnumExtraSearch*, uint, int>)(lpVtbl[4]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IEnumExtraSearch*, uint, int>)(lpVtbl[4]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IEnumExtraSearch.xml' path='doc/member[@name="IEnumExtraSearch.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface, INat
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumExtraSearch*, int>)(lpVtbl[5]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumExtraSearch*, int>)(lpVtbl[5]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumExtraSearch.xml' path='doc/member[@name="IEnumExtraSearch.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface, INat
     [VtblIndex(6)]
     public HRESULT Clone(IEnumExtraSearch** ppenum)
     {
-        return ((delegate* unmanaged<IEnumExtraSearch*, IEnumExtraSearch**, int>)(lpVtbl[6]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumExtraSearch*, IEnumExtraSearch**, int>)(lpVtbl[6]))((IEnumExtraSearch*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumExtraSearch : IEnumExtraSearch.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, EXTRASEARCH *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, EXTRASEARCH*, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, EXTRASEARCH*, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumExtraSearch **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumExtraSearch**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumExtraSearch**, int> Clone;
     }
 }

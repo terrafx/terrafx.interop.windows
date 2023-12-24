@@ -19,32 +19,4 @@ public static unsafe partial class DispCEventObjTests
     {
         Assert.That(typeof(DispCEventObj).GUID, Is.EqualTo(IID_DispCEventObj));
     }
-
-    /// <summary>Validates that the <see cref="DispCEventObj" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispCEventObj>(), Is.EqualTo(sizeof(DispCEventObj)));
-    }
-
-    /// <summary>Validates that the <see cref="DispCEventObj" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispCEventObj).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispCEventObj" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispCEventObj), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispCEventObj), Is.EqualTo(4));
-        }
-    }
 }

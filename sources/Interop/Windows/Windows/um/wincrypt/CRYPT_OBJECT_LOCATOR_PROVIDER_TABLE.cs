@@ -17,7 +17,7 @@ public unsafe partial struct CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE
 
     /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnGet"]/*' />
     [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_GET")]
-    public delegate* unmanaged<void*, CRYPT_DATA_BLOB*, uint, CRYPT_DATA_BLOB*, byte**, uint*, ushort**, CRYPT_DATA_BLOB**, BOOL> pfnGet;
+    public delegate* unmanaged<void*, CRYPT_DATA_BLOB*, uint, CRYPT_DATA_BLOB*, byte**, uint*, char**, CRYPT_DATA_BLOB**, BOOL> pfnGet;
 
     /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnRelease"]/*' />
     [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_RELEASE")]
@@ -25,7 +25,7 @@ public unsafe partial struct CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE
 
     /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnFreePassword"]/*' />
     [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE_PASSWORD")]
-    public delegate* unmanaged<void*, ushort*, void> pfnFreePassword;
+    public delegate* unmanaged<void*, char*, void> pfnFreePassword;
 
     /// <include file='CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.xml' path='doc/member[@name="CRYPT_OBJECT_LOCATOR_PROVIDER_TABLE.pfnFree"]/*' />
     [NativeTypeName("PFN_CRYPT_OBJECT_LOCATOR_PROVIDER_FREE")]

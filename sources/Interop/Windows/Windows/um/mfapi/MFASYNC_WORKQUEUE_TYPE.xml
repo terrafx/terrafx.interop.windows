@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFASYNC_WORKQUEUE_TYPE">
-    <summary>
-      <para>Specifies the type of work queue for the <see cref="MFAllocateWorkQueueEx" /> function to create.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/work-queues">Work Queues</seealso>
+    <summary>Specifies the type of work queue for the <see cref="MFAllocateWorkQueueEx" /> function to create.</summary>
   </member>
   <member name="MFASYNC_WORKQUEUE_TYPE.MF_STANDARD_WORKQUEUE">
-    <summary>
-      <para>Create a work queue without a message loop.</para>
-    </summary>
+    <summary>Create a work queue without a message loop.</summary>
   </member>
   <member name="MFASYNC_WORKQUEUE_TYPE.MF_WINDOW_WORKQUEUE">
-    <summary>
-      <para>Create a work queue with a message loop.</para>
-    </summary>
+    <summary>Create a work queue with a message loop.</summary>
   </member>
   <member name="MFASYNC_WORKQUEUE_TYPE.MF_MULTITHREADED_WORKQUEUE">
-    <summary>
-      <para>Create a multithreaded work queue. This type of work queue uses a thread pool to dispatch work items. The caller is responsible for serializing the work items.</para>
-    </summary>
+    <summary>Create a multithreaded work queue. This type of work queue uses a thread pool to dispatch work items. The caller is responsible for serializing the work items.</summary>
   </member>
 </doc>

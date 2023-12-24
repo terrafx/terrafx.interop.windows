@@ -4,31 +4,21 @@
 <doc>
   <member name="VMRPresentationFlags">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <see cref="VMRPRESENTATIONINFO" /> structure .</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="VMRPresentationFlags.VMRSample_SyncPoint">
-    <summary>
-      <para>Indicates that the sample is a sync point.</para>
-    </summary>
+    <summary>Indicates that the sample is a sync point.</summary>
   </member>
   <member name="VMRPresentationFlags.VMRSample_Preroll">
-    <summary>
-      <para>Indicates that the sample is part of the preroll.</para>
-    </summary>
+    <summary>Indicates that the sample is part of the preroll.</summary>
   </member>
   <member name="VMRPresentationFlags.VMRSample_Discontinuity">
-    <summary>
-      <para>Indicates that the sample is a discontinuity.</para>
-    </summary>
+    <summary>Indicates that the sample is a discontinuity.</summary>
   </member>
   <member name="VMRPresentationFlags.VMRSample_TimeValid">
-    <summary>
-      <para>Indicates that the time stamp on the sample is valid.</para>
-    </summary>
+    <summary>Indicates that the time stamp on the sample is valid.</summary>
   </member>
-  <member name="VMRPresentationFlags.VMRSample_SrcDstRectsValid">
-    <summary></summary>
-  </member>
+  <member name="VMRPresentationFlags.VMRSample_SrcDstRectsValid"></member>
 </doc>

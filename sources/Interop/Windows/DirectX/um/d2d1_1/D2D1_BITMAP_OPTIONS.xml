@@ -3,51 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_BITMAP_OPTIONS">
-    <summary>
-      <para>Specifies how a bitmap can be used.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>D2D1_BITMAP_OPTIONS_NONE</b> implies that none of the flags are set. This means that the bitmap can be used for drawing from, cannot be set as a target and cannot be read from by the CPU.</para>
-      <para>
-        <b>D2D1_BITMAP_OPTIONS_TARGET</b> means that the bitmap can be specified as a target in <see cref="ID2D1DeviceContext.SetTarget" />. If you also specify the  <b>D2D1_BITMAP_OPTIONS_CANNOT_DRAW</b> flag the bitmap can be used a target but, it cannot be drawn from. Attempting to draw with a bitmap that has both flags set will result in the device context being put into an error state with <b>D2DERR_BITMAP_CANNOT_DRAW</b>.</para>
-      <para>
-        <b>D2D1_BITMAP_OPTIONS_CPU_READ</b> means that the bitmap can be mapped by using <see cref="ID2D1Bitmap1.Map" />. This flag requires <b>D2D1_BITMAP_OPTIONS_CANNOT_DRAW</b> and cannot be combined with any other flags. The bitmap must be updated with the <see cref="CopyFromBitmap" /> or <see cref="CopyFromRenderTarget" /> methods.</para>
-      <para>
-        <b>Note</b>  You should only use <b>D2D1_BITMAP_OPTIONS_CANNOT_DRAW</b> is when the purpose of the bitmap is to be a target only or when the bitmap will be mapped .</para>
-      <para>
-        <b>D2D1_BITMAP_OPTIONS_GDI_COMPATIBLE</b> means that it is possible to get a DC associated with this bitmap.  This must be used in conjunction with <b>D2D1_BITMAP_OPTIONS_TARGET</b>. The <see cref="DXGI_FORMAT" /> must be either <b>DXGI_FORMAT_B8G8R8A8_UNORM</b> or <b>DXGI_FORMAT_B8G8R8A8_UNORM_SRGB</b>.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext.CreateBitmap" />
+    <summary>Specifies how a bitmap can be used.</summary>
   </member>
   <member name="D2D1_BITMAP_OPTIONS.D2D1_BITMAP_OPTIONS_NONE">
-    <summary>
-      <para>The bitmap is created with default properties.</para>
-    </summary>
+    <summary>The bitmap is created with default properties.</summary>
   </member>
   <member name="D2D1_BITMAP_OPTIONS.D2D1_BITMAP_OPTIONS_TARGET">
-    <summary>
-      <para>The bitmap can be used as a device context target.</para>
-    </summary>
+    <summary>The bitmap can be used as a device context target.</summary>
   </member>
   <member name="D2D1_BITMAP_OPTIONS.D2D1_BITMAP_OPTIONS_CANNOT_DRAW">
-    <summary>
-      <para>The bitmap cannot be used as an input.</para>
-    </summary>
+    <summary>The bitmap cannot be used as an input.</summary>
   </member>
   <member name="D2D1_BITMAP_OPTIONS.D2D1_BITMAP_OPTIONS_CPU_READ">
-    <summary>
-      <para>The bitmap can be read from the CPU.</para>
-    </summary>
+    <summary>The bitmap can be read from the CPU.</summary>
   </member>
   <member name="D2D1_BITMAP_OPTIONS.D2D1_BITMAP_OPTIONS_GDI_COMPATIBLE">
     <summary>
       <para>The bitmap works with <see cref="ID2D1GdiInteropRenderTarget.GetDC" />.</para>
-      <para>
-        <b>Note</b>  This flag is not available in Windows Store apps.</para>
+      <div>
+        <b>Note</b>  This flag is not available in Windows Store apps.</div>
     </summary>
   </member>
-  <member name="D2D1_BITMAP_OPTIONS.D2D1_BITMAP_OPTIONS_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_BITMAP_OPTIONS.D2D1_BITMAP_OPTIONS_FORCE_DWORD"></member>
 </doc>

@@ -3,65 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_RENDER_TARGET_PROPERTIES">
-    <summary>
-      <para>Contains rendering options (hardware or software), pixel format, DPI information, remoting options, and Direct3D support requirements for a render target.</para>
-    </summary>
-    <remarks>
-      <para>Use this structure when creating a render target, or use it with the <see cref="ID2D1RenderTarget.IsSupported" /> method to check the properties supported by an existing render target.</para>
-      <para>As a convenience, Direct2D provides the <see cref="D2D1.RenderTargetProperties" /> helper function for creating <b>D2D1_RENDER_TARGET_PROPERTIES</b> structures. An easy way to create a <b>D2D1_RENDER_TARGET_PROPERTIES</b> structure that works for most render targets is to call the function without specifying any parameters. Doing so creates a <b>D2D1_RENDER_TARGET_PROPERTIES</b> structure that has its fields set to default values. For more information, see   <see cref="D2D1.RenderTargetProperties" />.</para>
-      <para>Not all render targets support hardware rendering. For a list, see the <a href="https://docs.microsoft.com//windows/win32/Direct2D/render-targets-overview">Render Targets Overview</a>.</para>
-      <h3>Using Default DPI Settings</h3>
-      <para>To use the default DPI, set <i>dpiX</i> and <i>dpiY</i> to 0. The default DPI varies depending on the render target:</para>
-      <list type="bullet">
-        <item>
-          <description>For a compatible render target, the default DPI is the DPI of the parent render target.</description>
-        </item>
-        <item>
-          <description>For a <see cref="ID2D1HwndRenderTarget" />, the default DPI is the system DPI obtained from the render target's <see cref="ID2D1Factory" />.</description>
-        </item>
-        <item>
-          <description>For other render targets, the default DPI is 96.</description>
-        </item>
-      </list>
-      <para>To use the default DPI setting, both <i>dpiX</i> and <i>dpiY</i> must be set to 0. Setting only one value to 0 causes an  <a href="https://docs.microsoft.com//windows/win32/Direct2D/direct2d-error-codes">E_INVALIDARG</a> error when attempting to create a render target.</para>
-    </remarks>
-    <seealso cref="ID2D1RenderTarget.IsSupported" />
-    <seealso href="https://docs.microsoft.com//windows/win32/Direct2D/render-targets-overview">Render Targets Overview</seealso>
+    <summary>Contains rendering options (hardware or software), pixel format, DPI information, remoting options, and Direct3D support requirements for a render target.</summary>
   </member>
   <member name="D2D1_RENDER_TARGET_PROPERTIES.type">
-    <summary>
-      <para>Type: <b><see cref="D2D1_RENDER_TARGET_TYPE" /></b></para>
-      <para>A value that specifies whether the render target should force hardware or software rendering. A value of <see cref="D2D1_RENDER_TARGET_TYPE_DEFAULT" /> specifies that the render target should use hardware rendering if it is available; otherwise, it uses software rendering. Note that WIC bitmap render targets do not support hardware rendering.</para>
-    </summary>
+    <summary>A value that specifies whether the render target should force hardware or software rendering. A value of <see cref="D2D1_RENDER_TARGET_TYPE_DEFAULT" /> specifies that the render target should use hardware rendering if it is available; otherwise, it uses software rendering. Note that WIC bitmap render targets do not support hardware rendering.</summary>
   </member>
   <member name="D2D1_RENDER_TARGET_PROPERTIES.pixelFormat">
-    <summary>
-      <para>Type: <b><see cref="D2D1_PIXEL_FORMAT" /></b></para>
-      <para>The pixel format and alpha mode of the render target. You can use the <see cref="D2D1.PixelFormat" /> function to create a pixel format that specifies that Direct2D should select the pixel format and alpha mode for you. For a list of pixel formats and alpha modes supported by each render target, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</para>
-    </summary>
+    <summary>The pixel format and alpha mode of the render target. You can use the <see cref="D2D1.PixelFormat" /> function to create a pixel format that specifies that Direct2D should select the pixel format and alpha mode for you. For a list of pixel formats and alpha modes supported by each render target, see <a href="https://docs.microsoft.com//windows/win32/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</summary>
   </member>
   <member name="D2D1_RENDER_TARGET_PROPERTIES.dpiX">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The horizontal DPI of the render target.  To use the default DPI, set <i>dpiX</i> and <i>dpiY</i> to 0. For more information, see the Remarks section.</para>
-    </summary>
+    <summary>The horizontal DPI of the render target. To use the default DPI, set <i>dpiX</i> and <i>dpiY</i> to 0. For more information, see the Remarks section.</summary>
   </member>
   <member name="D2D1_RENDER_TARGET_PROPERTIES.dpiY">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The vertical DPI of the render target. To use the default DPI, set <i>dpiX</i> and <i>dpiY</i> to 0.  For more information, see the Remarks section.</para>
-    </summary>
+    <summary>The vertical DPI of the render target. To use the default DPI, set <i>dpiX</i> and <i>dpiY</i> to 0. For more information, see the Remarks section.</summary>
   </member>
   <member name="D2D1_RENDER_TARGET_PROPERTIES.usage">
-    <summary>
-      <para>Type: <b><see cref="D2D1_RENDER_TARGET_USAGE" /></b></para>
-      <para>A value that specifies how the render target is remoted and whether it should be GDI-compatible.  Set to <see cref="D2D1_RENDER_TARGET_USAGE_NONE" /> to create a render target that is not compatible with GDI and uses Direct3D command-stream remoting if it  is available.</para>
-    </summary>
+    <summary>A value that specifies how the render target is remoted and whether it should be GDI-compatible. Set to <see cref="D2D1_RENDER_TARGET_USAGE_NONE" /> to create a render target that is not compatible with GDI and uses Direct3D command-stream remoting if it is available.</summary>
   </member>
   <member name="D2D1_RENDER_TARGET_PROPERTIES.minLevel">
-    <summary>
-      <para>Type: <b><see cref="D2D1_FEATURE_LEVEL" /></b></para>
-      <para>A value that specifies the minimum Direct3D feature level required for hardware rendering. If the specified minimum level is not available, the render target uses software rendering if the <b>type </b> member is set to <see cref="D2D1_RENDER_TARGET_TYPE_DEFAULT" />; if  <b>type </b> is set to to <b>D2D1_RENDER_TARGET_TYPE_HARDWARE</b>, render target creation fails. A value of <see cref="D2D1_FEATURE_LEVEL_DEFAULT" /> indicates that Direct2D should determine whether the Direct3D feature level of the device is adequate. This field is used only when creating <see cref="ID2D1HwndRenderTarget" /> and <see cref="ID2D1DCRenderTarget" /> objects.</para>
-    </summary>
+    <summary>A value that specifies the minimum Direct3D feature level required for hardware rendering. If the specified minimum level is not available, the render target uses software rendering if the <b>type</b> member is set to <see cref="D2D1_RENDER_TARGET_TYPE_DEFAULT" />; if <b>type</b> is set to to <b>D2D1_RENDER_TARGET_TYPE_HARDWARE</b>, render target creation fails. A value of <see cref="D2D1_FEATURE_LEVEL_DEFAULT" /> indicates that Direct2D should determine whether the Direct3D feature level of the device is adequate. This field is used only when creating <see cref="ID2D1HwndRenderTarget" /> and <see cref="ID2D1DCRenderTarget" /> objects.</summary>
   </member>
 </doc>

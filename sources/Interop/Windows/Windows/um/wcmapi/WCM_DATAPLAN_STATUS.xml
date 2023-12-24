@@ -3,52 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_DATAPLAN_STATUS">
-    <summary>
-      <para>The <b>WCM_DATAPLAN_STATUS</b> structure specifies subscription information for a network connection.</para>
-    </summary>
-    <seealso cref="WCM_BILLING_CYCLE_INFO" />
-    <seealso cref="WCM_USAGE_DATA" />
+    <summary>The <b>WCM_DATAPLAN_STATUS</b> structure specifies subscription information for a network connection.</summary>
   </member>
   <member name="WCM_DATAPLAN_STATUS.UsageData">
-    <summary>
-      <para>Type: <b><see cref="WCM_USAGE_DATA" /></b></para>
-      <para>Contains usage data.</para>
-    </summary>
+    <summary>Contains usage data.</summary>
   </member>
   <member name="WCM_DATAPLAN_STATUS.DataLimitInMegabytes">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies the data limit, in megabytes.</para>
-    </summary>
+    <summary>Specifies the data limit, in megabytes.</summary>
   </member>
   <member name="WCM_DATAPLAN_STATUS.InboundBandwidthInKbps">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies the inbound bandwidth, in kilobits per second.</para>
-    </summary>
+    <summary>Specifies the inbound bandwidth, in kilobits per second.</summary>
   </member>
   <member name="WCM_DATAPLAN_STATUS.OutboundBandwidthInKbps">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies the outbound bandwidth, in kilobits per second.</para>
-    </summary>
+    <summary>Specifies the outbound bandwidth, in kilobits per second.</summary>
   </member>
   <member name="WCM_DATAPLAN_STATUS.BillingCycle">
-    <summary>
-      <para>Type: <b><see cref="WCM_BILLING_CYCLE_INFO" /></b></para>
-      <para>Contains information about the billing cycle.</para>
-    </summary>
+    <summary>Contains information about the billing cycle.</summary>
   </member>
   <member name="WCM_DATAPLAN_STATUS.MaxTransferSizeInMegabytes">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Specifies the maximum size of a file that can be transferred, in megabytes.</para>
-    </summary>
+    <summary>Specifies the maximum size of a file that can be transferred, in megabytes.</summary>
   </member>
   <member name="WCM_DATAPLAN_STATUS.Reserved">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

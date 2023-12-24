@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS3">
+    <summary>Indicates the level of support that the adapter provides for timestamp queries, format-casting, immediate write, view instancing, and barycentrics.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS3.CopyQueueTimestampQueriesSupported">
+    <summary>Indicates whether timestamp queries are supported on copy queues.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS3.CastingFullyTypedFormatSupported">
+    <summary>Indicates whether casting from one fully typed format to another, compatible, format is supported.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS3.WriteBufferImmediateSupportFlags">
+    <summary>Indicates the kinds of command lists that support the ability to write an immediate value directly from the command stream into a specified buffer.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS3.ViewInstancingTier">
+    <summary>Indicates the level of support the adapter has for view instancing.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS3.BarycentricsSupported">
+    <summary>Indicates whether barycentrics are supported.</summary>
+  </member>
+</doc>

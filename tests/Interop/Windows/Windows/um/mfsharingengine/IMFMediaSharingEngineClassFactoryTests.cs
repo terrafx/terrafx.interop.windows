@@ -21,32 +21,4 @@ public static unsafe partial class IMFMediaSharingEngineClassFactoryTests
     {
         Assert.That(typeof(IMFMediaSharingEngineClassFactory).GUID, Is.EqualTo(IID_IMFMediaSharingEngineClassFactory));
     }
-
-    /// <summary>Validates that the <see cref="IMFMediaSharingEngineClassFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFMediaSharingEngineClassFactory>(), Is.EqualTo(sizeof(IMFMediaSharingEngineClassFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaSharingEngineClassFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFMediaSharingEngineClassFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFMediaSharingEngineClassFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFMediaSharingEngineClassFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFMediaSharingEngineClassFactory), Is.EqualTo(4));
-        }
-    }
 }

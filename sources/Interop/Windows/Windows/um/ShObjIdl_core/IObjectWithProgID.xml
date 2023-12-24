@@ -3,39 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IObjectWithProgID.GetProgID">
-    <summary>
-      <para>Retrieves the ProgID associated with an object.</para>
-    </summary>
-    <param name="ppszProgID">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>A pointer to a string that, when this method returns successfully, contains the ProgID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IObjectWithProgID" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/fa-progids">Programmatic Identifiers</seealso>
+    <summary>Retrieves the ProgID associated with an object.</summary>
+    <param name="ppszProgID">A pointer to a string that, when this method returns successfully, contains the ProgID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IObjectWithProgID.SetProgID">
-    <summary>
-      <para>Sets the ProgID of an object.</para>
-    </summary>
-    <param name="pszProgID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string that contains the new ProgID.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IObjectWithProgID" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/fa-progids">Programmatic Identifiers</seealso>
+    <summary>Sets the ProgID of an object.</summary>
+    <param name="pszProgID">A pointer to a string that contains the new ProgID.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IObjectWithProgID">
-    <summary>
-      <para>Exposes methods that provide access to the ProgID associated with an object.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/fa-progids">Programmatic Identifiers</seealso>
+    <summary>Exposes methods that provide access to the ProgID associated with an object.</summary>
   </member>
 </doc>

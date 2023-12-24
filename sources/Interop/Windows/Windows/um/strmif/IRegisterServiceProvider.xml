@@ -2,8 +2,18 @@
 <!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
+  <member name="IRegisterServiceProvider.RegisterService">
+    <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <para>The <code>RegisterService</code> method registers an object as a service.</para>
+    </summary>
+    <param name="guidService">Service identifier (SID) of the service.</param>
+    <param name="pUnkObject">Pointer to the <b>IUnknown</b> interface of the service object, or <b>NULL</b> to unregister the service.</param>
+    <returns>Returns an <b>HRESULT</b> value.</returns>
+  </member>
   <member name="IRegisterServiceProvider">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IRegisterServiceProvider</code> interface registers an object as a service with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/filter-graph-manager">Filter Graph Manager</a>. For more information, see <see cref="IRegisterServiceProvider.RegisterService" />.</para>
     </summary>
   </member>

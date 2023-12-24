@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="INK_HIGH_CONTRAST_ADJUSTMENT">
+    <summary>Specifies how the <see cref="IInkD2DRenderer2" /> object draws ink (standard and modified) when system is in a contrast theme mode.</summary>
+  </member>
+  <member name="INK_HIGH_CONTRAST_ADJUSTMENT.USE_SYSTEM_COLORS_WHEN_NECESSARY">
+    <summary>
+      <para>For standard strokes, use selected color if contrast is sufficient against the background. Otherwise, use system color.</para>
+      <para>For highlighter strokes, use selected color if contrast is sufficient against the background. Otherwise, use system color.</para>
+    </summary>
+  </member>
+  <member name="INK_HIGH_CONTRAST_ADJUSTMENT.USE_SYSTEM_COLORS">
+    <summary>
+      <para>For standard strokes, use system color.</para>
+      <para>For highlighter strokes, use system highlighter color.</para>
+    </summary>
+  </member>
+  <member name="INK_HIGH_CONTRAST_ADJUSTMENT.USE_ORIGINAL_COLORS">
+    <summary>
+      <para>For standard strokes, use the selected color.</para>
+      <para>For highlighter strokes, use the selected color.</para>
+    </summary>
+  </member>
+</doc>

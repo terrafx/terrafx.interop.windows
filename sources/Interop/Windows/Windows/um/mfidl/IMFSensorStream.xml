@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSensorStream.CloneSensorStream">
-    <summary>
-      <para>Clones the <see cref="IMFSensorStream" />.</para>
-    </summary>
-    <param name="ppStream">
-      <para>If the call is successful, <i>ppStream</i> receives the cloned <see cref="IMFSensorStream" />.</para>
-    </param>
+    <summary>Clones the <see cref="IMFSensorStream" />.</summary>
+    <param name="ppStream">If the call is successful, <i>ppStream</i> receives the cloned <see cref="IMFSensorStream" />.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -16,40 +12,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>ppStream</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>ppStream</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorStream" />
   </member>
   <member name="IMFSensorStream.GetMediaType">
-    <summary>
-      <para>Retrieves an <see cref="IMFMediaType" /> representing a supported media type for the sensor stream.</para>
-    </summary>
-    <param name="dwIndex">
-      <para>The 0-based index of the <see cref="IMFMediaType" /> to retrieve. This value must be between 0 and the value returned by <see cref="GetMediaTypeCount" /> - 1.</para>
-    </param>
-    <param name="ppMediaType">
-      <para>The retrieved media type.</para>
-    </param>
+    <summary>Retrieves an <see cref="IMFMediaType" /> representing a supported media type for the sensor stream.</summary>
+    <param name="dwIndex">The 0-based index of the <see cref="IMFMediaType" /> to retrieve. This value must be between 0 and the value returned by <see cref="GetMediaTypeCount" /> - 1.</param>
+    <param name="ppMediaType">The retrieved media type.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -57,47 +50,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>ppMediaType</i> parameter is null.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>ppMediaType</i> parameter is null.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDINDEX</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>dwIndex</i> is not in the allowed range.</para>
-          </description>
-        </item>
+          <description>The <i>dwIndex</i> is not in the allowed range.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorStream" />
   </member>
   <member name="IMFSensorStream.GetMediaTypeCount">
-    <summary>
-      <para>Gets the count of media types supported by the sensor stream.</para>
-    </summary>
-    <param name="pdwCount">
-      <para>If the call completes successfully, receives the count of media types supported by the stream.</para>
-    </param>
+    <summary>Gets the count of media types supported by the sensor stream.</summary>
+    <param name="pdwCount">If the call completes successfully, receives the count of media types supported by the stream.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -105,34 +99,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method succeeded.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method succeeded.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pdwCount</i> parameter is null.</para>
-          </description>
-        </item>
+          <description>The <i>pdwCount</i> parameter is null.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSensorStream" />
   </member>
   <member name="IMFSensorStream">
-    <summary>
-      <para>Provides methods for cloning and querying the properties of a sensor stream.</para>
-    </summary>
-    <seealso cref="IMFAttributes" />
+    <summary>Provides methods for cloning and querying the properties of a sensor stream.</summary>
   </member>
 </doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_LEVEL_SETTING">
+    <summary>Represents a video encoder level setting.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVEL_SETTING.DataSize">
+    <summary>The data size of the provided encoder level setting.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVEL_SETTING.pH264LevelSetting">
+    <summary>A pointer to a value from the <see cref="D3D12_VIDEO_ENCODER_LEVELS_H264" /> enumeration specifying an H.264 level.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVEL_SETTING.pHEVCLevelSetting">
+    <summary>A pointer to a <see cref="D3D12_VIDEO_ENCODER_LEVEL_TIER_CONSTRAINTS_HEVC" /> structure specifying an HEVC profile.</summary>
+  </member>
+</doc>

@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfContext.CreateRangeBackup">
-    <summary>
-      <para>Creates a backup of a range.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
-    <param name="pRange">
-      <para>Pointer to the <see cref="ITfRange" /> object to be backed up.</para>
-    </param>
-    <param name="ppBackup">
-      <para>Pointer to an <see cref="ITfRangeBackup" /> interface pointer that receives the backup of <i>pRange</i>.</para>
-    </param>
+    <summary>Creates a backup of a range.</summary>
+    <param name="ec">Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</param>
+    <param name="pRange">Pointer to the <see cref="ITfRange" /> object to be backed up.</param>
+    <param name="ppBackup">Pointer to an <see cref="ITfRangeBackup" /> interface pointer that receives the backup of <i>pRange</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,85 +14,84 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The cookie in <i>ec</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The cookie in <i>ec</i> is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context is not on a document stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method creates a copy of the range that it can use to restore the data in <see cref="ITfRangeBackup.Restore" />.</para>
-    </remarks>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfEditSession.DoEditSession" />
-    <seealso cref="ITfRange interface" />
-    <seealso cref="ITfRangeBackup interface" />
-    <seealso cref="ITfRangeBackup.Restore" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/ranges">Ranges: Clones and Backups</seealso>
   </member>
   <member name="ITfContext.EnumProperties">
-    <summary>
-      <para>Obtains a document property enumerator.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Pointer to an <see cref="IEnumTfProperties" /> interface pointer that receives the enumerator object.</para>
-    </param>
+    <summary>Obtains a document property enumerator.</summary>
+    <param name="ppEnum">Pointer to an <see cref="IEnumTfProperties" /> interface pointer that receives the enumerator object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -108,58 +99,61 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The context object is not on a document stack.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The context object is not on a document stack.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>ppEnum</i> is invalid.
-</description>
-        </item>
+            <i>ppEnum</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumTfProperties " />
-    <seealso cref="ITfContext" />
   </member>
   <member name="ITfContext.GetActiveView">
-    <summary>
-      <para>Obtains the active view for the context.</para>
-    </summary>
-    <param name="ppView">
-      <para>Pointer to an <see cref="ITfContextView" /> interface pointer that receives a reference to the active view.</para>
-    </param>
+    <summary>Obtains the active view for the context.</summary>
+    <param name="ppView">Pointer to an <see cref="ITfContextView" /> interface pointer that receives a reference to the active view.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -167,61 +161,61 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context is not on a document stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfContextView interface" />
   </member>
   <member name="ITfContext.GetAppProperty">
-    <summary>
-      <para>Obtains an application property.</para>
-    </summary>
-    <param name="guidProp">
-      <para>Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property identifiers</a>.</para>
-    </param>
-    <param name="ppProp">
-      <para>Pointer to an <see cref="ITfReadOnlyProperty" /> interface pointer that receives the property object.</para>
-    </param>
+    <summary>Obtains an application property.</summary>
+    <param name="guidProp">Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property identifiers</a>.</param>
+    <param name="ppProp">Pointer to an <see cref="ITfReadOnlyProperty" /> interface pointer that receives the property object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -229,94 +223,96 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context owner does not support the property.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context owner does not support the property.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context is not on a document stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context owner does not implement this method.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The context owner does not implement this method.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Applications can define unique properties identified by a GUID. Properties are stored as VARIANT data, so the caller must recognize the format and meaning of unique properties to be able to use them.</para>
-      <para>Application properties differ from text properties, obtained by <see cref="ITfContext.GetProperty" />, in that, application properties are maintained by the context owner and cannot be modified by a text service. Application properties can only be modified by the context owner.</para>
-    </remarks>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfContext.GetProperty" />
-    <seealso cref="ITfReadOnlyProperty interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties</seealso>
   </member>
   <member name="ITfContext.GetDocumentMgr">
-    <summary>
-      <para>Obtains the document manager that contains the context.</para>
-    </summary>
-    <param name="ppDm">
-      <para>Pointer to an <see cref="ITfDocumentMgr" /> interface pointer that receives the document manager.</para>
-    </param>
+    <summary>Obtains the document manager that contains the context.</summary>
+    <param name="ppDm">Pointer to an <see cref="ITfDocumentMgr" /> interface pointer that receives the document manager.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -324,55 +320,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The context is not contained in any document manager. <i>ppDm</i> is set to <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The context is not contained in any document manager. <i>ppDm</i> is set to <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>ppDm</i> is invalid.
-</description>
-        </item>
+            <i>ppDm</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the context is not contained within a document manager, this method returns S_FALSE and <i>ppDm</i> is set to <b>NULL</b>. This occurs when the context is removed from the context stack through a call to <see cref="ITfDocumentMgr.Pop" />.</para>
-    </remarks>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfDocumentMgr interface" />
-    <seealso cref="ITfDocumentMgr.Pop" />
   </member>
   <member name="ITfContext.GetEnd">
-    <summary>
-      <para>Obtains a range of text positioned at the end of the document.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
-    <param name="ppEnd">
-      <para>Pointer to an <see cref="ITfRange" /> interface pointer that receives an empty range positioned at the end of the document.</para>
-    </param>
+    <summary>Obtains a range of text positioned at the end of the document.</summary>
+    <param name="ec">Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</param>
+    <param name="ppEnd">Pointer to an <see cref="ITfRange" /> interface pointer that receives an empty range positioned at the end of the document.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -380,92 +371,97 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The cookie in <i>ec</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The cookie in <i>ec</i> is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context owner does not implement this method.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context is not on a document stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The context owner does not implement this method.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfEditSession.DoEditSession" />
-    <seealso cref="ITfRange interface" />
   </member>
   <member name="ITfContext.GetProperty">
-    <summary>
-      <para>Obtains a text property.</para>
-    </summary>
-    <param name="guidProp">
-      <para>Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property identifiers</a>.</para>
-    </param>
-    <param name="ppProp">
-      <para>Pointer to an <see cref="ITfProperty" /> interface pointer that receives the property object.</para>
-    </param>
+    <summary>Obtains a text property.</summary>
+    <param name="guidProp">Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property identifiers</a>.</param>
+    <param name="ppProp">Pointer to an <see cref="ITfProperty" /> interface pointer that receives the property object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -473,84 +469,76 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context is not on a document stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An application or text service can define unique properties identified by a GUID. Properties are stored as VARIANT data, so the caller must recognize the format and meaning of unique properties to be able to use them.</para>
-    </remarks>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfProperty interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties</seealso>
   </member>
   <member name="ITfContext.GetSelection">
-    <summary>
-      <para>Obtains the selection within the document.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
-    <param name="ulIndex">
-      <para>Specifies the zero-based index of the first selection to obtain. Use TF_DEFAULT_SELECTION to obtain the default selection. If TF_DEFAULT_SELECTION is used, only one selection is obtained.</para>
-    </param>
-    <param name="ulCount">
-      <para>Specifies the maximum number of selections to obtain.</para>
-    </param>
-    <param name="pSelection">
-      <para>An array of <see cref="TF_SELECTION" /> structures that receives the data for each selection. The array must be able to hold at least <i>ulCount</i> elements.</para>
-    </param>
-    <param name="pcFetched">
-      <para>Pointer to a ULONG value that receives the number of selections obtained.</para>
-    </param>
+    <summary>Obtains the selection within the document.</summary>
+    <param name="ec">Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</param>
+    <param name="ulIndex">Specifies the zero-based index of the first selection to obtain. Use TF_DEFAULT_SELECTION to obtain the default selection. If TF_DEFAULT_SELECTION is used, only one selection is obtained.</param>
+    <param name="ulCount">Specifies the maximum number of selections to obtain.</param>
+    <param name="pSelection">An array of <see cref="TF_SELECTION" /> structures that receives the data for each selection. The array must be able to hold at least <i>ulCount</i> elements.</param>
+    <param name="pcFetched">Pointer to a ULONG value that receives the number of selections obtained.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -558,88 +546,85 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOSELECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The document has no selection.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_NOSELECTION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The cookie in <i>ec</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The document has no selection.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The cookie in <i>ec</i> is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The context is not on a document stack.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A selection is a highlighted range of text, or an insertion point if the range is empty, that identifies the user focus area within a document.</para>
-      <para>If this method is successful, the caller must release the <b>range</b> member of all <b>TF_SELECTION</b> structures obtained.</para>
-      <para>Normally, a context only supports a single selection. It is possible, however, for a context to support multiple, simultaneous selections. This method can be used to obtain multiple selections.</para>
-    </remarks>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfEditSession.DoEditSession" />
-    <seealso cref="TF_SELECTION structure" />
-    <seealso cref="ITfContext.SetSelection" />
   </member>
   <member name="ITfContext.GetStart">
-    <summary>
-      <para>Obtains a range of text positioned at the beginning of the document.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
-    <param name="ppStart">
-      <para>Pointer to an <see cref="ITfRange" /> interface that receives an empty range positioned at the start of the document.</para>
-    </param>
+    <summary>Obtains a range of text positioned at the beginning of the document.</summary>
+    <param name="ec">Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</param>
+    <param name="ppStart">Pointer to an <see cref="ITfRange" /> interface that receives an empty range positioned at the start of the document.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -647,89 +632,96 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The cookie in <i>ec</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The cookie in <i>ec</i> is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context owner does not implement this method.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context is not on a document stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The context owner does not implement this method.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfEditSession.DoEditSession" />
-    <seealso cref="ITfRange interface" />
   </member>
   <member name="ITfContext.GetStatus">
-    <summary>
-      <para>Obtains the document status.</para>
-    </summary>
-    <param name="pdcs">
-      <para>Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms629192(v=vs.85)">TF_STATUS</a> structure that receives the document status data.</para>
-    </param>
+    <summary>Obtains the document status.</summary>
+    <param name="pdcs">Pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms629192(v=vs.85)">TF_STATUS</a> structure that receives the document status data.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -737,51 +729,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>The context is not on a document stack.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pdcs</i> is invalid.
-</description>
-        </item>
+            <i>pdcs</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfContext interface" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms629192(v=vs.85)">TF_STATUS</seealso>
   </member>
   <member name="ITfContext.InWriteSession">
-    <summary>
-      <para>Determines if a client has a read/write lock on the context.</para>
-    </summary>
-    <param name="tid">
-      <para>Contains a <b>TfClientID</b> value that identifies the client.</para>
-    </param>
-    <param name="pfWriteSession">
-      <para>Pointer to a <b>BOOL</b> that receives a nonzero value if the client has a read/write lock on the context. Receives zero if the client does not have an edit session or has a read-only edit session.</para>
-    </param>
+    <summary>Determines if a client has a read/write lock on the context.</summary>
+    <param name="tid">Contains a <b>TfClientID</b> value that identifies the client.</param>
+    <param name="pfWriteSession">Pointer to a <b>BOOL</b> that receives a nonzero value if the client has a read/write lock on the context. Receives zero if the client does not have an edit session or has a read-only edit session.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -789,43 +780,38 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pfWriteSession</i> is invalid.
-</description>
-        </item>
+            <i>pfWriteSession</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A client uses this method, from inside a notification callback, to determine if it must make the change.</para>
-    </remarks>
-    <seealso cref="ITfContext interface" />
   </member>
   <member name="ITfContext.RequestEditSession">
-    <summary>
-      <para>Obtains access to the document text and properties.</para>
-    </summary>
-    <param name="tid">
-      <para>Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfclientid">TfClientId</a> value that identifies the client to establish the edit session with.</para>
-    </param>
-    <param name="pes">
-      <para>Pointer to an <see cref="ITfEditSession" /> interface called to perform the edit session.</para>
-    </param>
+    <summary>Obtains access to the document text and properties.</summary>
+    <param name="tid">Contains a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfclientid">TfClientId</a> value that identifies the client to establish the edit session with.</param>
+    <param name="pes">Pointer to an <see cref="ITfEditSession" /> interface called to perform the edit session.</param>
     <param name="dwFlags">
       <para>Contains one or more of the following values.</para>
       <list type="table">
@@ -833,46 +819,66 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TF_ES_ASYNCDONTCARE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_ES_ASYNCDONTCARE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The edit session can occur synchronously or asynchronously, at the discretion of the TSF manager. The manager will attempt to schedule a synchronous edit session for improved performance. This value cannot be combined with the TF_ES_ASYNC or TF_ES_SYNC values.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The edit session can occur synchronously or asynchronously, at the discretion of the TSF manager. The manager will attempt to schedule a synchronous edit session for improved performance. This value cannot be combined with the TF_ES_ASYNC or TF_ES_SYNC values.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_ES_SYNC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The edit session must be synchronous or the request will fail (with TF_E_SYNCHRONOUS). This flag should only be used in documented situations (such as keystroke handling) where it can be expected to succeed. Otherwise the call will likely fail. This value cannot be combined with the TF_ES_ASYNCDONTCARE or TF_ES_ASYNC values.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_ES_SYNC</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_ES_READ</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Requests read-only access to the context.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The edit session must be synchronous or the request will fail (with TF_E_SYNCHRONOUS). This flag should only be used in documented situations (such as keystroke handling) where it can be expected to succeed. Otherwise the call will likely fail. This value cannot be combined with the TF_ES_ASYNCDONTCARE or TF_ES_ASYNC values.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_ES_READWRITE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Requests read/write access to the context.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_ES_READ</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_ES_ASYNC</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Requests read-only access to the context.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_ES_READWRITE</b>
-          </description>
-          <description>
-            <para>Requests read/write access to the context.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_ES_ASYNC</b>
-          </description>
-          <description>
-            <para>The edit session must be asynchronous or the request fails. This value cannot be combined with the TF_ES_ASYNCDONTCARE or TF_ES_SYNC values.</para>
-          </description>
-        </item>
+          <description>The edit session must be asynchronous or the request fails. This value cannot be combined with the TF_ES_ASYNCDONTCARE or TF_ES_SYNC values.</description>
+        </listheader>
       </list>
     </param>
     <param name="phrSession">
@@ -899,99 +905,74 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful. <i>phrSession</i> contains more result data for the method.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful. <i>phrSession</i> contains more result data for the method.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_LOCKED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The caller is within the context of another text service which already holds a lock.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_LOCKED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The caller is within the context of another text service which already holds a lock.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The context is not on a document stack.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Pending asynchronous edit sessions are processed in the order received. Synchronous edit sessions are processed before any pending asynchronous edit sessions.</para>
-      <para>A text service can request an edit session within the context of an existing edit session, provided a write access session is not requested within a read-only session. Calls to this method within the context of an edit session established by another text service will fail with TF_E_LOCKED.</para>
-      <para>A synchronous read/write request will fail if made when processing one of the following notifications.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="ITfTextEditSink.OnEndEdit " />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ITfTextLayoutSink.OnLayoutChange " />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ITfStatusSink.OnStatusChange " />
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfEditSession interface" />
-    <seealso cref="ITfStatusSink.OnStatusChange" />
-    <seealso cref="ITfTextEditSink.OnEndEdit" />
-    <seealso cref="ITfTextLayoutSink.OnLayoutChange" />
   </member>
   <member name="ITfContext.SetSelection">
-    <summary>
-      <para>Sets the selection within the document.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
-    <param name="ulCount">
-      <para>Specifies the number of selections in the <i>pSelection</i> array.</para>
-    </param>
-    <param name="pSelection">
-      <para>An array of <see cref="TF_SELECTION" /> structures that contain the information for each selection.</para>
-    </param>
+    <summary>Sets the selection within the document.</summary>
+    <param name="ec">Contains an edit cookie that identifies the edit session. This is the value passed to <see cref="ITfEditSession.DoEditSession" />.</param>
+    <param name="ulCount">Specifies the number of selections in the <i>pSelection</i> array.</param>
+    <param name="pSelection">An array of <see cref="TF_SELECTION" /> structures that contain the information for each selection.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -999,67 +980,52 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOSELECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The document has no selection.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_NOSELECTION</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The document has no selection.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The cookie in <i>ec</i> is invalid.</para>
-          </description>
-        </item>
+          <description>The cookie in <i>ec</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A selection is a span of highlighted text, or an insertion point if the span is empty, identifying the user focus area within a document. Some documents are capable of having multiple selections. There can only be one zero-length selection in <i>pSelection</i> as it represents the position of the document caret.</para>
-      <para>If an application must adjust the text covered by a selection, it should wait until the caller releases the lock. However, applications can adjust any of the <b>style</b> members of the <b>TF_SELECTION</b> structures while still returning S_OK.</para>
-      <para>The caller can set the <b>fInterimChar</b> flag only if one selection is set. In this case, the selection should span exactly one character and the <b>ase</b> member of the <b>TF_SELECTION</b> structure is set to TFAE_NONE.</para>
-    </remarks>
-    <seealso cref="ITfContext interface" />
-    <seealso cref="ITfEditSession.DoEditSession" />
-    <seealso cref="TF_SELECTION structure" />
-    <seealso cref="ITfContext.GetSelection" />
   </member>
   <member name="ITfContext.TrackProperties">
-    <summary>
-      <para>Obtains a special property that can enumerate multiple properties over multiple ranges.</para>
-    </summary>
-    <param name="prgProp">
-      <para>Contains an array of property identifiers that specify the properties to track.</para>
-    </param>
-    <param name="cProp">
-      <para>Contains the number of property identifiers in the <i>prgProp</i> array.</para>
-    </param>
-    <param name="prgAppProp">
-      <para>Contains an array of application property identifiers that specify the application properties to track.</para>
-    </param>
-    <param name="cAppProp">
-      <para>Contains the number of application property identifiers in the <i>prgAppProp</i> array.</para>
-    </param>
-    <param name="ppProperty">
-      <para>Pointer to an <see cref="ITfReadOnlyProperty" /> interface pointer that receives the tracking property.</para>
-    </param>
+    <summary>Obtains a special property that can enumerate multiple properties over multiple ranges.</summary>
+    <param name="prgProp">Contains an array of property identifiers that specify the properties to track.</param>
+    <param name="cProp">Contains the number of property identifiers in the <i>prgProp</i> array.</param>
+    <param name="prgAppProp">Contains an array of application property identifiers that specify the application properties to track.</param>
+    <param name="cAppProp">Contains the number of application property identifiers in the <i>prgAppProp</i> array.</param>
+    <param name="ppProperty">Pointer to an <see cref="ITfReadOnlyProperty" /> interface pointer that receives the tracking property.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -1067,157 +1033,58 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The context object is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context object is not on a document stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method is used to quickly identify ranges with consistent property values for multiple properties. While this method could be duplicated using only the <see cref="ITfContext.GetProperty" /> method, the TSF manager can accomplish this task more quickly.</para>
-      <para>The property obtained by this method is a VT_UNKNOWN type. This property can be used to obtain an <see cref="IEnumTfPropertyValue" /> enumerator by calling the <b>QueryInterface</b> method with IID_IEnumTfPropertyValue. This enumerator contains property values specified by <i>prgProp</i> and <i>prgAppProp</i>.</para>
-      <h4>Examples</h4>
-      <code>
-const GUID *rgGuids[2] = {  &amp;amp;amp;amp;amp;amp;GUID_PROP_COMPOSING,
-                            &amp;amp;amp;amp;amp;amp;GUID_PROP_ATTRIBUTE };
-HRESULT hr;
-ITfReadOnlyProperty *pTrackProperty;
-TF_SELECTION sel;
-IEnumTfRanges *pEnumRanges;
-ITfRange *pRangeValue;
-
-// Get the tracking property.
-hr = pContext-&gt;TrackProperties(NULL, 0, rgGuids, 2, &amp;amp;amp;amp;amp;amp;pTrackProperty);
-
-// Get the selection range.
-hr = pContext-&gt;GetSelection(ec, TF_DEFAULT_SELECTION, 1, &amp;amp;amp;amp;amp;amp;sel, &amp;amp;amp;amp;amp;amp;cFetched);
-
-// Use the property from TrackProperties to get an enumeration of the ranges
-// within the selection range that have the same property values.
-hr = pTrackProperty-&gt;EnumRanges(ec, &amp;amp;amp;amp;amp;amp;pEnumRanges, sel.range);
-
-// Enumerate the ranges of text.
-while(pEnumRanges-&gt;Next(1, &amp;amp;amp;amp;amp;amp;pRangeValue, NULL) == S_OK)
-{
-    VARIANT varTrackerValue;
-    TF_PROPERTYVAL tfPropertyVal;
-    IEnumTfPropertyValue *pEnumPropVal;
-
-    // Get the values for this range of text.
-    hr = pTrackProperty-&gt;GetValue(ec, pRangeValue, &amp;amp;amp;amp;amp;amp;varTrackerValue);
-
-    // Because pTrackProperties originates from TrackProperties,
-    // varTrackerValue can be identified as a VT_UNKNOWN/IEnumTfPropertyValue.
-    varTrackerValue.punkVal-&gt;QueryInterface(    IID_IEnumTfPropertyValue,
-                                                (void **)&amp;amp;amp;amp;amp;amp;pEnumPropVal);
-
-    while(pEnumPropVal-&gt;Next(1, &amp;amp;amp;amp;amp;amp;tfPropertyVal, NULL) == S_OK)
-    {
-        BOOL fComposingValue;
-        TfGuidAtom gaDispAttrValue;
-
-        // Is this the composition property?
-        if (IsEqualGUID(tfPropertyVal.guidId, GUID_PROP_COMPOSING))
-        {
-            fComposingValue = (BOOL)tfPropertyVal.varValue.lVal;
-        }
-        // Or is this the attribute property?
-        else if (IsEqualGUID(tfPropertyVal.guidId, GUID_PROP_ATTRIBUTE))
-        {
-            gaDispAttrValue = (TfGuidAtom)tfPropertyVal.varValue.lVal;
-        }
-
-        // Clear the property.
-        VariantClear(&amp;amp;amp;amp;amp;amp;tfPropertyVal.varValue);
-    }
-
-    // Clear the tracker property.
-    VariantClear(&amp;amp;amp;amp;amp;amp;varTrackerValue);
-
-    // Release the property enumerator.
-    pEnumPropVal-&gt;Release();
-
-    // Release the range.
-    pRangeValue-&gt;Release();
-}
-
-// Release the selection range.
-sel.range-&gt;Release();
-
-</code>
-    </remarks>
-    <seealso cref="IEnumTfPropertyValue " />
-    <seealso cref="ITfContext" />
-    <seealso cref="ITfContext.GetProperty " />
-    <seealso cref="ITfReadOnlyProperty " />
   </member>
   <member name="ITfContext">
-    <summary>
-      <para>The <b>ITfContext</b> interface is implemented by the TSF manager and used by applications and text services to access an edit context.</para>
-    </summary>
-    <remarks>
-      <para>An edit context object is created by calling <see cref="ITfDocumentMgr.CreateContext" />. Often, a text service uses the currently active edit context. The currently active edit context is the edit context at the top of the stack of the active document manager.</para>
-      <h4>Examples</h4>
-      <code>
-HRESULT         hr;
-ITfDocumentMgr  *pFocusDoc;
-
-hr = pThreadMgr-&gt;GetFocus(&amp;amp;amp;amp;amp;amp;pFocusDoc);
-if(SUCCEEDED(hr))
-{
-    ITfContext *pContext;
-
-    hr = pFocusDoc-&gt;GetTop(&amp;amp;amp;amp;amp;amp;pContext);
-    if(SUCCEEDED(hr))
-    {
-        //Use the context.
-
-        pContext-&gt;Release();
-    }
-
-    pFocusDoc-&gt;Release();
-}
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/edit-contexts">Edit Contexts</seealso>
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfContext</b> interface is implemented by the TSF manager and used by applications and text services to access an edit context.</summary>
   </member>
 </doc>

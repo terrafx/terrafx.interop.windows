@@ -19,32 +19,4 @@ public static unsafe partial class HTMLObjectElementEventsTests
     {
         Assert.That(typeof(HTMLObjectElementEvents).GUID, Is.EqualTo(IID_HTMLObjectElementEvents));
     }
-
-    /// <summary>Validates that the <see cref="HTMLObjectElementEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLObjectElementEvents>(), Is.EqualTo(sizeof(HTMLObjectElementEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLObjectElementEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLObjectElementEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLObjectElementEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(HTMLObjectElementEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(HTMLObjectElementEvents), Is.EqualTo(4));
-        }
-    }
 }

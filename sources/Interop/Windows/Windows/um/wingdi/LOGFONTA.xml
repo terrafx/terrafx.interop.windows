@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LOGFONTA">
+    <summary>The <b>LOGFONT</b> structure defines the attributes of a font.</summary>
+  </member>
+  <member name="LOGFONTA.lfHeight">
+    <summary>
+      <para>The height, in logical units, of the font's character cell or character. The character height value (also known as the em height) is the character cell height value minus the internal-leading value. The font mapper interprets the value specified in <b>lfHeight</b> in the following manner.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>&gt; 0</description>
+          <description>The font mapper transforms this value into device units and matches it against the cell height of the available fonts.</description>
+        </listheader>
+        <listheader>
+          <description>0</description>
+          <description>The font mapper uses a default height value when it searches for a match.</description>
+        </listheader>
+        <listheader>
+          <description>&lt; 0</description>
+          <description>The font mapper transforms this value into device units and matches its absolute value against the character height of the available fonts.</description>
+        </listheader>
+      </list> <para>For all height comparisons, the font mapper looks for the largest font that does not exceed the requested size.</para><para>This mapping occurs when the font is used for the first time.</para><para>For the MM_TEXT mapping mode, you can use the following formula to specify a height for a font with a specified point size:</para><code>lfHeight = -MulDiv(PointSize, GetDeviceCaps(hDC, LOGPIXELSY), 72);</code></summary>
+  </member>
+  <member name="LOGFONTA.lfWidth">
+    <summary>The average width, in logical units, of characters in the font. If <b>lfWidth</b> is zero, the aspect ratio of the device is matched against the digitization aspect ratio of the available fonts to find the closest match, determined by the absolute value of the difference.</summary>
+  </member>
+  <member name="LOGFONTA.lfEscapement">
+    <summary>
+      <para>The angle, in tenths of degrees, between the escapement vector and the x-axis of the device. The escapement vector is parallel to the base line of a row of text.</para>
+      <para>When the graphics mode is set to GM_ADVANCED, you can specify the escapement angle of the string independently of the orientation angle of the string's characters.</para>
+      <para>When the graphics mode is set to GM_COMPATIBLE, <b>lfEscapement</b> specifies both the escapement and orientation. You should set <b>lfEscapement</b> and <b>lfOrientation</b> to the same value.</para>
+    </summary>
+  </member>
+  <member name="LOGFONTA.lfOrientation">
+    <summary>The angle, in tenths of degrees, between each character's base line and the x-axis of the device.</summary>
+  </member>
+  <member name="LOGFONTA.lfWeight">
+    <summary>
+      <para>The weight of the font in the range 0 through 1000. For example, 400 is normal and 700 is bold. If this value is zero, a default weight is used.</para>
+      <para>The following values are defined for convenience.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Weight</description>
+        </listheader>
+        <listheader>
+          <description>FW_DONTCARE</description>
+          <description>0</description>
+        </listheader>
+        <listheader>
+          <description>FW_THIN</description>
+          <description>100</description>
+        </listheader>
+        <listheader>
+          <description>FW_EXTRALIGHT</description>
+          <description>200</description>
+        </listheader>
+        <listheader>
+          <description>FW_ULTRALIGHT</description>
+          <description>200</description>
+        </listheader>
+        <listheader>
+          <description>FW_LIGHT</description>
+          <description>300</description>
+        </listheader>
+        <listheader>
+          <description>FW_NORMAL</description>
+          <description>400</description>
+        </listheader>
+        <listheader>
+          <description>FW_REGULAR</description>
+          <description>400</description>
+        </listheader>
+        <listheader>
+          <description>FW_MEDIUM</description>
+          <description>500</description>
+        </listheader>
+        <listheader>
+          <description>FW_SEMIBOLD</description>
+          <description>600</description>
+        </listheader>
+        <listheader>
+          <description>FW_DEMIBOLD</description>
+          <description>600</description>
+        </listheader>
+        <listheader>
+          <description>FW_BOLD</description>
+          <description>700</description>
+        </listheader>
+        <listheader>
+          <description>FW_EXTRABOLD</description>
+          <description>800</description>
+        </listheader>
+        <listheader>
+          <description>FW_ULTRABOLD</description>
+          <description>800</description>
+        </listheader>
+        <listheader>
+          <description>FW_HEAVY</description>
+          <description>900</description>
+        </listheader>
+        <listheader>
+          <description>FW_BLACK</description>
+          <description>900</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="LOGFONTA.lfItalic">
+    <summary>An italic font if set to <b>TRUE</b>.</summary>
+  </member>
+  <member name="LOGFONTA.lfUnderline">
+    <summary>An underlined font if set to <b>TRUE</b>.</summary>
+  </member>
+  <member name="LOGFONTA.lfStrikeOut">
+    <summary>A strikeout font if set to <b>TRUE</b>.</summary>
+  </member>
+  <member name="LOGFONTA.lfCharSet">
+    <summary>
+      <para>The character set. The following values are predefined:</para>
+      <list type="bullet">
+        <item>
+          <description>ANSI_CHARSET</description>
+        </item>
+        <item>
+          <description>BALTIC_CHARSET</description>
+        </item>
+        <item>
+          <description>CHINESEBIG5_CHARSET</description>
+        </item>
+        <item>
+          <description>DEFAULT_CHARSET</description>
+        </item>
+        <item>
+          <description>EASTEUROPE_CHARSET</description>
+        </item>
+        <item>
+          <description>GB2312_CHARSET</description>
+        </item>
+        <item>
+          <description>GREEK_CHARSET</description>
+        </item>
+        <item>
+          <description>HANGUL_CHARSET</description>
+        </item>
+        <item>
+          <description>MAC_CHARSET</description>
+        </item>
+        <item>
+          <description>OEM_CHARSET</description>
+        </item>
+        <item>
+          <description>RUSSIAN_CHARSET</description>
+        </item>
+        <item>
+          <description>SHIFTJIS_CHARSET</description>
+        </item>
+        <item>
+          <description>SYMBOL_CHARSET</description>
+        </item>
+        <item>
+          <description>TURKISH_CHARSET</description>
+        </item>
+        <item>
+          <description>VIETNAMESE_CHARSET</description>
+        </item>
+      </list>Korean language edition of Windows: <list type="bullet"><item><description>JOHAB_CHARSET</description></item></list>Middle East language edition of Windows: <list type="bullet"><item><description>ARABIC_CHARSET</description></item><item><description>HEBREW_CHARSET</description></item></list>Thai language edition of Windows: <list type="bullet"><item><description>THAI_CHARSET</description></item></list>The OEM_CHARSET value specifies a character set that is operating-system dependent.<para>DEFAULT_CHARSET is set to a value based on the current system locale. For example, when the system locale is English (United States), it is set as ANSI_CHARSET.</para><para>Fonts with other character sets may exist in the operating system. If an application uses a font with an unknown character set, it should not attempt to translate or interpret strings that are rendered with that font.</para><para>This parameter is important in the font mapping process. To ensure consistent results when creating a font, do not specify OEM_CHARSET or DEFAULT_CHARSET. If you specify a typeface name in the <b>lfFaceName</b> member, make sure that the <b>lfCharSet</b> value matches the character set of the typeface specified in <b>lfFaceName</b>.</para></summary>
+  </member>
+  <member name="LOGFONTA.lfOutPrecision">
+    <summary>
+      <para>The output precision. The output precision defines how closely the output must match the requested font's height, width, character orientation, escapement, pitch, and font type. It can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>OUT_CHARACTER_PRECIS</description>
+          <description>Not used.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_DEFAULT_PRECIS</description>
+          <description>Specifies the default font mapper behavior.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_DEVICE_PRECIS</description>
+          <description>Instructs the font mapper to choose a Device font when the system contains multiple fonts with the same name.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_OUTLINE_PRECIS</description>
+          <description> This value instructs the font mapper to choose from TrueType and other outline-based fonts.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_PS_ONLY_PRECIS</description>
+          <description> Instructs the font mapper to choose from only PostScript fonts. If there are no PostScript fonts installed in the system, the font mapper returns to default behavior.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_RASTER_PRECIS</description>
+          <description>Instructs the font mapper to choose a raster font when the system contains multiple fonts with the same name.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_STRING_PRECIS</description>
+          <description>This value is not used by the font mapper, but it is returned when raster fonts are enumerated.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_STROKE_PRECIS</description>
+          <description> This value is not used by the font mapper, but it is returned when TrueType, other outline-based fonts, and vector fonts are enumerated.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_TT_ONLY_PRECIS</description>
+          <description>Instructs the font mapper to choose from only TrueType fonts. If there are no TrueType fonts installed in the system, the font mapper returns to default behavior.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_TT_PRECIS</description>
+          <description>Instructs the font mapper to choose a TrueType font when the system contains multiple fonts with the same name.</description>
+        </listheader>
+      </list> <para>Applications can use the OUT_DEVICE_PRECIS, OUT_RASTER_PRECIS, OUT_TT_PRECIS, and OUT_PS_ONLY_PRECIS values to control how the font mapper chooses a font when the operating system contains more than one font with a specified name. For example, if an operating system contains a font named Symbol in raster and TrueType form, specifying OUT_TT_PRECIS forces the font mapper to choose the TrueType version. Specifying OUT_TT_ONLY_PRECIS forces the font mapper to choose a TrueType font, even if it must substitute a TrueType font of another name.</para></summary>
+  </member>
+  <member name="LOGFONTA.lfClipPrecision">
+    <summary>
+      <para>The clipping precision. The clipping precision defines how to clip characters that are partially outside the clipping region. It can be one or more of the following values.</para>
+      <para>For more information about the orientation of coordinate systems, see the description of the <i>nOrientation</i> parameter.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_CHARACTER_PRECIS</description>
+          <description>Not used.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_DEFAULT_PRECIS</description>
+          <description>Specifies default clipping behavior.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_DFA_DISABLE</description>
+          <description>
+            <b>Windows XP SP1:</b> Turns off font association for the font. Note that this flag is not guaranteed to have any effect on any platform after Windows Server 2003.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_EMBEDDED</description>
+          <description>You must specify this flag to use an embedded read-only font.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_LH_ANGLES</description>
+          <description>When this value is used, the rotation for all fonts depends on whether the orientation of the coordinate system is left-handed or right-handed.If not used, device fonts always rotate counterclockwise, but the rotation of other fonts is dependent on the orientation of the coordinate system.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_MASK</description>
+          <description>Not used.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_DFA_OVERRIDE</description>
+          <description> Turns off font association for the font. This is identical to CLIP_DFA_DISABLE, but it can have problems in some situations; the recommended flag to use is CLIP_DFA_DISABLE.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_STROKE_PRECIS</description>
+          <description>Not used by the font mapper, but is returned when raster, vector, or TrueType fonts are enumerated. For compatibility, this value is always returned when enumerating fonts.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_TT_ALWAYS</description>
+          <description>Not used.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="LOGFONTA.lfQuality">
+    <summary>
+      <para>The output quality. The output quality defines how carefully the graphics device interface (GDI) must attempt to match the logical-font attributes to those of an actual physical font. It can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>ANTIALIASED_QUALITY</description>
+          <description> Font is always antialiased if the font supports it and the size of the font is not too small or too large.</description>
+        </listheader>
+        <listheader>
+          <description>CLEARTYPE_QUALITY</description>
+          <description> If set, text is rendered (when possible) using ClearType antialiasing method. See Remarks for more information.</description>
+        </listheader>
+        <listheader>
+          <description>DEFAULT_QUALITY</description>
+          <description>Appearance of the font does not matter.</description>
+        </listheader>
+        <listheader>
+          <description>DRAFT_QUALITY</description>
+          <description>Appearance of the font is less important than when PROOF_QUALITY is used. For GDI raster fonts, scaling is enabled, which means that more font sizes are available, but the quality may be lower. Bold, italic, underline, and strikeout fonts are synthesized if necessary.</description>
+        </listheader>
+        <listheader>
+          <description>NONANTIALIASED_QUALITY</description>
+          <description> Font is never antialiased.</description>
+        </listheader>
+        <listheader>
+          <description>PROOF_QUALITY</description>
+          <description>Character quality of the font is more important than exact matching of the logical-font attributes. For GDI raster fonts, scaling is disabled and the font closest in size is chosen. Although the chosen font size may not be mapped exactly when PROOF_QUALITY is used, the quality of the font is high and there is no distortion of appearance. Bold, italic, underline, and strikeout fonts are synthesized if necessary.</description>
+        </listheader>
+      </list> <para>If neither ANTIALIASED_QUALITY nor NONANTIALIASED_QUALITY is selected, the font is antialiased only if the user chooses smooth screen fonts in Control Panel.</para></summary>
+  </member>
+  <member name="LOGFONTA.lfPitchAndFamily">
+    <summary>
+      <para>The pitch and family of the font. The two low-order bits specify the pitch of the font and can be one of the following values.</para>
+      <list type="bullet">
+        <item>
+          <description>DEFAULT_PITCH</description>
+        </item>
+        <item>
+          <description>FIXED_PITCH</description>
+        </item>
+        <item>
+          <description>VARIABLE_PITCH</description>
+        </item>
+      </list>Bits 4 through 7 of the member specify the font family and can be one of the following values.<list type="bullet"><item><description>FF_DECORATIVE</description></item><item><description>FF_DONTCARE</description></item><item><description>FF_MODERN</description></item><item><description>FF_ROMAN</description></item><item><description>FF_SCRIPT</description></item><item><description>FF_SWISS</description></item></list>The proper value can be obtained by using the Boolean OR operator to join one pitch constant with one family constant.<para>Font families describe the look of a font in a general way. They are intended for specifying fonts when the exact typeface desired is not available. The values for font families are as follows.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description>FF_DECORATIVE</description><description>Novelty fonts. Old English is an example.</description></listheader><listheader><description>FF_DONTCARE</description><description>Use default font.</description></listheader><listheader><description>FF_MODERN</description><description>Fonts with constant stroke width (monospace), with or without serifs. Monospace fonts are usually modern. Pica, Elite, and CourierNew are examples.</description></listheader><listheader><description>FF_ROMAN</description><description>Fonts with variable stroke width (proportional) and with serifs. MS Serif is an example.</description></listheader><listheader><description>FF_SCRIPT</description><description>Fonts designed to look like handwriting. Script and Cursive are examples.</description></listheader><listheader><description>FF_SWISS</description><description>Fonts with variable stroke width (proportional) and without serifs. MS Sans Serif is an example.</description></listheader></list></summary>
+  </member>
+  <member name="LOGFONTA.lfFaceName">
+    <summary>A null-terminated string that specifies the typeface name of the font. The length of this string must not exceed 32 <b>TCHAR</b> values, including the terminating <b>NULL</b>. The <see cref="EnumFontFamiliesEx" /> function can be used to enumerate the typeface names of all currently available fonts. If <b>lfFaceName</b> is an empty string, GDI uses the first font that matches the other specified attributes.</summary>
+  </member>
+  <member name="LOGFONTA">
+    <summary>The <b>LOGFONT</b> structure defines the attributes of a font.</summary>
+  </member>
+  <member name="LOGFONTA.lfHeight">
+    <summary>
+      <para>The height, in logical units, of the font's character cell or character. The character height value (also known as the em height) is the character cell height value minus the internal-leading value. The font mapper interprets the value specified in <b>lfHeight</b> in the following manner.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>&gt; 0</description>
+          <description>The font mapper transforms this value into device units and matches it against the cell height of the available fonts.</description>
+        </listheader>
+        <listheader>
+          <description>0</description>
+          <description>The font mapper uses a default height value when it searches for a match.</description>
+        </listheader>
+        <listheader>
+          <description>&lt; 0</description>
+          <description>The font mapper transforms this value into device units and matches its absolute value against the character height of the available fonts.</description>
+        </listheader>
+      </list> <para>For all height comparisons, the font mapper looks for the largest font that does not exceed the requested size.</para><para>This mapping occurs when the font is used for the first time.</para><para>For the MM_TEXT mapping mode, you can use the following formula to specify a height for a font with a specified point size:</para><code>lfHeight = -MulDiv(PointSize, GetDeviceCaps(hDC, LOGPIXELSY), 72);</code></summary>
+  </member>
+  <member name="LOGFONTA.lfWidth">
+    <summary>The average width, in logical units, of characters in the font. If <b>lfWidth</b> is zero, the aspect ratio of the device is matched against the digitization aspect ratio of the available fonts to find the closest match, determined by the absolute value of the difference.</summary>
+  </member>
+  <member name="LOGFONTA.lfEscapement">
+    <summary>
+      <para>The angle, in tenths of degrees, between the escapement vector and the x-axis of the device. The escapement vector is parallel to the base line of a row of text.</para>
+      <para>When the graphics mode is set to GM_ADVANCED, you can specify the escapement angle of the string independently of the orientation angle of the string's characters.</para>
+      <para>When the graphics mode is set to GM_COMPATIBLE, <b>lfEscapement</b> specifies both the escapement and orientation. You should set <b>lfEscapement</b> and <b>lfOrientation</b> to the same value.</para>
+    </summary>
+  </member>
+  <member name="LOGFONTA.lfOrientation">
+    <summary>The angle, in tenths of degrees, between each character's base line and the x-axis of the device.</summary>
+  </member>
+  <member name="LOGFONTA.lfWeight">
+    <summary>
+      <para>The weight of the font in the range 0 through 1000. For example, 400 is normal and 700 is bold. If this value is zero, a default weight is used.</para>
+      <para>The following values are defined for convenience.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Weight</description>
+        </listheader>
+        <listheader>
+          <description>FW_DONTCARE</description>
+          <description>0</description>
+        </listheader>
+        <listheader>
+          <description>FW_THIN</description>
+          <description>100</description>
+        </listheader>
+        <listheader>
+          <description>FW_EXTRALIGHT</description>
+          <description>200</description>
+        </listheader>
+        <listheader>
+          <description>FW_ULTRALIGHT</description>
+          <description>200</description>
+        </listheader>
+        <listheader>
+          <description>FW_LIGHT</description>
+          <description>300</description>
+        </listheader>
+        <listheader>
+          <description>FW_NORMAL</description>
+          <description>400</description>
+        </listheader>
+        <listheader>
+          <description>FW_REGULAR</description>
+          <description>400</description>
+        </listheader>
+        <listheader>
+          <description>FW_MEDIUM</description>
+          <description>500</description>
+        </listheader>
+        <listheader>
+          <description>FW_SEMIBOLD</description>
+          <description>600</description>
+        </listheader>
+        <listheader>
+          <description>FW_DEMIBOLD</description>
+          <description>600</description>
+        </listheader>
+        <listheader>
+          <description>FW_BOLD</description>
+          <description>700</description>
+        </listheader>
+        <listheader>
+          <description>FW_EXTRABOLD</description>
+          <description>800</description>
+        </listheader>
+        <listheader>
+          <description>FW_ULTRABOLD</description>
+          <description>800</description>
+        </listheader>
+        <listheader>
+          <description>FW_HEAVY</description>
+          <description>900</description>
+        </listheader>
+        <listheader>
+          <description>FW_BLACK</description>
+          <description>900</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="LOGFONTA.lfItalic">
+    <summary>An italic font if set to <b>TRUE</b>.</summary>
+  </member>
+  <member name="LOGFONTA.lfUnderline">
+    <summary>An underlined font if set to <b>TRUE</b>.</summary>
+  </member>
+  <member name="LOGFONTA.lfStrikeOut">
+    <summary>A strikeout font if set to <b>TRUE</b>.</summary>
+  </member>
+  <member name="LOGFONTA.lfCharSet">
+    <summary>
+      <para>The character set. The following values are predefined:</para>
+      <list type="bullet">
+        <item>
+          <description>ANSI_CHARSET</description>
+        </item>
+        <item>
+          <description>BALTIC_CHARSET</description>
+        </item>
+        <item>
+          <description>CHINESEBIG5_CHARSET</description>
+        </item>
+        <item>
+          <description>DEFAULT_CHARSET</description>
+        </item>
+        <item>
+          <description>EASTEUROPE_CHARSET</description>
+        </item>
+        <item>
+          <description>GB2312_CHARSET</description>
+        </item>
+        <item>
+          <description>GREEK_CHARSET</description>
+        </item>
+        <item>
+          <description>HANGUL_CHARSET</description>
+        </item>
+        <item>
+          <description>MAC_CHARSET</description>
+        </item>
+        <item>
+          <description>OEM_CHARSET</description>
+        </item>
+        <item>
+          <description>RUSSIAN_CHARSET</description>
+        </item>
+        <item>
+          <description>SHIFTJIS_CHARSET</description>
+        </item>
+        <item>
+          <description>SYMBOL_CHARSET</description>
+        </item>
+        <item>
+          <description>TURKISH_CHARSET</description>
+        </item>
+        <item>
+          <description>VIETNAMESE_CHARSET</description>
+        </item>
+      </list>Korean language edition of Windows: <list type="bullet"><item><description>JOHAB_CHARSET</description></item></list>Middle East language edition of Windows: <list type="bullet"><item><description>ARABIC_CHARSET</description></item><item><description>HEBREW_CHARSET</description></item></list>Thai language edition of Windows: <list type="bullet"><item><description>THAI_CHARSET</description></item></list>The OEM_CHARSET value specifies a character set that is operating-system dependent.<para>DEFAULT_CHARSET is set to a value based on the current system locale. For example, when the system locale is English (United States), it is set as ANSI_CHARSET.</para><para>Fonts with other character sets may exist in the operating system. If an application uses a font with an unknown character set, it should not attempt to translate or interpret strings that are rendered with that font.</para><para>This parameter is important in the font mapping process. To ensure consistent results when creating a font, do not specify OEM_CHARSET or DEFAULT_CHARSET. If you specify a typeface name in the <b>lfFaceName</b> member, make sure that the <b>lfCharSet</b> value matches the character set of the typeface specified in <b>lfFaceName</b>.</para></summary>
+  </member>
+  <member name="LOGFONTA.lfOutPrecision">
+    <summary>
+      <para>The output precision. The output precision defines how closely the output must match the requested font's height, width, character orientation, escapement, pitch, and font type. It can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>OUT_CHARACTER_PRECIS</description>
+          <description>Not used.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_DEFAULT_PRECIS</description>
+          <description>Specifies the default font mapper behavior.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_DEVICE_PRECIS</description>
+          <description>Instructs the font mapper to choose a Device font when the system contains multiple fonts with the same name.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_OUTLINE_PRECIS</description>
+          <description> This value instructs the font mapper to choose from TrueType and other outline-based fonts.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_PS_ONLY_PRECIS</description>
+          <description> Instructs the font mapper to choose from only PostScript fonts. If there are no PostScript fonts installed in the system, the font mapper returns to default behavior.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_RASTER_PRECIS</description>
+          <description>Instructs the font mapper to choose a raster font when the system contains multiple fonts with the same name.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_STRING_PRECIS</description>
+          <description>This value is not used by the font mapper, but it is returned when raster fonts are enumerated.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_STROKE_PRECIS</description>
+          <description> This value is not used by the font mapper, but it is returned when TrueType, other outline-based fonts, and vector fonts are enumerated.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_TT_ONLY_PRECIS</description>
+          <description>Instructs the font mapper to choose from only TrueType fonts. If there are no TrueType fonts installed in the system, the font mapper returns to default behavior.</description>
+        </listheader>
+        <listheader>
+          <description>OUT_TT_PRECIS</description>
+          <description>Instructs the font mapper to choose a TrueType font when the system contains multiple fonts with the same name.</description>
+        </listheader>
+      </list> <para>Applications can use the OUT_DEVICE_PRECIS, OUT_RASTER_PRECIS, OUT_TT_PRECIS, and OUT_PS_ONLY_PRECIS values to control how the font mapper chooses a font when the operating system contains more than one font with a specified name. For example, if an operating system contains a font named Symbol in raster and TrueType form, specifying OUT_TT_PRECIS forces the font mapper to choose the TrueType version. Specifying OUT_TT_ONLY_PRECIS forces the font mapper to choose a TrueType font, even if it must substitute a TrueType font of another name.</para></summary>
+  </member>
+  <member name="LOGFONTA.lfClipPrecision">
+    <summary>
+      <para>The clipping precision. The clipping precision defines how to clip characters that are partially outside the clipping region. It can be one or more of the following values.</para>
+      <para>For more information about the orientation of coordinate systems, see the description of the <i>nOrientation</i> parameter.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_CHARACTER_PRECIS</description>
+          <description>Not used.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_DEFAULT_PRECIS</description>
+          <description>Specifies default clipping behavior.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_DFA_DISABLE</description>
+          <description>
+            <b>Windows XP SP1:</b> Turns off font association for the font. Note that this flag is not guaranteed to have any effect on any platform after Windows Server 2003.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_EMBEDDED</description>
+          <description>You must specify this flag to use an embedded read-only font.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_LH_ANGLES</description>
+          <description>When this value is used, the rotation for all fonts depends on whether the orientation of the coordinate system is left-handed or right-handed.If not used, device fonts always rotate counterclockwise, but the rotation of other fonts is dependent on the orientation of the coordinate system.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_MASK</description>
+          <description>Not used.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_DFA_OVERRIDE</description>
+          <description> Turns off font association for the font. This is identical to CLIP_DFA_DISABLE, but it can have problems in some situations; the recommended flag to use is CLIP_DFA_DISABLE.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_STROKE_PRECIS</description>
+          <description>Not used by the font mapper, but is returned when raster, vector, or TrueType fonts are enumerated. For compatibility, this value is always returned when enumerating fonts.</description>
+        </listheader>
+        <listheader>
+          <description>CLIP_TT_ALWAYS</description>
+          <description>Not used.</description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="LOGFONTA.lfQuality">
+    <summary>
+      <para>The output quality. The output quality defines how carefully the graphics device interface (GDI) must attempt to match the logical-font attributes to those of an actual physical font. It can be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>ANTIALIASED_QUALITY</description>
+          <description> Font is always antialiased if the font supports it and the size of the font is not too small or too large.</description>
+        </listheader>
+        <listheader>
+          <description>CLEARTYPE_QUALITY</description>
+          <description> If set, text is rendered (when possible) using ClearType antialiasing method. See Remarks for more information.</description>
+        </listheader>
+        <listheader>
+          <description>DEFAULT_QUALITY</description>
+          <description>Appearance of the font does not matter.</description>
+        </listheader>
+        <listheader>
+          <description>DRAFT_QUALITY</description>
+          <description>Appearance of the font is less important than when PROOF_QUALITY is used. For GDI raster fonts, scaling is enabled, which means that more font sizes are available, but the quality may be lower. Bold, italic, underline, and strikeout fonts are synthesized if necessary.</description>
+        </listheader>
+        <listheader>
+          <description>NONANTIALIASED_QUALITY</description>
+          <description> Font is never antialiased.</description>
+        </listheader>
+        <listheader>
+          <description>PROOF_QUALITY</description>
+          <description>Character quality of the font is more important than exact matching of the logical-font attributes. For GDI raster fonts, scaling is disabled and the font closest in size is chosen. Although the chosen font size may not be mapped exactly when PROOF_QUALITY is used, the quality of the font is high and there is no distortion of appearance. Bold, italic, underline, and strikeout fonts are synthesized if necessary.</description>
+        </listheader>
+      </list> <para>If neither ANTIALIASED_QUALITY nor NONANTIALIASED_QUALITY is selected, the font is antialiased only if the user chooses smooth screen fonts in Control Panel.</para></summary>
+  </member>
+  <member name="LOGFONTA.lfPitchAndFamily">
+    <summary>
+      <para>The pitch and family of the font. The two low-order bits specify the pitch of the font and can be one of the following values.</para>
+      <list type="bullet">
+        <item>
+          <description>DEFAULT_PITCH</description>
+        </item>
+        <item>
+          <description>FIXED_PITCH</description>
+        </item>
+        <item>
+          <description>VARIABLE_PITCH</description>
+        </item>
+      </list>Bits 4 through 7 of the member specify the font family and can be one of the following values.<list type="bullet"><item><description>FF_DECORATIVE</description></item><item><description>FF_DONTCARE</description></item><item><description>FF_MODERN</description></item><item><description>FF_ROMAN</description></item><item><description>FF_SCRIPT</description></item><item><description>FF_SWISS</description></item></list>The proper value can be obtained by using the bitwise OR (|) operator to join one pitch constant with one family constant.<para>Font families describe the look of a font in a general way. They are intended for specifying fonts when the exact typeface desired is not available. The values for font families are as follows.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description>FF_DECORATIVE</description><description>Novelty fonts. Old English is an example.</description></listheader><listheader><description>FF_DONTCARE</description><description>Use default font.</description></listheader><listheader><description>FF_MODERN</description><description>Fonts with constant stroke width (monospace), with or without serifs. Monospace fonts are usually modern. Pica, Elite, and CourierNew are examples.</description></listheader><listheader><description>FF_ROMAN</description><description>Fonts with variable stroke width (proportional) and with serifs. MS Serif is an example.</description></listheader><listheader><description>FF_SCRIPT</description><description>Fonts designed to look like handwriting. Script and Cursive are examples.</description></listheader><listheader><description>FF_SWISS</description><description>Fonts with variable stroke width (proportional) and without serifs. MS Sans Serif is an example.</description></listheader></list></summary>
+  </member>
+  <member name="LOGFONTA.lfFaceName">
+    <summary>A null-terminated string that specifies the typeface name of the font. The length of this string must not exceed 32 <b>TCHAR</b> values, including the terminating <b>NULL</b>. The <see cref="EnumFontFamiliesEx" /> function can be used to enumerate the typeface names of all currently available fonts. If <b>lfFaceName</b> is an empty string, GDI uses the first font that matches the other specified attributes.</summary>
+  </member>
+</doc>

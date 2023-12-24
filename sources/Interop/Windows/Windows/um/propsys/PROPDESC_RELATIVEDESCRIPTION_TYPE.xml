@@ -3,66 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE">
-    <summary>
-      <para>Describes the relative description type for a property description, as determined by the <i>relativeDescriptionType</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a> element.</para>
-    </summary>
-    <remarks>
-      <para>These values are defined in propsys.h and propsys.idl.</para>
-    </remarks>
+    <summary>Describes the relative description type for a property description, as determined by the <i>relativeDescriptionType</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a> element.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_GENERAL">
-    <summary>
-      <para>General type.</para>
-    </summary>
+    <summary>General type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_DATE">
-    <summary>
-      <para>Date type.</para>
-    </summary>
+    <summary>Date type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_SIZE">
-    <summary>
-      <para>Size type.</para>
-    </summary>
+    <summary>Size type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_COUNT">
-    <summary>
-      <para>Count type.</para>
-    </summary>
+    <summary>Count type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_REVISION">
-    <summary>
-      <para>Revision type.</para>
-    </summary>
+    <summary>Revision type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_LENGTH">
-    <summary>
-      <para>Length type.</para>
-    </summary>
+    <summary>Length type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_DURATION">
-    <summary>
-      <para>Duration type.</para>
-    </summary>
+    <summary>Duration type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_SPEED">
-    <summary>
-      <para>Speed type.</para>
-    </summary>
+    <summary>Speed type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_RATE">
-    <summary>
-      <para>Rate type.</para>
-    </summary>
+    <summary>Rate type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_RATING">
-    <summary>
-      <para>Rating type.</para>
-    </summary>
+    <summary>Rating type.</summary>
   </member>
   <member name="PROPDESC_RELATIVEDESCRIPTION_TYPE.PDRDT_PRIORITY">
-    <summary>
-      <para>Priority type.</para>
-    </summary>
+    <summary>Priority type.</summary>
   </member>
 </doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAGS">
+    <summary>Specifies whether a video decode conversion operation is supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAGS.D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAG_NONE">
+    <summary>The video decode conversion operation isn't supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAGS.D3D12_VIDEO_DECODE_CONVERSION_SUPPORT_FLAG_SUPPORTED">
+    <summary>The video decode conversion operation is supported.</summary>
+  </member>
+</doc>

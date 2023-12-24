@@ -3187,6 +3187,30 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_NOT_SUPPORTED_WITH_CACHED_HANDLE ((NTSTATUS)0xC00004D5L)")]
     public const int STATUS_NOT_SUPPORTED_WITH_CACHED_HANDLE = unchecked((int)(0xC00004D5));
 
+    [NativeTypeName("#define STATUS_VOLUME_UPGRADE_NOT_NEEDED ((NTSTATUS)0xC00004D9L)")]
+    public const int STATUS_VOLUME_UPGRADE_NOT_NEEDED = unchecked((int)(0xC00004D9));
+
+    [NativeTypeName("#define STATUS_VOLUME_UPGRADE_PENDING ((NTSTATUS)0xC00004DAL)")]
+    public const int STATUS_VOLUME_UPGRADE_PENDING = unchecked((int)(0xC00004DA));
+
+    [NativeTypeName("#define STATUS_VOLUME_UPGRADE_DISABLED ((NTSTATUS)0xC00004DBL)")]
+    public const int STATUS_VOLUME_UPGRADE_DISABLED = unchecked((int)(0xC00004DB));
+
+    [NativeTypeName("#define STATUS_VOLUME_UPGRADE_DISABLED_TILL_OS_DOWNGRADE_EXPIRED ((NTSTATUS)0xC00004DCL)")]
+    public const int STATUS_VOLUME_UPGRADE_DISABLED_TILL_OS_DOWNGRADE_EXPIRED = unchecked((int)(0xC00004DC));
+
+    [NativeTypeName("#define STATUS_NOT_A_DEV_VOLUME ((NTSTATUS)0xC00004DDL)")]
+    public const int STATUS_NOT_A_DEV_VOLUME = unchecked((int)(0xC00004DD));
+
+    [NativeTypeName("#define STATUS_FS_GUID_MISMATCH ((NTSTATUS)0xC00004DEL)")]
+    public const int STATUS_FS_GUID_MISMATCH = unchecked((int)(0xC00004DE));
+
+    [NativeTypeName("#define STATUS_CANT_ATTACH_TO_DEV_VOLUME ((NTSTATUS)0xC00004DFL)")]
+    public const int STATUS_CANT_ATTACH_TO_DEV_VOLUME = unchecked((int)(0xC00004DF));
+
+    [NativeTypeName("#define STATUS_INVALID_CONFIG_VALUE ((NTSTATUS)0xC00004E0L)")]
+    public const int STATUS_INVALID_CONFIG_VALUE = unchecked((int)(0xC00004E0));
+
     [NativeTypeName("#define STATUS_INVALID_TASK_NAME ((NTSTATUS)0xC0000500L)")]
     public const int STATUS_INVALID_TASK_NAME = unchecked((int)(0xC0000500));
 
@@ -3630,6 +3654,18 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED ((NTSTATUS)0xC000A08AL)")]
     public const int STATUS_LOCAL_POLICY_MODIFICATION_NOT_SUPPORTED = unchecked((int)(0xC000A08A));
+
+    [NativeTypeName("#define STATUS_POLICY_CONTROLLED_ACCOUNT ((NTSTATUS)0xC000A08BL)")]
+    public const int STATUS_POLICY_CONTROLLED_ACCOUNT = unchecked((int)(0xC000A08B));
+
+    [NativeTypeName("#define STATUS_LAPS_LEGACY_SCHEMA_MISSING ((NTSTATUS)0xC000A08CL)")]
+    public const int STATUS_LAPS_LEGACY_SCHEMA_MISSING = unchecked((int)(0xC000A08C));
+
+    [NativeTypeName("#define STATUS_LAPS_SCHEMA_MISSING ((NTSTATUS)0xC000A08DL)")]
+    public const int STATUS_LAPS_SCHEMA_MISSING = unchecked((int)(0xC000A08D));
+
+    [NativeTypeName("#define STATUS_LAPS_ENCRYPTION_REQUIRES_2016_DFL ((NTSTATUS)0xC000A08EL)")]
+    public const int STATUS_LAPS_ENCRYPTION_REQUIRES_2016_DFL = unchecked((int)(0xC000A08E));
 
     [NativeTypeName("#define STATUS_HASH_NOT_SUPPORTED ((NTSTATUS)0xC000A100L)")]
     public const int STATUS_HASH_NOT_SUPPORTED = unchecked((int)(0xC000A100));
@@ -7462,6 +7498,9 @@ public static partial class STATUS
     [NativeTypeName("#define STATUS_VHD_ALREADY_AT_OR_BELOW_MINIMUM_VIRTUAL_SIZE ((NTSTATUS)0xC03A0033L)")]
     public const int STATUS_VHD_ALREADY_AT_OR_BELOW_MINIMUM_VIRTUAL_SIZE = unchecked((int)(0xC03A0033));
 
+    [NativeTypeName("#define STATUS_VHD_UNEXPECTED_ID ((NTSTATUS)0xC03A0034L)")]
+    public const int STATUS_VHD_UNEXPECTED_ID = unchecked((int)(0xC03A0034));
+
     [NativeTypeName("#define STATUS_QUERY_STORAGE_ERROR ((NTSTATUS)0x803A0001L)")]
     public const int STATUS_QUERY_STORAGE_ERROR = unchecked((int)(0x803A0001));
 
@@ -7656,6 +7695,9 @@ public static partial class STATUS
 
     [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_UNATTAINABLE ((NTSTATUS)0xC0E9000CL)")]
     public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_UNATTAINABLE = unchecked((int)(0xC0E9000C));
+
+    [NativeTypeName("#define STATUS_SYSTEM_INTEGRITY_REPUTATION_EXPLICIT_DENY_FILE ((NTSTATUS)0xC0E9000DL)")]
+    public const int STATUS_SYSTEM_INTEGRITY_REPUTATION_EXPLICIT_DENY_FILE = unchecked((int)(0xC0E9000D));
 
     [NativeTypeName("#define STATUS_NO_APPLICABLE_APP_LICENSES_FOUND ((NTSTATUS)0xC0EA0001L)")]
     public const int STATUS_NO_APPLICABLE_APP_LICENSES_FOUND = unchecked((int)(0xC0EA0001));

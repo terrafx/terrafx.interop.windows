@@ -3,16 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_FEATURE_DATA_DOUBLES">
-    <summary>
-      <para>Describes the support for doubles in shaders.</para>
-    </summary>
-    <remarks>
-      <para>Fill this structure by passing a D2D1_FEATURE_DOUBLES structure to <see cref="ID2D1EffectContext.CheckFeatureSupport" />.</para>
-    </remarks>
+    <summary>Describes the support for doubles in shaders.</summary>
   </member>
   <member name="D2D1_FEATURE_DATA_DOUBLES.doublePrecisionFloatShaderOps">
-    <summary>
-      <para>TRUE is doubles are supported within the shaders.</para>
-    </summary>
+    <summary>TRUE is doubles are supported within the shaders.</summary>
   </member>
 </doc>

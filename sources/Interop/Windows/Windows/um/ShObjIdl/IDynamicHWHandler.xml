@@ -3,48 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDynamicHWHandler.GetDynamicInfo">
-    <summary>
-      <para>Called by the system to determine whether a particular handler will be shown before the AutoPlay dialog is displayed.</para>
-    </summary>
-    <param name="pszDeviceID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a string that indicates the device path or drive root.</para>
-    </param>
-    <param name="dwContentType">
-      <para>Type: <b>DWORD</b></para>
-      <para>The content type.</para>
-    </param>
-    <param name="ppszAction">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>A pointer to the new action string, or <b>NULL</b> if the default action string is to be used.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if this handler is to be displayed, S_FALSE if it is to be hidden, or an error value otherwise.</para>
-    </returns>
-    <remarks>
-      <para>To register a dynamic handler, add a REG_SZ named "DynamicHWHandlerCLSID" and assign it the CLSID of your IDynamicHWHandler implementation.</para>
-      <para>Example:</para>
-      <code>
-        <b>HKLM</b>
-        <b>Software</b>
-        <b>Microsoft</b>
-        <b>Windows</b>
-        <b>CurrentVersion</b>
-        <b>Explorer</b>
-        <b>AutoplayHandlers</b>
-        <b>Handlers</b>
-        <b>YourHandler</b>
-        <b>DynamicHWHandlerCLSID</b> = [REG_SZ] {xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}</code>
-    </remarks>
+    <summary>Called by the system to determine whether a particular handler will be shown before the AutoPlay dialog is displayed.</summary>
+    <param name="pszDeviceID">A pointer to a string that indicates the device path or drive root.</param>
+    <param name="dwContentType">The content type.</param>
+    <param name="ppszAction">A pointer to the new action string, or <b>NULL</b> if the default action string is to be used.</param>
+    <returns>Returns S_OK if this handler is to be displayed, S_FALSE if it is to be hidden, or an error value otherwise.</returns>
   </member>
   <member name="IDynamicHWHandler">
-    <summary>
-      <para>Called by AutoPlay. Exposes methods that get dynamic information regarding a registered handler prior to displaying it to the user.</para>
-    </summary>
-    <remarks>
-      <para>Prior to this interface, when an application registered a handler and was displayed in the autoplay prompt, the handler was always shown as long as the content type (for example, mp3 or avi) associated with that handler was found on the media device. The same icon and action string were always displayed.</para>
-      <para>If a handler implements this interface prior to showing the handler,  AutoPlay will first call <see cref="IDynamicHWHandler.GetDynamicInfo" /> to determine if this handler is to be presented to the user. If you want to show the handler, you may specify a different action string than the one supplied by the static handler registration under <b>HKLM</b>.</para>
-    </remarks>
+    <summary>Called by AutoPlay. Exposes methods that get dynamic information regarding a registered handler prior to displaying it to the user.</summary>
   </member>
 </doc>

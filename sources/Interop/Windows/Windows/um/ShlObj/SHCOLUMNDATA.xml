@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SHCOLUMNDATA">
-    <summary>
-      <para>Contains information that identifies a particular file. It is used by <see cref="IColumnProvider.GetItemData" /> when requesting data for a particular file.</para>
-    </summary>
-    <seealso cref="GetFileAttributes" />
+    <summary>Contains information that identifies a particular file. It is used by <see cref="IColumnProvider.GetItemData" /> when requesting data for a particular file.</summary>
   </member>
   <member name="SHCOLUMNDATA.dwFlags">
     <summary>
-      <para>Type: <b>ULONG</b></para>
       <para>Flags used to specify the nature of the request.</para>
       <h4>SHCDF_UPDATEITEM</h4>
       <para>The file specified by <b>wszFile</b> is a new file or a file that has changed since the last call to <see cref="IColumnProvider.GetItemData" />. Any cached data should be flushed and recalculated. Column handlers that do not cache data, or that display data that is stored separately from the file, can ignore this flag.</para>
@@ -18,7 +14,6 @@
   </member>
   <member name="SHCOLUMNDATA.dwFileAttributes">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>File attribute flags. It will be one or more of the following values.</para>
       <h4>FILE_ATTRIBUTE_ARCHIVE</h4>
       <para>The file or directory is an archive file or directory. Applications use this attribute to mark files for backup or removal.</para>
@@ -47,21 +42,12 @@
     </summary>
   </member>
   <member name="SHCOLUMNDATA.dwReserved">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>Reserved. Set to <b>NULL</b>.</para>
-    </summary>
+    <summary>Reserved. Set to <b>NULL</b>.</summary>
   </member>
   <member name="SHCOLUMNDATA.pwszExt">
-    <summary>
-      <para>Type: <b>WCHAR*</b></para>
-      <para>A pointer to a null-terminated Unicode string with a file name extension.</para>
-    </summary>
+    <summary>A pointer to a null-terminated Unicode string with a file name extension.</summary>
   </member>
   <member name="SHCOLUMNDATA.wszFile">
-    <summary>
-      <para>Type: <b>WCHAR[MAX_PATH]</b></para>
-      <para>A null-terminated Unicode string containing a fully qualified file path.</para>
-    </summary>
+    <summary>A null-terminated Unicode string containing a fully qualified file path.</summary>
   </member>
 </doc>

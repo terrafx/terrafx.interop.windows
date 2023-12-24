@@ -3,214 +3,67 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IUIAnimationInterpolator2.GetDependencies">
-    <summary>
-      <para>For the given dimension, <b>GetDependencies</b> retrieves the aspects of the interpolator that depend on the initial value or velocity that is passed to the <see cref="IUIAnimationInterpolator2.SetInitialValueAndVelocity" /> method or the duration that is passed to the <see cref="IUIAnimationInterpolator2.SetDuration" /> method.</para>
-    </summary>
-    <param name="initialValueDependencies">
-      <para>Aspects of the interpolator that depend on the  initial value passed to <see cref="SetInitialValueAndVelocity" />.</para>
-    </param>
-    <param name="initialVelocityDependencies">
-      <para>Aspects of the interpolator that depend on the initial velocity passed to <see cref="SetInitialValueAndVelocity" />.</para>
-    </param>
-    <param name="durationDependencies">
-      <para>Aspects of the interpolator that depend on the duration passed to <see cref="SetDuration" />.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>This method is called to identify which aspects of the custom interpolator are affected by certain inputs: value, velocity, and duration. For each of these inputs, the interpolator returns either of the following:</para>
-      <list type="bullet">
-        <item>
-          <description>The bitwise-OR of any members of <see cref="UI_ANIMATION_DEPENDENCIES" /> that apply.</description>
-        </item>
-        <item>
-          <description>
-            <b>UI_ANIMATION_DEPENDENCY_NONE</b> if nothing depends on the input.</description>
-        </item>
-      </list>
-      <para>For example, consider an interpolator that:</para>
-      <list type="bullet">
-        <item>
-          <description>Accepts a final value as a parameter.</description>
-        </item>
-        <item>
-          <description>Always comes to a gradual stop at that final value.</description>
-        </item>
-        <item>
-          <description>Has a duration determined by the difference between the final value and the initial value.</description>
-        </item>
-      </list>
-      <para>In this case the interpolator should return <b>UI_ANIMATION_DEPENDENCY_INTERMEDIATE_VALUES</b>|<b>UI_ANIMATION_DURATION</b> for the <i>initialValueDependencies</i> parameter.  It should not return <b>UI_ANIMATION_DEPENDENCY_FINAL_VALUE</b>, because this value is set when the interpolator is created and is not affected by the initial value. Likewise, the interpolator should not return <b>UI_ANIMATION_DEPENDENCY_FINAL_VELOCITY</b>, because the slope of the curve is defined to always be zero when it reaches the final value.</para>
-      <para>It is important that an interpolator return a correct set of flags. If a flag is not present for an output, Windows Animation assumes that the corresponding parameter does not affect that aspect of the interpolator's results.  For example, if the custom interpolator does not include <b>UI_ANIMATION_DEPENDENCY_FINAL_VALUE</b> for <i>initialVelocityDependencies</i>, Windows Animation may call <see cref="SetInitialValueAndVelocity" /> with an arbitrary velocity parameter, and then call <see cref="GetFinalValue" /> to determine the final value.  The interpolator's implementation of <b>GetFinalValue</b> must return the same result no matter which velocity parameter has been passed to <b>SetInitialValueAndVelocity</b>, because the interpolator has claimed that the transition's final value does not depend on the initial velocity.</para>
-      <para>
-        <b>Note</b>  If the flags returned for <i>durationDependencies</i> do not include <b>UI_ANIMATION_DEPENDENCY_DURATION</b>, <see cref="SetDuration" /> will never be called on the interpolator.</para>
-    </remarks>
-    <seealso cref="IUIAnimationInterpolator2" />
+    <summary>For the given dimension, <b>GetDependencies</b> retrieves the aspects of the interpolator that depend on the initial value or velocity that is passed to the <see cref="IUIAnimationInterpolator2.SetInitialValueAndVelocity" /> method or the duration that is passed to the <see cref="IUIAnimationInterpolator2.SetDuration" /> method.</summary>
+    <param name="initialValueDependencies">Aspects of the interpolator that depend on the initial value passed to <see cref="SetInitialValueAndVelocity" />.</param>
+    <param name="initialVelocityDependencies">Aspects of the interpolator that depend on the initial velocity passed to <see cref="SetInitialValueAndVelocity" />.</param>
+    <param name="durationDependencies">Aspects of the interpolator that depend on the duration passed to <see cref="SetDuration" />.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationInterpolator2.GetDimension">
-    <summary>
-      <para>Gets the number of dimensions that require interpolation.</para>
-    </summary>
-    <param name="dimension">
-      <para>The number of dimensions.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <seealso cref="IUIAnimationInterpolator2" />
+    <summary>Gets the number of dimensions that require interpolation.</summary>
+    <param name="dimension">The number of dimensions.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationInterpolator2.GetDuration">
-    <summary>
-      <para>Gets the duration of a transition for the given dimension.</para>
-    </summary>
-    <param name="duration">
-      <para>The duration of the transition.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Windows Animation always calls the <see cref="IUIAnimationInterpolator2.SetInitialValueAndVelocity" /> method to set the initial value and velocity before calling <b>GetDuration</b>, so a custom interpolator need not check whether the initial value and velocity have been set.</para>
-      <para>Windows Animation can call <see cref="SetInitialValueAndVelocity" /> multiple times with different parameters. Interpolators can cache internal state to improve performance, but they must update this cached state each time <b>SetInitialValueAndVelocity</b> is called and ensure that the results of subsequent calls to <b>GetDuration</b> reflect the updated state.</para>
-    </remarks>
-    <seealso cref="IUIAnimationInterpolator2" />
+    <summary>Gets the duration of a transition for the given dimension.</summary>
+    <param name="duration">The duration of the transition.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationInterpolator2.GetFinalValue">
-    <summary>
-      <para>Gets the final value at the end of the transition for the given dimension.</para>
-    </summary>
-    <param name="value">
-      <para>The final value.</para>
-    </param>
-    <param name="cDimension">
-      <para>The dimension from which to retrieve the final value.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Windows Animation always calls the <see cref="IUIAnimationInterpolator2.SetInitialValueAndVelocity" /> method to set the initial value and velocity before calling <b>GetFinalValue</b>, so a custom interpolator need not check whether the initial value and velocity have been set.</para>
-      <para>Windows Animation can call <see cref="SetInitialValueAndVelocity" /> multiple times with different parameters. Interpolators can cache internal state to improve performance, but they must update this cached state each time <b>SetInitialValueAndVelocity</b> is called and ensure that the results of subsequent calls to <b>GetFinalValue</b> reflect the updated state.</para>
-    </remarks>
-    <seealso cref="IUIAnimationInterpolator2" />
+    <summary>Gets the final value at the end of the transition for the given dimension.</summary>
+    <param name="value">The final value.</param>
+    <param name="cDimension">The dimension from which to retrieve the final value.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationInterpolator2.GetPrimitiveInterpolation">
-    <summary>
-      <para>Generates a primitive interpolation of the specified animation curve.</para>
-    </summary>
-    <param name="interpolation">
-      <para>The object that defines the custom animation curve information.</para>
-    </param>
-    <param name="cDimension">
-      <para>The dimension in which to apply the new segment.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <seealso cref="IUIAnimationInterpolator2" />
-    <seealso cref="IUIAnimationPrimitiveInterpolation" />
+    <summary>Generates a primitive interpolation of the specified animation curve.</summary>
+    <param name="interpolation">The object that defines the custom animation curve information.</param>
+    <param name="cDimension">The dimension in which to apply the new segment.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationInterpolator2.InterpolateValue">
-    <summary>
-      <para>Interpolates the value of an animation variable at the specified offset and for the given dimension.</para>
-    </summary>
+    <summary>Interpolates the value of an animation variable at the specified offset and for the given dimension.</summary>
     <param name="offset">
       <para>The offset from the start of the transition.</para>
       <para>This parameter is always greater than or equal to zero and less than the duration of the transition. This method is not called if the duration of the transition is zero.</para>
     </param>
-    <param name="value">
-      <para>The interpolated value.</para>
-    </param>
-    <param name="cDimension">
-      <para>The dimension in which to interpolate the value.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Windows Animation always calls the <see cref="IUIAnimationInterpolator2.SetInitialValueAndVelocity" /> method to set the initial value and velocity before calling <b>InterpolateValue</b>, so a custom interpolator need not check whether the initial value and velocity have been set.</para>
-      <para>Windows Animation can call <see cref="SetInitialValueAndVelocity" /> multiple times with different parameters. Interpolators can cache internal state to improve performance, but they must update this cached state each time <b>SetInitialValueAndVelocity</b> is called and ensure that the results of subsequent calls to <b>InterpolateValue</b> reflect the updated state.</para>
-    </remarks>
-    <seealso cref="IUIAnimationInterpolator2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds">UI_ANIMATION_SECONDS</seealso>
+    <param name="value">The interpolated value.</param>
+    <param name="cDimension">The dimension in which to interpolate the value.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationInterpolator2.InterpolateVelocity">
-    <summary>
-      <para>Interpolates the velocity, or rate of change, at the specified offset for the given dimension.</para>
-    </summary>
+    <summary>Interpolates the velocity, or rate of change, at the specified offset for the given dimension.</summary>
     <param name="offset">
       <para>The offset from the start of the transition.</para>
       <para>The offset is always greater than or equal to zero and less than or equal to the duration of the transition. This method is not called if the duration of the transition is zero.</para>
     </param>
-    <param name="velocity">
-      <para>The interpolated velocity.</para>
-    </param>
-    <param name="cDimension">
-      <para>The dimension in which to interpolate the velocity.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an  <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Windows Animation always calls the <see cref="IUIAnimationInterpolator2.SetInitialValueAndVelocity" /> method to set the initial value and velocity before calling <b>InterpolateVelocity</b>, so a custom interpolator need not check whether the initial value and velocity have been set.</para>
-      <para>Windows Animation can call <see cref="SetInitialValueAndVelocity" /> multiple times with different parameters. Interpolators can cache internal state to improve performance, but they must update this cached state each time <b>SetInitialValueAndVelocity</b> is called and ensure that the results of subsequent calls to <b>InterpolateVelocity</b> reflect the updated state.</para>
-    </remarks>
-    <seealso cref="IUIAnimationInterpolator2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds">UI_ANIMATION_SECONDS</seealso>
+    <param name="velocity">The interpolated velocity.</param>
+    <param name="cDimension">The dimension in which to interpolate the velocity.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationInterpolator2.SetDuration">
-    <summary>
-      <para>Sets the duration of the transition in the given dimension.</para>
-    </summary>
-    <param name="duration">
-      <para>The duration of the transition.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Windows Animation calls this method only after calling the <see cref="IUIAnimationInterpolator2.GetDependencies" /> method, and only if that call returns <b>UI_ANIMATION_DEPENDENCY_DURATION</b> as one of its <i>durationDependencies</i> flags.</para>
-      <para>Typically, an interpolator with a duration dependency has a duration parameter in the <see cref="IUIAnimationTransitionFactory" /> or <see cref="IUIAnimationTransitionFactory2" /> creation method  that is associated with that interpolator.  The interpolator should store its duration when first initialized and overwrite the duration when <b>SetDuration</b> is called.</para>
-      <para>Windows Animation always calls the <see cref="IUIAnimationInterpolator2.SetInitialValueAndVelocity" /> method to set the initial value and velocity before calling <b>SetDuration</b>, so a custom interpolator doesn't need to check whether the initial value and velocity have been set.</para>
-      <para>Windows Animation can call <see cref="SetInitialValueAndVelocity" /> and <b>SetDuration</b> multiple times with different parameters. Interpolators can cache internal state to improve performance, but they must update this cached state each time <b>SetInitialValueAndVelocity</b> is called and ensure that the results of subsequent calls to <b>SetDuration</b> reflect the updated state.</para>
-    </remarks>
-    <seealso cref="IUIAnimationInterpolator2" />
-    <seealso cref="UI_ANIMATION_DEPENDENCIES" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/ui-animation-seconds">UI_ANIMATION_SECONDS</seealso>
+    <summary>Sets the duration of the transition in the given dimension.</summary>
+    <param name="duration">The duration of the transition.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationInterpolator2.SetInitialValueAndVelocity">
-    <summary>
-      <para>Sets the initial value and velocity of the transition for the given dimension.</para>
-    </summary>
-    <param name="initialValue">
-      <para>The initial value.</para>
-    </param>
-    <param name="initialVelocity">
-      <para>The initial velocity.</para>
-    </param>
-    <param name="cDimension">
-      <para>The dimension in which to set the initial value or velocity of the transition.</para>
-    </param>
-    <returns>
-      <para>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</para>
-    </returns>
-    <remarks>
-      <para>Windows Animation always calls <b>SetInitialValueAndVelocity</b> before calling the other methods of  <see cref="IUIAnimationInterpolator2" /> at different offsets. However, <b>SetInitialValueAndVelocity</b> can be called multiple times with different parameters. Interpolators can cache internal state to improve performance, but they must update this cached state each time <b>SetInitialValueAndVelocity</b> is called and ensure that the results of subsequent calls to these methods reflect the updated state.</para>
-    </remarks>
-    <seealso cref="IUIAnimationInterpolator2" />
+    <summary>Sets the initial value and velocity of the transition for the given dimension.</summary>
+    <param name="initialValue">The initial value.</param>
+    <param name="initialVelocity">The initial velocity.</param>
+    <param name="cDimension">The dimension in which to set the initial value or velocity of the transition.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise an <b>HRESULT</b> error code. See <a href="https://docs.microsoft.com//windows/desktop/UIAnimation/uianimation-error-codes">Windows Animation Error Codes</a> for a list of error codes.</returns>
   </member>
   <member name="IUIAnimationInterpolator2">
-    <summary>
-      <para>Extends the <see cref="IUIAnimationInterpolator" /> interface that defines methods for creating a custom interpolator.   <b>IUIAnimationInterpolator2</b> supports interpolation in a given dimension.</para>
-    </summary>
-    <remarks>
-      <para>Client applications can use the transitions provided in  the <see cref="IUIAnimationTransitionLibrary" /> or<see cref="IUIAnimationTransitionLibrary2" /> interfaces, or in a library provided by a third party; however, custom transitions can be created by implementing the <see cref="IUIAnimationInterpolator" /> or  <b>IUIAnimationInterpolator2</b> interfaces.</para>
-      <para>Before Windows Animation can use your custom interpolator, you must wrap it in an object that implements the  <see cref="IUIAnimationTransition" /> interface (by calling <see cref="IUIAnimationTransitionFactory.CreateTransition" />) or the <see cref="IUIAnimationTransition2" /> interface (by calling  <see cref="IUIAnimationTransitionFactory2.CreateTransition" />)  and passing in the custom  interpolator.  After the interpolator wrapper has been created, client applications interact with your interpolator using the <b>IUIAnimationTransition</b> or <b>IUIAnimationTransition2</b> interfaces.</para>
-      <para>Custom interpolators can be reused across applications, but it is recommended that they be exposed using factory interfaces that return an  <see cref="IUIAnimationTransition" /> interface or an <see cref="IUIAnimationTransition2" /> interface.</para>
-    </remarks>
-    <seealso cref="IUIAnimationInterpolator" />
-    <seealso cref="IUIAnimationPrimitiveInterpolation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/UIAnimation/-interfaces-main">Interfaces</seealso>
+    <summary>Extends the <see cref="IUIAnimationInterpolator" /> interface that defines methods for creating a custom interpolator. <b>IUIAnimationInterpolator2</b> supports interpolation in a given dimension.</summary>
   </member>
 </doc>

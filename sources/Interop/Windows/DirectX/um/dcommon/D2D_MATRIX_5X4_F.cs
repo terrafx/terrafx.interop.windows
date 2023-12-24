@@ -11,10 +11,10 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D_MATRIX_5X4_F.xml' path='doc/member[@name="D2D_MATRIX_5X4_F"]/*' />
-public unsafe partial struct D2D_MATRIX_5X4_F
+public partial struct D2D_MATRIX_5X4_F
 {
     /// <include file='D2D_MATRIX_5X4_F.xml' path='doc/member[@name="D2D_MATRIX_5X4_F.Anonymous"]/*' />
-    [NativeTypeName("D2D_MATRIX_5X4_F::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/dcommon.h:373:5)")]
+    [NativeTypeName("__AnonymousRecord_dcommon_L381_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct._11"]/*' />
@@ -244,23 +244,23 @@ public unsafe partial struct D2D_MATRIX_5X4_F
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.m[0], 5);
+            return Anonymous.m;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("D2D_MATRIX_5X4_F::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/dcommon.h:375:9)")]
+        [NativeTypeName("__AnonymousRecord_dcommon_L383_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("FLOAT[5][4]")]
-        public fixed float m[5 * 4];
+        public _m_e__FixedBuffer m;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
@@ -324,6 +324,13 @@ public unsafe partial struct D2D_MATRIX_5X4_F
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct._54"]/*' />
             public float _54;
+        }
+
+        /// <include file='_m_e__FixedBuffer.xml' path='doc/member[@name="_m_e__FixedBuffer"]/*' />
+        [InlineArray(5 * 4)]
+        public partial struct _m_e__FixedBuffer
+        {
+            public float e0_0;
         }
     }
 }

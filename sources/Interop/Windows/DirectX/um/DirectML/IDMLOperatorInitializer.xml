@@ -5,51 +5,18 @@
   <member name="IDMLOperatorInitializer.Reset">
     <summary>
       <para>Resets the initializer to handle initialization of a new set of operators.</para>
-      <para>You may use an initializer only to initialize a fixed set of operators, which are provided either during creation
-(<see cref="IDMLDevice.CreateOperatorInitializer" />), or when the initializer is reset. Resetting the initializer allows your
-application to reuse an existing initializer object to initialize a new set of operators.</para>
+      <para>You may use an initializer only to initialize a fixed set of operators, which are provided either during creation (<see cref="IDMLDevice.CreateOperatorInitializer" />), or when the initializer is reset. Resetting the initializer allows your application to reuse an existing initializer object to initialize a new set of operators.</para>
       <para>You must not call <b>Reset</b> until all outstanding work using the initializer has completed execution on the GPU.</para>
       <para>This method is not thread-safe.</para>
     </summary>
-    <param name="operatorCount">
-      <para>Type: <b>UINT</b></para>
-      <para>This parameter determines the number of elements in the array passed in the  <i>operators</i> parameter.</para>
-    </param>
-    <param name="operators">
-      <para>Type: <b><see cref="IDMLCompiledOperator" />*</b></para>
-      <para>An optional pointer to a constant array of <see cref="IDMLCompiledOperator" /> pointers containing the operators that the initializer should initialize.</para>
-    </param>
-    <returns>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">HRESULT</a></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDMLOperatorInitializer" />
+    <param name="operatorCount">This parameter determines the number of elements in the array passed in the <i>operators</i> parameter.</param>
+    <param name="operators">An optional pointer to a constant array of <see cref="IDMLCompiledOperator" /> pointers containing the operators that the initializer should initialize.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDMLOperatorInitializer">
     <summary>
       <para>Represents a specialized object whose purpose is to initialize compiled operators. To create an instance of this object, call <see cref="IDMLDevice.CreateOperatorInitializer" />. The <b>IDMLOperatorInitializer</b> interface inherits from <see cref="IDMLDispatchable" />.</para>
       <para>An operator initializer is associated with one or more compiled operators, which are the targets for initialization. You can record operator initialization onto a command list using <see cref="IDMLCommandRecorder.RecordDispatch" />. When the initialization completes execution on the GPU, all of the target operators enter the initialized state. You must initialize all operators exactly once before they can be executed.</para>
     </summary>
-    <remarks>
-      <para>Operator initializers are reusable: once an instance has been used to initialize a set of operators, you can reset it with a different set of compiled operators as targets.</para>
-      <para>When executing an initializer, the expected bindings are as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>Inputs should be one buffer array binding for each target operator, in the order that you originally specified the operators when creating or resetting the initializer. Each buffer array binding itself should have a size equal to the inputs of its respective operator. Alternatively, you may specify NONE for a binding to bind no inputs for initialization of that target operator.</description>
-        </item>
-        <item>
-          <description>Outputs should be the persistent resources for each target operator, in the order that you originally specified the operators when creating or resetting the initializer.</description>
-        </item>
-        <item>
-          <description>As with any dispatchable object (an operator initializer, or a compiled operator), the initializer may require a temporary resource. Call <see cref="IDMLDispatchable.GetBindingProperties" /> to determine the require size of the temporary resource.</description>
-        </item>
-        <item>
-          <description>Operator initializers don't ever require persistent resources. Therefore, calling <see cref="IDMLDispatchable.GetBindingProperties" /> on an operator initializer always returns a <b>PersistentResourceSize</b> of 0.</description>
-        </item>
-      </list>
-      <para>The operator initializer itself doesn't need to be initialized—GPU initialization only applies to compiled operators.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
-    <seealso cref="IDMLDispatchable" />
   </member>
 </doc>

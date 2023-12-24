@@ -25,4 +25,7 @@ public unsafe partial struct CONFIG_CI_PROV_INFO
     /// <include file='CONFIG_CI_PROV_INFO.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO.dwScenario"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwScenario;
+
+    /// <include file='CONFIG_CI_PROV_INFO.xml' path='doc/member[@name="CONFIG_CI_PROV_INFO.result2"]/*' />
+    public CONFIG_CI_PROV_INFO_RESULT2* result2;
 }

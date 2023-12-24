@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EncoderValue">
+    <summary>The <b>EncoderValue</b> enumeration specifies values that can be passed as arguments to image encoders. For more information about image encoders, see <a href="https://docs.microsoft.com//windows/desktop/gdiplus/-gdiplus-using-image-encoders-and-decoders-use">Using Image Encoders and Decoders</a> .</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueColorTypeCMYK">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueColorTypeYCCK">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueCompressionLZW">
+    <summary>For a TIFF image, specifies the LZW compression method.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueCompressionCCITT3">
+    <summary>For a TIFF image, specifies the CCITT3 compression method.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueCompressionCCITT4">
+    <summary>For a TIFF image, specifies the CCITT4 compression method.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueCompressionRle">
+    <summary>For a TIFF image, specifies the RLE compression method.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueCompressionNone">
+    <summary>For a TIFF image, specifies no compression.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueScanMethodInterlaced">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueScanMethodNonInterlaced">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueVersionGif87">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueVersionGif89">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueRenderProgressive">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueRenderNonProgressive">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueTransformRotate90">
+    <summary>For a JPEG image, specifies lossless 90-degree clockwise rotation.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueTransformRotate180">
+    <summary>For a JPEG image, specifies lossless 180-degree rotation.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueTransformRotate270">
+    <summary>For a JPEG image, specifies lossless 270-degree clockwise rotation.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueTransformFlipHorizontal">
+    <summary>For a JPEG image, specifies a lossless horizontal flip.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueTransformFlipVertical">
+    <summary>For a JPEG image, specifies a lossless vertical flip.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueMultiFrame">
+    <summary>Specifies multiple-frame encoding.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueLastFrame">
+    <summary>Specifies the last frame of a multiple-frame image.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueFlush">
+    <summary>Specifies that the encoder object is to be closed.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueFrameDimensionTime">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueFrameDimensionResolution">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueFrameDimensionPage">
+    <summary>For a TIFF image, specifies the page frame dimension</summary>
+  </member>
+  <member name="EncoderValue.EncoderValueColorTypeGray"></member>
+  <member name="EncoderValue.EncoderValueColorTypeRGB"></member>
+</doc>

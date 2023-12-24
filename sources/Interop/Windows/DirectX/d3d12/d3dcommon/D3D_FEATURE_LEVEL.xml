@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D_FEATURE_LEVEL">
+    <summary>Describes the set of features targeted by a Direct3D device.</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_1_0_CORE">
+    <summary>Allows Microsoft Compute Driver Model (MCDM) devices to be used, or more feature-rich devices (such as traditional GPUs) that support a superset of the functionality. MCDM is the overall driver model for compute-only; it's a scaled-down peer of the larger scoped Windows Device Driver Model (WDDM).</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_9_1">
+    <summary>Targets features supported by <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9.1, including shader model 2.</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_9_2">
+    <summary>Targets features supported by <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9.2, including shader model 2.</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_9_3">
+    <summary>Targets features supported by <a href="https://docs.microsoft.com//windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro">feature level</a> 9.3, including shader model 2.0b.</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_10_0">
+    <summary>Targets features supported by Direct3D 10.0, including shader model 4.</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_10_1">
+    <summary>Targets features supported by Direct3D 10.1, including shader model 4.</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_11_0">
+    <summary>Targets features supported by Direct3D 11.0, including shader model 5.</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_11_1">
+    <summary>Targets features supported by Direct3D 11.1, including shader model 5 and logical blend operations. This feature level requires a display driver that is at least implemented to WDDM for Windows 8 (WDDM 1.2).</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_12_0">
+    <summary>Targets features supported by Direct3D 12.0, including shader model 5.</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_12_1">
+    <summary>Targets features supported by Direct3D 12.1, including shader model 5.</summary>
+  </member>
+  <member name="D3D_FEATURE_LEVEL.D3D_FEATURE_LEVEL_12_2">
+    <summary>Targets features supported by Direct3D 12.2, including shader model 6.5. For more information about feature level 12_2, see its <a href="https://microsoft.github.io/directx-specs/d3d/d3d12_featurelevel12_2.html">specification page</a>. Feature level 12_2 is available in Windows SDK builds 20170 and later.</summary>
+  </member>
+</doc>

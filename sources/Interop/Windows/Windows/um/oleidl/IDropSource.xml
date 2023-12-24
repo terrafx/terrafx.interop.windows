@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDropSource.GiveFeedback">
-    <summary>
-      <para>Enables a source application to give visual feedback to the end user during a drag-and-drop operation by providing the <see cref="DoDragDrop" /> function with an enumeration value specifying the visual effect.</para>
-    </summary>
-    <param name="dwEffect">
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/com/dropeffect-constants">DROPEFFECT</a> value returned by the most recent call to <see cref="IDropTarget.DragEnter" />, <see cref="IDropTarget.DragOver" />, or <see cref="IDropTarget.DragLeave" />.</para>
-    </param>
+    <summary>Enables a source application to give visual feedback to the end user during a drag-and-drop operation by providing the <see cref="DoDragDrop" /> function with an enumeration value specifying the visual effect.</summary>
+    <param name="dwEffect">The <a href="https://docs.microsoft.com//windows/desktop/com/dropeffect-constants">DROPEFFECT</a> value returned by the most recent call to <see cref="IDropTarget.DragEnter" />, <see cref="IDropTarget.DragOver" />, or <see cref="IDropTarget.DragLeave" />.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible values include the following.</para>
       <list type="table">
@@ -16,43 +12,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>DRAGDROP_S_USEDEFAULTCURSORS</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DRAGDROP_S_USEDEFAULTCURSORS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Indicates successful completion of the method, and requests OLE to update the cursor using the OLE-provided default cursors.</para>
-          </description>
-        </item>
+          <description>Indicates successful completion of the method, and requests OLE to update the cursor using the OLE-provided default cursors.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When your application detects that the user has started a drag-and-drop operation, it should call the <see cref="DoDragDrop" /> function. <b>DoDragDrop</b> enters a loop, calling <see cref="IDropTarget.DragEnter" /> when the mouse first enters a drop target window, <see cref="IDropTarget.DragOver" /> when the mouse changes its position within the target window, and <see cref="IDropTarget.DragLeave" /> when the mouse leaves the target window.</para>
-      <para>For every call to either <see cref="IDropTarget.DragEnter" /> or <see cref="IDropTarget.DragOver" />, <see cref="DoDragDrop" /> calls <b>IDropSource.GiveFeedback</b>, passing it the DROPEFFECT value returned from the drop target call.</para>
-      <para>
-        <see cref="DoDragDrop" /> calls <see cref="IDropTarget.DragLeave" /> when the mouse has left the target window. Then, <b>DoDragDrop</b> calls <b>IDropSource.GiveFeedback</b> and passes the DROPEFFECT_NONE value in the <i>dwEffect</i> parameter.</para>
-      <para>The <i>dwEffect</i> parameter can include DROPEFFECT_SCROLL, indicating that the source should put up the drag-scrolling variation of the appropriate pointer.</para>
-      <h3>Notes to Implementers</h3>
-      <para>This function is called frequently during the <see cref="DoDragDrop" /> loop, so you can gain performance advantages if you optimize your implementation as much as possible.</para>
-      <para>
-        <b>IDropSource.GiveFeedback</b> is responsible for changing the cursor shape or for changing the highlighted source based on the value of the <i>dwEffect</i> parameter. If you are using default cursors, you can return DRAGDROP_S_USEDEFAULTCURSORS, which causes OLE to update the cursor for you, using its defaults.</para>
-    </remarks>
-    <seealso cref="DoDragDrop" />
-    <seealso cref="IDropSource" />
-    <seealso cref="IDropTarget" />
   </member>
   <member name="IDropSource.QueryContinueDrag">
-    <summary>
-      <para>Determines whether a drag-and-drop operation should be continued, canceled, or completed. You do not call this method directly. The OLE <see cref="DoDragDrop" /> function calls this method during a drag-and-drop operation.</para>
-    </summary>
-    <param name="fEscapePressed">
-      <para>Indicates whether the Esc key has been pressed since the previous call to <b>QueryContinueDrag</b> or to <see cref="DoDragDrop" /> if this is the first call to <b>QueryContinueDrag</b>. A <b>TRUE</b> value indicates the end user has pressed the escape key; a <b>FALSE</b> value indicates it has not been pressed.</para>
-    </param>
-    <param name="grfKeyState">
-      <para>The current state of the keyboard modifier keys on the keyboard. Possible values can be a combination of any of the flags MK_CONTROL, MK_SHIFT, MK_ALT, MK_BUTTON, MK_LBUTTON, MK_MBUTTON, and MK_RBUTTON.</para>
-    </param>
+    <summary>Determines whether a drag-and-drop operation should be continued, canceled, or completed. You do not call this method directly. The OLE <see cref="DoDragDrop" /> function calls this method during a drag-and-drop operation.</summary>
+    <param name="fEscapePressed">Indicates whether the Esc key has been pressed since the previous call to <b>QueryContinueDrag</b> or to <see cref="DoDragDrop" /> if this is the first call to <b>QueryContinueDrag</b>. A <b>TRUE</b> value indicates the end user has pressed the escape key; a <b>FALSE</b> value indicates it has not been pressed.</param>
+    <param name="grfKeyState">The current state of the keyboard modifier keys on the keyboard. Possible values can be a combination of any of the flags MK_CONTROL, MK_SHIFT, MK_ALT, MK_BUTTON, MK_LBUTTON, MK_MBUTTON, and MK_RBUTTON.</param>
     <returns>
       <para>This method can return the following values.</para>
       <list type="table">
@@ -60,43 +38,44 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The drag operation should continue. This result occurs if no errors are detected, the mouse button starting the drag-and-drop operation has not been released, and the Esc key has not been detected.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The drag operation should continue. This result occurs if no errors are detected, the mouse button starting the drag-and-drop operation has not been released, and the Esc key has not been detected.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DRAGDROP_S_DROP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The drop operation should occur completing the drag operation. This result occurs if <i>grfKeyState</i> indicates that the key that started the drag-and-drop operation has been released.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>DRAGDROP_S_DROP</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DRAGDROP_S_CANCEL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The drop operation should occur completing the drag operation. This result occurs if <i>grfKeyState</i> indicates that the key that started the drag-and-drop operation has been released.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>DRAGDROP_S_CANCEL</b>
-            </para>
-          </description>
-          <description>
-            <para>The drag operation should be canceled with no drop operation occurring. This result occurs if <i>fEscapePressed</i> is <b>TRUE</b>, indicating the Esc key has been pressed.</para>
-          </description>
-        </item>
+          <description>The drag operation should be canceled with no drop operation occurring. This result occurs if <i>fEscapePressed</i> is <b>TRUE</b>, indicating the Esc key has been pressed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <see cref="DoDragDrop" /> function calls <b>QueryContinueDrag</b> whenever it detects a change in the keyboard or mouse button state during a drag-and-drop operation. <b>QueryContinueDrag</b> must determine whether the drag-and-drop operation should be continued, canceled, or completed based on the contents of the parameters <i>grfKeyState</i> and <i>fEscapePressed</i>.</para>
-    </remarks>
-    <seealso cref="DoDragDrop" />
-    <seealso cref="IDropSource" />
   </member>
   <member name="IDropSource">
     <summary>
@@ -118,11 +97,6 @@
           <description>Performing any action on the original data caused by the drop operation, such as deleting the data on a drag move.</description>
         </item>
       </list>
-      <b>IDropSource</b> contains the methods for generating visual feedback to the end user and for canceling or completing the drag-and-drop operation. You also need to call the <see cref="DoDragDrop" />, <see cref="RegisterDragDrop" />, and <see cref="RevokeDragDrop" /> functions in drag-and-drop operations.
-</summary>
-    <seealso cref="DoDragDrop" />
-    <seealso cref="IDataObject" />
-    <seealso cref="IDropSourceNotify" />
-    <seealso cref="IDropTarget" />
+      <b>IDropSource</b> contains the methods for generating visual feedback to the end user and for canceling or completing the drag-and-drop operation. You also need to call the <see cref="DoDragDrop" />, <see cref="RegisterDragDrop" />, and <see cref="RevokeDragDrop" /> functions in drag-and-drop operations.</summary>
   </member>
 </doc>

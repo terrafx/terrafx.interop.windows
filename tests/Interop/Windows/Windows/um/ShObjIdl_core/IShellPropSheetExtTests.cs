@@ -19,32 +19,4 @@ public static unsafe partial class IShellPropSheetExtTests
     {
         Assert.That(typeof(IShellPropSheetExt).GUID, Is.EqualTo(IID_IShellPropSheetExt));
     }
-
-    /// <summary>Validates that the <see cref="IShellPropSheetExt" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IShellPropSheetExt>(), Is.EqualTo(sizeof(IShellPropSheetExt)));
-    }
-
-    /// <summary>Validates that the <see cref="IShellPropSheetExt" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IShellPropSheetExt).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IShellPropSheetExt" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IShellPropSheetExt), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IShellPropSheetExt), Is.EqualTo(4));
-        }
-    }
 }

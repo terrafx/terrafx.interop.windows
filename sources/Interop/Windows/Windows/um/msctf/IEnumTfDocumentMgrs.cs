@@ -25,7 +25,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumTfDocumentMgrs*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDocumentMgrs*, Guid*, void**, int>)(lpVtbl[0]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumTfDocumentMgrs*, uint>)(lpVtbl[1]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDocumentMgrs*, uint>)(lpVtbl[1]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumTfDocumentMgrs*, uint>)(lpVtbl[2]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDocumentMgrs*, uint>)(lpVtbl[2]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
     [VtblIndex(3)]
     public HRESULT Clone(IEnumTfDocumentMgrs** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumTfDocumentMgrs*, IEnumTfDocumentMgrs**, int>)(lpVtbl[3]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDocumentMgrs*, IEnumTfDocumentMgrs**, int>)(lpVtbl[3]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, ITfDocumentMgr** rgDocumentMgr, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumTfDocumentMgrs*, uint, ITfDocumentMgr**, uint*, int>)(lpVtbl[4]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), ulCount, rgDocumentMgr, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDocumentMgrs*, uint, ITfDocumentMgr**, uint*, int>)(lpVtbl[4]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), ulCount, rgDocumentMgr, pcFetched);
     }
 
     /// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumTfDocumentMgrs*, int>)(lpVtbl[5]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDocumentMgrs*, int>)(lpVtbl[5]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumTfDocumentMgrs.xml' path='doc/member[@name="IEnumTfDocumentMgrs.Skip"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<IEnumTfDocumentMgrs*, uint, int>)(lpVtbl[6]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumTfDocumentMgrs*, uint, int>)(lpVtbl[6]))((IEnumTfDocumentMgrs*)Unsafe.AsPointer(ref this), ulCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumTfDocumentMgrs : IEnumTfDocumentMgrs.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumTfDocumentMgrs **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfDocumentMgrs**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfDocumentMgrs**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, ITfDocumentMgr **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfDocumentMgr**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfDocumentMgr**, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
     }
 }

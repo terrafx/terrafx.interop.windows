@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRoMetaDataLocator">
+    <summary>
+      <para>Enables the <see cref="RoGetParameterizedTypeInstanceIID" /> function to access run-time metadata.</para>
+      <para>Implement <b>IRoMetaDataLocator</b> when you're implementing programming language bindings to enable a language to call Windows platform APIs by using Windows metadata (.winmd) files.</para>
+    </summary>
+  </member>
+  <member name="IRoMetaDataLocator.Locate">
+    <summary>
+      <para>Gets a metadata builder for the specified type.</para>
+      <h4>nameElement</h4>
+      <para>A Windows Runtime type or parameterized type to resolve.</para>
+      <h4>metaDataDestination</h4>
+      <para>A data sink for Windows Runtime metadata. The caller should invoke the appropriate set method to provide the metadata for the type named by <i>nameElement</i>.</para>
+    </summary>
+  </member>
+</doc>

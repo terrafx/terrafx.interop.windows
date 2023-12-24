@@ -3,15 +3,12 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT"]/*' />
-public unsafe partial struct XSAVE_FORMAT
+public partial struct XSAVE_FORMAT
 {
     /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT.ControlWord"]/*' />
     [NativeTypeName("WORD")]
@@ -73,67 +70,26 @@ public unsafe partial struct XSAVE_FORMAT
 
     /// <include file='XSAVE_FORMAT.xml' path='doc/member[@name="XSAVE_FORMAT.Reserved4"]/*' />
     [NativeTypeName("BYTE[96]")]
-    public fixed byte Reserved4[96];
+    public _Reserved4_e__FixedBuffer Reserved4;
 
     /// <include file='_FloatRegisters_e__FixedBuffer.xml' path='doc/member[@name="_FloatRegisters_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
     public partial struct _FloatRegisters_e__FixedBuffer
     {
         public M128A e0;
-        public M128A e1;
-        public M128A e2;
-        public M128A e3;
-        public M128A e4;
-        public M128A e5;
-        public M128A e6;
-        public M128A e7;
-
-        [UnscopedRef]
-        public ref M128A this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 8);
     }
 
     /// <include file='_XmmRegisters_e__FixedBuffer.xml' path='doc/member[@name="_XmmRegisters_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
     public partial struct _XmmRegisters_e__FixedBuffer
     {
         public M128A e0;
-        public M128A e1;
-        public M128A e2;
-        public M128A e3;
-        public M128A e4;
-        public M128A e5;
-        public M128A e6;
-        public M128A e7;
-        public M128A e8;
-        public M128A e9;
-        public M128A e10;
-        public M128A e11;
-        public M128A e12;
-        public M128A e13;
-        public M128A e14;
-        public M128A e15;
+    }
 
-        [UnscopedRef]
-        public ref M128A this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<M128A> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+    /// <include file='_Reserved4_e__FixedBuffer.xml' path='doc/member[@name="_Reserved4_e__FixedBuffer"]/*' />
+    [InlineArray(96)]
+    public partial struct _Reserved4_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

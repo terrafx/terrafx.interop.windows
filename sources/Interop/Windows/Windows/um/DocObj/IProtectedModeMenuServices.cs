@@ -25,7 +25,7 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IProtectedModeMenuServices*, Guid*, void**, int>)(lpVtbl[0]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IProtectedModeMenuServices*, Guid*, void**, int>)(lpVtbl[0]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IProtectedModeMenuServices*, uint>)(lpVtbl[1]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProtectedModeMenuServices*, uint>)(lpVtbl[1]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IProtectedModeMenuServices*, uint>)(lpVtbl[2]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProtectedModeMenuServices*, uint>)(lpVtbl[2]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IProtectedModeMenuServices.xml' path='doc/member[@name="IProtectedModeMenuServices.CreateMenu"]/*' />
@@ -51,23 +51,23 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
     [VtblIndex(3)]
     public HRESULT CreateMenu(HMENU* phMenu)
     {
-        return ((delegate* unmanaged<IProtectedModeMenuServices*, HMENU*, int>)(lpVtbl[3]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), phMenu);
+        return ((delegate* unmanaged[MemberFunction]<IProtectedModeMenuServices*, HMENU*, int>)(lpVtbl[3]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), phMenu);
     }
 
     /// <include file='IProtectedModeMenuServices.xml' path='doc/member[@name="IProtectedModeMenuServices.LoadMenuW"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT LoadMenuW([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("LPCWSTR")] ushort* pszMenuName, HMENU* phMenu)
+    public HRESULT LoadMenuW([NativeTypeName("LPCWSTR")] char* pszModuleName, [NativeTypeName("LPCWSTR")] char* pszMenuName, HMENU* phMenu)
     {
-        return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort*, HMENU*, int>)(lpVtbl[4]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, pszMenuName, phMenu);
+        return ((delegate* unmanaged[MemberFunction]<IProtectedModeMenuServices*, char*, char*, HMENU*, int>)(lpVtbl[4]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, pszMenuName, phMenu);
     }
 
     /// <include file='IProtectedModeMenuServices.xml' path='doc/member[@name="IProtectedModeMenuServices.LoadMenuID"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, HMENU* phMenu)
+    public HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] char* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, HMENU* phMenu)
     {
-        return ((delegate* unmanaged<IProtectedModeMenuServices*, ushort*, ushort, HMENU*, int>)(lpVtbl[5]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, wResourceID, phMenu);
+        return ((delegate* unmanaged[MemberFunction]<IProtectedModeMenuServices*, char*, ushort, HMENU*, int>)(lpVtbl[5]))((IProtectedModeMenuServices*)Unsafe.AsPointer(ref this), pszModuleName, wResourceID, phMenu);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,31 +76,31 @@ public unsafe partial struct IProtectedModeMenuServices : IProtectedModeMenuServ
         HRESULT CreateMenu(HMENU* phMenu);
 
         [VtblIndex(4)]
-        HRESULT LoadMenuW([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("LPCWSTR")] ushort* pszMenuName, HMENU* phMenu);
+        HRESULT LoadMenuW([NativeTypeName("LPCWSTR")] char* pszModuleName, [NativeTypeName("LPCWSTR")] char* pszMenuName, HMENU* phMenu);
 
         [VtblIndex(5)]
-        HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] ushort* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, HMENU* phMenu);
+        HRESULT LoadMenuID([NativeTypeName("LPCWSTR")] char* pszModuleName, [NativeTypeName("WORD")] ushort wResourceID, HMENU* phMenu);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HMENU *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HMENU*, int> CreateMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HMENU*, int> CreateMenu;
 
         [NativeTypeName("HRESULT (LPCWSTR, LPCWSTR, HMENU *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort*, HMENU*, int> LoadMenuW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, char*, HMENU*, int> LoadMenuW;
 
         [NativeTypeName("HRESULT (LPCWSTR, WORD, HMENU *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, ushort, HMENU*, int> LoadMenuID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, ushort, HMENU*, int> LoadMenuID;
     }
 }

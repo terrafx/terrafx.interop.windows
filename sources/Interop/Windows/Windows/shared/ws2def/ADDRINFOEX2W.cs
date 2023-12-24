@@ -30,7 +30,7 @@ public unsafe partial struct ADDRINFOEX2W
 
     /// <include file='ADDRINFOEX2W.xml' path='doc/member[@name="ADDRINFOEX2W.ai_canonname"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* ai_canonname;
+    public char* ai_canonname;
 
     /// <include file='ADDRINFOEX2W.xml' path='doc/member[@name="ADDRINFOEX2W.ai_addr"]/*' />
     [NativeTypeName("struct sockaddr *")]
@@ -56,5 +56,5 @@ public unsafe partial struct ADDRINFOEX2W
 
     /// <include file='ADDRINFOEX2W.xml' path='doc/member[@name="ADDRINFOEX2W.ai_fqdn"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* ai_fqdn;
+    public char* ai_fqdn;
 }

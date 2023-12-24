@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLCSSStyleDeclarationTests
     {
         Assert.That(typeof(IHTMLCSSStyleDeclaration).GUID, Is.EqualTo(IID_IHTMLCSSStyleDeclaration));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLCSSStyleDeclaration" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLCSSStyleDeclaration>(), Is.EqualTo(sizeof(IHTMLCSSStyleDeclaration)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLCSSStyleDeclaration" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLCSSStyleDeclaration).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLCSSStyleDeclaration" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLCSSStyleDeclaration), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLCSSStyleDeclaration), Is.EqualTo(4));
-        }
-    }
 }

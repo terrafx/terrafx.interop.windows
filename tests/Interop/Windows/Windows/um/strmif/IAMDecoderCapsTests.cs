@@ -19,32 +19,4 @@ public static unsafe partial class IAMDecoderCapsTests
     {
         Assert.That(typeof(IAMDecoderCaps).GUID, Is.EqualTo(IID_IAMDecoderCaps));
     }
-
-    /// <summary>Validates that the <see cref="IAMDecoderCaps" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMDecoderCaps>(), Is.EqualTo(sizeof(IAMDecoderCaps)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMDecoderCaps" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMDecoderCaps).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMDecoderCaps" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMDecoderCaps), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMDecoderCaps), Is.EqualTo(4));
-        }
-    }
 }

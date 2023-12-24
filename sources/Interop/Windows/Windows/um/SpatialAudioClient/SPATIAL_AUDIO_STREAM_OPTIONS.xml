@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SPATIAL_AUDIO_STREAM_OPTIONS">
+    <summary>Specifies audio stream options for calls to .</summary>
+  </member>
+  <member name="SPATIAL_AUDIO_STREAM_OPTIONS.SPATIAL_AUDIO_STREAM_OPTIONS_NONE">
+    <summary>No stream options.</summary>
+  </member>
+  <member name="SPATIAL_AUDIO_STREAM_OPTIONS.SPATIAL_AUDIO_STREAM_OPTIONS_OFFLOAD">
+    <summary>The stream should support audio offloading. For more information, see .</summary>
+  </member>
+</doc>

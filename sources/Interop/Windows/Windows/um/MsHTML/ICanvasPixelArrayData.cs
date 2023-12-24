@@ -25,7 +25,7 @@ public unsafe partial struct ICanvasPixelArrayData : ICanvasPixelArrayData.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICanvasPixelArrayData*, Guid*, void**, int>)(lpVtbl[0]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICanvasPixelArrayData*, Guid*, void**, int>)(lpVtbl[0]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICanvasPixelArrayData : ICanvasPixelArrayData.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICanvasPixelArrayData*, uint>)(lpVtbl[1]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICanvasPixelArrayData*, uint>)(lpVtbl[1]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICanvasPixelArrayData : ICanvasPixelArrayData.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICanvasPixelArrayData*, uint>)(lpVtbl[2]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICanvasPixelArrayData*, uint>)(lpVtbl[2]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICanvasPixelArrayData.xml' path='doc/member[@name="ICanvasPixelArrayData.GetBufferPointer"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICanvasPixelArrayData : ICanvasPixelArrayData.Inter
     [VtblIndex(3)]
     public HRESULT GetBufferPointer(byte** ppBuffer, [NativeTypeName("ULONG *")] uint* pBufferLength)
     {
-        return ((delegate* unmanaged<ICanvasPixelArrayData*, byte**, uint*, int>)(lpVtbl[3]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this), ppBuffer, pBufferLength);
+        return ((delegate* unmanaged[MemberFunction]<ICanvasPixelArrayData*, byte**, uint*, int>)(lpVtbl[3]))((ICanvasPixelArrayData*)Unsafe.AsPointer(ref this), ppBuffer, pBufferLength);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ICanvasPixelArrayData : ICanvasPixelArrayData.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BYTE **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, byte**, uint*, int> GetBufferPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, byte**, uint*, int> GetBufferPointer;
     }
 }

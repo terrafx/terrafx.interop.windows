@@ -14,7 +14,7 @@ public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_V1
 {
     /// <include file='CLAIM_SECURITY_ATTRIBUTE_V1.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_V1.Name"]/*' />
     [NativeTypeName("PWSTR")]
-    public ushort* Name;
+    public char* Name;
 
     /// <include file='CLAIM_SECURITY_ATTRIBUTE_V1.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_V1.ValueType"]/*' />
     [NativeTypeName("WORD")]
@@ -33,7 +33,7 @@ public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_V1
     public uint ValueCount;
 
     /// <include file='CLAIM_SECURITY_ATTRIBUTE_V1.xml' path='doc/member[@name="CLAIM_SECURITY_ATTRIBUTE_V1.Values"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:11976:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L11983_C5")]
     public _Values_e__Union Values;
 
     /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct CLAIM_SECURITY_ATTRIBUTE_V1
         /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union.ppString"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("PWSTR *")]
-        public ushort** ppString;
+        public char** ppString;
 
         /// <include file='_Values_e__Union.xml' path='doc/member[@name="_Values_e__Union.pFqbn"]/*' />
         [FieldOffset(0)]

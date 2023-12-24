@@ -28,7 +28,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, Guid*, void**, int>)(lpVtbl[0]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, uint>)(lpVtbl[1]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, uint>)(lpVtbl[1]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, uint>)(lpVtbl[2]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, uint>)(lpVtbl[2]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.TraceReady"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [VtblIndex(3)]
     public HRESULT TraceReady([NativeTypeName("UINT64 *")] ulong* pTestCount)
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, ulong*, int>)(lpVtbl[3]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTestCount);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, ulong*, int>)(lpVtbl[3]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTestCount);
     }
 
     /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.ResetTrace"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [VtblIndex(4)]
     public void ResetTrace()
     {
-        ((delegate* unmanaged<ID3D11ShaderTrace*, void>)(lpVtbl[4]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, void>)(lpVtbl[4]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetTraceStats"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetTraceStats(D3D11_TRACE_STATS* pTraceStats)
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, D3D11_TRACE_STATS*, int>)(lpVtbl[5]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTraceStats);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, D3D11_TRACE_STATS*, int>)(lpVtbl[5]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pTraceStats);
     }
 
     /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.PSSelectStamp"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [VtblIndex(6)]
     public HRESULT PSSelectStamp(uint stampIndex)
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, uint, int>)(lpVtbl[6]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stampIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, uint, int>)(lpVtbl[6]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stampIndex);
     }
 
     /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetInitialRegisterContents"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [VtblIndex(7)]
     public HRESULT GetInitialRegisterContents(D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue)
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int>)(lpVtbl[7]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pRegister, pValue);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int>)(lpVtbl[7]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), pRegister, pValue);
     }
 
     /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetStep"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [VtblIndex(8)]
     public HRESULT GetStep(uint stepIndex, D3D11_TRACE_STEP* pTraceStep)
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, uint, D3D11_TRACE_STEP*, int>)(lpVtbl[8]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, pTraceStep);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, uint, D3D11_TRACE_STEP*, int>)(lpVtbl[8]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, pTraceStep);
     }
 
     /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetWrittenRegister"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [VtblIndex(9)]
     public HRESULT GetWrittenRegister(uint stepIndex, uint writtenRegisterIndex, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue)
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int>)(lpVtbl[9]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, writtenRegisterIndex, pRegister, pValue);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int>)(lpVtbl[9]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, writtenRegisterIndex, pRegister, pValue);
     }
 
     /// <include file='ID3D11ShaderTrace.xml' path='doc/member[@name="ID3D11ShaderTrace.GetReadRegister"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
     [VtblIndex(10)]
     public HRESULT GetReadRegister(uint stepIndex, uint readRegisterIndex, D3D11_TRACE_REGISTER* pRegister, D3D11_TRACE_VALUE* pValue)
     {
-        return ((delegate* unmanaged<ID3D11ShaderTrace*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int>)(lpVtbl[10]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, readRegisterIndex, pRegister, pValue);
+        return ((delegate* unmanaged[MemberFunction]<ID3D11ShaderTrace*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int>)(lpVtbl[10]))((ID3D11ShaderTrace*)Unsafe.AsPointer(ref this), stepIndex, readRegisterIndex, pRegister, pValue);
     }
 
     public interface Interface : IUnknown.Interface
@@ -144,36 +144,36 @@ public unsafe partial struct ID3D11ShaderTrace : ID3D11ShaderTrace.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT64 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong*, int> TraceReady;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong*, int> TraceReady;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> ResetTrace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> ResetTrace;
 
         [NativeTypeName("HRESULT (D3D11_TRACE_STATS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D11_TRACE_STATS*, int> GetTraceStats;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D11_TRACE_STATS*, int> GetTraceStats;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> PSSelectStamp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> PSSelectStamp;
 
         [NativeTypeName("HRESULT (D3D11_TRACE_REGISTER *, D3D11_TRACE_VALUE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int> GetInitialRegisterContents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int> GetInitialRegisterContents;
 
         [NativeTypeName("HRESULT (UINT, D3D11_TRACE_STEP *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, D3D11_TRACE_STEP*, int> GetStep;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, D3D11_TRACE_STEP*, int> GetStep;
 
         [NativeTypeName("HRESULT (UINT, UINT, D3D11_TRACE_REGISTER *, D3D11_TRACE_VALUE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int> GetWrittenRegister;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int> GetWrittenRegister;
 
         [NativeTypeName("HRESULT (UINT, UINT, D3D11_TRACE_REGISTER *, D3D11_TRACE_VALUE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int> GetReadRegister;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, D3D11_TRACE_REGISTER*, D3D11_TRACE_VALUE*, int> GetReadRegister;
     }
 }

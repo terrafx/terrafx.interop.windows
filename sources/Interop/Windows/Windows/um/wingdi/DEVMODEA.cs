@@ -10,11 +10,11 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA"]/*' />
-public unsafe partial struct DEVMODEA
+public partial struct DEVMODEA
 {
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmDeviceName"]/*' />
     [NativeTypeName("BYTE[32]")]
-    public fixed byte dmDeviceName[32];
+    public _dmDeviceName_e__FixedBuffer dmDeviceName;
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmSpecVersion"]/*' />
     [NativeTypeName("WORD")]
@@ -37,7 +37,7 @@ public unsafe partial struct DEVMODEA
     public uint dmFields;
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.Anonymous1"]/*' />
-    [NativeTypeName("_devicemodeA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2205:5)")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L2205_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmColor"]/*' />
@@ -57,7 +57,7 @@ public unsafe partial struct DEVMODEA
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmFormName"]/*' />
     [NativeTypeName("BYTE[32]")]
-    public fixed byte dmFormName[32];
+    public _dmFormName_e__FixedBuffer dmFormName;
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmLogPixels"]/*' />
     [NativeTypeName("WORD")]
@@ -76,7 +76,7 @@ public unsafe partial struct DEVMODEA
     public uint dmPelsHeight;
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.Anonymous2"]/*' />
-    [NativeTypeName("_devicemodeA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2234:5)")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L2234_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='DEVMODEA.xml' path='doc/member[@name="DEVMODEA.dmDisplayFrequency"]/*' />
@@ -264,12 +264,12 @@ public unsafe partial struct DEVMODEA
     {
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous1"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_devicemodeA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2207:7)")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L2207_C7")]
         public _Anonymous1_e__Struct Anonymous1;
 
         /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous2"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_devicemodeA::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:2218:7)")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L2218_C7")]
         public _Anonymous2_e__Struct Anonymous2;
 
         /// <include file='_Anonymous1_e__Struct.xml' path='doc/member[@name="_Anonymous1_e__Struct"]/*' />
@@ -329,5 +329,19 @@ public unsafe partial struct DEVMODEA
         [FieldOffset(0)]
         [NativeTypeName("DWORD")]
         public uint dmNup;
+    }
+
+    /// <include file='_dmDeviceName_e__FixedBuffer.xml' path='doc/member[@name="_dmDeviceName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _dmDeviceName_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_dmFormName_e__FixedBuffer.xml' path='doc/member[@name="_dmFormName_e__FixedBuffer"]/*' />
+    [InlineArray(32)]
+    public partial struct _dmFormName_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

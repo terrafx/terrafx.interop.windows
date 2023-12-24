@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Device.CheckFeatureSupport">
+    <summary>Gets information about the features that are supported by the current graphics driver.</summary>
+    <param name="Feature">A constant from the <see cref="D3D12_FEATURE" /> enumeration describing the feature(s) that you want to query for support.</param>
+    <param name="pFeatureSupportData">A pointer to a data structure that corresponds to the value of the <i>Feature</i> parameter. To determine the corresponding data structure for each constant, see <see cref="D3D12_FEATURE" />.</param>
+    <param name="FeatureSupportDataSize">The size of the structure pointed to by the <i>pFeatureSupportData</i> parameter.</param>
+    <returns>Returns <b>S_OK</b> if successful. Returns <b>E_INVALIDARG</b> if an unsupported data type is passed to the <i>pFeatureSupportData</i> parameter or if a size mismatch is detected for the <i>FeatureSupportDataSize</i> parameter.</returns>
+  </member>
+  <member name="ID3D12Device.CopyDescriptors">
+    <summary>Copies descriptors from a source to a destination.</summary>
+    <param name="NumDestDescriptorRanges">The number of destination descriptor ranges to copy to.</param>
+    <param name="pDestDescriptorRangeStarts">
+      <para>An array of <b><see cref="D3D12_CPU_DESCRIPTOR_HANDLE" /></b> objects to copy to.</para>
+      <para>All the destination and source descriptors must be in heaps of the same <see cref="D3D12_DESCRIPTOR_HEAP_TYPE" />.</para>
+    </param>
+    <param name="pDestDescriptorRangeSizes">An array of destination descriptor range sizes to copy to.</param>
+    <param name="NumSrcDescriptorRanges">The number of source descriptor ranges to copy from.</param>
+    <param name="pSrcDescriptorRangeStarts">
+      <para>An array of <b><see cref="D3D12_CPU_DESCRIPTOR_HANDLE" /></b> objects to copy from.</para>
+      <blockquote>[!IMPORTANT] All elements in the <i>pSrcDescriptorRangeStarts</i> parameter must be in a non shader-visible descriptor heap. This is because shader-visible descriptor heaps may be created in <b>WRITE_COMBINE</b> memory or GPU local memory, which is prohibitively slow to read from. If your application manages descriptor heaps via copying the descriptors required for a given pass or frame from local "storage" descriptor heaps to the GPU-bound descriptor heap, use shader-opaque heaps for the storage heaps and copy into the GPU-visible heap as required.</blockquote>
+    </param>
+    <param name="pSrcDescriptorRangeSizes">An array of source descriptor range sizes to copy from.</param>
+    <param name="DescriptorHeapsType">
+      <para>The <see cref="D3D12_DESCRIPTOR_HEAP_TYPE" />-typed value that specifies the type of descriptor heap to copy with. This is required as different descriptor types may have different sizes.</para>
+      <para>Both the source and destination descriptor heaps must have the same type, else the debug layer will emit an error.</para>
+    </param>
+  </member>
+  <member name="ID3D12Device.CopyDescriptorsSimple">
+    <summary>Copies descriptors from a source to a destination.</summary>
+    <param name="NumDescriptors">The number of descriptors to copy.</param>
+    <param name="DestDescriptorRangeStart">
+      <para>A <b><see cref="D3D12_CPU_DESCRIPTOR_HANDLE" /></b> that describes the destination descriptors to start to copy to.</para>
+      <para>The destination and source descriptors must be in heaps of the same <see cref="D3D12_DESCRIPTOR_HEAP_TYPE" />.</para>
+    </param>
+    <param name="SrcDescriptorRangeStart">
+      <para>A <b><see cref="D3D12_CPU_DESCRIPTOR_HANDLE" /></b> that describes the source descriptors to start to copy from.</para>
+      <blockquote>[!IMPORTANT] The <i>SrcDescriptorRangeStart</i> parameter must be in a non shader-visible descriptor heap. This is because shader-visible descriptor heaps may be created in <b>WRITE_COMBINE</b> memory or GPU local memory, which is prohibitively slow to read from. If your application manages descriptor heaps via copying the descriptors required for a given pass or frame from local "storage" descriptor heaps to the GPU-bound descriptor heap, then use shader-opaque heaps for the storage heaps and copy into the GPU-visible heap as required.</blockquote>
+    </param>
+    <param name="DescriptorHeapsType">
+      <para>The <see cref="D3D12_DESCRIPTOR_HEAP_TYPE" />-typed value that specifies the type of descriptor heap to copy with. This is required as different descriptor types may have different sizes.</para>
+      <para>Both the source and destination descriptor heaps must have the same type, else the debug layer will emit an error.</para>
+    </param>
+  </member>
+  <member name="ID3D12Device.CreateCommandAllocator">
+    <summary>Creates a command allocator object.</summary>
+    <param name="type">A <see cref="D3D12_COMMAND_LIST_TYPE" />-typed value that specifies the type of command allocator to create. The type of command allocator can be the type that records either direct command lists or bundles.</param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the command allocator interface (<see cref="ID3D12CommandAllocator" />). The <b>REFIID</b>, or <b>GUID</b>, of the interface to the command allocator can be obtained by using the __uuidof() macro. For example, __uuidof(ID3D12CommandAllocator) will get the <b>GUID</b> of the interface to a command allocator.</param>
+    <param name="ppCommandAllocator">A pointer to a memory block that receives a pointer to the <see cref="ID3D12CommandAllocator" /> interface for the command allocator.</param>
+    <returns>This method returns <b>E_OUTOFMEMORY</b> if there is insufficient memory to create the command allocator. See <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12Device.CreateCommandList">
+    <summary>Creates a command list.</summary>
+    <param name="nodeMask">For single-GPU operation, set this to zero. If there are multiple GPU nodes, then set a bit to identify the node (the device's physical adapter) for which to create the command list. Each bit in the mask corresponds to a single node. Only one bit must be set. Also see <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</param>
+    <param name="type">Specifies the type of command list to create.</param>
+    <param name="pCommandAllocator">A pointer to the command allocator object from which the device creates command lists.</param>
+    <param name="pInitialState">
+      <para>An optional pointer to the pipeline state object that contains the initial pipeline state for the command list. If it is <code>nullptr</code>, then the runtime sets a dummy initial pipeline state, so that drivers don't have to deal with undefined state. The overhead for this is low, particularly for a command list, for which the overall cost of recording the command list likely dwarfs the cost of a single initial state setting. So there's little cost in not setting the initial pipeline state parameter, if doing so is inconvenient.</para>
+      <para>For bundles, on the other hand, it might make more sense to try to set the initial state parameter (since bundles are likely smaller overall, and can be reused frequently).</para>
+    </param>
+    <param name="riid">A reference to the globally unique identifier (<b>GUID</b>) of the command list interface to return in <i>ppCommandList</i>.</param>
+    <param name="ppCommandList">A pointer to a memory block that receives a pointer to the <see cref="ID3D12CommandList" /> or <see cref="ID3D12GraphicsCommandList" /> interface for the command list.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the command list.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device.CreateCommandQueue">
+    <summary>
+      <para>Creates a command queue.</para>
+      <para>Also see <see cref="ID3D12Device9.CreateCommandQueue1" />.</para>
+    </summary>
+    <param name="pDesc">Specifies a <b>D3D12_COMMAND_QUEUE_DESC</b> that describes the command queue.</param>
+    <param name="riid">The globally unique identifier (GUID) for the command queue interface. See <b>Remarks</b>. An input parameter.</param>
+    <param name="ppCommandQueue">A pointer to a memory block that receives a pointer to the <see cref="ID3D12CommandQueue" /> interface for the command queue.</param>
+    <returns>This method returns <b>E_OUTOFMEMORY</b> if there is insufficient memory to create the command queue. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12Device.CreateCommandSignature">
+    <summary>This method creates a command signature.</summary>
+    <param name="pDesc">Describes the command signature to be created with the <see cref="D3D12_COMMAND_SIGNATURE_DESC" /> structure.</param>
+    <param name="pRootSignature">
+      <para>Specifies the <see cref="ID3D12RootSignature" /> that the command signature applies to.</para>
+      <para>The root signature is required if any of the commands in the signature will update bindings on the pipeline. If the only command present is a draw or dispatch, the root signature parameter can be set to NULL.</para>
+    </param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the command signature interface (<see cref="ID3D12CommandSignature" />). The <b>REFIID</b>, or <b>GUID</b>, of the interface to the command signature can be obtained by using the __uuidof() macro. For example, __uuidof(<b>ID3D12CommandSignature</b>) will get the <b>GUID</b> of the interface to a command signature.</param>
+    <param name="ppvCommandSignature">Specifies a pointer, that on successful completion of the method will point to the created command signature (<see cref="ID3D12CommandSignature" />).</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Device.CreateCommittedResource">
+    <summary>Creates both a resource and an implicit heap, such that the heap is big enough to contain the entire resource, and the resource is mapped to the heap.</summary>
+    <param name="pHeapProperties">A pointer to a <b>D3D12_HEAP_PROPERTIES</b> structure that provides properties for the resource's heap.</param>
+    <param name="HeapFlags">Heap options, as a bitwise-OR'd combination of <b>D3D12_HEAP_FLAGS</b> enumeration constants.</param>
+    <param name="pDesc">A pointer to a <b>D3D12_RESOURCE_DESC</b> structure that describes the resource.</param>
+    <param name="InitialResourceState">
+      <para>The initial state of the resource, as a bitwise-OR'd combination of <b>D3D12_RESOURCE_STATES</b> enumeration constants.</para>
+      <para>When you create a resource together with a <see cref="D3D12_HEAP_TYPE_UPLOAD" /> heap, you must set <i>InitialResourceState</i> to <see cref="D3D12_RESOURCE_STATE_GENERIC_READ" />.</para>
+      <para>When you create a resource together with a <see cref="D3D12_HEAP_TYPE_READBACK" /> heap, you must set <i>InitialResourceState</i> to <see cref="D3D12_RESOURCE_STATE_COPY_DEST" />.</para>
+    </param>
+    <param name="pOptimizedClearValue">
+      <para>Specifies a <b>D3D12_CLEAR_VALUE</b> structure that describes the default value for a clear color.</para>
+      <para>
+        <i>pOptimizedClearValue</i> specifies a value for which clear operations are most optimal. When the created resource is a texture with either the <see cref="D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET" /> or <b>D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL</b> flags, you should choose the value with which the clear operation will most commonly be called. You can call the clear operation with other values, but those operations won't be as efficient as when the value matches the one passed in to resource creation.</para>
+      <para>When you use <see cref="D3D12_RESOURCE_DIMENSION_BUFFER" />, you must set <i>pOptimizedClearValue</i> to <code>nullptr</code>.</para>
+    </param>
+    <param name="riidResource">
+      <para>A reference to the globally unique identifier (<b>GUID</b>) of the resource interface to return in <i>ppvResource</i>.</para>
+      <para>While <i>riidResource</i> is most commonly the <b>GUID</b> of <see cref="ID3D12Resource" />, it may be the <b>GUID</b> of any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvResource">
+      <para>An optional pointer to a memory block that receives the requested interface pointer to the created resource object.</para>
+      <para>
+        <i>ppvResource</i> can be <code>nullptr</code>, to enable capability testing. When <i>ppvResource</i> is <code>nullptr</code>, no object is created, and <b>S_FALSE</b> is returned when <i>pDesc</i> is valid.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the resource.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device.CreateComputePipelineState">
+    <summary>Creates a compute pipeline state object.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D12_COMPUTE_PIPELINE_STATE_DESC" /> structure that describes compute pipeline state.</param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the pipeline state interface (<see cref="ID3D12PipelineState" />). The <b>REFIID</b>, or <b>GUID</b>, of the interface to the pipeline state can be obtained by using the __uuidof() macro. For example, __uuidof(ID3D12PipelineState) will get the <b>GUID</b> of the interface to a pipeline state.</param>
+    <param name="ppPipelineState">A pointer to a memory block that receives a pointer to the <see cref="ID3D12PipelineState" /> interface for the pipeline state object. The pipeline state object is an immutable state object. It contains no methods.</param>
+    <returns>This method returns <b>E_OUTOFMEMORY</b> if there is insufficient memory to create the pipeline state object. See <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12Device.CreateConstantBufferView">
+    <summary>Creates a constant-buffer view for accessing resource data.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D12_CONSTANT_BUFFER_VIEW_DESC" /> structure that describes the constant-buffer view.</param>
+    <param name="DestDescriptor">Describes the CPU descriptor handle that represents the start of the heap that holds the constant-buffer view.</param>
+  </member>
+  <member name="ID3D12Device.CreateDepthStencilView">
+    <summary>Creates a depth-stencil view for accessing resource data.</summary>
+    <param name="pResource">
+      <para>A pointer to the <see cref="ID3D12Resource" /> object that represents the depth stencil.</para>
+      <para>At least one of <i>pResource</i> or <i>pDesc</i> must be provided. A null <i>pResource</i> is used to initialize a null descriptor, which guarantees D3D11-like null binding behavior (reading 0s, writes are discarded), but must have a valid <i>pDesc</i> in order to determine the descriptor type.</para>
+    </param>
+    <param name="pDesc">
+      <para>A pointer to a <see cref="D3D12_DEPTH_STENCIL_VIEW_DESC" /> structure that describes the depth-stencil view.</para>
+      <para>A null <i>pDesc</i> is used to initialize a default descriptor, if possible. This behavior is identical to the D3D11 null descriptor behavior, where defaults are filled in. This behavior inherits the resource format and dimension (if not typeless) and DSVs target the first mip and all array slices. Not all resources support null descriptor initialization.</para>
+    </param>
+    <param name="DestDescriptor">Describes the CPU descriptor handle that represents the start of the heap that holds the depth-stencil view.</param>
+  </member>
+  <member name="ID3D12Device.CreateDescriptorHeap">
+    <summary>Creates a descriptor heap object.</summary>
+    <param name="pDescriptorHeapDesc">A pointer to a <see cref="D3D12_DESCRIPTOR_HEAP_DESC" /> structure that describes the heap.</param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the descriptor heap interface. See Remarks. An input parameter.</param>
+    <param name="ppvHeap">A pointer to a memory block that receives a pointer to the descriptor heap.<i>ppvHeap</i> can be NULL, to enable capability testing. When <i>ppvHeap</i> is NULL, no object will be created and S_FALSE will be returned when <i>pDescriptorHeapDesc</i> is valid.</param>
+    <returns>This method returns <b>E_OUTOFMEMORY</b> if there is insufficient memory to create the descriptor heap object. See <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12Device.CreateFence">
+    <summary>Creates a fence object.</summary>
+    <param name="InitialValue">The initial value for the fence.</param>
+    <param name="Flags">A combination of <see cref="D3D12_FENCE_FLAGS" />-typed values that are combined by using a bitwise OR operation. The resulting value specifies options for the fence.</param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the fence interface (<see cref="ID3D12Fence" />). The <b>REFIID</b>, or <b>GUID</b>, of the interface to the fence can be obtained by using the __uuidof() macro. For example, __uuidof(ID3D12Fence) will get the <b>GUID</b> of the interface to a fence.</param>
+    <param name="ppFence">A pointer to a memory block that receives a pointer to the <see cref="ID3D12Fence" /> interface that is used to access the fence.</param>
+    <returns>Returns <b>S_OK</b> if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Device.CreateGraphicsPipelineState">
+    <summary>Creates a graphics pipeline state object.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D12_GRAPHICS_PIPELINE_STATE_DESC" /> structure that describes graphics pipeline state.</param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the pipeline state interface (<see cref="ID3D12PipelineState" />). The <b>REFIID</b>, or <b>GUID</b>, of the interface to the pipeline state can be obtained by using the __uuidof() macro. For example, __uuidof(ID3D12PipelineState) will get the <b>GUID</b> of the interface to a pipeline state.</param>
+    <param name="ppPipelineState">A pointer to a memory block that receives a pointer to the <see cref="ID3D12PipelineState" /> interface for the pipeline state object. The pipeline state object is an immutable state object. It contains no methods.</param>
+    <returns>This method returns <b>E_OUTOFMEMORY</b> if there is insufficient memory to create the pipeline state object. See <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12Device.CreateHeap">
+    <summary>Creates a heap that can be used with placed resources and reserved resources.</summary>
+    <param name="pDesc">A pointer to a constant <b>D3D12_HEAP_DESC</b> structure that describes the heap.</param>
+    <param name="riid">
+      <para>A reference to the globally unique identifier (<b>GUID</b>) of the heap interface to return in <i>ppvHeap</i>.</para>
+      <para>While <i>riidResource</i> is most commonly the <b>GUID</b> of <see cref="ID3D12Heap" />, it may be the <b>GUID</b> of any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvHeap">
+      <para>An optional pointer to a memory block that receives the requested interface pointer to the created heap object.</para>
+      <para>
+        <i>ppvHeap</i> can be <code>nullptr</code>, to enable capability testing. When <i>ppvHeap</i> is <code>nullptr</code>, no object is created, and <b>S_FALSE</b> is returned when <i>pDesc</i> is valid.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the heap.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device.CreatePlacedResource">
+    <summary>
+      <para>Creates a resource that is placed in a specific heap. Placed resources are the lightest weight resource objects available, and are the fastest to create and destroy.</para>
+      <para>Your application can re-use video memory by overlapping multiple Direct3D placed and reserved resources on heap regions. The simple memory re-use model (described in <a href="https://docs.microsoft.com/#remarks">Remarks</a>) exists to clarify which overlapping resource is valid at any given time. To maximize graphics tool support, with the simple model data-inheritance isn't supported; and finer-grained tile and sub-resource invalidation isn't supported. Only full overlapping resource invalidation occurs.</para>
+    </summary>
+    <param name="pHeap">A pointer to the <b>ID3D12Heap</b> interface that represents the heap in which the resource is placed.</param>
+    <param name="HeapOffset">The offset, in bytes, to the resource. The <i>HeapOffset</i> must be a multiple of the resource's alignment, and <i>HeapOffset</i> plus the resource size must be smaller than or equal to the heap size. <see cref="GetResourceAllocationInfo" /> must be used to understand the sizes of texture resources.</param>
+    <param name="pDesc">A pointer to a <b>D3D12_RESOURCE_DESC</b> structure that describes the resource.</param>
+    <param name="InitialState">
+      <para>The initial state of the resource, as a bitwise-OR'd combination of <b>D3D12_RESOURCE_STATES</b> enumeration constants.</para>
+      <para>When a resource is created together with a <b>D3D12_HEAP_TYPE_UPLOAD</b> heap, <i>InitialState</i> must be <b>D3D12_RESOURCE_STATE_GENERIC_READ</b>. When a resource is created together with a <b>D3D12_HEAP_TYPE_READBACK</b> heap, <i>InitialState</i> must be <b>D3D12_RESOURCE_STATE_COPY_DEST</b>.</para>
+    </param>
+    <param name="pOptimizedClearValue">
+      <para>Specifies a <b>D3D12_CLEAR_VALUE</b> that describes the default value for a clear color.</para>
+      <para>
+        <i>pOptimizedClearValue</i> specifies a value for which clear operations are most optimal. When the created resource is a texture with either the <b>D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET</b> or <b>D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL</b> flags, your application should choose the value that the clear operation will most commonly be called with.</para>
+      <para>Clear operations can be called with other values, but those operations will not be as efficient as when the value matches the one passed into resource creation.</para>
+      <para>
+        <i>pOptimizedClearValue</i> must be NULL when used with <b>D3D12_RESOURCE_DIMENSION_BUFFER</b>.</para>
+    </param>
+    <param name="riid">
+      <para>The globally unique identifier (<b>GUID</b>) for the resource interface. This is an input parameter.</para>
+      <para>The <b>REFIID</b>, or <b>GUID</b>, of the interface to the resource can be obtained by using the <code>__uuidof</code> macro. For example, <code>__uuidof(ID3D12Resource)</code> gets the <b>GUID</b> of the interface to a resource. Although <b>riid</b> is, most commonly, the GUID for <see cref="ID3D12Resource" />, it may be any <b>GUID</b> for any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvResource">A pointer to a memory block that receives a pointer to the resource. <i>ppvResource</i> can be NULL, to enable capability testing. When <i>ppvResource</i> is NULL, no object will be created and S_FALSE will be returned when <i>pResourceDesc</i> and other parameters are valid.</param>
+    <returns>This method returns <b>E_OUTOFMEMORY</b> if there is insufficient memory to create the resource. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12Device.CreateQueryHeap">
+    <summary>Creates a query heap. A query heap contains an array of queries.</summary>
+    <param name="pDesc">Specifies the query heap in a <see cref="D3D12_QUERY_HEAP_DESC" /> structure.</param>
+    <param name="riid">Specifies a REFIID that uniquely identifies the heap.</param>
+    <param name="ppvHeap">Specifies a pointer to the heap, that will be returned on successful completion of the method.<i>ppvHeap</i> can be NULL, to enable capability testing. When <i>ppvHeap</i> is NULL, no object will be created and S_FALSE will be returned when <i>pDesc</i> is valid.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Device.CreateRenderTargetView">
+    <summary>Creates a render-target view for accessing resource data.</summary>
+    <param name="pResource">
+      <para>A pointer to the <see cref="ID3D12Resource" /> object that represents the render target.</para>
+      <para>At least one of <i>pResource</i> or <i>pDesc</i> must be provided. A null <i>pResource</i> is used to initialize a null descriptor, which guarantees D3D11-like null binding behavior (reading 0s, writes are discarded), but must have a valid <i>pDesc</i> in order to determine the descriptor type.</para>
+    </param>
+    <param name="pDesc">
+      <para>A pointer to a <see cref="D3D12_RENDER_TARGET_VIEW_DESC" /> structure that describes the render-target view.</para>
+      <para>A null <i>pDesc</i> is used to initialize a default descriptor, if possible. This behavior is identical to the D3D11 null descriptor behavior, where defaults are filled in. This behavior inherits the resource format and dimension (if not typeless) and RTVs target the first mip and all array slices. Not all resources support null descriptor initialization.</para>
+    </param>
+    <param name="DestDescriptor">Describes the CPU descriptor handle that represents the destination where the newly-created render target view will reside.</param>
+  </member>
+  <member name="ID3D12Device.CreateReservedResource">
+    <summary>Creates a resource that is reserved, and not yet mapped to any pages in a heap.</summary>
+    <param name="pDesc">A pointer to a <b>D3D12_RESOURCE_DESC</b> structure that describes the resource.</param>
+    <param name="InitialState">The initial state of the resource, as a bitwise-OR'd combination of <b>D3D12_RESOURCE_STATES</b> enumeration constants.</param>
+    <param name="pOptimizedClearValue">
+      <para>Specifies a <b>D3D12_CLEAR_VALUE</b> structure that describes the default value for a clear color.</para>
+      <para>
+        <i>pOptimizedClearValue</i> specifies a value for which clear operations are most optimal. When the created resource is a texture with either the <see cref="D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET" /> or <b>D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL</b> flags, you should choose the value with which the clear operation will most commonly be called. You can call the clear operation with other values, but those operations won't be as efficient as when the value matches the one passed in to resource creation.</para>
+      <para>When you use <see cref="D3D12_RESOURCE_DIMENSION_BUFFER" />, you must set <i>pOptimizedClearValue</i> to <code>nullptr</code>.</para>
+    </param>
+    <param name="riid">
+      <para>A reference to the globally unique identifier (<b>GUID</b>) of the resource interface to return in <i>ppvResource</i>. See <b>Remarks</b>.</para>
+      <para>While <i>riidResource</i> is most commonly the <b>GUID</b> of <see cref="ID3D12Resource" />, it may be the <b>GUID</b> of any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvResource">
+      <para>An optional pointer to a memory block that receives the requested interface pointer to the created resource object.</para>
+      <para>
+        <i>ppvResource</i> can be <code>nullptr</code>, to enable capability testing. When <i>ppvResource</i> is <code>nullptr</code>, no object is created, and <b>S_FALSE</b> is returned when <i>pDesc</i> is valid.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the resource.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device.CreateRootSignature">
+    <summary>Creates a root signature layout.</summary>
+    <param name="nodeMask">For single GPU operation, set this to zero. If there are multiple GPU nodes, set bits to identify the nodes (the device's physical adapters) to which the root signature is to apply. Each bit in the mask corresponds to a single node. Refer to <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</param>
+    <param name="pBlobWithRootSignature">A pointer to the source data for the serialized signature.</param>
+    <param name="blobLengthInBytes">The size, in bytes, of the block of memory that <i>pBlobWithRootSignature</i> points to.</param>
+    <param name="riid">The globally unique identifier (<b>GUID</b>) for the root signature interface. See Remarks. An input parameter.</param>
+    <param name="ppvRootSignature">A pointer to a memory block that receives a pointer to the root signature.</param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</para>
+      <para>This method returns <b>E_INVALIDARG</b> if the blob that <i>pBlobWithRootSignature</i> points to is invalid.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device.CreateSampler">
+    <summary>Create a sampler object that encapsulates sampling information for a texture.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D12_SAMPLER_DESC" /> structure that describes the sampler.</param>
+    <param name="DestDescriptor">Describes the CPU descriptor handle that represents the start of the heap that holds the sampler.</param>
+  </member>
+  <member name="ID3D12Device.CreateShaderResourceView">
+    <summary>Creates a shader-resource view for accessing data in a resource.</summary>
+    <param name="pResource">
+      <para>A pointer to the <see cref="ID3D12Resource" /> object that represents the shader resource.</para>
+      <para>At least one of <i>pResource</i> or <i>pDesc</i> must be provided. A null <i>pResource</i> is used to initialize a null descriptor, which guarantees D3D11-like null binding behavior (reading 0s, writes are discarded), but must have a valid <i>pDesc</i> in order to determine the descriptor type.</para>
+    </param>
+    <param name="pDesc">
+      <para>A pointer to a <see cref="D3D12_SHADER_RESOURCE_VIEW_DESC" /> structure that describes the shader-resource view.</para>
+      <para>A null <i>pDesc</i> is used to initialize a default descriptor, if possible. This behavior is identical to the D3D11 null descriptor behavior, where defaults are filled in. This behavior inherits the resource format and dimension (if not typeless) and for buffers SRVs target a full buffer and are typed (not raw or structured), and for textures SRVs target a full texture, all mips and all array slices. Not all resources support null descriptor initialization.</para>
+    </param>
+    <param name="DestDescriptor">Describes the CPU descriptor handle that represents the shader-resource view. This handle can be created in a shader-visible or non-shader-visible descriptor heap.</param>
+  </member>
+  <member name="ID3D12Device.CreateSharedHandle">
+    <summary>Creates a shared handle to a heap, resource, or fence object.</summary>
+    <param name="pObject">
+      <para>A pointer to the <see cref="ID3D12DeviceChild" /> interface that represents the heap, resource, or fence object to create for sharing. The following interfaces (derived from <b>ID3D12DeviceChild</b>) are supported:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="ID3D12Heap" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D12Resource" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D12Fence" />
+          </description>
+        </item>
+      </list>
+    </param>
+    <param name="pAttributes">
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa379560(v=vs.85)">SECURITY_ATTRIBUTES</a> structure that contains two separate but related data members: an optional security descriptor, and a <b>Boolean</b> value that determines whether child processes can inherit the returned handle.</para>
+      <para>Set this parameter to <b>NULL</b> if you want child processes that the application might create to not inherit the handle returned by<b>CreateSharedHandle</b>, and if you want the resource that is associated with the returned handle to get a default security descriptor.</para>
+      <para>The <b>lpSecurityDescriptor</b> member of the structure specifies a<see cref="SECURITY_DESCRIPTOR" /> for the resource. Set this member to <b>NULL</b> if you want the runtime to assign a default security descriptor to the resource that is associated with the returned handle. The ACLs in the default security descriptor for the resource come from the primary or impersonation token of the creator. For more info, see <a href="https://docs.microsoft.com//windows/desktop/Sync/synchronization-object-security-and-access-rights">Synchronization Object Security and Access Rights</a>.</para>
+    </param>
+    <param name="Access">Currently the only value this parameter accepts is GENERIC_ALL.</param>
+    <param name="Name">
+      <para>A <b>NULL</b>-terminated <b>UNICODE</b> string that contains the name to associate with the shared heap. The name is limited to MAX_PATH characters. Name comparison is case-sensitive.</para>
+      <para>If <i>Name</i> matches the name of an existing resource, <b>CreateSharedHandle</b> fails with <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_NAME_ALREADY_EXISTS</a>. This occurs because these objects share the same namespace.</para>
+      <para>The name can have a "Global" or "Local" prefix to explicitly create the object in the global or session namespace. The remainder of the name can contain any character except the backslash character (\). For more information, see<a href="https://docs.microsoft.com//windows/desktop/TermServ/kernel-object-namespaces">Kernel Object Namespaces</a>. Fast user switching is implemented using Terminal Services sessions. Kernel object names must follow the guidelines outlined for Terminal Services so that applications can support multiple users.</para>
+      <para>The object can be created in a private namespace. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Sync/object-namespaces">Object Namespaces</a>.</para>
+    </param>
+    <param name="pHandle">A pointer to a variable that receives the NT HANDLE value to the resource to share. You can use this handle in calls to access the resource.</param>
+    <returns>
+      <para>Returns S_OK if successful; otherwise, returns one of the following values:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_INVALID_CALL</a> if one of the parameters is invalid.</description>
+        </item>
+        <item>
+          <description>
+            <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_NAME_ALREADY_EXISTS</a> if the supplied name of the resource to share is already associated with another resource.</description>
+        </item>
+        <item>
+          <description>E_ACCESSDENIED if the object is being created in a protected namespace.</description>
+        </item>
+        <item>
+          <description>E_OUTOFMEMORY if sufficient memory is not available to create the handle.</description>
+        </item>
+        <item>
+          <description>Possibly other error codes that are described in the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> topic.</description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="ID3D12Device.CreateUnorderedAccessView">
+    <summary>Creates a view for unordered accessing.</summary>
+    <param name="pResource">
+      <para>A pointer to the <see cref="ID3D12Resource" /> object that represents the unordered access.</para>
+      <para>At least one of <i>pResource</i> or <i>pDesc</i> must be provided.</para>
+      <para>A null <i>pResource</i> is used to initialize a null descriptor, which guarantees Direct3D 11-like null binding behavior (reading 0s, writes are discarded), but must have a valid <i>pDesc</i> in order to determine the descriptor type.</para>
+    </param>
+    <param name="pCounterResource">
+      <para>The <see cref="ID3D12Resource" /> for the counter (if any) associated with the UAV.</para>
+      <para>If <i>pCounterResource</i> is not specified, then the <b>CounterOffsetInBytes</b> member of the <see cref="D3D12_BUFFER_UAV" /> structure must be 0.</para>
+      <para>If <i>pCounterResource</i> is specified, then there is a counter associated with the UAV, and the runtime performs validation of the following requirements:</para>
+      <list type="bullet">
+        <item>
+          <description>The <b>StructureByteStride</b> member of the <see cref="D3D12_BUFFER_UAV" /> structure must be greater than 0.</description>
+        </item>
+        <item>
+          <description>The format must be DXGI_FORMAT_UNKNOWN.</description>
+        </item>
+        <item>
+          <description>The D3D12_BUFFER_UAV_FLAG_RAW flag (a <see cref="D3D12_BUFFER_UAV_FLAGS" /> enumeration constant) must not be set.</description>
+        </item>
+        <item>
+          <description>Both of the resources (<i>pResource</i> and <i>pCounterResource</i>) must be buffers.</description>
+        </item>
+        <item>
+          <description>The <b>CounterOffsetInBytes</b> member of the <see cref="D3D12_BUFFER_UAV" /> structure must be a multiple of **D3D12_UAV_COUNTER_PLACEMENT_ALIGNMENT** (4096), and must be within the range of the counter resource.</description>
+        </item>
+        <item>
+          <description>
+            <i>pResource</i> cannot be NULL</description>
+        </item>
+        <item>
+          <description>
+            <i>pDesc</i> cannot be NULL.</description>
+        </item>
+      </list>
+    </param>
+    <param name="pDesc">
+      <para>A pointer to a <see cref="D3D12_UNORDERED_ACCESS_VIEW_DESC" /> structure that describes the unordered-access view.</para>
+      <para>A null <i>pDesc</i> is used to initialize a default descriptor, if possible. This behavior is identical to the D3D11 null descriptor behavior, where defaults are filled in. This behavior inherits the resource format and dimension (if not typeless) and for buffers UAVs target a full buffer and are typed, and for textures UAVs target the first mip and all array slices. Not all resources support null descriptor initialization.</para>
+    </param>
+    <param name="DestDescriptor">Describes the CPU descriptor handle that represents the start of the heap that holds the unordered-access view.</param>
+  </member>
+  <member name="ID3D12Device.Evict">
+    <summary>Enables the page-out of data, which precludes GPU access of that data.</summary>
+    <param name="NumObjects">The number of objects in the <i>ppObjects</i> array to evict from the device.</param>
+    <param name="ppObjects">
+      <para>A pointer to a memory block that contains an array of <see cref="ID3D12Pageable" /> interface pointers for the objects.</para>
+      <para>Even though most D3D12 objects inherit from <see cref="ID3D12Pageable" />, residency changes are only supported on the following objects: Descriptor Heaps, Heaps, Committed Resources, and Query Heaps</para>
+    </param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Device.GetAdapterLuid">
+    <summary>Gets a locally unique identifier for the current device (adapter).</summary>
+    <returns>The locally unique identifier for the adapter.</returns>
+  </member>
+  <member name="ID3D12Device.GetCopyableFootprints">
+    <summary>Gets a resource layout that can be copied. Helps the app fill-in<see cref="D3D12_PLACED_SUBRESOURCE_FOOTPRINT" /> and<see cref="D3D12_SUBRESOURCE_FOOTPRINT" /> when suballocating space in upload heaps.</summary>
+    <param name="pResourceDesc">A description of the resource, as a pointer to a <see cref="D3D12_RESOURCE_DESC" /> structure.</param>
+    <param name="FirstSubresource">Index of the first subresource in the resource. The range of valid values is 0 to D3D12_REQ_SUBRESOURCES.</param>
+    <param name="NumSubresources">The number of subresources in the resource. The range of valid values is 0 to (D3D12_REQ_SUBRESOURCES - <i>FirstSubresource</i>).</param>
+    <param name="BaseOffset">The offset, in bytes, to the resource.</param>
+    <param name="pLayouts">A pointer to an array (of length <i>NumSubresources</i>) of<see cref="D3D12_PLACED_SUBRESOURCE_FOOTPRINT" /> structures, to be filled with the description and placement of each subresource.</param>
+    <param name="pNumRows">A pointer to an array (of length <i>NumSubresources</i>) of integer variables, to be filled with the number of rows for each subresource.</param>
+    <param name="pRowSizeInBytes">
+      <para>A pointer to an array (of length <i>NumSubresources</i>) of integer variables, each entry to be filled with the unpadded size in bytes of a row, of each subresource.</para>
+      <para>For example, if a Texture2D resource has a width of 32 and bytes per pixel of 4,</para>
+      <para>then <i>pRowSizeInBytes</i> returns 128.</para>
+      <para>
+        <i>pRowSizeInBytes</i> should not be confused with <b>row pitch</b>, as examining <i>pLayouts</i> and getting the row pitch from that will give you 256 as it is aligned to D3D12_TEXTURE_DATA_PITCH_ALIGNMENT.</para>
+    </param>
+    <param name="pTotalBytes">A pointer to an integer variable, to be filled with the total size, in bytes.</param>
+  </member>
+  <member name="ID3D12Device.GetCustomHeapProperties">
+    <summary>Divulges the equivalent custom heap properties that are used for non-custom heap types, based on the adapter's architectural properties.</summary>
+    <param name="nodeMask">For single-GPU operation, set this to zero. If there are multiple GPU nodes, set a bit to identify the node (the device's physical adapter). Each bit in the mask corresponds to a single node. Only 1 bit must be set. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</param>
+    <param name="heapType">A <see cref="D3D12_HEAP_TYPE" />-typed value that specifies the heap to get properties for. D3D12_HEAP_TYPE_CUSTOM is not supported as a parameter value.</param>
+    <returns>
+      <para>Returns a <see cref="D3D12_HEAP_PROPERTIES" /> structure that provides properties for the specified heap. The <b>Type</b> member of the returned D3D12_HEAP_PROPERTIES is always D3D12_HEAP_TYPE_CUSTOM.</para>
+      <para>When <see cref="D3D12_FEATURE_DATA_ARCHITECTURE" />.UMA is FALSE, the returned D3D12_HEAP_PROPERTIES members convert as follows:</para>
+      <list type="table">
+        <listheader>
+          <description>Heap Type</description>
+          <description>How the returned D3D12_HEAP_PROPERTIES members convert</description>
+        </listheader>
+        <listheader>
+          <description>D3D12_HEAP_TYPE_UPLOAD</description>
+          <description>
+            <b>CPUPageProperty</b> = WRITE_COMBINE, <b>MemoryPoolPreference</b> = L0.</description>
+        </listheader>
+        <listheader>
+          <description>D3D12_HEAP_TYPE_DEFAULT</description>
+          <description>
+            <b>CPUPageProperty</b> = NOT_AVAILABLE, <b>MemoryPoolPreference</b> = L1.</description>
+        </listheader>
+        <listheader>
+          <description>D3D12_HEAP_TYPE_READBACK</description>
+          <description>
+            <b>CPUPageProperty</b> = WRITE_BACK, <b>MemoryPoolPreference</b> = L0.</description>
+        </listheader>
+      </list> <para>When D3D12_FEATURE_DATA_ARCHITECTURE.UMA is TRUE and D3D12_FEATURE_DATA_ARCHITECTURE.CacheCoherentUMA is FALSE, the returned D3D12_HEAP_PROPERTIES members convert as follows:</para><list type="table"><listheader><description>Heap Type</description><description>How the returned D3D12_HEAP_PROPERTIES members convert</description></listheader><listheader><description>D3D12_HEAP_TYPE_UPLOAD</description><description><b>CPUPageProperty</b> = WRITE_COMBINE, <b>MemoryPoolPreference</b> = L0.</description></listheader><listheader><description>D3D12_HEAP_TYPE_DEFAULT</description><description><b>CPUPageProperty</b> = NOT_AVAILABLE, <b>MemoryPoolPreference</b> = L0.</description></listheader><listheader><description>D3D12_HEAP_TYPE_READBACK</description><description><b>CPUPageProperty</b> = WRITE_BACK, <b>MemoryPoolPreference</b> = L0.</description></listheader></list> <para>When D3D12_FEATURE_DATA_ARCHITECTURE.UMA is TRUE and D3D12_FEATURE_DATA_ARCHITECTURE.CacheCoherentUMA is TRUE, the returned D3D12_HEAP_PROPERTIES members convert as follows:</para><list type="table"><listheader><description>Heap Type</description><description>How the returned D3D12_HEAP_PROPERTIES members convert</description></listheader><listheader><description>D3D12_HEAP_TYPE_UPLOAD</description><description><b>CPUPageProperty</b> = WRITE_BACK, <b>MemoryPoolPreference</b> = L0.</description></listheader><listheader><description>D3D12_HEAP_TYPE_DEFAULT</description><description><b>CPUPageProperty</b> = NOT_AVAILABLE, <b>MemoryPoolPreference</b> = L0.</description></listheader><listheader><description>D3D12_HEAP_TYPE_READBACK</description><description><b>CPUPageProperty</b> = WRITE_BACK, <b>MemoryPoolPreference</b> = L0.</description></listheader></list></returns>
+  </member>
+  <member name="ID3D12Device.GetDescriptorHandleIncrementSize">
+    <summary>Gets the size of the handle increment for the given type of descriptor heap. This value is typically used to increment a handle into a descriptor array by the correct amount.</summary>
+    <param name="DescriptorHeapType">The <see cref="D3D12_DESCRIPTOR_HEAP_TYPE" />-typed value that specifies the type of descriptor heap to get the size of the handle increment for.</param>
+    <returns>Returns the size of the handle increment for the given type of descriptor heap, including any necessary padding.</returns>
+  </member>
+  <member name="ID3D12Device.GetDeviceRemovedReason">
+    <summary>Gets the reason that the device was removed, or <b>S_OK</b> if the device isn't removed. To be called back when a device is removed, consider using <see cref="ID3D12Fence.SetEventOnCompletion" /> with a value of <b>UINT64_MAX</b>. That's because device removal causes all fences to be signaled to that value (which also implies completing all events waited on, because they'll all be less than <b>UINT64_MAX</b>).</summary>
+    <returns>This method returns the reason that the device was removed.</returns>
+  </member>
+  <member name="ID3D12Device.GetNodeCount">
+    <summary>Reports the number of physical adapters (nodes) that are associated with this device.</summary>
+    <returns>The number of physical adapters (nodes) that this device has.</returns>
+  </member>
+  <member name="ID3D12Device.GetResourceAllocationInfo">
+    <summary>Gets the size and alignment of memory required for a collection of resources on this adapter.</summary>
+    <param name="visibleMask">For single-GPU operation, set this to zero. If there are multiple GPU nodes, then set bits to identify the nodes (the device's physical adapters). Each bit in the mask corresponds to a single node. Also see <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</param>
+    <param name="numResourceDescs">The number of resource descriptors in the <i>pResourceDescs</i> array.</param>
+    <param name="pResourceDescs">An array of <b>D3D12_RESOURCE_DESC</b> structures that described the resources to get info about.</param>
+    <returns>
+      <para>A <see cref="D3D12_RESOURCE_ALLOCATION_INFO" /> structure that provides info about video memory allocated for the specified array of resources.</para>
+      <para>If an error occurs, then <b>D3D12_RESOURCE_ALLOCATION_INFO.SizeInBytes</b> equals <b>UINT64_MAX</b>.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device.GetResourceTiling">
+    <summary>Gets info about how a tiled resource is broken into tiles.</summary>
+    <param name="pTiledResource">Specifies a tiled <see cref="ID3D12Resource" /> to get info about.</param>
+    <param name="pNumTilesForEntireResource">A pointer to a variable that receives the number of tiles needed to store the entire tiled resource.</param>
+    <param name="pPackedMipDesc">A pointer to a <see cref="D3D12_PACKED_MIP_INFO" /> structure that <b>GetResourceTiling</b> fills with info about how the tiled resource's mipmaps are packed.</param>
+    <param name="pStandardTileShapeForNonPackedMips">Specifies a <see cref="D3D12_TILE_SHAPE" /> structure that <b>GetResourceTiling</b> fills with info about the tile shape. This is info about how pixels fit in the tiles, independent of tiled resource's dimensions, not including packed mipmaps. If the entire tiled resource is packed, this parameter is meaningless because the tiled resource has no defined layout for packed mipmaps. In this situation, <b>GetResourceTiling</b> sets the members of D3D12_TILE_SHAPE to zeros.</param>
+    <param name="pNumSubresourceTilings">A pointer to a variable that contains the number of tiles in the subresource. On input, this is the number of subresources to query tilings for; on output, this is the number that was actually retrieved at <i>pSubresourceTilingsForNonPackedMips</i> (clamped to what's available).</param>
+    <param name="FirstSubresourceTilingToGet">The number of the first subresource tile to get. <b>GetResourceTiling</b> ignores this parameter if the number that <i>pNumSubresourceTilings</i> points to is 0.</param>
+    <param name="pSubresourceTilingsForNonPackedMips">Specifies a <see cref="D3D12_SUBRESOURCE_TILING" /> structure that <b>GetResourceTiling</b> fills with info about subresource tiles. If subresource tiles are part of packed mipmaps, <b>GetResourceTiling</b> sets the members of D3D12_SUBRESOURCE_TILING to zeros, except the <i>StartTileIndexInOverallResource</i> member, which <b>GetResourceTiling</b> sets to D3D12_PACKED_TILE (0xffffffff). The D3D12_PACKED_TILE constant indicates that the whole <b>D3D12_SUBRESOURCE_TILING</b> structure is meaningless for this situation, and the info that the <i>pPackedMipDesc</i> parameter points to applies.</param>
+  </member>
+  <member name="ID3D12Device.MakeResident">
+    <summary>Makes objects resident for the device.</summary>
+    <param name="NumObjects">The number of objects in the <i>ppObjects</i> array to make resident for the device.</param>
+    <param name="ppObjects">
+      <para>A pointer to a memory block that contains an array of <see cref="ID3D12Pageable" /> interface pointers for the objects.</para>
+      <para>Even though most D3D12 objects inherit from <see cref="ID3D12Pageable" />, residency changes are only supported on the following objects: Descriptor Heaps, Heaps, Committed Resources, and Query Heaps</para>
+    </param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Device.OpenSharedHandle">
+    <summary>Opens a handle for shared resources, shared heaps, and shared fences, by using HANDLE and REFIID.</summary>
+    <param name="NTHandle">The handle that was output by the call to<see cref="ID3D12Device.CreateSharedHandle" />.</param>
+    <param name="riid">
+      <para>The globally unique identifier (<b>GUID</b>) for one of the following interfaces:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="ID3D12Heap" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D12Resource" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D12Fence" />
+          </description>
+        </item>
+      </list>The <b>REFIID</b>, or <b>GUID</b>, of the interface can be obtained by using the __uuidof() macro. For example, __uuidof(ID3D12Heap) will get the <b>GUID</b> of the interface to a resource.</param>
+    <param name="ppvObj">
+      <para>A pointer to a memory block that receives a pointer to one of the following interfaces:</para>
+      <list type="bullet">
+        <item>
+          <description>
+            <see cref="ID3D12Heap" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D12Resource" />
+          </description>
+        </item>
+        <item>
+          <description>
+            <see cref="ID3D12Fence" />
+          </description>
+        </item>
+      </list>
+    </param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Device.OpenSharedHandleByName">
+    <summary>Opens a handle for shared resources, shared heaps, and shared fences, by using Name and Access.</summary>
+    <param name="Name">The name that was optionally passed as the <i>Name</i> parameter in the call to<see cref="ID3D12Device.CreateSharedHandle" />.</param>
+    <param name="Access">The access level that was specified in the <i>Access</i> parameter in the call to<see cref="ID3D12Device.CreateSharedHandle" />.</param>
+    <param name="pNTHandle">Pointer to the shared handle.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Device.SetStablePowerState">
+    <summary>A development-time aid for certain types of profiling and experimental prototyping.</summary>
+    <param name="Enable">Specifies a BOOL that turns the stable power state on or off.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Device">
+    <summary>
+      <para>Represents a virtual adapter; it is used to create command allocators, command lists, command queues, fences, resources, pipeline state objects, heaps, root signatures, samplers, and many resource views.</para>
+      <div>
+        <b>Note</b>  This interface was introduced in Windows 10. Applications targetting Windows 10 should use this interface instead of later versions. Applications targetting a later version of Windows 10 should use the appropriate version of the <b>ID3D12Device</b> interface. The latest version of this interface is <see cref="ID3D12Device3" /> introduced in Windows 10 Fall Creators Update.</div>
+    </summary>
+  </member>
+</doc>

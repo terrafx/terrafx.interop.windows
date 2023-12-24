@@ -5,26 +5,11 @@
   <member name="IDMLCompiledOperator">
     <summary>
       <para>Represents a compiled, efficient form of an operator suitable for execution on the GPU. To create this object, call <see cref="IDMLDevice.CompileOperator" />. The <b>IDMLCompiledOperator</b> interface inherits from <see cref="IDMLDispatchable" />.</para>
-      <para>Unlike <see cref="IDMLOperator" />, compiled operators are "baked", and can be executed directly by the GPU. After an operator is
-compiled, you must initialize it exactly once before it can be executed. It's an error to initialize an
-operator more than once. Operator initializers are used to initialize compiled operators.
-You can use <see cref="IDMLCommandRecorder.RecordDispatch" /> to record the dispatch of an operator initializer which, when
-executed on the GPU, will initialize one or more operators.</para>
-      <para>In addition to input and output tensors, operators may require additional memory for execution. This
-additional memory must be provided by your application in the form of temporary and persistent resources.</para>
-      <para>A temporary resource is scratch memory that is only used during the execution of the operator, and doesn't
-need to persist after the call to <see cref="IDMLCommandRecorder.RecordDispatch" /> completes on the GPU. This means that your
-application may release or overwrite the temporary resource in between dispatches of the compiled operator. In
-contrast, the persistent resource must live at least until the last execute of the operator has completed on
-the GPU. Additionally, the contents of the persistent resource are opaque and must be preserved between executions
-of the operator.</para>
-      <para>The size of the temporary and persistent resources varies per operator. Call
-<see cref="IDMLDispatchable.GetBindingProperties" /> to query the required size, in bytes, of the persistent and temporary
-resources for this compiled operator. See <see cref="IDMLBindingTable.BindTemporaryResource" /> and
-<see cref="IDMLBindingTable.BindPersistentResource" /> for more information on binding temporary and persistent resources.</para>
+      <para>Unlike <see cref="IDMLOperator" />, compiled operators are "baked", and can be executed directly by the GPU. After an operator is compiled, you must initialize it exactly once before it can be executed. It's an error to initialize an operator more than once. Operator initializers are used to initialize compiled operators. You can use <see cref="IDMLCommandRecorder.RecordDispatch" /> to record the dispatch of an operator initializer which, when executed on the GPU, will initialize one or more operators.</para>
+      <para>In addition to input and output tensors, operators may require additional memory for execution. This additional memory must be provided by your application in the form of temporary and persistent resources.</para>
+      <para>A temporary resource is scratch memory that is only used during the execution of the operator, and doesn't need to persist after the call to <see cref="IDMLCommandRecorder.RecordDispatch" /> completes on the GPU. This means that your application may release or overwrite the temporary resource in between dispatches of the compiled operator. In contrast, the persistent resource must live at least until the last execute of the operator has completed on the GPU. Additionally, the contents of the persistent resource are opaque and must be preserved between executions of the operator.</para>
+      <para>The size of the temporary and persistent resources varies per operator. Call<see cref="IDMLDispatchable.GetBindingProperties" /> to query the required size, in bytes, of the persistent and temporary resources for this compiled operator. See <see cref="IDMLBindingTable.BindTemporaryResource" /> and<see cref="IDMLBindingTable.BindPersistentResource" /> for more information on binding temporary and persistent resources.</para>
       <para>All methods on this interface are thread-safe.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
-    <seealso cref="IDMLDispatchable" />
   </member>
 </doc>

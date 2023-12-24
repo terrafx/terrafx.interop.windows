@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="STGOPTIONS">
+    <summary>The<b>STGOPTIONS</b> structure specifies features of the storage object, such as sector size, in the<see cref="StgCreateStorageEx" /> and<see cref="StgOpenStorageEx" /> functions.</summary>
+  </member>
+  <member name="STGOPTIONS.usVersion">
+    <summary>
+      <para>Specifies the version of the<b>STGOPTIONS</b> structure. It is set to <b>STGOPTIONS_VERSION</b>.</para>
+      <div>
+        <b>Note</b>  When <b>usVersion</b> is set to 1, the <b>ulSectorSize</b> member can be set. This is useful when creating a large-sector documentation file. However, when <b>usVersion</b> is set to 1, the <b>pwcsTemplateFile</b> member cannot be used.</div>
+      <b>In Windows 2000 and later:  </b>
+      <b>STGOPTIONS_VERSION</b> can be set to 1 for version 1.<para><b>In Windows XP and later:  </b><b>STGOPTIONS_VERSION</b> can be set to 2 for version 2.</para><para><b>For operating systems prior to Windows 2000:  </b><b>STGOPTIONS_VERSION</b> will be set to 0 for version 0.</para></summary>
+  </member>
+  <member name="STGOPTIONS.reserved">
+    <summary>Reserved for future use; must be zero.</summary>
+  </member>
+  <member name="STGOPTIONS.ulSectorSize">
+    <summary>Specifies the sector size of the storage object. The default is 512 bytes.</summary>
+  </member>
+  <member name="STGOPTIONS.pwcsTemplateFile">
+    <summary>
+      <para>Specifies the name of a file whose Encrypted File System (EFS) metadata will be transferred to a newly created Structured Storage file. This member is valid only when <b>STGFMT_DOCFILE</b> is used with <see cref="StgCreateStorageEx" />.</para>
+      <para>
+        <b>In Windows XP and later:  </b>The <b>pwcsTemplateFile</b> member is only valid if version 2 or later is specified in the <b>usVersion</b> member.</para>
+    </summary>
+  </member>
+</doc>

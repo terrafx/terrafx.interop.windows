@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IDxcOptimizer.GetAvailablePass"></member>
+  <member name="IDxcOptimizer.GetAvailablePassCount"></member>
+  <member name="IDxcOptimizer.RunOptimizer"></member>
+  <member name="IDxcOptimizer">
+    <summary>
+      <para>Interface representing DxcOptimizer.</para>
+      <para>To obtain an instance of this interface, call <see cref="DxcCreateInstance" /> with <b>CLSID_DxcOptimizer</b>.</para>
+    </summary>
+  </member>
+</doc>

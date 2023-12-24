@@ -3,14 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OCSP_BASIC_RESPONSE_INFO">
-    <summary>
-      <para>The <b>OCSP_BASIC_RESPONSE_INFO</b> structure contains a basic <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) response as specified by <a href="https://www.ietf.org/rfc/rfc2560.txt">RFC 2560</a>. The RFC specifies that a single response can contain a sequence of certificates for which statuses are provided. The  <b>rgResponseEntry</b> member of this structure contains an <see cref="OCSP_BASIC_RESPONSE_ENTRY" /> structure for each certificate in a sequence.</para>
-    </summary>
-    <remarks>
-      <para>OCSP responder applications encode this structure and store it in an <see cref="OCSP_BASIC_SIGNED_RESPONSE_INFO" /><b>ToBeSigned</b> member. Conversely, OCSP client applications decode the <b>OCSP_BASIC_SIGNED_RESPONSE_INFO</b> structure to obtain this structure.</para>
-      <para>OCSP applications can encode or decode this structure by using <b>X509_ASN_ENCODING</b> or <b>PKCS_7_ASN_ENCODING</b>.</para>
-    </remarks>
-    <seealso href="https://www.ietf.org/rfc/rfc2560.txt">RFC 2560 Online Certificate Status Protocol</seealso>
+    <summary>The <b>OCSP_BASIC_RESPONSE_INFO</b> structure contains a basic <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) response as specified by <a href="https://www.ietf.org/rfc/rfc2560.txt">RFC 2560</a>. The RFC specifies that a single response can contain a sequence of certificates for which statuses are provided. The <b>rgResponseEntry</b> member of this structure contains an <see cref="OCSP_BASIC_RESPONSE_ENTRY" /> structure for each certificate in a sequence.</summary>
   </member>
   <member name="OCSP_BASIC_RESPONSE_INFO.dwVersion">
     <summary>
@@ -25,42 +18,26 @@
       <h4>OCSP_BASIC_BY_KEY_RESPONDER_ID (2)</h4>
     </summary>
   </member>
-  <member name="OCSP_BASIC_RESPONSE_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="OCSP_BASIC_RESPONSE_INFO.DUMMYUNIONNAME"></member>
   <member name="OCSP_BASIC_RESPONSE_INFO.DUMMYUNIONNAME.ByNameResponderId">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structure that contains the subject name of the responder signing <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a>.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CERT_NAME_BLOB</a> structure that contains the subject name of the responder signing <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate</a>.</summary>
   </member>
   <member name="OCSP_BASIC_RESPONSE_INFO.DUMMYUNIONNAME.ByKeyResponderId">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_HASH_BLOB</a> that contains a hash of the responder signing certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a>.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_HASH_BLOB</a> that contains a hash of the responder signing certificate <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">public key</a>.</summary>
   </member>
   <member name="OCSP_BASIC_RESPONSE_INFO.ProducedAt">
-    <summary>
-      <para>The date and time at which the response was signed.</para>
-    </summary>
+    <summary>The date and time at which the response was signed.</summary>
   </member>
   <member name="OCSP_BASIC_RESPONSE_INFO.cResponseEntry">
-    <summary>
-      <para>The number of elements in the <i>rgResponseEntry</i> array.</para>
-    </summary>
+    <summary>The number of elements in the <i>rgResponseEntry</i> array.</summary>
   </member>
   <member name="OCSP_BASIC_RESPONSE_INFO.rgResponseEntry">
-    <summary>
-      <para>An array of pointers to <see cref="OCSP_BASIC_RESPONSE_ENTRY" /> structures, each of which contains a certificate status.</para>
-    </summary>
+    <summary>An array of pointers to <see cref="OCSP_BASIC_RESPONSE_ENTRY" /> structures, each of which contains a certificate status.</summary>
   </member>
   <member name="OCSP_BASIC_RESPONSE_INFO.cExtension">
-    <summary>
-      <para>The number of elements in the <b>rgExtension</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgExtension</b> array.</summary>
   </member>
   <member name="OCSP_BASIC_RESPONSE_INFO.rgExtension">
-    <summary>
-      <para>An array of pointers to <see cref="CERT_EXTENSION" /> structures, each of which contains additional information about the response.</para>
-    </summary>
+    <summary>An array of pointers to <see cref="CERT_EXTENSION" /> structures, each of which contains additional information about the response.</summary>
   </member>
 </doc>

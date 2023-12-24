@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION">
+    <summary>Associates a subobject defined directly in a state object with shader exports.</summary>
+  </member>
+  <member name="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION.pSubobjectToAssociate">
+    <summary>Pointer to the subobject in current state object to define an association to.</summary>
+  </member>
+  <member name="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION.NumExports">
+    <summary>Size of the <i>pExports</i> array. If 0, this is being explicitly defined as a default association. Another way to define a default association is to omit this subobject association for that subobject completely.</summary>
+  </member>
+  <member name="D3D12_SUBOBJECT_TO_EXPORTS_ASSOCIATION.pExports">
+    <summary>The array of exports with which the subobject is associated.</summary>
+  </member>
+</doc>

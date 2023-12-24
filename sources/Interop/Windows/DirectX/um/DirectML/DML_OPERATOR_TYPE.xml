@@ -9,753 +9,474 @@
     </summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_INVALID">
-    <summary>
-      <para>Indicates an unknown operator type, and is never valid. Using this value results in an error.</para>
-    </summary>
+    <summary>Indicates an unknown operator type, and is never valid. Using this value results in an error.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_IDENTITY">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_IDENTITY_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ABS">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ABS_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ABS_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ACOS">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ACOS_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ACOS_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ADD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ADD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ADD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ASIN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ASIN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ASIN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ATAN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ATAN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ATAN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_CEIL">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CEIL_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CEIL_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_CLIP">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CLIP_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CLIP_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_COS">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_COS_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_COS_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_DIVIDE">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_DIVIDE_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_EXP">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_EXP_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_EXP_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_FLOOR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_FLOOR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOG">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOG_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOG_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOGICAL_AND">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_AND_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOGICAL_EQUALS">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_EQUALS_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOGICAL_GREATER_THAN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOGICAL_LESS_THAN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOGICAL_NOT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_NOT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOGICAL_OR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_OR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOGICAL_XOR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_XOR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_MAX">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MAX_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MAX_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_MEAN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MEAN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MEAN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_MIN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MIN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MIN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_MULTIPLY">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MULTIPLY_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_POW">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_POW_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_POW_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_CONSTANT_POW">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CONSTANT_POW_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_RECIP">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_RECIP_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_RECIP_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_SIN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SIN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SIN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_SQRT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SQRT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SQRT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_SUBTRACT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SUBTRACT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_TAN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_TAN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_TAN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_THRESHOLD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_THRESHOLD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_QUANTIZE_LINEAR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_QUANTIZE_LINEAR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_DEQUANTIZE_LINEAR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_DEQUANTIZE_LINEAR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_ELU">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_ELU_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_ELU_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_HARDMAX">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_HARDMAX_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_HARDMAX_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_HARD_SIGMOID">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_HARD_SIGMOID_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_IDENTITY">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_IDENTITY_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_IDENTITY_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_LEAKY_RELU">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_LEAKY_RELU_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_LINEAR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_LINEAR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_LINEAR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_LOG_SOFTMAX">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_LOG_SOFTMAX_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_PARAMETERIZED_RELU">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_PARAMETERIZED_RELU_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_PARAMETRIC_SOFTPLUS">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_PARAMETRIC_SOFTPLUS_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_RELU">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_RELU_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_RELU_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_SCALED_ELU">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_SCALED_ELU_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_SCALED_TANH">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_SCALED_TANH_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_SIGMOID">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_SIGMOID_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_SIGMOID_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_SOFTMAX">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_SOFTMAX_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_SOFTMAX_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_SOFTPLUS">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_SOFTPLUS_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_SOFTSIGN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_SOFTSIGN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_TANH">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_TANH_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_TANH_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_THRESHOLDED_RELU">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_THRESHOLDED_RELU_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_CONVOLUTION">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_CONVOLUTION_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_CONVOLUTION_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_GEMM">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_GEMM_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_GEMM_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_REDUCE">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_REDUCE_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_REDUCE_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_AVERAGE_POOLING">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_AVERAGE_POOLING_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_AVERAGE_POOLING_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_LP_POOLING">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_LP_POOLING_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_LP_POOLING_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_MAX_POOLING">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_MAX_POOLING_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_MAX_POOLING_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ROI_POOLING">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ROI_POOLING_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ROI_POOLING_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_SLICE">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_SLICE_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_SLICE_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_CAST">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_CAST_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_CAST_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_SPLIT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_SPLIT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_SPLIT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_JOIN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_JOIN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_JOIN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_PADDING">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_PADDING_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_PADDING_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_VALUE_SCALE_2D">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_VALUE_SCALE_2D_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_VALUE_SCALE_2D_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_UPSAMPLE_2D">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_UPSAMPLE_2D_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_UPSAMPLE_2D_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_GATHER">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_GATHER_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_GATHER_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_SPACE_TO_DEPTH">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_SPACE_TO_DEPTH_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_SPACE_TO_DEPTH_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_DEPTH_TO_SPACE">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_DEPTH_TO_SPACE_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_DEPTH_TO_SPACE_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_TILE">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_TILE_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_TILE_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_TOP_K">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_TOP_K_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_TOP_K_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_BATCH_NORMALIZATION">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_BATCH_NORMALIZATION_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_BATCH_NORMALIZATION_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_MEAN_VARIANCE_NORMALIZATION">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_MEAN_VARIANCE_NORMALIZATION_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_LOCAL_RESPONSE_NORMALIZATION">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_LOCAL_RESPONSE_NORMALIZATION_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_LP_NORMALIZATION">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_LP_NORMALIZATION_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_LP_NORMALIZATION_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_RNN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_RNN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_RNN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_LSTM">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_LSTM_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_LSTM_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_GRU">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_GRU_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_GRU_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_SIGN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SIGN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SIGN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_IS_NAN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_IS_NAN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ERF">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ERF_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ERF_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_SINH">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SINH_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_SINH_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_COSH">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_COSH_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_COSH_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_TANH">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_TANH_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_TANH_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ASINH">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ASINH_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ASINH_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ACOSH">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ACOSH_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ATANH">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ATANH_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ATANH_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_IF">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_IF_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_IF_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ADD1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ADD1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ADD1_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_SHRINK">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_SHRINK_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_SHRINK_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_MAX_POOLING1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_MAX_POOLING1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_MAX_POOLING1_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_MAX_UNPOOLING">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_MAX_UNPOOLING_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_MAX_UNPOOLING_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_DIAGONAL_MATRIX">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_DIAGONAL_MATRIX_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_DIAGONAL_MATRIX_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_SCATTER">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_SCATTER_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_SCATTER_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ONE_HOT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ONE_HOT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ONE_HOT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_RESAMPLE">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_RESAMPLE_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_RESAMPLE_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_CELU">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_CELU_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_CELU_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ACTIVATION_RELU_GRAD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ACTIVATION_RELU_GRAD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ADAM_OPTIMIZER">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ADAM_OPTIMIZER_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ADAM_OPTIMIZER_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ARGMAX">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ARGMAX_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ARGMAX_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ARGMIN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ARGMIN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ARGMIN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_AVERAGE_POOLING_GRAD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_AVERAGE_POOLING_GRAD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_CONVOLUTION_INTEGER">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_CONVOLUTION_INTEGER_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_CONVOLUTION_INTEGER_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_CUMULATIVE_SUMMATION">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_CUMULATIVE_SUMMATION_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_CUMULATIVE_SUMMATION_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_DEPTH_TO_SPACE1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_DEPTH_TO_SPACE1_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_BIT_AND">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_AND_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_BIT_COUNT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_COUNT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_BIT_NOT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_NOT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_BIT_OR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_OR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_BIT_SHIFT_LEFT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_SHIFT_LEFT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_BIT_SHIFT_RIGHT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_SHIFT_RIGHT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_BIT_XOR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_BIT_XOR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_IS_INFINITY">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_IS_INFINITY_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_GREATER_THAN_OR_EQUAL_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_LOGICAL_LESS_THAN_OR_EQUAL_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_MODULUS_FLOOR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MODULUS_FLOOR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_MODULUS_TRUNCATE">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_MODULUS_TRUNCATE_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ROUND">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ROUND_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ROUND_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_FILL_VALUE_CONSTANT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_FILL_VALUE_CONSTANT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_FILL_VALUE_SEQUENCE">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_FILL_VALUE_SEQUENCE_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_GATHER_ELEMENTS">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_GATHER_ELEMENTS_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_GATHER_ELEMENTS_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_GATHER_ND">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_GATHER_ND_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_GATHER_ND_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_GATHER_ND1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_GATHER_ND1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_GATHER_ND1_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_MATRIX_MULTIPLY_INTEGER">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_MATRIX_MULTIPLY_INTEGER_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_MAX_POOLING_GRAD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_MAX_POOLING_GRAD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_MAX_POOLING_GRAD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_MAX_POOLING2">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_MAX_POOLING2_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_MEAN_VARIANCE_NORMALIZATION1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_MEAN_VARIANCE_NORMALIZATION1_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_NONZERO_COORDINATES">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_NONZERO_COORDINATES_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_NONZERO_COORDINATES_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_QUANTIZED_LINEAR_CONVOLUTION">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_QUANTIZED_LINEAR_CONVOLUTION_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_QUANTIZED_LINEAR_MATRIX_MULTIPLY">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_QUANTIZED_LINEAR_MATRIX_MULTIPLY_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_RANDOM_GENERATOR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_RANDOM_GENERATOR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_RANDOM_GENERATOR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_RESAMPLE_GRAD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_RESAMPLE_GRAD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_RESAMPLE_GRAD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_RESAMPLE1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_RESAMPLE1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_RESAMPLE1_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_REVERSE_SUBSEQUENCES">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ROI_ALIGN">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ROI_ALIGN_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ROI_ALIGN_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_SCATTER_ND">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_SCATTER_ND_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_SCATTER_ND_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_SLICE_GRAD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_SLICE_GRAD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_SLICE_GRAD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_SLICE1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_SLICE1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_SLICE1_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_SPACE_TO_DEPTH1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_SPACE_TO_DEPTH1_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_TOP_K1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_TOP_K1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_TOP_K1_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_BATCH_NORMALIZATION_GRAD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_BATCH_NORMALIZATION_GRAD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_CUMULATIVE_PRODUCT">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_CUMULATIVE_PRODUCT_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_CUMULATIVE_PRODUCT_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_ATAN_YX">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_ATAN_YX_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_CLIP_GRAD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_DIFFERENCE_SQUARE">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_DIFFERENCE_SQUARE_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_LOCAL_RESPONSE_NORMALIZATION_GRAD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_LOCAL_RESPONSE_NORMALIZATION_GRAD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_QUANTIZED_LINEAR_ADD">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_QUANTIZED_LINEAR_ADD_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_DYNAMIC_QUANTIZE_LINEAR">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_DYNAMIC_QUANTIZE_LINEAR_OPERATOR_DESC" /> structure.</summary>
   </member>
   <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ROI_ALIGN1">
-    <summary>
-      <para>Indicates the operator described by the <see cref="DML_ROI_ALIGN1_OPERATOR_DESC" /> structure.</para>
-    </summary>
+    <summary>Indicates the operator described by the <see cref="DML_ROI_ALIGN1_OPERATOR_DESC" /> structure.</summary>
+  </member>
+  <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ROI_ALIGN_GRAD">
+    <summary>Indicates the operator described by the <see cref="DML_ROI_ALIGN_GRAD_OPERATOR_DESC" /> structure.</summary>
+  </member>
+  <member name="DML_OPERATOR_TYPE.DML_OPERATOR_BATCH_NORMALIZATION_TRAINING">
+    <summary>Indicates the operator described by the <see cref="DML_BATCH_NORMALIZATION_TRAINING_OPERATOR_DESC" /> structure.</summary>
+  </member>
+  <member name="DML_OPERATOR_TYPE.DML_OPERATOR_BATCH_NORMALIZATION_TRAINING_GRAD">
+    <summary>Indicates the operator described by the <see cref="DML_BATCH_NORMALIZATION_TRAINING_GRAD_OPERATOR_DESC" /> structure.</summary>
+  </member>
+  <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_CLIP1">
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CLIP1_OPERATOR_DESC" /> structure.</summary>
+  </member>
+  <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_CLIP_GRAD1">
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_CLIP_GRAD1_OPERATOR_DESC" /> structure.</summary>
+  </member>
+  <member name="DML_OPERATOR_TYPE.DML_OPERATOR_PADDING1">
+    <summary>Indicates the operator described by the <see cref="DML_PADDING1_OPERATOR_DESC" /> structure.</summary>
+  </member>
+  <member name="DML_OPERATOR_TYPE.DML_OPERATOR_ELEMENT_WISE_NEGATE">
+    <summary>Indicates the operator described by the <see cref="DML_ELEMENT_WISE_NEGATE_OPERATOR_DESC" /> structure.</summary>
   </member>
 </doc>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="SizeF.Empty">
+    <summary>The <b>SizeF.Empty</b> method determines whether a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object is empty.</summary>
+    <returns>If the<b>Width</b> and<b>Height</b> data members are both equal to zero, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="SizeF.Equals">
+    <summary>The <b>SizeF.Equals</b> method determines whether two<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> objects are equal.</summary>
+    <param name="sz">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object that is compared to this<b>SizeF</b> object.</param>
+    <returns>If the<b>Width</b> and<b>Height</b> data members of the two<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> objects are equal, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="SizeF.SizeF">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object and initializes its members by copying the members of another <b>SizeF</b> object.</summary>
+    <param name="size">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object that is used to initialize this <b>SizeF</b> object.</param>
+  </member>
+  <member name="SizeF.SizeF">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object and initializes its<b>Width</b> and<b>Height</b> data members.</summary>
+    <param name="width">Real number that specifies the initial value of the<b>Width</b> data member.</param>
+    <param name="height">Real number that specifies the initial value of the<b>Height</b> data member.</param>
+  </member>
+  <member name="SizeF.SizeF">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-sizef">SizeF</a> object and initializes the members to zero. This is the default constructor.</summary>
+  </member>
+</doc>

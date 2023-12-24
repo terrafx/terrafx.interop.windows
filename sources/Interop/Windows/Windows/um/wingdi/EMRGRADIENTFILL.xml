@@ -3,40 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRGRADIENTFILL">
-    <summary>
-      <para>The <b>EMRGRADIENTFILL</b> structure contains members for the <see cref="GradientFill" /> enhanced metafile record.</para>
-    </summary>
-    <remarks>
-      <para>This is a variable-length structure. The <b>Ver</b> member designates the beginning of the variable-length area. First comes an array of <b>nVer</b><see cref="TRIVERTEX" /> structures to pass the vertices. Next comes an array of either <b>nTri</b><see cref="GRADIENT_TRIANGLE" /> structures or <b>nTri</b><see cref="GRADIENT_RECT" /> structures, depending on the value of <b>ulMode</b> (triangles or rectangles).</para>
-      <para>This structure is to be used during metafile playback.</para>
-    </remarks>
-    <seealso cref="BITMAPINFO" />
-    <seealso cref="EMR" />
-    <seealso cref="GRADIENT_RECT" />
-    <seealso cref="GRADIENT_TRIANGLE" />
-    <seealso cref="GradientFill" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRGRADIENTFILL</b> structure contains members for the <see cref="GradientFill" /> enhanced metafile record.</summary>
   </member>
   <member name="EMRGRADIENTFILL.emr">
-    <summary>
-      <para>The base structure for all record types.</para>
-    </summary>
+    <summary>The base structure for all record types.</summary>
   </member>
   <member name="EMRGRADIENTFILL.rclBounds">
-    <summary>
-      <para>The bounding rectangle, in device units.</para>
-    </summary>
+    <summary>The bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRGRADIENTFILL.nVer">
-    <summary>
-      <para>The number of vertices.</para>
-    </summary>
+    <summary>The number of vertices.</summary>
   </member>
   <member name="EMRGRADIENTFILL.nTri">
-    <summary>
-      <para>The number of rectangles or triangles to be passed to <see cref="GradientFill" />.</para>
-    </summary>
+    <summary>The number of rectangles or triangles to be passed to <see cref="GradientFill" />.</summary>
   </member>
   <member name="EMRGRADIENTFILL.ulMode">
     <summary>
@@ -46,36 +25,46 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>GRADIENT_FILL_RECT_H</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GRADIENT_FILL_RECT_H</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>In this mode, two endpoints describe a rectangle. The rectangle is defined to have a constant color (specified by the <see cref="TRIVERTEX" /> structure) for the left and right edges. GDI interpolates the color from the left to right edge and fills the interior.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>In this mode, two endpoints describe a rectangle. The rectangle is defined to have a constant color (specified by the <see cref="TRIVERTEX" /> structure) for the left and right edges. GDI interpolates the color from the left to right edge and fills the interior.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GRADIENT_FILL_RECT_V</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>In this mode, two endpoints describe a rectangle. The rectangle is defined to have a constant color (specified by the <see cref="TRIVERTEX" /> structure) for the top and bottom edges. GDI interpolates the color from the top to bottom edge and fills the interior.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>GRADIENT_FILL_RECT_V</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>GRADIENT_FILL_TRIANGLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>In this mode, two endpoints describe a rectangle. The rectangle is defined to have a constant color (specified by the <see cref="TRIVERTEX" /> structure) for the top and bottom edges. GDI interpolates the color from the top to bottom edge and fills the interior.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>GRADIENT_FILL_TRIANGLE</b>
-          </description>
-          <description>
-            <para>In this mode, an array of <see cref="TRIVERTEX" /> structures is passed to GDI along with a list of array indexes that describe separate triangles. GDI performs linear interpolation between triangle vertices and fills the interior. Drawing is done directly in 24- and 32-bpp modes. Dithering is performed in 16-, 8-, 4-, and 1-bpp mode.</para>
-          </description>
-        </item>
+          <description>In this mode, an array of <see cref="TRIVERTEX" /> structures is passed to GDI along with a list of array indexes that describe separate triangles. GDI performs linear interpolation between triangle vertices and fills the interior. Drawing is done directly in 24- and 32-bpp modes. Dithering is performed in 16-, 8-, 4-, and 1-bpp mode.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="EMRGRADIENTFILL.Ver">
-    <summary>
-      <para>An array of <see cref="TRIVERTEX" /> structures that each define a vertex.</para>
-    </summary>
+    <summary>An array of <see cref="TRIVERTEX" /> structures that each define a vertex.</summary>
   </member>
 </doc>

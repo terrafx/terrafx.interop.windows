@@ -3,28 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_SHARED_RESOURCE_TIER">
-    <summary>
-      <para>Defines constants that specify a tier for shared resource support.</para>
-    </summary>
+    <summary>Defines constants that specify the level of support for shared resources in the current graphics driver.</summary>
   </member>
   <member name="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_0">
     <summary>
-      <para>Specifies the support available when <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS.ExtendedResourceSharing" /> is <b>FALSE</b>.</para>
+      <para>Specifies the support available when <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS.ExtendedResourceSharing" /> is <code>FALSE</code> (only very old drivers have this value set to <code>FALSE</code>).</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d11/direct3d-11-1-features#extended-support-for-shared-texture2d-resources">Extended support for shared Texture2D resources</a>.</para>
     </summary>
   </member>
   <member name="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_1">
     <summary>
-      <para>Specifies the support available when <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS.ExtendedResourceSharing" /> is <b>TRUE</b>.</para>
+      <para>Specifies the support available when <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS.ExtendedResourceSharing" /> and <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS4.ExtendedNV12SharedTextureSupported" /> are <code>TRUE</code>.</para>
+      <para>You can share additional formats; see <a href="https://docs.microsoft.com//windows/win32/direct3d11/direct3d-11-1-features#extended-support-for-shared-texture2d-resources">Extended support for shared Texture2D resources</a>.</para>
+      <para>Only formats that are still shareable when <b>D3D11_FEATURE_DATA_D3D11_OPTIONS.ExtendedResourceSharing</b> == <code>FALSE</code> can be shared across APIs between Direct3D 11 and Direct3D 12.</para>
+      <para>Resource formats added by <b>D3D11_FEATURE_DATA_D3D11_OPTIONS.ExtendedResourceSharing</b> == <code>TRUE</code> can't be shared across APIs.</para>
     </summary>
   </member>
   <member name="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_2">
     <summary>
-      <para>Specifies the support available when <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS4.ExtendedNV12SharedTextureSupported" /> is <b>TRUE</b>. Also see <a href="https://docs.microsoft.com//windows/win32/direct3d11/direct3d-11-4-features#extended-nv12-texture-support">Extended NV12 texture support</a>.</para>
+      <para>Specifies the support available when <see cref="D3D11_FEATURE_DATA_D3D11_OPTIONS4.ExtendedNV12SharedTextureSupported" /> is <code>TRUE</code>. Also see <a href="https://docs.microsoft.com//windows/win32/direct3d11/direct3d-11-4-features#extended-nv12-texture-support">Extended NV12 texture support</a>.</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d11/direct3d-11-1-features#extended-support-for-shared-texture2d-resources">Extended support for shared Texture2D resources</a>.</para>
+      <para>Sharing across APIs between Direct3D 11 and Direct3D 12 is possible for the <b>D3D11_FEATURE_DATA_D3D11_OPTIONS.ExtendedResourceSharing</b> == <code>TRUE</code> format list.</para>
     </summary>
   </member>
   <member name="D3D11_SHARED_RESOURCE_TIER.D3D11_SHARED_RESOURCE_TIER_3">
     <summary>
       <para>Specifies that <see cref="DXGI_FORMAT_R11G11B10_FLOAT" /> supports NT handle sharing. Also see <see cref="CreateSharedHandle" />.</para>
+      <para>Sharing across APIs between Direct3D 11 and Direct3D 12 is possible for the <b>DXGI_FORMAT_R11G11B10_FLOAT</b> format.</para>
     </summary>
   </member>
 </doc>

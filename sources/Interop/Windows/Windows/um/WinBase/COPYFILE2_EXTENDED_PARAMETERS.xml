@@ -3,24 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="COPYFILE2_EXTENDED_PARAMETERS">
-    <summary>
-      <para>Contains extended parameters for the <see cref="CopyFile2" /></para>
-      <para>function.</para>
-    </summary>
-    <remarks>
-      <para>To compile an application that uses this structure, define the <b>_WIN32_WINNT</b></para>
-      <para>macro as <b>_WIN32_WINNT_WIN8</b> or later. For more information, see
-<a href="https://docs.microsoft.com//windows/desktop/WinProg/using-the-windows-headers">Using the Windows Headers</a>.</para>
-    </remarks>
-    <seealso cref="CopyFile2" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
+    <summary>Contains extended parameters for the <see cref="CopyFile2" />function.</summary>
   </member>
   <member name="COPYFILE2_EXTENDED_PARAMETERS.dwSize">
-    <summary>
-      <para>Contains the size of this structure,
-<code>sizeof(COPYFILE2_EXTENDED_PARAMETERS)</code>.</para>
-    </summary>
+    <summary>Contains the size of this structure,<code>sizeof(COPYFILE2_EXTENDED_PARAMETERS)</code>.</summary>
   </member>
   <member name="COPYFILE2_EXTENDED_PARAMETERS.dwCopyFlags">
     <summary>
@@ -30,197 +16,169 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPY_FILE_ALLOW_DECRYPTED_DESTINATION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The copy will be attempted even if the destination file cannot be encrypted.</para>
-          </description>
-        </item>
-        <item>
+          <description>The copy will be attempted even if the destination file cannot be encrypted.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPY_FILE_COPY_SYMLINK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If the source file is a symbolic link, the destination file is also a symbolic link pointing to the same
-file as the source symbolic link.</para>
-          </description>
-        </item>
-        <item>
+          <description>If the source file is a symbolic link, the destination file is also a symbolic link pointing to the same file as the source symbolic link.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPY_FILE_FAIL_IF_EXISTS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>If the destination file exists the copy operation fails immediately. If a file or directory exists with
-the destination name then the <see cref="CopyFile2" /> function call will
-fail with either <code>HRESULT_FROM_WIN32(ERROR_ALREADY_EXISTS)</code></para>
-            <para>or <code>HRESULT_FROM_WIN32(ERROR_FILE_EXISTS)</code>. If
-<b>COPY_FILE_RESUME_FROM_PAUSE</b> is also specified then a failure is only triggered if
-the destination file does not have a valid restart header.</para>
-          </description>
-        </item>
-        <item>
+          <description>If the destination file exists the copy operation fails immediately. If a file or directory exists with the destination name then the <see cref="CopyFile2" /> function call will fail with either <code>HRESULT_FROM_WIN32(ERROR_ALREADY_EXISTS)</code> or <code>HRESULT_FROM_WIN32(ERROR_FILE_EXISTS)</code>. If <b>COPY_FILE_RESUME_FROM_PAUSE</b> is also specified then a failure is only triggered if the destination file does not have a valid restart header.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPY_FILE_NO_BUFFERING</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The copy is performed using unbuffered I/O, bypassing the system cache resources. This flag is
-recommended for very large file copies. It is not recommended to pause copies that are using this flag.</para>
-          </description>
-        </item>
-        <item>
+          <description>The copy is performed using unbuffered I/O, bypassing the system cache resources. This flag is recommended for very large file copies. It is not recommended to pause copies that are using this flag.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPY_FILE_NO_OFFLOAD</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00040000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00040000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Do not attempt to use the Windows Copy Offload mechanism. This is not generally recommended.</para>
-          </description>
-        </item>
-        <item>
+          <description>Do not attempt to use the Windows Copy Offload mechanism. This is not generally recommended.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPY_FILE_OPEN_SOURCE_FOR_WRITE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is copied and the source file is opened for write access.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file is copied and the source file is opened for write access.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPY_FILE_RESTARTABLE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The file is copied in a manner that can be restarted if the same source and destination filenames are
-used again. This is slower.</para>
-          </description>
-        </item>
-        <item>
+          <description>The file is copied in a manner that can be restarted if the same source and destination filenames are used again. This is slower.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPY_FILE_REQUEST_SECURITY_PRIVILEGES</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The copy is attempted, specifying
-<code>ACCESS_SYSTEM_SECURITY</code> for the source file and
-<code>ACCESS_SYSTEM_SECURITY | WRITE_DAC | WRITE_OWNER</code> for the
-destination file. If these requests are denied the access request will be reduced to the highest privilege
-level for which access is granted. For more information see
-<a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/sacl-access-right">SACL Access Right</a>. This can be used to allow the
-<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback to
-perform operations requiring higher privileges, such as copying the security attributes for the file.</para>
-          </description>
-        </item>
-        <item>
+          <description>The copy is attempted, specifying <code>ACCESS_SYSTEM_SECURITY</code> for the source file and <code>ACCESS_SYSTEM_SECURITY | WRITE_DAC | WRITE_OWNER</code> for the destination file. If these requests are denied the access request will be reduced to the highest privilege level for which access is granted. For more information see <a href="https://docs.microsoft.com//windows/desktop/SecAuthZ/sacl-access-right">SACL Access Right</a>. This can be used to allow the <a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback to perform operations requiring higher privileges, such as copying the security attributes for the file.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>COPY_FILE_RESUME_FROM_PAUSE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00004000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The destination file is examined to see if it was copied using <b>COPY_FILE_RESTARTABLE</b>. If so the copy is resumed. If not the file will be fully copied.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>COPY_FILE_REQUEST_COMPRESSED_TRAFFIC</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term> 0x10000000</term>
+              </listheader>
             </list>
           </description>
           <description>
-            <para>The destination file is examined to see if it was copied using
-<b>COPY_FILE_RESTARTABLE</b>. If so the copy is resumed. If not the file will be fully
-copied.</para>
+            <para>Request the underlying transfer channel compress the data during the copy operation. The request may not be supported for all mediums, in which case it is ignored. The compression attributes and parameters (computational complexity, memory usage) are not configurable through this API, and are subject to change between different OS releases.</para>
+            <para>This flag was introduced in Windows 10, version 1903 and Windows Server 2022. On Windows 10, the flag is supported for files residing on SMB shares, where the negotiated SMB protocol version is SMB v3.1.1 or greater.</para>
           </description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="COPYFILE2_EXTENDED_PARAMETERS.pfCancel">
-    <summary>
-      <para>If this flag is set to <b>TRUE</b> during the copy operation then the copy operation is
-canceled.</para>
-    </summary>
+    <summary>If this flag is set to <b>TRUE</b> during the copy operation then the copy operation is canceled.</summary>
   </member>
   <member name="COPYFILE2_EXTENDED_PARAMETERS.pProgressRoutine">
-    <summary>
-      <para>The optional address of a callback function of type <b>PCOPYFILE2_PROGRESS_ROUTINE</b> that is
-called each time another portion of the file has been copied. This parameter can be
-<b>NULL</b>. For more information on the progress callback function, see the
-<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback function.</para>
-    </summary>
+    <summary>The optional address of a callback function of type <b>PCOPYFILE2_PROGRESS_ROUTINE</b> that is called each time another portion of the file has been copied. This parameter can be<b>NULL</b>. For more information on the progress callback function, see the<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a> callback function.</summary>
   </member>
   <member name="COPYFILE2_EXTENDED_PARAMETERS.pvCallbackContext">
-    <summary>
-      <para>A pointer to application-specific context information to be passed to the
-<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a>.</para>
-    </summary>
+    <summary>A pointer to application-specific context information to be passed to the<a href="https://docs.microsoft.com//windows/desktop/api/winbase/nc-winbase-pcopyfile2_progress_routine">CopyFile2ProgressRoutine</a>.</summary>
   </member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IDisplayDeviceInteropTests
     {
         Assert.That(typeof(IDisplayDeviceInterop).GUID, Is.EqualTo(IID_IDisplayDeviceInterop));
     }
-
-    /// <summary>Validates that the <see cref="IDisplayDeviceInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDisplayDeviceInterop>(), Is.EqualTo(sizeof(IDisplayDeviceInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IDisplayDeviceInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDisplayDeviceInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDisplayDeviceInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDisplayDeviceInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDisplayDeviceInterop), Is.EqualTo(4));
-        }
-    }
 }

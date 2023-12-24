@@ -20,7 +20,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(0)]
     public void GetVoiceDetails(XAUDIO2_VOICE_DETAILS* pVoiceDetails)
     {
-        ((delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_VOICE_DETAILS*, void>)(lpVtbl[0]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pVoiceDetails);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, XAUDIO2_VOICE_DETAILS*, void>)(lpVtbl[0]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pVoiceDetails);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.SetOutputVoices" />
@@ -28,7 +28,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(1)]
     public HRESULT SetOutputVoices([NativeTypeName("const XAUDIO2_VOICE_SENDS *")] XAUDIO2_VOICE_SENDS* pSendList)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_VOICE_SENDS*, int>)(lpVtbl[1]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pSendList);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, XAUDIO2_VOICE_SENDS*, int>)(lpVtbl[1]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pSendList);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.SetEffectChain" />
@@ -36,7 +36,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(2)]
     public HRESULT SetEffectChain([NativeTypeName("const XAUDIO2_EFFECT_CHAIN *")] XAUDIO2_EFFECT_CHAIN* pEffectChain)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_EFFECT_CHAIN*, int>)(lpVtbl[2]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pEffectChain);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, XAUDIO2_EFFECT_CHAIN*, int>)(lpVtbl[2]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pEffectChain);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.EnableEffect" />
@@ -44,7 +44,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(3)]
     public HRESULT EnableEffect([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("UINT32")] uint OperationSet = 0)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, uint, uint, int>)(lpVtbl[3]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, OperationSet);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, uint, uint, int>)(lpVtbl[3]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, OperationSet);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.DisableEffect" />
@@ -52,7 +52,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(4)]
     public HRESULT DisableEffect([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("UINT32")] uint OperationSet = 0)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, uint, uint, int>)(lpVtbl[4]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, OperationSet);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, uint, uint, int>)(lpVtbl[4]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, OperationSet);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.GetEffectState" />
@@ -60,7 +60,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(5)]
     public void GetEffectState([NativeTypeName("UINT32")] uint EffectIndex, BOOL* pEnabled)
     {
-        ((delegate* unmanaged<IXAudio2SubmixVoice*, uint, BOOL*, void>)(lpVtbl[5]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, pEnabled);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, uint, BOOL*, void>)(lpVtbl[5]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, pEnabled);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.SetEffectParameters" />
@@ -68,7 +68,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(6)]
     public HRESULT SetEffectParameters([NativeTypeName("UINT32")] uint EffectIndex, [NativeTypeName("const void *")] void* pParameters, [NativeTypeName("UINT32")] uint ParametersByteSize, [NativeTypeName("UINT32")] uint OperationSet = 0)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, uint, void*, uint, uint, int>)(lpVtbl[6]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, pParameters, ParametersByteSize, OperationSet);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, uint, void*, uint, uint, int>)(lpVtbl[6]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, pParameters, ParametersByteSize, OperationSet);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.GetEffectParameters" />
@@ -76,7 +76,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(7)]
     public HRESULT GetEffectParameters([NativeTypeName("UINT32")] uint EffectIndex, void* pParameters, [NativeTypeName("UINT32")] uint ParametersByteSize)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, uint, void*, uint, int>)(lpVtbl[7]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, pParameters, ParametersByteSize);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, uint, void*, uint, int>)(lpVtbl[7]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), EffectIndex, pParameters, ParametersByteSize);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.SetFilterParameters" />
@@ -84,7 +84,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(8)]
     public HRESULT SetFilterParameters([NativeTypeName("const XAUDIO2_FILTER_PARAMETERS *")] XAUDIO2_FILTER_PARAMETERS* pParameters, [NativeTypeName("UINT32")] uint OperationSet = 0)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_FILTER_PARAMETERS*, uint, int>)(lpVtbl[8]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pParameters, OperationSet);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, XAUDIO2_FILTER_PARAMETERS*, uint, int>)(lpVtbl[8]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pParameters, OperationSet);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.GetFilterParameters" />
@@ -92,7 +92,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(9)]
     public void GetFilterParameters(XAUDIO2_FILTER_PARAMETERS* pParameters)
     {
-        ((delegate* unmanaged<IXAudio2SubmixVoice*, XAUDIO2_FILTER_PARAMETERS*, void>)(lpVtbl[9]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pParameters);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, XAUDIO2_FILTER_PARAMETERS*, void>)(lpVtbl[9]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pParameters);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.SetOutputFilterParameters" />
@@ -100,7 +100,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(10)]
     public HRESULT SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, [NativeTypeName("const XAUDIO2_FILTER_PARAMETERS *")] XAUDIO2_FILTER_PARAMETERS* pParameters, [NativeTypeName("UINT32")] uint OperationSet = 0)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int>)(lpVtbl[10]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, pParameters, OperationSet);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int>)(lpVtbl[10]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, pParameters, OperationSet);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.GetOutputFilterParameters" />
@@ -108,7 +108,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(11)]
     public void GetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, XAUDIO2_FILTER_PARAMETERS* pParameters)
     {
-        ((delegate* unmanaged<IXAudio2SubmixVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void>)(lpVtbl[11]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, pParameters);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void>)(lpVtbl[11]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, pParameters);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.SetVolume" />
@@ -116,7 +116,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(12)]
     public HRESULT SetVolume(float Volume, [NativeTypeName("UINT32")] uint OperationSet = 0)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, float, uint, int>)(lpVtbl[12]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), Volume, OperationSet);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, float, uint, int>)(lpVtbl[12]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), Volume, OperationSet);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.GetVolume" />
@@ -124,7 +124,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(13)]
     public void GetVolume(float* pVolume)
     {
-        ((delegate* unmanaged<IXAudio2SubmixVoice*, float*, void>)(lpVtbl[13]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pVolume);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, float*, void>)(lpVtbl[13]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pVolume);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.SetChannelVolumes" />
@@ -132,7 +132,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(14)]
     public HRESULT SetChannelVolumes([NativeTypeName("UINT32")] uint Channels, [NativeTypeName("const float *")] float* pVolumes, [NativeTypeName("UINT32")] uint OperationSet = 0)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, uint, float*, uint, int>)(lpVtbl[14]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), Channels, pVolumes, OperationSet);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, uint, float*, uint, int>)(lpVtbl[14]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), Channels, pVolumes, OperationSet);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.GetChannelVolumes" />
@@ -140,7 +140,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(15)]
     public void GetChannelVolumes([NativeTypeName("UINT32")] uint Channels, float* pVolumes)
     {
-        ((delegate* unmanaged<IXAudio2SubmixVoice*, uint, float*, void>)(lpVtbl[15]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), Channels, pVolumes);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, uint, float*, void>)(lpVtbl[15]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), Channels, pVolumes);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.SetOutputMatrix" />
@@ -148,7 +148,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(16)]
     public HRESULT SetOutputMatrix(IXAudio2Voice* pDestinationVoice, [NativeTypeName("UINT32")] uint SourceChannels, [NativeTypeName("UINT32")] uint DestinationChannels, [NativeTypeName("const float *")] float* pLevelMatrix, [NativeTypeName("UINT32")] uint OperationSet = 0)
     {
-        return ((delegate* unmanaged<IXAudio2SubmixVoice*, IXAudio2Voice*, uint, uint, float*, uint, int>)(lpVtbl[16]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
+        return ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, IXAudio2Voice*, uint, uint, float*, uint, int>)(lpVtbl[16]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.GetOutputMatrix" />
@@ -156,7 +156,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(17)]
     public void GetOutputMatrix(IXAudio2Voice* pDestinationVoice, [NativeTypeName("UINT32")] uint SourceChannels, [NativeTypeName("UINT32")] uint DestinationChannels, float* pLevelMatrix)
     {
-        ((delegate* unmanaged<IXAudio2SubmixVoice*, IXAudio2Voice*, uint, uint, float*, void>)(lpVtbl[17]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix);
+        ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, IXAudio2Voice*, uint, uint, float*, void>)(lpVtbl[17]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this), pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix);
     }
 
     /// <inheritdoc cref="IXAudio2Voice.DestroyVoice" />
@@ -164,7 +164,7 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
     [VtblIndex(18)]
     public void DestroyVoice()
     {
-        ((delegate* unmanaged<IXAudio2SubmixVoice*, void>)(lpVtbl[18]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IXAudio2SubmixVoice*, void>)(lpVtbl[18]))((IXAudio2SubmixVoice*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IXAudio2Voice.Interface
@@ -175,60 +175,60 @@ public unsafe partial struct IXAudio2SubmixVoice : IXAudio2SubmixVoice.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("void (XAUDIO2_VOICE_DETAILS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XAUDIO2_VOICE_DETAILS*, void> GetVoiceDetails;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XAUDIO2_VOICE_DETAILS*, void> GetVoiceDetails;
 
         [NativeTypeName("HRESULT (const XAUDIO2_VOICE_SENDS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XAUDIO2_VOICE_SENDS*, int> SetOutputVoices;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XAUDIO2_VOICE_SENDS*, int> SetOutputVoices;
 
         [NativeTypeName("HRESULT (const XAUDIO2_EFFECT_CHAIN *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XAUDIO2_EFFECT_CHAIN*, int> SetEffectChain;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XAUDIO2_EFFECT_CHAIN*, int> SetEffectChain;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> EnableEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> EnableEffect;
 
         [NativeTypeName("HRESULT (UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> DisableEffect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> DisableEffect;
 
         [NativeTypeName("void (UINT32, BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, BOOL*, void> GetEffectState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, BOOL*, void> GetEffectState;
 
         [NativeTypeName("HRESULT (UINT32, const void *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, uint, uint, int> SetEffectParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, uint, uint, int> SetEffectParameters;
 
         [NativeTypeName("HRESULT (UINT32, void *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void*, uint, int> GetEffectParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void*, uint, int> GetEffectParameters;
 
         [NativeTypeName("HRESULT (const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetFilterParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetFilterParameters;
 
         [NativeTypeName("void (XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, XAUDIO2_FILTER_PARAMETERS*, void> GetFilterParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, XAUDIO2_FILTER_PARAMETERS*, void> GetFilterParameters;
 
         [NativeTypeName("HRESULT (IXAudio2Voice *, const XAUDIO2_FILTER_PARAMETERS *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetOutputFilterParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, uint, int> SetOutputFilterParameters;
 
         [NativeTypeName("void (IXAudio2Voice *, XAUDIO2_FILTER_PARAMETERS *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void> GetOutputFilterParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXAudio2Voice*, XAUDIO2_FILTER_PARAMETERS*, void> GetOutputFilterParameters;
 
         [NativeTypeName("HRESULT (float, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, uint, int> SetVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, uint, int> SetVolume;
 
         [NativeTypeName("void (float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, void> GetVolume;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, void> GetVolume;
 
         [NativeTypeName("HRESULT (UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, uint, int> SetChannelVolumes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, uint, int> SetChannelVolumes;
 
         [NativeTypeName("void (UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, void> GetChannelVolumes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, void> GetChannelVolumes;
 
         [NativeTypeName("HRESULT (IXAudio2Voice *, UINT32, UINT32, const float *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXAudio2Voice*, uint, uint, float*, uint, int> SetOutputMatrix;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXAudio2Voice*, uint, uint, float*, uint, int> SetOutputMatrix;
 
         [NativeTypeName("void (IXAudio2Voice *, UINT32, UINT32, float *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IXAudio2Voice*, uint, uint, float*, void> GetOutputMatrix;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IXAudio2Voice*, uint, uint, float*, void> GetOutputMatrix;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> DestroyVoice;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> DestroyVoice;
     }
 }

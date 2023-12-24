@@ -25,7 +25,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPicture*, Guid*, void**, int>)(lpVtbl[0]))((IPicture*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, Guid*, void**, int>)(lpVtbl[0]))((IPicture*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPicture*, uint>)(lpVtbl[1]))((IPicture*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, uint>)(lpVtbl[1]))((IPicture*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPicture*, uint>)(lpVtbl[2]))((IPicture*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, uint>)(lpVtbl[2]))((IPicture*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.get_Handle"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT get_Handle([NativeTypeName("OLE_HANDLE *")] uint* pHandle)
     {
-        return ((delegate* unmanaged<IPicture*, uint*, int>)(lpVtbl[3]))((IPicture*)Unsafe.AsPointer(ref this), pHandle);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, uint*, int>)(lpVtbl[3]))((IPicture*)Unsafe.AsPointer(ref this), pHandle);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.get_hPal"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT get_hPal([NativeTypeName("OLE_HANDLE *")] uint* phPal)
     {
-        return ((delegate* unmanaged<IPicture*, uint*, int>)(lpVtbl[4]))((IPicture*)Unsafe.AsPointer(ref this), phPal);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, uint*, int>)(lpVtbl[4]))((IPicture*)Unsafe.AsPointer(ref this), phPal);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.get_Type"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT get_Type(short* pType)
     {
-        return ((delegate* unmanaged<IPicture*, short*, int>)(lpVtbl[5]))((IPicture*)Unsafe.AsPointer(ref this), pType);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, short*, int>)(lpVtbl[5]))((IPicture*)Unsafe.AsPointer(ref this), pType);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.get_Width"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT get_Width([NativeTypeName("OLE_XSIZE_HIMETRIC *")] int* pWidth)
     {
-        return ((delegate* unmanaged<IPicture*, int*, int>)(lpVtbl[6]))((IPicture*)Unsafe.AsPointer(ref this), pWidth);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, int*, int>)(lpVtbl[6]))((IPicture*)Unsafe.AsPointer(ref this), pWidth);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.get_Height"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_Height([NativeTypeName("OLE_YSIZE_HIMETRIC *")] int* pHeight)
     {
-        return ((delegate* unmanaged<IPicture*, int*, int>)(lpVtbl[7]))((IPicture*)Unsafe.AsPointer(ref this), pHeight);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, int*, int>)(lpVtbl[7]))((IPicture*)Unsafe.AsPointer(ref this), pHeight);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.Render"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT Render(HDC hDC, [NativeTypeName("LONG")] int x, [NativeTypeName("LONG")] int y, [NativeTypeName("LONG")] int cx, [NativeTypeName("LONG")] int cy, [NativeTypeName("OLE_XPOS_HIMETRIC")] int xSrc, [NativeTypeName("OLE_YPOS_HIMETRIC")] int ySrc, [NativeTypeName("OLE_XSIZE_HIMETRIC")] int cxSrc, [NativeTypeName("OLE_YSIZE_HIMETRIC")] int cySrc, [NativeTypeName("LPCRECT")] RECT* pRcWBounds)
     {
-        return ((delegate* unmanaged<IPicture*, HDC, int, int, int, int, int, int, int, int, RECT*, int>)(lpVtbl[8]))((IPicture*)Unsafe.AsPointer(ref this), hDC, x, y, cx, cy, xSrc, ySrc, cxSrc, cySrc, pRcWBounds);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, HDC, int, int, int, int, int, int, int, int, RECT*, int>)(lpVtbl[8]))((IPicture*)Unsafe.AsPointer(ref this), hDC, x, y, cx, cy, xSrc, ySrc, cxSrc, cySrc, pRcWBounds);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.set_hPal"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT set_hPal([NativeTypeName("OLE_HANDLE")] uint hPal)
     {
-        return ((delegate* unmanaged<IPicture*, uint, int>)(lpVtbl[9]))((IPicture*)Unsafe.AsPointer(ref this), hPal);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, uint, int>)(lpVtbl[9]))((IPicture*)Unsafe.AsPointer(ref this), hPal);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.get_CurDC"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT get_CurDC(HDC* phDC)
     {
-        return ((delegate* unmanaged<IPicture*, HDC*, int>)(lpVtbl[10]))((IPicture*)Unsafe.AsPointer(ref this), phDC);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, HDC*, int>)(lpVtbl[10]))((IPicture*)Unsafe.AsPointer(ref this), phDC);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.SelectPicture"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT SelectPicture(HDC hDCIn, HDC* phDCOut, [NativeTypeName("OLE_HANDLE *")] uint* phBmpOut)
     {
-        return ((delegate* unmanaged<IPicture*, HDC, HDC*, uint*, int>)(lpVtbl[11]))((IPicture*)Unsafe.AsPointer(ref this), hDCIn, phDCOut, phBmpOut);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, HDC, HDC*, uint*, int>)(lpVtbl[11]))((IPicture*)Unsafe.AsPointer(ref this), hDCIn, phDCOut, phBmpOut);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.get_KeepOriginalFormat"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT get_KeepOriginalFormat(BOOL* pKeep)
     {
-        return ((delegate* unmanaged<IPicture*, BOOL*, int>)(lpVtbl[12]))((IPicture*)Unsafe.AsPointer(ref this), pKeep);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, BOOL*, int>)(lpVtbl[12]))((IPicture*)Unsafe.AsPointer(ref this), pKeep);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.put_KeepOriginalFormat"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT put_KeepOriginalFormat(BOOL keep)
     {
-        return ((delegate* unmanaged<IPicture*, BOOL, int>)(lpVtbl[13]))((IPicture*)Unsafe.AsPointer(ref this), keep);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, BOOL, int>)(lpVtbl[13]))((IPicture*)Unsafe.AsPointer(ref this), keep);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.PictureChanged"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT PictureChanged()
     {
-        return ((delegate* unmanaged<IPicture*, int>)(lpVtbl[14]))((IPicture*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, int>)(lpVtbl[14]))((IPicture*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.SaveAsFile"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT SaveAsFile([NativeTypeName("LPSTREAM")] IStream* pStream, BOOL fSaveMemCopy, [NativeTypeName("LONG *")] int* pCbSize)
     {
-        return ((delegate* unmanaged<IPicture*, IStream*, BOOL, int*, int>)(lpVtbl[15]))((IPicture*)Unsafe.AsPointer(ref this), pStream, fSaveMemCopy, pCbSize);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, IStream*, BOOL, int*, int>)(lpVtbl[15]))((IPicture*)Unsafe.AsPointer(ref this), pStream, fSaveMemCopy, pCbSize);
     }
 
     /// <include file='IPicture.xml' path='doc/member[@name="IPicture.get_Attributes"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT get_Attributes([NativeTypeName("DWORD *")] uint* pDwAttr)
     {
-        return ((delegate* unmanaged<IPicture*, uint*, int>)(lpVtbl[16]))((IPicture*)Unsafe.AsPointer(ref this), pDwAttr);
+        return ((delegate* unmanaged[MemberFunction]<IPicture*, uint*, int>)(lpVtbl[16]))((IPicture*)Unsafe.AsPointer(ref this), pDwAttr);
     }
 
     public interface Interface : IUnknown.Interface
@@ -207,54 +207,54 @@ public unsafe partial struct IPicture : IPicture.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (OLE_HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_Handle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_Handle;
 
         [NativeTypeName("HRESULT (OLE_HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_hPal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_hPal;
 
         [NativeTypeName("HRESULT (SHORT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_Type;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_Type;
 
         [NativeTypeName("HRESULT (OLE_XSIZE_HIMETRIC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Width;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Width;
 
         [NativeTypeName("HRESULT (OLE_YSIZE_HIMETRIC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Height;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Height;
 
         [NativeTypeName("HRESULT (HDC, LONG, LONG, LONG, LONG, OLE_XPOS_HIMETRIC, OLE_YPOS_HIMETRIC, OLE_XSIZE_HIMETRIC, OLE_YSIZE_HIMETRIC, LPCRECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, int, int, int, int, int, int, int, int, RECT*, int> Render;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, int, int, int, int, int, int, int, int, RECT*, int> Render;
 
         [NativeTypeName("HRESULT (OLE_HANDLE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> set_hPal;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> set_hPal;
 
         [NativeTypeName("HRESULT (HDC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC*, int> get_CurDC;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC*, int> get_CurDC;
 
         [NativeTypeName("HRESULT (HDC, HDC *, OLE_HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HDC, HDC*, uint*, int> SelectPicture;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HDC, HDC*, uint*, int> SelectPicture;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> get_KeepOriginalFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> get_KeepOriginalFormat;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> put_KeepOriginalFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> put_KeepOriginalFormat;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> PictureChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> PictureChanged;
 
         [NativeTypeName("HRESULT (LPSTREAM, BOOL, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, BOOL, int*, int> SaveAsFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, BOOL, int*, int> SaveAsFile;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_Attributes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_Attributes;
     }
 }

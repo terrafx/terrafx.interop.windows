@@ -22,7 +22,7 @@ public unsafe partial struct PRJ_CALLBACKS
 
     /// <include file='PRJ_CALLBACKS.xml' path='doc/member[@name="PRJ_CALLBACKS.GetDirectoryEnumerationCallback"]/*' />
     [NativeTypeName("PRJ_GET_DIRECTORY_ENUMERATION_CB *")]
-    public delegate* unmanaged<PRJ_CALLBACK_DATA*, Guid*, ushort*, PRJ_DIR_ENTRY_BUFFER_HANDLE, HRESULT> GetDirectoryEnumerationCallback;
+    public delegate* unmanaged<PRJ_CALLBACK_DATA*, Guid*, char*, PRJ_DIR_ENTRY_BUFFER_HANDLE, HRESULT> GetDirectoryEnumerationCallback;
 
     /// <include file='PRJ_CALLBACKS.xml' path='doc/member[@name="PRJ_CALLBACKS.GetPlaceholderInfoCallback"]/*' />
     [NativeTypeName("PRJ_GET_PLACEHOLDER_INFO_CB *")]
@@ -38,7 +38,7 @@ public unsafe partial struct PRJ_CALLBACKS
 
     /// <include file='PRJ_CALLBACKS.xml' path='doc/member[@name="PRJ_CALLBACKS.NotificationCallback"]/*' />
     [NativeTypeName("PRJ_NOTIFICATION_CB *")]
-    public delegate* unmanaged<PRJ_CALLBACK_DATA*, byte, PRJ_NOTIFICATION, ushort*, PRJ_NOTIFICATION_PARAMETERS*, HRESULT> NotificationCallback;
+    public delegate* unmanaged<PRJ_CALLBACK_DATA*, byte, PRJ_NOTIFICATION, char*, PRJ_NOTIFICATION_PARAMETERS*, HRESULT> NotificationCallback;
 
     /// <include file='PRJ_CALLBACKS.xml' path='doc/member[@name="PRJ_CALLBACKS.CancelCommandCallback"]/*' />
     [NativeTypeName("PRJ_CANCEL_COMMAND_CB *")]

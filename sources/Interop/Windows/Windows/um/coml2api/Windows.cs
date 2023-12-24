@@ -12,7 +12,7 @@ public static unsafe partial class Windows
 {
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgCreateDocfile"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StgCreateDocfile([NativeTypeName("const WCHAR *")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstgOpen);
+    public static extern HRESULT StgCreateDocfile([NativeTypeName("const WCHAR *")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstgOpen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgCreateDocfileOnILockBytes"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -20,15 +20,15 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgOpenStorage"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StgOpenStorage([NativeTypeName("const WCHAR *")] ushort* pwcsName, IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("SNB")] ushort** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstgOpen);
+    public static extern HRESULT StgOpenStorage([NativeTypeName("const WCHAR *")] char* pwcsName, IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("SNB")] char** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstgOpen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgOpenStorageOnILockBytes"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StgOpenStorageOnILockBytes(ILockBytes* plkbyt, IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("SNB")] ushort** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstgOpen);
+    public static extern HRESULT StgOpenStorageOnILockBytes(ILockBytes* plkbyt, IStorage* pstgPriority, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("SNB")] char** snbExclude, [NativeTypeName("DWORD")] uint reserved, IStorage** ppstgOpen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgIsStorageFile"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StgIsStorageFile([NativeTypeName("const WCHAR *")] ushort* pwcsName);
+    public static extern HRESULT StgIsStorageFile([NativeTypeName("const WCHAR *")] char* pwcsName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgIsStorageILockBytes"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -36,15 +36,15 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgSetTimes"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StgSetTimes([NativeTypeName("const WCHAR *")] ushort* lpszName, [NativeTypeName("const FILETIME *")] FILETIME* pctime, [NativeTypeName("const FILETIME *")] FILETIME* patime, [NativeTypeName("const FILETIME *")] FILETIME* pmtime);
+    public static extern HRESULT StgSetTimes([NativeTypeName("const WCHAR *")] char* lpszName, [NativeTypeName("const FILETIME *")] FILETIME* pctime, [NativeTypeName("const FILETIME *")] FILETIME* patime, [NativeTypeName("const FILETIME *")] FILETIME* pmtime);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgCreateStorageEx"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StgCreateStorageEx([NativeTypeName("const WCHAR *")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, STGOPTIONS* pStgOptions, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("const IID &")] Guid* riid, void** ppObjectOpen);
+    public static extern HRESULT StgCreateStorageEx([NativeTypeName("const WCHAR *")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, STGOPTIONS* pStgOptions, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("const IID &")] Guid* riid, void** ppObjectOpen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgOpenStorageEx"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT StgOpenStorageEx([NativeTypeName("const WCHAR *")] ushort* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, STGOPTIONS* pStgOptions, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("const IID &")] Guid* riid, void** ppObjectOpen);
+    public static extern HRESULT StgOpenStorageEx([NativeTypeName("const WCHAR *")] char* pwcsName, [NativeTypeName("DWORD")] uint grfMode, [NativeTypeName("DWORD")] uint stgfmt, [NativeTypeName("DWORD")] uint grfAttrs, STGOPTIONS* pStgOptions, [NativeTypeName("PSECURITY_DESCRIPTOR")] void* pSecurityDescriptor, [NativeTypeName("const IID &")] Guid* riid, void** ppObjectOpen);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.StgCreatePropStg"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
@@ -60,11 +60,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FmtIdToPropStgName"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT FmtIdToPropStgName([NativeTypeName("const FMTID *")] Guid* pfmtid, [NativeTypeName("LPOLESTR")] ushort* oszName);
+    public static extern HRESULT FmtIdToPropStgName([NativeTypeName("const FMTID *")] Guid* pfmtid, [NativeTypeName("LPOLESTR")] char* oszName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.PropStgNameToFmtId"]/*' />
     [DllImport("ole32", ExactSpelling = true)]
-    public static extern HRESULT PropStgNameToFmtId([NativeTypeName("const LPOLESTR")] ushort* oszName, [NativeTypeName("FMTID *")] Guid* pfmtid);
+    public static extern HRESULT PropStgNameToFmtId([NativeTypeName("const LPOLESTR")] char* oszName, [NativeTypeName("FMTID *")] Guid* pfmtid);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.ReadClassStg"]/*' />
     [DllImport("ole32", ExactSpelling = true)]

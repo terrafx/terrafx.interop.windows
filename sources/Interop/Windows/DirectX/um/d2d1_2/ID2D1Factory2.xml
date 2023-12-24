@@ -3,61 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Factory2.CreateDevice">
-    <summary>
-      <para>Creates an <see cref="ID2D1Device1" /> object.</para>
-    </summary>
-    <param name="dxgiDevice">
-      <para>Type: <b><see cref="IDXGIDevice" />*</b></para>
-      <para>The <see cref="IDXGIDevice" /> object used when creating  the <see cref="ID2D1Device1" />.</para>
-    </param>
-    <param name="d2dDevice1">
-      <para>Type: <b><see cref="ID2D1Device1" />**</b></para>
-      <para>The requested <see cref="ID2D1Device1" /> object.</para>
-    </param>
+    <summary>Creates an <see cref="ID2D1Device1" /> object.</summary>
+    <param name="dxgiDevice">The <see cref="IDXGIDevice" /> object used when creating the <see cref="ID2D1Device1" />.</param>
+    <param name="d2dDevice1">The requested <see cref="ID2D1Device1" /> object.</param>
     <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUTOFVIDEOMEMORY</description>
           <description>Direct3D does not have enough display memory to perform the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> device defines a resource domain in which a set of Direct2D objects and Direct2D device contexts can be used together.  Each call to <see cref="CreateDevice" /> returns a unique <see cref="ID2D1Device1" /> object, even if you pass the same <see cref="IDXGIDevice" /> multiple times.</para>
-    </remarks>
-    <seealso cref="ID2D1Device" />
-    <seealso cref="ID2D1Device1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.GetDevice" />
-    <seealso cref="ID2D1Factory1" />
-    <seealso cref="ID2D1Factory2" />
   </member>
   <member name="ID2D1Factory2">
     <summary>
       <para>Creates Direct2D resources.</para>
       <para>This interface also enables the creation of <see cref="ID2D1Device1" /> objects.</para>
     </summary>
-    <seealso cref="ID2D1Device" />
-    <seealso cref="ID2D1Factory" />
-    <seealso cref="ID2D1Factory1" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/multi-threaded-direct2d-apps">Multithreaded Direct2D Apps</seealso>
   </member>
 </doc>

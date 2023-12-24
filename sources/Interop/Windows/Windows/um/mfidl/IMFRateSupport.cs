@@ -25,7 +25,7 @@ public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFRateSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFRateSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFRateSupport*, Guid*, void**, int>)(lpVtbl[0]))((IMFRateSupport*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFRateSupport*, uint>)(lpVtbl[1]))((IMFRateSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRateSupport*, uint>)(lpVtbl[1]))((IMFRateSupport*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFRateSupport*, uint>)(lpVtbl[2]))((IMFRateSupport*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFRateSupport*, uint>)(lpVtbl[2]))((IMFRateSupport*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFRateSupport.xml' path='doc/member[@name="IMFRateSupport.GetSlowestRate"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetSlowestRate(MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate)
     {
-        return ((delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int>)(lpVtbl[3]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int>)(lpVtbl[3]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
     }
 
     /// <include file='IMFRateSupport.xml' path='doc/member[@name="IMFRateSupport.GetFastestRate"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetFastestRate(MFRATE_DIRECTION eDirection, BOOL fThin, float* pflRate)
     {
-        return ((delegate* unmanaged<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int>)(lpVtbl[4]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFRateSupport*, MFRATE_DIRECTION, BOOL, float*, int>)(lpVtbl[4]))((IMFRateSupport*)Unsafe.AsPointer(ref this), eDirection, fThin, pflRate);
     }
 
     /// <include file='IMFRateSupport.xml' path='doc/member[@name="IMFRateSupport.IsRateSupported"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT IsRateSupported(BOOL fThin, float flRate, float* pflNearestSupportedRate)
     {
-        return ((delegate* unmanaged<IMFRateSupport*, BOOL, float, float*, int>)(lpVtbl[5]))((IMFRateSupport*)Unsafe.AsPointer(ref this), fThin, flRate, pflNearestSupportedRate);
+        return ((delegate* unmanaged[MemberFunction]<IMFRateSupport*, BOOL, float, float*, int>)(lpVtbl[5]))((IMFRateSupport*)Unsafe.AsPointer(ref this), fThin, flRate, pflNearestSupportedRate);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IMFRateSupport : IMFRateSupport.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (MFRATE_DIRECTION, BOOL, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFRATE_DIRECTION, BOOL, float*, int> GetSlowestRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFRATE_DIRECTION, BOOL, float*, int> GetSlowestRate;
 
         [NativeTypeName("HRESULT (MFRATE_DIRECTION, BOOL, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MFRATE_DIRECTION, BOOL, float*, int> GetFastestRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MFRATE_DIRECTION, BOOL, float*, int> GetFastestRate;
 
         [NativeTypeName("HRESULT (BOOL, float, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, float, float*, int> IsRateSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, float, float*, int> IsRateSupported;
     }
 }

@@ -27,7 +27,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxSourceContentGroupMapReader*, Guid*, void**, int>)(lpVtbl[0]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, uint>)(lpVtbl[1]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxSourceContentGroupMapReader*, uint>)(lpVtbl[1]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, uint>)(lpVtbl[2]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxSourceContentGroupMapReader*, uint>)(lpVtbl[2]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxSourceContentGroupMapReader.xml' path='doc/member[@name="IAppxSourceContentGroupMapReader.GetRequiredGroup"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
     [VtblIndex(3)]
     public HRESULT GetRequiredGroup(IAppxContentGroup** requiredGroup)
     {
-        return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroup**, int>)(lpVtbl[3]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), requiredGroup);
+        return ((delegate* unmanaged[MemberFunction]<IAppxSourceContentGroupMapReader*, IAppxContentGroup**, int>)(lpVtbl[3]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), requiredGroup);
     }
 
     /// <include file='IAppxSourceContentGroupMapReader.xml' path='doc/member[@name="IAppxSourceContentGroupMapReader.GetAutomaticGroups"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
     [VtblIndex(4)]
     public HRESULT GetAutomaticGroups(IAppxContentGroupsEnumerator** automaticGroupsEnumerator)
     {
-        return ((delegate* unmanaged<IAppxSourceContentGroupMapReader*, IAppxContentGroupsEnumerator**, int>)(lpVtbl[4]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), automaticGroupsEnumerator);
+        return ((delegate* unmanaged[MemberFunction]<IAppxSourceContentGroupMapReader*, IAppxContentGroupsEnumerator**, int>)(lpVtbl[4]))((IAppxSourceContentGroupMapReader*)Unsafe.AsPointer(ref this), automaticGroupsEnumerator);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IAppxSourceContentGroupMapReader : IAppxSourceConte
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxContentGroup **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxContentGroup**, int> GetRequiredGroup;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxContentGroup**, int> GetRequiredGroup;
 
         [NativeTypeName("HRESULT (IAppxContentGroupsEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxContentGroupsEnumerator**, int> GetAutomaticGroups;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxContentGroupsEnumerator**, int> GetAutomaticGroups;
     }
 }

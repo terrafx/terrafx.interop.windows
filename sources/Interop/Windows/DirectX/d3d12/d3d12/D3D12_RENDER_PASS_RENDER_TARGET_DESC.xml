@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RENDER_PASS_RENDER_TARGET_DESC">
+    <summary>Describes bindings (fixed for the duration of the render pass) to one or more render target views (RTVs), as well as their beginning and ending access characteristics.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_RENDER_TARGET_DESC.cpuDescriptor">
+    <summary>A <see cref="D3D12_CPU_DESCRIPTOR_HANDLE" />. The CPU descriptor handle corresponding to the render target view(s) (RTVs).</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_RENDER_TARGET_DESC.BeginningAccess">
+    <summary>A <see cref="D3D12_RENDER_PASS_BEGINNING_ACCESS" />. The access to the RTV(s) requested at the transition into a render pass.</summary>
+  </member>
+  <member name="D3D12_RENDER_PASS_RENDER_TARGET_DESC.EndingAccess">
+    <summary>A <see cref="D3D12_RENDER_PASS_ENDING_ACCESS" />. The access to the RTV(s) requested at the transition out of a render pass.</summary>
+  </member>
+</doc>

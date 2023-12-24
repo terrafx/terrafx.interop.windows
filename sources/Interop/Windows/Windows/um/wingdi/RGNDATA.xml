@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RGNDATA">
-    <summary>
-      <para>The <b>RGNDATA</b> structure contains a header and an array of rectangles that compose a region. The rectangles are sorted top to bottom, left to right. They do not overlap.</para>
-    </summary>
-    <seealso cref="RECT" />
-    <seealso cref="RGNDATAHEADER" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/region-structures">Region Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/regions">Regions Overview</seealso>
+    <summary>The <b>RGNDATA</b> structure contains a header and an array of rectangles that compose a region. The rectangles are sorted top to bottom, left to right. They do not overlap.</summary>
   </member>
   <member name="RGNDATA.rdh">
-    <summary>
-      <para>A <see cref="RGNDATAHEADER" /> structure. The members of this structure specify the type of region (whether it is rectangular or trapezoidal), the number of rectangles that make up the region, the size of the buffer that contains the rectangle structures, and so on.</para>
-    </summary>
+    <summary>A <see cref="RGNDATAHEADER" /> structure. The members of this structure specify the type of region (whether it is rectangular or trapezoidal), the number of rectangles that make up the region, the size of the buffer that contains the rectangle structures, and so on.</summary>
   </member>
   <member name="RGNDATA.Buffer">
-    <summary>
-      <para>Specifies an arbitrary-size buffer that contains the <see cref="RECT" /> structures that make up the region.</para>
-    </summary>
+    <summary>Specifies an arbitrary-size buffer that contains the <see cref="RECT" /> structures that make up the region.</summary>
   </member>
 </doc>

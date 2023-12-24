@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPlayToManagerInterop.GetForWindow">
+    <summary>Gets the <a href="https://docs.microsoft.com//uwp/api/windows.media.playto.playtomanager">PlayToManager</a> instance for the specified window.</summary>
+    <param name="appWindow">The window to get the <a href="https://docs.microsoft.com//uwp/api/windows.media.playto.playtomanager">PlayToManager</a> instance for.</param>
+    <param name="riid">The reference ID of the specified window.</param>
+    <param name="playToManager">The <a href="https://docs.microsoft.com//uwp/api/windows.media.playto.playtomanager">PlayToManager</a> instance for the specified window.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPlayToManagerInterop.ShowPlayToUIForWindow">
+    <summary>Displays the Play To UI for the specified window.</summary>
+    <param name="appWindow">The window to show the Play To UI for.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IPlayToManagerInterop">
+    <summary>Enables access to <a href="https://docs.microsoft.com//uwp/api/windows.media.playto.playtomanager">PlayToManager</a> methods in a Windows Store app that manages multiple windows.</summary>
+  </member>
+</doc>

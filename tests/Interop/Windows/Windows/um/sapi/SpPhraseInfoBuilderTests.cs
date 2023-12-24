@@ -19,25 +19,4 @@ public static unsafe partial class SpPhraseInfoBuilderTests
     {
         Assert.That(typeof(SpPhraseInfoBuilder).GUID, Is.EqualTo(CLSID_SpPhraseInfoBuilder));
     }
-
-    /// <summary>Validates that the <see cref="SpPhraseInfoBuilder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpPhraseInfoBuilder>(), Is.EqualTo(sizeof(SpPhraseInfoBuilder)));
-    }
-
-    /// <summary>Validates that the <see cref="SpPhraseInfoBuilder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpPhraseInfoBuilder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpPhraseInfoBuilder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpPhraseInfoBuilder), Is.EqualTo(1));
-    }
 }

@@ -3,6 +3,7 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -21,7 +22,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
     public uint Size;
 
     /// <include file='PERSISTENT_RESERVE_COMMAND.xml' path='doc/member[@name="PERSISTENT_RESERVE_COMMAND.Anonymous"]/*' />
-    [NativeTypeName("_PERSISTENT_RESERVE_COMMAND::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:5694:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L5694_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PR_IN"]/*' />
@@ -52,12 +53,12 @@ public partial struct PERSISTENT_RESERVE_COMMAND
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PR_IN"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:5696:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L5696_C9")]
         public _PR_IN_e__Struct PR_IN;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.PR_OUT"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:5713:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L5713_C9")]
         public _PR_OUT_e__Struct PR_OUT;
 
         /// <include file='_PR_IN_e__Struct.xml' path='doc/member[@name="_PR_IN_e__Struct"]/*' />
@@ -70,7 +71,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte ServiceAction
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)(_bitfield & 0x1Fu);
                 }
@@ -87,7 +88,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte Reserved1
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)((_bitfield >> 5) & 0x7u);
                 }
@@ -105,7 +106,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
         }
 
         /// <include file='_PR_OUT_e__Struct.xml' path='doc/member[@name="_PR_OUT_e__Struct"]/*' />
-        public unsafe partial struct _PR_OUT_e__Struct
+        public partial struct _PR_OUT_e__Struct
         {
             public byte _bitfield1;
 
@@ -114,7 +115,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte ServiceAction
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)(_bitfield1 & 0x1Fu);
                 }
@@ -131,7 +132,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte Reserved1
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)((_bitfield1 >> 5) & 0x7u);
                 }
@@ -150,7 +151,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte Type
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)(_bitfield2 & 0xFu);
                 }
@@ -167,7 +168,7 @@ public partial struct PERSISTENT_RESERVE_COMMAND
             public byte Scope
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (byte)((_bitfield2 >> 4) & 0xFu);
                 }
@@ -181,7 +182,27 @@ public partial struct PERSISTENT_RESERVE_COMMAND
 
             /// <include file='_PR_OUT_e__Struct.xml' path='doc/member[@name="_PR_OUT_e__Struct.ParameterList"]/*' />
             [NativeTypeName("BYTE[0]")]
-            public fixed byte ParameterList[1];
+            public _ParameterList_e__FixedBuffer ParameterList;
+
+            /// <include file='_ParameterList_e__FixedBuffer.xml' path='doc/member[@name="_ParameterList_e__FixedBuffer"]/*' />
+            public partial struct _ParameterList_e__FixedBuffer
+            {
+                public byte e0;
+
+                [UnscopedRef]
+                public ref byte this[int index]
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return ref Unsafe.Add(ref e0, index);
+                    }
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                [UnscopedRef]
+                public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+            }
         }
     }
 }

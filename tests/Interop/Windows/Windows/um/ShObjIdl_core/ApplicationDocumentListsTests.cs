@@ -19,25 +19,4 @@ public static unsafe partial class ApplicationDocumentListsTests
     {
         Assert.That(typeof(ApplicationDocumentLists).GUID, Is.EqualTo(IID_ApplicationDocumentLists));
     }
-
-    /// <summary>Validates that the <see cref="ApplicationDocumentLists" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ApplicationDocumentLists>(), Is.EqualTo(sizeof(ApplicationDocumentLists)));
-    }
-
-    /// <summary>Validates that the <see cref="ApplicationDocumentLists" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ApplicationDocumentLists).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ApplicationDocumentLists" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(ApplicationDocumentLists), Is.EqualTo(1));
-    }
 }

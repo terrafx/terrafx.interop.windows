@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RENDEZVOUS_SESSION_FLAGS">
-    <summary>
-      <para>Provides the list of possible flags for the session invitation.</para>
-    </summary>
+    <summary>Provides the list of possible flags for the session invitation.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_FLAGS.RSF_NONE">
-    <summary>
-      <para>No such value.</para>
-    </summary>
+    <summary>No such value.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_FLAGS.RSF_INVITER">
-    <summary>
-      <para>The party that sets the session object is the inviter.</para>
-    </summary>
+    <summary>The party that sets the session object is the inviter.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_FLAGS.RSF_INVITEE">
-    <summary>
-      <para>The party that sets the session object is the recipient.</para>
-    </summary>
+    <summary>The party that sets the session object is the recipient.</summary>
   </member>
-  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_ORIGINAL_INVITER">
-    <summary></summary>
-  </member>
-  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_REMOTE_LEGACYSESSION">
-    <summary></summary>
-  </member>
-  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_REMOTE_WIN7SESSION">
-    <summary></summary>
-  </member>
+  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_ORIGINAL_INVITER"></member>
+  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_REMOTE_LEGACYSESSION"></member>
+  <member name="RENDEZVOUS_SESSION_FLAGS.RSF_REMOTE_WIN7SESSION"></member>
 </doc>

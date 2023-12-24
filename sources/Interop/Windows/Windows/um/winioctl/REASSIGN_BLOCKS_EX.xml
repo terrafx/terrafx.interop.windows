@@ -3,39 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="REASSIGN_BLOCKS_EX">
-    <summary>
-      <para>Contains
-disk block reassignment data. This is a variable length structure where the last member is an array of block
-numbers to be reassigned. It is used by the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_reassign_blocks_ex">IOCTL_DISK_REASSIGN_BLOCKS_EX</a> control
-code.</para>
-    </summary>
-    <remarks>
-      <para>The <b>REASSIGN_BLOCKS_EX</b> structure supports drives
-that have an 8-byte Logical Block Address (LBA), which is typically required for storage devices larger than 2 TB.
-The <see cref="REASSIGN_BLOCKS" /> structure used with the
-<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_reassign_blocks">IOCTL_DISK_REASSIGN_BLOCKS</a> control code
-supports devices with up to a 4-byte LBA should be used where possible.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_reassign_blocks">IOCTL_DISK_REASSIGN_BLOCKS</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_reassign_blocks_ex">IOCTL_DISK_REASSIGN_BLOCKS_EX</seealso>
-    <seealso cref="REASSIGN_BLOCKS" />
+    <summary>Contains disk block reassignment data. This is a variable length structure where the last member is an array of block numbers to be reassigned. It is used by the<a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_disk_reassign_blocks_ex">IOCTL_DISK_REASSIGN_BLOCKS_EX</a> control code.</summary>
   </member>
   <member name="REASSIGN_BLOCKS_EX.Reserved">
-    <summary>
-      <para>This member is reserved. Do not use it. Set it to 0 (zero).</para>
-    </summary>
+    <summary>This member is reserved. Do not use it. Set it to 0 (zero).</summary>
   </member>
   <member name="REASSIGN_BLOCKS_EX.Count">
     <summary>
       <para>The number of blocks to be reassigned.</para>
-      <para>This is the number of elements that are in the
-<b>BlockNumber</b> member array.</para>
+      <para>This is the number of elements that are in the<b>BlockNumber</b> member array.</para>
     </summary>
   </member>
   <member name="REASSIGN_BLOCKS_EX.BlockNumber">
-    <summary>
-      <para>An array of <b>Count</b> block numbers, one for each block to be reassigned.</para>
-    </summary>
+    <summary>An array of <b>Count</b> block numbers, one for each block to be reassigned.</summary>
   </member>
 </doc>

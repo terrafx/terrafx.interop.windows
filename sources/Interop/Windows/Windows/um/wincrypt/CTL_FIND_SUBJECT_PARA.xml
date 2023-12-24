@@ -3,37 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CTL_FIND_SUBJECT_PARA">
-    <summary>
-      <para>The <b>CTL_FIND_SUBJECT_PARA</b> structure contains data used by
-<see cref="CertFindCTLInStore" /> with a <i>dwFindType</i> parameter of CTL_FIND_SUBJECT to find a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Trust List</a> (CTL).</para>
-    </summary>
-    <seealso cref="CERT_CONTEXT" />
-    <seealso cref="CTL_ANY_SUBJECT_INFO" />
-    <seealso cref="CTL_FIND_USAGE_PARA" />
-    <seealso cref="CertFindCTLInStore" />
+    <summary>The <b>CTL_FIND_SUBJECT_PARA</b> structure contains data used by<see cref="CertFindCTLInStore" /> with a <i>dwFindType</i> parameter of CTL_FIND_SUBJECT to find a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Trust List</a> (CTL).</summary>
   </member>
   <member name="CTL_FIND_SUBJECT_PARA.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CTL_FIND_SUBJECT_PARA.pUsagePara">
-    <summary>
-      <para>A pointer to a
-<see cref="CTL_FIND_USAGE_PARA" /> structure. Can be <b>NULL</b> if there is no need to reference the <b>CTL_FIND_USAGE_PARA</b> parameters when finding a CTL.</para>
-    </summary>
+    <summary>A pointer to a<see cref="CTL_FIND_USAGE_PARA" /> structure. Can be <b>NULL</b> if there is no need to reference the <b>CTL_FIND_USAGE_PARA</b> parameters when finding a CTL.</summary>
   </member>
   <member name="CTL_FIND_SUBJECT_PARA.dwSubjectType">
     <summary>
-      <para>For CTL_CERT_SUBJECT_TYPE, the <b>pvSubject</b> member points to a
-<see cref="CERT_CONTEXT" />. The CTL's <b>SubjectAlgorithm</b> is examined to determine the representation of the subject's identity. Initially, only SHA1 or MD5 hash will be supported. The appropriate hash property is obtained from the <b>CERT_CONTEXT</b>.</para>
-      <para>For CTL_ANY_SUBJECT_TYPE, <b>pvSubject</b> points to the
-<see cref="CTL_ANY_SUBJECT_INFO" /> structure that contains the <b>SubjectAlgorithm</b> to be matched in the CTL and the <b>SubjectIdentifier</b> to be matched in one of the CTL entries.</para>
+      <para>For CTL_CERT_SUBJECT_TYPE, the <b>pvSubject</b> member points to a<see cref="CERT_CONTEXT" />. The CTL's <b>SubjectAlgorithm</b> is examined to determine the representation of the subject's identity. Initially, only SHA1 or MD5 hash will be supported. The appropriate hash property is obtained from the <b>CERT_CONTEXT</b>.</para>
+      <para>For CTL_ANY_SUBJECT_TYPE, <b>pvSubject</b> points to the<see cref="CTL_ANY_SUBJECT_INFO" /> structure that contains the <b>SubjectAlgorithm</b> to be matched in the CTL and the <b>SubjectIdentifier</b> to be matched in one of the CTL entries.</para>
     </summary>
   </member>
   <member name="CTL_FIND_SUBJECT_PARA.pvSubject">
-    <summary>
-      <para>The value of the <b>pvSubject</b> member depends upon the value of the <b>dwSubjectType</b> member. For more information, see <b>dwSubjectType</b>.</para>
-    </summary>
+    <summary>The value of the <b>pvSubject</b> member depends upon the value of the <b>dwSubjectType</b> member. For more information, see <b>dwSubjectType</b>.</summary>
   </member>
 </doc>

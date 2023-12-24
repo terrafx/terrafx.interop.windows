@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_TRIMMING_GRANULARITY">
-    <summary>
-      <para>Specifies  the text granularity used to trim text overflowing the layout box.</para>
-    </summary>
+    <summary>Specifies the text granularity used to trim text overflowing the layout box.</summary>
   </member>
   <member name="DWRITE_TRIMMING_GRANULARITY.DWRITE_TRIMMING_GRANULARITY_NONE">
-    <summary>
-      <para>No trimming occurs. Text flows beyond the layout width.</para>
-    </summary>
+    <summary>No trimming occurs. Text flows beyond the layout width.</summary>
   </member>
   <member name="DWRITE_TRIMMING_GRANULARITY.DWRITE_TRIMMING_GRANULARITY_CHARACTER">
-    <summary>
-      <para>Trimming occurs at a character cluster boundary.</para>
-    </summary>
+    <summary>Trimming occurs at a character cluster boundary.</summary>
   </member>
   <member name="DWRITE_TRIMMING_GRANULARITY.DWRITE_TRIMMING_GRANULARITY_WORD">
-    <summary>
-      <para>Trimming occurs at a word boundary.</para>
-    </summary>
+    <summary>Trimming occurs at a word boundary.</summary>
   </member>
 </doc>

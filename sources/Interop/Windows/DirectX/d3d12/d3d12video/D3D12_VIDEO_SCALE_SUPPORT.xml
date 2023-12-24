@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_SCALE_SUPPORT">
+    <summary>Describes the supported scaling range of output sizes for a video scaler.</summary>
+  </member>
+  <member name="D3D12_VIDEO_SCALE_SUPPORT.OutputSizeRange">
+    <summary>A <see cref="D3D12_VIDEO_SIZE_RANGE" /> structure describing the supported output size range for the scaler.</summary>
+  </member>
+  <member name="D3D12_VIDEO_SCALE_SUPPORT.Flags">
+    <summary>A member of the <see cref="D3D12_VIDEO_SCALE_SUPPORT_FLAGS" /> enumeration specifying the supported scaling capabilities of the scaler.</summary>
+  </member>
+</doc>

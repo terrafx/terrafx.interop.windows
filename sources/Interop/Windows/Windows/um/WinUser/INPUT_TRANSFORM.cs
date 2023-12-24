@@ -11,10 +11,10 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='INPUT_TRANSFORM.xml' path='doc/member[@name="INPUT_TRANSFORM"]/*' />
-public unsafe partial struct INPUT_TRANSFORM
+public partial struct INPUT_TRANSFORM
 {
     /// <include file='INPUT_TRANSFORM.xml' path='doc/member[@name="INPUT_TRANSFORM.Anonymous"]/*' />
-    [NativeTypeName("tagINPUT_TRANSFORM::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinUser.h:6810:5)")]
+    [NativeTypeName("__AnonymousRecord_winuser_L6814_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct._11"]/*' />
@@ -200,23 +200,23 @@ public unsafe partial struct INPUT_TRANSFORM
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.m[0], 4);
+            return Anonymous.m;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tagINPUT_TRANSFORM::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinUser.h:6811:9)")]
+        [NativeTypeName("__AnonymousRecord_winuser_L6815_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.m"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("float[4][4]")]
-        public fixed float m[4 * 4];
+        public _m_e__FixedBuffer m;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
         public partial struct _Anonymous_e__Struct
@@ -268,6 +268,13 @@ public unsafe partial struct INPUT_TRANSFORM
 
             /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct._44"]/*' />
             public float _44;
+        }
+
+        /// <include file='_m_e__FixedBuffer.xml' path='doc/member[@name="_m_e__FixedBuffer"]/*' />
+        [InlineArray(4 * 4)]
+        public partial struct _m_e__FixedBuffer
+        {
+            public float e0_0;
         }
     }
 }

@@ -3,59 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFolderBandPriv.SetAccelerators">
-    <summary>
-      <para>Sets accelerators.</para>
-    </summary>
+    <summary>Sets accelerators.</summary>
     <param name="fAccelerators">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to enable accelerators; <b>FALSE</b> to disable them.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns S_OK.</para>
-    </returns>
+      <b>TRUE</b> to enable accelerators; <b>FALSE</b> to disable them.</param>
+    <returns>Always returns S_OK.</returns>
   </member>
   <member name="IFolderBandPriv.SetCascade">
-    <summary>
-      <para>Sets a cascade folder.</para>
-    </summary>
+    <summary>Sets a cascade folder.</summary>
     <param name="fCascade">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to enable cascade folders; <b>FALSE</b> to disable them.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns S_OK.</para>
-    </returns>
+      <b>TRUE</b> to enable cascade folders; <b>FALSE</b> to disable them.</param>
+    <returns>Always returns S_OK.</returns>
   </member>
   <member name="IFolderBandPriv.SetNoIcons">
-    <summary>
-      <para>Sets whether icons are displayed in a folder band.</para>
-    </summary>
+    <summary>Sets whether icons are displayed in a folder band.</summary>
     <param name="fNoIcons">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to display icons; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns S_OK.</para>
-    </returns>
+      <b>TRUE</b> to display icons; otherwise, <b>FALSE</b>.</param>
+    <returns>Always returns S_OK.</returns>
   </member>
   <member name="IFolderBandPriv.SetNoText">
-    <summary>
-      <para>Sets whether text is displayed in a folder band.</para>
-    </summary>
+    <summary>Sets whether text is displayed in a folder band.</summary>
     <param name="fNoText">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>TRUE</b> to display text; otherwise, <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns S_OK.</para>
-    </returns>
+      <b>TRUE</b> to display text; otherwise, <b>FALSE</b>.</param>
+    <returns>Always returns S_OK.</returns>
   </member>
 </doc>

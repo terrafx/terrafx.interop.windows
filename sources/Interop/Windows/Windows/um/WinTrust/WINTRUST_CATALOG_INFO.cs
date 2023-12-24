@@ -18,15 +18,15 @@ public unsafe partial struct WINTRUST_CATALOG_INFO
 
     /// <include file='WINTRUST_CATALOG_INFO.xml' path='doc/member[@name="WINTRUST_CATALOG_INFO.pcwszCatalogFilePath"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcwszCatalogFilePath;
+    public char* pcwszCatalogFilePath;
 
     /// <include file='WINTRUST_CATALOG_INFO.xml' path='doc/member[@name="WINTRUST_CATALOG_INFO.pcwszMemberTag"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcwszMemberTag;
+    public char* pcwszMemberTag;
 
     /// <include file='WINTRUST_CATALOG_INFO.xml' path='doc/member[@name="WINTRUST_CATALOG_INFO.pcwszMemberFilePath"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcwszMemberFilePath;
+    public char* pcwszMemberFilePath;
 
     /// <include file='WINTRUST_CATALOG_INFO.xml' path='doc/member[@name="WINTRUST_CATALOG_INFO.hMemberFile"]/*' />
     public HANDLE hMemberFile;

@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteInMemoryFontFileLoaderTests
     {
         Assert.That(typeof(IDWriteInMemoryFontFileLoader).GUID, Is.EqualTo(IID_IDWriteInMemoryFontFileLoader));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteInMemoryFontFileLoader" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteInMemoryFontFileLoader>(), Is.EqualTo(sizeof(IDWriteInMemoryFontFileLoader)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteInMemoryFontFileLoader" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteInMemoryFontFileLoader).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteInMemoryFontFileLoader" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteInMemoryFontFileLoader), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteInMemoryFontFileLoader), Is.EqualTo(4));
-        }
-    }
 }

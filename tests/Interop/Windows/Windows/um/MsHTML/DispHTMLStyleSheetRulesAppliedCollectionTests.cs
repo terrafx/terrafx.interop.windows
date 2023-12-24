@@ -19,32 +19,4 @@ public static unsafe partial class DispHTMLStyleSheetRulesAppliedCollectionTests
     {
         Assert.That(typeof(DispHTMLStyleSheetRulesAppliedCollection).GUID, Is.EqualTo(IID_DispHTMLStyleSheetRulesAppliedCollection));
     }
-
-    /// <summary>Validates that the <see cref="DispHTMLStyleSheetRulesAppliedCollection" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispHTMLStyleSheetRulesAppliedCollection>(), Is.EqualTo(sizeof(DispHTMLStyleSheetRulesAppliedCollection)));
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLStyleSheetRulesAppliedCollection" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispHTMLStyleSheetRulesAppliedCollection).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispHTMLStyleSheetRulesAppliedCollection" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispHTMLStyleSheetRulesAppliedCollection), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispHTMLStyleSheetRulesAppliedCollection), Is.EqualTo(4));
-        }
-    }
 }

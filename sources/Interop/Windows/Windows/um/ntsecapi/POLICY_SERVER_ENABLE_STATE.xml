@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_SERVER_ENABLE_STATE">
+    <summary>The <b>POLICY_SERVER_ENABLE_STATE</b> enumeration represents the state of the LSA server—that is, whether it is enabled or disabled. Some operations may only be performed on an enabled LSA server.</summary>
+  </member>
+  <member name="POLICY_SERVER_ENABLE_STATE.PolicyServerEnabled">
+    <summary>The LSA server is enabled.</summary>
+  </member>
+  <member name="POLICY_SERVER_ENABLE_STATE.PolicyServerDisabled">
+    <summary>The LSA server is disabled.</summary>
+  </member>
+</doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVideoFrameStep*, Guid*, void**, int>)(lpVtbl[0]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameStep*, Guid*, void**, int>)(lpVtbl[0]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVideoFrameStep*, uint>)(lpVtbl[1]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameStep*, uint>)(lpVtbl[1]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVideoFrameStep*, uint>)(lpVtbl[2]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameStep*, uint>)(lpVtbl[2]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVideoFrameStep.xml' path='doc/member[@name="IVideoFrameStep.Step"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Step([NativeTypeName("DWORD")] uint dwFrames, IUnknown* pStepObject)
     {
-        return ((delegate* unmanaged<IVideoFrameStep*, uint, IUnknown*, int>)(lpVtbl[3]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), dwFrames, pStepObject);
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameStep*, uint, IUnknown*, int>)(lpVtbl[3]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), dwFrames, pStepObject);
     }
 
     /// <include file='IVideoFrameStep.xml' path='doc/member[@name="IVideoFrameStep.CanStep"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, INativ
     [VtblIndex(4)]
     public HRESULT CanStep([NativeTypeName("long")] int bMultiple, IUnknown* pStepObject)
     {
-        return ((delegate* unmanaged<IVideoFrameStep*, int, IUnknown*, int>)(lpVtbl[4]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), bMultiple, pStepObject);
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameStep*, int, IUnknown*, int>)(lpVtbl[4]))((IVideoFrameStep*)Unsafe.AsPointer(ref this), bMultiple, pStepObject);
     }
 
     /// <include file='IVideoFrameStep.xml' path='doc/member[@name="IVideoFrameStep.CancelStep"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, INativ
     [VtblIndex(5)]
     public HRESULT CancelStep()
     {
-        return ((delegate* unmanaged<IVideoFrameStep*, int>)(lpVtbl[5]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVideoFrameStep*, int>)(lpVtbl[5]))((IVideoFrameStep*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IVideoFrameStep : IVideoFrameStep.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, int> Step;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, int> Step;
 
         [NativeTypeName("HRESULT (long, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IUnknown*, int> CanStep;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IUnknown*, int> CanStep;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CancelStep;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CancelStep;
     }
 }

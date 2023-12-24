@@ -3,24 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfDocumentMgr.CreateContext">
-    <summary>
-      <para>Creates a context object.</para>
-    </summary>
-    <param name="tidOwner">
-      <para>The client identifier. For an application, this value is provided by a previous call to <see cref="ITfThreadMgr.Activate" />. For a text service, this value is provided in the text service <see cref="ITfTextInputProcessor.Activate" /> method.</para>
-    </param>
-    <param name="dwFlags">
-      <para>Reserved, must be zero.</para>
-    </param>
-    <param name="punk">
-      <para>Pointer to an object that supports the <see cref="ITextStoreACP" /> or <see cref="ITfContextOwnerCompositionSink" /> interfaces. This value can be <b>NULL</b>.</para>
-    </param>
-    <param name="ppic">
-      <para>Address of an <see cref="ITfContext" /> pointer that receives the context.</para>
-    </param>
-    <param name="pecTextStore">
-      <para>Pointer to a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</a> value that receives an edit cookie for the new context. This value identifies the context in various methods.</para>
-    </param>
+    <summary>Creates a context object.</summary>
+    <param name="tidOwner">The client identifier. For an application, this value is provided by a previous call to <see cref="ITfThreadMgr.Activate" />. For a text service, this value is provided in the text service <see cref="ITfTextInputProcessor.Activate" /> method.</param>
+    <param name="dwFlags">Reserved, must be zero.</param>
+    <param name="punk">Pointer to an object that supports the <see cref="ITextStoreACP" /> or <see cref="ITfContextOwnerCompositionSink" /> interfaces. This value can be <b>NULL</b>.</param>
+    <param name="ppic">Address of an <see cref="ITfContext" /> pointer that receives the context.</param>
+    <param name="pecTextStore">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie</a> value that receives an edit cookie for the new context. This value identifies the context in various methods.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -28,68 +16,60 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more parameters are invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>All references to the <i>punk</i> parameter are released when the context is destroyed or when the context is removed from the stack with the <see cref="ITfDocumentMgr.Pop" /> method.</para>
-    </remarks>
-    <seealso cref="ITextStoreACP " />
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfContextOwnerCompositionSink " />
-    <seealso cref="ITfDocumentMgr" />
-    <seealso cref="ITfDocumentMgr.Pop " />
-    <seealso cref="ITfTextInputProcessor.Activate " />
-    <seealso cref="ITfThreadMgr.Activate " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tfeditcookie">TfEditCookie
-</seealso>
   </member>
   <member name="ITfDocumentMgr.EnumContexts">
-    <summary>
-      <para>Obtains a context enumerator.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Address of an <see cref="IEnumTfContexts" /> pointer that receives the enumerator.</para>
-    </param>
+    <summary>Obtains a context enumerator.</summary>
+    <param name="ppEnum">Address of an <see cref="IEnumTfContexts" /> pointer that receives the enumerator.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -97,48 +77,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A memory allocation error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A memory allocation error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The enumerator cannot be initialized.</para>
-          </description>
-        </item>
+          <description>The enumerator cannot be initialized.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumTfContexts " />
-    <seealso cref="ITfDocumentMgr" />
   </member>
   <member name="ITfDocumentMgr.GetBase">
-    <summary>
-      <para>Obtains the context at the base of the context stack.</para>
-    </summary>
-    <param name="ppic">
-      <para>Address of an <see cref="ITfContext" /> pointer that receives the context.</para>
-    </param>
+    <summary>Obtains the context at the base of the context stack.</summary>
+    <param name="ppic">Address of an <see cref="ITfContext" /> pointer that receives the context.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -146,50 +126,49 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppic</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>ppic</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation error occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfDocumentMgr" />
-    <seealso cref="ITfDocumentMgr.GetTop " />
-    <seealso cref="ITfDocumentMgr.Push " />
   </member>
   <member name="ITfDocumentMgr.GetTop">
-    <summary>
-      <para>Obtains the context at the top of the context stack.</para>
-    </summary>
-    <param name="ppic">
-      <para>Address of an <see cref="ITfContext" /> pointer that receives the context.</para>
-    </param>
+    <summary>Obtains the context at the top of the context stack.</summary>
+    <param name="ppic">Address of an <see cref="ITfContext" /> pointer that receives the context.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -197,50 +176,49 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppic</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>ppic</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation error occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfDocumentMgr" />
-    <seealso cref="ITfDocumentMgr.GetBase " />
-    <seealso cref="ITfDocumentMgr.Push " />
   </member>
   <member name="ITfDocumentMgr.Pop">
-    <summary>
-      <para>Removes the context from the top of the context stack.</para>
-    </summary>
-    <param name="dwFlags">
-      <para>If this value is 0, only the context at the top of the stack is removed. If this value is TF_POPF_ALL, all of the contexts are removed from the stack.</para>
-    </param>
+    <summary>Removes the context from the top of the context stack.</summary>
+    <param name="dwFlags">If this value is 0, only the context at the top of the stack is removed. If this value is TF_POPF_ALL, all of the contexts are removed from the stack.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -248,65 +226,61 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The stack is empty or this method is called without the TF_POPF_ALL flag and only a single context is on the stack.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>This method was called during another <b>ITfDocumentMgr.Pop</b> call.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>The stack is empty or this method is called without the TF_POPF_ALL flag and only a single context is on the stack.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>This method was called during another <b>ITfDocumentMgr.Pop</b> call.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>dwFlags</i> is invalid.
-</description>
-        </item>
+            <i>dwFlags</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method must be called from the same thread as the corresponding <see cref="ITfDocumentMgr.Push" /> call.</para>
-      <para>The first context added to the stack becomes the primary context. The primary context cannot be removed from the stack without using the TF_POPF_ALL flag. When the document is uninitialized, this method should be called with the TF_POPF_ALL flag. This causes the document manager to remove all contexts from the context stack and terminate any text service UI. Do not use the TF_POPF_ALL flag at any other time.</para>
-      <para>This method causes the <see cref="ITfThreadMgrEventSink.OnPopContext" /> method of all installed thread manager event sinks to be called. If the last context is removed from the stack, this method causes the <see cref="ITfThreadMgrEventSink.OnUninitDocumentMgr" /> method of all installed thread manager event sinks to be called.</para>
-    </remarks>
-    <seealso cref="ITfDocumentMgr" />
-    <seealso cref="ITfDocumentMgr.Push " />
-    <seealso cref="ITfThreadMgrEventSink.OnPopContext " />
-    <seealso cref="ITfThreadMgrEventSink.OnUninitDocumentMgr " />
   </member>
   <member name="ITfDocumentMgr.Push">
-    <summary>
-      <para>Adds a context to the top of the context stack.</para>
-    </summary>
-    <param name="pic">
-      <para>Pointer to the <see cref="ITfContext" /> object to be added to the stack. This object is obtained from a previous call to <see cref="ITfDocumentMgr.CreateContext" />.</para>
-    </param>
+    <summary>Adds a context to the top of the context stack.</summary>
+    <param name="pic">Pointer to the <see cref="ITfContext" /> object to be added to the stack. This object is obtained from a previous call to <see cref="ITfDocumentMgr.CreateContext" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -314,68 +288,59 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pic</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_STACKFULL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>No space exists on the stack for the context. The context stack has a limit of two contexts.</description>
+        </listheader>
+        <listheader>
           <description>
-            <i>pic</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_STACKFULL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>No space exists on the stack for the context. The context stack has a limit of two contexts.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>This method was called during an <see cref="ITfDocumentMgr.Pop" /> call.</para>
-          </description>
-        </item>
+          <description>This method was called during an <see cref="ITfDocumentMgr.Pop" /> call.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The first context added to the stack becomes the main document context.</para>
-      <para>The TSF manager and text services only interact with the context at the top of the stack. Normally, only the main document context is on the stack. Occasionally, it is necessary to add a second context to the stack. For example, when a text service must display a modal UI, such as a candidate list. During this time, the text service will add its context to the stack. When the text service UI is no longer required, the text service removes the context from the stack. The main context then returns to the top of the stack. To simplify this process and prevent multiple modal UIs from being displayed, there is a maximum of two contexts allowed on the stack.</para>
-      <para>This method causes the <see cref="ITfThreadMgrEventSink.OnPushContext" /> method of all installed thread manager event sinks to be called. If this is the first context to be added to the stack, this method causes the <see cref="ITfThreadMgrEventSink.OnInitDocumentMgr" /> method of all installed thread manager event sinks to be called.</para>
-      <para>
-        <see cref="ITfDocumentMgr.Pop" /> must be called to remove this context from the context stack.</para>
-    </remarks>
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfDocumentMgr" />
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="ITfDocumentMgr.Pop " />
-    <seealso cref="ITfThreadMgrEventSink.OnInitDocumentMgr " />
-    <seealso cref="ITfThreadMgrEventSink.OnPushContext " />
   </member>
   <member name="ITfDocumentMgr">
-    <summary>
-      <para>The <b>ITfDocumentMgr</b> interface is implemented by the TSF manager and used by an application or text service to create and manage text contexts. To obtain an instance of this interface call <see cref="ITfThreadMgr.CreateDocumentMgr" />.</para>
-    </summary>
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfThreadMgr.CreateDocumentMgr " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfDocumentMgr</b> interface is implemented by the TSF manager and used by an application or text service to create and manage text contexts. To obtain an instance of this interface call <see cref="ITfThreadMgr.CreateDocumentMgr" />.</summary>
   </member>
 </doc>

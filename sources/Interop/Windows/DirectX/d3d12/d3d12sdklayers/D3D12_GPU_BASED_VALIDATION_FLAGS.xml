@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_GPU_BASED_VALIDATION_FLAGS">
+    <summary>Describes the level of GPU-based validation to perform at runtime.</summary>
+  </member>
+  <member name="D3D12_GPU_BASED_VALIDATION_FLAGS.D3D12_GPU_BASED_VALIDATION_FLAGS_NONE">
+    <summary>Default behavior; resource states, descriptors, and descriptor tables are all validated.</summary>
+  </member>
+  <member name="D3D12_GPU_BASED_VALIDATION_FLAGS.D3D12_GPU_BASED_VALIDATION_FLAGS_DISABLE_STATE_TRACKING">
+    <summary>When set, GPU-based validation does not perform resource state validation which greatly reduces the performance cost of GPU-based validation. Descriptors and descriptor heaps are still validated.</summary>
+  </member>
+</doc>

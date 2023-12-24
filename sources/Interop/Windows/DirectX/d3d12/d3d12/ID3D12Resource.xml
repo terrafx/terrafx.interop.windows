@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Resource.GetDesc">
+    <summary>Gets the resource description.</summary>
+    <returns>A Direct3D 12 resource description structure.</returns>
+  </member>
+  <member name="ID3D12Resource.GetGPUVirtualAddress">
+    <summary>This method returns the GPU virtual address of a buffer resource.</summary>
+    <returns>This method returns the GPU virtual address. D3D12_GPU_VIRTUAL_ADDRESS is a typedef'd synonym of UINT64.</returns>
+  </member>
+  <member name="ID3D12Resource.GetHeapProperties">
+    <summary>Retrieves the properties of the resource heap, for placed and committed resources.</summary>
+    <param name="pHeapProperties">Pointer to a <see cref="D3D12_HEAP_PROPERTIES" /> structure, that on successful completion of the method will contain the resource heap properties.</param>
+    <param name="pHeapFlags">Specifies a <see cref="D3D12_HEAP_FLAGS" /> variable, that on successful completion of the method will contain any miscellaneous heap flags.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>. If the resource was created as reserved, E_INVALIDARG is returned.</returns>
+  </member>
+  <member name="ID3D12Resource.Map">
+    <summary>Gets a CPU pointer to the specified subresource in the resource, but may not disclose the pointer value to applications. <b>Map</b> also invalidates the CPU cache, when necessary, so that CPU reads to this address reflect any modifications made by the GPU.</summary>
+    <param name="Subresource">Specifies the index number of the subresource.</param>
+    <param name="pReadRange">
+      <para>A pointer to a <see cref="D3D12_RANGE" /> structure that describes the range of memory to access.</para>
+      <para>This indicates the region the CPU might read, and the coordinates are subresource-relative. A null pointer indicates the entire subresource might be read by the CPU. It is valid to specify the CPU won't read any data by passing a range where <b>End</b> is less than or equal to <b>Begin</b>.</para>
+    </param>
+    <param name="ppData">
+      <para>A pointer to a memory block that receives a pointer to the resource data.</para>
+      <para>A null pointer is valid and is useful to cache a CPU virtual address range for methods like <see cref="WriteToSubresource" />. When <i>ppData</i> is not NULL, the pointer returned is never offset by any values in <i>pReadRange</i>.</para>
+    </param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Resource.ReadFromSubresource">
+    <summary>Uses the CPU to copy data from a subresource, enabling the CPU to read the contents of most textures with undefined layouts.</summary>
+    <param name="pDstData">A pointer to the destination data in memory.</param>
+    <param name="DstRowPitch">The distance from one row of destination data to the next row.</param>
+    <param name="DstDepthPitch">The distance from one depth slice of destination data to the next.</param>
+    <param name="SrcSubresource">Specifies the index of the subresource to read from.</param>
+    <param name="pSrcBox">
+      <para>A pointer to a box that defines the portion of the destination subresource to copy the resource data from. If NULL, the data is read from the destination subresource with no offset. The dimensions of the destination must fit the destination (see<see cref="D3D12_BOX" />).</para>
+      <para>An empty box results in a no-op. A box is empty if the top value is greater than or equal to the bottom value, or the left value is greater than or equal to the right value, or the front value is greater than or equal to the back value. When the box is empty, this method doesn't perform any operation.</para>
+    </param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Resource.Unmap">
+    <summary>Invalidates the CPU pointer to the specified subresource in the resource.</summary>
+    <param name="Subresource">Specifies the index of the subresource.</param>
+    <param name="pWrittenRange">
+      <para>A pointer to a <see cref="D3D12_RANGE" /> structure that describes the range of memory to unmap.</para>
+      <para>This indicates the region the CPU might have modified, and the coordinates are subresource-relative. A null pointer indicates the entire subresource might have been modified by the CPU. It is valid to specify the CPU didn't write any data by passing a range where <b>End</b> is less than or equal to <b>Begin</b>.</para>
+      <para>This parameter is only used by tooling, and not for correctness of the actual unmap operation.</para>
+    </param>
+  </member>
+  <member name="ID3D12Resource.WriteToSubresource">
+    <summary>Uses the CPU to copy data into a subresource, enabling the CPU to modify the contents of most textures with undefined layouts.</summary>
+    <param name="DstSubresource">Specifies the index of the subresource.</param>
+    <param name="pDstBox">
+      <para>A pointer to a box that defines the portion of the destination subresource to copy the resource data into. If NULL, the data is written to the destination subresource with no offset. The dimensions of the source must fit the destination (see<see cref="D3D12_BOX" />).</para>
+      <para>An empty box results in a no-op. A box is empty if the top value is greater than or equal to the bottom value, or the left value is greater than or equal to the right value, or the front value is greater than or equal to the back value. When the box is empty, this method doesn't perform any operation.</para>
+    </param>
+    <param name="pSrcData">A pointer to the source data in memory.</param>
+    <param name="SrcRowPitch">The distance from one row of source data to the next row.</param>
+    <param name="SrcDepthPitch">The distance from one depth slice of source data to the next.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12Resource">
+    <summary>Encapsulates a generalized ability of the CPU and GPU to read and write to physical memory, or heaps. It contains abstractions for organizing and manipulating simple arrays of data as well as multidimensional data optimized for shader sampling.</summary>
+  </member>
+</doc>

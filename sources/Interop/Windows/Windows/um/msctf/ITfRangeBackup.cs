@@ -25,7 +25,7 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfRangeBackup*, Guid*, void**, int>)(lpVtbl[0]))((ITfRangeBackup*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeBackup*, Guid*, void**, int>)(lpVtbl[0]))((ITfRangeBackup*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfRangeBackup*, uint>)(lpVtbl[1]))((ITfRangeBackup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeBackup*, uint>)(lpVtbl[1]))((ITfRangeBackup*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfRangeBackup*, uint>)(lpVtbl[2]))((ITfRangeBackup*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeBackup*, uint>)(lpVtbl[2]))((ITfRangeBackup*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfRangeBackup.xml' path='doc/member[@name="ITfRangeBackup.Restore"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT Restore([NativeTypeName("TfEditCookie")] uint ec, ITfRange* pRange)
     {
-        return ((delegate* unmanaged<ITfRangeBackup*, uint, ITfRange*, int>)(lpVtbl[3]))((ITfRangeBackup*)Unsafe.AsPointer(ref this), ec, pRange);
+        return ((delegate* unmanaged[MemberFunction]<ITfRangeBackup*, uint, ITfRange*, int>)(lpVtbl[3]))((ITfRangeBackup*)Unsafe.AsPointer(ref this), ec, pRange);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ITfRangeBackup : ITfRangeBackup.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfEditCookie, ITfRange *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITfRange*, int> Restore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITfRange*, int> Restore;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IFileSystemImageResultTests
     {
         Assert.That(typeof(IFileSystemImageResult).GUID, Is.EqualTo(IID_IFileSystemImageResult));
     }
-
-    /// <summary>Validates that the <see cref="IFileSystemImageResult" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFileSystemImageResult>(), Is.EqualTo(sizeof(IFileSystemImageResult)));
-    }
-
-    /// <summary>Validates that the <see cref="IFileSystemImageResult" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFileSystemImageResult).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFileSystemImageResult" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFileSystemImageResult), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFileSystemImageResult), Is.EqualTo(4));
-        }
-    }
 }

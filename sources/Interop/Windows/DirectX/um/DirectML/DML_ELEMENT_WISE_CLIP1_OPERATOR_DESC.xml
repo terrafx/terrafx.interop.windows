@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DML_ELEMENT_WISE_CLIP1_OPERATOR_DESC">
+    <summary>
+      <para>Performs the following operation for each element of <i>InputTensor</i>, placing the result into the corresponding element of <i>OutputTensor</i>. This operator clamps (or limits) every element in the input within the closed interval [<i>Min</i>, <i>Max</i>].</para>
+      <code>f(x) = max(Min, min(x, Max))</code>
+      <para>Where <code>max(a,b)</code> returns the larger of the two values, and <code>min(a,b)</code> returns the smaller of the two values a,b.</para>
+      <para>This operator supports in-place execution, meaning that <i>OutputTensor</i> is permitted to alias <i>InputTensor</i> during binding.</para>
+    </summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_CLIP1_OPERATOR_DESC.InputTensor">
+    <summary>The input tensor to read from.</summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_CLIP1_OPERATOR_DESC.OutputTensor">
+    <summary>The output tensor to write the results to.</summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_CLIP1_OPERATOR_DESC.ScaleBias">
+    <summary>An optional scale and bias to apply to the input. If present, this has the effect of applying the function <code>g(x) = x * scale + bias</code> to each <i>input</i> element prior to computing this operator.</summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_CLIP1_OPERATOR_DESC.MinMaxDataType">
+    <summary>The data type of the <i>Min</i> and <i>Max</i> members, which must match <i>OutputTensor.DataType</i>.</summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_CLIP1_OPERATOR_DESC.Min">
+    <summary>The minimum value, below which the operator replaces the value with <i>Min</i>. <i>MinMaxDataType</i> determines how to interpret the field.</summary>
+  </member>
+  <member name="DML_ELEMENT_WISE_CLIP1_OPERATOR_DESC.Max">
+    <summary>The maximum value, above which the operator replaces the value with <i>Max</i>. <i>MinMaxDataType</i> determines how to interpret the field.</summary>
+  </member>
+</doc>

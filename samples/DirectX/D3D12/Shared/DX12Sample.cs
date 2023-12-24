@@ -693,9 +693,7 @@ public abstract unsafe class DX12Sample : DXSample
     }
 
     protected override unsafe bool SupportsRequiredDirect3DVersion(IDXGIAdapter1* adapter)
-    {
-        return D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, __uuidof<ID3D12Device>(), null).SUCCEEDED;
-    }
+        => D3D12CreateDevice((IUnknown*)adapter, D3D_FEATURE_LEVEL_11_0, __uuidof<ID3D12Device>(), null).SUCCEEDED;
 
     private void ExecuteGraphicsCommandList()
     {

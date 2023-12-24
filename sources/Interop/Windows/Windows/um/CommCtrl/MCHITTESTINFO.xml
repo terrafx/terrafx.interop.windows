@@ -3,187 +3,218 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MCHITTESTINFO">
-    <summary>
-      <para>Carries information specific to hit-testing points for a month calendar control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/mcm-hittest">MCM_HITTEST</a> message and the corresponding <see cref="MonthCal_HitTest" /> macro.</para>
-    </summary>
-    <remarks>
-      <para>Columns and rows in this control use a zero-based index system, that is, the first column or row has an index of zero.</para>
-    </remarks>
+    <summary>Carries information specific to hit-testing points for a month calendar control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/mcm-hittest">MCM_HITTEST</a> message and the corresponding <see cref="MonthCal_HitTest" /> macro.</summary>
   </member>
   <member name="MCHITTESTINFO.cbSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="MCHITTESTINFO.pt">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>Point to be hit-tested.</para>
-    </summary>
+    <summary>Point to be hit-tested.</summary>
   </member>
   <member name="MCHITTESTINFO.uHit">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>Output member that receives a bit flag representing the result of the hit-test operation. This value will be one of the following:</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>MCHT_CALENDARBK</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_CALENDARBK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The given point was in the calendar's background.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The given point was in the calendar's background.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_CALENDARCONTROL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The given point is outside of any calendar but within the calendar controls <see cref="RECT" />.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCHT_CALENDARCONTROL</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_CALENDARDATE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The given point was on a particular date within the calendar. The <see cref="SYSTEMTIME" /> structure at <i>lpMCHitTest</i>&gt;st is set to the date at the given point.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The given point is outside of any calendar but within the calendar controls <see cref="RECT" />.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_CALENDARDATEMIN</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The given point was over the minimum date(s) in the calendar.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCHT_CALENDARDATE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_CALENDARDATEMAX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description> The given point was over the maximum date(s) in the calendar.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The given point was on a particular date within the calendar. The <see cref="SYSTEMTIME" /> structure at <i>lpMCHitTest</i>&gt;st is set to the date at the given point.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_CALENDARDATENEXT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The given point was over a date from the next month (partially displayed at the end of the currently displayed month). If the user clicks here, the month calendar will scroll its display to the next month or set of months.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCHT_CALENDARDATEMIN</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_CALENDARDATEPREV</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The given point was over a date from the previous month (partially displayed at the end of the currently displayed month). If the user clicks here, the month calendar will scroll its display to the previous month or set of months.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The given point was over the minimum date(s) in the calendar.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_CALENDARDAY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The given point was over a day abbreviation ("Fri", for example). The <see cref="SYSTEMTIME" /> structure at 						<i>lpMCHitTest</i>&gt;st is set to the corresponding date in the top row.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCHT_CALENDARDATEMAX</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_CALENDARWEEKNUM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The given point was over a week number (<a href="https://docs.microsoft.com//windows/desktop/Controls/month-calendar-control-styles">MCS_WEEKNUMBERS</a> style only). The <see cref="SYSTEMTIME" /> structure at 						<i>lpMCHitTest</i>&gt;st is set to the corresponding date in the leftmost column.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The given point was over the maximum date(s) in the calendar.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_NOWHERE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The given point was not on the month calendar control, or it was in an inactive portion of the control.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCHT_CALENDARDATENEXT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_TITLEBK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The given point was over the background of a month's title.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The given point was over a date from the next month (partially displayed at the end of the currently displayed month). If the user clicks here, the month calendar will scroll its display to the next month or set of months.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_TITLEBTNNEXT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The given point was over the button at the top right corner of the control. If the user clicks here, the month calendar will scroll its display to the next month or set of months.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCHT_CALENDARDATEPREV</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_TITLEBTNPREV</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The given point was over the button at the top left corner of the control. If the user clicks here, the month calendar will scroll its display to the previous month or set of months.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The given point was over a date from the previous month (partially displayed at the end of the currently displayed month). If the user clicks here, the month calendar will scroll its display to the previous month or set of months.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_TITLEMONTH</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The given point was in a month's title bar, over a month name.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>MCHT_CALENDARDAY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MCHT_TITLEYEAR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The given point was over a day abbreviation ("Fri", for example). The <see cref="SYSTEMTIME" /> structure at
-<i>lpMCHitTest</i>&gt;st is set to the corresponding date in the top row.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCHT_CALENDARWEEKNUM</b>
-          </description>
-          <description>
-            <para>The given point was over a week number (<a href="https://docs.microsoft.com//windows/desktop/Controls/month-calendar-control-styles">MCS_WEEKNUMBERS</a> style only). The <see cref="SYSTEMTIME" /> structure at
-<i>lpMCHitTest</i>&gt;st is set to the corresponding date in the leftmost column.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCHT_NOWHERE</b>
-          </description>
-          <description>
-            <para>The given point was not on the month calendar control, or it was in an inactive portion of the control.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCHT_TITLEBK</b>
-          </description>
-          <description>
-            <para>The given point was over the background of a month's title.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCHT_TITLEBTNNEXT</b>
-          </description>
-          <description>
-            <para>The given point was over the button at the top right corner of the control. If the user clicks here, the month calendar will scroll its display to the next month or set of months.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCHT_TITLEBTNPREV</b>
-          </description>
-          <description>
-            <para>The given point was over the button at the top left corner of the control. If the user clicks here, the month calendar will scroll its display to the previous month or set of months.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCHT_TITLEMONTH</b>
-          </description>
-          <description>
-            <para>The given point was in a month's title bar, over a month name.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>MCHT_TITLEYEAR</b>
-          </description>
-          <description>
-            <para>The given point was in a month's title bar, over the year value.</para>
-          </description>
-        </item>
+          <description>The given point was in a month's title bar, over the year value.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="MCHITTESTINFO.st">
-    <summary>
-      <para>Type: <b><see cref="SYSTEMTIME" /></b></para>
-      <para>Receives date and time information specific to the location that was hit-tested.</para>
-    </summary>
+    <summary>Receives date and time information specific to the location that was hit-tested.</summary>
   </member>
   <member name="MCHITTESTINFO.rc">
-    <summary>
-      <para>Type: <b><see cref="RECT" /></b></para>
-      <para>Hit-tested location.</para>
-    </summary>
+    <summary>Hit-tested location.</summary>
   </member>
   <member name="MCHITTESTINFO.iOffset">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>When displaying more than one calendar, this is the offset of the calendar at the hit-tested point (zero-based).</para>
-    </summary>
+    <summary>When displaying more than one calendar, this is the offset of the calendar at the hit-tested point (zero-based).</summary>
   </member>
   <member name="MCHITTESTINFO.iRow">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The row number for the calendar grid that the given hit point was over.  Example: If you hit-tested the 8th of a month, which is in the second week of the month, <b>iRow</b> will be one since the index of the row is zero-based row index.</para>
-    </summary>
+    <summary>The row number for the calendar grid that the given hit point was over. Example: If you hit-tested the 8th of a month, which is in the second week of the month, <b>iRow</b> will be one since the index of the row is zero-based row index.</summary>
   </member>
   <member name="MCHITTESTINFO.iCol">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The column number for the calendar grid that the given point was over. For example, if your week starts on Sunday and the 1st of the month is Friday, hit testing the 1st will return five (5) for <b>iCol</b>, since Friday is in the fifth column from the beginning of the row, using a zero-based column index.</para>
-    </summary>
+    <summary>The column number for the calendar grid that the given point was over. For example, if your week starts on Sunday and the 1st of the month is Friday, hit testing the 1st will return five (5) for <b>iCol</b>, since Friday is in the fifth column from the beginning of the row, using a zero-based column index.</summary>
   </member>
 </doc>

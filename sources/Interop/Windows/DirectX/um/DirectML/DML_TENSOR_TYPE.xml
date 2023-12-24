@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_TENSOR_TYPE">
-    <summary>
-      <para>Identifies a type of tensor description.</para>
-    </summary>
+    <summary>Identifies a type of tensor description.</summary>
   </member>
   <member name="DML_TENSOR_TYPE.DML_TENSOR_TYPE_INVALID">
-    <summary>
-      <para>Indicates an unknown tensor description type. This value is never valid.</para>
-    </summary>
+    <summary>Indicates an unknown tensor description type. This value is never valid.</summary>
   </member>
   <member name="DML_TENSOR_TYPE.DML_TENSOR_TYPE_BUFFER">
-    <summary>
-      <para>Indicates a tensor description that is represented by a Direct3D 12 buffer. The corresponding struct type is <see cref="DML_BUFFER_TENSOR_DESC" />.</para>
-    </summary>
+    <summary>Indicates a tensor description that is represented by a Direct3D 12 buffer. The corresponding struct type is <see cref="DML_BUFFER_TENSOR_DESC" />.</summary>
   </member>
 </doc>

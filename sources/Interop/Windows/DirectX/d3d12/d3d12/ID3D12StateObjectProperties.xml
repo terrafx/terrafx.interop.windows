@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12StateObjectProperties.GetPipelineStackSize">
+    <summary>Gets the current pipeline stack size.</summary>
+    <returns>The current pipeline stack size in bytes. When called on non-executable state objects, such as collections, the return value is 0.</returns>
+  </member>
+  <member name="ID3D12StateObjectProperties.GetShaderIdentifier">
+    <summary>Retrieves the unique identifier for a shader that can be used in a shader record.</summary>
+    <param name="pExportName">Entrypoint in the state object for which to retrieve an identifier.</param>
+    <returns>
+      <para>A pointer to the shader identifier.</para>
+      <para>The data referenced by this pointer is valid as long as the state object it came from is valid. The size of the data returned is <a href="https://docs.microsoft.com//windows/desktop/direct3d12/constants">D3D12_SHADER_IDENTIFIER_SIZE_IN_BYTES</a>. Applications should copy and cache this data to avoid the cost of searching for it in the state object if it will need to be retrieved many times. The identifier is used in shader records within shader tables in GPU memory, which the app must populate.</para>
+      <para>The data itself globally identifies the shader, so even if the shader appears in a different state object with same associations, like any root signatures, it will have the same identifier.</para>
+      <para>If the shader isn’t fully resolved in the state object, the return value is <b>nullptr</b>.</para>
+    </returns>
+  </member>
+  <member name="ID3D12StateObjectProperties.GetShaderStackSize">
+    <summary>Gets the amount of stack memory required to invoke a raytracing shader in HLSL.</summary>
+    <param name="pExportName">
+      <para>The shader entrypoint in the state object for which to retrieve stack size. For hit groups, an individual shader within the hit group must be specified using the syntax:</para>
+      <para>hitGroupName.shaderType</para>
+      <para>Where <i>hitGroupName</i> is the entrypoint name for the hit group and <i>shaderType</i> is one of:</para>
+      <list type="bullet">
+        <item>
+          <description>intersection</description>
+        </item>
+        <item>
+          <description>anyhit</description>
+        </item>
+        <item>
+          <description>closesthit</description>
+        </item>
+      </list>These values are all case-sensitive.<para>An example value is: "myTreeLeafHitGroup.anyhit".</para></param>
+    <returns>Amount of stack memory, in bytes, required to invoke the shader. If the shader isn’t fully resolved in the state object, or the shader is unknown or of a type for which a stack size isn’t relevant, such as a hit group, the return value is 0xffffffff. The 32-bit 0xffffffff value is used for the UINT64 return value to ensure that bad return values don’t get lost when summed up with other values as part of calculating an overall pipeline stack size.</returns>
+  </member>
+  <member name="ID3D12StateObjectProperties.SetPipelineStackSize">
+    <summary>Set the current pipeline stack size.</summary>
+    <param name="PipelineStackSizeInBytes">
+      <para>Stack size in bytes to use during pipeline execution for each shader thread. There can be many thousands of threads in flight at once on the GPU.</para>
+      <para>If the value is greater than 0xffffffff (the maximum value of a 32-bit UINT) the runtime will drop the call, and the debug layer will print an error, as this is likely the result of summing up invalid stack sizes returned from <see cref="GetShaderStackSize" /> called with invalid parameters, which return 0xffffffff. In this case, the previously set stack size, or the default, remains.</para>
+    </param>
+  </member>
+  <member name="ID3D12StateObjectProperties">
+    <summary>Provides methods for getting and setting the properties of an <see cref="ID3D12StateObject" />. To retrieve an instance of this type, call <see cref="ID3D12StateObject.QueryInterface" /> with the IID of <b>ID3D12StateObjectProperties</b>.</summary>
+  </member>
+</doc>

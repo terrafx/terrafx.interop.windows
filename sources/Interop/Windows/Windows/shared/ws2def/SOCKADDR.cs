@@ -3,10 +3,12 @@
 // Ported from shared/ws2def.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SOCKADDR.xml' path='doc/member[@name="SOCKADDR"]/*' />
-public unsafe partial struct SOCKADDR
+public partial struct SOCKADDR
 {
     /// <include file='SOCKADDR.xml' path='doc/member[@name="SOCKADDR.sa_family"]/*' />
     [NativeTypeName("ADDRESS_FAMILY")]
@@ -14,5 +16,12 @@ public unsafe partial struct SOCKADDR
 
     /// <include file='SOCKADDR.xml' path='doc/member[@name="SOCKADDR.sa_data"]/*' />
     [NativeTypeName("CHAR[14]")]
-    public fixed sbyte sa_data[14];
+    public _sa_data_e__FixedBuffer sa_data;
+
+    /// <include file='_sa_data_e__FixedBuffer.xml' path='doc/member[@name="_sa_data_e__FixedBuffer"]/*' />
+    [InlineArray(14)]
+    public partial struct _sa_data_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

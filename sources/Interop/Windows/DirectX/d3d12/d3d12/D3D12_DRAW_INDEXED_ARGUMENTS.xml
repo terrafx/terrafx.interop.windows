@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DRAW_INDEXED_ARGUMENTS">
+    <summary>Describes parameters for drawing indexed instances.</summary>
+  </member>
+  <member name="D3D12_DRAW_INDEXED_ARGUMENTS.IndexCountPerInstance">
+    <summary>The number of indices read from the index buffer for each instance.</summary>
+  </member>
+  <member name="D3D12_DRAW_INDEXED_ARGUMENTS.InstanceCount">
+    <summary>The number of instances to draw.</summary>
+  </member>
+  <member name="D3D12_DRAW_INDEXED_ARGUMENTS.StartIndexLocation">
+    <summary>The location of the first index read by the GPU from the index buffer.</summary>
+  </member>
+  <member name="D3D12_DRAW_INDEXED_ARGUMENTS.BaseVertexLocation">
+    <summary>A value added to each index before reading a vertex from the vertex buffer.</summary>
+  </member>
+  <member name="D3D12_DRAW_INDEXED_ARGUMENTS.StartInstanceLocation">
+    <summary>A value added to each index before reading per-instance data from a vertex buffer.</summary>
+  </member>
+</doc>

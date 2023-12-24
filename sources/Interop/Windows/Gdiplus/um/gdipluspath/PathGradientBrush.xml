@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PathGradientBrush.GetBlend">
+    <summary>The <b>PathGradientBrush.GetBlend</b> method gets the blend factors and the corresponding blend positions currently set for this path gradient brush.</summary>
+    <param name="blendFactors">Pointer to an array that receives the blend factors.</param>
+    <param name="blendPositions">Pointer to an array that receives the blend positions.</param>
+    <param name="count">Integer that specifies the number of blend factors to retrieve. Before calling the <b>PathGradientBrush.GetBlend</b> method of a<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-pathgradientbrush">PathGradientBrush</a> object, call the <see cref="PathGradientBrush.GetBlendCount" /> method of that same<b>PathGradientBrush</b> object to determine the current number of blend factors. The number of blend positions retrieved is the same as the number of blend factors retrieved.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetBlendCount">
+    <summary>The <b>PathGradientBrush.GetBlendCount</b> method gets the number of blend factors currently set for this path gradient brush.</summary>
+    <returns>This method returns the number of blend factors currently set for this path gradient brush.</returns>
+  </member>
+  <member name="PathGradientBrush.GetCenterColor">
+    <summary>The <b>PathGradientBrush.GetCenterColor</b> method gets the color of the center point of this path gradient brush.</summary>
+    <param name="color">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that receives the color of the center point.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetCenterPoint">
+    <summary>The <b>PathGradientBrush.GetCenterPoint</b> method gets the center point of this path gradient brush.</summary>
+    <param name="point">Pointer to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> object that receives the center point.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetCenterPoint">
+    <summary>The <b>PathGradientBrush.GetCenterPoint</b> method gets the center point of this path gradient brush.</summary>
+    <param name="point">Pointer to a PointF object that receives the center point.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetFocusScales">
+    <summary>The <b>PathGradientBrush.GetFocusScales</b> method gets the focus scales of this path gradient brush.</summary>
+    <param name="xScale">Pointer to a<b>REAL</b> that receives the x focus scale value.</param>
+    <param name="yScale">Pointer to a<b>REAL</b> that receives the y focus scale value.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetGammaCorrection">
+    <summary>The <b>PathGradientBrush.GetGammaCorrection</b> method determines whether gamma correction is enabled for this path gradient brush.</summary>
+    <returns>If gamma correction is enabled, this method returns <b>TRUE</b>; otherwise, it returns <b>FALSE</b>.</returns>
+  </member>
+  <member name="PathGradientBrush.GetGraphicsPath">
+    <summary>The <b>PathGradientBrush.GetGraphicsPath</b> method is not implemented in Windows GDI+ version 1.0.</summary>
+  </member>
+  <member name="PathGradientBrush.GetInterpolationColorCount">
+    <summary>The <b>PathGradientBrush.GetInterpolationColorCount</b> method gets the number of preset colors currently specified for this path gradient brush.</summary>
+    <returns>This method returns the number of preset colors currently specified for this path gradient brush.</returns>
+  </member>
+  <member name="PathGradientBrush.GetInterpolationColors">
+    <summary>The <b>PathGradientBrush.GetInterpolationColors</b> method gets the preset colors and blend positions currently specified for this path gradient brush.</summary>
+    <param name="presetColors">Pointer to an array that receives the preset colors. A color of a given index in the<i>presetColors</i> array corresponds to the blend position of that same index in the<i>blendPositions</i> array.</param>
+    <param name="blendPositions">Pointer to an array that receives the blend positions. Each blend position is a number from 0 through 1, where 0 indicates the boundary of the gradient and 1 indicates the center point. A blend position between 0 and 1 indicates the set of all points that are a certain fraction of the distance from the boundary to the center point. For example, a blend position of 0.7 indicates the set of all points that are 70 percent of the way from the boundary to the center point.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>presetColors</i> array. This is the same as the number of elements in the<i>blendPositions</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetPointCount">
+    <summary>The <b>PathGradientBrush.GetPointCount</b> method gets the number of points in the array of points that defines this brush's boundary path.</summary>
+    <returns>This method returns the number of points in the array of points that defines this brush's boundary path.</returns>
+  </member>
+  <member name="PathGradientBrush.GetRectangle">
+    <summary>The <b>PathGradientBrush.GetRectangle</b> method gets the smallest rectangle that encloses the boundary path of this path gradient brush.</summary>
+    <param name="rect">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-rect">Rect</a> object that receives the bounding rectangle.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetRectangle">
+    <summary>The <b>PathGradientBrush.GetRectangle</b> method gets the smallest rectangle that encloses the boundary path of this path gradient brush.</summary>
+    <param name="rect">Pointer to a <b>RectF</b> object that receives the bounding rectangle.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetSurroundColorCount">
+    <summary>The <b>PathGradientBrush.GetSurroundColorCount</b> method gets the number of colors that have been specified for the boundary path of this path gradient brush.</summary>
+    <returns>This method returns the number of colors that have been specified for the boundary path of this path gradient brush.</returns>
+  </member>
+  <member name="PathGradientBrush.GetSurroundColors">
+    <summary>The <b>PathGradientBrush.GetSurroundColors</b> method gets the surround colors currently specified for this path gradient brush.</summary>
+    <param name="colors">Pointer to an array that receives the surround colors.</param>
+    <param name="count">Pointer to an integer that, on input, specifies the number of colors requested. If the method succeeds, this parameter, on output, receives the number of colors retrieved. If the method fails, this parameter does not receive a value.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetTransform">
+    <summary>The <b>PathGradientBrush.GetTransform</b> method gets transformation matrix of this path gradient brush.</summary>
+    <param name="matrix">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusmatrix/nl-gdiplusmatrix-matrix">Matrix</a> object that receives the transformation matrix.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.GetWrapMode">
+    <summary>The <b>PathGradientBrush.GetWrapMode</b> method gets the wrap mode currently set for this path gradient brush.</summary>
+    <returns>This method returns an element of the<see cref="WrapMode" /> enumeration that indicates the wrap mode currently set for this path gradient brush.</returns>
+  </member>
+  <member name="PathGradientBrush.MultiplyTransform">
+    <summary>The <b>PathGradientBrush.MultiplyTransform</b> method updates the brush's transformation matrix with the product of itself and another matrix.</summary>
+    <param name="matrix">Pointer to the matrix that will be multiplied by the brush's current transformation matrix.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <see cref="MatrixOrderPrepend" /> specifies that the passed matrix is on the left, and <see cref="MatrixOrderAppend" /> specifies that the passed matrix is on the right. The default value is <see cref="MatrixOrderPrepend" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.PathGradientBrush">
+    <summary>Creates a <b>PathGradientBrush.PathGradientBrush</b> object based on a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object.</summary>
+    <param name="path">Pointer to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-graphicspath">GraphicsPath</a> object that specifies the boundary path of the path gradient brush.</param>
+  </member>
+  <member name="PathGradientBrush.PathGradientBrush">
+    <summary>Creates a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-pathgradientbrush">PathGradientBrush</a> object based on an array of points. Initializes the wrap mode of the path gradient brush.</summary>
+    <param name="points">Pointer to an array of points that specifies the boundary path of the path gradient brush.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <param name="wrapMode">Optional. Element of the <see cref="WrapMode" /> enumeration that specifies how areas painted with the path gradient brush will be tiled. The default value is WrapModeClamp.</param>
+  </member>
+  <member name="PathGradientBrush.PathGradientBrush">
+    <summary>Creates a <b>PathGradientBrush.PathGradientBrush</b> object based on an array of points. Initializes the wrap mode of the path gradient brush.</summary>
+    <param name="points">Pointer to an array of points that specifies the boundary path of the path gradient brush.</param>
+    <param name="count">Integer that specifies the number of elements in the <i>points</i> array.</param>
+    <param name="wrapMode">Optional. Element of the <see cref="WrapMode" /> enumeration that specifies how areas painted with the path gradient brush will be tiled. The default value is WrapModeClamp.</param>
+  </member>
+  <member name="PathGradientBrush.ResetTransform">
+    <summary>The <b>PathGradientBrush.ResetTransform</b> method resets the transformation matrix of this path gradient brush to the identity matrix. This means that no transformation will take place.</summary>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.RotateTransform">
+    <summary>The <b>PathGradientBrush.RotateTransform</b> method updates this brush's current transformation matrix with the product of itself and a rotation matrix.</summary>
+    <param name="angle">Real number that specifies the angle of rotation in degrees.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <see cref="MatrixOrderPrepend" /> specifies that the rotation matrix is on the left, and <see cref="MatrixOrderAppend" /> specifies that the rotation matrix is on the right. The default value is <see cref="MatrixOrderPrepend" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.ScaleTransform">
+    <summary>The <b>PathGradientBrush.ScaleTransform</b> method updates this brush's current transformation matrix with the product of itself and a scaling matrix.</summary>
+    <param name="sx">Real number that specifies the horizontal scale factor.</param>
+    <param name="sy">Real number that specifies the vertical scale factor.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <see cref="MatrixOrderPrepend" /> specifies that the scaling matrix is on the left, and <see cref="MatrixOrderAppend" /> specifies that the scaling matrix is on the right. The default value is <see cref="MatrixOrderPrepend" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetBlend">
+    <summary>The <b>PathGradientBrush.SetBlend</b> method sets the blend factors and the blend positions of this path gradient brush.</summary>
+    <param name="blendFactors">Pointer to an array of blend factors. Each number in the array should be in the range 0 through 1.</param>
+    <param name="blendPositions">Pointer to an array of blend positions. Each number in the array should be in the range 0 through 1.</param>
+    <param name="count">Integer that specifies the number of elements in the<i>blendFactors</i> array. This is the same as the number of elements in the<i>blendPositions</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetBlendBellShape">
+    <summary>The <b>PathGradientBrush.SetBlendBellShape</b> method sets the blend shape of this path gradient brush.</summary>
+    <param name="focus">Real number that specifies where the center color will be at its highest intensity. This number must be in the range 0 through 1.</param>
+    <param name="scale">Optional. Real number that specifies the maximum intensity of center color that gets blended with the boundary color. This number must be in the range 0 through 1. The default value is 1.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetBlendTriangularShape">
+    <summary>The <b>PathGradientBrush.SetBlendTriangularShape</b> method sets the blend shape of this path gradient brush.</summary>
+    <param name="focus">Real number that specifies where the center color will be at its highest intensity. This number must be in the range 0 through 1.</param>
+    <param name="scale">Optional. Real number that specifies the maximum intensity of center color that gets blended with the boundary color. This number must be in the range 0 through 1. The default value is 1.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetCenterColor">
+    <summary>The <b>PathGradientBrush.SetCenterColor</b> method sets the center color of this path gradient brush. The center color is the color that appears at the brush's center point.</summary>
+    <param name="color">Reference to a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> object that specifies the center color.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetCenterPoint">
+    <summary>The <b>PathGradientBrush.SetCenterPoint</b> method sets the center point of this path gradient brush. By default, the center point is at the centroid of the brush's boundary path, but you can set the center point to any location inside or outside the path.</summary>
+    <param name="point">Reference to a <b>PointF</b> object that specifies the center point.</param>
+    <returns>
+      <para>
+        <b>Type:</b>
+        <see cref="Status" />
+      </para>
+      <para>If the method succeeds, it returns Ok, which is an element of the <see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the <see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetCenterPoint">
+    <summary>The <b>PathGradientBrush.SetCenterPoint</b> method sets the center point of this path gradient brush. By default, the center point is at the centroid of the brush's boundary path, but you can set the center point to any location inside or outside the path.</summary>
+    <param name="point">Reference to a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplustypes/nl-gdiplustypes-point">Point</a> object that specifies the center point.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetFocusScales">
+    <summary>The <b>PathGradientBrush.SetFocusScales</b> method sets the focus scales of this path gradient brush.</summary>
+    <param name="xScale">Real number that specifies the x focus scale.</param>
+    <param name="yScale">Real number that specifies the y focus scale.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetGammaCorrection">
+    <summary>The <b>PathGradientBrush.SetGammaCorrection</b> method specifies whether gamma correction is enabled for this path gradient brush.</summary>
+    <param name="useGammaCorrection">Boolean value that specifies whether gamma correction is enabled. <b>TRUE</b> specifies that gamma correction is enabled, and <b>FALSE</b> specifies that gamma correction is not enabled.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetGraphicsPath">
+    <summary>The <b>PathGradientBrush.SetGraphicsPath</b> method is not implemented in Windows GDI+ version 1.0.</summary>
+    <returns>This method is not implemented.</returns>
+  </member>
+  <member name="PathGradientBrush.SetInterpolationColors">
+    <summary>The <b>PathGradientBrush.SetInterpolationColors</b> method sets the preset colors and the blend positions of this path gradient brush.</summary>
+    <param name="presetColors">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> objects that specifies the interpolation colors for the gradient. A color of a given index in the<i>presetColors</i> array corresponds to the blend position of that same index in the<i>blendPositions</i> array.</param>
+    <param name="blendPositions">Pointer to an array that specifies the blend positions. Each blend position is a number from 0 through 1, where 0 indicates the boundary of the gradient and 1 indicates the center point. A blend position between 0 and 1 specifies the set of all points that are a certain fraction of the distance from the boundary to the center point. For example, a blend position of 0.7 specifies the set of all points that are 70 percent of the way from the boundary to the center point.</param>
+    <param name="count">Integer that specifies the number of <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> objects in the<i>presetColors</i> array. This is the same as the number of elements in the<i>blendPositions</i> array.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetSurroundColors">
+    <summary>The <b>PathGradientBrush.SetSurroundColors</b> method sets the surround colors of this path gradient brush. The surround colors are colors specified for discrete points on the brush's boundary path.</summary>
+    <param name="colors">Pointer to an array of <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> objects that specify the surround colors.</param>
+    <param name="count">Pointer to an integer that, on input, specifies the number of <a href="https://docs.microsoft.com//windows/desktop/api/gdipluscolor/nl-gdipluscolor-color">Color</a> objects in the<i>colors</i> array. If the method succeeds, this parameter, on output, receives the number of surround colors set. If the method fails, this parameter does not receive a value.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetTransform">
+    <summary>The <b>PathGradientBrush.SetTransform</b> method sets the transformation matrix of this path gradient brush.</summary>
+    <param name="matrix">Pointer to a<b>Matrix</b> object that specifies the transformation matrix.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.SetWrapMode">
+    <summary>The <b>PathGradientBrush.SetWrapMode</b> method sets the wrap mode of this path gradient brush.</summary>
+    <param name="wrapMode">Element of the<see cref="WrapMode" /> enumeration that specifies how areas painted with the path gradient brush will be tiled. The default value is <see cref="WrapModeClamp" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+  <member name="PathGradientBrush.TranslateTransform">
+    <summary>The <b>PathGradientBrush.TranslateTransform</b> method updates this brush's current transformation matrix with the product of itself and a translation matrix.</summary>
+    <param name="dx">Real number that specifies the horizontal component of the translation.</param>
+    <param name="dy">Real number that specifies the vertical component of the translation.</param>
+    <param name="order">Optional. Element of the <see cref="MatrixOrder" /> enumeration that specifies the order of the multiplication. <see cref="MatrixOrderPrepend" /> specifies that the translation matrix is on the left, and <see cref="MatrixOrderAppend" /> specifies that the translation matrix is on the right. The default value is <see cref="MatrixOrderPrepend" />.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>Ok</b>, which is an element of the<see cref="Status" /> enumeration.</para>
+      <para>If the method fails, it returns one of the other elements of the<see cref="Status" /> enumeration.</para>
+    </returns>
+  </member>
+</doc>

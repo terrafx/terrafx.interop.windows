@@ -3,32 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxContentGroup.GetFiles">
-    <summary>
-      <para>Gets files from a content group.</para>
-    </summary>
-    <param name="enumerator">
-      <para>An enumerator for getting content group files.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxContentGroup" />
+    <summary>Gets files from a content group.</summary>
+    <param name="enumerator">An enumerator for getting content group files.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxContentGroup.GetName">
-    <summary>
-      <para>Gets the name of the content group.</para>
-    </summary>
-    <param name="groupName">
-      <para>The content group name.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAppxContentGroup" />
+    <summary>Gets the name of the content group.</summary>
+    <param name="groupName">The content group name.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxContentGroup">
-    <summary>
-      <para>Retrieves information about a content group.</para>
-    </summary>
+    <summary>Retrieves information about a content group.</summary>
   </member>
 </doc>

@@ -3,2377 +3,926 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1DeviceContext.CreateBitmap">
-    <summary>
-      <para>Creates a bitmap that can be used as a target surface, for reading back to the CPU, or as a source for the <see cref="DrawBitmap" /> and <see cref="ID2D1BitmapBrush" /> APIs. In addition, color context information can be passed to the bitmap.</para>
-    </summary>
-    <param name="size">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-u">D2D1_SIZE_U</a></b></para>
-      <para>The pixel size of the bitmap to be created.</para>
-    </param>
-    <param name="sourceData">
-      <para>Type: <b>const void*</b></para>
-      <para>The initial data that will be loaded into the bitmap.</para>
-    </param>
-    <param name="pitch">
-      <para>Type: <b>UINT32</b></para>
-      <para>The pitch of the source data, if specified.</para>
-    </param>
-    <param name="bitmapProperties">
-      <para>Type: <b>const <see cref="D2D1_BITMAP_PROPERTIES1" /></b></para>
-      <para>The properties of the bitmap to be created.</para>
-    </param>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap1" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new bitmap object.</para>
-    </param>
+    <summary>Creates a bitmap that can be used as a target surface, for reading back to the CPU, or as a source for the <see cref="DrawBitmap" /> and <see cref="ID2D1BitmapBrush" /> APIs. In addition, color context information can be passed to the bitmap.</summary>
+    <param name="size">The pixel size of the bitmap to be created.</param>
+    <param name="sourceData">The initial data that will be loaded into the bitmap.</param>
+    <param name="pitch">The pitch of the source data, if specified.</param>
+    <param name="bitmapProperties">The properties of the bitmap to be created.</param>
+    <param name="bitmap">When this method returns, contains the address of a pointer to a new bitmap object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUTOFVIDEOMEMORY</description>
           <description>Direct3D does not have enough display memory to perform the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The new bitmap can be used as a target for <see cref="SetTarget" /> if it is created with <see cref="D2D1_BITMAP_OPTIONS_TARGET" />.</para>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_PROPERTIES1" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-u">D2D1_SIZE_U</seealso>
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateBitmap">
-    <summary>
-      <para>Creates a bitmap that can be used as a target surface, for reading back to the CPU, or as a source for the <see cref="DrawBitmap" /> and <see cref="ID2D1BitmapBrush" /> APIs. In addition, color context information can be passed to the bitmap.</para>
-    </summary>
-    <param name="size">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-u">D2D1_SIZE_U</a></b></para>
-      <para>The pixel size of the bitmap to be created.</para>
-    </param>
-    <param name="sourceData">
-      <para>Type: <b>const void*</b></para>
-      <para>The initial data that will be loaded into the bitmap.</para>
-    </param>
-    <param name="pitch">
-      <para>Type: <b>UINT32</b></para>
-      <para>The pitch of the source data, if specified.</para>
-    </param>
-    <param name="bitmapProperties">
-      <para>Type: <b>const <see cref="D2D1_BITMAP_PROPERTIES1" />*</b></para>
-      <para>The properties of the bitmap to be created.</para>
-    </param>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap1" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new bitmap object.</para>
-    </param>
+    <summary>Creates a bitmap that can be used as a target surface, for reading back to the CPU, or as a source for the <see cref="DrawBitmap" /> and <see cref="ID2D1BitmapBrush" /> APIs. In addition, color context information can be passed to the bitmap.</summary>
+    <param name="size">The pixel size of the bitmap to be created.</param>
+    <param name="sourceData">The initial data that will be loaded into the bitmap.</param>
+    <param name="pitch">The pitch of the source data, if specified.</param>
+    <param name="bitmapProperties">The properties of the bitmap to be created.</param>
+    <param name="bitmap">When this method returns, contains the address of a pointer to a new bitmap object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUTOFVIDEOMEMORY</description>
           <description>Direct3D does not have enough display memory to perform the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The new bitmap can be used as a target for <see cref="SetTarget" /> if it is created with <see cref="D2D1_BITMAP_OPTIONS_TARGET" />.</para>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_PROPERTIES1" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-size-u">D2D1_SIZE_U</seealso>
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateBitmapBrush">
-    <summary>
-      <para>Creates a bitmap brush, the input image is a Direct2D bitmap object.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap to use as the brush.</para>
-    </param>
-    <param name="bitmapBrushProperties">
-      <para>Type: <b><see cref="D2D1_BITMAP_BRUSH_PROPERTIES1" />*</b></para>
-      <para>A bitmap brush properties structure.</para>
-    </param>
-    <param name="brushProperties">
-      <para>Type: <b><see cref="D2D1_BRUSH_PROPERTIES" />*</b></para>
-      <para>A brush properties structure.</para>
-    </param>
-    <param name="bitmapBrush">
-      <para>Type: <b><see cref="ID2D1BitmapBrush1" />**</b></para>
-      <para>The address of the newly created bitmap brush object.</para>
-    </param>
+    <summary>Creates a bitmap brush, the input image is a Direct2D bitmap object.</summary>
+    <param name="bitmap">The bitmap to use as the brush.</param>
+    <param name="bitmapBrushProperties">A bitmap brush properties structure.</param>
+    <param name="brushProperties">A brush properties structure.</param>
+    <param name="bitmapBrush">The address of the newly created bitmap brush object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="D2D1_BITMAP_BRUSH_PROPERTIES1" />
-    <seealso cref="D2D1_BRUSH_PROPERTIES" />
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1BitmapBrush1" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateBitmapBrush">
-    <summary>
-      <para>Creates a bitmap brush, the input image is a Direct2D bitmap object.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap to use as the brush.</para>
-    </param>
-    <param name="bitmapBrushProperties">
-      <para>Type: <b><see cref="D2D1_BITMAP_BRUSH_PROPERTIES1" />*</b></para>
-      <para>A bitmap brush properties structure.</para>
-    </param>
-    <param name="brushProperties">
-      <para>Type: <b><see cref="D2D1_BRUSH_PROPERTIES" />*</b></para>
-      <para>A brush properties structure.</para>
-    </param>
-    <param name="bitmapBrush">
-      <para>Type: <b><see cref="ID2D1BitmapBrush1" />**</b></para>
-      <para>The address of the newly created bitmap brush object.</para>
-    </param>
+    <summary>Creates a bitmap brush, the input image is a Direct2D bitmap object.</summary>
+    <param name="bitmap">The bitmap to use as the brush.</param>
+    <param name="bitmapBrushProperties">A bitmap brush properties structure.</param>
+    <param name="brushProperties">A brush properties structure.</param>
+    <param name="bitmapBrush">The address of the newly created bitmap brush object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="D2D1_BITMAP_BRUSH_PROPERTIES1" />
-    <seealso cref="D2D1_BRUSH_PROPERTIES" />
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1BitmapBrush1" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateBitmapBrush">
-    <summary>
-      <para>Creates a bitmap brush, the input image is a Direct2D bitmap object.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap to use as the brush.</para>
-    </param>
-    <param name="bitmapBrushProperties">
-      <para>Type: <b><see cref="D2D1_BITMAP_BRUSH_PROPERTIES1" />*</b></para>
-      <para>A bitmap brush properties structure.</para>
-    </param>
-    <param name="bitmapBrush">
-      <para>Type: <b><see cref="ID2D1BitmapBrush1" />**</b></para>
-      <para>The address of the newly created bitmap brush object.</para>
-    </param>
+    <summary>Creates a bitmap brush, the input image is a Direct2D bitmap object.</summary>
+    <param name="bitmap">The bitmap to use as the brush.</param>
+    <param name="bitmapBrushProperties">A bitmap brush properties structure.</param>
+    <param name="bitmapBrush">The address of the newly created bitmap brush object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="D2D1_BITMAP_BRUSH_PROPERTIES1" />
-    <seealso cref="D2D1_BRUSH_PROPERTIES" />
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1BitmapBrush1" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateBitmapBrush">
-    <summary>
-      <para>Creates a bitmap brush, the input image is a Direct2D bitmap object.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap to use as the brush.</para>
-    </param>
-    <param name="bitmapBrush">
-      <para>Type: <b><see cref="ID2D1BitmapBrush1" />**</b></para>
-      <para>The address of the newly created bitmap brush object.</para>
-    </param>
+    <summary>Creates a bitmap brush, the input image is a Direct2D bitmap object.</summary>
+    <param name="bitmap">The bitmap to use as the brush.</param>
+    <param name="bitmapBrush">The address of the newly created bitmap brush object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="D2D1_BITMAP_BRUSH_PROPERTIES1" />
-    <seealso cref="D2D1_BRUSH_PROPERTIES" />
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1BitmapBrush1" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateBitmapFromDxgiSurface">
-    <summary>
-      <para>Creates a bitmap from a DXGI surface that can be set as a target surface or have additional color context information specified.</para>
-    </summary>
+    <summary>Creates a bitmap from a DXGI surface that can be set as a target surface or have additional color context information specified.</summary>
     <param name="surface">
-      <para>Type: <b><see cref="IDXGISurface" />*</b></para>
       <para>The DXGI surface from which the bitmap can be created.</para>
-      <para>
-        <b>Note</b>  The DXGI surface must have been created from the same Direct3D device that the Direct2D device context is associated with.</para>
+      <div>
+        <b>Note</b>  The DXGI surface must have been created from the same Direct3D device that the Direct2D device context is associated with.</div>
     </param>
-    <param name="bitmapProperties">
-      <para>Type: <b>const <see cref="D2D1_BITMAP_PROPERTIES1" />*</b></para>
-      <para>The bitmap properties specified in addition to the surface.</para>
-    </param>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap1" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new bitmap object.</para>
-    </param>
+    <param name="bitmapProperties">The bitmap properties specified in addition to the surface.</param>
+    <param name="bitmap">When this method returns, contains the address of a pointer to a new bitmap object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUTOFVIDEOMEMORY</description>
           <description>Direct3D does not have enough display memory to perform the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the bitmap properties are not specified, the following information is assumed:</para>
-      <list type="bullet">
-        <item>
-          <description>The bitmap DPI is 96.</description>
-        </item>
-        <item>
-          <description>The pixel format matches that of the surface.</description>
-        </item>
-        <item>
-          <description>The returned bitmap will inherit the bind flags of the DXGI surface.<list type="bullet"><item><description>However, only the subset of flags meaningful to Direct2D will be inherited. For example, D3D10_USAGE_DYNAMIC is not compatible with any public Direct2D flags.</description></item></list></description>
-        </item>
-        <item>
-          <description>The color context is unknown.</description>
-        </item>
-        <item>
-          <description>The alpha mode of the bitmap will be premultiplied (common case) or straight (A8).
-</description>
-        </item>
-      </list>
-      <para>If the bitmap properties are specified, the bitmap properties will be used as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>The bitmap DPI will be specified by the bitmap properties.</description>
-        </item>
-        <item>
-          <description>If both dpiX and dpiY are 0, the bitmap DPI will be 96.</description>
-        </item>
-        <item>
-          <description>The pixel format must be compatible with the shader resource view or render target view of the surface.</description>
-        </item>
-        <item>
-          <description>The bitmap options must be compatible with the bind flags of the DXGI surface. However, they may be a subset. This will influence what resource views are created by the bitmap.</description>
-        </item>
-        <item>
-          <description>The color context information will be used from the bitmap properties, if specified.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_PROPERTIES1" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.SetTarget" />
   </member>
   <member name="ID2D1DeviceContext.CreateBitmapFromDxgiSurface">
-    <summary>
-      <para>Creates a bitmap from a DXGI surface that can be set as a target surface or have additional color context information specified.</para>
-    </summary>
+    <summary>Creates a bitmap from a DXGI surface that can be set as a target surface or have additional color context information specified.</summary>
     <param name="surface">
-      <para>Type: <b><see cref="IDXGISurface" />*</b></para>
       <para>The DXGI surface from which the bitmap can be created.</para>
-      <para>
-        <b>Note</b>  The DXGI surface must have been created from the same Direct3D device that the Direct2D device context is associated with.</para>
+      <div>
+        <b>Note</b>  The DXGI surface must have been created from the same Direct3D device that the Direct2D device context is associated with.</div>
     </param>
-    <param name="bitmapProperties">
-      <para>Type: <b>const <see cref="D2D1_BITMAP_PROPERTIES1" />*</b></para>
-      <para>The bitmap properties specified in addition to the surface.</para>
-    </param>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap1" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new bitmap object.</para>
-    </param>
+    <param name="bitmapProperties">The bitmap properties specified in addition to the surface.</param>
+    <param name="bitmap">When this method returns, contains the address of a pointer to a new bitmap object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUTOFVIDEOMEMORY</description>
           <description>Direct3D does not have enough display memory to perform the operation.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the bitmap properties are not specified, the following information is assumed:</para>
-      <list type="bullet">
-        <item>
-          <description>The bitmap DPI is 96.</description>
-        </item>
-        <item>
-          <description>The pixel format matches that of the surface.</description>
-        </item>
-        <item>
-          <description>The returned bitmap will inherit the bind flags of the DXGI surface.<list type="bullet"><item><description>However, only the subset of flags meaningful to Direct2D will be inherited. For example, D3D10_USAGE_DYNAMIC is not compatible with any public Direct2D flags.</description></item></list></description>
-        </item>
-        <item>
-          <description>The color context is unknown.</description>
-        </item>
-        <item>
-          <description>The alpha mode of the bitmap will be premultiplied (common case) or straight (A8).
-</description>
-        </item>
-      </list>
-      <para>If the bitmap properties are specified, the bitmap properties will be used as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>The bitmap DPI will be specified by the bitmap properties.</description>
-        </item>
-        <item>
-          <description>If both dpiX and dpiY are 0, the bitmap DPI will be 96.</description>
-        </item>
-        <item>
-          <description>The pixel format must be compatible with the shader resource view or render target view of the surface.</description>
-        </item>
-        <item>
-          <description>The bitmap options must be compatible with the bind flags of the DXGI surface. However, they may be a subset. This will influence what resource views are created by the bitmap.</description>
-        </item>
-        <item>
-          <description>The color context information will be used from the bitmap properties, if specified.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_PROPERTIES1" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.SetTarget" />
   </member>
   <member name="ID2D1DeviceContext.CreateBitmapFromWicBitmap">
-    <summary>
-      <para>Creates a Direct2D bitmap by copying a WIC bitmap.</para>
-    </summary>
-    <param name="wicBitmapSource">
-      <para>Type: <b><b>IWICBitmapSource</b>*</b></para>
-      <para>The WIC bitmap source to copy from.</para>
-    </param>
-    <param name="bitmapProperties">
-      <para>Type: <b>const <see cref="D2D1_BITMAP_PROPERTIES1" />*</b></para>
-      <para>A bitmap properties structure that specifies bitmap creation options.</para>
-    </param>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap1" />**</b></para>
-      <para>The address of the newly created bitmap object.</para>
-    </param>
+    <summary>Creates a Direct2D bitmap by copying a WIC bitmap.</summary>
+    <param name="wicBitmapSource">The WIC bitmap source to copy from.</param>
+    <param name="bitmapProperties">A bitmap properties structure that specifies bitmap creation options.</param>
+    <param name="bitmap">The address of the newly created bitmap object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Starting with Windows 8.1, the  <i>bitmapProperties</i> parameter is optional. When it is not specified, the created bitmap inherits the pixel format and alpha mode from  <i>wicBitmapSource</i>. For a list of supported pixel formats and alpha modes, see <a href="https://docs.microsoft.com//windows/desktop/Direct2D/supported-pixel-formats-and-alpha-modes">Supported Pixel Formats and Alpha Modes</a>.</para>
-      <para>When the <i>bitmapProperties</i> parameter is specified, the value in <i>bitmapProperties-&gt;pixelFormat</i> must either be <see cref="DXGI_FORMAT_UNKNOWN" /> or must match the WIC pixel format in <i>wicBitmapSource</i>.</para>
-      <para>When <i>bitmapProperties-&gt;pixelFormat.alphaMode</i> is set to <see cref="D2D1_ALPHA_MODE_UNKNOWN" />, the newly created bitmap inherits the alpha mode from <i>wicBitmapSource</i>. When <i>bitmapProperties-&gt;pixelFormat.alphaMode</i> is set to <b>D2D1_ALPHA_MODE_PREMULTIPLIED</b>, <b>D2D1_ALPHA_MODE_STRAIGHT</b>, or <b>D2D1_ALPHA_MODE_IGNORE</b>, this forces the newly created bitmap to use the specified alpha mode.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateBitmapFromWicBitmap">
-    <summary>
-      <para>Creates a Direct2D bitmap by copying a WIC bitmap.</para>
-    </summary>
-    <param name="wicBitmapSource">
-      <para>Type: <b><see cref="IWICBitmapSource" />*</b></para>
-      <para>The WIC bitmap source to copy from.</para>
-    </param>
-    <param name="bitmapProperties">
-      <para>Type: <b>const <see cref="D2D1_BITMAP_PROPERTIES1" /></b></para>
-      <para>A bitmap properties structure that specifies bitmap creation options.</para>
-    </param>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap1" />**</b></para>
-      <para>The address of the newly created bitmap object.</para>
-    </param>
+    <summary>Creates a Direct2D bitmap by copying a WIC bitmap.</summary>
+    <param name="wicBitmapSource">The WIC bitmap source to copy from.</param>
+    <param name="bitmapProperties">A bitmap properties structure that specifies bitmap creation options.</param>
+    <param name="bitmap">The address of the newly created bitmap object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateColorContext">
-    <summary>
-      <para>Creates a color context.</para>
-    </summary>
-    <param name="space">
-      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
-      <para>The space  of color context to create.</para>
-    </param>
-    <param name="profile">
-      <para>Type: <b>const BYTE*</b></para>
-      <para>A buffer containing the ICC profile bytes used to initialize the color context when <i>space</i> is <see cref="D2D1_COLOR_SPACE_CUSTOM" />.  For other types, the parameter is ignored and should be set to <b>NULL</b>.</para>
-    </param>
-    <param name="profileSize">
-      <para>Type: <b>UINT32</b></para>
-      <para>The size in bytes of <i>Profile</i>.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b><see cref="ID2D1ColorContext" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new color context object.</para>
-    </param>
+    <summary>Creates a color context.</summary>
+    <param name="space">The space of color context to create.</param>
+    <param name="profile">A buffer containing the ICC profile bytes used to initialize the color context when <i>space</i> is <see cref="D2D1_COLOR_SPACE_CUSTOM" />. For other types, the parameter is ignored and should be set to <b>NULL</b>.</param>
+    <param name="profileSize">The size in bytes of <i>Profile</i>.</param>
+    <param name="colorContext">When this method returns, contains the address of a pointer to a new color context object.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The new color context can be used in <see cref="D2D1_BITMAP_PROPERTIES1" /> to initialize the color context of a created bitmap.</para>
-      <para>When <i>space</i> is <see cref="D2D1_COLOR_SPACE_CUSTOM" />, <i>profile</i> and <i>profileSize</i> must be specified.  Otherwise, these parameters should be set to <b>NULL</b> and zero respectively.  When the space is D2D1_COLOR_SPACE_CUSTOM, the model field of the profile header is inspected to determine if this profile is sRGB or scRGB and the color space is updated respectively.  Otherwise the space remains custom.</para>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_PROPERTIES1" />
-    <seealso cref="D2D1_COLOR_SPACE" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateColorContextFromFilename">
-    <summary>
-      <para>Creates a color context by loading it from the specified filename.  The profile bytes are the contents of the file specified by <i>Filename</i>.</para>
-    </summary>
-    <param name="filename">
-      <para>Type: <b>PCWSTR</b></para>
-      <para>The path to the file containing the profile bytes to initialize the color context with.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b><see cref="ID2D1ColorContext" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new color context.</para>
-    </param>
+    <summary>Creates a color context by loading it from the specified filename. The profile bytes are the contents of the file specified by <i>Filename</i>.</summary>
+    <param name="filename">The path to the file containing the profile bytes to initialize the color context with.</param>
+    <param name="colorContext">When this method returns, contains the address of a pointer to a new color context.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The new color context can be used in <see cref="D2D1_BITMAP_PROPERTIES1" /> to initialize the color context of a created bitmap.  The model field of the profile header is inspected to determine whether this profile is sRGB or scRGB and the color space is updated respectively.  Otherwise the space is  custom.</para>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_PROPERTIES1" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateColorContextFromWicColorContext">
-    <summary>
-      <para>Creates a color context from an <see cref="IWICColorContext" />.  The <see cref="D2D1ColorContext" /> space of the resulting context varies, see Remarks for more info.</para>
-    </summary>
-    <param name="wicColorContext">
-      <para>Type: <b><see cref="IWICColorContext" />*</b></para>
-      <para>The <see cref="IWICColorContext" /> used to initialize the color context.</para>
-    </param>
-    <param name="colorContext">
-      <para>Type: <b><see cref="ID2D1ColorContext" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new color context.</para>
-    </param>
+    <summary>Creates a color context from an <see cref="IWICColorContext" />. The <see cref="D2D1ColorContext" /> space of the resulting context varies, see Remarks for more info.</summary>
+    <param name="wicColorContext">The <see cref="IWICColorContext" /> used to initialize the color context.</param>
+    <param name="colorContext">When this method returns, contains the address of a pointer to a new color context.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The new color context can be used in <see cref="D2D1_BITMAP_PROPERTIES1" /> to initialize the color context of a created bitmap.  The model field of the profile header is inspected to determine whether this profile is sRGB or scRGB and the color space is updated respectively.  Otherwise the space is  custom.</para>
-    </remarks>
-    <seealso cref="D2D1_BITMAP_PROPERTIES1" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateCommandList">
-    <summary>
-      <para>Creates a <see cref="ID2D1CommandList" /> object.</para>
-    </summary>
-    <param name="commandList">
-      <para>Type: <b><see cref="ID2D1CommandList" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a command list.</para>
-    </param>
+    <summary>Creates a <see cref="ID2D1CommandList" /> object.</summary>
+    <param name="commandList">When this method returns, contains the address of a pointer to a command list.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>A <see cref="ID2D1CommandList" /> can store Direct2D commands to be displayed later through <see cref="ID2D1DeviceContext.DrawImage" /> or through an image brush.</para>
-    </remarks>
-    <seealso cref="ID2D1CommandList" />
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.CreateEffect">
-    <summary>
-      <para>Creates an effect for the specified class ID.</para>
-    </summary>
-    <param name="effectId">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>The class ID of the effect to create. See <a href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">Built-in Effects</a> for a list of effect IDs.</para>
-    </param>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a new effect.</para>
-    </param>
+    <summary>Creates an effect for the specified class ID.</summary>
+    <param name="effectId">The class ID of the effect to create. See <a href="https://docs.microsoft.com//windows/desktop/Direct2D/built-in-effects">Built-in Effects</a> for a list of effect IDs.</param>
+    <param name="effect">When this method returns, contains the address of a pointer to a new effect.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
-          <description>Direct2D could not allocate sufficient memory to complete the call.
-</description>
-        </item>
-        <item>
+          <description>Direct2D could not allocate sufficient memory to complete the call.</description>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DERR_OUTOFVIDEOMEMORY</description>
-          <description>Direct3D does not have enough display memory to perform the operation.
-</description>
-        </item>
-        <item>
+          <description>Direct3D does not have enough display memory to perform the operation.</description>
+        </listheader>
+        <listheader>
           <description>D2DERR_EFFECT_IS_NOT_REGISTERED</description>
           <description>The specified effect is not registered by the system.</description>
-        </item>
-        <item>
-          <description>D2DERR_INSUFFICIENT_DEVICE_CAPABILITIES </description>
+        </listheader>
+        <listheader>
+          <description>E_NOTFOUND</description>
+          <description>Other possible HRESULT for an effect not being registered (like D2DERR_EFFECT_IS_NOT_REGISTERED).</description>
+        </listheader>
+        <listheader>
+          <description>D2DERR_INSUFFICIENT_DEVICE_CAPABILITIES</description>
           <description>The effect requires capabilities not supported by the D2D device.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the  created effect is a custom effect that is implemented in a DLL, this doesn't increment the reference count for that DLL.
-If the application deletes an effect while that effect is loaded, the resulting behavior is unpredictable.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/effects-overview">Effects</seealso>
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Factory1.RegisterEffect" />
   </member>
   <member name="ID2D1DeviceContext.CreateGradientStopCollection">
-    <summary>
-      <para>Creates a gradient stop collection, enabling the gradient to contain color channels with values outside of [0,1] and also enabling rendering to a high-color render target with interpolation in sRGB space.</para>
-    </summary>
-    <param name="straightAlphaGradientStops">
-      <para>Type: <b>const <see cref="D2D1_GRADIENT_STOP" />*</b></para>
-      <para>An array of color values and offsets.</para>
-    </param>
-    <param name="straightAlphaGradientStopsCount">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of elements in the <i>gradientStops</i> array.</para>
-    </param>
-    <param name="preInterpolationSpace">
-      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
-      <para>Specifies both the input color space and the space in which the color interpolation occurs.</para>
-    </param>
-    <param name="postInterpolationSpace">
-      <para>Type: <b><see cref="D2D1_COLOR_SPACE" /></b></para>
-      <para>The color space that colors will be converted to after interpolation occurs.</para>
-    </param>
+    <summary>Creates a gradient stop collection, enabling the gradient to contain color channels with values outside of [0,1] and also enabling rendering to a high-color render target with interpolation in sRGB space.</summary>
+    <param name="straightAlphaGradientStops">An array of color values and offsets.</param>
+    <param name="straightAlphaGradientStopsCount">The number of elements in the <i>gradientStops</i> array.</param>
+    <param name="preInterpolationSpace">Specifies both the input color space and the space in which the color interpolation occurs.</param>
+    <param name="postInterpolationSpace">The color space that colors will be converted to after interpolation occurs.</param>
     <param name="bufferPrecision">
-      <para>Type: <b><see cref="D2D1_BUFFER_PRECISION" /></b></para>
       <para>The precision of the texture used to hold interpolated values.</para>
-      <para>
-        <b>Note</b>  This method will fail if the underlying Direct3D device does not support the requested buffer precision.  Use <see cref="ID2D1DeviceContext.IsBufferPrecisionSupported" /> to determine what is supported.</para>
+      <div>
+        <b>Note</b>  This method will fail if the underlying Direct3D device does not support the requested buffer precision. Use <see cref="ID2D1DeviceContext.IsBufferPrecisionSupported" /> to determine what is supported.</div>
     </param>
-    <param name="extendMode">
-      <para>Type: <b><see cref="D2D1_EXTEND_MODE" /></b></para>
-      <para>Defines how colors outside of the range defined by the stop collection are determined.</para>
-    </param>
-    <param name="colorInterpolationMode">
-      <para>Type: <b><see cref="D2D1_COLOR_INTERPOLATION_MODE" /></b></para>
-      <para>Defines how colors are interpolated.  D2D1_COLOR_INTERPOLATION_MODE_PREMULTIPLIED is the default, see Remarks for more info.</para>
-    </param>
-    <param name="gradientStopCollection1">
-      <para>Type: <b><see cref="ID2D1GradientStopCollection1" />**</b></para>
-      <para>The new gradient stop collection.</para>
-    </param>
+    <param name="extendMode">Defines how colors outside of the range defined by the stop collection are determined.</param>
+    <param name="colorInterpolationMode">Defines how colors are interpolated. D2D1_COLOR_INTERPOLATION_MODE_PREMULTIPLIED is the default, see Remarks for more info.</param>
+    <param name="gradientStopCollection1">The new gradient stop collection.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method linearly interpolates between the color stops. An optional color space conversion is applied post-interpolation. Whether and how this gamma conversion is applied is determined by the pre- and post-interpolation. This method will fail if the device context does not support the requested buffer precision.</para>
-      <para>In order to get the desired result, you need to ensure that the inputs are specified in the correct color space.</para>
-      <para>You must always specify colors in straight alpha, regardless of interpolation mode being premultiplied or straight. The interpolation mode only affects the interpolated values. Likewise, the stops returned by <see cref="ID2D1GradientStopCollection.GetGradientStops" /> will always have straight alpha.</para>
-      <para>If you specify <see cref="D2D1_COLOR_INTERPOLATION_MODE_PREMULTIPLIED" />, then all stops are premultiplied before interpolation, and then un-premultiplied before color conversion.</para>
-      <para>Starting with Windows 8, the interpolation behavior of this method has changed.</para>
-      <para>The table here shows the behavior in Windows 7 and earlier.</para>
-      <list type="table">
-        <listheader>
-          <description>Gamma</description>
-          <description>Before Interpolation Behavior</description>
-          <description>After Interpolation Behavior</description>
-          <description>GetColorInteroplationGamma
-(output color space)
-</description>
-        </listheader>
-        <item>
-          <description>1.0</description>
-          <description>Clamps the inputs and then converts from sRGB to scRGB.</description>
-          <description>Converts from scRGB to sRGB post-interpolation.</description>
-          <description>1.0</description>
-        </item>
-        <item>
-          <description>2.2</description>
-          <description>Clamps the inputs.</description>
-          <description>No Operation</description>
-          <description>2.2</description>
-        </item>
-      </list>
-      <para>The table here shows the behavior in Windows 8 and later.</para>
-      <list type="table">
-        <listheader>
-          <description>Gamma</description>
-          <description>Before Interpolation Behavior</description>
-          <description>After Interpolation Behavior</description>
-          <description>GetColorInteroplationGamma
-(output color space)
-</description>
-        </listheader>
-        <item>
-          <description>sRGB to scRGB</description>
-          <description>No Operation</description>
-          <description>Clamps the outputs and then converts from sRGB to scRGB.</description>
-          <description>1.0</description>
-        </item>
-        <item>
-          <description>scRGB to sRGB</description>
-          <description>No Operation</description>
-          <description>Clamps the outputs and then converts from sRGB to scRGB.</description>
-          <description>2.2</description>
-        </item>
-        <item>
-          <description>sRGB to sRGB</description>
-          <description>No Operation</description>
-          <description>No Operation</description>
-          <description>2.2</description>
-        </item>
-        <item>
-          <description>scRGB to scRGB</description>
-          <description>No Operation</description>
-          <description>No Operation</description>
-          <description>1.0</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="D2D1_BUFFER_PRECISION" />
-    <seealso cref="D2D1_EXTEND_MODE" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/hh447002(v=vs.85)">D2D1_GAMMA_CONVERSION</seealso>
-    <seealso cref="D2D1_GRADIENT_STOP" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1GradientStopCollection1" />
-    <seealso cref="ID2D1RenderTarget.CreateGradientStopCollection" />
   </member>
   <member name="ID2D1DeviceContext.CreateImageBrush">
-    <summary>
-      <para>Creates an image brush. The input image can be any type of image, including a bitmap, effect, or a command list.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image to be used as a source for the image brush.</para>
-    </param>
-    <param name="imageBrushProperties">
-      <para>Type: <b>const <see cref="D2D1_IMAGE_BRUSH_PROPERTIES" />*</b></para>
-      <para>The properties specific to an image brush.</para>
-    </param>
-    <param name="brushProperties">
-      <para>Type: <b>const <see cref="D2D1_BRUSH_PROPERTIES" />*</b></para>
-      <para>Properties  common to all brushes.</para>
-    </param>
-    <param name="imageBrush">
-      <para>Type: <b><see cref="ID2D1ImageBrush" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the  input rectangles.</para>
-    </param>
+    <summary>Creates an image brush. The input image can be any type of image, including a bitmap, effect, or a command list.</summary>
+    <param name="image">The image to be used as a source for the image brush.</param>
+    <param name="imageBrushProperties">The properties specific to an image brush.</param>
+    <param name="brushProperties">Properties common to all brushes.</param>
+    <param name="imageBrush">When this method returns, contains the address of a pointer to the input rectangles.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The image brush can be used to fill an arbitrary geometry, an opacity mask or text.</para>
-      <para>This sample illustrates drawing a rectangle with an image brush.</para>
-      <code>HRESULT
-CreatePatternBrush(
-     __in ID2D1DeviceContext *pDeviceContext,
-     __deref_out ID2D1ImageBrush **ppImageBrush
-     )
-{
-    HRESULT hr = S_OK;
-    ID2D1Image *pOldTarget = NULL;
-    pDeviceContext-&gt;GetTarget(&amp;amp;amp;amp;amp;amp;pOldTarget);
-
-    ID2D1CommandList *pCommandList = NULL;
-    hr = pDeviceContext-&gt;CreateCommandList(&amp;amp;amp;amp;amp;amp;pCommandList);
-
-    if (SUCCEEDED(hr))
-    {
-        pDeviceContext-&gt;SetTarget(pCommandList);
-        hr = RenderPatternToCommandList(pDeviceContext);
-    }
-
-    pDeviceContext-&gt;SetTarget(pOldTarget);
-
-    ID2D1ImageBrush *pImageBrush = NULL;
-
-    if (SUCCEEDED(hr))
-    {
-         hr = pDeviceContext-&gt;CreateImageBrush(
-            pCommandList,
-            D2D1.ImageBrushProperties(
-                D2D1.RectF(198, 298, 370, 470),
-                D2D1_EXTEND_MODE_WRAP,
-                D2D1_EXTEND_MODE_WRAP,
-                D2D1_INTERPOLATION_MODE_LINEAR
-                ),
-            &amp;amp;amp;amp;amp;amp;pImageBrush
-            );
-    }
-
-    // Fill a rectangle with the image brush.
-    if (SUCCEEDED(hr))
-    {
-        pDeviceContext-&gt;FillRectangle(
-            D2D1.RectF(0, 0, 100, 100), pImageBrush);
-    }
-
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pImageBrush);
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pCommandList);
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pOldTarget);
-    return hr;
-}
-</code>
-    </remarks>
-    <seealso cref="D2D1_BRUSH_PROPERTIES" />
-    <seealso cref="D2D1_IMAGE_BRUSH_PROPERTIES" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.CreateCommandList" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1RenderTarget.DrawGeometry" />
-    <seealso cref="ID2D1RenderTarget.FillGeometry" />
   </member>
   <member name="ID2D1DeviceContext.CreateImageBrush">
-    <summary>
-      <para>Creates an image brush. The input image can be any type of image, including a bitmap, effect, or a command list.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image to be used as a source for the image brush.</para>
-    </param>
-    <param name="imageBrushProperties">
-      <para>Type: <b>const <see cref="D2D1_IMAGE_BRUSH_PROPERTIES" /></b></para>
-      <para>The properties specific to an image brush.</para>
-    </param>
-    <param name="brushProperties">
-      <para>Type: <b>const <see cref="D2D1_BRUSH_PROPERTIES" /></b></para>
-      <para>Properties  common to all brushes.</para>
-    </param>
-    <param name="imageBrush">
-      <para>Type: <b><see cref="ID2D1ImageBrush" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the  input rectangles.</para>
-    </param>
+    <summary>Creates an image brush. The input image can be any type of image, including a bitmap, effect, or a command list.</summary>
+    <param name="image">The image to be used as a source for the image brush.</param>
+    <param name="imageBrushProperties">The properties specific to an image brush.</param>
+    <param name="brushProperties">Properties common to all brushes.</param>
+    <param name="imageBrush">When this method returns, contains the address of a pointer to the input rectangles.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The image brush can be used to fill an arbitrary geometry, an opacity mask or text.</para>
-      <para>This sample illustrates drawing a rectangle with an image brush.</para>
-      <code>HRESULT
-CreatePatternBrush(
-     __in ID2D1DeviceContext *pDeviceContext,
-     __deref_out ID2D1ImageBrush **ppImageBrush
-     )
-{
-    HRESULT hr = S_OK;
-    ID2D1Image *pOldTarget = NULL;
-    pDeviceContext-&gt;GetTarget(&amp;amp;amp;amp;amp;amp;pOldTarget);
-
-    ID2D1CommandList *pCommandList = NULL;
-    hr = pDeviceContext-&gt;CreateCommandList(&amp;amp;amp;amp;amp;amp;pCommandList);
-
-    if (SUCCEEDED(hr))
-    {
-        pDeviceContext-&gt;SetTarget(pCommandList);
-        hr = RenderPatternToCommandList(pDeviceContext);
-    }
-
-    pDeviceContext-&gt;SetTarget(pOldTarget);
-
-    ID2D1ImageBrush *pImageBrush = NULL;
-
-    if (SUCCEEDED(hr))
-    {
-         hr = pDeviceContext-&gt;CreateImageBrush(
-            pCommandList,
-            D2D1.ImageBrushProperties(
-                D2D1.RectF(198, 298, 370, 470),
-                D2D1_EXTEND_MODE_WRAP,
-                D2D1_EXTEND_MODE_WRAP,
-                D2D1_INTERPOLATION_MODE_LINEAR
-                ),
-            &amp;amp;amp;amp;amp;amp;pImageBrush
-            );
-    }
-
-    // Fill a rectangle with the image brush.
-    if (SUCCEEDED(hr))
-    {
-        pDeviceContext-&gt;FillRectangle(
-            D2D1.RectF(0, 0, 100, 100), pImageBrush);
-    }
-
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pImageBrush);
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pCommandList);
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pOldTarget);
-    return hr;
-}
-</code>
-    </remarks>
-    <seealso cref="D2D1_BRUSH_PROPERTIES" />
-    <seealso cref="D2D1_IMAGE_BRUSH_PROPERTIES" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.CreateCommandList" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1RenderTarget.DrawGeometry" />
-    <seealso cref="ID2D1RenderTarget.FillGeometry" />
   </member>
   <member name="ID2D1DeviceContext.CreateImageBrush">
-    <summary>
-      <para>Creates an image brush. The input image can be any type of image, including a bitmap, effect, or a command list.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image to be used as a source for the image brush.</para>
-    </param>
-    <param name="imageBrushProperties">
-      <para>Type: <b>const <see cref="D2D1_IMAGE_BRUSH_PROPERTIES" /></b></para>
-      <para>The properties specific to an image brush.</para>
-    </param>
-    <param name="imageBrush">
-      <para>Type: <b><see cref="ID2D1ImageBrush" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the  input rectangles.</para>
-    </param>
+    <summary>Creates an image brush. The input image can be any type of image, including a bitmap, effect, or a command list.</summary>
+    <param name="image">The image to be used as a source for the image brush.</param>
+    <param name="imageBrushProperties">The properties specific to an image brush.</param>
+    <param name="imageBrush">When this method returns, contains the address of a pointer to the input rectangles.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid value was passed to the method.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The image brush can be used to fill an arbitrary geometry, an opacity mask or text.</para>
-      <para>This sample illustrates drawing a rectangle with an image brush.</para>
-      <code>HRESULT
-CreatePatternBrush(
-     __in ID2D1DeviceContext *pDeviceContext,
-     __deref_out ID2D1ImageBrush **ppImageBrush
-     )
-{
-    HRESULT hr = S_OK;
-    ID2D1Image *pOldTarget = NULL;
-    pDeviceContext-&gt;GetTarget(&amp;amp;amp;amp;amp;amp;pOldTarget);
-
-    ID2D1CommandList *pCommandList = NULL;
-    hr = pDeviceContext-&gt;CreateCommandList(&amp;amp;amp;amp;amp;amp;pCommandList);
-
-    if (SUCCEEDED(hr))
-    {
-        pDeviceContext-&gt;SetTarget(pCommandList);
-        hr = RenderPatternToCommandList(pDeviceContext);
-    }
-
-    pDeviceContext-&gt;SetTarget(pOldTarget);
-
-    ID2D1ImageBrush *pImageBrush = NULL;
-
-    if (SUCCEEDED(hr))
-    {
-         hr = pDeviceContext-&gt;CreateImageBrush(
-            pCommandList,
-            D2D1.ImageBrushProperties(
-                D2D1.RectF(198, 298, 370, 470),
-                D2D1_EXTEND_MODE_WRAP,
-                D2D1_EXTEND_MODE_WRAP,
-                D2D1_INTERPOLATION_MODE_LINEAR
-                ),
-            &amp;amp;amp;amp;amp;amp;pImageBrush
-            );
-    }
-
-    // Fill a rectangle with the image brush.
-    if (SUCCEEDED(hr))
-    {
-        pDeviceContext-&gt;FillRectangle(
-            D2D1.RectF(0, 0, 100, 100), pImageBrush);
-    }
-
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pImageBrush);
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pCommandList);
-    SafeRelease(&amp;amp;amp;amp;amp;amp;pOldTarget);
-    return hr;
-}
-</code>
-    </remarks>
-    <seealso cref="D2D1_BRUSH_PROPERTIES" />
-    <seealso cref="D2D1_IMAGE_BRUSH_PROPERTIES" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.CreateCommandList" />
-    <seealso cref="ID2D1DeviceContext.CreateEffect" />
-    <seealso cref="ID2D1RenderTarget.DrawGeometry" />
-    <seealso cref="ID2D1RenderTarget.FillGeometry" />
   </member>
   <member name="ID2D1DeviceContext.DrawBitmap">
-    <summary>
-      <para>Draws a bitmap to the render target.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap to draw.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The destination rectangle. The default is the size of the bitmap and the location is the upper left corner of the render target.</para>
-    </param>
-    <param name="opacity">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The opacity of the bitmap.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode to use.</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>An optional source rectangle.</para>
-    </param>
-    <param name="perspectiveTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-4x4-f">D2D1_MATRIX_4X4_F</a></b></para>
-      <para>An optional perspective transform.</para>
-    </param>
-    <remarks>
-      <para>The destinationRectangle parameter defines the rectangle in the target where the bitmap will appear (in device-independent pixels (DIPs)).  This is affected by the currently set transform and the perspective transform, if set.  If NULL is specified, then the destination rectangle is (left=0, top=0, right = width(sourceRectangle), bottom = height(sourceRectangle)).</para>
-      <para>The <i>sourceRectangle</i> parameter defines the sub-rectangle of the source bitmap (in DIPs).  <b>DrawBitmap</b> will clip this rectangle to the size of the source bitmap, thus making it impossible to sample outside of the bitmap.  If NULL is specified, then the source rectangle is taken to be the size of the source bitmap.</para>
-      <para>If you specify <i>perspectiveTransform</i> it is applied to the rect in addition to the transform set on the render target.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Draws a bitmap to the render target.</summary>
+    <param name="bitmap">The bitmap to draw.</param>
+    <param name="destinationRectangle">The destination rectangle. The default is the size of the bitmap and the location is the upper left corner of the render target.</param>
+    <param name="opacity">The opacity of the bitmap.</param>
+    <param name="interpolationMode">The interpolation mode to use.</param>
+    <param name="sourceRectangle">An optional source rectangle.</param>
+    <param name="perspectiveTransform">An optional perspective transform.</param>
   </member>
   <member name="ID2D1DeviceContext.DrawBitmap">
-    <summary>
-      <para>Draws a bitmap to the render target.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap to draw.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The destination rectangle. The default is the size of the bitmap and the location is the upper left corner of the render target.</para>
-    </param>
-    <param name="opacity">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The opacity of the bitmap.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode to use.</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>An optional source rectangle.</para>
-    </param>
-    <param name="perspectiveTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-4x4-f">D2D1_MATRIX_4X4_F</a></b></para>
-      <para>An optional perspective transform.</para>
-    </param>
-    <remarks>
-      <para>The destinationRectangle parameter defines the rectangle in the target where the bitmap will appear (in device-independent pixels (DIPs)).  This is affected by the currently set transform and the perspective transform, if set.  If NULL is specified, then the destination rectangle is (left=0, top=0, right = width(sourceRectangle), bottom = height(sourceRectangle)).</para>
-      <para>The <i>sourceRectangle</i> parameter defines the sub-rectangle of the source bitmap (in DIPs).  <b>DrawBitmap</b> will clip this rectangle to the size of the source bitmap, thus making it impossible to sample outside of the bitmap.  If NULL is specified, then the source rectangle is taken to be the size of the source bitmap.</para>
-      <para>If you specify <i>perspectiveTransform</i> it is applied to the rect in addition to the transform set on the render target.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Draws a bitmap to the render target.</summary>
+    <param name="bitmap">The bitmap to draw.</param>
+    <param name="destinationRectangle">The destination rectangle. The default is the size of the bitmap and the location is the upper left corner of the render target.</param>
+    <param name="opacity">The opacity of the bitmap.</param>
+    <param name="interpolationMode">The interpolation mode to use.</param>
+    <param name="sourceRectangle">An optional source rectangle.</param>
+    <param name="perspectiveTransform">An optional perspective transform.</param>
   </member>
   <member name="ID2D1DeviceContext.DrawBitmap">
-    <summary>
-      <para>Draws a bitmap to the render target.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap to draw.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The destination rectangle. The default is the size of the bitmap and the location is the upper left corner of the render target.</para>
-    </param>
-    <param name="opacity">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The opacity of the bitmap.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode to use.</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>An optional source rectangle.</para>
-    </param>
-    <param name="perspectiveTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-4x4-f">D2D1_MATRIX_4X4_F</a></b></para>
-      <para>An optional perspective transform.</para>
-    </param>
-    <remarks>
-      <para>The destinationRectangle parameter defines the rectangle in the target where the bitmap will appear (in device-independent pixels (DIPs)).  This is affected by the currently set transform and the perspective transform, if set.  If NULL is specified, then the destination rectangle is (left=0, top=0, right = width(sourceRectangle), bottom = height(sourceRectangle)).</para>
-      <para>The <i>sourceRectangle</i> parameter defines the sub-rectangle of the source bitmap (in DIPs).  <b>DrawBitmap</b> will clip this rectangle to the size of the source bitmap, thus making it impossible to sample outside of the bitmap.  If NULL is specified, then the source rectangle is taken to be the size of the source bitmap.</para>
-      <para>If you specify <i>perspectiveTransform</i> it is applied to the rect in addition to the transform set on the render target.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Draws a bitmap to the render target.</summary>
+    <param name="bitmap">The bitmap to draw.</param>
+    <param name="destinationRectangle">The destination rectangle. The default is the size of the bitmap and the location is the upper left corner of the render target.</param>
+    <param name="opacity">The opacity of the bitmap.</param>
+    <param name="interpolationMode">The interpolation mode to use.</param>
+    <param name="sourceRectangle">An optional source rectangle.</param>
+    <param name="perspectiveTransform">An optional perspective transform.</param>
   </member>
   <member name="ID2D1DeviceContext.DrawBitmap">
-    <summary>
-      <para>Draws a bitmap to the render target.</para>
-    </summary>
-    <param name="bitmap">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap to draw.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The destination rectangle. The default is the size of the bitmap and the location is the upper left corner of the render target.</para>
-    </param>
-    <param name="opacity">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The opacity of the bitmap.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode to use.</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>An optional source rectangle.</para>
-    </param>
-    <param name="perspectiveTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-4x4-f">D2D1_MATRIX_4X4_F</a></b></para>
-      <para>An optional perspective transform.</para>
-    </param>
-    <remarks>
-      <para>The destinationRectangle parameter defines the rectangle in the target where the bitmap will appear (in device-independent pixels (DIPs)).  This is affected by the currently set transform and the perspective transform, if set.  If NULL is specified, then the destination rectangle is (left=0, top=0, right = width(sourceRectangle), bottom = height(sourceRectangle)).</para>
-      <para>The <i>sourceRectangle</i> parameter defines the sub-rectangle of the source bitmap (in DIPs).  <b>DrawBitmap</b> will clip this rectangle to the size of the source bitmap, thus making it impossible to sample outside of the bitmap.  If NULL is specified, then the source rectangle is taken to be the size of the source bitmap.</para>
-      <para>If you specify <i>perspectiveTransform</i> it is applied to the rect in addition to the transform set on the render target.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Draws a bitmap to the render target.</summary>
+    <param name="bitmap">The bitmap to draw.</param>
+    <param name="destinationRectangle">The destination rectangle. The default is the size of the bitmap and the location is the upper left corner of the render target.</param>
+    <param name="opacity">The opacity of the bitmap.</param>
+    <param name="interpolationMode">The interpolation mode to use.</param>
+    <param name="sourceRectangle">An optional source rectangle.</param>
+    <param name="perspectiveTransform">An optional perspective transform.</param>
   </member>
   <member name="ID2D1DeviceContext.DrawGdiMetafile">
-    <summary>
-      <para>Draw a metafile to the device context.</para>
-    </summary>
-    <param name="gdiMetafile">
-      <para>Type: <b><see cref="ID2D1GdiMetafile" />*</b></para>
-      <para>The metafile to draw.</para>
-    </param>
-    <param name="targetOffset">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The offset from the upper left corner of the render target.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Draw a metafile to the device context.</summary>
+    <param name="gdiMetafile">The metafile to draw.</param>
+    <param name="targetOffset">The offset from the upper left corner of the render target.</param>
   </member>
   <member name="ID2D1DeviceContext.DrawGdiMetafile">
-    <summary>
-      <para>Draw a metafile to the device context.</para>
-    </summary>
-    <param name="gdiMetafile">
-      <para>Type: <b><see cref="ID2D1GdiMetafile" />*</b></para>
-      <para>The metafile to draw.</para>
-    </param>
-    <param name="targetOffset">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The offset from the upper left corner of the render target.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Draw a metafile to the device context.</summary>
+    <param name="gdiMetafile">The metafile to draw.</param>
+    <param name="targetOffset">The offset from the upper left corner of the render target.</param>
   </member>
   <member name="ID2D1DeviceContext.DrawGlyphRun">
-    <summary>
-      <para>Draws a series of glyphs to the device context.</para>
-    </summary>
-    <param name="baselineOrigin">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>Origin of first glyph in the series.</para>
-    </param>
-    <param name="glyphRun">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
-      <para>The glyphs to render.</para>
-    </param>
-    <param name="glyphRunDescription">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN_DESCRIPTION" />*</b></para>
-      <para>Supplementary glyph series information.</para>
-    </param>
-    <param name="foregroundBrush">
-      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
-      <para>The brush that defines the text color.</para>
-    </param>
-    <param name="measuringMode">
-      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
-      <para>The measuring mode of the glyph series, used to determine the advances and offsets. The default value is DWRITE_MEASURING_MODE_NATURAL.</para>
-    </param>
-    <remarks>
-      <para>The <i>glyphRunDescription</i> is ignored when rendering, but can be useful for printing and serialization of rendering commands, such as to an XPS or SVG file. This extends <see cref="ID2D1RenderTarget.DrawGlyphRun" />, which lacked the glyph run description.</para>
-    </remarks>
-    <seealso cref="ID2D1Brush" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1RenderTarget.DrawGlyphRun" />
+    <summary>Draws a series of glyphs to the device context.</summary>
+    <param name="baselineOrigin">Origin of first glyph in the series.</param>
+    <param name="glyphRun">The glyphs to render.</param>
+    <param name="glyphRunDescription">Supplementary glyph series information.</param>
+    <param name="foregroundBrush">The brush that defines the text color.</param>
+    <param name="measuringMode">The measuring mode of the glyph series, used to determine the advances and offsets. The default value is DWRITE_MEASURING_MODE_NATURAL.</param>
   </member>
   <member name="ID2D1DeviceContext.DrawImage">
-    <summary>
-      <para>Draws an image to the device context.</para>
-    </summary>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The effect to be drawn to the device context.</para>
-    </param>
-    <param name="targetOffset">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The  offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="imageRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The corresponding rectangle in the image space will be mapped to the given origins when processing the image. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode that will be used to scale the image if necessary.</para>
-    </param>
-    <param name="compositeMode">
-      <para>Type: <b><see cref="D2D1_COMPOSITE_MODE" /></b></para>
-      <para>The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></para>
-    </param>
-    <remarks>
-      <para>If <i>interpolationMode</i> is <b>D2D1_INTERPOLATION_MODE_HIGH_QUALITY</b>, different scalers will be used depending on the scale factor implied by the world transform.</para>
-      <para>Any invalid rectangles accumulated on any effect that is drawn by this call will be discarded regardless of which portion of the image rectangle is drawn.</para>
-      <para>If <i>compositeMode</i> is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, <see cref="DrawImage" /> will use the currently selected primitive blend specified by <see cref="ID2D1DeviceContext.SetPrimitiveBlend" />. If <i>compositeMode</i> is not <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, the image will be extended to transparent up to the current axis-aligned clip.</para>
-      <para>If there is an image rectangle and a world transform, this is equivalent to inserting a clip effect to represent the image rectangle and a 2D affine transform to take into account the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Image" />
+    <summary>Draws an image to the device context.</summary>
+    <param name="effect">The effect to be drawn to the device context.</param>
+    <param name="targetOffset">The offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</param>
+    <param name="imageRectangle">The corresponding rectangle in the image space will be mapped to the given origins when processing the image. This default value is <i>NULL</i>.</param>
+    <param name="interpolationMode">The interpolation mode that will be used to scale the image if necessary.</param>
+    <param name="compositeMode">The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></param>
   </member>
   <member name="ID2D1DeviceContext.DrawImage">
-    <summary>
-      <para>Draws an image to the device context.</para>
-    </summary>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The effect to be drawn to the device context.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode that will be used to scale the image if necessary.</para>
-    </param>
-    <param name="compositeMode">
-      <para>Type: <b><see cref="D2D1_COMPOSITE_MODE" /></b></para>
-      <para>The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></para>
-    </param>
-    <remarks>
-      <para>If <i>interpolationMode</i> is <b>D2D1_INTERPOLATION_MODE_HIGH_QUALITY</b>, different scalers will be used depending on the scale factor implied by the world transform.</para>
-      <para>Any invalid rectangles accumulated on any effect that is drawn by this call will be discarded regardless of which portion of the image rectangle is drawn.</para>
-      <para>If <i>compositeMode</i> is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, <see cref="DrawImage" /> will use the currently selected primitive blend specified by <see cref="ID2D1DeviceContext.SetPrimitiveBlend" />. If <i>compositeMode</i> is not <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, the image will be extended to transparent up to the current axis-aligned clip.</para>
-      <para>If there is an image rectangle and a world transform, this is equivalent to inserting a clip effect to represent the image rectangle and a 2D affine transform to take into account the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Image" />
+    <summary>Draws an image to the device context.</summary>
+    <param name="effect">The effect to be drawn to the device context.</param>
+    <param name="interpolationMode">The interpolation mode that will be used to scale the image if necessary.</param>
+    <param name="compositeMode">The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></param>
   </member>
   <member name="ID2D1DeviceContext.DrawImage">
-    <summary>
-      <para>Draws an image to the device context.</para>
-    </summary>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image to be drawn to the device context.</para>
-    </param>
-    <param name="targetOffset">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The  offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="imageRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The corresponding rectangle in the image space will be mapped to the given origins when processing the image. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode that will be used to scale the image if necessary.</para>
-    </param>
-    <param name="compositeMode">
-      <para>Type: <b><see cref="D2D1_COMPOSITE_MODE" /></b></para>
-      <para>The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></para>
-    </param>
-    <remarks>
-      <para>If <i>interpolationMode</i> is <b>D2D1_INTERPOLATION_MODE_HIGH_QUALITY</b>, different scalers will be used depending on the scale factor implied by the world transform.</para>
-      <para>Any invalid rectangles accumulated on any effect that is drawn by this call will be discarded regardless of which portion of the image rectangle is drawn.</para>
-      <para>If <i>compositeMode</i> is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, <see cref="DrawImage" /> will use the currently selected primitive blend specified by <see cref="ID2D1DeviceContext.SetPrimitiveBlend" />. If <i>compositeMode</i> is not <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, the image will be extended to transparent up to the current axis-aligned clip.</para>
-      <para>If there is an image rectangle and a world transform, this is equivalent to inserting a clip effect to represent the image rectangle and a 2D affine transform to take into account the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Image" />
+    <summary>Draws an image to the device context.</summary>
+    <param name="effect">The image to be drawn to the device context.</param>
+    <param name="targetOffset">The offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</param>
+    <param name="imageRectangle">The corresponding rectangle in the image space will be mapped to the given origins when processing the image. This default value is <i>NULL</i>.</param>
+    <param name="interpolationMode">The interpolation mode that will be used to scale the image if necessary.</param>
+    <param name="compositeMode">The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></param>
   </member>
   <member name="ID2D1DeviceContext.DrawImage">
-    <summary>
-      <para>Draws an image to the device context.</para>
-    </summary>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The effect to be drawn to the device context.</para>
-    </param>
-    <param name="targetOffset">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The  offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode that will be used to scale the image if necessary.</para>
-    </param>
-    <param name="compositeMode">
-      <para>Type: <b><see cref="D2D1_COMPOSITE_MODE" /></b></para>
-      <para>The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></para>
-    </param>
-    <remarks>
-      <para>If <i>interpolationMode</i> is <b>D2D1_INTERPOLATION_MODE_HIGH_QUALITY</b>, different scalers will be used depending on the scale factor implied by the world transform.</para>
-      <para>Any invalid rectangles accumulated on any effect that is drawn by this call will be discarded regardless of which portion of the image rectangle is drawn.</para>
-      <para>If <i>compositeMode</i> is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, <see cref="DrawImage" /> will use the currently selected primitive blend specified by <see cref="ID2D1DeviceContext.SetPrimitiveBlend" />. If <i>compositeMode</i> is not <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, the image will be extended to transparent up to the current axis-aligned clip.</para>
-      <para>If there is an image rectangle and a world transform, this is equivalent to inserting a clip effect to represent the image rectangle and a 2D affine transform to take into account the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Image" />
+    <summary>Draws an image to the device context.</summary>
+    <param name="effect">The effect to be drawn to the device context.</param>
+    <param name="targetOffset">The offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</param>
+    <param name="interpolationMode">The interpolation mode that will be used to scale the image if necessary.</param>
+    <param name="compositeMode">The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></param>
   </member>
   <member name="ID2D1DeviceContext.DrawImage">
-    <summary>
-      <para>Draws an image to the device context.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image to be drawn to the device context.</para>
-    </param>
-    <param name="targetOffset">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The  offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="imageRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The corresponding rectangle in the image space will be mapped to the given origins when processing the image. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode that will be used to scale the image if necessary.</para>
-    </param>
-    <param name="compositeMode">
-      <para>Type: <b><see cref="D2D1_COMPOSITE_MODE" /></b></para>
-      <para>The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></para>
-    </param>
-    <remarks>
-      <para>If <i>interpolationMode</i> is <b>D2D1_INTERPOLATION_MODE_HIGH_QUALITY</b>, different scalers will be used depending on the scale factor implied by the world transform.</para>
-      <para>Any invalid rectangles accumulated on any effect that is drawn by this call will be discarded regardless of which portion of the image rectangle is drawn.</para>
-      <para>If <i>compositeMode</i> is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, <b>DrawImage</b> will use the currently selected primitive blend specified by <see cref="ID2D1DeviceContext.SetPrimitiveBlend" />. If <i>compositeMode</i> is not <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, the image will be extended to transparent up to the current axis-aligned clip.</para>
-      <para>If there is an image rectangle and a world transform, this is equivalent to inserting a clip effect to represent the image rectangle and a 2D affine transform to take into account the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Image" />
+    <summary>Draws an image to the device context.</summary>
+    <param name="image">The image to be drawn to the device context.</param>
+    <param name="targetOffset">The offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</param>
+    <param name="imageRectangle">The corresponding rectangle in the image space will be mapped to the given origins when processing the image. This default value is <i>NULL</i>.</param>
+    <param name="interpolationMode">The interpolation mode that will be used to scale the image if necessary.</param>
+    <param name="compositeMode">The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></param>
   </member>
   <member name="ID2D1DeviceContext.DrawImage">
-    <summary>
-      <para>Draws an image to the device context.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image to be drawn to the device context.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode that will be used to scale the image if necessary.</para>
-    </param>
-    <param name="compositeMode">
-      <para>Type: <b><see cref="D2D1_COMPOSITE_MODE" /></b></para>
-      <para>The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></para>
-    </param>
-    <remarks>
-      <para>If <i>interpolationMode</i> is <b>D2D1_INTERPOLATION_MODE_HIGH_QUALITY</b>, different scalers will be used depending on the scale factor implied by the world transform.</para>
-      <para>Any invalid rectangles accumulated on any effect that is drawn by this call will be discarded regardless of which portion of the image rectangle is drawn.</para>
-      <para>If <i>compositeMode</i> is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, <see cref="DrawImage" /> will use the currently selected primitive blend specified by <see cref="ID2D1DeviceContext.SetPrimitiveBlend" />. If <i>compositeMode</i> is not <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, the image will be extended to transparent up to the current axis-aligned clip.</para>
-      <para>If there is an image rectangle and a world transform, this is equivalent to inserting a clip effect to represent the image rectangle and a 2D affine transform to take into account the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Image" />
+    <summary>Draws an image to the device context.</summary>
+    <param name="image">The image to be drawn to the device context.</param>
+    <param name="interpolationMode">The interpolation mode that will be used to scale the image if necessary.</param>
+    <param name="compositeMode">The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></param>
   </member>
   <member name="ID2D1DeviceContext.DrawImage">
-    <summary>
-      <para>Draws an image to the device context.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image to be drawn to the device context.</para>
-    </param>
-    <param name="targetOffset">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The  offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="imageRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The corresponding rectangle in the image space will be mapped to the given origins when processing the image. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode that will be used to scale the image if necessary.</para>
-    </param>
-    <param name="compositeMode">
-      <para>Type: <b><see cref="D2D1_COMPOSITE_MODE" /></b></para>
-      <para>The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></para>
-    </param>
-    <remarks>
-      <para>If <i>interpolationMode</i> is <b>D2D1_INTERPOLATION_MODE_HIGH_QUALITY</b>, different scalers will be used depending on the scale factor implied by the world transform.</para>
-      <para>Any invalid rectangles accumulated on any effect that is drawn by this call will be discarded regardless of which portion of the image rectangle is drawn.</para>
-      <para>If <i>compositeMode</i> is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, <see cref="DrawImage" /> will use the currently selected primitive blend specified by <see cref="ID2D1DeviceContext.SetPrimitiveBlend" />. If <i>compositeMode</i> is not <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, the image will be extended to transparent up to the current axis-aligned clip.</para>
-      <para>If there is an image rectangle and a world transform, this is equivalent to inserting a clip effect to represent the image rectangle and a 2D affine transform to take into account the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Image" />
+    <summary>Draws an image to the device context.</summary>
+    <param name="image">The image to be drawn to the device context.</param>
+    <param name="targetOffset">The offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</param>
+    <param name="imageRectangle">The corresponding rectangle in the image space will be mapped to the given origins when processing the image. This default value is <i>NULL</i>.</param>
+    <param name="interpolationMode">The interpolation mode that will be used to scale the image if necessary.</param>
+    <param name="compositeMode">The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></param>
   </member>
   <member name="ID2D1DeviceContext.DrawImage">
-    <summary>
-      <para>Draws an image to the device context.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image to be drawn to the device context.</para>
-    </param>
-    <param name="targetOffset">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>The  offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</para>
-    </param>
-    <param name="interpolationMode">
-      <para>Type: <b><see cref="D2D1_INTERPOLATION_MODE" /></b></para>
-      <para>The interpolation mode that will be used to scale the image if necessary.</para>
-    </param>
-    <param name="compositeMode">
-      <para>Type: <b><see cref="D2D1_COMPOSITE_MODE" /></b></para>
-      <para>The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></para>
-    </param>
-    <remarks>
-      <para>If <i>interpolationMode</i> is <b>D2D1_INTERPOLATION_MODE_HIGH_QUALITY</b>, different scalers will be used depending on the scale factor implied by the world transform.</para>
-      <para>Any invalid rectangles accumulated on any effect that is drawn by this call will be discarded regardless of which portion of the image rectangle is drawn.</para>
-      <para>If <i>compositeMode</i> is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, <see cref="DrawImage" /> will use the currently selected primitive blend specified by <see cref="ID2D1DeviceContext.SetPrimitiveBlend" />. If <i>compositeMode</i> is not <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b>, the image will be extended to transparent up to the current axis-aligned clip.</para>
-      <para>If there is an image rectangle and a world transform, this is equivalent to inserting a clip effect to represent the image rectangle and a 2D affine transform to take into account the world transform.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap" />
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1Effect" />
-    <seealso cref="ID2D1Image" />
+    <summary>Draws an image to the device context.</summary>
+    <param name="image">The image to be drawn to the device context.</param>
+    <param name="targetOffset">The offset in the destination space that the image will be rendered to. The entire logical extent of the image will be rendered to the corresponding destination. If not specified, the destination origin will be (0, 0). The top-left corner of the image will be mapped to the target offset. This will not necessarily be the origin. This default value is <i>NULL</i>.</param>
+    <param name="interpolationMode">The interpolation mode that will be used to scale the image if necessary.</param>
+    <param name="compositeMode">The composite mode that will be applied to the limits of the currently selected clip. The default value is <b>D2D1_COMPOSITE_MODE_SOURCE_OVER</b></param>
   </member>
   <member name="ID2D1DeviceContext.FillOpacityMask">
-    <summary>
-      <para>Fill using the alpha channel of the supplied opacity mask bitmap. The brush opacity will be modulated by the mask. The render target antialiasing mode must be set to aliased.</para>
-    </summary>
-    <param name="opacityMask">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap that acts as the opacity mask</para>
-    </param>
-    <param name="brush">
-      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
-      <para>The brush to use for filling the primitive.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The destination rectangle to output to in the render target</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The source rectangle from the opacity mask bitmap.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Fill using the alpha channel of the supplied opacity mask bitmap. The brush opacity will be modulated by the mask. The render target antialiasing mode must be set to aliased.</summary>
+    <param name="opacityMask">The bitmap that acts as the opacity mask</param>
+    <param name="brush">The brush to use for filling the primitive.</param>
+    <param name="destinationRectangle">The destination rectangle to output to in the render target</param>
+    <param name="sourceRectangle">The source rectangle from the opacity mask bitmap.</param>
   </member>
   <member name="ID2D1DeviceContext.FillOpacityMask">
-    <summary>
-      <para>Fill using the alpha channel of the supplied opacity mask bitmap. The brush opacity will be modulated by the mask. The render target antialiasing mode must be set to aliased.</para>
-    </summary>
-    <param name="opacityMask">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap that acts as the opacity mask</para>
-    </param>
-    <param name="brush">
-      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
-      <para>The brush to use for filling the primitive.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The destination rectangle to output to in the render target</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The source rectangle from the opacity mask bitmap.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Fill using the alpha channel of the supplied opacity mask bitmap. The brush opacity will be modulated by the mask. The render target antialiasing mode must be set to aliased.</summary>
+    <param name="opacityMask">The bitmap that acts as the opacity mask</param>
+    <param name="brush">The brush to use for filling the primitive.</param>
+    <param name="destinationRectangle">The destination rectangle to output to in the render target</param>
+    <param name="sourceRectangle">The source rectangle from the opacity mask bitmap.</param>
   </member>
   <member name="ID2D1DeviceContext.FillOpacityMask">
-    <summary>
-      <para>Fill using the alpha channel of the supplied opacity mask bitmap. The brush opacity will be modulated by the mask. The render target antialiasing mode must be set to aliased.</para>
-    </summary>
-    <param name="opacityMask">
-      <para>Type: <b><see cref="ID2D1Bitmap" />*</b></para>
-      <para>The bitmap that acts as the opacity mask</para>
-    </param>
-    <param name="brush">
-      <para>Type: <b><see cref="ID2D1Brush" />*</b></para>
-      <para>The brush to use for filling the primitive.</para>
-    </param>
-    <param name="destinationRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The destination rectangle to output to in the render target</para>
-    </param>
-    <param name="sourceRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a></b></para>
-      <para>The source rectangle from the opacity mask bitmap.</para>
-    </param>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Fill using the alpha channel of the supplied opacity mask bitmap. The brush opacity will be modulated by the mask. The render target antialiasing mode must be set to aliased.</summary>
+    <param name="opacityMask">The bitmap that acts as the opacity mask</param>
+    <param name="brush">The brush to use for filling the primitive.</param>
+    <param name="destinationRectangle">The destination rectangle to output to in the render target</param>
+    <param name="sourceRectangle">The source rectangle from the opacity mask bitmap.</param>
   </member>
   <member name="ID2D1DeviceContext.GetDevice">
-    <summary>
-      <para>Gets the device associated with a device context.</para>
-    </summary>
-    <param name="device">
-      <para>Type: <b><see cref="ID2D1Device" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to a Direct2D device associated with this device context.</para>
-    </param>
-    <remarks>
-      <para>The application can retrieve the device even if it is created from an earlier render target code-path. The application must use an <see cref="ID2D1DeviceContext" /> interface and then call <b>GetDevice</b>. Some functionality for controlling all of the resources for a set of device contexts is maintained only on an <see cref="ID2D1Device" /> object.</para>
-    </remarks>
-    <seealso cref="ID2D1Device" />
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Gets the device associated with a device context.</summary>
+    <param name="device">When this method returns, contains the address of a pointer to a Direct2D device associated with this device context.</param>
   </member>
   <member name="ID2D1DeviceContext.GetEffectInvalidRectangleCount">
-    <summary>
-      <para>Gets the number of invalid output rectangles that have accumulated on the effect.</para>
-    </summary>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The effect to count the invalid rectangles on.</para>
-    </param>
-    <param name="rectangleCount">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The returned rectangle count.</para>
-    </param>
+    <summary>Gets the number of invalid output rectangles that have accumulated on the effect.</summary>
+    <param name="effect">The effect to count the invalid rectangles on.</param>
+    <param name="rectangleCount">The returned rectangle count.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.GetEffectInvalidRectangles">
-    <summary>
-      <para>Gets the invalid rectangles that have accumulated since the last time the effect was drawn and <see cref="EndDraw" /> was then called on the device context.</para>
-    </summary>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The effect to get the invalid rectangles from.</para>
-    </param>
-    <param name="rectangles">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>An array of <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a> structures.  You must allocate this to the correct size.  You can get the count of the invalid rectangles using the <see cref="GetEffectInvalidRectangleCount" /> method.</para>
-    </param>
-    <param name="rectanglesCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of rectangles to get.</para>
-    </param>
+    <summary>Gets the invalid rectangles that have accumulated since the last time the effect was drawn and <see cref="EndDraw" /> was then called on the device context.</summary>
+    <param name="effect">The effect to get the invalid rectangles from.</param>
+    <param name="rectangles">An array of <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a> structures. You must allocate this to the correct size. You can get the count of the invalid rectangles using the <see cref="GetEffectInvalidRectangleCount" /> method.</param>
+    <param name="rectanglesCount">The number of rectangles to get.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  Direct2D does not automatically use these invalid rectangles to reduce the region of an effect that is rendered.</para>
-      <para>You can use the <see cref="InvalidateEffectInputRectangle" /> method to specify invalidated rectangles for Direct2D to propagate through an effect graph.</para>
-      <para>If multiple invalid rectangles are requested, the rectangles that this method returns may overlap. When this is the case, the rectangle count might be lower than the count that <see cref="GetEffectInvalidRectangleCount" />.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.GetEffectRequiredInputRectangles">
-    <summary>
-      <para>Returns the input rectangles that are required to be supplied by the caller to produce the given output rectangle.</para>
-    </summary>
-    <param name="renderEffect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The image whose output is being rendered.</para>
-    </param>
-    <param name="renderImageRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The portion of the output image whose inputs are being inspected.</para>
-    </param>
-    <param name="inputDescriptions">
-      <para>Type: <b>const <see cref="D2D1_EFFECT_INPUT_DESCRIPTION" />*</b></para>
-      <para>A list of the inputs whose rectangles are being queried.</para>
-    </param>
-    <param name="requiredInputRects">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The input rectangles returned to the caller.</para>
-    </param>
-    <param name="inputCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The number of inputs.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>A failure code, this will typically only be because an effect in the chain returned some error.</para>
-    </returns>
-    <remarks>
-      <para>The caller should be very careful not to place a reliance on the required input rectangles returned.
-Small changes for correctness to an effect's behavior can result in different rectangles being returned.
-In addition, different kinds of optimization applied inside the render can also influence the result.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Returns the input rectangles that are required to be supplied by the caller to produce the given output rectangle.</summary>
+    <param name="renderEffect">The image whose output is being rendered.</param>
+    <param name="renderImageRectangle">The portion of the output image whose inputs are being inspected.</param>
+    <param name="inputDescriptions">A list of the inputs whose rectangles are being queried.</param>
+    <param name="requiredInputRects">The input rectangles returned to the caller.</param>
+    <param name="inputCount">The number of inputs.</param>
+    <returns>A failure code, this will typically only be because an effect in the chain returned some error.</returns>
   </member>
   <member name="ID2D1DeviceContext.GetGlyphRunWorldBounds">
     <summary>
-      <para>Gets the world-space bounds in DIPs of the glyph run using the device
-context DPI.</para>
+      <code>Gets the world-space bounds in DIPs of the glyph run using the device context DPI.</code>
     </summary>
-    <param name="baselineOrigin">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The origin of the baseline for the glyph run.</para>
-    </param>
-    <param name="glyphRun">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_RUN" />*</b></para>
-      <para>The glyph run to render.</para>
-    </param>
-    <param name="measuringMode">
-      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
-      <para>The DirectWrite measuring mode that indicates how glyph metrics are used to measure text when it is formatted.</para>
-    </param>
-    <param name="bounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The bounds of the glyph run in DIPs and in world space.</para>
-    </param>
+    <param name="baselineOrigin">The origin of the baseline for the glyph run.</param>
+    <param name="glyphRun">The glyph run to render.</param>
+    <param name="measuringMode">The DirectWrite measuring mode that indicates how glyph metrics are used to measure text when it is formatted.</param>
+    <param name="bounds">The bounds of the glyph run in DIPs and in world space.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The image bounds reflect the current DPI, unit mode, and world transform of the context.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.GetImageLocalBounds">
-    <summary>
-      <para>Gets the bounds of an image without the world transform of the context applied.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image whose bounds will be calculated.</para>
-    </param>
-    <param name="localBounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>[1]</b></para>
-      <para>When this method returns, contains a pointer to the bounds of the image in device independent pixels (DIPs) and in local space.</para>
-    </param>
-    <returns>
-      <para>This method does not return a value.</para>
-    </returns>
-    <remarks>
-      <para>The image bounds don't include multiplication by the world transform.  They do reflect the current DPI, unit mode, and interpolation mode of the context.
-To get the bounds that include the world transform, use <see cref="ID2D1DeviceContext.GetImageWorldBounds" />.</para>
-      <para>The returned bounds reflect which pixels would be impacted by calling <see cref="DrawImage" /> with a
-target offset of (0,0) and an identity world transform matrix. They do not reflect the current clip rectangle set on the device context or the extent of the context's current target image.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</seealso>
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.CreateBitmap" />
-    <seealso cref="ID2D1DeviceContext.GetImageWorldBounds" />
-    <seealso cref="ID2D1Image" />
+    <summary>Gets the bounds of an image without the world transform of the context applied.</summary>
+    <param name="image">The image whose bounds will be calculated.</param>
+    <param name="localBounds">When this method returns, contains a pointer to the bounds of the image in device independent pixels (DIPs) and in local space.</param>
+    <returns>This method does not return a value.</returns>
   </member>
   <member name="ID2D1DeviceContext.GetImageWorldBounds">
-    <summary>
-      <para>Gets the bounds of an image with the world transform of the context applied.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The image whose bounds will be calculated.</para>
-    </param>
-    <param name="worldBounds">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>[1]</b></para>
-      <para>When this method returns, contains a pointer to the bounds of the image in device independent pixels (DIPs).</para>
-    </param>
+    <summary>Gets the bounds of an image with the world transform of the context applied.</summary>
+    <param name="image">The image whose bounds will be calculated.</param>
+    <param name="worldBounds">When this method returns, contains a pointer to the bounds of the image in device independent pixels (DIPs).</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The image bounds reflect the current DPI, unit mode, and world transform of the context.  To get bounds which don't include the world transform, use <see cref="ID2D1DeviceContext.GetImageLocalBounds" />.</para>
-      <para>The returned bounds reflect which pixels would be impacted by calling <see cref="DrawImage" /> with the same image and a target offset of (0,0).  They do not reflect the current clip rectangle set on the device context or the extent of the context’s current target image.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</seealso>
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.CreateBitmap" />
-    <seealso cref="ID2D1DeviceContext.GetImageLocalBounds" />
-    <seealso cref="ID2D1Image" />
   </member>
   <member name="ID2D1DeviceContext.GetPrimitiveBlend">
-    <summary>
-      <para>Returns the currently set primitive blend used by the device context.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_PRIMITIVE_BLEND" /></b></para>
-      <para>The current primitive blend. The default value is <b>D2D1_PRIMITIVE_BLEND_SOURCE_OVER</b>.</para>
-    </returns>
-    <seealso cref="D2D1_COMPOSITE_MODE" />
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Returns the currently set primitive blend used by the device context.</summary>
+    <returns>The current primitive blend. The default value is <b>D2D1_PRIMITIVE_BLEND_SOURCE_OVER</b>.</returns>
   </member>
   <member name="ID2D1DeviceContext.GetRenderingControls">
-    <summary>
-      <para>Gets the rendering controls that have been applied to the context.</para>
-    </summary>
-    <param name="renderingControls">
-      <para>Type: <b><see cref="D2D1_RENDERING_CONTROLS" />*</b></para>
-      <para>When this method returns, contains a pointer to the rendering controls for this context.</para>
-    </param>
-    <seealso cref="D2D1_RENDERING_CONTROLS" />
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Gets the rendering controls that have been applied to the context.</summary>
+    <param name="renderingControls">When this method returns, contains a pointer to the rendering controls for this context.</param>
   </member>
   <member name="ID2D1DeviceContext.GetTarget">
-    <summary>
-      <para>Gets the target currently associated with the device context.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to the target currently associated with the device context.</para>
-    </param>
-    <remarks>
-      <para>If a target is not associated with the device context, <i>target</i> will contain <b>NULL</b> when the methods returns.</para>
-      <para>If the currently selected target is a bitmap rather than a command list, the application can gain access to the initial bitmaps created by using one of the following methods:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="CreateHwndRenderTarget" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="CreateDxgiSurfaceRenderTarget" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/Direct2D/id2d1factory-createwicbitmaprendertarget">CreateWicBitmapRenderTarget</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="CreateDCRenderTarget" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/win32/direct2d/id2d1rendertarget-createcompatiblerendertarget">CreateCompatibleRenderTarget</a>
-          </description>
-        </item>
-      </list>
-      <para>It is not possible for an application to destroy these bitmaps.  All of these bitmaps are bindable as bitmap targets.  However not all of these bitmaps can be used as bitmap sources for  <see cref="ID2D1RenderTarget" /> methods.</para>
-      <para>
-        <see cref="CreateDxgiSurfaceRenderTarget" /> will create a bitmap that is usable as a bitmap source if the DXGI surface is bindable as a shader resource view.</para>
-      <para>
-        <a href="https://docs.microsoft.com//windows/win32/direct2d/id2d1rendertarget-createcompatiblerendertarget">CreateCompatibleRenderTarget</a> will always create bitmaps that are usable as a bitmap source.</para>
-      <para>
-        <see cref="ID2D1RenderTarget.BeginDraw" /> will copy from the HDC to the original bitmap associated with it.  <see cref="ID2D1RenderTarget.EndDraw" /> will copy from the original bitmap to the HDC.</para>
-      <para>
-        <see cref="IWICBitmap" /> objects will be locked in the following circumstances:</para>
-      <list type="bullet">
-        <item>
-          <description>BeginDraw has been called and the currently selected target bitmap is a WIC bitmap.</description>
-        </item>
-        <item>
-          <description>A WIC bitmap is set as the target of a device context after BeginDraw has been called and before EndDraw has been called.</description>
-        </item>
-        <item>
-          <description>Any of the ID2D1Bitmap.Copy* methods are called with a WIC bitmap as either the source or destination.</description>
-        </item>
-      </list>
-      <para>IWICBitmap objects will be unlocked in the following circumstances:</para>
-      <list type="bullet">
-        <item>
-          <description>EndDraw is called and the currently selected target bitmap is a WIC bitmap.</description>
-        </item>
-        <item>
-          <description>A WIC bitmap is removed as the target of a device context between the calls to BeginDraw and EndDraw.</description>
-        </item>
-        <item>
-          <description>Any of the ID2D1Bitmap.Copy* methods are called with a WIC bitmap as either the source or destination.</description>
-        </item>
-      </list>
-      <para>Direct2D will only lock bitmaps that are not currently locked.</para>
-      <para>Calling <see cref="QueryInterface" /> for <see cref="ID2D1GdiInteropRenderTarget" /> will always succeed.  <see cref="ID2D1GdiInteropRenderTarget.GetDC" /> will return a device context corresponding to the currently bound target bitmap.  GetDC will fail if the target bitmap was not created with the GDI_COMPATIBLE flag set.</para>
-      <para>
-        <see cref="ID2D1HwndRenderTarget.Resize" /> will return <b>DXGI_ERROR_INVALID_CALL</b> if there are any outstanding references to the original target bitmap associated with the render target.</para>
-      <para>Although the target can be a command list, it cannot be any other type of image. It cannot be the output image of an effect.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.CreateBitmap" />
-    <seealso cref="ID2D1DeviceContext.SetTarget" />
+    <summary>Gets the target currently associated with the device context.</summary>
+    <param name="image">When this method returns, contains the address of a pointer to the target currently associated with the device context.</param>
   </member>
   <member name="ID2D1DeviceContext.GetUnitMode">
-    <summary>
-      <para>Gets the mode that  is being used to interpret values by the device context.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><see cref="D2D1_UNIT_MODE" /></b></para>
-      <para>The  unit mode.</para>
-    </returns>
-    <seealso cref="D2D1_UNIT_MODE" />
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Gets the mode that is being used to interpret values by the device context.</summary>
+    <returns>The unit mode.</returns>
   </member>
   <member name="ID2D1DeviceContext.InvalidateEffectInputRectangle">
     <summary>
-      <para>This indicates that a portion of an effect's input is invalid. This method can
-be called many times.</para>
-      <para>You can use this method to propagate invalid rectangles through an effect graph. You can query Direct2D using the <see cref="GetEffectInvalidRectangles" /> method.
-<b>Note</b>  Direct2D does not automatically use these invalid rectangles to reduce the region of an effect that is rendered. You can also use this method to invalidate caches that have accumulated while rendering effects that have the <b>D2D1_PROPERTY_CACHED</b> property set to true.</para>
-    </summary>
-    <param name="effect">
-      <para>Type: <b><see cref="ID2D1Effect" />*</b></para>
-      <para>The effect to invalidate.</para>
-    </param>
-    <param name="input">
-      <para>Type: <b>UINT32</b></para>
-      <para>The input index.</para>
-    </param>
-    <param name="inputRectangle">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-rect-f">D2D1_RECT_F</a>*</b></para>
-      <para>The rect to invalidate.</para>
-    </param>
+      <para>This indicates that a portion of an effect's input is invalid. This method can be called many times.</para>
+      <para>You can use this method to propagate invalid rectangles through an effect graph. You can query Direct2D using the <see cref="GetEffectInvalidRectangles" /> method.</para>
+      <div>
+        <b>Note</b>  Direct2D does not automatically use these invalid rectangles to reduce the region of an effect that is rendered.</div>You can also use this method to invalidate caches that have accumulated while rendering effects that have the <b>D2D1_PROPERTY_CACHED</b> property set to true.</summary>
+    <param name="effect">The effect to invalidate.</param>
+    <param name="input">The input index.</param>
+    <param name="inputRectangle">The rect to invalidate.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
         <listheader>
           <description>HRESULT</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>No error occurred.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_OUTOFMEMORY</description>
           <description>Direct2D could not allocate sufficient memory to complete the call.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>An invalid parameter was passed to the returning function.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.IsBufferPrecisionSupported">
-    <summary>
-      <para>Indicates whether the buffer precision is supported by the underlying Direct3D <see cref="device." /></para>
-    </summary>
-    <param name="bufferPrecision">
-      <para>Type: <b><see cref="D2D1_BUFFER_PRECISION" /></b></para>
-      <para>The buffer precision to check.</para>
-    </param>
-    <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>Returns TRUE if the buffer precision is supported.  Returns FALSE if the buffer precision is not supported.</para>
-    </returns>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Indicates whether the buffer precision is supported by the underlying Direct3D <see cref="device." /></summary>
+    <param name="bufferPrecision">The buffer precision to check.</param>
+    <returns>Returns TRUE if the buffer precision is supported. Returns FALSE if the buffer precision is not supported.</returns>
   </member>
   <member name="ID2D1DeviceContext.IsDxgiFormatSupported">
-    <summary>
-      <para>Indicates whether the format is supported by the device context.  The formats supported are usually determined by the underlying hardware.</para>
-    </summary>
-    <param name="format">
-      <para>Type: <b>format</b></para>
-      <para>The DXGI format to check.</para>
-    </param>
-    <returns>
-      <para>Type: <b>BOOL</b></para>
-      <para>Returns TRUE if the format is supported.  Returns FALSE if the format is not supported.</para>
-    </returns>
-    <remarks>
-      <para>You can use supported formats in the <see cref="D2D1_PIXEL_FORMAT" /> structure to create bitmaps and render targets.</para>
-      <para>Direct2D doesn't support all DXGI formats, even though they may have some level of Direct3D support by the hardware.</para>
-    </remarks>
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Indicates whether the format is supported by the device context. The formats supported are usually determined by the underlying hardware.</summary>
+    <param name="format">The DXGI format to check.</param>
+    <returns>Returns TRUE if the format is supported. Returns FALSE if the format is not supported.</returns>
   </member>
   <member name="ID2D1DeviceContext.PushLayer">
-    <summary>
-      <para>Push a layer onto the clip and layer stack of the device context.</para>
-    </summary>
-    <param name="layerParameters">
-      <para>Type: <b>const <see cref="D2D1_LAYER_PARAMETERS1" />*</b></para>
-      <para>The parameters that defines the layer.</para>
-    </param>
+    <summary>Push a layer onto the clip and layer stack of the device context.</summary>
+    <param name="layerParameters">The parameters that defines the layer.</param>
     <param name="layer">
-      <para>Type: <b><see cref="ID2D1Layer" />*</b></para>
       <para>The layer resource to push on the device context that receives subsequent drawing operations.</para>
-      <para>
-        <b>Note</b>  If a layer is not specified, Direct2D manages the layer resource automatically.</para>
+      <div>
+        <b>Note</b>  If a layer is not specified, Direct2D manages the layer resource automatically.</div>
     </param>
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.PushLayer">
-    <summary>
-      <para>Push a layer onto the clip and layer stack of the device context.</para>
-    </summary>
-    <param name="layerParameters">
-      <para>Type: <b>const <see cref="D2D1_LAYER_PARAMETERS1" />*</b></para>
-      <para>The parameters that defines the layer.</para>
-    </param>
+    <summary>Push a layer onto the clip and layer stack of the device context.</summary>
+    <param name="layerParameters">The parameters that defines the layer.</param>
     <param name="layer">
-      <para>Type: <b><see cref="ID2D1Layer" />*</b></para>
       <para>The layer resource to push on the device context that receives subsequent drawing operations.</para>
-      <para>
-        <b>Note</b>  If a layer is not specified, Direct2D manages the layer resource automatically.</para>
+      <div>
+        <b>Note</b>  If a layer is not specified, Direct2D manages the layer resource automatically.</div>
     </param>
-    <seealso cref="ID2D1DeviceContext" />
   </member>
   <member name="ID2D1DeviceContext.SetPrimitiveBlend">
-    <summary>
-      <para>Changes the primitive blend mode that is used for all rendering operations in the device context.</para>
-    </summary>
-    <param name="primitiveBlend">
-      <para>Type: <b><see cref="D2D1_PRIMITIVE_BLEND" /></b></para>
-      <para>The primitive blend to use.</para>
-    </param>
-    <remarks>
-      <para>The primitive blend will apply to all of the primitive drawn on the context, unless this is overridden with the <i>compositeMode</i> parameter on the <see cref="DrawImage" /> API.</para>
-      <para>The primitive blend applies to the interior of any primitives drawn on the context. In the case of <see cref="DrawImage" />, this will be implied by the image rectangle, offset and world transform.</para>
-      <para>If the primitive blend is anything other than <b>D2D1_PRIMITIVE_BLEND_SOURCE_OVER</b> then ClearType rendering will be turned off. If the application explicitly forces ClearType rendering in these modes, the drawing context will be placed in an error state. D2DERR_WRONG_STATE will be returned from either <see cref="EndDraw" /> or <see cref="Flush" />.</para>
-    </remarks>
-    <seealso cref="D2D1_PRIMITIVE_BLEND" />
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Changes the primitive blend mode that is used for all rendering operations in the device context.</summary>
+    <param name="primitiveBlend">The primitive blend to use.</param>
   </member>
   <member name="ID2D1DeviceContext.SetRenderingControls">
-    <summary>
-      <para>Sets the rendering controls for the given device context.</para>
-    </summary>
-    <param name="renderingControls">
-      <para>Type: <b>const <see cref="D2D1_RENDERING_CONTROLS" />*</b></para>
-      <para>The rendering controls to be applied.</para>
-    </param>
-    <remarks>
-      <para>The rendering controls allow the  application to tune the precision, performance, and resource usage of rendering operations.</para>
-    </remarks>
-    <seealso cref="D2D1_RENDERING_CONTROLS" />
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Sets the rendering controls for the given device context.</summary>
+    <param name="renderingControls">The rendering controls to be applied.</param>
   </member>
   <member name="ID2D1DeviceContext.SetRenderingControls">
-    <summary>
-      <para>Sets the rendering controls for the given device context.</para>
-    </summary>
-    <param name="renderingControls">
-      <para>Type: <b>const <see cref="D2D1_RENDERING_CONTROLS" />*</b></para>
-      <para>The rendering controls to be applied.</para>
-    </param>
-    <remarks>
-      <para>The rendering controls allow the  application to tune the precision, performance, and resource usage of rendering operations.</para>
-    </remarks>
-    <seealso cref="D2D1_RENDERING_CONTROLS" />
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Sets the rendering controls for the given device context.</summary>
+    <param name="renderingControls">The rendering controls to be applied.</param>
   </member>
   <member name="ID2D1DeviceContext.SetTarget">
-    <summary>
-      <para>The bitmap or command list to which the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> device context will now render.</para>
-    </summary>
-    <param name="image">
-      <para>Type: <b><see cref="ID2D1Image" />*</b></para>
-      <para>The surface or command list to which the Direct2D device context will render.</para>
-    </param>
-    <remarks>
-      <para>The target can be changed at any time, including while the context is drawing.</para>
-      <para>The target can be either a bitmap created with the <see cref="D2D1_BITMAP_OPTIONS_TARGET" /> flag, or it can be a command list. Other kinds of images cannot be set as a target. For example, you cannot set the output of an effect as target. If the target is not valid the context will enter the <b>D2DERR_INVALID_TARGET </b> error state.</para>
-      <para>You cannot  use <b>SetTarget</b> to render to a bitmap/command list from multiple device contexts simultaneously. An image is considered “being rendered to” if it has ever been set on a device context within a <see cref="BeginDraw" />/<see cref="EndDraw" /> timespan. If an attempt is made to render to an image through multiple device contexts, all subsequent device contexts after the first will enter an error state.</para>
-      <para>Callers wishing to attach an image to a second device context should first call <see cref="EndDraw" /> on the first device context.</para>
-      <para>Here is an example of the correct calling order.</para>
-      <code>pDC1-&gt;BeginDraw();
-pDC1-&gt;SetTarget(pImage);
-// …
-pDC1-&gt;EndDraw();
-
-pDC2-&gt;BeginDraw();
-pDC2-&gt;SetTarget(pImage);
-// …
-pDC2-&gt;EndDraw();
-
-</code>
-      <para>Here is an example of the incorrect calling order.</para>
-      <code>pDC1-&gt;BeginDraw();
-pDC2-&gt;BeginDraw();
-
-pDC1-&gt;SetTarget(pImage);
-
-// ...
-
-pDC1-&gt;SetTarget(NULL);
-
-pDC2-&gt;SetTarget(pImage); // This call is invalid, even though pImage is no longer set on pDC1.
-
-// ...
-
-pDC1-&gt;EndDraw(); // This EndDraw SUCCEEDs.
-pDC2-&gt;EndDraw(); // This EndDraw FAILs
-
-
-</code>
-      <para>
-        <b>Note</b>  Changing the target does not change the bitmap that an HWND render target presents from, nor does it change the bitmap that a DC render target blts to/from.</para>
-      <para>This API makes it easy for an application to use a bitmap as a source (like in <see cref="DrawBitmap" />) and as a destination at the same time.  Attempting to use a bitmap as a source on the same device context to which it is bound as a target will put the device context into the D2DERR_BITMAP_BOUND_AS_TARGET error state.</para>
-      <para>It is acceptable to have a bitmap bound as a target bitmap on multiple render targets at once.  Applications that do this must properly synchronize rendering with <see cref="Flush" /> or <see cref="EndDraw" />.</para>
-      <para>You can change the target at any time, including while the context is drawing.</para>
-      <para>You can set the target to NULL, in which case drawing calls will put the device context into an error state with D2DERR_WRONG_STATE.  Calling <b>SetTarget</b> with a NULL target does not restore the original target bitmap to the device context.</para>
-      <para>If the device context has an outstanding HDC, the context will enter the <b>D2DERR_WRONG_STATE</b> error state.  The target will not be changed.</para>
-      <para>If the bitmap and the device context are not in the same resource domain, the context will enter <b>\</b> error state.  The target will not be changed.</para>
-      <para>
-        <see cref="ID2D1RenderTarget.GetPixelSize" /> returns the size of the current target bitmap (or 0, 0) if there is no bitmap bound).
-<see cref="ID2D1RenderTarget.GetSize" /> returns the pixel size of the current bitmap scaled by the DPI of the render target.
-<b>SetTarget</b> does not affect the DPI of the render target.</para>
-      <para>
-        <see cref="ID2D1RenderTarget.GetPixelFormat" /> returns the pixel format of the current target bitmap (or <see cref="DXGI_FORMAT_UNKNOWN" />, <see cref="D2D1_ALPHA_MODE_UNKNOWN" /> if there is none).</para>
-      <para>
-        <see cref="ID2D1Bitmap.CopyFromRenderTarget" /> copies from the currently bound target bitmap.</para>
-    </remarks>
-    <seealso cref="ID2D1Bitmap1" />
-    <seealso cref="ID2D1DeviceContext" />
-    <seealso cref="ID2D1DeviceContext.CreateBitmap" />
-    <seealso cref="ID2D1DeviceContext.GetTarget" />
+    <summary>The bitmap or command list to which the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/direct2d-portal">Direct2D</a> device context will now render.</summary>
+    <param name="image">The surface or command list to which the Direct2D device context will render.</param>
   </member>
   <member name="ID2D1DeviceContext.SetUnitMode">
-    <summary>
-      <para>Sets what units will be used to interpret values passed into the device context.</para>
-    </summary>
-    <param name="unitMode">
-      <para>Type: <b><see cref="D2D1_UNIT_MODE" /></b></para>
-      <para>An enumeration defining how passed-in units will be interpreted by the device context.</para>
-    </param>
-    <remarks>
-      <para>This method will affect all properties and parameters affected by <see cref="SetDpi" /></para>
-      <para>and <see cref="GetDpi" />. This affects all coordinates, lengths, and other properties that are
-not explicitly defined as being in another unit. For example:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>SetUnitMode</b> will affect a coordinate passed
-into <see cref="ID2D1DeviceContext.DrawLine" />, and the scaling of a
-geometry passed into <see cref="ID2D1DeviceContext.FillGeometry" />.
-</description>
-        </item>
-        <item>
-          <description>
-            <b>SetUnitMode</b> will not affect the value
-returned by <see cref="ID2D1Bitmap.GetPixelSize" />.
-</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="D2D1_UNIT_MODE" />
-    <seealso cref="ID2D1DeviceContext" />
+    <summary>Sets what units will be used to interpret values passed into the device context.</summary>
+    <param name="unitMode">An enumeration defining how passed-in units will be interpreted by the device context.</param>
   </member>
   <member name="ID2D1DeviceContext">
     <summary>
       <para>Represents a set of state and command buffers that are used to render to a target.</para>
       <para>The device context can render to a target bitmap or a command list.</para>
     </summary>
-    <remarks>
-      <para>Any resource created from a device context can be shared with any other resource created from a device context when both contexts are created on the same device.</para>
-    </remarks>
-    <seealso cref="D2D1CreateDeviceContext" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Direct2D/devices-and-device-contexts">Devices and Device Contexts</seealso>
-    <seealso cref="ID2D1Device.CreateDeviceContext" />
-    <seealso cref="ID2D1RenderTarget" />
   </member>
 </doc>

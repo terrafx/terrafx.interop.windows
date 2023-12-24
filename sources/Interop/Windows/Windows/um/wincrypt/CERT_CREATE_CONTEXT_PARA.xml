@@ -3,26 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_CREATE_CONTEXT_PARA">
-    <summary>
-      <para>The <b>CERT_CREATE_CONTEXT_PARA</b> structure defines additional values that can be used when calling the <see cref="CertCreateContext" /> function.</para>
-    </summary>
-    <seealso cref="CertCreateContext" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/wincrypt/nc-wincrypt-pfn_cert_create_context_sort_func">PFN_CERT_CREATE_CONTEXT_SORT_FUNC</seealso>
+    <summary>The <b>CERT_CREATE_CONTEXT_PARA</b> structure defines additional values that can be used when calling the <see cref="CertCreateContext" /> function.</summary>
   </member>
   <member name="CERT_CREATE_CONTEXT_PARA.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CERT_CREATE_CONTEXT_PARA.pfnFree">
-    <summary>
-      <para>A pointer to the function that  frees the <i>pbEncoded</i> parameter of the <see cref="CertCreateContext" /> function. The  <b>pfnFree</b> function is called when the context created by  <b>CertCreateContext</b> is freed. This value can be <b>NULL</b>, in which case the <i>pbEncoded</i> parameter of the <b>CertCreateContext</b> function is not freed.</para>
-    </summary>
+    <summary>A pointer to the function that frees the <i>pbEncoded</i> parameter of the <see cref="CertCreateContext" /> function. The <b>pfnFree</b> function is called when the context created by <b>CertCreateContext</b> is freed. This value can be <b>NULL</b>, in which case the <i>pbEncoded</i> parameter of the <b>CertCreateContext</b> function is not freed.</summary>
   </member>
   <member name="CERT_CREATE_CONTEXT_PARA.pvFree">
-    <summary>
-      <para>The address of the memory that gets freed by the <b>pfnFree</b> function. If <b>pvFree</b> is <b>NULL</b>, then the <i>pbEncoded</i> parameter of the <see cref="CertCreateContext" /> function is freed.</para>
-    </summary>
+    <summary>The address of the memory that gets freed by the <b>pfnFree</b> function. If <b>pvFree</b> is <b>NULL</b>, then the <i>pbEncoded</i> parameter of the <see cref="CertCreateContext" /> function is freed.</summary>
   </member>
   <member name="CERT_CREATE_CONTEXT_PARA.pfnSort">
     <summary>

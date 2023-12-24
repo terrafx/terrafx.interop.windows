@@ -25,7 +25,7 @@ public unsafe partial struct ICreatingProcess : ICreatingProcess.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICreatingProcess*, Guid*, void**, int>)(lpVtbl[0]))((ICreatingProcess*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICreatingProcess*, Guid*, void**, int>)(lpVtbl[0]))((ICreatingProcess*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICreatingProcess : ICreatingProcess.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICreatingProcess*, uint>)(lpVtbl[1]))((ICreatingProcess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICreatingProcess*, uint>)(lpVtbl[1]))((ICreatingProcess*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ICreatingProcess : ICreatingProcess.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICreatingProcess*, uint>)(lpVtbl[2]))((ICreatingProcess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICreatingProcess*, uint>)(lpVtbl[2]))((ICreatingProcess*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICreatingProcess.xml' path='doc/member[@name="ICreatingProcess.OnCreating"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ICreatingProcess : ICreatingProcess.Interface, INat
     [VtblIndex(3)]
     public HRESULT OnCreating(ICreateProcessInputs* pcpi)
     {
-        return ((delegate* unmanaged<ICreatingProcess*, ICreateProcessInputs*, int>)(lpVtbl[3]))((ICreatingProcess*)Unsafe.AsPointer(ref this), pcpi);
+        return ((delegate* unmanaged[MemberFunction]<ICreatingProcess*, ICreateProcessInputs*, int>)(lpVtbl[3]))((ICreatingProcess*)Unsafe.AsPointer(ref this), pcpi);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ICreatingProcess : ICreatingProcess.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ICreateProcessInputs *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ICreateProcessInputs*, int> OnCreating;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ICreateProcessInputs*, int> OnCreating;
     }
 }

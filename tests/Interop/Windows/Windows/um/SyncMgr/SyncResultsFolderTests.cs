@@ -19,25 +19,4 @@ public static unsafe partial class SyncResultsFolderTests
     {
         Assert.That(typeof(SyncResultsFolder).GUID, Is.EqualTo(IID_SyncResultsFolder));
     }
-
-    /// <summary>Validates that the <see cref="SyncResultsFolder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SyncResultsFolder>(), Is.EqualTo(sizeof(SyncResultsFolder)));
-    }
-
-    /// <summary>Validates that the <see cref="SyncResultsFolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SyncResultsFolder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SyncResultsFolder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SyncResultsFolder), Is.EqualTo(1));
-    }
 }

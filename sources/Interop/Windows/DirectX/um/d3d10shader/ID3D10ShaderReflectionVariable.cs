@@ -24,7 +24,7 @@ public unsafe partial struct ID3D10ShaderReflectionVariable : ID3D10ShaderReflec
     [VtblIndex(0)]
     public HRESULT GetDesc(D3D10_SHADER_VARIABLE_DESC* pDesc)
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflectionVariable*, D3D10_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflectionVariable*, D3D10_SHADER_VARIABLE_DESC*, int>)(lpVtbl[0]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='ID3D10ShaderReflectionVariable.xml' path='doc/member[@name="ID3D10ShaderReflectionVariable.GetType"]/*' />
@@ -32,7 +32,7 @@ public unsafe partial struct ID3D10ShaderReflectionVariable : ID3D10ShaderReflec
     [VtblIndex(1)]
     public new ID3D10ShaderReflectionType* GetType()
     {
-        return ((delegate* unmanaged<ID3D10ShaderReflectionVariable*, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID3D10ShaderReflectionVariable*, ID3D10ShaderReflectionType*>)(lpVtbl[1]))((ID3D10ShaderReflectionVariable*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface
@@ -48,9 +48,9 @@ public unsafe partial struct ID3D10ShaderReflectionVariable : ID3D10ShaderReflec
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (D3D10_SHADER_VARIABLE_DESC *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D3D10_SHADER_VARIABLE_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D3D10_SHADER_VARIABLE_DESC*, int> GetDesc;
 
         [NativeTypeName("ID3D10ShaderReflectionType *() __attribute__((nothrow)) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, ID3D10ShaderReflectionType*> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, ID3D10ShaderReflectionType*> GetType;
     }
 }

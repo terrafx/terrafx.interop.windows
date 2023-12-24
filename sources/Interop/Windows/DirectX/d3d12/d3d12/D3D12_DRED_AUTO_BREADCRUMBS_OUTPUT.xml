@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT">
+    <summary>Contains a pointer to the head of a linked list of <see cref="D3D12_AUTO_BREADCRUMB_NODE" /> objects. The list represents the auto-breadcrumb state prior to device removal.</summary>
+  </member>
+  <member name="D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT.pHeadAutoBreadcrumbNode">
+    <summary>A pointer to a constant <see cref="D3D12_AUTO_BREADCRUMB_NODE" /> object representing the head of a linked list of auto-breadcrumb nodes, or <code>nullptr</code> if the list is empty.</summary>
+  </member>
+</doc>

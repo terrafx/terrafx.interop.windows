@@ -4,49 +4,32 @@
 <doc>
   <member name="VMRDeinterlaceTech">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>VMRDeinterlaceTech</b> enumeration type describes the algorithm used for deinterlacing a video stream. The flags are not mutually exclusive; drivers can set a combination of flags.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="VMRDeinterlaceCaps Structure" />
   </member>
   <member name="VMRDeinterlaceTech.DeinterlaceTech_Unknown">
-    <summary>
-      <para>The algorithm is unknown or proprietary.</para>
-    </summary>
+    <summary>The algorithm is unknown or proprietary.</summary>
   </member>
   <member name="VMRDeinterlaceTech.DeinterlaceTech_BOBLineReplicate">
-    <summary>
-      <para>The algorithm creates each missing line by repeating the line above it or below it. This method creates jagged artifacts and is not recommended.</para>
-    </summary>
+    <summary>The algorithm creates each missing line by repeating the line above it or below it. This method creates jagged artifacts and is not recommended.</summary>
   </member>
   <member name="VMRDeinterlaceTech.DeinterlaceTech_BOBVerticalStretch">
-    <summary>
-      <para>The algorithm creates the missing lines by vertically stretching each video field by a factor of two. For example, it might average two lines or use a (-1, 9, 9, -1)/16 filter across four lines. Slight vertical adjustments are made to ensure that the resulting image does not "bob" up and down.</para>
-    </summary>
+    <summary>The algorithm creates the missing lines by vertically stretching each video field by a factor of two. For example, it might average two lines or use a (-1, 9, 9, -1)/16 filter across four lines. Slight vertical adjustments are made to ensure that the resulting image does not "bob" up and down.</summary>
   </member>
   <member name="VMRDeinterlaceTech.DeinterlaceTech_MedianFiltering">
-    <summary>
-      <para>The algorithm uses median filtering to recreate the pixels in the missing lines.</para>
-    </summary>
+    <summary>The algorithm uses median filtering to recreate the pixels in the missing lines.</summary>
   </member>
   <member name="VMRDeinterlaceTech.DeinterlaceTech_EdgeFiltering">
-    <summary>
-      <para>The algorithm uses an edge filter to create the missing lines. In this process, spatial directional filters are applied to determine the orientation of edges in the picture content. Missing pixels are created by filtering along (rather than across) the detected edges.</para>
-    </summary>
+    <summary>The algorithm uses an edge filter to create the missing lines. In this process, spatial directional filters are applied to determine the orientation of edges in the picture content. Missing pixels are created by filtering along (rather than across) the detected edges.</summary>
   </member>
   <member name="VMRDeinterlaceTech.DeinterlaceTech_FieldAdaptive">
-    <summary>
-      <para>The algorithm uses spatial or temporal interpolation, switching between the two on a field-by-field basis, depending on the amount of motion.</para>
-    </summary>
+    <summary>The algorithm uses spatial or temporal interpolation, switching between the two on a field-by-field basis, depending on the amount of motion.</summary>
   </member>
   <member name="VMRDeinterlaceTech.DeinterlaceTech_PixelAdaptive">
-    <summary>
-      <para>The algorithm uses spatial or temporal interpolation, switching between the two on a pixel-by-pixel basis, depending on the amount of motion.</para>
-    </summary>
+    <summary>The algorithm uses spatial or temporal interpolation, switching between the two on a pixel-by-pixel basis, depending on the amount of motion.</summary>
   </member>
   <member name="VMRDeinterlaceTech.DeinterlaceTech_MotionVectorSteered">
-    <summary>
-      <para>The algorithm identifies objects within a sequence of video fields. Before it recreates the missing pixels, it aligns the movement axes of the individual objects in the scene to make them parallel with the time axis.</para>
-    </summary>
+    <summary>The algorithm identifies objects within a sequence of video fields. Before it recreates the missing pixels, it aligns the movement axes of the individual objects in the scene to make them parallel with the time axis.</summary>
   </member>
 </doc>

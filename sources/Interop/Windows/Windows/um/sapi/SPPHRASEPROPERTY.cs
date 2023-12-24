@@ -14,15 +14,15 @@ public unsafe partial struct SPPHRASEPROPERTY
 {
     /// <include file='SPPHRASEPROPERTY.xml' path='doc/member[@name="SPPHRASEPROPERTY.pszName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszName;
+    public char* pszName;
 
     /// <include file='SPPHRASEPROPERTY.xml' path='doc/member[@name="SPPHRASEPROPERTY.Anonymous"]/*' />
-    [NativeTypeName("SPPHRASEPROPERTY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/sapi.h:5779:5)")]
+    [NativeTypeName("__AnonymousRecord_sapi_L5779_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='SPPHRASEPROPERTY.xml' path='doc/member[@name="SPPHRASEPROPERTY.pszValue"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pszValue;
+    public char* pszValue;
 
     /// <include file='SPPHRASEPROPERTY.xml' path='doc/member[@name="SPPHRASEPROPERTY.vValue"]/*' />
     public VARIANT vValue;
@@ -105,7 +105,7 @@ public unsafe partial struct SPPHRASEPROPERTY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("SPPHRASEPROPERTY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/sapi.h:5782:9)")]
+        [NativeTypeName("__AnonymousRecord_sapi_L5782_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

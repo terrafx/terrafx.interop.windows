@@ -3,88 +3,66 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="XAUDIO2FX_REVERB_PARAMETERS">
-    <summary>
-      <para>Describes parameters for use in the reverb APO.</para>
-    </summary>
-    <remarks>
-      <para>All parameters related to sampling rate or time are relative to a 48kHz voice and must be scaled for use with other sampling rates. For example, setting <i>ReflectionsDelay</i> to 300ms gives a true 300ms delay when the reverb is hosted in a 48kHz voice, but becomes a 150ms delay when hosted in a 24kHz voice.</para>
-      <h3>Platform Requirements</h3>
-      <para>Windows 10 (XAudio2.9); Windows 8, Windows Phone 8 (XAudio 2.8); DirectX SDK (XAudio 2.7)</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/how-to--create-an-effect-chain">How to: Create an Effect Chain</seealso>
-    <seealso cref="IXAudio2Voice.SetEffectParameters" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/xapo-overview">XAPO Overview</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/xaudio2/structures">XAudio Structures</seealso>
-    <seealso cref="XAudio2CreateReverb" />
+    <summary>Describes parameters for use in the reverb APO.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.WetDryMix">
-    <summary>
-      <para>Percentage of the output that will be reverb. Allowable values are from 0 to 100.</para>
-    </summary>
+    <summary>Percentage of the output that will be reverb. Allowable values are from 0 to 100.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.ReflectionsDelay">
     <summary>
       <para>The delay time of the first reflection relative to the direct path. Permitted range is from 0 to 300 milliseconds.</para>
-      <para>
-        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</para>
+      <div>
+        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</div>
     </summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.ReverbDelay">
     <summary>
       <para>Delay of reverb relative to the first reflection. Permitted range is from 0 to 85 milliseconds.</para>
-      <para>
-        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</para>
+      <div>
+        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</div>
     </summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.RearDelay">
     <summary>
       <para>Delay for the left rear output and right rear output. Permitted range is from 0 to 5 milliseconds.</para>
-      <para>
-        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</para>
+      <div>
+        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</div>
     </summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.SideDelay">
     <summary>
       <para>Delay for the left side output and right side output. Permitted range is from 0 to 5 milliseconds.</para>
-      <para>
-        <b>Note</b>  This value is supported beginning with Windows 10.</para>
-      <para>
-        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</para>
+      <div>
+        <b>Note</b>  This value is supported beginning with Windows 10.</div>
+      <div>
+        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</div>
     </summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.PositionLeft">
-    <summary>
-      <para>Position of the left input within the simulated space relative to the listener. With <i>PositionLeft</i> set to the minimum value, the left input is placed close to the listener. In this position, early reflections are dominant, and the reverb decay is set back in the sound field and reduced in amplitude. With <i>PositionLeft</i> set to the maximum value, the left input is placed at a maximum distance from the listener within the simulated room. <i>PositionLeft</i> does not affect the reverb decay time (liveness of the room), only the apparent position of the source relative to the listener. Permitted range is from 0 to 30 (no units).</para>
-    </summary>
+    <summary>Position of the left input within the simulated space relative to the listener. With <i>PositionLeft</i> set to the minimum value, the left input is placed close to the listener. In this position, early reflections are dominant, and the reverb decay is set back in the sound field and reduced in amplitude. With <i>PositionLeft</i> set to the maximum value, the left input is placed at a maximum distance from the listener within the simulated room. <i>PositionLeft</i> does not affect the reverb decay time (liveness of the room), only the apparent position of the source relative to the listener. Permitted range is from 0 to 30 (no units).</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.PositionRight">
     <summary>
       <para>Same as <i>PositionLeft</i>, but affecting only the right input. Permitted range is from 0 to 30 (no units).</para>
-      <para>
-        <b>Note</b>  PositionRight is ignored in mono-in/mono-out mode.</para>
+      <div>
+        <b>Note</b>  PositionRight is ignored in mono-in/mono-out mode.</div>
     </summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.PositionMatrixLeft">
-    <summary>
-      <para>Gives a greater or lesser impression of distance from the source to the listener. Permitted range is from 0 to 30 (no units).</para>
-    </summary>
+    <summary>Gives a greater or lesser impression of distance from the source to the listener. Permitted range is from 0 to 30 (no units).</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.PositionMatrixRight">
     <summary>
       <para>Gives a greater or lesser impression of distance from the source to the listener. Permitted range is from 0 to 30 (no units).</para>
-      <para>
-        <b>Note</b>  <i>PositionMatrixRight</i> is ignored in mono-in/mono-out mode.</para>
+      <div>
+        <b>Note</b>  <i>PositionMatrixRight</i> is ignored in mono-in/mono-out mode.</div>
     </summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.EarlyDiffusion">
-    <summary>
-      <para>Controls the character of the individual wall reflections. Set to minimum value to simulate a hard flat surface and to maximum value to simulate a diffuse surface. Permitted range is from 0 to 15 (no units).</para>
-    </summary>
+    <summary>Controls the character of the individual wall reflections. Set to minimum value to simulate a hard flat surface and to maximum value to simulate a diffuse surface. Permitted range is from 0 to 15 (no units).</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.LateDiffusion">
-    <summary>
-      <para>Controls the character of the individual wall reverberations. Set to minimum value to simulate a hard flat surface and to maximum value to simulate a diffuse surface. Permitted range is from 0 to 15 (no units).</para>
-    </summary>
+    <summary>Controls the character of the individual wall reverberations. Set to minimum value to simulate a hard flat surface and to maximum value to simulate a diffuse surface. Permitted range is from 0 to 15 (no units).</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.LowEQGain">
     <summary>
@@ -106,7 +84,7 @@
           <description>11</description>
           <description>12</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Gain (dB)</description>
           <description>-8</description>
           <description>-7</description>
@@ -121,12 +99,8 @@
           <description>+2</description>
           <description>+3</description>
           <description>+4</description>
-        </item>
-      </list>
-      <para>
-        <b>Note</b>  A <i>LowEQGain</i> value of 8 results in the decay time of low frequencies being equal to the decay time at 1 kHz.</para>
-      <para>Permitted range is from 0 to 12 (no units).</para>
-    </summary>
+        </listheader>
+      </list> <div><b>Note</b>  A <i>LowEQGain</i> value of 8 results in the decay time of low frequencies being equal to the decay time at 1 kHz.</div> Permitted range is from 0 to 12 (no units).</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.LowEQCutoff">
     <summary>
@@ -145,7 +119,7 @@
           <description>8</description>
           <description>9</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Frequency (Hz)</description>
           <description>50</description>
           <description>100</description>
@@ -157,10 +131,8 @@
           <description>400</description>
           <description>450</description>
           <description>500</description>
-        </item>
-      </list>
-      <para>Permitted range is from 0 to 9 (no units).</para>
-    </summary>
+        </listheader>
+      </list> <para>Permitted range is from 0 to 9 (no units).</para></summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.HighEQGain">
     <summary>
@@ -178,7 +150,7 @@
           <description>7</description>
           <description>8</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Gain (dB)</description>
           <description>-8</description>
           <description>-7</description>
@@ -189,10 +161,8 @@
           <description>-2</description>
           <description>-1</description>
           <description>0</description>
-        </item>
-      </list>
-      <para>Permitted range is from 0 to 8 (no units).</para>
-    </summary>
+        </listheader>
+      </list> <para>Permitted range is from 0 to 8 (no units).</para></summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.HighEQCutoff">
     <summary>
@@ -216,7 +186,7 @@
           <description>13</description>
           <description>14</description>
         </listheader>
-        <item>
+        <listheader>
           <description>Frequency (kHz)</description>
           <description>1</description>
           <description>1.5</description>
@@ -233,58 +203,42 @@
           <description>7</description>
           <description>7.5</description>
           <description>8</description>
-        </item>
-      </list>
-      <para>Permitted range is from 0 to 14 (no units).</para>
-    </summary>
+        </listheader>
+      </list> <para>Permitted range is from 0 to 14 (no units).</para></summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.RoomFilterFreq">
     <summary>
       <para>Sets the corner frequency of the low pass filter for the room effect. Permitted range is from 20 to 20,000 Hz.</para>
-      <para>
-        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</para>
+      <div>
+        <b>Note</b>  All parameters related to sampling rate or time are relative to a 48kHz sampling rate and must be scaled for use with other sampling rates. See remarks section below for additional information.</div>
     </summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.RoomFilterMain">
-    <summary>
-      <para>Sets the pass band intensity level of the low-pass filter for both the early reflections and the late field reverberation. Permitted range is from -100 to 0 dB.</para>
-    </summary>
+    <summary>Sets the pass band intensity level of the low-pass filter for both the early reflections and the late field reverberation. Permitted range is from -100 to 0 dB.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.RoomFilterHF">
-    <summary>
-      <para>Sets the intensity of the low-pass filter for both the early reflections and the late field reverberation at the corner frequency (<i>RoomFilterFreq</i>). Permitted range is from -100 to 0 dB.</para>
-    </summary>
+    <summary>Sets the intensity of the low-pass filter for both the early reflections and the late field reverberation at the corner frequency (<i>RoomFilterFreq</i>). Permitted range is from -100 to 0 dB.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.ReflectionsGain">
-    <summary>
-      <para>Adjusts the intensity of the early reflections. Permitted range is from -100 to 20 dB.</para>
-    </summary>
+    <summary>Adjusts the intensity of the early reflections. Permitted range is from -100 to 20 dB.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.ReverbGain">
-    <summary>
-      <para>Adjusts the intensity of the reverberations. Permitted range is from -100 to 20 dB.</para>
-    </summary>
+    <summary>Adjusts the intensity of the reverberations. Permitted range is from -100 to 20 dB.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.DecayTime">
-    <summary>
-      <para>Reverberation decay time at 1 kHz. This is the time that a full scale input signal decays by 60 dB. Permitted range is from 0.1 to infinity seconds.</para>
-    </summary>
+    <summary>Reverberation decay time at 1 kHz. This is the time that a full scale input signal decays by 60 dB. Permitted range is from 0.1 to infinity seconds.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.Density">
-    <summary>
-      <para>Controls the modal density in the late field reverberation. For colorless spaces, <i>Density</i> should be set to the maximum value (100). As Density is decreased, the sound becomes hollow (comb filtered). This is an effect that can be useful if you are trying to model a silo. Permitted range as a percentage is from 0 to 100.</para>
-    </summary>
+    <summary>Controls the modal density in the late field reverberation. For colorless spaces, <i>Density</i> should be set to the maximum value (100). As Density is decreased, the sound becomes hollow (comb filtered). This is an effect that can be useful if you are trying to model a silo. Permitted range as a percentage is from 0 to 100.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.RoomSize">
-    <summary>
-      <para>The apparent size of the acoustic space. Permitted range is from 1 to 100 feet.</para>
-    </summary>
+    <summary>The apparent size of the acoustic space. Permitted range is from 1 to 100 feet.</summary>
   </member>
   <member name="XAUDIO2FX_REVERB_PARAMETERS.DisableLateField">
     <summary>
       <para>If set to TRUE, disables late field reflection calculations. Disabling late field reflection calculations results in a significant CPU time savings.</para>
-      <para>
-        <b>Note</b>  The DirectX SDK versions of XAUDIO2 don't support this member.</para>
+      <div>
+        <b>Note</b>  The DirectX SDK versions of XAUDIO2 don't support this member.</div>
     </summary>
   </member>
 </doc>

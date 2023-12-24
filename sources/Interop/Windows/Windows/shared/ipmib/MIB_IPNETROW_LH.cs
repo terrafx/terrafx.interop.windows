@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH"]/*' />
-public unsafe partial struct MIB_IPNETROW_LH
+public partial struct MIB_IPNETROW_LH
 {
     /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH.dwIndex"]/*' />
     [NativeTypeName("IF_INDEX")]
@@ -22,14 +22,14 @@ public unsafe partial struct MIB_IPNETROW_LH
 
     /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH.bPhysAddr"]/*' />
     [NativeTypeName("UCHAR[8]")]
-    public fixed byte bPhysAddr[8];
+    public _bPhysAddr_e__FixedBuffer bPhysAddr;
 
     /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH.dwAddr"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwAddr;
 
     /// <include file='MIB_IPNETROW_LH.xml' path='doc/member[@name="MIB_IPNETROW_LH.Anonymous"]/*' />
-    [NativeTypeName("_MIB_IPNETROW_LH::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/ipmib.h:159:5)")]
+    [NativeTypeName("__AnonymousRecord_ipmib_L159_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwType"]/*' />
@@ -66,5 +66,12 @@ public unsafe partial struct MIB_IPNETROW_LH
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Type"]/*' />
         [FieldOffset(0)]
         public MIB_IPNET_TYPE Type;
+    }
+
+    /// <include file='_bPhysAddr_e__FixedBuffer.xml' path='doc/member[@name="_bPhysAddr_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _bPhysAddr_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

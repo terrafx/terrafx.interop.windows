@@ -3,53 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR">
-    <summary>
-      <para>This structure is used in conjunction with <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> to return temperature data from a storage device or adapter.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_set_temperature_threshold">IOCTL_STORAGE_SET_TEMPERATURE_THRESHOLD</seealso>
-    <seealso cref="STORAGE_PROPERTY_ID" />
-    <seealso cref="STORAGE_PROPERTY_QUERY" />
-    <seealso cref="STORAGE_TEMPERATURE_INFO" />
+    <summary>This structure is used in conjunction with <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</a> to return temperature data from a storage device or adapter.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Version">
-    <summary>
-      <para>Contains the size of this structure, in bytes. The value of this member will change as members are added to the structure.</para>
-    </summary>
+    <summary>Contains the size of this structure, in bytes. The value of this member will change as members are added to the structure.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Size">
-    <summary>
-      <para>Specifies the total size of the data returned, in bytes. This may include data that follows this structure.</para>
-    </summary>
+    <summary>Specifies the total size of the data returned, in bytes. This may include data that follows this structure.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.CriticalTemperature">
-    <summary>
-      <para>Indicates the minimum temperature in degrees Celsius that may prevent normal operation. Exceeding this temperature may result in possible data loss, automatic device shutdown, extreme performance throttling, or permanent damage.</para>
-    </summary>
+    <summary>Indicates the minimum temperature in degrees Celsius that may prevent normal operation. Exceeding this temperature may result in possible data loss, automatic device shutdown, extreme performance throttling, or permanent damage.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.WarningTemperature">
-    <summary>
-      <para>Indicates the maximum temperature in degrees Celsius at which the device is capable of operating continuously without degrading operation or reliability.</para>
-    </summary>
+    <summary>Indicates the maximum temperature in degrees Celsius at which the device is capable of operating continuously without degrading operation or reliability.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.InfoCount">
-    <summary>
-      <para>Specifies the number of <see cref="STORAGE_TEMPERATURE_INFO" /> structures reported in <b>TemperatureInfo</b>. More than one set of temperature data may be returned when there are multiple sensors in the drive.</para>
-    </summary>
+    <summary>Specifies the number of <see cref="STORAGE_TEMPERATURE_INFO" /> structures reported in <b>TemperatureInfo</b>. More than one set of temperature data may be returned when there are multiple sensors in the drive.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Reserved0">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
   <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.Reserved1">
-    <summary>
-      <para>Reserved for future use.</para>
-    </summary>
+    <summary>Reserved for future use.</summary>
   </member>
-  <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.TemperatureInfo [ANYSIZE_ARRAY]">
-    <summary>
-      <para>Device temperature data, of type <see cref="STORAGE_TEMPERATURE_INFO" />.</para>
-    </summary>
+  <member name="STORAGE_TEMPERATURE_DATA_DESCRIPTOR.TemperatureInfo">
+    <summary>Device temperature data, of type <see cref="STORAGE_TEMPERATURE_INFO" />.</summary>
   </member>
 </doc>

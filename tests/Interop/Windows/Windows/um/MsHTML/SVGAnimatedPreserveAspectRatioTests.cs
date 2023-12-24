@@ -19,25 +19,4 @@ public static unsafe partial class SVGAnimatedPreserveAspectRatioTests
     {
         Assert.That(typeof(SVGAnimatedPreserveAspectRatio).GUID, Is.EqualTo(IID_SVGAnimatedPreserveAspectRatio));
     }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedPreserveAspectRatio" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGAnimatedPreserveAspectRatio>(), Is.EqualTo(sizeof(SVGAnimatedPreserveAspectRatio)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedPreserveAspectRatio" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGAnimatedPreserveAspectRatio).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedPreserveAspectRatio" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGAnimatedPreserveAspectRatio), Is.EqualTo(1));
-    }
 }

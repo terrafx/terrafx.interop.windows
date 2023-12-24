@@ -25,7 +25,7 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IGetCapabilitiesKey*, Guid*, void**, int>)(lpVtbl[0]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IGetCapabilitiesKey*, Guid*, void**, int>)(lpVtbl[0]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IGetCapabilitiesKey*, uint>)(lpVtbl[1]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGetCapabilitiesKey*, uint>)(lpVtbl[1]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IGetCapabilitiesKey*, uint>)(lpVtbl[2]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IGetCapabilitiesKey*, uint>)(lpVtbl[2]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IGetCapabilitiesKey.xml' path='doc/member[@name="IGetCapabilitiesKey.GetCapabilitiesKey"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
     [VtblIndex(3)]
     public HRESULT GetCapabilitiesKey(HKEY* pHKey)
     {
-        return ((delegate* unmanaged<IGetCapabilitiesKey*, HKEY*, int>)(lpVtbl[3]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this), pHKey);
+        return ((delegate* unmanaged[MemberFunction]<IGetCapabilitiesKey*, HKEY*, int>)(lpVtbl[3]))((IGetCapabilitiesKey*)Unsafe.AsPointer(ref this), pHKey);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IGetCapabilitiesKey : IGetCapabilitiesKey.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HKEY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HKEY*, int> GetCapabilitiesKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HKEY*, int> GetCapabilitiesKey;
     }
 }

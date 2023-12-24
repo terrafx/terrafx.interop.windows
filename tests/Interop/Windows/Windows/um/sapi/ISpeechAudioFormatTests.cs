@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechAudioFormatTests
     {
         Assert.That(typeof(ISpeechAudioFormat).GUID, Is.EqualTo(IID_ISpeechAudioFormat));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechAudioFormat" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechAudioFormat>(), Is.EqualTo(sizeof(ISpeechAudioFormat)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechAudioFormat" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechAudioFormat).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechAudioFormat" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechAudioFormat), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechAudioFormat), Is.EqualTo(4));
-        }
-    }
 }

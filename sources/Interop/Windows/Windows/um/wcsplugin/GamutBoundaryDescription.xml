@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GamutBoundaryDescription">
+    <summary>Defines a gamut boundary.</summary>
+  </member>
+  <member name="GamutBoundaryDescription.pPrimaries"></member>
+  <member name="GamutBoundaryDescription.cNeutralSamples">
+    <summary>The number of neutral samples.</summary>
+  </member>
+  <member name="GamutBoundaryDescription.pNeutralSamples"></member>
+  <member name="GamutBoundaryDescription.pReferenceShell"></member>
+  <member name="GamutBoundaryDescription.pPlausibleShell"></member>
+  <member name="GamutBoundaryDescription.pPossibleShell">
+    <summary>
+      <h4>- *pNeutralSamples</h4>
+      <para>A pointer to the neutral samples.</para>
+      <h4>- *pPlausibleShell</h4>
+      <para>A pointer to the plausible shell.</para>
+      <h4>- *pPossibleShell</h4>
+      <para>A pointer to the possible shell.</para>
+      <h4>- *pReferenceShell</h4>
+      <para>A pointer to the reference shell.</para>
+      <h4>- primaries</h4>
+      <para>The primary colors.</para>
+    </summary>
+  </member>
+</doc>

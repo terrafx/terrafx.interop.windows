@@ -19,32 +19,4 @@ public static unsafe partial class IIOCancelInformationTests
     {
         Assert.That(typeof(IIOCancelInformation).GUID, Is.EqualTo(IID_IIOCancelInformation));
     }
-
-    /// <summary>Validates that the <see cref="IIOCancelInformation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IIOCancelInformation>(), Is.EqualTo(sizeof(IIOCancelInformation)));
-    }
-
-    /// <summary>Validates that the <see cref="IIOCancelInformation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IIOCancelInformation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IIOCancelInformation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IIOCancelInformation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IIOCancelInformation), Is.EqualTo(4));
-        }
-    }
 }

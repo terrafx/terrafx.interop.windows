@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR"]/*' />
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
+public partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
 {
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -27,7 +27,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte ThinProvisioningEnabled
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)(_bitfield & 0x1u);
         }
@@ -44,7 +44,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte ThinProvisioningReadZeros
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 1) & 0x1u);
         }
@@ -61,7 +61,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte AnchorSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 2) & 0x7u);
         }
@@ -78,7 +78,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte UnmapGranularityAlignmentValid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 5) & 0x1u);
         }
@@ -95,7 +95,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte GetFreeSpaceSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 6) & 0x1u);
         }
@@ -112,7 +112,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     public byte MapSupported
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (byte)((_bitfield >> 7) & 0x1u);
         }
@@ -126,7 +126,7 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
 
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.Reserved1"]/*' />
     [NativeTypeName("BYTE[7]")]
-    public fixed byte Reserved1[7];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.OptimalUnmapGranularity"]/*' />
     [NativeTypeName("DWORDLONG")]
@@ -143,4 +143,11 @@ public unsafe partial struct DEVICE_LB_PROVISIONING_DESCRIPTOR
     /// <include file='DEVICE_LB_PROVISIONING_DESCRIPTOR.xml' path='doc/member[@name="DEVICE_LB_PROVISIONING_DESCRIPTOR.MaxUnmapBlockDescriptorCount"]/*' />
     [NativeTypeName("DWORD")]
     public uint MaxUnmapBlockDescriptorCount;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(7)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

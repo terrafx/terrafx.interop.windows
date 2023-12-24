@@ -31,7 +31,7 @@ public unsafe partial struct GCP_RESULTSA
 
     /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.lpGlyphs"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpGlyphs;
+    public char* lpGlyphs;
 
     /// <include file='GCP_RESULTSA.xml' path='doc/member[@name="GCP_RESULTSA.nGlyphs"]/*' />
     public uint nGlyphs;

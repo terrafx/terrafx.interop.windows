@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC">
+    <summary>Specifies the encoder levels for High Efficiency Video Coding (HEVC) encoding.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_1">
+    <summary>Level 1.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_2">
+    <summary>Level 2.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_21">
+    <summary>Level 2.1.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_3">
+    <summary>Level 3.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_31">
+    <summary>Level 3.1.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_4">
+    <summary>Level 4.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_41">
+    <summary>Level 4.1.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_5">
+    <summary>Level 5.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_51">
+    <summary>Level 5.1.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_52">
+    <summary>Level 5.2.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_6">
+    <summary>Level 6.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_61">
+    <summary>Level 6.1.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_LEVELS_HEVC.D3D12_VIDEO_ENCODER_LEVELS_HEVC_62">
+    <summary>Level 6.2.</summary>
+  </member>
+</doc>

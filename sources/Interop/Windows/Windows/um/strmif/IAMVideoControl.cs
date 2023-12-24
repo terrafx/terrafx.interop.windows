@@ -25,7 +25,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMVideoControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMVideoControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMVideoControl*, Guid*, void**, int>)(lpVtbl[0]))((IAMVideoControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMVideoControl*, uint>)(lpVtbl[1]))((IAMVideoControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMVideoControl*, uint>)(lpVtbl[1]))((IAMVideoControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMVideoControl*, uint>)(lpVtbl[2]))((IAMVideoControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMVideoControl*, uint>)(lpVtbl[2]))((IAMVideoControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetCaps"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
     [VtblIndex(3)]
     public HRESULT GetCaps(IPin* pPin, [NativeTypeName("long *")] int* pCapsFlags)
     {
-        return ((delegate* unmanaged<IAMVideoControl*, IPin*, int*, int>)(lpVtbl[3]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, pCapsFlags);
+        return ((delegate* unmanaged[MemberFunction]<IAMVideoControl*, IPin*, int*, int>)(lpVtbl[3]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, pCapsFlags);
     }
 
     /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.SetMode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
     [VtblIndex(4)]
     public HRESULT SetMode(IPin* pPin, [NativeTypeName("long")] int Mode)
     {
-        return ((delegate* unmanaged<IAMVideoControl*, IPin*, int, int>)(lpVtbl[4]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, Mode);
+        return ((delegate* unmanaged[MemberFunction]<IAMVideoControl*, IPin*, int, int>)(lpVtbl[4]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, Mode);
     }
 
     /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetMode"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
     [VtblIndex(5)]
     public HRESULT GetMode(IPin* pPin, [NativeTypeName("long *")] int* Mode)
     {
-        return ((delegate* unmanaged<IAMVideoControl*, IPin*, int*, int>)(lpVtbl[5]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, Mode);
+        return ((delegate* unmanaged[MemberFunction]<IAMVideoControl*, IPin*, int*, int>)(lpVtbl[5]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, Mode);
     }
 
     /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetCurrentActualFrameRate"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
     [VtblIndex(6)]
     public HRESULT GetCurrentActualFrameRate(IPin* pPin, [NativeTypeName("LONGLONG *")] long* ActualFrameRate)
     {
-        return ((delegate* unmanaged<IAMVideoControl*, IPin*, long*, int>)(lpVtbl[6]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, ActualFrameRate);
+        return ((delegate* unmanaged[MemberFunction]<IAMVideoControl*, IPin*, long*, int>)(lpVtbl[6]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, ActualFrameRate);
     }
 
     /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetMaxAvailableFrameRate"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
     [VtblIndex(7)]
     public HRESULT GetMaxAvailableFrameRate(IPin* pPin, [NativeTypeName("long")] int iIndex, SIZE Dimensions, [NativeTypeName("LONGLONG *")] long* MaxAvailableFrameRate)
     {
-        return ((delegate* unmanaged<IAMVideoControl*, IPin*, int, SIZE, long*, int>)(lpVtbl[7]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, iIndex, Dimensions, MaxAvailableFrameRate);
+        return ((delegate* unmanaged[MemberFunction]<IAMVideoControl*, IPin*, int, SIZE, long*, int>)(lpVtbl[7]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, iIndex, Dimensions, MaxAvailableFrameRate);
     }
 
     /// <include file='IAMVideoControl.xml' path='doc/member[@name="IAMVideoControl.GetFrameRateList"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
     [VtblIndex(8)]
     public HRESULT GetFrameRateList(IPin* pPin, [NativeTypeName("long")] int iIndex, SIZE Dimensions, [NativeTypeName("long *")] int* ListSize, [NativeTypeName("LONGLONG **")] long** FrameRates)
     {
-        return ((delegate* unmanaged<IAMVideoControl*, IPin*, int, SIZE, int*, long**, int>)(lpVtbl[8]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, iIndex, Dimensions, ListSize, FrameRates);
+        return ((delegate* unmanaged[MemberFunction]<IAMVideoControl*, IPin*, int, SIZE, int*, long**, int>)(lpVtbl[8]))((IAMVideoControl*)Unsafe.AsPointer(ref this), pPin, iIndex, Dimensions, ListSize, FrameRates);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IAMVideoControl : IAMVideoControl.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPin *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, int*, int> GetCaps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, int*, int> GetCaps;
 
         [NativeTypeName("HRESULT (IPin *, long) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, int, int> SetMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, int, int> SetMode;
 
         [NativeTypeName("HRESULT (IPin *, long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, int*, int> GetMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, int*, int> GetMode;
 
         [NativeTypeName("HRESULT (IPin *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, long*, int> GetCurrentActualFrameRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, long*, int> GetCurrentActualFrameRate;
 
         [NativeTypeName("HRESULT (IPin *, long, SIZE, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, int, SIZE, long*, int> GetMaxAvailableFrameRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, int, SIZE, long*, int> GetMaxAvailableFrameRate;
 
         [NativeTypeName("HRESULT (IPin *, long, SIZE, long *, LONGLONG **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPin*, int, SIZE, int*, long**, int> GetFrameRateList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPin*, int, SIZE, int*, long**, int> GetFrameRateList;
     }
 }

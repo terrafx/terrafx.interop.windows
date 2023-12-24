@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SpatialAudioHrtfDistanceDecayType">
-    <summary>
-      <para>Specifies the type of decay applied over distance from the position of an <see cref="ISpatialAudioObjectForHrtf" /> to the position of the listener.</para>
-    </summary>
+    <summary>Specifies the type of decay applied over distance from the position of an <see cref="ISpatialAudioObjectForHrtf" /> to the position of the listener.</summary>
   </member>
   <member name="SpatialAudioHrtfDistanceDecayType.SpatialAudioHrtfDistanceDecay_NaturalDecay">
-    <summary>
-      <para>A natural decay  over distance, as constrained by minimum and maximum gain distance limits. The output drops to silent at the distance specified by <see cref="SpatialAudioHrtfDistanceDecay.CutoffDistance" />.</para>
-    </summary>
+    <summary>A natural decay over distance, as constrained by minimum and maximum gain distance limits. The output drops to silent at the distance specified by <see cref="SpatialAudioHrtfDistanceDecay.CutoffDistance" />.</summary>
   </member>
   <member name="SpatialAudioHrtfDistanceDecayType.SpatialAudioHrtfDistanceDecay_CustomDecay">
-    <summary>
-      <para>A custom gain curve, within the maximum and minimum gain limit.</para>
-    </summary>
+    <summary>A custom gain curve, within the maximum and minimum gain limit.</summary>
   </member>
 </doc>

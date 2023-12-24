@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyDescription.CoerceToCanonicalValue">
-    <summary>
-      <para>Coerces the value to the canonical value, according to the property description.</para>
-    </summary>
-    <param name="ppropvar">
-      <para>Type: <b><see cref="PROPVARIANT" />*</b></para>
-      <para>On entry, contains a pointer to a <see cref="PROPVARIANT" /> structure that contains the original value. When this method returns, contains the canonical value.</para>
-    </param>
+    <summary>Coerces the value to the canonical value, according to the property description.</summary>
+    <param name="ppropvar">On entry, contains a pointer to a <see cref="PROPVARIANT" /> structure that contains the original value. When this method returns, contains the canonical value.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>If the failure code is not INPLACE_S_TRUNCATED or E_INVALIDARG, then coercion from the value's type to the property description's type was not possible, and the <see cref="PROPVARIANT" /> structure has been cleared.</para>
       <para>Possible results include the following:</para>
       <list type="table">
@@ -19,405 +13,194 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The function succeeded. The property value specified by <i>ppropvar</i> is now in a canonical form.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The function succeeded. The property value specified by <i>ppropvar</i> is now in a canonical form.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>INPLACE_S_TRUNCATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The property value specified by <i>ppropvar</i> is now in a truncated, canonical form.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>INPLACE_S_TRUNCATED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The property value specified by <i>ppropvar</i> is now in a truncated, canonical form.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>ppropvar</i> parameter is invalid. The <see cref="PROPVARIANT" /> structure has been cleared.</para>
-          </description>
-        </item>
+          <description>The <i>ppropvar</i> parameter is invalid. The <see cref="PROPVARIANT" /> structure has been cleared.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>For more information, see the <i>type</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-      <para>Most property descriptions specify the type that their values are expected to use.  For example, the property description for <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-title">System.Title</a> specifies that System.Title values should use <code>VT_LPWSTR</code>. This method coerces values to this type, and coerces the result into a canonical form.</para>
-      <para>It is important to note that if this method fails, it will have already called the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/oe/oe-imimeallocator-propvariantclear">PropVariantClear</a> on the input <see cref="PROPVARIANT" /> structure. Only if this method succeeds is the calling application responsible for calling the <b>PropVariantClear</b> on <i>ppropvar</i> when the structure is no longer needed.</para>
-      <para>The coercion performed by this method is also performed by the property system during  <see cref="IPropertyStore.GetValue" />  and <see cref="IPropertyStore.SetValue" /> calls. Applications may depend on the property system to perform the coercions, or may use this method to perform the coercion at a time of the application's choosing.</para>
-      <para>The coercion is performed in four steps, as follows:</para>
-      <list type="number">
-        <item>
-          <description>The following values are converted to <code>VT_EMPTY</code>.
-<list type="bullet"><item><description>Values of type <code>VT_NULL</code>.</description></item><item><description>Values of type <code>VT_LPWSTR, VT_BSTR</code>, or <code>VT_LPSTR</code> whose pointer is <b>NULL</b>.</description></item><item><description>Values of type <code>VT_LPWSTR, VT_BSTR</code>, or <code>VT_LPSTR</code> that are empty or consist entirely of spaces.</description></item><item><description>Values of type <code>VT_FILETIME</code> prior to midnight 1601/01/02.</description></item></list></description>
-        </item>
-        <item>
-          <description>If the value is not of type <code>VT_EMPTY</code> after Step 1, it is converted to the type specified by the property description.  The type of a property description can be obtained using <see cref="IPropertyDescription.GetPropertyType" />. See <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> for information about how the property schema influences the type of a property description. Conversions are performed as follows:
-<list type="bullet"><item><description>Values of type <code>VT_LPWSTR, VT_BSTR</code>, or <code>VT_LPSTR</code> are converted to <code>VT_VECTOR | VT_LPWSTR</code> using <see cref="InitPropVariantFromStringAsVector" />.</description></item><item><description>All other conversions are performed using <see cref="PropVariantChangeType" /></description></item></list></description>
-        </item>
-        <item>
-          <description>After Steps 2 and 3, the value is coerced into a canonical form based on its type. The canonical forms are summarized in the following table.
-<list type="table"><listheader><description>Value Type</description><description>Canonical Form</description></listheader><item><description><code>VT_EMPTY</code></description><description>Always canonical.</description></item><item><description><code>VT_LPWSTR</code></description><description><list type="bullet"><item><description>No leading or trailing spaces. The string is non-empty. The string is non-<b>NULL</b>. For example, <code>L"Alice"</code>.</description></item><item><description>If this is a tree property (that is, if the typeInfo element's <code>isTreeProperty</code> attribute is <b>TRUE</b>), then it must not have leading or trailing forward slashes (/), must not have spaces between the text and the forward slashes, and must not have two consecutive forward slashes(/). For example, <code>L"Friend/Bob"</code></description></item><item><description>Coercion removes unnecessary characters and will result in <code>VT_EMPTY</code> if there was no content.</description></item></list></description></item><item><description><code>VT_VECTOR | VT_LPWSTR</code></description><description><list type="bullet"><item><description>Each string in the vector must adhere to the rules for <code>VT_LPWSTR</code> listed above. In addition, the vector must have no duplicates and have no null pointers.</description></item><item><description>If this is a tree property, then no value can be the ancestor of another value. For example, <code>L"Friend"</code> is an ancestor of L"Friend/Bob".</description></item><item><description>If there is no content, coercion removes duplicate and ancestor characters and will result in <code>VT_EMPTY</code>.</description></item></list></description></item></list></description>
-        </item>
-        <item>
-          <description>If applicable, the value is checked against the property description type enumeration.  The following checks apply.
-<list type="table"><listheader><description>Enumeration Type</description><description>Value Type</description><description>Canonical Form</description></listheader><item><description>Discrete or Ranged</description><description><code>VT_EMPTY</code></description><description>Always canonical</description></item><item><description>Discrete</description><description><code>VT_LPWSTR</code></description><description>The string matches one of the enumerated strings allowed for the property. Comparisons are case-insensitive. If not, convert the value to <code>VT_EMPTY</code>.</description></item><item><description>Discrete</description><description>Numeric</description><description>The number matches one of the enumerated values allowed for the property. If not, convert the value to <code>VT_EMPTY</code>.</description></item><item><description>Discrete</description><description><code>VT_VECTOR | VT_LPWSTR</code></description><description>Each string in the vector matches one of the enumerated strings allowed for the property. Comparisons are case-insensitive. If not, remove that string from the vector. If the resulting vector is empty, convert the value to <code>VT_EMPTY</code>.</description></item><item><description>Discrete</description><description><code>VT_VECTOR |</code> Numeric</description><description>Each number in the vector matches one of the enumerated values allowed for the property. If not, remove that number from the vector. If the resulting vector is empty, convert the value to <code>VT_EMPTY</code>.</description></item><item><description>Ranged</description><description><code>VT_LPWSTR</code></description><description>The string exists in the range allowed for the property. Comparisons are case-sensitive. If not, convert the value to <code>VT_EMPTY</code>.</description></item><item><description>Ranged</description><description>Numeric</description><description>The number exists in the range allowed for the property. If not, convert the value to VT_EMPTY.</description></item><item><description>Ranged</description><description><code>VT_VECTOR | VT_LPWSTR</code></description><description>Each string in the vector exists in the range allowed for the property.  Comparisons are case-sensitive. If not, remove that string from the vector. If the resulting vector is empty, convert the value to <code>VT_EMPTY</code>.</description></item><item><description>Ranged</description><description><code>VT_VECTOR</code> | Numeric</description><description>Each number in the vector exists in the range allowed for the property. If not, remove that number from the vector. If the resulting vector is empty, convert the value to VT_EMPTY.</description></item></list></description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
   </member>
   <member name="IPropertyDescription.FormatForDisplay">
-    <summary>
-      <para>Gets a formatted, Unicode string representation of a property value.</para>
-    </summary>
-    <param name="propvar">
-      <para>Type: <b>REFPROPVARIANT</b></para>
-      <para>A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</para>
-    </param>
-    <param name="pdfFlags">
-      <para>Type: <b><see cref="PROPDESC_FORMAT_FLAGS" /></b></para>
-      <para>One or more of the <see cref="PROPDESC_FORMAT_FLAGS" /> flags, which are either bitwise or multiple values, that indicate the property string format.</para>
-    </param>
+    <summary>Gets a formatted, Unicode string representation of a property value.</summary>
+    <param name="propvar">A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</param>
+    <param name="pdfFlags">One or more of the <see cref="PROPDESC_FORMAT_FLAGS" /> flags, which are either bitwise or multiple values, that indicate the property string format.</param>
     <param name="ppszDisplay">
-      <para>Type: <b>LPWSTR*</b></para>
       <para>The address of a pointer to a null-terminated Unicode string that contains the display text.</para>
       <h4>- cchText [out]</h4>
-      <para>Type: <b>DWORD</b></para>
       <para>The length of the buffer at <i>pszText</i> in WCHARS, including the terminating <b>NULL</b>. The maximum size is 0x8000 (32K).</para>
       <h4>- key [in]</h4>
-      <para>Type: <b>REFPROPERTYKEY</b></para>
       <para>A reference to the requested property key, which identifies a property. See <see cref="PROPERTYKEY" />.</para>
       <h4>- pszText [out]</h4>
-      <para>Type: <b>LPWSTR*</b></para>
       <para>When this method returns, contains the formatted value as a <b>null</b>-terminated, Unicode string. The calling application must allocate memory for the buffer, and use <see cref="CoTaskMemFree" /> to release the string specified by <i>pszText</i> when it is no longer needed.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The string was copied and <b>null</b>-terminated without truncation. This string may be returned empty due to an empty input string or from a non-empty value that was formatted as an empty string.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The string was copied and <b>null</b>-terminated without truncation. This string may be returned empty due to an empty input string or from a non-empty value that was formatted as an empty string.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The empty string resulted from a VT_EMPTY.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>pszText</i> parameter is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The empty string resulted from a VT_EMPTY.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The <i>pszText</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_INSUFFICIENT_BUFFER</b>
-            </para>
-          </description>
-          <description>
-            <para>The copy operation failed due to insufficient space. The destination buffer is modified to contain a truncated version of the ideal result and is <b>null</b>-terminated.</para>
-          </description>
-        </item>
+          <description>The copy operation failed due to insufficient space. The destination buffer is modified to contain a truncated version of the ideal result and is <b>null</b>-terminated.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You must initialize Component Object Model (COM) with <see cref="CoInitialize" /> or <see cref="OleInitialize" /> before calling <see cref="IPropertyDescription.FormatForDisplay" />.</para>
-      <para>On success, this method gets a formatted Unicode string representation of a property value for a specified <see cref="PROPERTYKEY" />, and one or more <see cref="PROPDESC_FORMAT_FLAGS" />.</para>
-      <para>The purpose of this method is to convert data into a string suitable for display to the user. The value is formatted according to the current locale, the language of the user, the <see cref="PROPDESC_FORMAT_FLAGS" />, and the property description specified by the property key. For information about how the property description schema influences the formatting of the value, see <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a>, <a href="https://docs.microsoft.com//windows/desktop/api/gdiplusstringformat/nl-gdiplusstringformat-stringformat">stringFormat</a>, <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-booleanformat">booleanFormat</a>, <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-numberformat">numberFormat</a>, <see cref="NMDATETIMEFORMAT" />,  and <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-enumeratedlist">enumeratedList</a>. Typically, the <b>PROPDESC_FORMAT_FLAGS</b> are used to modify the format prescribed by the property description.</para>
-      <para>The output string can contain Unicode directional characters. These nonspacing characters influence the Unicode bidirectional algorithm so that the values appear correctly when a left-to-right (LTR) language is drawn onto a right-to-left (RTL) window, and vice versa. These characters include the following: <code>"\x200e", "\x200f", "\x202a", "\x202b", "\x202c", "\x202d", "\x202e".</code></para>
-      <para>The following properties use special formats and are unaffected by the <see cref="PROPDESC_FORMAT_FLAGS" /> (examples cited are for strings with a current locale set to English; typically, output is localized except where noted).</para>
-      <list type="table">
-        <listheader>
-          <description>Property</description>
-          <description>Format</description>
-        </listheader>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-fileattributes">System.FileAttributes</a>
-          </description>
-          <description>The following file attributes are converted to letters and appended to create a string (for example, a value of 0x1801 (FILE_ATTRIBUTE_READONLY | FILE_ATTRIBUTE_COMPRESSED | FILE_ATTRIBUTE_OFFLINE) is converted to "RCO"):
-<list type="bullet"><item><description>FILE_ATTRIBUTE_READONLY (0x00000001) - 'R'</description></item><item><description>FILE_ATTRIBUTE_SYSTEM (0x00000004) - 'S'</description></item><item><description>FILE_ATTRIBUTE_ARCHIVE (0x00000020) -'A'</description></item><item><description>FILE_ATTRIBUTE_COMPRESSED (0x00000800) - 'C'</description></item><item><description>FILE_ATTRIBUTE_ENCRYPTED (0x00004000) - 'E'</description></item><item><description>FILE_ATTRIBUTE_OFFLINE (0x00001000) - 'O'</description></item><item><description>FILE_ATTRIBUTE_NOT_CONTENT_INDEXED (0x00002000) - 'I'</description></item></list></description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-isospeed">System.Photo.ISOSpeed</a>
-          </description>
-          <description>For example, "ISO-400".</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-shutterspeed">System.Photo.ShutterSpeed</a>
-          </description>
-          <description>
-            <para>The APEX value is converted to an exposure time using this formula:</para>
-            <para>
-              <code>Exposure_time = 2^(-APEX_value)</code>
-            </para>
-            <para>For example, "2 sec."or "1/125 sec.".</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-exposuretime">System.Photo.ExposureTime</a>
-          </description>
-          <description>For example,  "2 sec."or "1/125 sec." </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-aperture">System.Photo.Aperture</a>
-          </description>
-          <description>
-            <para>The APEX value is converted to an F number using this formula:</para>
-            <para>
-              <code>F_Number = 2^(APEX_Value / 2)</code>
-            </para>
-            <para>For example, "f/5.6".</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-fnumber">System.Photo.FNumber</a>
-          </description>
-          <description>For example,  "f/5.6".</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-subjectdistance">System.Photo.SubjectDistance</a>
-          </description>
-          <description>For example, "15 m"or "250 mm".</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-focallength">System.Photo.FocalLength</a>
-          </description>
-          <description>For example,  "50 mm".</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-flashenergy">System.Photo.FlashEnergy</a>
-          </description>
-          <description>For example,  "500 bpcs".</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-exposurebias">System.Photo.ExposureBias</a>
-          </description>
-          <description>For example, "-2 step", " 0 step", or "+3 step".</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-computer-decoratedfreespace">System.Computer.DecoratedFreeSpace</a>
-          </description>
-          <description>For example, "105 MB free of 13.2 GB".</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-itemtype">System.ItemType</a>
-          </description>
-          <description>For example, "Application" or "JPEG Image".</description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-computername">System.ComputerName</a>
-          </description>
-          <description>For example, "LITWARE05 (this computer)" or "testbox07".</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
   </member>
   <member name="IPropertyDescription.GetAggregationType">
-    <summary>
-      <para>Gets a value that describes how the property values are displayed when multiple items are selected in the UI.</para>
-    </summary>
-    <param name="paggtype">
-      <para>Type: <b><see cref="PROPDESC_AGGREGATION_TYPE" />*</b></para>
-      <para>When this method returns, contains a pointer to a value that indicates the aggregation type. See <see cref="PROPDESC_AGGREGATION_TYPE" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The information retrieved by this method comes from the <i>aggregationType</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets a value that describes how the property values are displayed when multiple items are selected in the UI.</summary>
+    <param name="paggtype">When this method returns, contains a pointer to a value that indicates the aggregation type. See <see cref="PROPDESC_AGGREGATION_TYPE" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.GetCanonicalName">
-    <summary>
-      <para>Gets the case-sensitive name by which a property is known to the system, regardless of its localized name.</para>
-    </summary>
-    <param name="ppszName">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to the property's canonical name as a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The information retrieved by this method comes from the <i>name</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-propertydescription">propertyDescription</a> element in the property's .propdesc file.</para>
-      <para>It is the responsibility of the calling application to use <see cref="CoTaskMemFree" /> to release the string referred to by <i>ppszName</i> when it is no longer needed.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets the case-sensitive name by which a property is known to the system, regardless of its localized name.</summary>
+    <param name="ppszName">When this method returns, contains the address of a pointer to the property's canonical name as a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.GetColumnState">
-    <summary>
-      <para>Gets the column state flag, which describes how the property should be treated by interfaces or APIs that use this flag.</para>
-    </summary>
-    <param name="pcsFlags">
-      <para>Type: <b>SHCOLSTATEF</b></para>
-      <para>When this method returns, contains a pointer to the column state flag. See <see cref="SHCOLSTATE" /> for valid values.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>The value retrieved by this method is originally set through the <i>displayType</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets the column state flag, which describes how the property should be treated by interfaces or APIs that use this flag.</summary>
+    <param name="pcsFlags">When this method returns, contains a pointer to the column state flag. See <see cref="SHCOLSTATE" /> for valid values.</param>
+    <returns>Always returns <b>S_OK</b>.</returns>
   </member>
   <member name="IPropertyDescription.GetConditionType">
-    <summary>
-      <para>Gets the condition type and default condition operation to use when displaying the property in the query builder UI. This influences the list of predicate conditions (for example, equals, less than, and contains) that are shown for this property.</para>
-    </summary>
-    <param name="pcontype">
-      <para>Type: <b><see cref="PROPDESC_CONDITION_TYPE" />*</b></para>
-      <para>A pointer to a value that indicates the condition type.</para>
-    </param>
-    <param name="popDefault">
-      <para>Type: <b><see cref="CONDITION_OPERATION" />*</b></para>
-      <para>When this method returns, contains a pointer to a value that indicates the default condition operation.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>For more information, see the <i>conditionType</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets the condition type and default condition operation to use when displaying the property in the query builder UI. This influences the list of predicate conditions (for example, equals, less than, and contains) that are shown for this property.</summary>
+    <param name="pcontype">A pointer to a value that indicates the condition type.</param>
+    <param name="popDefault">When this method returns, contains a pointer to a value that indicates the default condition operation.</param>
+    <returns>Always returns <b>S_OK</b>.</returns>
   </member>
   <member name="IPropertyDescription.GetDefaultColumnWidth">
-    <summary>
-      <para>Gets the default column width of the property in a list view.</para>
-    </summary>
-    <param name="pcxChars">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to the column width value, in characters.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>The values retrieved by this method are originally set through the <i>defaultColumnWidth</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a> element in the property's .propdesc file.</para>
-      <para>If no value is set in the .propdesc file or if the method fails, the value pointed to by <i>pcxChars</i> is 20 characters.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets the default column width of the property in a list view.</summary>
+    <param name="pcxChars">A pointer to the column width value, in characters.</param>
+    <returns>Always returns <b>S_OK</b>.</returns>
   </member>
   <member name="IPropertyDescription.GetDisplayName">
-    <summary>
-      <para>Gets the display name of the property as it is shown in any UI.</para>
-    </summary>
-    <param name="ppszName">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>Contains the address of a pointer to the property's name as a null-terminated Unicode string.</para>
-    </param>
+    <summary>Gets the display name of the property as it is shown in any UI.</summary>
+    <param name="ppszName">Contains the address of a pointer to the property's name as a null-terminated Unicode string.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Display name is obtained.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Display name is obtained.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>ppszDisplayName</i> parameter is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>ppszDisplayName</i> parameter is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Memory allocation failed.</para>
-          </description>
-        </item>
+          <description>Memory allocation failed.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The information retrieved by this method comes from the <i>singularLabel</i> and <i>pluralLabel</i> attributes of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-labelinfo">labelInfo</a> element in the property's .propdesc file.</para>
-      <para>It is the responsibility of the calling application to use <see cref="CoTaskMemFree" /> to release the string referred to by <i>ppszDisplayName</i> when it is no longer needed.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
   </member>
   <member name="IPropertyDescription.GetDisplayType">
-    <summary>
-      <para>Gets the current data type used to display the property.</para>
-    </summary>
+    <summary>Gets the current data type used to display the property.</summary>
     <param name="pdisplaytype">
-      <para>Type: <b>PROPDESC_DISPLAYTYPE*</b></para>
       <para>Contains a pointer to a value that indicates the display type. One of the following values.</para>
       <h4>PDDT_STRING (0x00000000) (0)</h4>
       <para>The value is displayed as a string.</para>
@@ -428,61 +211,24 @@
       <h4>PDDT_DATETIME (0x00000003) (3)</h4>
       <para>The value is displayed as date and time.</para>
       <h4>PDDT_ENUMERATED (0x00000004) (4)</h4>
-      <para>The value is displayed as an enumerated type-list.
-Use <see cref="IPropertyDescription.GetEnumTypeList" /> to handle this type.</para>
+      <para>The value is displayed as an enumerated type-list. Use <see cref="IPropertyDescription.GetEnumTypeList" /> to handle this type.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>The value retrieved by this method is originally set through the <i>displayType</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <returns>Always returns <b>S_OK</b>.</returns>
   </member>
   <member name="IPropertyDescription.GetEditInvitation">
-    <summary>
-      <para>Gets the text used in edit controls hosted in various dialog boxes.</para>
-    </summary>
-    <param name="ppszInvite">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to a null-terminated Unicode buffer that holds the invitation text.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The information retrieved by this method comes from the <i>invitationText</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-labelinfo">labelInfo</a> element in the property's .propdesc file.</para>
-      <para>It is the responsibility of the calling application to use <see cref="CoTaskMemFree" /> to release the string referred to by <i>pszInvite</i> when it is no longer needed.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets the text used in edit controls hosted in various dialog boxes.</summary>
+    <param name="ppszInvite">When this method returns, contains the address of a pointer to a null-terminated Unicode buffer that holds the invitation text.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.GetEnumTypeList">
-    <summary>
-      <para>Gets an instance of an <see cref="IPropertyEnumTypeList" />, which can be used to enumerate the possible values for a property.</para>
-    </summary>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the interface to retrieve through ppv, typically IID_IShellItem.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns successfully, contains the interface pointer requested in riid. This is typically <see cref="IPropertyEnumTypeList" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets an instance of an <see cref="IPropertyEnumTypeList" />, which can be used to enumerate the possible values for a property.</summary>
+    <param name="riid">A reference to the IID of the interface to retrieve through ppv, typically IID_IShellItem.</param>
+    <param name="ppv">When this method returns successfully, contains the interface pointer requested in riid. This is typically <see cref="IPropertyEnumTypeList" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.GetGroupingRange">
-    <summary>
-      <para>Gets the grouping method to be used when a view is grouped by a property, and retrieves the grouping type.</para>
-    </summary>
+    <summary>Gets the grouping method to be used when a view is grouped by a property, and retrieves the grouping type.</summary>
     <param name="pgr">
-      <para>Type: <b>PROPDESC_GROUPING_RANGE*</b></para>
       <para>Receives a pointer to a flag value that indicates the grouping type. The possible values are:</para>
       <h4>PDGR_DISCRETE</h4>
       <para>Displays individual values.</para>
@@ -499,40 +245,16 @@ Use <see cref="IPropertyDescription.GetEnumTypeList" /> to handle this type.</pa
       <h4>PDGR_ENUMERATED</h4>
       <para>Displays percent groups returned by <see cref="IPropertyDescription.GetEnumTypeList" />.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The information retrieved by this method comes from the <i>groupingRange</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.GetPropertyKey">
-    <summary>
-      <para>Gets a structure that acts as a property's unique identifier.</para>
-    </summary>
-    <param name="pkey">
-      <para>Type: <b><see cref="PROPERTYKEY" />*</b></para>
-      <para>When this method returns, contains a pointer to a <see cref="PROPERTYKEY" /> structure.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The information retrieved by this method comes from the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-propertydescription">propertyDescription</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets a structure that acts as a property's unique identifier.</summary>
+    <param name="pkey">When this method returns, contains a pointer to a <see cref="PROPERTYKEY" /> structure.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.GetPropertyType">
-    <summary>
-      <para>Gets the variant type of the property.</para>
-    </summary>
+    <summary>Gets the variant type of the property.</summary>
     <param name="pvartype">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a>*</b></para>
       <para>When this method returns, contains a pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> that indicates the property type. If the property is multi-valued, the value pointed to is a <b>VT_VECTOR</b> mask (<b>VT_VECTOR</b> ORed to the <b>VARTYPE</b>. The following are the possible variant types.</para>
       <h4>VT_NULL</h4>
       <para>Value can be any type. No coercion is performed. If a type cannot be retrieved, this method retrieves a default value of VT_NULL.</para>
@@ -568,71 +290,24 @@ Use <see cref="IPropertyDescription.GetEnumTypeList" /> to handle this type.</pa
       <h4>VT_STREAM</h4>
       <para>Object that implements <see cref="IStream" /></para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>This method always returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>The information retrieved by this method comes from the <i>type</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <returns>This method always returns <b>S_OK</b>.</returns>
   </member>
   <member name="IPropertyDescription.GetRelativeDescription">
-    <summary>
-      <para>Compares two property values in the manner specified by the property description. Returns two display strings that describe how the two properties compare.</para>
-    </summary>
-    <param name="propvar1">
-      <para>Type: <b>REFPROPVARIANT</b></para>
-      <para>A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the first property.</para>
-    </param>
-    <param name="propvar2">
-      <para>Type: <b>REFPROPVARIANT</b></para>
-      <para>A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the second property.</para>
-    </param>
-    <param name="ppszDesc1">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to the description string that compares the first property with the second property. The string is null-terminated.</para>
-    </param>
-    <param name="ppszDesc2">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to the description string that compares the second property with the first property. The string is null-terminated.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is influenced by the <i>relativeDescriptionType</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a> element in the property's .propdesc file.</para>
-      <para>It is the responsibility of the calling application to release <i>ppszDesc1</i> and <i>ppszDesc2</i> through <see cref="CoTaskMemFree" /> when they are no longer needed.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Compares two property values in the manner specified by the property description. Returns two display strings that describe how the two properties compare.</summary>
+    <param name="propvar1">A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the first property.</param>
+    <param name="propvar2">A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the second property.</param>
+    <param name="ppszDesc1">When this method returns, contains the address of a pointer to the description string that compares the first property with the second property. The string is null-terminated.</param>
+    <param name="ppszDesc2">When this method returns, contains the address of a pointer to the description string that compares the second property with the first property. The string is null-terminated.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.GetRelativeDescriptionType">
-    <summary>
-      <para>Gets the relative description type for a property description.</para>
-    </summary>
-    <param name="prdt">
-      <para>Type: <b><see cref="PROPDESC_RELATIVEDESCRIPTION_TYPE" />*</b></para>
-      <para>When this method returns, contains a pointer to the relative description type value. See <see cref="PROPDESC_RELATIVEDESCRIPTION_TYPE" /> for valid values.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>The information retrieved by this method comes from the <i>relativeDescriptionType</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-displayinfo">displayInfo</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets the relative description type for a property description.</summary>
+    <param name="prdt">When this method returns, contains a pointer to the relative description type value. See <see cref="PROPDESC_RELATIVEDESCRIPTION_TYPE" /> for valid values.</param>
+    <returns>Always returns <b>S_OK</b>.</returns>
   </member>
   <member name="IPropertyDescription.GetSortDescription">
-    <summary>
-      <para>Gets the current sort description flags for the property, which indicate the particular wordings of sort offerings.</para>
-    </summary>
+    <summary>Gets the current sort description flags for the property, which indicate the particular wordings of sort offerings.</summary>
     <param name="psd">
-      <para>Type: <b>PROPDESC_SORTDESCRIPTION*</b></para>
       <para>When this method returns, contains a pointer to the value of one or more of the following flags that indicate the sort types available to the user. Note that the strings shown are English versions only. Localized strings are used for other locales.</para>
       <h4>PDSD_GENERAL</h4>
       <para>Default. "Sort going up", "Sort going down"</para>
@@ -645,128 +320,64 @@ Use <see cref="IPropertyDescription.GetEnumTypeList" /> to handle this type.</pa
       <h4>PDSD_OLDEST_NEWEST</h4>
       <para>"Oldest on top", "Newest on top"</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The settings retrieved by this method are set through the <i>sortDescription</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-labelinfo">labelInfo</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.GetSortDescriptionLabel">
-    <summary>
-      <para>Gets the localized display string that describes the current sort order.</para>
-    </summary>
+    <summary>Gets the localized display string that describes the current sort order.</summary>
     <param name="fDescending">
-      <para>Type: <b>BOOL*</b></para>
-      <para>
-        <b>TRUE</b> if <i>ppszDescription</i> should reference the string "Z on top"; <b>FALSE</b> to reference the string "A on top".</para>
-    </param>
-    <param name="ppszDescription">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains the address of a pointer to the sort description as a null-terminated Unicode string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The string retrieved by this method is determined by flags set in the <i>sortDescription</i> attribute of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-labelinfo">labelInfo</a> element in the property's .propdesc file.</para>
-      <para>It is the responsibility of the calling application to release <i>ppszDescription</i> when it is no longer needed.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+      <b>TRUE</b> if <i>ppszDescription</i> should reference the string "Z on top"; <b>FALSE</b> to reference the string "A on top".</param>
+    <param name="ppszDescription">When this method returns, contains the address of a pointer to the sort description as a null-terminated Unicode string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.GetTypeFlags">
-    <summary>
-      <para>Gets a set of flags that describe the uses and capabilities of the property.</para>
-    </summary>
-    <param name="mask">
-      <para>Type: <b><see cref="PROPDESC_TYPE_FLAGS" /></b></para>
-      <para>A mask that specifies which type flags to retrieve. A combination of values found in the <see cref="PROPDESC_TYPE_FLAGS" /> constants. To retrieve all type flags, pass <see cref="PDTF_MASK_ALL" /></para>
-    </param>
-    <param name="ppdtFlags">
-      <para>Type: <b><see cref="PROPDESC_TYPE_FLAGS" />*</b></para>
-      <para>When this method returns, contains a pointer to a value that consists of bitwise <see cref="PROPDESC_TYPE_FLAGS" /> values.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>If the property description instance comes from <see cref="PSGetPropertyDescription" /> or <see cref="PSGetPropertyDescriptionByName" />, these flags come from the .propdesc file that defines the property description.</para>
-      <para>If the instance comes from <see cref="GetAt" />, the type flags come from the .propdesc file and may be influenced by the specific proplist. This means that flags obtained from one property description instance may be slightly different from another instance (both referring to the same property).</para>
-      <para>For additional information on type flags, see the <i>canGroupBy</i>, <i>canStackBy</i>, <i>isInnate</i>, <i>multipleValues</i>, <i>isGroup</i>, <i>isTreeProperty</i>, <i>isViewable</i>, <i>isQueryable</i>, and <i>includeInFullTextQuery</i> attributes of the <a href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-typeinfo">typeInfo</a> element in the property's .propdesc file.</para>
-    </remarks>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets a set of flags that describe the uses and capabilities of the property.</summary>
+    <param name="mask">A mask that specifies which type flags to retrieve. A combination of values found in the <see cref="PROPDESC_TYPE_FLAGS" /> constants. To retrieve all type flags, pass <see cref="PDTF_MASK_ALL" /></param>
+    <param name="ppdtFlags">When this method returns, contains a pointer to a value that consists of bitwise <see cref="PROPDESC_TYPE_FLAGS" /> values.</param>
+    <returns>Always returns <b>S_OK</b>.</returns>
   </member>
   <member name="IPropertyDescription.GetViewFlags">
-    <summary>
-      <para>Gets the current set of flags governing the property's view.</para>
-    </summary>
-    <param name="ppdvFlags">
-      <para>Type: <b><see cref="PROPDESC_VIEW_FLAGS" />*</b></para>
-      <para>When this method returns, contains a pointer to a value that includes one or more of the following flags. See <see cref="PROPDESC_VIEW_FLAGS" /> for valid values.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IPropertyDescription" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Gets the current set of flags governing the property's view.</summary>
+    <param name="ppdvFlags">When this method returns, contains a pointer to a value that includes one or more of the following flags. See <see cref="PROPDESC_VIEW_FLAGS" /> for valid values.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyDescription.IsValueCanonical">
-    <summary>
-      <para>Gets a value that indicates whether a property is canonical according to the definition of the property description.</para>
-    </summary>
-    <param name="propvar">
-      <para>Type: <b>REFPROPVARIANT</b></para>
-      <para>A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</para>
-    </param>
+    <summary>Gets a value that indicates whether a property is canonical according to the definition of the property description.</summary>
+    <param name="propvar">A reference to a <see cref="PROPVARIANT" /> structure that contains the type and value of the property.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The value is canonical.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The value is canonical.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
-          </description>
-          <description>
-            <para>The value is not canonical.</para>
-          </description>
-        </item>
+          <description>The value is not canonical.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="IPropertyDescription">
-    <summary>
-      <para>Exposes methods that enumerate and retrieve individual property description details.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>Do not implement this interface. There is only one implementation of <see cref="IPropertyDescription" /> in the system; it is provided by the Shell.</para>
-      <para>To obtain this interface, call <see cref="PSGetPropertyDescription" />, <see cref="PSGetPropertyDescriptionByName" />, or <see cref="IPropertyDescriptionList.GetAt" />.</para>
-      <para>Only one property description exists for each property in the system.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/properties/propdesc-schema-entry">Property Description Schema</seealso>
+    <summary>Exposes methods that enumerate and retrieve individual property description details.</summary>
   </member>
 </doc>

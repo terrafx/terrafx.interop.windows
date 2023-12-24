@@ -3,15 +3,13 @@
 // Ported from um/immdev.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT"]/*' />
-public unsafe partial struct INPUTCONTEXT
+public partial struct INPUTCONTEXT
 {
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.hWnd"]/*' />
     public HWND hWnd;
@@ -34,7 +32,7 @@ public unsafe partial struct INPUTCONTEXT
     public uint fdwSentence;
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.lfFont"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/immdev.h:873:5)")]
+    [NativeTypeName("__AnonymousRecord_immdev_L873_C5")]
     public _lfFont_e__Union lfFont;
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.cfCompForm"]/*' />
@@ -69,7 +67,7 @@ public unsafe partial struct INPUTCONTEXT
 
     /// <include file='INPUTCONTEXT.xml' path='doc/member[@name="INPUTCONTEXT.dwReserve"]/*' />
     [NativeTypeName("DWORD[3]")]
-    public fixed uint dwReserve[3];
+    public _dwReserve_e__FixedBuffer dwReserve;
 
     /// <include file='_lfFont_e__Union.xml' path='doc/member[@name="_lfFont_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
@@ -85,25 +83,16 @@ public unsafe partial struct INPUTCONTEXT
     }
 
     /// <include file='_cfCandForm_e__FixedBuffer.xml' path='doc/member[@name="_cfCandForm_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
     public partial struct _cfCandForm_e__FixedBuffer
     {
         public CANDIDATEFORM e0;
-        public CANDIDATEFORM e1;
-        public CANDIDATEFORM e2;
-        public CANDIDATEFORM e3;
+    }
 
-        [UnscopedRef]
-        public ref CANDIDATEFORM this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<CANDIDATEFORM> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 4);
+    /// <include file='_dwReserve_e__FixedBuffer.xml' path='doc/member[@name="_dwReserve_e__FixedBuffer"]/*' />
+    [InlineArray(3)]
+    public partial struct _dwReserve_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

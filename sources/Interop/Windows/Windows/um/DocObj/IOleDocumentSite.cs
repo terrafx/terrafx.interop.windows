@@ -25,7 +25,7 @@ public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IOleDocumentSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocumentSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentSite*, Guid*, void**, int>)(lpVtbl[0]))((IOleDocumentSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IOleDocumentSite*, uint>)(lpVtbl[1]))((IOleDocumentSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentSite*, uint>)(lpVtbl[1]))((IOleDocumentSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IOleDocumentSite*, uint>)(lpVtbl[2]))((IOleDocumentSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentSite*, uint>)(lpVtbl[2]))((IOleDocumentSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IOleDocumentSite.xml' path='doc/member[@name="IOleDocumentSite.ActivateMe"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface, INat
     [VtblIndex(3)]
     public HRESULT ActivateMe(IOleDocumentView* pViewToActivate)
     {
-        return ((delegate* unmanaged<IOleDocumentSite*, IOleDocumentView*, int>)(lpVtbl[3]))((IOleDocumentSite*)Unsafe.AsPointer(ref this), pViewToActivate);
+        return ((delegate* unmanaged[MemberFunction]<IOleDocumentSite*, IOleDocumentView*, int>)(lpVtbl[3]))((IOleDocumentSite*)Unsafe.AsPointer(ref this), pViewToActivate);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IOleDocumentSite : IOleDocumentSite.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IOleDocumentView *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleDocumentView*, int> ActivateMe;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleDocumentView*, int> ActivateMe;
     }
 }

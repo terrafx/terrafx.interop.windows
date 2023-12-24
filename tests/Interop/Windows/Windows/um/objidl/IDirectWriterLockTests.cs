@@ -19,32 +19,4 @@ public static unsafe partial class IDirectWriterLockTests
     {
         Assert.That(typeof(IDirectWriterLock).GUID, Is.EqualTo(IID_IDirectWriterLock));
     }
-
-    /// <summary>Validates that the <see cref="IDirectWriterLock" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDirectWriterLock>(), Is.EqualTo(sizeof(IDirectWriterLock)));
-    }
-
-    /// <summary>Validates that the <see cref="IDirectWriterLock" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDirectWriterLock).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDirectWriterLock" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDirectWriterLock), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDirectWriterLock), Is.EqualTo(4));
-        }
-    }
 }

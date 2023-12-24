@@ -21,32 +21,4 @@ public static unsafe partial class IMFTimedTextTrackTests
     {
         Assert.That(typeof(IMFTimedTextTrack).GUID, Is.EqualTo(IID_IMFTimedTextTrack));
     }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextTrack" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFTimedTextTrack>(), Is.EqualTo(sizeof(IMFTimedTextTrack)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextTrack" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFTimedTextTrack).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFTimedTextTrack" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFTimedTextTrack), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFTimedTextTrack), Is.EqualTo(4));
-        }
-    }
 }

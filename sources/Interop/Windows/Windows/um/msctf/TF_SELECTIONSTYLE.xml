@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_SELECTIONSTYLE">
-    <summary>
-      <para>The <b>TF_SELECTIONSTYLE</b> structure represents the style of a selection.</para>
-    </summary>
-    <remarks>
-      <para>An interim character selection spans exactly one character and is visually represented as a solid rectangle that is usually flashing. This is a standard UI element of Korean and some Chinese character compositions. <b>fInterimChar</b> is an indication that a specific character is composed. <b>fInterimChar</b> can only be nonzero for a single selection. In this case, there will be no caret because the highlight replaces it.</para>
-    </remarks>
-    <seealso cref="TF_SELECTION " />
-    <seealso cref="TfActiveSelEnd " />
+    <summary>The <b>TF_SELECTIONSTYLE</b> structure represents the style of a selection.</summary>
   </member>
   <member name="TF_SELECTIONSTYLE.ase">
-    <summary>
-      <para>Specifies the active end of the selection. For more information, see <see cref="TfActiveSelEnd" />.</para>
-    </summary>
+    <summary>Specifies the active end of the selection. For more information, see <see cref="TfActiveSelEnd" />.</summary>
   </member>
   <member name="TF_SELECTIONSTYLE.fInterimChar">
-    <summary>
-      <para>Indicates if the selection is an interim character. If this value is nonzero, then the selection is an interim character and <b>ase</b> will be TF_AE_NONE. If this value is zero, the selection is not an interim character.</para>
-    </summary>
+    <summary>Indicates if the selection is an interim character. If this value is nonzero, then the selection is an interim character and <b>ase</b> will be TF_AE_NONE. If this value is zero, the selection is not an interim character.</summary>
   </member>
 </doc>

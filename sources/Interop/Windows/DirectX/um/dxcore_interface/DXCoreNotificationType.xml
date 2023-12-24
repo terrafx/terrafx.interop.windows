@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DXCoreNotificationType">
+    <summary>
+      <para>Defines constants that specify types of notifications raised by <see cref="IDXCoreAdapter" /> or <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nn-dxcore_interface-idxcoreadapterlist">IDXCoreAdapterList</a> objects.</para>
+      <para>You can register and unregister for these notifications by calling <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nf-dxcore_interface-idxcoreadapterfactory-registereventnotification">IDXCoreAdapterFactory.RegisterEventNotification</a> and <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nf-dxcore_interface-idxcoreadapterfactory-unregistereventnotification">IDXCoreAdapterFactory.UnregisterEventNotification</a>, respectively.</para>
+    </summary>
+  </member>
+  <member name="DXCoreNotificationType.AdapterListStale">
+    <summary>This notification is raised by an <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nn-dxcore_interface-idxcoreadapterlist">IDXCoreAdapterList</a> object when the adapter list becomes stale. The fresh-to-stale transition is one-way, and one-time, so this notification is raised at most one time.</summary>
+  </member>
+  <member name="DXCoreNotificationType.AdapterNoLongerValid">
+    <summary>This notification is raised by an <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nn-dxcore_interface-idxcoreadapter">IDXCoreAdapter</a> object when the adapter becomes no longer valid. The valid-to-invalid transition is one-way, and one-time, so this notification is raised at most one time.</summary>
+  </member>
+  <member name="DXCoreNotificationType.AdapterBudgetChange">
+    <summary>This notification is raised by an <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nn-dxcore_interface-idxcoreadapter">IDXCoreAdapter</a> object when an adapter budget change occurs. This notification can occur many times. Using this notification is functionally similar to <see cref="IDXGIAdapter3.RegisterVideoMemoryBudgetChangeNotificationEvent" />. In response to this event, you should call <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nf-dxcore_interface-idxcoreadapter-querystate">IDXCoreAdapter.QueryState</a> (with <see cref="DXCoreAdapterState.AdapterMemoryBudget" />) to evaluate the current memory budget state.</summary>
+  </member>
+  <member name="DXCoreNotificationType.AdapterHardwareContentProtectionTeardown">
+    <summary>This notification is raised by an <a href="https://docs.microsoft.com//windows/win32/dxcore/dxcore_interface/nn-dxcore_interface-idxcoreadapter">IDXCoreAdapter</a> object to notify of an adapter's hardware content protection teardown. This notification can occur many times. It is functionally similar to <see cref="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent" />. In response to this event, you should re-evaluate the current crypto session status; for example, by calling <see cref="ID3D11VideoContext1.CheckCryptoSessionStatus" /> to determine the impact of the hardware teardown for a specific <see cref="ID3D11CryptoSession" /> interface.</summary>
+  </member>
+</doc>

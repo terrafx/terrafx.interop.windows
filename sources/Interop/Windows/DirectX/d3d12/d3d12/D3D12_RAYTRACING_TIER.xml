@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RAYTRACING_TIER">
+    <summary>Specifies the level of ray tracing support on the graphics device.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_TIER.D3D12_RAYTRACING_TIER_NOT_SUPPORTED">
+    <summary>No support for ray tracing on the device. Attempts to create any ray tracing-related object will fail, and using ray tracing-related APIs on command lists results in undefined behavior.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_TIER.D3D12_RAYTRACING_TIER_1_0">
+    <summary>The device supports tier 1 ray tracing functionality. In the current release, this tier represents all available ray tracing features.</summary>
+  </member>
+</doc>

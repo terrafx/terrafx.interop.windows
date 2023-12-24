@@ -19,32 +19,4 @@ public static unsafe partial class DShellFolderViewEventsTests
     {
         Assert.That(typeof(DShellFolderViewEvents).GUID, Is.EqualTo(IID_DShellFolderViewEvents));
     }
-
-    /// <summary>Validates that the <see cref="DShellFolderViewEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DShellFolderViewEvents>(), Is.EqualTo(sizeof(DShellFolderViewEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="DShellFolderViewEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DShellFolderViewEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DShellFolderViewEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DShellFolderViewEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DShellFolderViewEvents), Is.EqualTo(4));
-        }
-    }
 }

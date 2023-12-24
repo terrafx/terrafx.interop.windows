@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP">
+    <summary>Represents a rate control structure definition for constant quantization parameter mode.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP.ConstantQP_FullIntracodedFrame">
+    <summary>A UINT64 specifying the quantization parameter that should be used for each fully intra-encoded frame.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP.ConstantQP_InterPredictedFrame_PrevRefOnly">
+    <summary>A UINT64 specifying the quantization parameter that should be used for each encoded frame that has inter-picture references to pictures (in display order) before the current one.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_CQP.ConstantQP_InterPredictedFrame_BiDirectionalRef">
+    <summary>A UINT64 specifying the quantization parameter that should be used for each encoded frame that has inter-picture references to pictures (in display order) both from previous and next frames.</summary>
+  </member>
+</doc>

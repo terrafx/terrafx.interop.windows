@@ -3,40 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEFAULTSAVEFOLDERTYPE">
-    <summary>
-      <para>Specifies the default save location.</para>
-    </summary>
-    <remarks>
-      <para>These values cannot be combined.</para>
-      <h3>Used By</h3>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IShellLibrary.GetDefaultSaveFolder" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IShellLibrary.SetDefaultSaveFolder" />
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IShellLibrary" />
+    <summary>Specifies the default save location.</summary>
   </member>
   <member name="DEFAULTSAVEFOLDERTYPE.DSFT_DETECT">
-    <summary>
-      <para>The current user determines the save folder. If the current user is the library's owner,  use the private save location (<see cref="DSFT_PRIVATE" />). If the current user is not the library's owner, use the public save location (<see cref="DSFT_PUBLIC" />).</para>
-    </summary>
+    <summary>The current user determines the save folder. If the current user is the library's owner, use the private save location (<see cref="DSFT_PRIVATE" />). If the current user is not the library's owner, use the public save location (<see cref="DSFT_PUBLIC" />).</summary>
   </member>
   <member name="DEFAULTSAVEFOLDERTYPE.DSFT_PRIVATE">
-    <summary>
-      <para>The library's private save location, which can only be accessed by the library's owner.</para>
-    </summary>
+    <summary>The library's private save location, which can only be accessed by the library's owner.</summary>
   </member>
   <member name="DEFAULTSAVEFOLDERTYPE.DSFT_PUBLIC">
-    <summary>
-      <para>The library's public save location, which can be accessed by all users.</para>
-    </summary>
+    <summary>The library's public save location, which can be accessed by all users.</summary>
   </member>
 </doc>

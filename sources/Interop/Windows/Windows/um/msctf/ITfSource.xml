@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfSource.AdviseSink">
-    <summary>
-      <para>Installs an advise sink.</para>
-    </summary>
+    <summary>Installs an advise sink.</summary>
     <param name="riid">
       <para>Identifies the type of advise sink to install.</para>
       <para>This parameter can be one of the following values when the <b>ITfSource</b> object is obtained from an <see cref="ITfThreadMgr" /> object.</para>
@@ -15,62 +13,82 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>IID_ITfActiveLanguageProfileNotifySink</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfActiveLanguageProfileNotifySink</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Installs an <see cref="ITfActiveLanguageProfileNotifySink" /> advise sink.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Installs an <see cref="ITfActiveLanguageProfileNotifySink" /> advise sink.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfDisplayAttributeNotifySink</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Installs an <see cref="ITfDisplayAttributeNotifySink" /> advise sink.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>IID_ITfDisplayAttributeNotifySink</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfKeyTraceEventSink</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Installs an <see cref="ITfKeyTraceEventSink" /> advise sink.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Installs an <see cref="ITfDisplayAttributeNotifySink" /> advise sink.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfPreservedKeyNotifySink</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Installs an <see cref="ITfPreservedKeyNotifySink" /> advise sink.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>IID_ITfKeyTraceEventSink</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfThreadFocusSink</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Installs an <see cref="ITfThreadFocusSink" /> advise sink.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Installs an <see cref="ITfKeyTraceEventSink" /> advise sink.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IID_ITfThreadMgrEventSink</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>IID_ITfPreservedKeyNotifySink</b>
-          </description>
-          <description>
-            <para>Installs an <see cref="ITfPreservedKeyNotifySink" /> advise sink.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>IID_ITfThreadFocusSink</b>
-          </description>
-          <description>
-            <para>Installs an <see cref="ITfThreadFocusSink" /> advise sink.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>IID_ITfThreadMgrEventSink</b>
-          </description>
-          <description>
-            <para>Installs an <see cref="ITfThreadMgrEventSink" /> advise sink.</para>
-          </description>
-        </item>
+          <description>Installs an <see cref="ITfThreadMgrEventSink" /> advise sink.</description>
+        </listheader>
       </list>
     </param>
-    <param name="punk">
-      <para>The advise sink <b>IUnknown</b> pointer.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Address of a DWORD value that receives an identifying cookie. This value is used to uninstall the advise sink in a subsequent call to <see cref="ITfSource.UnadviseSink" />. Receives (DWORD)-1 if a failure occurs.</para>
-    </param>
+    <param name="punk">The advise sink <b>IUnknown</b> pointer.</param>
+    <param name="pdwCookie">Address of a DWORD value that receives an identifying cookie. This value is used to uninstall the advise sink in a subsequent call to <see cref="ITfSource.UnadviseSink" />. Receives (DWORD)-1 if a failure occurs.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -78,97 +96,84 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_CANNOTCONNECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The advise sink cannot be installed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more parameters are invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_ADVISELIMIT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The maximum number of advise sinks has been reached.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>CONNECT_E_CANNOTCONNECT</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The advise sink cannot be installed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CONNECT_E_ADVISELIMIT</b>
-            </para>
-          </description>
-          <description>
-            <para>The maximum number of advise sinks has been reached.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfActiveLanguageProfileNotifySink " />
-    <seealso cref="ITfCompartment " />
-    <seealso cref="ITfCompartmentEventSink " />
-    <seealso cref="ITfContext " />
-    <seealso cref="ITfContextKeyEventSink " />
-    <seealso cref="ITfDisplayAttributeNotifySink " />
-    <seealso cref="ITfInputProcessorProfiles " />
-    <seealso cref="ITfKeyTraceEventSink " />
-    <seealso cref="ITfLangBarItem " />
-    <seealso cref="ITfLangBarItemSink " />
-    <seealso cref="ITfLanguageProfileNotifySink " />
-    <seealso cref="ITfPreservedKeyNotifySink " />
-    <seealso cref="ITfSource" />
-    <seealso cref="ITfSource.UnadviseSink " />
-    <seealso cref="ITfStatusSink " />
-    <seealso cref="ITfSystemLangBarItemSink " />
-    <seealso cref="ITfTextEditSink " />
-    <seealso cref="ITfTextLayoutSink " />
-    <seealso cref="ITfThreadFocusSink " />
-    <seealso cref="ITfThreadMgr " />
-    <seealso cref="ITfThreadMgrEventSink " />
   </member>
   <member name="ITfSource.UnadviseSink">
-    <summary>
-      <para>Uninstalls an advise sink.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>A DWORD that identifies the advise sink to uninstall. This value is provided by a previous call to <see cref="ITfSource.AdviseSink" />.</para>
-    </param>
+    <summary>Uninstalls an advise sink.</summary>
+    <param name="dwCookie">A DWORD that identifies the advise sink to uninstall. This value is provided by a previous call to <see cref="ITfSource.AdviseSink" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -176,156 +181,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>dwCookie</i> value is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CONNECT_E_NOCONNECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>dwCookie</i> value is invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CONNECT_E_NOCONNECTION</b>
-            </para>
-          </description>
-          <description>
-            <para>The advise sink cannot be found.</para>
-          </description>
-        </item>
+          <description>The advise sink cannot be found.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfSource" />
-    <seealso cref="ITfSource.AdviseSink " />
   </member>
   <member name="ITfSource">
-    <summary>
-      <para>The <b>ITfSource</b> interface is implemented by the TSF manager. It is used by applications and text services to install and uninstall advise sinks.</para>
-    </summary>
-    <remarks>
-      <para>The TSF manager has different implementations of <b>ITfSource</b>, depending upon how the <b>ITfSource</b> interface is obtained. The difference in the implementations is the types of advise sinks that can be installed with the interface. The different implementations can be obtained from the following objects.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="ITfThreadMgr " />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ITfContext " />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ITfCompartment " />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ITfInputProcessorProfiles " />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="ITfLangBarItem " />
-          </description>
-        </item>
-      </list>
-      <para>For more information about advise sinks that can be installed by each implementation, see <see cref="ITfSource.AdviseSink" />.</para>
-      <h4>Examples</h4>
-      <para>
-        <b>ITfThreadMgr</b>
-      </para>
-      <code>
-HRESULT hr;
-ITfSource *pSource;
-
-hr = pThreadManager-&gt;QueryInterface(IID_ITfSource, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSource);
-if(SUCCEEDED(hr))
-{
-    //Use the ITfSource interface.
-
-    pSource-&gt;Release();
-}
-
-</code>
-      <para>
-        <b>ITfContext</b>
-      </para>
-      <code>
-HRESULT hr;
-ITfSource *pSource;
-
-hr = pContext-&gt;QueryInterface(IID_ITfSource, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSource);
-if(SUCCEEDED(hr))
-{
-    //Use the ITfSource interface.
-
-    pSource-&gt;Release();
-}
-
-</code>
-      <para>
-        <b>ITfCompartment</b>
-      </para>
-      <code>
-HRESULT hr;
-ITfSource *pSource;
-
-hr = pCompartmentManager-&gt;QueryInterface(IID_ITfSource, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSource);
-if(SUCCEEDED(hr))
-{
-    //Use the ITfSource interface.
-
-    pSource-&gt;Release();
-}
-
-</code>
-      <para>
-        <b>ITfInputProcessorProfiles</b>
-      </para>
-      <code>
-HRESULT hr;
-ITfSource *pSource;
-
-hr = pProfiles-&gt;QueryInterface(IID_ITfSource, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSource);
-if(SUCCEEDED(hr))
-{
-    //Use the ITfSource interface.
-
-    pSource-&gt;Release();
-}
-
-</code>
-      <para>
-        <b>ITfLangBarItem</b>
-      </para>
-      <code>
-HRESULT hr;
-ITfSource *pSource;
-
-hr = pLangBarItem-&gt;QueryInterface(IID_ITfSource, (LPVOID*)&amp;amp;amp;amp;amp;amp;pSource);
-if(SUCCEEDED(hr))
-{
-    //Use the ITfSource interface.
-
-    pSource-&gt;Release();
-}
-
-</code>
-    </remarks>
+    <summary>The <b>ITfSource</b> interface is implemented by the TSF manager. It is used by applications and text services to install and uninstall advise sinks.</summary>
   </member>
 </doc>

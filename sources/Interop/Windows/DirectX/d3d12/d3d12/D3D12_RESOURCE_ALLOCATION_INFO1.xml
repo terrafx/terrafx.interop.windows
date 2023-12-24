@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RESOURCE_ALLOCATION_INFO1">
+    <summary>Describes parameters needed to allocate resources, including offset.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_ALLOCATION_INFO1.Offset">
+    <summary>The offset, in bytes, of the resource.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_ALLOCATION_INFO1.Alignment">
+    <summary>The alignment value for the resource; one of 4KB (4096), 64KB (65536), or 4MB (4194304) alignment.</summary>
+  </member>
+  <member name="D3D12_RESOURCE_ALLOCATION_INFO1.SizeInBytes">
+    <summary>The size, in bytes, of the resource.</summary>
+  </member>
+</doc>

@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_MFT_INPUT_DATA_BUFFER_FLAGS">
-    <summary>
-      <para>Defines flags for the <see cref="IMFTransform.ProcessInput" /> method. Currently no flags are defined.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Defines flags for the <see cref="IMFTransform.ProcessInput" /> method. Currently no flags are defined.</summary>
   </member>
   <member name="_MFT_INPUT_DATA_BUFFER_FLAGS.MFT_INPUT_DATA_BUFFER_PLACEHOLDER">
-    <summary>
-      <para>Reserved. Do not use.</para>
-    </summary>
+    <summary>Reserved. Do not use.</summary>
   </member>
 </doc>

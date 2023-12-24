@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_LINEARTRANSFER_PROP.xml' path='doc/member[@name="D2D1_LINEARTRANSFER_PROP"]/*' />
-public enum D2D1_LINEARTRANSFER_PROP : uint
+public enum D2D1_LINEARTRANSFER_PROP
 {
     /// <include file='D2D1_LINEARTRANSFER_PROP.xml' path='doc/member[@name="D2D1_LINEARTRANSFER_PROP.D2D1_LINEARTRANSFER_PROP_RED_Y_INTERCEPT"]/*' />
     D2D1_LINEARTRANSFER_PROP_RED_Y_INTERCEPT = 0,
@@ -48,5 +48,5 @@ public enum D2D1_LINEARTRANSFER_PROP : uint
     D2D1_LINEARTRANSFER_PROP_CLAMP_OUTPUT = 12,
 
     /// <include file='D2D1_LINEARTRANSFER_PROP.xml' path='doc/member[@name="D2D1_LINEARTRANSFER_PROP.D2D1_LINEARTRANSFER_PROP_FORCE_DWORD"]/*' />
-    D2D1_LINEARTRANSFER_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_LINEARTRANSFER_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

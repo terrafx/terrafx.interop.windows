@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="HistogramBlobHeader">
-    <summary>
-      <para>The <b>HistogramBlobHeader</b> structure describes the blob size and the number of histograms in the blob for the <b>MF_CAPTURE_METADATA_HISTOGRAM</b> attribute.</para>
-    </summary>
-    <seealso cref="HistogramDataHeader" />
-    <seealso cref="HistogramGrid" />
+    <summary>The <b>HistogramBlobHeader</b> structure describes the blob size and the number of histograms in the blob for the <b>MF_CAPTURE_METADATA_HISTOGRAM</b> attribute.</summary>
   </member>
   <member name="HistogramBlobHeader.Size">
-    <summary>
-      <para>Size of the entire histogram blob in bytes.</para>
-    </summary>
+    <summary>Size of the entire histogram blob in bytes.</summary>
   </member>
   <member name="HistogramBlobHeader.Histograms">
-    <summary>
-      <para>Number of histograms in the blob. Each histogram is identified by a <see cref="HistogramHeader" />.</para>
-    </summary>
+    <summary>Number of histograms in the blob. Each histogram is identified by a <see cref="HistogramHeader" />.</summary>
   </member>
 </doc>

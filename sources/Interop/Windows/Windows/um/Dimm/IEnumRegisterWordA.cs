@@ -25,7 +25,7 @@ public unsafe partial struct IEnumRegisterWordA : IEnumRegisterWordA.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumRegisterWordA*, Guid*, void**, int>)(lpVtbl[0]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegisterWordA*, Guid*, void**, int>)(lpVtbl[0]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumRegisterWordA : IEnumRegisterWordA.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumRegisterWordA*, uint>)(lpVtbl[1]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegisterWordA*, uint>)(lpVtbl[1]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumRegisterWordA : IEnumRegisterWordA.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumRegisterWordA*, uint>)(lpVtbl[2]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegisterWordA*, uint>)(lpVtbl[2]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumRegisterWordA.xml' path='doc/member[@name="IEnumRegisterWordA.Clone"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumRegisterWordA : IEnumRegisterWordA.Interface, 
     [VtblIndex(3)]
     public HRESULT Clone(IEnumRegisterWordA** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumRegisterWordA*, IEnumRegisterWordA**, int>)(lpVtbl[3]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegisterWordA*, IEnumRegisterWordA**, int>)(lpVtbl[3]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumRegisterWordA.xml' path='doc/member[@name="IEnumRegisterWordA.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumRegisterWordA : IEnumRegisterWordA.Interface, 
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("ULONG")] uint ulCount, REGISTERWORDA* rgRegisterWord, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumRegisterWordA*, uint, REGISTERWORDA*, uint*, int>)(lpVtbl[4]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this), ulCount, rgRegisterWord, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegisterWordA*, uint, REGISTERWORDA*, uint*, int>)(lpVtbl[4]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this), ulCount, rgRegisterWord, pcFetched);
     }
 
     /// <include file='IEnumRegisterWordA.xml' path='doc/member[@name="IEnumRegisterWordA.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumRegisterWordA : IEnumRegisterWordA.Interface, 
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumRegisterWordA*, int>)(lpVtbl[5]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegisterWordA*, int>)(lpVtbl[5]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumRegisterWordA.xml' path='doc/member[@name="IEnumRegisterWordA.Skip"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumRegisterWordA : IEnumRegisterWordA.Interface, 
     [VtblIndex(6)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint ulCount)
     {
-        return ((delegate* unmanaged<IEnumRegisterWordA*, uint, int>)(lpVtbl[6]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this), ulCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumRegisterWordA*, uint, int>)(lpVtbl[6]))((IEnumRegisterWordA*)Unsafe.AsPointer(ref this), ulCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumRegisterWordA : IEnumRegisterWordA.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IEnumRegisterWordA **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumRegisterWordA**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumRegisterWordA**, int> Clone;
 
         [NativeTypeName("HRESULT (ULONG, REGISTERWORDA *, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, REGISTERWORDA*, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, REGISTERWORDA*, uint*, int> Next;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
     }
 }

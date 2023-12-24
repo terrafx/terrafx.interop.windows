@@ -3,57 +3,33 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TCP_TABLE_CLASS">
-    <summary>
-      <para>The <b>TCP_TABLE_CLASS</b> enumeration defines the set of values used to  indicate the type of table returned by  calls to <see cref="GetExtendedTcpTable" />.</para>
-    </summary>
-    <remarks>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>TCP_TABLE_CLASS</b> enumeration  is defined in the <i>Iprtrmib.h</i> header file, not in the <i>Iphlpapi.h</i> header file. Note that the <i>Iprtrmib.h</i> header file is automatically included in <i>Iphlpapi.h</i> header file. The <i>Iprtrmib.h</i> header files should never be used directly.</para>
-    </remarks>
-    <seealso cref="GetExtendedTcpTable" />
+    <summary>The <b>TCP_TABLE_CLASS</b> enumeration defines the set of values used to indicate the type of table returned by calls to <see cref="GetExtendedTcpTable" />.</summary>
   </member>
   <member name="TCP_TABLE_CLASS.TCP_TABLE_BASIC_LISTENER">
-    <summary>
-      <para>A <see cref="MIB_TCPTABLE" /> table that contains all listening (receiving only) TCP endpoints on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_TCPTABLE" /> table that contains all listening (receiving only) TCP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="TCP_TABLE_CLASS.TCP_TABLE_BASIC_CONNECTIONS">
-    <summary>
-      <para>A <see cref="MIB_TCPTABLE" /> table that contains all connected TCP endpoints  on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_TCPTABLE" /> table that contains all connected TCP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="TCP_TABLE_CLASS.TCP_TABLE_BASIC_ALL">
-    <summary>
-      <para>A <see cref="MIB_TCPTABLE" /> table that contains all TCP endpoints  on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_TCPTABLE" /> table that contains all TCP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_PID_LISTENER">
-    <summary>
-      <para>A <see cref="MIB_TCPTABLE_OWNER_PID" /> or <see cref="MIB_TCP6TABLE_OWNER_PID" /> that contains all listening (receiving only) TCP endpoints on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_TCPTABLE_OWNER_PID" /> or <see cref="MIB_TCP6TABLE_OWNER_PID" /> that contains all listening (receiving only) TCP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_PID_CONNECTIONS">
-    <summary>
-      <para>A <see cref="MIB_TCPTABLE_OWNER_PID" /> or <see cref="MIB_TCP6TABLE_OWNER_PID" /> that structure that contains all connected TCP endpoints  on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_TCPTABLE_OWNER_PID" /> or <see cref="MIB_TCP6TABLE_OWNER_PID" /> that structure that contains all connected TCP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_PID_ALL">
-    <summary>
-      <para>A <see cref="MIB_TCPTABLE_OWNER_PID" /> or <see cref="MIB_TCP6TABLE_OWNER_PID" /> structure that contains all TCP endpoints  on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_TCPTABLE_OWNER_PID" /> or <see cref="MIB_TCP6TABLE_OWNER_PID" /> structure that contains all TCP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_MODULE_LISTENER">
-    <summary>
-      <para>A <see cref="MIB_TCPTABLE_OWNER_MODULE" /> or <see cref="MIB_TCP6TABLE_OWNER_MODULE" /> structure that contains all listening (receiving only) TCP endpoints on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_TCPTABLE_OWNER_MODULE" /> or <see cref="MIB_TCP6TABLE_OWNER_MODULE" /> structure that contains all listening (receiving only) TCP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_MODULE_CONNECTIONS">
-    <summary>
-      <para>A <see cref="MIB_TCPTABLE_OWNER_MODULE" /> or <see cref="MIB_TCP6TABLE_OWNER_MODULE" /> structure that contains all connected TCP endpoints on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_TCPTABLE_OWNER_MODULE" /> or <see cref="MIB_TCP6TABLE_OWNER_MODULE" /> structure that contains all connected TCP endpoints on the local computer is returned to the caller.</summary>
   </member>
   <member name="TCP_TABLE_CLASS.TCP_TABLE_OWNER_MODULE_ALL">
-    <summary>
-      <para>A <see cref="MIB_TCPTABLE_OWNER_MODULE" /> or <see cref="MIB_TCP6TABLE_OWNER_MODULE" /> structure that contains all  TCP endpoints on the local computer is returned to the caller.</para>
-    </summary>
+    <summary>A <see cref="MIB_TCPTABLE_OWNER_MODULE" /> or <see cref="MIB_TCP6TABLE_OWNER_MODULE" /> structure that contains all TCP endpoints on the local computer is returned to the caller.</summary>
   </member>
 </doc>

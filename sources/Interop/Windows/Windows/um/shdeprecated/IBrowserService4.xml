@@ -3,42 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IBrowserService4.ActivateView">
-    <summary>
-      <para>Deprecated.</para>
-    </summary>
-    <param name="fPendingView">
-      <para>Type: <b>BOOL</b></para>
-      <para>Specifies whether the view is pending.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated.</summary>
+    <param name="fPendingView">Specifies whether the view is pending.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService4.SaveViewState">
-    <summary>
-      <para>Deprecated.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService4._ResizeAllBorders">
-    <summary>
-      <para>Deprecated.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Deprecated.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IBrowserService4">
-    <summary>
-      <para>Deprecated.</para>
-    </summary>
-    <remarks>
-      <para>This interface also provides the methods of the <see cref="IBrowserService" />, <see cref="IBrowserService2" />, and <see cref="IBrowserService3" /> interfaces, from which it inherits.</para>
-    </remarks>
+    <summary>Deprecated.</summary>
   </member>
 </doc>

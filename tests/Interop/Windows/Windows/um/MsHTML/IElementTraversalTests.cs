@@ -19,32 +19,4 @@ public static unsafe partial class IElementTraversalTests
     {
         Assert.That(typeof(IElementTraversal).GUID, Is.EqualTo(IID_IElementTraversal));
     }
-
-    /// <summary>Validates that the <see cref="IElementTraversal" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IElementTraversal>(), Is.EqualTo(sizeof(IElementTraversal)));
-    }
-
-    /// <summary>Validates that the <see cref="IElementTraversal" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IElementTraversal).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IElementTraversal" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IElementTraversal), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IElementTraversal), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,194 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_UNION_DESCRIPTION">
-    <summary>
-      <para>Information about the choices within a union type.
-This is used with <see cref="WS_UNION_TYPE" />.</para>
-    </summary>
-    <remarks>
-      <para>This description assumes a structure which contains both the
-selector value (an integer enumerated value) and a union which
-contains a field which corresponds to each of the possible
-choices, for example:</para>
-      <code>// Enumeration of choices of different values
-enum Choice
-{
-    ChoiceA = 20,
-    ChoiceB = 10,
-    None = 0,
-};
-
-// Struct containing union of values, and enum "selector"
-struct StructType
-{
-    Choice choice;
-    union
-    {
-        int a;
-        WS_STRING b;
-    } value;
-};
-</code>
-      <para>The following examples illustrates initializing a union description
-for the previous example.  This example fills out the nameIndices
-field, but this field could be <b>NULL</b> instead.</para>
-      <code>WS_XML_STRING choiceAString = WS_XML_STRING_VALUE("choiceA");
-WS_XML_STRING choiceANs = WS_XML_STRING_VALUE("http://examples.org/a");
-
-WS_UNION_FIELD_DESCRIPTION fieldA = { };
-fieldA.value = ChoiceA;
-fieldA.field.localName = &amp;amp;amp;amp;amp;amp;amp;choiceAString;
-fieldA.field.ns = &amp;amp;amp;amp;amp;amp;amp;choiceANs;
-fieldA.field.type = WS_INT32_TYPE;
-fieldA.field.offset = WsOffsetOf(StructType, value.a);
-
-WS_XML_STRING choiceBString = WS_XML_STRING_VALUE("choiceB");
-WS_XML_STRING choiceBNs = WS_XML_STRING_VALUE("http://examples.org/b");
-
-WS_UNION_FIELD_DESCRIPTION fieldB = { };
-fieldB.value = ChoiceB;
-fieldB.field.localName = &amp;amp;amp;amp;amp;amp;amp;choiceBString;
-fieldB.field.ns = &amp;amp;amp;amp;amp;amp;amp;choiceBNs;
-fieldB.field.type = WS_STRING_TYPE;
-fieldB.field.offset = WsOffsetOf(StructType, value.b);
-
-// Sorted by ascending element name (first ns, then localName)
-WS_UNION_FIELD_DESCRIPTION* fieldsArray[] =
-{
-    &amp;amp;amp;amp;amp;amp;amp;fieldA, // "http://example.com/a", "choiceA"
-    &amp;amp;amp;amp;amp;amp;amp;fieldB, // "http://example.com/b", "choiceB"
-};
-
-// Sorted by ascending enum value
-ULONG valueIndices[] =
-{
-    1, // ChoiceB (10)
-    0, // ChoiceA (20)
-};
-
-WS_UNION_DESCRIPTION unionDescription;
-unionDescription.size = sizeof(StructType);
-unionDescription.alignment = __alignof(StructType);
-unionDescription.fields = fieldsArray;
-unionDescription.fieldCount = WsCountOf(fieldsArray);
-unionDescription.enumOffset = WsOffsetOf(StructType, choice);
-unionDescription.noneEnumValue = None;
-unionDescription.valueIndices = valueIndices;
-
-</code>
-      <para>The above would allow either of the following elements to
-appear:</para>
-      <code>
-&lt;choiceA xmlns="http://example.com/a"&gt;123&lt;/choiceA&gt;
-&lt;choiceB xmlns="http://example.com/b"&gt;hello&lt;/choiceB&gt;
-
-</code>
-      <para>The following is an example of setting values:</para>
-      <code>StructType structType;
-
-// Set ChoiceA
-structType.choice = ChoiceA;
-structType.value.a = 123;
-
-// Set ChoiceB
-static const WS_STRING = WS_STRING_VALUE(L"hello");
-structType.choice = ChoiceB;
-structType.value.b = helloString;
-
-// Set "none" choice
-structType.choice = None;
-
-</code>
-      <para>The following is the grammar describing the order of the <see cref="WS_FIELD_DESCRIPTION" /> that make up a <b>WS_UNION_DESCRIPTION</b>.  The order is defined based on the
-mapping field of the <b>WS_FIELD_DESCRIPTION</b>.</para>
-      <code>
-Fields := ElementContentFields AnyElementField?
-ElementContentFields := (ElementField | RepeatingElementField)*
-ElementField := WS_ELEMENT_FIELD_MAPPING
-RepeatingElementField := WS_REPEATING_ELEMENT_FIELD_MAPPING
-AnyElementField := WS_ANY_ELEMENT_FIELD_MAPPING
-</code>
-      <para>The <see cref="WS_ELEMENT_FIELD_MAPPING" /> and <b>WS_REPEATING_ELEMENT_FIELD_MAPPING</b> represent the element choices and their corresponding fields in the union.</para>
-      <para>The <see cref="WS_ANY_ELEMENT_FIELD_MAPPING" /> is the field used when none of the
-other elements matched.</para>
-      <para>The following restrictions apply to the field descriptions:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="WS_REPEATING_ELEMENT_FIELD_MAPPING" /> may only be used when
-a wrapper element name and namespace has been specified.
-</description>
-        </item>
-        <item>
-          <description>
-            <see cref="WS_FIELD_OPTIONAL" /> may not be used.
-</description>
-        </item>
-      </list>
-    </remarks>
+    <summary>Information about the choices within a union type. This is used with <see cref="WS_UNION_TYPE" />.</summary>
   </member>
   <member name="WS_UNION_DESCRIPTION.size">
-    <summary>
-      <para>The size in bytes of the structure.</para>
-    </summary>
+    <summary>The size in bytes of the structure.</summary>
   </member>
   <member name="WS_UNION_DESCRIPTION.alignment">
-    <summary>
-      <para>The alignment requirement of the structure.  This must be a power
-of two between 1 and 8.</para>
-    </summary>
+    <summary>The alignment requirement of the structure. This must be a power of two between 1 and 8.</summary>
   </member>
   <member name="WS_UNION_DESCRIPTION.fields">
     <summary>
       <para>An array of pointers to the descriptions of the fields of the union.</para>
-      <para>See the Remarks section for information about ordering of the fields
-in this array.</para>
+      <para>See the Remarks section for information about ordering of the fields in this array.</para>
     </summary>
   </member>
   <member name="WS_UNION_DESCRIPTION.fieldCount">
-    <summary>
-      <para>The number of fields in the fields array.  Any part of the structure
-that is not represented by a field will be left uninitialized.
-Fields descriptions may reference the same offset of the structure
-(for example if they are all part of a single union).</para>
-    </summary>
+    <summary>The number of fields in the fields array. Any part of the structure that is not represented by a field will be left uninitialized. Fields descriptions may reference the same offset of the structure (for example if they are all part of a single union).</summary>
   </member>
   <member name="WS_UNION_DESCRIPTION.enumOffset">
-    <summary>
-      <para>The offset of the enumeration field which controls which choice is
-selected within the union.  The size of the field is assumed to be
-the size of an enumeration (32-bit signed integer).</para>
-    </summary>
+    <summary>The offset of the enumeration field which controls which choice is selected within the union. The size of the field is assumed to be the size of an enumeration (32-bit signed integer).</summary>
   </member>
   <member name="WS_UNION_DESCRIPTION.noneEnumValue">
-    <summary>
-      <para>This value corresponds to the enum value used when none of the
-choices are currently set.  This field is only used when the
-field is optional (<see cref="WS_FIELD_OPTIONAL" /> was specified).</para>
-    </summary>
+    <summary>This value corresponds to the enum value used when none of the choices are currently set. This field is only used when the field is optional (<see cref="WS_FIELD_OPTIONAL" /> was specified).</summary>
   </member>
   <member name="WS_UNION_DESCRIPTION.valueIndices">
     <summary>
-      <para>This optional array provides information which can improve
-the performance of looking up fields of the union either by
-element or by enum value.  This array may <b>NULL</b>, in which case
-an O(n) lookup is used, which may be sufficient for small
-numbers of fields.</para>
+      <para>This optional array provides information which can improve the performance of looking up fields of the union either by element or by enum value. This array may <b>NULL</b>, in which case an O(n) lookup is used, which may be sufficient for small numbers of fields.</para>
       <para>If non-<b>NULL</b>, the following must be true:</para>
       <list type="bullet">
         <item>
-          <description>The fields array is required to be sorted by element, in ascending order.
-When comparing an element the namespace should be compared first, then the local name.
-Each of the names should be compared by performing a byte-wide comparison of the utf-8 string.
-The field that uses <see cref="WS_ANY_ELEMENT_FIELD_MAPPING" />, if present, should always
-be last in the fields array.
-</description>
+          <description>The fields array is required to be sorted by element, in ascending order. When comparing an element the namespace should be compared first, then the local name. Each of the names should be compared by performing a byte-wide comparison of the utf-8 string. The field that uses <see cref="WS_ANY_ELEMENT_FIELD_MAPPING" />, if present, should always be last in the fields array.</description>
         </item>
         <item>
-          <description>The valueIndices array points to an array that has fieldCount items.  The valueIndices
-array provides the indices of the items in the fields array as if they were sorted by
-value in ascending order.
-</description>
+          <description>The valueIndices array points to an array that has fieldCount items. The valueIndices array provides the indices of the items in the fields array as if they were sorted by value in ascending order.</description>
         </item>
       </list>
     </summary>

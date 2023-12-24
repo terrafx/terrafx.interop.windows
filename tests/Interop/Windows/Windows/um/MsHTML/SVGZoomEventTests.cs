@@ -19,25 +19,4 @@ public static unsafe partial class SVGZoomEventTests
     {
         Assert.That(typeof(SVGZoomEvent).GUID, Is.EqualTo(IID_SVGZoomEvent));
     }
-
-    /// <summary>Validates that the <see cref="SVGZoomEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGZoomEvent>(), Is.EqualTo(sizeof(SVGZoomEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGZoomEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGZoomEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGZoomEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGZoomEvent), Is.EqualTo(1));
-    }
 }

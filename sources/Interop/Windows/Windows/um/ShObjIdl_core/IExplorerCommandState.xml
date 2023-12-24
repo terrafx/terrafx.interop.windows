@@ -3,40 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IExplorerCommandState.GetState">
-    <summary>
-      <para>Gets the command state associated with a specified Shell item.</para>
-    </summary>
-    <param name="psiItemArray">
-      <para>Type: <b><see cref="IShellItemArray" />*</b></para>
-      <para>A pointer to an <see cref="IShellItemArray" /> with a single element that represents the Shell item.</para>
-    </param>
+    <summary>Gets the command state associated with a specified Shell item.</summary>
+    <param name="psiItemArray">A pointer to an <see cref="IShellItemArray" /> with a single element that represents the Shell item.</param>
     <param name="fOkToBeSlow">
-      <para>Type: <b>BOOL</b></para>
-      <para>
-        <b>FALSE</b> if a verb object should not perform any memory intensive computations that could cause the UI thread to stop responding. The verb object should return E_PENDING in that case. If <b>TRUE</b>, those computations can be completed.</para>
-    </param>
-    <param name="pCmdState">
-      <para>Type: <b><see cref="EXPCMDSTATE" />*</b></para>
-      <para>A pointer to a value that, when this method returns successfully, receives one or more Windows Explorer command states indicated by the <see cref="EXPCMDSTATE" /> constants.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method provides the same functionality as <see cref="GetState" />. Use <see cref="IExplorerCommandState" /> when you only need to know the command state.</para>
-    </remarks>
+      <b>FALSE</b> if a verb object should not perform any memory intensive computations that could cause the UI thread to stop responding. The verb object should return E_PENDING in that case. If <b>TRUE</b>, those computations can be completed.</param>
+    <param name="pCmdState">A pointer to a value that, when this method returns successfully, receives one or more Windows Explorer command states indicated by the <see cref="EXPCMDSTATE" /> constants.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IExplorerCommandState">
-    <summary>
-      <para>Exposes a single method that allows retrieval of the command state.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>Implement this interface when you need to determine the command state dynamically (for instance, based on an item's properties). This interface provides the same functionality as <see cref="IExplorerCommand.GetState" />, without the overhead of that interface's additional methods. Implement <b>IExplorerCommandState</b> when you only need to compute the command state.</para>
-      <h3>When to Use</h3>
-      <para>Do not call the method of <b>IExplorerCommandState</b> directly. Windows Explorer calls your <see cref="IExplorerCommandState.GetState" /> implementation when the user wants to perform an action on the item.</para>
-    </remarks>
-    <seealso cref="IExplorerCommand.GetState" />
+    <summary>Exposes a single method that allows retrieval of the command state.</summary>
   </member>
 </doc>

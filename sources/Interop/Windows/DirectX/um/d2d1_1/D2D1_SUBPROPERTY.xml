@@ -3,54 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SUBPROPERTY">
-    <summary>
-      <para>Specifies the indices of the system sub-properties that may be present in any property.</para>
-    </summary>
-    <seealso cref="ID2D1Properties" />
-    <seealso cref="ID2D1Properties.GetPropertyName" />
-    <seealso cref="ID2D1Properties.GetPropertyNameLength" />
-    <seealso cref="ID2D1Properties.GetSubProperties" />
-    <seealso cref="ID2D1Properties.GetType" />
-    <seealso cref="ID2D1Properties.GetValue" />
-    <seealso cref="ID2D1Properties.GetValueSize" />
-    <seealso cref="ID2D1Properties.SetValue" />
+    <summary>Specifies the indices of the system sub-properties that may be present in any property.</summary>
   </member>
   <member name="D2D1_SUBPROPERTY.D2D1_SUBPROPERTY_DISPLAYNAME">
-    <summary>
-      <para>The name for the parent property.</para>
-    </summary>
+    <summary>The name for the parent property.</summary>
   </member>
   <member name="D2D1_SUBPROPERTY.D2D1_SUBPROPERTY_ISREADONLY">
-    <summary>
-      <para>A Boolean indicating whether the parent property is writable.</para>
-    </summary>
+    <summary>A Boolean indicating whether the parent property is writable.</summary>
   </member>
   <member name="D2D1_SUBPROPERTY.D2D1_SUBPROPERTY_MIN">
-    <summary>
-      <para>The minimum value that can be set to the parent property.</para>
-    </summary>
+    <summary>The minimum value that can be set to the parent property.</summary>
   </member>
   <member name="D2D1_SUBPROPERTY.D2D1_SUBPROPERTY_MAX">
-    <summary>
-      <para>The maximum value that can be set to the parent property.</para>
-    </summary>
+    <summary>The maximum value that can be set to the parent property.</summary>
   </member>
   <member name="D2D1_SUBPROPERTY.D2D1_SUBPROPERTY_DEFAULT">
-    <summary>
-      <para>The default value of the parent property.</para>
-    </summary>
+    <summary>The default value of the parent property.</summary>
   </member>
   <member name="D2D1_SUBPROPERTY.D2D1_SUBPROPERTY_FIELDS">
-    <summary>
-      <para>An array of name/index pairs that indicate the possible values that can be set to the parent property.</para>
-    </summary>
+    <summary>An array of name/index pairs that indicate the possible values that can be set to the parent property.</summary>
   </member>
   <member name="D2D1_SUBPROPERTY.D2D1_SUBPROPERTY_INDEX">
-    <summary>
-      <para>An index sub-property used by the elements of the <b>D2D1_SUBPROPERTY_FIELDS</b> array.</para>
-    </summary>
+    <summary>An index sub-property used by the elements of the <b>D2D1_SUBPROPERTY_FIELDS</b> array.</summary>
   </member>
-  <member name="D2D1_SUBPROPERTY.D2D1_SUBPROPERTY_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SUBPROPERTY.D2D1_SUBPROPERTY_FORCE_DWORD"></member>
 </doc>

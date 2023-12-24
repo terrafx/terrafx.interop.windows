@@ -19,32 +19,4 @@ public static unsafe partial class IFileSinkFilterTests
     {
         Assert.That(typeof(IFileSinkFilter).GUID, Is.EqualTo(IID_IFileSinkFilter));
     }
-
-    /// <summary>Validates that the <see cref="IFileSinkFilter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFileSinkFilter>(), Is.EqualTo(sizeof(IFileSinkFilter)));
-    }
-
-    /// <summary>Validates that the <see cref="IFileSinkFilter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFileSinkFilter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFileSinkFilter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFileSinkFilter), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFileSinkFilter), Is.EqualTo(4));
-        }
-    }
 }

@@ -13,5 +13,5 @@ public unsafe partial struct CERT_REGISTRY_STORE_ROAMING_PARA
 
     /// <include file='CERT_REGISTRY_STORE_ROAMING_PARA.xml' path='doc/member[@name="CERT_REGISTRY_STORE_ROAMING_PARA.pwszStoreDirectory"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszStoreDirectory;
+    public char* pwszStoreDirectory;
 }

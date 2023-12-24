@@ -3,27 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICProgressOperation">
-    <summary>
-      <para>Specifies the progress operations to receive notifications for.</para>
-    </summary>
-    <seealso cref="RegisterProgressNotification" />
+    <summary>Specifies the progress operations to receive notifications for.</summary>
   </member>
   <member name="WICProgressOperation.WICProgressOperationCopyPixels">
-    <summary>
-      <para>Receive copy pixel operation.</para>
-    </summary>
+    <summary>Receive copy pixel operation.</summary>
   </member>
   <member name="WICProgressOperation.WICProgressOperationWritePixels">
-    <summary>
-      <para>Receive write pixel operation.</para>
-    </summary>
+    <summary>Receive write pixel operation.</summary>
   </member>
   <member name="WICProgressOperation.WICProgressOperationAll">
-    <summary>
-      <para>Receive all progress operations available.</para>
-    </summary>
+    <summary>Receive all progress operations available.</summary>
   </member>
-  <member name="WICProgressOperation.WICPROGRESSOPERATION_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICProgressOperation.WICPROGRESSOPERATION_FORCE_DWORD"></member>
 </doc>

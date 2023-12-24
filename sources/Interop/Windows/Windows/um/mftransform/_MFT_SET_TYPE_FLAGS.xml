@@ -3,17 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="_MFT_SET_TYPE_FLAGS">
-    <summary>
-      <para>Defines flags for the setting or testing the media type on a Media Foundation transform (MFT).</para>
-    </summary>
-    <seealso cref="IMFTransform.SetInputType" />
-    <seealso cref="IMFTransform.SetOutputType" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-transforms">Media Foundation Transforms</seealso>
+    <summary>Defines flags for the setting or testing the media type on a Media Foundation transform (MFT).</summary>
   </member>
   <member name="_MFT_SET_TYPE_FLAGS.MFT_SET_TYPE_TEST_ONLY">
-    <summary>
-      <para>Test the proposed media type, but do not set it.</para>
-    </summary>
+    <summary>Test the proposed media type, but do not set it.</summary>
   </member>
 </doc>

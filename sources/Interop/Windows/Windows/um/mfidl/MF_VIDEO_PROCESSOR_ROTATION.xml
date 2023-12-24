@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_VIDEO_PROCESSOR_ROTATION">
-    <summary>
-      <para>Specifies how to rotate a video image.</para>
-    </summary>
-    <seealso cref="IMFVideoProcessorControl.SetRotation" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Specifies how to rotate a video image.</summary>
   </member>
   <member name="MF_VIDEO_PROCESSOR_ROTATION.ROTATION_NONE">
-    <summary>
-      <para>Do not rotate the image.</para>
-    </summary>
+    <summary>Do not rotate the image.</summary>
   </member>
   <member name="MF_VIDEO_PROCESSOR_ROTATION.ROTATION_NORMAL">
-    <summary>
-      <para>Rotate the image to the correct viewing orientation.</para>
-    </summary>
+    <summary>Rotate the image to the correct viewing orientation.</summary>
   </member>
 </doc>

@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfCandidateListUIElement.GetCount">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement.GetCount</b> method returns the count of the candidate strings.</para>
-    </summary>
-    <param name="puCount">
-      <para>[out] A pointer to receive a count of the candidate strings.</para>
-    </param>
+    <summary>The <b>ITfCandidateListUIElement.GetCount</b> method returns the count of the candidate strings.</summary>
+    <param name="puCount">[out] A pointer to receive a count of the candidate strings.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,46 +12,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElement.GetCurrentPage">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement.GetCurrentPage</b> method returns the current page.</para>
-    </summary>
-    <param name="puPage">
-      <para>[in] A pointer to receive the current page index.</para>
-    </param>
+    <summary>The <b>ITfCandidateListUIElement.GetCurrentPage</b> method returns the current page.</summary>
+    <param name="puPage">[in] A pointer to receive the current page index.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -63,46 +61,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElement.GetDocumentMgr">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement.GetDocumentMgr</b> method returns the target document manager of this UI.</para>
-    </summary>
-    <param name="ppdim">
-      <para>[out] A pointer to receive <see cref="ITfDocumentMgr" /> interface pointer.</para>
-    </param>
+    <summary>The <b>ITfCandidateListUIElement.GetDocumentMgr</b> method returns the target document manager of this UI.</summary>
+    <param name="ppdim">[out] A pointer to receive <see cref="ITfDocumentMgr" /> interface pointer.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -110,52 +110,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElement.GetPageIndex">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement.GetPageIndex</b> method returns the page index of the list.</para>
-    </summary>
-    <param name="pIndex">
-      <para>[out] A pointer that receives an array of the indexes that each page starts from. This can be <b>NULL</b>. The caller calls this method with <b>NULL</b> for this parameter first to get the number of pages in <i>puPageCnt</i> and allocates the buffer to receive indexes for all pages.</para>
-    </param>
-    <param name="uSize">
-      <para>[in] A buffer size of <i>pIndex</i>.</para>
-    </param>
-    <param name="puPageCnt">
-      <para>[out] A pointer to receive the page count.</para>
-    </param>
+    <summary>The <b>ITfCandidateListUIElement.GetPageIndex</b> method returns the page index of the list.</summary>
+    <param name="pIndex">[out] A pointer that receives an array of the indexes that each page starts from. This can be <b>NULL</b>. The caller calls this method with <b>NULL</b> for this parameter first to get the number of pages in <i>puPageCnt</i> and allocates the buffer to receive indexes for all pages.</param>
+    <param name="uSize">[in] A buffer size of <i>pIndex</i>.</param>
+    <param name="puPageCnt">[out] A pointer to receive the page count.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -163,46 +161,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElement.GetSelection">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement.GetSelection</b> method returns the current selection of the candidate list.</para>
-    </summary>
-    <param name="puIndex">
-      <para>[out] A pointer to receive an index of the current selected candidate string.</para>
-    </param>
+    <summary>The <b>ITfCandidateListUIElement.GetSelection</b> method returns the current selection of the candidate list.</summary>
+    <param name="puIndex">[out] A pointer to receive an index of the current selected candidate string.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -210,49 +210,49 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElement.GetString">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement.GetString</b> method returns the string of the index.</para>
-    </summary>
-    <param name="uIndex">
-      <para>[in] An index of the string to obtain.</para>
-    </param>
-    <param name="pstr">
-      <para>[out] A pointer to BSTR for the candidate string of the index.</para>
-    </param>
+    <summary>The <b>ITfCandidateListUIElement.GetString</b> method returns the string of the index.</summary>
+    <param name="uIndex">[in] An index of the string to obtain.</param>
+    <param name="pstr">[out] A pointer to BSTR for the candidate string of the index.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -260,43 +260,47 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElement.GetUpdatedFlags">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement.GetUpdatedFlags</b> method returns the flag that tells which part of this element was updated.</para>
-    </summary>
+    <summary>The <b>ITfCandidateListUIElement.GetUpdatedFlags</b> method returns the flag that tells which part of this element was updated.</summary>
     <param name="pdwFlags">
       <para>[out] a pointer to receive the flags that is a combination of the following bits:</para>
       <list type="table">
@@ -304,54 +308,78 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TF_CLUIE_DOCUMENTMGR</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_CLUIE_DOCUMENTMGR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The target document manager was changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The target document manager was changed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_CLUIE_COUNT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The count of the candidate string was changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_CLUIE_COUNT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_CLUIE_SELECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The selection of the candidate was changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The count of the candidate string was changed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_CLUIE_STRING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Some strings in the list were changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_CLUIE_SELECTION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_CLUIE_PAGEINDEX</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The current page index or some page index was changed.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The selection of the candidate was changed.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_CLUIE_CURRENTPAGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_CLUIE_STRING</b>
-          </description>
-          <description>
-            <para>Some strings in the list were changed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_CLUIE_PAGEINDEX</b>
-          </description>
-          <description>
-            <para>The current page index or some page index was changed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_CLUIE_CURRENTPAGE</b>
-          </description>
-          <description>
-            <para>The page was changed.</para>
-          </description>
-        </item>
+          <description>The page was changed.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -361,49 +389,49 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElement.SetPageIndex">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement.SetPageIndex</b> method sets the page index.</para>
-    </summary>
-    <param name="pIndex">
-      <para>[in] A pointer to an array of the indexes that each page starts from.</para>
-    </param>
-    <param name="uPageCnt">
-      <para>[in] A page count. The size of the pIndex buffer.</para>
-    </param>
+    <summary>The <b>ITfCandidateListUIElement.SetPageIndex</b> method sets the page index.</summary>
+    <param name="pIndex">[in] A pointer to an array of the indexes that each page starts from.</param>
+    <param name="uPageCnt">[in] A page count. The size of the pIndex buffer.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -411,42 +439,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfCandidateListUIElement">
-    <summary>
-      <para>The <b>ITfCandidateListUIElement</b> interface is implemented by a text service that has the candidate list UI.</para>
-    </summary>
+    <summary>The <b>ITfCandidateListUIElement</b> interface is implemented by a text service that has the candidate list UI.</summary>
   </member>
 </doc>

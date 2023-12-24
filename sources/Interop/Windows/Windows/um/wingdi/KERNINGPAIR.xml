@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="KERNINGPAIR">
-    <summary>
-      <para>The <b>KERNINGPAIR</b> structure defines a kerning pair.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/font-and-text-structures">Font and Text Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/fonts-and-text">Fonts and Text Overview</seealso>
-    <seealso cref="GetKerningPairs" />
+    <summary>The <b>KERNINGPAIR</b> structure defines a kerning pair.</summary>
   </member>
   <member name="KERNINGPAIR.wFirst">
-    <summary>
-      <para>The character code for the first character in the kerning pair.</para>
-    </summary>
+    <summary>The character code for the first character in the kerning pair.</summary>
   </member>
   <member name="KERNINGPAIR.wSecond">
-    <summary>
-      <para>The character code for the second character in the kerning pair.</para>
-    </summary>
+    <summary>The character code for the second character in the kerning pair.</summary>
   </member>
   <member name="KERNINGPAIR.iKernAmount">
-    <summary>
-      <para>The amount this pair will be kerned if they appear side by side in the same font and size. This value is typically negative, because pair kerning usually results in two characters being set more tightly than normal. The value is specified in logical units; that is, it depends on the current mapping mode.</para>
-    </summary>
+    <summary>The amount this pair will be kerned if they appear side by side in the same font and size. This value is typically negative, because pair kerning usually results in two characters being set more tightly than normal. The value is specified in logical units; that is, it depends on the current mapping mode.</summary>
   </member>
 </doc>

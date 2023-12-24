@@ -25,7 +25,7 @@ public unsafe partial struct IEnumProgressItems : IEnumProgressItems.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumProgressItems*, Guid*, void**, int>)(lpVtbl[0]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumProgressItems*, Guid*, void**, int>)(lpVtbl[0]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumProgressItems : IEnumProgressItems.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumProgressItems*, uint>)(lpVtbl[1]))((IEnumProgressItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumProgressItems*, uint>)(lpVtbl[1]))((IEnumProgressItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumProgressItems : IEnumProgressItems.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumProgressItems*, uint>)(lpVtbl[2]))((IEnumProgressItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumProgressItems*, uint>)(lpVtbl[2]))((IEnumProgressItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumProgressItems.xml' path='doc/member[@name="IEnumProgressItems.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumProgressItems : IEnumProgressItems.Interface, 
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, IProgressItem** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumProgressItems*, uint, IProgressItem**, uint*, int>)(lpVtbl[3]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumProgressItems*, uint, IProgressItem**, uint*, int>)(lpVtbl[3]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IEnumProgressItems.xml' path='doc/member[@name="IEnumProgressItems.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumProgressItems : IEnumProgressItems.Interface, 
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IEnumProgressItems*, uint, int>)(lpVtbl[4]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IEnumProgressItems*, uint, int>)(lpVtbl[4]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IEnumProgressItems.xml' path='doc/member[@name="IEnumProgressItems.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumProgressItems : IEnumProgressItems.Interface, 
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumProgressItems*, int>)(lpVtbl[5]))((IEnumProgressItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumProgressItems*, int>)(lpVtbl[5]))((IEnumProgressItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumProgressItems.xml' path='doc/member[@name="IEnumProgressItems.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumProgressItems : IEnumProgressItems.Interface, 
     [VtblIndex(6)]
     public HRESULT Clone(IEnumProgressItems** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumProgressItems*, IEnumProgressItems**, int>)(lpVtbl[6]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumProgressItems*, IEnumProgressItems**, int>)(lpVtbl[6]))((IEnumProgressItems*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumProgressItems : IEnumProgressItems.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, IProgressItem **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IProgressItem**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IProgressItem**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumProgressItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumProgressItems**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumProgressItems**, int> Clone;
     }
 }

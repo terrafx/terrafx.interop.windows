@@ -3,36 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SCHANNEL_CLIENT_SIGNATURE">
-    <summary>
-      <para>Specifies a client signature when a call to the <see cref="InitializeSecurityContext (Schannel)" /> function cannot access the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">private key</a> for a client certificate (in this case, the function returns <b>SEC_I_SIGNATURE_NEEDED</b>).</para>
-    </summary>
-    <remarks>
-      <para>Add a client signature to a client context by using this structure as the value of the <i>pInput</i> parameter in a call to the <see cref="ApplyControlToken" /> function.</para>
-    </remarks>
+    <summary>Specifies a client signature when a call to the <see cref="InitializeSecurityContext (Schannel)" /> function cannot access the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/p-gly">private key</a> for a client certificate (in this case, the function returns <b>SEC_I_SIGNATURE_NEEDED</b>).</summary>
   </member>
   <member name="SCHANNEL_CLIENT_SIGNATURE.cbLength">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="SCHANNEL_CLIENT_SIGNATURE.aiHash">
-    <summary>
-      <para>The ID of the algorithm used to compute the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> of the certificate.</para>
-    </summary>
+    <summary>The ID of the algorithm used to compute the <a href="https://docs.microsoft.com//windows/desktop/SecGloss/h-gly">hash</a> of the certificate.</summary>
   </member>
   <member name="SCHANNEL_CLIENT_SIGNATURE.cbHash">
-    <summary>
-      <para>The size, in bytes, of the <b>HashValue</b> array.</para>
-    </summary>
+    <summary>The size, in bytes, of the <b>HashValue</b> array.</summary>
   </member>
   <member name="SCHANNEL_CLIENT_SIGNATURE.HashValue">
-    <summary>
-      <para>An array of byte values that specify the hash of the certificate.</para>
-    </summary>
+    <summary>An array of byte values that specify the hash of the certificate.</summary>
   </member>
   <member name="SCHANNEL_CLIENT_SIGNATURE.CertThumbprint">
-    <summary>
-      <para>An array of byte values that specify the certificate thumbprint.</para>
-    </summary>
+    <summary>An array of byte values that specify the certificate thumbprint.</summary>
   </member>
 </doc>

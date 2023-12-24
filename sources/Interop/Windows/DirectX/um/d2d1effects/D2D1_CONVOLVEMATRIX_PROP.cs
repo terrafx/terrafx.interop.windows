@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_CONVOLVEMATRIX_PROP.xml' path='doc/member[@name="D2D1_CONVOLVEMATRIX_PROP"]/*' />
-public enum D2D1_CONVOLVEMATRIX_PROP : uint
+public enum D2D1_CONVOLVEMATRIX_PROP
 {
     /// <include file='D2D1_CONVOLVEMATRIX_PROP.xml' path='doc/member[@name="D2D1_CONVOLVEMATRIX_PROP.D2D1_CONVOLVEMATRIX_PROP_KERNEL_UNIT_LENGTH"]/*' />
     D2D1_CONVOLVEMATRIX_PROP_KERNEL_UNIT_LENGTH = 0,
@@ -42,5 +42,5 @@ public enum D2D1_CONVOLVEMATRIX_PROP : uint
     D2D1_CONVOLVEMATRIX_PROP_CLAMP_OUTPUT = 10,
 
     /// <include file='D2D1_CONVOLVEMATRIX_PROP.xml' path='doc/member[@name="D2D1_CONVOLVEMATRIX_PROP.D2D1_CONVOLVEMATRIX_PROP_FORCE_DWORD"]/*' />
-    D2D1_CONVOLVEMATRIX_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_CONVOLVEMATRIX_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

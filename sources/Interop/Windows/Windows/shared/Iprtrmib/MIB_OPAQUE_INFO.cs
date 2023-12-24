@@ -11,14 +11,14 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIB_OPAQUE_INFO.xml' path='doc/member[@name="MIB_OPAQUE_INFO"]/*' />
-public unsafe partial struct MIB_OPAQUE_INFO
+public partial struct MIB_OPAQUE_INFO
 {
     /// <include file='MIB_OPAQUE_INFO.xml' path='doc/member[@name="MIB_OPAQUE_INFO.dwId"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwId;
 
     /// <include file='MIB_OPAQUE_INFO.xml' path='doc/member[@name="MIB_OPAQUE_INFO.Anonymous"]/*' />
-    [NativeTypeName("_MIB_OPAQUE_INFO::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/Iprtrmib.h:306:5)")]
+    [NativeTypeName("__AnonymousRecord_Iprtrmib_L306_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ullAlign"]/*' />
@@ -39,13 +39,13 @@ public unsafe partial struct MIB_OPAQUE_INFO
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.rgbyData[0], 1);
+            return Anonymous.rgbyData.AsSpan(1);
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.ullAlign"]/*' />
         [FieldOffset(0)]
@@ -55,6 +55,26 @@ public unsafe partial struct MIB_OPAQUE_INFO
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.rgbyData"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE[1]")]
-        public fixed byte rgbyData[1];
+        public _rgbyData_e__FixedBuffer rgbyData;
+
+        /// <include file='_rgbyData_e__FixedBuffer.xml' path='doc/member[@name="_rgbyData_e__FixedBuffer"]/*' />
+        public partial struct _rgbyData_e__FixedBuffer
+        {
+            public byte e0;
+
+            [UnscopedRef]
+            public ref byte this[int index]
+            {
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                get
+                {
+                    return ref Unsafe.Add(ref e0, index);
+                }
+            }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
+            public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+        }
     }
 }

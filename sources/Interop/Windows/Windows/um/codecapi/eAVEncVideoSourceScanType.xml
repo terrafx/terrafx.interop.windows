@@ -4,24 +4,17 @@
 <doc>
   <member name="eAVEncVideoSourceScanType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies whether the input frames for an encoder are progressive or interlaced. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencvideoforcesourcescantype-property">AVEncVideoForceSourceScanType</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncVideoSourceScanType.eAVEncVideoSourceScan_Automatic">
-    <summary>
-      <para>Use the media type on the encoder's input pin to determine whether the frames are progressive or interlaced.</para>
-    </summary>
+    <summary>Use the media type on the encoder's input pin to determine whether the frames are progressive or interlaced.</summary>
   </member>
   <member name="eAVEncVideoSourceScanType.eAVEncVideoSourceScan_Interlaced">
-    <summary>
-      <para>Input frames are interlaced.</para>
-    </summary>
+    <summary>Input frames are interlaced.</summary>
   </member>
   <member name="eAVEncVideoSourceScanType.eAVEncVideoSourceScan_Progressive">
-    <summary>
-      <para>Input frames are progressive.</para>
-    </summary>
+    <summary>Input frames are progressive.</summary>
   </member>
 </doc>

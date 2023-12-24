@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVDecCommonOutputFormatTests
     {
         Assert.That(typeof(CODECAPI_AVDecCommonOutputFormat).GUID, Is.EqualTo(IID_CODECAPI_AVDecCommonOutputFormat));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecCommonOutputFormat" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVDecCommonOutputFormat>(), Is.EqualTo(sizeof(CODECAPI_AVDecCommonOutputFormat)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecCommonOutputFormat" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVDecCommonOutputFormat).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVDecCommonOutputFormat" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVDecCommonOutputFormat), Is.EqualTo(1));
-    }
 }

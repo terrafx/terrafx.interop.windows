@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_PROFILE_HEVC">
+    <summary>Specifies the encoder profiles for High Efficiency Video Coding (HEVC) encoding.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN">
+    <summary>Main profile.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PROFILE_HEVC.D3D12_VIDEO_ENCODER_PROFILE_HEVC_MAIN10">
+    <summary>Main 10 profile.</summary>
+  </member>
+</doc>

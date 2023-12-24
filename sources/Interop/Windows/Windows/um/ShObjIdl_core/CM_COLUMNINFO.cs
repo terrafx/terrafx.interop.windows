@@ -3,10 +3,12 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO"]/*' />
-public unsafe partial struct CM_COLUMNINFO
+public partial struct CM_COLUMNINFO
 {
     /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.cbSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -31,5 +33,12 @@ public unsafe partial struct CM_COLUMNINFO
 
     /// <include file='CM_COLUMNINFO.xml' path='doc/member[@name="CM_COLUMNINFO.wszName"]/*' />
     [NativeTypeName("WCHAR[80]")]
-    public fixed ushort wszName[80];
+    public _wszName_e__FixedBuffer wszName;
+
+    /// <include file='_wszName_e__FixedBuffer.xml' path='doc/member[@name="_wszName_e__FixedBuffer"]/*' />
+    [InlineArray(80)]
+    public partial struct _wszName_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

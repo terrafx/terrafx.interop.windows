@@ -3,13 +3,14 @@
 // Ported from um/d3d11_1.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.Versioning;
 
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA"]/*' />
 [SupportedOSPlatform("windows10.0")]
-public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA
+public partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA
 {
     /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA.PrivateDataSize"]/*' />
     public uint PrivateDataSize;
@@ -30,5 +31,12 @@ public unsafe partial struct D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA
 
     /// <include file='D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA.xml' path='doc/member[@name="D3D11_KEY_EXCHANGE_HW_PROTECTION_OUTPUT_DATA.pbOutput"]/*' />
     [NativeTypeName("BYTE[4]")]
-    public fixed byte pbOutput[4];
+    public _pbOutput_e__FixedBuffer pbOutput;
+
+    /// <include file='_pbOutput_e__FixedBuffer.xml' path='doc/member[@name="_pbOutput_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _pbOutput_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

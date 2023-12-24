@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_CPU_PAGE_PROPERTY">
+    <summary>Specifies the CPU-page properties for the heap.</summary>
+  </member>
+  <member name="D3D12_CPU_PAGE_PROPERTY.D3D12_CPU_PAGE_PROPERTY_UNKNOWN">
+    <summary>The CPU-page property is unknown.</summary>
+  </member>
+  <member name="D3D12_CPU_PAGE_PROPERTY.D3D12_CPU_PAGE_PROPERTY_NOT_AVAILABLE">
+    <summary>The CPU cannot access the heap, therefore no page properties are available.</summary>
+  </member>
+  <member name="D3D12_CPU_PAGE_PROPERTY.D3D12_CPU_PAGE_PROPERTY_WRITE_COMBINE">
+    <summary>The CPU-page property is write-combined.</summary>
+  </member>
+  <member name="D3D12_CPU_PAGE_PROPERTY.D3D12_CPU_PAGE_PROPERTY_WRITE_BACK">
+    <summary>The CPU-page property is write-back.</summary>
+  </member>
+</doc>

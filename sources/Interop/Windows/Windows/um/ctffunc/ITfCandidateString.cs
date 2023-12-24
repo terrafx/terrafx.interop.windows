@@ -25,7 +25,7 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfCandidateString*, Guid*, void**, int>)(lpVtbl[0]))((ITfCandidateString*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateString*, Guid*, void**, int>)(lpVtbl[0]))((ITfCandidateString*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfCandidateString*, uint>)(lpVtbl[1]))((ITfCandidateString*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateString*, uint>)(lpVtbl[1]))((ITfCandidateString*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfCandidateString*, uint>)(lpVtbl[2]))((ITfCandidateString*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateString*, uint>)(lpVtbl[2]))((ITfCandidateString*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfCandidateString.xml' path='doc/member[@name="ITfCandidateString.GetString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetString([NativeTypeName("BSTR *")] ushort** pbstr)
+    public HRESULT GetString([NativeTypeName("BSTR *")] char** pbstr)
     {
-        return ((delegate* unmanaged<ITfCandidateString*, ushort**, int>)(lpVtbl[3]))((ITfCandidateString*)Unsafe.AsPointer(ref this), pbstr);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateString*, char**, int>)(lpVtbl[3]))((ITfCandidateString*)Unsafe.AsPointer(ref this), pbstr);
     }
 
     /// <include file='ITfCandidateString.xml' path='doc/member[@name="ITfCandidateString.GetIndex"]/*' />
@@ -59,13 +59,13 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface, 
     [VtblIndex(4)]
     public HRESULT GetIndex([NativeTypeName("ULONG *")] uint* pnIndex)
     {
-        return ((delegate* unmanaged<ITfCandidateString*, uint*, int>)(lpVtbl[4]))((ITfCandidateString*)Unsafe.AsPointer(ref this), pnIndex);
+        return ((delegate* unmanaged[MemberFunction]<ITfCandidateString*, uint*, int>)(lpVtbl[4]))((ITfCandidateString*)Unsafe.AsPointer(ref this), pnIndex);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetString([NativeTypeName("BSTR *")] ushort** pbstr);
+        HRESULT GetString([NativeTypeName("BSTR *")] char** pbstr);
 
         [VtblIndex(4)]
         HRESULT GetIndex([NativeTypeName("ULONG *")] uint* pnIndex);
@@ -75,18 +75,18 @@ public unsafe partial struct ITfCandidateString : ITfCandidateString.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetString;
 
         [NativeTypeName("HRESULT (ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetIndex;
     }
 }

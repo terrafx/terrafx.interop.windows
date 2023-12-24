@@ -3,10 +3,12 @@
 // Ported from um/ddraw.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='DDCAPS_DX1.xml' path='doc/member[@name="DDCAPS_DX1"]/*' />
-public unsafe partial struct DDCAPS_DX1
+public partial struct DDCAPS_DX1
 {
     /// <include file='DDCAPS_DX1.xml' path='doc/member[@name="DDCAPS_DX1.dwSize"]/*' />
     [NativeTypeName("DWORD")]
@@ -110,7 +112,7 @@ public unsafe partial struct DDCAPS_DX1
 
     /// <include file='DDCAPS_DX1.xml' path='doc/member[@name="DDCAPS_DX1.dwRops"]/*' />
     [NativeTypeName("DWORD[8]")]
-    public fixed uint dwRops[8];
+    public _dwRops_e__FixedBuffer dwRops;
 
     /// <include file='DDCAPS_DX1.xml' path='doc/member[@name="DDCAPS_DX1.ddsCaps"]/*' />
     public DDSCAPS ddsCaps;
@@ -150,4 +152,11 @@ public unsafe partial struct DDCAPS_DX1
     /// <include file='DDCAPS_DX1.xml' path='doc/member[@name="DDCAPS_DX1.dwReserved3"]/*' />
     [NativeTypeName("DWORD")]
     public uint dwReserved3;
+
+    /// <include file='_dwRops_e__FixedBuffer.xml' path='doc/member[@name="_dwRops_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _dwRops_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

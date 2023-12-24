@@ -19,32 +19,4 @@ public static unsafe partial class IRpcSyntaxNegotiateTests
     {
         Assert.That(typeof(IRpcSyntaxNegotiate).GUID, Is.EqualTo(IID_IRpcSyntaxNegotiate));
     }
-
-    /// <summary>Validates that the <see cref="IRpcSyntaxNegotiate" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IRpcSyntaxNegotiate>(), Is.EqualTo(sizeof(IRpcSyntaxNegotiate)));
-    }
-
-    /// <summary>Validates that the <see cref="IRpcSyntaxNegotiate" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IRpcSyntaxNegotiate).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IRpcSyntaxNegotiate" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IRpcSyntaxNegotiate), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IRpcSyntaxNegotiate), Is.EqualTo(4));
-        }
-    }
 }

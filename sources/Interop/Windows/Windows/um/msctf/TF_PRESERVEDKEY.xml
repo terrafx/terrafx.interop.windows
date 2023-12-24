@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TF_PRESERVEDKEY">
-    <summary>
-      <para>The <b>TF_PRESERVEDKEY</b> structure represents a preserved key.</para>
-    </summary>
-    <remarks>
-      <para>Preserved keys are registered by TSF text services and provide keyboard shortcuts to common commands implemented by the TSF text service.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/tf-mod--constants">TF_MOD_* constants
-</seealso>
+    <summary>The <b>TF_PRESERVEDKEY</b> structure represents a preserved key.</summary>
   </member>
   <member name="TF_PRESERVEDKEY.uVKey">
-    <summary>
-      <para>Virtual key code of the keyboard shortcut.</para>
-    </summary>
+    <summary>Virtual key code of the keyboard shortcut.</summary>
   </member>
   <member name="TF_PRESERVEDKEY.uModifiers">
-    <summary>
-      <para>Modifies the preserved key. This can be zero or a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-mod--constants">TF_MOD_* constants</a>.</para>
-    </summary>
+    <summary>Modifies the preserved key. This can be zero or a combination of one or more of the <a href="https://docs.microsoft.com//windows/desktop/TSF/tf-mod--constants">TF_MOD_* constants</a>.</summary>
   </member>
 </doc>

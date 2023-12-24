@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICSectionAccessLevel">
-    <summary>
-      <para>Specifies the access level of a Windows Graphics Device Interface (GDI) section.</para>
-    </summary>
+    <summary>Specifies the access level of a Windows Graphics Device Interface (GDI) section.</summary>
   </member>
   <member name="WICSectionAccessLevel.WICSectionAccessLevelRead">
-    <summary>
-      <para>Indicates a read only access level.</para>
-    </summary>
+    <summary>Indicates a read only access level.</summary>
   </member>
   <member name="WICSectionAccessLevel.WICSectionAccessLevelReadWrite">
-    <summary>
-      <para>Indicates a read/write access level.</para>
-    </summary>
+    <summary>Indicates a read/write access level.</summary>
   </member>
-  <member name="WICSectionAccessLevel.WICSectionAccessLevel_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICSectionAccessLevel.WICSectionAccessLevel_FORCE_DWORD"></member>
 </doc>

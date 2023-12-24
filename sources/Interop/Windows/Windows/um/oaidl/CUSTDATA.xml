@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CUSTDATA">
-    <summary>
-      <para>Represents custom data.</para>
-    </summary>
+    <summary>Represents custom data.</summary>
   </member>
   <member name="CUSTDATA.cCustData">
-    <summary>
-      <para>The number of custom data items in the <b>prgCustData</b> array.</para>
-    </summary>
+    <summary>The number of custom data items in the <b>prgCustData</b> array.</summary>
   </member>
   <member name="CUSTDATA.prgCustData">
-    <summary>
-      <para>The array of custom data items.</para>
-    </summary>
+    <summary>The array of custom data items.</summary>
   </member>
 </doc>

@@ -17,7 +17,7 @@ public unsafe partial struct PROPSPEC
     public uint ulKind;
 
     /// <include file='PROPSPEC.xml' path='doc/member[@name="PROPSPEC.Anonymous"]/*' />
-    [NativeTypeName("tagPROPSPEC::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/PropIdlBase.h:452:43)")]
+    [NativeTypeName("__AnonymousRecord_propidlbase_L452_C43")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.propid"]/*' />
@@ -33,7 +33,7 @@ public unsafe partial struct PROPSPEC
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpwstr"]/*' />
     [UnscopedRef]
-    public ref ushort* lpwstr
+    public ref char* lpwstr
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
@@ -54,6 +54,6 @@ public unsafe partial struct PROPSPEC
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.lpwstr"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("LPOLESTR")]
-        public ushort* lpwstr;
+        public char* lpwstr;
     }
 }

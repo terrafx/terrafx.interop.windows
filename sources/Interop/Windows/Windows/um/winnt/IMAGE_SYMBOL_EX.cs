@@ -3,6 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
@@ -12,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct IMAGE_SYMBOL_EX
 {
     /// <include file='IMAGE_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_SYMBOL_EX.N"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18741:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L18791_C5")]
     public _N_e__Union N;
 
     /// <include file='IMAGE_SYMBOL_EX.xml' path='doc/member[@name="IMAGE_SYMBOL_EX.Value"]/*' />
@@ -35,22 +36,22 @@ public partial struct IMAGE_SYMBOL_EX
 
     /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit, Pack = 2)]
-    public unsafe partial struct _N_e__Union
+    public partial struct _N_e__Union
     {
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.ShortName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE[8]")]
-        public fixed byte ShortName[8];
+        public _ShortName_e__FixedBuffer ShortName;
 
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.Name"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:18743:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L18793_C9")]
         public _Name_e__Struct Name;
 
         /// <include file='_N_e__Union.xml' path='doc/member[@name="_N_e__Union.LongName"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("DWORD[2]")]
-        public fixed uint LongName[2];
+        public _LongName_e__FixedBuffer LongName;
 
         /// <include file='_Name_e__Struct.xml' path='doc/member[@name="_Name_e__Struct"]/*' />
         [StructLayout(LayoutKind.Sequential, Pack = 2)]
@@ -63,6 +64,22 @@ public partial struct IMAGE_SYMBOL_EX
             /// <include file='_Name_e__Struct.xml' path='doc/member[@name="_Name_e__Struct.Long"]/*' />
             [NativeTypeName("DWORD")]
             public uint Long;
+        }
+
+        /// <include file='_ShortName_e__FixedBuffer.xml' path='doc/member[@name="_ShortName_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
+        [InlineArray(8)]
+        public partial struct _ShortName_e__FixedBuffer
+        {
+            public byte e0;
+        }
+
+        /// <include file='_LongName_e__FixedBuffer.xml' path='doc/member[@name="_LongName_e__FixedBuffer"]/*' />
+        [StructLayout(LayoutKind.Sequential, Pack = 2)]
+        [InlineArray(2)]
+        public partial struct _LongName_e__FixedBuffer
+        {
+            public uint e0;
         }
     }
 }

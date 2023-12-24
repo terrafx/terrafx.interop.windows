@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_META_COMMAND_PARAMETER_DESC">
+    <summary>Describes a parameter to a meta command.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_PARAMETER_DESC.Name">
+    <summary>The parameter name.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_PARAMETER_DESC.Type">
+    <summary>A <see cref="D3D12_META_COMMAND_PARAMETER_TYPE" /> specifying the parameter type.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_PARAMETER_DESC.Flags">
+    <summary>A <see cref="D3D12_META_COMMAND_PARAMETER_FLAGS" /> specifying the parameter flags.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_PARAMETER_DESC.RequiredResourceState">
+    <summary>A <see cref="D3D12_RESOURCE_STATES" /> specifying the expected state of a resource parameter.</summary>
+  </member>
+  <member name="D3D12_META_COMMAND_PARAMETER_DESC.StructureOffset">
+    <summary>The 4-byte aligned offset for this parameter, within the structure containing the parameter values, which you pass when creating/initializing/executing the meta command, as appropriate.</summary>
+  </member>
+</doc>

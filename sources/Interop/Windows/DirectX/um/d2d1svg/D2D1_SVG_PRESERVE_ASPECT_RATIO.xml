@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_PRESERVE_ASPECT_RATIO">
-    <summary>
-      <para>Represents all SVG preserveAspectRatio settings.</para>
-    </summary>
+    <summary>Represents all SVG preserveAspectRatio settings.</summary>
   </member>
   <member name="D2D1_SVG_PRESERVE_ASPECT_RATIO.defer">
-    <summary>
-      <para>Sets the 'defer' portion of the preserveAspectRatio settings. This field only has an effect on an 'image' element that references another SVG document. As
-this is not currently supported, the field has no impact on rendering.</para>
-    </summary>
+    <summary>Sets the 'defer' portion of the preserveAspectRatio settings. This field only has an effect on an 'image' element that references another SVG document. As this is not currently supported, the field has no impact on rendering.</summary>
   </member>
   <member name="D2D1_SVG_PRESERVE_ASPECT_RATIO.align">
-    <summary>
-      <para>Sets the align portion of the preserveAspectRatio settings.</para>
-    </summary>
+    <summary>Sets the align portion of the preserveAspectRatio settings.</summary>
   </member>
   <member name="D2D1_SVG_PRESERVE_ASPECT_RATIO.meetOrSlice">
-    <summary>
-      <para>Sets the meetOrSlice portion of the preserveAspectRatio settings.</para>
-    </summary>
+    <summary>Sets the meetOrSlice portion of the preserveAspectRatio settings.</summary>
   </member>
 </doc>

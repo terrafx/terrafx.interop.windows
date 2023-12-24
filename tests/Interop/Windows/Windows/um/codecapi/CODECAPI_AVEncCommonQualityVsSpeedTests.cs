@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncCommonQualityVsSpeedTests
     {
         Assert.That(typeof(CODECAPI_AVEncCommonQualityVsSpeed).GUID, Is.EqualTo(IID_CODECAPI_AVEncCommonQualityVsSpeed));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonQualityVsSpeed" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncCommonQualityVsSpeed>(), Is.EqualTo(sizeof(CODECAPI_AVEncCommonQualityVsSpeed)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonQualityVsSpeed" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncCommonQualityVsSpeed).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncCommonQualityVsSpeed" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncCommonQualityVsSpeed), Is.EqualTo(1));
-    }
 }

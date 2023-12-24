@@ -17,5 +17,5 @@ public unsafe partial struct CERT_HASHED_URL
 
     /// <include file='CERT_HASHED_URL.xml' path='doc/member[@name="CERT_HASHED_URL.pwszUrl"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszUrl;
+    public char* pwszUrl;
 }

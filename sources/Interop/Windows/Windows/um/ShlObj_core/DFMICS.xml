@@ -3,19 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DFMICS">
-    <summary>
-      <para>Contains additional arguments used by <a href="https://docs.microsoft.com//windows/desktop/shell/prophand-content-view">DFM_INVOKECOMMANDEX</a>.</para>
-    </summary>
+    <summary>Contains additional arguments used by <a href="https://docs.microsoft.com//windows/desktop/shell/prophand-content-view">DFM_INVOKECOMMANDEX</a>.</summary>
   </member>
   <member name="DFMICS.cbSize">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The size of this structure, in bytes.</para>
-    </summary>
+    <summary>The size of this structure, in bytes.</summary>
   </member>
   <member name="DFMICS.fMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>Zero, or one or more of the following flags that specify how to handle the data in the <see cref="CMINVOKECOMMANDINFO" /> or <see cref="CMINVOKECOMMANDINFOEX" /> structure pointed to by <b>pici</b>.</para>
       <h4>CMIC_MASK_HOTKEY</h4>
       <para>The <b>dwHotKey</b> member is valid.</para>
@@ -35,7 +29,7 @@
       <para>
         <b>Windows Vista and later.</b> The implementation of <see cref="IContextMenu.InvokeCommand" /> should be synchronous, not returning before it is complete. Since this is recommended, calling applications that specify this flag cannot guarantee that this request will be honored if they are not familiar with the implementation of the verb that they are invoking.</para>
       <h4>CMIC_MASK_SHIFT_DOWN</h4>
-      <para>The SHIFT key is pressed.  Use this instead of polling the current state of the keyboard that may have changed since the verb was invoked.</para>
+      <para>The SHIFT key is pressed. Use this instead of polling the current state of the keyboard that may have changed since the verb was invoked.</para>
       <h4>CMIC_MASK_CONTROL_DOWN</h4>
       <para>The CTRL key is pressed. Use this instead of polling the current state of the keyboard that may have changed since the verb was invoked.</para>
       <h4>CMIC_MASK_FLAG_LOG_USAGE</h4>
@@ -47,33 +41,18 @@
     </summary>
   </member>
   <member name="DFMICS.lParam">
-    <summary>
-      <para>Type: <b>LPARAM</b></para>
-      <para>A pointer to a null-terminated string that contains additional arguments to the selected menu command. This member can be <b>NULL</b>.</para>
-    </summary>
+    <summary>A pointer to a null-terminated string that contains additional arguments to the selected menu command. This member can be <b>NULL</b>.</summary>
   </member>
   <member name="DFMICS.idCmdFirst">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The minimum value that the handler can specify for a menu item identifier.</para>
-    </summary>
+    <summary>The minimum value that the handler can specify for a menu item identifier.</summary>
   </member>
   <member name="DFMICS.idDefMax">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The maximum value that the handler can specify for a menu item identifier.</para>
-    </summary>
+    <summary>The maximum value that the handler can specify for a menu item identifier.</summary>
   </member>
   <member name="DFMICS.pici">
-    <summary>
-      <para>Type: <b>LPCMINVOKECOMMANDINFO</b></para>
-      <para>A pointer to a <see cref="CMINVOKECOMMANDINFO" /> or <b>CMINVOKECOMMANDINFO</b> structure.</para>
-    </summary>
+    <summary>A pointer to a <see cref="CMINVOKECOMMANDINFO" /> or <b>CMINVOKECOMMANDINFO</b> structure.</summary>
   </member>
   <member name="DFMICS.punkSite">
-    <summary>
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the site of the context menu handler.</para>
-    </summary>
+    <summary>A pointer to the site of the context menu handler.</summary>
   </member>
 </doc>

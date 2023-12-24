@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TfLBIClick">
-    <summary>
-      <para>Elements of the <b>TfLBIClick</b> enumeration specify which mouse button was used to click a toolbar item.</para>
-    </summary>
-    <seealso cref="ITfLangBarItemBalloon.OnClick " />
-    <seealso cref="ITfLangBarItemBitmap.OnClick " />
-    <seealso cref="ITfLangBarItemBitmapButton.OnClick " />
-    <seealso cref="ITfLangBarItemButton.OnClick " />
+    <summary>Elements of the <b>TfLBIClick</b> enumeration specify which mouse button was used to click a toolbar item.</summary>
   </member>
   <member name="TfLBIClick.TF_LBI_CLK_RIGHT">
-    <summary>
-      <para>The user right-clicked the button.</para>
-    </summary>
+    <summary>The user right-clicked the button.</summary>
   </member>
   <member name="TfLBIClick.TF_LBI_CLK_LEFT">
-    <summary>
-      <para>The user left-clicked the button.</para>
-    </summary>
+    <summary>The user left-clicked the button.</summary>
   </member>
 </doc>

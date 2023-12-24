@@ -19,25 +19,4 @@ public static unsafe partial class SVGAnimatedLengthListTests
     {
         Assert.That(typeof(SVGAnimatedLengthList).GUID, Is.EqualTo(IID_SVGAnimatedLengthList));
     }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedLengthList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGAnimatedLengthList>(), Is.EqualTo(sizeof(SVGAnimatedLengthList)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedLengthList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGAnimatedLengthList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGAnimatedLengthList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGAnimatedLengthList), Is.EqualTo(1));
-    }
 }

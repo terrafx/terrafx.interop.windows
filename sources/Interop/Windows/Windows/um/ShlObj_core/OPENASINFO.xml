@@ -3,28 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OPENASINFO">
-    <summary>
-      <para>Stores information for the <see cref="SHOpenWithDialog" /> function.</para>
-    </summary>
-    <remarks>
-      <para>Starting in Windows 10, the <b>OAIF_ALLOW_REGISTRATION</b>, <b>OAIF_FORCE_REGISTRATION</b>, and <b>OAIF_HIDE_REGISTRATION</b> flags will be ignored by <see cref="SHOpenWithDialog" />. The <b>Open With</b> dialog box can no longer be used to change the default program used to open a file extension. You can only use <b>SHOpenWithDialog</b> to open a single file.</para>
-    </remarks>
+    <summary>Stores information for the <see cref="SHOpenWithDialog" /> function.</summary>
   </member>
   <member name="OPENASINFO.pcszFile">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the file name.</para>
-    </summary>
+    <summary>A pointer to the file name.</summary>
   </member>
   <member name="OPENASINFO.pcszClass">
-    <summary>
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the file type description. Set this parameter to <b>NULL</b> to use the file name extension of <b>pcszFile</b>.</para>
-    </summary>
+    <summary>A pointer to the file type description. Set this parameter to <b>NULL</b> to use the file name extension of <b>pcszFile</b>.</summary>
   </member>
   <member name="OPENASINFO.oaifInFlags">
     <summary>
-      <para>Type: <b>OPEN_AS_INFO_FLAGS</b></para>
       <para>The characteristics of the <see cref="SHOpenWithDialog" /> dialog box. One or more of the following values.</para>
       <h4>OAIF_ALLOW_REGISTRATION (0x00000001)</h4>
       <para>Enable the "always use this program" checkbox. If not passed, it will be disabled.</para>

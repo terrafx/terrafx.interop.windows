@@ -3,33 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CM_MASK">
-    <summary>
-      <para>Indicates which values in the <see cref="CM_COLUMNINFO" /> structure should be set during calls to <see cref="IColumnManager.SetColumnInfo" />.</para>
-    </summary>
+    <summary>Indicates which values in the <see cref="CM_COLUMNINFO" /> structure should be set during calls to <see cref="IColumnManager.SetColumnInfo" />.</summary>
   </member>
   <member name="CM_MASK.CM_MASK_WIDTH">
-    <summary>
-      <para>The <b>uWidth</b> member is specified.</para>
-    </summary>
+    <summary>The <b>uWidth</b> member is specified.</summary>
   </member>
   <member name="CM_MASK.CM_MASK_DEFAULTWIDTH">
-    <summary>
-      <para>The <b>uDefaultWidth</b> member is specified.</para>
-    </summary>
+    <summary>The <b>uDefaultWidth</b> member is specified.</summary>
   </member>
   <member name="CM_MASK.CM_MASK_IDEALWIDTH">
-    <summary>
-      <para>The <b>uIdealWidth</b> member is specified.</para>
-    </summary>
+    <summary>The <b>uIdealWidth</b> member is specified.</summary>
   </member>
   <member name="CM_MASK.CM_MASK_NAME">
-    <summary>
-      <para>The <b>wszName</b> member is specified.</para>
-    </summary>
+    <summary>The <b>wszName</b> member is specified.</summary>
   </member>
   <member name="CM_MASK.CM_MASK_STATE">
-    <summary>
-      <para>The <b>dwState</b> member is specified.</para>
-    </summary>
+    <summary>The <b>dwState</b> member is specified.</summary>
   </member>
 </doc>

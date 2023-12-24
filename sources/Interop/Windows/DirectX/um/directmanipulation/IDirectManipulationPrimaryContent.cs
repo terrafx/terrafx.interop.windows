@@ -28,7 +28,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, Guid*, void**, int>)(lpVtbl[0]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, uint>)(lpVtbl[1]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, uint>)(lpVtbl[1]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, uint>)(lpVtbl[2]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, uint>)(lpVtbl[2]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetSnapInterval"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(3)]
     public HRESULT SetSnapInterval(DIRECTMANIPULATION_MOTION_TYPES motion, float interval, float offset)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float, float, int>)(lpVtbl[3]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, interval, offset);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float, float, int>)(lpVtbl[3]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, interval, offset);
     }
 
     /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetSnapPoints"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(4)]
     public HRESULT SetSnapPoints(DIRECTMANIPULATION_MOTION_TYPES motion, [NativeTypeName("const float *")] float* points, [NativeTypeName("DWORD")] uint pointCount)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float*, uint, int>)(lpVtbl[4]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, points, pointCount);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, float*, uint, int>)(lpVtbl[4]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, points, pointCount);
     }
 
     /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetSnapType"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(5)]
     public HRESULT SetSnapType(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_TYPE type)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE, int>)(lpVtbl[5]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, type);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE, int>)(lpVtbl[5]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, type);
     }
 
     /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetSnapCoordinate"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(6)]
     public HRESULT SetSnapCoordinate(DIRECTMANIPULATION_MOTION_TYPES motion, DIRECTMANIPULATION_SNAPPOINT_COORDINATE coordinate, float origin)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float, int>)(lpVtbl[6]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, coordinate, origin);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float, int>)(lpVtbl[6]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), motion, coordinate, origin);
     }
 
     /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetZoomBoundaries"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(7)]
     public HRESULT SetZoomBoundaries(float zoomMinimum, float zoomMaximum)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float, float, int>)(lpVtbl[7]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), zoomMinimum, zoomMaximum);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, float, float, int>)(lpVtbl[7]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), zoomMinimum, zoomMaximum);
     }
 
     /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetHorizontalAlignment"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(8)]
     public HRESULT SetHorizontalAlignment(DIRECTMANIPULATION_HORIZONTALALIGNMENT alignment)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_HORIZONTALALIGNMENT, int>)(lpVtbl[8]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), alignment);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_HORIZONTALALIGNMENT, int>)(lpVtbl[8]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), alignment);
     }
 
     /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.SetVerticalAlignment"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(9)]
     public HRESULT SetVerticalAlignment(DIRECTMANIPULATION_VERTICALALIGNMENT alignment)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_VERTICALALIGNMENT, int>)(lpVtbl[9]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), alignment);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, DIRECTMANIPULATION_VERTICALALIGNMENT, int>)(lpVtbl[9]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), alignment);
     }
 
     /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.GetInertiaEndTransform"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(10)]
     public HRESULT GetInertiaEndTransform(float* matrix, [NativeTypeName("DWORD")] uint pointCount)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, uint, int>)(lpVtbl[10]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, float*, uint, int>)(lpVtbl[10]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), matrix, pointCount);
     }
 
     /// <include file='IDirectManipulationPrimaryContent.xml' path='doc/member[@name="IDirectManipulationPrimaryContent.GetCenterPoint"]/*' />
@@ -118,7 +118,7 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
     [VtblIndex(11)]
     public HRESULT GetCenterPoint(float* centerX, float* centerY)
     {
-        return ((delegate* unmanaged<IDirectManipulationPrimaryContent*, float*, float*, int>)(lpVtbl[11]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), centerX, centerY);
+        return ((delegate* unmanaged[MemberFunction]<IDirectManipulationPrimaryContent*, float*, float*, int>)(lpVtbl[11]))((IDirectManipulationPrimaryContent*)Unsafe.AsPointer(ref this), centerX, centerY);
     }
 
     public interface Interface : IUnknown.Interface
@@ -155,39 +155,39 @@ public unsafe partial struct IDirectManipulationPrimaryContent : IDirectManipula
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, float, float, int> SetSnapInterval;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, float, float, int> SetSnapInterval;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, const float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, float*, uint, int> SetSnapPoints;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, float*, uint, int> SetSnapPoints;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE, int> SetSnapType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_TYPE, int> SetSnapType;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float, int> SetSnapCoordinate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_MOTION_TYPES, DIRECTMANIPULATION_SNAPPOINT_COORDINATE, float, int> SetSnapCoordinate;
 
         [NativeTypeName("HRESULT (float, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float, float, int> SetZoomBoundaries;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float, float, int> SetZoomBoundaries;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_HORIZONTALALIGNMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_HORIZONTALALIGNMENT, int> SetHorizontalAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_HORIZONTALALIGNMENT, int> SetHorizontalAlignment;
 
         [NativeTypeName("HRESULT (DIRECTMANIPULATION_VERTICALALIGNMENT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DIRECTMANIPULATION_VERTICALALIGNMENT, int> SetVerticalAlignment;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DIRECTMANIPULATION_VERTICALALIGNMENT, int> SetVerticalAlignment;
 
         [NativeTypeName("HRESULT (float *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, int> GetInertiaEndTransform;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, int> GetInertiaEndTransform;
 
         [NativeTypeName("HRESULT (float *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, float*, int> GetCenterPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, float*, int> GetCenterPoint;
     }
 }

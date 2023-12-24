@@ -3,48 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="RENDEZVOUS_SESSION_STATE">
-    <summary>
-      <para>Provides the list of possible state codes of the session invitation.</para>
-    </summary>
+    <summary>Provides the list of possible state codes of the session invitation.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_STATE.RSS_UNKNOWN">
-    <summary>
-      <para>Unknown response.</para>
-    </summary>
+    <summary>Unknown response.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_STATE.RSS_READY">
-    <summary>
-      <para>The session is ready.</para>
-    </summary>
+    <summary>The session is ready.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_STATE.RSS_INVITATION">
-    <summary>
-      <para>The session is an invitation.</para>
-    </summary>
+    <summary>The session is an invitation.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_STATE.RSS_ACCEPTED">
-    <summary>
-      <para>The session is accepted.</para>
-    </summary>
+    <summary>The session is accepted.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_STATE.RSS_CONNECTED">
-    <summary>
-      <para>The session is not ready.</para>
-    </summary>
+    <summary>The session is not ready.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_STATE.RSS_CANCELLED">
-    <summary>
-      <para>The local session canceled.</para>
-    </summary>
+    <summary>The local session canceled.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_STATE.RSS_DECLINED">
-    <summary>
-      <para>The session is remotely cancelled.</para>
-    </summary>
+    <summary>The session is remotely cancelled.</summary>
   </member>
   <member name="RENDEZVOUS_SESSION_STATE.RSS_TERMINATED">
-    <summary>
-      <para>Protocol error.</para>
-    </summary>
+    <summary>Protocol error.</summary>
   </member>
 </doc>

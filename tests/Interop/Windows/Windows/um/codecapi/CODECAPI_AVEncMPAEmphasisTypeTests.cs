@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPAEmphasisTypeTests
     {
         Assert.That(typeof(CODECAPI_AVEncMPAEmphasisType).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPAEmphasisType));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAEmphasisType" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPAEmphasisType>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPAEmphasisType)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAEmphasisType" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPAEmphasisType).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAEmphasisType" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPAEmphasisType), Is.EqualTo(1));
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILineInfo*, Guid*, void**, int>)(lpVtbl[0]))((ILineInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILineInfo*, Guid*, void**, int>)(lpVtbl[0]))((ILineInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILineInfo*, uint>)(lpVtbl[1]))((ILineInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILineInfo*, uint>)(lpVtbl[1]))((ILineInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILineInfo*, uint>)(lpVtbl[2]))((ILineInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILineInfo*, uint>)(lpVtbl[2]))((ILineInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_x"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT get_x([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[3]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ILineInfo*, int*, int>)(lpVtbl[3]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_baseLine"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT get_baseLine([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[4]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ILineInfo*, int*, int>)(lpVtbl[4]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_textDescent"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT get_textDescent([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[5]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ILineInfo*, int*, int>)(lpVtbl[5]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_textHeight"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT get_textHeight([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[6]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ILineInfo*, int*, int>)(lpVtbl[6]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='ILineInfo.xml' path='doc/member[@name="ILineInfo.get_lineDirection"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT get_lineDirection([NativeTypeName("LONG *")] int* p)
     {
-        return ((delegate* unmanaged<ILineInfo*, int*, int>)(lpVtbl[7]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<ILineInfo*, int*, int>)(lpVtbl[7]))((ILineInfo*)Unsafe.AsPointer(ref this), p);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct ILineInfo : ILineInfo.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_x;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_x;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_baseLine;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_baseLine;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_textDescent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_textDescent;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_textHeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_textHeight;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_lineDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_lineDirection;
     }
 }

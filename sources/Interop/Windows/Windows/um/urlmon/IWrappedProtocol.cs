@@ -25,7 +25,7 @@ public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWrappedProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWrappedProtocol*, Guid*, void**, int>)(lpVtbl[0]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWrappedProtocol*, uint>)(lpVtbl[1]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWrappedProtocol*, uint>)(lpVtbl[1]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWrappedProtocol*, uint>)(lpVtbl[2]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWrappedProtocol*, uint>)(lpVtbl[2]))((IWrappedProtocol*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWrappedProtocol.xml' path='doc/member[@name="IWrappedProtocol.GetWrapperCode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface, INat
     [VtblIndex(3)]
     public HRESULT GetWrapperCode([NativeTypeName("LONG *")] int* pnCode, [NativeTypeName("DWORD_PTR")] nuint dwReserved)
     {
-        return ((delegate* unmanaged<IWrappedProtocol*, int*, nuint, int>)(lpVtbl[3]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), pnCode, dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IWrappedProtocol*, int*, nuint, int>)(lpVtbl[3]))((IWrappedProtocol*)Unsafe.AsPointer(ref this), pnCode, dwReserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IWrappedProtocol : IWrappedProtocol.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG *, DWORD_PTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, nuint, int> GetWrapperCode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, nuint, int> GetWrapperCode;
     }
 }

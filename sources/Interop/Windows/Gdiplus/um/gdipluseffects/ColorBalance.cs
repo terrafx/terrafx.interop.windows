@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='ColorBalance.xml' path='doc/member[@name="ColorBalance"]/*' />
-[NativeTypeName("struct ColorBalance : Effect")]
+[NativeTypeName("struct ColorBalance : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct ColorBalance
 {
@@ -48,7 +48,7 @@ public unsafe partial struct ColorBalance
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::ColorBalanceParams *")] ColorBalanceParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const ColorBalanceParams *")] ColorBalanceParams* parameters)
     {
         uint size = 12;
 

@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MSHLFLAGS">
-    <summary>
-      <para>Specifies why the marshaling is to be done.</para>
-    </summary>
-    <seealso cref="CoGetStandardMarshal" />
-    <seealso cref="CoMarshalInterface" />
-    <seealso cref="ICallFrame" />
-    <seealso cref="IMarshal" />
+    <summary>Specifies why the marshaling is to be done.</summary>
   </member>
   <member name="MSHLFLAGS.MSHLFLAGS_NORMAL">
-    <summary>
-      <para>The marshaling is occurring because an interface pointer is being passed from one process to another. This is the normal case. The data packet produced by the marshaling process will be unmarshaled in the destination process. The marshaled data packet can be unmarshaled just once, or not at all. If the receiver unmarshals the data packet successfully, the <see cref="CoReleaseMarshalData" /> function is automatically called on the data packet as part of the unmarshaling process. If the receiver does not or cannot unmarshal the data packet, the sender must call <b>CoReleaseMarshalData</b> on the data packet.</para>
-    </summary>
+    <summary>The marshaling is occurring because an interface pointer is being passed from one process to another. This is the normal case. The data packet produced by the marshaling process will be unmarshaled in the destination process. The marshaled data packet can be unmarshaled just once, or not at all. If the receiver unmarshals the data packet successfully, the <see cref="CoReleaseMarshalData" /> function is automatically called on the data packet as part of the unmarshaling process. If the receiver does not or cannot unmarshal the data packet, the sender must call <b>CoReleaseMarshalData</b> on the data packet.</summary>
   </member>
   <member name="MSHLFLAGS.MSHLFLAGS_TABLESTRONG">
     <summary>
@@ -29,20 +21,10 @@
     </summary>
   </member>
   <member name="MSHLFLAGS.MSHLFLAGS_NOPING">
-    <summary>
-      <para>Adding this flag to an original object marshaling (as opposed to marshaling a proxy) will disable the ping protocol for that object.</para>
-    </summary>
+    <summary>Adding this flag to an original object marshaling (as opposed to marshaling a proxy) will disable the ping protocol for that object.</summary>
   </member>
-  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED1">
-    <summary></summary>
-  </member>
-  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED2">
-    <summary></summary>
-  </member>
-  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED3">
-    <summary></summary>
-  </member>
-  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED4">
-    <summary></summary>
-  </member>
+  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED1"></member>
+  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED2"></member>
+  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED3"></member>
+  <member name="MSHLFLAGS.MSHLFLAGS_RESERVED4"></member>
 </doc>

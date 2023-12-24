@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_AUTOMATIC_FONT_AXES">
-    <summary>
-      <para>Defines constants that specifies axes that can be applied automatically in layout during font selection. Values can be bitwise OR'd together.</para>
-    </summary>
-    <seealso cref="DWRITE_FONT_AXIS_TAG enumeration" />
-    <seealso cref="IDWriteTextFormat3.SetFontAxisValues" />
+    <summary>Defines constants that specifies axes that can be applied automatically in layout during font selection. Values can be bitwise OR'd together.</summary>
   </member>
   <member name="DWRITE_AUTOMATIC_FONT_AXES.DWRITE_AUTOMATIC_FONT_AXES_NONE">
-    <summary>
-      <para>Specifies that no axes are automatically applied.</para>
-    </summary>
+    <summary>Specifies that no axes are automatically applied.</summary>
   </member>
   <member name="DWRITE_AUTOMATIC_FONT_AXES.DWRITE_AUTOMATIC_FONT_AXES_OPTICAL_SIZE">
-    <summary>
-      <para>Specifies that—when no value is specified via <see cref="DWRITE_FONT_AXIS_TAG_OPTICAL_SIZE" />—an appropriate optical value should be automatically chosen based on the font size (via <see cref="IDWriteTextLayout.SetFontSize" />). You can still apply the 'opsz' value over text ranges via <see cref="IDWriteTextFormat3.SetFontAxisValues" />, which take priority.</para>
-    </summary>
+    <summary>Specifies that—when no value is specified via <see cref="DWRITE_FONT_AXIS_TAG_OPTICAL_SIZE" />—an appropriate optical value should be automatically chosen based on the font size (via <see cref="IDWriteTextLayout.SetFontSize" />). You can still apply the 'opsz' value over text ranges via <see cref="IDWriteTextFormat3.SetFontAxisValues" />, which take priority.</summary>
   </member>
 </doc>

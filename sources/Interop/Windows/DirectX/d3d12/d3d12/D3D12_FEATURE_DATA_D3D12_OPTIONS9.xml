@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS9">
+    <summary>Indicates whether or not support exists for mesh shaders, values of <i>SV_RenderTargetArrayIndex</i> that are 8 or greater, typed resource 64-bit integer atomics, derivative and derivative-dependent texture sample operations, and the level of support for WaveMMA (wave_matrix) operations.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS9.MeshShaderPipelineStatsSupported">
+    <summary>Indicates whether or not mesh shaders are supported. <code>true</code> if supported, otherwise <code>false</code>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS9.MeshShaderSupportsFullRangeRenderTargetArrayIndex">
+    <summary>Indicates whether or not values of <i>SV_RenderTargetArrayIndex</i> that are 8 or greater are supported. <code>true</code> if supported, otherwise <code>false</code>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS9.AtomicInt64OnTypedResourceSupported">
+    <summary>Indicates whether or not typed resource 64-bit integer atomics are supported. <code>true</code> if supported, otherwise <code>false</code>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS9.AtomicInt64OnGroupSharedSupported">
+    <summary>Indicates whether or not 64-bit integer atomics are supported on <code>groupshared</code> variables. <code>true</code> if supported, otherwise <code>false</code>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS9.DerivativesInMeshAndAmplificationShadersSupported">
+    <summary>Indicates whether or not derivative and derivative-dependent texture sample operations are supported. <code>true</code> if supported, otherwise <code>false</code>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS9.WaveMMATier">
+    <summary>Indicates the level of support for WaveMMA (wave_matrix) operations.</summary>
+  </member>
+</doc>

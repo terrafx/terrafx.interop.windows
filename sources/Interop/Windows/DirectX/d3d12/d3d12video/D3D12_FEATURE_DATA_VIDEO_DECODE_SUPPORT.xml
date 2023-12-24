@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT">
+    <summary>Provides data for calls to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> when the feature specified is <see cref="D3D12_FEATURE_VIDEO_DECODE_SUPPORT" />. Retrieves support information for video decoding.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.NodeIndex">
+    <summary>For single GPU operation, set this to zero. If there are multiple GPU nodes, set a bit to identify the node (the device's physical adapter) to which the command queue applies. Each bit in the mask corresponds to a single node. Only 1 bit may be set.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.Configuration">
+    <summary>A <see cref="D3D12_VIDEO_DECODE_CONFIGURATION" /> structure specifying the decode profile, bitstream encryption, and interlace type of the source stream.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.Width">
+    <summary>The decode width of the source stream.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.Height">
+    <summary>The decode height of the source stream</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.DecodeFormat">
+    <summary>The <see cref="DXGI_FORMAT" /> to use as the decode format. This format is the output format if no decoder conversion is specified.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.FrameRate">
+    <summary>The frame rate of the video format. A value of 0 means the frame rate is unknown.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.BitRate">
+    <summary>The average bits per second data compression rate for the compressed video stream. This information is used by the driver to determine whether the video can be decoded in real-time. A value of 0 means the bit rate is unknown.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.SupportFlags">
+    <summary>A combination of values from the <see cref="D3D12_VIDEO_DECODE_SUPPORT_FLAGS" /> enumeration indicating the support for video decoding. This value is populated by the call to <b>ID3D12Device.CheckFeatureSupport</b>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.ConfigurationFlags">
+    <summary>A combination of values from the <see cref="D3D12_VIDEO_DECODE_CONFIGURATION_FLAGS" /> enumeration describing the video decode configuration. This value is populated by the call to <b>ID3D12Device.CheckFeatureSupport</b>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_DECODE_SUPPORT.DecodeTier">
+    <summary>A member of the <see cref="D3D12_VIDEO_DECODE_TIER" /> enumeration specifying the decoding tier of a hardware video decoder.</summary>
+  </member>
+</doc>

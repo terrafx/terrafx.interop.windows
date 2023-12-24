@@ -25,7 +25,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IFolderView*, Guid*, void**, int>)(lpVtbl[0]))((IFolderView*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, Guid*, void**, int>)(lpVtbl[0]))((IFolderView*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IFolderView*, uint>)(lpVtbl[1]))((IFolderView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, uint>)(lpVtbl[1]))((IFolderView*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IFolderView*, uint>)(lpVtbl[2]))((IFolderView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, uint>)(lpVtbl[2]))((IFolderView*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetCurrentViewMode"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetCurrentViewMode(uint* pViewMode)
     {
-        return ((delegate* unmanaged<IFolderView*, uint*, int>)(lpVtbl[3]))((IFolderView*)Unsafe.AsPointer(ref this), pViewMode);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, uint*, int>)(lpVtbl[3]))((IFolderView*)Unsafe.AsPointer(ref this), pViewMode);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.SetCurrentViewMode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetCurrentViewMode(uint ViewMode)
     {
-        return ((delegate* unmanaged<IFolderView*, uint, int>)(lpVtbl[4]))((IFolderView*)Unsafe.AsPointer(ref this), ViewMode);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, uint, int>)(lpVtbl[4]))((IFolderView*)Unsafe.AsPointer(ref this), ViewMode);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetFolder"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetFolder([NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IFolderView*, Guid*, void**, int>)(lpVtbl[5]))((IFolderView*)Unsafe.AsPointer(ref this), riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, Guid*, void**, int>)(lpVtbl[5]))((IFolderView*)Unsafe.AsPointer(ref this), riid, ppv);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.Item"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT Item(int iItemIndex, [NativeTypeName("LPITEMIDLIST *")] ITEMIDLIST** ppidl)
     {
-        return ((delegate* unmanaged<IFolderView*, int, ITEMIDLIST**, int>)(lpVtbl[6]))((IFolderView*)Unsafe.AsPointer(ref this), iItemIndex, ppidl);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, int, ITEMIDLIST**, int>)(lpVtbl[6]))((IFolderView*)Unsafe.AsPointer(ref this), iItemIndex, ppidl);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.ItemCount"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT ItemCount(uint uFlags, int* pcItems)
     {
-        return ((delegate* unmanaged<IFolderView*, uint, int*, int>)(lpVtbl[7]))((IFolderView*)Unsafe.AsPointer(ref this), uFlags, pcItems);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, uint, int*, int>)(lpVtbl[7]))((IFolderView*)Unsafe.AsPointer(ref this), uFlags, pcItems);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.Items"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT Items(uint uFlags, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IFolderView*, uint, Guid*, void**, int>)(lpVtbl[8]))((IFolderView*)Unsafe.AsPointer(ref this), uFlags, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, uint, Guid*, void**, int>)(lpVtbl[8]))((IFolderView*)Unsafe.AsPointer(ref this), uFlags, riid, ppv);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetSelectionMarkedItem"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT GetSelectionMarkedItem(int* piItem)
     {
-        return ((delegate* unmanaged<IFolderView*, int*, int>)(lpVtbl[9]))((IFolderView*)Unsafe.AsPointer(ref this), piItem);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, int*, int>)(lpVtbl[9]))((IFolderView*)Unsafe.AsPointer(ref this), piItem);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetFocusedItem"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT GetFocusedItem(int* piItem)
     {
-        return ((delegate* unmanaged<IFolderView*, int*, int>)(lpVtbl[10]))((IFolderView*)Unsafe.AsPointer(ref this), piItem);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, int*, int>)(lpVtbl[10]))((IFolderView*)Unsafe.AsPointer(ref this), piItem);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetItemPosition"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetItemPosition([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, POINT* ppt)
     {
-        return ((delegate* unmanaged<IFolderView*, ITEMIDLIST*, POINT*, int>)(lpVtbl[11]))((IFolderView*)Unsafe.AsPointer(ref this), pidl, ppt);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, ITEMIDLIST*, POINT*, int>)(lpVtbl[11]))((IFolderView*)Unsafe.AsPointer(ref this), pidl, ppt);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetSpacing"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT GetSpacing(POINT* ppt)
     {
-        return ((delegate* unmanaged<IFolderView*, POINT*, int>)(lpVtbl[12]))((IFolderView*)Unsafe.AsPointer(ref this), ppt);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, POINT*, int>)(lpVtbl[12]))((IFolderView*)Unsafe.AsPointer(ref this), ppt);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetDefaultSpacing"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT GetDefaultSpacing(POINT* ppt)
     {
-        return ((delegate* unmanaged<IFolderView*, POINT*, int>)(lpVtbl[13]))((IFolderView*)Unsafe.AsPointer(ref this), ppt);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, POINT*, int>)(lpVtbl[13]))((IFolderView*)Unsafe.AsPointer(ref this), ppt);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.GetAutoArrange"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT GetAutoArrange()
     {
-        return ((delegate* unmanaged<IFolderView*, int>)(lpVtbl[14]))((IFolderView*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, int>)(lpVtbl[14]))((IFolderView*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.SelectItem"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT SelectItem(int iItem, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IFolderView*, int, uint, int>)(lpVtbl[15]))((IFolderView*)Unsafe.AsPointer(ref this), iItem, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, int, uint, int>)(lpVtbl[15]))((IFolderView*)Unsafe.AsPointer(ref this), iItem, dwFlags);
     }
 
     /// <include file='IFolderView.xml' path='doc/member[@name="IFolderView.SelectAndPositionItems"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT SelectAndPositionItems(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, POINT* apt, [NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<IFolderView*, uint, ITEMIDLIST**, POINT*, uint, int>)(lpVtbl[16]))((IFolderView*)Unsafe.AsPointer(ref this), cidl, apidl, apt, dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<IFolderView*, uint, ITEMIDLIST**, POINT*, uint, int>)(lpVtbl[16]))((IFolderView*)Unsafe.AsPointer(ref this), cidl, apidl, apt, dwFlags);
     }
 
     public interface Interface : IUnknown.Interface
@@ -207,54 +207,54 @@ public unsafe partial struct IFolderView : IFolderView.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCurrentViewMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCurrentViewMode;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetCurrentViewMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetCurrentViewMode;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetFolder;
 
         [NativeTypeName("HRESULT (int, LPITEMIDLIST *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ITEMIDLIST**, int> Item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, ITEMIDLIST**, int> Item;
 
         [NativeTypeName("HRESULT (UINT, int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int*, int> ItemCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int*, int> ItemCount;
 
         [NativeTypeName("HRESULT (UINT, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, void**, int> Items;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, void**, int> Items;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetSelectionMarkedItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetSelectionMarkedItem;
 
         [NativeTypeName("HRESULT (int *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> GetFocusedItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> GetFocusedItem;
 
         [NativeTypeName("HRESULT (LPCITEMIDLIST, POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITEMIDLIST*, POINT*, int> GetItemPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITEMIDLIST*, POINT*, int> GetItemPosition;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, int> GetSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, int> GetSpacing;
 
         [NativeTypeName("HRESULT (POINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT*, int> GetDefaultSpacing;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT*, int> GetDefaultSpacing;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> GetAutoArrange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> GetAutoArrange;
 
         [NativeTypeName("HRESULT (int, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, int> SelectItem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint, int> SelectItem;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, POINT *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, POINT*, uint, int> SelectAndPositionItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITEMIDLIST**, POINT*, uint, int> SelectAndPositionItems;
     }
 }

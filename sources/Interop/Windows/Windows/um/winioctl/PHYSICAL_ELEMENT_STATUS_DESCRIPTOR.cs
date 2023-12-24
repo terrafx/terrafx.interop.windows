@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR"]/*' />
-public unsafe partial struct PHYSICAL_ELEMENT_STATUS_DESCRIPTOR
+public partial struct PHYSICAL_ELEMENT_STATUS_DESCRIPTOR
 {
     /// <include file='PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.Version"]/*' />
     [NativeTypeName("DWORD")]
@@ -28,7 +30,7 @@ public unsafe partial struct PHYSICAL_ELEMENT_STATUS_DESCRIPTOR
 
     /// <include file='PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.Reserved1"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Reserved1[2];
+    public _Reserved1_e__FixedBuffer Reserved1;
 
     /// <include file='PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.AssociatedCapacity"]/*' />
     [NativeTypeName("DWORDLONG")]
@@ -36,5 +38,19 @@ public unsafe partial struct PHYSICAL_ELEMENT_STATUS_DESCRIPTOR
 
     /// <include file='PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.xml' path='doc/member[@name="PHYSICAL_ELEMENT_STATUS_DESCRIPTOR.Reserved2"]/*' />
     [NativeTypeName("DWORD[4]")]
-    public fixed uint Reserved2[4];
+    public _Reserved2_e__FixedBuffer Reserved2;
+
+    /// <include file='_Reserved1_e__FixedBuffer.xml' path='doc/member[@name="_Reserved1_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved1_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _Reserved2_e__FixedBuffer
+    {
+        public uint e0;
+    }
 }

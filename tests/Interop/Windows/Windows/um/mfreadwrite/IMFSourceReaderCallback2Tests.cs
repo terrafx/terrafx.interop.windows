@@ -19,32 +19,4 @@ public static unsafe partial class IMFSourceReaderCallback2Tests
     {
         Assert.That(typeof(IMFSourceReaderCallback2).GUID, Is.EqualTo(IID_IMFSourceReaderCallback2));
     }
-
-    /// <summary>Validates that the <see cref="IMFSourceReaderCallback2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSourceReaderCallback2>(), Is.EqualTo(sizeof(IMFSourceReaderCallback2)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceReaderCallback2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSourceReaderCallback2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceReaderCallback2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSourceReaderCallback2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSourceReaderCallback2), Is.EqualTo(4));
-        }
-    }
 }

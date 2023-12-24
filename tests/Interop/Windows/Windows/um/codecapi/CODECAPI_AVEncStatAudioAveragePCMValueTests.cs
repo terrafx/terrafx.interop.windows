@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncStatAudioAveragePCMValueTests
     {
         Assert.That(typeof(CODECAPI_AVEncStatAudioAveragePCMValue).GUID, Is.EqualTo(IID_CODECAPI_AVEncStatAudioAveragePCMValue));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatAudioAveragePCMValue" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncStatAudioAveragePCMValue>(), Is.EqualTo(sizeof(CODECAPI_AVEncStatAudioAveragePCMValue)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatAudioAveragePCMValue" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncStatAudioAveragePCMValue).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncStatAudioAveragePCMValue" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncStatAudioAveragePCMValue), Is.EqualTo(1));
-    }
 }

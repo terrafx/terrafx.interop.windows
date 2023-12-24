@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ColorAdjustType">
+    <summary>The <b>ColorAdjustType</b> enumeration specifies which GDI+ objects use color-adjustment information. You can adjust the colors in a rendered image by passing the address of an<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusimageattributes/nl-gdiplusimageattributes-imageattributes">ImageAttributes</a> object to the<see cref="Graphics.DrawImage" /> method. An<b>ImageAttributes</b> object maintains color and grayscale settings for five adjustment categories: default, bitmap, brush, pen, and text. Several of the methods of the<b>ImageAttributes</b> class receive an element of the <b>ColorAdjustType</b> enumeration to specify the adjustment category.</summary>
+  </member>
+  <member name="ColorAdjustType.ColorAdjustTypeDefault">
+    <summary>Specifies that color or grayscale adjustment applies to all categories that do not have adjustment settings of their own.</summary>
+  </member>
+  <member name="ColorAdjustType.ColorAdjustTypeBitmap">
+    <summary>Specifies that color or grayscale adjustment applies to bitmapped images.</summary>
+  </member>
+  <member name="ColorAdjustType.ColorAdjustTypeBrush">
+    <summary>Specifies that color or grayscale adjustment applies to brush operations in metafiles.</summary>
+  </member>
+  <member name="ColorAdjustType.ColorAdjustTypePen">
+    <summary>Specifies that color or grayscale adjustment applies to pen operations in metafiles.</summary>
+  </member>
+  <member name="ColorAdjustType.ColorAdjustTypeText">
+    <summary>Specifies that color or grayscale adjustment applies to text drawn in metafiles.</summary>
+  </member>
+  <member name="ColorAdjustType.ColorAdjustTypeCount">
+    <summary>Used internally to record the number of color adjustment types.</summary>
+  </member>
+  <member name="ColorAdjustType.ColorAdjustTypeAny">
+    <summary>Reserved</summary>
+  </member>
+</doc>

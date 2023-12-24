@@ -19,25 +19,4 @@ public static unsafe partial class AttachmentServicesTests
     {
         Assert.That(typeof(AttachmentServices).GUID, Is.EqualTo(IID_AttachmentServices));
     }
-
-    /// <summary>Validates that the <see cref="AttachmentServices" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AttachmentServices>(), Is.EqualTo(sizeof(AttachmentServices)));
-    }
-
-    /// <summary>Validates that the <see cref="AttachmentServices" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AttachmentServices).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AttachmentServices" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AttachmentServices), Is.EqualTo(1));
-    }
 }

@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMMDevice.Activate">
-    <summary>
-      <para>The <b>Activate</b> method creates a COM object with the specified interface.</para>
-    </summary>
+    <summary>The <b>Activate</b> method creates a COM object with the specified interface.</summary>
     <param name="iid">
       <para>The interface identifier. This parameter is a reference to a GUID that identifies the interface that the caller requests be activated. The caller will use this interface to communicate with the COM object. Set this parameter to one of the following interface identifiers:</para>
       <para>IID_IAudioClient</para>
@@ -24,15 +22,9 @@
       <para>IID_ISpatialAudioMetadataClient</para>
       <para>For more information, see Remarks.</para>
     </param>
-    <param name="dwClsCtx">
-      <para>The execution context in which the code that manages the newly created object will run. The caller can restrict the context by setting this parameter to the bitwise <b>OR</b> of one or more <b>CLSCTX</b> enumeration values. Alternatively, the client can avoid imposing any context restrictions by specifying CLSCTX_ALL. For more information about <b>CLSCTX</b>, see the Windows SDK documentation.</para>
-    </param>
-    <param name="pActivationParams">
-      <para>Set to <b>NULL</b> to activate an <see cref="IAudioClient" />, <see cref="IAudioEndpointVolume" />, <see cref="IAudioMeterInformation" />, <see cref="IAudioSessionManager" />, or <see cref="IDeviceTopology" /> interface on an audio endpoint device. When activating an <b>IBaseFilter</b>, <b>IDirectSound</b>, <b>IDirectSound8</b>, <b>IDirectSoundCapture</b>, or <b>IDirectSoundCapture8</b> interface on the device, the caller can specify a pointer to a <b>PROPVARIANT</b> structure that contains stream-initialization information. For more information, see Remarks.</para>
-    </param>
-    <param name="ppInterface">
-      <para>Pointer to a pointer variable into which the method writes the address of the interface specified by parameter <i>iid</i>. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>Activate</b> call fails,  <i>*ppInterface</i> is <b>NULL</b>.</para>
-    </param>
+    <param name="dwClsCtx">The execution context in which the code that manages the newly created object will run. The caller can restrict the context by setting this parameter to the bitwise <b>OR</b> of one or more <b>CLSCTX</b> enumeration values. Alternatively, the client can avoid imposing any context restrictions by specifying CLSCTX_ALL. For more information about <b>CLSCTX</b>, see the Windows SDK documentation.</param>
+    <param name="pActivationParams">Set to <b>NULL</b> to activate an <see cref="IAudioClient" />, <see cref="IAudioEndpointVolume" />, <see cref="IAudioMeterInformation" />, <see cref="IAudioSessionManager" />, or <see cref="IDeviceTopology" /> interface on an audio endpoint device. When activating an <b>IBaseFilter</b>, <b>IDirectSound</b>, <b>IDirectSound8</b>, <b>IDirectSoundCapture</b>, or <b>IDirectSoundCapture8</b> interface on the device, the caller can specify a pointer to a <b>PROPVARIANT</b> structure that contains stream-initialization information. For more information, see Remarks.</param>
+    <param name="ppInterface">Pointer to a pointer variable into which the method writes the address of the interface specified by parameter <i>iid</i>. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>Activate</b> call fails, <i>*ppInterface</i> is <b>NULL</b>.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -40,174 +32,72 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOINTERFACE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The object does not support the requested interface type.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The object does not support the requested interface type.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Parameter <i>ppInterface</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <i>pActivationParams</i> parameter must be <b>NULL</b> for the specified interface; or <i>pActivationParams</i> points to invalid data.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>ppInterface</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Out of memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <i>pActivationParams</i> parameter must be <b>NULL</b> for the specified interface; or <i>pActivationParams</i> points to invalid data.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>AUDCLNT_E_DEVICE_INVALIDATED</b>
-            </para>
-          </description>
-          <description>
-            <para>The user has removed either the audio endpoint device or the adapter device that the endpoint device connects to.</para>
-          </description>
-        </item>
+          <description>The user has removed either the audio endpoint device or the adapter device that the endpoint device connects to.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method creates a COM object with an interface that is specified by the <i>iid</i> parameter. The method is similar to the Windows <b>CoCreateInstance</b> function, except that the caller does not supply a CLSID as a parameter. For more information about <b>CoCreateInstance</b>, see the Windows SDK documentation.</para>
-      <para>A client can call the <b>Activate</b> method of the <b>IMMDevice</b> interface for a particular audio endpoint device to obtain a counted reference to an interface on that device. The method can activate the following interfaces:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IAudioClient" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IAudioEndpointVolume" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IAudioMeterInformation" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IAudioSessionManager" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IAudioSessionManager2" />
-          </description>
-        </item>
-        <item>
-          <description>IBaseFilter
-</description>
-        </item>
-        <item>
-          <description>
-            <see cref="IDeviceTopology" />
-          </description>
-        </item>
-        <item>
-          <description>IDirectSound
-</description>
-        </item>
-        <item>
-          <description>IDirectSound8
-</description>
-        </item>
-        <item>
-          <description>IDirectSoundCapture
-</description>
-        </item>
-        <item>
-          <description>IDirectSoundCapture8
-</description>
-        </item>
-        <item>
-          <description>IMFTrustedOutput</description>
-        </item>
-      </list>
-      <para>To obtain the interface ID for an interface, use the <b>__uuidof</b> operator. For example, the interface ID of <b>IAudioCaptureClient</b> is defined as follows:</para>
-      <code>
-const IID IID_IAudioClient  __uuidof(IAudioCaptureClient)
-
-</code>
-      <para>For information about the <b>__uuidof</b> operator, see the Windows SDK documentation. For information about <b>IBaseFilter</b>, <b>IDirectSound</b>, <b>IDirectSound8</b>, <b>IDirectSoundCapture</b>,  <b>IDirectSoundCapture8</b>, and <b>IMFTrustedOutput</b> see the Windows SDK documentation.</para>
-      <para>The <i>pActivationParams</i> parameter should be <b>NULL</b> for an <b>Activate</b> call to create an <b>IAudioClient</b>, <b>IAudioEndpointVolume</b>, <b>IAudioMeterInformation</b>, <b>IAudioSessionManager</b>, or <b>IDeviceTopology</b> interface for an audio endpoint device.</para>
-      <para>For an <b>Activate</b> call to create an <b>IBaseFilter</b>, <b>IDirectSound</b>, <b>IDirectSound8</b>, <b>IDirectSoundCapture</b>, or <b>IDirectSoundCapture8</b> interface, the caller can, as an option, specify a non-<b>NULL</b> value for <i>pActivationParams</i>. In this case, <i>pActivationParams</i> points to a <b>PROPVARIANT</b> structure that contains stream-initialization information. Set the <b>vt</b> member of the structure to VT_BLOB. Set the <b>blob.pBlobData</b> member to point to a <see cref="DIRECTX_AUDIO_ACTIVATION_PARAMS" /> structure that contains an audio session GUID and stream-initialization flags. Set the <b>blob.cbSize</b> member to <b>sizeof</b>(<b>DIRECTX_AUDIO_ACTIVATION_PARAMS</b>). For a code example, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles-for-directshow-applications">Device Roles for DirectShow Applications</a>. For more information about <b>PROPVARIANT</b>, see the Windows SDK documentation.</para>
-      <para>An <b>IBaseFilter</b>, <b>IDirectSound</b>, <b>IDirectSound8</b>, <b>IDirectSoundCapture</b>, or <b>IDirectSoundCapture8</b> interface instance that is created by the <b>Activate</b> method encapsulates a stream on the audio endpoint device. During the <b>Activate</b> call, the DirectSound system module creates the stream by calling the <see cref="IAudioClient.Initialize" /> method. If <i>pActivationParams</i> is non-<b>NULL</b>, DirectSound supplies the audio session GUID and stream-initialization flags from the <b>DIRECTX_AUDIO_ACTIVATION_PARAMS</b> structure as input parameters to the <b>Initialize</b> call. If <i>pActivationParams</i> is <b>NULL</b>, DirectSound sets the <b>Initialize</b> method's <i>AudioSessionGuid</i> and <i>StreamFlags</i> parameters to their respective default values, <b>NULL</b> and 0. These values instruct the method to assign the stream to the process-specific session that is identified by the session GUID value GUID_NULL.</para>
-      <para>
-        <b>Activate</b> can activate an <b>IDirectSound</b> or <b>IDirectSound8</b> interface only on a rendering endpoint device. It can activate an <b>IDirectSoundCapture</b> or <b>IDirectSoundCapture8</b> interface only on a capture endpoint device. An <b>Activate</b> call to activate an <b>IDirectSound</b> or <b>IDirectSoundCapture8</b> interface on a capture device or an <b>IDirectSoundCapture</b> or <b>IDirectSoundCapture8</b> interface on a rendering device fails and returns error code E_NOINTERFACE.</para>
-      <para>In Windows 7, a client can call <b>IMMDevice.Activate</b> and specify, <b>IID_IMFTrustedOutput</b>, to create an output trust authorities (OTA) object and retrieve a pointer to the object's <see cref="IMFTrustedOutput" /> interface. OTAs can operate inside or outside the Media Foundation's protected media path (PMP) and send content outside the Media Foundation pipeline. If the caller is outside PMP, then the OTA may not operate in the PMP,  and the protection settings are less robust. For information about using protected objects for audio and example code, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/protected-user-mode-audio--puma-">Protected User Mode Audio (PUMA)</a>.</para>
-      <para>For general information about protected objects and <see cref="IMFTrustedOutput" />, see "Protected Media Path" in  Media Foundation documentation.</para>
-      <para>
-        <b>Note</b>  When using the <see cref="ISpatialAudioClient" /> interfaces on an Xbox One Development Kit (XDK) title, you must first call <b>EnableSpatialAudio</b> before calling <see cref="IMMDeviceEnumerator.EnumAudioEndpoints" /> or <see cref="IMMDeviceEnumerator.GetDefaultAudioEndpoint" />. Failure to do so will result in an E_NOINTERFACE error being returned from the call to Activate. <b>EnableSpatialAudio</b> is only available for XDK titles, and does not need to be called for Universal Windows Platform apps running on Xbox One, nor for any non-Xbox One devices.</para>
-      <para>For code examples that call the <b>Activate</b> method, see the following topics:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/rendering-a-stream">Rendering a Stream</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">Device Topologies</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/using-the-ikscontrol-interface-to-access-audio-properties">Using the IKsControl Interface to Access Audio Properties</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/audio-events-for-legacy-audio-applications">Audio Events for Legacy Audio Applications</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/render-spatial-sound-using-spatial-audio-objects">Render Spatial Sound Using Spatial Audio Objects</a>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IAudioClient Interface" />
-    <seealso cref="IAudioEndpointVolume Interface" />
-    <seealso cref="IAudioMeterInformation Interface" />
-    <seealso cref="IAudioSessionManager Interface" />
-    <seealso cref="IDeviceTopology Interface" />
-    <seealso cref="IMMDevice Interface" />
   </member>
   <member name="IMMDevice.GetId">
-    <summary>
-      <para>The <b>GetId</b> method retrieves an <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device.</para>
-    </summary>
-    <param name="ppstrId">
-      <para>Pointer to a pointer variable into which the method writes the address of a null-terminated, wide-character string containing the endpoint device ID. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetId</b> call fails,  <i>*ppstrId is NULL.</i> For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</para>
-    </param>
+    <summary>The <b>GetId</b> method retrieves an <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-id-strings">endpoint ID string</a> that identifies the audio endpoint device.</summary>
+    <param name="ppstrId">Pointer to a pointer variable into which the method writes the address of a null-terminated, wide-character string containing the endpoint device ID. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetId</b> call fails, <i>*ppstrId is NULL.</i> For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -215,51 +105,35 @@ const IID IID_IAudioClient  __uuidof(IAudioCaptureClient)
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Out of memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Out of memory.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Parameter <i>pwstrId</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Parameter <i>pwstrId</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The endpoint ID string obtained from this method identifies the audio endpoint device that is represented by the <b>IMMDevice</b> interface instance. A client can use the endpoint ID string to create an instance of the audio endpoint device at a later time or in a different process by calling the <see cref="IMMDeviceEnumerator.GetDevice" /> method. Clients should treat the contents of the endpoint ID string as opaque. That is, clients should <i>not</i> attempt to parse the contents of the string to obtain information about the device. The reason is that the string format is undefined and might change from one implementation of the MMDevice API system module to the next.</para>
-      <para>For code examples that call the <b>GetId</b> method, see the following topics:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-properties">Device Properties</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles-for-legacy-windows-multimedia-applications">Device Roles for Legacy Windows Multimedia Applications</a>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMMDevice Interface" />
-    <seealso cref="IMMDeviceEnumerator.GetDevice" />
   </member>
   <member name="IMMDevice.GetState">
-    <summary>
-      <para>The <b>GetState</b> method retrieves the current device state.</para>
-    </summary>
+    <summary>The <b>GetState</b> method retrieves the current device state.</summary>
     <param name="pdwState">
       <para>Pointer to a <b>DWORD</b> variable into which the method writes the current state of the device. The device-state value is one of the following <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-state-xxx-constants">DEVICE_STATE_XXX</a> constants:</para>
       <para>DEVICE_STATE_ACTIVE</para>
@@ -274,24 +148,23 @@ const IID IID_IAudioClient  __uuidof(IAudioCaptureClient)
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Parameter <i>pdwState</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Parameter <i>pdwState</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMMDevice Interface" />
   </member>
   <member name="IMMDevice.OpenPropertyStore">
-    <summary>
-      <para>The <b>OpenPropertyStore</b> method retrieves an interface to the device's property store.</para>
-    </summary>
+    <summary>The <b>OpenPropertyStore</b> method retrieves an interface to the device's property store.</summary>
     <param name="stgmAccess">
       <para>The storage-access mode. This parameter specifies whether to open the property store in read mode, write mode, or read/write mode. Set this parameter to one of the following STGM constants:</para>
       <para>STGM_READ</para>
@@ -299,9 +172,7 @@ const IID IID_IAudioClient  __uuidof(IAudioCaptureClient)
       <para>STGM_READWRITE</para>
       <para>The method permits a client running as an administrator to open a store for read-only, write-only, or read/write access. A client that is not running as an administrator is restricted to read-only access. For more information about STGM constants, see the Windows SDK documentation.</para>
     </param>
-    <param name="ppProperties">
-      <para>Pointer to a pointer variable into which the method writes the address of the <b>IPropertyStore</b> interface of the device's property store. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>OpenPropertyStore</b> call fails,  <i>*ppProperties</i> is <b>NULL</b>. For more information about <b>IPropertyStore</b>, see the Windows SDK documentation.</para>
-    </param>
+    <param name="ppProperties">Pointer to a pointer variable into which the method writes the address of the <b>IPropertyStore</b> interface of the device's property store. Through this method, the caller obtains a counted reference to the interface. The caller is responsible for releasing the interface, when it is no longer needed, by calling the interface's <b>Release</b> method. If the <b>OpenPropertyStore</b> call fails, <i>*ppProperties</i> is <b>NULL</b>. For more information about <b>IPropertyStore</b>, see the Windows SDK documentation.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -309,55 +180,44 @@ const IID IID_IAudioClient  __uuidof(IAudioCaptureClient)
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>stgmAccess</i> is not a valid access mode.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>stgmAccess</i> is not a valid access mode.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Parameter <i>ppProperties</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Parameter <i>ppProperties</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>In general, the properties in the device's property store are read-only for clients that do not perform administrative, system, or service functions.</para>
-      <para>For code examples that call the <b>OpenPropertyStore</b> method, see the following topics:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-properties">Device Properties</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles-for-directsound-applications">Device Roles for DirectSound Applications</a>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMMDevice Interface" />
   </member>
   <member name="IMMDevice">
     <summary>
@@ -379,34 +239,6 @@ const IID IID_IAudioClient  __uuidof(IAudioCaptureClient)
             <see cref="IMMDeviceEnumerator.GetDevice" />
           </description>
         </item>
-      </list>
-      <para>For more information, see <see cref="IMMDeviceCollection Interface" />.</para>
-      <para>After obtaining the <b>IMMDevice</b> interface of an audio endpoint device, a client can obtain an interface that encapsulates the endpoint-specific features of the device by calling the <b>IMMDevice.QueryInterface</b> method with parameter <i>iid</i> set to <b>REFIID</b> IID_IMMEndpoint. For more information, see <see cref="IMMEndpoint Interface" />.</para>
-      <para>For code examples that use the <b>IMMDevice</b> interface, see the following topics:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-properties">Device Properties</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/rendering-a-stream">Rendering a Stream</a>
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles-for-legacy-windows-multimedia-applications">Device Roles for Legacy Windows Multimedia Applications</a>
-          </description>
-        </item>
-      </list>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso cref="IMMDeviceCollection Interface" />
-    <seealso cref="IMMDeviceCollection.Item" />
-    <seealso cref="IMMDeviceEnumerator.GetDefaultAudioEndpoint" />
-    <seealso cref="IMMDeviceEnumerator.GetDevice" />
-    <seealso cref="IMMEndpoint Interface" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/mmdevice-api">MMDevice API</seealso>
+      </list>For more information, see <see cref="IMMDeviceCollection Interface" />.<para>After obtaining the <b>IMMDevice</b> interface of an audio endpoint device, a client can obtain an interface that encapsulates the endpoint-specific features of the device by calling the <b>IMMDevice.QueryInterface</b> method with parameter <i>iid</i> set to <b>REFIID</b> IID_IMMEndpoint. For more information, see <see cref="IMMEndpoint Interface" />.</para><para>For code examples that use the <b>IMMDevice</b> interface, see the following topics:</para><list type="bullet"><item><description><a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-properties">Device Properties</a></description></item><item><description><a href="https://docs.microsoft.com//windows/desktop/CoreAudio/rendering-a-stream">Rendering a Stream</a></description></item><item><description><a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-roles-for-legacy-windows-multimedia-applications">Device Roles for Legacy Windows Multimedia Applications</a></description></item></list></summary>
   </member>
 </doc>

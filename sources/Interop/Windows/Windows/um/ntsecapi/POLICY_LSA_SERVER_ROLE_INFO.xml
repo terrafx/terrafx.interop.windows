@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="POLICY_LSA_SERVER_ROLE_INFO">
+    <summary>The <b>POLICY_LSA_SERVER_ROLE_INFO</b> structure is used to set and query the role of an LSA server. The <see cref="LsaQueryInformationPolicy" /> and <see cref="LsaSetInformationPolicy" /> functions use this structure when their <i>InformationClass</i> parameters are set to <b>PolicyLsaServerRoleInformation</b>.</summary>
+  </member>
+  <member name="POLICY_LSA_SERVER_ROLE_INFO.LsaServerRole">
+    <summary>Specifies one of the values from the<see cref="POLICY_LSA_SERVER_ROLE" /> enumeration type to indicate a primary or backup LSA server.</summary>
+  </member>
+</doc>

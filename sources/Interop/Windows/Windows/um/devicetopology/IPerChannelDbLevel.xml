@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPerChannelDbLevel.GetChannelCount">
-    <summary>
-      <para>The <b>GetChannelCount</b> method gets the number of channels in the audio stream.</para>
-    </summary>
-    <param name="pcChannels">
-      <para>Pointer to a <b>UINT</b> variable into which the method writes the channel count (the number of channels in the audio stream).</para>
-    </param>
+    <summary>The <b>GetChannelCount</b> method gets the number of channels in the audio stream.</summary>
+    <param name="pcChannels">Pointer to a <b>UINT</b> variable into which the method writes the channel count (the number of channels in the audio stream).</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -16,30 +12,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>pcChannels</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pcChannels</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IPerChannelDbLevel Interface" />
   </member>
   <member name="IPerChannelDbLevel.GetLevel">
-    <summary>
-      <para>The <b>GetLevel</b> method gets the volume level, in decibels, of the specified channel.</para>
-    </summary>
-    <param name="nChannel">
-      <para>The channel number. If the audio stream has <i>N</i> channels, the channels are numbered from 0 to <i>N</i>– 1. To get the number of channels in the stream, call the <see cref="IPerChannelDbLevel.GetChannelCount" /> method.</para>
-    </param>
-    <param name="pfLevelDB">
-      <para>Pointer to a <b>float</b> variable into which the method writes the volume level, in decibels, of the specified channel.</para>
-    </param>
+    <summary>The <b>GetLevel</b> method gets the volume level, in decibels, of the specified channel.</summary>
+    <param name="nChannel">The channel number. If the audio stream has <i>N</i> channels, the channels are numbered from 0 to <i>N</i>– 1. To get the number of channels in the stream, call the <see cref="IPerChannelDbLevel.GetChannelCount" /> method.</param>
+    <param name="pfLevelDB">Pointer to a <b>float</b> variable into which the method writes the volume level, in decibels, of the specified channel.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -47,47 +38,39 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>nChannel</i> is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>nChannel</i> is out of range.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Pointer <i>pfLevelDB</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pfLevelDB</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IPerChannelDbLevel Interface" />
-    <seealso cref="IPerChannelDbLevel.GetChannelCount" />
   </member>
   <member name="IPerChannelDbLevel.GetLevelRange">
-    <summary>
-      <para>The <b>GetLevelRange</b> method gets the range, in decibels, of the volume level of the specified channel.</para>
-    </summary>
-    <param name="nChannel">
-      <para>The number of the selected channel. If the audio stream has <i>n</i> channels, the channels are numbered from 0 to <i>n</i>– 1. To get the number of channels in the stream, call the <see cref="IPerChannelDbLevel.GetChannelCount" /> method.</para>
-    </param>
-    <param name="pfMinLevelDB">
-      <para>Pointer to a <b>float</b> variable into which the method writes the minimum volume level in decibels.</para>
-    </param>
-    <param name="pfMaxLevelDB">
-      <para>Pointer to a <b>float</b> variable into which the method writes the maximum volume level in decibels.</para>
-    </param>
-    <param name="pfStepping">
-      <para>Pointer to a <b>float</b> variable into which the method writes the stepping value between consecutive volume levels in the range  <i>*pfMinLevelDB</i> to  <i>*pfMaxLevelDB</i>. If the difference between the maximum and minimum volume levels is <i>d</i> decibels, and the range is divided into <i>n</i> steps (uniformly sized intervals), then the volume can have <i>n</i> + 1 discrete levels and the size of the step between consecutive levels is <i>d</i> / <i>n</i> decibels.</para>
-    </param>
+    <summary>The <b>GetLevelRange</b> method gets the range, in decibels, of the volume level of the specified channel.</summary>
+    <param name="nChannel">The number of the selected channel. If the audio stream has <i>n</i> channels, the channels are numbered from 0 to <i>n</i>– 1. To get the number of channels in the stream, call the <see cref="IPerChannelDbLevel.GetChannelCount" /> method.</param>
+    <param name="pfMinLevelDB">Pointer to a <b>float</b> variable into which the method writes the minimum volume level in decibels.</param>
+    <param name="pfMaxLevelDB">Pointer to a <b>float</b> variable into which the method writes the maximum volume level in decibels.</param>
+    <param name="pfStepping">Pointer to a <b>float</b> variable into which the method writes the stepping value between consecutive volume levels in the range <i>*pfMinLevelDB</i> to <i>*pfMaxLevelDB</i>. If the difference between the maximum and minimum volume levels is <i>d</i> decibels, and the range is divided into <i>n</i> steps (uniformly sized intervals), then the volume can have <i>n</i> + 1 discrete levels and the size of the step between consecutive levels is <i>d</i> / <i>n</i> decibels.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -95,44 +78,38 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>nChannel</i> is out of range.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>nChannel</i> is out of range.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Pointer <i>pfminLevelDB</i>, <i>pfmaxLevelDB</i>, or <i>pfmaxLevelDB</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pfminLevelDB</i>, <i>pfmaxLevelDB</i>, or <i>pfmaxLevelDB</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IPerChannelDbLevel Interface" />
-    <seealso cref="IPerChannelDbLevel.GetChannelCount" />
   </member>
   <member name="IPerChannelDbLevel.SetLevelAllChannels">
-    <summary>
-      <para>The <b>SetLevelAllChannels</b> method sets the volume levels, in decibels, of all the channels in the audio stream.</para>
-    </summary>
-    <param name="aLevelsDB">
-      <para>Pointer to an array of volume levels. This parameter points to a caller-allocated <b>float</b> array into which the method writes the new volume levels, in decibels, for all the channels. The method writes the level for a particular channel into the array element whose index matches the channel number. If the audio stream contains <i>n</i> channels, the channels are numbered 0 to <i>n</i>– 1. To get the number of channels in the stream, call the <see cref="IPerChannelDbLevel.GetChannelCount" /> method.</para>
-    </param>
-    <param name="cChannels">
-      <para>The number of elements in the <i>aLevelsDB</i> array. If this parameter does not match the number of channels in the audio stream, the method fails without modifying the <i>aLevelsDB</i> array.</para>
-    </param>
-    <param name="pguidEventContext">
-      <para>Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetLevelAllChannels</b> call changes the state of the level control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
-    </param>
+    <summary>The <b>SetLevelAllChannels</b> method sets the volume levels, in decibels, of all the channels in the audio stream.</summary>
+    <param name="aLevelsDB">Pointer to an array of volume levels. This parameter points to a caller-allocated <b>float</b> array into which the method writes the new volume levels, in decibels, for all the channels. The method writes the level for a particular channel into the array element whose index matches the channel number. If the audio stream contains <i>n</i> channels, the channels are numbered 0 to <i>n</i>– 1. To get the number of channels in the stream, call the <see cref="IPerChannelDbLevel.GetChannelCount" /> method.</param>
+    <param name="cChannels">The number of elements in the <i>aLevelsDB</i> array. If this parameter does not match the number of channels in the audio stream, the method fails without modifying the <i>aLevelsDB</i> array.</param>
+    <param name="pguidEventContext">Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetLevelAllChannels</b> call changes the state of the level control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -140,56 +117,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>cChannels</i> does not equal the number of channels.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>cChannels</i> does not equal the number of channels.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Pointer <i>aLevelsDB</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>aLevelsDB</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the specified level value for any channel is beyond the range that the <see cref="IPerChannelDbLevel.GetLevelRange" /> method reports for that channel, the <b>SetLevelAllChannels</b> call clamps the value to the supported range and completes successfully. A subsequent call to the <see cref="IPerChannelDbLevel.GetLevel" /> method retrieves the actual value used for that channel.</para>
-    </remarks>
-    <seealso cref="IPerChannelDbLevel Interface" />
-    <seealso cref="IPerChannelDbLevel.GetChannelCount" />
-    <seealso cref="IPerChannelDbLevel.GetLevel" />
-    <seealso cref="IPerChannelDbLevel.GetLevelRange" />
   </member>
   <member name="IPerChannelDbLevel.SetLevelUniform">
-    <summary>
-      <para>The <b>SetLevelUniform</b> method sets all channels in the audio stream to the same uniform volume level, in decibels.</para>
-    </summary>
-    <param name="fLevelDB">
-      <para>The new uniform level in decibels.</para>
-    </param>
-    <param name="pguidEventContext">
-      <para>Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetLevelUniform</b> call changes the state of the level control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
-    </param>
+    <summary>The <b>SetLevelUniform</b> method sets all channels in the audio stream to the same uniform volume level, in decibels.</summary>
+    <param name="fLevelDB">The new uniform level in decibels.</param>
+    <param name="pguidEventContext">Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetLevelUniform</b> call changes the state of the level control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -197,24 +167,20 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If the specified uniform level is beyond the range that the <see cref="IPerChannelDbLevel.GetLevelRange" /> method reports for a particular channel, the <b>SetLevelUniform</b> call clamps the value for that channel to the supported range and completes successfully. A subsequent call to the <see cref="IPerChannelDbLevel.GetLevel" /> method retrieves the actual value used for that channel.</para>
-    </remarks>
-    <seealso cref="IPerChannelDbLevel Interface" />
-    <seealso cref="IPerChannelDbLevel.GetLevel" />
-    <seealso cref="IPerChannelDbLevel.GetLevelRange" />
   </member>
   <member name="IPerChannelDbLevel">
     <summary>
@@ -243,11 +209,5 @@
         </item>
       </list>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IAudioBass Interface" />
-    <seealso cref="IAudioMidrange Interface" />
-    <seealso cref="IAudioTreble Interface" />
-    <seealso cref="IAudioVolumeLevel Interface" />
   </member>
 </doc>

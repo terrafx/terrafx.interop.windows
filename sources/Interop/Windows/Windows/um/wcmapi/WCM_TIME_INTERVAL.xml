@@ -3,50 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_TIME_INTERVAL">
-    <summary>
-      <para>The <b>WCM_TIME_INTERVAL</b> structure defines a time interval.</para>
-    </summary>
+    <summary>The <b>WCM_TIME_INTERVAL</b> structure defines a time interval.</summary>
   </member>
   <member name="WCM_TIME_INTERVAL.wYear">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>Years.</para>
-    </summary>
+    <summary>Years.</summary>
   </member>
   <member name="WCM_TIME_INTERVAL.wMonth">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>Months.</para>
-    </summary>
+    <summary>Months.</summary>
   </member>
   <member name="WCM_TIME_INTERVAL.wDay">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>Days.</para>
-    </summary>
+    <summary>Days.</summary>
   </member>
   <member name="WCM_TIME_INTERVAL.wHour">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>Hours.</para>
-    </summary>
+    <summary>Hours.</summary>
   </member>
   <member name="WCM_TIME_INTERVAL.wMinute">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>Minutes.</para>
-    </summary>
+    <summary>Minutes.</summary>
   </member>
   <member name="WCM_TIME_INTERVAL.wSecond">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>Seconds.</para>
-    </summary>
+    <summary>Seconds.</summary>
   </member>
   <member name="WCM_TIME_INTERVAL.wMilliseconds">
-    <summary>
-      <para>Type: <b>WORD</b></para>
-      <para>Milliseconds.</para>
-    </summary>
+    <summary>Milliseconds.</summary>
   </member>
 </doc>

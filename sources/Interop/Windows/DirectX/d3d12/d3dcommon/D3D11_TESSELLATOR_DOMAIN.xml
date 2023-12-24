@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TESSELLATOR_DOMAIN">
+    <summary>Domain options for tessellator data.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_DOMAIN.D3D_TESSELLATOR_DOMAIN_UNDEFINED"></member>
+  <member name="D3D11_TESSELLATOR_DOMAIN.D3D_TESSELLATOR_DOMAIN_ISOLINE"></member>
+  <member name="D3D11_TESSELLATOR_DOMAIN.D3D_TESSELLATOR_DOMAIN_TRI"></member>
+  <member name="D3D11_TESSELLATOR_DOMAIN.D3D_TESSELLATOR_DOMAIN_QUAD"></member>
+  <member name="D3D11_TESSELLATOR_DOMAIN.D3D11_TESSELLATOR_DOMAIN_UNDEFINED">
+    <summary>The data type is undefined.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_DOMAIN.D3D11_TESSELLATOR_DOMAIN_ISOLINE">
+    <summary>Isoline data.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_DOMAIN.D3D11_TESSELLATOR_DOMAIN_TRI">
+    <summary>Triangle data.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_DOMAIN.D3D11_TESSELLATOR_DOMAIN_QUAD">
+    <summary>Quad data.</summary>
+  </member>
+</doc>

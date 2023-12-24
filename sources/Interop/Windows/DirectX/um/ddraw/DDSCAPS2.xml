@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DDSCAPS2">
+    <summary>The DDSCAPS2 structure defines additional capabilities of a Microsoft DirectDraw surface object.</summary>
+  </member>
+  <member name="DDSCAPS2.dwCaps">
+    <summary>Specifies a set of flags representing the capabilities of the surface. The flags in this member are identical to those in the corresponding member of the <see cref="DDSCAPS" /> structure.</summary>
+  </member>
+  <member name="DDSCAPS2.dwCaps2">
+    <summary>
+      <para>Specifies a set of flags that indicate additional surface capabilities. This member can contain one or more of the following capability flags. Each of these flags, except DDSCAPS2_TEXTUREMANAGE, are set by the application when the application calls its <b>CreateSurface</b> method.</para>
+    </summary>
+  </member>
+  <member name="DDSCAPS2.dwCaps3">
+    <summary>
+      <para>
+        <b>DirectX 8.0 and DirectX 8.1 versions only.</b>
+      </para>
+      <para>Specifies the number of samples for a multisampled surface. This field holds one of the values of the enumerated type D3DMULTISAMPLE_TYPE. If a surface is not multisampled, <b>dwCaps3</b> has the value D3DMULTISAMPLE_NONE (0).</para>
+      <para>
+        <b>DirectX 9.0 and later versions only.</b>
+      </para>
+      <para>Specifies a set of bits that indicate additional surface capabilities. This member can be a bitwise OR of the following bits.</para>
+    </summary>
+  </member>
+  <member name="DDSCAPS2.DUMMYUNIONNAMEN">
+    <summary>N/A</summary>
+  </member>
+  <member name="DDSCAPS2.DUMMYUNIONNAMEN.dwCaps4">
+    <summary>The low word is the depth for a volume texture.</summary>
+  </member>
+  <member name="DDSCAPS2.DUMMYUNIONNAMEN.dwVolumeDepth">
+    <summary>Specifies the volume texture bit-depth.</summary>
+  </member>
+</doc>

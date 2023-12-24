@@ -21,32 +21,4 @@ public static unsafe partial class IMFCdmSuspendNotifyTests
     {
         Assert.That(typeof(IMFCdmSuspendNotify).GUID, Is.EqualTo(IID_IMFCdmSuspendNotify));
     }
-
-    /// <summary>Validates that the <see cref="IMFCdmSuspendNotify" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFCdmSuspendNotify>(), Is.EqualTo(sizeof(IMFCdmSuspendNotify)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFCdmSuspendNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFCdmSuspendNotify).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFCdmSuspendNotify" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFCdmSuspendNotify), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFCdmSuspendNotify), Is.EqualTo(4));
-        }
-    }
 }

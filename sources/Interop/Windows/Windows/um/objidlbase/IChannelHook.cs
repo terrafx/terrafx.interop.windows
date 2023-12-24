@@ -25,7 +25,7 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IChannelHook*, Guid*, void**, int>)(lpVtbl[0]))((IChannelHook*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IChannelHook*, Guid*, void**, int>)(lpVtbl[0]))((IChannelHook*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IChannelHook*, uint>)(lpVtbl[1]))((IChannelHook*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IChannelHook*, uint>)(lpVtbl[1]))((IChannelHook*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IChannelHook*, uint>)(lpVtbl[2]))((IChannelHook*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IChannelHook*, uint>)(lpVtbl[2]))((IChannelHook*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IChannelHook.xml' path='doc/member[@name="IChannelHook.ClientGetSize"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
     [VtblIndex(3)]
     public void ClientGetSize([NativeTypeName("const GUID &")] Guid* uExtent, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("ULONG *")] uint* pDataSize)
     {
-        ((delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void>)(lpVtbl[3]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, pDataSize);
+        ((delegate* unmanaged[MemberFunction]<IChannelHook*, Guid*, Guid*, uint*, void>)(lpVtbl[3]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, pDataSize);
     }
 
     /// <include file='IChannelHook.xml' path='doc/member[@name="IChannelHook.ClientFillBuffer"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
     [VtblIndex(4)]
     public void ClientFillBuffer([NativeTypeName("const GUID &")] Guid* uExtent, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("ULONG *")] uint* pDataSize, void* pDataBuffer)
     {
-        ((delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void*, void>)(lpVtbl[4]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, pDataSize, pDataBuffer);
+        ((delegate* unmanaged[MemberFunction]<IChannelHook*, Guid*, Guid*, uint*, void*, void>)(lpVtbl[4]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, pDataSize, pDataBuffer);
     }
 
     /// <include file='IChannelHook.xml' path='doc/member[@name="IChannelHook.ClientNotify"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
     [VtblIndex(5)]
     public void ClientNotify([NativeTypeName("const GUID &")] Guid* uExtent, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("ULONG")] uint cbDataSize, void* pDataBuffer, [NativeTypeName("DWORD")] uint lDataRep, HRESULT hrFault)
     {
-        ((delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint, void*, uint, HRESULT, void>)(lpVtbl[5]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
+        ((delegate* unmanaged[MemberFunction]<IChannelHook*, Guid*, Guid*, uint, void*, uint, HRESULT, void>)(lpVtbl[5]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, cbDataSize, pDataBuffer, lDataRep, hrFault);
     }
 
     /// <include file='IChannelHook.xml' path='doc/member[@name="IChannelHook.ServerNotify"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
     [VtblIndex(6)]
     public void ServerNotify([NativeTypeName("const GUID &")] Guid* uExtent, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("ULONG")] uint cbDataSize, void* pDataBuffer, [NativeTypeName("DWORD")] uint lDataRep)
     {
-        ((delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)(lpVtbl[6]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, cbDataSize, pDataBuffer, lDataRep);
+        ((delegate* unmanaged[MemberFunction]<IChannelHook*, Guid*, Guid*, uint, void*, uint, void>)(lpVtbl[6]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, cbDataSize, pDataBuffer, lDataRep);
     }
 
     /// <include file='IChannelHook.xml' path='doc/member[@name="IChannelHook.ServerGetSize"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
     [VtblIndex(7)]
     public void ServerGetSize([NativeTypeName("const GUID &")] Guid* uExtent, [NativeTypeName("const IID &")] Guid* riid, HRESULT hrFault, [NativeTypeName("ULONG *")] uint* pDataSize)
     {
-        ((delegate* unmanaged<IChannelHook*, Guid*, Guid*, HRESULT, uint*, void>)(lpVtbl[7]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, hrFault, pDataSize);
+        ((delegate* unmanaged[MemberFunction]<IChannelHook*, Guid*, Guid*, HRESULT, uint*, void>)(lpVtbl[7]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, hrFault, pDataSize);
     }
 
     /// <include file='IChannelHook.xml' path='doc/member[@name="IChannelHook.ServerFillBuffer"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
     [VtblIndex(8)]
     public void ServerFillBuffer([NativeTypeName("const GUID &")] Guid* uExtent, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("ULONG *")] uint* pDataSize, void* pDataBuffer, HRESULT hrFault)
     {
-        ((delegate* unmanaged<IChannelHook*, Guid*, Guid*, uint*, void*, HRESULT, void>)(lpVtbl[8]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, pDataSize, pDataBuffer, hrFault);
+        ((delegate* unmanaged[MemberFunction]<IChannelHook*, Guid*, Guid*, uint*, void*, HRESULT, void>)(lpVtbl[8]))((IChannelHook*)Unsafe.AsPointer(ref this), uExtent, riid, pDataSize, pDataBuffer, hrFault);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IChannelHook : IChannelHook.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint*, void> ClientGetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, uint*, void> ClientGetSize;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint*, void*, void> ClientFillBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, uint*, void*, void> ClientFillBuffer;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG, void *, DWORD, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint, void*, uint, HRESULT, void> ClientNotify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, uint, void*, uint, HRESULT, void> ClientNotify;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG, void *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint, void*, uint, void> ServerNotify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, uint, void*, uint, void> ServerNotify;
 
         [NativeTypeName("void (const GUID &, const IID &, HRESULT, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, HRESULT, uint*, void> ServerGetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, HRESULT, uint*, void> ServerGetSize;
 
         [NativeTypeName("void (const GUID &, const IID &, ULONG *, void *, HRESULT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, uint*, void*, HRESULT, void> ServerFillBuffer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, uint*, void*, HRESULT, void> ServerFillBuffer;
     }
 }

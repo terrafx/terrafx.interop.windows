@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRINVERTRGN">
-    <summary>
-      <para>The <b>EMRINVERTRGN</b> and <b>EMRPAINTRGN</b> structures
-contain members for the <see cref="InvertRgn" /> and <see cref="PaintRgn" /> enhanced metafile records.</para>
-    </summary>
-    <seealso cref="InvertRgn" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="PaintRgn" />
+    <summary>The <b>EMRINVERTRGN</b> and <b>EMRPAINTRGN</b> structures contain members for the <see cref="InvertRgn" /> and <see cref="PaintRgn" /> enhanced metafile records.</summary>
   </member>
   <member name="EMRINVERTRGN.emr">
-    <summary>
-      <para>Base structure for all record types.</para>
-    </summary>
+    <summary>Base structure for all record types.</summary>
   </member>
   <member name="EMRINVERTRGN.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRINVERTRGN.cbRgnData">
-    <summary>
-      <para>Size of region data, in bytes.</para>
-    </summary>
+    <summary>Size of region data, in bytes.</summary>
   </member>
   <member name="EMRINVERTRGN.RgnData">
-    <summary>
-      <para>Buffer containing an <see cref="RGNDATA" /> structure.</para>
-    </summary>
+    <summary>Buffer containing an <see cref="RGNDATA" /> structure.</summary>
   </member>
 </doc>

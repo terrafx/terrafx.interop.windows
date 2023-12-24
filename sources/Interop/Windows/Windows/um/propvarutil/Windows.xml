@@ -1,0 +1,2181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.ClearPropVariantArray">
+    <summary>Frees the memory and references used by an array of <see cref="PROPVARIANT" /> structures stored in an array.</summary>
+    <param name="rgPropVar">Array of <see cref="PROPVARIANT" /> structures to free.</param>
+    <param name="cVars">The number of elements in the array specified by <i>rgPropVar</i>.</param>
+    <returns>No return value.</returns>
+  </member>
+  <member name="Windows.ClearVariantArray">
+    <summary>Frees the memory and references used by an array of <see cref="VARIANT" /> structures stored in an array.</summary>
+    <param name="pvars">Array of <see cref="VARIANT" /> structures to free.</param>
+    <param name="cvars">The number of elements in the array specified by <i>pvars</i>.</param>
+    <returns>No return value.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromBoolean">
+    <summary>Initializes a given <see cref="PROPVARIANT" /> structure as a <b>VT_BOOL</b> using a specified Boolean value.</summary>
+    <param name="fVal">Source <b>BOOL</b> value.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromBooleanVector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure from a specified Boolean vector.</summary>
+    <param name="prgf">Pointer to the Boolean vector used to initialize the structure. If this parameter is <b>NULL</b>, the elements pointed to by the <b>cabool.pElems</b> structure member are initialized with VARIANT_FALSE.</param>
+    <param name="cElems">The number of vector elements.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromBuffer">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure using the contents of a buffer.</summary>
+    <param name="pv">Pointer to the buffer.</param>
+    <param name="cb">The length of the buffer, in bytes.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromCLSID">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a class identifier (CLSID).</summary>
+    <param name="clsid">Reference to the CLSID.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromDouble">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a specified <b>double</b> value.</summary>
+    <param name="dblVal">The source <b>double</b> value.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromDoubleVector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a specified vector of <b>double</b> values.</summary>
+    <param name="prgn">Pointer to a <b>double</b> vector. If this value is <b>NULL</b>, the elements pointed to by the <b>cadbl.pElems</b> structure member are initialized with 0.0.</param>
+    <param name="cElems">The number of vector elements.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromFileTime">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on information stored in a <see cref="FILETIME" /> structure.</summary>
+    <param name="pftIn">Pointer to the date and time as a <see cref="FILETIME" /> structure.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromFileTimeVector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure from a specified vector of <see cref="FILETIME" /> values.</summary>
+    <param name="prgft">Pointer to the date and time as a <see cref="FILETIME" /> vector. If this value is <b>NULL</b>, the elements pointed to by the <b>cafiletime.pElems</b> structure member is initialized with (FILETIME)0.</param>
+    <param name="cElems">The number of vector elements.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromGUIDAsBuffer">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a <b>GUID</b>. The structure is initialized as VT_VECTOR | VT_UI1.</summary>
+    <param name="guid">Reference to the source <b>GUID</b>.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromGUIDAsString">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a <b>GUID</b>. The structure is initialized as VT_LPWSTR.</summary>
+    <param name="guid">Reference to the source <b>GUID</b>.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromInt16">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a 16-bit integer value.</summary>
+    <param name="nVal">The source <b>SHORT</b> value.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromInt16Vector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a specified vector of 16-bit integer values.</summary>
+    <param name="prgn">Pointer to a source vector of <b>SHORT</b> values. If this parameter is <b>NULL</b>, the vector is initialized with zeros.</param>
+    <param name="cElems">The number of elements in the vector.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromInt32">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a 32-bit integer value.</summary>
+    <param name="lVal">The source <b>LONG</b> value.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromInt32Vector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a vector of 32-bit integer values.</summary>
+    <param name="prgn">Pointer to a source vector of <b>LONG</b> values. If this parameter is <b>NULL</b>, the vector is initialized with zeros.</param>
+    <param name="cElems">The number of vector elements.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromInt64">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a specified <b>Int64</b> value.</summary>
+    <param name="llVal">The source <b>LONGLONG</b> value.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromInt64Vector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a vector of <b>Int64</b> values.</summary>
+    <param name="prgn">Pointer to a source vector of <b>LONGLONG</b> values. If this parameter is <b>NULL</b>, the vector is initialized with zeros.</param>
+    <param name="cElems">The number of elements in the vector.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromPropVariantVectorElem">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a specified <b>PROPVARIANT</b> vector element.</summary>
+    <param name="propvarIn">The source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">The index of the source <see cref="PROPVARIANT" /> structure element.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromResource">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a string resource embedded in an executable file.</summary>
+    <param name="hinst">Handle to an instance of the module whose executable file contains the string resource.</param>
+    <param name="id">Integer identifier of the string to be loaded.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromString">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a specified string.</summary>
+    <param name="psz">Pointer to a buffer that contains the source Unicode string.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromStringAsVector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure from a specified string. The string is parsed as a semi-colon delimited list (for example: "A;B;C").</summary>
+    <param name="psz">Pointer to a buffer that contains the source Unicode string.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromStringVector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure from a specified string vector.</summary>
+    <param name="prgsz">Pointer to a buffer that contains the source string vector.</param>
+    <param name="cElems">The number of vector elements in <i>prgsz</i>.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromStrRet">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a string stored in a <see cref="STRRET" /> structure.</summary>
+    <param name="pstrret">Pointer to a <see cref="STRRET" /> structure that contains the string.</param>
+    <param name="pidl">PIDL of the item whose details are being retrieved.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromUInt16">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a 16-bit unsigned integer value.</summary>
+    <param name="uiVal">Source value.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromUInt16Vector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a vector of 16-bit unsigned integer values.</summary>
+    <param name="prgn">Pointer to a source vector of <b>USHORT</b> values. If this parameter is <b>NULL</b>, the <see cref="PROPVARIANT" /> is initialized with zeros.</param>
+    <param name="cElems">Number of elements in the vector pointed to by <i>prgn</i>.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromUInt32">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a 32-bit unsigned integer value.</summary>
+    <param name="ulVal">Source <b>ULONG</b> value.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromUInt32Vector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a vector of 32-bit unsigned integer values.</summary>
+    <param name="prgn">Pointer to a source vector of <b>ULONG</b> values. If this parameter is <b>NULL</b>, the <see cref="PROPVARIANT" /> is initialized with zeros.</param>
+    <param name="cElems">Number of elements in the vector pointed to by <i>prgn</i>.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromUInt64">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure with a 64-bit unsigned integer value.</summary>
+    <param name="ullVal">Source <b>ULONGLONG</b> value.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantFromUInt64Vector">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a vector of 64-bit unsigned integers.</summary>
+    <param name="prgn">Pointer to a source vector of <b>ULONGLONG</b> values. If this parameter is <b>NULL</b>, the <see cref="PROPVARIANT" /> is initialized with zeros.</param>
+    <param name="cElems">Number of elements in the vector pointed to by <i>prgn</i>.</param>
+    <param name="ppropvar">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitPropVariantVectorFromPropVariant">
+    <summary>Initializes a vector element in a <see cref="PROPVARIANT" /> structure with a value stored in another <b>PROPVARIANT</b>.</summary>
+    <param name="propvarSingle">Reference to the source <see cref="PROPVARIANT" /> structure that contains a single value.</param>
+    <param name="ppropvarVector">When this function returns, contains the initialized <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromBoolean">
+    <summary>Initializes a <see cref="VARIANT" /> structure with a Boolean value.</summary>
+    <param name="fVal">Source <b>BOOL</b> value.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromBooleanArray">
+    <summary>Initializes a <see cref="VARIANT" /> structure from an array of Boolean values.</summary>
+    <param name="prgf">Pointer to source array of Boolean values.</param>
+    <param name="cElems">The number of elements in the array.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromBuffer">
+    <summary>Initializes a <see cref="VARIANT" /> structure with the contents of a buffer.</summary>
+    <param name="pv">Pointer to the source buffer.</param>
+    <param name="cb">The length of the buffer, in bytes.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromDispatch">
+    <summary>Initializes a <see cref="VARIANT" /> structure based on an instance of an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> object.</summary>
+    <param name="pdisp">Pointer to the source <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromDosDateTime">
+    <summary>Initializes a <see cref="VARIANT" /> structure with a date and time given in the format used by Microsoft MS-DOS. The date and time values are converted to the format used to store date and time in a <b>VARIANT</b>.</summary>
+    <param name="wDate">
+      <b>WORD</b> value that represents an MS-DOS date. See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-dosdatetimetovarianttime">DosDateTimeToVariantTime</a> for more information about this format.</param>
+    <param name="wTime">
+      <b>WORD</b> value that represents an MS-DOS time. See <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-dosdatetimetovarianttime">DosDateTimeToVariantTime</a> for more information about this format.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromDouble">
+    <summary>Initializes a <see cref="VARIANT" /> structure with a value of type DOUBLE.</summary>
+    <param name="dblVal">Source value.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromDoubleArray">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an array of values of type DOUBLE.</summary>
+    <param name="prgn">Pointer to the source array of DOUBLE values.</param>
+    <param name="cElems">The number of elements in the array pointed to by <i>prgn</i>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromFileTime">
+    <summary>Initializes a <see cref="VARIANT" /> structure with the contents of a <see cref="FILETIME" /> structure.</summary>
+    <param name="pft">Pointer to date and time information stored in a <see cref="FILETIME" /> structure.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromFileTimeArray">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an array of <see cref="FILETIME" /> structures.</summary>
+    <param name="prgft">Pointer to an array of <see cref="FILETIME" /> structures.</param>
+    <param name="cElems">The number of elements in the array pointed to by <i>prgft</i>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromGUIDAsBuffer">
+    <summary>Initializes a <see cref="VARIANT" /> structure based on a <b>GUID</b>. The structure is initialized as VT_ARRAY | VT_UI1.</summary>
+    <param name="guid">Reference to the source <b>GUID</b>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromGUIDAsString">
+    <summary>Initializes a <see cref="VARIANT" /> structure based on a <b>GUID</b>. The structure is initialized as a <b>VT_BSTR</b> type.</summary>
+    <param name="guid">Reference to the source <b>GUID</b>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromInt16">
+    <summary>Initializes a <see cref="VARIANT" /> structure with a 16-bit integer value.</summary>
+    <param name="iVal">Source <b>SHORT</b> value.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromInt16Array">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an array of 16-bit integer values.</summary>
+    <param name="prgn">Pointer to the source array of <b>SHORT</b> values.</param>
+    <param name="cElems">The number of elements in the array pointed to by <i>prgn</i>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromInt32">
+    <summary>Initializes a <see cref="VARIANT" /> structure with a 32-bit integer value.</summary>
+    <param name="lVal">Source <b>LONG</b> value.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromInt32Array">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an array of 32-bit integer values.</summary>
+    <param name="prgn">Pointer to the source array of <b>LONG</b> values.</param>
+    <param name="cElems">The number of elements in the array pointed to by <i>prgn</i>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromInt64">
+    <summary>Initializes a <see cref="VARIANT" /> structure with a 64-bit integer value.</summary>
+    <param name="llVal">Source <b>LONGLONG</b> value.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromInt64Array">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an array of 64-bit integer values.</summary>
+    <param name="prgn">Pointer to the source array of <b>LONGLONG</b> values.</param>
+    <param name="cElems">
+      <para>The number of elements in the array pointed to by <i>prgn</i>.</para>
+      <para>The number of array elements.</para>
+    </param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromResource">
+    <summary>Initializes a <see cref="VARIANT" /> structure based on a string resource embedded in an executable file.</summary>
+    <param name="hinst">Handle to an instance of the module whose executable file contains the string resource.</param>
+    <param name="id">Integer identifier of the string to be loaded.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromString">
+    <summary>Initializes a <see cref="VARIANT" /> structure with a string.</summary>
+    <param name="psz">Pointer to a buffer that contains the source Unicode string. If this value is <b>NULL</b>, the function initializes the <see cref="VARIANT" /> with a <b>NULL</b> <b>BSTR</b>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromStringArray">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an array of strings.</summary>
+    <param name="prgsz">Pointer to an array of strings.</param>
+    <param name="cElems">The number of elements in the array pointed to by <i>prgsz</i>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromStrRet">
+    <summary>Initializes a <see cref="VARIANT" /> structure with a string stored in a <see cref="STRRET" /> structure.</summary>
+    <param name="pstrret">Pointer to a <see cref="STRRET" /> structure.</param>
+    <param name="pidl">PIDL of the item whose details are being retrieved.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromUInt16">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an unsigned 16-bit integer value.</summary>
+    <param name="uiVal">Source <b>USHORT</b> value.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromUInt16Array">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an array of unsigned 16-bit integer values.</summary>
+    <param name="prgn">Pointer to the source array of <b>USHORT</b> values.</param>
+    <param name="cElems">The number of elements in the array pointed to by <i>prgn</i>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromUInt32">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an unsigned 32-bit integer value.</summary>
+    <param name="ulVal">Source <b>ULONG</b> value.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromUInt32Array">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an array of unsigned 32-bit integer values.</summary>
+    <param name="prgn">Pointer to the source array of <b>ULONG</b> values.</param>
+    <param name="cElems">The number of elements in the array pointed to by <i>prgn</i>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromUInt64">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an unsigned 64-bit integer value.</summary>
+    <param name="ullVal">Source <b>ULONGLONG</b> value.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromUInt64Array">
+    <summary>Initializes a <see cref="VARIANT" /> structure with an array of unsigned 64-bit integer values.</summary>
+    <param name="prgn">Pointer to the source array of <b>ULONGLONG</b> values.</param>
+    <param name="cElems">The number of elements in the array pointed to by <i>prgn</i>.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.InitVariantFromVariantArrayElem">
+    <summary>Initializes a <see cref="VARIANT" /> structure with a value stored in another <b>VARIANT</b> structure.</summary>
+    <param name="varIn">Reference to the source <see cref="VARIANT" /> structure.</param>
+    <param name="iElem">Index of one of the source <see cref="VARIANT" /> structure elements.</param>
+    <param name="pvar">When this function returns, contains the initialized <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.IsPropVariantString">
+    <summary>Specifies whether a specified <see cref="PROPVARIANT" /> structure is a string type.</summary>
+    <param name="propvar">Reference to the <see cref="PROPVARIANT" /> structure.</param>
+    <returns>Returns <b>TRUE</b> if <i>propvar</i> is a VT_LPWSTR or VT_BSTR <see cref="PROPVARIANT" />; otherwise, <b>FALSE</b>.</returns>
+  </member>
+  <member name="Windows.IsPropVariantVector">
+    <summary>Specifies whether a <see cref="PROPVARIANT" /> structure has a vector type.</summary>
+    <param name="propvar">Reference to the <see cref="PROPVARIANT" /> structure being queried.</param>
+    <returns>Returns <b>TRUE</b> if <i>propvar</i> is a VT_ARRAY | VT_VECTOR <see cref="PROPVARIANT" />; otherwise, <b>FALSE</b>.</returns>
+  </member>
+  <member name="Windows.IsVariantArray">
+    <summary>Specifies whether a variant is an array.</summary>
+    <param name="var">Reference to the variant being queried.</param>
+    <returns>Returns <b>TRUE</b> if variant is an array.</returns>
+  </member>
+  <member name="Windows.IsVariantString">
+    <summary>Specifies whether a variant is a string.</summary>
+    <param name="var">Reference to the variant being queried.</param>
+    <returns>Returns <b>TRUE</b> if variant is a string.</returns>
+  </member>
+  <member name="Windows.IsVarTypeFloat">
+    <summary>Returns whether a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is a float.</summary>
+    <param name="vt">Specifies the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> being queried.</param>
+    <returns>Returns <b>TRUE</b> if <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is a float.</returns>
+  </member>
+  <member name="Windows.IsVarTypeInteger">
+    <summary>Returns whether a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is an integer.</summary>
+    <param name="vt">Specifies the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> being queried.</param>
+    <returns>Returns <b>TRUE</b> if <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is an integer.</returns>
+  </member>
+  <member name="Windows.IsVarTypeNumber">
+    <summary>Specifies whether <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is a number.</summary>
+    <param name="vt">Specifies the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> being queried.</param>
+    <returns>Returns <b>TRUE</b> if <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is a number.</returns>
+  </member>
+  <member name="Windows.IsVarTypeSignedInteger">
+    <summary>Returns whether a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is a signed integer.</summary>
+    <param name="vt">Specifies the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> being queried.</param>
+    <returns>Returns <b>TRUE</b> if <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is a signed integer; otherwise, <b>FALSE</b>.</returns>
+  </member>
+  <member name="Windows.IsVarTypeUnsignedInteger">
+    <summary>Returns whether a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is an unsigned integer.</summary>
+    <param name="vt">Specifies the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> being queried.</param>
+    <returns>Returns <b>TRUE</b> if <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms221127(v=vs.85)">VARTYPE</a> is an unsigned integer; otherwise, <b>FALSE</b>.</returns>
+  </member>
+  <member name="Windows.PropVariantChangeType">
+    <summary>Coerces a value stored as a <see cref="PROPVARIANT" /> structure to an equivalent value of a different variant type.</summary>
+    <param name="ppropvarDest">A pointer to a <see cref="PROPVARIANT" /> structure that, when this function returns successfully, receives the coerced value and its new type.</param>
+    <param name="propvarSrc">A reference to the source <see cref="PROPVARIANT" /> structure that contains the value expressed as its original type.</param>
+    <param name="flags">Reserved, must be 0.</param>
+    <param name="vt">Specifies the new type for the value. See the tables below for recognized type names.</param>
+    <returns>Returns <b>S_OK</b> if successful, or a standard COM error value otherwise. If the requested coercion is not possible, an error is returned.</returns>
+  </member>
+  <member name="Windows.PropVariantCompare">
+    <summary>Compares two <see cref="PROPVARIANT" /> structures, based on default comparison units and settings.</summary>
+    <param name="propvar1">Reference to the first <see cref="PROPVARIANT" /> structure.</param>
+    <param name="propvar2">Reference to the second <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <list type="bullet">
+        <item>
+          <description>Returns 1 if <i>propvar1</i> is greater than <i>propvar2</i></description>
+        </item>
+        <item>
+          <description>Returns 0 if <i>propvar1</i> equals <i>propvar2</i></description>
+        </item>
+        <item>
+          <description>Returns -1 if <i>propvar1</i> is less than <i>propvar2</i></description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantCompareEx">
+    <summary>Extends <see cref="PropVariantCompare" /> by allowing the caller to compare two <see cref="PROPVARIANT" /> structures based on specified comparison units and flags.</summary>
+    <param name="propvar1">Reference to the first <see cref="PROPVARIANT" /> structure.</param>
+    <param name="propvar2">Reference to the second <see cref="PROPVARIANT" /> structure.</param>
+    <param name="unit">Specifies, where appropriate, one of the comparison units defined in <see cref="PROPVAR_COMPARE_UNIT" />.</param>
+    <param name="flags">
+      <para>Specifies one of the following:</para>
+      <h4>PVCF_DEFAULT (0x00000000)</h4>
+      <para>When comparing strings, use <see cref="StrCmpLogical" />.</para>
+      <h4>PVCF_TREATEMPTYASGREATERTHAN (0x00000001)</h4>
+      <para>Regard empty or null values as greater than non-empty values. This value can be OR-ed with any other value.</para>
+      <h4>PVCF_USESTRCMP (0x00000002)</h4>
+      <para>When comparing strings, use <see cref="StrCmp" />.</para>
+      <h4>PVCF_USESTRCMPC (0x00000004)</h4>
+      <para>When comparing strings, use <see cref="StrCmpC" />.</para>
+      <h4>PVCF_USESTRCMPI (0x00000008)</h4>
+      <para>When comparing strings, use <see cref="StrCmpI" />.</para>
+      <h4>PVCF_USESTRCMPIC (0x00000010)</h4>
+      <para>When comparing strings, use <see cref="StrCmpIC" />.</para>
+    </param>
+    <returns>
+      <list type="bullet">
+        <item>
+          <description>Returns 1 if <i>propvar1</i> is greater than <i>propvar2</i></description>
+        </item>
+        <item>
+          <description>Returns 0 if <i>propvar1</i> equals <i>propvar2</i></description>
+        </item>
+        <item>
+          <description>Returns -1 if <i>propvar1</i> is less than <i>propvar2</i></description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantGetBooleanElem">
+    <summary>Extracts a single Boolean element from a <see cref="PROPVARIANT" /> structure of type <code>VT_BOOL</code>, <code>VT_VECTOR | VT_BOOL</code>, or <code>VT_ARRAY | VT_BOOL</code>.</summary>
+    <param name="propvar">A reference to the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">Specifies the vector or array index; otherwise, <i>iElem</i> must be 0.</param>
+    <param name="pfVal">When this function returns, contains the extracted Boolean value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetDoubleElem">
+    <summary>Extracts a single <b>double</b> element from a <see cref="PROPVARIANT" /> structure of type <code>VT_R8</code>, <code>VT_VECTOR | VT_R8</code>, or <code>VT_ARRAY | VT_R8</code>.</summary>
+    <param name="propvar">Reference to the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">Specifies vector or array index; otherwise, <i>iElem</i> must be 0.</param>
+    <param name="pnVal">When this function returns, contains the extracted double value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetElem">
+    <summary>Initializes a <see cref="PROPVARIANT" /> structure based on a specified element in another <b>PROPVARIANT</b> structure.</summary>
+    <param name="propvarIn">Reference to the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">Index of a <see cref="PROPVARIANT" /> structure element in <i>propvarIn</i>.</param>
+    <param name="ppropvar">When this function returns, contains a <see cref="PROPVARIANT" /> with the value specified from the source <b>PROPVARIANT</b> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetElementCount">
+    <summary>Retrieves the element count of a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>Returns the element count of a VT_VECTOR or VT_ARRAY value: for single values, returns 1; for empty structures, returns 0.</returns>
+  </member>
+  <member name="Windows.PropVariantGetFileTimeElem">
+    <summary>Extracts a single <see cref="FILETIME" /> element from a <see cref="PROPVARIANT" /> structure of type VT_FILETIME, VT_VECTOR | VT_FILETIME, or VT_ARRAY | VT_FILETIME.</summary>
+    <param name="propvar">The source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">Specifies vector or array index; otherwise, this value must be 0.</param>
+    <param name="pftVal">When this function returns, contains the extracted filetime value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetInt16Elem">
+    <summary>Extracts a single Int16 element from a <see cref="PROPVARIANT" /> structure of type VT_I2, VT_VECTOR | VT_I2, or VT_ARRAY | VT_I2.</summary>
+    <param name="propvar">Reference to the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">The vector or array index; otherwise, this value must be 0.</param>
+    <param name="pnVal">When this function returns, contains the extracted Int32 element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetInt32Elem">
+    <summary>Extracts a single Int32 element from a <see cref="PROPVARIANT" /> of type VT_I4, VT_VECTOR | VT_I4, or VT_ARRAY | VT_I4.</summary>
+    <param name="propvar">Reference to the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">The vector or array index; otherwise, <i>iElem</i> must be 0.</param>
+    <param name="pnVal">When this function, contains the extracted Int32 value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetInt64Elem">
+    <summary>Extracts a single Int64 element from a <see cref="PROPVARIANT" /> structure of type VT_I8, VT_VECTOR | VT_I8, or VT_ARRAY | VT_I8.</summary>
+    <param name="propvar">Reference to the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">The vector or array index; otherwise, <i>iElem</i> must be 0.</param>
+    <param name="pnVal">When this function returns, contains the extracted Int64 value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetStringElem">
+    <summary>Extracts a single Unicode string element from a <see cref="PROPVARIANT" /> structure of type VT_LPWSTR, VT_BSTR, VT_VECTOR | VT_LPWSTR, VT_VECTOR | VT_BSTR, or VT_ARRAY | VT_BSTR.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">The vector or array index; otherwise, <i>iElem</i> must be 0.</param>
+    <param name="ppszVal">When this function returns, contains the extracted string value. The calling application is responsible for freeing this string by calling <see cref="CoTaskMemFree" /> when it is no longer needed.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetUInt16Elem">
+    <summary>Extracts a single unsigned Int16 element from a <see cref="PROPVARIANT" /> structure of type VT_U12, VT_VECTOR | VT_U12, or VT_ARRAY | VT_U12.</summary>
+    <param name="propvar">Reference to the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">The vector or array index; otherwise, <i>iElem</i> must be 0.</param>
+    <param name="pnVal">When this function returns, contains the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetUInt32Elem">
+    <summary>Extracts a single unsigned Int32 element from a <see cref="PROPVARIANT" /> structure of type VT_UI4, VT_VECTOR | VT_UI4, or VT_ARRAY | VT_UI4.</summary>
+    <param name="propvar">The source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">A vector or array index; otherwise, <i>iElem</i> must be 0.</param>
+    <param name="pnVal">When this function returns, contains the extracted unsigned Int32 value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantGetUInt64Elem">
+    <summary>Extracts a single unsigned Int64 element from a <see cref="PROPVARIANT" /> structure of type VT_UI8, VT_VECTOR | VT_UI8, or VT_ARRAY | VT_UI8.</summary>
+    <param name="propvar">The source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iElem">The vector or array index; otherwise, <i>iElem</i> must be 0.</param>
+    <param name="pnVal">When this function returns, contains the extracted Int64 value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToBoolean">
+    <summary>Extracts a Boolean property value of a <see cref="PROPVARIANT" /> structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pfRet">When this function returns, contains the extracted property value if one exists; otherwise, contains <b>FALSE</b>.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToBooleanVector">
+    <summary>Extracts a Boolean vector from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgf">Points to a buffer that contains <i>crgf</i> <b>BOOL</b> values. When this function returns, the buffer has been initialized with <i>pcElem</i> Boolean elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="crgf">Number of elements in the buffer pointed to by <i>prgf</i>.</param>
+    <param name="pcElem">When this function returns, contains the count of Boolean elements extracted from source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="PROPVARIANT" /> contained more than <i>crgf</i> values. The buffer pointed to by <i>prgf</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToBooleanVectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly allocated Boolean vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgf">When this function returns, contains a pointer to a vector of Boolean values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of Boolean elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The<see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToBooleanWithDefault">
+    <summary>Extracts the Boolean property value of a <see cref="PROPVARIANT" /> structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="fDefault">Specifies the default property value, for use where no value currently exists.</param>
+    <returns>The extracted Boolean value or the default value.</returns>
+  </member>
+  <member name="Windows.PropVariantToBSTR">
+    <summary>Extracts the BSTR property value of a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pbstrOut">Pointer to the extracted property value if one exists; otherwise, contains an empty string.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToBuffer">
+    <summary>Extracts the buffer value from a <see cref="PROPVARIANT" /> structure of type VT_VECTOR | VT_UI1 or VT_ARRRAY | VT_UI1.</summary>
+    <param name="propvar">The source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pv">Pointer to a buffer of length <i>cb</i> bytes. When this function returns, contains the first <i>cb</i> bytes of the extracted buffer value.</param>
+    <param name="cb">The buffer length, in bytes.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>If successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The<see cref="PROPVARIANT" /> was of the wrong type.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The<see cref="PROPVARIANT" /> value had fewer than <i>cb</i> bytes.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToCLSID">
+    <summary>Extracts class identifier (CLSID) property value of a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pclsid">When this function returns, contains the extracted property value if one exists.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToDouble">
+    <summary>Extracts double value from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pdblRet">When this function returns, contains the extracted property value if one exists; otherwise, contains 0.0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToDoubleVector">
+    <summary>Extracts a vector of doubles from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgn">Points to a buffer containing <i>crgn</i> DOUBLE values. When this function returns, the buffer has been initialized with <i>pcElem</i> double elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="crgn">Size in elements of the buffer pointed to by <i>prgn</i>.</param>
+    <param name="pcElem">When this function returns, contains the count of double elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToDoubleVectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly-allocated double vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgn">When this function returns, contains a pointer to a vector of double values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of double elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToDoubleWithDefault">
+    <summary>Extracts a double property value of a <see cref="PROPVARIANT" /> structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="dblDefault">Specifies default property value, for use where no value currently exists.</param>
+    <returns>Returns extracted <b>double</b> value, or default.</returns>
+  </member>
+  <member name="Windows.PropVariantToFileTime">
+    <summary>Extracts the <see cref="FILETIME" /> structure from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pstfOut">
+      <para>Specifies one of the following time flags.</para>
+      <h4>PSTF_UTC (0)</h4>
+      <para>Indicates the output will use coordinated universal time.</para>
+      <h4>PSTF_LOCAL (1)</h4>
+      <para>Indicates the output will use local time.</para>
+    </param>
+    <param name="pftOut">When this function returns, contains the extracted <see cref="FILETIME" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToFileTimeVector">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a FILETIME vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgft">Points to a buffer containing <i>crgft</i> FILETIME values. When this function returns, the buffer has been initialized with <i>pcElem</i> FILETIME elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="crgft">Size in elements of the buffer pointed to by <i>prgft</i>.</param>
+    <param name="pcElem">When this function returns, contains the count of FILETIME elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="PROPVARIANT" /> contained more than crgn values. The buffer pointed to by <i>prgft</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToFileTimeVectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly-allocated FILETIME vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgft">When this function returns, contains a pointer to a vector of FILETIME values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of FILETIME elements extracted from source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>Returns one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The<see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToGUID">
+    <summary>Extracts a GUID value from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pguid">When this function returns, contains the extracted property value if one exists.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToInt16">
+    <summary>Extracts an Int16 property value of a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="piRet">When this function returns, contains the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToInt16Vector">
+    <summary>Extracts a vector of <b>Int16</b> values from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgn">Points to a buffer containing <i>crgn</i> SHORT values. When this function returns, the buffer has been initialized with <i>pcElem</i> SHORT elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="crgn">Size of the buffer pointed to by <i>prgn</i> in elements.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>Int16</b> elements extracted from source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="PROPVARIANT" /> contained more than <i>crgn</i> values. The buffer pointed to by <i>prgn</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The<see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToInt16VectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly allocated <b>Int16</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgn">When this function returns, contains a pointer to a vector of <b>Int16</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>Int16</b> elements extracted from source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The<see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToInt16WithDefault">
+    <summary>Extracts the Int16 property value of a <see cref="PROPVARIANT" /> structure. If no value currently exists, then specified default value is returned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="iDefault">Specifies default property value, for use where no value currently exists.</param>
+    <returns>Returns the extracted <b>short</b> value, or default.</returns>
+  </member>
+  <member name="Windows.PropVariantToInt32">
+    <summary>Extracts the <b>Int32</b> property value of a <see cref="PROPVARIANT" /> structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="plRet">When this function returns, contains the extracted value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToInt32Vector">
+    <summary>Extracts a vector of <b>long</b> values from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgn">Points to a buffer containing <i>crgn</i>   <b>LONG</b> values. When this function returns, the buffer has been initialized with <i>pcElem</i>   <b>LONG</b> elements extracted from the source <see cref="PROPVARIANT" />.</param>
+    <param name="crgn">Size of the buffer pointed to by <i>prgn</i> in elements.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>LONG</b> elements extracted from source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="PROPVARIANT" /> contained more than crgn values. The buffer pointed to by <i>prgn</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToInt32VectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly-allocated <b>Int32</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgn">When this function returns, contains a pointer to a vector of <b>LONG</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>LONG</b> elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The<see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToInt32WithDefault">
+    <summary>Extracts an <b>Int32</b> value from a <see cref="PROPVARIANT" /> structure. If no value currently exists, then the specified default value is returned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="lDefault">Specifies a default property value, for use where no value currently exists.</param>
+    <returns>Returns extracted <b>LONG</b> value, or default.</returns>
+  </member>
+  <member name="Windows.PropVariantToInt64">
+    <summary>Extracts a <b>LONGLONG</b> value from a <see cref="PROPVARIANT" /> structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pllRet">When this function returns, contains the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToInt64Vector">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into an <b>Int64</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgn">Points to a buffer containing <i>crgn</i>   <b>LONGLONG</b> values. When this function returns, the buffer has been initialized with <i>pcElem</i>  <b>LONGLONG</b> elements extracted from the source <see cref="PROPVARIANT" />.</param>
+    <param name="crgn">Size of the buffer pointed to by <i>prgn</i> in elements.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>LONGLONG</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="PROPVARIANT" /> contained more than <i>crgn</i> values. The buffer pointed to by <i>prgn</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToInt64VectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly-allocated <b>LONGLONG</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgn">When this function returns, contains a pointer to a vector of <b>LONGLONG</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>LONGLONG</b> values extracted from source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The<see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToInt64WithDefault">
+    <summary>Extracts the <b>Int64</b> property value of a <see cref="PROPVARIANT" /> structure. If no value exists, then specified default value is returned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="llDefault">Specifies a default property value, for use where no value currently exists.</param>
+    <returns>Returns the extracted <b>LONGLONG</b> value, or default.</returns>
+  </member>
+  <member name="Windows.PropVariantToString">
+    <summary>Extracts a string value from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="psz">Points to a string buffer. When this function returns, the buffer is initialized with a <b>NULL</b> terminated Unicode string value.</param>
+    <param name="cch">Size of the buffer pointed to by <i>psz</i>, in characters.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The value was extracted and the result buffer was <b>NULL</b> terminated.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>STRSAFE_E_INSUFFICIENT_BUFFER</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The copy operation failed due to insufficient buffer space. The destination buffer contains a truncated, null-terminated version of the intended result. In situations where truncation is acceptable, this may not necessarily be seen as a failure condition.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Some other error value</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The extraction failed for some other reason.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToStringAlloc">
+    <summary>Extracts a string property value from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="ppszOut">When this function returns, contains a pointer to the extracted property value if one exists.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToStringVector">
+    <summary>Extracts a vector of strings from a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgsz">Pointer to a vector of string pointers. When this function returns, the buffer has been initialized with <i>pcElem</i> elements pointing to newly allocated strings containing the data extracted from the source <see cref="PROPVARIANT" />.</param>
+    <param name="crgsz">Size of the buffer pointed to by <i>prgsz</i>, in elements.</param>
+    <param name="pcElem">When this function returns, contains the count of strings extracted from source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source<see cref="PROPVARIANT" /> contained more than <i>crgsz</i> values. The buffer pointed to by <i>prgsz</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The<see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToStringVectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly allocated strings in a newly allocated vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgsz">When this function returns, contains a pointer to a vector of strings extracted from source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of string elements extracted from source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToStringWithDefault">
+    <summary>Extracts the string property value of a <see cref="PROPVARIANT" /> structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pszDefault">Pointer to a default Unicode string value, for use where no value currently exists. May be <b>NULL</b>.</param>
+    <returns>Returns string value or default, or the default.</returns>
+  </member>
+  <member name="Windows.PropVariantToStrRet">
+    <summary>Extracts a string from a <see cref="PROPVARIANT" /> structure and places it into a <see cref="STRRET" /> structure.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pstrret">Points to the <see cref="STRRET" /> structure. When this function returns, the structure has been initialized to contain a copy of the extracted string.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToUInt16">
+    <summary>Extracts a <b>unsigned short</b> value from a <see cref="PROPVARIANT" /> structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="puiRet">When this function returns, contains the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToUInt16Vector">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into an <b>unsigned short</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgn">Points to a buffer containing <i>crgn</i><b>unsigned short</b> values. When this function returns, the buffer has been initialized with <i>pcElem</i><b>unsigned short</b> elements extracted from the source <see cref="PROPVARIANT" />.</param>
+    <param name="crgn">Size of the buffer pointed to by <i>prgn</i> in elements.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>unsigned short</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="PROPVARIANT" /> contained more than <i>crgn</i> values. The buffer pointed to by <i>prgn</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToUInt16VectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly-allocated <b>unsigned short</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgn">When this function returns, contains a pointer to a vector of <b>unsigned short</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>unsigned short</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToUInt16WithDefault">
+    <summary>Extracts an <b>unsigned short</b> value from a <see cref="PROPVARIANT" /> structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="uiDefault">Specifies a default property value, for use where no value currently exists.</param>
+    <returns>Returns extracted <b>unsigned short</b> value, or default.</returns>
+  </member>
+  <member name="Windows.PropVariantToUInt32">
+    <summary>Extracts an <b>ULONG</b> value from a <see cref="PROPVARIANT" /> structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="propvarIn">A reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pulRet">When this function returns, contains the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToUInt32Vector">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into an <b>ULONG</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgn">Points to a buffer containing <i>crgn</i>   <b>ULONG</b> values. When this function returns, the buffer has been initialized with <i>pcElem</i>   <b>ULONG</b> elements extracted from the source <see cref="PROPVARIANT" />.</param>
+    <param name="crgn">Size of the buffer pointed to by <i>prgn</i>, in elements.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>ULONG</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="PROPVARIANT" /> contained more than <i>crgn</i> values. The buffer pointed to by <i>prgn</i> is too small.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToUInt32VectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly-allocated <b>ULONG</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgn">When this function returns, contains a pointer to a vector of <b>ULONG</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>ULONG</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToUInt32WithDefault">
+    <summary>Extracts a <b>ULONG</b> value from a <see cref="PROPVARIANT" /> structure. If no value exists, then a specified default value is returned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="ulDefault">Specifies a default property value, for use where no value currently exists.</param>
+    <returns>Returns extracted <b>ULONG</b> value, or default.</returns>
+  </member>
+  <member name="Windows.PropVariantToUInt64">
+    <summary>Extracts a <b>UInt64</b> value from a <see cref="PROPVARIANT" /> structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pullRet">When this function returns, contains the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.PropVariantToUInt64Vector">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a <b>ULONGLONG</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="prgn">Points to a buffer containing <i>crgn</i>   <b>ULONGLONG</b> values. When this function returns, the buffer has been initialized with <i>pcElem</i>   <b>ULONGLONG</b> elements extracted from the source <see cref="PROPVARIANT" />.</param>
+    <param name="crgn">Size of the buffer pointed to by <i>prgn</i>, in elements.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>ULONGLONG</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="PROPVARIANT" /> contained more than <i>crgn</i> values. The buffer pointed to by <i>prgn</i>.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToUInt64VectorAlloc">
+    <summary>Extracts data from a <see cref="PROPVARIANT" /> structure into a newly-allocated <b>ULONGLONG</b> vector.</summary>
+    <param name="propvar">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pprgn">When this function returns, contains a pointer to a vector of <b>ULONGLONG</b> values extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>ULONGLONG</b> elements extracted from the source <see cref="PROPVARIANT" /> structure.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Returns <b>S_OK</b> if successful, or an error value otherwise.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="PROPVARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.PropVariantToUInt64WithDefault">
+    <summary>Extracts <b>ULONGLONG</b> value from a <see cref="PROPVARIANT" /> structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="propvarIn">Reference to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="ullDefault">Specifies a default property value, for use where no value currently exists.</param>
+    <returns>Returns the extracted unsigned <b>LONGLONG</b> value, or a default.</returns>
+  </member>
+  <member name="Windows.PropVariantToVariant">
+    <summary>Converts the contents of a <see cref="PROPVARIANT" /> structure to a <see cref="VARIANT" /> structure.</summary>
+    <param name="pPropVar">Pointer to a source <see cref="PROPVARIANT" /> structure.</param>
+    <param name="pVar">Pointer to a <see cref="VARIANT" /> structure. When this function returns, the <b>VARIANT</b> contains the converted information.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.StgDeserializePropVariant">
+    <summary>The <b>StgDeserializePropVariant</b> function converts a SERIALIZEDPROPERTYVALUE data type to a PROPVARIANT data type.</summary>
+    <param name="pprop">A pointer to the <b>SERIALIZEDPROPERTYVALUE</b> buffer.</param>
+    <param name="cbMax">The size of the <i>pprop</i> buffer in bytes.</param>
+    <param name="ppropvar">A pointer to a <b>PROPVARIANT</b>.</param>
+    <returns>This function can return one of these values.</returns>
+  </member>
+  <member name="Windows.StgSerializePropVariant">
+    <summary>The <b>StgSerializePropVariant</b> function converts a <b>PROPVARIANT</b> data type to a <b>SERIALIZEDPROPERTYVALUE</b> data type.</summary>
+    <param name="ppropvar">A pointer to <b>PROPVARIANT</b>.</param>
+    <param name="ppProp">A pointer to the newly allocated <b>SERIALIZEDPROPERTYVALUE</b>.</param>
+    <param name="pcb">A pointer to the size of the newly allocated <b>SERIALIZEDPROPERTYVALUE</b>.</param>
+    <returns>This function can return one of these values.</returns>
+  </member>
+  <member name="Windows.VariantCompare">
+    <summary>Compares two variant structures, based on default comparison rules.</summary>
+    <param name="var1">Reference to a first variant structure.</param>
+    <param name="var2">Reference to a second variant structure.</param>
+    <returns>
+      <list type="bullet">
+        <item>
+          <description>Returns 1 if <i>var1</i> is greater than <i>var2</i></description>
+        </item>
+        <item>
+          <description>Returns 0 if <i>var1</i> equals <i>var2</i></description>
+        </item>
+        <item>
+          <description>Returns -1 if <i>var1</i> is less than <i>var2</i></description>
+        </item>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.VariantGetBooleanElem">
+    <summary>Extracts a single Boolean element from a variant structure.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies vector or array index; otherwise, value must be 0.</param>
+    <param name="pfVal">Pointer to the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantGetDoubleElem">
+    <summary>Extracts one <b>double</b> element from a variant structure.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies vector or array index; otherwise, value must be 0.</param>
+    <param name="pnVal">Pointer to the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantGetElem">
+    <summary>Initializes a <see cref="VARIANT" /> structure from a specified variant element.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies index of source variant structure element. If source structure is empty, then this parameter is not used.</param>
+    <param name="pvar">Pointer to the values specified from the source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantGetElementCount">
+    <summary>Retrieves the element count of a variant structure.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <returns>Returns the element count for values of type VT_ARRAY; otherwise, returns 1.</returns>
+  </member>
+  <member name="Windows.VariantGetInt16Elem">
+    <summary>Extracts a single <b>Int16</b> element from a variant structure.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies vector or array index; otherwise, value must be 0.</param>
+    <param name="pnVal">Pointer to the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantGetInt32Elem">
+    <summary>Extracts a single <b>Int32</b> element from a variant structure.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies vector or array index; otherwise, value must be 0.</param>
+    <param name="pnVal">Pointer to the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantGetInt64Elem">
+    <summary>Extracts a single <b>Int64</b> element from a variant structure.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies vector or array index; otherwise, value must be 0.</param>
+    <param name="pnVal">Pointer to the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantGetStringElem">
+    <summary>Extracts a single wide string element from a variant structure.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies a vector or array index; otherwise, value must be 0.</param>
+    <param name="ppszVal">The address of a pointer to the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantGetUInt16Elem">
+    <summary>Extracts a single unsigned <b>Int16</b> element from a variant structure.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies a vector or array index; otherwise, value must be 0.</param>
+    <param name="pnVal">Pointer to the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantGetUInt32Elem">
+    <summary>Extracts a single unsigned <b>Int32</b> element from a variant structure.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies vector or array index; otherwise, value must be 0.</param>
+    <param name="pnVal">Pointer to the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantGetUInt64Elem">
+    <summary>Extracts a single unsigned <b>Int64</b> element from a variant structure.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="iElem">Specifies vector or array index; otherwise, value must be 0.</param>
+    <param name="pnVal">Pointer to the extracted element value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToBoolean">
+    <summary>Extracts the value of a Boolean property from a <see cref="VARIANT" /> structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="varIn">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="pfRet">When this function returns, contains the extracted value if one exists; otherwise, <b>FALSE</b>.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToBooleanArray">
+    <summary>Extracts an array of Boolean values from a <see cref="VARIANT" /> structure.</summary>
+    <param name="var">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="prgf">Pointer to a buffer that contains <i>crgn</i> Boolean values. When this function returns, the buffer has been initialized with *<i>pcElem</i> <b>BOOL</b> elements extracted from the source <see cref="VARIANT" /> structure.</param>
+    <param name="crgn">The number of elements in the buffer pointed to by <i>prgf</i>.</param>
+    <param name="pcElem">When this function returns, contains a pointer to the count of <b>BOOL</b> elements extracted from the source <see cref="VARIANT" /> structure.</param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="VARIANT" /> contained more than <i>crgn</i> values.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="VARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.VariantToBooleanArrayAlloc">
+    <summary>Allocates an array of <b>BOOL</b> values then extracts data from a <see cref="VARIANT" /> structure into that array.</summary>
+    <param name="var">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="pprgf">When this function returns, contains a pointer to an array of <b>BOOL</b> values extracted from the source <see cref="VARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains a pointer to the count of elements extracted from the source <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToBooleanWithDefault">
+    <summary>Extracts a <b>BOOL</b> value from a <see cref="VARIANT" /> structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="varIn">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="fDefault">The default value for use where no extractable value exists.</param>
+    <returns>Returns the extracted <b>BOOL</b> value; otherwise, the default value specified in <i>fDefault</i>.</returns>
+  </member>
+  <member name="Windows.VariantToBuffer">
+    <summary>Extracts the contents of a buffer stored in a <see cref="VARIANT" /> structure of type VT_ARRRAY | VT_UI1.</summary>
+    <param name="varIn">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="pv">Pointer to a buffer of length <i>cb</i> bytes. When this function returns, contains the first <i>cb</i> bytes of the extracted buffer value.</param>
+    <param name="cb">The size of the <i>pv</i> buffer, in bytes. The buffer should be the same size as the data to be extracted, or smaller.</param>
+    <returns>
+      <para>Returns one of the following values:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>Data successfully extracted.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="VARIANT" /> was not of type VT_ARRRAY | VT_UI1.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="VARIANT" /> buffer value had fewer than <i>cb</i> bytes.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.VariantToDosDateTime">
+    <summary>Extracts a date and time value in Microsoft MS-DOS format from a <see cref="VARIANT" /> structure.</summary>
+    <param name="varIn">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="pwDate">When this function returns, contains the extracted <b>WORD</b> that represents a MS-DOS date.</param>
+    <param name="pwTime">When this function returns, contains the extracted contains the extracted <b>WORD</b> that represents a MS-DOS time.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToDouble">
+    <summary>Extracts a <b>DOUBLE</b> value from a <see cref="VARIANT" /> structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="varIn">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="pdblRet">When this function returns, contains the extracted value if one exists; otherwise, 0.0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToDoubleArray">
+    <summary>Extracts an array of <b>DOUBLE</b> values from a <see cref="VARIANT" /> structure.</summary>
+    <param name="var">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="prgn">Pointer to a buffer that contains <i>crgn</i> <b>DOUBLE</b> values. When this function returns, the buffer has been initialized with *<i>pcElem</i> <b>DOUBLE</b> elements extracted from the source <see cref="VARIANT" /> structure.</param>
+    <param name="crgn">The number of elements in the buffer pointed to by <i>prgn</i>.</param>
+    <param name="pcElem">When this function returns, contains the count of <b>DOUBLE</b> elements extracted from the source <see cref="VARIANT" /> structure.</param>
+    <returns>
+      <para>Returns <b>S_OK</b> if successful, or an error value otherwise, including the following:</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TYPE_E_BUFFERTOOSMALL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source <see cref="VARIANT" /> contained more than <i>crgn</i> values.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <see cref="VARIANT" /> was not of the appropriate type.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="Windows.VariantToDoubleArrayAlloc">
+    <summary>Allocates an array of <b>DOUBLE</b> values then extracts data from a <see cref="VARIANT" /> structure into that array.</summary>
+    <param name="var">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="pprgn">When this function returns, contains a pointer to an array of <b>DOUBLE</b> values extracted from the source <see cref="VARIANT" /> structure.</param>
+    <param name="pcElem">When this function returns, contains a pointer to the count of elements extracted from the source <see cref="VARIANT" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToDoubleWithDefault">
+    <summary>Extracts a <b>DOUBLE</b> value from a <see cref="VARIANT" /> structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="varIn">Reference to a source <see cref="VARIANT" /> structure.</param>
+    <param name="dblDefault">The default value for use where no extractable value exists.</param>
+    <returns>Returns the extracted <b>double</b> value; otherwise, the default value specified in <i>dblDefault</i>.</returns>
+  </member>
+  <member name="Windows.VariantToFileTime">
+    <summary>Extracts a <see cref="FILETIME" /> structure from a variant structure.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="stfOut">
+      <para>Specifies one of the following time flags:</para>
+      <h4>PSTF_UTC (0)</h4>
+      <para>Indicates coordinated universal time.</para>
+      <h4>PSTF_LOCAL (1)</h4>
+      <para>Indicates local time.</para>
+    </param>
+    <param name="pftOut">Pointer to the extracted <see cref="FILETIME" /> structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToGUID">
+    <summary>Extracts a <b>GUID</b> property value of a variant structure.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="pguid">Pointer to the extracted property value.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt16">
+    <summary>Extracts the <b>Int16</b> property value of a variant structure. If no value can be extracted, then a default value is assigned by this function.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="piRet">Pointer to the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt16Array">
+    <summary>Extracts data from a vector structure into an <b>Int16</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="prgn">Pointer to the <b>Int16</b> data extracted from source variant structure.</param>
+    <param name="crgn">Specifies <b>Int16</b> array size.</param>
+    <param name="pcElem">Pointer to the count of <b>Int16</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt16ArrayAlloc">
+    <summary>Extracts data from a vector structure into a newly-allocated <b>Int16</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="pprgn">Pointer to the address of the <b>Int16</b> data extracted from source variant structure.</param>
+    <param name="pcElem">Pointer to the count of <b>Int16</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt16WithDefault">
+    <summary>Extracts an <b>Int16</b> property value of a variant structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="iDefault">Specifies default property value, for use where no value currently exists.</param>
+    <returns>Returns the extracted <b>Int16</b> value, or default.</returns>
+  </member>
+  <member name="Windows.VariantToInt32">
+    <summary>Extracts an <b>Int32</b> property value of a variant structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="plRet">Pointer to the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt32Array">
+    <summary>Extracts data from a vector structure into an <b>Int32</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="prgn">Pointer to the <b>Int32</b> data extracted from source variant structure.</param>
+    <param name="crgn">Specifies <b>Int32</b> array size.</param>
+    <param name="pcElem">Pointer to the count of <b>Int32</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt32ArrayAlloc">
+    <summary>Extracts data from a vector structure into a newly-allocated <b>Int32</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="pprgn">Pointer to the address of the <b>Int32</b> data extracted from source variant structure.</param>
+    <param name="pcElem">Pointer to the count of <b>Int32</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt32WithDefault">
+    <summary>Extracts an <b>Int32</b> property value of a variant structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="lDefault">Specifies default property value, for use where no value currently exists.</param>
+    <returns>Returns the extracted Int32 value, or default.</returns>
+  </member>
+  <member name="Windows.VariantToInt64">
+    <summary>Extracts an <b>Int64</b> property value of a variant structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="pllRet">Pointer to the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt64Array">
+    <summary>Extracts data from a vector structure into an <b>Int64</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="prgn">Pointer to the Int64 data extracted from source variant structure.</param>
+    <param name="crgn">Specifies Int64 array size.</param>
+    <param name="pcElem">Pointer to the count of Int64 elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt64ArrayAlloc">
+    <summary>Extracts data from a vector structure into a newly-allocated <b>Int64</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="pprgn">Pointer to the address of the <b>Int64</b> data extracted from source variant structure.</param>
+    <param name="pcElem">Pointer to the count of <b>Int64</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToInt64WithDefault">
+    <summary>Extracts an <b>Int64</b> property value of a variant structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="llDefault">Specifies default property value, for use where no value currently exists.</param>
+    <returns>Returns extracted <b>Int64</b> value, or default.</returns>
+  </member>
+  <member name="Windows.VariantToPropVariant">
+    <summary>Copies the contents of a <see cref="VARIANT" /> structure to a <see cref="PROPVARIANT" /> structure.</summary>
+    <param name="pVar">Pointer to a source <see cref="VARIANT" /> structure.</param>
+    <param name="pPropVar">Pointer to a <see cref="PROPVARIANT" /> structure. When this function returns, the <b>PROPVARIANT</b> contains the converted information.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToString">
+    <summary>Extracts the variant value of a variant structure to a string. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="pszBuf">Pointer to the extracted property value if one exists; otherwise, empty.</param>
+    <param name="cchBuf">Specifies string length, in characters.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToStringAlloc">
+    <summary>Extracts the variant value of a variant structure to a newly-allocated string. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="ppszBuf">Pointer to the extracted property value if one exists; otherwise, empty.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToStringArray">
+    <summary>Extracts data from a vector structure into a String array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="prgsz">Pointer to the string data extracted from source variant structure.</param>
+    <param name="crgsz">Specifies string array size.</param>
+    <param name="pcElem">Pointer to the count of string elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToStringArrayAlloc">
+    <summary>Extracts data from a vector structure into a newly-allocated String array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="pprgsz">The address of a pointer to the string data extracted from source variant structure.</param>
+    <param name="pcElem">
+      <para>Pointer to the count of string elements extracted from source variant structure.</para>
+      <h4>- crgsz [in]</h4>
+      <para>Specifies string array size.</para>
+    </param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToStringWithDefault">
+    <summary>Extracts the string property value of a variant structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="pszDefault">Pointer to the default Unicode string property value, for use where no value currently exists.</param>
+    <returns>Returns the extracted string value, or default.</returns>
+  </member>
+  <member name="Windows.VariantToStrRet">
+    <summary>If the source variant is a VT_BSTR, extracts string and places it into a <see cref="STRRET" /> structure.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="pstrret">Pointer to the extracted string if one exists.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt16">
+    <summary>Extracts an unsigned <b>Int16</b> property value of a variant structure. If no value can be extracted, then a default value is assigned by this function.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="puiRet">Pointer to the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt16Array">
+    <summary>Extracts data from a vector structure into an unsigned <b>Int16</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="prgn">Pointer to the unsigned <b>Int16</b> data extracted from source variant structure.</param>
+    <param name="crgn">Specifies unsigned <b>Int16</b> array size.</param>
+    <param name="pcElem">Pointer to the count of unsigned <b>Int16</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt16ArrayAlloc">
+    <summary>Extracts data from a vector structure into a newly-allocated unsigned <b>Int16</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="pprgn">Pointer to the address of the unsigned <b>Int16</b> data extracted from the source variant structure.</param>
+    <param name="pcElem">Pointer to the count of unsigned <b>Int16</b> elements extracted from the source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt16WithDefault">
+    <summary>Extracts an unsigned <b>Int16</b> property value of a variant structure. If no value exists, then the specified default value is returned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="uiDefault">Specifies default property value, for use where no value currently exists.</param>
+    <returns>Returns extracted unsigned <b>Int16</b> value, or default.</returns>
+  </member>
+  <member name="Windows.VariantToUInt32">
+    <summary>Extracts unsigned <b>Int32</b> property value of a variant structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="pulRet">Pointer to the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt32Array">
+    <summary>Extracts data from a vector structure into an unsigned <b>Int32</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="prgn">Pointer to the unsigned <b>Int32</b> data extracted from source variant structure.</param>
+    <param name="crgn">Specifies unsigned <b>Int32</b> array size.</param>
+    <param name="pcElem">Pointer to the count of unsigned <b>Int32</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt32ArrayAlloc">
+    <summary>Extracts data from a vector structure into a newly-allocated unsigned <b>Int32</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="pprgn">The address of a pointer to the unsigned <b>Int32</b> data extracted from source variant structure.</param>
+    <param name="pcElem">Pointer to the count of unsigned <b>Int32</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt32WithDefault">
+    <summary>Extracts an unsigned <b>Int32</b> property value of a variant structure. If no value currently exists, then the specified default value is returned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="ulDefault">Specifies default property value, for use where no value currently exists.</param>
+    <returns>Returns extracted unsigned <b>Int32</b> value, or default.</returns>
+  </member>
+  <member name="Windows.VariantToUInt64">
+    <summary>Extracts unsigned <b>Int64</b> property value of a variant structure. If no value can be extracted, then a default value is assigned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="pullRet">Pointer to the extracted property value if one exists; otherwise, 0.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt64Array">
+    <summary>Extracts data from a vector structure into an unsigned <b>Int64</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="prgn">Pointer to the unsigned <b>Int64</b> data extracted from source variant structure.</param>
+    <param name="crgn">Specifies unsigned <b>Int64</b> array size.</param>
+    <param name="pcElem">Pointer to the count of unsigned <b>Int64</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt64ArrayAlloc">
+    <summary>Extracts data from a vector structure into a newly-allocated unsigned <b>Int64</b> array.</summary>
+    <param name="var">Reference to a source variant structure.</param>
+    <param name="pprgn">The address of a pointer to the unsigned <b>Int64</b> data extracted from source variant structure.</param>
+    <param name="pcElem">Pointer to the count of unsigned <b>Int64</b> elements extracted from source variant structure.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="Windows.VariantToUInt64WithDefault">
+    <summary>Extracts an unsigned <b>Int64</b> property value of a variant structure. If no value currently exists, then the specified default value is returned.</summary>
+    <param name="varIn">Reference to a source variant structure.</param>
+    <param name="ullDefault">Specifies default property value, for use where no value currently exists.</param>
+    <returns>Returns the extracted unsigned <b>Int64</b> value, or a default.</returns>
+  </member>
+</doc>

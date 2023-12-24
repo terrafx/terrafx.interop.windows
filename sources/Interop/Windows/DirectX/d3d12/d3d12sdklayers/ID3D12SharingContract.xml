@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12SharingContract.Present">
+    <summary>Notifies diagnostic tools about an end-of-frame operation without the use of a swap chain. Calling this API enables usage of tools like PIX with applications that either don't render to a window, or that do so in non-traditional ways.</summary>
+    <param name="pResource">A pointer to the resource that contains the final frame contents. This resource is treated as the <i>back buffer</i> of the <b>Present</b>.</param>
+    <param name="Subresource">An unsigned 32bit subresource id.</param>
+    <param name="window">If provided, indicates which window the tools should use for displaying additional diagnostic information.</param>
+  </member>
+  <member name="ID3D12SharingContract.SharedFenceSignal">
+    <summary>Signals a shared fence between the D3D layers and diagnostics tools.</summary>
+    <param name="pFence">A pointer to the shared fence to signal.</param>
+    <param name="FenceValue">An unsigned 64bit value to signal the shared fence with.</param>
+  </member>
+  <member name="ID3D12SharingContract">
+    <summary>
+      <para>Part of a contract between D3D11On12 diagnostic layers and graphics diagnostics tools. This interface facilitates diagnostics tools to capture information at a lower level than the DXGI swapchain.</para>
+      <para>You may want to use this interface to enable diagnostic tools to capture usage patterns that don't use DXGI swap chains for presentation. If so, you can access this interface via <b>QueryInterface</b> from a D3D12 command queue. Note that this interface is not supported when there are no diagnostic tools present, so your application mustn't rely on it existing.</para>
+    </summary>
+  </member>
+</doc>

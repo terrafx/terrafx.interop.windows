@@ -3,315 +3,188 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STORAGE_MEDIA_TYPE">
-    <summary>
-      <para>Specifies various types of storage media. Parameters and members of type <b>STORAGE_MEDIA_TYPE</b> also accept values from the <see cref="MEDIA_TYPE" /> enumeration type.</para>
-    </summary>
-    <seealso cref="DEVICE_MEDIA_INFO" />
-    <seealso cref="MEDIA_TYPE" />
-    <seealso cref="NTMS_MEDIATYPEINFORMATION" />
+    <summary>Specifies various types of storage media. Parameters and members of type <b>STORAGE_MEDIA_TYPE</b> also accept values from the <see cref="MEDIA_TYPE" /> enumeration type.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DDS_4mm">
-    <summary>
-      <para>One of the following tape types: DAT, DDS1, DDS2, and so on.</para>
-    </summary>
+    <summary>One of the following tape types: DAT, DDS1, DDS2, and so on.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.MiniQic">
-    <summary>
-      <para>MiniQIC tape.</para>
-    </summary>
+    <summary>MiniQIC tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.Travan">
-    <summary>
-      <para>Travan tape (TR-1, TR-2, TR-3, and so on).</para>
-    </summary>
+    <summary>Travan tape (TR-1, TR-2, TR-3, and so on).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.QIC">
-    <summary>
-      <para>QIC tape.</para>
-    </summary>
+    <summary>QIC tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.MP_8mm">
-    <summary>
-      <para>An 8mm Exabyte metal particle tape.</para>
-    </summary>
+    <summary>An 8mm Exabyte metal particle tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.AME_8mm">
-    <summary>
-      <para>An 8mm Exabyte advanced metal evaporative tape.</para>
-    </summary>
+    <summary>An 8mm Exabyte advanced metal evaporative tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.AIT1_8mm">
-    <summary>
-      <para>An 8mm Sony AIT1 tape.</para>
-    </summary>
+    <summary>An 8mm Sony AIT1 tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DLT">
-    <summary>
-      <para>DLT compact tape (IIIxt or IV).</para>
-    </summary>
+    <summary>DLT compact tape (IIIxt or IV).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.NCTP">
-    <summary>
-      <para>Philips NCTP tape.</para>
-    </summary>
+    <summary>Philips NCTP tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.IBM_3480">
-    <summary>
-      <para>IBM 3480 tape.</para>
-    </summary>
+    <summary>IBM 3480 tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.IBM_3490E">
-    <summary>
-      <para>IBM 3490E tape.</para>
-    </summary>
+    <summary>IBM 3490E tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.IBM_Magstar_3590">
-    <summary>
-      <para>IBM Magstar 3590 tape.</para>
-    </summary>
+    <summary>IBM Magstar 3590 tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.IBM_Magstar_MP">
-    <summary>
-      <para>IBM Magstar MP tape.</para>
-    </summary>
+    <summary>IBM Magstar MP tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.STK_DATA_D3">
-    <summary>
-      <para>STK data D3 tape.</para>
-    </summary>
+    <summary>STK data D3 tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.SONY_DTF">
-    <summary>
-      <para>Sony DTF tape.</para>
-    </summary>
+    <summary>Sony DTF tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DV_6mm">
-    <summary>
-      <para>A 6mm digital videotape.</para>
-    </summary>
+    <summary>A 6mm digital videotape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DMI">
-    <summary>
-      <para>Exabyte DMI tape (or compatible).</para>
-    </summary>
+    <summary>Exabyte DMI tape (or compatible).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.SONY_D2">
-    <summary>
-      <para>Sony D2S or D2L tape.</para>
-    </summary>
+    <summary>Sony D2S or D2L tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.CLEANER_CARTRIDGE">
-    <summary>
-      <para>Cleaner (all drive types that support cleaners).</para>
-    </summary>
+    <summary>Cleaner (all drive types that support cleaners).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.CD_ROM">
-    <summary>
-      <para>CD.</para>
-    </summary>
+    <summary>CD.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.CD_R">
-    <summary>
-      <para>CD (write once).</para>
-    </summary>
+    <summary>CD (write once).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.CD_RW">
-    <summary>
-      <para>CD (rewriteable).</para>
-    </summary>
+    <summary>CD (rewriteable).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DVD_ROM">
-    <summary>
-      <para>DVD.</para>
-    </summary>
+    <summary>DVD.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DVD_R">
-    <summary>
-      <para>DVD (write once).</para>
-    </summary>
+    <summary>DVD (write once).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DVD_RW">
-    <summary>
-      <para>DVD (rewriteable).</para>
-    </summary>
+    <summary>DVD (rewriteable).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.MO_3_RW">
-    <summary>
-      <para>Magneto-optical 3.5" (rewriteable).</para>
-    </summary>
+    <summary>Magneto-optical 3.5" (rewriteable).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.MO_5_WO">
-    <summary>
-      <para>Magneto-optical 5.25" (write once).</para>
-    </summary>
+    <summary>Magneto-optical 5.25" (write once).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.MO_5_RW">
-    <summary>
-      <para>Magneto-optical 5.25" (rewriteable; not LIMDOW).</para>
-    </summary>
+    <summary>Magneto-optical 5.25" (rewriteable; not LIMDOW).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.MO_5_LIMDOW">
-    <summary>
-      <para>Magneto-optical 5.25" (rewriteable; LIMDOW).</para>
-    </summary>
+    <summary>Magneto-optical 5.25" (rewriteable; LIMDOW).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.PC_5_WO">
-    <summary>
-      <para>Phase change 5.25" (write once)</para>
-    </summary>
+    <summary>Phase change 5.25" (write once)</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.PC_5_RW">
-    <summary>
-      <para>Phase change 5.25" (rewriteable)</para>
-    </summary>
+    <summary>Phase change 5.25" (rewriteable)</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.PD_5_RW">
-    <summary>
-      <para>Phase change dual (rewriteable)</para>
-    </summary>
+    <summary>Phase change dual (rewriteable)</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.ABL_5_WO">
-    <summary>
-      <para>Ablative 5.25" (write once).</para>
-    </summary>
+    <summary>Ablative 5.25" (write once).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.PINNACLE_APEX_5_RW">
-    <summary>
-      <para>Pinnacle Apex 4.6GB (rewriteable)</para>
-    </summary>
+    <summary>Pinnacle Apex 4.6GB (rewriteable)</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.SONY_12_WO">
-    <summary>
-      <para>Sony 12" (write once).</para>
-    </summary>
+    <summary>Sony 12" (write once).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.PHILIPS_12_WO">
-    <summary>
-      <para>Philips/LMS 12" (write once).</para>
-    </summary>
+    <summary>Philips/LMS 12" (write once).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.HITACHI_12_WO">
-    <summary>
-      <para>Hitachi 12" (write once)</para>
-    </summary>
+    <summary>Hitachi 12" (write once)</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.CYGNET_12_WO">
-    <summary>
-      <para>Cygnet/ATG 12" (write once)</para>
-    </summary>
+    <summary>Cygnet/ATG 12" (write once)</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.KODAK_14_WO">
-    <summary>
-      <para>Kodak 14" (write once)</para>
-    </summary>
+    <summary>Kodak 14" (write once)</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.MO_NFR_525">
-    <summary>
-      <para>MO near field recording (Terastor)</para>
-    </summary>
+    <summary>MO near field recording (Terastor)</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.NIKON_12_RW">
-    <summary>
-      <para>Nikon 12" (rewriteable).</para>
-    </summary>
+    <summary>Nikon 12" (rewriteable).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.IOMEGA_ZIP">
-    <summary>
-      <para>Iomega Zip.</para>
-    </summary>
+    <summary>Iomega Zip.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.IOMEGA_JAZ">
-    <summary>
-      <para>Iomega Jaz.</para>
-    </summary>
+    <summary>Iomega Jaz.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.SYQUEST_EZ135">
-    <summary>
-      <para>Syquest EZ135.</para>
-    </summary>
+    <summary>Syquest EZ135.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.SYQUEST_EZFLYER">
-    <summary>
-      <para>Syquest EzFlyer.</para>
-    </summary>
+    <summary>Syquest EzFlyer.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.SYQUEST_SYJET">
-    <summary>
-      <para>Syquest SyJet.</para>
-    </summary>
+    <summary>Syquest SyJet.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.AVATAR_F2">
-    <summary>
-      <para>Avatar 2.5" floppy.</para>
-    </summary>
+    <summary>Avatar 2.5" floppy.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.MP2_8mm">
-    <summary>
-      <para>An 8mm Hitachi tape.</para>
-    </summary>
+    <summary>An 8mm Hitachi tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DST_S">
-    <summary>
-      <para>Ampex DST small tape.</para>
-    </summary>
+    <summary>Ampex DST small tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DST_M">
-    <summary>
-      <para>Ampex DST medium tape.</para>
-    </summary>
+    <summary>Ampex DST medium tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DST_L">
-    <summary>
-      <para>Ampex DST large tape.</para>
-    </summary>
+    <summary>Ampex DST large tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.VXATape_1">
-    <summary>
-      <para>Ecrix 8mm tape.</para>
-    </summary>
+    <summary>Ecrix 8mm tape.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.VXATape_2">
-    <summary>
-      <para>Ecrix 8mm tape.</para>
-    </summary>
+    <summary>Ecrix 8mm tape.</summary>
   </member>
-  <member name="STORAGE_MEDIA_TYPE.STK_EAGLE">
-    <summary></summary>
-  </member>
+  <member name="STORAGE_MEDIA_TYPE.STK_EAGLE"></member>
   <member name="STORAGE_MEDIA_TYPE.LTO_Ultrium">
-    <summary>
-      <para>LTO Ultrium (IBM, HP, Seagate).</para>
-    </summary>
+    <summary>LTO Ultrium (IBM, HP, Seagate).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.LTO_Accelis">
-    <summary>
-      <para>LTO Accelis (IBM, HP, Seagate).</para>
-    </summary>
+    <summary>LTO Accelis (IBM, HP, Seagate).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.DVD_RAM">
-    <summary>
-      <para>DVD-RAM.</para>
-    </summary>
+    <summary>DVD-RAM.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.AIT_8mm">
-    <summary>
-      <para>AIT tape (AIT2 or higher).</para>
-    </summary>
+    <summary>AIT tape (AIT2 or higher).</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.ADR_1">
-    <summary>
-      <para>OnStream ADR1.</para>
-    </summary>
+    <summary>OnStream ADR1.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.ADR_2">
-    <summary>
-      <para>OnStream ADR2.</para>
-    </summary>
+    <summary>OnStream ADR2.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.STK_9940">
-    <summary>
-      <para>STK 9940.</para>
-    </summary>
+    <summary>STK 9940.</summary>
   </member>
   <member name="STORAGE_MEDIA_TYPE.SAIT">
     <summary>

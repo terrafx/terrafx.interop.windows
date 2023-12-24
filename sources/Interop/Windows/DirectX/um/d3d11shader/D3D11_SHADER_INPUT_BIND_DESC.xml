@@ -3,60 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_SHADER_INPUT_BIND_DESC">
-    <summary>
-      <para>Describes how a shader resource is bound to a shader input.</para>
-    </summary>
-    <remarks>
-      <para>Get a shader-input-signature description by calling <see cref="ID3D11ShaderReflection.GetResourceBindingDesc" /> or <see cref="ID3D11ShaderReflection.GetResourceBindingDescByName" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-shader-structures">Shader Structures</seealso>
+    <summary>Describes how a shader resource is bound to a shader input.</summary>
   </member>
   <member name="D3D11_SHADER_INPUT_BIND_DESC.Name">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>Name of the shader resource.</para>
-    </summary>
+    <summary>Name of the shader resource.</summary>
   </member>
   <member name="D3D11_SHADER_INPUT_BIND_DESC.Type">
-    <summary>
-      <para>Type: <b><see cref="D3D_SHADER_INPUT_TYPE" /></b></para>
-      <para>A <see cref="D3D_SHADER_INPUT_TYPE" />-typed value that identifies the type of data in the resource.</para>
-    </summary>
+    <summary>A <see cref="D3D_SHADER_INPUT_TYPE" />-typed value that identifies the type of data in the resource.</summary>
   </member>
   <member name="D3D11_SHADER_INPUT_BIND_DESC.BindPoint">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Starting bind point.</para>
-    </summary>
+    <summary>Starting bind point.</summary>
   </member>
   <member name="D3D11_SHADER_INPUT_BIND_DESC.BindCount">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Number of contiguous bind points for arrays.</para>
-    </summary>
+    <summary>Number of contiguous bind points for arrays.</summary>
   </member>
   <member name="D3D11_SHADER_INPUT_BIND_DESC.uFlags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A combination of <see cref="D3D_SHADER_INPUT_FLAGS" />-typed values for shader input-parameter options.</para>
-    </summary>
+    <summary>A combination of <see cref="D3D_SHADER_INPUT_FLAGS" />-typed values for shader input-parameter options.</summary>
   </member>
   <member name="D3D11_SHADER_INPUT_BIND_DESC.ReturnType">
-    <summary>
-      <para>Type: <b><see cref="D3D_RESOURCE_RETURN_TYPE" /></b></para>
-      <para>If the input is a texture, the <see cref="D3D_RESOURCE_RETURN_TYPE" />-typed value that identifies the return type.</para>
-    </summary>
+    <summary>If the input is a texture, the <see cref="D3D_RESOURCE_RETURN_TYPE" />-typed value that identifies the return type.</summary>
   </member>
   <member name="D3D11_SHADER_INPUT_BIND_DESC.Dimension">
-    <summary>
-      <para>Type: <b><see cref="D3D_SRV_DIMENSION" /></b></para>
-      <para>A <see cref="D3D_SRV_DIMENSION" />-typed value that identifies the dimensions of the bound resource.</para>
-    </summary>
+    <summary>A <see cref="D3D_SRV_DIMENSION" />-typed value that identifies the dimensions of the bound resource.</summary>
   </member>
   <member name="D3D11_SHADER_INPUT_BIND_DESC.NumSamples">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of samples for a multisampled texture; when a texture isn't multisampled, the value is set to -1 (0xFFFFFFFF).</para>
-    </summary>
+    <summary>The number of samples for a multisampled texture; when a texture isn't multisampled, the value is set to -1 (0xFFFFFFFF).</summary>
   </member>
 </doc>

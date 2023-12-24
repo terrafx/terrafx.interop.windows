@@ -4,51 +4,32 @@
 <doc>
   <member name="DVD_KARAOKE_CONTENTS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies flags that, when used in a bitwise <b>OR</b> operation, describe the contents of each channel of an audio stream in a karaoke title.</para>
     </summary>
-    <remarks>
-      <para>This enumeration is used in the <see cref="DVD_KaraokeAttributes" /> structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
   </member>
   <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideVocal1">
-    <summary>
-      <para>The channel contains guide vocal 1.</para>
-    </summary>
+    <summary>The channel contains guide vocal 1.</summary>
   </member>
   <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideVocal2">
-    <summary>
-      <para>The channel contains guide vocal 2.</para>
-    </summary>
+    <summary>The channel contains guide vocal 2.</summary>
   </member>
   <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideMelody1">
-    <summary>
-      <para>The channel contains guide melody 1.</para>
-    </summary>
+    <summary>The channel contains guide melody 1.</summary>
   </member>
   <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideMelody2">
-    <summary>
-      <para>The channel contains guide melody 2.</para>
-    </summary>
+    <summary>The channel contains guide melody 2.</summary>
   </member>
   <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideMelodyA">
-    <summary>
-      <para>The channel contains guide melody A.</para>
-    </summary>
+    <summary>The channel contains guide melody A.</summary>
   </member>
   <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_GuideMelodyB">
-    <summary>
-      <para>The channel contains guide melody B.</para>
-    </summary>
+    <summary>The channel contains guide melody B.</summary>
   </member>
   <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_SoundEffectA">
-    <summary>
-      <para>The channel contains sound effect A.</para>
-    </summary>
+    <summary>The channel contains sound effect A.</summary>
   </member>
   <member name="DVD_KARAOKE_CONTENTS.DVD_Karaoke_SoundEffectB">
-    <summary>
-      <para>The channel contains sound effect B.</para>
-    </summary>
+    <summary>The channel contains sound effect B.</summary>
   </member>
 </doc>

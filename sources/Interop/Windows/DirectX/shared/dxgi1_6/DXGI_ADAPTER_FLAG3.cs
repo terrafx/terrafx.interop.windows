@@ -9,7 +9,7 @@ namespace TerraFX.Interop.DirectX;
 
 /// <include file='DXGI_ADAPTER_FLAG3.xml' path='doc/member[@name="DXGI_ADAPTER_FLAG3"]/*' />
 [Flags]
-public enum DXGI_ADAPTER_FLAG3 : uint
+public enum DXGI_ADAPTER_FLAG3
 {
     /// <include file='DXGI_ADAPTER_FLAG3.xml' path='doc/member[@name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_NONE"]/*' />
     DXGI_ADAPTER_FLAG3_NONE = 0,
@@ -33,5 +33,5 @@ public enum DXGI_ADAPTER_FLAG3 : uint
     DXGI_ADAPTER_FLAG3_KEYED_MUTEX_CONFORMANCE = 0x20,
 
     /// <include file='DXGI_ADAPTER_FLAG3.xml' path='doc/member[@name="DXGI_ADAPTER_FLAG3.DXGI_ADAPTER_FLAG3_FORCE_DWORD"]/*' />
-    DXGI_ADAPTER_FLAG3_FORCE_DWORD = 0xffffffff,
+    DXGI_ADAPTER_FLAG3_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

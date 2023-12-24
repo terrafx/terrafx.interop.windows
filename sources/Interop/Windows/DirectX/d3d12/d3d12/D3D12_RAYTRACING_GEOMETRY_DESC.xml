@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RAYTRACING_GEOMETRY_DESC">
+    <summary>Describes a set of geometry that is used in the <see cref="D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_INPUTS" /> structure to provide input data to a raytracing acceleration structure build operation.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_GEOMETRY_DESC.Type">
+    <summary>The type of geometry.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_GEOMETRY_DESC.Flags">
+    <summary>The geometry flags</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_GEOMETRY_DESC.Triangles">
+    <summary>A <see cref="D3D12_RAYTRACING_GEOMETRY_TRIANGLES_DESC" /> describing triangle geometry, if <i>Type</i> is <see cref="D3D12_RAYTRACING_GEOMETRY_TYPE_TRIANGLES" />. Otherwise this parameter is unused.</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_GEOMETRY_DESC.AABBs">
+    <summary>A <see cref="D3D12_RAYTRACING_GEOMETRY_AABBS_DESC" /> describing triangle geometry, if <i>Type</i> is <see cref="D3D12_RAYTRACING_GEOMETRY_TYPE_PROCEDURAL_PRIMITIVE_AABBS" />. Otherwise this parameter is unused.</summary>
+  </member>
+</doc>

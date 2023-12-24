@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPTNET_URL_CACHE_PRE_FETCH_INFO">
-    <summary>
-      <para>The <b>CRYPTNET_URL_CACHE_PRE_FETCH_INFO</b> structure contains update information used by the Cryptnet URL Cache (CUC) service to maintain a URL cache entry. This structure composes the <b>pPreFetchInfo</b> member of the <see cref="CRYPT_RETRIEVE_AUX_INFO" /> structure that is passed to the <see cref="CryptRetrieveObjectByUrl" /> function as the <i>pAuxInfo</i> parameter.</para>
-    </summary>
+    <summary>The <b>CRYPTNET_URL_CACHE_PRE_FETCH_INFO</b> structure contains update information used by the Cryptnet URL Cache (CUC) service to maintain a URL cache entry. This structure composes the <b>pPreFetchInfo</b> member of the <see cref="CRYPT_RETRIEVE_AUX_INFO" /> structure that is passed to the <see cref="CryptRetrieveObjectByUrl" /> function as the <i>pAuxInfo</i> parameter.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_PRE_FETCH_INFO.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_PRE_FETCH_INFO.dwObjectType">
     <summary>
@@ -20,91 +16,81 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CRYPTNET_URL_CACHE_PRE_FETCH_NONE</b>
-                </description>
-              </item>
-              <item>
-                <description>0</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Prefetch information does not yet exist.</para>
-          </description>
-        </item>
-        <item>
+          <description>Prefetch information does not yet exist.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CRYPTNET_URL_CACHE_PRE_FETCH_BLOB</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The object is a memory <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The object is a memory <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CRYPTNET_URL_CACHE_PRE_FETCH_CRL</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The object is a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL).</para>
-          </description>
-        </item>
-        <item>
+          <description>The object is a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CRYPTNET_URL_CACHE_PRE_FETCH_OCSP</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The object is an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) response.</para>
-          </description>
-        </item>
-        <item>
+          <description>The object is an <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) response.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CRYPTNET_URL_CACHE_PRE_FETCH_AUTOROOT_CAB</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The object is a CAB file.</para>
-          </description>
-        </item>
+          <description>The object is a CAB file.</description>
+        </listheader>
       </list>
     </summary>
   </member>
@@ -116,94 +102,86 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>S_OK</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The prefetch is pending.</para>
-          </description>
-        </item>
-        <item>
+          <description>The prefetch is pending.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_MEDIA_OFFLINE</b>
-                </description>
-              </item>
-              <item>
-                <description>4304L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4304L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The CRL prefetch is disabled because the OCSP service is offline or unavailable.</para>
-          </description>
-        </item>
-        <item>
+          <description>The CRL prefetch is disabled because the OCSP service is offline or unavailable.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_FILE_OFFLINE</b>
-                </description>
-              </item>
-              <item>
-                <description>4350L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4350L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The prefetch content is unchanged.</para>
-          </description>
-        </item>
-        <item>
+          <description>The prefetch content is unchanged.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>ERROR_INVALID_DATA</b>
-                </description>
-              </item>
-              <item>
-                <description>13L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>13L</term>
+              </listheader>
             </list>
           </description>
+          <description>The prefetch content is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The prefetch content is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>Other values</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>Other values</b>
-          </description>
-          <description>
-            <para>The service is unable to retrieve prefetch content.</para>
-          </description>
-        </item>
+          <description>The service is unable to retrieve prefetch content.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_PRE_FETCH_INFO.dwReserved">
-    <summary>
-      <para>This parameter is not used. It must be zero.</para>
-    </summary>
+    <summary>This parameter is not used. It must be zero.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_PRE_FETCH_INFO.ThisUpdateTime">
-    <summary>
-      <para>A <see cref="FILETIME" /> structure that contains a date and time whose meaning depends on <b>dwObjectType</b>. For a CRL, this indicates when the CRL was published. For an OCSP response, this indicates when the indicated status is known to be correct.</para>
-    </summary>
+    <summary>A <see cref="FILETIME" /> structure that contains a date and time whose meaning depends on <b>dwObjectType</b>. For a CRL, this indicates when the CRL was published. For an OCSP response, this indicates when the indicated status is known to be correct.</summary>
   </member>
   <member name="CRYPTNET_URL_CACHE_PRE_FETCH_INFO.NextUpdateTime">
     <summary>
@@ -220,23 +198,21 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>szOID_CRL_NEXT_PUBLISH</b>
-                </description>
-              </item>
-              <item>
-                <description>1.3.6.1.4.1.311.21.4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1.3.6.1.4.1.311.21.4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>NextPublishTime</para>
-          </description>
-        </item>
+          <description>NextPublishTime</description>
+        </listheader>
       </list>
     </summary>
   </member>

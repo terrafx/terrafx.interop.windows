@@ -3,82 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INamespaceWalk.GetIDArrayResult">
-    <summary>
-      <para>Gets a list of objects found during a namespace walk initiated by <see cref="INamespaceWalk.Walk" />.</para>
-    </summary>
-    <param name="pcItems">
-      <para>Type: <b>UINT*</b></para>
-      <para>The number of items stored in <i>pppidl</i></para>
-    </param>
-    <param name="prgpidl">
-      <para>Type: <b>LPITEMIDLIST**</b></para>
-      <para>The address of a pointer to an array of PIDLs representing the items found during the namespace walk.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>To use <b>INamespaceWalk.GetIDArrayResult</b>, <b>NSWF_DONT_ACCUMULATE_RESULT</b> cannot be specified in the call to <see cref="INamespaceWalk.Walk" />.</para>
-      <para>It is the responsibility of the calling application to free this array. Call <see cref="CoTaskMemFree" /> for each PIDL as well as once for the array itself.</para>
-      <h4>Examples</h4>
-      <para>The following example creates the <see cref="INamespaceWalk" /> instance, begins the walk at the desktop, walks only the desktop folder and its immediate children, retrieves the PIDLs retrieved in the walk, and frees their array.</para>
-      <code>void NamespaceWalk_Example()
-{
-    // Note that error checking has been omitted for clarity.
-
-    INamespaceWalk *pnsw = NULL;
-    IShellFolder *psfDesktop = NULL;
-
-    // Get a pointer to the desktop to use as our root node
-    hr = SHGetDesktopFolder(&amp;amp;amp;amp;amp;amp;psfDesktop);
-
-    // Create the INamespaceWalk instance
-    hr = CoCreateInstance(CLSID_NamespaceWalker,
-                          NULL,
-                          CLSCTX_INPROC,
-                          IID_INamespaceWalk,
-                          (void **)&amp;amp;amp;amp;amp;amp;pnsw);
-
-    // Walk the desktop folder and one level of subfolders
-    hr = pnsw-&gt;Walk(psfDesktop, NSWF_NONE_IMPLIES_ALL, 1, NULL);
-
-    UINT cItems;
-    PIDLIST_ABSOLUTE *ppidls;
-
-    // Retrieve the array of PIDLs gathered in the walk
-    hr = pnsw-&gt;GetIDArrayResult(&amp;amp;amp;amp;amp;amp;cItems, &amp;amp;amp;amp;amp;amp;ppidls);
-
-    // Perform some action using the PIDLs
-
-    // The calling function is responsible for freeing the PIDL array
-    FreeIDListArrayFull(ppidls, cItems);
-
-    return;
-}
-
-void FreeIDListArrayFull(PIDLIST_ABSOLUTE *ppidls, UINT cItems)
-{
-    // Free the array elements
-    for (UINT i = 0; i &lt; cItems; i++)
-    {
-        CoTaskMemFree(ppidls[i]);
-    }
-
-    // Free the array itself
-    CoTaskMemFree(ppidls);
-
-    return;
-}
-</code>
-    </remarks>
+    <summary>Gets a list of objects found during a namespace walk initiated by <see cref="INamespaceWalk.Walk" />.</summary>
+    <param name="pcItems">The number of items stored in <i>pppidl</i></param>
+    <param name="prgpidl">The address of a pointer to an array of PIDLs representing the items found during the namespace walk.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INamespaceWalk.Walk">
-    <summary>
-      <para>Initiates a recursive walk of the namespace from the specified root to the given depth.</para>
-    </summary>
+    <summary>Initiates a recursive walk of the namespace from the specified root to the given depth.</summary>
     <param name="punkToWalk">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
       <para>The root node from which to begin the walk. This can be represented by one of the following objects.</para>
       <list type="bullet">
         <item>
@@ -116,15 +48,16 @@ void FreeIDListArrayFull(PIDLIST_ABSOLUTE *ppidls, UINT cItems)
             <see cref="IShellView" />
           </description>
         </item>
-      </list>
-      <para>Specifying the desktop's <see cref="IShellFolder" /> as the root allows the possibility of walking the entire Windows namespace if <i>cDepth</i> is sufficiently large.</para>
-    </param>
+      </list>Specifying the desktop's <see cref="IShellFolder" /> as the root allows the possibility of walking the entire Windows namespace if <i>cDepth</i> is sufficiently large.</param>
     <param name="dwFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>One or more of the following flags that control the walk operation.</para>
-      <h4>NSWF_DEFAULT (0x00000000)</h4>
+      <para>
+        <b>NSWF_DEFAULT (0x00000000)</b>
+      </para>
       <para>Use this value when you do not want to set any of the other flags.</para>
-      <h4>NSWF_NONE_IMPLIES_ALL (0x00000001)</h4>
+      <para>
+        <b>NSWF_NONE_IMPLIES_ALL (0x00000001)</b>
+      </para>
       <para>Collect all of the items in the folder if both of these criteria are met:</para>
       <list type="bullet">
         <item>
@@ -135,7 +68,9 @@ void FreeIDListArrayFull(PIDLIST_ABSOLUTE *ppidls, UINT cItems)
           <description>None of the items in the folder are currently selected.</description>
         </item>
       </list>
-      <h4>NSWF_ONE_IMPLIES_ALL (0x00000002)</h4>
+      <para>
+        <b>NSWF_ONE_IMPLIES_ALL (0x00000002)</b>
+      </para>
       <para>Collect all of the items in the folder if both of these criteria are met:</para>
       <list type="bullet">
         <item>
@@ -146,60 +81,66 @@ void FreeIDListArrayFull(PIDLIST_ABSOLUTE *ppidls, UINT cItems)
           <description>One of the items in the folder is currently selected.</description>
         </item>
       </list>
-      <h4>NSWF_DONT_TRAVERSE_LINKS (0x00000004)</h4>
+      <para>
+        <b>NSWF_DONT_TRAVERSE_LINKS (0x00000004)</b>
+      </para>
       <para>Do not follow links (.lnk, .url, and folder shortcuts) in the recursion; instead, return them as regular items.</para>
-      <h4>NSWF_DONT_ACCUMULATE_RESULT (0x00000008)</h4>
+      <para>
+        <b>NSWF_DONT_ACCUMULATE_RESULT (0x00000008)</b>
+      </para>
       <para>Do not collect the PIDLs of the nodes during the namespace walk.</para>
-      <h4>NSWF_TRAVERSE_STREAM_JUNCTIONS (0x00000010)</h4>
+      <para>
+        <b>NSWF_TRAVERSE_STREAM_JUNCTIONS (0x00000010)</b>
+      </para>
       <para>Include the contents of stream junction points in the walk. For instance, walk into the contents of a .cab file.</para>
-      <h4>NSWF_FILESYSTEM_ONLY (0x00000020)</h4>
+      <para>
+        <b>NSWF_FILESYSTEM_ONLY (0x00000020)</b>
+      </para>
       <para>Walk only file system nodes.</para>
-      <h4>NSWF_SHOW_PROGRESS (0x00000040)</h4>
+      <para>
+        <b>NSWF_SHOW_PROGRESS (0x00000040)</b>
+      </para>
       <para>Display a dialog box with a progress bar while walking the namespace.</para>
-      <h4>NSWF_FLAG_VIEWORDER (0x00000080)</h4>
+      <para>
+        <b>NSWF_FLAG_VIEWORDER (0x00000080)</b>
+      </para>
       <para>Return items in view order. This applies only when <i>punkToWalk</i> is an <see cref="IShellView" /> object.</para>
-      <h4>NSWF_IGNORE_AUTOPLAY_HIDA (0x00000100)</h4>
+      <para>
+        <b>NSWF_IGNORE_AUTOPLAY_HIDA (0x00000100)</b>
+      </para>
       <para>Do not use the AutoPlay HIDA in the data object. This applies only when <i>punkToWalk</i> is an <see cref="IDataObject" /> object.</para>
-      <h4>NSWF_ASYNC (0x00000200)</h4>
+      <para>
+        <b>NSWF_ASYNC (0x00000200)</b>
+      </para>
       <para>Perform the walk asynchronously by running it on a background thread.</para>
-      <h4>NSWF_DONT_RESOLVE_LINKS (0x00000400)</h4>
+      <para>
+        <b>NSWF_DONT_RESOLVE_LINKS (0x00000400)</b>
+      </para>
       <para>Traverse links to return their targets (for .lnk, .url and folder shortcuts) but do not verify that those targets exist (<see cref="Resolve" />). This is an optimization and does not affect the results except in the case where a missing or moved target could be found and returned.</para>
-      <h4>NSWF_ACCUMULATE_FOLDERS (0x00000800)</h4>
-      <h4>NSWF_DONT_SORT (0x00001000)</h4>
+      <para>
+        <b>NSWF_ACCUMULATE_FOLDERS (0x00000800)</b>
+      </para>
+      <para>
+        <b>NSWF_DONT_SORT (0x00001000)</b>
+      </para>
       <para>Do not maintain the sort order of the items being walked.</para>
-      <h4>NSWF_USE_TRANSFER_MEDIUM (0x00002000)</h4>
-      <h4>NSWF_DONT_TRAVERSE_STREAM_JUNCTIONS (0x00004000)</h4>
-      <h4>NSWF_ANY_IMPLIES_ALL (0x00008000)</h4>
       <para>
-        <b>Introduced in Windows 8</b>.</para>
+        <b>NSWF_USE_TRANSFER_MEDIUM (0x00002000)</b>
+      </para>
+      <para>
+        <b>NSWF_DONT_TRAVERSE_STREAM_JUNCTIONS (0x00004000)</b>
+      </para>
+      <para>
+        <b>NSWF_ANY_IMPLIES_ALL (0x00008000)</b>
+      </para>
+      <para>Introduced in Windows 8.</para>
     </param>
-    <param name="cDepth">
-      <para>Type: <b>int</b></para>
-      <para>The maximum depth to descend through the namespace hierarchy. This depth is zero-based. Set to 0 to walk only the folder identified by <i>punkToWalk</i> but none of its subfolders.</para>
-    </param>
+    <param name="cDepth">The maximum depth to descend through the namespace hierarchy. This depth is zero-based. Set to 0 to walk only the folder identified by <i>punkToWalk</i> but none of its subfolders.</param>
     <param name="pnswcb">
-      <para>Type: <b><see cref="INamespaceWalkCB" />*</b></para>
-      <para>
-        <see cref="INamespaceWalkCB" /> callback function used by <see cref="INamespaceWalk" />. This parameter can be <b>NULL</b>. The object can optionally implement the INamespaceWalkCB2 and IActionProgress interfaces. See remarks below.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If you do not pass the <b>NSWF_SHOW_PROGRESS</b> flag and the object pointed to by the pnswcb parameter implements <b>IActionProgress</b>, then the <b>INamespaceWalk.Walk</b> method calls the <b>IActionProgress.QueryCancel</b> method periodically to determine whether the operation should be canceled.</para>
-    </remarks>
-    <seealso cref="INamespaceWalk" />
-    <seealso cref="INamespaceWalkCB" />
+      <see cref="INamespaceWalkCB" /> callback function used by <see cref="INamespaceWalk" />. This parameter can be <b>NULL</b>. The object can optionally implement the <b>INamespaceWalkCB2</b> and <see cref="IActionProgress" /> interfaces. See remarks below.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INamespaceWalk">
-    <summary>
-      <para>Exposes methods that walk a namespace from a given root node. The depth of the walk is specified and an optional array is returned containing the IDs of all nodes walked.</para>
-    </summary>
-    <remarks>
-      <para>Use this interface to display or perform an operation on the contents of the namespace. <b>INamespaceWalk</b> allows retrieval of all reachable nodes of your namespace as pointers to item identifier lists (PIDLs), which can in turn be used to retrieve the <see cref="IShellFolder" /> object for each.</para>
-      <para>The class identifier (CLSID) for the default implementation of <b>INamespaceWalk</b> is CLSID_NamespaceWalker. You can obtain an <b>INamespaceWalk</b> object by creating a single uninitialized object of the class associated with CLSID_NamespaceWalker using <see cref="CoCreateInstance" />. This interface's IID is IID_INamespaceWalk.</para>
-    </remarks>
-    <seealso cref="INamespaceWalkCB" />
+    <summary>Exposes methods that walk a namespace from a given root node. The depth of the walk is specified and an optional array is returned containing the IDs of all nodes walked.</summary>
   </member>
 </doc>

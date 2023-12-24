@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12ShaderReflectionVariable.GetBuffer">
+    <summary>Returns the <see cref="ID3D12ShaderReflectionConstantBuffer" /> of the present <see cref="ID3D12ShaderReflectionVariable" />.</summary>
+    <returns>Returns a pointer to the <see cref="ID3D12ShaderReflectionConstantBuffer" /> of the present <see cref="ID3D12ShaderReflectionVariable" />.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionVariable.GetDesc">
+    <summary>Gets a shader-variable description.</summary>
+    <param name="pDesc">A pointer to a shader-variable description (see <see cref="D3D12_SHADER_VARIABLE_DESC" />).</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionVariable.GetInterfaceSlot">
+    <summary>Gets the corresponding interface slot for a variable that represents an interface pointer.</summary>
+    <param name="uArrayIndex">The index of the array element to get the slot number for. For a non-array variable this value will be zero.</param>
+    <returns>Returns the index of the interface in the interface array.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionVariable.GetType">
+    <summary>Gets a shader-variable type.</summary>
+    <returns>A pointer to a <see cref="ID3D12ShaderReflectionType Interface" />.</returns>
+  </member>
+  <member name="ID3D12ShaderReflectionVariable">
+    <summary>This shader-reflection interface provides access to a variable.</summary>
+  </member>
+</doc>

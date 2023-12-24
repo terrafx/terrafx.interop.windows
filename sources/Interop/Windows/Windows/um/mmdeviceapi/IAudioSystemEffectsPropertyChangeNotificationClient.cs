@@ -27,7 +27,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyChangeNotificationClient
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyChangeNotificationClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSystemEffectsPropertyChangeNotificationClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyChangeNotificationClient*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSystemEffectsPropertyChangeNotificationClient*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyChangeNotificationClient
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyChangeNotificationClient*, uint>)(lpVtbl[1]))((IAudioSystemEffectsPropertyChangeNotificationClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyChangeNotificationClient*, uint>)(lpVtbl[1]))((IAudioSystemEffectsPropertyChangeNotificationClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyChangeNotificationClient
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyChangeNotificationClient*, uint>)(lpVtbl[2]))((IAudioSystemEffectsPropertyChangeNotificationClient*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyChangeNotificationClient*, uint>)(lpVtbl[2]))((IAudioSystemEffectsPropertyChangeNotificationClient*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioSystemEffectsPropertyChangeNotificationClient.xml' path='doc/member[@name="IAudioSystemEffectsPropertyChangeNotificationClient.OnPropertyChanged"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyChangeNotificationClient
     [VtblIndex(3)]
     public HRESULT OnPropertyChanged(AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE type, [NativeTypeName("const PROPERTYKEY")] PROPERTYKEY key)
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyChangeNotificationClient*, AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE, PROPERTYKEY, int>)(lpVtbl[3]))((IAudioSystemEffectsPropertyChangeNotificationClient*)Unsafe.AsPointer(ref this), type, key);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyChangeNotificationClient*, AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE, PROPERTYKEY, int>)(lpVtbl[3]))((IAudioSystemEffectsPropertyChangeNotificationClient*)Unsafe.AsPointer(ref this), type, key);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IAudioSystemEffectsPropertyChangeNotificationClient
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE, const PROPERTYKEY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE, PROPERTYKEY, int> OnPropertyChanged;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AUDIO_SYSTEMEFFECTS_PROPERTYSTORE_TYPE, PROPERTYKEY, int> OnPropertyChanged;
     }
 }

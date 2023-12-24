@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SYNCMGRREGISTERFLAGS">
-    <summary>
-      <para>The <b>SYNCMGRREGISTERFLAGS</b> enumeration values are used in methods of the <see cref="ISyncMgrRegister" /> interface to identify events for which the handler is registered to be notified.</para>
-    </summary>
-    <remarks>
-      <para>The SYNCMGRREGISTERFLAGS_MASK value can be used to identify valid <b>SYNCMGRREGISTERFLAGS</b> values.</para>
-    </remarks>
+    <summary>The <b>SYNCMGRREGISTERFLAGS</b> enumeration values are used in methods of the <see cref="ISyncMgrRegister" /> interface to identify events for which the handler is registered to be notified.</summary>
   </member>
   <member name="SYNCMGRREGISTERFLAGS.SYNCMGRREGISTERFLAG_CONNECT">
-    <summary>
-      <para>Network connect events.</para>
-    </summary>
+    <summary>Network connect events.</summary>
   </member>
   <member name="SYNCMGRREGISTERFLAGS.SYNCMGRREGISTERFLAG_PENDINGDISCONNECT">
-    <summary>
-      <para>Pending network disconnect event.</para>
-    </summary>
+    <summary>Pending network disconnect event.</summary>
   </member>
   <member name="SYNCMGRREGISTERFLAGS.SYNCMGRREGISTERFLAG_IDLE">
-    <summary>
-      <para>Idle events.</para>
-    </summary>
+    <summary>Idle events.</summary>
   </member>
 </doc>

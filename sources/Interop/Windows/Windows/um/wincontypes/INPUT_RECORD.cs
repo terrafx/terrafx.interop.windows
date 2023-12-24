@@ -15,7 +15,7 @@ public partial struct INPUT_RECORD
     public ushort EventType;
 
     /// <include file='INPUT_RECORD.xml' path='doc/member[@name="INPUT_RECORD.Event"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincontypes.h:124:5)")]
+    [NativeTypeName("__AnonymousRecord_wincontypes_L124_C5")]
     public _Event_e__Union Event;
 
     /// <include file='_Event_e__Union.xml' path='doc/member[@name="_Event_e__Union"]/*' />

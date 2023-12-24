@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_FONT_SIMULATIONS">
-    <summary>
-      <para>Specifies algorithmic style simulations to be applied to the font face. Bold and oblique simulations can be combined via bitwise OR operation.</para>
-    </summary>
-    <remarks>
-      <para>Style simulations are not recommended for good typographic quality.</para>
-    </remarks>
+    <summary>Specifies algorithmic style simulations to be applied to the font face. Bold and oblique simulations can be combined via bitwise OR operation.</summary>
   </member>
   <member name="DWRITE_FONT_SIMULATIONS.DWRITE_FONT_SIMULATIONS_NONE">
-    <summary>
-      <para>Indicates that no simulations are applied to the font face.</para>
-    </summary>
+    <summary>Indicates that no simulations are applied to the font face.</summary>
   </member>
   <member name="DWRITE_FONT_SIMULATIONS.DWRITE_FONT_SIMULATIONS_BOLD">
-    <summary>
-      <para>Indicates that algorithmic emboldening is applied to the font face.  <see cref="DWRITE_FONT_SIMULATIONS_BOLD" /> increases weight by applying a widening algorithm to the glyph outline. This may  be used to simulate a bold weight where no designed bold weight is available.</para>
-    </summary>
+    <summary>Indicates that algorithmic emboldening is applied to the font face. <see cref="DWRITE_FONT_SIMULATIONS_BOLD" /> increases weight by applying a widening algorithm to the glyph outline. This may be used to simulate a bold weight where no designed bold weight is available.</summary>
   </member>
   <member name="DWRITE_FONT_SIMULATIONS.DWRITE_FONT_SIMULATIONS_OBLIQUE">
-    <summary>
-      <para>Indicates that algorithmic italicization is applied to the font face. <see cref="DWRITE_FONT_SIMULATIONS_OBLIQUE" /> applies obliquing (shear) to the glyph outline. This may be used to simulate an oblique/italic style where no designed oblique/italic style is available.</para>
-    </summary>
+    <summary>Indicates that algorithmic italicization is applied to the font face. <see cref="DWRITE_FONT_SIMULATIONS_OBLIQUE" /> applies obliquing (shear) to the glyph outline. This may be used to simulate an oblique/italic style where no designed oblique/italic style is available.</summary>
   </member>
 </doc>

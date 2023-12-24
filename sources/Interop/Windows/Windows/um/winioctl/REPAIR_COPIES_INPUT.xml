@@ -3,47 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="REPAIR_COPIES_INPUT">
-    <summary>
-      <para>Input structure for the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_repair_copies">FSCTL_REPAIR_COPIES</a> control code. It describes a single block of data and indicates which of the copies is to be copied to the specified copies of the data. The</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_repair_copies">FSCTL_REPAIR_COPIES</seealso>
-    <seealso cref="REPAIR_COPIES_OUTPUT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/volume-management-structures">Volume Management Structures</seealso>
+    <summary>Input structure for the <a href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-fsctl_repair_copies">FSCTL_REPAIR_COPIES</a> control code. It describes a single block of data and indicates which of the copies is to be copied to the specified copies of the data. The</summary>
   </member>
   <member name="REPAIR_COPIES_INPUT.Size">
-    <summary>
-      <para>Set to <code>sizeof(REPAIR_COPIES_INPUT)</code>.</para>
-    </summary>
+    <summary>Set to <code>sizeof(REPAIR_COPIES_INPUT)</code>.</summary>
   </member>
   <member name="REPAIR_COPIES_INPUT.Flags">
-    <summary>
-      <para>Reserved (must be zero)</para>
-    </summary>
+    <summary>Reserved (must be zero)</summary>
   </member>
   <member name="REPAIR_COPIES_INPUT.FileOffset">
-    <summary>
-      <para>The file position to start the repair operation.</para>
-    </summary>
+    <summary>The file position to start the repair operation.</summary>
   </member>
   <member name="REPAIR_COPIES_INPUT.Length">
-    <summary>
-      <para>The number of bytes to be repaired.</para>
-    </summary>
+    <summary>The number of bytes to be repaired.</summary>
   </member>
   <member name="REPAIR_COPIES_INPUT.SourceCopy">
-    <summary>
-      <para>The zero-based copy number of the source copy.</para>
-    </summary>
+    <summary>The zero-based copy number of the source copy.</summary>
   </member>
   <member name="REPAIR_COPIES_INPUT.NumberOfRepairCopies">
-    <summary>
-      <para>The number of copies that will be repaired. This is the size of the <b>RepairCopies</b></para>
-      <para>array.</para>
-    </summary>
+    <summary>The number of copies that will be repaired. This is the size of the <b>RepairCopies</b>array.</summary>
   </member>
   <member name="REPAIR_COPIES_INPUT.RepairCopies">
-    <summary>
-      <para>The zero-based copy numbers of the copies that will be repaired.</para>
-    </summary>
+    <summary>The zero-based copy numbers of the copies that will be repaired.</summary>
   </member>
 </doc>

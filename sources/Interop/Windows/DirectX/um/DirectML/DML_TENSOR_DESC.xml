@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_TENSOR_DESC">
-    <summary>
-      <para>A generic container for a DirectML tensor description.</para>
-    </summary>
+    <summary>A generic container for a DirectML tensor description.</summary>
   </member>
   <member name="DML_TENSOR_DESC.Type">
-    <summary>
-      <para>Type: <see cref="DML_TENSOR_TYPE" /></para>
-      <para>The type of the tensor description. See <see cref="DML_TENSOR_TYPE" /> for the available types.</para>
-    </summary>
+    <summary>The type of the tensor description. See <see cref="DML_TENSOR_TYPE" /> for the available types.</summary>
   </member>
   <member name="DML_TENSOR_DESC.Desc">
-    <summary>
-      <para>Type: <b>const void*</b></para>
-      <para>A pointer to the tensor description. The type of the pointed-to struct must match the value specified in <i>Type</i>.</para>
-    </summary>
+    <summary>A pointer to the tensor description. The type of the pointed-to struct must match the value specified in <i>Type</i>.</summary>
   </member>
 </doc>

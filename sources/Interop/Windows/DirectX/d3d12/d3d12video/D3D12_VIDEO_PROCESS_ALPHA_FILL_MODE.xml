@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE">
+    <summary>Specifies the alpha fill mode for video processing. This value is used by the <see cref="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_DESC" /> structure.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE.D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_OPAQUE">
+    <summary>Alpha values inside the target rectangle are set to opaque.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE.D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_BACKGROUND">
+    <summary>Alpha values inside the target rectangle are set to the alpha value specified in the background color.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE.D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_DESTINATION">
+    <summary>Existing alpha values remain unchanged in the output surface.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE.D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_SOURCE_STREAM">
+    <summary>
+      <para>Alpha values are taken from an input stream, scaled, and copied to the corresponding destination rectangle for that stream. The input stream is specified in the <i>AlphaFillModeSourceStreamIndex</i> member of <see cref="D3D12_VIDEO_PROCESS_OUTPUT_STREAM_ARGUMENTS" />.</para>
+      <para>If the input stream does not have alpha data, the video processor sets the alpha values in the target rectangle to opaque. If the input stream is disabled or the source rectangle is empty, the alpha values in the target rectangle are not modified.</para>
+    </summary>
+  </member>
+</doc>

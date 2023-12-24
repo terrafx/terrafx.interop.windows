@@ -25,7 +25,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ILockBytes*, Guid*, void**, int>)(lpVtbl[0]))((ILockBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, Guid*, void**, int>)(lpVtbl[0]))((ILockBytes*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ILockBytes*, uint>)(lpVtbl[1]))((ILockBytes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, uint>)(lpVtbl[1]))((ILockBytes*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ILockBytes*, uint>)(lpVtbl[2]))((ILockBytes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, uint>)(lpVtbl[2]))((ILockBytes*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILockBytes.xml' path='doc/member[@name="ILockBytes.ReadAt"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT ReadAt(ULARGE_INTEGER ulOffset, void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbRead)
     {
-        return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[3]))((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbRead);
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[3]))((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbRead);
     }
 
     /// <include file='ILockBytes.xml' path='doc/member[@name="ILockBytes.WriteAt"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT WriteAt(ULARGE_INTEGER ulOffset, [NativeTypeName("const void *")] void* pv, [NativeTypeName("ULONG")] uint cb, [NativeTypeName("ULONG *")] uint* pcbWritten)
     {
-        return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[4]))((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbWritten);
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, ULARGE_INTEGER, void*, uint, uint*, int>)(lpVtbl[4]))((ILockBytes*)Unsafe.AsPointer(ref this), ulOffset, pv, cb, pcbWritten);
     }
 
     /// <include file='ILockBytes.xml' path='doc/member[@name="ILockBytes.Flush"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT Flush()
     {
-        return ((delegate* unmanaged<ILockBytes*, int>)(lpVtbl[5]))((ILockBytes*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, int>)(lpVtbl[5]))((ILockBytes*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ILockBytes.xml' path='doc/member[@name="ILockBytes.SetSize"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT SetSize(ULARGE_INTEGER cb)
     {
-        return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, int>)(lpVtbl[6]))((ILockBytes*)Unsafe.AsPointer(ref this), cb);
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, ULARGE_INTEGER, int>)(lpVtbl[6]))((ILockBytes*)Unsafe.AsPointer(ref this), cb);
     }
 
     /// <include file='ILockBytes.xml' path='doc/member[@name="ILockBytes.LockRegion"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT LockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
     {
-        return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[7]))((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[7]))((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
     /// <include file='ILockBytes.xml' path='doc/member[@name="ILockBytes.UnlockRegion"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT UnlockRegion(ULARGE_INTEGER libOffset, ULARGE_INTEGER cb, [NativeTypeName("DWORD")] uint dwLockType)
     {
-        return ((delegate* unmanaged<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[8]))((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int>)(lpVtbl[8]))((ILockBytes*)Unsafe.AsPointer(ref this), libOffset, cb, dwLockType);
     }
 
     /// <include file='ILockBytes.xml' path='doc/member[@name="ILockBytes.Stat"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT Stat(STATSTG* pstatstg, [NativeTypeName("DWORD")] uint grfStatFlag)
     {
-        return ((delegate* unmanaged<ILockBytes*, STATSTG*, uint, int>)(lpVtbl[9]))((ILockBytes*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
+        return ((delegate* unmanaged[MemberFunction]<ILockBytes*, STATSTG*, uint, int>)(lpVtbl[9]))((ILockBytes*)Unsafe.AsPointer(ref this), pstatstg, grfStatFlag);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct ILockBytes : ILockBytes.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, void*, uint, uint*, int> ReadAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, void*, uint, uint*, int> ReadAt;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, const void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, void*, uint, uint*, int> WriteAt;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, void*, uint, uint*, int> WriteAt;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Flush;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Flush;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, int> SetSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, int> SetSize;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> LockRegion;
 
         [NativeTypeName("HRESULT (ULARGE_INTEGER, ULARGE_INTEGER, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ULARGE_INTEGER, ULARGE_INTEGER, uint, int> UnlockRegion;
 
         [NativeTypeName("HRESULT (STATSTG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, STATSTG*, uint, int> Stat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, STATSTG*, uint, int> Stat;
     }
 }

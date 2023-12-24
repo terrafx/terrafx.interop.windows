@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.InitializeXamlDiagnosticsEx">
+    <summary>Initializes a Xaml Diagnostics session. This is the entry point for any debugging tool using the XAML Diagnostic APIs.</summary>
+    <param name="endPointName">The end point name for Visual Diagnostics.</param>
+    <param name="pid">The pid of the process to connect to.</param>
+    <param name="wszDllXamlDiagnostics">The path to XamlDiagnostics.dll.</param>
+    <param name="wszTAPDllName">The name of the DLL to be injected in the process.</param>
+    <param name="tapClsid">The COM CLSID of the DLL to be injected in the process.</param>
+    <param name="wszInitializationData">Initialization data for Xaml Diagnostics.</param>
+  </member>
+</doc>

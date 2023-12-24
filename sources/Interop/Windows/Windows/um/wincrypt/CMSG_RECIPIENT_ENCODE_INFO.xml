@@ -4,8 +4,9 @@
 <doc>
   <member name="CMSG_RECIPIENT_ENCODE_INFO">
     <summary>
-      <para>The <b>CMSG_RECIPIENT_ENCODE_INFO</b> structure contains information a message recipient's content encryption key management type.
-<b>Note</b>  Only key transport recipients are supported in PKCS #7 version 1.5.</para>
+      <para>The <b>CMSG_RECIPIENT_ENCODE_INFO</b> structure contains information a message recipient's content encryption key management type.</para>
+      <div>
+        <b>Note</b>  Only key transport recipients are supported in PKCS #7 version 1.5.</div>
     </summary>
   </member>
   <member name="CMSG_RECIPIENT_ENCODE_INFO.dwRecipientChoice">
@@ -16,52 +17,53 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>CMSG_KEY_TRANS_RECIPIENT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_KEY_TRANS_RECIPIENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Use with key transport key management</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Use with key transport key management</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_KEY_AGREE_RECIPIENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Used with key agreement key management</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>CMSG_KEY_AGREE_RECIPIENT</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CMSG_MAIL_LIST_RECIPIENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Used with key agreement key management</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>CMSG_MAIL_LIST_RECIPIENT</b>
-          </description>
-          <description>
-            <para>Use with previously distributed key encryption key management</para>
-          </description>
-        </item>
+          <description>Use with previously distributed key encryption key management</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="CMSG_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="CMSG_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME"></member>
   <member name="CMSG_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.pKeyTrans">
-    <summary>
-      <para>A pointer to a
-<see cref="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO" /> structure. Used with CMSG_KEY_TRANS_RECIPIENT</para>
-    </summary>
+    <summary>A pointer to a<see cref="CMSG_KEY_TRANS_RECIPIENT_ENCODE_INFO" /> structure. Used with CMSG_KEY_TRANS_RECIPIENT</summary>
   </member>
   <member name="CMSG_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.pKeyAgree">
-    <summary>
-      <para>A pointer to a
-<see cref="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO" /> structure. Used with CMSG_KEY_AGREE_RECIPIENT</para>
-    </summary>
+    <summary>A pointer to a<see cref="CMSG_KEY_AGREE_RECIPIENT_ENCODE_INFO" /> structure. Used with CMSG_KEY_AGREE_RECIPIENT</summary>
   </member>
   <member name="CMSG_RECIPIENT_ENCODE_INFO.DUMMYUNIONNAME.pMailList">
-    <summary>
-      <para>A pointer to a
-<see cref="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO" /> structure. Used with CMSG_MAIL_LIST_RECIPIENT</para>
-    </summary>
+    <summary>A pointer to a<see cref="CMSG_MAIL_LIST_RECIPIENT_ENCODE_INFO" /> structure. Used with CMSG_MAIL_LIST_RECIPIENT</summary>
   </member>
 </doc>

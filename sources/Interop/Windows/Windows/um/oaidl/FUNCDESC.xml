@@ -3,89 +3,42 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FUNCDESC">
-    <summary>
-      <para>Describes a function.</para>
-    </summary>
-    <remarks>
-      <para>The <b>cParams</b> field specifies the total number of required and optional parameters.</para>
-      <para>The <b>cParamsOpt</b> field specifies the form of optional parameters accepted by the function, as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <para>A value of 0 specifies that no optional arguments are supported.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>A value of –1 specifies that the method's last parameter is a pointer to a safe array of variants. Any number of variant arguments greater than <b>cParams</b> –1 must be packaged by the caller into a safe array and passed as the final parameter. This array of optional parameters must be freed by the caller after control is returned from the call.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Any other number indicates that the last n parameters of the function are variants and do not need to be specified by the caller explicitly. The parameters left unspecified should be filled in by the compiler or interpreter as variants of type VT_ERROR with the value DISP_E_PARAMNOTFOUND.</para>
-          </description>
-        </item>
-      </list>
-    </remarks>
+    <summary>Describes a function.</summary>
   </member>
   <member name="FUNCDESC.memid">
-    <summary>
-      <para>The function member ID.</para>
-    </summary>
+    <summary>The function member ID.</summary>
   </member>
   <member name="FUNCDESC.lprgscode">
-    <summary>
-      <para>The status code.</para>
-    </summary>
+    <summary>The status code.</summary>
   </member>
   <member name="FUNCDESC.lprgelemdescParam">
-    <summary>
-      <para>Description of the element.</para>
-    </summary>
+    <summary>Description of the element.</summary>
   </member>
   <member name="FUNCDESC.funckind">
-    <summary>
-      <para>Indicates the type of function (virtual, static, or dispatch-only).</para>
-    </summary>
+    <summary>Indicates the type of function (virtual, static, or dispatch-only).</summary>
   </member>
   <member name="FUNCDESC.invkind">
-    <summary>
-      <para>The invocation type. Indicates whether this is a property function, and if so, which type.</para>
-    </summary>
+    <summary>The invocation type. Indicates whether this is a property function, and if so, which type.</summary>
   </member>
   <member name="FUNCDESC.callconv">
-    <summary>
-      <para>The calling convention.</para>
-    </summary>
+    <summary>The calling convention.</summary>
   </member>
   <member name="FUNCDESC.cParams">
-    <summary>
-      <para>The total number of parameters.</para>
-    </summary>
+    <summary>The total number of parameters.</summary>
   </member>
   <member name="FUNCDESC.cParamsOpt">
-    <summary>
-      <para>The number of optional parameters.</para>
-    </summary>
+    <summary>The number of optional parameters.</summary>
   </member>
   <member name="FUNCDESC.oVft">
-    <summary>
-      <para>For FUNC_VIRTUAL, specifies the offset in the VTBL.</para>
-    </summary>
+    <summary>For FUNC_VIRTUAL, specifies the offset in the VTBL.</summary>
   </member>
   <member name="FUNCDESC.cScodes">
-    <summary>
-      <para>The number of possible return values.</para>
-    </summary>
+    <summary>The number of possible return values.</summary>
   </member>
   <member name="FUNCDESC.elemdescFunc">
-    <summary>
-      <para>The function return type.</para>
-    </summary>
+    <summary>The function return type.</summary>
   </member>
   <member name="FUNCDESC.wFuncFlags">
-    <summary>
-      <para>The function flags. See <see cref="FUNCFLAGS" />.</para>
-    </summary>
+    <summary>The function flags. See <see cref="FUNCFLAGS" />.</summary>
   </member>
 </doc>

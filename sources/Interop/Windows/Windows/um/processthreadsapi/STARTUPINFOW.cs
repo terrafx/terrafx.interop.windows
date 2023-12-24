@@ -14,15 +14,15 @@ public unsafe partial struct STARTUPINFOW
 
     /// <include file='STARTUPINFOW.xml' path='doc/member[@name="STARTUPINFOW.lpReserved"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpReserved;
+    public char* lpReserved;
 
     /// <include file='STARTUPINFOW.xml' path='doc/member[@name="STARTUPINFOW.lpDesktop"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpDesktop;
+    public char* lpDesktop;
 
     /// <include file='STARTUPINFOW.xml' path='doc/member[@name="STARTUPINFOW.lpTitle"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpTitle;
+    public char* lpTitle;
 
     /// <include file='STARTUPINFOW.xml' path='doc/member[@name="STARTUPINFOW.dwX"]/*' />
     [NativeTypeName("DWORD")]

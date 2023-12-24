@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT">
+    <summary>Provides data for calls to <see cref="ID3D12VideoDevice.CheckFeatureSupport" /> when the feature specified is <see cref="D3D12_FEATURE_VIDEO_ENCODER_SUPPORT" />. Retrieves values indicating support for the specified video encoding features and configuration values.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.NodeIndex">
+    <summary>In multi-adapter operation, this indicates which physical adapter of the device this operation applies to.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.Codec">
+    <summary>A member of the <see cref="D3D12_VIDEO_ENCODER_CODEC" /> enumeration specifying the codec for which support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.InputFormat">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_PROFILE_DESC" /> structure specifying the profile for which support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.CodecConfiguration">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_CODEC_CONFIGURATION" /> structure representing the codec configuration for which support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.CodecGopSequence">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_SEQUENCE_GOP_STRUCTURE" /> structure representing the GOP structure for which support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.RateControl">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_RATE_CONTROL" /> representing the rate control settings for which support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.IntraRefresh">
+    <summary>A member of the <see cref="D3D12_VIDEO_ENCODER_INTRA_REFRESH_MODE" /> enumeration specifying the intra refresh mode for which support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.SubregionFrameEncoding">
+    <summary>A member of the <see cref="D3D12_VIDEO_ENCODER_FRAME_SUBREGION_LAYOUT_MODE" /> enumeration, specifying the subregion layout mode for which support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.ResolutionsListCount">
+    <summary>A UINT specifying the number of resolutions provided in the <i>pResolutionList</i> field.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.pResolutionList">
+    <summary>A pointer to an array of <see cref="D3D12_VIDEO_ENCODER_PICTURE_RESOLUTION_DESC" /> specifying the picture resolutions for which support is being queried.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.MaxReferenceFramesInDPB">
+    <summary>A UINT specifying Maximum number of previous reference frames to be used when calling <see cref="EncodeFrame" /> for inter-frames. This value is used to calculate the suggested level returned in the <i>SuggestedLevel</i> field.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.ValidationFlags">
+    <summary>Receives a bitwise OR combination of flags from the <see cref="D3D12_VIDEO_ENCODER_VALIDATION_FLAGS" /> enumeration that provide additional details if the <see cref="D3D12_VIDEO_ENCODER_SUPPORT_FLAG_GENERAL_SUPPORT_OK" /> flag is not set in the <i>SupportFlags</i> field. See <b>Remarks</b> for more information.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.SupportFlags">
+    <summary>Receives a bitwise OR combination of flags from the <see cref="D3D12_VIDEO_ENCODER_SUPPORT_FLAGS" /> enumeration specifying support details for the specified encoder features and configuration values.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.SuggestedProfile">
+    <summary>Receives a <see cref="D3D12_VIDEO_ENCODER_PROFILE_DESC" /> specifying the recommended profile for the specified encoder features and configuration values.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.SuggestedLevel">
+    <summary>Receives a <see cref="D3D12_VIDEO_ENCODER_LEVEL_SETTING" /> specifying the recommended profile for the specified encoder features and configuration values. The recommended level assumes the maximum resolution from the list provided in <i>pResolutionList</i>.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_VIDEO_ENCODER_SUPPORT.pResolutionDependentSupport">
+    <summary>Receives a pointer to an array of <see cref="D3D12_FEATURE_DATA_VIDEO_ENCODER_RESOLUTION_SUPPORT_LIMITS" /> structures specifying resolution-dependent support limits corresponding to the resolutions provided in <i>pResolutionList</i>.</summary>
+  </member>
+</doc>

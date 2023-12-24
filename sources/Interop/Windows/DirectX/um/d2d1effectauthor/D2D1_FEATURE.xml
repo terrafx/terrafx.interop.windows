@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_FEATURE">
-    <summary>
-      <para>Defines capabilities of the underlying Direct3D device which may be queried using <see cref="ID2D1EffectContext.CheckFeatureSupport" />.</para>
-    </summary>
+    <summary>Defines capabilities of the underlying Direct3D device which may be queried using <see cref="ID2D1EffectContext.CheckFeatureSupport" />.</summary>
   </member>
   <member name="D2D1_FEATURE.D2D1_FEATURE_DOUBLES">
-    <summary>
-      <para>A D2D1_FEATURE_DATA_DOUBLES structure should be filled.</para>
-    </summary>
+    <summary>A D2D1_FEATURE_DATA_DOUBLES structure should be filled.</summary>
   </member>
   <member name="D2D1_FEATURE.D2D1_FEATURE_D3D10_X_HARDWARE_OPTIONS">
-    <summary>
-      <para>A D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS structure should be filled.</para>
-    </summary>
+    <summary>A D2D1_FEATURE_DATA_D3D10_X_HARDWARE_OPTIONS structure should be filled.</summary>
   </member>
-  <member name="D2D1_FEATURE.D2D1_FEATURE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_FEATURE.D2D1_FEATURE_FORCE_DWORD"></member>
 </doc>

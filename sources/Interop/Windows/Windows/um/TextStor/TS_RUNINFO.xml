@@ -3,53 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TS_RUNINFO">
-    <summary>
-      <para>The <b>TS_RUNINFO</b> structure specifies the properties of text run data.</para>
-    </summary>
-    <remarks>
-      <para>A text run is a collection of consecutive visible, hidden, or embedded characters. For example, the text, Hello World in HTML might be &lt;b&gt;Hello &lt;/b&gt;&lt;i&gt;World&lt;/i&gt;. This text is represented in the TS_RUNINFO structure as follows.</para>
-      <list type="table">
-        <listheader>
-          <description>Text Run</description>
-          <description>uCount</description>
-          <description>TsRunType</description>
-        </listheader>
-        <item>
-          <description>&lt;b&gt;</description>
-          <description>3</description>
-          <description>TS_RT_HIDDEN</description>
-        </item>
-        <item>
-          <description>Hello&lt;space&gt;</description>
-          <description>5</description>
-          <description>TS_RT_PLAIN</description>
-        </item>
-        <item>
-          <description>&lt;/b&gt;&lt;i&gt;</description>
-          <description>7</description>
-          <description>TS_RT_HIDDEN</description>
-        </item>
-        <item>
-          <description>World</description>
-          <description>5</description>
-          <description>TS_RT_PLAIN</description>
-        </item>
-        <item>
-          <description>&lt;/i&gt;</description>
-          <description>4</description>
-          <description>TS_RT_HIDDEN</description>
-        </item>
-      </list>
-    </remarks>
+    <summary>The <b>TS_RUNINFO</b> structure specifies the properties of text run data.</summary>
   </member>
   <member name="TS_RUNINFO.uCount">
-    <summary>
-      <para>Specifies the number of characters in the text run.</para>
-    </summary>
+    <summary>Specifies the number of characters in the text run.</summary>
   </member>
   <member name="TS_RUNINFO.type">
-    <summary>
-      <para>Specifies the text run type. If this parameter is TS_RT_PLAIN, the text run is visible. If this parameter is TS_RT_HIDDEN, the text run is hidden. If this parameter is TS_RT_OPAQUE, the text run is a private data type embedded in the text by application or text service that implements the ITextStore interface.</para>
-    </summary>
+    <summary>Specifies the text run type. If this parameter is TS_RT_PLAIN, the text run is visible. If this parameter is TS_RT_HIDDEN, the text run is hidden. If this parameter is TS_RT_OPAQUE, the text run is a private data type embedded in the text by application or text service that implements the ITextStore interface.</summary>
   </member>
 </doc>

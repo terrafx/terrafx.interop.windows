@@ -44,7 +44,7 @@ public partial struct DEVICE_DSM_PHYSICAL_ADDRESSES_OUTPUT
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

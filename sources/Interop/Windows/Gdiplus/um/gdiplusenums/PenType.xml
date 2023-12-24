@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PenType">
+    <summary>The <b>PenType</b> enumeration indicates the type of pattern, texture, or gradient that a pen draws.</summary>
+  </member>
+  <member name="PenType.PenTypeSolidColor">
+    <summary>Indicates that the pen draws with a solid color.</summary>
+  </member>
+  <member name="PenType.PenTypeHatchFill">
+    <summary>Indicates that the pen draws with a hatch pattern that is specified by a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-hatchbrush">HatchBrush</a> object.</summary>
+  </member>
+  <member name="PenType.PenTypeTextureFill">
+    <summary>Indicates that the pen draws with a texture that is specified by a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-texturebrush">TextureBrush</a> object.</summary>
+  </member>
+  <member name="PenType.PenTypePathGradient">
+    <summary>Indicates that the pen draws with a color gradient that is specified by a<a href="https://docs.microsoft.com//windows/desktop/api/gdipluspath/nl-gdipluspath-pathgradientbrush">PathGradientBrush</a> object.</summary>
+  </member>
+  <member name="PenType.PenTypeLinearGradient">
+    <summary>Indicates that the pen draws with a color gradient that is specified by a<a href="https://docs.microsoft.com//windows/desktop/api/gdiplusbrush/nl-gdiplusbrush-lineargradientbrush">LinearGradientBrush</a> object.</summary>
+  </member>
+  <member name="PenType.PenTypeUnknown">
+    <summary>Indicates that the pen type is unknown.</summary>
+  </member>
+</doc>

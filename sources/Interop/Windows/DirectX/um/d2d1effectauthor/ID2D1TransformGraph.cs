@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, uint>)(lpVtbl[1]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, uint>)(lpVtbl[1]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, uint>)(lpVtbl[2]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, uint>)(lpVtbl[2]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.GetInputCount"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [return: NativeTypeName("UINT32")]
     public uint GetInputCount()
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, uint>)(lpVtbl[3]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, uint>)(lpVtbl[3]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.SetSingleTransformNode"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [VtblIndex(4)]
     public HRESULT SetSingleTransformNode(ID2D1TransformNode* node)
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[4]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[4]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
     }
 
     /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.AddNode"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [VtblIndex(5)]
     public HRESULT AddNode(ID2D1TransformNode* node)
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[5]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[5]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
     }
 
     /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.RemoveNode"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [VtblIndex(6)]
     public HRESULT RemoveNode(ID2D1TransformNode* node)
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[6]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[6]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
     }
 
     /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.SetOutputNode"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [VtblIndex(7)]
     public HRESULT SetOutputNode(ID2D1TransformNode* node)
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[7]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, ID2D1TransformNode*, int>)(lpVtbl[7]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), node);
     }
 
     /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.ConnectNode"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [VtblIndex(8)]
     public HRESULT ConnectNode(ID2D1TransformNode* fromNode, ID2D1TransformNode* toNode, [NativeTypeName("UINT32")] uint toNodeInputIndex)
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, ID2D1TransformNode*, ID2D1TransformNode*, uint, int>)(lpVtbl[8]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), fromNode, toNode, toNodeInputIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, ID2D1TransformNode*, ID2D1TransformNode*, uint, int>)(lpVtbl[8]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), fromNode, toNode, toNodeInputIndex);
     }
 
     /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.ConnectToEffectInput"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [VtblIndex(9)]
     public HRESULT ConnectToEffectInput([NativeTypeName("UINT32")] uint toEffectInputIndex, ID2D1TransformNode* node, [NativeTypeName("UINT32")] uint toNodeInputIndex)
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, uint, ID2D1TransformNode*, uint, int>)(lpVtbl[9]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), toEffectInputIndex, node, toNodeInputIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, uint, ID2D1TransformNode*, uint, int>)(lpVtbl[9]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), toEffectInputIndex, node, toNodeInputIndex);
     }
 
     /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.Clear"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [VtblIndex(10)]
     public void Clear()
     {
-        ((delegate* unmanaged<ID2D1TransformGraph*, void>)(lpVtbl[10]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, void>)(lpVtbl[10]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1TransformGraph.xml' path='doc/member[@name="ID2D1TransformGraph.SetPassthroughGraph"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
     [VtblIndex(11)]
     public HRESULT SetPassthroughGraph([NativeTypeName("UINT32")] uint effectInputIndex)
     {
-        return ((delegate* unmanaged<ID2D1TransformGraph*, uint, int>)(lpVtbl[11]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), effectInputIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1TransformGraph*, uint, int>)(lpVtbl[11]))((ID2D1TransformGraph*)Unsafe.AsPointer(ref this), effectInputIndex);
     }
 
     public interface Interface : IUnknown.Interface
@@ -155,39 +155,39 @@ public unsafe partial struct ID2D1TransformGraph : ID2D1TransformGraph.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("UINT32 () const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetInputCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetInputCount;
 
         [NativeTypeName("HRESULT (ID2D1TransformNode *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1TransformNode*, int> SetSingleTransformNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1TransformNode*, int> SetSingleTransformNode;
 
         [NativeTypeName("HRESULT (ID2D1TransformNode *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1TransformNode*, int> AddNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1TransformNode*, int> AddNode;
 
         [NativeTypeName("HRESULT (ID2D1TransformNode *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1TransformNode*, int> RemoveNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1TransformNode*, int> RemoveNode;
 
         [NativeTypeName("HRESULT (ID2D1TransformNode *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1TransformNode*, int> SetOutputNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1TransformNode*, int> SetOutputNode;
 
         [NativeTypeName("HRESULT (ID2D1TransformNode *, ID2D1TransformNode *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1TransformNode*, ID2D1TransformNode*, uint, int> ConnectNode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1TransformNode*, ID2D1TransformNode*, uint, int> ConnectNode;
 
         [NativeTypeName("HRESULT (UINT32, ID2D1TransformNode *, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ID2D1TransformNode*, uint, int> ConnectToEffectInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ID2D1TransformNode*, uint, int> ConnectToEffectInput;
 
         [NativeTypeName("void () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Clear;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Clear;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetPassthroughGraph;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetPassthroughGraph;
     }
 }

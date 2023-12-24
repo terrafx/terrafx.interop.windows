@@ -3,38 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioMute.GetMute">
-    <summary>
-      <para>The <b>GetMute</b> method gets the current state (enabled or disabled) of the mute control.</para>
-    </summary>
-    <param name="pbMuted">
-      <para>Pointer to a <b>BOOL</b> variable into which the method writes the current state of the mute control. If the state is <b>TRUE</b>, muting is enabled. If <b>FALSE</b>, it is disabled.</para>
-    </param>
+    <summary>The <b>GetMute</b> method gets the current state (enabled or disabled) of the mute control.</summary>
+    <param name="pbMuted">Pointer to a <b>BOOL</b> variable into which the method writes the current state of the mute control. If the state is <b>TRUE</b>, muting is enabled. If <b>FALSE</b>, it is disabled.</param>
     <returns>
       <list type="table">
         <listheader>
-          <description>Return code
-</description>
-          <description>Description
-</description>
+          <description>Return code</description>
+          <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>E_POINTER</description>
           <description>Pointer <i>pbMuted</i> is <b>NULL</b>.</description>
-        </item>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAudioMute Interface" />
   </member>
   <member name="IAudioMute.SetMute">
-    <summary>
-      <para>The <b>SetMute</b> method enables or disables the mute control.</para>
-    </summary>
-    <param name="bMuted">
-      <para>The new muting state. If <i>bMuted</i> is <b>TRUE</b> (nonzero), the method enables muting. If <b>FALSE</b>, the method disables muting.</para>
-    </param>
-    <param name="pguidEventContext">
-      <para>Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetMute</b> call changes the state of the mute control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</para>
-    </param>
+    <summary>The <b>SetMute</b> method enables or disables the mute control.</summary>
+    <param name="bMuted">The new muting state. If <i>bMuted</i> is <b>TRUE</b> (nonzero), the method enables muting. If <b>FALSE</b>, the method disables muting.</param>
+    <param name="pguidEventContext">Context value for the <see cref="IControlChangeNotify.OnNotify" /> method. This parameter points to an event-context GUID. If the <b>SetMute</b> call changes the state of the mute control, all clients that have registered <see cref="IControlChangeNotify" /> interfaces with that control receive notifications. In its implementation of the <b>OnNotify</b> method, a client can inspect the event-context GUID to discover whether it or another client is the source of the control-change event. If the caller supplies a <b>NULL</b> pointer for this parameter, the client's notification method receives a <b>NULL</b> context pointer.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -42,27 +29,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAudioMute Interface" />
   </member>
   <member name="IAudioMute">
     <summary>
       <para>The <b>IAudioMute</b> interface provides access to a hardware mute control. The client obtains a reference to the <b>IAudioMute</b> interface of a subunit by calling the <see cref="IPart.Activate" /> method with parameter <i>refiid</i> set to REFIID IID_IAudioMute. The call to <b>IPart.Activate</b> succeeds only if the subunit supports the <b>IAudioMute</b> interface. Only a subunit object that represents a hardware mute control function will support this interface.</para>
       <para>Most Windows audio adapter drivers support the Windows Driver Model (WDM) and use kernel-streaming (KS) properties to represent the hardware control parameters in subunits (referred to as KS nodes). The <b>IAudioMute</b> interface provides convenient access to the KSPROPERTY_AUDIO_MUTE property of a subunit that has a subtype GUID value of KSNODETYPE_MUTE. To obtain the subtype GUID of a subunit, call the <see cref="IPart.GetSubType" /> method. For more information about KS properties and KS node types, see the Windows DDK documentation.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IPart.Activate" />
   </member>
 </doc>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IWeakReference.Resolve">
+    <summary>Resolves a weak reference by returning a strong reference to the object.</summary>
+    <param name="riid">A reference to the interface identifier (IID) of the object.</param>
+    <param name="objectReference">A strong reference to the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IWeakReference.Resolve">
+    <summary>Resolves a weak reference by returning a strong reference to the implementing object.</summary>
+    <param name="objectReference">A strong reference to the object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IWeakReference">
+    <summary>
+      <para>Represents a weak reference to an object.</para>
+      <blockquote>
+        <para>[!NOTE] With only a few exceptions, weak reference support is on by default for Windows Runtime types that you consume or author in <a href="https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>, WRL, and C++/CX. <b>Windows.UI.Composition</b> and <b>Windows.Devices.Input.PenDevice</b> are examples of exceptions—that is, namespaces where weak reference support is <i>not</i> on for those types.</para>
+        <para>If you're authoring types, then see <a href="https://docs.microsoft.com//windows/uwp/cpp-and-winrt-apis/weak-references#weak-references-in-cwinrt">Weak references in C++/WinRT</a>.</para>
+      </blockquote>
+    </summary>
+  </member>
+</doc>

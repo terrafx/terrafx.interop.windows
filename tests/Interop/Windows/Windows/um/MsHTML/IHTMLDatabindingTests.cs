@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLDatabindingTests
     {
         Assert.That(typeof(IHTMLDatabinding).GUID, Is.EqualTo(IID_IHTMLDatabinding));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLDatabinding" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLDatabinding>(), Is.EqualTo(sizeof(IHTMLDatabinding)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLDatabinding" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLDatabinding).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLDatabinding" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLDatabinding), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLDatabinding), Is.EqualTo(4));
-        }
-    }
 }

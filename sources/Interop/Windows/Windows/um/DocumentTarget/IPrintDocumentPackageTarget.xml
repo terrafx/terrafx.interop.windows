@@ -3,53 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPrintDocumentPackageTarget.Cancel">
-    <summary>
-      <para>Cancels the current print job.</para>
-    </summary>
-    <returns>
-      <para>If the <b>Cancel</b> method completes successfully, it returns an S_OK. Otherwise it returns the appropriate HRESULT error code.</para>
-    </returns>
-    <seealso cref="IPrintDocumentPackageTarget" />
+    <summary>Cancels the current print job.</summary>
+    <returns>If the <b>Cancel</b> method completes successfully, it returns an S_OK. Otherwise it returns the appropriate HRESULT error code.</returns>
   </member>
   <member name="IPrintDocumentPackageTarget.GetPackageTarget">
-    <summary>
-      <para>Retrieves the pointer to the specific document package target, which allows the client to add a document with the given target type. Clients can call this method multiple times but they always have to use  the same target ID.</para>
-    </summary>
-    <param name="guidTargetType">
-      <para>The target type GUID obtained from <see cref="GetPackageTargetTypes" />.</para>
-    </param>
-    <param name="riid">
-      <para>The identifier of the interface being requested.</para>
-    </param>
-    <param name="ppvTarget">
-      <para>The requested document target interface. The returned pointer is a pointer to an <see cref="IXpsDocumentPackageTarget" /> interface.</para>
-    </param>
-    <returns>
-      <para>If the <b>GetPackageTarget</b> method completes successfully, it returns an S_OK. Otherwise it returns the appropriate HRESULT error code.</para>
-    </returns>
-    <seealso cref="IPrintDocumentPackageTarget" />
+    <summary>Retrieves the pointer to the specific document package target, which allows the client to add a document with the given target type. Clients can call this method multiple times but they always have to use the same target ID.</summary>
+    <param name="guidTargetType">The target type GUID obtained from <see cref="GetPackageTargetTypes" />.</param>
+    <param name="riid">The identifier of the interface being requested.</param>
+    <param name="ppvTarget">The requested document target interface. The returned pointer is a pointer to an <see cref="IXpsDocumentPackageTarget" /> interface.</param>
+    <returns>If the <b>GetPackageTarget</b> method completes successfully, it returns an S_OK. Otherwise it returns the appropriate HRESULT error code.</returns>
   </member>
   <member name="IPrintDocumentPackageTarget.GetPackageTargetTypes">
-    <summary>
-      <para>Enumerates the supported target types.</para>
-    </summary>
-    <param name="targetCount">
-      <para>The number of supported target types.</para>
-    </param>
-    <param name="targetTypes">
-      <para>The array of supported target types. An array of GUIDs.</para>
-    </param>
-    <returns>
-      <para>If the <b>GetPackageTargetTypes</b> method completes successfully, it returns an S_OK. Otherwise it returns the appropriate HRESULT error code.</para>
-    </returns>
-    <remarks>
-      <para>In the case of a multi-format driver, the first GUID returned in the <i>targetTypes</i> array is the XPS format preferred by the driver.</para>
-    </remarks>
-    <seealso cref="IPrintDocumentPackageTarget" />
-  </member>
-  <member name="IPrintDocumentPackageTarget">
-    <summary>
-      <para>Allows users to enumerate the supported package target types and to create one with a given type ID. <b>IPrintDocumentPackageTarget</b> also supports the tracking of the package printing progress and cancelling.</para>
-    </summary>
+    <summary>Enumerates the supported target types.</summary>
+    <param name="targetCount">The number of supported target types.</param>
+    <param name="targetTypes">The array of supported target types. An array of GUIDs.</param>
+    <returns>If the <b>GetPackageTargetTypes</b> method completes successfully, it returns an S_OK. Otherwise it returns the appropriate HRESULT error code.</returns>
   </member>
 </doc>

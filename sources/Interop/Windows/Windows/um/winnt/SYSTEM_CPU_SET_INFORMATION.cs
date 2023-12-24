@@ -22,7 +22,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
     public CPU_SET_INFORMATION_TYPE Type;
 
     /// <include file='SYSTEM_CPU_SET_INFORMATION.xml' path='doc/member[@name="SYSTEM_CPU_SET_INFORMATION.Anonymous"]/*' />
-    [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:13547:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L13567_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuSet"]/*' />
@@ -42,7 +42,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.CpuSet"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:13548:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L13568_C9")]
         public _CpuSet_e__Struct CpuSet;
 
         /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct"]/*' />
@@ -72,11 +72,11 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte EfficiencyClass;
 
             /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Anonymous1"]/*' />
-            [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:13556:13)")]
+            [NativeTypeName("__AnonymousRecord_winnt_L13576_C13")]
             public _Anonymous1_e__Union Anonymous1;
 
             /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.Anonymous2"]/*' />
-            [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:13573:13)")]
+            [NativeTypeName("__AnonymousRecord_winnt_L13593_C13")]
             public _Anonymous2_e__Union Anonymous2;
 
             /// <include file='_CpuSet_e__Struct.xml' path='doc/member[@name="_CpuSet_e__Struct.AllocationTag"]/*' />
@@ -98,7 +98,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte Parked
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.Parked;
                 }
@@ -114,7 +114,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte Allocated
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.Allocated;
                 }
@@ -130,7 +130,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte AllocatedToTargetProcess
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.AllocatedToTargetProcess;
                 }
@@ -146,7 +146,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte RealTime
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.RealTime;
                 }
@@ -162,7 +162,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
             public byte ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return Anonymous1.Anonymous.ReservedFlags;
                 }
@@ -206,7 +206,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
 
                 /// <include file='_Anonymous1_e__Union.xml' path='doc/member[@name="_Anonymous1_e__Union.Anonymous"]/*' />
                 [FieldOffset(0)]
-                [NativeTypeName("_SYSTEM_CPU_SET_INFORMATION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:13564:17)")]
+                [NativeTypeName("__AnonymousRecord_winnt_L13584_C17")]
                 public _Anonymous_e__Struct Anonymous;
 
                 /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -219,7 +219,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte Parked
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)(_bitfield & 0x1u);
                         }
@@ -236,7 +236,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte Allocated
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)((_bitfield >> 1) & 0x1u);
                         }
@@ -253,7 +253,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte AllocatedToTargetProcess
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)((_bitfield >> 2) & 0x1u);
                         }
@@ -270,7 +270,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte RealTime
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)((_bitfield >> 3) & 0x1u);
                         }
@@ -287,7 +287,7 @@ public partial struct SYSTEM_CPU_SET_INFORMATION
                     public byte ReservedFlags
                     {
                         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                        get
+                        readonly get
                         {
                             return (byte)((_bitfield >> 4) & 0xFu);
                         }

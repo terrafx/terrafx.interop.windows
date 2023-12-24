@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT">
+    <summary>Specifies indices for arrays of per component histogram information.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT.D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_Y">
+    <summary>If the format is a YUV format, indicates a histogram for the Y component.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT.D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_U">
+    <summary>If the format is a YUV format, indicates a histogram for the U component.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT.D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_V">
+    <summary>If the format is a YUV format, indicates a histogram for the V component.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT.D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_R">
+    <summary>If the format is an RGB/BGR format, indicates a histogram for the R component.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT.D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_G">
+    <summary>If the format is an RGB/BGR format, indicates a histogram for the G component.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT.D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_B">
+    <summary>If the format is an RGB/BGR format, indicates a histogram for the B component.</summary>
+  </member>
+  <member name="D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT.D3D12_VIDEO_DECODE_HISTOGRAM_COMPONENT_A">
+    <summary>If the format has an alpha channel, indicates a histogram for the A component.</summary>
+  </member>
+</doc>

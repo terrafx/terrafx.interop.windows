@@ -3,44 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_PANOSE_ASPECT_RATIO">
-    <summary>
-      <para>The <b>DWRITE_PANOSE_ASPECT_RATIO</b> enumeration contains values that specify info about the ratio between width and height of the character face.</para>
-    </summary>
-    <seealso cref="DWRITE_PANOSE" />
+    <summary>The <b>DWRITE_PANOSE_ASPECT_RATIO</b> enumeration contains values that specify info about the ratio between width and height of the character face.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_ANY">
-    <summary>
-      <para>Any aspect ratio.</para>
-    </summary>
+    <summary>Any aspect ratio.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_NO_FIT">
-    <summary>
-      <para>No fit for aspect ratio.</para>
-    </summary>
+    <summary>No fit for aspect ratio.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_VERY_CONDENSED">
-    <summary>
-      <para>Very condensed aspect ratio.</para>
-    </summary>
+    <summary>Very condensed aspect ratio.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_CONDENSED">
-    <summary>
-      <para>Condensed aspect ratio.</para>
-    </summary>
+    <summary>Condensed aspect ratio.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_NORMAL">
-    <summary>
-      <para>Normal aspect ratio.</para>
-    </summary>
+    <summary>Normal aspect ratio.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_EXPANDED">
-    <summary>
-      <para>Expanded aspect ratio.</para>
-    </summary>
+    <summary>Expanded aspect ratio.</summary>
   </member>
   <member name="DWRITE_PANOSE_ASPECT_RATIO.DWRITE_PANOSE_ASPECT_RATIO_VERY_EXPANDED">
-    <summary>
-      <para>Very expanded aspect ratio.</para>
-    </summary>
+    <summary>Very expanded aspect ratio.</summary>
   </member>
 </doc>

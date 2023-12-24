@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Device4.CreateCommandList1">
+    <summary>Creates a command list in the closed state. Also see <see cref="ID3D12Device.CreateCommandList" />.</summary>
+    <param name="nodeMask">For single-GPU operation, set this to zero. If there are multiple GPU nodes, then set a bit to identify the node (the device's physical adapter) for which to create the command list. Each bit in the mask corresponds to a single node. Only one bit must be set. Also see <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</param>
+    <param name="type">Specifies the type of command list to create.</param>
+    <param name="flags">Specifies creation flags.</param>
+    <param name="riid">A reference to the globally unique identifier (<b>GUID</b>) of the command list interface to return in <i>ppCommandList</i>.</param>
+    <param name="ppCommandList">A pointer to a memory block that receives a pointer to the <see cref="ID3D12CommandList" /> or <see cref="ID3D12GraphicsCommandList" /> interface for the command list.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the command list.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device4.CreateCommittedResource1">
+    <summary>Creates both a resource and an implicit heap (optionally for a protected session), such that the heap is big enough to contain the entire resource, and the resource is mapped to the heap. Also see <see cref="ID3D12Device.CreateCommittedResource" /> for a code example.</summary>
+    <param name="pHeapProperties">A pointer to a <b>D3D12_HEAP_PROPERTIES</b> structure that provides properties for the resource's heap.</param>
+    <param name="HeapFlags">Heap options, as a bitwise-OR'd combination of <b>D3D12_HEAP_FLAGS</b> enumeration constants.</param>
+    <param name="pDesc">A pointer to a <b>D3D12_RESOURCE_DESC</b> structure that describes the resource.</param>
+    <param name="InitialResourceState">
+      <para>The initial state of the resource, as a bitwise-OR'd combination of <b>D3D12_RESOURCE_STATES</b> enumeration constants.</para>
+      <para>When you create a resource together with a <see cref="D3D12_HEAP_TYPE_UPLOAD" /> heap, you must set <i>InitialResourceState</i> to <see cref="D3D12_RESOURCE_STATE_GENERIC_READ" />.</para>
+      <para>When you create a resource together with a <see cref="D3D12_HEAP_TYPE_READBACK" /> heap, you must set <i>InitialResourceState</i> to <see cref="D3D12_RESOURCE_STATE_COPY_DEST" />.</para>
+    </param>
+    <param name="pOptimizedClearValue">
+      <para>Specifies a <b>D3D12_CLEAR_VALUE</b> structure that describes the default value for a clear color.</para>
+      <para>
+        <i>pOptimizedClearValue</i> specifies a value for which clear operations are most optimal. When the created resource is a texture with either the <see cref="D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET" /> or <b>D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL</b> flags, you should choose the value with which the clear operation will most commonly be called. You can call the clear operation with other values, but those operations won't be as efficient as when the value matches the one passed in to resource creation.</para>
+      <para>When you use <see cref="D3D12_RESOURCE_DIMENSION_BUFFER" />, you must set <i>pOptimizedClearValue</i> to <code>nullptr</code>.</para>
+    </param>
+    <param name="pProtectedSession">An optional pointer to an object that represents a session for content protection. If provided, this session indicates that the resource should be protected. You can obtain an <b>ID3D12ProtectedResourceSession</b> by calling <see cref="ID3D12Device4.CreateProtectedResourceSession" />.</param>
+    <param name="riidResource">
+      <para>A reference to the globally unique identifier (<b>GUID</b>) of the resource interface to return in <i>ppvResource</i>.</para>
+      <para>While <i>riidResource</i> is most commonly the <b>GUID</b> of <see cref="ID3D12Resource" />, it may be the <b>GUID</b> of any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvResource">
+      <para>An optional pointer to a memory block that receives the requested interface pointer to the created resource object.</para>
+      <para>
+        <i>ppvResource</i> can be <code>nullptr</code>, to enable capability testing. When <i>ppvResource</i> is <code>nullptr</code>, no object is created, and <b>S_FALSE</b> is returned when <i>pDesc</i> is valid.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the resource.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device4.CreateHeap1">
+    <summary>Creates a heap (optionally for a protected session) that can be used with placed resources and reserved resources. Also see <see cref="ID3D12Device.CreateHeap" />.</summary>
+    <param name="pDesc">A pointer to a constant <b>D3D12_HEAP_DESC</b> structure that describes the heap.</param>
+    <param name="pProtectedSession">
+      <para>An optional pointer to an object that represents a session for content protection. If provided, this session indicates that the heap should be protected. You can obtain an <b>ID3D12ProtectedResourceSession</b> by calling <see cref="ID3D12Device4.CreateProtectedResourceSession" />.</para>
+      <para>A heap with a protected session can't be created with the <see cref="D3D12_HEAP_FLAG_SHARED_CROSS_ADAPTER" /> flag.</para>
+    </param>
+    <param name="riid">
+      <para>A reference to the globally unique identifier (<b>GUID</b>) of the heap interface to return in <i>ppvHeap</i>.</para>
+      <para>While <i>riidResource</i> is most commonly the <b>GUID</b> of <see cref="ID3D12Heap" />, it may be the <b>GUID</b> of any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvHeap">
+      <para>An optional pointer to a memory block that receives the requested interface pointer to the created heap object.</para>
+      <para>
+        <i>ppvHeap</i> can be <code>nullptr</code>, to enable capability testing. When <i>ppvHeap</i> is <code>nullptr</code>, no object is created, and <b>S_FALSE</b> is returned when <i>pDesc</i> is valid.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the heap.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device4.CreateProtectedResourceSession">
+    <summary>
+      <para>Creates an object that represents a session for content protection. You can then provide that session when you're creating resource or heap objects, to indicate that they should be protected.</para>
+      <blockquote>[!NOTE] Memory contents can't be transferred from a protected resource to an unprotected resource.</blockquote>
+    </summary>
+    <param name="pDesc">A pointer to a constant <b>D3D12_PROTECTED_RESOURCE_SESSION_DESC</b> structure, describing the session to create.</param>
+    <param name="riid">A reference to the globally unique identifier (<b>GUID</b>) of the <see cref="ID3D12ProtectedResourceSession" /> interface.</param>
+    <param name="ppSession">A pointer to a memory block that receives an <see cref="ID3D12ProtectedResourceSession" /> interface pointer to the created session object.</param>
+  </member>
+  <member name="ID3D12Device4.CreateReservedResource1">
+    <summary>
+      <para>Creates a resource (optionally for a protected session) that is reserved, and not yet mapped to any pages in a heap. Also see <see cref="ID3D12Device.CreateReservedResource" />.</para>
+      <blockquote>[!NOTE] Only tiles from heaps created with the same protected resource session can be mapped into a protected reserved resource.</blockquote>
+    </summary>
+    <param name="pDesc">A pointer to a <b>D3D12_RESOURCE_DESC</b> structure that describes the resource.</param>
+    <param name="InitialState">The initial state of the resource, as a bitwise-OR'd combination of <b>D3D12_RESOURCE_STATES</b> enumeration constants.</param>
+    <param name="pOptimizedClearValue">
+      <para>Specifies a <b>D3D12_CLEAR_VALUE</b> structure that describes the default value for a clear color.</para>
+      <para>
+        <i>pOptimizedClearValue</i> specifies a value for which clear operations are most optimal. When the created resource is a texture with either the <see cref="D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET" /> or <b>D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL</b> flags, you should choose the value with which the clear operation will most commonly be called. You can call the clear operation with other values, but those operations won't be as efficient as when the value matches the one passed in to resource creation.</para>
+      <para>When you use <see cref="D3D12_RESOURCE_DIMENSION_BUFFER" />, you must set <i>pOptimizedClearValue</i> to <code>nullptr</code>.</para>
+    </param>
+    <param name="pProtectedSession">An optional pointer to an object that represents a session for content protection. If provided, this session indicates that the resource should be protected. You can obtain an <b>ID3D12ProtectedResourceSession</b> by calling <see cref="ID3D12Device4.CreateProtectedResourceSession" />.</param>
+    <param name="riid">
+      <para>A reference to the globally unique identifier (<b>GUID</b>) of the resource interface to return in <i>ppvResource</i>. See <b>Remarks</b>.</para>
+      <para>While <i>riidResource</i> is most commonly the <b>GUID</b> of <see cref="ID3D12Resource" />, it may be the <b>GUID</b> of any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvResource">
+      <para>An optional pointer to a memory block that receives the requested interface pointer to the created resource object.</para>
+      <para>
+        <i>ppvResource</i> can be <code>nullptr</code>, to enable capability testing. When <i>ppvResource</i> is <code>nullptr</code>, no object is created, and <b>S_FALSE</b> is returned when <i>pDesc</i> is valid.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the resource.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device4.GetResourceAllocationInfo1">
+    <summary>
+      <para>Gets rich info about the size and alignment of memory required for a collection of resources on this adapter. Also see <see cref="ID3D12Device.GetResourceAllocationInfo" />.</para>
+      <para>In addition to the <see cref="D3D12_RESOURCE_ALLOCATION_INFO" /> returned from the method, this version also returns an array of <see cref="D3D12_RESOURCE_ALLOCATION_INFO1" /> structures, which provide additional details for each resource description passed as input. See the <i>pResourceAllocationInfo1</i> parameter.</para>
+    </summary>
+    <param name="visibleMask">For single-GPU operation, set this to zero. If there are multiple GPU nodes, then set bits to identify the nodes (the device's physical adapters). Each bit in the mask corresponds to a single node. Also see <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</param>
+    <param name="numResourceDescs">The number of resource descriptors in the <i>pResourceDescs</i> array. This is also the size (the number of elements in) <i>pResourceAllocationInfo1</i>.</param>
+    <param name="pResourceDescs">An array of <b>D3D12_RESOURCE_DESC</b> structures that described the resources to get info about.</param>
+    <param name="pResourceAllocationInfo1">An array of <see cref="D3D12_RESOURCE_ALLOCATION_INFO1" /> structures, containing additional details for each resource description passed as input. This makes it simpler for your application to allocate a heap for multiple resources, and without manually computing offsets for where each resource should be placed.</param>
+    <returns>A <see cref="D3D12_RESOURCE_ALLOCATION_INFO" /> structure that provides info about video memory allocated for the specified array of resources.</returns>
+  </member>
+  <member name="ID3D12Device4">
+    <summary>
+      <para>Represents a virtual adapter.</para>
+      <para>This interface extends <see cref="ID3D12Device3" />.</para>
+    </summary>
+  </member>
+</doc>

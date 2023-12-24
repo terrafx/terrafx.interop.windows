@@ -3,39 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SOCKADDR_IN">
-    <summary>
-      <para>The SOCKADDR_IN structure specifies a transport address and port for the
-<a href="https://docs.microsoft.com//windows-hardware/drivers/network/af-inet">AF_INET</a> address family.</para>
-    </summary>
-    <remarks>
-      <para>All of the data in the SOCKADDR_IN structure, except for the address family, must be specified in
-network-byte-order (big-endian).</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/network/af-inet">AF_INET</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff556972(v=vs.85)">IN_ADDR</seealso>
-    <seealso cref="SOCKADDR" />
-    <seealso cref="SOCKADDR_STORAGE" />
+    <summary>The SOCKADDR_IN structure specifies a transport address and port for the<a href="https://docs.microsoft.com//windows-hardware/drivers/network/af-inet">AF_INET</a> address family.</summary>
   </member>
   <member name="SOCKADDR_IN.sin_family">
-    <summary>
-      <para>The address family for the transport address. This member should always be set to AF_INET.</para>
-    </summary>
+    <summary>The address family for the transport address. This member should always be set to AF_INET.</summary>
   </member>
   <member name="SOCKADDR_IN.sin_port">
-    <summary>
-      <para>A transport protocol port number.</para>
-    </summary>
+    <summary>A transport protocol port number.</summary>
   </member>
   <member name="SOCKADDR_IN.sin_addr">
-    <summary>
-      <para>An
-<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff556972(v=vs.85)">IN_ADDR</a> structure that contains an IPv4 transport
-address.</para>
-    </summary>
+    <summary>An<a href="https://docs.microsoft.com//previous-versions/windows/hardware/drivers/ff556972(v=vs.85)">IN_ADDR</a> structure that contains an IPv4 transport address.</summary>
   </member>
   <member name="SOCKADDR_IN.sin_zero">
-    <summary>
-      <para>Reserved for system use. A WSK application should set the contents of this array to zero.</para>
-    </summary>
+    <summary>Reserved for system use. A WSK application should set the contents of this array to zero.</summary>
   </member>
 </doc>

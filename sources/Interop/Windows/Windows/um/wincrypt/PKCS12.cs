@@ -90,7 +90,7 @@ public static partial class PKCS12
     [NativeTypeName("#define PKCS12_PBES2_ALG_AES256_SHA256 L\"AES256-SHA256\"")]
     public const string PKCS12_PBES2_ALG_AES256_SHA256 = "AES256-SHA256";
 
-    [NativeTypeName("#define PKCS12_CONFIG_REGPATH L\"Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\PFX\"")]
+    [NativeTypeName("#define PKCS12_CONFIG_REGPATH L\"Software\\Microsoft\\Windows\\CurrentVersion\\PFX\"")]
     public const string PKCS12_CONFIG_REGPATH = "Software\\Microsoft\\Windows\\CurrentVersion\\PFX";
 
     [NativeTypeName("#define PKCS12_ENCRYPT_CERTIFICATES_VALUE_NAME L\"EncryptCertificates\"")]

@@ -3,39 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LIBRARYOPTIONFLAGS">
-    <summary>
-      <para>Specifies the library options.</para>
-    </summary>
-    <remarks>
-      <h3>Used By</h3>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IShellLibrary.GetOptions" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="IShellLibrary.SetOptions" />
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IShellLibrary" />
+    <summary>Specifies the library options.</summary>
   </member>
   <member name="LIBRARYOPTIONFLAGS.LOF_DEFAULT">
-    <summary>
-      <para>No library options are set.</para>
-    </summary>
+    <summary>No library options are set.</summary>
   </member>
   <member name="LIBRARYOPTIONFLAGS.LOF_PINNEDTONAVPANE">
-    <summary>
-      <para>Pin the library to the navigation pane.</para>
-    </summary>
+    <summary>Pin the library to the navigation pane.</summary>
   </member>
   <member name="LIBRARYOPTIONFLAGS.LOF_MASK_ALL">
-    <summary>
-      <para>All valid library options flags.</para>
-    </summary>
+    <summary>All valid library options flags.</summary>
   </member>
 </doc>

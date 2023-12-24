@@ -26,7 +26,7 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteColorGlyphRunEnumerator1*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, uint>)(lpVtbl[1]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteColorGlyphRunEnumerator1*, uint>)(lpVtbl[1]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, uint>)(lpVtbl[2]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteColorGlyphRunEnumerator1*, uint>)(lpVtbl[2]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDWriteColorGlyphRunEnumerator.MoveNext" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
     [VtblIndex(3)]
     public HRESULT MoveNext(BOOL* hasRun)
     {
-        return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, BOOL*, int>)(lpVtbl[3]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), hasRun);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteColorGlyphRunEnumerator1*, BOOL*, int>)(lpVtbl[3]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), hasRun);
     }
 
     /// <inheritdoc cref="IDWriteColorGlyphRunEnumerator.GetCurrentRun" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
     [VtblIndex(4)]
     public HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN **")] DWRITE_COLOR_GLYPH_RUN** colorGlyphRun)
     {
-        return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN**, int>)(lpVtbl[4]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), colorGlyphRun);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN**, int>)(lpVtbl[4]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), colorGlyphRun);
     }
 
     /// <include file='IDWriteColorGlyphRunEnumerator1.xml' path='doc/member[@name="IDWriteColorGlyphRunEnumerator1.GetCurrentRun"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
     [VtblIndex(5)]
     public HRESULT GetCurrentRun([NativeTypeName("const DWRITE_COLOR_GLYPH_RUN1 **")] DWRITE_COLOR_GLYPH_RUN1** colorGlyphRun)
     {
-        return ((delegate* unmanaged<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN1**, int>)(lpVtbl[5]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), colorGlyphRun);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteColorGlyphRunEnumerator1*, DWRITE_COLOR_GLYPH_RUN1**, int>)(lpVtbl[5]))((IDWriteColorGlyphRunEnumerator1*)Unsafe.AsPointer(ref this), colorGlyphRun);
     }
 
     public interface Interface : IDWriteColorGlyphRunEnumerator.Interface
@@ -81,21 +81,21 @@ public unsafe partial struct IDWriteColorGlyphRunEnumerator1 : IDWriteColorGlyph
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> MoveNext;
 
         [NativeTypeName("HRESULT (const DWRITE_COLOR_GLYPH_RUN **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_COLOR_GLYPH_RUN**, int> GetCurrentRun;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_COLOR_GLYPH_RUN**, int> GetCurrentRun;
 
         [NativeTypeName("HRESULT (const DWRITE_COLOR_GLYPH_RUN1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DWRITE_COLOR_GLYPH_RUN1**, int> GetCurrentRun1;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DWRITE_COLOR_GLYPH_RUN1**, int> GetCurrentRun1;
     }
 }

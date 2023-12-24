@@ -19,32 +19,4 @@ public static unsafe partial class IMFSourceOpenMonitorTests
     {
         Assert.That(typeof(IMFSourceOpenMonitor).GUID, Is.EqualTo(IID_IMFSourceOpenMonitor));
     }
-
-    /// <summary>Validates that the <see cref="IMFSourceOpenMonitor" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSourceOpenMonitor>(), Is.EqualTo(sizeof(IMFSourceOpenMonitor)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceOpenMonitor" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSourceOpenMonitor).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSourceOpenMonitor" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSourceOpenMonitor), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSourceOpenMonitor), Is.EqualTo(4));
-        }
-    }
 }

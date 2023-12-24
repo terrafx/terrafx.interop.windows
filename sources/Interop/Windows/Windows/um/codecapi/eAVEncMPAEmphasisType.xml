@@ -4,29 +4,20 @@
 <doc>
   <member name="eAVEncMPAEmphasisType">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the type of de-emphasis filter that should be used when decoding. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencmpaemphasistype-property">AVEncMPAEmphasisType</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_None">
-    <summary>
-      <para>None.</para>
-    </summary>
+    <summary>None.</summary>
   </member>
   <member name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_50_15">
-    <summary>
-      <para>50/15 Î¼s.</para>
-    </summary>
+    <summary>50/15 Î¼s.</summary>
   </member>
   <member name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="eAVEncMPAEmphasisType.eAVEncMPAEmphasisType_CCITT_J17">
-    <summary>
-      <para>CCITT J.17.</para>
-    </summary>
+    <summary>CCITT J.17.</summary>
   </member>
 </doc>

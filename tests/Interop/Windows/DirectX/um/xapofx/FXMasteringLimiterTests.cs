@@ -19,25 +19,4 @@ public static unsafe partial class FXMasteringLimiterTests
     {
         Assert.That(typeof(FXMasteringLimiter).GUID, Is.EqualTo(CLSID_FXMasteringLimiter));
     }
-
-    /// <summary>Validates that the <see cref="FXMasteringLimiter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<FXMasteringLimiter>(), Is.EqualTo(sizeof(FXMasteringLimiter)));
-    }
-
-    /// <summary>Validates that the <see cref="FXMasteringLimiter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(FXMasteringLimiter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="FXMasteringLimiter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(FXMasteringLimiter), Is.EqualTo(1));
-    }
 }

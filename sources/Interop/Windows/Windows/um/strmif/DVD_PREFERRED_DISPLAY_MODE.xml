@@ -4,73 +4,20 @@
 <doc>
   <member name="DVD_PREFERRED_DISPLAY_MODE">
     <summary>
-      <para>
-        <b>Note</b>  Deprecated.
-Indicates the user's preferred window aspect ratio and conversion method.</para>
-    </summary>
-    <remarks>
-      <para>The <b>DVD_PREFERRED_DISPLAY_MODE</b> enumeration indicates the user's preferred window aspect ratio and preferred method of conversion of 16 x 9 content to a 4 x 3 window aspect ratio. Pan-scan and letterboxing are the two conversion methods. Displaying a video at the largest possible size inside the display window without any cropping or stretching is called displaying in letterbox format. <i>Pan-scan</i> is specifically cropping a 16 x 9 video for display in a 4 x 3 window using parameters defined by the video author.</para>
-      <para>This enumerated type indicates a preference of conversion mechanisms because some content can only be displayed using one of these methods. Content that is 4 x 3 is always converted to a 16 x 9 window by using sideboxing, where black bars are added to the right and left sides of the display instead of the top and bottom of the display as in the 16 x 9 to 4 x 3 conversion using letterboxing.</para>
-      <para>The following table shows the conversion method used between the actual content type listed in the first column, and the user display preference setting, indicated by one of the other columns.</para>
-      <list type="table">
-        <listheader>
-          <description>Actual content type
-</description>
-          <description>16 x 9
-</description>
-          <description>4 x 3 pan-scan
-</description>
-          <description>4 x 3 letterbox
-</description>
-        </listheader>
-        <item>
-          <description>4 x 3</description>
-          <description>Sideboxing</description>
-          <description>None</description>
-          <description>None</description>
-        </item>
-        <item>
-          <description>16 x 9 letterbox only</description>
-          <description>None</description>
-          <description>Letterbox</description>
-          <description>Letterbox</description>
-        </item>
-        <item>
-          <description>16 x 9 pan-scan only</description>
-          <description>None</description>
-          <description>Pan-scan</description>
-          <description>Pan-scan</description>
-        </item>
-        <item>
-          <description>16 x 9 pan-scan or letterbox</description>
-          <description>None</description>
-          <description>Pan-scan</description>
-          <description>Letterbox</description>
-        </item>
-      </list>
-      <para>The native window size used is always the user's preferred size.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-enumerated-types">DirectShow Enumerated Types</seealso>
-    <seealso cref="IDvdControl.VideoModePreferrence" />
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
+      <div>
+        <b>Note</b>  Deprecated.</div>Indicates the user's preferred window aspect ratio and conversion method.</summary>
   </member>
   <member name="DVD_PREFERRED_DISPLAY_MODE.DISPLAY_CONTENT_DEFAULT">
-    <summary>
-      <para>Use the default window size and content type.</para>
-    </summary>
+    <summary>Use the default window size and content type.</summary>
   </member>
   <member name="DVD_PREFERRED_DISPLAY_MODE.DISPLAY_16x9">
-    <summary>
-      <para>Use a 16 x 9 window.</para>
-    </summary>
+    <summary>Use a 16 x 9 window.</summary>
   </member>
   <member name="DVD_PREFERRED_DISPLAY_MODE.DISPLAY_4x3_PANSCAN_PREFERRED">
-    <summary>
-      <para>Use a 4 x 3 window and convert to pan-scan, if possible.</para>
-    </summary>
+    <summary>Use a 4 x 3 window and convert to pan-scan, if possible.</summary>
   </member>
   <member name="DVD_PREFERRED_DISPLAY_MODE.DISPLAY_4x3_LETTERBOX_PREFERRED">
-    <summary>
-      <para>Use a 4 x 3 window and convert to letterbox, if possible.</para>
-    </summary>
+    <summary>Use a 4 x 3 window and convert to letterbox, if possible.</summary>
   </member>
 </doc>

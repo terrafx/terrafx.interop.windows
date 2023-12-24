@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfInputProcessorProfiles.ActivateLanguageProfile">
-    <summary>
-      <para>Sets the active text service for a specific language.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the CLSID of the text service to make active.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies which language to set the default profile for. This method fails if this is not the currently active language.</para>
-    </param>
-    <param name="guidProfiles">
-      <para>Contains a GUID value that identifies the language profile to make active.</para>
-    </param>
+    <summary>Sets the active text service for a specific language.</summary>
+    <param name="rclsid">Contains the CLSID of the text service to make active.</param>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies which language to set the default profile for. This method fails if this is not the currently active language.</param>
+    <param name="guidProfiles">Contains a GUID value that identifies the language profile to make active.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,88 +14,82 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unspecified error occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>No thread manager has been created for the calling thread.</para>
-          </description>
-        </item>
+          <description>No thread manager has been created for the calling thread.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputProcessorProfiles.AddLanguageProfile">
-    <summary>
-      <para>Creates a language profile that consists of a specific text service and a specific language identifier.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the text service CLSID.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies the language identifier of the profile that the text service is added to. If this contains -1, the text service is added to all languages.</para>
-    </param>
-    <param name="guidProfile">
-      <para>Contains a GUID value that identifies the language profile. This is the value obtained by <see cref="ITfInputProcessorProfiles.GetActiveLanguageProfile" /> when the profile is active.</para>
-    </param>
-    <param name="pchDesc">
-      <para>Pointer to a <b>WCHAR</b> buffer that contains the description string for the text service in the profile. This is the text service name displayed in the language bar.</para>
-    </param>
-    <param name="cchDesc">
-      <para>Contains the length, in characters, of the description string in <i>pchDesc</i>. If this contains -1, <i>pchDesc</i> is assumed to be a <b>NULL</b>-terminated string.</para>
-    </param>
+    <summary>Creates a language profile that consists of a specific text service and a specific language identifier.</summary>
+    <param name="rclsid">Contains the text service CLSID.</param>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies the language identifier of the profile that the text service is added to. If this contains -1, the text service is added to all languages.</param>
+    <param name="guidProfile">Contains a GUID value that identifies the language profile. This is the value obtained by <see cref="ITfInputProcessorProfiles.GetActiveLanguageProfile" /> when the profile is active.</param>
+    <param name="pchDesc">Pointer to a <b>WCHAR</b> buffer that contains the description string for the text service in the profile. This is the text service name displayed in the language bar.</param>
+    <param name="cchDesc">Contains the length, in characters, of the description string in <i>pchDesc</i>. If this contains -1, <i>pchDesc</i> is assumed to be a <b>NULL</b>-terminated string.</param>
     <param name="pchIconFile">
       <para>Pointer to a <b>WCHAR</b> buffer that contains the path and file name of the file that contains the icon to be displayed in the language bar for the text service in the profile. This file can be an executable (.exe), DLL (.dll) or icon (.ico) file.</para>
       <para>This parameter is optional and can be <b>NULL</b>. In this case, a default icon is displayed for the text service.</para>
     </param>
-    <param name="cchFile">
-      <para>Contains the length, in characters, of the icon file string in <i>pchIconFile</i>. If this contains -1, <i>pchIconFile</i> is assumed to be a <b>NULL</b>-terminated string. This parameter is ignored if <i>pchIconFile</i> is <b>NULL</b>.</para>
-    </param>
-    <param name="uIconIndex">
-      <para>Contains the zero-based index of the icon in <i>pchIconFile</i> to be displayed in the language bar for the text service in the profile. This parameter is ignored if <i>pchIconFile</i> is <b>NULL</b>.</para>
-    </param>
+    <param name="cchFile">Contains the length, in characters, of the icon file string in <i>pchIconFile</i>. If this contains -1, <i>pchIconFile</i> is assumed to be a <b>NULL</b>-terminated string. This parameter is ignored if <i>pchIconFile</i> is <b>NULL</b>.</param>
+    <param name="uIconIndex">Contains the zero-based index of the icon in <i>pchIconFile</i> to be displayed in the language bar for the text service in the profile. This parameter is ignored if <i>pchIconFile</i> is <b>NULL</b>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -111,48 +97,49 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pszDesc</i> is invalid.
-</description>
-        </item>
+            <i>pszDesc</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles" />
-    <seealso cref="ITfInputProcessorProfiles.GetActiveLanguageProfile " />
   </member>
   <member name="ITfInputProcessorProfiles.ChangeCurrentLanguage">
-    <summary>
-      <para>Sets the currently active language.</para>
-    </summary>
-    <param name="langid">
-      <para>Contains the <b>LANGID</b> of the language to make active.</para>
-    </param>
+    <summary>Sets the currently active language.</summary>
+    <param name="langid">Contains the <b>LANGID</b> of the language to make active.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -160,75 +147,76 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>langid</i> is an invalid language identifier.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unspecified error occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>langid</i> is an invalid language identifier.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>No thread manager was created for the calling thread.</para>
-          </description>
-        </item>
+          <description>No thread manager was created for the calling thread.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputProcessorProfiles.EnableLanguageProfile">
-    <summary>
-      <para>Enables or disables a language profile for the current user.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the CLSID of the text service of the profile to be enabled or disabled.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies the language of the profile to be enabled or disabled.</para>
-    </param>
-    <param name="guidProfile">
-      <para>Contains a GUID value that identifies the profile to be enabled or disabled.</para>
-    </param>
-    <param name="fEnable">
-      <para>Contains a <b>BOOL</b> value that specifies if the profile will be enabled or disabled. If this contains a nonzero value, the profile will be enabled. If this contains zero, the profile will be disabled.</para>
-    </param>
+    <summary>Enables or disables a language profile for the current user.</summary>
+    <param name="rclsid">Contains the CLSID of the text service of the profile to be enabled or disabled.</param>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies the language of the profile to be enabled or disabled.</param>
+    <param name="guidProfile">Contains a GUID value that identifies the profile to be enabled or disabled.</param>
+    <param name="fEnable">Contains a <b>BOOL</b> value that specifies if the profile will be enabled or disabled. If this contains a nonzero value, the profile will be enabled. If this contains zero, the profile will be disabled.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -236,47 +224,39 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles" />
-    <seealso cref="ITfInputProcessorProfiles.EnableLanguageProfileByDefault " />
   </member>
   <member name="ITfInputProcessorProfiles.EnableLanguageProfileByDefault">
-    <summary>
-      <para>Enables or disables a language profile by default for all users.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the CLSID of the text service of the profile to be enabled or disabled.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies the language of the profile to be enabled or disabled.</para>
-    </param>
-    <param name="guidProfile">
-      <para>Contains a GUID value that identifies the profile to be enabled or disabled.</para>
-    </param>
-    <param name="fEnable">
-      <para>Contains a <b>BOOL</b> value that specifies if the profile is enabled or disabled. If this contains a nonzero value, the profile is enabled. If this contains zero, the profile is disabled.</para>
-    </param>
+    <summary>Enables or disables a language profile by default for all users.</summary>
+    <param name="rclsid">Contains the CLSID of the text service of the profile to be enabled or disabled.</param>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies the language of the profile to be enabled or disabled.</param>
+    <param name="guidProfile">Contains a GUID value that identifies the profile to be enabled or disabled.</param>
+    <param name="fEnable">Contains a <b>BOOL</b> value that specifies if the profile is enabled or disabled. If this contains a nonzero value, the profile is enabled. If this contains zero, the profile is disabled.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -284,38 +264,36 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles" />
-    <seealso cref="ITfInputProcessorProfiles.EnableLanguageProfile " />
   </member>
   <member name="ITfInputProcessorProfiles.EnumInputProcessorInfo">
-    <summary>
-      <para>Obtains an enumerator that contains the class identifiers of all registered text services.</para>
-    </summary>
-    <param name="ppEnum">
-      <para>Pointer to an <b>IEnumGUID</b> interface pointer that receives the enumerator object. The enumerator contains the CLSID for each registered text service. The caller must release this object when it is no longer required.</para>
-    </param>
+    <summary>Obtains an enumerator that contains the class identifiers of all registered text services.</summary>
+    <param name="ppEnum">Pointer to an <b>IEnumGUID</b> interface pointer that receives the enumerator object. The enumerator contains the CLSID for each registered text service. The caller must release this object when it is no longer required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -323,61 +301,62 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppEnum</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>ppEnum</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation error occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles" />
-    <seealso cref="ITfInputProcessorProfiles.Register " />
   </member>
   <member name="ITfInputProcessorProfiles.EnumLanguageProfiles">
-    <summary>
-      <para>Obtains an enumerator that contains all of the profiles for a specific language.</para>
-    </summary>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies the language to obtain an enumerator for.</para>
-    </param>
-    <param name="ppEnum">
-      <para>Pointer to an <see cref="IEnumTfLanguageProfiles" /> interface pointer that receives the enumerator object.</para>
-    </param>
+    <summary>Obtains an enumerator that contains all of the profiles for a specific language.</summary>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies the language to obtain an enumerator for.</param>
+    <param name="ppEnum">Pointer to an <see cref="IEnumTfLanguageProfiles" /> interface pointer that receives the enumerator object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -385,65 +364,63 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>No corresponding language profile was found in the operating system.-or- An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>ppEnum</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>No corresponding language profile was found in the operating system. -or-
-An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>ppEnum</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IEnumTfLanguageProfiles " />
-    <seealso cref="ITfInputProcessorProfiles" />
   </member>
   <member name="ITfInputProcessorProfiles.GetActiveLanguageProfile">
-    <summary>
-      <para>Obtains the identifier of the currently active language profile for a specific text service.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the text service CLSID.</para>
-    </param>
-    <param name="plangid">
-      <para>Pointer to a <b>LANGID</b> value that receives the active profile language identifier.</para>
-    </param>
-    <param name="pguidProfile">
-      <para>Pointer to a <b>GUID</b> value that receives the language profile identifier. This is the value specified in <see cref="ITfInputProcessorProfiles.AddLanguageProfile" /> when the profile was added.</para>
-    </param>
+    <summary>Obtains the identifier of the currently active language profile for a specific text service.</summary>
+    <param name="rclsid">Contains the text service CLSID.</param>
+    <param name="plangid">Pointer to a <b>LANGID</b> value that receives the active profile language identifier.</param>
+    <param name="pguidProfile">Pointer to a <b>GUID</b> value that receives the language profile identifier. This is the value specified in <see cref="ITfInputProcessorProfiles.AddLanguageProfile" /> when the profile was added.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -451,68 +428,72 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The text service identified by <i>rclsid</i> is not currently active. <i>pguidProfile</i> receives GUID_NULL.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The text service identified by <i>rclsid</i> is not currently active. <i>pguidProfile</i> receives GUID_NULL.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation error occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles" />
-    <seealso cref="ITfInputProcessorProfiles.AddLanguageProfile " />
   </member>
   <member name="ITfInputProcessorProfiles.GetCurrentLanguage">
-    <summary>
-      <para>Obtains the identifier of the currently active language.</para>
-    </summary>
-    <param name="plangid">
-      <para>Pointer to a <b>LANGID</b> value that receives the language identifier of the currently active language.</para>
-    </param>
+    <summary>Obtains the identifier of the currently active language.</summary>
+    <param name="plangid">Pointer to a <b>LANGID</b> value that receives the language identifier of the currently active language.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -520,45 +501,40 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>plangid</i> is invalid.
-</description>
-        </item>
+            <i>plangid</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputProcessorProfiles.GetDefaultLanguageProfile">
-    <summary>
-      <para>Obtains the default profile for a specific language.</para>
-    </summary>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies which language to obtain the default profile for.</para>
-    </param>
-    <param name="catid">
-      <para>Contains a GUID value that identifies the category that the text service is registered under. This can be a user-defined category or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-category-values">predefined category values</a>.</para>
-    </param>
-    <param name="pclsid">
-      <para>Pointer to a <b>CLSID</b> value that receives the class identifier of the default text service for the language.</para>
-    </param>
-    <param name="pguidProfile">
-      <para>Pointer to a <b>GUID</b> value that receives the identifier of the default profile for the language.</para>
-    </param>
+    <summary>Obtains the default profile for a specific language.</summary>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies which language to obtain the default profile for.</param>
+    <param name="catid">Contains a GUID value that identifies the category that the text service is registered under. This can be a user-defined category or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-category-values">predefined category values</a>.</param>
+    <param name="pclsid">Pointer to a <b>CLSID</b> value that receives the class identifier of the default text service for the language.</param>
+    <param name="pguidProfile">Pointer to a <b>GUID</b> value that receives the identifier of the default profile for the language.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -566,62 +542,61 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>No default language profile was found for the specified language and category.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>No default language profile was found for the specified language and category.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-category-values">Predefined Category Values
-</seealso>
   </member>
   <member name="ITfInputProcessorProfiles.GetLanguageList">
-    <summary>
-      <para>Obtains a list of the installed languages.</para>
-    </summary>
-    <param name="ppLangId">
-      <para>Pointer to a <b>LANGID</b> pointer that receives the array of identifiers of the currently installed languages. The number of identifiers placed in this array is supplied in <i>pulCount</i>. The array is allocated by this method. The caller must free this memory when it is no longer required using <see cref="CoTaskMemFree" />.</para>
-    </param>
-    <param name="pulCount">
-      <para>Pointer to a ULONG value the receives the number of identifiers placed in the array at <i>ppLangId</i>.</para>
-    </param>
+    <summary>Obtains a list of the installed languages.</summary>
+    <param name="ppLangId">Pointer to a <b>LANGID</b> pointer that receives the array of identifiers of the currently installed languages. The number of identifiers placed in this array is supplied in <i>pulCount</i>. The array is allocated by this method. The caller must free this memory when it is no longer required using <see cref="CoTaskMemFree" />.</param>
+    <param name="pulCount">Pointer to a ULONG value the receives the number of identifiers placed in the array at <i>ppLangId</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -629,67 +604,63 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>An unspecified error occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="CoTaskMemFree" />
-    <seealso cref="ITfInputProcessorProfiles" />
   </member>
   <member name="ITfInputProcessorProfiles.GetLanguageProfileDescription">
-    <summary>
-      <para>Obtains the description string for a language profile.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the CLSID of the text service to obtain the profile description for.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies which language to obtain the profile description for.</para>
-    </param>
-    <param name="guidProfile">
-      <para>Contains a GUID value that identifies the language to obtain the profile description for.</para>
-    </param>
-    <param name="pbstrProfile">
-      <para>Pointer to a <b>BSTR</b> value that receives the description string. The caller is responsible for freeing this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</para>
-    </param>
+    <summary>Obtains the description string for a language profile.</summary>
+    <param name="rclsid">Contains the CLSID of the text service to obtain the profile description for.</param>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies which language to obtain the profile description for.</param>
+    <param name="guidProfile">Contains a GUID value that identifies the language to obtain the profile description for.</param>
+    <param name="pbstrProfile">Pointer to a <b>BSTR</b> value that receives the description string. The caller is responsible for freeing this memory using <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</a> when it is no longer required.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -697,58 +668,52 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pbstrProfile</i> is invalid.
-</description>
-        </item>
+            <i>pbstrProfile</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles" />
-    <seealso cref="ITfInputProcessorProfiles.AddLanguageProfile " />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oleauto/nf-oleauto-sysfreestring">SysFreeString</seealso>
   </member>
   <member name="ITfInputProcessorProfiles.IsEnabledLanguageProfile">
-    <summary>
-      <para>Determines if a specific language profile is enabled or disabled.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the CLSID of the text service of the profile in question.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies the language of the profile in question.</para>
-    </param>
-    <param name="guidProfile">
-      <para>Contains a GUID value that identifies the profile in question.</para>
-    </param>
-    <param name="pfEnable">
-      <para>Pointer to a <b>BOOL</b> value that receives a value that specifies if the profile is enabled or disabled. If this receives a nonzero value, the profile is enabled. If this receives zero, the profile is disabled.</para>
-    </param>
+    <summary>Determines if a specific language profile is enabled or disabled.</summary>
+    <param name="rclsid">Contains the CLSID of the text service of the profile in question.</param>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies the language of the profile in question.</param>
+    <param name="guidProfile">Contains a GUID value that identifies the profile in question.</param>
+    <param name="pfEnable">Pointer to a <b>BOOL</b> value that receives a value that specifies if the profile is enabled or disabled. If this receives a nonzero value, the profile is enabled. If this receives zero, the profile is disabled.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -756,36 +721,37 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <i>pfEnable</i> is invalid.
-</description>
-        </item>
+            <i>pfEnable</i> is invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputProcessorProfiles.Register">
-    <summary>
-      <para>Adds a text service to Text Services Foundation (TSF).</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the CLSID of the text service to register.</para>
-    </param>
+    <summary>Adds a text service to Text Services Foundation (TSF).</summary>
+    <param name="rclsid">Contains the CLSID of the text service to register.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -793,42 +759,38 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputProcessorProfiles.RemoveLanguageProfile">
-    <summary>
-      <para>Removes a language profile.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the text service CLSID.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies the language identifier of the profile.</para>
-    </param>
-    <param name="guidProfile">
-      <para>Contains a GUID value that identifies the language profile. This is the value specified in <see cref="ITfInputProcessorProfiles.AddLanguageProfile" /> when the profile was added.</para>
-    </param>
+    <summary>Removes a language profile.</summary>
+    <param name="rclsid">Contains the text service CLSID.</param>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies the language identifier of the profile.</param>
+    <param name="guidProfile">Contains a GUID value that identifies the language profile. This is the value specified in <see cref="ITfInputProcessorProfiles.AddLanguageProfile" /> when the profile was added.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -836,44 +798,38 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles" />
-    <seealso cref="ITfInputProcessorProfiles.AddLanguageProfile " />
   </member>
   <member name="ITfInputProcessorProfiles.SetDefaultLanguageProfile">
-    <summary>
-      <para>Sets the default profile for a specific language.</para>
-    </summary>
-    <param name="langid">
-      <para>Contains a LANGID value that specifies which language to set the default profile for.</para>
-    </param>
-    <param name="rclsid">
-      <para>Contains the CLSID of the text service that will be the default for the language.</para>
-    </param>
-    <param name="guidProfiles">
-      <para>Contains a GUID value that identifies the language profile that will be the default.</para>
-    </param>
+    <summary>Sets the default profile for a specific language.</summary>
+    <param name="langid">Contains a LANGID value that specifies which language to set the default profile for.</param>
+    <param name="rclsid">Contains the CLSID of the text service that will be the default for the language.</param>
+    <param name="guidProfiles">Contains a GUID value that identifies the language profile that will be the default.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -881,55 +837,51 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputProcessorProfiles.SubstituteKeyboardLayout">
-    <summary>
-      <para>Sets a substitute keyboard layout for the specified language profile.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the CLSID of the text service of the profile in question.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> value that specifies the language of the profile in question.</para>
-    </param>
-    <param name="guidProfile">
-      <para>Contains a GUID value that identifies the profile in question.</para>
-    </param>
-    <param name="hKL">
-      <para>Contains an <b>HKL</b> value that specifies the input locale identifier for the substitute keyboard. Obtain this value by calling <see cref="LoadKeyboardLayout" />.</para>
-    </param>
+    <summary>Sets a substitute keyboard layout for the specified language profile.</summary>
+    <param name="rclsid">Contains the CLSID of the text service of the profile in question.</param>
+    <param name="langid">Contains a <b>LANGID</b> value that specifies the language of the profile in question.</param>
+    <param name="guidProfile">Contains a GUID value that identifies the profile in question.</param>
+    <param name="hKL">Contains an <b>HKL</b> value that specifies the input locale identifier for the substitute keyboard. Obtain this value by calling <see cref="LoadKeyboardLayout" />.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -937,38 +889,36 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfInputProcessorProfiles" />
-    <seealso cref="LoadKeyboardLayout" />
   </member>
   <member name="ITfInputProcessorProfiles.Unregister">
-    <summary>
-      <para>Removes a text service from TSF.</para>
-    </summary>
-    <param name="rclsid">
-      <para>Contains the text service CLSID to unregister.</para>
-    </param>
+    <summary>Removes a text service from TSF.</summary>
+    <param name="rclsid">Contains the text service CLSID to unregister.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -976,59 +926,34 @@ An unspecified error occurred.</para>
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfInputProcessorProfiles">
-    <summary>
-      <para>The <b>ITfInputProcessorProfiles</b> interface is implemented by the TSF manager and used by an application or text service to manipulate the language profile of one or more text services.</para>
-    </summary>
-    <remarks>
-      <para>To obtain a pointer to this interface, call <see cref="CoCreateInstance" /> with CLSID_TF_InputProcessorProfiles.</para>
-      <h4>Examples</h4>
-      <para>
-        <b>ITfInputProcessorProfiles</b>
-      </para>
-      <code>
-HRESULT hr;
-ITfInputProcessorProfiles *pProfiles;
-
-//Create the object.
-hr = CoCreateInstance(  CLSID_TF_InputProcessorProfiles,
-                        NULL,
-                        CLSCTX_INPROC_SERVER,
-                        IID_ITfInputProcessorProfiles,
-                        (LPVOID*)&amp;amp;amp;amp;amp;amp;pProfiles);
-
-if(SUCCEEDED(hr))
-{
-    //Use the interface.
-
-    //Release the interface.
-    pProfiles-&gt;Release();
-}
-
-</code>
-    </remarks>
+    <summary>The <b>ITfInputProcessorProfiles</b> interface is implemented by the TSF manager and used by an application or text service to manipulate the language profile of one or more text services.</summary>
   </member>
 </doc>

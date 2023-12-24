@@ -3,93 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMAGE_DATA_DIRECTORY">
-    <summary>
-      <para>Represents the data directory.</para>
-    </summary>
-    <remarks>
-      <para>The following is a list of the data directories. Offsets are relative to the beginning of the optional header.</para>
-      <list type="table">
-        <listheader>
-          <description>Offset (PE/PE32+)</description>
-          <description>Description</description>
-        </listheader>
-        <item>
-          <description>96/112</description>
-          <description>Export table address and size</description>
-        </item>
-        <item>
-          <description>104/120</description>
-          <description>Import table address and size</description>
-        </item>
-        <item>
-          <description>112/128</description>
-          <description>Resource table address and size</description>
-        </item>
-        <item>
-          <description>120/136</description>
-          <description>Exception table address and size</description>
-        </item>
-        <item>
-          <description>128/144</description>
-          <description>Certificate table address and size</description>
-        </item>
-        <item>
-          <description>136/152</description>
-          <description>Base relocation table address and size</description>
-        </item>
-        <item>
-          <description>144/160</description>
-          <description>Debugging information starting address and size</description>
-        </item>
-        <item>
-          <description>152/168</description>
-          <description>Architecture-specific data address and size</description>
-        </item>
-        <item>
-          <description>160/176</description>
-          <description>Global pointer register relative virtual address</description>
-        </item>
-        <item>
-          <description>168/184</description>
-          <description>Thread local storage (TLS) table address and size</description>
-        </item>
-        <item>
-          <description>176/192</description>
-          <description>Load configuration table address and size</description>
-        </item>
-        <item>
-          <description>184/200</description>
-          <description>Bound import table address and size</description>
-        </item>
-        <item>
-          <description>192/208</description>
-          <description>Import address table address and size</description>
-        </item>
-        <item>
-          <description>200/216</description>
-          <description>Delay import descriptor address and size</description>
-        </item>
-        <item>
-          <description>208/224</description>
-          <description>The CLR header address and size</description>
-        </item>
-        <item>
-          <description>216/232</description>
-          <description>Reserved</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMAGE_OPTIONAL_HEADER" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/imagehlp-structures">ImageHlp Structures</seealso>
+    <summary>Represents the data directory.</summary>
   </member>
   <member name="IMAGE_DATA_DIRECTORY.VirtualAddress">
-    <summary>
-      <para>The relative virtual address of the table.</para>
-    </summary>
+    <summary>The relative virtual address of the table.</summary>
   </member>
   <member name="IMAGE_DATA_DIRECTORY.Size">
-    <summary>
-      <para>The size of the table, in bytes.</para>
-    </summary>
+    <summary>The size of the table, in bytes.</summary>
   </member>
 </doc>

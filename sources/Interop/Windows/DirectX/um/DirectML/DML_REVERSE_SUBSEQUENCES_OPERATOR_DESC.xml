@@ -3,34 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC">
-    <summary>
-      <para>Reverses the elements of one or more <i>subsequences</i> of a tensor. The set of subsequences to be reversed is chosen based on the provided axis and sequence lengths.</para>
-    </summary>
+    <summary>Reverses the elements of one or more <i>subsequences</i> of a tensor. The set of subsequences to be reversed is chosen based on the provided axis and sequence lengths.</summary>
   </member>
   <member name="DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input tensor containing elements to be reversed.</para>
-    </summary>
+    <summary>The input tensor containing elements to be reversed.</summary>
   </member>
   <member name="DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC.SequenceLengthsTensor">
     <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
       <para>A tensor containing a value for each subsequence to be reversed, denoting the length in elements of that subsequence. Only the elements within the length of the subsequence are reversed; the remaining elements along that axis are copied to the output unchanged.</para>
       <para>This tensor must have dimension count and sizes equal to the <i>InputTensor</i>, <i>except</i> for the dimension specified by the <i>Axis</i> parameter. The size of the <i>Axis</i> dimension must be 1. For example if the <i>InputTensor</i> has sizes of <code>{2,3,4,5}</code>, and <i>Axis</i> is 1, then the sizes of the <i>SequenceLengthsTensor</i> must be <code>{2,1,4,5}</code>.</para>
       <para>If the length of a subsequence exceeds the maximum number of elements along that axis, then this operator behaves as if the value were clamped to the maximum.</para>
     </summary>
   </member>
   <member name="DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC.OutputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The output tensor to write the results to. This tensor must have the same sizes and data type as the <i>InputTensor</i>.</para>
-    </summary>
+    <summary>The output tensor to write the results to. This tensor must have the same sizes and data type as the <i>InputTensor</i>.</summary>
   </member>
   <member name="DML_REVERSE_SUBSEQUENCES_OPERATOR_DESC.Axis">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The index of the dimension to reverse elements over. This value must be less than the DimensionCount of the <i>InputTensor</i>.</para>
-    </summary>
+    <summary>The index of the dimension to reverse elements over. This value must be less than the DimensionCount of the <i>InputTensor</i>.</summary>
   </member>
 </doc>

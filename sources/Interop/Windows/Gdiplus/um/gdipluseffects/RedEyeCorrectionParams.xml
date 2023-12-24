@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="RedEyeCorrectionParams">
+    <summary>
+      <para>A <b>RedEyeCorrectionParams</b> structure contains members that specify the areas of a bitmap to which a red-eye correction is applied.</para>
+      <para>You can can correct red eyes in a bitmap by following these steps.</para>
+      <list type="number">
+        <item>
+          <description>Create and initialize a <b>RedEyeCorrectionParams</b> structure.</description>
+        </item>
+        <item>
+          <description>Pass the address of the <b>RedEyeCorrectionParams</b> structure to the <see cref="RedEyeCorrection.SetParameters" /> method of a <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-redeyecorrection">RedEyeCorrection</a> object.</description>
+        </item>
+        <item>
+          <description>Pass the address of the <a href="https://docs.microsoft.com//windows/desktop/api/gdipluseffects/nl-gdipluseffects-redeyecorrection">RedEyeCorrection</a> object to the <a href="https://docs.microsoft.com//previous-versions/ms536058(v=vs.85)">Graphics.DrawImage</a> method or to the <see cref="Bitmap.ApplyEffect" /> method.</description>
+        </item>
+      </list>
+    </summary>
+  </member>
+  <member name="RedEyeCorrectionParams.numberOfAreas">
+    <summary>Integer that specifies the number of <see cref="RECT" /> structures in the <b>areas</b> array.</summary>
+  </member>
+  <member name="RedEyeCorrectionParams.areas">
+    <summary>Pointer to an array of <see cref="RECT" /> structures, each of which specifies an area of the bitmap to which red eye correction should be applied.</summary>
+  </member>
+</doc>

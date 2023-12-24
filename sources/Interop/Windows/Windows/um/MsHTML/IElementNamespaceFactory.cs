@@ -25,7 +25,7 @@ public unsafe partial struct IElementNamespaceFactory : IElementNamespaceFactory
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IElementNamespaceFactory*, Guid*, void**, int>)(lpVtbl[0]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IElementNamespaceFactory*, Guid*, void**, int>)(lpVtbl[0]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IElementNamespaceFactory : IElementNamespaceFactory
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IElementNamespaceFactory*, uint>)(lpVtbl[1]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementNamespaceFactory*, uint>)(lpVtbl[1]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IElementNamespaceFactory : IElementNamespaceFactory
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IElementNamespaceFactory*, uint>)(lpVtbl[2]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IElementNamespaceFactory*, uint>)(lpVtbl[2]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IElementNamespaceFactory.xml' path='doc/member[@name="IElementNamespaceFactory.Create"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IElementNamespaceFactory : IElementNamespaceFactory
     [VtblIndex(3)]
     public HRESULT Create(IElementNamespace* pNamespace)
     {
-        return ((delegate* unmanaged<IElementNamespaceFactory*, IElementNamespace*, int>)(lpVtbl[3]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this), pNamespace);
+        return ((delegate* unmanaged[MemberFunction]<IElementNamespaceFactory*, IElementNamespace*, int>)(lpVtbl[3]))((IElementNamespaceFactory*)Unsafe.AsPointer(ref this), pNamespace);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IElementNamespaceFactory : IElementNamespaceFactory
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IElementNamespace *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IElementNamespace*, int> Create;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IElementNamespace*, int> Create;
     }
 }

@@ -3,35 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMSGHDR">
-    <summary>
-      <para>The CMSGHDR structure defines the header for a control data object that is associated with a
-datagram.</para>
-    </summary>
-    <remarks>
-      <para>The control information data that is associated with a datagram is made up of one or more control data
-objects. Each object begins with a CMSGHDR structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/ns-wsk-_wsk_datagram_indication">WSK_DATAGRAM_INDICATION</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_receive_from">WskReceiveFrom</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/wsk/nc-wsk-pfn_wsk_send_to">WskSendTo</seealso>
+    <summary>The CMSGHDR structure defines the header for a control data object that is associated with a datagram.</summary>
   </member>
   <member name="CMSGHDR.cmsg_len">
     <summary>
       <para>The number of bytes from the beginning of the CMSGHDR structure to the end of the control data.</para>
-      <para>
-        <b>Note</b>  The value of the
-<b>cmsg_len</b> member does not account for any padding that may follow the
-control data.</para>
+      <div>
+        <b>Note</b>  The value of the <b>cmsg_len</b> member does not account for any padding that may follow the control data.</div>
     </summary>
   </member>
   <member name="CMSGHDR.cmsg_level">
-    <summary>
-      <para>The protocol that originated the control information.</para>
-    </summary>
+    <summary>The protocol that originated the control information.</summary>
   </member>
   <member name="CMSGHDR.cmsg_type">
-    <summary>
-      <para>The protocol-specific type of control information.</para>
-    </summary>
+    <summary>The protocol-specific type of control information.</summary>
   </member>
 </doc>

@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_PADDING_MODE">
-    <summary>
-      <para>Defines constants that specify a mode  for the DirectML pad operator (as described by the <see cref="DML_PADDING_OPERATOR_DESC" /> structure).</para>
-    </summary>
-    <seealso cref="DML_PADDING_OPERATOR_DESC" />
+    <summary>Defines constants that specify a mode for the DirectML pad operator (as described by the <see cref="DML_PADDING_OPERATOR_DESC" /> structure).</summary>
   </member>
   <member name="DML_PADDING_MODE.DML_PADDING_MODE_CONSTANT">
-    <summary>
-      <para>Indicates padding with a constant.</para>
-    </summary>
+    <summary>Indicates padding with a constant.</summary>
   </member>
   <member name="DML_PADDING_MODE.DML_PADDING_MODE_EDGE">
-    <summary>
-      <para>Indicates edge mode for padding.</para>
-    </summary>
+    <summary>Indicates edge mode for padding.</summary>
   </member>
   <member name="DML_PADDING_MODE.DML_PADDING_MODE_REFLECTION">
-    <summary>
-      <para>Indicates reflection mode for padding.</para>
-    </summary>
+    <summary>Indicates reflection mode for padding.</summary>
   </member>
 </doc>

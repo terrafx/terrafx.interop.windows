@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC">
+    <summary>Describes a video encoder picture control.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC.IntraRefreshFrameIndex">
+    <summary>When requesting an intra-refresh wave for IntraRefreshFramesDuration frames by specifying the <see cref="D3D12_VIDEO_ENCODER_SEQUENCE_CONTROL_FLAG_REQUEST_INTRA_REFRESH" /> flag, this value indicates, for the current picture, the index of the frame in the intra-refresh wave. The value range is set by the host between 0 and <see cref="IntraRefreshFramesDuration" /> to hint the status of the intra-refresh session to the driver.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC.Flags">
+    <summary>A bitwise OR combination of values from the <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_FLAGS" /> enumeration specifying the picture control descriptor flags.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC.PictureControlCodecData">
+    <summary>A <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA" /> structure containing codec-specific picture control data. Depending of the selected rate control mode the QP values are interpreted differently.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_DESC.ReferenceFrames">
+    <summary>A <see cref="D3D12_VIDEO_ENCODE_REFERENCE_FRAMES" /> structure containing the reconstructed pictures from the past encoding operations outputs.</summary>
+  </member>
+</doc>

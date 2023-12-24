@@ -3,20 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IProcessInitControl.ResetInitializerTimeout">
-    <summary>
-      <para>Sets the process initialization time-out.</para>
-    </summary>
-    <param name="dwSecondsRemaining">
-      <para>The number of seconds after this method is called before process initialization times out.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</para>
-    </returns>
-    <seealso cref="IProcessInitControl" />
+    <summary>Sets the process initialization time-out.</summary>
+    <param name="dwSecondsRemaining">The number of seconds after this method is called before process initialization times out.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, E_FAIL, and S_OK.</returns>
   </member>
   <member name="IProcessInitControl">
-    <summary>
-      <para>Specifies the process initialization time-out interval.</para>
-    </summary>
+    <summary>Specifies the process initialization time-out interval.</summary>
   </member>
 </doc>

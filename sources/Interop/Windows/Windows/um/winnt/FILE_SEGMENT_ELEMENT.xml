@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FILE_SEGMENT_ELEMENT">
+    <summary>Represents a segement buffer structure for scatter/gather read/write actions.</summary>
+  </member>
+  <member name="FILE_SEGMENT_ELEMENT.Buffer">
+    <summary>
+      <para>Contains the data for the scatter/gather read/write action</para>
+      <para>Assigning a pointer to the <b>Buffer</b> member will sign-extend the value if the code is compiled as 32-bits; this can break large-address aware applications running on systems configured with <a href="https://docs.microsoft.com//windows/desktop/Memory/4-gigabyte-tuning">4-Gigabyte Tuning</a> or running under WOW64 on 64-bit Windows. Therefore, use the <b>PtrToPtr64</b> macro when assigning pointers to <b>Buffer</b>.</para>
+    </summary>
+  </member>
+  <member name="FILE_SEGMENT_ELEMENT.Alignment">
+    <summary>The page alignment of the data.</summary>
+  </member>
+</doc>

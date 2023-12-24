@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfSystemLangBarItemText.GetItemText">
-    <summary>
-      <para>The <b>ITfSystemLangBarItemText.GetItemText</b> method obtains the text displayed for the system language bar menu.</para>
-    </summary>
-    <param name="pbstrText">
-      <para>[out] A pointer to BSTR that contains the current description.</para>
-    </param>
+    <summary>The <b>ITfSystemLangBarItemText.GetItemText</b> method obtains the text displayed for the system language bar menu.</summary>
+    <param name="pbstrText">[out] A pointer to BSTR that contains the current description.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,49 +12,49 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>A parameter is invalid.</para>
-          </description>
-        </item>
+          <description>A parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfSystemLangBarItemText.SetItemText">
-    <summary>
-      <para>The <b>ITfSystemLangBarItemText.SetItemText</b> method modifies the text displayed for the system language bar menu.</para>
-    </summary>
-    <param name="pch">
-      <para>[in] A string that appears as a description.</para>
-    </param>
-    <param name="cch">
-      <para>[in] Size, in characters, of the string.</para>
-    </param>
+    <summary>The <b>ITfSystemLangBarItemText.SetItemText</b> method modifies the text displayed for the system language bar menu.</summary>
+    <param name="pch">[in] A string that appears as a description.</param>
+    <param name="cch">[in] Size, in characters, of the string.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -66,42 +62,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>A parameter is invalid.</para>
-          </description>
-        </item>
+          <description>A parameter is invalid.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfSystemLangBarItemText">
-    <summary>
-      <para>The <b>ITfSystemLangBarItemText</b> interface is implemented by a system language bar and is used by a system language bar extension to modify the description displayed for the menu. The extension can obtain an instance of this interface by calling the menu object QueryInterface method with IID_ITfSystemLangBarItem.</para>
-    </summary>
+    <summary>The <b>ITfSystemLangBarItemText</b> interface is implemented by a system language bar and is used by a system language bar extension to modify the description displayed for the menu. The extension can obtain an instance of this interface by calling the menu object QueryInterface method with IID_ITfSystemLangBarItem.</summary>
   </member>
 </doc>

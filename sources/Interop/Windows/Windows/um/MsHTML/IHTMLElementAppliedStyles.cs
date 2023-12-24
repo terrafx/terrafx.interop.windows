@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLElementAppliedStyles*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementAppliedStyles*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLElementAppliedStyles*, uint>)(lpVtbl[1]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementAppliedStyles*, uint>)(lpVtbl[1]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLElementAppliedStyles*, uint>)(lpVtbl[2]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementAppliedStyles*, uint>)(lpVtbl[2]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IHTMLElementAppliedStyles*, uint*, int>)(lpVtbl[3]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementAppliedStyles*, uint*, int>)(lpVtbl[3]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IHTMLElementAppliedStyles*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementAppliedStyles*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IHTMLElementAppliedStyles*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementAppliedStyles*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IHTMLElementAppliedStyles*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementAppliedStyles*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IHTMLElementAppliedStyles.xml' path='doc/member[@name="IHTMLElementAppliedStyles.msGetRulesApplied"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
     [VtblIndex(7)]
     public HRESULT msGetRulesApplied(IRulesAppliedCollection** ppRulesAppliedCollection)
     {
-        return ((delegate* unmanaged<IHTMLElementAppliedStyles*, IRulesAppliedCollection**, int>)(lpVtbl[7]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), ppRulesAppliedCollection);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementAppliedStyles*, IRulesAppliedCollection**, int>)(lpVtbl[7]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), ppRulesAppliedCollection);
     }
 
     /// <include file='IHTMLElementAppliedStyles.xml' path='doc/member[@name="IHTMLElementAppliedStyles.msGetRulesAppliedWithAncestor"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
     [VtblIndex(8)]
     public HRESULT msGetRulesAppliedWithAncestor(VARIANT varContext, IRulesAppliedCollection** ppRulesAppliedCollection)
     {
-        return ((delegate* unmanaged<IHTMLElementAppliedStyles*, VARIANT, IRulesAppliedCollection**, int>)(lpVtbl[8]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), varContext, ppRulesAppliedCollection);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLElementAppliedStyles*, VARIANT, IRulesAppliedCollection**, int>)(lpVtbl[8]))((IHTMLElementAppliedStyles*)Unsafe.AsPointer(ref this), varContext, ppRulesAppliedCollection);
     }
 
     public interface Interface : IDispatch.Interface
@@ -107,30 +107,30 @@ public unsafe partial struct IHTMLElementAppliedStyles : IHTMLElementAppliedStyl
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IRulesAppliedCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IRulesAppliedCollection**, int> msGetRulesApplied;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IRulesAppliedCollection**, int> msGetRulesApplied;
 
         [NativeTypeName("HRESULT (VARIANT, IRulesAppliedCollection **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, IRulesAppliedCollection**, int> msGetRulesAppliedWithAncestor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, IRulesAppliedCollection**, int> msGetRulesAppliedWithAncestor;
     }
 }

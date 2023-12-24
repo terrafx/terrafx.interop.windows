@@ -3,23 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_READER_BUFFER_INPUT">
-    <summary>
-      <para>Specifies that the source of the xml input is a buffer.</para>
-    </summary>
+    <summary>Specifies that the source of the xml input is a buffer.</summary>
   </member>
   <member name="WS_XML_READER_BUFFER_INPUT.input">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_READER_INPUT" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_READER_INPUT" />.</summary>
   </member>
   <member name="WS_XML_READER_BUFFER_INPUT.encodedData">
-    <summary>
-      <para>A pointer to the bytes of data that comprise the encoded form of the xml.  The reader will not modify any of these bytes.</para>
-    </summary>
+    <summary>A pointer to the bytes of data that comprise the encoded form of the xml. The reader will not modify any of these bytes.</summary>
   </member>
   <member name="WS_XML_READER_BUFFER_INPUT.encodedDataSize">
-    <summary>
-      <para>The length of the encodedData.</para>
-    </summary>
+    <summary>The length of the encodedData.</summary>
   </member>
 </doc>

@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="URLASSOCIATIONDIALOG_IN_FLAGS">
-    <summary>
-      <para>The <b>URLASSOCIATIONDIALOG_IN_FLAGS</b> enumerated values are used with <see cref="URLAssociationDialog" /> to determine how it executes.</para>
-    </summary>
+    <summary>The <b>URLASSOCIATIONDIALOG_IN_FLAGS</b> enumerated values are used with <see cref="URLAssociationDialog" /> to determine how it executes.</summary>
   </member>
   <member name="URLASSOCIATIONDIALOG_IN_FLAGS.URLASSOCDLG_FL_USE_DEFAULT_NAME">
-    <summary>
-      <para>Use the default file name (that is, "Internet Shortcut").</para>
-    </summary>
+    <summary>Use the default file name (that is, "Internet Shortcut").</summary>
   </member>
   <member name="URLASSOCIATIONDIALOG_IN_FLAGS.URLASSOCDLG_FL_REGISTER_ASSOC">
-    <summary>
-      <para>Register the selected application as the handler for the protocol specified in the <i>pcszURL</i> parameter of <see cref="URLAssociationDialog" />. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</para>
-    </summary>
+    <summary>Register the selected application as the handler for the protocol specified in the <i>pcszURL</i> parameter of <see cref="URLAssociationDialog" />. The application is registered only if this flag is set and the user indicates that a persistent association is desired.</summary>
   </member>
 </doc>

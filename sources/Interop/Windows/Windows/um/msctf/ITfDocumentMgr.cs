@@ -25,7 +25,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfDocumentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfDocumentMgr*, Guid*, void**, int>)(lpVtbl[0]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfDocumentMgr*, uint>)(lpVtbl[1]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfDocumentMgr*, uint>)(lpVtbl[1]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfDocumentMgr*, uint>)(lpVtbl[2]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfDocumentMgr*, uint>)(lpVtbl[2]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.CreateContext"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT CreateContext([NativeTypeName("TfClientId")] uint tidOwner, [NativeTypeName("DWORD")] uint dwFlags, IUnknown* punk, ITfContext** ppic, [NativeTypeName("TfEditCookie *")] uint* pecTextStore)
     {
-        return ((delegate* unmanaged<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int>)(lpVtbl[3]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), tidOwner, dwFlags, punk, ppic, pecTextStore);
+        return ((delegate* unmanaged[MemberFunction]<ITfDocumentMgr*, uint, uint, IUnknown*, ITfContext**, uint*, int>)(lpVtbl[3]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), tidOwner, dwFlags, punk, ppic, pecTextStore);
     }
 
     /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.Push"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT Push(ITfContext* pic)
     {
-        return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext*, int>)(lpVtbl[4]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), pic);
+        return ((delegate* unmanaged[MemberFunction]<ITfDocumentMgr*, ITfContext*, int>)(lpVtbl[4]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), pic);
     }
 
     /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.Pop"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT Pop([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITfDocumentMgr*, uint, int>)(lpVtbl[5]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITfDocumentMgr*, uint, int>)(lpVtbl[5]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.GetTop"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT GetTop(ITfContext** ppic)
     {
-        return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[6]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
+        return ((delegate* unmanaged[MemberFunction]<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[6]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
     }
 
     /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.GetBase"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT GetBase(ITfContext** ppic)
     {
-        return ((delegate* unmanaged<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[7]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
+        return ((delegate* unmanaged[MemberFunction]<ITfDocumentMgr*, ITfContext**, int>)(lpVtbl[7]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppic);
     }
 
     /// <include file='ITfDocumentMgr.xml' path='doc/member[@name="ITfDocumentMgr.EnumContexts"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT EnumContexts(IEnumTfContexts** ppEnum)
     {
-        return ((delegate* unmanaged<ITfDocumentMgr*, IEnumTfContexts**, int>)(lpVtbl[8]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<ITfDocumentMgr*, IEnumTfContexts**, int>)(lpVtbl[8]))((ITfDocumentMgr*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct ITfDocumentMgr : ITfDocumentMgr.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TfClientId, DWORD, IUnknown *, ITfContext **, TfEditCookie *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, IUnknown*, ITfContext**, uint*, int> CreateContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, IUnknown*, ITfContext**, uint*, int> CreateContext;
 
         [NativeTypeName("HRESULT (ITfContext *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, int> Push;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, int> Push;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Pop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Pop;
 
         [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext**, int> GetTop;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext**, int> GetTop;
 
         [NativeTypeName("HRESULT (ITfContext **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext**, int> GetBase;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext**, int> GetBase;
 
         [NativeTypeName("HRESULT (IEnumTfContexts **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumTfContexts**, int> EnumContexts;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumTfContexts**, int> EnumContexts;
     }
 }

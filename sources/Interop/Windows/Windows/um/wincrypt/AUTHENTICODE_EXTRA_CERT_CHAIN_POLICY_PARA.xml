@@ -3,14 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA">
-    <summary>
-      <para>The <b>AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA</b> structure holds policy information used in the verification of certificate chains for files.</para>
-    </summary>
+    <summary>The <b>AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA</b> structure holds policy information used in the verification of certificate chains for files.</summary>
   </member>
   <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.dwRegPolicySettings">
     <summary>
@@ -20,101 +16,142 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>WTPF_TRUSTTEST</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_TRUSTTEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Trust any "TEST" certificate.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Trust any "TEST" certificate.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_TESTCANBEVALID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Check any "TEST" certificate for validity.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_TESTCANBEVALID</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_IGNOREEXPIRATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Ignore the expiration date on certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Check any "TEST" certificate for validity.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_IGNOREREVOKATION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Ignore revocation checks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_IGNOREEXPIRATION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOK_IND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>If the source is offline, trust any individual certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Ignore the expiration date on certificates.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOK_COM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>If the source is offline, trust any commercial certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_IGNOREREVOKATION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOKNBU_IND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>If the source is offline, trust any individual certificates. Do not use UI.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Ignore revocation checks.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_OFFLINEOKNBU_COM</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>If the source is offline, trust any commercial certificates. Do not use checking UI.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_OFFLINEOK_IND</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_VERIFY_V1_OFF</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Turn off verification of v1 certificates.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>If the source is offline, trust any individual certificates.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_IGNOREREVOCATIONONTS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Ignore time stamp revocation checks.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>WTPF_OFFLINEOK_COM</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>WTPF_ALLOWONLYPERTRUST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>If the source is offline, trust any commercial certificates.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_OFFLINEOKNBU_IND</b>
-          </description>
-          <description>
-            <para>If the source is offline, trust any individual certificates. Do not use UI.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_OFFLINEOKNBU_COM</b>
-          </description>
-          <description>
-            <para>If the source is offline, trust any commercial certificates. Do not use checking UI.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_VERIFY_V1_OFF</b>
-          </description>
-          <description>
-            <para>Turn off verification of v1 certificates.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_IGNOREREVOCATIONONTS</b>
-          </description>
-          <description>
-            <para>Ignore time stamp revocation checks.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>WTPF_ALLOWONLYPERTRUST</b>
-          </description>
-          <description>
-            <para>Allow only items in personal trust database.</para>
-          </description>
-        </item>
+          <description>Allow only items in personal trust database.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="AUTHENTICODE_EXTRA_CERT_CHAIN_POLICY_PARA.pSignerInfo">
-    <summary>
-      <para>A pointer to a
-<see cref="CMSG_SIGNER_INFO" /> structure that contains information on the signer of the file.</para>
-    </summary>
+    <summary>A pointer to a<see cref="CMSG_SIGNER_INFO" /> structure that contains information on the signer of the file.</summary>
   </member>
 </doc>

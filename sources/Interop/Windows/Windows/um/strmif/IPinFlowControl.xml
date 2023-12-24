@@ -4,6 +4,7 @@
 <doc>
   <member name="IPinFlowControl.Block">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Block</code> method blocks or unblocks the flow of data from the pin.</para>
     </summary>
     <param name="dwBlockFlags">
@@ -17,9 +18,7 @@
         </item>
       </list>
     </param>
-    <param name="hEvent">
-      <para>Handle to an event object, or <b>NULL</b>. If this parameter is non-<b>NULL</b>, the method is asynchronous and returns immediately. The event is signaled when the operation completes. If this parameter is <b>NULL</b>, the method is synchronous and does not complete until the pin is blocked. If <i>dwBlockFlags</i> is zero, this parameter must be <b>NULL</b>.</para>
-    </param>
+    <param name="hEvent">Handle to an event object, or <b>NULL</b>. If this parameter is non-<b>NULL</b>, the method is asynchronous and returns immediately. The event is signaled when the operation completes. If this parameter is <b>NULL</b>, the method is synchronous and does not complete until the pin is blocked. If <i>dwBlockFlags</i> is zero, this parameter must be <b>NULL</b>.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following.</para>
       <list type="table">
@@ -27,68 +26,63 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pin is already unblocked.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pin is already unblocked.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_PIN_ALREADY_BLOCKED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pin is already blocked on another thread.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>VFW_E_PIN_ALREADY_BLOCKED_ON_THIS_THREAD</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_PIN_ALREADY_BLOCKED</b>
-            </para>
-          </description>
-          <description>
-            <para>Pin is already blocked on another thread.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>VFW_E_PIN_ALREADY_BLOCKED_ON_THIS_THREAD</b>
-            </para>
-          </description>
-          <description>
-            <para>Pin is already blocked on the calling thread.</para>
-          </description>
-        </item>
+          <description>Pin is already blocked on the calling thread.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method can be synchronous or asynchronous:</para>
-      <list type="bullet">
-        <item>
-          <description>To call it asynchronously, use the <b>CreateEvent</b> function to create an event object. Pass the event handle in the <i>hEvent</i> parameter. The method returns immediately and signals the event when the operation has completed. Call a wait function such as <b>WaitForSingleObject</b> to wait for the event.</description>
-        </item>
-        <item>
-          <description>To call this method synchronously, set the <i>hEvent</i> parameter to <b>NULL</b>. The method blocks until it completes. The method might not complete until the pin is ready to deliver a sample. If the filter is paused, the method might block indefinitely. Therefore, you should not call this method synchronously from your main application thread.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-reconnection">Dynamic Reconnection</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IPinFlowControl Interface" />
   </member>
   <member name="IPinFlowControl">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Blocks data flow from an active output pin. This interface is exposed by output pins that can reconnect dynamically. Use this interface to start a dynamic reconnection within the filter graph. For more information, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/dynamic-graph-building">Dynamic Graph Building</a>.</para>
       <para>
-        <b>Filter developers: </b>Parser and capture filters that support dynamic reconnection should support this interface on their output pins. Generally, other types of filters do not need to implement this interface.</para>
+        <b>Filter developers:</b>Parser and capture filters that support dynamic reconnection should support this interface on their output pins. Generally, other types of filters do not need to implement this interface.</para>
     </summary>
   </member>
 </doc>

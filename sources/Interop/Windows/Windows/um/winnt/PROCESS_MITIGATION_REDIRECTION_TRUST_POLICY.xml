@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY">
+    <summary>Contains process mitigation policy settings for RedirectionGuard.</summary>
+  </member>
+  <member name="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY.DUMMYUNIONNAME"></member>
+  <member name="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY.DUMMYUNIONNAME.Flags">
+    <summary>Reserved for system use.</summary>
+  </member>
+  <member name="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
+  <member name="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.EnforceRedirectionTrust">
+    <summary>Set (0x1) to prevent the process from following filesystem junctions created by non-admin users and log the attempt; otherwise leave unset (0x0).</summary>
+  </member>
+  <member name="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditRedirectionTrust">
+    <summary>Set (0x1) to log when the process follows filesystem junctions created by non-admin users, but still allow the operation; otherwise leave unset (0x0).</summary>
+  </member>
+  <member name="PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
+    <summary>Reserved for system use.</summary>
+  </member>
+</doc>

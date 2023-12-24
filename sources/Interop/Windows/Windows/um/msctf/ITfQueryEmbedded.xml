@@ -3,18 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfQueryEmbedded.QueryInsertEmbedded">
-    <summary>
-      <para>Determines if the active context can accept an embedded object.</para>
-    </summary>
-    <param name="pguidService">
-      <para>A GUID that identifies the service associated with the object. This value can be <b>NULL</b> if <i>pFormatEtc</i> is valid.</para>
-    </param>
-    <param name="pFormatEtc">
-      <para>Pointer to a <see cref="FORMATETC" /> structure that contains data about the object to be embedded. This value can be <b>NULL</b> if <i>pguidService</i> is valid.</para>
-    </param>
-    <param name="pfInsertable">
-      <para>Pointer to a Boolean value that receives the query result. This value receives a nonzero value if the object can be embedded, or zero otherwise.</para>
-    </param>
+    <summary>Determines if the active context can accept an embedded object.</summary>
+    <param name="pguidService">A GUID that identifies the service associated with the object. This value can be <b>NULL</b> if <i>pFormatEtc</i> is valid.</param>
+    <param name="pFormatEtc">Pointer to a <see cref="FORMATETC" /> structure that contains data about the object to be embedded. This value can be <b>NULL</b> if <i>pguidService</i> is valid.</param>
+    <param name="pfInsertable">Pointer to a Boolean value that receives the query result. This value receives a nonzero value if the object can be embedded, or zero otherwise.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -22,66 +14,46 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no active context.</para>
-          </description>
-        </item>
+          <description>There is no active context.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfQueryEmbedded" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/com/the-formatetc-structure">The FORMATETC Structure</seealso>
   </member>
   <member name="ITfQueryEmbedded">
-    <summary>
-      <para>The <b>ITfQueryEmbedded</b> interface is implemented by the TSF manager and used by a text service to determine if a context can accept an embedded object.</para>
-    </summary>
-    <remarks>
-      <para>To obtain an instance of this interface, call the <b>ITfContext.QueryInterface</b> method with IID_ITfQueryEmbedded.</para>
-      <h4>Examples</h4>
-      <para>
-        <see cref="ITfContext " />
-      </para>
-      <code>
-HRESULT hr;
-ITfQueryEmbedded *pQueryEmbedded;
-
-hr = pContext-&gt;QueryInterface(IID_ITfQueryEmbedded, (LPVOID*)&amp;amp;amp;amp;amp;amp;pQueryEmbedded);
-if(SUCCEEDED(hr))
-{
-    //Use the ITfQueryEmbedded interface.
-
-    pQueryEmbedded-&gt;Release();
-}
-
-</code>
-    </remarks>
-    <seealso cref="ITfContext " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfQueryEmbedded</b> interface is implemented by the TSF manager and used by a text service to determine if a context can accept an embedded object.</summary>
   </member>
 </doc>

@@ -3,19 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1Resource.GetFactory">
-    <summary>
-      <para>Retrieves the factory associated with this resource.</para>
-    </summary>
-    <param name="factory">
-      <para>Type: <b><see cref="ID2D1Factory" />**</b></para>
-      <para>When this method returns, contains a pointer to a pointer to the factory that created this resource. This parameter is passed uninitialized.</para>
-    </param>
-    <seealso cref="ID2D1Resource" />
+    <summary>Retrieves the factory associated with this resource.</summary>
+    <param name="factory">When this method returns, contains a pointer to a pointer to the factory that created this resource. This parameter is passed uninitialized.</param>
   </member>
   <member name="ID2D1Resource">
-    <summary>
-      <para>Represents a Direct2D drawing resource.</para>
-    </summary>
-    <seealso cref="IUnknown" />
+    <summary>Represents a Direct2D drawing resource.</summary>
   </member>
 </doc>

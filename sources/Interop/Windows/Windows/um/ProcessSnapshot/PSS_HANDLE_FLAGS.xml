@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSS_HANDLE_FLAGS">
-    <summary>
-      <para>Flags to specify what parts of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_handle_entry">PSS_HANDLE_ENTRY</a> structure are valid.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+    <summary>Flags to specify what parts of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ns-processsnapshot-pss_handle_entry">PSS_HANDLE_ENTRY</a> structure are valid.</summary>
   </member>
   <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_NONE">
-    <summary>
-      <para>No parts specified.</para>
-    </summary>
+    <summary>No parts specified.</summary>
   </member>
   <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_HAVE_TYPE">
-    <summary>
-      <para>The <b>ObjectType</b> member is valid.</para>
-    </summary>
+    <summary>The <b>ObjectType</b> member is valid.</summary>
   </member>
   <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_HAVE_NAME">
-    <summary>
-      <para>The <b>ObjectName</b> member is valid.</para>
-    </summary>
+    <summary>The <b>ObjectName</b> member is valid.</summary>
   </member>
   <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_HAVE_BASIC_INFORMATION">
-    <summary>
-      <para>The <b>Attributes</b>, <b>GrantedAccess</b>, <b>HandleCount</b>, <b>PointerCount</b>, <b>PagedPoolCharge</b>, and <b>NonPagedPoolCharge</b> members are valid.</para>
-    </summary>
+    <summary>The <b>Attributes</b>, <b>GrantedAccess</b>, <b>HandleCount</b>, <b>PointerCount</b>, <b>PagedPoolCharge</b>, and <b>NonPagedPoolCharge</b> members are valid.</summary>
   </member>
   <member name="PSS_HANDLE_FLAGS.PSS_HANDLE_HAVE_TYPE_SPECIFIC_INFORMATION">
-    <summary>
-      <para>The <b>TypeSpecificInformation</b> member is valid (either <b>Process</b>, <b>Thread</b>, <b>Mutant</b>, <b>Event</b> or <b>Section</b>).</para>
-    </summary>
+    <summary>The <b>TypeSpecificInformation</b> member is valid (either <b>Process</b>, <b>Thread</b>, <b>Mutant</b>, <b>Event</b> or <b>Section</b>).</summary>
   </member>
 </doc>

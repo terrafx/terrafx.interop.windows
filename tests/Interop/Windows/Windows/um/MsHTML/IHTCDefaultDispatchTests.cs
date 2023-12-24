@@ -19,32 +19,4 @@ public static unsafe partial class IHTCDefaultDispatchTests
     {
         Assert.That(typeof(IHTCDefaultDispatch).GUID, Is.EqualTo(IID_IHTCDefaultDispatch));
     }
-
-    /// <summary>Validates that the <see cref="IHTCDefaultDispatch" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTCDefaultDispatch>(), Is.EqualTo(sizeof(IHTCDefaultDispatch)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTCDefaultDispatch" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTCDefaultDispatch).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTCDefaultDispatch" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTCDefaultDispatch), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTCDefaultDispatch), Is.EqualTo(4));
-        }
-    }
 }

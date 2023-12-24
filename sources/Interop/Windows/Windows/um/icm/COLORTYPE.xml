@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="COLORTYPE">
+    <summary>The values of the <b>COLORTYPE</b> enumeration are used by several WCS functions. Variables of type <b>COLOR</b> are defined in the color spaces enumerated by the <b>COLORTYPE</b> enumeration.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_GRAY">
+    <summary>The <b>COLOR</b> is in the GRAYCOLOR color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_RGB">
+    <summary>The <b>COLOR</b> is in the RGBCOLOR color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_XYZ">
+    <summary>The <b>COLOR</b> is in the XYZCOLOR color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_Yxy">
+    <summary>The <b>COLOR</b> is in the YxyCOLOR color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_Lab">
+    <summary>The <b>COLOR</b> is in the LabCOLOR color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_3_CHANNEL">
+    <summary>The <b>COLOR</b> is in the GENERIC3CHANNEL color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_CMYK">
+    <summary>The <b>COLOR</b> is in the CMYKCOLOR color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_5_CHANNEL">
+    <summary>The <b>COLOR</b> is in a five channel color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_6_CHANNEL">
+    <summary>The <b>COLOR</b> is in a six channel color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_7_CHANNEL">
+    <summary>The <b>COLOR</b> is in a seven channel color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_8_CHANNEL">
+    <summary>The <b>COLOR</b> is in an eight channel color space.</summary>
+  </member>
+  <member name="COLORTYPE.COLOR_NAMED">
+    <summary>The <b>COLOR</b> is in a named color space.</summary>
+  </member>
+</doc>

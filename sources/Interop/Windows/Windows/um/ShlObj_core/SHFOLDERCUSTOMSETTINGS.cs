@@ -24,7 +24,7 @@ public unsafe partial struct SHFOLDERCUSTOMSETTINGS
 
     /// <include file='SHFOLDERCUSTOMSETTINGS.xml' path='doc/member[@name="SHFOLDERCUSTOMSETTINGS.pszWebViewTemplate"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszWebViewTemplate;
+    public char* pszWebViewTemplate;
 
     /// <include file='SHFOLDERCUSTOMSETTINGS.xml' path='doc/member[@name="SHFOLDERCUSTOMSETTINGS.cchWebViewTemplate"]/*' />
     [NativeTypeName("DWORD")]
@@ -32,11 +32,11 @@ public unsafe partial struct SHFOLDERCUSTOMSETTINGS
 
     /// <include file='SHFOLDERCUSTOMSETTINGS.xml' path='doc/member[@name="SHFOLDERCUSTOMSETTINGS.pszWebViewTemplateVersion"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszWebViewTemplateVersion;
+    public char* pszWebViewTemplateVersion;
 
     /// <include file='SHFOLDERCUSTOMSETTINGS.xml' path='doc/member[@name="SHFOLDERCUSTOMSETTINGS.pszInfoTip"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszInfoTip;
+    public char* pszInfoTip;
 
     /// <include file='SHFOLDERCUSTOMSETTINGS.xml' path='doc/member[@name="SHFOLDERCUSTOMSETTINGS.cchInfoTip"]/*' />
     [NativeTypeName("DWORD")]
@@ -52,7 +52,7 @@ public unsafe partial struct SHFOLDERCUSTOMSETTINGS
 
     /// <include file='SHFOLDERCUSTOMSETTINGS.xml' path='doc/member[@name="SHFOLDERCUSTOMSETTINGS.pszIconFile"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszIconFile;
+    public char* pszIconFile;
 
     /// <include file='SHFOLDERCUSTOMSETTINGS.xml' path='doc/member[@name="SHFOLDERCUSTOMSETTINGS.cchIconFile"]/*' />
     [NativeTypeName("DWORD")]
@@ -63,7 +63,7 @@ public unsafe partial struct SHFOLDERCUSTOMSETTINGS
 
     /// <include file='SHFOLDERCUSTOMSETTINGS.xml' path='doc/member[@name="SHFOLDERCUSTOMSETTINGS.pszLogo"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszLogo;
+    public char* pszLogo;
 
     /// <include file='SHFOLDERCUSTOMSETTINGS.xml' path='doc/member[@name="SHFOLDERCUSTOMSETTINGS.cchLogo"]/*' />
     [NativeTypeName("DWORD")]

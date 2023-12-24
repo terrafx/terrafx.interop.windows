@@ -3,45 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ASF_FLAT_PICTURE">
-    <summary>
-      <para>Contains an image that is stored as metadata for a media source. This structure is used as the data item for the <a href="https://docs.microsoft.com//windows/desktop/wmformat/wmpicture">WM/Picture</a> metadata attribute.</para>
-    </summary>
-    <remarks>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/wmformat/wmpicture">WM/Picture</a> attribute is defined in the Windows Media Format SDK. The attribute contains a picture related to the content, such as album art.</para>
-      <para>To get this attribute from a media source, call <see cref="IMFMetadata.GetProperty" />, passing in the constant g_wszWMPicture for the <i>pwszName</i> parameter. The method retrieves a <b>PROPVARIANT</b> that contains a binary array (VT_BLOB). The layout of the array is as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <b>ASF_FLAT_PICTURE</b> structure.
-</description>
-        </item>
-        <item>
-          <description>Null-terminated wide-character string that contains the MIME type.
-</description>
-        </item>
-        <item>
-          <description>Null-terminated wide-character string that contains a description.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>Image data.</para>
-          </description>
-        </item>
-      </list>
-      <para>This format differs from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wmsdkidl/ns-wmsdkidl-wm_picture">WM_PICTURE</a> structure used in the Windows Media Format SDK. The <b>WM_PICTURE</b> structure contains internal pointers to two strings and the image data. If the structure is copied, these pointers become invalid. The <b>ASF_FLAT_PICTURE</b> structure does not contain internal pointers, so it is safe to copy the structure.</para>
-    </remarks>
-    <seealso cref="IMFMetadata" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Contains an image that is stored as metadata for a media source. This structure is used as the data item for the <a href="https://docs.microsoft.com//windows/desktop/wmformat/wmpicture">WM/Picture</a> metadata attribute.</summary>
   </member>
   <member name="ASF_FLAT_PICTURE.bPictureType">
-    <summary>
-      <para>Specifies the type of image. This member is equivalent to the <b>bPictureType</b> member in the <see cref="WM_PICTURE" /> structure.</para>
-    </summary>
+    <summary>Specifies the type of image. This member is equivalent to the <b>bPictureType</b> member in the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/wmsdkidl/ns-wmsdkidl-wm_picture">WM_PICTURE</a> structure.</summary>
   </member>
   <member name="ASF_FLAT_PICTURE.dwDataLen">
-    <summary>
-      <para>Size, in bytes, of the image data.</para>
-    </summary>
+    <summary>Size, in bytes, of the image data.</summary>
   </member>
 </doc>

@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PBRANGE">
-    <summary>
-      <para>Contains information about the high and low limits of a progress bar control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/pbm-getrange">PBM_GETRANGE</a> message.</para>
-    </summary>
+    <summary>Contains information about the high and low limits of a progress bar control. This structure is used with the <a href="https://docs.microsoft.com//windows/desktop/Controls/pbm-getrange">PBM_GETRANGE</a> message.</summary>
   </member>
   <member name="PBRANGE.iLow">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Low limit for the progress bar control. This is a signed integer.</para>
-    </summary>
+    <summary>Low limit for the progress bar control. This is a signed integer.</summary>
   </member>
   <member name="PBRANGE.iHigh">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>High limit for the progress bar control. This is a signed integer.</para>
-    </summary>
+    <summary>High limit for the progress bar control. This is a signed integer.</summary>
   </member>
 </doc>

@@ -26,7 +26,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDisplayPathInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPathInterop*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDisplayPathInterop*, uint>)(lpVtbl[1]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPathInterop*, uint>)(lpVtbl[1]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDisplayPathInterop*, uint>)(lpVtbl[2]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPathInterop*, uint>)(lpVtbl[2]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDisplayPathInterop.xml' path='doc/member[@name="IDisplayPathInterop.CreateSourcePresentationHandle"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
     [VtblIndex(3)]
     public HRESULT CreateSourcePresentationHandle(HANDLE* pValue)
     {
-        return ((delegate* unmanaged<IDisplayPathInterop*, HANDLE*, int>)(lpVtbl[3]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pValue);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPathInterop*, HANDLE*, int>)(lpVtbl[3]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pValue);
     }
 
     /// <include file='IDisplayPathInterop.xml' path='doc/member[@name="IDisplayPathInterop.GetSourceId"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
     [VtblIndex(4)]
     public HRESULT GetSourceId(uint* pSourceId)
     {
-        return ((delegate* unmanaged<IDisplayPathInterop*, uint*, int>)(lpVtbl[4]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pSourceId);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPathInterop*, uint*, int>)(lpVtbl[4]))((IDisplayPathInterop*)Unsafe.AsPointer(ref this), pSourceId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,18 +76,18 @@ public unsafe partial struct IDisplayPathInterop : IDisplayPathInterop.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HANDLE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HANDLE*, int> CreateSourcePresentationHandle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HANDLE*, int> CreateSourcePresentationHandle;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetSourceId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetSourceId;
     }
 }

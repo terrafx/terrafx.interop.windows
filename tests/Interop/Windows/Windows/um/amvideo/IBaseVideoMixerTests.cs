@@ -19,32 +19,4 @@ public static unsafe partial class IBaseVideoMixerTests
     {
         Assert.That(typeof(IBaseVideoMixer).GUID, Is.EqualTo(IID_IBaseVideoMixer));
     }
-
-    /// <summary>Validates that the <see cref="IBaseVideoMixer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBaseVideoMixer>(), Is.EqualTo(sizeof(IBaseVideoMixer)));
-    }
-
-    /// <summary>Validates that the <see cref="IBaseVideoMixer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBaseVideoMixer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBaseVideoMixer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBaseVideoMixer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBaseVideoMixer), Is.EqualTo(4));
-        }
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class SVGDefsElementTests
     {
         Assert.That(typeof(SVGDefsElement).GUID, Is.EqualTo(IID_SVGDefsElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGDefsElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGDefsElement>(), Is.EqualTo(sizeof(SVGDefsElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGDefsElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGDefsElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGDefsElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGDefsElement), Is.EqualTo(1));
-    }
 }

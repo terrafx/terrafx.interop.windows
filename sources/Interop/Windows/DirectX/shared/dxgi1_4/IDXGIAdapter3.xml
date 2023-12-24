@@ -3,139 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIAdapter3.QueryVideoMemoryInfo">
-    <summary>
-      <para>This method informs the process of the current budget and process usage.</para>
-    </summary>
-    <param name="NodeIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>Specifies the device's physical adapter for which the video memory information is queried.
-For single-GPU operation, set this to zero.
-If there are multiple GPU nodes, set this to the index of the node (the device's physical adapter) for which the video memory information is queried.
-See <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</para>
-    </param>
-    <param name="MemorySegmentGroup">
-      <para>Type: <b><see cref="DXGI_MEMORY_SEGMENT_GROUP" /></b></para>
-      <para>Specifies a DXGI_MEMORY_SEGMENT_GROUP that identifies the group as local or non-local.</para>
-    </param>
-    <param name="pVideoMemoryInfo">
-      <para>Type: <b><see cref="DXGI_QUERY_VIDEO_MEMORY_INFO" />*</b></para>
-      <para>Fills in a DXGI_QUERY_VIDEO_MEMORY_INFO structure with the current values.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns S_OK if successful; an error code otherwise.
-For a list of error codes, see <a href="https://docs.microsoft.com//windows/win32/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
-    </returns>
-    <remarks>
-      <para>Applications must explicitly manage their usage of physical memory explicitly and keep usage within the budget assigned to the application process.
-Processes that cannot kept their usage within their assigned budgets will likely experience stuttering, as they are intermittently frozen and paged-out to allow other processes to run.</para>
-    </remarks>
-    <seealso cref="IDXGIAdapter3" />
+    <summary>This method informs the process of the current budget and process usage.</summary>
+    <param name="NodeIndex">Specifies the device's physical adapter for which the video memory information is queried. For single-GPU operation, set this to zero. If there are multiple GPU nodes, set this to the index of the node (the device's physical adapter) for which the video memory information is queried. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</param>
+    <param name="MemorySegmentGroup">Specifies a DXGI_MEMORY_SEGMENT_GROUP that identifies the group as local or non-local.</param>
+    <param name="pVideoMemoryInfo">Fills in a DXGI_QUERY_VIDEO_MEMORY_INFO structure with the current values.</param>
+    <returns>Returns S_OK if successful; an error code otherwise. For a list of error codes, see <a href="https://docs.microsoft.com//windows/win32/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
   </member>
   <member name="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent">
-    <summary>
-      <para>Registers to receive notification of hardware content protection teardown events.</para>
-    </summary>
-    <param name="hEvent">
-      <para>Type: <b>HANDLE</b></para>
-      <para>A handle to the event object that the operating system sets when hardware content protection teardown occurs. The <see cref="CreateEvent" /> or <see cref="OpenEvent" /> function returns this handle.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A pointer to a key value that an application can pass to the <see cref="IDXGIAdapter3.UnregisterHardwareContentProtectionTeardownStatus" /> method to unregister the notification event that <i>hEvent</i> specifies.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Call <see cref="ID3D11VideoDevice.GetContentProtectionCaps" />() to check for the presence of the <see cref="D3D11_CONTENT_PROTECTION_CAPS_HARDWARE_TEARDOWN" />  capability to know whether the hardware contains an automatic teardown mechanism.</para>
-      <para>After the event is signaled, the application can call <see cref="ID3D11VideoContext1.CheckCryptoSessionStatus" /> to determine the impact of the hardware teardown for a specific <see cref="ID3D11CryptoSession" /> interface.</para>
-    </remarks>
-    <seealso cref="IDXGIAdapter3" />
+    <summary>Registers to receive notification of hardware content protection teardown events.</summary>
+    <param name="hEvent">A handle to the event object that the operating system sets when hardware content protection teardown occurs. The <see cref="CreateEvent" /> or <see cref="OpenEvent" /> function returns this handle.</param>
+    <param name="pdwCookie">A pointer to a key value that an application can pass to the <see cref="IDXGIAdapter3.UnregisterHardwareContentProtectionTeardownStatus" /> method to unregister the notification event that <i>hEvent</i> specifies.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDXGIAdapter3.RegisterVideoMemoryBudgetChangeNotificationEvent">
-    <summary>
-      <para>This method establishes a correlation between a CPU synchronization object and the budget change event.</para>
-    </summary>
-    <param name="hEvent">
-      <para>Type: <b>HANDLE</b></para>
-      <para>Specifies a HANDLE for the event.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>A key value for the window or event to unregister. The  <see cref="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent" /> method returns this value.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns an HRESULT success or error code.</para>
-    </returns>
-    <remarks>
-      <para>Instead of calling <see cref="QueryVideoMemoryInfo" /> regularly, applications can use CPU synchronization objects to efficiently wake threads when budget changes occur.</para>
-    </remarks>
-    <seealso cref="IDXGIAdapter3" />
+    <summary>This method establishes a correlation between a CPU synchronization object and the budget change event.</summary>
+    <param name="hEvent">Specifies a HANDLE for the event.</param>
+    <param name="pdwCookie">A key value for the window or event to unregister. The <see cref="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent" /> method returns this value.</param>
+    <returns>This method returns an HRESULT success or error code.</returns>
   </member>
   <member name="IDXGIAdapter3.SetVideoMemoryReservation">
-    <summary>
-      <para>This method sends the minimum required physical memory for an application, to the OS.</para>
-    </summary>
-    <param name="NodeIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>Specifies the device's physical adapter for which the video memory information is being set.
-For single-GPU operation, set this to zero.
-If there are multiple GPU nodes, set this to the index of the node (the device's physical adapter) for which the video memory information is being set.
-See <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</para>
-    </param>
-    <param name="MemorySegmentGroup">
-      <para>Type: <b><see cref="DXGI_MEMORY_SEGMENT_GROUP" /></b></para>
-      <para>Specifies a DXGI_MEMORY_SEGMENT_GROUP that identifies the group as local or non-local.</para>
-    </param>
-    <param name="Reservation">
-      <para>Type: <b>UINT64</b></para>
-      <para>Specifies a UINT64 that sets the minimum required physical memory, in bytes.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns S_OK if successful; an error code otherwise.
-For a list of error codes, see <a href="https://docs.microsoft.com//windows/win32/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</para>
-    </returns>
-    <remarks>
-      <para>Applications are encouraged to set a video reservation to denote the amount of physical memory they cannot go without.
-This value helps the OS quickly minimize the impact of large memory pressure situations.</para>
-    </remarks>
-    <seealso cref="IDXGIAdapter3" />
+    <summary>This method sends the minimum required physical memory for an application, to the OS.</summary>
+    <param name="NodeIndex">Specifies the device's physical adapter for which the video memory information is being set. For single-GPU operation, set this to zero. If there are multiple GPU nodes, set this to the index of the node (the device's physical adapter) for which the video memory information is being set. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/multi-engine">Multi-adapter systems</a>.</param>
+    <param name="MemorySegmentGroup">Specifies a DXGI_MEMORY_SEGMENT_GROUP that identifies the group as local or non-local.</param>
+    <param name="Reservation">Specifies a UINT64 that sets the minimum required physical memory, in bytes.</param>
+    <returns>Returns S_OK if successful; an error code otherwise. For a list of error codes, see <a href="https://docs.microsoft.com//windows/win32/direct3ddxgi/dxgi-error">DXGI_ERROR</a>.</returns>
   </member>
   <member name="IDXGIAdapter3.UnregisterHardwareContentProtectionTeardownStatus">
-    <summary>
-      <para>Unregisters an event to stop it from receiving notification of hardware content protection teardown events.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Type: <b>DWORD</b></para>
-      <para>A key value for the window or event to unregister. The  <see cref="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent" /> method returns this value.</para>
-    </param>
-    <seealso cref="IDXGIAdapter3" />
+    <summary>Unregisters an event to stop it from receiving notification of hardware content protection teardown events.</summary>
+    <param name="dwCookie">A key value for the window or event to unregister. The <see cref="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent" /> method returns this value.</param>
   </member>
   <member name="IDXGIAdapter3.UnregisterVideoMemoryBudgetChangeNotification">
-    <summary>
-      <para>This method stops notifying a CPU synchronization object whenever a budget change occurs. An application may switch back to polling the information regularly.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>Type: <b>DWORD</b></para>
-      <para>A key value for the window or event to unregister. The  <see cref="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent" /> method returns this value.</para>
-    </param>
-    <remarks>
-      <para>An application may switch back to polling for the information regularly.</para>
-    </remarks>
-    <seealso cref="IDXGIAdapter3" />
+    <summary>This method stops notifying a CPU synchronization object whenever a budget change occurs. An application may switch back to polling the information regularly.</summary>
+    <param name="dwCookie">A key value for the window or event to unregister. The <see cref="IDXGIAdapter3.RegisterHardwareContentProtectionTeardownStatusEvent" /> method returns this value.</param>
   </member>
   <member name="IDXGIAdapter3">
-    <summary>
-      <para>This interface adds some memory residency methods, for budgeting and reserving physical memory.</para>
-    </summary>
-    <remarks>
-      <para>For more details, refer to the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/residency">Residency</a> section of the D3D12 documentation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIAdapter2" />
+    <summary>This interface adds some memory residency methods, for budgeting and reserving physical memory.</summary>
   </member>
 </doc>

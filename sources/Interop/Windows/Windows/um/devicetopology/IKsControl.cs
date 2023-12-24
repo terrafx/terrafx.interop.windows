@@ -25,7 +25,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IKsControl*, Guid*, void**, int>)(lpVtbl[0]))((IKsControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IKsControl*, Guid*, void**, int>)(lpVtbl[0]))((IKsControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IKsControl*, uint>)(lpVtbl[1]))((IKsControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IKsControl*, uint>)(lpVtbl[1]))((IKsControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IKsControl*, uint>)(lpVtbl[2]))((IKsControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IKsControl*, uint>)(lpVtbl[2]))((IKsControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IKsControl.xml' path='doc/member[@name="IKsControl.KsProperty"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT KsProperty([NativeTypeName("PKSPROPERTY")] KSIDENTIFIER* Property, [NativeTypeName("ULONG")] uint PropertyLength, void* PropertyData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
     {
-        return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[3]))((IKsControl*)Unsafe.AsPointer(ref this), Property, PropertyLength, PropertyData, DataLength, BytesReturned);
+        return ((delegate* unmanaged[MemberFunction]<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[3]))((IKsControl*)Unsafe.AsPointer(ref this), Property, PropertyLength, PropertyData, DataLength, BytesReturned);
     }
 
     /// <include file='IKsControl.xml' path='doc/member[@name="IKsControl.KsMethod"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT KsMethod([NativeTypeName("PKSMETHOD")] KSIDENTIFIER* Method, [NativeTypeName("ULONG")] uint MethodLength, void* MethodData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
     {
-        return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[4]))((IKsControl*)Unsafe.AsPointer(ref this), Method, MethodLength, MethodData, DataLength, BytesReturned);
+        return ((delegate* unmanaged[MemberFunction]<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[4]))((IKsControl*)Unsafe.AsPointer(ref this), Method, MethodLength, MethodData, DataLength, BytesReturned);
     }
 
     /// <include file='IKsControl.xml' path='doc/member[@name="IKsControl.KsEvent"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IKsControl : IKsControl.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT KsEvent([NativeTypeName("PKSEVENT")] KSIDENTIFIER* Event, [NativeTypeName("ULONG")] uint EventLength, void* EventData, [NativeTypeName("ULONG")] uint DataLength, [NativeTypeName("ULONG *")] uint* BytesReturned)
     {
-        return ((delegate* unmanaged<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[5]))((IKsControl*)Unsafe.AsPointer(ref this), Event, EventLength, EventData, DataLength, BytesReturned);
+        return ((delegate* unmanaged[MemberFunction]<IKsControl*, KSIDENTIFIER*, uint, void*, uint, uint*, int>)(lpVtbl[5]))((IKsControl*)Unsafe.AsPointer(ref this), Event, EventLength, EventData, DataLength, BytesReturned);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IKsControl : IKsControl.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PKSPROPERTY, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsProperty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsProperty;
 
         [NativeTypeName("HRESULT (PKSMETHOD, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsMethod;
+        public delegate* unmanaged[MemberFunction]<TSelf*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsMethod;
 
         [NativeTypeName("HRESULT (PKSEVENT, ULONG, void *, ULONG, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, KSIDENTIFIER*, uint, void*, uint, uint*, int> KsEvent;
     }
 }

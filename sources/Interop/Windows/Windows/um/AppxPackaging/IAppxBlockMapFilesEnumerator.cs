@@ -27,7 +27,7 @@ public unsafe partial struct IAppxBlockMapFilesEnumerator : IAppxBlockMapFilesEn
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFilesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFilesEnumerator*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxBlockMapFilesEnumerator : IAppxBlockMapFilesEn
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBlockMapFilesEnumerator*, uint>)(lpVtbl[1]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFilesEnumerator*, uint>)(lpVtbl[1]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxBlockMapFilesEnumerator : IAppxBlockMapFilesEn
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBlockMapFilesEnumerator*, uint>)(lpVtbl[2]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFilesEnumerator*, uint>)(lpVtbl[2]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBlockMapFilesEnumerator.xml' path='doc/member[@name="IAppxBlockMapFilesEnumerator.GetCurrent"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAppxBlockMapFilesEnumerator : IAppxBlockMapFilesEn
     [VtblIndex(3)]
     public HRESULT GetCurrent(IAppxBlockMapFile** file)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFilesEnumerator*, IAppxBlockMapFile**, int>)(lpVtbl[3]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this), file);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFilesEnumerator*, IAppxBlockMapFile**, int>)(lpVtbl[3]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this), file);
     }
 
     /// <include file='IAppxBlockMapFilesEnumerator.xml' path='doc/member[@name="IAppxBlockMapFilesEnumerator.GetHasCurrent"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAppxBlockMapFilesEnumerator : IAppxBlockMapFilesEn
     [VtblIndex(4)]
     public HRESULT GetHasCurrent(BOOL* hasCurrent)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFilesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFilesEnumerator*, BOOL*, int>)(lpVtbl[4]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
     /// <include file='IAppxBlockMapFilesEnumerator.xml' path='doc/member[@name="IAppxBlockMapFilesEnumerator.MoveNext"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxBlockMapFilesEnumerator : IAppxBlockMapFilesEn
     [VtblIndex(5)]
     public HRESULT MoveNext(BOOL* hasCurrent)
     {
-        return ((delegate* unmanaged<IAppxBlockMapFilesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBlockMapFilesEnumerator*, BOOL*, int>)(lpVtbl[5]))((IAppxBlockMapFilesEnumerator*)Unsafe.AsPointer(ref this), hasCurrent);
     }
 
     public interface Interface : IUnknown.Interface
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxBlockMapFilesEnumerator : IAppxBlockMapFilesEn
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxBlockMapFile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxBlockMapFile**, int> GetCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxBlockMapFile**, int> GetCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetHasCurrent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetHasCurrent;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> MoveNext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> MoveNext;
     }
 }

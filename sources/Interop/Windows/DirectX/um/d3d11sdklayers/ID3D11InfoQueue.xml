@@ -3,518 +3,168 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11InfoQueue.AddApplicationMessage">
-    <summary>
-      <para>Add a user-defined message to the message queue and send that message to debug output.</para>
-    </summary>
-    <param name="Severity">
-      <para>Type: <b><see cref="D3D11_MESSAGE_SEVERITY" /></b></para>
-      <para>Severity of a message (see <see cref="D3D11_MESSAGE_SEVERITY" />).</para>
-    </param>
-    <param name="pDescription">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>Message string.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Add a user-defined message to the message queue and send that message to debug output.</summary>
+    <param name="Severity">Severity of a message (see <see cref="D3D11_MESSAGE_SEVERITY" />).</param>
+    <param name="pDescription">Message string.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.AddMessage">
-    <summary>
-      <para>Add a debug message to the message queue and send that message to debug output.</para>
-    </summary>
-    <param name="Category">
-      <para>Type: <b><see cref="D3D11_MESSAGE_CATEGORY" /></b></para>
-      <para>Category of a message (see <see cref="D3D11_MESSAGE_CATEGORY" />).</para>
-    </param>
-    <param name="Severity">
-      <para>Type: <b><see cref="D3D11_MESSAGE_SEVERITY" /></b></para>
-      <para>Severity of a message (see <see cref="D3D11_MESSAGE_SEVERITY" />).</para>
-    </param>
-    <param name="ID">
-      <para>Type: <b><see cref="D3D11_MESSAGE_ID" /></b></para>
-      <para>Unique identifier of a message (see <see cref="D3D11_MESSAGE_ID" />).</para>
-    </param>
-    <param name="pDescription">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>User-defined message.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This method is used by the runtime's internal mechanisms to add debug messages to the message queue and send them to debug output. For applications to add their own custom messages to the message queue and send them to debug output, call <see cref="ID3D11InfoQueue.AddApplicationMessage" />.</para>
-    </remarks>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Add a debug message to the message queue and send that message to debug output.</summary>
+    <param name="Category">Category of a message (see <see cref="D3D11_MESSAGE_CATEGORY" />).</param>
+    <param name="Severity">Severity of a message (see <see cref="D3D11_MESSAGE_SEVERITY" />).</param>
+    <param name="ID">Unique identifier of a message (see <see cref="D3D11_MESSAGE_ID" />).</param>
+    <param name="pDescription">User-defined message.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.AddRetrievalFilterEntries">
-    <summary>
-      <para>Add storage filters to the top of the retrieval-filter stack.</para>
-    </summary>
-    <param name="pFilter">
-      <para>Type: <b><see cref="D3D11_INFO_QUEUE_FILTER" />*</b></para>
-      <para>Array of retrieval filters (see <see cref="D3D11_INFO_QUEUE_FILTER" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>The following code example shows how to use <b>ID3D11InfoQueue.AddRetrievalFilterEntries</b>:</para>
-      <code>
-D3D11_MESSAGE_CATEGORY cats[] = { ..., ..., ... };
-D3D11_MESSAGE_SEVERITY sevs[] = { ..., ..., ... };
-UINT ids[] = { ..., ..., ... };
-
-D3D11_INFO_QUEUE_FILTER filter;
-memset( &amp;amp;amp;amp;amp;amp;filter, 0, sizeof(filter) );
-
-// To set the type of messages to allow,
-// set filter.AllowList as follows:
-filter.AllowList.NumCategories = sizeof(cats / sizeof(D3D11_MESSAGE_CATEGORY));
-filter.AllowList.pCategoryList = cats;
-filter.AllowList.NumSeverities = sizeof(sevs / sizeof(D3D11_MESSAGE_SEVERITY));
-filter.AllowList.pSeverityList = sevs;
-filter.AllowList.NumIDs = sizeof(ids) / sizeof(UINT);
-filter.AllowList.pIDList = ids;
-
-// To set the type of messages to deny, set filter.DenyList
-// similarly to the preceding filter.AllowList.
-
-// The following single call sets all of the preceding information.
-hr = infoQueue-&gt;AddRetrievalFilterEntries( &amp;amp;amp;amp;amp;amp;filter );
-
-</code>
-    </remarks>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Add storage filters to the top of the retrieval-filter stack.</summary>
+    <param name="pFilter">Array of retrieval filters (see <see cref="D3D11_INFO_QUEUE_FILTER" />).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.AddStorageFilterEntries">
-    <summary>
-      <para>Add storage filters to the top of the storage-filter stack.</para>
-    </summary>
-    <param name="pFilter">
-      <para>Type: <b><see cref="D3D11_INFO_QUEUE_FILTER" />*</b></para>
-      <para>Array of storage filters (see <see cref="D3D11_INFO_QUEUE_FILTER" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Add storage filters to the top of the storage-filter stack.</summary>
+    <param name="pFilter">Array of storage filters (see <see cref="D3D11_INFO_QUEUE_FILTER" />).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.ClearRetrievalFilter">
-    <summary>
-      <para>Remove a retrieval filter from the top of the retrieval-filter stack.</para>
-    </summary>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Remove a retrieval filter from the top of the retrieval-filter stack.</summary>
   </member>
   <member name="ID3D11InfoQueue.ClearStorageFilter">
-    <summary>
-      <para>Remove a storage filter from the top of the storage-filter stack.</para>
-    </summary>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Remove a storage filter from the top of the storage-filter stack.</summary>
   </member>
   <member name="ID3D11InfoQueue.ClearStoredMessages">
-    <summary>
-      <para>Clear all messages from the message queue.</para>
-    </summary>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Clear all messages from the message queue.</summary>
   </member>
   <member name="ID3D11InfoQueue.GetBreakOnCategory">
-    <summary>
-      <para>Get a message category to break on when a message with that category passes through the storage filter.</para>
-    </summary>
-    <param name="Category">
-      <para>Type: <b><see cref="D3D11_MESSAGE_CATEGORY" /></b></para>
-      <para>Message category to break on (see <see cref="D3D11_MESSAGE_CATEGORY" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Whether this breaking condition is turned on or off (true for on, false for off).</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get a message category to break on when a message with that category passes through the storage filter.</summary>
+    <param name="Category">Message category to break on (see <see cref="D3D11_MESSAGE_CATEGORY" />).</param>
+    <returns>Whether this breaking condition is turned on or off (true for on, false for off).</returns>
   </member>
   <member name="ID3D11InfoQueue.GetBreakOnID">
-    <summary>
-      <para>Get a message identifier to break on when a message with that identifier passes through the storage filter.</para>
-    </summary>
-    <param name="ID">
-      <para>Type: <b><see cref="D3D11_MESSAGE_ID" /></b></para>
-      <para>Message identifier to break on (see <see cref="D3D11_MESSAGE_ID" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Whether this breaking condition is turned on or off (true for on, false for off).</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get a message identifier to break on when a message with that identifier passes through the storage filter.</summary>
+    <param name="ID">Message identifier to break on (see <see cref="D3D11_MESSAGE_ID" />).</param>
+    <returns>Whether this breaking condition is turned on or off (true for on, false for off).</returns>
   </member>
   <member name="ID3D11InfoQueue.GetBreakOnSeverity">
-    <summary>
-      <para>Get a message severity level to break on when a message with that severity level passes through the storage filter.</para>
-    </summary>
-    <param name="Severity">
-      <para>Type: <b><see cref="D3D11_MESSAGE_SEVERITY" /></b></para>
-      <para>Message severity level to break on (see <see cref="D3D11_MESSAGE_SEVERITY" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Whether this breaking condition is turned on or off (true for on, false for off).</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get a message severity level to break on when a message with that severity level passes through the storage filter.</summary>
+    <param name="Severity">Message severity level to break on (see <see cref="D3D11_MESSAGE_SEVERITY" />).</param>
+    <returns>Whether this breaking condition is turned on or off (true for on, false for off).</returns>
   </member>
   <member name="ID3D11InfoQueue.GetMessage">
-    <summary>
-      <para>Get a message from the message queue.</para>
-    </summary>
-    <param name="MessageIndex">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>Index into message queue after an optional retrieval filter has been applied. This can be between 0 and the number of messages in the message queue that pass through the retrieval filter (which can be obtained with <see cref="ID3D11InfoQueue.GetNumStoredMessagesAllowedByRetrievalFilter" />). 0 is the message at the front of the message queue.</para>
-    </param>
-    <param name="pMessage">
-      <para>Type: <b><see cref="D3D11_MESSAGE" />*</b></para>
-      <para>Returned message (see <see cref="D3D11_MESSAGE" />).</para>
-    </param>
-    <param name="pMessageByteLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a>*</b></para>
-      <para>Size of pMessage in bytes, including the size of the message string that the pMessage points to.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>This method does not remove any messages from the message queue.</para>
-      <para>This method gets messages from the message queue after an optional retrieval filter has been applied.</para>
-      <para>Applications should call this method twice to retrieve a message - first to obtain the size of the message and second to get the message. Here is a typical example:</para>
-      <code>
-// Get the size of the message
-SIZE_T messageLength = 0;
-HRESULT hr = pInfoQueue-&gt;GetMessage(0, NULL, &amp;amp;amp;amp;amp;amp;messageLength);
-
-// Allocate space and get the message
-D3D11_MESSAGE * pMessage = (D3D11_MESSAGE*)malloc(messageLength);
-hr = pInfoQueue-&gt;GetMessage(0, pMessage, &amp;amp;amp;amp;amp;amp;messageLength);
-
-</code>
-      <para>For an overview see <see cref="Information Queue Overview" />.</para>
-    </remarks>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get a message from the message queue.</summary>
+    <param name="MessageIndex">Index into message queue after an optional retrieval filter has been applied. This can be between 0 and the number of messages in the message queue that pass through the retrieval filter (which can be obtained with <see cref="ID3D11InfoQueue.GetNumStoredMessagesAllowedByRetrievalFilter" />). 0 is the message at the front of the message queue.</param>
+    <param name="pMessage">Returned message (see <see cref="D3D11_MESSAGE" />).</param>
+    <param name="pMessageByteLength">Size of pMessage in bytes, including the size of the message string that the pMessage points to.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetMessageCountLimit">
-    <summary>
-      <para>Get the maximum number of messages that can be added to the message queue.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>Maximum number of messages that can be added to the queue. -1 means no limit.</para>
-    </returns>
-    <remarks>
-      <para>When the number of messages in the message queue has reached the maximum limit, new messages coming in will push old messages out.</para>
-    </remarks>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the maximum number of messages that can be added to the message queue.</summary>
+    <returns>Maximum number of messages that can be added to the queue. -1 means no limit.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetMuteDebugOutput">
-    <summary>
-      <para>Get a boolean that turns the debug output on or off.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Whether the debug output is on or off (true for on, false for off).</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get a boolean that turns the debug output on or off.</summary>
+    <returns>Whether the debug output is on or off (true for on, false for off).</returns>
   </member>
   <member name="ID3D11InfoQueue.GetNumMessagesAllowedByStorageFilter">
-    <summary>
-      <para>Get the number of messages that were allowed to pass through a storage filter.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>Number of messages allowed by a storage filter.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the number of messages that were allowed to pass through a storage filter.</summary>
+    <returns>Number of messages allowed by a storage filter.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetNumMessagesDeniedByStorageFilter">
-    <summary>
-      <para>Get the number of messages that were denied passage through a storage filter.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>Number of messages denied by a storage filter.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the number of messages that were denied passage through a storage filter.</summary>
+    <returns>Number of messages denied by a storage filter.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetNumMessagesDiscardedByMessageCountLimit">
-    <summary>
-      <para>Get the number of messages that were discarded due to the message count limit.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>Number of messages discarded.</para>
-    </returns>
-    <remarks>
-      <para>Get and set the message count limit with <see cref="ID3D11InfoQueue.GetMessageCountLimit" /> and <see cref="ID3D11InfoQueue.SetMessageCountLimit" />, respectively.</para>
-    </remarks>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the number of messages that were discarded due to the message count limit.</summary>
+    <returns>Number of messages discarded.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetNumStoredMessages">
-    <summary>
-      <para>Get the number of messages currently stored in the message queue.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>Number of messages currently stored in the message queue.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the number of messages currently stored in the message queue.</summary>
+    <returns>Number of messages currently stored in the message queue.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetNumStoredMessagesAllowedByRetrievalFilter">
-    <summary>
-      <para>Get the number of messages that are able to pass through a retrieval filter.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>Number of messages allowed by a retrieval filter.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the number of messages that are able to pass through a retrieval filter.</summary>
+    <returns>Number of messages allowed by a retrieval filter.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetRetrievalFilter">
-    <summary>
-      <para>Get the retrieval filter at the top of the retrieval-filter stack.</para>
-    </summary>
-    <param name="pFilter">
-      <para>Type: <b><see cref="D3D11_INFO_QUEUE_FILTER" />*</b></para>
-      <para>Retrieval filter at the top of the retrieval-filter stack.</para>
-    </param>
-    <param name="pFilterByteLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a>*</b></para>
-      <para>Size of the retrieval filter in bytes. If pFilter is <b>NULL</b>, the size of the retrieval filter will be output to this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the retrieval filter at the top of the retrieval-filter stack.</summary>
+    <param name="pFilter">Retrieval filter at the top of the retrieval-filter stack.</param>
+    <param name="pFilterByteLength">Size of the retrieval filter in bytes. If pFilter is <b>NULL</b>, the size of the retrieval filter will be output to this parameter.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetRetrievalFilterStackSize">
-    <summary>
-      <para>Get the size of the retrieval-filter stack in bytes.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Size of the retrieval-filter stack in bytes.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the size of the retrieval-filter stack in bytes.</summary>
+    <returns>Size of the retrieval-filter stack in bytes.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetStorageFilter">
-    <summary>
-      <para>Get the storage filter at the top of the storage-filter stack.</para>
-    </summary>
-    <param name="pFilter">
-      <para>Type: <b><see cref="D3D11_INFO_QUEUE_FILTER" />*</b></para>
-      <para>Storage filter at the top of the storage-filter stack.</para>
-    </param>
-    <param name="pFilterByteLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a>*</b></para>
-      <para>Size of the storage filter in bytes. If pFilter is <b>NULL</b>, the size of the storage filter will be output to this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the storage filter at the top of the storage-filter stack.</summary>
+    <param name="pFilter">Storage filter at the top of the storage-filter stack.</param>
+    <param name="pFilterByteLength">Size of the storage filter in bytes. If pFilter is <b>NULL</b>, the size of the storage filter will be output to this parameter.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.GetStorageFilterStackSize">
-    <summary>
-      <para>Get the size of the storage-filter stack in bytes.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Size of the storage-filter stack in bytes.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Get the size of the storage-filter stack in bytes.</summary>
+    <returns>Size of the storage-filter stack in bytes.</returns>
   </member>
   <member name="ID3D11InfoQueue.PopRetrievalFilter">
-    <summary>
-      <para>Pop a retrieval filter from the top of the retrieval-filter stack.</para>
-    </summary>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Pop a retrieval filter from the top of the retrieval-filter stack.</summary>
   </member>
   <member name="ID3D11InfoQueue.PopStorageFilter">
-    <summary>
-      <para>Pop a storage filter from the top of the storage-filter stack.</para>
-    </summary>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Pop a storage filter from the top of the storage-filter stack.</summary>
   </member>
   <member name="ID3D11InfoQueue.PushCopyOfRetrievalFilter">
-    <summary>
-      <para>Push a copy of retrieval filter currently on the top of the retrieval-filter stack onto the retrieval-filter stack.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Push a copy of retrieval filter currently on the top of the retrieval-filter stack onto the retrieval-filter stack.</summary>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.PushCopyOfStorageFilter">
-    <summary>
-      <para>Push a copy of storage filter currently on the top of the storage-filter stack onto the storage-filter stack.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Push a copy of storage filter currently on the top of the storage-filter stack onto the storage-filter stack.</summary>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.PushEmptyRetrievalFilter">
-    <summary>
-      <para>Push an empty retrieval filter onto the retrieval-filter stack.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>An empty retrieval filter allows all messages to pass through.</para>
-    </remarks>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Push an empty retrieval filter onto the retrieval-filter stack.</summary>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.PushEmptyStorageFilter">
-    <summary>
-      <para>Push an empty storage filter onto the storage-filter stack.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>An empty storage filter allows all messages to pass through.</para>
-    </remarks>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Push an empty storage filter onto the storage-filter stack.</summary>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.PushRetrievalFilter">
-    <summary>
-      <para>Push a retrieval filter onto the retrieval-filter stack.</para>
-    </summary>
-    <param name="pFilter">
-      <para>Type: <b><see cref="D3D11_INFO_QUEUE_FILTER" />*</b></para>
-      <para>Pointer to a retrieval filter (see <see cref="D3D11_INFO_QUEUE_FILTER" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Push a retrieval filter onto the retrieval-filter stack.</summary>
+    <param name="pFilter">Pointer to a retrieval filter (see <see cref="D3D11_INFO_QUEUE_FILTER" />).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.PushStorageFilter">
-    <summary>
-      <para>Push a storage filter onto the storage-filter stack.</para>
-    </summary>
-    <param name="pFilter">
-      <para>Type: <b><see cref="D3D11_INFO_QUEUE_FILTER" />*</b></para>
-      <para>Pointer to a storage filter (see <see cref="D3D11_INFO_QUEUE_FILTER" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Push a storage filter onto the storage-filter stack.</summary>
+    <param name="pFilter">Pointer to a storage filter (see <see cref="D3D11_INFO_QUEUE_FILTER" />).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.SetBreakOnCategory">
-    <summary>
-      <para>Set a message category to break on when a message with that category passes through the storage filter.</para>
-    </summary>
-    <param name="Category">
-      <para>Type: <b><see cref="D3D11_MESSAGE_CATEGORY" /></b></para>
-      <para>Message category to break on (see <see cref="D3D11_MESSAGE_CATEGORY" />).</para>
-    </param>
-    <param name="bEnable">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Turns this breaking condition on or off (true for on, false for off).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Set a message category to break on when a message with that category passes through the storage filter.</summary>
+    <param name="Category">Message category to break on (see <see cref="D3D11_MESSAGE_CATEGORY" />).</param>
+    <param name="bEnable">Turns this breaking condition on or off (true for on, false for off).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.SetBreakOnID">
-    <summary>
-      <para>Set a message identifier to break on when a message with that identifier passes through the storage filter.</para>
-    </summary>
-    <param name="ID">
-      <para>Type: <b><see cref="D3D11_MESSAGE_ID" /></b></para>
-      <para>Message identifier to break on (see <see cref="D3D11_MESSAGE_ID" />).</para>
-    </param>
-    <param name="bEnable">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Turns this breaking condition on or off (true for on, false for off).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Set a message identifier to break on when a message with that identifier passes through the storage filter.</summary>
+    <param name="ID">Message identifier to break on (see <see cref="D3D11_MESSAGE_ID" />).</param>
+    <param name="bEnable">Turns this breaking condition on or off (true for on, false for off).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.SetBreakOnSeverity">
-    <summary>
-      <para>Set a message severity level to break on when a message with that severity level passes through the storage filter.</para>
-    </summary>
-    <param name="Severity">
-      <para>Type: <b><see cref="D3D11_MESSAGE_SEVERITY" /></b></para>
-      <para>A <see cref="D3D11_MESSAGE_SEVERITY" />, which represents a message severity level to break on.</para>
-    </param>
-    <param name="bEnable">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Turns this breaking condition on or off (true for on, false for off).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Set a message severity level to break on when a message with that severity level passes through the storage filter.</summary>
+    <param name="Severity">A <see cref="D3D11_MESSAGE_SEVERITY" />, which represents a message severity level to break on.</param>
+    <param name="bEnable">Turns this breaking condition on or off (true for on, false for off).</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.SetMessageCountLimit">
-    <summary>
-      <para>Set the maximum number of messages that can be added to the message queue.</para>
-    </summary>
-    <param name="MessageCountLimit">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT64</a></b></para>
-      <para>Maximum number of messages that can be added to the message queue. -1 means no limit.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>When the number of messages in the message queue has reached the maximum limit, new messages coming in will push old messages out.</para>
-    </remarks>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Set the maximum number of messages that can be added to the message queue.</summary>
+    <param name="MessageCountLimit">Maximum number of messages that can be added to the message queue. -1 means no limit.</param>
+    <returns>This method returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</returns>
   </member>
   <member name="ID3D11InfoQueue.SetMuteDebugOutput">
-    <summary>
-      <para>Set a boolean that turns the debug output on or off.</para>
-    </summary>
-    <param name="bMute">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>Disable/Enable the debug output (<b>TRUE</b> to disable or mute the output, <b>FALSE</b> to enable the output).</para>
-    </param>
-    <remarks>
-      <para>This will stop messages that pass the storage filter from being printed out in the debug output, however those messages will still be added to the message queue.</para>
-    </remarks>
-    <seealso cref="ID3D11InfoQueue Interface" />
+    <summary>Set a boolean that turns the debug output on or off.</summary>
+    <param name="bMute">Disable/Enable the debug output (<b>TRUE</b> to disable or mute the output, <b>FALSE</b> to enable the output).</param>
   </member>
   <member name="ID3D11InfoQueue">
-    <summary>
-      <para>An information-queue interface stores, retrieves, and filters debug messages. The queue consists of a message queue, an optional storage filter stack, and a optional retrieval filter stack.</para>
-    </summary>
-    <remarks>
-      <para>To get this interface, turn on debug layer and use <see cref="IUnknown.QueryInterface" /> from the <see cref="ID3D11Device" />.</para>
-      <para>
-        <b>Windows Phone 8:
-</b> This API is supported.</para>
-    </remarks>
-    <seealso cref="IUnknown" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-layer-interfaces">Layer Interfaces</seealso>
+    <summary>An information-queue interface stores, retrieves, and filters debug messages. The queue consists of a message queue, an optional storage filter stack, and a optional retrieval filter stack.</summary>
   </member>
 </doc>

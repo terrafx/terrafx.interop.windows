@@ -28,6 +28,9 @@ public static partial class TRUST
     [NativeTypeName("#define TRUST_TYPE_MIT 0x00000003")]
     public const int TRUST_TYPE_MIT = 0x00000003;
 
+    [NativeTypeName("#define TRUST_TYPE_AAD 0x00000005")]
+    public const int TRUST_TYPE_AAD = 0x00000005;
+
     [NativeTypeName("#define TRUST_ATTRIBUTE_NON_TRANSITIVE 0x00000001")]
     public const int TRUST_ATTRIBUTE_NON_TRANSITIVE = 0x00000001;
 

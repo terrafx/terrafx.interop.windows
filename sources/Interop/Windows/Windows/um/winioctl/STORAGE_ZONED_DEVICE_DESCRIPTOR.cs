@@ -29,7 +29,7 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
     public uint ZoneCount;
 
     /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneAttributes"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2821:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L2821_C5")]
     public _ZoneAttributes_e__Union ZoneAttributes;
 
     /// <include file='STORAGE_ZONED_DEVICE_DESCRIPTOR.xml' path='doc/member[@name="STORAGE_ZONED_DEVICE_DESCRIPTOR.ZoneGroupCount"]/*' />
@@ -46,16 +46,16 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
     {
         /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union.SequentialRequiredZone"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2822:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L2822_C9")]
         public _SequentialRequiredZone_e__Struct SequentialRequiredZone;
 
         /// <include file='_ZoneAttributes_e__Union.xml' path='doc/member[@name="_ZoneAttributes_e__Union.SequentialPreferredZone"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:2832:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L2832_C9")]
         public _SequentialPreferredZone_e__Struct SequentialPreferredZone;
 
         /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct"]/*' />
-        public unsafe partial struct _SequentialRequiredZone_e__Struct
+        public partial struct _SequentialRequiredZone_e__Struct
         {
             /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct.MaxOpenZoneCount"]/*' />
             [NativeTypeName("DWORD")]
@@ -67,7 +67,14 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
 
             /// <include file='_SequentialRequiredZone_e__Struct.xml' path='doc/member[@name="_SequentialRequiredZone_e__Struct.Reserved"]/*' />
             [NativeTypeName("BYTE[3]")]
-            public fixed byte Reserved[3];
+            public _Reserved_e__FixedBuffer Reserved;
+
+            /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+            [InlineArray(3)]
+            public partial struct _Reserved_e__FixedBuffer
+            {
+                public byte e0;
+            }
         }
 
         /// <include file='_SequentialPreferredZone_e__Struct.xml' path='doc/member[@name="_SequentialPreferredZone_e__Struct"]/*' />
@@ -94,7 +101,7 @@ public partial struct STORAGE_ZONED_DEVICE_DESCRIPTOR
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

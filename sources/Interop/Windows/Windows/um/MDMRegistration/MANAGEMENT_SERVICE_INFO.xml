@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MANAGEMENT_SERVICE_INFO">
-    <summary>
-      <para>Contains the endpoints and information about the management service.</para>
-    </summary>
-    <seealso cref="DiscoverManagementService" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/MDMReg/mdm-registration-structures">MDM Registration Structures</seealso>
+    <summary>Contains the endpoints and information about the management service.</summary>
   </member>
   <member name="MANAGEMENT_SERVICE_INFO.pszMDMServiceUri">
-    <summary>
-      <para>The URI of the Mobile Device Management service.</para>
-    </summary>
+    <summary>The URI of the Mobile Device Management service.</summary>
   </member>
   <member name="MANAGEMENT_SERVICE_INFO.pszAuthenticationUri">
-    <summary>
-      <para>The URI of the Authentication service.</para>
-    </summary>
+    <summary>The URI of the Authentication service.</summary>
   </member>
 </doc>

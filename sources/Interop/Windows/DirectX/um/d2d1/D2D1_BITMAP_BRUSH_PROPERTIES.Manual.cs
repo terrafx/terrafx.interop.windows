@@ -20,11 +20,11 @@ public partial struct D2D1_BITMAP_BRUSH_PROPERTIES
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
-                    0x00, 0x00, 0x00, 0x00,
-                    0x00, 0x00, 0x00, 0x00,
-                    0x01, 0x00, 0x00, 0x00,
-                };
+            ReadOnlySpan<byte> data = [
+                0x00, 0x00, 0x00, 0x00,
+                0x00, 0x00, 0x00, 0x00,
+                0x01, 0x00, 0x00, 0x00,
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<D2D1_BITMAP_BRUSH_PROPERTIES>());
             return ref Unsafe.As<byte, D2D1_BITMAP_BRUSH_PROPERTIES>(ref MemoryMarshal.GetReference(data));

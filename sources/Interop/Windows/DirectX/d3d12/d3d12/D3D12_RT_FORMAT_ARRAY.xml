@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RT_FORMAT_ARRAY">
+    <summary>Wraps an array of render target formats.</summary>
+  </member>
+  <member name="D3D12_RT_FORMAT_ARRAY.RTFormats">
+    <summary>Specifies a fixed-size array of DXGI_FORMAT values that define the format of up to 8 render targets.</summary>
+  </member>
+  <member name="D3D12_RT_FORMAT_ARRAY.NumRenderTargets">
+    <summary>Specifies the number of render target formats stored in the array.</summary>
+  </member>
+</doc>

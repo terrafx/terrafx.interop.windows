@@ -4,31 +4,20 @@
 <doc>
   <member name="DVD_REGION">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Identifies the DVD region as reported by the local system components.</para>
     </summary>
-    <remarks>
-      <para>The AM_PROPERTY_DVDCOPY_REGION property uses this structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dvd-copy-protection-property-set">DVD Copy Protection Property Set</seealso>
   </member>
   <member name="DVD_REGION.CopySystem">
-    <summary>
-      <para>Specifies whether the disk is copy protected.</para>
-    </summary>
+    <summary>Specifies whether the disk is copy protected.</summary>
   </member>
   <member name="DVD_REGION.RegionData">
-    <summary>
-      <para>Contains information about the region from the decoder.</para>
-    </summary>
+    <summary>Contains information about the region from the decoder.</summary>
   </member>
   <member name="DVD_REGION.SystemRegion">
-    <summary>
-      <para>Contains information about region from DVD drive.</para>
-    </summary>
+    <summary>Contains information about region from DVD drive.</summary>
   </member>
   <member name="DVD_REGION.ResetCount">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

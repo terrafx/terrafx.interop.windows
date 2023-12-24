@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSAPI_WORKING_SET_EX_INFORMATION">
-    <summary>
-      <para>Contains extended working set information for a process.</para>
-    </summary>
-    <seealso cref="PSAPI_WORKING_SET_EX_BLOCK" />
-    <seealso cref="QueryWorkingSetEx" />
+    <summary>Contains extended working set information for a process.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_INFORMATION.VirtualAddress">
-    <summary>
-      <para>The virtual address.</para>
-    </summary>
+    <summary>The virtual address.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_EX_INFORMATION.VirtualAttributes">
-    <summary>
-      <para>A <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> union that indicates the attributes of the page at <b>VirtualAddress</b>.</para>
-    </summary>
+    <summary>A <see cref="PSAPI_WORKING_SET_EX_BLOCK" /> union that indicates the attributes of the page at <b>VirtualAddress</b>.</summary>
   </member>
 </doc>

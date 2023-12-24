@@ -3,60 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IFileSystemBindData.GetFindData">
-    <summary>
-      <para>Gets the file system information stored in the <see cref="WIN32_FIND_DATA" /> structure.</para>
-    </summary>
-    <param name="pfd">
-      <para>Type: <b><see cref="WIN32_FIND_DATA" />*</b></para>
-      <para>A pointer to the <see cref="WIN32_FIND_DATA" /> structure that receives the data.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>This method provides bind context information to <see cref="IShellFolder.ParseDisplayName" />. The client accesses the object by calling <see cref="IBindCtx.GetObjectParam" /> with the <i>pszKey</i> parameter set to the string "File System Bind Data".</para>
-    </remarks>
+    <summary>Gets the file system information stored in the <see cref="WIN32_FIND_DATA" /> structure.</summary>
+    <param name="pfd">A pointer to the <see cref="WIN32_FIND_DATA" /> structure that receives the data.</param>
+    <returns>Returns S_OK.</returns>
   </member>
   <member name="IFileSystemBindData.SetFindData">
-    <summary>
-      <para>Stores file system information in a <see cref="WIN32_FIND_DATA" /> structure. This information is used by <see cref="ParseDisplayName" />.</para>
-    </summary>
-    <param name="pfd">
-      <para>Type: <b>const <see cref="WIN32_FIND_DATA" />*</b></para>
-      <para>A pointer to the <see cref="WIN32_FIND_DATA" /> structure that specifies the data you want to store.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Always returns <b>S_OK</b>.</para>
-    </returns>
-    <remarks>
-      <para>After the client stores the file information, the instance of the object itself must be stored in a bind context by using the <see cref="IBindCtx.RegisterObjectParam" /> method with the <i>pszKey</i> parameter set to <code>L"File System Bind Data"</code>.</para>
-    </remarks>
+    <summary>Stores file system information in a <see cref="WIN32_FIND_DATA" /> structure. This information is used by <see cref="ParseDisplayName" />.</summary>
+    <param name="pfd">A pointer to the <see cref="WIN32_FIND_DATA" /> structure that specifies the data you want to store.</param>
+    <returns>Always returns <b>S_OK</b>.</returns>
   </member>
   <member name="IFileSystemBindData">
-    <summary>
-      <para>Exposes methods that store file system information for optimizing calls to <see cref="IShellFolder.ParseDisplayName" />.</para>
-    </summary>
-    <remarks>
-      <para>
-        <b>IFileSystemBindData</b> stores the file system information in a <see cref="WIN32_FIND_DATA" /> structure. The object that implements <b>IFileSystemBindData</b> is then stored in a bind context that is passed to <see cref="IShellFolder.ParseDisplayName" />.</para>
-      <para>Implement <b>IFileSystemBindData</b> when you want to optimize calls to <see cref="IShellFolder.ParseDisplayName" /> and you already have the <see cref="WIN32_FIND_DATA" /> structure's file information available to you.</para>
-      <para>To store the <see cref="WIN32_FIND_DATA" /> information prior to calling <see cref="IShellFolder.ParseDisplayName" />, the client uses the following procedure.</para>
-      <list type="number">
-        <item>
-          <description>Create an instance of the object that exposes the <b>IFileSystemBindData</b> interface.</description>
-        </item>
-        <item>
-          <description>Use <see cref="IFileSystemBindData.SetFindData" /> to store the data in the object.</description>
-        </item>
-        <item>
-          <description>Store the object in a bind context through the <see cref="IBindCtx.RegisterObjectParam" /> method. Set the <i>pszKey</i> parameter to the string <code>L"File System Bind Data"</code> and the <i>punk</i> parameter to the address of the <b>IFileSystemBindData</b> interface.</description>
-        </item>
-      </list>
-      <para>The bind context is then passed with the call to <see cref="IShellFolder.ParseDisplayName" />.</para>
-      <para>
-        <b>Note</b>  Prior to Windows Vista this interface was declared in Shlobj.h.</para>
-    </remarks>
+    <summary>Exposes methods that store file system information for optimizing calls to <see cref="IShellFolder.ParseDisplayName" />.</summary>
   </member>
 </doc>

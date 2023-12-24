@@ -19,32 +19,4 @@ public static unsafe partial class IBannerNotificationHandlerTests
     {
         Assert.That(typeof(IBannerNotificationHandler).GUID, Is.EqualTo(IID_IBannerNotificationHandler));
     }
-
-    /// <summary>Validates that the <see cref="IBannerNotificationHandler" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IBannerNotificationHandler>(), Is.EqualTo(sizeof(IBannerNotificationHandler)));
-    }
-
-    /// <summary>Validates that the <see cref="IBannerNotificationHandler" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IBannerNotificationHandler).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IBannerNotificationHandler" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IBannerNotificationHandler), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IBannerNotificationHandler), Is.EqualTo(4));
-        }
-    }
 }

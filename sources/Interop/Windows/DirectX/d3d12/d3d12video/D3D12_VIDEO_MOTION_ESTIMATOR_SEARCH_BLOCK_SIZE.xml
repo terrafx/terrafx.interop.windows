@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE">
+    <summary>Defines search block sizes for video motion estimation.</summary>
+  </member>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE.D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_8X8">
+    <summary>The search block size is 8x8 pixels.</summary>
+  </member>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE.D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_16X16">
+    <summary>The search block size is 16x16 pixels.</summary>
+  </member>
+</doc>

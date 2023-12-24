@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLPainterOverlay : IHTMLPainterOverlay.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLPainterOverlay*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPainterOverlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterOverlay*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLPainterOverlay*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLPainterOverlay : IHTMLPainterOverlay.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLPainterOverlay*, uint>)(lpVtbl[1]))((IHTMLPainterOverlay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterOverlay*, uint>)(lpVtbl[1]))((IHTMLPainterOverlay*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLPainterOverlay : IHTMLPainterOverlay.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLPainterOverlay*, uint>)(lpVtbl[2]))((IHTMLPainterOverlay*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterOverlay*, uint>)(lpVtbl[2]))((IHTMLPainterOverlay*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLPainterOverlay.xml' path='doc/member[@name="IHTMLPainterOverlay.OnMove"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLPainterOverlay : IHTMLPainterOverlay.Interface
     [VtblIndex(3)]
     public HRESULT OnMove(RECT rcDevice)
     {
-        return ((delegate* unmanaged<IHTMLPainterOverlay*, RECT, int>)(lpVtbl[3]))((IHTMLPainterOverlay*)Unsafe.AsPointer(ref this), rcDevice);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLPainterOverlay*, RECT, int>)(lpVtbl[3]))((IHTMLPainterOverlay*)Unsafe.AsPointer(ref this), rcDevice);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IHTMLPainterOverlay : IHTMLPainterOverlay.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (RECT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RECT, int> OnMove;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RECT, int> OnMove;
     }
 }

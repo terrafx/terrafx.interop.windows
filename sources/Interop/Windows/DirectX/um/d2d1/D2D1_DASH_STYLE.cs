@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE"]/*' />
-public enum D2D1_DASH_STYLE : uint
+public enum D2D1_DASH_STYLE
 {
     /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_SOLID"]/*' />
     D2D1_DASH_STYLE_SOLID = 0,
@@ -27,5 +27,5 @@ public enum D2D1_DASH_STYLE : uint
     D2D1_DASH_STYLE_CUSTOM = 5,
 
     /// <include file='D2D1_DASH_STYLE.xml' path='doc/member[@name="D2D1_DASH_STYLE.D2D1_DASH_STYLE_FORCE_DWORD"]/*' />
-    D2D1_DASH_STYLE_FORCE_DWORD = 0xffffffff,
+    D2D1_DASH_STYLE_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

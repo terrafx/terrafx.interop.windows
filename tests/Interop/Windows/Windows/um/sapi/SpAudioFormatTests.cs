@@ -19,25 +19,4 @@ public static unsafe partial class SpAudioFormatTests
     {
         Assert.That(typeof(SpAudioFormat).GUID, Is.EqualTo(CLSID_SpAudioFormat));
     }
-
-    /// <summary>Validates that the <see cref="SpAudioFormat" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SpAudioFormat>(), Is.EqualTo(sizeof(SpAudioFormat)));
-    }
-
-    /// <summary>Validates that the <see cref="SpAudioFormat" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SpAudioFormat).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SpAudioFormat" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SpAudioFormat), Is.EqualTo(1));
-    }
 }

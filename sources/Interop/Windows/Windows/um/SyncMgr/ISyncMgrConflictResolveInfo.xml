@@ -3,151 +3,52 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrConflictResolveInfo.GetItemChoice">
-    <summary>
-      <para>Gets the index of an item that the user wants to keep.</para>
-    </summary>
-    <param name="iChoice">
-      <para>Type: <b>UINT</b></para>
-      <para>The item that the user wants to keep.</para>
-    </param>
-    <param name="piChoiceIndex">
-      <para>Type: <b>UINT*</b></para>
-      <para>The index into the conflict's item array. This value is passed to the resolver for subsequent conflicts in the same conflict set if the user chooses to apply the same operation to all selected conflicts of the same type from the same handler.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISyncMgrConflictResolveInfo" />
-    <seealso cref="ISyncMgrConflictResolveInfo.SetItemChoices" />
+    <summary>Gets the index of an item that the user wants to keep.</summary>
+    <param name="iChoice">The item that the user wants to keep.</param>
+    <param name="piChoiceIndex">The index into the conflict's item array. This value is passed to the resolver for subsequent conflicts in the same conflict set if the user chooses to apply the same operation to all selected conflicts of the same type from the same handler.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolveInfo.GetItemChoiceCount">
-    <summary>
-      <para>Gets the number of items that the user wants to keep.</para>
-    </summary>
-    <param name="pcChoices">
-      <para>Type: <b>UINT*</b></para>
-      <para>When this method returns, contains a pointer to the number of items that the user wants to keep.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISyncMgrConflictResolveInfo" />
-    <seealso cref="ISyncMgrConflictResolveInfo.GetItemChoice" />
-    <seealso cref="ISyncMgrConflictResolveInfo.SetItemChoices" />
+    <summary>Gets the number of items that the user wants to keep.</summary>
+    <param name="pcChoices">When this method returns, contains a pointer to the number of items that the user wants to keep.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolveInfo.GetIterationInfo">
-    <summary>
-      <para>Gets information about which conflict in a set of conflicts is being resolved.</para>
-    </summary>
-    <param name="pnCurrentConflict">
-      <para>Type: <b>UINT*</b></para>
-      <para>When this method returns, contains a pointer to the index of the conflict in the set that is being resolved.</para>
-    </param>
-    <param name="pcConflicts">
-      <para>Type: <b>UINT*</b></para>
-      <para>When this method returns, contains a pointer to the number of conflicts that are being resolved.</para>
-    </param>
-    <param name="pcRemainingForApplyToAll">
-      <para>Type: <b>UINT*</b></para>
-      <para>When this method returns, contains a pointer to the number of the remaining conflicts to which an "apply to all" response would be applied.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets information about which conflict in a set of conflicts is being resolved.</summary>
+    <param name="pnCurrentConflict">When this method returns, contains a pointer to the index of the conflict in the set that is being resolved.</param>
+    <param name="pcConflicts">When this method returns, contains a pointer to the number of conflicts that are being resolved.</param>
+    <param name="pcRemainingForApplyToAll">When this method returns, contains a pointer to the number of the remaining conflicts to which an "apply to all" response would be applied.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolveInfo.GetPresenterChoice">
-    <summary>
-      <para>Gets what kind of choice was made and whether to apply the choice to all subsequent conflicts in the set.</para>
-    </summary>
-    <param name="pnPresenterChoice">
-      <para>Type: <b><see cref="SYNCMGR_PRESENTER_CHOICE" />*</b></para>
-      <para>When this method returns, contains a pointer to the choice that was made about the conflict resolution. One of the members of the <see cref="SYNCMGR_PRESENTER_CHOICE" /> enumeration.</para>
-    </param>
-    <param name="pfApplyToAll">
-      <para>Type: <b>BOOL*</b></para>
-      <para>When this method returns, contains a pointer to a flag. If <b>TRUE</b>, then the given choice is to be applied to all subsequent conflicts in the set, and <see cref="ISyncMgrConflictResolveInfo.GetItemChoice" /> and <see cref="ISyncMgrConflictResolveInfo.GetItemChoiceCount" /> have information on how to apply this choice. Otherwise <b>FALSE</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISyncMgrConflictResolveInfo" />
-    <seealso cref="ISyncMgrConflictResolveInfo.SetPresenterChoice" />
+    <summary>Gets what kind of choice was made and whether to apply the choice to all subsequent conflicts in the set.</summary>
+    <param name="pnPresenterChoice">When this method returns, contains a pointer to the choice that was made about the conflict resolution. One of the members of the <see cref="SYNCMGR_PRESENTER_CHOICE" /> enumeration.</param>
+    <param name="pfApplyToAll">When this method returns, contains a pointer to a flag. If <b>TRUE</b>, then the given choice is to be applied to all subsequent conflicts in the set, and <see cref="ISyncMgrConflictResolveInfo.GetItemChoice" /> and <see cref="ISyncMgrConflictResolveInfo.GetItemChoiceCount" /> have information on how to apply this choice. Otherwise <b>FALSE</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolveInfo.GetPresenterNextStep">
-    <summary>
-      <para>Gets what the presenter wants to do as the next step in the sync manager conflict resolution.</para>
-    </summary>
-    <param name="pnPresenterNextStep">
-      <para>Type: <b><see cref="SYNCMGR_PRESENTER_NEXT_STEP" />*</b></para>
-      <para>When this method returns, contains a pointer to the next step in conflict resolution. One of the members of the <see cref="SYNCMGR_PRESENTER_NEXT_STEP" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISyncMgrConflictResolveInfo" />
-    <seealso cref="ISyncMgrConflictResolveInfo.SetPresenterNextStep" />
+    <summary>Gets what the presenter wants to do as the next step in the sync manager conflict resolution.</summary>
+    <param name="pnPresenterNextStep">When this method returns, contains a pointer to the next step in conflict resolution. One of the members of the <see cref="SYNCMGR_PRESENTER_NEXT_STEP" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolveInfo.SetItemChoices">
-    <summary>
-      <para>Sets the array of indexes that represents which items the user wants to keep. This method is used when the user chooses to apply the same operation to all selected conflicts of the same type from the same handler.</para>
-    </summary>
-    <param name="prgiConflictItemIndexes">
-      <para>Type: <b>UINT*</b></para>
-      <para>The array of indexes of items that the user wants to keep.</para>
-    </param>
-    <param name="cChoices">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of item choices in <i>prgiConflictItemIndexes</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISyncMgrConflictResolveInfo" />
-    <seealso cref="ISyncMgrConflictResolveInfo.GetItemChoice" />
+    <summary>Sets the array of indexes that represents which items the user wants to keep. This method is used when the user chooses to apply the same operation to all selected conflicts of the same type from the same handler.</summary>
+    <param name="prgiConflictItemIndexes">The array of indexes of items that the user wants to keep.</param>
+    <param name="cChoices">The number of item choices in <i>prgiConflictItemIndexes</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolveInfo.SetPresenterChoice">
-    <summary>
-      <para>Sets what kind of choice was made about a sync manager conflict resolution and whether to apply the choice to all subsequent conflicts in the set.</para>
-    </summary>
-    <param name="nPresenterChoice">
-      <para>Type: <b><see cref="SYNCMGR_PRESENTER_CHOICE" /></b></para>
-      <para>The choice that was made about the conflict resolution. One of the members of the <see cref="SYNCMGR_PRESENTER_CHOICE" /> enumeration.</para>
-    </param>
-    <param name="fApplyToAll">
-      <para>Type: <b>BOOL</b></para>
-      <para>If <b>TRUE</b>, then apply the given choice to all subsequent conflicts in the set. In this case, <see cref="ISyncMgrConflictResolveInfo.SetItemChoices" /> must also be called.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISyncMgrConflictResolveInfo" />
-    <seealso cref="ISyncMgrConflictResolveInfo.GetPresenterChoice" />
+    <summary>Sets what kind of choice was made about a sync manager conflict resolution and whether to apply the choice to all subsequent conflicts in the set.</summary>
+    <param name="nPresenterChoice">The choice that was made about the conflict resolution. One of the members of the <see cref="SYNCMGR_PRESENTER_CHOICE" /> enumeration.</param>
+    <param name="fApplyToAll">If <b>TRUE</b>, then apply the given choice to all subsequent conflicts in the set. In this case, <see cref="ISyncMgrConflictResolveInfo.SetItemChoices" /> must also be called.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolveInfo.SetPresenterNextStep">
-    <summary>
-      <para>Sets what the presenter wants to do as the next step in the sync manager conflict resolution.</para>
-    </summary>
-    <param name="nPresenterNextStep">
-      <para>Type: <b><see cref="SYNCMGR_PRESENTER_NEXT_STEP" /></b></para>
-      <para>The next step in the conflict resolution. One of the members of the <see cref="SYNCMGR_PRESENTER_NEXT_STEP" /> enumeration.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="ISyncMgrConflictResolveInfo" />
-    <seealso cref="ISyncMgrConflictResolveInfo.GetPresenterNextStep" />
+    <summary>Sets what the presenter wants to do as the next step in the sync manager conflict resolution.</summary>
+    <param name="nPresenterNextStep">The next step in the conflict resolution. One of the members of the <see cref="SYNCMGR_PRESENTER_NEXT_STEP" /> enumeration.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrConflictResolveInfo">
-    <summary>
-      <para>Exposes methods that get and set information about sync manager conflict resolution.</para>
-    </summary>
+    <summary>Exposes methods that get and set information about sync manager conflict resolution.</summary>
   </member>
 </doc>

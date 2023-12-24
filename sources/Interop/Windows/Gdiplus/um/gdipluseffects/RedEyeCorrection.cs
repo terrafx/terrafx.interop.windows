@@ -9,7 +9,7 @@ using static TerraFX.Interop.Gdiplus.GpStatus;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='RedEyeCorrection.xml' path='doc/member[@name="RedEyeCorrection"]/*' />
-[NativeTypeName("struct RedEyeCorrection : Effect")]
+[NativeTypeName("struct RedEyeCorrection : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct RedEyeCorrection
 {
@@ -49,7 +49,7 @@ public unsafe partial struct RedEyeCorrection
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::RedEyeCorrectionParams *")] RedEyeCorrectionParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const RedEyeCorrectionParams *")] RedEyeCorrectionParams* parameters)
     {
         GpStatus status = InvalidParameter;
 

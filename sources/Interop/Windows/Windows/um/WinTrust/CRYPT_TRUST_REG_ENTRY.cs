@@ -14,9 +14,9 @@ public unsafe partial struct CRYPT_TRUST_REG_ENTRY
 
     /// <include file='CRYPT_TRUST_REG_ENTRY.xml' path='doc/member[@name="CRYPT_TRUST_REG_ENTRY.pwszDLLName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszDLLName;
+    public char* pwszDLLName;
 
     /// <include file='CRYPT_TRUST_REG_ENTRY.xml' path='doc/member[@name="CRYPT_TRUST_REG_ENTRY.pwszFunctionName"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszFunctionName;
+    public char* pwszFunctionName;
 }

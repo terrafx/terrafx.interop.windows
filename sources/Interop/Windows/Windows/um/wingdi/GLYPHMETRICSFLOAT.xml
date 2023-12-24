@@ -3,40 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="GLYPHMETRICSFLOAT">
-    <summary>
-      <para>The <b>GLYPHMETRICSFLOAT</b> structure contains information about the placement and orientation of a glyph in a character cell.</para>
-    </summary>
-    <remarks>
-      <para>The values of <b>GLYPHMETRICSFLOAT</b> are specified as notional units.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/OpenGL/opengl-on-windows-nt--windows-2000--and-windows-95-98">OpenGL on Windows</seealso>
-    <seealso cref="POINTFLOAT" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/OpenGL/structures">Structures</seealso>
-    <seealso cref="wglUseFontOutlines" />
+    <summary>The <b>GLYPHMETRICSFLOAT</b> structure contains information about the placement and orientation of a glyph in a character cell.</summary>
   </member>
   <member name="GLYPHMETRICSFLOAT.gmfBlackBoxX">
-    <summary>
-      <para>Specifies the width of the smallest rectangle (the glyph's black box) that completely encloses the glyph.</para>
-    </summary>
+    <summary>Specifies the width of the smallest rectangle (the glyph's black box) that completely encloses the glyph.</summary>
   </member>
   <member name="GLYPHMETRICSFLOAT.gmfBlackBoxY">
-    <summary>
-      <para>Specifies the height of the smallest rectangle (the glyph's black box) that completely encloses the glyph.</para>
-    </summary>
+    <summary>Specifies the height of the smallest rectangle (the glyph's black box) that completely encloses the glyph.</summary>
   </member>
   <member name="GLYPHMETRICSFLOAT.gmfptGlyphOrigin">
-    <summary>
-      <para>Specifies the x and y coordinates of the upper-left corner of the smallest rectangle that completely encloses the glyph.</para>
-    </summary>
+    <summary>Specifies the x and y coordinates of the upper-left corner of the smallest rectangle that completely encloses the glyph.</summary>
   </member>
   <member name="GLYPHMETRICSFLOAT.gmfCellIncX">
-    <summary>
-      <para>Specifies the horizontal distance from the origin of the current character cell to the origin of the next character cell.</para>
-    </summary>
+    <summary>Specifies the horizontal distance from the origin of the current character cell to the origin of the next character cell.</summary>
   </member>
   <member name="GLYPHMETRICSFLOAT.gmfCellIncY">
-    <summary>
-      <para>Specifies the vertical distance from the origin of the current character cell to the origin of the next character cell.</para>
-    </summary>
+    <summary>Specifies the vertical distance from the origin of the current character cell to the origin of the next character cell.</summary>
   </member>
 </doc>

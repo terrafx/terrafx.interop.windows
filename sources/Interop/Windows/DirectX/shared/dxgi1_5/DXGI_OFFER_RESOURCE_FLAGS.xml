@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DXGI_OFFER_RESOURCE_FLAGS">
-    <summary>
-      <para>Specifies flags for the <see cref="OfferResources1" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-enums">DXGI Enumerations</seealso>
+    <summary>Specifies flags for the <see cref="OfferResources1" /> method.</summary>
   </member>
   <member name="DXGI_OFFER_RESOURCE_FLAGS.DXGI_OFFER_RESOURCE_FLAG_ALLOW_DECOMMIT">
-    <summary>
-      <para>Indicates the ability to allow memory de-commit by the DirectX Graphics Kernel.</para>
-    </summary>
+    <summary>Indicates the ability to allow memory de-commit by the DirectX Graphics Kernel.</summary>
   </member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class ITemplatePrinter2Tests
     {
         Assert.That(typeof(ITemplatePrinter2).GUID, Is.EqualTo(IID_ITemplatePrinter2));
     }
-
-    /// <summary>Validates that the <see cref="ITemplatePrinter2" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITemplatePrinter2>(), Is.EqualTo(sizeof(ITemplatePrinter2)));
-    }
-
-    /// <summary>Validates that the <see cref="ITemplatePrinter2" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITemplatePrinter2).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITemplatePrinter2" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITemplatePrinter2), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITemplatePrinter2), Is.EqualTo(4));
-        }
-    }
 }

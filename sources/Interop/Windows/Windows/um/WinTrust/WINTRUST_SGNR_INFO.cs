@@ -14,7 +14,7 @@ public unsafe partial struct WINTRUST_SGNR_INFO
 
     /// <include file='WINTRUST_SGNR_INFO.xml' path='doc/member[@name="WINTRUST_SGNR_INFO.pcwszDisplayName"]/*' />
     [NativeTypeName("LPCWSTR")]
-    public ushort* pcwszDisplayName;
+    public char* pcwszDisplayName;
 
     /// <include file='WINTRUST_SGNR_INFO.xml' path='doc/member[@name="WINTRUST_SGNR_INFO.psSignerInfo"]/*' />
     public CMSG_SIGNER_INFO* psSignerInfo;

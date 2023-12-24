@@ -28,7 +28,7 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDWriteFontDownloadQueue*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontDownloadQueue*, Guid*, void**, int>)(lpVtbl[0]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDWriteFontDownloadQueue*, uint>)(lpVtbl[1]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontDownloadQueue*, uint>)(lpVtbl[1]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDWriteFontDownloadQueue*, uint>)(lpVtbl[2]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontDownloadQueue*, uint>)(lpVtbl[2]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontDownloadQueue.xml' path='doc/member[@name="IDWriteFontDownloadQueue.AddListener"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
     [VtblIndex(3)]
     public HRESULT AddListener(IDWriteFontDownloadListener* listener, [NativeTypeName("UINT32 *")] uint* token)
     {
-        return ((delegate* unmanaged<IDWriteFontDownloadQueue*, IDWriteFontDownloadListener*, uint*, int>)(lpVtbl[3]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), listener, token);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontDownloadQueue*, IDWriteFontDownloadListener*, uint*, int>)(lpVtbl[3]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), listener, token);
     }
 
     /// <include file='IDWriteFontDownloadQueue.xml' path='doc/member[@name="IDWriteFontDownloadQueue.RemoveListener"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
     [VtblIndex(4)]
     public HRESULT RemoveListener([NativeTypeName("UINT32")] uint token)
     {
-        return ((delegate* unmanaged<IDWriteFontDownloadQueue*, uint, int>)(lpVtbl[4]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), token);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontDownloadQueue*, uint, int>)(lpVtbl[4]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), token);
     }
 
     /// <include file='IDWriteFontDownloadQueue.xml' path='doc/member[@name="IDWriteFontDownloadQueue.IsEmpty"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
     [VtblIndex(5)]
     public BOOL IsEmpty()
     {
-        return ((delegate* unmanaged<IDWriteFontDownloadQueue*, int>)(lpVtbl[5]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontDownloadQueue*, int>)(lpVtbl[5]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontDownloadQueue.xml' path='doc/member[@name="IDWriteFontDownloadQueue.BeginDownload"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
     [VtblIndex(6)]
     public HRESULT BeginDownload(IUnknown* context = null)
     {
-        return ((delegate* unmanaged<IDWriteFontDownloadQueue*, IUnknown*, int>)(lpVtbl[6]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), context);
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontDownloadQueue*, IUnknown*, int>)(lpVtbl[6]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this), context);
     }
 
     /// <include file='IDWriteFontDownloadQueue.xml' path='doc/member[@name="IDWriteFontDownloadQueue.CancelDownload"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
     [VtblIndex(7)]
     public HRESULT CancelDownload()
     {
-        return ((delegate* unmanaged<IDWriteFontDownloadQueue*, int>)(lpVtbl[7]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontDownloadQueue*, int>)(lpVtbl[7]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDWriteFontDownloadQueue.xml' path='doc/member[@name="IDWriteFontDownloadQueue.GetGenerationCount"]/*' />
@@ -95,7 +95,7 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
     [return: NativeTypeName("UINT64")]
     public ulong GetGenerationCount()
     {
-        return ((delegate* unmanaged<IDWriteFontDownloadQueue*, ulong>)(lpVtbl[8]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDWriteFontDownloadQueue*, ulong>)(lpVtbl[8]))((IDWriteFontDownloadQueue*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -124,30 +124,30 @@ public unsafe partial struct IDWriteFontDownloadQueue : IDWriteFontDownloadQueue
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDWriteFontDownloadListener *, UINT32 *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDWriteFontDownloadListener*, uint*, int> AddListener;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDWriteFontDownloadListener*, uint*, int> AddListener;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveListener;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveListener;
 
         [NativeTypeName("BOOL () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> IsEmpty;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> IsEmpty;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> BeginDownload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> BeginDownload;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> CancelDownload;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> CancelDownload;
 
         [NativeTypeName("UINT64 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong> GetGenerationCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong> GetGenerationCount;
     }
 }

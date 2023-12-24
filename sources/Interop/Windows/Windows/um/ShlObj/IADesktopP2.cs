@@ -25,7 +25,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IADesktopP2*, Guid*, void**, int>)(lpVtbl[0]))((IADesktopP2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IADesktopP2*, Guid*, void**, int>)(lpVtbl[0]))((IADesktopP2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IADesktopP2*, uint>)(lpVtbl[1]))((IADesktopP2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IADesktopP2*, uint>)(lpVtbl[1]))((IADesktopP2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IADesktopP2*, uint>)(lpVtbl[2]))((IADesktopP2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IADesktopP2*, uint>)(lpVtbl[2]))((IADesktopP2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2.ReReadWallpaper"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT ReReadWallpaper()
     {
-        return ((delegate* unmanaged<IADesktopP2*, int>)(lpVtbl[3]))((IADesktopP2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IADesktopP2*, int>)(lpVtbl[3]))((IADesktopP2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2.GetADObjectFlags"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetADObjectFlags([NativeTypeName("DWORD *")] uint* pdwFlags, [NativeTypeName("DWORD")] uint dwMask)
     {
-        return ((delegate* unmanaged<IADesktopP2*, uint*, uint, int>)(lpVtbl[4]))((IADesktopP2*)Unsafe.AsPointer(ref this), pdwFlags, dwMask);
+        return ((delegate* unmanaged[MemberFunction]<IADesktopP2*, uint*, uint, int>)(lpVtbl[4]))((IADesktopP2*)Unsafe.AsPointer(ref this), pdwFlags, dwMask);
     }
 
     /// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2.UpdateAllDesktopSubscriptions"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT UpdateAllDesktopSubscriptions()
     {
-        return ((delegate* unmanaged<IADesktopP2*, int>)(lpVtbl[5]))((IADesktopP2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IADesktopP2*, int>)(lpVtbl[5]))((IADesktopP2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IADesktopP2.xml' path='doc/member[@name="IADesktopP2.MakeDynamicChanges"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT MakeDynamicChanges(IOleObject* pOleObj)
     {
-        return ((delegate* unmanaged<IADesktopP2*, IOleObject*, int>)(lpVtbl[6]))((IADesktopP2*)Unsafe.AsPointer(ref this), pOleObj);
+        return ((delegate* unmanaged[MemberFunction]<IADesktopP2*, IOleObject*, int>)(lpVtbl[6]))((IADesktopP2*)Unsafe.AsPointer(ref this), pOleObj);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IADesktopP2 : IADesktopP2.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ReReadWallpaper;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ReReadWallpaper;
 
         [NativeTypeName("HRESULT (DWORD *, DWORD) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, uint, int> GetADObjectFlags;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, uint, int> GetADObjectFlags;
 
         [NativeTypeName("HRESULT () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> UpdateAllDesktopSubscriptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> UpdateAllDesktopSubscriptions;
 
         [NativeTypeName("HRESULT (IOleObject *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IOleObject*, int> MakeDynamicChanges;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IOleObject*, int> MakeDynamicChanges;
     }
 }

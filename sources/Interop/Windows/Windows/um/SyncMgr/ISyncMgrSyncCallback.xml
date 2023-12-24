@@ -3,395 +3,83 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ISyncMgrSyncCallback.AddItemToSession">
-    <summary>
-      <para>Adds a specified item to the set of items currently being synchronized.</para>
-    </summary>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the item to add. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. Returns E_INVALIDARG if <i>pszItemID</i> is already part of the session.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>ISyncMgrSyncCallback.AddItemToSession</b> is called by the sync handler.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrSyncCallback.AddItemToSession</b> by the <see cref="Synchronize" /> method.</para>
-      <code>HRESULT CMyDeviceHandler.Synchronize(...)
-{
-    ...
-
-    // Start synchronizing the handler.
-
-    ...
-
-    // Check for additional items to sync.
-    IEnumString *penumItemIDs = NULL;
-
-    hr = pCallback-&gt;QueryForAdditionalItems(&amp;amp;amp;amp;amp;amp;penumItemIDs);
-    if (hr == S_OK)
-    {
-        while (hr == S_OK)
-        {
-            LPWSTR pszItemID;
-            ULONG cFetched;
-            hr = penumItemIDs-&gt;Next(1, &amp;amp;amp;amp;amp;amp;pszItemID, &amp;amp;amp;amp;amp;amp;cFetched);
-            if ((hr == S_OK) &amp;amp;amp;amp;amp;amp;&amp;amp;amp;amp;amp;amp; (cFetched == 1))
-            {
-                // Add this item to the set of items we are syncing.
-                hr = pCallback-&gt;AddItemToSession(pszItemID);
-                CoTaskMemFree(pszItemID);
-            }
-        }
-        penumItemIDs-&gt;Release();
-    }
-    ...
-}
-
-</code>
-    </remarks>
+    <summary>Adds a specified item to the set of items currently being synchronized.</summary>
+    <param name="pszItemID">A pointer to a buffer containing the unique ID of the item to add. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. Returns E_INVALIDARG if <i>pszItemID</i> is already part of the session.</returns>
   </member>
   <member name="ISyncMgrSyncCallback.CanContinue">
-    <summary>
-      <para>Determines whether the synchronization has been canceled.</para>
-    </summary>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the ID of the item.</para>
-    </param>
+    <summary>Determines whether the synchronization has been canceled.</summary>
+    <param name="pszItemID">A pointer to a buffer containing the ID of the item.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <list type="table">
         <listheader>
           <description>Return Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>S_OK</description>
           <description>A cancellation has not been requested. The synchronization can continue.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>S_FALSE</description>
           <description>A cancellation has been requested. The handler should call <see cref="ISyncMgrSyncCallback.ReportProgress" />, specifying SYNCMGR_PS_CANCELED in the <i>nStatus</i> parameter.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>E_INVALIDARG</description>
           <description>The value pointed to by <i>pszItemID</i> is either unknown to Sync Center or is not an item managed by this handler.</description>
-        </item>
-      </list>
-      <para>If <i>pszItemID</i> is <b>NULL</b> or an empty string, the return value depends on whether a cancellation has been requested for the entire handler.</para>
-    </returns>
-    <remarks>
-      <para>A synchronization can be canceled by the user by clicking the <b>Stop</b> or <b>Stop All</b> task on the context menu or the command module. It can also be canceled when an application calls one of the stop methods of the <see cref="ISyncMgrControl" /> interface.</para>
-      <para>By implementing this functionality as a separate method, the handler can check for a cancellation without reporting progress.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrSyncCallback.CanContinue</b> by the <see cref="Synchronize" /> method.</para>
-      <code>HRESULT CMyDeviceHandler.Synchronize(...)
-{
-    ...
-
-    // Start synchronizing the sync items.
-
-    ...
-
-    // If a cancellation has been requested, stop the sync and exit.
-    if (pCallback-&gt;CanContinue(pszItemID) == S_FALSE)
-    {
-        // End the sync operation and exit the function.
-        hr = pCallback-&gt;ReportProgress(pszItemID,
-                                       pszCancelMessage,
-                                       SYNCMGR_PS_CANCELED,
-                                       uCurrentStep,
-                                       uMaxStep,
-                                       NULL);
-    }
-    ...
-}
-
-</code>
-    </remarks>
+        </listheader>
+      </list> <para>If <i>pszItemID</i> is <b>NULL</b> or an empty string, the return value depends on whether a cancellation has been requested for the entire handler.</para></returns>
   </member>
   <member name="ISyncMgrSyncCallback.CommitItem">
-    <summary>
-      <para>Confirms a specified item as a member of the handler's sync set and confirms that it should be shown in the UI.</para>
-    </summary>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR*</b></para>
-      <para>A pointer to a buffer containing the unique ID of the item to confirm. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. Returns E_INVALIDARG if the item has not been first submitted through <see cref="ISyncMgrSyncCallback.ProposeItem" /> or if the item is already part of the current session.</para>
-    </returns>
+    <summary>Confirms a specified item as a member of the handler's sync set and confirms that it should be shown in the UI.</summary>
+    <param name="pszItemID">A pointer to a buffer containing the unique ID of the item to confirm. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. Returns E_INVALIDARG if the item has not been first submitted through <see cref="ISyncMgrSyncCallback.ProposeItem" /> or if the item is already part of the current session.</returns>
   </member>
   <member name="ISyncMgrSyncCallback.ProposeItem">
-    <summary>
-      <para>Proposes the addition of a new item to the set of items previously enumerated.</para>
-    </summary>
-    <param name="pNewItem">
-      <para>Type: <b><see cref="ISyncMgrSyncItem" />*</b></para>
-      <para>A pointer to an instance of <see cref="ISyncMgrSyncItem" /> representing the new item.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if successful, or an error value otherwise. Returns E_INVALIDARG if <i>pszItemID</i> already exists.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>ISyncMgrSyncCallback.ProposeItem</b> is typically called when items are not considered part of the sync set unless they have been successfully synchronized. Sync Center does not display this item in the UI until the <see cref="ISyncMgrSyncCallback.CommitItem" /> method has been called.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrSyncCallback.ProposeItem</b> and <see cref="ISyncMgrSyncCallback.CommitItem" /> by the <see cref="Synchronize" /> method.</para>
-      <code>HRESULT CMyDeviceHandler.Synchronize(...)
-{
-    ...
-
-    // Start synchronizing the handler.
-
-    ...
-
-    // Find items waiting to be created.
-    for (...)
-    {
-        // Create the item.
-        ISyncMgrSyncItem *pNewItem = NULL;
-        LPWSTR szItemID[MAX_SYNCMGR_ID];
-
-        hr = GetNextNewItem(&amp;amp;amp;amp;amp;amp;pNewItem, szItemID, ARRAYSIZE(szItemID));
-        if (SUCCEEDED(hr))
-        {
-            // Propose this item to Sync Center.
-            hr = pCallback-&gt;ProposeItem(pNewItem);
-            if (SUCCEEDED(hr))
-            {
-                // Synchronize the item.
-                // Synchronization was successful.  Commit the item.
-                hr = pCallback-&gt;CommitItem(szItemID);
-            }
-            pNewItem-&gt;Release();
-        }
-    }
-    ...
-}
-
-</code>
-    </remarks>
+    <summary>Proposes the addition of a new item to the set of items previously enumerated.</summary>
+    <param name="pNewItem">A pointer to an instance of <see cref="ISyncMgrSyncItem" /> representing the new item.</param>
+    <returns>Returns S_OK if successful, or an error value otherwise. Returns E_INVALIDARG if <i>pszItemID</i> already exists.</returns>
   </member>
   <member name="ISyncMgrSyncCallback.QueryForAdditionalItems">
-    <summary>
-      <para>Retrieves an enumerator of the set of items that have a pending request to be synchronized. This is the set of items that will be synchronized after the current synchronization is finished.</para>
-    </summary>
-    <param name="ppenumItemIDs">
-      <para>Type: <b><see cref="IEnumString" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to an instance of <see cref="IEnumString" /> that enumerates sync item IDs. This value is <b>NULL</b> if no items are pending.</para>
-    </param>
-    <param name="ppenumPunks">
-      <para>Type: <b><see cref="IEnumUnknown" />**</b></para>
-      <para>When this method returns, contains the address of a pointer to an instance of <see cref="IEnumUnknown" /> enumerating <see cref="IUnknown" /> interfaces that are passed to <see cref="StartHandlerSync" /> or <see cref="StartItemSync" />. This value is <b>NULL</b> if no interfaces are pending.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns <b>S_OK</b> if successful, or an error value otherwise. Returns <b>S_FALSE</b> if no items are pending.</para>
-    </returns>
-    <remarks>
-      <para>Item IDs retrieved by a call to the <b>Next</b> method of the retrieved enumerator interface have a maximum length of <b>MAX_SYNCMGR_ID</b> including the terminating null character. The calling application is responsible for deallocating each item ID retrieved through the <b>Next</b> method by using <see cref="CoTaskMemFree" />.</para>
-    </remarks>
+    <summary>Retrieves an enumerator of the set of items that have a pending request to be synchronized. This is the set of items that will be synchronized after the current synchronization is finished.</summary>
+    <param name="ppenumItemIDs">When this method returns, contains the address of a pointer to an instance of <see cref="IEnumString" /> that enumerates sync item IDs. This value is <b>NULL</b> if no items are pending.</param>
+    <param name="ppenumPunks">When this method returns, contains the address of a pointer to an instance of <see cref="IEnumUnknown" /> enumerating <see cref="IUnknown" /> interfaces that are passed to <see cref="StartHandlerSync" /> or <see cref="StartItemSync" />. This value is <b>NULL</b> if no interfaces are pending.</param>
+    <returns>Returns <b>S_OK</b> if successful, or an error value otherwise. Returns <b>S_FALSE</b> if no items are pending.</returns>
   </member>
   <member name="ISyncMgrSyncCallback.ReportEvent">
-    <summary>
-      <para>Provides an event to add to the Sync Results folder for an item being synchronized.</para>
-    </summary>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the unique ID of the item currently being synchronized. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="nLevel">
-      <para>Type: <b><see cref="SYNCMGR_EVENT_LEVEL" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_EVENT_LEVEL" /> enumeration declaring the type of event involved.</para>
-    </param>
-    <param name="nFlags">
-      <para>Type: <b><see cref="SYNCMGR_EVENT_FLAGS" /></b></para>
-      <para>Not used.</para>
-    </param>
-    <param name="pszName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the name of the event.</para>
-    </param>
-    <param name="pszDescription">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains a description of the event.</para>
-    </param>
-    <param name="pszLinkText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the text to be used in a hyperlink to the item. This parameter can be <b>NULL</b></para>
-    </param>
-    <param name="pszLinkReference">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer that contains the URL of the item. This parameter can be <b>NULL</b></para>
-    </param>
-    <param name="pszContext">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Handler-specific data to associate with the event.</para>
-    </param>
-    <param name="pguidEventID">
-      <para>Type: <b>GUID*</b></para>
-      <para>When this method returns, contains a pointer to a unique ID for the event.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For the handler to provide more details to the user about the sync result, the property sheet for individual sync results reported by the handler can be extended.</para>
-      <para>This method replaces <see cref="LogError" />.</para>
-      <para>The event is stored only in memory, so all events are cleared when the user logs off or shuts down. This is one reason to implement a custom <see cref="ISyncMgrEventStore" />, which can provide its events from anywhere, including a file, over the network, or the registry. The sync results folder, however, shows events provided both by the internal event store and by custom event stores provided by sync handlers.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <see cref="ISyncMgrSyncCallback.ReportProgress" /> by the <see cref="Synchronize" /> method.</para>
-      <code>STDMETHODIMP CMyDeviceHandler.Synchronize(...)
-{
-    ...
-    // Get the event receiver interface.
-    ISyncMgrEventReceiver *pEventReceiver = NULL;
-    hr = pCallback-&gt;QueryInterface(IID_ISyncMgrEventReceiver,
-                                   (void **) &amp;amp;amp;amp;amp;amp;pEventReceiver);
-
-    ...
-
-    // Start synchronizing the sync item.
-
-    ...
-
-    // Generate a GUID for this item.
-    // Construct a string to display in the Sync Results folder.
-    // Store the information about this event so we can display more details.
-    // Report the event to Sync Center.
-    hr = pEventReceiver-&gt;ReportEvent(pszItemID,
-                                     SYNCMGR_EL_INFORMATION,
-                                     SYNCMGR_EF_NONE,
-                                     pszEventName,
-                                     pszEventDescription,
-                                     NULL,
-                                     NULL,
-                                     NULL,
-                                     &amp;amp;amp;amp;amp;amp;guidEventID);
-    ...
-}
-
-</code>
-    </remarks>
+    <summary>Provides an event to add to the Sync Results folder for an item being synchronized.</summary>
+    <param name="pszItemID">A pointer to a buffer that contains the unique ID of the item currently being synchronized. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="nLevel">A value from the <see cref="SYNCMGR_EVENT_LEVEL" /> enumeration declaring the type of event involved.</param>
+    <param name="nFlags">Not used.</param>
+    <param name="pszName">A pointer to a buffer that contains the name of the event.</param>
+    <param name="pszDescription">A pointer to a buffer that contains a description of the event.</param>
+    <param name="pszLinkText">A pointer to a buffer that contains the text to be used in a hyperlink to the item. This parameter can be <b>NULL</b></param>
+    <param name="pszLinkReference">A pointer to a buffer that contains the URL of the item. This parameter can be <b>NULL</b></param>
+    <param name="pszContext">Handler-specific data to associate with the event.</param>
+    <param name="pguidEventID">When this method returns, contains a pointer to a unique ID for the event.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrSyncCallback.ReportManualSync">
-    <summary>
-      <para>Reports that a synchronization operation is being performed that was requested manually from outside the Sync Center UI.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Reports that a synchronization operation is being performed that was requested manually from outside the Sync Center UI.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrSyncCallback.ReportProgress">
-    <summary>
-      <para>Reports the progress of the synchronization of a single sync item to Sync Center.</para>
-    </summary>
-    <param name="pszItemID">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing the unique ID of the item currently being synchronized. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</para>
-    </param>
-    <param name="pszProgressText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a buffer containing a Unicode string for any custom progress messaging for this item.</para>
-    </param>
-    <param name="nStatus">
-      <para>Type: <b><see cref="SYNCMGR_PROGRESS_STATUS" /></b></para>
-      <para>A value from the <see cref="SYNCMGR_PROGRESS_STATUS" /> enumeration stating the current progress status of the synchronization.</para>
-    </param>
-    <param name="uCurrentStep">
-      <para>Type: <b>ULONG</b></para>
-      <para>The current step in the synchronization. If the <see cref="SYNCMGR_PS_UPDATING_INDETERMINATE" /> flag is set in <i>nStatus</i>, this parameter is ignored.</para>
-    </param>
-    <param name="uMaxStep">
-      <para>Type: <b>ULONG</b></para>
-      <para>The total number of steps required to complete the synchronization of the item. If the <see cref="SYNCMGR_PS_UPDATING_INDETERMINATE" /> flag is set in <i>nStatus</i>, this parameter is ignored.</para>
-    </param>
-    <param name="pnCancelRequest">
-      <para>Type: <b><see cref="SYNCMGR_CANCEL_REQUEST" />*</b></para>
-      <para>When this method returns, points to a value from the <see cref="SYNCMGR_CANCEL_REQUEST" /> enumeration specifying the nature of a cancel request, if any.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If you want to report progress on the handler rather than individual sync items, call <see cref="ISyncMgrSyncCallback.SetHandlerProgressText" />.</para>
-      <para>If the synchronization has been canceled, the handler calls <b>ISyncMgrSyncCallback.ReportProgress</b> on the item one final time, acknowledging the cancellation request by specifying <see cref="SYNCMGR_PS_CANCELED" /> in the <i>nStatus</i> parameter. This updates the UI and also allows the user to restart a sync for that item.</para>
-      <para>Once this method reports a completion status (<see cref="SYNCMGR_PS_SUCCEEDED" />, <see cref="SYNCMGR_PS_FAILED" />, or <see cref="SYNCMGR_PS_CANCELED" />), the only further status report that can be made is <see cref="SYNCMGR_PS_FAILED" />. Any other value causes this method to return E_ACCESSDENIED and Sync Center to mark the item as failed.</para>
-      <para>This method replaces <see cref="Progress" />.</para>
-      <para>The maximum length of a progress string is MAX_SYNCMGR_PROGRESSTEXT. This constant is defined in SyncMgr.h.</para>
-      <h4>Examples</h4>
-      <para>The following example shows the usage of <b>ISyncMgrSyncCallback.ReportProgress</b> by the <see cref="Synchronize" /> method.</para>
-      <code>STDMETHODIMP CMyDeviceHandler.Synchronize(...)
-{
-    ...
-
-    // Start synchronizing the sync item.
-
-    ...
-
-    // Construct a string to display in the Sync Center folder.
-    // Report the progress to Sync Center.
-    SYNCMGR_CANCEL_REQUEST nCancelRequest;
-    hr = pCallback-&gt;ReportProgress(pszItemID,
-                                   pszProgressText,
-                                   SYNCMGR_PS_UPDATING,
-                                   uCurrentStep,
-                                   uMaxStep,
-                                   &amp;amp;amp;amp;amp;amp;nCancelRequest);
-    if (SUCCEEDED(hr))
-    {
-        if (nCancelRequest != SYNCMGR_CR_NONE)
-        {
-            // Synchronization was canceled.
-            hr = pCallback-&gt;ReportProgress(pszItemID,
-                                           pszProgressText,
-                                           SYNCMGR_PS_CANCELED,
-                                           uCurrentStep,
-                                           uMaxStep,
-                                           NULL);
-        }
-    }
-    ...
-}
-
-</code>
-    </remarks>
+    <summary>Reports the progress of the synchronization of a single sync item to Sync Center.</summary>
+    <param name="pszItemID">A pointer to a buffer containing the unique ID of the item currently being synchronized. This string is of maximum length MAX_SYNCMGR_ID including the terminating <b>null</b> character.</param>
+    <param name="pszProgressText">A pointer to a buffer containing a Unicode string for any custom progress messaging for this item.</param>
+    <param name="nStatus">A value from the <see cref="SYNCMGR_PROGRESS_STATUS" /> enumeration stating the current progress status of the synchronization.</param>
+    <param name="uCurrentStep">The current step in the synchronization. If the <see cref="SYNCMGR_PS_UPDATING_INDETERMINATE" /> flag is set in <i>nStatus</i>, this parameter is ignored.</param>
+    <param name="uMaxStep">The total number of steps required to complete the synchronization of the item. If the <see cref="SYNCMGR_PS_UPDATING_INDETERMINATE" /> flag is set in <i>nStatus</i>, this parameter is ignored.</param>
+    <param name="pnCancelRequest">When this method returns, points to a value from the <see cref="SYNCMGR_CANCEL_REQUEST" /> enumeration specifying the nature of a cancel request, if any.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrSyncCallback.SetHandlerProgressText">
-    <summary>
-      <para>Sets the content of an information field for the handler while that handler is performing a synchronization.</para>
-    </summary>
-    <param name="pszProgressText">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to a buffer containing the comment text.</para>
-    </param>
-    <param name="pnCancelRequest">
-      <para>Type: <b><see cref="SYNCMGR_CANCEL_REQUEST" />*</b></para>
-      <para>A value from the <see cref="SYNCMGR_CANCEL_REQUEST" /> enumeration specifying the nature of a cancel request, if any.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the content of an information field for the handler while that handler is performing a synchronization.</summary>
+    <param name="pszProgressText">Pointer to a buffer containing the comment text.</param>
+    <param name="pnCancelRequest">A value from the <see cref="SYNCMGR_CANCEL_REQUEST" /> enumeration specifying the nature of a cancel request, if any.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ISyncMgrSyncCallback">
-    <summary>
-      <para>Exposes methods that allow a synchronization process to report progress and events to Sync Center, or to query whether the process has been canceled.</para>
-    </summary>
-    <remarks>
-      <para>This interface is passed to <see cref="ISyncMgrSessionCreator.CreateSession" />, which in turn is referenced in the call to <see cref="ISyncMgrHandler.Synchronize" />.</para>
-      <para>The handler is expected to call this interface to update the folder's progress UI  for each item and to notify Sync Center when it has completed the synchronization of each item.</para>
-      <para>
-        <b>ISyncMgrSyncCallback</b> is a replacement for <see cref="ISyncMgrSynchronizeCallback" />.</para>
-    </remarks>
+    <summary>Exposes methods that allow a synchronization process to report progress and events to Sync Center, or to query whether the process has been canceled.</summary>
   </member>
 </doc>

@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CMC_TAGGED_CONTENT_INFO">
-    <summary>
-      <para>The <b>CMC_TAGGED_CONTENT_INFO</b> structure is used in the
-<see cref="CMC_DATA_INFO" /> and
-<see cref="CMC_RESPONSE_INFO" /> structures.</para>
-    </summary>
+    <summary>The <b>CMC_TAGGED_CONTENT_INFO</b> structure is used in the<see cref="CMC_DATA_INFO" /> and<see cref="CMC_RESPONSE_INFO" /> structures.</summary>
   </member>
   <member name="CMC_TAGGED_CONTENT_INFO.dwBodyPartID">
     <summary>
-      <para>
-        <b>DWORD</b> identifying the tagged other message.</para>
-    </summary>
+      <b>DWORD</b> identifying the tagged other message.</summary>
   </member>
   <member name="CMC_TAGGED_CONTENT_INFO.EncodedContentInfo">
-    <summary>
-      <para>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DER_BLOB</a> structure that contains the encoded content information.</para>
-    </summary>
+    <summary>A <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_DER_BLOB</a> structure that contains the encoded content information.</summary>
   </member>
 </doc>

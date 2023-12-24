@@ -3,15 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSAPI_WORKING_SET_BLOCK">
-    <summary>
-      <para>Contains working set information for a page.</para>
-    </summary>
-    <seealso cref="PSAPI_WORKING_SET_INFORMATION" />
+    <summary>Contains working set information for a page.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_BLOCK.Flags">
-    <summary>
-      <para>The working set information. See the description of the structure  members for information about the layout of this variable.</para>
-    </summary>
+    <summary>The working set information. See the description of the structure members for information about the layout of this variable.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_BLOCK.Protection">
     <summary>
@@ -21,279 +16,337 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
-          <description>
-            <para>0</para>
-          </description>
-          <description>
-            <para>The page is not accessed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>1</para>
-          </description>
-          <description>
-            <para>Read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>2</para>
-          </description>
-          <description>
-            <para>Executable.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>3</para>
-          </description>
-          <description>
-            <para>Executable and read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>4</para>
-          </description>
-          <description>
-            <para>Read/write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>5</para>
-          </description>
-          <description>
-            <para>Copy-on-write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>6</para>
-          </description>
-          <description>
-            <para>Executable and read/write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>7</para>
-          </description>
-          <description>
-            <para>Executable and copy-on-write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>8</para>
-          </description>
-          <description>
-            <para>The page is not accessed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>9</para>
-          </description>
-          <description>
-            <para>Non-cacheable and read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>10</para>
-          </description>
-          <description>
-            <para>Non-cacheable and executable.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>11</para>
-          </description>
-          <description>
-            <para>Non-cacheable, executable, and read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>12</para>
-          </description>
-          <description>
-            <para>Non-cacheable and read/write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>13</para>
-          </description>
-          <description>
-            <para>Non-cacheable and copy-on-write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>14</para>
-          </description>
-          <description>
-            <para>Non-cacheable, executable, and read/write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>15</para>
-          </description>
-          <description>
-            <para>Non-cacheable, executable, and copy-on-write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>16</para>
-          </description>
-          <description>
-            <para>The page is not accessed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>17</para>
-          </description>
-          <description>
-            <para>Guard page and read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>18</para>
-          </description>
-          <description>
-            <para>Guard page and executable.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>19</para>
-          </description>
-          <description>
-            <para>Guard page, executable, and read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>20</para>
-          </description>
-          <description>
-            <para>Guard page and read/write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>21</para>
-          </description>
-          <description>
-            <para>Guard page and copy-on-write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>22</para>
-          </description>
-          <description>
-            <para>Guard page, executable, and read/write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>23</para>
-          </description>
-          <description>
-            <para>Guard page, executable, and copy-on-write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>24</para>
-          </description>
-          <description>
-            <para>The page is not accessed.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>25</para>
-          </description>
-          <description>
-            <para>Non-cacheable, guard page, and read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>26</para>
-          </description>
-          <description>
-            <para>Non-cacheable, guard page, and executable.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>27</para>
-          </description>
-          <description>
-            <para>Non-cacheable, guard page, executable, and read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>28</para>
-          </description>
-          <description>
-            <para>Non-cacheable, guard page, and read/write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>29</para>
-          </description>
-          <description>
-            <para>Non-cacheable, guard page, and copy-on-write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>30</para>
-          </description>
-          <description>
-            <para>Non-cacheable, guard page, executable, and read/write.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>31</para>
-          </description>
-          <description>
-            <para>Non-cacheable, guard page, executable, and copy-on-write.</para>
-          </description>
-        </item>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The page is not accessed.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Read-only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Executable.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>3</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Executable and read-only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>4</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Read/write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>5</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Copy-on-write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>6</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Executable and read/write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>7</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Executable and copy-on-write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>8</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The page is not accessed.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>9</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable and read-only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>10</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable and executable.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>11</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, executable, and read-only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>12</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable and read/write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>13</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable and copy-on-write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>14</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, executable, and read/write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>15</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, executable, and copy-on-write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>16</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The page is not accessed.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>17</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Guard page and read-only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>18</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Guard page and executable.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>19</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Guard page, executable, and read-only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>20</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Guard page and read/write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>21</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Guard page and copy-on-write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>22</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Guard page, executable, and read/write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>23</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Guard page, executable, and copy-on-write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>24</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The page is not accessed.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>25</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, guard page, and read-only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>26</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, guard page, and executable.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>27</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, guard page, executable, and read-only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>28</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, guard page, and read/write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>29</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, guard page, and copy-on-write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>30</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, guard page, executable, and read/write.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>31</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Non-cacheable, guard page, executable, and copy-on-write.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="PSAPI_WORKING_SET_BLOCK.ShareCount">
-    <summary>
-      <para>The number of processes that share this page. The maximum value of this member is 7.</para>
-    </summary>
+    <summary>The number of processes that share this page. The maximum value of this member is 7.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_BLOCK.Shared">
-    <summary>
-      <para>If this bit is 1, the page is sharable; otherwise, the page is not sharable.</para>
-    </summary>
+    <summary>If this bit is 1, the page is sharable; otherwise, the page is not sharable.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_BLOCK.Reserved">
-    <summary>
-      <para>This member is reserved.</para>
-    </summary>
+    <summary>This member is reserved.</summary>
   </member>
   <member name="PSAPI_WORKING_SET_BLOCK.VirtualPage">
     <summary>

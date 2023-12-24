@@ -19,25 +19,4 @@ public static unsafe partial class MailRecipientTests
     {
         Assert.That(typeof(MailRecipient).GUID, Is.EqualTo(IID_MailRecipient));
     }
-
-    /// <summary>Validates that the <see cref="MailRecipient" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<MailRecipient>(), Is.EqualTo(sizeof(MailRecipient)));
-    }
-
-    /// <summary>Validates that the <see cref="MailRecipient" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(MailRecipient).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="MailRecipient" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(MailRecipient), Is.EqualTo(1));
-    }
 }

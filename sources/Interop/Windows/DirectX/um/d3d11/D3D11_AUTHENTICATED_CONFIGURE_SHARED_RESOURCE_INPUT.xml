@@ -3,15 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT">
-    <summary>
-      <para>Contains input data for a <b>D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE</b> command.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/direct3d-11-video-structures">Direct3D 11 Video Structures</seealso>
+    <summary>Contains input data for a <b>D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE</b> command.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT.Parameters">
-    <summary>
-      <para>A <see cref="D3D11_AUTHENTICATED_CONFIGURE_INPUT" /> structure that contains the command GUID and other data.</para>
-    </summary>
+    <summary>A <see cref="D3D11_AUTHENTICATED_CONFIGURE_INPUT" /> structure that contains the command GUID and other data.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT.ProcessType">
     <summary>
@@ -20,13 +15,9 @@
     </summary>
   </member>
   <member name="D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT.ProcessHandle">
-    <summary>
-      <para>A process handle. If the <b>ProcessType</b> member equals <b>D3D11_PROCESSIDTYPE_HANDLE</b>, the <b>ProcessHandle</b> member specifies a handle to a process. Otherwise, the value is ignored.</para>
-    </summary>
+    <summary>A process handle. If the <b>ProcessType</b> member equals <b>D3D11_PROCESSIDTYPE_HANDLE</b>, the <b>ProcessHandle</b> member specifies a handle to a process. Otherwise, the value is ignored.</summary>
   </member>
   <member name="D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT.AllowAccess">
-    <summary>
-      <para>If <b>TRUE</b>, the specified process has access to restricted shared resources.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, the specified process has access to restricted shared resources.</summary>
   </member>
 </doc>

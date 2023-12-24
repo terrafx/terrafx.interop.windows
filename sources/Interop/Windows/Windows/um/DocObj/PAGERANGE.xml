@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PAGERANGE">
-    <summary>
-      <para>Specifies a range of pages.</para>
-    </summary>
-    <seealso cref="PAGESET" />
+    <summary>Specifies a range of pages.</summary>
   </member>
   <member name="PAGERANGE.nFromPage">
-    <summary>
-      <para>The first page of the range. This member can have any page number as a value. If this value is greater than the value specified in <b>nToPage</b>, the document will be printed in reverse page order.</para>
-    </summary>
+    <summary>The first page of the range. This member can have any page number as a value. If this value is greater than the value specified in <b>nToPage</b>, the document will be printed in reverse page order.</summary>
   </member>
   <member name="PAGERANGE.nToPage">
-    <summary>
-      <para>The last page of the range. A special value, <b>PAGESET_TOLASTPAGE</b>, indicates that all the remaining pages should be printed. This member can have any page number as a value. If this value is less than the value specified in <b>nFromPage</b>, the document will be printed in reverse page order.</para>
-    </summary>
+    <summary>The last page of the range. A special value, <b>PAGESET_TOLASTPAGE</b>, indicates that all the remaining pages should be printed. This member can have any page number as a value. If this value is less than the value specified in <b>nFromPage</b>, the document will be printed in reverse page order.</summary>
   </member>
 </doc>

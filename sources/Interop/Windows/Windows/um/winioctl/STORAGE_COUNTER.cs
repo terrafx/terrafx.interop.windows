@@ -14,7 +14,7 @@ public partial struct STORAGE_COUNTER
     public STORAGE_COUNTER_TYPE Type;
 
     /// <include file='STORAGE_COUNTER.xml' path='doc/member[@name="STORAGE_COUNTER.Value"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:6362:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L6362_C5")]
     public _Value_e__Union Value;
 
     /// <include file='_Value_e__Union.xml' path='doc/member[@name="_Value_e__Union"]/*' />
@@ -23,7 +23,7 @@ public partial struct STORAGE_COUNTER
     {
         /// <include file='_Value_e__Union.xml' path='doc/member[@name="_Value_e__Union.ManufactureDate"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:6364:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L6364_C9")]
         public _ManufactureDate_e__Struct ManufactureDate;
 
         /// <include file='_Value_e__Union.xml' path='doc/member[@name="_Value_e__Union.AsUlonglong"]/*' />

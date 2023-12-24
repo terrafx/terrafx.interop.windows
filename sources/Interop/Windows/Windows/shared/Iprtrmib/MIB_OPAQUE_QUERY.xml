@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_OPAQUE_QUERY">
-    <summary>
-      <para>The
-<b>MIB_OPAQUE_QUERY</b> structure contains information for a MIB opaque query.</para>
-    </summary>
-    <seealso cref="MIB_OPAQUE_INFO" />
+    <summary>The<b>MIB_OPAQUE_QUERY</b> structure contains information for a MIB opaque query.</summary>
   </member>
   <member name="MIB_OPAQUE_QUERY.dwVarId">
-    <summary>
-      <para>The identifier of the MIB object to query.</para>
-    </summary>
+    <summary>The identifier of the MIB object to query.</summary>
   </member>
   <member name="MIB_OPAQUE_QUERY.rgdwVarIndex">
-    <summary>
-      <para>The index of the MIB object to query.</para>
-    </summary>
+    <summary>The index of the MIB object to query.</summary>
   </member>
 </doc>

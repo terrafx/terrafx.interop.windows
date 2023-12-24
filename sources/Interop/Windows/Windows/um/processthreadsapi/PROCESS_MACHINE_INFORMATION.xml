@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MACHINE_INFORMATION">
-    <summary>
-      <para>Specifies the architecture of a process and if that architecture of code can run in user mode, kernel mode, and/or under WoW64 on the host operating system.</para>
-    </summary>
-    <seealso cref="PROCESS_INFORMATION_CLASS" />
+    <summary>Specifies the architecture of a process and if that architecture of code can run in user mode, kernel mode, and/or under WoW64 on the host operating system.</summary>
   </member>
   <member name="PROCESS_MACHINE_INFORMATION.ProcessMachine">
-    <summary>
-      <para>An IMAGE_FILE_MACHINE_* value indicating the architecture of the associated process. See the list of architecture values in <a href="https://docs.microsoft.com//windows/win32/sysinfo/image-file-machine-constants">Image File Machine Constants</a>.</para>
-    </summary>
+    <summary>An IMAGE_FILE_MACHINE_* value indicating the architecture of the associated process. See the list of architecture values in <a href="https://docs.microsoft.com//windows/win32/sysinfo/image-file-machine-constants">Image File Machine Constants</a>.</summary>
   </member>
   <member name="PROCESS_MACHINE_INFORMATION.Res0">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="PROCESS_MACHINE_INFORMATION.MachineAttributes">
-    <summary>
-      <para>A value from the <see cref="MACHINE_ATTRIBUTES" /> enumeration indicating if the process’s architecture can run in user mode, kernel mode, and/or under WOW64 on the host operating system.</para>
-    </summary>
+    <summary>A value from the <see cref="MACHINE_ATTRIBUTES" /> enumeration indicating if the process’s architecture can run in user mode, kernel mode, and/or under WOW64 on the host operating system.</summary>
   </member>
 </doc>

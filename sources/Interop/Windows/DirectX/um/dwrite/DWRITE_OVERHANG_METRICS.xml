@@ -5,32 +5,19 @@
   <member name="DWRITE_OVERHANG_METRICS">
     <summary>
       <para>Indicates how much any visible DIPs (device independent pixels) overshoot each side of the layout or inline objects.</para>
-      <para>Positive overhangs indicate that the visible area extends outside the layout box or inline object, while negative values mean there is whitespace inside.
-The returned values are unaffected by rendering transforms or pixel snapping.  Additionally, they may not exactly match the final target's pixel bounds after applying grid fitting and hinting.</para>
+      <para>Positive overhangs indicate that the visible area extends outside the layout box or inline object, while negative values mean there is whitespace inside. The returned values are unaffected by rendering transforms or pixel snapping. Additionally, they may not exactly match the final target's pixel bounds after applying grid fitting and hinting.</para>
     </summary>
   </member>
   <member name="DWRITE_OVERHANG_METRICS.left">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance from the left-most visible DIP to its  left-alignment edge.</para>
-    </summary>
+    <summary>The distance from the left-most visible DIP to its left-alignment edge.</summary>
   </member>
   <member name="DWRITE_OVERHANG_METRICS.top">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance from the top-most visible DIP to its  top alignment edge.</para>
-    </summary>
+    <summary>The distance from the top-most visible DIP to its top alignment edge.</summary>
   </member>
   <member name="DWRITE_OVERHANG_METRICS.right">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance from the right-most visible DIP to its  right-alignment edge.</para>
-    </summary>
+    <summary>The distance from the right-most visible DIP to its right-alignment edge.</summary>
   </member>
   <member name="DWRITE_OVERHANG_METRICS.bottom">
-    <summary>
-      <para>Type: <b>FLOAT</b></para>
-      <para>The distance from the bottom-most visible DIP to its lower-alignment edge.</para>
-    </summary>
+    <summary>The distance from the bottom-most visible DIP to its lower-alignment edge.</summary>
   </member>
 </doc>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ImageCodecFlags">
+    <summary>The <b>ImageCodecFlags</b> enumeration indicates attributes of an image codec.</summary>
+  </member>
+  <member name="ImageCodecFlags.ImageCodecFlagsEncoder">
+    <summary>Indicates that the codec supports encoding (saving).</summary>
+  </member>
+  <member name="ImageCodecFlags.ImageCodecFlagsDecoder">
+    <summary>Indicates that the codec supports decoding (reading).</summary>
+  </member>
+  <member name="ImageCodecFlags.ImageCodecFlagsSupportBitmap">
+    <summary>Indicates that the codec supports raster images (bitmaps).</summary>
+  </member>
+  <member name="ImageCodecFlags.ImageCodecFlagsSupportVector">
+    <summary>Indicates that the codec supports vector images (metafiles).</summary>
+  </member>
+  <member name="ImageCodecFlags.ImageCodecFlagsSeekableEncode">
+    <summary>Indicates that an encoder requires a seekable output stream.</summary>
+  </member>
+  <member name="ImageCodecFlags.ImageCodecFlagsBlockingDecode">
+    <summary>Indicates that a decoder has blocking behavior during the decoding process.</summary>
+  </member>
+  <member name="ImageCodecFlags.ImageCodecFlagsBuiltin">
+    <summary>Indicates that the codec is built in to GDI+.</summary>
+  </member>
+  <member name="ImageCodecFlags.ImageCodecFlagsSystem">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+  <member name="ImageCodecFlags.ImageCodecFlagsUser">
+    <summary>Not used in GDI+ version 1.0.</summary>
+  </member>
+</doc>

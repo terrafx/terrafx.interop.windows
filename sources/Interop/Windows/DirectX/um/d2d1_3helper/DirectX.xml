@@ -3,263 +3,74 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.GradientMeshPatch">
-    <summary>
-      <para>Creates a <see cref="D2D1_GRADIENT_MESH_PATCH" /> structure that contains the given control points, colors, and boundary flags.</para>
-    </summary>
-    <param name="point00">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 00.</para>
-    </param>
-    <param name="point01">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 01.</para>
-    </param>
-    <param name="point02">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 02.</para>
-    </param>
-    <param name="point03">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 03.</para>
-    </param>
-    <param name="point10">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 10.</para>
-    </param>
-    <param name="point11">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 11.</para>
-    </param>
-    <param name="point12">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 12.</para>
-    </param>
-    <param name="point13">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 13.</para>
-    </param>
-    <param name="point20">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 20.</para>
-    </param>
-    <param name="point21">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 21.</para>
-    </param>
-    <param name="point22">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 22.</para>
-    </param>
-    <param name="point23">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 23.</para>
-    </param>
-    <param name="point30">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 30.</para>
-    </param>
-    <param name="point31">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 31.</para>
-    </param>
-    <param name="point32">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 32.</para>
-    </param>
-    <param name="point33">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 33.</para>
-    </param>
-    <param name="color00">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The color associated with the control point at position 00.</para>
-    </param>
-    <param name="color03">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The color associated with the control point at position 03.</para>
-    </param>
-    <param name="color30">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The color associated with the control point at position 30.</para>
-    </param>
-    <param name="color33">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The color associated with the control point at position 33.</para>
-    </param>
-    <param name="topEdgeMode">
-      <para>Type: <b><see cref="D2D1_PATCH_EDGE_MODE" /></b></para>
-      <para>Specifies how to render the top edge of the mesh.</para>
-    </param>
-    <param name="leftEdgeMode">
-      <para>Type: <b><see cref="D2D1_PATCH_EDGE_MODE" /></b></para>
-      <para>Specifies how to render the left edge of the mesh.</para>
-    </param>
-    <param name="bottomEdgeMode">
-      <para>Type: <b><see cref="D2D1_PATCH_EDGE_MODE" /></b></para>
-      <para>Specifies how to render the bottom edge of the mesh.</para>
-    </param>
-    <param name="rightEdgeMode">
-      <para>Type: <b><see cref="D2D1_PATCH_EDGE_MODE" /></b></para>
-      <para>Specifies how to render the right edge of the mesh.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_GRADIENT_MESH_PATCH" /></b></para>
-      <para>Returns the created <see cref="D2D1_GRADIENT_MESH_PATCH" /> structure.</para>
-    </returns>
-    <seealso cref="D2D1_GRADIENT_MESH_PATCH" />
+    <summary>Creates a <see cref="D2D1_GRADIENT_MESH_PATCH" /> structure that contains the given control points, colors, and boundary flags.</summary>
+    <param name="point00">The coordinate-space location of the control point at position 00.</param>
+    <param name="point01">The coordinate-space location of the control point at position 01.</param>
+    <param name="point02">The coordinate-space location of the control point at position 02.</param>
+    <param name="point03">The coordinate-space location of the control point at position 03.</param>
+    <param name="point10">The coordinate-space location of the control point at position 10.</param>
+    <param name="point11">The coordinate-space location of the control point at position 11.</param>
+    <param name="point12">The coordinate-space location of the control point at position 12.</param>
+    <param name="point13">The coordinate-space location of the control point at position 13.</param>
+    <param name="point20">The coordinate-space location of the control point at position 20.</param>
+    <param name="point21">The coordinate-space location of the control point at position 21.</param>
+    <param name="point22">The coordinate-space location of the control point at position 22.</param>
+    <param name="point23">The coordinate-space location of the control point at position 23.</param>
+    <param name="point30">The coordinate-space location of the control point at position 30.</param>
+    <param name="point31">The coordinate-space location of the control point at position 31.</param>
+    <param name="point32">The coordinate-space location of the control point at position 32.</param>
+    <param name="point33">The coordinate-space location of the control point at position 33.</param>
+    <param name="color00">The color associated with the control point at position 00.</param>
+    <param name="color03">The color associated with the control point at position 03.</param>
+    <param name="color30">The color associated with the control point at position 30.</param>
+    <param name="color33">The color associated with the control point at position 33.</param>
+    <param name="topEdgeMode">Specifies how to render the top edge of the mesh.</param>
+    <param name="leftEdgeMode">Specifies how to render the left edge of the mesh.</param>
+    <param name="bottomEdgeMode">Specifies how to render the bottom edge of the mesh.</param>
+    <param name="rightEdgeMode">Specifies how to render the right edge of the mesh.</param>
+    <returns>Returns the created <see cref="D2D1_GRADIENT_MESH_PATCH" /> structure.</returns>
   </member>
   <member name="DirectX.GradientMeshPatchFromCoonsPatch">
-    <summary>
-      <para>Creates a <see cref="D2D1_GRADIENT_MESH_PATCH" /> from a given Coons patch description.</para>
-    </summary>
-    <param name="point0">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 0.</para>
-    </param>
-    <param name="point1">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 1.</para>
-    </param>
-    <param name="point2">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 2.</para>
-    </param>
-    <param name="point3">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 3.</para>
-    </param>
-    <param name="point4">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 4.</para>
-    </param>
-    <param name="point5">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 5.</para>
-    </param>
-    <param name="point6">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 6.</para>
-    </param>
-    <param name="point7">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 7.</para>
-    </param>
-    <param name="point8">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 8.</para>
-    </param>
-    <param name="point9">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 9.</para>
-    </param>
-    <param name="point10">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 10.</para>
-    </param>
-    <param name="point11">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The coordinate-space location of the control point at position 11.</para>
-    </param>
-    <param name="color0">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The color associated with the control point at position 0.</para>
-    </param>
-    <param name="color1">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The color associated with the control point at position 1.</para>
-    </param>
-    <param name="color2">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The color associated with the control point at position 2.</para>
-    </param>
-    <param name="color3">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-color-f">D2D1_COLOR_F</a></b></para>
-      <para>The color associated with the control point at position 3.</para>
-    </param>
-    <param name="topEdgeMode">
-      <para>Type: <b><see cref="D2D1_PATCH_EDGE_MODE" /></b></para>
-      <para>Specifies how to render the top edge of the mesh.</para>
-    </param>
-    <param name="leftEdgeMode">
-      <para>Type: <b><see cref="D2D1_PATCH_EDGE_MODE" /></b></para>
-      <para>Specifies how to render the left edge of the mesh.</para>
-    </param>
-    <param name="bottomEdgeMode">
-      <para>Type: <b><see cref="D2D1_PATCH_EDGE_MODE" /></b></para>
-      <para>Specifies how to render the bottom edge of the mesh.</para>
-    </param>
-    <param name="rightEdgeMode">
-      <para>Type: <b><see cref="D2D1_PATCH_EDGE_MODE" /></b></para>
-      <para>Specifies how to render the right edge of the mesh.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_GRADIENT_MESH_PATCH" /></b></para>
-      <para>Returns the created <see cref="D2D1_GRADIENT_MESH_PATCH" /> structure.</para>
-    </returns>
-    <remarks>
-      <para>The following image shows the numbering of control points in a Coons patch.</para>
-      <para>
-        <img alt="Numbering of control points in a Coons patch" src="https://docs.microsoft.com/windows/win32/api/d2d1_3helpermages/coonspatch.png" />
-      </para>
-    </remarks>
-    <seealso cref="D2D1_GRADIENT_MESH_PATCH" />
+    <summary>Creates a <see cref="D2D1_GRADIENT_MESH_PATCH" /> from a given Coons patch description.</summary>
+    <param name="point0">The coordinate-space location of the control point at position 0.</param>
+    <param name="point1">The coordinate-space location of the control point at position 1.</param>
+    <param name="point2">The coordinate-space location of the control point at position 2.</param>
+    <param name="point3">The coordinate-space location of the control point at position 3.</param>
+    <param name="point4">The coordinate-space location of the control point at position 4.</param>
+    <param name="point5">The coordinate-space location of the control point at position 5.</param>
+    <param name="point6">The coordinate-space location of the control point at position 6.</param>
+    <param name="point7">The coordinate-space location of the control point at position 7.</param>
+    <param name="point8">The coordinate-space location of the control point at position 8.</param>
+    <param name="point9">The coordinate-space location of the control point at position 9.</param>
+    <param name="point10">The coordinate-space location of the control point at position 10.</param>
+    <param name="point11">The coordinate-space location of the control point at position 11.</param>
+    <param name="color0">The color associated with the control point at position 0.</param>
+    <param name="color1">The color associated with the control point at position 1.</param>
+    <param name="color2">The color associated with the control point at position 2.</param>
+    <param name="color3">The color associated with the control point at position 3.</param>
+    <param name="topEdgeMode">Specifies how to render the top edge of the mesh.</param>
+    <param name="leftEdgeMode">Specifies how to render the left edge of the mesh.</param>
+    <param name="bottomEdgeMode">Specifies how to render the bottom edge of the mesh.</param>
+    <param name="rightEdgeMode">Specifies how to render the right edge of the mesh.</param>
+    <returns>Returns the created <see cref="D2D1_GRADIENT_MESH_PATCH" /> structure.</returns>
   </member>
   <member name="DirectX.InkBezierSegment">
-    <summary>
-      <para>Creates a <see cref="D2D1_INK_BEZIER_SEGMENT" /> structure.</para>
-    </summary>
-    <param name="point1">
-      <para>Type: <b>const <see cref="D2D1_INK_POINT" /></b></para>
-      <para>The first control point for the Bezier segment.</para>
-    </param>
-    <param name="point2">
-      <para>Type: <b>const <see cref="D2D1_INK_POINT" /></b></para>
-      <para>The second control point for the Bezier segment.</para>
-    </param>
-    <param name="point3">
-      <para>Type: <b>const <see cref="D2D1_INK_POINT" /></b></para>
-      <para>The end point for the Bezier segment.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_INK_BEZIER_SEGMENT" /></b></para>
-      <para>Returns the created <see cref="D2D1_INK_BEZIER_SEGMENT" /> structure.</para>
-    </returns>
-    <seealso cref="D2D1_INK_BEZIER_SEGMENT" />
+    <summary>Creates a <see cref="D2D1_INK_BEZIER_SEGMENT" /> structure.</summary>
+    <param name="point1">The first control point for the Bezier segment.</param>
+    <param name="point2">The second control point for the Bezier segment.</param>
+    <param name="point3">The end point for the Bezier segment.</param>
+    <returns>Returns the created <see cref="D2D1_INK_BEZIER_SEGMENT" /> structure.</returns>
   </member>
   <member name="DirectX.InkPoint">
-    <summary>
-      <para>Creates a <see cref="D2D1_INK_POINT" /> structure.</para>
-    </summary>
-    <param name="point">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The x and y coordinates of the point.</para>
-    </param>
-    <param name="radius">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The radius of this point. Corresponds to the width of the ink stroke at this point in the stroke.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_INK_POINT" /></b></para>
-      <para>Returns the created <see cref="D2D1_INK_POINT" /> structure.</para>
-    </returns>
-    <seealso cref="D2D1_INK_POINT" />
+    <summary>Creates a <see cref="D2D1_INK_POINT" /> structure.</summary>
+    <param name="point">The x and y coordinates of the point.</param>
+    <param name="radius">The radius of this point. Corresponds to the width of the ink stroke at this point in the stroke.</param>
+    <returns>Returns the created <see cref="D2D1_INK_POINT" /> structure.</returns>
   </member>
   <member name="DirectX.InkStyleProperties">
-    <summary>
-      <para>Creates a <see cref="D2D1_INK_STYLE_PROPERTIES" /> structure.</para>
-    </summary>
-    <param name="nibShape">
-      <para>Type: <b><see cref="D2D1_INK_NIB_SHAPE" /></b></para>
-      <para>The pre-transform shape of the nib (pen tip) used to draw a given ink object.</para>
-    </param>
-    <param name="nibTransform">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/Direct2D/d2d1-matrix-3x2-f">D2D1_MATRIX_3X2_F</a></b></para>
-      <para>The transform applied to the nib. Note that the translation components of the transform matrix are ignored for the purposes of rendering.</para>
-    </param>
-    <returns>
-      <para>Type: <b><see cref="D2D1_INK_STYLE_PROPERTIES" /></b></para>
-      <para>Returns the created <see cref="D2D1_INK_STYLE_PROPERTIES" /> structure.</para>
-    </returns>
-    <seealso cref="D2D1_INK_STYLE_PROPERTIES" />
+    <summary>Creates a <see cref="D2D1_INK_STYLE_PROPERTIES" /> structure.</summary>
+    <param name="nibShape">The pre-transform shape of the nib (pen tip) used to draw a given ink object.</param>
+    <param name="nibTransform">The transform applied to the nib. Note that the translation components of the transform matrix are ignored for the purposes of rendering.</param>
+    <returns>Returns the created <see cref="D2D1_INK_STYLE_PROPERTIES" /> structure.</returns>
   </member>
 </doc>

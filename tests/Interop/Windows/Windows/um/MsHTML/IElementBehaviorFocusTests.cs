@@ -19,32 +19,4 @@ public static unsafe partial class IElementBehaviorFocusTests
     {
         Assert.That(typeof(IElementBehaviorFocus).GUID, Is.EqualTo(IID_IElementBehaviorFocus));
     }
-
-    /// <summary>Validates that the <see cref="IElementBehaviorFocus" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IElementBehaviorFocus>(), Is.EqualTo(sizeof(IElementBehaviorFocus)));
-    }
-
-    /// <summary>Validates that the <see cref="IElementBehaviorFocus" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IElementBehaviorFocus).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IElementBehaviorFocus" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IElementBehaviorFocus), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IElementBehaviorFocus), Is.EqualTo(4));
-        }
-    }
 }

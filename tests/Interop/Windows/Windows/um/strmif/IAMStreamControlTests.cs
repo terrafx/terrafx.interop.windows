@@ -19,32 +19,4 @@ public static unsafe partial class IAMStreamControlTests
     {
         Assert.That(typeof(IAMStreamControl).GUID, Is.EqualTo(IID_IAMStreamControl));
     }
-
-    /// <summary>Validates that the <see cref="IAMStreamControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMStreamControl>(), Is.EqualTo(sizeof(IAMStreamControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMStreamControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMStreamControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMStreamControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMStreamControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMStreamControl), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,472 +3,332 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_TRUST_STATUS">
-    <summary>
-      <para>The <b>CERT_TRUST_STATUS</b> structure contains trust information about a certificate in a certificate chain, summary trust information about a simple chain of certificates, or summary information about an array of simple chains.</para>
-    </summary>
-    <seealso cref="CERT_CHAIN_CONTEXT" />
-    <seealso cref="CERT_CHAIN_ENGINE_CONFIG" />
-    <seealso cref="CERT_SIMPLE_CHAIN" />
+    <summary>The <b>CERT_TRUST_STATUS</b> structure contains trust information about a certificate in a certificate chain, summary trust information about a simple chain of certificates, or summary information about an array of simple chains.</summary>
   </member>
   <member name="CERT_TRUST_STATUS.dwErrorStatus">
     <summary>
-      <para>The following error status codes are defined for certificates and chains.</para>
+      <para>dwErrorStatus is a bitmask of the following error codes defined for certificates and chains.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_NO_ERROR</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>No error found for this certificate or chain.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_IS_NOT_TIME_VALID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>This certificate or one of the certificates in the certificate chain is not time valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_IS_REVOKED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>Trust for this certificate or one of the certificates in the certificate chain has been revoked.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_IS_NOT_SIGNATURE_VALID</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or one of the certificates in the certificate chain does not have a valid signature.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_IS_NOT_VALID_FOR_USAGE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000010</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or certificate chain is not valid for its proposed usage.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_IS_UNTRUSTED_ROOT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000020</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or certificate chain is based on an untrusted root.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_REVOCATION_STATUS_UNKNOWN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000040</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The revocation status of the certificate or one of the certificates in the certificate chain is unknown.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_IS_CYCLIC</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000080</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>One of the certificates in the chain was issued by a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a> that the original certificate had certified.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_INVALID_EXTENSION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>One of the certificates has an extension that is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_INVALID_POLICY_CONSTRAINTS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000200</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or one of the certificates in the certificate chain has a policy constraints extension, and one of the issued certificates has a disallowed policy mapping extension or does not have a required issuance policies extension.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_INVALID_BASIC_CONSTRAINTS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000400</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or one of the certificates in the certificate chain has a basic constraints extension, and either the certificate cannot be used to issue other certificates, or the chain path length has been exceeded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_INVALID_NAME_CONSTRAINTS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000800</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or one of the certificates in the certificate chain has a name constraints extension that is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_HAS_NOT_SUPPORTED_NAME_CONSTRAINT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or one of the certificates in the certificate chain has a name constraints extension that contains unsupported fields. The minimum and maximum fields are not supported. Thus minimum must always be zero and maximum must always be absent. Only UPN is supported for an Other Name. The following alternative name choices are not supported:</para>
-            <list type="bullet">
-              <item>
-                <description>X400 Address</description>
-              </item>
-              <item>
-                <description>EDI Party Name</description>
-              </item>
-              <item>
-                <description>Registered Id</description>
-              </item>
-            </list>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_HAS_NOT_DEFINED_NAME_CONSTRAINT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or one of the certificates in the certificate chain has a name constraints extension and a name constraint is missing for one of the name choices in the end certificate.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_HAS_NOT_PERMITTED_NAME_CONSTRAINT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00004000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or one of the certificates in the certificate chain has a name constraints extension, and there is not a permitted name constraint for one of the name choices in the end certificate.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_HAS_EXCLUDED_NAME_CONSTRAINT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00008000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate or one of the certificates in the certificate chain has a name constraints extension, and one of the name choices in the end certificate is explicitly excluded.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_IS_OFFLINE_REVOCATION</b>
-                </description>
-              </item>
-              <item>
-                <description>0x01000000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The revocation status of the certificate or one of the certificates in the certificate chain is either offline or stale.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_NO_ISSUANCE_CHAIN_POLICY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x02000000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The end certificate does not have any resultant issuance policies, and one of the issuing <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a> certificates has a policy constraints extension requiring it.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_IS_EXPLICIT_DISTRUST</b>
-                </description>
-              </item>
-              <item>
-                <description>0x04000000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate is explicitly distrusted.</para>
-            <para>
-              <b>Windows Vista and Windows Server 2008:  </b>Support for this flag begins.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_HAS_NOT_SUPPORTED_CRITICAL_EXT</b>
-                </description>
-              </item>
-              <item>
-                <description>0x08000000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate does not support a critical extension.</para>
-            <para>
-              <b>Windows Vista and Windows Server 2008:  </b>Support for this flag begins.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_HAS_WEAK_SIGNATURE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00100000</description>
-              </item>
-            </list>
-          </description>
-          <description>
-            <para>The certificate has not been strong signed. Typically this indicates that the MD2 or MD5 hashing algorithms were used to create a hash of the certificate.</para>
-            <para>
-              <b>Windows 8 and Windows Server 2012:  </b>Support for this flag begins.</para>
-          </description>
-        </item>
-      </list>
-      <para>The following codes are defined for chains only.</para>
-      <list type="table">
-        <listheader>
-          <description>Value</description>
-          <description>Meaning</description>
+          <description>No error found for this certificate or chain.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_IS_PARTIAL_CHAIN</b>
-                </description>
-              </item>
-              <item>
-                <description> 0x00010000</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_IS_NOT_TIME_VALID</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The certificate chain is not complete.</para>
-          </description>
-        </item>
-        <item>
+          <description>This certificate or one of the certificates in the certificate chain is not time valid.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_CTL_IS_NOT_TIME_VALID</b>
-                </description>
-              </item>
-              <item>
-                <description> 0x00020000</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_IS_REVOKED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust list</a> (CTL) used to create this chain was not time valid.</para>
-          </description>
-        </item>
-        <item>
+          <description>Trust for this certificate or one of the certificates in the certificate chain has been revoked.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_CTL_IS_NOT_SIGNATURE_VALID</b>
-                </description>
-              </item>
-              <item>
-                <description> 0x00040000</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_IS_NOT_SIGNATURE_VALID</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A CTL used to create this chain did not have a valid signature.</para>
-          </description>
-        </item>
-        <item>
+          <description>The certificate or one of the certificates in the certificate chain does not have a valid signature.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>CERT_TRUST_CTL_IS_NOT_VALID_FOR_USAGE</b>
-                </description>
-              </item>
-              <item>
-                <description> 0x00080000</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_IS_NOT_VALID_FOR_USAGE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000010</term>
+              </listheader>
             </list>
           </description>
+          <description>The certificate or certificate chain is not valid for its proposed usage.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A CTL used to create this chain is not valid for this usage.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_IS_UNTRUSTED_ROOT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000020</term>
+              </listheader>
+            </list>
           </description>
-        </item>
-      </list>
-    </summary>
+          <description>The certificate or certificate chain is based on an untrusted root.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_REVOCATION_STATUS_UNKNOWN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The revocation status of the certificate or one of the certificates in the certificate chain is unknown.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_IS_CYCLIC</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000080</term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the certificates in the chain was issued by a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a> that the original certificate had certified.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_INVALID_EXTENSION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the certificates has an extension that is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_INVALID_POLICY_CONSTRAINTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate or one of the certificates in the certificate chain has a policy constraints extension, and one of the issued certificates has a disallowed policy mapping extension or does not have a required issuance policies extension.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_INVALID_BASIC_CONSTRAINTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate or one of the certificates in the certificate chain has a basic constraints extension, and either the certificate cannot be used to issue other certificates, or the chain path length has been exceeded.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_INVALID_NAME_CONSTRAINTS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate or one of the certificates in the certificate chain has a name constraints extension that is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_HAS_NOT_SUPPORTED_NAME_CONSTRAINT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate or one of the certificates in the certificate chain has a name constraints extension that contains unsupported fields. The minimum and maximum fields are not supported. Thus minimum must always be zero and maximum must always be absent. Only UPN is supported for an Other Name. The following alternative name choices are not supported:<list type="bullet"><item><description>X400 Address</description></item><item><description>EDI Party Name</description></item><item><description>Registered Id</description></item></list></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_HAS_NOT_DEFINED_NAME_CONSTRAINT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate or one of the certificates in the certificate chain has a name constraints extension and a name constraint is missing for one of the name choices in the end certificate.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_HAS_NOT_PERMITTED_NAME_CONSTRAINT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate or one of the certificates in the certificate chain has a name constraints extension, and there is not a permitted name constraint for one of the name choices in the end certificate.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_HAS_EXCLUDED_NAME_CONSTRAINT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00008000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate or one of the certificates in the certificate chain has a name constraints extension, and one of the name choices in the end certificate is explicitly excluded.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_IS_OFFLINE_REVOCATION</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x01000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The revocation status of the certificate or one of the certificates in the certificate chain is either offline or stale.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_NO_ISSUANCE_CHAIN_POLICY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x02000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The end certificate does not have any resultant issuance policies, and one of the issuing <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certification authority</a> certificates has a policy constraints extension requiring it.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_IS_EXPLICIT_DISTRUST</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x04000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate is explicitly distrusted.<para><b>Windows Vista and Windows Server 2008:  </b>Support for this flag begins.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_HAS_NOT_SUPPORTED_CRITICAL_EXT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x08000000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate does not support a critical extension.<para><b>Windows Vista and Windows Server 2008:  </b>Support for this flag begins.</para></description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CERT_TRUST_HAS_WEAK_SIGNATURE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00100000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The certificate has not been strong signed. Typically this indicates that the MD2 or MD5 hashing algorithms were used to create a hash of the certificate.<para><b>Windows 8 and Windows Server 2012:  </b>Support for this flag begins.</para></description>
+        </listheader>
+      </list> <para>The following codes are defined for chains only.</para><list type="table"><listheader><description>Value</description><description>Meaning</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_TRUST_IS_PARTIAL_CHAIN</b></term></listheader><listheader><term> 0x00010000</term></listheader></list></description><description>The certificate chain is not complete.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_TRUST_CTL_IS_NOT_TIME_VALID</b></term></listheader><listheader><term> 0x00020000</term></listheader></list></description><description>A <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate trust list</a> (CTL) used to create this chain was not time valid.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_TRUST_CTL_IS_NOT_SIGNATURE_VALID</b></term></listheader><listheader><term> 0x00040000</term></listheader></list></description><description>A CTL used to create this chain did not have a valid signature.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>CERT_TRUST_CTL_IS_NOT_VALID_FOR_USAGE</b></term></listheader><listheader><term> 0x00080000</term></listheader></list></description><description>A CTL used to create this chain is not valid for this usage.</description></listheader></list></summary>
   </member>
   <member name="CERT_TRUST_STATUS.dwInfoStatus">
     <summary>
@@ -478,219 +338,186 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_HAS_EXACT_MATCH_ISSUER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An exact match issuer certificate has been found for this certificate. This status code applies to certificates only.</para>
-          </description>
-        </item>
-        <item>
+          <description>An exact match issuer certificate has been found for this certificate. This status code applies to certificates only.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_HAS_KEY_MATCH_ISSUER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A key match issuer certificate has been found for this certificate. This status code applies to certificates only.</para>
-          </description>
-        </item>
-        <item>
+          <description>A key match issuer certificate has been found for this certificate. This status code applies to certificates only.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_HAS_NAME_MATCH_ISSUER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000004</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000004</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A name match issuer certificate has been found for this certificate. This status code applies to certificates only.</para>
-          </description>
-        </item>
-        <item>
+          <description>A name match issuer certificate has been found for this certificate. This status code applies to certificates only.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_IS_SELF_SIGNED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000008</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000008</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This certificate is self-signed. This status code applies to certificates only.</para>
-          </description>
-        </item>
-        <item>
+          <description>This certificate is self-signed. This status code applies to certificates only.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_HAS_PREFERRED_ISSUER</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The certificate or chain has a preferred issuer. This status code applies to certificates and chains.</para>
-          </description>
-        </item>
-        <item>
+          <description>The certificate or chain has a preferred issuer. This status code applies to certificates and chains.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_HAS_ISSUANCE_CHAIN_POLICY</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An issuance chain policy exists. This status code applies to certificates and chains.</para>
-          </description>
-        </item>
-        <item>
+          <description>An issuance chain policy exists. This status code applies to certificates and chains.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_HAS_VALID_NAME_CONSTRAINTS</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000400</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000400</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A valid name constraints for all namespaces, including UPN. This status code applies to certificates and chains.</para>
-          </description>
-        </item>
-        <item>
+          <description>A valid name constraints for all namespaces, including UPN. This status code applies to certificates and chains.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_IS_PEER_TRUSTED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000800</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000800</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This certificate is peer trusted. This status code applies to certificates only.</para>
-            <para>
-              <b>Windows Vista and Windows Server 2008:  </b>Support for this flag begins.</para>
-          </description>
-        </item>
-        <item>
+          <description>This certificate is peer trusted. This status code applies to certificates only.<para><b>Windows Vista and Windows Server 2008:  </b>Support for this flag begins.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_HAS_CRL_VALIDITY_EXTENDED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00001000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00001000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This certificate's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL) validity has been extended. This status code applies to certificates only.</para>
-            <para>
-              <b>Windows Vista and Windows Server 2008:  </b>Support for this flag begins.</para>
-          </description>
-        </item>
-        <item>
+          <description>This certificate's <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL) validity has been extended. This status code applies to certificates only.<para><b>Windows Vista and Windows Server 2008:  </b>Support for this flag begins.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_IS_FROM_EXCLUSIVE_TRUST_STORE</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00002000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00002000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The certificate was found in either a store pointed to by the  <b>hExclusiveRoot</b> or <b>hExclusiveTrustedPeople</b> member of the <see cref="CERT_CHAIN_ENGINE_CONFIG" /> structure.</para>
-            <para>
-              <b>Windows 7 and Windows Server 2008 R2:  </b>Support for this flag begins.</para>
-          </description>
-        </item>
-        <item>
+          <description>The certificate was found in either a store pointed to by the <b>hExclusiveRoot</b> or <b>hExclusiveTrustedPeople</b> member of the <see cref="CERT_CHAIN_ENGINE_CONFIG" /> structure.<para><b>Windows 7 and Windows Server 2008 R2:  </b>Support for this flag begins.</para></description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_IS_COMPLEX_CHAIN</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00010000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00010000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The certificate chain created is a complex chain. This status code applies to chains only.</para>
-          </description>
-        </item>
-        <item>
+          <description>The certificate chain created is a complex chain. This status code applies to chains only.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>CERT_TRUST_IS_CA_TRUSTED</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00004000</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00004000</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A non-self-signed intermediate CA certificate was found in the store pointed to  by the <b>hExclusiveRoot</b> member of the <see cref="CERT_CHAIN_ENGINE_CONFIG" /> structure. The CA certificate is treated as a trust anchor for the certificate chain. This flag will only be set if the <b>CERT_CHAIN_EXCLUSIVE_ENABLE_CA_FLAG</b> value is set in the <b>dwExclusiveFlags</b> member of the <b>CERT_CHAIN_ENGINE_CONFIG</b> structure.</para>
-            <para>If this flag is set, the <b>CERT_TRUST_IS_SELF_SIGNED</b> and the <b>CERT_TRUST_IS_PARTIAL_CHAIN</b><b>dwErrorStatus</b> flags will not be set.</para>
-            <para>
-              <b>Windows 8 and Windows Server 2012:  </b>Support for this flag begins.</para>
-          </description>
-        </item>
+          <description>A non-self-signed intermediate CA certificate was found in the store pointed to by the <b>hExclusiveRoot</b> member of the <see cref="CERT_CHAIN_ENGINE_CONFIG" /> structure. The CA certificate is treated as a trust anchor for the certificate chain. This flag will only be set if the <b>CERT_CHAIN_EXCLUSIVE_ENABLE_CA_FLAG</b> value is set in the <b>dwExclusiveFlags</b> member of the <b>CERT_CHAIN_ENGINE_CONFIG</b> structure.<para>If this flag is set, the <b>CERT_TRUST_IS_SELF_SIGNED</b> and the <b>CERT_TRUST_IS_PARTIAL_CHAIN</b><b>dwErrorStatus</b> flags will not be set.</para><para><b>Windows 8 and Windows Server 2012:  </b>Support for this flag begins.</para></description>
+        </listheader>
       </list>
     </summary>
   </member>

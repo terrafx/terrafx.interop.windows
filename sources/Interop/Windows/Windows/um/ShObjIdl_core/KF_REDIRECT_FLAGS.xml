@@ -3,70 +3,39 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="KF_REDIRECT_FLAGS">
-    <summary>
-      <para>Flags used by <see cref="IKnownFolderManager.Redirect" /> to specify details of a known folder redirection such as permissions and ownership for the redirected folder.</para>
-    </summary>
-    <remarks>
-      <para>The <b><b>KF_REDIRECT_OWNER_USER</b></b> and <b><b>KF_REDIRECT_SET_OWNER_EXPLICIT</b></b> flags provide ownership checks for the target folder, if that folder exists. By default, <see cref="IKnownFolderManager.Redirect" /> does not perform ownership checks. KF_REDIRECT_OWNER_USER and KF_REDIRECT_SET_OWNER_EXPLICIT are only valid if called together.</para>
-      <para>The <b>KF_REDIRECT_FLAGS</b> type is defined in Shobjidl.h as shown here.</para>
-      <code>typedef DWORD KF_REDIRECT_FLAGS;
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd940364(v=vs.85)">Known Folders Sample</seealso>
+    <summary>Flags used by <see cref="IKnownFolderManager.Redirect" /> to specify details of a known folder redirection such as permissions and ownership for the redirected folder.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_USER_EXCLUSIVE">
-    <summary>
-      <para>Ensure that only the user has permission to access the redirected folder.</para>
-    </summary>
+    <summary>Ensure that only the user has permission to access the redirected folder.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_COPY_SOURCE_DACL">
-    <summary>
-      <para>Copy the DACL of the source folder to the target to maintain current access permissions.</para>
-    </summary>
+    <summary>Copy the DACL of the source folder to the target to maintain current access permissions.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_OWNER_USER">
-    <summary>
-      <para>Sets the user as the owner of a newly created target folder unless the user is a member of the Administrator group, in which case Administrator is set as the owner. Must be called with KF_REDIRECT_SET_OWNER_EXPLICIT.</para>
-    </summary>
+    <summary>Sets the user as the owner of a newly created target folder unless the user is a member of the Administrator group, in which case Administrator is set as the owner. Must be called with KF_REDIRECT_SET_OWNER_EXPLICIT.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_SET_OWNER_EXPLICIT">
-    <summary>
-      <para>Set the owner of a newly created target folder.  If the user belongs to the Administrators group, Administrators is assigned as the owner. Must be called with KF_REDIRECT_OWNER_USER.</para>
-    </summary>
+    <summary>Set the owner of a newly created target folder. If the user belongs to the Administrators group, Administrators is assigned as the owner. Must be called with KF_REDIRECT_OWNER_USER.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_CHECK_ONLY">
-    <summary>
-      <para>Do not perform a redirection, simply check whether redirection has occurred. If so, <see cref="IKnownFolderManager.Redirect" /> returns S_OK; if not, or if some actions remain to be completed, it returns S_FALSE.</para>
-    </summary>
+    <summary>Do not perform a redirection, simply check whether redirection has occurred. If so, <see cref="IKnownFolderManager.Redirect" /> returns S_OK; if not, or if some actions remain to be completed, it returns S_FALSE.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_WITH_UI">
-    <summary>
-      <para>Display UI during the redirection.</para>
-    </summary>
+    <summary>Display UI during the redirection.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_UNPIN">
-    <summary>
-      <para>Unpin the source folder.</para>
-    </summary>
+    <summary>Unpin the source folder.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_PIN">
-    <summary>
-      <para>Pin the target folder.</para>
-    </summary>
+    <summary>Pin the target folder.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_COPY_CONTENTS">
-    <summary>
-      <para>Copy the existing contents—both files and subfolders—of the known folder to the redirected folder.</para>
-    </summary>
+    <summary>Copy the existing contents—both files and subfolders—of the known folder to the redirected folder.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_DEL_SOURCE_CONTENTS">
-    <summary>
-      <para>Delete the contents of the source folder after they have been copied to the redirected folder. This flag is valid only if <see cref="KF_REDIRECT_COPY_CONTENTS" /> is set.</para>
-    </summary>
+    <summary>Delete the contents of the source folder after they have been copied to the redirected folder. This flag is valid only if <see cref="KF_REDIRECT_COPY_CONTENTS" /> is set.</summary>
   </member>
   <member name="KF_REDIRECT_FLAGS.KF_REDIRECT_EXCLUDE_ALL_KNOWN_SUBFOLDERS">
-    <summary>
-      <para>Reserved. Do not use.</para>
-    </summary>
+    <summary>Reserved. Do not use.</summary>
   </member>
 </doc>

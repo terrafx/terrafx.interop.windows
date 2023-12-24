@@ -3,14 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_BYTES">
-    <summary>
-      <para>Used to serialize and deserialize an array of bytes.</para>
-    </summary>
+    <summary>Used to serialize and deserialize an array of bytes.</summary>
   </member>
-  <member name="WS_BYTES.length">
-    <summary></summary>
-  </member>
-  <member name="WS_BYTES.bytes">
-    <summary></summary>
-  </member>
+  <member name="WS_BYTES.length"></member>
+  <member name="WS_BYTES.bytes"></member>
 </doc>

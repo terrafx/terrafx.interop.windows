@@ -3,43 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SpatialAudioObjectRenderStreamActivationParams">
-    <summary>
-      <para>Represents activation parameters for a spatial audio render stream. Pass this structure to <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" /> when activating a stream.</para>
-    </summary>
+    <summary>Represents activation parameters for a spatial audio render stream. Pass this structure to <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" /> when activating a stream.</summary>
   </member>
   <member name="SpatialAudioObjectRenderStreamActivationParams.ObjectFormat">
-    <summary>
-      <para>Format descriptor for a single spatial audio object. All objects used by the stream must have the same format and the format must be of type <see cref="WAVEFORMATEX" /> or <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible">WAVEFORMATEXTENSIBLE</a>.</para>
-    </summary>
+    <summary>Format descriptor for a single spatial audio object. All objects used by the stream must have the same format and the format must be of type <see cref="WAVEFORMATEX" /> or <a href="https://docs.microsoft.com//windows-hardware/drivers/ddi/content/ksmedia/ns-ksmedia-waveformatextensible">WAVEFORMATEXTENSIBLE</a>.</summary>
   </member>
   <member name="SpatialAudioObjectRenderStreamActivationParams.StaticObjectTypeMask">
-    <summary>
-      <para>A bitwise combination of <b>AudioObjectType</b> values indicating the set of static spatial audio channels that will be allowed by the activated stream.</para>
-    </summary>
+    <summary>A bitwise combination of <b>AudioObjectType</b> values indicating the set of static spatial audio channels that will be allowed by the activated stream.</summary>
   </member>
   <member name="SpatialAudioObjectRenderStreamActivationParams.MinDynamicObjectCount">
-    <summary>
-      <para>The minimum number of concurrent dynamic objects. If this number of dynamic audio objects can't be activated simultaneously, <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" /> will fail with this error <b>SPTLAUDCLNT_E_NO_MORE_OBJECTS</b>.</para>
-    </summary>
+    <summary>The minimum number of concurrent dynamic objects. If this number of dynamic audio objects can't be activated simultaneously, <see cref="ISpatialAudioClient.ActivateSpatialAudioStream" /> will fail with this error <b>SPTLAUDCLNT_E_NO_MORE_OBJECTS</b>.</summary>
   </member>
   <member name="SpatialAudioObjectRenderStreamActivationParams.MaxDynamicObjectCount">
-    <summary>
-      <para>The maximum number of concurrent dynamic objects that can be activated with <see cref="ISpatialAudioObjectRenderStream" />.</para>
-    </summary>
+    <summary>The maximum number of concurrent dynamic objects that can be activated with <see cref="ISpatialAudioObjectRenderStream" />.</summary>
   </member>
   <member name="SpatialAudioObjectRenderStreamActivationParams.Category">
-    <summary>
-      <para>The category of the audio stream and its spatial audio objects.</para>
-    </summary>
+    <summary>The category of the audio stream and its spatial audio objects.</summary>
   </member>
   <member name="SpatialAudioObjectRenderStreamActivationParams.EventHandle">
-    <summary>
-      <para>The event that will signal the client to provide more audio data. This handle will be duplicated internally before it is used.</para>
-    </summary>
+    <summary>The event that will signal the client to provide more audio data. This handle will be duplicated internally before it is used.</summary>
   </member>
   <member name="SpatialAudioObjectRenderStreamActivationParams.NotifyObject">
-    <summary>
-      <para>The object that provides notifications for spatial audio clients to respond to changes in the state of an  <see cref="ISpatialAudioObjectRenderStream" />. This object is used to notify clients that the number of dynamic spatial audio objects that can be activated concurrently is about to change.</para>
-    </summary>
+    <summary>The object that provides notifications for spatial audio clients to respond to changes in the state of an <see cref="ISpatialAudioObjectRenderStream" />. This object is used to notify clients that the number of dynamic spatial audio objects that can be activated concurrently is about to change.</summary>
   </member>
 </doc>

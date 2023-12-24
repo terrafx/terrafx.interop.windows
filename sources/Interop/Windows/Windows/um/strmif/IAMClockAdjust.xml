@@ -4,24 +4,16 @@
 <doc>
   <member name="IAMClockAdjust.SetClockDelta">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetClockDelta</code> method adjusts the clock time.</para>
     </summary>
-    <param name="rtDelta">
-      <para>Specifies the amount by which to adjust the clock, as a <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> value. A positive value moves the clock forward, and a negative value moves the clock backward.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK or an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The time values returned by <see cref="IReferenceClock.GetTime" /> are monotonically increasing. If you set the clock back, <b>GetTime</b> continues to report the old time until the internal clock catches up.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMClockAdjust Interface" />
+    <param name="rtDelta">Specifies the amount by which to adjust the clock, as a <a href="https://docs.microsoft.com//windows/desktop/DirectShow/reference-time">REFERENCE_TIME</a> value. A positive value moves the clock forward, and a negative value moves the clock backward.</param>
+    <returns>Returns S_OK or an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAMClockAdjust">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IAMClockAdjust</code> interface adjusts the reference clock. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/system-reference-clock">System Reference Clock</a> exposes this interface.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/interfaces">Interfaces</seealso>
   </member>
 </doc>

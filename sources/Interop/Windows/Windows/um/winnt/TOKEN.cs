@@ -52,6 +52,9 @@ public static unsafe partial class TOKEN
     [NativeTypeName("#define TOKEN_TRUST_CONSTRAINT_MASK (STANDARD_RIGHTS_READ  | \\\r\n                                       TOKEN_QUERY  |\\\r\n                                       TOKEN_QUERY_SOURCE )")]
     public const int TOKEN_TRUST_CONSTRAINT_MASK = (((0x00020000)) | (0x0008) | (0x0010));
 
+    [NativeTypeName("#define TOKEN_TRUST_ALLOWED_MASK (TOKEN_TRUST_CONSTRAINT_MASK |\\\r\n                                    TOKEN_DUPLICATE              |\\\r\n                                    TOKEN_IMPERSONATE)")]
+    public const int TOKEN_TRUST_ALLOWED_MASK = ((((0x00020000)) | (0x0008) | (0x0010)) | (0x0002) | (0x0004));
+
     [NativeTypeName("#define TOKEN_ACCESS_PSEUDO_HANDLE_WIN8 (TOKEN_QUERY | TOKEN_QUERY_SOURCE)")]
     public const int TOKEN_ACCESS_PSEUDO_HANDLE_WIN8 = ((0x0008) | (0x0010));
 

@@ -3,28 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10ShaderResourceView1.GetDesc1">
-    <summary>
-      <para>Get the shader resource view's description.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="D3D10_SHADER_RESOURCE_VIEW_DESC1" />*</b></para>
-      <para>A pointer to a <see cref="D3D10_SHADER_RESOURCE_VIEW_DESC1" /> structure to be filled with data about the shader resource view.</para>
-    </param>
-    <remarks>
-      <para>This method requires Windows Vista Service Pack 1.</para>
-    </remarks>
-    <seealso cref="ID3D10ShaderResourceView1 Interface" />
+    <summary>Get the shader resource view's description.</summary>
+    <param name="pDesc">A pointer to a <see cref="D3D10_SHADER_RESOURCE_VIEW_DESC1" /> structure to be filled with data about the shader resource view.</param>
   </member>
   <member name="ID3D10ShaderResourceView1">
-    <summary>
-      <para>A shader-resource-view interface specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresources</a> a shader can access during rendering. Examples of shader resources include a constant buffer, a texture buffer, a texture or a sampler.</para>
-    </summary>
-    <remarks>
-      <para>To create a shader-resource view, call <see cref="ID3D10Device1.CreateShaderResourceView1" />.</para>
-      <para>A shader-resource view is required when binding a resource to a shader stage; the binding occurs by calling <see cref="ID3D10Device.GSSetShaderResources" />, <see cref="ID3D10Device.VSSetShaderResources" /> or <see cref="ID3D10Device.PSSetShaderResources" />.</para>
-      <para>This method requires Windows Vista Service Pack 1.</para>
-    </remarks>
-    <seealso cref="ID3D10ShaderResourceView" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-resource-interfaces">Resource Interfaces</seealso>
+    <summary>A shader-resource-view interface specifies the <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-programming-guide-resources-types">subresources</a> a shader can access during rendering. Examples of shader resources include a constant buffer, a texture buffer, a texture or a sampler.</summary>
   </member>
 </doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WINHTTP_PROXY_SETTINGS_PARAM">
+    <summary>Represents extended proxy settings.</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_PARAM.ullFlags">
+    <summary>Flags.</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_PARAM.pcwszConnectionName">
+    <summary>The WCM connection name for which settings were retrieved.</summary>
+  </member>
+  <member name="WINHTTP_PROXY_SETTINGS_PARAM.pcwszProbeHost">
+    <summary>TBD</summary>
+  </member>
+</doc>

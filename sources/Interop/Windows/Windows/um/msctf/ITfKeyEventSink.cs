@@ -25,7 +25,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfKeyEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfKeyEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfKeyEventSink*, uint>)(lpVtbl[1]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfKeyEventSink*, uint>)(lpVtbl[1]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfKeyEventSink*, uint>)(lpVtbl[2]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfKeyEventSink*, uint>)(lpVtbl[2]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnSetFocus"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
     [VtblIndex(3)]
     public HRESULT OnSetFocus(BOOL fForeground)
     {
-        return ((delegate* unmanaged<ITfKeyEventSink*, BOOL, int>)(lpVtbl[3]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), fForeground);
+        return ((delegate* unmanaged[MemberFunction]<ITfKeyEventSink*, BOOL, int>)(lpVtbl[3]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), fForeground);
     }
 
     /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnTestKeyDown"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
     [VtblIndex(4)]
     public HRESULT OnTestKeyDown(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[4]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[4]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
     }
 
     /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnTestKeyUp"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
     [VtblIndex(5)]
     public HRESULT OnTestKeyUp(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[5]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[5]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
     }
 
     /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnKeyDown"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
     [VtblIndex(6)]
     public HRESULT OnKeyDown(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[6]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[6]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
     }
 
     /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnKeyUp"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
     [VtblIndex(7)]
     public HRESULT OnKeyUp(ITfContext* pic, WPARAM wParam, LPARAM lParam, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[7]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfKeyEventSink*, ITfContext*, WPARAM, LPARAM, BOOL*, int>)(lpVtbl[7]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, wParam, lParam, pfEaten);
     }
 
     /// <include file='ITfKeyEventSink.xml' path='doc/member[@name="ITfKeyEventSink.OnPreservedKey"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
     [VtblIndex(8)]
     public HRESULT OnPreservedKey(ITfContext* pic, [NativeTypeName("const GUID &")] Guid* rguid, BOOL* pfEaten)
     {
-        return ((delegate* unmanaged<ITfKeyEventSink*, ITfContext*, Guid*, BOOL*, int>)(lpVtbl[8]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, rguid, pfEaten);
+        return ((delegate* unmanaged[MemberFunction]<ITfKeyEventSink*, ITfContext*, Guid*, BOOL*, int>)(lpVtbl[8]))((ITfKeyEventSink*)Unsafe.AsPointer(ref this), pic, rguid, pfEaten);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct ITfKeyEventSink : ITfKeyEventSink.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> OnSetFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> OnSetFocus;
 
         [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyDown;
 
         [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnTestKeyUp;
 
         [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyDown;
 
         [NativeTypeName("HRESULT (ITfContext *, WPARAM, LPARAM, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyUp;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, WPARAM, LPARAM, BOOL*, int> OnKeyUp;
 
         [NativeTypeName("HRESULT (ITfContext *, const GUID &, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfContext*, Guid*, BOOL*, int> OnPreservedKey;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfContext*, Guid*, BOOL*, int> OnPreservedKey;
     }
 }

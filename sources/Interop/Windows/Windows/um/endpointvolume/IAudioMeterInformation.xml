@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAudioMeterInformation.GetChannelsPeakValues">
-    <summary>
-      <para>The <b>GetChannelsPeakValues</b> method gets the peak sample values for all the channels in the audio stream.</para>
-    </summary>
-    <param name="u32ChannelCount">
-      <para>The channel count. This parameter also specifies the number of elements in the <i>afPeakValues</i> array. If the specified count does not match the number of channels in the stream, the method returns error code E_INVALIDARG.</para>
-    </param>
-    <param name="afPeakValues">
-      <para>Pointer to an array of peak sample values. The method writes the peak values for the channels into the array. The array contains one element for each channel in the stream. The peak values are numbers in the normalized range from 0.0 to 1.0.</para>
-    </param>
+    <summary>The <b>GetChannelsPeakValues</b> method gets the peak sample values for all the channels in the audio stream.</summary>
+    <param name="u32ChannelCount">The channel count. This parameter also specifies the number of elements in the <i>afPeakValues</i> array. If the specified count does not match the number of channels in the stream, the method returns error code E_INVALIDARG.</param>
+    <param name="afPeakValues">Pointer to an array of peak sample values. The method writes the peak values for the channels into the array. The array contains one element for each channel in the stream. The peak values are numbers in the normalized range from 0.0 to 1.0.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -19,43 +13,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Parameter <i>u32ChannelCount</i> does not equal the number of channels in the audio stream.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Parameter <i>u32ChannelCount</i> does not equal the number of channels in the audio stream.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
-          </description>
-          <description>
-            <para>Parameter <i>afPeakValues</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Parameter <i>afPeakValues</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method retrieves the peak sample values for the channels in the stream. The peak value for each channel is recorded over one device period and made available during the subsequent device period. Thus, this method always retrieves the peak values recorded during the previous device period. To obtain the device period, call the <see cref="IAudioClient.GetDevicePeriod" /> method.</para>
-      <para>Parameter <i>afPeakValues</i> points to a caller-allocated <b>float</b> array. If the stream contains <i>n</i> channels, the channels are numbered 0 to <i>n</i>– 1. The method stores the peak value for each channel in the array element whose array index matches the channel number. To get the number of channels in the audio stream that are monitored by peak meters, call the <see cref="IAudioMeterInformation.GetMeteringChannelCount" /> method.</para>
-    </remarks>
-    <seealso cref="IAudioClient.GetDevicePeriod" />
-    <seealso cref="IAudioMeterInformation Interface" />
-    <seealso cref="IAudioMeterInformation.GetMeteringChannelCount" />
   </member>
   <member name="IAudioMeterInformation.GetMeteringChannelCount">
-    <summary>
-      <para>The <b>GetMeteringChannelCount</b> method gets the number of channels in the audio stream that are monitored by peak meters.</para>
-    </summary>
-    <param name="pnChannelCount">
-      <para>Pointer to a <b>UINT</b> variable into which the method writes the number of channels.</para>
-    </param>
+    <summary>The <b>GetMeteringChannelCount</b> method gets the number of channels in the audio stream that are monitored by peak meters.</summary>
+    <param name="pnChannelCount">Pointer to a <b>UINT</b> variable into which the method writes the number of channels.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -63,27 +50,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Parameter <i>pnChannelCount</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Parameter <i>pnChannelCount</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IAudioMeterInformation Interface" />
   </member>
   <member name="IAudioMeterInformation.GetPeakValue">
-    <summary>
-      <para>The <b>GetPeakValue</b> method gets the peak sample value for the channels in the audio stream.</para>
-    </summary>
-    <param name="pfPeak">
-      <para>Pointer to a <b>float</b> variable into which the method writes the peak sample value for the audio stream. The peak value is a number in the normalized range from 0.0 to 1.0.</para>
-    </param>
+    <summary>The <b>GetPeakValue</b> method gets the peak sample value for the channels in the audio stream.</summary>
+    <param name="pfPeak">Pointer to a <b>float</b> variable into which the method writes the peak sample value for the audio stream. The peak value is a number in the normalized range from 0.0 to 1.0.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -91,32 +75,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Parameter <i>pfPeak</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Parameter <i>pfPeak</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method retrieves the peak sample value recorded across all of the channels in the stream. The peak value for each channel is recorded over one device period and made available during the subsequent device period. Thus, this method always retrieves the peak value recorded during the previous device period. To obtain the device period, call the <see cref="IAudioClient.GetDevicePeriod" /> method.</para>
-      <para>For a code example that uses the <b>GetPeakValue</b> method, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/peak-meters">Peak Meters</a>.</para>
-    </remarks>
-    <seealso cref="IAudioClient.GetDevicePeriod" />
-    <seealso cref="IAudioMeterInformation Interface" />
   </member>
   <member name="IAudioMeterInformation.QueryHardwareSupport">
-    <summary>
-      <para>The <b>QueryHardwareSupport</b> method queries the audio endpoint device for its hardware-supported functions.</para>
-    </summary>
-    <param name="pdwHardwareSupportMask">
-      <para>Pointer to a <b>DWORD</b> variable into which the method writes a hardware support mask that indicates the hardware capabilities of the audio endpoint device. The method can set the mask to 0 or to the bitwise-OR combination of one or more <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-hardware-support-xxx-constants">ENDPOINT_HARDWARE_SUPPORT_XXX</a> constants.</para>
-    </param>
+    <summary>The <b>QueryHardwareSupport</b> method queries the audio endpoint device for its hardware-supported functions.</summary>
+    <param name="pdwHardwareSupportMask">Pointer to a <b>DWORD</b> variable into which the method writes a hardware support mask that indicates the hardware capabilities of the audio endpoint device. The method can set the mask to 0 or to the bitwise-OR combination of one or more <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpoint-hardware-support-xxx-constants">ENDPOINT_HARDWARE_SUPPORT_XXX</a> constants.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -124,34 +100,20 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Parameter <i>pdwHardwareSupportMask</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Parameter <i>pdwHardwareSupportMask</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method indicates whether the audio endpoint device implements the following functions in hardware:</para>
-      <list type="bullet">
-        <item>
-          <description>Volume control</description>
-        </item>
-        <item>
-          <description>Mute control</description>
-        </item>
-        <item>
-          <description>Peak meter</description>
-        </item>
-      </list>
-      <para>The system automatically substitutes a software implementation for any function in the preceding list that the endpoint devices does not implement in hardware.</para>
-    </remarks>
-    <seealso cref="IAudioMeterInformation Interface" />
   </member>
   <member name="IAudioMeterInformation">
     <summary>
@@ -163,8 +125,5 @@
       <para>The peak values reported by the methods in the <b>IAudioMeterInformation</b> interface are normalized to the range from 0.0 to 1.0. For example, if a PCM stream contains 16-bit samples, and the peak sample value during a particular metering period is –8914, then the absolute value recorded by the peak meter is 8914, and the normalized peak value reported by the <b>IAudioMeterInformation</b> interface is 8914/32768 = 0.272.</para>
       <para>For a code example that uses the <b>IAudioMeterInformation</b> interface, see <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/peak-meters">Peak Meters</a>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/endpointvolume-api">EndpointVolume API</seealso>
-    <seealso cref="IMMDevice.Activate" />
   </member>
 </doc>

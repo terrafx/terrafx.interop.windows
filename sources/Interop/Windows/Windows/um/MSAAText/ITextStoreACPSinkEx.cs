@@ -25,7 +25,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, Guid*, void**, int>)(lpVtbl[0]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, uint>)(lpVtbl[1]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, uint>)(lpVtbl[1]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, uint>)(lpVtbl[2]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, uint>)(lpVtbl[2]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITextStoreACPSink.OnTextChange" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(3)]
     public HRESULT OnTextChange([NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("const TS_TEXTCHANGE *")] TS_TEXTCHANGE* pChange)
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, uint, TS_TEXTCHANGE*, int>)(lpVtbl[3]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), dwFlags, pChange);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, uint, TS_TEXTCHANGE*, int>)(lpVtbl[3]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), dwFlags, pChange);
     }
 
     /// <inheritdoc cref="ITextStoreACPSink.OnSelectionChange" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(4)]
     public HRESULT OnSelectionChange()
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, int>)(lpVtbl[4]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, int>)(lpVtbl[4]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITextStoreACPSink.OnLayoutChange" />
@@ -67,7 +67,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(5)]
     public HRESULT OnLayoutChange(TsLayoutCode lcode, [NativeTypeName("TsViewCookie")] uint vcView)
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, TsLayoutCode, uint, int>)(lpVtbl[5]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), lcode, vcView);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, TsLayoutCode, uint, int>)(lpVtbl[5]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), lcode, vcView);
     }
 
     /// <inheritdoc cref="ITextStoreACPSink.OnStatusChange" />
@@ -75,7 +75,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(6)]
     public HRESULT OnStatusChange([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, uint, int>)(lpVtbl[6]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, uint, int>)(lpVtbl[6]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     /// <inheritdoc cref="ITextStoreACPSink.OnAttrsChange" />
@@ -83,7 +83,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(7)]
     public HRESULT OnAttrsChange([NativeTypeName("LONG")] int acpStart, [NativeTypeName("LONG")] int acpEnd, [NativeTypeName("ULONG")] uint cAttrs, [NativeTypeName("const TS_ATTRID *")] Guid* paAttrs)
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, int, int, uint, Guid*, int>)(lpVtbl[7]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), acpStart, acpEnd, cAttrs, paAttrs);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, int, int, uint, Guid*, int>)(lpVtbl[7]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), acpStart, acpEnd, cAttrs, paAttrs);
     }
 
     /// <inheritdoc cref="ITextStoreACPSink.OnLockGranted" />
@@ -91,7 +91,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(8)]
     public HRESULT OnLockGranted([NativeTypeName("DWORD")] uint dwLockFlags)
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, uint, int>)(lpVtbl[8]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), dwLockFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, uint, int>)(lpVtbl[8]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this), dwLockFlags);
     }
 
     /// <inheritdoc cref="ITextStoreACPSink.OnStartEditTransaction" />
@@ -99,7 +99,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(9)]
     public HRESULT OnStartEditTransaction()
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, int>)(lpVtbl[9]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, int>)(lpVtbl[9]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITextStoreACPSink.OnEndEditTransaction" />
@@ -107,7 +107,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(10)]
     public HRESULT OnEndEditTransaction()
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, int>)(lpVtbl[10]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, int>)(lpVtbl[10]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITextStoreACPSinkEx.xml' path='doc/member[@name="ITextStoreACPSinkEx.OnDisconnect"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
     [VtblIndex(11)]
     public HRESULT OnDisconnect()
     {
-        return ((delegate* unmanaged<ITextStoreACPSinkEx*, int>)(lpVtbl[11]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITextStoreACPSinkEx*, int>)(lpVtbl[11]))((ITextStoreACPSinkEx*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ITextStoreACPSink.Interface
@@ -128,39 +128,39 @@ public unsafe partial struct ITextStoreACPSinkEx : ITextStoreACPSinkEx.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, const TS_TEXTCHANGE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, TS_TEXTCHANGE*, int> OnTextChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, TS_TEXTCHANGE*, int> OnTextChange;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnSelectionChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnSelectionChange;
 
         [NativeTypeName("HRESULT (TsLayoutCode, TsViewCookie) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TsLayoutCode, uint, int> OnLayoutChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TsLayoutCode, uint, int> OnLayoutChange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnStatusChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnStatusChange;
 
         [NativeTypeName("HRESULT (LONG, LONG, ULONG, const TS_ATTRID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int, uint, Guid*, int> OnAttrsChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int, uint, Guid*, int> OnAttrsChange;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnLockGranted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnLockGranted;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnStartEditTransaction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnStartEditTransaction;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnEndEditTransaction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnEndEditTransaction;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> OnDisconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> OnDisconnect;
     }
 }

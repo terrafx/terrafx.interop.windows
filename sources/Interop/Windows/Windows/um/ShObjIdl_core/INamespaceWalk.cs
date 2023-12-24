@@ -25,7 +25,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INamespaceWalk*, Guid*, void**, int>)(lpVtbl[0]))((INamespaceWalk*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalk*, Guid*, void**, int>)(lpVtbl[0]))((INamespaceWalk*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INamespaceWalk*, uint>)(lpVtbl[1]))((INamespaceWalk*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalk*, uint>)(lpVtbl[1]))((INamespaceWalk*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INamespaceWalk*, uint>)(lpVtbl[2]))((INamespaceWalk*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalk*, uint>)(lpVtbl[2]))((INamespaceWalk*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INamespaceWalk.xml' path='doc/member[@name="INamespaceWalk.Walk"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT Walk(IUnknown* punkToWalk, [NativeTypeName("DWORD")] uint dwFlags, int cDepth, INamespaceWalkCB* pnswcb)
     {
-        return ((delegate* unmanaged<INamespaceWalk*, IUnknown*, uint, int, INamespaceWalkCB*, int>)(lpVtbl[3]))((INamespaceWalk*)Unsafe.AsPointer(ref this), punkToWalk, dwFlags, cDepth, pnswcb);
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalk*, IUnknown*, uint, int, INamespaceWalkCB*, int>)(lpVtbl[3]))((INamespaceWalk*)Unsafe.AsPointer(ref this), punkToWalk, dwFlags, cDepth, pnswcb);
     }
 
     /// <include file='INamespaceWalk.xml' path='doc/member[@name="INamespaceWalk.GetIDArrayResult"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetIDArrayResult(uint* pcItems, [NativeTypeName("LPITEMIDLIST **")] ITEMIDLIST*** prgpidl)
     {
-        return ((delegate* unmanaged<INamespaceWalk*, uint*, ITEMIDLIST***, int>)(lpVtbl[4]))((INamespaceWalk*)Unsafe.AsPointer(ref this), pcItems, prgpidl);
+        return ((delegate* unmanaged[MemberFunction]<INamespaceWalk*, uint*, ITEMIDLIST***, int>)(lpVtbl[4]))((INamespaceWalk*)Unsafe.AsPointer(ref this), pcItems, prgpidl);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct INamespaceWalk : INamespaceWalk.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, DWORD, int, INamespaceWalkCB *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, int, INamespaceWalkCB*, int> Walk;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, int, INamespaceWalkCB*, int> Walk;
 
         [NativeTypeName("HRESULT (UINT *, LPITEMIDLIST **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, ITEMIDLIST***, int> GetIDArrayResult;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, ITEMIDLIST***, int> GetIDArrayResult;
     }
 }

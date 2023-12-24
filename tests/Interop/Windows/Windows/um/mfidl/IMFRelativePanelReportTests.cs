@@ -21,32 +21,4 @@ public static unsafe partial class IMFRelativePanelReportTests
     {
         Assert.That(typeof(IMFRelativePanelReport).GUID, Is.EqualTo(IID_IMFRelativePanelReport));
     }
-
-    /// <summary>Validates that the <see cref="IMFRelativePanelReport" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFRelativePanelReport>(), Is.EqualTo(sizeof(IMFRelativePanelReport)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFRelativePanelReport" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFRelativePanelReport).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFRelativePanelReport" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFRelativePanelReport), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFRelativePanelReport), Is.EqualTo(4));
-        }
-    }
 }

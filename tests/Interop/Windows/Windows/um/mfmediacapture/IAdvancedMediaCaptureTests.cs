@@ -21,32 +21,4 @@ public static unsafe partial class IAdvancedMediaCaptureTests
     {
         Assert.That(typeof(IAdvancedMediaCapture).GUID, Is.EqualTo(IID_IAdvancedMediaCapture));
     }
-
-    /// <summary>Validates that the <see cref="IAdvancedMediaCapture" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAdvancedMediaCapture>(), Is.EqualTo(sizeof(IAdvancedMediaCapture)));
-    }
-
-    /// <summary>Validates that the <see cref="IAdvancedMediaCapture" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAdvancedMediaCapture).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAdvancedMediaCapture" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAdvancedMediaCapture), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAdvancedMediaCapture), Is.EqualTo(4));
-        }
-    }
 }

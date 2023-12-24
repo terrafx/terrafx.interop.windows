@@ -21,32 +21,4 @@ public static unsafe partial class IMFNetCrossOriginSupportTests
     {
         Assert.That(typeof(IMFNetCrossOriginSupport).GUID, Is.EqualTo(IID_IMFNetCrossOriginSupport));
     }
-
-    /// <summary>Validates that the <see cref="IMFNetCrossOriginSupport" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFNetCrossOriginSupport>(), Is.EqualTo(sizeof(IMFNetCrossOriginSupport)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetCrossOriginSupport" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFNetCrossOriginSupport).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFNetCrossOriginSupport" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFNetCrossOriginSupport), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFNetCrossOriginSupport), Is.EqualTo(4));
-        }
-    }
 }

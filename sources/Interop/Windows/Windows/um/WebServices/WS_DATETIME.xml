@@ -5,23 +5,14 @@
   <member name="WS_DATETIME">
     <summary>
       <para>This structure is used to represent dates and times.</para>
-      <para>Represents dates and times with values ranging from 12:00:00 midnight,
-January 1, 0001 Anno Domini (Common Era) through 11:59:59 P.M.,
-December 31, 9999 A.D. (C.E.) to an accuracy of 100 nanoseconds.</para>
-      <para>The functions <see cref="WsDateTimeToFileTime" /> and <see cref="WsFileTimeToDateTime" /></para>
-      <para>can be used to convert a <b>WS_DATETIME</b> to and from a FILETIME.</para>
+      <para>Represents dates and times with values ranging from 12:00:00 midnight, January 1, 0001 Anno Domini (Common Era) through 11:59:59 P.M., December 31, 9999 A.D. (C.E.) to an accuracy of 100 nanoseconds.</para>
+      <para>The functions <see cref="WsDateTimeToFileTime" /> and <see cref="WsFileTimeToDateTime" />can be used to convert a <b>WS_DATETIME</b> to and from a FILETIME.</para>
     </summary>
   </member>
   <member name="WS_DATETIME.ticks">
-    <summary>
-      <para>The time in 100 nanosecond units, with 0 representing 12:00:00 midnight January 1, Anno Domini (Common Era).  The
-largest representable value is 3155378975999999999, which corresponds to 100 nanoseconds prior to 12:00:00 midnight
-January 1, 10000.</para>
-    </summary>
+    <summary>The time in 100 nanosecond units, with 0 representing 12:00:00 midnight January 1, Anno Domini (Common Era). The largest representable value is 3155378975999999999, which corresponds to 100 nanoseconds prior to 12:00:00 midnight January 1, 10000.</summary>
   </member>
   <member name="WS_DATETIME.format">
-    <summary>
-      <para>The format that is used when representing this time as text.</para>
-    </summary>
+    <summary>The format that is used when representing this time as text.</summary>
   </member>
 </doc>

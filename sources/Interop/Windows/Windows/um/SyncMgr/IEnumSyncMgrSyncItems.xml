@@ -3,67 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumSyncMgrSyncItems.Clone">
-    <summary>
-      <para>Not used. Clones an <see cref="IEnumSyncMgrSyncItems" /> object.</para>
-    </summary>
-    <param name="ppenum">
-      <para>Type: <b><see cref="IEnumSyncMgrSyncItems" />**</b></para>
-      <para>The address of the cloned <see cref="IEnumSyncMgrSyncItems" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Not used. Clones an <see cref="IEnumSyncMgrSyncItems" /> object.</summary>
+    <param name="ppenum">The address of the cloned <see cref="IEnumSyncMgrSyncItems" /> interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumSyncMgrSyncItems.Next">
-    <summary>
-      <para>Gets the next batch of sync items from the handler.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>This value must be 1.</para>
-    </param>
-    <param name="rgelt">
-      <para>Type: <b><see cref="ISyncMgrSyncItem" />**</b></para>
-      <para>The address of an <see cref="ISyncMgrSyncItem" /> interface pointer.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>Type: <b>ULONG*</b></para>
-      <para>A pointer to the number of items fetched.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the next batch of sync items from the handler.</summary>
+    <param name="celt">This value must be 1.</param>
+    <param name="rgelt">The address of an <see cref="ISyncMgrSyncItem" /> interface pointer.</param>
+    <param name="pceltFetched">A pointer to the number of items fetched.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumSyncMgrSyncItems.Reset">
-    <summary>
-      <para>Resets the current position in the enumeration to 0.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Resets the current position in the enumeration to 0.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumSyncMgrSyncItems.Skip">
-    <summary>
-      <para>Skips forward in the enumeration the specified number of items.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of items to skip.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Skips forward in the enumeration the specified number of items.</summary>
+    <param name="celt">The number of items to skip.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumSyncMgrSyncItems">
-    <summary>
-      <para>Exposes methods that enumerate the sync item objects managed by the handler.</para>
-    </summary>
-    <remarks>
-      <para>A handler returns a pointer to an <b>IEnumSyncMgrSyncItems</b> interface from <see cref="ISyncMgrSyncItemContainer.GetSyncItemEnumerator" />.</para>
-    </remarks>
+    <summary>Exposes methods that enumerate the sync item objects managed by the handler.</summary>
   </member>
 </doc>

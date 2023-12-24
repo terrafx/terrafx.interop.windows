@@ -3,13 +3,14 @@
 // Ported from um/mmeapi.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WAVEINCAPSW.xml' path='doc/member[@name="WAVEINCAPSW"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct WAVEINCAPSW
+public partial struct WAVEINCAPSW
 {
     /// <include file='WAVEINCAPSW.xml' path='doc/member[@name="WAVEINCAPSW.wMid"]/*' />
     [NativeTypeName("WORD")]
@@ -25,7 +26,7 @@ public unsafe partial struct WAVEINCAPSW
 
     /// <include file='WAVEINCAPSW.xml' path='doc/member[@name="WAVEINCAPSW.szPname"]/*' />
     [NativeTypeName("WCHAR[32]")]
-    public fixed ushort szPname[32];
+    public _szPname_e__FixedBuffer szPname;
 
     /// <include file='WAVEINCAPSW.xml' path='doc/member[@name="WAVEINCAPSW.dwFormats"]/*' />
     [NativeTypeName("DWORD")]
@@ -38,4 +39,12 @@ public unsafe partial struct WAVEINCAPSW
     /// <include file='WAVEINCAPSW.xml' path='doc/member[@name="WAVEINCAPSW.wReserved1"]/*' />
     [NativeTypeName("WORD")]
     public ushort wReserved1;
+
+    /// <include file='_szPname_e__FixedBuffer.xml' path='doc/member[@name="_szPname_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(32)]
+    public partial struct _szPname_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

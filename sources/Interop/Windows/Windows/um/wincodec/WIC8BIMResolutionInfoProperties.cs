@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WIC8BIMResolutionInfoProperties.xml' path='doc/member[@name="WIC8BIMResolutionInfoProperties"]/*' />
-public enum WIC8BIMResolutionInfoProperties : uint
+public enum WIC8BIMResolutionInfoProperties
 {
     /// <include file='WIC8BIMResolutionInfoProperties.xml' path='doc/member[@name="WIC8BIMResolutionInfoProperties.WIC8BIMResolutionInfoPString"]/*' />
     WIC8BIMResolutionInfoPString = 0x1,

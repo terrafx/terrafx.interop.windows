@@ -19,25 +19,4 @@ public static unsafe partial class SVGAElementTests
     {
         Assert.That(typeof(SVGAElement).GUID, Is.EqualTo(IID_SVGAElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGAElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGAElement>(), Is.EqualTo(sizeof(SVGAElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGAElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGAElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGAElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGAElement), Is.EqualTo(1));
-    }
 }

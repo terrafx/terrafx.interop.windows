@@ -3,54 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DIRECTMANIPULATION_DRAG_DROP_STATUS">
-    <summary>
-      <para>Defines the drag-and-drop interaction states for the viewport.</para>
-    </summary>
-    <remarks>
-      <para>For each interaction, the status always starts at <b>DIRECTMANIPULATION_DRAG_DROP_READY</b> and ends at either <b>DIRECTMANIPULATION_DRAG_DROP_CANCELLED</b> or <b>DIRECTMANIPULATION_DRAG_DROP_COMMITTED</b>. There are no explicit callbacks for the transition from CANCELLED/COMMITTED to READY.</para>
-      <para>The meaning of the CANCELLED and COMMITTED values depend on the previous status.</para>
-      <list type="bullet">
-        <item>
-          <description>For <b>DIRECTMANIPULATION_DRAG_DROP_PRESELECT</b>, they mean the same thing: the content goes back to the original location and no other actions should be taken.</description>
-        </item>
-        <item>
-          <description>FOR <b>DIRECTMANIPULATION_DRAG_DROP_SELECTING</b>, COMMITTED means apply the selection change; CANCELLED means avoid the selection change.</description>
-        </item>
-        <item>
-          <description>For <b>DIRECTMANIPULATION_DRAG_DROP_DRAGGING</b>, COMMITTED means perform the drop action; CANCELLED means cancel the drop action.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/directmanipulation/direct-manipulation-enumerations">Direct Manipulation Enumerations</seealso>
+    <summary>Defines the drag-and-drop interaction states for the viewport.</summary>
   </member>
   <member name="DIRECTMANIPULATION_DRAG_DROP_STATUS.DIRECTMANIPULATION_DRAG_DROP_READY">
-    <summary>
-      <para>The viewport is at rest and ready for input.</para>
-    </summary>
+    <summary>The viewport is at rest and ready for input.</summary>
   </member>
   <member name="DIRECTMANIPULATION_DRAG_DROP_STATUS.DIRECTMANIPULATION_DRAG_DROP_PRESELECT">
-    <summary>
-      <para>The viewport is updating its content and the content is not selected.</para>
-    </summary>
+    <summary>The viewport is updating its content and the content is not selected.</summary>
   </member>
   <member name="DIRECTMANIPULATION_DRAG_DROP_STATUS.DIRECTMANIPULATION_DRAG_DROP_SELECTING">
-    <summary>
-      <para>The viewport is updating its content and the content is selected.</para>
-    </summary>
+    <summary>The viewport is updating its content and the content is selected.</summary>
   </member>
   <member name="DIRECTMANIPULATION_DRAG_DROP_STATUS.DIRECTMANIPULATION_DRAG_DROP_DRAGGING">
-    <summary>
-      <para>The viewport is updating its content and the content is being dragged.</para>
-    </summary>
+    <summary>The viewport is updating its content and the content is being dragged.</summary>
   </member>
   <member name="DIRECTMANIPULATION_DRAG_DROP_STATUS.DIRECTMANIPULATION_DRAG_DROP_CANCELLED">
-    <summary>
-      <para>The viewport has concluded the interaction and requests a revert.</para>
-    </summary>
+    <summary>The viewport has concluded the interaction and requests a revert.</summary>
   </member>
   <member name="DIRECTMANIPULATION_DRAG_DROP_STATUS.DIRECTMANIPULATION_DRAG_DROP_COMMITTED">
-    <summary>
-      <para>The viewport has concluded the interaction and requests a commit.</para>
-    </summary>
+    <summary>The viewport has concluded the interaction and requests a commit.</summary>
   </member>
 </doc>

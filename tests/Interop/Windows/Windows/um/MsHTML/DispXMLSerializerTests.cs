@@ -19,32 +19,4 @@ public static unsafe partial class DispXMLSerializerTests
     {
         Assert.That(typeof(DispXMLSerializer).GUID, Is.EqualTo(IID_DispXMLSerializer));
     }
-
-    /// <summary>Validates that the <see cref="DispXMLSerializer" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DispXMLSerializer>(), Is.EqualTo(sizeof(DispXMLSerializer)));
-    }
-
-    /// <summary>Validates that the <see cref="DispXMLSerializer" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DispXMLSerializer).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DispXMLSerializer" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DispXMLSerializer), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DispXMLSerializer), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,39 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DML_BINDING_TABLE_DESC">
-    <summary>
-      <para>Specifies parameters to <see cref="IDMLDevice.CreateBindingTable" /> and <see cref="IDMLBindingTable.Reset" />.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-binding">Binding in DirectML</seealso>
+    <summary>Specifies parameters to <see cref="IDMLDevice.CreateBindingTable" /> and <see cref="IDMLBindingTable.Reset" />.</summary>
   </member>
   <member name="DML_BINDING_TABLE_DESC.Dispatchable">
-    <summary>
-      <para>Type: <b><see cref="IDMLDispatchable" />*</b></para>
-      <para>A pointer to an <see cref="IDMLDispatchable" /> interface representing the dispatchable object (an operator initializer, or a compiled operator) for which this binding table will represent the bindings—either an
-<see cref="IDMLCompiledOperator" /> or an <see cref="IDMLOperatorInitializer" />. The binding table maintains a strong reference to this
-interface pointer. This value may not be null.</para>
-    </summary>
+    <summary>A pointer to an <see cref="IDMLDispatchable" /> interface representing the dispatchable object (an operator initializer, or a compiled operator) for which this binding table will represent the bindings—either an<see cref="IDMLCompiledOperator" /> or an <see cref="IDMLOperatorInitializer" />. The binding table maintains a strong reference to this interface pointer. This value may not be null.</summary>
   </member>
   <member name="DML_BINDING_TABLE_DESC.CPUDescriptorHandle">
-    <summary>
-      <para>Type: <b><see cref="D3D12_CPU_DESCRIPTOR_HANDLE" /></b></para>
-      <para>A valid CPU descriptor handle representing the start of a range into a constant buffer view (CBV)/shader resource view (SRV)/ unordered access view (UAV) descriptor heap into which
-DirectML may write descriptors.</para>
-    </summary>
+    <summary>A valid CPU descriptor handle representing the start of a range into a constant buffer view (CBV)/shader resource view (SRV)/ unordered access view (UAV) descriptor heap into which DirectML may write descriptors.</summary>
   </member>
   <member name="DML_BINDING_TABLE_DESC.GPUDescriptorHandle">
-    <summary>
-      <para>Type: <b><see cref="D3D12_GPU_DESCRIPTOR_HANDLE" /></b></para>
-      <para>A valid GPU descriptor handle representing the start of a range into a constant buffer view (CBV)/shader resource view (SRV)/ unordered access view (UAV) descriptor heap that DirectML may use to bind resources to the pipeline.</para>
-    </summary>
+    <summary>A valid GPU descriptor handle representing the start of a range into a constant buffer view (CBV)/shader resource view (SRV)/ unordered access view (UAV) descriptor heap that DirectML may use to bind resources to the pipeline.</summary>
   </member>
   <member name="DML_BINDING_TABLE_DESC.SizeInDescriptors">
-    <summary>
-      <para>Type: <a href="https://docs.microsoft.com//windows/desktop/winprog/windows-data-types">UINT</a></para>
-      <para>The size of the binding table, in descriptors. This is the maximum number of descriptors that DirectML is
-permitted to write, from the start of both the supplied CPU and GPU descriptor handles. Call
-<see cref="IDMLDispatchable.GetBindingProperties" /> to determine the number of descriptors required to execute a
-dispatchable object.</para>
-    </summary>
+    <summary>The size of the binding table, in descriptors. This is the maximum number of descriptors that DirectML is permitted to write, from the start of both the supplied CPU and GPU descriptor handles. Call<see cref="IDMLDispatchable.GetBindingProperties" /> to determine the number of descriptors required to execute a dispatchable object.</summary>
   </member>
 </doc>

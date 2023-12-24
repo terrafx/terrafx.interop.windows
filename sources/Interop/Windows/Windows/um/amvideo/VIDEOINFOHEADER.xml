@@ -4,48 +4,24 @@
 <doc>
   <member name="VIDEOINFOHEADER">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>VIDEOINFOHEADER</b> structure describes the bitmap and color information for a video image.</para>
     </summary>
-    <remarks>
-      <para>For information about using the <b>rcSource</b> and <b>rcTarget</b> members, see <a href="https://docs.microsoft.com//windows/desktop/DirectShow/source-and-target-rectangles-in-video-renderers">Source and Target Rectangles in Video Renderers</a>.</para>
-      <h3>Frame Rates</h3>
-      <para>The value of <b>AvgTimePerFrame</b> is usually set by the source filter, which obtains the value from the media stream. This value can be used to calculate the authored frame rate, which is the intended frame rate for the video to be rendered. During playback, the system may not be able to render the stream at the authored rate, so the actual frame rate may be less. This can happen if the machine's resources become over-committed. Also, the monitor's refresh rate can interfere with the playback rate of the video. For example, if the intended rate is 60,000/1001 (NTSC TV) and the monitor's refresh rate is 60Hz, the intended rate and the actual rate will never match. To retrieve the actual frame rate achieved during playback, use the <a href="https://docs.microsoft.com//previous-versions/ms786607(v=vs.85)">IQualProp.get_AvgFrameRate</a> method on the video renderer.</para>
-      <para>During playback, applications can retrieve the authored frame rate as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>If the old <a href="https://docs.microsoft.com//windows/desktop/DirectShow/video-renderer-filter">Video Renderer</a> filter is rendering, call the <see cref="IBasicVideo.get_AvgTimePerFrame" /> method.</description>
-        </item>
-        <item>
-          <description>If the Video Mixing Renderer (VMR) is rendering, call <see cref="IPin.ConnectionMediaType" /> on the input pin and examine the format block. The VMR supports multiple input streams, and they are not required to have the same frame rates.</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
   </member>
   <member name="VIDEOINFOHEADER.rcSource">
-    <summary>
-      <para>A <see cref="RECT" /> structure that specifies the source video window. This structure can be a clipping rectangle, to select a portion of the source video stream.</para>
-    </summary>
+    <summary>A <see cref="RECT" /> structure that specifies the source video window. This structure can be a clipping rectangle, to select a portion of the source video stream.</summary>
   </member>
   <member name="VIDEOINFOHEADER.rcTarget">
-    <summary>
-      <para>A <see cref="RECT" /> structure that specifies the destination video window.</para>
-    </summary>
+    <summary>A <see cref="RECT" /> structure that specifies the destination video window.</summary>
   </member>
   <member name="VIDEOINFOHEADER.dwBitRate">
-    <summary>
-      <para>Approximate data rate of the video stream, in bits per second.</para>
-    </summary>
+    <summary>Approximate data rate of the video stream, in bits per second.</summary>
   </member>
   <member name="VIDEOINFOHEADER.dwBitErrorRate">
-    <summary>
-      <para>Data error rate, in bit errors per second.</para>
-    </summary>
+    <summary>Data error rate, in bit errors per second.</summary>
   </member>
   <member name="VIDEOINFOHEADER.AvgTimePerFrame">
-    <summary>
-      <para>The desired average display time of the video frames, in 100-nanosecond units. The actual time per frame may be longer. See Remarks.</para>
-    </summary>
+    <summary>The desired average display time of the video frames, in 100-nanosecond units. The actual time per frame may be longer. See Remarks.</summary>
   </member>
   <member name="VIDEOINFOHEADER.bmiHeader">
     <summary>

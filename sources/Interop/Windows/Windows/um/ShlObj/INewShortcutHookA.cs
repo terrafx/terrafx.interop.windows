@@ -25,7 +25,7 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<INewShortcutHookA*, Guid*, void**, int>)(lpVtbl[0]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookA*, Guid*, void**, int>)(lpVtbl[0]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<INewShortcutHookA*, uint>)(lpVtbl[1]))((INewShortcutHookA*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookA*, uint>)(lpVtbl[1]))((INewShortcutHookA*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<INewShortcutHookA*, uint>)(lpVtbl[2]))((INewShortcutHookA*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookA*, uint>)(lpVtbl[2]))((INewShortcutHookA*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='INewShortcutHookA.xml' path='doc/member[@name="INewShortcutHookA.SetReferent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
     [VtblIndex(3)]
     public HRESULT SetReferent([NativeTypeName("PCSTR")] sbyte* pcszReferent, HWND hwnd)
     {
-        return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, HWND, int>)(lpVtbl[3]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pcszReferent, hwnd);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookA*, sbyte*, HWND, int>)(lpVtbl[3]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pcszReferent, hwnd);
     }
 
     /// <include file='INewShortcutHookA.xml' path='doc/member[@name="INewShortcutHookA.GetReferent"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetReferent([NativeTypeName("PSTR")] sbyte* pszReferent, int cchReferent)
     {
-        return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[4]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszReferent, cchReferent);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[4]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszReferent, cchReferent);
     }
 
     /// <include file='INewShortcutHookA.xml' path='doc/member[@name="INewShortcutHookA.SetFolder"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
     [VtblIndex(5)]
     public HRESULT SetFolder([NativeTypeName("PCSTR")] sbyte* pcszFolder)
     {
-        return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int>)(lpVtbl[5]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pcszFolder);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookA*, sbyte*, int>)(lpVtbl[5]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pcszFolder);
     }
 
     /// <include file='INewShortcutHookA.xml' path='doc/member[@name="INewShortcutHookA.GetFolder"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
     [VtblIndex(6)]
     public HRESULT GetFolder([NativeTypeName("PSTR")] sbyte* pszFolder, int cchFolder)
     {
-        return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[6]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszFolder, cchFolder);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[6]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszFolder, cchFolder);
     }
 
     /// <include file='INewShortcutHookA.xml' path='doc/member[@name="INewShortcutHookA.GetName"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
     [VtblIndex(7)]
     public HRESULT GetName([NativeTypeName("PSTR")] sbyte* pszName, int cchName)
     {
-        return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[7]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszName, cchName);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[7]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszName, cchName);
     }
 
     /// <include file='INewShortcutHookA.xml' path='doc/member[@name="INewShortcutHookA.GetExtension"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
     [VtblIndex(8)]
     public HRESULT GetExtension([NativeTypeName("PSTR")] sbyte* pszExtension, int cchExtension)
     {
-        return ((delegate* unmanaged<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[8]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszExtension, cchExtension);
+        return ((delegate* unmanaged[MemberFunction]<INewShortcutHookA*, sbyte*, int, int>)(lpVtbl[8]))((INewShortcutHookA*)Unsafe.AsPointer(ref this), pszExtension, cchExtension);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct INewShortcutHookA : INewShortcutHookA.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PCSTR, HWND) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, HWND, int> SetReferent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, HWND, int> SetReferent;
 
         [NativeTypeName("HRESULT (PSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, int, int> GetReferent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, int, int> GetReferent;
 
         [NativeTypeName("HRESULT (PCSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, int> SetFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, int> SetFolder;
 
         [NativeTypeName("HRESULT (PSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, int, int> GetFolder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, int, int> GetFolder;
 
         [NativeTypeName("HRESULT (PSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, int, int> GetName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, int, int> GetName;
 
         [NativeTypeName("HRESULT (PSTR, int) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, sbyte*, int, int> GetExtension;
+        public delegate* unmanaged[MemberFunction]<TSelf*, sbyte*, int, int> GetExtension;
     }
 }

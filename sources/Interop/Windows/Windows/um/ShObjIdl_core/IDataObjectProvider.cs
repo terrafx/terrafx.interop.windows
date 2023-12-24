@@ -25,7 +25,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDataObjectProvider*, Guid*, void**, int>)(lpVtbl[0]))((IDataObjectProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectProvider*, Guid*, void**, int>)(lpVtbl[0]))((IDataObjectProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDataObjectProvider*, uint>)(lpVtbl[1]))((IDataObjectProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectProvider*, uint>)(lpVtbl[1]))((IDataObjectProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDataObjectProvider*, uint>)(lpVtbl[2]))((IDataObjectProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectProvider*, uint>)(lpVtbl[2]))((IDataObjectProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDataObjectProvider.xml' path='doc/member[@name="IDataObjectProvider.GetDataObject"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
     [VtblIndex(3)]
     public HRESULT GetDataObject(IDataObject** dataObject)
     {
-        return ((delegate* unmanaged<IDataObjectProvider*, IDataObject**, int>)(lpVtbl[3]))((IDataObjectProvider*)Unsafe.AsPointer(ref this), dataObject);
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectProvider*, IDataObject**, int>)(lpVtbl[3]))((IDataObjectProvider*)Unsafe.AsPointer(ref this), dataObject);
     }
 
     /// <include file='IDataObjectProvider.xml' path='doc/member[@name="IDataObjectProvider.SetDataObject"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
     [VtblIndex(4)]
     public HRESULT SetDataObject(IDataObject* dataObject)
     {
-        return ((delegate* unmanaged<IDataObjectProvider*, IDataObject*, int>)(lpVtbl[4]))((IDataObjectProvider*)Unsafe.AsPointer(ref this), dataObject);
+        return ((delegate* unmanaged[MemberFunction]<IDataObjectProvider*, IDataObject*, int>)(lpVtbl[4]))((IDataObjectProvider*)Unsafe.AsPointer(ref this), dataObject);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IDataObjectProvider : IDataObjectProvider.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IDataObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDataObject**, int> GetDataObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDataObject**, int> GetDataObject;
 
         [NativeTypeName("HRESULT (IDataObject *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDataObject*, int> SetDataObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDataObject*, int> SetDataObject;
     }
 }

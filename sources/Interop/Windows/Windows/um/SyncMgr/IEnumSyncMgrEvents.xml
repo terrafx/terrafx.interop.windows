@@ -3,67 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumSyncMgrEvents.Clone">
-    <summary>
-      <para>Clones an <see cref="IEnumSyncMgrEvents" /> object.</para>
-    </summary>
-    <param name="ppenum">
-      <para>Type: <b><see cref="IEnumSyncMgrEvents" />**</b></para>
-      <para>The address of the cloned <see cref="IEnumSyncMgrEvents" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Clones an <see cref="IEnumSyncMgrEvents" /> object.</summary>
+    <param name="ppenum">The address of the cloned <see cref="IEnumSyncMgrEvents" /> interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumSyncMgrEvents.Next">
-    <summary>
-      <para>Gets the next batch of events from the event store.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>This value must be 1.</para>
-    </param>
-    <param name="rgelt">
-      <para>Type: <b><see cref="ISyncMgrEvent" />**</b></para>
-      <para>The address of an <see cref="ISyncMgrEvent" /> interface pointer.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>Type: <b>ULONG*</b></para>
-      <para>A pointer to the number of events fetched.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the next batch of events from the event store.</summary>
+    <param name="celt">This value must be 1.</param>
+    <param name="rgelt">The address of an <see cref="ISyncMgrEvent" /> interface pointer.</param>
+    <param name="pceltFetched">A pointer to the number of events fetched.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumSyncMgrEvents.Reset">
-    <summary>
-      <para>Resets the current location in the enumeration to zero.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Resets the current location in the enumeration to zero.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumSyncMgrEvents.Skip">
-    <summary>
-      <para>Skips forward the specified number of events in the enumeration.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of events to skip.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Skips forward the specified number of events in the enumeration.</summary>
+    <param name="celt">The number of events to skip.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumSyncMgrEvents">
-    <summary>
-      <para>Exposes sync event enumeration methods.</para>
-    </summary>
-    <remarks>
-      <para>An event store returns a pointer to an <b>IEnumSyncMgrEvents</b> interface from <see cref="ISyncMgrEventStore.GetEventEnumerator" />.</para>
-    </remarks>
+    <summary>Exposes sync event enumeration methods.</summary>
   </member>
 </doc>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3DDestructionNotifier.RegisterDestructionCallback">
+    <summary>Registers a user-defined callback to be invoked on destruction of the object from which this <see cref="ID3DDestructionNotifier" /> was created.</summary>
+    <param name="callbackFn">A user-defined callback to be invoked when the object is destroyed.</param>
+    <param name="pData">The data to pass to <i>callbackFn</i> when invoked</param>
+    <param name="pCallbackID">Pointer to a <b>UINT</b> used to identify the callback, and to pass to <see cref="/windows/win32/api/d3dcommon/nf-d3dcommon-id3ddestructionotifier-unregisterdestructioncallback" /> to unregister the callback.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>.</returns>
+  </member>
+  <member name="ID3DDestructionNotifier.UnregisterDestructionCallback">
+    <summary>Unregisters a callback that was registered with <see cref="RegisterDestructionCallback" />.</summary>
+    <param name="callbackID">The <b>UINT</b> that was created by the <i>pCallbackID</i> argument to <b><see cref="ID3DDestructionNotifier.RegisterDestructionCallback" /></b>.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>.</returns>
+  </member>
+  <member name="ID3DDestructionNotifier">
+    <summary>
+      <para>
+        <b>ID3DDestructionNotifier</b> is an interface that you can use to register for callbacks when a Direct3D nano-COM object is destroyed.</para>
+      <para>To acquire an instance of this interface, call <see cref="/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)" /> on a Direct3D object with the <b>IID</b> of <b>ID3DDestructionNotifier</b>.</para>
+      <para>Using <b>ID3DDestructionNotifier</b> instead of <b><see cref="ID3D12Object.SetPrivateDataInterface" /></b> or Direct3D 11 equivalents provides stronger guarantees about the order of destruction. With <b>ID3DDestructionNotifier</b>, implicit relationships—such as an <b><see cref="ID3D11View" /></b> holding a reference to its underlying <b><see cref="ID3D11Resource" /></b>—are guaranteed to be valid and for the referenced object (here, the <b>ID3D11Object</b>) to still be alive when the destruction callback is invoked. With <b><see cref="ID3D12Object.SetPrivateDataInterface" /></b>, the implicit references can be released before the destruction callback is invoked.</para>
+      <para>It isn't safe to access the object being destructed during the callback.</para>
+    </summary>
+  </member>
+</doc>

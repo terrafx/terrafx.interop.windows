@@ -27,7 +27,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, Guid*, void**, int>)(lpVtbl[0]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, uint>)(lpVtbl[1]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, uint>)(lpVtbl[1]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, uint>)(lpVtbl[2]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, uint>)(lpVtbl[2]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioSystemEffectsPropertyStore.xml' path='doc/member[@name="IAudioSystemEffectsPropertyStore.OpenDefaultPropertyStore"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [VtblIndex(3)]
     public HRESULT OpenDefaultPropertyStore([NativeTypeName("DWORD")] uint stgmAccess, IPropertyStore** propStore)
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, uint, IPropertyStore**, int>)(lpVtbl[3]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), stgmAccess, propStore);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, uint, IPropertyStore**, int>)(lpVtbl[3]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), stgmAccess, propStore);
     }
 
     /// <include file='IAudioSystemEffectsPropertyStore.xml' path='doc/member[@name="IAudioSystemEffectsPropertyStore.OpenUserPropertyStore"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [VtblIndex(4)]
     public HRESULT OpenUserPropertyStore([NativeTypeName("DWORD")] uint stgmAccess, IPropertyStore** propStore)
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, uint, IPropertyStore**, int>)(lpVtbl[4]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), stgmAccess, propStore);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, uint, IPropertyStore**, int>)(lpVtbl[4]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), stgmAccess, propStore);
     }
 
     /// <include file='IAudioSystemEffectsPropertyStore.xml' path='doc/member[@name="IAudioSystemEffectsPropertyStore.OpenVolatilePropertyStore"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [VtblIndex(5)]
     public HRESULT OpenVolatilePropertyStore([NativeTypeName("DWORD")] uint stgmAccess, IPropertyStore** propStore)
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, uint, IPropertyStore**, int>)(lpVtbl[5]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), stgmAccess, propStore);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, uint, IPropertyStore**, int>)(lpVtbl[5]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), stgmAccess, propStore);
     }
 
     /// <include file='IAudioSystemEffectsPropertyStore.xml' path='doc/member[@name="IAudioSystemEffectsPropertyStore.ResetUserPropertyStore"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [VtblIndex(6)]
     public HRESULT ResetUserPropertyStore()
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, int>)(lpVtbl[6]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, int>)(lpVtbl[6]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioSystemEffectsPropertyStore.xml' path='doc/member[@name="IAudioSystemEffectsPropertyStore.ResetVolatilePropertyStore"]/*' />
@@ -85,7 +85,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [VtblIndex(7)]
     public HRESULT ResetVolatilePropertyStore()
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, int>)(lpVtbl[7]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, int>)(lpVtbl[7]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioSystemEffectsPropertyStore.xml' path='doc/member[@name="IAudioSystemEffectsPropertyStore.RegisterPropertyChangeNotification"]/*' />
@@ -93,7 +93,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [VtblIndex(8)]
     public HRESULT RegisterPropertyChangeNotification(IAudioSystemEffectsPropertyChangeNotificationClient* callback)
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, IAudioSystemEffectsPropertyChangeNotificationClient*, int>)(lpVtbl[8]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), callback);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, IAudioSystemEffectsPropertyChangeNotificationClient*, int>)(lpVtbl[8]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), callback);
     }
 
     /// <include file='IAudioSystemEffectsPropertyStore.xml' path='doc/member[@name="IAudioSystemEffectsPropertyStore.UnregisterPropertyChangeNotification"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
     [VtblIndex(9)]
     public HRESULT UnregisterPropertyChangeNotification(IAudioSystemEffectsPropertyChangeNotificationClient* callback)
     {
-        return ((delegate* unmanaged<IAudioSystemEffectsPropertyStore*, IAudioSystemEffectsPropertyChangeNotificationClient*, int>)(lpVtbl[9]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), callback);
+        return ((delegate* unmanaged[MemberFunction]<IAudioSystemEffectsPropertyStore*, IAudioSystemEffectsPropertyChangeNotificationClient*, int>)(lpVtbl[9]))((IAudioSystemEffectsPropertyStore*)Unsafe.AsPointer(ref this), callback);
     }
 
     public interface Interface : IUnknown.Interface
@@ -132,33 +132,33 @@ public unsafe partial struct IAudioSystemEffectsPropertyStore : IAudioSystemEffe
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IPropertyStore**, int> OpenDefaultPropertyStore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPropertyStore**, int> OpenDefaultPropertyStore;
 
         [NativeTypeName("HRESULT (DWORD, IPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IPropertyStore**, int> OpenUserPropertyStore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPropertyStore**, int> OpenUserPropertyStore;
 
         [NativeTypeName("HRESULT (DWORD, IPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IPropertyStore**, int> OpenVolatilePropertyStore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IPropertyStore**, int> OpenVolatilePropertyStore;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResetUserPropertyStore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResetUserPropertyStore;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResetVolatilePropertyStore;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResetVolatilePropertyStore;
 
         [NativeTypeName("HRESULT (IAudioSystemEffectsPropertyChangeNotificationClient *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAudioSystemEffectsPropertyChangeNotificationClient*, int> RegisterPropertyChangeNotification;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAudioSystemEffectsPropertyChangeNotificationClient*, int> RegisterPropertyChangeNotification;
 
         [NativeTypeName("HRESULT (IAudioSystemEffectsPropertyChangeNotificationClient *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAudioSystemEffectsPropertyChangeNotificationClient*, int> UnregisterPropertyChangeNotification;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAudioSystemEffectsPropertyChangeNotificationClient*, int> UnregisterPropertyChangeNotification;
     }
 }

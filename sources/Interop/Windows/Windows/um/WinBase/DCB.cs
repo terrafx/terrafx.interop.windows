@@ -25,7 +25,7 @@ public partial struct DCB
     public uint fBinary
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0x1u;
         }
@@ -42,7 +42,7 @@ public partial struct DCB
     public uint fParity
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 1) & 0x1u;
         }
@@ -59,7 +59,7 @@ public partial struct DCB
     public uint fOutxCtsFlow
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 2) & 0x1u;
         }
@@ -76,7 +76,7 @@ public partial struct DCB
     public uint fOutxDsrFlow
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 3) & 0x1u;
         }
@@ -93,7 +93,7 @@ public partial struct DCB
     public uint fDtrControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 4) & 0x3u;
         }
@@ -110,7 +110,7 @@ public partial struct DCB
     public uint fDsrSensitivity
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 6) & 0x1u;
         }
@@ -127,7 +127,7 @@ public partial struct DCB
     public uint fTXContinueOnXoff
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 7) & 0x1u;
         }
@@ -144,7 +144,7 @@ public partial struct DCB
     public uint fOutX
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 8) & 0x1u;
         }
@@ -161,7 +161,7 @@ public partial struct DCB
     public uint fInX
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 9) & 0x1u;
         }
@@ -178,7 +178,7 @@ public partial struct DCB
     public uint fErrorChar
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 10) & 0x1u;
         }
@@ -195,7 +195,7 @@ public partial struct DCB
     public uint fNull
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 11) & 0x1u;
         }
@@ -212,7 +212,7 @@ public partial struct DCB
     public uint fRtsControl
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 12) & 0x3u;
         }
@@ -229,7 +229,7 @@ public partial struct DCB
     public uint fAbortOnError
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 14) & 0x1u;
         }
@@ -246,7 +246,7 @@ public partial struct DCB
     public uint fDummy2
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 15) & 0x1FFFFu;
         }

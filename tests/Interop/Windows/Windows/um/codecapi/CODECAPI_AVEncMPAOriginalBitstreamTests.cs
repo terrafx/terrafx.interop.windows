@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncMPAOriginalBitstreamTests
     {
         Assert.That(typeof(CODECAPI_AVEncMPAOriginalBitstream).GUID, Is.EqualTo(IID_CODECAPI_AVEncMPAOriginalBitstream));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAOriginalBitstream" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncMPAOriginalBitstream>(), Is.EqualTo(sizeof(CODECAPI_AVEncMPAOriginalBitstream)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAOriginalBitstream" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncMPAOriginalBitstream).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncMPAOriginalBitstream" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncMPAOriginalBitstream), Is.EqualTo(1));
-    }
 }

@@ -12,11 +12,11 @@ namespace TerraFX.Interop.Windows;
 
 public static partial class IID
 {
-    public static ref readonly Guid IID_MFASYNCRESULT
+    public static ref readonly Guid IID_tagMFASYNCRESULT
     {
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00,
                 0x00, 0x00,
@@ -28,7 +28,7 @@ public static partial class IID
                 0x00,
                 0x00,
                 0x00
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

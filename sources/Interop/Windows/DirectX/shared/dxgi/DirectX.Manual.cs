@@ -23,14 +23,14 @@ public static unsafe partial class DirectX
         return D3D_SET_OBJECT_NAME_N_A(pObject, (uint)lstrlenA(pName), pName);
     }
 
-    public static HRESULT D3D_SET_OBJECT_NAME_N_W<TDXGIObject>(TDXGIObject* pObject, uint Chars, ushort* pName)
+    public static HRESULT D3D_SET_OBJECT_NAME_N_W<TDXGIObject>(TDXGIObject* pObject, uint Chars, char* pName)
         where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         var guid = WKPDID_D3DDebugObjectNameW;
         return pObject->SetPrivateData(&guid, Chars * 2, pName);
     }
 
-    public static HRESULT D3D_SET_OBJECT_NAME_W<TDXGIObject>(TDXGIObject* pObject, ushort* pName)
+    public static HRESULT D3D_SET_OBJECT_NAME_W<TDXGIObject>(TDXGIObject* pObject, char* pName)
         where TDXGIObject : unmanaged, IDXGIObject.Interface
     {
         return D3D_SET_OBJECT_NAME_N_W(pObject, (uint)lstrlenW(pName), pName);

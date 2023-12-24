@@ -18,7 +18,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x12, 0xA7, 0x94, 0x0B,
                 0x3E, 0xAD,
                 0xEE, 0x4C,
@@ -30,7 +30,7 @@ public static partial class MFCONNECTOR
                 0xDB,
                 0x65,
                 0x22
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x5C, 0xEF, 0x3A, 0xAC,
                 0x43, 0xCE,
                 0xD9, 0x11,
@@ -55,7 +55,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -68,7 +68,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x5D, 0xEF, 0x3A, 0xAC,
                 0x43, 0xCE,
                 0xD9, 0x11,
@@ -80,7 +80,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -93,7 +93,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x5E, 0xEF, 0x3A, 0xAC,
                 0x43, 0xCE,
                 0xD9, 0x11,
@@ -105,7 +105,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -118,7 +118,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x5F, 0xEF, 0x3A, 0xAC,
                 0x43, 0xCE,
                 0xD9, 0x11,
@@ -130,7 +130,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -143,7 +143,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x60, 0xEF, 0x3A, 0xAC,
                 0x43, 0xCE,
                 0xD9, 0x11,
@@ -155,7 +155,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -168,7 +168,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x68, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -180,7 +180,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -193,7 +193,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x69, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -205,7 +205,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -218,7 +218,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x6A, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -230,7 +230,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -243,7 +243,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x6B, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -255,7 +255,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -268,7 +268,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x6C, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -280,7 +280,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -293,7 +293,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x6D, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -305,7 +305,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -318,7 +318,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x6E, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -330,7 +330,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -343,7 +343,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x70, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -355,7 +355,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -368,7 +368,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x71, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -380,7 +380,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -393,7 +393,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x72, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -405,7 +405,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -418,7 +418,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x73, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -430,7 +430,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -443,7 +443,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x74, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -455,7 +455,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -468,7 +468,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x75, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -480,7 +480,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -493,7 +493,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x77, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -505,7 +505,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -518,7 +518,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x78, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -530,7 +530,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -543,7 +543,7 @@ public static partial class MFCONNECTOR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x79, 0x59, 0xCD, 0x57,
                 0x47, 0xCE,
                 0xD9, 0x11,
@@ -555,7 +555,7 @@ public static partial class MFCONNECTOR
                 0x28,
                 0xFF,
                 0x98
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

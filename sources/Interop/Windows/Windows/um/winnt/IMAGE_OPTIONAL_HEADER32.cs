@@ -3,10 +3,7 @@
 // Ported from um/winnt.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
-using System;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
@@ -136,37 +133,9 @@ public partial struct IMAGE_OPTIONAL_HEADER32
     public _DataDirectory_e__FixedBuffer DataDirectory;
 
     /// <include file='_DataDirectory_e__FixedBuffer.xml' path='doc/member[@name="_DataDirectory_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
     public partial struct _DataDirectory_e__FixedBuffer
     {
         public IMAGE_DATA_DIRECTORY e0;
-        public IMAGE_DATA_DIRECTORY e1;
-        public IMAGE_DATA_DIRECTORY e2;
-        public IMAGE_DATA_DIRECTORY e3;
-        public IMAGE_DATA_DIRECTORY e4;
-        public IMAGE_DATA_DIRECTORY e5;
-        public IMAGE_DATA_DIRECTORY e6;
-        public IMAGE_DATA_DIRECTORY e7;
-        public IMAGE_DATA_DIRECTORY e8;
-        public IMAGE_DATA_DIRECTORY e9;
-        public IMAGE_DATA_DIRECTORY e10;
-        public IMAGE_DATA_DIRECTORY e11;
-        public IMAGE_DATA_DIRECTORY e12;
-        public IMAGE_DATA_DIRECTORY e13;
-        public IMAGE_DATA_DIRECTORY e14;
-        public IMAGE_DATA_DIRECTORY e15;
-
-        [UnscopedRef]
-        public ref IMAGE_DATA_DIRECTORY this[int index]
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
-            {
-                return ref AsSpan()[index];
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        [UnscopedRef]
-        public Span<IMAGE_DATA_DIRECTORY> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
     }
 }

@@ -3,56 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFLocalMFTRegistration.RegisterMFTs">
-    <summary>
-      <para>Registers one or more Media Foundation transforms (MFTs) in the caller's process.</para>
-    </summary>
-    <param name="pMFTs">
-      <para>A pointer to an array of <see cref="MFT_REGISTRATION_INFO" /> structures.</para>
-    </param>
-    <param name="cMFTs">
-      <para>The number of elements in the <i>pMFTs</i> array.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is similar to the <see cref="MFTRegisterLocalByCLSID" /> function. It registers one or more MFTs in the caller's process. These MFTs can be enumerated by calling the <see cref="MFTEnumEx" /> function with the <b>MFT_ENUM_FLAG_LOCALMFT</b> flag.</para>
-      <para>Unlike <see cref="MFTRegisterLocalByCLSID" />, however, this method also makes the MFT available in the Protected Media Path (PMP) process, and is therefore useful if you are using the Media Session inside the PMP. For more information, see the following topics:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="MFCreatePMPMediaSession" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <a href="https://docs.microsoft.com//windows/desktop/medfound/protected-media-path">Protected Media Path</a>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFLocalMFTRegistration" />
+    <summary>Registers one or more Media Foundation transforms (MFTs) in the caller's process.</summary>
+    <param name="pMFTs">A pointer to an array of <see cref="MFT_REGISTRATION_INFO" /> structures.</param>
+    <param name="cMFTs">The number of elements in the <i>pMFTs</i> array.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFLocalMFTRegistration">
     <summary>
       <para>Registers Media Foundation transforms (MFTs) in the caller's process.</para>
       <para>The Media Session exposes this interface as a service. To obtain a pointer to this interface, call the <see cref="IMFGetService.GetService" /> method on the Media Session with the service identifier <b>MF_LOCAL_MFT_REGISTRATION_SERVICE</b>.</para>
     </summary>
-    <remarks>
-      <para>This interface requires the Media Session. If you are not using the Media Session for playback, call one of the following functions instead:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="MFTRegisterLocal" />
-          </description>
-        </item>
-        <item>
-          <description>
-            <see cref="MFTRegisterLocalByCLSID" />
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
   </member>
 </doc>

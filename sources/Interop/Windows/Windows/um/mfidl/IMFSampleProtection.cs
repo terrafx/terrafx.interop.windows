@@ -25,7 +25,7 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSampleProtection*, Guid*, void**, int>)(lpVtbl[0]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleProtection*, Guid*, void**, int>)(lpVtbl[0]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSampleProtection*, uint>)(lpVtbl[1]))((IMFSampleProtection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleProtection*, uint>)(lpVtbl[1]))((IMFSampleProtection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSampleProtection*, uint>)(lpVtbl[2]))((IMFSampleProtection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleProtection*, uint>)(lpVtbl[2]))((IMFSampleProtection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSampleProtection.xml' path='doc/member[@name="IMFSampleProtection.GetInputProtectionVersion"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
     [VtblIndex(3)]
     public HRESULT GetInputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
     {
-        return ((delegate* unmanaged<IMFSampleProtection*, uint*, int>)(lpVtbl[3]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), pdwVersion);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleProtection*, uint*, int>)(lpVtbl[3]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), pdwVersion);
     }
 
     /// <include file='IMFSampleProtection.xml' path='doc/member[@name="IMFSampleProtection.GetOutputProtectionVersion"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
     [VtblIndex(4)]
     public HRESULT GetOutputProtectionVersion([NativeTypeName("DWORD *")] uint* pdwVersion)
     {
-        return ((delegate* unmanaged<IMFSampleProtection*, uint*, int>)(lpVtbl[4]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), pdwVersion);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleProtection*, uint*, int>)(lpVtbl[4]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), pdwVersion);
     }
 
     /// <include file='IMFSampleProtection.xml' path='doc/member[@name="IMFSampleProtection.GetProtectionCertificate"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
     [VtblIndex(5)]
     public HRESULT GetProtectionCertificate([NativeTypeName("DWORD")] uint dwVersion, byte** ppCert, [NativeTypeName("DWORD *")] uint* pcbCert)
     {
-        return ((delegate* unmanaged<IMFSampleProtection*, uint, byte**, uint*, int>)(lpVtbl[5]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, ppCert, pcbCert);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleProtection*, uint, byte**, uint*, int>)(lpVtbl[5]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, ppCert, pcbCert);
     }
 
     /// <include file='IMFSampleProtection.xml' path='doc/member[@name="IMFSampleProtection.InitOutputProtection"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
     [VtblIndex(6)]
     public HRESULT InitOutputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwOutputId, byte* pbCert, [NativeTypeName("DWORD")] uint cbCert, byte** ppbSeed, [NativeTypeName("DWORD *")] uint* pcbSeed)
     {
-        return ((delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, byte**, uint*, int>)(lpVtbl[6]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, dwOutputId, pbCert, cbCert, ppbSeed, pcbSeed);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleProtection*, uint, uint, byte*, uint, byte**, uint*, int>)(lpVtbl[6]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, dwOutputId, pbCert, cbCert, ppbSeed, pcbSeed);
     }
 
     /// <include file='IMFSampleProtection.xml' path='doc/member[@name="IMFSampleProtection.InitInputProtection"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
     [VtblIndex(7)]
     public HRESULT InitInputProtection([NativeTypeName("DWORD")] uint dwVersion, [NativeTypeName("DWORD")] uint dwInputId, byte* pbSeed, [NativeTypeName("DWORD")] uint cbSeed)
     {
-        return ((delegate* unmanaged<IMFSampleProtection*, uint, uint, byte*, uint, int>)(lpVtbl[7]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, dwInputId, pbSeed, cbSeed);
+        return ((delegate* unmanaged[MemberFunction]<IMFSampleProtection*, uint, uint, byte*, uint, int>)(lpVtbl[7]))((IMFSampleProtection*)Unsafe.AsPointer(ref this), dwVersion, dwInputId, pbSeed, cbSeed);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IMFSampleProtection : IMFSampleProtection.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetInputProtectionVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetInputProtectionVersion;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetOutputProtectionVersion;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetOutputProtectionVersion;
 
         [NativeTypeName("HRESULT (DWORD, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, byte**, uint*, int> GetProtectionCertificate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, byte**, uint*, int> GetProtectionCertificate;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD, BYTE **, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, byte**, uint*, int> InitOutputProtection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint, byte**, uint*, int> InitOutputProtection;
 
         [NativeTypeName("HRESULT (DWORD, DWORD, BYTE *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, byte*, uint, int> InitInputProtection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, byte*, uint, int> InitInputProtection;
     }
 }

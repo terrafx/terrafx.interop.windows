@@ -19,32 +19,4 @@ public static unsafe partial class ITfFnConfigureRegisterWordTests
     {
         Assert.That(typeof(ITfFnConfigureRegisterWord).GUID, Is.EqualTo(IID_ITfFnConfigureRegisterWord));
     }
-
-    /// <summary>Validates that the <see cref="ITfFnConfigureRegisterWord" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfFnConfigureRegisterWord>(), Is.EqualTo(sizeof(ITfFnConfigureRegisterWord)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnConfigureRegisterWord" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfFnConfigureRegisterWord).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfFnConfigureRegisterWord" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfFnConfigureRegisterWord), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfFnConfigureRegisterWord), Is.EqualTo(4));
-        }
-    }
 }

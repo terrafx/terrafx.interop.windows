@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS">
+    <summary>Specifies flags for video processing input streams. Used by the <see cref="D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS" /> structure.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS.D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAG_NONE">
+    <summary>No flags specified.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS.D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAG_FRAME_DISCONTINUITY">
+    <summary>Set this flag when not processing frames in order, such as seeking between frames</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAGS.D3D12_VIDEO_PROCESS_INPUT_STREAM_FLAG_FRAME_REPEAT">
+    <summary>Set this flag when applying video process operation to the same set of inputs.</summary>
+  </member>
+</doc>

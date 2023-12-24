@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER">
+    <summary>Represents a buffer containing metadata about an <see cref="ID3D12VideoEncodeCommandList2.EncodeFrame" /> operation.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER.pBuffer">
+    <summary>A pointer to an <see cref="ID3D12Resource" /> representing the metadata buffer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_OPERATION_METADATA_BUFFER.Offset">
+    <summary>The offset into the associated buffer.</summary>
+  </member>
+</doc>

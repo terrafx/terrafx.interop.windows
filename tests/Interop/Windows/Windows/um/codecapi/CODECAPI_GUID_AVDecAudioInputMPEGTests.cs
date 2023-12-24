@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_GUID_AVDecAudioInputMPEGTests
     {
         Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputMPEG).GUID, Is.EqualTo(IID_CODECAPI_GUID_AVDecAudioInputMPEG));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_GUID_AVDecAudioInputMPEG>(), Is.EqualTo(sizeof(CODECAPI_GUID_AVDecAudioInputMPEG)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_GUID_AVDecAudioInputMPEG).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_GUID_AVDecAudioInputMPEG" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_GUID_AVDecAudioInputMPEG), Is.EqualTo(1));
-    }
 }

@@ -19,25 +19,4 @@ public static unsafe partial class DOMProcessingInstructionTests
     {
         Assert.That(typeof(DOMProcessingInstruction).GUID, Is.EqualTo(IID_DOMProcessingInstruction));
     }
-
-    /// <summary>Validates that the <see cref="DOMProcessingInstruction" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMProcessingInstruction>(), Is.EqualTo(sizeof(DOMProcessingInstruction)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMProcessingInstruction" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMProcessingInstruction).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMProcessingInstruction" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMProcessingInstruction), Is.EqualTo(1));
-    }
 }

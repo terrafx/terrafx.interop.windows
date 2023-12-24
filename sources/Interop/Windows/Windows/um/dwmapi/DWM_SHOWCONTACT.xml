@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWM_SHOWCONTACT">
+    <summary>Specifies the input operations for which visual feedback should be provided. This enumeration is used by the <see cref="DwmShowContact" /> function.</summary>
+  </member>
+  <member name="DWM_SHOWCONTACT.DWMSC_DOWN">
+    <summary>Down.</summary>
+  </member>
+  <member name="DWM_SHOWCONTACT.DWMSC_UP">
+    <summary>Up.</summary>
+  </member>
+  <member name="DWM_SHOWCONTACT.DWMSC_DRAG">
+    <summary>Drag.</summary>
+  </member>
+  <member name="DWM_SHOWCONTACT.DWMSC_HOLD">
+    <summary>Hold.</summary>
+  </member>
+  <member name="DWM_SHOWCONTACT.DWMSC_PENBARREL">
+    <summary>Pen barrel.</summary>
+  </member>
+  <member name="DWM_SHOWCONTACT.DWMSC_NONE">
+    <summary>None.</summary>
+  </member>
+  <member name="DWM_SHOWCONTACT.DWMSC_ALL">
+    <summary>All.</summary>
+  </member>
+</doc>

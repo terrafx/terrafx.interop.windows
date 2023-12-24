@@ -27,7 +27,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSensorProfileCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfileCollection*, Guid*, void**, int>)(lpVtbl[0]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSensorProfileCollection*, uint>)(lpVtbl[1]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfileCollection*, uint>)(lpVtbl[1]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSensorProfileCollection*, uint>)(lpVtbl[2]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfileCollection*, uint>)(lpVtbl[2]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.GetProfileCount"]/*' />
@@ -54,7 +54,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
     [return: NativeTypeName("DWORD")]
     public uint GetProfileCount()
     {
-        return ((delegate* unmanaged<IMFSensorProfileCollection*, uint>)(lpVtbl[3]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfileCollection*, uint>)(lpVtbl[3]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.GetProfile"]/*' />
@@ -62,7 +62,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
     [VtblIndex(4)]
     public HRESULT GetProfile([NativeTypeName("DWORD")] uint Index, IMFSensorProfile** ppProfile)
     {
-        return ((delegate* unmanaged<IMFSensorProfileCollection*, uint, IMFSensorProfile**, int>)(lpVtbl[4]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), Index, ppProfile);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfileCollection*, uint, IMFSensorProfile**, int>)(lpVtbl[4]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), Index, ppProfile);
     }
 
     /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.AddProfile"]/*' />
@@ -70,7 +70,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
     [VtblIndex(5)]
     public HRESULT AddProfile(IMFSensorProfile* pProfile)
     {
-        return ((delegate* unmanaged<IMFSensorProfileCollection*, IMFSensorProfile*, int>)(lpVtbl[5]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), pProfile);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfileCollection*, IMFSensorProfile*, int>)(lpVtbl[5]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), pProfile);
     }
 
     /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.FindProfile"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
     [VtblIndex(6)]
     public HRESULT FindProfile(SENSORPROFILEID* ProfileId, IMFSensorProfile** ppProfile)
     {
-        return ((delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, IMFSensorProfile**, int>)(lpVtbl[6]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId, ppProfile);
+        return ((delegate* unmanaged[MemberFunction]<IMFSensorProfileCollection*, SENSORPROFILEID*, IMFSensorProfile**, int>)(lpVtbl[6]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId, ppProfile);
     }
 
     /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.RemoveProfileByIndex"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
     [VtblIndex(7)]
     public void RemoveProfileByIndex([NativeTypeName("DWORD")] uint Index)
     {
-        ((delegate* unmanaged<IMFSensorProfileCollection*, uint, void>)(lpVtbl[7]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), Index);
+        ((delegate* unmanaged[MemberFunction]<IMFSensorProfileCollection*, uint, void>)(lpVtbl[7]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), Index);
     }
 
     /// <include file='IMFSensorProfileCollection.xml' path='doc/member[@name="IMFSensorProfileCollection.RemoveProfile"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
     [VtblIndex(8)]
     public void RemoveProfile(SENSORPROFILEID* ProfileId)
     {
-        ((delegate* unmanaged<IMFSensorProfileCollection*, SENSORPROFILEID*, void>)(lpVtbl[8]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId);
+        ((delegate* unmanaged[MemberFunction]<IMFSensorProfileCollection*, SENSORPROFILEID*, void>)(lpVtbl[8]))((IMFSensorProfileCollection*)Unsafe.AsPointer(ref this), ProfileId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -123,30 +123,30 @@ public unsafe partial struct IMFSensorProfileCollection : IMFSensorProfileCollec
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("DWORD () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetProfileCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetProfileCount;
 
         [NativeTypeName("HRESULT (DWORD, IMFSensorProfile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IMFSensorProfile**, int> GetProfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IMFSensorProfile**, int> GetProfile;
 
         [NativeTypeName("HRESULT (IMFSensorProfile *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFSensorProfile*, int> AddProfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFSensorProfile*, int> AddProfile;
 
         [NativeTypeName("HRESULT (SENSORPROFILEID *, IMFSensorProfile **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SENSORPROFILEID*, IMFSensorProfile**, int> FindProfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SENSORPROFILEID*, IMFSensorProfile**, int> FindProfile;
 
         [NativeTypeName("void (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, void> RemoveProfileByIndex;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, void> RemoveProfileByIndex;
 
         [NativeTypeName("void (SENSORPROFILEID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SENSORPROFILEID*, void> RemoveProfile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SENSORPROFILEID*, void> RemoveProfile;
     }
 }

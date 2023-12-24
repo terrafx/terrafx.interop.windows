@@ -3,255 +3,283 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DTTOPTS">
-    <summary>
-      <para>Defines the options for the <see cref="DrawThemeTextEx" /> function.</para>
-    </summary>
+    <summary>Defines the options for the <see cref="DrawThemeTextEx" /> function.</summary>
   </member>
   <member name="DTTOPTS.dwSize">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
-      <para>Size of the structure.</para>
-    </summary>
+    <summary>Size of the structure.</summary>
   </member>
   <member name="DTTOPTS.dwFlags">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">DWORD</a></b></para>
       <para>A combination of flags that specify whether certain values of the <b>DTTOPTS</b> structure have been specified, and how to interpret these values. This member can be a combination of the following.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>DTT_TEXTCOLOR</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_TEXTCOLOR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>crText</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>crText</b> member value is valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_BORDERCOLOR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <b>crBorder</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DTT_BORDERCOLOR</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_SHADOWCOLOR</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>crShadow</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>crBorder</b> member value is valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_SHADOWTYPE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <b>iTextShadowType</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DTT_SHADOWCOLOR</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_SHADOWOFFSET</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>ptShadowOffset</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>crShadow</b> member value is valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_BORDERSIZE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <b>iBorderSize</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DTT_SHADOWTYPE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_FONTPROP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>iFontPropId</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>iTextShadowType</b> member value is valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_COLORPROP</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <b>iColorPropId</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DTT_SHADOWOFFSET</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_STATEID</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>iStateId</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>ptShadowOffset</b> member value is valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_CALCRECT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>pRect</i> parameter of the <see cref="DrawThemeTextEx" /> function that uses this structure will be used as both an in and an out parameter. After the function returns, the <i>pRect</i> parameter will contain the rectangle that corresponds to the region calculated to be drawn.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DTT_BORDERSIZE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_APPLYOVERLAY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>fApplyOverlay</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>iBorderSize</b> member value is valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_GLOWSIZE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <b>iGlowSize</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DTT_FONTPROP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_CALLBACK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The <b>pfnDrawTextCallback</b> member value is valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <b>iFontPropId</b> member value is valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_COMPOSITED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Draws text with antialiased alpha. Use of this flag requires a top-down DIB section. This flag works only if the HDC passed to function <see cref="DrawThemeTextEx" /> has a top-down DIB section currently selected in it. For more information, see <a href="https://docs.microsoft.com//windows/desktop/gdi/device-independent-bitmaps">Device-Independent Bitmaps</a>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>DTT_COLORPROP</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>DTT_VALIDBITS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The <b>iColorPropId</b> member value is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DTT_STATEID</b>
-          </description>
-          <description>
-            <para>The <b>iStateId</b> member value is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DTT_CALCRECT</b>
-          </description>
-          <description>
-            <para>The <i>pRect</i> parameter of the <see cref="DrawThemeTextEx" /> function that uses this structure will be used as both an in and an out parameter. After the function returns, the <i>pRect</i> parameter will contain the rectangle that corresponds to the region calculated to be drawn.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DTT_APPLYOVERLAY</b>
-          </description>
-          <description>
-            <para>The <b>fApplyOverlay</b> member value is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DTT_GLOWSIZE</b>
-          </description>
-          <description>
-            <para>The <b>iGlowSize</b> member value is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DTT_CALLBACK</b>
-          </description>
-          <description>
-            <para>The <b>pfnDrawTextCallback</b> member value is valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DTT_COMPOSITED</b>
-          </description>
-          <description>
-            <para>Draws text with antialiased alpha. Use of this flag requires a top-down DIB section. This flag works only if the HDC passed to function <see cref="DrawThemeTextEx" /> has a top-down DIB section currently selected in it. For more information, see <a href="https://docs.microsoft.com//windows/desktop/gdi/device-independent-bitmaps">Device-Independent Bitmaps</a>.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>DTT_VALIDBITS</b>
-          </description>
-          <description>
-            <para>DTT_TEXTCOLOR |  DTT_BORDERCOLOR | DTT_SHADOWCOLOR | DTT_SHADOWTYPE |
-DTT_SHADOWOFFSET | DTT_BORDERSIZE | DTT_FONTPROP | DTT_COLORPROP | DTT_STATEID | DTT_CALCRECT |  DTT_APPLYOVERLAY | DTT_GLOWSIZE | DTT_COMPOSITED.</para>
-          </description>
-        </item>
+          <description>DTT_TEXTCOLOR | DTT_BORDERCOLOR | DTT_SHADOWCOLOR | DTT_SHADOWTYPE | DTT_SHADOWOFFSET | DTT_BORDERSIZE | DTT_FONTPROP | DTT_COLORPROP | DTT_STATEID | DTT_CALCRECT | DTT_APPLYOVERLAY | DTT_GLOWSIZE | DTT_COMPOSITED.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="DTTOPTS.crText">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
-      <para>Specifies the color of the text that will be drawn.</para>
-    </summary>
+    <summary>Specifies the color of the text that will be drawn.</summary>
   </member>
   <member name="DTTOPTS.crBorder">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
-      <para>Specifies the color of the outline that will be drawn around the text.</para>
-    </summary>
+    <summary>Specifies the color of the outline that will be drawn around the text.</summary>
   </member>
   <member name="DTTOPTS.crShadow">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">COLORREF</a></b></para>
-      <para>Specifies the color of the shadow that will be drawn behind the text.</para>
-    </summary>
+    <summary>Specifies the color of the shadow that will be drawn behind the text.</summary>
   </member>
   <member name="DTTOPTS.iTextShadowType">
     <summary>
-      <para>Type: <b>int</b></para>
       <para>Specifies the type of the shadow that will be drawn behind the text. This member can have one of the following values.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TST_NONE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TST_NONE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>No shadow will be drawn.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>No shadow will be drawn.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TST_SINGLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The shadow will be drawn to appear detailed underneath text.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TST_SINGLE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TST_CONTINUOUS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The shadow will be drawn to appear detailed underneath text.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <b>TST_CONTINUOUS</b>
-          </description>
-          <description>
-            <para>The shadow will be drawn to appear blurred underneath text.</para>
-          </description>
-        </item>
+          <description>The shadow will be drawn to appear blurred underneath text.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="DTTOPTS.ptShadowOffset">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a></b></para>
-      <para>Specifies the amount of offset, in logical coordinates, between the shadow and the text.</para>
-    </summary>
+    <summary>Specifies the amount of offset, in logical coordinates, between the shadow and the text.</summary>
   </member>
   <member name="DTTOPTS.iBorderSize">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Specifies the radius of the outline that will be drawn around the text.</para>
-    </summary>
+    <summary>Specifies the radius of the outline that will be drawn around the text.</summary>
   </member>
   <member name="DTTOPTS.iFontPropId">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Specifies an alternate font property to use when drawing text. For a list of possible values, see <see cref="GetThemeSysFont" />.</para>
-    </summary>
+    <summary>Specifies an alternate font property to use when drawing text. For a list of possible values, see <see cref="GetThemeSysFont" />.</summary>
   </member>
   <member name="DTTOPTS.iColorPropId">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Specifies an alternate color property to use when drawing text. If this value is valid and the corresponding flag is set in <b>dwFlags</b>, this value will override the value of <b>crText</b>. See the values listed in <see cref="GetSysColor" /> for the <i>nIndex</i> parameter.</para>
-    </summary>
+    <summary>Specifies an alternate color property to use when drawing text. If this value is valid and the corresponding flag is set in <b>dwFlags</b>, this value will override the value of <b>crText</b>. See the values listed in <see cref="GetSysColor" /> for the <i>nIndex</i> parameter.</summary>
   </member>
   <member name="DTTOPTS.iStateId">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Specifies an alternate state to use. This member is not used by <see cref="DrawThemeTextEx" />.</para>
-    </summary>
+    <summary>Specifies an alternate state to use. This member is not used by <see cref="DrawThemeTextEx" />.</summary>
   </member>
   <member name="DTTOPTS.fApplyOverlay">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>If <b>TRUE</b>, text will be drawn on top of the shadow and outline effects. If <b>FALSE</b>, just the shadow and outline effects will be drawn.</para>
-    </summary>
+    <summary>If <b>TRUE</b>, text will be drawn on top of the shadow and outline effects. If <b>FALSE</b>, just the shadow and outline effects will be drawn.</summary>
   </member>
   <member name="DTTOPTS.iGlowSize">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>Specifies the size of a glow that will be drawn on the background prior to any text being drawn.</para>
-    </summary>
+    <summary>Specifies the size of a glow that will be drawn on the background prior to any text being drawn.</summary>
   </member>
   <member name="DTTOPTS.pfnDrawTextCallback">
-    <summary>
-      <para>Type: <b>DTT_CALLBACK_PROC</b></para>
-      <para>Pointer to callback function for <see cref="DrawThemeTextEx" />.</para>
-    </summary>
+    <summary>Pointer to callback function for <see cref="DrawThemeTextEx" />.</summary>
   </member>
   <member name="DTTOPTS.lParam">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPARAM</a></b></para>
-      <para>Parameter for callback back function specified by <b>pfnDrawTextCallback</b>.</para>
-    </summary>
+    <summary>Parameter for callback back function specified by <b>pfnDrawTextCallback</b>.</summary>
   </member>
 </doc>

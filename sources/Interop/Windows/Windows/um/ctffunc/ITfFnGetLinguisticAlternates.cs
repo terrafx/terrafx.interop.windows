@@ -27,7 +27,7 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetLinguisticAlternates*, Guid*, void**, int>)(lpVtbl[0]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, uint>)(lpVtbl[1]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetLinguisticAlternates*, uint>)(lpVtbl[1]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,15 +45,15 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, uint>)(lpVtbl[2]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetLinguisticAlternates*, uint>)(lpVtbl[2]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfFunction.GetDisplayName" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] ushort** pbstrName)
+    public HRESULT GetDisplayName([NativeTypeName("BSTR *")] char** pbstrName)
     {
-        return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, ushort**, int>)(lpVtbl[3]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), pbstrName);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetLinguisticAlternates*, char**, int>)(lpVtbl[3]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), pbstrName);
     }
 
     /// <include file='ITfFnGetLinguisticAlternates.xml' path='doc/member[@name="ITfFnGetLinguisticAlternates.GetAlternates"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
     [VtblIndex(4)]
     public HRESULT GetAlternates(ITfRange* pRange, ITfCandidateList** ppCandidateList)
     {
-        return ((delegate* unmanaged<ITfFnGetLinguisticAlternates*, ITfRange*, ITfCandidateList**, int>)(lpVtbl[4]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), pRange, ppCandidateList);
+        return ((delegate* unmanaged[MemberFunction]<ITfFnGetLinguisticAlternates*, ITfRange*, ITfCandidateList**, int>)(lpVtbl[4]))((ITfFnGetLinguisticAlternates*)Unsafe.AsPointer(ref this), pRange, ppCandidateList);
     }
 
     public interface Interface : ITfFunction.Interface
@@ -74,18 +74,18 @@ public unsafe partial struct ITfFnGetLinguisticAlternates : ITfFnGetLinguisticAl
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDisplayName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDisplayName;
 
         [NativeTypeName("HRESULT (ITfRange *, ITfCandidateList **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfRange*, ITfCandidateList**, int> GetAlternates;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfRange*, ITfCandidateList**, int> GetAlternates;
     }
 }

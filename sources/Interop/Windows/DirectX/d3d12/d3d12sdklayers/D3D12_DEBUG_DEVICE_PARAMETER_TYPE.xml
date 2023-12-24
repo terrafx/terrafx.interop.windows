@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DEBUG_DEVICE_PARAMETER_TYPE">
+    <summary>Specifies the data type of the memory pointed to by the <i>pData</i> parameter of <see cref="ID3D12DebugDevice1.SetDebugParameter" /> and <see cref="ID3D12DebugDevice1.GetDebugParameter" />.</summary>
+  </member>
+  <member name="D3D12_DEBUG_DEVICE_PARAMETER_TYPE.D3D12_DEBUG_DEVICE_PARAMETER_FEATURE_FLAGS">
+    <summary>Indicates <i>pData</i> points to a <see cref="D3D12_DEBUG_FEATURE" /> value.</summary>
+  </member>
+  <member name="D3D12_DEBUG_DEVICE_PARAMETER_TYPE.D3D12_DEBUG_DEVICE_PARAMETER_GPU_BASED_VALIDATION_SETTINGS">
+    <summary>Indicates <i>pData</i> points to a <see cref="D3D12_DEBUG_DEVICE_GPU_BASED_VALIDATION_SETTINGS" /> structure.</summary>
+  </member>
+  <member name="D3D12_DEBUG_DEVICE_PARAMETER_TYPE.D3D12_DEBUG_DEVICE_PARAMETER_GPU_SLOWDOWN_PERFORMANCE_FACTOR">
+    <summary>Indicates <i>pData</i> points to a <see cref="D3D12_DEBUG_DEVICE_GPU_SLOWDOWN_PERFORMANCE_FACTOR" /> structure.</summary>
+  </member>
+</doc>

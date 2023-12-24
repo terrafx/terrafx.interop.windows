@@ -3,36 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IInitializeCommand.Initialize">
-    <summary>
-      <para>Initialize objects that share an implementation of <see cref="IExplorerCommandState" />, <see cref="IExecuteCommand" /> or <see cref="IDropTarget" /> with the application-specified command name and its registered properties.</para>
-    </summary>
-    <param name="pszCommandName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>Pointer to a string that contains the command name (the name of the command key as found in the registry). For instance, if the command is registered under <b>...</b>\<b>shell</b>\<b>MyCommand</b>, <i>pszCommandName</i> points to "MyCommand".</para>
-    </param>
-    <param name="ppb">
-      <para>Type: <b><see cref="IPropertyBag" />*</b></para>
-      <para>Pointer to an <see cref="IPropertyBag" /> instance that can be used to read the properties related to the command in the registry. For example, a command may registry a string property under its <b>...</b>\<b>shell</b>\<b>MyCommand</b> subkey.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initialize objects that share an implementation of <see cref="IExplorerCommandState" />, <see cref="IExecuteCommand" /> or <see cref="IDropTarget" /> with the application-specified command name and its registered properties.</summary>
+    <param name="pszCommandName">Pointer to a string that contains the command name (the name of the command key as found in the registry). For instance, if the command is registered under <b>...</b>\<b>shell</b>\<b>MyCommand</b>, <i>pszCommandName</i> points to "MyCommand".</param>
+    <param name="ppb">Pointer to an <see cref="IPropertyBag" /> instance that can be used to read the properties related to the command in the registry. For example, a command may registry a string property under its <b>...</b>\<b>shell</b>\<b>MyCommand</b> subkey.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IInitializeCommand">
-    <summary>
-      <para>Exposes a single method used to initialize objects that implement <see cref="IExplorerCommandState" />, <see cref="IExecuteCommand" /> or <see cref="IDropTarget" /> with the application-specified command name and its registered properties.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>Implement <b>IInitializeCommand</b> in the following situations.</para>
-      <list type="bullet">
-        <item>
-          <description>Implement this interface to differentiate between related commands that share implementations of <see cref="IExplorerCommandState" />, <see cref="IDropTarget" /> or <see cref="IExecuteCommand" />. Differentiation is made through the command name passed in <see cref="IInitializeCommand.Initialize" />. Commands can also use <b>Initialize</b> to pass a specific property bag for the command, using properties the command has placed in the registry.</description>
-        </item>
-      </list>
-      <h3>When to Use</h3>
-      <para>Do not call the method of <b>IInitializeCommand</b> directly. Windows Explorer calls this method when a verb object that implements this interface is invoked.</para>
-    </remarks>
+    <summary>Exposes a single method used to initialize objects that implement <see cref="IExplorerCommandState" />, <see cref="IExecuteCommand" /> or <see cref="IDropTarget" /> with the application-specified command name and its registered properties.</summary>
   </member>
 </doc>

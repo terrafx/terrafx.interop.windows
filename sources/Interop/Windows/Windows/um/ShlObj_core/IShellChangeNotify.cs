@@ -25,7 +25,7 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IShellChangeNotify*, Guid*, void**, int>)(lpVtbl[0]))((IShellChangeNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IShellChangeNotify*, Guid*, void**, int>)(lpVtbl[0]))((IShellChangeNotify*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IShellChangeNotify*, uint>)(lpVtbl[1]))((IShellChangeNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellChangeNotify*, uint>)(lpVtbl[1]))((IShellChangeNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IShellChangeNotify*, uint>)(lpVtbl[2]))((IShellChangeNotify*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IShellChangeNotify*, uint>)(lpVtbl[2]))((IShellChangeNotify*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IShellChangeNotify.xml' path='doc/member[@name="IShellChangeNotify.OnChange"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface, 
     [VtblIndex(3)]
     public HRESULT OnChange([NativeTypeName("LONG")] int lEvent, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl1, [NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl2)
     {
-        return ((delegate* unmanaged<IShellChangeNotify*, int, ITEMIDLIST*, ITEMIDLIST*, int>)(lpVtbl[3]))((IShellChangeNotify*)Unsafe.AsPointer(ref this), lEvent, pidl1, pidl2);
+        return ((delegate* unmanaged[MemberFunction]<IShellChangeNotify*, int, ITEMIDLIST*, ITEMIDLIST*, int>)(lpVtbl[3]))((IShellChangeNotify*)Unsafe.AsPointer(ref this), lEvent, pidl1, pidl2);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IShellChangeNotify : IShellChangeNotify.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LONG, LPCITEMIDLIST, LPCITEMIDLIST) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ITEMIDLIST*, ITEMIDLIST*, int> OnChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, ITEMIDLIST*, ITEMIDLIST*, int> OnChange;
     }
 }

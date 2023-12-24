@@ -16,5 +16,5 @@ public unsafe partial struct PRJ_NOTIFICATION_MAPPING
 
     /// <include file='PRJ_NOTIFICATION_MAPPING.xml' path='doc/member[@name="PRJ_NOTIFICATION_MAPPING.NotificationRoot"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* NotificationRoot;
+    public char* NotificationRoot;
 }

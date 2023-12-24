@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_SWEEP_DIRECTION.xml' path='doc/member[@name="D2D1_SWEEP_DIRECTION"]/*' />
-public enum D2D1_SWEEP_DIRECTION : uint
+public enum D2D1_SWEEP_DIRECTION
 {
     /// <include file='D2D1_SWEEP_DIRECTION.xml' path='doc/member[@name="D2D1_SWEEP_DIRECTION.D2D1_SWEEP_DIRECTION_COUNTER_CLOCKWISE"]/*' />
     D2D1_SWEEP_DIRECTION_COUNTER_CLOCKWISE = 0,
@@ -15,5 +15,5 @@ public enum D2D1_SWEEP_DIRECTION : uint
     D2D1_SWEEP_DIRECTION_CLOCKWISE = 1,
 
     /// <include file='D2D1_SWEEP_DIRECTION.xml' path='doc/member[@name="D2D1_SWEEP_DIRECTION.D2D1_SWEEP_DIRECTION_FORCE_DWORD"]/*' />
-    D2D1_SWEEP_DIRECTION_FORCE_DWORD = 0xffffffff,
+    D2D1_SWEEP_DIRECTION_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

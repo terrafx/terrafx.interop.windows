@@ -3,10 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TAPE_ERASE">
-    <summary>
-      <para>The
-<b>TAPE_ERASE</b> structure describes the partition to be erased.</para>
-    </summary>
+    <summary>The<b>TAPE_ERASE</b> structure describes the partition to be erased.</summary>
   </member>
   <member name="TAPE_ERASE.Type">
     <summary>
@@ -16,46 +13,40 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_ERASE_LONG</b>
-                </description>
-              </item>
-              <item>
-                <description>1L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Erases the entire partition.</para>
-          </description>
-        </item>
-        <item>
+          <description>Erases the entire partition.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>TAPE_ERASE_SHORT</b>
-                </description>
-              </item>
-              <item>
-                <description>0L</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0L</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Erases only the partition's header block.</para>
-          </description>
-        </item>
+          <description>Erases only the partition's header block.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="TAPE_ERASE.Immediate">
-    <summary>
-      <para>If this member is <b>TRUE</b>, return as soon as the erase operation begins. Otherwise, return when the operation has been completed.</para>
-    </summary>
+    <summary>If this member is <b>TRUE</b>, return as soon as the erase operation begins. Otherwise, return when the operation has been completed.</summary>
   </member>
 </doc>

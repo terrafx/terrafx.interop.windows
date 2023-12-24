@@ -3,536 +3,390 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MIB_IPFORWARDROW">
-    <summary>
-      <para>The
-<b>MIB_IPFORWARDROW</b> structure contains information that describes an IPv4 network route.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="GetIpForwardTable" /> function enumerates the IPv4 route entries on a local system and returns this information in a <see cref="MIB_IPFORWARDTABLE" /> structure that contains an array of <b>MIB_IPFORWARDROW</b> structure entries.</para>
-      <para>The  <b>dwForwardDest</b>, <b>dwForwardMask</b>, and <b>dwForwardNextHop</b> members of the
-<b>MIB_IPFORWARDROW</b> structure represent  IPv4 addresses in network byte order.</para>
-      <para>The  <b>dwForwardProto</b> member of the
-<b>MIB_IPFORWARDROW</b> structure specifies the protocol or routing mechanism that generated the route. Routing protocol identifiers are used to identify route information for the specified routing protocol. For example, <b>MIB_IPPROTO_NETMGMT</b> is used to identify route information for IP  routing set through network management such as the Dynamic Host Configuration Protocol (DCHP), the Simple Network Management Protocol (SNMP), or by calls to the <see cref="CreateIpForwardEntry" />,  <see cref="DeleteIpForwardEntry" /></para>
-      <para>, or <see cref="SetIpForwardEntry" /> functions. See
-<a href="https://docs.microsoft.com//windows/desktop/RRAS/protocol-identifiers">Protocol Identifiers</a> for a list of possible protocols and routing mechanisms.</para>
-      <para>An IPv4 address of 0.0.0.0 in the  <b>dwForwardDest</b> member of the
-<b>MIB_IPFORWARDROW</b> structure is considered a
-default route. The <see cref="MIB_IPFORWARDTABLE" /> may contain multiple <b>MIB_IPFORWARDROW</b> entries with the <b>dwForwardDest</b> member set to 0.0.0.0 when there are multiple network adapters installed.</para>
-      <para>When <b>dwForwardAge</b> is set to <b>INFINITE</b>, the route will not be removed based on a timeout</para>
-      <para>value. Any other value for <b>dwForwardAge</b> specifies the number of seconds since the route was added or modified in the network routing table.</para>
-      <para>On Windows Server 2003 or
-Windows 2000 Server when the Routing and Remote Access Service (RRAS) is running, the  <b>MIB_IPFORWARDROW</b> entries returned have the <b>dwForwardType</b> and <b>dwForwardAge</b> members set to zero.</para>
-      <para>On Windows Vista and Windows Server 2008, the route metric specified in the <b>dwForwardMetric1</b> member of the  <b>MIB_IPFORWARDROW</b> structure represents a combination of the route metric added to the interface metric specified in the <b>Metric</b> member of the <see cref="MIB_IPINTERFACE_ROW" /> structure of the associated interface.  So the <b>dwForwardMetric1</b> member of the  <b>MIB_IPFORWARDROW</b> structure should be equal to or greater than <b>Metric</b> member of the associated <b>MIB_IPINTERFACE_ROW</b> structure. If an application would like to set the route metric to 0, then the <b>dwForwardMetric1</b> member of the <b>MIB_IPFORWARDROW</b> structure  should be set equal to the value of the interface metric specified in the <b>Metric</b> member of the associated <b>MIB_IPINTERFACE_ROW</b> structure. An application can retrieve the interface metric by calling the <see cref="GetIpInterfaceEntry" /> function.</para>
-      <para>A number of members of the <b>MIB_IPFORWARDROW</b> structure  are not currently used by IPv4 routing. These members include <b>dwForwardPolicy</b>, <b>dwForwardNextHopAS</b>, <b>dwForwardMetric2</b>, <b>dwForwardMetric3</b>, <b>dwForwardMetric4</b>, and <b>dwForwardMetric5</b>.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed. This  structure is defined in the <i>Ipmib.h</i> header file, not in the <i>Iprtrmib.h</i> header file. Note that the <i>Ipmib.h</i> header file is automatically included in <i>Iprtrmib.h</i>, which is automatically included in the <i>Iphlpapi.h</i> header file. The  <i>Ipmib.h</i> and <i>Iprtrmib.h</i> header files should never be used directly.</para>
-      <h4>Examples</h4>
-      <para>To view an example that retrieves the <see cref="MIB_IPFORWARDTABLE" /> structure and then prints out the <b>MIB_IPFORWARDROW</b> structure entries in this table, see the <see cref="GetIpForwardTable" /> function.</para>
-    </remarks>
-    <seealso cref="CreateIpForwardEntry" />
-    <seealso cref="DeleteIpForwardEntry" />
-    <seealso cref="GetIpForwardTable" />
-    <seealso cref="GetIpInterfaceEntry" />
-    <seealso cref="MIB_IPFORWARDTABLE" />
-    <seealso cref="MIB_IPINTERFACE_ROW" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/RRAS/protocol-identifiers">Protocol Identifiers</seealso>
-    <seealso cref="SetIpForwardEntry" />
+    <summary>The<b>MIB_IPFORWARDROW</b> structure contains information that describes an IPv4 network route.</summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardDest">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The destination IPv4 address of the route. An
-entry  with  a IPv4 address of 0.0.0.0 is considered a
-default route.
-This member cannot be set to a multicast (class D) IPv4 address.</para>
-    </summary>
+    <summary>The destination IPv4 address of the route. An entry with a IPv4 address of 0.0.0.0 is considered a default route. This member cannot be set to a multicast (class D) IPv4 address.</summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardMask">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The IPv4 subnet mask to use with the
-destination  IPv4 address  before  being compared to
-the value  in  the  <b>dwForwardDest</b>  member.</para>
-      <para>The <b>dwForwardMask</b> value should be applied to the destination  IPv4 address (logical and operation) before a comparison with the  value  in  the  <b>dwForwardDest</b> member.</para>
+      <para>The IPv4 subnet mask to use with the destination IPv4 address before being compared to the value in the <b>dwForwardDest</b> member.</para>
+      <para>The <b>dwForwardMask</b> value should be applied to the destination IPv4 address (logical and operation) before a comparison with the value in the <b>dwForwardDest</b> member.</para>
     </summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardPolicy">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The set of conditions that would cause the selection of a multi-path route (the set of
-next hops for a given destination). This member is typically in IP TOS format. This encoding of this member is described in
-RFC 1354. For more information, see
-<a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a>.</para>
-    </summary>
+    <summary>The set of conditions that would cause the selection of a multi-path route (the set of next hops for a given destination). This member is typically in IP TOS format. This encoding of this member is described in RFC 1354. For more information, see<a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a>.</summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardNextHop">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>For remote routes, the IPv4 address of the next system en route. Otherwise, this member should be an IPv4 address of 0.0.0.0.</para>
-    </summary>
+    <summary>For remote routes, the IPv4 address of the next system en route. Otherwise, this member should be an IPv4 address of 0.0.0.0.</summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardIfIndex">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The index of the local interface through  which  the next hop of this
-route should be reached.</para>
-    </summary>
+    <summary>The index of the local interface through which the next hop of this route should be reached.</summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardType">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The route type as described in
-RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a>.</para>
+      <para>The route type as described in RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a>.</para>
       <para>This member can be one of the values defined in the <i>Iprtmib.h</i> header file.</para>
-      <para>On Windows Vista and later, the header files were reorganized and this member can be one of the values from  the <b>MIB_IPFORWARD_TYPE</b> enumeration type defined in the <i>Ipmib.h</i> header file. Note that the <i>Ipmib.h</i> header is automatically included by the <i>Iprtrmib.h</i> header file which is automatically included by the <i>Iphlpapi.h</i> header. The  <i>Iprtrmib.h</i> and  <i>Ipmib.h</i> header files should never be used directly.</para>
+      <para>On Windows Vista and later, the header files were reorganized and this member can be one of the values from the <b>MIB_IPFORWARD_TYPE</b> enumeration type defined in the <i>Ipmib.h</i> header file. Note that the <i>Ipmib.h</i> header is automatically included by the <i>Iprtrmib.h</i> header file which is automatically included by the <i>Iphlpapi.h</i> header. The <i>Iprtrmib.h</i> and <i>Ipmib.h</i> header files should never be used directly.</para>
       <para>The following list shows the possible values for this member.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>MIB_IPROUTE_TYPE_OTHER </b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>MIB_IPROUTE_TYPE_OTHER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Some other type not specified in RFC 1354.</para>
-          </description>
-        </item>
-        <item>
+          <description>Some other type not specified in RFC 1354.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPROUTE_TYPE_INVALID</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>An invalid route.  This value can result from a route added by an ICMP redirect.</para>
-          </description>
-        </item>
-        <item>
+          <description>An invalid route. This value can result from a route added by an ICMP redirect.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPROUTE_TYPE_DIRECT</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A local route where the next hop is the final destination (a local interface).</para>
-          </description>
-        </item>
-        <item>
+          <description>A local route where the next hop is the final destination (a local interface).</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPROUTE_TYPE_INDIRECT</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The remote route where the next hop is not the final destination (a remote destination).</para>
-          </description>
-        </item>
+          <description>The remote route where the next hop is not the final destination (a remote destination).</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="MIB_IPFORWARDROW.ForwardType">
-    <summary></summary>
-  </member>
+  <member name="MIB_IPFORWARDROW.ForwardType"></member>
   <member name="MIB_IPFORWARDROW.dwForwardProto">
     <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The protocol or routing mechanism that generated the route as described in
-RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a>. See
-<a href="https://docs.microsoft.com//windows/desktop/RRAS/protocol-identifiers">Protocol Identifiers</a> for a list of possible protocol identifiers used by routing protocols.</para>
-      <para>This member can be one of the values defined in the <i>Iprtmib.h</i> header file. The values for this member can be one of the  MIB_IPPROTO_xxx values defined in  the <i>Iprtmib.h</i> header file or one of the PROTO_IP_xxx values defined in the <i>routprot.h</i> header file since these values are the same.</para>
-      <para>On Windows Vista and later, the header files were reorganized and this member can be one of the values defined in the <i>Nldef.h</i> header file. Note that the <i>Nldef.h</i> header is automatically included by the <i>Ipmib.h</i> header file which is automatically included by the <i>Iprtrmib.h</i> header. The <i>Iphlpapi.h</i> header  automatically includes the <i>Iprtrmib.h</i> header file. The  <i>Iprtrmib.h</i>, <i>Ipmib.h</i>, and <i>Nldef.h</i> header files should never be used directly.</para>
+      <para>The protocol or routing mechanism that generated the route as described in RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a>. See<a href="https://docs.microsoft.com//windows/desktop/RRAS/protocol-identifiers">Protocol Identifiers</a> for a list of possible protocol identifiers used by routing protocols.</para>
+      <para>This member can be one of the values defined in the <i>Iprtmib.h</i> header file. The values for this member can be one of the MIB_IPPROTO_xxx values defined in the <i>Iprtmib.h</i> header file or one of the PROTO_IP_xxx values defined in the <i>routprot.h</i> header file since these values are the same.</para>
+      <para>On Windows Vista and later, the header files were reorganized and this member can be one of the values defined in the <i>Nldef.h</i> header file. Note that the <i>Nldef.h</i> header is automatically included by the <i>Ipmib.h</i> header file which is automatically included by the <i>Iprtrmib.h</i> header. The <i>Iphlpapi.h</i> header automatically includes the <i>Iprtrmib.h</i> header file. The <i>Iprtrmib.h</i>, <i>Ipmib.h</i>, and <i>Nldef.h</i> header files should never be used directly.</para>
       <para>The following list shows the possible values for this member.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
-                  <b>MIB_IPPROTO_OTHER </b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+              <listheader>
+                <term>
+                  <b>MIB_IPPROTO_OTHER</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Some other protocol not specified in RFC 1354.</para>
-          </description>
-        </item>
-        <item>
+          <description>Some other protocol not specified in RFC 1354.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_LOCAL</b>
-                </description>
-              </item>
-              <item>
-                <description>2</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>2</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A local interface.</para>
-          </description>
-        </item>
-        <item>
+          <description>A local interface.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_NETMGMT</b>
-                </description>
-              </item>
-              <item>
-                <description>3</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>3</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A static route. This value is used to identify route information for IP  routing set through network management such as the Dynamic Host Configuration Protocol (DCHP), the Simple Network Management Protocol (SNMP), or by calls to the <see cref="CreateIpForwardEntry" />,  <see cref="DeleteIpForwardEntry" />, or <see cref="SetIpForwardEntry" /> functions.</para>
-          </description>
-        </item>
-        <item>
+          <description>A static route. This value is used to identify route information for IP routing set through network management such as the Dynamic Host Configuration Protocol (DCHP), the Simple Network Management Protocol (SNMP), or by calls to the <see cref="CreateIpForwardEntry" />, <see cref="DeleteIpForwardEntry" />, or <see cref="SetIpForwardEntry" /> functions.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_ICMP</b>
-                </description>
-              </item>
-              <item>
-                <description>4</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>4</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The result of ICMP redirect.</para>
-          </description>
-        </item>
-        <item>
+          <description>The result of ICMP redirect.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_EGP</b>
-                </description>
-              </item>
-              <item>
-                <description>5</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>5</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Exterior Gateway Protocol (EGP), a dynamic routing protocol.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Exterior Gateway Protocol (EGP), a dynamic routing protocol.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_GGP</b>
-                </description>
-              </item>
-              <item>
-                <description>6</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>6</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Gateway-to-Gateway Protocol (GGP), a dynamic routing protocol.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Gateway-to-Gateway Protocol (GGP), a dynamic routing protocol.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_HELLO</b>
-                </description>
-              </item>
-              <item>
-                <description>7</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>7</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Hellospeak protocol, a dynamic routing protocol. This is a historical entry no longer in use and was an early routing protocol used by the original ARPANET routers that ran special software called the Fuzzball routing protocol, sometimes called Hellospeak, as described in
-RFC 891 and RFC 1305. For more information, see <a href="https://www.ietf.org/rfc/rfc891.txt">http://www.ietf.org/rfc/rfc891.txt</a> and <a href="http://tools.ietf.org/html/rfc1305">http://www.ietf.org/rfc/rfc1305.txt</a>.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Hellospeak protocol, a dynamic routing protocol. This is a historical entry no longer in use and was an early routing protocol used by the original ARPANET routers that ran special software called the Fuzzball routing protocol, sometimes called Hellospeak, as described in RFC 891 and RFC 1305. For more information, see <a href="https://www.ietf.org/rfc/rfc891.txt">http://www.ietf.org/rfc/rfc891.txt</a> and <a href="http://tools.ietf.org/html/rfc1305">http://www.ietf.org/rfc/rfc1305.txt</a>.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_RIP</b>
-                </description>
-              </item>
-              <item>
-                <description>8</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>8</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Berkeley Routing Information Protocol (RIP) or RIP-II, a dynamic routing protocol.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Berkeley Routing Information Protocol (RIP) or RIP-II, a dynamic routing protocol.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_IS_IS</b>
-                </description>
-              </item>
-              <item>
-                <description>9</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>9</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Intermediate System-to-Intermediate System (IS-IS) protocol, a dynamic routing protocol. The IS-IS protocol was developed for use in  the Open Systems Interconnection (OSI) protocol suite.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Intermediate System-to-Intermediate System (IS-IS) protocol, a dynamic routing protocol. The IS-IS protocol was developed for use in the Open Systems Interconnection (OSI) protocol suite.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_ES_IS</b>
-                </description>
-              </item>
-              <item>
-                <description>10</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The End System-to-Intermediate System (ES-IS) protocol, a dynamic routing protocol. The ES-IS protocol was developed for use in  the Open Systems Interconnection (OSI) protocol suite.</para>
-          </description>
-        </item>
-        <item>
+          <description>The End System-to-Intermediate System (ES-IS) protocol, a dynamic routing protocol. The ES-IS protocol was developed for use in the Open Systems Interconnection (OSI) protocol suite.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_CISCO</b>
-                </description>
-              </item>
-              <item>
-                <description>11</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>11</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Cisco Interior Gateway Routing Protocol (IGRP), a dynamic routing protocol.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Cisco Interior Gateway Routing Protocol (IGRP), a dynamic routing protocol.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_BBN</b>
-                </description>
-              </item>
-              <item>
-                <description>12</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>12</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Bolt, Beranek, and Newman (BBN) Interior Gateway Protocol (IGP) that used the Shortest Path First (SPF) algorithm. This was an early dynamic routing protocol.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Bolt, Beranek, and Newman (BBN) Interior Gateway Protocol (IGP) that used the Shortest Path First (SPF) algorithm. This was an early dynamic routing protocol.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_OSPF</b>
-                </description>
-              </item>
-              <item>
-                <description>13</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>13</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Open Shortest Path First (OSPF) protocol, a dynamic routing protocol.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Open Shortest Path First (OSPF) protocol, a dynamic routing protocol.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_BGP</b>
-                </description>
-              </item>
-              <item>
-                <description>14</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>14</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The Border Gateway Protocol (BGP), a dynamic routing protocol.</para>
-          </description>
-        </item>
-        <item>
+          <description>The Border Gateway Protocol (BGP), a dynamic routing protocol.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_NT_AUTOSTATIC</b>
-                </description>
-              </item>
-              <item>
-                <description>10002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Windows specific entry added originally by a routing protocol, but which is now static.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Windows specific entry added originally by a routing protocol, but which is now static.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_NT_STATIC</b>
-                </description>
-              </item>
-              <item>
-                <description>10006</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10006</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Windows specific entry added as a static route from the routing user interface or a routing command.</para>
-          </description>
-        </item>
-        <item>
+          <description>A Windows specific entry added as a static route from the routing user interface or a routing command.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>MIB_IPPROTO_NT_STATIC_NON_DOD</b>
-                </description>
-              </item>
-              <item>
-                <description>10007</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>10007</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>A Windows specific entry added as a static route from the routing user interface or a routing command, except these routes do not cause Dial On Demand (DOD).</para>
-          </description>
-        </item>
+          <description>A Windows specific entry added as a static route from the routing user interface or a routing command, except these routes do not cause Dial On Demand (DOD).</description>
+        </listheader>
       </list>
     </summary>
   </member>
-  <member name="MIB_IPFORWARDROW.ForwardProto">
-    <summary></summary>
-  </member>
+  <member name="MIB_IPFORWARDROW.ForwardProto"></member>
   <member name="MIB_IPFORWARDROW.dwForwardAge">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The number of seconds  since  the  route  was
-added or modified in the network routing table.</para>
-    </summary>
+    <summary>The number of seconds since the route was added or modified in the network routing table.</summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardNextHopAS">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The autonomous system number of the next hop. When  this  member is  unknown  or not relevant to the
-protocol or routing mechanism specified in <b>dwForwardProto</b>, this value  should be set to zero. This value is documented in
-RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></para>
-    </summary>
+    <summary>The autonomous system number of the next hop. When this member is unknown or not relevant to the protocol or routing mechanism specified in <b>dwForwardProto</b>, this value should be set to zero. This value is documented in RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardMetric1">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>The primary routing metric value for this route. The  semantics of this metric are determined by
-the routing protocol specified in  the  <b>dwForwardProto</b>  member. If  this metric is not
-used, its value should be set to -1. This value is documented in
-in
-RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></para>
-    </summary>
+    <summary>The primary routing metric value for this route. The semantics of this metric are determined by the routing protocol specified in the <b>dwForwardProto</b> member. If this metric is not used, its value should be set to -1. This value is documented in in RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardMetric2">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>An alternate  routing metric value for this route. The  semantics of this metric are determined by
-the routing protocol specified in  the  <b>dwForwardProto</b>  member. If  this metric is not
-used, its value should be set to -1. This value is documented in
-RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></para>
-    </summary>
+    <summary>An alternate routing metric value for this route. The semantics of this metric are determined by the routing protocol specified in the <b>dwForwardProto</b> member. If this metric is not used, its value should be set to -1. This value is documented in RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardMetric3">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>An alternate  routing metric value for this route. The  semantics of this metric are determined by
-the routing protocol specified in  the  <b>dwForwardProto</b>  member. If  this metric is not
-used, its value should be set to -1. This value is documented in
-RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></para>
-    </summary>
+    <summary>An alternate routing metric value for this route. The semantics of this metric are determined by the routing protocol specified in the <b>dwForwardProto</b> member. If this metric is not used, its value should be set to -1. This value is documented in RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardMetric4">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>An alternate  routing metric value for this route. The  semantics of this metric are determined by
-the routing protocol specified in  the  <b>dwForwardProto</b>  member. If  this metric is not
-used, its value should be set to -1. This value is documented in
-RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></para>
-    </summary>
+    <summary>An alternate routing metric value for this route. The semantics of this metric are determined by the routing protocol specified in the <b>dwForwardProto</b> member. If this metric is not used, its value should be set to -1. This value is documented in RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></summary>
   </member>
   <member name="MIB_IPFORWARDROW.dwForwardMetric5">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>An alternate  routing metric value for this route. The  semantics of this metric are determined by
-the routing protocol specified in  the  <b>dwForwardProto</b>  member. If  this metric is not
-used, its value should be set to -1. This value is documented in
-RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></para>
-    </summary>
+    <summary>An alternate routing metric value for this route. The semantics of this metric are determined by the routing protocol specified in the <b>dwForwardProto</b> member. If this metric is not used, its value should be set to -1. This value is documented in RFC 1354. For more information, see <a href="https://www.ietf.org/rfc/rfc1354.txt">http://www.ietf.org/rfc/rfc1354.txt</a></summary>
   </member>
 </doc>

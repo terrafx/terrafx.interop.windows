@@ -21,32 +21,4 @@ public static unsafe partial class IMFSampleAllocatorControlTests
     {
         Assert.That(typeof(IMFSampleAllocatorControl).GUID, Is.EqualTo(IID_IMFSampleAllocatorControl));
     }
-
-    /// <summary>Validates that the <see cref="IMFSampleAllocatorControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFSampleAllocatorControl>(), Is.EqualTo(sizeof(IMFSampleAllocatorControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFSampleAllocatorControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFSampleAllocatorControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFSampleAllocatorControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFSampleAllocatorControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFSampleAllocatorControl), Is.EqualTo(4));
-        }
-    }
 }

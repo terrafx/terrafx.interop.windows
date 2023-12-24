@@ -3,69 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IEnumFullIDList.Clone">
-    <summary>
-      <para>Creates a new item enumeration object with the same contents and state as the current one.</para>
-    </summary>
-    <param name="ppenum">
-      <para>Type: <b><see cref="IEnumFullIDList" />**</b></para>
-      <para>On success, contains the address of an <see cref="IEnumFullIDList" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a new item enumeration object with the same contents and state as the current one.</summary>
+    <param name="ppenum">On success, contains the address of an <see cref="IEnumFullIDList" /> interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumFullIDList.Next">
-    <summary>
-      <para>Retrieves a specified number of IDLIST_ABSOLUTE items.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of items referenced in the array referenced by the <i>rgelt</i> parameter.</para>
-    </param>
-    <param name="rgelt">
-      <para>Type: <b>PIDLIST_ABSOLUTE*</b></para>
-      <para>On success, contains a PIDL array. The implementation must allocate these item identifiers using <see cref="CoTaskMemAlloc" />. The calling application is responsible for freeing the item identifiers using <see cref="CoTaskMemFree" />.</para>
-    </param>
-    <param name="pceltFetched">
-      <para>Type: <b>ULONG*</b></para>
-      <para>On success, contains a pointer to a value that receives a count of the absolute item identifiers actually returned in <i>rgelt</i>. The count can be smaller than the value specified in the <i>celt</i> parameter. This parameter can be <b>NULL</b> on entry only if <i>celt</i> is 1, because in that case the method can only retrieve one (S_OK) or zero (S_FALSE) items.</para>
-    </param>
+    <summary>Retrieves a specified number of IDLIST_ABSOLUTE items.</summary>
+    <param name="celt">The number of items referenced in the array referenced by the <i>rgelt</i> parameter.</param>
+    <param name="rgelt">On success, contains a PIDL array. The implementation must allocate these item identifiers using <see cref="CoTaskMemAlloc" />. The calling application is responsible for freeing the item identifiers using <see cref="CoTaskMemFree" />.</param>
+    <param name="pceltFetched">On success, contains a pointer to a value that receives a count of the absolute item identifiers actually returned in <i>rgelt</i>. The count can be smaller than the value specified in the <i>celt</i> parameter. This parameter can be <b>NULL</b> on entry only if <i>celt</i> is 1, because in that case the method can only retrieve one (S_OK) or zero (S_FALSE) items.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if the method successfully retrieved the requested <i>celt</i> elements. This method only returns S_OK if the full count of requested items are successfully retrieved.</para>
       <para>S_FALSE indicates that more items were requested than remained in the enumeration. The value pointed to by the <i>pceltFetched</i> parameter specifies the actual number of items retrieved. Note that the value will be 0 if there are no more items to retrieve.</para>
       <para>Returns a COM-defined error value otherwise.</para>
     </returns>
   </member>
   <member name="IEnumFullIDList.Reset">
-    <summary>
-      <para>Returns the enumerator to the beginning of the enumeration sequence.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Returns the enumerator to the beginning of the enumeration sequence.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumFullIDList.Skip">
-    <summary>
-      <para>Skips a specified number of IDLIST_ABSOLUTE  items.</para>
-    </summary>
-    <param name="celt">
-      <para>Type: <b>ULONG</b></para>
-      <para>The number of items to skip.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The enumeration index is advanced by the number of items skipped.</para>
-    </remarks>
+    <summary>Skips a specified number of IDLIST_ABSOLUTE items.</summary>
+    <param name="celt">The number of items to skip.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IEnumFullIDList">
-    <summary>
-      <para>Exposes a standard set of methods that enumerate the pointers to item identifier lists (PIDLs) of the items in a Shell folder.</para>
-    </summary>
+    <summary>Exposes a standard set of methods that enumerate the pointers to item identifier lists (PIDLs) of the items in a Shell folder.</summary>
   </member>
 </doc>

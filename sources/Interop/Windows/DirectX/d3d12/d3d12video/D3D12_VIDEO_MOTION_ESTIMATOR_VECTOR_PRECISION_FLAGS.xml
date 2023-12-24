@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_FLAGS">
+    <summary>Specifies the motion estimation vector precision that a video encoder supports.</summary>
+  </member>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_FLAGS.D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_FLAG_NONE">
+    <summary>Vector precision is not supported by the encoder.</summary>
+  </member>
+  <member name="D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_FLAGS.D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_FLAG_QUARTER_PEL">
+    <summary>The vector precision is quarter-pixel motion.</summary>
+  </member>
+</doc>

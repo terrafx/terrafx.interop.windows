@@ -3,107 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="AUDIO_STREAM_CATEGORY">
-    <summary>
-      <para>Specifies the category of an audio stream.</para>
-    </summary>
-    <remarks>
-      <para>Note that only a subset of the audio stream categories are valid for certain stream types.</para>
-      <list type="table">
-        <listheader>
-          <description>Stream type</description>
-          <description>Valid categories</description>
-        </listheader>
-        <item>
-          <description>Render stream</description>
-          <description>All categories are valid.</description>
-        </item>
-        <item>
-          <description>Capture stream</description>
-          <description>AudioCategory_Communications, AudioCategory_Speech, AudioCategory_Other</description>
-        </item>
-        <item>
-          <description>Loopback stream</description>
-          <description>AudioCategory_Other</description>
-        </item>
-      </list>
-      <para>Games should categorize their music streams as <b>AudioCategory_GameMedia</b> so that game music mutes automatically if another application plays music in the background. Music or video applications should categorize their streams as <b>AudioCategory_Media</b> or <b>AudioCategory_Movie</b> so they will take priority over <b>AudioCategory_GameMedia</b> streams. Game audio for in-game cinematics or cutscenes, when the audio is premixed or for creative reasons should take priority over background audio, should also be categorized as <b>Media</b> or <b>Movie</b>.</para>
-      <para>The values <b>AudioCategory_ForegroundOnlyMedia</b> and <b>AudioCategory_BackgroundCapableMedia</b> are deprecated. For Windows Store apps, these values will continue to function the same when running on Windows 10 as they did on Windows 8.1. Attempting to use these values in a Universal Windows Platform (UWP) app, will result in compilation errors and an exception at runtime. Using these values in a Windows desktop application built with the Windows 10   SDK the  will result in a compilation error.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-enumerations">Core Audio Enumerations</seealso>
+    <summary>Specifies the category of an audio stream.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_Other">
-    <summary>
-      <para>Other audio stream.</para>
-    </summary>
+    <summary>Other audio stream.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_ForegroundOnlyMedia">
-    <summary>
-      <para>Media that will only stream when the app is in the foreground. This enumeration value has been deprecated. For more information, see the Remarks section.</para>
-    </summary>
+    <summary>Media that will only stream when the app is in the foreground. This enumeration value has been deprecated. For more information, see the Remarks section.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_BackgroundCapableMedia">
-    <summary>
-      <para>Media that can be streamed when the app is in the background. This enumeration value has been deprecated. For more information, see the Remarks section.</para>
-    </summary>
+    <summary>Media that can be streamed when the app is in the background. This enumeration value has been deprecated. For more information, see the Remarks section.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_Communications">
-    <summary>
-      <para>Real-time communications, such as VOIP or chat.</para>
-    </summary>
+    <summary>Real-time communications, such as VOIP or chat.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_Alerts">
-    <summary>
-      <para>Alert sounds.</para>
-    </summary>
+    <summary>Alert sounds.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_SoundEffects">
-    <summary>
-      <para>Sound effects.</para>
-    </summary>
+    <summary>Sound effects.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_GameEffects">
-    <summary>
-      <para>Game sound effects.</para>
-    </summary>
+    <summary>Game sound effects.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_GameMedia">
-    <summary>
-      <para>Background audio for games.</para>
-    </summary>
+    <summary>Background audio for games.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_GameChat">
-    <summary>
-      <para>Game chat audio. Similar to <b>AudioCategory_Communications</b> except that <b>AudioCategory_GameChat</b> will not attenuate other streams.</para>
-    </summary>
+    <summary>Game chat audio. Similar to <b>AudioCategory_Communications</b> except that <b>AudioCategory_GameChat</b> will not attenuate other streams.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_Speech">
-    <summary>
-      <para>Speech.</para>
-    </summary>
+    <summary>Speech.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_Movie">
-    <summary>
-      <para>Stream that includes audio with dialog.</para>
-    </summary>
+    <summary>Stream that includes audio with dialog.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_Media">
-    <summary>
-      <para>Stream that includes audio without dialog.</para>
-    </summary>
+    <summary>Stream that includes audio without dialog.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_FarFieldSpeech">
-    <summary>
-      <para>Media is audio captured with the intent of capturing voice sources located in the ‘far field’. (Far away from the microphone.)</para>
-    </summary>
+    <summary>Media is audio captured with the intent of capturing voice sources located in the ‘far field’. (Far away from the microphone.)</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_UniformSpeech">
-    <summary>
-      <para>Media is captured audio that requires consistent speech processing for the captured audio stream across all Windows devices. Used by applications that process speech data using machine learning algorithms.</para>
-    </summary>
+    <summary>Media is captured audio that requires consistent speech processing for the captured audio stream across all Windows devices. Used by applications that process speech data using machine learning algorithms.</summary>
   </member>
   <member name="AUDIO_STREAM_CATEGORY.AudioCategory_VoiceTyping">
-    <summary>
-      <para>Media is audio captured with the intent of enabling dictation or typing by voice.</para>
-    </summary>
+    <summary>Media is audio captured with the intent of enabling dictation or typing by voice.</summary>
   </member>
 </doc>

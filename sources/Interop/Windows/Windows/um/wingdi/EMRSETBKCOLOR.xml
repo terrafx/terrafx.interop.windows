@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRSETBKCOLOR">
-    <summary>
-      <para>The <b>EMRSETBKCOLOR</b> and <b>EMRSETTEXTCOLOR</b> structures contain members for the <b>SetBkColor</b> and <b>SetTextColor</b> enhanced metafile records.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
-    <seealso cref="RGB" />
+    <summary>The <b>EMRSETBKCOLOR</b> and <b>EMRSETTEXTCOLOR</b> structures contain members for the <b>SetBkColor</b> and <b>SetTextColor</b> enhanced metafile records.</summary>
   </member>
   <member name="EMRSETBKCOLOR.emr">
-    <summary>
-      <para>Base structure for all record types.</para>
-    </summary>
+    <summary>Base structure for all record types.</summary>
   </member>
   <member name="EMRSETBKCOLOR.crColor">
-    <summary>
-      <para>Color value. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</para>
-    </summary>
+    <summary>Color value. To make a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> value, use the <see cref="RGB" /> macro.</summary>
   </member>
 </doc>

@@ -3,41 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFMediaEngineWebSupport.ConnectWebAudio">
-    <summary>
-      <para>Connects web audio to Media Engine using the specified sample rate.</para>
-    </summary>
-    <param name="dwSampleRate">
-      <para>The sample rate of the web audio.</para>
-    </param>
-    <param name="ppSourceProvider">
-      <para>The sample rate of the web audio.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK on successful completion.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineWebSupport" />
+    <summary>Connects web audio to Media Engine using the specified sample rate.</summary>
+    <param name="dwSampleRate">The sample rate of the web audio.</param>
+    <param name="ppSourceProvider">The sample rate of the web audio.</param>
+    <returns>Returns S_OK on successful completion.</returns>
   </member>
   <member name="IMFMediaEngineWebSupport.DisconnectWebAudio">
-    <summary>
-      <para>Disconnects web audio from the Media Engine</para>
-    </summary>
-    <returns>
-      <para>Returns S_OK on successful completion.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineWebSupport" />
+    <summary>Disconnects web audio from the Media Engine</summary>
+    <returns>Returns S_OK on successful completion.</returns>
   </member>
   <member name="IMFMediaEngineWebSupport.ShouldDelayTheLoadEvent">
-    <summary>
-      <para>Gets a value indicating if the connecting to Web audio should delay the page's load event.</para>
-    </summary>
-    <returns>
-      <para>True if connection to Web audio should delay the page's load event; otherwise, false.</para>
-    </returns>
-    <seealso cref="IMFMediaEngineWebSupport" />
+    <summary>Gets a value indicating if the connecting to Web audio should delay the page's load event.</summary>
+    <returns>True if connection to Web audio should delay the page's load event; otherwise, false.</returns>
   </member>
   <member name="IMFMediaEngineWebSupport">
-    <summary>
-      <para>Enables playback of web audio.</para>
-    </summary>
+    <summary>Enables playback of web audio.</summary>
   </member>
 </doc>

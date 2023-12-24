@@ -19,32 +19,4 @@ public static unsafe partial class ILockBytesTests
     {
         Assert.That(typeof(ILockBytes).GUID, Is.EqualTo(IID_ILockBytes));
     }
-
-    /// <summary>Validates that the <see cref="ILockBytes" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ILockBytes>(), Is.EqualTo(sizeof(ILockBytes)));
-    }
-
-    /// <summary>Validates that the <see cref="ILockBytes" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ILockBytes).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ILockBytes" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ILockBytes), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ILockBytes), Is.EqualTo(4));
-        }
-    }
 }

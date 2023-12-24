@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLEditDesigner*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditDesigner*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLEditDesigner*, uint>)(lpVtbl[1]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditDesigner*, uint>)(lpVtbl[1]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLEditDesigner*, uint>)(lpVtbl[2]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditDesigner*, uint>)(lpVtbl[2]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner.PreHandleEvent"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface, IN
     [VtblIndex(3)]
     public HRESULT PreHandleEvent([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj)
     {
-        return ((delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[3]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[3]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
     }
 
     /// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner.PostHandleEvent"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface, IN
     [VtblIndex(4)]
     public HRESULT PostHandleEvent([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj)
     {
-        return ((delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[4]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[4]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
     }
 
     /// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner.TranslateAcceleratorW"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface, IN
     [VtblIndex(5)]
     public HRESULT TranslateAcceleratorW([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj)
     {
-        return ((delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[5]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[5]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
     }
 
     /// <include file='IHTMLEditDesigner.xml' path='doc/member[@name="IHTMLEditDesigner.PostEditorEventNotify"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface, IN
     [VtblIndex(6)]
     public HRESULT PostEditorEventNotify([NativeTypeName("DISPID")] int inEvtDispId, IHTMLEventObj* pIEventObj)
     {
-        return ((delegate* unmanaged<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[6]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLEditDesigner*, int, IHTMLEventObj*, int>)(lpVtbl[6]))((IHTMLEditDesigner*)Unsafe.AsPointer(ref this), inEvtDispId, pIEventObj);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IHTMLEditDesigner : IHTMLEditDesigner.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> PreHandleEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IHTMLEventObj*, int> PreHandleEvent;
 
         [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> PostHandleEvent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IHTMLEventObj*, int> PostHandleEvent;
 
         [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> TranslateAcceleratorW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IHTMLEventObj*, int> TranslateAcceleratorW;
 
         [NativeTypeName("HRESULT (DISPID, IHTMLEventObj *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IHTMLEventObj*, int> PostEditorEventNotify;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IHTMLEventObj*, int> PostEditorEventNotify;
     }
 }

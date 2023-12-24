@@ -19,25 +19,4 @@ public static unsafe partial class EnumFsiItemsTests
     {
         Assert.That(typeof(EnumFsiItems).GUID, Is.EqualTo(CLSID_EnumFsiItems));
     }
-
-    /// <summary>Validates that the <see cref="EnumFsiItems" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<EnumFsiItems>(), Is.EqualTo(sizeof(EnumFsiItems)));
-    }
-
-    /// <summary>Validates that the <see cref="EnumFsiItems" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(EnumFsiItems).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="EnumFsiItems" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(EnumFsiItems), Is.EqualTo(1));
-    }
 }

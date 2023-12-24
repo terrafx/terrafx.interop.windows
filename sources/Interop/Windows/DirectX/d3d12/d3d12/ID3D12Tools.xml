@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Tools.EnableShaderInstrumentation">
+    <summary>This method enables tools such as PIX to instrument shaders.</summary>
+    <param name="bEnable">TRUE to enable shader instrumentation; otherwise, FALSE.</param>
+  </member>
+  <member name="ID3D12Tools.ShaderInstrumentationEnabled">
+    <summary>Determines whether shader instrumentation is enabled.</summary>
+    <returns>Returns TRUE if shader instrumentation is enabled; otherwise FALSE.</returns>
+  </member>
+  <member name="ID3D12Tools">
+    <summary>This interface is used to configure the runtime for tools such as PIX. Its not intended or supported for any other scenario.</summary>
+  </member>
+</doc>

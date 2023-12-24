@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_GAMMA.xml' path='doc/member[@name="D2D1_GAMMA"]/*' />
-public enum D2D1_GAMMA : uint
+public enum D2D1_GAMMA
 {
     /// <include file='D2D1_GAMMA.xml' path='doc/member[@name="D2D1_GAMMA.D2D1_GAMMA_2_2"]/*' />
     D2D1_GAMMA_2_2 = 0,
@@ -15,5 +15,5 @@ public enum D2D1_GAMMA : uint
     D2D1_GAMMA_1_0 = 1,
 
     /// <include file='D2D1_GAMMA.xml' path='doc/member[@name="D2D1_GAMMA.D2D1_GAMMA_FORCE_DWORD"]/*' />
-    D2D1_GAMMA_FORCE_DWORD = 0xffffffff,
+    D2D1_GAMMA_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

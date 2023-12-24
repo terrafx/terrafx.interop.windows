@@ -17,7 +17,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetAddConnectionW([NativeTypeName("LPCWSTR")] ushort* lpRemoteName, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpLocalName);
+    public static extern uint WNetAddConnectionW([NativeTypeName("LPCWSTR")] char* lpRemoteName, [NativeTypeName("LPCWSTR")] char* lpPassword, [NativeTypeName("LPCWSTR")] char* lpLocalName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection2A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -27,7 +27,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection2W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetAddConnection2W([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern uint WNetAddConnection2W([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] char* lpPassword, [NativeTypeName("LPCWSTR")] char* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection3A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -37,7 +37,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection3W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetAddConnection3W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
+    public static extern uint WNetAddConnection3W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] char* lpPassword, [NativeTypeName("LPCWSTR")] char* lpUserName, [NativeTypeName("DWORD")] uint dwFlags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetAddConnection4A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -57,7 +57,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetCancelConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetCancelConnectionW([NativeTypeName("LPCWSTR")] ushort* lpName, BOOL fForce);
+    public static extern uint WNetCancelConnectionW([NativeTypeName("LPCWSTR")] char* lpName, BOOL fForce);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetCancelConnection2A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -67,7 +67,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetCancelConnection2W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetCancelConnection2W([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("DWORD")] uint dwFlags, BOOL fForce);
+    public static extern uint WNetCancelConnection2W([NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("DWORD")] uint dwFlags, BOOL fForce);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetConnectionA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -77,12 +77,12 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetGetConnectionW([NativeTypeName("LPCWSTR")] ushort* lpLocalName, [NativeTypeName("LPWSTR")] ushort* lpRemoteName, [NativeTypeName("LPDWORD")] uint* lpnLength);
+    public static extern uint WNetGetConnectionW([NativeTypeName("LPCWSTR")] char* lpLocalName, [NativeTypeName("LPWSTR")] char* lpRemoteName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetRestoreSingleConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetRestoreSingleConnectionW(HWND hwndParent, [NativeTypeName("LPCWSTR")] ushort* lpDevice, BOOL fUseUI);
+    public static extern uint WNetRestoreSingleConnectionW(HWND hwndParent, [NativeTypeName("LPCWSTR")] char* lpDevice, BOOL fUseUI);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetUseConnectionA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -92,7 +92,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetUseConnectionW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetUseConnectionW(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] ushort* lpPassword, [NativeTypeName("LPCWSTR")] ushort* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
+    public static extern uint WNetUseConnectionW(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPCWSTR")] char* lpPassword, [NativeTypeName("LPCWSTR")] char* lpUserId, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("LPWSTR")] char* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetUseConnection4A"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -102,7 +102,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetUseConnection4W"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetUseConnection4W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPWSTR")] ushort* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
+    public static extern uint WNetUseConnection4W(HWND hwndOwner, [NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("PVOID")] void* pAuthBuffer, [NativeTypeName("DWORD")] uint cbAuthBuffer, [NativeTypeName("DWORD")] uint dwFlags, [NativeTypeName("PBYTE")] byte* lpUseOptions, [NativeTypeName("DWORD")] uint cbUseOptions, [NativeTypeName("LPWSTR")] char* lpAccessName, [NativeTypeName("LPDWORD")] uint* lpBufferSize, [NativeTypeName("LPDWORD")] uint* lpResult);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetConnectionDialog"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -177,7 +177,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetResourceInformationW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetGetResourceInformationW([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer, [NativeTypeName("LPWSTR *")] ushort** lplpSystem);
+    public static extern uint WNetGetResourceInformationW([NativeTypeName("LPNETRESOURCEW")] NETRESOURCEW* lpNetResource, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpcbBuffer, [NativeTypeName("LPWSTR *")] char** lplpSystem);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetUniversalNameA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -187,7 +187,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetUniversalNameW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetGetUniversalNameW([NativeTypeName("LPCWSTR")] ushort* lpLocalPath, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
+    public static extern uint WNetGetUniversalNameW([NativeTypeName("LPCWSTR")] char* lpLocalPath, [NativeTypeName("DWORD")] uint dwInfoLevel, [NativeTypeName("LPVOID")] void* lpBuffer, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetUserA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -197,7 +197,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetUserW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetGetUserW([NativeTypeName("LPCWSTR")] ushort* lpName, [NativeTypeName("LPWSTR")] ushort* lpUserName, [NativeTypeName("LPDWORD")] uint* lpnLength);
+    public static extern uint WNetGetUserW([NativeTypeName("LPCWSTR")] char* lpName, [NativeTypeName("LPWSTR")] char* lpUserName, [NativeTypeName("LPDWORD")] uint* lpnLength);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetProviderNameA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -207,7 +207,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetProviderNameW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetGetProviderNameW([NativeTypeName("DWORD")] uint dwNetType, [NativeTypeName("LPWSTR")] ushort* lpProviderName, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
+    public static extern uint WNetGetProviderNameW([NativeTypeName("DWORD")] uint dwNetType, [NativeTypeName("LPWSTR")] char* lpProviderName, [NativeTypeName("LPDWORD")] uint* lpBufferSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetNetworkInformationA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -217,7 +217,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetNetworkInformationW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetGetNetworkInformationW([NativeTypeName("LPCWSTR")] ushort* lpProvider, [NativeTypeName("LPNETINFOSTRUCT")] NETINFOSTRUCT* lpNetInfoStruct);
+    public static extern uint WNetGetNetworkInformationW([NativeTypeName("LPCWSTR")] char* lpProvider, [NativeTypeName("LPNETINFOSTRUCT")] NETINFOSTRUCT* lpNetInfoStruct);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetLastErrorA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -227,7 +227,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.WNetGetLastErrorW"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
     [return: NativeTypeName("DWORD")]
-    public static extern uint WNetGetLastErrorW([NativeTypeName("LPDWORD")] uint* lpError, [NativeTypeName("LPWSTR")] ushort* lpErrorBuf, [NativeTypeName("DWORD")] uint nErrorBufSize, [NativeTypeName("LPWSTR")] ushort* lpNameBuf, [NativeTypeName("DWORD")] uint nNameBufSize);
+    public static extern uint WNetGetLastErrorW([NativeTypeName("LPDWORD")] uint* lpError, [NativeTypeName("LPWSTR")] char* lpErrorBuf, [NativeTypeName("DWORD")] uint nErrorBufSize, [NativeTypeName("LPWSTR")] char* lpNameBuf, [NativeTypeName("DWORD")] uint nNameBufSize);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.MultinetGetConnectionPerformanceA"]/*' />
     [DllImport("mpr", ExactSpelling = true)]
@@ -279,31 +279,31 @@ public static unsafe partial class Windows
     public const int NETPROPERTY_PERSISTENT = 1;
 
     [NativeTypeName("#define WNetAddConnection WNetAddConnectionW")]
-    public static delegate*<ushort*, ushort*, ushort*, uint> WNetAddConnection => &WNetAddConnectionW;
+    public static delegate*<char*, char*, char*, uint> WNetAddConnection => &WNetAddConnectionW;
 
     [NativeTypeName("#define WNetAddConnection2 WNetAddConnection2W")]
-    public static delegate*<NETRESOURCEW*, ushort*, ushort*, uint, uint> WNetAddConnection2 => &WNetAddConnection2W;
+    public static delegate*<NETRESOURCEW*, char*, char*, uint, uint> WNetAddConnection2 => &WNetAddConnection2W;
 
     [NativeTypeName("#define WNetAddConnection3 WNetAddConnection3W")]
-    public static delegate*<HWND, NETRESOURCEW*, ushort*, ushort*, uint, uint> WNetAddConnection3 => &WNetAddConnection3W;
+    public static delegate*<HWND, NETRESOURCEW*, char*, char*, uint, uint> WNetAddConnection3 => &WNetAddConnection3W;
 
     [NativeTypeName("#define WNetAddConnection4 WNetAddConnection4W")]
     public static delegate*<HWND, NETRESOURCEW*, void*, uint, uint, byte*, uint, uint> WNetAddConnection4 => &WNetAddConnection4W;
 
     [NativeTypeName("#define WNetCancelConnection WNetCancelConnectionW")]
-    public static delegate*<ushort*, BOOL, uint> WNetCancelConnection => &WNetCancelConnectionW;
+    public static delegate*<char*, BOOL, uint> WNetCancelConnection => &WNetCancelConnectionW;
 
     [NativeTypeName("#define WNetCancelConnection2 WNetCancelConnection2W")]
-    public static delegate*<ushort*, uint, BOOL, uint> WNetCancelConnection2 => &WNetCancelConnection2W;
+    public static delegate*<char*, uint, BOOL, uint> WNetCancelConnection2 => &WNetCancelConnection2W;
 
     [NativeTypeName("#define WNetGetConnection WNetGetConnectionW")]
-    public static delegate*<ushort*, ushort*, uint*, uint> WNetGetConnection => &WNetGetConnectionW;
+    public static delegate*<char*, char*, uint*, uint> WNetGetConnection => &WNetGetConnectionW;
 
     [NativeTypeName("#define WNetUseConnection WNetUseConnectionW")]
-    public static delegate*<HWND, NETRESOURCEW*, ushort*, ushort*, uint, ushort*, uint*, uint*, uint> WNetUseConnection => &WNetUseConnectionW;
+    public static delegate*<HWND, NETRESOURCEW*, char*, char*, uint, char*, uint*, uint*, uint> WNetUseConnection => &WNetUseConnectionW;
 
     [NativeTypeName("#define WNetUseConnection4 WNetUseConnection4W")]
-    public static delegate*<HWND, NETRESOURCEW*, void*, uint, uint, byte*, uint, ushort*, uint*, uint*, uint> WNetUseConnection4 => &WNetUseConnection4W;
+    public static delegate*<HWND, NETRESOURCEW*, void*, uint, uint, byte*, uint, char*, uint*, uint*, uint> WNetUseConnection4 => &WNetUseConnection4W;
 
     [NativeTypeName("#define CONNDLG_RO_PATH 0x00000001")]
     public const int CONNDLG_RO_PATH = 0x00000001;
@@ -345,7 +345,7 @@ public static unsafe partial class Windows
     public static delegate*<NETRESOURCEW*, void*, uint*, uint> WNetGetResourceParent => &WNetGetResourceParentW;
 
     [NativeTypeName("#define WNetGetResourceInformation WNetGetResourceInformationW")]
-    public static delegate*<NETRESOURCEW*, void*, uint*, ushort**, uint> WNetGetResourceInformation => &WNetGetResourceInformationW;
+    public static delegate*<NETRESOURCEW*, void*, uint*, char**, uint> WNetGetResourceInformation => &WNetGetResourceInformationW;
 
     [NativeTypeName("#define UNIVERSAL_NAME_INFO_LEVEL 0x00000001")]
     public const int UNIVERSAL_NAME_INFO_LEVEL = 0x00000001;
@@ -354,10 +354,10 @@ public static unsafe partial class Windows
     public const int REMOTE_NAME_INFO_LEVEL = 0x00000002;
 
     [NativeTypeName("#define WNetGetUniversalName WNetGetUniversalNameW")]
-    public static delegate*<ushort*, uint, void*, uint*, uint> WNetGetUniversalName => &WNetGetUniversalNameW;
+    public static delegate*<char*, uint, void*, uint*, uint> WNetGetUniversalName => &WNetGetUniversalNameW;
 
     [NativeTypeName("#define WNetGetUser WNetGetUserW")]
-    public static delegate*<ushort*, ushort*, uint*, uint> WNetGetUser => &WNetGetUserW;
+    public static delegate*<char*, char*, uint*, uint> WNetGetUser => &WNetGetUserW;
 
     [NativeTypeName("#define WNFMT_MULTILINE 0x01")]
     public const int WNFMT_MULTILINE = 0x01;
@@ -372,7 +372,7 @@ public static unsafe partial class Windows
     public const int WNFMT_CONNECTION = 0x20;
 
     [NativeTypeName("#define WNetGetProviderName WNetGetProviderNameW")]
-    public static delegate*<uint, ushort*, uint*, uint> WNetGetProviderName => &WNetGetProviderNameW;
+    public static delegate*<uint, char*, uint*, uint> WNetGetProviderName => &WNetGetProviderNameW;
 
     [NativeTypeName("#define NETINFO_DLL16 0x00000001")]
     public const int NETINFO_DLL16 = 0x00000001;
@@ -384,10 +384,10 @@ public static unsafe partial class Windows
     public const int NETINFO_PRINTERRED = 0x00000008;
 
     [NativeTypeName("#define WNetGetNetworkInformation WNetGetNetworkInformationW")]
-    public static delegate*<ushort*, NETINFOSTRUCT*, uint> WNetGetNetworkInformation => &WNetGetNetworkInformationW;
+    public static delegate*<char*, NETINFOSTRUCT*, uint> WNetGetNetworkInformation => &WNetGetNetworkInformationW;
 
     [NativeTypeName("#define WNetGetLastError WNetGetLastErrorW")]
-    public static delegate*<uint*, ushort*, uint, ushort*, uint, uint> WNetGetLastError => &WNetGetLastErrorW;
+    public static delegate*<uint*, char*, uint, char*, uint, uint> WNetGetLastError => &WNetGetLastErrorW;
 
     [NativeTypeName("#define WNCON_FORNETCARD 0x00000001")]
     public const int WNCON_FORNETCARD = 0x00000001;

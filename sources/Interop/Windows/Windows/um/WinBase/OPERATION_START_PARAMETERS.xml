@@ -3,47 +3,36 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="OPERATION_START_PARAMETERS">
-    <summary>
-      <para>This structure is used by the <see cref="OperationStart" /> function.</para>
-    </summary>
-    <seealso cref="OPERATION_END_PARAMETERS" />
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/oprec/operation-id">OPERATION_ID</seealso>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/oprec/-operation-portal">Operation Recorder</seealso>
-    <seealso cref="OperationEnd " />
-    <seealso cref="OperationStart" />
+    <summary>This structure is used by the <see cref="OperationStart" /> function.</summary>
   </member>
   <member name="OPERATION_START_PARAMETERS.Version">
     <summary>
-      <para>This parameter should be initialized to the  <b>OPERATION_API_VERSION</b> value defined in the Windows SDK.</para>
+      <para>This parameter should be initialized to the <b>OPERATION_API_VERSION</b> value defined in the Windows SDK.</para>
       <list type="table">
         <listheader>
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>OPERATION_API_VERSION</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>This API was introduced in Windows 8 and Windows Server 2012 as version 1.</para>
-          </description>
-        </item>
+          <description>This API was introduced in Windows 8 and Windows Server 2012 as version 1.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="OPERATION_START_PARAMETERS.OperationId">
-    <summary>
-      <para>Each operation has an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/oprec/operation-id">OPERATION_ID</a> namespace that is unique for each process. If two applications both use the same <b>OPERATION_ID</b> value to identify two operations, the system maintains separate contexts for each operation.</para>
-    </summary>
+    <summary>Each operation has an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/oprec/operation-id">OPERATION_ID</a> namespace that is unique for each process. If two applications both use the same <b>OPERATION_ID</b> value to identify two operations, the system maintains separate contexts for each operation.</summary>
   </member>
   <member name="OPERATION_START_PARAMETERS.Flags">
     <summary>
@@ -53,23 +42,21 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>OPERATION_START_TRACE_CURRENT_THREAD</b>
-                </description>
-              </item>
-              <item>
-                <description>1</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>1</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Specifies that the system should only track the activities of the calling thread in a multi-threaded application. Specify this flag when the operation is performed on a single thread to isolate its activity from other threads in the process.</para>
-          </description>
-        </item>
+          <description>Specifies that the system should only track the activities of the calling thread in a multi-threaded application. Specify this flag when the operation is performed on a single thread to isolate its activity from other threads in the process.</description>
+        </listheader>
       </list>
     </summary>
   </member>

@@ -19,32 +19,4 @@ public static unsafe partial class IDCompositionTableTransferEffectTests
     {
         Assert.That(typeof(IDCompositionTableTransferEffect).GUID, Is.EqualTo(IID_IDCompositionTableTransferEffect));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionTableTransferEffect" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionTableTransferEffect>(), Is.EqualTo(sizeof(IDCompositionTableTransferEffect)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionTableTransferEffect" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionTableTransferEffect).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionTableTransferEffect" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionTableTransferEffect), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionTableTransferEffect), Is.EqualTo(4));
-        }
-    }
 }

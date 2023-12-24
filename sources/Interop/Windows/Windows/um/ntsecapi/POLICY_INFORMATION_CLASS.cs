@@ -53,6 +53,9 @@ public enum POLICY_INFORMATION_CLASS
     /// <include file='POLICY_INFORMATION_CLASS.xml' path='doc/member[@name="POLICY_INFORMATION_CLASS.PolicyMachineAccountInformation"]/*' />
     PolicyMachineAccountInformation,
 
+    /// <include file='POLICY_INFORMATION_CLASS.xml' path='doc/member[@name="POLICY_INFORMATION_CLASS.PolicyMachineAccountInformation2"]/*' />
+    PolicyMachineAccountInformation2,
+
     /// <include file='POLICY_INFORMATION_CLASS.xml' path='doc/member[@name="POLICY_INFORMATION_CLASS.PolicyLastEntry"]/*' />
     PolicyLastEntry,
 }

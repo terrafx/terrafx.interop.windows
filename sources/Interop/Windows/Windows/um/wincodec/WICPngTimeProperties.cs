@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICPngTimeProperties.xml' path='doc/member[@name="WICPngTimeProperties"]/*' />
-public enum WICPngTimeProperties : uint
+public enum WICPngTimeProperties
 {
     /// <include file='WICPngTimeProperties.xml' path='doc/member[@name="WICPngTimeProperties.WICPngTimeYear"]/*' />
     WICPngTimeYear = 0x1,

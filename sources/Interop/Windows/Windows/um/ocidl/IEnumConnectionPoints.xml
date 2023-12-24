@@ -7,85 +7,29 @@
       <para>Creates a new enumerator that contains the same enumeration state as the current one.</para>
       <para>This method makes it possible to record a point in the enumeration sequence in order to return to that point at a later time. The caller must release this new enumerator separately from the first enumerator.</para>
     </summary>
-    <param name="ppEnum">
-      <para>A pointer to the cloned enumerator object.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</para>
-    </returns>
-    <seealso cref="IEnumConnectionPoints" />
+    <param name="ppEnum">A pointer to the cloned enumerator object.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, E_UNEXPECTED, and S_OK.</returns>
   </member>
   <member name="IEnumConnectionPoints.Next">
-    <summary>
-      <para>Retrieves the specified number of items in the enumeration sequence.</para>
-    </summary>
-    <param name="cConnections">
-      <para>The number of items to be retrieved. If there are fewer than the requested number of items left in the sequence, this method retrieves the remaining elements.</para>
-    </param>
+    <summary>Retrieves the specified number of items in the enumeration sequence.</summary>
+    <param name="cConnections">The number of items to be retrieved. If there are fewer than the requested number of items left in the sequence, this method retrieves the remaining elements.</param>
     <param name="ppCP">
       <para>An array of enumerated items.</para>
       <para>The enumerator is responsible for calling <see cref="AddRef" />, and the caller is responsible for calling <see cref="Release" /> through each pointer enumerated. If <i>cConnections</i> is greater than 1, the caller must also pass a non-NULL pointer passed to <i>lpcFetched</i> to know how many pointers to release.</para>
     </param>
-    <param name="pcFetched">
-      <para>The number of items that were retrieved. This parameter is always less than or equal to the number of items requested.</para>
-    </param>
-    <returns>
-      <para>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
-    </returns>
-    <seealso cref="IConnectionPoint" />
-    <seealso cref="IEnumConnectionPoints" />
+    <param name="pcFetched">The number of items that were retrieved. This parameter is always less than or equal to the number of items requested.</param>
+    <returns>If the method retrieves the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</returns>
   </member>
   <member name="IEnumConnectionPoints.Reset">
-    <summary>
-      <para>Resets the enumeration sequence to the beginning.</para>
-    </summary>
-    <returns>
-      <para>The return value is S_OK.</para>
-    </returns>
-    <remarks>
-      <para>There is no guarantee that the same set of objects will be enumerated after the reset operation has completed. A static collection is reset to the beginning, but it can be too expensive for some collections, such as files in a directory, to guarantee this condition.</para>
-    </remarks>
-    <seealso cref="IEnumConnectionPoints" />
+    <summary>Resets the enumeration sequence to the beginning.</summary>
+    <returns>The return value is S_OK.</returns>
   </member>
   <member name="IEnumConnectionPoints.Skip">
-    <summary>
-      <para>Skips over the specified number of items in the enumeration sequence.</para>
-    </summary>
-    <param name="cConnections">
-      <para>The number of items to be skipped.</para>
-    </param>
-    <returns>
-      <para>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</para>
-    </returns>
-    <seealso cref="IEnumConnectionPoints" />
+    <summary>Skips over the specified number of items in the enumeration sequence.</summary>
+    <param name="cConnections">The number of items to be skipped.</param>
+    <returns>If the method skips the number of items requested, the return value is S_OK. Otherwise, it is S_FALSE.</returns>
   </member>
   <member name="IEnumConnectionPoints">
-    <summary>
-      <para>Enumerates connection points.</para>
-    </summary>
-    <remarks>
-      <para>Connectable objects support the following features:</para>
-      <list type="bullet">
-        <item>
-          <description>Outgoing interfaces, such as event sets
-</description>
-        </item>
-        <item>
-          <description>The ability to enumerate the IIDs of the outgoing interfaces
-</description>
-        </item>
-        <item>
-          <description>The ability to connect and disconnect sinks to the object for those outgoing IIDs
-</description>
-        </item>
-        <item>
-          <description>The ability to enumerate the connections that exist to a particular outgoing interface
-</description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IConnectionPoint" />
-    <seealso cref="IConnectionPointContainer" />
-    <seealso cref="IEnumConnections" />
+    <summary>Enumerates connection points.</summary>
   </member>
 </doc>

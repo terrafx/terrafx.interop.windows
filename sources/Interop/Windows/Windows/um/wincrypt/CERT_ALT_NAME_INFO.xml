@@ -6,21 +6,14 @@
     <summary>
       <para>The <b>CERT_ALT_NAME_INFO</b> structure is used in encoding and decoding extensions for subject or issuer <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificates</a>, <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Revocation Lists</a> (CRLs), and <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">Certificate Trust Lists</a> (CTLs).</para>
       <para>
-        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a
-<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with its structure's <b>pszObjId</b> member set to szOID_SUBJECT_ALT_NAME or szOID_ISSUER_ALT_NAME.</para>
+        <see cref="CryptDecodeObject" /> creates an instance of this structure when performed on a<see cref="CERT_EXTENSION" /> structure's <b>Value</b> member with its structure's <b>pszObjId</b> member set to szOID_SUBJECT_ALT_NAME or szOID_ISSUER_ALT_NAME.</para>
       <para>An instance of this structure can be used as input to <see cref="CryptEncodeObject" /> to create an appropriate <see cref="CERT_EXTENSION" />.</para>
     </summary>
-    <seealso cref="CERT_ALT_NAME_ENTRY" />
   </member>
   <member name="CERT_ALT_NAME_INFO.cAltEntry">
-    <summary>
-      <para>Number of elements in the <b>rgAltEntry</b> array.</para>
-    </summary>
+    <summary>Number of elements in the <b>rgAltEntry</b> array.</summary>
   </member>
   <member name="CERT_ALT_NAME_INFO.rgAltEntry">
-    <summary>
-      <para>Array of
-<see cref="CERT_ALT_NAME_ENTRY" /> structures.</para>
-    </summary>
+    <summary>Array of<see cref="CERT_ALT_NAME_ENTRY" /> structures.</summary>
   </member>
 </doc>

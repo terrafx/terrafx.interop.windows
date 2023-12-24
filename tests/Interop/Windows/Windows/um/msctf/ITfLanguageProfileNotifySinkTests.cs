@@ -19,32 +19,4 @@ public static unsafe partial class ITfLanguageProfileNotifySinkTests
     {
         Assert.That(typeof(ITfLanguageProfileNotifySink).GUID, Is.EqualTo(IID_ITfLanguageProfileNotifySink));
     }
-
-    /// <summary>Validates that the <see cref="ITfLanguageProfileNotifySink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfLanguageProfileNotifySink>(), Is.EqualTo(sizeof(ITfLanguageProfileNotifySink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfLanguageProfileNotifySink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfLanguageProfileNotifySink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfLanguageProfileNotifySink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfLanguageProfileNotifySink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfLanguageProfileNotifySink), Is.EqualTo(4));
-        }
-    }
 }

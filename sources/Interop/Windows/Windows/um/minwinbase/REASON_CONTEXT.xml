@@ -3,22 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="REASON_CONTEXT">
-    <summary>
-      <para>Contains information about a power request. This structure is used by the
-<see cref="PowerCreateRequest" /> and
-<see cref="SetWaitableTimerEx" /> functions.</para>
-    </summary>
-    <remarks>
-      <para>It is safe to pass read-only strings as the <i>SimpleReasonString</i> or <i>ReasonStrings</i> because the <see cref="PowerCreateRequest" /> and <see cref="SetWaitableTimerEx" /> functions read from the strings and do not write to them.</para>
-    </remarks>
-    <seealso cref="PowerCreateRequest" />
-    <seealso cref="SetWaitableTimerEx" />
+    <summary>Contains information about a power request. This structure is used by the<see cref="PowerCreateRequest" /> and<see cref="SetWaitableTimerEx" /> functions.</summary>
   </member>
   <member name="REASON_CONTEXT.Version">
-    <summary>
-      <para>The version number of the structure. This parameter must be set to
-<b>POWER_REQUEST_CONTEXT_VERSION</b>.</para>
-    </summary>
+    <summary>The version number of the structure. This parameter must be set to<b>POWER_REQUEST_CONTEXT_VERSION</b>.</summary>
   </member>
   <member name="REASON_CONTEXT.Flags">
     <summary>
@@ -28,79 +16,58 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_REQUEST_CONTEXT_DETAILED_STRING</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000002</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000002</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The <i>Detailed</i> structure identifies a localizable string resource that describes
-the reason for the power request.</para>
-          </description>
-        </item>
-        <item>
+          <description>The <i>Detailed</i> structure identifies a localizable string resource that describes the reason for the power request.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>POWER_REQUEST_CONTEXT_SIMPLE_STRING</b>
-                </description>
-              </item>
-              <item>
-                <description>0x00000001</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x00000001</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>The <i>SimpleReasonString</i> parameter contains a simple, non-localizable string that
-describes the reason for the power request.</para>
-          </description>
-        </item>
+          <description>The <i>SimpleReasonString</i> parameter contains a simple, non-localizable string that describes the reason for the power request.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="REASON_CONTEXT.Reason">
-    <summary>
-      <para>A union that consists of either a <b>Detailed</b> structure or a string.</para>
-    </summary>
+    <summary>A union that consists of either a <b>Detailed</b> structure or a string.</summary>
   </member>
   <member name="REASON_CONTEXT.Reason.Detailed">
-    <summary>
-      <para>A structure that identifies a localizable string resource to describe the reason for the power
-request.</para>
-    </summary>
+    <summary>A structure that identifies a localizable string resource to describe the reason for the power request.</summary>
   </member>
   <member name="REASON_CONTEXT.Reason.Detailed.LocalizedReasonModule">
-    <summary>
-      <para>The module that contains the string resource.</para>
-    </summary>
+    <summary>The module that contains the string resource.</summary>
   </member>
   <member name="REASON_CONTEXT.Reason.Detailed.LocalizedReasonId">
-    <summary>
-      <para>The ID of the string resource.</para>
-    </summary>
+    <summary>The ID of the string resource.</summary>
   </member>
   <member name="REASON_CONTEXT.Reason.Detailed.ReasonStringCount">
-    <summary>
-      <para>The number of strings in the <i>ReasonStrings</i> parameter.</para>
-    </summary>
+    <summary>The number of strings in the <i>ReasonStrings</i> parameter.</summary>
   </member>
   <member name="REASON_CONTEXT.Reason.Detailed.ReasonStrings">
-    <summary>
-      <para>An array of strings to be substituted in the string resource at run time.</para>
-    </summary>
+    <summary>An array of strings to be substituted in the string resource at run time.</summary>
   </member>
   <member name="REASON_CONTEXT.Reason.SimpleReasonString">
-    <summary>
-      <para>A non-localized string that describes the reason for the power request.</para>
-    </summary>
+    <summary>A non-localized string that describes the reason for the power request.</summary>
   </member>
 </doc>

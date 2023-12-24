@@ -3,27 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DEVICE_WRITE_AGGREGATION_DESCRIPTOR">
-    <summary>
-      <para>Reserved for system use.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/disk-management-structures">Disk Management Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_storage_query_property">IOCTL_STORAGE_QUERY_PROPERTY</seealso>
+    <summary>Reserved for system use.</summary>
   </member>
   <member name="DEVICE_WRITE_AGGREGATION_DESCRIPTOR.Version">
-    <summary>
-      <para>Contains the size, in bytes, of this structure. The value of this member will change as members are added
-to the structure.</para>
-    </summary>
+    <summary>Contains the size, in bytes, of this structure. The value of this member will change as members are added to the structure.</summary>
   </member>
   <member name="DEVICE_WRITE_AGGREGATION_DESCRIPTOR.Size">
-    <summary>
-      <para>Specifies the total size of the descriptor, in bytes.</para>
-    </summary>
+    <summary>Specifies the total size of the descriptor, in bytes.</summary>
   </member>
   <member name="DEVICE_WRITE_AGGREGATION_DESCRIPTOR.BenefitsFromWriteAggregation">
     <summary>
-      <para>
-        <b>TRUE</b> if the device benefits from write aggregation.</para>
-    </summary>
+      <b>TRUE</b> if the device benefits from write aggregation.</summary>
   </member>
 </doc>

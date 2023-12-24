@@ -25,7 +25,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrSyncItems*, Guid*, void**, int>)(lpVtbl[0]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, uint>)(lpVtbl[1]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrSyncItems*, uint>)(lpVtbl[1]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, uint>)(lpVtbl[2]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrSyncItems*, uint>)(lpVtbl[2]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumSyncMgrSyncItems.xml' path='doc/member[@name="IEnumSyncMgrSyncItems.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint celt, ISyncMgrSyncItem** rgelt, [NativeTypeName("ULONG *")] uint* pceltFetched)
     {
-        return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, uint, ISyncMgrSyncItem**, uint*, int>)(lpVtbl[3]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrSyncItems*, uint, ISyncMgrSyncItem**, uint*, int>)(lpVtbl[3]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), celt, rgelt, pceltFetched);
     }
 
     /// <include file='IEnumSyncMgrSyncItems.xml' path='doc/member[@name="IEnumSyncMgrSyncItems.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint celt)
     {
-        return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, uint, int>)(lpVtbl[4]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), celt);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrSyncItems*, uint, int>)(lpVtbl[4]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), celt);
     }
 
     /// <include file='IEnumSyncMgrSyncItems.xml' path='doc/member[@name="IEnumSyncMgrSyncItems.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, int>)(lpVtbl[5]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrSyncItems*, int>)(lpVtbl[5]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumSyncMgrSyncItems.xml' path='doc/member[@name="IEnumSyncMgrSyncItems.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
     [VtblIndex(6)]
     public HRESULT Clone(IEnumSyncMgrSyncItems** ppenum)
     {
-        return ((delegate* unmanaged<IEnumSyncMgrSyncItems*, IEnumSyncMgrSyncItems**, int>)(lpVtbl[6]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), ppenum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumSyncMgrSyncItems*, IEnumSyncMgrSyncItems**, int>)(lpVtbl[6]))((IEnumSyncMgrSyncItems*)Unsafe.AsPointer(ref this), ppenum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumSyncMgrSyncItems : IEnumSyncMgrSyncItems.Inter
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, ISyncMgrSyncItem **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ISyncMgrSyncItem**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ISyncMgrSyncItem**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumSyncMgrSyncItems **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumSyncMgrSyncItems**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumSyncMgrSyncItems**, int> Clone;
     }
 }

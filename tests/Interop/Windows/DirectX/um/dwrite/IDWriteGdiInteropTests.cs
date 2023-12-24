@@ -19,32 +19,4 @@ public static unsafe partial class IDWriteGdiInteropTests
     {
         Assert.That(typeof(IDWriteGdiInterop).GUID, Is.EqualTo(IID_IDWriteGdiInterop));
     }
-
-    /// <summary>Validates that the <see cref="IDWriteGdiInterop" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDWriteGdiInterop>(), Is.EqualTo(sizeof(IDWriteGdiInterop)));
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteGdiInterop" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDWriteGdiInterop).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDWriteGdiInterop" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDWriteGdiInterop), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDWriteGdiInterop), Is.EqualTo(4));
-        }
-    }
 }

@@ -14,7 +14,7 @@ public static unsafe partial class Windows
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHSimpleIDListFromPath"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
     [return: NativeTypeName("LPITEMIDLIST")]
-    public static extern ITEMIDLIST* SHSimpleIDListFromPath([NativeTypeName("PCWSTR")] ushort* pszPath);
+    public static extern ITEMIDLIST* SHSimpleIDListFromPath([NativeTypeName("PCWSTR")] char* pszPath);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateItemFromIDList"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -22,7 +22,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateItemFromParsingName"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHCreateItemFromParsingName([NativeTypeName("PCWSTR")] ushort* pszPath, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT SHCreateItemFromParsingName([NativeTypeName("PCWSTR")] char* pszPath, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateItemWithParent"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -30,11 +30,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateItemFromRelativeName"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHCreateItemFromRelativeName(IShellItem* psiParent, [NativeTypeName("PCWSTR")] ushort* pszName, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT SHCreateItemFromRelativeName(IShellItem* psiParent, [NativeTypeName("PCWSTR")] char* pszName, IBindCtx* pbc, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHCreateItemInKnownFolder"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHCreateItemInKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfid, [NativeTypeName("DWORD")] uint dwKFFlags, [NativeTypeName("PCWSTR")] ushort* pszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT SHCreateItemInKnownFolder([NativeTypeName("const KNOWNFOLDERID &")] Guid* kfid, [NativeTypeName("DWORD")] uint dwKFFlags, [NativeTypeName("PCWSTR")] char* pszItem, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetIDListFromObject"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -50,11 +50,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetPropertyStoreFromParsingName"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHGetPropertyStoreFromParsingName([NativeTypeName("PCWSTR")] ushort* pszPath, IBindCtx* pbc, GETPROPERTYSTOREFLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
+    public static extern HRESULT SHGetPropertyStoreFromParsingName([NativeTypeName("PCWSTR")] char* pszPath, IBindCtx* pbc, GETPROPERTYSTOREFLAGS flags, [NativeTypeName("const IID &")] Guid* riid, void** ppv);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetNameFromIDList"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHGetNameFromIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, SIGDN sigdnName, [NativeTypeName("PWSTR *")] ushort** ppszName);
+    public static extern HRESULT SHGetNameFromIDList([NativeTypeName("LPCITEMIDLIST")] ITEMIDLIST* pidl, SIGDN sigdnName, [NativeTypeName("PWSTR *")] char** ppszName);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetItemFromDataObject"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -112,11 +112,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SetCurrentProcessExplicitAppUserModelID"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SetCurrentProcessExplicitAppUserModelID([NativeTypeName("PCWSTR")] ushort* AppID);
+    public static extern HRESULT SetCurrentProcessExplicitAppUserModelID([NativeTypeName("PCWSTR")] char* AppID);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetCurrentProcessExplicitAppUserModelID"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT GetCurrentProcessExplicitAppUserModelID([NativeTypeName("PWSTR *")] ushort** AppID);
+    public static extern HRESULT GetCurrentProcessExplicitAppUserModelID([NativeTypeName("PWSTR *")] char** AppID);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHGetTemporaryPropertyForItem"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -128,7 +128,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHShowManageLibraryUI"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHShowManageLibraryUI(IShellItem* psiLibrary, HWND hwndOwner, [NativeTypeName("LPCWSTR")] ushort* pszTitle, [NativeTypeName("LPCWSTR")] ushort* pszInstruction, LIBRARYMANAGEDIALOGOPTIONS lmdOptions);
+    public static extern HRESULT SHShowManageLibraryUI(IShellItem* psiLibrary, HWND hwndOwner, [NativeTypeName("LPCWSTR")] char* pszTitle, [NativeTypeName("LPCWSTR")] char* pszInstruction, LIBRARYMANAGEDIALOGOPTIONS lmdOptions);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHResolveLibrary"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
@@ -136,11 +136,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAssocEnumHandlers"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHAssocEnumHandlers([NativeTypeName("PCWSTR")] ushort* pszExtra, ASSOC_FILTER afFilter, IEnumAssocHandlers** ppEnumHandler);
+    public static extern HRESULT SHAssocEnumHandlers([NativeTypeName("PCWSTR")] char* pszExtra, ASSOC_FILTER afFilter, IEnumAssocHandlers** ppEnumHandler);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.SHAssocEnumHandlersForProtocolByApplication"]/*' />
     [DllImport("shell32", ExactSpelling = true)]
-    public static extern HRESULT SHAssocEnumHandlersForProtocolByApplication([NativeTypeName("PCWSTR")] ushort* protocol, [NativeTypeName("const IID &")] Guid* riid, void** enumHandlers);
+    public static extern HRESULT SHAssocEnumHandlersForProtocolByApplication([NativeTypeName("PCWSTR")] char* protocol, [NativeTypeName("const IID &")] Guid* riid, void** enumHandlers);
 
     [NativeTypeName("#define CMDSTR_NEWFOLDERA \"NewFolder\"")]
     public static ReadOnlySpan<byte> CMDSTR_NEWFOLDERA => "NewFolder"u8;

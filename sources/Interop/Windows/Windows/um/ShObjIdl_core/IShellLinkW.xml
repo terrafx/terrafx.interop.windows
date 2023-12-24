@@ -3,53 +3,20 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IShellLinkW.GetArguments">
-    <summary>
-      <para>Gets the command-line arguments associated with a Shell link object.</para>
-    </summary>
-    <param name="pszArgs">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to the buffer that, when this method returns successfully, receives the command-line arguments.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The maximum number of characters that can be copied to the buffer supplied by the <i>pszArgs</i> parameter. In the case of a Unicode string, there is no limitation on maximum string length. In the case of an ANSI string, the maximum length of the returned string varies depending on the version of Windows—MAX_PATH prior to Windows 2000 and INFOTIPSIZE (defined in Commctrl.h) in Windows 2000 and later.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In Windows 7 and later, it is recommended that you retrieve argument strings though <see cref="IPropertyStore" /> (using the <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-link-arguments">PKEY_Link_Arguments</a> value) rather than this method, which can silently truncate the string if the provided buffer is not large enough. <b>IPropertyStore</b> allocates a string of the correct size.</para>
-    </remarks>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.SetArguments" />
+    <summary>Gets the command-line arguments associated with a Shell link object.</summary>
+    <param name="pszArgs">A pointer to the buffer that, when this method returns successfully, receives the command-line arguments.</param>
+    <param name="cch">The maximum number of characters that can be copied to the buffer supplied by the <i>pszArgs</i> parameter. In the case of a Unicode string, there is no limitation on maximum string length. In the case of an ANSI string, the maximum length of the returned string varies depending on the version of Windows—MAX_PATH prior to Windows 2000 and INFOTIPSIZE (defined in Commctrl.h) in Windows 2000 and later.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetDescription">
-    <summary>
-      <para>Gets the description string for a Shell link object.</para>
-    </summary>
-    <param name="pszName">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to the buffer that receives the description string.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The maximum number of characters to copy to the buffer pointed to by the <i>pszName</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For Windows 2000 or later, the string returned to <i>pszName</i> has a maximum length of INFOTIPSIZE. For systems prior to Windows 2000, the size of the string is limited by MAX_PATH.</para>
-    </remarks>
+    <summary>Gets the description string for a Shell link object.</summary>
+    <param name="pszName">A pointer to the buffer that receives the description string.</param>
+    <param name="cch">The maximum number of characters to copy to the buffer pointed to by the <i>pszName</i> parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetHotkey">
-    <summary>
-      <para>Gets the keyboard shortcut (hot key) for a Shell link object.</para>
-    </summary>
+    <summary>Gets the keyboard shortcut (hot key) for a Shell link object.</summary>
     <param name="pwHotkey">
-      <para>Type: <b>WORD*</b></para>
       <para>The address of the keyboard shortcut. The virtual key code is in the low-order byte, and the modifier flags are in the high-order byte. The modifier flags can be a combination of the following values.</para>
       <h4>HOTKEYF_ALT</h4>
       <para>ALT key</para>
@@ -60,63 +27,26 @@
       <h4>HOTKEYF_SHIFT</h4>
       <para>SHIFT key</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetIconLocation">
-    <summary>
-      <para>Gets the location (path and index) of the icon for a Shell link object.</para>
-    </summary>
-    <param name="pszIconPath">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>The address of a buffer that receives the path of the file containing the icon.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The maximum number of characters to copy to the buffer pointed to by the <i>pszIconPath</i> parameter.</para>
-    </param>
-    <param name="piIcon">
-      <para>Type: <b>int*</b></para>
-      <para>The address of a value that receives the index of the icon.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the location (path and index) of the icon for a Shell link object.</summary>
+    <param name="pszIconPath">The address of a buffer that receives the path of the file containing the icon.</param>
+    <param name="cch">The maximum number of characters to copy to the buffer pointed to by the <i>pszIconPath</i> parameter.</param>
+    <param name="piIcon">The address of a value that receives the index of the icon.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetIDList">
-    <summary>
-      <para>Gets the list of item identifiers for the target of a Shell link object.</para>
-    </summary>
-    <param name="ppidl">
-      <para>Type: <b>PIDLIST_ABSOLUTE*</b></para>
-      <para>When this method returns, contains the address of a PIDL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the operation is successful and one or more valid PIDLs is retrieved. If the operation is successful but no PIDLs are retrieved, it returns S_FALSE with <i>ppidl</i> set to <b>NULL</b>. Otherwise, it returns a standard error value.</para>
-    </returns>
+    <summary>Gets the list of item identifiers for the target of a Shell link object.</summary>
+    <param name="ppidl">When this method returns, contains the address of a PIDL.</param>
+    <returns>Returns S_OK if the operation is successful and one or more valid PIDLs is retrieved. If the operation is successful but no PIDLs are retrieved, it returns S_FALSE with <i>ppidl</i> set to <b>NULL</b>. Otherwise, it returns a standard error value.</returns>
   </member>
   <member name="IShellLinkW.GetPath">
-    <summary>
-      <para>Gets the path and file name of the target of a Shell link object.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>The address of a buffer that receives the path and file name of the target of the Shell link object.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The size, in characters, of the buffer pointed to by the <i>pszFile</i> parameter, including the terminating null character. The maximum path size that can be returned is MAX_PATH. This parameter is commonly set by calling ARRAYSIZE(pszFile). The ARRAYSIZE macro is defined in Winnt.h.</para>
-    </param>
-    <param name="pfd">
-      <para>Type: <b><see cref="WIN32_FIND_DATA" />*</b></para>
-      <para>A pointer to a <see cref="WIN32_FIND_DATA" /> structure that receives information about the target of the Shell link object. If this parameter is <b>NULL</b>, then no additional information is returned.</para>
-    </param>
+    <summary>Gets the path and file name of the target of a Shell link object.</summary>
+    <param name="pszFile">The address of a buffer that receives the path and file name of the target of the Shell link object.</param>
+    <param name="cch">The size, in characters, of the buffer pointed to by the <i>pszFile</i> parameter, including the terminating null character. The maximum path size that can be returned is MAX_PATH. This parameter is commonly set by calling ARRAYSIZE(pszFile). The ARRAYSIZE macro is defined in Winnt.h.</param>
+    <param name="pfd">A pointer to a <see cref="WIN32_FIND_DATA" /> structure that receives information about the target of the Shell link object. If this parameter is <b>NULL</b>, then no additional information is returned.</param>
     <param name="fFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>Flags that specify the type of path information to retrieve. This parameter can be a combination of the following values.</para>
       <h4>SLGP_SHORTPATH</h4>
       <para>Retrieves the standard short (8.3 format) file name.</para>
@@ -128,17 +58,11 @@
       <para>
         <b>Windows Vista and later</b>. Retrieves the path, if possible, of the shortcut's target relative to the path set by a previous call to <see cref="IShellLink.SetRelativePath" />.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns <b>S_OK</b> if the operation is successful and a valid path is retrieved. If the operation is successful but no path is retrieved, it returns <b>S_FALSE</b> and <i>pszFile</i> will be empty. Otherwise, it returns one of the standard HRESULT error values.</para>
-    </returns>
+    <returns>Returns <b>S_OK</b> if the operation is successful and a valid path is retrieved. If the operation is successful but no path is retrieved, it returns <b>S_FALSE</b> and <i>pszFile</i> will be empty. Otherwise, it returns one of the standard HRESULT error values.</returns>
   </member>
   <member name="IShellLinkW.GetShowCmd">
-    <summary>
-      <para>Gets the show command for a Shell link object.</para>
-    </summary>
+    <summary>Gets the show command for a Shell link object.</summary>
     <param name="piShowCmd">
-      <para>Type: <b>int*</b></para>
       <para>A pointer to the command. The following commands are supported.</para>
       <h4>SW_SHOWNORMAL</h4>
       <para>Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time.</para>
@@ -147,43 +71,18 @@
       <h4>SW_SHOWMINIMIZED</h4>
       <para>Activates the window and displays it as a minimized window.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The show command is used to set the initial show state of the corresponding object. This is one of the SW_xxx values described in <see cref="ShowWindow" />.</para>
-    </remarks>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.SetShowCmd" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetWorkingDirectory">
-    <summary>
-      <para>Gets the name of the working directory for a Shell link object.</para>
-    </summary>
-    <param name="pszDir">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>The address of a buffer that receives the name of the working directory.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The maximum number of characters to copy to the buffer pointed to by the <i>pszDir</i> parameter. The name of the working directory is truncated if it is longer than the maximum specified by this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the name of the working directory for a Shell link object.</summary>
+    <param name="pszDir">The address of a buffer that receives the name of the working directory.</param>
+    <param name="cch">The maximum number of characters to copy to the buffer pointed to by the <i>pszDir</i> parameter. The name of the working directory is truncated if it is longer than the maximum specified by this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.Resolve">
-    <summary>
-      <para>Attempts to find the target of a Shell link, even if it has been moved or renamed.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that the Shell will use as the parent for a dialog box. The Shell displays the dialog box if it needs to prompt the user for more information while resolving a Shell link.</para>
-    </param>
+    <summary>Attempts to find the target of a Shell link, even if it has been moved or renamed.</summary>
+    <param name="hwnd">A handle to the window that the Shell will use as the parent for a dialog box. The Shell displays the dialog box if it needs to prompt the user for more information while resolving a Shell link.</param>
     <param name="fFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>Action flags. This parameter can be a combination of the following values.</para>
       <h4>SLR_NO_UI (0x0001)</h4>
       <para>0x0001. Do not display a dialog box if the link cannot be resolved. When <b>SLR_NO_UI</b> is set, the high-order word of <i>fFlags</i> can be set to a time-out value that specifies the maximum amount of time to be spent resolving the link. The function returns if the link cannot be resolved within the time-out duration. If the high-order word is set to zero, the time-out duration will be set to the default value of 3,000 milliseconds (3 seconds). To specify a value, set the high word of <i>fFlags</i> to the desired time-out duration, in milliseconds.</para>
@@ -212,177 +111,48 @@
       <h4>SLR_UPDATE_MACHINE_AND_SID (0x1000)</h4>
       <para>0x1000. <b>Windows 7 and later</b>. Update the computer GUID and user SID if necessary.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Following link creation, the name or location of the target may change. The <b>IShellLink.Resolve</b> method first retrieves the path associated with the link. If the object is no longer there or has been renamed, <b>Resolve</b> will attempt to find it. If successful, and the following conditions are met, the file that the link object was loaded from will be updated to reflect the new state of the link object.</para>
-      <list type="bullet">
-        <item>
-          <description>The <b>SLR_UPDATE</b> flag is set.</description>
-        </item>
-        <item>
-          <description>The target has been moved or renamed, updating the internal state of the Shell link object to refer to the new target.</description>
-        </item>
-        <item>
-          <description>The Shell link object was loaded from a file through <see cref="IPersistFile" />.</description>
-        </item>
-      </list>
-      <para>The client can also call the <see cref="IPersistFile.IsDirty" /> method to determine whether the link object has changed and the file needs to be updated.</para>
-      <para>
-        <b>Resolve</b> has two approaches to finding target objects. The first is the distributed link tracking service. If the service is available, it can find an object that was on an NTFS version 5.0 volume and was moved to another location on that volume. It can also find an object that was moved to another NTFS version 5.0 volume, including volumes on other computers. To suppress the use of this service, set the <b>SLR_NOTRACK</b> flag.</para>
-      <para>If distributed link tracking is not available or fails to find the link object, <b>Resolve</b> attempts to find it with search heuristics. It first looks in the object's last known directory for an object with a different name but the same attributes and file creation time. Next, it recursively searches subdirectories in the vicinity of the object's last known directory. It looks for an object with the same name or creation time. Finally, <b>Resolve</b> looks for a matching object on the desktop and other local volumes. To suppress the use of the search heuristics, set the <b>SLR_NOSEARCH</b> flag.</para>
-      <para>If both approaches fail, the system will display a dialog box prompting the user for a location. To suppress the dialog box, set the <b>SLR_NO_UI</b> flag.</para>
-    </remarks>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetArguments">
-    <summary>
-      <para>Sets the command-line arguments for a Shell link object.</para>
-    </summary>
-    <param name="pszArgs">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>A pointer to a buffer that contains the new command-line arguments. In the case of a Unicode string, there is no limitation on maximum string length. In the case of an ANSI string, the maximum length of the returned string varies depending on the version of Windows—MAX_PATH prior to Windows 2000 and INFOTIPSIZE (defined in Commctrl.h) in Windows 2000 and later.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is useful when creating a link to an application that takes special flags as arguments, such as a compiler.</para>
-    </remarks>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.GetArguments" />
+    <summary>Sets the command-line arguments for a Shell link object.</summary>
+    <param name="pszArgs">A pointer to a buffer that contains the new command-line arguments. In the case of a Unicode string, there is no limitation on maximum string length. In the case of an ANSI string, the maximum length of the returned string varies depending on the version of Windows—MAX_PATH prior to Windows 2000 and INFOTIPSIZE (defined in Commctrl.h) in Windows 2000 and later.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetDescription">
-    <summary>
-      <para>Sets the description for a Shell link object. The description can be any application-defined string.</para>
-    </summary>
-    <param name="pszName">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>A pointer to a buffer containing the new description string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For Windows 2000 or later, the string specified by <i>pszName</i> must be no larger than INFOTIPSIZE. For systems prior to Windows 2000, the size of the string is limited by MAX_PATH.</para>
-    </remarks>
+    <summary>Sets the description for a Shell link object. The description can be any application-defined string.</summary>
+    <param name="pszName">A pointer to a buffer containing the new description string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetHotkey">
-    <summary>
-      <para>Sets a keyboard shortcut (hot key) for a Shell link object.</para>
-    </summary>
-    <param name="wHotkey">
-      <para>Type: <b>WORD</b></para>
-      <para>The new keyboard shortcut. The virtual key code is in the low-order byte, and the modifier flags are in the high-order byte. The modifier flags can be a combination of the values specified in the description of the <see cref="IShellLink.GetHotkey" /> method.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Setting a keyboard shortcut allows the user to activate the object by pressing a particular combination of keys.</para>
-    </remarks>
+    <summary>Sets a keyboard shortcut (hot key) for a Shell link object.</summary>
+    <param name="wHotkey">The new keyboard shortcut. The virtual key code is in the low-order byte, and the modifier flags are in the high-order byte. The modifier flags can be a combination of the values specified in the description of the <see cref="IShellLink.GetHotkey" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetIconLocation">
-    <summary>
-      <para>Sets the location (path and index) of the icon for a Shell link object.</para>
-    </summary>
-    <param name="pszIconPath">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>The address of a buffer to contain the path of the file containing the icon.</para>
-    </param>
-    <param name="iIcon">
-      <para>Type: <b>int</b></para>
-      <para>The index of the icon.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the location (path and index) of the icon for a Shell link object.</summary>
+    <param name="pszIconPath">The address of a buffer to contain the path of the file containing the icon.</param>
+    <param name="iIcon">The index of the icon.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetIDList">
-    <summary>
-      <para>Sets the pointer to an item identifier list (PIDL) for a Shell link object.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>The object's fully qualified PIDL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is useful when an application needs to set a Shell link to an object that is not a file, such as a Control Panel application, a printer, or another computer.</para>
-    </remarks>
+    <summary>Sets the pointer to an item identifier list (PIDL) for a Shell link object.</summary>
+    <param name="pidl">The object's fully qualified PIDL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetPath">
-    <summary>
-      <para>Sets the path and file name for the target of a Shell link object.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>The address of a buffer that contains the new path.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the path and file name for the target of a Shell link object.</summary>
+    <param name="pszFile">The address of a buffer that contains the new path.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetRelativePath">
-    <summary>
-      <para>Sets the relative path to the Shell link object.</para>
-    </summary>
-    <param name="pszPathRel">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>The address of a buffer that contains the fully-qualified path of the shortcut file, relative to which the shortcut resolution should be performed. It should be a file name, not a folder name.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Set this parameter to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Clients commonly define a relative link when it may be moved along with its target, causing the absolute path to become invalid. The <b>SetRelativePath</b> method can be used to help the link resolution process find its target based on a common path prefix between the target and the relative path. To assist in the resolution process, clients should set the relative path as part of the link creation process.</para>
-      <h4>Examples</h4>
-      <para>Consider the following scenario:</para>
-      <list type="bullet">
-        <item>
-          <description>You have a link: c:\MyLink.lnk.</description>
-        </item>
-        <item>
-          <description>The link target is c:\MyDocs\MyFile.txt.</description>
-        </item>
-        <item>
-          <description>You want to move the link and MyDocs\MyFile.txt to d:\.</description>
-        </item>
-      </list>
-      <para>You can assist the resolution process by creating the original link with a relative path before the shortcut is saved.</para>
-      <code>.SetRelativePath("c:\MyLink.lnk", NULL);
-
-</code>
-      <para>Before the shortcut is resolved, set a new relative path, and the Resolve code will find the file in its new location.</para>
-      <code>.SetRelativePath("d:\MyLink.lnk", NULL);
-
-</code>
-    </remarks>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.Resolve" />
-    <seealso cref="IShellLink.SetIDList" />
-    <seealso cref="IShellLink.SetPath" />
+    <summary>Sets the relative path to the Shell link object.</summary>
+    <param name="pszPathRel">The address of a buffer that contains the fully-qualified path of the shortcut file, relative to which the shortcut resolution should be performed. It should be a file name, not a folder name.</param>
+    <param name="dwReserved">Reserved. Set this parameter to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetShowCmd">
-    <summary>
-      <para>Sets the show command for a Shell link object. The show command sets the initial show state of the window.</para>
-    </summary>
+    <summary>Sets the show command for a Shell link object. The show command sets the initial show state of the window.</summary>
     <param name="iShowCmd">
-      <para>Type: <b>int</b></para>
       <para>Command. <b>SetShowCmd</b> accepts one of the following <see cref="ShowWindow" /> commands.</para>
       <h4>SW_SHOWNORMAL</h4>
       <para>Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time.</para>
@@ -391,77 +161,28 @@
       <h4>SW_SHOWMINNOACTIVE</h4>
       <para>Displays the window in its minimized state, leaving the currently active window as active.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.GetShowCmd" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetWorkingDirectory">
-    <summary>
-      <para>Sets the name of the working directory for a Shell link object.</para>
-    </summary>
-    <param name="pszDir">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>The address of a buffer that contains the name of the new working directory.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The working directory is optional unless the target requires a working directory. For example, if an application creates a Shell link to a Microsoft Word document that uses a template residing in a different directory, the application would use this method to set the working directory.</para>
-    </remarks>
+    <summary>Sets the name of the working directory for a Shell link object.</summary>
+    <param name="pszDir">The address of a buffer that contains the name of the new working directory.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetArguments">
-    <summary>
-      <para>Gets the command-line arguments associated with a Shell link object.</para>
-    </summary>
-    <param name="pszArgs">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to the buffer that, when this method returns successfully, receives the command-line arguments.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The maximum number of characters that can be copied to the buffer supplied by the <i>pszArgs</i> parameter. In the case of a Unicode string, there is no limitation on maximum string length. In the case of an ANSI string, the maximum length of the returned string varies depending on the version of Windows—MAX_PATH prior to Windows 2000 and INFOTIPSIZE (defined in Commctrl.h) in Windows 2000 and later.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In Windows 7 and later, it is recommended that you retrieve argument strings though <see cref="IPropertyStore" /> (using the <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-link-arguments">PKEY_Link_Arguments</a> value) rather than this method, which can silently truncate the string if the provided buffer is not large enough. <b>IPropertyStore</b> allocates a string of the correct size.</para>
-    </remarks>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.SetArguments" />
+    <summary>Gets the command-line arguments associated with a Shell link object.</summary>
+    <param name="pszArgs">A pointer to the buffer that, when this method returns successfully, receives the command-line arguments.</param>
+    <param name="cch">The maximum number of characters that can be copied to the buffer supplied by the <i>pszArgs</i> parameter. In the case of a Unicode string, there is no limitation on maximum string length. In the case of an ANSI string, the maximum length of the returned string varies depending on the version of Windows—MAX_PATH prior to Windows 2000 and INFOTIPSIZE (defined in Commctrl.h) in Windows 2000 and later.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetDescription">
-    <summary>
-      <para>Gets the description string for a Shell link object.</para>
-    </summary>
-    <param name="pszName">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>A pointer to the buffer that receives the description string.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The maximum number of characters to copy to the buffer pointed to by the <i>pszName</i> parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For Windows 2000 or later, the string returned to <i>pszName</i> has a maximum length of INFOTIPSIZE. For systems prior to Windows 2000, the size of the string is limited by MAX_PATH.</para>
-    </remarks>
+    <summary>Gets the description string for a Shell link object.</summary>
+    <param name="pszName">A pointer to the buffer that receives the description string.</param>
+    <param name="cch">The maximum number of characters to copy to the buffer pointed to by the <i>pszName</i> parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetHotkey">
-    <summary>
-      <para>Gets the keyboard shortcut (hot key) for a Shell link object.</para>
-    </summary>
+    <summary>Gets the keyboard shortcut (hot key) for a Shell link object.</summary>
     <param name="pwHotkey">
-      <para>Type: <b>WORD*</b></para>
       <para>The address of the keyboard shortcut. The virtual key code is in the low-order byte, and the modifier flags are in the high-order byte. The modifier flags can be a combination of the following values.</para>
       <h4>HOTKEYF_ALT</h4>
       <para>ALT key</para>
@@ -480,63 +201,26 @@
       <h5>- pwHotkey.HOTKEYF_SHIFT</h5>
       <para>SHIFT key</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetIconLocation">
-    <summary>
-      <para>Gets the location (path and index) of the icon for a Shell link object.</para>
-    </summary>
-    <param name="pszIconPath">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>The address of a buffer that receives the path of the file containing the icon.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The maximum number of characters to copy to the buffer pointed to by the <i>pszIconPath</i> parameter.</para>
-    </param>
-    <param name="piIcon">
-      <para>Type: <b>int*</b></para>
-      <para>The address of a value that receives the index of the icon.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the location (path and index) of the icon for a Shell link object.</summary>
+    <param name="pszIconPath">The address of a buffer that receives the path of the file containing the icon.</param>
+    <param name="cch">The maximum number of characters to copy to the buffer pointed to by the <i>pszIconPath</i> parameter.</param>
+    <param name="piIcon">The address of a value that receives the index of the icon.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetIDList">
-    <summary>
-      <para>Gets the list of item identifiers for the target of a Shell link object.</para>
-    </summary>
-    <param name="ppidl">
-      <para>Type: <b>PIDLIST_ABSOLUTE*</b></para>
-      <para>When this method returns, contains the address of a PIDL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the operation is successful and one or more valid PIDLs is retrieved. If the operation is successful but no PIDLs are retrieved, it returns S_FALSE with <i>ppidl</i> set to <b>NULL</b>. Otherwise, it returns a standard error value.</para>
-    </returns>
+    <summary>Gets the list of item identifiers for the target of a Shell link object.</summary>
+    <param name="ppidl">When this method returns, contains the address of a PIDL.</param>
+    <returns>Returns S_OK if the operation is successful and one or more valid PIDLs is retrieved. If the operation is successful but no PIDLs are retrieved, it returns S_FALSE with <i>ppidl</i> set to <b>NULL</b>. Otherwise, it returns a standard error value.</returns>
   </member>
   <member name="IShellLinkW.GetPath">
-    <summary>
-      <para>Gets the path and file name of the target of a Shell link object.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>The address of a buffer that receives the path and file name of the target of the Shell link object.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The size, in characters, of the buffer pointed to by the <i>pszFile</i> parameter, including the terminating null character. The maximum path size that can be returned is MAX_PATH. This parameter is commonly set by calling ARRAYSIZE(pszFile). The ARRAYSIZE macro is defined in Winnt.h.</para>
-    </param>
-    <param name="pfd">
-      <para>Type: <b><see cref="WIN32_FIND_DATA" />*</b></para>
-      <para>A pointer to a <see cref="WIN32_FIND_DATA" /> structure that receives information about the target of the Shell link object. If this parameter is <b>NULL</b>, then no additional information is returned.</para>
-    </param>
+    <summary>Gets the path and file name of the target of a Shell link object.</summary>
+    <param name="pszFile">The address of a buffer that receives the path and file name of the target of the Shell link object.</param>
+    <param name="cch">The size, in characters, of the buffer pointed to by the <i>pszFile</i> parameter, including the terminating null character. The maximum path size that can be returned is MAX_PATH. This parameter is commonly set by calling ARRAYSIZE(pszFile). The ARRAYSIZE macro is defined in Winnt.h.</param>
+    <param name="pfd">A pointer to a <see cref="WIN32_FIND_DATA" /> structure that receives information about the target of the Shell link object. If this parameter is <b>NULL</b>, then no additional information is returned.</param>
     <param name="fFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>Flags that specify the type of path information to retrieve. This parameter can be a combination of the following values.</para>
       <h4>SLGP_SHORTPATH</h4>
       <para>Retrieves the standard short (8.3 format) file name.</para>
@@ -557,17 +241,11 @@
       <h5>- fFlags.SLGP_UNCPRIORITY</h5>
       <para>Unsupported; do not use.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns <b>S_OK</b> if the operation is successful and a valid path is retrieved. If the operation is successful but no path is retrieved, it returns <b>S_FALSE</b> and <i>pszFile</i> will be empty. Otherwise, it returns one of the standard HRESULT error values.</para>
-    </returns>
+    <returns>Returns <b>S_OK</b> if the operation is successful and a valid path is retrieved. If the operation is successful but no path is retrieved, it returns <b>S_FALSE</b> and <i>pszFile</i> will be empty. Otherwise, it returns one of the standard HRESULT error values.</returns>
   </member>
   <member name="IShellLinkW.GetShowCmd">
-    <summary>
-      <para>Gets the show command for a Shell link object.</para>
-    </summary>
+    <summary>Gets the show command for a Shell link object.</summary>
     <param name="piShowCmd">
-      <para>Type: <b>int*</b></para>
       <para>A pointer to the command. The following commands are supported.</para>
       <h4>SW_SHOWNORMAL</h4>
       <para>Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time.</para>
@@ -582,43 +260,18 @@
       <h5>- piShowCmd.SW_SHOWNORMAL</h5>
       <para>Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The show command is used to set the initial show state of the corresponding object. This is one of the SW_xxx values described in <see cref="ShowWindow" />.</para>
-    </remarks>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.SetShowCmd" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.GetWorkingDirectory">
-    <summary>
-      <para>Gets the name of the working directory for a Shell link object.</para>
-    </summary>
-    <param name="pszDir">
-      <para>Type: <b>LPTSTR</b></para>
-      <para>The address of a buffer that receives the name of the working directory.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>int</b></para>
-      <para>The maximum number of characters to copy to the buffer pointed to by the <i>pszDir</i> parameter. The name of the working directory is truncated if it is longer than the maximum specified by this parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the name of the working directory for a Shell link object.</summary>
+    <param name="pszDir">The address of a buffer that receives the name of the working directory.</param>
+    <param name="cch">The maximum number of characters to copy to the buffer pointed to by the <i>pszDir</i> parameter. The name of the working directory is truncated if it is longer than the maximum specified by this parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.Resolve">
-    <summary>
-      <para>Attempts to find the target of a Shell link, even if it has been moved or renamed.</para>
-    </summary>
-    <param name="hwnd">
-      <para>Type: <b>HWND</b></para>
-      <para>A handle to the window that the Shell will use as the parent for a dialog box. The Shell displays the dialog box if it needs to prompt the user for more information while resolving a Shell link.</para>
-    </param>
+    <summary>Attempts to find the target of a Shell link, even if it has been moved or renamed.</summary>
+    <param name="hwnd">A handle to the window that the Shell will use as the parent for a dialog box. The Shell displays the dialog box if it needs to prompt the user for more information while resolving a Shell link.</param>
     <param name="fFlags">
-      <para>Type: <b>DWORD</b></para>
       <para>Action flags. This parameter can be a combination of the following values.</para>
       <h4>SLR_NO_UI (0x0001)</h4>
       <para>0x0001. Do not display a dialog box if the link cannot be resolved. When <b>SLR_NO_UI</b> is set, the high-order word of <i>fFlags</i> can be set to a time-out value that specifies the maximum amount of time to be spent resolving the link. The function returns if the link cannot be resolved within the time-out duration. If the high-order word is set to zero, the time-out duration will be set to the default value of 3,000 milliseconds (3 seconds). To specify a value, set the high word of <i>fFlags</i> to the desired time-out duration, in milliseconds.</para>
@@ -673,177 +326,48 @@
       <h5>- fFlags.SLR_UPDATE_MACHINE_AND_SID (0x1000)</h5>
       <para>0x1000. <b>Windows 7 and later</b>. Update the computer GUID and user SID if necessary.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Following link creation, the name or location of the target may change. The <b>IShellLink.Resolve</b> method first retrieves the path associated with the link. If the object is no longer there or has been renamed, <b>Resolve</b> will attempt to find it. If successful, and the following conditions are met, the file that the link object was loaded from will be updated to reflect the new state of the link object.</para>
-      <list type="bullet">
-        <item>
-          <description>The <b>SLR_UPDATE</b> flag is set.</description>
-        </item>
-        <item>
-          <description>The target has been moved or renamed, updating the internal state of the Shell link object to refer to the new target.</description>
-        </item>
-        <item>
-          <description>The Shell link object was loaded from a file through <see cref="IPersistFile" />.</description>
-        </item>
-      </list>
-      <para>The client can also call the <see cref="IPersistFile.IsDirty" /> method to determine whether the link object has changed and the file needs to be updated.</para>
-      <para>
-        <b>Resolve</b> has two approaches to finding target objects. The first is the distributed link tracking service. If the service is available, it can find an object that was on an NTFS version 5.0 volume and was moved to another location on that volume. It can also find an object that was moved to another NTFS version 5.0 volume, including volumes on other computers. To suppress the use of this service, set the <b>SLR_NOTRACK</b> flag.</para>
-      <para>If distributed link tracking is not available or fails to find the link object, <b>Resolve</b> attempts to find it with search heuristics. It first looks in the object's last known directory for an object with a different name but the same attributes and file creation time. Next, it recursively searches subdirectories in the vicinity of the object's last known directory. It looks for an object with the same name or creation time. Finally, <b>Resolve</b> looks for a matching object on the desktop and other local volumes. To suppress the use of the search heuristics, set the <b>SLR_NOSEARCH</b> flag.</para>
-      <para>If both approaches fail, the system will display a dialog box prompting the user for a location. To suppress the dialog box, set the <b>SLR_NO_UI</b> flag.</para>
-    </remarks>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetArguments">
-    <summary>
-      <para>Sets the command-line arguments for a Shell link object.</para>
-    </summary>
-    <param name="pszArgs">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>A pointer to a buffer that contains the new command-line arguments. In the case of a Unicode string, there is no limitation on maximum string length. In the case of an ANSI string, the maximum length of the returned string varies depending on the version of Windows—MAX_PATH prior to Windows 2000 and INFOTIPSIZE (defined in Commctrl.h) in Windows 2000 and later.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is useful when creating a link to an application that takes special flags as arguments, such as a compiler.</para>
-    </remarks>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.GetArguments" />
+    <summary>Sets the command-line arguments for a Shell link object.</summary>
+    <param name="pszArgs">A pointer to a buffer that contains the new command-line arguments. In the case of a Unicode string, there is no limitation on maximum string length. In the case of an ANSI string, the maximum length of the returned string varies depending on the version of Windows—MAX_PATH prior to Windows 2000 and INFOTIPSIZE (defined in Commctrl.h) in Windows 2000 and later.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetDescription">
-    <summary>
-      <para>Sets the description for a Shell link object. The description can be any application-defined string.</para>
-    </summary>
-    <param name="pszName">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>A pointer to a buffer containing the new description string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>For Windows 2000 or later, the string specified by <i>pszName</i> must be no larger than INFOTIPSIZE. For systems prior to Windows 2000, the size of the string is limited by MAX_PATH.</para>
-    </remarks>
+    <summary>Sets the description for a Shell link object. The description can be any application-defined string.</summary>
+    <param name="pszName">A pointer to a buffer containing the new description string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetHotkey">
-    <summary>
-      <para>Sets a keyboard shortcut (hot key) for a Shell link object.</para>
-    </summary>
-    <param name="wHotkey">
-      <para>Type: <b>WORD</b></para>
-      <para>The new keyboard shortcut. The virtual key code is in the low-order byte, and the modifier flags are in the high-order byte. The modifier flags can be a combination of the values specified in the description of the <see cref="IShellLink.GetHotkey" /> method.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Setting a keyboard shortcut allows the user to activate the object by pressing a particular combination of keys.</para>
-    </remarks>
+    <summary>Sets a keyboard shortcut (hot key) for a Shell link object.</summary>
+    <param name="wHotkey">The new keyboard shortcut. The virtual key code is in the low-order byte, and the modifier flags are in the high-order byte. The modifier flags can be a combination of the values specified in the description of the <see cref="IShellLink.GetHotkey" /> method.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetIconLocation">
-    <summary>
-      <para>Sets the location (path and index) of the icon for a Shell link object.</para>
-    </summary>
-    <param name="pszIconPath">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>The address of a buffer to contain the path of the file containing the icon.</para>
-    </param>
-    <param name="iIcon">
-      <para>Type: <b>int</b></para>
-      <para>The index of the icon.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the location (path and index) of the icon for a Shell link object.</summary>
+    <param name="pszIconPath">The address of a buffer to contain the path of the file containing the icon.</param>
+    <param name="iIcon">The index of the icon.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetIDList">
-    <summary>
-      <para>Sets the pointer to an item identifier list (PIDL) for a Shell link object.</para>
-    </summary>
-    <param name="pidl">
-      <para>Type: <b>PCIDLIST_ABSOLUTE</b></para>
-      <para>The object's fully qualified PIDL.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method is useful when an application needs to set a Shell link to an object that is not a file, such as a Control Panel application, a printer, or another computer.</para>
-    </remarks>
+    <summary>Sets the pointer to an item identifier list (PIDL) for a Shell link object.</summary>
+    <param name="pidl">The object's fully qualified PIDL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetPath">
-    <summary>
-      <para>Sets the path and file name for the target of a Shell link object.</para>
-    </summary>
-    <param name="pszFile">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>The address of a buffer that contains the new path.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Sets the path and file name for the target of a Shell link object.</summary>
+    <param name="pszFile">The address of a buffer that contains the new path.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetRelativePath">
-    <summary>
-      <para>Sets the relative path to the Shell link object.</para>
-    </summary>
-    <param name="pszPathRel">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>The address of a buffer that contains the fully-qualified path of the shortcut file, relative to which the shortcut resolution should be performed. It should be a file name, not a folder name.</para>
-    </param>
-    <param name="dwReserved">
-      <para>Type: <b>DWORD</b></para>
-      <para>Reserved. Set this parameter to zero.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Clients commonly define a relative link when it may be moved along with its target, causing the absolute path to become invalid. The <b>SetRelativePath</b> method can be used to help the link resolution process find its target based on a common path prefix between the target and the relative path. To assist in the resolution process, clients should set the relative path as part of the link creation process.</para>
-      <h4>Examples</h4>
-      <para>Consider the following scenario:</para>
-      <list type="bullet">
-        <item>
-          <description>You have a link: c:\MyLink.lnk.</description>
-        </item>
-        <item>
-          <description>The link target is c:\MyDocs\MyFile.txt.</description>
-        </item>
-        <item>
-          <description>You want to move the link and MyDocs\MyFile.txt to d:\.</description>
-        </item>
-      </list>
-      <para>You can assist the resolution process by creating the original link with a relative path before the shortcut is saved.</para>
-      <code>.SetRelativePath("c:\MyLink.lnk", NULL);
-
-</code>
-      <para>Before the shortcut is resolved, set a new relative path, and the Resolve code will find the file in its new location.</para>
-      <code>.SetRelativePath("d:\MyLink.lnk", NULL);
-
-</code>
-    </remarks>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.Resolve" />
-    <seealso cref="IShellLink.SetIDList" />
-    <seealso cref="IShellLink.SetPath" />
+    <summary>Sets the relative path to the Shell link object.</summary>
+    <param name="pszPathRel">The address of a buffer that contains the fully-qualified path of the shortcut file, relative to which the shortcut resolution should be performed. It should be a file name, not a folder name.</param>
+    <param name="dwReserved">Reserved. Set this parameter to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetShowCmd">
-    <summary>
-      <para>Sets the show command for a Shell link object. The show command sets the initial show state of the window.</para>
-    </summary>
+    <summary>Sets the show command for a Shell link object. The show command sets the initial show state of the window.</summary>
     <param name="iShowCmd">
-      <para>Type: <b>int</b></para>
       <para>Command. <b>SetShowCmd</b> accepts one of the following <see cref="ShowWindow" /> commands.</para>
       <h4>SW_SHOWNORMAL</h4>
       <para>Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time.</para>
@@ -858,27 +382,11 @@
       <h5>- iShowCmd.SW_SHOWNORMAL</h5>
       <para>Activates and displays a window. If the window is minimized or maximized, the system restores it to its original size and position. An application should specify this flag when displaying the window for the first time.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IShellLink" />
-    <seealso cref="IShellLink.GetShowCmd" />
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IShellLinkW.SetWorkingDirectory">
-    <summary>
-      <para>Sets the name of the working directory for a Shell link object.</para>
-    </summary>
-    <param name="pszDir">
-      <para>Type: <b>LPCTSTR</b></para>
-      <para>The address of a buffer that contains the name of the new working directory.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The working directory is optional unless the target requires a working directory. For example, if an application creates a Shell link to a Microsoft Word document that uses a template residing in a different directory, the application would use this method to set the working directory.</para>
-    </remarks>
+    <summary>Sets the name of the working directory for a Shell link object.</summary>
+    <param name="pszDir">The address of a buffer that contains the name of the new working directory.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

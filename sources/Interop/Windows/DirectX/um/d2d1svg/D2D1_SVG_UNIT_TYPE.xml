@@ -3,21 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SVG_UNIT_TYPE">
-    <summary>
-      <para>Defines the coordinate system used for SVG gradient or clipPath elements.</para>
-    </summary>
+    <summary>Defines the coordinate system used for SVG gradient or clipPath elements.</summary>
   </member>
   <member name="D2D1_SVG_UNIT_TYPE.D2D1_SVG_UNIT_TYPE_USER_SPACE_ON_USE">
-    <summary>
-      <para>The property is set to SVG's 'userSpaceOnUse' value.</para>
-    </summary>
+    <summary>The property is set to SVG's 'userSpaceOnUse' value.</summary>
   </member>
   <member name="D2D1_SVG_UNIT_TYPE.D2D1_SVG_UNIT_TYPE_OBJECT_BOUNDING_BOX">
-    <summary>
-      <para>The property is set to SVG's 'objectBoundingBox' value.</para>
-    </summary>
+    <summary>The property is set to SVG's 'objectBoundingBox' value.</summary>
   </member>
-  <member name="D2D1_SVG_UNIT_TYPE.D2D1_SVG_UNIT_TYPE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SVG_UNIT_TYPE.D2D1_SVG_UNIT_TYPE_FORCE_DWORD"></member>
 </doc>

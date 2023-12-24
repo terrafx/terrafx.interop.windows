@@ -3,26 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID2D1BlendTransform.GetDescription">
-    <summary>
-      <para>Gets the blend description of the corresponding blend transform object.</para>
-    </summary>
-    <param name="description">
-      <para>Type: <b><see cref="D2D1_BLEND_DESCRIPTION" />*</b></para>
-      <para>When this method returns, contains the blend description specified for the blend transform.</para>
-    </param>
-    <seealso cref="ID2D1BlendTransform" />
-    <seealso cref="ID2D1EffectContext.CreateResourceTexture" />
+    <summary>Gets the blend description of the corresponding blend transform object.</summary>
+    <param name="description">When this method returns, contains the blend description specified for the blend transform.</param>
   </member>
   <member name="ID2D1BlendTransform.SetDescription">
-    <summary>
-      <para>Changes the blend description of the corresponding blend transform object.</para>
-    </summary>
-    <param name="description">
-      <para>Type: <b>const <see cref="D2D1_BLEND_DESCRIPTION" />*</b></para>
-      <para>The new blend description specified for the blend transform.</para>
-    </param>
-    <seealso cref="ID2D1BlendTransform" />
-    <seealso cref="ID2D1EffectContext.CreateResourceTexture" />
+    <summary>Changes the blend description of the corresponding blend transform object.</summary>
+    <param name="description">The new blend description specified for the blend transform.</param>
   </member>
   <member name="ID2D1BlendTransform">
     <summary>
@@ -40,8 +26,5 @@
         </item>
       </list>
     </summary>
-    <seealso cref="ID2D1ConcreteTransform" />
-    <seealso cref="ID2D1TransformGraph" />
-    <seealso cref="ID2D1TransformNode" />
   </member>
 </doc>

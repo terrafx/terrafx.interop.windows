@@ -3,486 +3,179 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DirectX.D3DCompile">
-    <summary>
-      <para>Compile HLSL code or an  effect file into bytecode for a given target.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to uncompiled shader data; either ASCII HLSL code or a compiled effect.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pSrcData</i>.</para>
-    </param>
-    <param name="pSourceName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>You can use this parameter for strings that specify  error messages. If not used, set to <b>NULL</b>.</para>
-    </param>
-    <param name="pDefines">
-      <para>Type: <b>const <see cref="D3D_SHADER_MACRO" />*</b></para>
-      <para>An array of NULL-terminated macro definitions (see <see cref="D3D_SHADER_MACRO" />).</para>
-    </param>
+    <summary>Compile HLSL code or an effect file into bytecode for a given target.</summary>
+    <param name="pSrcData">A pointer to uncompiled shader data; either ASCII HLSL code or a compiled effect.</param>
+    <param name="SrcDataSize">Length of <i>pSrcData</i>.</param>
+    <param name="pSourceName">You can use this parameter for strings that specify error messages. If not used, set to <b>NULL</b>.</param>
+    <param name="pDefines">An optional array of <see cref="D3D_SHADER_MACRO" /> structures that define shader macros. Each macro definition contains a name and a null-terminated definition. If not used, set to <b>NULL</b>. The last structure in the array serves as a terminator and must have all members set to <b>NULL</b>.</param>
     <param name="pInclude">
-      <para>Type: <b><see cref="ID3DInclude" />*</b></para>
       <para>Optional. A pointer to an <see cref="ID3DInclude" /> for handling include files. Setting this to <b>NULL</b> will cause a compile error if a shader contains a #include. You can pass the <b>D3D_COMPILE_STANDARD_FILE_INCLUDE</b> macro, which is a pointer to a default include handler. This default include handler includes files that are relative to the current directory and files that are relative to the directory of the initial source file. When you use <b>D3D_COMPILE_STANDARD_FILE_INCLUDE</b>, you must specify the source file name in the <i>pSourceName</i> parameter; the compiler will derive the initial relative directory from <i>pSourceName</i>.</para>
-      <code>#define D3D_COMPILE_STANDARD_FILE_INCLUDE ((ID3DInclude*)(UINT_PTR)1)
-
-</code>
+      <code>#define D3D_COMPILE_STANDARD_FILE_INCLUDE ((ID3DInclude*)(UINT_PTR)1)</code>
     </param>
-    <param name="pEntrypoint">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The name of the shader entry point function where shader execution begins. When you compile using a fx profile (for example, fx_4_0, fx_5_0, and so on), <b>D3DCompile</b> ignores <i>pEntrypoint</i>. In this case, we recommend that you set <i>pEntrypoint</i> to <b>NULL</b> because it is good programming practice to set a pointer parameter to <b>NULL</b> if the called function will not use it. For all other shader profiles, a valid <i>pEntrypoint</i> is required.</para>
-    </param>
-    <param name="pTarget">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>A string that specifies the shader target or set of shader features to compile against. The shader target can be shader model 2, shader model 3, shader model 4, or shader model 5. The target can also be an effect type (for example, fx_4_1). For info about the targets that various profiles support, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/specifying-compiler-targets">Specifying Compiler Targets</a>.</para>
-    </param>
-    <param name="Flags1">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags defined by <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-constants">D3D compile constants</a>.</para>
-    </param>
-    <param name="Flags2">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags defined by <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-effect-constants">D3D compile effect constants</a>. When you compile a shader and not an effect file, <b>D3DCompile</b> ignores <i>Flags2</i>; we recommend that you set <i>Flags2</i> to zero because it is good programming practice to set a nonpointer parameter to zero if the called function will not use it.</para>
-    </param>
-    <param name="ppCode">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the compiled code.</para>
-    </param>
-    <param name="ppErrorMsgs">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access compiler error messages, or <b>NULL</b> if there are no errors.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>The difference between <b>D3DCompile</b> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile2">D3DCompile2</a> is that the latter method takes some optional parameters that can be used to control some aspects of how bytecode is generated. If this extra flexibility is not required, there is no performance gain from using <b>D3DCompile2</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+    <param name="pEntrypoint">The name of the shader entry point function where shader execution begins. When you compile using a fx profile (for example, fx_4_0, fx_5_0, and so on), <b>D3DCompile</b> ignores <i>pEntrypoint</i>. In this case, we recommend that you set <i>pEntrypoint</i> to <b>NULL</b> because it is good programming practice to set a pointer parameter to <b>NULL</b> if the called function will not use it. For all other shader profiles, a valid <i>pEntrypoint</i> is required.</param>
+    <param name="pTarget">A string that specifies the shader target or set of shader features to compile against. The shader target can be shader model 2, shader model 3, shader model 4, or shader model 5. The target can also be an effect type (for example, fx_4_1). For info about the targets that various profiles support, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/specifying-compiler-targets">Specifying Compiler Targets</a>.</param>
+    <param name="Flags1">Flags defined by <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-constants">D3D compile constants</a>.</param>
+    <param name="Flags2">Flags defined by <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-effect-constants">D3D compile effect constants</a>. When you compile a shader and not an effect file, <b>D3DCompile</b> ignores <i>Flags2</i>; we recommend that you set <i>Flags2</i> to zero because it is good programming practice to set a nonpointer parameter to zero if the called function will not use it.</param>
+    <param name="ppCode">A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the compiled code.</param>
+    <param name="ppErrorMsgs">A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access compiler error messages, or <b>NULL</b> if there are no errors.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DCompile2">
-    <summary>
-      <para>Compiles Microsoft High Level Shader Language (HLSL) code into bytecode for a given target.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to uncompiled shader data (ASCII HLSL code).</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</para>
-    </param>
-    <param name="pSourceName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>An optional pointer to a constant null-terminated string containing the name that identifies the source data to use in error messages. If not used, set to <b>NULL</b>.</para>
-    </param>
-    <param name="pDefines">
-      <para>Type: <b>const <see cref="D3D_SHADER_MACRO" />*</b></para>
-      <para>An optional array of <see cref="D3D_SHADER_MACRO" /> structures that define shader macros. Each macro definition contains a name and a NULL-terminated definition. If not used, set to <b>NULL</b>.</para>
-    </param>
+    <summary>Compiles Microsoft High Level Shader Language (HLSL) code into bytecode for a given target.</summary>
+    <param name="pSrcData">A pointer to uncompiled shader data (ASCII HLSL code).</param>
+    <param name="SrcDataSize">The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</param>
+    <param name="pSourceName">An optional pointer to a constant null-terminated string containing the name that identifies the source data to use in error messages. If not used, set to <b>NULL</b>.</param>
+    <param name="pDefines">An optional array of <see cref="D3D_SHADER_MACRO" /> structures that define shader macros. Each macro definition contains a name and a null-terminated definition. If not used, set to <b>NULL</b>. The last structure in the array serves as a terminator and must have all members set to <b>NULL</b>.</param>
     <param name="pInclude">
-      <para>Type: <b><see cref="ID3DInclude" />*</b></para>
       <para>A pointer to an <see cref="ID3DInclude" /> interface that the compiler uses to handle include files. If you set this parameter to <b>NULL</b> and the shader contains a #include, a compile error occurs. You can pass the <b>D3D_COMPILE_STANDARD_FILE_INCLUDE</b> macro, which is a pointer to a default include handler. This default include handler includes files that are relative to the current directory and files that are relative to the directory of the initial source file. When you use <b>D3D_COMPILE_STANDARD_FILE_INCLUDE</b>, you must specify the source file name in the <i>pSourceName</i> parameter; the compiler will derive the initial relative directory from <i>pSourceName</i>.</para>
-      <code>#define D3D_COMPILE_STANDARD_FILE_INCLUDE ((ID3DInclude*)(UINT_PTR)1)
-
-</code>
+      <code>#define D3D_COMPILE_STANDARD_FILE_INCLUDE ((ID3DInclude*)(UINT_PTR)1)</code>
     </param>
-    <param name="pEntrypoint">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>A pointer to a constant null-terminated string that contains  the name of the shader entry point function where shader execution begins. When you compile an effect, <b>D3DCompile2</b> ignores <i>pEntrypoint</i>; we recommend that you set <i>pEntrypoint</i> to <b>NULL</b> because it is good programming practice to set a pointer parameter to <b>NULL</b> if the called function will not use it.</para>
-    </param>
-    <param name="pTarget">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>A pointer to a constant null-terminated string that specifies the shader target or set of shader features to compile against. The shader target can be a shader model (for example, shader model 2, shader model 3, shader model 4, or shader model 5). The target can also be an effect type (for example, fx_4_1). For info about the targets that various profiles support, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/specifying-compiler-targets">Specifying Compiler Targets</a>.</para>
-    </param>
-    <param name="Flags1">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A combination of shader <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-constants">D3D compile constants</a> that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how the compiler compiles the HLSL code.</para>
-    </param>
-    <param name="Flags2">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>A combination of effect <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-effect-constants">D3D compile effect constants</a> that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how the compiler compiles the effect. When you compile a shader and not an effect file, <b>D3DCompile2</b> ignores <i>Flags2</i>; we recommend that you set <i>Flags2</i> to zero because it is good programming practice to set a nonpointer parameter to zero if the called function will not use it.</para>
-    </param>
+    <param name="pEntrypoint">A pointer to a constant null-terminated string that contains the name of the shader entry point function where shader execution begins. When you compile an effect, <b>D3DCompile2</b> ignores <i>pEntrypoint</i>; we recommend that you set <i>pEntrypoint</i> to <b>NULL</b> because it is good programming practice to set a pointer parameter to <b>NULL</b> if the called function will not use it.</param>
+    <param name="pTarget">A pointer to a constant null-terminated string that specifies the shader target or set of shader features to compile against. The shader target can be a shader model (for example, shader model 2, shader model 3, shader model 4, or shader model 5). The target can also be an effect type (for example, fx_4_1). For info about the targets that various profiles support, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/specifying-compiler-targets">Specifying Compiler Targets</a>.</param>
+    <param name="Flags1">A combination of shader <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-constants">D3D compile constants</a> that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how the compiler compiles the HLSL code.</param>
+    <param name="Flags2">A combination of effect <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-effect-constants">D3D compile effect constants</a> that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how the compiler compiles the effect. When you compile a shader and not an effect file, <b>D3DCompile2</b> ignores <i>Flags2</i>; we recommend that you set <i>Flags2</i> to zero because it is good programming practice to set a nonpointer parameter to zero if the called function will not use it.</param>
     <param name="SecondaryDataFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
       <para>A combination of the following flags that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how the compiler compiles the HLSL code.</para>
       <list type="table">
         <listheader>
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS (0x01)</description>
           <description>Merge unordered access view (UAV) slots in the secondary data that the <i>pSecondaryData</i> parameter points to.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DCOMPILE_SECDATA_PRESERVE_TEMPLATE_SLOTS (0x02)</description>
           <description>Preserve template slots in the secondary data that the <i>pSecondaryData</i> parameter points to.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3DCOMPILE_SECDATA_REQUIRE_TEMPLATE_MATCH (0x04)</description>
           <description>Require that templates in the secondary data that the <i>pSecondaryData</i> parameter points to match when the compiler compiles the HLSL code.</description>
-        </item>
+        </listheader>
       </list>
       <para>If <i>pSecondaryData</i> is <b>NULL</b>, set to zero.</para>
     </param>
-    <param name="pSecondaryData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to secondary data. If you don't pass secondary data, set to <b>NULL</b>. Use this secondary data  to align UAV slots in two shaders. Suppose shader A has UAVs and they are bound to some slots. To compile shader B such that UAVs with the same names are mapped in B to the same slots as in A, pass A’s byte code to <b>D3DCompile2</b> as the secondary data.</para>
-    </param>
-    <param name="SecondaryDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The size, in bytes, of the block of memory that <i>pSecondaryData</i> points to. If <i>pSecondaryData</i> is <b>NULL</b>, set to zero.</para>
-    </param>
-    <param name="ppCode">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the compiled code.</para>
-    </param>
-    <param name="ppErrorMsgs">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access compiler error messages, or <b>NULL</b> if there are no errors.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>The difference between <b>D3DCompile2</b> and <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile">D3DCompile</a> is that <b>D3DCompile2</b> takes some optional parameters (<i>SecondaryDataFlags</i>, <i>pSecondaryData</i> and <i>SecondaryDataSize</i>)  that can be used to control some aspects of how bytecode is generated. Refer to the descriptions of these parameters for more details. There is no difference otherwise to the efficiency of the bytecode generated between  <b>D3DCompile2</b> and <b>D3DCompile</b>.</para>
-      <h3>Compiling shaders for UWP</h3>
-      <para>To compile offline shaders the recommend approach is to use the <a href="https://docs.microsoft.com//windows/desktop/direct3dtools/fxc">Effect-Compiler Tool</a>. If you cannot compile all of your shaders ahead of time, consider compiling the more expensive ones and the ones on your startup and most performance-sensitive paths require, and compiling the rest at runtime. You can use a process similar to the following to compile a loaded or generated shader in a UWP application without blocking your user interface thread.</para>
-      <list type="bullet">
-        <item>
-          <description>Using Visual Studio 2015+ to develop the UWP app, add the new item "shader.hlsl".<list type="bullet"><item><description>In the <b>Solution Folder</b> view of Visual Studio, select the <b>shaders.hlsl </b> item, right-click for <b>Properties</b>.</description></item><item><description>Make sure the item <b>Content</b> is set to <b>Yes</b>.</description></item><item><description>Make sure the <b>Item Type</b> is set to <b>Text</b>.</description></item><item><description>Add a button to XAML, name it appropriately ("TheButton" in this example), and add a <b>Click</b> handler.</description></item></list></description>
-        </item>
-        <item>
-          <description>
-            <para>Now add these includes to your .cpp file:</para>
-            <code>#include &lt;ppltasks.h&gt;
-#include &lt;d3dcompiler.h&gt;
-#include &lt;Robuffer.h&gt;
-
-</code>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>Use the following code to call <b>D3DCompile2</b>. Note that there is no error checking or handling here, and also that this code  demonstrates you can do both I/O and compilation in the background, which leaves your UI more responsive.</para>
-            <code>void App1.DirectXPage.TheButton_Click(Platform.Object^ sender, Windows.UI.Xaml.RoutedEventArgs^ e)
-
-{
-  std.shared_ptr&lt;Microsoft.WRL.ComPtr&lt;ID3DBlob&gt;&gt; blobRef = std.make_shared&lt;Microsoft.WRL.ComPtr&lt;ID3DBlob&gt;&gt;();
-
-  // Load a file and compile it.
-  auto fileOp = Windows.ApplicationModel.Package.Current-&gt;InstalledLocation-&gt;GetFileAsync(L"shader.hlsl");
-  create_task(fileOp).then([this](Windows.Storage.StorageFile^ file) -&gt; IAsyncOperation&lt;Windows.Storage.Streams.IBuffer^&gt;^
-  {
-    // Do file I/O in background thread (use_arbitrary).
-    return Windows.Storage.FileIO.ReadBufferAsync(file);
-  }, task_continuation_context.use_arbitrary())
-    .then([this, blobRef](Windows.Storage.Streams.IBuffer^ buffer)
-  {
-    // Do compilation in background thread (use_arbitrary).
-
-    // Cast to Object^, then to its underlying IInspectable interface.
-    Microsoft.WRL.ComPtr&lt;IInspectable&gt; insp(reinterpret_cast&lt;IInspectable*&gt;(buffer));
-
-    // Query the IBufferByteAccess interface.
-    Microsoft.WRL.ComPtr&lt;Windows.Storage.Streams.IBufferByteAccess&gt; bufferByteAccess;
-    insp.As(&amp;amp;amp;amp;amp;amp;amp;bufferByteAccess);
-
-    // Retrieve the buffer data.
-    byte *pBytes = nullptr;
-    bufferByteAccess-&gt;Buffer(&amp;amp;amp;amp;amp;amp;amp;pBytes);
-
-    Microsoft.WRL.ComPtr&lt;ID3DBlob&gt; blob;
-    Microsoft.WRL.ComPtr&lt;ID3DBlob&gt; errMsgs;
-    D3DCompile2(pBytes, buffer-&gt;Length, "shader.hlsl", nullptr, nullptr, "main", "ps_5_0", 0, 0, 0, nullptr, 0, blob.GetAddressOf(), errMsgs.GetAddressOf());
-    *blobRef = blob;
-  }, task_continuation_context.use_arbitrary())
-    .then([this, blobRef]()
-  {
-    // Update UI / use shader on foreground thread.
-    wchar_t message[40];
-    swprintf_s(message, L"blob is %u bytes long", (unsigned)(*blobRef)-&gt;GetBufferSize());
-    this-&gt;TheButton-&gt;Content = ref new Platform.String(message);
-  }, task_continuation_context.use_current());
-}
-</code>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d12/specifying-root-signatures-in-hlsl">Specifying D3D12 Root Signatures in HLSL</seealso>
+    <param name="pSecondaryData">A pointer to secondary data. If you don't pass secondary data, set to <b>NULL</b>. Use this secondary data to align UAV slots in two shaders. Suppose shader A has UAVs and they are bound to some slots. To compile shader B such that UAVs with the same names are mapped in B to the same slots as in A, pass A’s byte code to <b>D3DCompile2</b> as the secondary data.</param>
+    <param name="SecondaryDataSize">The size, in bytes, of the block of memory that <i>pSecondaryData</i> points to. If <i>pSecondaryData</i> is <b>NULL</b>, set to zero.</param>
+    <param name="ppCode">A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the compiled code.</param>
+    <param name="ppErrorMsgs">A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access compiler error messages, or <b>NULL</b> if there are no errors.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DCompileFromFile">
     <summary>
-      <para>
-        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store. Refer to the section, "Compiling shaders for UWP", in the remarks for <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile2">D3DCompile2</a>. Compiles Microsoft High Level Shader Language (HLSL) code into bytecode for a given target.</para>
-    </summary>
-    <param name="pFileName">
-      <para>A pointer to a constant null-terminated string that contains  the name of the file that contains the shader code.</para>
-    </param>
-    <param name="pDefines">
-      <para>An optional array of <see cref="D3D_SHADER_MACRO" /> structures that define shader macros. Each macro definition contains a name and a NULL-terminated definition. If not used, set to <b>NULL</b>.</para>
-    </param>
+      <div>
+        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store. Refer to the section, "Compiling shaders for UWP", in the remarks for <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile2">D3DCompile2</a>.</div>Compiles Microsoft High Level Shader Language (HLSL) code into bytecode for a given target.</summary>
+    <param name="pFileName">A pointer to a constant null-terminated string that contains the name of the file that contains the shader code.</param>
+    <param name="pDefines">An optional array of <see cref="D3D_SHADER_MACRO" /> structures that define shader macros. Each macro definition contains a name and a null-terminated definition. If not used, set to <b>NULL</b>. The last structure in the array serves as a terminator and must have all members set to <b>NULL</b>.</param>
     <param name="pInclude">
       <para>An optional pointer to an <see cref="ID3DInclude" /> interface that the compiler uses to handle include files. If you set this parameter to <b>NULL</b> and the shader contains a #include, a compile error occurs. You can pass the <b>D3D_COMPILE_STANDARD_FILE_INCLUDE</b> macro, which is a pointer to a default include handler. This default include handler includes files that are relative to the current directory.</para>
-      <code>#define D3D_COMPILE_STANDARD_FILE_INCLUDE ((ID3DInclude*)(UINT_PTR)1)
-
-</code>
+      <code>#define D3D_COMPILE_STANDARD_FILE_INCLUDE ((ID3DInclude*)(UINT_PTR)1)</code>
     </param>
-    <param name="pEntrypoint">
-      <para>A pointer to a constant null-terminated string that contains  the name of the shader entry point function where shader execution begins. When you compile an effect, <b>D3DCompileFromFile</b> ignores <i>pEntrypoint</i>; we recommend that you set <i>pEntrypoint</i> to <b>NULL</b> because it is good programming practice to set a pointer parameter to <b>NULL</b> if the called function will not use it.</para>
-    </param>
-    <param name="pTarget">
-      <para>A pointer to a constant null-terminated string that specifies the shader target or set of shader features to compile against. The shader target can be a shader model (for example, shader model 2, shader model 3, shader model 4, or shader model 5 and later). The target can also be an effect type (for example, fx_4_1). For info about the targets that various profiles support, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/specifying-compiler-targets">Specifying Compiler Targets</a>.</para>
-    </param>
-    <param name="Flags1">
-      <para>A combination of shader <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-constants">compile options</a> that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how the compiler compiles the HLSL code.</para>
-    </param>
-    <param name="Flags2">
-      <para>A combination of effect <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-effect-constants">compile options</a> that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how the compiler compiles the effect. When you compile a shader and not an effect file, <b>D3DCompileFromFile</b> ignores <i>Flags2</i>; we recommend that you set <i>Flags2</i> to zero because it is good programming practice to set a nonpointer parameter to zero if the called function will not use it.</para>
-    </param>
-    <param name="ppCode">
-      <para>A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the compiled code.</para>
-    </param>
-    <param name="ppErrorMsgs">
-      <para>An optional pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access compiler error messages, or <b>NULL</b> if there are no errors.</para>
-    </param>
-    <returns>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  The D3dcompiler_44.dll or later version of the file contains the <b>D3DCompileFromFile</b> compiler function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+    <param name="pEntrypoint">A pointer to a constant null-terminated string that contains the name of the shader entry point function where shader execution begins. When you compile an effect, <b>D3DCompileFromFile</b> ignores <i>pEntrypoint</i>; we recommend that you set <i>pEntrypoint</i> to <b>NULL</b> because it is good programming practice to set a pointer parameter to <b>NULL</b> if the called function will not use it.</param>
+    <param name="pTarget">A pointer to a constant null-terminated string that specifies the shader target or set of shader features to compile against. The shader target can be a shader model (for example, shader model 2, shader model 3, shader model 4, or shader model 5 and later). The target can also be an effect type (for example, fx_4_1). For info about the targets that various profiles support, see <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/specifying-compiler-targets">Specifying Compiler Targets</a>.</param>
+    <param name="Flags1">A combination of shader <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-constants">compile options</a> that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how the compiler compiles the HLSL code.</param>
+    <param name="Flags2">A combination of effect <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile-effect-constants">compile options</a> that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how the compiler compiles the effect. When you compile a shader and not an effect file, <b>D3DCompileFromFile</b> ignores <i>Flags2</i>; we recommend that you set <i>Flags2</i> to zero because it is good programming practice to set a nonpointer parameter to zero if the called function will not use it.</param>
+    <param name="ppCode">A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the compiled code.</param>
+    <param name="ppErrorMsgs">An optional pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access compiler error messages, or <b>NULL</b> if there are no errors.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DCreateBlob">
-    <summary>
-      <para>Creates a buffer.</para>
-    </summary>
-    <param name="Size">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Number of bytes in the blob.</para>
-    </param>
-    <param name="ppBlob">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>The address of a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that is used to retrieve the buffer.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>The latest D3dcompiler_nn.dll contains the <b>D3DCreateBlob</b> compiler function. Therefore, you are no longer required to create and use an arbitrary length data buffer by using the  <see cref="D3D10CreateBlob" /> function that is contained in D3d10.dll.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
-  </member>
-  <member name="DirectX.D3DCreateFunctionLinkingGraph">
-    <summary>
-      <para>Creates a function-linking-graph interface. <b>Note</b>  This function is part of the HLSL shader linking technology that you can use on all Direct3D 11 platforms to create precompiled HLSL functions, package them into libraries, and link them into full shaders at run time.</para>
-    </summary>
-    <param name="uFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Reserved</para>
-    </param>
-    <param name="ppFunctionLinkingGraph">
-      <para>Type: <b><see cref="ID3D11FunctionLinkingGraph" />**</b></para>
-      <para>A pointer to a variable that receives a pointer to the <see cref="ID3D11FunctionLinkingGraph" /> interface that is used for constructing shaders that consist of a sequence of precompiled function calls.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns S_OK if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  The D3dcompiler_47.dll or later version of the DLL contains the <b>D3DCreateFunctionLinkingGraph</b> function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
-    <seealso cref="ID3D11FunctionLinkingGraph" />
-  </member>
-  <member name="DirectX.D3DCreateLinker">
-    <summary>
-      <para>Creates a linker interface. <b>Note</b>  This function is part of the HLSL shader linking technology that you can use on all Direct3D 11 platforms to create precompiled HLSL functions, package them into libraries, and link them into full shaders at run time.</para>
-    </summary>
-    <param name="ppLinker">
-      <para>Type: <b><see cref="ID3D11Linker" />**</b></para>
-      <para>A pointer to a variable that receives a pointer to the <see cref="ID3D11Linker" /> interface that is used to link a shader module.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns S_OK if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  The D3dcompiler_47.dll or later version of the DLL contains the <b>D3DCreateLinker</b> function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
-    <seealso cref="ID3D11Linker" />
+    <summary>Creates a buffer.</summary>
+    <param name="Size">Number of bytes in the blob.</param>
+    <param name="ppBlob">The address of a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that is used to retrieve the buffer.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DDecompressShaders">
     <summary>
-      <para>
-        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store. Decompresses one or more shaders from a compressed set.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to uncompiled shader data; either ASCII HLSL code or a compiled effect.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of uncompiled shader data that <i>pSrcData</i> points to.</para>
-    </param>
-    <param name="uNumShaders">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The number of shaders to decompress.</para>
-    </param>
-    <param name="uStartIndex">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>The index of the first shader to decompress.</para>
-    </param>
-    <param name="pIndices">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>An array of indexes that represent the shaders to decompress.</para>
-    </param>
-    <param name="uFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags that indicate how to decompress. Currently, no flags are defined.</para>
-    </param>
-    <param name="ppShaders">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>The address of a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that is used to retrieve the decompressed shader data.</para>
-    </param>
-    <param name="pTotalShaders">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a>*</b></para>
-      <para>A pointer to a variable that receives the total number of shaders that  <b>D3DDecompressShaders</b> decompressed.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+      <div>
+        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store.</div>Decompresses one or more shaders from a compressed set.</summary>
+    <param name="pSrcData">A pointer to uncompiled shader data; either ASCII HLSL code or a compiled effect.</param>
+    <param name="SrcDataSize">Length of uncompiled shader data that <i>pSrcData</i> points to.</param>
+    <param name="uNumShaders">The number of shaders to decompress.</param>
+    <param name="uStartIndex">The index of the first shader to decompress.</param>
+    <param name="pIndices">An array of indexes that represent the shaders to decompress.</param>
+    <param name="uFlags">Flags that indicate how to decompress. Currently, no flags are defined.</param>
+    <param name="ppShaders">The address of a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that is used to retrieve the decompressed shader data.</param>
+    <param name="pTotalShaders">A pointer to a variable that receives the total number of shaders that <b>D3DDecompressShaders</b> decompressed.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DDisassemble">
-    <summary>
-      <para>Disassembles compiled HLSL code.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to source data as compiled HLSL code.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pSrcData</i>.</para>
-    </param>
+    <summary>Disassembles compiled HLSL code.</summary>
+    <param name="pSrcData">A pointer to source data as compiled HLSL code.</param>
+    <param name="SrcDataSize">Length of <i>pSrcData</i>.</param>
     <param name="Flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags affecting the behavior of <b>D3DDisassemble</b>.  <i>Flags</i> can be a combination of zero or more of the following values.</para>
+      <para>Flags affecting the behavior of <b>D3DDisassemble</b>. <i>Flags</i> can be a combination of zero or more of the following values.</para>
       <list type="table">
         <listheader>
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <b>D3D_DISASM_ENABLE_COLOR_CODE</b>
           </description>
           <description>Enable the output of color codes.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>D3D_DISASM_ENABLE_DEFAULT_VALUE_PRINTS</b>
           </description>
           <description>Enable the output of default values.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>D3D_DISASM_ENABLE_INSTRUCTION_NUMBERING</b>
           </description>
           <description>Enable instruction numbering.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>D3D_DISASM_ENABLE_INSTRUCTION_CYCLE</b>
           </description>
           <description>No effect.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>D3D_DISASM_DISABLE_DEBUG_INFO</b>
           </description>
           <description>Disable debug information.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>D3D_DISASM_ENABLE_INSTRUCTION_OFFSET</b>
           </description>
           <description>Enable instruction offsets.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b>D3D_DISASM_INSTRUCTION_ONLY</b>
           </description>
           <description>Disassemble instructions only.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>
             <b> D3D_DISASM_PRINT_HEX_LITERALS</b>
           </description>
           <description>Use hex symbols in disassemblies.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <param name="szComments">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The comment string at the top of the shader that identifies the shader constants and variables.</para>
-    </param>
-    <param name="ppDisassembly">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that accesses assembly text.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+    <param name="szComments">The comment string at the top of the shader that identifies the shader constants and variables.</param>
+    <param name="ppDisassembly">A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that accesses assembly text.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DDisassemble10Effect">
-    <summary>
-      <para>Disassembles compiled HLSL code from a Direct3D10 effect.</para>
-    </summary>
-    <param name="pEffect">
-      <para>Type: <b><see cref="ID3D10Effect" />*</b></para>
-      <para>A pointer to source data as compiled HLSL code.</para>
-    </param>
-    <param name="Flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Shader <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-shader">compile options</a>.</para>
-    </param>
-    <param name="ppDisassembly">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains disassembly text.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+    <summary>Disassembles compiled HLSL code from a Direct3D10 effect.</summary>
+    <param name="pEffect">A pointer to source data as compiled HLSL code.</param>
+    <param name="Flags">Shader <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-shader">compile options</a>.</param>
+    <param name="ppDisassembly">A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains disassembly text.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DDisassembleRegion">
-    <summary>
-      <para>Disassembles a specific region of compiled Microsoft High Level Shader Language (HLSL) code.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>A pointer to compiled shader data.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</para>
-    </param>
+    <summary>Disassembles a specific region of compiled Microsoft High Level Shader Language (HLSL) code.</summary>
+    <param name="pSrcData">A pointer to compiled shader data.</param>
+    <param name="SrcDataSize">The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</param>
     <param name="Flags">
       <para>A combination of zero or more of the following flags that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how <b>D3DDisassembleRegion</b> disassembles the compiled shader data.</para>
       <list type="table">
@@ -490,199 +183,92 @@
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>D3D_DISASM_ENABLE_COLOR_CODE (0x01)</description>
           <description>Enable the output of color codes.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_ENABLE_DEFAULT_VALUE_PRINTS (0x02)</description>
           <description>Enable the output of default values.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_ENABLE_INSTRUCTION_NUMBERING (0x04)</description>
           <description>Enable instruction numbering.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_ENABLE_INSTRUCTION_CYCLE (0x08)</description>
           <description>No effect.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_DISABLE_DEBUG_INFO (0x10)</description>
           <description>Disable the output of debug information.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_ENABLE_INSTRUCTION_OFFSET (0x20)</description>
           <description>Enable the output of instruction offsets.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>D3D_DISASM_INSTRUCTION_ONLY (0x40)</description>
           <description>This flag has no effect in <b>D3DDisassembleRegion</b>. Cycle information comes from the trace; therefore, cycle information is available only in <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3ddisassemble11trace">D3DDisassemble11Trace</a>'s trace disassembly.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <param name="szComments">
-      <para>A pointer to a constant null-terminated string at the top of the shader that identifies the shader constants and variables.</para>
-    </param>
-    <param name="StartByteOffset">
-      <para>The number of bytes offset into the compiled shader data where <b>D3DDisassembleRegion</b> starts the disassembly.</para>
-    </param>
-    <param name="NumInsts">
-      <para>The number of instructions to disassemble.</para>
-    </param>
-    <param name="pFinishByteOffset">
-      <para>A pointer to a variable that receives the number of bytes offset into the compiled shader data where <b>D3DDisassembleRegion</b> finishes the disassembly.</para>
-    </param>
-    <param name="ppDisassembly">
-      <para>A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that accesses the disassembled HLSL code.</para>
-    </param>
-    <returns>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  The D3dcompiler_44.dll or later version of the file contains the <b>D3DDisassembleRegion</b> compiler function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+    <param name="szComments">A pointer to a constant null-terminated string at the top of the shader that identifies the shader constants and variables.</param>
+    <param name="StartByteOffset">The number of bytes offset into the compiled shader data where <b>D3DDisassembleRegion</b> starts the disassembly.</param>
+    <param name="NumInsts">The number of instructions to disassemble.</param>
+    <param name="pFinishByteOffset">A pointer to a variable that receives the number of bytes offset into the compiled shader data where <b>D3DDisassembleRegion</b> finishes the disassembly.</param>
+    <param name="ppDisassembly">A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that accesses the disassembled HLSL code.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DGetBlobPart">
-    <summary>
-      <para>Retrieves a specific part from a compilation result.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to uncompiled shader data; either ASCII HLSL code or a compiled effect.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of uncompiled shader data that <i>pSrcData</i> points to.</para>
-    </param>
-    <param name="Part">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_PART</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_PART</a>-typed value that specifies the part of the buffer to retrieve.</para>
-    </param>
-    <param name="Flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags that indicate how to retrieve the blob part. Currently, no flags are defined.</para>
-    </param>
-    <param name="ppPart">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>The address of a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that is used to retrieve the specified part of the buffer.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>D3DGetBlobPart</b> retrieves the part of a blob (arbitrary length data buffer) that contains the type of data that the  <i>Part</i> parameter specifies.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+    <summary>Retrieves a specific part from a compilation result.</summary>
+    <param name="pSrcData">A pointer to uncompiled shader data; either ASCII HLSL code or a compiled effect.</param>
+    <param name="SrcDataSize">Length of uncompiled shader data that <i>pSrcData</i> points to.</param>
+    <param name="Part">A <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_PART</a>-typed value that specifies the part of the buffer to retrieve.</param>
+    <param name="Flags">Flags that indicate how to retrieve the blob part. Currently, no flags are defined.</param>
+    <param name="ppPart">The address of a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that is used to retrieve the specified part of the buffer.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DGetDebugInfo">
     <summary>
-      <para>
-        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store. Gets shader debug information.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to source data; either uncompiled or compiled HLSL code.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pSrcData</i>.</para>
-    </param>
-    <param name="ppDebugInfo">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains debug information.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Debug information is embedded in the body of the shader after calling <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompile">D3DCompile</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+      <div>
+        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store.</div>Gets shader debug information.</summary>
+    <param name="pSrcData">A pointer to source data; either uncompiled or compiled HLSL code.</param>
+    <param name="SrcDataSize">Length of <i>pSrcData</i>.</param>
+    <param name="ppDebugInfo">A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains debug information.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DGetInputAndOutputSignatureBlob">
     <summary>
-      <para>
-        <b>Note</b>  <b>D3DGetInputAndOutputSignatureBlob</b> may be altered or unavailable for releases after Windows 8.1. Instead use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dgetblobpart">D3DGetBlobPart</a> with the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_INPUT_AND_OUTPUT_SIGNATURE_BLOB</a> value.  Gets the input and output signatures from a compilation result.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to source data as compiled HLSL code.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pSrcData</i>.</para>
-    </param>
-    <param name="ppSignatureBlob">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains a compiled shader.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+      <div>
+        <b>Note</b>  <b>D3DGetInputAndOutputSignatureBlob</b> may be altered or unavailable for releases after Windows 8.1. Instead use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dgetblobpart">D3DGetBlobPart</a> with the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_INPUT_AND_OUTPUT_SIGNATURE_BLOB</a> value.</div>Gets the input and output signatures from a compilation result.</summary>
+    <param name="pSrcData">A pointer to source data as compiled HLSL code.</param>
+    <param name="SrcDataSize">Length of <i>pSrcData</i>.</param>
+    <param name="ppSignatureBlob">A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains a compiled shader.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DGetInputSignatureBlob">
     <summary>
-      <para>
-        <b>Note</b>  <b>D3DGetInputSignatureBlob</b> may be altered or unavailable for releases after Windows 8.1. Instead use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dgetblobpart">D3DGetBlobPart</a> with the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_INPUT_SIGNATURE_BLOB</a> value.  Gets the input signature from a compilation result.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to source data as compiled HLSL code.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pSrcData</i>.</para>
-    </param>
-    <param name="ppSignatureBlob">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains a compiled shader.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+      <div>
+        <b>Note</b>  <b>D3DGetInputSignatureBlob</b> may be altered or unavailable for releases after Windows 8.1. Instead use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dgetblobpart">D3DGetBlobPart</a> with the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_INPUT_SIGNATURE_BLOB</a> value.</div>Gets the input signature from a compilation result.</summary>
+    <param name="pSrcData">A pointer to source data as compiled HLSL code.</param>
+    <param name="SrcDataSize">Length of <i>pSrcData</i>.</param>
+    <param name="ppSignatureBlob">A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains a compiled shader.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DGetOutputSignatureBlob">
     <summary>
-      <para>
-        <b>Note</b>  <b>D3DGetOutputSignatureBlob</b> may be altered or unavailable for releases after Windows 8.1. Instead use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dgetblobpart">D3DGetBlobPart</a> with the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_OUTPUT_SIGNATURE_BLOB</a> value.  Gets the output signature from a compilation result.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to source data as compiled HLSL code.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pSrcData</i>.</para>
-    </param>
-    <param name="ppSignatureBlob">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains a compiled shader.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+      <div>
+        <b>Note</b>  <b>D3DGetOutputSignatureBlob</b> may be altered or unavailable for releases after Windows 8.1. Instead use <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dgetblobpart">D3DGetBlobPart</a> with the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_OUTPUT_SIGNATURE_BLOB</a> value.</div>Gets the output signature from a compilation result.</summary>
+    <param name="pSrcData">A pointer to source data as compiled HLSL code.</param>
+    <param name="SrcDataSize">Length of <i>pSrcData</i>.</param>
+    <param name="ppSignatureBlob">A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains a compiled shader.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DGetTraceInstructionOffsets">
-    <summary>
-      <para>Retrieves the byte offsets for instructions within a section of shader code.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>A pointer to the compiled shader data.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</para>
-    </param>
+    <summary>Retrieves the byte offsets for instructions within a section of shader code.</summary>
+    <param name="pSrcData">A pointer to the compiled shader data.</param>
+    <param name="SrcDataSize">The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</param>
     <param name="Flags">
       <para>A combination of the following flags that are combined by using a bitwise <b>OR</b> operation. The resulting value specifies how <b>D3DGetTraceInstructionOffsets</b> retrieves the instruction offsets.</para>
       <list type="table">
@@ -690,287 +276,74 @@
           <description>Flag</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>D3D_GET_INST_OFFSETS_INCLUDE_NON_EXECUTABLE (0x01)</description>
           <description>Include non-executable code in the retrieved information.</description>
-        </item>
+        </listheader>
       </list>
     </param>
-    <param name="StartInstIndex">
-      <para>The index of the instruction in the compiled shader data for which <b>D3DGetTraceInstructionOffsets</b> starts to retrieve the byte offsets.</para>
-    </param>
-    <param name="NumInsts">
-      <para>The number of instructions for which <b>D3DGetTraceInstructionOffsets</b> retrieves the byte offsets.</para>
-    </param>
-    <param name="pOffsets">
-      <para>A pointer to a variable that receives the actual number of offsets.</para>
-    </param>
-    <param name="pTotalInsts">
-      <para>A pointer to a variable that receives the total number of instructions in the section of shader code.</para>
-    </param>
-    <returns>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>A new kind of Microsoft High Level Shader Language (HLSL) debugging information from a program database (PDB) file uses instruction-byte offsets within a shader blob (arbitrary-length data buffer). You use <b>D3DGetTraceInstructionOffsets</b> to translate to and from instruction indexes.</para>
-      <para>
-        <b>Note</b>  The D3dcompiler_44.dll or later version of the file contains the <b>D3DGetTraceInstructionOffsets</b> compiler function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
-  </member>
-  <member name="DirectX.D3DLoadModule">
-    <summary>
-      <para>Creates a shader module interface from source data for the shader module. <b>Note</b>  This function is part of the HLSL shader linking technology that you can use on all Direct3D 11 platforms to create precompiled HLSL functions, package them into libraries, and link them into full shaders at run time.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to the source data for the shader module.</para>
-    </param>
-    <param name="cbSrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</para>
-    </param>
-    <param name="ppModule">
-      <para>Type: <b><see cref="ID3D11Module" />**</b></para>
-      <para>A pointer to a variable that receives a pointer to the <see cref="ID3D11Module" /> interface that is used for shader resource re-binding.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns S_OK if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  The D3dcompiler_47.dll or later version of the DLL contains the <b>D3DLoadModule</b> function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
-    <seealso cref="ID3D11Module" />
+    <param name="StartInstIndex">The index of the instruction in the compiled shader data for which <b>D3DGetTraceInstructionOffsets</b> starts to retrieve the byte offsets.</param>
+    <param name="NumInsts">The number of instructions for which <b>D3DGetTraceInstructionOffsets</b> retrieves the byte offsets.</param>
+    <param name="pOffsets">A pointer to a variable that receives the actual number of offsets.</param>
+    <param name="pTotalInsts">A pointer to a variable that receives the total number of instructions in the section of shader code.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DPreprocess">
-    <summary>
-      <para>Preprocesses uncompiled HLSL code.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to uncompiled shader data; either ASCII HLSL code or a compiled effect.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pSrcData</i>.</para>
-    </param>
-    <param name="pSourceName">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCSTR</a></b></para>
-      <para>The name of the file that contains the uncompiled HLSL code.</para>
-    </param>
-    <param name="pDefines">
-      <para>Type: <b>const <see cref="D3D_SHADER_MACRO" />*</b></para>
-      <para>An array of NULL-terminated macro definitions (see <see cref="D3D_SHADER_MACRO" />).</para>
-    </param>
+    <summary>Preprocesses uncompiled HLSL code.</summary>
+    <param name="pSrcData">A pointer to uncompiled shader data; either ASCII HLSL code or a compiled effect.</param>
+    <param name="SrcDataSize">Length of <i>pSrcData</i>.</param>
+    <param name="pSourceName">The name of the file that contains the uncompiled HLSL code.</param>
+    <param name="pDefines">An array of NULL-terminated macro definitions (see <see cref="D3D_SHADER_MACRO" />).</param>
     <param name="pInclude">
-      <para>Type: <b><see cref="ID3DInclude" />*</b></para>
       <para>A pointer to an <see cref="ID3DInclude" /> for handling include files. Setting this to <b>NULL</b> will cause a compile error if a shader contains a #include. You can pass the <b>D3D_COMPILE_STANDARD_FILE_INCLUDE</b> macro, which is a pointer to a default include handler. This default include handler includes files that are relative to the current directory and files that are relative to the directory of the initial source file. When you use <b>D3D_COMPILE_STANDARD_FILE_INCLUDE</b>, you must specify the source file name in the <i>pSourceName</i> parameter; the compiler will derive the initial relative directory from <i>pSourceName</i>.</para>
-      <code>#define D3D_COMPILE_STANDARD_FILE_INCLUDE ((ID3DInclude*)(UINT_PTR)1)
-
-</code>
+      <code>#define D3D_COMPILE_STANDARD_FILE_INCLUDE ((ID3DInclude*)(UINT_PTR)1)</code>
     </param>
-    <param name="ppCodeText">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>The address of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> that contains the compiled code.</para>
-    </param>
-    <param name="ppErrorMsgs">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> that contains compiler error messages, or <b>NULL</b> if there were no errors.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>D3DPreprocess</b> outputs <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-hlsl-appendix-pre-line">#line</a> directives and preserves line numbering of source input so that output line numbering can be properly related to the input source.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+    <param name="ppCodeText">The address of a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> that contains the compiled code.</param>
+    <param name="ppErrorMsgs">A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> that contains compiler error messages, or <b>NULL</b> if there were no errors.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DReadFileToBlob">
     <summary>
-      <para>
-        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store. Reads a file  that is on disk into memory.</para>
-    </summary>
-    <param name="pFileName">
-      <para>A pointer to a constant null-terminated string that contains  the name of the file to read into memory.</para>
-    </param>
-    <param name="ppContents">
-      <para>A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains information that <b>D3DReadFileToBlob</b> read from the <i>pFileName</i> file. You can use this <b>ID3DBlob</b> interface to access the file information and pass it to other compiler functions.</para>
-    </param>
-    <returns>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  The D3dcompiler_44.dll or later version of the file contains the <b>D3DReadFileToBlob</b> compiler function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+      <div>
+        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store.</div>Reads a file that is on disk into memory.</summary>
+    <param name="pFileName">A pointer to a constant null-terminated string that contains the name of the file to read into memory.</param>
+    <param name="ppContents">A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains information that <b>D3DReadFileToBlob</b> read from the <i>pFileName</i> file. You can use this <b>ID3DBlob</b> interface to access the file information and pass it to other compiler functions.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DReflect">
-    <summary>
-      <para>Gets a pointer to a reflection interface.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to source data as compiled HLSL code.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pSrcData</i>.</para>
-    </param>
-    <param name="pInterface">
-      <para>Type: <b>REFIID</b></para>
-      <para>The reference GUID of the COM interface to use. For example, <b>IID_ID3D11ShaderReflection</b>.</para>
-    </param>
-    <param name="ppReflector">
-      <para>Type: <b>void**</b></para>
-      <para>A pointer to a reflection interface.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Shader code contains metadata that can be inspected using the reflection APIs.</para>
-      <para>The following code illustrates retrieving a <see cref="ID3D11ShaderReflection" /> Interface from a shader.</para>
-      <code>
-pd3dDevice-&gt;CreatePixelShader( pPixelShaderBuffer-&gt;GetBufferPointer(),
-                               pPixelShaderBuffer-&gt;GetBufferSize(), g_pPSClassLinkage, &amp;amp;amp;amp;amp;amp;g_pPixelShader );
-
-ID3D11ShaderReflection* pReflector = NULL;
-D3DReflect( pPixelShaderBuffer-&gt;GetBufferPointer(), pPixelShaderBuffer-&gt;GetBufferSize(),
-            IID_ID3D11ShaderReflection, (void**) &amp;amp;amp;amp;amp;amp;pReflector);
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
-  </member>
-  <member name="DirectX.D3DReflectLibrary">
-    <summary>
-      <para>Creates a library-reflection interface from source data that contains an HLSL library of functions. <b>Note</b>  This function is part of the HLSL shader linking technology that you can use on all Direct3D 11 platforms to create precompiled HLSL functions, package them into libraries, and link them into full shaders at run time.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to source data as an HLSL library of functions.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The size, in bytes, of the block of memory that <i>pSrcData</i> points to.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The reference GUID of the COM interface to use. For example, <b>IID_ID3D11LibraryReflection</b>.</para>
-    </param>
-    <param name="ppReflector">
-      <para>Type: <b>LPVOID*</b></para>
-      <para>A pointer to a variable that receives a pointer to a library-reflection interface, <see cref="ID3D11LibraryReflection" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns S_OK if successful; otherwise, returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 Return Codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
-    <seealso cref="ID3D11LibraryReflection" />
+    <summary>Gets a pointer to a reflection interface.</summary>
+    <param name="pSrcData">A pointer to source data as compiled HLSL code.</param>
+    <param name="SrcDataSize">Length of <i>pSrcData</i>.</param>
+    <param name="pInterface">The reference GUID of the COM interface to use. For example, <b>IID_ID3D11ShaderReflection</b>.</param>
+    <param name="ppReflector">A pointer to a reflection interface.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DSetBlobPart">
-    <summary>
-      <para>Sets information in a compilation result.</para>
-    </summary>
-    <param name="pSrcData">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to compiled shader data.</para>
-    </param>
-    <param name="SrcDataSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The length of the compiled shader data that <i>pSrcData</i> points to.</para>
-    </param>
-    <param name="Part">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_PART</a></b></para>
-      <para>A <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_PART</a>-typed value that specifies the part to set. Currently, you can update only private data; that is, <b>D3DSetBlobPart</b> currently only supports the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_PRIVATE_DATA</a> value.</para>
-    </param>
-    <param name="Flags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Flags that indicate how to set the blob part. Currently, no flags are defined; therefore, set to zero.</para>
-    </param>
-    <param name="pPart">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to data to set in the compilation result.</para>
-    </param>
-    <param name="PartSize">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>The length of the data that <i>pPart</i> points to.</para>
-    </param>
-    <param name="ppNewShader">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface for the new shader in which the new part data is set.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>D3DSetBlobPart</b> modifies data in a compiled shader.  Currently, <b>D3DSetBlobPart</b> can update only the private data in a compiled shader. You can use  <b>D3DSetBlobPart</b> to attach arbitrary uninterpreted data to a compiled shader.</para>
-      <para>
-        <b>Note</b>  The D3dcompiler_44.dll or later version of the file contains the <b>D3DSetBlobPart</b> compiler function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+    <summary>Sets information in a compilation result.</summary>
+    <param name="pSrcData">A pointer to compiled shader data.</param>
+    <param name="SrcDataSize">The length of the compiled shader data that <i>pSrcData</i> points to.</param>
+    <param name="Part">A <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_PART</a>-typed value that specifies the part to set. Currently, you can update only private data; that is, <b>D3DSetBlobPart</b> currently only supports the <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3d-blob-part">D3D_BLOB_PRIVATE_DATA</a> value.</param>
+    <param name="Flags">Flags that indicate how to set the blob part. Currently, no flags are defined; therefore, set to zero.</param>
+    <param name="pPart">A pointer to data to set in the compilation result.</param>
+    <param name="PartSize">The length of the data that <i>pPart</i> points to.</param>
+    <param name="ppNewShader">A pointer to a buffer that receives the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface for the new shader in which the new part data is set.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DStripShader">
-    <summary>
-      <para>Removes unwanted blobs from a compilation result.</para>
-    </summary>
-    <param name="pShaderBytecode">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCVOID</a></b></para>
-      <para>A pointer to source data as compiled HLSL code.</para>
-    </param>
-    <param name="BytecodeLength">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">SIZE_T</a></b></para>
-      <para>Length of <i>pSrcData</i>.</para>
-    </param>
-    <param name="uStripFlags">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">UINT</a></b></para>
-      <para>Strip flag options, represented by <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompiler-strip-flags">D3DCOMPILER_STRIP_FLAGS</a>.</para>
-    </param>
-    <param name="ppStrippedBlob">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>**</b></para>
-      <para>A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the unwanted stripped out shader code.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+    <summary>Removes unwanted blobs from a compilation result.</summary>
+    <param name="pShaderBytecode">A pointer to source data as compiled HLSL code.</param>
+    <param name="BytecodeLength">Length of <i>pSrcData</i>.</param>
+    <param name="uStripFlags">Strip flag options, represented by <a href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/d3dcompiler-strip-flags">D3DCOMPILER_STRIP_FLAGS</a>.</param>
+    <param name="ppStrippedBlob">A pointer to a variable that receives a pointer to the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that you can use to access the unwanted stripped out shader code.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
   <member name="DirectX.D3DWriteBlobToFile">
     <summary>
-      <para>
-        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store. Writes a memory blob to a file on disk.</para>
-    </summary>
-    <param name="pBlob">
-      <para>Type: <b><a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a>*</b></para>
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains the memory blob to write to the file that the <i>pFileName</i> parameter specifies.</para>
-    </param>
-    <param name="pFileName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to a constant null-terminated string that contains  the name of the file to which to write.</para>
-    </param>
-    <param name="bOverwrite">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BOOL</a></b></para>
-      <para>A Boolean value that specifies whether to overwrite information in the <i>pFileName</i> file. TRUE specifies to overwrite information and FALSE specifies not to overwrite information.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">HRESULT</a></b></para>
-      <para>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>Note</b>  The D3dcompiler_44.dll or later version of the file contains the <b>D3DWriteBlobToFile</b> compiler function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3dhlsl/dx-graphics-d3dcompiler-reference-functions">Functions</seealso>
+      <div>
+        <b>Note</b>  You can use this API to develop your Windows Store apps, but you can't use it in apps that you submit to the Windows Store.</div>Writes a memory blob to a file on disk.</summary>
+    <param name="pBlob">A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ff728743(v=vs.85)">ID3DBlob</a> interface that contains the memory blob to write to the file that the <i>pFileName</i> parameter specifies.</param>
+    <param name="pFileName">A pointer to a constant null-terminated string that contains the name of the file to which to write.</param>
+    <param name="bOverwrite">A Boolean value that specifies whether to overwrite information in the <i>pFileName</i> file. TRUE specifies to overwrite information and FALSE specifies not to overwrite information.</param>
+    <returns>Returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-returnvalues">Direct3D 11 return codes</a>.</returns>
   </member>
 </doc>

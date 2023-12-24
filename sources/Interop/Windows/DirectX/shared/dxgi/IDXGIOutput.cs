@@ -26,7 +26,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIOutput*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, Guid*, void**, int>)(lpVtbl[0]))((IDXGIOutput*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDXGIOutput*, uint>)(lpVtbl[1]))((IDXGIOutput*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, uint>)(lpVtbl[1]))((IDXGIOutput*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDXGIOutput*, uint>)(lpVtbl[2]))((IDXGIOutput*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, uint>)(lpVtbl[2]))((IDXGIOutput*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateData" />
@@ -52,7 +52,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint DataSize, [NativeTypeName("const void *")] void* pData)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIOutput*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, Guid*, uint, void*, int>)(lpVtbl[3]))((IDXGIOutput*)Unsafe.AsPointer(ref this), Name, DataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.SetPrivateDataInterface" />
@@ -60,7 +60,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetPrivateDataInterface([NativeTypeName("const GUID &")] Guid* Name, [NativeTypeName("const IUnknown *")] IUnknown* pUnknown)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIOutput*)Unsafe.AsPointer(ref this), Name, pUnknown);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, Guid*, IUnknown*, int>)(lpVtbl[4]))((IDXGIOutput*)Unsafe.AsPointer(ref this), Name, pUnknown);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetPrivateData" />
@@ -68,7 +68,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetPrivateData([NativeTypeName("const GUID &")] Guid* Name, uint* pDataSize, void* pData)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIOutput*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, Guid*, uint*, void*, int>)(lpVtbl[5]))((IDXGIOutput*)Unsafe.AsPointer(ref this), Name, pDataSize, pData);
     }
 
     /// <inheritdoc cref="IDXGIObject.GetParent" />
@@ -76,7 +76,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT GetParent([NativeTypeName("const IID &")] Guid* riid, void** ppParent)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIOutput*)Unsafe.AsPointer(ref this), riid, ppParent);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, Guid*, void**, int>)(lpVtbl[6]))((IDXGIOutput*)Unsafe.AsPointer(ref this), riid, ppParent);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.GetDesc"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT GetDesc(DXGI_OUTPUT_DESC* pDesc)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, DXGI_OUTPUT_DESC*, int>)(lpVtbl[7]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pDesc);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, DXGI_OUTPUT_DESC*, int>)(lpVtbl[7]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pDesc);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.GetDisplayModeList"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT GetDisplayModeList(DXGI_FORMAT EnumFormat, uint Flags, uint* pNumModes, DXGI_MODE_DESC* pDesc)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int>)(lpVtbl[8]))((IDXGIOutput*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int>)(lpVtbl[8]))((IDXGIOutput*)Unsafe.AsPointer(ref this), EnumFormat, Flags, pNumModes, pDesc);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.FindClosestMatchingMode"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT FindClosestMatchingMode([NativeTypeName("const DXGI_MODE_DESC *")] DXGI_MODE_DESC* pModeToMatch, DXGI_MODE_DESC* pClosestMatch, IUnknown* pConcernedDevice)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, DXGI_MODE_DESC*, DXGI_MODE_DESC*, IUnknown*, int>)(lpVtbl[9]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, DXGI_MODE_DESC*, DXGI_MODE_DESC*, IUnknown*, int>)(lpVtbl[9]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pModeToMatch, pClosestMatch, pConcernedDevice);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.WaitForVBlank"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT WaitForVBlank()
     {
-        return ((delegate* unmanaged<IDXGIOutput*, int>)(lpVtbl[10]))((IDXGIOutput*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, int>)(lpVtbl[10]))((IDXGIOutput*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.TakeOwnership"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT TakeOwnership(IUnknown* pDevice, BOOL Exclusive)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, IUnknown*, BOOL, int>)(lpVtbl[11]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pDevice, Exclusive);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, IUnknown*, BOOL, int>)(lpVtbl[11]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pDevice, Exclusive);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.ReleaseOwnership"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(12)]
     public void ReleaseOwnership()
     {
-        ((delegate* unmanaged<IDXGIOutput*, void>)(lpVtbl[12]))((IDXGIOutput*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, void>)(lpVtbl[12]))((IDXGIOutput*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.GetGammaControlCapabilities"]/*' />
@@ -132,7 +132,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(13)]
     public HRESULT GetGammaControlCapabilities(DXGI_GAMMA_CONTROL_CAPABILITIES* pGammaCaps)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, DXGI_GAMMA_CONTROL_CAPABILITIES*, int>)(lpVtbl[13]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pGammaCaps);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, DXGI_GAMMA_CONTROL_CAPABILITIES*, int>)(lpVtbl[13]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pGammaCaps);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.SetGammaControl"]/*' />
@@ -140,7 +140,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(14)]
     public HRESULT SetGammaControl([NativeTypeName("const DXGI_GAMMA_CONTROL *")] DXGI_GAMMA_CONTROL* pArray)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, DXGI_GAMMA_CONTROL*, int>)(lpVtbl[14]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pArray);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, DXGI_GAMMA_CONTROL*, int>)(lpVtbl[14]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pArray);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.GetGammaControl"]/*' />
@@ -148,7 +148,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(15)]
     public HRESULT GetGammaControl(DXGI_GAMMA_CONTROL* pArray)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, DXGI_GAMMA_CONTROL*, int>)(lpVtbl[15]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pArray);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, DXGI_GAMMA_CONTROL*, int>)(lpVtbl[15]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pArray);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.SetDisplaySurface"]/*' />
@@ -156,7 +156,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(16)]
     public HRESULT SetDisplaySurface(IDXGISurface* pScanoutSurface)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, IDXGISurface*, int>)(lpVtbl[16]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pScanoutSurface);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, IDXGISurface*, int>)(lpVtbl[16]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pScanoutSurface);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.GetDisplaySurfaceData"]/*' />
@@ -164,7 +164,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(17)]
     public HRESULT GetDisplaySurfaceData(IDXGISurface* pDestination)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, IDXGISurface*, int>)(lpVtbl[17]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pDestination);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, IDXGISurface*, int>)(lpVtbl[17]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pDestination);
     }
 
     /// <include file='IDXGIOutput.xml' path='doc/member[@name="IDXGIOutput.GetFrameStatistics"]/*' />
@@ -172,7 +172,7 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
     [VtblIndex(18)]
     public HRESULT GetFrameStatistics(DXGI_FRAME_STATISTICS* pStats)
     {
-        return ((delegate* unmanaged<IDXGIOutput*, DXGI_FRAME_STATISTICS*, int>)(lpVtbl[18]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pStats);
+        return ((delegate* unmanaged[MemberFunction]<IDXGIOutput*, DXGI_FRAME_STATISTICS*, int>)(lpVtbl[18]))((IDXGIOutput*)Unsafe.AsPointer(ref this), pStats);
     }
 
     public interface Interface : IDXGIObject.Interface
@@ -218,60 +218,60 @@ public unsafe partial struct IDXGIOutput : IDXGIOutput.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const GUID &, UINT, const void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint, void*, int> SetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint, void*, int> SetPrivateData;
 
         [NativeTypeName("HRESULT (const GUID &, const IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IUnknown*, int> SetPrivateDataInterface;
 
         [NativeTypeName("HRESULT (const GUID &, UINT *, void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, uint*, void*, int> GetPrivateData;
 
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> GetParent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> GetParent;
 
         [NativeTypeName("HRESULT (DXGI_OUTPUT_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_OUTPUT_DESC*, int> GetDesc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_OUTPUT_DESC*, int> GetDesc;
 
         [NativeTypeName("HRESULT (DXGI_FORMAT, UINT, UINT *, DXGI_MODE_DESC *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int> GetDisplayModeList;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_FORMAT, uint, uint*, DXGI_MODE_DESC*, int> GetDisplayModeList;
 
         [NativeTypeName("HRESULT (const DXGI_MODE_DESC *, DXGI_MODE_DESC *, IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_MODE_DESC*, DXGI_MODE_DESC*, IUnknown*, int> FindClosestMatchingMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_MODE_DESC*, DXGI_MODE_DESC*, IUnknown*, int> FindClosestMatchingMode;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> WaitForVBlank;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> WaitForVBlank;
 
         [NativeTypeName("HRESULT (IUnknown *, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, BOOL, int> TakeOwnership;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, BOOL, int> TakeOwnership;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> ReleaseOwnership;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> ReleaseOwnership;
 
         [NativeTypeName("HRESULT (DXGI_GAMMA_CONTROL_CAPABILITIES *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_GAMMA_CONTROL_CAPABILITIES*, int> GetGammaControlCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_GAMMA_CONTROL_CAPABILITIES*, int> GetGammaControlCapabilities;
 
         [NativeTypeName("HRESULT (const DXGI_GAMMA_CONTROL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_GAMMA_CONTROL*, int> SetGammaControl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_GAMMA_CONTROL*, int> SetGammaControl;
 
         [NativeTypeName("HRESULT (DXGI_GAMMA_CONTROL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_GAMMA_CONTROL*, int> GetGammaControl;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_GAMMA_CONTROL*, int> GetGammaControl;
 
         [NativeTypeName("HRESULT (IDXGISurface *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDXGISurface*, int> SetDisplaySurface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDXGISurface*, int> SetDisplaySurface;
 
         [NativeTypeName("HRESULT (IDXGISurface *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDXGISurface*, int> GetDisplaySurfaceData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDXGISurface*, int> GetDisplaySurfaceData;
 
         [NativeTypeName("HRESULT (DXGI_FRAME_STATISTICS *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_FRAME_STATISTICS*, int> GetFrameStatistics;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_FRAME_STATISTICS*, int> GetFrameStatistics;
     }
 }

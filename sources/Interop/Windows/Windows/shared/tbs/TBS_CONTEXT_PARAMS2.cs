@@ -19,14 +19,14 @@ public partial struct TBS_CONTEXT_PARAMS2
     public uint version;
 
     /// <include file='TBS_CONTEXT_PARAMS2.xml' path='doc/member[@name="TBS_CONTEXT_PARAMS2.Anonymous"]/*' />
-    [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/tbs.h:156:5)")]
+    [NativeTypeName("__AnonymousRecord_tbs_L156_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.requestRaw"]/*' />
     public uint requestRaw
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.requestRaw;
         }
@@ -42,7 +42,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     public uint includeTpm12
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.includeTpm12;
         }
@@ -58,7 +58,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     public uint includeTpm20
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.includeTpm20;
         }
@@ -87,7 +87,7 @@ public partial struct TBS_CONTEXT_PARAMS2
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("tdTBS_CONTEXT_PARAMS2::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/tbs.h:158:9)")]
+        [NativeTypeName("__AnonymousRecord_tbs_L158_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.asUINT32"]/*' />
@@ -105,7 +105,7 @@ public partial struct TBS_CONTEXT_PARAMS2
             public uint requestRaw
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -122,7 +122,7 @@ public partial struct TBS_CONTEXT_PARAMS2
             public uint includeTpm12
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -139,7 +139,7 @@ public partial struct TBS_CONTEXT_PARAMS2
             public uint includeTpm20
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }

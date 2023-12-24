@@ -1,0 +1,24 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--exclude
+FreePropVariantArray
+PropVariantClear
+PropVariantCopy
+--file
+um-PropIdl.h
+--methodClassName
+Windows
+--namespace
+TerraFX.Interop.Windows
+--output
+../../../../sources/Interop/Windows/Windows/um/PropIdl
+--test-output
+../../../../tests/Interop/Windows/Windows/um/PropIdl
+--traverse
+C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/PropIdl.h
+--with-librarypath
+FreePropVariantArray=ole32
+PropVariantClear=ole32
+PropVariantCopy=ole32
+StgConvertPropertyToVariant=ole32
+StgConvertVariantToProperty=ole32

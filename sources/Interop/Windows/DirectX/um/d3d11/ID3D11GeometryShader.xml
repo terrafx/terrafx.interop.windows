@@ -3,15 +3,6 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D11GeometryShader">
-    <summary>
-      <para>A geometry-shader interface manages an executable program (a geometry shader) that controls the geometry-shader stage.</para>
-    </summary>
-    <remarks>
-      <para>The geometry-shader interface has no methods; use HLSL to implement your shader functionality. All shaders are implemented from a common set of features referred to as the common-shader core..</para>
-      <para>To create a geometry shader interface, call either <see cref="ID3D11Device.CreateGeometryShader" /> or <see cref="ID3D11Device.CreateGeometryShaderWithStreamOutput" />. Before using a geometry shader you must bind it to the device by calling <see cref="ID3D11DeviceContext.GSSetShader" />.</para>
-      <para>This interface is defined in D3D11.h.</para>
-    </remarks>
-    <seealso cref="ID3D11DeviceChild" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-d3d11-shader-interfaces">Shader Interfaces</seealso>
+    <summary>A geometry-shader interface manages an executable program (a geometry shader) that controls the geometry-shader stage.</summary>
   </member>
 </doc>

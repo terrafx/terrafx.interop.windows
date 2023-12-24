@@ -8,25 +8,19 @@
       <para>To retrieve a cross timestamp, call the <see cref="CaptureInterfaceHardwareCrossTimestamp" /> function. That function returns the timestamp from the network adapter in the form of an <b>INTERFACE_HARDWARE_CROSSTIMESTAMP</b> object.</para>
       <para>For more info, and code examples, see <a href="https://docs.microsoft.com//windows/win32/iphlp/packet-timestamping">Packet timestamping</a>.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/win32/iphlp/packet-timestamping">Packet timestamping</seealso>
   </member>
   <member name="INTERFACE_HARDWARE_CROSSTIMESTAMP.SystemTimestamp1">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">ULONG64</a></b></para>
       <para>The network adapter driver fills this with a system timestamp whose value corresponds to a value returned by <see cref="QueryPerformanceCounter" /> (QPC).</para>
       <para>
         <i>SystemTimestamp1</i> is obtained before <i>HardwareClockTimestamp</i>; while <i>SystemTimestamp2</i> is taken after <i>HardwareClockTimestamp</i>. The timestamp values are obtained as closely as possible to each other.</para>
     </summary>
   </member>
   <member name="INTERFACE_HARDWARE_CROSSTIMESTAMP.HardwareClockTimestamp">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">ULONG64</a></b></para>
-      <para>The network adapter driver fills this with a value obtained from its network interface card (NIC) hardware clock.</para>
-    </summary>
+    <summary>The network adapter driver fills this with a value obtained from its network interface card (NIC) hardware clock.</summary>
   </member>
   <member name="INTERFACE_HARDWARE_CROSSTIMESTAMP.SystemTimestamp2">
     <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">ULONG64</a></b></para>
       <para>The network adapter driver fills this with a system timestamp whose value corresponds to a value returned by <see cref="QueryPerformanceCounter" /> (QPC).</para>
       <para>
         <i>SystemTimestamp1</i> is obtained before <i>HardwareClockTimestamp</i>; while <i>SystemTimestamp2</i> is taken after <i>HardwareClockTimestamp</i>. The timestamp values are obtained as closely as possible to each other.</para>

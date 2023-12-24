@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="EmfToWmfBitsFlags">
+    <summary>Specifies options for the <see cref="Metafile.EmfToWmfBits" /> method, which converts an Enhanced Metafile (EMF) metafile to a Windows Metafile Format (WMF) metafile.</summary>
+  </member>
+  <member name="EmfToWmfBitsFlags.EmfToWmfBitsFlagsDefault">
+    <summary>Specifies the default conversion.</summary>
+  </member>
+  <member name="EmfToWmfBitsFlags.EmfToWmfBitsFlagsEmbedEmf">
+    <summary>Specifies that the source EMF metafile is embedded as a comment in the resulting WMF metafile.</summary>
+  </member>
+  <member name="EmfToWmfBitsFlags.EmfToWmfBitsFlagsIncludePlaceable">
+    <summary>Specifies that the resulting WMF metafile is in the placeable metafile format; that is, it has the additional 22-byte header required by a placeable metafile.</summary>
+  </member>
+  <member name="EmfToWmfBitsFlags.EmfToWmfBitsFlagsNoXORClip">
+    <summary>Specifies that the clipping region is stored in the metafile in the traditional way. If you do not set this flag, the <see cref="Metafile.EmfToWmfBits" /> method applies an optimization that stores the clipping region as a path and simulates clipping by using the XOR operator.</summary>
+  </member>
+</doc>

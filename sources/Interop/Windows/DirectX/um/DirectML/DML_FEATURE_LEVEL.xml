@@ -11,42 +11,29 @@
       <para>A DirectML device might support feature levels above the minimum feature level requested through <b>DMLCreateDevice1</b>. You can query the device for its supported feature levels using <see cref="IDMLDevice.CheckFeatureSupport" />.</para>
       <para>For a list of new capabilities included in each feature level, see <a href="https://docs.microsoft.com//windows/ai/directml/dml-feature-level-history">DirectML feature level history</a>.</para>
     </summary>
-    <remarks>
-      <para>The <b>DML_FEATURE_LEVEL_4_1</b> constant was introduced in <code>DML_FEATURE_LEVEL_4_1</code>. <b>DML_FEATURE_LEVEL_4_1</b> specifies feature level 4_1.</para>
-    </remarks>
-    <seealso cref="DMLCreateDevice1 function" />
-    <seealso cref="IDMLDevice.CheckFeatureSupport method" />
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-version-history">DirectML version history</seealso>
-    <seealso href="https://docs.microsoft.com//windows/ai/directml/dml-feature-level-history">DirectML feature level history</seealso>
   </member>
   <member name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_1_0">
-    <summary>
-      <para>Specifies feature level 1_0.</para>
-    </summary>
+    <summary>Specifies feature level 1_0.</summary>
   </member>
   <member name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_2_0">
-    <summary>
-      <para>Specifies feature level 2_0.</para>
-    </summary>
+    <summary>Specifies feature level 2_0.</summary>
   </member>
   <member name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_2_1">
-    <summary>
-      <para>Specifies feature level 2_1.</para>
-    </summary>
+    <summary>Specifies feature level 2_1.</summary>
   </member>
   <member name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_3_0">
-    <summary>
-      <para>Specifies feature level 3_0.</para>
-    </summary>
+    <summary>Specifies feature level 3_0.</summary>
   </member>
   <member name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_3_1">
-    <summary>
-      <para>Specifies feature level 3_1.</para>
-    </summary>
+    <summary>Specifies feature level 3_1.</summary>
   </member>
   <member name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_4_0">
-    <summary>
-      <para>Specifies feature level 4_0.</para>
-    </summary>
+    <summary>Specifies feature level 4_0.</summary>
+  </member>
+  <member name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_4_1">
+    <summary>Specifies feature level 4_1.</summary>
+  </member>
+  <member name="DML_FEATURE_LEVEL.DML_FEATURE_LEVEL_5_0">
+    <summary>Specifies feature level 5_0.</summary>
   </member>
 </doc>

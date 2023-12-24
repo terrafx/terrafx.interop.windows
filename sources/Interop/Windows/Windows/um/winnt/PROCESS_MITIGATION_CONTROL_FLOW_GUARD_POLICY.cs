@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
 {
     /// <include file='PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY.Anonymous"]/*' />
-    [NativeTypeName("_PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12627:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12637_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Flags"]/*' />
@@ -33,7 +33,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
     public uint EnableControlFlowGuard
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableControlFlowGuard;
         }
@@ -49,7 +49,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
     public uint EnableExportSuppression
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableExportSuppression;
         }
@@ -65,7 +65,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
     public uint StrictMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.StrictMode;
         }
@@ -81,7 +81,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
     public uint EnableXfg
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableXfg;
         }
@@ -97,7 +97,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
     public uint EnableXfgAuditMode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.EnableXfgAuditMode;
         }
@@ -113,7 +113,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -136,7 +136,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12629:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L12639_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -149,7 +149,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
             public uint EnableControlFlowGuard
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -166,7 +166,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
             public uint EnableExportSuppression
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -183,7 +183,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
             public uint StrictMode
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -200,7 +200,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
             public uint EnableXfg
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1u;
                 }
@@ -217,7 +217,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
             public uint EnableXfgAuditMode
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 4) & 0x1u;
                 }
@@ -234,7 +234,7 @@ public partial struct PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 5) & 0x7FFFFFFu;
                 }

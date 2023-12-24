@@ -25,7 +25,7 @@ public unsafe partial struct ISyncMgrConflictPresenter : ISyncMgrConflictPresent
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISyncMgrConflictPresenter*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictPresenter*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflictPresenter*, Guid*, void**, int>)(lpVtbl[0]))((ISyncMgrConflictPresenter*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISyncMgrConflictPresenter : ISyncMgrConflictPresent
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISyncMgrConflictPresenter*, uint>)(lpVtbl[1]))((ISyncMgrConflictPresenter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflictPresenter*, uint>)(lpVtbl[1]))((ISyncMgrConflictPresenter*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISyncMgrConflictPresenter : ISyncMgrConflictPresent
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISyncMgrConflictPresenter*, uint>)(lpVtbl[2]))((ISyncMgrConflictPresenter*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflictPresenter*, uint>)(lpVtbl[2]))((ISyncMgrConflictPresenter*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISyncMgrConflictPresenter.xml' path='doc/member[@name="ISyncMgrConflictPresenter.PresentConflict"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ISyncMgrConflictPresenter : ISyncMgrConflictPresent
     [VtblIndex(3)]
     public HRESULT PresentConflict(ISyncMgrConflict* pConflict, ISyncMgrConflictResolveInfo* pResolveInfo)
     {
-        return ((delegate* unmanaged<ISyncMgrConflictPresenter*, ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int>)(lpVtbl[3]))((ISyncMgrConflictPresenter*)Unsafe.AsPointer(ref this), pConflict, pResolveInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISyncMgrConflictPresenter*, ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int>)(lpVtbl[3]))((ISyncMgrConflictPresenter*)Unsafe.AsPointer(ref this), pConflict, pResolveInfo);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct ISyncMgrConflictPresenter : ISyncMgrConflictPresent
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ISyncMgrConflict *, ISyncMgrConflictResolveInfo *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int> PresentConflict;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ISyncMgrConflict*, ISyncMgrConflictResolveInfo*, int> PresentConflict;
     }
 }

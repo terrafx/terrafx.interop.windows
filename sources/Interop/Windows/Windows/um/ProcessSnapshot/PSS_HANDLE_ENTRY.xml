@@ -3,89 +3,52 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PSS_HANDLE_ENTRY">
-    <summary>
-      <para>Holds information about a handle returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</para>
-    </summary>
-    <remarks>
-      <para>
-        <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a> returns a <b>PSS_HANDLE_ENTRY</b> structure when the  <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_walk_information_class">PSS_WALK_INFORMATION_CLASS</a> member that the caller provides it is <b>PSS_WALK_HANDLES</b>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/proc_snap/process-snapshotting-portal">Process Snapshotting</seealso>
+    <summary>Holds information about a handle returned by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.Handle">
-    <summary>
-      <para>The handle value.</para>
-    </summary>
+    <summary>The handle value.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.Flags">
-    <summary>
-      <para>Flags that indicate what parts of this structure are valid. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_handle_flags">PSS_HANDLE_FLAGS</a>.</para>
-    </summary>
+    <summary>Flags that indicate what parts of this structure are valid. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_handle_flags">PSS_HANDLE_FLAGS</a>.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.ObjectType">
-    <summary>
-      <para>The type of the object that the handle references. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_object_type">PSS_OBJECT_TYPE</a>.</para>
-    </summary>
+    <summary>The type of the object that the handle references. For more information, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/ne-processsnapshot-pss_object_type">PSS_OBJECT_TYPE</a>.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.CaptureTime">
-    <summary>
-      <para>The capture time of this information. For more information, see <see cref="FILETIME" />.</para>
-    </summary>
+    <summary>The capture time of this information. For more information, see <see cref="FILETIME" />.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.Attributes">
-    <summary>
-      <para>Attributes.</para>
-    </summary>
+    <summary>Attributes.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.GrantedAccess">
-    <summary>
-      <para>Reserved for use by the operating system.</para>
-    </summary>
+    <summary>Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.HandleCount">
-    <summary>
-      <para>Reserved for use by the operating system.</para>
-    </summary>
+    <summary>Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.PointerCount">
-    <summary>
-      <para>Reserved for use by the operating system.</para>
-    </summary>
+    <summary>Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.PagedPoolCharge">
-    <summary>
-      <para>Reserved for use by the operating system.</para>
-    </summary>
+    <summary>Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.NonPagedPoolCharge">
-    <summary>
-      <para>Reserved for use by the operating system.</para>
-    </summary>
+    <summary>Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.CreationTime">
-    <summary>
-      <para>Reserved for use by the operating system.</para>
-    </summary>
+    <summary>Reserved for use by the operating system.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.TypeNameLength">
-    <summary>
-      <para>The length of <b>TypeName</b>, in bytes.</para>
-    </summary>
+    <summary>The length of <b>TypeName</b>, in bytes.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.TypeName">
-    <summary>
-      <para>The type name of the object referenced by this handle. The buffer may not terminated by a <b>NULL</b> character. The pointer is valid for the lifetime of the walk marker passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</para>
-    </summary>
+    <summary>The type name of the object referenced by this handle. The buffer may not terminated by a <b>NULL</b> character. The pointer is valid for the lifetime of the walk marker passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.ObjectNameLength">
-    <summary>
-      <para>The length of <b>ObjectName</b>, in bytes.</para>
-    </summary>
+    <summary>The length of <b>ObjectName</b>, in bytes.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.ObjectName">
-    <summary>
-      <para>Specifies the name of the object referenced by this handle. The buffer may not terminated by a <b>NULL</b> character. The pointer is valid for the lifetime of the walk marker passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</para>
-    </summary>
+    <summary>Specifies the name of the object referenced by this handle. The buffer may not terminated by a <b>NULL</b> character. The pointer is valid for the lifetime of the walk marker passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/processsnapshot/nf-processsnapshot-psswalksnapshot">PssWalkSnapshot</a>.</summary>
   </member>
   <member name="PSS_HANDLE_ENTRY.TypeSpecificInformation">
     <summary>
@@ -153,100 +116,36 @@
       <para>Reserved for use by the operating system.</para>
     </summary>
   </member>
-  <member name="PSS_HANDLE_ENTRY.Process">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Process.ExitStatus">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Process.PebBaseAddress">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Process.AffinityMask">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Process.BasePriority">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Process.ProcessId">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Process.ParentProcessId">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Process.Flags">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Thread">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Thread.ExitStatus">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Thread.TebBaseAddress">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Thread.ProcessId">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Thread.ThreadId">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Thread.AffinityMask">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Thread.Priority">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Thread.BasePriority">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Thread.Win32StartAddress">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Mutant">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Mutant.CurrentCount">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Mutant.Abandoned">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Mutant.OwnerProcessId">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Mutant.OwnerThreadId">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Event">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Event.ManualReset">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Event.Signaled">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Section">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Section.BaseAddress">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Section.AllocationAttributes">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Section.MaximumSize">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Semaphore">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Semaphore.CurrentCount">
-    <summary></summary>
-  </member>
-  <member name="PSS_HANDLE_ENTRY.Semaphore.MaximumCount">
-    <summary></summary>
-  </member>
+  <member name="PSS_HANDLE_ENTRY.Process"></member>
+  <member name="PSS_HANDLE_ENTRY.Process.ExitStatus"></member>
+  <member name="PSS_HANDLE_ENTRY.Process.PebBaseAddress"></member>
+  <member name="PSS_HANDLE_ENTRY.Process.AffinityMask"></member>
+  <member name="PSS_HANDLE_ENTRY.Process.BasePriority"></member>
+  <member name="PSS_HANDLE_ENTRY.Process.ProcessId"></member>
+  <member name="PSS_HANDLE_ENTRY.Process.ParentProcessId"></member>
+  <member name="PSS_HANDLE_ENTRY.Process.Flags"></member>
+  <member name="PSS_HANDLE_ENTRY.Thread"></member>
+  <member name="PSS_HANDLE_ENTRY.Thread.ExitStatus"></member>
+  <member name="PSS_HANDLE_ENTRY.Thread.TebBaseAddress"></member>
+  <member name="PSS_HANDLE_ENTRY.Thread.ProcessId"></member>
+  <member name="PSS_HANDLE_ENTRY.Thread.ThreadId"></member>
+  <member name="PSS_HANDLE_ENTRY.Thread.AffinityMask"></member>
+  <member name="PSS_HANDLE_ENTRY.Thread.Priority"></member>
+  <member name="PSS_HANDLE_ENTRY.Thread.BasePriority"></member>
+  <member name="PSS_HANDLE_ENTRY.Thread.Win32StartAddress"></member>
+  <member name="PSS_HANDLE_ENTRY.Mutant"></member>
+  <member name="PSS_HANDLE_ENTRY.Mutant.CurrentCount"></member>
+  <member name="PSS_HANDLE_ENTRY.Mutant.Abandoned"></member>
+  <member name="PSS_HANDLE_ENTRY.Mutant.OwnerProcessId"></member>
+  <member name="PSS_HANDLE_ENTRY.Mutant.OwnerThreadId"></member>
+  <member name="PSS_HANDLE_ENTRY.Event"></member>
+  <member name="PSS_HANDLE_ENTRY.Event.ManualReset"></member>
+  <member name="PSS_HANDLE_ENTRY.Event.Signaled"></member>
+  <member name="PSS_HANDLE_ENTRY.Section"></member>
+  <member name="PSS_HANDLE_ENTRY.Section.BaseAddress"></member>
+  <member name="PSS_HANDLE_ENTRY.Section.AllocationAttributes"></member>
+  <member name="PSS_HANDLE_ENTRY.Section.MaximumSize"></member>
+  <member name="PSS_HANDLE_ENTRY.Semaphore"></member>
+  <member name="PSS_HANDLE_ENTRY.Semaphore.CurrentCount"></member>
+  <member name="PSS_HANDLE_ENTRY.Semaphore.MaximumCount"></member>
 </doc>

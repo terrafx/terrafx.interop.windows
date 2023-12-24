@@ -3,39 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CONTROLINFO">
-    <summary>
-      <para>Contains parameters that describe a control's keyboard mnemonics and keyboard behavior. The structure is populated during the <see cref="IOleControl.GetControlInfo" /> method.</para>
-    </summary>
-    <seealso cref="IOleControl.GetControlInfo" />
+    <summary>Contains parameters that describe a control's keyboard mnemonics and keyboard behavior. The structure is populated during the <see cref="IOleControl.GetControlInfo" /> method.</summary>
   </member>
   <member name="CONTROLINFO.cb">
-    <summary>
-      <para>The size of the structure, in bytes.</para>
-    </summary>
+    <summary>The size of the structure, in bytes.</summary>
   </member>
   <member name="CONTROLINFO.hAccel">
-    <summary>
-      <para>A handle to an array of <see cref="ACCEL" /> structures, each structure describing a keyboard mnemonic. The array is created with the <see cref="CreateAcceleratorTable" /> function. The control always maintains the memory for this array; the caller of <see cref="IOleControl.GetControlInfo" /> should not attempt to free the memory.</para>
-    </summary>
+    <summary>A handle to an array of <see cref="ACCEL" /> structures, each structure describing a keyboard mnemonic. The array is created with the <see cref="CreateAcceleratorTable" /> function. The control always maintains the memory for this array; the caller of <see cref="IOleControl.GetControlInfo" /> should not attempt to free the memory.</summary>
   </member>
   <member name="CONTROLINFO.cAccel">
-    <summary>
-      <para>The number of mnemonics described in the <b>hAccel</b> field. This value can be zero to indicate no mnemonics.</para>
-    </summary>
+    <summary>The number of mnemonics described in the <b>hAccel</b> field. This value can be zero to indicate no mnemonics.</summary>
   </member>
   <member name="CONTROLINFO.dwFlags">
     <summary>
       <para>Flags that indicate the keyboard behavior of the control. The possible values are:</para>
       <list type="bullet">
         <item>
-          <description>CTRLINFO_EATS_RETURN: When the control has the focus, it will process the Return key.
-</description>
+          <description>CTRLINFO_EATS_RETURN: When the control has the focus, it will process the Return key.</description>
         </item>
         <item>
-          <description>CTRLINFO_EATS_ESCAPE: When the control has the focus, it will process the Escape key. </description>
+          <description>CTRLINFO_EATS_ESCAPE: When the control has the focus, it will process the Escape key.</description>
         </item>
-      </list>
-      <para>When the control has the focus, the dialog box containing the control cannot use the Return or Escape keys as mnemonics for the default and cancel buttons.</para>
-    </summary>
+      </list>When the control has the focus, the dialog box containing the control cannot use the Return or Escape keys as mnemonics for the default and cancel buttons.</summary>
   </member>
 </doc>

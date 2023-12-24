@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IProgressItems.get_Count">
-    <summary>
-      <para>Retrieves the number of progress items in the collection.</para>
-    </summary>
-    <param name="Count">
-      <para>Number of progress items in the collection.</para>
-    </param>
+    <summary>Retrieves the number of progress items in the collection.</summary>
+    <param name="Count">Number of progress items in the collection.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,28 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IProgressItems" />
   </member>
   <member name="IProgressItems.get_EnumProgressItems">
-    <summary>
-      <para>Retrieves the list of progress items from the collection.</para>
-    </summary>
-    <param name="NewEnum">
-      <para>An <see cref="IEnumProgressItems" /> interface that contains a collection of the progress items contained in the collection.</para>
-    </param>
+    <summary>Retrieves the list of progress items from the collection.</summary>
+    <param name="NewEnum">An <see cref="IEnumProgressItems" /> interface that contains a collection of the progress items contained in the collection.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -45,46 +37,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This property returns the same results as the <see cref="IProgressItems.get__NewEnum" /> property and is meant for use by C/C++ applications.</para>
-    </remarks>
-    <seealso cref="IEnumProgressItems" />
-    <seealso cref="IProgressItems" />
   </member>
   <member name="IProgressItems.get_Item">
-    <summary>
-      <para>Retrieves the specified progress item from the collection.</para>
-    </summary>
-    <param name="Index">
-      <para>Zero-based index number corresponding to a progress item in the collection.</para>
-    </param>
-    <param name="item">
-      <para>An <see cref="IProgressItem" /> interface associated with the specified index value.</para>
-    </param>
+    <summary>Retrieves the specified progress item from the collection.</summary>
+    <param name="Index">Zero-based index number corresponding to a progress item in the collection.</param>
+    <param name="item">An <see cref="IProgressItem" /> interface associated with the specified index value.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -92,56 +75,48 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
-          </description>
-        </item>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To enumerate all progress items, call the <see cref="IProgressItems.get__NewEnum" /> method.</para>
-    </remarks>
-    <seealso cref="IProgressItem" />
-    <seealso cref="IProgressItems" />
-    <seealso cref="IProgressItems.ProgressItemFromBlock" />
-    <seealso cref="IProgressItems.ProgressItemFromDescription" />
   </member>
   <member name="IProgressItems.get__NewEnum">
-    <summary>
-      <para>Retrieves the list of progress items from the collection.</para>
-    </summary>
-    <param name="NewEnum">
-      <para>An <b>IEnumVariant</b> interface that you use to enumerate the progress items contained within the collection. Each  item of the enumeration is a VARIANT whose type is <b>VT_DISPATCH</b>. Query the <b>pdispVal</b> member to retrieve the <see cref="IProgressItem" /> interface.</para>
-    </param>
+    <summary>Retrieves the list of progress items from the collection.</summary>
+    <param name="NewEnum">An <b>IEnumVariant</b> interface that you use to enumerate the progress items contained within the collection. Each item of the enumeration is a VARIANT whose type is <b>VT_DISPATCH</b>. Query the <b>pdispVal</b> member to retrieve the <see cref="IProgressItem" /> interface.</param>
     <returns>
       <para>S_OK is returned when the number of requested elements (<i>celt</i>) are returned successfully or the number of returned items (<i>pceltFetched</i>) is less than the number of requested elements. The <i>celt</i> and <i>pceltFetched</i> parameters are defined by <b>IEnumVariant</b>.</para>
       <para>Other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
@@ -150,48 +125,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The enumeration is a snapshot of the progress items contained in the collection at the time of the call.</para>
-      <para>To retrieve a single item, see the <see cref="IProgressItems.get_Item" /> property.</para>
-    </remarks>
-    <seealso cref="IFileSystemImageResult" />
-    <seealso cref="IProgressItem" />
-    <seealso cref="IProgressItems" />
   </member>
   <member name="IProgressItems.ProgressItemFromBlock">
-    <summary>
-      <para>Retrieves a progress item based on the specified block number.</para>
-    </summary>
-    <param name="block">
-      <para>Block number of the progress item to retrieve. The method returns the progress item if the block number is in the first and last block range of the item.</para>
-    </param>
-    <param name="item">
-      <para>An <see cref="IProgressItem" /> interface associated with the specified block number.</para>
-    </param>
+    <summary>Retrieves a progress item based on the specified block number.</summary>
+    <param name="block">Block number of the progress item to retrieve. The method returns the progress item if the block number is in the first and last block range of the item.</param>
+    <param name="item">An <see cref="IProgressItem" /> interface associated with the specified block number.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -199,56 +163,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
-          </description>
-        </item>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IProgressItem" />
-    <seealso cref="IProgressItems" />
-    <seealso cref="IProgressItems.ProgressItemFromDescription" />
-    <seealso cref="IProgressItems.get_Item" />
   </member>
   <member name="IProgressItems.ProgressItemFromDescription">
-    <summary>
-      <para>Retrieves a progress item based on the specified file name.</para>
-    </summary>
-    <param name="description">
-      <para>String that contains the file name of the progress item to retrieve. The method returns the progress item if this string matches the value for item's description property.</para>
-    </param>
-    <param name="item">
-      <para>An <see cref="IProgressItem" /> interface of the progress item associated with the specified file name.</para>
-    </param>
+    <summary>Retrieves a progress item based on the specified file name.</summary>
+    <param name="description">String that contains the file name of the progress item to retrieve. The method returns the progress item if this string matches the value for item's description property.</param>
+    <param name="item">An <see cref="IProgressItem" /> interface of the progress item associated with the specified file name.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -256,65 +213,62 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>description</i> is <b>NULL</b>.
-<para>Value:0x80004005</para></description>
-        </item>
-        <item>
+            <i>description</i> is <b>NULL</b>.<para>Value:0x80004005</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Failed to allocate the required memory.<para>Value: 0x8007000E</para></description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Failed to allocate the required memory.</para>
-            <para>Value: 0x8007000E</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more arguments are not valid.</para>
-            <para>Value: 0x80070057</para>
-          </description>
-        </item>
+          <description>One or more arguments are not valid.<para>Value: 0x80070057</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IProgressItem" />
-    <seealso cref="IProgressItems" />
-    <seealso cref="IProgressItems.ProgressItemFromBlock" />
-    <seealso cref="IProgressItems.get_Item" />
   </member>
   <member name="IProgressItems">
     <summary>
       <para>Use this interface to enumerate the progress items in a result image. A progress item represents a segment of the result image.</para>
       <para>To get this interface, call the <see cref="IFileSystemImageResult.get_ProgressItems" /> method.</para>
     </summary>
-    <remarks>
-      <para>This is a <b>ProgressItems</b> object in script.</para>
-    </remarks>
-    <seealso cref="IEnumProgressItems" />
-    <seealso cref="IFileSystemImageResult" />
   </member>
 </doc>

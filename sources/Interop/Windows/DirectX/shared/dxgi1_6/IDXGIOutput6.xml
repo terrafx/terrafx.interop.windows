@@ -3,45 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDXGIOutput6.CheckHardwareCompositionSupport">
-    <summary>
-      <para>Notifies applications that hardware stretching is supported.</para>
-    </summary>
-    <param name="pFlags">
-      <para>Type: <b>UINT*</b></para>
-      <para>A bitfield of <see cref="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS" /> enumeration values describing which types of hardware composition are supported. The values are bitwise OR'd together.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns a code that indicates success or failure.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS enumeration" />
-    <seealso cref="IDXGIOutput6 interface" />
+    <summary>Notifies applications that hardware stretching is supported.</summary>
+    <param name="pFlags">A bitfield of <see cref="DXGI_HARDWARE_COMPOSITION_SUPPORT_FLAGS" /> enumeration values describing which types of hardware composition are supported. The values are bitwise OR'd together.</param>
+    <returns>Returns a code that indicates success or failure.</returns>
   </member>
   <member name="IDXGIOutput6.GetDesc1">
-    <summary>
-      <para>Get an extended description of the output that includes color characteristics and connection type.</para>
-    </summary>
-    <param name="pDesc">
-      <para>Type: <b><see cref="DXGI_OUTPUT_DESC1" />*</b></para>
-      <para>A pointer to the output description (see <see cref="DXGI_OUTPUT_DESC1" />).</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns a code that indicates success or failure. S_OK if successful, <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_INVALID_CALL</a> if <i>pDesc</i> is passed in as <b>NULL</b>.</para>
-    </returns>
-    <remarks>
-      <para>Some scenarios do not have well-defined values for all fields in this struct. For example, if this IDXGIOutput represents a clone/duplicate set, or if the EDID has missing or invalid data. In these cases, the OS will provide some default values that correspond to a standard SDR display.</para>
-      <para>On a high DPI desktop, <b>GetDesc1</b> returns the visualized screen size unless the app is marked high DPI aware. For info about writing DPI-aware Win32 apps, see <a href="https://docs.microsoft.com//windows/desktop/hidpi/high-dpi-desktop-application-development-on-windows">High DPI</a>.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIOutput6" />
+    <summary>Get an extended description of the output that includes color characteristics and connection type.</summary>
+    <param name="pDesc">A pointer to the output description (see <see cref="DXGI_OUTPUT_DESC1" />).</param>
+    <returns>Returns a code that indicates success or failure. S_OK if successful, <a href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/dxgi-error">DXGI_ERROR_INVALID_CALL</a> if <i>pDesc</i> is passed in as <b>NULL</b>.</returns>
   </member>
   <member name="IDXGIOutput6">
-    <summary>
-      <para>Represents an adapter output (such as a monitor). The <b>IDXGIOutput6</b> interface exposes  methods to provide specific monitor capabilities.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3ddxgi/d3d10-graphics-reference-dxgi-interfaces">DXGI Interfaces</seealso>
-    <seealso cref="IDXGIOutput5" />
+    <summary>Represents an adapter output (such as a monitor). The <b>IDXGIOutput6</b> interface exposes methods to provide specific monitor capabilities.</summary>
   </member>
 </doc>

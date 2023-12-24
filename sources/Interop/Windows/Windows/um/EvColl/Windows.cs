@@ -16,12 +16,12 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EcEnumNextSubscription"]/*' />
     [DllImport("wecapi", ExactSpelling = true)]
-    public static extern BOOL EcEnumNextSubscription(EC_HANDLE SubscriptionEnum, [NativeTypeName("DWORD")] uint SubscriptionNameBufferSize, [NativeTypeName("LPWSTR")] ushort* SubscriptionNameBuffer, [NativeTypeName("PDWORD")] uint* SubscriptionNameBufferUsed);
+    public static extern BOOL EcEnumNextSubscription(EC_HANDLE SubscriptionEnum, [NativeTypeName("DWORD")] uint SubscriptionNameBufferSize, [NativeTypeName("LPWSTR")] char* SubscriptionNameBuffer, [NativeTypeName("PDWORD")] uint* SubscriptionNameBufferUsed);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EcOpenSubscription"]/*' />
     [DllImport("wecapi", ExactSpelling = true)]
     [SetsLastSystemError]
-    public static extern EC_HANDLE EcOpenSubscription([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("DWORD")] uint Flags);
+    public static extern EC_HANDLE EcOpenSubscription([NativeTypeName("LPCWSTR")] char* SubscriptionName, [NativeTypeName("DWORD")] uint AccessMask, [NativeTypeName("DWORD")] uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EcSetSubscriptionProperty"]/*' />
     [DllImport("wecapi", ExactSpelling = true)]
@@ -37,7 +37,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EcDeleteSubscription"]/*' />
     [DllImport("wecapi", ExactSpelling = true)]
-    public static extern BOOL EcDeleteSubscription([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, [NativeTypeName("DWORD")] uint Flags);
+    public static extern BOOL EcDeleteSubscription([NativeTypeName("LPCWSTR")] char* SubscriptionName, [NativeTypeName("DWORD")] uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EcGetObjectArraySize"]/*' />
     [DllImport("wecapi", ExactSpelling = true)]
@@ -61,11 +61,11 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EcGetSubscriptionRunTimeStatus"]/*' />
     [DllImport("wecapi", ExactSpelling = true)]
-    public static extern BOOL EcGetSubscriptionRunTimeStatus([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID StatusInfoId, [NativeTypeName("LPCWSTR")] ushort* EventSourceName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint StatusValueBufferSize, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* StatusValueBuffer, [NativeTypeName("PDWORD")] uint* StatusValueBufferUsed);
+    public static extern BOOL EcGetSubscriptionRunTimeStatus([NativeTypeName("LPCWSTR")] char* SubscriptionName, EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID StatusInfoId, [NativeTypeName("LPCWSTR")] char* EventSourceName, [NativeTypeName("DWORD")] uint Flags, [NativeTypeName("DWORD")] uint StatusValueBufferSize, [NativeTypeName("PEC_VARIANT")] EC_VARIANT* StatusValueBuffer, [NativeTypeName("PDWORD")] uint* StatusValueBufferUsed);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EcRetrySubscription"]/*' />
     [DllImport("wecapi", ExactSpelling = true)]
-    public static extern BOOL EcRetrySubscription([NativeTypeName("LPCWSTR")] ushort* SubscriptionName, [NativeTypeName("LPCWSTR")] ushort* EventSourceName, [NativeTypeName("DWORD")] uint Flags);
+    public static extern BOOL EcRetrySubscription([NativeTypeName("LPCWSTR")] char* SubscriptionName, [NativeTypeName("LPCWSTR")] char* EventSourceName, [NativeTypeName("DWORD")] uint Flags);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.EcClose"]/*' />
     [DllImport("wecapi", ExactSpelling = true)]

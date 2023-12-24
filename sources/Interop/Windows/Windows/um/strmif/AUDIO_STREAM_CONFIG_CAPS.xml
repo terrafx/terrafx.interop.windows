@@ -4,59 +4,38 @@
 <doc>
   <member name="AUDIO_STREAM_CONFIG_CAPS">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <b>AUDIO_STREAM_CONFIG_CAPS</b> structure describes a range of audio formats. Audio compression and capture filters use this structure to describe the formats they can produce.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/directshow-structures">DirectShow Structures</seealso>
-    <seealso cref="IAMStreamConfig.GetStreamCaps" />
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.guid">
-    <summary>
-      <para>Will be set to MEDIATYPE_Audio to indicate an audio sample.</para>
-    </summary>
+    <summary>Will be set to MEDIATYPE_Audio to indicate an audio sample.</summary>
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.MinimumChannels">
-    <summary>
-      <para>Minimum number of channels.</para>
-    </summary>
+    <summary>Minimum number of channels.</summary>
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.MaximumChannels">
-    <summary>
-      <para>Maximum number of channels.</para>
-    </summary>
+    <summary>Maximum number of channels.</summary>
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.ChannelsGranularity">
-    <summary>
-      <para>Granularity of the channels. For example, the filter might specify channels 2 through 4, in steps of 2.</para>
-    </summary>
+    <summary>Granularity of the channels. For example, the filter might specify channels 2 through 4, in steps of 2.</summary>
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.MinimumBitsPerSample">
-    <summary>
-      <para>Minimum bits per sample.</para>
-    </summary>
+    <summary>Minimum bits per sample.</summary>
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.MaximumBitsPerSample">
-    <summary>
-      <para>Maximum bits per sample.</para>
-    </summary>
+    <summary>Maximum bits per sample.</summary>
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.BitsPerSampleGranularity">
-    <summary>
-      <para>Granularity of the bits per sample. For example, the filter might specify 8 bits per sample through 32 bits per sample, in steps of 8.</para>
-    </summary>
+    <summary>Granularity of the bits per sample. For example, the filter might specify 8 bits per sample through 32 bits per sample, in steps of 8.</summary>
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.MinimumSampleFrequency">
-    <summary>
-      <para>Minimum sample frequency.</para>
-    </summary>
+    <summary>Minimum sample frequency.</summary>
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.MaximumSampleFrequency">
-    <summary>
-      <para>Maximum sample frequency.</para>
-    </summary>
+    <summary>Maximum sample frequency.</summary>
   </member>
   <member name="AUDIO_STREAM_CONFIG_CAPS.SampleFrequencyGranularity">
-    <summary>
-      <para>Granularity of the frequency. For example, the filter might specify 11025 Hz to 44100 Hz, in steps of 11025 Hz.</para>
-    </summary>
+    <summary>Granularity of the frequency. For example, the filter might specify 11025 Hz to 44100 Hz, in steps of 11025 Hz.</summary>
   </member>
 </doc>

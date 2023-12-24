@@ -3,18 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FaceCharacterizationBlobHeader">
-    <summary>
-      <para>The <b>FaceCharacterizationBlobHeader</b> structure  describes the size and count information of the blob format for the <b>MF_CAPTURE_METADATA_FACEROICHARACTERIZATIONS</b> attribute.</para>
-    </summary>
+    <summary>The <b>FaceCharacterizationBlobHeader</b> structure describes the size and count information of the blob format for the <b>MF_CAPTURE_METADATA_FACEROICHARACTERIZATIONS</b> attribute.</summary>
   </member>
   <member name="FaceCharacterizationBlobHeader.Size">
-    <summary>
-      <para>Size of this header + all following <see cref="FaceCharacterization" /> structures.</para>
-    </summary>
+    <summary>Size of this header + all following <see cref="FaceCharacterization" /> structures.</summary>
   </member>
   <member name="FaceCharacterizationBlobHeader.Count">
-    <summary>
-      <para>Number of <b>FaceCharacterization</b> structures in the blob. Must match the number of <see cref="FaceRectInfo" /> structures in <see cref="FaceRectInfoBlobHeader" />.</para>
-    </summary>
+    <summary>Number of <b>FaceCharacterization</b> structures in the blob. Must match the number of <see cref="FaceRectInfo" /> structures in <see cref="FaceRectInfoBlobHeader" />.</summary>
   </member>
 </doc>

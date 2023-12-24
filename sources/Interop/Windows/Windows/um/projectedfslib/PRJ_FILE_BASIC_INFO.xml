@@ -3,43 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_FILE_BASIC_INFO">
-    <summary>
-      <para>Basic information about an item.</para>
-    </summary>
+    <summary>Basic information about an item.</summary>
   </member>
   <member name="PRJ_FILE_BASIC_INFO.IsDirectory">
-    <summary>
-      <para>Specifies whether the item is a directory.</para>
-    </summary>
+    <summary>Specifies whether the item is a directory.</summary>
   </member>
   <member name="PRJ_FILE_BASIC_INFO.FileSize">
-    <summary>
-      <para>Size of the item, in bytes.</para>
-    </summary>
+    <summary>Size of the item, in bytes.</summary>
   </member>
   <member name="PRJ_FILE_BASIC_INFO.CreationTime">
-    <summary>
-      <para>Creation time of the item.</para>
-    </summary>
+    <summary>Creation time of the item.</summary>
   </member>
   <member name="PRJ_FILE_BASIC_INFO.LastAccessTime">
-    <summary>
-      <para>Last time the item was accessed.</para>
-    </summary>
+    <summary>Last time the item was accessed.</summary>
   </member>
   <member name="PRJ_FILE_BASIC_INFO.LastWriteTime">
-    <summary>
-      <para>Last time the item was written to.</para>
-    </summary>
+    <summary>Last time the item was written to.</summary>
   </member>
   <member name="PRJ_FILE_BASIC_INFO.ChangeTime">
-    <summary>
-      <para>The last time the item was changed.</para>
-    </summary>
+    <summary>The last time the item was changed.</summary>
   </member>
   <member name="PRJ_FILE_BASIC_INFO.FileAttributes">
-    <summary>
-      <para>Attributes of the item.</para>
-    </summary>
+    <summary>Attributes of the item.</summary>
   </member>
 </doc>

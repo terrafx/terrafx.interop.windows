@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12SDKConfiguration.SetSDKVersion">
+    <summary>Configures the SDK version to use.</summary>
+    <param name="SDKVersion">The SDK version to set.</param>
+    <param name="SDKPath">A NULL-terminated string that provides the relative path to <code>d3d12core.dll</code> at the specified <i>SDKVersion</i>. The path is relative to the process exe of the caller. If <code>d3d12core.dll</code> isn't found, or isn't of the specified <i>SDKVersion</i>, then Direct3D 12 device creation fails.</param>
+    <returns>If the function succeeds, then it returns <b>S_OK</b>. Otherwise, it returns one of the <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a>.</returns>
+  </member>
+  <member name="ID3D12SDKConfiguration">
+    <summary>Provides SDK configuration methods. A pointer to this interface can be retrieved by calling the <see cref="D3D12GetInterface" /> free function with the <b>CLSID_D3D12SDKConfiguration</b> CLSID.</summary>
+  </member>
+</doc>

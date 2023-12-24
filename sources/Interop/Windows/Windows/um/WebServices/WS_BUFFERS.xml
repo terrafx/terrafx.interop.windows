@@ -3,14 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_BUFFERS">
-    <summary>
-      <para>A structure used to represent a discontiguous array of <see cref="WS_BYTES" />.</para>
-    </summary>
+    <summary>A structure used to represent a discontiguous array of <see cref="WS_BYTES" />.</summary>
   </member>
-  <member name="WS_BUFFERS.bufferCount">
-    <summary></summary>
-  </member>
-  <member name="WS_BUFFERS.buffers">
-    <summary></summary>
-  </member>
+  <member name="WS_BUFFERS.bufferCount"></member>
+  <member name="WS_BUFFERS.buffers"></member>
 </doc>

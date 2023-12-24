@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MIB_UDPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_UDPROW_OWNER_MODULE"]/*' />
-public unsafe partial struct MIB_UDPROW_OWNER_MODULE
+public partial struct MIB_UDPROW_OWNER_MODULE
 {
     /// <include file='MIB_UDPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_UDPROW_OWNER_MODULE.dwLocalAddr"]/*' />
     [NativeTypeName("DWORD")]
@@ -28,18 +28,18 @@ public unsafe partial struct MIB_UDPROW_OWNER_MODULE
     public LARGE_INTEGER liCreateTimestamp;
 
     /// <include file='MIB_UDPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_UDPROW_OWNER_MODULE.Anonymous"]/*' />
-    [NativeTypeName("_MIB_UDPROW_OWNER_MODULE::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/udpmib.h:69:5)")]
+    [NativeTypeName("__AnonymousRecord_udpmib_L69_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='MIB_UDPROW_OWNER_MODULE.xml' path='doc/member[@name="MIB_UDPROW_OWNER_MODULE.OwningModuleInfo"]/*' />
     [NativeTypeName("ULONGLONG[16]")]
-    public fixed ulong OwningModuleInfo[16];
+    public _OwningModuleInfo_e__FixedBuffer OwningModuleInfo;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.SpecificPortBind"]/*' />
     public int SpecificPortBind
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.SpecificPortBind;
         }
@@ -68,7 +68,7 @@ public unsafe partial struct MIB_UDPROW_OWNER_MODULE
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_MIB_UDPROW_OWNER_MODULE::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/udpmib.h:70:9)")]
+        [NativeTypeName("__AnonymousRecord_udpmib_L70_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.dwFlags"]/*' />
@@ -85,9 +85,9 @@ public unsafe partial struct MIB_UDPROW_OWNER_MODULE
             public int SpecificPortBind
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
-                    return _bitfield & 0x1;
+                    return (_bitfield << 31) >> 31;
                 }
 
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,5 +97,12 @@ public unsafe partial struct MIB_UDPROW_OWNER_MODULE
                 }
             }
         }
+    }
+
+    /// <include file='_OwningModuleInfo_e__FixedBuffer.xml' path='doc/member[@name="_OwningModuleInfo_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _OwningModuleInfo_e__FixedBuffer
+    {
+        public ulong e0;
     }
 }

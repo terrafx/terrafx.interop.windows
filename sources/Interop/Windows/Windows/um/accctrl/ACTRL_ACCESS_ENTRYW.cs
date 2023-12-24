@@ -29,5 +29,5 @@ public unsafe partial struct ACTRL_ACCESS_ENTRYW
 
     /// <include file='ACTRL_ACCESS_ENTRYW.xml' path='doc/member[@name="ACTRL_ACCESS_ENTRYW.lpInheritProperty"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* lpInheritProperty;
+    public char* lpInheritProperty;
 }

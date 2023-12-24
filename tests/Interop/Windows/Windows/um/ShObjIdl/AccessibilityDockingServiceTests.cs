@@ -19,25 +19,4 @@ public static unsafe partial class AccessibilityDockingServiceTests
     {
         Assert.That(typeof(AccessibilityDockingService).GUID, Is.EqualTo(IID_AccessibilityDockingService));
     }
-
-    /// <summary>Validates that the <see cref="AccessibilityDockingService" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<AccessibilityDockingService>(), Is.EqualTo(sizeof(AccessibilityDockingService)));
-    }
-
-    /// <summary>Validates that the <see cref="AccessibilityDockingService" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(AccessibilityDockingService).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="AccessibilityDockingService" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(AccessibilityDockingService), Is.EqualTo(1));
-    }
 }

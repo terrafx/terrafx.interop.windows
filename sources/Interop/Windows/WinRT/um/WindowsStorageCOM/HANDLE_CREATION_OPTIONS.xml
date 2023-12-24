@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="HANDLE_CREATION_OPTIONS">
+    <summary>Represents the action to take on a file that exists or doesn't exist.</summary>
+  </member>
+  <member name="HANDLE_CREATION_OPTIONS.HCO_CREATE_NEW">
+    <summary>Create a new file, only if it doesn't already exist.</summary>
+  </member>
+  <member name="HANDLE_CREATION_OPTIONS.HCO_CREATE_ALWAYS">
+    <summary>Create a new file, always.</summary>
+  </member>
+  <member name="HANDLE_CREATION_OPTIONS.HCO_OPEN_EXISTING">
+    <summary>Open a file only if it exists.</summary>
+  </member>
+  <member name="HANDLE_CREATION_OPTIONS.HCO_OPEN_ALWAYS">
+    <summary>Open a file, always.</summary>
+  </member>
+  <member name="HANDLE_CREATION_OPTIONS.HCO_TRUNCATE_EXISTING">
+    <summary>Open a file and truncates it so that its size is zero bytes, only if it exists.</summary>
+  </member>
+</doc>

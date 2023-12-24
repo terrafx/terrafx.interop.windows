@@ -19,32 +19,4 @@ public static unsafe partial class IGetCapabilitiesKeyTests
     {
         Assert.That(typeof(IGetCapabilitiesKey).GUID, Is.EqualTo(IID_IGetCapabilitiesKey));
     }
-
-    /// <summary>Validates that the <see cref="IGetCapabilitiesKey" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IGetCapabilitiesKey>(), Is.EqualTo(sizeof(IGetCapabilitiesKey)));
-    }
-
-    /// <summary>Validates that the <see cref="IGetCapabilitiesKey" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IGetCapabilitiesKey).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IGetCapabilitiesKey" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IGetCapabilitiesKey), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IGetCapabilitiesKey), Is.EqualTo(4));
-        }
-    }
 }

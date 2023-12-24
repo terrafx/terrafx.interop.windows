@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PACKAGE_VERSION
 {
     /// <include file='PACKAGE_VERSION.xml' path='doc/member[@name="PACKAGE_VERSION.Anonymous"]/*' />
-    [NativeTypeName("PACKAGE_VERSION::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/appmodel.h:57:5)")]
+    [NativeTypeName("__AnonymousRecord_appmodel_L57_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Version"]/*' />
@@ -84,7 +84,7 @@ public partial struct PACKAGE_VERSION
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("PACKAGE_VERSION::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/appmodel.h:59:9)")]
+        [NativeTypeName("__AnonymousRecord_appmodel_L59_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />

@@ -4,11 +4,14 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA"]/*' />
-public unsafe partial struct AUDIO_VOLUME_NOTIFICATION_DATA
+public partial struct AUDIO_VOLUME_NOTIFICATION_DATA
 {
     /// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA.guidEventContext"]/*' />
     public Guid guidEventContext;
@@ -24,5 +27,25 @@ public unsafe partial struct AUDIO_VOLUME_NOTIFICATION_DATA
 
     /// <include file='AUDIO_VOLUME_NOTIFICATION_DATA.xml' path='doc/member[@name="AUDIO_VOLUME_NOTIFICATION_DATA.afChannelVolumes"]/*' />
     [NativeTypeName("float[1]")]
-    public fixed float afChannelVolumes[1];
+    public _afChannelVolumes_e__FixedBuffer afChannelVolumes;
+
+    /// <include file='_afChannelVolumes_e__FixedBuffer.xml' path='doc/member[@name="_afChannelVolumes_e__FixedBuffer"]/*' />
+    public partial struct _afChannelVolumes_e__FixedBuffer
+    {
+        public float e0;
+
+        [UnscopedRef]
+        public ref float this[int index]
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                return ref Unsafe.Add(ref e0, index);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
+        public Span<float> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
+    }
 }

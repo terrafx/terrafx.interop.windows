@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IPrintDialogCallback.AddRef">
+    <summary>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown">IUnknown's</a>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nf-unknwn-iunknown-addref">AddRef</a> method</summary>
+  </member>
+  <member name="IPrintDialogCallback.HandleMessage">
+    <summary>Called by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> to give your application an opportunity to handle messages sent to the child dialog box in the lower portion of the <b>General</b> page of the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/print-property-sheet">Print Property Sheet</a>. The child dialog box contains controls similar to those of the <b>Print</b> dialog box.</summary>
+    <param name="hDlg">A handle to the child dialog box in the lower portion of the <b>General</b> page.</param>
+    <param name="uMsg">The identifier of the message being received.</param>
+    <param name="wParam">Additional information about the message. The exact meaning depends on the value of the <i>uMsg</i> parameter.</param>
+    <param name="lParam">
+      <para>Additional information about the message. The exact meaning depends on the value of the <i>uMsg</i> parameter.</para>
+      <para>If the <i>uMsg</i> parameter indicates the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/wm-initdialog">WM_INITDIALOG</a> message, <i>lParam</i> is a pointer to a <see cref="PRINTDLGEX" /> structure containing the values specified when the property sheet was created.</para>
+    </param>
+    <param name="pResult">Indicates the result to be returned by the dialog box procedure for the message. The value pointed to should be <b>TRUE</b> if you process the message, otherwise it should be <b>FALSE</b> or whatever is an appropriate value according to the message type.</param>
+    <returns>
+      <para>Return <b>S_OK</b> if your <b>IPrintDialogCallback.HandleMessage</b> implementation handled the message. In this case, the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function does not perform any default message handling.</para>
+      <para>Return <b>S_FALSE</b> if you want <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> to perform its default message handling.</para>
+    </returns>
+  </member>
+  <member name="IPrintDialogCallback.InitDone">
+    <summary>Called by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> when the system has finished initializing the <b>General</b> page of the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/print-property-sheet">Print Property Sheet</a>.</summary>
+    <returns>
+      <para>Return <b>S_OK</b> to prevent the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function from performing its default actions.</para>
+      <para>Return <b>S_FALSE</b> to allow <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> to perform its default actions. Currently, <b>PrintDlgEx</b> does not perform any default processing after the <b>InitDone</b> call.</para>
+    </returns>
+  </member>
+  <member name="IPrintDialogCallback.QueryInterface">
+    <summary>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown">IUnknown's</a>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(refiid_void)">QueryInterface</a> method</summary>
+  </member>
+  <member name="IPrintDialogCallback.Release">
+    <summary>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nn-unknwn-iunknown">IUnknown's</a>
+      <a href="https://docs.microsoft.com/windows/win32/api/unknwn/nf-unknwn-iunknown-release">Release</a> method</summary>
+  </member>
+  <member name="IPrintDialogCallback.SelectionChange">
+    <summary>Called by <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> when the user selects a different printer from the list of installed printers on the <b>General</b> page of the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/print-property-sheet">Print Property Sheet</a>.</summary>
+    <returns>
+      <para>Return <b>S_OK</b> to prevent the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function from performing its default actions.</para>
+      <para>Return <b>S_FALSE</b> to allow <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> to perform its default actions, which include adjustments to the <b>Copies</b>, <b>Collate</b>, and <b>Print Range</b> items.</para>
+    </returns>
+  </member>
+  <member name="IPrintDialogCallback">
+    <summary>Provides methods that enable an application to receive notifications and messages from the <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/ms646942(v=vs.85)">PrintDlgEx</a> function while the <a href="https://docs.microsoft.com//windows/desktop/dlgbox/print-property-sheet">Print Property Sheet</a> is displayed.</summary>
+  </member>
+</doc>

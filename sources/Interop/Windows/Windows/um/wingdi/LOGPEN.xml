@@ -3,18 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LOGPEN">
-    <summary>
-      <para>The <b>LOGPEN</b> structure defines the style, width, and color of a pen. The <see cref="CreatePenIndirect" /> function uses the <b>LOGPEN</b> structure.</para>
-    </summary>
-    <remarks>
-      <para>If the width of the pen is greater than 1 and the pen style is PS_INSIDEFRAME, the line is drawn inside the frame of all GDI objects except polygons and polylines. If the pen color does not match an available RGB value, the pen is drawn with a logical (dithered) color. If the pen width is less than or equal to 1, the PS_INSIDEFRAME style is identical to the PS_SOLID style.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</seealso>
-    <seealso cref="CreatePenIndirect" />
-    <seealso href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/pen-structures">Pen Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/pens">Pens Overview</seealso>
-    <seealso cref="RGB" />
+    <summary>The <b>LOGPEN</b> structure defines the style, width, and color of a pen. The <see cref="CreatePenIndirect" /> function uses the <b>LOGPEN</b> structure.</summary>
   </member>
   <member name="LOGPEN.lopnStyle">
     <summary>
@@ -24,45 +13,41 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>PS_SOLID</description>
           <description>The pen is solid.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PS_DASH</description>
           <description>The pen is dashed.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PS_DOT</description>
           <description>The pen is dotted.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PS_DASHDOT</description>
           <description>The pen has alternating dashes and dots.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PS_DASHDOTDOT</description>
           <description>The pen has dashes and double dots.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PS_NULL</description>
           <description>The pen is invisible.</description>
-        </item>
-        <item>
+        </listheader>
+        <listheader>
           <description>PS_INSIDEFRAME</description>
           <description>The pen is solid. When this pen is used in any GDI drawing function that takes a bounding rectangle, the dimensions of the figure are shrunk so that it fits entirely in the bounding rectangle, taking into account the width of the pen. This applies only to geometric pens.</description>
-        </item>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="LOGPEN.lopnWidth">
-    <summary>
-      <para>The <a href="https://docs.microsoft.com//previous-versions/dd162805(v=vs.85)">POINT</a> structure that contains the pen width, in logical units. If the <b>pointer</b> member is <b>NULL</b>, the pen is one pixel wide on raster devices. The <b>y</b> member in the <b>POINT</b> structure for <b>lopnWidth</b> is not used.</para>
-    </summary>
+    <summary>The <see cref="POINT" /> structure that contains the pen width, in logical units. If the <b>pointer</b> member is <b>NULL</b>, the pen is one pixel wide on raster devices. The <b>y</b> member in the <b>POINT</b> structure for <b>lopnWidth</b> is not used.</summary>
   </member>
   <member name="LOGPEN.lopnColor">
-    <summary>
-      <para>The pen color. To generate a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure, use the <see cref="RGB" /> macro.</para>
-    </summary>
+    <summary>The pen color. To generate a <a href="https://docs.microsoft.com//windows/desktop/gdi/colorref">COLORREF</a> structure, use the <see cref="RGB" /> macro.</summary>
   </member>
 </doc>

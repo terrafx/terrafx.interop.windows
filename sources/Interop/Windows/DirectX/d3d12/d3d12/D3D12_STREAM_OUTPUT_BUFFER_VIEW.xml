@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_STREAM_OUTPUT_BUFFER_VIEW">
+    <summary>Describes a stream output buffer.</summary>
+  </member>
+  <member name="D3D12_STREAM_OUTPUT_BUFFER_VIEW.BufferLocation">
+    <summary>A D3D12_GPU_VIRTUAL_ADDRESS (a UINT64) that points to the stream output buffer. If <b>SizeInBytes</b> is 0, this member isn't used and can be any value.</summary>
+  </member>
+  <member name="D3D12_STREAM_OUTPUT_BUFFER_VIEW.SizeInBytes">
+    <summary>The size of the stream output buffer in bytes.</summary>
+  </member>
+  <member name="D3D12_STREAM_OUTPUT_BUFFER_VIEW.BufferFilledSizeLocation">
+    <summary>The location of the value of how much data has been filled into the buffer, as a D3D12_GPU_VIRTUAL_ADDRESS (a UINT64). This member can't be NULL; a filled size location must be supplied (which the hardware will increment as data is output). If <b>SizeInBytes</b> is 0, this member isn't used and can be any value.</summary>
+  </member>
+</doc>

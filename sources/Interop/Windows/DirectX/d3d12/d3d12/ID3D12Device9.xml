@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Device9.CreateCommandQueue1">
+    <summary>
+      <para>Creates a command queue with a creator ID.</para>
+      <para>Also see <see cref="ID3D12Device.CreateCommandQueue" />.</para>
+    </summary>
+    <param name="pDesc">Specifies a <b>D3D12_COMMAND_QUEUE_DESC</b> that describes the command queue.</param>
+    <param name="CreatorID">A creator ID. See <b>Remarks</b>.</param>
+    <param name="riid">The globally unique identifier (GUID) for the command queue interface.</param>
+    <param name="ppCommandQueue">A pointer to a memory block that receives a pointer to the <see cref="ID3D12CommandQueue" /> interface for the command queue.</param>
+    <returns>Returns <b>E_OUTOFMEMORY</b> if there's insufficient memory to create the command queue; otherwise <b>S_OK</b>. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12Device9.CreateShaderCacheSession">
+    <summary>Creates an object that grants access to a shader cache, potentially opening an existing cache or creating a new one.</summary>
+    <param name="pDesc">A <b>D3D12_SHADER_CACHE_SESSION_DESC</b> structure describing the shader cache session to create.</param>
+    <param name="riid">The globally unique identifier (GUID) for the shader cache session interface.</param>
+    <param name="ppvSession">A pointer to a memory block that receives a pointer to the <see cref="ID3D12ShaderCacheSession" /> interface for the shader cache session.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| | DXGI_ERROR_ALREADY_EXISTS | You tried to create a cache with an existing identifier. See <see cref="D3D12_SHADER_CACHE_SESSION_DESC.Identifier" />. |</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device9.ShaderCacheControl">
+    <summary>Modifies the behavior of caches used internally by Direct3D or by the driver. <b>ShaderCacheControl</b> may be used only in developer mode.</summary>
+    <param name="Kinds">The caches to modify. Any one of these caches may or may not exist.</param>
+    <param name="Control">The way in which to modify the caches. You can't pass both <b>DISABLE</b> and <b>ENABLE</b> at the same time; and you must pass at least one flag.</param>
+  </member>
+  <member name="ID3D12Device9">
+    <summary>Represents a virtual adapter. This interface extends <see cref="ID3D12Device8" /> to add methods to manage shader caches.</summary>
+  </member>
+</doc>

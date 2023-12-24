@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLPainterEventInfoTests
     {
         Assert.That(typeof(IHTMLPainterEventInfo).GUID, Is.EqualTo(IID_IHTMLPainterEventInfo));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLPainterEventInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLPainterEventInfo>(), Is.EqualTo(sizeof(IHTMLPainterEventInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLPainterEventInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLPainterEventInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLPainterEventInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLPainterEventInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLPainterEventInfo), Is.EqualTo(4));
-        }
-    }
 }

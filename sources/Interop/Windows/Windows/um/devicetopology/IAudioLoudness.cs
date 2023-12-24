@@ -25,7 +25,7 @@ public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioLoudness*, Guid*, void**, int>)(lpVtbl[0]))((IAudioLoudness*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioLoudness*, Guid*, void**, int>)(lpVtbl[0]))((IAudioLoudness*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioLoudness*, uint>)(lpVtbl[1]))((IAudioLoudness*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioLoudness*, uint>)(lpVtbl[1]))((IAudioLoudness*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioLoudness*, uint>)(lpVtbl[2]))((IAudioLoudness*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioLoudness*, uint>)(lpVtbl[2]))((IAudioLoudness*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioLoudness.xml' path='doc/member[@name="IAudioLoudness.GetEnabled"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetEnabled(BOOL* pbEnabled)
     {
-        return ((delegate* unmanaged<IAudioLoudness*, BOOL*, int>)(lpVtbl[3]))((IAudioLoudness*)Unsafe.AsPointer(ref this), pbEnabled);
+        return ((delegate* unmanaged[MemberFunction]<IAudioLoudness*, BOOL*, int>)(lpVtbl[3]))((IAudioLoudness*)Unsafe.AsPointer(ref this), pbEnabled);
     }
 
     /// <include file='IAudioLoudness.xml' path='doc/member[@name="IAudioLoudness.SetEnabled"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT SetEnabled(BOOL bEnable, [NativeTypeName("LPCGUID")] Guid* pguidEventContext)
     {
-        return ((delegate* unmanaged<IAudioLoudness*, BOOL, Guid*, int>)(lpVtbl[4]))((IAudioLoudness*)Unsafe.AsPointer(ref this), bEnable, pguidEventContext);
+        return ((delegate* unmanaged[MemberFunction]<IAudioLoudness*, BOOL, Guid*, int>)(lpVtbl[4]))((IAudioLoudness*)Unsafe.AsPointer(ref this), bEnable, pguidEventContext);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IAudioLoudness : IAudioLoudness.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> GetEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> GetEnabled;
 
         [NativeTypeName("HRESULT (BOOL, LPCGUID) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, Guid*, int> SetEnabled;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, Guid*, int> SetEnabled;
     }
 }

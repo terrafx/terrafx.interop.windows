@@ -3,78 +3,38 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SMDATA">
-    <summary>
-      <para>Contains information from a menu band.</para>
-    </summary>
+    <summary>Contains information from a menu band.</summary>
   </member>
   <member name="SMDATA.dwMask">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-      <para>A mask that is always set to SMDM_HMENU.</para>
-    </summary>
+    <summary>A mask that is always set to SMDM_HMENU.</summary>
   </member>
-  <member name="SMDATA.dwFlags">
-    <summary>
-      <para>Type: <b>DWORD</b></para>
-    </summary>
-  </member>
+  <member name="SMDATA.dwFlags"></member>
   <member name="SMDATA.hmenu">
-    <summary>
-      <para>Type: <b>HMENU</b></para>
-      <para>The static menu portion of the menu band.</para>
-    </summary>
+    <summary>The static menu portion of the menu band.</summary>
   </member>
   <member name="SMDATA.hwnd">
-    <summary>
-      <para>Type: <b>HWND</b></para>
-      <para>The HWND value of the owner window.</para>
-    </summary>
+    <summary>The HWND value of the owner window.</summary>
   </member>
   <member name="SMDATA.uId">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The identifier of the menu item. This value is -1 for the menu itself.</para>
-    </summary>
+    <summary>The identifier of the menu item. This value is -1 for the menu itself.</summary>
   </member>
   <member name="SMDATA.uIdParent">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The identifier of the parent menu.</para>
-    </summary>
+    <summary>The identifier of the parent menu.</summary>
   </member>
-  <member name="SMDATA.uIdAncestor">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-    </summary>
-  </member>
+  <member name="SMDATA.uIdAncestor"></member>
   <member name="SMDATA.punk">
-    <summary>
-      <para>Type: <b>IUknown*</b></para>
-      <para>A pointer to the <see cref="IUnknown" /> interface of the <a href="https://docs.microsoft.com//windows/desktop/shell/profiles-directory">MenuBand</a> object.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IUnknown" /> interface of the <a href="https://docs.microsoft.com//windows/desktop/shell/profiles-directory">MenuBand</a> object.</summary>
   </member>
   <member name="SMDATA.pidlFolder">
-    <summary>
-      <para>Type: <b>PIDLIST_ABSOLUTE</b></para>
-      <para>The <see cref="ITEMIDLIST" /> of the shell folder portion of the menu.</para>
-    </summary>
+    <summary>The <see cref="ITEMIDLIST" /> of the shell folder portion of the menu.</summary>
   </member>
   <member name="SMDATA.pidlItem">
-    <summary>
-      <para>Type: <b>PUITEMID_CHILD</b></para>
-      <para>The <see cref="ITEMIDLIST" /> of the selected item in the shell folder portion of the menu.</para>
-    </summary>
+    <summary>The <see cref="ITEMIDLIST" /> of the selected item in the shell folder portion of the menu.</summary>
   </member>
   <member name="SMDATA.psf">
-    <summary>
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>A pointer to the <see cref="IShellFolder" /> interface for the folder associated with the shell folder portion of the menu.</para>
-    </summary>
+    <summary>A pointer to the <see cref="IShellFolder" /> interface for the folder associated with the shell folder portion of the menu.</summary>
   </member>
   <member name="SMDATA.pvUserData">
-    <summary>
-      <para>Type: <b>void*</b></para>
-      <para>A pointer to a user-defined data structure.</para>
-    </summary>
+    <summary>A pointer to a user-defined data structure.</summary>
   </member>
 </doc>

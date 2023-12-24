@@ -3,13 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_POLICY_EXTENSION_TYPE">
-    <summary>
-      <para>The values in this enumeration are used to identify the sub-types of <see cref="WS_POLICY_EXTENSION" />.</para>
-    </summary>
+    <summary>The values in this enumeration are used to identify the sub-types of <see cref="WS_POLICY_EXTENSION" />.</summary>
   </member>
   <member name="WS_POLICY_EXTENSION_TYPE.WS_ENDPOINT_POLICY_EXTENSION_TYPE">
-    <summary>
-      <para>This value is used in the type field of <see cref="WS_POLICY_EXTENSION" /> to identify a <see cref="WS_ENDPOINT_POLICY_EXTENSION" /> structure.</para>
-    </summary>
+    <summary>This value is used in the type field of <see cref="WS_POLICY_EXTENSION" /> to identify a <see cref="WS_ENDPOINT_POLICY_EXTENSION" /> structure.</summary>
   </member>
 </doc>

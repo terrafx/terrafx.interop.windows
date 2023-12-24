@@ -37,7 +37,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("LPWSTR")]
-    public static ushort* MAKEINTRESOURCE(ushort i) => (ushort*)(nuint)i;
+    public static char* MAKEINTRESOURCE(ushort i) => (char*)(nuint)i;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static POINT POINTSTOPOINT(POINTS pts)
@@ -109,13 +109,13 @@ public static unsafe partial class Windows
     public static HWND CreateWindowA([NativeTypeName("LPCSTR")] sbyte* lpClassName, [NativeTypeName("LPCSTR")] sbyte* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExA(0, lpClassName, lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static HWND CreateWindowW([NativeTypeName("LPCWSTR")] ushort* lpClassName, [NativeTypeName("LPCWSTR")] ushort* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExW(0, lpClassName, lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
+    public static HWND CreateWindowW([NativeTypeName("LPCWSTR")] char* lpClassName, [NativeTypeName("LPCWSTR")] char* lpWindowName, [NativeTypeName("DWORD")] uint dwStyle, int x, int y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, [NativeTypeName("LPVOID")] void* lpParam) => CreateWindowExW(0, lpClassName, lpWindowName, dwStyle, x, y, nWidth, nHeight, hWndParent, hMenu, hInstance, lpParam);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static HWND CreateDialogA(HINSTANCE hInstance, [NativeTypeName("LPCSTR")] sbyte* lpName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => CreateDialogParamA(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static HWND CreateDialogW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => CreateDialogParamW(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
+    public static HWND CreateDialogW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpName, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => CreateDialogParamW(hInstance, lpName, hWndParent, lpDialogFunc, dwInitParam: 0);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static HWND CreateDialogIndirectA(HINSTANCE hInstance, [NativeTypeName("LPCDLGTEMPLATEW")] DLGTEMPLATE* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => CreateDialogIndirectParamA(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
@@ -129,7 +129,7 @@ public static unsafe partial class Windows
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("INT_PTR")]
-    public static IntPtr DialogBoxW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] ushort* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
+    public static IntPtr DialogBoxW(HINSTANCE hInstance, [NativeTypeName("LPCWSTR")] char* lpTemplate, HWND hWndParent, [NativeTypeName("DLGPROC")] delegate* unmanaged<HWND, uint, WPARAM, LPARAM, nint> lpDialogFunc) => DialogBoxParamW(hInstance, lpTemplate, hWndParent, lpDialogFunc, dwInitParam: 0);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [return: NativeTypeName("INT_PTR")]
@@ -376,9 +376,4 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define GR_GLOBAL ((HANDLE)-2)")]
     public static HANDLE GR_GLOBAL => ((HANDLE)(-2));
-
-    /// <include file='Windows.xml' path='doc/member[@name="Windows.wsprintfW"]/*' />
-    [DllImport("user32", CallingConvention = CallingConvention.Cdecl, EntryPoint = "wsprintfW", ExactSpelling = true)]
-    [SetsLastSystemError]
-    public static extern int wsprintf([NativeTypeName("LPWSTR")] ushort* param0, [NativeTypeName("LPCWSTR")] ushort* param1, __arglist);
 }

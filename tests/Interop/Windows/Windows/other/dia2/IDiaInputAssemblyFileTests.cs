@@ -19,32 +19,4 @@ public static unsafe partial class IDiaInputAssemblyFileTests
     {
         Assert.That(typeof(IDiaInputAssemblyFile).GUID, Is.EqualTo(IID_IDiaInputAssemblyFile));
     }
-
-    /// <summary>Validates that the <see cref="IDiaInputAssemblyFile" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDiaInputAssemblyFile>(), Is.EqualTo(sizeof(IDiaInputAssemblyFile)));
-    }
-
-    /// <summary>Validates that the <see cref="IDiaInputAssemblyFile" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDiaInputAssemblyFile).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDiaInputAssemblyFile" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDiaInputAssemblyFile), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDiaInputAssemblyFile), Is.EqualTo(4));
-        }
-    }
 }

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_CERTIFICATE_S4U_LOGON">
+    <summary>The <b>KERB_CERTIFICATE_S4U_LOGON</b> structure contains information about the certificate for a service for user (S4U) logon.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_S4U_LOGON.MessageType">
+    <summary>A value of the <see cref="KERB_LOGON_SUBMIT_TYPE" /> enumeration that identifies the type of logon request being made. This member must be set to <b>KerbCertificateS4ULogon</b>.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_S4U_LOGON.Flags">
+    <summary>
+      <para>Flags that provide more information about the certificate logon.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_CERTIFICATE_S4U_LOGON_FLAG_CHECK_DUPLICATES</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The <a href="https://docs.microsoft.com//windows/desktop/SecAuthN/key-distribution-center">Key Distribution Center</a> (KDC) checks for account mapping conflicts for the same certificate.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_CERTIFICATE_S4U_LOGON_FLAG_CHECK_LOGONHOURS</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The KDC checks the length of time this account with this certificate has been logged on.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_CERTIFICATE_S4U_LOGON_FLAG_IF_NT_AUTH_POLICY_REQUIRED</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The KDC checks to see if an authentication policy is set.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>KERB_CERTIFICATE_S4U_LOGON_FLAG_IDENTIFY</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8</term>
+              </listheader>
+            </list>
+          </description>
+          <description>The KDC checks for identity only tokens instead of impersonation tokens. The request for the identity token must have the same value as the <b>KERB_S4U_LOGON_FLAG_IDENTIFY</b> flag in the <see cref="KERB_S4U_LOGON" /> structure.<para><b>Windows Server 2008 R2, Windows 7, Windows Server 2008 and Windows Vista with SP2:  </b>This flag is not available.</para></description>
+        </listheader>
+      </list>
+    </summary>
+  </member>
+  <member name="KERB_CERTIFICATE_S4U_LOGON.UserPrincipalName">
+    <summary>The user principal name of the client to authenticate. The value of this member can be <b>NULL</b>. If the value is not <b>NULL</b>, the <see cref="LsaLogonUser" /> function uses the value to locate the user name.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_S4U_LOGON.DomainName">
+    <summary>The domain name of the user to authenticate. The value of this member can be <b>NULL</b>. If the value is not <b>NULL</b>, the <see cref="LsaLogonUser" /> function uses the value to locate the KDC. If the value is <b>NULL</b>, the <b>LsaLogonUser</b> function attempts to authenticate against the domain to which the computer is joined.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_S4U_LOGON.CertificateLength">
+    <summary>The length, in bytes, of the client certificate.</summary>
+  </member>
+  <member name="KERB_CERTIFICATE_S4U_LOGON.Certificate">
+    <summary>The certificate of the S4U logon.</summary>
+  </member>
+</doc>

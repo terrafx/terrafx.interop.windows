@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE">
+    <summary>Specifies the type of a sub-object in a pipeline state stream description.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_ROOT_SIGNATURE">
+    <summary>Indicates a root signature subobject type. The corresponding subobject type is <b><see cref="ID3D12RootSignature" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_VS">
+    <summary>Indicates a vertex shader subobject type. The corresponding subobject type is <b><see cref="D3D12_SHADER_BYTECODE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_PS">
+    <summary>Indicates a pixel shader subobject type. The corresponding subobject type is <b><see cref="D3D12_SHADER_BYTECODE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DS">
+    <summary>Indicates a domain shader subobject type. The corresponding subobject type is <b><see cref="D3D12_SHADER_BYTECODE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_HS">
+    <summary>Indicates a hull shader subobject type. The corresponding subobject type is <b><see cref="D3D12_SHADER_BYTECODE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_GS">
+    <summary>Indicates a geometry shader subobject type. The corresponding subobject type is <b><see cref="D3D12_SHADER_BYTECODE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_CS">
+    <summary>Indicates a compute shader subobject type. The corresponding subobject type is <b><see cref="D3D12_SHADER_BYTECODE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_STREAM_OUTPUT">
+    <summary>Indicates a stream-output subobject type. The corresponding subobject type is <b><see cref="D3D12_STREAM_OUTPUT_DESC" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_BLEND">
+    <summary>Indicates a blend subobject type. The corresponding subobject type is <b><see cref="D3D12_BLEND_DESC" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_SAMPLE_MASK">
+    <summary>Indicates a sample mask subobject type. The corresponding subobject type is <b>UINT</b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RASTERIZER">
+    <summary>Indicates indicates a rasterizer subobject type. The corresponding subobject type is <b><see cref="D3D12_RASTERIZER_DESC" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL">
+    <summary>Indicates a depth stencil subobject type. The corresponding subobject type is <b><see cref="D3D12_DEPTH_STENCIL_DESC" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_INPUT_LAYOUT">
+    <summary>Indicates an input layout subobject type. The corresponding subobject type is <b><see cref="D3D12_INPUT_LAYOUT_DESC" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_IB_STRIP_CUT_VALUE">
+    <summary>Indicates an index buffer strip cut value subobject type. The corresponding subobject type is <b><see cref="D3D12_INDEX_BUFFER_STRIP_CUT_VALUE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_PRIMITIVE_TOPOLOGY">
+    <summary>Indicates a primitive topology subobject type. The corresponding subobject type is <b><see cref="D3D12_PRIMITIVE_TOPOLOGY_TYPE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_RENDER_TARGET_FORMATS">
+    <summary>Indicates a render target formats subobject type. The corresponding subobject type is <b><see cref="D3D12_RT_FORMAT_ARRAY" /></b> structure, which wraps an array of render target formats along with a count of the array elements.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL_FORMAT">
+    <summary>Indicates a depth stencil format subobject. The corresponding subobject type is <b><see cref="DXGI_FORMAT" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_SAMPLE_DESC">
+    <summary>Indicates a sample description subobject type. The corresponding subobject type is <b><see cref="DXGI_SAMPLE_DESC" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_NODE_MASK">
+    <summary>Indicates a node mask subobject type. The corresponding subobject type is <b><see cref="D3D12_NODE_MASK" /></b> or <b>UINT</b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_CACHED_PSO">
+    <summary>Indicates a cached pipeline state object subobject type. The corresponding subobject type is <b><see cref="D3D12_CACHED_PIPELINE_STATE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_FLAGS">
+    <summary>Indicates a flags subobject type. The corresponding subobject type is <b><see cref="D3D12_PIPELINE_STATE_FLAGS" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_DEPTH_STENCIL1">
+    <summary>Indicates an expanded depth stencil subobject type. This expansion of the depth stencil subobject supports optional depth bounds checking. The corresponding subobject type is <b><see cref="D3D12_DEPTH_STENCIL_DESC1" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_VIEW_INSTANCING">
+    <summary>Indicates a view instancing subobject type. The corresponding subobject type is <b><see cref="D3D12_VIEW_INSTANCING_DESC" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_AS">
+    <summary>Indicates an amplification shader subobject type. The corresponding subobject type is <b><see cref="D3D12_SHADER_BYTECODE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MS">
+    <summary>Indicates a mesh shader subobject type. The corresponding subobject type is <b><see cref="D3D12_SHADER_BYTECODE" /></b>.</summary>
+  </member>
+  <member name="D3D12_PIPELINE_STATE_SUBOBJECT_TYPE.D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_MAX_VALID">
+    <summary>A sentinel value that marks the exclusive upper-bound of valid values this enumeration represents.</summary>
+  </member>
+</doc>

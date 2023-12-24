@@ -4,19 +4,14 @@
 <doc>
   <member name="eAVEncDDPreferredStereoDownMixMode">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>Specifies the preferred stereo downmix mode for a Dolby Digital audio stream. This enumeration is used with the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avencddpreferredstereodownmixmode-property">AVEncDDPreferredStereoDownMixMode</a> property.</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/codec-api-enumerations">Codec API Enumerations</seealso>
-    <seealso cref="ICodecAPI Interface" />
   </member>
   <member name="eAVEncDDPreferredStereoDownMixMode.eAVEncDDPreferredStereoDownMixMode_LtRt">
-    <summary>
-      <para>Left total/right total (Lt/Rt) downmix.</para>
-    </summary>
+    <summary>Left total/right total (Lt/Rt) downmix.</summary>
   </member>
   <member name="eAVEncDDPreferredStereoDownMixMode.eAVEncDDPreferredStereoDownMixMode_LoRo">
-    <summary>
-      <para>Left only/right only (Lo/Ro) downmix.</para>
-    </summary>
+    <summary>Left only/right only (Lo/Ro) downmix.</summary>
   </member>
 </doc>

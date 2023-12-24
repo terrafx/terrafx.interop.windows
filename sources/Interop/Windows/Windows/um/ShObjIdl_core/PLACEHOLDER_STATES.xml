@@ -3,39 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PLACEHOLDER_STATES">
-    <summary>
-      <para>Specifies the states that a placeholder file can have. Retrieve this value through the System.FilePlaceholderStatus (PKEY_FilePlaceholderStatus) property.</para>
-    </summary>
+    <summary>Specifies the states that a placeholder file can have. Retrieve this value through the System.FilePlaceholderStatus (PKEY_FilePlaceholderStatus) property.</summary>
   </member>
   <member name="PLACEHOLDER_STATES.PS_NONE">
-    <summary>
-      <para>None of the other states apply at this time.</para>
-    </summary>
+    <summary>None of the other states apply at this time.</summary>
   </member>
   <member name="PLACEHOLDER_STATES.PS_MARKED_FOR_OFFLINE_AVAILABILITY">
-    <summary>
-      <para>May already be or eventually will be available offline.</para>
-    </summary>
+    <summary>May already be or eventually will be available offline.</summary>
   </member>
   <member name="PLACEHOLDER_STATES.PS_FULL_PRIMARY_STREAM_AVAILABLE">
-    <summary>
-      <para>The primary stream has been made fully available.</para>
-    </summary>
+    <summary>The primary stream has been made fully available.</summary>
   </member>
   <member name="PLACEHOLDER_STATES.PS_CREATE_FILE_ACCESSIBLE">
-    <summary>
-      <para>The file is accessible through a call to the <see cref="CreateFile" /> function, without requesting the opening of reparse points.</para>
-    </summary>
+    <summary>The file is accessible through a call to the <see cref="CreateFile" /> function, without requesting the opening of reparse points.</summary>
   </member>
-  <member name="PLACEHOLDER_STATES.PS_CLOUDFILE_PLACEHOLDER">
-    <summary></summary>
-  </member>
-  <member name="PLACEHOLDER_STATES.PS_DEFAULT">
-    <summary></summary>
-  </member>
+  <member name="PLACEHOLDER_STATES.PS_CLOUDFILE_PLACEHOLDER"></member>
+  <member name="PLACEHOLDER_STATES.PS_DEFAULT"></member>
   <member name="PLACEHOLDER_STATES.PS_ALL">
-    <summary>
-      <para>A bitmask value for all valid PLACEHOLDER_STATES flags.</para>
-    </summary>
+    <summary>A bitmask value for all valid PLACEHOLDER_STATES flags.</summary>
   </member>
 </doc>

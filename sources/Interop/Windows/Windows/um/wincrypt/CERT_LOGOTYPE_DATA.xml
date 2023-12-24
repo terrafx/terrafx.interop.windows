@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CERT_LOGOTYPE_DATA">
-    <summary>
-      <para>The <b>CERT_LOGOTYPE_DATA</b> structure contains logotype data.</para>
-    </summary>
-    <seealso cref="CERT_LOGOTYPE_INFO" />
+    <summary>The <b>CERT_LOGOTYPE_DATA</b> structure contains logotype data.</summary>
   </member>
   <member name="CERT_LOGOTYPE_DATA.cLogotypeImage">
-    <summary>
-      <para>The number of elements in the <b>rgLogotypeImage</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgLogotypeImage</b> array.</summary>
   </member>
   <member name="CERT_LOGOTYPE_DATA.rgLogotypeImage">
-    <summary>
-      <para>An array of <see cref="CERT_LOGOTYPE_IMAGE" /> structures that contain the logotype images. The <b>cLogotypeImage</b> member contains the number of elements in this array.</para>
-    </summary>
+    <summary>An array of <see cref="CERT_LOGOTYPE_IMAGE" /> structures that contain the logotype images. The <b>cLogotypeImage</b> member contains the number of elements in this array.</summary>
   </member>
   <member name="CERT_LOGOTYPE_DATA.cLogotypeAudio">
-    <summary>
-      <para>The number of elements in the <b>rgLogotypeAudio</b> array.</para>
-    </summary>
+    <summary>The number of elements in the <b>rgLogotypeAudio</b> array.</summary>
   </member>
   <member name="CERT_LOGOTYPE_DATA.rgLogotypeAudio">
-    <summary>
-      <para>An array of <see cref="CERT_LOGOTYPE_AUDIO" /> structures that contain the logotype audio clips. The <b>cLogotypeAudio</b> member contains the number of elements in this array.</para>
-    </summary>
+    <summary>An array of <see cref="CERT_LOGOTYPE_AUDIO" /> structures that contain the logotype audio clips. The <b>cLogotypeAudio</b> member contains the number of elements in this array.</summary>
   </member>
 </doc>

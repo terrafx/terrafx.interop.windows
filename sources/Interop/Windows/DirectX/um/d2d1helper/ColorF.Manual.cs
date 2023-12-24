@@ -5,7 +5,7 @@
 
 namespace TerraFX.Interop.DirectX;
 
-public enum ColorF : uint
+public enum ColorF
 {
     AliceBlue = 0xF0F8FF,
     AntiqueWhite = 0xFAEBD7,

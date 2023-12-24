@@ -3,63 +3,23 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ID3D10StateBlock.Apply">
-    <summary>
-      <para>Apply the state block to the current device state.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10StateBlock Interface" />
+    <summary>Apply the state block to the current device state.</summary>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10StateBlock.Capture">
-    <summary>
-      <para>Capture the current value of states that are included in a stateblock.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Capture captures current values for states within an existing state block. It does not capture the entire state of the device. Creating an empty stateblock and calling Capture does nothing if no states have been set.</para>
-    </remarks>
-    <seealso cref="ID3D10StateBlock Interface" />
+    <summary>Capture the current value of states that are included in a stateblock.</summary>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10StateBlock.GetDevice">
-    <summary>
-      <para>Get the device.</para>
-    </summary>
-    <param name="ppDevice">
-      <para>Type: <b><see cref="ID3D10Device" />**</b></para>
-      <para>Pointer to the ID3D10Device interface that is returned.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <seealso cref="ID3D10StateBlock Interface" />
+    <summary>Get the device.</summary>
+    <param name="ppDevice">Pointer to the ID3D10Device interface that is returned.</param>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10StateBlock.ReleaseAllDeviceObjects">
-    <summary>
-      <para>Release all references to device objects.</para>
-    </summary>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</para>
-    </returns>
-    <remarks>
-      <para>Each time you return a pointer to an interface (by calling <see cref="ID3D10StateBlock.GetDevice" />), the internal reference count is incremented; when you are finished using a stateblock, call this method to release all references and avoid a memory leak.</para>
-    </remarks>
-    <seealso cref="ID3D10StateBlock Interface" />
+    <summary>Release all references to device objects.</summary>
+    <returns>Returns one of the following <a href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-returnvalues">Direct3D 10 Return Codes</a>.</returns>
   </member>
   <member name="ID3D10StateBlock">
-    <summary>
-      <para>A state-block interface encapsulates render states.</para>
-    </summary>
-    <remarks>
-      <para>To create a state-block interface, call <see cref="D3D10CreateStateBlock" />.</para>
-      <para>This interface can be used to save and restore pipeline state. It can also be used to capture the current state.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d10/d3d10-graphics-reference-d3d10-core-interfaces">Core Interfaces</seealso>
+    <summary>A state-block interface encapsulates render states.</summary>
   </member>
 </doc>

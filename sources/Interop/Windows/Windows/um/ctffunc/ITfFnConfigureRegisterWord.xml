@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnConfigureRegisterWord.Show">
-    <summary>
-      <para>Called to cause the text service to display a dialog box to register a word with the text service.</para>
-    </summary>
-    <param name="hwndParent">
-      <para>Handle of the parent window. The text service typically uses this as the parent or owner window when creating the dialog box.</para>
-    </param>
-    <param name="langid">
-      <para>Contains a <b>LANGID</b> that specifies the identifier of the language currently used by the Input Method Editor (IME).</para>
-    </param>
-    <param name="rguidProfile">
-      <para>Contains a GUID that specifies the language profile identifier that the text service is under. This is the value specified in <see cref="ITfInputProcessorProfiles.AddLanguageProfile" /> when the profile was added.</para>
-    </param>
-    <param name="bstrRegistered">
-      <para>Contains a <b>BSTR</b> that contains the word to be registered with the text service. This is optional and can be NULL. If NULL, the text service should display a default register word dialog box.</para>
-    </param>
+    <summary>Called to cause the text service to display a dialog box to register a word with the text service.</summary>
+    <param name="hwndParent">Handle of the parent window. The text service typically uses this as the parent or owner window when creating the dialog box.</param>
+    <param name="langid">Contains a <b>LANGID</b> that specifies the identifier of the language currently used by the Input Method Editor (IME).</param>
+    <param name="rguidProfile">Contains a GUID that specifies the language profile identifier that the text service is under. This is the value specified in <see cref="ITfInputProcessorProfiles.AddLanguageProfile" /> when the profile was added.</param>
+    <param name="bstrRegistered">Contains a <b>BSTR</b> that contains the word to be registered with the text service. This is optional and can be NULL. If NULL, the text service should display a default register word dialog box.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -25,30 +15,32 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The text service does not implement this method.</para>
-          </description>
-        </item>
+          <description>The text service does not implement this method.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfFnConfigureRegisterWord" />
-    <seealso cref="ITfInputProcessorProfiles.AddLanguageProfile " />
   </member>
   <member name="ITfFnConfigureRegisterWord">
     <summary>

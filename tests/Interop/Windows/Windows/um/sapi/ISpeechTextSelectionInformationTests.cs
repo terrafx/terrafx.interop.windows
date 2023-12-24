@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechTextSelectionInformationTests
     {
         Assert.That(typeof(ISpeechTextSelectionInformation).GUID, Is.EqualTo(IID_ISpeechTextSelectionInformation));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechTextSelectionInformation" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechTextSelectionInformation>(), Is.EqualTo(sizeof(ISpeechTextSelectionInformation)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechTextSelectionInformation" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechTextSelectionInformation).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechTextSelectionInformation" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechTextSelectionInformation), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechTextSelectionInformation), Is.EqualTo(4));
-        }
-    }
 }

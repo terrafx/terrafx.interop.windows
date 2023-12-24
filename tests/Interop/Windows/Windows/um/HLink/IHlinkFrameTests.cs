@@ -19,32 +19,4 @@ public static unsafe partial class IHlinkFrameTests
     {
         Assert.That(typeof(IHlinkFrame).GUID, Is.EqualTo(IID_IHlinkFrame));
     }
-
-    /// <summary>Validates that the <see cref="IHlinkFrame" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHlinkFrame>(), Is.EqualTo(sizeof(IHlinkFrame)));
-    }
-
-    /// <summary>Validates that the <see cref="IHlinkFrame" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHlinkFrame).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHlinkFrame" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHlinkFrame), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHlinkFrame), Is.EqualTo(4));
-        }
-    }
 }

@@ -25,7 +25,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDiaSourceFile*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSourceFile*, Guid*, void**, int>)(lpVtbl[0]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDiaSourceFile*, uint>)(lpVtbl[1]))((IDiaSourceFile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaSourceFile*, uint>)(lpVtbl[1]))((IDiaSourceFile*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDiaSourceFile*, uint>)(lpVtbl[2]))((IDiaSourceFile*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDiaSourceFile*, uint>)(lpVtbl[2]))((IDiaSourceFile*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_uniqueId"]/*' />
@@ -51,15 +51,15 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSourceFile*, uint*, int>)(lpVtbl[3]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSourceFile*, uint*, int>)(lpVtbl[3]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_fileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal)
+    public HRESULT get_fileName([NativeTypeName("BSTR *")] char** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSourceFile*, ushort**, int>)(lpVtbl[4]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSourceFile*, char**, int>)(lpVtbl[4]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_checksumType"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT get_checksumType([NativeTypeName("DWORD *")] uint* pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSourceFile*, uint*, int>)(lpVtbl[5]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSourceFile*, uint*, int>)(lpVtbl[5]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_compilands"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
     [VtblIndex(6)]
     public HRESULT get_compilands(IDiaEnumSymbols** pRetVal)
     {
-        return ((delegate* unmanaged<IDiaSourceFile*, IDiaEnumSymbols**, int>)(lpVtbl[6]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSourceFile*, IDiaEnumSymbols**, int>)(lpVtbl[6]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), pRetVal);
     }
 
     /// <include file='IDiaSourceFile.xml' path='doc/member[@name="IDiaSourceFile.get_checksum"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
     [VtblIndex(7)]
     public HRESULT get_checksum([NativeTypeName("DWORD")] uint cbData, [NativeTypeName("DWORD *")] uint* pcbData, byte* pbData)
     {
-        return ((delegate* unmanaged<IDiaSourceFile*, uint, uint*, byte*, int>)(lpVtbl[7]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
+        return ((delegate* unmanaged[MemberFunction]<IDiaSourceFile*, uint, uint*, byte*, int>)(lpVtbl[7]))((IDiaSourceFile*)Unsafe.AsPointer(ref this), cbData, pcbData, pbData);
     }
 
     public interface Interface : IUnknown.Interface
@@ -92,7 +92,7 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
         HRESULT get_uniqueId([NativeTypeName("DWORD *")] uint* pRetVal);
 
         [VtblIndex(4)]
-        HRESULT get_fileName([NativeTypeName("BSTR *")] ushort** pRetVal);
+        HRESULT get_fileName([NativeTypeName("BSTR *")] char** pRetVal);
 
         [VtblIndex(5)]
         HRESULT get_checksumType([NativeTypeName("DWORD *")] uint* pRetVal);
@@ -108,27 +108,27 @@ public unsafe partial struct IDiaSourceFile : IDiaSourceFile.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_uniqueId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_uniqueId;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_fileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_fileName;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_checksumType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_checksumType;
 
         [NativeTypeName("HRESULT (IDiaEnumSymbols **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDiaEnumSymbols**, int> get_compilands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDiaEnumSymbols**, int> get_compilands;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *, BYTE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, byte*, int> get_checksum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, byte*, int> get_checksum;
     }
 }

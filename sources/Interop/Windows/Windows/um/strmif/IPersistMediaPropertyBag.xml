@@ -4,31 +4,19 @@
 <doc>
   <member name="IPersistMediaPropertyBag.InitNew">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>InitNew</code> method initializes the object to receive new properties.</para>
     </summary>
-    <returns>
-      <para>Returns S_OK.</para>
-    </returns>
-    <remarks>
-      <para>Calling this method on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-mux-filter">AVI Mux</a> filter clears any properties that were previously set using the <see cref="Load" /> method.</para>
-      <para>Calling this method on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-splitter-filter">AVI Splitter</a> filter or the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wave-parser-filter">WAVE Parser</a> filter has no effect.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IPersistMediaPropertyBag Interface" />
+    <returns>Returns S_OK.</returns>
   </member>
   <member name="IPersistMediaPropertyBag.Save">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>Save</code> method saves properties from the filter into the media property bag.</para>
     </summary>
-    <param name="pPropBag">
-      <para>Pointer to the <see cref="IMediaPropertyBag" /> interface of a media property bag created by the caller.</para>
-    </param>
-    <param name="fClearDirty">
-      <para>Reserved. Can be any value.</para>
-    </param>
-    <param name="fSaveAllProperties">
-      <para>Reserved. Can be any value.</para>
-    </param>
+    <param name="pPropBag">Pointer to the <see cref="IMediaPropertyBag" /> interface of a media property bag created by the caller.</param>
+    <param name="fClearDirty">Reserved. Can be any value.</param>
+    <param name="fSaveAllProperties">Reserved. Can be any value.</param>
     <returns>
       <para>Returns an <b>HRESULT</b> value. Possible values include the following:</para>
       <list type="table">
@@ -36,57 +24,60 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Not implemented.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Insufficient memory.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Not implemented.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>HRESULT_FROM_WIN32(ERROR_INVALID_DATA)</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Insufficient memory.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>HRESULT_FROM_WIN32(ERROR_INVALID_DATA)</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid data.</para>
-          </description>
-        </item>
+          <description>Invalid data.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If you call this method on the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-splitter-filter">AVI Splitter</a> filter or the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wave-parser-filter">WAVE Parser</a>, the filter reads any INFO and DISP chunks from the file and stores them in the media property bag. You can use the <see cref="IMediaPropertyBag.EnumProperty" /> method to retrieve the chunks.</para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-mux-filter">AVI Mux</a> filter does not implement this method.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IPersistMediaPropertyBag Interface" />
   </member>
   <member name="IPersistMediaPropertyBag">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IPersistMediaPropertyBag</code> interface sets and retrieves INFO and DISP chunks in Audio-Video Interleaved (AVI) streams. It uses the <see cref="IMediaPropertyBag" /> interface to store the chunks as name/value pairs.</para>
       <para>The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-splitter-filter">AVI Splitter</a> filter and the <a href="https://docs.microsoft.com//windows/desktop/DirectShow/wave-parser-filter">WAVE Parser</a> filter support this interface for reading INFO and DISP chunks from an AVI or WAV file. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-mux-filter">AVI Mux</a> filter supports the interface for writing these chunks into a file.</para>
       <para>

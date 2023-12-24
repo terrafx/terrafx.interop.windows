@@ -7,13 +7,13 @@ namespace TerraFX.Interop.Windows;
 
 public static unsafe partial class Windows
 {
-    public static nuint DPI_AWARENESS_CONTEXT_UNAWARE => unchecked((nuint)(-1));
+    public static DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_UNAWARE => unchecked((DPI_AWARENESS_CONTEXT)(-1));
 
-    public static nuint DPI_AWARENESS_CONTEXT_SYSTEM_AWARE => unchecked((nuint)(-2));
+    public static DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_SYSTEM_AWARE => unchecked((DPI_AWARENESS_CONTEXT)(-2));
 
-    public static nuint DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE => unchecked((nuint)(-3));
+    public static DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE => unchecked((DPI_AWARENESS_CONTEXT)(-3));
 
-    public static nuint DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 => unchecked((nuint)(-4));
+    public static DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 => unchecked((DPI_AWARENESS_CONTEXT)(-4));
 
-    public static nuint DPI_AWARENESS_CONTEXT_UNAWARE_GDISCALED => unchecked((nuint)(-5));
+    public static DPI_AWARENESS_CONTEXT DPI_AWARENESS_CONTEXT_UNAWARE_GDISCALED => unchecked((DPI_AWARENESS_CONTEXT)(-5));
 }

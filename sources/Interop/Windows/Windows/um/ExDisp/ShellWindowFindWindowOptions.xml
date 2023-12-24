@@ -3,25 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ShellWindowFindWindowOptions">
-    <summary>
-      <para>Specifies options for finding window in the Shell windows collection.</para>
-    </summary>
-    <seealso cref="IShellWindows" />
-    <seealso cref="IShellWindows.FindWindowSW" />
+    <summary>Specifies options for finding window in the Shell windows collection.</summary>
   </member>
   <member name="ShellWindowFindWindowOptions.SWFO_NEEDDISPATCH">
-    <summary>
-      <para>The window must have an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> interface.</para>
-    </summary>
+    <summary>The window must have an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch">IDispatch</a> interface.</summary>
   </member>
   <member name="ShellWindowFindWindowOptions.SWFO_INCLUDEPENDING">
-    <summary>
-      <para>Include windows that were registered with <see cref="IShellWindows.RegisterPending" />.</para>
-    </summary>
+    <summary>Include windows that were registered with <see cref="IShellWindows.RegisterPending" />.</summary>
   </member>
   <member name="ShellWindowFindWindowOptions.SWFO_COOKIEPASSED">
-    <summary>
-      <para>Causes <see cref="IShellWindows.FindWindowSW" /> to interpret <i>pvarLoc</i>  as a cookie rather than a PIDL.</para>
-    </summary>
+    <summary>Causes <see cref="IShellWindows.FindWindowSW" /> to interpret <i>pvarLoc</i> as a cookie rather than a PIDL.</summary>
   </member>
 </doc>

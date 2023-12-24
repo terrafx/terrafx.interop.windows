@@ -3,148 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IWICBitmapLock.GetDataPointer">
-    <summary>
-      <para>Gets the pointer to the top left pixel in the locked rectangle.</para>
-    </summary>
-    <param name="pcbBufferSize">
-      <para>Type: <b>UINT*</b></para>
-      <para>A pointer that receives the size of the buffer.</para>
-    </param>
-    <param name="ppbData">
-      <para>Type: <b>BYTE**</b></para>
-      <para>A pointer that receives a pointer to the top left pixel in the locked rectangle.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The pointer provided by this method should not be used outside of the lifetime of the lock itself.</para>
-      <para>
-        <b>GetDataPointer</b> is not available in multi-threaded apartment applications.</para>
-      <h4>Examples</h4>
-      <para>In the following example, the data pointed to by the <see cref="IWICBitmapLock" /> is zeroed.</para>
-      <code>
-    IWICImagingFactory *pFactory = NULL;
-    IWICBitmap *pBitmap = NULL;
-
-    UINT uiWidth = 640;
-    UINT uiHeight = 480;
-    WICPixelFormatGUID formatGUID = GUID_WICPixelFormat32bppARGB;
-
-    WICRect rcLock = { 0, 0, uiWidth, uiHeight };
-    IWICBitmapLock *pLock = NULL;
-
-    HRESULT hr = CoCreateInstance(
-        CLSID_WICImagingFactory,
-        NULL,
-        CLSCTX_INPROC_SERVER,
-        IID_IWICImagingFactory,
-        (LPVOID*)&amp;amp;amp;amp;amp;amp;pFactory
-        );
-
-    if (SUCCEEDED(hr))
-    {
-        hr = pFactory-&gt;CreateBitmap(uiWidth, uiHeight, formatGUID, WICBitmapCacheOnDemand, &amp;amp;amp;amp;amp;amp;pBitmap);
-    }
-
-    if (SUCCEEDED(hr))
-    {
-        hr = pBitmap-&gt;Lock(&amp;amp;amp;amp;amp;amp;rcLock, WICBitmapLockWrite, &amp;amp;amp;amp;amp;amp;pLock);
-
-        if (SUCCEEDED(hr))
-        {
-            UINT cbBufferSize = 0;
-            UINT cbStride = 0;
-            BYTE *pv = NULL;
-
-            // Retrieve the stride.
-            hr = pLock-&gt;GetStride(&amp;amp;amp;amp;amp;amp;cbStride);
-
-            if (SUCCEEDED(hr))
-            {
-                hr = pLock-&gt;GetDataPointer(&amp;amp;amp;amp;amp;amp;cbBufferSize, &amp;amp;amp;amp;amp;amp;pv);
-            }
-            if (SUCCEEDED(hr))
-            {
-                // Access the bitmap memory starting at pv, where
-                // each row begins cbStride bytes after the start
-                // of the preceding row.
-            }
-
-            // Release the bitmap lock.
-            pLock-&gt;Release();
-        }
-    }
-
-    if (pBitmap)
-    {
-        pBitmap-&gt;Release();
-    }
-
-    if (pFactory)
-    {
-        pFactory-&gt;Release();
-    }
-
-    return hr;
-
-</code>
-    </remarks>
+    <summary>Gets the pointer to the top left pixel in the locked rectangle.</summary>
+    <param name="pcbBufferSize">A pointer that receives the size of the buffer.</param>
+    <param name="ppbData">A pointer that receives a pointer to the top left pixel in the locked rectangle.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapLock.GetPixelFormat">
-    <summary>
-      <para>Gets the pixel format of for the locked area of pixels. This can be used to compute the number of bytes-per-pixel in the locked area.</para>
-    </summary>
-    <param name="pPixelFormat">
-      <para>Type: <b>WICPixelFormatGUID*</b></para>
-      <para>A pointer that receives the pixel format GUID of the locked area.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the pixel format of for the locked area of pixels. This can be used to compute the number of bytes-per-pixel in the locked area.</summary>
+    <param name="pPixelFormat">A pointer that receives the pixel format GUID of the locked area.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapLock.GetSize">
-    <summary>
-      <para>Retrieves the width and height, in pixels, of the locked rectangle.</para>
-    </summary>
-    <param name="puiWidth">
-      <para>Type: <b>UINT*</b></para>
-      <para>A pointer that receives the width of the locked rectangle.</para>
-    </param>
-    <param name="puiHeight">
-      <para>Type: <b>UINT*</b></para>
-      <para>A pointer that receives the height of the locked rectangle.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Retrieves the width and height, in pixels, of the locked rectangle.</summary>
+    <param name="puiWidth">A pointer that receives the width of the locked rectangle.</param>
+    <param name="puiHeight">A pointer that receives the height of the locked rectangle.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapLock.GetStride">
-    <summary>
-      <para>Provides access to the stride value for the memory.</para>
-    </summary>
-    <param name="pcbStride">
-      <para>Type: <b>UINT*</b></para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Note the stride value is specific to the <see cref="IWICBitmapLock" />, not the bitmap.
-For example, two consecutive locks on the same rectangle of a bitmap may return different pointers and stride values, depending on internal implementation.</para>
-    </remarks>
+    <summary>Provides access to the stride value for the memory.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IWICBitmapLock">
-    <summary>
-      <para>Exposes methods that support the <see cref="Lock" /> method.</para>
-    </summary>
-    <remarks>
-      <para>The bitmap lock is simply an abstraction for a rectangular memory window into the bitmap. For the simplest case, a system memory bitmap, this is simply a pointer to the top left corner of the rectangle and a stride value.</para>
-      <para>To release the exclusive lock set by <see cref="Lock" /> method and the associated <b>IWICBitmapLock</b> object, call <see cref="IUnknown.Release" /> on the <b>IWICBitmapLock</b> object.</para>
-    </remarks>
+    <summary>Exposes methods that support the <see cref="Lock" /> method.</summary>
   </member>
 </doc>

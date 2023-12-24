@@ -25,7 +25,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSeeking*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, Guid*, void**, int>)(lpVtbl[0]))((IMediaSeeking*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMediaSeeking*, uint>)(lpVtbl[1]))((IMediaSeeking*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, uint>)(lpVtbl[1]))((IMediaSeeking*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMediaSeeking*, uint>)(lpVtbl[2]))((IMediaSeeking*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, uint>)(lpVtbl[2]))((IMediaSeeking*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetCapabilities"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetCapabilities([NativeTypeName("DWORD *")] uint* pCapabilities)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, uint*, int>)(lpVtbl[3]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCapabilities);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, uint*, int>)(lpVtbl[3]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCapabilities);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.CheckCapabilities"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(4)]
     public HRESULT CheckCapabilities([NativeTypeName("DWORD *")] uint* pCapabilities)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, uint*, int>)(lpVtbl[4]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCapabilities);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, uint*, int>)(lpVtbl[4]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCapabilities);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.IsFormatSupported"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT IsFormatSupported([NativeTypeName("const GUID *")] Guid* pFormat)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[5]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, Guid*, int>)(lpVtbl[5]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.QueryPreferredFormat"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT QueryPreferredFormat(Guid* pFormat)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[6]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, Guid*, int>)(lpVtbl[6]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetTimeFormat"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(7)]
     public HRESULT GetTimeFormat(Guid* pFormat)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[7]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, Guid*, int>)(lpVtbl[7]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.IsUsingTimeFormat"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT IsUsingTimeFormat([NativeTypeName("const GUID *")] Guid* pFormat)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[8]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, Guid*, int>)(lpVtbl[8]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.SetTimeFormat"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(9)]
     public HRESULT SetTimeFormat([NativeTypeName("const GUID *")] Guid* pFormat)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, Guid*, int>)(lpVtbl[9]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, Guid*, int>)(lpVtbl[9]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pFormat);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetDuration"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(10)]
     public HRESULT GetDuration([NativeTypeName("LONGLONG *")] long* pDuration)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, long*, int>)(lpVtbl[10]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pDuration);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, long*, int>)(lpVtbl[10]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pDuration);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetStopPosition"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(11)]
     public HRESULT GetStopPosition([NativeTypeName("LONGLONG *")] long* pStop)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, long*, int>)(lpVtbl[11]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pStop);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, long*, int>)(lpVtbl[11]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pStop);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetCurrentPosition"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(12)]
     public HRESULT GetCurrentPosition([NativeTypeName("LONGLONG *")] long* pCurrent)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, long*, int>)(lpVtbl[12]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCurrent);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, long*, int>)(lpVtbl[12]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCurrent);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.ConvertTimeFormat"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(13)]
     public HRESULT ConvertTimeFormat([NativeTypeName("LONGLONG *")] long* pTarget, [NativeTypeName("const GUID *")] Guid* pTargetFormat, [NativeTypeName("LONGLONG")] long Source, [NativeTypeName("const GUID *")] Guid* pSourceFormat)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, long*, Guid*, long, Guid*, int>)(lpVtbl[13]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pTarget, pTargetFormat, Source, pSourceFormat);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, long*, Guid*, long, Guid*, int>)(lpVtbl[13]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pTarget, pTargetFormat, Source, pSourceFormat);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.SetPositions"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(14)]
     public HRESULT SetPositions([NativeTypeName("LONGLONG *")] long* pCurrent, [NativeTypeName("DWORD")] uint dwCurrentFlags, [NativeTypeName("LONGLONG *")] long* pStop, [NativeTypeName("DWORD")] uint dwStopFlags)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, long*, uint, long*, uint, int>)(lpVtbl[14]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCurrent, dwCurrentFlags, pStop, dwStopFlags);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, long*, uint, long*, uint, int>)(lpVtbl[14]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCurrent, dwCurrentFlags, pStop, dwStopFlags);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetPositions"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(15)]
     public HRESULT GetPositions([NativeTypeName("LONGLONG *")] long* pCurrent, [NativeTypeName("LONGLONG *")] long* pStop)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, long*, long*, int>)(lpVtbl[15]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCurrent, pStop);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, long*, long*, int>)(lpVtbl[15]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pCurrent, pStop);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetAvailable"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(16)]
     public HRESULT GetAvailable([NativeTypeName("LONGLONG *")] long* pEarliest, [NativeTypeName("LONGLONG *")] long* pLatest)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, long*, long*, int>)(lpVtbl[16]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pEarliest, pLatest);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, long*, long*, int>)(lpVtbl[16]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pEarliest, pLatest);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.SetRate"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(17)]
     public HRESULT SetRate(double dRate)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, double, int>)(lpVtbl[17]))((IMediaSeeking*)Unsafe.AsPointer(ref this), dRate);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, double, int>)(lpVtbl[17]))((IMediaSeeking*)Unsafe.AsPointer(ref this), dRate);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetRate"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(18)]
     public HRESULT GetRate(double* pdRate)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, double*, int>)(lpVtbl[18]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pdRate);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, double*, int>)(lpVtbl[18]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pdRate);
     }
 
     /// <include file='IMediaSeeking.xml' path='doc/member[@name="IMediaSeeking.GetPreroll"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
     [VtblIndex(19)]
     public HRESULT GetPreroll([NativeTypeName("LONGLONG *")] long* pllPreroll)
     {
-        return ((delegate* unmanaged<IMediaSeeking*, long*, int>)(lpVtbl[19]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pllPreroll);
+        return ((delegate* unmanaged[MemberFunction]<IMediaSeeking*, long*, int>)(lpVtbl[19]))((IMediaSeeking*)Unsafe.AsPointer(ref this), pllPreroll);
     }
 
     public interface Interface : IUnknown.Interface
@@ -240,63 +240,63 @@ public unsafe partial struct IMediaSeeking : IMediaSeeking.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetCapabilities;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> CheckCapabilities;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> CheckCapabilities;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> IsFormatSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> IsFormatSupported;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> QueryPreferredFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> QueryPreferredFormat;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetTimeFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetTimeFormat;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> IsUsingTimeFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> IsUsingTimeFormat;
 
         [NativeTypeName("HRESULT (const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetTimeFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetTimeFormat;
 
         [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> GetDuration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> GetDuration;
 
         [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> GetStopPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> GetStopPosition;
 
         [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> GetCurrentPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> GetCurrentPosition;
 
         [NativeTypeName("HRESULT (LONGLONG *, const GUID *, LONGLONG, const GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, Guid*, long, Guid*, int> ConvertTimeFormat;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, Guid*, long, Guid*, int> ConvertTimeFormat;
 
         [NativeTypeName("HRESULT (LONGLONG *, DWORD, LONGLONG *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, uint, long*, uint, int> SetPositions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, uint, long*, uint, int> SetPositions;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> GetPositions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> GetPositions;
 
         [NativeTypeName("HRESULT (LONGLONG *, LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, long*, int> GetAvailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, long*, int> GetAvailable;
 
         [NativeTypeName("HRESULT (double) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double, int> SetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double, int> SetRate;
 
         [NativeTypeName("HRESULT (double *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, double*, int> GetRate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, double*, int> GetRate;
 
         [NativeTypeName("HRESULT (LONGLONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, long*, int> GetPreroll;
+        public delegate* unmanaged[MemberFunction]<TSelf*, long*, int> GetPreroll;
     }
 }

@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, uint>)(lpVtbl[1]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, uint>)(lpVtbl[1]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, uint>)(lpVtbl[2]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, uint>)(lpVtbl[2]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1SvgPathData*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <inheritdoc cref="ID2D1SvgAttribute.GetElement" />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(4)]
     public void GetElement(ID2D1SvgElement** element)
     {
-        ((delegate* unmanaged<ID2D1SvgPathData*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), element);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), element);
     }
 
     /// <inheritdoc cref="ID2D1SvgAttribute.Clone" />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(5)]
     public HRESULT Clone(ID2D1SvgAttribute** attribute)
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), attribute);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), attribute);
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.RemoveSegmentDataAtEnd"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(6)]
     public HRESULT RemoveSegmentDataAtEnd([NativeTypeName("UINT32")] uint dataCount)
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, uint, int>)(lpVtbl[6]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), dataCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, uint, int>)(lpVtbl[6]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), dataCount);
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.UpdateSegmentData"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(7)]
     public HRESULT UpdateSegmentData([NativeTypeName("const FLOAT *")] float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0)
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, float*, uint, uint, int>)(lpVtbl[7]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), data, dataCount, startIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, float*, uint, uint, int>)(lpVtbl[7]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), data, dataCount, startIndex);
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.GetSegmentData"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(8)]
     public HRESULT GetSegmentData(float* data, [NativeTypeName("UINT32")] uint dataCount, [NativeTypeName("UINT32")] uint startIndex = 0)
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, float*, uint, uint, int>)(lpVtbl[8]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), data, dataCount, startIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, float*, uint, uint, int>)(lpVtbl[8]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), data, dataCount, startIndex);
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.GetSegmentDataCount"]/*' />
@@ -101,7 +101,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [return: NativeTypeName("UINT32")]
     public uint GetSegmentDataCount()
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, uint>)(lpVtbl[9]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, uint>)(lpVtbl[9]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.RemoveCommandsAtEnd"]/*' />
@@ -109,7 +109,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(10)]
     public HRESULT RemoveCommandsAtEnd([NativeTypeName("UINT32")] uint commandsCount)
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, uint, int>)(lpVtbl[10]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), commandsCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, uint, int>)(lpVtbl[10]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), commandsCount);
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.UpdateCommands"]/*' />
@@ -117,7 +117,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(11)]
     public HRESULT UpdateCommands([NativeTypeName("const D2D1_SVG_PATH_COMMAND *")] D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, D2D1_SVG_PATH_COMMAND*, uint, uint, int>)(lpVtbl[11]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), commands, commandsCount, startIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, D2D1_SVG_PATH_COMMAND*, uint, uint, int>)(lpVtbl[11]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), commands, commandsCount, startIndex);
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.GetCommands"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(12)]
     public HRESULT GetCommands(D2D1_SVG_PATH_COMMAND* commands, [NativeTypeName("UINT32")] uint commandsCount, [NativeTypeName("UINT32")] uint startIndex = 0)
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, D2D1_SVG_PATH_COMMAND*, uint, uint, int>)(lpVtbl[12]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), commands, commandsCount, startIndex);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, D2D1_SVG_PATH_COMMAND*, uint, uint, int>)(lpVtbl[12]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), commands, commandsCount, startIndex);
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.GetCommandsCount"]/*' />
@@ -134,7 +134,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [return: NativeTypeName("UINT32")]
     public uint GetCommandsCount()
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, uint>)(lpVtbl[13]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, uint>)(lpVtbl[13]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SvgPathData.xml' path='doc/member[@name="ID2D1SvgPathData.CreatePathGeometry"]/*' />
@@ -142,7 +142,7 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
     [VtblIndex(14)]
     public HRESULT CreatePathGeometry(D2D1_FILL_MODE fillMode, ID2D1PathGeometry1** pathGeometry)
     {
-        return ((delegate* unmanaged<ID2D1SvgPathData*, D2D1_FILL_MODE, ID2D1PathGeometry1**, int>)(lpVtbl[14]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), fillMode, pathGeometry);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPathData*, D2D1_FILL_MODE, ID2D1PathGeometry1**, int>)(lpVtbl[14]))((ID2D1SvgPathData*)Unsafe.AsPointer(ref this), fillMode, pathGeometry);
     }
 
     public interface Interface : ID2D1SvgAttribute.Interface
@@ -181,48 +181,48 @@ public unsafe partial struct ID2D1SvgPathData : ID2D1SvgPathData.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1SvgElement**, void> GetElement;
 
         [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1SvgAttribute**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1SvgAttribute**, int> Clone;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveSegmentDataAtEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveSegmentDataAtEnd;
 
         [NativeTypeName("HRESULT (const FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, uint, int> UpdateSegmentData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, uint, int> UpdateSegmentData;
 
         [NativeTypeName("HRESULT (FLOAT *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, float*, uint, uint, int> GetSegmentData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, float*, uint, uint, int> GetSegmentData;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetSegmentDataCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetSegmentDataCount;
 
         [NativeTypeName("HRESULT (UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> RemoveCommandsAtEnd;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> RemoveCommandsAtEnd;
 
         [NativeTypeName("HRESULT (const D2D1_SVG_PATH_COMMAND *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_SVG_PATH_COMMAND*, uint, uint, int> UpdateCommands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_SVG_PATH_COMMAND*, uint, uint, int> UpdateCommands;
 
         [NativeTypeName("HRESULT (D2D1_SVG_PATH_COMMAND *, UINT32, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_SVG_PATH_COMMAND*, uint, uint, int> GetCommands;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_SVG_PATH_COMMAND*, uint, uint, int> GetCommands;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetCommandsCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetCommandsCount;
 
         [NativeTypeName("HRESULT (D2D1_FILL_MODE, ID2D1PathGeometry1 **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_FILL_MODE, ID2D1PathGeometry1**, int> CreatePathGeometry;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_FILL_MODE, ID2D1PathGeometry1**, int> CreatePathGeometry;
     }
 }

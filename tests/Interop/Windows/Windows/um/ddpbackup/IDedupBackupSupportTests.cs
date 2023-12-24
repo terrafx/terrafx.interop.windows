@@ -19,32 +19,4 @@ public static unsafe partial class IDedupBackupSupportTests
     {
         Assert.That(typeof(IDedupBackupSupport).GUID, Is.EqualTo(IID_IDedupBackupSupport));
     }
-
-    /// <summary>Validates that the <see cref="IDedupBackupSupport" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDedupBackupSupport>(), Is.EqualTo(sizeof(IDedupBackupSupport)));
-    }
-
-    /// <summary>Validates that the <see cref="IDedupBackupSupport" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDedupBackupSupport).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDedupBackupSupport" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDedupBackupSupport), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDedupBackupSupport), Is.EqualTo(4));
-        }
-    }
 }

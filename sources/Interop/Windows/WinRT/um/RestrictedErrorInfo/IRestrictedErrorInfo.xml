@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IRestrictedErrorInfo.GetErrorDetails">
+    <summary>Returns information about an error, including the restricted error description.</summary>
+    <param name="description">The error description.</param>
+    <param name="error">The error code associated with the error condition.</param>
+    <param name="restrictedDescription">The restricted error description.</param>
+    <param name="capabilitySid">TBD</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IRestrictedErrorInfo.GetReference">
+    <summary>Returns a reference to restricted error information.</summary>
+    <param name="reference">A reference to the error information.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IRestrictedErrorInfo">
+    <summary>Represents the details of an error, including restricted error information.</summary>
+  </member>
+</doc>

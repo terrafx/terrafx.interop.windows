@@ -3,6 +3,8 @@
 // Ported from um/DbgHelp.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='SRCCODEINFO.xml' path='doc/member[@name="SRCCODEINFO"]/*' />
@@ -22,11 +24,11 @@ public unsafe partial struct SRCCODEINFO
 
     /// <include file='SRCCODEINFO.xml' path='doc/member[@name="SRCCODEINFO.Obj"]/*' />
     [NativeTypeName("CHAR[261]")]
-    public fixed sbyte Obj[261];
+    public _Obj_e__FixedBuffer Obj;
 
     /// <include file='SRCCODEINFO.xml' path='doc/member[@name="SRCCODEINFO.FileName"]/*' />
     [NativeTypeName("CHAR[261]")]
-    public fixed sbyte FileName[261];
+    public _FileName_e__FixedBuffer FileName;
 
     /// <include file='SRCCODEINFO.xml' path='doc/member[@name="SRCCODEINFO.LineNumber"]/*' />
     [NativeTypeName("DWORD")]
@@ -35,4 +37,18 @@ public unsafe partial struct SRCCODEINFO
     /// <include file='SRCCODEINFO.xml' path='doc/member[@name="SRCCODEINFO.Address"]/*' />
     [NativeTypeName("DWORD64")]
     public ulong Address;
+
+    /// <include file='_Obj_e__FixedBuffer.xml' path='doc/member[@name="_Obj_e__FixedBuffer"]/*' />
+    [InlineArray(261)]
+    public partial struct _Obj_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_FileName_e__FixedBuffer.xml' path='doc/member[@name="_FileName_e__FixedBuffer"]/*' />
+    [InlineArray(261)]
+    public partial struct _FileName_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
 }

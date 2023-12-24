@@ -25,7 +25,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumDiscMasterFormats*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumDiscMasterFormats*, Guid*, void**, int>)(lpVtbl[0]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint>)(lpVtbl[1]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumDiscMasterFormats*, uint>)(lpVtbl[1]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint>)(lpVtbl[2]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumDiscMasterFormats*, uint>)(lpVtbl[2]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumDiscMasterFormats.xml' path='doc/member[@name="IEnumDiscMasterFormats.Next"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
     [VtblIndex(3)]
     public HRESULT Next([NativeTypeName("ULONG")] uint cFormats, [NativeTypeName("LPIID")] Guid* lpiidFormatID, [NativeTypeName("ULONG *")] uint* pcFetched)
     {
-        return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint, Guid*, uint*, int>)(lpVtbl[3]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats, lpiidFormatID, pcFetched);
+        return ((delegate* unmanaged[MemberFunction]<IEnumDiscMasterFormats*, uint, Guid*, uint*, int>)(lpVtbl[3]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats, lpiidFormatID, pcFetched);
     }
 
     /// <include file='IEnumDiscMasterFormats.xml' path='doc/member[@name="IEnumDiscMasterFormats.Skip"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
     [VtblIndex(4)]
     public HRESULT Skip([NativeTypeName("ULONG")] uint cFormats)
     {
-        return ((delegate* unmanaged<IEnumDiscMasterFormats*, uint, int>)(lpVtbl[4]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats);
+        return ((delegate* unmanaged[MemberFunction]<IEnumDiscMasterFormats*, uint, int>)(lpVtbl[4]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), cFormats);
     }
 
     /// <include file='IEnumDiscMasterFormats.xml' path='doc/member[@name="IEnumDiscMasterFormats.Reset"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
     [VtblIndex(5)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumDiscMasterFormats*, int>)(lpVtbl[5]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumDiscMasterFormats*, int>)(lpVtbl[5]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumDiscMasterFormats.xml' path='doc/member[@name="IEnumDiscMasterFormats.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
     [VtblIndex(6)]
     public HRESULT Clone(IEnumDiscMasterFormats** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumDiscMasterFormats*, IEnumDiscMasterFormats**, int>)(lpVtbl[6]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumDiscMasterFormats*, IEnumDiscMasterFormats**, int>)(lpVtbl[6]))((IEnumDiscMasterFormats*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IEnumDiscMasterFormats : IEnumDiscMasterFormats.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, LPIID, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Skip;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (IEnumDiscMasterFormats **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumDiscMasterFormats**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumDiscMasterFormats**, int> Clone;
     }
 }

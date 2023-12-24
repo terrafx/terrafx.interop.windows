@@ -25,7 +25,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEnumWbemClassObject*, Guid*, void**, int>)(lpVtbl[0]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEnumWbemClassObject*, Guid*, void**, int>)(lpVtbl[0]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEnumWbemClassObject*, uint>)(lpVtbl[1]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumWbemClassObject*, uint>)(lpVtbl[1]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEnumWbemClassObject*, uint>)(lpVtbl[2]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumWbemClassObject*, uint>)(lpVtbl[2]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.Reset"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
     [VtblIndex(3)]
     public HRESULT Reset()
     {
-        return ((delegate* unmanaged<IEnumWbemClassObject*, int>)(lpVtbl[3]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEnumWbemClassObject*, int>)(lpVtbl[3]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.Next"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
     [VtblIndex(4)]
     public HRESULT Next([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint uCount, IWbemClassObject** apObjects, [NativeTypeName("ULONG *")] uint* puReturned)
     {
-        return ((delegate* unmanaged<IEnumWbemClassObject*, int, uint, IWbemClassObject**, uint*, int>)(lpVtbl[4]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), lTimeout, uCount, apObjects, puReturned);
+        return ((delegate* unmanaged[MemberFunction]<IEnumWbemClassObject*, int, uint, IWbemClassObject**, uint*, int>)(lpVtbl[4]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), lTimeout, uCount, apObjects, puReturned);
     }
 
     /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.NextAsync"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
     [VtblIndex(5)]
     public HRESULT NextAsync([NativeTypeName("ULONG")] uint uCount, IWbemObjectSink* pSink)
     {
-        return ((delegate* unmanaged<IEnumWbemClassObject*, uint, IWbemObjectSink*, int>)(lpVtbl[5]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), uCount, pSink);
+        return ((delegate* unmanaged[MemberFunction]<IEnumWbemClassObject*, uint, IWbemObjectSink*, int>)(lpVtbl[5]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), uCount, pSink);
     }
 
     /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.Clone"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
     [VtblIndex(6)]
     public HRESULT Clone(IEnumWbemClassObject** ppEnum)
     {
-        return ((delegate* unmanaged<IEnumWbemClassObject*, IEnumWbemClassObject**, int>)(lpVtbl[6]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), ppEnum);
+        return ((delegate* unmanaged[MemberFunction]<IEnumWbemClassObject*, IEnumWbemClassObject**, int>)(lpVtbl[6]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), ppEnum);
     }
 
     /// <include file='IEnumWbemClassObject.xml' path='doc/member[@name="IEnumWbemClassObject.Skip"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
     [VtblIndex(7)]
     public HRESULT Skip([NativeTypeName("long")] int lTimeout, [NativeTypeName("ULONG")] uint nCount)
     {
-        return ((delegate* unmanaged<IEnumWbemClassObject*, int, uint, int>)(lpVtbl[7]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), lTimeout, nCount);
+        return ((delegate* unmanaged[MemberFunction]<IEnumWbemClassObject*, int, uint, int>)(lpVtbl[7]))((IEnumWbemClassObject*)Unsafe.AsPointer(ref this), lTimeout, nCount);
     }
 
     public interface Interface : IUnknown.Interface
@@ -108,27 +108,27 @@ public unsafe partial struct IEnumWbemClassObject : IEnumWbemClassObject.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Reset;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Reset;
 
         [NativeTypeName("HRESULT (long, ULONG, IWbemClassObject **, ULONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, IWbemClassObject**, uint*, int> Next;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint, IWbemClassObject**, uint*, int> Next;
 
         [NativeTypeName("HRESULT (ULONG, IWbemObjectSink *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IWbemObjectSink*, int> NextAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IWbemObjectSink*, int> NextAsync;
 
         [NativeTypeName("HRESULT (IEnumWbemClassObject **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumWbemClassObject**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumWbemClassObject**, int> Clone;
 
         [NativeTypeName("HRESULT (long, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, uint, int> Skip;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, uint, int> Skip;
     }
 }

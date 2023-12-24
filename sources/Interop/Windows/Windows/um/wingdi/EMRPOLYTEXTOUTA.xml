@@ -3,46 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRPOLYTEXTOUTA">
-    <summary>
-      <para>The <b>EMRPOLYTEXTOUTA</b> and <b>EMRPOLYTEXTOUTW</b> structures contain members for the <b>PolyTextOut</b> enhanced metafile record.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRPOLYTEXTOUTA</b> and <b>EMRPOLYTEXTOUTW</b> structures contain members for the <b>PolyTextOut</b> enhanced metafile record.</summary>
   </member>
   <member name="EMRPOLYTEXTOUTA.emr">
-    <summary>
-      <para>Base structure for all record types.</para>
-    </summary>
+    <summary>Base structure for all record types.</summary>
   </member>
   <member name="EMRPOLYTEXTOUTA.rclBounds">
-    <summary>
-      <para>Bounding rectangle, in device units.</para>
-    </summary>
+    <summary>Bounding rectangle, in device units.</summary>
   </member>
   <member name="EMRPOLYTEXTOUTA.iGraphicsMode">
-    <summary>
-      <para>Current graphics mode. This member can be either the GM_COMPATIBLE or GM_ADVANCED value.</para>
-    </summary>
+    <summary>Current graphics mode. This member can be either the GM_COMPATIBLE or GM_ADVANCED value.</summary>
   </member>
   <member name="EMRPOLYTEXTOUTA.exScale">
-    <summary>
-      <para>X-scaling factor from page units to .01mm units if the graphics mode is the GM_COMPATIBLE value.</para>
-    </summary>
+    <summary>X-scaling factor from page units to .01mm units if the graphics mode is the GM_COMPATIBLE value.</summary>
   </member>
   <member name="EMRPOLYTEXTOUTA.eyScale">
-    <summary>
-      <para>Y-scaling factor from page units to .01mm units if the graphics mode is the GM_COMPATIBLE value.</para>
-    </summary>
+    <summary>Y-scaling factor from page units to .01mm units if the graphics mode is the GM_COMPATIBLE value.</summary>
   </member>
   <member name="EMRPOLYTEXTOUTA.cStrings">
-    <summary>
-      <para>Number of strings.</para>
-    </summary>
+    <summary>Number of strings.</summary>
   </member>
   <member name="EMRPOLYTEXTOUTA.aemrtext">
     <summary>
-      <para>
-        <b>EMRTEXT</b> structure, which is followed by the string and the intercharacter spacing array.</para>
-    </summary>
+      <b>EMRTEXT</b> structure, which is followed by the string and the intercharacter spacing array.</summary>
   </member>
 </doc>

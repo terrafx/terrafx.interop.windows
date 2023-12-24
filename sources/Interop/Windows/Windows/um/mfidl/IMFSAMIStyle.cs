@@ -25,7 +25,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFSAMIStyle*, Guid*, void**, int>)(lpVtbl[0]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFSAMIStyle*, Guid*, void**, int>)(lpVtbl[0]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFSAMIStyle*, uint>)(lpVtbl[1]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSAMIStyle*, uint>)(lpVtbl[1]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFSAMIStyle*, uint>)(lpVtbl[2]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFSAMIStyle*, uint>)(lpVtbl[2]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.GetStyleCount"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetStyleCount([NativeTypeName("DWORD *")] uint* pdwCount)
     {
-        return ((delegate* unmanaged<IMFSAMIStyle*, uint*, int>)(lpVtbl[3]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pdwCount);
+        return ((delegate* unmanaged[MemberFunction]<IMFSAMIStyle*, uint*, int>)(lpVtbl[3]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pdwCount);
     }
 
     /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.GetStyles"]/*' />
@@ -59,23 +59,23 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray)
     {
-        return ((delegate* unmanaged<IMFSAMIStyle*, PROPVARIANT*, int>)(lpVtbl[4]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pPropVarStyleArray);
+        return ((delegate* unmanaged[MemberFunction]<IMFSAMIStyle*, PROPVARIANT*, int>)(lpVtbl[4]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pPropVarStyleArray);
     }
 
     /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.SetSelectedStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle)
+    public HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] char* pwszStyle)
     {
-        return ((delegate* unmanaged<IMFSAMIStyle*, ushort*, int>)(lpVtbl[5]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pwszStyle);
+        return ((delegate* unmanaged[MemberFunction]<IMFSAMIStyle*, char*, int>)(lpVtbl[5]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), pwszStyle);
     }
 
     /// <include file='IMFSAMIStyle.xml' path='doc/member[@name="IMFSAMIStyle.GetSelectedStyle"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle)
+    public HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] char** ppwszStyle)
     {
-        return ((delegate* unmanaged<IMFSAMIStyle*, ushort**, int>)(lpVtbl[6]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), ppwszStyle);
+        return ((delegate* unmanaged[MemberFunction]<IMFSAMIStyle*, char**, int>)(lpVtbl[6]))((IMFSAMIStyle*)Unsafe.AsPointer(ref this), ppwszStyle);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,34 +87,34 @@ public unsafe partial struct IMFSAMIStyle : IMFSAMIStyle.Interface, INativeGuid
         HRESULT GetStyles(PROPVARIANT* pPropVarStyleArray);
 
         [VtblIndex(5)]
-        HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] ushort* pwszStyle);
+        HRESULT SetSelectedStyle([NativeTypeName("LPCWSTR")] char* pwszStyle);
 
         [VtblIndex(6)]
-        HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] ushort** ppwszStyle);
+        HRESULT GetSelectedStyle([NativeTypeName("LPWSTR *")] char** ppwszStyle);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStyleCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStyleCount;
 
         [NativeTypeName("HRESULT (PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, int> GetStyles;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, int> GetStyles;
 
         [NativeTypeName("HRESULT (LPCWSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetSelectedStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetSelectedStyle;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetSelectedStyle;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetSelectedStyle;
     }
 }

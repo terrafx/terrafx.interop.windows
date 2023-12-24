@@ -26,7 +26,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IViewObjectPresentSite*, Guid*, void**, int>)(lpVtbl[0]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IViewObjectPresentSite*, Guid*, void**, int>)(lpVtbl[0]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IViewObjectPresentSite*, uint>)(lpVtbl[1]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IViewObjectPresentSite*, uint>)(lpVtbl[1]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IViewObjectPresentSite*, uint>)(lpVtbl[2]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IViewObjectPresentSite*, uint>)(lpVtbl[2]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IViewObjectPresentSite.xml' path='doc/member[@name="IViewObjectPresentSite.CreateSurfacePresenter"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
     [VtblIndex(3)]
     public HRESULT CreateSurfacePresenter(IUnknown* pDevice, uint width, uint height, uint backBufferCount, DXGI_FORMAT format, VIEW_OBJECT_ALPHA_MODE mode, ISurfacePresenter** ppQueue)
     {
-        return ((delegate* unmanaged<IViewObjectPresentSite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int>)(lpVtbl[3]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pDevice, width, height, backBufferCount, format, mode, ppQueue);
+        return ((delegate* unmanaged[MemberFunction]<IViewObjectPresentSite*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int>)(lpVtbl[3]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pDevice, width, height, backBufferCount, format, mode, ppQueue);
     }
 
     /// <include file='IViewObjectPresentSite.xml' path='doc/member[@name="IViewObjectPresentSite.IsHardwareComposition"]/*' />
@@ -60,7 +60,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
     [VtblIndex(4)]
     public HRESULT IsHardwareComposition(BOOL* pIsHardwareComposition)
     {
-        return ((delegate* unmanaged<IViewObjectPresentSite*, BOOL*, int>)(lpVtbl[4]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pIsHardwareComposition);
+        return ((delegate* unmanaged[MemberFunction]<IViewObjectPresentSite*, BOOL*, int>)(lpVtbl[4]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), pIsHardwareComposition);
     }
 
     /// <include file='IViewObjectPresentSite.xml' path='doc/member[@name="IViewObjectPresentSite.SetCompositionMode"]/*' />
@@ -68,7 +68,7 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
     [VtblIndex(5)]
     public HRESULT SetCompositionMode(VIEW_OBJECT_COMPOSITION_MODE mode)
     {
-        return ((delegate* unmanaged<IViewObjectPresentSite*, VIEW_OBJECT_COMPOSITION_MODE, int>)(lpVtbl[5]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), mode);
+        return ((delegate* unmanaged[MemberFunction]<IViewObjectPresentSite*, VIEW_OBJECT_COMPOSITION_MODE, int>)(lpVtbl[5]))((IViewObjectPresentSite*)Unsafe.AsPointer(ref this), mode);
     }
 
     public interface Interface : IUnknown.Interface
@@ -87,21 +87,21 @@ public unsafe partial struct IViewObjectPresentSite : IViewObjectPresentSite.Int
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *, UINT, UINT, UINT, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int> CreateSurfacePresenter;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, uint, uint, uint, DXGI_FORMAT, VIEW_OBJECT_ALPHA_MODE, ISurfacePresenter**, int> CreateSurfacePresenter;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsHardwareComposition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsHardwareComposition;
 
         [NativeTypeName("HRESULT (VIEW_OBJECT_COMPOSITION_MODE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VIEW_OBJECT_COMPOSITION_MODE, int> SetCompositionMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VIEW_OBJECT_COMPOSITION_MODE, int> SetCompositionMode;
     }
 }

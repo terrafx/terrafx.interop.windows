@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_FORMAT_INFO">
+    <summary>Describes a DXGI data format and plane count.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_FORMAT_INFO.Format">
+    <summary>A <see cref="DXGI_FORMAT" />-typed value for the format to return info about.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_FORMAT_INFO.PlaneCount">
+    <summary>The number of planes to provide information about.</summary>
+  </member>
+</doc>

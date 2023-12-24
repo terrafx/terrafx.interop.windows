@@ -13,14 +13,14 @@ namespace TerraFX.Interop.Windows;
 public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
 {
     /// <include file='DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.xml' path='doc/member[@name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.Anonymous"]/*' />
-    [NativeTypeName("DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3079:5)")]
+    [NativeTypeName("__AnonymousRecord_wingdi_L3079_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct.friendlyNameFromEdid"]/*' />
     public uint friendlyNameFromEdid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.friendlyNameFromEdid;
         }
@@ -36,7 +36,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     public uint friendlyNameForced
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.friendlyNameForced;
         }
@@ -52,7 +52,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     public uint edidIdsValid
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.edidIdsValid;
         }
@@ -68,7 +68,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     public uint reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.reserved;
         }
@@ -97,7 +97,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wingdi.h:3081:9)")]
+        [NativeTypeName("__AnonymousRecord_wingdi_L3081_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.value"]/*' />
@@ -115,7 +115,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
             public uint friendlyNameFromEdid
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -132,7 +132,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
             public uint friendlyNameForced
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -149,7 +149,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
             public uint edidIdsValid
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x1u;
                 }
@@ -166,7 +166,7 @@ public partial struct DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS
             public uint reserved
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 3) & 0x1FFFFFFFu;
                 }

@@ -4,11 +4,12 @@
 // Original source is Copyright © Microsoft. All rights reserved.
 
 using System;
+using System.Runtime.CompilerServices;
 
 namespace TerraFX.Interop.Windows;
 
 /// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT"]/*' />
-public unsafe partial struct PARTITION_INFORMATION_GPT
+public partial struct PARTITION_INFORMATION_GPT
 {
     /// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT.PartitionType"]/*' />
     public Guid PartitionType;
@@ -22,5 +23,12 @@ public unsafe partial struct PARTITION_INFORMATION_GPT
 
     /// <include file='PARTITION_INFORMATION_GPT.xml' path='doc/member[@name="PARTITION_INFORMATION_GPT.Name"]/*' />
     [NativeTypeName("WCHAR[36]")]
-    public fixed ushort Name[36];
+    public _Name_e__FixedBuffer Name;
+
+    /// <include file='_Name_e__FixedBuffer.xml' path='doc/member[@name="_Name_e__FixedBuffer"]/*' />
+    [InlineArray(36)]
+    public partial struct _Name_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

@@ -3,10 +3,12 @@
 // Ported from um/ShObjIdl_core.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO"]/*' />
-public unsafe partial struct DESKBANDINFO
+public partial struct DESKBANDINFO
 {
     /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.dwMask"]/*' />
     [NativeTypeName("DWORD")]
@@ -26,7 +28,7 @@ public unsafe partial struct DESKBANDINFO
 
     /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.wszTitle"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort wszTitle[256];
+    public _wszTitle_e__FixedBuffer wszTitle;
 
     /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.dwModeFlags"]/*' />
     [NativeTypeName("DWORD")]
@@ -34,4 +36,11 @@ public unsafe partial struct DESKBANDINFO
 
     /// <include file='DESKBANDINFO.xml' path='doc/member[@name="DESKBANDINFO.crBkgnd"]/*' />
     public COLORREF crBkgnd;
+
+    /// <include file='_wszTitle_e__FixedBuffer.xml' path='doc/member[@name="_wszTitle_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _wszTitle_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

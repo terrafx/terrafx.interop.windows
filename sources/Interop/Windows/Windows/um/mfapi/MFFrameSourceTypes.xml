@@ -3,27 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFFrameSourceTypes">
-    <summary>
-      <para>Describes the type of data provided by a frame source.</para>
-    </summary>
-    <remarks>
-      <para>The values of this enumeration are used with the <a href="https://docs.microsoft.com//windows/desktop/medfound/mf-devicestream-attribute-framesource-types">MF_DEVICESTREAM_ATTRIBUTE_FRAMESOURCE_TYPES</a> attribute.</para>
-    </remarks>
+    <summary>Describes the type of data provided by a frame source.</summary>
   </member>
   <member name="MFFrameSourceTypes.MFFrameSourceTypes_Color">
-    <summary>
-      <para>The frame source provides color data.</para>
-    </summary>
+    <summary>The frame source provides color data.</summary>
   </member>
   <member name="MFFrameSourceTypes.MFFrameSourceTypes_Infrared">
-    <summary>
-      <para>The frame source provides infrared data.</para>
-    </summary>
+    <summary>The frame source provides infrared data.</summary>
   </member>
   <member name="MFFrameSourceTypes.MFFrameSourceTypes_Depth">
-    <summary>
-      <para>The frame source provides depth data.</para>
-    </summary>
+    <summary>The frame source provides depth data.</summary>
   </member>
   <member name="MFFrameSourceTypes.MFFrameSourceTypes_Image">
     <summary>
@@ -33,8 +22,6 @@
     </summary>
   </member>
   <member name="MFFrameSourceTypes.MFFrameSourceTypes_Custom">
-    <summary>
-      <para>The frame source provides custom data.</para>
-    </summary>
+    <summary>The frame source provides custom data.</summary>
   </member>
 </doc>

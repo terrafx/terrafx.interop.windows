@@ -3,22 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CHANGER_ELEMENT">
-    <summary>
-      <para>Represents a changer element.</para>
-    </summary>
-    <seealso cref="CHANGER_ELEMENT_LIST" />
-    <seealso cref="ELEMENT_TYPE" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/winioctl/ni-winioctl-ioctl_changer_reinitialize_transport">IOCTL_CHANGER_REINITIALIZE_TRANSPORT</seealso>
+    <summary>Represents a changer element.</summary>
   </member>
   <member name="CHANGER_ELEMENT.ElementType">
-    <summary>
-      <para>The element type. This parameter can be one of the values from the
-<see cref="ELEMENT_TYPE" /> enumeration type.</para>
-    </summary>
+    <summary>The element type. This parameter can be one of the values from the<see cref="ELEMENT_TYPE" /> enumeration type.</summary>
   </member>
   <member name="CHANGER_ELEMENT.ElementAddress">
-    <summary>
-      <para>The zero-based address of the element.</para>
-    </summary>
+    <summary>The zero-based address of the element.</summary>
   </member>
 </doc>

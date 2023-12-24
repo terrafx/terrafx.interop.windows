@@ -26,7 +26,7 @@ public partial struct KEY_EVENT_RECORD
     public ushort wVirtualScanCode;
 
     /// <include file='KEY_EVENT_RECORD.xml' path='doc/member[@name="KEY_EVENT_RECORD.uChar"]/*' />
-    [NativeTypeName("union (anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/wincontypes.h:53:5)")]
+    [NativeTypeName("__AnonymousRecord_wincontypes_L53_C5")]
     public _uChar_e__Union uChar;
 
     /// <include file='KEY_EVENT_RECORD.xml' path='doc/member[@name="KEY_EVENT_RECORD.dwControlKeyState"]/*' />
@@ -40,7 +40,7 @@ public partial struct KEY_EVENT_RECORD
         /// <include file='_uChar_e__Union.xml' path='doc/member[@name="_uChar_e__Union.UnicodeChar"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("WCHAR")]
-        public ushort UnicodeChar;
+        public char UnicodeChar;
 
         /// <include file='_uChar_e__Union.xml' path='doc/member[@name="_uChar_e__Union.AsciiChar"]/*' />
         [FieldOffset(0)]

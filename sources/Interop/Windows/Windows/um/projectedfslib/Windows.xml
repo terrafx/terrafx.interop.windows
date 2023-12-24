@@ -3,103 +3,42 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.PrjAllocateAlignedBuffer">
-    <summary>
-      <para>Allocates a buffer that meets the memory alignment requirements of the virtualization instance's storage device.</para>
-    </summary>
-    <param name="namespaceVirtualizationContext">
-      <para>Opaque handle for the virtualization instance.</para>
-    </param>
-    <param name="size">
-      <para>The size of the buffer required, in bytes.</para>
-    </param>
-    <returns>
-      <para>Returns NULL if the buffer could not be allocated.</para>
-    </returns>
+    <summary>Allocates a buffer that meets the memory alignment requirements of the virtualization instance's storage device.</summary>
+    <param name="namespaceVirtualizationContext">Opaque handle for the virtualization instance.</param>
+    <param name="size">The size of the buffer required, in bytes.</param>
+    <returns>Returns NULL if the buffer could not be allocated.</returns>
   </member>
   <member name="Windows.PrjClearNegativePathCache">
-    <summary>
-      <para>Purges the virtualization instance's negative path cache, if it is active.</para>
-    </summary>
-    <param name="namespaceVirtualizationContext">
-      <para>Opaque handle for the virtualization instance.</para>
-    </param>
-    <param name="totalEntryNumber">
-      <para>Optional pointer to a variable that receives the number of paths that were in the cache before it was purged.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the negative path cache is active, then if the provider indicates that a file path does not exist by returning HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND) from its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback, ProjFS will fail subsequent opens of that path without calling the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback again. This helps improve performance of virtualization instances that host workloads that frequently probe for the presence of a file by trying to open it.</para>
-      <para>To resume receiving the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback for paths the provider has indicated do not exist, the provider must call this routine.</para>
-    </remarks>
+    <summary>Purges the virtualization instance's negative path cache, if it is active.</summary>
+    <param name="namespaceVirtualizationContext">Opaque handle for the virtualization instance.</param>
+    <param name="totalEntryNumber">Optional pointer to a variable that receives the number of paths that were in the cache before it was purged.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.PrjCompleteCommand">
-    <summary>
-      <para>Indicates that the provider has completed processing a callback from which it had previously returned HRESULT_FROM_WIN32(ERROR_IO_PENDING).</para>
-    </summary>
-    <param name="namespaceVirtualizationContext">
-      <para>Opaque handle for the virtualization instance. This must be the value from the VirtualizationInstanceHandle member of the callbackData passed to the provider in the callback that is being complete.</para>
-    </param>
-    <param name="commandId">
-      <para>A value identifying the callback invocation that the provider is completing. This must be the value from the CommandId member of the callbackData passed to the provider in the callback that is being completed.</para>
-    </param>
-    <param name="completionResult">
-      <para>The final HRESULT of the operation.</para>
-    </param>
-    <param name="extendedParameters">
-      <para>Optional pointer to extended parameters required for completing certain callbacks.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Indicates that the provider has completed processing a callback from which it had previously returned HRESULT_FROM_WIN32(ERROR_IO_PENDING).</summary>
+    <param name="namespaceVirtualizationContext">Opaque handle for the virtualization instance. This must be the value from the VirtualizationInstanceHandle member of the callbackData passed to the provider in the callback that is being complete.</param>
+    <param name="commandId">A value identifying the callback invocation that the provider is completing. This must be the value from the CommandId member of the callbackData passed to the provider in the callback that is being completed.</param>
+    <param name="completionResult">The final HRESULT of the operation.</param>
+    <param name="extendedParameters">Optional pointer to extended parameters required for completing certain callbacks.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.PrjDeleteFile">
-    <summary>
-      <para>Enables a provider to delete an item that has been cached on the local file system.</para>
-    </summary>
-    <param name="namespaceVirtualizationContext">
-      <para>An opaque handle for the virtualization instance.</para>
-    </param>
-    <param name="destinationFileName">
-      <para>A null-terminated Unicode string specifying the path, relative to the virtualization root, to the file or directory to be deleted.</para>
-    </param>
-    <param name="updateFlags">
-      <para>Flags to control the delete operation should be allowed given the state of the file.</para>
-    </param>
-    <param name="failureReason">
-      <para>Optional pointer to receive a code describing the reason a delete failed.</para>
-    </param>
-    <returns>
-      <para>If an HRESULT_FROM_WIN32(ERROR_FILE_SYSTEM_VIRTUALIZATION_INVALID_OPERATION) error is returned, the update failed due to the item's state and the value of updateFlags. failureReason, if specified, will describe the reason for the failure.</para>
-    </returns>
-    <remarks>
-      <para>If the item is still in the provider's backing store, deleting it from the local file system changes it to a virtual item.</para>
-      <para>This routine cannot be called on a virtual file/directory.</para>
-      <para>If the file/directory to be deleted is in any state other than "placeholder", the provider must specify an appropriate combination of <see cref="PRJ_UPDATE_TYPES" /> values in the updateFlags parameter. This helps guard against accidental loss of data.</para>
-    </remarks>
+    <summary>Enables a provider to delete an item that has been cached on the local file system.</summary>
+    <param name="namespaceVirtualizationContext">An opaque handle for the virtualization instance.</param>
+    <param name="destinationFileName">A null-terminated Unicode string specifying the path, relative to the virtualization root, to the file or directory to be deleted.</param>
+    <param name="updateFlags">Flags to control the delete operation should be allowed given the state of the file.</param>
+    <param name="failureReason">Optional pointer to receive a code describing the reason a delete failed.</param>
+    <returns>If an HRESULT_FROM_WIN32(ERROR_FILE_SYSTEM_VIRTUALIZATION_INVALID_OPERATION) error is returned, the update failed due to the item's state and the value of updateFlags. failureReason, if specified, will describe the reason for the failure.</returns>
   </member>
   <member name="Windows.PrjDoesNameContainWildCards">
-    <summary>
-      <para>Determines whether a name contains wildcard characters.</para>
-    </summary>
-    <param name="fileName">
-      <para>A null-terminated Unicode string to check for wildcard characters.</para>
-    </param>
-    <returns>
-      <para>True if fileName contains wildcards, False otherwise.</para>
-    </returns>
+    <summary>Determines whether a name contains wildcard characters.</summary>
+    <param name="fileName">A null-terminated Unicode string to check for wildcard characters.</param>
+    <returns>True if fileName contains wildcards, False otherwise.</returns>
   </member>
   <member name="Windows.PrjFileNameCompare">
-    <summary>
-      <para>Compares two file names and returns a value that indicates their relative collation order.</para>
-    </summary>
-    <param name="fileName1">
-      <para>A null-terminated Unicode string specifying the first name to compare.</para>
-    </param>
-    <param name="fileName2">
-      <para>A null-terminated Unicode string specifying the second name to compare.</para>
-    </param>
+    <summary>Compares two file names and returns a value that indicates their relative collation order.</summary>
+    <param name="fileName1">A null-terminated Unicode string specifying the first name to compare.</param>
+    <param name="fileName2">A null-terminated Unicode string specifying the second name to compare.</param>
     <returns>
       <list type="bullet">
         <item>
@@ -113,207 +52,78 @@
         </item>
       </list>
     </returns>
-    <remarks>
-      <para>The provider may use this routine to determine how to sort file names in the same order that the file system does.</para>
-    </remarks>
   </member>
   <member name="Windows.PrjFileNameMatch">
-    <summary>
-      <para>Determines whether a file name matches a search pattern.</para>
-    </summary>
-    <param name="fileNameToCheck">
-      <para>A null-terminated Unicode string of at most MAX_PATH characters specifying the file name to check against pattern.</para>
-    </param>
-    <param name="pattern">
-      <para>A null-terminated Unicode string of at most MAX_PATH characters specifying the pattern to compare against fileNameToCheck.</para>
-    </param>
-    <returns>
-      <para>True if fileNameToCheck matches pattern, False otherwise.</para>
-    </returns>
-    <remarks>
-      <para>The provider must use this routine when processing a <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_directory_enumeration_cb">PRJ_GET_DIRECTORY_ENUMERATION_CB</a> callback to determine whether a name in its backing store matches the searchExpression passed to the callback. This routine performs pattern matching in the same way the file system does when it is processing a directory enumeration</para>
-    </remarks>
+    <summary>Determines whether a file name matches a search pattern.</summary>
+    <param name="fileNameToCheck">A null-terminated Unicode string of at most MAX_PATH characters specifying the file name to check against pattern.</param>
+    <param name="pattern">A null-terminated Unicode string of at most MAX_PATH characters specifying the pattern to compare against fileNameToCheck.</param>
+    <returns>True if fileNameToCheck matches pattern, False otherwise.</returns>
   </member>
   <member name="Windows.PrjFillDirEntryBuffer">
-    <summary>
-      <para>Provides information for one file or directory to an enumeration.</para>
-    </summary>
-    <param name="fileName">
-      <para>A pointer to a null-terminated string that contains the name of the entry</para>
-    </param>
-    <param name="fileBasicInfo">
-      <para>Basic information about the entry to be filled.</para>
-    </param>
-    <param name="dirEntryBufferHandle">
-      <para>An opaque handle to a structure that receives information about the filled entries.</para>
-    </param>
-    <returns>
-      <para>HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) indicates that dirEntryBufferHandle doesn't have enough space for the new entry.</para>
-    </returns>
-    <remarks>
-      <para>The provider uses this routine to service a <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_directory_enumeration_cb">PRJ_GET_DIRECTORY_ENUMERATION_CB</a> callback. When processing the callback, the provider calls this routine for each matching file or directory in the enumeration.</para>
-      <para>If this routine returns HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) when adding an entry to the enumeration, the provider returns S_OK from the callback and waits for the next <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_directory_enumeration_cb">PRJ_GET_DIRECTORY_ENUMERATION_CB</a> callback.</para>
-      <para>The provider resumes filling the enumeration with the entry it was trying to add when it got HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER).</para>
-      <para>If this routine returns HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) for the first file or directory in the enumeration, the provider must return HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) from its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_directory_enumeration_cb">PRJ_GET_DIRECTORY_ENUMERATION_CB</a> callback.</para>
-    </remarks>
+    <summary>Provides information for one file or directory to an enumeration.</summary>
+    <param name="fileName">A pointer to a null-terminated string that contains the name of the entry</param>
+    <param name="fileBasicInfo">Basic information about the entry to be filled.</param>
+    <param name="dirEntryBufferHandle">An opaque handle to a structure that receives information about the filled entries.</param>
+    <returns>HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) indicates that dirEntryBufferHandle doesn't have enough space for the new entry.</returns>
   </member>
   <member name="Windows.PrjFillDirEntryBuffer2">
-    <summary>
-      <para>Provides information for one file or directory to an enumeration and allows the caller to specify extended information.</para>
-    </summary>
-    <param name="dirEntryBufferHandle">
-      <para>An opaque handle to a structure that receives information about the filled entries.</para>
-    </param>
-    <param name="fileName">
-      <para>A pointer to a null-terminated string that contains the name of the entry</para>
-    </param>
-    <param name="fileBasicInfo">
-      <para>Basic information about the entry to be filled.</para>
-    </param>
-    <param name="extendedInfo">
-      <para>A pointer to a <see cref="PRJ_EXTENDED_INFO" /> struct specifying extended information about the entry to be filled.</para>
-    </param>
+    <summary>Provides information for one file or directory to an enumeration and allows the caller to specify extended information.</summary>
+    <param name="dirEntryBufferHandle">An opaque handle to a structure that receives information about the filled entries.</param>
+    <param name="fileName">A pointer to a null-terminated string that contains the name of the entry</param>
+    <param name="fileBasicInfo">Basic information about the entry to be filled.</param>
+    <param name="extendedInfo">A pointer to a <see cref="PRJ_EXTENDED_INFO" /> struct specifying extended information about the entry to be filled.</param>
     <returns>
       <para>HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) indicates that dirEntryBufferHandle doesn't have enough space for the new entry.</para>
       <para>E_INVALIDARG indicates that extendedInfo.InfoType is unrecognized.</para>
     </returns>
-    <remarks>
-      <para>The provider uses this routine to service a <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_directory_enumeration_cb">PRJ_GET_DIRECTORY_ENUMERATION_CB</a> callback. When processing the callback, the provider calls this routine for each matching file or directory in the enumeration. This routine allows the provider to specify extended information about the file or directory, such as whether it is a symbolic link.</para>
-      <para>If this routine returns HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) when adding an entry to the enumeration, the provider returns S_OK from the callback and waits for the next <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_directory_enumeration_cb">PRJ_GET_DIRECTORY_ENUMERATION_CB</a> callback.</para>
-      <para>The provider resumes filling the enumeration with the entry it was trying to add when it got HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER).</para>
-      <para>If this routine returns HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) for the first file or directory in the enumeration, the provider must return HRESULT_FROM_WIN32(ERROR_INSUFFICIENT_BUFFER) from its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_directory_enumeration_cb">PRJ_GET_DIRECTORY_ENUMERATION_CB</a> callback.</para>
-      <h3>Symbolic Links</h3>
-      <para>To specify that this directory entry is for a symbolic link, the provider formats a buffer with a single <see cref="PRJ_EXTENDED_INFO" /> struct and passes a pointer to it in the <code>extendedInfo</code> parameter.  The provider sets the struct's fields as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <code>extendedInfo.InfoType = PRJ_EXT_INFO_TYPE_SYMLINK</code>
-          </description>
-        </item>
-        <item>
-          <description>
-            <code>extendedInfo.NextInfoOffset = 0</code>
-          </description>
-        </item>
-        <item>
-          <description>
-            <code>extendedInfo.Symlink.TargetName = &lt;path to the target of the symbolic link&gt;</code>
-          </description>
-        </item>
-      </list>
-    </remarks>
   </member>
   <member name="Windows.PrjFreeAlignedBuffer">
-    <summary>
-      <para>Frees an allocated buffer.</para>
-    </summary>
-    <param name="buffer">
-      <para>The buffer to free.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Frees an allocated buffer.</summary>
+    <param name="buffer">The buffer to free.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.PrjGetOnDiskFileState">
-    <summary>
-      <para>Gets the on-disk file state for a file or directory.</para>
-    </summary>
-    <param name="destinationFileName">
-      <para>A null-terminated Unicode string specifying the full path to the file whose state is to be queried.</para>
-    </param>
-    <param name="fileState">
-      <para>This is a combination of one or more PRJ_FILE_STATE values describing the file state.</para>
-    </param>
-    <returns>
-      <para>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND) indicates destinationFileName does not exist. HRESULT_FROM_WIN32(ERROR_PATH_NOT_FOUND) indicates that an intermediate component of the path to destinationFileName does not exist.</para>
-    </returns>
-    <remarks>
-      <para>This routine tells the caller what the ProjFS caching state is of the specified file or directory. For example, the caller can use this routine to determine whether the given item is a placeholder or full file.</para>
-      <para>A running provider should be cautious if using this routine on files or directories within one of its virtualization instances, as it may cause callbacks to be invoked in the provider. Depending on the design of the provider this may lead to deadlocks.</para>
-    </remarks>
+    <summary>Gets the on-disk file state for a file or directory.</summary>
+    <param name="destinationFileName">A null-terminated Unicode string specifying the full path to the file whose state is to be queried.</param>
+    <param name="fileState">This is a combination of one or more PRJ_FILE_STATE values describing the file state.</param>
+    <returns>HRESULT_FROM_WIN32(ERROR_FILE_NOT_FOUND) indicates destinationFileName does not exist. HRESULT_FROM_WIN32(ERROR_PATH_NOT_FOUND) indicates that an intermediate component of the path to destinationFileName does not exist.</returns>
   </member>
   <member name="Windows.PrjGetVirtualizationInstanceInfo">
-    <summary>
-      <para>Retrieves information about the virtualization instance.</para>
-    </summary>
-    <param name="namespaceVirtualizationContext">
-      <para>An opaque handle for the virtualization instance.</para>
-    </param>
-    <param name="virtualizationInstanceInfo">
-      <para>On input points to a buffer to fill with information about the virtualization instance. On successful return the buffer is filled in.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>ProjFS callback routines provide the virtualization instance handle in their callbackData parameters. A provider that manages multiple virtualization instances can use the InstanceID field of virtualizationInstanceInfo to identify which of its virtualization instances is receiving the callback.</para>
-      <para>The provider can use the WriteAlignment member of virtualizationInstanceInfo to determine the correct values to use for the byteOffset and length parameters of <see cref="PrjWriteFileData" />.</para>
-    </remarks>
+    <summary>Retrieves information about the virtualization instance.</summary>
+    <param name="namespaceVirtualizationContext">An opaque handle for the virtualization instance.</param>
+    <param name="virtualizationInstanceInfo">On input points to a buffer to fill with information about the virtualization instance. On successful return the buffer is filled in.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.PrjMarkDirectoryAsPlaceholder">
-    <summary>
-      <para>Converts an existing directory to a directory placeholder.</para>
-    </summary>
-    <param name="rootPathName">
-      <para>A null-terminated Unicode string specifying the full path to the virtualization root.</para>
-    </param>
+    <summary>Converts an existing directory to a directory placeholder.</summary>
+    <param name="rootPathName">A null-terminated Unicode string specifying the full path to the virtualization root.</param>
     <param name="targetPathName">
       <para>A null-terminated Unicode string specifying the full path to the directory to convert to a placeholder.</para>
       <para>If this parameter is not specified or is an empty string, then this means the caller wants to designate rootPathName as the virtualization root. The provider only needs to do this one time, upon establishing a new virtualization instance.</para>
     </param>
-    <param name="versionInfo">
-      <para>Optional version information for the target placeholder. The provider chooses what information to put in the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> structure. If not specified, the placeholder gets zeros for its version information.</para>
-    </param>
-    <param name="virtualizationInstanceID">
-      <para>A value that identifies the virtualization instance.</para>
-    </param>
-    <returns>
-      <para>HRESULT_FROM_WIN32(ERROR_REPARSE_POINT_ENCOUNTERED) typically means the directory at targetPathName has a reparse point on it. HRESULT_FROM_WIN32(ERROR_DIRECTORY) typically means the targetPathName does not specify a directory.</para>
-    </returns>
-    <remarks>
-      <para>The provider must use this API to designate the virtualization root before calling <see cref="PrjStartVirtualizing" />.</para>
-    </remarks>
+    <param name="versionInfo">Optional version information for the target placeholder. The provider chooses what information to put in the <see cref="PRJ_PLACEHOLDER_VERSION_INFO" /> structure. If not specified, the placeholder gets zeros for its version information.</param>
+    <param name="virtualizationInstanceID">A value that identifies the virtualization instance.</param>
+    <returns>HRESULT_FROM_WIN32(ERROR_REPARSE_POINT_ENCOUNTERED) typically means the directory at targetPathName has a reparse point on it. HRESULT_FROM_WIN32(ERROR_DIRECTORY) typically means the targetPathName does not specify a directory.</returns>
   </member>
   <member name="Windows.PrjStartVirtualizing">
-    <summary>
-      <para>Configures a ProjFS virtualization instance and starts it, making it available to service I/O and invoke callbacks on the provider.</para>
-    </summary>
+    <summary>Configures a ProjFS virtualization instance and starts it, making it available to service I/O and invoke callbacks on the provider.</summary>
     <param name="virtualizationRootPath">
       <para>Pointer to a null-terminated unicode string specifying the full path to the virtualization root directory.</para>
       <para>The provider must have called <see cref="PrjMarkDirectoryAsPlaceholder" /> passing the specified path as the rootPathName parameter and NULL as the targetPathName parameter before calling this routine. This only needs to be done once to designate the path as the virtualization root directory</para>
     </param>
-    <param name="callbacks">
-      <para>Pointer to a <see cref="PRJ_CALLBACKS" /> structure that has been initialized with PrjCommandCallbacksInit and filled in with pointers to the provider's callback functions.</para>
-    </param>
-    <param name="instanceContext">
-      <para>Pointer to context information defined by the provider for each instance. This parameter is optional and can be NULL. If it is specified, ProjFS will return it in the InstanceContext member of <see cref="PRJ_CALLBACK_DATA" /> when invoking provider callback routines.</para>
-    </param>
-    <param name="options">
-      <para>An optional pointer to a  <see cref="PRJ_STARTVIRTUALIZING_OPTIONS" />.</para>
-    </param>
-    <param name="namespaceVirtualizationContext">
-      <para>On success returns an opaque handle to the ProjFS virtualization instance.
-The provider passes this value when calling functions that require a PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT as input.</para>
-    </param>
-    <returns>
-      <para>The error, HRESULT_FROM_WIN32(ERROR_REPARSE_TAG_MISMATCH), indicates that virtualizationRootPath has not been configured as a virtualization root.</para>
-    </returns>
+    <param name="callbacks">Pointer to a <see cref="PRJ_CALLBACKS" /> structure that has been initialized with PrjCommandCallbacksInit and filled in with pointers to the provider's callback functions.</param>
+    <param name="instanceContext">Pointer to context information defined by the provider for each instance. This parameter is optional and can be NULL. If it is specified, ProjFS will return it in the InstanceContext member of <see cref="PRJ_CALLBACK_DATA" /> when invoking provider callback routines.</param>
+    <param name="options">An optional pointer to a <see cref="PRJ_STARTVIRTUALIZING_OPTIONS" />.</param>
+    <param name="namespaceVirtualizationContext">On success returns an opaque handle to the ProjFS virtualization instance. The provider passes this value when calling functions that require a PRJ_NAMESPACE_VIRTUALIZATION_CONTEXT as input.</param>
+    <returns>The error, HRESULT_FROM_WIN32(ERROR_REPARSE_TAG_MISMATCH), indicates that virtualizationRootPath has not been configured as a virtualization root.</returns>
   </member>
   <member name="Windows.PrjStopVirtualizing">
-    <summary>
-      <para>Stops a running ProjFS virtualization instance, making it unavailable to service I/O or involve callbacks on the provider.</para>
-    </summary>
-    <param name="namespaceVirtualizationContext">
-      <para>An opaque handle for the virtualization instance.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Stops a running ProjFS virtualization instance, making it unavailable to service I/O or involve callbacks on the provider.</summary>
+    <param name="namespaceVirtualizationContext">An opaque handle for the virtualization instance.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.PrjWriteFileData">
-    <summary>
-      <para>Provides the data requested in an invocation of the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_file_data_cb">PRJ_GET_FILE_DATA_CB</a> callback.</para>
-    </summary>
+    <summary>Provides the data requested in an invocation of the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_file_data_cb">PRJ_GET_FILE_DATA_CB</a> callback.</summary>
     <param name="namespaceVirtualizationContext">
       <para>Opaque handle for the virtualization instance.</para>
       <para>If the provider is servicing a <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_file_data_cb">PRJ_GET_FILE_DATA_CB</a> callback, this must be the value from the VirtualizationInstanceHandle member of the callbackData passed to the provider in the callback.</para>
@@ -322,105 +132,34 @@ The provider passes this value when calling functions that require a PRJ_NAMESPA
       <para>Identifier for the data stream to write to.</para>
       <para>If the provider is servicing a <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_file_data_cb">PRJ_GET_FILE_DATA_CB</a> callback, this must be the value from the DataStreamId member of the callbackData passed to the provider in the callback.</para>
     </param>
-    <param name="buffer">
-      <para>Pointer to a buffer containing the data to write. The buffer must be at least as large as the value of the length parameter in bytes. The provider should use <see cref="PrjAllocateAlignedBuffer" /> to ensure that the buffer meets the storage device's alignment requirements.</para>
-    </param>
-    <param name="byteOffset">
-      <para>Byte offset from the beginning of the file at which to write the data.</para>
-    </param>
-    <param name="length">
-      <para>The number of bytes to write to the file.</para>
-    </param>
-    <returns>
-      <para>HRESULT_FROM_WIN32(ERROR_OFFSET_ALIGNMENT_VIOLATION) indicates that the user's handle was opened for unbuffered I/O and byteOffset is not aligned to the sector size of the storage device.</para>
-    </returns>
-    <remarks>
-      <para>The provider uses this routine to provide the data requested in an invocation of its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_file_data_cb">PRJ_GET_FILE_DATA_CB</a> callback.</para>
-      <para>The provider’s <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_file_data_cb">PRJ_GET_FILE_DATA_CB</a> callback is invoked when the system needs to ensure that a file contains data. When the provider calls <see cref="PrjWriteFileData" /> to supply the requested data the system uses the user’s FILE_OBJECT to write that data to the file. However the system cannot control whether that FILE_OBJECT was opened for buffered or unbuffered I/O. If the FILE_OBJECT was opened for unbuffered I/O, reads and writes to the file must adhere to certain alignment requirements. The provider can meet those alignment requirements by doing two things:</para>
-      <list type="bullet">
-        <item>
-          <description>Use <see cref="PrjAllocateAlignedBuffer" /> to allocate the buffer to pass to buffer.</description>
-        </item>
-        <item>
-          <description>Ensure that byteOffset and length are integer multiples of the storage device’s alignment requirement (length does not have to meet this requirement if byteOffset + length is equal to the end of the file). The provider can use <see cref="PrjGetVirtualizationInstanceInfo" /> to retrieve the storage device’s alignment requirement.</description>
-        </item>
-      </list>
-      <para>The system leaves it up to the provider to calculate proper alignment because when processing a <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_file_data_cb">PRJ_GET_FILE_DATA_CB</a> callback the provider may opt to return the requested data across multiple <see cref="PrjWriteFileData" /> calls, each returning part of the total requested data.</para>
-      <para>Note that if the provider is going to write the entire file in a single call to <see cref="PrjWriteFileData" />, i.e. from byteOffset = 0 to length = size of the file, the provider does not have to do any alignment calculations. However it must still use <see cref="PrjAllocateAlignedBuffer" /> to ensure that buffer meets the storage device's alignment requirements. See the <a href="https://docs.microsoft.com//windows/desktop/FileIO/file-buffering">File Buffering</a> topic for more information on buffered vs unbuffered I/O.</para>
-    </remarks>
+    <param name="buffer">Pointer to a buffer containing the data to write. The buffer must be at least as large as the value of the length parameter in bytes. The provider should use <see cref="PrjAllocateAlignedBuffer" /> to ensure that the buffer meets the storage device's alignment requirements.</param>
+    <param name="byteOffset">Byte offset from the beginning of the file at which to write the data.</param>
+    <param name="length">The number of bytes to write to the file.</param>
+    <returns>HRESULT_FROM_WIN32(ERROR_OFFSET_ALIGNMENT_VIOLATION) indicates that the user's handle was opened for unbuffered I/O and byteOffset is not aligned to the sector size of the storage device.</returns>
   </member>
   <member name="Windows.PrjWritePlaceholderInfo">
-    <summary>
-      <para>Sends file or directory metadata to ProjFS.</para>
-    </summary>
-    <param name="namespaceVirtualizationContext">
-      <para>Opaque handle for the virtualization instance. This must be the value from the VirtualizationInstanceHandle member of the callbackData passed to the provider in the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback.</para>
-    </param>
+    <summary>Sends file or directory metadata to ProjFS.</summary>
+    <param name="namespaceVirtualizationContext">Opaque handle for the virtualization instance. This must be the value from the VirtualizationInstanceHandle member of the callbackData passed to the provider in the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback.</param>
     <param name="destinationFileName">
       <para>A null-terminated Unicode string specifying the path, relative to the virtualization root, to the file or directory for which to create a placeholder.</para>
       <para>This must be a match to the FilePathName member of the callbackData parameter passed to the provider in the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback. The provider should use the PrjFileNameCompare function to determine whether the two names match.</para>
       <para>For example, if the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback specifies “dir1\dir1\FILE.TXT” in callbackData-&gt;FilePathName, and the provider’s backing store contains a file called “File.txt” in the dir1\dir2 directory, and <see cref="PrjFileNameCompare" /> returns 0 when comparing the names “FILE.TXT” and “File.txt”, then the provider specifies “dir1\dir2\File.txt” as the value of this parameter.</para>
     </param>
-    <param name="placeholderInfo">
-      <para>A pointer to the metadata for the file or directory.</para>
-    </param>
-    <param name="placeholderInfoSize">
-      <para>Size in bytes of the buffer pointed to by placeholderInfo.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The provider uses this routine to provide the data requested in an invocation of its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback, or it may use it to proactively lay down a placeholder.</para>
-      <para>The EaInformation, SecurityInformation, and StreamsInformation members of <see cref="PRJ_PLACEHOLDER_INFO" /> are optional. If the provider does not wish to provide extended attributes, custom security descriptors, or alternate data streams, it must set these fields to 0.</para>
-    </remarks>
+    <param name="placeholderInfo">A pointer to the metadata for the file or directory.</param>
+    <param name="placeholderInfoSize">Size in bytes of the buffer pointed to by placeholderInfo.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.PrjWritePlaceholderInfo2">
-    <summary>
-      <para>Sends file or directory metadata to ProjFS and allows the caller to specify extended information.</para>
-    </summary>
-    <param name="namespaceVirtualizationContext">
-      <para>Opaque handle for the virtualization instance. This must be the value from the VirtualizationInstanceHandle member of the callbackData passed to the provider in the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback.</para>
-    </param>
+    <summary>Sends file or directory metadata to ProjFS and allows the caller to specify extended information.</summary>
+    <param name="namespaceVirtualizationContext">Opaque handle for the virtualization instance. This must be the value from the VirtualizationInstanceHandle member of the callbackData passed to the provider in the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback.</param>
     <param name="destinationFileName">
       <para>A null-terminated Unicode string specifying the path, relative to the virtualization root, to the file or directory for which to create a placeholder.</para>
       <para>This must be a match to the FilePathName member of the callbackData parameter passed to the provider in the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback. The provider should use the PrjFileNameCompare function to determine whether the two names match.</para>
       <para>For example, if the <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback specifies “dir1\dir1\FILE.TXT” in callbackData-&gt;FilePathName, and the provider’s backing store contains a file called “File.txt” in the dir1\dir2 directory, and <see cref="PrjFileNameCompare" /> returns 0 when comparing the names “FILE.TXT” and “File.txt”, then the provider specifies “dir1\dir2\File.txt” as the value of this parameter.</para>
     </param>
-    <param name="placeholderInfo">
-      <para>A pointer to the metadata for the file or directory.</para>
-    </param>
-    <param name="placeholderInfoSize">
-      <para>Size in bytes of the buffer pointed to by placeholderInfo.</para>
-    </param>
-    <param name="extendedInfo">
-      <para>A pointer to a <see cref="PRJ_EXTENDED_INFO" /> struct specifying extended information about the placeholder to be created.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The provider uses this routine to provide the data requested in an invocation of its <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a> callback, or it may use it to proactively lay down a placeholder.</para>
-      <para>The EaInformation, SecurityInformation, and StreamsInformation members of <see cref="PRJ_PLACEHOLDER_INFO" /> are optional. If the provider does not wish to provide extended attributes, custom security descriptors, or alternate data streams, it must set these fields to 0.</para>
-      <h3>Symbolic Links</h3>
-      <para>To specify that this placeholder is to be a symbolic link, the provider formats a buffer with a single <see cref="PRJ_EXTENDED_INFO" /> struct and passes a pointer to it in the <code>extendedInfo</code> parameter.  The provider sets the struct's fields as follows:</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <code>extendedInfo.InfoType = PRJ_EXT_INFO_TYPE_SYMLINK</code>
-          </description>
-        </item>
-        <item>
-          <description>
-            <code>extendedInfo.NextInfoOffset = 0</code>
-          </description>
-        </item>
-        <item>
-          <description>
-            <code>extendedInfo.Symlink.TargetName = &lt;path to the target of the symbolic link&gt;</code>
-          </description>
-        </item>
-      </list>
-    </remarks>
+    <param name="placeholderInfo">A pointer to the metadata for the file or directory.</param>
+    <param name="placeholderInfoSize">Size in bytes of the buffer pointed to by placeholderInfo.</param>
+    <param name="extendedInfo">A pointer to a <see cref="PRJ_EXTENDED_INFO" /> struct specifying extended information about the placeholder to be created.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

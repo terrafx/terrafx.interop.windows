@@ -19,32 +19,4 @@ public static unsafe partial class DDiscMaster2EventsTests
     {
         Assert.That(typeof(DDiscMaster2Events).GUID, Is.EqualTo(IID_DDiscMaster2Events));
     }
-
-    /// <summary>Validates that the <see cref="DDiscMaster2Events" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DDiscMaster2Events>(), Is.EqualTo(sizeof(DDiscMaster2Events)));
-    }
-
-    /// <summary>Validates that the <see cref="DDiscMaster2Events" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DDiscMaster2Events).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DDiscMaster2Events" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(DDiscMaster2Events), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(DDiscMaster2Events), Is.EqualTo(4));
-        }
-    }
 }

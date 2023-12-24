@@ -3,28 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_CONNECTION_COST_SOURCE">
-    <summary>
-      <para>The <b>WCM_CONNECTION_COST_SOURCE</b> enumerated type specifies the source that provides connection cost information.</para>
-    </summary>
+    <summary>The <b>WCM_CONNECTION_COST_SOURCE</b> enumerated type specifies the source that provides connection cost information.</summary>
   </member>
   <member name="WCM_CONNECTION_COST_SOURCE.WCM_CONNECTION_COST_SOURCE_DEFAULT">
-    <summary>
-      <para>Default source.</para>
-    </summary>
+    <summary>Default source.</summary>
   </member>
   <member name="WCM_CONNECTION_COST_SOURCE.WCM_CONNECTION_COST_SOURCE_GP">
-    <summary>
-      <para>The source for the connection cost  is Group Policy.</para>
-    </summary>
+    <summary>The source for the connection cost is Group Policy.</summary>
   </member>
   <member name="WCM_CONNECTION_COST_SOURCE.WCM_CONNECTION_COST_SOURCE_USER">
-    <summary>
-      <para>The source for the connection cost is the user.</para>
-    </summary>
+    <summary>The source for the connection cost is the user.</summary>
   </member>
   <member name="WCM_CONNECTION_COST_SOURCE.WCM_CONNECTION_COST_SOURCE_OPERATOR">
-    <summary>
-      <para>The source for the connection cost  is the operator.</para>
-    </summary>
+    <summary>The source for the connection cost is the operator.</summary>
   </member>
 </doc>

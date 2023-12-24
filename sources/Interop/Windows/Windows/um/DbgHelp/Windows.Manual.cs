@@ -48,4 +48,25 @@ public static unsafe partial class Windows
 
     [NativeTypeName("#define NONGAMESPARTITIONS WINAPI_PARTITION_DESKTOP | WINAPI_PARTITION_PKG_WER")]
     public const int NONGAMESPARTITIONS = 1;
+
+    /// <summary>RESERVED.</summary>
+    public const int UNDNAME_RESERVED1 = 0x0020;
+
+    /// <summary>RESERVED.</summary>
+    public const int UNDNAME_RESERVED2 = 0x0040;
+
+    /// <summary>Input is just a type encoding; composes an abstract declarator.</summary>
+    public const int UNDNAME_TYPE_ONLY = 0x2000;
+
+    /// <summary>The real template parameters are available.</summary>
+    public const int UNDNAME_HAVE_PARAMETERS = 0x4000;
+
+    /// <summary>Suppresses enum/class/struct/union.</summary>
+    public const int UNDNAME_NO_ECSU = 0x8000;
+
+    /// <summary>Suppresses check for valid identifier characters.</summary>
+    public const int UNDNAME_NO_IDENT_CHAR_CHECK = 0x10000;
+
+    /// <summary>Does not include ptr64 in output.</summary>
+    public const int UNDNAME_NO_PTR64 = 0x20000;
 }

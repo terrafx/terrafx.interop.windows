@@ -19,32 +19,4 @@ public static unsafe partial class IStreamAsyncTests
     {
         Assert.That(typeof(IStreamAsync).GUID, Is.EqualTo(IID_IStreamAsync));
     }
-
-    /// <summary>Validates that the <see cref="IStreamAsync" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IStreamAsync>(), Is.EqualTo(sizeof(IStreamAsync)));
-    }
-
-    /// <summary>Validates that the <see cref="IStreamAsync" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IStreamAsync).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IStreamAsync" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IStreamAsync), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IStreamAsync), Is.EqualTo(4));
-        }
-    }
 }

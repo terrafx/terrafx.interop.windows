@@ -3,46 +3,28 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICComponentType">
-    <summary>
-      <para>Specifies the type of Windows Imaging Component (WIC) component.</para>
-    </summary>
+    <summary>Specifies the type of Windows Imaging Component (WIC) component.</summary>
   </member>
   <member name="WICComponentType.WICDecoder">
-    <summary>
-      <para>A WIC decoder.</para>
-    </summary>
+    <summary>A WIC decoder.</summary>
   </member>
   <member name="WICComponentType.WICEncoder">
-    <summary>
-      <para>A WIC encoder.</para>
-    </summary>
+    <summary>A WIC encoder.</summary>
   </member>
   <member name="WICComponentType.WICPixelFormatConverter">
-    <summary>
-      <para>A WIC pixel converter.</para>
-    </summary>
+    <summary>A WIC pixel converter.</summary>
   </member>
   <member name="WICComponentType.WICMetadataReader">
-    <summary>
-      <para>A WIC metadata reader.</para>
-    </summary>
+    <summary>A WIC metadata reader.</summary>
   </member>
   <member name="WICComponentType.WICMetadataWriter">
-    <summary>
-      <para>A WIC metadata writer.</para>
-    </summary>
+    <summary>A WIC metadata writer.</summary>
   </member>
   <member name="WICComponentType.WICPixelFormat">
-    <summary>
-      <para>A WIC pixel format.</para>
-    </summary>
+    <summary>A WIC pixel format.</summary>
   </member>
   <member name="WICComponentType.WICAllComponents">
-    <summary>
-      <para>All WIC components.</para>
-    </summary>
+    <summary>All WIC components.</summary>
   </member>
-  <member name="WICComponentType.WICCOMPONENTTYPE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICComponentType.WICCOMPONENTTYPE_FORCE_DWORD"></member>
 </doc>

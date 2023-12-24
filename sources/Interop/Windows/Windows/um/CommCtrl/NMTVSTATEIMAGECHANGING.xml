@@ -3,33 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NMTVSTATEIMAGECHANGING">
-    <summary>
-      <para>Contains information about an <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-tvstateimagechanging">NM_TVSTATEIMAGECHANGING</a> notification code.</para>
-    </summary>
+    <summary>Contains information about an <a href="https://docs.microsoft.com//windows/desktop/Controls/nm-tvstateimagechanging">NM_TVSTATEIMAGECHANGING</a> notification code.</summary>
   </member>
   <member name="NMTVSTATEIMAGECHANGING.hdr">
     <summary>
-      <para>Type: <b><see cref="NMHDR" /></b></para>
-      <para>
-        <see cref="NMHDR" /> structure that contains information about this notification code.</para>
-    </summary>
+      <see cref="NMHDR" /> structure that contains information about this notification code.</summary>
   </member>
   <member name="NMTVSTATEIMAGECHANGING.hti">
-    <summary>
-      <para>Type: <b>HTREEITEM</b></para>
-      <para>Handle to the tree-view item whose state image is changing.</para>
-    </summary>
+    <summary>Handle to the tree-view item whose state image is changing.</summary>
   </member>
   <member name="NMTVSTATEIMAGECHANGING.iOldStateImageIndex">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The index of the old state image.</para>
-    </summary>
+    <summary>The index of the old state image.</summary>
   </member>
   <member name="NMTVSTATEIMAGECHANGING.iNewStateImageIndex">
-    <summary>
-      <para>Type: <b>int</b></para>
-      <para>The index of the new state image.</para>
-    </summary>
+    <summary>The index of the new state image.</summary>
   </member>
 </doc>

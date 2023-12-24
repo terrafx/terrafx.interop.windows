@@ -12,7 +12,7 @@ public unsafe partial struct REGFILTERPINS
 {
     /// <include file='REGFILTERPINS.xml' path='doc/member[@name="REGFILTERPINS.strName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* strName;
+    public char* strName;
 
     /// <include file='REGFILTERPINS.xml' path='doc/member[@name="REGFILTERPINS.bRendered"]/*' />
     public BOOL bRendered;
@@ -32,7 +32,7 @@ public unsafe partial struct REGFILTERPINS
 
     /// <include file='REGFILTERPINS.xml' path='doc/member[@name="REGFILTERPINS.strConnectsToPin"]/*' />
     [NativeTypeName("const WCHAR *")]
-    public ushort* strConnectsToPin;
+    public char* strConnectsToPin;
 
     /// <include file='REGFILTERPINS.xml' path='doc/member[@name="REGFILTERPINS.nMediaTypes"]/*' />
     public uint nMediaTypes;

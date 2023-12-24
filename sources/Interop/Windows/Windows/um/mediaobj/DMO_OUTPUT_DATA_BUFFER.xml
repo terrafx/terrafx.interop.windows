@@ -4,29 +4,20 @@
 <doc>
   <member name="DMO_OUTPUT_DATA_BUFFER">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>DMO_OUTPUT_DATA_BUFFER</code> structure describes an output buffer used by a Microsoft DirectX Media Object (DMO).</para>
     </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/dmo-structures">DMO Structures</seealso>
-    <seealso cref="IMediaObject.ProcessOutput" />
   </member>
   <member name="DMO_OUTPUT_DATA_BUFFER.pBuffer">
-    <summary>
-      <para>Pointer to the <see cref="IMediaBuffer" /> interface of a buffer allocated by the application.</para>
-    </summary>
+    <summary>Pointer to the <see cref="IMediaBuffer" /> interface of a buffer allocated by the application.</summary>
   </member>
   <member name="DMO_OUTPUT_DATA_BUFFER.dwStatus">
-    <summary>
-      <para>Status flags. After processing output, the DMO sets this member to a bitwise combination of zero or more <see cref="DMO_OUTPUT_DATA_BUFFER_FLAGS" /> flags.</para>
-    </summary>
+    <summary>Status flags. After processing output, the DMO sets this member to a bitwise combination of zero or more <see cref="DMO_OUTPUT_DATA_BUFFER_FLAGS" /> flags.</summary>
   </member>
   <member name="DMO_OUTPUT_DATA_BUFFER.rtTimestamp">
-    <summary>
-      <para>Time stamp that specifies the start time of the data in the buffer. If the buffer has a valid time stamp, the DMO sets this member and also sets the DMO_OUTPUT_DATA_BUFFERF_TIME flag in the <b>dwStatus</b> member. Otherwise, ignore this member.</para>
-    </summary>
+    <summary>Time stamp that specifies the start time of the data in the buffer. If the buffer has a valid time stamp, the DMO sets this member and also sets the DMO_OUTPUT_DATA_BUFFERF_TIME flag in the <b>dwStatus</b> member. Otherwise, ignore this member.</summary>
   </member>
   <member name="DMO_OUTPUT_DATA_BUFFER.rtTimelength">
-    <summary>
-      <para>Reference time specifying the length of the data in the buffer. If the DMO sets this member to a valid value, it also sets the DMO_OUTPUT_DATA_BUFFERF_TIMELENGTH flag in the <b>dwStatus</b> member. Otherwise, ignore this member.</para>
-    </summary>
+    <summary>Reference time specifying the length of the data in the buffer. If the DMO sets this member to a valid value, it also sets the DMO_OUTPUT_DATA_BUFFERF_TIMELENGTH flag in the <b>dwStatus</b> member. Otherwise, ignore this member.</summary>
   </member>
 </doc>

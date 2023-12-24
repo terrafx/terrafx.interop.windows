@@ -3,86 +3,31 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IErrorInfo.GetDescription">
-    <summary>
-      <para>Returns a textual description of the error.</para>
-    </summary>
-    <param name="pBstrDescription">
-      <para>A brief description of the error.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The text is returned in the language specified by the locale identifier (LCID) that was passed to <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-idispatch-invoke">IDispatch.Invoke</a> for the method that encountered the error.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</seealso>
+    <summary>Returns a textual description of the error.</summary>
+    <param name="pBstrDescription">A brief description of the error.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IErrorInfo.GetGUID">
-    <summary>
-      <para>Returns the globally unique identifier (GUID) of the interface that defined the error.</para>
-    </summary>
-    <param name="pGUID">
-      <para>A pointer to a GUID, or GUID_NULL, if the error was defined by the operating system.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>
-        <b>IErrorInfo.GetGUID</b> returns the GUID of the interface that defined the error. If the error was defined by the system, <b>IErrorInfo.GetGUID</b> returns GUID_NULL.</para>
-      <para>This GUID does not necessarily represent the source of the error. The source is the class or application that raised the error. Using the GUID, an application can handle errors in an interface, independent of the class that implements the interface.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</seealso>
+    <summary>Returns the globally unique identifier (GUID) of the interface that defined the error.</summary>
+    <param name="pGUID">A pointer to a GUID, or GUID_NULL, if the error was defined by the operating system.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IErrorInfo.GetHelpContext">
-    <summary>
-      <para>Returns the Help context identifier (ID) for the error.</para>
-    </summary>
-    <param name="pdwHelpContext">
-      <para>The Help context ID for the error.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method returns the Help context ID for the error. To find the Help file to which it applies, use <see cref="IErrorInfo.GetHelpFile" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</seealso>
+    <summary>Returns the Help context identifier (ID) for the error.</summary>
+    <param name="pdwHelpContext">The Help context ID for the error.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IErrorInfo.GetHelpFile">
-    <summary>
-      <para>Returns the path of the Help file that describes the error.</para>
-    </summary>
-    <param name="pBstrHelpFile">
-      <para>The fully qualified path of the Help file.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method returns the fully qualified path of the Help file that describes the current error. <a href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nf-oaidl-ierrorinfo-gethelpcontext">IErrorInfo.GetHelpContext</a> should be used to find the Help context ID for the error in the Help file.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</seealso>
+    <summary>Returns the path of the Help file that describes the error.</summary>
+    <param name="pBstrHelpFile">The fully qualified path of the Help file.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IErrorInfo.GetSource">
-    <summary>
-      <para>Returns the language-dependent programmatic ID (ProgID) for the class or application that raised the error.</para>
-    </summary>
-    <param name="pBstrSource">
-      <para>A ProgID, in the form <i>progname</i>.<i>objectname</i>.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Use <b>IErrorInfo.GetSource</b> to determine the class or application that is the source of the error. The language for the returned ProgID depends on the locale ID (LCID) that was passed into the method at the time of invocation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo">IErrorInfo</seealso>
+    <summary>Returns the language-dependent programmatic ID (ProgID) for the class or application that raised the error.</summary>
+    <param name="pBstrSource">A ProgID, in the form <i>progname</i>.<i>objectname</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IErrorInfo">
-    <summary>
-      <para>Provides detailed contextual error information.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/automat/error-handling-interfaces">Error Handling Interfaces </seealso>
+    <summary>Provides detailed contextual error information.</summary>
   </member>
 </doc>

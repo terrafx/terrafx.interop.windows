@@ -19,32 +19,4 @@ public static unsafe partial class IOmHistoryTests
     {
         Assert.That(typeof(IOmHistory).GUID, Is.EqualTo(IID_IOmHistory));
     }
-
-    /// <summary>Validates that the <see cref="IOmHistory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IOmHistory>(), Is.EqualTo(sizeof(IOmHistory)));
-    }
-
-    /// <summary>Validates that the <see cref="IOmHistory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IOmHistory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IOmHistory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IOmHistory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IOmHistory), Is.EqualTo(4));
-        }
-    }
 }

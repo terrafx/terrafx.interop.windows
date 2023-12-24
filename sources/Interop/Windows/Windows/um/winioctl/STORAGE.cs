@@ -127,10 +127,10 @@ public static partial class STORAGE
     [NativeTypeName("#define STORAGE_DIAGNOSTIC_FLAG_ADAPTER_REQUEST 0x00000001")]
     public const int STORAGE_DIAGNOSTIC_FLAG_ADAPTER_REQUEST = 0x00000001;
 
-    [NativeTypeName("#define STORAGE_CRASH_TELEMETRY_REGKEY L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Control\\\\CrashControl\\\\StorageTelemetry\"")]
+    [NativeTypeName("#define STORAGE_CRASH_TELEMETRY_REGKEY L\"\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\StorageTelemetry\"")]
     public const string STORAGE_CRASH_TELEMETRY_REGKEY = "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\CrashControl\\StorageTelemetry";
 
-    [NativeTypeName("#define STORAGE_DEVICE_TELEMETRY_REGKEY L\"\\\\Registry\\\\Machine\\\\System\\\\CurrentControlSet\\\\Control\\\\Storage\\\\StorageTelemetry\"")]
+    [NativeTypeName("#define STORAGE_DEVICE_TELEMETRY_REGKEY L\"\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Storage\\StorageTelemetry\"")]
     public const string STORAGE_DEVICE_TELEMETRY_REGKEY = "\\Registry\\Machine\\System\\CurrentControlSet\\Control\\Storage\\StorageTelemetry";
 
     [NativeTypeName("#define STORAGE_IDLE_POWERUP_REASON_VERSION_V1 1")]

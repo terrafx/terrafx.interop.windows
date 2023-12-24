@@ -18,5 +18,5 @@ public unsafe partial struct PKCS12_PBES2_EXPORT_PARAMS
 
     /// <include file='PKCS12_PBES2_EXPORT_PARAMS.xml' path='doc/member[@name="PKCS12_PBES2_EXPORT_PARAMS.pwszPbes2Alg"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszPbes2Alg;
+    public char* pwszPbes2Alg;
 }

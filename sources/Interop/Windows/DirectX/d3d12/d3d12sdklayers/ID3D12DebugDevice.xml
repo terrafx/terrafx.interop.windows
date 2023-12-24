@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12DebugDevice.GetFeatureMask">
+    <summary>Gets a bit field of flags that indicates which debug features are on or off.</summary>
+    <returns>Mask of feature-mask flags, as a bitwise OR'ed combination of <see cref="D3D12_DEBUG_FEATURE" /> enumeration constants. If a flag is present, then that feature will be set to on, otherwise the feature will be set to off.</returns>
+  </member>
+  <member name="ID3D12DebugDevice.ReportLiveDeviceObjects">
+    <summary>Reports information about a device object's lifetime.</summary>
+    <param name="Flags">A value from the <see cref="D3D12_RLDO_FLAGS" /> enumeration. This method uses the value in <i>Flags</i> to determine the amount of information to report about a device object's lifetime.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.<a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></returns>
+  </member>
+  <member name="ID3D12DebugDevice.SetFeatureMask">
+    <summary>Set a bit field of flags that will turn debug features on and off.</summary>
+    <param name="Mask">Feature-mask flags, as a bitwise-OR'd combination of <see cref="D3D12_DEBUG_FEATURE" /> enumeration constants. If a flag is present, that feature will be set to on; otherwise, the feature will be set to off.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.<a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></returns>
+  </member>
+  <member name="ID3D12DebugDevice">
+    <summary>This interface represents a graphics device for debugging.</summary>
+  </member>
+</doc>

@@ -19,25 +19,4 @@ public static unsafe partial class HTMLPopupTests
     {
         Assert.That(typeof(HTMLPopup).GUID, Is.EqualTo(IID_HTMLPopup));
     }
-
-    /// <summary>Validates that the <see cref="HTMLPopup" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLPopup>(), Is.EqualTo(sizeof(HTMLPopup)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLPopup" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLPopup).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLPopup" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLPopup), Is.EqualTo(1));
-    }
 }

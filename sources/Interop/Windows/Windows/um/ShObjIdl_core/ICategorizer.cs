@@ -25,7 +25,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ICategorizer*, Guid*, void**, int>)(lpVtbl[0]))((ICategorizer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ICategorizer*, Guid*, void**, int>)(lpVtbl[0]))((ICategorizer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ICategorizer*, uint>)(lpVtbl[1]))((ICategorizer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICategorizer*, uint>)(lpVtbl[1]))((ICategorizer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,15 +43,15 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ICategorizer*, uint>)(lpVtbl[2]))((ICategorizer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ICategorizer*, uint>)(lpVtbl[2]))((ICategorizer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(3)]
-    public HRESULT GetDescription([NativeTypeName("LPWSTR")] ushort* pszDesc, uint cch)
+    public HRESULT GetDescription([NativeTypeName("LPWSTR")] char* pszDesc, uint cch)
     {
-        return ((delegate* unmanaged<ICategorizer*, ushort*, uint, int>)(lpVtbl[3]))((ICategorizer*)Unsafe.AsPointer(ref this), pszDesc, cch);
+        return ((delegate* unmanaged[MemberFunction]<ICategorizer*, char*, uint, int>)(lpVtbl[3]))((ICategorizer*)Unsafe.AsPointer(ref this), pszDesc, cch);
     }
 
     /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.GetCategory"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetCategory(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("DWORD *")] uint* rgCategoryIds)
     {
-        return ((delegate* unmanaged<ICategorizer*, uint, ITEMIDLIST**, uint*, int>)(lpVtbl[4]))((ICategorizer*)Unsafe.AsPointer(ref this), cidl, apidl, rgCategoryIds);
+        return ((delegate* unmanaged[MemberFunction]<ICategorizer*, uint, ITEMIDLIST**, uint*, int>)(lpVtbl[4]))((ICategorizer*)Unsafe.AsPointer(ref this), cidl, apidl, rgCategoryIds);
     }
 
     /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.GetCategoryInfo"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetCategoryInfo([NativeTypeName("DWORD")] uint dwCategoryId, CATEGORY_INFO* pci)
     {
-        return ((delegate* unmanaged<ICategorizer*, uint, CATEGORY_INFO*, int>)(lpVtbl[5]))((ICategorizer*)Unsafe.AsPointer(ref this), dwCategoryId, pci);
+        return ((delegate* unmanaged[MemberFunction]<ICategorizer*, uint, CATEGORY_INFO*, int>)(lpVtbl[5]))((ICategorizer*)Unsafe.AsPointer(ref this), dwCategoryId, pci);
     }
 
     /// <include file='ICategorizer.xml' path='doc/member[@name="ICategorizer.CompareCategory"]/*' />
@@ -75,13 +75,13 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT CompareCategory(CATSORT_FLAGS csfFlags, [NativeTypeName("DWORD")] uint dwCategoryId1, [NativeTypeName("DWORD")] uint dwCategoryId2)
     {
-        return ((delegate* unmanaged<ICategorizer*, CATSORT_FLAGS, uint, uint, int>)(lpVtbl[6]))((ICategorizer*)Unsafe.AsPointer(ref this), csfFlags, dwCategoryId1, dwCategoryId2);
+        return ((delegate* unmanaged[MemberFunction]<ICategorizer*, CATSORT_FLAGS, uint, uint, int>)(lpVtbl[6]))((ICategorizer*)Unsafe.AsPointer(ref this), csfFlags, dwCategoryId1, dwCategoryId2);
     }
 
     public interface Interface : IUnknown.Interface
     {
         [VtblIndex(3)]
-        HRESULT GetDescription([NativeTypeName("LPWSTR")] ushort* pszDesc, uint cch);
+        HRESULT GetDescription([NativeTypeName("LPWSTR")] char* pszDesc, uint cch);
 
         [VtblIndex(4)]
         HRESULT GetCategory(uint cidl, [NativeTypeName("LPCITEMIDLIST *")] ITEMIDLIST** apidl, [NativeTypeName("DWORD *")] uint* rgCategoryIds);
@@ -97,24 +97,24 @@ public unsafe partial struct ICategorizer : ICategorizer.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (LPWSTR, UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> GetDescription;
 
         [NativeTypeName("HRESULT (UINT, LPCITEMIDLIST *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, ITEMIDLIST**, uint*, int> GetCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, ITEMIDLIST**, uint*, int> GetCategory;
 
         [NativeTypeName("HRESULT (DWORD, CATEGORY_INFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, CATEGORY_INFO*, int> GetCategoryInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, CATEGORY_INFO*, int> GetCategoryInfo;
 
         [NativeTypeName("HRESULT (CATSORT_FLAGS, DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, CATSORT_FLAGS, uint, uint, int> CompareCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, CATSORT_FLAGS, uint, uint, int> CompareCategory;
     }
 }

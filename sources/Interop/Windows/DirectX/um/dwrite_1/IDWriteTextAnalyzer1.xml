@@ -3,431 +3,119 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteTextAnalyzer1.AnalyzeVerticalGlyphOrientation">
-    <summary>
-      <para>Analyzes a text range for script orientation, reading text and
-attributes from the source and reporting results to the sink callback <see cref="SetGlyphOrientation" />.</para>
-    </summary>
-    <param name="analysisSource">
-      <para>Type: <b><see cref="IDWriteTextAnalysisSource1" />*</b></para>
-      <para>Source object to analyze.</para>
-    </param>
-    <param name="textPosition">
-      <para>Type: <b>UINT32</b></para>
-      <para>Starting position within the source object.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32</b></para>
-      <para>Length to analyze.</para>
-    </param>
-    <param name="analysisSink">
-      <para>Type: <b><see cref="IDWriteTextAnalysisSink1" />*</b></para>
-      <para>Length to analyze.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDWriteTextAnalyzer1" />
+    <summary>Analyzes a text range for script orientation, reading text and attributes from the source and reporting results to the sink callback <see cref="SetGlyphOrientation" />.</summary>
+    <param name="analysisSource">Source object to analyze.</param>
+    <param name="textPosition">Starting position within the source object.</param>
+    <param name="textLength">Length to analyze.</param>
+    <param name="analysisSink">Length to analyze.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalyzer1.ApplyCharacterSpacing">
-    <summary>
-      <para>Applies spacing between characters, properly adjusting glyph clusters
-and diacritics.</para>
-    </summary>
-    <param name="leadingSpacing">
-      <para>The spacing before each character, in reading order.</para>
-    </param>
-    <param name="trailingSpacing">
-      <para>The spacing after each character, in reading order.</para>
-    </param>
-    <param name="minimumAdvanceWidth">
-      <para>The minimum advance of each character,
-to prevent characters from becoming too thin or zero-width. This
-must be zero or greater.</para>
-    </param>
-    <param name="textLength">
-      <para>The length of the clustermap and original text.</para>
-    </param>
-    <param name="glyphCount">
-      <para>The number of glyphs.</para>
-    </param>
-    <param name="clusterMap">
-      <para>Mapping from character ranges to glyph ranges.</para>
-    </param>
-    <param name="glyphAdvances">
-      <para>The advance width of each glyph.</para>
-    </param>
-    <param name="glyphOffsets">
-      <para>The offset of the origin of each glyph.</para>
-    </param>
-    <param name="glyphProperties">
-      <para>Properties of each glyph, from GetGlyphs.</para>
-    </param>
-    <param name="modifiedGlyphAdvances">
-      <para>The new advance width of each glyph.</para>
-    </param>
-    <param name="modifiedGlyphOffsets">
-      <para>The new offset of the origin of each glyph.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The input and output advances/offsets are allowed to alias the same array.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalyzer1" />
+    <summary>Applies spacing between characters, properly adjusting glyph clusters and diacritics.</summary>
+    <param name="leadingSpacing">The spacing before each character, in reading order.</param>
+    <param name="trailingSpacing">The spacing after each character, in reading order.</param>
+    <param name="minimumAdvanceWidth">The minimum advance of each character, to prevent characters from becoming too thin or zero-width. This must be zero or greater.</param>
+    <param name="textLength">The length of the clustermap and original text.</param>
+    <param name="glyphCount">The number of glyphs.</param>
+    <param name="clusterMap">Mapping from character ranges to glyph ranges.</param>
+    <param name="glyphAdvances">The advance width of each glyph.</param>
+    <param name="glyphOffsets">The offset of the origin of each glyph.</param>
+    <param name="glyphProperties">Properties of each glyph, from GetGlyphs.</param>
+    <param name="modifiedGlyphAdvances">The new advance width of each glyph.</param>
+    <param name="modifiedGlyphOffsets">The new offset of the origin of each glyph.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalyzer1.GetBaseline">
-    <summary>
-      <para>Retrieves the given baseline from the font.</para>
-    </summary>
-    <param name="fontFace">
-      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
-      <para>The font face to read.</para>
-    </param>
-    <param name="baseline">
-      <para>Type: <b><see cref="DWRITE_BASELINE" /></b></para>
-      <para>A <see cref="DWRITE_BASELINE" />-typed value that specifies the baseline of interest.</para>
-    </param>
-    <param name="isVertical">
-      <para>Type: <b>BOOL</b></para>
-      <para>Whether the baseline is vertical or horizontal.</para>
-    </param>
-    <param name="isSimulationAllowed">
-      <para>Type: <b>BOOL</b></para>
-      <para>Simulate the baseline if it is missing in the font.</para>
-    </param>
+    <summary>Retrieves the given baseline from the font.</summary>
+    <param name="fontFace">The font face to read.</param>
+    <param name="baseline">A <see cref="DWRITE_BASELINE" />-typed value that specifies the baseline of interest.</param>
+    <param name="isVertical">Whether the baseline is vertical or horizontal.</param>
+    <param name="isSimulationAllowed">Simulate the baseline if it is missing in the font.</param>
     <param name="scriptAnalysis">
-      <para>Type: <b><see cref="DWRITE_SCRIPT_ANALYSIS" /></b></para>
       <para>Script analysis result from AnalyzeScript.</para>
-      <para>
-        <b>Note</b>  You can pass an empty script analysis structure, like this <code>DWRITE_SCRIPT_ANALYSIS scriptAnalysis = {};</code>, and this method will return the default baseline.</para>
+      <div>
+        <b>Note</b>  You can pass an empty script analysis structure, like this <code>DWRITE_SCRIPT_ANALYSIS scriptAnalysis = {};</code>, and this method will return the default baseline.</div>
     </param>
-    <param name="localeName">
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>The language of the run.</para>
-    </param>
-    <param name="baselineCoordinate">
-      <para>Type: <b>INT32*</b></para>
-      <para>The baseline coordinate value in design units.</para>
-    </param>
-    <param name="exists">
-      <para>Type: <b>BOOL*</b></para>
-      <para>Whether the returned baseline exists in the font.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the baseline does not exist in the font, it is not considered an
-error, but the function will return exists = false. You may then use
-heuristics to calculate the missing base, or, if the flag
-simulationAllowed is true, the function will compute a reasonable
-approximation for you.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalyzer1" />
+    <param name="localeName">The language of the run.</param>
+    <param name="baselineCoordinate">The baseline coordinate value in design units.</param>
+    <param name="exists">Whether the returned baseline exists in the font.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalyzer1.GetGlyphOrientationTransform">
-    <summary>
-      <para>Returns 2x3 transform matrix for the respective angle to draw the
-glyph run.</para>
-    </summary>
-    <param name="glyphOrientationAngle">
-      <para>Type: <b><see cref="DWRITE_GLYPH_ORIENTATION_ANGLE" /></b></para>
-      <para>A <see cref="DWRITE_GLYPH_ORIENTATION_ANGLE" />-typed value that specifies the angle that was reported into
-<see cref="IDWriteTextAnalysisSink1.SetGlyphOrientation" />.</para>
-    </param>
-    <param name="isSideways">
-      <para>Type: <b>BOOL</b></para>
-      <para>Whether the run's glyphs are sideways or not.</para>
-    </param>
-    <param name="transform">
-      <para>Type: <b><see cref="DWRITE_MATRIX" />*</b></para>
-      <para>Returned transform.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The translation component of the transform returned is zero.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalyzer1" />
+    <summary>Returns 2x3 transform matrix for the respective angle to draw the glyph run.</summary>
+    <param name="glyphOrientationAngle">A <see cref="DWRITE_GLYPH_ORIENTATION_ANGLE" />-typed value that specifies the angle that was reported into<see cref="IDWriteTextAnalysisSink1.SetGlyphOrientation" />.</param>
+    <param name="isSideways">Whether the run's glyphs are sideways or not.</param>
+    <param name="transform">Returned transform.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalyzer1.GetJustificationOpportunities">
-    <summary>
-      <para>Retrieves justification opportunity information for each of the glyphs
-given the text and shaping glyph properties.</para>
-    </summary>
+    <summary>Retrieves justification opportunity information for each of the glyphs given the text and shaping glyph properties.</summary>
     <param name="fontFace">
-      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
-      <para>Font face that was used for shaping. This is
-mainly important for returning correct results of the kashida
-width.</para>
+      <para>Font face that was used for shaping. This is mainly important for returning correct results of the kashida width.</para>
       <para>May be NULL.</para>
     </param>
-    <param name="fontEmSize">
-      <para>Type: <b>FLOAT</b></para>
-      <para>Font em size used for the glyph run.</para>
-    </param>
-    <param name="scriptAnalysis">
-      <para>Type: <b><see cref="DWRITE_SCRIPT_ANALYSIS" /></b></para>
-      <para>Script of the text from the itemizer.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32</b></para>
-      <para>Length of the text.</para>
-    </param>
-    <param name="glyphCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Number of glyphs.</para>
-    </param>
-    <param name="textString">
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>Characters used to produce the glyphs.</para>
-    </param>
-    <param name="clusterMap">
-      <para>Type: <b>const UINT16*</b></para>
-      <para>Clustermap produced from shaping.</para>
-    </param>
-    <param name="glyphProperties">
-      <para>Type: <b>const <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" />*</b></para>
-      <para>Glyph properties produced from shaping.</para>
-    </param>
-    <param name="justificationOpportunities">
-      <para>Type: <b><see cref="DWRITE_JUSTIFICATION_OPPORTUNITY" />*</b></para>
-      <para>A pointer to a <see cref="DWRITE_JUSTIFICATION_OPPORTUNITY" /> structure that receives info for the
-allowed justification expansion/compression for each glyph.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This function is called per-run, after shaping is done via the <see cref="IDWriteTextAnalyzer.GetGlyphs" /> method.
-<b>Note</b>  this function only supports natural metrics (<see cref="DWRITE_MEASURING_MODE_NATURAL" />).</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalyzer1" />
+    <param name="fontEmSize">Font em size used for the glyph run.</param>
+    <param name="scriptAnalysis">Script of the text from the itemizer.</param>
+    <param name="textLength">Length of the text.</param>
+    <param name="glyphCount">Number of glyphs.</param>
+    <param name="textString">Characters used to produce the glyphs.</param>
+    <param name="clusterMap">Clustermap produced from shaping.</param>
+    <param name="glyphProperties">Glyph properties produced from shaping.</param>
+    <param name="justificationOpportunities">A pointer to a <see cref="DWRITE_JUSTIFICATION_OPPORTUNITY" /> structure that receives info for the allowed justification expansion/compression for each glyph.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalyzer1.GetJustifiedGlyphs">
-    <summary>
-      <para>Fills in new glyphs for complex scripts where justification increased
-the advances of glyphs, such as Arabic with kashida.</para>
-    </summary>
+    <summary>Fills in new glyphs for complex scripts where justification increased the advances of glyphs, such as Arabic with kashida.</summary>
     <param name="fontFace">
-      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
       <para>Font face used for shaping.</para>
       <para>May be NULL.</para>
     </param>
-    <param name="fontEmSize">
-      <para>Type: <b>FLOAT</b></para>
-      <para>Font em size used for the glyph run.</para>
-    </param>
-    <param name="scriptAnalysis">
-      <para>Type: <b><see cref="DWRITE_SCRIPT_ANALYSIS" /></b></para>
-      <para>Script of the text from the itemizer.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32</b></para>
-      <para>Length of the text.</para>
-    </param>
-    <param name="glyphCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Number of glyphs.</para>
-    </param>
-    <param name="maxGlyphCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>Maximum number of output glyphs allocated
-by caller.</para>
-    </param>
-    <param name="clusterMap">
-      <para>Type: <b>const UINT16*</b></para>
-      <para>Clustermap produced from shaping.</para>
-    </param>
-    <param name="glyphIndices">
-      <para>Type: <b>const UINT16*</b></para>
-      <para>Original glyphs produced from shaping.</para>
-    </param>
-    <param name="glyphAdvances">
-      <para>Type: <b>const FLOAT*</b></para>
-      <para>Original glyph advances produced from shaping.</para>
-    </param>
-    <param name="justifiedGlyphAdvances">
-      <para>Type: <b>const FLOAT*</b></para>
-      <para>Justified glyph advances from
-<see cref="IDWriteTextAnalyzer1.JustifyGlyphAdvances" />.</para>
-    </param>
-    <param name="justifiedGlyphOffsets">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_OFFSET" />*</b></para>
-      <para>Justified glyph offsets from
-<see cref="IDWriteTextAnalyzer1.JustifyGlyphAdvances" />.</para>
-    </param>
-    <param name="glyphProperties">
-      <para>Type: <b>const <see cref="DWRITE_SHAPING_GLYPH_PROPERTIES" />*</b></para>
-      <para>Properties of each glyph, from <see cref="IDWriteTextAnalyzer.GetGlyphs" />.</para>
-    </param>
-    <param name="actualGlyphCount">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The new glyph count written to the
-modified arrays, or the needed glyph count if the size is not
-large enough.</para>
-    </param>
-    <param name="modifiedClusterMap">
-      <para>Type: <b>UINT16*</b></para>
-      <para>Updated clustermap.</para>
-    </param>
-    <param name="modifiedGlyphIndices">
-      <para>Type: <b>UINT16*</b></para>
-      <para>Updated glyphs with new glyphs
-inserted where needed.</para>
-    </param>
-    <param name="modifiedGlyphAdvances">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>Updated glyph advances.</para>
-    </param>
-    <param name="modifiedGlyphOffsets">
-      <para>Type: <b><see cref="DWRITE_GLYPH_OFFSET" />*</b></para>
-      <para>Updated glyph offsets.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>You call <b>GetJustifiedGlyphs</b> after the line has been justified, and it is per-run.</para>
-      <para>You should call <b>GetJustifiedGlyphs</b> if <see cref="IDWriteTextAnalyzer1.GetScriptProperties" /> returns a non-null <see cref="DWRITE_SCRIPT_PROPERTIES.justificationCharacter" /> for that script.</para>
-      <para>Use  <b>GetJustifiedGlyphs</b> mainly for cursive scripts
-like Arabic. If <i>maxGlyphCount</i> is not large enough, <b>GetJustifiedGlyphs</b> returns the error
-E_NOT_SUFFICIENT_BUFFER and fills the variable  to which <i>actualGlyphCount</i>  points with
-the needed glyph count.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalyzer1" />
-    <seealso cref="IDWriteTextAnalyzer1.GetScriptProperties" />
-    <seealso cref="IDWriteTextAnalyzer1.JustifyGlyphAdvances" />
-    <seealso cref="IDWriteTextAnalyzer.GetGlyphs" />
+    <param name="fontEmSize">Font em size used for the glyph run.</param>
+    <param name="scriptAnalysis">Script of the text from the itemizer.</param>
+    <param name="textLength">Length of the text.</param>
+    <param name="glyphCount">Number of glyphs.</param>
+    <param name="maxGlyphCount">Maximum number of output glyphs allocated by caller.</param>
+    <param name="clusterMap">Clustermap produced from shaping.</param>
+    <param name="glyphIndices">Original glyphs produced from shaping.</param>
+    <param name="glyphAdvances">Original glyph advances produced from shaping.</param>
+    <param name="justifiedGlyphAdvances">Justified glyph advances from<see cref="IDWriteTextAnalyzer1.JustifyGlyphAdvances" />.</param>
+    <param name="justifiedGlyphOffsets">Justified glyph offsets from<see cref="IDWriteTextAnalyzer1.JustifyGlyphAdvances" />.</param>
+    <param name="glyphProperties">Properties of each glyph, from <see cref="IDWriteTextAnalyzer.GetGlyphs" />.</param>
+    <param name="actualGlyphCount">The new glyph count written to the modified arrays, or the needed glyph count if the size is not large enough.</param>
+    <param name="modifiedClusterMap">Updated clustermap.</param>
+    <param name="modifiedGlyphIndices">Updated glyphs with new glyphs inserted where needed.</param>
+    <param name="modifiedGlyphAdvances">Updated glyph advances.</param>
+    <param name="modifiedGlyphOffsets">Updated glyph offsets.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalyzer1.GetScriptProperties">
-    <summary>
-      <para>Retrieves the properties for a given script.</para>
-    </summary>
-    <param name="scriptAnalysis">
-      <para>Type: <b><see cref="DWRITE_SCRIPT_ANALYSIS" /></b></para>
-      <para>The script for a run of text returned
-from <see cref="IDWriteTextAnalyzer.AnalyzeScript" />.</para>
-    </param>
-    <param name="scriptProperties">
-      <para>Type: <b><see cref="DWRITE_SCRIPT_PROPERTIES" />*</b></para>
-      <para>A pointer to a <see cref="DWRITE_SCRIPT_PROPERTIES" /> structure that describes info for the script.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns properties for the given script. If the script is invalid,
-it returns generic properties for the unknown script and E_INVALIDARG.</para>
-    </returns>
-    <seealso cref="IDWriteTextAnalyzer1" />
+    <summary>Retrieves the properties for a given script.</summary>
+    <param name="scriptAnalysis">The script for a run of text returned from <see cref="IDWriteTextAnalyzer.AnalyzeScript" />.</param>
+    <param name="scriptProperties">A pointer to a <see cref="DWRITE_SCRIPT_PROPERTIES" /> structure that describes info for the script.</param>
+    <returns>Returns properties for the given script. If the script is invalid, it returns generic properties for the unknown script and E_INVALIDARG.</returns>
   </member>
   <member name="IDWriteTextAnalyzer1.GetTextComplexity">
-    <summary>
-      <para>Determines the complexity of text, and whether you need to call <see cref="IDWriteTextAnalyzer.GetGlyphs" /> for full script
-shaping.</para>
-    </summary>
-    <param name="textString">
-      <para>Type: <b>const WCHAR*</b></para>
-      <para>The text to check for complexity. This string
-may be UTF-16, but any supplementary characters will be considered
-complex.</para>
-    </param>
-    <param name="textLength">
-      <para>Type: <b>UINT32</b></para>
-      <para>Length of the text to check.</para>
-    </param>
-    <param name="fontFace">
-      <para>Type: <b><see cref="IDWriteFontFace" />*</b></para>
-      <para>The font face to read.</para>
-    </param>
-    <param name="isTextSimple">
-      <para>Type: <b>BOOL*</b></para>
-      <para>If true, the text is simple, and the
-<i>glyphIndices</i> array will already have the nominal glyphs for you.
-Otherwise, you need to call <see cref="IDWriteTextAnalyzer.GetGlyphs" /> to properly shape complex
-scripts and OpenType features.</para>
-    </param>
-    <param name="textLengthRead">
-      <para>Type: <b>UINT32*</b></para>
-      <para>The length read of the text run with the
-same complexity, simple or complex. You may call again from that
-point onward.</para>
-    </param>
-    <param name="glyphIndices">
-      <para>Type: <b>UINT16*</b></para>
-      <para>Optional glyph indices for the text. If the
-function returned that the text was simple, you already have the
-glyphs you need. Otherwise the glyph indices are not meaningful,
-and you need to call <see cref="IDWriteTextAnalyzer.GetGlyphs" /> for shaping instead.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Text is not simple if the characters are part of a script that has
-complex shaping requirements, require bidi analysis, combine with
-other characters, reside in the supplementary planes, or have glyphs
-that participate in standard OpenType features. The length returned
-will not split combining marks from their base characters.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalyzer1" />
-    <seealso cref="IDWriteTextAnalyzer.GetGlyphs" />
+    <summary>Determines the complexity of text, and whether you need to call <see cref="IDWriteTextAnalyzer.GetGlyphs" /> for full script shaping.</summary>
+    <param name="textString">The text to check for complexity. This string may be UTF-16, but any supplementary characters will be considered complex.</param>
+    <param name="textLength">Length of the text to check.</param>
+    <param name="fontFace">The font face to read.</param>
+    <param name="isTextSimple">If true, the text is simple, and the<i>glyphIndices</i> array will already have the nominal glyphs for you. Otherwise, you need to call <see cref="IDWriteTextAnalyzer.GetGlyphs" /> to properly shape complex scripts and OpenType features.</param>
+    <param name="textLengthRead">The length read of the text run with the same complexity, simple or complex. You may call again from that point onward.</param>
+    <param name="glyphIndices">Optional glyph indices for the text. If the function returned that the text was simple, you already have the glyphs you need. Otherwise the glyph indices are not meaningful, and you need to call <see cref="IDWriteTextAnalyzer.GetGlyphs" /> for shaping instead.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalyzer1.JustifyGlyphAdvances">
-    <summary>
-      <para>Justifies an array of glyph advances to fit the line width.</para>
-    </summary>
-    <param name="lineWidth">
-      <para>Type: <b>FLOAT</b></para>
-      <para>The line width.</para>
-    </param>
-    <param name="glyphCount">
-      <para>Type: <b>UINT32</b></para>
-      <para>The glyph count.</para>
-    </param>
-    <param name="justificationOpportunities">
-      <para>Type: <b>const <see cref="DWRITE_JUSTIFICATION_OPPORTUNITY" />*</b></para>
-      <para>A pointer to a <see cref="DWRITE_JUSTIFICATION_OPPORTUNITY" /> structure that contains info for the
-allowed justification expansion/compression for each glyph. Get this info from <see cref="IDWriteTextAnalyzer1.GetJustificationOpportunities" />.</para>
-    </param>
-    <param name="glyphAdvances">
-      <para>Type: <b>const FLOAT*</b></para>
-      <para>An array of glyph advances.</para>
-    </param>
-    <param name="glyphOffsets">
-      <para>Type: <b>const <see cref="DWRITE_GLYPH_OFFSET" />*</b></para>
-      <para>An array of glyph offsets.</para>
-    </param>
-    <param name="justifiedGlyphAdvances">
-      <para>Type: <b>FLOAT*</b></para>
-      <para>The returned array of justified glyph advances.</para>
-    </param>
-    <param name="justifiedGlyphOffsets">
-      <para>Type: <b><see cref="DWRITE_GLYPH_OFFSET" />*</b></para>
-      <para>The returned array of justified glyph offsets.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>You call  <b>JustifyGlyphAdvances</b> after you call <see cref="IDWriteTextAnalyzer1.GetJustificationOpportunities" /> to collect all the opportunities, and <b>JustifyGlyphAdvances</b> spans across the entire line. The input and output arrays are allowed
-to alias each other, permitting in-place update.</para>
-    </remarks>
-    <seealso cref="IDWriteTextAnalyzer1" />
-    <seealso cref="IDWriteTextAnalyzer1.GetJustificationOpportunities" />
+    <summary>Justifies an array of glyph advances to fit the line width.</summary>
+    <param name="lineWidth">The line width.</param>
+    <param name="glyphCount">The glyph count.</param>
+    <param name="justificationOpportunities">A pointer to a <see cref="DWRITE_JUSTIFICATION_OPPORTUNITY" /> structure that contains info for the allowed justification expansion/compression for each glyph. Get this info from <see cref="IDWriteTextAnalyzer1.GetJustificationOpportunities" />.</param>
+    <param name="glyphAdvances">An array of glyph advances.</param>
+    <param name="glyphOffsets">An array of glyph offsets.</param>
+    <param name="justifiedGlyphAdvances">The returned array of justified glyph advances.</param>
+    <param name="justifiedGlyphOffsets">The returned array of justified glyph offsets.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDWriteTextAnalyzer1">
-    <summary>
-      <para>Analyzes various text properties for complex script processing.</para>
-    </summary>
-    <seealso cref="IDWriteTextAnalyzer" />
+    <summary>Analyzes various text properties for complex script processing.</summary>
   </member>
 </doc>

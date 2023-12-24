@@ -19,32 +19,4 @@ public static unsafe partial class IAudioMuteTests
     {
         Assert.That(typeof(IAudioMute).GUID, Is.EqualTo(IID_IAudioMute));
     }
-
-    /// <summary>Validates that the <see cref="IAudioMute" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioMute>(), Is.EqualTo(sizeof(IAudioMute)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioMute" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioMute).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioMute" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioMute), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioMute), Is.EqualTo(4));
-        }
-    }
 }

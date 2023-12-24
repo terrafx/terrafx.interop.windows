@@ -3,19 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_UINT32_DESCRIPTION">
-    <summary>
-      <para>An optional type description used with <see cref="WS_UINT32_TYPE" /> to specify constraints on the set of values
-which can be deserialized.</para>
-    </summary>
+    <summary>An optional type description used with <see cref="WS_UINT32_TYPE" /> to specify constraints on the set of values which can be deserialized.</summary>
   </member>
   <member name="WS_UINT32_DESCRIPTION.minValue">
-    <summary>
-      <para>The minimum value.</para>
-    </summary>
+    <summary>The minimum value.</summary>
   </member>
   <member name="WS_UINT32_DESCRIPTION.maxValue">
-    <summary>
-      <para>The maximum value.</para>
-    </summary>
+    <summary>The maximum value.</summary>
   </member>
 </doc>

@@ -20,7 +20,7 @@ public unsafe partial struct SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA
 
     /// <include file='SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.pwszServerName"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszServerName;
+    public char* pwszServerName;
 
     /// <include file='SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.xml' path='doc/member[@name="SSL_HPKP_HEADER_EXTRA_CERT_CHAIN_POLICY_PARA.rgpszHpkpValue"]/*' />
     [NativeTypeName("LPSTR[2]")]

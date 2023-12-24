@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOleInPlaceSiteWindowless.DeactivateAndUndo">
-    <summary>
-      <para>Deactivates the object, ends the in-place session, and reverts to the container's saved undo state.</para>
-    </summary>
+    <summary>Deactivates the object, ends the in-place session, and reverts to the container's saved undo state.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -13,30 +11,23 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <para>Called by the active object when the user invokes undo just after activating the object.</para>
-      <h3>Notes to Implementers</h3>
-      <para>Upon completion of this call, the container should call <see cref="IOleInPlaceObject.UIDeactivate" /> to remove the user interface for the object, activate itself, and undo.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSiteWindowless.DiscardUndoState">
-    <summary>
-      <para>Instructs the container to discard its undo state. The container should not call <see cref="IOleInPlaceObject.ReActivateAndUndo" />.</para>
-    </summary>
+    <summary>Instructs the container to discard its undo state. The container should not call <see cref="IOleInPlaceObject.ReActivateAndUndo" />.</summary>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -44,33 +35,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If an object is activated in place and the object's associated object application maintains only one level of undo, there is no need to have more than one entry on the undo stack. That is, after a change has been made to the active object that invalidates its undo state saved by the container, there is no need to maintain this undo state in the container.</para>
-      <h3>Notes to Callers</h3>
-      <b>DiscardUndoState</b> is called by the active object while performing some action that would discard the undo state of the object. The in-place object calls this method to notify the container to discard the object's last saved undo state.
-</remarks>
-    <seealso cref="IOleInPlaceSite" />
-    <seealso cref="IOleInPlaceSite.DiscardUndoState" />
   </member>
   <member name="IOleInPlaceSiteWindowless.OnPosRectChange">
-    <summary>
-      <para>Notifies the container that the object extents have changed.</para>
-    </summary>
-    <param name="lprcPosRect">
-      <para>A pointer a <see cref="RECT" /> structure that contains the position of the in-place object in the client coordinates of its parent window.</para>
-    </param>
+    <summary>Notifies the container that the object extents have changed.</summary>
+    <param name="lprcPosRect">A pointer a <see cref="RECT" /> structure that contains the position of the in-place object in the client coordinates of its parent window.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -78,45 +60,36 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The supplied pointer is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The supplied pointer is invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <h3>Notes to Callers</h3>
-      <para>The <b>OnPosRectChange</b> method is called by the in-place object.</para>
-      <h3>Notes to Implementers</h3>
-      <para>When the in-place object calls <b>OnPosRectChange</b>, the container must call <see cref="IOleInPlaceObject.SetObjectRects" /> to specify the new position of the in-place window and the clipping rectangle. Only then does the object resize its window.</para>
-      <para>In most cases, the object grows to the right and/or down. There could be cases where the object grows to the left and/or up, as conveyed through <i>lprcPosRect</i>. It is also possible to change the object's position without changing its size.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceObject.SetObjectRects" />
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSiteWindowless.OnUIDeactivate">
-    <summary>
-      <para>Notifies the container that it should reinstall its user interface and take focus, and whether the object has an undoable state.</para>
-    </summary>
-    <param name="fUndoable">
-      <para>Specifies whether the object can undo changes (TRUE) or not (FALSE).</para>
-    </param>
+    <summary>Notifies the container that it should reinstall its user interface and take focus, and whether the object has an undoable state.</summary>
+    <param name="fUndoable">Specifies whether the object can undo changes (TRUE) or not (FALSE).</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -124,33 +97,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The object indicates whether it can undo changes through the <i>fUndoable</i> flag. If the object can undo changes, the container can (by the user invoking the <b>Edit Undo</b> command) call the <see cref="IOleInPlaceObject.ReactivateAndUndo" /> method to undo the changes.</para>
-      <h3>Notes to Callers</h3>
-      <b>IOleInPlaceSite.OnUIDeactivate</b> is called by the site's immediate child object when it is deactivating to notify the container that it should reinstall its own user interface components and take focus. The container should wait for the call to <b>IOleInPlaceSite.OnUIDeactivate</b> to complete before fully cleaning up and destroying any composite submenus.
-</remarks>
-    <seealso cref="IOleInPlaceObject.ReactivateAndUndo" />
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSiteWindowless.Scroll">
-    <summary>
-      <para>Instructs the container to scroll the view of the object by the specified number of pixels.</para>
-    </summary>
-    <param name="scrollExtant">
-      <para>The number of pixels by which to scroll in the X and Y directions.</para>
-    </param>
+    <summary>Instructs the container to scroll the view of the object by the specified number of pixels.</summary>
+    <param name="scrollExtant">The number of pixels by which to scroll in the X and Y directions.</param>
     <returns>
       <para>This method returns S_OK on success. Other possible return values include the following.</para>
       <list type="table">
@@ -158,44 +122,37 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified pointer is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified pointer is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>As a result of scrolling, the object's visible rectangle can change. If that happens, the container should give the new clipping rectangle to the object by calling <see cref="IOleInPlaceObject.SetObjectRects" />. The intersection of the <i>lprcClipRect</i> and <i>lprcPosRect</i> rectangles gives the new visible rectangle. See <see cref="IOleInPlaceSite.GetWindowContext" /> for more information.</para>
-      <h3>Notes to Callers</h3>
-      <para>Called by an active, in-place object when it is asking the container to scroll.</para>
-    </remarks>
-    <seealso cref="IOleInPlaceObject.SetObjectRects" />
-    <seealso cref="IOleInPlaceSite" />
   </member>
   <member name="IOleInPlaceSiteWindowless.ContextSensitiveHelp">
-    <summary>
-      <para>Determines whether context-sensitive help mode should be entered during an in-place activation session.</para>
-    </summary>
+    <summary>Determines whether context-sensitive help mode should be entered during an in-place activation session.</summary>
     <param name="fEnterMode">
-      <para>
-        <b>TRUE</b> if help mode should be entered; <b>FALSE</b> if it should be exited.</para>
-    </param>
+      <b>TRUE</b> if help mode should be entered; <b>FALSE</b> if it should be exited.</param>
     <returns>
       <para>This method returns S_OK if the help mode was entered or exited successfully, depending on the value passed in <i>fEnterMode</i>. Other possible return values include the following.</para>
       <list type="table">
@@ -203,63 +160,43 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The specified <i>fEnterMode</i> value is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The specified <i>fEnterMode</i> value is not valid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>There is insufficient memory available for this operation.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_UNEXPECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There is insufficient memory available for this operation.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_UNEXPECTED</b>
-            </para>
-          </description>
-          <description>
-            <para>An unexpected error has occurred.</para>
-          </description>
-        </item>
+          <description>An unexpected error has occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Applications can invoke context-sensitive help when the user:</para>
-      <list type="bullet">
-        <item>
-          <description>presses SHIFT+F1, then clicks a topic</description>
-        </item>
-        <item>
-          <description>presses F1 when a menu item is selected</description>
-        </item>
-      </list>
-      <para>When SHIFT+F1 is pressed, either the frame or active object can receive the keystrokes. If the container's frame receives the keystrokes, it calls its containing document's <b>IOleWindow.ContextSensitiveHelp</b> method with <i>fEnterMode</i> set to <b>TRUE</b>. This propagates the help state to all of its in-place objects so they can correctly handle the mouse click or WM_COMMAND.</para>
-      <para>If an active object receives the SHIFT+F1 keystrokes, it calls the container's <b>IOleWindow.ContextSensitiveHelp</b> method with <i>fEnterMode</i><b>TRUE</b>, which then recursively calls each of its in-place sites until there are no more to be notified. The container then calls its document's or frame's <b>IOleWindow.ContextSensitiveHelp</b> method with <i>fEnterMode</i><b>TRUE</b>.</para>
-      <para>When in context-sensitive help mode, an object that receives the mouse click can either:</para>
-      <list type="bullet">
-        <item>
-          <description>Ignore the click if it does not support context-sensitive help.</description>
-        </item>
-        <item>
-          <description>Tell all the other objects to exit context-sensitive help mode with <b>ContextSensitiveHelp</b> set to <b>FALSE</b> and then provide help for that context.</description>
-        </item>
-      </list>
-      <para>An object in context-sensitive help mode that receives a WM_COMMAND should tell all the other in-place objects to exit context-sensitive help mode and then provide help for the command.</para>
-      <para>If a container application is to support context-sensitive help on menu items, it must either provide its own message filter so that it can intercept the F1 key or ask the OLE library to add a message filter by calling <see cref="OleSetMenuDescriptor" />, passing valid, non-<b>NULL</b> values for the <i>lpFrame</i> and <i>lpActiveObj</i> parameters.</para>
-    </remarks>
-    <seealso cref="IOleWindow" />
-    <seealso cref="OleSetMenuDescriptor" />
   </member>
 </doc>

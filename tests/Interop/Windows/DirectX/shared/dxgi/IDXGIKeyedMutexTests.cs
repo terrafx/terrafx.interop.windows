@@ -19,32 +19,4 @@ public static unsafe partial class IDXGIKeyedMutexTests
     {
         Assert.That(typeof(IDXGIKeyedMutex).GUID, Is.EqualTo(IID_IDXGIKeyedMutex));
     }
-
-    /// <summary>Validates that the <see cref="IDXGIKeyedMutex" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDXGIKeyedMutex>(), Is.EqualTo(sizeof(IDXGIKeyedMutex)));
-    }
-
-    /// <summary>Validates that the <see cref="IDXGIKeyedMutex" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDXGIKeyedMutex).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDXGIKeyedMutex" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDXGIKeyedMutex), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDXGIKeyedMutex), Is.EqualTo(4));
-        }
-    }
 }

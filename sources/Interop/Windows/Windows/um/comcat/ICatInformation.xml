@@ -3,88 +3,40 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICatInformation.EnumCategories">
-    <summary>
-      <para>Retrieves an enumerator for the component categories registered on the system.</para>
-    </summary>
-    <param name="lcid">
-      <para>The requested locale for any return szDescription of the enumerated categories. Typically, the caller specifies the value returned from the <see cref="GetUserDefaultLCID" /> function.</para>
-    </param>
-    <param name="ppenumCategoryInfo">
-      <para>A pointer to a pointer to an <see cref="IEnumCATEGORYINFO" /> interface. This can be used to enumerate the CATIDs and localized description strings of the component categories registered with the system.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</para>
-    </returns>
-    <seealso cref="ICatInformation" />
+    <summary>Retrieves an enumerator for the component categories registered on the system.</summary>
+    <param name="lcid">The requested locale for any return szDescription of the enumerated categories. Typically, the caller specifies the value returned from the <see cref="GetUserDefaultLCID" /> function.</param>
+    <param name="ppenumCategoryInfo">A pointer to a pointer to an <see cref="IEnumCATEGORYINFO" /> interface. This can be used to enumerate the CATIDs and localized description strings of the component categories registered with the system.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</returns>
   </member>
   <member name="ICatInformation.EnumClassesOfCategories">
-    <summary>
-      <para>Retrieves an enumerator for the classes that implement one or more specified category identifiers.</para>
-    </summary>
-    <param name="cImplemented">
-      <para>The number of category IDs in the <i>rgcatidImpl</i> array. This value cannot be zero. If this value is -1, classes are included in the enumeration, regardless of the categories they implement.</para>
-    </param>
+    <summary>Retrieves an enumerator for the classes that implement one or more specified category identifiers.</summary>
+    <param name="cImplemented">The number of category IDs in the <i>rgcatidImpl</i> array. This value cannot be zero. If this value is -1, classes are included in the enumeration, regardless of the categories they implement.</param>
     <param name="rgcatidImpl">
       <para>An array of category identifiers.</para>
       <para>If a class requires a category identifier that is not specified, it is not included in the enumeration.</para>
     </param>
-    <param name="cRequired">
-      <para>The number of category IDs in the <i>rgcatidReq</i> array. This value can be zero. If this value is -1, classes are included in the enumeration, regardless of the categories they require.</para>
-    </param>
-    <param name="rgcatidReq">
-      <para>An array of category identifiers.</para>
-    </param>
-    <param name="ppenumClsid">
-      <para>A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd542667(v=vs.85)">IEnumCLSID</a> interface pointer that can be used to enumerate the CLSIDs of the classes that implement the specified category.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</para>
-    </returns>
-    <seealso cref="ICatInformation" />
+    <param name="cRequired">The number of category IDs in the <i>rgcatidReq</i> array. This value can be zero. If this value is -1, classes are included in the enumeration, regardless of the categories they require.</param>
+    <param name="rgcatidReq">An array of category identifiers.</param>
+    <param name="ppenumClsid">A pointer to an <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/dd542667(v=vs.85)">IEnumCLSID</a> interface pointer that can be used to enumerate the CLSIDs of the classes that implement the specified category.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</returns>
   </member>
   <member name="ICatInformation.EnumImplCategoriesOfClass">
-    <summary>
-      <para>Retrieves an enumerator for the CATIDs implemented by the specified class.</para>
-    </summary>
-    <param name="rclsid">
-      <para>The class ID.</para>
-    </param>
-    <param name="ppenumCatid">
-      <para>A pointer to an <see cref="IEnumCATID" /> interface pointer. This can be used to enumerate the CATIDs that are implemented by <i>rclsid</i>.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</para>
-    </returns>
-    <seealso cref="ICatInformation" />
+    <summary>Retrieves an enumerator for the CATIDs implemented by the specified class.</summary>
+    <param name="rclsid">The class ID.</param>
+    <param name="ppenumCatid">A pointer to an <see cref="IEnumCATID" /> interface pointer. This can be used to enumerate the CATIDs that are implemented by <i>rclsid</i>.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</returns>
   </member>
   <member name="ICatInformation.EnumReqCategoriesOfClass">
-    <summary>
-      <para>Retrieves an enumerator for the CATIDs required by the specified class.</para>
-    </summary>
-    <param name="rclsid">
-      <para>The class identifier.</para>
-    </param>
-    <param name="ppenumCatid">
-      <para>A pointer to an <see cref="IEnumCATID" /> interface pointer. This can be used to enumerate the CATIDs that are required by <i>rclsid</i>.</para>
-    </param>
-    <returns>
-      <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</para>
-    </returns>
-    <seealso cref="ICatInformation" />
+    <summary>Retrieves an enumerator for the CATIDs required by the specified class.</summary>
+    <param name="rclsid">The class identifier.</param>
+    <param name="ppenumCatid">A pointer to an <see cref="IEnumCATID" /> interface pointer. This can be used to enumerate the CATIDs that are required by <i>rclsid</i>.</param>
+    <returns>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK.</returns>
   </member>
   <member name="ICatInformation.GetCategoryDesc">
-    <summary>
-      <para>Retrieves the localized description string for a specific category ID.</para>
-    </summary>
-    <param name="rcatid">
-      <para>The category identifier.</para>
-    </param>
-    <param name="lcid">
-      <para>The locale.</para>
-    </param>
-    <param name="pszDesc">
-      <para>A pointer to the string pointer for the description. This string must be released by the caller using the <see cref="CoTaskMemFree" /> function.</para>
-    </param>
+    <summary>Retrieves the localized description string for a specific category ID.</summary>
+    <param name="rcatid">The category identifier.</param>
+    <param name="lcid">The locale.</param>
+    <param name="pszDesc">A pointer to the string pointer for the description. This string must be released by the caller using the <see cref="CoTaskMemFree" /> function.</param>
     <returns>
       <para>This method can return the standard return values E_INVALIDARG, E_OUTOFMEMORY, and S_OK, as well as the following values.</para>
       <list type="table">
@@ -92,59 +44,46 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>CAT_E_CATIDNOEXIST</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CAT_E_CATIDNOEXIST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The category ID <i>rcatid</i> is not registered.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The category ID <i>rcatid</i> is not registered.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>CAT_E_NODESCRIPTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>CAT_E_NODESCRIPTION</b>
-            </para>
-          </description>
-          <description>
-            <para>There is no description string for <i>rcatid</i> with the specified locale.</para>
-          </description>
-        </item>
+          <description>There is no description string for <i>rcatid</i> with the specified locale.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ICatInformation" />
   </member>
   <member name="ICatInformation.IsClassOfCategories">
-    <summary>
-      <para>Determines whether a class implements one or more categories.</para>
-    </summary>
-    <param name="rclsid">
-      <para>The class identifier.</para>
-    </param>
-    <param name="cImplemented">
-      <para>The number of category IDs in the <i>rgcatidImpl</i> array. This value cannot be zero. If this value is -1, the implemented categories are not tested.</para>
-    </param>
+    <summary>Determines whether a class implements one or more categories.</summary>
+    <param name="rclsid">The class identifier.</param>
+    <param name="cImplemented">The number of category IDs in the <i>rgcatidImpl</i> array. This value cannot be zero. If this value is -1, the implemented categories are not tested.</param>
     <param name="rgcatidImpl">
       <para>An array of category identifiers.</para>
       <para>If the class requires a category not listed in <i>rgcatidReq</i>, it is not included in the enumeration.</para>
     </param>
-    <param name="cRequired">
-      <para>The number of category IDs in the <i>rgcatidReq</i> array. This value can be zero. If this value is -1, the required categories are not tested.</para>
-    </param>
-    <param name="rgcatidReq">
-      <para>An array of category identifiers.</para>
-    </param>
-    <returns>
-      <para>If the class ID is of one of the specified categories, the return value is S_OK. Otherwise, is it S_FALSE.</para>
-    </returns>
-    <seealso cref="ICatInformation" />
+    <param name="cRequired">The number of category IDs in the <i>rgcatidReq</i> array. This value can be zero. If this value is -1, the required categories are not tested.</param>
+    <param name="rgcatidReq">An array of category identifiers.</param>
+    <returns>If the class ID is of one of the specified categories, the return value is S_OK. Otherwise, is it S_FALSE.</returns>
   </member>
   <member name="ICatInformation">
-    <summary>
-      <para>Obtains information about the categories implemented or required by a certain class, as well as information about the categories registered on the specified computer.</para>
-    </summary>
-    <seealso cref="ICatRegister" />
+    <summary>Obtains information about the categories implemented or required by a certain class, as well as information about the categories registered on the specified computer.</summary>
   </member>
 </doc>

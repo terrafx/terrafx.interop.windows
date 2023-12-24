@@ -4,236 +4,48 @@
 <doc>
   <member name="MFP_EVENT_TYPE">
     <summary>
-      <para>
-        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</para>
+      <div>
+        <b>Important</b>  Deprecated. This API may be removed from future releases of Windows. Applications should use the <a href="https://docs.microsoft.com//windows/desktop/medfound/media-session">Media Session</a> for playback.</div>
       <para>Defines event types for the <see cref="IMFPMediaPlayerCallback" /> interface.</para>
     </summary>
-    <remarks>
-      <para>For each event type, the <see cref="IMFPMediaPlayerCallback.OnMediaPlayerEvent" /> callback receives a pointer to a data structure. The first part of the data structure is always an <see cref="MFP_EVENT_HEADER" /> structure. The following table lists the data structure for each event type.</para>
-      <para>In your implementation of <see cref="OnMediaPlayerEvent" />, you must cast the <i>pEventHeader</i> parameter to the correct structure type. A set of macros is defined for this purpose. These macros check the value of the event type and return <b>NULL</b> if there is a mismatch; otherwise they return a pointer to the correct structure type.</para>
-      <list type="table">
-        <listheader>
-          <description>
-            <b>Event type</b>
-          </description>
-          <description>
-            <b>Event structure</b>
-            <para>
-              <b>Pointer cast macro</b>
-            </para>
-          </description>
-        </listheader>
-        <item>
-          <description>MFP_EVENT_TYPE_PLAY</description>
-          <description>
-            <para>
-              <see cref="MFP_PLAY_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_PLAY_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_PAUSE</description>
-          <description>
-            <para>
-              <see cref="MFP_PAUSE_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_PAUSE_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_STOP</description>
-          <description>
-            <para>
-              <see cref="MFP_STOP_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_STOP_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_POSITION_SET</description>
-          <description>
-            <para>
-              <see cref="MFP_POSITION_SET_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_POSITION_SET_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_RATE_SET</description>
-          <description>
-            <para>
-              <see cref="MFP_RATE_SET_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_RATE_SET_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_MEDIAITEM_CREATED</description>
-          <description>
-            <para>
-              <see cref="MFP_MEDIAITEM_CREATED_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_MEDIAITEM_CREATED_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_MEDIAITEM_SET</description>
-          <description>
-            <para>
-              <see cref="MFP_MEDIAITEM_SET_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_MEDIAITEM_SET_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_FRAME_STEP</description>
-          <description>
-            <para>
-              <see cref="MFP_FRAME_STEP_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_FRAME_STEP_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_MEDIAITEM_CLEARED</description>
-          <description>
-            <para>
-              <see cref="MFP_MEDIAITEM_CLEARED_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_MEDIAITEM_CLEARED_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_MF</description>
-          <description>
-            <para>
-              <see cref="MFP_MF_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_MF_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_ERROR</description>
-          <description>
-            <para>
-              <see cref="MFP_ERROR_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_ERROR_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_PLAYBACK_ENDED</description>
-          <description>
-            <para>
-              <see cref="MFP_PLAYBACK_ENDED_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_PLAYBACK_ENDED_EVENT" />
-            </para>
-          </description>
-        </item>
-        <item>
-          <description>MFP_EVENT_TYPE_ACQUIRE_USER_CREDENTIAL</description>
-          <description>
-            <para>
-              <see cref="MFP_ACQUIRE_USER_CREDENTIAL_EVENT" />
-            </para>
-            <para>
-              <see cref="MFP_GET_ACQUIRE_USER_CREDENTIAL_EVENT" />
-            </para>
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IMFPMediaPlayerCallback" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_PLAY">
-    <summary>
-      <para>Playback has started. This event is sent when the <see cref="IMFPMediaPlayer.Play" /> method completes.</para>
-    </summary>
+    <summary>Playback has started. This event is sent when the <see cref="IMFPMediaPlayer.Play" /> method completes.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_PAUSE">
-    <summary>
-      <para>Playback has paused. This event is sent when the <see cref="IMFPMediaPlayer.Pause" /> method completes.</para>
-    </summary>
+    <summary>Playback has paused. This event is sent when the <see cref="IMFPMediaPlayer.Pause" /> method completes.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_STOP">
-    <summary>
-      <para>Playback has stopped. This event is sent when the <see cref="IMFPMediaPlayer.Stop" /> method completes.</para>
-    </summary>
+    <summary>Playback has stopped. This event is sent when the <see cref="IMFPMediaPlayer.Stop" /> method completes.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_POSITION_SET">
-    <summary>
-      <para>The MFPlay player object has seeked to a new playback position. This event is sent when the <see cref="IMFPMediaPlayer.SetPosition" /> method completes.</para>
-    </summary>
+    <summary>The MFPlay player object has seeked to a new playback position. This event is sent when the <see cref="IMFPMediaPlayer.SetPosition" /> method completes.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_RATE_SET">
-    <summary>
-      <para>The playback rate has changed. This event is sent when the <see cref="IMFPMediaPlayer.SetRate" /> method completes.</para>
-    </summary>
+    <summary>The playback rate has changed. This event is sent when the <see cref="IMFPMediaPlayer.SetRate" /> method completes.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_MEDIAITEM_CREATED">
-    <summary>
-      <para>A new media item was created. This event is sent when the <see cref="IMFPMediaPlayer.CreateMediaItemFromURL" /> or <see cref="CreateMediaItemFromObject" /> method completes.</para>
-    </summary>
+    <summary>A new media item was created. This event is sent when the <see cref="IMFPMediaPlayer.CreateMediaItemFromURL" /> or <see cref="CreateMediaItemFromObject" /> method completes.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_MEDIAITEM_SET">
-    <summary>
-      <para>A media item is ready for playback. This event is sent when the <see cref="IMFPMediaPlayer.SetMediaItem" /> method completes.</para>
-    </summary>
+    <summary>A media item is ready for playback. This event is sent when the <see cref="IMFPMediaPlayer.SetMediaItem" /> method completes.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_FRAME_STEP">
-    <summary>
-      <para>A frame-step operation has completed. This event is sent when the <see cref="IMFPMediaPlayer.FrameStep" /> method completes.</para>
-    </summary>
+    <summary>A frame-step operation has completed. This event is sent when the <see cref="IMFPMediaPlayer.FrameStep" /> method completes.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_MEDIAITEM_CLEARED">
-    <summary>
-      <para>The current media item was cleared. This event is sent when the <see cref="IMFPMediaPlayer.ClearMediaItem" /> method completes.</para>
-    </summary>
+    <summary>The current media item was cleared. This event is sent when the <see cref="IMFPMediaPlayer.ClearMediaItem" /> method completes.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_MF">
-    <summary>
-      <para>A pipeline object sent an event. The player object forwards certain pipeline events to the application. For more information, see <see cref="MFP_MF_EVENT" />.</para>
-    </summary>
+    <summary>A pipeline object sent an event. The player object forwards certain pipeline events to the application. For more information, see <see cref="MFP_MF_EVENT" />.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_ERROR">
-    <summary>
-      <para>A playback error has occurred.</para>
-    </summary>
+    <summary>A playback error has occurred.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_PLAYBACK_ENDED">
-    <summary>
-      <para>Playback has ended. The player object sends this event when playback reaches the end of the media file.</para>
-    </summary>
+    <summary>Playback has ended. The player object sends this event when playback reaches the end of the media file.</summary>
   </member>
   <member name="MFP_EVENT_TYPE.MFP_EVENT_TYPE_ACQUIRE_USER_CREDENTIAL">
-    <summary>
-      <para>The media source requires authentication before it can play the file.</para>
-    </summary>
+    <summary>The media source requires authentication before it can play the file.</summary>
   </member>
 </doc>

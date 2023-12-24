@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DRED_ENABLEMENT">
+    <summary>Defines constants (used by the <see cref="ID3D12DeviceRemovedExtendedDataSettings interface" />) that specify how individual Device Removed Extended Data (DRED) features are enabled. As of DRED version 1.1, the default value for all settings is <b>D3D12_DRED_ENABLEMENT_SYSTEM_CONTROLLED</b>.</summary>
+  </member>
+  <member name="D3D12_DRED_ENABLEMENT.D3D12_DRED_ENABLEMENT_SYSTEM_CONTROLLED">
+    <summary>Specifies that a DRED feature is enabled only when DRED is turned on by the system automatically (for example, when a user is reproducing a problem via FeedbackHub).</summary>
+  </member>
+  <member name="D3D12_DRED_ENABLEMENT.D3D12_DRED_ENABLEMENT_FORCED_OFF">
+    <summary>Specifies that a DRED feature should be force-disabled, regardless of the system state.</summary>
+  </member>
+  <member name="D3D12_DRED_ENABLEMENT.D3D12_DRED_ENABLEMENT_FORCED_ON">
+    <summary>Specifies that a DRED feature should be force-enabled, regardless of the system state.</summary>
+  </member>
+</doc>

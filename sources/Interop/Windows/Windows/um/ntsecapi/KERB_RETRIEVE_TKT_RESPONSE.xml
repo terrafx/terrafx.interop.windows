@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_RETRIEVE_TKT_RESPONSE">
+    <summary>
+      <para>The <b>KERB_RETRIEVE_TKT_RESPONSE</b> structure contains the response from retrieving a ticket.</para>
+      <para>It is used by<see cref="LsaCallAuthenticationPackage" />.</para>
+    </summary>
+  </member>
+  <member name="KERB_RETRIEVE_TKT_RESPONSE.Ticket">
+    <summary>
+      <see cref="KERB_EXTERNAL_TICKET" /> structure containing the requested ticket.</summary>
+  </member>
+</doc>

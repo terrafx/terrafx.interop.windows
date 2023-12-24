@@ -3,103 +3,60 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WINHTTP_REQUEST_STAT_ENTRY">
-    <summary>
-      <para>The <b>WINHTTP_REQUEST_STAT_ENTRY</b> enumeration lists the available types of request statistics.</para>
-    </summary>
-    <remarks>
-      <para>This structure is used with <see cref="WinHttpQueryOption" /> to retrieve statistics for a request by specifying the <b>WINHTTP_OPTION_REQUEST_STATS</b> flag.</para>
-    </remarks>
-    <seealso cref="WinHttpQueryOption" />
-    <seealso cref="WINHTTP_REQUEST_STATS" />
+    <summary>The <b>WINHTTP_REQUEST_STAT_ENTRY</b> enumeration lists the available types of request statistics.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpConnectFailureCount">
-    <summary>
-      <para>The number of connection failures during connection establishment.</para>
-    </summary>
+    <summary>The number of connection failures during connection establishment.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpProxyFailureCount">
-    <summary>
-      <para>The number of proxy connection failures during connection establishment.</para>
-    </summary>
+    <summary>The number of proxy connection failures during connection establishment.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpTlsHandshakeClientLeg1Size">
-    <summary>
-      <para>The size of the client data for the first leg of the TLS handshake.</para>
-    </summary>
+    <summary>The size of the client data for the first leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpTlsHandshakeServerLeg1Size">
-    <summary>
-      <para>The size of the server data for the first leg of the TLS handshake.</para>
-    </summary>
+    <summary>The size of the server data for the first leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpTlsHandshakeClientLeg2Size">
-    <summary>
-      <para>The size of the client data for the second leg of the TLS handshake.</para>
-    </summary>
+    <summary>The size of the client data for the second leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpTlsHandshakeServerLeg2Size">
-    <summary>
-      <para>The size of the server data for the second leg of the TLS handshake.</para>
-    </summary>
+    <summary>The size of the server data for the second leg of the TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpRequestHeadersSize">
-    <summary>
-      <para>The size of the request headers.</para>
-    </summary>
+    <summary>The size of the request headers.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpRequestHeadersCompressedSize">
-    <summary>
-      <para>The compressed size of the request headers.</para>
-    </summary>
+    <summary>The compressed size of the request headers.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpResponseHeadersSize">
-    <summary>
-      <para>The size of the response headers.</para>
-    </summary>
+    <summary>The size of the response headers.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpResponseHeadersCompressedSize">
-    <summary>
-      <para>The compressed size of the response headers.</para>
-    </summary>
+    <summary>The compressed size of the response headers.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpResponseBodySize">
-    <summary>
-      <para>The size of the response body.</para>
-    </summary>
+    <summary>The size of the response body.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpResponseBodyCompressedSize">
-    <summary>
-      <para>The compressed size of the response body.</para>
-    </summary>
+    <summary>The compressed size of the response body.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpProxyTlsHandshakeClientLeg1Size">
-    <summary>
-      <para>The size of the client data for the first leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>The size of the client data for the first leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpProxyTlsHandshakeServerLeg1Size">
-    <summary>
-      <para>The size of the server data for the first leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>The size of the server data for the first leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpProxyTlsHandshakeClientLeg2Size">
-    <summary>
-      <para>The size of the client data for the second leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>The size of the client data for the second leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpProxyTlsHandshakeServerLeg2Size">
-    <summary>
-      <para>The size of the server data for the second leg of the proxy TLS handshake.</para>
-    </summary>
+    <summary>The size of the server data for the second leg of the proxy TLS handshake.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpRequestStatLast">
-    <summary>
-      <para>Marker for the end of the list of available statistics.</para>
-    </summary>
+    <summary>Marker for the end of the list of available statistics.</summary>
   </member>
   <member name="WINHTTP_REQUEST_STAT_ENTRY.WinHttpRequestStatMax">
-    <summary>
-      <para>The maximum number of statistics available.</para>
-    </summary>
+    <summary>The maximum number of statistics available.</summary>
   </member>
 </doc>

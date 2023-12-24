@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_BARRIER_SUBRESOURCE_RANGE">
+    <summary>Allows you to transition logically-adjacent ranges of subresources.</summary>
+  </member>
+  <member name="D3D12_BARRIER_SUBRESOURCE_RANGE.IndexOrFirstMipLevel">
+    <summary>The index of the first mip level in the range; or a subresource index, if <i>NumMipLevels</i> is zero. If a subresource index, then you can use the value <code>0xffffffff</code> to specify all subresources.</summary>
+  </member>
+  <member name="D3D12_BARRIER_SUBRESOURCE_RANGE.NumMipLevels">
+    <summary>Number of mip levels in the range, or zero to indicate that <i>IndexOrFirstMipLevel</i> is a subresource index.</summary>
+  </member>
+  <member name="D3D12_BARRIER_SUBRESOURCE_RANGE.FirstArraySlice">
+    <summary>Index of first array slice in the range. Ignored if <i>NumMipLevels</i> is zero.</summary>
+  </member>
+  <member name="D3D12_BARRIER_SUBRESOURCE_RANGE.NumArraySlices">
+    <summary>Number of array slices in the range. Ignored if <i>NumMipLevels</i> is zero.</summary>
+  </member>
+  <member name="D3D12_BARRIER_SUBRESOURCE_RANGE.FirstPlane">
+    <summary>First plane slice in the range. Ignored if <i>NumMipLevels</i> is zero.</summary>
+  </member>
+  <member name="D3D12_BARRIER_SUBRESOURCE_RANGE.NumPlanes">
+    <summary>Number of plane slices in the range. Ignored if <i>NumMipLevels</i> is zero.</summary>
+  </member>
+</doc>

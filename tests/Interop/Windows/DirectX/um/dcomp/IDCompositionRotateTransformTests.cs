@@ -21,32 +21,4 @@ public static unsafe partial class IDCompositionRotateTransformTests
     {
         Assert.That(typeof(IDCompositionRotateTransform).GUID, Is.EqualTo(IID_IDCompositionRotateTransform));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionRotateTransform" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionRotateTransform>(), Is.EqualTo(sizeof(IDCompositionRotateTransform)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionRotateTransform" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionRotateTransform).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionRotateTransform" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionRotateTransform), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionRotateTransform), Is.EqualTo(4));
-        }
-    }
 }

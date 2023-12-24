@@ -3,29 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="STATDATA">
-    <summary>
-      <para>Contains information used to specify each advisory connection. It is used for enumerating current advisory connections. It holds data returned by the <see cref="IEnumSTATDATA" /> enumerator. This enumerator interface is returned by <see cref="IDataObject:DAdvise" />. Each advisory connection is specified by a unique <b>STATDATA</b> structure.</para>
-    </summary>
-    <seealso cref="IEnumSTATDATA" />
+    <summary>Contains information used to specify each advisory connection. It is used for enumerating current advisory connections. It holds data returned by the <see cref="IEnumSTATDATA" /> enumerator. This enumerator interface is returned by <see cref="IDataObject:DAdvise" />. Each advisory connection is specified by a unique <b>STATDATA</b> structure.</summary>
   </member>
   <member name="STATDATA.formatetc">
-    <summary>
-      <para>The <see cref="FORMATETC" /> structure for the data of interest to the advise sink. The advise sink receives notification of changes to the data specified by this <b>FORMATETC</b> structure.</para>
-    </summary>
+    <summary>The <see cref="FORMATETC" /> structure for the data of interest to the advise sink. The advise sink receives notification of changes to the data specified by this <b>FORMATETC</b> structure.</summary>
   </member>
   <member name="STATDATA.advf">
-    <summary>
-      <para>The <see cref="ADVF" /> enumeration value that determines when the advisory sink is notified of changes in the data.</para>
-    </summary>
+    <summary>The <see cref="ADVF" /> enumeration value that determines when the advisory sink is notified of changes in the data.</summary>
   </member>
   <member name="STATDATA.pAdvSink">
-    <summary>
-      <para>The pointer for the <see cref="IAdviseSink" /> interface that will receive change notifications.</para>
-    </summary>
+    <summary>The pointer for the <see cref="IAdviseSink" /> interface that will receive change notifications.</summary>
   </member>
   <member name="STATDATA.dwConnection">
-    <summary>
-      <para>The token that uniquely identifies the advisory connection. This token is returned by the method that sets up the advisory connection.</para>
-    </summary>
+    <summary>The token that uniquely identifies the advisory connection. This token is returned by the method that sets up the advisory connection.</summary>
   </member>
 </doc>

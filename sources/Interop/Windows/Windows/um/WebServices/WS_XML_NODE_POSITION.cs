@@ -11,6 +11,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct WS_XML_NODE_POSITION
 {
     /// <include file='WS_XML_NODE_POSITION.xml' path='doc/member[@name="WS_XML_NODE_POSITION.buffer"]/*' />
+    [NativeTypeName("WS_XML_BUFFER*")]
     public IntPtr buffer;
 
     /// <include file='WS_XML_NODE_POSITION.xml' path='doc/member[@name="WS_XML_NODE_POSITION.node"]/*' />

@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_EMBOSS_PROP.xml' path='doc/member[@name="D2D1_EMBOSS_PROP"]/*' />
-public enum D2D1_EMBOSS_PROP : uint
+public enum D2D1_EMBOSS_PROP
 {
     /// <include file='D2D1_EMBOSS_PROP.xml' path='doc/member[@name="D2D1_EMBOSS_PROP.D2D1_EMBOSS_PROP_HEIGHT"]/*' />
     D2D1_EMBOSS_PROP_HEIGHT = 0,
@@ -15,5 +15,5 @@ public enum D2D1_EMBOSS_PROP : uint
     D2D1_EMBOSS_PROP_DIRECTION = 1,
 
     /// <include file='D2D1_EMBOSS_PROP.xml' path='doc/member[@name="D2D1_EMBOSS_PROP.D2D1_EMBOSS_PROP_FORCE_DWORD"]/*' />
-    D2D1_EMBOSS_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_EMBOSS_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

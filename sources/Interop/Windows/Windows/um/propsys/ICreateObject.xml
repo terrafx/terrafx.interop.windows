@@ -3,37 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICreateObject.CreateObject">
-    <summary>
-      <para>Creates a local object of a specified class and returns a pointer to a specified interface on the object.</para>
-    </summary>
-    <param name="clsid">
-      <para>Type: <b>REFCLSID</b></para>
-      <para>A reference to a CLSID.</para>
-    </param>
-    <param name="pUnkOuter">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the <see cref="IUnknown" /> interface that aggregates the object created by this function, or <b>NULL</b> if no aggregation is desired.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the interface the created object should return.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address of the pointer to the interface requested in <i>riid</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This method can be used with <see cref="GetPropertyStoreWithCreateObject" />.</para>
-    </remarks>
+    <summary>Creates a local object of a specified class and returns a pointer to a specified interface on the object.</summary>
+    <param name="clsid">A reference to a CLSID.</param>
+    <param name="pUnkOuter">A pointer to the <see cref="IUnknown" /> interface that aggregates the object created by this function, or <b>NULL</b> if no aggregation is desired.</param>
+    <param name="riid">A reference to the IID of the interface the created object should return.</param>
+    <param name="ppv">When this method returns, contains the address of the pointer to the interface requested in <i>riid</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICreateObject">
-    <summary>
-      <para>Exposes a method that creates an object of a specified class.</para>
-    </summary>
-    <seealso cref="IShellItem2.GetPropertyStoreWithCreateObject" />
+    <summary>Exposes a method that creates an object of a specified class.</summary>
   </member>
 </doc>

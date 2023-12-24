@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE">
+    <summary>Specifies video encoder rate control modes.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE.D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE_ABSOLUTE_QP_MAP">
+    <summary>No rate control budgeting. Each <see cref="EncodeFrame" /> call will interpret the the QP values in the <b>pRateControlQPMap</b> field of the <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_H264" /> or <see cref="D3D12_VIDEO_ENCODER_PICTURE_CONTROL_CODEC_DATA_HEVC" /> structure as a map of absolute QP values.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE.D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE_CQP">
+    <summary>Constant quantization parameter rate control mode.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE.D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE_CBR">
+    <summary>Constant bit rate rate control mode.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE.D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE_VBR">
+    <summary>Variable bit rate control mode.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE.D3D12_VIDEO_ENCODER_RATE_CONTROL_MODE_QVBR">
+    <summary>Constant quality target rate variable rate control mode.</summary>
+  </member>
+</doc>

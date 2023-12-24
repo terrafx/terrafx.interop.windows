@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EMRARC">
-    <summary>
-      <para>The <b>EMRARC, </b><b>EMRARCTO, </b><b>EMRCHORD, </b> and <b>EMRPIE</b> structures contain members for the <see cref="Arc" />, <see cref="ArcTo" />, <see cref="Chord" />, and <see cref="Pie" /> enhanced metafile records.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafile-structures">Metafile Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/metafiles">Metafiles Overview</seealso>
+    <summary>The <b>EMRARC,</b><b>EMRARCTO,</b><b>EMRCHORD,</b> and <b>EMRPIE</b> structures contain members for the <see cref="Arc" />, <see cref="ArcTo" />, <see cref="Chord" />, and <see cref="Pie" /> enhanced metafile records.</summary>
   </member>
   <member name="EMRARC.emr">
-    <summary>
-      <para>Base structure for all record types.</para>
-    </summary>
+    <summary>Base structure for all record types.</summary>
   </member>
   <member name="EMRARC.rclBox">
-    <summary>
-      <para>Bounding rectangle in logical units.</para>
-    </summary>
+    <summary>Bounding rectangle in logical units.</summary>
   </member>
   <member name="EMRARC.ptlStart">
-    <summary>
-      <para>Coordinates of first radial ending point in logical units.</para>
-    </summary>
+    <summary>Coordinates of first radial ending point in logical units.</summary>
   </member>
   <member name="EMRARC.ptlEnd">
-    <summary>
-      <para>Coordinates of second radial ending point in logical units.</para>
-    </summary>
+    <summary>Coordinates of second radial ending point in logical units.</summary>
   </member>
 </doc>

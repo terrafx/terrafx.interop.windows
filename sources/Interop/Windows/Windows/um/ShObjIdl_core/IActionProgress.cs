@@ -25,7 +25,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IActionProgress*, Guid*, void**, int>)(lpVtbl[0]))((IActionProgress*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IActionProgress*, Guid*, void**, int>)(lpVtbl[0]))((IActionProgress*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IActionProgress*, uint>)(lpVtbl[1]))((IActionProgress*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActionProgress*, uint>)(lpVtbl[1]))((IActionProgress*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IActionProgress*, uint>)(lpVtbl[2]))((IActionProgress*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActionProgress*, uint>)(lpVtbl[2]))((IActionProgress*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActionProgress.xml' path='doc/member[@name="IActionProgress.Begin"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
     [VtblIndex(3)]
     public HRESULT Begin(SPACTION action, [NativeTypeName("SPBEGINF")] uint flags)
     {
-        return ((delegate* unmanaged<IActionProgress*, SPACTION, uint, int>)(lpVtbl[3]))((IActionProgress*)Unsafe.AsPointer(ref this), action, flags);
+        return ((delegate* unmanaged[MemberFunction]<IActionProgress*, SPACTION, uint, int>)(lpVtbl[3]))((IActionProgress*)Unsafe.AsPointer(ref this), action, flags);
     }
 
     /// <include file='IActionProgress.xml' path='doc/member[@name="IActionProgress.UpdateProgress"]/*' />
@@ -59,15 +59,15 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
     [VtblIndex(4)]
     public HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ulCompleted, [NativeTypeName("ULONGLONG")] ulong ulTotal)
     {
-        return ((delegate* unmanaged<IActionProgress*, ulong, ulong, int>)(lpVtbl[4]))((IActionProgress*)Unsafe.AsPointer(ref this), ulCompleted, ulTotal);
+        return ((delegate* unmanaged[MemberFunction]<IActionProgress*, ulong, ulong, int>)(lpVtbl[4]))((IActionProgress*)Unsafe.AsPointer(ref this), ulCompleted, ulTotal);
     }
 
     /// <include file='IActionProgress.xml' path='doc/member[@name="IActionProgress.UpdateText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, BOOL fMayCompact)
+    public HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] char* pszText, BOOL fMayCompact)
     {
-        return ((delegate* unmanaged<IActionProgress*, SPTEXT, ushort*, BOOL, int>)(lpVtbl[5]))((IActionProgress*)Unsafe.AsPointer(ref this), sptext, pszText, fMayCompact);
+        return ((delegate* unmanaged[MemberFunction]<IActionProgress*, SPTEXT, char*, BOOL, int>)(lpVtbl[5]))((IActionProgress*)Unsafe.AsPointer(ref this), sptext, pszText, fMayCompact);
     }
 
     /// <include file='IActionProgress.xml' path='doc/member[@name="IActionProgress.QueryCancel"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
     [VtblIndex(6)]
     public HRESULT QueryCancel(BOOL* pfCancelled)
     {
-        return ((delegate* unmanaged<IActionProgress*, BOOL*, int>)(lpVtbl[6]))((IActionProgress*)Unsafe.AsPointer(ref this), pfCancelled);
+        return ((delegate* unmanaged[MemberFunction]<IActionProgress*, BOOL*, int>)(lpVtbl[6]))((IActionProgress*)Unsafe.AsPointer(ref this), pfCancelled);
     }
 
     /// <include file='IActionProgress.xml' path='doc/member[@name="IActionProgress.ResetCancel"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
     [VtblIndex(7)]
     public HRESULT ResetCancel()
     {
-        return ((delegate* unmanaged<IActionProgress*, int>)(lpVtbl[7]))((IActionProgress*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActionProgress*, int>)(lpVtbl[7]))((IActionProgress*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IActionProgress.xml' path='doc/member[@name="IActionProgress.End"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
     [VtblIndex(8)]
     public HRESULT End()
     {
-        return ((delegate* unmanaged<IActionProgress*, int>)(lpVtbl[8]))((IActionProgress*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IActionProgress*, int>)(lpVtbl[8]))((IActionProgress*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -103,7 +103,7 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
         HRESULT UpdateProgress([NativeTypeName("ULONGLONG")] ulong ulCompleted, [NativeTypeName("ULONGLONG")] ulong ulTotal);
 
         [VtblIndex(5)]
-        HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] ushort* pszText, BOOL fMayCompact);
+        HRESULT UpdateText(SPTEXT sptext, [NativeTypeName("LPCWSTR")] char* pszText, BOOL fMayCompact);
 
         [VtblIndex(6)]
         HRESULT QueryCancel(BOOL* pfCancelled);
@@ -119,30 +119,30 @@ public unsafe partial struct IActionProgress : IActionProgress.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SPACTION, SPBEGINF) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPACTION, uint, int> Begin;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPACTION, uint, int> Begin;
 
         [NativeTypeName("HRESULT (ULONGLONG, ULONGLONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ulong, ulong, int> UpdateProgress;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ulong, ulong, int> UpdateProgress;
 
         [NativeTypeName("HRESULT (SPTEXT, LPCWSTR, BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SPTEXT, ushort*, BOOL, int> UpdateText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SPTEXT, char*, BOOL, int> UpdateText;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> QueryCancel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> QueryCancel;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ResetCancel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ResetCancel;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> End;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> End;
     }
 }

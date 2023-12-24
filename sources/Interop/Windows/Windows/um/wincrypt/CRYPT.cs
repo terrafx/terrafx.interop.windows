@@ -414,7 +414,7 @@ public static unsafe partial class CRYPT
     [NativeTypeName("#define CRYPT_OID_FIND_LOCALIZED_NAME_FUNC \"CryptDllFindLocalizedName\"")]
     public static ReadOnlySpan<byte> CRYPT_OID_FIND_LOCALIZED_NAME_FUNC => "CryptDllFindLocalizedName"u8;
 
-    [NativeTypeName("#define CRYPT_OID_REGPATH \"Software\\\\Microsoft\\\\Cryptography\\\\OID\"")]
+    [NativeTypeName("#define CRYPT_OID_REGPATH \"Software\\Microsoft\\Cryptography\\OID\"")]
     public static ReadOnlySpan<byte> CRYPT_OID_REGPATH => "Software\\Microsoft\\Cryptography\\OID"u8;
 
     [NativeTypeName("#define CRYPT_OID_REG_ENCODING_TYPE_PREFIX \"EncodingType \"")]

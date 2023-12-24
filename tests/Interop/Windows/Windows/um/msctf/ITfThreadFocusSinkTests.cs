@@ -19,32 +19,4 @@ public static unsafe partial class ITfThreadFocusSinkTests
     {
         Assert.That(typeof(ITfThreadFocusSink).GUID, Is.EqualTo(IID_ITfThreadFocusSink));
     }
-
-    /// <summary>Validates that the <see cref="ITfThreadFocusSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfThreadFocusSink>(), Is.EqualTo(sizeof(ITfThreadFocusSink)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfThreadFocusSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfThreadFocusSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfThreadFocusSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfThreadFocusSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfThreadFocusSink), Is.EqualTo(4));
-        }
-    }
 }

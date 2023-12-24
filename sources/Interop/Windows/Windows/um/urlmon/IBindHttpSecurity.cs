@@ -25,7 +25,7 @@ public unsafe partial struct IBindHttpSecurity : IBindHttpSecurity.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IBindHttpSecurity*, Guid*, void**, int>)(lpVtbl[0]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IBindHttpSecurity*, Guid*, void**, int>)(lpVtbl[0]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IBindHttpSecurity : IBindHttpSecurity.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IBindHttpSecurity*, uint>)(lpVtbl[1]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBindHttpSecurity*, uint>)(lpVtbl[1]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IBindHttpSecurity : IBindHttpSecurity.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IBindHttpSecurity*, uint>)(lpVtbl[2]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IBindHttpSecurity*, uint>)(lpVtbl[2]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IBindHttpSecurity.xml' path='doc/member[@name="IBindHttpSecurity.GetIgnoreCertMask"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IBindHttpSecurity : IBindHttpSecurity.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetIgnoreCertMask([NativeTypeName("DWORD *")] uint* pdwIgnoreCertMask)
     {
-        return ((delegate* unmanaged<IBindHttpSecurity*, uint*, int>)(lpVtbl[3]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this), pdwIgnoreCertMask);
+        return ((delegate* unmanaged[MemberFunction]<IBindHttpSecurity*, uint*, int>)(lpVtbl[3]))((IBindHttpSecurity*)Unsafe.AsPointer(ref this), pdwIgnoreCertMask);
     }
 
     public interface Interface : IUnknown.Interface
@@ -64,15 +64,15 @@ public unsafe partial struct IBindHttpSecurity : IBindHttpSecurity.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetIgnoreCertMask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetIgnoreCertMask;
     }
 }

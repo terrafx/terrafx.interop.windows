@@ -25,7 +25,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, Guid*, void**, int>)(lpVtbl[0]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDMOVideoOutputOptimizations*, Guid*, void**, int>)(lpVtbl[0]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint>)(lpVtbl[1]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDMOVideoOutputOptimizations*, uint>)(lpVtbl[1]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint>)(lpVtbl[2]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDMOVideoOutputOptimizations*, uint>)(lpVtbl[2]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations.QueryOperationModePreferences"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
     [VtblIndex(3)]
     public HRESULT QueryOperationModePreferences([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRequestedCapabilities)
     {
-        return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[3]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwRequestedCapabilities);
+        return ((delegate* unmanaged[MemberFunction]<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[3]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwRequestedCapabilities);
     }
 
     /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations.SetOperationMode"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
     [VtblIndex(4)]
     public HRESULT SetOperationMode([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD")] uint dwEnabledFeatures)
     {
-        return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint, int>)(lpVtbl[4]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, dwEnabledFeatures);
+        return ((delegate* unmanaged[MemberFunction]<IDMOVideoOutputOptimizations*, uint, uint, int>)(lpVtbl[4]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, dwEnabledFeatures);
     }
 
     /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations.GetCurrentOperationMode"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
     [VtblIndex(5)]
     public HRESULT GetCurrentOperationMode([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwEnabledFeatures)
     {
-        return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[5]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwEnabledFeatures);
+        return ((delegate* unmanaged[MemberFunction]<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[5]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwEnabledFeatures);
     }
 
     /// <include file='IDMOVideoOutputOptimizations.xml' path='doc/member[@name="IDMOVideoOutputOptimizations.GetCurrentSampleRequirements"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
     [VtblIndex(6)]
     public HRESULT GetCurrentSampleRequirements([NativeTypeName("ULONG")] uint ulOutputStreamIndex, [NativeTypeName("DWORD *")] uint* pdwRequestedFeatures)
     {
-        return ((delegate* unmanaged<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[6]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwRequestedFeatures);
+        return ((delegate* unmanaged[MemberFunction]<IDMOVideoOutputOptimizations*, uint, uint*, int>)(lpVtbl[6]))((IDMOVideoOutputOptimizations*)Unsafe.AsPointer(ref this), ulOutputStreamIndex, pdwRequestedFeatures);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IDMOVideoOutputOptimizations : IDMOVideoOutputOptim
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> QueryOperationModePreferences;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> QueryOperationModePreferences;
 
         [NativeTypeName("HRESULT (ULONG, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> SetOperationMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> SetOperationMode;
 
         [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetCurrentOperationMode;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetCurrentOperationMode;
 
         [NativeTypeName("HRESULT (ULONG, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetCurrentSampleRequirements;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetCurrentSampleRequirements;
     }
 }

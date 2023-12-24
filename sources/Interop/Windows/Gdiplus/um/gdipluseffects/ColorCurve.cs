@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='ColorCurve.xml' path='doc/member[@name="ColorCurve"]/*' />
-[NativeTypeName("struct ColorCurve : Effect")]
+[NativeTypeName("struct ColorCurve : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct ColorCurve
 {
@@ -48,7 +48,7 @@ public unsafe partial struct ColorCurve
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::ColorCurveParams *")] ColorCurveParams* parameters)
+    public GpStatus SetParameters([NativeTypeName("const ColorCurveParams *")] ColorCurveParams* parameters)
     {
         uint size = 12;
 

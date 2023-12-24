@@ -28,7 +28,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, Guid*, void**, int>)(lpVtbl[0]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, Guid*, void**, int>)(lpVtbl[0]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -37,7 +37,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint>)(lpVtbl[1]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, uint>)(lpVtbl[1]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -46,7 +46,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint>)(lpVtbl[2]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, uint>)(lpVtbl[2]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IInspectable.GetIids" />
@@ -54,7 +54,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [VtblIndex(3)]
     public HRESULT GetIids([NativeTypeName("ULONG *")] uint* iidCount, [NativeTypeName("IID **")] Guid** iids)
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, uint*, Guid**, int>)(lpVtbl[3]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), iidCount, iids);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, uint*, Guid**, int>)(lpVtbl[3]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), iidCount, iids);
     }
 
     /// <inheritdoc cref="IInspectable.GetRuntimeClassName" />
@@ -62,7 +62,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [VtblIndex(4)]
     public HRESULT GetRuntimeClassName(HSTRING* className)
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HSTRING*, int>)(lpVtbl[4]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), className);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, HSTRING*, int>)(lpVtbl[4]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), className);
     }
 
     /// <inheritdoc cref="IInspectable.GetTrustLevel" />
@@ -70,7 +70,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [VtblIndex(5)]
     public HRESULT GetTrustLevel(TrustLevel* trustLevel)
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, TrustLevel*, int>)(lpVtbl[5]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), trustLevel);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, TrustLevel*, int>)(lpVtbl[5]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), trustLevel);
     }
 
     /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessForAppWithWindowAsync"]/*' />
@@ -78,7 +78,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [VtblIndex(6)]
     public HRESULT RequestAccessForAppWithWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, Guid*, void**, int>)(lpVtbl[6]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, riid, asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, Guid*, void**, int>)(lpVtbl[6]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, riid, asyncOperation);
     }
 
     /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessWithAuditingInfoForWindowAsync"]/*' />
@@ -86,7 +86,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [VtblIndex(7)]
     public HRESULT RequestAccessWithAuditingInfoForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, IUnknown* auditInfoUnk, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, auditInfoUnk, riid, asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int>)(lpVtbl[7]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, auditInfoUnk, riid, asyncOperation);
     }
 
     /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessWithMessageForWindowAsync"]/*' />
@@ -94,7 +94,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [VtblIndex(8)]
     public HRESULT RequestAccessWithMessageForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING targetIdentity, IUnknown* auditInfoUnk, HSTRING messageFromApp, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int>)(lpVtbl[8]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, auditInfoUnk, messageFromApp, riid, asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int>)(lpVtbl[8]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, targetIdentity, auditInfoUnk, messageFromApp, riid, asyncOperation);
     }
 
     /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessForAppWithAuditingInfoForWindowAsync"]/*' />
@@ -102,7 +102,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [VtblIndex(9)]
     public HRESULT RequestAccessForAppWithAuditingInfoForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, IUnknown* auditInfoUnk, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int>)(lpVtbl[9]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, auditInfoUnk, riid, asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int>)(lpVtbl[9]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, auditInfoUnk, riid, asyncOperation);
     }
 
     /// <include file='IProtectionPolicyManagerInterop2.xml' path='doc/member[@name="IProtectionPolicyManagerInterop2.RequestAccessForAppWithMessageForWindowAsync"]/*' />
@@ -110,7 +110,7 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
     [VtblIndex(10)]
     public HRESULT RequestAccessForAppWithMessageForWindowAsync(HWND appWindow, HSTRING sourceIdentity, HSTRING appPackageFamilyName, IUnknown* auditInfoUnk, HSTRING messageFromApp, [NativeTypeName("const IID &")] Guid* riid, void** asyncOperation)
     {
-        return ((delegate* unmanaged<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int>)(lpVtbl[10]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, auditInfoUnk, messageFromApp, riid, asyncOperation);
+        return ((delegate* unmanaged[MemberFunction]<IProtectionPolicyManagerInterop2*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int>)(lpVtbl[10]))((IProtectionPolicyManagerInterop2*)Unsafe.AsPointer(ref this), appWindow, sourceIdentity, appPackageFamilyName, auditInfoUnk, messageFromApp, riid, asyncOperation);
     }
 
     public interface Interface : IInspectable.Interface
@@ -135,36 +135,36 @@ public unsafe partial struct IProtectionPolicyManagerInterop2 : IProtectionPolic
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (ULONG *, IID **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, Guid**, int> GetIids;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, Guid**, int> GetIids;
 
         [NativeTypeName("HRESULT (HSTRING *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HSTRING*, int> GetRuntimeClassName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HSTRING*, int> GetRuntimeClassName;
 
         [NativeTypeName("HRESULT (TrustLevel *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TrustLevel*, int> GetTrustLevel;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TrustLevel*, int> GetTrustLevel;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, Guid*, void**, int> RequestAccessForAppWithWindowAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, HSTRING, HSTRING, Guid*, void**, int> RequestAccessForAppWithWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessWithAuditingInfoForWindowAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessWithAuditingInfoForWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, HSTRING, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessWithMessageForWindowAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessWithMessageForWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessForAppWithAuditingInfoForWindowAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, Guid*, void**, int> RequestAccessForAppWithAuditingInfoForWindowAsync;
 
         [NativeTypeName("HRESULT (HWND, HSTRING, HSTRING, IUnknown *, HSTRING, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessForAppWithMessageForWindowAsync;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HWND, HSTRING, HSTRING, IUnknown*, HSTRING, Guid*, void**, int> RequestAccessForAppWithMessageForWindowAsync;
     }
 }

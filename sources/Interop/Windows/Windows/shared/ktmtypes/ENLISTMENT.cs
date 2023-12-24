@@ -13,7 +13,7 @@ public static partial class ENLISTMENT
     [NativeTypeName("#define ENLISTMENT_MAXIMUM_OPTION 0x00000001")]
     public const int ENLISTMENT_MAXIMUM_OPTION = 0x00000001;
 
-    [NativeTypeName("#define ENLISTMENT_OBJECT_PATH L\"\\\\Enlistment\\\\\"")]
+    [NativeTypeName("#define ENLISTMENT_OBJECT_PATH L\"\\Enlistment\"")]
     public const string ENLISTMENT_OBJECT_PATH = "\\Enlistment\\";
 
     [NativeTypeName("#define ENLISTMENT_OBJECT_NAME_LENGTH_IN_BYTES (sizeof(ENLISTMENT_OBJECT_PATH)+(38*sizeof(WCHAR)))")]

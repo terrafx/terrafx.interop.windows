@@ -19,25 +19,4 @@ public static unsafe partial class SimpleConflictPresenterTests
     {
         Assert.That(typeof(SimpleConflictPresenter).GUID, Is.EqualTo(IID_SimpleConflictPresenter));
     }
-
-    /// <summary>Validates that the <see cref="SimpleConflictPresenter" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SimpleConflictPresenter>(), Is.EqualTo(sizeof(SimpleConflictPresenter)));
-    }
-
-    /// <summary>Validates that the <see cref="SimpleConflictPresenter" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SimpleConflictPresenter).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SimpleConflictPresenter" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SimpleConflictPresenter), Is.EqualTo(1));
-    }
 }

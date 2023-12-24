@@ -17,7 +17,7 @@ public partial struct DVD_TIMECODE
     public uint Hours1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return _bitfield & 0xFu;
         }
@@ -34,7 +34,7 @@ public partial struct DVD_TIMECODE
     public uint Hours10
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 4) & 0xFu;
         }
@@ -51,7 +51,7 @@ public partial struct DVD_TIMECODE
     public uint Minutes1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 8) & 0xFu;
         }
@@ -68,7 +68,7 @@ public partial struct DVD_TIMECODE
     public uint Minutes10
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 12) & 0xFu;
         }
@@ -85,7 +85,7 @@ public partial struct DVD_TIMECODE
     public uint Seconds1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 16) & 0xFu;
         }
@@ -102,7 +102,7 @@ public partial struct DVD_TIMECODE
     public uint Seconds10
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 20) & 0xFu;
         }
@@ -119,7 +119,7 @@ public partial struct DVD_TIMECODE
     public uint Frames1
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 24) & 0xFu;
         }
@@ -136,7 +136,7 @@ public partial struct DVD_TIMECODE
     public uint Frames10
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 28) & 0x3u;
         }
@@ -153,7 +153,7 @@ public partial struct DVD_TIMECODE
     public uint FrameRateCode
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (_bitfield >> 30) & 0x3u;
         }

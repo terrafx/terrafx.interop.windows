@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12VideoExtensionCommand.GetDesc">
+    <summary>Gets the <see cref="D3D12_VIDEO_EXTENSION_COMMAND_DESC" /> provided when the interface was created.</summary>
+    <returns>The <see cref="D3D12_VIDEO_EXTENSION_COMMAND_DESC" /> provided when the interface was created.</returns>
+  </member>
+  <member name="ID3D12VideoExtensionCommand.GetProtectedResourceSession">
+    <summary>Gets the <see cref="ID3D12ProtectedResourceSession" /> that was passed into <see cref="ID3D12VideoDevice2.CreateVideoExtensionCommand" /> when the <see cref="ID3D12VideoExtensionCommand" /> was created.</summary>
+    <param name="riid">The globally unique identifier (GUID) for the <b>ID3D12ProtectedResourceSession</b> interface.</param>
+    <param name="ppProtectedSession">Receives a void pointer representing the <b>ID3D12ProtectedResourceSession</b> interface.</param>
+    <returns>This method returns HRESULT.</returns>
+  </member>
+  <member name="ID3D12VideoExtensionCommand">
+    <summary>Represents a video extension command.</summary>
+  </member>
+</doc>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Device10.CreateCommittedResource3">
+    <summary>
+      <para>Creates a committed resource with an initial layout rather than an initial state.</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later.</para>
+    </summary>
+    <param name="pHeapProperties">A pointer to a <b>D3D12_HEAP_PROPERTIES</b> structure that provides properties for the resource's heap.</param>
+    <param name="HeapFlags">Heap options, as a bitwise-OR'd combination of <b>D3D12_HEAP_FLAGS</b> enumeration constants.</param>
+    <param name="pDesc">A pointer to a <b>D3D12_RESOURCE_DESC1</b> structure that describes the resource, including a mip region.</param>
+    <param name="InitialLayout">The initial layout of the texture resource; <b>D3D12_BARRIER_LAYOUT.D3D12_BARRIER_LAYOUT_UNDEFINED</b> for buffers.</param>
+    <param name="pOptimizedClearValue">
+      <para>Specifies a <b>D3D12_CLEAR_VALUE</b> structure that describes the default value for a clear color.</para>
+      <para>
+        <i>pOptimizedClearValue</i> specifies a value for which clear operations are most optimal. When the created resource is a texture with either the <see cref="D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET" /> or <b>D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL</b> flags, you should choose the value with which the clear operation will most commonly be called. You can call the clear operation with other values, but those operations won't be as efficient as when the value matches the one passed in to resource creation.</para>
+      <para>When you use <see cref="D3D12_RESOURCE_DIMENSION_BUFFER" />, you must set <i>pOptimizedClearValue</i> to <code>nullptr</code>.</para>
+    </param>
+    <param name="pProtectedSession">An optional pointer to an object that represents a session for content protection. If provided, this session indicates that the resource should be protected. You can obtain an <b>ID3D12ProtectedResourceSession</b> by calling <see cref="ID3D12Device4.CreateProtectedResourceSession" />.</param>
+    <param name="NumCastableFormats">The number of elements in <i>pCastableFormats</i>.</param>
+    <param name="pCastableFormats">A contiguous array of <see cref="DXGI_FORMAT" /> structures that this resource can be cast to.</param>
+    <param name="riidResource">
+      <para>A reference to the globally unique identifier (<b>GUID</b>) of the resource interface to return in <i>ppvResource</i>.</para>
+      <para>While <i>riidResource</i> is most commonly the <b>GUID</b> of <see cref="ID3D12Resource" />, it may be the <b>GUID</b> of any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvResource">
+      <para>An optional pointer to a memory block that receives the requested interface pointer to the created resource object.</para>
+      <para>
+        <i>ppvResource</i> can be <code>nullptr</code>, to enable capability testing. When <i>ppvResource</i> is <code>nullptr</code>, no object is created, and <b>S_FALSE</b> is returned when <i>pDesc</i> is valid.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/desktop/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the resource.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device10.CreatePlacedResource2">
+    <summary>
+      <para>Creates a resource that is placed in a specific heap. Placed resources are the lightest weight resource objects available, and are the fastest to create and destroy.</para>
+      <para>Your application can re-use video memory by overlapping multiple Direct3D placed and reserved resources on heap regions. The simple memory re-use model (described in <a href="https://docs.microsoft.com/#remarks">Remarks</a>) exists to clarify which overlapping resource is valid at any given time. To maximize graphics tool support, with the simple model data-inheritance isn't supported; and finer-grained tile and sub-resource invalidation isn't supported. Only full overlapping resource invalidation occurs.</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later.</para>
+    </summary>
+    <param name="pHeap">A pointer to the <b>ID3D12Heap</b> interface that represents the heap in which the resource is placed.</param>
+    <param name="HeapOffset">The offset, in bytes, to the resource. The <i>HeapOffset</i> must be a multiple of the resource's alignment, and <i>HeapOffset</i> plus the resource size must be smaller than or equal to the heap size. <see cref="GetResourceAllocationInfo" /> must be used to understand the sizes of texture resources.</param>
+    <param name="pDesc">A pointer to a <b>D3D12_RESOURCE_DESC</b> structure that describes the resource.</param>
+    <param name="InitialLayout">The initial layout of the texture resource; <b>D3D12_BARRIER_LAYOUT.D3D12_BARRIER_LAYOUT_UNDEFINED</b> for buffers.</param>
+    <param name="pOptimizedClearValue">
+      <para>Specifies a <b>D3D12_CLEAR_VALUE</b> that describes the default value for a clear color.</para>
+      <para>
+        <i>pOptimizedClearValue</i> specifies a value for which clear operations are most optimal. When the created resource is a texture with either the <b>D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET</b> or <b>D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL</b> flags, your application should choose the value that the clear operation will most commonly be called with.</para>
+      <para>Clear operations can be called with other values, but those operations will not be as efficient as when the value matches the one passed into resource creation.</para>
+      <para>
+        <i>pOptimizedClearValue</i> must be NULL when used with <b>D3D12_RESOURCE_DIMENSION_BUFFER</b>.</para>
+    </param>
+    <param name="NumCastableFormats">The number of elements in <i>pCastableFormats</i>.</param>
+    <param name="pCastableFormats">A contiguous array of <see cref="DXGI_FORMAT" /> structures that this resource can be cast to.</param>
+    <param name="riid">
+      <para>The globally unique identifier (<b>GUID</b>) for the resource interface. This is an input parameter.</para>
+      <para>The <b>REFIID</b>, or <b>GUID</b>, of the interface to the resource can be obtained by using the <code>__uuidof</code> macro. For example, <code>__uuidof(ID3D12Resource)</code> gets the <b>GUID</b> of the interface to a resource. Although <b>riid</b> is, most commonly, the GUID for <see cref="ID3D12Resource" />, it may be any <b>GUID</b> for any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvResource">A pointer to a memory block that receives a pointer to the resource. <i>ppvResource</i> can be NULL, to enable capability testing. When <i>ppvResource</i> is NULL, no object will be created and S_FALSE will be returned when <i>pResourceDesc</i> and other parameters are valid.</param>
+    <returns>This method returns <b>E_OUTOFMEMORY</b> if there is insufficient memory to create the resource. See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a> for other possible return values.</returns>
+  </member>
+  <member name="ID3D12Device10.CreateReservedResource2">
+    <summary>
+      <para>Creates a resource that is reserved, and not yet mapped to any pages in a heap.</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later.</para>
+    </summary>
+    <param name="pDesc">A pointer to a <b>D3D12_RESOURCE_DESC</b> structure that describes the resource.</param>
+    <param name="InitialLayout">The initial layout of the texture resource; <b>D3D12_BARRIER_LAYOUT.D3D12_BARRIER_LAYOUT_UNDEFINED</b> for buffers.</param>
+    <param name="pOptimizedClearValue">
+      <para>Specifies a <b>D3D12_CLEAR_VALUE</b> structure that describes the default value for a clear color.</para>
+      <para>
+        <i>pOptimizedClearValue</i> specifies a value for which clear operations are most optimal. When the created resource is a texture with either the <see cref="D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET" /> or <b>D3D12_RESOURCE_FLAG_ALLOW_DEPTH_STENCIL</b> flags, you should choose the value with which the clear operation will most commonly be called. You can call the clear operation with other values, but those operations won't be as efficient as when the value matches the one passed in to resource creation.</para>
+      <para>When you use <see cref="D3D12_RESOURCE_DIMENSION_BUFFER" />, you must set <i>pOptimizedClearValue</i> to <code>nullptr</code>.</para>
+    </param>
+    <param name="pProtectedSession">An optional pointer to an object that represents a session for content protection. If provided, this session indicates that the resource should be protected. You can obtain an <b>ID3D12ProtectedResourceSession</b> by calling <see cref="ID3D12Device4.CreateProtectedResourceSession" />.</param>
+    <param name="NumCastableFormats">The number of elements in <i>pCastableFormats</i>.</param>
+    <param name="pCastableFormats">A contiguous array of <see cref="DXGI_FORMAT" /> structures that this resource can be cast to.</param>
+    <param name="riid">
+      <para>A reference to the globally unique identifier (<b>GUID</b>) of the resource interface to return in <i>ppvResource</i>. See <b>Remarks</b>.</para>
+      <para>While <i>riidResource</i> is most commonly the <b>GUID</b> of <see cref="ID3D12Resource" />, it may be the <b>GUID</b> of any interface. If the resource object doesn't support the interface for this <b>GUID</b>, then creation fails with <b>E_NOINTERFACE</b>.</para>
+    </param>
+    <param name="ppvResource">
+      <para>An optional pointer to a memory block that receives the requested interface pointer to the created resource object.</para>
+      <para>
+        <i>ppvResource</i> can be <code>nullptr</code>, to enable capability testing. When <i>ppvResource</i> is <code>nullptr</code>, no object is created, and <b>S_FALSE</b> is returned when <i>pDesc</i> is valid.</para>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a><a href="https://docs.microsoft.com//windows/win32/com/com-error-codes-10">error code</a>.</para>
+      <para>|Return value|Description| |-|-| |E_OUTOFMEMORY|There is insufficient memory to create the resource.|</para>
+      <para>See <a href="https://docs.microsoft.com//windows/win32/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 return codes</a> for other possible return values.</para>
+    </returns>
+  </member>
+  <member name="ID3D12Device10">
+    <summary>
+      <para>Represents a virtual adapter.</para>
+      <para>Requires the DirectX 12 Agility SDK 1.7 or later.</para>
+    </summary>
+  </member>
+</doc>

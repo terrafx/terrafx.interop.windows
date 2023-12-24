@@ -12,7 +12,7 @@ public unsafe partial struct D2D1_PROPERTY_BINDING
 {
     /// <include file='D2D1_PROPERTY_BINDING.xml' path='doc/member[@name="D2D1_PROPERTY_BINDING.propertyName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* propertyName;
+    public char* propertyName;
 
     /// <include file='D2D1_PROPERTY_BINDING.xml' path='doc/member[@name="D2D1_PROPERTY_BINDING.setFunction"]/*' />
     [NativeTypeName("PD2D1_PROPERTY_SET_FUNCTION")]

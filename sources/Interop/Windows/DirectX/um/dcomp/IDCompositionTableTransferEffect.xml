@@ -3,302 +3,103 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDCompositionTableTransferEffect.SetAlphaDisable">
-    <summary>
-      <para>Specifies whether to apply the transfer function to the Alpha channel.</para>
-    </summary>
-    <param name="alphaDisable">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether to apply the transfer function to the alpha channel.
-If you set this to TRUE the effect does not apply the transfer function to the Alpha channel. If you set this to FALSE it applies the AlphaTableTransfer function to the Alpha channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Specifies whether to apply the transfer function to the Alpha channel.</summary>
+    <param name="alphaDisable">A boolean value that specifies whether to apply the transfer function to the alpha channel. If you set this to TRUE the effect does not apply the transfer function to the Alpha channel. If you set this to FALSE it applies the AlphaTableTransfer function to the Alpha channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetAlphaTable">
-    <summary>
-      <para>Sets the list of values used to define the transfer function for the alpha channel.</para>
-    </summary>
-    <param name="tableValues">
-      <para>Type: <b>const float*</b></para>
-      <para>The list of values used to define the transfer function for the alpha channel.</para>
-    </param>
-    <param name="count">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of values in the tableValues parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets the list of values used to define the transfer function for the alpha channel.</summary>
+    <param name="tableValues">The list of values used to define the transfer function for the alpha channel.</param>
+    <param name="count">The number of values in the tableValues parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetAlphaTableValue">
-    <summary>
-      <para>Sets a value in the alpha table.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the value to set.</para>
-    </param>
-    <param name="value">
-      <para>Type: <b>float</b></para>
-      <para>The new value.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets a value in the alpha table.</summary>
+    <param name="index">The index of the value to set.</param>
+    <param name="value">The new value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetAlphaTableValue">
-    <summary>
-      <para>Sets a value in the alpha table.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>Index of the value to change.</para>
-    </param>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the value in the alpha table changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets a value in the alpha table.</summary>
+    <param name="index">Index of the value to change.</param>
+    <param name="animation">An animation that represents how the value in the alpha table changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetBlueDisable">
-    <summary>
-      <para>Specifies whether to apply the transfer function to the blue channel.</para>
-    </summary>
-    <param name="blueDisable">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether to apply the transfer function to the blue channel.
-If you set this to TRUE the effect does not apply the transfer function to the blue channel. If you set this to FALSE it applies the BlueTableTransfer function to the Blue channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Specifies whether to apply the transfer function to the blue channel.</summary>
+    <param name="blueDisable">A boolean value that specifies whether to apply the transfer function to the blue channel. If you set this to TRUE the effect does not apply the transfer function to the blue channel. If you set this to FALSE it applies the BlueTableTransfer function to the Blue channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetBlueTable">
-    <summary>
-      <para>Sets the list of values used to define the transfer function for the blue channel.</para>
-    </summary>
-    <param name="tableValues">
-      <para>Type: <b>const float*</b></para>
-      <para>The list of values used to define the transfer function for the blue channel.</para>
-    </param>
-    <param name="count">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of values in the tableValues parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets the list of values used to define the transfer function for the blue channel.</summary>
+    <param name="tableValues">The list of values used to define the transfer function for the blue channel.</param>
+    <param name="count">The number of values in the tableValues parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetBlueTableValue">
-    <summary>
-      <para>Sets a value in the blue table.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the value to set.</para>
-    </param>
-    <param name="value">
-      <para>Type: <b>float</b></para>
-      <para>The new value.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets a value in the blue table.</summary>
+    <param name="index">The index of the value to set.</param>
+    <param name="value">The new value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetBlueTableValue">
-    <summary>
-      <para>Sets a value in the blue table.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the value to set.</para>
-    </param>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the value changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets a value in the blue table.</summary>
+    <param name="index">The index of the value to set.</param>
+    <param name="animation">An animation that represents how the value changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetClampOutput">
-    <summary>
-      <para>Specifies whether the effect clamps color values to between 0 and 1 before the effect passes the values to the next effect in the graph.</para>
-    </summary>
-    <param name="clampOutput">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether the effect clamps color values to between 0 and 1 before the effect passes the values to the next effect in the graph.
-If you set this to TRUE the effect will clamp the values. If you set this to FALSE, the effect will not clamp the color values,
-but other effects and the output surface may clamp the values if they are not of high enough precision.
-The effect clamps the values before it premultiplies the alpha.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Specifies whether the effect clamps color values to between 0 and 1 before the effect passes the values to the next effect in the graph.</summary>
+    <param name="clampOutput">A boolean value that specifies whether the effect clamps color values to between 0 and 1 before the effect passes the values to the next effect in the graph. If you set this to TRUE the effect will clamp the values. If you set this to FALSE, the effect will not clamp the color values, but other effects and the output surface may clamp the values if they are not of high enough precision. The effect clamps the values before it premultiplies the alpha.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetGreenDisable">
-    <summary>
-      <para>Specifies whether to apply the transfer function to the green channel.</para>
-    </summary>
-    <param name="greenDisable">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether to apply the transfer function to the green channel.
-If you set this to TRUE the effect does not apply the transfer function to the green channel. If you set this to FALSE it applies the GreenTableTransfer function to the green channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Specifies whether to apply the transfer function to the green channel.</summary>
+    <param name="greenDisable">A boolean value that specifies whether to apply the transfer function to the green channel. If you set this to TRUE the effect does not apply the transfer function to the green channel. If you set this to FALSE it applies the GreenTableTransfer function to the green channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetGreenTable">
-    <summary>
-      <para>Sets the list of values used to define the transfer function for the green channel.</para>
-    </summary>
-    <param name="tableValues">
-      <para>Type: <b>const float*</b></para>
-      <para>The list of values used to define the transfer function for the green channel.</para>
-    </param>
-    <param name="count">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of values in the tableValues parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets the list of values used to define the transfer function for the green channel.</summary>
+    <param name="tableValues">The list of values used to define the transfer function for the green channel.</param>
+    <param name="count">The number of values in the tableValues parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetGreenTableValue">
-    <summary>
-      <para>Sets a value in the green table.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the value to set.</para>
-    </param>
-    <param name="value">
-      <para>Type: <b>float</b></para>
-      <para>The value to set.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets a value in the green table.</summary>
+    <param name="index">The index of the value to set.</param>
+    <param name="value">The value to set.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetGreenTableValue">
-    <summary>
-      <para>Sets a value in the green table.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the value to set.</para>
-    </param>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the value changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets a value in the green table.</summary>
+    <param name="index">The index of the value to set.</param>
+    <param name="animation">An animation that represents how the value changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetRedDisable">
-    <summary>
-      <para>Specifies whether to apply the transfer function to the red channel.</para>
-    </summary>
-    <param name="redDisable">
-      <para>Type: <b>BOOL</b></para>
-      <para>A boolean value that specifies whether to apply the transfer function to the red channel.
-If you set this to TRUE the effect does not apply the transfer function to the red channel. If you set this to FALSE it applies the RedTableTransfer function to the red channel.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Specifies whether to apply the transfer function to the red channel.</summary>
+    <param name="redDisable">A boolean value that specifies whether to apply the transfer function to the red channel. If you set this to TRUE the effect does not apply the transfer function to the red channel. If you set this to FALSE it applies the RedTableTransfer function to the red channel.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetRedTable">
-    <summary>
-      <para>Sets the list of values used to define the transfer function for the red channel.</para>
-    </summary>
-    <param name="tableValues">
-      <para>Type: <b>const float*</b></para>
-      <para>The list of values used to define the transfer function for the red channel.</para>
-    </param>
-    <param name="count">
-      <para>Type: <b>UINT</b></para>
-      <para>The number of values in the tableValues parameter.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets the list of values used to define the transfer function for the red channel.</summary>
+    <param name="tableValues">The list of values used to define the transfer function for the red channel.</param>
+    <param name="count">The number of values in the tableValues parameter.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetRedTableValue">
-    <summary>
-      <para>Sets a value in the red table.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the value to set.</para>
-    </param>
-    <param name="value">
-      <para>Type: <b>float</b></para>
-      <para>The new value.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets a value in the red table.</summary>
+    <param name="index">The index of the value to set.</param>
+    <param name="value">The new value.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect.SetRedTableValue">
-    <summary>
-      <para>Sets a value in the red table.</para>
-    </summary>
-    <param name="index">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the value to set.</para>
-    </param>
-    <param name="animation">
-      <para>Type: <b><see cref="IDCompositionAnimation" />*</b></para>
-      <para>An animation that represents how the value changes over time. This parameter must not be NULL.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IDCompositionTableTransferEffect" />
+    <summary>Sets a value in the red table.</summary>
+    <param name="index">The index of the value to set.</param>
+    <param name="animation">An animation that represents how the value changes over time. This parameter must not be NULL.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IDCompositionTableTransferEffect">
-    <summary>
-      <para>The table transfer effect is used to map the color intensities of an image using a transfer function created from interpolating a list of values you provide.</para>
-    </summary>
-    <seealso cref="IDCompositionFilterEffect" />
+    <summary>The table transfer effect is used to map the color intensities of an image using a transfer function created from interpolating a list of values you provide.</summary>
   </member>
 </doc>

@@ -3,11 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IActionProgressDialog.Initialize">
-    <summary>
-      <para>Provides details about the action progress dialog.</para>
-    </summary>
+    <summary>Provides details about the action progress dialog.</summary>
     <param name="flags">
-      <para>Type: <b>SPINITF</b></para>
       <para>One of the following values.</para>
       <h4>SPINITF_NORMAL (0x01)</h4>
       <para>Use the default progress dialog behavior.</para>
@@ -16,34 +13,15 @@
       <h4>SPINITF_NOMINIMIZE (0x08)</h4>
       <para>Do not display a minimize button.</para>
     </param>
-    <param name="pszTitle">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The title of the progress dialog.</para>
-    </param>
-    <param name="pszCancel">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>The string displayed when a user closes the dialog before completion.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="pszTitle">The title of the progress dialog.</param>
+    <param name="pszCancel">The string displayed when a user closes the dialog before completion.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActionProgressDialog.Stop">
-    <summary>
-      <para>Stops a progress dialog.</para>
-    </summary>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Stops a progress dialog.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IActionProgressDialog">
-    <summary>
-      <para>Exposes methods that initialize and stop a progress dialog.</para>
-    </summary>
-    <remarks>
-      <para>To instantiate an object that implements this interface, call <see cref="CoCreateInstance" /> using the class identifier (CLSID) CLSID_ProgressDialog.</para>
-    </remarks>
+    <summary>Exposes methods that initialize and stop a progress dialog.</summary>
   </member>
 </doc>

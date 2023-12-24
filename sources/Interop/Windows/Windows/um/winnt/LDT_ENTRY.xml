@@ -3,93 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LDT_ENTRY">
-    <summary>
-      <para>Describes an entry in the descriptor table. This structure is valid only on x86-based systems.</para>
-    </summary>
-    <remarks>
-      <para>The
-<see cref="GetThreadSelectorEntry" /> function fills this structure with information from an entry in the descriptor table. You can use this information to convert a segment-relative address to a linear virtual address.</para>
-      <para>The base address of a segment is the address of offset 0 in the segment. To calculate this value, combine the <b>BaseLow</b>, <b>BaseMid</b>, and <b>BaseHi</b> members.</para>
-      <para>The limit of a segment is the address of the last byte that can be addressed in the segment. To calculate this value, combine the <b>LimitLow</b> and <b>LimitHi</b> members.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Debug/debugging-structures">Debugging Structures</seealso>
-    <seealso cref="GetThreadSelectorEntry" />
+    <summary>Describes an entry in the descriptor table. This structure is valid only on x86-based systems.</summary>
   </member>
   <member name="LDT_ENTRY.LimitLow">
-    <summary>
-      <para>The low-order part of the address of the last byte in the segment.</para>
-    </summary>
+    <summary>The low-order part of the address of the last byte in the segment.</summary>
   </member>
   <member name="LDT_ENTRY.BaseLow">
-    <summary>
-      <para>The low-order part of the base address of the segment.</para>
-    </summary>
+    <summary>The low-order part of the base address of the segment.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord">
-    <summary>
-      <para>The high-order portion of the descriptor. This member may be interpreted as bytes or collections of bits, depending on the level of detail required.</para>
-    </summary>
+    <summary>The high-order portion of the descriptor. This member may be interpreted as bytes or collections of bits, depending on the level of detail required.</summary>
   </member>
-  <member name="LDT_ENTRY.HighWord.Bytes">
-    <summary></summary>
-  </member>
+  <member name="LDT_ENTRY.HighWord.Bytes"></member>
   <member name="LDT_ENTRY.HighWord.Bytes.BaseMid">
-    <summary>
-      <para>Middle bits (16–23) of the base address of the segment.</para>
-    </summary>
+    <summary>Middle bits (16–23) of the base address of the segment.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bytes.Flags1">
-    <summary>
-      <para>Values of the <b>Type</b>, <b>Dpl</b>, and <b>Pres</b> members in the <b>Bits</b> structure.</para>
-    </summary>
+    <summary>Values of the <b>Type</b>, <b>Dpl</b>, and <b>Pres</b> members in the <b>Bits</b> structure.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bytes.Flags2">
-    <summary>
-      <para>Values of the <b>LimitHi</b>, <b>Sys</b>, <b>Reserved_0</b>, <b>Default_Big</b>, and <b>Granularity</b> members in the <b>Bits</b> structure.</para>
-    </summary>
+    <summary>Values of the <b>LimitHi</b>, <b>Sys</b>, <b>Reserved_0</b>, <b>Default_Big</b>, and <b>Granularity</b> members in the <b>Bits</b> structure.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bytes.BaseHi">
-    <summary>
-      <para>High bits (24–31) of the base address of the segment.</para>
-    </summary>
+    <summary>High bits (24–31) of the base address of the segment.</summary>
   </member>
-  <member name="LDT_ENTRY.HighWord.Bits">
-    <summary></summary>
-  </member>
+  <member name="LDT_ENTRY.HighWord.Bits"></member>
   <member name="LDT_ENTRY.HighWord.Bits.BaseMid">
-    <summary>
-      <para>The middle bits (16–23) of the base address of the segment.</para>
-    </summary>
+    <summary>The middle bits (16–23) of the base address of the segment.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bits.Type">
-    <summary>
-      <para>The type of segment. This member can be one of the following values:</para>
-    </summary>
+    <summary>The type of segment. This member can be one of the following values:</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bits.Dpl">
-    <summary>
-      <para>The privilege level of the descriptor. This member is an integer value in the range 0 (most privileged) through 3 (least privileged).</para>
-    </summary>
+    <summary>The privilege level of the descriptor. This member is an integer value in the range 0 (most privileged) through 3 (least privileged).</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bits.Pres">
-    <summary>
-      <para>The present flag. This member is 1 if the segment is present in physical memory or 0 if it is not.</para>
-    </summary>
+    <summary>The present flag. This member is 1 if the segment is present in physical memory or 0 if it is not.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bits.LimitHi">
-    <summary>
-      <para>The high bits (16–19) of the address of the last byte in the segment.</para>
-    </summary>
+    <summary>The high bits (16–19) of the address of the last byte in the segment.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bits.Sys">
-    <summary>
-      <para>The space that is available to system programmers. This member might be used for marking segments in some system-specific way.</para>
-    </summary>
+    <summary>The space that is available to system programmers. This member might be used for marking segments in some system-specific way.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bits.Reserved_0">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bits.Default_Big">
     <summary>
@@ -98,13 +56,9 @@
     </summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bits.Granularity">
-    <summary>
-      <para>The granularity. This member contains 0 if the segment is byte granular, 1 if the segment is page granular.</para>
-    </summary>
+    <summary>The granularity. This member contains 0 if the segment is byte granular, 1 if the segment is page granular.</summary>
   </member>
   <member name="LDT_ENTRY.HighWord.Bits.BaseHi">
-    <summary>
-      <para>The high bits (24–31) of the base address of the segment.</para>
-    </summary>
+    <summary>The high bits (24–31) of the base address of the segment.</summary>
   </member>
 </doc>

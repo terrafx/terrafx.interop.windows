@@ -5,33 +5,19 @@
   <member name="UMS_SYSTEM_THREAD_INFORMATION">
     <summary>
       <para>Specifies a UMS scheduler thread, UMS worker thread, or non-UMS thread. The <see cref="GetUmsSystemThreadInformation" /> function uses this structure.</para>
+      <blockquote>[!WARNING] As of Windows 11, user-mode scheduling is not supported. All calls fail with the error <code>ERROR_NOT_SUPPORTED</code>.</blockquote>
     </summary>
-    <remarks>
-      <para>If both <b>IsUmsSchedulerThread</b>  and <b>IsUmsWorkerThread</b> are clear, the structure specifies a non-UMS thread.</para>
-    </remarks>
   </member>
   <member name="UMS_SYSTEM_THREAD_INFORMATION.UmsVersion">
-    <summary>
-      <para>The UMS version. This member must be UMS_VERSION.</para>
-    </summary>
+    <summary>The UMS version. This member must be UMS_VERSION.</summary>
   </member>
-  <member name="UMS_SYSTEM_THREAD_INFORMATION.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
-  <member name="UMS_SYSTEM_THREAD_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="UMS_SYSTEM_THREAD_INFORMATION.DUMMYUNIONNAME"></member>
+  <member name="UMS_SYSTEM_THREAD_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
   <member name="UMS_SYSTEM_THREAD_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.IsUmsSchedulerThread">
-    <summary>
-      <para>A bitfield that specifies a UMS scheduler thread. If <b>IsUmsSchedulerThread</b> is set, <b>IsUmsWorkerThread</b> must be clear.</para>
-    </summary>
+    <summary>A bitfield that specifies a UMS scheduler thread. If <b>IsUmsSchedulerThread</b> is set, <b>IsUmsWorkerThread</b> must be clear.</summary>
   </member>
   <member name="UMS_SYSTEM_THREAD_INFORMATION.DUMMYUNIONNAME.DUMMYSTRUCTNAME.IsUmsWorkerThread">
-    <summary>
-      <para>A bitfield that specifies a UMS worker thread. If <b>IsUmsWorkerThread</b>  is set, <b>IsUmsSchedulerThread</b> must be clear.</para>
-    </summary>
+    <summary>A bitfield that specifies a UMS worker thread. If <b>IsUmsWorkerThread</b> is set, <b>IsUmsSchedulerThread</b> must be clear.</summary>
   </member>
-  <member name="UMS_SYSTEM_THREAD_INFORMATION.DUMMYUNIONNAME.ThreadUmsFlags">
-    <summary></summary>
-  </member>
+  <member name="UMS_SYSTEM_THREAD_INFORMATION.DUMMYUNIONNAME.ThreadUmsFlags"></member>
 </doc>

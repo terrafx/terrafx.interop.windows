@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.Windows;
 
 /// <include file='WICPngChrmProperties.xml' path='doc/member[@name="WICPngChrmProperties"]/*' />
-public enum WICPngChrmProperties : uint
+public enum WICPngChrmProperties
 {
     /// <include file='WICPngChrmProperties.xml' path='doc/member[@name="WICPngChrmProperties.WICPngChrmWhitePointX"]/*' />
     WICPngChrmWhitePointX = 0x1,

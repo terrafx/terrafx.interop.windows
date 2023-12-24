@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfProperty.Clear">
-    <summary>
-      <para>Empties the property value over the specified range.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> interface that contains the range that the property is cleared for. If this parameter is <b>NULL</b>, all values for this property over the entire edit context are cleared.</para>
-    </param>
+    <summary>Empties the property value over the specified range.</summary>
+    <param name="ec">Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</param>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> interface that contains the range that the property is cleared for. If this parameter is <b>NULL</b>, all values for this property over the entire edit context are cleared.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,82 +13,76 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pRange</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The edit context identified by <i>ec</i> does not have a read/write lock.</description>
+        </listheader>
+        <listheader>
           <description>
-            <i>pRange</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The edit context is read-only.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The edit context identified by <i>ec</i> does not have a read/write lock.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOTOWNEDRANGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_READONLY</b>
-            </para>
-          </description>
-          <description>
-            <para>The edit context is read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_NOTOWNEDRANGE</b>
-            </para>
-          </description>
-          <description>
-            <para>The TSF manager does not own the range.</para>
-          </description>
-        </item>
+          <description>The TSF manager does not own the range.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>It is not necessary to call this method when a context is about to be destroyed. The TSF manager will clear all properties when the context is removed from the context stack.</para>
-    </remarks>
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="ITfEditSession.DoEditSession " />
-    <seealso cref="ITfProperty" />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfProperty.FindRange">
-    <summary>
-      <para>Obtains a range that covers the text that contains a non-empty value for the property.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> interface that contains the point to obtain the property range for. The point will either be the start anchor or end anchor of this range, based upon the value of <i>aPos</i>.</para>
-    </param>
-    <param name="ppRange">
-      <para>Pointer to an <b>ITfRange</b> interface pointer that receives the requested range object.</para>
-    </param>
-    <param name="aPos">
-      <para>Contains one of the <see cref="TfAnchor" /> values which specifies which anchor of <i>pRange</i> is used as the point to obtain the property range for.</para>
-    </param>
+    <summary>Obtains a range that covers the text that contains a non-empty value for the property.</summary>
+    <param name="ec">Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</param>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> interface that contains the point to obtain the property range for. The point will either be the start anchor or end anchor of this range, based upon the value of <i>aPos</i>.</param>
+    <param name="ppRange">Pointer to an <b>ITfRange</b> interface pointer that receives the requested range object.</param>
+    <param name="aPos">Contains one of the <see cref="TfAnchor" /> values which specifies which anchor of <i>pRange</i> is used as the point to obtain the property range for.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -102,101 +90,87 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pRange</i> is not over, or adjacent to, the property. <i>ppRange</i> receives <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <i>pRange</i> is not over, or adjacent to, the property. <i>ppRange</i> receives <b>NULL</b>.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more parameters are invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The edit context identified by <i>ec</i> does not have a read-only or read/write lock.</para>
-          </description>
-        </item>
+          <description>The edit context identified by <i>ec</i> does not have a read-only or read/write lock.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method obtains a range of text that contains a non-empty value for the property. If the property has no value at the specified point, <i>ppRange</i> receives <b>NULL</b> and the method returns S_FALSE. In the following example, if <i>aPos</i> contains TF_ANCHOR_START, the returned range would contain "is". If <i>aPos</i> contains TF_ANCHOR_END, the method would return S_FALSE because the property does not exist at the end point of the range.</para>
-      <code>
-COLOR: RRRRR   RR          GGGGGGGG
-TEXT:  this &lt;a&gt;is som&lt;/a&gt;e colored text
-
-</code>
-      <para>If <i>aPos</i> contains TF_ANCHOR_START, this method ignores property ranges that end immediately before the start anchor. Likewise, if <i>aPos</i> contains TF_ANCHOR_END, this method ignores property ranges that start immediately after the end anchor. In the following example, if <i>aPos</i> contains TF_ANCHOR_START, the returned range would contain "colored " and not "some " because the R value property ends at the start anchor point and the G value property begins at the start anchor. If <i>aPos</i> contains TF_ANCHOR_END, the returned range would contain "colored " and not "text".</para>
-      <code>
-COLOR:         RRRRR   GGGGGGGG    BBBB
-TEXT:  this is some &lt;a&gt;colored &lt;/a&gt;text
-
-</code>
-    </remarks>
-    <seealso cref="ITfDocumentMgr.CreateContext" />
-    <seealso cref="ITfEditSession.DoEditSession" />
-    <seealso cref="ITfProperty" />
-    <seealso cref="ITfRange" />
-    <seealso cref="TfAnchor" />
   </member>
   <member name="ITfProperty.SetValue">
-    <summary>
-      <para>Sets the value of the property for a range.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> interface that contains the range that the property value is set for. This parameter cannot be <b>NULL</b>. This method will fail if <i>pRange</i> is empty.</para>
-    </param>
-    <param name="pvarValue">
-      <para>Pointer to a <b>VARIANT</b> structure that contains the new property value. Only values of type VT_I4, VT_UNKNOWN, VT_BSTR and VT_EMPTY are supported.</para>
-    </param>
+    <summary>Sets the value of the property for a range.</summary>
+    <param name="ec">Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</param>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> interface that contains the range that the property value is set for. This parameter cannot be <b>NULL</b>. This method will fail if <i>pRange</i> is empty.</param>
+    <param name="pvarValue">Pointer to a <b>VARIANT</b> structure that contains the new property value. Only values of type VT_I4, VT_UNKNOWN, VT_BSTR and VT_EMPTY are supported.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -204,102 +178,98 @@ TEXT:  this is some &lt;a&gt;colored &lt;/a&gt;text
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more parameters are invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The edit context identified by <i>ec</i> does not have a read/write lock.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>A memory allocation failure occurred.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The edit context is read-only.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOTOWNEDRANGE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The edit context identified by <i>ec</i> does not have a read/write lock.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_READONLY</b>
-            </para>
-          </description>
-          <description>
-            <para>The edit context is read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_NOTOWNEDRANGE</b>
-            </para>
-          </description>
-          <description>
-            <para>The TSF manager does not own the range.</para>
-          </description>
-        </item>
+          <description>The TSF manager does not own the range.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Property values set with this method will be discarded when the text that the property value covers is modified. To gain custom control over a value response to text edits, use <see cref="ITfProperty.SetValueStore" />.</para>
-      <para>Values set with this method are serialized, except for values of type VT_UNKNOWN, which are not serialized. If a property value of type VT_UNKNOWN must be serialized, use <b>ITfProperty.SetValueStore</b> instead.</para>
-      <para>Overlapping property values of the same type are unsupported.</para>
-    </remarks>
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="ITfEditSession.DoEditSession " />
-    <seealso cref="ITfProperty" />
-    <seealso cref="ITfProperty.SetValueStore " />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfProperty.SetValueStore">
-    <summary>
-      <para>Sets the value of the property for a range of text using a property store object.</para>
-    </summary>
-    <param name="ec">
-      <para>Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
-    <param name="pRange">
-      <para>Pointer to an <see cref="ITfRange" /> interface that contains the range that the property value is set for. This parameter cannot be <b>NULL</b>. This method fails if <i>pRange</i> is empty.</para>
-    </param>
-    <param name="pPropStore">
-      <para>Pointer to an <see cref="ITfPropertyStore" /> interface that obtains the property data.</para>
-    </param>
+    <summary>Sets the value of the property for a range of text using a property store object.</summary>
+    <param name="ec">Contains an edit cookie that identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</param>
+    <param name="pRange">Pointer to an <see cref="ITfRange" /> interface that contains the range that the property value is set for. This parameter cannot be <b>NULL</b>. This method fails if <i>pRange</i> is empty.</param>
+    <param name="pPropStore">Pointer to an <see cref="ITfPropertyStore" /> interface that obtains the property data.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -307,70 +277,58 @@ TEXT:  this is some &lt;a&gt;colored &lt;/a&gt;text
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>An unspecified error occurred.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>One or more parameters are invalid.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
-          </description>
-          <description>
-            <para>The edit context identified by <i>ec</i> does not have a read/write lock.</para>
-          </description>
-        </item>
+          <description>The edit context identified by <i>ec</i> does not have a read/write lock.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Property values set with <see cref="ITfProperty.SetValue" /> will be discarded when the text that the property value covers is modified. To gain control over what happens to a property value when the text is modified, use <b>ITfProperty.SetValueStore</b> .</para>
-      <para>Values set with <b>ITfProperty.SetValue</b> will be serialized, except for values of type VT_UNKNOWN, which are not serialized. If a property value of type VT_UNKNOWN must be serialized, use <b>ITfProperty.SetValueStore</b> instead.</para>
-      <para>Overlapping property values of the same type are unsupported.</para>
-    </remarks>
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="ITfEditSession.DoEditSession " />
-    <seealso cref="ITfProperty" />
-    <seealso cref="ITfProperty.SetValue " />
-    <seealso cref="ITfPropertyStore " />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfProperty">
-    <summary>
-      <para>The <b>ITfProperty</b> interface is implemented by the TSF manager and used by a client (application or text service) to modify a property value.</para>
-    </summary>
-    <remarks>
-      <para>An instance of this interface is obtained in various ways, such as <see cref="ITfContext.GetProperty" /> or <see cref="IEnumTfProperties.Next" />.</para>
-    </remarks>
-    <seealso cref="IEnumTfProperties.Next " />
-    <seealso cref="ITfContext.GetProperty " />
-    <seealso cref="ITfReadOnlyProperty " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfProperty</b> interface is implemented by the TSF manager and used by a client (application or text service) to modify a property value.</summary>
   </member>
 </doc>

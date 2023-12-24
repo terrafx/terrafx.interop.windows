@@ -3,89 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDesktopGadget.RunGadget">
-    <summary>
-      <para>Adds an installed gadget to the desktop.</para>
-    </summary>
+    <summary>Adds an installed gadget to the desktop.</summary>
     <param name="gadgetPath">
-      <para>Type: <b>LPCWSTR</b></para>
       <para>Pointer to the full (absolute) path of a .gadget folder. A gadget that is not packaged with Windows can only be run from one of the two following locations. Installation of the gadget in any other location will cause this method to fail with an access denied error.</para>
-      <para>
-        <b>Note</b>  This path should not contain environment variables; the fully expanded path must be provided. <see cref="ExpandEnvironmentStrings" /> can be used to expand the path to the form required in this parameter.</para>
+      <div>
+        <b>Note</b>  This path should not contain environment variables; the fully expanded path must be provided. <see cref="ExpandEnvironmentStrings" /> can be used to expand the path to the form required in this parameter.</div>
       <h4>(%ProgramFiles%\Windows Sidebar\Shared Gadgets)</h4>
       <para>This is the recommended path for non-Microsoft gadget installation, available to all users.</para>
       <h4>(%LOCALAPPDATA%\Microsoft\Windows Sidebar\Gadgets)</h4>
       <para>This location should be used for a single-user installation of the gadget.</para>
     </param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>SCHED_E_ALREADY_RUNNING</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>SCHED_E_ALREADY_RUNNING</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The gadget is already running.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The gadget is already running.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>An error occurred involving the path of the gadget folder pointed to by <i>gadgetPath</i>.</para>
-          </description>
-        </item>
+          <description>An error occurred involving the path of the gadget folder pointed to by <i>gadgetPath</i>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>"Running" a gadget here means that the gadget is added to the desktop.</para>
-      <para>
-        <b>RunGadget</b> can only be called on a gadget that has already been installed to the system. It cannot be called on a gadget that is already running—only one instance of a gadget can be run at any given time through this method.</para>
-      <para>Because gadget installation has no UI of its own, this method is often run as the last step in the installation process or as part of the first launch of an application that the gadget is associated with. Installation of the gadget to %ProgramFiles%\Windows Sidebar\Shared Gadgets requires administrative privileges. Therefore it is recommended that the installation of the gadget be performed as part of a Microsoft Installer (MSI) installation.</para>
-      <para>
-        <b>Important</b>  Applications should not call <b>RunGadget</b> without first asking the user for permission. If the choice is given to the user as a check box, that check box should be unselected by default.</para>
-      <para>The gadget is added to the desktop at a position determined by the system. The caller cannot specify location.</para>
-      <para>Per-user applications should install their gadgets per-user. Per-machine applications should install their gadgets per-machine. This ensures a unified experience to the user.</para>
-      <h4>Examples</h4>
-      <para>The following example shows <b>IDesktopGadget.RunGadget</b> in use.</para>
-      <code>HRESULT RunMyGadget(PCWSTR pszGadgetPath)
-{
-    IDesktopGadget *pDG;
-
-    HRESULT hr = CoCreateInstance(CLSID_DesktopGadget,
-                                  NULL,
-                                  CLSCTX_INPROC_SERVER,
-                                  IID_PPV_ARGS(&amp;amp;amp;amp;amp;amp;pDG));
-    if (SUCCEEDED(hr))
-    {
-        hr = pDG-&gt;RunGadget(pszGadgetPath);
-        pDG-&gt;Release();
-    }
-
-    return hr;
-}
-</code>
-    </remarks>
   </member>
   <member name="IDesktopGadget">
-    <summary>
-      <para>Exposes a method that allows the programmatic addition of an installed gadget to the user's desktop.</para>
-    </summary>
-    <remarks>
-      <h3>When to Implement</h3>
-      <para>An implementation of this interface is supplied in Windows as CLSID_DesktopGadget. Third parties do not provide a implementation.</para>
-      <h3>When to Use</h3>
-      <para>Use this interface to run a gadget. A running gadget is displayed on the desktop. This action is often taken at the end of a gadget or application's installation.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/windows/desktop/gadgetplatform/introduction-to-the-gadget-platform">Introduction to the Gadget Platform</seealso>
+    <summary>Exposes a method that allows the programmatic addition of an installed gadget to the user's desktop.</summary>
   </member>
 </doc>

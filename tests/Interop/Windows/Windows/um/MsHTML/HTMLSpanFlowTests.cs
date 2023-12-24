@@ -19,25 +19,4 @@ public static unsafe partial class HTMLSpanFlowTests
     {
         Assert.That(typeof(HTMLSpanFlow).GUID, Is.EqualTo(IID_HTMLSpanFlow));
     }
-
-    /// <summary>Validates that the <see cref="HTMLSpanFlow" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLSpanFlow>(), Is.EqualTo(sizeof(HTMLSpanFlow)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLSpanFlow" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLSpanFlow).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLSpanFlow" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLSpanFlow), Is.EqualTo(1));
-    }
 }

@@ -1,0 +1,25 @@
+// Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
+
+// Ported from D3D12TokenizedProgramFormat.hpp in microsoft/DirectX-Headers tag v1.611.2
+// Original source is Copyright © Microsoft. Licensed under the MIT license
+
+namespace TerraFX.Interop.DirectX;
+
+/// <include file='D3D11_SB_TESSELLATOR_PARTITIONING.xml' path='doc/member[@name="D3D11_SB_TESSELLATOR_PARTITIONING"]/*' />
+public enum D3D11_SB_TESSELLATOR_PARTITIONING
+{
+    /// <include file='D3D11_SB_TESSELLATOR_PARTITIONING.xml' path='doc/member[@name="D3D11_SB_TESSELLATOR_PARTITIONING.D3D11_SB_TESSELLATOR_PARTITIONING_UNDEFINED"]/*' />
+    D3D11_SB_TESSELLATOR_PARTITIONING_UNDEFINED = 0,
+
+    /// <include file='D3D11_SB_TESSELLATOR_PARTITIONING.xml' path='doc/member[@name="D3D11_SB_TESSELLATOR_PARTITIONING.D3D11_SB_TESSELLATOR_PARTITIONING_INTEGER"]/*' />
+    D3D11_SB_TESSELLATOR_PARTITIONING_INTEGER = 1,
+
+    /// <include file='D3D11_SB_TESSELLATOR_PARTITIONING.xml' path='doc/member[@name="D3D11_SB_TESSELLATOR_PARTITIONING.D3D11_SB_TESSELLATOR_PARTITIONING_POW2"]/*' />
+    D3D11_SB_TESSELLATOR_PARTITIONING_POW2 = 2,
+
+    /// <include file='D3D11_SB_TESSELLATOR_PARTITIONING.xml' path='doc/member[@name="D3D11_SB_TESSELLATOR_PARTITIONING.D3D11_SB_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD"]/*' />
+    D3D11_SB_TESSELLATOR_PARTITIONING_FRACTIONAL_ODD = 3,
+
+    /// <include file='D3D11_SB_TESSELLATOR_PARTITIONING.xml' path='doc/member[@name="D3D11_SB_TESSELLATOR_PARTITIONING.D3D11_SB_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN"]/*' />
+    D3D11_SB_TESSELLATOR_PARTITIONING_FRACTIONAL_EVEN = 4,
+}

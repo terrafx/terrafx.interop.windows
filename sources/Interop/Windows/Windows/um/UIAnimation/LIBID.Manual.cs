@@ -16,19 +16,19 @@ public static unsafe partial class LIBID
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
-                    0xDB, 0x24, 0xCA, 0x44,
-                    0x92, 0x1A,
-                    0x49, 0x41,
-                    0xBA,
-                    0xB5,
-                    0xFB,
-                    0x14,
-                    0xD6,
-                    0x4B,
-                    0x40,
-                    0x1E
-                };
+            ReadOnlySpan<byte> data = [
+                0xDB, 0x24, 0xCA, 0x44,
+                0x92, 0x1A,
+                0x49, 0x41,
+                0xBA,
+                0xB5,
+                0xFB,
+                0x14,
+                0xD6,
+                0x4B,
+                0x40,
+                0x1E
+            ];
 
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
         }

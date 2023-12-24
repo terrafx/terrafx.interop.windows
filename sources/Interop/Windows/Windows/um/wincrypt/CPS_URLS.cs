@@ -10,7 +10,7 @@ public unsafe partial struct CPS_URLS
 {
     /// <include file='CPS_URLS.xml' path='doc/member[@name="CPS_URLS.pszURL"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszURL;
+    public char* pszURL;
 
     /// <include file='CPS_URLS.xml' path='doc/member[@name="CPS_URLS.pAlgorithm"]/*' />
     public CRYPT_ALGORITHM_IDENTIFIER* pAlgorithm;

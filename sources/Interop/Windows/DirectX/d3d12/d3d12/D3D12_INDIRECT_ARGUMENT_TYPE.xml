@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE">
+    <summary>Specifies the type of the indirect parameter.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE.D3D12_INDIRECT_ARGUMENT_TYPE_DRAW">
+    <summary>Indicates the type is a Draw call.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE.D3D12_INDIRECT_ARGUMENT_TYPE_DRAW_INDEXED">
+    <summary>Indicates the type is a DrawIndexed call.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE.D3D12_INDIRECT_ARGUMENT_TYPE_DISPATCH">
+    <summary>Indicates the type is a Dispatch call.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE.D3D12_INDIRECT_ARGUMENT_TYPE_VERTEX_BUFFER_VIEW">
+    <summary>Indicates the type is a vertex buffer view.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE.D3D12_INDIRECT_ARGUMENT_TYPE_INDEX_BUFFER_VIEW">
+    <summary>Indicates the type is an index buffer view.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE.D3D12_INDIRECT_ARGUMENT_TYPE_CONSTANT">
+    <summary>Indicates the type is a constant.</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE.D3D12_INDIRECT_ARGUMENT_TYPE_CONSTANT_BUFFER_VIEW">
+    <summary>Indicates the type is a constant buffer view (CBV).</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE.D3D12_INDIRECT_ARGUMENT_TYPE_SHADER_RESOURCE_VIEW">
+    <summary>Indicates the type is a shader resource view (SRV).</summary>
+  </member>
+  <member name="D3D12_INDIRECT_ARGUMENT_TYPE.D3D12_INDIRECT_ARGUMENT_TYPE_UNORDERED_ACCESS_VIEW">
+    <summary>Indicates the type is an unordered access view (UAV).</summary>
+  </member>
+</doc>

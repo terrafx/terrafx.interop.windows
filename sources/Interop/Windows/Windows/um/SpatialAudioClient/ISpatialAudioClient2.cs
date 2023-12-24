@@ -25,7 +25,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, Guid*, void**, int>)(lpVtbl[0]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, uint>)(lpVtbl[1]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, uint>)(lpVtbl[1]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, uint>)(lpVtbl[2]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, uint>)(lpVtbl[2]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ISpatialAudioClient.GetStaticObjectPosition" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(3)]
     public HRESULT GetStaticObjectPosition(AudioObjectType type, float* x, float* y, float* z)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, AudioObjectType, float*, float*, float*, int>)(lpVtbl[3]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), type, x, y, z);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, AudioObjectType, float*, float*, float*, int>)(lpVtbl[3]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), type, x, y, z);
     }
 
     /// <inheritdoc cref="ISpatialAudioClient.GetNativeStaticObjectTypeMask" />
@@ -59,7 +59,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(4)]
     public HRESULT GetNativeStaticObjectTypeMask(AudioObjectType* mask)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, AudioObjectType*, int>)(lpVtbl[4]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), mask);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, AudioObjectType*, int>)(lpVtbl[4]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), mask);
     }
 
     /// <inheritdoc cref="ISpatialAudioClient.GetMaxDynamicObjectCount" />
@@ -67,7 +67,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(5)]
     public HRESULT GetMaxDynamicObjectCount([NativeTypeName("UINT32 *")] uint* value)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, uint*, int>)(lpVtbl[5]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, uint*, int>)(lpVtbl[5]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <inheritdoc cref="ISpatialAudioClient.GetSupportedAudioObjectFormatEnumerator" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(6)]
     public HRESULT GetSupportedAudioObjectFormatEnumerator(IAudioFormatEnumerator** enumerator)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, IAudioFormatEnumerator**, int>)(lpVtbl[6]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), enumerator);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, IAudioFormatEnumerator**, int>)(lpVtbl[6]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), enumerator);
     }
 
     /// <inheritdoc cref="ISpatialAudioClient.GetMaxFrameCount" />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(7)]
     public HRESULT GetMaxFrameCount([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* objectFormat, [NativeTypeName("UINT32 *")] uint* frameCountPerBuffer)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, WAVEFORMATEX*, uint*, int>)(lpVtbl[7]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), objectFormat, frameCountPerBuffer);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, WAVEFORMATEX*, uint*, int>)(lpVtbl[7]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), objectFormat, frameCountPerBuffer);
     }
 
     /// <inheritdoc cref="ISpatialAudioClient.IsAudioObjectFormatSupported" />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(8)]
     public HRESULT IsAudioObjectFormatSupported([NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* objectFormat)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, WAVEFORMATEX*, int>)(lpVtbl[8]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), objectFormat);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, WAVEFORMATEX*, int>)(lpVtbl[8]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), objectFormat);
     }
 
     /// <inheritdoc cref="ISpatialAudioClient.IsSpatialAudioStreamAvailable" />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(9)]
     public HRESULT IsSpatialAudioStreamAvailable([NativeTypeName("const IID &")] Guid* streamUuid, [NativeTypeName("const PROPVARIANT *")] PROPVARIANT* auxiliaryInfo)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), streamUuid, auxiliaryInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, Guid*, PROPVARIANT*, int>)(lpVtbl[9]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), streamUuid, auxiliaryInfo);
     }
 
     /// <inheritdoc cref="ISpatialAudioClient.ActivateSpatialAudioStream" />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(10)]
     public HRESULT ActivateSpatialAudioStream([NativeTypeName("const PROPVARIANT *")] PROPVARIANT* activationParams, [NativeTypeName("const IID &")] Guid* riid, void** stream)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, PROPVARIANT*, Guid*, void**, int>)(lpVtbl[10]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), activationParams, riid, stream);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, PROPVARIANT*, Guid*, void**, int>)(lpVtbl[10]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), activationParams, riid, stream);
     }
 
     /// <include file='ISpatialAudioClient2.xml' path='doc/member[@name="ISpatialAudioClient2.IsOffloadCapable"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(11)]
     public HRESULT IsOffloadCapable(AUDIO_STREAM_CATEGORY category, BOOL* isOffloadCapable)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, AUDIO_STREAM_CATEGORY, BOOL*, int>)(lpVtbl[11]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), category, isOffloadCapable);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, AUDIO_STREAM_CATEGORY, BOOL*, int>)(lpVtbl[11]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), category, isOffloadCapable);
     }
 
     /// <include file='ISpatialAudioClient2.xml' path='doc/member[@name="ISpatialAudioClient2.GetMaxFrameCountForCategory"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
     [VtblIndex(12)]
     public HRESULT GetMaxFrameCountForCategory(AUDIO_STREAM_CATEGORY category, BOOL offloadEnabled, [NativeTypeName("const WAVEFORMATEX *")] WAVEFORMATEX* objectFormat, [NativeTypeName("UINT32 *")] uint* frameCountPerBuffer)
     {
-        return ((delegate* unmanaged<ISpatialAudioClient2*, AUDIO_STREAM_CATEGORY, BOOL, WAVEFORMATEX*, uint*, int>)(lpVtbl[12]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), category, offloadEnabled, objectFormat, frameCountPerBuffer);
+        return ((delegate* unmanaged[MemberFunction]<ISpatialAudioClient2*, AUDIO_STREAM_CATEGORY, BOOL, WAVEFORMATEX*, uint*, int>)(lpVtbl[12]))((ISpatialAudioClient2*)Unsafe.AsPointer(ref this), category, offloadEnabled, objectFormat, frameCountPerBuffer);
     }
 
     public interface Interface : ISpatialAudioClient.Interface
@@ -139,42 +139,42 @@ public unsafe partial struct ISpatialAudioClient2 : ISpatialAudioClient2.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (AudioObjectType, float *, float *, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AudioObjectType, float*, float*, float*, int> GetStaticObjectPosition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AudioObjectType, float*, float*, float*, int> GetStaticObjectPosition;
 
         [NativeTypeName("HRESULT (AudioObjectType *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AudioObjectType*, int> GetNativeStaticObjectTypeMask;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AudioObjectType*, int> GetNativeStaticObjectTypeMask;
 
         [NativeTypeName("HRESULT (UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMaxDynamicObjectCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMaxDynamicObjectCount;
 
         [NativeTypeName("HRESULT (IAudioFormatEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAudioFormatEnumerator**, int> GetSupportedAudioObjectFormatEnumerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAudioFormatEnumerator**, int> GetSupportedAudioObjectFormatEnumerator;
 
         [NativeTypeName("HRESULT (const WAVEFORMATEX *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WAVEFORMATEX*, uint*, int> GetMaxFrameCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WAVEFORMATEX*, uint*, int> GetMaxFrameCount;
 
         [NativeTypeName("HRESULT (const WAVEFORMATEX *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WAVEFORMATEX*, int> IsAudioObjectFormatSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WAVEFORMATEX*, int> IsAudioObjectFormatSupported;
 
         [NativeTypeName("HRESULT (const IID &, const PROPVARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, PROPVARIANT*, int> IsSpatialAudioStreamAvailable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, PROPVARIANT*, int> IsSpatialAudioStreamAvailable;
 
         [NativeTypeName("HRESULT (const PROPVARIANT *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PROPVARIANT*, Guid*, void**, int> ActivateSpatialAudioStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PROPVARIANT*, Guid*, void**, int> ActivateSpatialAudioStream;
 
         [NativeTypeName("HRESULT (AUDIO_STREAM_CATEGORY, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AUDIO_STREAM_CATEGORY, BOOL*, int> IsOffloadCapable;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AUDIO_STREAM_CATEGORY, BOOL*, int> IsOffloadCapable;
 
         [NativeTypeName("HRESULT (AUDIO_STREAM_CATEGORY, BOOL, const WAVEFORMATEX *, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AUDIO_STREAM_CATEGORY, BOOL, WAVEFORMATEX*, uint*, int> GetMaxFrameCountForCategory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AUDIO_STREAM_CATEGORY, BOOL, WAVEFORMATEX*, uint*, int> GetMaxFrameCountForCategory;
     }
 }

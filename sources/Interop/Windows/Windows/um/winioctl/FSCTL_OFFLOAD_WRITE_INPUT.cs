@@ -3,10 +3,12 @@
 // Ported from um/winioctl.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='FSCTL_OFFLOAD_WRITE_INPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_WRITE_INPUT"]/*' />
-public unsafe partial struct FSCTL_OFFLOAD_WRITE_INPUT
+public partial struct FSCTL_OFFLOAD_WRITE_INPUT
 {
     /// <include file='FSCTL_OFFLOAD_WRITE_INPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_WRITE_INPUT.Size"]/*' />
     [NativeTypeName("DWORD")]
@@ -30,5 +32,12 @@ public unsafe partial struct FSCTL_OFFLOAD_WRITE_INPUT
 
     /// <include file='FSCTL_OFFLOAD_WRITE_INPUT.xml' path='doc/member[@name="FSCTL_OFFLOAD_WRITE_INPUT.Token"]/*' />
     [NativeTypeName("BYTE[512]")]
-    public fixed byte Token[512];
+    public _Token_e__FixedBuffer Token;
+
+    /// <include file='_Token_e__FixedBuffer.xml' path='doc/member[@name="_Token_e__FixedBuffer"]/*' />
+    [InlineArray(512)]
+    public partial struct _Token_e__FixedBuffer
+    {
+        public byte e0;
+    }
 }

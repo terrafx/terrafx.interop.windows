@@ -19,32 +19,4 @@ public static unsafe partial class XMLDOMDocumentEventsTests
     {
         Assert.That(typeof(XMLDOMDocumentEvents).GUID, Is.EqualTo(DIID_XMLDOMDocumentEvents));
     }
-
-    /// <summary>Validates that the <see cref="XMLDOMDocumentEvents" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<XMLDOMDocumentEvents>(), Is.EqualTo(sizeof(XMLDOMDocumentEvents)));
-    }
-
-    /// <summary>Validates that the <see cref="XMLDOMDocumentEvents" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(XMLDOMDocumentEvents).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="XMLDOMDocumentEvents" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(XMLDOMDocumentEvents), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(XMLDOMDocumentEvents), Is.EqualTo(4));
-        }
-    }
 }

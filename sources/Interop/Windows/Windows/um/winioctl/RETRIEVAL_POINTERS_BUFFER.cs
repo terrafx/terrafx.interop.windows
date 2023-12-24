@@ -21,7 +21,7 @@ public partial struct RETRIEVAL_POINTERS_BUFFER
     public LARGE_INTEGER StartingVcn;
 
     /// <include file='RETRIEVAL_POINTERS_BUFFER.xml' path='doc/member[@name="RETRIEVAL_POINTERS_BUFFER.Extents"]/*' />
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:11147:5)[1]")]
+    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:11163:5)[1]")]
     public _Extents_e__FixedBuffer Extents;
 
     /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -45,7 +45,7 @@ public partial struct RETRIEVAL_POINTERS_BUFFER
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan(int.MaxValue)[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 

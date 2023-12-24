@@ -25,7 +25,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, Guid*, void**, int>)(lpVtbl[0]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint>)(lpVtbl[1]))((IVMRMixerControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint>)(lpVtbl[1]))((IVMRMixerControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint>)(lpVtbl[2]))((IVMRMixerControl*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint>)(lpVtbl[2]))((IVMRMixerControl*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetAlpha"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(3)]
     public HRESULT SetAlpha([NativeTypeName("DWORD")] uint dwStreamID, float Alpha)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint, float, int>)(lpVtbl[3]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, Alpha);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint, float, int>)(lpVtbl[3]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, Alpha);
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetAlpha"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(4)]
     public HRESULT GetAlpha([NativeTypeName("DWORD")] uint dwStreamID, float* pAlpha)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint, float*, int>)(lpVtbl[4]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pAlpha);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint, float*, int>)(lpVtbl[4]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pAlpha);
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetZOrder"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(5)]
     public HRESULT SetZOrder([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("DWORD")] uint dwZ)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint, uint, int>)(lpVtbl[5]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, dwZ);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint, uint, int>)(lpVtbl[5]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, dwZ);
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetZOrder"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(6)]
     public HRESULT GetZOrder([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("DWORD *")] uint* pZ)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint, uint*, int>)(lpVtbl[6]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pZ);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint, uint*, int>)(lpVtbl[6]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pZ);
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetOutputRect"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(7)]
     public HRESULT SetOutputRect([NativeTypeName("DWORD")] uint dwStreamID, [NativeTypeName("const NORMALIZEDRECT *")] NORMALIZEDRECT* pRect)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint, NORMALIZEDRECT*, int>)(lpVtbl[7]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pRect);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint, NORMALIZEDRECT*, int>)(lpVtbl[7]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pRect);
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetOutputRect"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(8)]
     public HRESULT GetOutputRect([NativeTypeName("DWORD")] uint dwStreamID, NORMALIZEDRECT* pRect)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint, NORMALIZEDRECT*, int>)(lpVtbl[8]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pRect);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint, NORMALIZEDRECT*, int>)(lpVtbl[8]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwStreamID, pRect);
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetBackgroundClr"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(9)]
     public HRESULT SetBackgroundClr(COLORREF ClrBkg)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, COLORREF, int>)(lpVtbl[9]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), ClrBkg);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, COLORREF, int>)(lpVtbl[9]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), ClrBkg);
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetBackgroundClr"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(10)]
     public HRESULT GetBackgroundClr(COLORREF* lpClrBkg)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, COLORREF*, int>)(lpVtbl[10]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), lpClrBkg);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, COLORREF*, int>)(lpVtbl[10]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), lpClrBkg);
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.SetMixingPrefs"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(11)]
     public HRESULT SetMixingPrefs([NativeTypeName("DWORD")] uint dwMixerPrefs)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint, int>)(lpVtbl[11]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwMixerPrefs);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint, int>)(lpVtbl[11]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), dwMixerPrefs);
     }
 
     /// <include file='IVMRMixerControl.xml' path='doc/member[@name="IVMRMixerControl.GetMixingPrefs"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
     [VtblIndex(12)]
     public HRESULT GetMixingPrefs([NativeTypeName("DWORD *")] uint* pdwMixerPrefs)
     {
-        return ((delegate* unmanaged<IVMRMixerControl*, uint*, int>)(lpVtbl[12]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), pdwMixerPrefs);
+        return ((delegate* unmanaged[MemberFunction]<IVMRMixerControl*, uint*, int>)(lpVtbl[12]))((IVMRMixerControl*)Unsafe.AsPointer(ref this), pdwMixerPrefs);
     }
 
     public interface Interface : IUnknown.Interface
@@ -163,42 +163,42 @@ public unsafe partial struct IVMRMixerControl : IVMRMixerControl.Interface, INat
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, float) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float, int> SetAlpha;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float, int> SetAlpha;
 
         [NativeTypeName("HRESULT (DWORD, float *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, float*, int> GetAlpha;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, float*, int> GetAlpha;
 
         [NativeTypeName("HRESULT (DWORD, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, int> SetZOrder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, int> SetZOrder;
 
         [NativeTypeName("HRESULT (DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint*, int> GetZOrder;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint*, int> GetZOrder;
 
         [NativeTypeName("HRESULT (DWORD, const NORMALIZEDRECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, NORMALIZEDRECT*, int> SetOutputRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, NORMALIZEDRECT*, int> SetOutputRect;
 
         [NativeTypeName("HRESULT (DWORD, NORMALIZEDRECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, NORMALIZEDRECT*, int> GetOutputRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, NORMALIZEDRECT*, int> GetOutputRect;
 
         [NativeTypeName("HRESULT (COLORREF) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF, int> SetBackgroundClr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF, int> SetBackgroundClr;
 
         [NativeTypeName("HRESULT (COLORREF *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, COLORREF*, int> GetBackgroundClr;
+        public delegate* unmanaged[MemberFunction]<TSelf*, COLORREF*, int> GetBackgroundClr;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetMixingPrefs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetMixingPrefs;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetMixingPrefs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetMixingPrefs;
     }
 }

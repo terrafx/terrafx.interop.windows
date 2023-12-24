@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.FCIAddFile">
+    <summary>The <b>FCIAddFile</b> adds a file to the cabinet under construction.</summary>
+    <param name="hfci">A valid FCI context handle returned by the <see cref="FCICreate" /> function.</param>
+    <param name="pszSourceFile">The name of the file to add; this value should include path information.</param>
+    <param name="pszFileName">The name under which to store the file in the cabinet.</param>
+    <param name="fExecute">If set <b>TRUE</b>, the file will be executed when extracted.</param>
+    <param name="pfnfcignc">Pointer to an application-defined callback function to obtain specifications on the next cabinet to create. The function should be declared using the <see cref="FNFCIGETNEXTCABINET" /> macro.</param>
+    <param name="pfnfcis">Pointer to an application-defined callback function to update the progress information available to the user. The function should be declared using the <see cref="FNFCISTATUS" /> macro.</param>
+    <param name="pfnfcigoi">Pointer to an application-defined callback function to open a file and retrieve the file date, time, and attributes. The function should be declared using the <see cref="FNFCIGETOPENINFO" /> macro.</param>
+    <param name="typeCompress">
+      <para>The compression type to use.</para>
+      <div>
+        <b>Note</b>  To indicate LZX compression, use the <see cref="TCOMPfromLZXWindow" /> macro.</div>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>tcompTYPE_NONE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>No compression.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>tcompTYPE_MSZIP</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Microsoft ZIP compression.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>If the function succeeds, it returns <b>TRUE</b>; otherwise, <b>FALSE</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure used to create the FCI context.</para>
+    </returns>
+  </member>
+  <member name="Windows.FCICreate">
+    <summary>The <b>FCICreate</b> function creates an FCI context.</summary>
+    <param name="perf">Pointer to an <see cref="ERF" /> structure that receives the error information.</param>
+    <param name="pfnfcifp">Pointer to an application-defined callback function to notify when a file is placed in the cabinet. The function should be declared using the <see cref="FNFCIFILEPLACED" /> macro.</param>
+    <param name="pfna">Pointer to an application-defined callback function to allocate memory. The function should be declared using the <see cref="FNFCIALLOC" /> macro.</param>
+    <param name="pfnf">Pointer to an application-defined callback function to free previously allocated memory. The function should be declared using the <see cref="FNFCIFREE" /> macro.</param>
+    <param name="pfnopen">Pointer to an application-defined callback function to open a file. The function should be declared using the <see cref="FNFCIOPEN" /> macro.</param>
+    <param name="pfnread">Pointer to an application-defined callback function to read data from a file. The function should be declared using the <see cref="FNFCIREAD" /> macro.</param>
+    <param name="pfnwrite">Pointer to an application-defined callback function to write data to a file. The function should be declared using the <see cref="FNFCIWRITE" /> macro.</param>
+    <param name="pfnclose">Pointer to an application-defined callback function to close a file. The function should be declared using the <see cref="FNFCICLOSE" /> macro.</param>
+    <param name="pfnseek">Pointer to an application-defined callback function to move a file pointer to the specific location. The function should be declared using the <see cref="FNFCISEEK" /> macro.</param>
+    <param name="pfndelete">Pointer to an application-defined callback function to delete a file. The function should be declared using the <see cref="FNFCIDELETE" /> macro.</param>
+    <param name="pfnfcigtf">Pointer to an application-defined callback function to retrieve a temporary file name. The function should be declared using the <see cref="FNFCIGETTEMPFILE" /> macro.</param>
+    <param name="pccab">Pointer to a <see cref="CCAB" /> structure that contains the parameters for creating a cabinet.</param>
+    <param name="pv">Pointer to an application-defined value that is passed to callback functions.</param>
+    <returns>
+      <para>If the function succeeds, it returns a non-<b>NULL</b> HFCI context pointer; otherwise, <b>NULL</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure.</para>
+    </returns>
+  </member>
+  <member name="Windows.FCIDestroy">
+    <summary>The <b>FCIDestroy</b> function deletes an open FCI context, freeing any memory and temporary files associated with the context.</summary>
+    <param name="hfci">A valid FCI context handle returned by the <see cref="FCICreate" /> function.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>TRUE</b>; otherwise, <b>FALSE</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure used to create the FCI context.</para>
+    </returns>
+  </member>
+  <member name="Windows.FCIFlushCabinet">
+    <summary>The <b>FCIFlushCabinet</b> function completes the current cabinet.</summary>
+    <param name="hfci">A valid FCI context handle returned by the<see cref="FCICreate" /> function.</param>
+    <param name="fGetNextCab">Specifies whether the function pointed to by the supplied <i>GetNextCab</i> parameter will be called.</param>
+    <param name="pfnfcignc">Pointer to an application-defined callback function to obtain specifications on the next cabinet to create. The function should be declared using the <see cref="FNFCIGETNEXTCABINET" /> macro.</param>
+    <param name="pfnfcis">Pointer to an application-defined callback function to update the user. The function should be declared using the <see cref="FNFCISTATUS" /> macro.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>TRUE</b>; otherwise, <b>FALSE</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure used to create the FCI context.</para>
+    </returns>
+  </member>
+  <member name="Windows.FCIFlushFolder">
+    <summary>The <b>FCIFlushFolder</b> function forces the current folder under construction to be completed immediately.</summary>
+    <param name="hfci">A valid FCI context handle returned by the <see cref="FCICreate" /> function.</param>
+    <param name="pfnfcignc">Pointer to an application-defined callback function to obtain specifications on the next cabinet to create. The function should be declared using the <see cref="FNFCIGETNEXTCABINET" /> macro.</param>
+    <param name="pfnfcis">Pointer to an application-defined callback function to update the user. The function should be declared using the <see cref="FNFCISTATUS" /> macro.</param>
+    <returns>
+      <para>If the function succeeds, it returns <b>TRUE</b>; otherwise, <b>FALSE</b>.</para>
+      <para>Extended error information is provided in the <see cref="ERF" /> structure used to create the FCI context.</para>
+    </returns>
+  </member>
+  <member name="Windows.FNFCIALLOC">
+    <summary>The <b>FNFCIALLOC</b> provides the declaration for the application-defined callback function to allocate memory within an FCI context.</summary>
+    <param name="fn">The number of bytes to allocate.</param>
+  </member>
+  <member name="Windows.FNFCICLOSE">
+    <summary>The <b>FNFCICLOSE</b> macro provides the declaration for the application-defined callback function to close a file in an FCI context.</summary>
+    <param name="fn">Specifies an application-defined value that identifies an open file.</param>
+  </member>
+  <member name="Windows.FNFCIDELETE">
+    <summary>The <b>FNFCIDELETE</b> macro provides the declaration for the application-defined callback function to delete a file in the FCI context.</summary>
+    <param name="fn">The name of the file to be deleted.</param>
+  </member>
+  <member name="Windows.FNFCIFILEPLACED">
+    <summary>The <b>FNFCIFILEPLACED</b> macro provides the declaration for the application-defined callback function to notify when a file is placed in the cabinet.</summary>
+    <param name="fn">Pointer to the <see cref="CCAB" /> structure containing the parameters of the cabinet on which the file has been stored.</param>
+  </member>
+  <member name="Windows.FNFCIFREE">
+    <summary>The <b>FNFCIFREE</b> macro provides the declaration for the application-defined callback function to free previously allocated memory in an FCI context.</summary>
+    <param name="fn">Pointer to the allocated memory block to free.</param>
+  </member>
+  <member name="Windows.FNFCIGETNEXTCABINET">
+    <summary>The <b>FNFCIGETNEXTCABINET</b> macro provides the declaration for the application-defined callback function to request information for the next cabinet.</summary>
+    <param name="fn">Pointer to a <see cref="CCAB" /> structure to provide the parameters for the creation of a new cabinet.</param>
+  </member>
+  <member name="Windows.FNFCIGETOPENINFO">
+    <summary>The <b>FNFCIGETOPENINFO</b> macro provides the declaration for the application-defined callback function to open a file and retrieve file date, time, and attribute.</summary>
+    <param name="fn">The complete filename.</param>
+  </member>
+  <member name="Windows.FNFCIGETTEMPFILE">
+    <summary>The <b>FNFCIGETTEMPFILE</b> macro provides the declaration for the application-defined callback function to obtain a temporary file name.</summary>
+    <param name="fn">Pointer to a buffer to receive the complete temporary file name.</param>
+  </member>
+  <member name="Windows.FNFCIOPEN">
+    <summary>The <b>FNFCIOPEN</b> macro provides the declaration for the application-defined callback function to open a file in an FCI context.</summary>
+    <param name="fn">The name of the file.</param>
+  </member>
+  <member name="Windows.FNFCIREAD">
+    <summary>The <b>FNFCIREAD</b> macro provides the declaration for the application-defined callback function to read data from a file in an FCI context.</summary>
+    <param name="fn">An application-defined value used to identify the open file.</param>
+  </member>
+  <member name="Windows.FNFCISEEK">
+    <summary>The <b>FNFCISEEK</b> macro provides the declaration for the application-defined callback function to move a file pointer to the specified location in an FCI context.</summary>
+    <param name="fn">An application-defined value used to identify the open file.</param>
+  </member>
+  <member name="Windows.FNFCISTATUS">
+    <summary>The <b>FNFCISTATUS</b> macro provides the declaration for the application-defined callback function to update the user.</summary>
+    <param name="fn">
+      <para>Indicates the type of status update. Possible values include:</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>statusFile0x00</description>
+          <description>Compressing a block into a folder.</description>
+        </listheader>
+        <listheader>
+          <description>statusFolder0x01</description>
+          <description>Adding a folder to a cabinet.</description>
+        </listheader>
+        <listheader>
+          <description>statusCabinet0x02</description>
+          <description>Writing out a complete cabinet.</description>
+        </listheader>
+      </list>  ## -remarks<para>If <i>typeStatus</i> equals <b>statusCabinet</b> the returned value indicates the desired size for the cabinet file. FCI updates the maximum cabinet size remaining using this returned value. This allows a client to generate multiple cabinets per disk, and have FCI limit the size accordingly.</para></param>
+  </member>
+  <member name="Windows.FNFCIWRITE">
+    <summary>The <b>FNFCIWRITE</b> macro provides the declaration for the application-defined callback function to write data to a file in an FCI context.</summary>
+    <param name="fn">An application-defined value used to identify the open file.</param>
+  </member>
+</doc>

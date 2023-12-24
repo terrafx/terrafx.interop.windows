@@ -3,79 +3,30 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="INamespaceWalkCB.EnterFolder">
-    <summary>
-      <para>Called when a folder is about to be entered during a namespace walk. Use this method for any initialization of the retrieved item.</para>
-    </summary>
-    <param name="psf">
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>A pointer to an <see cref="IShellFolder" /> object representing the parent of the folder designated by <i>pidl</i>.</para>
-    </param>
-    <param name="pidl">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>The PIDL, relative to <i>psf</i>, of the folder being entered.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when a folder is about to be entered during a namespace walk. Use this method for any initialization of the retrieved item.</summary>
+    <param name="psf">A pointer to an <see cref="IShellFolder" /> object representing the parent of the folder designated by <i>pidl</i>.</param>
+    <param name="pidl">The PIDL, relative to <i>psf</i>, of the folder being entered.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INamespaceWalkCB.FoundItem">
-    <summary>
-      <para>Called when an object is found in the namespace during a namespace walk. Use this method as the main action function for the class implementing it. Perform your actions as needed inside this method.</para>
-    </summary>
-    <param name="psf">
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>A pointer to an <see cref="IShellFolder" /> object representing the folder containing the item.</para>
-    </param>
-    <param name="pidl">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>The item's PIDL, relative to <i>psf</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called when an object is found in the namespace during a namespace walk. Use this method as the main action function for the class implementing it. Perform your actions as needed inside this method.</summary>
+    <param name="psf">A pointer to an <see cref="IShellFolder" /> object representing the folder containing the item.</param>
+    <param name="pidl">The item's PIDL, relative to <i>psf</i>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INamespaceWalkCB.InitializeProgressDialog">
-    <summary>
-      <para>Initializes the window title and cancel button text of the progress dialog box displayed during the namespace walk.</para>
-    </summary>
-    <param name="ppszTitle">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains a pointer to a null-terminated string that contains the title to be used for the dialog box.</para>
-    </param>
-    <param name="ppszCancel">
-      <para>Type: <b>LPWSTR*</b></para>
-      <para>When this method returns, contains a pointer to a null-terminated string that contains the text displayed on the button that cancels the namespace walk.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Initializes the window title and cancel button text of the progress dialog box displayed during the namespace walk.</summary>
+    <param name="ppszTitle">When this method returns, contains a pointer to a null-terminated string that contains the title to be used for the dialog box.</param>
+    <param name="ppszCancel">When this method returns, contains a pointer to a null-terminated string that contains the text displayed on the button that cancels the namespace walk.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INamespaceWalkCB.LeaveFolder">
-    <summary>
-      <para>Called after a namespace walk through a folder. Use this method to perform any necessary cleanup following the actions performed by <see cref="INamespaceWalkCB.EnterFolder" /> or <see cref="INamespaceWalkCB.FoundItem" />.</para>
-    </summary>
-    <param name="psf">
-      <para>Type: <b><see cref="IShellFolder" />*</b></para>
-      <para>A pointer to an <see cref="IShellFolder" /> object representing the parent of the folder designated by <i>pidl</i>.</para>
-    </param>
-    <param name="pidl">
-      <para>Type: <b>PCUITEMID_CHILD</b></para>
-      <para>A PIDL, relative to <i>psf</i>, of the folder being exited.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Called after a namespace walk through a folder. Use this method to perform any necessary cleanup following the actions performed by <see cref="INamespaceWalkCB.EnterFolder" /> or <see cref="INamespaceWalkCB.FoundItem" />.</summary>
+    <param name="psf">A pointer to an <see cref="IShellFolder" /> object representing the parent of the folder designated by <i>pidl</i>.</param>
+    <param name="pidl">A PIDL, relative to <i>psf</i>, of the folder being exited.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="INamespaceWalkCB">
-    <summary>
-      <para>A callback interface exposing methods used with <see cref="INamespaceWalk" />. After performing a walk with <b>INamespaceWalk</b>, an <see cref="IShellFolder" /> object representing the walked nodes is passed to the <b>INamespaceWalkCB</b> methods. What those methods do with the information depends on the object that is implementing them.</para>
-    </summary>
-    <remarks>
-      <para>The IID for this interface is IID_INamespaceWalkCB.</para>
-    </remarks>
+    <summary>A callback interface exposing methods used with <see cref="INamespaceWalk" />. After performing a walk with <b>INamespaceWalk</b>, an <see cref="IShellFolder" /> object representing the walked nodes is passed to the <b>INamespaceWalkCB</b> methods. What those methods do with the information depends on the object that is implementing them.</summary>
   </member>
 </doc>

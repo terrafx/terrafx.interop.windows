@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfFnPropertyUIStatus.GetStatus">
-    <summary>
-      <para>Obtains the status of a text service property UI.</para>
-    </summary>
-    <param name="refguidProp">
-      <para>Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property</a> identifiers.</para>
-    </param>
+    <summary>Obtains the status of a text service property UI.</summary>
+    <param name="refguidProp">Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property</a> identifiers.</param>
     <param name="pdw">
       <para>Pointer to a <b>DWORD</b> that receives the property UI status. This can be zero or the following value.</para>
       <list type="table">
@@ -16,14 +12,18 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TF_PROPUI_STATUS_SAVETOFILE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_PROPUI_STATUS_SAVETOFILE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The property can be serialized. If this value is not present, the property cannot be serialized.</para>
-          </description>
-        </item>
+          <description>The property can be serialized. If this value is not present, the property cannot be serialized.</description>
+        </listheader>
       </list>
     </param>
     <returns>
@@ -33,52 +33,50 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pdw</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>pdw</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The text service does not support this method.</para>
-          </description>
-        </item>
+          <description>The text service does not support this method.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfFnPropertyUIStatus" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties
-</seealso>
   </member>
   <member name="ITfFnPropertyUIStatus.SetStatus">
-    <summary>
-      <para>Modifies the status of a text service property UI.</para>
-    </summary>
-    <param name="refguidProp">
-      <para>Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property</a> identifiers.</para>
-    </param>
-    <param name="dw">
-      <para>Contains the new property UI status. See the <i>pdw</i> parameter of <see cref="ITfFnPropertyUIStatus.GetStatus" /> for possible values.</para>
-    </param>
+    <summary>Modifies the status of a text service property UI.</summary>
+    <param name="refguidProp">Specifies the property identifier. This can be a custom identifier or one of the <a href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">predefined property</a> identifiers.</param>
+    <param name="dw">Contains the new property UI status. See the <i>pdw</i> parameter of <see cref="ITfFnPropertyUIStatus.GetStatus" /> for possible values.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -86,32 +84,32 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_NOTIMPL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_NOTIMPL</b>
-            </para>
-          </description>
-          <description>
-            <para>The text service does not support this method.</para>
-          </description>
-        </item>
+          <description>The text service does not support this method.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="ITfFnPropertyUIStatus" />
-    <seealso cref="ITfFnPropertyUIStatus.GetStatus " />
-    <seealso href="https://docs.microsoft.com//windows/desktop/TSF/predefined-properties">Predefined Properties
-</seealso>
   </member>
   <member name="ITfFnPropertyUIStatus">
     <summary>

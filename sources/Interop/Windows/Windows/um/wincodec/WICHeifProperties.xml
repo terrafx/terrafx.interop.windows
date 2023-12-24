@@ -3,9 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICHeifProperties">
-    <summary>
-      <para>Specifies the properties of a High Efficiency Image Format (HEIF) image.</para>
-    </summary>
+    <summary>Specifies the properties of a High Efficiency Image Format (HEIF) image.</summary>
   </member>
   <member name="WICHeifProperties.WICHeifOrientation">
     <summary>
@@ -13,7 +11,5 @@
       <para>The value of this property uses the same numbering scheme as the <a href="https://docs.microsoft.com//windows/desktop/properties/props-system-photo-orientation">System.Photo.Orientation</a> property. For example, a value of 1 (PHOTO_ORIENTATION_NORMAL) indicates a 0 degree rotation.</para>
     </summary>
   </member>
-  <member name="WICHeifProperties.WICHeifProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICHeifProperties.WICHeifProperties_FORCE_DWORD"></member>
 </doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_DESCRIPTOR_RANGE_TYPE">
+    <summary>Specifies a range so that, for example, if part of a descriptor table has 100 shader-resource views (SRVs) that range can be declared in one entry rather than 100.</summary>
+  </member>
+  <member name="D3D12_DESCRIPTOR_RANGE_TYPE.D3D12_DESCRIPTOR_RANGE_TYPE_SRV">
+    <summary>Specifies a range of SRVs.</summary>
+  </member>
+  <member name="D3D12_DESCRIPTOR_RANGE_TYPE.D3D12_DESCRIPTOR_RANGE_TYPE_UAV">
+    <summary>Specifies a range of unordered-access views (UAVs).</summary>
+  </member>
+  <member name="D3D12_DESCRIPTOR_RANGE_TYPE.D3D12_DESCRIPTOR_RANGE_TYPE_CBV">
+    <summary>Specifies a range of constant-buffer views (CBVs).</summary>
+  </member>
+  <member name="D3D12_DESCRIPTOR_RANGE_TYPE.D3D12_DESCRIPTOR_RANGE_TYPE_SAMPLER">
+    <summary>Specifies a range of samplers.</summary>
+  </member>
+</doc>

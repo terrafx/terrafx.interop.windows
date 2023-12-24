@@ -25,7 +25,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, Guid*, void**, int>)(lpVtbl[0]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, uint>)(lpVtbl[1]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, uint>)(lpVtbl[1]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, uint>)(lpVtbl[2]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, uint>)(lpVtbl[2]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_bold"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(3)]
     public HRESULT get_bold([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[3]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[3]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_italic"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(4)]
     public HRESULT get_italic([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[4]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[4]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_underline"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(5)]
     public HRESULT get_underline([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[5]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[5]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_overline"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(6)]
     public HRESULT get_overline([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[6]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[6]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_strikeOut"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(7)]
     public HRESULT get_strikeOut([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[7]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[7]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_subScript"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(8)]
     public HRESULT get_subScript([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[8]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[8]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_superScript"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(9)]
     public HRESULT get_superScript([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[9]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[9]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_explicitFace"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(10)]
     public HRESULT get_explicitFace([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[10]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[10]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_fontWeight"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(11)]
     public HRESULT get_fontWeight([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, int*, int>)(lpVtbl[11]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, int*, int>)(lpVtbl[11]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_fontSize"]/*' />
@@ -123,15 +123,15 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(12)]
     public HRESULT get_fontSize([NativeTypeName("long *")] int* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, int*, int>)(lpVtbl[12]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, int*, int>)(lpVtbl[12]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_fontName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(13)]
-    public HRESULT get_fontName([NativeTypeName("TCHAR *")] ushort* p)
+    public HRESULT get_fontName([NativeTypeName("TCHAR *")] char* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, ushort*, int>)(lpVtbl[13]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, char*, int>)(lpVtbl[13]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_hasBgColor"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(14)]
     public HRESULT get_hasBgColor([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[14]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[14]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_textColor"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(15)]
     public HRESULT get_textColor([NativeTypeName("DWORD *")] uint* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, uint*, int>)(lpVtbl[15]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, uint*, int>)(lpVtbl[15]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_backgroundColor"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(16)]
     public HRESULT get_backgroundColor([NativeTypeName("DWORD *")] uint* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, uint*, int>)(lpVtbl[16]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, uint*, int>)(lpVtbl[16]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_preFormatted"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(17)]
     public HRESULT get_preFormatted([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[17]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[17]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_direction"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(18)]
     public HRESULT get_direction([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[18]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[18]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_blockDirection"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(19)]
     public HRESULT get_blockDirection([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[19]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[19]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.get_OL"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(20)]
     public HRESULT get_OL([NativeTypeName("VARIANT_BOOL *")] short* p)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, short*, int>)(lpVtbl[20]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, short*, int>)(lpVtbl[20]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), p);
     }
 
     /// <include file='IHTMLComputedStyle.xml' path='doc/member[@name="IHTMLComputedStyle.IsEqual"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
     [VtblIndex(21)]
     public HRESULT IsEqual(IHTMLComputedStyle* pComputedStyle, [NativeTypeName("VARIANT_BOOL *")] short* pfEqual)
     {
-        return ((delegate* unmanaged<IHTMLComputedStyle*, IHTMLComputedStyle*, short*, int>)(lpVtbl[21]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), pComputedStyle, pfEqual);
+        return ((delegate* unmanaged[MemberFunction]<IHTMLComputedStyle*, IHTMLComputedStyle*, short*, int>)(lpVtbl[21]))((IHTMLComputedStyle*)Unsafe.AsPointer(ref this), pComputedStyle, pfEqual);
     }
 
     public interface Interface : IUnknown.Interface
@@ -231,7 +231,7 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
         HRESULT get_fontSize([NativeTypeName("long *")] int* p);
 
         [VtblIndex(13)]
-        HRESULT get_fontName([NativeTypeName("TCHAR *")] ushort* p);
+        HRESULT get_fontName([NativeTypeName("TCHAR *")] char* p);
 
         [VtblIndex(14)]
         HRESULT get_hasBgColor([NativeTypeName("VARIANT_BOOL *")] short* p);
@@ -262,69 +262,69 @@ public unsafe partial struct IHTMLComputedStyle : IHTMLComputedStyle.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_bold;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_bold;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_italic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_italic;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_underline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_underline;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_overline;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_overline;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_strikeOut;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_strikeOut;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_subScript;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_subScript;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_superScript;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_superScript;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_explicitFace;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_explicitFace;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_fontWeight;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_fontWeight;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_fontSize;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_fontSize;
 
         [NativeTypeName("HRESULT (TCHAR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> get_fontName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> get_fontName;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_hasBgColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_hasBgColor;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_textColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_textColor;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> get_backgroundColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> get_backgroundColor;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_preFormatted;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_preFormatted;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_direction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_direction;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_blockDirection;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_blockDirection;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_OL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_OL;
 
         [NativeTypeName("HRESULT (IHTMLComputedStyle *, VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLComputedStyle*, short*, int> IsEqual;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLComputedStyle*, short*, int> IsEqual;
     }
 }

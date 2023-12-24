@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="GdiplusStartupParams">
+    <summary>Defines constants that specify parameters for startup.</summary>
+  </member>
+  <member name="GdiplusStartupParams.GdiplusStartupDefault">
+    <summary>Specfies default startup.</summary>
+  </member>
+  <member name="GdiplusStartupParams.GdiplusStartupNoSetRound">
+    <summary>Specifies no set round for startup.</summary>
+  </member>
+  <member name="GdiplusStartupParams.GdiplusStartupSetPSValue">
+    <summary>Specifies a pixel shader value for startup.</summary>
+  </member>
+  <member name="GdiplusStartupParams.GdiplusStartupTransparencyMask">
+    <summary>Specifies a transparency mask for startup.</summary>
+  </member>
+</doc>

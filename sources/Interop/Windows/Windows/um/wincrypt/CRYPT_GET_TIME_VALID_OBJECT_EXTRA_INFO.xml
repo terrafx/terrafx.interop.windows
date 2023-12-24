@@ -3,47 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO">
-    <summary>
-      <para>The <b>CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO</b> structure contains optional extra information that can be passed to the <see cref="CryptGetTimeValidObject" /> function in the <i>pExtraInfo</i> parameter.</para>
-    </summary>
-    <remarks>
-      <para>All members of the <b>CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO</b> structure that do not have a value must be set to zero.</para>
-    </remarks>
+    <summary>The <b>CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO</b> structure contains optional extra information that can be passed to the <see cref="CryptGetTimeValidObject" /> function in the <i>pExtraInfo</i> parameter.</summary>
   </member>
   <member name="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO.cbSize">
-    <summary>
-      <para>The size, in bytes, of this structure.</para>
-    </summary>
+    <summary>The size, in bytes, of this structure.</summary>
   </member>
   <member name="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO.iDeltaCrlIndicator">
     <summary>
       <para>A value used to compare to the base <a href="https://docs.microsoft.com//windows/desktop/SecGloss/c-gly">certificate revocation list</a> (CRL) number. If the base CRL number is less than this value, the caller should attempt to retrieve a newer base CRL.</para>
-      <para>If the <b>pDeltaCrlIndicator</b> member is non-<b>NULL</b>  the value of this member must be 0x7fffffff.<b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>Because the <b>pDeltaCrlIndicator</b> member does not exist, the  <b>iDeltaCrlIndicator</b> value requirement does not apply.</para>
+      <para>If the <b>pDeltaCrlIndicator</b> member is non-<b>NULL</b> the value of this member must be 0x7fffffff.<b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>Because the <b>pDeltaCrlIndicator</b> member does not exist, the <b>iDeltaCrlIndicator</b> value requirement does not apply.</para>
     </summary>
   </member>
   <member name="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO.pftCacheResync">
-    <summary>
-      <para>A pointer to a <see cref="FILETIME" /> structure that governs the use of cached information. Any information cached  before this time is considered invalid and new information is retrieved.</para>
-    </summary>
+    <summary>A pointer to a <see cref="FILETIME" /> structure that governs the use of cached information. Any information cached before this time is considered invalid and new information is retrieved.</summary>
   </member>
   <member name="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO.pLastSyncTime">
-    <summary>
-      <para>A pointer to a <see cref="FILETIME" /> structure that contains the time of the last synchronization of the data retrieved for the object.</para>
-    </summary>
+    <summary>A pointer to a <see cref="FILETIME" /> structure that contains the time of the last synchronization of the data retrieved for the object.</summary>
   </member>
   <member name="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO.pMaxAgeTime">
-    <summary>
-      <para>A pointer to a <see cref="FILETIME" /> structure that specifies an expiration time of the data retrieved based on the <b>dwMaxAge</b> member of the <see cref="CRYPTNET_URL_CACHE_RESPONSE_INFO" /> structure.</para>
-    </summary>
+    <summary>A pointer to a <see cref="FILETIME" /> structure that specifies an expiration time of the data retrieved based on the <b>dwMaxAge</b> member of the <see cref="CRYPTNET_URL_CACHE_RESPONSE_INFO" /> structure.</summary>
   </member>
   <member name="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO.pChainPara">
-    <summary>
-      <para>A pointer to a <see cref="CERT_REVOCATION_CHAIN_PARA" /> structure that contains the <see cref="CertGetCertificateChain" /> function parameters used by the caller. The data in this member enables independent <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) signer certificate chain verification.</para>
-    </summary>
+    <summary>A pointer to a <see cref="CERT_REVOCATION_CHAIN_PARA" /> structure that contains the <see cref="CertGetCertificateChain" /> function parameters used by the caller. The data in this member enables independent <a href="https://docs.microsoft.com//windows/desktop/SecGloss/o-gly">online certificate status protocol</a> (OCSP) signer certificate chain verification.</summary>
   </member>
   <member name="CRYPT_GET_TIME_VALID_OBJECT_EXTRA_INFO.pDeltaCrlIndicator">
     <summary>
-      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that contains a CRL with a length of more than 4 bytes. If this member is  non-<b>NULL</b> and the <b>iDeltaCrlIndicator</b> member is equal to <b>MAXLONG</b>, then if the base CRL number is less than this value, the caller should attempt to retrieve a newer base CRL.</para>
+      <para>A pointer to a <a href="https://docs.microsoft.com//previous-versions/windows/desktop/legacy/aa381414(v=vs.85)">CRYPT_INTEGER_BLOB</a> structure that contains a CRL with a length of more than 4 bytes. If this member is non-<b>NULL</b> and the <b>iDeltaCrlIndicator</b> member is equal to <b>MAXLONG</b>, then if the base CRL number is less than this value, the caller should attempt to retrieve a newer base CRL.</para>
       <para>
         <b>Windows Server 2008, Windows Vista, Windows Server 2003 and Windows XP:  </b>This member is not supported.</para>
     </summary>

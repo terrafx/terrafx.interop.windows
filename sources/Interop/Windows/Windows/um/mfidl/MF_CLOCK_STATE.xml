@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_CLOCK_STATE">
-    <summary>
-      <para>Defines the state of a clock.</para>
-    </summary>
-    <seealso cref="IMFClock.GetState" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines the state of a clock.</summary>
   </member>
   <member name="MF_CLOCK_STATE.MFCLOCK_STATE_INVALID">
-    <summary>
-      <para>The clock is invalid. A clock might be invalid for several reasons. Some clocks return this state before the first start. This state can also occur if the underlying device is lost.</para>
-    </summary>
+    <summary>The clock is invalid. A clock might be invalid for several reasons. Some clocks return this state before the first start. This state can also occur if the underlying device is lost.</summary>
   </member>
   <member name="MF_CLOCK_STATE.MFCLOCK_STATE_RUNNING">
-    <summary>
-      <para>The clock is running. While the clock is running, the time advances at the clock's frequency and current rate.</para>
-    </summary>
+    <summary>The clock is running. While the clock is running, the time advances at the clock's frequency and current rate.</summary>
   </member>
   <member name="MF_CLOCK_STATE.MFCLOCK_STATE_STOPPED">
-    <summary>
-      <para>The clock is stopped. While stopped, the clock reports a time of 0.</para>
-    </summary>
+    <summary>The clock is stopped. While stopped, the clock reports a time of 0.</summary>
   </member>
   <member name="MF_CLOCK_STATE.MFCLOCK_STATE_PAUSED">
-    <summary>
-      <para>The clock is paused. While paused, the clock reports the time it was paused.</para>
-    </summary>
+    <summary>The clock is paused. While paused, the clock reports the time it was paused.</summary>
   </member>
 </doc>

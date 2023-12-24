@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="UNLOAD_DLL_DEBUG_INFO">
-    <summary>
-      <para>Contains information about a dynamic-link library (DLL) that has just been unloaded.</para>
-    </summary>
-    <seealso cref="DEBUG_EVENT" />
+    <summary>Contains information about a dynamic-link library (DLL) that has just been unloaded.</summary>
   </member>
   <member name="UNLOAD_DLL_DEBUG_INFO.lpBaseOfDll">
-    <summary>
-      <para>A pointer to the base address of the DLL in the address space of the process unloading the DLL.</para>
-    </summary>
+    <summary>A pointer to the base address of the DLL in the address space of the process unloading the DLL.</summary>
   </member>
 </doc>

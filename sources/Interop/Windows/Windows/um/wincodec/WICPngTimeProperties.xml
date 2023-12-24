@@ -3,41 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICPngTimeProperties">
-    <summary>
-      <para>Specifies the Portable Network Graphics (PNG) tIME chunk metadata properties.</para>
-    </summary>
+    <summary>Specifies the Portable Network Graphics (PNG) tIME chunk metadata properties.</summary>
   </member>
   <member name="WICPngTimeProperties.WICPngTimeYear">
-    <summary>
-      <para>[VT_UI2] Indicates the year of the last modification.</para>
-    </summary>
+    <summary>[VT_UI2] Indicates the year of the last modification.</summary>
   </member>
   <member name="WICPngTimeProperties.WICPngTimeMonth">
-    <summary>
-      <para>[VT_UI1] Indicates the month of the last modification.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates the month of the last modification.</summary>
   </member>
   <member name="WICPngTimeProperties.WICPngTimeDay">
-    <summary>
-      <para>[VT_UI1] Indicates day of the last modification.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates day of the last modification.</summary>
   </member>
   <member name="WICPngTimeProperties.WICPngTimeHour">
-    <summary>
-      <para>[VT_UI1] Indicates the hour of the last modification.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates the hour of the last modification.</summary>
   </member>
   <member name="WICPngTimeProperties.WICPngTimeMinute">
-    <summary>
-      <para>[VT_UI1] Indicates the minute of the last modification.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates the minute of the last modification.</summary>
   </member>
   <member name="WICPngTimeProperties.WICPngTimeSecond">
-    <summary>
-      <para>[VT_UI1] Indicates the second of the last modification.</para>
-    </summary>
+    <summary>[VT_UI1] Indicates the second of the last modification.</summary>
   </member>
-  <member name="WICPngTimeProperties.WICPngTimeProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICPngTimeProperties.WICPngTimeProperties_FORCE_DWORD"></member>
 </doc>

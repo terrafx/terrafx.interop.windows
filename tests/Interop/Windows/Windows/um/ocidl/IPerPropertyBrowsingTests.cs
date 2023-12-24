@@ -19,32 +19,4 @@ public static unsafe partial class IPerPropertyBrowsingTests
     {
         Assert.That(typeof(IPerPropertyBrowsing).GUID, Is.EqualTo(IID_IPerPropertyBrowsing));
     }
-
-    /// <summary>Validates that the <see cref="IPerPropertyBrowsing" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IPerPropertyBrowsing>(), Is.EqualTo(sizeof(IPerPropertyBrowsing)));
-    }
-
-    /// <summary>Validates that the <see cref="IPerPropertyBrowsing" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IPerPropertyBrowsing).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IPerPropertyBrowsing" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IPerPropertyBrowsing), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IPerPropertyBrowsing), Is.EqualTo(4));
-        }
-    }
 }

@@ -3,33 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SP_NEWDEVICEWIZARD_DATA">
-    <summary>
-      <para>An SP_NEWDEVICEWIZARD_DATA structure is used by installers to extend the operation of the hardware installation wizard by adding custom pages. It is used with DIF_NEWDEVICEWIZARD_<i>XXX</i> installation requests.</para>
-    </summary>
-    <remarks>
-      <para>
-        <see cref="SP_ADDPROPERTYPAGE_DATA" /> is an alias for this structure.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-finishinstall">DIF_NEWDEVICEWIZARD_FINISHINSTALL</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-postanalyze">DIF_NEWDEVICEWIZARD_POSTANALYZE</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-preanalyze">DIF_NEWDEVICEWIZARD_PREANALYZE</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-preselect">DIF_NEWDEVICEWIZARD_PRESELECT</seealso>
-    <seealso href="https://docs.microsoft.com//windows-hardware/drivers/install/dif-newdevicewizard-select">DIF_NEWDEVICEWIZARD_SELECT</seealso>
+    <summary>An SP_NEWDEVICEWIZARD_DATA structure is used by installers to extend the operation of the hardware installation wizard by adding custom pages. It is used with DIF_NEWDEVICEWIZARD_<i>XXX</i> installation requests.</summary>
   </member>
   <member name="SP_NEWDEVICEWIZARD_DATA.ClassInstallHeader">
-    <summary>
-      <para>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</para>
-    </summary>
+    <summary>An install request header that contains the header size and the DIF code for the request. See <see cref="SP_CLASSINSTALL_HEADER" />.</summary>
   </member>
   <member name="SP_NEWDEVICEWIZARD_DATA.Flags">
-    <summary>
-      <para>Reserved. Must be zero.</para>
-    </summary>
+    <summary>Reserved. Must be zero.</summary>
   </member>
   <member name="SP_NEWDEVICEWIZARD_DATA.DynamicPages">
-    <summary>
-      <para>An array of property sheet page handles. An installer can add the handles of custom wizard pages to this array.</para>
-    </summary>
+    <summary>An array of property sheet page handles. An installer can add the handles of custom wizard pages to this array.</summary>
   </member>
   <member name="SP_NEWDEVICEWIZARD_DATA.NumDynamicPages">
     <summary>
@@ -38,8 +21,6 @@
     </summary>
   </member>
   <member name="SP_NEWDEVICEWIZARD_DATA.hwndWizardDlg">
-    <summary>
-      <para>The handle to the top-level window of the hardware installation wizard .</para>
-    </summary>
+    <summary>The handle to the top-level window of the hardware installation wizard .</summary>
   </member>
 </doc>

@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WIN32_FIND_STREAM_DATA">
-    <summary>
-      <para>Contains information about the stream found by the
-<see cref="FindFirstStreamW" /> or
-<see cref="FindNextStreamW" /> function.</para>
-    </summary>
-    <seealso cref="FindFirstStreamW" />
-    <seealso cref="FindNextStreamW" />
-    <seealso cref="LARGE_INTEGER" />
+    <summary>Contains information about the stream found by the<see cref="FindFirstStreamW" /> or<see cref="FindNextStreamW" /> function.</summary>
   </member>
   <member name="WIN32_FIND_STREAM_DATA.StreamSize">
-    <summary>
-      <para>A <see cref="LARGE_INTEGER" /> value that specifies the
-size of the stream, in bytes.</para>
-    </summary>
+    <summary>A <see cref="LARGE_INTEGER" /> value that specifies the size of the stream, in bytes.</summary>
   </member>
   <member name="WIN32_FIND_STREAM_DATA.cStreamName">
-    <summary>
-      <para>The name of the stream. The string name format is
-":<i>streamname</i>:$<i>streamtype</i>".</para>
-    </summary>
+    <summary>The name of the stream. The string name format is ":<i>streamname</i>:$<i>streamtype</i>".</summary>
   </member>
 </doc>

@@ -25,7 +25,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFMediaKeySystemAccess*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySystemAccess*, Guid*, void**, int>)(lpVtbl[0]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFMediaKeySystemAccess*, uint>)(lpVtbl[1]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySystemAccess*, uint>)(lpVtbl[1]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFMediaKeySystemAccess*, uint>)(lpVtbl[2]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySystemAccess*, uint>)(lpVtbl[2]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess.CreateMediaKeys"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
     [VtblIndex(3)]
     public HRESULT CreateMediaKeys(IPropertyStore* pCdmCustomConfig, IMFMediaKeys2** ppKeys)
     {
-        return ((delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore*, IMFMediaKeys2**, int>)(lpVtbl[3]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pCdmCustomConfig, ppKeys);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySystemAccess*, IPropertyStore*, IMFMediaKeys2**, int>)(lpVtbl[3]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pCdmCustomConfig, ppKeys);
     }
 
     /// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess.get_SupportedConfiguration"]/*' />
@@ -59,15 +59,15 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
     [VtblIndex(4)]
     public HRESULT get_SupportedConfiguration(IPropertyStore** ppSupportedConfiguration)
     {
-        return ((delegate* unmanaged<IMFMediaKeySystemAccess*, IPropertyStore**, int>)(lpVtbl[4]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), ppSupportedConfiguration);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySystemAccess*, IPropertyStore**, int>)(lpVtbl[4]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), ppSupportedConfiguration);
     }
 
     /// <include file='IMFMediaKeySystemAccess.xml' path='doc/member[@name="IMFMediaKeySystemAccess.get_KeySystem"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem)
+    public HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** pKeySystem)
     {
-        return ((delegate* unmanaged<IMFMediaKeySystemAccess*, ushort**, int>)(lpVtbl[5]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pKeySystem);
+        return ((delegate* unmanaged[MemberFunction]<IMFMediaKeySystemAccess*, char**, int>)(lpVtbl[5]))((IMFMediaKeySystemAccess*)Unsafe.AsPointer(ref this), pKeySystem);
     }
 
     public interface Interface : IUnknown.Interface
@@ -79,28 +79,28 @@ public unsafe partial struct IMFMediaKeySystemAccess : IMFMediaKeySystemAccess.I
         HRESULT get_SupportedConfiguration(IPropertyStore** ppSupportedConfiguration);
 
         [VtblIndex(5)]
-        HRESULT get_KeySystem([NativeTypeName("BSTR *")] ushort** pKeySystem);
+        HRESULT get_KeySystem([NativeTypeName("BSTR *")] char** pKeySystem);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IPropertyStore *, IMFMediaKeys2 **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyStore*, IMFMediaKeys2**, int> CreateMediaKeys;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyStore*, IMFMediaKeys2**, int> CreateMediaKeys;
 
         [NativeTypeName("HRESULT (IPropertyStore **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IPropertyStore**, int> get_SupportedConfiguration;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IPropertyStore**, int> get_SupportedConfiguration;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_KeySystem;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_KeySystem;
     }
 }

@@ -3,17 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="EXT_FILE_ID_128">
-    <summary>
-      <para>Defines a 128-bit file identifier.</para>
-    </summary>
-    <seealso cref="FILE_ID_DESCRIPTOR" />
-    <seealso cref="FILE_ID_EXTD_DIR_INFO" />
-    <seealso cref="FILE_ID_INFO" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/FileIO/file-management-structures">File Management Structures</seealso>
+    <summary>Defines a 128-bit file identifier.</summary>
   </member>
   <member name="EXT_FILE_ID_128.Identifier">
-    <summary>
-      <para>A byte array containing  the 128 bit identifier.</para>
-    </summary>
+    <summary>A byte array containing the 128 bit identifier.</summary>
   </member>
 </doc>

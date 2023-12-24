@@ -3,67 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="BITMAP">
-    <summary>
-      <para>The <b>BITMAP</b> structure defines the type, width, height, color format, and bit values of a bitmap.</para>
-    </summary>
-    <remarks>
-      <para>The bitmap formats currently used are monochrome and color. The monochrome bitmap uses a one-bit, one-plane format. Each scan is a multiple of 16 bits.</para>
-      <para>Scans are organized as follows for a monochrome bitmap of height <i>n</i>:</para>
-      <code>
-    Scan 0
-    Scan 1
-    .
-    .
-    .
-    Scan n-2
-    Scan n-1
-
-</code>
-      <para>The pixels on a monochrome device are either black or white. If the corresponding bit in the bitmap is 1, the pixel is set to the foreground color; if the corresponding bit in the bitmap is zero, the pixel is set to the background color.</para>
-      <para>All devices that have the RC_BITBLT device capability support bitmaps. For more information, see <see cref="GetDeviceCaps" />.</para>
-      <para>Each device has a unique color format. To transfer a bitmap from one device to another, use the <see cref="GetDIBits" /> and <see cref="SetDIBits" /> functions.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmap-structures">Bitmap Structures</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/gdi/bitmaps">Bitmaps Overview</seealso>
-    <seealso cref="CreateBitmapIndirect" />
-    <seealso cref="GetDIBits" />
-    <seealso cref="GetDeviceCaps" />
-    <seealso cref="GetObject" />
-    <seealso cref="SetDIBits" />
+    <summary>The <b>BITMAP</b> structure defines the type, width, height, color format, and bit values of a bitmap.</summary>
   </member>
   <member name="BITMAP.bmType">
-    <summary>
-      <para>The bitmap type. This member must be zero.</para>
-    </summary>
+    <summary>The bitmap type. This member must be zero.</summary>
   </member>
   <member name="BITMAP.bmWidth">
-    <summary>
-      <para>The width, in pixels, of the bitmap. The width must be greater than zero.</para>
-    </summary>
+    <summary>The width, in pixels, of the bitmap. The width must be greater than zero.</summary>
   </member>
   <member name="BITMAP.bmHeight">
-    <summary>
-      <para>The height, in pixels, of the bitmap. The height must be greater than zero.</para>
-    </summary>
+    <summary>The height, in pixels, of the bitmap. The height must be greater than zero.</summary>
   </member>
   <member name="BITMAP.bmWidthBytes">
-    <summary>
-      <para>The number of bytes in each scan line. This value must be divisible by 2, because the system assumes that the bit values of a bitmap form an array that is word aligned.</para>
-    </summary>
+    <summary>The number of bytes in each scan line. This value must be divisible by 2, because the system assumes that the bit values of a bitmap form an array that is word aligned.</summary>
   </member>
   <member name="BITMAP.bmPlanes">
-    <summary>
-      <para>The count of color planes.</para>
-    </summary>
+    <summary>The count of color planes.</summary>
   </member>
   <member name="BITMAP.bmBitsPixel">
-    <summary>
-      <para>The number of bits required to indicate the color of a pixel.</para>
-    </summary>
+    <summary>The number of bits required to indicate the color of a pixel.</summary>
   </member>
   <member name="BITMAP.bmBits">
-    <summary>
-      <para>A pointer to the location of the bit values for the bitmap. The <b>bmBits</b> member must be a pointer to an array of character (1-byte) values.</para>
-    </summary>
+    <summary>A pointer to the location of the bit values for the bitmap. The <b>bmBits</b> member must be a pointer to an array of character (1-byte) values.</summary>
   </member>
 </doc>

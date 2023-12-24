@@ -21,32 +21,4 @@ public static unsafe partial class ITfIntegratableCandidateListUIElementTests
     {
         Assert.That(typeof(ITfIntegratableCandidateListUIElement).GUID, Is.EqualTo(IID_ITfIntegratableCandidateListUIElement));
     }
-
-    /// <summary>Validates that the <see cref="ITfIntegratableCandidateListUIElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfIntegratableCandidateListUIElement>(), Is.EqualTo(sizeof(ITfIntegratableCandidateListUIElement)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfIntegratableCandidateListUIElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfIntegratableCandidateListUIElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfIntegratableCandidateListUIElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfIntegratableCandidateListUIElement), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfIntegratableCandidateListUIElement), Is.EqualTo(4));
-        }
-    }
 }

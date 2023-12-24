@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAcousticEchoCancellationControl.SetEchoCancellationRenderEndpoint">
+    <summary>Sets the audio render endpoint that should be used as the reference stream for acoustic echo cancellation (AEC).</summary>
+    <param name="endpointId">The endpoint ID of the ender endpoint that should be used as the reference stream for AEC. Setting an invalid render device ID will fail with E_INVALIDARG. Setting the value to NULL will result in Windows using its own algorithm to pick the loopback reference device</param>
+    <returns>
+      <para>Returns an HRESULT value including the following:</para>
+      <para>| Value | Description | |-------|-------------| | S_OK | Success. | | E_INVALIDARG | The <i>endpointId</i> value is invalid. |</para>
+    </returns>
+  </member>
+  <member name="IAcousticEchoCancellationControl">
+    <summary>Provides a mechanism for determining if an audio capture endpoint supports acoustic echo cancellation (AEC) and, if so, allows the client to set the audio render endpoint that should be used as the reference stream.</summary>
+  </member>
+</doc>

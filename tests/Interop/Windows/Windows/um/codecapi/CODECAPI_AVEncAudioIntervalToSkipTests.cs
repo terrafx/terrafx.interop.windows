@@ -19,25 +19,4 @@ public static unsafe partial class CODECAPI_AVEncAudioIntervalToSkipTests
     {
         Assert.That(typeof(CODECAPI_AVEncAudioIntervalToSkip).GUID, Is.EqualTo(IID_CODECAPI_AVEncAudioIntervalToSkip));
     }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncAudioIntervalToSkip" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<CODECAPI_AVEncAudioIntervalToSkip>(), Is.EqualTo(sizeof(CODECAPI_AVEncAudioIntervalToSkip)));
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncAudioIntervalToSkip" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(CODECAPI_AVEncAudioIntervalToSkip).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="CODECAPI_AVEncAudioIntervalToSkip" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(CODECAPI_AVEncAudioIntervalToSkip), Is.EqualTo(1));
-    }
 }

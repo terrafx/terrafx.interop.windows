@@ -3,39 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NUMA_NODE_RELATIONSHIP">
-    <summary>
-      <para>Represents information about a NUMA node in a processor group. This structure is used with the <see cref="GetLogicalProcessorInformationEx" /> function.</para>
-    </summary>
-    <seealso cref="GROUP_AFFINITY" />
-    <seealso cref="GetLogicalProcessorInformationEx" />
-    <seealso cref="SYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX" />
+    <summary>Represents information about a NUMA node in a processor group. This structure is used with the <see cref="GetLogicalProcessorInformationEx" /> function.</summary>
   </member>
   <member name="NUMA_NODE_RELATIONSHIP.NodeNumber">
-    <summary>
-      <para>The number of the NUMA node.</para>
-    </summary>
+    <summary>The number of the NUMA node.</summary>
   </member>
   <member name="NUMA_NODE_RELATIONSHIP.Reserved">
-    <summary>
-      <para>This member is reserved.</para>
-    </summary>
+    <summary>This member is reserved.</summary>
   </member>
   <member name="NUMA_NODE_RELATIONSHIP.GroupCount">
-    <summary>
-      <para>The number of groups included in the <i>GroupMasks</i> array. This field was introduced in TBD Release Iron. On earlier versions, this value is always 0.</para>
-    </summary>
+    <summary>The number of groups included in the <i>GroupMasks</i> array. This field was introduced in TBD Release Iron. On earlier versions, this value is always 0.</summary>
   </member>
-  <member name="NUMA_NODE_RELATIONSHIP.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="NUMA_NODE_RELATIONSHIP.DUMMYUNIONNAME"></member>
   <member name="NUMA_NODE_RELATIONSHIP.DUMMYUNIONNAME.GroupMask">
-    <summary>
-      <para>A <see cref="GROUP_AFFINITY" /> structure that specifies a  group number and processor affinity within the group.</para>
-    </summary>
+    <summary>A <see cref="GROUP_AFFINITY" /> structure that specifies a group number and processor affinity within the group.</summary>
   </member>
   <member name="NUMA_NODE_RELATIONSHIP.DUMMYUNIONNAME.GroupMasks">
-    <summary>
-      <para>An array of <see cref="GROUP_AFFINITY" /> structure that specifies a  group number and processor affinity within the group.</para>
-    </summary>
+    <summary>An array of <see cref="GROUP_AFFINITY" /> structure that specifies a group number and processor affinity within the group.</summary>
   </member>
 </doc>

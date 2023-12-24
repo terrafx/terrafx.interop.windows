@@ -3,35 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LIBRARYFOLDERFILTER">
-    <summary>
-      <para>Defines options for filtering folder items.</para>
-    </summary>
-    <remarks>
-      <h3>Used By</h3>
-      <para>The <b>LIBRARYFOLDERFILTER</b> enumeration is used by the following methods and functions.</para>
-      <list type="bullet">
-        <item>
-          <description>
-            <see cref="IShellLibrary.GetFolders" />
-          </description>
-        </item>
-      </list>
-    </remarks>
-    <seealso cref="IShellLibrary" />
+    <summary>Defines options for filtering folder items.</summary>
   </member>
   <member name="LIBRARYFOLDERFILTER.LFF_FORCEFILESYSTEM">
-    <summary>
-      <para>Return only file system items.</para>
-    </summary>
+    <summary>Return only file system items.</summary>
   </member>
   <member name="LIBRARYFOLDERFILTER.LFF_STORAGEITEMS">
-    <summary>
-      <para>Return items that can be bound to an IStorage object.</para>
-    </summary>
+    <summary>Return items that can be bound to an IStorage object.</summary>
   </member>
   <member name="LIBRARYFOLDERFILTER.LFF_ALLITEMS">
-    <summary>
-      <para>Return all items.</para>
-    </summary>
+    <summary>Return all items.</summary>
   </member>
 </doc>

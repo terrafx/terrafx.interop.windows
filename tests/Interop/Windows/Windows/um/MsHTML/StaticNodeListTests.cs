@@ -19,25 +19,4 @@ public static unsafe partial class StaticNodeListTests
     {
         Assert.That(typeof(StaticNodeList).GUID, Is.EqualTo(IID_StaticNodeList));
     }
-
-    /// <summary>Validates that the <see cref="StaticNodeList" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<StaticNodeList>(), Is.EqualTo(sizeof(StaticNodeList)));
-    }
-
-    /// <summary>Validates that the <see cref="StaticNodeList" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(StaticNodeList).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="StaticNodeList" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(StaticNodeList), Is.EqualTo(1));
-    }
 }

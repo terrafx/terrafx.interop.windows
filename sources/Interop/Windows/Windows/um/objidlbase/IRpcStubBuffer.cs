@@ -25,7 +25,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRpcStubBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, Guid*, void**, int>)(lpVtbl[0]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[1]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, uint>)(lpVtbl[1]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[2]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, uint>)(lpVtbl[2]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.Connect"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT Connect(IUnknown* pUnkServer)
     {
-        return ((delegate* unmanaged<IRpcStubBuffer*, IUnknown*, int>)(lpVtbl[3]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pUnkServer);
+        return ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, IUnknown*, int>)(lpVtbl[3]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pUnkServer);
     }
 
     /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.Disconnect"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [VtblIndex(4)]
     public void Disconnect()
     {
-        ((delegate* unmanaged<IRpcStubBuffer*, void>)(lpVtbl[4]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
+        ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, void>)(lpVtbl[4]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.Invoke"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [VtblIndex(5)]
     public HRESULT Invoke(RPCOLEMESSAGE* _prpcmsg, IRpcChannelBuffer* _pRpcChannelBuffer)
     {
-        return ((delegate* unmanaged<IRpcStubBuffer*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int>)(lpVtbl[5]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), _prpcmsg, _pRpcChannelBuffer);
+        return ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int>)(lpVtbl[5]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), _prpcmsg, _pRpcChannelBuffer);
     }
 
     /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.IsIIDSupported"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [VtblIndex(6)]
     public IRpcStubBuffer* IsIIDSupported([NativeTypeName("const IID &")] Guid* riid)
     {
-        return ((delegate* unmanaged<IRpcStubBuffer*, Guid*, IRpcStubBuffer*>)(lpVtbl[6]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid);
+        return ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, Guid*, IRpcStubBuffer*>)(lpVtbl[6]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), riid);
     }
 
     /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.CountRefs"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint CountRefs()
     {
-        return ((delegate* unmanaged<IRpcStubBuffer*, uint>)(lpVtbl[7]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, uint>)(lpVtbl[7]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.DebugServerQueryInterface"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [VtblIndex(8)]
     public HRESULT DebugServerQueryInterface(void** ppv)
     {
-        return ((delegate* unmanaged<IRpcStubBuffer*, void**, int>)(lpVtbl[8]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), ppv);
+        return ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, void**, int>)(lpVtbl[8]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), ppv);
     }
 
     /// <include file='IRpcStubBuffer.xml' path='doc/member[@name="IRpcStubBuffer.DebugServerRelease"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
     [VtblIndex(9)]
     public void DebugServerRelease(void* pv)
     {
-        ((delegate* unmanaged<IRpcStubBuffer*, void*, void>)(lpVtbl[9]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pv);
+        ((delegate* unmanaged[MemberFunction]<IRpcStubBuffer*, void*, void>)(lpVtbl[9]))((IRpcStubBuffer*)Unsafe.AsPointer(ref this), pv);
     }
 
     public interface Interface : IUnknown.Interface
@@ -132,33 +132,33 @@ public unsafe partial struct IRpcStubBuffer : IRpcStubBuffer.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IUnknown *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown*, int> Connect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown*, int> Connect;
 
         [NativeTypeName("void () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void> Disconnect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void> Disconnect;
 
         [NativeTypeName("HRESULT (RPCOLEMESSAGE *, IRpcChannelBuffer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, RPCOLEMESSAGE*, IRpcChannelBuffer*, int> Invoke;
 
         [NativeTypeName("IRpcStubBuffer *(const IID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, IRpcStubBuffer*> IsIIDSupported;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, IRpcStubBuffer*> IsIIDSupported;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> CountRefs;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> CountRefs;
 
         [NativeTypeName("HRESULT (void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void**, int> DebugServerQueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void**, int> DebugServerQueryInterface;
 
         [NativeTypeName("void (void *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, void> DebugServerRelease;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, void> DebugServerRelease;
     }
 }

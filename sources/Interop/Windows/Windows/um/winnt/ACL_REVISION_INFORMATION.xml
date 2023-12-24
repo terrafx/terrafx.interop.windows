@@ -3,18 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ACL_REVISION_INFORMATION">
-    <summary>
-      <para>The <b>ACL_REVISION_INFORMATION</b> structure contains revision information about an <see cref="ACL" /> structure.</para>
-    </summary>
-    <seealso cref="ACL" />
-    <seealso cref="ACL_INFORMATION_CLASS" />
-    <seealso cref="ACL_SIZE_INFORMATION" />
-    <seealso cref="GetAclInformation" />
-    <seealso cref="SetAclInformation" />
+    <summary>The <b>ACL_REVISION_INFORMATION</b> structure contains revision information about an <see cref="ACL" /> structure.</summary>
   </member>
   <member name="ACL_REVISION_INFORMATION.AclRevision">
-    <summary>
-      <para>Specifies a revision number. The current revision number is ACL_REVISION.</para>
-    </summary>
+    <summary>Specifies a revision number. The current revision number is ACL_REVISION.</summary>
   </member>
 </doc>

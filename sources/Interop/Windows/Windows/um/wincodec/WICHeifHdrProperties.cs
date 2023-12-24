@@ -9,7 +9,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='WICHeifHdrProperties.xml' path='doc/member[@name="WICHeifHdrProperties"]/*' />
 [SupportedOSPlatform("windows10.0.18362.0")]
-public enum WICHeifHdrProperties : uint
+public enum WICHeifHdrProperties
 {
     /// <include file='WICHeifHdrProperties.xml' path='doc/member[@name="WICHeifHdrProperties.WICHeifHdrMaximumLuminanceLevel"]/*' />
     WICHeifHdrMaximumLuminanceLevel = 0x1,

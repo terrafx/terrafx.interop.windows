@@ -27,7 +27,7 @@ public unsafe partial struct IAudioEffectsManager : IAudioEffectsManager.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAudioEffectsManager*, Guid*, void**, int>)(lpVtbl[0]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAudioEffectsManager*, Guid*, void**, int>)(lpVtbl[0]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAudioEffectsManager : IAudioEffectsManager.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAudioEffectsManager*, uint>)(lpVtbl[1]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioEffectsManager*, uint>)(lpVtbl[1]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAudioEffectsManager : IAudioEffectsManager.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAudioEffectsManager*, uint>)(lpVtbl[2]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAudioEffectsManager*, uint>)(lpVtbl[2]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAudioEffectsManager.xml' path='doc/member[@name="IAudioEffectsManager.RegisterAudioEffectsChangedNotificationCallback"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IAudioEffectsManager : IAudioEffectsManager.Interfa
     [VtblIndex(3)]
     public HRESULT RegisterAudioEffectsChangedNotificationCallback(IAudioEffectsChangedNotificationClient* client)
     {
-        return ((delegate* unmanaged<IAudioEffectsManager*, IAudioEffectsChangedNotificationClient*, int>)(lpVtbl[3]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), client);
+        return ((delegate* unmanaged[MemberFunction]<IAudioEffectsManager*, IAudioEffectsChangedNotificationClient*, int>)(lpVtbl[3]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), client);
     }
 
     /// <include file='IAudioEffectsManager.xml' path='doc/member[@name="IAudioEffectsManager.UnregisterAudioEffectsChangedNotificationCallback"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IAudioEffectsManager : IAudioEffectsManager.Interfa
     [VtblIndex(4)]
     public HRESULT UnregisterAudioEffectsChangedNotificationCallback(IAudioEffectsChangedNotificationClient* client)
     {
-        return ((delegate* unmanaged<IAudioEffectsManager*, IAudioEffectsChangedNotificationClient*, int>)(lpVtbl[4]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), client);
+        return ((delegate* unmanaged[MemberFunction]<IAudioEffectsManager*, IAudioEffectsChangedNotificationClient*, int>)(lpVtbl[4]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), client);
     }
 
     /// <include file='IAudioEffectsManager.xml' path='doc/member[@name="IAudioEffectsManager.GetAudioEffects"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAudioEffectsManager : IAudioEffectsManager.Interfa
     [VtblIndex(5)]
     public HRESULT GetAudioEffects(AUDIO_EFFECT** effects, [NativeTypeName("UINT32 *")] uint* numEffects)
     {
-        return ((delegate* unmanaged<IAudioEffectsManager*, AUDIO_EFFECT**, uint*, int>)(lpVtbl[5]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), effects, numEffects);
+        return ((delegate* unmanaged[MemberFunction]<IAudioEffectsManager*, AUDIO_EFFECT**, uint*, int>)(lpVtbl[5]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), effects, numEffects);
     }
 
     /// <include file='IAudioEffectsManager.xml' path='doc/member[@name="IAudioEffectsManager.SetAudioEffectState"]/*' />
@@ -77,7 +77,7 @@ public unsafe partial struct IAudioEffectsManager : IAudioEffectsManager.Interfa
     [VtblIndex(6)]
     public HRESULT SetAudioEffectState(Guid effectId, AUDIO_EFFECT_STATE state)
     {
-        return ((delegate* unmanaged<IAudioEffectsManager*, Guid, AUDIO_EFFECT_STATE, int>)(lpVtbl[6]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), effectId, state);
+        return ((delegate* unmanaged[MemberFunction]<IAudioEffectsManager*, Guid, AUDIO_EFFECT_STATE, int>)(lpVtbl[6]))((IAudioEffectsManager*)Unsafe.AsPointer(ref this), effectId, state);
     }
 
     public interface Interface : IUnknown.Interface
@@ -99,24 +99,24 @@ public unsafe partial struct IAudioEffectsManager : IAudioEffectsManager.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAudioEffectsChangedNotificationClient *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAudioEffectsChangedNotificationClient*, int> RegisterAudioEffectsChangedNotificationCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEffectsChangedNotificationClient*, int> RegisterAudioEffectsChangedNotificationCallback;
 
         [NativeTypeName("HRESULT (IAudioEffectsChangedNotificationClient *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAudioEffectsChangedNotificationClient*, int> UnregisterAudioEffectsChangedNotificationCallback;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAudioEffectsChangedNotificationClient*, int> UnregisterAudioEffectsChangedNotificationCallback;
 
         [NativeTypeName("HRESULT (AUDIO_EFFECT **, UINT32 *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, AUDIO_EFFECT**, uint*, int> GetAudioEffects;
+        public delegate* unmanaged[MemberFunction]<TSelf*, AUDIO_EFFECT**, uint*, int> GetAudioEffects;
 
         [NativeTypeName("HRESULT (GUID, AUDIO_EFFECT_STATE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid, AUDIO_EFFECT_STATE, int> SetAudioEffectState;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid, AUDIO_EFFECT_STATE, int> SetAudioEffectState;
     }
 }

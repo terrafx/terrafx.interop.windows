@@ -1,0 +1,1794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="Windows.GetExpandedName">
+    <summary>Retrieves the original name of a compressed file, if the file was compressed by the Lempel-Ziv algorithm.</summary>
+    <param name="lpszSource">The name of the compressed file.</param>
+    <param name="lpszBuffer">A pointer to a buffer that receives the original name of the compressed file.</param>
+    <returns>
+      <para>If the function succeeds, the return value is 1.</para>
+      <para>If the function fails, the return value is LZERROR_BADVALUE. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>GetExpandedName</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>
+    </returns>
+  </member>
+  <member name="Windows.GetExpandedNameA">
+    <summary>Retrieves the original name of a compressed file, if the file was compressed by the Lempel-Ziv algorithm.</summary>
+    <param name="lpszSource">The name of the compressed file.</param>
+    <param name="lpszBuffer">A pointer to a buffer that receives the original name of the compressed file.</param>
+    <returns>
+      <para>If the function succeeds, the return value is 1.</para>
+      <para>If the function fails, the return value is LZERROR_BADVALUE. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>GetExpandedName</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>
+    </returns>
+  </member>
+  <member name="Windows.GetExpandedNameW">
+    <summary>Retrieves the original name of a compressed file, if the file was compressed by the Lempel-Ziv algorithm.</summary>
+    <param name="lpszSource">The name of the compressed file.</param>
+    <param name="lpszBuffer">A pointer to a buffer that receives the original name of the compressed file.</param>
+    <returns>
+      <para>If the function succeeds, the return value is 1.</para>
+      <para>If the function fails, the return value is LZERROR_BADVALUE. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>GetExpandedName</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>
+    </returns>
+  </member>
+  <member name="Windows.GetExpandedName">
+    <summary>Retrieves the original name of a compressed file, if the file was compressed by the Lempel-Ziv algorithm.</summary>
+    <param name="lpszSource">The name of the compressed file.</param>
+    <param name="lpszBuffer">A pointer to a buffer that receives the original name of the compressed file.</param>
+    <returns>
+      <para>If the function succeeds, the return value is 1.</para>
+      <para>If the function fails, the return value is LZERROR_BADVALUE. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>GetExpandedName</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>
+    </returns>
+  </member>
+  <member name="Windows.GetExpandedNameA">
+    <summary>Retrieves the original name of a compressed file, if the file was compressed by the Lempel-Ziv algorithm.</summary>
+    <param name="lpszSource">The name of the compressed file.</param>
+    <param name="lpszBuffer">A pointer to a buffer that receives the original name of the compressed file.</param>
+    <returns>
+      <para>If the function succeeds, the return value is 1.</para>
+      <para>If the function fails, the return value is LZERROR_BADVALUE. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>GetExpandedName</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>
+    </returns>
+  </member>
+  <member name="Windows.GetExpandedNameW">
+    <summary>Retrieves the original name of a compressed file, if the file was compressed by the Lempel-Ziv algorithm.</summary>
+    <param name="lpszSource">The name of the compressed file.</param>
+    <param name="lpszBuffer">A pointer to a buffer that receives the original name of the compressed file.</param>
+    <returns>
+      <para>If the function succeeds, the return value is 1.</para>
+      <para>If the function fails, the return value is LZERROR_BADVALUE. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>GetExpandedName</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>
+    </returns>
+  </member>
+  <member name="Windows.LZClose">
+    <summary>Closes a file that was opened by using the<see cref="LZOpenFile" /> function.</summary>
+    <param name="hFile">A handle to the file to be closed.</param>
+  </member>
+  <member name="Windows.LZCopy">
+    <summary>Copies a source file to a destination file. If the source file has been compressed by the Lempel-Ziv algorithm, this function creates a decompressed destination file. If the source file is not compressed, this function duplicates the original file.</summary>
+    <param name="hfSource">A handle to the source file.</param>
+    <param name="hfDest">A handle to the destination file.</param>
+    <returns>
+      <para>If the function succeeds, the return value specifies the size, in bytes, of the destination file.</para>
+      <para>If the function fails, the return value is an LZERROR_* code. These codes have values less than zero. Note that<b>LZCopy</b> calls neither<see cref="SetLastError" /> nor<see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</para>
+      <para>The following is a list of error codes that<b>LZCopy</b> can return upon failure.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_BADINHANDLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The handle identifying the source file is not valid. The file cannot be read.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_BADOUTHANDLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The handle identifying the destination file is not valid. The file cannot be written.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_GLOBALLOC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The maximum number of open compressed files has been exceeded or local memory cannot be allocated.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_GLOBLOCK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The LZ file handle cannot be locked down.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_READ</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source file format is not valid.</description>
+        </listheader>
+      </list> <para>There is no extended error information for this function; do not call <see cref="GetLastError" />.</para></returns>
+  </member>
+  <member name="Windows.LZInit">
+    <summary>Allocates memory for the internal data structures required to decompress files, and then creates and initializes them.</summary>
+    <param name="hfSource">A handle to the file.</param>
+    <returns>
+      <para>If the function succeeds, the return value is a new LZ file handle.</para>
+      <para>If the function fails, the return value is an LZERROR_* code. These codes have values less than zero. Note that<b>LZInit</b> calls neither<see cref="SetLastError" /> nor<see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</para>
+      <para>The following is the list of the error codes that<b>LZInit</b> can return upon failure.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_BADINHANDLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The handle identifying the source file is not valid. The file cannot be read.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_GLOBALLOC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The maximum number of open compressed files has been exceeded or local memory cannot be allocated.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_GLOBLOCK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The LZ file handle cannot be locked down.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_UNKNOWNALG</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The file is compressed with an unrecognized compression algorithm.</description>
+        </listheader>
+      </list> <para>There is no extended error information for this function; do not call <see cref="GetLastError" />.</para></returns>
+  </member>
+  <member name="Windows.LZOpenFile">
+    <summary>Creates, opens, reopens, or deletes the specified file.</summary>
+    <param name="lpFileName">The name of the file.</param>
+    <param name="lpReOpenBuf">
+      <para>A pointer to the <see cref="OFSTRUCT" /> structure that is to receive information about the file when the file is first opened. The structure can be used in subsequent calls to the<b>LZOpenFile</b> function to see the open file.</para>
+      <para>The <b>szPathName</b> member of this structure contains characters from the original equipment manufacturer (OEM) character set.</para>
+    </param>
+    <param name="wStyle">
+      <para>The action to be taken. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CANCEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Ignored. Provided only for compatibility with 16-bit Windows. Use the <b>OF_PROMPT</b> style to display a dialog box containing a <b>Cancel</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CREATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Directs <b>LZOpenFile</b> to create a new file. If the file already exists, it is truncated to zero length.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_DELETE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_EXIST</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and then closes it to test for a file's existence.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PARSE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Fills the <see cref="OFSTRUCT" /> structure but carries out no other action.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PROMPT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Displays a dialog box if the requested file does not exist. The dialog box informs the user that the system cannot find the file, and it contains <b>Retry</b> and <b>Cancel</b> buttons. Clicking the <b>Cancel</b> button directs <b>LZOpenFile</b> to return a file not found error message.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READWRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading and writing.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_REOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file using information in the reopen buffer.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_NONE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file without denying other processes read or write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0030</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes read access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for read access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for write access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_EXCLUSIVE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file in exclusive mode, denying other processes both read and write access to the file. <b>LZOpenFile</b> fails if the file has been opened in any other mode for read or write access, even by the current process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for writing only.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>If the function succeeds and the value specified by the <i>wStyle</i> parameter is not<b>OF_READ</b>, the return value is a handle identifying the file. If the file is compressed and opened with <i>wStyle</i> set to <b>OF_READ</b>, the return value is a special file handle.</para>
+      <para>If the function fails, the return value is an <b>LZERROR_*</b> code. These codes have values less than zero. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>LZOpenFile</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>The following is the list of the error codes that <b>LZOpenFile</b> can return upon failure.<list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_BADINHANDLE</b></term></listheader><listheader><term>-1</term></listheader></list></description><description>The handle identifying the source file is not valid. The file cannot be read.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_GLOBALLOC</b></term></listheader><listheader><term>-5</term></listheader></list></description><description>The maximum number of open compressed files has been exceeded or local memory cannot be allocated.</description></listheader></list></returns>
+  </member>
+  <member name="Windows.LZOpenFileA">
+    <summary>Creates, opens, reopens, or deletes the specified file.</summary>
+    <param name="lpFileName">The name of the file.</param>
+    <param name="lpReOpenBuf">
+      <para>A pointer to the <see cref="OFSTRUCT" /> structure that is to receive information about the file when the file is first opened. The structure can be used in subsequent calls to the<b>LZOpenFile</b> function to see the open file.</para>
+      <para>The <b>szPathName</b> member of this structure contains characters from the original equipment manufacturer (OEM) character set.</para>
+    </param>
+    <param name="wStyle">
+      <para>The action to be taken. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CANCEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Ignored. Provided only for compatibility with 16-bit Windows. Use the <b>OF_PROMPT</b> style to display a dialog box containing a <b>Cancel</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CREATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Directs <b>LZOpenFile</b> to create a new file. If the file already exists, it is truncated to zero length.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_DELETE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_EXIST</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and then closes it to test for a file's existence.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PARSE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Fills the <see cref="OFSTRUCT" /> structure but carries out no other action.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PROMPT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Displays a dialog box if the requested file does not exist. The dialog box informs the user that the system cannot find the file, and it contains <b>Retry</b> and <b>Cancel</b> buttons. Clicking the <b>Cancel</b> button directs <b>LZOpenFile</b> to return a file not found error message.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READWRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading and writing.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_REOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file using information in the reopen buffer.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_NONE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file without denying other processes read or write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0030</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes read access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for read access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for write access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_EXCLUSIVE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file in exclusive mode, denying other processes both read and write access to the file. <b>LZOpenFile</b> fails if the file has been opened in any other mode for read or write access, even by the current process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for writing only.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>If the function succeeds and the value specified by the <i>wStyle</i> parameter is not<b>OF_READ</b>, the return value is a handle identifying the file. If the file is compressed and opened with <i>wStyle</i> set to <b>OF_READ</b>, the return value is a special file handle.</para>
+      <para>If the function fails, the return value is an <b>LZERROR_*</b> code. These codes have values less than zero. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>LZOpenFile</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>The following is the list of the error codes that <b>LZOpenFile</b> can return upon failure.<list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_BADINHANDLE</b></term></listheader><listheader><term>-1</term></listheader></list></description><description>The handle identifying the source file is not valid. The file cannot be read.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_GLOBALLOC</b></term></listheader><listheader><term>-5</term></listheader></list></description><description>The maximum number of open compressed files has been exceeded or local memory cannot be allocated.</description></listheader></list></returns>
+  </member>
+  <member name="Windows.LZOpenFileW">
+    <summary>Creates, opens, reopens, or deletes the specified file.</summary>
+    <param name="lpFileName">The name of the file.</param>
+    <param name="lpReOpenBuf">
+      <para>A pointer to the <see cref="OFSTRUCT" /> structure that is to receive information about the file when the file is first opened. The structure can be used in subsequent calls to the<b>LZOpenFile</b> function to see the open file.</para>
+      <para>The <b>szPathName</b> member of this structure contains characters from the original equipment manufacturer (OEM) character set.</para>
+    </param>
+    <param name="wStyle">
+      <para>The action to be taken. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CANCEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Ignored. Provided only for compatibility with 16-bit Windows. Use the <b>OF_PROMPT</b> style to display a dialog box containing a <b>Cancel</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CREATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Directs <b>LZOpenFile</b> to create a new file. If the file already exists, it is truncated to zero length.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_DELETE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_EXIST</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and then closes it to test for a file's existence.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PARSE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Fills the <see cref="OFSTRUCT" /> structure but carries out no other action.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PROMPT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Displays a dialog box if the requested file does not exist. The dialog box informs the user that the system cannot find the file, and it contains <b>Retry</b> and <b>Cancel</b> buttons. Clicking the <b>Cancel</b> button directs <b>LZOpenFile</b> to return a file not found error message.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READWRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading and writing.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_REOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file using information in the reopen buffer.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_NONE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file without denying other processes read or write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0030</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes read access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for read access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for write access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_EXCLUSIVE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file in exclusive mode, denying other processes both read and write access to the file. <b>LZOpenFile</b> fails if the file has been opened in any other mode for read or write access, even by the current process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for writing only.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>If the function succeeds and the value specified by the <i>wStyle</i> parameter is not<b>OF_READ</b>, the return value is a handle identifying the file. If the file is compressed and opened with <i>wStyle</i> set to <b>OF_READ</b>, the return value is a special file handle.</para>
+      <para>If the function fails, the return value is an <b>LZERROR_*</b> code. These codes have values less than zero. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>LZOpenFile</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>The following is the list of the error codes that <b>LZOpenFile</b> can return upon failure.<list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_BADINHANDLE</b></term></listheader><listheader><term>-1</term></listheader></list></description><description>The handle identifying the source file is not valid. The file cannot be read.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_GLOBALLOC</b></term></listheader><listheader><term>-5</term></listheader></list></description><description>The maximum number of open compressed files has been exceeded or local memory cannot be allocated.</description></listheader></list></returns>
+  </member>
+  <member name="Windows.LZOpenFile">
+    <summary>Creates, opens, reopens, or deletes the specified file.</summary>
+    <param name="lpFileName">The name of the file.</param>
+    <param name="lpReOpenBuf">
+      <para>A pointer to the <see cref="OFSTRUCT" /> structure that is to receive information about the file when the file is first opened. The structure can be used in subsequent calls to the<b>LZOpenFile</b> function to see the open file.</para>
+      <para>The <b>szPathName</b> member of this structure contains characters from the original equipment manufacturer (OEM) character set.</para>
+    </param>
+    <param name="wStyle">
+      <para>The action to be taken. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CANCEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Ignored. Provided only for compatibility with 16-bit Windows. Use the <b>OF_PROMPT</b> style to display a dialog box containing a <b>Cancel</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CREATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Directs <b>LZOpenFile</b> to create a new file. If the file already exists, it is truncated to zero length.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_DELETE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_EXIST</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and then closes it to test for a file's existence.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PARSE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Fills the <see cref="OFSTRUCT" /> structure but carries out no other action.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PROMPT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Displays a dialog box if the requested file does not exist. The dialog box informs the user that the system cannot find the file, and it contains <b>Retry</b> and <b>Cancel</b> buttons. Clicking the <b>Cancel</b> button directs <b>LZOpenFile</b> to return a file not found error message.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READWRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading and writing.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_REOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file using information in the reopen buffer.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_NONE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file without denying other processes read or write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0030</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes read access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for read access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for write access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_EXCLUSIVE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file in exclusive mode, denying other processes both read and write access to the file. <b>LZOpenFile</b> fails if the file has been opened in any other mode for read or write access, even by the current process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for writing only.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>If the function succeeds and the value specified by the <i>wStyle</i> parameter is not<b>OF_READ</b>, the return value is a handle identifying the file. If the file is compressed and opened with <i>wStyle</i> set to <b>OF_READ</b>, the return value is a special file handle.</para>
+      <para>If the function fails, the return value is an <b>LZERROR_*</b> code. These codes have values less than zero. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>LZOpenFile</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>The following is the list of the error codes that <b>LZOpenFile</b> can return upon failure.<list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_BADINHANDLE</b></term></listheader><listheader><term>-1</term></listheader></list></description><description>The handle identifying the source file is not valid. The file cannot be read.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_GLOBALLOC</b></term></listheader><listheader><term>-5</term></listheader></list></description><description>The maximum number of open compressed files has been exceeded or local memory cannot be allocated.</description></listheader></list></returns>
+  </member>
+  <member name="Windows.LZOpenFileA">
+    <summary>Creates, opens, reopens, or deletes the specified file.</summary>
+    <param name="lpFileName">The name of the file.</param>
+    <param name="lpReOpenBuf">
+      <para>A pointer to the <see cref="OFSTRUCT" /> structure that is to receive information about the file when the file is first opened. The structure can be used in subsequent calls to the<b>LZOpenFile</b> function to see the open file.</para>
+      <para>The <b>szPathName</b> member of this structure contains characters from the original equipment manufacturer (OEM) character set.</para>
+    </param>
+    <param name="wStyle">
+      <para>The action to be taken. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CANCEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Ignored. Provided only for compatibility with 16-bit Windows. Use the <b>OF_PROMPT</b> style to display a dialog box containing a <b>Cancel</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CREATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Directs <b>LZOpenFile</b> to create a new file. If the file already exists, it is truncated to zero length.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_DELETE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_EXIST</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and then closes it to test for a file's existence.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PARSE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Fills the <see cref="OFSTRUCT" /> structure but carries out no other action.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PROMPT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Displays a dialog box if the requested file does not exist. The dialog box informs the user that the system cannot find the file, and it contains <b>Retry</b> and <b>Cancel</b> buttons. Clicking the <b>Cancel</b> button directs <b>LZOpenFile</b> to return a file not found error message.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READWRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading and writing.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_REOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file using information in the reopen buffer.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_NONE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file without denying other processes read or write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0030</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes read access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for read access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for write access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_EXCLUSIVE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file in exclusive mode, denying other processes both read and write access to the file. <b>LZOpenFile</b> fails if the file has been opened in any other mode for read or write access, even by the current process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for writing only.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>If the function succeeds and the value specified by the <i>wStyle</i> parameter is not<b>OF_READ</b>, the return value is a handle identifying the file. If the file is compressed and opened with <i>wStyle</i> set to <b>OF_READ</b>, the return value is a special file handle.</para>
+      <para>If the function fails, the return value is an <b>LZERROR_*</b> code. These codes have values less than zero. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>LZOpenFile</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>The following is the list of the error codes that <b>LZOpenFile</b> can return upon failure.<list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_BADINHANDLE</b></term></listheader><listheader><term>-1</term></listheader></list></description><description>The handle identifying the source file is not valid. The file cannot be read.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_GLOBALLOC</b></term></listheader><listheader><term>-5</term></listheader></list></description><description>The maximum number of open compressed files has been exceeded or local memory cannot be allocated.</description></listheader></list></returns>
+  </member>
+  <member name="Windows.LZOpenFileW">
+    <summary>Creates, opens, reopens, or deletes the specified file.</summary>
+    <param name="lpFileName">The name of the file.</param>
+    <param name="lpReOpenBuf">
+      <para>A pointer to the <see cref="OFSTRUCT" /> structure that is to receive information about the file when the file is first opened. The structure can be used in subsequent calls to the<b>LZOpenFile</b> function to see the open file.</para>
+      <para>The <b>szPathName</b> member of this structure contains characters from the original equipment manufacturer (OEM) character set.</para>
+    </param>
+    <param name="wStyle">
+      <para>The action to be taken. This parameter can be one or more of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CANCEL</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0800</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Ignored. Provided only for compatibility with 16-bit Windows. Use the <b>OF_PROMPT</b> style to display a dialog box containing a <b>Cancel</b> button.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_CREATE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x1000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Directs <b>LZOpenFile</b> to create a new file. If the file already exists, it is truncated to zero length.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_DELETE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0200</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Deletes the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_EXIST</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x4000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and then closes it to test for a file's existence.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PARSE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0100</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Fills the <see cref="OFSTRUCT" /> structure but carries out no other action.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_PROMPT</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x2000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Displays a dialog box if the requested file does not exist. The dialog box informs the user that the system cannot find the file, and it contains <b>Retry</b> and <b>Cancel</b> buttons. Clicking the <b>Cancel</b> button directs <b>LZOpenFile</b> to return a file not found error message.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading only.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_READWRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0002</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for reading and writing.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_REOPEN</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x8000</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file using information in the reopen buffer.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_NONE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0040</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file without denying other processes read or write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_READ</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0030</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes read access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for read access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_DENY_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0020</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file and denies other processes write access to the file. <b>LZOpenFile</b> fails if the file has been opened in compatibility mode or has been opened for write access by any other process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_SHARE_EXCLUSIVE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0010</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file in exclusive mode, denying other processes both read and write access to the file. <b>LZOpenFile</b> fails if the file has been opened in any other mode for read or write access, even by the current process.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>OF_WRITE</b>
+                </term>
+              </listheader>
+              <listheader>
+                <term>0x0001</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Opens the file for writing only.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>If the function succeeds and the value specified by the <i>wStyle</i> parameter is not<b>OF_READ</b>, the return value is a handle identifying the file. If the file is compressed and opened with <i>wStyle</i> set to <b>OF_READ</b>, the return value is a special file handle.</para>
+      <para>If the function fails, the return value is an <b>LZERROR_*</b> code. These codes have values less than zero. There is no extended error information for this function; do not call<see cref="GetLastError" />.</para>
+      <div>
+        <b>Note</b>  <b>LZOpenFile</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</div>The following is the list of the error codes that <b>LZOpenFile</b> can return upon failure.<list type="table"><listheader><description>Return code/value</description><description>Description</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_BADINHANDLE</b></term></listheader><listheader><term>-1</term></listheader></list></description><description>The handle identifying the source file is not valid. The file cannot be read.</description></listheader><listheader><description><list type="bullet"><listheader><term><b>LZERROR_GLOBALLOC</b></term></listheader><listheader><term>-5</term></listheader></list></description><description>The maximum number of open compressed files has been exceeded or local memory cannot be allocated.</description></listheader></list></returns>
+  </member>
+  <member name="Windows.LZRead">
+    <summary>Reads (at most) the specified number of bytes from a file and copies them into a buffer.</summary>
+    <param name="hFile">A handle to the file.</param>
+    <param name="lpBuffer">A pointer to a buffer that receives the bytes read from the file. Ensure that this buffer is larger than <i>cbRead</i>.</param>
+    <param name="cbRead">The count of bytes to be read.</param>
+    <returns>
+      <para>If the function succeeds, the return value specifies the number of bytes read.</para>
+      <para>If the function fails, the return value is an LZERROR_* code. These codes have values less than zero. Note that<b>LZRead</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</para>
+      <para>The following is the list of error codes that<b>LZRead</b> can return upon failure.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_BADINHANDLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The handle identifying the source file is not valid. The file cannot be read.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_BADOUTHANDLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The handle identifying the destination file is not valid. The file cannot be written.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_BADVALUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the input parameters is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_GLOBALLOC</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The maximum number of open compressed files has been exceeded or local memory cannot be allocated.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_GLOBLOCK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The LZ file handle cannot be locked down.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_READ</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The source file format is not valid.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_WRITE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>There is insufficient space for the output file.</description>
+        </listheader>
+      </list> <para>There is no extended error information for this function; do not call <see cref="GetLastError" />.</para></returns>
+  </member>
+  <member name="Windows.LZSeek">
+    <summary>Moves a file pointer the specified number of bytes from a starting position.</summary>
+    <param name="hFile">A handle to the file.</param>
+    <param name="lOffset">The number of bytes by which to move the file pointer.</param>
+    <param name="iOrigin">
+      <para>The starting position of the pointer. This parameter must be one of the following values.</para>
+      <list type="table">
+        <listheader>
+          <description>Value</description>
+          <description>Meaning</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>0</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Moves the file pointer <i>lOffset</i> bytes from the beginning of the file.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Moves the file pointer <i>lOffset</i> bytes from the current position.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>2</term>
+              </listheader>
+            </list>
+          </description>
+          <description>Moves the file pointer <i>lOffset</i> bytes from the end of the file.</description>
+        </listheader>
+      </list>
+    </param>
+    <returns>
+      <para>If the function succeeds, the return value specifies the offset from the beginning of the file to the new pointer position.</para>
+      <para>If the function fails, the return value is an LZERROR_* code. These codes have values less than zero. Note that<b>LZSeek</b> calls neither <see cref="SetLastError" /> nor <see cref="SetLastErrorEx" />; thus, its failure does not affect a thread's last-error code.</para>
+      <para>The following is the list of error codes that<b>LZSeek</b> can return upon failure.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_BADINHANDLE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The handle identifying the source file is not valid. The file cannot be read.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_BADVALUE</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>One of the parameters is outside the range of acceptable values.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>LZERROR_GLOBLOCK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The LZ file handle cannot be locked down.</description>
+        </listheader>
+      </list> <para>There is no extended error information for this function; do not call <see cref="GetLastError" />.</para></returns>
+  </member>
+</doc>

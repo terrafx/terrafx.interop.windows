@@ -3,16 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICJpegCommentProperties">
-    <summary>
-      <para>Specifies the JPEG comment properties.</para>
-    </summary>
+    <summary>Specifies the JPEG comment properties.</summary>
   </member>
   <member name="WICJpegCommentProperties.WICJpegCommentText">
-    <summary>
-      <para>Indicates the metadata property is comment text.</para>
-    </summary>
+    <summary>Indicates the metadata property is comment text.</summary>
   </member>
-  <member name="WICJpegCommentProperties.WICJpegCommentProperties_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="WICJpegCommentProperties.WICJpegCommentProperties_FORCE_DWORD"></member>
 </doc>

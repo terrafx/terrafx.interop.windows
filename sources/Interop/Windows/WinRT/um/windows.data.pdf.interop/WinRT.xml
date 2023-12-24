@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="WinRT.PdfCreateRenderer">
+    <summary>Gets an instance of the <see cref="IPdfRendererNative" /> interface for displaying a single page of a Portable Document Format (PDF) file.</summary>
+    <param name="pDevice">An instance of a Microsoft DirectX Graphics Infrastructure (DXGI) object that is used for producing image data.</param>
+    <param name="ppRenderer">An instance of the high-performance <see cref="IPdfRendererNative" /> interface for rendering PDF content on a DirectX surface.</param>
+    <returns>
+      <para>This function can return one of these values.</para>
+      <list type="table">
+        <listheader>
+          <description>Return code</description>
+          <description>Description</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The function call succeeded.</description>
+        </listheader>
+      </list>
+    </returns>
+  </member>
+  <member name="WinRT.PdfRenderParams">
+    <summary>Populates a <see cref="PDF_RENDER_PARAMS" /> structure. A PDF_RENDER_PARAMS structure represents a set of properties for outputting a single page of a Portable Document Format (PDF) file.</summary>
+    <param name="srcRect">The rectangular portion of the original page, as defined by the D2D_RECT_F structure's upper-left and lower-right corner x- and y-coordinates. The default value is 0.f for all coordinates.</param>
+    <param name="destinationWidth">The specified width of the page. The default is 0.f.</param>
+    <param name="destinationHeight">The specified height of the page. The default is 0.f.</param>
+    <param name="bkColor">The specified background color of the page. The default is {1.f, 1.f, 1.f, 1.f}, which represents the values 1.0 for red, green, blue, and alpha channel, respectively. These values, taken together, represent white at full opacity.</param>
+    <param name="ignoreHighContrast">False to use the system's high contrast display settings; otherwise true. The default is true.</param>
+    <returns>Represents a set of properties for outputting a single page of a Portable Document Format (PDF) file.</returns>
+  </member>
+</doc>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE">
+    <summary>Output primitive types.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D_TESSELLATOR_OUTPUT_UNDEFINED"></member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D_TESSELLATOR_OUTPUT_POINT"></member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D_TESSELLATOR_OUTPUT_LINE"></member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D_TESSELLATOR_OUTPUT_TRIANGLE_CW"></member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D_TESSELLATOR_OUTPUT_TRIANGLE_CCW"></member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D11_TESSELLATOR_OUTPUT_UNDEFINED">
+    <summary>The output primitive type is undefined.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D11_TESSELLATOR_OUTPUT_POINT">
+    <summary>The output primitive type is a point.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D11_TESSELLATOR_OUTPUT_LINE">
+    <summary>The output primitive type is a line.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D11_TESSELLATOR_OUTPUT_TRIANGLE_CW">
+    <summary>The output primitive type is a clockwise triangle.</summary>
+  </member>
+  <member name="D3D11_TESSELLATOR_OUTPUT_PRIMITIVE.D3D11_TESSELLATOR_OUTPUT_TRIANGLE_CCW">
+    <summary>The output primitive type is a counter clockwise triangle.</summary>
+  </member>
+</doc>

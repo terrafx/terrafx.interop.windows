@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12PipelineState.GetCachedBlob">
+    <summary>Gets the cached blob representing the pipeline state.</summary>
+    <param name="ppBlob">After this method returns, points to the cached blob representing the pipeline state.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12PipelineState">
+    <summary>Represents the state of all currently set shaders as well as certain fixed function state objects.</summary>
+  </member>
+</doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IAudioInputSelectorTests
     {
         Assert.That(typeof(IAudioInputSelector).GUID, Is.EqualTo(IID_IAudioInputSelector));
     }
-
-    /// <summary>Validates that the <see cref="IAudioInputSelector" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAudioInputSelector>(), Is.EqualTo(sizeof(IAudioInputSelector)));
-    }
-
-    /// <summary>Validates that the <see cref="IAudioInputSelector" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAudioInputSelector).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAudioInputSelector" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAudioInputSelector), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAudioInputSelector), Is.EqualTo(4));
-        }
-    }
 }

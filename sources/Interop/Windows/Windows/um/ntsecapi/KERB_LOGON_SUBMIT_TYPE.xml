@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="KERB_LOGON_SUBMIT_TYPE">
+    <summary>The <b>KERB_LOGON_SUBMIT_TYPE</b> enumeration identifies the type of logon being requested.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbInteractiveLogon">
+    <summary>Perform an interactive logon.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbSmartCardLogon">
+    <summary>Logon using a smart card.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbWorkstationUnlockLogon">
+    <summary>Unlock a workstation.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbSmartCardUnlockLogon">
+    <summary>Unlock a workstation using a smart card.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbProxyLogon">
+    <summary>Logon using a proxy server.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbTicketLogon">
+    <summary>Logon using a valid <a href="https://docs.microsoft.com//windows/desktop/SecGloss/k-gly">Kerberos</a> ticket as a credential.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbTicketUnlockLogon">
+    <summary>Unlock a workstation by using a Kerberos ticket.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbS4ULogon">
+    <summary>Perform a service for user logon.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbCertificateLogon">
+    <summary>Logon interactively using a certificate stored on a smart card.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbCertificateS4ULogon">
+    <summary>Perform a service for user logon using a certificate stored on a smart card.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbCertificateUnlockLogon">
+    <summary>Unlock a workstation using a certificate stored on a smart card.</summary>
+  </member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbNoElevationLogon"></member>
+  <member name="KERB_LOGON_SUBMIT_TYPE.KerbLuidLogon"></member>
+</doc>

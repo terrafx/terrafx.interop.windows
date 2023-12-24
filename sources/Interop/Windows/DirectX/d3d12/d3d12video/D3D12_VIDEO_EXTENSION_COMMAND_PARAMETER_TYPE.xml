@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE">
+    <summary>Specifies the types of parameters for video extension commands.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_UINT8">
+    <summary>Unsigned 8-bit integer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_UINT16">
+    <summary>Unsigned 16-bit integer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_UINT32">
+    <summary>Unsigned 32-bit integer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_UINT64">
+    <summary>Unsigned 64-bit integer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_SINT8">
+    <summary>Signed 8-bit integer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_SINT16">
+    <summary>Signed 16-bit integer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_SINT32">
+    <summary>Signed 32-bit integer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_SINT64">
+    <summary>Signed 64-bit integer.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_FLOAT">
+    <summary>IEEE 32-bit floating point number</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_DOUBLE">
+    <summary>IEEE 64-bit floating point number</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE.D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_RESOURCE">
+    <summary>
+      <para>A D3D12DDI_HRESOURCE handle. The caller must use resource barriers to transition to the state appropriate for the parameter.</para>
+      <para>| D3D12_COMMAND_LIST_SUPPORT_FLAGS value | Read | Write | |-------------------|---------------------------|------------------------| | D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_DECODE | D3D12_RESOURCE_STATE_VIDEO_DECODE_READ | D3D12_RESOURCE_STATE_VIDEO_DECODE_WRITE | | D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_PROCESS | D3D12_RESOURCE_STATE_VIDEO_PROCESS_READ | D3D12_RESOURCE_STATE_VIDEO_PROCESS_WRITE | | D3D12_COMMAND_LIST_SUPPORT_FLAG_VIDEO_ENCODE | D3D12_RESOURCE_STATE_VIDEO_ENCODE_READ | D3D12_RESOURCE_STATE_VIDEO_ENCODE_WRITE |</para>
+    </summary>
+  </member>
+</doc>

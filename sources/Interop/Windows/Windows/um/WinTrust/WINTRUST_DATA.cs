@@ -37,7 +37,7 @@ public unsafe partial struct WINTRUST_DATA
     public uint dwUnionChoice;
 
     /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.Anonymous"]/*' />
-    [NativeTypeName("_WINTRUST_DATA::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/WinTrust.h:116:5)")]
+    [NativeTypeName("__AnonymousRecord_WinTrust_L116_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.dwStateAction"]/*' />
@@ -49,7 +49,7 @@ public unsafe partial struct WINTRUST_DATA
 
     /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.pwszURLReference"]/*' />
     [NativeTypeName("WCHAR *")]
-    public ushort* pwszURLReference;
+    public char* pwszURLReference;
 
     /// <include file='WINTRUST_DATA.xml' path='doc/member[@name="WINTRUST_DATA.dwProvFlags"]/*' />
     [NativeTypeName("DWORD")]

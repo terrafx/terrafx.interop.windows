@@ -13,6 +13,7 @@ TerraFX.Interop.Windows
 --traverse
 C:/Program Files (x86)/Windows Kits/10/Include/10.0.22621.0/um/sysinfoapi.h
 --with-attribute
+GetDeveloperDriveEnablementState=SupportedOSPlatform("windows10.0.22631.0")
 GetIntegratedDisplaySize=SupportedOSPlatform("windows10.0")
 GetSystemTimeAdjustmentPrecise=SupportedOSPlatform("windows10.0")
 GetSystemTimePreciseAsFileTime=SupportedOSPlatform("windows6.2")
@@ -68,6 +69,7 @@ SetSystemTime=kernel32
 SetSystemTimeAdjustment=kernel32
 VerSetConditionMask=kernel32
 --with-librarypath
+GetDeveloperDriveEnablementState=kernelbase
 GetIntegratedDisplaySize=kernelbase
 GetOsManufacturingMode=kernelbase
 GetOsSafeBootMode=kernelbase

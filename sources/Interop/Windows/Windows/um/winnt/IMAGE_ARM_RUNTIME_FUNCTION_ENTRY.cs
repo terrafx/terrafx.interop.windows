@@ -17,7 +17,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint BeginAddress;
 
     /// <include file='IMAGE_ARM_RUNTIME_FUNCTION_ENTRY.xml' path='doc/member[@name="IMAGE_ARM_RUNTIME_FUNCTION_ENTRY.Anonymous"]/*' />
-    [NativeTypeName("_IMAGE_ARM_RUNTIME_FUNCTION_ENTRY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:20163:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L20213_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.UnwindData"]/*' />
@@ -35,7 +35,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint Flag
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Flag;
         }
@@ -51,7 +51,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint FunctionLength
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.FunctionLength;
         }
@@ -67,7 +67,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint Ret
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Ret;
         }
@@ -83,7 +83,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint H
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.H;
         }
@@ -99,7 +99,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint Reg
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Reg;
         }
@@ -115,7 +115,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint R
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.R;
         }
@@ -131,7 +131,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint L
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.L;
         }
@@ -147,7 +147,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint C
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.C;
         }
@@ -163,7 +163,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
     public uint StackAdjust
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.StackAdjust;
         }
@@ -186,7 +186,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IMAGE_ARM_RUNTIME_FUNCTION_ENTRY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:20165:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L20215_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -199,7 +199,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
             public uint Flag
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x3u;
                 }
@@ -216,7 +216,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
             public uint FunctionLength
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x7FFu;
                 }
@@ -233,7 +233,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
             public uint Ret
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 13) & 0x3u;
                 }
@@ -250,7 +250,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
             public uint H
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 15) & 0x1u;
                 }
@@ -267,7 +267,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
             public uint Reg
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 16) & 0x7u;
                 }
@@ -284,7 +284,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
             public uint R
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 19) & 0x1u;
                 }
@@ -301,7 +301,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
             public uint L
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 20) & 0x1u;
                 }
@@ -318,7 +318,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
             public uint C
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 21) & 0x1u;
                 }
@@ -335,7 +335,7 @@ public partial struct IMAGE_ARM_RUNTIME_FUNCTION_ENTRY
             public uint StackAdjust
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 22) & 0x3FFu;
                 }

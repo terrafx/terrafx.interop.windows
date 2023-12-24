@@ -13,22 +13,22 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN"]/*' />
 [SupportedOSPlatform("windows6.2")]
-public unsafe partial struct STORAGE_OFFLOAD_TOKEN
+public partial struct STORAGE_OFFLOAD_TOKEN
 {
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.TokenType"]/*' />
     [NativeTypeName("BYTE[4]")]
-    public fixed byte TokenType[4];
+    public _TokenType_e__FixedBuffer TokenType;
 
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.Reserved"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte Reserved[2];
+    public _Reserved_e__FixedBuffer Reserved;
 
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.TokenIdLength"]/*' />
     [NativeTypeName("BYTE[2]")]
-    public fixed byte TokenIdLength[2];
+    public _TokenIdLength_e__FixedBuffer TokenIdLength;
 
     /// <include file='STORAGE_OFFLOAD_TOKEN.xml' path='doc/member[@name="STORAGE_OFFLOAD_TOKEN.Anonymous"]/*' />
-    [NativeTypeName("_STORAGE_OFFLOAD_TOKEN::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:3359:5)")]
+    [NativeTypeName("__AnonymousRecord_winioctl_L3359_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StorageOffloadZeroDataToken"]/*' />
@@ -49,30 +49,65 @@ public unsafe partial struct STORAGE_OFFLOAD_TOKEN
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            return MemoryMarshal.CreateSpan(ref Anonymous.Token[0], 504);
+            return Anonymous.Token;
         }
     }
 
     /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union"]/*' />
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct _Anonymous_e__Union
+    public partial struct _Anonymous_e__Union
     {
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.StorageOffloadZeroDataToken"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winioctl.h:3360:9)")]
+        [NativeTypeName("__AnonymousRecord_winioctl_L3360_C9")]
         public _StorageOffloadZeroDataToken_e__Struct StorageOffloadZeroDataToken;
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Token"]/*' />
         [FieldOffset(0)]
         [NativeTypeName("BYTE[504]")]
-        public fixed byte Token[504];
+        public _Token_e__FixedBuffer Token;
 
         /// <include file='_StorageOffloadZeroDataToken_e__Struct.xml' path='doc/member[@name="_StorageOffloadZeroDataToken_e__Struct"]/*' />
-        public unsafe partial struct _StorageOffloadZeroDataToken_e__Struct
+        public partial struct _StorageOffloadZeroDataToken_e__Struct
         {
             /// <include file='_StorageOffloadZeroDataToken_e__Struct.xml' path='doc/member[@name="_StorageOffloadZeroDataToken_e__Struct.Reserved2"]/*' />
             [NativeTypeName("BYTE[504]")]
-            public fixed byte Reserved2[504];
+            public _Reserved2_e__FixedBuffer Reserved2;
+
+            /// <include file='_Reserved2_e__FixedBuffer.xml' path='doc/member[@name="_Reserved2_e__FixedBuffer"]/*' />
+            [InlineArray(504)]
+            public partial struct _Reserved2_e__FixedBuffer
+            {
+                public byte e0;
+            }
         }
+
+        /// <include file='_Token_e__FixedBuffer.xml' path='doc/member[@name="_Token_e__FixedBuffer"]/*' />
+        [InlineArray(504)]
+        public partial struct _Token_e__FixedBuffer
+        {
+            public byte e0;
+        }
+    }
+
+    /// <include file='_TokenType_e__FixedBuffer.xml' path='doc/member[@name="_TokenType_e__FixedBuffer"]/*' />
+    [InlineArray(4)]
+    public partial struct _TokenType_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_Reserved_e__FixedBuffer.xml' path='doc/member[@name="_Reserved_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _Reserved_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_TokenIdLength_e__FixedBuffer.xml' path='doc/member[@name="_TokenIdLength_e__FixedBuffer"]/*' />
+    [InlineArray(2)]
+    public partial struct _TokenIdLength_e__FixedBuffer
+    {
+        public byte e0;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IWindowForBindingUITests
     {
         Assert.That(typeof(IWindowForBindingUI).GUID, Is.EqualTo(IID_IWindowForBindingUI));
     }
-
-    /// <summary>Validates that the <see cref="IWindowForBindingUI" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWindowForBindingUI>(), Is.EqualTo(sizeof(IWindowForBindingUI)));
-    }
-
-    /// <summary>Validates that the <see cref="IWindowForBindingUI" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWindowForBindingUI).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWindowForBindingUI" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWindowForBindingUI), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWindowForBindingUI), Is.EqualTo(4));
-        }
-    }
 }

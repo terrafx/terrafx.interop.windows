@@ -3,29 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAppxManifestApplication.GetAppUserModelId">
-    <summary>
-      <para>Gets the application user model identifier.</para>
-    </summary>
-    <param name="appUserModelId">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
-      <para>The user model identifier.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The caller must free the memory allocated for <i>appUserModelId</i> using the <see cref="CoTaskMemFree" /> function.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/shell/appids">Application User Model IDs</seealso>
-    <seealso cref="IAppxManifestApplication" />
+    <summary>Gets the application user model identifier.</summary>
+    <param name="appUserModelId">The user model identifier.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestApplication.GetStringValue">
-    <summary>
-      <para>Gets the string value of an element or attribute in the application metadata section of the manifest.</para>
-    </summary>
+    <summary>Gets the string value of an element or attribute in the application metadata section of the manifest.</summary>
     <param name="name">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPCWSTR</a></b></para>
       <para>The name of the element or attribute value to get from the application metadata. Supported names include:</para>
       <list type="bullet">
         <item>
@@ -109,25 +93,10 @@
       </list>
       <para>Refer to the <a href="https://docs.microsoft.com//uwp/schemas/appxpackage/uapmanifestschema/schema-root">schema</a> to determine where these values are being read from in the manifest.</para>
     </param>
-    <param name="value">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">LPWSTR</a>*</b></para>
-      <para>The value of the requested element or attribute.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If the <i>name</i> parameter is not a supported name of an element or attribute in the manifest, this method returns <b>E_INVALIDARG</b>. If the <i>name</i> parameter is supported but the element or attribute is not found in the manifest, this method returns <b>S_OK</b> and the return value of the <i>value</i> parameter is <b>NULL</b>.</para>
-      <para>The caller must free the memory allocated for <i>value</i> using the <see cref="CoTaskMemFree" /> function.</para>
-    </remarks>
-    <seealso cref="IAppxManifestApplication" />
+    <param name="value">The value of the requested element or attribute.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAppxManifestApplication">
-    <summary>
-      <para>Provides access to attribute values of the application.</para>
-    </summary>
-    <seealso cref="IAppxManifestApplicationsEnumerator" />
-    <seealso cref="IAppxManifestReader" />
+    <summary>Provides access to attribute values of the application.</summary>
   </member>
 </doc>

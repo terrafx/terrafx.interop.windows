@@ -3,61 +3,29 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="NET_ADDRESS_INFO">
-    <summary>
-      <para>The <b>NET_ADDRESS_INFO</b> structure contains IP address information returned by the <see cref="ParseNetworkString" /> function.</para>
-    </summary>
-    <remarks>
-      <para>The <b>NET_ADDRESS_INFO</b> structure is defined on Windows Vista and later.</para>
-      <para>The <b>NET_ADDRESS_INFO</b> structure is returned by the <see cref="ParseNetworkString" /> function.</para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR_IN</a>,  SOCKADDR_IN6, and  SOCKADDR structures are used in the <b>NET_ADDRESS_INFO</b> structure. The SOCKADDR_IN and SOCKADDR structures are defined in the  <i>Ws2def.h</i> header file which is automatically included by the <i>Winsock2.h</i> header file. The SOCKADDR_IN6 structure is defined in the <i>Ws2ipdef.h</i> header file which is automatically included by the <i>Ws2tcpip.h</i> header file. In order to use the <b>NET_ADDRESS_INFO</b> structure, the <i>Winsock2.h</i> and <i>Ws2tcpip.h</i> header files must be included before the <i>Iphlpapi.h</i> header file.</para>
-    </remarks>
-    <seealso cref="NET_ADDRESS_FORMAT" />
-    <seealso cref="ParseNetworkString" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR</seealso>
+    <summary>The <b>NET_ADDRESS_INFO</b> structure contains IP address information returned by the <see cref="ParseNetworkString" /> function.</summary>
   </member>
   <member name="NET_ADDRESS_INFO.Format">
-    <summary>
-      <para>Type: <b>NET_ADDRESS_FORMAT</b></para>
-      <para>The format of the network address in the union in this structure. This member is an enumeration value from the <see cref="NET_ADDRESS_FORMAT" /> enumeration declared in the <i>Iphlpapi.h</i> header file.</para>
-    </summary>
+    <summary>The format of the network address in the union in this structure. This member is an enumeration value from the <see cref="NET_ADDRESS_FORMAT" /> enumeration declared in the <i>Iphlpapi.h</i> header file.</summary>
   </member>
   <member name="NET_ADDRESS_INFO.NamedAddress">
-    <summary>
-      <para>A DNS named address and port.</para>
-    </summary>
+    <summary>A DNS named address and port.</summary>
   </member>
   <member name="NET_ADDRESS_INFO.NamedAddress.Address">
     <summary>
-      <para>
-        <b>Type: <b>WCHAR[DNS_MAX_NAME_BUFFER_LENGTH]</b></b>
-      </para>
-      <para>A DNS name formatted as a <b>NULL</b>-terminated wide character string. The maximum length of this string is the <b>DNS_MAX_NAME_BUFFER_LENGTH</b> constant defined in the <i>Windns.h</i> header file.</para>
-    </summary>
+      <b>Type: <b>WCHAR[DNS_MAX_NAME_BUFFER_LENGTH]</b></b>A DNS name formatted as a <b>NULL</b>-terminated wide character string. The maximum length of this string is the <b>DNS_MAX_NAME_BUFFER_LENGTH</b> constant defined in the <i>Windns.h</i> header file.</summary>
   </member>
   <member name="NET_ADDRESS_INFO.NamedAddress.Port">
     <summary>
-      <para>
-        <b>Type: <b>WCHAR[6]</b></b>
-      </para>
-      <para>The network port formatted as a <b>NULL</b>-terminated wide character string.</para>
-    </summary>
+      <b>Type: <b>WCHAR[6]</b></b>The network port formatted as a <b>NULL</b>-terminated wide character string.</summary>
   </member>
   <member name="NET_ADDRESS_INFO.Ipv4Address">
-    <summary>
-      <para>Type: <b>SOCKADDR_IN</b></para>
-      <para>An IPv4 address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR_IN</a> structure.</para>
-    </summary>
+    <summary>An IPv4 address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR_IN</a> structure.</summary>
   </member>
   <member name="NET_ADDRESS_INFO.Ipv6Address">
-    <summary>
-      <para>Type: <b>SOCKADDR_IN6</b></para>
-      <para>An IPv6 address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR_IN6</a> structure.</para>
-    </summary>
+    <summary>An IPv6 address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR_IN6</a> structure.</summary>
   </member>
   <member name="NET_ADDRESS_INFO.IpAddress">
-    <summary>
-      <para>Type: <b>SOCKADDR</b></para>
-      <para>An IPv4 or IPv6 address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR</a> structure.</para>
-    </summary>
+    <summary>An IPv4 or IPv6 address represented as a <a href="https://docs.microsoft.com//windows/desktop/WinSock/sockaddr-2">SOCKADDR</a> structure.</summary>
   </member>
 </doc>

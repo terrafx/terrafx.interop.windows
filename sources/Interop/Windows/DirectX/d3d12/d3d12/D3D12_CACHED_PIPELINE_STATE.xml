@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_CACHED_PIPELINE_STATE">
+    <summary>Stores a pipeline state.</summary>
+  </member>
+  <member name="D3D12_CACHED_PIPELINE_STATE.pCachedBlob">
+    <summary>Specifies pointer that references the memory location of the cache.</summary>
+  </member>
+  <member name="D3D12_CACHED_PIPELINE_STATE.CachedBlobSizeInBytes">
+    <summary>Specifies the size of the cache in bytes.</summary>
+  </member>
+</doc>

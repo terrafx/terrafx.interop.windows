@@ -25,7 +25,7 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMarshal*, Guid*, void**, int>)(lpVtbl[0]))((IMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMarshal*, Guid*, void**, int>)(lpVtbl[0]))((IMarshal*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMarshal*, uint>)(lpVtbl[1]))((IMarshal*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMarshal*, uint>)(lpVtbl[1]))((IMarshal*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMarshal*, uint>)(lpVtbl[2]))((IMarshal*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMarshal*, uint>)(lpVtbl[2]))((IMarshal*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMarshal.xml' path='doc/member[@name="IMarshal.GetUnmarshalClass"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT GetUnmarshalClass([NativeTypeName("const IID &")] Guid* riid, void* pv, [NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags, [NativeTypeName("CLSID *")] Guid* pCid)
     {
-        return ((delegate* unmanaged<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)(lpVtbl[3]))((IMarshal*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
+        return ((delegate* unmanaged[MemberFunction]<IMarshal*, Guid*, void*, uint, void*, uint, Guid*, int>)(lpVtbl[3]))((IMarshal*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pCid);
     }
 
     /// <include file='IMarshal.xml' path='doc/member[@name="IMarshal.GetMarshalSizeMax"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT GetMarshalSizeMax([NativeTypeName("const IID &")] Guid* riid, void* pv, [NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags, [NativeTypeName("DWORD *")] uint* pSize)
     {
-        return ((delegate* unmanaged<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)(lpVtbl[4]))((IMarshal*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
+        return ((delegate* unmanaged[MemberFunction]<IMarshal*, Guid*, void*, uint, void*, uint, uint*, int>)(lpVtbl[4]))((IMarshal*)Unsafe.AsPointer(ref this), riid, pv, dwDestContext, pvDestContext, mshlflags, pSize);
     }
 
     /// <include file='IMarshal.xml' path='doc/member[@name="IMarshal.MarshalInterface"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT MarshalInterface(IStream* pStm, [NativeTypeName("const IID &")] Guid* riid, void* pv, [NativeTypeName("DWORD")] uint dwDestContext, void* pvDestContext, [NativeTypeName("DWORD")] uint mshlflags)
     {
-        return ((delegate* unmanaged<IMarshal*, IStream*, Guid*, void*, uint, void*, uint, int>)(lpVtbl[5]))((IMarshal*)Unsafe.AsPointer(ref this), pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
+        return ((delegate* unmanaged[MemberFunction]<IMarshal*, IStream*, Guid*, void*, uint, void*, uint, int>)(lpVtbl[5]))((IMarshal*)Unsafe.AsPointer(ref this), pStm, riid, pv, dwDestContext, pvDestContext, mshlflags);
     }
 
     /// <include file='IMarshal.xml' path='doc/member[@name="IMarshal.UnmarshalInterface"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT UnmarshalInterface(IStream* pStm, [NativeTypeName("const IID &")] Guid* riid, void** ppv)
     {
-        return ((delegate* unmanaged<IMarshal*, IStream*, Guid*, void**, int>)(lpVtbl[6]))((IMarshal*)Unsafe.AsPointer(ref this), pStm, riid, ppv);
+        return ((delegate* unmanaged[MemberFunction]<IMarshal*, IStream*, Guid*, void**, int>)(lpVtbl[6]))((IMarshal*)Unsafe.AsPointer(ref this), pStm, riid, ppv);
     }
 
     /// <include file='IMarshal.xml' path='doc/member[@name="IMarshal.ReleaseMarshalData"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT ReleaseMarshalData(IStream* pStm)
     {
-        return ((delegate* unmanaged<IMarshal*, IStream*, int>)(lpVtbl[7]))((IMarshal*)Unsafe.AsPointer(ref this), pStm);
+        return ((delegate* unmanaged[MemberFunction]<IMarshal*, IStream*, int>)(lpVtbl[7]))((IMarshal*)Unsafe.AsPointer(ref this), pStm);
     }
 
     /// <include file='IMarshal.xml' path='doc/member[@name="IMarshal.DisconnectObject"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT DisconnectObject([NativeTypeName("DWORD")] uint dwReserved)
     {
-        return ((delegate* unmanaged<IMarshal*, uint, int>)(lpVtbl[8]))((IMarshal*)Unsafe.AsPointer(ref this), dwReserved);
+        return ((delegate* unmanaged[MemberFunction]<IMarshal*, uint, int>)(lpVtbl[8]))((IMarshal*)Unsafe.AsPointer(ref this), dwReserved);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct IMarshal : IMarshal.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (const IID &, void *, DWORD, void *, DWORD, CLSID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void*, uint, void*, uint, Guid*, int> GetUnmarshalClass;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void*, uint, void*, uint, Guid*, int> GetUnmarshalClass;
 
         [NativeTypeName("HRESULT (const IID &, void *, DWORD, void *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void*, uint, void*, uint, uint*, int> GetMarshalSizeMax;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void*, uint, void*, uint, uint*, int> GetMarshalSizeMax;
 
         [NativeTypeName("HRESULT (IStream *, const IID &, void *, DWORD, void *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, Guid*, void*, uint, void*, uint, int> MarshalInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, Guid*, void*, uint, void*, uint, int> MarshalInterface;
 
         [NativeTypeName("HRESULT (IStream *, const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, Guid*, void**, int> UnmarshalInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, Guid*, void**, int> UnmarshalInterface;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, int> ReleaseMarshalData;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, int> ReleaseMarshalData;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> DisconnectObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> DisconnectObject;
     }
 }

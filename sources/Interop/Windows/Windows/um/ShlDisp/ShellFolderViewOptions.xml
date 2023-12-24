@@ -3,43 +3,27 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ShellFolderViewOptions">
-    <summary>
-      <para>Specifies the view options returned by the <a href="https://docs.microsoft.com//windows/desktop/shell/shellfolderview-viewoptions">ViewOptions</a> property.</para>
-    </summary>
+    <summary>Specifies the view options returned by the <a href="https://docs.microsoft.com//windows/desktop/shell/shellfolderview-viewoptions">ViewOptions</a> property.</summary>
   </member>
   <member name="ShellFolderViewOptions.SFVVO_SHOWALLOBJECTS">
-    <summary>
-      <para>0x0001. The <b>Show All Files</b> option is enabled.</para>
-    </summary>
+    <summary>0x0001. The <b>Show All Files</b> option is enabled.</summary>
   </member>
   <member name="ShellFolderViewOptions.SFVVO_SHOWEXTENSIONS">
-    <summary>
-      <para>0x0002. The <b>Hide extensions for known file types</b> option is disabled.</para>
-    </summary>
+    <summary>0x0002. The <b>Hide extensions for known file types</b> option is disabled.</summary>
   </member>
   <member name="ShellFolderViewOptions.SFVVO_SHOWCOMPCOLOR">
-    <summary>
-      <para>0x0008. The <b>Display Compressed Files and Folders with Alternate Color</b> option is enabled.</para>
-    </summary>
+    <summary>0x0008. The <b>Display Compressed Files and Folders with Alternate Color</b> option is enabled.</summary>
   </member>
   <member name="ShellFolderViewOptions.SFVVO_SHOWSYSFILES">
-    <summary>
-      <para>0x0020. The <b>Do Not Show Hidden Files</b> option is enabled.</para>
-    </summary>
+    <summary>0x0020. The <b>Do Not Show Hidden Files</b> option is enabled.</summary>
   </member>
   <member name="ShellFolderViewOptions.SFVVO_WIN95CLASSIC">
-    <summary>
-      <para>0x0040. The <b>Classic Style</b> option is enabled.</para>
-    </summary>
+    <summary>0x0040. The <b>Classic Style</b> option is enabled.</summary>
   </member>
   <member name="ShellFolderViewOptions.SFVVO_DOUBLECLICKINWEBVIEW">
-    <summary>
-      <para>0x0080. The <b>Double-Click to Open an Item</b> option is enabled.</para>
-    </summary>
+    <summary>0x0080. The <b>Double-Click to Open an Item</b> option is enabled.</summary>
   </member>
   <member name="ShellFolderViewOptions.SFVVO_DESKTOPHTML">
-    <summary>
-      <para>0x0200. The <b>Active Desktop – View as Web Page</b> option is enabled.</para>
-    </summary>
+    <summary>0x0200. The <b>Active Desktop – View as Web Page</b> option is enabled.</summary>
   </member>
 </doc>

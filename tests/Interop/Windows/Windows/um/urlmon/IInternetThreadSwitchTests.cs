@@ -19,32 +19,4 @@ public static unsafe partial class IInternetThreadSwitchTests
     {
         Assert.That(typeof(IInternetThreadSwitch).GUID, Is.EqualTo(IID_IInternetThreadSwitch));
     }
-
-    /// <summary>Validates that the <see cref="IInternetThreadSwitch" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IInternetThreadSwitch>(), Is.EqualTo(sizeof(IInternetThreadSwitch)));
-    }
-
-    /// <summary>Validates that the <see cref="IInternetThreadSwitch" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IInternetThreadSwitch).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IInternetThreadSwitch" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IInternetThreadSwitch), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IInternetThreadSwitch), Is.EqualTo(4));
-        }
-    }
 }

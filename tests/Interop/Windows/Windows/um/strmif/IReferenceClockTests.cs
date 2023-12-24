@@ -19,32 +19,4 @@ public static unsafe partial class IReferenceClockTests
     {
         Assert.That(typeof(IReferenceClock).GUID, Is.EqualTo(IID_IReferenceClock));
     }
-
-    /// <summary>Validates that the <see cref="IReferenceClock" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IReferenceClock>(), Is.EqualTo(sizeof(IReferenceClock)));
-    }
-
-    /// <summary>Validates that the <see cref="IReferenceClock" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IReferenceClock).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IReferenceClock" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IReferenceClock), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IReferenceClock), Is.EqualTo(4));
-        }
-    }
 }

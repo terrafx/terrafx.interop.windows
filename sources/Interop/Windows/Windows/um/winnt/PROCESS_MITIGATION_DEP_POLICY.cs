@@ -15,7 +15,7 @@ namespace TerraFX.Interop.Windows;
 public partial struct PROCESS_MITIGATION_DEP_POLICY
 {
     /// <include file='PROCESS_MITIGATION_DEP_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_DEP_POLICY.Anonymous"]/*' />
-    [NativeTypeName("_PROCESS_MITIGATION_DEP_POLICY::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12560:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L12568_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='PROCESS_MITIGATION_DEP_POLICY.xml' path='doc/member[@name="PROCESS_MITIGATION_DEP_POLICY.Permanent"]/*' />
@@ -37,7 +37,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
     public uint Enable
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.Enable;
         }
@@ -53,7 +53,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
     public uint DisableAtlThunkEmulation
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.DisableAtlThunkEmulation;
         }
@@ -69,7 +69,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
     public uint ReservedFlags
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return Anonymous.Anonymous.ReservedFlags;
         }
@@ -92,7 +92,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_PROCESS_MITIGATION_DEP_POLICY::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:12562:9)")]
+        [NativeTypeName("__AnonymousRecord_winnt_L12570_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -105,7 +105,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
             public uint Enable
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return _bitfield & 0x1u;
                 }
@@ -122,7 +122,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
             public uint DisableAtlThunkEmulation
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 1) & 0x1u;
                 }
@@ -139,7 +139,7 @@ public partial struct PROCESS_MITIGATION_DEP_POLICY
             public uint ReservedFlags
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                get
+                readonly get
                 {
                     return (_bitfield >> 2) & 0x3FFFFFFFu;
                 }

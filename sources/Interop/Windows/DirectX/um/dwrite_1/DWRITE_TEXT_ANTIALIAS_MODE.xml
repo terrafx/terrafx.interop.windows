@@ -3,22 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DWRITE_TEXT_ANTIALIAS_MODE">
-    <summary>
-      <para>The <b>DWRITE_TEXT_ANTIALIAS_MODE</b> enumeration contains values that specify the type of antialiasing to use for text when the rendering mode calls for antialiasing.</para>
-    </summary>
-    <seealso cref="IDWriteBitmapRenderTarget1.GetTextAntialiasMode" />
-    <seealso cref="IDWriteBitmapRenderTarget1.SetTextAntialiasMode" />
+    <summary>The <b>DWRITE_TEXT_ANTIALIAS_MODE</b> enumeration contains values that specify the type of antialiasing to use for text when the rendering mode calls for antialiasing.</summary>
   </member>
   <member name="DWRITE_TEXT_ANTIALIAS_MODE.DWRITE_TEXT_ANTIALIAS_MODE_CLEARTYPE">
-    <summary>
-      <para>ClearType antialiasing computes coverage independently for the red, green, and blue color elements of each pixel. This allows for more detail than conventional antialiasing. However, because there is no one alpha value for each pixel, ClearType is not suitable for rendering text onto a transparent intermediate bitmap.</para>
-    </summary>
+    <summary>ClearType antialiasing computes coverage independently for the red, green, and blue color elements of each pixel. This allows for more detail than conventional antialiasing. However, because there is no one alpha value for each pixel, ClearType is not suitable for rendering text onto a transparent intermediate bitmap.</summary>
   </member>
   <member name="DWRITE_TEXT_ANTIALIAS_MODE.DWRITE_TEXT_ANTIALIAS_MODE_GRAYSCALE">
     <summary>
       <para>Grayscale antialiasing computes one coverage value for each pixel. Because the alpha value of each pixel is well-defined, text can be rendered onto a transparent bitmap, which can then be composited with other content.</para>
-      <para>
-        <b>Note</b>  Grayscale rendering with <see cref="IDWriteBitmapRenderTarget1" /> uses premultiplied alpha.</para>
+      <div>
+        <b>Note</b>  Grayscale rendering with <see cref="IDWriteBitmapRenderTarget1" /> uses premultiplied alpha.</div>
     </summary>
   </member>
 </doc>

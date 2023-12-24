@@ -25,7 +25,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICStreamProvider*, Guid*, void**, int>)(lpVtbl[0]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICStreamProvider*, Guid*, void**, int>)(lpVtbl[0]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICStreamProvider*, uint>)(lpVtbl[1]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICStreamProvider*, uint>)(lpVtbl[1]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICStreamProvider*, uint>)(lpVtbl[2]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICStreamProvider*, uint>)(lpVtbl[2]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider.GetStream"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface, 
     [VtblIndex(3)]
     public HRESULT GetStream(IStream** ppIStream)
     {
-        return ((delegate* unmanaged<IWICStreamProvider*, IStream**, int>)(lpVtbl[3]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), ppIStream);
+        return ((delegate* unmanaged[MemberFunction]<IWICStreamProvider*, IStream**, int>)(lpVtbl[3]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), ppIStream);
     }
 
     /// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider.GetPersistOptions"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface, 
     [VtblIndex(4)]
     public HRESULT GetPersistOptions([NativeTypeName("DWORD *")] uint* pdwPersistOptions)
     {
-        return ((delegate* unmanaged<IWICStreamProvider*, uint*, int>)(lpVtbl[4]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pdwPersistOptions);
+        return ((delegate* unmanaged[MemberFunction]<IWICStreamProvider*, uint*, int>)(lpVtbl[4]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pdwPersistOptions);
     }
 
     /// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider.GetPreferredVendorGUID"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface, 
     [VtblIndex(5)]
     public HRESULT GetPreferredVendorGUID(Guid* pguidPreferredVendor)
     {
-        return ((delegate* unmanaged<IWICStreamProvider*, Guid*, int>)(lpVtbl[5]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pguidPreferredVendor);
+        return ((delegate* unmanaged[MemberFunction]<IWICStreamProvider*, Guid*, int>)(lpVtbl[5]))((IWICStreamProvider*)Unsafe.AsPointer(ref this), pguidPreferredVendor);
     }
 
     /// <include file='IWICStreamProvider.xml' path='doc/member[@name="IWICStreamProvider.RefreshStream"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface, 
     [VtblIndex(6)]
     public HRESULT RefreshStream()
     {
-        return ((delegate* unmanaged<IWICStreamProvider*, int>)(lpVtbl[6]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICStreamProvider*, int>)(lpVtbl[6]))((IWICStreamProvider*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IWICStreamProvider : IWICStreamProvider.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream**, int> GetStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream**, int> GetStream;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetPersistOptions;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetPersistOptions;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetPreferredVendorGUID;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetPreferredVendorGUID;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> RefreshStream;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> RefreshStream;
     }
 }

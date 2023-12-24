@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ICompositorInterop2.CheckCompositionTextureSupport">
+    <summary>Queries whether the Direct3D device that you're using to render supports composition textures (without having to first allocate a Direct3D texture on that device). Before you attempt to create composition textures for D3D textures backed by a given Direct3D device, you should call <b>CheckCompositionTextureSupport</b>, passing that backing device.</summary>
+    <param name="renderingDevice">The backing Direct3D device.</param>
+    <param name="supportsCompositionTextures">Points to a value of <code>true</code> if <i>renderingDevice</i> supports composition textures; otherwise 'false`.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">HRESULT</a> error code.</returns>
+  </member>
+  <member name="ICompositorInterop2.CreateCompositionTexture">
+    <summary>Creates a composition texture referencing the passed-in Direct3D texture.</summary>
+    <param name="d3dTexture">A Direct3D texture (an <see cref="ID3D11Texture2D" /> resource) to create a composition texture for.</param>
+    <param name="compositionTexture">Retrieves the composition texture object.</param>
+    <returns>If the function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <a href="https://docs.microsoft.com//windows/win32/winprog/windows-data-types">HRESULT</a> error code. If you try to create a composition texture for a Direct3D texture that's backed by a Direct3D device that doesn't support composition textures, then <b>CreateCompositionTexture</b> returns <b>E_INVALIDARG</b>.</returns>
+  </member>
+  <member name="ICompositorInterop2">
+    <summary>Serves as the root factory for composition textures.</summary>
+  </member>
+</doc>

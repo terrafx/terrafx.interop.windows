@@ -3,83 +3,51 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SecPkgContext_CipherInfo">
-    <summary>
-      <para>Cipher info structure. This is returned by SECPKG_ATTR_CIPHER_INFO ulAttribute from the <see cref="QueryContextAttributes" /> (Schannel) function.</para>
-    </summary>
+    <summary>Cipher info structure. This is returned by SECPKG_ATTR_CIPHER_INFO ulAttribute from the <see cref="QueryContextAttributes" /> (Schannel) function.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwVersion">
-    <summary>
-      <para>The dw version.</para>
-    </summary>
+    <summary>The dw version.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwProtocol">
-    <summary>
-      <para>The dw protocol.</para>
-    </summary>
+    <summary>The dw protocol.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwCipherSuite">
-    <summary>
-      <para>The dw cipher suite.</para>
-    </summary>
+    <summary>The dw cipher suite.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwBaseCipherSuite">
-    <summary>
-      <para>The dw base cipher suite.</para>
-    </summary>
+    <summary>The dw base cipher suite.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwCipherLen">
-    <summary>
-      <para>The dw cipher length.</para>
-    </summary>
+    <summary>The dw cipher length.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwCipherBlockLen">
-    <summary>
-      <para>The dw cipher block length in bytes.</para>
-    </summary>
+    <summary>The dw cipher block length in bytes.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwHashLen">
-    <summary>
-      <para>The dw hash length.</para>
-    </summary>
+    <summary>The dw hash length.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwMinExchangeLen">
-    <summary>
-      <para>The dw min exchange length.</para>
-    </summary>
+    <summary>The dw min exchange length.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwMaxExchangeLen">
-    <summary>
-      <para>The dw max exchange length.</para>
-    </summary>
+    <summary>The dw max exchange length.</summary>
   </member>
   <member name="SecPkgContext_CipherInfo.dwKeyType">
-    <summary>
-      <para>The dw key type.</para>
-    </summary>
+    <summary>The dw key type.</summary>
   </member>
-  <member name="SecPkgContext_CipherInfo.szCertificate [SZ_ALG_MAX_SIZE]">
-    <summary>
-      <para>The sz certificate.</para>
-    </summary>
+  <member name="SecPkgContext_CipherInfo.szCertificate">
+    <summary>The sz certificate.</summary>
   </member>
-  <member name="SecPkgContext_CipherInfo.szCipherSuite [SZ_ALG_MAX_SIZE]">
-    <summary>
-      <para>The sz cipher suite.</para>
-    </summary>
+  <member name="SecPkgContext_CipherInfo.szCipherSuite">
+    <summary>The sz cipher suite.</summary>
   </member>
-  <member name="SecPkgContext_CipherInfo.szCipher [SZ_ALG_MAX_SIZE]">
-    <summary>
-      <para>The sz cipher.</para>
-    </summary>
+  <member name="SecPkgContext_CipherInfo.szCipher">
+    <summary>The sz cipher.</summary>
   </member>
-  <member name="SecPkgContext_CipherInfo.szExchange [SZ_ALG_MAX_SIZE]">
-    <summary>
-      <para>The sz exchange.</para>
-    </summary>
+  <member name="SecPkgContext_CipherInfo.szExchange">
+    <summary>The sz exchange.</summary>
   </member>
-  <member name="SecPkgContext_CipherInfo.szHash [SZ_ALG_MAX_SIZE]">
-    <summary>
-      <para>The sz hash.</para>
-    </summary>
+  <member name="SecPkgContext_CipherInfo.szHash">
+    <summary>The sz hash.</summary>
   </member>
 </doc>

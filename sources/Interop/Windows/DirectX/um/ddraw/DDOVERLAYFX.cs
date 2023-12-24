@@ -33,7 +33,7 @@ public unsafe partial struct DDOVERLAYFX
     public uint dwAlphaDestConstBitDepth;
 
     /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.Anonymous1"]/*' />
-    [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:775:5)")]
+    [NativeTypeName("__AnonymousRecord_ddraw_L775_C5")]
     public _Anonymous1_e__Union Anonymous1;
 
     /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dwAlphaSrcConstBitDepth"]/*' />
@@ -41,7 +41,7 @@ public unsafe partial struct DDOVERLAYFX
     public uint dwAlphaSrcConstBitDepth;
 
     /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.Anonymous2"]/*' />
-    [NativeTypeName("_DDOVERLAYFX::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/ddraw.h:781:5)")]
+    [NativeTypeName("__AnonymousRecord_ddraw_L781_C5")]
     public _Anonymous2_e__Union Anonymous2;
 
     /// <include file='DDOVERLAYFX.xml' path='doc/member[@name="DDOVERLAYFX.dckDestColorkey"]/*' />

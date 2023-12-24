@@ -19,7 +19,7 @@ public partial struct NET_LUID_LH
 
     /// <include file='NET_LUID_LH.xml' path='doc/member[@name="NET_LUID_LH.Info"]/*' />
     [FieldOffset(0)]
-    [NativeTypeName("struct (anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/shared/ifdef.h:121:5)")]
+    [NativeTypeName("__AnonymousRecord_ifdef_L121_C5")]
     public _Info_e__Struct Info;
 
     /// <include file='_Info_e__Struct.xml' path='doc/member[@name="_Info_e__Struct"]/*' />
@@ -32,7 +32,7 @@ public partial struct NET_LUID_LH
         public ulong Reserved
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return _bitfield & 0xFFFFFFUL;
             }
@@ -49,7 +49,7 @@ public partial struct NET_LUID_LH
         public ulong NetLuidIndex
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 24) & 0xFFFFFFUL;
             }
@@ -66,7 +66,7 @@ public partial struct NET_LUID_LH
         public ulong IfType
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get
+            readonly get
             {
                 return (_bitfield >> 48) & 0xFFFFUL;
             }

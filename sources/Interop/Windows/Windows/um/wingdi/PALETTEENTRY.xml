@@ -3,33 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PALETTEENTRY">
-    <summary>
-      <para>Specifies the color and usage of an entry in a logical palette.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d9/dx9-graphics-reference-d3d-structures">Direct3D Structures</seealso>
+    <summary>Specifies the color and usage of an entry in a logical palette.</summary>
   </member>
   <member name="PALETTEENTRY.peRed">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a></b></para>
-      <para>The red intensity value for the palette entry.</para>
-    </summary>
+    <summary>The red intensity value for the palette entry.</summary>
   </member>
   <member name="PALETTEENTRY.peGreen">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a></b></para>
-      <para>The green intensity value for the palette entry.</para>
-    </summary>
+    <summary>The green intensity value for the palette entry.</summary>
   </member>
   <member name="PALETTEENTRY.peBlue">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a></b></para>
-      <para>The blue intensity value for the palette entry.</para>
-    </summary>
+    <summary>The blue intensity value for the palette entry.</summary>
   </member>
   <member name="PALETTEENTRY.peFlags">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/WinProg/windows-data-types">BYTE</a></b></para>
-      <para>The alpha intensity value for the palette entry. Note that as of DirectX 8, this member is treated differently than documented for Windows.</para>
-    </summary>
+    <summary>The alpha intensity value for the palette entry. Note that as of DirectX 8, this member is treated differently than documented for Windows.</summary>
   </member>
 </doc>

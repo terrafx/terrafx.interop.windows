@@ -19,25 +19,4 @@ public static unsafe partial class HTMLMediaErrorTests
     {
         Assert.That(typeof(HTMLMediaError).GUID, Is.EqualTo(IID_HTMLMediaError));
     }
-
-    /// <summary>Validates that the <see cref="HTMLMediaError" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<HTMLMediaError>(), Is.EqualTo(sizeof(HTMLMediaError)));
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMediaError" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(HTMLMediaError).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="HTMLMediaError" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(HTMLMediaError), Is.EqualTo(1));
-    }
 }

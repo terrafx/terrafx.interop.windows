@@ -25,7 +25,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface, IN
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IComThreadingInfo*, Guid*, void**, int>)(lpVtbl[0]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IComThreadingInfo*, Guid*, void**, int>)(lpVtbl[0]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IComThreadingInfo*, uint>)(lpVtbl[1]))((IComThreadingInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IComThreadingInfo*, uint>)(lpVtbl[1]))((IComThreadingInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface, IN
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IComThreadingInfo*, uint>)(lpVtbl[2]))((IComThreadingInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IComThreadingInfo*, uint>)(lpVtbl[2]))((IComThreadingInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo.GetCurrentApartmentType"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface, IN
     [VtblIndex(3)]
     public HRESULT GetCurrentApartmentType(APTTYPE* pAptType)
     {
-        return ((delegate* unmanaged<IComThreadingInfo*, APTTYPE*, int>)(lpVtbl[3]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pAptType);
+        return ((delegate* unmanaged[MemberFunction]<IComThreadingInfo*, APTTYPE*, int>)(lpVtbl[3]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pAptType);
     }
 
     /// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo.GetCurrentThreadType"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface, IN
     [VtblIndex(4)]
     public HRESULT GetCurrentThreadType(THDTYPE* pThreadType)
     {
-        return ((delegate* unmanaged<IComThreadingInfo*, THDTYPE*, int>)(lpVtbl[4]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pThreadType);
+        return ((delegate* unmanaged[MemberFunction]<IComThreadingInfo*, THDTYPE*, int>)(lpVtbl[4]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pThreadType);
     }
 
     /// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo.GetCurrentLogicalThreadId"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface, IN
     [VtblIndex(5)]
     public HRESULT GetCurrentLogicalThreadId(Guid* pguidLogicalThreadId)
     {
-        return ((delegate* unmanaged<IComThreadingInfo*, Guid*, int>)(lpVtbl[5]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pguidLogicalThreadId);
+        return ((delegate* unmanaged[MemberFunction]<IComThreadingInfo*, Guid*, int>)(lpVtbl[5]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), pguidLogicalThreadId);
     }
 
     /// <include file='IComThreadingInfo.xml' path='doc/member[@name="IComThreadingInfo.SetCurrentLogicalThreadId"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface, IN
     [VtblIndex(6)]
     public HRESULT SetCurrentLogicalThreadId([NativeTypeName("const GUID &")] Guid* rguid)
     {
-        return ((delegate* unmanaged<IComThreadingInfo*, Guid*, int>)(lpVtbl[6]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), rguid);
+        return ((delegate* unmanaged[MemberFunction]<IComThreadingInfo*, Guid*, int>)(lpVtbl[6]))((IComThreadingInfo*)Unsafe.AsPointer(ref this), rguid);
     }
 
     public interface Interface : IUnknown.Interface
@@ -97,24 +97,24 @@ public unsafe partial struct IComThreadingInfo : IComThreadingInfo.Interface, IN
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (APTTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, APTTYPE*, int> GetCurrentApartmentType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, APTTYPE*, int> GetCurrentApartmentType;
 
         [NativeTypeName("HRESULT (THDTYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, THDTYPE*, int> GetCurrentThreadType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, THDTYPE*, int> GetCurrentThreadType;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> GetCurrentLogicalThreadId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetCurrentLogicalThreadId;
 
         [NativeTypeName("HRESULT (const GUID &) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, int> SetCurrentLogicalThreadId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> SetCurrentLogicalThreadId;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IOleAdviseHolderTests
     {
         Assert.That(typeof(IOleAdviseHolder).GUID, Is.EqualTo(IID_IOleAdviseHolder));
     }
-
-    /// <summary>Validates that the <see cref="IOleAdviseHolder" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IOleAdviseHolder>(), Is.EqualTo(sizeof(IOleAdviseHolder)));
-    }
-
-    /// <summary>Validates that the <see cref="IOleAdviseHolder" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IOleAdviseHolder).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IOleAdviseHolder" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IOleAdviseHolder), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IOleAdviseHolder), Is.EqualTo(4));
-        }
-    }
 }

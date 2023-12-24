@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_FOREST_TRUST_COLLISION_RECORD_TYPE">
+    <summary>The <b>LSA_FOREST_TRUST_COLLISION_RECORD_TYPE</b> enumeration defines the types of collision that can occur between <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">Local Security Authority</a> forest trust records.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_RECORD_TYPE.CollisionTdo">
+    <summary>Collision between <a href="https://docs.microsoft.com//windows/desktop/SecMgmt/trusteddomain-object">TrustedDomain</a> objects. This indicates a collision with a namespace element of another forest.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_RECORD_TYPE.CollisionXref">
+    <summary>Collision between cross-references. This indicates a collision with a domain in the same forest.</summary>
+  </member>
+  <member name="LSA_FOREST_TRUST_COLLISION_RECORD_TYPE.CollisionOther">
+    <summary>Collision that is not a collision between <a href="https://docs.microsoft.com//windows/desktop/SecMgmt/trusteddomain-object">TrustedDomain</a> objects or cross-references.</summary>
+  </member>
+</doc>

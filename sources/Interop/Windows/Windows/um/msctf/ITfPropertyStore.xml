@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfPropertyStore.Clone">
-    <summary>
-      <para>Creates an exact copy of the property store object.</para>
-    </summary>
-    <param name="pPropStore">
-      <para>Pointer to an <see cref="ITfPropertyStore" /> interface pointer that receives the new property store object.</para>
-    </param>
+    <summary>Creates an exact copy of the property store object.</summary>
+    <param name="pPropStore">Pointer to an <see cref="ITfPropertyStore" /> interface pointer that receives the new property store object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -16,46 +12,38 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>A memory allocation failure occurred.</para>
-          </description>
-        </item>
+          <description>A memory allocation failure occurred.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method creates a new property store object and initializes the new object so that it will operate as an exact copy of the original property store object. The new object must be completely independent of the original object.</para>
-    </remarks>
-    <seealso cref="ITfPropertyStore " />
   </member>
   <member name="ITfPropertyStore.Divide">
-    <summary>
-      <para>Called when the text covered by the property is split into two ranges.</para>
-    </summary>
-    <param name="pRangeThis">
-      <para>Pointer to an <see cref="ITfRange" /> object that contains the range that the property store now covers. This will be the range of text closest to the beginning of the context.</para>
-    </param>
-    <param name="pRangeNew">
-      <para>Pointer to an <i>ITfRange</i> object that contains the range that the new property store will cover. This will be the range of text closest to the end of the context.</para>
-    </param>
-    <param name="ppPropStore">
-      <para>Pointer to an <see cref="ITfPropertyStore" /> interface pointer that receives a new property store object that will cover the range specified by <i>pRangeNew</i>.</para>
-    </param>
+    <summary>Called when the text covered by the property is split into two ranges.</summary>
+    <param name="pRangeThis">Pointer to an <see cref="ITfRange" /> object that contains the range that the property store now covers. This will be the range of text closest to the beginning of the context.</param>
+    <param name="pRangeNew">Pointer to an <i>ITfRange</i> object that contains the range that the new property store will cover. This will be the range of text closest to the end of the context.</param>
+    <param name="ppPropStore">Pointer to an <see cref="ITfPropertyStore" /> interface pointer that receives a new property store object that will cover the range specified by <i>pRangeNew</i>.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -63,32 +51,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This method creates a new property store object to cover <i>pRangeNew</i> and returns the pointer to this object in <i>ppPropStore</i>. If no new property store is returned, the original property store is discarded and the property store for both ranges is set to empty.</para>
-      <para>If this method returns any value other than S_OK, the original property store is discarded.</para>
-    </remarks>
-    <seealso cref="ITfPropertyStore " />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfPropertyStore.GetData">
-    <summary>
-      <para>Obtains the property store data.</para>
-    </summary>
-    <param name="pvarValue">
-      <para>Pointer to a <b>VARIANT</b> value that receives property data.</para>
-    </param>
+    <summary>Obtains the property store data.</summary>
+    <param name="pvarValue">Pointer to a <b>VARIANT</b> value that receives property data.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -96,57 +76,54 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pvarValue</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>pvarValue</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfPropertyStore.GetDataType">
-    <summary>
-      <para>This method is reserved, but must be implemented.</para>
-    </summary>
-    <param name="pdwReserved">
-      <para>Pointer to a <b>DWORD</b> value the receives the data type. This parameter is reserved and must be set to zero.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>This method is reserved, but must be implemented.</summary>
+    <param name="pdwReserved">Pointer to a <b>DWORD</b> value the receives the data type. This parameter is reserved and must be set to zero.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ITfPropertyStore.GetPropertyRangeCreator">
-    <summary>
-      <para>Obtains the class identifier of the property store owner.</para>
-    </summary>
-    <param name="pclsid">
-      <para>Pointer to a <b>CLSID</b> that receives the class identifier of the registered text service that implements <see cref="ITfCreatePropertyStore" />. The method can return CLSID_NULL for this parameter if property store persistence is unsupported.</para>
-    </param>
+    <summary>Obtains the class identifier of the property store owner.</summary>
+    <param name="pclsid">Pointer to a <b>CLSID</b> that receives the class identifier of the registered text service that implements <see cref="ITfCreatePropertyStore" />. The method can return CLSID_NULL for this parameter if property store persistence is unsupported.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -154,31 +131,24 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>When the property store is unserialized, the TSF manager creates an object of this CLSID and obtains an <b>ITfCreatePropertyStore</b> interface pointer from it. The manager then uses the <b>ITfCreatePropertyStore</b> object to create the property store object.</para>
-    </remarks>
-    <seealso cref="ITfCreatePropertyStore " />
-    <seealso cref="ITfPropertyStore" />
   </member>
   <member name="ITfPropertyStore.GetType">
-    <summary>
-      <para>Obtains the property identifier.</para>
-    </summary>
-    <param name="pguid">
-      <para>Pointer to a <b>GUID</b> value that receives the property identifier.</para>
-    </param>
+    <summary>Obtains the property identifier.</summary>
+    <param name="pguid">Pointer to a <b>GUID</b> value that receives the property identifier.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -186,43 +156,48 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
+          </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
+          <description>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
-        <item>
+            <i>pguid</i> is invalid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_FAIL</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <i>pguid</i> is invalid.
-</description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_FAIL</b>
-            </para>
-          </description>
-          <description>
-            <para>An unspecified error occurred.</para>
-          </description>
-        </item>
+          <description>An unspecified error occurred.</description>
+        </listheader>
       </list>
     </returns>
   </member>
   <member name="ITfPropertyStore.OnTextUpdated">
-    <summary>
-      <para>Called when the text that the property store applies to is modified.</para>
-    </summary>
+    <summary>Called when the text that the property store applies to is modified.</summary>
     <param name="dwFlags">
       <para>Contains a set of flags that provide additional information about the text change. This can be zero or the following value.</para>
       <list type="table">
@@ -230,22 +205,22 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TF_TU_CORRECTION</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_TU_CORRECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The text change is the result of a correction. This implies that the semantics of the text have not changed. An example of this is when the spelling checker corrects a misspelled word.</para>
-          </description>
-        </item>
+          <description>The text change is the result of a correction. This implies that the semantics of the text have not changed. An example of this is when the spelling checker corrects a misspelled word.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pRangeNew">
-      <para>Pointer to an <see cref="ITfRange" /> interface that contains the range of text modified.</para>
-    </param>
-    <param name="pfAccept">
-      <para>Pointer to a <b>BOOL</b> variable that receives a value that indicates if the property store should be retained. Receives a nonzero value if the property store should be retained or zero if the property store should be discarded. If the property store is discarded, the TSF manager will set the property value to VT_EMPTY and release the property store.</para>
-    </param>
+    <param name="pRangeNew">Pointer to an <see cref="ITfRange" /> interface that contains the range of text modified.</param>
+    <param name="pfAccept">Pointer to a <b>BOOL</b> variable that receives a value that indicates if the property store should be retained. Receives a nonzero value if the property store should be retained or zero if the property store should be discarded. If the property store is discarded, the TSF manager will set the property value to VT_EMPTY and release the property store.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -253,34 +228,25 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If this method returns any value other than S_OK, the property store is discarded.</para>
-    </remarks>
-    <seealso cref="ITfPropertyStore" />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfPropertyStore.Serialize">
-    <summary>
-      <para>Called to write the property store data into a stream for serialization.</para>
-    </summary>
-    <param name="pStream">
-      <para>Pointer to an <b>IStream</b> object that the property store data is written to.</para>
-    </param>
-    <param name="pcb">
-      <para>Pointer to a <b>ULONG</b> value that receives the number of bytes written to the stream.</para>
-    </param>
+    <summary>Called to write the property store data into a stream for serialization.</summary>
+    <param name="pStream">Pointer to an <b>IStream</b> object that the property store data is written to.</param>
+    <param name="pcb">Pointer to a <b>ULONG</b> value that receives the number of bytes written to the stream.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -288,42 +254,37 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>One or more parameters are invalid.</para>
-          </description>
-        </item>
+          <description>One or more parameters are invalid.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The method must not move the stream insertion point before writing to the stream. The method must leave the insertion point at the end of the data written by the method.</para>
-    </remarks>
   </member>
   <member name="ITfPropertyStore.Shrink">
-    <summary>
-      <para>Called when the text that the property store applies to is truncated.</para>
-    </summary>
-    <param name="pRangeNew">
-      <para>Pointer to an <see cref="ITfRange" /> interface that contains the truncated range.</para>
-    </param>
-    <param name="pfFree">
-      <para>Pointer to a <b>BOOL</b> variable that receives a value that indicates if the property store should be retained. Receives a nonzero value if the property store should be retained or zero if the property store should be discarded. If the property store is discarded, the TSF manager will set the property value to VT_EMPTY and release the property store.</para>
-    </param>
+    <summary>Called when the text that the property store applies to is truncated.</summary>
+    <param name="pRangeNew">Pointer to an <see cref="ITfRange" /> interface that contains the truncated range.</param>
+    <param name="pfFree">Pointer to a <b>BOOL</b> variable that receives a value that indicates if the property store should be retained. Receives a nonzero value if the property store should be retained or zero if the property store should be discarded. If the property store is discarded, the TSF manager will set the property value to VT_EMPTY and release the property store.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -331,29 +292,22 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method was successful.</para>
-          </description>
-        </item>
+          <description>The method was successful.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>If this method returns a value other than S_OK, the property store is discarded.</para>
-    </remarks>
-    <seealso cref="ITfPropertyStore" />
-    <seealso cref="ITfRange " />
   </member>
   <member name="ITfPropertyStore">
-    <summary>
-      <para>The <b>ITfPropertyStore</b> interface is implemented by a text service and used by the TSF manager to provide non-static property values. An instance of this interface is passed to <see cref="ITfProperty.SetValueStore" />.</para>
-    </summary>
-    <seealso cref="ITfProperty.SetValueStore " />
-    <seealso cref="IUnknown" />
+    <summary>The <b>ITfPropertyStore</b> interface is implemented by a text service and used by the TSF manager to provide non-static property values. An instance of this interface is passed to <see cref="ITfProperty.SetValueStore" />.</summary>
   </member>
 </doc>

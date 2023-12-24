@@ -25,7 +25,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfFunctionProvider*, Guid*, void**, int>)(lpVtbl[0]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfFunctionProvider*, Guid*, void**, int>)(lpVtbl[0]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfFunctionProvider*, uint>)(lpVtbl[1]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFunctionProvider*, uint>)(lpVtbl[1]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfFunctionProvider*, uint>)(lpVtbl[2]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfFunctionProvider*, uint>)(lpVtbl[2]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider.GetType"]/*' />
@@ -51,15 +51,15 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
     [VtblIndex(3)]
     public HRESULT GetType(Guid* pguid)
     {
-        return ((delegate* unmanaged<ITfFunctionProvider*, Guid*, int>)(lpVtbl[3]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pguid);
+        return ((delegate* unmanaged[MemberFunction]<ITfFunctionProvider*, Guid*, int>)(lpVtbl[3]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pguid);
     }
 
     /// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider.GetDescription"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc)
+    public HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDesc)
     {
-        return ((delegate* unmanaged<ITfFunctionProvider*, ushort**, int>)(lpVtbl[4]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pbstrDesc);
+        return ((delegate* unmanaged[MemberFunction]<ITfFunctionProvider*, char**, int>)(lpVtbl[4]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), pbstrDesc);
     }
 
     /// <include file='ITfFunctionProvider.xml' path='doc/member[@name="ITfFunctionProvider.GetFunction"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
     [VtblIndex(5)]
     public HRESULT GetFunction([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk)
     {
-        return ((delegate* unmanaged<ITfFunctionProvider*, Guid*, Guid*, IUnknown**, int>)(lpVtbl[5]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), rguid, riid, ppunk);
+        return ((delegate* unmanaged[MemberFunction]<ITfFunctionProvider*, Guid*, Guid*, IUnknown**, int>)(lpVtbl[5]))((ITfFunctionProvider*)Unsafe.AsPointer(ref this), rguid, riid, ppunk);
     }
 
     public interface Interface : IUnknown.Interface
@@ -76,7 +76,7 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
         HRESULT GetType(Guid* pguid);
 
         [VtblIndex(4)]
-        HRESULT GetDescription([NativeTypeName("BSTR *")] ushort** pbstrDesc);
+        HRESULT GetDescription([NativeTypeName("BSTR *")] char** pbstrDesc);
 
         [VtblIndex(5)]
         HRESULT GetFunction([NativeTypeName("const GUID &")] Guid* rguid, [NativeTypeName("const IID &")] Guid* riid, IUnknown** ppunk);
@@ -86,21 +86,21 @@ public unsafe partial struct ITfFunctionProvider : ITfFunctionProvider.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (GUID *) __attribute__((stdcall))")]
-        public new delegate* unmanaged<TSelf*, Guid*, int> GetType;
+        public new delegate* unmanaged[MemberFunction]<TSelf*, Guid*, int> GetType;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetDescription;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetDescription;
 
         [NativeTypeName("HRESULT (const GUID &, const IID &, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, Guid*, IUnknown**, int> GetFunction;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, Guid*, IUnknown**, int> GetFunction;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IAMCrossbarTests
     {
         Assert.That(typeof(IAMCrossbar).GUID, Is.EqualTo(IID_IAMCrossbar));
     }
-
-    /// <summary>Validates that the <see cref="IAMCrossbar" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IAMCrossbar>(), Is.EqualTo(sizeof(IAMCrossbar)));
-    }
-
-    /// <summary>Validates that the <see cref="IAMCrossbar" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IAMCrossbar).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IAMCrossbar" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IAMCrossbar), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IAMCrossbar), Is.EqualTo(4));
-        }
-    }
 }

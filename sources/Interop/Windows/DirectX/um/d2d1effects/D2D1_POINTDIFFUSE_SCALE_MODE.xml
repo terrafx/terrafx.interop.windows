@@ -3,42 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_POINTDIFFUSE_SCALE_MODE">
-    <summary>
-      <para>The interpolation mode the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/point-diffuse-lighting">Point-diffuse lighting effect</a></para>
-      <para>uses to scale the image to the corresponding kernel unit length. There are six scale modes that range in quality and speed</para>
-    </summary>
+    <summary>The interpolation mode the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/point-diffuse-lighting">Point-diffuse lighting effect</a>uses to scale the image to the corresponding kernel unit length. There are six scale modes that range in quality and speed</summary>
   </member>
   <member name="D2D1_POINTDIFFUSE_SCALE_MODE.D2D1_POINTDIFFUSE_SCALE_MODE_NEAREST_NEIGHBOR">
-    <summary>
-      <para>Samples the nearest single point and uses that. This mode uses less processing time, but outputs the lowest quality image.</para>
-    </summary>
+    <summary>Samples the nearest single point and uses that. This mode uses less processing time, but outputs the lowest quality image.</summary>
   </member>
   <member name="D2D1_POINTDIFFUSE_SCALE_MODE.D2D1_POINTDIFFUSE_SCALE_MODE_LINEAR">
-    <summary>
-      <para>Uses a four point sample and linear interpolation. This mode outputs a higher quality image than nearest neighbor.</para>
-    </summary>
+    <summary>Uses a four point sample and linear interpolation. This mode outputs a higher quality image than nearest neighbor.</summary>
   </member>
   <member name="D2D1_POINTDIFFUSE_SCALE_MODE.D2D1_POINTDIFFUSE_SCALE_MODE_CUBIC">
-    <summary>
-      <para>Uses a 16 sample cubic kernel for interpolation. This mode uses the most processing time, but outputs a higher quality image.</para>
-    </summary>
+    <summary>Uses a 16 sample cubic kernel for interpolation. This mode uses the most processing time, but outputs a higher quality image.</summary>
   </member>
   <member name="D2D1_POINTDIFFUSE_SCALE_MODE.D2D1_POINTDIFFUSE_SCALE_MODE_MULTI_SAMPLE_LINEAR">
-    <summary>
-      <para>Uses 4 linear samples within a single pixel for good edge anti-aliasing. This mode is good for scaling down by small amounts on images with few pixels.</para>
-    </summary>
+    <summary>Uses 4 linear samples within a single pixel for good edge anti-aliasing. This mode is good for scaling down by small amounts on images with few pixels.</summary>
   </member>
   <member name="D2D1_POINTDIFFUSE_SCALE_MODE.D2D1_POINTDIFFUSE_SCALE_MODE_ANISOTROPIC">
-    <summary>
-      <para>Uses anisotropic filtering to sample a pattern according to the transformed shape of the bitmap.</para>
-    </summary>
+    <summary>Uses anisotropic filtering to sample a pattern according to the transformed shape of the bitmap.</summary>
   </member>
   <member name="D2D1_POINTDIFFUSE_SCALE_MODE.D2D1_POINTDIFFUSE_SCALE_MODE_HIGH_QUALITY_CUBIC">
-    <summary>
-      <para>Uses a variable size high quality cubic kernel to perform a pre-downscale the image if downscaling is involved in the transform matrix. Then uses the cubic interpolation mode for the final output.</para>
-    </summary>
+    <summary>Uses a variable size high quality cubic kernel to perform a pre-downscale the image if downscaling is involved in the transform matrix. Then uses the cubic interpolation mode for the final output.</summary>
   </member>
-  <member name="D2D1_POINTDIFFUSE_SCALE_MODE.D2D1_POINTDIFFUSE_SCALE_MODE_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_POINTDIFFUSE_SCALE_MODE.D2D1_POINTDIFFUSE_SCALE_MODE_FORCE_DWORD"></member>
 </doc>

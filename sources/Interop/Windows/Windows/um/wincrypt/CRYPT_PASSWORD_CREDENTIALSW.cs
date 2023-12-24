@@ -14,9 +14,9 @@ public unsafe partial struct CRYPT_PASSWORD_CREDENTIALSW
 
     /// <include file='CRYPT_PASSWORD_CREDENTIALSW.xml' path='doc/member[@name="CRYPT_PASSWORD_CREDENTIALSW.pszUsername"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszUsername;
+    public char* pszUsername;
 
     /// <include file='CRYPT_PASSWORD_CREDENTIALSW.xml' path='doc/member[@name="CRYPT_PASSWORD_CREDENTIALSW.pszPassword"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pszPassword;
+    public char* pszPassword;
 }

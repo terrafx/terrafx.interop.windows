@@ -6,7 +6,7 @@
 namespace TerraFX.Interop.DirectX;
 
 /// <include file='D2D1_YCBCR_PROP.xml' path='doc/member[@name="D2D1_YCBCR_PROP"]/*' />
-public enum D2D1_YCBCR_PROP : uint
+public enum D2D1_YCBCR_PROP
 {
     /// <include file='D2D1_YCBCR_PROP.xml' path='doc/member[@name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING"]/*' />
     D2D1_YCBCR_PROP_CHROMA_SUBSAMPLING = 0,
@@ -18,5 +18,5 @@ public enum D2D1_YCBCR_PROP : uint
     D2D1_YCBCR_PROP_INTERPOLATION_MODE = 2,
 
     /// <include file='D2D1_YCBCR_PROP.xml' path='doc/member[@name="D2D1_YCBCR_PROP.D2D1_YCBCR_PROP_FORCE_DWORD"]/*' />
-    D2D1_YCBCR_PROP_FORCE_DWORD = 0xffffffff,
+    D2D1_YCBCR_PROP_FORCE_DWORD = unchecked((int)(0xffffffff)),
 }

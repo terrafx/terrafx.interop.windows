@@ -19,32 +19,4 @@ public static unsafe partial class ITfKeystrokeMgrTests
     {
         Assert.That(typeof(ITfKeystrokeMgr).GUID, Is.EqualTo(IID_ITfKeystrokeMgr));
     }
-
-    /// <summary>Validates that the <see cref="ITfKeystrokeMgr" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ITfKeystrokeMgr>(), Is.EqualTo(sizeof(ITfKeystrokeMgr)));
-    }
-
-    /// <summary>Validates that the <see cref="ITfKeystrokeMgr" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ITfKeystrokeMgr).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ITfKeystrokeMgr" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ITfKeystrokeMgr), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ITfKeystrokeMgr), Is.EqualTo(4));
-        }
-    }
 }

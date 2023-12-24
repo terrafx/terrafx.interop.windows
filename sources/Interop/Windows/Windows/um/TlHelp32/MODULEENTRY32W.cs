@@ -3,6 +3,8 @@
 // Ported from um/TlHelp32.h in the Windows SDK for Windows 10.0.22621.0
 // Original source is Copyright © Microsoft. All rights reserved.
 
+using System.Runtime.CompilerServices;
+
 namespace TerraFX.Interop.Windows;
 
 /// <include file='MODULEENTRY32W.xml' path='doc/member[@name="MODULEENTRY32W"]/*' />
@@ -40,9 +42,23 @@ public unsafe partial struct MODULEENTRY32W
 
     /// <include file='MODULEENTRY32W.xml' path='doc/member[@name="MODULEENTRY32W.szModule"]/*' />
     [NativeTypeName("WCHAR[256]")]
-    public fixed ushort szModule[256];
+    public _szModule_e__FixedBuffer szModule;
 
     /// <include file='MODULEENTRY32W.xml' path='doc/member[@name="MODULEENTRY32W.szExePath"]/*' />
     [NativeTypeName("WCHAR[260]")]
-    public fixed ushort szExePath[260];
+    public _szExePath_e__FixedBuffer szExePath;
+
+    /// <include file='_szModule_e__FixedBuffer.xml' path='doc/member[@name="_szModule_e__FixedBuffer"]/*' />
+    [InlineArray(256)]
+    public partial struct _szModule_e__FixedBuffer
+    {
+        public char e0;
+    }
+
+    /// <include file='_szExePath_e__FixedBuffer.xml' path='doc/member[@name="_szExePath_e__FixedBuffer"]/*' />
+    [InlineArray(260)]
+    public partial struct _szExePath_e__FixedBuffer
+    {
+        public char e0;
+    }
 }

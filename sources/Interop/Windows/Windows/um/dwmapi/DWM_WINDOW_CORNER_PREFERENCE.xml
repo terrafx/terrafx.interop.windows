@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="DWM_WINDOW_CORNER_PREFERENCE">
+    <summary>Flags used by the <see cref="DwmSetWindowAttribute" /> function to specify the rounded corner preference for a window.</summary>
+  </member>
+  <member name="DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_DEFAULT">
+    <summary>Let the system decide when to round window corners.</summary>
+  </member>
+  <member name="DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_DONOTROUND">
+    <summary>Never round window corners.</summary>
+  </member>
+  <member name="DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND">
+    <summary>Round the corners, if appropriate.</summary>
+  </member>
+  <member name="DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUNDSMALL">
+    <summary>Round the corners if appropriate, with a small radius.</summary>
+  </member>
+</doc>

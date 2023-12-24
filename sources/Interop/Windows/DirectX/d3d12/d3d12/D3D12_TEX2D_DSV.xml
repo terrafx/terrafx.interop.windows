@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TEX2D_DSV">
+    <summary>Describes the subresource from a 2D texture that is accessible to a depth-stencil view.</summary>
+  </member>
+  <member name="D3D12_TEX2D_DSV.MipSlice">
+    <summary>The index of the first mipmap level to use.</summary>
+  </member>
+</doc>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_ROOT_PARAMETER_TYPE">
+    <summary>Specifies the type of root signature slot.</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER_TYPE.D3D12_ROOT_PARAMETER_TYPE_DESCRIPTOR_TABLE">
+    <summary>The slot is for a descriptor table.</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER_TYPE.D3D12_ROOT_PARAMETER_TYPE_32BIT_CONSTANTS">
+    <summary>The slot is for root constants.</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER_TYPE.D3D12_ROOT_PARAMETER_TYPE_CBV">
+    <summary>The slot is for a constant-buffer view (CBV).</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER_TYPE.D3D12_ROOT_PARAMETER_TYPE_SRV">
+    <summary>The slot is for a shader-resource view (SRV).</summary>
+  </member>
+  <member name="D3D12_ROOT_PARAMETER_TYPE.D3D12_ROOT_PARAMETER_TYPE_UAV">
+    <summary>The slot is for a unordered-access view (UAV).</summary>
+  </member>
+</doc>

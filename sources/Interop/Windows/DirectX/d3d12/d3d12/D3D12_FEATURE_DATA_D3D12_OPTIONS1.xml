@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS1">
+    <summary>Describes the level of support for HLSL 6.0 wave operations.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS1.WaveOps">
+    <summary>True if the driver supports HLSL 6.0 wave operations.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS1.WaveLaneCountMin">
+    <summary>Specifies the baseline number of lanes in the SIMD wave that this implementation can support. This term is sometimes known as "wavefront size" or "warp width". Currently apps should rely only on this minimum value for sizing workloads.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS1.WaveLaneCountMax">
+    <summary>Specifies the maximum number of lanes in the SIMD wave that this implementation can support. This capability is reserved for future expansion, and is not expected to be used by current applications.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS1.TotalLaneCount">
+    <summary>Specifies the total number of SIMD lanes on the hardware.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS1.ExpandedComputeResourceStates">
+    <summary>Indicates transitions are possible in and out of the CBV, and indirect argument states, on compute command lists. If <see cref="CheckFeatureSupport" /> succeeds this value will always be true.</summary>
+  </member>
+  <member name="D3D12_FEATURE_DATA_D3D12_OPTIONS1.Int64ShaderOps">
+    <summary>Indicates that 64bit integer operations are supported.</summary>
+  </member>
+</doc>

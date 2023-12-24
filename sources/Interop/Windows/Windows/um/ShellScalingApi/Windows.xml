@@ -3,21 +3,11 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.GetDpiForMonitor">
-    <summary>
-      <para>Queries the dots per inch (dpi) of a display.</para>
-    </summary>
-    <param name="hmonitor">
-      <para>Handle of the monitor being queried.</para>
-    </param>
-    <param name="dpiType">
-      <para>The type of DPI being queried. Possible values are from the <see cref="MONITOR_DPI_TYPE" /> enumeration.</para>
-    </param>
-    <param name="dpiX">
-      <para>The value of the DPI along the X axis. This value always refers to the horizontal edge, even when the screen is rotated.</para>
-    </param>
-    <param name="dpiY">
-      <para>The value of the DPI along the Y axis. This value always refers to the vertical edge, even when the screen is rotated.</para>
-    </param>
+    <summary>Queries the dots per inch (dpi) of a display.</summary>
+    <param name="hmonitor">Handle of the monitor being queried.</param>
+    <param name="dpiType">The type of DPI being queried. Possible values are from the <see cref="MONITOR_DPI_TYPE" /> enumeration.</param>
+    <param name="dpiX">The value of the DPI along the X axis. This value always refers to the horizontal edge, even when the screen is rotated.</param>
+    <param name="dpiY">The value of the DPI along the Y axis. This value always refers to the vertical edge, even when the screen is rotated.</param>
     <returns>
       <para>This function returns one of the following values.</para>
       <list type="table">
@@ -25,78 +15,42 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
-          <description>
-            <para>
-              <b>S_OK</b>
-            </para>
-          </description>
-          <description>
-            <para>The function successfully returns the X and Y DPI values for the specified monitor.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
-          </description>
-          <description>
-            <para>The handle, DPI type, or pointers passed in are not valid.</para>
-          </description>
-        </item>
-      </list>
-    </returns>
-    <remarks>
-      <para>This API is not DPI aware and should not be used if the calling thread is per-monitor DPI aware. For the DPI-aware version of this API, see <see cref="GetDpiForWindow" />.</para>
-      <para>When you call <b>GetDpiForMonitor</b>, you will receive different DPI values depending on the DPI awareness of the calling application. DPI awareness is an application-level property usually defined in the application manifest. For more information about DPI awareness values, see <see cref="PROCESS_DPI_AWARENESS" />. The following table indicates how the results will differ based on the <b>PROCESS_DPI_AWARENESS</b> value of your application.</para>
-      <list type="table">
         <listheader>
           <description>
-            <b>PROCESS_DPI_UNAWARE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>96 because the app is unaware of any other scale factors.</description>
+          <description>The function successfully returns the X and Y DPI values for the specified monitor.</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>PROCESS_SYSTEM_DPI_AWARE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>A value set to the system DPI because the app assumes all applications use the system DPI.</description>
-        </item>
-        <item>
-          <description>
-            <b>PROCESS_PER_MONITOR_DPI_AWARE</b>
-          </description>
-          <description>The actual DPI value set by the user for that display.</description>
-        </item>
+          <description>The handle, DPI type, or pointers passed in are not valid.</description>
+        </listheader>
       </list>
-      <para>The values of <i>*dpiX</i> and <i>*dpiY</i> are identical. You only need to record one of the values to determine the DPI and respond appropriately.</para>
-      <para>When <see cref="MONITOR_DPI_TYPE" /> is <b>MDT_ANGULAR_DPI</b> or <b>MDT_RAW_DPI</b>, the returned DPI value does not include any changes that the user made to the DPI by using the desktop scaling override slider control in Control Panel.</para>
-      <para>For more information about DPI settings in Control Panel, see the <a href="https://docs.microsoft.com//windows/win32/hidpi/high-dpi-desktop-application-development-on-windows">Writing DPI-Aware Desktop Applications in Windows 8.1 Preview</a> white paper.</para>
-    </remarks>
-    <seealso cref="PROCESS_DPI_AWARENESS" />
+    </returns>
   </member>
   <member name="Windows.GetDpiForShellUiComponent">
-    <summary>
-      <para>Retrieves the dots per inch (dpi) occupied by a <see cref="SHELL_UI_COMPONENT" /> based on the current scale factor and <see cref="PROCESS_DPI_AWARENESS" />.</para>
-    </summary>
-    <param name="unnamedParam1">
-      <para>The type of shell component.</para>
-    </param>
-    <returns>
-      <para>The DPI required for an icon of this type.</para>
-    </returns>
+    <summary>Retrieves the dots per inch (dpi) occupied by a <see cref="SHELL_UI_COMPONENT" /> based on the current scale factor and <see cref="PROCESS_DPI_AWARENESS" />.</summary>
+    <param name="unnamedParam1">The type of shell component.</param>
+    <returns>The DPI required for an icon of this type.</returns>
   </member>
   <member name="Windows.GetProcessDpiAwareness">
-    <summary>
-      <para>Retrieves the dots per inch (dpi) awareness of the specified process.</para>
-    </summary>
-    <param name="hprocess">
-      <para>Handle of the process that is being queried. If this parameter is NULL, the current process is queried.</para>
-    </param>
-    <param name="value">
-      <para>The DPI awareness of the specified process. Possible values are from the <see cref="PROCESS_DPI_AWARENESS" /> enumeration.</para>
-    </param>
+    <summary>Retrieves the dots per inch (dpi) awareness of the specified process.</summary>
+    <param name="hprocess">Handle of the process that is being queried. If this parameter is NULL, the current process is queried.</param>
+    <param name="value">The DPI awareness of the specified process. Possible values are from the <see cref="PROCESS_DPI_AWARENESS" /> enumeration.</param>
     <returns>
       <para>This function returns one of the following values.</para>
       <list type="table">
@@ -104,229 +58,147 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The function successfully retrieved the DPI awareness of the specified process.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The function successfully retrieved the DPI awareness of the specified process.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_INVALIDARG</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The handle or pointer passed in is not valid.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>E_INVALIDARG</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_ACCESSDENIED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The handle or pointer passed in is not valid.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_ACCESSDENIED</b>
-            </para>
-          </description>
-          <description>
-            <para>The application does not have sufficient privileges.</para>
-          </description>
-        </item>
+          <description>The application does not have sufficient privileges.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>This function is identical to the following code:</para>
-      <para>
-        <code>GetAwarenessFromDpiAwarenessContext(GetThreadDpiAwarenessContext());</code>
-      </para>
-    </remarks>
-    <seealso cref="GetAwarenessFromDpiAwarenessContext" />
-    <seealso cref="GetThreadDpiAwarenessContext" />
-    <seealso cref="PROCESS_DPI_AWARENESS" />
   </member>
   <member name="Windows.GetScaleFactorForDevice">
     <summary>
-      <para>Gets the preferred scale factor for a display device.
-<b>Note</b>  This function is not supported as of Windows 8.1. Use <see cref="GetScaleFactorForMonitor" /> instead.</para>
+      <para>Gets the preferred scale factor for a display device.</para>
+      <div>
+        <b>Note</b>  This function is not supported as of Windows 8.1. Use <see cref="GetScaleFactorForMonitor" /> instead.</div>
     </summary>
-    <param name="deviceType">
-      <para>Type: <b><see cref="DISPLAY_DEVICE_TYPE" /></b></para>
-      <para>The value that indicates the type of the display device.</para>
-    </param>
+    <param name="deviceType">The value that indicates the type of the display device.</param>
     <returns>
-      <para>Type: <b><see cref="DEVICE_SCALE_FACTOR" /></b></para>
       <para>A value that indicates the scale factor that should be used with the specified <see cref="DISPLAY_DEVICE_TYPE" />.</para>
       <list type="table">
         <listheader>
           <description>Return code/value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SCALE_100_PERCENT</b>
-                </description>
-              </item>
-              <item>
-                <description>100</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>100</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use a scale factor of 1x.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use a scale factor of 1x.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SCALE_140_PERCENT</b>
-                </description>
-              </item>
-              <item>
-                <description>140</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>140</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use a scale factor of 1.4x.</para>
-          </description>
-        </item>
-        <item>
+          <description>Use a scale factor of 1.4x.</description>
+        </listheader>
+        <listheader>
           <description>
             <list type="bullet">
-              <item>
-                <description>
+              <listheader>
+                <term>
                   <b>SCALE_180_PERCENT</b>
-                </description>
-              </item>
-              <item>
-                <description>180</description>
-              </item>
+                </term>
+              </listheader>
+              <listheader>
+                <term>180</term>
+              </listheader>
             </list>
           </description>
-          <description>
-            <para>Use a scale factor of 1.8x.</para>
-          </description>
-        </item>
+          <description>Use a scale factor of 1.8x.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The default <see cref="DEVICE_SCALE_FACTOR" /> is <see cref="SCALE_100_PERCENT" />.</para>
-      <para>Use the scale factor that is returned to scale point values for fonts and pixel values.</para>
-    </remarks>
-    <seealso cref="GetScaleFactorForMonitor" />
-    <seealso cref="RegisterScaleChangeEvent" />
-    <seealso cref="UnregisterScaleChangeEvent" />
   </member>
   <member name="Windows.GetScaleFactorForMonitor">
-    <summary>
-      <para>Gets the scale factor of a specific monitor. This function replaces <see cref="GetScaleFactorForDevice" />.</para>
-    </summary>
-    <param name="hMon">
-      <para>The monitor's handle.</para>
-    </param>
+    <summary>Gets the scale factor of a specific monitor. This function replaces <see cref="GetScaleFactorForDevice" />.</summary>
+    <param name="hMon">The monitor's handle.</param>
     <param name="pScale">
       <para>When this function returns successfully, this value points to one of the <see cref="DEVICE_SCALE_FACTOR" /> values that specify the scale factor of the specified monitor.</para>
       <para>If the function call fails, this value points to a valid scale factor so that apps can opt to continue on with incorrectly sized resources.</para>
     </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>Your code needs to handle the <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-windowposchanged">WM_WINDOWPOSCHANGED</a> message in addition to the scale change event registered through <see cref="RegisterScaleChangeEvent" />, because the app window can be moved between monitors. In response to the <b>WM_WINDOWPOSCHANGED</b> message, call <see cref="MonitorFromWindow" />, followed by <b>GetScaleFactorForMonitor</b> to get the scale factor of the monitor which the app window is on. Your code can then react to any dots per inch (dpi) change by reloading assets and changing layout.</para>
-    </remarks>
-    <seealso cref="RegisterScaleChangeEvent" />
-    <seealso cref="UnregisterScaleChangeEvent" />
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.RegisterScaleChangeEvent">
-    <summary>
-      <para>Registers for an event that is triggered when the scale has possibly changed. This function replaces <see cref="RegisterScaleChangeNotifications" />.</para>
-    </summary>
-    <param name="hEvent">
-      <para>Handle of the event to register for scale change notifications.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>When this function returns successfully, this value receives the address of a pointer to a cookie that can be used later to unregister for the scale change notifications through <see cref="UnregisterScaleChangeEvent" />.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The event is raised whenever something that can affect scale changes, but just because the scale can be affected doesn't mean that it has been. Callers can cache the scale factor to verify that the monitor's scale actually has changed. The event handle will be duplicated, so callers can close their handle at any time.</para>
-    </remarks>
-    <seealso cref="GetScaleFactorForMonitor" />
-    <seealso cref="UnregisterScaleChangeEvent" />
+    <summary>Registers for an event that is triggered when the scale has possibly changed. This function replaces <see cref="RegisterScaleChangeNotifications" />.</summary>
+    <param name="hEvent">Handle of the event to register for scale change notifications.</param>
+    <param name="pdwCookie">When this function returns successfully, this value receives the address of a pointer to a cookie that can be used later to unregister for the scale change notifications through <see cref="UnregisterScaleChangeEvent" />.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.RegisterScaleChangeNotifications">
     <summary>
-      <para>Registers a window to receive callbacks when scaling information changes.
-<b>Note</b>  This function is not supported as of Windows 8.1. Use <see cref="RegisterScaleChangeEvent" /> instead.</para>
+      <para>Registers a window to receive callbacks when scaling information changes.</para>
+      <div>
+        <b>Note</b>  This function is not supported as of Windows 8.1. Use <see cref="RegisterScaleChangeEvent" /> instead.</div>
     </summary>
-    <param name="displayDevice">
-      <para>Type: <b><see cref="DISPLAY_DEVICE_TYPE" /></b></para>
-      <para>The enum value that indicates which display device to receive notifications about.</para>
-    </param>
-    <param name="hwndNotify">
-      <para>Type: <b>HWND</b></para>
-      <para>The handle of the window that will receive the notifications.</para>
-    </param>
-    <param name="uMsgNotify">
-      <para>Type: <b>UINT</b></para>
-      <para>An application-defined message that is passed to the window specified by <i>hwndNotify</i> when scaling information changes.  Typically, this should be set to <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-app">WM_APP</a>+<i>x</i>, where <i>x</i> is an integer value.</para>
-    </param>
-    <param name="pdwCookie">
-      <para>Type: <b>DWORD*</b></para>
-      <para>Pointer to a value that, when this function returns successfully, receives a registration token. This token is used to revoke notifications by calling <see cref="RevokeScaleChangeNotifications" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>STDAPI</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>This message specified by <i>uMsgNotify</i> is posted to the registered window through <see cref="PostMessage" />. The <i>wParam</i> of the message can contain a combination of <see cref="SCALE_CHANGE_FLAGS" /> that describe  the change that occurred.</para>
-    </remarks>
-    <seealso cref="GetScaleFactorForMonitor" />
-    <seealso cref="RegisterScaleChangeEvent" />
-    <seealso cref="UnregisterScaleChangeEvent" />
+    <param name="displayDevice">The enum value that indicates which display device to receive notifications about.</param>
+    <param name="hwndNotify">The handle of the window that will receive the notifications.</param>
+    <param name="uMsgNotify">An application-defined message that is passed to the window specified by <i>hwndNotify</i> when scaling information changes. Typically, this should be set to <a href="https://docs.microsoft.com//windows/desktop/winmsg/wm-app">WM_APP</a>+<i>x</i>, where <i>x</i> is an integer value.</param>
+    <param name="pdwCookie">Pointer to a value that, when this function returns successfully, receives a registration token. This token is used to revoke notifications by calling <see cref="RevokeScaleChangeNotifications" />.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.RevokeScaleChangeNotifications">
     <summary>
-      <para>Revokes the registration of a window, preventing it from receiving callbacks when scaling information changes.
-<b>Note</b>  This function is not supported as of Windows 8.1. Use <see cref="UnregisterScaleChangeEvent" /> instead.</para>
+      <para>Revokes the registration of a window, preventing it from receiving callbacks when scaling information changes.</para>
+      <div>
+        <b>Note</b>  This function is not supported as of Windows 8.1. Use <see cref="UnregisterScaleChangeEvent" /> instead.</div>
     </summary>
-    <param name="displayDevice">
-      <para>Type: <b><see cref="DISPLAY_DEVICE_TYPE" /></b></para>
-      <para>The enum value that indicates which display device to receive notifications about.</para>
-    </param>
-    <param name="dwCookie">
-      <para>Type: <b>DWORD</b></para>
-      <para>The registration token returned by a previous call to <see cref="RegisterScaleChangeNotifications" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>STDAPI</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="GetScaleFactorForMonitor" />
-    <seealso cref="RegisterScaleChangeEvent" />
-    <seealso cref="UnregisterScaleChangeEvent" />
+    <param name="displayDevice">The enum value that indicates which display device to receive notifications about.</param>
+    <param name="dwCookie">The registration token returned by a previous call to <see cref="RegisterScaleChangeNotifications" />.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.UnregisterScaleChangeEvent">
-    <summary>
-      <para>Unregisters for the scale change event registered through <see cref="RegisterScaleChangeEvent" />. This function replaces <see cref="RevokeScaleChangeNotifications" />.</para>
-    </summary>
-    <param name="dwCookie">
-      <para>A pointer to the cookie retrieved in the call to <see cref="RegisterScaleChangeEvent" />.</para>
-    </param>
-    <returns>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="GetScaleFactorForMonitor" />
-    <seealso cref="RegisterScaleChangeEvent" />
+    <summary>Unregisters for the scale change event registered through <see cref="RegisterScaleChangeEvent" />. This function replaces <see cref="RevokeScaleChangeNotifications" />.</summary>
+    <param name="dwCookie">A pointer to the cookie retrieved in the call to <see cref="RegisterScaleChangeEvent" />.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

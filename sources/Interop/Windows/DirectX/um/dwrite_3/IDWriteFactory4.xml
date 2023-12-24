@@ -3,110 +3,32 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDWriteFactory4.ComputeGlyphOrigins">
-    <summary>
-      <para>Converts glyph run placements to glyph origins.</para>
-    </summary>
-    <param name="glyphRun">
-      <para>Type: <b><see cref="DWRITE_GLYPH_RUN" /></b></para>
-      <para>Structure containing the properties of the glyph run.</para>
-    </param>
-    <param name="baselineOrigin">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</para>
-    </param>
-    <param name="glyphOrigins">
-      <para>Type: [out] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>On return contains the glyph origins for the glyphrun.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</para>
-    </returns>
-    <remarks>
-      <para>The transform and DPI have no effect on the origin scaling. They are solely used to compute glyph advances when not supplied and align glyphs in pixel aligned measuring modes.</para>
-    </remarks>
-    <seealso cref="IDWriteFactory4" />
+    <summary>Converts glyph run placements to glyph origins.</summary>
+    <param name="glyphRun">Structure containing the properties of the glyph run.</param>
+    <param name="baselineOrigin">The position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</param>
+    <param name="glyphOrigins">On return contains the glyph origins for the glyphrun.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
   </member>
   <member name="IDWriteFactory4.ComputeGlyphOrigins">
-    <summary>
-      <para>Converts glyph run placements to glyph origins.</para>
-    </summary>
-    <param name="glyphRun">
-      <para>Type: <b><see cref="DWRITE_GLYPH_RUN" /></b></para>
-      <para>Structure containing the properties of the glyph run.</para>
-    </param>
-    <param name="baselineOrigin">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>The position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</para>
-    </param>
-    <param name="glyphOrigins">
-      <para>Type: [out] <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a>*</b></para>
-      <para>On return contains the glyph origins for the glyphrun.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</para>
-    </returns>
-    <remarks>
-      <para>The transform and DPI have no effect on the origin scaling. They are solely used to compute glyph advances when not supplied and align glyphs in pixel aligned measuring modes.</para>
-    </remarks>
-    <seealso cref="IDWriteFactory4" />
+    <summary>Converts glyph run placements to glyph origins.</summary>
+    <param name="glyphRun">Structure containing the properties of the glyph run.</param>
+    <param name="baselineOrigin">The position of the baseline origin, in DIPs, relative to the upper-left corner of the DIB.</param>
+    <param name="glyphOrigins">On return contains the glyph origins for the glyphrun.</param>
+    <returns>If this method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.</returns>
   </member>
   <member name="IDWriteFactory4.TranslateColorGlyphRun">
-    <summary>
-      <para>Translates a glyph run to a sequence of color glyph runs, which can be rendered to produce a color representation of the original "base" run.</para>
-    </summary>
-    <param name="baselineOrigin">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/Direct2D/d2d1-point-2f">D2D1_POINT_2F</a></b></para>
-      <para>Horizontal and vertical origin of the base glyph run in pre-transform coordinates.</para>
-    </param>
-    <param name="glyphRun">
-      <para>Type: <b><see cref="DWRITE_GLYPH_RUN" /></b></para>
-      <para>Pointer to the original "base" glyph run.</para>
-    </param>
-    <param name="glyphRunDescription">
-      <para>Type: <b><see cref="DWRITE_GLYPH_RUN_DESCRIPTION" /></b></para>
-      <para>Optional glyph run description.</para>
-    </param>
-    <param name="desiredGlyphImageFormats">
-      <para>Type: <b><see cref="DWRITE_GLYPH_IMAGE_FORMATS" /></b></para>
-      <para>Which data formats the runs should be split into.</para>
-    </param>
-    <param name="measuringMode">
-      <para>Type: <b><see cref="DWRITE_MEASURING_MODE" /></b></para>
-      <para>Measuring mode, needed to compute the origins of each glyph.</para>
-    </param>
-    <param name="worldAndDpiTransform">
-      <para>Type: <b><see cref="DWRITE_MATRIX" /></b></para>
-      <para>Matrix converting from the client's coordinate space to device coordinates (pixels), i.e., the world transform multiplied by any DPI scaling.</para>
-    </param>
-    <param name="colorPaletteIndex">
-      <para>Type: <b>UINT32</b></para>
-      <para>Zero-based index of the color palette to use.
-Valid indices are less than the number of palettes in the font, as returned
-by <see cref="IDWriteFontFace2.GetColorPaletteCount" />.</para>
-    </param>
-    <param name="colorLayers">
-      <para>Type: <b><see cref="IDWriteColorGlyphRunEnumerator1" />**</b></para>
-      <para>If the function succeeds, receives a pointer to an enumerator object that can be used to obtain the color glyph runs.
-If the base run has no color glyphs, then the output pointer is NULL and the method returns DWRITE_E_NOCOLOR.</para>
-    </param>
-    <returns>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/com/structure-of-com-error-codes">HRESULT</a></b></para>
-      <para>Returns DWRITE_E_NOCOLOR if the font has no color information, the glyph run
-does not contain any color glyphs, or the specified color palette index
-is out of range. In this case, the client should render the original glyph
-run. Otherwise, returns a standard HRESULT error code.</para>
-    </returns>
-    <remarks>
-      <para>Calling <see cref="IDWriteFactory2.TranslateColorGlyphRun" /> is equivalent
-to calling <b>IDWriteFactory4.TranslateColorGlyph</b> run with the following formats specified: DWRITE_GLYPH_IMAGE_FORMATS_TRUETYPE|DWRITE_GLYPH_IMAGE_FORMATS_CFF|DWRITE_GLYPH_IMAGE_FORMATS_COLR.</para>
-    </remarks>
-    <seealso cref="IDWriteFactory4" />
+    <summary>Translates a glyph run to a sequence of color glyph runs, which can be rendered to produce a color representation of the original "base" run.</summary>
+    <param name="baselineOrigin">Horizontal and vertical origin of the base glyph run in pre-transform coordinates.</param>
+    <param name="glyphRun">Pointer to the original "base" glyph run.</param>
+    <param name="glyphRunDescription">Optional glyph run description.</param>
+    <param name="desiredGlyphImageFormats">Which data formats the runs should be split into.</param>
+    <param name="measuringMode">Measuring mode, needed to compute the origins of each glyph.</param>
+    <param name="worldAndDpiTransform">Matrix converting from the client's coordinate space to device coordinates (pixels), i.e., the world transform multiplied by any DPI scaling.</param>
+    <param name="colorPaletteIndex">Zero-based index of the color palette to use. Valid indices are less than the number of palettes in the font, as returned by <see cref="IDWriteFontFace2.GetColorPaletteCount" />.</param>
+    <param name="colorLayers">If the function succeeds, receives a pointer to an enumerator object that can be used to obtain the color glyph runs. If the base run has no color glyphs, then the output pointer is NULL and the method returns DWRITE_E_NOCOLOR.</param>
+    <returns>Returns DWRITE_E_NOCOLOR if the font has no color information, the glyph run does not contain any color glyphs, or the specified color palette index is out of range. In this case, the client should render the original glyph run. Otherwise, returns a standard HRESULT error code.</returns>
   </member>
   <member name="IDWriteFactory4">
-    <summary>
-      <para>The root factory interface for all DirectWrite objects.</para>
-    </summary>
+    <summary>The root factory interface for all DirectWrite objects.</summary>
   </member>
 </doc>

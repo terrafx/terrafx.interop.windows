@@ -207,11 +207,11 @@ public unsafe class HelloTexture12 : HelloTriangle12
         {
             var entryPoint = 0x00006E69614D5356;    // VSMain
             var target = 0x0000305F355F7376;        // vs_5_0
-            ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
+            ThrowIfFailed(D3DCompileFromFile(fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
 
             entryPoint = 0x00006E69614D5350;        // PSMain
             target = 0x0000305F355F7370;            // ps_5_0
-            ThrowIfFailed(D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
+            ThrowIfFailed(D3DCompileFromFile(fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
         }
 
         // Define the vertex input layout.
@@ -311,7 +311,7 @@ public unsafe class HelloTexture12 : HelloTriangle12
         var rootSignatureDesc = new D3D12_VERSIONED_ROOT_SIGNATURE_DESC();
         rootSignatureDesc.Init_1_1(RootParametersCount, rootParameters, 1, &sampler, D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT);
 
-        ThrowIfFailed(D3D12SerializeVersionedRootSignature(
+        ThrowIfFailed(D3DX12SerializeVersionedRootSignature(
             &rootSignatureDesc, featureData.HighestVersion, signature.GetAddressOf(), error.GetAddressOf()));
 
         ID3D12RootSignature* rootSignature;
@@ -422,7 +422,7 @@ public unsafe class HelloTexture12 : HelloTriangle12
         GraphicsCommandList->SetGraphicsRootDescriptorTable(0, _srvHeap->GetGPUDescriptorHandleForHeapStart());
     }
 
-    public new struct Vertex
+    internal new struct Vertex
     {
         public Vector3 Position;
 

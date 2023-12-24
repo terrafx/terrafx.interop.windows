@@ -19,25 +19,4 @@ public static unsafe partial class DOMKeyboardEventTests
     {
         Assert.That(typeof(DOMKeyboardEvent).GUID, Is.EqualTo(IID_DOMKeyboardEvent));
     }
-
-    /// <summary>Validates that the <see cref="DOMKeyboardEvent" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<DOMKeyboardEvent>(), Is.EqualTo(sizeof(DOMKeyboardEvent)));
-    }
-
-    /// <summary>Validates that the <see cref="DOMKeyboardEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(DOMKeyboardEvent).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="DOMKeyboardEvent" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(DOMKeyboardEvent), Is.EqualTo(1));
-    }
 }

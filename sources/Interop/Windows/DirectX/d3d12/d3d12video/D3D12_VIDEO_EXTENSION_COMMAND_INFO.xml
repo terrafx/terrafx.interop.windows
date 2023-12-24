@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_INFO">
+    <summary>Describes a video extension command.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_INFO.CommandId">
+    <summary>The unique identifier for the video extension command.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_INFO.Name">
+    <summary>A pointer to a wide string containing the name of the command.</summary>
+  </member>
+  <member name="D3D12_VIDEO_EXTENSION_COMMAND_INFO.CommandListSupportFlags">
+    <summary>A member of the <see cref="D3D12_COMMAND_LIST_SUPPORT_FLAGS" /> enumeration. Indicates the video command queue that the video extension targets. Only one value from the enumeration can be set.</summary>
+  </member>
+</doc>

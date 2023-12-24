@@ -19,25 +19,4 @@ public static unsafe partial class SVGPolygonElementTests
     {
         Assert.That(typeof(SVGPolygonElement).GUID, Is.EqualTo(IID_SVGPolygonElement));
     }
-
-    /// <summary>Validates that the <see cref="SVGPolygonElement" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<SVGPolygonElement>(), Is.EqualTo(sizeof(SVGPolygonElement)));
-    }
-
-    /// <summary>Validates that the <see cref="SVGPolygonElement" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(SVGPolygonElement).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="SVGPolygonElement" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        Assert.That(sizeof(SVGPolygonElement), Is.EqualTo(1));
-    }
 }

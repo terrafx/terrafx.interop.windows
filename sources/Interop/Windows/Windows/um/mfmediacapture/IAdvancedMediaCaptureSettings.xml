@@ -3,19 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IAdvancedMediaCaptureSettings.GetDirectxDeviceManager">
-    <summary>
-      <para>Gets the DirectX device manager.</para>
-    </summary>
-    <param name="value"></param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso cref="IAdvancedMediaCaptureSettings" />
+    <summary>Gets the DirectX device manager.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IAdvancedMediaCaptureSettings">
-    <summary>
-      <para>Provides settings for advanced media capture.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Provides settings for advanced media capture.</summary>
   </member>
 </doc>

@@ -3,20 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WICRawToneCurve">
-    <summary>
-      <para>Represents a raw image tone curve.</para>
-    </summary>
+    <summary>Represents a raw image tone curve.</summary>
   </member>
   <member name="WICRawToneCurve.cPoints">
-    <summary>
-      <para>Type: <b>UINT</b></para>
-      <para>The number of tone curve points.</para>
-    </summary>
+    <summary>The number of tone curve points.</summary>
   </member>
   <member name="WICRawToneCurve.aPoints">
-    <summary>
-      <para>Type: <b><see cref="WICRawToneCurvePoint" />[1]</b></para>
-      <para>The array of tone curve points.</para>
-    </summary>
+    <summary>The array of tone curve points.</summary>
   </member>
 </doc>

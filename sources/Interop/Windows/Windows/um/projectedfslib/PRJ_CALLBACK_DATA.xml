@@ -3,24 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PRJ_CALLBACK_DATA">
-    <summary>
-      <para>Defines the standard information passed to a provider for every operation callback.</para>
-    </summary>
+    <summary>Defines the standard information passed to a provider for every operation callback.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.Size">
-    <summary>
-      <para>Size in bytes of this structure. The provider must not attempt to access any field of this structure that is located beyond this value.</para>
-    </summary>
+    <summary>Size in bytes of this structure. The provider must not attempt to access any field of this structure that is located beyond this value.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.Flags">
-    <summary>
-      <para>Callback-specific flags.</para>
-    </summary>
+    <summary>Callback-specific flags.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.NamespaceVirtualizationContext">
-    <summary>
-      <para>Opaque handle to the virtualization instance that is sending the callback.</para>
-    </summary>
+    <summary>Opaque handle to the virtualization instance that is sending the callback.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.CommandId">
     <summary>
@@ -36,36 +28,22 @@
     </summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.FileId">
-    <summary>
-      <para>A value that uniquely identifies the file handle for the callback.</para>
-    </summary>
+    <summary>A value that uniquely identifies the file handle for the callback.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.DataStreamId">
-    <summary>
-      <para>A value that uniquely identifies an open data stream for the callback.</para>
-    </summary>
+    <summary>A value that uniquely identifies an open data stream for the callback.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.FilePathName">
-    <summary>
-      <para>The path to the target file. This is a null-terminated string of Unicode characters. This path is always specified relative to the virtualization root.</para>
-    </summary>
+    <summary>The path to the target file. This is a null-terminated string of Unicode characters. This path is always specified relative to the virtualization root.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.VersionInfo">
-    <summary>
-      <para>Version information if the target of the callback is a placeholder or partial file.</para>
-    </summary>
+    <summary>Version information if the target of the callback is a placeholder or partial file.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.TriggeringProcessId">
-    <summary>
-      <para>The process identifier for the process that triggered this callback. If this information is not available, this will be 0. Callbacks that supply this information include: <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a>,
-<a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_file_data_cb">PRJ_GET_FILE_DATA_CB</a>, and
-<a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_notification_cb">PRJ_NOTIFICATION_CB</a>.</para>
-    </summary>
+    <summary>The process identifier for the process that triggered this callback. If this information is not available, this will be 0. Callbacks that supply this information include: <a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_placeholder_info_cb">PRJ_GET_PLACEHOLDER_INFO_CB</a>,<a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_get_file_data_cb">PRJ_GET_FILE_DATA_CB</a>, and<a href="https://docs.microsoft.com//windows/desktop/api/projectedfslib/nc-projectedfslib-prj_notification_cb">PRJ_NOTIFICATION_CB</a>.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.TriggeringProcessImageFileName">
-    <summary>
-      <para>A null-terminated Unicode string specifying the image file name corresponding to TriggeringProcessId. If TriggeringProcessId is 0 this will be NULL.</para>
-    </summary>
+    <summary>A null-terminated Unicode string specifying the image file name corresponding to TriggeringProcessId. If TriggeringProcessId is 0 this will be NULL.</summary>
   </member>
   <member name="PRJ_CALLBACK_DATA.InstanceContext">
     <summary>

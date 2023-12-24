@@ -25,7 +25,7 @@ public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAMOverlayFX*, Guid*, void**, int>)(lpVtbl[0]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAMOverlayFX*, Guid*, void**, int>)(lpVtbl[0]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAMOverlayFX*, uint>)(lpVtbl[1]))((IAMOverlayFX*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMOverlayFX*, uint>)(lpVtbl[1]))((IAMOverlayFX*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAMOverlayFX*, uint>)(lpVtbl[2]))((IAMOverlayFX*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAMOverlayFX*, uint>)(lpVtbl[2]))((IAMOverlayFX*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAMOverlayFX.xml' path='doc/member[@name="IAMOverlayFX.QueryOverlayFXCaps"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT QueryOverlayFXCaps([NativeTypeName("DWORD *")] uint* lpdwOverlayFXCaps)
     {
-        return ((delegate* unmanaged<IAMOverlayFX*, uint*, int>)(lpVtbl[3]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), lpdwOverlayFXCaps);
+        return ((delegate* unmanaged[MemberFunction]<IAMOverlayFX*, uint*, int>)(lpVtbl[3]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), lpdwOverlayFXCaps);
     }
 
     /// <include file='IAMOverlayFX.xml' path='doc/member[@name="IAMOverlayFX.SetOverlayFX"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT SetOverlayFX([NativeTypeName("DWORD")] uint dwOverlayFX)
     {
-        return ((delegate* unmanaged<IAMOverlayFX*, uint, int>)(lpVtbl[4]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), dwOverlayFX);
+        return ((delegate* unmanaged[MemberFunction]<IAMOverlayFX*, uint, int>)(lpVtbl[4]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), dwOverlayFX);
     }
 
     /// <include file='IAMOverlayFX.xml' path='doc/member[@name="IAMOverlayFX.GetOverlayFX"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface, INativeGuid
     [VtblIndex(5)]
     public HRESULT GetOverlayFX([NativeTypeName("DWORD *")] uint* lpdwOverlayFX)
     {
-        return ((delegate* unmanaged<IAMOverlayFX*, uint*, int>)(lpVtbl[5]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), lpdwOverlayFX);
+        return ((delegate* unmanaged[MemberFunction]<IAMOverlayFX*, uint*, int>)(lpVtbl[5]))((IAMOverlayFX*)Unsafe.AsPointer(ref this), lpdwOverlayFX);
     }
 
     public interface Interface : IUnknown.Interface
@@ -86,21 +86,21 @@ public unsafe partial struct IAMOverlayFX : IAMOverlayFX.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> QueryOverlayFXCaps;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> QueryOverlayFXCaps;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> SetOverlayFX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> SetOverlayFX;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetOverlayFX;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetOverlayFX;
     }
 }

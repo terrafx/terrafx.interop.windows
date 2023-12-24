@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_CULL_MODE">
+    <summary>Specifies triangles facing a particular direction are not drawn.</summary>
+  </member>
+  <member name="D3D12_CULL_MODE.D3D12_CULL_MODE_NONE">
+    <summary>Always draw all triangles.</summary>
+  </member>
+  <member name="D3D12_CULL_MODE.D3D12_CULL_MODE_FRONT">
+    <summary>Do not draw triangles that are front-facing.</summary>
+  </member>
+  <member name="D3D12_CULL_MODE.D3D12_CULL_MODE_BACK">
+    <summary>Do not draw triangles that are back-facing.</summary>
+  </member>
+</doc>

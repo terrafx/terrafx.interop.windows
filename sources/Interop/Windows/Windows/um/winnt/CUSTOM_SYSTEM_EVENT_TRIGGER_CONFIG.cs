@@ -14,5 +14,5 @@ public unsafe partial struct CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG
 
     /// <include file='CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG.xml' path='doc/member[@name="CUSTOM_SYSTEM_EVENT_TRIGGER_CONFIG.TriggerId"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* TriggerId;
+    public char* TriggerId;
 }

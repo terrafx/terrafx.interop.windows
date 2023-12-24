@@ -25,7 +25,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IPreviewHandlerFrame*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandlerFrame*, Guid*, void**, int>)(lpVtbl[0]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IPreviewHandlerFrame*, uint>)(lpVtbl[1]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandlerFrame*, uint>)(lpVtbl[1]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IPreviewHandlerFrame*, uint>)(lpVtbl[2]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandlerFrame*, uint>)(lpVtbl[2]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IPreviewHandlerFrame.xml' path='doc/member[@name="IPreviewHandlerFrame.GetWindowContext"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
     [VtblIndex(3)]
     public HRESULT GetWindowContext(PREVIEWHANDLERFRAMEINFO* pinfo)
     {
-        return ((delegate* unmanaged<IPreviewHandlerFrame*, PREVIEWHANDLERFRAMEINFO*, int>)(lpVtbl[3]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pinfo);
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandlerFrame*, PREVIEWHANDLERFRAMEINFO*, int>)(lpVtbl[3]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pinfo);
     }
 
     /// <include file='IPreviewHandlerFrame.xml' path='doc/member[@name="IPreviewHandlerFrame.TranslateAcceleratorW"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
     [VtblIndex(4)]
     public HRESULT TranslateAcceleratorW(MSG* pmsg)
     {
-        return ((delegate* unmanaged<IPreviewHandlerFrame*, MSG*, int>)(lpVtbl[4]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pmsg);
+        return ((delegate* unmanaged[MemberFunction]<IPreviewHandlerFrame*, MSG*, int>)(lpVtbl[4]))((IPreviewHandlerFrame*)Unsafe.AsPointer(ref this), pmsg);
     }
 
     public interface Interface : IUnknown.Interface
@@ -75,18 +75,18 @@ public unsafe partial struct IPreviewHandlerFrame : IPreviewHandlerFrame.Interfa
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (PREVIEWHANDLERFRAMEINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, PREVIEWHANDLERFRAMEINFO*, int> GetWindowContext;
+        public delegate* unmanaged[MemberFunction]<TSelf*, PREVIEWHANDLERFRAMEINFO*, int> GetWindowContext;
 
         [NativeTypeName("HRESULT (MSG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, MSG*, int> TranslateAcceleratorW;
+        public delegate* unmanaged[MemberFunction]<TSelf*, MSG*, int> TranslateAcceleratorW;
     }
 }

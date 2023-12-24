@@ -18,7 +18,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC3, 0x85, 0xBC, 0x6D,
                 0x07, 0x5D,
                 0x72, 0x4C,
@@ -30,7 +30,7 @@ public static partial class SYNCMGR
                 0x07,
                 0x2C,
                 0x06
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -43,7 +43,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xB9, 0x34, 0xEF, 0x4B,
                 0x86, 0xA7,
                 0x75, 0x40,
@@ -55,7 +55,7 @@ public static partial class SYNCMGR
                 0x89,
                 0xA9,
                 0x8F
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -68,7 +68,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xF4, 0x81, 0x81, 0xD7,
                 0x89, 0x23,
                 0xE4, 0x47,
@@ -80,7 +80,7 @@ public static partial class SYNCMGR
                 0xED,
                 0x93,
                 0x0B
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -93,7 +93,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x84, 0xB5, 0xCB, 0x57,
                 0xB4, 0xE9,
                 0xAE, 0x47,
@@ -105,7 +105,7 @@ public static partial class SYNCMGR
                 0x35,
                 0xDE,
                 0xE2
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -118,7 +118,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xE3, 0xF3, 0xC6, 0xED,
                 0x41, 0x84,
                 0x09, 0x41,
@@ -130,7 +130,7 @@ public static partial class SYNCMGR
                 0xB7,
                 0xDE,
                 0x47
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -143,7 +143,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x0B, 0xD8, 0x82, 0xD8,
                 0xAA, 0xE7,
                 0xED, 0x49,
@@ -155,7 +155,7 @@ public static partial class SYNCMGR
                 0x14,
                 0xCD,
                 0xFE
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -168,7 +168,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x82, 0xC2, 0xEF, 0xA0,
                 0xE0, 0x60,
                 0x0E, 0x46,
@@ -180,7 +180,7 @@ public static partial class SYNCMGR
                 0x3C,
                 0xFC,
                 0x80
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -193,7 +193,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xF0, 0xF7, 0xCB, 0x04,
                 0xEB, 0x5B,
                 0xE1, 0x4D,
@@ -205,7 +205,7 @@ public static partial class SYNCMGR
                 0xC4,
                 0x80,
                 0xF6
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -218,7 +218,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xAA, 0x64, 0x5F, 0xBB,
                 0x04, 0xF0,
                 0xB5, 0x4E,
@@ -230,7 +230,7 @@ public static partial class SYNCMGR
                 0x66,
                 0x34,
                 0x4C
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -243,7 +243,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0x97, 0x33, 0x6C, 0xF7,
                 0xB3, 0xAF,
                 0xD7, 0x45,
@@ -255,7 +255,7 @@ public static partial class SYNCMGR
                 0x05,
                 0x43,
                 0x7E
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));
@@ -268,7 +268,7 @@ public static partial class SYNCMGR
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-            ReadOnlySpan<byte> data = new byte[] {
+            ReadOnlySpan<byte> data = [
                 0xC1, 0xBD, 0x03, 0x22,
                 0xF1, 0x1A,
                 0x82, 0x40,
@@ -280,7 +280,7 @@ public static partial class SYNCMGR
                 0x41,
                 0x38,
                 0x4C
-            };
+            ];
 
             Debug.Assert(data.Length == Unsafe.SizeOf<Guid>());
             return ref Unsafe.As<byte, Guid>(ref MemoryMarshal.GetReference(data));

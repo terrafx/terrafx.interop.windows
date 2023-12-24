@@ -3,33 +3,19 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SAMPLE_PROTECTION_VERSION">
-    <summary>
-      <para>Defines the version number for sample protection.</para>
-    </summary>
-    <seealso cref="IMFSampleProtection" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines the version number for sample protection.</summary>
   </member>
   <member name="SAMPLE_PROTECTION_VERSION.SAMPLE_PROTECTION_VERSION_NO">
-    <summary>
-      <para>No sample protection.</para>
-    </summary>
+    <summary>No sample protection.</summary>
   </member>
   <member name="SAMPLE_PROTECTION_VERSION.SAMPLE_PROTECTION_VERSION_BASIC_LOKI">
-    <summary>
-      <para>Version 1.</para>
-    </summary>
+    <summary>Version 1.</summary>
   </member>
   <member name="SAMPLE_PROTECTION_VERSION.SAMPLE_PROTECTION_VERSION_SCATTER">
-    <summary>
-      <para>Version 2.</para>
-    </summary>
+    <summary>Version 2.</summary>
   </member>
   <member name="SAMPLE_PROTECTION_VERSION.SAMPLE_PROTECTION_VERSION_RC4">
-    <summary>
-      <para>Version 3.</para>
-    </summary>
+    <summary>Version 3.</summary>
   </member>
-  <member name="SAMPLE_PROTECTION_VERSION.SAMPLE_PROTECTION_VERSION_AES128CTR">
-    <summary></summary>
-  </member>
+  <member name="SAMPLE_PROTECTION_VERSION.SAMPLE_PROTECTION_VERSION_AES128CTR"></member>
 </doc>

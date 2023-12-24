@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IAppxEncryptionFactory5.CreateEncryptedBundleReader2">
+    <summary>Creates a read-only bundle object to which encrypted Windows app packages can be added, with an optional parameter for specifying the expected digest for the encrypted bundle.</summary>
+    <param name="inputStream">A stream for reading the encrypted bundle.</param>
+    <param name="keyInfo">Key info containing the base encryption key and key ID for decrypting the bundle. The base key is used to derive the per file encryption keys. If this parameter is null, the global test key and key ID are used.</param>
+    <param name="expectedDigest">An LPCWSTR containing the expected digest, a hashed representation of the bundle file.</param>
+    <param name="bundleReader">The created bundle reader.</param>
+    <returns>
+      <para>If the method succeeds, it returns S_OK. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <para>| Return code | Description | |-------------|-------------| | APPX_E_DIGEST_MISMATCH | The digest for the object doesn't match the digest provided in <i>expectedDigest</i>. |</para>
+    </returns>
+  </member>
+  <member name="IAppxEncryptionFactory5.CreateEncryptedPackageReader2">
+    <summary>Creates a new instance of <see cref="IAppxPackageReader" /> for reading encrypted packages, with an optional parameter for specifying the expected digest for the package.</summary>
+    <param name="inputStream">A stream for reading the encrypted package.</param>
+    <param name="keyInfo">Key info containing the base encryption key and key ID for decrypting the package. The base key is used to derive the per file encryption keys. If this parameter is null, the global test key and key ID are used.</param>
+    <param name="expectedDigest">An LPCWSTR containing the expected digest, a hashed representation of the package file.</param>
+    <param name="packageReader">The created package reader.</param>
+    <returns>
+      <para>If the method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an error code that includes, but is not limited to, those in the following table.</para>
+      <para>| Return code | Description | |-------------|-------------| | APPX_E_DIGEST_MISMATCH | The digest for the object doesn't match the digest provided in <i>expectedDigest</i>. |</para>
+    </returns>
+  </member>
+  <member name="IAppxEncryptionFactory5">
+    <summary>Creates objects for reading encrypted Windows app packages and bundles.</summary>
+  </member>
+</doc>

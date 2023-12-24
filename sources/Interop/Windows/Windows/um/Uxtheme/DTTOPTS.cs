@@ -51,7 +51,7 @@ public unsafe partial struct DTTOPTS
 
     /// <include file='DTTOPTS.xml' path='doc/member[@name="DTTOPTS.pfnDrawTextCallback"]/*' />
     [NativeTypeName("DTT_CALLBACK_PROC")]
-    public delegate* unmanaged<HDC, ushort*, int, RECT*, uint, LPARAM, int> pfnDrawTextCallback;
+    public delegate* unmanaged<HDC, char*, int, RECT*, uint, LPARAM, int> pfnDrawTextCallback;
 
     /// <include file='DTTOPTS.xml' path='doc/member[@name="DTTOPTS.lParam"]/*' />
     public LPARAM lParam;

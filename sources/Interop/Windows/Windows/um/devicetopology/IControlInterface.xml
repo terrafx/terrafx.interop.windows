@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IControlInterface.GetIID">
-    <summary>
-      <para>The <b>GetIID</b> method gets the interface ID of the function-specific control interface of the part.</para>
-    </summary>
-    <param name="pIID">
-      <para>Pointer to a GUID variable into which the method writes the interface ID of the function-specific control interface of the part. For more information, see Remarks.</para>
-    </param>
+    <summary>The <b>GetIID</b> method gets the interface ID of the function-specific control interface of the part.</summary>
+    <param name="pIID">Pointer to a GUID variable into which the method writes the interface ID of the function-specific control interface of the part. For more information, see Remarks.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -16,129 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer <i>pIID</i> is <b>NULL</b>.</para>
-          </description>
-        </item>
+          <description>Pointer <i>pIID</i> is <b>NULL</b>.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>An object that represents a part (connector or subunit) has two control interfaces. The first is a generic control interface, <see cref="IControlInterface" />, which has methods that are common to all types of controls. The second is a function-specific control interface that has methods that apply to a particular type of control. The <b>GetIID</b> method gets the interface ID of the second control interface. The client can supply this interface ID to the <see cref="IPart.Activate" /> method to create an instance of the part's function-specific interface.</para>
-      <para>The method gets one of the function-specific interface IDs shown in the following table.</para>
-      <list type="table">
-        <listheader>
-          <description>Interface ID
-</description>
-          <description>Interface name
-</description>
-        </listheader>
-        <item>
-          <description>IID_IAudioAutoGainControl</description>
-          <description>
-            <see cref="IAudioAutoGainControl" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioBass</description>
-          <description>
-            <see cref="IAudioBass" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioChannelConfig</description>
-          <description>
-            <see cref="IAudioChannelConfig" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioInputSelector</description>
-          <description>
-            <see cref="IAudioInputSelector" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioLoudness</description>
-          <description>
-            <see cref="IAudioLoudness" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioMidrange</description>
-          <description>
-            <see cref="IAudioMidrange" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioMute</description>
-          <description>
-            <see cref="IAudioMute" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioOutputSelector</description>
-          <description>
-            <see cref="IAudioOutputSelector" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioPeakMeter</description>
-          <description>
-            <see cref="IAudioPeakMeter" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioTreble</description>
-          <description>
-            <see cref="IAudioTreble" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IAudioVolumeLevel</description>
-          <description>
-            <see cref="IAudioVolumeLevel" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IDeviceSpecificProperty</description>
-          <description>
-            <see cref="IDeviceSpecificProperty" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IKsFormatSupport</description>
-          <description>
-            <see cref="IKsFormatSupport" />
-          </description>
-        </item>
-        <item>
-          <description>IID_IKsJackDescription</description>
-          <description>
-            <see cref="IKsJackDescription" />
-          </description>
-        </item>
-      </list>
-      <para>To obtain the interface ID of an interface, use the <b>__uuidof</b> operator. For example, the interface ID of the <b>IAudioAutoGainControl</b> interface is defined as follows:</para>
-      <code>
-const IID IID_IAudioAutoGainControl  __uuidof(IAudioAutoGainControl)
-
-</code>
-      <para>For more information about the <b>__uuidof</b> operator, see the Windows SDK documentation.</para>
-    </remarks>
-    <seealso cref="IControlInterface Interface" />
   </member>
   <member name="IControlInterface.GetName">
-    <summary>
-      <para>The <b>GetName</b> method gets the friendly name for the audio function that the control interface encapsulates.</para>
-    </summary>
-    <param name="ppwstrName">
-      <para>Pointer to a string pointer into which the method writes the address of a null-terminated, wide-character string that contains the friendly name. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetName</b> call fails,  <i>*ppwstrName</i> is <b>NULL</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</para>
-    </param>
+    <summary>The <b>GetName</b> method gets the friendly name for the audio function that the control interface encapsulates.</summary>
+    <param name="ppwstrName">Pointer to a string pointer into which the method writes the address of a null-terminated, wide-character string that contains the friendly name. The method allocates the storage for the string. The caller is responsible for freeing the storage, when it is no longer needed, by calling the <b>CoTaskMemFree</b> function. If the <b>GetName</b> call fails, <i>*ppwstrName</i> is <b>NULL</b>. For information about <b>CoTaskMemFree</b>, see the Windows SDK documentation.</param>
     <returns>
       <para>If the method succeeds, it returns S_OK. If it fails, possible return codes include, but are not limited to, the values shown in the following table.</para>
       <list type="table">
@@ -146,40 +37,34 @@ const IID IID_IAudioAutoGainControl  __uuidof(IAudioAutoGainControl)
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Pointer <i>ppwstrName</i> is <b>NULL</b>.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Pointer <i>ppwstrName</i> is <b>NULL</b>.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_OUTOFMEMORY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>E_OUTOFMEMORY</b>
-            </para>
-          </description>
-          <description>
-            <para>Out of memory.</para>
-          </description>
-        </item>
+          <description>Out of memory.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>As an example of a friendly name, a subunit with an <see cref="IAudioPeakMeter" /> interface might have the friendly name "peak meter".</para>
-    </remarks>
-    <seealso cref="IAudioPeakMeter Interface" />
-    <seealso cref="IControlInterface Interface" />
   </member>
   <member name="IControlInterface">
-    <summary>
-      <para>The <b>IControlInterface</b> interface represents a control interface on a part (connector or subunit) in a <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">device topology</a>. The client obtains a reference to a part's <b>IControlInterface</b> interface by calling the <see cref="IPart.GetControlInterface" /> method.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/core-audio-interfaces">Core Audio Interfaces</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/CoreAudio/devicetopology-api">DeviceTopology API</seealso>
-    <seealso cref="IPart.GetControlInterface" />
+    <summary>The <b>IControlInterface</b> interface represents a control interface on a part (connector or subunit) in a <a href="https://docs.microsoft.com//windows/desktop/CoreAudio/device-topologies">device topology</a>. The client obtains a reference to a part's <b>IControlInterface</b> interface by calling the <see cref="IPart.GetControlInterface" /> method.</summary>
   </member>
 </doc>

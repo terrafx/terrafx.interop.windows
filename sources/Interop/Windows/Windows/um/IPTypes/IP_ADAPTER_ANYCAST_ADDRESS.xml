@@ -3,35 +3,16 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IP_ADAPTER_ANYCAST_ADDRESS">
-    <summary>
-      <para>The
-<b>IP_ADAPTER_ANYCAST_ADDRESS</b> structure stores a single anycast IP address in a linked list of addresses for a particular adapter.</para>
-    </summary>
-    <remarks>
-      <para>The <see cref="IP_ADAPTER_ADDRESSES" /> structure is retrieved by the <see cref="GetAdaptersAddresses" /> function. The <b>FirstAnycastAddress</b> member of the <b>IP_ADAPTER_ADDRESSES</b> structure is a pointer to a linked list of <b>IP_ADAPTER_ANYCAST_ADDRESS</b> structures.</para>
-      <para>The <see cref="SOCKET_ADDRESS" /> structure is used in the <b>IP_ADAPTER_ANYCAST_ADDRESS</b> structure. On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>SOCKET_ADDRESS</b> structure is defined in the <i>Ws2def.h</i> header file which is automatically included by the <i>Winsock2.h</i> header file. On the Platform Software Development Kit (SDK) released for Windows Server 2003 and Windows XP, the <b>SOCKET_ADDRESS</b> structure is declared in the <i>Winsock2.h</i> header file. In order to use the <b>IP_ADAPTER_ANYCAST_ADDRESS</b> structure, the <i>Winsock2.h</i> header file must be included before the <i>Iphlpapi.h</i> header file.</para>
-    </remarks>
-    <seealso cref="GetAdaptersAddresses" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-start-page">IP Helper Start Page</seealso>
-    <seealso href="https://docs.microsoft.com//windows/desktop/IpHlp/ip-helper-structures">IP Helper Structures</seealso>
-    <seealso cref="IP_ADAPTER_ADDRESSES" />
-    <seealso cref="SOCKET_ADDRESS" />
+    <summary>The<b>IP_ADAPTER_ANYCAST_ADDRESS</b> structure stores a single anycast IP address in a linked list of addresses for a particular adapter.</summary>
   </member>
   <member name="IP_ADAPTER_ANYCAST_ADDRESS.Alignment">
-    <summary>
-      <para>Type: <b>ULONGLONG</b></para>
-      <para>Reserved. Used by the compiler to align the structure.</para>
-    </summary>
+    <summary>Reserved. Used by the compiler to align the structure.</summary>
   </member>
   <member name="IP_ADAPTER_ANYCAST_ADDRESS.Length">
-    <summary>
-      <para>Type: <b>ULONG</b></para>
-      <para>The length, in bytes, of this structure.</para>
-    </summary>
+    <summary>The length, in bytes, of this structure.</summary>
   </member>
   <member name="IP_ADAPTER_ANYCAST_ADDRESS.Flags">
     <summary>
-      <para>Type: <b>DWORD</b></para>
       <para>The flags for this anycast IP address.</para>
       <para>The following table shows possible values. These constants are defined in the <i>Iptypes.h</i> header file.</para>
       <list type="table">
@@ -39,35 +20,37 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>IP_ADAPTER_ADDRESS_DNS_ELIGIBLE</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IP_ADAPTER_ADDRESS_DNS_ELIGIBLE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The IP address is legal to appear in DNS.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The IP address is legal to appear in DNS.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>IP_ADAPTER_ADDRESS_TRANSIENT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>IP_ADAPTER_ADDRESS_TRANSIENT</b>
-          </description>
-          <description>
-            <para>The IP address is a cluster address and should not be used by most applications.</para>
-          </description>
-        </item>
+          <description>The IP address is a cluster address and should not be used by most applications.</description>
+        </listheader>
       </list>
     </summary>
   </member>
   <member name="IP_ADAPTER_ANYCAST_ADDRESS.Next">
-    <summary>
-      <para>Type: <b>struct _IP_ADAPTER_ANYCAST_ADDRESS*</b></para>
-      <para>A pointer to the next anycast IP address structure in the list.</para>
-    </summary>
+    <summary>A pointer to the next anycast IP address structure in the list.</summary>
   </member>
   <member name="IP_ADAPTER_ANYCAST_ADDRESS.Address">
-    <summary>
-      <para>Type: <b><see cref="SOCKET_ADDRESS" /></b></para>
-      <para>The IP address for this anycast IP address entry. This member can be an IPv6 address or an IPv4 address.</para>
-    </summary>
+    <summary>The IP address for this anycast IP address entry. This member can be an IPv6 address or an IPv4 address.</summary>
   </member>
 </doc>

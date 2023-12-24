@@ -3,74 +3,26 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="Windows.WICGetMetadataContentSize">
-    <summary>
-      <para>Returns the size of the metadata content contained by the specified <see cref="IWICMetadataWriter" />. The returned size accounts for the header and the length of the metadata.</para>
-    </summary>
-    <param name="guidContainerFormat">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The container GUID.</para>
-    </param>
-    <param name="pIWriter">
-      <para>Type: <b><see cref="IWICMetadataWriter" />*</b></para>
-      <para>The <see cref="IWICMetadataWriter" /> that contains the content.</para>
-    </param>
-    <param name="pcbSize">
-      <para>Type: <b>ULARGE_INTEGER*</b></para>
-      <para>A pointer that receives the size of the metadata content.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Returns the size of the metadata content contained by the specified <see cref="IWICMetadataWriter" />. The returned size accounts for the header and the length of the metadata.</summary>
+    <param name="guidContainerFormat">The container GUID.</param>
+    <param name="pIWriter">The <see cref="IWICMetadataWriter" /> that contains the content.</param>
+    <param name="pcbSize">A pointer that receives the size of the metadata content.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.WICMatchMetadataContent">
-    <summary>
-      <para>Obtains a metadata format GUID for a specified container format and vendor that best matches the content within a given stream.</para>
-    </summary>
-    <param name="guidContainerFormat">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The container format GUID.</para>
-    </param>
-    <param name="pguidVendor">
-      <para>Type: <b>const GUID*</b></para>
-      <para>The vendor GUID.</para>
-    </param>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>The content stream in which to match a metadata format.</para>
-    </param>
-    <param name="pguidMetadataFormat">
-      <para>Type: <b>GUID*</b></para>
-      <para>A pointer that receives a metadata format GUID for the given parameters.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Obtains a metadata format GUID for a specified container format and vendor that best matches the content within a given stream.</summary>
+    <param name="guidContainerFormat">The container format GUID.</param>
+    <param name="pguidVendor">The vendor GUID.</param>
+    <param name="pIStream">The content stream in which to match a metadata format.</param>
+    <param name="pguidMetadataFormat">A pointer that receives a metadata format GUID for the given parameters.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="Windows.WICSerializeMetadataContent">
-    <summary>
-      <para>Writes metadata into a given stream.</para>
-    </summary>
-    <param name="guidContainerFormat">
-      <para>Type: <b>REFGUID</b></para>
-      <para>The container format GUID.</para>
-    </param>
-    <param name="pIWriter">
-      <para>Type: <b><see cref="IWICMetadataWriter" />*</b></para>
-      <para>The metadata writer to write metadata to the stream.</para>
-    </param>
-    <param name="dwPersistOptions">
-      <para>Type: <b>DWORD</b></para>
-      <para>The <see cref="WICPersistOptions" /> options to use when writing the metadata.</para>
-    </param>
-    <param name="pIStream">
-      <para>Type: <b><see cref="IStream" />*</b></para>
-      <para>A pointer to the stream in which to write the metadata.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Writes metadata into a given stream.</summary>
+    <param name="guidContainerFormat">The container format GUID.</param>
+    <param name="pIWriter">The metadata writer to write metadata to the stream.</param>
+    <param name="dwPersistOptions">The <see cref="WICPersistOptions" /> options to use when writing the metadata.</param>
+    <param name="pIStream">A pointer to the stream in which to write the metadata.</param>
+    <returns>If this function succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
 </doc>

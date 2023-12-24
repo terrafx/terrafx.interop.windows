@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="IMessageDispatcher.PumpMessages">
+    <summary>Performs custom dispatching when window messages are available to be dispatched on an ASTA thread.</summary>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
+  </member>
+  <member name="IMessageDispatcher">
+    <summary>Callback interface implemented by components that need to perform special processing of window messages on an ASTA thread.</summary>
+  </member>
+</doc>

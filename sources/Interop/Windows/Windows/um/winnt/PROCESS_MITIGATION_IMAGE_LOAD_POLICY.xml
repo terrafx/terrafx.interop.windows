@@ -3,47 +3,25 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY">
-    <summary>
-      <para>Contains process mitigation policy settings for the loading of images from a remote device.</para>
-    </summary>
-    <seealso cref="GetProcessMitigationPolicy" />
-    <seealso cref="SetProcessMitigationPolicy" />
+    <summary>Contains process mitigation policy settings for the loading of images from a remote device.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME"></member>
   <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.Flags">
-    <summary>
-      <para>Reserved for system use.</para>
-    </summary>
+    <summary>Reserved for system use.</summary>
   </member>
-  <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
   <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.NoRemoteImages">
-    <summary>
-      <para>Set (0x1) to prevent the process from loading images from a remote device, such as a UNC share; otherwise leave unset (0x0).</para>
-    </summary>
+    <summary>Set (0x1) to prevent the process from loading images from a remote device, such as a UNC share; otherwise leave unset (0x0).</summary>
   </member>
   <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.NoLowMandatoryLabelImages">
-    <summary>
-      <para>Set (0x1) to prevent the process from loading images that have a Low mandatory label, as written by low IL; otherwise leave unset (0x0).</para>
-    </summary>
+    <summary>Set (0x1) to prevent the process from loading images that have a Low mandatory label, as written by low IL; otherwise leave unset (0x0).</summary>
   </member>
   <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.PreferSystem32Images">
-    <summary>
-      <para>Set (0x1) to search for images to load in the System32 subfolder of the folder in which Windows is installed first, then in the application directory in the standard DLL search order; otherwise leave unset (0x0).</para>
-    </summary>
+    <summary>Set (0x1) to search for images to load in the System32 subfolder of the folder in which Windows is installed first, then in the application directory in the standard DLL search order; otherwise leave unset (0x0).</summary>
   </member>
-  <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditNoRemoteImages">
-    <summary></summary>
-  </member>
-  <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditNoLowMandatoryLabelImages">
-    <summary></summary>
-  </member>
+  <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditNoRemoteImages"></member>
+  <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.AuditNoLowMandatoryLabelImages"></member>
   <member name="PROCESS_MITIGATION_IMAGE_LOAD_POLICY.DUMMYUNIONNAME.DUMMYSTRUCTNAME.ReservedFlags">
-    <summary>
-      <para>Reserved for system use.</para>
-    </summary>
+    <summary>Reserved for system use.</summary>
   </member>
 </doc>

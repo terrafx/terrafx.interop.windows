@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_FORMAT_SUPPORT2">
+    <summary>Specifies which unordered resource options are supported for a provided format.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_NONE">
+    <summary>No unordered resource options are supported.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_UAV_ATOMIC_ADD">
+    <summary>Format supports atomic add.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_UAV_ATOMIC_BITWISE_OPS">
+    <summary>Format supports atomic bitwise operations.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_UAV_ATOMIC_COMPARE_STORE_OR_COMPARE_EXCHANGE">
+    <summary>Format supports atomic compare with store or exchange.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_UAV_ATOMIC_EXCHANGE">
+    <summary>Format supports atomic exchange.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_UAV_ATOMIC_SIGNED_MIN_OR_MAX">
+    <summary>Format supports atomic min and max.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_UAV_ATOMIC_UNSIGNED_MIN_OR_MAX">
+    <summary>Format supports atomic unsigned min and max.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_UAV_TYPED_LOAD">
+    <summary>Format supports a typed load.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_UAV_TYPED_STORE">
+    <summary>Format supports a typed store.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_OUTPUT_MERGER_LOGIC_OP">
+    <summary>Format supports logic operations in blend state.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_TILED">
+    <summary>Format supports tiled resources. Refer to <a href="https://docs.microsoft.com//windows/desktop/direct3d12/volume-tiled-resources">Volume Tiled Resources</a>.</summary>
+  </member>
+  <member name="D3D12_FORMAT_SUPPORT2.D3D12_FORMAT_SUPPORT2_MULTIPLANE_OVERLAY">
+    <summary>Format supports multi-plane overlays.</summary>
+  </member>
+</doc>

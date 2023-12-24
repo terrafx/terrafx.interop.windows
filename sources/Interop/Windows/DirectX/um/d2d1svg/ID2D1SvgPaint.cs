@@ -26,7 +26,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, Guid*, void**, int>)(lpVtbl[0]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, uint>)(lpVtbl[1]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, uint>)(lpVtbl[1]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, uint>)(lpVtbl[2]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, uint>)(lpVtbl[2]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ID2D1Resource.GetFactory" />
@@ -52,7 +52,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [VtblIndex(3)]
     public void GetFactory(ID2D1Factory** factory)
     {
-        ((delegate* unmanaged<ID2D1SvgPaint*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), factory);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, ID2D1Factory**, void>)(lpVtbl[3]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), factory);
     }
 
     /// <inheritdoc cref="ID2D1SvgAttribute.GetElement" />
@@ -60,7 +60,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [VtblIndex(4)]
     public void GetElement(ID2D1SvgElement** element)
     {
-        ((delegate* unmanaged<ID2D1SvgPaint*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), element);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, ID2D1SvgElement**, void>)(lpVtbl[4]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), element);
     }
 
     /// <inheritdoc cref="ID2D1SvgAttribute.Clone" />
@@ -68,7 +68,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT Clone(ID2D1SvgAttribute** attribute)
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), attribute);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, ID2D1SvgAttribute**, int>)(lpVtbl[5]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), attribute);
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.SetPaintType"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT SetPaintType(D2D1_SVG_PAINT_TYPE paintType)
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, D2D1_SVG_PAINT_TYPE, int>)(lpVtbl[6]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), paintType);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, D2D1_SVG_PAINT_TYPE, int>)(lpVtbl[6]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), paintType);
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.GetPaintType"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [VtblIndex(7)]
     public D2D1_SVG_PAINT_TYPE GetPaintType()
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, D2D1_SVG_PAINT_TYPE>)(lpVtbl[7]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, D2D1_SVG_PAINT_TYPE>)(lpVtbl[7]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.SetColor"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [VtblIndex(8)]
     public HRESULT SetColor([NativeTypeName("const D2D1_COLOR_F *")] DXGI_RGBA* color)
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, DXGI_RGBA*, int>)(lpVtbl[8]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), color);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, DXGI_RGBA*, int>)(lpVtbl[8]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), color);
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.GetColor"]/*' />
@@ -100,23 +100,23 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [VtblIndex(9)]
     public void GetColor([NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* color)
     {
-        ((delegate* unmanaged<ID2D1SvgPaint*, DXGI_RGBA*, void>)(lpVtbl[9]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), color);
+        ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, DXGI_RGBA*, void>)(lpVtbl[9]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), color);
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.SetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(10)]
-    public HRESULT SetId([NativeTypeName("PCWSTR")] ushort* id)
+    public HRESULT SetId([NativeTypeName("PCWSTR")] char* id)
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, ushort*, int>)(lpVtbl[10]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), id);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, char*, int>)(lpVtbl[10]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), id);
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.GetId"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetId([NativeTypeName("PWSTR")] ushort* id, [NativeTypeName("UINT32")] uint idCount)
+    public HRESULT GetId([NativeTypeName("PWSTR")] char* id, [NativeTypeName("UINT32")] uint idCount)
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, ushort*, uint, int>)(lpVtbl[11]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), id, idCount);
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, char*, uint, int>)(lpVtbl[11]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this), id, idCount);
     }
 
     /// <include file='ID2D1SvgPaint.xml' path='doc/member[@name="ID2D1SvgPaint.GetIdLength"]/*' />
@@ -125,7 +125,7 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
     [return: NativeTypeName("UINT32")]
     public uint GetIdLength()
     {
-        return ((delegate* unmanaged<ID2D1SvgPaint*, uint>)(lpVtbl[12]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ID2D1SvgPaint*, uint>)(lpVtbl[12]))((ID2D1SvgPaint*)Unsafe.AsPointer(ref this));
     }
 
     public interface Interface : ID2D1SvgAttribute.Interface
@@ -143,10 +143,10 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
         void GetColor([NativeTypeName("D2D1_COLOR_F *")] DXGI_RGBA* color);
 
         [VtblIndex(10)]
-        HRESULT SetId([NativeTypeName("PCWSTR")] ushort* id);
+        HRESULT SetId([NativeTypeName("PCWSTR")] char* id);
 
         [VtblIndex(11)]
-        HRESULT GetId([NativeTypeName("PWSTR")] ushort* id, [NativeTypeName("UINT32")] uint idCount);
+        HRESULT GetId([NativeTypeName("PWSTR")] char* id, [NativeTypeName("UINT32")] uint idCount);
 
         [VtblIndex(12)]
         [return: NativeTypeName("UINT32")]
@@ -157,42 +157,42 @@ public unsafe partial struct ID2D1SvgPaint : ID2D1SvgPaint.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("void (ID2D1Factory **) const __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1Factory**, void> GetFactory;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1Factory**, void> GetFactory;
 
         [NativeTypeName("void (ID2D1SvgElement **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1SvgElement**, void> GetElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1SvgElement**, void> GetElement;
 
         [NativeTypeName("HRESULT (ID2D1SvgAttribute **) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ID2D1SvgAttribute**, int> Clone;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ID2D1SvgAttribute**, int> Clone;
 
         [NativeTypeName("HRESULT (D2D1_SVG_PAINT_TYPE) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_SVG_PAINT_TYPE, int> SetPaintType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_SVG_PAINT_TYPE, int> SetPaintType;
 
         [NativeTypeName("D2D1_SVG_PAINT_TYPE () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, D2D1_SVG_PAINT_TYPE> GetPaintType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, D2D1_SVG_PAINT_TYPE> GetPaintType;
 
         [NativeTypeName("HRESULT (const D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_RGBA*, int> SetColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_RGBA*, int> SetColor;
 
         [NativeTypeName("void (D2D1_COLOR_F *) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DXGI_RGBA*, void> GetColor;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DXGI_RGBA*, void> GetColor;
 
         [NativeTypeName("HRESULT (PCWSTR) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> SetId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> SetId;
 
         [NativeTypeName("HRESULT (PWSTR, UINT32) __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> GetId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> GetId;
 
         [NativeTypeName("UINT32 () __attribute__((nothrow)) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> GetIdLength;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> GetIdLength;
     }
 }

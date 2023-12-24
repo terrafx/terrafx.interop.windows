@@ -3,15 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D1_SCALE_PROP">
-    <summary>
-      <para>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/high-quality-scale">Scale effect</a>.</para>
-    </summary>
+    <summary>Identifiers for properties of the <a href="https://docs.microsoft.com//windows/desktop/Direct2D/high-quality-scale">Scale effect</a>.</summary>
   </member>
   <member name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_SCALE">
     <summary>
       <para>The scale amount in the X and Y direction as a ratio of the output size to the input size.</para>
-      <para>This property a <see cref="D2D1_VECTOR_2F" /> defined as: (X scale, Y scale).
-The scale amounts are FLOAT, unitless, and must be positive or 0.</para>
+      <para>This property a <see cref="D2D1_VECTOR_2F" /> defined as: (X scale, Y scale). The scale amounts are FLOAT, unitless, and must be positive or 0.</para>
       <para>The type is <see cref="D2D1_VECTOR_2F" />.</para>
       <para>The default value is {1.0f, 1.0f}.</para>
     </summary>
@@ -40,16 +37,10 @@ The scale amounts are FLOAT, unitless, and must be positive or 0.</para>
   </member>
   <member name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_SHARPNESS">
     <summary>
-      <para>In the high quality cubic interpolation mode, the sharpness level of the scaling filter as a float between 0 and 1. The values are unitless.
-You can use sharpness to adjust the quality of an image when you scale the image down.</para>
+      <para>In the high quality cubic interpolation mode, the sharpness level of the scaling filter as a float between 0 and 1. The values are unitless. You can use sharpness to adjust the quality of an image when you scale the image down.</para>
       <para>The sharpness factor affects the shape of the kernel. The higher the sharpness factor, the smaller the kernel.</para>
-      <para>
-        <b>Note</b>  This property affects only the high quality cubic interpolation mode.</para>
-      <para>The type is FLOAT.</para>
-      <para>The default value is 0.0f.</para>
-    </summary>
+      <div>
+        <b>Note</b>  This property affects only the high quality cubic interpolation mode.</div>The type is FLOAT.<para>The default value is 0.0f.</para></summary>
   </member>
-  <member name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_FORCE_DWORD">
-    <summary></summary>
-  </member>
+  <member name="D2D1_SCALE_PROP.D2D1_SCALE_PROP_FORCE_DWORD"></member>
 </doc>

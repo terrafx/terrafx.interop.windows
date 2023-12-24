@@ -25,7 +25,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IEventTarget2*, Guid*, void**, int>)(lpVtbl[0]))((IEventTarget2*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IEventTarget2*, Guid*, void**, int>)(lpVtbl[0]))((IEventTarget2*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IEventTarget2*, uint>)(lpVtbl[1]))((IEventTarget2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEventTarget2*, uint>)(lpVtbl[1]))((IEventTarget2*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IEventTarget2*, uint>)(lpVtbl[2]))((IEventTarget2*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IEventTarget2*, uint>)(lpVtbl[2]))((IEventTarget2*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.GetRegisteredEventTypes"]/*' />
@@ -51,15 +51,15 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
     [VtblIndex(3)]
     public HRESULT GetRegisteredEventTypes(SAFEARRAY** ppEventTypeArray)
     {
-        return ((delegate* unmanaged<IEventTarget2*, SAFEARRAY**, int>)(lpVtbl[3]))((IEventTarget2*)Unsafe.AsPointer(ref this), ppEventTypeArray);
+        return ((delegate* unmanaged[MemberFunction]<IEventTarget2*, SAFEARRAY**, int>)(lpVtbl[3]))((IEventTarget2*)Unsafe.AsPointer(ref this), ppEventTypeArray);
     }
 
     /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.GetListenersForType"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] ushort* pszEventType, SAFEARRAY** ppEventHandlerArray)
+    public HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] char* pszEventType, SAFEARRAY** ppEventHandlerArray)
     {
-        return ((delegate* unmanaged<IEventTarget2*, ushort*, SAFEARRAY**, int>)(lpVtbl[4]))((IEventTarget2*)Unsafe.AsPointer(ref this), pszEventType, ppEventHandlerArray);
+        return ((delegate* unmanaged[MemberFunction]<IEventTarget2*, char*, SAFEARRAY**, int>)(lpVtbl[4]))((IEventTarget2*)Unsafe.AsPointer(ref this), pszEventType, ppEventHandlerArray);
     }
 
     /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.RegisterForDOMEventListeners"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
     [VtblIndex(5)]
     public HRESULT RegisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback)
     {
-        return ((delegate* unmanaged<IEventTarget2*, IDOMEventRegistrationCallback*, int>)(lpVtbl[5]))((IEventTarget2*)Unsafe.AsPointer(ref this), pCallback);
+        return ((delegate* unmanaged[MemberFunction]<IEventTarget2*, IDOMEventRegistrationCallback*, int>)(lpVtbl[5]))((IEventTarget2*)Unsafe.AsPointer(ref this), pCallback);
     }
 
     /// <include file='IEventTarget2.xml' path='doc/member[@name="IEventTarget2.UnregisterForDOMEventListeners"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
     [VtblIndex(6)]
     public HRESULT UnregisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback)
     {
-        return ((delegate* unmanaged<IEventTarget2*, IDOMEventRegistrationCallback*, int>)(lpVtbl[6]))((IEventTarget2*)Unsafe.AsPointer(ref this), pCallback);
+        return ((delegate* unmanaged[MemberFunction]<IEventTarget2*, IDOMEventRegistrationCallback*, int>)(lpVtbl[6]))((IEventTarget2*)Unsafe.AsPointer(ref this), pCallback);
     }
 
     public interface Interface : IUnknown.Interface
@@ -84,7 +84,7 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
         HRESULT GetRegisteredEventTypes(SAFEARRAY** ppEventTypeArray);
 
         [VtblIndex(4)]
-        HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] ushort* pszEventType, SAFEARRAY** ppEventHandlerArray);
+        HRESULT GetListenersForType([NativeTypeName("LPCWSTR")] char* pszEventType, SAFEARRAY** ppEventHandlerArray);
 
         [VtblIndex(5)]
         HRESULT RegisterForDOMEventListeners(IDOMEventRegistrationCallback* pCallback);
@@ -97,24 +97,24 @@ public unsafe partial struct IEventTarget2 : IEventTarget2.Interface, INativeGui
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> GetRegisteredEventTypes;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> GetRegisteredEventTypes;
 
         [NativeTypeName("HRESULT (LPCWSTR, SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, SAFEARRAY**, int> GetListenersForType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, SAFEARRAY**, int> GetListenersForType;
 
         [NativeTypeName("HRESULT (IDOMEventRegistrationCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDOMEventRegistrationCallback*, int> RegisterForDOMEventListeners;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDOMEventRegistrationCallback*, int> RegisterForDOMEventListeners;
 
         [NativeTypeName("HRESULT (IDOMEventRegistrationCallback *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDOMEventRegistrationCallback*, int> UnregisterForDOMEventListeners;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDOMEventRegistrationCallback*, int> UnregisterForDOMEventListeners;
     }
 }

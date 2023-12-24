@@ -26,5 +26,5 @@ public unsafe partial struct CERT_LOGOTYPE_AUDIO_INFO
 
     /// <include file='CERT_LOGOTYPE_AUDIO_INFO.xml' path='doc/member[@name="CERT_LOGOTYPE_AUDIO_INFO.pwszLanguage"]/*' />
     [NativeTypeName("LPWSTR")]
-    public ushort* pwszLanguage;
+    public char* pwszLanguage;
 }

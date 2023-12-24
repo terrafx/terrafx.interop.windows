@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IDiscFormat2DataEventArgs.get_CurrentAction">
-    <summary>
-      <para>Retrieves the current write action being performed.</para>
-    </summary>
-    <param name="value">
-      <para>Current write action being performed. For a list of possible actions, see  the <see cref="IMAPI_FORMAT2_DATA_WRITE_ACTION" /> enumeration type.</para>
-    </param>
+    <summary>Retrieves the current write action being performed.</summary>
+    <param name="value">Current write action being performed. For a list of possible actions, see the <see cref="IMAPI_FORMAT2_DATA_WRITE_ACTION" /> enumeration type.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -16,29 +12,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="DDiscFormat2DataEvents" />
-    <seealso cref="IDiscFormat2DataEventArgs" />
   </member>
   <member name="IDiscFormat2DataEventArgs.get_ElapsedTime">
-    <summary>
-      <para>Retrieves the total elapsed time of the write operation.</para>
-    </summary>
-    <param name="value">
-      <para>Elapsed time, in seconds, of the write operation.</para>
-    </param>
+    <summary>Retrieves the total elapsed time of the write operation.</summary>
+    <param name="value">Elapsed time, in seconds, of the write operation.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -46,29 +37,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="DDiscFormat2DataEvents" />
-    <seealso cref="IDiscFormat2DataEventArgs" />
   </member>
   <member name="IDiscFormat2DataEventArgs.get_RemainingTime">
-    <summary>
-      <para>Retrieves the estimated remaining time of the write operation.</para>
-    </summary>
-    <param name="value">
-      <para>Estimated time, in seconds, needed for the remainder of the write operation.</para>
-    </param>
+    <summary>Retrieves the estimated remaining time of the write operation.</summary>
+    <param name="value">Estimated time, in seconds, needed for the remainder of the write operation.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -76,32 +62,24 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The estimate for a single write operation can vary as the operation progresses. The drive provides updated information that can affect the projected duration of the write operation.</para>
-    </remarks>
-    <seealso cref="DDiscFormat2DataEvents" />
-    <seealso cref="IDiscFormat2DataEventArgs" />
   </member>
   <member name="IDiscFormat2DataEventArgs.get_TotalTime">
-    <summary>
-      <para>Retrieves the estimated total time for write operation.</para>
-    </summary>
-    <param name="value">
-      <para>Estimated time, in seconds, for write operation.</para>
-    </param>
+    <summary>Retrieves the estimated total time for write operation.</summary>
+    <param name="value">Estimated time, in seconds, for write operation.</param>
     <returns>
       <para>S_OK is returned on success, but other success codes may be returned as a result of implementation. The following error codes are commonly returned on operation failure, but do not represent the only possible error values:</para>
       <list type="table">
@@ -109,32 +87,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>E_POINTER</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>E_POINTER</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Pointer is not valid.</para>
-            <para>Value: 0x80004003</para>
-          </description>
-        </item>
+          <description>Pointer is not valid.<para>Value: 0x80004003</para></description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>The estimate for a single write operation can vary as the operation progresses. The drive provides updated information that can affect the projected duration of the write operation.</para>
-    </remarks>
-    <seealso cref="DDiscFormat2DataEvents" />
-    <seealso cref="IDiscFormat2DataEventArgs" />
   </member>
   <member name="IDiscFormat2DataEventArgs">
     <summary>
       <para>Use this interface to retrieve information about the current write operation.</para>
       <para>This interface is passed to the <see cref="DDiscFormat2DataEvents.Update" /> method that you implement.</para>
     </summary>
-    <seealso cref="DDiscFormat2DataEvents" />
-    <seealso cref="IDiscFormat2Data" />
-    <seealso cref="IWriteEngine2EventArgs" />
   </member>
 </doc>

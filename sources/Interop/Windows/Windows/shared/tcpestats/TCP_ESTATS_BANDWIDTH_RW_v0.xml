@@ -3,22 +3,7 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="TCP_ESTATS_BANDWIDTH_RW_v0">
-    <summary>
-      <para>The <b>TCP_ESTATS_BANDWIDTH_RW_v0</b> structure contains read/write configuration information for extended TCP statistics on bandwidth estimation for a TCP connection.</para>
-    </summary>
-    <remarks>
-      <para>The <b>TCP_ESTATS_BANDWIDTH_RW_v0</b> structure is used as part of the TCP extended statistics feature available on Windows Vista and later.</para>
-      <para>The <b>TCP_ESTATS_BANDWIDTH_RW_v0</b> is defined as version 0 of the structure for  read/write configuration information on bandwidth estimation for a TCP connection.</para>
-      <para>Extended TCP statistics on bandwidth estimation for a TCP connection are enabled and disabled using this structure and the <see cref="SetPerTcp6ConnectionEStats" /> and <see cref="SetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsBandwidth</b> is passed in the <i>EstatsType</i> parameter.</para>
-      <para>The <i>Offset</i> parameter passed to the <see cref="SetPerTcp6ConnectionEStats" /> and <see cref="SetPerTcpConnectionEStats" /> functions is currently unused and must be set to 0. Consequently, the <b>TCP_ESTATS_BANDWIDTH_RW_v0</b> structure pointed to by the <i>Rw</i> parameter when the <i>EstatsType</i> parameter is set to <b>TcpConnectionEstatsBandwidth</b> must have both the <b>EnableCollectionOutbound</b> and <b>EnableCollectionInbound</b> structure members set to the preferred values in a single call to the  <b>SetPerTcp6ConnectionEStats</b> and <b>SetPerTcpConnectionEStats</b> functions.</para>
-      <para>The <b>TCP_ESTATS_BANDWIDTH_RW_v0</b> structure is retrieved by calls to  the <see cref="GetPerTcp6ConnectionEStats" /> or <see cref="GetPerTcpConnectionEStats" /> functions when <b>TcpConnectionEstatsBandwidth</b> is passed in the <i>EstatsType</i> parameter.</para>
-    </remarks>
-    <seealso cref="GetPerTcp6ConnectionEStats" />
-    <seealso cref="GetPerTcpConnectionEStats" />
-    <seealso cref="SetPerTcp6ConnectionEStats" />
-    <seealso cref="SetPerTcpConnectionEStats" />
-    <seealso cref="TCP_BOOLEAN_OPTIONAL" />
-    <seealso cref="TCP_ESTATS_TYPE" />
+    <summary>The <b>TCP_ESTATS_BANDWIDTH_RW_v0</b> structure contains read/write configuration information for extended TCP statistics on bandwidth estimation for a TCP connection.</summary>
   </member>
   <member name="TCP_ESTATS_BANDWIDTH_RW_v0.EnableCollectionOutbound">
     <summary>

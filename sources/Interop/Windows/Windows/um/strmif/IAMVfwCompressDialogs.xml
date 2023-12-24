@@ -4,89 +4,44 @@
 <doc>
   <member name="IAMVfwCompressDialogs.GetState">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>GetState</code> method retrieves the current configuration settings for the VCM codec currently being used.</para>
     </summary>
-    <param name="pState">
-      <para>State of the VCM codec.</para>
-    </param>
-    <param name="pcbState">
-      <para>Pointer to the size of the state.</para>
-    </param>
-    <returns>
-      <para>Return value varies depending on the implementation within each driver.</para>
-    </returns>
-    <remarks>
-      <para>This method calls the  <see cref="ICGetState" /> macro.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVfwCompressDialogs Interface" />
+    <param name="pState">State of the VCM codec.</param>
+    <param name="pcbState">Pointer to the size of the state.</param>
+    <returns>Return value varies depending on the implementation within each driver.</returns>
   </member>
   <member name="IAMVfwCompressDialogs.SendDriverMessage">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SendDriverMessage</code> method sends a driver-specific message.</para>
     </summary>
-    <param name="uMsg">
-      <para>Message to send to the driver.</para>
-    </param>
-    <param name="dw1">
-      <para>Message data.</para>
-    </param>
-    <param name="dw2">
-      <para>Message data.</para>
-    </param>
-    <returns>
-      <para>Return value varies depending on the implementation within each driver.</para>
-    </returns>
-    <remarks>
-      <para>You should never need to use this method. This method can send any private message to the video compressor (codec). Behavior might be undetermined in response to arbitrary messages; use this method at your own risk.</para>
-      <para>This method calls the Video for Windows video compression manager (VCM) <see cref="ICSendMessage" /> function to send the message.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVfwCompressDialogs Interface" />
+    <param name="uMsg">Message to send to the driver.</param>
+    <param name="dw1">Message data.</param>
+    <param name="dw2">Message data.</param>
+    <returns>Return value varies depending on the implementation within each driver.</returns>
   </member>
   <member name="IAMVfwCompressDialogs.SetState">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>SetState</code> method sets configuration for the VCM codec.</para>
     </summary>
-    <param name="pState">
-      <para>State of the VCM codec.</para>
-    </param>
-    <param name="cbState">
-      <para>Size of the state.</para>
-    </param>
-    <returns>
-      <para>Return value varies depending on the implementation within each driver.</para>
-    </returns>
-    <remarks>
-      <para>This method calls the <see cref="ICSetState" /> macro, which notifies a video compression driver to set the state of the compressor.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVfwCompressDialogs Interface" />
+    <param name="pState">State of the VCM codec.</param>
+    <param name="cbState">Size of the state.</param>
+    <returns>Return value varies depending on the implementation within each driver.</returns>
   </member>
   <member name="IAMVfwCompressDialogs.ShowDialog">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>ShowDialog</code> method displays the specified dialog box.</para>
     </summary>
-    <param name="iDialog">
-      <para>Dialog box to display. This is a member of the <see cref="VfwCompressDialogs" /> enumeration.</para>
-    </param>
-    <param name="hwnd">
-      <para>Handle of the dialog box's parent window.</para>
-    </param>
-    <returns>
-      <para>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</para>
-    </returns>
-    <remarks>
-      <para>This method returns an error when asked to display a dialog box while the driver is streaming or displaying another dialog box. While the driver displays the dialog box you can't stream (pause or run) the filter.</para>
-      <para>
-        <code>IAMVfwCompressDialogs.ShowDialog</code> calls the Video for Windows video compression manager (VCM) functions <see cref="ICConfigure" />, <see cref="ICAbout" />, <see cref="ICQueryConfigure" />, and <see cref="ICQueryAbout" /> to display the appropriate dialog box or determine if one exists.</para>
-      <para>The VfwCompressDialog_QueryConfig and VfwCompressDialog_QueryAbout members of the <see cref="VfwCompressDialogs" /> enumeration tell you whether or not the configure dialog or about dialog is available. If passed one of these flags, the filter will return S_OK if the dialog exists, and S_FALSE if it does not. If a dialog is available, you call <code>ShowDialog</code> with the value VfwCompressDialog_Config or VfwCompressDialog_About to bring up the dialog.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/DirectShow/error-and-success-codes">Error and Success Codes</seealso>
-    <seealso cref="IAMVfwCompressDialogs Interface" />
+    <param name="iDialog">Dialog box to display. This is a member of the <see cref="VfwCompressDialogs" /> enumeration.</param>
+    <param name="hwnd">Handle of the dialog box's parent window.</param>
+    <returns>Returns an <b>HRESULT</b> value that depends on the implementation of the interface.</returns>
   </member>
   <member name="IAMVfwCompressDialogs">
     <summary>
+      <para>[The feature associated with this page, <a href="https://docs.microsoft.com//windows/win32/directshow/directshow">DirectShow</a>, is a legacy feature. It has been superseded by <a href="https://docs.microsoft.com//uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> and <see cref="IMFMediaEngine" />. <b>MediaPlayer</b> and <b>IMFMediaEngine</b> have been optimized for Windows 10 and Windows 11. Microsoft strongly recommends that new code use <b>MediaPlayer</b> and <b>IMFMediaEngine</b> instead of <b>DirectShow</b>, when possible. Microsoft suggests that existing code that uses the legacy APIs be rewritten to use the new APIs if possible.]</para>
       <para>The <code>IAMVfwCompressDialogs</code> interface displays a dialog box provided by a Video for Windows (VFW) codec. The <a href="https://docs.microsoft.com//windows/desktop/DirectShow/avi-compressor-filter">AVI Compressor</a> filter implements this interface. Applications can use it to display one of the dialog boxes (Configure or About) provided by VFW codecs, and to set and retrieve compressor status.</para>
     </summary>
   </member>

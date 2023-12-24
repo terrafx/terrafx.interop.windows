@@ -3,27 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WCM_PROFILE_INFO">
-    <summary>
-      <para>The <b>WCM_PROFILE_INFO</b> structure contains information about a specific profile.</para>
-    </summary>
-    <seealso cref="WCM_MEDIA_TYPE" />
+    <summary>The <b>WCM_PROFILE_INFO</b> structure contains information about a specific profile.</summary>
   </member>
   <member name="WCM_PROFILE_INFO.strProfileName">
-    <summary>
-      <para>Type: <b>WCHAR[WCM_MAX_PROFILE_NAME]</b></para>
-      <para>The profile name.</para>
-    </summary>
+    <summary>The profile name.</summary>
   </member>
   <member name="WCM_PROFILE_INFO.AdapterGUID">
-    <summary>
-      <para>Type: <b>GUID</b></para>
-      <para>The GUID of the adapter.</para>
-    </summary>
+    <summary>The GUID of the adapter.</summary>
   </member>
   <member name="WCM_PROFILE_INFO.Media">
-    <summary>
-      <para>Type: <b><see cref="WCM_MEDIA_TYPE" /></b></para>
-      <para>The media type for the profile.</para>
-    </summary>
+    <summary>The media type for the profile.</summary>
   </member>
 </doc>

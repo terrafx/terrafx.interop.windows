@@ -3,12 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ITfInsertAtSelection.InsertEmbeddedAtSelection">
-    <summary>
-      <para>The <b>ITfInsertAtSelection.InsertEmbeddedAtSelection</b> method inserts an <see cref="IDataObject" /> object at the selection or insertion point.</para>
-    </summary>
-    <param name="ec">
-      <para>Identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
+    <summary>The <b>ITfInsertAtSelection.InsertEmbeddedAtSelection</b> method inserts an <see cref="IDataObject" /> object at the selection or insertion point.</summary>
+    <param name="ec">Identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</param>
     <param name="dwFlags">
       <para>Bit field with one of the following values:</para>
       <para>TF_IAS_NOQUERY</para>
@@ -18,12 +14,8 @@
       <para>TF_IAS_NO_DEFAULT_COMPOSITION</para>
       <para>The TSF manager does not create a default composition if a composition is required. The caller must create a composition object that covers the inserted text before releasing the context lock.</para>
     </param>
-    <param name="pDataObject">
-      <para>Pointer to object to insert.</para>
-    </param>
-    <param name="ppRange">
-      <para>Position of the inserted object. Optional.</para>
-    </param>
+    <param name="pDataObject">Pointer to object to insert.</param>
+    <param name="ppRange">Position of the inserted object. Optional.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -31,86 +23,84 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The <i>ec</i> parameter is an invalid edit cookie.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Context object is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The <i>ec</i> parameter is an invalid edit cookie.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOSELECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Context has no selection.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Selection is read-only.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Context object is not on a document stack.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_FORMAT</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOSELECTION</b>
-            </para>
-          </description>
-          <description>
-            <para>Context has no selection.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_READONLY</b>
-            </para>
-          </description>
-          <description>
-            <para>Selection is read-only.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TF_E_FORMAT</b>
-            </para>
-          </description>
-          <description>
-            <para>Context owner cannot handle objects of the type provided by the <i>pDataObject</i> parameter.</para>
-          </description>
-        </item>
+          <description>Context owner cannot handle objects of the type provided by the <i>pDataObject</i> parameter.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>Callers can use the <see cref="ITfQueryEmbedded.QueryInsertEmbedded" /> method to determine if a particular object type is likely to be accepted by this method.</para>
-      <para>To insert text instead of an <b>IDataObject</b> object, use the <see cref="ITfInsertAtSelection.InsertTextAtSelection" /> method.</para>
-    </remarks>
-    <seealso cref="IDataObject" />
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="ITfEditSession.DoEditSession " />
-    <seealso cref="ITfInsertAtSelection " />
-    <seealso cref="ITfInsertAtSelection.InsertTextAtSelection " />
-    <seealso cref="ITfQueryEmbedded.QueryInsertEmbedded " />
   </member>
   <member name="ITfInsertAtSelection.InsertTextAtSelection">
-    <summary>
-      <para>Inserts text at the selection or insertion point.</para>
-    </summary>
-    <param name="ec">
-      <para>Identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</para>
-    </param>
+    <summary>Inserts text at the selection or insertion point.</summary>
+    <param name="ec">Identifies the edit context. This is obtained from <see cref="ITfDocumentMgr.CreateContext" /> or <see cref="ITfEditSession.DoEditSession" />.</param>
     <param name="dwFlags">
       <para>Bit field with one of the following values.</para>
       <list type="table">
@@ -118,41 +108,48 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <b>TF_IAS_NOQUERY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_IAS_NOQUERY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
           <description>
-            <i>ppRange</i> is <b>NULL</b>. This flag cannot be combined with the TF_IAS_QUERYONLY flag.
-</description>
-        </item>
-        <item>
+            <i>ppRange</i> is <b>NULL</b>. This flag cannot be combined with the TF_IAS_QUERYONLY flag.</description>
+        </listheader>
+        <listheader>
           <description>
-            <b>TF_IAS_QUERYONLY</b>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_IAS_QUERYONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The context is not modified, but <i>ppRange</i> is set as if the insert had occurred. Read-only access is sufficient. If this flag is not set, <i>ec</i> must have read/write access. This flag cannot be combined with the TF_IAS_NOQUERY flag.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The context is not modified, but <i>ppRange</i> is set as if the insert had occurred. Read-only access is sufficient. If this flag is not set, <i>ec</i> must have read/write access. This flag cannot be combined with the TF_IAS_NOQUERY flag.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_IAS_NO_DEFAULT_COMPOSITION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <b>TF_IAS_NO_DEFAULT_COMPOSITION</b>
-          </description>
-          <description>
-            <para>The manager will not create a default composition if a composition is required. The caller must create a composition object that covers the inserted text before releasing the context lock.</para>
-          </description>
-        </item>
+          <description>The manager will not create a default composition if a composition is required. The caller must create a composition object that covers the inserted text before releasing the context lock.</description>
+        </listheader>
       </list>
     </param>
-    <param name="pchText">
-      <para>Specifies the text to insert.</para>
-    </param>
-    <param name="cch">
-      <para>Specifies the character count of the text in <i>pchText</i>.</para>
-    </param>
-    <param name="ppRange">
-      <para>Receives the position of the inserted object.</para>
-    </param>
+    <param name="pchText">Specifies the text to insert.</param>
+    <param name="cch">Specifies the character count of the text in <i>pchText</i>.</param>
+    <param name="ppRange">Receives the position of the inserted object.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -160,70 +157,70 @@
           <description>Value</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>The method was successful.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The method was successful.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_NOLOCK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The text service does not have a document lock</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_NOLOCK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TF_E_DISCONNECTED</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Context object is not on a document stack.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>The text service does not have a document lock</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_NOSELECTION</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>Context has no selection.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b>TF_E_DISCONNECTED</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>TS_E_READONLY</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>Context object is not on a document stack.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_NOSELECTION</b>
-            </para>
-          </description>
-          <description>
-            <para>Context has no selection.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>TS_E_READONLY</b>
-            </para>
-          </description>
-          <description>
-            <para>Selection is read-only.</para>
-          </description>
-        </item>
+          <description>Selection is read-only.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To insert an <see cref="IDataObject" /> object instead of text, use <see cref="ITfInsertAtSelection.InsertEmbeddedAtSelection" />.</para>
-    </remarks>
-    <seealso cref="IDataObject" />
-    <seealso cref="ITfDocumentMgr.CreateContext " />
-    <seealso cref="ITfEditSession.DoEditSession " />
-    <seealso cref="ITfInsertAtSelection " />
-    <seealso cref="ITfInsertAtSelection.InsertEmbeddedAtSelection " />
   </member>
   <member name="ITfInsertAtSelection">
-    <summary>
-      <para>The <b>ITfInsertAtSelection</b> interface is implemented by the manager and is used by a text service to insert text or an embedded object in a context. The text service obtains this interface by calling ITfContext.QueryInterface.</para>
-    </summary>
+    <summary>The <b>ITfInsertAtSelection</b> interface is implemented by the manager and is used by a text service to insert text or an embedded object in a context. The text service obtains this interface by calling ITfContext.QueryInterface.</summary>
   </member>
 </doc>

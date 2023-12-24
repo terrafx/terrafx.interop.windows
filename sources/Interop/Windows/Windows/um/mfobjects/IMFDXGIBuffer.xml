@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFDXGIBuffer.GetResource">
-    <summary>
-      <para>Queries the Microsoft DirectX Graphics Infrastructure (DXGI)surface for an interface.</para>
-    </summary>
-    <param name="riid">
-      <para>The interface identifier (IID) of the interface being requested.</para>
-    </param>
-    <param name="ppvObject">
-      <para>Receives a pointer to the interface. The caller must release the interface.</para>
-    </param>
+    <summary>Queries the Microsoft DirectX Graphics Infrastructure (DXGI)surface for an interface.</summary>
+    <param name="riid">The interface identifier (IID) of the interface being requested.</param>
+    <param name="ppvObject">Receives a pointer to the interface. The caller must release the interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -19,72 +13,55 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b> E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The object does not support the specified interface.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b> E_NOINTERFACE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_INVALIDREQUEST</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The object does not support the specified interface.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_INVALIDREQUEST</b>
-            </para>
-          </description>
-          <description>
-            <para>Invalid request.</para>
-          </description>
-        </item>
+          <description>Invalid request.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>You can use this method to get a pointer to the <see cref="ID3D11Texture2D" /> interface of the surface. If the buffer is locked, the method returns <b>MF_E_INVALIDREQUEST</b>.</para>
-    </remarks>
-    <seealso cref="IMFDXGIBuffer" />
   </member>
   <member name="IMFDXGIBuffer.GetSubresourceIndex">
-    <summary>
-      <para>Gets the index of the subresource that is associated with this media buffer.</para>
-    </summary>
-    <param name="puSubresource">
-      <para>Receives the zero-based index of the subresource.</para>
-    </param>
-    <returns>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>The subresource index is specified when you create the media buffer object. See <see cref="MFCreateDXGISurfaceBuffer" />.</para>
-      <para>For more information about texture subresources, see <see cref="ID3D11Device.CreateTexture2D" />.</para>
-    </remarks>
-    <seealso cref="IMFDXGIBuffer" />
+    <summary>Gets the index of the subresource that is associated with this media buffer.</summary>
+    <param name="puSubresource">Receives the zero-based index of the subresource.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IMFDXGIBuffer.GetUnknown">
-    <summary>
-      <para>Gets an <see cref="IUnknown" /> pointer that was previously stored in the media buffer object.</para>
-    </summary>
-    <param name="guid">
-      <para>The identifier of the <see cref="IUnknown" /> pointer.</para>
-    </param>
-    <param name="riid">
-      <para>The interface identifier (IID) of the interface being requested.</para>
-    </param>
-    <param name="ppvObject">
-      <para>Receives a pointer to the interface. The caller must release the interface.</para>
-    </param>
+    <summary>Gets an <see cref="IUnknown" /> pointer that was previously stored in the media buffer object.</summary>
+    <param name="guid">The identifier of the <see cref="IUnknown" /> pointer.</param>
+    <param name="riid">The interface identifier (IID) of the interface being requested.</param>
+    <param name="ppvObject">Receives a pointer to the interface. The caller must release the interface.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -92,51 +69,49 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b> E_NOINTERFACE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
+          <description>The object does not support the specified interface.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>
-              <b> E_NOINTERFACE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>MF_E_NOT_FOUND</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The object does not support the specified interface.</para>
-          </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>MF_E_NOT_FOUND</b>
-            </para>
-          </description>
-          <description>
-            <para>The specified key was not found.</para>
-          </description>
-        </item>
+          <description>The specified key was not found.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFDXGIBuffer" />
-    <seealso cref="IMFDXGIBuffer.SetUnknown" />
   </member>
   <member name="IMFDXGIBuffer.SetUnknown">
-    <summary>
-      <para>Stores an arbitrary <see cref="IUnknown" /> pointer in the media buffer object.</para>
-    </summary>
-    <param name="guid">
-      <para>The identifier for the <see cref="IUnknown" /> pointer. This identifier is used as a key to retrieve the value. It can be any <b>GUID</b> value.</para>
-    </param>
-    <param name="pUnkData">
-      <para>A pointer to the <see cref="IUnknown" /> interface. Set this parameter to <b>NULL</b> to clear a pointer that was previously set.</para>
-    </param>
+    <summary>Stores an arbitrary <see cref="IUnknown" /> pointer in the media buffer object.</summary>
+    <param name="guid">The identifier for the <see cref="IUnknown" /> pointer. This identifier is used as a key to retrieve the value. It can be any <b>GUID</b> value.</param>
+    <param name="pUnkData">A pointer to the <see cref="IUnknown" /> interface. Set this parameter to <b>NULL</b> to clear a pointer that was previously set.</param>
     <returns>
       <para>This method can return one of these values.</para>
       <list type="table">
@@ -144,41 +119,34 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
+          <description>Success.</description>
+        </listheader>
+        <listheader>
           <description>
-            <para>Success.</para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>ERROR_OBJECT_ALREADY_EXISTS</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-        </item>
-        <item>
-          <description>
-            <para>
-              <b>ERROR_OBJECT_ALREADY_EXISTS</b>
-            </para>
-          </description>
-          <description>
-            <para>An item already exists with this key.</para>
-          </description>
-        </item>
+          <description>An item already exists with this key.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>To retrieve the pointer from the object, call <see cref="IMFDXGIBuffer.GetUnknown" />.</para>
-    </remarks>
-    <seealso cref="IMFDXGIBuffer" />
-    <seealso cref="IMFDXGIBuffer.GetUnknown" />
   </member>
   <member name="IMFDXGIBuffer">
-    <summary>
-      <para>Represents a buffer that contains a Microsoft DirectX Graphics Infrastructure (DXGI)surface.</para>
-    </summary>
-    <remarks>
-      <para>To create a DXGImedia buffer, first create the DXGIsurface. Then call <see cref="MFCreateDXGISurfaceBuffer" />.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Represents a buffer that contains a Microsoft DirectX Graphics Infrastructure (DXGI)surface.</summary>
   </member>
 </doc>

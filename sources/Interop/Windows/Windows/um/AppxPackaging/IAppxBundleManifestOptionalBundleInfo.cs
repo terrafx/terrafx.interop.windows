@@ -27,7 +27,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestOptionalBundleInfo*, Guid*, void**, int>)(lpVtbl[0]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, uint>)(lpVtbl[1]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestOptionalBundleInfo*, uint>)(lpVtbl[1]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, uint>)(lpVtbl[2]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestOptionalBundleInfo*, uint>)(lpVtbl[2]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IAppxBundleManifestOptionalBundleInfo.xml' path='doc/member[@name="IAppxBundleManifestOptionalBundleInfo.GetPackageId"]/*' />
@@ -53,15 +53,15 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
     [VtblIndex(3)]
     public HRESULT GetPackageId(IAppxManifestPackageId** packageId)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, IAppxManifestPackageId**, int>)(lpVtbl[3]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), packageId);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestOptionalBundleInfo*, IAppxManifestPackageId**, int>)(lpVtbl[3]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), packageId);
     }
 
     /// <include file='IAppxBundleManifestOptionalBundleInfo.xml' path='doc/member[@name="IAppxBundleManifestOptionalBundleInfo.GetFileName"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName)
+    public HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** fileName)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, ushort**, int>)(lpVtbl[4]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), fileName);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestOptionalBundleInfo*, char**, int>)(lpVtbl[4]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), fileName);
     }
 
     /// <include file='IAppxBundleManifestOptionalBundleInfo.xml' path='doc/member[@name="IAppxBundleManifestOptionalBundleInfo.GetPackageInfoItems"]/*' />
@@ -69,7 +69,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
     [VtblIndex(5)]
     public HRESULT GetPackageInfoItems(IAppxBundleManifestPackageInfoEnumerator** packageInfoItems)
     {
-        return ((delegate* unmanaged<IAppxBundleManifestOptionalBundleInfo*, IAppxBundleManifestPackageInfoEnumerator**, int>)(lpVtbl[5]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), packageInfoItems);
+        return ((delegate* unmanaged[MemberFunction]<IAppxBundleManifestOptionalBundleInfo*, IAppxBundleManifestPackageInfoEnumerator**, int>)(lpVtbl[5]))((IAppxBundleManifestOptionalBundleInfo*)Unsafe.AsPointer(ref this), packageInfoItems);
     }
 
     public interface Interface : IUnknown.Interface
@@ -78,7 +78,7 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
         HRESULT GetPackageId(IAppxManifestPackageId** packageId);
 
         [VtblIndex(4)]
-        HRESULT GetFileName([NativeTypeName("LPWSTR *")] ushort** fileName);
+        HRESULT GetFileName([NativeTypeName("LPWSTR *")] char** fileName);
 
         [VtblIndex(5)]
         HRESULT GetPackageInfoItems(IAppxBundleManifestPackageInfoEnumerator** packageInfoItems);
@@ -88,21 +88,21 @@ public unsafe partial struct IAppxBundleManifestOptionalBundleInfo : IAppxBundle
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IAppxManifestPackageId **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxManifestPackageId**, int> GetPackageId;
 
         [NativeTypeName("HRESULT (LPWSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetFileName;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetFileName;
 
         [NativeTypeName("HRESULT (IAppxBundleManifestPackageInfoEnumerator **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IAppxBundleManifestPackageInfoEnumerator**, int> GetPackageInfoItems;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IAppxBundleManifestPackageInfoEnumerator**, int> GetPackageInfoItems;
     }
 }

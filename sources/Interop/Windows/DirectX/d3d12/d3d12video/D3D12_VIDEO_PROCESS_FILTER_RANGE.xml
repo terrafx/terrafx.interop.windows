@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_PROCESS_FILTER_RANGE">
+    <summary>Defines the range of supported values for an image filter.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_FILTER_RANGE.Minimum">
+    <summary>The minimum value of the filter.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_FILTER_RANGE.Maximum">
+    <summary>The maximum value of the filter.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_FILTER_RANGE.Default">
+    <summary>The default value of the filter.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_FILTER_RANGE.Multiplier">
+    <summary>
+      <para>A multiplier. Use the following formula to translate the filter setting into the actual filter value:</para>
+      <para>
+        <code>Actual Value = Set Value × Multiplier.</code>
+      </para>
+    </summary>
+  </member>
+</doc>

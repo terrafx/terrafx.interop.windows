@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM">
+    <summary>Encapsulates the compressed bitstream output for the encoding operation.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM.pBuffer">
+    <summary>A pointer to a <see cref="ID3D12Resource" /> containing the compressed bitstream buffer. Note that the resource buffer size is not the available size for this encoding operation because <i>FrameStartOffset</i> needs to be taken into account against this size.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_COMPRESSED_BITSTREAM.FrameStartOffset">
+    <summary>A UINT64 specifying th offset into the compressed bitstream where the encoder may start adding the current frame output.</summary>
+  </member>
+</doc>

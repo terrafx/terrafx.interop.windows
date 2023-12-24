@@ -26,7 +26,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IDxcLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, Guid*, void**, int>)(lpVtbl[0]))((IDxcLibrary*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -35,7 +35,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDxcLibrary*, uint>)(lpVtbl[1]))((IDxcLibrary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, uint>)(lpVtbl[1]))((IDxcLibrary*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -44,7 +44,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDxcLibrary*, uint>)(lpVtbl[2]))((IDxcLibrary*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, uint>)(lpVtbl[2]))((IDxcLibrary*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.SetMalloc"]/*' />
@@ -52,7 +52,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(3)]
     public HRESULT SetMalloc(IMalloc* pMalloc)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, IMalloc*, int>)(lpVtbl[3]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pMalloc);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, IMalloc*, int>)(lpVtbl[3]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pMalloc);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobFromBlob"]/*' />
@@ -60,15 +60,15 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(4)]
     public HRESULT CreateBlobFromBlob(IDxcBlob* pBlob, [NativeTypeName("UINT32")] uint offset, [NativeTypeName("UINT32")] uint length, IDxcBlob** ppResult)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)(lpVtbl[4]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, offset, length, ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, IDxcBlob*, uint, uint, IDxcBlob**, int>)(lpVtbl[4]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, offset, length, ppResult);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobFromFile"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding)
+    public HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] char* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, ushort*, uint*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pFileName, codePage, pBlobEncoding);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, char*, uint*, IDxcBlobEncoding**, int>)(lpVtbl[5]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pFileName, codePage, pBlobEncoding);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobWithEncodingFromPinned"]/*' />
@@ -76,7 +76,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(6)]
     public HRESULT CreateBlobWithEncodingFromPinned([NativeTypeName("LPCVOID")] void* pText, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)(lpVtbl[6]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pText, size, codePage, pBlobEncoding);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)(lpVtbl[6]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pText, size, codePage, pBlobEncoding);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobWithEncodingOnHeapCopy"]/*' />
@@ -84,7 +84,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(7)]
     public HRESULT CreateBlobWithEncodingOnHeapCopy([NativeTypeName("LPCVOID")] void* pText, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)(lpVtbl[7]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pText, size, codePage, pBlobEncoding);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, void*, uint, uint, IDxcBlobEncoding**, int>)(lpVtbl[7]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pText, size, codePage, pBlobEncoding);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateBlobWithEncodingOnMalloc"]/*' />
@@ -92,7 +92,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(8)]
     public HRESULT CreateBlobWithEncodingOnMalloc([NativeTypeName("LPCVOID")] void* pText, IMalloc* pIMalloc, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)(lpVtbl[8]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pText, pIMalloc, size, codePage, pBlobEncoding);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int>)(lpVtbl[8]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pText, pIMalloc, size, codePage, pBlobEncoding);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateIncludeHandler"]/*' />
@@ -100,7 +100,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(9)]
     public HRESULT CreateIncludeHandler(IDxcIncludeHandler** ppResult)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, IDxcIncludeHandler**, int>)(lpVtbl[9]))((IDxcLibrary*)Unsafe.AsPointer(ref this), ppResult);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, IDxcIncludeHandler**, int>)(lpVtbl[9]))((IDxcLibrary*)Unsafe.AsPointer(ref this), ppResult);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.CreateStreamFromBlobReadOnly"]/*' />
@@ -108,7 +108,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(10)]
     public HRESULT CreateStreamFromBlobReadOnly(IDxcBlob* pBlob, IStream** ppStream)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IStream**, int>)(lpVtbl[10]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, ppStream);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, IDxcBlob*, IStream**, int>)(lpVtbl[10]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, ppStream);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.GetBlobAsUtf8"]/*' />
@@ -116,7 +116,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(11)]
     public HRESULT GetBlobAsUtf8(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)(lpVtbl[11]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, pBlobEncoding);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)(lpVtbl[11]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, pBlobEncoding);
     }
 
     /// <include file='IDxcLibrary.xml' path='doc/member[@name="IDxcLibrary.GetBlobAsUtf16"]/*' />
@@ -124,7 +124,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
     [VtblIndex(12)]
     public HRESULT GetBlobAsUtf16(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
     {
-        return ((delegate* unmanaged<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)(lpVtbl[12]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, pBlobEncoding);
+        return ((delegate* unmanaged[MemberFunction]<IDxcLibrary*, IDxcBlob*, IDxcBlobEncoding**, int>)(lpVtbl[12]))((IDxcLibrary*)Unsafe.AsPointer(ref this), pBlob, pBlobEncoding);
     }
 
     public interface Interface : IUnknown.Interface
@@ -136,7 +136,7 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
         HRESULT CreateBlobFromBlob(IDxcBlob* pBlob, [NativeTypeName("UINT32")] uint offset, [NativeTypeName("UINT32")] uint length, IDxcBlob** ppResult);
 
         [VtblIndex(5)]
-        HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] ushort* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding);
+        HRESULT CreateBlobFromFile([NativeTypeName("LPCWSTR")] char* pFileName, [NativeTypeName("UINT32 *")] uint* codePage, IDxcBlobEncoding** pBlobEncoding);
 
         [VtblIndex(6)]
         HRESULT CreateBlobWithEncodingFromPinned([NativeTypeName("LPCVOID")] void* pText, [NativeTypeName("UINT32")] uint size, [NativeTypeName("UINT32")] uint codePage, IDxcBlobEncoding** pBlobEncoding);
@@ -164,42 +164,42 @@ public unsafe partial struct IDxcLibrary : IDxcLibrary.Interface, INativeGuid
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMalloc *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMalloc*, int> SetMalloc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMalloc*, int> SetMalloc;
 
         [NativeTypeName("HRESULT (IDxcBlob *, UINT32, UINT32, IDxcBlob **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDxcBlob*, uint, uint, IDxcBlob**, int> CreateBlobFromBlob;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDxcBlob*, uint, uint, IDxcBlob**, int> CreateBlobFromBlob;
 
         [NativeTypeName("HRESULT (LPCWSTR, UINT32 *, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint*, IDxcBlobEncoding**, int> CreateBlobFromFile;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint*, IDxcBlobEncoding**, int> CreateBlobFromFile;
 
         [NativeTypeName("HRESULT (LPCVOID, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingFromPinned;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingFromPinned;
 
         [NativeTypeName("HRESULT (LPCVOID, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingOnHeapCopy;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingOnHeapCopy;
 
         [NativeTypeName("HRESULT (LPCVOID, IMalloc *, UINT32, UINT32, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingOnMalloc;
+        public delegate* unmanaged[MemberFunction]<TSelf*, void*, IMalloc*, uint, uint, IDxcBlobEncoding**, int> CreateBlobWithEncodingOnMalloc;
 
         [NativeTypeName("HRESULT (IDxcIncludeHandler **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDxcIncludeHandler**, int> CreateIncludeHandler;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDxcIncludeHandler**, int> CreateIncludeHandler;
 
         [NativeTypeName("HRESULT (IDxcBlob *, IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDxcBlob*, IStream**, int> CreateStreamFromBlobReadOnly;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDxcBlob*, IStream**, int> CreateStreamFromBlobReadOnly;
 
         [NativeTypeName("HRESULT (IDxcBlob *, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDxcBlob*, IDxcBlobEncoding**, int> GetBlobAsUtf8;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDxcBlob*, IDxcBlobEncoding**, int> GetBlobAsUtf8;
 
         [NativeTypeName("HRESULT (IDxcBlob *, IDxcBlobEncoding **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDxcBlob*, IDxcBlobEncoding**, int> GetBlobAsUtf16;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDxcBlob*, IDxcBlobEncoding**, int> GetBlobAsUtf16;
     }
 }

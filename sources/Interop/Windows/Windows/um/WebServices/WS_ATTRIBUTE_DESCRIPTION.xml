@@ -3,32 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_ATTRIBUTE_DESCRIPTION">
-    <summary>
-      <para>Represents a mapping between a C data type and an XML attribute.</para>
-    </summary>
+    <summary>Represents a mapping between a C data type and an XML attribute.</summary>
   </member>
   <member name="WS_ATTRIBUTE_DESCRIPTION.attributeLocalName">
-    <summary>
-      <para>The local name of the XML attribute.</para>
-    </summary>
+    <summary>The local name of the XML attribute.</summary>
   </member>
   <member name="WS_ATTRIBUTE_DESCRIPTION.attributeNs">
-    <summary>
-      <para>The namespace of the XML attribute.</para>
-    </summary>
+    <summary>The namespace of the XML attribute.</summary>
   </member>
   <member name="WS_ATTRIBUTE_DESCRIPTION.type">
     <summary>
       <para>The type that corresponds to the XML attribute.</para>
-      <para>Not all types support being read and written as attributes.  If the
-documentation for the <see cref="WS_TYPE" /> indicates it supports
-<see cref="WS_ATTRIBUTE_TYPE_MAPPING" />, then it can be used with this structure.</para>
+      <para>Not all types support being read and written as attributes. If the documentation for the <see cref="WS_TYPE" /> indicates it supports<see cref="WS_ATTRIBUTE_TYPE_MAPPING" />, then it can be used with this structure.</para>
     </summary>
   </member>
   <member name="WS_ATTRIBUTE_DESCRIPTION.typeDescription">
-    <summary>
-      <para>Additional information about the type.  Each type has a different description
-structure.  This may be <b>NULL</b>, depending on the <see cref="WS_TYPE" />.</para>
-    </summary>
+    <summary>Additional information about the type. Each type has a different description structure. This may be <b>NULL</b>, depending on the <see cref="WS_TYPE" />.</summary>
   </member>
 </doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="LSA_LAST_INTER_LOGON_INFO">
+    <summary>The <b>LSA_LAST_INTER_LOGON_INFO</b> structure contains information about a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">logon session</a>.</summary>
+  </member>
+  <member name="LSA_LAST_INTER_LOGON_INFO.LastSuccessfulLogon">
+    <summary>The time that the session owner most recently logged on successfully.</summary>
+  </member>
+  <member name="LSA_LAST_INTER_LOGON_INFO.LastFailedLogon">
+    <summary>The time of the most recent failed attempt to log on.</summary>
+  </member>
+  <member name="LSA_LAST_INTER_LOGON_INFO.FailedAttemptCountSinceLastSuccessfulLogon">
+    <summary>The number of failed attempts to log on since the last successful log on.</summary>
+  </member>
+</doc>

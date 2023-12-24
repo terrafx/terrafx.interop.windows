@@ -19,32 +19,4 @@ public static unsafe partial class IImageRecompressTests
     {
         Assert.That(typeof(IImageRecompress).GUID, Is.EqualTo(IID_IImageRecompress));
     }
-
-    /// <summary>Validates that the <see cref="IImageRecompress" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IImageRecompress>(), Is.EqualTo(sizeof(IImageRecompress)));
-    }
-
-    /// <summary>Validates that the <see cref="IImageRecompress" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IImageRecompress).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IImageRecompress" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IImageRecompress), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IImageRecompress), Is.EqualTo(4));
-        }
-    }
 }

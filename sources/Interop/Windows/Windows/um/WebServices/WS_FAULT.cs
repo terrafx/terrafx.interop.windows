@@ -27,5 +27,6 @@ public unsafe partial struct WS_FAULT
     public WS_STRING node;
 
     /// <include file='WS_FAULT.xml' path='doc/member[@name="WS_FAULT.detail"]/*' />
+    [NativeTypeName("WS_XML_BUFFER*")]
     public IntPtr detail;
 }

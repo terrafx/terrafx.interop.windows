@@ -25,7 +25,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, Guid*, void**, int>)(lpVtbl[0]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, Guid*, void**, int>)(lpVtbl[0]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, uint>)(lpVtbl[1]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, uint>)(lpVtbl[1]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, uint>)(lpVtbl[2]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, uint>)(lpVtbl[2]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, uint*, int>)(lpVtbl[3]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, uint*, int>)(lpVtbl[3]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.CreateResultImage"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(7)]
     public HRESULT CreateResultImage(IStream** resultStream)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, IStream**, int>)(lpVtbl[7]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), resultStream);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, IStream**, int>)(lpVtbl[7]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), resultStream);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.AddTrack"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(8)]
     public HRESULT AddTrack(IMAPI_CD_SECTOR_TYPE dataType, IStream* data, [NativeTypeName("LONG *")] int* trackIndex)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, IMAPI_CD_SECTOR_TYPE, IStream*, int*, int>)(lpVtbl[8]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), dataType, data, trackIndex);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, IMAPI_CD_SECTOR_TYPE, IStream*, int*, int>)(lpVtbl[8]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), dataType, data, trackIndex);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.AddSpecialPregap"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(9)]
     public HRESULT AddSpecialPregap(IStream* data)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, IStream*, int>)(lpVtbl[9]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), data);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, IStream*, int>)(lpVtbl[9]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), data);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.AddSubcodeRWGenerator"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(10)]
     public HRESULT AddSubcodeRWGenerator(IStream* subcode)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, IStream*, int>)(lpVtbl[10]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), subcode);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, IStream*, int>)(lpVtbl[10]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), subcode);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.put_ResultingImageType"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(11)]
     public HRESULT put_ResultingImageType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE, int>)(lpVtbl[11]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE, int>)(lpVtbl[11]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_ResultingImageType"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(12)]
     public HRESULT get_ResultingImageType(IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE* value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int>)(lpVtbl[12]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int>)(lpVtbl[12]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_StartOfLeadout"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(13)]
     public HRESULT get_StartOfLeadout([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, int*, int>)(lpVtbl[13]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, int*, int>)(lpVtbl[13]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.put_StartOfLeadoutLimit"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(14)]
     public HRESULT put_StartOfLeadoutLimit([NativeTypeName("LONG")] int value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, int, int>)(lpVtbl[14]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, int, int>)(lpVtbl[14]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_StartOfLeadoutLimit"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(15)]
     public HRESULT get_StartOfLeadoutLimit([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, int*, int>)(lpVtbl[15]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, int*, int>)(lpVtbl[15]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.put_DisableGaplessAudio"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(16)]
     public HRESULT put_DisableGaplessAudio([NativeTypeName("VARIANT_BOOL")] short value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, short, int>)(lpVtbl[16]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, short, int>)(lpVtbl[16]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_DisableGaplessAudio"]/*' />
@@ -163,23 +163,23 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(17)]
     public HRESULT get_DisableGaplessAudio([NativeTypeName("VARIANT_BOOL *")] short* value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, short*, int>)(lpVtbl[17]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, short*, int>)(lpVtbl[17]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.put_MediaCatalogNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(18)]
-    public HRESULT put_MediaCatalogNumber([NativeTypeName("BSTR")] ushort* value)
+    public HRESULT put_MediaCatalogNumber([NativeTypeName("BSTR")] char* value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, ushort*, int>)(lpVtbl[18]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, char*, int>)(lpVtbl[18]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_MediaCatalogNumber"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(19)]
-    public HRESULT get_MediaCatalogNumber([NativeTypeName("BSTR *")] ushort** value)
+    public HRESULT get_MediaCatalogNumber([NativeTypeName("BSTR *")] char** value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, ushort**, int>)(lpVtbl[19]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, char**, int>)(lpVtbl[19]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.put_StartingTrackNumber"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(20)]
     public HRESULT put_StartingTrackNumber([NativeTypeName("LONG")] int value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, int, int>)(lpVtbl[20]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, int, int>)(lpVtbl[20]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_StartingTrackNumber"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(21)]
     public HRESULT get_StartingTrackNumber([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, int*, int>)(lpVtbl[21]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, int*, int>)(lpVtbl[21]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_TrackInfo"]/*' />
@@ -203,7 +203,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(22)]
     public HRESULT get_TrackInfo([NativeTypeName("LONG")] int trackIndex, IRawCDImageTrackInfo** value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, int, IRawCDImageTrackInfo**, int>)(lpVtbl[22]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), trackIndex, value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, int, IRawCDImageTrackInfo**, int>)(lpVtbl[22]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), trackIndex, value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_NumberOfExistingTracks"]/*' />
@@ -211,7 +211,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(23)]
     public HRESULT get_NumberOfExistingTracks([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, int*, int>)(lpVtbl[23]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, int*, int>)(lpVtbl[23]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_LastUsedUserSectorInImage"]/*' />
@@ -219,7 +219,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(24)]
     public HRESULT get_LastUsedUserSectorInImage([NativeTypeName("LONG *")] int* value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, int*, int>)(lpVtbl[24]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, int*, int>)(lpVtbl[24]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     /// <include file='IRawCDImageCreator.xml' path='doc/member[@name="IRawCDImageCreator.get_ExpectedTableOfContents"]/*' />
@@ -227,7 +227,7 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
     [VtblIndex(25)]
     public HRESULT get_ExpectedTableOfContents(SAFEARRAY** value)
     {
-        return ((delegate* unmanaged<IRawCDImageCreator*, SAFEARRAY**, int>)(lpVtbl[25]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
+        return ((delegate* unmanaged[MemberFunction]<IRawCDImageCreator*, SAFEARRAY**, int>)(lpVtbl[25]))((IRawCDImageCreator*)Unsafe.AsPointer(ref this), value);
     }
 
     public interface Interface : IDispatch.Interface
@@ -266,10 +266,10 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
         HRESULT get_DisableGaplessAudio([NativeTypeName("VARIANT_BOOL *")] short* value);
 
         [VtblIndex(18)]
-        HRESULT put_MediaCatalogNumber([NativeTypeName("BSTR")] ushort* value);
+        HRESULT put_MediaCatalogNumber([NativeTypeName("BSTR")] char* value);
 
         [VtblIndex(19)]
-        HRESULT get_MediaCatalogNumber([NativeTypeName("BSTR *")] ushort** value);
+        HRESULT get_MediaCatalogNumber([NativeTypeName("BSTR *")] char** value);
 
         [VtblIndex(20)]
         HRESULT put_StartingTrackNumber([NativeTypeName("LONG")] int value);
@@ -294,81 +294,81 @@ public unsafe partial struct IRawCDImageCreator : IRawCDImageCreator.Interface, 
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (IStream **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream**, int> CreateResultImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream**, int> CreateResultImage;
 
         [NativeTypeName("HRESULT (IMAPI_CD_SECTOR_TYPE, IStream *, LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_CD_SECTOR_TYPE, IStream*, int*, int> AddTrack;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_CD_SECTOR_TYPE, IStream*, int*, int> AddTrack;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, int> AddSpecialPregap;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, int> AddSpecialPregap;
 
         [NativeTypeName("HRESULT (IStream *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IStream*, int> AddSubcodeRWGenerator;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IStream*, int> AddSubcodeRWGenerator;
 
         [NativeTypeName("HRESULT (IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE, int> put_ResultingImageType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE, int> put_ResultingImageType;
 
         [NativeTypeName("HRESULT (IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int> get_ResultingImageType;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMAPI_FORMAT2_RAW_CD_DATA_SECTOR_TYPE*, int> get_ResultingImageType;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_StartOfLeadout;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_StartOfLeadout;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_StartOfLeadoutLimit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_StartOfLeadoutLimit;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_StartOfLeadoutLimit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_StartOfLeadoutLimit;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short, int> put_DisableGaplessAudio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short, int> put_DisableGaplessAudio;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_DisableGaplessAudio;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_DisableGaplessAudio;
 
         [NativeTypeName("HRESULT (BSTR) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, int> put_MediaCatalogNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, int> put_MediaCatalogNumber;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> get_MediaCatalogNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> get_MediaCatalogNumber;
 
         [NativeTypeName("HRESULT (LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, int> put_StartingTrackNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, int> put_StartingTrackNumber;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_StartingTrackNumber;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_StartingTrackNumber;
 
         [NativeTypeName("HRESULT (LONG, IRawCDImageTrackInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, IRawCDImageTrackInfo**, int> get_TrackInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, IRawCDImageTrackInfo**, int> get_TrackInfo;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_NumberOfExistingTracks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_NumberOfExistingTracks;
 
         [NativeTypeName("HRESULT (LONG *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_LastUsedUserSectorInImage;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_LastUsedUserSectorInImage;
 
         [NativeTypeName("HRESULT (SAFEARRAY **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, SAFEARRAY**, int> get_ExpectedTableOfContents;
+        public delegate* unmanaged[MemberFunction]<TSelf*, SAFEARRAY**, int> get_ExpectedTableOfContents;
     }
 }

@@ -37,7 +37,7 @@ public partial struct IMPORT_OBJECT_HEADER
     public uint SizeOfData;
 
     /// <include file='IMPORT_OBJECT_HEADER.xml' path='doc/member[@name="IMPORT_OBJECT_HEADER.Anonymous"]/*' />
-    [NativeTypeName("IMPORT_OBJECT_HEADER::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/winnt.h:20562:5)")]
+    [NativeTypeName("__AnonymousRecord_winnt_L20612_C5")]
     public _Anonymous_e__Union Anonymous;
 
     public ushort _bitfield;
@@ -47,7 +47,7 @@ public partial struct IMPORT_OBJECT_HEADER
     public ushort Type
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)(_bitfield & 0x3u);
         }
@@ -64,7 +64,7 @@ public partial struct IMPORT_OBJECT_HEADER
     public ushort NameType
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 2) & 0x7u);
         }
@@ -81,7 +81,7 @@ public partial struct IMPORT_OBJECT_HEADER
     public ushort Reserved
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        get
+        readonly get
         {
             return (ushort)((_bitfield >> 5) & 0x7FFu);
         }

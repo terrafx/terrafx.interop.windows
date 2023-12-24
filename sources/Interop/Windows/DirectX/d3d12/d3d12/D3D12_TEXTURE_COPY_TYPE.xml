@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_TEXTURE_COPY_TYPE">
+    <summary>Specifies what type of texture copy is to take place.</summary>
+  </member>
+  <member name="D3D12_TEXTURE_COPY_TYPE.D3D12_TEXTURE_COPY_TYPE_SUBRESOURCE_INDEX">
+    <summary>Indicates a subresource, identified by an index, is to be copied.</summary>
+  </member>
+  <member name="D3D12_TEXTURE_COPY_TYPE.D3D12_TEXTURE_COPY_TYPE_PLACED_FOOTPRINT">
+    <summary>Indicates a place footprint, identified by a <see cref="D3D12_PLACED_SUBRESOURCE_FOOTPRINT" /> structure, is to be copied.</summary>
+  </member>
+</doc>

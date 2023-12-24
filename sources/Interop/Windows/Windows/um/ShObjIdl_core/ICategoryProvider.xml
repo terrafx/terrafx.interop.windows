@@ -3,146 +3,62 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="ICategoryProvider.CanCategorizeOnSCID">
-    <summary>
-      <para>Determines whether a column can be used as a category.</para>
-    </summary>
-    <param name="pscid">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a>*</b></para>
-      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure that identifies the column. Valid only when S_OK is returned. The GUID contained in this structure is then passed to <see cref="ICategoryProvider.CreateCategory" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns S_OK if the column can be used as a category or S_FALSE if not.</para>
-    </returns>
-    <remarks>
-      <para>When using the System Folder View Object in Category view (<b>Show in Groups</b>), the titles of columns for which this method returns S_OK appear in the upper portion of the <b>Arrange Icons By</b> submenu.</para>
-    </remarks>
+    <summary>Determines whether a column can be used as a category.</summary>
+    <param name="pscid">A pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure that identifies the column. Valid only when S_OK is returned. The GUID contained in this structure is then passed to <see cref="ICategoryProvider.CreateCategory" />.</param>
+    <returns>Returns S_OK if the column can be used as a category or S_FALSE if not.</returns>
   </member>
   <member name="ICategoryProvider.CreateCategory">
-    <summary>
-      <para>Creates a category object.</para>
-    </summary>
-    <param name="pguid">
-      <para>Type: <b>const GUID*</b></para>
-      <para>A pointer to the <b>GUID</b> for the category object.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>The identifier of the object to return. Currently, the only value supported by the system folder view object is IID_ICategorizer.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address of a pointer to the category object.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Creates a category object.</summary>
+    <param name="pguid">A pointer to the <b>GUID</b> for the category object.</param>
+    <param name="riid">The identifier of the object to return. Currently, the only value supported by the system folder view object is IID_ICategorizer.</param>
+    <param name="ppv">When this method returns, contains the address of a pointer to the category object.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICategoryProvider.EnumCategories">
-    <summary>
-      <para>Gets the enumerator for the list of GUIDs that represent categories.</para>
-    </summary>
-    <param name="penum">
-      <para>Type: <b>IEnumGUID**</b></para>
-      <para>When this method returns, contains the address of a pointer to an <b>IEnumGUID</b> interface that specifies a list of GUIDs that represent categories.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>In the case of the system folder view object, <b>ICategoryProvider.EnumCategories</b> is used to obtain additional categories that are not associated with a column. When the list of category GUIDs is returned through <i>penum</i>, the UI attempts to retrieve the name of each category. That name is then displayed as a category choice. In the case of Windows XP, that choice appears in the folder's <b>Arrange Icons By</b> menu.</para>
-    </remarks>
+    <summary>Gets the enumerator for the list of GUIDs that represent categories.</summary>
+    <param name="penum">When this method returns, contains the address of a pointer to an <b>IEnumGUID</b> interface that specifies a list of GUIDs that represent categories.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICategoryProvider.GetCategoryForSCID">
-    <summary>
-      <para>Gets a GUID that represents the categorizer to use for the specified Shell column.</para>
-    </summary>
-    <param name="pscid">
-      <para>Type: <b>const <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a>*</b></para>
-      <para>A pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure.</para>
-    </param>
-    <param name="pguid">
-      <para>Type: <b>GUID*</b></para>
-      <para>When this method returns, contains a pointer to a GUID that represents the categorizer to use for the <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> pointed to by <i>pscid</i>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>Returns either S_OK on success or S_FALSE on failure.</para>
-    </returns>
+    <summary>Gets a GUID that represents the categorizer to use for the specified Shell column.</summary>
+    <param name="pscid">A pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure.</param>
+    <param name="pguid">When this method returns, contains a pointer to a GUID that represents the categorizer to use for the <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> pointed to by <i>pscid</i>.</param>
+    <returns>Returns either S_OK on success or S_FALSE on failure.</returns>
   </member>
   <member name="ICategoryProvider.GetCategoryName">
-    <summary>
-      <para>Gets the name of the specified category.</para>
-    </summary>
-    <param name="pguid">
-      <para>Type: <b>const GUID*</b></para>
-      <para>A pointer to a GUID.</para>
-    </param>
-    <param name="pszName">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>When this method returns, contains a pointer to a string that receives the name of the category.</para>
-    </param>
-    <param name="cch">
-      <para>Type: <b>UINT</b></para>
-      <para>An integer that receives the number of characters in the string.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the name of the specified category.</summary>
+    <param name="pguid">A pointer to a GUID.</param>
+    <param name="pszName">When this method returns, contains a pointer to a string that receives the name of the category.</param>
+    <param name="cch">An integer that receives the number of characters in the string.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="ICategoryProvider.GetDefaultCategory">
-    <summary>
-      <para>Enables the folder to override the default grouping.</para>
-    </summary>
-    <param name="pguid">
-      <para>Type: <b>GUID*</b></para>
-      <para>Not used.</para>
-    </param>
-    <param name="pscid">
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a>*</b></para>
-      <para>When this method returns, contains a pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure.</para>
-    </param>
+    <summary>Enables the folder to override the default grouping.</summary>
+    <param name="pguid">Not used.</param>
+    <param name="pscid">When this method returns, contains a pointer to a <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure.</param>
     <returns>
-      <para>Type: <b>HRESULT</b></para>
       <para>Returns S_OK if successful, or an error value otherwise, including the following:</para>
       <list type="table">
         <listheader>
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_FALSE</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_FALSE</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>There is no default group.</para>
-          </description>
-        </item>
+          <description>There is no default group.</description>
+        </listheader>
       </list>
     </returns>
-    <remarks>
-      <para>
-        <b>ICategoryProvider.GetDefaultCategory</b> returns an <a href="https://docs.microsoft.com//windows/desktop/shell/objects">SHCOLUMNID</a> structure that is used by the default categorizer. The method returns S_FALSE if a default group is not supported.</para>
-      <para>
-        <b>ICategoryProvider.GetDefaultCategory</b> is called only when a folder is first opened. After that, the user's grouping choice is cached in the <see cref="property bag" /> storing the state of the view. To force a call to <b>ICategoryProvider.GetDefaultCategory</b> after the folder is first opened, the <b>Shell</b> and <b>ShellNoRoam</b> registry keys must be deleted. They are found in the following location.</para>
-      <code>
-        <b>HKEY_CURRENT_USER</b>
-        <b>Software</b>
-        <b>Microsoft</b>
-        <b>Windows</b>
-        <b>Shell</b>
-        <b>ShellNoRoam</b>
-      </code>
-    </remarks>
   </member>
   <member name="ICategoryProvider">
-    <summary>
-      <para>Exposes a list of categorizers registered on an <see cref="IShellFolder" />.</para>
-    </summary>
+    <summary>Exposes a list of categorizers registered on an <see cref="IShellFolder" />.</summary>
   </member>
 </doc>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_PROCESS_ALPHA_BLENDING">
+    <summary>Specifies alpha blending parameters for video processing. Used by the [D3D12_VIDEO_PROCESS_INPUT_STREAM_ARGUMENTS]ns-d3d12video-d3d12_video_process_input_stream_arguments) structure.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_ALPHA_BLENDING.Enable">
+    <summary>A boolean value specifying whether alpha blending is enabled.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROCESS_ALPHA_BLENDING.Alpha">
+    <summary>The planar alpha value. The value can range from 0.0 (transparent) to 1.0 (opaque). If <i>Enable</i> is FALSe, this parameter is ignored.</summary>
+  </member>
+</doc>

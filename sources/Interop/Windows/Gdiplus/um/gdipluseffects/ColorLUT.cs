@@ -8,7 +8,7 @@ using TerraFX.Interop.Windows;
 namespace TerraFX.Interop.Gdiplus;
 
 /// <include file='ColorLUT.xml' path='doc/member[@name="ColorLUT"]/*' />
-[NativeTypeName("struct ColorLUT : Effect")]
+[NativeTypeName("struct ColorLUT : Gdiplus::Effect")]
 [NativeInheritance("Effect")]
 public unsafe partial struct ColorLUT
 {
@@ -48,7 +48,7 @@ public unsafe partial struct ColorLUT
     }
 
     [return: NativeTypeName("Gdiplus::Status")]
-    public GpStatus SetParameters([NativeTypeName("const Gdiplus::ColorLUTParams *")] ColorLUTParams* lut)
+    public GpStatus SetParameters([NativeTypeName("const ColorLUTParams *")] ColorLUTParams* lut)
     {
         uint size = 1024;
 

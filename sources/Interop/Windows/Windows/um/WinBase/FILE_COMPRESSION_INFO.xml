@@ -3,40 +3,24 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="FILE_COMPRESSION_INFO">
-    <summary>
-      <para>Receives file compression information. Used for any handles. Use only when calling <see cref="GetFileInformationByHandleEx" />.</para>
-    </summary>
-    <seealso cref="FILE_INFO_BY_HANDLE_CLASS" />
-    <seealso cref="GetFileInformationByHandleEx" />
+    <summary>Receives file compression information. Used for any handles. Use only when calling <see cref="GetFileInformationByHandleEx" />.</summary>
   </member>
   <member name="FILE_COMPRESSION_INFO.CompressedFileSize">
-    <summary>
-      <para>The file size of the compressed file.</para>
-    </summary>
+    <summary>The file size of the compressed file.</summary>
   </member>
   <member name="FILE_COMPRESSION_INFO.CompressionFormat">
-    <summary>
-      <para>The compression format that is used to compress the file.</para>
-    </summary>
+    <summary>The compression format that is used to compress the file.</summary>
   </member>
   <member name="FILE_COMPRESSION_INFO.CompressionUnitShift">
-    <summary>
-      <para>The factor that the compression uses.</para>
-    </summary>
+    <summary>The factor that the compression uses.</summary>
   </member>
   <member name="FILE_COMPRESSION_INFO.ChunkShift">
-    <summary>
-      <para>The number of chunks that are shifted by compression.</para>
-    </summary>
+    <summary>The number of chunks that are shifted by compression.</summary>
   </member>
   <member name="FILE_COMPRESSION_INFO.ClusterShift">
-    <summary>
-      <para>The number of clusters that are shifted by compression.</para>
-    </summary>
+    <summary>The number of clusters that are shifted by compression.</summary>
   </member>
   <member name="FILE_COMPRESSION_INFO.Reserved">
-    <summary>
-      <para>Reserved.</para>
-    </summary>
+    <summary>Reserved.</summary>
   </member>
 </doc>

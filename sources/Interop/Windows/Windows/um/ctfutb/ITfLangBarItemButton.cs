@@ -25,7 +25,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, uint>)(lpVtbl[1]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, uint>)(lpVtbl[1]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, uint>)(lpVtbl[2]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, uint>)(lpVtbl[2]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="ITfLangBarItem.GetInfo" />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [VtblIndex(3)]
     public HRESULT GetInfo(TF_LANGBARITEMINFO* pInfo)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pInfo);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, TF_LANGBARITEMINFO*, int>)(lpVtbl[3]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pInfo);
     }
 
     /// <inheritdoc cref="ITfLangBarItem.GetStatus" />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [VtblIndex(4)]
     public HRESULT GetStatus([NativeTypeName("DWORD *")] uint* pdwStatus)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, uint*, int>)(lpVtbl[4]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pdwStatus);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, uint*, int>)(lpVtbl[4]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pdwStatus);
     }
 
     /// <inheritdoc cref="ITfLangBarItem.Show" />
@@ -67,15 +67,15 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [VtblIndex(5)]
     public HRESULT Show(BOOL fShow)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), fShow);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, BOOL, int>)(lpVtbl[5]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), fShow);
     }
 
     /// <inheritdoc cref="ITfLangBarItem.GetTooltipString" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(6)]
-    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] ushort** pbstrToolTip)
+    public HRESULT GetTooltipString([NativeTypeName("BSTR *")] char** pbstrToolTip)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, ushort**, int>)(lpVtbl[6]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrToolTip);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, char**, int>)(lpVtbl[6]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrToolTip);
     }
 
     /// <include file='ITfLangBarItemButton.xml' path='doc/member[@name="ITfLangBarItemButton.OnClick"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [VtblIndex(7)]
     public HRESULT OnClick(TfLBIClick click, POINT pt, [NativeTypeName("const RECT *")] RECT* prcArea)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, TfLBIClick, POINT, RECT*, int>)(lpVtbl[7]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), click, pt, prcArea);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, TfLBIClick, POINT, RECT*, int>)(lpVtbl[7]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), click, pt, prcArea);
     }
 
     /// <include file='ITfLangBarItemButton.xml' path='doc/member[@name="ITfLangBarItemButton.InitMenu"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [VtblIndex(8)]
     public HRESULT InitMenu(ITfMenu* pMenu)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, ITfMenu*, int>)(lpVtbl[8]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pMenu);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, ITfMenu*, int>)(lpVtbl[8]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pMenu);
     }
 
     /// <include file='ITfLangBarItemButton.xml' path='doc/member[@name="ITfLangBarItemButton.OnMenuSelect"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [VtblIndex(9)]
     public HRESULT OnMenuSelect(uint wID)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, uint, int>)(lpVtbl[9]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), wID);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, uint, int>)(lpVtbl[9]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), wID);
     }
 
     /// <include file='ITfLangBarItemButton.xml' path='doc/member[@name="ITfLangBarItemButton.GetIcon"]/*' />
@@ -107,15 +107,15 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
     [VtblIndex(10)]
     public HRESULT GetIcon(HICON* phIcon)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, HICON*, int>)(lpVtbl[10]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), phIcon);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, HICON*, int>)(lpVtbl[10]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), phIcon);
     }
 
     /// <include file='ITfLangBarItemButton.xml' path='doc/member[@name="ITfLangBarItemButton.GetText"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(11)]
-    public HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText)
+    public HRESULT GetText([NativeTypeName("BSTR *")] char** pbstrText)
     {
-        return ((delegate* unmanaged<ITfLangBarItemButton*, ushort**, int>)(lpVtbl[11]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrText);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarItemButton*, char**, int>)(lpVtbl[11]))((ITfLangBarItemButton*)Unsafe.AsPointer(ref this), pbstrText);
     }
 
     public interface Interface : ITfLangBarItem.Interface
@@ -133,46 +133,46 @@ public unsafe partial struct ITfLangBarItemButton : ITfLangBarItemButton.Interfa
         HRESULT GetIcon(HICON* phIcon);
 
         [VtblIndex(11)]
-        HRESULT GetText([NativeTypeName("BSTR *")] ushort** pbstrText);
+        HRESULT GetText([NativeTypeName("BSTR *")] char** pbstrText);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (TF_LANGBARITEMINFO *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TF_LANGBARITEMINFO*, int> GetInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TF_LANGBARITEMINFO*, int> GetInfo;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetStatus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetStatus;
 
         [NativeTypeName("HRESULT (BOOL) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL, int> Show;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL, int> Show;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetTooltipString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetTooltipString;
 
         [NativeTypeName("HRESULT (TfLBIClick, POINT, const RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;
+        public delegate* unmanaged[MemberFunction]<TSelf*, TfLBIClick, POINT, RECT*, int> OnClick;
 
         [NativeTypeName("HRESULT (ITfMenu *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ITfMenu*, int> InitMenu;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ITfMenu*, int> InitMenu;
 
         [NativeTypeName("HRESULT (UINT) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnMenuSelect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnMenuSelect;
 
         [NativeTypeName("HRESULT (HICON *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HICON*, int> GetIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HICON*, int> GetIcon;
 
         [NativeTypeName("HRESULT (BSTR *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, int> GetText;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, int> GetText;
     }
 }

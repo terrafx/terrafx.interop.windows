@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_CURRENT_SIZE_DESC">
+    <summary>Describes the space currently used by an acceleration structure..</summary>
+  </member>
+  <member name="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_CURRENT_SIZE_DESC.CurrentSizeInBytes">
+    <summary>Space currently used by an acceleration structure. If the acceleration structure hasn’t had a compaction operation performed on it, this size is the same one reported by <see cref="GetRaytracingAccelerationStructurePrebuildInfo" />, and if it has been compacted this size is the same reported for post-build info with <see cref="D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_COMPACTED_SIZE" />.</summary>
+  </member>
+</doc>

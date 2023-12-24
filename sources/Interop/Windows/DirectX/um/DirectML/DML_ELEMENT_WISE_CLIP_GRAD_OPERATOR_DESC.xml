@@ -5,45 +5,23 @@
   <member name="DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC">
     <summary>
       <para>Computes backpropagation gradients for <see cref="element-wise clip" />.</para>
-      <code>f(x, gradient) = if x &lt;= Min then 0
-                 if x &gt;= Max then 0
-                 else        then gradient
-</code>
+      <code>f(x, gradient) = if x &lt;= Min then 0 if x &gt;= Max then 0 else then gradient</code>
       <para>This operator supports in-place execution, meaning <code>OutputTensor</code> is permitted to alias <i>InputTensor</i> during binding.</para>
-      <blockquote>
-        <para>[!IMPORTANT]
-This API is available as part of the DirectML standalone redistributable package (see <a href="https://www.nuget.org/packages/microsoft.ai.directml/">Microsoft.AI.DirectML</a> version 1.5 and later. Also see <a href="https://docs.microsoft.com//windows/ai/directml/dml-version-history">DirectML version history</a>.</para>
-      </blockquote>
     </summary>
   </member>
   <member name="DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC.InputTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The input feature tensor. This is typically the same tensor that was provided as the <i>InputTensor</i> to <see cref="DML_ELEMENT_WISE_CLIP_OPERATOR_DESC" /> in the forward pass.</para>
-    </summary>
+    <summary>The input feature tensor. This is typically the same tensor that was provided as the <i>InputTensor</i> to <see cref="DML_ELEMENT_WISE_CLIP_OPERATOR_DESC" /> in the forward pass.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC.InputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer. Typically this tensor would have the same sizes as the <i>output</i> of the corresponding <b>DML_OPERATOR_ELEMENT_WISE_CLIP</b> in the forward pass.</para>
-    </summary>
+    <summary>The incoming gradient tensor. This is typically obtained from the output of backpropagation of a preceding layer. Typically this tensor would have the same sizes as the <i>output</i> of the corresponding <b>DML_OPERATOR_ELEMENT_WISE_CLIP</b> in the forward pass.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC.OutputGradientTensor">
-    <summary>
-      <para>Type: <b>const <see cref="DML_TENSOR_DESC" />*</b></para>
-      <para>An output tensor containing the backpropagated gradients. Typically this tensor would have the same sizes as the <i>input</i> of the corresponding <b>DML_OPERATOR_ELEMENT_WISE_CLIP</b> in the forward pass.</para>
-    </summary>
+    <summary>An output tensor containing the backpropagated gradients. Typically this tensor would have the same sizes as the <i>input</i> of the corresponding <b>DML_OPERATOR_ELEMENT_WISE_CLIP</b> in the forward pass.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC.Min">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/api/winprog/windows-data-types.md">FLOAT</a></b></para>
-      <para>The minimum value. If x is at or below this value, then the gradient result is 0.</para>
-    </summary>
+    <summary>The minimum value. If x is at or below this value, then the gradient result is 0.</summary>
   </member>
   <member name="DML_ELEMENT_WISE_CLIP_GRAD_OPERATOR_DESC.Max">
-    <summary>
-      <para>Type: <b><a href="https://docs.microsoft.com//windows/win32/api/winprog/windows-data-types.md">FLOAT</a></b></para>
-      <para>The maximum value. If x is at or above this value, then the gradient result is 0.</para>
-    </summary>
+    <summary>The maximum value. If x is at or above this value, then the gradient result is 0.</summary>
   </member>
 </doc>

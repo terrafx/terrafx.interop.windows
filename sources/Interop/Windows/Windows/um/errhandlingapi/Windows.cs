@@ -72,7 +72,7 @@ public static unsafe partial class Windows
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.FatalAppExitW"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
-    public static extern void FatalAppExitW(uint uAction, [NativeTypeName("LPCWSTR")] ushort* lpMessageText);
+    public static extern void FatalAppExitW(uint uAction, [NativeTypeName("LPCWSTR")] char* lpMessageText);
 
     /// <include file='Windows.xml' path='doc/member[@name="Windows.GetThreadErrorMode"]/*' />
     [DllImport("kernel32", ExactSpelling = true)]
@@ -85,5 +85,5 @@ public static unsafe partial class Windows
     public static extern BOOL SetThreadErrorMode([NativeTypeName("DWORD")] uint dwNewMode, [NativeTypeName("LPDWORD")] uint* lpOldMode);
 
     [NativeTypeName("#define FatalAppExit FatalAppExitW")]
-    public static delegate*<uint, ushort*, void> FatalAppExit => &FatalAppExitW;
+    public static delegate*<uint, char*, void> FatalAppExit => &FatalAppExitW;
 }

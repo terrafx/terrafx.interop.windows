@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS">
+    <summary>Specifies support for protected resources in video operations.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS.D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAG_NONE">
+    <summary>Protected resources are not supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS.D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAG_SUPPORTED">
+    <summary>Protected resources are supported.</summary>
+  </member>
+</doc>

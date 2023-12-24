@@ -3,14 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG">
-    <summary>
-      <para>Identifies how to check multisample quality levels.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/direct3d11/d3d11-graphics-reference-resource-enums">Resource Enumerations</seealso>
+    <summary>Identifies how to check multisample quality levels.</summary>
   </member>
   <member name="D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_FLAG.D3D11_CHECK_MULTISAMPLE_QUALITY_LEVELS_TILED_RESOURCE">
-    <summary>
-      <para>Indicates to check the multisample quality levels of a tiled resource.</para>
-    </summary>
+    <summary>Indicates to check the multisample quality levels of a tiled resource.</summary>
   </member>
 </doc>

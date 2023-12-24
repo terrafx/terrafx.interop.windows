@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12Device6.SetBackgroundProcessingMode">
+    <summary>Sets the mode for driver background processing optimizations.</summary>
+    <param name="Mode">The level of dynamic optimization to apply to GPU work that's subsequently submitted.</param>
+    <param name="MeasurementsAction">The action to take with the results of earlier workload instrumentation.</param>
+    <param name="hEventToSignalUponCompletion">An optional handle to signal when the function is complete. For example, if <i>MeasurementsAction</i> is set to <see cref="D3D12_MEASUREMENTS_ACTION_COMMIT_RESULTS" />, then <i>hEventToSignalUponCompletion</i> is signaled when all resulting compilations have finished.</param>
+    <param name="pbFurtherMeasurementsDesired">An optional pointer to a Boolean value. The function sets the value to <code>true</code> to indicate that you should continue profiling, otherwise, <code>false</code>.</param>
+  </member>
+  <member name="ID3D12Device6">
+    <summary>
+      <para>Represents a virtual adapter.</para>
+      <para>This interface extends <see cref="ID3D12Device5" />.</para>
+    </summary>
+  </member>
+</doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IFsiItemTests
     {
         Assert.That(typeof(IFsiItem).GUID, Is.EqualTo(IID_IFsiItem));
     }
-
-    /// <summary>Validates that the <see cref="IFsiItem" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IFsiItem>(), Is.EqualTo(sizeof(IFsiItem)));
-    }
-
-    /// <summary>Validates that the <see cref="IFsiItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IFsiItem).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IFsiItem" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IFsiItem), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IFsiItem), Is.EqualTo(4));
-        }
-    }
 }

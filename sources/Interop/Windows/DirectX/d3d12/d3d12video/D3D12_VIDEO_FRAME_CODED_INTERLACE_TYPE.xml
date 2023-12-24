@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE">
+    <summary>Specifies the interlace type of coded video frames.</summary>
+  </member>
+  <member name="D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE.D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE_NONE">
+    <summary>The coded frames are not interlaced, often referred to as "progressive".</summary>
+  </member>
+  <member name="D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE.D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE_FIELD_BASED">
+    <summary>The coded frames may be interlaced.</summary>
+  </member>
+</doc>

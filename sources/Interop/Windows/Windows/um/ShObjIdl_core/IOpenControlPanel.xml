@@ -3,11 +3,8 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IOpenControlPanel.GetCurrentView">
-    <summary>
-      <para>Gets the most recent Control Panel view: Classic view or Category view.</para>
-    </summary>
+    <summary>Gets the most recent Control Panel view: Classic view or Category view.</summary>
     <param name="pView">
-      <para>Type: <b>CPVIEW*</b></para>
       <para>A pointer that receives the most recent view. Valid values are as follows:</para>
       <h4>CPVIEW_CLASSIC (0x0)</h4>
       <para>0x0. Classic view.</para>
@@ -18,72 +15,23 @@
       <h4>CPVIEW_HOME (0x1)</h4>
       <para>0x1. <b>Windows 7 and later</b>. Equivalent to CPVIEW_CATEGORY.</para>
     </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOpenControlPanel.GetPath">
-    <summary>
-      <para>Gets the path of a specified Control Panel item.</para>
-    </summary>
-    <param name="pszName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the item's canonical name or its <b>GUID</b>. This value can be <b>NULL</b>. See Remarks for further details. For a complete list of Control Panel item canonical names, see <a href="https://docs.microsoft.com//windows/desktop/shell/controlpanel-canonical-names">Canonical Names of Control Panel Items</a>.</para>
-    </param>
-    <param name="pszPath">
-      <para>Type: <b>LPWSTR</b></para>
-      <para>When this method returns, contains the path of the specified Control Panel item as a Unicode string.</para>
-    </param>
-    <param name="cchPath">
-      <para>Type: <b>UINT</b></para>
-      <para>The size of the buffer pointed to by <i>pszPath</i>, in WCHARs.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <remarks>
-      <para>If <i>pszName</i> points to the item's canonical name or <b>GUID</b>, then the path returned is in one of these two forms, depending on the most recent Control Panel view (Classic View or Category View):</para>
-      <code>.{CLSID_ControlPanel}\.{item guid}
-.{CLSID_ControlPanelCategory}\categoryId\.{item guid}
-
-</code>
-      <para>If <i>pszName</i> is <b>NULL</b> then one of these two values is returned:</para>
-      <code>.{CLSID_ControlPanel}
-.{CLSID_ControlPanelCategory}
-
-</code>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//previous-versions/bb757044(v=msdn.10)">Developing for the Control Panel</seealso>
-    <seealso cref="IOpenControlPanel" />
+    <summary>Gets the path of a specified Control Panel item.</summary>
+    <param name="pszName">A pointer to the item's canonical name or its <b>GUID</b>. This value can be <b>NULL</b>. See Remarks for further details. For a complete list of Control Panel item canonical names, see <a href="https://docs.microsoft.com//windows/desktop/shell/controlpanel-canonical-names">Canonical Names of Control Panel Items</a>.</param>
+    <param name="pszPath">When this method returns, contains the path of the specified Control Panel item as a Unicode string.</param>
+    <param name="cchPath">The size of the buffer pointed to by <i>pszPath</i>, in WCHARs.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOpenControlPanel.Open">
-    <summary>
-      <para>Opens the specified Control Panel item, optionally to a specific page.</para>
-    </summary>
-    <param name="pszName">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the item's canonical name as a Unicode string. This parameter is optional and can be <b>NULL</b>. If the calling application passes <b>NULL</b>, then the Control Panel itself opens. For a complete list of Control Panel item canonical names, see <a href="https://docs.microsoft.com//windows/desktop/shell/controlpanel-canonical-names">Canonical Names of Control Panel Items</a>.</para>
-    </param>
-    <param name="pszPage">
-      <para>Type: <b>LPCWSTR</b></para>
-      <para>A pointer to the name of the page within the item to display. This string is appended to the end of the path for Shell folder Control Panel items or appended as a command-line parameter for Control Panel (.cpl) file items. This parameter can be <b>NULL</b>, in which case the first page is shown.</para>
-    </param>
-    <param name="punkSite">
-      <para>Type: <b><see cref="IUnknown" />*</b></para>
-      <para>A pointer to the site for navigating in-frame for Shell folder Control Panel items. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
-    <seealso href="https://docs.microsoft.com//previous-versions/bb757044(v=msdn.10)">Developing for the Control Panel</seealso>
-    <seealso cref="IOpenControlPanel" />
+    <summary>Opens the specified Control Panel item, optionally to a specific page.</summary>
+    <param name="pszName">A pointer to the item's canonical name as a Unicode string. This parameter is optional and can be <b>NULL</b>. If the calling application passes <b>NULL</b>, then the Control Panel itself opens. For a complete list of Control Panel item canonical names, see <a href="https://docs.microsoft.com//windows/desktop/shell/controlpanel-canonical-names">Canonical Names of Control Panel Items</a>.</param>
+    <param name="pszPage">A pointer to the name of the page within the item to display. This string is appended to the end of the path for Shell folder Control Panel items or appended as a command-line parameter for Control Panel (.cpl) file items. This parameter can be <b>NULL</b>, in which case the first page is shown.</param>
+    <param name="punkSite">A pointer to the site for navigating in-frame for Shell folder Control Panel items. This parameter can be <b>NULL</b>.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IOpenControlPanel">
-    <summary>
-      <para>Exposes methods that retrieve the view state of the Control Panel, the path of individual Control Panel items, and that open either the Control Panel itself or an individual Control Panel item.</para>
-    </summary>
+    <summary>Exposes methods that retrieve the view state of the Control Panel, the path of individual Control Panel items, and that open either the Control Panel itself or an individual Control Panel item.</summary>
   </member>
 </doc>

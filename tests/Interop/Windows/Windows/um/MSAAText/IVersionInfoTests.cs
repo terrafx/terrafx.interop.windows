@@ -19,32 +19,4 @@ public static unsafe partial class IVersionInfoTests
     {
         Assert.That(typeof(IVersionInfo).GUID, Is.EqualTo(IID_IVersionInfo));
     }
-
-    /// <summary>Validates that the <see cref="IVersionInfo" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IVersionInfo>(), Is.EqualTo(sizeof(IVersionInfo)));
-    }
-
-    /// <summary>Validates that the <see cref="IVersionInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IVersionInfo).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IVersionInfo" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IVersionInfo), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IVersionInfo), Is.EqualTo(4));
-        }
-    }
 }

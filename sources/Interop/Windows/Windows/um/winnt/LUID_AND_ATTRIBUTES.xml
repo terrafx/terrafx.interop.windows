@@ -3,25 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="LUID_AND_ATTRIBUTES">
-    <summary>
-      <para>The <b>LUID_AND_ATTRIBUTES</b> structure represents a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">locally unique identifier</a> (LUID) and its attributes.</para>
-    </summary>
-    <remarks>
-      <para>An <b>LUID_AND_ATTRIBUTES</b> structure can represent an LUID whose attributes change frequently, such as when the LUID is used to represent privileges in the <see cref="PRIVILEGE_SET" /> structure. Privileges are represented by LUIDs and have attributes indicating whether they are currently enabled or disabled.</para>
-    </remarks>
-    <seealso cref="AllocateLocallyUniqueId" />
-    <seealso cref="LUID" />
-    <seealso cref="PRIVILEGE_SET" />
-    <seealso cref="TOKEN_PRIVILEGES" />
+    <summary>The <b>LUID_AND_ATTRIBUTES</b> structure represents a <a href="https://docs.microsoft.com//windows/desktop/SecGloss/l-gly">locally unique identifier</a> (LUID) and its attributes.</summary>
   </member>
   <member name="LUID_AND_ATTRIBUTES.Luid">
-    <summary>
-      <para>Specifies an <see cref="LUID" /> value.</para>
-    </summary>
+    <summary>Specifies an <see cref="LUID" /> value.</summary>
   </member>
   <member name="LUID_AND_ATTRIBUTES.Attributes">
-    <summary>
-      <para>Specifies attributes of the LUID. This value contains up to 32 one-bit flags. Its meaning is dependent on the definition and use of the LUID.</para>
-    </summary>
+    <summary>Specifies attributes of the LUID. This value contains up to 32 one-bit flags. Its meaning is dependent on the definition and use of the LUID.</summary>
   </member>
 </doc>

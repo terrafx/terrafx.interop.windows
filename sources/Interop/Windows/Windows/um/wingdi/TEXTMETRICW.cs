@@ -54,19 +54,19 @@ public partial struct TEXTMETRICW
 
     /// <include file='TEXTMETRICW.xml' path='doc/member[@name="TEXTMETRICW.tmFirstChar"]/*' />
     [NativeTypeName("WCHAR")]
-    public ushort tmFirstChar;
+    public char tmFirstChar;
 
     /// <include file='TEXTMETRICW.xml' path='doc/member[@name="TEXTMETRICW.tmLastChar"]/*' />
     [NativeTypeName("WCHAR")]
-    public ushort tmLastChar;
+    public char tmLastChar;
 
     /// <include file='TEXTMETRICW.xml' path='doc/member[@name="TEXTMETRICW.tmDefaultChar"]/*' />
     [NativeTypeName("WCHAR")]
-    public ushort tmDefaultChar;
+    public char tmDefaultChar;
 
     /// <include file='TEXTMETRICW.xml' path='doc/member[@name="TEXTMETRICW.tmBreakChar"]/*' />
     [NativeTypeName("WCHAR")]
-    public ushort tmBreakChar;
+    public char tmBreakChar;
 
     /// <include file='TEXTMETRICW.xml' path='doc/member[@name="TEXTMETRICW.tmItalic"]/*' />
     public byte tmItalic;

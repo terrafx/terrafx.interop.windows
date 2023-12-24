@@ -19,32 +19,4 @@ public static unsafe partial class IEnumDiscMasterFormatsTests
     {
         Assert.That(typeof(IEnumDiscMasterFormats).GUID, Is.EqualTo(IID_IEnumDiscMasterFormats));
     }
-
-    /// <summary>Validates that the <see cref="IEnumDiscMasterFormats" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IEnumDiscMasterFormats>(), Is.EqualTo(sizeof(IEnumDiscMasterFormats)));
-    }
-
-    /// <summary>Validates that the <see cref="IEnumDiscMasterFormats" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IEnumDiscMasterFormats).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IEnumDiscMasterFormats" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IEnumDiscMasterFormats), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IEnumDiscMasterFormats), Is.EqualTo(4));
-        }
-    }
 }

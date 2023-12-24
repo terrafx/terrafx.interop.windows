@@ -19,32 +19,4 @@ public static unsafe partial class ISpeechObjectTokenCategoryTests
     {
         Assert.That(typeof(ISpeechObjectTokenCategory).GUID, Is.EqualTo(IID_ISpeechObjectTokenCategory));
     }
-
-    /// <summary>Validates that the <see cref="ISpeechObjectTokenCategory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<ISpeechObjectTokenCategory>(), Is.EqualTo(sizeof(ISpeechObjectTokenCategory)));
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechObjectTokenCategory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(ISpeechObjectTokenCategory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="ISpeechObjectTokenCategory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(ISpeechObjectTokenCategory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(ISpeechObjectTokenCategory), Is.EqualTo(4));
-        }
-    }
 }

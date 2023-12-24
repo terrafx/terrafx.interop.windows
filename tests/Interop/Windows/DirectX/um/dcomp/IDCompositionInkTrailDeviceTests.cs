@@ -19,32 +19,4 @@ public static unsafe partial class IDCompositionInkTrailDeviceTests
     {
         Assert.That(typeof(IDCompositionInkTrailDevice).GUID, Is.EqualTo(IID_IDCompositionInkTrailDevice));
     }
-
-    /// <summary>Validates that the <see cref="IDCompositionInkTrailDevice" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDCompositionInkTrailDevice>(), Is.EqualTo(sizeof(IDCompositionInkTrailDevice)));
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionInkTrailDevice" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDCompositionInkTrailDevice).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDCompositionInkTrailDevice" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDCompositionInkTrailDevice), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDCompositionInkTrailDevice), Is.EqualTo(4));
-        }
-    }
 }

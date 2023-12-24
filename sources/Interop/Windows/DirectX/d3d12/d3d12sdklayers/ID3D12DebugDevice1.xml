@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="ID3D12DebugDevice1.GetDebugParameter">
+    <summary>Gets optional device-wide Debug Layer settings.</summary>
+    <param name="Type">Specifies a <see cref="D3D12_DEBUG_DEVICE_PARAMETER_TYPE" /> value that indicates which debug parameter data to set.</param>
+    <param name="pData">Points to the memory that will be filled with a copy of the debug parameter data. The interpretation of this data depends on the <see cref="D3D12_DEBUG_DEVICE_PARAMETER_TYPE" /> given in the <i>Type</i> parameter.</param>
+    <param name="DataSize">Size in bytes of the memory buffer pointed to by <i>pData</i>.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12DebugDevice1.ReportLiveDeviceObjects">
+    <summary>Specifies the amount of information to report on a device object's lifetime.</summary>
+    <param name="Flags">A value from the <see cref="D3D12_RLDO_FLAGS" /> enumeration. This method uses the value in <i>Flags</i> to determine the amount of information to report about a device object's lifetime.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12DebugDevice1.SetDebugParameter">
+    <summary>Modifies the D3D12 optional device-wide Debug Layer settings.</summary>
+    <param name="Type">Specifies a <see cref="D3D12_DEBUG_DEVICE_PARAMETER_TYPE" /> value that indicates which debug parameter data to get.</param>
+    <param name="pData">Debug parameter data to set.</param>
+    <param name="DataSize">Size in bytes of the data pointed to by <i>pData</i>.</param>
+    <returns>This method returns one of the <a href="https://docs.microsoft.com//windows/desktop/direct3d12/d3d12-graphics-reference-returnvalues">Direct3D 12 Return Codes</a>.</returns>
+  </member>
+  <member name="ID3D12DebugDevice1">
+    <summary>Specifies device-wide debug layer settings.</summary>
+  </member>
+</doc>

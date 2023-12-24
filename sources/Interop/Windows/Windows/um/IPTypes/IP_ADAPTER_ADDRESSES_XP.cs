@@ -13,7 +13,7 @@ namespace TerraFX.Interop.Windows;
 public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
 {
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.Anonymous"]/*' />
-    [NativeTypeName("_IP_ADAPTER_ADDRESSES_XP::(anonymous union at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:353:5)")]
+    [NativeTypeName("__AnonymousRecord_IPTypes_L353_C5")]
     public _Anonymous_e__Union Anonymous;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.Next"]/*' />
@@ -42,19 +42,19 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.DnsSuffix"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* DnsSuffix;
+    public char* DnsSuffix;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.Description"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* Description;
+    public char* Description;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.FriendlyName"]/*' />
     [NativeTypeName("PWCHAR")]
-    public ushort* FriendlyName;
+    public char* FriendlyName;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.PhysicalAddress"]/*' />
     [NativeTypeName("BYTE[8]")]
-    public fixed byte PhysicalAddress[8];
+    public _PhysicalAddress_e__FixedBuffer PhysicalAddress;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.PhysicalAddressLength"]/*' />
     [NativeTypeName("DWORD")]
@@ -81,7 +81,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.ZoneIndices"]/*' />
     [NativeTypeName("DWORD[16]")]
-    public fixed uint ZoneIndices[16];
+    public _ZoneIndices_e__FixedBuffer ZoneIndices;
 
     /// <include file='IP_ADAPTER_ADDRESSES_XP.xml' path='doc/member[@name="IP_ADAPTER_ADDRESSES_XP.FirstPrefix"]/*' />
     [NativeTypeName("PIP_ADAPTER_PREFIX_XP")]
@@ -131,7 +131,7 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
 
         /// <include file='_Anonymous_e__Union.xml' path='doc/member[@name="_Anonymous_e__Union.Anonymous"]/*' />
         [FieldOffset(0)]
-        [NativeTypeName("_IP_ADAPTER_ADDRESSES_XP::(anonymous struct at C:/Program Files (x86)/Windows Kits/10/include/10.0.22621.0/um/IPTypes.h:355:9)")]
+        [NativeTypeName("__AnonymousRecord_IPTypes_L355_C9")]
         public _Anonymous_e__Struct Anonymous;
 
         /// <include file='_Anonymous_e__Struct.xml' path='doc/member[@name="_Anonymous_e__Struct"]/*' />
@@ -145,5 +145,19 @@ public unsafe partial struct IP_ADAPTER_ADDRESSES_XP
             [NativeTypeName("DWORD")]
             public uint IfIndex;
         }
+    }
+
+    /// <include file='_PhysicalAddress_e__FixedBuffer.xml' path='doc/member[@name="_PhysicalAddress_e__FixedBuffer"]/*' />
+    [InlineArray(8)]
+    public partial struct _PhysicalAddress_e__FixedBuffer
+    {
+        public byte e0;
+    }
+
+    /// <include file='_ZoneIndices_e__FixedBuffer.xml' path='doc/member[@name="_ZoneIndices_e__FixedBuffer"]/*' />
+    [InlineArray(16)]
+    public partial struct _ZoneIndices_e__FixedBuffer
+    {
+        public uint e0;
     }
 }

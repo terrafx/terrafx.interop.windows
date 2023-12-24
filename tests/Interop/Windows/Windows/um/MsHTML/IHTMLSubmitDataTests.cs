@@ -19,32 +19,4 @@ public static unsafe partial class IHTMLSubmitDataTests
     {
         Assert.That(typeof(IHTMLSubmitData).GUID, Is.EqualTo(IID_IHTMLSubmitData));
     }
-
-    /// <summary>Validates that the <see cref="IHTMLSubmitData" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IHTMLSubmitData>(), Is.EqualTo(sizeof(IHTMLSubmitData)));
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLSubmitData" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IHTMLSubmitData).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IHTMLSubmitData" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IHTMLSubmitData), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IHTMLSubmitData), Is.EqualTo(4));
-        }
-    }
 }

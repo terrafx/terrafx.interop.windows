@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS">
+    <summary>Specifies errors encountered during the <see cref="ID3D12VideoEncodeCommandList2.EncodeFrame" /> operation.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_NO_ERROR">
+    <summary>No error.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_CODEC_PICTURE_CONTROL_NOT_SUPPORTED">
+    <summary>Specified codec picture control not supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_SUBREGION_LAYOUT_CONFIGURATION_NOT_SUPPORTED">
+    <summary>Specified subregion layout subregion not supported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_INVALID_REFERENCE_PICTURES">
+    <summary>Invalid reference pictures provided.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_RECONFIGURATION_REQUEST_NOT_SUPPORTED">
+    <summary>Reconfiguration request is unsupported.</summary>
+  </member>
+  <member name="D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAGS.D3D12_VIDEO_ENCODER_ENCODE_ERROR_FLAG_INVALID_METADATA_BUFFER_SOURCE">
+    <summary>Invalid metadata buffer source.</summary>
+  </member>
+</doc>

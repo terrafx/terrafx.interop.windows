@@ -12,7 +12,7 @@ namespace TerraFX.Interop.Windows;
 
 /// <include file='DEVICEDUMP_PUBLIC_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_PUBLIC_SUBSECTION"]/*' />
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-public unsafe partial struct DEVICEDUMP_PUBLIC_SUBSECTION
+public partial struct DEVICEDUMP_PUBLIC_SUBSECTION
 {
     /// <include file='DEVICEDUMP_PUBLIC_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_PUBLIC_SUBSECTION.dwFlags"]/*' />
     [NativeTypeName("DWORD")]
@@ -24,45 +24,46 @@ public unsafe partial struct DEVICEDUMP_PUBLIC_SUBSECTION
 
     /// <include file='DEVICEDUMP_PUBLIC_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_PUBLIC_SUBSECTION.szDescription"]/*' />
     [NativeTypeName("CHAR[16]")]
-    public fixed sbyte szDescription[16];
+    public _szDescription_e__FixedBuffer szDescription;
 
     /// <include file='DEVICEDUMP_PUBLIC_SUBSECTION.xml' path='doc/member[@name="DEVICEDUMP_PUBLIC_SUBSECTION.bData"]/*' />
     [NativeTypeName("BYTE[1]")]
-    public fixed byte bData[1];
+    public _bData_e__FixedBuffer bData;
 
     /// <include file='_GPLogTable_e__FixedBuffer.xml' path='doc/member[@name="_GPLogTable_e__FixedBuffer"]/*' />
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(16)]
     public partial struct _GPLogTable_e__FixedBuffer
     {
         public GP_LOG_PAGE_DESCRIPTOR e0;
-        public GP_LOG_PAGE_DESCRIPTOR e1;
-        public GP_LOG_PAGE_DESCRIPTOR e2;
-        public GP_LOG_PAGE_DESCRIPTOR e3;
-        public GP_LOG_PAGE_DESCRIPTOR e4;
-        public GP_LOG_PAGE_DESCRIPTOR e5;
-        public GP_LOG_PAGE_DESCRIPTOR e6;
-        public GP_LOG_PAGE_DESCRIPTOR e7;
-        public GP_LOG_PAGE_DESCRIPTOR e8;
-        public GP_LOG_PAGE_DESCRIPTOR e9;
-        public GP_LOG_PAGE_DESCRIPTOR e10;
-        public GP_LOG_PAGE_DESCRIPTOR e11;
-        public GP_LOG_PAGE_DESCRIPTOR e12;
-        public GP_LOG_PAGE_DESCRIPTOR e13;
-        public GP_LOG_PAGE_DESCRIPTOR e14;
-        public GP_LOG_PAGE_DESCRIPTOR e15;
+    }
+
+    /// <include file='_szDescription_e__FixedBuffer.xml' path='doc/member[@name="_szDescription_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    [InlineArray(16)]
+    public partial struct _szDescription_e__FixedBuffer
+    {
+        public sbyte e0;
+    }
+
+    /// <include file='_bData_e__FixedBuffer.xml' path='doc/member[@name="_bData_e__FixedBuffer"]/*' />
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
+    public partial struct _bData_e__FixedBuffer
+    {
+        public byte e0;
 
         [UnscopedRef]
-        public ref GP_LOG_PAGE_DESCRIPTOR this[int index]
+        public ref byte this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-                return ref AsSpan()[index];
+                return ref Unsafe.Add(ref e0, index);
             }
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         [UnscopedRef]
-        public Span<GP_LOG_PAGE_DESCRIPTOR> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 16);
+        public Span<byte> AsSpan(int length) => MemoryMarshal.CreateSpan(ref e0, length);
     }
 }

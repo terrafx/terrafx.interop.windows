@@ -18,15 +18,15 @@ public unsafe partial struct WINHTTP_PROXY_SETTINGS_EX
 
     /// <include file='WINHTTP_PROXY_SETTINGS_EX.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_EX.pcwszAutoconfigUrl"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pcwszAutoconfigUrl;
+    public char* pcwszAutoconfigUrl;
 
     /// <include file='WINHTTP_PROXY_SETTINGS_EX.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_EX.pcwszProxy"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pcwszProxy;
+    public char* pcwszProxy;
 
     /// <include file='WINHTTP_PROXY_SETTINGS_EX.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_EX.pcwszSecureProxy"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pcwszSecureProxy;
+    public char* pcwszSecureProxy;
 
     /// <include file='WINHTTP_PROXY_SETTINGS_EX.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_EX.cProxyBypasses"]/*' />
     [NativeTypeName("DWORD")]
@@ -34,7 +34,7 @@ public unsafe partial struct WINHTTP_PROXY_SETTINGS_EX
 
     /// <include file='WINHTTP_PROXY_SETTINGS_EX.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_EX.rgpcwszProxyBypasses"]/*' />
     [NativeTypeName("PCWSTR *")]
-    public ushort** rgpcwszProxyBypasses;
+    public char** rgpcwszProxyBypasses;
 
     /// <include file='WINHTTP_PROXY_SETTINGS_EX.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_EX.dwInterfaceIndex"]/*' />
     [NativeTypeName("DWORD")]
@@ -42,5 +42,5 @@ public unsafe partial struct WINHTTP_PROXY_SETTINGS_EX
 
     /// <include file='WINHTTP_PROXY_SETTINGS_EX.xml' path='doc/member[@name="WINHTTP_PROXY_SETTINGS_EX.pcwszConnectionName"]/*' />
     [NativeTypeName("PCWSTR")]
-    public ushort* pcwszConnectionName;
+    public char* pcwszConnectionName;
 }

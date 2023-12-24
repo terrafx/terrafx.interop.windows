@@ -27,7 +27,7 @@ public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface, INativeG
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IWICDdsDecoder*, Guid*, void**, int>)(lpVtbl[0]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IWICDdsDecoder*, Guid*, void**, int>)(lpVtbl[0]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IWICDdsDecoder*, uint>)(lpVtbl[1]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICDdsDecoder*, uint>)(lpVtbl[1]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface, INativeG
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IWICDdsDecoder*, uint>)(lpVtbl[2]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IWICDdsDecoder*, uint>)(lpVtbl[2]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IWICDdsDecoder.xml' path='doc/member[@name="IWICDdsDecoder.GetParameters"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface, INativeG
     [VtblIndex(3)]
     public HRESULT GetParameters(WICDdsParameters* pParameters)
     {
-        return ((delegate* unmanaged<IWICDdsDecoder*, WICDdsParameters*, int>)(lpVtbl[3]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), pParameters);
+        return ((delegate* unmanaged[MemberFunction]<IWICDdsDecoder*, WICDdsParameters*, int>)(lpVtbl[3]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), pParameters);
     }
 
     /// <include file='IWICDdsDecoder.xml' path='doc/member[@name="IWICDdsDecoder.GetFrame"]/*' />
@@ -61,7 +61,7 @@ public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface, INativeG
     [VtblIndex(4)]
     public HRESULT GetFrame(uint arrayIndex, uint mipLevel, uint sliceIndex, IWICBitmapFrameDecode** ppIBitmapFrame)
     {
-        return ((delegate* unmanaged<IWICDdsDecoder*, uint, uint, uint, IWICBitmapFrameDecode**, int>)(lpVtbl[4]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), arrayIndex, mipLevel, sliceIndex, ppIBitmapFrame);
+        return ((delegate* unmanaged[MemberFunction]<IWICDdsDecoder*, uint, uint, uint, IWICBitmapFrameDecode**, int>)(lpVtbl[4]))((IWICDdsDecoder*)Unsafe.AsPointer(ref this), arrayIndex, mipLevel, sliceIndex, ppIBitmapFrame);
     }
 
     public interface Interface : IUnknown.Interface
@@ -77,18 +77,18 @@ public unsafe partial struct IWICDdsDecoder : IWICDdsDecoder.Interface, INativeG
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (WICDdsParameters *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, WICDdsParameters*, int> GetParameters;
+        public delegate* unmanaged[MemberFunction]<TSelf*, WICDdsParameters*, int> GetParameters;
 
         [NativeTypeName("HRESULT (UINT, UINT, UINT, IWICBitmapFrameDecode **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, uint, IWICBitmapFrameDecode**, int> GetFrame;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, uint, IWICBitmapFrameDecode**, int> GetFrame;
     }
 }

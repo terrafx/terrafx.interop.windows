@@ -25,7 +25,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfLangBarEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarEventSink*, Guid*, void**, int>)(lpVtbl[0]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfLangBarEventSink*, uint>)(lpVtbl[1]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarEventSink*, uint>)(lpVtbl[1]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfLangBarEventSink*, uint>)(lpVtbl[2]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarEventSink*, uint>)(lpVtbl[2]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.OnSetFocus"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     [VtblIndex(3)]
     public HRESULT OnSetFocus([NativeTypeName("DWORD")] uint dwThreadId)
     {
-        return ((delegate* unmanaged<ITfLangBarEventSink*, uint, int>)(lpVtbl[3]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarEventSink*, uint, int>)(lpVtbl[3]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId);
     }
 
     /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.OnThreadTerminate"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     [VtblIndex(4)]
     public HRESULT OnThreadTerminate([NativeTypeName("DWORD")] uint dwThreadId)
     {
-        return ((delegate* unmanaged<ITfLangBarEventSink*, uint, int>)(lpVtbl[4]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarEventSink*, uint, int>)(lpVtbl[4]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId);
     }
 
     /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.OnThreadItemChange"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     [VtblIndex(5)]
     public HRESULT OnThreadItemChange([NativeTypeName("DWORD")] uint dwThreadId)
     {
-        return ((delegate* unmanaged<ITfLangBarEventSink*, uint, int>)(lpVtbl[5]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarEventSink*, uint, int>)(lpVtbl[5]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId);
     }
 
     /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.OnModalInput"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     [VtblIndex(6)]
     public HRESULT OnModalInput([NativeTypeName("DWORD")] uint dwThreadId, uint uMsg, WPARAM wParam, LPARAM lParam)
     {
-        return ((delegate* unmanaged<ITfLangBarEventSink*, uint, uint, WPARAM, LPARAM, int>)(lpVtbl[6]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId, uMsg, wParam, lParam);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarEventSink*, uint, uint, WPARAM, LPARAM, int>)(lpVtbl[6]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId, uMsg, wParam, lParam);
     }
 
     /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.ShowFloating"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     [VtblIndex(7)]
     public HRESULT ShowFloating([NativeTypeName("DWORD")] uint dwFlags)
     {
-        return ((delegate* unmanaged<ITfLangBarEventSink*, uint, int>)(lpVtbl[7]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwFlags);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarEventSink*, uint, int>)(lpVtbl[7]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwFlags);
     }
 
     /// <include file='ITfLangBarEventSink.xml' path='doc/member[@name="ITfLangBarEventSink.GetItemFloatingRect"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
     [VtblIndex(8)]
     public HRESULT GetItemFloatingRect([NativeTypeName("DWORD")] uint dwThreadId, [NativeTypeName("const GUID &")] Guid* rguid, RECT* prc)
     {
-        return ((delegate* unmanaged<ITfLangBarEventSink*, uint, Guid*, RECT*, int>)(lpVtbl[8]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId, rguid, prc);
+        return ((delegate* unmanaged[MemberFunction]<ITfLangBarEventSink*, uint, Guid*, RECT*, int>)(lpVtbl[8]))((ITfLangBarEventSink*)Unsafe.AsPointer(ref this), dwThreadId, rguid, prc);
     }
 
     public interface Interface : IUnknown.Interface
@@ -119,30 +119,30 @@ public unsafe partial struct ITfLangBarEventSink : ITfLangBarEventSink.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnSetFocus;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnSetFocus;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnThreadTerminate;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnThreadTerminate;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> OnThreadItemChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> OnThreadItemChange;
 
         [NativeTypeName("HRESULT (DWORD, UINT, WPARAM, LPARAM) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, WPARAM, LPARAM, int> OnModalInput;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, WPARAM, LPARAM, int> OnModalInput;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> ShowFloating;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> ShowFloating;
 
         [NativeTypeName("HRESULT (DWORD, const GUID &, RECT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, Guid*, RECT*, int> GetItemFloatingRect;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, Guid*, RECT*, int> GetItemFloatingRect;
     }
 }

@@ -19,32 +19,4 @@ public static unsafe partial class IMFByteStreamCacheControlTests
     {
         Assert.That(typeof(IMFByteStreamCacheControl).GUID, Is.EqualTo(IID_IMFByteStreamCacheControl));
     }
-
-    /// <summary>Validates that the <see cref="IMFByteStreamCacheControl" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFByteStreamCacheControl>(), Is.EqualTo(sizeof(IMFByteStreamCacheControl)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFByteStreamCacheControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFByteStreamCacheControl).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFByteStreamCacheControl" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFByteStreamCacheControl), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFByteStreamCacheControl), Is.EqualTo(4));
-        }
-    }
 }

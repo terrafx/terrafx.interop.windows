@@ -4,23 +4,10 @@
 <doc>
   <member name="Windows.LocalDiscard">
     <summary>
-      <para>Discards the specified local memory object. The lock count of the memory object must be zero.
-<b>Note</b>  The local functions have greater overhead and provide fewer features than other memory management functions. New applications should use the <a href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">heap functions</a> unless documentation states that a local function should be used. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Memory/global-and-local-functions">Global and Local Functions</a>.</para>
+      <para>Discards the specified local memory object. The lock count of the memory object must be zero.</para>
+      <div>
+        <b>Note</b>  The local functions have greater overhead and provide fewer features than other memory management functions. New applications should use the <a href="https://docs.microsoft.com//windows/desktop/Memory/heap-functions">heap functions</a> unless documentation states that a local function should be used. For more information, see <a href="https://docs.microsoft.com//windows/desktop/Memory/global-and-local-functions">Global and Local Functions</a>.</div>
     </summary>
-    <param name="h">
-      <para>A handle to the local memory object. This handle is returned by either the
-<see cref="LocalAlloc" /> or
-<see cref="LocalReAlloc" /> function.</para>
-    </param>
-    <remarks>
-      <para>Although
-<b>LocalDiscard</b> discards the object's memory block, the handle to the object remains valid. A process can subsequently pass the handle to the
-<see cref="LocalReAlloc" /> function to allocate another local memory object identified by the same handle.</para>
-    </remarks>
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/global-and-local-functions">Global and Local Functions</seealso>
-    <seealso cref="LocalAlloc" />
-    <seealso cref="LocalReAlloc" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/Memory/memory-management-functions">Memory
-Management Functions</seealso>
+    <param name="h">A handle to the local memory object. This handle is returned by either the<see cref="LocalAlloc" /> or<see cref="LocalReAlloc" /> function.</param>
   </member>
 </doc>

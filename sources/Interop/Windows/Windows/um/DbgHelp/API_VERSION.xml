@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="API_VERSION">
-    <summary>
-      <para>Contains the library version.</para>
-    </summary>
-    <seealso cref="ImagehlpApiVersion" />
-    <seealso cref="ImagehlpApiVersionEx" />
+    <summary>Contains the library version.</summary>
   </member>
   <member name="API_VERSION.MajorVersion">
-    <summary>
-      <para>The major version number.</para>
-    </summary>
+    <summary>The major version number.</summary>
   </member>
   <member name="API_VERSION.MinorVersion">
-    <summary>
-      <para>The minor version number.</para>
-    </summary>
+    <summary>The minor version number.</summary>
   </member>
   <member name="API_VERSION.Revision">
-    <summary>
-      <para>The revision number.</para>
-    </summary>
+    <summary>The revision number.</summary>
   </member>
   <member name="API_VERSION.Reserved">
-    <summary>
-      <para>This member is reserved for use by the operating system.</para>
-    </summary>
+    <summary>This member is reserved for use by the operating system.</summary>
   </member>
 </doc>

@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="D2D_RECT_U">
-    <summary>
-      <para>Represents a rectangle defined by the upper-left corner  pair of coordinates (left,top) and the lower-right corner pair of coordinates (right, bottom). These coordinates are expressed as a 32-bit integer values.</para>
-    </summary>
+    <summary>Represents a rectangle defined by the upper-left corner pair of coordinates (left,top) and the lower-right corner pair of coordinates (right, bottom). These coordinates are expressed as a 32-bit integer values.</summary>
   </member>
   <member name="D2D_RECT_U.left">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The x-coordinate of the upper-left corner of the rectangle.</para>
-    </summary>
+    <summary>The x-coordinate of the upper-left corner of the rectangle.</summary>
   </member>
   <member name="D2D_RECT_U.top">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The y-coordinate of the upper-left corner of the rectangle.</para>
-    </summary>
+    <summary>The y-coordinate of the upper-left corner of the rectangle.</summary>
   </member>
   <member name="D2D_RECT_U.right">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The x-coordinate of the lower-right corner of the rectangle.</para>
-    </summary>
+    <summary>The x-coordinate of the lower-right corner of the rectangle.</summary>
   </member>
   <member name="D2D_RECT_U.bottom">
-    <summary>
-      <para>Type: <b>UINT32</b></para>
-      <para>The y-coordinate of the lower-right corner of the rectangle.</para>
-    </summary>
+    <summary>The y-coordinate of the lower-right corner of the rectangle.</summary>
   </member>
 </doc>

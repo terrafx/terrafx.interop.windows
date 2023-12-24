@@ -25,7 +25,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, Guid*, void**, int>)(lpVtbl[0]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, Guid*, void**, int>)(lpVtbl[0]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, uint>)(lpVtbl[1]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, uint>)(lpVtbl[1]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, uint>)(lpVtbl[2]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, uint>)(lpVtbl[2]))((IRunningObjectTable*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.Register"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [VtblIndex(3)]
     public HRESULT Register([NativeTypeName("DWORD")] uint grfFlags, IUnknown* punkObject, IMoniker* pmkObjectName, [NativeTypeName("DWORD *")] uint* pdwRegister)
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), grfFlags, punkObject, pmkObjectName, pdwRegister);
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, uint, IUnknown*, IMoniker*, uint*, int>)(lpVtbl[3]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), grfFlags, punkObject, pmkObjectName, pdwRegister);
     }
 
     /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.Revoke"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [VtblIndex(4)]
     public HRESULT Revoke([NativeTypeName("DWORD")] uint dwRegister)
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, uint, int>)(lpVtbl[4]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister);
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, uint, int>)(lpVtbl[4]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister);
     }
 
     /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.IsRunning"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [VtblIndex(5)]
     public HRESULT IsRunning(IMoniker* pmkObjectName)
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, int>)(lpVtbl[5]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName);
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, IMoniker*, int>)(lpVtbl[5]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName);
     }
 
     /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.GetObject"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [VtblIndex(6)]
     public HRESULT GetObject(IMoniker* pmkObjectName, IUnknown** ppunkObject)
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, IUnknown**, int>)(lpVtbl[6]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, ppunkObject);
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, IMoniker*, IUnknown**, int>)(lpVtbl[6]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, ppunkObject);
     }
 
     /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.NoteChangeTime"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [VtblIndex(7)]
     public HRESULT NoteChangeTime([NativeTypeName("DWORD")] uint dwRegister, FILETIME* pfiletime)
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, uint, FILETIME*, int>)(lpVtbl[7]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister, pfiletime);
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, uint, FILETIME*, int>)(lpVtbl[7]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), dwRegister, pfiletime);
     }
 
     /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.GetTimeOfLastChange"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [VtblIndex(8)]
     public HRESULT GetTimeOfLastChange(IMoniker* pmkObjectName, FILETIME* pfiletime)
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, IMoniker*, FILETIME*, int>)(lpVtbl[8]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, pfiletime);
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, IMoniker*, FILETIME*, int>)(lpVtbl[8]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), pmkObjectName, pfiletime);
     }
 
     /// <include file='IRunningObjectTable.xml' path='doc/member[@name="IRunningObjectTable.EnumRunning"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
     [VtblIndex(9)]
     public HRESULT EnumRunning(IEnumMoniker** ppenumMoniker)
     {
-        return ((delegate* unmanaged<IRunningObjectTable*, IEnumMoniker**, int>)(lpVtbl[9]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), ppenumMoniker);
+        return ((delegate* unmanaged[MemberFunction]<IRunningObjectTable*, IEnumMoniker**, int>)(lpVtbl[9]))((IRunningObjectTable*)Unsafe.AsPointer(ref this), ppenumMoniker);
     }
 
     public interface Interface : IUnknown.Interface
@@ -130,33 +130,33 @@ public unsafe partial struct IRunningObjectTable : IRunningObjectTable.Interface
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (DWORD, IUnknown *, IMoniker *, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, IUnknown*, IMoniker*, uint*, int> Register;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, IUnknown*, IMoniker*, uint*, int> Register;
 
         [NativeTypeName("HRESULT (DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, int> Revoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, int> Revoke;
 
         [NativeTypeName("HRESULT (IMoniker *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, int> IsRunning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, int> IsRunning;
 
         [NativeTypeName("HRESULT (IMoniker *, IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, IUnknown**, int> GetObject;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, IUnknown**, int> GetObject;
 
         [NativeTypeName("HRESULT (DWORD, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, FILETIME*, int> NoteChangeTime;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, FILETIME*, int> NoteChangeTime;
 
         [NativeTypeName("HRESULT (IMoniker *, FILETIME *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMoniker*, FILETIME*, int> GetTimeOfLastChange;
 
         [NativeTypeName("HRESULT (IEnumMoniker **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IEnumMoniker**, int> EnumRunning;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IEnumMoniker**, int> EnumRunning;
     }
 }

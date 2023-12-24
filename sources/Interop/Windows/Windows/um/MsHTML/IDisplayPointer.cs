@@ -25,7 +25,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPointer*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, Guid*, void**, int>)(lpVtbl[0]))((IDisplayPointer*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IDisplayPointer*, uint>)(lpVtbl[1]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, uint>)(lpVtbl[1]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IDisplayPointer*, uint>)(lpVtbl[2]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, uint>)(lpVtbl[2]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.MoveToPoint"]/*' />
@@ -51,7 +51,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(3)]
     public HRESULT MoveToPoint(POINT ptPoint, COORD_SYSTEM eCoordSystem, IHTMLElement* pElementContext, [NativeTypeName("DWORD")] uint dwHitTestOptions, [NativeTypeName("DWORD *")] uint* pdwHitTestResults)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int>)(lpVtbl[3]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ptPoint, eCoordSystem, pElementContext, dwHitTestOptions, pdwHitTestResults);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int>)(lpVtbl[3]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ptPoint, eCoordSystem, pElementContext, dwHitTestOptions, pdwHitTestResults);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.MoveUnit"]/*' />
@@ -59,7 +59,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(4)]
     public HRESULT MoveUnit(DISPLAY_MOVEUNIT eMoveUnit, [NativeTypeName("LONG")] int lXPos)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, DISPLAY_MOVEUNIT, int, int>)(lpVtbl[4]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eMoveUnit, lXPos);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, DISPLAY_MOVEUNIT, int, int>)(lpVtbl[4]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eMoveUnit, lXPos);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.PositionMarkupPointer"]/*' />
@@ -67,7 +67,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(5)]
     public HRESULT PositionMarkupPointer(IMarkupPointer* pMarkupPointer)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, int>)(lpVtbl[5]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pMarkupPointer);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, IMarkupPointer*, int>)(lpVtbl[5]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pMarkupPointer);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.MoveToPointer"]/*' />
@@ -75,7 +75,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(6)]
     public HRESULT MoveToPointer(IDisplayPointer* pDispPointer)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, int>)(lpVtbl[6]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, IDisplayPointer*, int>)(lpVtbl[6]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.SetPointerGravity"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(7)]
     public HRESULT SetPointerGravity(POINTER_GRAVITY eGravity)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY, int>)(lpVtbl[7]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eGravity);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, POINTER_GRAVITY, int>)(lpVtbl[7]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eGravity);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.GetPointerGravity"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(8)]
     public HRESULT GetPointerGravity(POINTER_GRAVITY* peGravity)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, POINTER_GRAVITY*, int>)(lpVtbl[8]))((IDisplayPointer*)Unsafe.AsPointer(ref this), peGravity);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, POINTER_GRAVITY*, int>)(lpVtbl[8]))((IDisplayPointer*)Unsafe.AsPointer(ref this), peGravity);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.SetDisplayGravity"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(9)]
     public HRESULT SetDisplayGravity(DISPLAY_GRAVITY eGravity)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY, int>)(lpVtbl[9]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eGravity);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, DISPLAY_GRAVITY, int>)(lpVtbl[9]))((IDisplayPointer*)Unsafe.AsPointer(ref this), eGravity);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.GetDisplayGravity"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(10)]
     public HRESULT GetDisplayGravity(DISPLAY_GRAVITY* peGravity)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, DISPLAY_GRAVITY*, int>)(lpVtbl[10]))((IDisplayPointer*)Unsafe.AsPointer(ref this), peGravity);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, DISPLAY_GRAVITY*, int>)(lpVtbl[10]))((IDisplayPointer*)Unsafe.AsPointer(ref this), peGravity);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.IsPositioned"]/*' />
@@ -115,7 +115,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(11)]
     public HRESULT IsPositioned(BOOL* pfPositioned)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, BOOL*, int>)(lpVtbl[11]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfPositioned);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, BOOL*, int>)(lpVtbl[11]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfPositioned);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.Unposition"]/*' />
@@ -123,7 +123,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(12)]
     public HRESULT Unposition()
     {
-        return ((delegate* unmanaged<IDisplayPointer*, int>)(lpVtbl[12]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, int>)(lpVtbl[12]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.IsEqualTo"]/*' />
@@ -131,7 +131,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(13)]
     public HRESULT IsEqualTo(IDisplayPointer* pDispPointer, BOOL* pfIsEqual)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[13]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsEqual);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[13]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsEqual);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.IsLeftOf"]/*' />
@@ -139,7 +139,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(14)]
     public HRESULT IsLeftOf(IDisplayPointer* pDispPointer, BOOL* pfIsLeftOf)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[14]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsLeftOf);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[14]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsLeftOf);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.IsRightOf"]/*' />
@@ -147,7 +147,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(15)]
     public HRESULT IsRightOf(IDisplayPointer* pDispPointer, BOOL* pfIsRightOf)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[15]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsRightOf);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, IDisplayPointer*, BOOL*, int>)(lpVtbl[15]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pDispPointer, pfIsRightOf);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.IsAtBOL"]/*' />
@@ -155,7 +155,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(16)]
     public HRESULT IsAtBOL(BOOL* pfBOL)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, BOOL*, int>)(lpVtbl[16]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfBOL);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, BOOL*, int>)(lpVtbl[16]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pfBOL);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.MoveToMarkupPointer"]/*' />
@@ -163,7 +163,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(17)]
     public HRESULT MoveToMarkupPointer(IMarkupPointer* pPointer, IDisplayPointer* pDispLineContext)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, IMarkupPointer*, IDisplayPointer*, int>)(lpVtbl[17]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pPointer, pDispLineContext);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, IMarkupPointer*, IDisplayPointer*, int>)(lpVtbl[17]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pPointer, pDispLineContext);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.ScrollIntoView"]/*' />
@@ -171,7 +171,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(18)]
     public HRESULT ScrollIntoView()
     {
-        return ((delegate* unmanaged<IDisplayPointer*, int>)(lpVtbl[18]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, int>)(lpVtbl[18]))((IDisplayPointer*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.GetLineInfo"]/*' />
@@ -179,7 +179,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(19)]
     public HRESULT GetLineInfo(ILineInfo** ppLineInfo)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, ILineInfo**, int>)(lpVtbl[19]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ppLineInfo);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, ILineInfo**, int>)(lpVtbl[19]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ppLineInfo);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.GetFlowElement"]/*' />
@@ -187,7 +187,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(20)]
     public HRESULT GetFlowElement(IHTMLElement** ppLayoutElement)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, IHTMLElement**, int>)(lpVtbl[20]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ppLayoutElement);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, IHTMLElement**, int>)(lpVtbl[20]))((IDisplayPointer*)Unsafe.AsPointer(ref this), ppLayoutElement);
     }
 
     /// <include file='IDisplayPointer.xml' path='doc/member[@name="IDisplayPointer.QueryBreaks"]/*' />
@@ -195,7 +195,7 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
     [VtblIndex(21)]
     public HRESULT QueryBreaks([NativeTypeName("DWORD *")] uint* pdwBreaks)
     {
-        return ((delegate* unmanaged<IDisplayPointer*, uint*, int>)(lpVtbl[21]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pdwBreaks);
+        return ((delegate* unmanaged[MemberFunction]<IDisplayPointer*, uint*, int>)(lpVtbl[21]))((IDisplayPointer*)Unsafe.AsPointer(ref this), pdwBreaks);
     }
 
     public interface Interface : IUnknown.Interface
@@ -262,69 +262,69 @@ public unsafe partial struct IDisplayPointer : IDisplayPointer.Interface, INativ
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (POINT, COORD_SYSTEM, IHTMLElement *, DWORD, DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int> MoveToPoint;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINT, COORD_SYSTEM, IHTMLElement*, uint, uint*, int> MoveToPoint;
 
         [NativeTypeName("HRESULT (DISPLAY_MOVEUNIT, LONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DISPLAY_MOVEUNIT, int, int> MoveUnit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DISPLAY_MOVEUNIT, int, int> MoveUnit;
 
         [NativeTypeName("HRESULT (IMarkupPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupPointer*, int> PositionMarkupPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupPointer*, int> PositionMarkupPointer;
 
         [NativeTypeName("HRESULT (IDisplayPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDisplayPointer*, int> MoveToPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDisplayPointer*, int> MoveToPointer;
 
         [NativeTypeName("HRESULT (POINTER_GRAVITY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINTER_GRAVITY, int> SetPointerGravity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINTER_GRAVITY, int> SetPointerGravity;
 
         [NativeTypeName("HRESULT (POINTER_GRAVITY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, POINTER_GRAVITY*, int> GetPointerGravity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, POINTER_GRAVITY*, int> GetPointerGravity;
 
         [NativeTypeName("HRESULT (DISPLAY_GRAVITY) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DISPLAY_GRAVITY, int> SetDisplayGravity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DISPLAY_GRAVITY, int> SetDisplayGravity;
 
         [NativeTypeName("HRESULT (DISPLAY_GRAVITY *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, DISPLAY_GRAVITY*, int> GetDisplayGravity;
+        public delegate* unmanaged[MemberFunction]<TSelf*, DISPLAY_GRAVITY*, int> GetDisplayGravity;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsPositioned;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsPositioned;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Unposition;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Unposition;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDisplayPointer*, BOOL*, int> IsEqualTo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDisplayPointer*, BOOL*, int> IsEqualTo;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDisplayPointer*, BOOL*, int> IsLeftOf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDisplayPointer*, BOOL*, int> IsLeftOf;
 
         [NativeTypeName("HRESULT (IDisplayPointer *, BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IDisplayPointer*, BOOL*, int> IsRightOf;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IDisplayPointer*, BOOL*, int> IsRightOf;
 
         [NativeTypeName("HRESULT (BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, BOOL*, int> IsAtBOL;
+        public delegate* unmanaged[MemberFunction]<TSelf*, BOOL*, int> IsAtBOL;
 
         [NativeTypeName("HRESULT (IMarkupPointer *, IDisplayPointer *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMarkupPointer*, IDisplayPointer*, int> MoveToMarkupPointer;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMarkupPointer*, IDisplayPointer*, int> MoveToMarkupPointer;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> ScrollIntoView;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> ScrollIntoView;
 
         [NativeTypeName("HRESULT (ILineInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ILineInfo**, int> GetLineInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, ILineInfo**, int> GetLineInfo;
 
         [NativeTypeName("HRESULT (IHTMLElement **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IHTMLElement**, int> GetFlowElement;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IHTMLElement**, int> GetFlowElement;
 
         [NativeTypeName("HRESULT (DWORD *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> QueryBreaks;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> QueryBreaks;
     }
 }

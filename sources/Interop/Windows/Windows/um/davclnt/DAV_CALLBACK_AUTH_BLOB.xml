@@ -3,25 +3,13 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DAV_CALLBACK_AUTH_BLOB">
-    <summary>
-      <para>Stores an authentication <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that was retrieved by the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</para>
-    </summary>
-    <remarks>
-      <para>This structure is included as a member in the <see cref="DAV_CALLBACK_CRED" /> structure.</para>
-      <para>The <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback_freecred">DavFreeCredCallback</a> callback function should free only the buffer that the <b>pBuffer</b> member points to, not the entire structure.</para>
-    </remarks>
-    <seealso cref="DAV_CALLBACK_AUTH_UNP" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</seealso>
+    <summary>Stores an authentication <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a> that was retrieved by the <a href="https://docs.microsoft.com//windows/desktop/api/davclnt/nc-davclnt-pfndavauthcallback">DavAuthCallback</a> callback function.</summary>
   </member>
   <member name="DAV_CALLBACK_AUTH_BLOB.pBuffer">
-    <summary>
-      <para>A pointer to a buffer that receives the authentication <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a>.</para>
-    </summary>
+    <summary>A pointer to a buffer that receives the authentication <a href="https://docs.microsoft.com//windows/desktop/SecGloss/b-gly">BLOB</a>.</summary>
   </member>
   <member name="DAV_CALLBACK_AUTH_BLOB.ulSize">
-    <summary>
-      <para>The size, in bytes, of the buffer that the <b>pBuffer</b> member points to.</para>
-    </summary>
+    <summary>The size, in bytes, of the buffer that the <b>pBuffer</b> member points to.</summary>
   </member>
   <member name="DAV_CALLBACK_AUTH_BLOB.ulType">
     <summary>
@@ -31,14 +19,16 @@
           <description>Value</description>
           <description>Meaning</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>1</para>
+            <list type="bullet">
+              <listheader>
+                <term>1</term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>PCCERT_CONTEXT</para>
-          </description>
-        </item>
+          <description>PCCERT_CONTEXT</description>
+        </listheader>
       </list>
     </summary>
   </member>

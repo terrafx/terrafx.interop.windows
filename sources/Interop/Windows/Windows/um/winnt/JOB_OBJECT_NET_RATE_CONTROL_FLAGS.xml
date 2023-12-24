@@ -3,23 +3,14 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS">
-    <summary>
-      <para>Specifies types of scheduling policies for network rate control.</para>
-    </summary>
-    <seealso cref="JOBOBJECT_NET_RATE_CONTROL_INFORMATION" />
+    <summary>Specifies types of scheduling policies for network rate control.</summary>
   </member>
   <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_ENABLE">
-    <summary>
-      <para>Turns on the control of the network traffic. You must set this value if you also set either <b>JOB_OBJECT_NET_RATE_CONTROL_MAX_BANDWIDTH</b> or <b>JOB_OBJECT_NET_RATE_CONTROL_DSCP_TAG</b>.</para>
-    </summary>
+    <summary>Turns on the control of the network traffic. You must set this value if you also set either <b>JOB_OBJECT_NET_RATE_CONTROL_MAX_BANDWIDTH</b> or <b>JOB_OBJECT_NET_RATE_CONTROL_DSCP_TAG</b>.</summary>
   </member>
-  <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_MAX_BANDWIDTH">
-    <summary></summary>
-  </member>
+  <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_MAX_BANDWIDTH"></member>
   <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_DSCP_TAG">
-    <summary>
-      <para>Sets the DSCP field in the packet header to the value of the <b>DscpTag</b> member of the <see cref="JOBOBJECT_NET_RATE_CONTROL_INFORMATION" /> structure. For information about DSCP, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/qos/differentiated-services">Differentiated Services</a>.</para>
-    </summary>
+    <summary>Sets the DSCP field in the packet header to the value of the <b>DscpTag</b> member of the <see cref="JOBOBJECT_NET_RATE_CONTROL_INFORMATION" /> structure. For information about DSCP, see <a href="https://docs.microsoft.com//previous-versions/windows/desktop/qos/differentiated-services">Differentiated Services</a>.</summary>
   </member>
   <member name="JOB_OBJECT_NET_RATE_CONTROL_FLAGS.JOB_OBJECT_NET_RATE_CONTROL_VALID_FLAGS">
     <summary>

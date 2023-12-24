@@ -3,15 +3,9 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFSecureChannel.GetCertificate">
-    <summary>
-      <para>Retrieves the client's certificate.</para>
-    </summary>
-    <param name="ppCert">
-      <para>Receives a pointer to a buffer allocated by the object. The buffer contains the client's certificate. The caller must release the buffer by calling <see cref="CoTaskMemFree" />.</para>
-    </param>
-    <param name="pcbCert">
-      <para>Receives the size of the <i>ppCert</i> buffer, in bytes.</para>
-    </param>
+    <summary>Retrieves the client's certificate.</summary>
+    <param name="ppCert">Receives a pointer to a buffer allocated by the object. The buffer contains the client's certificate. The caller must release the buffer by calling <see cref="CoTaskMemFree" />.</param>
+    <param name="pcbCert">Receives the size of the <i>ppCert</i> buffer, in bytes.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -19,30 +13,25 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSecureChannel" />
   </member>
   <member name="IMFSecureChannel.SetupSession">
-    <summary>
-      <para>Passes the encrypted session key to the client.</para>
-    </summary>
-    <param name="pbEncryptedSessionKey">
-      <para>Pointer to a buffer that contains the encrypted session key. This parameter can be <b>NULL</b>.</para>
-    </param>
-    <param name="cbSessionKey">
-      <para>Size of the <i>pbEncryptedSessionKey</i> buffer, in bytes.</para>
-    </param>
+    <summary>Passes the encrypted session key to the client.</summary>
+    <param name="pbEncryptedSessionKey">Pointer to a buffer that contains the encrypted session key. This parameter can be <b>NULL</b>.</param>
+    <param name="cbSessionKey">Size of the <i>pbEncryptedSessionKey</i> buffer, in bytes.</param>
     <returns>
       <para>The method returns an <b>HRESULT</b>. Possible values include, but are not limited to, those in the following table.</para>
       <list type="table">
@@ -50,24 +39,22 @@
           <description>Return code</description>
           <description>Description</description>
         </listheader>
-        <item>
+        <listheader>
           <description>
-            <para>
-              <b>S_OK</b>
-            </para>
+            <list type="bullet">
+              <listheader>
+                <term>
+                  <b>S_OK</b>
+                </term>
+              </listheader>
+            </list>
           </description>
-          <description>
-            <para>The method succeeded.</para>
-          </description>
-        </item>
+          <description>The method succeeded.</description>
+        </listheader>
       </list>
     </returns>
-    <seealso cref="IMFSecureChannel" />
   </member>
   <member name="IMFSecureChannel">
-    <summary>
-      <para>Establishes a one-way secure channel between two objects.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-interfaces">Media Foundation Interfaces</seealso>
+    <summary>Establishes a one-way secure channel between two objects.</summary>
   </member>
 </doc>

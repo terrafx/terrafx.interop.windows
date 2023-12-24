@@ -3,53 +3,22 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IMFNetCrossOriginSupport.GetCrossOriginPolicy">
-    <summary>
-      <para>Returns the client's current cross-origin policy to apply to the download session.</para>
-    </summary>
-    <param name="pPolicy">
-      <para>A value indicating the client's current cross-origin policy to apply to the download session.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK upon successful completion.</para>
-    </returns>
-    <seealso cref="IMFNetCrossOriginSupport" />
+    <summary>Returns the client's current cross-origin policy to apply to the download session.</summary>
+    <param name="pPolicy">A value indicating the client's current cross-origin policy to apply to the download session.</param>
+    <returns>Returns S_OK upon successful completion.</returns>
   </member>
   <member name="IMFNetCrossOriginSupport.GetSourceOrigin">
-    <summary>
-      <para>Returns the W3C origin of the HTML5 media element.</para>
-    </summary>
-    <param name="wszSourceOrigin">
-      <para>The W3C origin of the HTML5 media element.</para>
-    </param>
-    <returns>
-      <para>Returns S_OK upon successful completion.</para>
-    </returns>
-    <remarks>
-      <para>Use <b>CoTaskMemFree</b> to free the string.</para>
-    </remarks>
-    <seealso cref="IMFNetCrossOriginSupport" />
+    <summary>Returns the W3C origin of the HTML5 media element.</summary>
+    <param name="wszSourceOrigin">The W3C origin of the HTML5 media element.</param>
+    <returns>Returns S_OK upon successful completion.</returns>
   </member>
   <member name="IMFNetCrossOriginSupport.IsSameOrigin">
-    <summary>
-      <para>Returns true when the specified URL has the same origin as the HTML5 media element.</para>
-    </summary>
-    <param name="wszURL">
-      <para>TBD</para>
-    </param>
-    <param name="pfIsSameOrigin">
-      <para>TBD</para>
-    </param>
-    <returns>
-      <para>Returns S_OK upon successful completion.</para>
-    </returns>
-    <seealso cref="IMFNetCrossOriginSupport" />
+    <summary>Returns true when the specified URL has the same origin as the HTML5 media element.</summary>
+    <param name="wszURL">TBD</param>
+    <param name="pfIsSameOrigin">TBD</param>
+    <returns>Returns S_OK upon successful completion.</returns>
   </member>
   <member name="IMFNetCrossOriginSupport">
-    <summary>
-      <para>Implemented by clients that want to enforce a cross origin policy for HTML5 media downloads.</para>
-    </summary>
-    <remarks>
-      <para>The Media Foundation network code uses these client callbacks to implement and enforce cross origin downloads.</para>
-    </remarks>
+    <summary>Implemented by clients that want to enforce a cross origin policy for HTML5 media downloads.</summary>
   </member>
 </doc>

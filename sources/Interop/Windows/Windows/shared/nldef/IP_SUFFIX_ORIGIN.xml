@@ -3,68 +3,37 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IP_SUFFIX_ORIGIN">
-    <summary>
-      <para>The <b>IP_SUFFIX_ORIGIN</b> enumeration specifies the origin of an IPv4 or IPv6  address suffix, and is used with the <see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structure.</para>
-    </summary>
-    <remarks>
-      <para>The <b>IP_SUFFIX_ORIGIN</b> enumeration is used in the <b>SuffixOrigin</b> member of the <see cref="IP_ADAPTER_UNICAST_ADDRESS" />  structure.</para>
-      <para>On the Microsoft Windows Software Development Kit (SDK) released for Windows Vista and later, the organization of header files has changed and the <b>IP_SUFFIX_ORIGIN</b> enumeration is defined in the <i>Nldef.h</i> header file which is automatically included by the <i>Iptypes.h</i> header file. In order to use the <b>IP_SUFFIX_ORIGIN</b> enumeration, the <i>Winsock2.h</i> header file must be included before the <i>Iptypes.h</i> header file.</para>
-    </remarks>
-    <seealso cref="IP_ADAPTER_UNICAST_ADDRESS" />
+    <summary>The <b>IP_SUFFIX_ORIGIN</b> enumeration specifies the origin of an IPv4 or IPv6 address suffix, and is used with the <see cref="IP_ADAPTER_UNICAST_ADDRESS" /> structure.</summary>
   </member>
-  <member name="IP_SUFFIX_ORIGIN.NlsoOther">
-    <summary></summary>
-  </member>
-  <member name="IP_SUFFIX_ORIGIN.NlsoManual">
-    <summary></summary>
-  </member>
-  <member name="IP_SUFFIX_ORIGIN.NlsoWellKnown">
-    <summary></summary>
-  </member>
-  <member name="IP_SUFFIX_ORIGIN.NlsoDhcp">
-    <summary></summary>
-  </member>
-  <member name="IP_SUFFIX_ORIGIN.NlsoLinkLayerAddress">
-    <summary></summary>
-  </member>
-  <member name="IP_SUFFIX_ORIGIN.NlsoRandom">
-    <summary></summary>
-  </member>
+  <member name="IP_SUFFIX_ORIGIN.NlsoOther"></member>
+  <member name="IP_SUFFIX_ORIGIN.NlsoManual"></member>
+  <member name="IP_SUFFIX_ORIGIN.NlsoWellKnown"></member>
+  <member name="IP_SUFFIX_ORIGIN.NlsoDhcp"></member>
+  <member name="IP_SUFFIX_ORIGIN.NlsoLinkLayerAddress"></member>
+  <member name="IP_SUFFIX_ORIGIN.NlsoRandom"></member>
   <member name="IP_SUFFIX_ORIGIN.IpSuffixOriginOther">
-    <summary>
-      <para>The IP address suffix was provided by a source other than those defined in this enumeration.</para>
-    </summary>
+    <summary>The IP address suffix was provided by a source other than those defined in this enumeration.</summary>
   </member>
   <member name="IP_SUFFIX_ORIGIN.IpSuffixOriginManual">
-    <summary>
-      <para>The IP address suffix was manually specified.</para>
-    </summary>
+    <summary>The IP address suffix was manually specified.</summary>
   </member>
   <member name="IP_SUFFIX_ORIGIN.IpSuffixOriginWellKnown">
-    <summary>
-      <para>The IP address suffix is from a well-known source.</para>
-    </summary>
+    <summary>The IP address suffix is from a well-known source.</summary>
   </member>
   <member name="IP_SUFFIX_ORIGIN.IpSuffixOriginDhcp">
-    <summary>
-      <para>The IP address suffix was provided by DHCP settings.</para>
-    </summary>
+    <summary>The IP address suffix was provided by DHCP settings.</summary>
   </member>
   <member name="IP_SUFFIX_ORIGIN.IpSuffixOriginLinkLayerAddress">
-    <summary>
-      <para>The IP address suffix was obtained from the link-layer address.</para>
-    </summary>
+    <summary>The IP address suffix was obtained from the link-layer address.</summary>
   </member>
   <member name="IP_SUFFIX_ORIGIN.IpSuffixOriginRandom">
-    <summary>
-      <para>The IP address suffix was obtained from a random source.</para>
-    </summary>
+    <summary>The IP address suffix was obtained from a random source.</summary>
   </member>
   <member name="IP_SUFFIX_ORIGIN.IpSuffixOriginUnchanged">
     <summary>
       <para>The IP address suffix should be unchanged. This value is used when setting the properties for a unicast IP interface when the value for the IP suffix origin should be left unchanged.</para>
-      <para>
-        <b>Note</b>  This enumeration value is only available on Windows Vista and later.</para>
+      <div>
+        <b>Note</b>  This enumeration value is only available on Windows Vista and later.</div>
     </summary>
   </member>
 </doc>

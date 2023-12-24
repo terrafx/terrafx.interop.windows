@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="D3D12_VIEW_INSTANCING_FLAGS">
+    <summary>Specifies options for view instancing.</summary>
+  </member>
+  <member name="D3D12_VIEW_INSTANCING_FLAGS.D3D12_VIEW_INSTANCING_FLAG_NONE">
+    <summary>Indicates a default view instancing configuration.</summary>
+  </member>
+  <member name="D3D12_VIEW_INSTANCING_FLAGS.D3D12_VIEW_INSTANCING_FLAG_ENABLE_VIEW_INSTANCE_MASKING">
+    <summary>Enables view instance masking.</summary>
+  </member>
+</doc>

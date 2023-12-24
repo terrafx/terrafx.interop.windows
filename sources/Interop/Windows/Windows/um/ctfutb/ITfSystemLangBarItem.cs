@@ -25,7 +25,7 @@ public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interfa
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItem*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItem*, Guid*, void**, int>)(lpVtbl[0]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interfa
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItem*, uint>)(lpVtbl[1]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItem*, uint>)(lpVtbl[1]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interfa
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItem*, uint>)(lpVtbl[2]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItem*, uint>)(lpVtbl[2]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ITfSystemLangBarItem.xml' path='doc/member[@name="ITfSystemLangBarItem.SetIcon"]/*' />
@@ -51,15 +51,15 @@ public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interfa
     [VtblIndex(3)]
     public HRESULT SetIcon(HICON hIcon)
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItem*, HICON, int>)(lpVtbl[3]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), hIcon);
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItem*, HICON, int>)(lpVtbl[3]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), hIcon);
     }
 
     /// <include file='ITfSystemLangBarItem.xml' path='doc/member[@name="ITfSystemLangBarItem.SetTooltipString"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(4)]
-    public HRESULT SetTooltipString([NativeTypeName("WCHAR *")] ushort* pchToolTip, [NativeTypeName("ULONG")] uint cch)
+    public HRESULT SetTooltipString([NativeTypeName("WCHAR *")] char* pchToolTip, [NativeTypeName("ULONG")] uint cch)
     {
-        return ((delegate* unmanaged<ITfSystemLangBarItem*, ushort*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), pchToolTip, cch);
+        return ((delegate* unmanaged[MemberFunction]<ITfSystemLangBarItem*, char*, uint, int>)(lpVtbl[4]))((ITfSystemLangBarItem*)Unsafe.AsPointer(ref this), pchToolTip, cch);
     }
 
     public interface Interface : IUnknown.Interface
@@ -68,25 +68,25 @@ public unsafe partial struct ITfSystemLangBarItem : ITfSystemLangBarItem.Interfa
         HRESULT SetIcon(HICON hIcon);
 
         [VtblIndex(4)]
-        HRESULT SetTooltipString([NativeTypeName("WCHAR *")] ushort* pchToolTip, [NativeTypeName("ULONG")] uint cch);
+        HRESULT SetTooltipString([NativeTypeName("WCHAR *")] char* pchToolTip, [NativeTypeName("ULONG")] uint cch);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (HICON) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, HICON, int> SetIcon;
+        public delegate* unmanaged[MemberFunction]<TSelf*, HICON, int> SetIcon;
 
         [NativeTypeName("HRESULT (WCHAR *, ULONG) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, uint, int> SetTooltipString;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, uint, int> SetTooltipString;
     }
 }

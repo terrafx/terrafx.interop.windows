@@ -3,30 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MF_MEDIA_ENGINE_NETWORK">
-    <summary>
-      <para>Defines network status codes for the Media Engine.</para>
-    </summary>
-    <seealso cref="IMFMediaEngine.GetNetworkState" />
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-enumerations">Media Foundation Enumerations</seealso>
+    <summary>Defines network status codes for the Media Engine.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_NETWORK.MF_MEDIA_ENGINE_NETWORK_EMPTY">
-    <summary>
-      <para>The initial state.</para>
-    </summary>
+    <summary>The initial state.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_NETWORK.MF_MEDIA_ENGINE_NETWORK_IDLE">
-    <summary>
-      <para>The Media Engine has started the resource selection algorithm, and has selected a media resource, but is not using the network.</para>
-    </summary>
+    <summary>The Media Engine has started the resource selection algorithm, and has selected a media resource, but is not using the network.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_NETWORK.MF_MEDIA_ENGINE_NETWORK_LOADING">
-    <summary>
-      <para>The Media Engine is loading a media resource.</para>
-    </summary>
+    <summary>The Media Engine is loading a media resource.</summary>
   </member>
   <member name="MF_MEDIA_ENGINE_NETWORK.MF_MEDIA_ENGINE_NETWORK_NO_SOURCE">
-    <summary>
-      <para>The Media Engine has started the resource selection algorithm, but has not selected a media resource.</para>
-    </summary>
+    <summary>The Media Engine has started the resource selection algorithm, but has not selected a media resource.</summary>
   </member>
 </doc>

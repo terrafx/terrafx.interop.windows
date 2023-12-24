@@ -3,17 +3,10 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS">
-    <summary>
-      <para>The <b>DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS</b> structure contains information about a target device.</para>
-    </summary>
-    <seealso cref="DISPLAYCONFIG_TARGET_DEVICE_NAME" />
+    <summary>The <b>DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS</b> structure contains information about a target device.</summary>
   </member>
-  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.DUMMYUNIONNAME">
-    <summary></summary>
-  </member>
-  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.DUMMYUNIONNAME.DUMMYSTRUCTNAME">
-    <summary></summary>
-  </member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.DUMMYUNIONNAME"></member>
+  <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.DUMMYUNIONNAME.DUMMYSTRUCTNAME"></member>
   <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.DUMMYUNIONNAME.DUMMYSTRUCTNAME.friendlyNameFromEdid">
     <summary>
       <para>A UINT32 value that indicates that the string in the <b>monitorFriendlyDeviceName</b> member of the <see cref="DISPLAYCONFIG_TARGET_DEVICE_NAME" /> structure was constructed from the manufacture identification string in the extended display identification data (EDID).</para>
@@ -33,13 +26,9 @@
     </summary>
   </member>
   <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.DUMMYUNIONNAME.DUMMYSTRUCTNAME.reserved">
-    <summary>
-      <para>This member is reserved and should be set to zero. Setting this member to zero is equivalent to setting the remaining 29 bits (0xFFFFFFF8) of the 32-bit <b>value</b> member to zeros.</para>
-    </summary>
+    <summary>This member is reserved and should be set to zero. Setting this member to zero is equivalent to setting the remaining 29 bits (0xFFFFFFF8) of the 32-bit <b>value</b> member to zeros.</summary>
   </member>
   <member name="DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS.DUMMYUNIONNAME.value">
-    <summary>
-      <para>A member in the union that DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS contains that can hold a 32-bit value that identifies information about the device.</para>
-    </summary>
+    <summary>A member in the union that DISPLAYCONFIG_TARGET_DEVICE_NAME_FLAGS contains that can hold a 32-bit value that identifies information about the device.</summary>
   </member>
 </doc>

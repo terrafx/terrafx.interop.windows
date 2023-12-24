@@ -3,26 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MEM_ADDRESS_REQUIREMENTS">
-    <summary>
-      <para>Specifies a lowest and highest base address and alignment as part of an extended parameter to a function that manages virtual memory.</para>
-    </summary>
-    <remarks>
-      <para>Specifying a <b>MEM_ADDRESS_REQUIREMENTS</b> structure with all fields set to 0 is the same as not specifying one at all.</para>
-    </remarks>
+    <summary>Specifies a lowest and highest base address and alignment as part of an extended parameter to a function that manages virtual memory.</summary>
   </member>
   <member name="MEM_ADDRESS_REQUIREMENTS.LowestStartingAddress">
-    <summary>
-      <para>Specifies the lowest acceptable address. Calling &lt;a href=" and specifying <b>NULL</b> for <i>LowestStartingAddress</i>, and specifying <b>NULL</b> for <i>LowestStartingAddress</i>, gives the same behavior as calling <see cref="VirtualAlloc" />/<see cref="MapViewOfFile" />.</para>
-    </summary>
+    <summary>Specifies the lowest acceptable address. Calling &lt;a href=" and specifying <b>NULL</b> for <i>LowestStartingAddress</i>, and specifying <b>NULL</b> for <i>LowestStartingAddress</i>, gives the same behavior as calling <see cref="VirtualAlloc" />/<see cref="MapViewOfFile" />.</summary>
   </member>
   <member name="MEM_ADDRESS_REQUIREMENTS.HighestEndingAddress">
-    <summary>
-      <para>Specifies the highest acceptable address (inclusive). This address must not exceed <b>lpMaximumApplicationAddress</b> returned by <see cref="GetSystemInfo" />. Calling &lt;a href=" and specifying <b>NULL</b> for <i>LowestStartingAddress</i>, and specifying <b>NULL</b> for <i>HighestEndingAddress</i>, gives the same behavior as calling <see cref="VirtualAlloc" />/<see cref="MapViewOfFile" />.</para>
-    </summary>
+    <summary>Specifies the highest acceptable address (inclusive). This address must not exceed <b>lpMaximumApplicationAddress</b> returned by <see cref="GetSystemInfo" />. Calling &lt;a href=" and specifying <b>NULL</b> for <i>LowestStartingAddress</i>, and specifying <b>NULL</b> for <i>HighestEndingAddress</i>, gives the same behavior as calling <see cref="VirtualAlloc" />/<see cref="MapViewOfFile" />.</summary>
   </member>
   <member name="MEM_ADDRESS_REQUIREMENTS.Alignment">
-    <summary>
-      <para>Specifies power-of-2 alignment. Specifying 0 aligns the returned address on the system allocation granularity.</para>
-    </summary>
+    <summary>Specifies power-of-2 alignment. Specifying 0 aligns the returned address on the system allocation granularity.</summary>
   </member>
 </doc>

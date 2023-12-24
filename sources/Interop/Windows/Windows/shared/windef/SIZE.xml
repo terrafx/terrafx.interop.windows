@@ -3,23 +3,12 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="SIZE">
-    <summary>
-      <para>The SIZE structure defines the width and height of a rectangle.</para>
-    </summary>
-    <remarks>
-      <para>The rectangle dimensions stored in this structure can correspond to viewport extents, window extents, text extents, bitmap dimensions, or the aspect-ratio filter for some extended functions.</para>
-    </remarks>
-    <seealso cref="RECT" />
-    <seealso cref="RECTL" />
+    <summary>The SIZE structure defines the width and height of a rectangle.</summary>
   </member>
   <member name="SIZE.cx">
-    <summary>
-      <para>Specifies the rectangle's width. The units depend on which function uses this structure.</para>
-    </summary>
+    <summary>Specifies the rectangle's width. The units depend on which function uses this structure.</summary>
   </member>
   <member name="SIZE.cy">
-    <summary>
-      <para>Specifies the rectangle's height. The units depend on which function uses this structure.</para>
-    </summary>
+    <summary>Specifies the rectangle's height. The units depend on which function uses this structure.</summary>
   </member>
 </doc>

@@ -19,32 +19,4 @@ public static unsafe partial class IMFClockStateSinkTests
     {
         Assert.That(typeof(IMFClockStateSink).GUID, Is.EqualTo(IID_IMFClockStateSink));
     }
-
-    /// <summary>Validates that the <see cref="IMFClockStateSink" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IMFClockStateSink>(), Is.EqualTo(sizeof(IMFClockStateSink)));
-    }
-
-    /// <summary>Validates that the <see cref="IMFClockStateSink" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IMFClockStateSink).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IMFClockStateSink" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IMFClockStateSink), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IMFClockStateSink), Is.EqualTo(4));
-        }
-    }
 }

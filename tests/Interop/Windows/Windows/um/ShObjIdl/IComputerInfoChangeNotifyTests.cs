@@ -19,32 +19,4 @@ public static unsafe partial class IComputerInfoChangeNotifyTests
     {
         Assert.That(typeof(IComputerInfoChangeNotify).GUID, Is.EqualTo(IID_IComputerInfoChangeNotify));
     }
-
-    /// <summary>Validates that the <see cref="IComputerInfoChangeNotify" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IComputerInfoChangeNotify>(), Is.EqualTo(sizeof(IComputerInfoChangeNotify)));
-    }
-
-    /// <summary>Validates that the <see cref="IComputerInfoChangeNotify" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IComputerInfoChangeNotify).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IComputerInfoChangeNotify" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IComputerInfoChangeNotify), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IComputerInfoChangeNotify), Is.EqualTo(4));
-        }
-    }
 }

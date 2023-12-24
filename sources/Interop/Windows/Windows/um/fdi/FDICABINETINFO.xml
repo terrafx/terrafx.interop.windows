@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information. -->
+<!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
+<doc>
+  <member name="FDICABINETINFO">
+    <summary>The <b>FDICABINETINFO</b> structure contains details about a particular cabinet file.</summary>
+  </member>
+  <member name="FDICABINETINFO.cbCabinet">
+    <summary>The total length of the cabinet file.</summary>
+  </member>
+  <member name="FDICABINETINFO.cFolders">
+    <summary>The count of the folders in the cabinet.</summary>
+  </member>
+  <member name="FDICABINETINFO.cFiles">
+    <summary>The count of the files in the cabinet.</summary>
+  </member>
+  <member name="FDICABINETINFO.setID">
+    <summary>The identifier of the cabinet set.</summary>
+  </member>
+  <member name="FDICABINETINFO.iCabinet">
+    <summary>The cabinet number in set. This index is zero based.</summary>
+  </member>
+  <member name="FDICABINETINFO.fReserve">
+    <summary>If this value is set to <b>TRUE</b>, a reserved area is present in the cabinet.</summary>
+  </member>
+  <member name="FDICABINETINFO.hasprev">
+    <summary>If this value is set to <b>TRUE</b>, the cabinet is linked to a previous cabinet. This is accomplished by having a file continued from the previous cabinet into the current one.</summary>
+  </member>
+  <member name="FDICABINETINFO.hasnext">
+    <summary>If this value is set to <b>TRUE</b>, the current cabinet is linked to the next cabinet by having a file continued from the current cabinet into the next one.</summary>
+  </member>
+</doc>

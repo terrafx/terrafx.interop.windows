@@ -19,32 +19,4 @@ public static unsafe partial class IDMLPageableTests
     {
         Assert.That(typeof(IDMLPageable).GUID, Is.EqualTo(IID_IDMLPageable));
     }
-
-    /// <summary>Validates that the <see cref="IDMLPageable" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IDMLPageable>(), Is.EqualTo(sizeof(IDMLPageable)));
-    }
-
-    /// <summary>Validates that the <see cref="IDMLPageable" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IDMLPageable).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IDMLPageable" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IDMLPageable), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IDMLPageable), Is.EqualTo(4));
-        }
-    }
 }

@@ -7,6 +7,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static TerraFX.Interop.Windows.FACILITY;
+using static TerraFX.Interop.Windows.HIDP;
 
 namespace TerraFX.Interop.Windows;
 
@@ -15,16 +16,16 @@ public static unsafe partial class Windows
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static bool HidP_IsSameUsageAndPage(USAGE_AND_PAGE* u1, USAGE_AND_PAGE* u2) => *(uint*)u1 == *(uint*)u2;
 
-    public static int HidP_SetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
+    public static int HidP_SetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
         HidP_SetUsages(ReportType, UsagePage, LinkCollection, UsageList, UsageLength, PreparsedData, Report, ReportLength);
 
-    public static int HidP_UnsetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
+    public static int HidP_UnsetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
         HidP_UnsetUsages(ReportType, UsagePage, LinkCollection, UsageList, UsageLength, PreparsedData, Report, ReportLength);
 
-    public static int HidP_GetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
+    public static int HidP_GetButtons(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USAGE")] ushort UsagePage, ushort LinkCollection, [NativeTypeName("PUSAGE")] ushort* UsageList, [NativeTypeName("PULONG")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
         HidP_GetUsages(ReportType, UsagePage, LinkCollection, UsageList, UsageLength, PreparsedData, Report, ReportLength);
 
-    public static int HidP_GetButtonsEx(HIDP_REPORT_TYPE ReportType, [NativeTypeName("USHORT")] ushort LinkCollection, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ButtonList, [NativeTypeName("ULONG *")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
+    public static int HidP_GetButtonsEx(HIDP_REPORT_TYPE ReportType, ushort LinkCollection, [NativeTypeName("PUSAGE_AND_PAGE")] USAGE_AND_PAGE* ButtonList, [NativeTypeName("ULONG *")] uint* UsageLength, PHIDP_PREPARSED_DATA PreparsedData, [NativeTypeName("PCHAR")] sbyte* Report, [NativeTypeName("ULONG")] uint ReportLength) =>
         HidP_GetUsagesEx(ReportType, LinkCollection, ButtonList, UsageLength, PreparsedData, Report, ReportLength);
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -34,25 +35,31 @@ public static unsafe partial class Windows
     [return: NativeTypeName("NTSTATUS")]
     public static int HidP_GetVersion([NativeTypeName("ULONG *")] uint* Version)
     {
-        int status = (((int)(((0x0) << 28) | (0x11 << 16) | (0))));
-
+        int status = HIDP_STATUS_SUCCESS;
         *Version = 1;
-        HMODULE module = (HMODULE)NativeLibrary.Load("hid.dll");
+
+        HMODULE module;
+
+        fixed (char* lpLibFileName = "hid.dll")
+        {
+            module = LoadLibraryW(lpLibFileName);
+        }
 
         if (module == HMODULE.NULL)
         {
-            return (((int)(((0xC) << 28) | (0x11 << 16) | (8))));
+            return HIDP_STATUS_INTERNAL_ERROR;
         }
 
-        ReadOnlySpan<sbyte> HidP_GetVersionInternal = new sbyte[] { 0x48, 0x69, 0x64, 0x50, 0x5F, 0x47, 0x65, 0x74, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6F, 0x6E, 0x49, 0x6E, 0x74, 0x65, 0x72, 0x6E, 0x61, 0x6C, 0x00 };
-        delegate* unmanaged<uint*, int> fnVersionInternal = (delegate* unmanaged<uint*, int>)(GetProcAddress(module, (sbyte*)Unsafe.AsPointer(ref MemoryMarshal.GetReference(HidP_GetVersionInternal))));
+        delegate* unmanaged<uint*, int> fnVersionInternal;
+
+        fixed (byte* lpProcName = "HidP_GetVersionInternal"u8)
+        {
+            fnVersionInternal = (delegate* unmanaged<uint*, int>)GetProcAddress(module, (sbyte*)lpProcName);
+        }
 
         if (fnVersionInternal != null)
         {
             status = fnVersionInternal(Version);
-        }
-        else
-        {
         }
 
         return status;

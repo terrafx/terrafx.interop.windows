@@ -25,7 +25,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, Guid*, void**, int>)(lpVtbl[0]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -34,7 +34,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, uint>)(lpVtbl[1]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, uint>)(lpVtbl[1]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -43,7 +43,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, uint>)(lpVtbl[2]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, uint>)(lpVtbl[2]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfoCount" />
@@ -51,7 +51,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(3)]
     public HRESULT GetTypeInfoCount(uint* pctinfo)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, uint*, int>)(lpVtbl[3]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), pctinfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, uint*, int>)(lpVtbl[3]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), pctinfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetTypeInfo" />
@@ -59,15 +59,15 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(4)]
     public HRESULT GetTypeInfo(uint iTInfo, [NativeTypeName("LCID")] uint lcid, ITypeInfo** ppTInfo)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, uint, uint, ITypeInfo**, int>)(lpVtbl[4]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), iTInfo, lcid, ppTInfo);
     }
 
     /// <inheritdoc cref="IDispatch.GetIDsOfNames" />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(5)]
-    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] ushort** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
+    public HRESULT GetIDsOfNames([NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LPOLESTR *")] char** rgszNames, uint cNames, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("DISPID *")] int* rgDispId)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, Guid*, ushort**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, Guid*, char**, uint, uint, int*, int>)(lpVtbl[5]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), riid, rgszNames, cNames, lcid, rgDispId);
     }
 
     /// <inheritdoc cref="IDispatch.Invoke" />
@@ -75,7 +75,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(6)]
     public HRESULT Invoke([NativeTypeName("DISPID")] int dispIdMember, [NativeTypeName("const IID &")] Guid* riid, [NativeTypeName("LCID")] uint lcid, [NativeTypeName("WORD")] ushort wFlags, DISPPARAMS* pDispParams, VARIANT* pVarResult, EXCEPINFO* pExcepInfo, uint* puArgErr)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int>)(lpVtbl[6]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), dispIdMember, riid, lcid, wFlags, pDispParams, pVarResult, pExcepInfo, puArgErr);
     }
 
     /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.get_Count"]/*' />
@@ -83,7 +83,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(7)]
     public HRESULT get_Count([NativeTypeName("long *")] int* Count)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, int*, int>)(lpVtbl[7]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), Count);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, int*, int>)(lpVtbl[7]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), Count);
     }
 
     /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.FindRule"]/*' />
@@ -91,7 +91,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(8)]
     public HRESULT FindRule(VARIANT RuleNameOrId, ISpeechGrammarRule** Rule)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, VARIANT, ISpeechGrammarRule**, int>)(lpVtbl[8]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), RuleNameOrId, Rule);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, VARIANT, ISpeechGrammarRule**, int>)(lpVtbl[8]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), RuleNameOrId, Rule);
     }
 
     /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.Item"]/*' />
@@ -99,7 +99,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(9)]
     public HRESULT Item([NativeTypeName("long")] int Index, ISpeechGrammarRule** Rule)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, int, ISpeechGrammarRule**, int>)(lpVtbl[9]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), Index, Rule);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, int, ISpeechGrammarRule**, int>)(lpVtbl[9]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), Index, Rule);
     }
 
     /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.get__NewEnum"]/*' />
@@ -107,7 +107,7 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(10)]
     public HRESULT get__NewEnum(IUnknown** EnumVARIANT)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, IUnknown**, int>)(lpVtbl[10]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), EnumVARIANT);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, IUnknown**, int>)(lpVtbl[10]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), EnumVARIANT);
     }
 
     /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.get_Dynamic"]/*' />
@@ -115,15 +115,15 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(11)]
     public HRESULT get_Dynamic([NativeTypeName("VARIANT_BOOL *")] short* Dynamic)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, short*, int>)(lpVtbl[11]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), Dynamic);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, short*, int>)(lpVtbl[11]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), Dynamic);
     }
 
     /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.Add"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(12)]
-    public HRESULT Add([NativeTypeName("BSTR")] ushort* RuleName, SpeechRuleAttributes Attributes, [NativeTypeName("long")] int RuleId, ISpeechGrammarRule** Rule)
+    public HRESULT Add([NativeTypeName("BSTR")] char* RuleName, SpeechRuleAttributes Attributes, [NativeTypeName("long")] int RuleId, ISpeechGrammarRule** Rule)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, ushort*, SpeechRuleAttributes, int, ISpeechGrammarRule**, int>)(lpVtbl[12]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), RuleName, Attributes, RuleId, Rule);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, char*, SpeechRuleAttributes, int, ISpeechGrammarRule**, int>)(lpVtbl[12]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), RuleName, Attributes, RuleId, Rule);
     }
 
     /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.Commit"]/*' />
@@ -131,15 +131,15 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
     [VtblIndex(13)]
     public HRESULT Commit()
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, int>)(lpVtbl[13]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, int>)(lpVtbl[13]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='ISpeechGrammarRules.xml' path='doc/member[@name="ISpeechGrammarRules.CommitAndSave"]/*' />
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     [VtblIndex(14)]
-    public HRESULT CommitAndSave([NativeTypeName("BSTR *")] ushort** ErrorText, VARIANT* SaveStream)
+    public HRESULT CommitAndSave([NativeTypeName("BSTR *")] char** ErrorText, VARIANT* SaveStream)
     {
-        return ((delegate* unmanaged<ISpeechGrammarRules*, ushort**, VARIANT*, int>)(lpVtbl[14]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), ErrorText, SaveStream);
+        return ((delegate* unmanaged[MemberFunction]<ISpeechGrammarRules*, char**, VARIANT*, int>)(lpVtbl[14]))((ISpeechGrammarRules*)Unsafe.AsPointer(ref this), ErrorText, SaveStream);
     }
 
     public interface Interface : IDispatch.Interface
@@ -160,61 +160,61 @@ public unsafe partial struct ISpeechGrammarRules : ISpeechGrammarRules.Interface
         HRESULT get_Dynamic([NativeTypeName("VARIANT_BOOL *")] short* Dynamic);
 
         [VtblIndex(12)]
-        HRESULT Add([NativeTypeName("BSTR")] ushort* RuleName, SpeechRuleAttributes Attributes, [NativeTypeName("long")] int RuleId, ISpeechGrammarRule** Rule);
+        HRESULT Add([NativeTypeName("BSTR")] char* RuleName, SpeechRuleAttributes Attributes, [NativeTypeName("long")] int RuleId, ISpeechGrammarRule** Rule);
 
         [VtblIndex(13)]
         HRESULT Commit();
 
         [VtblIndex(14)]
-        HRESULT CommitAndSave([NativeTypeName("BSTR *")] ushort** ErrorText, VARIANT* SaveStream);
+        HRESULT CommitAndSave([NativeTypeName("BSTR *")] char** ErrorText, VARIANT* SaveStream);
     }
 
     public partial struct Vtbl<TSelf>
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint*, int> GetTypeInfoCount;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint*, int> GetTypeInfoCount;
 
         [NativeTypeName("HRESULT (UINT, LCID, ITypeInfo **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint, uint, ITypeInfo**, int> GetTypeInfo;
 
         [NativeTypeName("HRESULT (const IID &, LPOLESTR *, UINT, LCID, DISPID *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, ushort**, uint, uint, int*, int> GetIDsOfNames;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, char**, uint, uint, int*, int> GetIDsOfNames;
 
         [NativeTypeName("HRESULT (DISPID, const IID &, LCID, WORD, DISPPARAMS *, VARIANT *, EXCEPINFO *, UINT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, Guid*, uint, ushort, DISPPARAMS*, VARIANT*, EXCEPINFO*, uint*, int> Invoke;
 
         [NativeTypeName("HRESULT (long *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int*, int> get_Count;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int*, int> get_Count;
 
         [NativeTypeName("HRESULT (VARIANT, ISpeechGrammarRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, VARIANT, ISpeechGrammarRule**, int> FindRule;
+        public delegate* unmanaged[MemberFunction]<TSelf*, VARIANT, ISpeechGrammarRule**, int> FindRule;
 
         [NativeTypeName("HRESULT (long, ISpeechGrammarRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int, ISpeechGrammarRule**, int> Item;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int, ISpeechGrammarRule**, int> Item;
 
         [NativeTypeName("HRESULT (IUnknown **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IUnknown**, int> get__NewEnum;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IUnknown**, int> get__NewEnum;
 
         [NativeTypeName("HRESULT (VARIANT_BOOL *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, short*, int> get_Dynamic;
+        public delegate* unmanaged[MemberFunction]<TSelf*, short*, int> get_Dynamic;
 
         [NativeTypeName("HRESULT (BSTR, SpeechRuleAttributes, long, ISpeechGrammarRule **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort*, SpeechRuleAttributes, int, ISpeechGrammarRule**, int> Add;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char*, SpeechRuleAttributes, int, ISpeechGrammarRule**, int> Add;
 
         [NativeTypeName("HRESULT () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, int> Commit;
+        public delegate* unmanaged[MemberFunction]<TSelf*, int> Commit;
 
         [NativeTypeName("HRESULT (BSTR *, VARIANT *) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, ushort**, VARIANT*, int> CommitAndSave;
+        public delegate* unmanaged[MemberFunction]<TSelf*, char**, VARIANT*, int> CommitAndSave;
     }
 }

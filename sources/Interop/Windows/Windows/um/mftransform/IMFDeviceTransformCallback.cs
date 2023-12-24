@@ -27,7 +27,7 @@ public unsafe partial struct IMFDeviceTransformCallback : IMFDeviceTransformCall
     [VtblIndex(0)]
     public HRESULT QueryInterface([NativeTypeName("const IID &")] Guid* riid, void** ppvObject)
     {
-        return ((delegate* unmanaged<IMFDeviceTransformCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFDeviceTransformCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransformCallback*, Guid*, void**, int>)(lpVtbl[0]))((IMFDeviceTransformCallback*)Unsafe.AsPointer(ref this), riid, ppvObject);
     }
 
     /// <inheritdoc cref="IUnknown.AddRef" />
@@ -36,7 +36,7 @@ public unsafe partial struct IMFDeviceTransformCallback : IMFDeviceTransformCall
     [return: NativeTypeName("ULONG")]
     public uint AddRef()
     {
-        return ((delegate* unmanaged<IMFDeviceTransformCallback*, uint>)(lpVtbl[1]))((IMFDeviceTransformCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransformCallback*, uint>)(lpVtbl[1]))((IMFDeviceTransformCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <inheritdoc cref="IUnknown.Release" />
@@ -45,7 +45,7 @@ public unsafe partial struct IMFDeviceTransformCallback : IMFDeviceTransformCall
     [return: NativeTypeName("ULONG")]
     public uint Release()
     {
-        return ((delegate* unmanaged<IMFDeviceTransformCallback*, uint>)(lpVtbl[2]))((IMFDeviceTransformCallback*)Unsafe.AsPointer(ref this));
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransformCallback*, uint>)(lpVtbl[2]))((IMFDeviceTransformCallback*)Unsafe.AsPointer(ref this));
     }
 
     /// <include file='IMFDeviceTransformCallback.xml' path='doc/member[@name="IMFDeviceTransformCallback.OnBufferSent"]/*' />
@@ -53,7 +53,7 @@ public unsafe partial struct IMFDeviceTransformCallback : IMFDeviceTransformCall
     [VtblIndex(3)]
     public HRESULT OnBufferSent(IMFAttributes* pCallbackAttributes, [NativeTypeName("DWORD")] uint pinId)
     {
-        return ((delegate* unmanaged<IMFDeviceTransformCallback*, IMFAttributes*, uint, int>)(lpVtbl[3]))((IMFDeviceTransformCallback*)Unsafe.AsPointer(ref this), pCallbackAttributes, pinId);
+        return ((delegate* unmanaged[MemberFunction]<IMFDeviceTransformCallback*, IMFAttributes*, uint, int>)(lpVtbl[3]))((IMFDeviceTransformCallback*)Unsafe.AsPointer(ref this), pCallbackAttributes, pinId);
     }
 
     public interface Interface : IUnknown.Interface
@@ -66,15 +66,15 @@ public unsafe partial struct IMFDeviceTransformCallback : IMFDeviceTransformCall
         where TSelf : unmanaged, Interface
     {
         [NativeTypeName("HRESULT (const IID &, void **) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, Guid*, void**, int> QueryInterface;
+        public delegate* unmanaged[MemberFunction]<TSelf*, Guid*, void**, int> QueryInterface;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> AddRef;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> AddRef;
 
         [NativeTypeName("ULONG () __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, uint> Release;
+        public delegate* unmanaged[MemberFunction]<TSelf*, uint> Release;
 
         [NativeTypeName("HRESULT (IMFAttributes *, DWORD) __attribute__((stdcall))")]
-        public delegate* unmanaged<TSelf*, IMFAttributes*, uint, int> OnBufferSent;
+        public delegate* unmanaged[MemberFunction]<TSelf*, IMFAttributes*, uint, int> OnBufferSent;
     }
 }

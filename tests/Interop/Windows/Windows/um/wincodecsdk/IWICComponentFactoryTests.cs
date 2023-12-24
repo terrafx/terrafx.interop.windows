@@ -19,32 +19,4 @@ public static unsafe partial class IWICComponentFactoryTests
     {
         Assert.That(typeof(IWICComponentFactory).GUID, Is.EqualTo(IID_IWICComponentFactory));
     }
-
-    /// <summary>Validates that the <see cref="IWICComponentFactory" /> struct is blittable.</summary>
-    [Test]
-    public static void IsBlittableTest()
-    {
-        Assert.That(Marshal.SizeOf<IWICComponentFactory>(), Is.EqualTo(sizeof(IWICComponentFactory)));
-    }
-
-    /// <summary>Validates that the <see cref="IWICComponentFactory" /> struct has the right <see cref="LayoutKind" />.</summary>
-    [Test]
-    public static void IsLayoutSequentialTest()
-    {
-        Assert.That(typeof(IWICComponentFactory).IsLayoutSequential, Is.True);
-    }
-
-    /// <summary>Validates that the <see cref="IWICComponentFactory" /> struct has the correct size.</summary>
-    [Test]
-    public static void SizeOfTest()
-    {
-        if (Environment.Is64BitProcess)
-        {
-            Assert.That(sizeof(IWICComponentFactory), Is.EqualTo(8));
-        }
-        else
-        {
-            Assert.That(sizeof(IWICComponentFactory), Is.EqualTo(4));
-        }
-    }
 }

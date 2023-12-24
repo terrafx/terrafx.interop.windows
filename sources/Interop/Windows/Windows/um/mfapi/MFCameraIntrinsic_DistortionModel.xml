@@ -3,34 +3,21 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFCameraIntrinsic_DistortionModel">
-    <summary>
-      <para>Represents a polynomial lens distortion model.</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Represents a polynomial lens distortion model.</summary>
   </member>
   <member name="MFCameraIntrinsic_DistortionModel.Radial_k1">
-    <summary>
-      <para>The first radial distortion coefficient.</para>
-    </summary>
+    <summary>The first radial distortion coefficient.</summary>
   </member>
   <member name="MFCameraIntrinsic_DistortionModel.Radial_k2">
-    <summary>
-      <para>The second radial distortion coefficient.</para>
-    </summary>
+    <summary>The second radial distortion coefficient.</summary>
   </member>
   <member name="MFCameraIntrinsic_DistortionModel.Radial_k3">
-    <summary>
-      <para>The third radial distortion coefficient.</para>
-    </summary>
+    <summary>The third radial distortion coefficient.</summary>
   </member>
   <member name="MFCameraIntrinsic_DistortionModel.Tangential_p1">
-    <summary>
-      <para>The first tangential distortion coefficient.</para>
-    </summary>
+    <summary>The first tangential distortion coefficient.</summary>
   </member>
   <member name="MFCameraIntrinsic_DistortionModel.Tangential_p2">
-    <summary>
-      <para>The second tangential distortion coefficient.</para>
-    </summary>
+    <summary>The second tangential distortion coefficient.</summary>
   </member>
 </doc>

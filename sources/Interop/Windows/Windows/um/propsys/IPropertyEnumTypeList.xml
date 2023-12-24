@@ -3,81 +3,34 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="IPropertyEnumTypeList.FindMatchingIndex">
-    <summary>
-      <para>Compares the specified property value against the enumerated values in a list and returns the matching index.</para>
-    </summary>
-    <param name="propvarCmp">
-      <para>Type: <b>REFPROPVARIANT</b></para>
-      <para>A reference to a <see cref="PROPVARIANT" /> structure that represents the property value.</para>
-    </param>
-    <param name="pnIndex">
-      <para>Type: <b>UINT*</b></para>
-      <para>When this method returns, contains a pointer to the index in the enumerated type list that matches the property value, if any.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Compares the specified property value against the enumerated values in a list and returns the matching index.</summary>
+    <param name="propvarCmp">A reference to a <see cref="PROPVARIANT" /> structure that represents the property value.</param>
+    <param name="pnIndex">When this method returns, contains a pointer to the index in the enumerated type list that matches the property value, if any.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyEnumTypeList.GetAt">
-    <summary>
-      <para>Gets the <see cref="IPropertyEnumType" /> object at the specified index in the list.</para>
-    </summary>
-    <param name="itype">
-      <para>Type: <b>UINT</b></para>
-      <para>The index of the object in the list.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the interface to retrieve through ppv, typically IID_IShellItem.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns successfully, contains the interface pointer requested in riid. This is typically <see cref="IPropertyEnumType" />.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the <see cref="IPropertyEnumType" /> object at the specified index in the list.</summary>
+    <param name="itype">The index of the object in the list.</param>
+    <param name="riid">A reference to the IID of the interface to retrieve through ppv, typically IID_IShellItem.</param>
+    <param name="ppv">When this method returns successfully, contains the interface pointer requested in riid. This is typically <see cref="IPropertyEnumType" />.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyEnumTypeList.GetConditionAt">
     <summary>
       <para>Not supported.</para>
       <para>Gets the condition at the specified index.</para>
     </summary>
-    <param name="nIndex">
-      <para>Type: <b>UINT</b></para>
-      <para>Index of the desired condition.</para>
-    </param>
-    <param name="riid">
-      <para>Type: <b>REFIID</b></para>
-      <para>A reference to the IID of the interface to retrieve.</para>
-    </param>
-    <param name="ppv">
-      <para>Type: <b>void**</b></para>
-      <para>When this method returns, contains the address of an <see cref="ICondition" /> interface pointer.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <param name="nIndex">Index of the desired condition.</param>
+    <param name="riid">A reference to the IID of the interface to retrieve.</param>
+    <param name="ppv">When this method returns, contains the address of an <see cref="ICondition" /> interface pointer.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyEnumTypeList.GetCount">
-    <summary>
-      <para>Gets the number of elements in the list.</para>
-    </summary>
-    <param name="pctypes">
-      <para>Type: <b>UINT*</b></para>
-      <para>When this method returns, contains a pointer to the number of list elements.</para>
-    </param>
-    <returns>
-      <para>Type: <b>HRESULT</b></para>
-      <para>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</para>
-    </returns>
+    <summary>Gets the number of elements in the list.</summary>
+    <param name="pctypes">When this method returns, contains a pointer to the number of list elements.</param>
+    <returns>If this method succeeds, it returns <b>S_OK</b>. Otherwise, it returns an <b>HRESULT</b> error code.</returns>
   </member>
   <member name="IPropertyEnumTypeList">
-    <summary>
-      <para>Exposes methods that enumerate the possible values for a property.</para>
-    </summary>
+    <summary>Exposes methods that enumerate the possible values for a property.</summary>
   </member>
 </doc>

@@ -3,32 +3,18 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="WS_XML_WRITER_BINARY_ENCODING">
-    <summary>
-      <para>Used to indicate that the writer should emit bytes as binary xml.</para>
-    </summary>
+    <summary>Used to indicate that the writer should emit bytes as binary xml.</summary>
   </member>
   <member name="WS_XML_WRITER_BINARY_ENCODING.encoding">
-    <summary>
-      <para>The base type for all types that derive from <see cref="WS_XML_WRITER_ENCODING" />.</para>
-    </summary>
+    <summary>The base type for all types that derive from <see cref="WS_XML_WRITER_ENCODING" />.</summary>
   </member>
   <member name="WS_XML_WRITER_BINARY_ENCODING.staticDictionary">
-    <summary>
-      <para>Indicates the dictionary that the writer should use for static strings.  <see cref="WS_XML_STRING" />s that are written that
-reference this dictionary, will be written in the binary xml document using an id rather than the string itself.
-When reading this document, the application must provide a dictionary with the same strings.</para>
-    </summary>
+    <summary>Indicates the dictionary that the writer should use for static strings. <see cref="WS_XML_STRING" />s that are written that reference this dictionary, will be written in the binary xml document using an id rather than the string itself. When reading this document, the application must provide a dictionary with the same strings.</summary>
   </member>
   <member name="WS_XML_WRITER_BINARY_ENCODING.dynamicStringCallback">
-    <summary>
-      <para>Specifies an optional callback that the writer will invoke when a <see cref="WS_XML_STRING" /> that is not found in the staticDictionary is written for the first time.
-The callback provides the mapping to an id which the writer will then use.  It is the responsibility of the callback to coordinate with the
-writer to propagate these strings to the reader. The string is not added to the dictionary if this callback is not specified.</para>
-    </summary>
+    <summary>Specifies an optional callback that the writer will invoke when a <see cref="WS_XML_STRING" /> that is not found in the staticDictionary is written for the first time. The callback provides the mapping to an id which the writer will then use. It is the responsibility of the callback to coordinate with the writer to propagate these strings to the reader. The string is not added to the dictionary if this callback is not specified.</summary>
   </member>
   <member name="WS_XML_WRITER_BINARY_ENCODING.dynamicStringCallbackState">
-    <summary>
-      <para>User-defined state that will be passed to dynamicStringCallback.</para>
-    </summary>
+    <summary>User-defined state that will be passed to dynamicStringCallback.</summary>
   </member>
 </doc>

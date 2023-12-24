@@ -3,24 +3,15 @@
 <!-- Ported from https://github.com/MicrosoftDocs/sdk-api/ -->
 <doc>
   <member name="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION">
-    <summary>
-      <para>Describes an action requested by an output trust authority (OTA). The request is sent to an input trust authority (ITA).</para>
-    </summary>
-    <seealso href="https://docs.microsoft.com//windows/desktop/medfound/media-foundation-structures">Media Foundation Structures</seealso>
+    <summary>Describes an action requested by an output trust authority (OTA). The request is sent to an input trust authority (ITA).</summary>
   </member>
   <member name="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.Action">
-    <summary>
-      <para>Specifies the action as a member of the <see cref="MFPOLICYMANAGER_ACTION" /> enumeration.</para>
-    </summary>
+    <summary>Specifies the action as a member of the <see cref="MFPOLICYMANAGER_ACTION" /> enumeration.</summary>
   </member>
   <member name="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.pbTicket">
-    <summary>
-      <para>Pointer to a buffer that contains a ticket object, provided by the OTA.</para>
-    </summary>
+    <summary>Pointer to a buffer that contains a ticket object, provided by the OTA.</summary>
   </member>
   <member name="MFINPUTTRUSTAUTHORITY_ACCESS_ACTION.cbTicket">
-    <summary>
-      <para>Size of the ticket object, in bytes.</para>
-    </summary>
+    <summary>Size of the ticket object, in bytes.</summary>
   </member>
 </doc>
